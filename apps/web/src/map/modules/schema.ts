@@ -29,6 +29,9 @@ const LAYERS = [
   'schema-hl-line',
   'schema-hl-point',
 ] as const;
+/** The whole-Alps sector (large-scale breezes, convergences and routes). */
+const OVERVIEW = 'alpes-francaises';
+
 const PICK_LAYERS = ['schema-pick-fill', 'schema-pick-line', 'schema-pick-dot', 'schema-pick-label'] as const;
 
 /** Role of a thermal on the classic routes, read from its sourced description. */
@@ -456,10 +459,13 @@ export class SchemaModule implements MapModule {
       for (const f of atlas.features[cat]) {
         const p = f.properties;
         const own = p.massif === massifId;
-        if (!own && !inBox(f)) continue;
+        // The whole-Alps overview shows only its own large-scale items; a sector shows its neighbours' edges.
+        if (!own && (massifId === OVERVIEW || !inBox(f))) continue;
+        // Hotspots known only from GPS tracks stay on the live map: the diagram teaches documented phenomena.
+        if (p.origin === 'kk7') continue;
         if (cat === 'breezes' && !activeInSlot(p.windowStart, p.windowEnd, slot)) continue;
         // Routes: only the sector's own classic routes, not every cross passing by.
-        if (cat === 'routes' && !localRoutes.has(p.id)) continue;
+        if (cat === 'routes' && massifId !== OVERVIEW && !localRoutes.has(p.id)) continue;
         let label = shortLabel(p.name);
         if (cat === 'breezes') label = `${shortLabel(p.name)} · ${p.speedKmh ?? '?'} km/h`;
         else if (cat === 'thermals') {

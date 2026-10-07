@@ -364,13 +364,16 @@ function SchemaPanel({ m, atlas }: { m: AtlasMassif; atlas: Atlas }) {
   );
 }
 
+/** The whole-Alps sector: large valley breezes, synoptic regimes, long routes. */
+const OVERVIEW = 'alpes-francaises';
+
 function MassifBrowser({ atlas }: { atlas: Atlas }) {
   const [q, setQ] = useState('');
   const groups = useMemo(() => {
     const needle = norm(q.trim());
     return atlas.regions.map((r) => ({
       region: r,
-      massifs: atlas.massifs.filter((m) => m.region === r && (!needle || norm(`${m.name} ${m.summary}`).includes(needle))),
+      massifs: atlas.massifs.filter((m) => m.id !== OVERVIEW && m.region === r && (!needle || norm(`${m.name} ${m.summary}`).includes(needle))),
     }));
   }, [atlas, q]);
   const total = atlas.stats;
@@ -383,6 +386,12 @@ function MassifBrowser({ atlas }: { atlas: Atlas }) {
       <p className="muted small stats-line">
         {total.massifs} secteurs · {total.breezes} brises · {total.convergences} convergences · {total.sources} sources
       </p>
+      {!q && atlas.massifs.some((m) => m.id === OVERVIEW) && (
+        <button className="overview-card" onClick={() => openMassif(OVERVIEW, true)}>
+          <strong>Commencer par la vue d’ensemble</strong>
+          <span>Les grandes brises de vallée, les vents météo et les grands itinéraires : les clés pour lire ensuite chaque massif.</span>
+        </button>
+      )}
       {groups.map(
         (g) =>
           g.massifs.length > 0 && (

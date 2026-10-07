@@ -102,3 +102,23 @@ La première passe n'avait pu lire aucune page (proxy bloqué) ; cette fois le r
 - `https://haute-savoie.ialpes.com/…` (S30) : résolution DNS impossible ; `vol-libre-geneve.ch` (fichiers CSP.kml/wpt) : hôte non résolu.
 - Images jointes du fil parapentiste.info « cartographie des brises » (cartes Haute-Savoie et Annecy) : non visibles pour un invité.
 - Facebook (groupes Voler à Mieussy, CHOTO, parapotes Salève) : non consultables sans connexion.
+
+## Thermiques et points de relance (passe complémentaire)
+
+Passe du 7 octobre 2026 (brief « thermiques et points de relance »). Thermiques avant / après : saleve-genevois 3 → 5, arve-faucigny 5 → 10, haut-giffre 2 → 10, chablais 2 → 7. Descriptions complétées sur 5 thermiques existants (Criou, Varan, Quatre Têtes, Mieussy), 2 routes ajoutées (Saix → Trapechet → Criou ; Aiguillette des Houches → Platé → Varan → Quatre Têtes → Pointe Percée), 3 points de passage ajoutés au parcours CLAM de niveau 3, 3 pièges (Criou sous le vent, Barmerousse). `npm run data:build -- --check` : aucune alerte.
+
+**Documents relus** : tous les textes du lot (fiches FFVL, CMBVL, CVLS/CVLG, Marche et Vol, Randovol, guide « Vol libre au Pays du Mont-Blanc » p. 28-35, CLAM, Choucas, Pégase, Morzinn, forums déjà récupérés) et, du web, S200 à S210 : Paragliding Map (Salève, Mieussy/Môle), forums parapentiste.info (Criou t55395, Mieussy t6781, topo Chamonix-Arclusaz dans t2620, Varan/Plaine-Joux t54223), Marche et Vol (Saix), Summits, FFVL Cordon.
+
+**Ajoutés**
+- Salève : devant le décollage du téléphérique (thermique statique) ; Sur Cou comme relance après la plaine de La Roche (low, déduction).
+- Arve/Faucigny : Môle face sud, Pointe des Brasses, Cordon – Tête du Planet, éboulis sous le Dérochoir, falaise de la Pointe de Platé ; cheminement détaillé Chamonix → Varan → Quatre Têtes → Pointe Percée d'après le topo d'un compétiteur local.
+- Haut-Giffre : Criou (lame d'ascendance, zones sous le vent, face sud d'arrière-saison), plateau des Saix, Pointe du Trapechet (fin de matinée), Marcelly, col du Fornet (plein ≥ 3200 m avant Émosson) ; Angolon, Grands Vans / Tête de Louis-Philippe, Haute-Pointe / Billiat en low (points de passage de stages CLAM, relances déduites).
+- Chablais : Mont Chéry face sud, Super-Morzine / crêtes de Zore vers Avoriaz, Pointe de Ressachaux (dynamique FFVL), Pléney (restitution), Pointe de Nyon (low).
+
+**Confiance** : concordance de plusieurs sources ou récit précis → medium ; points de passage de parcours de stage sans description d'ascendance, ou texte commercial isolé → low, avec « déduction ». Les sources commerciales (Morzinn, Summits) sont signalées comme de fiabilité modérée.
+
+**Positions approximatives** : Criou face sud et zones sous le vent, hazards de Barmerousse, Sur Cou (position source mais thermique déduit).
+
+**Introuvable** : Rochers de Rion (« LA pompe à couillon » du topo de Chamonix vers les Aravis), arête des Saix côté Passy/Sixt, Tête des Mariages et combe de Verreu au Criou, Pas du Taureau et Dent de Barne (Haut-Giffre) : absents d'OSM/Nominatim, cités dans les descriptions seulement. Peu de récits de cross détaillés pour Salève → Môle, Sommand, Praz de Lys et la vallée d'Aulps : les comptes rendus XContest/CFD sont inaccessibles. Le secteur Annecy du Salève (Collonges, cross vers le Môle) reste décrit surtout par les fiches FFVL.
+
+**URL bloquées** : XContest (connexion), CFD `parapente.ffvl.fr/cfd/liste/...` (Cloudflare), vidéos YouTube (descriptions illisibles en curl).

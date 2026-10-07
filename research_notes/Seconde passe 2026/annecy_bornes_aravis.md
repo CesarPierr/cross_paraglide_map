@@ -82,3 +82,23 @@ F1 (carte 2026 du club du Grand-Bornand : brises, confluences, thermiques, CTR, 
 - toutleparapente.fr : images des cartes d'Annecy en 404 (hotlink) ; `lac-annecy.com/.../carte-vol-libre.pdf` en 404.
 - XC Mag « Le Grand Tour du Lac » : payant. ParaglidingEarth (pages de site) : réponse vide.
 - Règlement complet des sites de Talloires-Montmin et Doussard : seul le titre de l'image a été récupéré.
+
+## Thermiques et points de relance (passe complémentaire)
+
+Passe du 7 octobre 2026 (brief « thermiques et points de relance »). Thermiques avant / après : lac-annecy 6 → 17, bornes 5 → 9, aravis 9 → 17 (+ 11 descriptions complétées sur des thermiques existants, 2 routes ajoutées côté Bornes, points de passage ajoutés aux routes du petit tour, du grand tour, Annecy–Aravis et tour de la vallée du Grand-Bornand, 2 pièges, 2 figures F13 et F14). `npm run data:build -- --check` : aucune alerte.
+
+**Documents relus** : tous les textes de `.cache/research/docs/annecy_bornes_aravis/` (forums t1985, t2599, t15280, t24720, t2225, t64318 ; récits Pays de Gex ; Thermique Francilien ; Trace Ta Route ; Bauges Parapente ; Grands Espaces ; XC Mag ; Infos-Parapente ; cartes 2009 en image), plus les sources récupérées ce jour (S82 à S95) : topos du forum sur la traversée Veyrier–Semnoz, le raccrochage de la Forclaz, le Roc des Bœufs, Aravis–Parmelan, Charvin–Tournette ; carnets de vol de F. Largeault ; Absolu Parapente ; cartes thermiques des Ailes des Aravis (images lues).
+
+**Ajoutés**
+- Petit tour : pointe de la Rochette (thermique de service du déco), Lanfonnet face ouest, épaule de Planfait vers les Dents, Bluffy (remonte-pente nord-ouest des Dents), première ligne THT du Roc des Bœufs, combe de Coche Cabane (relance basse sous la Forclaz), Entrevernes nord. Rocher du Roux, Dents, Roc des Bœufs, Tournette complétés (rôle, plafonds, pièges).
+- Grand tour : thermique du téléphérique du Veyrier (confiance moyenne), Quintal / ligne électrique (Semnoz nord), face ouest du Semnoz devant l'aéromodélisme, Mont Baret (confiance basse).
+- Bornes : col du Pertuis / falaise ouest du Parmelan, pente nord du Lachat de Thônes, pointe de la Buffaz ; routes « Dents → Parmelan » et quadrilatère de 81 km de 2005.
+- Aravis : Vierge du Châtelard (position corrigée, OSM), combe de Borderan, pente du Crêt du Loup, Merdassier, Tardevant, Danay, Jalouvre, Buclon ; piège des Quatre-Têtes tard.
+
+**Confiance** : plusieurs récits concordants ou récit précis → medium ; point cité une fois, sans lieu net → low. Deux points sont des hypothèses d'exposition (confiance low, « déduction ») : face ouest du col de la Croix-Fry, relances de crête du Danay non précisées ; les autres reposent sur au moins un récit. Bois du Mont (dynamique par brise de nord) ajouté d'après le forum t1985.
+
+**Positions approximatives** (`coord_quality: approx`) : épaule de Planfait, Bluffy, téléphérique du Veyrier, Quintal (la ligne n'est pas localisée), aéromodélisme du Semnoz, première ligne THT du Roc, combe de Coche Cabane, combe de Borderan, face nord et pointe du Lachat de Thônes, Danay.
+
+**Introuvable ou hors lot** : Roc de Lancrenaz (cité par le forum t54898, absent d'OSM/Nominatim) ; « l'Aiguille » à l'est de la Tournette (forum t1985) ; Julioz, Colombier, Dent de Rossanaz, Chabert, Margériaz et Bange (relances du passage Semnoz → Roc des Bœufs → Bauges, décrites dans le forum t52861 et le carnet de Largeault) : à traiter par le lot Bauges. Les récits les plus détaillés du cheminement Étale–La Clusaz datent de 2005-2007.
+
+**URL bloquées** : fiches CFD `parapente.ffvl.fr/cfd/liste/vol/20350010` et `.../20212016` (Cloudflare, traces et commentaires du Semnoz → Revard → Roc des Bœufs) ; pages YouTube (descriptions des vidéos de petit tour, grand tour, Annecy–Aravis) illisibles par curl.

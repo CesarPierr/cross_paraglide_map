@@ -124,3 +124,24 @@ Volumes avant → après : brises 3 → 4, convergences 0 → 0, hazards 7 → 8
 - Pain de Sucre (2560 m, l'un des huit sommets) non localisé par le géocodeur ; Le Peouvou (3230 m) est à Ceillac (Queyras) et n'a pas été ajouté ici.
 - Page « Les sites » de l'école (noms seuls), site du club Lame in Air (pas de site), PDF FFVL du Mercantour en images seules : voir `pages_bloquees.txt`.
 
+
+### Queyras (`queyras`)
+
+Volumes avant → après : brises 7 → 7, convergences 1 → 1, hazards 7 → 7, thermiques 2 → 19, soarings 0 → 0, décollages 11 → 12, atterrissages 2 → 3, effets synoptiques 6 → 6, route 1 → 1, conseils 6 → 8 ; 8 sources nouvelles (S105 à S112). `npm run data:build -- --check` : aucune alerte nouvelle ; `npm run model:check` : 0 paire de brises opposées.
+
+**Sources nouvelles ou relues**
+- Site du club italien *VentoRelativo* (Pinerolo, quatorze sites de la Val Chisone, de la Val Pellice et de la Val Germanasca) : fiches de Sarsenà (Bobbio Pellice, décollage à 1416 m exposé S/SE, atterrissage sur la route provinciale) et de Prali (décollage du Bric Rond à 2464 m, « bonnes possibilités de se connecter avec la chaîne française qui mène au col de l'Izoard »). Le point chaud à 100 % de la haute Val Pellice est exactement au décollage de Sarsenà (150 m). Le contour du secteur Queyras englobait déjà la haute Val Pellice jusqu'à 7,105 °E : le décollage et l'atterrissage de Sarsenà sont ajoutés. Prali (décollage du Bric Rond, hors du contour au nord) n'est cité que dans un conseil, et les autres sites du club ne sont pas repris, pour ne pas étendre encore le contour (voir plus bas).
+- Cross Country Magazine (déjà lus pour les routes de l'Izoard) : récit du record junior de Hans Petit (7 août 2025 : décollage à 9h11, 2900 m au-dessus du Clôt la Cime, cap vers la frontière italienne), triangle d'Edouard Potel (18 août 2025 : aller-retour vers l'est au départ) et triangle de 306 km d'Honorin Hamard depuis le col Agnel (9 juillet 2016).
+- Topo Chocard (Izoard, Ceillac, Brunet) relu ; points chauds de thermal.kk7.ch, IGN (altitude, pente, exposition) et OpenStreetMap/Nominatim (noms italiens).
+
+**Ajouté**
+- *Izoard* (`medium` pour Clot la Cime et Coste Belle, `low` pour le Tronchet) : trois points chauds à 91-97 % au droit des deux décollages classiques ; l'automne de Coste Belle (« thermiques généreux ») est confirmé par le profil mesuré.
+- *Ceillac* : thermique du vol rando de Brunet (`medium`, texte de Chocard : « placé haut pour un départ en thermique ») au sommet, avec le point chaud à 100 % des ravins de Rabinoux et de la Charpenelle, 2 km plus à l'est ; col Fromage et crête de la Selle (`low`). Le texte de Brunet n'avait pas de thermique : il en a maintenant un à moins de 1 km.
+- *Col Agnel et limite de l'Ubaye* (`low`, tous cinq issus des traces GPS) : deux pentes à 98 % au sud du col Agnel, deux points à 90-91 % dans le vallon des Hugues (Saint-Paul-sur-Ubaye).
+- *Haute Val Pellice (Italie)* : Sarsenà (`medium`) et six points à 92-95 % (La Roussa, Crosetta, Meisuns, pentes de 2365 et 2520 m), `low`.
+- Deux conseils sur la liaison Queyras – Italie par la crête frontalière (Prali) et sur Brunet.
+
+**Introuvable**
+- Aucun récit de pilote ne décrit les ascendances d'Abriès, de Saint-Véran, d'Aiguilles, de Molines ni de Château-Queyras (forum de 2013 sans réponse), ni la haute Val Pellice en vol ; les sept points italiens autres que Sarsenà ne reposent que sur les traces GPS.
+- Les pages Chocard « grands cross au départ du Col de l'Izoard » et « Puy Aillaud » ne contiennent que des liens vers des traces non lisibles ; les traces de Potel et de Petit (XContest, connexion) ne donnent pas les points de passage de l'est.
+- Effet de bord à connaître : les contours de secteur sont construits sur les éléments étudiés (enveloppe convexe tamponnée de 2,5 km). Documenter Sarsenà (7,114 °E) a repoussé le contour du Queyras de 0,06° vers l'est, d'où quatre nouveaux points chauds à 90-96 % dans le secteur (7,14 à 7,19 °E, autour de Villanova Pellice et du Giuic, 44.821 à 44.835 °N) que le rapport KK7 liste maintenant et que je n'ai pas traités : le club VentoRelativo décrit le Giuic (décollage de Sea di Torre, 1257 m, S/SO, 44.839933 N 7.197992 E, atterrissage au Blancio) mais l'ajouter étendrait encore le contour vers Pinerolo. À trancher par le propriétaire : documenter la Val Pellice complète ou la laisser hors atlas.

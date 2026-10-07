@@ -1293,19 +1293,19 @@
     {
      "id": "villar-darene-lac-du-pontet",
      "name": "Villar-d'Arêne – Lac du Pontet (FFVL 5214)",
-     "lon": 6.3573,
-     "lat": 45.0498,
+     "lon": 6.3548,
+     "lat": 45.0499,
      "alt_m": 2013,
      "orientations": [
       "SW",
       "W"
      ],
-     "description": "2013 m, fiche issue de ParaglidingEarth/DHV, favorable SO et O. Site officiel cité par l'office de tourisme (avec la pente école des Cours).",
+     "description": "2013 m, fiche issue de ParaglidingEarth/DHV, favorable SO et O. Site officiel cité par l'office de tourisme (avec la pente école des Cours). Position recalée (seconde passe, secteurs minces) : la position de la fiche FFVL (6.3573, 45.0498) tombe à 2111 m sur le terrain IGN, alors que la fiche donne 2013 m et des vents favorables SO et O ; à 200 m à l'ouest le terrain est à 2015 m, sur une pente de 21° exposée à l'ouest, 35 m au-dessus du lac (1980 m).",
      "sources": [
       "S63",
       "S17"
      ],
-     "coord_quality": "source",
+     "coord_quality": "approx",
      "ffvl_id": 5214
     },
     {
@@ -2121,6 +2121,45 @@
       "S77",
       "S43"
      ]
+    },
+    {
+     "id": "brise-vallon-saint-francois-longchamp",
+     "name": "Brise du vallon de Saint-François-Longchamp (La Chambre → station → col de la Madeleine), déduction",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "La Chambre (terrain des Attignours)",
+       "lon": 6.293,
+       "lat": 45.3651,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Saint-François-Longchamp (atterrissage de la station, 1650 m)",
+       "lon": 6.3667,
+       "lat": 45.4164,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Col de la Madeleine (atterrissage côté Maurienne)",
+       "lon": 6.373,
+       "lat": 45.4351,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "après-midi d'été (déduction) ; le matin les décollages sont pris avant la brise (fiches)",
+     "speed_kmh": {
+      "typical": 10,
+      "max": 20
+     },
+     "season": "été",
+     "confidence": "low",
+     "description": "Déduction : aucune source ne décrit de brise dans ce vallon. Les fiches FFVL de la station disent seulement « vent variable pouvant être fort » à l'atterrissage de 1650 m (fiche 2322) et réservent le décollage de la Lauzière aux vents faibles de moins de 20 km/h (fiche 2323) ; ParaglidingEarth note, au col de la Madeleine, un décollage sud-est le matin ou nord-est « si vent de vallée ». Le tracé suit le vallon qui relie La Chambre à la station et, comme la brise de la Maurienne, monte de l'aval vers l'amont l'après-midi d'été ; vitesses et heures non documentées.",
+     "sources": [
+      "S134",
+      "S135",
+      "S142",
+      "S140"
+     ]
     }
    ],
    "convergences": [],
@@ -2229,14 +2268,44 @@
      "id": "st-francois-longchamp-cable-catex",
      "name": "Saint-François-Longchamp : câble « Catex » entre la piste noire et l'Homme de Beure",
      "kind": "other",
-     "lon": 6.3583,
-     "lat": 45.4442,
-     "coord_quality": "approx",
-     "radius_km": 1.5,
+     "lon": 6.3638,
+     "lat": 45.4398,
+     "coord_quality": "source",
+     "radius_km": 0.5,
      "conditions": "Hiver, décollages à ski et hors pistes ; vent de plus de 20 km/h déconseillé au décollage.",
-     "description": "Fiche FFVL 2323 : un câble « Catex » est installé entre le départ de la piste noire et l'Homme de Beure (côté col de la Madeleine) ; sa position exacte est donnée en zone rouge sur le fichier KMZ du comité de Savoie. Les zones de décollage hors pistes ne sont pas entretenues. Position placée au décollage de la Lauzière (le câble n'est pas localisé précisément). Déduction : « Catex » désigne probablement un câble de déclenchement d'avalanches (la fiche ne le précise pas).",
+     "description": "Fiche FFVL 2323 : un câble « Catex » est installé entre le départ de la piste noire et l'Homme de Beure (côté col de la Madeleine). Le fichier KMZ du comité de Savoie (2020) le trace : il part du départ de la piste noire (6.3620, 45.4419), descend vers le sud-est puis longe le versant jusqu'à l'Homme de Beure (6.3673, 45.4383), et il est légendé comme présence de câble destiné aux avalanches ; le point est placé au milieu de cette ligne, avec la fiche comme seule autre source. Les zones de décollage hors pistes ne sont pas entretenues.",
      "sources": [
-      "S135"
+      "S135",
+      "S138"
+     ]
+    },
+    {
+     "id": "grande-verdette-sous-le-vent-comborciere",
+     "name": "Grande Verdette : ne pas se placer sous le vent de la pointe de Comborcière",
+     "kind": "lee-rotor",
+     "lon": 6.249,
+     "lat": 45.2467,
+     "coord_quality": "approx",
+     "radius_km": 0.8,
+     "conditions": "Vent météo de secteur sud à ouest ; décollage d'été de La Toussuire.",
+     "description": "Le club Speedbelles'air signale un danger à la Grande Verdette : ne pas se mettre sous le vent de la pointe de Comborcière, alors que le site est possible par vent de sud léger en décollant dans l'alpage face à l'Ouillon. Position approximative : la pointe n'est pas dans le géocodeur IGN, le point est placé sur le vallon de Comborsière (IGN) qui borde le décollage.",
+     "sources": [
+      "S136",
+      "S140"
+     ]
+    },
+    {
+     "id": "toussuire-pierre-du-turc-crete-ouest",
+     "name": "La Toussuire (hiver) : par tendance ouest la crête vers l'atterrissage est souvent infranchissable depuis la Pierre du Turc",
+     "kind": "lee-rotor",
+     "lon": 6.2236,
+     "lat": 45.2503,
+     "coord_quality": "source",
+     "radius_km": 1.5,
+     "conditions": "Hiver, décollage à ski de la Pierre du Turc ; tendance ouest ou ouest sensible.",
+     "description": "Selon le club : par tendance ouest, il est souvent impossible de franchir la crête qui permet de rejoindre l'atterrissage de La Toussuire, donc prévoir de poser au Corbier ; ne pas décoller si l'ouest est sensible (travers droit au décollage) et avoir la visibilité jusqu'au Corbier avant de partir. Le décollage de la crête du Chaput (à droite du télésiège du même nom) est interdit. Les décollages sont entretenus par l'école Parapente Air Line, qui y a la priorité.",
+     "sources": [
+      "S137"
      ]
     }
    ],
@@ -2304,6 +2373,236 @@
      "sources": [
       "S124",
       "S110"
+     ]
+    },
+    {
+     "id": "grande-verdette-thermiques-matin",
+     "name": "Grande Verdette (La Toussuire) : thermiques dès 10h-10h30 à l'alpage du décollage d'été",
+     "lon": 6.2454,
+     "lat": 45.2517,
+     "alt_m": 2003,
+     "coord_quality": "source",
+     "best_hours": "dès 10h-10h30 (club) ; « vol du matin essentiellement » ; le point chaud mesuré marche surtout le matin, en été et en automne",
+     "trigger": "Alpage de la Grande Verdette, pente herbeuse de 17° exposée au sud-est, au pied des remontées de La Toussuire et au-dessus du vallon de Comborsière",
+     "description": "DÉCLENCHEUR du décollage d'été de La Toussuire. Le club Speedbelles'air décrit un décollage orienté nord-est, vent favorable de nord, accessible par le télésiège de Bellard ou celui de la Médaille d'Or (sinon environ 1 h de marche), pour un « vol du matin essentiellement » : « les conditions thermiques peuvent apparaître dès 10h-10h30 selon l'aérologie ». Un point chaud mesuré par les traces GPS se trouve au décollage même : probabilité 97 %, le matin (97 %) puis en milieu de journée (78 %), en été (96 %) et en automne (86 %). Le club ajoute qu'un vent de sud léger permet de décoller dans l'alpage face à l'Ouillon, et qu'il ne faut pas se placer sous le vent de la pointe de Comborcière (voir le danger du même nom).",
+     "confidence": "medium",
+     "sources": [
+      "S136",
+      "S102",
+      "S139",
+      "S140"
+     ]
+    },
+    {
+     "id": "saint-sorlin-croix-de-fer-pentes-sud-est",
+     "name": "Saint-Sorlin-d'Arves : pentes sud-est sous le col de la Croix de Fer (thermique du matin)",
+     "lon": 6.2097,
+     "lat": 45.2249,
+     "alt_m": 1916,
+     "coord_quality": "source",
+     "best_hours": "matin et milieu de journée ; point chaud mesuré surtout en été (94 %) et en automne (85 %)",
+     "trigger": "Pente raide (40°) exposée au sud-est entre le col de la Croix de Fer et la combe de la Balme, au-dessus de Saint-Sorlin-d'Arves",
+     "description": "Point chaud mesuré à 0,8 km du décollage de Saint-Sorlin-d'Arves (FFVL 3086, 2101 m) et à 1,7 km de celui de La Balme (FFVL 13736, 2125 m) : probabilité 96 %, le matin (96 %) et en milieu de journée (93 %). Aucun récit de thermique n'a été trouvé pour ces décollages : la fiche de La Balme dit seulement « pas de vent, léger nord/est ou est » (décollage sous le vent d'ouest) et une vidéo de pilote montre « trois vols du matin » au col de la Croix de Fer depuis trois décollages différents, avec atterrissage à Saint-Sorlin. Déduction : une pente raide exposée au sud-est chauffe tôt et alimente ces décollages du matin ; le déclencheur exact n'est décrit par personne.",
+     "confidence": "low",
+     "sources": [
+      "S101",
+      "S100",
+      "S141",
+      "S139",
+      "S140"
+     ]
+    },
+    {
+     "id": "mollaret-pentes-sud-est-thermique-matin",
+     "name": "Montgellafrey – Le Mollaret : thermique du matin sur les pentes sud-est du décollage",
+     "lon": 6.3127,
+     "lat": 45.3944,
+     "alt_m": 1370,
+     "coord_quality": "source",
+     "best_hours": "le matin jusqu'à midi, avant la brise de vallée de 11h (été) ; point chaud mesuré toute l'année, maximum au printemps",
+     "trigger": "Pente de 25° exposée au sud-est sous les crêtes des Coins et de Montarqué, au droit du décollage du Mollaret",
+     "description": "Le point chaud mesuré par les traces GPS est au décollage du Mollaret (FFVL 1456) : probabilité 97 %, le matin (98 %) puis en milieu de journée (88 %), au printemps (99 %), en hiver (95 %) et en été (84 %). La fiche FFVL décrit une « brise de pente le matin, léger sud » et la brise de la Maurienne qui s'installe vers 11h l'été (décollage alors sous le vent) ; un pilote local désigne Montgellafrey comme le site « qui permet de beaux départs en cross » vers les Bauges et Belledonne (forum, août 2020). C'est le thermique de départ, qui conduit aux crêtes de la Grande Léchère (voir montgellafrey-crete-depart-cross).",
+     "confidence": "medium",
+     "sources": [
+      "S70",
+      "S6",
+      "S139",
+      "S140"
+     ]
+    },
+    {
+     "id": "lauziere-rozet-pentes-sud-est",
+     "name": "Saint-François-Longchamp : pointe du Rozet, pentes sud-est au nord-est du télésiège de la Lauzière",
+     "lon": 6.3741,
+     "lat": 45.451,
+     "alt_m": 2399,
+     "coord_quality": "source",
+     "best_hours": "matin et milieu de journée, surtout en été ; aucun point chaud en hiver (décollages à ski)",
+     "trigger": "Pentes de 44° exposées au sud-est sous la pointe du Rozet, 1,4 km au nord-est du décollage de la Lauzière",
+     "description": "Point chaud mesuré : probabilité 88 %, le matin (89 %) et en milieu de journée (78 %), en été (91 %). Il est à 1,4 km du décollage du télésiège de la Lauzière (FFVL 2323, 2516 m, vents favorables de N à SO par l'est). Le CHVD décrit la face ouest de la Lauzière, atteinte depuis Belledonne, comme « pas encore très généreuse car un peu tôt » en début d'après-midi (voir lauziere-face-ouest-entree-maurienne). Déduction : les pentes sud-est du Rozet sont le thermique d'été de ce décollage ; aucun récit ne le nomme.",
+     "confidence": "low",
+     "sources": [
+      "S135",
+      "S110",
+      "S139",
+      "S140"
+     ]
+    },
+    {
+     "id": "soleil-rouge-combe-noire-thermique",
+     "name": "Soleil Rouge : combe Noire, pentes sud-est à 1,9 km à l'est du télésiège (limite des Belleville)",
+     "lon": 6.4181,
+     "lat": 45.41,
+     "alt_m": 2438,
+     "coord_quality": "source",
+     "best_hours": "matin et milieu de journée en été (point chaud mesuré à 80 %)",
+     "trigger": "Pente de 35° exposée au sud-est au-dessus de la combe Noire et de la crête de la Frasse (commune des Belleville), 1,9 km à l'est du décollage",
+     "description": "Point chaud mesuré peu marqué (probabilité 79 %, 78 % le matin comme en milieu de journée, 80 % en été) à 1,9 km du décollage du télésiège du Soleil Rouge (FFVL 2321, 2249 m, vents favorables N, NE, S, SO, défavorables E et SE ; décollages hors pistes seulement). Aucune source de pilote ne décrit d'ascendance à Saint-François-Longchamp en dehors du soaring d'hiver à ski. Déduction : seule piste d'ascendance estivale proche du décollage, à vérifier sur place.",
+     "confidence": "low",
+     "sources": [
+      "S133",
+      "S139",
+      "S140"
+     ]
+    },
+    {
+     "id": "saint-avre-adret-sud-ouest-chaussy",
+     "name": "Saint-Avre : adret sud-ouest au-dessus du terrain de Sainte-Marie-de-Cuines (thermique du matin et d'hiver)",
+     "lon": 6.3195,
+     "lat": 45.3507,
+     "alt_m": 744,
+     "coord_quality": "source",
+     "best_hours": "matin et début d'après-midi, surtout en hiver (point chaud mesuré : 91 % le matin et à midi, 93 % en hiver, aucun en été)",
+     "trigger": "Adret de 29° exposé au sud-ouest au-dessus du bois de l'Eschereine (commune de Saint-Avre), à 1,5 km du terrain de Sainte-Marie-de-Cuines",
+     "description": "Point chaud mesuré : probabilité 89 %, le matin (91 %) et en milieu de journée (91 %), surtout en hiver. Il est à 1,9 km du décollage de La Chal (col du Chaussy, 1720 m, orienté O et NO, « décollage technique, court, pente raide et barrière d'arbres », favorable par brise de pente ou léger vent d'ouest selon le club) et à 1,5 km de l'atterrissage de Sainte-Marie-de-Cuines. Aucun récit ne le décrit. Déduction : l'adret de la rive droite de l'Arc chauffe en premier le matin et en hiver ; en été ce côté de la vallée est sous la brise de Maurienne.",
+     "confidence": "low",
+     "sources": [
+      "S73",
+      "MS2",
+      "S139",
+      "S140"
+     ]
+    },
+    {
+     "id": "belledonne-perriere-pentes-ouest",
+     "name": "Belledonne nord : pentes ouest sous le col de la Perrière et les Grands Moulins (thermique d'après-midi)",
+     "lon": 6.1915,
+     "lat": 45.4069,
+     "alt_m": 2085,
+     "coord_quality": "source",
+     "best_hours": "milieu de journée et fin d'après-midi, toute l'année sauf en hiver (point chaud mesuré : 93 % à midi, 95 % en fin de journée, aucun le matin)",
+     "trigger": "Pente de 40° exposée à l'ouest sous le col de la Perrière (IGN), à 2,3 km du décollage de Val Pelouse",
+     "description": "Point chaud mesuré : probabilité 95 %, en milieu de journée (93 %) et surtout en fin de journée (95 %), au printemps, en été et en automne (91 à 93 %), jamais le matin : profil d'une pente exposée à l'ouest qui chauffe l'après-midi. Il est à 2,3 km du décollage de Val Pelouse (FFVL 316, orienté N, O et NO) que ParaglidingEarth signale avec des thermiques. Déduction : pas de récit sur ce relief précis ; il se situe sur la crête de Belledonne qui sert de relance au bout de la chaîne avant la traversée de la Maurienne (voir rognier-bout-de-belledonne-relance-traversee).",
+     "confidence": "low",
+     "sources": [
+      "S143",
+      "S139",
+      "S140",
+      "S124"
+     ]
+    },
+    {
+     "id": "belledonne-est-chatermes-arpingon",
+     "name": "Belledonne, bout de chaîne : pic des Chatermes et crête d'Arpingon (faces est, relance avant la traversée)",
+     "lon": 6.2234,
+     "lat": 45.4013,
+     "alt_m": 2002,
+     "coord_quality": "source",
+     "best_hours": "le matin et en milieu de journée (point chaud mesuré : 93 % le matin, 89 % à midi) ; printemps, été (89 %)",
+     "trigger": "Pentes de 23° exposées à l'est autour du pic des Chatermes, face à la Maurienne au-dessus de Saint-Rémy-de-Maurienne",
+     "description": "Point chaud mesuré : probabilité 92 %, surtout le matin (93 %) et en milieu de journée (89 %), au printemps et en été (89 %). Les récits de cross décrivent justement ces faces est du bout de Belledonne comme une succession de relances (« à chaque arête ça reprend », CHVD, 28 août 2024 ; départ de 3300-3400 m en direction de la Maurienne, 2010 et 2015). Déduction : le pic des Chatermes est l'une de ces arêtes, sur la commune de Saint-Rémy-de-Maurienne, à 2,5 km au sud de la pointe de Rognier ; aucun récit ne le cite.",
+     "confidence": "low",
+     "sources": [
+      "S110",
+      "S124",
+      "S123",
+      "S139",
+      "S140"
+     ]
+    },
+    {
+     "id": "belledonne-est-frumezan-villards",
+     "name": "Pic de Frumezan (Belledonne, au-dessus des Villards) : pentes sud-est, thermique du matin",
+     "lon": 6.2169,
+     "lat": 45.3053,
+     "alt_m": 1900,
+     "coord_quality": "source",
+     "best_hours": "le matin et en milieu de journée (92 % et 93 % mesurés), y compris en hiver (89 %) ; printemps 82 %, été 84 %",
+     "trigger": "Pente de 33° exposée au sud-est sous le pic de Frumezan, à 0,5 km du sommet (IGN), au-dessus du vallon de Combe Rousse",
+     "description": "Point chaud mesuré : probabilité 93 %, le matin (92 %) et en milieu de journée (93 %), toute l'année hors automne. Il est sur la crête de Belledonne qui domine la vallée des Villards, à 7 km à l'ouest des décollages de Jarrier (Grand Châtelard, La Balme). Les sources ne décrivent aucune ascendance dans la vallée des Villards : un forum de 2020 renonce explicitement à conseiller les « annexes » de la Maurienne (Valloire, Arvan, Villards). Déduction : crête exposée au sud-est, à tenter le matin.",
+     "confidence": "low",
+     "sources": [
+      "S6",
+      "S139",
+      "S140"
+     ]
+    },
+    {
+     "id": "petit-charnier-col-de-claran-sud-ouest",
+     "name": "Petit Charnier et col de Claran (Belledonne, au-dessus d'Allevard) : pentes sud-ouest toute l'année",
+     "lon": 6.1541,
+     "lat": 45.3736,
+     "alt_m": 1901,
+     "coord_quality": "source",
+     "best_hours": "toute la journée, matin 88 %, midi 94 %, fin de journée 92 % ; hiver 90 %, printemps 85 %, été 93 %, automne 92 %",
+     "trigger": "Pente de 37° exposée au sud-ouest sous le Petit Charnier et le col de Claran, à 1,4 km du décollage des Plagnes",
+     "description": "Point chaud mesuré parmi les plus réguliers de la zone (probabilité 93 %, toutes saisons). Il est à 1,4 km du décollage des Plagnes (Collet d'Allevard), dont les pilotes décrivent un premier plein en groupe puis le cheminement vers le Grand Charnier et le Pic du Frêne, où un record de 3600 m est cité (voir plagnes-premier-plein-allevard et pic-du-frene-grand-charnier-plafond). Déduction : ce sont les pentes sud-ouest du Petit Charnier qui alimentent ce cheminement ; aucun récit ne les nomme.",
+     "confidence": "low",
+     "sources": [
+      "S122",
+      "S124",
+      "S139",
+      "S140"
+     ]
+    },
+    {
+     "id": "saint-etienne-de-cuines-grand-by-pentes-sud",
+     "name": "Saint-Étienne-de-Cuines : pentes sud du Grand By, entre l'Arc et les Villards (thermique du matin et du printemps)",
+     "lon": 6.2526,
+     "lat": 45.3338,
+     "alt_m": 1559,
+     "coord_quality": "source",
+     "best_hours": "matin (86 %) et milieu de journée (89 %), au printemps (88 %) ; aucun point chaud mesuré en été ni en automne",
+     "trigger": "Pente de 26° exposée au sud au lieu-dit du Grand By (commune de Saint-Étienne-de-Cuines), sur les contreforts de Belledonne",
+     "description": "Point chaud mesuré : probabilité 91 %, le matin (86 %) et en milieu de journée (89 %) au printemps (88 %), aucun en été ni en automne. Il est à 5 km du décollage du Grand Châtelard. Aucune source ne décrit cette partie des contreforts de Belledonne en vol : un forum de 2020 renonce lui-même à conseiller les « annexes » de la Maurienne (Valloire, Arvan, vallée des Villards). Déduction : pente exposée au sud, thermique de mi-saison.",
+     "confidence": "low",
+     "sources": [
+      "S6",
+      "S139",
+      "S140"
+     ]
+    },
+    {
+     "id": "saint-michel-bellecombe-pentes-sud-ouest",
+     "name": "Saint-Michel-de-Maurienne : plateau de Bellecombe et forêt de la Grollaz, pentes sud-ouest (thermique du matin et du printemps)",
+     "lon": 6.4905,
+     "lat": 45.2609,
+     "alt_m": 2095,
+     "coord_quality": "source",
+     "best_hours": "matin (89 %) et milieu de journée (93 %), au printemps (94 %) ; aucun point chaud mesuré en été, automne ni hiver",
+     "trigger": "Pente de 29° exposée au sud-ouest au bord du plateau de Bellecombe, au-dessus de la forêt de la Grollaz (commune de Saint-Michel-de-Maurienne)",
+     "description": "Point chaud mesuré : probabilité 92 %, au printemps (94 %), le matin (89 %) et en milieu de journée (93 %) ; aucun point chaud en été, en automne ni en hiver. Il est à 4,2 km au sud-sud-ouest du décollage de la Pointe de la Masse (Les Menuires, 2755 m, ParaglidingEarth 11405, orienté E à O par le sud). Aucun récit ne le cite. Déduction : replat exposé au sud-ouest au-dessus de la vallée de l'Arc, qui chauffe tôt en saison ; aucune brise ni piège documentés ici.",
+     "confidence": "low",
+     "sources": [
+      "S139",
+      "S140"
+     ]
+    },
+    {
+     "id": "saint-sorlin-aiguille-rousse-col-nord-des-lacs",
+     "name": "Saint-Sorlin-d'Arves : pentes sud-est de l'aiguille Rousse au-dessus du col Nord des Lacs",
+     "lon": 6.1836,
+     "lat": 45.2009,
+     "alt_m": 2496,
+     "coord_quality": "source",
+     "best_hours": "matin (86 %) et milieu de journée (79 %) ; point chaud mesuré surtout en automne (92 %), moins en été (71 %)",
+     "trigger": "Pente de 34° exposée au sud-est sous l'aiguille Rousse, à 0,4 km au nord-est du sommet et à 0,5 km du col Nord des Lacs (IGN)",
+     "description": "Point chaud mesuré : probabilité 88 %, au-dessus du télésiège des Trois Lacs et à 2,3 km du décollage de La Balme (FFVL 13736, vents favorables N, NE, E, NO ; décollage sous le vent d'ouest). Aucun texte ne décrit ce secteur en vol. Déduction : seconde piste d'ascendance du domaine de Saint-Sorlin, à l'est du col de la Croix de Fer, qui marche surtout le matin et à l'intersaison.",
+     "confidence": "low",
+     "sources": [
+      "S100",
+      "S139",
+      "S140"
      ]
     }
    ],
@@ -2495,6 +2794,121 @@
      "sources": [
       "S135"
      ]
+    },
+    {
+     "id": "toussuire-pierre-du-turc-hiver",
+     "name": "La Toussuire – Pierre du Turc (décollage d'hiver, à ski)",
+     "lon": 6.2236,
+     "lat": 45.2503,
+     "alt_m": 2299,
+     "orientations": [
+      "N",
+      "NE",
+      "E"
+     ],
+     "coord_quality": "source",
+     "description": "Décollage d'hiver au sommet du télésiège de la Pierre du Turc (accès aussi par le téléski du Chamois ou Pré La Combe depuis Les Sybelles), skis aux pieds seulement. Vent favorable : nord, est léger. Atterrissage : La Toussuire ou Le Corbier. Danger : par tendance ouest la crête vers l'atterrissage est souvent infranchissable (voir danger). Entretenu par l'école Parapente Air Line.",
+     "sources": [
+      "S137",
+      "S140"
+     ]
+    },
+    {
+     "id": "toussuire-grand-truc-hiver",
+     "name": "La Toussuire – Grand Truc (décollage d'hiver, à ski)",
+     "lon": 6.2576,
+     "lat": 45.2736,
+     "alt_m": 2182,
+     "orientations": [
+      "S",
+      "SW",
+      "W"
+     ],
+     "coord_quality": "source",
+     "description": "Décollage d'hiver au sommet du télésiège du Grand Truc, au bord d'une piste (attention au matériel). Vent favorable : sud, sud-ouest, ouest. Atterrissage à La Toussuire, zone hors piste près du garage à dameuse et des retenues colinéaires, avec une manche à air pour la zone d'hélicoptère : ne pas voler si un hélicoptère manœuvre. Entretenu par l'école Parapente Air Line.",
+     "sources": [
+      "S137",
+      "S140"
+     ]
+    },
+    {
+     "id": "sfl-homme-de-beure-nord",
+     "name": "Saint-François-Longchamp – Homme de Beure (décollage nord, à ski)",
+     "lon": 6.3673,
+     "lat": 45.4383,
+     "alt_m": 2263,
+     "orientations": [
+      "N"
+     ],
+     "coord_quality": "source",
+     "description": "Zone de décollage nord à l'Homme de Beure (col de la Madeleine), tracée sur le fichier KMZ du comité de Savoie (2020) ; le câble d'avalanches passe à proximité (voir danger).",
+     "sources": [
+      "S138",
+      "S135"
+     ]
+    },
+    {
+     "id": "sfl-dome-piste-rouge-sud",
+     "name": "Saint-François-Longchamp – dôme de la piste rouge (décollage sud, à ski)",
+     "lon": 6.3831,
+     "lat": 45.4287,
+     "alt_m": 2031,
+     "orientations": [
+      "S"
+     ],
+     "coord_quality": "source",
+     "description": "Zone de décollage sud au dôme de la piste rouge, tracée sur le fichier KMZ du comité de Savoie (2020).",
+     "sources": [
+      "S138"
+     ]
+    },
+    {
+     "id": "sfl-marquis-soleil-rouge-sud",
+     "name": "Saint-François-Longchamp – Marquis / Soleil Rouge (décollage sud, à ski)",
+     "lon": 6.3678,
+     "lat": 45.4059,
+     "alt_m": 1929,
+     "orientations": [
+      "S"
+     ],
+     "coord_quality": "source",
+     "description": "Zone de décollage sud sous le télésiège des Marquis (le fichier KMZ du comité de Savoie la nomme à la fois « Marquis » et « Soleil Rouge sud »), au sud-ouest de la station.",
+     "sources": [
+      "S138",
+      "S133"
+     ]
+    },
+    {
+     "id": "sfl-grand-schuss-nord-ouest",
+     "name": "Saint-François-Longchamp – téléski du Grand Schuss (décollages nord et ouest, à ski)",
+     "lon": 6.3755,
+     "lat": 45.4033,
+     "alt_m": 2110,
+     "orientations": [
+      "N",
+      "W"
+     ],
+     "coord_quality": "source",
+     "description": "Deux zones de décollage, nord et ouest, au téléski du Grand Schuss (positions du fichier KMZ du comité de Savoie, 2020).",
+     "sources": [
+      "S138"
+     ]
+    },
+    {
+     "id": "sfl-lauziere-sud",
+     "name": "Saint-François-Longchamp – télésiège de la Lauzière (décollage sud, à ski)",
+     "lon": 6.3595,
+     "lat": 45.4434,
+     "alt_m": 2491,
+     "orientations": [
+      "S"
+     ],
+     "coord_quality": "source",
+     "description": "Zone de décollage sud, une centaine de mètres sous la zone nord du télésiège de la Lauzière (FFVL 2323), tracée sur le fichier KMZ du comité de Savoie (2020).",
+     "sources": [
+      "S138",
+      "S135"
+     ]
     }
    ],
    "landings": [
@@ -2578,6 +2992,78 @@
      "description": "Fiche FFVL : atterrissage d'altitude, niveau vert, favorable de N à O par le sud (défavorable à l'est) ; « vent variable pouvant être fort » ; atterrissage sur les pistes de ski interdit ; webcam de la station indiquée sur la fiche.",
      "sources": [
       "S134"
+     ]
+    },
+    {
+     "id": "sfl-atterro-col-de-la-madeleine",
+     "name": "Saint-François-Longchamp – atterrissage du col de la Madeleine",
+     "lon": 6.373,
+     "lat": 45.4351,
+     "alt_m": 2005,
+     "coord_quality": "source",
+     "description": "Zone d'atterrissage hors piste au col de la Madeleine, tracée sur le fichier KMZ du comité de Savoie (2020).",
+     "sources": [
+      "S138"
+     ]
+    },
+    {
+     "id": "sfl-atterro-bas-lauziere",
+     "name": "Saint-François-Longchamp – atterrissage du bas du télésiège de la Lauzière",
+     "lon": 6.361,
+     "lat": 45.4309,
+     "alt_m": 1913,
+     "coord_quality": "source",
+     "description": "Atterrissage au pied du télésiège de la Lauzière (fichier KMZ du comité de Savoie, 2020).",
+     "sources": [
+      "S138"
+     ]
+    },
+    {
+     "id": "sfl-atterro-secours-nord-station",
+     "name": "Saint-François-Longchamp – atterrissage de secours au nord de la station",
+     "lon": 6.3634,
+     "lat": 45.423,
+     "alt_m": 1672,
+     "coord_quality": "source",
+     "description": "Atterrissage de secours au nord de la station (fichier KMZ du comité de Savoie, 2020).",
+     "sources": [
+      "S138"
+     ]
+    },
+    {
+     "id": "sfl-atterro-3-sapins",
+     "name": "Saint-François-Longchamp – atterrissage des Trois Sapins",
+     "lon": 6.3636,
+     "lat": 45.4134,
+     "alt_m": 1626,
+     "coord_quality": "source",
+     "description": "Atterrissage des Trois Sapins, au sud de la station (fichier KMZ du comité de Savoie, 2020).",
+     "sources": [
+      "S138"
+     ]
+    },
+    {
+     "id": "sfl-atterro-bas-marquis",
+     "name": "Saint-François-Longchamp – atterrissage du bas du télésiège des Marquis (et secours)",
+     "lon": 6.3575,
+     "lat": 45.413,
+     "alt_m": 1553,
+     "coord_quality": "source",
+     "description": "Atterrissage au pied du télésiège des Marquis et atterrissage de secours un peu plus bas (6.3559, 45.4115), fichier KMZ du comité de Savoie (2020).",
+     "sources": [
+      "S138"
+     ]
+    },
+    {
+     "id": "sfl-atterro-bas-madeleine-valmorel",
+     "name": "Col de la Madeleine – atterrissage bas côté Valmorel",
+     "lon": 6.3968,
+     "lat": 45.4492,
+     "alt_m": 1625,
+     "coord_quality": "source",
+     "description": "Atterrissage bas côté Valmorel au pied du col de la Madeleine, tracé sur le fichier KMZ du comité de Savoie (2020).",
+     "sources": [
+      "S138"
      ]
     }
    ],
@@ -2796,7 +3282,10 @@
     "Transiter depuis le Grand Arc en restant plutôt à droite (vers l'amont de la Combe) car la brise pousse ; certains jours elle s'éteint et il faut tirer au plus court [S130 stage CHVD 2021].",
     "Au bout de Belledonne, partir de très haut (2300 m ou plus) pour traverser la Maurienne : les arrivées en face se font vers 1500-1800 m et la remontée peut prendre 40 minutes [S110, S124].",
     "Au col du Glandon, ne pas se poser dans le troupeau, sur la tente-buvette ni sur les voitures garées : c'est ce qui menace le vol sur le site [S125].",
-    "Pour un vol rando matinal, viser le thermique de 10h et être posé avant la brise de vallée de 11h-11h30 [S132]."
+    "Pour un vol rando matinal, viser le thermique de 10h et être posé avant la brise de vallée de 11h-11h30 [S132].",
+    "À La Toussuire en été, décoller de la Grande Verdette le matin : le thermique y arrive dès 10h-10h30 ; ne pas se placer sous le vent de la pointe de Comborcière [S136].",
+    "À La Toussuire en hiver, vérifier la visibilité jusqu'au Corbier avant de décoller de la Pierre du Turc : par tendance ouest la crête vers l'atterrissage de la station est souvent infranchissable [S137].",
+    "À Saint-François-Longchamp, consulter le fichier KMZ du comité de Savoie avant de voler à ski : il localise les zones de décollage et d'atterrissage ainsi que le câble d'avalanches entre la piste noire et l'Homme de Beure [S138]."
    ]
   },
   {
@@ -4040,6 +4529,74 @@
       "S48",
       "S8",
       "MS8"
+     ]
+    },
+    {
+     "id": "pontet-clot-des-chamois-pentes-ouest",
+     "name": "Villar-d'Arêne : Clot des Chamois, pentes ouest au nord du lac du Pontet (thermique d'après-midi)",
+     "lon": 6.3518,
+     "lat": 45.0638,
+     "alt_m": 2527,
+     "coord_quality": "source",
+     "best_hours": "milieu de journée et fin d'après-midi, surtout en été (point chaud mesuré : 76 % à midi, 87 % en fin de journée, 86 % en été ; rien le matin)",
+     "trigger": "Versant de 37° exposé à l'ouest au Clot des Chamois (IGN), 1,6 km au nord du décollage du lac du Pontet",
+     "description": "Point chaud mesuré : probabilité 85 %, l'après-midi d'été, à 1,6 km du décollage du lac du Pontet (FFVL 5214, vents favorables SO et O, « site officiel » cité par l'office de tourisme de La Grave avec la pente école des Cours). Le profil horaire d'un versant ouest, sans rien le matin, concorde avec l'orientation du décollage. Aucun récit de pilote ne le décrit : déduction, d'après les traces GPS et le relief. Le plafond de 4050 m au-dessus du col du Lautaret (thermique voisin du secteur) en reste la suite possible.",
+     "confidence": "low",
+     "sources": [
+      "S63",
+      "S17",
+      "S139",
+      "S140"
+     ]
+    },
+    {
+     "id": "albiez-grande-chible-pentes-est",
+     "name": "Montricher-Albanne : la Grande Chible, pentes est près du col d'Emy (thermique du matin, secteur d'Albiez)",
+     "lon": 6.3755,
+     "lat": 45.1803,
+     "alt_m": 2821,
+     "coord_quality": "source",
+     "best_hours": "le matin (point chaud mesuré : 85 % le matin, rien à midi ni le soir), en été (81 %)",
+     "trigger": "Versant de 26° exposé à l'est à 0,2 km de la Grande Chible (IGN), entre le col d'Emy et le pas de l'Âne",
+     "description": "Point chaud mesuré peu marqué (probabilité 80 %, le matin d'été) à 2,8 km au sud-ouest du décollage des Aplanes (FFVL 5232, sommet de la piste rouge d'Albiez à 2000 m, fiche qui avertit d'un possible vent de travers « par vent d'Est » ; atterrissage derrière l'église). Aucun texte de pilote ne décrit Albiez en vol. Déduction : seul thermique du matin visible sur les traces autour du site, sur un versant tourné à l'est.",
+     "confidence": "low",
+     "sources": [
+      "S74",
+      "S139",
+      "S140"
+     ]
+    },
+    {
+     "id": "orelle-cret-fenere-pentes-sud-est",
+     "name": "Orelle : crêt Fénère, pentes sud-est (thermique du matin et du printemps)",
+     "lon": 6.543,
+     "lat": 45.2338,
+     "alt_m": 2376,
+     "coord_quality": "source",
+     "best_hours": "le matin (95 %) et en milieu de journée (86 %), au printemps (92 %) et en été (89 %)",
+     "trigger": "Versant de 33° exposé au sud-est à 0,2 km du sommet du crêt Fénère (IGN), commune d'Orelle",
+     "description": "Point chaud mesuré : probabilité 93 %, le plus marqué du secteur. Il est à 3,7 km de la cime de Caron (ParaglidingEarth : Caron Nord, Sud, Ouest, décollages de haute montagne à 3069-3140 m). Aucun récit ne le cite. Déduction : relief exposé au sud-est, qui chauffe tôt, de la même famille que le plateau de Bellecombe (voir saint-michel-bellecombe-pentes-sud-ouest).",
+     "confidence": "low",
+     "sources": [
+      "S139",
+      "S140"
+     ]
+    },
+    {
+     "id": "monetier-cassille-pentes-sud",
+     "name": "Le Monêtier-les-Bains : tête de la Cassille, pentes sud (thermique de midi et de l'automne)",
+     "lon": 6.4984,
+     "lat": 45.042,
+     "alt_m": 2988,
+     "coord_quality": "source",
+     "best_hours": "milieu de journée (81 %) et fin d'après-midi (75 %), surtout en automne (81 %) ; rien le matin ni en été",
+     "trigger": "Pente douce (18°) exposée au sud à 0,2 km de la tête de la Cassille, au-dessus de la combe du lac Rouge (IGN)",
+     "description": "Point chaud mesuré peu marqué (probabilité 81 %), à 6,7 km au sud-est du décollage de Plan Lachat. Aucun texte ne le cite : le club de Briançon et le topo de Chocard décrivent les Granges du Galibier, le col du Galibier sud et Plan Lachat, jamais ce relief de la commune du Monêtier-les-Bains. Déduction : point de relance possible sur la crête qui sépare le Galibier du Monêtier, à confirmer.",
+     "confidence": "low",
+     "sources": [
+      "S33",
+      "S139",
+      "S140"
      ]
     }
    ],
@@ -5840,6 +6397,78 @@
    "type": "web",
    "lang": "fr",
    "notes": "Fiche FFVL 2323 : décollage 2516 m, niveau bleu, décollages à ski ; au-delà de 20 km/h de vent déconseillé ; zones hors piste non entretenues ; câble « Catex » entre le départ de la piste noire et l'Homme de Beure."
+  },
+  {
+   "id": "S136",
+   "title": "Speedbelles'air : Voler en parapente l'été à La Toussuire (décollage de la Grande Verdette)",
+   "url": "https://web.archive.org/web/2025/https://speedbellesair.net/voler-a-la-toussuire/voler-en-parapente-lete/",
+   "publisher": "Speedbelles'air (club de La Toussuire)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Page lue dans la copie de web.archive.org (le domaine speedbellesair.net ne répond plus) : orientation nord-est, vent favorable nord, vol du matin essentiellement, thermique dès 10h-10h30, danger sous le vent de la pointe de Comborcière."
+  },
+  {
+   "id": "S137",
+   "title": "Speedbelles'air : Voler en parapente l'hiver à La Toussuire (Pierre du Turc, Grand Truc)",
+   "url": "https://web.archive.org/web/2025/https://speedbellesair.net/voler-a-la-toussuire/voler-en-parapente-lhiver/",
+   "publisher": "Speedbelles'air (club de La Toussuire)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Page lue dans la copie de web.archive.org : deux décollages d'hiver entretenus par l'école Parapente Air Line (Pierre du Turc, Grand Truc), vents favorables, danger de la crête vers l'atterrissage, atterrissage hors piste près du garage à dameuse."
+  },
+  {
+   "id": "S138",
+   "title": "Sites de vol à ski de Saint-François-Longchamp (fichier KMZ du comité de Savoie, 2020)",
+   "url": "http://savoie73.free.fr/SitesDeVolsSkiSFL2020.kmz",
+   "publisher": "CDVL 73 (comité de vol libre de Savoie)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fichier KMZ cité par la fiche FFVL 2323 : décollages Nord/Sud (Lauzière, Homme de Beure, Dôme de la piste rouge, Soleil Rouge, Marquis, Grand Schuss), atterrissages (Col de la Madeleine, bas de la Lauzière, centrale, 3 Sapins, secours), ligne du câble « présence de câble » pour les avalanches ; positions lues dans le doc.kml."
+  },
+  {
+   "id": "S139",
+   "title": "Paragliding Thermal Maps (kk7) : points chauds de thermiques mesurés par les traces GPS",
+   "url": "https://thermal.kk7.ch/",
+   "publisher": "thermal.kk7.ch (CC BY-NC-SA 4.0)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Probabilités de thermique (toutes saisons, matin / milieu de journée / fin de journée) lues dans les fichiers téléchargés le 7 octobre 2026 ; ne disent pas ce qui déclenche."
+  },
+  {
+   "id": "S140",
+   "title": "BD TOPO et RGE ALTI de l'IGN (toponymes, altitudes, pente et exposition)",
+   "url": "https://geoservices.ign.fr/bdtopo",
+   "publisher": "IGN (Géoplateforme)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Altitude, pente et exposition calculées sur le MNT RGE ALTI à 150 m autour de chaque point ; toponymes et remontées mécaniques du WFS BD TOPO."
+  },
+  {
+   "id": "S141",
+   "title": "Col De La Croix De Fer en Parapente (vidéo YouTube)",
+   "url": "https://www.youtube.com/watch?v=KfsAmg0yuXk",
+   "publisher": "YouTube (pilote)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Description : « trois vols du matin au col de la Croix de Fer, trois décollages différents avec atterrissage à Saint-Sorlin-d'Arves »."
+  },
+  {
+   "id": "S142",
+   "title": "ParaglidingEarth : Col de la Madeleine (décollage après le télésiège de la Lauzière)",
+   "url": "https://paraglidingearth.com/?site=10679",
+   "publisher": "ParaglidingEarth",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Description du site 10679 : 2500 m après le télésiège de la Lauzière, décollage sud-est le matin ou nord-est « si vent de vallée »."
+  },
+  {
+   "id": "S143",
+   "title": "ParaglidingEarth : Val Pelouse (Arvillard)",
+   "url": "https://paraglidingearth.com/?site=2987",
+   "publisher": "ParaglidingEarth",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Site 2987 : décollage 1696 m orienté N, SO, O, NO, thermiques et soaring signalés ; accès à pied 5 minutes depuis le bout de la route."
   }
  ]
 }

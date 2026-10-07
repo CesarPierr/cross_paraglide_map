@@ -72,3 +72,52 @@ Convention de confiance : plusieurs sources concordantes ou récit précis = `me
 - « Antenne de Pennes » (récit Solaure, Diois), Tête de la Dame, col de Bachal : hors lot ou sans coordonnée trouvée.
 - Laffrey, Sénépy, Monteynard : aucun récit de pilote décrivant des raccroches ou des plafonds (seuls la brise, le soaring du Conest et le vol du matin du Sénépy sont documentés) ; Mens (hors Châtel), Lalley, Clelles, Vassieux, Font d'Urle : rien d'exploitable. Laffrey : fil CHVD sans aérologie thermique, topo EOSYA illisible sans JavaScript.
 - Pages bloquées : voir `.cache/research/blocked_urls.txt` (3 lignes ajoutées).
+
+## Passe secteurs minces
+
+Date : 7 octobre 2026. Objectif : creuser les secteurs les moins documentés de l'atlas, un par un. Convention de confiance : récit précis ou plusieurs récits = `medium` ; extrapolation du relief ou des traces GPS seules = `low` avec « déduction ». Identifiants existants conservés, rien supprimé. `npm run data:build -- --check` : aucune alerte nouvelle ; `npm run model:check` : 0 paire de brises opposées.
+
+### Matheysine – Drac (`matheysine`)
+
+Volumes avant → après : brises 3 → 3, convergences 0 → 0, hazards 12 → 14, thermiques 1 → 14, soarings 2 → 2, décollages 11 → 12 (Grand Serre ouest, ajouté avec le secteur de la cuvette), atterrissages 8 → 8, effets synoptiques 6 → 7, routes 1 → 2, conseils 5 → 8 ; 13 sources nouvelles (S230 à S242) et 2 figures (F10-matheysine, F11-matheysine).
+
+**Sources nouvelles ou relues**
+- Présentation *La Grosse Miche* « Cross avancé : massifs et transitions » (2018, PDF) : carte « Taillefer » (page 16) et transition « > Taillefer » (page 29), lues en image. Les ronds orange (relances), les deux cheminements, les flèches d'entrée et les triangles 1 (zone sous le vent) et 2 (turbulences) ont été géoréférencés par ajustement affine sur six repères (Valbonnais, La Salette, Rocher du Lac, Lavaldens, Oris-en-Rattier, Entraigues), erreur sur les repères de 100 à 200 m : positions `approx` pour les triangles, recoupées par les points chauds kk7 pour les ronds. Ces deux pages n'avaient pas été exploitées (seules les pages 10 et 26 l'étaient pour la Maurienne).
+- Récits du club *Saint-Hilaire* (9 avril 2017, avril 2018, juin 2025) : parcours des Richards à Lumbin par La Salette, le Coiro, la tête de Barbabon et le Taillefer (déjà cités par les lots Chartreuse et Bauges, jamais pour la Matheysine) ; récits de *Luc Armant* (18 août 2006, sud très fort sur le Coiro et le Taillefer) et de *Jérôme Canaud* (Air Tour 2011 : faces ouest du Conest) du site Au gré de l'air ; *Blues Team* (mai 2015, Coiro et Taillefer) ; triangle de 185 km du 19 juillet 2019 (Parapente Pays de Gex : piège de Valbonnais) ; récit de Honorin Hamard (juillet 2016, La Salette).
+- Pages du club *Envol Sud-Isère* pour la Tête de Vache (turbulences « en cas de brise/activité thermique ») et le Colombier (restitution du soir), fiches FFVL déjà citées et points chauds de thermal.kk7.ch.
+
+**Ajouté**
+- *Relances du parcours classique des Richards vers Chamrousse* (`medium`) : épaule sud-est du Coiro, zone ascendante au nord-ouest du sanctuaire de La Salette (plafond 2800 m), pentes sud du Taillefer, pentes sud de la tête de Barbabon et du Grand Armet ; route `salette-coiro-barbabon-taillefer-chamrousse` (31 km) avec les distances et altitudes de transition de La Grosse Miche.
+- *Thermiques des décollages FFVL sans thermique documenté* : Côte Rotte (`low`, point chaud à 98 %, le plus régulier de la zone), Jas d'Oris (`medium`, carte et traces GPS), Le Combenon (`medium`, club), Laffrey (`medium`, forum, « un peu de thermique » par bise légère), Colombiers (restitution du soir, `medium`, club), Conest (pentes sud du matin et faces ouest/nord-ouest de l'Air Tour, `medium`). Le texte « thermique » du soaring de Laffrey n'avait pas de thermique : il est maintenant décrit.
+- *Autres* : cercle de Lavaldens et La Morte (`low`), Coiro sud (`low`).
+- *Pièges* : zone sous le vent et turbulences du Coiro (triangles de la carte, piège de Valbonnais de 2019), sud très fort sur le Taillefer (2006). Effet « vent du sud », trois conseils (transitions chiffrées, pièges du Coiro, Grand Serre « sans rendement »).
+
+**Divergences et doutes**
+- Grand Serre : « grande pente en herbe orientée à l'ouest sans rendement » (Air Tour 2011) contre « bulles thermodynamiques bien présentes » (CHVD, 30 octobre 2024) ; les traces GPS donnent par ailleurs un point chaud à 98 % sur la Côte Rotte, 2 km au sud. Les avis sont conservés, et le décollage ouest du Grand Serre (2141 m) est ajouté.
+- Coiro : « puissant » par sud établi (2017), « agréable en basse couche, turbulent en altitude » par brise (2018), rien du tout par sud très fort (2006) ; les trois sont décrits.
+
+**Introuvable**
+- Les Souillets (FFVL 3009) : aucun point chaud mesuré à moins de 3 km, aucun texte (« décollage pratiqué » seul) : aucun thermique créé. Sénépy et Monteynard : toujours aucun récit de raccroche ; le « thermique puissant et rugueux avant La Mure » du vol de Luc Armant du 27 juillet 2005 (Bleyne – La Mure) n'a pas de position (non créé).
+- Le récit de l'Air Tour place le Sénépy, la Pierre Plantée et les faces ouest au-dessus du lac de Monteynard sans repère cohérent avec la carte IGN : non repris.
+
+### Cuvette grenobloise (`grenoble-cuvette`)
+
+Volumes avant → après : brises 7 → 7, convergences 3 → 3, hazards 7 → 7, thermiques 1 → 7, soarings 1 → 1, décollages 3 → 3, atterrissages 4 → 4, effets synoptiques inchangés, routes inchangées, conseils 4 → 6 ; 18 sources nouvelles (S243 à S260). Le Grand Serre (décollage ouest) est ajouté dans `matheysine`.
+
+**Sources nouvelles ou relues**
+- Corpus *CHVD* (1326 articles aspirés dans `.cache/research/docs/vercors_grenoble_trieves/chvd/`) interrogé par lieu : sept récits sur l'Écoutoux, le Rachais et le Néron (2006, 2007, 2009, 2012, 2021, 2022, 2025), cinq sur Chalais (2016, 2021, 2023, 2024, 2026), quatre sur la crête des Ramettes de Chamrousse (2014, 2020, 2021 ; carte SpotAir de juillet 2021), un sur le Grand Serre (30 octobre 2024). Aucun récit CHVD ne parle de Poisat.
+- Site du club *Les Arcs en Ciel* (Voreppe), page de Chalais : voler le matin ou par sud faible, soaring du soir le long des falaises, départ en cross par le rocher de Chalves et la Grande Sûre ; sa carte interactive (KML Google) donne les positions des décollages, atterrissages et lignes électriques, déjà connues.
+- Fiche FFVL 13474 de Poisat lue en entier dans le navigateur intégré (le texte stocké dans la base était tronqué) : brise thermique de fin de journée, appui dynamique face nord, vue à 180°, consigne de ne pas se présenter sous le vent du site.
+- Points chauds de thermal.kk7.ch et IGN (BD TOPO : toponymes ; RGE ALTI : altitude, pente, exposition) pour les positions.
+
+**Ajouté**
+- *L'Écoutoux* (`medium`) : le triangle qui barre la vallée du Sapey, relance entre le Rachais et la Chartreuse, absent de toutes les données et point chaud mesuré à 100 % en toute saison (récits : puissant, anémique, ou rien à l'aplomb du sommet selon le jour).
+- *Chalais* (`medium`) : bulles du matin sur l'épaule, belvédère et aiguille, remontée au-dessus du déco, soaring du soir ; le point chaud mesuré est sur la pente ouest sous le belvédère (profil de midi), ce que le texte du club ne précise pas.
+- *Poisat* (`medium`) : thermique de la pente ouest et brise thermique du soir (texte FFVL).
+- *Chamrousse* (`medium`) : crête des Ramettes.
+- *Néron* (`low`) : pied de la face sud-est au-dessus de Saint-Martin-le-Vinoux (point chaud à 99 %, mais zone sous le vent de la brise de Voreppe selon le CHVD) ; Quaix-en-Chartreuse (la Sonnarie, `low`).
+
+**Introuvable**
+- Aucun récit ne décrit les ascendances de Vizille, de Notre-Dame-de-Mésage ni des Corbières (points chauds à 86-89 %), ni de la Dent de Moirans et du Petit Montaud (secteur Vercors nord) ; non créés.
+- L'ascendance mesurée de la Grande Sûre (le Moine, rochers de Pierre Taillée), documentée par un récit CHVD de septembre 2024, relève du secteur Chartreuse : non créée ici.
+- La carte des brises à l'atterrissage de Chalais (PiouPiou 111) renvoie à une photo Google non lisible.

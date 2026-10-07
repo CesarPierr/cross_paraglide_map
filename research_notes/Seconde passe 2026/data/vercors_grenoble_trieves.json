@@ -510,6 +510,123 @@
       "S226"
      ],
      "confidence": "medium"
+    },
+    {
+     "id": "ecoutoux-triangle-vallee-du-sapey",
+     "name": "Écoutoux : triangle qui barre la vallée du Sapey, relance à l'entrée de la Chartreuse",
+     "lon": 5.7565,
+     "lat": 45.2517,
+     "alt_m": 1265,
+     "coord_quality": "source",
+     "best_hours": "toute la journée (point chaud mesuré : 100 % le matin, à midi et le soir), toute l'année",
+     "trigger": "Pente de 34° exposée au sud au pied du sommet de l'Écoutoux (IGN), triangle qui ferme la vallée du Sapey entre le Rachais et la Pinéa",
+     "description": "RELANCE de la transition Rachais → Chartreuse. CHVD (3 mai 2021) : « en général ce triangle qui barre la vallée du Sapey produit un puissant thermique », mais ce jour-là une « pompe anémique » jusqu'à 1650 m, suffisante pour rejoindre Chamechaude ; (20 avril 2022) premier plafond à 2100 m puis le gros thermique des faces sud de Chamechaude à 2400 m ; (9 août 2012) « porte d'entrée de la Chartreuse : ça reprend bien sur le côté gauche », puis crête sud de la Pinéa aux thermiques « très toniques » ; (26 avril 2007) montée « efficace, mais sans violence ». Un autre jour (4 mai 2006), « à l'aplomb du sommet, pas de thermique significatif » : le bon thermique se trouve à côté. Le point chaud mesuré par les traces GPS est à 180 m du sommet : probabilité 100 %, à tout moment et en toute saison, le plus fiable de la zone.",
+     "confidence": "medium",
+     "sources": [
+      "S243",
+      "S244",
+      "S246",
+      "S247",
+      "S245",
+      "S193",
+      "S230",
+      "S231"
+     ]
+    },
+    {
+     "id": "neron-pied-face-sud-est-saint-martin-le-vinoux",
+     "name": "Néron : pied de la face sud-est au-dessus de Saint-Martin-le-Vinoux (couloir Godefroy)",
+     "lon": 5.7077,
+     "lat": 45.2234,
+     "alt_m": 887,
+     "coord_quality": "source",
+     "best_hours": "le matin et à midi (99 %), moins en fin de journée (69 %) ; toute l'année (96 % en hiver)",
+     "trigger": "Pente de 43° exposée au sud-est sous le sommet du Néron, au-dessus du couloir Godefroy et de Saint-Martin-le-Vinoux (IGN)",
+     "description": "Point chaud mesuré parmi les plus réguliers de la zone (probabilité 99 %), à 1,3 km au sud du thermique du Néron (voir chartreuse/neron). Piège associé : le CHVD note que « la zone sud-est du Néron est sous le vent de la brise de Voreppe à Grenoble, et c'est très turbulent » (5 avril 2009), avec 15 à 20 km/h de brise à la crête, et le topo du Rachais conseille d'éviter la pointe sud du Néron ; un autre récit trouve le Néron « calme, ça monte en thermique bien organisé » en arrivant de la Pinéa (2007). Déduction : l'ascendance mesurée au pied de la face sud-est existe mais l'air y est haché par la brise ; ne pas la chercher bas.",
+     "confidence": "low",
+     "sources": [
+      "S248",
+      "S247",
+      "S230",
+      "S231"
+     ]
+    },
+    {
+     "id": "quaix-sonnarie-aiguille-de-quaix-sud-est",
+     "name": "Quaix-en-Chartreuse : la Sonnarie et l'aiguille de Quaix, pentes sud-est entre l'Écoutoux et la Pinéa",
+     "lon": 5.7294,
+     "lat": 45.2672,
+     "alt_m": 1096,
+     "coord_quality": "source",
+     "best_hours": "midi et fin de journée (91 %), matin 84 % ; printemps et été (91-92 %), pas en automne",
+     "trigger": "Pente de 23° exposée au sud-est entre l'aiguille de Quaix et la Sonnarie (IGN)",
+     "description": "Point chaud mesuré (probabilité 90 %) à 1,5 km au sud de la Pinéa et sur l'itinéraire Écoutoux → crête sud de la Pinéa décrit par le CHVD (« les thermiques sont très toniques et il faut bien tenir son aile », 9 août 2012). Aucun récit ne nomme ce relief : déduction à partir des traces GPS.",
+     "confidence": "low",
+     "sources": [
+      "S246",
+      "S230",
+      "S231"
+     ]
+    },
+    {
+     "id": "chalais-epaule-belvedere-aiguille",
+     "name": "Chalais : épaule, belvédère et aiguille sous le décollage (bulles du matin, remontée au-dessus du déco)",
+     "lon": 5.6562,
+     "lat": 45.2894,
+     "alt_m": 789,
+     "coord_quality": "source",
+     "best_hours": "milieu de journée et soir (point chaud mesuré : 71 % à midi, 62 % le soir, surtout en automne) ; les bulles du matin se tiennent devant le décollage orienté sud (club)",
+     "trigger": "Pente de 38° exposée à l'ouest au pied du Rocher de Bellevue (le belvédère de Chalais), 0,5 km au sud-ouest du décollage",
+     "description": "Décollage FFVL 324 (S, 1023 m) et réserve PMR (FFVL 2315, 923 m). Le club des Arcs en Ciel écrit qu'on y vole « le matin et/ou par S faible, avant que la brise ne s'installe en vallée », avec du « soaring le soir, le long des falaises » ; le départ en cross vers la Chartreuse par le rocher de Chalves et la Grande Sûre est « pas évident mais possible ». CHVD : le 28 février 2021 « les premières bullettes de la journée » permettent de se maintenir sur l'épaule dès 9h45 ; le 29 novembre 2023, par tendance sud, on tourne « devant le déco, l'aiguille et jusqu'au monastère » ; le 15 novembre 2024 un nuage permet de jouer 20 minutes au-dessus du belvédère ; le 6 septembre 2026, 30 minutes de « petites conditions thermiques bien sympas » avec « une remontée au-dessus du déco ». Le point chaud mesuré (74 %) est à 0,5 km du décollage, à la hauteur du belvédère.",
+     "confidence": "medium",
+     "sources": [
+      "S254",
+      "S249",
+      "S250",
+      "S251",
+      "S252",
+      "S253",
+      "S230",
+      "S231"
+     ]
+    },
+    {
+     "id": "poisat-pente-ouest-brise-thermique-du-soir",
+     "name": "Poisat : pente ouest sous le décollage, brise thermique du soir (appui dynamique par nord)",
+     "lon": 5.7767,
+     "lat": 45.1564,
+     "alt_m": 714,
+     "coord_quality": "source",
+     "best_hours": "fin de journée en été (fiche) ; point chaud mesuré : 78 % à midi, 79 % en fin de journée",
+     "trigger": "Pente de 22° exposée à l'ouest aux Civières, juste au nord-ouest du décollage (IGN)",
+     "description": "La fiche FFVL du décollage de Poisat (13474, 681 m, niveau marron, conventionné) décrit un site qui « fonctionne en brise thermique de fin de journée en été », donc de nord : après le décollage il faut tourner à droite pour se mettre en appui dynamique sur la face nord, souvent invisible du décollage tant que le gain est faible ; le passage sur la face sud-est n'est possible que pour se reposer au décollage et seulement si le gain est suffisant, « il ne faut pas se présenter sous le vent du site ». Vue à 180° du nord-ouest au sud-est, lignes à haute tension. Le point chaud mesuré (probabilité 79 %, midi et fin de journée) est à 0,2 km du décollage, sur la pente ouest.",
+     "confidence": "medium",
+     "sources": [
+      "S255",
+      "S108",
+      "S230",
+      "S231"
+     ]
+    },
+    {
+     "id": "chamrousse-ramettes-ouest-aiguille",
+     "name": "Chamrousse : crête des Ramettes, thermique de la sortie du décollage de l'Aiguille",
+     "lon": 5.8811,
+     "lat": 45.1428,
+     "alt_m": 1516,
+     "coord_quality": "source",
+     "best_hours": "de midi au soir (point chaud mesuré : 79 % à midi, 85 % en fin de journée), toute l'année, maximum en automne (97 %)",
+     "trigger": "Pente de 24° exposée au nord-ouest sous la crête des Ramettes (IGN), à 0,3 km de la crête",
+     "description": "Point chaud mesuré (probabilité 85 %) sur la crête des Ramettes, à 3,8 km à l'est-sud-est de l'atterrissage d'Uriage et à 1,4 km au nord-nord-ouest du décollage de l'Aiguille. Récits CHVD : le 23 juillet 2014, au départ de Chamrousse le soir, « en contournant les Ramettes, un gentil thermique me remonte jusqu'au déco » ; le 21 mai 2021, des vols du soir (19h-20h) où l'on joue « le long de la crête des Ramettes » tant que les thermiques durent ; le 26 août 2020, un thermique « bien repéré » après le décollage de l'Aiguille puis 2250 m avec des rapaces au-dessus de l'épaulette. La carte SpotAir (traces GPS) montre « une très forte densité de passage au-dessus des crêtes des Ramettes » à la sortie du décollage. Complète la face ouest de Chamrousse (voir belledonne/chamrousse-face-ouest).",
+     "confidence": "medium",
+     "sources": [
+      "S257",
+      "S256",
+      "S258",
+      "S259",
+      "S230",
+      "S231"
+     ]
     }
    ],
    "soaring_spots": [
@@ -673,7 +790,9 @@
     "Le vol libre dans l'Y se joue le matin tôt et en début d'après-midi : la brise de la cluse (forte) fait disparaître l'atterrissage de Lumbin en sécurité après 9h30-10h par régime N/NE [S35].",
     "La zone de cisaillement entre le vent météo (S/SO) et la brise de vallée est un « bon » moment à passer avant de se poser : l'atterrissage est alors descendant dans les vallées [S35].",
     "À Voreppe, le déco de Chalais est abrité de la brise de Nord mais l'atterrissage de Rivalières ne l'est pas : prévoir la marge pour la brise qui monte dès la fin de matinée [S100][S101].",
-    "La brise de Grenoble (au-delà de 35 km/h) remonte la vallée d'Uriage : les signes sont visibles au déco, ne pas décoller [S104]."
+    "La brise de Grenoble (au-delà de 35 km/h) remonte la vallée d'Uriage : les signes sont visibles au déco, ne pas décoller [S104].",
+    "Chalais : décoller le matin ou par sud faible, avant la brise qui rend l'atterrissage de Rivalières problématique ; le soaring du soir le long des falaises est la seule prolongation connue [S254].",
+    "À l'Écoutoux, ne pas chercher le thermique à l'aplomb du sommet : il se trouve sur le côté ou un peu plus loin vers Chamechaude selon le jour [S245][S246]."
    ]
   },
   {
@@ -5252,6 +5371,35 @@
       "S214",
       "S226"
      ]
+    },
+    {
+     "id": "coiro-sous-le-vent-brise-valbonnais",
+     "name": "Coiro : zone sous le vent de la brise et turbulences de thermique, vent et brise (piège de Valbonnais)",
+     "kind": "lee-rotor",
+     "lon": 5.9122,
+     "lat": 44.9154,
+     "coord_quality": "approx",
+     "radius_km": 1.5,
+     "conditions": "Brise de vallée de Valbonnais ou vent de sud sur le versant ouest du Taillefer ; après-midi d'été.",
+     "description": "La carte « Taillefer » de La Grosse Miche (présentation de 2018, page 16) marque deux triangles au Coiro : 1, « zone sous le vent (brise) », au sud du sommet ; 2, « turbulences (thermique/vent/brise) », à l'ouest, vers Oris-en-Rattier. Un récit de juillet 2019 confirme le piège : au-dessus de Valbonnais la remontée sur le Coiro est difficile et, en prenant une ligne de crête à gauche, le pilote est « méchamment sous le vent » car c'est la vallée de derrière, Oris-en-Rattier, qui prend le dessus ; un partenaire pose dans cette vallée et le col est passé à 2 m/sol. Positions lues sur la carte et reportées avec une incertitude de 200 à 300 m.",
+     "sources": [
+      "S232",
+      "S239"
+     ]
+    },
+    {
+     "id": "taillefer-coiro-sud-fort-face-ouest-sous-le-vent",
+     "name": "Taillefer et Coiro par sud très fort : vent canalisé en SSE, thermiques de la face ouest sous le vent",
+     "kind": "lee-rotor",
+     "lon": 5.925,
+     "lat": 45.0,
+     "coord_quality": "approx",
+     "radius_km": 6,
+     "conditions": "Vent de sud très fort en crête (vitesse sol de plus de 90 km/h au GPS en août 2006) ; après le lac du Sautet.",
+     "description": "Vol de Luc Armant du 18 août 2006 : le resserrement des montagnes au lac du Sautet accélère le flux de sud (jusqu'à 90 km/h au sol au GPS) ; au Coiro rien pour rejoindre les nuages, et au Taillefer « le vent fort est canalisé en sud-sud-est et les thermiques de la face ouest sont sous le vent » ; le pilote traverse ensuite « une zone de turbulence incroyablement étendue » avant que la masse d'air se calme en se bloquant sur le Taillefer. Position approximative : le massif entier.",
+     "sources": [
+      "S236"
+     ]
     }
    ],
    "thermal_spots": [
@@ -5268,6 +5416,252 @@
      "description": "Soaring par sud jusqu'à 25 km/h à partir du sommet sud, 40 min de marche ; 127 décollages en 2025 (S177).",
      "sources": [
       "S177"
+     ]
+    },
+    {
+     "id": "coiro-epaule-sud-est",
+     "name": "Coiro : épaule sud-est (sommet de la Cavale), point de relance entre La Salette et le Taillefer",
+     "lon": 5.9148,
+     "lat": 44.9252,
+     "alt_m": 2111,
+     "coord_quality": "source",
+     "best_hours": "de la fin de matinée au soir (point chaud mesuré : 82 % le matin et à midi, 78 % en fin de journée), au printemps et en été ; rien en hiver",
+     "trigger": "Épaule exposée au sud-est (44° de pente) sous le sommet du Coiro, au droit du sommet de la Cavale (IGN)",
+     "description": "POINT DE RELANCE du cheminement La Salette → Coiro → Taillefer → Chamrousse. Club Saint-Hilaire (9 avril 2017) : « Coiro puissant sur l'épaule SE, idem pour le Taillefer » ; (avril 2018) les faces du Coiro sont « agréables en basse couche malgré la brise mais plutôt turbulentes en altitude » ; (juin 2025) « bon plaf » au Coiro avant de survoler la tête de Barbabon. La carte « Taillefer » de La Grosse Miche y place un rond orange de relance et deux zones de danger (voir les pièges du Coiro). Le point chaud mesuré par les traces GPS est à 0,9 km du sommet : probabilité 80 %. Contre-exemple : par vent de sud très fort (vitesse sol de plus de 90 km/h au GPS, août 2006), le Coiro ne donne rien. Position : point chaud mesuré, confirmé par le topo.",
+     "confidence": "medium",
+     "sources": [
+      "S233",
+      "S234",
+      "S235",
+      "S232",
+      "S236",
+      "S230",
+      "S231"
+     ]
+    },
+    {
+     "id": "coiro-sud-entraigues-matin",
+     "name": "Coiro sud : pentes sud-ouest de l'Étillier au-dessus d'Entraigues (thermique du matin)",
+     "lon": 5.9295,
+     "lat": 44.9155,
+     "alt_m": 1624,
+     "coord_quality": "source",
+     "best_hours": "le matin (91 %) puis toute la journée (81 % à midi, 83 % le soir), du printemps à l'automne",
+     "trigger": "Pente de 32° exposée au sud-ouest sous l'Étillier, côté Entraigues, au sud-est du Coiro",
+     "description": "Point chaud mesuré (probabilité 80 %) qui correspond au second rond orange de la carte « Taillefer » de La Grosse Miche, au sud du Coiro, à l'arrivée de la flèche venant de La Salette. Aucun récit n'en parle séparément : le club note seulement que le Coiro est utilisable en basse couche malgré la brise. Déduction : entrée basse du Coiro quand on arrive de La Salette ou de Valbonnais ; un pilote qui y arrive avant le milieu de la journée y trouve le thermique du matin.",
+     "confidence": "low",
+     "sources": [
+      "S232",
+      "S234",
+      "S230",
+      "S231"
+     ]
+    },
+    {
+     "id": "salette-nord-sanctuaire",
+     "name": "Notre-Dame de la Salette : zone ascendante au nord-ouest du sanctuaire (plafond 2800 m)",
+     "lon": 5.9697,
+     "lat": 44.8622,
+     "alt_m": 2032,
+     "coord_quality": "source",
+     "best_hours": "de la fin de matinée au soir (point chaud mesuré : 73 % le matin, 82 % à midi, 80 % en fin de journée), surtout l'été et l'automne",
+     "trigger": "Pente raide (38°) exposée au sud sous le Gargas, à 0,8 km au nord-ouest du sanctuaire (IGN)",
+     "description": "RELANCE du cheminement des Richards vers le Taillefer. Club Saint-Hilaire (9 avril 2017) : après un plafond de 2800 m « avant de partir sur La Salette », « une bonne zone ascendante au N du sanctuaire » remonte à 2800 m ; (2018) « un thermique assez doux, mais qui décale beaucoup » au-dessus du sanctuaire ; (juillet 2019) 2800 m à Notre-Dame de la Salette. La carte de La Grosse Miche y place un rond orange et la transition vers le Coiro : 7 km, départ à plus de 2400 m, arrivée vers 1800 m. En juillet 2016 Honorin Hamard note « un terrain herbeux et stable, presque sans activité », jusqu'à la face rocheuse où un 4 m/s l'attend. Le point chaud mesuré (80 %) est à 0,8 km du sanctuaire.",
+     "confidence": "medium",
+     "sources": [
+      "S233",
+      "S234",
+      "S239",
+      "S232",
+      "S230",
+      "S231",
+      "S242"
+     ]
+    },
+    {
+     "id": "taillefer-sud-dreveta-grandes-roches",
+     "name": "Taillefer : pentes sud (crête de la Dréveta, Grandes Roches), relance avant Chamrousse",
+     "lon": 5.91,
+     "lat": 45.0243,
+     "alt_m": 2241,
+     "coord_quality": "source",
+     "best_hours": "de midi au soir (point chaud mesuré : 86 % à midi, 85 % en fin de journée), du printemps à l'automne",
+     "trigger": "Versant de 40° exposé au sud entre la crête de la Dréveta et les Grandes Roches, sous le Taillefer (IGN)",
+     "description": "POINT DE RELANCE avant la transition sur Chamrousse. Club Saint-Hilaire (2017) : « Coiro puissant sur l'épaule SE, idem pour le Taillefer », puis « on soigne le plaf » à 2800 m avant de basculer sur Chamrousse ; (2025) « nouveau plaf » au Taillefer qui permet de transiter directement sur Chamrousse. Blues Team (mai 2015) : « un petit alignement de nuages sous le vent du Taillefer » ; club (2018) : face ouest raccrochée puis catapulté à 3100 m. Par vent de sud très fort le thermique est sous le vent de la face ouest (Luc Armant, 2006). La Grosse Miche dessine un cheminement (pointillé) par les faces ouest de La Morte et de Lavaldens jusqu'au Taillefer. Position : point chaud mesuré à 85 %, 1 km au sud du rond orange de la carte.",
+     "confidence": "medium",
+     "sources": [
+      "S233",
+      "S234",
+      "S235",
+      "S238",
+      "S236",
+      "S232",
+      "S230",
+      "S231"
+     ]
+    },
+    {
+     "id": "barbabon-grand-armet-pentes-sud",
+     "name": "Tête de Barbabon et Grand Armet : pentes sud entre le Coiro et le Taillefer",
+     "lon": 5.9182,
+     "lat": 44.9888,
+     "alt_m": 2192,
+     "coord_quality": "source",
+     "best_hours": "toute la journée (point chaud mesuré : 84 % le matin, 87 % à midi, 83 % en fin de journée), de l'automne (93 %) au printemps (81 %)",
+     "trigger": "Versant de 31° exposé au sud sous la tête de Barbabon et la roche Frette (IGN)",
+     "description": "Relance intermédiaire du cheminement Coiro → Taillefer. Le stage cross de juin 2025 survole « la tête de Barbabon pour transiter directement sur le Taillefer » après un bon plafond au Coiro ; la carte « Taillefer » de La Grosse Miche place un rond orange au Grand Armet, à 300 m du point chaud mesuré (probabilité 85 %), sur le tireté orange qui mène au Taillefer. Aucun récit ne décrit le thermique lui-même.",
+     "confidence": "medium",
+     "sources": [
+      "S235",
+      "S232",
+      "S230",
+      "S231"
+     ]
+    },
+    {
+     "id": "lavaldens-faces-ouest-taillefer",
+     "name": "Lavaldens et La Morte : faces ouest sous le Taillefer (cheminement par l'ouest)",
+     "lon": 5.8935,
+     "lat": 45.0238,
+     "alt_m": 2143,
+     "coord_quality": "source",
+     "best_hours": "matin (80 %), midi (76 %) et fin de journée (75 %), surtout en automne (86 %)",
+     "trigger": "Versant de 25° exposé au sud-ouest au rocher du Grand Van et à l'arête de Brouffier (IGN)",
+     "description": "Point chaud mesuré (probabilité 76 %) qui coïncide avec le rond orange de la carte « Taillefer » de La Grosse Miche au-dessus de La Morte, sur le cheminement en pointillé rouge qui monte au Taillefer par les faces ouest (versant ouest, tendance sud). Aucun récit ne le décrit : déduction à partir de la carte et des traces GPS.",
+     "confidence": "low",
+     "sources": [
+      "S232",
+      "S230",
+      "S231"
+     ]
+    },
+    {
+     "id": "jas-oris-oris-en-rattier-pente-ouest",
+     "name": "Jas d'Oris et Oris-en-Rattier : pente ouest sous le décollage (thermique de l'après-midi)",
+     "lon": 5.8839,
+     "lat": 44.9276,
+     "alt_m": 1629,
+     "coord_quality": "source",
+     "best_hours": "milieu de journée et soir (point chaud mesuré : 90 % à midi, 89 % le soir), en été et en automne ; rien le matin",
+     "trigger": "Pente de 28° exposée à l'ouest au-dessus des Fonds Plaines, 0,3 km du décollage (IGN)",
+     "description": "Point chaud mesuré : probabilité 89 %, à 0,3 km du décollage du Jas d'Oris (FFVL 195, 1724 m, favorable SO, « aérologie de montagne, atterrissage très turbulent par vent de nord » selon le club Envol Sud-Isère) et à 300 m d'un rond orange de la carte « Taillefer » de La Grosse Miche à Oris-en-Rattier. Un récit de 2019 décrit au même endroit un piège : la vallée d'Oris-en-Rattier prend le dessus et met sous le vent la crête qu'on croyait au vent (voir le piège du Coiro).",
+     "confidence": "medium",
+     "sources": [
+      "S186",
+      "S232",
+      "S239",
+      "S230",
+      "S231"
+     ]
+    },
+    {
+     "id": "cote-rotte-versant-sud-ouest",
+     "name": "Côte Rotte (Villard-Saint-Christophe) : versant sud-ouest du décollage, thermique toute l'année",
+     "lon": 5.8231,
+     "lat": 44.9857,
+     "alt_m": 1688,
+     "coord_quality": "source",
+     "best_hours": "toute la journée (point chaud mesuré : 100 % le matin, 98 % à midi, 93 % en fin de journée), toute l'année (90 % en hiver, 99 % en automne)",
+     "trigger": "Pente douce de 16° exposée au sud-ouest sous le versant de la Côte Rotte (IGN), 0,4 km au sud du décollage",
+     "description": "Le point chaud le plus régulier de la Matheysine (probabilité 98 %), à 0,4 km du décollage de la Côte Rotte (FFVL 3049, 1754 m, 79 décollages en 2025) et à 2,7 km de celui de Combourcière (FFVL 3038, 1701 m). Aucune source de pilote ne le décrit. Divergence : en juin 2011 un pilote de l'Air Tour juge la grande pente herbeuse du Grand Serre, orientée à l'ouest et située 2 km au nord, « sans rendement » (pente voisine, autre exposition). Déduction : le versant sud-ouest de la Côte Rotte chauffe dès le matin ; atterrissage de Villard-Saint-Christophe à 1,6 km.",
+     "confidence": "low",
+     "sources": [
+      "S184",
+      "S185",
+      "S190",
+      "S237",
+      "S230",
+      "S231"
+     ]
+    },
+    {
+     "id": "combenon-tete-de-vache-thermique",
+     "name": "Le Combenon (Saint-Arey) : thermique au décollage de la Tête de Vache et du Razier",
+     "lon": 5.739,
+     "lat": 44.888,
+     "alt_m": 1081,
+     "coord_quality": "source",
+     "best_hours": "le matin et à midi (point chaud mesuré : 78 % et 86 %), au printemps et en hiver ; rien en été ni en automne",
+     "trigger": "Pente de 20° exposée au sud aux Sagnes et aux Savels, juste au sud-ouest des prés de la Chènevarie (décollage)",
+     "description": "Le club Envol Sud-Isère prévient que le décollage de la Tête de Vache (S, 1169 m) « peut être turbulent en cas de brise/activité thermique » : le thermique y existe donc au décollage. Point chaud mesuré à 0,7 km du Razier (FFVL 13626) et à 0,8 km de la Tête de Vache (FFVL 13720) : probabilité 85 %, surtout au printemps (82 %) et en hiver (83 %). Les fiches FFVL signalent des cailloux sous la sortie des deux décollages.",
+     "confidence": "medium",
+     "sources": [
+      "S240",
+      "S179",
+      "S180",
+      "S230",
+      "S231"
+     ]
+    },
+    {
+     "id": "laffrey-pente-nord-thermique-bise",
+     "name": "Laffrey : pente nord des Tibannes, « un peu de thermique » par bise légère",
+     "lon": 5.7836,
+     "lat": 45.0371,
+     "alt_m": 938,
+     "coord_quality": "source",
+     "best_hours": "milieu de journée et soir (point chaud mesuré : 88 % à midi, 90 % le soir), au printemps et en été",
+     "trigger": "Pente de 30° exposée au nord-nord-ouest aux Carrières et au bois de Montrochat, au droit du décollage des Fauries",
+     "description": "Le fil des pilotes de Grenoble sur les sites de vent de nord décrit Laffrey comme volable soit par une légère bise (moins de 15 km/h) « et un peu de thermique », soit par 20 à 30 km/h en dynamique pur ; à éviter par nord fort et instable. Le point chaud mesuré est au décollage des Fauries (FFVL 1821, 988 m, N/O/NO) : probabilité 89 %, de midi au soir au printemps et en été (90-91 %). C'est ce thermique de pente nord qui sert de départ en cross (198 décollages du Lieu-dit en 2025).",
+     "confidence": "medium",
+     "sources": [
+      "S8",
+      "S182",
+      "S106",
+      "S230",
+      "S231"
+     ]
+    },
+    {
+     "id": "conest-pentes-sud-matin",
+     "name": "Conest : pentes sud sous la Montagne du Conest, thermique du matin avant la brise de 12h",
+     "lon": 5.7256,
+     "lat": 44.9893,
+     "alt_m": 1583,
+     "coord_quality": "source",
+     "best_hours": "avant 12h : point chaud mesuré à 90 % le matin comme à midi, en été (86 %) et en automne (88 %)",
+     "trigger": "Pente de 25° exposée au sud sous la Montagne du Conest, au sud-ouest du décollage (IGN)",
+     "description": "Le décollage du Conest (FFVL 193, 1589 m) est idéal par sud jusqu'à 25 km/h, mais la fiche prévient que la brise s'installe dès 12h avec des cisaillements importants : il faut décoller avant. Le point chaud mesuré, à 0,9 km du décollage, donne le thermique de cette pente sud : probabilité 89 %, surtout le matin. Il complète le soaring par sud déjà décrit au sommet (voir conest-la-peyrouse).",
+     "confidence": "medium",
+     "sources": [
+      "S177",
+      "S64",
+      "S230",
+      "S231"
+     ]
+    },
+    {
+     "id": "conest-faces-ouest-brise-de-grenoble",
+     "name": "Conest : faces ouest et nord-ouest vers Notre-Dame-de-Commiers, poussé par la brise de Grenoble",
+     "lon": 5.7167,
+     "lat": 45.0095,
+     "alt_m": 1114,
+     "coord_quality": "source",
+     "best_hours": "fin de journée (point chaud mesuré : 80 % le soir), au printemps (81 %)",
+     "trigger": "Pente de 39° exposée au nord-ouest aux Frêtes et au Trémolet (commune de Notre-Dame-de-Commiers)",
+     "description": "Récit de l'Air Tour (juin 2011, cinquième jour) : de Vizille, le pilote choisit de suivre les faces ouest du Conest « poussé par la brise de Grenoble », arrive à 1600 m, puis « longe les faces Ouest » dans une masse d'air turbulente où « les déclenchements thermiques sont toniques » (il les repère aux vagues d'air qui retournent les feuilles) et remonte jusqu'au sommet en herbe du Conest. Position : point chaud mesuré (80 %) sur les pentes nord-ouest au nord du Conest ; le récit ne nomme pas le lieu précis.",
+     "confidence": "medium",
+     "sources": [
+      "S237",
+      "S230",
+      "S231"
+     ]
+    },
+    {
+     "id": "colombiers-restitution-du-soir",
+     "name": "Colombiers (Valbonnais) : restitution du soir, une fois passées les heures chaudes",
+     "lon": 5.9343,
+     "lat": 44.8723,
+     "alt_m": 1678,
+     "coord_quality": "source",
+     "best_hours": "fin d'après-midi et soir, après les heures chaudes de 11h au début du soir ; en été et au printemps",
+     "trigger": "Alpage du Colombier, pente de 27° autour du décollage (IGN)",
+     "description": "Le club Envol Sud-Isère conseille de laisser passer les heures chaudes : après 11h, au printemps et en été, la brise de vallée est forte et l'atterrissage problématique ; « ensuite, c'est volable jusqu'au soir sur la restite » mais la brise de vallée s'inverse à l'atterrissage d'Entraigues. Aucun point chaud mesuré n'existe à moins de 3 km du décollage, probablement faute de traces.",
+     "confidence": "medium",
+     "sources": [
+      "S241",
+      "S188",
+      "S231"
      ]
     }
    ],
@@ -5483,6 +5877,22 @@
      "sources": [
       "S188"
      ]
+    },
+    {
+     "id": "grand-serre-ouest",
+     "name": "Grand Serre (La Morte / Vizille) – décollage ouest, vol rando",
+     "lon": 5.8261,
+     "lat": 45.0053,
+     "alt_m": 2141,
+     "orientations": [
+      "W"
+     ],
+     "coord_quality": "approx",
+     "description": "Décollage ouest à 2141 m sur la butte herbeuse du Grand Serre, « vaste espace en herbe à pente douce », 1000 m de dénivelé (2h30 de marche depuis Cholonge), atterrissage à Vizille ou Cholonge ; « bulles thermodynamiques bien présentes » et une aérologie d'automne très sympa le 30 octobre 2024 (CHVD) ; un pilote de l'Air Tour juge en 2011 cette pente « sans rendement » (voir tips). Position approximative : le sommet IGN du Grand Serre (2133 m).",
+     "sources": [
+      "S260",
+      "S237"
+     ]
     }
    ],
    "landings": [
@@ -5643,6 +6053,15 @@
       "S177",
       "S175"
      ]
+    },
+    {
+     "wind": "Vent du Sud (flux de sud en altitude)",
+     "effect": "Le Coiro et le Taillefer se prennent par tendance sud, sur le versant ouest (carte de La Grosse Miche) : un sud établi pousse les pilotes des Richards vers Chamrousse avec des plafonds de 2800 à 3100 m et un Coiro « puissant sur l'épaule SE » (2017). Par sud très fort (vitesse sol de plus de 90 km/h au GPS en 2006) le Coiro ne donne rien, le vent est canalisé en SSE au Taillefer et les thermiques de la face ouest sont sous le vent.",
+     "sources": [
+      "S232",
+      "S233",
+      "S236"
+     ]
     }
    ],
    "xc_routes": [
@@ -5688,6 +6107,52 @@
       "S106",
       "S48"
      ]
+    },
+    {
+     "id": "salette-coiro-barbabon-taillefer-chamrousse",
+     "name": "La Salette → Coiro → Barbabon → Taillefer → Chamrousse (partie matheysine du parcours classique des Richards)",
+     "waypoints": [
+      {
+       "name": "Sanctuaire de Notre-Dame de la Salette",
+       "lon": 5.97864,
+       "lat": 44.85888,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Le Coiro",
+       "lon": 5.91326,
+       "lat": 44.93314,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Tête de Barbabon",
+       "lon": 5.9218,
+       "lat": 44.99072,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Le Taillefer",
+       "lon": 5.92428,
+       "lat": 45.03943,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Croix de Chamrousse",
+       "lon": 5.9026,
+       "lat": 45.1258,
+       "coord_quality": "source"
+      }
+     ],
+     "distance_km": 31.3,
+     "description": "Tronçon de la Matheysine du cheminement Richards → Lumbin décrit par le club Saint-Hilaire (avril 2017, avril 2018, juin 2025) : plafond de 2800 m au Taillefer ou au Grun de Saint-Maurice, zone ascendante au nord du sanctuaire de La Salette (2800 m), Coiro « puissant sur l'épaule SE », tête de Barbabon survolée pour transiter directement sur le Taillefer, plafond de 2800 m avant de basculer sur Chamrousse. La Grosse Miche chiffre la transition La Salette → Coiro (7 km, départ à plus de 2400 m, arrivée vers 1800 m) et la transition Châtel → Taillefer (15 km, départ à plus de 2800 m, arrivée vers 1400 m). Variante de 2018 : transition par l'Alpe du Grand Serre vers le Taillefer (forte descente dans la transition, puis face ouest raccrochée et 3100 m). Pièges : zone sous le vent et turbulences du Coiro (La Grosse Miche), vallée d'Oris-en-Rattier qui prend le dessus (2019).",
+     "confidence": "medium",
+     "sources": [
+      "S233",
+      "S234",
+      "S235",
+      "S232",
+      "S239"
+     ]
     }
    ],
    "tips": [
@@ -5695,7 +6160,10 @@
     "Si la bise souffle en altitude, compter 12-20 nds au ras du lac [S1].",
     "Conest : décoller avant 12h, la brise s'installe ensuite avec des cisaillements importants ; soaring de sud jusqu'à 25 km/h [S177].",
     "Atterrissage de Laffrey : il n'y a plus d'atterrissage officiel, seul le retour au déco est autorisé ; gradient et venturi au village de Laffrey et aux ruines de Séchilienne [S106].",
-    "Connex et La Ville : atterrissages à utiliser en régime de brise de nord (ou sans vent), pas par vent de sud au sol [S178][S191]."
+    "Connex et La Ville : atterrissages à utiliser en régime de brise de nord (ou sans vent), pas par vent de sud au sol [S178][S191].",
+    "De La Salette au Coiro (7 km), partir à plus de 2400 m pour arriver vers 1800 m ; du Châtel (Obiou) au Taillefer (15 km), partir à plus de 2800 m [S232].",
+    "Au Coiro, deux pièges notés sur la carte du club : zone sous le vent de la brise au sud du sommet, turbulences de thermique, de vent et de brise à l'ouest ; au-dessus de Valbonnais ne pas passer à gauche de la ligne de crête, la vallée d'Oris-en-Rattier prend le dessus [S232][S239].",
+    "La grande pente herbeuse du Grand Serre, orientée à l'ouest, est jugée « sans rendement » par un pilote de l'Air Tour en juin 2011, mais le CHVD y trouve le 30 octobre 2024 des « bulles thermodynamiques bien présentes » : les deux avis divergent, à vérifier sur place [S237][S260]."
    ]
   }
  ],
@@ -5888,6 +6356,43 @@
    "sources": [
     "S48",
     "S49"
+   ]
+  },
+  {
+   "id": "F10-matheysine",
+   "massif": "matheysine",
+   "title": "Carte « Taillefer » de la présentation La Grosse Miche : points de relance autour du Coiro, du Grand Armet et du Taillefer",
+   "page_url": "http://www.lagrossemiche.fr/wp-content/uploads/2018/04/cross_massifs-et-transitions.pdf",
+   "pdf_page": 16,
+   "publisher": "La Grosse Miche (club), J. Ruty",
+   "shows": "Versant ouest, tendance sud. Ronds orange = points de relance : Taillefer, deux sur les faces ouest de La Morte et Lavaldens, Grand Armet, sommet du Coiro, sud du Coiro, Oris-en-Rattier, ouest de Valbonnais, La Salette. Deux cheminements : pointillé rouge par l'ouest (Lavaldens, La Morte), tireté orange par le Grand Armet. Flèches vertes d'entrée depuis La Salette et depuis le sud-ouest (Valbonnais), flèches bleues de brise. Triangle 1 : « Coiro, zone sous le vent (brise) » ; triangle 2 : « Coiro, turbulences (thermique/vent/brise) ». Transitions : Dévoluy, Champsaur, Chamrousse. Zones : R196A1 Ouest Gap, parc des Écrins (1000 m/sol).",
+   "extracted_to": [
+    "coiro-epaule-sud-est",
+    "coiro-sud-entraigues-matin",
+    "taillefer-sud-dreveta-grandes-roches",
+    "barbabon-grand-armet-pentes-sud",
+    "lavaldens-faces-ouest-taillefer",
+    "jas-oris-oris-en-rattier-pente-ouest",
+    "coiro-sous-le-vent-brise-valbonnais"
+   ],
+   "sources": [
+    "S232"
+   ]
+  },
+  {
+   "id": "F11-matheysine",
+   "massif": "matheysine",
+   "title": "Transition « > Taillefer » de la présentation La Grosse Miche : depuis La Salette et depuis le Châtel",
+   "page_url": "http://www.lagrossemiche.fr/wp-content/uploads/2018/04/cross_massifs-et-transitions.pdf",
+   "pdf_page": 29,
+   "publisher": "La Grosse Miche (club), J. Ruty",
+   "shows": "Deux transitions vers le Taillefer : de La Salette au Coiro (flèche rouge, 7 km, départ à plus de 2400 m, arrivée 1800 m) et du Châtel par la vallée du Drac (flèche orange, 15 km, départ à plus de 2800 m, arrivée 1400 m) ; ronds orange de relance, flèches bleues de brise du Drac et de Monteynard ; triangles 1 (zone sous le vent, brise) et 2 (Coiro, turbulences).",
+   "extracted_to": [
+    "salette-nord-sanctuaire",
+    "salette-coiro-barbabon-taillefer-chamrousse"
+   ],
+   "sources": [
+    "S232"
    ]
   }
  ],
@@ -7664,6 +8169,285 @@
    "type": "web",
    "lang": "fr",
    "notes": "Sortie sur la crête après 25 min de bataille depuis une dalle rocheuse ; allers-retours Cornafion - col de l'Arc."
+  },
+  {
+   "id": "S230",
+   "title": "Paragliding Thermal Maps (kk7) : points chauds de thermiques mesurés par les traces GPS",
+   "url": "https://thermal.kk7.ch/",
+   "publisher": "thermal.kk7.ch (CC BY-NC-SA 4.0)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Probabilités de thermique (toutes saisons, matin / milieu de journée / fin de journée) lues dans les fichiers téléchargés le 7 octobre 2026 ; ne disent pas ce qui déclenche."
+  },
+  {
+   "id": "S231",
+   "title": "BD TOPO et RGE ALTI de l'IGN (toponymes, altitudes, pente et exposition)",
+   "url": "https://geoservices.ign.fr/bdtopo",
+   "publisher": "IGN (Géoplateforme)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Altitude, pente et exposition calculées sur le MNT RGE ALTI à 150 m autour de chaque point ; toponymes du WFS BD TOPO et du géocodeur."
+  },
+  {
+   "id": "S232",
+   "title": "Présentation « Cross avancé : massifs et transitions » (La Grosse Miche, avril 2018)",
+   "url": "http://www.lagrossemiche.fr/wp-content/uploads/2018/04/cross_massifs-et-transitions.pdf",
+   "publisher": "La Grosse Miche (club), J. Ruty",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Cartes annotées : page 16 « Taillefer » (ronds orange = points de relance, tireté et pointillé = cheminements, triangles 1 et 2 = zone sous le vent et turbulences au Coiro), page 29 « Transition > Taillefer » (La Salette → Coiro 7 km, départ > 2400 m, arrivée 1800 m ; Châtel → Taillefer 15 km, départ > 2800 m, arrivée 1400 m)."
+  },
+  {
+   "id": "S233",
+   "title": "Sortie navette du 9 avril 2017 : course contre les joufflus (club Saint-Hilaire)",
+   "url": "http://clubsthilair.fr/2017/04/11/sortie-navette-du-9-avril-course-contre-les-joufflus/",
+   "publisher": "Club St Hil'Air",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Vol des Richards à Lumbin : plafond de 2800 m avant la Salette, zone ascendante au nord du sanctuaire, « Coiro puissant sur l'épaule SE, idem pour le Taillefer », plafond de 2800 m avant de basculer sur Chamrousse."
+  },
+  {
+   "id": "S234",
+   "title": "Sortie navette aux Richards 1/2, avril 2018 (club Saint-Hilaire)",
+   "url": "http://clubsthilair.fr/2018/04/24/sortie-navette-aux-richards-1-2/",
+   "publisher": "Club St Hil'Air",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Vol des Richards à Lumbin : thermique doux au-dessus du sanctuaire de La Salette, faces du Coiro « agréables en basse couche malgré la brise mais plutôt turbulentes en altitude », transition par l'Alpe du Grand Serre vers le Taillefer, face ouest raccrochée puis 3100 m."
+  },
+  {
+   "id": "S235",
+   "title": "Récit de stage cross itinérant dans les Alpes du Sud (juin 2025, club Saint-Hilaire)",
+   "url": "http://clubsthilair.fr/2025/08/05/recit-de-stage-cross-itinerant-dans-les-alpes-du-sud/",
+   "publisher": "Club St Hil'Air / EPIC",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Journée du 25 juin : Richards, Grun de Saint-Maurice, Colombier, Coiro (bon plafond), tête de Barbabon, Taillefer (plafond), Chamrousse, Sept Laux, antenne d'Allevard, Val Pelouse."
+  },
+  {
+   "id": "S236",
+   "title": "Vol de Luc Armant du 18/08/2006, 176 km : sommet de la Gourre (Bernarde) – Lumbin",
+   "url": "https://www.augredelair.fr/wp-content/uploads/2015/01/luc_armant_luc33.pdf",
+   "publisher": "Au gré de l'air (ADLA), L. Armant",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Par vent de sud très fort en crête (vitesse sol de plus de 90 km/h au GPS), le Coiro ne donne rien, le vent est canalisé en sud-sud-est au Taillefer et les thermiques de la face ouest sont sous le vent ; zone de turbulence très étendue."
+  },
+  {
+   "id": "S237",
+   "title": "Le Air Tour c'est du velours ! (J. Canaud, 21-26 juin 2011)",
+   "url": "https://www.augredelair.fr/wp-content/uploads/2015/01/jerome_canaud_jeromeairtour.pdf",
+   "publisher": "Au gré de l'air (ADLA), J. Canaud",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Cinquième jour de l'Air Tour : de Saint-Mury à Vizille puis faces ouest du Conest poussé par la brise de Grenoble, sommet du Conest, Sénépy, Pierre Plantée ; Grand Serre jugé « sans rendement »."
+  },
+  {
+   "id": "S238",
+   "title": "« Des Alpes-Maritimes à la Haute-Savoie… 280 km de pur bonheur… ou presque » (Blues Team, mai 2015)",
+   "url": "https://bluesteam.canalblog.com/archives/2015/05/27/32123222.html",
+   "publisher": "Blues Team (blog)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Depuis le Coiro, un alignement de nuages sous le vent du Taillefer ; passage à plus de 3400 m derrière le Grand Pic de Belledonne."
+  },
+  {
+   "id": "S239",
+   "title": "Vercors - Diois - Dévoluy - Les Richards - Chamrousse : le triangle FAI 185 km du 19/07/2019 (Parapente Pays de Gex)",
+   "url": "https://www.parapentepaysdegex.fr/post/vercors-diois-d%C3%A9voluy-les-richards-chamrousse-le-triangle-fai-185-km-du-19-07-2019",
+   "publisher": "Parapente Pays de Gex",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Plafonds de 3300 m (La Prouveyrat, Grun de Saint-Maurice), 2800 m à La Salette ; piège de Valbonnais où la vallée d'Oris-en-Rattier prend le dessus ; restitution du soir jusqu'au Gua."
+  },
+  {
+   "id": "S240",
+   "title": "Envol Sud-Isère : site de la Tête de Vache",
+   "url": "https://envol-sud-isere.com/site-de-la-tete-de-vache/",
+   "publisher": "Envol Sud-Isère (club)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Décollage S, 1169 m, au-dessus des prés de la Chènevarie : « peut être turbulent en cas de brise/activité thermique. Attention aux ruches ! »"
+  },
+  {
+   "id": "S241",
+   "title": "Envol Sud-Isère : site du Colombier (Valbonnais)",
+   "url": "https://envol-sud-isere.com/site-du-colombier/",
+   "publisher": "Envol Sud-Isère (club)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Décollage N/NO, 1720 m : forte brise de vallée et atterrissage problématique après 11h au printemps et en été ; « volable jusqu'au soir sur la restite » mais la brise de vallée s'inverse à l'atterrissage ; vent de nord fort sur le Vet."
+  },
+  {
+   "id": "S242",
+   "title": "Honorin Hamard flies record 306km FAI triangle (XC Mag, juillet 2016)",
+   "url": "https://xcmag.com/news/honorin-hamard-flies-record-306km-fai-triangle/",
+   "publisher": "XC Mag (Ozone)",
+   "type": "web",
+   "lang": "en",
+   "notes": "Récit du 9 juillet 2016 : à Notre-Dame de la Salette, zone herbeuse et stable presque sans activité jusqu'à la face rocheuse où un 4 m/s attend, plafond bas à 2600 m."
+  },
+  {
+   "id": "S243",
+   "title": "CHVD : Magic Week J3 (3 mai 2021)",
+   "url": "https://www.chvd.org/2021/05/03/magic-week-j3/",
+   "publisher": "CHVD (club de vol libre de Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Après le Rachais, « en général ce triangle qui barre la vallée du Sapey produit un puissant thermique », mais ce jour-là « une pompe anémique » jusqu'à 1650 m, suffisante pour rejoindre Chamechaude."
+  },
+  {
+   "id": "S244",
+   "title": "CHVD : Cross à la Dent du Chat (20 avril 2022)",
+   "url": "https://www.chvd.org/2022/04/20/cross-a-la-dent-du-chat/",
+   "publisher": "CHVD (club de vol libre de Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Du Rachais à l'Écoutoux, premier plafond à 2100 m, puis gros thermique des faces sud de Chamechaude à 2400 m."
+  },
+  {
+   "id": "S245",
+   "title": "CHVD : 4 mai 2006, trois massifs vus d'en haut",
+   "url": "https://www.chvd.org/2006/06/08/4-mai-2006-trois-massifs-vu-den-haut/",
+   "publisher": "CHVD (club de vol libre de Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Au Rachais à 14h30, ascendances de sud-ouest modérées et organisées ; « à l'aplomb » de l'Écoutoux « pas de thermique significatif », bonne ascendance un kilomètre plus loin vers Chamechaude."
+  },
+  {
+   "id": "S246",
+   "title": "CHVD : Triangle chartrousien en marche et vol (9 août 2012)",
+   "url": "https://www.chvd.org/2012/08/09/triangle-chartrousien-en-marche-et-vol/",
+   "publisher": "CHVD (club de vol libre de Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Après Château Nardant et le Saint-Eynard, « l'Écoutoux, porte d'entrée de la Chartreuse : ça reprend bien sur le côté gauche », crête sud de la Pinéa aux thermiques « très toniques », 2200 m à la Scia."
+  },
+  {
+   "id": "S247",
+   "title": "CHVD : Mon premier 8 en Sud Chartreuse (26 avril 2007)",
+   "url": "https://www.chvd.org/2007/04/26/mon-premier-8-en-sud-chartreuse/",
+   "publisher": "CHVD (club de vol libre de Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Écoutoux puis Pinéa : « montée efficace, mais sans violence » ; Pinéa-Néron : « ça monte en thermique bien organisé » au Néron."
+  },
+  {
+   "id": "S248",
+   "title": "CHVD : Un week-end fumant (5 avril 2009)",
+   "url": "https://www.chvd.org/2009/04/05/un-week-end-fumant/",
+   "publisher": "CHVD (club de vol libre de Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Au Néron : « la zone sud-est est sous le vent de la brise de Voreppe à Grenoble, et c'est très turbulent » ; contournement par le sud contré par 15 à 20 km/h de brise."
+  },
+  {
+   "id": "S249",
+   "title": "CHVD : Chalais, 28 février 2021",
+   "url": "https://www.chvd.org/2021/03/01/chalais-28-fevrier-2021/",
+   "publisher": "CHVD (club de vol libre de Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Décollage à 9h45 ; « les premières bullettes de la journée pour se maintenir sur l'épaule » ; légère brise de sud en vallée."
+  },
+  {
+   "id": "S250",
+   "title": "CHVD : Aiguille de Chalais (29 novembre 2023)",
+   "url": "https://www.chvd.org/2023/11/29/aiguille-de-chalais-3/",
+   "publisher": "CHVD (club de vol libre de Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Tendance sud : « ça permet de tourner un peu devant le déco, l'aiguille et jusqu'au monastère » ; à la descente, « ça recule » ; trois atterrissages hors terrain."
+  },
+  {
+   "id": "S251",
+   "title": "CHVD : Chalais (15 novembre 2024)",
+   "url": "https://www.chvd.org/2024/11/17/chalais-2/",
+   "publisher": "CHVD (club de vol libre de Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Petit vent de sud : un nuage se forme et permet de « jouer 20 minutes au-dessus du Belvédère » ; atterrissage dans la rosée."
+  },
+  {
+   "id": "S252",
+   "title": "CHVD : Chalais (6 septembre 2026)",
+   "url": "https://www.chvd.org/2026/09/08/chalais-4/",
+   "publisher": "CHVD (club de vol libre de Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Vol de 30 minutes « avec de petites conditions thermiques bien sympas et une remontée au-dessus du déco », devant les promeneurs du belvédère."
+  },
+  {
+   "id": "S253",
+   "title": "CHVD : Une autre manière de profiter du site de Chalais (27 décembre 2015)",
+   "url": "https://www.chvd.org/2016/01/05/une-autre-maniere-de-profiter-du-site-de/",
+   "publisher": "CHVD (club de vol libre de Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Le décollage est « un grand pré en pente, alimenté en légère brise montante » ; brise encore descendante à l'atterrissage le matin ; danger : brise forte dès la mi-journée, vents de nord, ligne HT."
+  },
+  {
+   "id": "S254",
+   "title": "Les Arcs en Ciel de Voreppe : site de Chalais",
+   "url": "https://www.lesarcsenciel.fr/AeC/ou-voler/chalais-2/",
+   "publisher": "Les Arcs en Ciel (club de Voreppe)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Chalais permet de voler le matin ou par sud faible, avant la brise ; soaring le soir le long des falaises ; départ en cross « pas évident mais possible » vers la Chartreuse par le rocher de Chalves et la Grande Sûre."
+  },
+  {
+   "id": "S255",
+   "title": "Terrain de pratique POISAT [13474] (fiche complète)",
+   "url": "https://federation.ffvl.fr/terrain/13474",
+   "publisher": "FFVL (fiche de terrain)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche lue en entier au navigateur : brise thermique de fin de journée en été, donc de nord ; appui dynamique sur la face nord ; vue à 180° du nord-ouest au sud-est ; tourner à droite après le décollage ; ne pas se présenter sous le vent du site."
+  },
+  {
+   "id": "S256",
+   "title": "CHVD : Chamrousse - Aiguille, vol du soir espoir (21 mai 2021)",
+   "url": "https://www.chvd.org/2021/05/21/vol-du-soir-espoir/",
+   "publisher": "CHVD (club de vol libre de Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Décollages entre 19h et 20h ; les thermiques diminuent peu à peu après avoir joué le long de la crête des Ramettes."
+  },
+  {
+   "id": "S257",
+   "title": "CHVD : Fin de série en Belledonne (23 juillet 2014)",
+   "url": "https://www.chvd.org/2014/07/23/fin-de-serie-en-belledonne/",
+   "publisher": "CHVD (club de vol libre de Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Au départ de Chamrousse le soir : « ça monte, c'est doux, c'est rond » ; en contournant les Ramettes, un gentil thermique remonte jusqu'au décollage."
+  },
+  {
+   "id": "S258",
+   "title": "CHVD : L'aiguillette, 26 août 2020",
+   "url": "https://www.chvd.org/2020/08/29/laiguillette-26-08-2020/",
+   "publisher": "CHVD (club de vol libre de Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Après le décollage, un thermique bien repéré qui ne veut pas beaucoup élever, puis des rapaces indiquent « que c'est par là que ça se passe » le long de l'épaulette sous la cabane ; 2250 m puis 2650 m au sommet."
+  },
+  {
+   "id": "S259",
+   "title": "CHVD : Le parapente 2.0 : SpotAir (8 juillet 2021)",
+   "url": "https://www.chvd.org/2021/07/08/le-parapente-2-0-spotair/",
+   "publisher": "CHVD (club de vol libre de Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Carte des thermiques déduite des traces GPS : « à la sortie du décollage de l'Aiguille, une très forte densité de passage au-dessus des crêtes des Ramettes »."
+  },
+  {
+   "id": "S260",
+   "title": "CHVD : Le Grand Serre (30 octobre 2024)",
+   "url": "https://www.chvd.org/2024/11/01/le-grand-serre-2/",
+   "publisher": "CHVD (club de vol libre de Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Décollage ouest de 2141 m, « vaste espace en herbe à pente douce » ; « bulles thermodynamiques bien présentes » ; atterrissage à Vizille ou Cholonge ; vautours qui aident à détecter les thermiques."
   }
  ]
 }

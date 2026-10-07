@@ -4873,6 +4873,300 @@
      "sources": [
       "S69"
      ]
+    },
+    {
+     "id": "izoard-clot-la-cime-pente-sud-est",
+     "name": "Izoard – Clot la Cime : pente sud-est sous le décollage (2900 m atteints au-dessus du Clôt la Cime)",
+     "lon": 6.7205,
+     "lat": 44.8098,
+     "alt_m": 2505,
+     "coord_quality": "source",
+     "best_hours": "le matin et à midi (point chaud mesuré : 98 % le matin, 92 % à midi) ; été et automne (97-99 %), hiver 84 %",
+     "trigger": "Pente de 26° exposée au sud-est au pied du sommet de Clot la Cime, 0,7 km au sud du décollage (IGN)",
+     "description": "DÉCLENCHEUR des grands cross de l'Izoard. Point chaud mesuré par les traces GPS (probabilité 97 %) sous le décollage de Clot la Cime. Cross Country Magazine (record junior de 301 km, 7 août 2025) : décollage à 9h11, montée facile, la journée étant déjà lancée, 2900 m « au-dessus du Clôt la Cime » puis cap vers la frontière italienne avec trois pilotes. Chocard : décollage large et confortable à 370 m de dénivelé (1 h depuis le col), mais site complexe, très musclé au printemps et en été ; le décollage de Clot la Cime est cité parmi les sites sensibles aux dust devils. Voir aussi izoard-vent-arriere pour la tendance O à N.",
+     "confidence": "medium",
+     "sources": [
+      "S110",
+      "S27",
+      "S73",
+      "S17",
+      "S105",
+      "S106"
+     ]
+    },
+    {
+     "id": "izoard-coste-belle-pente-sud-ouest",
+     "name": "Izoard – Coste Belle : pente sud-ouest du ravin de Coste Belle, thermique d'automne",
+     "lon": 6.7456,
+     "lat": 44.8006,
+     "alt_m": 2315,
+     "coord_quality": "source",
+     "best_hours": "le matin (99 %) et à midi (97 %), surtout à l'automne (98 %) ; été 77 %, hiver 84 %, rien au printemps",
+     "trigger": "Pente de 20° exposée au sud-ouest dans le ravin de Coste Belle, 2,4 km au sud-est du col (IGN)",
+     "description": "Point chaud mesuré (probabilité 96 %) à l'entrée du ravin de Coste Belle, second décollage classique de l'Izoard. Le forum Para Briançon note qu'à l'automne l'Izoard, côté Queyras depuis Coste Belle, donne des « thermiques généreux » le long des arêtes effilées (voir thermiques-izoard-rochebrune) : le point chaud confirme le profil automnal. Chocard : décollage à rejoindre à pied depuis le col.",
+     "confidence": "medium",
+     "sources": [
+      "MS15",
+      "S27",
+      "S105",
+      "S106"
+     ]
+    },
+    {
+     "id": "izoard-tronchet-crete-sud",
+     "name": "Izoard : crête du Tronchet, pentes sud (thermique du matin, été et automne)",
+     "lon": 6.758,
+     "lat": 44.8008,
+     "alt_m": 2479,
+     "coord_quality": "source",
+     "best_hours": "le matin (95 %), midi 71 % ; été 92 % et automne 90 %",
+     "trigger": "Pente de 23° exposée au sud sous la crête du Tronchet, 0,2 km de la crête (IGN)",
+     "description": "Point chaud mesuré (probabilité 91 %) à 1 km à l'est de Coste Belle, au pied de la crête du Tronchet et du col du Tronchet. Aucun texte ne le décrit : déduction à partir des traces GPS, sur le même versant sud-ouest à sud que les décollages de l'Izoard.",
+     "confidence": "low",
+     "sources": [
+      "S105",
+      "S106"
+     ]
+    },
+    {
+     "id": "ceillac-brunet-ravins-rabinoux-charpenelle",
+     "name": "Ceillac : faces sud-ouest des ravins de Rabinoux et de la Charpenelle, thermique au-dessus de Brunet",
+     "lon": 6.8112,
+     "lat": 44.6813,
+     "alt_m": 2222,
+     "coord_quality": "source",
+     "best_hours": "toute la journée (point chaud mesuré : 99 % le matin, 100 % à midi, 99 % le soir) du printemps à l'automne, rien en hiver",
+     "trigger": "Pente de 30° exposée au sud-ouest entre le ravin de la Charpenelle et le ravin de Rabinoux (IGN), 2 km à l'est-sud-est de Brunet",
+     "description": "Le topo Chocard écrit de Brunet (840 m de dénivelé depuis Ceillac, à faire très tôt le matin ou hors saison de brise) qu'il « permet d'être placé haut pour un départ en thermique » : c'est le thermique de ce vol rando. Point chaud mesuré par les traces GPS parmi les plus réguliers du Queyras (probabilité 100 %, 2,6 km au nord-est du décollage de Ceillac 1 et de ses « conditions thermiques en fin de matinée début d'après-midi, souvent trop fortes l'après-midi » selon Chocard). La position de Brunet est approximative.",
+     "confidence": "medium",
+     "sources": [
+      "S69",
+      "S10",
+      "S105",
+      "S106"
+     ]
+    },
+    {
+     "id": "ceillac-col-fromage-crete-de-la-selle",
+     "name": "Ceillac : col Fromage et crête de la Selle, pentes ouest (thermique d'été)",
+     "lon": 6.8126,
+     "lat": 44.6914,
+     "alt_m": 2529,
+     "coord_quality": "source",
+     "best_hours": "toute la journée (point chaud mesuré : 88 % le matin, 90 % à midi, 86 % le soir), été 91 % et automne 88 %",
+     "trigger": "Versant de 34° exposé à l'ouest entre le col Fromage et la pointe de Rasis, sous la crête de la Selle (IGN)",
+     "description": "Point chaud mesuré (probabilité 90 %) 1 km au nord du précédent et à 1,9 km à l'est-nord-est de Brunet. Aucun texte ne le décrit : déduction à partir des traces GPS ; en altitude (2529 m), au-dessus de l'inversion de brise de Ceillac.",
+     "confidence": "low",
+     "sources": [
+      "S105",
+      "S106"
+     ]
+    },
+    {
+     "id": "agnel-sud-pentes-sud-est",
+     "name": "Col Agnel sud : pentes sud-est du sommet frontalier (thermique du matin, été et automne)",
+     "lon": 6.9787,
+     "lat": 44.6657,
+     "alt_m": 2580,
+     "coord_quality": "source",
+     "best_hours": "le matin (98 %) et à midi (93 %), été 98 % et automne 99 %",
+     "trigger": "Pente de 22° exposée au sud-est, 2 km au sud du col Agnel (IGN)",
+     "description": "Point chaud mesuré (probabilité 98 %) au sud du col Agnel, d'où partent des grands triangles : le 9 juillet 2016 Honorin Hamard y décolle à 9h36 avec un plafond de nuages à 3500 m et part d'abord vers le sud (306 km FAI). Chocard dessine une flèche de Lombarde franchissant le col Agnel vers le haut Guil. Aucun récit ne décrit le thermique lui-même : déduction.",
+     "confidence": "low",
+     "sources": [
+      "S112",
+      "S8",
+      "S105",
+      "S106"
+     ]
+    },
+    {
+     "id": "agnel-sud-ouest-pentes-est",
+     "name": "Col Agnel : pentes est du sommet frontalier au sud-ouest du col (thermique du matin)",
+     "lon": 6.9653,
+     "lat": 44.6569,
+     "alt_m": 2655,
+     "coord_quality": "source",
+     "best_hours": "le matin (99 %) et à midi (93 %), été 98 % et automne 95 %",
+     "trigger": "Pente de 29° exposée à l'est, 3 km au sud-sud-ouest du col Agnel (IGN)",
+     "description": "Point chaud mesuré (probabilité 98 %) à 1,5 km du précédent, sur la crête frontalière au sud du col Agnel. Aucun récit : déduction à partir des traces GPS ; ces deux points sont les premières ascendances du matin au départ du col Agnel.",
+     "confidence": "low",
+     "sources": [
+      "S112",
+      "S105",
+      "S106"
+     ]
+    },
+    {
+     "id": "saint-paul-hugues-pentes-sud-est",
+     "name": "Saint-Paul-sur-Ubaye (limite du Queyras) : pentes sud-est au-dessus du vallon des Hugues, thermique du matin d'été",
+     "lon": 6.9001,
+     "lat": 44.6296,
+     "alt_m": 2805,
+     "coord_quality": "source",
+     "best_hours": "fin de matinée (point chaud mesuré : 91 % le matin, rien l'après-midi), été 91 %",
+     "trigger": "Pente de 25° exposée au sud-est, 2805 m, au nord du vallon des Hugues (IGN)",
+     "description": "Point chaud mesuré (probabilité 91 %), à la limite entre le Queyras et l'Ubaye (commune de Saint-Paul-sur-Ubaye), à 9 km à l'est-sud-est de Ceillac. Aucun texte ne le décrit : déduction.",
+     "confidence": "low",
+     "sources": [
+      "S105",
+      "S106"
+     ]
+    },
+    {
+     "id": "saint-paul-hugues-pentes-est",
+     "name": "Saint-Paul-sur-Ubaye (limite du Queyras) : versant est raide au-dessus du vallon des Hugues, thermique du matin d'été",
+     "lon": 6.8874,
+     "lat": 44.6181,
+     "alt_m": 2743,
+     "coord_quality": "source",
+     "best_hours": "fin de matinée (point chaud mesuré : 90 % le matin, rien l'après-midi), été 91 % et automne 85 %",
+     "trigger": "Versant de 52° exposé à l'est, 2743 m, 0,9 km au sud du vallon des Hugues (IGN)",
+     "description": "Point chaud mesuré (probabilité 90 %), 1,6 km au sud-ouest du précédent. Aucun texte ne le décrit : déduction ; relief très raide, accessible seulement aux pilotes en vol de distance.",
+     "confidence": "low",
+     "sources": [
+      "S105",
+      "S106"
+     ]
+    },
+    {
+     "id": "sarsena-bobbio-pellice-pentes-sud",
+     "name": "Bobbio Pellice (Italie) : Sarsenà, pentes sud sous le décollage (haute Val Pellice)",
+     "lon": 7.1143,
+     "lat": 44.8191,
+     "alt_m": 1338,
+     "coord_quality": "source",
+     "best_hours": "toute la journée (point chaud mesuré : 100 % le matin et à midi, 97 % le soir), toute l'année (99 % en hiver)",
+     "trigger": "Pente de 27° exposée au sud à Pautasset, 0,15 km sous le décollage de Sarsenà (IGN, 1338 m)",
+     "description": "Le club VentoRelativo décrit Sarsenà comme le décollage au-dessus de Bobbio Pellice, « en fond de la Val Pellice, dernier village avant la frontière française » : décollage à 1416 m, exposition sud/sud-est, atterrissage le long de la route provinciale. Le point chaud mesuré est au décollage même : probabilité 100 % à toute heure et en toute saison, le plus régulier du secteur du Queyras. Aucun récit ne décrit le thermique lui-même ; la Val Pellice n'est reliée au Queyras que par la crête frontalière.",
+     "confidence": "medium",
+     "sources": [
+      "S108",
+      "S107",
+      "S105",
+      "S106"
+     ]
+    },
+    {
+     "id": "val-pellice-la-roussa-pentes-sud",
+     "name": "Haute Val Pellice (Italie) : La Roussa, pentes sud",
+     "lon": 7.0814,
+     "lat": 44.7779,
+     "alt_m": 2042,
+     "coord_quality": "source",
+     "best_hours": "toute la journée (point chaud mesuré : 93 % le matin, 95 % à midi, 94 % le soir), printemps à automne",
+     "trigger": "Pente de 25° exposée au sud à La Roussa (OSM), commune de Bobbio Pellice",
+     "description": "Point chaud mesuré (probabilité 95 %) dans la haute Val Pellice, à 5,4 km au sud-sud-ouest du décollage de Sarsenà. Aucun texte ne décrit cette vallée en vol ; les traces GPS y passent probablement lors des tronçons « vers l'est » des grands triangles de l'Izoard (Edouard Potel, 18 août 2025 : « aller-retour vers l'est » au départ). Déduction.",
+     "confidence": "low",
+     "sources": [
+      "S107",
+      "S111",
+      "S105",
+      "S106"
+     ]
+    },
+    {
+     "id": "val-pellice-crete-sud-2520",
+     "name": "Haute Val Pellice (Italie) : pentes sud à 2520 m sous la crête frontalière, thermique du printemps",
+     "lon": 7.0354,
+     "lat": 44.8162,
+     "alt_m": 2520,
+     "coord_quality": "source",
+     "best_hours": "matin 84 %, midi 93 %, soir 85 %, surtout au printemps (96 %) ; rien en été ni en automne",
+     "trigger": "Pente de 32° exposée au sud à 2520 m, commune de Bobbio Pellice (OSM)",
+     "description": "Point chaud mesuré (probabilité 94 %) à 6,2 km à l'ouest de Sarsenà, vers la frontière. Aucun texte : déduction.",
+     "confidence": "low",
+     "sources": [
+      "S107",
+      "S105",
+      "S106"
+     ]
+    },
+    {
+     "id": "val-pellice-frontiere-sud-est-2365",
+     "name": "Haute Val Pellice (Italie) : pentes sud-est à 2365 m près de la frontière, thermique de midi",
+     "lon": 7.0251,
+     "lat": 44.8084,
+     "alt_m": 2365,
+     "coord_quality": "source",
+     "best_hours": "midi (93 %), matin 81 %, au printemps (82 %) ; rien en été ni en automne",
+     "trigger": "Pente de 29° exposée au sud-est à 2365 m, commune de Bobbio Pellice (OSM)",
+     "description": "Point chaud mesuré (probabilité 93 %), 1,2 km au sud-ouest du précédent. Aucun texte : déduction.",
+     "confidence": "low",
+     "sources": [
+      "S107",
+      "S105",
+      "S106"
+     ]
+    },
+    {
+     "id": "val-pellice-roussa-est-2192",
+     "name": "Haute Val Pellice (Italie) : La Roussa, pentes est à 2192 m",
+     "lon": 7.0745,
+     "lat": 44.7584,
+     "alt_m": 2192,
+     "coord_quality": "source",
+     "best_hours": "le matin et à midi (93 %), été 88 %, printemps 79 %",
+     "trigger": "Pente de 31° exposée à l'est à 2192 m, à La Roussa (OSM)",
+     "description": "Point chaud mesuré (probabilité 93 %), à 2,2 km au sud du point de La Roussa décrit plus haut. Aucun texte : déduction.",
+     "confidence": "low",
+     "sources": [
+      "S107",
+      "S105",
+      "S106"
+     ]
+    },
+    {
+     "id": "val-pellice-crosetta-sud-est",
+     "name": "Haute Val Pellice (Italie) : la Crosetta, pentes sud-est",
+     "lon": 7.0961,
+     "lat": 44.7811,
+     "alt_m": 1744,
+     "coord_quality": "source",
+     "best_hours": "le matin (95 %) et à midi (92 %), été 89 % et automne 90 %",
+     "trigger": "Pente de 21° exposée au sud-est à 1744 m, à la Crosetta (OSM)",
+     "description": "Point chaud mesuré (probabilité 92 %), à 4,5 km au sud-sud-ouest du décollage de Sarsenà, sur la même rive sud de la vallée. Aucun texte : déduction.",
+     "confidence": "low",
+     "sources": [
+      "S107",
+      "S105",
+      "S106"
+     ]
+    },
+    {
+     "id": "val-pellice-meisuns-sud",
+     "name": "Haute Val Pellice (Italie) : Meisuns, replat exposé au sud à 2018 m",
+     "lon": 7.0666,
+     "lat": 44.8176,
+     "alt_m": 2018,
+     "coord_quality": "source",
+     "best_hours": "le matin (83 %), midi (92 %) et soir (81 %), printemps 83 %, été 82 %",
+     "trigger": "Pente douce de 13° exposée au sud à Meisuns (OSM), 2018 m",
+     "description": "Point chaud mesuré (probabilité 92 %), à 3,7 km à l'ouest de Sarsenà. Aucun texte : déduction ; replat d'altitude peu pentu, thermique de convection plutôt que de pente.",
+     "confidence": "low",
+     "sources": [
+      "S107",
+      "S105",
+      "S106"
+     ]
+    },
+    {
+     "id": "brunet-sommet-depart-en-thermique",
+     "name": "Brunet (vol rando de Ceillac) : sommet, départ en thermique",
+     "lon": 6.7887,
+     "lat": 44.6892,
+     "alt_m": 2550,
+     "coord_quality": "source",
+     "best_hours": "très tôt le matin ou aux saisons où la brise est moins présente (Chocard) ; point chaud mesuré voisin à toute heure",
+     "trigger": "Sommet de Brunet (IGN, 2550 m), dôme herbeux de 6° de pente exposé au sud, 840 m au-dessus de Ceillac",
+     "description": "DÉCLENCHEUR du vol rando de Brunet. Chocard Airlines écrit de ce « très beau vol rando » (840 m de dénivelé, à privilégier très tôt dans la matinée ou aux saisons où la brise est moins présente) qu'il « permet d'être placé haut pour un départ en thermique ». Aucune ascendance précise n'est décrite ; les points chauds mesurés les plus proches sont à 2 km à l'est (ravins de Rabinoux et de la Charpenelle, 100 %, voir ceillac-brunet-ravins-rabinoux-charpenelle ; col Fromage, 90 %) et à 2,4 km au sud (faces sud de la combe de Ceillac, 100 %). Position : sommet IGN.",
+     "confidence": "medium",
+     "sources": [
+      "S69",
+      "S10",
+      "S105",
+      "S106"
+     ]
     }
    ],
    "soaring_spots": [],
@@ -5046,6 +5340,22 @@
       "S10",
       "S9"
      ]
+    },
+    {
+     "id": "sarsena-bobbio-pellice",
+     "name": "Sarsenà (Bobbio Pellice, Italie) – décollage de la haute Val Pellice",
+     "lon": 7.1141,
+     "lat": 44.8205,
+     "alt_m": 1418,
+     "orientations": [
+      "S",
+      "SE"
+     ],
+     "coord_quality": "source",
+     "description": "Décollage à 1416 m d'après le club VentoRelativo (Pinerolo), exposition sud/sud-est ; atterrissage le long de la route provinciale en fond de vallée, à 698 m (44.806338 N, 7.130602 E). C'est le dernier village avant la frontière française ; la vallée est reliée au Queyras par la crête frontalière.",
+     "sources": [
+      "S108"
+     ]
     }
    ],
    "landings": [
@@ -5075,6 +5385,18 @@
      "sources": [
       "S27",
       "S10"
+     ]
+    },
+    {
+     "id": "atterro-bobbio-pellice-route-provinciale",
+     "name": "Bobbio Pellice – atterrissage le long de la route provinciale (Sarsenà)",
+     "lon": 7.1306,
+     "lat": 44.8063,
+     "alt_m": 698,
+     "coord_quality": "source",
+     "description": "Atterrissage de Sarsenà en fond de vallée, le long de la route provinciale de Bobbio Pellice (club VentoRelativo).",
+     "sources": [
+      "S108"
      ]
     }
    ],
@@ -5168,7 +5490,9 @@
     "Ceillac : vols du soir doux pour qui sait décoller par vent soutenu ; inversion brutale quand l'atterro passe à l'ombre ; E à éviter [S69][S70]",
     "Ceillac : du 15/06 au 15/09 interdit de monter en voiture au déco ; ne pas atterrir dans les prés de fauche [S69]",
     "Une école de parapente est basée dans le Queyras (Tête en l'Air, Ceillac ; FFVL structure 109) : à contacter pour l'aérologie locale ; aucune ressource trouvée sur Abriès, Saint-Véran, Aiguilles, Molines [HS44][S75]",
-    "Hors Ceillac les gorges du Guil n'offrent aucun atterro : rester en altitude jusqu'à Guillestre [S15]"
+    "Hors Ceillac les gorges du Guil n'offrent aucun atterro : rester en altitude jusqu'à Guillestre [S15]",
+    "Le Queyras est relié aux vallées italiennes voisines par la crête frontalière : le club VentoRelativo de Pinerolo cite Prali comme point de départ pour « se connecter avec la chaîne française qui mène au col de l'Izoard » ; le triangle d'Edouard Potel (2025) commence par un aller-retour vers l'est [S109][S111].",
+    "Brunet : à faire très tôt le matin, il place haut pour partir en thermique ; le thermique mesuré se trouve 2 km à l'est-sud-est, sur les ravins de Rabinoux et de la Charpenelle [S69]."
    ]
   },
   {
@@ -7960,6 +8284,78 @@
    "type": "web",
    "lang": "fr",
    "notes": "Géocodeur IGN (data.geopf.fr) : Tête de Parassac, Lac des Sagnes, Aiguille Grande, Pointe des Cirques, Tête de Moïse, Parrias Coupa, La Meyna, Aiguille Pierre André, Mont Guillaume, Maljasset, Tête de Rasinière, Claï Inférieur, Col du Blainon."
+  },
+  {
+   "id": "S105",
+   "title": "Paragliding Thermal Maps (kk7) : points chauds de thermiques mesurés par les traces GPS",
+   "url": "https://thermal.kk7.ch/",
+   "publisher": "thermal.kk7.ch (CC BY-NC-SA 4.0)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Probabilités de thermique (toutes saisons, matin / milieu de journée / fin de journée) lues dans les fichiers téléchargés le 7 octobre 2026 ; ne disent pas ce qui déclenche."
+  },
+  {
+   "id": "S106",
+   "title": "BD TOPO et RGE ALTI de l'IGN (toponymes, altitudes, pente et exposition)",
+   "url": "https://geoservices.ign.fr/bdtopo",
+   "publisher": "IGN (Géoplateforme)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Altitude, pente et exposition calculées sur le MNT RGE ALTI à 150 m autour de chaque point ; toponymes du WFS BD TOPO (France seulement)."
+  },
+  {
+   "id": "S107",
+   "title": "OpenStreetMap / Nominatim : toponymes de la haute Val Pellice (Italie)",
+   "url": "https://nominatim.openstreetmap.org/",
+   "publisher": "OpenStreetMap",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Géocodage inverse des points chauds italiens : Pautasset, La Roussa, Crosetta, Meisuns (commune de Bobbio Pellice)."
+  },
+  {
+   "id": "S108",
+   "title": "VentoRelativo (club de parapente de Pinerolo) : site de Sarsenà",
+   "url": "https://ventorelativo.it/siti/sarsena/",
+   "publisher": "A.S.D. Vento Relativo",
+   "type": "web",
+   "lang": "it",
+   "notes": "Sarsenà, Bobbio Pellice : décollage à 1416 m (44.820542 N, 7.114071 E), exposition S/SE, atterrissage le long de la route provinciale en fond de vallée (44.806338 N, 7.130602 E)."
+  },
+  {
+   "id": "S109",
+   "title": "VentoRelativo (club de parapente de Pinerolo) : site de Prali",
+   "url": "https://ventorelativo.it/siti/prali/",
+   "publisher": "A.S.D. Vento Relativo",
+   "type": "web",
+   "lang": "it",
+   "notes": "Prali, casermette du Bric Rond : décollage à 2464 m (44.868725 N, 7.069191 E), exposition NO/SO, plus haut décollage de la vallée ; en été « bonnes possibilités de se connecter avec la chaîne française qui mène au col de l'Izoard et à d'autres XC épiques » ; atterrissage de Malzat (44.882876 N, 7.041414 E)."
+  },
+  {
+   "id": "S110",
+   "title": "New junior FAI triangle record of 301km (Hans Petit, XC Mag, 14/08/2025)",
+   "url": "https://xcmag.com/?p=122440",
+   "publisher": "Cross Country Magazine",
+   "type": "web",
+   "lang": "en",
+   "notes": "Du col de l'Izoard le 7 août 2025 : décollage à 9h11, montée facile, 2900 m au-dessus du Clôt la Cime, puis cap vers la frontière italienne avec trois pilotes, Freissinières à 11h avec du vent d'est."
+  },
+  {
+   "id": "S111",
+   "title": "Edouard Potel claims new FAI triangle record (XC Mag, 21/08/2025)",
+   "url": "https://xcmag.com/?p=122498",
+   "publisher": "Cross Country Magazine",
+   "type": "web",
+   "lang": "en",
+   "notes": "Du col de l'Izoard le 18 août 2025 à 9h27 : d'abord un aller-retour vers l'est, puis l'ouest vers la Tête du Sapet et le sud jusqu'au nord du Verdon."
+  },
+  {
+   "id": "S112",
+   "title": "Honorin Hamard flies record 306km FAI triangle (XC Mag, 13/07/2016)",
+   "url": "https://xcmag.com/news/honorin-hamard-flies-record-306km-fai-triangle/",
+   "publisher": "Cross Country Magazine (Ozone)",
+   "type": "web",
+   "lang": "en",
+   "notes": "Du col Agnel le 9 juillet 2016 à 9h36 : cumulus de base 3500 m, d'abord cap au sud vers le Verdon puis point de contournement au nord-ouest près de Notre-Dame-de-la-Salette."
   }
  ]
 }

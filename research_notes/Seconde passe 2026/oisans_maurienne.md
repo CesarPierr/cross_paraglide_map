@@ -120,3 +120,41 @@ Volumes avant → après : brises 3 → 4, convergences 0 → 0, hazards 4 → 7
 - Aucune convergence documentée dans la vallée elle-même ; les brises latérales (Villards, Arvan) n'ont pas de description propre.
 - Traces des cross de Montgellafrey (206 et 175 km), listes CFD, XContest et XCFinder : inaccessibles (voir `pages_bloquees.txt`).
 
+
+### Maurienne, complément (listes de lacunes COUVERTURE, KK7 et fichiers du comité de Savoie)
+
+Date : 7 octobre 2026. Volumes avant ce complément → après : brises 4 → 5, hazards 7 → 9 (le câble de Saint-François-Longchamp repositionné), thermiques 4 → 17, décollages 9 → 16, atterrissages 6 → 12, conseils 10 → 13 ; 8 sources nouvelles (S136 à S143). `npm run data:build -- --check` : aucune alerte nouvelle ; `npm run model:check` : 0 paire de brises opposées.
+
+**Sources nouvelles**
+- Club *Speedbelles'air* (La Toussuire), pages « Voler en parapente l'été » et « l'hiver », lues dans la copie de web.archive.org (le domaine ne répond plus) : décollage d'été de la Grande Verdette (orientation nord-est, vent favorable nord, « vol du matin essentiellement », thermique dès 10h-10h30, danger sous le vent de la pointe de Comborcière) ; décollages d'hiver de la Pierre du Turc et du Grand Truc, crête infranchissable par tendance ouest, atterrissage hors piste.
+- Fichier KMZ du comité de Savoie *SitesDeVolsSkiSFL2020* (cité par la fiche FFVL 2323) : positions de toutes les zones de décollage et d'atterrissage à ski de Saint-François-Longchamp et tracé du câble d'avalanches (légende « présence de câble »). Le câble « Catex » est donc localisé (il n'était que placé au hasard sur le décollage).
+- Fiches FFVL 3086, 3094 et 13736 relues (Saint-Sorlin-d'Arves, Grande Verdette, La Balme), ParaglidingEarth 10679 (col de la Madeleine : décollage sud-est le matin, nord-est « si vent de vallée ») et 2987 (Val Pelouse), vidéo d'un pilote « trois vols du matin au col de la Croix de Fer ».
+- Points chauds de thermal.kk7.ch (probabilités par saison et par moment de la journée) et IGN (BD TOPO : toponymes et remontées ; RGE ALTI : altitude, pente et exposition à 150 m).
+
+**Ajouté ou corrigé**
+- *Décollages sans thermique documenté* : La Grande Verdette (thermique du club, `medium`), Saint-Sorlin-d'Arves et La Balme (pentes sud-est sous la Croix de Fer et aiguille Rousse, `low`), Soleil Rouge (combe Noire, `low`), Chalet du Mélèze (adret de Saint-Avre au-dessus du terrain de Sainte-Marie-de-Cuines, `low`).
+- *Points chauds forts ≥ 90 %* : les neuf points de la liste sont décrits (Mollaret en `medium` avec la fiche FFVL et le forum ; les huit autres en `low`, avec « déduction » : Perrière, Chatermes, Frumezan, Petit Charnier et col de Claran, Grand By de Saint-Étienne-de-Cuines, plateau de Bellecombe à Saint-Michel-de-Maurienne, Rozet de la Lauzière). Chaque position est celle du point chaud, vérifiée sur le terrain IGN (altitude, pente, exposition).
+- *Saint-François-Longchamp* : sept zones de décollage (Homme de Beure, dôme de la piste rouge, Marquis/Soleil Rouge sud, Grand Schuss nord et ouest, Lauzière sud), six atterrissages (col de la Madeleine, bas de la Lauzière, secours nord, Trois Sapins, bas des Marquis avec secours, bas Madeleine côté Valmorel), danger du câble repositionné sur le tracé du KMZ, brise de vallon ajoutée en `low` (déduction : aucune source ne la décrit).
+- *La Toussuire* : décollages d'hiver Pierre du Turc et Grand Truc, dangers de la crête vers l'atterrissage et de la pointe de Comborcière.
+
+**Introuvable ou non tranché**
+- Aucun récit de thermique pour les Villards, l'Arvan, Jarrier hors décollages, Albiez ni La Toussuire en été autre que la phrase du club ; le forum de 2020 renonce lui-même à conseiller les « annexes » de la Maurienne. Pages de l'école Parapente Air Line, L'Env'Air et Envergure lues : commerciales, sans aérologie.
+- La « pointe de Comborcière » n'est pas dans le géocodeur IGN : danger placé sur le vallon de Comborsière (`approx`).
+- Page « Lauzière » du comité de Savoie toujours vide (le contenu n'est pas dans le HTML) ; Facebook « Vol de 2H10 dans du thermique bleu, crête de la Croix de Fer » non lu (connexion) ; domaine speedbellesair.net injoignable (archive seulement).
+
+### Arves-Thabor-Galibier (`arves-thabor-galibier`), passe secteurs minces
+
+Volumes avant → après : brises 3 → 3, convergences 0 → 0, hazards 4 → 4, thermiques 5 → 9, soarings 1 → 1, décollages 9 → 9, atterrissages 2 → 2, effets synoptiques 2 → 2, route 1 → 1 ; aucune source nouvelle (les fiches FFVL 5214 et 5232, le topo de Chocard, l'office de tourisme de La Grave, thermal.kk7.ch et l'IGN, déjà cités plus haut, suffisent). `npm run data:build -- --check` : aucune alerte nouvelle.
+
+**Sources relues ou cherchées**
+- Fiches FFVL 5214 (lac du Pontet), 5232 (Aplanes) et 5242 (Mont Thabor : « Beau vol, attention à la finesse », seul texte) ; page de l'office de tourisme de La Grave (« sites officiels » : lac du Pontet et pente école des Cours) ; topo de Chocard sur le Galibier.
+- Recherches web sur le Thabor, le lac du Pontet, Valloire-Valmeinier et Albiez : uniquement des pages de randonnée, de baptême ou de station, aucun récit de vol.
+
+**Ajouté ou corrigé**
+- *Thermiques* (tous `low`, avec « déduction » : positions des points chauds mesurés, exposition et altitude relevées sur le terrain IGN) : pentes ouest du Clot des Chamois au nord du lac du Pontet (profil d'après-midi qui concorde avec les vents favorables SO et O du décollage), pentes est de la Grande Chible près du col d'Emy (secteur d'Albiez), pentes sud-est du crêt Fénère à Orelle (le point le plus marqué du secteur, 93 %), pentes sud de la tête de la Cassille au Monêtier-les-Bains.
+- *Position corrigée* : le décollage du lac du Pontet (id `oisans-grandes-rousses/villar-darene-lac-du-pontet`, dans le même fichier) était à 2111 m sur le terrain IGN alors que la fiche donne 2013 m et SO/O ; recalé 200 m à l'ouest (2015 m, pente de 21° exposée à l'ouest), `approx`. La correction est faite dans le fichier de données, pas dans `positions/corrections.json`.
+- Les décollages de Saint-Sorlin-d'Arves, La Balme et la Grande Verdette, déclarés dans ce massif mais classés par la couverture dans le secteur Maurienne, ont leurs thermiques dans `maurienne` (voir plus haut).
+
+**Introuvable**
+- Mont Thabor (FFVL 5242, 3178 m) : aucun point chaud mesuré à moins de 5 km, aucun texte d'aérologie ; aucun thermique ni brise n'a été créé (une description serait inventée). Reste ouvert dans COUVERTURE.
+- Aucun récit de thermique à Albiez, Valloire, Valmeinier ni aux Karellis en dehors de ceux déjà décrits ; itinéraires des 300 km du Galibier toujours derrière XContest et la CFD.

@@ -1,13 +1,22 @@
 import type { Atlas, AtlasMassif, FeatureCategory } from '@brises/shared';
 import { compassFr } from '@brises/model';
 import { useMemo, useState } from 'react';
+import { activeInSlot } from '../map/modules/schema';
 import type { FeatureDetails } from '../map/modules/types';
 import { BREEZE_COLORS, COLORS } from '../map/palette';
-import { useApp, useRuntime } from '../state/store';
+import { SCHEMA_PHASES, useApp, useRuntime } from '../state/store';
 import { getController } from './controller-ref';
 import { FeedbackBar, startDraft } from './Feedback';
+import { FigureGallery } from './Figures';
 import { IconBack, IconMountain, IconPlus, IconSearch, IconTarget } from './icons';
+import { SheetHandle, useIsMobile } from './mobile';
 import { RichText, SourceList } from './Sources';
+
+/** Opens the schematic all-in-one view of a massif. */
+export function openSchema(massifId: string) {
+  useRuntime.getState().set({ feature: null });
+  useApp.getState().set({ schemaMassif: massifId, selectedMassif: massifId, mobileSheet: 'browse' });
+}
 
 const SECTION_ORDER: FeatureCategory[] = ['breezes', 'convergences', 'hazards', 'thermals', 'soaring', 'takeoffs', 'landings', 'routes'];
 const SECTION_TITLES: Record<FeatureCategory, string> = {
@@ -89,6 +98,7 @@ function FeatureSheet({ f, atlas }: { f: FeatureDetails; atlas: Atlas }) {
           </a>
         ))}
       </div>
+      {f.ref.startsWith('atlas:') && <FigureGallery atlas={atlas} featureId={f.ref.slice(6)} title="Figures d’origine" />}
       {f.sourceIds && <SourceList ids={f.sourceIds} atlas={atlas} />}
       {f.attribution && <p className="muted small" dangerouslySetInnerHTML={{ __html: f.attribution }} />}
       <FeedbackBar key={f.ref} targetRef={f.ref} title={f.title} />
@@ -128,8 +138,11 @@ function MassifSheet({ m, atlas }: { m: AtlasMassif; atlas: Atlas }) {
         </p>
       )}
       <div className="sheet-actions">
-        <button className="btn small" onClick={() => getController()?.flyToBbox(m.bbox, { maxZoom: 11 })}>
-          <IconMountain size={15} /> Survoler le massif
+        <button className="btn small primary" onClick={() => openSchema(m.id)}>
+          <IconSchema /> Vue schéma
+        </button>
+        <button className="btn ghost small" onClick={() => getController()?.flyToBbox(m.bbox, { maxZoom: 11 })}>
+          <IconMountain size={15} /> Survoler en 3D
         </button>
         <button className="btn ghost small" onClick={() => startDraft({ kind: 'new', targetTitle: m.shortName })}>
           <IconPlus size={15} /> Ajouter un phénomène
@@ -188,8 +201,212 @@ function MassifSheet({ m, atlas }: { m: AtlasMassif; atlas: Atlas }) {
           </ul>
         </section>
       )}
+      <FigureGallery atlas={atlas} massif={m.id} />
       <SourceList ids={m.sources} atlas={atlas} limit={6} title="Sources du massif" />
       <FeedbackBar key={m.id} targetRef={`massif:${m.id}`} title={m.shortName} />
+    </article>
+  );
+}
+
+function IconSchema() {
+  return (
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <path d="M3 17 C8 12 12 18 21 9" />
+      <path d="M16 9 h5 v5" />
+      <circle cx="7" cy="7" r="2" />
+    </svg>
+  );
+}
+
+const ARROW_KIND: Record<string, string> = {
+  valley: 'brise de vallée',
+  downvalley: 'brise descendante',
+  slope: 'brise de pente',
+  'plain-to-mountain': 'plaine → montagne',
+  lake: 'brise de lac',
+  'pass-transfer': 'transfert par un col',
+  regional: 'brise régionale',
+  katabatic: 'catabatique',
+};
+
+function SchemaItem({ id, color, name, meta, low }: { id: string; color: string; name: string; meta?: string; low?: boolean }) {
+  return (
+    <li>
+      <button onClick={() => openFeature(`atlas:${id}`)}>
+        <span className="dot" style={{ background: color }} />
+        <span className="item-name">
+          {name}
+          {meta && <small>{meta}</small>}
+        </span>
+        {low && <span className="tag warn">déduction</span>}
+      </button>
+    </li>
+  );
+}
+
+function SchemaBlock({ title, children, count }: { title: string; children: React.ReactNode; count: number }) {
+  return count ? (
+    <section className="item-section">
+      <h3>
+        {title} <span className="count">{count}</span>
+      </h3>
+      <ul className="items">{children}</ul>
+    </section>
+  ) : null;
+}
+
+/** All-in-one reading of a massif for a typical summer day, in sync with the schematic map. */
+function SchemaPanel({ m, atlas }: { m: AtlasMassif; atlas: Atlas }) {
+  const { schemaPhase, set } = useApp();
+  const slot = SCHEMA_PHASES.find((p) => p.key === schemaPhase)!;
+  const feats = useMemo(() => {
+    const get = (cat: FeatureCategory) => atlas.features[cat].filter((f) => f.properties.massif === m.id).map((f) => f.properties);
+    const [w, s, e, n] = m.bbox;
+    // Transitions: cross-country routes of any sector that cross this one.
+    const routes = atlas.features.routes
+      .filter((f) => f.properties.massif === m.id || f.geometry.coordinates.some((c) => Array.isArray(c) && c[0] >= w && c[0] <= e && c[1] >= s && c[1] <= n))
+      .map((f) => f.properties);
+    // Breezes of neighbouring sectors that run along or into this one (they shape its day too).
+    const pad = 0.05;
+    const near = atlas.features.breezes
+      .filter((f) => f.properties.massif !== m.id && f.properties.massif !== 'alpes-francaises' && f.geometry.coordinates.some((c) => Array.isArray(c) && c[0] >= w - pad && c[0] <= e + pad && c[1] >= s - pad && c[1] <= n + pad))
+      .map((f) => f.properties);
+    return { near, breezes: get('breezes'), convergences: get('convergences'), thermals: get('thermals'), hazards: get('hazards'), takeoffs: get('takeoffs'), landings: get('landings'), soaring: get('soaring'), routes };
+  }, [atlas, m]);
+  const active = feats.breezes.filter((b) => activeInSlot(b.windowStart, b.windowEnd, slot.hours));
+  const other = feats.breezes.length - active.length;
+  const nearActive = feats.near.filter((b) => activeInSlot(b.windowStart, b.windowEnd, slot.hours));
+  return (
+    <article className="sheet schema-sheet">
+      <button className="back" onClick={() => set({ schemaMassif: null })}>
+        <IconBack size={15} /> Retour à la vue 3D live
+      </button>
+      <p className="eyebrow">Vue schéma · journée d’été type</p>
+      <h2>{m.shortName}</h2>
+      <div className="chips phase-chips" role="tablist" aria-label="Moment de la journée">
+        {SCHEMA_PHASES.map((p) => (
+          <button key={p.key} role="tab" aria-selected={p.key === schemaPhase} className={`chip ${p.key === schemaPhase ? 'active' : ''}`} onClick={() => set({ schemaPhase: p.key })}>
+            {p.label}
+            <small>
+              {' '}
+              {p.hours[0]}h–{Math.floor(p.hours[1])}h
+            </small>
+          </button>
+        ))}
+      </div>
+      <div className="schema-legend" aria-hidden>
+        <span>
+          <i className="sw-line" style={{ background: BREEZE_COLORS.valley }} /> brise (épaisseur = force)
+        </span>
+        <span>
+          <i className="sw-line dashed" style={{ background: COLORS.convergence }} /> convergence
+        </span>
+        <span>
+          <i className="sw-dot" style={{ background: COLORS.thermal }} /> thermique
+        </span>
+        <span>
+          <i className="sw-dot" style={{ background: COLORS.hazard }} /> piège
+        </span>
+        <span>
+          <i className="sw-line dotted" style={{ background: COLORS.route }} /> transition
+        </span>
+      </div>
+      {m.summary && (
+        <p className="summary">
+          <RichText text={m.summary} atlas={atlas} order={m.sources} />
+        </p>
+      )}
+      <SchemaBlock title={`Brises ${slot.label.toLowerCase()}`} count={active.length}>
+        {active.map((b) => (
+          <SchemaItem
+            key={b.id}
+            id={b.id}
+            color={BREEZE_COLORS[b.kind ?? ''] ?? BREEZE_COLORS.valley}
+            name={b.name}
+            meta={[ARROW_KIND[b.kind ?? ''], b.details?.Trajet, b.speedKmh ? `${b.speedKmh} km/h` : '', b.details?.Horaires].filter(Boolean).join(' · ')}
+            low={b.confidence === 'low'}
+          />
+        ))}
+      </SchemaBlock>
+      {!active.length && <p className="muted small">Aucune brise documentée sur ce créneau.</p>}
+      {other > 0 && <p className="muted small">{other} autre(s) brise(s) documentée(s) à d’autres heures : changez de créneau.</p>}
+      <SchemaBlock title="Brises des secteurs voisins" count={nearActive.length}>
+        {nearActive.map((b) => (
+          <SchemaItem
+            key={b.id}
+            id={b.id}
+            color={BREEZE_COLORS[b.kind ?? ''] ?? BREEZE_COLORS.valley}
+            name={b.name}
+            meta={[atlas.massifs.find((x) => x.id === b.massif)?.shortName, b.speedKmh ? `${b.speedKmh} km/h` : '', b.details?.Horaires].filter(Boolean).join(' · ')}
+            low={b.confidence === 'low'}
+          />
+        ))}
+      </SchemaBlock>
+      <SchemaBlock title="Convergences" count={feats.convergences.length}>
+        {feats.convergences.map((c) => (
+          <SchemaItem key={c.id} id={c.id} color={COLORS.convergence} name={c.name} meta={c.details?.Quand} low={c.confidence === 'low'} />
+        ))}
+      </SchemaBlock>
+      <SchemaBlock title="Thermiques connus" count={feats.thermals.length}>
+        {feats.thermals.map((t) => (
+          <SchemaItem key={t.id} id={t.id} color={COLORS.thermal} name={t.name} meta={[t.details?.Heures, t.details?.Déclencheur].filter(Boolean).join(' · ')} />
+        ))}
+      </SchemaBlock>
+      <SchemaBlock title="Pièges et dangers" count={feats.hazards.length}>
+        {feats.hazards.map((h) => (
+          <SchemaItem key={h.id} id={h.id} color={COLORS.hazard} name={h.name} meta={h.details?.Conditions} />
+        ))}
+      </SchemaBlock>
+      <SchemaBlock title="Décollages" count={feats.takeoffs.length}>
+        {feats.takeoffs.map((t) => (
+          <SchemaItem key={t.id} id={t.id} color={COLORS.takeoff} name={t.name} meta={[t.details?.Orientation, t.details?.Altitude].filter(Boolean).join(' · ')} />
+        ))}
+      </SchemaBlock>
+      <SchemaBlock title="Soaring" count={feats.soaring.length}>
+        {feats.soaring.map((t) => (
+          <SchemaItem key={t.id} id={t.id} color={COLORS.soaring} name={t.name} meta={t.details?.Vents} />
+        ))}
+      </SchemaBlock>
+      <SchemaBlock title="Atterrissages" count={feats.landings.length}>
+        {feats.landings.map((t) => (
+          <SchemaItem key={t.id} id={t.id} color={COLORS.landing} name={t.name} meta={t.details?.Altitude} />
+        ))}
+      </SchemaBlock>
+      <SchemaBlock title="Transitions et itinéraires de cross" count={feats.routes.length}>
+        {feats.routes.map((r) => (
+          <SchemaItem key={r.id} id={r.id} color={COLORS.route} name={r.name} meta={[r.details?.Distance, r.details?.Points].filter(Boolean).join(' · ')} />
+        ))}
+      </SchemaBlock>
+      {m.synoptic.length > 0 && (
+        <section className="item-section">
+          <h3>Selon le vent météo</h3>
+          <dl className="synoptic">
+            {m.synoptic.map((s, i) => (
+              <div key={i}>
+                <dt>{s.wind}</dt>
+                <dd>
+                  <RichText text={s.effect} atlas={atlas} order={m.sources} />
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+      )}
+      {m.tips.length > 0 && (
+        <section className="item-section">
+          <h3>Conseils cross</h3>
+          <ul className="tips">
+            {m.tips.map((t, i) => (
+              <li key={i}>
+                <RichText text={t} atlas={atlas} order={m.sources} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+      <FigureGallery atlas={atlas} massif={m.id} />
+      <SourceList ids={m.sources} atlas={atlas} limit={8} title="Sources du massif" />
+      <p className="note">Schéma de synthèse des sources pour une journée thermique d’été sans vent météo marqué. Il ne remplace ni la météo du jour ni les consignes locales.</p>
     </article>
   );
 }
@@ -220,7 +437,15 @@ function MassifBrowser({ atlas }: { atlas: Atlas }) {
               <h3>{g.region}</h3>
               <ul>
                 {g.massifs.map((m) => (
-                  <li key={m.id}>
+                  <li key={m.id} className="massif-row">
+                    <button
+                      className="schema-quick"
+                      title={`Vue schéma : ${m.shortName}`}
+                      aria-label={`Vue schéma : ${m.shortName}`}
+                      onClick={() => openSchema(m.id)}
+                    >
+                      <IconSchema />
+                    </button>
                     <button
                       onClick={() => {
                         useApp.getState().set({ selectedMassif: m.id });
@@ -256,10 +481,14 @@ function MassifBrowser({ atlas }: { atlas: Atlas }) {
 export function Sidebar() {
   const atlas = useRuntime((r) => r.atlas);
   const feature = useRuntime((r) => r.feature);
-  const { selectedMassif, panelOpen } = useApp();
+  const { selectedMassif, schemaMassif, panelOpen, mobileSheet } = useApp();
+  const mobile = useIsMobile();
   const massif = atlas?.massifs.find((m) => m.id === selectedMassif);
+  const schema = atlas?.massifs.find((m) => m.id === schemaMassif);
+  const open = mobile ? mobileSheet === 'browse' : panelOpen;
   return (
-    <aside className={`sidebar panel ${panelOpen ? '' : 'collapsed'}`} aria-label="Massifs et connaissances locales">
+    <aside className={`sidebar panel ${open ? '' : 'collapsed'}`} aria-label="Massifs et connaissances locales">
+      {mobile && <SheetHandle />}
       {!atlas ? (
         <div className="skeleton">
           <span />
@@ -268,6 +497,8 @@ export function Sidebar() {
         </div>
       ) : feature ? (
         <FeatureSheet f={feature} atlas={atlas} />
+      ) : schema ? (
+        <SchemaPanel m={schema} atlas={atlas} />
       ) : massif ? (
         <MassifSheet m={massif} atlas={atlas} />
       ) : (

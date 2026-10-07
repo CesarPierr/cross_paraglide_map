@@ -4,6 +4,18 @@ import type { OverlayMode } from '../engine/cpu-overlays';
 import type { FeatureDetails } from '../map/modules/types';
 import type { ProbeResult } from '../map/modules/wind';
 
+/** Time slots of the schematic view (typical summer thermal day). */
+export type SchemaPhase = 'morning' | 'midday' | 'afternoon' | 'evening';
+export const SCHEMA_PHASES: { key: SchemaPhase; label: string; hours: [number, number] }[] = [
+  { key: 'morning', label: 'Matin', hours: [7, 11] },
+  { key: 'midday', label: 'Midi', hours: [11, 14] },
+  { key: 'afternoon', label: 'Après-midi', hours: [14, 18] },
+  { key: 'evening', label: 'Soir', hours: [18, 21.5] },
+];
+
+/** Panels shown as bottom sheets on phones (one at a time). */
+export type MobileSheet = 'none' | 'browse' | 'settings' | 'legend';
+
 export type Basemap = 'ign-ortho' | 'relief' | 'ign-plan' | 'otm';
 
 export type LayerKey =
@@ -49,7 +61,11 @@ export interface AppState {
   particleSpeed: number;
   particleColor: 'speed' | 'lift';
   selectedMassif: string | null;
+  /** Schematic, flattened all-in-one view of a massif (null = live 3D view). */
+  schemaMassif: string | null;
+  schemaPhase: SchemaPhase;
   panelOpen: boolean;
+  mobileSheet: MobileSheet;
   aboutOpen: boolean;
   set: (patch: Partial<AppState>) => void;
   toggleLayer: (key: LayerKey) => void;
@@ -99,7 +115,10 @@ export const useApp = create<AppState>((set) => ({
   particleSpeed: 1,
   particleColor: 'speed',
   selectedMassif: null,
+  schemaMassif: null,
+  schemaPhase: 'afternoon',
   panelOpen: !isSmall,
+  mobileSheet: 'none',
   aboutOpen: false,
   set: (patch) => set(patch),
   toggleLayer: (key) => set((s) => ({ layers: { ...s.layers, [key]: !s.layers[key] } })),

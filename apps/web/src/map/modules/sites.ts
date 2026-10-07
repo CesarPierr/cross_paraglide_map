@@ -10,6 +10,9 @@ import { bboxOf, type FeatureDetails, type MapModule, type ModuleContext } from 
 
 const KIND_LABEL = { takeoff: 'Décollage', landing: 'Atterrissage', site: 'Site de vol' } as const;
 
+/** Long facts of an official sheet, shown as paragraphs rather than in the facts table. */
+const LONG_FACTS = ['Conditions idéales', 'Dangers', 'Restrictions', 'Réglementation aérienne'];
+
 export class SitesModule implements MapModule {
   readonly id = 'sites';
   readonly clickableLayers = ['sites-takeoff', 'sites-landing'];
@@ -146,11 +149,20 @@ export class SitesModule implements MapModule {
       details: [
         ...(s.altitude ? ([['Altitude', `${Math.round(s.altitude)} m`]] as [string, string][]) : []),
         ...(s.orientations?.length ? ([['Orientation', s.orientations.join(', ')]] as [string, string][]) : []),
+        ...Object.entries(s.details ?? {}).filter(([k]) => !LONG_FACTS.includes(k)),
         ['Coordonnées', `${s.lat.toFixed(5)}, ${s.lon.toFixed(5)}`],
       ],
-      paragraphs: s.description ? [s.description] : undefined,
-      links: s.url ? [{ label: 'Fiche du site', url: s.url }] : undefined,
-      warning: s.status === 'official' ? undefined : 'Site issu d’un annuaire communautaire : statut, accès et autorisations à vérifier localement.',
+      paragraphs: [
+        ...(s.description ? [s.description] : []),
+        ...LONG_FACTS.filter((k) => s.details?.[k]).map((k) => `${k} : ${s.details![k]}`),
+      ],
+      links: s.url ? [{ label: s.provider === 'ffvl' ? 'Fiche FFVL complète' : 'Fiche du site', url: s.url }] : undefined,
+      warning:
+        s.status !== 'official'
+          ? 'Site issu d’un annuaire communautaire : statut, accès et autorisations à vérifier localement.'
+          : /interdit/i.test(s.details?.['Praticabilité'] ?? '')
+            ? `Attention : ${s.details!['Praticabilité']}. Consultez la fiche FFVL.`
+            : 'Extrait de la fiche FFVL : consultez la fiche complète et les consignes locales avant de voler.',
       attribution: provider?.attribution,
       bbox: bboxOf([[s.lon, s.lat]]),
     };

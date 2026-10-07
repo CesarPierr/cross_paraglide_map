@@ -7,6 +7,7 @@ import { useApp, useRuntime, type Basemap, type LayerKey } from '../state/store'
 import { getController, getDataClient } from './controller-ref';
 import { fmtHour, MONTHS } from './format';
 import { IconChevron, IconDownload, IconLayers, IconMountain, IconSpark, IconWind } from './icons';
+import { SheetHandle, useIsMobile } from './mobile';
 import { WindDial } from './WindDial';
 
 const PRESETS: { label: string; from: number; kmh: number; hint: string }[] = [
@@ -122,6 +123,7 @@ function Situation() {
 
 export function ControlPanel() {
   const s = useApp();
+  const mobile = useIsMobile();
   const [forecastMsg, setForecastMsg] = useState<string | null>(null);
 
   const loadForecast = async () => {
@@ -145,7 +147,8 @@ export function ControlPanel() {
   };
 
   return (
-    <aside className={`control-panel panel ${s.panelOpen ? '' : 'collapsed'}`} aria-label="Réglages de la simulation">
+    <aside className={`control-panel panel ${(mobile ? s.mobileSheet === 'settings' : s.panelOpen) ? '' : 'collapsed'}`} aria-label="Réglages de la simulation">
+      {mobile && <SheetHandle />}
       <Situation />
       <Section title="Vent météo" icon={<IconWind size={16} />}>
         <div className="wind-row">

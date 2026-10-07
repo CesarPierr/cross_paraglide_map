@@ -25,6 +25,7 @@ import { KnowledgeModule } from './modules/knowledge';
 import { Kk7Module } from './modules/kk7';
 import { LabelsModule } from './modules/labels';
 import { ReliefModule } from './modules/relief';
+import { SchemaModule } from './modules/schema';
 import { SitesModule } from './modules/sites';
 import { slotMarker, type FeatureDetails, type MapModule, type ModuleContext, type ModuleEvent, type Slot } from './modules/types';
 import { WindModule, type ProbeResult } from './modules/wind';
@@ -42,6 +43,15 @@ export interface ControllerEvents {
   onModuleEvent: (e: ModuleEvent) => void;
   /** Map picked a point for a contribution ("place on map" mode). */
   onPick: (lngLat: [number, number]) => void;
+}
+
+/** Layers replaced by the schematic diagram while a schema view is open. */
+const LIVE_ONLY: (keyof AppState['layers'])[] = ['particles', 'comets', 'thermalColumns', 'breezes', 'convergences', 'hazards', 'thermals', 'soaring', 'takeoffs', 'landings', 'routes', 'kk7Thermals', 'kk7Skyways', 'sitesCommunity'];
+
+/** The state the map actually renders: the schema view flattens the relief and swaps the live layers for its diagram. */
+function effectiveState(s: AppState): AppState {
+  if (!s.schemaMassif) return s;
+  return { ...s, exaggeration: 0, overlay: 'none', layers: { ...s.layers, ...Object.fromEntries(LIVE_ONLY.map((k) => [k, false])) } };
 }
 
 export class MapController {
@@ -115,7 +125,9 @@ export class MapController {
         atlas.features.thermals.map((f) => ({ name: f.properties.name, lon: f.geometry.coordinates[0] as number, lat: f.geometry.coordinates[1] as number })),
         () => this.emitTime(),
       );
-      this.modules = [new ReliefModule(), new Kk7Module(), new AirspaceModule(), this.knowledge, new SitesModule(this.data.siteProviders()), new LabelsModule(), this.wind];
+      const knowledge = this.knowledge;
+      const schema = new SchemaModule((id) => knowledge.describe(id));
+      this.modules = [new ReliefModule(), new Kk7Module(), new AirspaceModule(), this.knowledge, schema, new SitesModule(this.data.siteProviders()), new LabelsModule(), this.wind];
       for (const m of this.modules) if (m !== this.wind) await m.add(ctx);
       this.ready = true;
       if (this.state) this.applyAll(this.state, null);
@@ -144,7 +156,8 @@ export class MapController {
     this.applyAll(s, this.prevApplied);
   }
 
-  private applyAll(s: AppState, prev: AppState | null): void {
+  private applyAll(raw: AppState, prev: AppState | null): void {
+    const s = effectiveState(raw);
     for (const m of this.modules) m.apply(s, prev);
     this.prevApplied = s;
     if (prev && (prev.hour !== s.hour || prev.month0 !== s.month0 || prev.day !== s.day)) this.emitTime();

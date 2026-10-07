@@ -23,7 +23,7 @@ export function MapView() {
         onTime: ({ sunAzimuth, sunElevation, solarHour }) => rt().set({ sun: { azimuth: sunAzimuth, elevation: sunElevation }, solarHour }),
         onFeature: (feature) => {
           rt().set({ feature });
-          if (feature) useApp.getState().set({ panelOpen: true });
+          if (feature) useApp.getState().set(window.matchMedia('(max-width: 860px)').matches ? { mobileSheet: 'browse' } : { panelOpen: true });
         },
         onProbe: (probe) => rt().set({ probe }),
         onModuleEvent: (e) => {

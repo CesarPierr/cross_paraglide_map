@@ -7,7 +7,7 @@
 
 :root {
   --bg: #0a111c;
-  --panel: rgba(12, 19, 31, 0.78);
+  --panel: rgba(12, 19, 31, 0.9);
   --panel-solid: #0e1726;
   --panel-raised: rgba(255, 255, 255, 0.045);
   --border: rgba(148, 163, 184, 0.16);
@@ -1967,5 +1967,425 @@ kbd {
   * {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+/* ==========================================================================
+   Search, schematic view, figures, phone layout
+   ========================================================================== */
+
+/* ---------- Top bar: brand + global search + schema toggle ---------- */
+.topbar {
+  width: min(calc(100vw - var(--ctrl-w) - var(--gap) * 3), 820px);
+}
+
+.topbar .brand {
+  flex: none;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: none;
+  align-self: flex-start;
+  margin-top: 4px;
+  background: var(--muted);
+}
+
+.status-dot.ok {
+  background: var(--ok);
+  box-shadow: 0 0 0 3px rgba(52, 211, 153, 0.18);
+}
+
+.searchbox {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.searchbox .search {
+  height: 38px;
+}
+
+.searchbox .search input {
+  padding: 8px 0;
+  min-width: 0;
+}
+
+.kbd {
+  font: 600 10.5px/1 inherit;
+  padding: 3px 6px;
+  border-radius: 5px;
+  border: 1px solid var(--border-strong);
+  color: var(--muted);
+}
+
+.search-results {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  max-height: min(62vh, 520px);
+  overflow: auto;
+  padding: 6px;
+  z-index: 10;
+  background: var(--panel-solid);
+}
+
+.search-results .search-group {
+  margin: 8px 8px 4px;
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+}
+
+.search-results button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  padding: 7px 8px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.search-results button.sel {
+  background: var(--accent-soft);
+}
+
+.search-results .empty {
+  padding: 8px;
+  margin: 0;
+}
+
+.schema-toggle {
+  flex: none;
+  white-space: nowrap;
+}
+
+.schema-toggle.active,
+.btn.primary {
+  background: linear-gradient(135deg, rgba(56, 189, 248, 0.32), rgba(99, 102, 241, 0.32));
+  border-color: rgba(125, 211, 252, 0.8);
+  color: #fff;
+}
+
+/* ---------- Massif list: quick access to the schema view ---------- */
+.massif-row {
+  display: flex;
+  align-items: stretch;
+  gap: 4px;
+}
+
+.massif-row > button:last-child {
+  flex: 1;
+  min-width: 0;
+}
+
+.schema-quick {
+  flex: none;
+  width: 32px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+.schema-quick:hover {
+  color: var(--accent);
+  border-color: var(--border);
+  background: var(--accent-soft);
+}
+
+/* ---------- Schema panel ---------- */
+.phase-chips {
+  margin: 10px 0 6px;
+}
+
+.phase-chips .chip small {
+  opacity: 0.7;
+  font-size: 10px;
+}
+
+.schema-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  margin: 6px 0 10px;
+  font-size: 11px;
+  color: var(--text-2);
+}
+
+.schema-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sw-line {
+  width: 18px;
+  height: 4px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.sw-line.dashed {
+  background-image: linear-gradient(90deg, transparent 50%, var(--panel-solid) 50%) !important;
+  background-size: 6px 4px;
+}
+
+.sw-line.dotted {
+  height: 3px;
+}
+
+.sw-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+/* ---------- Figures ---------- */
+.figures {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 8px;
+}
+
+.figure-card {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 6px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  background: var(--panel-raised);
+  cursor: pointer;
+  text-align: left;
+}
+
+.figure-card:hover {
+  border-color: var(--accent);
+}
+
+.figure-card img,
+.figure-doc {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.figure-doc {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.figure-title {
+  font-size: 11.5px;
+  line-height: 1.3;
+}
+
+.figure-pub {
+  font-size: 10.5px;
+  color: var(--muted);
+}
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(2, 6, 23, 0.82);
+  backdrop-filter: blur(6px);
+}
+
+.lightbox figure {
+  margin: 0;
+  max-width: min(1100px, 100%);
+  max-height: 100%;
+  overflow: auto;
+  background: var(--panel-solid);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.lightbox img {
+  display: block;
+  max-width: 100%;
+  max-height: 70vh;
+  margin: 0 auto;
+}
+
+.lightbox-noimg {
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.lightbox figcaption {
+  padding: 12px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.lightbox figcaption p {
+  margin: 0;
+  color: var(--text-2);
+}
+
+/* ---------- Phones: dock + one bottom sheet at a time ---------- */
+.mobile-dock {
+  display: none;
+}
+
+@media (max-width: 860px) {
+  :root {
+    --dock-h: 58px;
+  }
+  .topbar {
+    width: calc(100vw - var(--gap) * 2);
+    gap: 8px;
+  }
+  .topbar .brand h1,
+  .topbar .brand > div {
+    display: none;
+  }
+  .kbd {
+    display: none;
+  }
+  .search-results {
+    position: fixed;
+    top: calc(var(--gap) + 62px);
+    left: var(--gap);
+    right: var(--gap);
+    max-height: 60vh;
+  }
+  .timebar {
+    bottom: calc(var(--gap) * 2 + var(--dock-h));
+  }
+  .mobile-dock {
+    display: flex;
+    position: absolute;
+    left: var(--gap);
+    right: var(--gap);
+    bottom: var(--gap);
+    height: var(--dock-h);
+    padding: 4px;
+    z-index: 6;
+    justify-content: space-around;
+    padding-bottom: max(4px, env(safe-area-inset-bottom));
+  }
+  .mobile-dock button {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--muted);
+    font-size: 10.5px;
+    cursor: pointer;
+  }
+  .mobile-dock button.active {
+    color: #fff;
+    background: var(--accent-soft);
+  }
+  /* Sheets: anchored above the time bar, one at a time, map visible above. */
+  .sidebar,
+  .control-panel,
+  .legend.as-sheet {
+    position: absolute;
+    top: auto;
+    left: var(--gap);
+    right: var(--gap);
+    width: auto;
+    max-width: none;
+    bottom: calc(var(--gap) * 3 + var(--dock-h) + var(--timebar-h));
+    max-height: 48vh;
+    overflow: auto;
+    z-index: 5;
+    padding-top: 0;
+  }
+  .legend.as-sheet {
+    display: block;
+    padding: 0 14px 12px;
+  }
+  .sheet-tall .sidebar,
+  .sheet-tall .control-panel,
+  .sheet-tall .legend.as-sheet {
+    max-height: calc(100dvh - var(--gap) * 4 - var(--dock-h) - var(--timebar-h) - 62px);
+  }
+  .sheet-handle {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 -16px 4px;
+    padding: 4px 8px;
+    background: var(--panel-solid);
+  }
+  .sheet-handle .grab {
+    flex: 1;
+    height: 22px;
+    border: 0;
+    background: transparent;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+  }
+  .sheet-handle .grab span {
+    width: 42px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--border-strong);
+  }
+  .sheet-handle .close {
+    position: absolute;
+    right: 6px;
+    font-size: 20px;
+    width: 30px;
+    height: 30px;
+  }
+  .control-panel .sheet-handle {
+    margin: 0 0 4px;
+  }
+  /* Map chrome: compact attribution, no zoom buttons (pinch), above the sheets. */
+  .is-mobile .maplibregl-ctrl-bottom-right {
+    bottom: calc(var(--gap) * 3 + var(--dock-h) + var(--timebar-h));
+  }
+  .is-mobile .maplibregl-ctrl-zoom-in,
+  .is-mobile .maplibregl-ctrl-zoom-out {
+    display: none;
+  }
+  .is-mobile .maplibregl-ctrl-attrib:not(.maplibregl-compact-show) .maplibregl-ctrl-attrib-inner {
+    display: none;
+  }
+  .probe-card {
+    top: calc(var(--gap) + 62px);
+    max-height: 40vh;
+  }
+  .figures {
+    grid-template-columns: repeat(2, 1fr);
   }
 }

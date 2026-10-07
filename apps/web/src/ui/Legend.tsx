@@ -3,6 +3,7 @@ import { BREEZE_COLORS, COLORS } from '../map/palette';
 import { useApp } from '../state/store';
 import { KIND_LABELS } from './format';
 import { IconChevron } from './icons';
+import { SheetHandle, useIsMobile } from './mobile';
 
 const SPEED_STOPS: [string, string][] = [
   ['#d1edff', '0'],
@@ -14,13 +15,22 @@ const SPEED_STOPS: [string, string][] = [
 ];
 
 export function Legend() {
-  const { overlay, particleColor, layers } = useApp();
-  const [open, setOpen] = useState(true);
+  const { overlay, particleColor, layers, mobileSheet, schemaMassif } = useApp();
+  const [deskOpen, setOpen] = useState(true);
+  const mobile = useIsMobile();
+  // Phones: the legend is a bottom sheet opened from the dock.
+  if (mobile && mobileSheet !== 'legend') return null;
+  if (!mobile && schemaMassif) return null;
+  const open = mobile || deskOpen;
   return (
-    <div className={`legend panel ${open ? '' : 'closed'}`} aria-label="Légende">
-      <button className="legend-toggle" onClick={() => setOpen(!open)} aria-expanded={open}>
-        Légende <IconChevron size={14} className="chev" />
-      </button>
+    <div className={`legend panel ${open ? '' : 'closed'} ${mobile ? 'as-sheet' : ''}`} aria-label="Légende">
+      {mobile ? (
+        <SheetHandle />
+      ) : (
+        <button className="legend-toggle" onClick={() => setOpen(!open)} aria-expanded={open}>
+          Légende <IconChevron size={14} className="chev" />
+        </button>
+      )}
       {open && (
         <div className="legend-body">
           {layers.particles && (

@@ -3,6 +3,8 @@ import { AboutModal } from './ui/AboutModal';
 import { ControlPanel } from './ui/ControlPanel';
 import { ContributionPanel } from './ui/Feedback';
 import { IconHelp, IconMenu } from './ui/icons';
+import { MobileDock, schemaHere, useIsMobile } from './ui/mobile';
+import { SearchBox } from './ui/Search';
 import { Legend } from './ui/Legend';
 import { MapView } from './ui/MapView';
 import { ProbeCard } from './ui/ProbeCard';
@@ -16,11 +18,8 @@ function StatusPill() {
   const mode = useRuntime((r) => r.dataMode);
   if (status.phase === 'error') return <span className="status err" title={status.message}>erreur</span>;
   if (status.phase !== 'ready') return <span className="status busy">{status.message ?? 'chargement…'}</span>;
-  return (
-    <span className="status ok" title={mode === 'api' ? 'Données servies par le serveur' : 'Mode autonome (fichiers statiques)'}>
-      {moduleMessage ?? (mode === 'api' ? 'en ligne' : 'autonome')}
-    </span>
-  );
+  if (moduleMessage) return <span className="status busy">{moduleMessage}</span>;
+  return <span className="status-dot ok" title={mode === 'api' ? 'En ligne : données servies par le serveur' : 'Mode autonome (fichiers statiques)'} aria-label={mode === 'api' ? 'en ligne' : 'autonome'} />;
 }
 
 function LoadingVeil() {
@@ -67,16 +66,32 @@ function useShortcuts() {
   }, []);
 }
 
+function SchemaToggle() {
+  const schema = useApp((s) => s.schemaMassif);
+  return (
+    <button
+      className={`btn small schema-toggle ${schema ? 'active' : ''}`}
+      onClick={() => (schema ? useApp.getState().set({ schemaMassif: null }) : schemaHere() || useRuntime.getState().set({ toast: 'Centrez la carte sur un massif pour l’afficher en schéma.' }))}
+      title={schema ? 'Revenir à la vue 3D live' : 'Vue schéma du massif au centre de la carte'}
+    >
+      {schema ? 'Vue 3D live' : 'Vue schéma'}
+    </button>
+  );
+}
+
 export default function App() {
   const { panelOpen, set } = useApp();
+  const mobile = useIsMobile();
   useShortcuts();
   return (
-    <div className="app">
+    <div className={`app ${mobile ? 'is-mobile' : ''}`}>
       <MapView />
       <header className="topbar panel">
-        <button className="icon-btn" onClick={() => set({ panelOpen: !panelOpen })} aria-label={panelOpen ? 'Masquer les panneaux' : 'Afficher les panneaux'}>
-          <IconMenu />
-        </button>
+        {!mobile && (
+          <button className="icon-btn" onClick={() => set({ panelOpen: !panelOpen })} aria-label={panelOpen ? 'Masquer les panneaux' : 'Afficher les panneaux'}>
+            <IconMenu />
+          </button>
+        )}
         <div className="brand">
           <span className="logo" aria-hidden>
             <svg viewBox="0 0 32 32" width="22" height="22">
@@ -88,8 +103,10 @@ export default function App() {
             <h1>Brises des Alpes</h1>
             <p>Aérologie 3D pour le cross</p>
           </div>
+          <StatusPill />
         </div>
-        <StatusPill />
+        <SearchBox />
+        {!mobile && <SchemaToggle />}
         <button className="icon-btn" onClick={() => set({ aboutOpen: true })} aria-label="Aide et méthodologie">
           <IconHelp />
         </button>
@@ -98,6 +115,7 @@ export default function App() {
       <ControlPanel />
       <TimeBar />
       <Legend />
+      <MobileDock />
       <ProbeCard />
       <ContributionPanel />
       <AboutModal />

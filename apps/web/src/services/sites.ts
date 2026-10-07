@@ -1,8 +1,8 @@
 /**
  * Site directories (take-offs / landings), all free and keyless:
  *
- * - FFVL official list (data.gouv.fr, Licence Ouverte), imported at build time
- *   by `npm run data:sites -- <file>` into public/data/sites-ffvl.json;
+ * - FFVL official site sheets (coordinates, winds, dangers, aerology), imported at
+ *   build time by `npm run data:sites -- <file>` into public/data/sites-ffvl.json;
  * - OpenStreetMap (`free_flying:*`, `sport=free_flying`) through Overpass, ODbL;
  * - ParaglidingEarth community database (GeoJSON API).
  *
@@ -18,7 +18,7 @@ let ffvlCache: Promise<FlyingSite[]> | null = null;
 export const ffvlSites: SiteProvider = {
   id: 'ffvl',
   label: 'FFVL (sites officiels)',
-  attribution: 'Sites © <a href="https://www.data.gouv.fr/datasets/la-liste-des-sites-de-pratique-de-vol-libre" target="_blank" rel="noopener">FFVL / data.gouv.fr</a>',
+  attribution: 'Sites © <a href="https://federation.ffvl.fr/" target="_blank" rel="noopener">FFVL</a>, fiches des terrains de pratique',
   minZoom: 6,
   async fetch(bbox) {
     ffvlCache ??= fetch('data/sites-ffvl.json')

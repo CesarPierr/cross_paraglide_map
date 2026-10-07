@@ -5,6 +5,10 @@
  *
  *   npm run data:sites -- path/to/file.(csv|json|geojson)
  *
+ * Also reads the export of the official site sheets harvested in a browser
+ * (`{ cols, rows }`, see .cache/research/ffvl_sites_alpes.json): those carry
+ * the labelled facts of each sheet (dangers, aerology, restrictions, level).
+ *
  * The column detection is tolerant (lat/latitude, lon/lng/longitude, nom/name,
  * numero with D = décollage / A = atterrissage, altitude, orientation…) so a
  * future export with renamed columns still imports.
@@ -60,6 +64,7 @@ function load(file: string): Row[] {
       lon: f.geometry?.coordinates?.[0],
       lat: f.geometry?.coordinates?.[1],
     }));
+  if (Array.isArray(j.cols) && Array.isArray(j.rows)) return (j.rows as unknown[][]).map((r) => Object.fromEntries((j.cols as string[]).map((c, i) => [c, r[i]])));
   const arr = Object.values(j).find(Array.isArray);
   return (arr as Row[]) ?? [];
 }
@@ -74,7 +79,28 @@ const num = (v: unknown) => {
   return Number.isFinite(n) ? n : undefined;
 };
 
+/** Labelled facts of a harvested FFVL sheet, in display order. */
+const SHEET_FACTS: [string, string][] = [
+  ['praticabilite', 'Praticabilité'],
+  ['conventionnement', 'Conventionnement'],
+  ['pratiques', 'Pratiques'],
+  ['vents_favorables', 'Vents favorables'],
+  ['vents_defavorables', 'Vents défavorables'],
+  ['niveau', 'Niveau conseillé'],
+  ['aerologie', 'Conditions idéales'],
+  ['dangers', 'Dangers'],
+  ['restrictions', 'Restrictions'],
+  ['reglementation_aerienne', 'Réglementation aérienne'],
+  ['gestionnaire', 'Gestionnaire'],
+  ['commune', 'Commune'],
+];
+
 function kindOf(row: Row): SiteKind {
+  const fn = String(row.fonctions ?? '').toLowerCase();
+  if (fn) {
+    if (/d[ée]co/.test(fn)) return 'takeoff';
+    if (/atterro/.test(fn)) return 'landing';
+  }
   const t = String(pick(row, /^(type|nature|categorie|catégorie|kind)$/) ?? '').toLowerCase();
   if (/d[ée]co|takeoff|d[ée]collage/.test(t)) return 'takeoff';
   if (/att|landing/.test(t)) return 'landing';
@@ -98,6 +124,8 @@ function main() {
     const lon = num(pick(row, /^(lon|lng|long|longitude|x)$/));
     if (lat === undefined || lon === undefined || lon < w || lon > e || lat < s || lat > n) continue;
     const id = String(pick(row, /^(suid|numero|numéro|id)$/) ?? `${lon},${lat}`);
+    const details = Object.fromEntries(SHEET_FACTS.map(([k, label]) => [label, String(row[k] ?? '').trim()]).filter(([, v]) => v));
+    const harvested = 'praticabilite' in row;
     out.push({
       id,
       provider: 'ffvl',
@@ -106,10 +134,11 @@ function main() {
       lon: Math.round(lon * 1e5) / 1e5,
       lat: Math.round(lat * 1e5) / 1e5,
       altitude: num(pick(row, /^(alt|altitude|ele|elevation)$/)),
-      orientations: parseOrientations(pick(row, /^(orientation|orientations|exposition|vents?)$/)),
+      orientations: parseOrientations(pick(row, /^(orientation|orientations|exposition|vents?|vents_favorables)$/)),
       description: (pick(row, /^(description|commentaire|remarques?)$/) as string | undefined) || undefined,
-      url: (pick(row, /^(url|lien|fiche|link)$/) as string | undefined) || undefined,
+      url: (pick(row, /^(url|lien|fiche|link)$/) as string | undefined) || (harvested ? `https://federation.ffvl.fr/sites_pratique/voir/${id}` : undefined),
       status: 'official',
+      ...(Object.keys(details).length ? { details } : {}),
     });
   }
   const target = join(process.cwd(), 'apps', 'web', 'public', 'data', 'sites-ffvl.json');

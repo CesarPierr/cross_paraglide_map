@@ -589,6 +589,148 @@
             "S74",
             "S148"
           ]
+        },
+        {
+          "id": "planpraz-relance-depuis-plan-de-l-aiguille",
+          "name": "Planpraz – Brévent (face sud-est) : relance depuis le Plan de l'Aiguille",
+          "lon": 6.8511,
+          "lat": 45.9365,
+          "alt_m": 2000,
+          "coord_quality": "source",
+          "best_hours": "de 8h au début d'après-midi ; départs de cross dès 10h",
+          "trigger": "face sud-est du Brévent au-dessus du plateau de Planpraz, chauffée dès la matinée",
+          "description": "POINT DE RELANCE du cheminement classique de la rive droite : quand on part du Plan de l'Aiguille, on raccroche sur Planpraz, puis la pompe monte au-dessus du Brévent (voir `brevent-plafond-3000`). Planpraz est aussi le départ habituel des cross vers les Aravis et Annecy (récit de 200 km de juillet 2020 : plafonds supérieurs à 4000 m ; vol Chamonix → Annecy). « Au départ du plan de l'aiguille, je raccroche sur planpraz. » Le club précise que le couloir au nord-est du restaurant devient sous le vent une fois le vent établi au décollage sud, et que par vent d'ouest ou de nord supérieur à 20 km/h à 2000 m on vole sous le vent.",
+          "sources": [
+            "S150",
+            "S69",
+            "S70",
+            "S37",
+            "S13"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "brevent-plafond-3000",
+          "name": "Brévent (sommet) : plafond du cheminement des Aiguilles Rouges",
+          "lon": 6.8375,
+          "lat": 45.9338,
+          "alt_m": 2525,
+          "coord_quality": "source",
+          "best_hours": "après-midi (déduction du récit : relance depuis Planpraz)",
+          "trigger": "sommet et faces sud-est du Brévent, plein soleil au-dessus de Planpraz",
+          "description": "PLAFOND du cheminement Plan de l'Aiguille → Planpraz → Brévent : on y prend le plus de hauteur avant de traverser vers l'Aiguillette des Houches (voir `aiguillette-des-houches-relais`). « Puis ça monte jusqu'à 3000m au-dessus du Brévent. » Au-delà de la crête ouest/nord-ouest, le survol est interdit à moins de 300 m/sol (réserve des Aiguilles Rouges, selon le club). Sommet IGN 2507 m ; altitude de la carte 2525 m.",
+          "sources": [
+            "S150",
+            "S37"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "aiguillette-des-houches-relais",
+          "name": "Aiguillette des Houches (face sud) : relais vers Les Houches et le Prarion",
+          "lon": 6.8022,
+          "lat": 45.9206,
+          "alt_m": 2179,
+          "coord_quality": "source",
+          "best_hours": "début d'après-midi (créneau conseillé pour thermiquer par vent météo faible)",
+          "trigger": "pente sud herbeuse et crête de l'Aiguillette, qui chauffent vite ; brise de vallée forte sur la face",
+          "description": "POINT DE RELANCE entre le Brévent et le secteur des Houches (Chailloud, Merlet, Prarion) : « je traverse ensuite à l'aiguillette des Houches ». Alpes Guides la décrit comme un décollage « de thermiques en face Sud » : matin pour un vol calme, début d'après-midi pour du thermique si le vent météo reste faible, avec une brise de vallée qui monte fort dans la journée. Position de la fiche FFVL 1116 (2179 m) ; le sommet IGN est à 2279 m.",
+          "sources": [
+            "S150",
+            "S153",
+            "S85"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "pointe-de-lapaz-declencheur",
+          "name": "Pointe de Lapaz (crête ouest) : déclencheur du retour vers Passy",
+          "lon": 6.8135,
+          "lat": 45.9195,
+          "alt_m": 2308,
+          "coord_quality": "source",
+          "best_hours": "après-midi (journée de canicule de mi-juillet)",
+          "trigger": "crête qui descend vers l'ouest depuis la pointe (géocodeur IGN : sommet de 2308 m aux Houches)",
+          "description": "DÉCLENCHEUR sur le trajet haut massif → vallée : « Elle me semble un bon déclencheur de thermique et en effet une ascendance me porte rapidement jusqu'au sommet de la pointe. » Depuis la pointe, le pilote voit des ailes décoller du Brévent, transite à 3200 m vers les sommets au-dessus de Passy puis vers Varan (voir `varan-falaises-barmerousse`). Éviter la zone R 30 C (l'auteur la contourne avant d'y arriver).",
+          "sources": [
+            "S149"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "varan-falaises-barmerousse",
+          "name": "Varan (Passy) : falaises sous le décollage et pied de la pointe de Barmerousse",
+          "lon": 6.6822,
+          "lat": 45.9448,
+          "alt_m": 1612,
+          "coord_quality": "source",
+          "ffvl_id": 1200,
+          "best_hours": "après-midi d'été ; actif aussi au printemps (avril)",
+          "trigger": "falaises sous le décollage et pied de la pointe de Barmerousse (CMBVL) ; secteur de Varan",
+          "description": "POINT DE RELANCE (le « plein ») avant la transition vers la Pointe Percée et les Aravis : « je chemine… vers Varan pour faire un plein avant de m'attaquer à la transition pour les Aravis… Comme en Avril, le secteur de Varan est bien généreux et m'emmène à plus de 3400m. » Le CMBVL confirme qu'un fort thermique se forme presque toujours le long des falaises sous le décollage et au pied de Barmerousse, et la fiche FFVL parle d'un thermique généreux qui permet de partir en cross. Le site relève du lot Arve (Passy) ; il est ajouté ici parce qu'il sert de relance sur le cheminement Chamonix → Aravis.",
+          "sources": [
+            "S149",
+            "S151",
+            "S152"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "nord-aiguilles-rouges-plafond-3600",
+          "name": "Nord des Aiguilles Rouges : plafond de bascule vers la Suisse",
+          "lon": 6.874,
+          "lat": 45.9878,
+          "coord_quality": "approx",
+          "best_hours": "fin de matinée à midi (déduction : décollage à 11h dans les Aravis, Chamonix « rapidement »)",
+          "trigger": "faces sud de la partie nord de la crête des Aiguilles Rouges (déduction)",
+          "description": "PLAFOND de bascule : « le nord du massif des Aiguilles Rouges où le plafond est déjà à 3600 m, de quoi me donner confiance pour lancer ce vol en direction de la Suisse puis de l'Italie » (23 août 2023, vent léger). Lieu non précisé par l'auteur ; position placée par déduction sur l'Aiguille du Belvédère (IGN), sommet de la partie nord du massif. À confirmer.",
+          "sources": [
+            "S72"
+          ],
+          "confidence": "low"
+        },
+        {
+          "id": "grandes-jorasses-thermique-italien",
+          "name": "Sous les Grandes Jorasses (côté italien) : plafond vers 4000 m",
+          "lon": 6.9802,
+          "lat": 45.8713,
+          "coord_quality": "approx",
+          "best_hours": "début d'après-midi (avant 15h)",
+          "trigger": "glaciers et faces sud des Grandes Jorasses, au-dessus du val Ferret italien",
+          "description": "PLAFOND du côté italien du tour du Mont-Blanc : « Je suis à 4000m d'altitude et les sommets sont plus hauts que moi… j'enroule un thermique teigneux sous les Grandes Jorasses. » Du côté italien l'auteur « fait tous les plafonds » (thermiques supérieurs à +2 m/s). Position approximative (le thermique est « sous » la pointe) ; sommet IGN utilisé.",
+          "sources": [
+            "S72"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "sous-le-mont-blanc-plafond-4200",
+          "name": "Sous le Mont Blanc : plafond de 4200 m avant la bascule vers les Chapieux",
+          "lon": 6.8652,
+          "lat": 45.8327,
+          "coord_quality": "approx",
+          "best_hours": "vers 15h (le plafond continue de monter plus tard dans la journée)",
+          "trigger": "sommet et glaciers du Mont Blanc plein soleil",
+          "description": "PLAFOND du tour : « J'arrive sous le Mont Blanc avant 15h, à 4200m. Je sais que le plafond va monter, et il sera plus tard possible de survoler le sommet. » Respecter les zones LF-R 30 A/B/C et l'arrêté sur le sommet. Position : le sommet (déco du Mont-Blanc), le point exact du thermique n'est pas donné.",
+          "sources": [
+            "S72"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "aiguilles-rouges-crete-nord-flegere",
+          "name": "Crête des Aiguilles Rouges au nord de l'Index (Aiguille du Lac Blanc) : faces est le matin",
+          "lon": 6.8777,
+          "lat": 45.9902,
+          "coord_quality": "approx",
+          "best_hours": "matin (dès 8h, déduction)",
+          "trigger": "faces est de la crête des Aiguilles Rouges au nord de la Flégère, éclairées tôt (déduction)",
+          "description": "Déduction : sur le cheminement Planpraz → Flégère → Argentière, le déclencheur du matin est la crête des Aiguilles Rouges, dont les faces est sont éclairées tôt ; la Flégère est donnée comme « le meilleur spot de Chamonix pour partir en cross » avec de bons thermiques tôt le matin (ParaglidingEarth), et le club recommande ce site les jours de vent léger ou de grande stabilité. Aucun récit ne nomme un relief précis au nord de l'Index ; position placée sur l'Aiguille du Lac Blanc (IGN). Rester hors de la réserve (300 m/sol au-delà de la crête).",
+          "sources": [
+            "S95",
+            "S38"
+          ],
+          "confidence": "low"
         }
       ],
       "soaring_spots": [
@@ -1044,10 +1186,28 @@
               "coord_quality": "source"
             },
             {
+              "name": "Varan (Passy) : plein avant les Aravis",
+              "lon": 6.6822,
+              "lat": 45.9448,
+              "coord_quality": "source"
+            },
+            {
               "name": "Sallanches (traversée de l'Arve vers les Aravis, supposée)",
               "lon": 6.6317,
               "lat": 45.9367,
               "coord_quality": "approx"
+            },
+            {
+              "name": "Pointe Percée (raccroche à 2400 m puis 3400 m)",
+              "lon": 6.5558,
+              "lat": 45.9558,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Col des Aravis",
+              "lon": 6.4647,
+              "lat": 45.8725,
+              "coord_quality": "source"
             },
             {
               "name": "Annecy",
@@ -1057,12 +1217,13 @@
             }
           ],
           "distance_km": 56,
-          "description": "XC Mag : Planpraz est le point de départ idéal des cross vers l'ouest et Annecy ; parcours classique avec la traversée sur la chaîne des Aravis ; « Annecy and back : 100 km classic XC route ». Une vidéo de mars 2026 décrit la montée sur la vallée puis la transition sur les Aravis ; une autre un vol de 200 km fin juillet 2020 depuis Planpraz (9 h, plafonds au-dessus de 4000 m, passage par les Aravis). Le point de traversée de l'Arve est une déduction.",
+          "description": "XC Mag : Planpraz est le point de départ idéal des cross vers l'ouest et Annecy ; parcours classique avec la traversée sur la chaîne des Aravis ; « Annecy and back : 100 km classic XC route ». Une vidéo de mars 2026 décrit la montée sur la vallée puis la transition sur les Aravis ; une autre un vol de 200 km fin juillet 2020 depuis Planpraz (9 h, plafonds au-dessus de 4000 m, passage par les Aravis). Le point de traversée de l'Arve est une déduction. Passe thermiques : waypoints ajoutés dans l'ordre volé par le récit de L'Aile et la Cuisse (sens Chamonix → Aravis) : Varan (plein), Pointe Percée (« Je raccroche la Pointe Percée à 2400 », puis un thermique à 3400 m) et col des Aravis en deux thermiques. Pointe Percée relève du lot Annecy–Aravis. [S149]",
           "sources": [
             "S13",
             "S14",
             "S69",
-            "S70"
+            "S70",
+            "S149"
           ]
         },
         {
@@ -1265,6 +1426,18 @@
               "coord_ref": "OpenStreetMap (Nominatim)"
             },
             {
+              "name": "Nord des Aiguilles Rouges (plafond 3600 m)",
+              "lon": 6.874,
+              "lat": 45.9878,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Grandes Jorasses (thermique à 4000 m, côté italien)",
+              "lon": 6.9802,
+              "lat": 45.8713,
+              "coord_quality": "approx"
+            },
+            {
               "name": "Mont-Blanc (sous le sommet, 4200 m)",
               "lon": 6.8652,
               "lat": 45.8327,
@@ -1286,11 +1459,48 @@
             }
           ],
           "distance_km": 64,
-          "description": "Carnet d'août 2023 : décollage de La Clusaz après 11h, traversée des Aravis, Pointe Percée, vallée de l'Arve ; plafond à 3600 m au nord des Aiguilles Rouges ; Suisse puis Italie en enroulant tous les thermiques > +2 m/s, thermique « teigneux » sous les Grandes Jorasses, sous le Mont-Blanc avant 15h à 4200 m (moyenne 25 km/h). Le plan de vol évitait le Cormet de Roselend (« mauvais cocktail de brises » déjà rencontré) ; la route directe fait perdre beaucoup d'altitude, « ça descend du col de la Seigne » et du Cormet : poser à 15h40 entre Les Chapieux et le Cormet. La section GPX de la journée est annoncée à 187 km (y compris marche). Détail Suisse/Italie non précisé : tracé simplifié, hors zone interdite 30 B si le vol a lieu hors juillet-août (ici août 2023).",
+          "description": "Carnet d'août 2023 : décollage de La Clusaz après 11h, traversée des Aravis, Pointe Percée, vallée de l'Arve ; plafond à 3600 m au nord des Aiguilles Rouges ; Suisse puis Italie en enroulant tous les thermiques > +2 m/s, thermique « teigneux » sous les Grandes Jorasses, sous le Mont-Blanc avant 15h à 4200 m (moyenne 25 km/h). Le plan de vol évitait le Cormet de Roselend (« mauvais cocktail de brises » déjà rencontré) ; la route directe fait perdre beaucoup d'altitude, « ça descend du col de la Seigne » et du Cormet : poser à 15h40 entre Les Chapieux et le Cormet. La section GPX de la journée est annoncée à 187 km (y compris marche). Détail Suisse/Italie non précisé : tracé simplifié, hors zone interdite 30 B si le vol a lieu hors juillet-août (ici août 2023). Passe thermiques : plafond de 3600 m au nord des Aiguilles Rouges avant la bascule en Suisse, puis thermique « teigneux » sous les Grandes Jorasses à 4000 m, avant d'arriver sous le Mont Blanc à 4200 m. [S72]",
           "sources": [
             "S72"
           ],
           "confidence": "medium"
+        },
+        {
+          "id": "plan-aiguille-planpraz-brevent-aiguillette",
+          "name": "Plan de l'Aiguille → Planpraz → Brévent → Aiguillette des Houches (cheminement de la rive droite)",
+          "waypoints": [
+            {
+              "name": "Déco du Plan de l'Aiguille",
+              "lon": 6.8837,
+              "lat": 45.9023,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Planpraz (raccroche)",
+              "lon": 6.8511,
+              "lat": 45.9365,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Brévent (plafond 3000 m)",
+              "lon": 6.8375,
+              "lat": 45.9338,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Aiguillette des Houches",
+              "lon": 6.8022,
+              "lat": 45.9206,
+              "coord_quality": "source"
+            }
+          ],
+          "distance_km": 9,
+          "description": "Cheminement décrit par un pilote local : « Au départ du plan de l'aiguille, je raccroche sur planpraz. Puis ça monte jusqu'à 3000m au dessus du Brévent, je traverse ensuite à l'aiguillette des Houches… ». Le Plan de l'Aiguille est interdit de décollage et de survol en juillet et août (LF-R 30 B, selon le club) ; hors de cette période, c'est le départ du cheminement ; Planpraz (relance), Brévent (plafond), Aiguillette (relais vers les Houches et Varan). Distance indicative cumulée entre les points. Sources : récit en vidéo (description lue seulement), Gratte-Ciel (restrictions).",
+          "sources": [
+            "S150",
+            "S39",
+            "S37"
+          ]
         }
       ],
       "tips": [
@@ -1304,7 +1514,9 @@
         "Foehn : surveiller l'écart de pression Aoste–Annecy (≤ −4 hPa) et les balises Prarion, Requin, ENSA ; il peut rester cantonné entre 1400 et 1800 m [S51][S3]",
         "Le Savoy et la Flégère intermédiaire (1950 m) deviennent sous le vent dès que la brise s'établit (~11h) [S49][S38]",
         "Tour du Mont-Blanc en parapente : bascule en Suisse par la fenêtre d'Arpette (2700 m, bons plafonds), Italie par le Grand Col Ferret (2537 m), retour France par le col de Miage (3367 m) ; vol engagé, versant italien réglementé en juillet-août [S73]",
-        "Seuils de vent à 2000 m : 20 km/h (brochure FFVL 2008, club) mais 30 km/h cité par l'école Air Sports ; foehn annoncé = renoncer. Balises Pioupiou au Plan de l'Aiguille et au Bois du Bouchet [S77]"
+        "Seuils de vent à 2000 m : 20 km/h (brochure FFVL 2008, club) mais 30 km/h cité par l'école Air Sports ; foehn annoncé = renoncer. Balises Pioupiou au Plan de l'Aiguille et au Bois du Bouchet [S77]",
+        "Rive droite de Chamonix : du Plan de l'Aiguille on raccroche sur Planpraz, puis le Brévent monte à 3000 m avant l'Aiguillette des Houches [S150].",
+        "Chamonix → Aravis : faire le plein à Varan (falaises sous le déco, pied de Barmerousse) avant la transition vers la Pointe Percée [S149, S151]."
       ]
     },
     {
@@ -1610,6 +1822,49 @@
             "S15",
             "S103"
           ]
+        },
+        {
+          "id": "la-charme-falaise-declencheur",
+          "name": "La Charme (Saint-Gervais) : petite falaise de sortie de déco",
+          "lon": 6.7435,
+          "lat": 45.8788,
+          "alt_m": 1852,
+          "coord_quality": "source",
+          "best_hours": "début d'après-midi ; restitution le soir",
+          "trigger": "petite falaise à la sortie du décollage, thermiques qui déclenchent devant",
+          "description": "DÉCLENCHEUR du site de l'ouest de Saint-Gervais : « Une petite falaise à la sortie du déco permet aux thermiques de se mettre en place en début d'après-midi. » Les thermiques déclenchent devant le déco (la repose y est parfois turbulente). Par vent de nord ou nord-est marqué à 2000 m le déco est « coiffé » et sous-alimenté. Le site sert au cross, à l'initiation du soir et à la restitution (voir `saint-gervais-village-restitution`).",
+          "sources": [
+            "S15"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "saint-gervais-village-restitution",
+          "name": "Au-dessus du village de Saint-Gervais : ascendances larges du soir",
+          "lon": 6.7113,
+          "lat": 45.8928,
+          "coord_quality": "source",
+          "best_hours": "en soirée, quand le versant Bettex (est) et le village passent à l'ombre",
+          "trigger": "milieu de la vallée : le relief ne donne plus rien, ce sont de très larges ascendances douces (déduction du récit : air chauffé le jour)",
+          "description": "PLAFOND de restitution du soir depuis La Charme : « restitutions au-dessus du village de Saint-Gervais qui vous tiennent en l'air jusque très tard » ; « c'est au milieu de la vallée qu'il faudra aller chercher de très larges et douces ascendances jusqu'au coucher du soleil ». Position : centre du village (OpenStreetMap) ; lignes électriques en amont de l'atterrissage de la piscine.",
+          "sources": [
+            "S15"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "tre-la-tete-ascendance-4300",
+          "name": "Crête vers le glacier de Tré-la-Tête : ascendance à mi-chemin (plafond 4300 m)",
+          "lon": 6.7655,
+          "lat": 45.7549,
+          "coord_quality": "approx",
+          "best_hours": "après-midi (mi-juillet, canicule)",
+          "trigger": "crête exposée entre la Pointe de Mya et le glacier de Tré-la-Tête (« à mi-chemin »)",
+          "description": "PLAFOND exceptionnel du haut massif : « Je chemine le long de cette crête en direction du Glacier de Tré la Tête et rencontre une ascendance à mi-chemin… 4100, 4200… 4300 ! » (record d'altitude de l'auteur). Position : milieu du segment Pointe de Mya – glacier de Tré-la-Tête (approximative). Il faut éviter d'entrer dans la réserve des Contamines ; le pilote ne cherche à exploiter qu'une fois passée sa limite nord, puis se heurte à l'arête de Tricot (non localisée) où les ascendances sont difficiles à tenir (« je gratte péniblement 400m pendant 20min »).",
+          "sources": [
+            "S149"
+          ],
+          "confidence": "medium"
         }
       ],
       "soaring_spots": [
@@ -1976,6 +2231,12 @@
               "coord_quality": "source"
             },
             {
+              "name": "Mont Joly (épaule, face est : bons plafonds dès le matin)",
+              "lon": 6.6929,
+              "lat": 45.826,
+              "coord_quality": "source"
+            },
+            {
               "name": "Col du Joly",
               "lon": 6.6737,
               "lat": 45.7833,
@@ -1989,7 +2250,7 @@
             }
           ],
           "distance_km": 20,
-          "description": "Brochure : depuis le déco de Saint-Nicolas/Porcherey, « une fois accédé au Mont Joly, c'est la route des Saisies et des Aravis qui paraît la plus logique » ; sinon vol en finesse jusqu'à la piscine s'il n'y a pas de vent de vallée. Le club des Volatiles évoque un projet d'aller aux Dômes de Miage et au Mont-Blanc et de revenir. Tracé indicatif.",
+          "description": "Brochure : depuis le déco de Saint-Nicolas/Porcherey, « une fois accédé au Mont Joly, c'est la route des Saisies et des Aravis qui paraît la plus logique » ; sinon vol en finesse jusqu'à la piscine s'il n'y a pas de vent de vallée. Le club des Volatiles évoque un projet d'aller aux Dômes de Miage et au Mont-Blanc et de revenir. Tracé indicatif. Passe thermiques : l'arête de Porcherey monte directement au sommet du Mont Joly, « très bon départ de cross le matin sur sa face Sud-Est » ; par déco nord ne pas gratter trop bas au début. [S15]",
           "sources": [
             "S3",
             "S15",
@@ -2288,10 +2549,13 @@
           "coord_quality": "approx",
           "best_hours": "après-midi, régime de brise ou vent de nord",
           "trigger": "relief de l'Alpette au-dessus du déco de Rochebrune (position déduite : cité sans coordonnées)",
-          "description": "Brochure : par vents de secteur nord ou brises thermiques, possibilité d'accrocher après le décollage « le thermique de l'Alpette » et de partir en cross vers le Christom et les Aravis ou vers le Mont-Joly.",
+          "description": "Brochure : par vents de secteur nord ou brises thermiques, possibilité d'accrocher après le décollage « le thermique de l'Alpette » et de partir en cross vers le Christom et les Aravis ou vers le Mont-Joly. Passe thermiques : RELANCE juste après le décollage de Rochebrune. Un guide récent ajoute qu'en conditions thermiques on peut monter au-dessus du sommet pour basculer vers la vallée de l'Arly (S76), et la fiche FFVL parle d'une confluence qui permet de longs vols paisibles et facilite les départs en cross (par vent météo faible de N à NE avec la brise de sud-ouest, S114).",
           "sources": [
-            "S3"
-          ]
+            "S3",
+            "S76",
+            "S114"
+          ],
+          "confidence": "medium"
         },
         {
           "id": "cordon-thermiques-matin",
@@ -2308,6 +2572,21 @@
             "S119",
             "S120"
           ]
+        },
+        {
+          "id": "christomet-relance-vers-cordon",
+          "name": "Le Christomet : relance entre Rochebrune et Cordon",
+          "lon": 6.5683,
+          "lat": 45.8626,
+          "alt_m": 1842,
+          "coord_quality": "source",
+          "best_hours": "après-midi (déduction)",
+          "trigger": "sommet de 1842 m, premier relief exposé au sud entre Rochebrune et la Tête du Planet (déduction)",
+          "description": "Déduction : la brochure indique qu'après le thermique de l'Alpette on part en cross « vers le Christom et les Aravis » ; le Christomet (1842 m, IGN) est le premier relief de la ligne Rochebrune → Cordon, et c'est donc là qu'on raccroche pour atteindre le portail de Cordon (Tête du Planet). Aucun récit ne décrit le thermique lui-même (lieu précis, ascendance non confirmée).",
+          "sources": [
+            "S2"
+          ],
+          "confidence": "low"
         }
       ],
       "soaring_spots": [
@@ -2567,6 +2846,12 @@
               "coord_quality": "source"
             },
             {
+              "name": "Le Christomet (relance)",
+              "lon": 6.5683,
+              "lat": 45.8626,
+              "coord_quality": "source"
+            },
+            {
               "name": "Tête du Planet (Cordon)",
               "lon": 6.5709,
               "lat": 45.913,
@@ -2574,7 +2859,7 @@
             }
           ],
           "distance_km": 9,
-          "description": "Le thermique de l'Alpette puis la crête de Cordon mènent aux Aravis (« portail pour traverser vers les Aravis », ParaglidingEarth). Tracé déduit, au-delà de la Tête du Planet les Aravis sont traités dans le lot Annecy–Bornes–Aravis.",
+          "description": "Le thermique de l'Alpette puis la crête de Cordon mènent aux Aravis (« portail pour traverser vers les Aravis », ParaglidingEarth). Tracé déduit, au-delà de la Tête du Planet les Aravis sont traités dans le lot Annecy–Bornes–Aravis. Passe thermiques : la brochure place le Christomet sur la route du cross depuis Rochebrune (« vers le Christom et les Aravis »). [S2]",
           "sources": [
             "S3",
             "S128"
@@ -2937,6 +3222,21 @@
           "sources": [
             "S72"
           ]
+        },
+        {
+          "id": "pas-de-l-ane-sous-le-vent-du-mirantin",
+          "name": "Pas de l'Âne : sous le vent du Mont Mirantin par flux de nord",
+          "kind": "lee-rotor",
+          "lon": 6.5413,
+          "lat": 45.6826,
+          "coord_quality": "source",
+          "radius_km": 2,
+          "conditions": "flux de nord encore sensible à l'ouest du Mirantin (récit de mi-juillet, vent N à NO forcissant)",
+          "description": "« Rendu au Pas de L'Âne, je décide de passer le col en direction du Sud. Grossière erreur. De suite je gagne 10km/h et me retrouve sous le vent du Mirantin. J'exploite le premier thermique que je trouve pour réussir à me dégager » : thermique sain jusqu'à 2900 m une fois dégagé. Transition : mieux vaut rester sur la face au vent avant de passer le col. Position : Pas de l'Âne (OpenStreetMap).",
+          "sources": [
+            "S149",
+            "S154"
+          ]
         }
       ],
       "thermal_spots": [
@@ -2970,6 +3270,112 @@
             "S28",
             "S138"
           ]
+        },
+        {
+          "id": "mont-rosset-extraction",
+          "name": "Mont Rosset : extraction de fin de matinée après la face est de la Pierra Menta",
+          "lon": 6.6611,
+          "lat": 45.6218,
+          "alt_m": 2448,
+          "coord_quality": "source",
+          "best_hours": "vers 11h30-12h (récit du 23 août 2023)",
+          "trigger": "pentes et crête du Mont Rosset, premier relief au-dessus du décollage de la Pierra Menta",
+          "description": "DÉCLENCHEUR d'extraction : décollé à 11h de la face est de la Pierra Menta, le pilote doit patienter : « Je passe 35 minutes sous le Mont Rosset avant de sentir que la journée commence enfin à se mettre en place. » Ensuite relance vers la Pointe de la Terrasse. Le matin les cycles sont courts (une barbule se gonfle et se dégonfle).",
+          "sources": [
+            "S72"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "pointe-de-la-terrasse-plafond-3100",
+          "name": "Pointe de la Terrasse : plafond de 3100 m (mou sous 2400 m)",
+          "lon": 6.7247,
+          "lat": 45.6702,
+          "alt_m": 2877,
+          "coord_quality": "source",
+          "best_hours": "après-midi (après l'extraction du Mont Rosset)",
+          "trigger": "sommet et faces est de la Pointe de la Terrasse",
+          "description": "PLAFOND du cheminement vers l'ouest : « Le plafond est à 3100m, mais en dessous de 2400m, c'est encore assez mou, alors j'essaie de rester bien au-dessus » avant de partir vers l'ouest (Roselend puis Bisanne). Dans un autre récit (mi-juillet), la Pointe de la Terrasse est la première petite transition après un plafond de 3500 m au-dessus de la Pointe de Combe Neuve, avant de passer par la Pointe de Mya.",
+          "sources": [
+            "S72",
+            "S149"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "pointe-de-mya-plafond-3800",
+          "name": "Pointe de Mya (face sud-est) : plafond de 3800 m",
+          "lon": 6.7372,
+          "lat": 45.7137,
+          "coord_quality": "source",
+          "best_hours": "après-midi (mi-juillet, canicule)",
+          "trigger": "face sud-est de la Pointe de Mya (« bien exposée en SE »)",
+          "description": "PLAFOND/RELANCE sur la route du haut massif : après avoir renoncé au col du Bonhomme (réserve des Contamines de l'autre côté), le pilote vise la Pointe de Mya « bien exposée en SE » : « Un thermique me fait atteindre les 3800m et me permet d'être bien à l'aise au-dessus de la crête », puis il rejoint le glacier de Tré-la-Tête (voir `tre-la-tete-ascendance-4300`).",
+          "sources": [
+            "S149"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "la-legette-saisies-relance",
+          "name": "La Légette (Les Saisies) : relance difficile avant le Mont Clocher",
+          "lon": 6.5572,
+          "lat": 45.7565,
+          "alt_m": 1865,
+          "coord_quality": "source",
+          "best_hours": "après-midi (déduction : le pilote rejoint la Légette après la montée de la matinée)",
+          "trigger": "crête de la Légette, entre le col des Saisies et le Mont Clocher",
+          "description": "POINT DE RELANCE délicat sur la petite boucle Bisanne – Saisies – Mont Clocher : « je rejoins la Légette, où c'est un peu plus dur pour remonter. Je parviens à passer au-dessus de la crête et file au Mont Clocher. » Retour « à radada » par le col, puis la face sud de Bisanne. Le thermique de sortie de déco de Bisanne (voir `bisanne-sud-matin`) donne la hauteur de départ (« aux Barbules à 2500m », c'est-à-dire sous les petits cumulus).",
+          "sources": [
+            "S67",
+            "S154"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "legette-du-grand-mont-plafond-3200",
+          "name": "Légette du Grand Mont : plafond de 3200 m dans l'après-midi",
+          "lon": 6.5276,
+          "lat": 45.6461,
+          "alt_m": 2364,
+          "coord_quality": "source",
+          "best_hours": "après-midi bien entamée",
+          "trigger": "sommet de la Légette du Grand Mont (IGN 2364 m) et pentes sud-est",
+          "description": "PLAFOND/RELANCE avant la sortie du Beaufortain vers Bourg-Saint-Maurice : « Une ascendance au-dessus de la Légette du Grand Mont me permet d'atteindre les 3200m », puis « un nouveau thermique au-dessus du Grand Mont » ; l'après-midi bien entamée, « chaque thermique me permet de monter plus haut que le précédent ». Complète `grand-mont-versant-est` (thermiques du matin).",
+          "sources": [
+            "S149"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "roche-pourrie-brise-d-annecy",
+          "name": "Roche Pourrie : entrée du Beaufortain depuis les Aravis",
+          "lon": 6.46,
+          "lat": 45.6837,
+          "coord_quality": "source",
+          "best_hours": "après-midi (déduction du récit : arrivée après les Aravis)",
+          "trigger": "face ouest-nord-ouest de la Roche Pourrie, face à la brise d'Annecy, avec un vent de nord",
+          "description": "RELANCE à l'arrivée dans le Beaufortain après la transition depuis la Dent de Cons / Mont Charvin : « la Roche Pourrie sera bien orientée en ONO pour récupérer la brise d'Annecy… Les thermiques sont de plus en plus efficaces et me permettent de monter par paliers : 1700m, 2000m, 2200m, 2600m. » Position : poteau « La Roche-Pourrie » (OpenStreetMap). Suite du parcours : Mont Mirantin, Pas de l'Âne (piège), Grand Mont.",
+          "sources": [
+            "S149",
+            "S154"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "roselend-parois-fin-de-journee",
+          "name": "Parois de Roselend (falaises du Biolley) : ascendance de fin de journée",
+          "lon": 6.6507,
+          "lat": 45.6845,
+          "coord_quality": "approx",
+          "best_hours": "fin de journée, quand le soleil tape les parois nord-ouest",
+          "trigger": "parois rocheuses de Roselend exposées au nord-ouest, couplées à la brise de vallée qui remonte le vallon",
+          "description": "Vol de fin de journée idéal : « quand le soleil vient taper les parois rocheuses de Roselend orientées Nord-Ouest, couplé à la brise de vallée remontant le vallon… longer les falaises du Biolley, rougeoyantes, face au roc du Vent ». Un autre guide signale qu'on peut rester en l'air jusqu'à la nuit avec la brise au Cormet de Roselend. Position approximative (falaises du Biolley non repérées sur les cartes consultées) : point de la Petite Berge.",
+          "sources": [
+            "S28",
+            "S65"
+          ],
+          "confidence": "medium"
         }
       ],
       "soaring_spots": [
@@ -3327,6 +3733,54 @@
             "S67"
           ],
           "confidence": "medium"
+        },
+        {
+          "id": "bisanne-saisies-legette-mont-clocher",
+          "name": "Bisanne → col des Saisies → La Légette → Mont Clocher (petite boucle des Saisies)",
+          "waypoints": [
+            {
+              "name": "Bisanne Sud (déco, thermique de sortie jusqu'à 2500 m)",
+              "lon": 6.5072,
+              "lat": 45.747,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Col des Saisies",
+              "lon": 6.5282,
+              "lat": 45.7584,
+              "coord_quality": "source"
+            },
+            {
+              "name": "La Légette (relance difficile)",
+              "lon": 6.5572,
+              "lat": 45.7565,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Mont Clocher",
+              "lon": 6.5907,
+              "lat": 45.7719,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Col des Saisies (retour)",
+              "lon": 6.5282,
+              "lat": 45.7584,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Bisanne face sud puis atterrissage de Marcôt",
+              "lon": 6.5536,
+              "lat": 45.7214,
+              "coord_quality": "source"
+            }
+          ],
+          "distance_km": 17,
+          "description": "Vol rando relaté par un ancien pilote de cross : « ça monte à droite puis au dessus du déco où je prend un thermique qui me monte aux Barbules à 2500m. Je transite au-dessus du col des Saisies, je rejoins la Légette, où c'est un peu plus dur pour remonter. Je parviens à passer au-dessus de la crête et file au Mont Clocher. Le retour sera à radada, mais je parviens à passer le col et rejoindre la face sud de Bisanne. » Atterrissage à Marcôt (officiel) ou dans les champs sous Villard-sur-Doron. « Barbules » désigne ici les petits cumulus. Distance indicative (cumul des segments).",
+          "sources": [
+            "S67",
+            "S154"
+          ]
         }
       ],
       "tips": [
@@ -3338,7 +3792,8 @@
         "Rando-vol de Roselend : reconnaître l'atterro, tenir compte de la brise encore forte en milieu d'après-midi, voler tôt au Grand Mont (brise de pente ~10h) [S28]",
         "Route de Bisanne fermée de début juillet à fin août : utiliser le télésiège (tarif parapente) ou la navette nature Beaufortain [S60]",
         "Bisanne est un portail de grands cross (300 km la veille du carnet d'août 2023) : plafond 3100 m sur la Pointe de la Terrasse, mais encore mou sous 2400 m le matin [S72]",
-        "Éviter le Cormet de Roselend / Les Chapieux en basse altitude l'après-midi : brises descendantes du col de la Seigne et du Cormet [S72]"
+        "Éviter le Cormet de Roselend / Les Chapieux en basse altitude l'après-midi : brises descendantes du col de la Seigne et du Cormet [S72]",
+        "Beaufortain depuis les Aravis : relancer sur la Roche Pourrie (brise d'Annecy) puis rester au vent du Mirantin ; passer le Pas de l'Âne vers le sud met sous le vent [S149]."
       ]
     }
   ],
@@ -4690,6 +5145,60 @@
       "type": "web",
       "lang": "en",
       "notes": "45.8466 6.93209, 3384 m, accès par le Skyway Mont-Blanc."
+    },
+    {
+      "id": "S149",
+      "title": "L'Aile et la Cuisse, « Bourg Saint Maurice - À l'assaut d'un rêve : un vol dans le Beaufortain » (triangle FAI de 114 km, mi-juillet)",
+      "url": "http://web.archive.org/web/2024/https://www.laileetlacuisse.fr/bourg-saint-maurice-a-lassaut-dun-reve-un-vol-dans-le-beaufortain/",
+      "publisher": "Blog L'Aile et la Cuisse (copie Internet Archive)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Récit détaillé du sens Beaufortain → Mont-Blanc → Aravis → Beaufortain : plafond au-dessus de la Pointe de Combe Neuve (3500 m), Pointe de la Terrasse, Pointe de Mya (3800 m), glacier de Tré-la-Tête (4300 m), Pointe de Lapaz « bon déclencheur », Varan (plus de 3400 m), Pointe Percée (raccroche à 2400 m puis 3400 m), Roche Pourrie, Pas de l'Âne, Grand Mont (3200 m), Crêt du Rey, Combe Bénite, confluence au-dessus d'Aime. Déjà lu pour le lot tarentaise_vanoise (S72 de ce lot)."
+    },
+    {
+      "id": "S150",
+      "title": "cross en parapente au dessus de Chamonix (vidéo YouTube)",
+      "url": "https://www.youtube.com/watch?v=XzasVo430dA",
+      "publisher": "Chaîne YouTube d'un pilote local",
+      "type": "video",
+      "lang": "fr",
+      "notes": "Description lue dans les résultats du moteur de recherche (vidéo non visionnée) : « Au départ du plan de l'aiguille, je raccroche sur planpraz. Puis ça monte jusqu'à 3000m au dessus du Brévent, je traverse ensuite à l'aiguillette des Houches… »."
+    },
+    {
+      "id": "S151",
+      "title": "CMBVL : site de Varan (Passy)",
+      "url": "https://www.cmbvl.fr/sites/varan",
+      "publisher": "Club de Montagne et de Vol Libre de Passy (CMBVL)",
+      "type": "web",
+      "lang": "en",
+      "notes": "Page lue en anglais : site apprécié pour la facilité à trouver des thermiques ; « a strong thermal almost always forms along the cliffs below the launch and at the base of the Barmerousse peak »."
+    },
+    {
+      "id": "S152",
+      "title": "Fiche FFVL 1200 : Varan (déco)",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/1200",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Coordonnées 45.9448 N 6.6822 E, 1612 m ; vol falaise propice au soaring, « généralement un thermique généreux permettant de partir en cross » ; thermique pouvant être puissant en journée."
+    },
+    {
+      "id": "S153",
+      "title": "Hike and Fly à l'Aiguillette des Houches (Alpes Guides, septembre 2026)",
+      "url": "https://www.alpesguides.ovh/2026/09/hike-and-fly-aiguillette-des-houches.html",
+      "publisher": "Alpes Guides",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Décollage sud à sud-est, « vol de thermiques en face Sud » ; la brise de la vallée de Chamonix monte fort et la pente sud chauffe vite : matin pour un vol calme, début d'après-midi pour du thermique si le vent météo reste faible ; réserve des Aiguilles Rouges (+300 m/sol) au nord-ouest."
+    },
+    {
+      "id": "S154",
+      "title": "OpenStreetMap : La Légette (sommet 1865 m), Pas de l'Âne, La Roche-Pourrie, Mont Clocher (Beaufortain)",
+      "url": "https://www.openstreetmap.org/search?query=La%20L%C3%A9gette%20Hauteluce",
+      "publisher": "OpenStreetMap (Nominatim / Overpass)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Positions : La Légette 45.7565 N 6.5572 E (peak, 1865 m) ; Pas de l'Âne 45.6826 N 6.5413 E ; poteau « La Roche-Pourrie » 45.6837 N 6.4600 E ; Mont Clocher 45.7719 N 6.5913 E (IGN : 1975 m)."
     }
   ]
 }

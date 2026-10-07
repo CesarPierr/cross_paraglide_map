@@ -755,13 +755,15 @@
           "coord_quality": "source",
           "best_hours": "après-midi d'été (11h-18h)",
           "trigger": "faces ouest/nord-ouest des Arcs chauffées l'après-midi, au-dessus d'Arc 1800",
-          "description": "Surnommé « 10 de Face » en raison de son aérologie « particulièrement favorable » (école des Arcs) ; vols performance 13h45-18h30 pour exploiter les thermiques ; crêtes des Arcs dépassées au-delà de 2500 m. Attention : câbles de télésièges, forte brise et vent de sud-ouest (FFVL).",
+          "description": "Surnommé « 10 de Face » en raison de son aérologie « particulièrement favorable » (école des Arcs) ; vols performance 13h45-18h30 pour exploiter les thermiques ; crêtes des Arcs dépassées au-delà de 2500 m. Attention : câbles de télésièges, forte brise et vent de sud-ouest (FFVL). Passe thermiques : en fin de journée, c'est le point de bouclage du triangle de 114 km : « Je remonte tranquillement la station dans la brise jusqu'à atteindre 2600m… un vol du soir, conditions tout à fait tranquilles » (S72).",
           "sources": [
             "S49",
             "S50",
             "S51",
+            "S72",
             "S95"
-          ]
+          ],
+          "confidence": "medium"
         },
         {
           "id": "fort-du-truc-chapelle-st-michel",
@@ -772,12 +774,15 @@
           "coord_quality": "source",
           "best_hours": "matin jusqu'à 13h",
           "trigger": "pentes est/sud-est au-dessus de Bourg-Saint-Maurice",
-          "description": "Catalogue : favorable par petite brise de vallée jusqu'à 13h, thermiques entre le Fort du Truc et la chapelle Saint-Michel ; école des Arcs : site du matin en face est (Fort 2000, Fort du Truc, Dôme de Vaugelaz). Zones de tir R 331/R 332 à vérifier.",
+          "description": "Catalogue : favorable par petite brise de vallée jusqu'à 13h, thermiques entre le Fort du Truc et la chapelle Saint-Michel ; école des Arcs : site du matin en face est (Fort 2000, Fort du Truc, Dôme de Vaugelaz). Zones de tir R 331/R 332 à vérifier. Passe thermiques : le topo PCHT du décollage au-dessus du Fort du Truc (1950 m, sud-est) ajoute : « le décollage entre 11h30 et 13h30 permet souvent de beaux plafonds » (S71) ; voir aussi `fort-de-la-platte-extraction` (récit de mi-juillet).",
           "sources": [
-            "S58",
             "S49",
+            "S58",
+            "S71",
+            "S72",
             "S89"
-          ]
+          ],
+          "confidence": "medium"
         },
         {
           "id": "montgirod-arcachat-se",
@@ -837,6 +842,112 @@
           "sources": [
             "S79"
           ]
+        },
+        {
+          "id": "fort-de-la-platte-extraction",
+          "name": "Au-dessus du Fort de la Platte : extraction par basses couches stables",
+          "lon": 6.7439,
+          "lat": 45.6374,
+          "alt_m": 2000,
+          "coord_quality": "source",
+          "best_hours": "11h30-13h30 en été (PCHT) ; mi-juillet, thermique actif sur le fort",
+          "trigger": "pentes est du fort (décollage « un peu plus haut dans les alpages »), thermique sélectif au-dessus du fort",
+          "description": "DÉCLENCHEUR du cheminement classique de Bourg-Saint-Maurice vers le Beaufortain et les Aravis. Par basses couches très stables, la masse d'air est « sélective » : « Je prends mon envol et j'observe beaucoup le collègue pour exploiter au mieux l'ascendance. Etant plus haut que lui, je réussis peu à peu à m'élever » (+500 m) alors qu'un autre pilote, passé à côté du thermique, rentre dans la couche stable et se pose. Les pilotes plus rapides font le plafond au-dessus de la Pointe de Combe Neuve (voir `pointe-de-combe-neuve-plafond-3500`). Le topo PCHT du décollage « Au-dessus du Fort du Truc » (1950 m, sud-est) indique : « le décollage entre 11h30 et 13h30 permet souvent de beaux plafonds ».",
+          "sources": [
+            "S72",
+            "S71"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "pointe-de-combe-neuve-plafond-3500",
+          "name": "Pointe de Combe Neuve : plafond de 3500 m au départ du Fort de la Platte",
+          "lon": 6.6886,
+          "lat": 45.6514,
+          "alt_m": 2955,
+          "coord_quality": "source",
+          "best_hours": "après l'extraction du Fort de la Platte (fin de matinée à début d'après-midi, déduction)",
+          "trigger": "sommet et faces sud-est de la Pointe de la Combe Neuve (IGN : 2954 m), au-dessus des Chapelles",
+          "description": "PLAFOND du cheminement : « J'observe les deux jeunes locaux faire le plaf au-dessus de la Pointe de Combe Neuve… Arrivé à 3500m. » Deux options à partir de là : filer par le Beaufortain (Rocher du Vent) ou chercher les hauts massifs (Pointe de la Terrasse, Pointe de Mya, Tré-la-Tête). Le récit indique que les locaux ont ensuite fini au lac de Roselend, tandis que l'option haut massif a mené au Mont-Blanc.",
+          "sources": [
+            "S72"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "aime-confluence-thermique",
+          "name": "Au-dessus d'Aime : thermique de confluence (relance vers Bourg-Saint-Maurice)",
+          "lon": 6.6516,
+          "lat": 45.5597,
+          "coord_quality": "source",
+          "best_hours": "fin d'après-midi (retour vers Bourg en soirée)",
+          "trigger": "confluence entre le flux descendant du Cormet d'Arêches et la brise qui remonte vers Bourg-Saint-Maurice",
+          "description": "POINT DE RELANCE de fin de parcours : après une « longue dégueulante » dans le vallon du Cormet d'Arêches, « un thermique des plus sains qui me transporte tranquillement 300m plus haut… Il me semble avoir trouvé une confluence entre le flux descendant du Cormet et la brise remontant vers Bourg Saint Maurice. Le changement de masse d'air est vraiment net. » La suite vers Bourg passe sous de grosses lignes haute tension, puis les Arcs en brise du soir (voir `arcs-10-de-face`).",
+          "sources": [
+            "S72"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "cret-du-rey-relance",
+          "name": "Crêt du Rey : petite relance pour atteindre la Combe Bénite",
+          "lon": 6.5993,
+          "lat": 45.6013,
+          "alt_m": 2628,
+          "coord_quality": "source",
+          "best_hours": "après-midi",
+          "trigger": "sommet du Crêt du Rey, sortie sud-est du Beaufortain, face au vent de nord",
+          "description": "POINT DE RELANCE de sortie du Beaufortain : « Je gagne quelques précieux 150m sur le Crêt du Rey me permettant ensuite d'atteindre la Pointe de la Combe Bénite sans me retrouver sous le vent. » Précédé du plafond de 3200 m à la Légette du Grand Mont (lot Beaufortain), avec un cap à l'est : le vent de nord décale l'air au-dessus de la crête.",
+          "sources": [
+            "S72"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "pointe-de-la-combe-benite-perchoir",
+          "name": "Pointe de la Combe Bénite : perchoir faible avant le flux du Cormet d'Arêches",
+          "lon": 6.6151,
+          "lat": 45.5946,
+          "alt_m": 2569,
+          "coord_quality": "source",
+          "best_hours": "fin d'après-midi",
+          "trigger": "pointe exposée à l'extrémité du Beaufortain, juste au-dessus du flux descendant du Cormet d'Arêches",
+          "description": "POINT DE RELANCE faible : « Je reste en standby de longues minutes pour essayer de gratter quelques petits mètres. » Le pilote est alors en finesse des Ilettes, mais en partant de son perchoir il serait dans le flux « sans doute turbulent, descendant du Cormet d'Arêche » ; au bout de cinq minutes sans gain, il saute au milieu du vallon et ne retrouve de l'ascendance qu'au-dessus d'Aime (voir `aime-confluence-thermique`).",
+          "sources": [
+            "S72"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "solaise-face-ouest-thermique",
+          "name": "Tête de Solaise (Val d'Isère) : face ouest, thermique et brise soutenus dès 11h",
+          "lon": 6.9906,
+          "lat": 45.4347,
+          "alt_m": 2495,
+          "coord_quality": "source",
+          "ffvl_id": 610,
+          "best_hours": "dès 11h",
+          "trigger": "face ouest de la Tête de Solaise au-dessus de Val d'Isère",
+          "description": "DÉCLENCHEUR du site : « Activité thermique et brise de vallée soutenues à partir de 11h00 (pour pilotes expérimentés) ». Favorable en régime de brise ; ne pas voler par vent de secteur SE ou SO (foehn et lombarde). Aucun récit de cross n'a été trouvé pour décrire les relances en aval, vers Tignes ou Bonneval.",
+          "sources": [
+            "S78"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "lavachet-crete-entre-toviere-et-val-d-isere",
+          "name": "Pointe du Lavachet : crête de relance entre la Tovière et Val d'Isère (déduction)",
+          "lon": 6.9218,
+          "lat": 45.4635,
+          "alt_m": 2609,
+          "coord_quality": "source",
+          "best_hours": "après-midi (déduction)",
+          "trigger": "crête exposée à l'ouest au-dessus de la Tovière (déduction)",
+          "description": "Déduction : la fiche FFVL de la Tovière décrit le vol dynamique en SO à O et, en été, « de très beaux plafonds » avec des vols tardifs ; le cheminement naturel de Tignes vers Val d'Isère longe la crête du Lavachet, même exposition que la Tovière, qui sert donc de relance pour passer vers Val d'Isère. Aucun récit ne le confirme ; les brises y sont « très confluentes » en été.",
+          "sources": [
+            "S79"
+          ],
+          "confidence": "low"
         }
       ],
       "soaring_spots": [
@@ -1949,9 +2060,45 @@
               "coord_quality": "source"
             },
             {
+              "name": "Pointe de Combe Neuve (plafond 3500 m)",
+              "lon": 6.6886,
+              "lat": 45.6514,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Pointe de la Terrasse",
+              "lon": 6.7247,
+              "lat": 45.6702,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Pointe de Mya (thermique à 3800 m)",
+              "lon": 6.7372,
+              "lat": 45.7137,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Glacier de Tré-la-Tête (plafond 4300 m)",
+              "lon": 6.7938,
+              "lat": 45.796,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Pointe de Lapaz (déclencheur)",
+              "lon": 6.8135,
+              "lat": 45.9195,
+              "coord_quality": "source"
+            },
+            {
               "name": "Passy (au-dessus de)",
               "lon": 6.6872,
               "lat": 45.9244,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Varan (plein avant les Aravis)",
+              "lon": 6.6822,
+              "lat": 45.9448,
               "coord_quality": "source"
             },
             {
@@ -1967,6 +2114,12 @@
               "coord_quality": "source"
             },
             {
+              "name": "Mont Charvin (dernier plafond des Aravis)",
+              "lon": 6.4201,
+              "lat": 45.8024,
+              "coord_quality": "source"
+            },
+            {
               "name": "Roche Pourrie",
               "lon": 6.4603,
               "lat": 45.6842,
@@ -1979,9 +2132,21 @@
               "coord_quality": "source"
             },
             {
+              "name": "Pas de l'Âne (piège : sous le vent du Mirantin)",
+              "lon": 6.5413,
+              "lat": 45.6826,
+              "coord_quality": "source"
+            },
+            {
               "name": "Grand Mont",
               "lon": 6.5372,
               "lat": 45.6321,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Légette du Grand Mont (plafond 3200 m)",
+              "lon": 6.5276,
+              "lat": 45.6461,
               "coord_quality": "source"
             },
             {
@@ -2016,9 +2181,11 @@
             }
           ],
           "distance_km": 114,
-          "description": "Récit détaillé : décollage au Fort de la Platte (déco plus haut dans les alpages) avec basses couches très stables, extraction par thermique au-dessus de la Pointe de Combe Neuve (plafond 3500 m) ; la branche nord passe par le haut massif (Pointe de la Terrasse, Roche de Mya, glacier de Tré-la-Tête jusqu'à 4300 m, arête de Tricot, Pointe de Lapaz en évitant la zone R 30C), puis Passy, Varan, Pointe Percée, Aravis jusqu'au Mont Charvin ; retour par la Roche Pourrie (brise d'Annecy), Mont Mirantin (erreur au Pas de l'Âne : sous le vent du Mirantin), Grand Mont (3200 m), Crêt du Rey, Pointe de la Combe Bénite avec transition vers Bourg dans le flux descendant du Cormet d'Arêches ; confluence au-dessus d'Aime, lignes haute tension près de Bourg, bouclage le soir sur les Arcs dans la brise jusqu'à 2600 m. Joker de repli noté par l'auteur : la « vache » en Maurienne. Plusieurs sommets du récit (Pointe de la Terrasse, Roche de Mya, Pointe de Lapaz, Varan) ne sont pas localisés ici ; waypoints = points de passage du tracé reconstitués à partir de coordonnées de communes et sommets.",
+          "description": "Récit détaillé : décollage au Fort de la Platte (déco plus haut dans les alpages) avec basses couches très stables, extraction par thermique au-dessus de la Pointe de Combe Neuve (plafond 3500 m) ; la branche nord passe par le haut massif (Pointe de la Terrasse, Roche de Mya, glacier de Tré-la-Tête jusqu'à 4300 m, arête de Tricot, Pointe de Lapaz en évitant la zone R 30C), puis Passy, Varan, Pointe Percée, Aravis jusqu'au Mont Charvin ; retour par la Roche Pourrie (brise d'Annecy), Mont Mirantin (erreur au Pas de l'Âne : sous le vent du Mirantin), Grand Mont (3200 m), Crêt du Rey, Pointe de la Combe Bénite avec transition vers Bourg dans le flux descendant du Cormet d'Arêches ; confluence au-dessus d'Aime, lignes haute tension près de Bourg, bouclage le soir sur les Arcs dans la brise jusqu'à 2600 m. Joker de repli noté par l'auteur : la « vache » en Maurienne. Plusieurs sommets du récit (Pointe de la Terrasse, Roche de Mya, Pointe de Lapaz, Varan) ne sont pas localisés ici ; waypoints = points de passage du tracé reconstitués à partir de coordonnées de communes et sommets. Passe thermiques : waypoints ajoutés dans l'ordre volé (Pointe de Combe Neuve, Pointe de la Terrasse, Pointe de Mya, glacier de Tré-la-Tête, Pointe de Lapaz, Varan, Mont Charvin, Pas de l'Âne, Légette du Grand Mont) ; les sommets de Mya et de Lapaz, annoncés non localisés plus haut, le sont maintenant par le géocodeur IGN. L'arête de Tricot (ascendances capricieuses) et la « Roche de Mya » restent introuvables.",
           "sources": [
-            "S72"
+            "S72",
+            "S140",
+            "S141"
           ]
         },
         {
@@ -2073,7 +2240,9 @@
         "Départs de cross du matin : Plan de la Boutte, La Croix, Le Mont (interdit dès la pose des clôtures) ; refermer les clôtures, vérifier les zones de tir R 331/R 332 et les ZSM gypaète avant de partir vers le nord/est [S49][S38][S56].",
         "Montgirod-Arcachat et Mont Jovet sont les départs précoces de la Tarentaise moyenne : partir tôt, car le régime de vallée vient par-dessus dès 11h-12h30 [S52][S125].",
         "Basses couches stables et vent N-NO : le décollage de Bourg peut tourner au plouf ; observer les premiers pilotes (« fusibles ») et ne pas descendre sous le niveau du Fort ; le soir, les Arcs offrent une remontée facile dans la brise jusqu'à ~2600 m [S72].",
-        "Les grands triangles de plaine passent par la cluse d'Albertville (ex. triangle plat de 202 km Chartreuse - Aravis - Albertville du 17/07/2019) [S27]."
+        "Les grands triangles de plaine passent par la cluse d'Albertville (ex. triangle plat de 202 km Chartreuse - Aravis - Albertville du 17/07/2019) [S27].",
+        "Au départ du Fort de la Platte par basses couches stables : observer les « fusibles » partis avant soi ; le thermique est sélectif et les plafonds se font au-dessus de la Pointe de Combe Neuve (3500 m) [S72].",
+        "Retour dans la Tarentaise : relancer sur le Crêt du Rey, attendre sur la Combe Bénite, puis chercher la confluence au-dessus d'Aime avant la brise du soir des Arcs [S72]."
       ]
     },
     {
@@ -2487,6 +2656,37 @@
           "sources": [
             "S52"
           ]
+        },
+        {
+          "id": "dent-du-villard-relance-du-soir",
+          "name": "Dent du Villard : relance du soir depuis le Bouc Blanc",
+          "lon": 6.6761,
+          "lat": 45.4198,
+          "alt_m": 2282,
+          "coord_quality": "source",
+          "best_hours": "fin d'après-midi et soir, dans la brise de vallée",
+          "trigger": "flanc de la Dent du Villard face à la brise de vallée (dynamique et thermique de brise)",
+          "description": "POINT DE RELANCE du soir : ParaglidingEarth écrit que le Bouc Blanc est « best for evening soaring (possible to drop back onto the Dent de Villards and soar up this in the valley breeze) », c'est-à-dire qu'on redescend sur la Dent du Villard et qu'on y remonte dans la brise. Position : sommet IGN de la Dent du Villard (2282 m, Courchevel). Le point `dent-du-villard-soir` (soaring) de la première version est placé à 2,9 km au nord, sur un lieu-dit à 875 m de Planay ; il n'a pas été modifié.",
+          "sources": [
+            "S52"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "bozel-terrains-de-foot-declencheur",
+          "name": "Terrains de foot et pylônes de Bozel : déclencheur sur l'approche",
+          "lon": 6.6544,
+          "lat": 45.4423,
+          "alt_m": 852,
+          "coord_quality": "source",
+          "ffvl_id": 708,
+          "best_hours": "milieu de journée, surtout en été",
+          "trigger": "terrains de foot, pylônes et projecteurs qui jalonnent l'approche de l'atterrissage",
+          "description": "DÉCLENCHEUR connu du bas de la vallée : « Les conditions peuvent être musclées en milieu de journée, notamment en été. Fort gradient. Déclenchements thermiques en approche au-dessus des terrains de foot + pylônes/projecteurs » (FFVL). Le matin le vent est nul ou légèrement descendant, puis le vent de vallée monte dès le milieu de journée, fort en été avec des turbulences marquées. Ce point relève du piège d'atterrissage autant que d'une ascendance utilisable.",
+          "sources": [
+            "S126"
+          ],
+          "confidence": "medium"
         }
       ],
       "soaring_spots": [
@@ -4260,6 +4460,24 @@
       "type": "web",
       "lang": "fr",
       "notes": "Fiche officielle FFVL consultée via l'export local ffvl_sites_alpes.json (champs description, dangers, aérologie, restrictions). gestionnaire non renseigné."
+    },
+    {
+      "id": "S140",
+      "title": "OpenStreetMap : Pas de l'Âne, La Roche-Pourrie, La Légette (Beaufortain)",
+      "url": "https://www.openstreetmap.org/search?query=Pas%20de%20l%27%C3%82ne%20Beaufort",
+      "publisher": "OpenStreetMap (Nominatim / Overpass)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Positions utilisées pour les waypoints du triangle de 114 km : Pas de l'Âne 45.6826 N 6.5413 E ; poteau « La Roche-Pourrie » 45.6837 N 6.4600 E."
+    },
+    {
+      "id": "S141",
+      "title": "Fiche FFVL 1200 : Varan (déco)",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/1200",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Varan (Passy), 45.9448 N 6.6822 E, 1612 m ; waypoint du triangle de 114 km (« je chemine… vers Varan pour faire un plein »)."
     }
   ]
 }

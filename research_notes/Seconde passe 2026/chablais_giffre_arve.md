@@ -153,3 +153,41 @@ Volumes avant → après : brises 2 → 4, convergences 0 → 0, hazards 8 → 9
 - Aucun texte de club sur une brise matinale ; l'écoulement descendant reste une déduction. Les « faces est » conseillées pour partir tôt ne sont attribuées à aucun décollage (pas de fiche, seulement un conseil).
 - Traces XContest/CFD des grands vols (dont le 143 km et les vols vers Montreux) inaccessibles ; le Messager (403) non lu au-delà de l'extrait.
 - Les Pomiers (pente de modélistes à 1330 m, face N-NE) cités par un site d'aéromodélisme ne sont pas un décollage de parapente et n'ont pas été retenus.
+
+## Audit des thermiques (octobre 2026)
+
+Les listes de lacunes (`docs/COUVERTURE.md`, `docs/KK7_CROISEMENT.md`, `docs/POSITIONS.md`) ont été reprises pour Chablais, Haut-Giffre, Faucigny – Arve et Salève. Règle de confiance : `medium` quand un texte (fiche FFVL, topo, club) décrit une ascendance au lieu, `low` avec « déduction » quand seuls un point chaud kk7 (traces GPS, `thermal.kk7.ch`) et le relief l'indiquent. Les toponymes autour des points chauds viennent d'OSM, les altitudes du terrain IGN (RGE ALTI). La documentation de ces massifs est mince (sites commerciaux, fiches FFVL, peu de récits) : la plupart des points chauds restent sans texte.
+
+### Chablais (`chablais`)
+
+**Thermiques créés (14)**
+- Avec un texte : `chatel-morclan-depart-cross` (`medium`, fiche FFVL 1180 : « départ en cross - effet de foehn / thermiques à l'atterrissage » ; point chaud 96 %, le plus net du secteur), `dent-d-oche-refuge-face-sud` (`medium`, Randovol : « thermique de la face sud » au refuge ; point chaud 83 % à 210 m), `orcier-hermone-thermique` (`low`, la fiche 1193 parle d'une « brise thermique » ; point chaud 81 %), `saint-guerin-atterro-haie` (`low`, Camptocamp : « thermiques possibles sur la haie devant l'atterro » du Mont de Grange ; position du hameau Saint-Guérin, le terrain n'est pas localisé).
+- Points chauds seuls (`low`) : `orcier-tres-le-mont-thermique` (88 %), `orcier-les-mouilles` (97 %), `thollon-memises-thermique` (92 %, couvre aussi le Lavanchy), `thollon-chalets-des-memises`, `thollon-col-de-corniens`, `chatel-couty-rapenaz` (98 %), `abondance-le-fayet` (95 %), `croix-de-l-aiguille-pas-de-croisette` (93 %), et deux points chauds situés en Suisse (Torgon `torgon-revereulaz` 99 %, Morgins `morgins-le-chene` 96 %), conservés pour que la liste soit complète mais hors du périmètre français.
+
+**Position corrigée** : `abondance-atterro` (altitude 1093 → 978 m, terrain IGN à la position de la fiche).
+
+**Lacunes écartées**
+- `brasses-delta` (FFVL 1148) : la fiche dit « coordonnées erronées » et signale un problème avec le propriétaire depuis 2009 ; aucun point chaud à moins de 4 km, rien à décrire.
+- `chatel-morclan-foehn`, `chatel-morclan` : traités par `chatel-morclan-depart-cross` ; `chatel-atterro-thermique` conservé (fiche FFVL 1162, coordonnées du fichier FFVL fausses, position au village).
+- `dent-d-oche-est-ne` (rouleaux, venturi), `chapelle-hermone` : couverts par les thermiques ci-dessus.
+- `mont-de-grange` : le thermique de l'atterrissage est créé ; le sommet (position 2432 m) a un point chaud trop faible (60 %).
+- Non traités : « Châtel – Morclan sommet » (sans brise à moins de 6 km) et `pointe-des-follys` (aucun point chaud, aucun texte d'ascendance).
+- Altitude de `chatel-morclan` (1870 m) conservée : le terrain IGN à la position FFVL est à 1966 m (sommet), la fiche donne 1376 m ; ParaglidingEarth 1867-1963 m.
+
+### Haut-Giffre (`haut-giffre`)
+
+**Thermiques créés (12, tous `low`)** : les 12 points chauds ≥ 90 % de la liste — `samoens-les-frasses` (100 %), `vernant-vaconnant` (99 %), `rovagne-mieussy` (98 %, sur la route Mieussy – Haute-Pointe du parcours CLAM niveau 2), `croix-du-culet-marcheusson` (97 %, avec un second point chaud à 95 %), `morzine-la-mernaz` (95 %), `pointe-de-ripaille`, `pointe-de-veret-flaine`, `samoens-plan-de-pertuet` (sur la route Samoëns – Criou), `samoens-paroi-des-allamands`, `mieussy-larroz` — plus `bourgeoise-delta-pente` (FFVL 1151, point chaud faible à 77 %). Aucun texte du dossier ne cite ces lieux-dits.
+Le point chaud de la Chevran (94 %) est traité dans l'Arve (voir ci-dessous) et couvre le décollage d'Agy Plane (FFVL 298).
+`sixt-reserve-zsm` est écarté (espace réglementé). `ffvl1091-flocons-verts-thermiques` : position FFVL source, loin d'un point chaud : conservée.
+
+### Faucigny – Arve (`arve-faucigny`)
+
+- Créés : `agy-chevran-thermiques` (`medium` : « dynamique de brise, thermiques légers et hachés » ; point chaud 94 %), `lachat-d-en-haut-thermique` (`medium` : « en condition thermique, déco possible en fin de matinée » ; point chaud 91 %), `passy-chedde-thermiques-atterro` (`low`, texte du CMBVL et de la FFVL), `arbaron-turbulent-pleine-journee` (`low`, fiche FFVL 1090), `sallettaz-romme` (`low`, le point chaud ≥ 90 % de la liste).
+- Altitudes corrigées : `pointe-d-areu` (2478 → 2371 m), `mole-ecutieux` (1515 → 1615 m), `pointe-d-andey` (1666 → 1853 m ; la position est le sommet, le décollage « sous la Vierge » n'est pas localisé).
+- Écartés : `barmerousse-so-rien` (le topo dit que le versant « ne donne rien » : aucun thermique à créer) ; `kedeusaz` (« brises thermiques » : une brise, pas un thermique ; aucun point chaud à moins de 2,4 km) ; `pointe-d-andey` et `carroz-arbaron-brise-atterro` (thermique décrit à 1,7 km pour Andey : `andey-faces-ouest` ; Arbaron traité ci-dessus) ; `derochoir-eboulis-pormenaz` (position source, loin d'un point chaud).
+- Le soaring `agy-chevran-soaring` a sa position au décollage d'Agy Plane, à 2,8 km de la pente du Chevran où est placé le thermique.
+
+### Salève (`saleve-genevois`)
+
+- Position : `saleve-carriere-etrembieres` : altitude estimée 520 m, terrain 827 m à la position (au niveau de Monnetier) ; altitude corrigée, position non vérifiée (la carrière n'est pas cartographiée).
+- Écartés : `geneve-espace-aerien` (espaces aériens) ; `saleve-troinex-thermique`, `sur-cou-relance-saleve`, `chapelle-rambaud-thermique-desert-saleve` (loin de tout point chaud : plaine peu volée ou position approximative d'après le récit).

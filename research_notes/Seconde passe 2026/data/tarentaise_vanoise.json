@@ -942,6 +942,247 @@
       "S79"
      ],
      "confidence": "low"
+    },
+    {
+     "id": "montagne-de-tete-valmorel-thermiques",
+     "name": "Montagne de Tête (Valmorel) : thermiques puissants dès 16h, dynamique dès 12h",
+     "lon": 6.4252,
+     "lat": 45.466,
+     "alt_m": 1801,
+     "coord_quality": "source",
+     "best_hours": "dynamique à partir de 12h, thermiques puissants à partir de 16h (anciennes fiches du catalogue)",
+     "trigger": "pentes sous le décollage de la Montagne de Tête, au-dessus de Valmorel (Bachals, Gollet)",
+     "description": "Audit d'octobre 2026 : le texte du décollage (anciennes fiches du catalogue) dit « les Bachals/Gollet : thermiques puissants à partir de 16h, dynamique à partir de 12h » ; décollage non conventionné, état inconnu. Ce thermique n'avait pas d'élément : aucun thermique à moins de 4 km, aucun point chaud kk7 à moins de 4 km (site peu volé). Position : celle du décollage (fiche FFVL 3033).",
+     "confidence": "medium",
+     "sources": [
+      "S121",
+      "S67"
+     ]
+    },
+    {
+     "id": "plan-de-la-boutte-thermique",
+     "name": "Plan de la Boutte : thermique du matin (Bourg-Saint-Maurice)",
+     "lon": 6.7717,
+     "lat": 45.65,
+     "alt_m": 1798,
+     "coord_quality": "approx",
+     "best_hours": "le matin et à midi d'après les traces GPS (100 % le matin, 98 % à midi, 65 % le soir, rien le soir)",
+     "trigger": "pentes sous le décollage du Plan de la Boutte (2020 m), versant ouest de Bourg-Saint-Maurice, zone de sensibilité gypaète « Charbonnet »",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 100 % toutes périodes (100 % le matin, 98 % à midi, 65 % le soir), terrain IGN 1798 m, à 720 m des Tigny. Point chaud kk7 le plus fort de la Tarentaise (100 % toutes périodes, 100 % le matin, 98 % à midi, 65 % le soir ; 100 % en été), 220 m sous le décollage. Le piège voisin décrit la zone de sensibilité du gypaète « Charbonnet » et les bulles de quiétude d'aigle, qui limitent le survol de ces pentes. Aucun récit ne décrit le thermique lui-même.",
+     "confidence": "low",
+     "sources": [
+      "S142"
+     ]
+    },
+    {
+     "id": "le-mont-seez-thermique",
+     "name": "Séez – Le Mont : thermique du matin (décollage interdit)",
+     "lon": 6.7971,
+     "lat": 45.632,
+     "alt_m": 1289,
+     "coord_quality": "approx",
+     "best_hours": "le matin et à midi d'après les traces GPS (100 % le matin, 98 % à midi, rien le soir)",
+     "trigger": "pentes sous le hameau du Mont, à Séez ; le décollage du Mont est interdit",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 99 % toutes périodes (100 % le matin, 98 % à midi), terrain IGN 1289 m, à 160 m du hameau Le Cottier. Le point chaud kk7 (99 % toutes périodes, 100 % le matin, 100 % au printemps) est à 160 m du hameau Le Cottier et sous le décollage « Le Mont (Séez) : interdit » du dossier. Le thermique existe, mais la pratique est interdite : à lire avec la fiche du décollage. Aucun texte ne décrit le thermique.",
+     "confidence": "low",
+     "sources": [
+      "S142"
+     ]
+    },
+    {
+     "id": "arc-1600-altiport-thermique",
+     "name": "Arc 1600 : thermique de l’Altiport et de l’Arpette (pratique interdite à l’Altiport)",
+     "lon": 6.7954,
+     "lat": 45.5792,
+     "alt_m": 1943,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (90 % le matin, 97 % à midi, 95 % le soir)",
+     "trigger": "pentes de l'Arpette et de l'ancien Altiport, plateau de l'Arc 1600",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 96 % toutes périodes (90 % le matin, 97 % à midi, 95 % le soir), terrain IGN 1943 m, à plateau de l'Arc 1600. Point chaud kk7 à 96 % toutes périodes (90 % le matin, 97 % à midi, 95 % le soir) à 1943 m, entre le décollage de l'Arpette (qui remplace l'ancien Altiport, pratique strictement interdite) et le plateau de l'Arc 1600. Aucun texte ne décrit le thermique ; le décollage de l'Altiport est interdit.",
+     "confidence": "low",
+     "sources": [
+      "S142"
+     ]
+    },
+    {
+     "id": "vallandry-p-ti-deco-thermique",
+     "name": "Vallandry « P’ti Déco » : thermique de l’après-midi",
+     "lon": 6.7635,
+     "lat": 45.5602,
+     "alt_m": 1526,
+     "coord_quality": "approx",
+     "best_hours": "à midi et le soir d'après les traces GPS (92 % à midi, 96 % le soir, rien le matin)",
+     "trigger": "pentes sous le décollage Vallandry « P'ti Déco » (1653 m), au-dessus de Peisey-Vallandry",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 96 % toutes périodes (92 % à midi, 96 % le soir), terrain IGN 1526 m, à 430 m de Vallandry. Point chaud kk7 à 96 % toutes périodes (92 % à midi, 96 % le soir, aucun le matin), à 430 m du hameau de Vallandry et du décollage. Aucun texte ne décrit le thermique ; les décollages voisins (Écureuil, Poudreuse, Grizzly) ont chacun leur description.",
+     "confidence": "low",
+     "sources": [
+      "S142"
+     ]
+    },
+    {
+     "id": "la-poudreuse-thermique",
+     "name": "Peisey-Vallandry : La Poudreuse, thermique du matin",
+     "lon": 6.7889,
+     "lat": 45.5463,
+     "alt_m": 2152,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (99 % le matin, 95 % à midi, 86 % le soir)",
+     "trigger": "pentes sous le décollage de La Poudreuse (2150 m), au-dessus de Peisey-Vallandry, sous l'Aiguille Rousse",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 92 % toutes périodes (99 % le matin, 95 % à midi, 86 % le soir), terrain IGN 2152 m, à 710 m de l'Aiguille Rousse. Point chaud kk7 à 92 % toutes périodes (99 % le matin, 95 % à midi, 86 % le soir), à 2152 m, sur le décollage de La Poudreuse (FFVL, 2150 m). Aucun texte ne décrit le thermique du décollage.",
+     "confidence": "low",
+     "sources": [
+      "S142"
+     ]
+    },
+    {
+     "id": "col-du-petit-saint-bernard-thermique",
+     "name": "Col du Petit-Saint-Bernard : crête de Verney",
+     "lon": 6.8781,
+     "lat": 45.6846,
+     "alt_m": 2175,
+     "coord_quality": "approx",
+     "best_hours": "à midi d'après les traces GPS (89 % à midi, rien le matin ni le soir)",
+     "trigger": "crête de Verney (cresta del Verney) et pentes au-dessus du col du Petit-Saint-Bernard (2188 m)",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 91 % toutes périodes (89 % à midi), terrain IGN 2175 m, à 700 m du col du Petit-Saint-Bernard. Point chaud kk7 à 91 % (89 % à midi, 93 % en octobre, rien le matin ni le soir), à 700 m du col. Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter.",
+     "confidence": "low",
+     "sources": [
+      "S142"
+     ]
+    },
+    {
+     "id": "plan-du-col-doucy",
+     "name": "Plan du Col : pentes de Doucy",
+     "lon": 6.4284,
+     "lat": 45.553,
+     "alt_m": 1687,
+     "coord_quality": "approx",
+     "best_hours": "le matin et à midi d'après les traces GPS (95 % le matin, 92 % à midi, rien le soir)",
+     "trigger": "pentes sous le Plan du Col (1957 m), au-dessus de Doucy et du Miard",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 91 % toutes périodes (95 % le matin, 92 % à midi), terrain IGN 1687 m, à 480 m du Plan du Col. Point chaud kk7 à 91 % toutes périodes (95 % le matin, 92 % à midi, rien le soir), à 480 m du Plan du Col. Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter.",
+     "confidence": "low",
+     "sources": [
+      "S142"
+     ]
+    },
+    {
+     "id": "la-combe-planvillard",
+     "name": "La Combe – Planvillard : pentes de la Pesée",
+     "lon": 6.5959,
+     "lat": 45.5669,
+     "alt_m": 1988,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (93 % le matin, 88 % à midi, 70 % le soir)",
+     "trigger": "pentes sous La Combe et Planvillard, au-dessus de la Pesée",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 91 % toutes périodes (93 % le matin, 88 % à midi, 70 % le soir), terrain IGN 1988 m, à 950 m de La Combe. Point chaud kk7 à 91 % toutes périodes (93 % le matin, 88 % à midi, 70 % le soir) à 1988 m, à 950 m du hameau La Combe. Aucun texte ne décrit ce versant.",
+     "confidence": "low",
+     "sources": [
+      "S142"
+     ]
+    },
+    {
+     "id": "la-roche-brisee",
+     "name": "La Roche Brisée : pentes de Villard-Soffray",
+     "lon": 6.4366,
+     "lat": 45.5203,
+     "alt_m": 1633,
+     "coord_quality": "approx",
+     "best_hours": "le matin et à midi d'après les traces GPS (89 % le matin, 94 % à midi, rien le soir)",
+     "trigger": "pentes sous la Roche Brisée (2086 m), au-dessus de Villard-Soffray",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 90 % toutes périodes (89 % le matin, 94 % à midi), terrain IGN 1633 m, à 1,2 km de la Roche Brisée. Point chaud kk7 à 90 % toutes périodes (89 % le matin, 94 % à midi, rien le soir), à 1,2 km de la Roche Brisée. Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter.",
+     "confidence": "low",
+     "sources": [
+      "S142"
+     ]
+    },
+    {
+     "id": "rosiere-poletta-sevoliere",
+     "name": "La Rosière : pentes de La Poletta et de La Sévolière",
+     "lon": 6.8417,
+     "lat": 45.6409,
+     "alt_m": 1846,
+     "coord_quality": "approx",
+     "best_hours": "à midi et le soir d'après les traces GPS (72 % à midi, 75 % le soir, rien le matin)",
+     "trigger": "pentes sous les décollages d'été de La Poletta, de La Sévolière et des Roches Noires, au-dessus de La Rosière",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 73 % toutes périodes (72 % à midi, 75 % le soir), terrain IGN 1846 m, à 1,3 à 1,7 km des trois décollages. Les décollages de La Sévolière (FFVL 998, NO, 2095 m, câbles de télésiège), de La Poletta (1000, NO, 2161 m, interdit en saison de ski) et des Roches Noires (13644, 2322 m, « à éviter absolument en épisode de foehn ») n'avaient aucun thermique à moins de 6 km. Le point chaud kk7 le plus proche est faible (73 % toutes périodes), à 1,3 à 1,7 km de chacun. Aucun récit de vol.",
+     "confidence": "low",
+     "sources": [
+      "S142"
+     ]
+    },
+    {
+     "id": "la-croix-montvalezan",
+     "name": "Montvalezan : La Croix, départ de cross",
+     "lon": 6.84,
+     "lat": 45.6277,
+     "alt_m": 1737,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (72 % le matin, 83 % à midi, 79 % le soir)",
+     "trigger": "pentes sous le décollage de La Croix (1785 m), en limite de Montvalezan, avec antenne et câbles téléphoniques",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 80 % toutes périodes (72 % le matin, 83 % à midi, 79 % le soir), terrain IGN 1737 m, à 690 m du décollage. Le décollage de La Croix (FFVL 14146, O/NO, 1785 m) n'avait aucun thermique ; la fiche dit « départ de cross uniquement, pas d'atterrissage en finesse, repose au décollage possible » (antenne à éviter, câbles téléphoniques). Le point chaud kk7 (80 % toutes périodes, 83 % à midi) est à 690 m du décollage.",
+     "confidence": "low",
+     "sources": [
+      "S142"
+     ]
+    },
+    {
+     "id": "grande-rochette-la-plagne",
+     "name": "Grande Rochette : pentes sous le décollage",
+     "lon": 6.6642,
+     "lat": 45.4907,
+     "alt_m": 2438,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (81 % le matin, 84 % à midi, 81 % le soir)",
+     "trigger": "pentes sous le décollage d'hiver de la Grande Rochette (2500 m), au-dessus de La Plagne",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 83 % toutes périodes (81 % le matin, 84 % à midi, 81 % le soir), terrain IGN 2438 m, à 1,6 km du décollage. Le décollage de la Grande Rochette (FFVL 14159, 2500 m, N/SO/O/NO, décollage d'hiver, câbles de remontées mécaniques) n'avait aucun thermique. Point chaud kk7 à 1,6 km (83 % toutes périodes, 81 % le matin comme le soir, 84 % à midi).",
+     "confidence": "low",
+     "sources": [
+      "S142"
+     ]
+    },
+    {
+     "id": "macot-la-plagne-roche",
+     "name": "Macot-La Plagne : pentes sous La Roche",
+     "lon": 6.7243,
+     "lat": 45.484,
+     "alt_m": 2606,
+     "coord_quality": "approx",
+     "best_hours": "le matin et à midi d'après les traces GPS (92 % le matin, 78 % à midi, rien le soir)",
+     "trigger": "pentes sous le décollage de La Roche (2699 m, SO), à Macot-La Plagne, près des remontées",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 76 % toutes périodes (92 % le matin, 78 % à midi), terrain IGN 2606 m, à 1,3 km du décollage. Le décollage de La Roche (FFVL 1451, SO, 2699 m, « attention aux remontées mécaniques ») n'avait aucun thermique à moins de 4 km. Point chaud kk7 faible (76 % toutes périodes, 92 % le matin) à 1,3 km du décollage.",
+     "confidence": "low",
+     "sources": [
+      "S142"
+     ]
+    },
+    {
+     "id": "lanchettes-bourg-saint-maurice",
+     "name": "Les Lanchettes : pentes de Bourg-Saint-Maurice",
+     "lon": 6.8232,
+     "lat": 45.5898,
+     "alt_m": 2110,
+     "coord_quality": "approx",
+     "best_hours": "le matin et à midi d'après les traces GPS (96 % le matin, 74 % à midi, rien le soir)",
+     "trigger": "pentes sous le décollage des Lanchettes (2515 m, speedriding hivernal uniquement), au-dessus de Bourg-Saint-Maurice",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 86 % toutes périodes (96 % le matin, 74 % à midi), terrain IGN 2110 m, à 2,8 km du décollage. Le décollage des Lanchettes (FFVL 993, O, « uniquement praticable en speedriding, uniquement l'hiver ») n'avait aucun thermique ; le point chaud kk7 (86 % toutes périodes, 96 % le matin, 74 % à midi) est à 2,8 km, donc un thermique d'été éloigné du décollage d'hiver.",
+     "confidence": "low",
+     "sources": [
+      "S142"
+     ]
+    },
+    {
+     "id": "la-tranchee-cevins",
+     "name": "La Tranchée (Cévins) : pentes sous le décollage",
+     "lon": 6.4771,
+     "lat": 45.6011,
+     "alt_m": 1346,
+     "coord_quality": "approx",
+     "best_hours": "en fin de journée d'après les traces GPS (69 % à midi, 73 % le soir, rien le matin ni à midi)",
+     "trigger": "pentes sous le décollage de La Tranchée (871 m, O), au-dessus de Cévins, vers la combe de Savoie",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 74 % toutes périodes (69 % à midi, 73 % le soir), terrain IGN 1346 m, à 1,8 km du décollage. Le décollage de La Tranchée (FFVL 489, O, 871 m ; « vent au décollage souvent de travers ; site utilisé en hiver et début du printemps avant qu'il n'y ait trop de vent de vallée ») n'avait aucun thermique à moins de 7 km. Le point chaud kk7 le plus proche est faible (74 % toutes périodes, 73 % le soir), à 1,8 km au nord-est.",
+     "confidence": "low",
+     "sources": [
+      "S142"
+     ]
     }
    ],
    "soaring_spots": [
@@ -1222,10 +1463,10 @@
      "name": "Granier (Aime-La Plagne)",
      "lon": 6.6475,
      "lat": 45.5806,
-     "alt_m": 1380,
+     "alt_m": 1555,
      "coord_quality": "source",
      "ffvl_id": 14155,
-     "description": "Décollage du matin sans particularité, lignes HT en contrebas du village (FFVL). Position aussi dans la carte PCHT.",
+     "description": "Décollage du matin sans particularité, lignes HT en contrebas du village (FFVL). Position aussi dans la carte PCHT. Audit d'octobre 2026 : altitude ramenée de 1380 à 1555 m (terrain IGN à la position de la fiche).",
      "sources": [
       "S104",
       "S38"
@@ -1260,10 +1501,10 @@
      "name": "Fort du Truc (« Fort 1500 »)",
      "lon": 6.7499,
      "lat": 45.6336,
-     "alt_m": 1500,
+     "alt_m": 1770,
      "coord_quality": "source",
      "ffvl_id": 14150,
-     "description": "Décollage printemps-été-automne, peu utilisé ; environ 500 m plus bas que le Fort 2000 ; champ de tir R 331/R 332 à vérifier ; lignes HT. Orientation est/sud-est (ParaglidingEarth, ancienne fiche « Fort du Truc ») ; FFVL liste SO/O/NO comme vents favorables.",
+     "description": "Décollage printemps-été-automne, peu utilisé ; environ 500 m plus bas que le Fort 2000 ; champ de tir R 331/R 332 à vérifier ; lignes HT. Orientation est/sud-est (ParaglidingEarth, ancienne fiche « Fort du Truc ») ; FFVL liste SO/O/NO comme vents favorables. Audit d'octobre 2026 : altitude ramenée de 1500 à 1770 m (terrain IGN à la position du site de vol libre « Fort du Truc » du géocodeur IGN ; « Fort 1500 » est le nom du site, pas son altitude).",
      "sources": [
       "S90",
       "S49",
@@ -1567,10 +1808,10 @@
      "name": "La Sévolière (La Rosière / Montvalezan)",
      "lon": 6.8582,
      "lat": 45.6433,
-     "alt_m": 2095,
+     "alt_m": 2241,
      "coord_quality": "source",
      "ffvl_id": 998,
-     "description": "FFVL : décollage d'été, câbles du télésiège ; PCHT : décollage d'hiver (divergence entre les deux sources). Orientation favorable NO.",
+     "description": "FFVL : décollage d'été, câbles du télésiège ; PCHT : décollage d'hiver (divergence entre les deux sources). Orientation favorable NO. Audit d'octobre 2026 : altitude ramenée de 2095 à 2241 m (terrain IGN à la position de la fiche FFVL 998).",
      "sources": [
       "S110",
       "S38"
@@ -2596,11 +2837,11 @@
      "name": "Col de la Loze / Lanches : thermiques d'hiver et de printemps",
      "lon": 6.6023,
      "lat": 45.4084,
-     "alt_m": 2404,
+     "alt_m": 2302,
      "coord_quality": "source",
      "best_hours": "journée (dès février avec peu de vent) ; soir en été",
      "trigger": "pentes SO-O-NO au sommet des remontées Lanches/Loze, Roc Tania",
-     "description": "FFVL : en hiver thermiques dès février avec peu de vent ; en été conditions fortes mais moins qu'au Bouc Blanc ; ParaglidingEarth : « best winter and early spring thermalling site in the three valleys ski area » (circuits en thermique d'après les vols biplace).",
+     "description": "FFVL : en hiver thermiques dès février avec peu de vent ; en été conditions fortes mais moins qu'au Bouc Blanc ; ParaglidingEarth : « best winter and early spring thermalling site in the three valleys ski area » (circuits en thermique d'après les vols biplace). Audit d'octobre 2026 : altitude ramenée de 2404 à 2302 m (terrain IGN à la position, qui est celle du site « Col de la Loze » du géocodeur IGN ; un point chaud kk7 à 93 % se trouve à 420 m).",
      "sources": [
       "S132",
       "S52",
@@ -2612,11 +2853,11 @@
      "name": "Mont Jovet : thermiques de fin de matinée",
      "lon": 6.6395,
      "lat": 45.4853,
-     "alt_m": 2515,
+     "alt_m": 2276,
      "coord_quality": "source",
      "best_hours": "fin de matinée (partir avant 12h30)",
      "trigger": "pentes SE/S du Jovet au-dessus de Bozel",
-     "description": "FFVL : fin de matinée avec des thermiques ; ParaglidingEarth : excellent pour les cross de départ précoce ou un grand vol sommet-vallée ; il faut parfois partir tôt, avant 12h30, car le vent peut passer par-derrière ; rester hors du Parc national (au sud et sud-est) si on part en cross.",
+     "description": "FFVL : fin de matinée avec des thermiques ; ParaglidingEarth : excellent pour les cross de départ précoce ou un grand vol sommet-vallée ; il faut parfois partir tôt, avant 12h30, car le vent peut passer par-derrière ; rester hors du Parc national (au sud et sud-est) si on part en cross. Audit d'octobre 2026 : altitude ramenée de 2515 à 2276 m (terrain IGN à la position, qui est celle du site de vol libre « Mont Jovet » du géocodeur IGN ; la fiche FFVL 705 donne 2515 m).",
      "sources": [
       "S125",
       "S52"
@@ -2681,6 +2922,98 @@
       "S126"
      ],
      "confidence": "medium"
+    },
+    {
+     "id": "bozel-les-pres-thermique",
+     "name": "Bozel – Les Prés : thermique de l’après-midi sous le décollage",
+     "lon": 6.6584,
+     "lat": 45.4524,
+     "alt_m": 1362,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (82 % le matin, 94 % à midi, 94 % le soir)",
+     "trigger": "pentes sud-ouest sous le décollage des Prés, au-dessus de Bozel, où la brise de vallée se mêle aux thermiques",
+     "description": "Audit d'octobre 2026 : Point chaud kk7 à 94 % toutes périodes (82 % le matin, 94 % à midi, 94 % le soir), terrain IGN 1362 m, à 420 m du décollage. ParaglidingEarth décrit « Bozel (Le Pré) » comme un « départ tardif (après 13h) mêlant brise de vallée et thermiques, orienté ouest » ; l'élément voisin `bozel-terrains-de-foot-declencheur` est à 1,5 km. Le point chaud kk7 (94 % toutes périodes, surtout en fin de journée : 94 %) est à 420 m du décollage. Ligne haute tension 200 m sous le décollage ; turbulent en sortie si le vent est fort ; ne pas décoller par rafales de nord descendant du Jovet.",
+     "confidence": "medium",
+     "sources": [
+      "S88",
+      "S52",
+      "S142"
+     ]
+    },
+    {
+     "id": "pralognan-le-pachut",
+     "name": "Pralognan – Le Pachut : thermique du matin sous le décollage",
+     "lon": 6.735,
+     "lat": 45.3864,
+     "alt_m": 1967,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (99 % le matin, 98 % à midi, 76 % le soir)",
+     "trigger": "pentes sud et sud-ouest sous le décollage du Pachut, au-dessus de Pralognan-la-Vanoise",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 99 % toutes périodes (99 % le matin, 98 % à midi, 76 % le soir), terrain IGN 1967 m, à 140 m du décollage. Le décollage du Pachut (FFVL 5223, S/SO, 1980 m, issu des traces de décollage, sans description) n'avait aucun thermique. Le point chaud kk7 (99 % toutes périodes, 99 % le matin, 98 % à midi) est à 140 m du décollage : l'un des plus forts de la Vanoise.",
+     "confidence": "low",
+     "sources": [
+      "S142"
+     ]
+    },
+    {
+     "id": "dent-du-villard",
+     "name": "Dent du Villard : pentes sous la crête",
+     "lon": 6.6646,
+     "lat": 45.4242,
+     "alt_m": 1680,
+     "coord_quality": "approx",
+     "best_hours": "à midi et le soir d'après les traces GPS (91 % à midi, 96 % le soir, rien le matin)",
+     "trigger": "pentes sous la Dent du Villard (2284 m), versant de Courchevel Moriond",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 96 % toutes périodes (91 % à midi, 96 % le soir), terrain IGN 1680 m, à 1 km de la Dent du Villard. Point chaud kk7 à 96 % toutes périodes (91 % à midi, 96 % le soir, aucun le matin), à 1 km de la Dent du Villard. L'élément voisin `dent-du-villard-relance-du-soir` décrit la relance du soir depuis le Bouc Blanc ; celui-ci est plus bas et plus à l'ouest.",
+     "confidence": "low",
+     "sources": [
+      "S142"
+     ]
+    },
+    {
+     "id": "pas-du-lac-pentes",
+     "name": "Pas du Lac : pentes sous le décollage",
+     "lon": 6.6182,
+     "lat": 45.3852,
+     "alt_m": 2534,
+     "coord_quality": "approx",
+     "best_hours": "le matin et à midi d'après les traces GPS (86 % le matin, 84 % à midi, rien le soir)",
+     "trigger": "pentes ouest et nord-ouest sous le décollage du Pas du Lac (2611 m), au-dessus de Saint-Bon",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 83 % toutes périodes (86 % le matin, 84 % à midi), terrain IGN 2534 m, à 1 km du décollage. Le décollage du Pas du Lac (FFVL 5314, O/NO, 2611 m, niveau bleu, issu des traces de décollage) n'avait aucun thermique à moins de 3 km. Point chaud kk7 à 1 km du décollage (83 % toutes périodes, 86 % le matin, 84 % à midi, rien le soir).",
+     "confidence": "low",
+     "sources": [
+      "S142"
+     ]
+    },
+    {
+     "id": "la-plagne-3007-pentes",
+     "name": "La Plagne (Saint-Jean-de-Belleville) : pentes sous le décollage",
+     "lon": 6.4473,
+     "lat": 45.4387,
+     "alt_m": 2113,
+     "coord_quality": "approx",
+     "best_hours": "en fin de journée d'après les traces GPS (73 % le soir, rien le matin ni à midi)",
+     "trigger": "pentes sous le décollage de La Plagne (2103 m, Saint-Jean-de-Belleville), versant de Belleville",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 70 % toutes périodes (73 % le soir), terrain IGN 2113 m, à 190 m du décollage. Le décollage FFVL 3007 (sans description) n'avait aucun thermique. Le point chaud kk7 est faible (70 % toutes périodes, 73 % le soir), à 190 m du décollage.",
+     "confidence": "low",
+     "sources": [
+      "S142"
+     ]
+    },
+    {
+     "id": "tougnete-pentes",
+     "name": "Tougnète : pentes sous le restaurant d’altitude",
+     "lon": 6.5516,
+     "lat": 45.376,
+     "alt_m": 2213,
+     "coord_quality": "approx",
+     "best_hours": "le matin et à midi d'après les traces GPS (86 % le matin, 78 % à midi, rien le soir)",
+     "trigger": "pentes sous le décollage de la Tougnète (2298 m), à côté du restaurant d'altitude, piste de ski",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 78 % toutes périodes (86 % le matin, 78 % à midi), terrain IGN 2213 m, à 900 m du décollage. Le décollage de la Tougnète (FFVL 3095, N/NE/E, 2298 m, interdit l'hiver sur la piste) n'avait aucun thermique. Le point chaud kk7 est faible (78 % toutes périodes, 86 % le matin), à 900 m du décollage.",
+     "confidence": "low",
+     "sources": [
+      "S142"
+     ]
     }
    ],
    "soaring_spots": [
@@ -2763,10 +3096,10 @@
      "name": "Mont Jovet (Bozel)",
      "lon": 6.6395,
      "lat": 45.4853,
-     "alt_m": 2515,
+     "alt_m": 2276,
      "coord_quality": "source",
      "ffvl_id": 705,
-     "description": "Décollage SE/S marqué par une manche à air sur un mamelon avant le refuge (ou sommet à pied) ; ne pas voler par vent de sud fort ; atterrissage Bozel entre stade et lac ; accès par route puis piste de Villemartin/La Cour ; rester hors du Parc national si on part en cross ; aucune convention FFVL identifiée.",
+     "description": "Décollage SE/S marqué par une manche à air sur un mamelon avant le refuge (ou sommet à pied) ; ne pas voler par vent de sud fort ; atterrissage Bozel entre stade et lac ; accès par route puis piste de Villemartin/La Cour ; rester hors du Parc national si on part en cross ; aucune convention FFVL identifiée. Audit d'octobre 2026 : altitude ramenée de 2515 à 2276 m (terrain IGN à la position, qui est celle du site de vol libre « Mont Jovet » du géocodeur IGN ; la fiche FFVL 705 donne 2515 m).",
      "sources": [
       "S125",
       "S52",
@@ -2783,10 +3116,10 @@
      "name": "Courchevel : Tovets (piste des Touets)",
      "lon": 6.6363,
      "lat": 45.4184,
-     "alt_m": 1800,
+     "alt_m": 1682,
      "coord_quality": "source",
      "ffvl_id": 706,
-     "description": "Vol du matin (décollage est) : avant 13h la brise de vallée prend le dessus ; atterrissage obligatoire à Bozel ; décollage interdit l'hiver quand la piste est ouverte ; sous le vent des sapins à gauche l'après-midi ; survol de Courchevel 1550 (catalogue). L'altitude de la fiche FFVL (1083 m) paraît erronée.",
+     "description": "Vol du matin (décollage est) : avant 13h la brise de vallée prend le dessus ; atterrissage obligatoire à Bozel ; décollage interdit l'hiver quand la piste est ouverte ; sous le vent des sapins à gauche l'après-midi ; survol de Courchevel 1550 (catalogue). L'altitude de la fiche FFVL (1083 m) paraît erronée. Audit d'octobre 2026 : altitude ramenée de 1800 à 1682 m (terrain IGN à la position du site « Tovets » du géocodeur IGN ; la fiche FFVL 706 donne 1083 m, incohérente).",
      "sources": [
       "S128",
       "S61"
@@ -2801,10 +3134,10 @@
      "name": "Bozel : Les Prés",
      "lon": 6.6571,
      "lat": 45.4561,
-     "alt_m": 1574,
+     "alt_m": 1477,
      "coord_quality": "source",
      "ffvl_id": 1218,
-     "description": "Site d'après-midi quand la brise est en place, ligne haute tension 200 m en dessous, turbulent en sortie de décollage si fort ; ne pas décoller s'il y a des rafales de nord descendant du Jovet ; niveau débutant (ippi 3) d'après FFVL. ParaglidingEarth l'appelle « Bozel (Le Pré) » : départ tardif (après 13h) mêlant brise de vallée et thermiques, orienté ouest.",
+     "description": "Site d'après-midi quand la brise est en place, ligne haute tension 200 m en dessous, turbulent en sortie de décollage si fort ; ne pas décoller s'il y a des rafales de nord descendant du Jovet ; niveau débutant (ippi 3) d'après FFVL. ParaglidingEarth l'appelle « Bozel (Le Pré) » : départ tardif (après 13h) mêlant brise de vallée et thermiques, orienté ouest. Audit d'octobre 2026 : altitude ramenée de 1574 à 1477 m (terrain IGN à la position de la fiche FFVL).",
      "sources": [
       "S88",
       "S52",
@@ -4472,6 +4805,15 @@
    "type": "web",
    "lang": "fr",
    "notes": "Varan (Passy), 45.9448 N 6.6822 E, 1612 m ; waypoint du triangle de 114 km (« je chemine… vers Varan pour faire un plein »)."
+  },
+  {
+   "id": "S142",
+   "title": "Paragliding Thermal Maps (kk7) : points chauds de thermiques mesurés par les traces GPS",
+   "url": "https://thermal.kk7.ch/",
+   "publisher": "thermal.kk7.ch (CC BY-NC-SA 4.0)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Probabilités de thermique (toutes saisons, matin / milieu de journée / fin de journée) lues dans les fichiers téléchargés le 7 octobre 2026 ; ne disent pas ce qui déclenche."
   }
  ]
 }

@@ -123,3 +123,24 @@ Volumes avant → après : brises 2 → 4, convergences 1 → 2, hazards 7 → 8
 - Pas de récit local sur Rochebrune plus précis que la brochure et les fiches FFVL déjà utilisées ; le site du club de Megève ne contient pas de description (voir `pages_bloquees.txt`) ; traces CFD et XContest inaccessibles.
 - Les vols de la Plaine Joux, de Varan et du Mont Joly côté Saint-Gervais appartiennent à d'autres secteurs et n'ont pas été traités.
 
+
+## Audit des thermiques (octobre 2026)
+
+Les listes de lacunes (`docs/COUVERTURE.md`, `docs/KK7_CROISEMENT.md`, `docs/POSITIONS.md`) ont été reprises pour Chamonix – Mont-Blanc, Val Montjoie, Megève – Val d'Arly et Beaufortain. Règle de confiance : `medium` quand un texte (fiche FFVL, brochure, récit) décrit une ascendance au lieu, `low` avec « déduction » quand seuls un point chaud kk7 (traces GPS, `thermal.kk7.ch`) et le relief l'indiquent. Les toponymes autour des points chauds viennent d'OSM, les altitudes du terrain IGN (RGE ALTI). Plusieurs points chauds sont en haute montagne (2600 à 3300 m, versants glaciaires) : ils reflètent les grandes traversées du Mont-Blanc, pas des sites de décollage.
+
+### Chamonix – Mont-Blanc (`mont-blanc-chamonix`)
+- Créés : `prarion-thermiques-du-matin` (`medium` : « site du matin : thermiques d'est » au Prarion Nord-Est et « brises thermiques… » au Grand Prarion ; point chaud 92 % à 420 et 720 m, qui sert les deux décollages), `plan-de-l-aiguille-thermique-deco` (`low`, « brises thermiques/thermodynamiques », point chaud faible), `pormenaz-pointe-noire` (`low`, FFVL 5115, point chaud 87 % à 1,8 km), `beaux-mollets-signal-forbes` (`low`, FFVL 14105 ; c'est le point chaud ≥ 90 % de la liste), `chamonix-aiguilles-rouges-brouillard` et `chamonix-charlanon-aiguille-pourrie` (`low`, les deux autres points chauds ≥ 90 %).
+- Écartés : `foehn-vallee-chamonix` (foehn, « déclench » ne désigne qu'un déclenchement du phénomène) ; `drus-verte-chardonnet` (position approximative en haute montagne, loin de tout point chaud). Position de `merlet` et `merlet-thermiques-matin` laissée : la fiche FFVL (1691 m) et le club (1600 m) donnent des altitudes supérieures de 130 à 220 m au terrain IGN à leurs coordonnées (parc animalier à 1468 m) ; l'écart peut venir de la pente raide ou d'un décollage plus haut que le point indiqué, sans source pour trancher.
+
+### Val Montjoie (`val-montjoie-saint-gervais`)
+- Créés : `kouzna-signal-thermique` (`medium` : la brochure dit que « les thermiques ne sont pas loin des lignes » ; point chaud 98 % à 490 m du décollage), `mont-lachat-chavants` (`low`, point chaud faible 73 %), `bionnassay-tricot-pointe-inferieure`, `rochers-du-mont-blanc-aiguilles-grises`, `tricot-bionnassay-3300` (`low`, points chauds d'altitude ≥ 90 % de la liste). Le point chaud du Prarion est dans `mont-blanc-chamonix` ; celui de Chedde (92 %) est dans `arve-faucigny` (`chedde-praz-coutant`, fichier `chablais_giffre_arve.json`).
+- Position corrigée : atterrissage `notre-dame-de-la-gorge` (position approximative à 1338 m de terrain pour 1210 m déclarés) ramené sur la chapelle Notre-Dame de la Gorge (toponyme IGN, 1206 m).
+- Écarté : `face-est-mont-joly` (position source, loin d'un point chaud). `domes-de-miage` (écart de 84 m, sommet glaciaire) laissé.
+
+### Megève – Val d'Arly (`val-arly-megeve`)
+- Créés : `megeve-thermique-couche-b6` (`low` : le thermique « très couché par la brise » de la balise de Megève de la compétition des Saisies, 14 avril 2024 ; position de Megève), `ban-rouge-sans-ascendance` (`low` : la brochure dit « sans ascendances particulières » alors que le point chaud est à 81 % à 116 m ; texte et mesure divergent, signalé tel quel), `megeve-tete-noire-les-sions` et `flumet-balavarde` (`low`, les deux points chauds ≥ 90 %).
+- Écarté : `mont-joly-derniers-thermiques-megeve` (position source, loin d'un point chaud).
+
+### Beaufortain (`beaufortain`)
+- Créés : `pas-de-l-ane-thermique-sain` (`medium`, récit : « j'exploite le premier thermique que je trouve pour réussir à me dégager », sain jusqu'à 2900 m ; point chaud 94-95 % à 720 m), `beaufortain-la-chapelle-nord-ouest`, `beaufortain-crete-est-6333`, `beaufortain-dunand-lavachay` (`low`, points chauds ≥ 90 %).
+- Écartés : Roche Parstire (FFVL 392) et Fenêtre 7 (FFVL 491) : la fiche ne mentionne que la brise de vallée, et le point chaud le plus proche est à 3,6 et 3,4 km.

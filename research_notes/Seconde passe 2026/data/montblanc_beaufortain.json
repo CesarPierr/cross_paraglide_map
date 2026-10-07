@@ -731,6 +731,100 @@
             "S38"
           ],
           "confidence": "low"
+        },
+        {
+          "id": "prarion-thermiques-du-matin",
+          "name": "Le Prarion : thermiques du matin sous les décollages Nord-Est et Grand Prarion",
+          "lon": 6.7545,
+          "lat": 45.8888,
+          "alt_m": 1863,
+          "coord_quality": "approx",
+          "best_hours": "le matin et à midi d'après les traces GPS (96 % le matin, 86 % à midi, rien le soir)",
+          "trigger": "pentes est et nord-est sous la sortie de la télécabine du Prarion et sous l'arête du Grand Prarion",
+          "description": "Audit d'octobre 2026 : Point chaud kk7 à 92 % toutes périodes (96 % le matin, 86 % à midi), terrain IGN 1863 m, à 420 m du décollage Prarion Nord-Est. Le texte du décollage Prarion Nord-Est dit « site du matin : thermiques d'est ou flux descendant la vallée (bise ou léger foehn) » ; celui du Grand Prarion « site de début et fin d'après-midi : brises thermiques ou léger flux d'ouest, praticable seulement si l'alimentation en brise est correcte ». Aucun des deux n'avait de thermique à moins de 1 km. Le point chaud kk7 est à 420 m du Prarion Nord-Est et à 720 m du Grand Prarion ; la même pente sert donc les deux décollages à des heures différentes.",
+          "confidence": "medium",
+          "sources": [
+            "S41",
+            "S42",
+            "S3",
+            "S164"
+          ]
+        },
+        {
+          "id": "plan-de-l-aiguille-thermique-deco",
+          "name": "Plan de l’Aiguille : brises thermiques sous le décollage",
+          "lon": 6.8798,
+          "lat": 45.9031,
+          "alt_m": 2097,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (87 % à midi, 91 % le soir, rien le matin)",
+          "trigger": "pentes ouest sous le décollage du Plan de l'Aiguille, au-dessus de Chamonix",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 82 % toutes périodes (87 % à midi, 91 % le soir), terrain IGN 2097 m, à 310 m du décollage. Le décollage du Plan de l'Aiguille (2233 m, W/NE, décollage et survol interdits en juillet-août) est décrit « brises thermiques/thermodynamiques ou flux d'ouest faible ; brise parfois soutenue au déco », sans thermique rattaché. Point chaud kk7 faible à 310 m du décollage ; le thermique `planpraz-relance-depuis-plan-de-l-aiguille` est à 4,5 km, côté Planpraz.",
+          "confidence": "low",
+          "sources": [
+            "S39",
+            "S5",
+            "S164"
+          ]
+        },
+        {
+          "id": "pormenaz-pointe-noire",
+          "name": "Pointe Noire de Pormenaz : pentes sous le décollage",
+          "lon": 6.7909,
+          "lat": 45.943,
+          "alt_m": 1895,
+          "coord_quality": "approx",
+          "best_hours": "le matin et à midi d'après les traces GPS (90 % le matin, 85 % à midi, rien le soir)",
+          "trigger": "versant sud-ouest de la Pointe Noire de Pormenaz, en bordure de la réserve de Passy",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 87 % toutes périodes (90 % le matin, 85 % à midi), terrain IGN 1895 m, à 1,8 km du décollage. Le décollage de la Pointe Noire de Pormenaz (FFVL 5115, SO/O/NO, 2290 m) n'a aucun texte d'aérologie (la fiche ne parle que de la réserve de Passy et de Carlaveyron). Le point chaud le plus proche (87 %, 90 % le matin) est à 1,8 km au sud-ouest du décollage. Survol de la réserve à plus de 300 m/sol.",
+          "confidence": "low",
+          "sources": [
+            "S164"
+          ]
+        },
+        {
+          "id": "beaux-mollets-signal-forbes",
+          "name": "Beaux Mollets : pentes sous le Signal Forbes",
+          "lon": 6.907,
+          "lat": 45.923,
+          "alt_m": 2188,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (92 % à midi, 93 % le soir, rien le matin)",
+          "trigger": "pentes sous le Signal Forbes (2200 m), au-dessus du décollage des Beaux Mollets",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 90 % toutes périodes (92 % à midi, 93 % le soir), terrain IGN 2188 m, à 740 m du Signal Forbes. Le décollage des Beaux Mollets (FFVL 14105, 1435 m, interdit en juillet-août, « après-midi avec de la brise de vallée ») est à 1,7 km du point chaud kk7, qui figure parmi les points chauds ≥ 90 % non décrits. Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter.",
+          "confidence": "low",
+          "sources": [
+            "S164"
+          ]
+        },
+        {
+          "id": "chamonix-aiguilles-rouges-brouillard",
+          "name": "Aiguilles Rouges du Brouillard : glacier de Brouillard (vols d’altitude)",
+          "lon": 6.8689,
+          "lat": 45.7965,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (90 % le matin, 93 % à midi, 94 % le soir)",
+          "trigger": "pentes de glace et de rocher sous les Aiguilles Rouges du Brouillard (3349 m), côté italien du massif du Mont-Blanc",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 93 % toutes périodes (90 % le matin, 93 % à midi, 94 % le soir), terrain IGN 2597 m, à 620 m des Aiguilles Rouges du Brouillard. Point chaud en haute montagne (2597 m, versant italien), probablement lié aux grandes traversées du Mont-Blanc. Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter. Altitude de l'IGN à la position : 2597 m (le MNT de 216 m de l'atlas, sur ce versant très raide, la donne à 3035 m, d'où l'absence d'altitude déclarée).",
+          "confidence": "low",
+          "sources": [
+            "S164"
+          ]
+        },
+        {
+          "id": "chamonix-charlanon-aiguille-pourrie",
+          "name": "Chamonix nord : La Charlanon et Aiguille Pourrie",
+          "lon": 6.8685,
+          "lat": 45.9562,
+          "alt_m": 2195,
+          "coord_quality": "approx",
+          "best_hours": "le matin et à midi d'après les traces GPS (93 % le matin, 87 % à midi, 68 % le soir, rien le soir)",
+          "trigger": "alpages de La Charlanon et pentes sous l'Aiguille Pourrie (2511 m), au-dessus de Vallorcine",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 91 % toutes périodes (93 % le matin, 87 % à midi, 68 % le soir), terrain IGN 2195 m, à 650 m de La Charlanon. Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter.",
+          "confidence": "low",
+          "sources": [
+            "S164"
+          ]
         }
       ],
       "soaring_spots": [
@@ -1865,6 +1959,83 @@
             "S149"
           ],
           "confidence": "medium"
+        },
+        {
+          "id": "kouzna-signal-thermique",
+          "name": "La Kouzna – Le Signal : thermique du décollage",
+          "lon": 6.6999,
+          "lat": 45.7907,
+          "alt_m": 1783,
+          "coord_quality": "approx",
+          "best_hours": "le matin et à midi d'après les traces GPS (99 % le matin, 98 % à midi, 68 % le soir, rien le soir)",
+          "trigger": "pentes sous le décollage de La Kouzna (NE/E/SE), au pied du Signal, au-dessus des Contamines",
+          "description": "Audit d'octobre 2026 : Point chaud kk7 à 98 % toutes périodes (99 % le matin, 98 % à midi, 68 % le soir), terrain IGN 1783 m, à 490 m du décollage de La Kouzna. La brochure signale que « les thermiques ne sont pas loin des lignes » (ligne à haute tension à moins de 200 m en sortie de décollage) sans les situer ; la fiche FFVL 1889 donne comme aérologie « léger nord, bise, faible sud-est ». Le point chaud kk7 du décollage est l'un des plus forts du secteur (98 % toutes périodes, 99 % le matin et à midi, 68 % le soir), à 490 m du décollage : ce serait le thermique que la brochure place près de la ligne. Position : celle du point chaud.",
+          "confidence": "medium",
+          "sources": [
+            "S105",
+            "S106",
+            "S164"
+          ]
+        },
+        {
+          "id": "mont-lachat-chavants",
+          "name": "Les Houches – Mont Lachat : pentes sous le décollage",
+          "lon": 6.7868,
+          "lat": 45.8709,
+          "alt_m": 1999,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (78 % le matin, 73 % à midi, 72 % le soir)",
+          "trigger": "pentes sous le décollage du Mont Lachat (2073 m), au-dessus du marais des Chavants",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 73 % toutes périodes (78 % le matin, 73 % à midi, 72 % le soir), terrain IGN 1999 m, à 900 m du décollage. Le décollage du Mont Lachat (FFVL 1167, 2073 m ; « se poser sur le fond du marais des Chavants ») n'a aucun texte d'aérologie. Le point chaud kk7 est faible (73 % toutes périodes), à 900 m du décollage.",
+          "confidence": "low",
+          "sources": [
+            "S164"
+          ]
+        },
+        {
+          "id": "bionnassay-tricot-pointe-inferieure",
+          "name": "Aiguille de Tricot : arête de Tricot (vols d’altitude)",
+          "lon": 6.7789,
+          "lat": 45.8451,
+          "alt_m": 2612,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (98 % le matin, 93 % à midi, 90 % le soir)",
+          "trigger": "arête de Tricot et Pointe Inférieure (2830 m), au-dessus des Contamines",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 92 % toutes périodes (98 % le matin, 93 % à midi, 90 % le soir), terrain IGN 2612 m, à 260 m de la Pointe Inférieure. Point chaud kk7 à 92 % toutes périodes en haute montagne (2612 m ; 98 % le matin). Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter.",
+          "confidence": "low",
+          "sources": [
+            "S164"
+          ]
+        },
+        {
+          "id": "rochers-du-mont-blanc-aiguilles-grises",
+          "name": "Rochers du Mont Blanc : glaciers (vols d’altitude)",
+          "lon": 6.8428,
+          "lat": 45.8192,
+          "alt_m": 3039,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (92 % à midi, 92 % le soir, rien le matin)",
+          "trigger": "rochers et glaciers du versant ouest du Mont Blanc, sous les Aiguilles Grises (3039 m)",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 93 % toutes périodes (92 % à midi, 92 % le soir), terrain IGN 3039 m, à 880 m des Rochers du Mont Blanc. Point chaud kk7 à 93 % toutes périodes à 3039 m (92 % à midi comme le soir, rien le matin), au-dessus de la ligne de crête des Contamines. Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter.",
+          "confidence": "low",
+          "sources": [
+            "S164"
+          ]
+        },
+        {
+          "id": "tricot-bionnassay-3300",
+          "name": "Aiguille de Tricot : pentes de Bionnassay",
+          "lon": 6.804,
+          "lat": 45.835,
+          "alt_m": 3305,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (82 % le matin, 91 % à midi, 90 % le soir)",
+          "trigger": "pentes de glace sous l'Aiguille de Tricot (3665 m) et la Pointe Supérieure",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 90 % toutes périodes (82 % le matin, 91 % à midi, 90 % le soir), terrain IGN 3305 m, à 390 m de l'Aiguille de Tricot. Point chaud kk7 à 90 % toutes périodes à 3305 m (91 % à midi, 90 % le soir). Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter.",
+          "confidence": "low",
+          "sources": [
+            "S164"
+          ]
         }
       ],
       "soaring_spots": [
@@ -2163,11 +2334,11 @@
         {
           "id": "notre-dame-de-la-gorge",
           "name": "Notre-Dame-de-la-Gorge (atterrissage de secours)",
-          "lon": 6.7175,
-          "lat": 45.7903,
-          "alt_m": 1210,
+          "lon": 6.7156,
+          "lat": 45.7922,
+          "alt_m": 1206,
           "coord_quality": "approx",
-          "description": "Atterrissage de secours (1210 m) en face du téléphérique EDF, à 500 m du télécabine du Pontet en direction du sud (brochure). Position approximative.",
+          "description": "Atterrissage de secours (1210 m) en face du téléphérique EDF, à 500 m du télécabine du Pontet en direction du sud (brochure). Position approximative. Audit d'octobre 2026 : position ramenée sur la chapelle Notre-Dame de la Gorge (toponyme IGN, terrain 1206 m, comme les 1210 m du texte) ; l'ancienne position approximative tombait sur une pente à 1338 m.",
           "sources": [
             "S3"
           ]
@@ -2792,6 +2963,68 @@
           "sources": [
             "S163",
             "S162"
+          ]
+        },
+        {
+          "id": "megeve-tete-noire-les-sions",
+          "name": "Tête Noire : pentes de Praz Coutant – Les Sions",
+          "lon": 6.5812,
+          "lat": 45.9244,
+          "alt_m": 1615,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (97 % le matin, 94 % à midi, 86 % le soir)",
+          "trigger": "pentes sous la Tête Noire (1691 m), hameaux des Sions et du Peray, côté Combloux",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 95 % toutes périodes (97 % le matin, 94 % à midi, 86 % le soir), terrain IGN 1615 m, à 230 m de la Tête Noire. Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter. Point chaud le matin et à midi (97 % et 94 %), 86 % le soir.",
+          "confidence": "low",
+          "sources": [
+            "S164"
+          ]
+        },
+        {
+          "id": "flumet-balavarde",
+          "name": "Notre-Dame-de-Bellecombe : pentes de Balavarde et du Gâteau",
+          "lon": 6.5159,
+          "lat": 45.8266,
+          "alt_m": 1183,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (84 % le matin, 93 % à midi, 94 % le soir)",
+          "trigger": "pentes de Balavarde et crête du Gâteau, au-dessus de Notre-Dame-de-Bellecombe",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 94 % toutes périodes (84 % le matin, 93 % à midi, 94 % le soir), terrain IGN 1183 m, à 690 m de Balavarde. Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter. Point chaud à midi et le soir (93 % et 94 %), 84 % le matin.",
+          "confidence": "low",
+          "sources": [
+            "S164"
+          ]
+        },
+        {
+          "id": "megeve-thermique-couche-b6",
+          "name": "Megève : thermique très couché par la brise à la balise de Megève",
+          "lon": 6.6138,
+          "lat": 45.8562,
+          "alt_m": 1094,
+          "coord_quality": "approx",
+          "best_hours": "après-midi d'avril par ciel bleu (14 avril 2024) ; flux de sud en mai",
+          "trigger": "pentes au-dessus de Megève, sur la balise B6 du parcours des Saisies, face à la brise de la vallée de Megève",
+          "description": "Audit d'octobre 2026 : le piège « Vallée de Megève : très forte brise face au pilote » vient de la compétition des Saisies du 14 avril 2024 : sur le triangle FAI de 32 km, la sélection se fait à la balise de Megève (B6) : « il faut décaler un thermique très couché par la brise puis revenir face à cette très forte brise en collant à la pente, parfois en marche arrière » ; en mai 2015, par flux de sud, le pilote passe le verrou de Combloux « les pieds dans les arbres ». Position : Megève (toponyme IGN) ; le thermique de la balise B6 n'est pas localisé plus précisément, aucun point chaud kk7 à moins de 1 km.",
+          "confidence": "low",
+          "sources": [
+            "S159",
+            "S155"
+          ]
+        },
+        {
+          "id": "ban-rouge-sans-ascendance",
+          "name": "Crêt du Midi / Ban Rouge : point chaud kk7 (la brochure dit « sans ascendances particulières »)",
+          "lon": 6.5818,
+          "lat": 45.802,
+          "alt_m": 1926,
+          "coord_quality": "approx",
+          "best_hours": "non précisé",
+          "trigger": "crête du Ban Rouge, vol balistique de chaque côté",
+          "description": "Audit d'octobre 2026 : le texte du décollage (brochure) dit « sans ascendances particulières, vol balistique de chaque côté de la crête » ; or un point chaud kk7 à 81 % se trouve à 116 m du décollage. Cet élément ne contredit pas la brochure : il signale seulement que les traces GPS y trouvent un thermique une fois sur cinq. Interdit l'été à cause des troupeaux. À lire avec prudence : texte local et mesure divergent.",
+          "confidence": "low",
+          "sources": [
+            "S159",
+            "S155"
           ]
         }
       ],
@@ -3708,6 +3941,68 @@
             "S65"
           ],
           "confidence": "medium"
+        },
+        {
+          "id": "pas-de-l-ane-thermique-sain",
+          "name": "Pas de l’Âne : le premier thermique pour se dégager du rotor du Mirantin",
+          "lon": 6.5321,
+          "lat": 45.6824,
+          "alt_m": 1767,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (93 % le matin, 96 % à midi, 90 % le soir)",
+          "trigger": "pentes ouest du col du Pas de l'Âne, côté au vent du Mont Mirantin",
+          "description": "Audit d'octobre 2026 : Point chaud kk7 à 94 % toutes périodes (93 % le matin, 96 % à midi, 90 % le soir), terrain IGN 1767 m, à 720 m du Pas de l'Âne. Récit de mi-juillet (vent N à NO forcissant) : « rendu au Pas de l'Âne, je décide de passer le col en direction du sud. Grossière erreur. De suite je gagne 10 km/h et me retrouve sous le vent du Mirantin. J'exploite le premier thermique que je trouve pour réussir à me dégager » ; thermique « sain » jusqu'à 2900 m une fois dégagé. Le point chaud kk7 (94-95 % toutes périodes, plus net à midi) est à 720 m du col, sur la face au vent. Position : celle du point chaud.",
+          "confidence": "medium",
+          "sources": [
+            "S149",
+            "S154",
+            "S164"
+          ]
+        },
+        {
+          "id": "beaufortain-la-chapelle-nord-ouest",
+          "name": "Beaufortain (ouest) : La Chapelle",
+          "lon": 6.3875,
+          "lat": 45.651,
+          "alt_m": 697,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (88 % à midi, 92 % le soir, rien le matin)",
+          "trigger": "pentes de La Chapelle, à l'ouest du Beaufortain, au-dessus de la combe de Savoie",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 92 % toutes périodes (88 % à midi, 92 % le soir), terrain IGN 697 m, à 590 m du lieu-dit La Chapelle. Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter. Point chaud à midi (88 %) et le soir (92 %), jamais le matin.",
+          "confidence": "low",
+          "sources": [
+            "S164"
+          ]
+        },
+        {
+          "id": "beaufortain-crete-est-6333",
+          "name": "Beaufortain : crêtes au nord de Beaufort",
+          "lon": 6.6333,
+          "lat": 45.7158,
+          "alt_m": 1978,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (87 % le matin, 92 % à midi, 96 % le soir)",
+          "trigger": "crêtes à 1978 m sur la ligne qui joint le Beaufortain au Val d'Arly",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 92 % toutes périodes (87 % le matin, 92 % à midi, 96 % le soir), terrain IGN 1978 m, sur une crête sans toponyme OSM à moins de 1,2 km. Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter. Point chaud net en fin de journée (96 %) et au printemps (96 %).",
+          "confidence": "low",
+          "sources": [
+            "S164"
+          ]
+        },
+        {
+          "id": "beaufortain-dunand-lavachay",
+          "name": "Beaufortain : pentes de Dunand et de Lavachay",
+          "lon": 6.6436,
+          "lat": 45.6695,
+          "alt_m": 2142,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (90 % à midi, 92 % le soir, rien le matin)",
+          "trigger": "pentes de Dunand et de Lavachay, sous le col d'Arpire",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 91 % toutes périodes (90 % à midi, 92 % le soir), terrain IGN 2142 m, à 700 m de Dunand. Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter. Point chaud à midi (90 %) et le soir (92 %), jamais le matin.",
+          "confidence": "low",
+          "sources": [
+            "S164"
+          ]
         }
       ],
       "soaring_spots": [
@@ -5612,6 +5907,15 @@
       "type": "web",
       "lang": "fr",
       "notes": "Vol du col des Aravis par vent de sud régulier : thermique jusqu'à 2400 m vers la pointe des Aravis, transition vers la Tête du Torraz, thermique violent (+5 m/s intégré sur 10 s) sous la Tête du Torraz, puis le sud pose les pilotes entre Flumet et Saint-Nicolas-la-Chapelle."
+    },
+    {
+      "id": "S164",
+      "title": "Paragliding Thermal Maps (kk7) : points chauds de thermiques mesurés par les traces GPS",
+      "url": "https://thermal.kk7.ch/",
+      "publisher": "thermal.kk7.ch (CC BY-NC-SA 4.0)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Probabilités de thermique (toutes saisons, matin / milieu de journée / fin de journée) lues dans les fichiers téléchargés le 7 octobre 2026 ; ne disent pas ce qui déclenche."
     }
   ]
 }

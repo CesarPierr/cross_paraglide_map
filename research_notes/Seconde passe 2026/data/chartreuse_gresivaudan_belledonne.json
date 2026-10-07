@@ -920,13 +920,13 @@
     {
      "id": "pilier-sud-dent-de-crolles",
      "name": "Pilier sud de la Dent de Crolles",
-     "lon": 5.8548,
-     "lat": 45.3045,
-     "alt_m": 1800,
+     "lon": 5.854,
+     "lat": 45.3019,
+     "alt_m": 1433,
      "coord_quality": "approx",
      "best_hours": "fin de matinée à début d'après-midi",
      "trigger": "pilier rocheux plein sud",
-     "description": "Raccrochage classique pour monter de la Combe/Manival vers la Dent, puis la crête vers le nord ; plusieurs récits y relèvent le thermique de départ. Peut être mou ; une couche de vent de sud est possible tout en bas. Position estimée. Matmute raccroche « le thermique sur le pilier Sud » après un repli par l'école d'escalade et monte aux nuages ; en 2020 le pilier est « mou » avec une couche de vent de sud : rester dans la zone moyenne et se laisser pousser au nord jusqu'au Pas de Rocheplane. Rôle : RELANCE entre Manival/Bec Charvet et la Dent.",
+     "description": "Raccrochage classique pour monter de la Combe/Manival vers la Dent, puis la crête vers le nord ; plusieurs récits y relèvent le thermique de départ. Peut être mou ; une couche de vent de sud est possible tout en bas. Position estimée. Matmute raccroche « le thermique sur le pilier Sud » après un repli par l'école d'escalade et monte aux nuages ; en 2020 le pilier est « mou » avec une couche de vent de sud : rester dans la zone moyenne et se laisser pousser au nord jusqu'au Pas de Rocheplane. Rôle : RELANCE entre Manival/Bec Charvet et la Dent. Audit d'octobre 2026 : position ramenée sur le point chaud kk7 le plus proche (5.8540 E, 45.3019 N, 93 % toutes périodes) au pied de la face sud, terrain IGN 1433 m ; l'ancienne position (1595 m) et l'altitude de 1800 m n'étaient pas mesurées.",
      "sources": [
       "S22",
       "S42",
@@ -939,11 +939,11 @@
      "name": "Manival et pointe du Bec Charvet",
      "lon": 5.8284,
      "lat": 45.2966,
-     "alt_m": 1400,
+     "alt_m": 1630,
      "coord_quality": "source",
      "best_hours": "milieu de matinée à début d'après-midi",
      "trigger": "combe du Manival et pointe du Bec Charvet",
-     "description": "Au sud de Saint-Hilaire, la combe du Manival est la coupure à bien franchir : il faut y monter à 1200-1400 m avant de continuer vers le Saint-Eynard ou de transiter sur Saint-Pancrasse (1600 m mini) vers la Dent. Premier thermique cité après le Manival ; manque d'altitude au Bec Charvet = repli par l'école d'escalade. Compléments (récits) : placement idéal = Manival avant le start puis monter directement sur les crêtes du Saint-Eynard (manche 2017) ; « ne pas se rater au Manival » (forum, parcours facile des faces est) ; Matmute rate le cycle au Bec Charvet et se replie à l'école d'escalade ; en 2020 petit thermique « désagréable » à la pointe du Bec Charvet.",
+     "description": "Au sud de Saint-Hilaire, la combe du Manival est la coupure à bien franchir : il faut y monter à 1200-1400 m avant de continuer vers le Saint-Eynard ou de transiter sur Saint-Pancrasse (1600 m mini) vers la Dent. Premier thermique cité après le Manival ; manque d'altitude au Bec Charvet = repli par l'école d'escalade. Compléments (récits) : placement idéal = Manival avant le start puis monter directement sur les crêtes du Saint-Eynard (manche 2017) ; « ne pas se rater au Manival » (forum, parcours facile des faces est) ; Matmute rate le cycle au Bec Charvet et se replie à l'école d'escalade ; en 2020 petit thermique « désagréable » à la pointe du Bec Charvet. Audit d'octobre 2026 : altitude corrigée de 1400 à 1630 m, terrain IGN à la position de la crête du Bec Charvet ; les 1200-1400 m des sources sont l'altitude à avoir à la combe du Manival avant la traversée, pas celle du déclencheur.",
      "sources": [
       "S27",
       "S22",
@@ -1022,14 +1022,14 @@
     },
     {
      "id": "chamechaude-pinea",
-     "name": "Chamechaude et La Pinéa (intérieur du massif)",
+     "name": "Chamechaude (face est) et crêtes du Sappey",
      "lon": 5.7881,
      "lat": 45.2875,
      "alt_m": 2082,
      "coord_quality": "source",
      "best_hours": "après 12h",
      "trigger": "hauts du massif ; face est de Chamechaude",
-     "description": "Thermiques dessinés sur la carte PNR/CD38 à la Pinéa, au Col de Porte-Chamechaude et au Sappey. Le récit de 2020 trouve un « gros thermique teigneux sous le vent » à la face est de Chamechaude (sortie à 2700 m) ; plafonds 3000 m sur Grand Som et Scia le même jour. Un stage cross (2026) enchaîne Scia, Pravouta, Chamechaude puis revient sur Pravouta pour raccrocher la Dent : Chamechaude et Pravouta servent de relais dans l'intérieur du massif.",
+     "description": "Thermiques dessinés sur la carte PNR/CD38 à la Pinéa, au Col de Porte-Chamechaude et au Sappey. Le récit de 2020 trouve un « gros thermique teigneux sous le vent » à la face est de Chamechaude (sortie à 2700 m) ; plafonds 3000 m sur Grand Som et Scia le même jour. Un stage cross (2026) enchaîne Scia, Pravouta, Chamechaude puis revient sur Pravouta pour raccrocher la Dent : Chamechaude et Pravouta servent de relais dans l'intérieur du massif. Audit d'octobre 2026 : la Pinéa a maintenant son élément propre (la-pinea-sarcenas) ; l'icône du Sappey (crête au nord du village) reste non localisée.",
      "sources": [
       "S29",
       "S42",
@@ -1039,14 +1039,14 @@
     },
     {
      "id": "scia-grand-som-charmant-som",
-     "name": "La Scia, Grand Som et Charmant Som",
+     "name": "Grand Som (centre du massif)",
      "lon": 5.8119,
      "lat": 45.3706,
      "alt_m": 2026,
      "coord_quality": "source",
      "best_hours": "après 12h",
      "trigger": "sommets du centre du massif",
-     "description": "Plafonds généralement meilleurs au centre du massif qu'en bordure (fil parapentiste.info). Thermiques notés sur la carte PNR/CD38 à la Scia, au Grand Som, au Charmant Som et à la Grande Sûre. Point = Grand Som.",
+     "description": "Plafonds généralement meilleurs au centre du massif qu'en bordure (fil parapentiste.info). Thermiques notés sur la carte PNR/CD38 à la Scia, au Grand Som, au Charmant Som et à la Grande Sûre. Point = Grand Som. Audit d'octobre 2026 : cet élément ne vaut plus que pour le Grand Som ; le Charmant Som, la Grande Sûre et la Scia ont maintenant chacun le leur.",
      "sources": [
       "S32",
       "S29",
@@ -1074,13 +1074,13 @@
     {
      "id": "sainte-marie-du-mont-barraux",
      "name": "Crêtes de Sainte-Marie-du-Mont – Barraux",
-     "lon": 5.9464,
-     "lat": 45.4069,
-     "alt_m": 950,
-     "coord_quality": "source",
+     "lon": 5.9209,
+     "lat": 45.405,
+     "alt_m": 1560,
+     "coord_quality": "approx",
      "best_hours": "après 11h",
      "trigger": "crêtes successives de la façade est entre Saint-Hilaire et Barraux",
-     "description": "Sur le parcours Barraux (16 km), « plusieurs bons thermiques sur les crêtes », mais il faut assurer le plafond à chaque transition et se méfier du nord qui peut bloquer vers Saint-Bernard. Rôle : point de départ de la traversée vers le Saint-Genis (« depuis Sainte-Marie-du-Mont prendre +2200 m est une bonne idée »).",
+     "description": "Sur le parcours Barraux (16 km), « plusieurs bons thermiques sur les crêtes », mais il faut assurer le plafond à chaque transition et se méfier du nord qui peut bloquer vers Saint-Bernard. Rôle : point de départ de la traversée vers le Saint-Genis (« depuis Sainte-Marie-du-Mont prendre +2200 m est une bonne idée »). Audit d'octobre 2026 : la position précédente (5.9464 E, 45.4069 N) était l'église du village de Sainte-Marie-du-Mont (940 m), pas les crêtes. Elle est ramenée sur le point chaud kk7 de la crête qui domine le village à l'ouest (5.9209 E, 45.4050 N, 73 % toutes périodes, terrain IGN 1560 m) ; l'icône « thermique » de la carte PNR/CD38 se trouve aussi sur ces falaises au-dessus du village. Un deuxième point chaud (84 %) existe 2,5 km au sud (5.9192 E, 45.3842 N, terrain IGN 1166 m).",
      "sources": [
       "S27",
       "S29"
@@ -1092,12 +1092,12 @@
      "name": "Les Antennes (Saint-Hilaire) – « frontière sud du bocal »",
      "lon": 5.8755,
      "lat": 45.2939,
-     "alt_m": 720,
+     "alt_m": 969,
      "coord_quality": "approx",
      "confidence": "medium",
      "best_hours": "à partir de la fin de matinée (départs de cross vers 11h-12h) ; encore actif l'après-midi mais dur à franchir quand la brise est établie",
      "trigger": "falaises basses et pylônes FT/TDF au sud de Crolles, premier relief un peu saillant au sud du plateau des Petites Roches",
-     "description": "POINT DE RELANCE et limite du « bocal » de Saint-Hilaire : on y enroule pour prendre de la hauteur avant de quitter les falaises basses vers Château Nardent et le Saint-Eynard (« à quelle altitude quitter les antennes » est la question des aiglons du club). Matmute : « J'arrive aux Antennes, la frontière Sud du bocal de Saint Hil… j'enroule ». Au-delà de 15h30 la percée jusqu'aux antennes est une mauvaise option (« bataille pour remonter mais aussi pour tenir »). Position déduite : le seul groupe de pylônes sur ce relief (nœuds OSM FT/TDF, 45.2938 N 5.8755 E) ; le lieu-dit exact n'est pas cartographié, d'où approx (altitude = sol du MNT). Le thermique du pylône Orange 1 km au sud du déco (45.3024 N 5.8787 E) est un autre candidat peu probable.",
+     "description": "POINT DE RELANCE et limite du « bocal » de Saint-Hilaire : on y enroule pour prendre de la hauteur avant de quitter les falaises basses vers Château Nardent et le Saint-Eynard (« à quelle altitude quitter les antennes » est la question des aiglons du club). Matmute : « J'arrive aux Antennes, la frontière Sud du bocal de Saint Hil… j'enroule ». Au-delà de 15h30 la percée jusqu'aux antennes est une mauvaise option (« bataille pour remonter mais aussi pour tenir »). Position déduite : le seul groupe de pylônes sur ce relief (nœuds OSM FT/TDF, 45.2938 N 5.8755 E) ; le lieu-dit exact n'est pas cartographié, d'où approx (altitude = sol du MNT). Le thermique du pylône Orange 1 km au sud du déco (45.3024 N 5.8787 E) est un autre candidat peu probable. Audit d'octobre 2026 : altitude corrigée de 720 à 969 m, valeur du terrain IGN (RGE ALTI) à la position des pylônes ; la position (plateau au sud de Saint-Hilaire) est conservée. Aucun point chaud kk7 à moins de 1 km (le plus proche, 80 %, est à 1,5 km au SO sur la même falaise).",
      "sources": [
       "S22",
       "S99",
@@ -1127,14 +1127,14 @@
     {
      "id": "gencives-dent-de-crolles",
      "name": "Gencives de la Dent de Crolles (Saint-Pancrasse)",
-     "lon": 5.8548,
-     "lat": 45.304,
-     "alt_m": 1600,
+     "lon": 5.8344,
+     "lat": 45.3099,
+     "alt_m": 1671,
      "coord_quality": "approx",
      "confidence": "medium",
      "best_hours": "milieu de journée (arrivée vers 14h pour un départ à 12h)",
      "trigger": "pied rocheux de la Dent, au-dessus de Saint-Pancrasse, premier relief collé à la Dent",
-     "description": "POINT DE RELANCE pour monter vers la Dent de Crolles depuis le Manival : il faut être à 1400 m au Manival puis 1600 m minimum à Saint-Pancrasse pour « partir vers les gencives de la Dent » (Jean-Nono) ; on arrive aux gencives vers 14h pour un départ de Saint-Hilaire à midi (Axel, plafond 2400 m ensuite). Un compétiteur enchaîne Bec Charvet puis les gencives sans enrouler et ne s'arrête pas aux « pare-avalanches », car « ça monte en ligne droite plus loin collé au relief ». Position approximative déduite du texte et de la carte (le terme ne désigne pas un lieu-dit cartographié).",
+     "description": "POINT DE RELANCE pour monter vers la Dent de Crolles depuis le Manival : il faut être à 1400 m au Manival puis 1600 m minimum à Saint-Pancrasse pour « partir vers les gencives de la Dent » (Jean-Nono) ; on arrive aux gencives vers 14h pour un départ de Saint-Hilaire à midi (Axel, plafond 2400 m ensuite). Un compétiteur enchaîne Bec Charvet puis les gencives sans enrouler et ne s'arrête pas aux « pare-avalanches », car « ça monte en ligne droite plus loin collé au relief ». Position approximative déduite du texte et de la carte (le terme ne désigne pas un lieu-dit cartographié). Audit d'octobre 2026 : la position occupait presque celle du pilier sud ; elle est ramenée sur le point chaud kk7 voisin à l'ouest de la Dent, au-dessus de Saint-Pancrasse (5.8344 E, 45.3099 N, 90 % toutes périodes), terrain IGN 1671 m, cohérent avec les « 1600 m minimum » des gencives.",
      "sources": [
       "S27",
       "S107",
@@ -1182,12 +1182,12 @@
      "name": "Pas de Rocheplane (sortie par la crête)",
      "lon": 5.8734,
      "lat": 45.3295,
-     "alt_m": 1850,
+     "alt_m": 1778,
      "coord_quality": "source",
      "confidence": "medium",
      "best_hours": "début d'après-midi (après avoir remonté la face est depuis le pilier sud)",
      "trigger": "col de la crête nord de la Dent, en sortie de la couche de vent de sud de la face est",
-     "description": "DÉCLENCHEUR/PLAFOND du passage vers le nord : en poussant le long de la Dent « jusqu'au Pas de Rocheplane, je parviens enfin à sortir de cette couche de vent de sud et à passer les crêtes… à 2800 m » (11/08/2020). Étape de la route Dent → Granier. Position : col (IGN).",
+     "description": "DÉCLENCHEUR/PLAFOND du passage vers le nord : en poussant le long de la Dent « jusqu'au Pas de Rocheplane, je parviens enfin à sortir de cette couche de vent de sud et à passer les crêtes… à 2800 m » (11/08/2020). Étape de la route Dent → Granier. Position : col (IGN). Audit d'octobre 2026 : altitude corrigée de 1850 à 1778 m (terrain IGN au col, position du toponyme IGN).",
      "sources": [
       "S42",
       "S27",
@@ -1197,14 +1197,14 @@
     {
      "id": "cirque-saint-meme-bascule",
      "name": "Cirque de Saint-Même (point de bascule face ouest / plafond avant Belledonne)",
-     "lon": 5.8913,
-     "lat": 45.3928,
-     "alt_m": 960,
-     "coord_quality": "source",
+     "lon": 5.9002,
+     "lat": 45.3926,
+     "alt_m": 1561,
+     "coord_quality": "approx",
      "confidence": "medium",
      "best_hours": "milieu d'après-midi (14h30 dans le vol de groupe de 2021)",
-     "trigger": "cirque calcaire plein ouest, au pied du Granier côté Chartreuse intérieure",
-     "description": "RELANCE/PLAFOND : on bascule des faces est vers l'ouest « au cirque de St-Même quasiment sans enrouler jusqu'au Granier » ; au retour du Granier on y soigne le plafond (2200-2400 m) avant la transition vers le Saint-Genis. Règle de la réserve : survol du cirque à 1900 m minimum du 1er février au 30 août (nidification de l'aigle), passer plutôt par l'Alpette de Chapareillan. Position : cirque de Saint-Même (IGN). (altitude = fond du cirque ; les plafonds cités sont ceux du vol.)",
+     "trigger": "rebord est du cirque de Saint-Même (crête de l'Alpette, face à la combe du cirque), au sommet des falaises est de Chartreuse",
+     "description": "RELANCE / PLAFOND au point de bascule des faces est vers les faces ouest : « le grand moment magique du vol en bordure des nuages, ça monte […] ce qui permet de facilement basculer sur les faces Ouest au cirque de St-Même quasiment sans enrouler jusqu'au Granier » ; au retour du Granier, « retour au cirque de St-Même pour basculer sur Belledonne, on soigne le plafond entre 2200 et 2400 avant de partir en transition sur le St-Genis » (vol de groupe du 06/09/2021). Le cirque de Saint-Même est la zone de nidification de l'aigle royal : les pilotes s'engagent à ne pas survoler le site sous 1900 m du 1er février au 30 août et à passer plutôt par l'Alpette de Chapareillan ; le décollage de l'Alpette de la Dame est interdit. La carte PNR/CD38 dessine deux icônes « thermique » sur ce secteur, l'une sur les falaises ouest du cirque, l'autre sur la crête qui le ferme à l'est. Audit d'octobre 2026 : la position précédente était le fond du cirque (960 m), où personne ne prend de hauteur ; elle est ramenée sur le rebord de la crête, au sommet de l'Alpette (toponyme IGN, terrain 1561 m) : c'est là que les récits placent la bascule d'une face à l'autre, en bordure de nuage (la convention du PNR demande toutefois de traverser par l'Alpette de Chapareillan, plus au nord) ; le plafond de 2200-2400 m est celui des vols, pas l'altitude du déclencheur. Position déduite du texte et du toponyme, non mesurée (aucun point chaud kk7 à moins de 1,7 km).",
      "sources": [
       "S37",
       "S29",
@@ -1214,14 +1214,14 @@
     {
      "id": "scia-plafond-transition",
      "name": "La Scia (thermique de service, plafond 3000 m et départ vers Aiguebelette)",
-     "lon": 5.847,
-     "lat": 45.346,
-     "alt_m": 1791,
+     "lon": 5.8451,
+     "lat": 45.3442,
+     "alt_m": 1606,
      "coord_quality": "approx",
      "confidence": "medium",
      "best_hours": "après-midi (vol vers 13h-14h)",
      "trigger": "sommet de la Scia et faces au soleil au centre du massif",
-     "description": "PLAFOND : « quitte les lieux après le thermique de service à 3100 m » (20/07/2020) puis glisse vers Aiguebelette ; nouveau « 3000 m » à la Scia le 11/08/2020 ; point de passage de la boucle Pravouta – Chamechaude – Pravouta – Dent (stage 2026). Position approximative proche du déco de la Scia (fiche FFVL).",
+     "description": "PLAFOND : « quitte les lieux après le thermique de service à 3100 m » (20/07/2020) puis glisse vers Aiguebelette ; nouveau « 3000 m » à la Scia le 11/08/2020 ; point de passage de la boucle Pravouta – Chamechaude – Pravouta – Dent (stage 2026). Position approximative proche du déco de la Scia (fiche FFVL). Audit d'octobre 2026 : le thermique de service naît sur les pentes sous le décollage, pas au sommet (1786 m) : position ramenée sur le point chaud kk7 (5.8451 E, 45.3442 N, 99 % toutes périodes), terrain IGN 1606 m ; les 3000-3100 m sont le plafond atteint, pas l'altitude du déclencheur.",
      "sources": [
       "S103",
       "S42",
@@ -1234,12 +1234,12 @@
      "name": "Montagne du Sac (au vent, face ouest du Néron vers Chalves)",
      "lon": 5.684,
      "lat": 45.2644,
-     "alt_m": 1119,
+     "alt_m": 1263,
      "coord_quality": "source",
      "confidence": "medium",
      "best_hours": "milieu d'après-midi (14h30) quand la brise de nord-ouest est établie",
      "trigger": "crête de la Montagne du Sac, thermique « couché » par la brise au vent de la crête",
-     "description": "POINT DE RELANCE pour le tour de Chartreuse par l'ouest depuis le Rachais : après le Néron, face à la brise on peut y être bloqué ; la sortie est de revenir « là où ça montait, au vent de la montagne du sac » (remonté à 2000 m), puis de passer à l'ouest des rochers de Chalves. Le même récit conclut que le passage par le Néron aurait assuré le plafond. Position : crête IGN.",
+     "description": "POINT DE RELANCE pour le tour de Chartreuse par l'ouest depuis le Rachais : après le Néron, face à la brise on peut y être bloqué ; la sortie est de revenir « là où ça montait, au vent de la montagne du sac » (remonté à 2000 m), puis de passer à l'ouest des rochers de Chalves. Le même récit conclut que le passage par le Néron aurait assuré le plafond. Position : crête IGN. Audit d'octobre 2026 : altitude corrigée de 1119 à 1263 m (terrain IGN à la crête, position du toponyme IGN « Montagne du Sac »).",
      "sources": [
       "S35",
       "S108"
@@ -1250,12 +1250,12 @@
      "name": "Falaises de La Terrasse – Le Touvet – Saint-Vincent-de-Mercuze (crêtes de la façade est)",
      "lon": 5.919,
      "lat": 45.365,
-     "alt_m": 900,
+     "alt_m": 1039,
      "coord_quality": "approx",
      "confidence": "low",
      "best_hours": "à partir de 11h (falaises plein est, soleil de matinée)",
      "trigger": "barres rocheuses est successives entre Saint-Hilaire et Barraux",
-     "description": "Déduction : sur le parcours Barraux de Jean-Nono (16 km) la trace d'exemple marque une série de thermiques sur les crêtes « savoir les trouver et les exploiter sera le challenge », avec des relances à chaque transition (diapositive 22) ; ils se placent sur les barres est au-dessus du Touvet, de Saint-Vincent-de-Mercuze et de La Flachère (falaises plein est au soleil dès la fin de matinée). Position approximative, d'après le dessin de la trace, non mesurée.",
+     "description": "Déduction : sur le parcours Barraux de Jean-Nono (16 km) la trace d'exemple marque une série de thermiques sur les crêtes « savoir les trouver et les exploiter sera le challenge », avec des relances à chaque transition (diapositive 22) ; ils se placent sur les barres est au-dessus du Touvet, de Saint-Vincent-de-Mercuze et de La Flachère (falaises plein est au soleil dès la fin de matinée). Position approximative, d'après le dessin de la trace, non mesurée. Audit d'octobre 2026 : altitude corrigée de 900 à 1039 m (terrain IGN à la position indiquée, haut des barres) ; position toujours approximative.",
      "sources": [
       "S27"
      ]
@@ -1306,6 +1306,153 @@
       "S34",
       "S103",
       "S35"
+     ]
+    },
+    {
+     "id": "grande-sure-faces-ouest",
+     "name": "La Grande Sûre : faces ouest sous le décollage",
+     "lon": 5.6987,
+     "lat": 45.3352,
+     "alt_m": 1666,
+     "coord_quality": "approx",
+     "best_hours": "après-midi (faces ouest actives après 15h-16h par tendance NO à O) ; point chaud kk7 aussi le matin",
+     "trigger": "faces SO/O/NO de la crête de la Grande Sûre sous le décollage (manche à air au-dessus du chalet de Jusson), versant dominant le Guiers Mort",
+     "description": "Audit d'octobre 2026 : le décollage de la Grande Sûre n'avait aucun thermique, alors que la carte PNR/CD38 y dessine une icône « thermique » (carte vol libre Chartreuse) et que les traces GPS (kk7) y mesurent un point chaud à 1,3 km au WSO, sur la pente de 1200 m au-dessus de Chantabot (82 % toutes périodes, 86 % le matin). Récit du 154 km (20/04/2021) : la Grande Sûre se passe « à 1800 m proche du relief » en dynamique par NO vers 15h05, après les rochers du Lauzet, avant les gorges du Guiers Mort. Le club place l'activité des faces ouest de Chartreuse « après 15h/16h, tendance NO à O ». Position : coordonnées FFVL du décollage (5071), altitude lue sur le terrain IGN (la fiche donne 1578 m) ; le point chaud kk7 marque le bas de la même face, pas le déclencheur sommital. Les thermiques exacts ne sont décrits par aucun récit : confiance moyenne par recoupement de l'icône PNR, du point chaud et du récit de dynamique.",
+     "confidence": "medium",
+     "sources": [
+      "S29",
+      "S35",
+      "S84",
+      "S15",
+      "S138"
+     ]
+    },
+    {
+     "id": "charmant-som-versant-est",
+     "name": "Charmant Som : versant est-sud-est sous la bergerie",
+     "lon": 5.763,
+     "lat": 45.3203,
+     "alt_m": 1707,
+     "coord_quality": "approx",
+     "best_hours": "matin et milieu de journée (point chaud kk7 : 83 % le matin, 76 % toutes périodes)",
+     "trigger": "versant E/SE/S sous le décollage de la bergerie du Charmant Som, pelouses et barres exposées dès le matin",
+     "description": "Audit d'octobre 2026 : déduction. Le décollage vol-rando du Charmant Som (fiche FFVL 5119, E-SE-S, « peut convenir aux débutants et biplace ») n'avait aucun thermique à moins de 3 km, alors que la carte PNR/CD38 y place une icône « thermique » (même icône que la Scia, le Grand Som et la Grande Sûre) et que les traces GPS (kk7) mesurent un point chaud à 350 m au sud du décollage. Aucun récit ne le décrit : la position est celle du point chaud, sur le versant exposé sous le décollage, pas un déclencheur observé. Le Charmant Som relie les hautes vallées de Saint-Pierre-de-Chartreuse à Chamechaude (ligne n°21 de la carte Largeault).",
+     "confidence": "low",
+     "sources": [
+      "S29",
+      "S85",
+      "S138"
+     ]
+    },
+    {
+     "id": "la-pinea-sarcenas",
+     "name": "La Pinéa : pente sous la crête (icône PNR)",
+     "lon": 5.7349,
+     "lat": 45.2804,
+     "alt_m": 1393,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (89 % le matin) ; horaire non décrit par les textes",
+     "trigger": "pente sud de la crête de la Pinéa (1771 m), au-dessus de Sarcenas et du Sappey",
+     "description": "Audit d'octobre 2026 : déduction. La carte PNR/CD38 dessine une icône « thermique » à la Pinéa, distincte de celles de Chamechaude et du Sappey, que l'ancien élément « Chamechaude et La Pinéa » plaçait au seul sommet de Chamechaude. Les traces GPS (kk7) mesurent un point chaud à 900 m au sud du sommet de la Pinéa (89 % toutes périodes, 89 % le matin) : la position est celle de ce point chaud. Aucun récit n'en parle.",
+     "confidence": "low",
+     "sources": [
+      "S29",
+      "S138"
+     ]
+    },
+    {
+     "id": "pas-de-la-fosse-thermique",
+     "name": "Pas de la Fosse : thermique de la falaise, bulles balayées par la brise",
+     "lon": 5.9259,
+     "lat": 45.5153,
+     "alt_m": 874,
+     "coord_quality": "source",
+     "best_hours": "fin de journée d'après le forum (retour des Bauges par la face ouest) ; la brise forte balaie les bulles",
+     "trigger": "falaise de Montagnole orientée NO, sous le décollage ; site de dynamique qui « reprend depuis assez bas »",
+     "description": "Audit d'octobre 2026 : le texte « grosse brise qui balaye les bulles thermiques » n'avait donné qu'un danger. La carte PNR/CD38 dessine une icône « thermique » à côté du décollage du Pas de la Fosse. Fil parapentiste.info (07/02/2023, réponses 4 et 5) : « Pas de la Fosse, qui est un site en dynamique. L'avantage c'est qu'il reprend depuis assez bas. L'inconvénient, c'est que tu as une grosse brise qui balaye les bulles thermiques. Donc c'est un peu plus compliqué de repartir à l'étage supérieur » ; les anciens y revenaient des Bauges et le forumeur pense que cela se fait plutôt en fin de journée. Rôle : point de reprise bas du retour Bauges, mais on y reste souvent en dynamique faute de thermique tenant sous la brise. Position : fiche FFVL 649 (décollage), altitude lue sur le terrain IGN. Lignes THT et zone R48 : voir le danger associé.",
+     "confidence": "medium",
+     "sources": [
+      "S29",
+      "S34",
+      "S54"
+     ]
+    },
+    {
+     "id": "roche-veyrand-corbel",
+     "name": "Roche Veyrand (Corbel) : thermique de la falaise",
+     "lon": 5.8435,
+     "lat": 45.4284,
+     "alt_m": 1275,
+     "coord_quality": "approx",
+     "best_hours": "non décrit (aucun récit ni point chaud mesuré)",
+     "trigger": "falaises de la Roche Veyrand (1429 m) au-dessus de Corbel",
+     "description": "Audit d'octobre 2026 : déduction. La carte PNR/CD38 dessine une icône « thermique » à la Roche Veyrand (près de Corbel, au nord-ouest de Saint-Pierre-d'Entremont) ; aucun récit ni point chaud kk7 à moins de 2 km. Position : lieu-dit IGN « Roche Veyrand », altitude lue sur le terrain IGN ; le déclencheur exact n'est pas connu.",
+     "confidence": "low",
+     "sources": [
+      "S29"
+     ]
+    },
+    {
+     "id": "bannettes-pente-sud",
+     "name": "Les Bannettes : pente sous la crête, vol rando de Mont-Saint-Martin",
+     "lon": 5.7002,
+     "lat": 45.2887,
+     "alt_m": 1458,
+     "coord_quality": "approx",
+     "best_hours": "matin et milieu de journée (point chaud kk7 : 79 % le matin, 73 % en milieu de journée)",
+     "trigger": "pente sous la crête des Bannettes au-dessus de la cluse de Voreppe",
+     "description": "Audit d'octobre 2026 : déduction. Le décollage Les Bannettes (FFVL 5276, issu des traces CFD, sans description) n'avait aucun thermique à moins de 3 km. Les traces GPS (kk7) mesurent un point chaud à 1,1 km au SSE du décollage (71 % toutes périodes) : la position est celle de ce point chaud, aucune source ne décrit le déclencheur. Deux autres points chauds (87 % et 84 %) existent plus bas (950-1000 m), à 2 km au nord-ouest.",
+     "confidence": "low",
+     "sources": [
+      "S89",
+      "S138"
+     ]
+    },
+    {
+     "id": "roche-rousse-sappey",
+     "name": "Roche Rousse (Le Sappey-en-Chartreuse)",
+     "lon": 5.7778,
+     "lat": 45.2727,
+     "alt_m": 1350,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (98 % toutes périodes, 98 % au printemps)",
+     "trigger": "barre rocheuse de Roche Rousse (belvédère à 1580 m) au nord du village du Sappey, sur la crête entre la Pinéa et Chamechaude",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 le plus fort de ce secteur de Chartreuse (98 % toutes périodes, 98 % le matin, 97 % en fin de journée), à 220 m de la barre de Roche Rousse (toponyme OSM) et à 1350 m d'altitude (terrain IGN). Aucun texte de club ni de forum ne le décrit. La carte PNR/CD38 dessine une icône « thermique » au Sappey, que l'ancien élément « Chamechaude et La Pinéa » ne plaçait pas : c'est très probablement ce déclencheur, mais le rapprochement entre l'icône et ce point chaud reste une déduction. Il se situe entre les deux relais que les récits utilisent sur l'intérieur du massif (Pinéa à l'ouest, Chamechaude à l'est).",
+     "confidence": "low",
+     "sources": [
+      "S29",
+      "S138"
+     ]
+    },
+    {
+     "id": "belvedere-du-puy-saint-bernard",
+     "name": "Falaises de Saint-Bernard-du-Touvet (belvédère du Puy)",
+     "lon": 5.912,
+     "lat": 45.3254,
+     "alt_m": 838,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (96 % le matin comme en milieu de journée, 93 % en fin de journée)",
+     "trigger": "bord de falaise est du plateau des Petites Roches au belvédère du Puy, entre Saint-Hilaire et La Terrasse",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 100 m du belvédère du Puy (96 % toutes périodes), sur le bord est du plateau, 2,6 km au nord-est du décollage de Saint-Hilaire, au niveau de Saint-Bernard-du-Touvet. Le parcours Barraux du club (16 km) passe « de crête en crête » en assurant le plafond à chaque transition : « plusieurs bons thermiques présents sur les crêtes » et « attention au vent de nord qui peut vous bloquer sur St Bernard » (Préparation Cross, 2017) ; ce point chaud se trouve exactement à cet endroit, sans que le texte désigne un lieu plus précis. Il précède les falaises de La Terrasse – Le Touvet – Saint-Vincent plus au nord.",
+     "confidence": "low",
+     "sources": [
+      "S27",
+      "S138"
+     ]
+    },
+    {
+     "id": "pierre-morin-saint-ismier",
+     "name": "Pierre Morin (pentes au-dessus de Saint-Ismier)",
+     "lon": 5.8166,
+     "lat": 45.2655,
+     "alt_m": 870,
+     "coord_quality": "approx",
+     "best_hours": "matin et milieu de journée (93 % le matin, 89 % à midi, 74 % en fin de journée)",
+     "trigger": "pentes boisées et rocheuses de Pierre Morin, sur le rebord est de la Chartreuse au-dessus de Saint-Ismier, entre le Saint-Eynard et le Manival",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 210 m de Pierre Morin (roche nommée sur OSM), 91 % toutes périodes, à 870 m d'altitude (terrain IGN), au sud de la combe du Manival (3,4 km) et à 2,2 km au SSE de l'Émeindras. Aucun texte ne le décrit ; il se place sur les pentes qui alimentent le rebord est de la Chartreuse depuis la vallée et peut servir de premier étage vers l'Émeindras ou le Manival.",
+     "confidence": "low",
+     "sources": [
+      "S138"
      ]
     }
    ],
@@ -2661,7 +2808,25 @@
      ]
     }
    ],
-   "thermal_spots": [],
+   "thermal_spots": [
+    {
+     "id": "chalais-faces-voreppe",
+     "name": "Faces ouest au-dessus de Voreppe (Chalais)",
+     "lon": 5.6717,
+     "lat": 45.3097,
+     "alt_m": 957,
+     "coord_quality": "approx",
+     "best_hours": "milieu et fin de journée (86 % à midi comme le soir, aucun point chaud le matin)",
+     "trigger": "pentes ouest de la Chartreuse au-dessus de la cluse de Voreppe, au nord du décollage de Chalais",
+     "description": "Audit d'octobre 2026 : déduction. Le décollage de Chalais (fiche FFVL 324, sud, 1023 m) et sa réserve PMR n'avaient aucun thermique à moins de 3 km. Les traces GPS (kk7) mesurent un point chaud à 1,9 km au nord du décollage PMR, à 957 m (87 % toutes périodes, jamais le matin), et un second à 900 m plus au nord-est (84 %, terrain IGN 1012 m). La fiche FFVL précise que le site est « protégé de la brise Nord, montante en vallée, et apparaissant dès la fin de matinée (forte l'été) » : ces thermiques de milieu de journée se forment donc avec la brise de la cluse de Voreppe. Position : celle du point chaud le plus fort ; aucun récit ne décrit le déclencheur.",
+     "confidence": "low",
+     "sources": [
+      "S4",
+      "S52",
+      "S138"
+     ]
+    }
+   ],
    "soaring_spots": [
     {
      "id": "chalais-sud",
@@ -2717,11 +2882,11 @@
      "name": "Les Bannettes (Mont-Saint-Martin)",
      "lon": 5.69313,
      "lat": 45.2977,
-     "alt_m": 1845,
+     "alt_m": 1678,
      "coord_quality": "source",
      "ffvl_id": 5276,
      "orientations": [],
-     "description": "Décollage de montagne à 1845 m au-dessus de la cluse de Voreppe (fiche FFVL issue de traces CFD, sans description).",
+     "description": "Décollage de montagne à 1845 m au-dessus de la cluse de Voreppe (fiche FFVL issue de traces CFD, sans description). Audit d'octobre 2026 : altitude ramenée de 1845 à 1678 m (terrain IGN à la position de la fiche issue des traces ; l'altitude de la fiche, identique à celle du Charmant Som, ne correspond à aucun relief proche).",
      "sources": [
       "S89",
       "S29"
@@ -3904,13 +4069,13 @@
     {
      "id": "saint-genis",
      "name": "Mont Saint-Genis (premier déclencheur de la face ouest)",
-     "lon": 5.99,
-     "lat": 45.315,
-     "alt_m": 1250,
+     "lon": 6.0064,
+     "lat": 45.3505,
+     "alt_m": 1041,
      "coord_quality": "approx",
      "best_hours": "début d'après-midi",
      "trigger": "pointe sud et face sud ou nord selon la brise",
-     "description": "Premier déclencheur fiable de la face ouest de Belledonne après la traversée (FlySaintHilaire) ; arrivée vers 1250 m sur le Saint-Genis, « bien désordonné » avec un effet de groupe pour trouver la porte de sortie dans la face sud (plafond 1800-1900 m le 06/09/2021). Position estimée d'après le PDF du club (p. 19). Autres arrivées : 1100 m « pas très facile » (2020), 1100 m « bien meilleur mais turbulent » (2019) ; porte de sortie dans la face sud ; relance pour passer au Crêt du Poulet. Autres arrivées documentées par le CHVD : 1500 m, largement au-dessus du sommet après un gros cumulus (20 juillet 2020) ; 150 m seulement au-dessus du Saint-Genix (4 mai 2006, montée douce) ; raccrochage variable au Saint-Genis en juin 2025 ; thermique de +3 puis +10 à 30 minutes d'écart en avril 2021 ; trois pilotes avec deux aigles royaux qui montrent le thermique le 30 mai 2026 ; un pilote raccroche un peu bas puis sort au sommet (29 juin 2022).",
+     "description": "Premier déclencheur fiable de la face ouest de Belledonne après la traversée (FlySaintHilaire) ; arrivée vers 1250 m sur le Saint-Genis, « bien désordonné » avec un effet de groupe pour trouver la porte de sortie dans la face sud (plafond 1800-1900 m le 06/09/2021). Position estimée d'après le PDF du club (p. 19). Autres arrivées : 1100 m « pas très facile » (2020), 1100 m « bien meilleur mais turbulent » (2019) ; porte de sortie dans la face sud ; relance pour passer au Crêt du Poulet. Autres arrivées documentées par le CHVD : 1500 m, largement au-dessus du sommet après un gros cumulus (20 juillet 2020) ; 150 m seulement au-dessus du Saint-Genix (4 mai 2006, montée douce) ; raccrochage variable au Saint-Genis en juin 2025 ; thermique de +3 puis +10 à 30 minutes d'écart en avril 2021 ; trois pilotes avec deux aigles royaux qui montrent le thermique le 30 mai 2026 ; un pilote raccroche un peu bas puis sort au sommet (29 juin 2022). Audit d'octobre 2026 : la position précédente (5.9900 E, 45.3150 N, estimée sur le PDF du club) était à 4 km au sud-sud-ouest du sommet, sur un versant à 1047 m qui ne porte pas ce nom. Le sommet de Saint-Genis est 6.0117 E, 45.3505 N (1175 m, toponyme IGN « Sommet de Saint-Genis ») : la position est ramenée sur le point chaud kk7 situé à 400 m à l'ouest du sommet (93 % toutes périodes, 94 % à midi, terrain IGN 1041 m), ce qui concorde avec les arrivées « vers 1250 m » des récits, à peine au-dessus du sommet. Le sommet est à 7 km au sud-est de Sainte-Marie-du-Mont, comme le dit FlySaintHilaire (« pointer le Mont Saint-Genis à 8 km »).",
      "sources": [
       "S16",
       "S22",
@@ -3952,14 +4117,14 @@
     },
     {
      "id": "pipay-jas-des-lievres",
-     "name": "Pipay et Jas des Lièvres",
+     "name": "Jas des Lièvres (crête au sud de Pipay)",
      "lon": 6.0173,
      "lat": 45.232,
      "alt_m": 2325,
      "coord_quality": "source",
      "best_hours": "après-midi",
      "trigger": "crête au-dessus des remontées mécaniques de Pipay",
-     "description": "Thermiques francs à Pipay (« matérialisation des nuages ») ; 2800 m au Jas des Lièvres, « une valeur sûre en Belledonne » selon le récit de 2019 ; crête qui monte vers 2600 m au Col du Pra. Prapoutel : on s'y « refait à 1500 m au soleil » (2017) ; Sept Laux : 3000 m (2017). Rôle : PLAFOND de la crête avant la traversée du Grand Replomb et du Grand Colon. Compléments CHVD : le Jas du Lièvre n'est pas toujours généreux : pas de thermique organisé par vent d'est (mai 2006) ; thermique « couché » vers l'intérieur du massif que le pilote n'ose pas suivre (31 juillet 2020) ; point bas à 2100 m le 28 avril 2022 ; plafond assuré au Jas avant de partir sur Orionde (24 mai 2010) ; en 2014 rien à Pipay et pose à mi-hauteur de la station.",
+     "description": "Thermiques francs à Pipay (« matérialisation des nuages ») ; 2800 m au Jas des Lièvres, « une valeur sûre en Belledonne » selon le récit de 2019 ; crête qui monte vers 2600 m au Col du Pra. Prapoutel : on s'y « refait à 1500 m au soleil » (2017) ; Sept Laux : 3000 m (2017). Rôle : PLAFOND de la crête avant la traversée du Grand Replomb et du Grand Colon. Compléments CHVD : le Jas du Lièvre n'est pas toujours généreux : pas de thermique organisé par vent d'est (mai 2006) ; thermique « couché » vers l'intérieur du massif que le pilote n'ose pas suivre (31 juillet 2020) ; point bas à 2100 m le 28 avril 2022 ; plafond assuré au Jas avant de partir sur Orionde (24 mai 2010) ; en 2014 rien à Pipay et pose à mi-hauteur de la station. Audit d'octobre 2026 : le point est le sommet du Jas des Lièvres (6.0167 E, 45.2322 N, terrain IGN 2326 m) ; Pipay et son col, 3 km plus au nord, ont maintenant leur élément (col-de-pipay-face-ouest).",
      "sources": [
       "S36",
       "S37",
@@ -4208,6 +4373,119 @@
       "S115",
       "S113",
       "S135"
+     ]
+    },
+    {
+     "id": "barley-col-du-barioz",
+     "name": "Sommet de Barley (col du Barioz) : première relance après la traversée",
+     "lon": 6.0184,
+     "lat": 45.3336,
+     "alt_m": 1251,
+     "coord_quality": "approx",
+     "best_hours": "milieu de journée et fin d'après-midi d'après les traces GPS (99 % à midi, 98 % en fin de journée, 93 % le matin)",
+     "trigger": "pentes et croupe du sommet de Barley (1285 m), au-dessus de La Coche, entre le Saint-Genis et le Crêt du Poulet",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 100 m du sommet de Barley (98 % toutes périodes, l'un des plus forts de Belledonne), à 600 m à l'ouest du col du Barioz. Les récits de l'arrivée de Chartreuse décrivent ce même secteur comme un piège : en juin 2025 « cinq d'entre nous finiront posés en sécurité à La Coche, après s'être fait enterrer après le col du Barrioz », alors qu'un sixième raccroche le Crêt du Poulet (stage CHVD) (voir le piège « Arrivée de Chartreuse sur Belledonne »). Les traces GPS disent donc où l'on peut remonter avant La Coche quand on arrive assez haut du Saint-Genis ; ce n'est pas un thermique garanti, et aucun récit n'en décrit le déclencheur. Position : celle du point chaud.",
+     "confidence": "low",
+     "sources": [
+      "S116",
+      "S138"
+     ]
+    },
+    {
+     "id": "collet-pre-rond-thermique",
+     "name": "Collet d'Allevard – Pré Rond : le thermique au vent du décollage",
+     "lon": 6.1287,
+     "lat": 45.4093,
+     "alt_m": 1411,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (91 % le matin, 94 % à midi, 92 % en fin de journée)",
+     "trigger": "pente sous le décollage de Pré Rond (N/NO), côté nord, là où la brise de nord ou de nord-ouest amène l'air chauffé",
+     "description": "Audit d'octobre 2026 : la fiche FFVL 13415 (Pré Rond, N/NO, 1561 m, niveau bleu) avertit « décollage sous le vent du thermique » et recommande « nord ou brise » : le thermique existe donc devant le décollage, sans que la fiche le situe. Les traces GPS (kk7) placent à 310 m au nord du décollage un point chaud à 92 % toutes périodes (91 % le matin), à 1411 m. Pré Rond est étroit et raide : on décolle en bordure de ce thermique, pas dedans. Position : celle du point chaud ; le déclencheur exact est supposé être la pente nord-ouest sous le décollage (déduction).",
+     "confidence": "medium",
+     "sources": [
+      "S95",
+      "S138"
+     ]
+    },
+    {
+     "id": "grand-colon-versant-ouest-source",
+     "name": "Grand Colon : replat de la source, versant ouest",
+     "lon": 5.911,
+     "lat": 45.1573,
+     "alt_m": 1734,
+     "coord_quality": "approx",
+     "best_hours": "milieu de journée et fin d'après-midi d'après les traces GPS (95 % à midi, 94 % en fin de journée, rien le matin)",
+     "trigger": "replat et pentes ouest sous le Grand Colon, vers la source du Grand Colon",
+     "description": "Audit d'octobre 2026 : déduction. Les récits décrivent le Grand Colon par sa crête sommitale (plafonds de 2700 à 3100 m, brise forte et turbulente, extraction plus ou moins facile) mais pas son pied. Les traces GPS (kk7) mesurent à 1,1 km à l'ouest-sud-ouest du sommet un point chaud à 94 % (1734 m, à 460 m de la source du Grand Colon) : c'est le départ habituel de la remontée vers la crête, ce qui correspond à « l'extraction plus ou moins facile » des récits (juin 2025 ; 13 août 2021 : 40 minutes pour passer l'inversion). Position : celle du point chaud.",
+     "confidence": "low",
+     "sources": [
+      "S116",
+      "S113",
+      "S138"
+     ]
+    },
+    {
+     "id": "pre-du-mollard-sitre",
+     "name": "Refuge du Pré du Mollard (Revel) : pentes sous la Pointe de la Sitre",
+     "lon": 5.9405,
+     "lat": 45.1881,
+     "alt_m": 1898,
+     "coord_quality": "approx",
+     "best_hours": "milieu de journée et fin de journée d'après les traces GPS (95 % à midi et le soir, pas le matin)",
+     "trigger": "pentes et replats du Pré du Mollard, sous la Pointe et le col de la Sitre",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 95 % (toutes périodes) à 410 m du refuge du Pré du Mollard, sur la face ouest de la crête au-dessus de Revel, entre le Grand Colon et le Grand Replomb. Aucun document de club ni de fiche ne décrit ce versant (le lot Belledonne note que Revel, Pinsot, Bachat-Bouloud et Saint-Mury n'ont pas de document d'aérologie). Il se trouve au nord du Grand Colon, sur la crête que suivent les vols vers Chamrousse.",
+     "confidence": "low",
+     "sources": [
+      "S138"
+     ]
+    },
+    {
+     "id": "sept-laux-vallon-des-lacs",
+     "name": "Sept Laux : plateau des lacs sous le Ferrouillet",
+     "lon": 6.016,
+     "lat": 45.1968,
+     "alt_m": 2004,
+     "coord_quality": "approx",
+     "best_hours": "le matin et à midi d'après les traces GPS (90 % le matin, 89 % à midi, rien le soir)",
+     "trigger": "plateau et pentes est de la crête des Sept Laux (Ferrouillet, Roche Noire, Pointe du Sciallet), versant du Haut-Bréda",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 91 % (toutes périodes) à 2004 m, 1,3 km à l'est du Ferrouillet et de la Roche Noire, sur le versant tourné vers le Haut-Bréda, qui chauffe tôt. Le récit de 2017 cité pour le Jas des Lièvres donne « Sept Laux : 3000 m » sans lieu précis ; aucun texte ne décrit ce versant. Position : celle du point chaud.",
+     "confidence": "low",
+     "sources": [
+      "S104",
+      "S138"
+     ]
+    },
+    {
+     "id": "col-du-glandon-pente-nord",
+     "name": "Col du Glandon : pente nord vers Les Villards",
+     "lon": 6.1705,
+     "lat": 45.2546,
+     "alt_m": 2119,
+     "coord_quality": "approx",
+     "best_hours": "milieu de journée d'après les traces GPS (81 % à midi, rien le matin ni le soir)",
+     "trigger": "pente au nord du col du Glandon, versant de la vallée des Villards",
+     "description": "Audit d'octobre 2026 : déduction. Le décollage du col du Glandon (fiche FFVL 5299, issu des traces CFD : « du vent ou du nord, sur le col, juste à côté de la route ; par vent de sud, voler entre le col du Glandon et le col de la Croix de Fer ») n'avait aucun thermique à moins de 3 km. Les traces GPS mesurent à 1,6 km au nord du col un point chaud à 80 % (2119 m), actif surtout en milieu de journée. Les thermiques de la Croix de Fer voisine sont traités dans le lot Maurienne. Position : celle du point chaud.",
+     "confidence": "low",
+     "sources": [
+      "S139",
+      "S138"
+     ]
+    },
+    {
+     "id": "col-de-pipay-face-ouest",
+     "name": "Col de Pipay : face ouest sous les remontées",
+     "lon": 6.0222,
+     "lat": 45.2575,
+     "alt_m": 2015,
+     "coord_quality": "approx",
+     "best_hours": "milieu de journée (89 % d'après les traces GPS, aucun point chaud le matin ni le soir) ; le club le place après le Crêt du Poulet, en milieu d'après-midi",
+     "trigger": "face ouest du col de Pipay et du Dôme des Oudis, sous les remontées de Pipay (Grand Cerf, Éterlou)",
+     "description": "Audit d'octobre 2026 : le piège « Col de Pipay / Crêt du Poulet : point dur par brise de Fond de France » n'avait pas de thermique à moins de 1 km, alors que le récit du vol de groupe du 1er juin 2019 décrit le Crêt du Poulet atteint « en fin de cycle » puis « un bon thermique à Pipay » avant le Jas des Lièvres à 2800 m, et que le club note « la brise peut venir de Fond de France et créer un point dur » entre la trouée du Crêt du Poulet et le premier télésiège. Le col de Pipay (toponyme IGN, 2045 m) est à 3 km au nord du Jas des Lièvres : l'ancien élément « Pipay et Jas des Lièvres » n'était situé qu'au Jas. Les traces GPS (kk7) mesurent à 775 m à l'ouest du col un point chaud à 88 % (89 % en milieu de journée seulement). Position : celle du point chaud, sous les installations ; le déclencheur exact n'est pas décrit.",
+     "confidence": "medium",
+     "sources": [
+      "S36",
+      "S27",
+      "S138"
      ]
     }
    ],
@@ -6511,6 +6789,24 @@
    "type": "web",
    "lang": "fr",
    "notes": "Retour du Vercors par le Connex et Chamrousse : sommet du Grand Colon dans la crasse, pompe de l'Aiguille et gros nuage sombre jusqu'au Grand Replomb, final glide à Saint-Nazaire."
+  },
+  {
+   "id": "S138",
+   "title": "Paragliding Thermal Maps (kk7) : points chauds de thermiques mesurés par les traces GPS",
+   "url": "https://thermal.kk7.ch/",
+   "publisher": "thermal.kk7.ch (CC BY-NC-SA 4.0)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Probabilités de thermique (toutes saisons, matin / milieu de journée / fin de journée) lues dans les fichiers téléchargés le 7 octobre 2026 ; ne disent pas ce qui déclenche."
+  },
+  {
+   "id": "S139",
+   "title": "Terrain de pratique COL DU GLANDON [5299]",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/5299",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (issue des traces CFD) : « Si c'est du vent ou du nord : sur le col, juste à côté de la route ; par vent de sud, voler entre le col du Glandon et le col de la Croix de Fer »."
   }
  ]
 }

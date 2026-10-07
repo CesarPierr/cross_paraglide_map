@@ -615,6 +615,54 @@
             "S15",
             "S101"
           ]
+        },
+        {
+          "id": "parves-faces-sud-ouest",
+          "name": "Montagne de Parves : pentes sous le décollage",
+          "lon": 5.7266,
+          "lat": 45.7397,
+          "alt_m": 498,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (85 % à midi, 90 % le soir, rien le matin)",
+          "trigger": "pentes ouest et sud-ouest sous le décollage de la montagne de Parves, au-dessus de Lassignieu et des Cris",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 90 % toutes périodes (85 % à midi, 90 % le soir), terrain IGN 498 m, à 440 m de Les Cris. Le décollage de la Montagne de Parves (FFVL 311, SO/O/NO, 595 m) n'avait aucun thermique : la fiche ne parle que des rouleaux du plateau sous le décollage par vent fort. Le point chaud est à 100 m du décollage et à midi comme le soir (jamais le matin), ce qui correspond aux orientations ouest ; au printemps il monte à 95 %. Aucun récit de vol. Position : celle du point chaud.",
+          "confidence": "low",
+          "sources": [
+            "S109",
+            "S108"
+          ]
+        },
+        {
+          "id": "glandieu-falaise",
+          "name": "Cascade de Glandieu : thermique sous la falaise",
+          "lon": 5.6116,
+          "lat": 45.6745,
+          "alt_m": 390,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (89 % le matin, 87 % à midi, 82 % le soir)",
+          "trigger": "pied de la falaise de la cascade de Glandieu et vallée en contrebas, sous le décollage",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 85 % toutes périodes (89 % le matin, 87 % à midi, 82 % le soir), terrain IGN 390 m, à 700 m du hameau de Glandieu. Le décollage de la Cascade de Glandieu (FFVL 701, SO/O, 483 m, niveau marron) n'avait aucun thermique : la fiche signale un décollage exigu terminé par une falaise, délicat par vent nul, turbulent en sud et nord-ouest, et des « conditions pouvant être fortes par rapport au faible dénivelé ». Le point chaud kk7 (85 % toutes périodes, 89 % le matin) est à 425 m au nord-ouest du décollage et 90 m plus bas (390 m) : la fiche et la mesure vont dans le sens d'un thermique tonique devant le décollage. Position : celle du point chaud ; aucun récit de vol.",
+          "confidence": "low",
+          "sources": [
+            "S111",
+            "S108"
+          ]
+        },
+        {
+          "id": "nivolet-faces-ouest-drumettaz",
+          "name": "Faces ouest du Nivolet : falaises de Drumettaz",
+          "lon": 5.958,
+          "lat": 45.6652,
+          "alt_m": 948,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (73 % le matin, 88 % à midi, 86 % le soir)",
+          "trigger": "falaises ouest du Nivolet entre Vérel et le Revard, au nord de la falaise de Vérel (falaises de Drumettaz)",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 86 % toutes périodes (73 % le matin, 88 % à midi, 86 % le soir), terrain IGN 948 m, à 640 m de Pas du Rebollion. Le soaring « Faces ouest Vérel – Revard – Nivolet » (thermo-dynamique par brise de nord et vent faible de NO/O ; « décollage sous le vent du thermique (Vérel) » ; FFVL, PGE) n'avait de thermique qu'à la sortie du décollage de Vérel, à 3,7 km. Le point chaud (86 %) est à 850 m de la position générique du soaring, sur les falaises de Drumettaz où les faucons pèlerins nichent à gauche du décollage de Vérel (bulle de quiétude) : c'est la ligne que suivent les vols du Vérel vers le Pertuiset et le Revard. Position : celle du point chaud.",
+          "confidence": "low",
+          "sources": [
+            "S51",
+            "S108"
+          ]
         }
       ],
       "soaring_spots": [
@@ -750,11 +798,11 @@
           "name": "Pas de l'Échelle (sud de la croix du Nivolet)",
           "lon": 5.9628,
           "lat": 45.6099,
-          "alt_m": 1420,
+          "alt_m": 1291,
           "orientations": [
             "S"
           ],
-          "description": "Déco court devant la falaise : technique, avec 10/15 km/h de face (brise ou météo).",
+          "description": "Déco court devant la falaise : technique, avec 10/15 km/h de face (brise ou météo). Audit d'octobre 2026 : altitude ramenée de 1420 à 1291 m (terrain IGN à la position de la fiche FFVL 5287, issue des traces de décollage) ; le col « Pas de l'Échelle » du géocodeur IGN est 560 m plus à l'est-nord-est, à 1477 m, hors de la position observée.",
           "sources": [
             "S56"
           ],
@@ -1654,18 +1702,207 @@
           "name": "Grand Arc et Petit Arc (plafond avant Albertville ou retour Chamoux)",
           "lon": 6.3648,
           "lat": 45.5664,
-          "alt_m": 2371,
+          "alt_m": 2458,
           "coord_quality": "source",
           "confidence": "medium",
           "best_hours": "milieu d'après-midi (14h-16h)",
           "trigger": "crêtes du Grand Arc, combe sud, thermiques puissants",
-          "description": "PLAFOND : « Petit Arc plafond à 3000 » (09/04/2017) ; « re-2900 sous la combe sud du Grand Arc, direction Chamoux » (17/07/2019) ; transition Arclusaz → Grand Arc puis retour par la Grande Lanche (juin 2025) ; Val Pelouse – Chamoux – Grand Arc (juillet 2026).",
+          "description": "PLAFOND : « Petit Arc plafond à 3000 » (09/04/2017) ; « re-2900 sous la combe sud du Grand Arc, direction Chamoux » (17/07/2019) ; transition Arclusaz → Grand Arc puis retour par la Grande Lanche (juin 2025) ; Val Pelouse – Chamoux – Grand Arc (juillet 2026). Audit d'octobre 2026 : altitude ramenée de 2371 à 2458 m (terrain IGN à la position du sommet).",
           "sources": [
             "S103",
             "S40",
             "S98",
             "S99",
             "S15"
+          ]
+        },
+        {
+          "id": "val-pelouse-pente-deco",
+          "name": "Val Pelouse : pente sous le décollage (ancienne piste)",
+          "lon": 6.1668,
+          "lat": 45.4233,
+          "alt_m": 1631,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (99 % à midi, 99 % le soir, rien le matin)",
+          "trigger": "ancienne piste de ski au-dessus du parking de Val Pelouse, pentes ouest et nord-ouest",
+          "description": "Audit d'octobre 2026 : Point chaud kk7 à 99 % toutes périodes (99 % à midi, 99 % le soir), terrain IGN 1631 m, à 400 m du décollage (ancienne station de Val Pelouse). Le décollage de Val Pelouse (FFVL 316, N/O/NO, 1692 m, « conditions favorables par brise ») n'avait pas de thermique à moins de 3 km (le thermique du Molliet est 3,1 km plus loin, à l'atterrissage). Le CHVD (25-26 juin 2023) raconte une remontée difficile au décollage en fin de manche (« ça ne monte pas… bulles désorganisées », point bas à 970 m puis « une ascendance minuscule mais durable » qui devient +2 m/s) et cite l'altitude de 2400 m aux hautes crêtes. Le point chaud est à 400 m du décollage ; c'est la même pente que les vols regagnent au retour des crêtes de Belledonne.",
+          "confidence": "medium",
+          "sources": [
+            "S113",
+            "S112",
+            "S108"
+          ]
+        },
+        {
+          "id": "val-pelouse-grande-montagne",
+          "name": "Val Pelouse : chalets de la Grande Montagne",
+          "lon": 6.1575,
+          "lat": 45.4274,
+          "alt_m": 1351,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (95 % à midi, 94 % le soir, rien le matin)",
+          "trigger": "pentes et alpages des chalets de la Grande Montagne, au nord du décollage de Val Pelouse",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 94 % toutes périodes (95 % à midi, 94 % le soir), terrain IGN 1351 m, à 610 m de Chalets de la Grande Montagne. Deuxième point chaud kk7 de Val Pelouse, à 950 m au nord-ouest du premier, sans texte. Il se place sur la ligne que prennent les vols vers le Collet d'Allevard (balise 1 de la manche du 24 juin 2023) et vers la montagne de Presle.",
+          "confidence": "low",
+          "sources": [
+            "S112",
+            "S108"
+          ]
+        },
+        {
+          "id": "champlaurent-pente-deco",
+          "name": "Chamoux – Champlaurent : pentes sous le décollage",
+          "lon": 6.2104,
+          "lat": 45.5133,
+          "alt_m": 1137,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (74 % le matin, 90 % à midi, 89 % le soir)",
+          "trigger": "pentes ouest et sud-ouest sous le décollage de Champlaurent, au-dessus du Mont Fauge",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 89 % toutes périodes (74 % le matin, 90 % à midi, 89 % le soir), terrain IGN 1137 m, à 510 m du Mont Fauge (1337 m). Le décollage de Chamoux – Champlaurent (FFVL 1014, O, 1250 m, fiche : « survol d'un rideau d'arbres à 100 m du décollage ») n'avait aucun thermique : celui de la combe de Montendry est à 3,5 km. Point chaud à 400 m du décollage (90 % à midi, 74 % le matin), cohérent avec une orientation ouest. Aucun récit de vol.",
+          "confidence": "low",
+          "sources": [
+            "S72",
+            "S108"
+          ]
+        },
+        {
+          "id": "montendry-au-berger",
+          "name": "Montendry – Au Berger : pied de la combe de Montendry",
+          "lon": 6.2396,
+          "lat": 45.5311,
+          "alt_m": 1146,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (90 % le matin, 99 % à midi, 100 % le soir)",
+          "trigger": "pied de la combe de Montendry, entre le village et le hameau Au Berger, au-dessus de Chamoux",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 100 % toutes périodes (90 % le matin, 99 % à midi, 100 % le soir), terrain IGN 1146 m, à 660 m du village de Montendry. Point chaud kk7 le plus fort de la Combe de Savoie (100 % toutes périodes, 99 % en avril comme en octobre), à 1,06 km à l'ouest de l'élément `chamoux-montendry-combe` que décrit PGE (« il faut d'abord traverser la vallée pour atteindre le thermique de départ ») : c'est probablement ce « thermique de départ » au pied de la combe, que l'ancien élément plaçait en haut de la pente (1283 m). Rapprochement non prouvé ; les deux restent distincts.",
+          "confidence": "low",
+          "sources": [
+            "S108"
+          ]
+        },
+        {
+          "id": "montlambert-la-combe-noire",
+          "name": "Montlambert : la combe (Combe Noire), deuxième thermique du club",
+          "lon": 6.096,
+          "lat": 45.5436,
+          "alt_m": 804,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (99 % le matin, 99 % à midi, 96 % le soir)",
+          "trigger": "combe sous la face est des Bauges, en avançant à droite de la sortie du décollage de Montlambert",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 99 % toutes périodes (99 % le matin, 99 % à midi, 96 % le soir), terrain IGN 804 m, à 280 m du lieu-dit Combe Noire. La carte du club de Montlambert (voir `montlambert-sortie-deco`) cite parmi les thermiques de sortie « la combe (le 2) » après la pompe à Roger, avant « le mamelon » et « la sapinère » ; leur position précise n'est pas reportée. Le point chaud kk7 le plus fort de ce versant (99 % toutes périodes, 99 % le matin) est à 280 m du lieu-dit Combe Noire : le rapprochement avec « la combe » repose sur le nom et la distance (1,2 km au sud-ouest du décollage), il reste une déduction.",
+          "confidence": "low",
+          "sources": [
+            "S108"
+          ]
+        },
+        {
+          "id": "montlambert-atterro-thermiques",
+          "name": "Atterrissage de Montlambert : thermiques de déclenchement autour du terrain",
+          "lon": 6.1178,
+          "lat": 45.5415,
+          "alt_m": 280,
+          "coord_quality": "source",
+          "best_hours": "été, dès le début d'après-midi (brise montante forte)",
+          "trigger": "terrain d'atterrissage et pentes voisines au pied de la face est des Bauges, vignes et voie ferrée en amont",
+          "description": "Audit d'octobre 2026 : le texte de l'atterrissage de Montlambert (Saint-Jean-de-la-Porte, fiche FFVL 648 et club Montlamb'air) dit « thermiques de déclenchement autour du terrain en été » et « brise montante forte dès le début d'après-midi » ; il n'était rattaché à aucun thermique. On le sent en finale : perte d'altitude au vent du terrain (côté Montmélian) ou vers l'Isère, puis PTU obligatoire. Position : le terrain d'atterrissage (coordonnées de la fiche) ; le texte ne dit pas où se déclenchent les thermiques, aucun point chaud kk7 à moins de 1 km.",
+          "confidence": "low",
+          "sources": [
+            "S34",
+            "S69"
+          ]
+        },
+        {
+          "id": "arclusaz-atterro-vignes",
+          "name": "Atterrissage de L'Arclusaz (Saint-Pierre-d'Albigny) : activité thermique technique",
+          "lon": 6.1661,
+          "lat": 45.5706,
+          "alt_m": 390,
+          "coord_quality": "source",
+          "best_hours": "après-midi d'été (non précisé)",
+          "trigger": "petite surface entourée de vignes au pied de la face est des Bauges, fond de la Combe de Savoie",
+          "description": "Audit d'octobre 2026 : la fiche FFVL 143 de l'atterrissage de l'Arclusaz dit « petite surface entourée de vignes ; activité thermique très technique » : des thermiques se déclenchent sur et autour du terrain l'après-midi. Ce texte n'était rattaché à aucun thermique. Position : le terrain (coordonnées de la fiche) ; aucun point chaud kk7 à moins de 1 km (fond de vallée peu volé).",
+          "confidence": "low",
+          "sources": [
+            "S75",
+            "S74"
+          ]
+        },
+        {
+          "id": "bauges-est-cote-blanche",
+          "name": "Faces est des Bauges : Côte Blanche – Lallier (au-dessus de Saint-Pierre-d’Albigny)",
+          "lon": 6.1245,
+          "lat": 45.5758,
+          "alt_m": 1078,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (90 % le matin, 93 % à midi, 90 % le soir)",
+          "trigger": "bas de la face est des Bauges, pentes de Côte Blanche et de La Grange, sur le cheminement Montlambert – Arclusaz",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 92 % toutes périodes (90 % le matin, 93 % à midi, 90 % le soir), terrain IGN 1078 m, à 540 m de La Grange. Aucun texte ne cite ces lieux-dits. Le récit du club du 19/07/2020 chemine « sur les faces Est des Bauges vers l'Arclusaz, à hauteur des crêtes ou presque » ; ce point chaud se situe sur le bas de cette face, au-dessus de Saint-Pierre-d'Albigny, à 2,2 km au sud-sud-est du thermique du Mont Pelat.",
+          "confidence": "low",
+          "sources": [
+            "S96",
+            "S108"
+          ]
+        },
+        {
+          "id": "pecloz-armene",
+          "name": "Pointe du Pécloz : combe d’Armène",
+          "lon": 6.2231,
+          "lat": 45.6304,
+          "alt_m": 1899,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (91 % à midi, 92 % le soir, rien le matin)",
+          "trigger": "pentes sous la Pointe du Pécloz (2197 m) et les chalets d'Armène, face à l'ouest",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 93 % toutes périodes (91 % à midi, 92 % le soir), terrain IGN 1899 m, à 540 m de Le Pécloz (2197 m). Aucun texte ne cite ces lieux-dits ; il se trouve sur la face est des Bauges, entre la Sambuy et l'Arclusaz que relie le récit du 19/07/2020. Position : celle du point chaud.",
+          "confidence": "low",
+          "sources": [
+            "S108"
+          ]
+        },
+        {
+          "id": "pointe-de-la-fougere",
+          "name": "Pointe de la Fougère (est des Bauges)",
+          "lon": 6.2505,
+          "lat": 45.6407,
+          "alt_m": 1784,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (92 % à midi, 92 % le soir, rien le matin)",
+          "trigger": "pentes ouest de la Pointe de la Fougère (1849 m), au-dessus du col de la Fougère",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 92 % toutes périodes (92 % à midi, 92 % le soir), terrain IGN 1784 m, à 220 m de Pointe de la Fougère (1849 m). Aucun texte ne cite cette pointe. Position : celle du point chaud.",
+          "confidence": "low",
+          "sources": [
+            "S108"
+          ]
+        },
+        {
+          "id": "plan-des-languots-pentes",
+          "name": "Plan des Languots : pentes sud-est sous le décollage",
+          "lon": 6.3233,
+          "lat": 45.6815,
+          "alt_m": 1127,
+          "coord_quality": "approx",
+          "best_hours": "le matin d'après les traces GPS (83 % le matin, 69 % à midi, rien à midi ni le soir)",
+          "trigger": "pentes sud-est sous le décollage du Plan des Languots (Mercury), au-dessus du collet de Tamié",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 74 % toutes périodes (83 % le matin, 69 % à midi), terrain IGN 1127 m, à 95 m du décollage. Le décollage du Plan des Languots (FFVL 174, SE, 1212 m ; « vol interdit par vent de nord ou brise de vallée installée dans la vallée de la Tamié ») n'avait aucun thermique à moins de 3 km. Le point chaud est faible (74 % toutes périodes, surtout le matin à 83 %), à 95 m du décollage : il traduit une pente SE qui chauffe tôt, avant que la brise de la vallée de Tamié n'interdise le site. Aucun récit de vol. Position : celle du point chaud.",
+          "confidence": "low",
+          "sources": [
+            "S90",
+            "S108"
+          ]
+        },
+        {
+          "id": "ebaudiaz-pentes-nord-ouest",
+          "name": "L’Ebaudiaz : pentes sous le décollage nord-ouest",
+          "lon": 6.3645,
+          "lat": 45.6052,
+          "alt_m": 1357,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (77 % à midi, 74 % le soir, rien le matin)",
+          "trigger": "pentes nord-ouest sous le décollage de l'Ebaudiaz (Notre-Dame-des-Millières), vers Albertville",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 74 % toutes périodes (77 % à midi, 74 % le soir), terrain IGN 1357 m, à 1,5 km à l'ouest du décollage. Le décollage de l'Ebaudiaz (FFVL 172, NO, 1783 m, niveau vert, pas d'atterrissage sur le site ; « brise de vallée soutenue en fin d'après-midi ») n'avait aucun thermique : le plus proche, Grand Arc, est à 4,4 km. Le point chaud le plus proche est faible (74 %, 77 % à midi, 74 % le soir), à 1,5 km à l'ouest du décollage : indice d'un thermique d'après-midi sur le versant nord-ouest, avant la brise de vallée de fin d'après-midi. Aucun récit de vol. Position : celle du point chaud.",
+          "confidence": "low",
+          "sources": [
+            "S77",
+            "S108"
           ]
         }
       ],
@@ -2883,12 +3120,12 @@
         {
           "id": "savoyarde-face-ouest-pompe",
           "name": "Face ouest de la Savoyarde (« pompe », tache rouge de la carte des thermiques)",
-          "lon": 6.022,
-          "lat": 45.538,
-          "alt_m": 1000,
+          "lon": 6.0154,
+          "lat": 45.5393,
+          "alt_m": 894,
           "best_hours": "avant l'établissement de la brise (début d'après-midi) ; raccroche vers 1100-1200 m",
           "trigger": "face ouest/NO de la Savoyarde et du Montgelas battue par la brise de Chambéry",
-          "description": "Bluehouse : viser « l'air de service du Granier sur l'autoroute puis la face ouest de la Savoyarde où une belle tache rouge est bien marquée sur la carte des thermiques », avec une laisse de chien ; raccroche à 1100 m puis 1600 m (hauteur conseillée pour la Galoppaz) en peu de temps. Pays de Gex : Savoyarde raccrochée facilement à 1200 m, avant que les brises ne rentrent. Position approximative d'après le MNT (épaule ouest du Montgelas, crête ~1240 m). Rôle : RELANCE/pompe de la transition Chartreuse → Bauges, à viser depuis l'air de service du Granier (« laisse de chien » pour compenser la brise de Chambéry). Autre repère de l'arrivée : « St Marcel d'en haut, le thermique de service » côté Chartreuse (800 m, 13h10).",
+          "description": "Bluehouse : viser « l'air de service du Granier sur l'autoroute puis la face ouest de la Savoyarde où une belle tache rouge est bien marquée sur la carte des thermiques », avec une laisse de chien ; raccroche à 1100 m puis 1600 m (hauteur conseillée pour la Galoppaz) en peu de temps. Pays de Gex : Savoyarde raccrochée facilement à 1200 m, avant que les brises ne rentrent. Position approximative d'après le MNT (épaule ouest du Montgelas, crête ~1240 m). Rôle : RELANCE/pompe de la transition Chartreuse → Bauges, à viser depuis l'air de service du Granier (« laisse de chien » pour compenser la brise de Chambéry). Autre repère de l'arrivée : « St Marcel d'en haut, le thermique de service » côté Chartreuse (800 m, 13h10). Audit d'octobre 2026 : position ramenée sur le point chaud kk7 le plus proche, à 540 m de l'ancienne (6.0154 E, 45.5393 N, 93 % toutes périodes), terrain IGN 894 m ; l'altitude de 1000 m était celle de la raccroche visée, pas celle du déclencheur.",
           "sources": [
             "S23",
             "S40",
@@ -2974,12 +3211,12 @@
           "name": "Pointe de la Galoppaz (relance entre la Savoyarde et le Colombier)",
           "lon": 6.0666,
           "lat": 45.5659,
-          "alt_m": 1566,
+          "alt_m": 1660,
           "coord_quality": "source",
           "confidence": "medium",
           "best_hours": "milieu d'après-midi",
           "trigger": "épaule sud-ouest de la Galoppaz, premier relief au-delà de la Savoyarde",
-          "description": "RELANCE : après la Savoyarde on raccroche à 1100 m puis monte à 1600 m, « la hauteur de départ conseillée pour transiter sur la Galoppaz » ; en avril 2022 « une petite branche au sud vers la Pointe de la Galoppaz avant de se refaire sur le Colombier ». Un jour de brise, deux ailes n'y montaient pas : choisir alors Montlambert.",
+          "description": "RELANCE : après la Savoyarde on raccroche à 1100 m puis monte à 1600 m, « la hauteur de départ conseillée pour transiter sur la Galoppaz » ; en avril 2022 « une petite branche au sud vers la Pointe de la Galoppaz avant de se refaire sur le Colombier ». Un jour de brise, deux ailes n'y montaient pas : choisir alors Montlambert. Audit d'octobre 2026 : altitude ramenée de 1566 à 1660 m (terrain IGN à l'épaule sud-ouest) ; un point chaud kk7 à 88 % se trouve à 220 m de cette position.",
           "sources": [
             "S23",
             "S97",
@@ -2991,12 +3228,12 @@
           "name": "Dent d'Arclusaz (plafond avant Grand Arc, Chamoux ou Roc des Bœufs)",
           "lon": 6.1737,
           "lat": 45.6005,
-          "alt_m": 1832,
+          "alt_m": 2013,
           "coord_quality": "source",
           "confidence": "medium",
           "best_hours": "milieu d'après-midi (13h-16h)",
           "trigger": "sommet et faces ouest de l'Arclusaz, thermiques puissants",
-          "description": "PLAFOND/RELANCE : « à l'Arclusaz le plaf nous assure un bon 2200/2400 » (19/07/2020) ; « thermiques très puissants (+6), plafs à 2700 m » (30/04/2022) ; départ des transitions vers le Grand Arc (> 2000 m mini selon le PDF du club) et vers Chamoux ; relance du retour du Roc des Bœufs (juillet 2026).",
+          "description": "PLAFOND/RELANCE : « à l'Arclusaz le plaf nous assure un bon 2200/2400 » (19/07/2020) ; « thermiques très puissants (+6), plafs à 2700 m » (30/04/2022) ; départ des transitions vers le Grand Arc (> 2000 m mini selon le PDF du club) et vers Chamoux ; relance du retour du Roc des Bœufs (juillet 2026). Audit d'octobre 2026 : altitude ramenée de 1832 à 2013 m (terrain IGN au sommet) ; 1832 m était l'altitude du décollage de l'Arclusaz.",
           "sources": [
             "S96",
             "S97",
@@ -3063,12 +3300,12 @@
           "name": "Margériaz (arête qui monte « toute seule », plafond avant le Revard)",
           "lon": 6.0341,
           "lat": 45.6351,
-          "alt_m": 1719,
+          "alt_m": 1815,
           "coord_quality": "source",
           "confidence": "medium",
           "best_hours": "milieu d'après-midi (16h dans les carnets)",
           "trigger": "arête du Margériaz, croix des bergers",
-          "description": "PLAFOND : « une fois sur l'arête, ça monte tout seul, je n'ai qu'à cheminer le long de l'arête » (01/06/2020) ; 2380 m au sommet avant la transition vers la Tour de l'Angle Est, 2300 m « pas mal pour cette transition » ; un autre vol y enroule « péniblement » au nuage. Position : sommet (IGN).",
+          "description": "PLAFOND : « une fois sur l'arête, ça monte tout seul, je n'ai qu'à cheminer le long de l'arête » (01/06/2020) ; 2380 m au sommet avant la transition vers la Tour de l'Angle Est, 2300 m « pas mal pour cette transition » ; un autre vol y enroule « péniblement » au nuage. Position : sommet (IGN). Audit d'octobre 2026 : altitude ramenée de 1719 à 1815 m (terrain IGN à la position du sommet) ; la position est conservée, loin de tout point chaud kk7 parce que l'arête est volée en dynamique et en pompe d'arête.",
           "sources": [
             "S38",
             "S39",
@@ -3125,6 +3362,21 @@
             "S38",
             "S39",
             "S105"
+          ]
+        },
+        {
+          "id": "cusy-grande-cote",
+          "name": "Cusy – La Grande Côte : pentes du bas des Bauges ouest",
+          "lon": 6.0308,
+          "lat": 45.7469,
+          "alt_m": 784,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (97 % à midi, 96 % le soir, rien le matin)",
+          "trigger": "pentes sud-ouest du contrefort de Cusy, au-dessus du Chéran, à l'ouest du Pic de la Sauge",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 96 % toutes périodes (97 % à midi, 96 % le soir), terrain IGN 784 m, à 550 m de La Grande Côte. Aucune source du dossier ne cite les toponymes de ce secteur (La Grande Côte, Le Golet du Pont, Les Perrières). Un second point chaud kk7 (92 %, 745 m, Les Perrières) se trouve à 900 m au nord-est : ensemble, ils dessinent un thermique des premières pentes, actif de midi au soir ; le déclencheur exact reste à documenter.",
+          "confidence": "low",
+          "sources": [
+            "S108"
           ]
         }
       ],
@@ -3203,12 +3455,12 @@
           "name": "La Couleuvre (Aillon-le-Jeune)",
           "lon": 6.048,
           "lat": 45.6255,
-          "alt_m": 1516,
+          "alt_m": 1602,
           "orientations": [
             "S",
             "SW"
           ],
-          "description": "Vol rando à pied, mêmes règles que Margériaz.",
+          "description": "Vol rando à pied, mêmes règles que Margériaz. Audit d'octobre 2026 : altitude ramenée de 1516 à 1602 m (terrain IGN au lieu-dit « la Couleuvre » du géocodeur IGN, à 100 m de la position).",
           "sources": [
             "S80"
           ],
@@ -4998,6 +5250,60 @@
       "type": "web",
       "lang": "fr",
       "notes": "Nœuds : Pic de la Sauge (45.5513 N, 6.0588 E, 1612 m), Mont Charvet 1572 m, Mont Pelat 1543 m, Pointe de la Galoppaz 1681 m, Roc des Bœufs, Mont Julioz 1672 m, Le Pertuiset 1400 m (45.6609, 5.9730), Col de la Cochette 1320 m (45.7151, 6.0320), Crêt de Châtillon 1702 m, Dent de Pleuven 1771 m, Grand Arc, tour hertzienne TDF du Mont du Chat (45.6598, 5.8214), Brame-Farine (45.4050, 6.0454)."
+    },
+    {
+      "id": "S108",
+      "title": "Paragliding Thermal Maps (kk7) : points chauds de thermiques mesurés par les traces GPS",
+      "url": "https://thermal.kk7.ch/",
+      "publisher": "thermal.kk7.ch (CC BY-NC-SA 4.0)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Probabilités de thermique (toutes saisons, matin / milieu de journée / fin de journée) lues dans les fichiers téléchargés le 7 octobre 2026 ; ne disent pas ce qui déclenche."
+    },
+    {
+      "id": "S109",
+      "title": "Terrain de pratique MONTAGNE DE PARVES [311]",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/311",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Fiche officielle : décollage SO/O/NO à 595 m, « par vent fort attention aux rouleaux du plateau situés sous le décollage », ligne HT au sud, TMA Chambéry 2."
+    },
+    {
+      "id": "S110",
+      "title": "Terrain de pratique INNIMOND - LA TABLE D'ORIENTATION [329]",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/329",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Fiche officielle : décollage N/NE/E à 1027 m, « décollage très court nécessitant obligatoirement du vent de face », aérologie « vent de NE »."
+    },
+    {
+      "id": "S111",
+      "title": "Terrain de pratique CASCADE DE GLANDIEU [701]",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/701",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Fiche officielle : décollage SO/O à 483 m, « condition pouvant être forte par rapport au faible dénivelé », délicat par vent nul, turbulent en sud et NO."
+    },
+    {
+      "id": "S112",
+      "title": "Compétition de Val Pelouse (CHVD, 24-25 juin 2023)",
+      "url": "https://www.chvd.org/2023/06/27/competition-de-val-pelouse/",
+      "publisher": "CHVD (club de vol libre de Grenoble)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Récit de deux manches depuis Val Pelouse : plafonds de 2400 à 2750 m ; retour au décollage difficile (« ça ne monte pas… bulles désorganisées », point bas à 970 m, puis « ascendance minuscule mais durable »)."
+    },
+    {
+      "id": "S113",
+      "title": "Terrain de pratique VAL PELOUSE [316]",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/316",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Fiche officielle : décollage N/O/NO à 1692 m, « conditions favorables par brise », « vent faible, ou secteur nord »."
     }
   ]
 }

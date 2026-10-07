@@ -1,5 +1,5 @@
 {
- "topic": "Fiches FFVL hors périmètre alpin (Jura, Bugey, Revermont, Vaucluse ouest) : extraites avec les fiches des Alpes, non compilées dans l'atlas",
+ "topic": "Fiches FFVL hors périmètre alpin (Jura, Bugey, Revermont, Vaucluse ouest) : extraites avec les fiches des Alpes, non compilées dans l'atlas ; plus trois thermiques de l’audit d’octobre 2026 hors de France ou du Bugey lointain",
  "massifs": [
   {
    "id": "jura-bugey",
@@ -1335,6 +1335,106 @@
       "S56"
      ],
      "secteur_initial": "bourget-chambery"
+    }
+   ]
+  },
+  {
+   "id": "hors-alpes-francaises",
+   "name": "Hors périmètre (Bugey lointain, Suisse)",
+   "thermal_spots": [
+    {
+     "id": "innimond-table-d-orientation",
+     "name": "Innimond : pentes sous la table d’orientation",
+     "lon": 5.5941,
+     "lat": 45.7812,
+     "alt_m": 944,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (95 % le matin, 91 % à midi, 79 % le soir)",
+     "trigger": "pentes est et nord-est sous la table d'orientation d'Innimond, au-dessus du col du Petit Pertuis",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 93 % toutes périodes (95 % le matin, 91 % à midi, 79 % le soir), terrain IGN 944 m, à 50 m du lieu-dit La Cra. Le décollage d'Innimond (FFVL 329, N/NE/E, 1027 m, aérologie « vent de NE ») n'avait aucun thermique : la fiche indique seulement un décollage très court qui demande du vent de face, et une aérologie turbulente par nord fort. Le point chaud (95 % le matin, 96 % au printemps) correspond aux orientations est/nord-est qui chauffent tôt ; il est à 400 m du décollage. Position : celle du point chaud ; aucun récit de vol.",
+     "confidence": "low",
+     "sources": [
+      "S110",
+      "S108"
+     ],
+     "secteur_initial": "bourget-chambery",
+     "fichier_initial": "bauges_bourget_combe",
+     "sources_detail": [
+      {
+       "id": "S110",
+       "title": "Terrain de pratique INNIMOND - LA TABLE D'ORIENTATION [329]",
+       "url": "https://federation.ffvl.fr/sites_pratique/voir/329",
+       "publisher": "FFVL",
+       "type": "web",
+       "lang": "fr",
+       "notes": "Fiche officielle : décollage N/NE/E à 1027 m, « décollage très court nécessitant obligatoirement du vent de face », aérologie « vent de NE »."
+      },
+      {
+       "id": "S108",
+       "title": "Paragliding Thermal Maps (kk7) : points chauds de thermiques mesurés par les traces GPS",
+       "url": "https://thermal.kk7.ch/",
+       "publisher": "thermal.kk7.ch (CC BY-NC-SA 4.0)",
+       "type": "web",
+       "lang": "fr",
+       "notes": "Probabilités de thermique (toutes saisons, matin / milieu de journée / fin de journée) lues dans les fichiers téléchargés le 7 octobre 2026 ; ne disent pas ce qui déclenche."
+      }
+     ]
+    },
+    {
+     "id": "torgon-revereulaz",
+     "name": "Torgon (Suisse) : pentes de Revereulaz",
+     "lon": 6.8829,
+     "lat": 46.3199,
+     "alt_m": 851,
+     "coord_quality": "approx",
+     "best_hours": "le matin et à midi d'après les traces GPS (99 % le matin, 96 % à midi, rien le soir)",
+     "trigger": "pentes de Torgon et de Revereulaz, en Valais (Suisse), au-dessus du Chablais français",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 99 % toutes périodes (99 % le matin, 96 % à midi), terrain IGN 851 m, à 490 m de Torgon. Point chaud kk7 à 99 % toutes périodes (99 % le matin, 96 % à midi, rien le soir). Il est en Suisse, hors du périmètre français de l'atlas. Aucun texte du dossier.",
+     "confidence": "low",
+     "sources": [
+      "S220"
+     ],
+     "secteur_initial": "chablais",
+     "fichier_initial": "chablais_giffre_arve",
+     "sources_detail": [
+      {
+       "id": "S220",
+       "title": "Paragliding Thermal Maps (kk7) : points chauds de thermiques mesurés par les traces GPS",
+       "url": "https://thermal.kk7.ch/",
+       "publisher": "thermal.kk7.ch (CC BY-NC-SA 4.0)",
+       "type": "web",
+       "lang": "fr",
+       "notes": "Probabilités de thermique (toutes saisons, matin / milieu de journée / fin de journée) lues dans les fichiers téléchargés le 7 octobre 2026 ; ne disent pas ce qui déclenche."
+      }
+     ]
+    },
+    {
+     "id": "morgins-le-chene",
+     "name": "Le Chêne – Bonne-Année (Suisse) : pentes de Morgins",
+     "lon": 6.8795,
+     "lat": 46.3038,
+     "alt_m": 1054,
+     "coord_quality": "approx",
+     "best_hours": "le matin et à midi d'après les traces GPS (96 % le matin, 95 % à midi, rien le soir)",
+     "trigger": "pentes de Morgins, en Valais (Suisse), à 3 km à l'ouest de Torgon",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 96 % toutes périodes (96 % le matin, 95 % à midi), terrain IGN 1054 m, à 870 m de Le Chêne. Point chaud kk7 à 96 % toutes périodes (96 % le matin, 95 % à midi, rien le soir). Il est en Suisse, hors du périmètre français de l'atlas ; aucun texte du dossier.",
+     "confidence": "low",
+     "sources": [
+      "S220"
+     ],
+     "secteur_initial": "chablais",
+     "fichier_initial": "chablais_giffre_arve",
+     "sources_detail": [
+      {
+       "id": "S220",
+       "title": "Paragliding Thermal Maps (kk7) : points chauds de thermiques mesurés par les traces GPS",
+       "url": "https://thermal.kk7.ch/",
+       "publisher": "thermal.kk7.ch (CC BY-NC-SA 4.0)",
+       "type": "web",
+       "lang": "fr",
+       "notes": "Probabilités de thermique (toutes saisons, matin / milieu de journée / fin de journée) lues dans les fichiers téléchargés le 7 octobre 2026 ; ne disent pas ce qui déclenche."
+      }
+     ]
     }
    ]
   }

@@ -110,3 +110,47 @@ Volumes avant → après : brises 9 → 12, convergences 2 → 2 (une complété
 - PDF Vol Libre « brises, thermiques et décollages dans Belledonne » (toutleparapente) : toujours inaccessible ; site du club d'Allevard vide ; traces CFD derrière Cloudflare (voir `pages_bloquees.txt`).
 - Saint-Mury et le Col du Loup : récits de vol rando seulement (pas de brise documentée) ; Rocher Blanc, Belle Étoile, Rocher d'Arguille, Grand Charnier : non localisés par le géocodeur.
 
+
+## Audit des thermiques (octobre 2026)
+
+Contexte : le propriétaire, pilote local, a relevé l'oubli des Antennes, de Château Nardent et du Grand Ratz. Les listes de lacunes (`docs/COUVERTURE.md`, `docs/KK7_CROISEMENT.md`, `docs/POSITIONS.md`) ont été reprises une à une pour les trois massifs, et les sources ont été relues : carte PNR/CD38 « Vol libre Chartreuse » (`WEB_VL_Chartreuse21.pdf`, vue en image : elle dessine une icône « thermique » par lieu, que la première lecture avait regroupées en trois éléments), récits du club St Hil'Air, fiches FFVL, fil parapentiste.info, CHVD. Les thermiques créés suivent la règle de confiance du lot : `medium` pour une source nommant le lieu ou plusieurs indices concordants, `low` avec « déduction » pour un seul indice (icône PNR ou point chaud kk7 + relief). Les points chauds kk7 (`thermal.kk7.ch`) disent où ça monte, pas pourquoi : leur position est reprise quand un déclencheur est à moins de 600 m, mais aucun texte ne décrit le déclencheur dans les cas `low`.
+
+### Chartreuse (`chartreuse`)
+
+**Thermiques créés (9)**
+- `grande-sure-faces-ouest` (`medium`) : icône PNR + récit du 154 km (Grande Sûre « en dynamique à 1800 m » à 15h05 par NO) + point chaud kk7 82 % à 1,3 km. Position : décollage FFVL 5071, altitude IGN (la fiche donne 1578 m).
+- `charmant-som-versant-est` (`low`) : icône PNR + point chaud kk7 à 350 m au sud du décollage FFVL 5119 (76 %, 83 % le matin).
+- `la-pinea-sarcenas` (`low`) : icône PNR de la Pinéa (jusque-là noyée dans « Chamechaude et La Pinéa », placé à Chamechaude) + point chaud kk7 89 % à 900 m au sud du sommet.
+- `pas-de-la-fosse-thermique` (`medium`) : icône PNR et forum (« site en dynamique qui reprend depuis assez bas, mais grosse brise qui balaye les bulles thermiques », 07/02/2023). C'est le texte « bulle » signalé par COUVERTURE : il parlait bien d'un thermique, pas d'une zone de quiétude.
+- `roche-veyrand-corbel` (`low`) : icône PNR seule, aucun récit ni point chaud mesuré.
+- `bannettes-pente-sud` (`low`) : décollage FFVL 5276 (issu des traces, sans texte) + point chaud kk7 71 % à 1,1 km.
+- Points chauds ≥ 90 % classés au Grésivaudan par la géométrie mais situés dans le massif : `roche-rousse-sappey` (98 %, barre de Roche Rousse au nord du Sappey ; probablement l'icône « Le Sappey » de la carte PNR, rapprochement non prouvé), `belvedere-du-puy-saint-bernard` (96 %, bord est du plateau des Petites Roches à Saint-Bernard-du-Touvet : cohérent avec « le nord peut vous bloquer sur St Bernard » du parcours Barraux), `pierre-morin-saint-ismier` (91 %, `low`, aucun texte).
+
+**Positions corrigées**
+- `cirque-saint-meme-bascule` (cas signalé par le propriétaire) : la position était le fond du cirque (960 m), où personne ne prend de hauteur. Les récits du 06/09/2021 situent la bascule des faces est vers les faces ouest « au cirque de St-Même quasiment sans enrouler jusqu'au Granier » et le plafond de 2200-2400 m au retour, en bordure de nuage ; la carte PNR/CD38 dessine deux icônes « thermique » autour du cirque. Le point est ramené sur le rebord est (l'Alpette, toponyme IGN, 1561 m). Position déduite du texte, pas mesurée : aucun point chaud kk7 à moins de 1,7 km. La convention du PNR demande de traverser par l'Alpette de Chapareillan, plus au nord, et de ne pas survoler Saint-Même sous 1900 m du 1er février au 30 août ; les pilotes qui y passent le font à plus de 1900 m.
+- `antennes-st-hilaire` : l'altitude déclarée (720 m) ne collait pas au terrain IGN (969 m) ; la position (pylônes OSM FT/TDF, 45.2938 N 5.8755 E) est conservée, l'altitude corrigée. Aucun point chaud kk7 à moins de 1 km.
+- `sainte-marie-du-mont-barraux` : la position était l'église du village (940 m) ; ramenée sur le point chaud kk7 de la crête qui le domine à l'ouest (1560 m).
+- `scia-plafond-transition` : position ramenée sur le point chaud kk7 de la Scia (99 %), au pied du décollage, et non au sommet ; `pilier-sud-dent-de-crolles` et `gencives-dent-de-crolles` occupaient presque le même point : le pilier est mis sur le point chaud au pied de la face sud (93 %), les gencives sur le point chaud à l'ouest de la Dent au-dessus de Saint-Pancrasse (90 %, 1671 m, cohérent avec les « 1600 m minimum »).
+- Altitudes seules corrigées (position conservée) : `manival-bec-charvet` (1630 m), `montagne-du-sac` (1263 m), `falaises-touvet-saint-vincent` (1039 m), `pas-de-rocheplane` (1778 m).
+- Noms précisés : `scia-grand-som-charmant-som` devient « Grand Som (centre du massif) », `chamechaude-pinea` « Chamechaude (face est) et crêtes du Sappey », pour ne plus laisser croire qu'un seul point vaut pour plusieurs icônes.
+
+**Lacunes écartées**
+- `bulle-circaete-lumbin-terrasse` : zone de quiétude réglementaire (survol à plus de 300 m/sol), aucune ascendance dans le texte.
+- `pas-de-la-fosse-tht` : danger (lignes THT, zone R48) ; le thermique du même texte est créé ci-dessus.
+- `Grande Sûre` (takeoff, 89 m d'écart d'altitude) : le décollage garde la position FFVL, l'écart vient de l'altitude de la fiche.
+- `emeindras`, `ffvl13287-saint-hugues-declenchements` : loin d'un point chaud kk7 (2 km, 2,8 km) mais position vérifiée (col IGN ; atterrissage en fond de vallée où l'on vole peu).
+- Le « thermique salvateur » des avant-reliefs et l'« école d'escalade » du récit de Matmute (2018), les « pare-avalanches », l'icône PNR à l'est du col du Cucheron : non localisés (aucun toponyme, aucun point chaud mesuré à moins de 1 km).
+
+### Grésivaudan (`gresivaudan`)
+
+- Créé : `chalais-faces-voreppe` (`low`) : le décollage de Chalais (FFVL 324, sud) et sa réserve PMR n'avaient aucun thermique ; deux points chauds kk7 (87 % et 84 %, actifs de midi au soir, jamais le matin, ce qui concorde avec « la brise de nord, montante en vallée dès la fin de matinée ») à 1,9 et 2,4 km au nord.
+- Altitude corrigée : `bannettes-gres` (1845 → 1678 m, terrain IGN à la position de la fiche ; l'altitude de la fiche est la même que celle du Charmant Som).
+- Les trois points chauds ≥ 90 % de la liste (Roche Rousse, Saint-Bernard, Pierre Morin) sont dans le massif Chartreuse (voir ci-dessus). Aucun thermique de fond de vallée n'est décrit par les sources du massif.
+
+### Belledonne (`belledonne`)
+
+**Thermiques créés (7)** : `barley-col-du-barioz` (`low`, 98 %, le sommet de Barley à 600 m du col du Barioz : les récits décrivent ce secteur comme un piège de l'arrivée de Chartreuse, d'où la formulation prudente), `collet-pre-rond-thermique` (`medium` : la fiche FFVL 13415 dit « décollage sous le vent du thermique », point chaud 92 % à 310 m), `col-de-pipay-face-ouest` (`medium` : récit du 1er juin 2019 « un bon thermique à Pipay », « point dur » du club ; le col de Pipay est à 3 km au nord du Jas des Lièvres où l'ancien élément était placé), `grand-colon-versant-ouest-source`, `pre-du-mollard-sitre`, `sept-laux-vallon-des-lacs`, `col-du-glandon-pente-nord` (tous `low`, point chaud seul ; le décollage du Glandon relève de la couverture Belledonne, les thermiques de la Croix de Fer voisine sont dans `maurienne`).
+
+**Positions corrigées** : `saint-genis` était à 4 km au sud-sud-ouest du sommet (5.9900 E, 45.3150 N, estimé sur le PDF du club, terrain à 1047 m pour 1250 m déclarés) ; le sommet de Saint-Genis est à 6.0117 E, 45.3505 N (toponyme IGN, 1175 m), à 7 km au sud-est de Sainte-Marie-du-Mont comme le dit FlySaintHilaire. Position ramenée sur le point chaud kk7 à 400 m à l'ouest du sommet (93 %, 1041 m). `pipay-jas-des-lievres` est renommé « Jas des Lièvres » (c'est le sommet du Jas).
+
+**Lacunes écartées** : `col-du-barioz-enterrement-arrivee-chartreuse` et `pipay-point-dur` (pièges ; chacun a maintenant un thermique voisin) ; `bramefarine` (position approximative au nord de la crête, côté de l'arrivée des Bauges : conservée, car le récit arrive à 1100 m et « longe Bramefarine vers le sud » ; deux points chauds kk7 à 0,8 et 1,2 km au sud (86 %, 87 %) restent à décrire quand un récit en parlera) ; `puy-gris-belledonne-relance`, `pic-du-frene-grand-charnier-plafond`, `vallon-de-la-pra-plafond-4146`, `comberousse-hautes-cretes-plafond` (plafonds de crête donnés par des récits, positions vérifiées sur les sommets IGN ; loin des points chauds parce que les traces GPS y sont rares et que les thermiques naissent plus bas).

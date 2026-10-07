@@ -330,11 +330,11 @@
           "name": "Carrière d'Étrembières - Monnetier (pied de la face nord-ouest)",
           "lon": 6.196,
           "lat": 46.159,
-          "alt_m": 520,
+          "alt_m": 827,
           "coord_quality": "approx",
           "best_hours": "après-midi (été)",
           "trigger": "carrière claire au pied de la face nord-ouest",
-          "description": "Paradelta : la Table d'orientation est « favorable aux conditions thermiques (carrière) ». La position de la carrière est estimée d'après le plan du CVLG (altitude estimée).",
+          "description": "Paradelta : la Table d'orientation est « favorable aux conditions thermiques (carrière) ». La position de la carrière est estimée d'après le plan du CVLG (altitude estimée). Audit d'octobre 2026 : l'altitude estimée de 520 m ne correspond pas à la position (terrain IGN 827 m, au niveau de Monnetier) ; altitude corrigée, position toujours approximative (la carrière n'est pas cartographiée dans OSM ni dans le géocodeur IGN) ; un point chaud kk7 à 87 % se trouve à 1,3 km au sud-sud-ouest (6.1877 E, 46.1492 N, 1058 m).",
           "sources": [
             "S12",
             "S53"
@@ -1578,6 +1578,106 @@
             "S47"
           ],
           "coord_quality": "source"
+        },
+        {
+          "id": "agy-chevran-thermiques",
+          "name": "Agy – Chevran : pente du Chevran au-dessus de Cluses (thermiques légers et hachés)",
+          "lon": 6.5956,
+          "lat": 46.0608,
+          "alt_m": 941,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (92 % à midi, 94 % le soir, rien le matin)",
+          "trigger": "pente du Chevran (Pointe de Chevran, 1222 m), falaises de la Maladière, au-dessus de Cluses",
+          "description": "Audit d'octobre 2026 : Point chaud kk7 à 94 % toutes périodes (92 % à midi, 94 % le soir), terrain IGN 941 m, à 520 m de la Pointe de Chevran. Le soaring « Agy – Chevran (soaring du soir) » décrit « dynamique de brise, thermiques légers et hachés ; plusieurs voiles sur la pente » mais n'était rattaché à aucun thermique (sa position est le décollage d'Agy Plane, à 2,8 km). Le point chaud kk7 (94 %, de midi au soir, 96 % en octobre) est à 520 m de la Pointe de Chevran. Il couvre aussi le décollage d'Agy Plane (FFVL 298, SO/O/NO, aérologie « régime de brise »).",
+          "confidence": "medium",
+          "sources": [
+            "S135",
+            "S87",
+            "S220"
+          ]
+        },
+        {
+          "id": "lachat-d-en-haut-thermique",
+          "name": "Lachat d’en haut (Passy) : thermique sous le décollage, aiguilles de Varan",
+          "lon": 6.6711,
+          "lat": 45.9468,
+          "alt_m": 1515,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (92 % le matin, 91 % à midi, 88 % le soir)",
+          "trigger": "pentes et pierriers sous les aiguilles de Varan, au-dessus du décollage du Lachat d'en haut",
+          "description": "Audit d'octobre 2026 : Point chaud kk7 à 91 % toutes périodes (92 % le matin, 91 % à midi, 88 % le soir), terrain IGN 1515 m, à 860 m du décollage. Le décollage du Lachat d'en haut (SO, 1680 m) indique « en condition thermique, déco possible en fin de matinée ou tard le soir quand la brise de vallée redescend » ; ce thermique n'avait pas d'élément. Le point chaud kk7 (91 % toutes périodes, 92 % le matin) est à 860 m au sud du décollage, sur la pente qui alimente les falaises de Varan.",
+          "confidence": "medium",
+          "sources": [
+            "S44",
+            "S128",
+            "S220"
+          ]
+        },
+        {
+          "id": "passy-chedde-thermiques-atterro",
+          "name": "Atterrissage de Chedde (Passy) : turbulent en conditions thermiques, restitution du soir",
+          "lon": 6.7249,
+          "lat": 45.9284,
+          "alt_m": 608,
+          "coord_quality": "source",
+          "best_hours": "après-midi en conditions thermiques ; soir (restitution, forte fréquentation)",
+          "trigger": "terrain de Chedde en fond de vallée de l'Arve, entouré d'obstacles",
+          "description": "Audit d'octobre 2026 : le CMBVL décrit l'atterrissage de Chedde comme « un peu turbulent en conditions thermiques » et la FFVL (PDF 2008) note un gradient parfois important et une forte fréquentation le soir « en restitution » ; ce texte n'était rattaché à aucun thermique. Les thermiques sont ceux du fond de vallée et des pentes qui dominent le terrain ; position : le terrain (fiche), aucun point chaud kk7 à moins de 1,8 km.",
+          "confidence": "low",
+          "sources": [
+            "S42",
+            "S9",
+            "S7",
+            "S6"
+          ]
+        },
+        {
+          "id": "arbaron-turbulent-pleine-journee",
+          "name": "Carroz-Araches – Arbaron : thermiques de pleine journée, confluence avec la brise de pente",
+          "lon": 6.6642,
+          "lat": 46.0075,
+          "alt_m": 1936,
+          "coord_quality": "approx",
+          "best_hours": "pleine journée (« turbulent en pleine journée »)",
+          "trigger": "pentes du décollage de l'Arbaron et combe de la ligne THT, avec la brise de pente",
+          "description": "Audit d'octobre 2026 : la fiche FFVL 1090 de l'Arbaron (« vol réservé aux expérimentés, turbulent en pleine journée, confluence avec la brise de pente, ligne haute tension à survoler, la brise peut rendre l'atterrissage aux Flocons Verts inaccessible ») et celle d'Araches (atterrissage turbulent l'après-midi) décrivaient des thermiques sans les situer. Position : celle du piège, au niveau du décollage ; l'atterrissage des Flocons Verts (thermique `ffvl1091-flocons-verts-thermiques`) est à 2,4 km. Un point chaud kk7 (93 %) est à 2,4 km à l'est.",
+          "confidence": "low",
+          "sources": [
+            "S145",
+            "S144",
+            "S146",
+            "S147"
+          ]
+        },
+        {
+          "id": "sallettaz-romme",
+          "name": "Col de Romme : couloir de la Sallettaz",
+          "lon": 6.577,
+          "lat": 46.0227,
+          "alt_m": 1472,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (88 % à midi, 94 % le soir, rien le matin)",
+          "trigger": "versant ouest du couloir de la Sallettaz, sous le chalet des Vuardes, au-dessus du col de Romme",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 94 % toutes périodes (88 % à midi, 94 % le soir), terrain IGN 1472 m, à 550 m de Couloir de la Sallettaz. Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter. Point chaud en milieu de journée et le soir (88 % et 94 %), jamais le matin.",
+          "confidence": "low",
+          "sources": [
+            "S220"
+          ]
+        },
+        {
+          "id": "chedde-praz-coutant",
+          "name": "Chedde (Passy) : pentes de Praz Coutant",
+          "lon": 6.7236,
+          "lat": 45.9449,
+          "alt_m": 1188,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (93 % le matin, 92 % à midi, 88 % le soir)",
+          "trigger": "pentes de Praz Coutant, au-dessus de l'atterrissage de Chedde",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 92 % toutes périodes (93 % le matin, 92 % à midi, 88 % le soir), terrain IGN 1188 m. Point chaud kk7 à 92 % toutes périodes (93 % le matin, 92 % à midi, 88 % le soir), à 1,8 km au nord de l'atterrissage de Chedde, dont le texte décrit des thermiques en fond de vallée (voir `passy-chedde-thermiques-atterro`). Aucun texte ne décrit ce versant.",
+          "confidence": "low",
+          "sources": [
+            "S220"
+          ]
         }
       ],
       "soaring_spots": [
@@ -1849,11 +1949,11 @@
           "name": "Tête de l'Écutieux (La Tour)",
           "lon": 6.4427,
           "lat": 46.1117,
-          "alt_m": 1515,
+          "alt_m": 1615,
           "coord_quality": "source",
           "ffvl_id": 3006,
           "orientations": [],
-          "description": "Autre décollage accessible depuis Chez Berroud (route forestière à gauche vers la tête de l'Écutieux) ; orientations non documentées dans les sources lues (31 décollages en 2025).",
+          "description": "Autre décollage accessible depuis Chez Berroud (route forestière à gauche vers la tête de l'Écutieux) ; orientations non documentées dans les sources lues (31 décollages en 2025). Audit d'octobre 2026 : altitude ramenée de 1515 à 1615 m (terrain IGN à la position de la fiche).",
           "sources": [
             "S92",
             "S134"
@@ -1910,14 +2010,14 @@
           "name": "Pointe d'Andey (Bonneville)",
           "lon": 6.4191,
           "lat": 46.043,
-          "alt_m": 1666,
+          "alt_m": 1853,
           "coord_quality": "source",
           "ffvl_id": 5009,
           "orientations": [
             "E",
             "SE"
           ],
-          "description": "Décollage de rando (1 h à 1 h 30 de montée) ; à Andey « en SE sous la Vierge le matin » (forum) ; Andey Nord (NO, régime de brise) et Andey Delta (falaise, thermiques après 16h).",
+          "description": "Décollage de rando (1 h à 1 h 30 de montée) ; à Andey « en SE sous la Vierge le matin » (forum) ; Andey Nord (NO, régime de brise) et Andey Delta (falaise, thermiques après 16h). Audit d'octobre 2026 : altitude ramenée de 1666 à 1853 m (terrain IGN à la position, qui est celle du sommet, 1877 m ; le décollage « sous la Vierge » est un peu plus bas et n'est pas localisé précisément).",
           "sources": [
             "S141",
             "S142",
@@ -2022,14 +2122,14 @@
           "name": "Pointe d'Areu (Le Reposoir / Magland)",
           "lon": 6.5741,
           "lat": 45.983,
-          "alt_m": 2478,
+          "alt_m": 2371,
           "coord_quality": "source",
           "ffvl_id": 5250,
           "orientations": [
             "W",
             "NW"
           ],
-          "description": "Camptocamp : décollage à environ 100 m sous le sommet, W à NW, pente 20°, 100 m ; décollage N possible au sommet, plus technique (cailloux) ; atterro au Reposoir ou dans la vallée de l'Arve de Magland à Sallanches ; ZSM gypaète côté Magland (voir danger).",
+          "description": "Camptocamp : décollage à environ 100 m sous le sommet, W à NW, pente 20°, 100 m ; décollage N possible au sommet, plus technique (cailloux) ; atterro au Reposoir ou dans la vallée de l'Arve de Magland à Sallanches ; ZSM gypaète côté Magland (voir danger). Audit d'octobre 2026 : altitude ramenée de 2478 à 2371 m (terrain IGN à la position du décollage, 100 m sous le sommet comme le dit Camptocamp).",
           "sources": [
             "S111",
             "S153"
@@ -2967,6 +3067,172 @@
             "S90"
           ],
           "coord_quality": "source"
+        },
+        {
+          "id": "samoens-les-frasses",
+          "name": "Samoëns sud : pentes de La Quevata et des Frasses",
+          "lon": 6.7322,
+          "lat": 46.0575,
+          "alt_m": 1224,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (100 % le matin, 100 % à midi, 86 % le soir)",
+          "trigger": "pentes de La Quevata, Pré Martin et Les Frasses, sur le versant au sud de Samoëns",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 100 % toutes périodes (100 % le matin, 100 % à midi, 86 % le soir), terrain IGN 1224 m, à 100 m de La Quevata. Point chaud kk7 le plus fort du Haut-Giffre (100 % toutes périodes, 100 % le matin et à midi, 100 % au printemps comme en été). Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter.",
+          "confidence": "low",
+          "sources": [
+            "S220"
+          ]
+        },
+        {
+          "id": "vernant-vaconnant",
+          "name": "Pointe de Vernant : cirque de Vaconnant",
+          "lon": 6.703,
+          "lat": 46.0325,
+          "alt_m": 2016,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (100 % le matin, 99 % à midi, 86 % le soir)",
+          "trigger": "crête de la Pointe de Vernant (2120 m) et cirque de Vaconnant, côté Samoëns",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 99 % toutes périodes (100 % le matin, 99 % à midi, 86 % le soir), terrain IGN 2016 m, à 130 m de Pointe de Vernant. Point chaud kk7 à 99 % toutes périodes (100 % le matin, 99 % en octobre). Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter.",
+          "confidence": "low",
+          "sources": [
+            "S220"
+          ]
+        },
+        {
+          "id": "rovagne-mieussy",
+          "name": "Pointe de Rovagne : crêtes au nord de Mieussy",
+          "lon": 6.5355,
+          "lat": 46.1622,
+          "alt_m": 1479,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (96 % le matin, 98 % à midi, 98 % le soir)",
+          "trigger": "pentes de la Pointe de Rovagne (1795 m), sur la route Mieussy – Haute-Pointe – Mont Billiat",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 98 % toutes périodes (96 % le matin, 98 % à midi, 98 % le soir), terrain IGN 1479 m, à 520 m de Pointe de Rovagne (1795 m). Point chaud kk7 à 98 % toutes périodes (96 % le matin, 98 % à midi comme le soir). Le parcours du CLAM de niveau 2 (voir `haute-pointe-billiat`) enchaîne Mieussy, Rovagne, Haute-Pointe et Mont Billiat sans décrire d'ascendance : ce point chaud se situe sur cette route, sans qu'aucun texte décrive l'ascendance.",
+          "confidence": "low",
+          "sources": [
+            "S220"
+          ]
+        },
+        {
+          "id": "croix-du-culet-marcheusson",
+          "name": "Croix du Culet : pentes de Marcheusson",
+          "lon": 6.85,
+          "lat": 46.1786,
+          "alt_m": 1796,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (98 % le matin, 96 % à midi, 80 % le soir)",
+          "trigger": "pentes de Marcheusson sous la Croix du Culet (1962 m)",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 97 % toutes périodes (98 % le matin, 96 % à midi, 80 % le soir), terrain IGN 1796 m, à 470 m de Croix du Culet (1962 m). Point chaud kk7 à 97 % toutes périodes (98 % le matin, 96 % à midi, 80 % le soir). Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter. Un second point chaud (95 %) se trouve à 1,1 km au sud-ouest (6.8380 E, 46.1732 N, terrain 1754 m).",
+          "confidence": "low",
+          "sources": [
+            "S220"
+          ]
+        },
+        {
+          "id": "morzine-la-mernaz",
+          "name": "Morzine : pentes de La Mernaz",
+          "lon": 6.7178,
+          "lat": 46.1751,
+          "alt_m": 1283,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (84 % le matin, 94 % à midi, 95 % le soir)",
+          "trigger": "pentes de La Mernaz et des Mernaies, au-dessus de Morzine",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 95 % toutes périodes (84 % le matin, 94 % à midi, 95 % le soir), terrain IGN 1283 m, à 430 m de Les Mernaies. Point chaud kk7 à 95 % toutes périodes (84 % le matin, 94 % à midi, 95 % le soir) à 850 m au sud-est de Morzine, dans le secteur du Pléney et de Super-Morzine (voir `super-morzine-cretes-de-zore`, `pleney-restitution`). Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter.",
+          "confidence": "low",
+          "sources": [
+            "S220"
+          ]
+        },
+        {
+          "id": "pointe-de-ripaille",
+          "name": "Pointe de Ripaille (Avoriaz – Culet)",
+          "lon": 6.8222,
+          "lat": 46.1677,
+          "alt_m": 1831,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (95 % le matin, 93 % à midi, 79 % le soir)",
+          "trigger": "crête de la Pointe de Ripaille (1927 m)",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 93 % toutes périodes (95 % le matin, 93 % à midi, 79 % le soir), terrain IGN 1831 m, à 210 m de Pointe de Ripaille (1927 m). Point chaud kk7 à 93 % toutes périodes (95 % le matin, 93 % à midi, 79 % le soir), à 200 m du sommet. Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter.",
+          "confidence": "low",
+          "sources": [
+            "S220"
+          ]
+        },
+        {
+          "id": "pointe-de-veret-flaine",
+          "name": "Flaine : pointe et col de Véret",
+          "lon": 6.6944,
+          "lat": 46.0127,
+          "alt_m": 2045,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (96 % le matin, 94 % à midi, 83 % le soir)",
+          "trigger": "crête de la Pointe de Véret (2122 m), au-dessus de Flaine",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 93 % toutes périodes (96 % le matin, 94 % à midi, 83 % le soir), terrain IGN 2045 m, à 110 m de Pointe de Véret (2122 m). Point chaud kk7 à 93 % toutes périodes (96 % le matin, 94 % à midi). Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter.",
+          "confidence": "low",
+          "sources": [
+            "S220"
+          ]
+        },
+        {
+          "id": "samoens-plan-de-pertuet",
+          "name": "Samoëns : Plan de Pertuet – La Trappe",
+          "lon": 6.7449,
+          "lat": 46.0854,
+          "alt_m": 1217,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (79 % le matin, 90 % à midi, 95 % le soir)",
+          "trigger": "pentes de La Trappe et du Plan de Pertuet, au-dessus de Samoëns, vers le Criou",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 93 % toutes périodes (79 % le matin, 90 % à midi, 95 % le soir), terrain IGN 1217 m, à 200 m de Plan de Pertuet. Point chaud kk7 à 93 % toutes périodes (79 % le matin, 90 % à midi, 95 % le soir) sur le versant que suivent les vols de Samoëns vers le Criou (voir `criou-face-ouest`). Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter.",
+          "confidence": "low",
+          "sources": [
+            "S220"
+          ]
+        },
+        {
+          "id": "samoens-paroi-des-allamands",
+          "name": "Samoëns : paroi des Allamants et dalle du Tuet",
+          "lon": 6.7576,
+          "lat": 46.1082,
+          "alt_m": 1624,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (96 % le matin, 94 % à midi, 90 % le soir)",
+          "trigger": "falaises des Allamants et dalles du Tuet, au-dessus de Samoëns",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 92 % toutes périodes (96 % le matin, 94 % à midi, 90 % le soir), terrain IGN 1624 m, à 260 m de Paroi des Allamants. Point chaud kk7 à 92 % toutes périodes (96 % le matin, 94 % à midi, 90 % le soir), à 250 m de la paroi des Allamants, à 3,8 km à l'est du décollage de La Bourgeoise. Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter.",
+          "confidence": "low",
+          "sources": [
+            "S220"
+          ]
+        },
+        {
+          "id": "mieussy-larroz",
+          "name": "Mieussy – Larroz : pentes de Larroz",
+          "lon": 6.5571,
+          "lat": 46.0918,
+          "alt_m": 876,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (94 % le matin, 94 % à midi, 91 % le soir)",
+          "trigger": "pentes de Larroz, vallée du Giffre entre Mieussy et Taninges",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 92 % toutes périodes (94 % le matin, 94 % à midi, 91 % le soir), terrain IGN 876 m, à 360 m de Larroz. Point chaud kk7 à 92 % toutes périodes (94 % le matin comme à midi, 91 % le soir). Aucun texte du dossier ne décrit ce secteur ; le déclencheur exact reste à documenter.",
+          "confidence": "low",
+          "sources": [
+            "S220"
+          ]
+        },
+        {
+          "id": "bourgeoise-delta-pente",
+          "name": "Samoëns – La Bourgeoise delta : pente sous le décollage",
+          "lon": 6.7051,
+          "lat": 46.1104,
+          "alt_m": 1396,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (84 % à midi, 77 % le soir, rien le matin)",
+          "trigger": "pente sud sous le décollage delta de La Bourgeoise",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 77 % toutes périodes (84 % à midi, 77 % le soir), terrain IGN 1396 m, à à 600 m du décollage delta. Le décollage delta de La Bourgeoise (FFVL 1151, S, 1454 m) n'avait aucun thermique. Le point chaud est faible (77 % toutes périodes, 84 % à midi, rien le matin), à 600 m du décollage. Position : celle du point chaud ; aucun récit.",
+          "confidence": "low",
+          "sources": [
+            "S85",
+            "S220"
+          ]
         }
       ],
       "soaring_spots": [
@@ -4079,6 +4345,198 @@
             "S94"
           ],
           "coord_quality": "source"
+        },
+        {
+          "id": "chatel-morclan-depart-cross",
+          "name": "Châtel – Morclan : thermique du décollage (départ de cross, effet de foehn)",
+          "lon": 6.8524,
+          "lat": 46.2765,
+          "alt_m": 1740,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (97 % le matin, 97 % à midi, 94 % le soir)",
+          "trigger": "pentes sous le sommet de Morclan (1970 m) et le décollage SE/O, au-dessus de Sur le Bé",
+          "description": "Audit d'octobre 2026 : Point chaud kk7 à 96 % toutes périodes (97 % le matin, 97 % à midi, 94 % le soir), terrain IGN 1740 m, à 400 m du sommet de Morclan. La fiche FFVL 1180 (Morclan, SE/O) annonce « départ en cross - effet de foehn / thermiques à l'atterrissage / attention par vent de Nord » ; le thermique du décollage lui-même n'était pas créé (celui de `chatel-atterro-thermique` est placé au village, coordonnées de la fiche douteuses). Le point chaud kk7 du décollage est l'un des plus forts du Chablais (96 % toutes périodes, 97 % le matin et à midi, 98 % en juillet), à 430 m du décollage. Position : celle du point chaud, 230 m sous le sommet (terrain IGN 1740 m).",
+          "confidence": "medium",
+          "sources": [
+            "S172",
+            "S173",
+            "S220"
+          ]
+        },
+        {
+          "id": "dent-d-oche-refuge-face-sud",
+          "name": "Dent d’Oche : thermique de la face sud au refuge",
+          "lon": 6.7264,
+          "lat": 46.3531,
+          "alt_m": 1894,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (72 % à midi, 84 % le soir, rien le matin)",
+          "trigger": "pierrier et pentes herbeuses de la face sud, sous la crête du refuge de la Dent d'Oche",
+          "description": "Audit d'octobre 2026 : Point chaud kk7 à 83 % toutes périodes (72 % à midi, 84 % le soir), terrain IGN 1894 m, à 210 m du décollage du refuge. Randovol : au refuge de la Dent d'Oche « le passage est étroit et peut être vif à cause du thermique de la face sud et de l'effet venturi du couloir du pierrier » ; Paragliding Map : décollage au sud depuis la croix, puis bascule au nord vers Bernex. Ce thermique n'était cité que dans un piège. Le point chaud kk7 le plus proche (83 % toutes périodes, 80 % à 1 km au sud-ouest) est à 210 m du décollage du refuge. Position : celle du point chaud.",
+          "confidence": "medium",
+          "sources": [
+            "S77",
+            "S97",
+            "S220"
+          ]
+        },
+        {
+          "id": "orcier-tres-le-mont-thermique",
+          "name": "Orcier – Très le Mont : pentes sous le décollage",
+          "lon": 6.4847,
+          "lat": 46.2841,
+          "alt_m": 1267,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (88 % à midi, 88 % le soir, rien le matin)",
+          "trigger": "pentes ouest et nord-ouest sous le décollage de Très le Mont, au-dessus d'Orcier",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 88 % toutes périodes (88 % à midi, 88 % le soir), terrain IGN 1267 m, à 150 m de Crêt Pujin (1367 m). Le décollage de Très le Mont (FFVL 1190, O/NO, 1361 m ; « aérologie bonne en Ouest, attention en Sud-Ouest (turbulent) » ; TMA de Genève : ne pas dépasser 1800 m ni 500 m au-dessus du relief) n'avait aucun thermique. Point chaud kk7 à 380 m du décollage (88 % de midi au soir, aucun le matin) ; le plafond réglementaire de 1800 m limite l'usage du thermique.",
+          "confidence": "low",
+          "sources": [
+            "S176",
+            "S82",
+            "S220"
+          ]
+        },
+        {
+          "id": "orcier-les-mouilles",
+          "name": "Orcier : Les Mouilles – Les Chenevières (point chaud fort sous le Couteau)",
+          "lon": 6.4909,
+          "lat": 46.3031,
+          "alt_m": 971,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (86 % le matin, 97 % à midi, 97 % le soir)",
+          "trigger": "pentes et prairies des Mouilles et des Chenevières, sous le décollage du Couteau",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 97 % toutes périodes (86 % le matin, 97 % à midi, 97 % le soir), terrain IGN 971 m, à 490 m de Les Mouilles. Point chaud kk7 le plus fort d'Orcier (97 % toutes périodes, 98 % au printemps) à 1,1 km au nord-ouest du décollage du Couteau (FFVL 1192, N/NO, 1311 m ; « bonne en nord ») et à 2 km à l'ouest de Notre-Dame d'Hermone. Aucun texte ne le décrit. Même plafond réglementaire de 1800 m (TMA de Genève).",
+          "confidence": "low",
+          "sources": [
+            "S177",
+            "S220"
+          ]
+        },
+        {
+          "id": "orcier-hermone-thermique",
+          "name": "Orcier – Notre-Dame d’Hermone : brise thermique sous le décollage",
+          "lon": 6.5152,
+          "lat": 46.3076,
+          "alt_m": 1152,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (82 % à midi, 80 % le soir, rien le matin)",
+          "trigger": "pente nord sous le décollage de la chapelle de l'Hermone, avec brise thermique qui réaxe le vent",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 81 % toutes périodes (82 % à midi, 80 % le soir), terrain IGN 1152 m, à 210 m du décollage. La fiche FFVL 1193 dit « ne pas voler par vent d'Ouest même si la brise thermique réaxe » : un régime thermique existe donc sur ce site (N/NO, 1290 m), sans thermique décrit. Point chaud kk7 à 210 m du décollage (81 % de midi au soir, aucun le matin), terrain IGN 1152 m. TMA de Genève : 1800 m maximum.",
+          "confidence": "low",
+          "sources": [
+            "S178",
+            "S220"
+          ]
+        },
+        {
+          "id": "thollon-memises-thermique",
+          "name": "Thollon – Les Mémises : thermique du décollage (Lavanchy, Mémises)",
+          "lon": 6.7277,
+          "lat": 46.3822,
+          "alt_m": 1549,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (89 % à midi, 93 % le soir, rien le matin)",
+          "trigger": "pentes nord sous les décollages du Lavanchy et des Mémises, au-dessus de Thollon",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 92 % toutes périodes (89 % à midi, 93 % le soir), terrain IGN 1549 m, à 470 m du Grand Pic des Mémises. Les décollages des Mémises (FFVL 13253) et du Lavanchy (13257), N/NE/NO, ne décrivent que le vent du nord et un décollage très court, « possible uniquement avec du vent ». Le point chaud kk7 (92 % toutes périodes, surtout en fin de journée : 93 %, 89 % à midi, 71 % le matin) est à 300 m du décollage des Mémises, à 125 m du Lavanchy, sur le versant exposé au nord, donc dynamique et thermique d'après-midi. Aucun récit de vol.",
+          "confidence": "low",
+          "sources": [
+            "S182",
+            "S185",
+            "S220"
+          ]
+        },
+        {
+          "id": "thollon-chalets-des-memises",
+          "name": "Les Mémises : pentes des chalets",
+          "lon": 6.7415,
+          "lat": 46.3829,
+          "alt_m": 1575,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (86 % le matin, 89 % à midi, 92 % le soir)",
+          "trigger": "alpages au-dessus des chalets des Mémises, sur la ligne vers le col de Corniens",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 93 % toutes périodes (86 % le matin, 89 % à midi, 92 % le soir), terrain IGN 1575 m, à 590 m de Chalets des Mémises. Point chaud kk7 à 93 % toutes périodes, 1,1 km à l'est du décollage des Mémises, vers le col de Corniens. Aucun texte.",
+          "confidence": "low",
+          "sources": [
+            "S220"
+          ]
+        },
+        {
+          "id": "thollon-col-de-corniens",
+          "name": "Col de Corniens : pentes sous le Rocher Noir",
+          "lon": 6.7583,
+          "lat": 46.3851,
+          "alt_m": 1410,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (90 % à midi, 95 % le soir, rien le matin)",
+          "trigger": "pentes et falaises sous la Pointe de Corniens et le Rocher Noir",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 94 % toutes périodes (90 % à midi, 95 % le soir), terrain IGN 1410 m, à 440 m de Col de Corniens (1426 m). Point chaud kk7 à 94 % toutes périodes (95 % en fin de journée, 90 % à midi, rien le matin), à 2,8 km à l'est du décollage des Mémises. Aucun texte.",
+          "confidence": "low",
+          "sources": [
+            "S220"
+          ]
+        },
+        {
+          "id": "chatel-couty-rapenaz",
+          "name": "Châtel : pentes de Couty et du col de Recon",
+          "lon": 6.8253,
+          "lat": 46.2969,
+          "alt_m": 1657,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (100 % le matin, 98 % à midi, 84 % le soir)",
+          "trigger": "alpages de Couty et de Rapenaz, versant ouest du col de Recon et de Haut Sex",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 98 % toutes périodes (100 % le matin, 98 % à midi, 84 % le soir), terrain IGN 1657 m, à 220 m de Couty. Point chaud kk7 à 98 % toutes périodes (100 % le matin, 98 % à midi, 84 % le soir), à 3,4 km au nord-ouest du décollage de Morclan, près de la frontière suisse. Aucun texte ; il est actif tout au long de la journée.",
+          "confidence": "low",
+          "sources": [
+            "S220"
+          ]
+        },
+        {
+          "id": "abondance-le-fayet",
+          "name": "Abondance : pentes du Fayet et de Crebin",
+          "lon": 6.7288,
+          "lat": 46.2751,
+          "alt_m": 1229,
+          "coord_quality": "approx",
+          "best_hours": "à midi et le soir d'après les traces GPS (93 % à midi, 97 % le soir, rien le matin)",
+          "trigger": "pentes de Crebin et du Fayet d'en Haut, sur le versant sud-est de la vallée d'Abondance",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 95 % toutes périodes (93 % à midi, 97 % le soir), terrain IGN 1229 m, à 310 m de Crebin. Point chaud kk7 à 95 % toutes périodes (93 % à midi, 97 % le soir, aucun le matin), à 2,7 km à l'est de la pointe des Follys. Aucun texte ; le texte du décollage des Follys décrit l'atterrissage d'Abondance avec une brise très forte même avant midi.",
+          "confidence": "low",
+          "sources": [
+            "S220"
+          ]
+        },
+        {
+          "id": "croix-de-l-aiguille-pas-de-croisette",
+          "name": "Croix de l’Aiguille : pas de Croisette",
+          "lon": 6.8603,
+          "lat": 46.196,
+          "alt_m": 1829,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (94 % le matin, 92 % à midi, 81 % le soir)",
+          "trigger": "crête de la Croix de l'Aiguille (1867 m), au-dessus du pas de Croisette, côté Haut-Giffre",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 93 % toutes périodes (94 % le matin, 92 % à midi, 81 % le soir), terrain IGN 1829 m, à 65 m de La Croix de l'Aiguille (1867 m). Point chaud kk7 à 93 % toutes périodes (94 % le matin, 92 % à midi, 81 % le soir), à 65 m du sommet. Aucun texte ; le point est à la limite entre Chablais et Haut-Giffre.",
+          "confidence": "low",
+          "sources": [
+            "S220"
+          ]
+        },
+        {
+          "id": "saint-guerin-atterro-haie",
+          "name": "Saint-Guérin (atterrissage du Mont de Grange) : thermiques possibles sur la haie",
+          "lon": 6.752,
+          "lat": 46.2526,
+          "alt_m": 1185,
+          "coord_quality": "approx",
+          "best_hours": "plein été, avec une bonne brise W-E (pas de manche à air sur le terrain)",
+          "trigger": "haie devant le terrain d'atterrissage de Saint-Guérin, au-dessus d'Abondance",
+          "description": "Audit d'octobre 2026 : le texte du décollage du Mont de Grange (Camptocamp) donne « atterro Saint-Guérin W-E avec bonne brise en plein été, sans manche à air, thermiques possibles sur la haie devant l'atterro » ; il n'était rattaché à aucun thermique. Position : lieu-dit Saint-Guérin (toponyme IGN, hameau d'Abondance) : le terrain exact n'est pas localisé.",
+          "confidence": "low",
+          "sources": [
+            "S74",
+            "S186",
+            "S114"
+          ]
         }
       ],
       "soaring_spots": [
@@ -4477,10 +4935,10 @@
           "name": "Abondance (face au gymnase)",
           "lon": 6.7248,
           "lat": 46.2694,
-          "alt_m": 1093,
+          "alt_m": 978,
           "coord_quality": "source",
           "ffvl_id": 1146,
-          "description": "Atterrissage officiel en sortie de l'étranglement des Portes : brise de vallée forte même avant midi, approche en PTU, de la place à l'est du bourg ; FFVL : « Vent de vallée fort (venturi) ».",
+          "description": "Atterrissage officiel en sortie de l'étranglement des Portes : brise de vallée forte même avant midi, approche en PTU, de la place à l'est du bourg ; FFVL : « Vent de vallée fort (venturi) ». Audit d'octobre 2026 : altitude ramenée de 1093 à 978 m (terrain IGN à la position de la fiche FFVL).",
           "sources": [
             "S171",
             "S73",
@@ -6674,6 +7132,15 @@
       "type": "web",
       "lang": "fr",
       "notes": "Géocodeur IGN : La Muraz (mairie), La Chapelle-Rambaud (église), Sous Dîne, Tête du Parmelan, Dents de Lanfon, Saint-Ferréol, Mont Billiat ; Planfait : fiche FFVL 1157."
+    },
+    {
+      "id": "S220",
+      "title": "Paragliding Thermal Maps (kk7) : points chauds de thermiques mesurés par les traces GPS",
+      "url": "https://thermal.kk7.ch/",
+      "publisher": "thermal.kk7.ch (CC BY-NC-SA 4.0)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Probabilités de thermique (toutes saisons, matin / milieu de journée / fin de journée) lues dans les fichiers téléchargés le 7 octobre 2026 ; ne disent pas ce qui déclenche."
     }
   ]
 }

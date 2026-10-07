@@ -102,3 +102,39 @@ Passe du 7 octobre 2026 (brief « thermiques et points de relance »). Thermique
 **Introuvable ou hors lot** : Roc de Lancrenaz (cité par le forum t54898, absent d'OSM/Nominatim) ; « l'Aiguille » à l'est de la Tournette (forum t1985) ; Julioz, Colombier, Dent de Rossanaz, Chabert, Margériaz et Bange (relances du passage Semnoz → Roc des Bœufs → Bauges, décrites dans le forum t52861 et le carnet de Largeault) : à traiter par le lot Bauges. Les récits les plus détaillés du cheminement Étale–La Clusaz datent de 2005-2007.
 
 **URL bloquées** : fiches CFD `parapente.ffvl.fr/cfd/liste/vol/20350010` et `.../20212016` (Cloudflare, traces et commentaires du Semnoz → Revard → Roc des Bœufs) ; pages YouTube (descriptions des vidéos de petit tour, grand tour, Annecy–Aravis) illisibles par curl.
+
+## Audit des thermiques (octobre 2026)
+
+Les listes de lacunes (`docs/COUVERTURE.md`, `docs/KK7_CROISEMENT.md`, `docs/POSITIONS.md`) ont été reprises pour Lac d'Annecy, Bornes et Aravis. Règle de confiance : `medium` quand un texte nomme le lieu, `low` avec « déduction » quand seul un point chaud kk7 (traces GPS, `thermal.kk7.ch`) et le relief l'indiquent. Les toponymes proches de chaque point chaud viennent d'OSM, les altitudes du terrain IGN (RGE ALTI).
+
+### Lac d'Annecy (`lac-annecy`)
+
+**Thermiques créés (7)**
+- `marlens-col-de-lepine-thermique` (`medium`) : le décollage de Marlens (FFVL 1730) décrit « vol thermique le matin, départ de cross vers les faces est des Bauges » ; point chaud kk7 à 90 % à 250 m (94 % le matin), qui correspond.
+- `doussard-thermiques-bout-du-lac` (`low`) : le piège de l'atterrissage de Doussard cite « de larges thermiques entre l'atterrissage et le lac » par NE fort ; position déduite, aucun point chaud mesuré.
+- `annecy-ville-vieille-ville-gare` (`medium`) : topo cité sur parapentiste.info t2807 (« le meilleur se situe entre la vieille ville et la gare », « nouvelles galeries » en second) + point chaud kk7 à 83 %. C'est le relais urbain de la traversée Veyrier → Semnoz, qui n'était décrit qu'en texte.
+- `seynod-vieugy-zone-industrielle` (`low`), `quintal-la-platiere` (`low`) : trois points chauds ≥ 90 % de Seynod et de Quintal (95 à 90 %, de midi au soir) sur le trajet « derrière la Visitation au-dessus de la zone industrielle » puis « jusqu'à la ligne de Quintal » du même topo, qui juge qu'« avant la ligne il n'y a rien de bien flagrant » : mesurés, non décrits.
+- `mont-durant-semnoz-sud-ouest` (`low`) : point chaud 95 % au sud du Semnoz, aucun texte.
+- `marlens-les-devants-rosset` (`low`) : point chaud 92 % à 1,7 km à l'est du décollage de Marlens, aucun texte.
+- (Dans `bornes`, voir plus bas : `tournette-col-du-varo-thermique` et `serraval-aiguille-chappet`.)
+
+**Positions corrigées** : `semnoz-combe-thermique` (altitude 1450 m = celle du décollage ; combe 185 m plus bas, position ramenée sur le point chaud kk7 de la combe, 94 %, terrain 1305 m). Les deux autres écarts ne demandent rien : `roc-des-boeufs-ouest` (sommet OSM) et `roc-des-boeufs-premiere-ligne-ht` (lignes THT non localisées dans le dossier ; position sur la crête, `approx`) sont loin d'un point chaud parce que ces crêtes sont surtout volées en dynamique.
+
+**Lacunes écartées** : aucune ; le point chaud de la Tournette – col du Varo et celui de Serraval, comptés par la couverture dans ce secteur, sont traités dans `bornes`.
+
+### Bornes (`bornes`)
+
+- Créés : `tournette-col-du-varo-thermique` (`low`, 96 % de midi au soir, pierriers sous les Rochers du Varo ; rattaché au décollage de rando-vol « La Tournette – col du Varo » déjà dans le massif) et `serraval-aiguille-chappet` (`low`, 94 % sous l'Aiguille de Serraval).
+- Écarté : `bois-du-mont-thones-dynamique` (loin d'un point chaud) : le forum décrit une reprise en dynamique, pas un thermique ; position approximative conservée, pas de point chaud kk7 à moins de 2 km.
+
+### Aravis (`aravis`)
+
+**Thermiques créés (4)** : `meruz-char-marin` (`low`, 96 %, le matin, au pied du Charvin ; le récit du 199 km dit « l'extraction est difficile à Méruz » et attend les barbules du Charvin à 10h30), `praz-vechin-aiguille-du-bouchet` (`low`, 84 %, 600 m du décollage de Méruz : c'est le point chaud que COUVERTURE signalait derrière le mot « bulle »), `col-du-passet-tardevant` (`low`, 95 %, dans « les combes » du récit de 2018 vers la Pointe de Tardevant), `le-treu-nant-pareux` (`low`, 92 %).
+
+**Position corrigée** : décollage `etale-telepherique` : la position de Barbules (1782 m au terrain pour 2000 m déclarés) est ramenée sur la station « Belvédère » (OSM), au sommet du téléphérique (1979 m).
+
+**Lacunes écartées** (textes qui parlent d'un thermique) :
+- `aravis-confluences-no` : localisation générale de la chaîne, « thermique » n'y désigne qu'une journée forte ; aucun lieu.
+- `col-des-aravis-brise-col` et `col-des-aravis-choix-versant` : pièges du col des Aravis ; le thermique de la Vierge du Châtelard, décrit dans `col-des-aravis-vierge` à 1,2 km, porte déjà ce même fil de 2007.
+- `aravis-quatre-tetes-trop-tard` : zone sous le vent (« thermiques poussifs et petteux sous le vent ») donnée comme piège, pas comme relance.
+- `sulens-la-tulle-venturi` : venturi ; le thermique de Sulens est décrit à 1,9 km.

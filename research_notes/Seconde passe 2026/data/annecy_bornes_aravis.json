@@ -1070,13 +1070,13 @@
         {
           "id": "semnoz-combe-thermique",
           "name": "Combe SSO sous le décollage du Semnoz",
-          "lon": 6.0905,
-          "lat": 45.8035,
+          "lon": 6.0926,
+          "lat": 45.8049,
           "coord_quality": "approx",
-          "alt_m": 1450,
+          "alt_m": 1305,
           "best_hours": "13h-coucher du soleil",
           "trigger": "combe exposée au soleil, orientée SSO, sous la cassure du plateau de la station",
-          "description": "Bauges Parapente : combe exposée au soleil, orientée SSO, sous la cassure du plateau de la station ; déclenche généralement des thermiques puissants et peut mettre le déco sous le vent. Le même article note que les matinées permettent aussi des vols en air calme ou de petits thermiques entre Viuz-la-Chiésaz et l'atterrissage.",
+          "description": "Bauges Parapente : combe exposée au soleil, orientée SSO, sous la cassure du plateau de la station ; déclenche généralement des thermiques puissants et peut mettre le déco sous le vent. Le même article note que les matinées permettent aussi des vols en air calme ou de petits thermiques entre Viuz-la-Chiésaz et l'atterrissage. Audit d'octobre 2026 : l'altitude de 1450 m était celle du décollage et du plateau (1490 m) ; la combe est 185 m plus bas. La position est ramenée sur le point chaud kk7 de la combe (6.0926 E, 45.8049 N, 94 % toutes périodes dont 83 % le matin), terrain IGN à 1305 m.",
           "sources": [
             "S55"
           ]
@@ -1283,6 +1283,137 @@
           "sources": [
             "S87",
             "S45"
+          ]
+        },
+        {
+          "id": "marlens-col-de-lepine-thermique",
+          "name": "Marlens – col de l'Épine : thermique du matin sous le décollage",
+          "lon": 6.3398,
+          "lat": 45.7752,
+          "alt_m": 859,
+          "coord_quality": "approx",
+          "best_hours": "le matin et le début d'après-midi (d'après le site : « vol thermique le matin » ; traces GPS : 94 % le matin, 90 % à midi, rien en fin de journée)",
+          "trigger": "pentes SE sous le décollage de Marlens, au-dessus du plan d'eau et du village",
+          "description": "Audit d'octobre 2026 : le décollage de Marlens (FFVL 1730, SE, conventionné) décrit « vol thermique le matin, départ de cross vers les faces est des Bauges » (Grands Espaces, carte 2009) mais n'avait aucun thermique à moins de 5 km. Les traces GPS (kk7) mesurent à 250 m du décollage un point chaud à 90 % (toutes périodes ; 92 % au printemps) à 859 m, cohérent avec un thermique du matin sur la pente exposée au sud-est. Position : celle du point chaud. Le décollage a peu de dénivelé (500 m) : le thermique sert à quitter le site vers les faces est des Bauges, d'où part le cross. Atterrissage de Marlens avec brises fortes en milieu de journée.",
+          "confidence": "medium",
+          "sources": [
+            "S51",
+            "S30",
+            "S28",
+            "S96"
+          ]
+        },
+        {
+          "id": "doussard-thermiques-bout-du-lac",
+          "name": "Doussard : larges thermiques entre l'atterrissage et le lac par NE fort",
+          "lon": 6.2215,
+          "lat": 45.7855,
+          "alt_m": 459,
+          "coord_quality": "approx",
+          "best_hours": "après-midi, par vent de nord-est fort (le Roc des Bœufs dévie le flux en nord-ouest sur l'atterrissage)",
+          "trigger": "plaine du bout du lac entre l'atterrissage de Doussard et la rive, chauffée en brise de nord-ouest",
+          "description": "Audit d'octobre 2026 : le texte du piège « Atterrissage de Doussard » (Grands Espaces) parle de « larges thermiques entre l'atterrissage et le lac (zone de perte d'altitude) » par NE fort, quand une partie du flux est déviée par le Roc des Bœufs. Ce n'était consigné que comme danger. Ce sont des thermiques de plaine qu'on évite en finale, mais qui permettent aussi de remonter quand on arrive bas du Roc des Bœufs ou de la Forclaz. Position déduite : le texte ne donne pas de lieu plus précis que « entre l'atterrissage et le lac » ; aucun point chaud kk7 à moins de 1 km (fond de vallée peu volé). Le texte commercial de Delta Évasion décrit de son côté la brise de Doussard comme « souvent ascendante l'après-midi ».",
+          "confidence": "low",
+          "sources": [
+            "S1",
+            "S14",
+            "S22"
+          ]
+        },
+        {
+          "id": "annecy-ville-vieille-ville-gare",
+          "name": "Annecy ville : thermique urbain entre la vieille ville et la gare",
+          "lon": 6.1283,
+          "lat": 45.9017,
+          "alt_m": 449,
+          "coord_quality": "approx",
+          "best_hours": "après-midi, au moment de la traversée d'Annecy du Veyrier vers le Semnoz (cumulus visibles sur la ville)",
+          "trigger": "agglomération d'Annecy, entre la vieille ville et la gare (les « nouvelles galeries », bâtiment rond, en sont un second)",
+          "description": "Audit d'octobre 2026 : topo de P. Bailly cité sur parapentiste.info (t2807, traversée Veyrier → Semnoz) : « sur la ville un thermique sur les nouvelles galeries n'est pas exclu (bâtiment tout rond bien visible), mais le meilleur se situe entre la vieille ville et la gare » ; à partir d'un plafond de 1800 m au départ du Veyrier. Les traces GPS (kk7) mesurent un point chaud à 83 % à 480 m de la gare. Il sert de relais à la traversée d'Annecy avant de raccrocher le relief « derrière la Visitation au-dessus de la zone industrielle ». Position : celle du point chaud, entre la vieille ville et la gare.",
+          "confidence": "medium",
+          "sources": [
+            "S83",
+            "S96"
+          ]
+        },
+        {
+          "id": "seynod-vieugy-zone-industrielle",
+          "name": "Seynod – Vieugy : thermiques au-dessus des zones d’activités (traversée d’Annecy)",
+          "lon": 6.0995,
+          "lat": 45.8596,
+          "alt_m": 577,
+          "coord_quality": "approx",
+          "best_hours": "milieu de journée et soir (94 % à midi, 92 % le soir, jamais le matin)",
+          "trigger": "zones d'activités et lotissements de Seynod (Vieugy, Sur Bacon), au pied du Semnoz nord",
+          "description": "Audit d'octobre 2026 : déduction. Deux points chauds kk7 forts dans la plaine de Seynod, hors de tout relief : 6.0995 E, 45.8596 N (92 %) et 6.1036 E, 45.8668 N (91 %, 519 m, vers La Culaz). Le topo de la traversée d'Annecy (t2807) raccroche « le relief derrière la Visitation au-dessus de la zone industrielle », change d'arête, puis longe la seconde jusqu'à la ligne de Quintal ; il juge que « avant la ligne il n'y a rien de bien flagrant ». Ces thermiques de plaine, mesurés de midi au soir, sont sur ce trajet, sans que le texte les décrive. Position : celle du premier point chaud.",
+          "confidence": "low",
+          "sources": [
+            "S83",
+            "S96"
+          ]
+        },
+        {
+          "id": "quintal-la-platiere",
+          "name": "Quintal – La Platière : point chaud sous la ligne électrique du Semnoz nord",
+          "lon": 6.0971,
+          "lat": 45.8439,
+          "alt_m": 840,
+          "coord_quality": "approx",
+          "best_hours": "milieu de journée et soir (93 % à midi, 90 % le soir, rien le matin)",
+          "trigger": "pentes boisées peu raides au-dessus de La Platière, juste après la ligne électrique de Quintal",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 90 % à 360 m de La Platière et à 1 km du village de Quintal. Le topo de la traversée d'Annecy (t2807) dit : « à Quintal il faut souvent attendre que le thermique veuille bien se manifester ; je vais souvent voir juste après la ligne car j'ai eu de bonnes surprises là-bas » : ce point chaud est dans ce secteur, à l'est de l'élément `quintal-ligne-ht-semnoz-nord`. Position : celle du point chaud.",
+          "confidence": "low",
+          "sources": [
+            "S83",
+            "S96"
+          ]
+        },
+        {
+          "id": "mont-durant-semnoz-sud-ouest",
+          "name": "Mont Durant : pentes au sud-ouest du Semnoz",
+          "lon": 6.0658,
+          "lat": 45.7742,
+          "alt_m": 974,
+          "coord_quality": "approx",
+          "best_hours": "milieu de journée et soir (95 % à midi comme le soir, rien le matin)",
+          "trigger": "croupe du Mont Durant (991 m), contrefort sud-ouest du Semnoz",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 95 % à 170 m du sommet du Mont Durant, bien au sud du décollage du Semnoz. Aucune source ne le décrit. Il se place sur les contreforts qui relient le Semnoz à la plaine de Gruffy et Saint-Jorioz, à l'écart des routes de cross usuelles.",
+          "confidence": "low",
+          "sources": [
+            "S96"
+          ]
+        },
+        {
+          "id": "marlens-les-devants-rosset",
+          "name": "Marlens : pentes des Devants et de Rosset (plateau de Joëux)",
+          "lon": 6.3611,
+          "lat": 45.7776,
+          "alt_m": 964,
+          "coord_quality": "approx",
+          "best_hours": "le matin et la mi-journée (94 % le matin, 92 % à midi, 65 % le soir)",
+          "trigger": "pentes et croupes du plateau de Joëux et de Rosset, à l'est du col de l'Épine",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 92 % toutes périodes à 23 m du lieu-dit Les Devants, 1,7 km à l'est du décollage de Marlens (même profil du matin et de la mi-journée que le thermique du décollage). Aucun texte ne le décrit. Il se situe sur la route naturelle du « départ de cross vers les faces est des Bauges » que mentionne la fiche du site (voir `marlens-col-de-lepine-thermique`).",
+          "confidence": "low",
+          "sources": [
+            "S30",
+            "S96"
+          ]
+        },
+        {
+          "id": "sambuy-face-nord-est",
+          "name": "La Sambuy : face nord-est, extraction classique",
+          "lon": 6.2856,
+          "lat": 45.693,
+          "alt_m": 1601,
+          "coord_quality": "approx",
+          "best_hours": "le matin et à midi d'après les traces GPS (95 % le matin, 91 % à midi, rien le soir)",
+          "trigger": "pentes nord-est et est sous le décollage de la Sambuy (ancienne station), vers le Parc du Mouton",
+          "description": "Audit d'octobre 2026 : Point chaud kk7 à 93 % toutes périodes (95 % le matin, 91 % à midi), terrain IGN 1601 m, à 330 m des chalets de la Bouchasse. Le décollage de la Sambuy (FFVL 1196, N/NE, 1827 m, station fermée depuis 2023) n'avait aucun thermique à moins de 7 km. Récit du club St Hil'Air du 19/07/2020 : « décollage vers les 13h pour notre groupe, extraction classique sur la face NE de la Sambuy et direction les faces Est des Bauges vers l'Arclusaz, les conditions sont bonnes pour faire le cheminement à hauteur des crêtes ou presque » ; Grands Espaces : « right out of launch, you just need to head to the east face to reach Parc du Mouton. Once you've topped up on altitude, you can tour the Bauges range ». Les traces GPS (kk7) mesurent un point chaud à 1,2 km au sud-est du décollage, sur les alpages de la Bouchasse (95 % le matin) : c'est la position retenue pour le déclencheur, le récit ne donne pas de lieu plus précis que « la face NE ».",
+          "confidence": "medium",
+          "sources": [
+            "S97",
+            "S28",
+            "S96"
           ]
         }
       ],
@@ -2444,6 +2575,38 @@
           "description": "Forum t1985 (P. « piwaille », 2006) : « la brise Nord te permet de reprendre (depuis la Tournette ou Cotagne) en dynamique sur le bois juste au sud-ouest de Thônes (bois du mont ?) et quelques thermiques en allant vers la Croix Fry ou vers le col de l'Étale ». Position approximative : le bois n'est pas nommé avec certitude.",
           "sources": [
             "S77"
+          ]
+        },
+        {
+          "id": "tournette-col-du-varo-thermique",
+          "name": "La Tournette : pentes sous le col du Varo (rando-vol sud)",
+          "lon": 6.2725,
+          "lat": 45.8341,
+          "alt_m": 1689,
+          "coord_quality": "approx",
+          "best_hours": "milieu de journée et soir (93 % à midi, 96 % en fin de journée, rien le matin)",
+          "trigger": "alpages et pierriers sous le col du Varo et le refuge de la Tournette, versant sud de la Tournette face au lac",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 96 % toutes périodes (97 % en été) au pied des Rochers du Varo, à 730 m du refuge de la Tournette, sur le secteur du décollage de rando-vol « La Tournette – col du Varo » (S/SO, « très bien sans vent ou avec un peu de sud », forum 2018 ; 2150 m depuis le chalet de l'Aulp selon Infos-Parapente). Aucune source du dossier ne décrit ce thermique ; les récits parlent de la face est (matin) et du sommet. Il se situe sous le départ naturel des vols de rando de la Tournette sud, et c'est là que l'on enroule au retour vers le lac. Position : celle du point chaud.",
+          "confidence": "low",
+          "sources": [
+            "S3",
+            "S96"
+          ]
+        },
+        {
+          "id": "serraval-aiguille-chappet",
+          "name": "Aiguille de Serraval : pentes des Chappet",
+          "lon": 6.3158,
+          "lat": 45.818,
+          "alt_m": 1507,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (96 % le matin, 95 % à midi, 91 % le soir)",
+          "trigger": "pentes et alpages sous l'Aiguille de Serraval (1847 m), entre la Tournette, Sulens et Serraval",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 94 % toutes périodes à 270 m du hameau des Chappet, sous l'Aiguille de Serraval. Il se situe sur la liaison entre la Tournette et Sulens (3 km à l'ouest du thermique de Sulens) que décrivent les fils du Charvin et de la Tournette (t14966) ; aucun texte ne parle de ce versant en particulier.",
+          "confidence": "low",
+          "sources": [
+            "S90",
+            "S96"
           ]
         }
       ],
@@ -3719,6 +3882,68 @@
             "S77"
           ],
           "coord_quality": "source"
+        },
+        {
+          "id": "meruz-char-marin",
+          "name": "Méruz – Char Marin : pentes d’Ugine au pied du Charvin",
+          "lon": 6.4023,
+          "lat": 45.7814,
+          "alt_m": 1173,
+          "coord_quality": "approx",
+          "best_hours": "le matin (97 % le matin, 98 % au printemps, aucun point chaud le soir)",
+          "trigger": "pentes sud-ouest sous le décollage de Méruz (1300 m), au pied de la chaîne qui monte au Mont Charvin",
+          "description": "Audit d'octobre 2026 : le décollage de Méruz (FFVL 5323, rando-vol d'Ugine) était sans thermique. Récit du 199 km de Praz Véchin (Parapente Pays de Gex) : « par jour stable ou chargé l'extraction est difficile à Méruz » ; départ de Praz Véchin à 10h30 avec « premières barbulles sur le Charvin ». Les traces GPS (kk7) mesurent un point chaud à 96 % (97 % le matin) à 1,1 km à l'ouest-sud-ouest du décollage, sur la pente qui alimente la crête du Charvin. Position : celle du point chaud.",
+          "confidence": "low",
+          "sources": [
+            "S23",
+            "S96"
+          ]
+        },
+        {
+          "id": "praz-vechin-aiguille-du-bouchet",
+          "name": "Praz Véchin : pentes sous l’Aiguille du Bouchet",
+          "lon": 6.4081,
+          "lat": 45.7879,
+          "alt_m": 1527,
+          "coord_quality": "approx",
+          "best_hours": "le matin et la mi-journée (87 % le matin, 78 % à midi, rien le soir)",
+          "trigger": "pentes sous l'Aiguille du Bouchet (2170 m), entre Méruz et Praz Véchin",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 84 % toutes périodes à 600 m au nord-ouest du décollage de Méruz, entre Méruz et Praz Véchin (500 m plus haut) et sous l'Aiguille du Bouchet : c'est le thermique que le récit du 199 km (départ de Praz Véchin à 10h30, « premières barbulles sur le Charvin ») attend pour rejoindre le Mont Charvin, 1,9 km plus au nord-est. Position : celle du point chaud ; le déclencheur exact n'est pas décrit.",
+          "confidence": "low",
+          "sources": [
+            "S23",
+            "S96"
+          ]
+        },
+        {
+          "id": "col-du-passet-tardevant",
+          "name": "Col du Passet : combes sous la Pointe de Tardevant",
+          "lon": 6.4298,
+          "lat": 45.8429,
+          "alt_m": 1917,
+          "coord_quality": "approx",
+          "best_hours": "milieu de journée et soir (95 % à midi comme le soir, 80 % le matin)",
+          "trigger": "combes et replats de La Creuse et du col du Passet, versant ouest de la Pointe de Tardevant",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 95 % toutes périodes à 335 m du col du Passet, à 1,9 km à l'ouest de la Pointe de Tardevant que décrit déjà `pointe-de-tardevant`. Le récit de 2018 cité à `pointe-de-tardevant` parle d'un « cheminement dans les combes jusqu'à la pointe de Tardevant » : ce point chaud est dans ces combes. Position : celle du point chaud.",
+          "confidence": "low",
+          "sources": [
+            "S96"
+          ]
+        },
+        {
+          "id": "le-treu-nant-pareux",
+          "name": "Le Treu : pentes de Nant Pareux",
+          "lon": 6.4596,
+          "lat": 45.8149,
+          "alt_m": 1640,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée d'après les traces GPS (94 % le matin, 88 % à midi, 82 % le soir)",
+          "trigger": "pentes herbeuses de Nant Pareux sous Le Treu (1835 m), versant est de la chaîne au sud de La Clusaz",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 92 % toutes périodes à 260 m du lieu-dit Nant Pareux et à 730 m du Treu (1835 m, sommet des Aravis cité sur le blog Speed&rando). Aucun récit de vol ne décrit ce versant. Position : celle du point chaud.",
+          "confidence": "low",
+          "sources": [
+            "S96"
+          ]
         }
       ],
       "soaring_spots": [
@@ -3861,14 +4086,14 @@
         {
           "id": "etale-telepherique",
           "name": "L'Étale (téléphérique, La Clusaz)",
-          "lon": 6.4425,
-          "lat": 45.8719,
+          "lon": 6.4409,
+          "lat": 45.8698,
           "coord_quality": "approx",
-          "alt_m": 2000,
+          "alt_m": 1979,
           "orientations": [
             "NW"
           ],
-          "description": "Barbules : décollage à 2000 m orienté NO au sommet du téléphérique de l'Étale, finesse 3,9 vers Cortibot ; déconseillé à ski l'hiver ; effet de foehn, mauvais par vent de sud fort. Atterrissages associés : La Michaille (débutants, 1330 m) et Les Étages (juillet-août, câbles, non homologué FFVL pour les écoles). Statut actuel non vérifié (pas de fiche FFVL) ; coordonnées Barbules arrondies, à recouper.",
+          "description": "Barbules : décollage à 2000 m orienté NO au sommet du téléphérique de l'Étale, finesse 3,9 vers Cortibot ; déconseillé à ski l'hiver ; effet de foehn, mauvais par vent de sud fort. Atterrissages associés : La Michaille (débutants, 1330 m) et Les Étages (juillet-août, câbles, non homologué FFVL pour les écoles). Statut actuel non vérifié (pas de fiche FFVL) ; coordonnées Barbules arrondies, à recouper. Audit d'octobre 2026 : la position de Barbules (6.4425 E, 45.8719 N) tombait sur une pente à 1782 m ; elle est ramenée sur la station de remontée « Belvédère » (OSM), au sommet du téléphérique, où le terrain IGN est à 1979 m, soit les 2000 m de Barbules.",
           "sources": [
             "S62"
           ]
@@ -5531,6 +5756,24 @@
       "type": "forum",
       "lang": "fr",
       "notes": "Petit tour : Forclaz, rocher du Roux, Roc de Lancrenaz, Dents de Lanfon, Roc des Bœufs ; 1800 m pour transiter des Dents au Roc."
+    },
+    {
+      "id": "S96",
+      "title": "Paragliding Thermal Maps (kk7) : points chauds de thermiques mesurés par les traces GPS",
+      "url": "https://thermal.kk7.ch/",
+      "publisher": "thermal.kk7.ch (CC BY-NC-SA 4.0)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Probabilités de thermique (toutes saisons, matin / milieu de journée / fin de journée) lues dans les fichiers téléchargés le 7 octobre 2026 ; ne disent pas ce qui déclenche."
+    },
+    {
+      "id": "S97",
+      "title": "La Sambuy, 19/07/2020 (récit de Serge D., club St Hil'Air)",
+      "url": "http://clubsthilair.fr/2020/07/24/19-07-2020-la-sambuy/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Récit d'une sortie de quinze pilotes depuis la Sambuy : « extraction classique sur la face NE de la Sambuy et direction les faces Est des Bauges vers l'Arclusaz »."
     }
   ]
 }

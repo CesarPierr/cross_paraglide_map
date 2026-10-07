@@ -12,7 +12,7 @@ import { existsSync, readdirSync, readFileSync, writeFileSync, mkdirSync } from 
 import { join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import type { CuratedBreezeInput } from '@brises/model';
-import type { Atlas, AtlasFeature, AtlasFeatureProps, AtlasMassif, AtlasSource, FeatureCategory, ModelRule } from '@brises/shared';
+import type { Atlas, AtlasFeature, AtlasFeatureProps, AtlasFigure, AtlasMassif, AtlasSource, FeatureCategory, ModelRule } from '@brises/shared';
 import { analyseTerrain, type Terrain } from '@brises/model';
 import { loadDem } from '@brises/model/node';
 
@@ -111,6 +111,7 @@ interface RawFile {
   massifs: RawMassif[];
   sources: { id: string; title?: string; url?: string; publisher?: string; type?: string; notes?: string }[];
   model_rules?: { id: string; topic: string; rule: string; numbers?: unknown; sources?: string[] }[];
+  figures?: { id?: string; massif?: string; title?: string; image_url?: string; page_url?: string; pdf_page?: number; publisher?: string; shows?: string; extracted_to?: string[]; sources?: string[] }[];
 }
 
 const REGION_LABELS: Record<string, string> = {
@@ -552,6 +553,9 @@ function main() {
   };
   const curated: CuratedBreezeInput[] = [];
   const rules: ModelRule[] = [];
+  const figures: AtlasFigure[] = [];
+  /** `${massif}/${raw item id}` → atlas feature id (ids get a suffix when they collide). */
+  const rawToFeature = new Map<string, string>();
   const usedIds = new Set<string>();
   const uniqueId = (base: string) => {
     let id = base;
@@ -603,6 +607,9 @@ function main() {
       const allCoords: [number, number][] = [];
       const massifSources = new Set<string>();
       const push = (cat: FeatureCategory, f: AtlasFeature) => {
+        const base = f.properties.id.replace(/-\d+$/, '');
+        if (!rawToFeature.has(base)) rawToFeature.set(base, f.properties.id);
+        rawToFeature.set(f.properties.id, f.properties.id);
         features[cat].push(f);
         items[cat].push(f.properties.id);
         f.properties.sources.split(',').filter(Boolean).forEach((s) => massifSources.add(s));
@@ -820,6 +827,33 @@ function main() {
         sources: [...massifSources].filter((s) => sources[s]),
       });
     }
+
+    // Annotated figures: linked from the sheets, with the features drawn from them.
+    for (const fig of raw.figures ?? []) {
+      const massif = massifs.find((x) => x.id === fig.massif);
+      if (!fig.page_url && !fig.image_url) {
+        qa.push(`${slug}: figure « ${fig.title} » sans URL`);
+        continue;
+      }
+      if (!massif) {
+        qa.push(`${slug}: figure « ${fig.title} » rattachée à un secteur inconnu (${fig.massif})`);
+        continue;
+      }
+      const ids = (fig.extracted_to ?? []).map((raw) => rawToFeature.get(`${massif.id}/${raw}`));
+      if (ids.some((x) => !x)) qa.push(`${slug}: figure « ${fig.title} » cite des éléments introuvables`);
+      figures.push({
+        id: `${slug}:${fig.id ?? figures.length + 1}`,
+        massif: massif.id,
+        title: fig.title ?? 'Figure',
+        imageUrl: fig.image_url || undefined,
+        pageUrl: fig.page_url || fig.image_url!,
+        pdfPage: fig.pdf_page,
+        publisher: fig.publisher,
+        shows: fig.shows ?? '',
+        features: ids.filter((x): x is string => !!x),
+        sources: mapSources(fig.sources),
+      });
+    }
   }
 
   // Number the features (MapLibre feature-state needs numeric ids).
@@ -834,10 +868,12 @@ function main() {
     features,
     curated,
     rules,
+    figures,
     stats: {
       massifs: massifs.length,
       sources: Object.keys(sources).length,
       ...Object.fromEntries(Object.entries(features).map(([k, v]) => [k, v.length])),
+      figures: figures.length,
     },
   };
   if (CHECK_ONLY) {

@@ -16,7 +16,7 @@ export async function siteRoutes(app: FastifyInstance, ctx: AppContext) {
     const b = parseBbox(req.query.bbox);
     if (!b) return reply.code(400).send({ error: 'bbox invalide' });
     const rows = await ctx.db.query(
-      `SELECT split_part(id, ':', 2) AS id, provider, kind, name, ST_X(geom) AS lon, ST_Y(geom) AS lat, altitude, orientations, description, url, status
+      `SELECT split_part(id, ':', 2) AS id, provider, kind, name, ST_X(geom) AS lon, ST_Y(geom) AS lat, altitude, orientations, description, url, status, details
        FROM sites WHERE geom && ST_MakeEnvelope($1, $2, $3, $4, 4326) LIMIT 2000`,
       b,
     );

@@ -40,7 +40,11 @@ export async function seedAtlas(db: Db, atlas: Atlas): Promise<void> {
     for (const part of chunk(curated, 100))
       await tx.query(`INSERT INTO curated_breezes (id, sort, data) SELECT x->>'id', (x->>'sort')::int, x->'data' FROM jsonb_array_elements($1::jsonb) x`, [JSON.stringify(part)]);
     await tx.query(`INSERT INTO model_rules (id, data) SELECT x->>'id', x FROM jsonb_array_elements($1::jsonb) x`, [JSON.stringify(atlas.rules)]);
-    await tx.query(`INSERT INTO atlas_meta (key, value) VALUES ('regions', $1::jsonb), ('generatedAt', $2::jsonb)`, [JSON.stringify(atlas.regions), JSON.stringify(atlas.generatedAt)]);
+    await tx.query(`INSERT INTO atlas_meta (key, value) VALUES ('regions', $1::jsonb), ('generatedAt', $2::jsonb), ('figures', $3::jsonb)`, [
+      JSON.stringify(atlas.regions),
+      JSON.stringify(atlas.generatedAt),
+      JSON.stringify(atlas.figures ?? []),
+    ]);
   });
 }
 
@@ -49,10 +53,11 @@ export async function seedSites(db: Db, sites: FlyingSite[], provider = 'ffvl'):
     await tx.query('DELETE FROM sites WHERE provider = $1', [provider]);
     for (const part of chunk(sites, 300))
       await tx.query(
-        `INSERT INTO sites (id, provider, kind, name, geom, altitude, orientations, description, url, status)
+        `INSERT INTO sites (id, provider, kind, name, geom, altitude, orientations, description, url, status, details)
          SELECT x->>'provider' || ':' || (x->>'id'), x->>'provider', x->>'kind', x->>'name',
                 ST_SetSRID(ST_MakePoint((x->>'lon')::float8, (x->>'lat')::float8), 4326),
-                (x->>'altitude')::real, coalesce(x->'orientations', '[]'::jsonb), x->>'description', x->>'url', coalesce(x->>'status', 'official')
+                (x->>'altitude')::real, coalesce(x->'orientations', '[]'::jsonb), x->>'description', x->>'url', coalesce(x->>'status', 'official'),
+                x->'details'
          FROM jsonb_array_elements($1::jsonb) x
          ON CONFLICT (id) DO NOTHING`,
         [JSON.stringify(part)],

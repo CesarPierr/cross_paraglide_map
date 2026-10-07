@@ -21,6 +21,8 @@ export type LayerKey =
   | 'sitesOfficial'
   | 'sitesCommunity'
   | 'airspace'
+  | 'airspaceProtect'
+  | 'airspaceActivity'
   | 'labels'
   | 'kk7Thermals'
   | 'kk7Skyways'
@@ -84,6 +86,8 @@ export const useApp = create<AppState>((set) => ({
     sitesOfficial: true,
     sitesCommunity: false,
     airspace: false,
+    airspaceProtect: false,
+    airspaceActivity: false,
     labels: true,
     kk7Thermals: false,
     kk7Skyways: false,

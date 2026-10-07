@@ -98,6 +98,24 @@ export interface ModelRule {
   sources: string[];
 }
 
+/** An annotated drawing (breeze arrows on a photo, club map…) linked from the sheets, never re-hosted. */
+export interface AtlasFigure {
+  id: string;
+  massif: string;
+  title: string;
+  /** Direct image URL when the figure is a web image. */
+  imageUrl?: string;
+  /** Page or PDF that contains the figure. */
+  pageUrl: string;
+  pdfPage?: number;
+  publisher?: string;
+  /** What the figure shows. */
+  shows: string;
+  /** Atlas feature ids drawn from the figure. */
+  features: string[];
+  sources: string[];
+}
+
 export interface Atlas {
   generatedAt: string;
   massifs: AtlasMassif[];
@@ -106,5 +124,7 @@ export interface Atlas {
   features: Record<FeatureCategory, AtlasFeature[]>;
   curated: CuratedBreezeInput[];
   rules: ModelRule[];
+  /** Annotated figures from clubs and federations (optional: older atlases have none). */
+  figures?: AtlasFigure[];
   stats: Record<string, number>;
 }

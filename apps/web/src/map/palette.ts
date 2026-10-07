@@ -22,17 +22,33 @@ export const COLORS = {
   route: '#fde68a',
 };
 
-/** Airspace fill colour by type (AIP families). */
+/** Airspace colour by type (AIP families, FFVL protocols, protection and activity zones). */
 export const AIRSPACE_COLORS: Record<string, string> = {
   P: '#ef4444',
   R: '#f97316',
+  ZRT: '#f97316',
+  RTBA: '#dc2626',
   D: '#f59e0b',
+  Q: '#eab308',
+  TSA: '#fb7185',
+  TRA: '#fb7185',
+  CBA: '#fb7185',
   CTR: '#3b82f6',
   TMA: '#6366f1',
   CTA: '#8b5cf6',
+  LTA: '#a78bfa',
   RMZ: '#06b6d4',
   TMZ: '#06b6d4',
-  GSEC: '#22c55e',
-  ASRA: '#ec4899',
-  Q: '#eab308',
+  'FFVL-Prot': '#22c55e',
+  'FFVP-Prot': '#4ade80',
+  PROTECT: '#a3e635',
+  PRN: '#84cc16',
+  SUR: '#bef264',
+  AER: '#facc15',
+  PJE: '#f472b6',
+  VOL: '#38bdf8',
+  TRPLA: '#e879f9',
+  TRVL: '#e879f9',
+  BAL: '#fda4af',
+  AP: '#fde047',
 };

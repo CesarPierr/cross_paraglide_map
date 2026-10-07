@@ -57,7 +57,9 @@ const LAYER_GROUPS: { title: string; items: { key: LayerKey; label: string; colo
       { key: 'landings', label: 'Atterros cités par les sources', color: COLORS.landing },
       { key: 'sitesOfficial', label: 'Sites officiels FFVL', color: COLORS.takeoff },
       { key: 'sitesCommunity', label: 'Sites communautaires (OSM, PGE)', color: COLORS.takeoffCommunity },
-      { key: 'airspace', label: 'Espaces aériens', color: AIRSPACE_COLORS.R },
+      { key: 'airspace', label: 'Espaces aériens et protocoles FFVL', color: AIRSPACE_COLORS.R },
+      { key: 'airspaceProtect', label: 'Protection faune et parcs', color: AIRSPACE_COLORS.PROTECT },
+      { key: 'airspaceActivity', label: 'Parachutage, treuils, vol à voile', color: AIRSPACE_COLORS.PJE },
     ],
   },
   {

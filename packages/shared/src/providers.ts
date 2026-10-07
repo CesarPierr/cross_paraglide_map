@@ -75,6 +75,8 @@ export interface FlyingSite {
   url?: string;
   /** Official (federation) vs community-reported site. */
   status?: 'official' | 'community';
+  /** Extra labelled facts from the source sheet (FFVL: dangers, aerology, restrictions, level…). */
+  details?: Record<string, string>;
 }
 
 export interface SiteProvider {

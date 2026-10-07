@@ -12,7 +12,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { activeInSlot, thermalRole } from '../map/modules/schema';
 import { SCHEMA_PHASES, useApp, useRuntime, type SchemaPhase } from '../state/store';
 import { getController } from './controller-ref';
-import { isMobileNow, showSheet } from './mobile';
+import { isMobileNow, sheetHeight, SheetHandle, showSheet, useIsMobile, useSheet } from './mobile';
 
 type LngLat = [number, number];
 interface Line {
@@ -393,6 +393,8 @@ function openFeature(id: string) {
 
 const REPO_BLOB = 'https://github.com/CesarPierr/cross_paraglide_map/blob/main/';
 const PHASE_HOUR: Record<SchemaPhase, number> = { morning: 9.5, midday: 12.5, afternoon: 15, evening: 19 };
+/** What the simulation shows during a step, in words. */
+const PHASE_LABEL: Record<SchemaPhase, string> = { morning: 'matin, 9h30', midday: 'midi, 12h30', afternoon: 'après-midi, 15h', evening: 'soir, 19h' };
 
 /** Numbers the sources of a step in reading order (lead, lines, details, rest). */
 function numberSources(step: Step): string[] {
@@ -426,6 +428,12 @@ export function MassifTour() {
   const step = tourStep !== null ? steps[tourStep] : undefined;
   const [deeper, setDeeper] = useState<number | null>(null);
   const active = tourStep !== null;
+  const mobile = useIsMobile();
+  // Phone: the visit is the bottom sheet; the camera frames the map above it.
+  const snap = useSheet((x) => x.snap);
+  useEffect(() => {
+    if (active && isMobileNow()) useSheet.getState().setSnap('half');
+  }, [active]);
 
   // The visit drives the simulation (hour, synoptic wind); the user's settings come back at the end.
   useEffect(() => {
@@ -446,7 +454,7 @@ export function MassifTour() {
     Object.assign(patch, step.wind ? { synopticFrom: step.wind.fromDeg, synopticKmh: step.wind.kmh } : { synopticKmh: 0 });
     useApp.getState().set(patch);
     c.highlightSchema(step.ids ?? []);
-    const pad = isMobileNow() ? { top: 110, bottom: 340, left: 20, right: 20 } : { top: 100, bottom: 290, left: 400, right: 60 };
+    const pad = isMobileNow() ? { top: 24, bottom: sheetHeight(snap, true) + 16, left: 20, right: 20 } : { top: 100, bottom: 290, left: 400, right: 60 };
     const pitch = schema3d ? 50 : 0;
     // Steady moves: ease (no fly-out arc), framed inside the sector.
     const [w, s, e, n] = massif.bbox;
@@ -464,7 +472,8 @@ export function MassifTour() {
           [b[0], b[1]],
           [b[2], b[3]],
         ],
-        { padding: pad, maxZoom: 12.5 },
+        // Absolute: the margins replace the map's own (else they add up with the previous move's and the fit fails).
+        { padding: pad, maxZoom: 12.5, absolutePadding: true },
       );
       if (cam) map.easeTo({ ...cam, pitch, bearing: map.getBearing(), duration: 1100, essential: true });
     }
@@ -474,7 +483,7 @@ export function MassifTour() {
       return new Marker({ element: el }).setLngLat(p).addTo(map);
     });
     return () => markers.forEach((mk) => mk.remove());
-  }, [step, schema3d, massif]);
+  }, [step, schema3d, massif, snap]);
 
   // Highlight cleared when the visit ends.
   useEffect(() => {
@@ -491,22 +500,40 @@ export function MassifTour() {
   const open = deeper === tourStep;
   const order = numberSources(step).filter((id) => atlas.sources[id]);
   const dossier = tourStep === 0 ? atlas.dossiers?.[massif.id] : undefined;
+  const chapterTabs = (
+    <div className="tour-chapters" role="tablist" aria-label="Chapitres">
+      {chapters.map((c) => (
+        <button key={c} role="tab" aria-selected={c === step.chapter} className={c === step.chapter ? 'on' : ''} onClick={() => go(steps.findIndex((x) => x.chapter === c))}>
+          {c}
+        </button>
+      ))}
+    </div>
+  );
+  const quit = () => set({ tourStep: null });
   return (
     <div className="tour panel" role="dialog" aria-label={`Présentation : ${massif.shortName}`}>
-      <div className="tour-head">
-        <div className="tour-chapters" role="tablist" aria-label="Chapitres">
-          {chapters.map((c) => (
-            <button key={c} role="tab" aria-selected={c === step.chapter} className={c === step.chapter ? 'on' : ''} onClick={() => go(steps.findIndex((x) => x.chapter === c))}>
-              {c}
-            </button>
-          ))}
+      {mobile ? (
+        <>
+          <SheetHandle visit onClose={quit} closeLabel="Quitter la présentation">
+            <span className="tour-massif">{massif.shortName}</span>
+          </SheetHandle>
+          {chapterTabs}
+        </>
+      ) : (
+        <div className="tour-head">
+          {chapterTabs}
+          <button className="icon-btn ghost" aria-label="Quitter la présentation" onClick={quit}>
+            ×
+          </button>
         </div>
-        <button className="icon-btn ghost" aria-label="Quitter la présentation" onClick={() => set({ tourStep: null })}>
-          ×
-        </button>
-      </div>
+      )}
       <h3>{step.title}</h3>
-      {step.wind && <p className="tour-sim">Simulation : vent de {Math.round(step.wind.kmh)} km/h, regardez les flux sur la carte.</p>}
+      {(step.phase || step.wind) && (
+        <p className="tour-sim">
+          {step.phase && <span>{PHASE_LABEL[step.phase]}</span>}
+          {step.wind ? <span>vent météo {Math.round(step.wind.kmh)} km/h : regardez les flux sur la carte</span> : <span>air calme, brises seules</span>}
+        </p>
+      )}
       {step.lead && (
         <p className="tour-lead">
           {step.lead}
@@ -574,10 +601,10 @@ export function MassifTour() {
         <div className="tour-bar" aria-hidden>
           <i style={{ width: `${((tourStep + 1) / steps.length) * 100}%` }} />
         </div>
-        <button className="btn small ghost" disabled={tourStep === 0} onClick={() => go(tourStep - 1)}>
-          Précédent
+        <button className="btn small ghost" disabled={tourStep === 0} onClick={() => go(tourStep - 1)} aria-label="Étape précédente">
+          {mobile ? '‹' : 'Précédent'}
         </button>
-        <button className="btn small primary" onClick={() => (last ? set({ tourStep: null }) : go(tourStep + 1))}>
+        <button className="btn small primary" onClick={() => (last ? quit() : go(tourStep + 1))}>
           {last ? 'Terminer' : 'Suivant'}
         </button>
       </div>

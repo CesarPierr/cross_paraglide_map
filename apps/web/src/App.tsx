@@ -4,7 +4,7 @@ import { BasemapSwitch } from './ui/BasemapSwitch';
 import { ContributionPanel } from './ui/Feedback';
 import { IconHelp } from './ui/icons';
 import { MapView } from './ui/MapView';
-import { MobileDock, useIsMobile } from './ui/mobile';
+import { MobileDock, MobileRail, useIsMobile, useSheetLayout } from './ui/mobile';
 import { goTo, ModeTabs } from './ui/modes';
 import { NavPad } from './ui/NavPad';
 import { MapTools, Popover } from './ui/Popovers';
@@ -78,14 +78,18 @@ function useShortcuts() {
 
 /** Always-visible banner of the schema view, with the way back to 3D. */
 export default function App() {
-  const { browseOpen, schemaMassif, schemaPicking, set } = useApp();
+  const { browseOpen, schemaMassif, schemaPicking, mobileSheet, popover, tourStep, set } = useApp();
   const feature = useRuntime((r) => r.feature);
   const probe = useRuntime((r) => r.probe);
   const mobile = useIsMobile();
   const sideOpen = !mobile && (browseOpen || schemaPicking || !!feature || !!probe || !!schemaMassif);
+  // Phone: one bottom sheet at a time (the visit, a popover or the panel); the time bar only when none is open.
+  const visit = mobile && tourStep !== null && !!schemaMassif;
+  const sheet = mobile && (visit || !!popover || mobileSheet === 'browse');
+  useSheetLayout(visit);
   useShortcuts();
   return (
-    <div className={`app ${mobile ? 'is-mobile' : ''} ${sideOpen ? 'side-open' : ''}`}>
+    <div className={`app ${mobile ? 'is-mobile' : ''} ${sideOpen ? 'side-open' : ''} ${sheet ? 'has-sheet' : ''} ${visit ? 'in-visit' : ''}`}>
       <MapView />
       <header className="topbar panel">
         <div className="brand">
@@ -110,10 +114,11 @@ export default function App() {
       <Sidebar />
       <TimeBar />
       <MapTools />
-      <BasemapSwitch />
+      {!mobile && <BasemapSwitch />}
       <Popover />
       <MobileDock />
-      <NavPad />
+      <MobileRail />
+      {!mobile && <NavPad />}
       <MassifTour />
       <Welcome />
       <ContributionPanel />

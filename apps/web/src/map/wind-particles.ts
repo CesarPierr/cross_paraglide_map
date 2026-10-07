@@ -423,7 +423,8 @@ export class WindParticleLayer implements CustomLayerInterface {
             if (rand() < wgt) break;
           }
         }
-        age = rand() * 0.2;
+        // Born transparent so the fade-in runs (no popping).
+        age = rand() * 0.02;
         this.lifetimes[i] = 1.5 + rand() * 2.5;
       }
       this.heads[i * 2] = x;
@@ -486,7 +487,8 @@ export class WindParticleLayer implements CustomLayerInterface {
     gl.uniform1f(U.u_asl, this.settings.heightMode === 'asl' ? 1 : 0);
     gl.uniform1f(U.u_exag, this.settings.exaggeration);
     gl.uniform2f(U.u_viewport, gl.drawingBufferWidth / 2, gl.drawingBufferHeight / 2);
-    gl.uniform1f(U.u_width, 1.6 * (window.devicePixelRatio || 1));
+    // Width in drawing-buffer pixels: the map's own pixel ratio (capped on phones), not the screen's.
+    gl.uniform1f(U.u_width, 1.6 * (this.map?.getPixelRatio() ?? 1));
     gl.uniform1f(U.u_colorMode, this.settings.colorMode === 'lift' ? 1 : 0);
 
     gl.enable(gl.BLEND);

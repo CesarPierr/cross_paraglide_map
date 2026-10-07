@@ -63,6 +63,8 @@ interface CometTrack {
   condition: CuratedBreezeInput['condition'];
   strength: number;
   phases: number[];
+  /** Head of each comet along the track (cells), advanced frame by frame: a speed that changes with the zoom must not move it. */
+  heads?: number[];
 }
 
 export class WindScene {
@@ -76,7 +78,11 @@ export class WindScene {
   private settings: SceneSettings;
   private params: ModelParams | null = null;
   private pendingProbe: { lon: number; lat: number; resolve: (r: ProbeResult) => void } | null = null;
-  private hotspots: Hotspot[] = [];
+  /** Hotspots drawn this frame, with their fade (0..1). */
+  private hotspots: { h: Hotspot; fade: number }[] = [];
+  /** Hotspots fading in or out (keyed by position) so the columns never pop when the view or the hour changes. */
+  private hotFade = new Map<string, { h: Hotspot; a: number; on: boolean }>();
+  private lastFadeTime = 0;
   private hotspotVersion = -1;
   private lastHotspotTime = 0;
   private spots: ThermalSpot[] = [];
@@ -105,6 +111,7 @@ export class WindScene {
   private vaoEmpty: WebGLVertexArrayObject | null = null;
   private lastTime = 0;
   private time = 0;
+  private lastCometTime = 0;
 
   // Comets.
   private tracks: CometTrack[] = [];
@@ -354,10 +361,12 @@ export class WindScene {
       const inView = this.spots.filter((s) => s.lon > b.getWest() - pad && s.lon < b.getEast() + pad && s.lat > b.getSouth() - pad && s.lat < b.getNorth() + pad);
       if (this.documentedMassif) {
         // Learning: the documented climbs of the massif, as described, whatever the hour.
-        this.hotspots = inView
-          .filter((s) => s.massif === this.documentedMassif)
-          .map((s) => toHot(s, s.documented?.() ?? 0.7))
-          .slice(0, 96);
+        this.setHotspotTargets(
+          inView
+            .filter((s) => s.massif === this.documentedMassif)
+            .map((s) => toHot(s, s.documented?.() ?? 0.7))
+            .slice(0, 96),
+        );
       } else {
         // More known climbs in view than the GPU sampler takes: the best documented first.
         const sampled = inView.length > SAMPLE_MAX ? [...inView].sort((x, y) => (y.documented?.() ?? 0) - (x.documented?.() ?? 0)).slice(0, SAMPLE_MAX) : inView;
@@ -365,9 +374,10 @@ export class WindScene {
         const known = sampled.map((s, i) => toHot(s, Math.min(1, spotSamples[i * 4] * 1.15)));
         const model = engine.hotspots(70, 4, 0.45);
         const near = (a: Hotspot, c: Hotspot) => Math.hypot(a.lon - c.lon, (a.lat - c.lat) * 1.4) < 0.04;
-        this.hotspots = [...known.filter((k) => k.strength > 0.25), ...model.filter((m) => !known.some((k) => near(k, m)))].slice(0, 96);
+        this.setHotspotTargets([...known.filter((k) => k.strength > 0.25), ...model.filter((m) => !known.some((k) => near(k, m)))].slice(0, 96));
       }
     }
+    this.fadeHotspots(now);
     // Terrain height map for the 3D layers.
     if (this.sceneVisible() && opts.renderTerrainHeightMap && this.hmapTex) {
       const vb = this.viewMercator();
@@ -387,6 +397,35 @@ export class WindScene {
         }
       }
     } else if (!opts.renderTerrainHeightMap) this.hmapOn = false;
+  }
+
+  /** New set of hotspots: the ones already shown keep their opacity, the others fade in, the dropped ones fade out. */
+  private setHotspotTargets(next: Hotspot[]): void {
+    const key = (h: Hotspot) => `${h.lon.toFixed(3)},${h.lat.toFixed(3)}`;
+    const keep = new Set<string>();
+    for (const h of next) {
+      const k = key(h);
+      keep.add(k);
+      const e = this.hotFade.get(k);
+      if (e) {
+        e.h = h;
+        e.on = true;
+      } else this.hotFade.set(k, { h, a: 0, on: true });
+    }
+    for (const [k, e] of this.hotFade) if (!keep.has(k)) e.on = false;
+  }
+
+  /** Advances the fades (0.8 s) and rebuilds the drawn list, shown ones first. */
+  private fadeHotspots(now: number): void {
+    const dt = this.lastFadeTime ? Math.min(0.2, (now - this.lastFadeTime) / 1000) : 0;
+    this.lastFadeTime = now;
+    const out: { h: Hotspot; fade: number }[] = [];
+    for (const [k, e] of this.hotFade) {
+      e.a = Math.max(0, Math.min(1, e.a + (e.on ? dt : -dt) / 0.8));
+      if (!e.on && e.a <= 0) this.hotFade.delete(k);
+      else out.push({ h: e.h, fade: e.a * e.a * (3 - 2 * e.a) });
+    }
+    this.hotspots = out.sort((x, y) => y.fade * y.h.strength - x.fade * x.h.strength).slice(0, 96);
   }
 
   // ---------- Drape layer ----------
@@ -509,7 +548,8 @@ export class WindScene {
     gl.enable(gl.DEPTH_TEST);
     gl.depthFunc(gl.LEQUAL);
     gl.depthMask(false);
-    const dpr = Math.min(2, window.devicePixelRatio || 1);
+    // Sizes in drawing-buffer pixels: the map's own pixel ratio (capped on phones), not the screen's.
+    const dpr = this.map?.getPixelRatio() ?? 1;
 
     if (this.settings.particles && this.progParticles) {
       const { p, u } = this.progParticles;
@@ -547,7 +587,11 @@ export class WindScene {
       gl.useProgram(p);
       this.bindCommon(gl, u, opts, 0);
       const hot = new Float32Array(96 * 4);
-      this.hotspots.forEach((h, i) => hot.set([h.mx, h.my, h.strength, (i * 0.618) % 1], i * 4));
+      // Strength in 1/63 steps with the fade in the fraction; bubble phase from the position, not the rank
+      // (a reordered list must not make every column jump).
+      this.hotspots.forEach(({ h, fade }, i) =>
+        hot.set([h.mx, h.my, Math.round(Math.max(0, Math.min(1, h.strength)) * 63) + Math.min(0.999, fade), Math.abs(Math.sin(h.mx * 91731.7 + h.my * 51287.3) * 43758.5453) % 1], i * 4),
+      );
       gl.uniform4fv(u.uHot, hot);
       const perHot = 22;
       gl.uniform1i(u.uPerHot, perHot);
@@ -587,6 +631,8 @@ export class WindScene {
       comets += tr.phases.length;
     }
     if (!comets) return;
+    const dt = this.lastCometTime ? Math.min(0.12, this.time - this.lastCometTime) : 0;
+    this.lastCometTime = this.time;
     const floatsPerVertex = 10;
     const nVerts = comets * K * 2;
     if (this.cometData.length < nVerts * floatsPerVertex) this.cometData = new Float32Array(nVerts * floatsPerVertex * 1.5);
@@ -609,9 +655,11 @@ export class WindScene {
       const v = tr.speedMs * accel * 0.9; // cells per second
       const trail = Math.min(tr.length * 0.35, Math.max(v * 1.6, 3));
       const alpha = act * (0.45 + 0.55 * tr.strength);
-      for (const ph of tr.phases) {
-        const span = tr.length + trail;
-        const head = ((ph * span + this.time * v) % span + span) % span;
+      const span = tr.length + trail;
+      const heads = (tr.heads ??= tr.phases.map((ph) => ph * span));
+      for (let i = 0; i < heads.length; i++) {
+        heads[i] = (((heads[i] + dt * v) % span) + span) % span;
+        const head = heads[i];
         for (let k = 0; k < K; k++) {
           const t = k / (K - 1);
           const s = head - t * trail;

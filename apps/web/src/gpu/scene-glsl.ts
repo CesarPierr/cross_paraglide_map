@@ -122,7 +122,8 @@ void main() {
       if (rnd(seed) < w) break;
     }
     p = q;
-    age = rnd(seed) * 0.25;
+    // Born transparent: the fade-in (age 0 → 0.12) must run, or thousands of particles pop in each second.
+    age = rnd(seed) * 0.02;
     life = 1.6 + rnd(seed) * 2.6;
   }
   outState = vec4(p, age, life);
@@ -235,7 +236,7 @@ export const BUBBLE_VS = `#version 300 es
 precision highp float;
 precision highp int;
 ${SCENE_COMMON}
-uniform vec4 uHot[96];       // mercator x, y, strength, seed
+uniform vec4 uHot[96];       // mercator x, y, strength (1/63 steps) + fade in the fraction, seed
 uniform int uPerHot;
 uniform float uTime;
 uniform vec2 uDrift;         // mercator offset per metre of climb (downwind tilt)
@@ -246,9 +247,11 @@ void main() {
   int h = gl_InstanceID / uPerHot;
   int b = gl_InstanceID % uPerHot;
   vec4 hot = uHot[h];
-  float strength = hot.z;
+  float strength = floor(hot.z) / 63.0;
+  float fade = fract(hot.z);
   float fb = float(b) / float(uPerHot);
-  float phase = fract(uTime * (0.05 + 0.05 * strength) + fb + hot.w);
+  // Constant rate: a rate scaled by a changing strength would jump the phase by hundreds of cycles.
+  float phase = fract(uTime * 0.075 + fb + hot.w);
   float top = 350.0 + 1900.0 * strength;
   float climb = phase * top;
   float ang = phase * 9.0 + fb * 6.2831 + hot.w * 20.0;
@@ -264,7 +267,7 @@ void main() {
   c.xy += corner * px / uViewport * c.w;
   gl_Position = c;
   vUv = corner;
-  float a = smoothstep(0.0, 0.12, phase) * (1.0 - smoothstep(0.7, 1.0, phase)) * (0.35 + 0.65 * strength);
+  float a = smoothstep(0.0, 0.12, phase) * (1.0 - smoothstep(0.7, 1.0, phase)) * (0.35 + 0.65 * strength) * fade;
   vec3 col = mix(vec3(1.0, 0.96, 0.82), vec3(1.0, 0.58, 0.2), phase * 0.8);
   vColor = vec4(col * a, a);
 }`;

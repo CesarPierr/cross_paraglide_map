@@ -6,6 +6,7 @@
  * soaring spots, and the cross-country transitions towards the neighbours.
  * The live 3D layers are switched off by the controller meanwhile.
  */
+import { isPhoneLayout, phonePadding } from '../viewport';
 import type { AtlasFeature, FeatureCategory } from '@brises/shared';
 import type { ExpressionSpecification, FilterSpecification, GeoJSONSource, Map as MlMap } from 'maplibre-gl';
 import { SCHEMA_PHASES, type AppState, type SchemaPhase } from '../../state/store';
@@ -297,7 +298,8 @@ export class SchemaModule implements MapModule {
     });
     map.addSource('schema-pick-labels', {
       type: 'geojson',
-      data: { type: 'FeatureCollection', features: sectors.map((m) => ({ type: 'Feature', geometry: { type: 'Point', coordinates: m.center }, properties: { id: m.id, name: m.shortName } })) },
+      // Rank: sectors with the most documented items keep their name when labels would collide.
+      data: { type: 'FeatureCollection', features: sectors.map((m) => ({ type: 'Feature', geometry: { type: 'Point', coordinates: m.center }, properties: { id: m.id, name: m.shortName, rank: -Object.values(m.items).reduce((n, l) => n + l.length, 0) } })) },
     });
     const hovered = ['boolean', ['feature-state', 'hover'], false] as ExpressionSpecification;
     ctx.addLayer(
@@ -340,9 +342,10 @@ export class SchemaModule implements MapModule {
           'text-field': ['get', 'name'],
           'text-font': ['Noto Sans Bold'],
           'text-size': ['interpolate', ['linear'], ['zoom'], 7, 11.5, 10, 15],
-          'text-padding': 2,
-          'text-allow-overlap': true,
-          'text-ignore-placement': true,
+          'text-padding': 3,
+          // No piled-up names: the busiest sectors win, the others appear as one zooms in (every shape stays tappable).
+          'text-allow-overlap': false,
+          'symbol-sort-key': ['get', 'rank'],
           'text-max-width': 8,
         },
         paint: { 'text-color': '#f8fafc', 'text-halo-color': 'rgba(2,6,23,0.9)', 'text-halo-width': 1.5 },
@@ -386,7 +389,11 @@ export class SchemaModule implements MapModule {
       this.picking = s.schemaPicking;
       this.setPicking(s.schemaPicking);
       // Step back to see the neighbouring sectors and pick one.
-      if (s.schemaPicking) map.easeTo({ zoom: Math.min(map.getZoom(), 8.2), pitch: Math.min(map.getPitch(), 25), duration: 900 });
+      if (s.schemaPicking) {
+        // Phone: the sectors around the current view, large enough to read and tap, above the list.
+        if (isPhoneLayout()) map.easeTo({ zoom: Math.min(map.getZoom(), 7.4), pitch: 0, bearing: 0, padding: phonePadding(), duration: 900 });
+        else map.easeTo({ zoom: Math.min(map.getZoom(), 8.2), pitch: Math.min(map.getPitch(), 25), duration: 900 });
+      }
     }
     if (prev && prev.schema3d !== s.schema3d && s.schemaMassif) {
       this.threeD = s.schema3d;
@@ -409,13 +416,12 @@ export class SchemaModule implements MapModule {
       }
       const m = this.ctx.atlas.massifs.find((x) => x.id === s.schemaMassif);
       if (m) {
-        const wide = window.innerWidth > 860;
         map.fitBounds(
           [
             [m.bbox[0], m.bbox[1]],
             [m.bbox[2], m.bbox[3]],
           ],
-          { padding: wide ? { top: 110, bottom: 110, left: 410, right: 40 } : { top: 110, bottom: 300, left: 16, right: 16 }, pitch: this.threeD ? 52 : 0, bearing: this.threeD ? map.getBearing() : 0, duration: 1600, maxZoom: 12 },
+          { padding: isPhoneLayout() ? phonePadding() : { top: 110, bottom: 110, left: 410, right: 40 }, absolutePadding: true, pitch: this.threeD ? 52 : 0, bearing: this.threeD ? map.getBearing() : 0, duration: 1600, maxZoom: 12 },
         );
       }
     }
@@ -425,7 +431,7 @@ export class SchemaModule implements MapModule {
     const map = this.ctx!.map;
     this.massif = null;
     this.setVisible(false);
-    if (this.savedCamera) map.easeTo({ ...this.savedCamera, duration: 1400 });
+    if (this.savedCamera) map.easeTo({ ...this.savedCamera, padding: { top: 0, bottom: 0, left: 0, right: 0 }, duration: 1400 });
     this.savedCamera = null;
   }
 

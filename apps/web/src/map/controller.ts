@@ -20,6 +20,7 @@ import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url';
 import type { DataClient } from '../data/client';
 import type { AppState } from '../state/store';
 import { budgetFor, onPowerContextChange, pacerFor } from './frame-pacer';
+import { isPhoneLayout, phonePadding } from './viewport';
 import { addIcons } from './icons';
 import { AirspaceModule } from './modules/airspace';
 import { KnowledgeModule } from './modules/knowledge';
@@ -75,7 +76,8 @@ function effectiveState(s: AppState): AppState {
     return { ...s, overlay: 'none', layers: { ...s.layers, ...Object.fromEntries([...LIVE_ONLY, 'labels', 'sitesOfficial', 'airspace', 'airspaceProtect', 'airspaceActivity'].map((k) => [k, false])) } };
   if (!s.schemaMassif) return s;
   const off = LIVE_ONLY.filter((k) => !SCHEMA_KEEP.includes(k) && !(s.schemaWind && k === 'particles'));
-  return { ...s, exaggeration: s.schema3d ? s.exaggeration : 0, overlay: 'none', layers: { ...s.layers, ...Object.fromEntries([...off, 'airspace', 'airspaceProtect', 'airspaceActivity'].map((k) => [k, false])) } };
+  // The diagram writes its own title: the live map's sector names would overlap it.
+  return { ...s, exaggeration: s.schema3d ? s.exaggeration : 0, overlay: 'none', layers: { ...s.layers, ...Object.fromEntries([...off, 'labels', 'airspace', 'airspaceProtect', 'airspaceActivity'].map((k) => [k, false])) } };
 }
 
 export class MapController {
@@ -92,12 +94,16 @@ export class MapController {
   private lastProbe: { lon: number; lat: number } | null = null;
   private hover: Popup;
   private picking = false;
+  private data!: DataClient;
+  /** Calls that touch the style before it is ready (the map is created before the data): the last one of each kind, replayed once ready. */
+  private deferred = new Map<string, () => void>();
   private disposed = false;
   private offPower: () => void = () => {};
 
   constructor(
     container: HTMLElement,
-    private data: DataClient,
+    /** The data client may still be deciding between the API and the static files: the map does not wait for it. */
+    private dataReady: Promise<DataClient>,
     private events: ControllerEvents,
   ) {
     this.map = new MlMap({
@@ -129,7 +135,15 @@ export class MapController {
     // Battery plugged / unplugged: the auto budget changes.
     this.offPower = onPowerContextChange(() => this.state && this.applyAll(this.state, null));
     // The attribution stays a small (i) button until opened.
-    this.map.once('load', () => this.map.getContainer().querySelector('.maplibregl-ctrl-attrib')?.classList.remove('maplibregl-compact-show'));
+    const foldAttribution = () => this.map.getContainer().querySelector('.maplibregl-ctrl-attrib')?.classList.remove('maplibregl-compact-show');
+    this.map.once('load', foldAttribution);
+    // MapLibre opens it again when it first switches to compact mode (narrow screens): fold it once the map settles.
+    this.map.once('idle', foldAttribution);
+    // Phone: the credits open only on a tap on (i), never by themselves over the map.
+    this.map.once('load', () => {
+      const attrib = this.map.getContainer().querySelector('.maplibregl-ctrl-attrib');
+      attrib?.querySelector('.maplibregl-ctrl-attrib-button')?.addEventListener('click', () => attrib.classList.toggle('user-open'));
+    });
     this.map.on('error', (e) => {
       if ((e.error as { status?: number } | undefined)?.status) return; // missing tiles are expected
       console.warn(e.error);
@@ -141,7 +155,8 @@ export class MapController {
     this.events.onStatus({ phase: 'loading', message: 'Chargement des connaissances locales…' });
     addIcons(map);
     try {
-      const [meta, atlas] = await Promise.all([this.data.demMeta(), this.data.atlas()]);
+      const data = (this.data = await this.dataReady);
+      const [meta, atlas] = await Promise.all([data.demMeta(), data.atlas()]);
       if (this.disposed) return;
       this.events.onAtlas(atlas);
       const grid = new Grid(meta);
@@ -176,6 +191,8 @@ export class MapController {
       this.modules = [new ReliefModule(), new Kk7Module(), this.airspace, this.knowledge, schema, new SitesModule(this.data.siteProviders()), new LabelsModule(), this.wind];
       for (const m of this.modules) if (m !== this.wind) await m.add(ctx);
       this.ready = true;
+      for (const run of this.deferred.values()) run();
+      this.deferred.clear();
       if (this.state) this.applyAll(this.state, null);
       this.events.onStatus({ phase: 'terrain', message: 'Analyse du relief (vallées, pentes, lacs)…' });
       await this.wind.add(ctx);
@@ -204,7 +221,9 @@ export class MapController {
 
   private applyPower(s: AppState): void {
     pacerFor(this.map).setMode(s.power);
-    this.map.setPixelRatio(Math.min(window.devicePixelRatio || 1, budgetFor(s.power).maxDpr));
+    // Resizing the canvas flashes the whole map: only when the ratio really changes.
+    const ratio = Math.min(window.devicePixelRatio || 1, budgetFor(s.power).maxDpr);
+    if (Math.abs(this.map.getPixelRatio() - ratio) > 0.01) this.map.setPixelRatio(ratio);
   }
 
   private applyAll(raw: AppState, prev: AppState | null): void {
@@ -301,14 +320,14 @@ export class MapController {
   }
 
   flyToBbox(bbox: [number, number, number, number], opts: { maxZoom?: number } = {}): void {
-    const wide = window.innerWidth > 860;
     this.map.fitBounds(
       [
         [bbox[0], bbox[1]],
         [bbox[2], bbox[3]],
       ],
       {
-        padding: wide ? { top: 90, bottom: 130, left: 400, right: 360 } : { top: 80, bottom: 260, left: 30, right: 30 },
+        padding: isPhoneLayout() ? phonePadding() : { top: 90, bottom: 130, left: 400, right: 360 },
+        absolutePadding: true,
         pitch: 62,
         bearing: this.map.getBearing(),
         duration: 2200,
@@ -319,6 +338,10 @@ export class MapController {
 
   /** Draws a route (planned or highlighted): line, numbered turn points. */
   setRoute(points: [number, number][]): void {
+    if (!this.ready) {
+      this.deferred.set('route', () => this.setRoute(points));
+      return;
+    }
     const map = this.map;
     const data: GeoJSON.FeatureCollection = {
       type: 'FeatureCollection',
@@ -354,6 +377,10 @@ export class MapController {
 
   /** Adds a transient GeoJSON source (e.g. a contribution being drawn). */
   setScratch(data: GeoJSON.FeatureCollection): void {
+    if (!this.ready) {
+      this.deferred.set('scratch', () => this.setScratch(data));
+      return;
+    }
     const map = this.map;
     const src = map.getSource('scratch') as { setData?: (d: GeoJSON.FeatureCollection) => void } | undefined;
     if (src?.setData) {

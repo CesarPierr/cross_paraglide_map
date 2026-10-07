@@ -24,10 +24,14 @@ interface Budget {
   maxParticles: number;
 }
 
-const BUDGETS: Record<'eco' | 'balanced' | 'max', Budget> = {
+const BUDGETS: Record<'eco' | 'balanced' | 'max' | 'phone' | 'phoneLight', Budget> = {
   eco: { activeFps: 24, idleFps: 15, deepIdleFps: 8, maxDpr: 1, maxParticles: 6000 },
   balanced: { activeFps: 30, idleFps: 24, deepIdleFps: 12, maxDpr: 1.5, maxParticles: 20000 },
   max: { activeFps: 60, idleFps: 30, deepIdleFps: 20, maxDpr: 3, maxParticles: 40000 },
+  // Phones: a small, sharp screen. A steady rate with few particles reads better (and costs less)
+  // than many particles stuttering at 8-15 fps on a blurry 1x canvas.
+  phone: { activeFps: 30, idleFps: 24, deepIdleFps: 15, maxDpr: 2, maxParticles: 3500 },
+  phoneLight: { activeFps: 24, idleFps: 20, deepIdleFps: 12, maxDpr: 1.5, maxParticles: 2000 },
 };
 
 const IDLE_AFTER_MS = 15000;
@@ -50,9 +54,13 @@ void (navigator as { getBattery?: () => Promise<BatteryLike> }).getBattery?.()
   })
   .catch(() => {});
 
+/** A phone or small tablet held in the hand (touch, narrow screen): always on battery, so battery is no signal there. */
+const phone = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse) and (max-width: 1024px)').matches;
+
 /** The budget actually applied for a user setting. */
 export function budgetFor(mode: PowerMode): Budget {
   if (mode === 'max') return BUDGETS.max;
+  if (phone) return mode === 'eco' || struggling ? BUDGETS.phoneLight : BUDGETS.phone;
   if (mode === 'eco' || lowEnd || onBattery || struggling) return BUDGETS.eco;
   return BUDGETS.balanced;
 }

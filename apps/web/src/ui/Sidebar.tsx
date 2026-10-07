@@ -440,13 +440,21 @@ export function Sidebar() {
   // A new sheet starts at its top.
   const ref = useRef<HTMLElement>(null);
   const contentKey = feature?.ref ?? (probe ? `probe:${probe.lon},${probe.lat}` : schema ? `schema:${schema.id}` : massif ? `massif:${massif.id}` : `browse:${browseTab}`);
+  // (Also when it comes back after a visit: it was hidden, and kept the previous content's scroll.)
+  const visiting = useApp((x) => x.tourStep !== null);
   useEffect(() => {
     ref.current?.scrollTo({ top: 0 });
-  }, [contentKey]);
+  }, [contentKey, visiting]);
   return (
     <aside ref={ref} className={`sidebar panel ${open ? '' : 'collapsed'}`} aria-label="Massifs et connaissances locales">
       {mobile ? (
-        <SheetHandle />
+        <SheetHandle
+          onClose={() => {
+            // A detail closes back to the massif page under it; anything else goes back to the map.
+            if (feature && schemaMassif) useRuntime.getState().set({ feature: null });
+            else goTo('carte');
+          }}
+        />
       ) : (
         !schema &&
         !probe && (

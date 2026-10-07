@@ -48,6 +48,14 @@ function simulateDay() {
   useRuntime.getState().set({ toast: 'Journée d’été type, sans vent météo : jouez l’heure en bas, ajoutez un vent si vous voulez, touchez un endroit pour le lire.' });
 }
 
+/** The four ways in, short enough to read on a phone at a glance. */
+const WAYS: { title: string; hint: string; icon: string; go: () => void }[] = [
+  { title: 'Découvrir un massif', hint: 'Ses brises, thermiques et pièges, avec une visite guidée.', icon: '⛰', go: () => goTo('massifs') },
+  { title: 'Voler aujourd’hui', hint: 'Le vent prévu est appliqué ; touchez un endroit pour le lire.', icon: '☀', go: () => void flyToday() },
+  { title: 'Simuler une journée', hint: 'Les brises heure par heure, puis le vent de votre choix.', icon: '◷', go: simulateDay },
+  { title: 'Préparer un cross', hint: 'Itinéraires pas à pas, ou tracez le vôtre.', icon: '↝', go: () => goTo('cross') },
+];
+
 export function Welcome() {
   const { welcomeOpen, level } = useApp();
   if (!welcomeOpen) return null;
@@ -59,38 +67,31 @@ export function Welcome() {
     <div className="welcome-veil" role="dialog" aria-modal="true" aria-labelledby="welcome-title">
       <div className="welcome panel">
         <h2 id="welcome-title">Comprendre l’air des Alpes avant de voler</h2>
-        <p className="lead">
-          Brises, thermiques, convergences et pièges de chaque massif, simulés selon l’heure et le vent, et sourcés auprès des clubs, écoles et fiches FFVL.
+        <p className="lead">Brises, thermiques et pièges de chaque massif, simulés selon l’heure et le vent, sourcés auprès des clubs, écoles et fiches FFVL.</p>
+        <p className="welcome-label" id="welcome-level">
+          Votre pratique
         </p>
-        <div className="welcome-levels" role="radiogroup" aria-label="Votre pratique">
+        <div className="welcome-levels" role="radiogroup" aria-labelledby="welcome-level">
           {LEVELS.map((l) => (
-            <button key={l.key} role="radio" aria-checked={level === l.key} className={level === l.key ? 'on' : ''} onClick={() => useApp.getState().set({ level: l.key })}>
+            <button key={l.key} role="radio" aria-checked={level === l.key} className={level === l.key ? 'on' : ''} onClick={() => useApp.getState().set({ level: l.key })} title={l.hint}>
               <b>{l.label}</b>
               <small>{l.hint}</small>
             </button>
           ))}
         </div>
+        <p className="welcome-label">Par où commencer</p>
         <div className="welcome-ways">
-          <button onClick={() => pick(() => goTo('massifs'))}>
-            <b>Découvrir un massif</b>
-            <small>Touchez-le sur la carte des secteurs : schéma de ses brises, thermiques et pièges, et présentation guidée.</small>
-          </button>
-          <button onClick={() => pick(() => void flyToday())}>
-            <b>Voler aujourd’hui</b>
-            <small>Le vent prévu aujourd’hui est appliqué ; touchez un endroit pour lire l’aérologie et la prévision du point.</small>
-          </button>
-          <button onClick={() => pick(simulateDay)}>
-            <b>Simuler une journée</b>
-            <small>Les brises naturelles heure par heure, puis le vent météo de votre choix ; touchez un endroit pour le lire.</small>
-          </button>
-          <button
-            onClick={() => pick(() => goTo('cross'))}
-          >
-            <b>Préparer un cross</b>
-            <small>Itinéraires documentés pas à pas, ou tracez le vôtre : relances, pièges et brises sur chaque tronçon.</small>
-          </button>
+          {WAYS.map((w) => (
+            <button key={w.title} onClick={() => pick(w.go)}>
+              <span className="way-icon" aria-hidden>
+                {w.icon}
+              </span>
+              <b>{w.title}</b>
+              <small>{w.hint}</small>
+            </button>
+          ))}
         </div>
-        <button className="link-btn" onClick={() => close(level)}>
+        <button className="link-btn explore" onClick={() => close(level)}>
           Juste explorer la carte
         </button>
         <p className="muted small">Outil pédagogique, pas une prévision : vérifiez toujours la météo, les balises et les consignes locales.</p>

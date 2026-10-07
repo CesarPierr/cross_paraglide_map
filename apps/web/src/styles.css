@@ -1910,56 +1910,6 @@ kbd {
   }
 }
 
-@media (max-width: 860px) {
-  :root {
-    --timebar-h: 60px;
-    --gap: 8px;
-  }
-  .topbar {
-    width: calc(100vw - var(--gap) * 2);
-  }
-  .sidebar {
-    top: auto;
-    left: var(--gap);
-    right: var(--gap);
-    width: auto;
-    max-height: 46vh;
-    bottom: calc(var(--gap) * 2 + var(--timebar-h));
-    border-radius: var(--radius) var(--radius) var(--radius) var(--radius);
-  }
-  .control-panel {
-    top: calc(var(--gap) + 60px);
-    left: auto;
-    right: var(--gap);
-    width: min(320px, calc(100vw - var(--gap) * 2));
-    bottom: auto;
-    max-height: 42vh;
-  }
-  .timebar {
-    left: var(--gap);
-    right: var(--gap);
-  }
-  .probe-card,
-  .contrib {
-    right: var(--gap);
-    left: var(--gap);
-    width: auto;
-    top: calc(var(--gap) + 60px);
-    bottom: auto;
-    max-height: 60vh;
-  }
-  .maplibregl-ctrl-bottom-right {
-    right: var(--gap);
-  }
-  .brand p,
-  .status {
-    display: none;
-  }
-  .about-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
@@ -2251,142 +2201,6 @@ kbd {
   display: none;
 }
 
-@media (max-width: 860px) {
-  :root {
-    --dock-h: 58px;
-  }
-  .topbar {
-    width: calc(100vw - var(--gap) * 2);
-    gap: 8px;
-  }
-  .topbar .brand h1,
-  .topbar .brand > div {
-    display: none;
-  }
-  .kbd {
-    display: none;
-  }
-  .search-results {
-    position: fixed;
-    top: calc(var(--gap) + 62px);
-    left: var(--gap);
-    right: var(--gap);
-    max-height: 60vh;
-  }
-  .timebar {
-    bottom: calc(var(--gap) * 2 + var(--dock-h));
-  }
-  .mobile-dock {
-    display: flex;
-    position: absolute;
-    left: var(--gap);
-    right: var(--gap);
-    bottom: var(--gap);
-    height: var(--dock-h);
-    padding: 4px;
-    z-index: 6;
-    justify-content: space-around;
-    padding-bottom: max(4px, env(safe-area-inset-bottom));
-  }
-  .mobile-dock button {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 2px;
-    border: 0;
-    border-radius: 10px;
-    background: transparent;
-    color: var(--muted);
-    font-size: 10.5px;
-    cursor: pointer;
-  }
-  .mobile-dock button.active {
-    color: #fff;
-    background: var(--accent-soft);
-  }
-  /* Sheets: anchored above the time bar, one at a time, map visible above. */
-  .sidebar,
-  .control-panel,
-  .legend.as-sheet {
-    position: absolute;
-    top: auto;
-    left: var(--gap);
-    right: var(--gap);
-    width: auto;
-    max-width: none;
-    bottom: calc(var(--gap) * 3 + var(--dock-h) + var(--timebar-h));
-    max-height: 48vh;
-    overflow: auto;
-    z-index: 5;
-    padding-top: 0;
-  }
-  .legend.as-sheet {
-    display: block;
-    padding: 0 14px 12px;
-  }
-  .sheet-tall .sidebar,
-  .sheet-tall .control-panel,
-  .sheet-tall .legend.as-sheet {
-    max-height: calc(100dvh - var(--gap) * 4 - var(--dock-h) - var(--timebar-h) - 62px);
-  }
-  .sheet-handle {
-    position: sticky;
-    top: 0;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 -16px 4px;
-    padding: 4px 8px;
-    background: var(--panel-solid);
-  }
-  .sheet-handle .grab {
-    flex: 1;
-    height: 22px;
-    border: 0;
-    background: transparent;
-    display: grid;
-    place-items: center;
-    cursor: pointer;
-  }
-  .sheet-handle .grab span {
-    width: 42px;
-    height: 4px;
-    border-radius: 2px;
-    background: var(--border-strong);
-  }
-  .sheet-handle .close {
-    position: absolute;
-    right: 6px;
-    font-size: 20px;
-    width: 30px;
-    height: 30px;
-  }
-  .control-panel .sheet-handle {
-    margin: 0 0 4px;
-  }
-  /* Map chrome: compact attribution, no zoom buttons (pinch), above the sheets. */
-  .is-mobile .maplibregl-ctrl-bottom-right {
-    bottom: calc(var(--gap) * 3 + var(--dock-h) + var(--timebar-h));
-  }
-  .is-mobile .maplibregl-ctrl-zoom-in,
-  .is-mobile .maplibregl-ctrl-zoom-out {
-    display: none;
-  }
-  .is-mobile .maplibregl-ctrl-attrib:not(.maplibregl-compact-show) .maplibregl-ctrl-attrib-inner {
-    display: none;
-  }
-  .probe-card {
-    top: calc(var(--gap) + 62px);
-    max-height: 40vh;
-  }
-  .figures {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 /* ---------- Navigation pad (mouse-free camera control) ---------- */
 .navpad {
   position: absolute;
@@ -2487,31 +2301,6 @@ kbd {
   border-color: rgba(125, 211, 252, 0.5);
   white-space: nowrap;
   font-size: 13px;
-}
-
-@media (max-width: 860px) {
-  .navpad {
-    right: auto;
-    left: var(--gap);
-    bottom: calc(var(--gap) * 3 + var(--dock-h) + var(--timebar-h));
-  }
-  .navpad-grid {
-    grid-template-columns: repeat(3, 44px);
-    grid-auto-rows: 44px;
-  }
-  .navpad-help {
-    right: auto;
-    left: 0;
-  }
-  .schema-banner {
-    top: calc(var(--gap) + 62px);
-    max-width: calc(100vw - var(--gap) * 2);
-    font-size: 12px;
-  }
-  .schema-banner span {
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
 }
 
 /* ---------- Control panel: blocks, tiles, disclosures ---------- */
@@ -2992,18 +2781,6 @@ kbd {
   }
 }
 
-@media (max-width: 860px) {
-  .tour {
-    bottom: calc(var(--gap) * 3 + var(--dock-h) + var(--timebar-h));
-    max-height: 40vh;
-  }
-  .schema-banner {
-    flex-wrap: wrap;
-    white-space: normal;
-    justify-content: center;
-  }
-}
-
 .refs {
   margin-left: 2px;
   font-size: 9.5px;
@@ -3059,6 +2836,9 @@ kbd {
 }
 
 .tour-sim {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 10px;
   margin: 0 0 4px;
   font-size: 11.5px;
   color: #7dd3fc;
@@ -3152,8 +2932,9 @@ kbd {
 
 .welcome-ways {
   display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 8px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .welcome-ways button {
@@ -3164,14 +2945,29 @@ kbd {
   font-size: 14.5px;
 }
 
-.welcome-ways button:hover {
-  border-color: var(--accent);
+.welcome-ways .way-icon {
+  font-size: 18px;
+  line-height: 1;
+  color: var(--accent);
 }
 
-@media (max-width: 860px) {
-  .welcome-levels {
-    grid-template-columns: 1fr;
-  }
+.welcome-label {
+  margin: 0 0 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.welcome .explore {
+  display: block;
+  margin: 2px auto 8px;
+  font-size: 14px;
+}
+
+.welcome-ways button:hover {
+  border-color: var(--accent);
 }
 
 /* ---------- Routes and route planning ---------- */
@@ -3362,23 +3158,6 @@ div.summary {
   }
 }
 
-@media (max-width: 860px) {
-  .basemap-switch {
-    top: calc(var(--gap) + 62px);
-    bottom: auto;
-    right: var(--gap);
-    left: auto;
-    flex-direction: column;
-  }
-  .basemap-switch button {
-    width: 50px;
-  }
-  .basemap-switch .bm-thumb {
-    width: 40px;
-    height: 24px;
-  }
-}
-
 /* One information panel at a time (desktop): the settings follow the app-level rule. */
 @media (min-width: 861px) {
   .app:not(.ctrl-open) .control-panel {
@@ -3392,18 +3171,6 @@ div.summary {
     padding: 0;
     border: 0;
     background: none;
-    box-shadow: none;
-  }
-}
-
-@media (max-width: 860px) {
-  .sidebar .probe-card {
-    position: static;
-    width: auto;
-    max-height: none;
-    padding: 0;
-    background: none;
-    border: 0;
     box-shadow: none;
   }
 }
@@ -3577,31 +3344,123 @@ div.summary {
   margin: 2px 0 6px;
 }
 
-@media (max-width: 860px) {
-  .popover.as-sheet {
-    left: var(--gap);
-    right: var(--gap);
-    top: auto;
-    bottom: calc(var(--gap) * 3 + var(--dock-h) + var(--timebar-h));
-    width: auto;
-    max-height: 56vh;
-  }
-  .wind-chip span {
-    max-width: 92px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-  }
-  .wind-chip {
-    padding: 6px 8px;
-  }
+/* Phone: the hour slider gets its own full-width row; one thumbnail switches the basemap. */
+/* The whole-Alps visit, first in the massif list (global before specific). */
+.overview-card {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  width: 100%;
+  margin: 4px 0 10px;
+  padding: 10px 12px;
+  text-align: left;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  color: var(--text);
+  cursor: pointer;
+}
+.overview-card strong {
+  font-size: 13.5px;
+}
+.overview-card span {
+  font-size: 12px;
+  color: var(--text-2);
+}
+.overview-card:hover {
+  filter: brightness(1.12);
 }
 
-/* Phone: the hour slider gets its own full-width row; one thumbnail switches the basemap. */
+/* =====================================================================
+   Phone (≤ 860 px). The map fills the screen; one bottom sheet at a time
+   holds the list, the massif page, a detail, the layers or the visit
+   (ui/mobile.tsx sets --sheet-h from its three heights). The time bar shows
+   only when no sheet is open; the visit hides the rest of the chrome.
+   ===================================================================== */
 @media (max-width: 860px) {
   :root {
-    --timebar-h: 84px;
+    --gap: 8px;
+    --dock-h: 56px;
+    --timebar-h: 76px;
+    --sheet-h: 48dvh;
   }
+
+  /* Opaque panels without blur: blurring an animated map costs every frame and lets particles show through text. */
+  .panel,
+  .welcome-veil {
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .panel {
+    background: var(--panel-solid);
+  }
+
+  /* Top bar: logo, search, help. */
+  .topbar {
+    top: var(--gap);
+    left: var(--gap);
+    right: var(--gap);
+    width: auto;
+    height: 48px;
+    padding: 6px 8px;
+    gap: 8px;
+  }
+  .topbar .brand > div,
+  .topbar .brand h1,
+  .brand p,
+  .status,
+  .kbd {
+    display: none;
+  }
+  .search-results {
+    position: fixed;
+    top: calc(var(--gap) + 54px);
+    left: var(--gap);
+    right: var(--gap);
+    max-height: 60vh;
+  }
+
+  /* Navigation bar, edge to edge. */
+  .mobile-dock {
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 8;
+    height: calc(var(--dock-h) + env(safe-area-inset-bottom));
+    padding: 4px 6px env(safe-area-inset-bottom);
+    justify-content: space-around;
+    background: var(--panel-solid);
+    border-top: 1px solid var(--border);
+  }
+  .mobile-dock button {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--muted);
+    font-size: 11px;
+    cursor: pointer;
+  }
+  .mobile-dock button.active {
+    color: #fff;
+  }
+  .mobile-dock button.active svg {
+    color: var(--accent);
+  }
+
+  /* Time bar above the navigation bar: hour on its own full-width row. */
   .timebar {
+    left: var(--gap);
+    right: var(--gap);
+    bottom: calc(var(--dock-h) + env(safe-area-inset-bottom) + var(--gap));
+    height: auto;
     display: grid;
     grid-template-columns: 42px minmax(0, 1fr) auto auto;
     grid-template-rows: 34px 26px;
@@ -3630,39 +3489,308 @@ div.summary {
   .timebar .wind-chip {
     grid-column: 4;
     grid-row: 1;
+    padding: 6px 8px;
+  }
+  .timebar .wind-chip span {
+    max-width: 92px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .timebar .time-track {
     grid-column: 2 / span 3;
     grid-row: 2;
     align-self: start;
   }
-  .basemap-switch button.on {
+  .has-sheet .timebar {
     display: none;
   }
-}
 
-/* The whole-Alps visit, first in the massif list (global before specific). */
-.overview-card {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  width: 100%;
-  margin: 4px 0 10px;
-  padding: 10px 12px;
-  text-align: left;
-  border: 1px solid var(--accent);
-  border-radius: var(--radius-sm);
-  background: var(--accent-soft);
-  color: var(--text);
-  cursor: pointer;
-}
-.overview-card strong {
-  font-size: 13.5px;
-}
-.overview-card span {
-  font-size: 12px;
-  color: var(--text-2);
-}
-.overview-card:hover {
-  filter: brightness(1.12);
+  /* The bottom sheet (.is-mobile .popover outranks the desktop .popover.pop-* placements). */
+  .sidebar,
+  .is-mobile .popover,
+  .tour {
+    position: absolute;
+    top: auto;
+    left: 0;
+    right: 0;
+    bottom: calc(var(--dock-h) + env(safe-area-inset-bottom));
+    z-index: 7;
+    width: auto;
+    max-width: none;
+    height: var(--sheet-h);
+    max-height: none;
+    margin: 0;
+    padding: 0 16px 14px;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-radius: 16px 16px 0 0;
+    border-bottom: 0;
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.35);
+    transform: none;
+    animation: none;
+    transition: height 0.22s ease;
+  }
+  .sheet-dragging .sidebar,
+  .sheet-dragging .popover,
+  .sheet-dragging .tour {
+    transition: none;
+  }
+  .sidebar.collapsed {
+    display: none;
+  }
+  .popover .popover-head {
+    display: none;
+  }
+
+  .sheet-handle {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    min-height: 40px;
+    margin: 0 -16px 4px;
+    padding: 0 6px 0 12px;
+    background: var(--panel-solid);
+  }
+  .sheet-handle .grab {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 140px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border: 0;
+    background: transparent;
+    cursor: grab;
+    touch-action: none;
+  }
+  .sheet-handle .grab span {
+    width: 40px;
+    height: 4px;
+    border-radius: 2px;
+    background: var(--border-strong);
+  }
+  .sheet-handle .close {
+    margin-left: auto;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+  }
+
+  /* The visit: the map above, the text below, nothing else. */
+  .in-visit .topbar,
+  .in-visit .mobile-dock,
+  .in-visit .mobile-rail,
+  .in-visit .timebar,
+  .in-visit .sidebar,
+  .in-visit .popover,
+  .in-visit .maplibregl-ctrl-bottom-right {
+    display: none;
+  }
+  .in-visit .tour {
+    bottom: 0;
+    padding-bottom: 0;
+    border-color: var(--border);
+  }
+  .tour .tour-massif {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .tour .tour-chapters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    scrollbar-width: none;
+    margin: 0 -16px 8px;
+    padding: 0 16px;
+  }
+  .tour .tour-chapters::-webkit-scrollbar {
+    display: none;
+  }
+  .tour .tour-chapters button {
+    flex: none;
+    padding: 6px 10px;
+    font-size: 12.5px;
+  }
+  .tour h3 {
+    margin: 4px 0 6px;
+    font-size: 18px;
+    line-height: 1.3;
+  }
+  .tour-sim {
+    margin: 0 0 8px;
+    font-size: 12px;
+  }
+  .tour-lead,
+  .tour-lines {
+    font-size: 15.5px;
+    line-height: 1.55;
+    color: var(--text);
+  }
+  .tour-more {
+    font-size: 14px;
+  }
+  .tour-nav {
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    margin: 10px -16px 0;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    gap: 10px;
+    background: var(--panel-solid);
+    border-top: 1px solid var(--border);
+  }
+  .tour-nav .btn {
+    min-height: 44px;
+    min-width: 48px;
+    font-size: 15px;
+  }
+  .tour-nav .btn.primary {
+    min-width: 116px;
+  }
+
+  /* Map buttons, top right: base map, 2D / 3D, then MapLibre's locate, compass and attribution. */
+  .mobile-rail {
+    position: absolute;
+    top: calc(var(--gap) + 56px);
+    right: var(--gap);
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .rail-btn {
+    width: 48px;
+    min-height: 48px;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--panel-solid);
+    color: var(--text);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+  }
+  .rail-btn .bm-thumb {
+    display: block;
+    width: 36px;
+    height: 22px;
+    border-radius: 5px;
+  }
+  .rail-btn small {
+    font-size: 9.5px;
+    color: var(--text-2);
+  }
+  .rail-btn.text {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .is-mobile .maplibregl-ctrl-bottom-right {
+    top: calc(var(--gap) + 56px + 112px);
+    bottom: auto;
+    right: var(--gap);
+  }
+  .is-mobile .maplibregl-ctrl-scale,
+  .is-mobile .maplibregl-ctrl-zoom-in,
+  .is-mobile .maplibregl-ctrl-zoom-out {
+    display: none;
+  }
+  .is-mobile .maplibregl-ctrl-attrib:not(.user-open) .maplibregl-ctrl-attrib-inner {
+    display: none;
+  }
+
+  /* Inside the sheets. The sheet's own cross closes the massif page. */
+  .sidebar .massif-head .icon-btn {
+    display: none;
+  }
+  .sidebar .probe-card {
+    position: static;
+    width: auto;
+    max-height: none;
+    padding: 0;
+    background: none;
+    border: 0;
+    box-shadow: none;
+  }
+  .contrib {
+    top: calc(var(--gap) + 56px);
+    left: var(--gap);
+    right: var(--gap);
+    bottom: auto;
+    width: auto;
+    max-height: 70vh;
+  }
+  .figures {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* First visit: one screen, no scrolling on a usual phone. */
+  .welcome-veil {
+    padding: 0;
+    place-items: stretch;
+    background: var(--panel-solid);
+  }
+  .welcome {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    padding: calc(18px + env(safe-area-inset-top)) 16px calc(12px + env(safe-area-inset-bottom));
+    border: 0;
+    border-radius: 0;
+  }
+  .welcome h2 {
+    font-size: 22px;
+    line-height: 1.25;
+  }
+  .welcome .lead {
+    margin-bottom: 14px;
+    font-size: 14px;
+  }
+  .welcome-ways button {
+    min-height: 118px;
+    padding: 12px;
+  }
+  .welcome-ways button b {
+    font-size: 14px;
+    line-height: 1.25;
+  }
+  .welcome-ways small {
+    font-size: 12px;
+  }
+  .welcome-levels {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+  .welcome-levels button {
+    align-items: center;
+    justify-content: center;
+    padding: 10px 6px;
+    text-align: center;
+  }
+  .welcome-levels b {
+    font-size: 12.5px;
+    line-height: 1.25;
+  }
+  .welcome-levels small {
+    display: none;
+  }
+  .welcome .explore {
+    margin-top: auto;
+    padding: 12px;
+    font-size: 15px;
+  }
 }

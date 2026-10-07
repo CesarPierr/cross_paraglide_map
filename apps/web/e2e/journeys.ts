@@ -103,21 +103,51 @@ await page.close();
 // ---------- Phone ----------
 const phone = await browser.newPage({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, deviceScaleFactor: 2 });
 watch(phone);
+const pshot = (name: string) => phone.screenshot({ path: `${out}/${name}.png` });
 await phone.goto(`${url}#9.4/45.3/5.9/-10/50`, { waitUntil: 'domcontentloaded' });
 await ready(phone);
-await phone.screenshot({ path: `${out}/m00-welcome.png` });
+await pshot('m00-welcome');
 await phone.getByRole('button', { name: 'Juste explorer la carte' }).click();
-await phone.waitForTimeout(1000);
-await phone.screenshot({ path: `${out}/m01-home.png` });
+await phone.waitForTimeout(1500);
+await pshot('m01-home');
+// Massifs: the sector map above, the list in the sheet; a visit from the list.
 await phone.locator('.mobile-dock').getByRole('button', { name: /Massifs/ }).click();
-await phone.waitForTimeout(2000);
-await phone.screenshot({ path: `${out}/m02-massifs.png` });
+await phone.waitForTimeout(2500);
+await pshot('m02-massifs');
+await phone.locator('.sidebar').getByRole('button', { name: /^Chartreuse/ }).first().click();
+await phone.waitForTimeout(3500);
+await pshot('m03-visit');
+// Drag the sheet down to its smallest height: the map gets the screen, the step stays readable.
+{
+  const grab = phone.locator('.tour .sheet-handle .grab');
+  const box = (await grab.boundingBox())!;
+  await phone.mouse.move(box.x + box.width / 2, box.y + box.height / 2);
+  await phone.mouse.down();
+  await phone.mouse.move(box.x + box.width / 2, box.y + 320, { steps: 8 });
+  await phone.mouse.up();
+  await phone.waitForTimeout(2200);
+  await pshot('m03b-visit-peek');
+  await grab.click();
+  await phone.waitForTimeout(1200);
+}
+for (let i = 0; i < 3; i++) {
+  await phone.locator('.tour').getByRole('button', { name: 'Suivant' }).click();
+  await phone.waitForTimeout(1800);
+}
+await pshot('m04-visit-step4');
+await phone.locator('.tour').getByRole('button', { name: 'Quitter la présentation' }).click();
+await phone.waitForTimeout(1500);
+await pshot('m05-massif-page');
+await phone.locator('.sidebar').getByRole('button', { name: 'Fermer le panneau' }).click();
+await phone.waitForTimeout(1500);
 await phone.locator('.mobile-dock').getByRole('button', { name: /Calques/ }).click();
 await phone.waitForTimeout(800);
-await phone.screenshot({ path: `${out}/m03-layers.png` });
+await pshot('m06-layers');
+await phone.locator('.mobile-dock').getByRole('button', { name: /Calques/ }).click();
+await phone.waitForTimeout(600);
 await phone.locator('.wind-chip').click();
 await phone.waitForTimeout(800);
-await phone.screenshot({ path: `${out}/m04-conditions.png` });
+await pshot('m07-conditions');
 
 await browser.close();
 if (errors.length) {

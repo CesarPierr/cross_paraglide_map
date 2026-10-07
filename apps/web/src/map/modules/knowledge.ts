@@ -3,6 +3,7 @@
  * hazards, thermal and soaring spots, take-offs, landings, XC routes and
  * massif labels.
  */
+import { isPhoneLayout } from '../viewport';
 import type { ExpressionSpecification, SymbolLayerSpecification } from 'maplibre-gl';
 import type { AtlasFeature, FeatureCategory } from '@brises/shared';
 import { windowActivity } from '@brises/model';
@@ -164,13 +165,15 @@ export class KnowledgeModule implements MapModule {
       'lines',
     );
 
+    // A phone shows the same zoom on a screen four times smaller: points come in a little later there.
+    const later = isPhoneLayout() ? 0.8 : 0;
     const point = (id: FeatureCategory, icon: string, minzoom: number, extra: Partial<NonNullable<SymbolLayerSpecification['layout']>> = {}) =>
       ctx.addLayer(
         {
           id,
           type: 'symbol',
           source: id,
-          minzoom,
+          minzoom: minzoom + later,
           layout: {
             'icon-image': icon,
             'icon-size': ['interpolate', ['linear'], ['zoom'], 7, 0.55, 12, 0.95],
@@ -199,7 +202,7 @@ export class KnowledgeModule implements MapModule {
         id: 'thermals-measured',
         type: 'symbol',
         source: 'thermals',
-        minzoom: 10.5,
+        minzoom: 10.5 + later,
         filter: ['==', ['get', 'origin'], 'kk7'],
         layout: { 'icon-image': 'thermal', 'icon-size': ['interpolate', ['linear'], ['zoom'], 10.5, 0.42, 13, 0.7], 'icon-allow-overlap': true, 'symbol-sort-key': ['-', 1, ['get', 'kk7P']] },
         paint: { 'icon-opacity': 0.72 },

@@ -22,7 +22,11 @@ export function goTo(mode: Mode): void {
   useRuntime.getState().set({ feature: null });
   getController()?.clearProbe();
   const base = { schemaMassif: null, selectedMassif: null, tourStep: null, popover: null } as const;
-  if (mode === 'carte') s.set({ ...base, schemaPicking: false, browseOpen: false, mobileSheet: 'none' });
+  if (mode === 'carte') {
+    s.set({ ...base, schemaPicking: false, browseOpen: false, mobileSheet: 'none' });
+    // Back to the bare map: no margin left over from a panel that is gone.
+    getController()?.map.easeTo({ padding: { top: 0, bottom: 0, left: 0, right: 0 }, duration: 500 });
+  }
   else if (mode === 'massifs') {
     s.set({ ...base, schemaPicking: true, browseOpen: true, browseTab: 'massifs' });
     showBrowse();

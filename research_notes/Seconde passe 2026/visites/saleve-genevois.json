@@ -1,0 +1,117 @@
+{
+  "massif": "saleve-genevois",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "Le Salève, balcon de Genève",
+      "text": "Le Salève est un chaînon isolé, orienté sud-ouest nord-est, qui se dresse seul au-dessus du bassin genevois. Il n'a pas de vallée propre : ce qui s'y passe vient de deux choses, l'exposition de ses faces au soleil et le sens du vent météo. Retenez donc une règle simple : face nord-ouest quand le vent vient du nord, face ouest quand il vient de l'ouest, et surtout pas de sud. Par-dessus tout plane l'espace aérien de Genève, qui plafonne tout le massif.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le matin, l'air descend encore des falaises",
+      "text": "Aucun club n'évoque de vent descendant au Salève, mais le raisonnement est classique : la nuit, l'air refroidi glisse le long des pentes, et la face ouest, éclairée surtout l'après-midi, garde ce flux descendant tard dans la matinée. C'est une déduction, faible et inutilisable pour décider d'un vol. Elle explique pourquoi les Crêts se volent plutôt en fin de journée, et pourquoi le Téléphérique ne devient intéressant qu'à partir de 13 h.",
+      "focus": ["saleve-ecoulement-descendant-matinal"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le séchard, une brise du lac qui monte sur le Salève",
+      "text": "Au nord-ouest du massif, le Petit-Lac est le bras du Léman qui se resserre vers Genève. Les jours de beau temps d'été, l'air s'y écoule vers le nord-est à partir de 10 h environ : c'est le séchard. Les reliefs chauffés par le soleil aspirent cet air, si bien que, selon MétéoSuisse, la brise se prolonge jusque sur les pentes ensoleillées du Salève. Elle reste faible, généralement de 1 à 2 Beaufort, et s'estompe dès 16 h.",
+      "focus": ["saleve-sechard-petit-lac"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "L'après-midi, la face nord-ouest travaille",
+      "text": "À partir de 13 h, par secteur nord, la face nord-ouest est favorable jusqu'au soir : la brise de pente remonte la falaise et les thermiques se décrochent du pied de la pente. Au pied de la face, une carrière claire chauffe vite et sert de déclencheur à la Table d'orientation. Le revers, c'est que le décollage du Téléphérique se trouve alors sous le vent du thermique, d'où les « thermiques surprenants » que signalent les fiches. Le plafond est limité par la TMA, c'est-à-dire l'espace aérien de l'aéroport de Genève.",
+      "focus": ["saleve-pente-nord-thermique", "saleve-carriere-etrembieres", "saleve-faces-nord"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le soir, la face ouest prend le relais : le « Magic Salève »",
+      "text": "En fin de journée, c'est la face ouest qui reçoit le soleil. Une restitution se met en place : les prés et les pentes chauffés tout l'après-midi relâchent leur air chaud, et la brise de pente qui remonte la falaise permet de faire du soaring jusqu'au coucher du soleil. Les clubs genevois décrivent les Crêts comme le décollage de fin de journée par excellence. Aucune vitesse n'est documentée ; c'est l'orientation de la face qui explique le phénomène.",
+      "focus": ["saleve-pente-ouest-soir", "saleve-crets-ouest", "saleve-les-crets"],
+      "phase": "evening"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Téléphérique et Table d'orientation, les décollages du nord",
+      "text": "Le Téléphérique ne se vole que par vent de nord, par exemple une faible bise, et il est favorable de 13 h jusqu'au soir. À sa droite, le col de Monnetier crée un venturi, c'est-à-dire une accélération du vent dans un passage resserré : il faut rester au vent du col et ne pas se laisser pousser vers le village. À gauche, les câbles du téléphérique et une rangée d'arbres demandent un décollage propre. La Table d'orientation, un peu plus haut, convient aux vents de nord à nord-ouest, avec le nord-ouest pour idéal ; elle est légèrement protégée de l'est par vent faible.",
+      "focus": ["saleve-telepherique-table", "saleve-table-orientation", "saleve-venturi-col-monnetier", "saleve-telepherique-gradient"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Les Crêts : soaring d'ouest, danger de sud",
+      "text": "Les Crêts regardent l'ouest et le sud-ouest et sont très favorables au soaring ; on peut s'y reposer au décollage si le vent mollit. Par vent de sud, en revanche, le site devient malsain : le 6 décembre 2019, avec 22 km/h annoncés par la balise du Salève, un pilote a trouvé un vent fort et turbulent et a dû décoller dès le premier gonflage pour s'éloigner de la falaise. D'autres contraintes sont à connaître : un enclos obligatoire tant que les vaches sont là, et des faucons pèlerins sur la falaise en mai et juin.",
+      "focus": ["saleve-les-crets", "saleve-crets-sud-dangereux", "saleve-crets-ouest"],
+      "phase": "evening"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Se poser au pied du Salève : trois terrains, trois niveaux",
+      "text": "Jules Ferry, au bord de l'Arve, est l'atterrissage des débutants : balisé, utilisable par toutes orientations, mais sous le vent de la butte boisée de l'Arve, donc avec un gradient possible. Troinex, en Suisse, est un grand terrain facile mais soumis l'été à un fort départ thermique en approche ; depuis septembre 2026, la FFVL indique qu'il est réservé aux titulaires du brevet de pilote (IPPI 4), avec amende et saisie du matériel en cas de contrôle suisse. Le Coin, très encaissé, est un terrain pour pilote confirmé : on y trouve de gros déclenchements thermiques, et il est turbulent par vent de sud ou de nord fort.",
+      "focus": ["saleve-jules-ferry", "saleve-jules-ferry-gradient", "saleve-troinex", "saleve-troinex-thermique-ippi", "saleve-le-coin", "saleve-coin-atterro"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "L'espace aérien de Genève, le plafond du Salève",
+      "text": "La zone de contrôle de l'aéroport est interdite à tout vol, quelle que soit l'altitude. Au-dessus, la TMA1 autorise le vol jusqu'à 1050 m côté plaine et la TMA2 jusqu'à 1700 m sur le relief ; les fiches donnent des valeurs légèrement divergentes, donc vérifiez la carte à voile suisse. Un pilote local rappelle pourtant que cette TMA ne limite aucun cross : ce qui arrête les pilotes, ce sont les plaines autour du Salève, pas le plafond. Il faut aussi surveiller les interdictions temporaires publiées par le club, comme celles du G7 ou du Tour de France 2026, qui peuvent fermer le survol aux Crêts.",
+      "focus": ["geneve-espace-aerien", "saleve-atterros-supprimes"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Sortir vers Annecy, 1/2 : attendre le bon thermique",
+      "text": "Le récit le plus précis, celui du 17 avril 2016, part du Téléphérique à 13 h 47 par vent de nord-ouest léger à modéré. Le pilote reste environ une heure à zéro devant le décollage avant de trouver le thermique qui le monte à 1645 m, juste sous la TMA2 ; il note qu'il aurait dû attendre encore. Le thermique est ici « statique » : il se déclenche devant le décollage et tout autour, sans déplacer le pilote. Partir trop tôt n'a pas payé : le premier cap vers un cumulus ne donne rien et mène à un point bas à 984 m, à 4 km seulement du décollage.",
+      "focus": ["saleve-teleferique-thermique-statique", "saleve-sortie-plaine-desert-annecy"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Sortir vers Annecy, 2/2 : le désert de plaine et ses relances",
+      "text": "Entre le Salève et les reliefs d'Annecy s'étend un désert d'environ 15 km. Un thermique à 700 m au-dessus du sol ramène le pilote jusqu'à La Chapelle-Rambaud, où il trouve un thermique connu des locaux qui le monte de plus de 1000 m : c'est la seule balise de plaine qu'on lui avait indiquée. De là, il raccroche bas Sous-Dine sur une petite face nord-ouest, puis monte à 2000 m en vingt minutes, rejoint le Parmelan, où ça secoue, et se pose à Planfait vers 16 h 30 après 39 km. Une autre ligne passe par La Roche-sur-Foron et Sur Cou, premier relief après la plaine, dont on peut s'attendre à ce qu'il serve de relance l'après-midi.",
+      "focus": ["chapelle-rambaud-thermique-desert-saleve", "saleve-sous-dine-parmelan-planfait-2016", "sur-cou-relance-saleve", "saleve-sur-cou-annecy"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Vers le Môle, les grandes boucles et le triangle de 143 km",
+      "text": "Vers l'est, les pilotes citent le Môle comme destination plus accessible : l'un d'eux l'a atteint en partant à 16 h, et une vidéo montre la liaison Salève-Môle-Samoëns, au-delà de laquelle le Haut-Giffre ressemblerait à une autoroute vers les Fiz selon des récits non vérifiés. Pour s'entraîner sans quitter le massif, le club propose un challenge permanent de 35 km en boucle autour du Petit Salève, avec une attention particulière à la ligne rouge de la TMA. Le 21 août 2023, par forte canicule, un pilote genevois a volé un triangle de 143 km en 6 h 20, avec pour balises Saint-Ferréol et le mont Billiat.",
+      "focus": ["saleve-mole-samoens", "saleve-challenge-permanent", "saleve-triangle-143km-2023"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par vent de nord ou de bise",
+      "text": "Par nord ou faible bise, le Téléphérique est exclusivement conseillé et la Table convient aussi. Les Crêts sont alors sous le vent, donc à éviter. Sur le Léman la bise est le vent le plus fréquent, froid et sec, et elle souffle par rafales : forte, on s'abstient, car on peut s'attendre à des rouleaux et à un venturi marqué au col de Monnetier. À l'atterrissage, on tourne à droite à Troinex et on se pose plutôt à Jules Ferry.",
+      "focus": ["saleve-telepherique-table", "saleve-table-orientation", "saleve-venturi-col-monnetier"],
+      "wind": { "from": "N", "kmh": 15 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par ouest ou sud-ouest léger",
+      "text": "C'est le régime des Crêts : la face ouest est exposée au vent, le soaring est très favorable et le « Magic Salève » du soir peut s'installer. À Troinex, on tourne à gauche. Par sud-ouest, restez prudent : plus le vent bascule vers le sud, plus le site devient dangereux.",
+      "focus": ["saleve-crets-ouest", "saleve-les-crets", "saleve-pente-ouest-soir"],
+      "wind": { "from": "O", "kmh": 15 },
+      "phase": "evening",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par vent de sud, on reste au sol",
+      "text": "Par sud, aucun des trois décollages n'est favorable : les Crêts sont malsains, et le Téléphérique et la Table sont défavorables par sud comme par est. Au Coin, l'atterrissage est turbulent. Mieux vaut attendre un changement de vent.",
+      "focus": ["saleve-crets-sud-dangereux", "saleve-coin-atterro"],
+      "wind": { "from": "S", "kmh": 20 },
+      "phase": "afternoon",
+      "view": "massif"
+    }
+  ]
+}

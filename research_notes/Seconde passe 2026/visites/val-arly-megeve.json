@@ -1,0 +1,124 @@
+{
+  "massif": "val-arly-megeve",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "Megève, un col entre deux vallées",
+      "text": "Megève occupe une selle d'environ 1100 m, la ligne de partage des eaux entre l'Arve, du côté de Sallanches, et l'Arly, du côté de Praz-sur-Arly et d'Albertville. C'est ce qui explique tout le secteur : chaque après-midi, deux brises de vallée, l'une montant de l'Arve, l'autre de l'Arly, remontent vers ce col et s'y rencontrent. Retenez donc que Megève est un site de brise et de confluence, où l'on vole paisiblement, mais où les atterrissages au bout de chaque vallée sont soumis à une brise forte.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le matin, deux vallées qui se vident",
+      "text": "Aucune source ne décrit de vent descendant ici, mais le raisonnement est simple : la nuit, l'air froid s'écoule du col de Megève vers l'Arve d'un côté et vers Albertville de l'autre. Les indices vont dans ce sens : le décollage du Méruz se vole le matin avant que la brise ne devienne forte, et Cordon donne des thermiques dès le matin. Cet écoulement est faible et sert seulement à comprendre pourquoi la matinée est calme ; il ne doit pas guider une décision de vol.",
+      "focus": ["brise-matinale-descendante-arly", "brise-matinale-descendante-arve-megeve"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "L'après-midi, les brises remontent vers le col",
+      "text": "En fin de matinée, la brise s'inverse et l'air remonte chaque vallée. Du côté de l'Arve, le flux venu du bassin de Sallanches se scinde sur le Mont d'Arbois, et une branche monte vers Combloux et Megève : à Cordon, dès 13 h, elle devient plus forte que le thermique. Du côté de l'Arly, la brise venue d'Albertville par Ugine arrive presque toujours de face au décollage du Méruz et se renforce tout l'après-midi, au point de passer par-dessus la crête de Bisanne.",
+      "focus": ["brise-arve-vers-megeve", "brise-arly"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Au col, la confluence",
+      "text": "Les deux brises se rencontrent à Megève : c'est la confluence de col. Une confluence est l'endroit où deux flux de sens opposés se heurtent et ne peuvent que monter ou s'étaler. La brochure y voit des conditions qui permettent de longs vols paisibles depuis Rochebrune. En mai 2015, par flux de sud faible, un pilote a même glissé plus de 7 km au-dessus de la station sans enrouler, à moins de 100 m des chalets ; la confluence se forme d'ordinaire plutôt vers Praz-sur-Arly.",
+      "focus": ["convergence-ensellement-megeve", "confluence-praz-sur-arly-megeve-combloux-2015"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Rochebrune et ses relances",
+      "text": "Depuis Rochebrune, la première ascendance se trouve juste après le décollage : c'est le thermique de l'Alpette, qu'on accroche par vent de secteur nord ou par brise thermique. Il permet soit de basculer vers la vallée de l'Arly, soit de partir en cross vers le Mont Joly ou les Aravis. Le Christomet, premier relief exposé au sud sur la route de Cordon, sert probablement de relance intermédiaire, mais aucun récit ne décrit son thermique.",
+      "focus": ["thermique-de-l-alpette", "christomet-relance-vers-cordon"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Cordon : des thermiques tôt, la brise ensuite",
+      "text": "Côté Arve, les faces nord-est à sud de la Tête du Planet chauffent tôt : on y trouve des thermiques dès le matin et un bon départ de cross, considéré comme le portail vers les Aravis. Mais après 13 h, la brise de vallée dépasse le thermique et souffle dans le dos au décollage. Les pilotes décollent donc tôt, ou se replient sur le plateau des Benets, un peu plus haut.",
+      "focus": ["cordon-tete-du-planet", "cordon-thermiques-matin", "cordon-brise-vent-arriere"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Rochebrune, le site de référence",
+      "text": "Rochebrune s'ouvre à l'ouest-nord-ouest, et se vole aussi par nord. On y monte par le téléphérique l'hiver et en juillet-août. L'atterrissage se fait au Palais des Sports, au centre de Megève, ou dans la plaine de Praz-sur-Arly. À l'est du décollage, l'altiport de la Cote 2000 interdit tout survol : il ne faut pas passer à moins de 1800 m au point d'entrée, à la verticale du hameau du Tour.",
+      "focus": ["rochebrune", "palais-des-sports-megeve", "plaine-praz-sur-arly", "altiport-megeve-cote-2000"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Deux décollages sur les flancs de l'Arly",
+      "text": "Le Méruz, au-dessus d'Ugine, regarde le sud-est : c'est un décollage du matin, avant que la brise d'Arly, de face, ne devienne trop forte, mais il est petit et peu adapté aux débutants. Le Crêt du Midi, ou Ban Rouge, offre un soaring d'ouest agréable et mène directement à Praz-sur-Arly, mais il est interdit l'été à cause des troupeaux en alpage : l'office de Praz-sur-Arly renvoie alors vers Rochebrune.",
+      "focus": ["le-meruz", "marthod-ugine", "cret-du-midi-ban-rouge", "soaring-ouest-cret-du-midi", "cret-du-midi-troupeaux"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Les atterrissages : où la brise a le dernier mot",
+      "text": "Au Palais des Sports, la confluence de col rend l'approche délicate, et le terrain est inatteignable par vent soutenu de nord à nord-est : il faut alors prévoir Praz-sur-Arly. À Praz-sur-Arly, le Plan de Cassioz est un petit terrain triangulaire entre route et ligne électrique, à repérer avant de décoller, utilisable seulement l'été. Du côté de l'Arve, Rochefort s'utilise le matin car il est turbulent l'après-midi, et Lépigny est un grand terrain accessible aux débutants, mais agité par la brise forte de l'après-midi.",
+      "focus": ["megeve-palais-confluence-col", "praz-sur-arly-ligne-ht", "cordon-rochefort", "lepigny-domancy"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Traverser le Val d'Arly depuis Bisanne",
+      "text": "Le récit du 8 août 2020 montre le grand itinéraire du secteur. Le pilote décolle du Signal de Bisanne à 11 h 49, avant que la brise ne le rende arrière, et prend un premier thermique à 2700 m. Il monte à 3135 m à la verticale de l'Aiguille Croche, puis traverse le Val d'Arly et raccroche à 3100 m au-dessus de Praz-sur-Arly, d'où la rue de cumulus des Aravis l'emporte. D'autres pilotes ont refait 3000 m au même endroit en 2007.",
+      "focus": ["bisanne-aiguille-croche-praz-aravis-2020", "aiguille-croche-plafond-3135", "praz-sur-arly-relance-3100", "bisanne-brise-arly-dos"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Du Mont Joly au Mont Blanc, et ce qu'il en coûte",
+      "text": "Au nord-est, le Mont Joly fournit les derniers thermiques avant le massif du Mont Blanc. Le 18 août 2012, un groupe décollé de Bisanne à 12 h 45 y fait ses derniers thermiques, puis passe vers le Mont Blanc à 3200 m. Le lendemain, avec une inversion et un plafond de 2000 m, il a fallu trois décollages à pied pour atteindre le Mont Joly sans pouvoir y monter : un jour d'inversion, mieux vaut renoncer à cette transition.",
+      "focus": ["bisanne-mont-joly-mont-blanc-2012", "mont-joly-derniers-thermiques-megeve", "rochebrune-mont-joly"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Rochebrune vers les Aravis, et la glisse jusqu'à Combloux",
+      "text": "Depuis Rochebrune, après le thermique de l'Alpette, la route naturelle suit la crête de Cordon jusqu'aux Aravis ; ce tracé est déduit de la brochure et non d'un récit. En mai 2015, en fin de vol, un pilote venu des Saisies a rejoint Megève en suivant la vallée de l'Arly, puis a profité de la confluence pour glisser sur plus de 7 km. À Combloux, un verrou est le passage obligé : il se franchit face à la brise, en collant au relief.",
+      "focus": ["rochebrune-cordon-aravis", "saisies-flumet-praz-megeve-combloux-2015", "megeve-verrou-brise-forte-avril"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Les rouleaux et le thermique violent",
+      "text": "Par vent de sud-ouest, le décollage de Rochebrune est dangereux : la brochure parle de rouleaux, c'est-à-dire d'un air tourbillonnant sous le vent de la crête, même si la fiche FFVL et le club listent le sud-ouest parmi les vents de décollage. Par tendance de sud, Cordon peut connaître des conditions foehniques dangereuses en l'air. Sous la Tête du Torraz, à l'entrée de la vallée de l'Arly, un récit de février 2011 rapporte un thermique violent, de plus de 5 m/s, qui a mis en parachutale l'un des deux pilotes à l'entrée.",
+      "focus": ["rochebrune-rouleaux-sud-ouest", "torraz-le-char-thermique-violent", "cordon-brise-vent-arriere"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par vent de nord",
+      "text": "Par vent de nord, Rochebrune est volable, mais le Palais des Sports devient inatteignable dès que le vent est soutenu : prévoir Praz-sur-Arly. À Cordon, la Tête du Planet convient par léger nord, et le Crêt du Midi se vole directement vers Praz-sur-Arly. Le nord de la vallée de l'Arve alimente aussi la confluence de Megève.",
+      "focus": ["megeve-palais-confluence-col", "cordon-tete-du-planet", "thermique-de-l-alpette"],
+      "wind": { "from": "N", "kmh": 15 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par vent d'ouest",
+      "text": "L'ouest est le régime de Rochebrune, dont le décollage regarde ouest-nord-ouest, et celui du soaring au Crêt du Midi hors saison des troupeaux. Attention à Bisanne Sud, qui donne des rouleaux par vent d'ouest.",
+      "focus": ["rochebrune", "soaring-ouest-cret-du-midi"],
+      "wind": { "from": "O", "kmh": 15 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par vent de sud-ouest ou de sud",
+      "text": "Par sud-ouest, Rochebrune est dangereux et la Tête du Planet défavorable ; le plateau des Benets est sensible aux entrées de sud-ouest. Par sud forcissant, les biplaces de Megève se posent au-dessus de la gare de Rochebrune plutôt qu'en plaine. Le foehn touche toute la vallée de l'Arve : le CMBVL rappelle les rotors qu'il engendre.",
+      "focus": ["rochebrune-rouleaux-sud-ouest", "cordon-brise-vent-arriere", "praz-sur-arly-ligne-ht"],
+      "wind": { "from": "SO", "kmh": 20 },
+      "phase": "afternoon",
+      "view": "massif"
+    }
+  ]
+}

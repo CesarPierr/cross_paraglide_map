@@ -1,0 +1,117 @@
+{
+  "massif": "ubaye",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "L'Ubaye, une vallée qui respire d'ouest en est",
+      "text": "L'Ubaye est une longue vallée orientée est-ouest, qui débouche sur le bras du lac de Serre-Ponçon près de Saint-Vincent-les-Forts et remonte jusqu'à Larche et à la frontière italienne. Abritée des vents du nord, elle est présentée comme une très bonne zone de cross, de Lauzet à Maljasset. Retenez une idée simple : le matin et le soir sont calmes, et c'est l'après-midi que la vallée aspire l'air du lac vers l'amont, parfois très fort. Les pilotes de l'Ubaye volent donc tôt ou tard, rarement au milieu de la journée.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le matin, l'air redescend vers le lac",
+      "text": "La nuit et jusqu'à environ 11 h, l'air froid s'écoule de la haute vallée vers l'aval. Un récit de hike and fly le confirme : à 11 h, par jour calme, la brise sur le terrain de La Chaup est très faible et vient de Jausiers, donc dirigée vers l'ouest. Sur la croupe de Soleil Bœuf, on décolle côté est avant 10 h, puis le flux s'établit côté ouest vers 10 h 20. Cette matinée tranquille est la fenêtre des décollages sans brise.",
+      "focus": ["brise-matinale-descendante-ubaye", "soleil-boeuf"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "À partir de 11 h, la brise de l'Ubaye s'installe",
+      "text": "Quand le soleil a réchauffé la vallée, l'air du lac et de la basse vallée est aspiré vers les cols : c'est la brise de vallée montante. Elle se lève vers 11 h et peut devenir très forte au printemps et en été, jusqu'à environ 20 h. Les fiches la qualifient de très forte à Jausiers et à Saint-Ours, et un récit signale qu'elle peut empêcher de poser avant 20 h à Barcelonnette. Dans les gorges entre Le Lauzet et Barcelonnette, elle est souvent forte et aucun atterrissage n'est possible.",
+      "focus": ["brise-ubaye", "ubaye-gorge-sans-pose", "hippodrome-barcelonnette-brise"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le soir, les thermiques reviennent",
+      "text": "Quand la brise faiblit, la fin de journée redonne de l'air utilisable. Le vol du soir est présenté comme exceptionnel au Dôme de l'Alp, au-dessus du Sauze : des thermiques de qualité permettent de gagner beaucoup de hauteur. Soleil Bœuf, de son côté, marche surtout le matin et le soir, probablement parce que sa croupe est bien exposée au soleil en début et en fin de journée, tandis que le milieu de la journée est dominé par la brise.",
+      "focus": ["therm-dome-alpe-soir", "therm-soleil-boeuf-matin-soir"],
+      "phase": "evening"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "La crête de la Blanche, l'autoroute du cross",
+      "text": "La crête de la Blanche court sur une vingtaine de kilomètres, de Dormillouse à la tête de l'Estrop, orientée à l'ouest et au sud. Les récits l'appellent l'autoroute de la Blanche : souvent il suffit de suivre la crête sans enrouler, avec des plafonds de 2700 à 3000 m, parfois plus de 3000 m par jour de nord. Les thermiques y sont puissants, il faut surveiller l'ombre des nuages et se décaler vers l'ouest si besoin. Au-delà du Pic des Têtes, on change de vallée et la récupération devient scabreuse.",
+      "focus": ["therm-blanche-pic-des-tetes", "bernardez-hache-contrant"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Les faces est du matin et les falaises des Séolanes",
+      "text": "Au-dessus de Pra-Loup, les faces est se réchauffent en matinée et déclenchent probablement avant que la brise n'entre : le décollage plein est est décrit comme fiable. Au sud de Barcelonnette, on peut aussi longer les falaises des Séolanes ou survoler la forêt de la Gimette, sur 1000 m de dénivelé. Ce sont les vols biplace de l'école, qui profitent de ces expositions sud et sud-ouest.",
+      "focus": ["therm-pra-loup-est", "soaring-seolanes"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Pra-Loup, Point de Vue et Soleil Bœuf : un décollage par heure",
+      "text": "L'école de Barcelonnette cale ses vols sur l'aérologie : Soleil Bœuf à 8 h, Point de Vue à 10 h, Dôme de l'Alpe à 13 h 30 et vol du soir à 18 h. Point de Vue, orienté sud et sud-ouest, est une colline d'entraînement facile. Pra-Loup, plein est, est fiable mais son atterrissage est serré. Soleil Bœuf, à 2200 m avec 1060 m de dénivelé, est l'un des meilleurs sites de la vallée, mais il demande un 4x4 ou 2 à 3 h de marche, et il faut décoller avant 10 h 30 ou 11 h pour éviter la brise.",
+      "focus": ["faucon-barcelonnette", "pra-loup", "soleil-boeuf", "therm-dome-alpe-soir"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Atterrir à Barcelonnette : La Chaup, puis la brise",
+      "text": "La Chaup basse est l'atterrissage le plus facile de la vallée : environ 6 hectares d'herbe parfaitement plate, à 5 minutes de l'école. Mais à partir de midi, la brise y est parfois critique, même pour traverser l'Ubaye. L'hippodrome voisin demande la même méfiance. La règle locale est de poser avant 11 h ou le soir.",
+      "focus": ["atterro-la-chaup", "atterro-hippodrome", "hippodrome-barcelonnette-brise"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Plus haut dans la vallée : Jausiers, Halte 2000, Larche, Saint-Ours",
+      "text": "En amont, les terrains d'atterrissage sont des prairies à poser face à la brise, montante ou descendante. À Jausiers, il ne faut pas poser si des chevaux sont présents ; à Halte 2000, l'atterrissage est interdit du 15 juin au 31 juillet pour les foins, et à Saint-Ours du 15 mai au 15 septembre. Larche plage offre une longue bande qui permet de poser face à la brise. Tous ces terrains subissent la brise de vallée forte l'après-midi.",
+      "focus": ["atterro-jausiers", "jausiers-brise-chevaux", "atterro-halte-2000", "atterro-larche-plage", "atterro-saint-ours"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Le triangle de 138 km vers le Champsaur",
+      "text": "Le vol d'avril 2022 donne une idée du cross possible : départ de Barcelonnette, première traversée du lac de Serre-Ponçon, vol vers le Champsaur, puis retour par Dormillouse et Pra-Loup avant de finir à Barcelonnette. Au total 138 km en triangle, avec une longue attente en fin de vol, que la brise laisse le pilote boucler à Barcelonnette. Le tracé du triangle de 252 km de juillet 2021 n'est pas lisible dans les sources.",
+      "focus": ["barcelonnette-champsaur-dormillouse-pra-loup-138km-2022"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Le vol rando de la haute vallée",
+      "text": "Dans la haute Ubaye, la tête de Parassac se vole en vol rando, c'est-à-dire en montant à pied : parking au lac des Sagnes, 900 m de montée en 2 h, décollage du col à 2700 m, côté ouest uniquement car l'est est en cœur du Mercantour. Il faut décoller avant 10 h, car la brise de vallée se lève dès 10-11 h. On atterrit devant le lac des Sagnes en gardant à l'esprit que le terrain est au vent du lac, quand la brise s'alimente.",
+      "focus": ["tete-de-parassac-col-sud", "atterro-lac-des-sagnes", "lac-des-sagnes-brise-plouf"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Le cœur du Mercantour et le foehn d'est",
+      "text": "Le survol du cœur du parc national du Mercantour, au sud du col de la Bonnette-Restefond, est interdit à moins de 1000 m au-dessus du sol toute l'année, avec quelques dérogations individuelles hors de l'Ubaye. Autre piège : par tendance est, la Lombarde produit un effet de foehn, qui est un vent descendant sec et turbulent, dit « faux foehn » avec vent d'est marqué en altitude. Enfin, par sud, sud-est ou sud-ouest, la brise peut descendre du col de Restefond et perturber toute l'aérologie de Halte 2000.",
+      "focus": ["mercantour-coeur-ubaye", "halte-2000-foehn", "brise-restefond-jausiers"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par vent de nord",
+      "text": "La vallée est abritée des vents du nord : c'est le régime du cross de Lauzet à Maljasset, et le nord est favorable aux atterrissages de Jausiers, de Restefond et de Larche. Un nord fort peut cependant mettre Saint-Ours sous le vent du col de Mirandol. Le pic de Bernardez est très contrant quand la brise a une composante nord.",
+      "focus": ["saint-ours-col-arche", "bernardez-hache-contrant", "therm-blanche-pic-des-tetes"],
+      "wind": { "from": "N", "kmh": 15 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par vent d'est ou de sud-est",
+      "text": "Avec une tendance est ou sud-est, il faut se méfier de la brise de Larche : elle peut venir de l'Italie par le col de l'Arche et rester descendante vers l'Ubaye toute la journée. Larche plage et Saint-Ours sont alors défavorables, et Halte 2000 expose au foehn de la Lombarde. Le vent entre par les cols, au lieu de suivre le rythme normal de la brise.",
+      "focus": ["brise-larche-italie", "saint-ours-col-arche", "halte-2000-foehn"],
+      "wind": { "from": "E", "kmh": 20 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par vent de sud",
+      "text": "Par sud, le décollage de Point de Vue est favorable, puisqu'il regarde le sud et le sud-ouest. En revanche, le vent entre par le col de Restefond et rend Halte 2000 et le ravin de Clapouse défavorables à l'atterrissage.",
+      "focus": ["faucon-barcelonnette", "brise-restefond-jausiers", "atterro-restefond"],
+      "wind": { "from": "S", "kmh": 15 },
+      "phase": "afternoon",
+      "view": "massif"
+    }
+  ]
+}

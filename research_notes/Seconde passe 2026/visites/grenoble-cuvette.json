@@ -1,0 +1,110 @@
+{
+  "massif": "grenoble-cuvette",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "Grenoble, au cœur d'un Y de trois vallées",
+      "text": "Grenoble est au centre d'un Y : le Drac arrive du sud, puis la vallée se divise en deux branches, la cluse de Voreppe vers le nord-nord-ouest et le Grésivaudan vers le nord-est. Deux auteurs de Vol Libre estiment que la cluse de Voreppe est responsable de 75 % de l'aérologie locale : elle bloque les entrées de nord en basses couches mais offre un conduit parfait qui alimente les reliefs en brises. Retenez que la cuvette est surtout un lieu de passage, la plaque tournante des transitions entre Vercors, Chartreuse et Belledonne, mais aussi une zone basse, urbanisée et sous contrainte aérienne.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "À l'aube, l'air redescend et sort par la Bièvre",
+      "text": "La nuit et jusqu'à 10 h ou 10 h 30, le régime est celui de la brise descendante. Les mesures anciennes de Monin décrivent la « Matinière », un vent d'est de fin de nuit observé à Saint-Étienne-de-Saint-Geoirs, qui est un effet de brise de montagne ; son trajet par la cluse de Voreppe est une déduction. Du côté d'Uriage, la fiche de l'atterrissage donne le même rythme : brise descendante du lever du jour à 10 h 30, puis brise qui peut remonter d'Uriage jusqu'à 12 h 30. C'est le moment calme où l'on décolle, avant que la cluse ne se mette à souffler.",
+      "focus": ["grenoble-matiniere-descendante", "grenoble-uriage-brise"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "La brise de la cluse : un tuyau qui s'ouvre vers midi",
+      "text": "Par beau temps d'été, l'air est aspiré par la cluse de Voreppe et une brise montante s'y établit dès la fin de matinée ou en début d'après-midi. Elle est forte dans la cluse, traverse Grenoble et file vers le sud le long du Drac, vers Vif. Les fiches de Voreppe la signalent dès la fin de matinée, forte l'été, et prévoient qu'elle peut augmenter assez fortement à l'atterrissage. Au sud de Grenoble, ce flux alimente la brise du Drac vers Monteynard et le Trièves.",
+      "focus": ["isere-voreppe-brise-montante", "cuvette-drac-sud-brise"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le Grésivaudan répond : une brise qui descend",
+      "text": "Dans le Grésivaudan, Vol Libre décrit une brise descendante « anormale » : elle est aspirée vers Grenoble par la forte brise de la cluse. Ce sens est contesté selon les situations, car le même article décrit par fortes chaleurs, de juin à août, une brise qui monte dans le Grésivaudan et qui donne un faux vent de sud à Saint-Hilaire, pour de bonnes conditions de vol. Retenez que le sens dépend de la journée et de la masse d'air, et qu'un schéma qui mettrait le Grésivaudan dans le même sens que la Combe de Savoie serait faux, selon les pilotes de parapentiste.info.",
+      "focus": ["bas-gresivaudan-brise-descendante", "bas-gresivaudan-brise-montante"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Au nord-est de Grenoble, la confluence",
+      "text": "Là où la forte brise de la cluse rencontre la brise descendante du Grésivaudan, l'air n'a d'autre issue que de monter : c'est la confluence, au nord-est de Grenoble. Elle se forme au-dessus de 400 à 500 m et donne des varios de 2 à 3 m/s, avec une instabilité moyenne : pour Vol Libre, ce sont globalement les conditions idéales du vol libre. Il faut éviter sa bordure ouest, généralement turbulente, et surveiller le surdéveloppement quand le temps vire à l'orage. Un pilote l'a vue matérialisée par des nuages à La Terrasse et Tencin, plus au nord que prévu.",
+      "focus": ["confluence-ne-grenoble"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Uriage et la Romanche : les autres tuyaux de la cuvette",
+      "text": "Plus à l'est, la même brise de Grenoble remonte la vallée d'Uriage dès le début de l'après-midi et jusqu'à l'inversion du soir. Au-delà de 35 km/h venant de Grenoble, la fiche de l'atterrissage déconseille de décoller. Vers le sud-est, la basse Romanche est supposée porter une brise de Grenoble vers Vizille et Livet, mais aucune source de club n'en documente la force ni l'heure, donc la confiance est faible. On sait seulement que les gorges de Séchilienne et le village de Laffrey y créent un effet de venturi, c'est-à-dire une accélération du vent dans un passage étroit.",
+      "focus": ["grenoble-uriage-brise", "uriage-richardiere", "romanche-aval-brise"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Chalais : abrité au décollage, exposé à l'atterrissage",
+      "text": "Le décollage de Chalais, à Voreppe, regarde le sud : il est protégé de la brise de nord qui monte dans la vallée dès la fin de matinée. L'atterrissage de Rivalières, lui, est au fond de la vallée et reçoit cette brise de plein fouet, parfois forte l'été : il faut prévoir de la marge et se méfier d'une ligne électrique de 20 kV sur le champ voisin. Un terrain de rugby sert de secours. L'espace aérien est réglementé, avec la CTR2 de Grenoble et la TMA 15 de Lyon, activables de mi-décembre à mi-avril : écoutez l'ATIS avant d'entrer.",
+      "focus": ["chalais-voreppe", "voreppe-rivalieres", "chalais-brise-nord-atterro-voreppe", "voreppe-rugby-secours", "chalais-espace-aerien"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Poisat : le dynamique du soir sur la face nord",
+      "text": "Poisat, à l'est de Grenoble sur Belledonne, est un site de fin de journée l'été : il fonctionne avec la brise thermique de nord, et les voiles en appui dynamique sur la face nord ne sont pas toujours visibles du décollage tant que leur gain n'est pas significatif, d'où le conseil de garder le contact radio. L'atterrissage officiel est le terrain cultivable juste au-dessus de la piscine d'Eybens. Les lignes électriques à haute tension près du décollage en font un site de niveau confirmé.",
+      "focus": ["poisat", "poisat-dynamique-brise-nord", "ffvl13474-poisat-lignes-ht"],
+      "phase": "evening"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Du Moucherotte au Rachais, sous la ZIT",
+      "text": "La transition du Vercors vers la Chartreuse part du Moucherotte et franchit la cuvette ; on conseille un plafond de départ de 2300 m ou plus. Le piège est la ZIT, la zone interdite de Grenoble : un pilote parti à presque 2700 m directement vers le Rachais a été déporté par une composante ouest dans la zone et n'a pas pu faire valider son vol, alors que partir plein nord vers Sassenage permet de raccrocher le Néron assez bas tout en évitant la zone. Il ne faut pas descendre sous 1220 m au-dessus du CEA. À l'arrivée sur le Mont Jalla et la Bastille, on arrive bas, mais les récits parlent de plein de petites bulles faciles à enrouler.",
+      "focus": ["zit-grenoble-transition-moucherotte-chartreuse", "mont-jalla-bastille-relance", "chartreuse/transition-grenoble-vercors"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Du Rachais au Vercors : éviter la pointe sud du Néron",
+      "text": "En sens inverse, le cheminement Rachais, Néron, Vercors passe par une zone sous le vent de la brise de Voreppe. Il faut éviter la pointe sud du Néron : on y arrive sous le vent, et la brise y crée un piège plutôt qu'un thermique. Le topo du Rachais demande 1400 m pour basculer du Rachais sur le Néron, puis 1800 m depuis le Néron pour raccrocher le Vercors au-dessus des lignes.",
+      "focus": ["neron-pointe-sud-sous-le-vent"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Le front froid, le sud au sol, la cluse qui accélère",
+      "text": "Les vents forts dominants à Grenoble sont des vents de nord-ouest froids et humides, qui s'accélèrent dans la cluse de Voreppe : quand un front froid se présente, un vent soudain et fort y apparaît en toute saison. Il emprunte aussi les cols de Vence, du Coq et des Ayes sous la Dent de Crolles, des zones turbulentes et dangereuses. Quand un front froid stagne, le vent entre à la fois par la cluse de Voreppe et par celle de Chambéry, et leur confluence agitée sur Crolles et Lumbin est dangereuse. Enfin, par vent de sud établi jusqu'au sol, vers Vif et la banlieue sud, aucun atterrissage n'est envisageable en sécurité.",
+      "focus": ["cluse-voreppe-acceleration", "confluence-crolles-lumbin-front-froid", "vent-de-sud-sol-vif"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par nord-ouest : la cluse en tuyère",
+      "text": "Le nord-ouest s'engouffre dans la cluse de Voreppe, y accélère puis se détend sur la cuvette ; il s'ajoute à la brise de vallée de l'après-midi. Un « léger nord forcissant » annoncé peut suffire à transformer le col du Coq en machine à laver : pour quelques km/h d'écart, le nord déborde par-dessus la Chartreuse. À Chalais, le décollage reste abrité mais l'atterrissage est exposé.",
+      "focus": ["cluse-voreppe-acceleration", "isere-voreppe-brise-montante", "chalais-brise-nord-atterro-voreppe"],
+      "wind": { "from": "NO", "kmh": 20 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par sud ou sud-ouest : bon pour le Saint-Eynard, pas pour l'atterrissage",
+      "text": "Quand une dépression approche par l'ouest, le vent de sud ou sud-ouest rend les brises de vallée descendantes ou partiellement ascendantes. Il est excellent pour le soaring du Saint-Eynard tant qu'il reste sous 30 à 50 km/h à 3000 m, et la zone de cisaillement entre le vent et la brise est un bon moment à passer avant de se poser. Mais dès que le sud arrive au sol, il devient trop fort et empêche tout atterrissage en sécurité.",
+      "focus": ["vent-de-sud-sol-vif", "grenoble-uriage-brise"],
+      "wind": { "from": "SO", "kmh": 20 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par nord ou nord-est : de bonne heure seulement",
+      "text": "Avec un air polaire froid et instable, par nord ou nord-est fort, des cumulus se développent à 1500-2000 m et une confluence se forme au sud de Grenoble : c'est exploitable en vol à voile seulement. Le vol libre reste praticable de très bonne heure, mais l'atterrissage de Lumbin devient impossible en sécurité après 9 h 30 ou 10 h. Par fort nord, les locaux se replient sur Montaud, Courtet ou Montlambert.",
+      "focus": ["confluence-sud-grenoble-nne", "chalais-brise-nord-atterro-voreppe"],
+      "wind": { "from": "N", "kmh": 25 },
+      "phase": "morning",
+      "view": "massif"
+    }
+  ]
+}

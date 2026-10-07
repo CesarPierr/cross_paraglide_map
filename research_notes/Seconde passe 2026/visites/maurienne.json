@@ -1,0 +1,174 @@
+{
+  "massif": "maurienne",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "La Maurienne, la vallée de la brise forte",
+      "text": "La Maurienne est une grande vallée sèche et encaissée, qui s'étire entre la cluse d'Aiguebelle, à l'ouest, et Modane, à l'est. Sa brise de vallée est réputée forte, et elle gouverne toute la journée : les pilotes locaux disent qu'elle limite le cross et oblige à partir tôt. Les décollages classiques sont donc des sites de matinée, tournés du sud-est au sud-ouest, et les atterrissages doivent être pris le matin, dans le fond de vallée. Retenez que l'on vole ici de bonne heure, ou haut au-dessus de la brise, ou très tard.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le matin, un air calme et des brises de pente",
+      "text": "Aucune source ne décrit le régime de nuit, mais on peut en déduire qu'une vallée de 60 km qui se vide vers la Combe de Savoie voit l'air refroidi s'écouler vers l'aval avant que le soleil ne chauffe les versants. Ce qui est documenté, c'est que la matinée est calme et propice au vol : à Montgellafrey, la fiche parle d'une brise de pente le matin avec un léger sud, et les décollages se concentrent entre 9 h et 11 h, et la brise de vallée n'arrive qu'ensuite.",
+      "focus": [
+        "brise-matinale-descendante-maurienne",
+        "montgellafrey-brise-de-pente-matin"
+      ],
+      "phase": "morning"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "À partir de 11 h, la brise de vallée se déchaîne",
+      "text": "Vers 11 h, l'air commence à remonter la vallée depuis la Combe de Savoie : c'est la brise montante, réputée forte. À Saint-Jean, la fiche annonce une forte brise dès 11 h à partir de mars, avec plus de 50 km/h l'après-midi, et à La Chambre elle est très forte l'après-midi d'avril à octobre. Le conseil est donc simple et unanime : l'été, se poser à Saint-Jean avant 11 h, et ne rien poser à La Chambre après midi. Au décollage de Montgellafrey, la brise de 11 h met le décollage sous le vent.",
+      "focus": [
+        "brise-montante-maurienne",
+        "brise-forte-atterro-saint-jean",
+        "montgellafrey-brise-de-pente-matin"
+      ],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Les crêtes au-dessus des décollages du matin",
+      "text": "Montgellafrey est cité par un pilote local comme le site des beaux départs de cross, vers les Bauges et Belledonne, avec un pic de décollages à 10 h et des vols de 175 et 206 km relevés sur Syride. Le premier thermique n'est décrit nulle part : on suppose qu'il se déclenche sur les crêtes de Belledonne au-dessus du décollage. À Jarrier, les décollages de La Balme et du Grand Châtelard sont des sites du matin à finesse faible vers Saint-Jean, et la crête qui les domine sert probablement de relance vers les cols. Ces deux déductions restent à confirmer par des traces.",
+      "focus": [
+        "montgellafrey-crete-depart-cross",
+        "jarrier-balme-crete-cols"
+      ],
+      "phase": "morning"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Les décollages : sud-est à sud-ouest, tous du matin",
+      "text": "Le Grand Châtelard, historique et tourné au sud-ouest à 2000 m, et La Balme, tournée au sud-est, se volent uniquement le matin ; leur finesse limitée jusqu'à Saint-Jean laisse peu de marge face à la brise. Montgellafrey, au Mollaret, est technique : arbres en sortie, vent souvent de travers ou dans le dos ; la Grande Léchère, plus haut, est une pente herbeuse. La Chal, au col du Chaussy, regarde l'ouest et le nord-ouest et se vole par brise de pente ou léger vent d'ouest, avec une pente raide et une barrière d'arbres.",
+      "focus": [
+        "grand-chatelard",
+        "la-balme-jarrier",
+        "montgellafrey-mollaret",
+        "grande-lechere",
+        "chal-chaussy"
+      ],
+      "phase": "morning"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Les atterrissages : tout se joue avant 11 h",
+      "text": "L'atterrissage de Saint-Jean est technique, en limite d'agglomération, et la forte brise de l'après-midi oblige à se poser avant 11 h l'été. La Chambre, aux Attignours, ne se pratique pas après midi d'avril à octobre ; il y a des lignes électriques et l'aérodrome de Saint-Rémy-de-Maurienne à environ 2 km, dont il ne faut pas couper l'axe d'approche. Sainte-Marie-de-Cuines offre de grands champs, mais il est déconseillé d'y voler de 11 h à 17 h l'été. Épierre sert aux vols rando et se prend le matin, car les brises peuvent y être fortes passé 11 h.",
+      "focus": [
+        "atterro-saint-jean-de-maurienne",
+        "atterro-la-chambre",
+        "atterro-sainte-marie-de-cuines",
+        "atterro-epierre-remblais",
+        "aerodrome-saint-remy-de-maurienne"
+      ],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Rester haut : le Glandon et la Croix de Fer",
+      "text": "Le comité départemental propose deux stratégies : rester haut au-dessus de la brise, vers les cols du Glandon et de la Croix de Fer, ou attendre la fin d'après-midi pour redescendre dans la vallée. Au col du Glandon, la brise de la vallée des Villards monte de La Chambre et souffle du nord l'après-midi, ce qui permet de voler en face nord. Le 26 août 2012, un vent de nord prévu à 15-20 km/h à 2000 m a donné plus d'1 h 15 de soaring laminaire et près de 600 m de gain ; par sud faible, on vole entre le Glandon et la Croix de Fer. Un nord trop faible ne suffit pas.",
+      "focus": [
+        "brise-villards-glandon",
+        "soaring-col-du-glandon",
+        "col-du-glandon"
+      ],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Les sites d'altitude de Saint-François-Longchamp et d'Albiez",
+      "text": "Saint-François-Longchamp propose trois terrains, surtout utilisés à ski : le Soleil Rouge, la Lauzière à 2516 m et l'atterrissage de la station à 1650 m, où l'on ne se pose pas sur les pistes. Au télésiège de la Lauzière, un câble « Catex » est tendu entre la piste noire et l'Homme de Beure, et au-delà de 20 km/h de vent le décollage est déconseillé. À Albiez, les Aplanes sont au sommet des remontées, mais le décollage peut être sous le vent par vent d'est.",
+      "focus": [
+        "saint-francois-soleil-rouge",
+        "saint-francois-lauziere-telesiege",
+        "atterro-saint-francois-station-1650",
+        "st-francois-longchamp-cable-catex",
+        "albiez-aplanes"
+      ],
+      "view": "massif"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Au bout de Belledonne : la traversée de la Maurienne",
+      "text": "Le passage obligé des cross entre Belledonne, la Lauzière et les Bauges est la traversée de l'entrée de la Maurienne. On suit les crêtes de Belledonne vers le sud, en se refaisant sur les épaules herbeuses à l'ouest des sommets ; à la pointe de Rognier, il faut tourner à droite et quitter Belledonne. Pour traverser, partez de très haut, de 2300 m ou plus : on arrive en face vers 1500 à 1800 m et la remontée peut prendre 40 minutes. Le 24 mai 2010, avec du sud dans le dos, un pilote a traversé à 18 h 45.",
+      "focus": [
+        "rognier-bout-de-belledonne-relance-traversee",
+        "belledonne-sud-maurienne-lauziere-valmorel-2010"
+      ],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "La Lauzière en face : un peu tôt, la brise contre",
+      "text": "Le 28 août 2024, des pilotes venus de Chamrousse hésitent au bout de Belledonne entre les faces est et ouest de la Lauzière, par peur de se retrouver sous le vent de la brise. Ils choisissent la face ouest, qui n'est pas encore généreuse car il est un peu tôt : l'un en sort vite, un autre galère 40 minutes entre 1600 et 1800 m, un troisième se pose au fond de la vallée en marche avant. En mai 2015, par flux de sud en altitude, la brise de basses couches reste de nord et contre le pilote à l'entrée de la vallée, qui raccroche mais « au raz des sapins ». On enchaîne ensuite avec le Grand Arc et Albertville.",
+      "focus": [
+        "lauziere-face-ouest-entree-maurienne",
+        "entree-maurienne-traversee-brise",
+        "chamrousse-belledonne-est-lauziere-albertville-2024",
+        "belledonne-faces-est-maurienne-lauziere-ebaudiaz-2015"
+      ],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Foehn, venturi et chantier du Lyon-Turin",
+      "text": "Par vent de sud à sud-ouest, les fiches signalent un risque de foehn, un vent chaud et turbulent qui descend les versants, à La Chambre et à La Balme ; à La Balme, il ne faut pas voler par vent météo modéré à fort. Le site est de plus sur le tracé du chantier du Lyon-Turin. Par vent de nord, la brise se renforce et crée un venturi côté nord de l'atterrissage de La Chambre : mieux vaut se poser près de la chapelle, protégée par le relief. Enfin, au col du Glandon, ne pas se poser dans le troupeau, sur la tente-buvette ni sur les voitures garées, sous peine de condamner le site.",
+      "focus": [
+        "la-balme-foehn-lyon-turin",
+        "la-chambre-atterro-brise-foehn",
+        "col-du-glandon-troupeau-buvette-voitures"
+      ],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par nord : la brise s'installe plus tôt et plus forte",
+      "text": "Le vent de nord s'ajoute à la brise de vallée, qui s'installe alors plus tôt et plus forte. Il crée un venturi côté nord de l'atterrissage de La Chambre. Depuis La Balme, il faut passer loin du Sappey. En revanche, le col du Glandon se vole côté nord par nord faible, avec un soaring laminaire quand le vent atteint 15-20 km/h à 2000 m.",
+      "focus": [
+        "la-chambre-atterro-brise-foehn",
+        "la-balme-foehn-lyon-turin",
+        "soaring-col-du-glandon"
+      ],
+      "wind": {
+        "from": "N",
+        "kmh": 15
+      },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par sud ou sud-ouest : le risque de foehn",
+      "text": "Un vent de sud à sud-ouest apporte un risque de foehn à La Chambre et à La Balme : on ne vole alors ni au Mollaret ni à La Balme. Les décollages sud et sud-ouest du Mollaret ne se prennent que par vent faible. Le Glandon se vole côté sud par vent de sud faible, entre le col du Glandon et la Croix de Fer.",
+      "focus": [
+        "la-balme-foehn-lyon-turin",
+        "montgellafrey-mollaret",
+        "col-du-glandon"
+      ],
+      "wind": {
+        "from": "SO",
+        "kmh": 15
+      },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par ouest : la brise arrive tôt et forte",
+      "text": "Un vent météo d'ouest à nord s'additionne à la brise de vallée : celle-ci se met en place tôt et forte, d'après une observation de la fiche d'Aussois valable pour toute la Maurienne. La Chal, au col du Chaussy, accepte un léger vent d'ouest.",
+      "focus": [
+        "chal-chaussy",
+        "brise-montante-maurienne"
+      ],
+      "wind": {
+        "from": "O",
+        "kmh": 15
+      },
+      "phase": "afternoon",
+      "view": "massif"
+    }
+  ]
+}

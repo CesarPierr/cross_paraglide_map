@@ -1,0 +1,103 @@
+{
+  "massif": "queyras",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "Le Queyras, une haute vallée sèche et ses gorges",
+      "text": "Le Queyras est la haute vallée sèche du Guil, entre Guillestre et la frontière italienne. Ses gorges, celles du Guil, de Ceillac, du Cristillan et d'Escreins, n'offrent aucun atterrissage et la brise y est souvent forte : tout se joue donc aux deux extrémités, à Ceillac et au col de l'Izoard. Ceillac est un site de brise locale, bien protégé du nord ; l'Izoard est un col d'altitude, point de départ du record du monde de triangle FAI, mais musclé et réservé aux très bons pilotes. Retenez que la brise de l'après-midi est ici le fait dominant, et que le vent d'est, la Lombarde, est le pire ennemi.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le matin, partir avant que la brise ne s'installe",
+      "text": "Les vols rando du Queyras se font très tôt dans la matinée, ou aux saisons où la brise est moins présente. Brunet, avec 840 m de montée, permet d'être placé haut pour un départ en thermique ; Ceillac Sud, après environ 45 minutes de marche, se prend tôt le matin quand la brise n'est pas encore installée. Quand elle l'est, le travers droit rend le décollage de Ceillac Sud compliqué, voire impossible. À l'automne, d'autres crêtes comme celle de la Mourière offrent de beaux vols.",
+      "focus": ["brunet", "ceillac-sud", "cret-de-la-mouriere"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Ceillac : thermique en fin de matinée, puis une brise souvent trop forte",
+      "text": "À Ceillac, les conditions thermiques arrivent en fin de matinée et début d'après-midi, sur les pentes sud et sud-ouest du décollage. L'après-midi, la brise locale remonte les gorges vers Ceillac et devient souvent trop forte. Le sens de cette brise, de l'aval des gorges vers le village, est déduit de la topographie. Le site est très bien protégé du nord, mais il faut se méfier d'un vent d'altitude fort d'est à ouest.",
+      "focus": ["thermiques-ceillac", "brise-ceillac", "ceillac-1"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Dans les gorges du Guil, une brise montante qu'on devine",
+      "text": "Aucune source ne décrit directement la brise du Guil. Elle se déduit d'indices concordants : les gorges sont classées « pas d'atterro possible et souvent fort en brise », et le Guil prolonge la brise de la Durance. On suppose qu'elle monte de Guillestre vers Château-Queyras et Abriès. Vers l'Izoard, côté Arvieux, la brise est souvent très soutenue à partir de midi, voire plus tôt, et peut rester forte tard dans la saison ; avec un vent d'ouest, la brise de la Durance peut dégouliner par le vallon de Clapeyto et rendre l'air turbulent.",
+      "focus": ["brise-guil", "brise-arvieux-izoard"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le soir à Ceillac : un vol doux, mais une inversion brutale",
+      "text": "En fin de journée, Ceillac est souvent idéal : l'aérologie y est très douce, pour qui sait décoller avec un vent soutenu à fort. Il faut cependant se méfier du gradient et de l'inversion soudaine du soir, qui survient vers le moment où l'atterrissage passe à l'ombre. Le terrain de Ceillac est assez grand et plat, mais il est interdit d'atterrir et de gonfler dans les prés de fauche.",
+      "focus": ["brise-ceillac", "atterro-ceillac"],
+      "phase": "evening"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "L'Izoard et Rochebrune : des thermiques très forts",
+      "text": "Sur les faces de l'Izoard et de Rochebrune, le thermique est très fort en régime de brise classique, au point que les conditions deviennent vite trop fortes en l'air et à l'atterrissage au printemps et en été. C'est aussi ce qui en fait un point de départ de très grands cross. Le jour du record, le pilote a décollé face nord puis s'est jeté sous le vent pour trouver les premiers thermiques, ce qui est réservé aux très bons pilotes. À l'automne, l'Izoard donne des thermiques généreux le long de ses arêtes effilées.",
+      "focus": ["thermiques-izoard-rochebrune", "izoard-thermique-rochebrune"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Ceillac : plusieurs décollages, un terrain au village",
+      "text": "Ceillac 1, à 1830 m, se prend après 20 minutes de marche et fonctionne en toutes orientations sauf l'est ; du 15 juin au 15 septembre, il est interdit de monter en voiture au décollage. Ceillac 2, plus haut, est à privilégier en cas d'affluence. Ceillac Sud sert aux vols tôt le matin. Il faut éviter la combe à gauche du décollage, la combe d'Infernet et la vallée du Cristillan, où l'atterrissage est possible mais sous le vent, avec un venturi.",
+      "focus": ["ceillac-1", "ceillac-2", "ceillac-sud", "cristillan-venturi", "atterro-ceillac"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "L'Izoard : un col musclé, réservé aux très bons pilotes",
+      "text": "Clot la Cime, à une heure de marche du col, a un décollage large et confortable, et Coste Belle est le second décollage classique. Mais de par son altitude et son exposition, la brise de pente n'y prend pas le dessus : par tendance ouest à nord, le décollage est vent arrière, même par vent très faible. Il ne faut pas décoller de travers pour se jeter sous le vent, une pratique qui a causé de trop nombreux accidents. L'atterrissage d'Arvieux est le champ en face de « Chez Marius », avec une brise forte dès midi et une situation tendue avec le voisinage.",
+      "focus": ["clot-la-cime", "coste-belle", "izoard-vent-arriere", "atterro-izoard-arvieux", "izoard-dust-devils"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Le record du monde du 20 août 2023",
+      "text": "Le 20 août 2023, Baptiste Lambert a décollé de l'Izoard peu avant 10 h pour un triangle FAI de 350,53 km en 11 h de vol. Le vent de nord de 15 km/h le poussait dans le dos au décollage, et il a trouvé ses premiers thermiques en sautant sous le vent. Il a ensuite fait 250 km à 38 km/h de moyenne en ligne directe, avant un dernier côté contre 20 km/h de vent de face et turbulent. Il est revenu par la vallée d'Embrun, avec des thermiques doux et une brise qui le poussait vers le décollage.",
+      "focus": ["record-triangle-fai-izoard-2023", "alpes-francaises/col-d-izoard", "izoard-vent-arriere"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Gorges sans atterrissage, Cristillan et dust devils",
+      "text": "Dans les gorges du Guil, sur 15 km entre Guillestre et Château-Queyras, il n'y a aucun atterrissage possible et la brise est souvent forte : il faut rester en altitude jusqu'à Guillestre. Il en va de même dans les gorges de Ceillac et le val d'Escreins. Le Cristillan offre un atterrissage sous le vent, avec venturi. Enfin, à Clot la Cime, par temps stable, sec et peu venté, les dust devils, tourbillons de poussière nés du sol chaud, sont signalés.",
+      "focus": ["gorges-guil-sans-pose", "gorges-ceillac-sans-pose", "cristillan-venturi", "izoard-dust-devils"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par nord : Ceillac à l'abri, l'Izoard dangereux au décollage",
+      "text": "Ceillac est très bien protégé du nord : le nord et le nord-est y sont favorables, et un nord-ouest faible en altitude convient aussi. À l'Izoard, par contre, une tendance nord à ouest rend le décollage vent arrière et dangereux, sauf cas d'exception comme celui du record.",
+      "focus": ["ceillac-1", "izoard-vent-arriere", "record-triangle-fai-izoard-2023"],
+      "wind": { "from": "N", "kmh": 15 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par ouest ou sud-ouest",
+      "text": "Ceillac est favorable par ouest et par sud-ouest, et Ceillac Sud, tourné vers le sud, le sud-ouest et l'ouest, sert aux vols du matin. À l'Izoard, l'ouest est dangereux : vent arrière au décollage, et brise de la Durance qui dégouline par le vallon de Clapeyto.",
+      "focus": ["ceillac-1", "ceillac-sud", "izoard-vent-arriere", "brise-arvieux-izoard"],
+      "wind": { "from": "O", "kmh": 15 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par est : la Lombarde",
+      "text": "La Lombarde est le vent d'est qui franchit les cols frontaliers : la carte de Chocard la dessine par six flèches, du col Agnel et d'Abriès à l'est de Ceillac. Ceillac n'est pas à l'abri et est souvent très mauvais avec des tendances d'est ; l'est et le sud-est sont défavorables. Au confluent de la Durance et du Guil, la brise montante peut rencontrer la Lombarde qui descend le Guil : en mars 2010, un petit cumulus à la verticale de Mont-Dauphin matérialisait cette rencontre et a permis de reprendre 300 m.",
+      "focus": ["lombarde-fleche-4", "lombarde-fleche-5", "ceillac-lombarde-sous-le-vent", "conv-mont-dauphin-lombarde-guil"],
+      "wind": { "from": "E", "kmh": 20 },
+      "phase": "afternoon",
+      "view": "massif"
+    }
+  ]
+}

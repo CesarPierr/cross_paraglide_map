@@ -1,0 +1,134 @@
+{
+  "massif": "alpes-francaises",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; visite d'ensemble qui donne les clés de lecture de chaque massif ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "Les Alpes, une grande dépression thermique",
+      "text": "Par journée d'été à vent faible, les Alpes chauffent plus que les plaines qui les entourent. Elles forment alors une dépression thermique : une zone d'air chaud qui monte et qui aspire l'air des plaines voisines, le Bas-Dauphiné, l'Avant-Pays, le bassin genevois, la Provence et la plaine du Pô. Cet appel général se concentre dans les grandes vallées, qui développent chacune une brise montante. Cette visite donne les clés pour lire chaque massif : comment naissent les brises, où elles se rencontrent, comment elles passent d'un massif à l'autre, ce que le vent météo en fait, et comment les pilotes en tirent de grands itinéraires.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le matin, les vallées se vident puis le soleil lance les brises",
+      "text": "La nuit, les vallées ont un vent descendant : l'air refroidi par le sol s'écoule vers l'aval, par exemple du Grésivaudan vers Grenoble et la cluse de Voreppe. Les brises montantes démarrent ensuite avec le soleil et s'établissent dans les vallées en fin de matinée. En hiver, sous une inversion persistante, les vents descendants des différentes vallées peuvent même se superposer toute la journée au-dessus d'une fine couche convective d'environ 50 m. C'est pourquoi tant de décollages du matin se font avant l'arrivée de la brise.",
+      "focus": ["descendante-gresivaudan-nuit"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Vers midi, l'air des plaines est aspiré vers la montagne",
+      "text": "Quand la montagne chauffe, elle appelle l'air des plaines : on parle de brise plaine-montagne. L'aspiration est de 1 à 3 m/s dans les 1000 m inférieurs et se fait sentir jusqu'à 100 km de l'avant-pays. On suppose qu'elle entre en Dauphiné par la basse vallée de l'Isère et la cluse de Voreppe pour alimenter la cuvette grenobloise, mais c'est une déduction de confiance basse. Du côté italien, un schéma de Briffe fait remonter l'air de la plaine du Pô par les vallées vers la crête frontalière. Dans l'avant-pays, cette circulation est plus sensible au vent météo que les brises de vallée.",
+      "focus": ["aspiration-bas-dauphine-voreppe", "briffe-plaine-po-val-de-suse"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Entre 14 h et 17 h, les grandes vallées soufflent fort",
+      "text": "Les brises culminent entre 14 h et 17 h. Dans la plupart des vallées elles font de 15 à 35 km/h, et dans les grandes vallées, Arve, Tarentaise, Maurienne et Durance, elles atteignent des pointes de 30 à 50 km/h, avec plus de 40 km/h à Briançon. Elles se font sentir jusqu'à 2500 ou 3000 m, donc pas seulement au sol. La règle qui en découle est de traverser les grandes vallées avant ou après ces heures, ou très haut, et de se poser tôt ou à mi-pente plutôt qu'au fond de vallée.",
+      "focus": ["arve", "tarentaise", "maurienne", "moyenne-haute-durance"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le sens d'une brise dépend du bassin, pas de la vallée",
+      "text": "Une brise ne suit pas toujours le sens que l'on imagine. Au débouché de la cluse de Chambéry, entre Chartreuse et Bauges, l'air aspiré du lac du Bourget et de l'Avant-Pays se partage : une branche monte la Combe de Savoie vers Albertville, une autre va vers Grenoble dans le Grésivaudan, où la brise est « de nord » alors qu'on la croirait de sud. Pour comprendre ces sens, un pilote conseille de changer d'échelle, en regardant les vallées du Rhône et de la Durance, et de penser en termes de pompage alpin. Les sites exposés à cette brise, comme Montlambert, sont frappés de plein fouet.",
+      "focus": ["cluse-chambery", "isere-gresivaudan-combe-de-savoie-gresivaudan", "isere-gresivaudan-combe-de-savoie-combe"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Dans les Alpes du Sud, la Durance est l'artère",
+      "text": "La Durance remonte toutes les Alpes-de-Haute-Provence et les Hautes-Alpes depuis les Bouches-du-Rhône, selon un axe sud-ouest : c'est un accélérateur à brise très puissant, qui se prolonge jusqu'à Briançon. Elle alimente ses affluents : le Buëch vers Chabre, Céüse et le Dévoluy, et par Serre-Ponçon la vallée de l'Ubaye. À cela s'ajoute la brise de mer provençale, qui remonte depuis Marseille et Aix ; son couplage avec la Durance est une déduction, et sa pénétration comme ses horaires ne sont pas documentés. L'air marin vient ensuite se heurter à l'air continental le long d'un front, que l'on repère à un changement de direction du vent au sol et à l'arrêt net des cumulus.",
+      "focus": ["basse-durance", "moyenne-haute-durance", "buech", "ubaye", "brise-mer-provence-durance", "front-brise-mer-provence"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Les brises passent d'un massif à l'autre",
+      "text": "Une brise ne s'arrête pas à la limite d'un massif. Le Drac et la Romanche remontent très loin depuis Grenoble, d'après les pilotes. Entre l'Obiou et le Taillefer, les flux venus de Grenoble par le Drac rencontrent ceux qui remontent de Gap par le Champsaur. Un schéma de Gabriel Briffe prolonge même la Durance en altitude par le Dévoluy, le Champsaur et le Valbonnais jusqu'à la Maurienne, et fait entrer l'air du Rhône dans le Diois par la vallée de la Drôme. Ces schémas sont conceptuels, de confiance basse : ils donnent une tendance, pas une brise de fond de vallée.",
+      "focus": ["drac-trieves", "romanche-oisans", "briffe-durance-vers-maurienne", "briffe-rhone-vers-diois"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les convergences",
+      "title": "Quand deux brises se rencontrent, l'air monte",
+      "text": "Sur une crête, deux brises montantes opposées se rencontrent : c'est une convergence, ou confluence, et l'air n'a d'autre issue que de monter. Dans les Préalpes du Nord, côté externe il s'agit de l'aspiration plaine-montagne, côté interne des brises du Grésivaudan, de la Combe de Savoie et du lac d'Annecy ; les pilotes y voient la configuration reine, celle qui produit les plus longues lignes d'ascendance. La confluence n'est presque jamais à la verticale de la crête : elle penche du côté le plus faible. Quand un vent météo s'ajoute à la brise opposée, la confluence est plus marquée mais mobile, et voisine des rotors du côté sous le vent.",
+      "focus": ["ligne-prealpes-nord"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les convergences",
+      "title": "Ailleurs, les autres grandes lignes de convergence",
+      "text": "Le même mécanisme dessine d'autres lignes. Dans les Alpes du Sud, l'air qui remonte la Durance et le Buëch rencontre celui de Grenoble et du Drac autour de l'Obiou et du Taillefer. Dans le Diois, l'air du Rhône entré par la Drôme bute sur celui qui remonte d'Aspres. Sur la crête frontalière, l'air de la plaine du Pô affronte celui de la Durance, de la Maurienne et de l'Ubaye : sans crête franche, la limite est une lutte entre les deux, et le vent donne l'avantage à l'une ou à l'autre. Plus au sud, l'air marin venu de la côte forme un front que les pilotes exploitent en restant dans l'air continental, au bord du front.",
+      "focus": ["confluence-obiou-taillefer", "arc-diois-col-de-cabre", "ligne-laragne-ceuse-devoluy", "ligne-est-ecrins-durance", "cretes-frontalieres-franco-italiennes", "front-brise-mer-provence"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les grands itinéraires",
+      "title": "Franchir les vallées : des altitudes minimales à respecter",
+      "text": "Passer d'un massif à l'autre demande de la marge, et les clubs ont fixé des minima. Le support du club St Hil'Air donne par exemple : le Grésivaudan sur 10 km depuis plus de 2000 m, Grenoble sur 10 km depuis plus de 2400 m, Chambéry sur 10 à 12 km depuis plus de 2300 à 2400 m, Annecy sur 7 à 8 km depuis plus de 1800 à 2100 m, et Dévoluy-Champsaur sur 10 à 12 km depuis plus de 2900 m. Les brises fortes sont signalées sur plusieurs de ces transitions. Entre le Granier et la Savoyarde, on part avant que les brises ne rentrent et on laisse dériver pour compenser celle de Chambéry, comme le pilote du triangle de 202 km de juillet 2019, au Granier à 2350 m.",
+      "focus": ["ligne-prealpes-annecy-grenoble", "cluse-chambery", "triangle-plat-202-chartreuse-aravis"],
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Les grands itinéraires",
+      "title": "L'Izoard, le col des records du monde",
+      "text": "Tous les records du monde de triangle FAI partent du col de l'Izoard : 350,5 km en 2023, puis 358,6 km en 2025 en 11 h de vol. Les pilotes décollent tôt, entre 9 h et 10 h, en été, et un nord de 15 à 20 km/h est une bonne condition. La route classique passe par Freissinières, le Vieux Chaillol, le Dévoluy et le Pic de Bure, puis Céüse, les Monges et le Cheval Blanc. Par nord, on décolle en vent arrière face nord puis on saute sous le vent pour trouver les premiers thermiques. Mais un nord trop fort rend dangereuse la partie sud du parcours, et un pilote a renoncé au Cheval Blanc pour cette raison. Le col Agnel, plus au sud-est, a servi de départ au triangle de 306 km de 2016.",
+      "focus": ["col-d-izoard", "triangle-fai-izoard-record", "triangle-fai-hamard-306-col-agnel-2016", "colle-dell-agnello"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "Les grands itinéraires",
+      "title": "Des Préalpes à l'Izoard : les grandes traversées",
+      "text": "De Saint-Hilaire, deux itinéraires tracent l'axe nord-sud. Le 23 avril 2021, Maxime Pinot y a décroché un record du monde de 309 km par le Diois, les Monges et la Blanche, le Champsaur et Chamrousse, en choisissant avril parce que l'instabilité y arrive très tôt dans les basses couches. En juillet 2019, un triangle de 185 km partait des faces est du Vercors vers Die, le Pic de Bure et Chamrousse, avec le piège du Valbonnais où une vallée de derrière peut prendre le dessus. Enfin deux distances libres couvrent l'ensemble des Alpes : 342 km de Gourdon au lac Léman, et 174 km des Richards à Chamonix, où le détail du trajet n'est pas documenté.",
+      "focus": ["triangle-fai-pinot-309-2021", "fai-185-vercors-diois-devoluy-chamrousse", "distance-libre-gourdon-leman-342", "distance-libre-richards-chamonix-174"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Les zones aériennes et les brises fortes de la mi-journée",
+      "text": "Les grandes transitions croisent des zones réglementées. À Grenoble, la ZIT impose de rester au-dessus de 1200 m, et la zone P14 du CEA interdit le survol sous 1220 m entre le Néron et le Vercors : deux récits de 200 km l'ont mordue. En Chartreuse, la TMA de Lyon plafonne le vol, et la CTR de Chambéry est active du 15 décembre au 7 avril. Sur les transitions vers Gap, la zone R196 est activable par NOTAM, et les parcs du Vercors et des Bauges imposent 300 m au-dessus du sol, celui des Écrins 1000 m. Côté Durance, la brise à Briançon dépasse 40 km/h dès la mi-journée l'été et est renforcée par les tendances sud à ouest.",
+      "focus": ["zit-grenoble-p14", "ctr-chambery-tma-lyon-chartreuse", "zone-r196-gap-tallard", "brise-forte-durance-briancon"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par nord : bise au nord, mistral au sud",
+      "text": "Dans les Alpes du Nord, un nord annoncé est souvent un nord-nord-est à nord-ouest réel ; Saint-Hilaire reste le site le plus praticable par nord modéré, et par fort nord les pilotes se replient sur Montaud, Courtet ou Montlambert. Au sud, le mistral est un vent canalisé dans la vallée du Rhône, qui contourne les massifs et crée des convergences « de contournement » : au Buëch, vers Gap et Tallard, entre Valensole et Verdon, entre Briançon et l'Izoard. Le nord de 15 à 20 km/h est la condition des plus gros triangles de l'Izoard, mais au-delà de 20 km/h les thermiques se hachent. Le mistral détruit probablement la brise de mer provençale.",
+      "focus": ["mistral-confluence-buech-crete-de-l-ane", "mistral-confluence-gap-tallard", "mistral-confluence-valensole-verdon", "mistral-confluence-briancon-izoard", "col-d-izoard"],
+      "wind": { "from": "N", "kmh": 20 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par ouest ou sud-ouest : des brises renforcées",
+      "text": "Un vent d'ouest ou de sud-ouest est aligné avec la Durance et l'axe de l'Isère : il renforce les brises montantes et les fait entrer tôt et brusquement, jusqu'aux Têtes de l'Argentière et aux crêtes de Peyrolles. Dans les Préalpes, l'ouest pousse l'air contre les faces ouest, et il n'est plus gérable sur le Vercors au-dessus de 2000 m. Un sud-ouest faible, de 9 km/h, a pourtant poussé dans le bon sens la traversée Chartreuse-Bauges, tandis qu'un sud-ouest annoncé forcissant a « appuyé » la traversée Vercors-Diois. En bref, plus on est haut, plus on est poussé par le vent météo.",
+      "focus": ["moyenne-haute-durance", "brise-forte-durance-briancon", "fai-185-vercors-diois-devoluy-chamrousse"],
+      "wind": { "from": "SO", "kmh": 20 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par sud : le foehn qui prépare la perturbation",
+      "text": "Avant une perturbation, un flux de sud en altitude, avec des hautes pressions côté italien et une baisse côté français, peut produire du foehn, un vent chaud, sec et irrégulier de 30 à plus de 100 km/h qui descend les vallées. Les vallées de Chamonix et des Contamines sont les plus exposées. Les pilotes le surveillent à l'écart de pression Aoste-Annecy de -4 hPa, aux lenticulaires et au mur de foehn qui déborde des cols. Il peut se cantonner entre 1400 et 1800 m, et un vent de 15 km/h peut se transformer en rafales de plus de 30 à 35 km/h : le vol est à éviter.",
+      "focus": ["foehn-sud-versants-nord"],
+      "wind": { "from": "S", "kmh": 20 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par est : la lombarde sur les crêtes frontalières",
+      "text": "La lombarde est un retour d'est, de nord-est à sud-est, qui accompagne une dépression sur le golfe de Gênes ou une arrivée d'air polaire continental. Elle touche surtout l'Ubaye, le Queyras et la Maurienne, avec de fortes précipitations sur les crêtes, sans dépasser la rive gauche de la Durance. Pour le vol, c'est un ciel dégradé et un vent d'est sur la crête frontalière qui s'oppose aux brises des hautes vallées. L'est fait aussi entrer l'air italien par les cols, et le Vieux Chaillol comme Freissinières ont été franchis poussés par ce vent.",
+      "focus": ["lombarde-cretes-frontalieres", "cretes-frontalieres-franco-italiennes"],
+      "wind": { "from": "E", "kmh": 20 },
+      "phase": "afternoon",
+      "view": "massif"
+    }
+  ]
+}

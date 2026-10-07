@@ -2389,3 +2389,130 @@ kbd {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ---------- Navigation pad (mouse-free camera control) ---------- */
+.navpad {
+  position: absolute;
+  right: calc(var(--ctrl-w) + var(--gap) * 2 + 44px);
+  bottom: calc(var(--gap) * 2 + var(--timebar-h));
+  z-index: 4;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.navpad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 38px);
+  grid-auto-rows: 38px;
+  gap: 4px;
+}
+
+.nav-btn {
+  display: grid;
+  place-items: center;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+  background: var(--panel-raised);
+  color: var(--text);
+  font-size: 17px;
+  cursor: pointer;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.nav-btn:hover {
+  border-color: var(--border-strong);
+  background: rgba(255, 255, 255, 0.09);
+}
+
+.nav-btn:active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.nav-btn.north {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--bad);
+}
+
+.nav-btn.zoom {
+  font-size: 20px;
+}
+
+.navpad-toggle {
+  width: 38px;
+  height: 30px;
+  border-radius: 9px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.navpad:not(.open) {
+  padding: 4px;
+}
+
+.navpad-help {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + 8px);
+  width: min(340px, calc(100vw - 32px));
+  padding: 10px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--panel-solid);
+  border: 1px solid var(--border);
+  font-size: 12px;
+  box-shadow: var(--shadow);
+}
+
+.navpad-help p {
+  margin: 0 0 6px;
+}
+
+/* ---------- Schema banner (always shows the way back to 3D) ---------- */
+.schema-banner {
+  position: absolute;
+  top: calc(var(--gap) + 66px);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 6px 6px 14px;
+  border-color: rgba(125, 211, 252, 0.5);
+  white-space: nowrap;
+  font-size: 13px;
+}
+
+@media (max-width: 860px) {
+  .navpad {
+    right: auto;
+    left: var(--gap);
+    bottom: calc(var(--gap) * 3 + var(--dock-h) + var(--timebar-h));
+  }
+  .navpad-grid {
+    grid-template-columns: repeat(3, 44px);
+    grid-auto-rows: 44px;
+  }
+  .navpad-help {
+    right: auto;
+    left: 0;
+  }
+  .schema-banner {
+    top: calc(var(--gap) + 62px);
+    max-width: calc(100vw - var(--gap) * 2);
+    font-size: 12px;
+  }
+  .schema-banner span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

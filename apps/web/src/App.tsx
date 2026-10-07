@@ -4,6 +4,8 @@ import { ControlPanel } from './ui/ControlPanel';
 import { ContributionPanel } from './ui/Feedback';
 import { IconHelp, IconMenu } from './ui/icons';
 import { MobileDock, schemaHere, useIsMobile } from './ui/mobile';
+import { NavPad } from './ui/NavPad';
+import { SCHEMA_PHASES } from './state/store';
 import { SearchBox } from './ui/Search';
 import { Legend } from './ui/Legend';
 import { MapView } from './ui/MapView';
@@ -59,11 +61,35 @@ function useShortcuts() {
         s.set({ playing: !s.playing });
       } else if (e.key === 'ArrowRight' && e.shiftKey) s.set({ hour: Math.min(22, s.hour + 0.25), playing: false });
       else if (e.key === 'ArrowLeft' && e.shiftKey) s.set({ hour: Math.max(5, s.hour - 0.25), playing: false });
-      else if (e.key === 'Escape') useRuntime.getState().set({ feature: null, draft: null });
+      else if (e.key === 'Escape') {
+        const rt = useRuntime.getState();
+        // Close what is on top first, then leave the schema view.
+        if (rt.feature || rt.draft) rt.set({ feature: null, draft: null });
+        else if (s.schemaMassif) s.set({ schemaMassif: null });
+      }
     };
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, []);
+}
+
+/** Always-visible banner of the schema view, with the way back to 3D. */
+function SchemaBanner() {
+  const { schemaMassif, schemaPhase } = useApp();
+  const atlas = useRuntime((r) => r.atlas);
+  if (!schemaMassif) return null;
+  const m = atlas?.massifs.find((x) => x.id === schemaMassif);
+  const phase = SCHEMA_PHASES.find((p) => p.key === schemaPhase);
+  return (
+    <div className="schema-banner panel" role="status">
+      <span>
+        Vue schéma · <b>{m?.shortName ?? schemaMassif}</b> · {phase?.label.toLowerCase()}
+      </span>
+      <button className="btn small primary" onClick={() => useApp.getState().set({ schemaMassif: null })}>
+        Revenir en 3D
+      </button>
+    </div>
+  );
 }
 
 function SchemaToggle() {
@@ -116,6 +142,8 @@ export default function App() {
       <TimeBar />
       <Legend />
       <MobileDock />
+      <NavPad />
+      <SchemaBanner />
       <ProbeCard />
       <ContributionPanel />
       <AboutModal />

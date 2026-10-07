@@ -89,7 +89,9 @@ export class MapController {
       attributionControl: { compact: true },
       canvasContextAttributes: { antialias: true, powerPreference: 'high-performance' },
     });
-    this.map.addControl(new NavigationControl({ visualizePitch: true, showCompass: true }), 'bottom-right');
+    // Zoom, pan, rotation and tilt buttons live in the app's own pad (ui/NavPad), which also owns the keyboard.
+    this.map.keyboard.disable();
+    this.map.addControl(new NavigationControl({ visualizePitch: true, showCompass: true, showZoom: false }), 'bottom-right');
     this.map.addControl(new ScaleControl({ unit: 'metric' }), 'bottom-right');
     this.map.addControl(new GeolocateControl({ trackUserLocation: false }), 'bottom-right');
     this.hover = new Popup({ closeButton: false, closeOnClick: false, className: 'hover-tip', offset: 14, maxWidth: '260px' });

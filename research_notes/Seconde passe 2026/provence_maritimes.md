@@ -131,3 +131,68 @@ Autres ajouts : un danger `aup-eperon-deux-flux` (montagne de l'Aup, où le sud 
 - Valberg, Péone, Isola 2000 : aucun site FFVL, un seul récit local (ro2g). WebSearch n'a rien donné sur Valberg, Sisteron et Lure.
 - XContest et la CFD (Cloudflare / connexion) restent fermés ; les traces ne sont pas lues. Les fiches FFVL de ces sites restent bloquées (voir `.cache/research/blocked_urls.txt`).
 - Les autres images annotées du lot ont été regardées (FlyStAndre, PDF Armant p. 1 et 3) ; la carte de traces d'Au gré de l'air n'a pas été utilisée pour de nouveaux points.
+
+
+## Audit des thermiques (octobre 2026)
+
+Contexte : le propriétaire, pilote local, a relevé des thermiques oubliés dans d'autres massifs (Antennes et Château Nardent à Saint-Hilaire, Grand Ratz). Les listes de lacunes (`docs/COUVERTURE.md`, `docs/KK7_CROISEMENT.md`, `docs/POSITIONS.md`) ont été reprises une à une pour les six massifs du lot, puis les textes des dangers, soarings, décollages et atterrissages ont été relus à la recherche d'une ascendance rangée ailleurs que dans les thermiques (le cas du Grand Ratz). Chaque position a été vérifiée sur le terrain IGN (RGE ALTI) et les toponymes IGN ; chaque point chaud kk7 (`thermal.kk7.ch`) de 90 % et plus a été rapproché des textes du lot, du corpus de récits d'Au gré de l'air, des pages Ozone, du catalogue du vol libre (CVL) et des fils parapentiste.info déjà téléchargés. Convention de confiance : `medium` quand un texte donne le lieu, l'heure ou la nature de l'ascendance et qu'une mesure ou un deuxième texte concorde ; `low` avec « déduction » quand seul un point chaud mesuré s'appuie sur le relief. Les points chauds ne disent pas pourquoi cela monte : la position est celle du point chaud (ou du décollage quand il est à moins de 600 m), le déclencheur est lu sur l'exposition et la pente du terrain, et sur les sites-écoles de brise (Puet, Grou de Bane) la mesure ne sépare pas le thermique de la dynamique.
+
+Au total 38 thermiques créés (Saint-André 1, Haut-Verdon 6, Digne – Lure 7, Grasse – Castellane 9, Nice – Var 8, Mercantour 7) et 2 éléments corrigés. `npm run data:build -- --check` : aucune alerte nouvelle. Les points chauds forts du secteur de Nice situés en Italie (Passo della Croce, Monte Comune, Monte Lega, Monte Altomoro) ne sont pas repris : l'atlas ne sort pas de France.
+
+### Saint-André-les-Alpes (`saint-andre-verdon`)
+
+- Créé : `col-du-sauvage-pente-sud-ouest` (`low`, 97 %, 1,7 km de la Montagne de Tournon et de Séoune, entre deux relais décrits du cheminement vers le Cheval Blanc).
+- Courchon, Aiguines Le Puits, Aiguines Les Vernis et Montdenier, rangés par la couverture dans ce secteur, sont traités avec leurs éléments dans Digne – Lure (voir ci-dessous) ; Montdenier n'a que le manque de brise (le thermique `moustiers-montdenier-thermiques` est à 300 m).
+- Écarté : l'atterrissage de Moriez (« plus calme que le lac aux heures thermiques » : pas de thermique).
+
+### Haut-Verdon et Allos (`haut-verdon-allos`)
+
+**Thermiques créés (6)**
+- `le-carton-lieu-dit-pre-reliefs` (`medium`) : point chaud 94 % sur le lieu-dit IGN « le Carton », 1,9 km au nord-ouest de la montagne du Carton. Plusieurs récits placent les ascendances sur le relief en avant du sommet : « une pompe organisée sur la forêt en avant du relief » (Berchet 2006), « les prérelief de Carton sont baignés de soleil… c'est un boulet de canon » (Armant), « je rejoins Carton très bas… ça repart bien » (Fernandez 2010) ; l'élément du sommet est conservé.
+- `tete-de-la-reyniere-pente-sud` (96 %), `costes-de-sangraure-pente-sud-ouest` (94 %), `le-moure-pente-sud-ouest` (91 %, cirque entre le Cheval Blanc et le Carton), `pompe-pellet-barre-de-pompe` (91 %), `sommet-de-triey-pente-ouest` (91 %) : `low`, points chauds seuls.
+
+### Digne – Lure et Moustiers (`prealpes-digne-lure`)
+
+**Thermiques créés (7)**
+- `moustiers-courchon-pente-sud-ouest` (`medium`) : Ozone (« pleasant evening soaring on the westerly-facing cliffs of Mont Denier and Courchon, which work until dark in the summer »), forum 2016 (« plafonds à plus de 2000 m à 20h »), CVL (Mont Denier : « déclenchement thermique vers 10h »), point chaud 94 % à 240 m du décollage.
+- `oraison-pente-ouest-midi` (`medium`) : FFVL 938 écrit « en été, milieu de journée : activité thermique pouvant être violente » ; le forum (2009) « vol thermique le midi assez technique, plusieurs vols dont un au plafond » ; point chaud 99 % toute l'année. L'élément n'avait que le thermique du terrain d'atterrissage (cas du Grand Ratz : le texte classé en danger).
+- `saint-geniez-rayes-pente-sud-ouest` (`medium`) : fil de Gâche (2017) « c'est plutôt le Trainon que je vise », brise « bien brassée de thermiques hachés » ; ParaglidingEarth thermiques/soaring/cross ; point chaud 96 %, 99 % le matin.
+- `grou-de-bane-croix-pente-sud-est` (`medium`) : FFVL 199 « le déco Est donne un bon rendement même par vent modéré » ; point chaud 100 % (dynamique et thermique non séparés).
+- `andran-clapiere-pente-sud-ouest` (`low`, 99 %), `plat-de-la-main-sud-cousson` (`low`, 91 %, peut-être le « thermique avant le Cousson » du récit de Jacqueline), `aiguines-le-puits-pente-sud-ouest` (`low`, 94 % ; ParaglidingEarth ne coche pas les thermiques ; les coordonnées de la fiche du Puits ne collent pas à son altitude).
+
+**Lacunes écartées** : Malijai – Blanchon (site en test, aucune aérologie, aucun point chaud), Gamby – Charex, Crau Chétive, Chabrier (fiches sans description, aucune mesure), Sumiou (seul le manque de brise), `gache-dynamique-nord` (le thermique de la Montagne de Gâche est à 1,2 km).
+
+### Gréolières, Gourdon, Lachens et Castellane (`prealpes-grasse-castellane`)
+
+**Thermiques créés (9)**
+- `lachens-pente-sud-est` (`medium`, 90 %), `lachens-ouest-pente-sud-ouest` (`medium`, 85 %) : Ozone (site « sujet à souffler trop fort dans la chaleur d'une journée thermique », bon potentiel de cross) et le récit de N. Fabre du 26 juin 2005 (déco ouest « en plein début de cycle », plafond 1900 m, cycles courts, brise d'ouest dès 10h). Aucun thermique à moins de 10 km n'était décrit pour les trois décollages.
+- `bauroux-pente-sud` (`medium`, 90 %) : le même récit de Fabre, « vers Bauroux, beau thermique… montée à 2400 m ».
+- `kennedy-pente-sud` (`medium`, 99 %) et `embarnier-pente-sud-est` (`medium`, 95 %) : CVL (Kennedy « favorables en thermiques et toute l'année », Embarnier « en thermiques »), ParaglidingEarth, repérages d'Armant (Embarnier plate-forme du « bocal »).
+- `valettes-atterro-thermique` (`medium`) : CVL « activités thermiques importantes » sur le terrain d'atterrissage des Valettes (pas de point chaud).
+- `le-puet-pente-sud` (`low`, 97 % ; site-école, mesure en partie dynamique), `la-grangasse-pente-sud` (`low`, 91 %), `vallon-de-clare-pente-sud` (`low`, 91 %).
+
+**Position corrigée** : `castellane-colle-bernaiche` (le GPS de l'ancienne fiche donnait 1343 m pour 1450 m déclarés ; ramené sur le toponyme IGN « Crête de Colle Bernaiche », 1398 m ; site non officiel).
+
+**Lacunes écartées** : Colle du Macon (FFVL 3002) et Antennes de Grasse (FFVL 5054) : fiches sans description et aucun point chaud ; Bargemon et le Lachens ne manquent que de brise ; `cheiron-crete-soaring` et `gourdon-atterros-gradient` : les thermiques du Cheiron (Jérusalem, 1,3 km) et de Gourdon sont décrits.
+
+### Préalpes de Nice, Sospel, Roquebrune (`prealpes-nice-var`)
+
+**Thermiques créés (8)**
+- `lavina-pente-nord-est-matin` (`medium`) : Ozone (« later in the morning, as the thermals get stronger, it becomes a good XC site ») et Sospel Vol Libre (décollage du matin avant la brise de sud) ; point chaud 83 % uniquement le matin.
+- `lai-barrai-pente-sud-sous-le-decollage` (`medium`) : la fiche FFVL 1576 écrit « brises thermiques » ; l'atlas ne comptait que le point chaud kk7 à 380 m (85 %, 92 % le matin).
+- `monte-grosso-pente-sud` (97 %), `beoulet-pente-sud` (91 %), `tete-dalpe-pente-sud-est` (96 %, été), `peille-pente-sud-est-bocal` (92 %), `la-cime-gattieres-pente-sud-est` (97 %) : `low`, points chauds seuls (Sospel Vol Libre : « les jours de purs thermiques peuvent être puissants dans les pompes de service »).
+- `mont-macaron-zone-calcaire` (`low`) : le récit « God Bless the Macaroni » (2015) décrit un site au « rendement minable » mais un thermique « sur la plus grande zone calcaire » en transit : thermique exceptionnel, pas un site thermique.
+
+### Mercantour (`mercantour`)
+
+**Thermiques créés (7)**
+- `mont-court-pente-sud` (`medium`, 96 %) : Ozone donne le parcours « de Cagnorina au col de Tende via le Mont Court » ; point chaud à 250 m du sommet.
+- `rochers-de-gata-pente-sud` (100 %), `mont-deveille-pente-sud` (92 %), `creppe-de-la-marguerie-giaure` (97 %, au-dessus du fort de Giaure, col de Tende), `coture-baisse-de-la-crouseta` (91 %), `cros-de-la-tune-pente-sud` (97 %, sous le Mont Giraud de La Colmiane), `colmiane-pic-pente-ouest` (78 %, sous le seuil de 80 % : seul le décollage du Pic, FFVL 905, motive l'élément) : `low`.
+
+**Position corrigée** : `auron-atterro` (altitude 1600 m, celle de la station, ramenée à 1456 m, terrain IGN à la position de l'atterrissage ParaglidingEarth).
+
+### Reste ouvert
+
+- Les positions de `crete-des-serres-angle`, `cheval-blanc-pointe-nord`, `greolieres-col-antenne-coursegoules` et `ferion-antennes-lignes` restent approximatives : les récits ne donnent pas de repère plus précis que le toponyme.
+- Les thermiques de Lure et de Banon (Contras, Lure nord) restent sans récit.
+- Le Valberg, Péone et Isola 2000 n'ont toujours aucune fiche FFVL ni récit au-delà de ro2g.

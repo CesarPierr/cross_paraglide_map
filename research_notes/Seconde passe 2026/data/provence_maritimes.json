@@ -563,6 +563,24 @@
       "S29"
      ],
      "confidence": "medium"
+    },
+    {
+     "id": "col-du-sauvage-pente-sud-ouest",
+     "name": "Col du Sauvage – Sévian : pente sud-ouest entre Séoune et Tournon",
+     "lon": 6.4328,
+     "lat": 44.0836,
+     "alt_m": 1668,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (97 % le matin, 97 % à midi, 92 % en fin de journée ; toute l'année)",
+     "trigger": "pente sud-ouest (39°) à 1668 m, sur le versant de Sévian, entre la Montagne de Tournon et l'escarpement de Séoune",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7) à 97 % toutes périodes, 91 à 98 % en toute saison, qu'aucun texte ne décrivait. Il se trouve à 1,7 km de la Montagne de Tournon et à 1,8 km de l'escarpement de Séoune, deux relais décrits du cheminement Saint-André – Cheval Blanc (Jacqueline 2011, Berchet 2006 : « le sommet de Séoune donnera le ticket pour la montagne de Tournon »), sur la pente sud-ouest que l'on traverse entre les deux. Aucun récit ne le décrit lui-même : déduction. Point chaud mesuré par les traces GPS (kk7) : 97 % toutes périodes (le matin 97 %, à midi 97 %, en fin de journée 92 % ; hiver 94 %, printemps 91 %, été 93 %, automne 98 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S59",
+      "S125",
+      "S126",
+      "S99"
+     ]
     }
    ],
    "soaring_spots": [
@@ -1504,6 +1522,115 @@
       "S55"
      ],
      "confidence": "medium"
+    },
+    {
+     "id": "le-carton-lieu-dit-pre-reliefs",
+     "name": "Le Carton (lieu-dit) : pré-reliefs au sud-ouest de la montagne du Carton",
+     "lon": 6.4404,
+     "lat": 44.1906,
+     "alt_m": 1585,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (93 % le matin, 93 % à midi, 93 % en fin de journée ; au printemps, en été, en automne)",
+     "trigger": "pente sud-ouest (37°) à 1585 m, sur les pré-reliefs boisés en avant de la montagne du Carton (2117 m), à 1,9 km au nord-ouest de son sommet",
+     "description": "Audit d'octobre 2026 : l'élément `montagne-du-carton-pointe-ouest` est placé au sommet du Carton (2117 m), alors que les récits décrivent des ascendances plus bas, sur le relief en avant : « une pompe organisée sur la forêt en avant du relief » (Berchet, 2006), « les prérelief de Carton sont baignés de soleil depuis un bon moment… c'est pas un thermique que j'y trouve c'est un boulet de canon » (Armant, 14h30), « la montagne du Carton, qui porte bien son nom : j'y trouve les thermiques particulièrement violents » (Rodde), « je rejoins Carton très bas. Je bascule sur la pointe Ouest du Carton et là ça repart bien » (Fernandez, 2010). Un point chaud kk7 à 94 % se trouve sur le lieu-dit « le Carton » (toponyme IGN, à 90 m), sur la pente sud-ouest de ces pré-reliefs, entre le cirque du Cheval Blanc et le col de la Baisse. C'est le point de relance où l'on raccroche en arrivant bas depuis le cirque ; l'élément du sommet est conservé. Point chaud mesuré par les traces GPS (kk7) : 94 % toutes périodes (le matin 93 %, à midi 93 %, en fin de journée 93 % ; hiver sous 70 %, printemps 91 %, été 92 %, automne 90 %). Position du point chaud (le lieu-dit « le Carton » est à 6.4413 E 44.1913 N), altitude du terrain IGN.",
+     "confidence": "medium",
+     "sources": [
+      "S99",
+      "S102",
+      "S109",
+      "S55",
+      "S125",
+      "S126",
+      "S121"
+     ]
+    },
+    {
+     "id": "tete-de-la-reyniere-pente-sud",
+     "name": "Tête de la Reynière (Prads) : pente sud sous le sommet",
+     "lon": 6.485,
+     "lat": 44.2009,
+     "alt_m": 1939,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (96 % le matin, 96 % à midi, 94 % en fin de journée ; toute l'année)",
+     "trigger": "pente sud (40°) à 1939 m, sous la Tête de la Reynière (à 180 m) et à 650 m du Mourre Gros, au sud-est de la crête de la Chau",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7), qu'aucun texte ne décrivait, à 1,7 km au sud-est de la crête de la Chau. La route classique des récits passe de la Chau (« ça sort toujours très bien au milieu », Au gré de l'air) au Tromas ; le point chaud est sur la pente sud immédiatement à l'est de cette route (Mourre Gros à 650 m). Aucun récit ne cite la Reynière de Prads (à ne pas confondre avec les antennes de la Reynière de Saint-André) : déduction, thermique de pente sud utilisé en transit. Point chaud mesuré par les traces GPS (kk7) : 96 % toutes périodes (le matin 96 %, à midi 96 %, en fin de journée 94 % ; hiver 78 %, printemps 86 %, été 94 %, automne 97 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S55",
+      "S101",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "costes-de-sangraure-pente-sud-ouest",
+     "name": "Costes de Sangraure : pente sud-ouest de haute montagne",
+     "lon": 6.5564,
+     "lat": 44.2304,
+     "alt_m": 2476,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (96 % le matin, 94 % à midi, 88 % en fin de journée ; en été, en automne)",
+     "trigger": "pente sud-ouest (35°) à 2476 m, sous la crête de Valdemars et les Costes de Sangraure, entre le Tromas et la Tête de l'Estrop",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7), qu'aucun texte ne décrivait, à 2476 m sur une pente raide exposée au sud-ouest, à l'est de l'axe Tromas – Tête du Bau – Tête de l'Estrop des récits (plafond de la Blanche à 3680 m). Aucun récit ni aucune fiche ne le cite : déduction. Il indique un déclencheur de haute montagne qui alimente probablement le plafond de ce secteur. Point chaud mesuré par les traces GPS (kk7) : 94 % toutes périodes (le matin 96 %, à midi 94 %, en fin de journée 88 % ; hiver sous 70 %, printemps sous 70 %, été 94 %, automne 97 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S55",
+      "S102",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "le-moure-pente-sud-ouest",
+     "name": "Le Moure : pente sud-ouest entre le Cheval Blanc et le Carton",
+     "lon": 6.4311,
+     "lat": 44.1613,
+     "alt_m": 1408,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (97 % le matin, 91 % à midi, 72 % en fin de journée ; en été, en automne)",
+     "trigger": "pente sud-ouest (15°) à 1408 m, sur les rochers du Moure et sous le col de la Basse, dans le cirque entre le Cheval Blanc et le Carton",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7), qu'aucun texte ne décrivait, dans le cirque que les récits décrivent « assez bas » entre la pointe nord du Cheval Blanc et le Carton : Fernandez (2010) y perd longuement du temps (« je la trouve pas et je galère vraiment dans ce cirque »), Berchet (2006) note que la transition directe depuis le Cheval Blanc « dégueule ». Le point chaud sur la pente sud-ouest du Moure indique l'endroit où l'on peut y raccrocher bas (déduction : aucun récit ne localise la montée). Point chaud mesuré par les traces GPS (kk7) : 91 % toutes périodes (le matin 97 %, à midi 91 %, en fin de journée 72 % ; hiver sous 70 %, printemps sous 70 %, été 83 %, automne 95 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S102",
+      "S99",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "pompe-pellet-barre-de-pompe",
+     "name": "Sommet de Pompe (Pellet) : pente sud-ouest à l'ouest du Cheval Blanc",
+     "lon": 6.3875,
+     "lat": 44.1396,
+     "alt_m": 1417,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (71 % le matin, 92 % à midi, 92 % en fin de journée ; au printemps, en été, en automne)",
+     "trigger": "pente sud-ouest (35°) à 1417 m, sous le Sommet de Pompe et au-dessus de Pellet, à 3,9 km à l'ouest du Cheval Blanc",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7), qu'aucun texte ne décrivait, sur une pente sud-ouest raide à 1416 m. Il est à 500 m du « Sommet de Pompe » (toponyme IGN), à 2,7 km de l'atterrissage d'Archail ; les récits consultés ne citent pas ce secteur. Déduction : thermique de pente sud-ouest hors des cheminements décrits, non rattaché à un décollage. Point chaud mesuré par les traces GPS (kk7) : 90 % toutes périodes (le matin 71 %, à midi 92 %, en fin de journée 92 % ; hiver sous 70 %, printemps 80 %, été 90 %, automne 92 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "sommet-de-triey-pente-ouest",
+     "name": "Sommet de Triey : pente ouest au-dessus de la Bléone",
+     "lon": 6.3944,
+     "lat": 44.177,
+     "alt_m": 1334,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (99 % le matin, 91 % à midi, 79 % en fin de journée ; au printemps, en été, en automne)",
+     "trigger": "pente ouest (33°) à 1334 m, sous le Sommet de Triey (310 m au nord-est), sur le versant dominant la haute vallée de la Bléone, à 5,7 km au nord-ouest du Cheval Blanc",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7) à 91 % (99 % le matin, 91 % à midi, 79 % en fin de journée ; absent l'hiver), qu'aucun texte ne décrivait. Il se trouve à l'ouest de l'axe Cheval Blanc – Carton – Chau des récits de cross, du côté de la haute vallée de la Bléone où plusieurs récits (Berchet 2006, Fernandez 2010) finissent par se poser. Aucun récit ne cite le Sommet de Triey : déduction. Point chaud mesuré par les traces GPS (kk7) : 91 % toutes périodes (le matin 99 %, à midi 91 %, en fin de journée 79 % ; hiver sous 70 %, printemps 88 %, été 87 %, automne 93 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S99",
+      "S102",
+      "S125",
+      "S126"
+     ]
     }
    ],
    "soaring_spots": [],
@@ -2256,6 +2383,141 @@
       "S117"
      ],
      "confidence": "low"
+    },
+    {
+     "id": "moustiers-courchon-pente-sud-ouest",
+     "name": "Moustiers – Courchon : pente sud-ouest et vol du soir",
+     "lon": 6.2279,
+     "lat": 43.8415,
+     "alt_m": 741,
+     "coord_quality": "approx",
+     "best_hours": "du matin jusqu'à la nuit en été d'après Ozone (« until dark »), plafonds de plus de 2000 m à 20h (forum) ; traces GPS : 95 % le matin, 90 % à midi, 94 % en fin de journée, 88 à 96 % en toute saison",
+     "trigger": "pente sud-ouest raide sous le décollage de Courchon, falaises exposées à l'ouest dominant le lac de Sainte-Croix et les gorges du Verdon",
+     "description": "Audit d'octobre 2026 : le décollage de Courchon (fiche FFVL 1208, 904 m, S/SO/O, « technique, conseillé aux pilotes brevetés ») n'avait aucun thermique à moins de 3 km (celui de la Serre du Montdenier est à 3,2 km). Ozone (InfoZone Moustiers) : « Moustiers is equally famed for the pleasant evening soaring on the westerly-facing cliffs of Mont Denier and Courchon, which work until dark in the summer » ; un pilote du forum parapentiste.info (2016) décrit un « vol du soir à Courchon… des plafonds à plus de 2000 m à 20h et survol des gorges du Verdon » ; le catalogue du vol libre note pour le Mont Denier voisin « déclenchement thermique vers 10h, très favorable en ouest ». Le point chaud ci-dessous, à 240 m du décollage, concorde (fort le matin comme le soir). Point chaud mesuré par les traces GPS (kk7) : 94 % toutes périodes (le matin 95 %, à midi 90 %, en fin de journée 94 % ; hiver 88 %, printemps 93 %, été 96 %, automne 92 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "medium",
+     "sources": [
+      "S48",
+      "S82",
+      "S127",
+      "S73",
+      "S132",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "aiguines-le-puits-pente-sud-ouest",
+     "name": "Aiguines : pente sud-ouest du plateau du Puits",
+     "lon": 6.2499,
+     "lat": 43.7699,
+     "alt_m": 955,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (95 % le matin, 93 % à midi, 85 % en fin de journée ; toute l'année)",
+     "trigger": "pente sud-ouest du plateau d'Aiguines, au-dessus du col d'Illoire, sous les décollages du Puits (SO) et des Vernis (SO/O/NO)",
+     "description": "Audit d'octobre 2026 : les décollages d'Aiguines (fiches FFVL 1638 « Le Puits », SO, niveau bleu, « très faible pente et forêt en dessous » ; 13699 « Les Vernis », SO/O/NO, « décollage court », zone R138 de Canjuers voisine) n'avaient aucun thermique à moins de 3 km. Ozone note seulement un décollage « Aiguines, W, 1000 m, dangereux par vent de sud » (500 m de dénivelé jusqu'à la plage), et ParaglidingEarth (site 3073) ne coche ni thermique ni soaring. Un point chaud mesuré par les traces GPS (kk7) se trouve à 300 m du décollage du Puits et à 1,2 km au sud-sud-ouest des Vernis : voir le profil ci-dessous (fort toute l'année, le matin comme le soir). Aucun récit ne le décrit : déduction. Les coordonnées de la fiche du Puits ne collent pas à son altitude (916 m déclarés, 1089 m de terrain à la position de la fiche). Point chaud mesuré par les traces GPS (kk7) : 94 % toutes périodes (le matin 95 %, à midi 93 %, en fin de journée 85 % ; hiver 88 %, printemps 94 %, été 90 %, automne 92 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S128",
+      "S129",
+      "S82",
+      "S134",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "grou-de-bane-croix-pente-sud-est",
+     "name": "Banon – Grou de Bane (La Croix) : pente sud-est des décollages Est et Sud",
+     "lon": 5.6363,
+     "lat": 44.0484,
+     "alt_m": 981,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (100 % le matin, 100 % à midi, 91 % en fin de journée ; toute l'année)",
+     "trigger": "pente sud-est (26°) sous le décollage de la Croix de Grou de Bane, face à la plaine de Banon, versant exposé aux premiers soleils",
+     "description": "Audit d'octobre 2026 : le décollage de Grou de Bane – La Croix (fiche FFVL 199, 1048 m, E/SE/S/SO) n'avait aucun thermique à moins de 8 km. La fiche dit : « idéal sud – sud-est ; le déco Est donne un bon rendement même par vent modéré ; c'est un des endroits privilégiés pour les conditions météo de retour d'est dans les Alpes du Sud » ; ParaglidingEarth (site 7226) précise « un décollage pour le vent d'est, un pour le sud ». Les traces GPS (kk7) y mesurent le point chaud le plus fort de la zone, à 190 m du décollage, sur la même pente sud-est : 100 % le matin et à midi, l'hiver comme l'été (profil ci-dessous). Une telle constance sur un site de compétition (un championnat y a eu lieu d'après le fil de forum de 2007, S68) reflète sans doute autant la dynamique du vent d'est que des thermiques ; le texte « bon rendement » ne distingue pas non plus les deux. Position du point chaud (le décollage FFVL est à 5.6350 E 44.0500 N), altitude du terrain IGN. Point chaud mesuré par les traces GPS (kk7) : 100 % toutes périodes (le matin 100 %, à midi 100 %, en fin de journée 91 % ; hiver 100 %, printemps 99 %, été 100 %, automne 100 %). ",
+     "confidence": "medium",
+     "sources": [
+      "S47",
+      "S47",
+      "S133",
+      "S125",
+      "S126",
+      "S68"
+     ]
+    },
+    {
+     "id": "saint-geniez-rayes-pente-sud-ouest",
+     "name": "Saint-Geniez – Les Rayes et Trainon : pente sud-ouest et plateau du col",
+     "lon": 6.0638,
+     "lat": 44.2489,
+     "alt_m": 1269,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (99 % le matin, 95 % à midi, 84 % en fin de journée ; toute l'année)",
+     "trigger": "pente sud-ouest sous le Trainon et les décollages des Rayes (SE/S/SO), versant dominant la vallée du Vançon et Saint-Geniez",
+     "description": "Audit d'octobre 2026 : les décollages de Saint-Geniez – Les Rayes (fiche FFVL 223, 1363 m, SE/S/SO, niveau marron, « léger vent météo de sud, brise installée ») et du Trainon (fiche 5132, 1631 m, SO) n'avaient aucun thermique à moins de 6,5 km. ParaglidingEarth (site 2525, Le Trainon) renseigne thermiques, soaring et cross. Un pilote du fil de Gâche (2017) écrit « c'est plutôt le Trainon que je vise » en cross au printemps ou en été, au milieu de l'après-midi, dans une brise « bien brassée de thermiques hachés » qui remonte de Sisteron, avec des déboulées depuis Saint-Geniez « par le col et le plateau devant le Trainon ». Le point chaud ci-dessous est à 200 m des Rayes et à 700 m du Trainon (le matin à 99 %, ce qui concorde avec l'orientation sud-ouest du versant : la fiche des Rayes met en garde contre le venturi de la barre). Point chaud mesuré par les traces GPS (kk7) : 96 % toutes périodes (le matin 99 %, à midi 95 %, en fin de journée 84 % ; hiver 97 %, printemps 97 %, été 86 %, automne 86 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "medium",
+     "sources": [
+      "S130",
+      "S45",
+      "S131",
+      "S67",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "andran-clapiere-pente-sud-ouest",
+     "name": "Digne – L'Andran : pente sud-ouest de la Clapière",
+     "lon": 6.1963,
+     "lat": 44.1127,
+     "alt_m": 1090,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (96 % le matin, 98 % à midi, 100 % en fin de journée ; toute l'année)",
+     "trigger": "pente sud-ouest (23°) à 1090 m sous les Oreilles d'Âne et la Clapière, à 1,4 km à l'ouest-sud-ouest du décollage de l'Andran",
+     "description": "Audit d'octobre 2026 : le décollage de l'Andran (fiche FFVL 257, 1198 m, E/SO ; « vols du matin en NE puis bascule en SO dès que les brises tournent ; à partir de 12h, brises uniquement ») n'avait aucun thermique à moins de 7 km. Le catalogue du vol libre (CVL) décrit un site de régime de brise : brise du matin de 7h à 9h sur le décollage nord-est, conditions favorables en fin de matinée et par très légers vents d'ouest à nord. Un point chaud mesuré par les traces GPS (kk7) se trouve à 1,4 km au sud-ouest du décollage, sur la pente exposée au sud-ouest : 99 % toutes périodes, 100 % en fin de journée, présent même en hiver. Aucun récit ne le décrit ; c'est sur le trajet des départs de compétition de l'Andran vers l'ouest (déduction). Point chaud mesuré par les traces GPS (kk7) : 100 % toutes périodes (le matin 96 %, à midi 98 %, en fin de journée 100 % ; hiver 98 %, printemps 99 %, été 99 %, automne 98 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S44",
+      "S44",
+      "S73",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "plat-de-la-main-sud-cousson",
+     "name": "Plat de la Main : pente sud-ouest avant le Cousson",
+     "lon": 6.2317,
+     "lat": 44.0427,
+     "alt_m": 1261,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (91 % le matin, 91 % à midi, 87 % en fin de journée ; toute l'année)",
+     "trigger": "pente sud-ouest raide (35°) sous le Plat de la Main, 1,5 km au sud-sud-ouest du sommet du Cousson, sur la route d'arrivée depuis Moustiers et Mourre de Chanier",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7) à 91 % toutes périodes, 92 % même en hiver, qu'aucun texte ne décrivait. Il se trouve à 1,4 km au sud-sud-ouest de l'élément « thermique avant le Cousson (balisé par les vautours, plafond 3400 m) », que le récit de Jacqueline (Bleyne – Moustiers – nord de Digne, 2012) place « avant le Cousson » (le sens d'arrivée n'est pas précisé) : la pente du Plat de la Main pourrait être ce thermique, mais la correspondance n'est pas prouvée (le récit ne cite pas la pente). Position du point chaud, altitude du terrain IGN ; l'élément du Cousson est conservé à sa position. Point chaud mesuré par les traces GPS (kk7) : 91 % toutes périodes (le matin 91 %, à midi 91 %, en fin de journée 87 % ; hiver 92 %, printemps 90 %, été 90 %, automne 92 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S60",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "oraison-pente-ouest-midi",
+     "name": "Oraison – Le Relais : pente ouest sous le décollage (thermique du milieu de journée)",
+     "lon": 5.9189,
+     "lat": 43.8976,
+     "alt_m": 418,
+     "coord_quality": "approx",
+     "best_hours": "milieu de journée en été (FFVL : activité thermique pouvant être violente) puis restitution du soir ; traces GPS : 98 % le matin, 99 % à midi, 98 % en fin de journée, toute l'année",
+     "trigger": "pente ouest (24°) à 418 m, sous le décollage du Relais (SO/O, 536 m), colline basse de 200 m de dénivelé au-dessus de la Durance",
+     "description": "Audit d'octobre 2026 : le thermique du décollage d'Oraison n'avait été décrit que comme danger et comme soaring du soir, le seul thermique de l'élément étant celui du terrain d'atterrissage. La fiche FFVL 938 écrit pourtant, à la rubrique des dangers : « en été, milieu de journée : activité thermique pouvant être violente », et à l'aérologie « vol de milieu de journée : pas ou peu de vent météo (s'il y en a, il faut de l'ouest) et brise absente ou légère ; vol du soir : léger vent météo d'ouest ou brise et conditions de restitution ». Le forum parapentiste.info (« Voler près de Sisteron », 2009) : « Oraison, petit site (dénivelé 200 m), soaring le soir très sympa, vol thermique le midi assez technique car petit dénivelé » ; un autre pilote y fait « plusieurs vols dont un au plafond ». Le point chaud kk7 à 99 % toutes périodes, à 290 m du décollage, sur la même pente ouest, confirme un déclencheur constant. Position du point chaud, altitude du terrain IGN (417 m, 120 m sous le décollage). Point chaud mesuré par les traces GPS (kk7) : 99 % toutes périodes (le matin 98 %, à midi 99 %, en fin de journée 98 % ; hiver 98 %, printemps 98 %, été 99 %, automne 99 %). ",
+     "confidence": "medium",
+     "sources": [
+      "S46",
+      "S72",
+      "S125",
+      "S126"
+     ]
     }
    ],
    "soaring_spots": [
@@ -3658,6 +3920,174 @@
       "S55"
      ],
      "confidence": "medium"
+    },
+    {
+     "id": "lachens-pente-sud-est",
+     "name": "Lachens : pente sud-est sous les décollages du col et du nord",
+     "lon": 6.6512,
+     "lat": 43.7413,
+     "alt_m": 1540,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (90 % le matin, 85 % à midi, 72 % en fin de journée ; toute l'année) ; Ozone : décollage sud qui souffle trop fort « dans la chaleur d'une journée thermique »",
+     "trigger": "pente sud-est (32°) à 1540 m, sous le sommet du Lachens, à 590 m au sud-ouest des décollages du col (S) et du nord",
+     "description": "Audit d'octobre 2026 : les trois décollages du Lachens (fiches FFVL 551 « Sud – Col du Lachens », SE/S ; 555 « Nord », N ; 557 « Ouest », SO) n'avaient aucun thermique à moins de 10 km. Ozone (InfoZone Lachens) : le site « peut prendre presque toutes les directions de vent (sauf l'est) et a un bon potentiel de cross, mais le décollage sud est sujet à souffler trop fort dans la chaleur d'une journée thermique ». ParaglidingEarth (site 3067, Lachens Sud) renseigne les thermiques. Un point chaud kk7 à 90 % se trouve sur la pente sud-est sous les décollages (aucun texte ne le décrit), actif toute l'année et dès le matin : c'est le déclencheur de la journée thermique que décrit Ozone. Point chaud mesuré par les traces GPS (kk7) : 90 % toutes périodes (le matin 90 %, à midi 85 %, en fin de journée 72 % ; hiver 87 %, printemps 89 %, été 87 %, automne 87 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "medium",
+     "sources": [
+      "S49",
+      "S33",
+      "S138",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "lachens-ouest-pente-sud-ouest",
+     "name": "Lachens ouest : pente sud-ouest sous le décollage ouest",
+     "lon": 6.6409,
+     "lat": 43.7349,
+     "alt_m": 1382,
+     "coord_quality": "approx",
+     "best_hours": "le matin et à midi d'après les traces GPS (86 % le matin, 82 % à midi ; toute l'année) ; récit du 26 juin 2005 : décollage à 11h45 « en plein début de cycle », plafond 1900 m, cycles courts et distants, brise d'ouest rentrée vers 10h",
+     "trigger": "pente sud-ouest (25°) à 1382 m, sous le décollage ouest du Lachens (SO/O, 1427 m) et au-dessus du vallon du Mal Vallon",
+     "description": "Audit d'octobre 2026 : le décollage ouest du Lachens (fiche FFVL 557, 1427 m, SO) n'avait aucun thermique. Le récit de N. Fabre (26 juin 2005, Lachens – clue de Riolan) : « on part au Lachens déco ouest, c'est bien alimenté mais visiblement pas encore très organisé, les cycles sont très courts et très distants… 11h45 décollage en plein début de cycle ; montée jusqu'à 1900 m puis coupure du robinet… il y a une reprise du thermique 100 mètres sous le vent du premier, comme une coupure nette créée par la brise » (l'ouest rentre dès 10h). Un point chaud kk7 à 85 % (82 à 86 % toute l'année) se trouve à 470 m du décollage, sur la même pente sud-ouest. Les décollages sud (bien plus haut) sont décrits à part. Point chaud mesuré par les traces GPS (kk7) : 85 % toutes périodes (le matin 86 %, à midi 82 %, en fin de journée sous 70 % ; hiver 82 %, printemps 76 %, été 80 %, automne 82 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "medium",
+     "sources": [
+      "S150",
+      "S135",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "bauroux-pente-sud",
+     "name": "Bauroux : pente sud sous le sommet (relais du Lachens)",
+     "lon": 6.7137,
+     "lat": 43.7783,
+     "alt_m": 1331,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (91 % le matin, 90 % à midi, 74 % en fin de journée ; toute l'année)",
+     "trigger": "pente sud (31°) à 1331 m, sous le sommet de Bauroux (450 m au nord-est), première montagne au nord-est du Lachens vers Valderoure",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7) à 90 % qu'aucun texte ne localisait. Le récit de N. Fabre (26 juin 2005, Lachens – clue de Riolan) l'explique : parti du Lachens vers le nord-est, « vers Bauroux : beau thermique et belle dérive sud-est en arrivant sur le relief ; montée à 2400 m puis transition vers Valderoure ». La pente sud sous Bauroux est le relais de cette transition (point de relance, plafond 2400 m ce jour-là). Point chaud mesuré par les traces GPS (kk7) : 90 % toutes périodes (le matin 91 %, à midi 90 %, en fin de journée 74 % ; hiver 94 %, printemps 92 %, été 79 %, automne 80 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "medium",
+     "sources": [
+      "S135",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "la-grangasse-pente-sud",
+     "name": "La Grangasse (Valderoure) : pente sud entre Lachens et Gourdon",
+     "lon": 6.7889,
+     "lat": 43.7354,
+     "alt_m": 1281,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (91 % le matin, 92 % à midi, 72 % en fin de journée ; toute l'année)",
+     "trigger": "pente sud (18°) à 1281 m, à 380 m de La Grangasse, entre le vallon de Combe Carlette et le col de la Colette",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7) à 91 %, qu'aucun texte ne décrivait, sur la pente sud à 1280 m, entre le Lachens (10 km à l'ouest) et le plateau de Caussols (11 km à l'est). Le récit de N. Fabre (2005) passe plus au nord (Bauroux, Valderoure). Aucun décollage, aucune fiche ne le cite : déduction, thermique de pente sud sur le trajet Lachens – Gréolières. Point chaud mesuré par les traces GPS (kk7) : 91 % toutes périodes (le matin 91 %, à midi 92 %, en fin de journée 72 % ; hiver 76 %, printemps 90 %, été 94 %, automne 95 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "le-puet-pente-sud",
+     "name": "Saint-Vallier – Le Puet : pente sud sous le décollage",
+     "lon": 6.8277,
+     "lat": 43.7086,
+     "alt_m": 952,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (96 % le matin, 96 % à midi, 94 % en fin de journée ; toute l'année)",
+     "trigger": "pente sud (25°) à 952 m, à 180 m au sud du décollage du Puet (SE/S/SO, 1004 m), sur la pente descendant vers la chapelle Sainte-Luce",
+     "description": "Audit d'octobre 2026 : le décollage du Puet (fiche FFVL 5027, 1004 m, SE/S/SO, « orienté sud, permet de voler de vent d'ouest à est selon la brise ; dangereux en nord ; gradient en sortie de décollage par tendance ouest ») n'avait aucun thermique à moins de 11 km. ParaglidingEarth (site 11629, « site privé de l'école et du club local », 10 min à pied de la route Napoléon) renseigne thermiques, soaring et cross. Le point chaud kk7 à 97 % toutes périodes (91 % en hiver, le plus fort du secteur de Grasse avec Gourdon) est celui d'un site très fréquenté par l'école de Saint-Vallier : la mesure inclut sans doute la dynamique de la brise en plus des thermiques. Aucun récit ne décrit un thermique au Puet (déduction). Point chaud mesuré par les traces GPS (kk7) : 97 % toutes périodes (le matin 96 %, à midi 96 %, en fin de journée 94 % ; hiver 90 %, printemps 96 %, été 97 %, automne 96 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S43",
+      "S43",
+      "S141",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "kennedy-pente-sud",
+     "name": "Gourdon – Kennedy : pente sud sous les rampes",
+     "lon": 6.9808,
+     "lat": 43.7029,
+     "alt_m": 566,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (99 % le matin, 98 % à midi, 94 % en fin de journée ; toute l'année)",
+     "trigger": "pente sud (29°) à 566 m, sous les rampes de décollage de Kennedy (E/SE/S/SO, 643 m), en bordure de la route de Gourdon au-dessus du Bar-sur-Loup",
+     "description": "Audit d'octobre 2026 : le décollage de Kennedy (fiche FFVL 290, 643 m, SE/S/SO, niveau marron) n'avait aucun thermique à moins de 1,7 km (le plus proche, « Gourdon village », est décrit comme faible et étroit) ; la fiche décrit un décollage bas herbeux pour les parapentes (S-SSE) sous les tremplins delta. Le catalogue du vol libre (CVL) note « conditions de vol : favorables en thermiques et toute l'année ; finesse 4,8 ; cross difficile » ; ParaglidingEarth (site 10748) renseigne thermiques et cross ; le club (Au gré de l'air, repérages d'un cross Gourdon – Saint-Jeannet) cite Kennedy comme l'un des points de raccroche du « petit bocal » (Cavillore, Gourdon village, l'Embarnier, Kennedy, Courmettes). Le point chaud kk7 à 99 %, actif toute l'année et dès le matin, concorde avec « toute l'année » du CVL. Position du point chaud (le décollage FFVL est à 6.9809 E 43.7041 N), altitude du terrain IGN. Point chaud mesuré par les traces GPS (kk7) : 99 % toutes périodes (le matin 99 %, à midi 98 %, en fin de journée 94 % ; hiver 99 %, printemps 98 %, été 97 %, automne 98 %). ",
+     "confidence": "medium",
+     "sources": [
+      "S146",
+      "S42",
+      "S73",
+      "S139",
+      "S57",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "embarnier-pente-sud-est",
+     "name": "Gourdon – L’Embarnier : pente sud-est sous les décollages",
+     "lon": 6.9461,
+     "lat": 43.7225,
+     "alt_m": 1068,
+     "coord_quality": "approx",
+     "best_hours": "le matin et à midi d'après les traces GPS (95 % le matin, 79 % à midi ; toute l'année)",
+     "trigger": "pente sud-est (27°) à 1068 m, sous les décollages de l'Embarnier (haut et parking, SE/E/S, 1094 à 1115 m), crête rocheuse exposée au sud-est",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7) à 95 % (le matin 95 %, 79 % à midi, 68 % en fin de journée) à 180 m des décollages de l'Embarnier, qu'aucun texte ne décrivait. Le catalogue du vol libre (CVL) donne pour l'Embarnier « favorable par brise de pente, de sud, sud-est, sud-ouest et vent d'est, et en thermiques » ; ParaglidingEarth (site 2549) renseigne thermiques et soaring ; les repérages d'Armant (Au gré de l'air, 2006) notent que, l'hiver (inversion vers 1000-1200 m, ascendances faibles), « l'Embarnier = souvent simple plate-forme de décollage pour jouer sur le reste du bocal », et le récit de Briois (2009) en part pour Gourdon – Baou de la Gaude – Courmettes. Profil mesuré : plutôt le matin, ce qui est cohérent avec un versant sud-est. Point chaud mesuré par les traces GPS (kk7) : 95 % toutes périodes (le matin 95 %, à midi 79 %, en fin de journée sous 70 % ; hiver 86 %, printemps 96 %, été 97 %, automne 94 %). ",
+     "confidence": "medium",
+     "sources": [
+      "S42",
+      "S42",
+      "S73",
+      "S140",
+      "S57",
+      "S107",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "vallon-de-clare-pente-sud",
+     "name": "Vallon de Clare (Tourrettes-sur-Loup) : pente sud raide",
+     "lon": 7.0275,
+     "lat": 43.7131,
+     "alt_m": 692,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (90 % le matin, 86 % à midi, 78 % en fin de journée ; toute l'année)",
+     "trigger": "pente sud-ouest (41°) à 692 m, au bord du vallon de Clare, au sud des Courmettes et à l'ouest de Tourrettes-sur-Loup",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7) à 91 % qu'aucun texte ne décrivait, sur une pente sud de 40° à 700 m, à 1,7 km au sud-sud-est des antennes des Courmettes et des « maisons bulles » de Tourrettes (deux relais décrits du bocal Gourdon – Saint-Jeannet). Le récit de Briois (16 janvier 2009) cite « un dernier thermique dégoté dans un recoin de la dernière combe des barres de Courmettes à l'entrée des gorges du Loup » ; le lien avec le vallon de Clare n'est pas établi (déduction). Position du point chaud, altitude du terrain IGN. Point chaud mesuré par les traces GPS (kk7) : 91 % toutes périodes (le matin 90 %, à midi 86 %, en fin de journée 78 % ; hiver 90 %, printemps 74 %, été 80 %, automne 90 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S107",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "valettes-atterro-thermique",
+     "name": "Les Valettes (Pont-du-Loup) : terrain d'atterrissage thermique",
+     "lon": 7.0047,
+     "lat": 43.7008,
+     "alt_m": 139,
+     "coord_quality": "source",
+     "best_hours": "après-midi thermique d'après le catalogue du vol libre ; heure non précisée",
+     "trigger": "fond de la vallée du Loup à 139 m, grand terrain d'atterrissage entouré de route, de camping et d'habitations, au pied de Gourdon",
+     "description": "Audit d'octobre 2026 : la fiche d'atterrissage des Valettes était décrite comme un simple terrain (gradient, lignes) alors que le catalogue du vol libre (CVL, dép. 06) y note : « conditions de vol : activités thermiques importantes ; contre-pente aménagée au sud-est du terrain ; ligne haute tension sur le côté est ; délicat par vent météo fort ». La fiche FFVL 13378 précise l'approche côté Courmettes (route) pour les parapentes et la PTU main droite par vent de sud. Aucun point chaud kk7 à moins de 1,5 km (traces rares dans la vallée). Le thermique est donc celui du fond de vallée, sur le terrain d'atterrissage : à surveiller à l'approche, comme au lac de Saint-André. Position : atterrissage FFVL, altitude du terrain IGN.",
+     "confidence": "medium",
+     "sources": [
+      "S153",
+      "S42",
+      "S73",
+      "S57",
+      "S126"
+     ]
     }
    ],
    "soaring_spots": [
@@ -3977,16 +4407,17 @@
     {
      "id": "castellane-colle-bernaiche",
      "name": "Castellane – Crête de Colle Bernaiche (relais TV)",
-     "lon": 6.4631,
-     "lat": 43.8458,
+     "lon": 6.4676,
+     "lat": 43.8454,
      "coord_quality": "approx",
-     "alt_m": 1450,
+     "alt_m": 1398,
      "orientations": [],
-     "description": "Ancienne fiche du catalogue du vol libre (coordonnées 43°50'45\"N 6°27'47\"E après le col des Lecques). Aérogliss : Castellane n'a que 2 sites « confidentiels, non officiels et réservés aux pilotes locaux » ; l'école Haut les Mains écrit que le site phare des Cadières de Brandis n'est plus volable (constructions) mais que celui de la Baume reste accessible. Ne pas considérer comme site ouvert.",
+     "description": "Ancienne fiche du catalogue du vol libre (coordonnées 43°50'45\"N 6°27'47\"E après le col des Lecques). Aérogliss : Castellane n'a que 2 sites « confidentiels, non officiels et réservés aux pilotes locaux » ; l'école Haut les Mains écrit que le site phare des Cadières de Brandis n'est plus volable (constructions) mais que celui de la Baume reste accessible. Ne pas considérer comme site ouvert. Audit d'octobre 2026 : la position (GPS de l'ancienne fiche du catalogue, 6.4631 E 43.8458 N) donnait 1343 m de terrain IGN pour 1450 m déclarés ; elle est ramenée sur le toponyme IGN « Crête de Colle Bernaiche » (6.4676 E 43.8454 N, 360 m plus à l'est, terrain 1398 m). L'altitude de 1450 m n'est pas retrouvée sur la crête : approximatif. Site non officiel.",
      "sources": [
       "S73",
       "S7",
-      "S78"
+      "S78",
+      "S126"
      ]
     }
    ],
@@ -4949,6 +5380,153 @@
       "S75"
      ],
      "confidence": "medium"
+    },
+    {
+     "id": "lavina-pente-nord-est-matin",
+     "name": "Sospel – Tête de la Lavina : pente nord-est du décollage du matin",
+     "lon": 7.4147,
+     "lat": 43.8665,
+     "alt_m": 1061,
+     "coord_quality": "approx",
+     "best_hours": "fin de matinée avant 11h : « later in the morning, as the thermals get stronger » (Ozone), décollage avant 11h (PGE) ; traces GPS : 85 % le matin seulement",
+     "trigger": "pente est (22°) à 1061 m, sous la Tête de la Lavina (NE/E/ESE, 1086 à 1103 m), versant frappé par le soleil avant la brise de sud",
+     "description": "Audit d'octobre 2026 : le décollage de la Lavina (fiche FFVL 227, 1086 m, E/SE) n'avait aucun thermique à moins de 3 km (le plus proche, le Mont Agaisen, est à 4 km). Ozone (InfoZone Sospel) : « le décollage de la Lavina est bon pour les débutants, son orientation sud-est facilitant les vols du matin ; plus tard dans la matinée, quand les thermiques se renforcent, c'est aussi un bon site de cross » ; le club (Sospel Vol Libre) : « généralement utilisé le matin avant que la brise ne passe sud en raison des entrées maritimes fréquentes ; départ de cross, poser obligatoire au Pigeonnier » ; ParaglidingEarth (site 11823) : « décollage avant 11h, ensuite à l'ombre, donc vent de dos ». Un point chaud kk7 à 83 % à 130 m, uniquement le matin (85 %), concorde. Point chaud mesuré par les traces GPS (kk7) : 83 % toutes périodes (le matin 85 %, à midi sous 70 %, en fin de journée sous 70 % ; hiver sous 70 %, printemps sous 70 %, été sous 70 %, automne 80 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "medium",
+     "sources": [
+      "S147",
+      "S51",
+      "S37",
+      "S74",
+      "S142",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "monte-grosso-pente-sud",
+     "name": "Sospel – Monte Grosso : pente sud sous le décollage",
+     "lon": 7.4662,
+     "lat": 43.91,
+     "alt_m": 1124,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (96 % le matin, 96 % à midi, 87 % en fin de journée ; toute l'année)",
+     "trigger": "pente sud (29°) à 1124 m, sous le décollage de Monte Grosso (SE/S, 1205 à 1250 m), au bord du parc du Mercantour",
+     "description": "Audit d'octobre 2026 : le décollage de Monte Grosso (fiche FFVL 229, 1205 m, SE/S ; le club : « brise souvent forte, décollage court, ne convient pas aux débutants » ; Ozone : « SE à S, dangereux avec des vents d'ouest à sud-ouest, réservé aux pilotes expérimentés ») n'avait aucun thermique à moins de 3,2 km (le Mont Agaisen, « The Lift »). ParaglidingEarth (site 22397) renseigne les thermiques. Le point chaud kk7 à 97 % (le matin 97 %), à 500 m du décollage sur la même pente sud, est le plus fort du secteur de Sospel. Sospel Vol Libre écrit que « les jours de purs thermiques peuvent être puissants dans les pompes de service ». Aucun récit ne localise ce thermique (déduction pour le déclencheur). Point chaud mesuré par les traces GPS (kk7) : 97 % toutes périodes (le matin 96 %, à midi 96 %, en fin de journée 87 % ; hiver 77 %, printemps 94 %, été 96 %, automne 77 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S148",
+      "S51",
+      "S37",
+      "S74",
+      "S143",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "beoulet-pente-sud",
+     "name": "Le Béoulet (Sospel) : pente sud raide à l'ouest de Monte Grosso",
+     "lon": 7.4529,
+     "lat": 43.9211,
+     "alt_m": 1338,
+     "coord_quality": "approx",
+     "best_hours": "le matin et à midi d'après les traces GPS (91 % le matin, 88 % à midi ; au printemps, en été)",
+     "trigger": "pente sud (37°) à 1338 m, sous le Béoulet et au-dessus du vallon de Callé Castagna, à 1,4 km à l'ouest-nord-ouest de Monte Grosso",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7) à 91 % (le matin 91 %, 75 % en été), qu'aucun texte ne décrivait, voisin du thermique de Monte Grosso et du Mont Agaisen. Aucun récit ne le cite : déduction. Position du point chaud, altitude du terrain IGN. Point chaud mesuré par les traces GPS (kk7) : 91 % toutes périodes (le matin 91 %, à midi 88 %, en fin de journée sous 70 % ; hiver sous 70 %, printemps 71 %, été 75 %, automne sous 70 %). ",
+     "confidence": "low",
+     "sources": [
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "tete-dalpe-pente-sud-est",
+     "name": "Tête d'Alpe : pente sud-est d'été",
+     "lon": 7.5686,
+     "lat": 43.9318,
+     "alt_m": 1518,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (93 % le matin, 96 % à midi, 81 % en fin de journée ; en été)",
+     "trigger": "pente sud-est (26°) à 1518 m, sous la Tête d'Alpe (277 m au nord) et la Cime de Crémo",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7) à 96 % uniquement en été (96 %) et du matin à la fin de journée, qu'aucun texte ne décrivait et qu'aucun décollage ne jouxte. Il se situe dans l'axe Sospel – Tende des cross cités par Sospel Vol Libre (« départs en cross vers La Colmiane, Tende, Gourdon »). Aucun récit ne le localise : déduction. Position du point chaud, altitude du terrain IGN. Point chaud mesuré par les traces GPS (kk7) : 96 % toutes périodes (le matin 93 %, à midi 96 %, en fin de journée 81 % ; hiver sous 70 %, printemps sous 70 %, été 96 %, automne sous 70 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S74",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "peille-pente-sud-est-bocal",
+     "name": "Peille – Lai Barrai : pente sud-est à l'ouest du bocal de Roquebrune",
+     "lon": 7.4261,
+     "lat": 43.7575,
+     "alt_m": 539,
+     "coord_quality": "approx",
+     "best_hours": "à midi et en fin de journée d'après les traces GPS (91 % à midi, 80 % en fin de journée ; au printemps)",
+     "trigger": "pente sud-est (17°) à 539 m, à 1,25 km à l'est du décollage de Lai Barrai (710 m), sur la pente sud-est qui descend vers l'est",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7) à 92 % (91 % à midi, 93 % au printemps), qu'aucun texte ne décrivait, à 1,3 km à l'est du décollage de Peille – Lai Barrai (fiche FFVL 896) et à 1,6 km du Mont Gros de Roquebrune. Les récits de Roquebrune (bocal) citent le Mont Gros et le « thermique du retour » plus à l'est ; celui-ci n'y est pas nommé (déduction). Position du point chaud, altitude du terrain IGN. Point chaud mesuré par les traces GPS (kk7) : 92 % toutes périodes (le matin sous 70 %, à midi 91 %, en fin de journée 80 % ; hiver sous 70 %, printemps 93 %, été sous 70 %, automne sous 70 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S52",
+      "S85",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "la-cime-gattieres-pente-sud-est",
+     "name": "La Cime (Bonson – Gattières) : pente sud-est",
+     "lon": 7.1765,
+     "lat": 43.8623,
+     "alt_m": 722,
+     "coord_quality": "approx",
+     "best_hours": "le matin et à midi d'après les traces GPS (97 % le matin, 95 % à midi ; au printemps, en automne, en hiver)",
+     "trigger": "pente sud-est (21°) à 722 m, sous la Cime (230 m au nord), au-dessus de Vélouers et de l'Ibac",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7) à 97 % (le matin 97 %, à midi 95 %, rien en fin de journée ; 85 % en hiver) qu'aucun texte ne décrivait, à 4,3 km au sud-est du Mont Vial (décollage de Bonson). La mesure (versant sud-est actif le matin, même l'hiver) évoque un thermique de relance sur le trajet entre le Mont Vial et la côte ; aucun récit ne le cite (déduction). Position du point chaud, altitude du terrain IGN. Point chaud mesuré par les traces GPS (kk7) : 97 % toutes périodes (le matin 97 %, à midi 95 %, en fin de journée sous 70 % ; hiver 85 %, printemps 81 %, été sous 70 %, automne 86 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "mont-macaron-zone-calcaire",
+     "name": "Mont Macaron : zone calcaire du sommet (thermique rare)",
+     "lon": 7.3053,
+     "lat": 43.7842,
+     "alt_m": 804,
+     "coord_quality": "approx",
+     "best_hours": "journée sans heure précise (le récit du 20 janvier 2015 est un vol d'hiver) ; thermique rare",
+     "trigger": "zone calcaire du sommet du Mont Macaron, sous la ligne THT, à 700 m au sud du décollage de Cantaron",
+     "description": "Audit d'octobre 2026 : le décollage de Cantaron – Mont Macaron (fiche FFVL 1653, 679 m, S, « site très complexe à cause des lignes HT ») n'avait aucun thermique : le « thermique du Férion » est à 9 km. Le récit « God Bless the Macaroni » (20 janvier 2015) en donne la mesure : « un rendement minable ! Pentes faibles, sol sableux, forme bizarre » (plusieurs visites sans thermique), mais le jour de son Roquebrune – Gourdon l'auteur trouve en transit « de bons trucs provenant des faces ouest sous le vent, très turbulents », puis s'accroche « au-dessus de la plus grande zone calcaire » du Macaron : « yes ça bipe ». Les traces GPS (kk7) mesurent un point chaud à 83 % à 1 km au sud du sommet, sans heure marquée. Position : sommet IGN du Mont Macaron (la zone calcaire n'est pas localisée plus finement). Thermique exceptionnel, pas un site thermique.",
+     "confidence": "low",
+     "sources": [
+      "S52",
+      "S136",
+      "S137",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "lai-barrai-pente-sud-sous-le-decollage",
+     "name": "Peille – Lai Barrai : pente sud sous le décollage falaise",
+     "lon": 7.4154,
+     "lat": 43.756,
+     "alt_m": 613,
+     "coord_quality": "approx",
+     "best_hours": "le matin et en hiver surtout d'après les traces GPS (92 % le matin, 72 % à midi, rien en fin de journée ; 90 % en hiver, 91 % en automne, 82 % au printemps) ; la fiche FFVL parle de « brises thermiques »",
+     "trigger": "pente sud (28°) à 613 m, à l'est du décollage falaise de Laï Barrai (710 m, SE/S/SO), au Testaï d'Agel, face à la mer",
+     "description": "Audit d'octobre 2026 : la fiche FFVL du décollage (1576, Monaco Voltige : « site très fréquenté mais délicat, décollage falaise avec atterrissage lointain… dangereux par NE, E, NO, O… brises thermiques ») parle de thermiques sans qu'un thermique soit décrit à moins de 1,2 km ; l'atlas ne comptait que le point chaud kk7 voisin (« thermique mesuré »). Ce point chaud est à 380 m du décollage, sur la pente sud : 85 % toutes périodes, le matin à 92 %, présent l'hiver (90 %) comme en automne (91 %), ce qui concorde avec un site de brises thermiques exposé au sud-est dès le matin. Le décollage fait partie du bocal de Roquebrune, dont le Mont Gros (premier plein) est à 2,8 km à l'est-nord-est. Position du point chaud (le décollage FFVL est à 7.4107 E 43.7559 N), altitude du terrain IGN. Point chaud mesuré par les traces GPS (kk7) : 85 % toutes périodes (le matin 92 %, à midi 72 %, en fin de journée sous 70 % ; hiver 90 %, printemps 82 %, été sous 70 %, automne 91 %). ",
+     "confidence": "medium",
+     "sources": [
+      "S152",
+      "S52",
+      "S85",
+      "S125",
+      "S126"
+     ]
     }
    ],
    "soaring_spots": [
@@ -6178,6 +6756,134 @@
       "S118"
      ],
      "confidence": "low"
+    },
+    {
+     "id": "mont-court-pente-sud",
+     "name": "Mont Court (Tende) : pente sud, relais entre Cagnorina et le col de Tende",
+     "lon": 7.5878,
+     "lat": 44.1159,
+     "alt_m": 1615,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (97 % le matin, 96 % à midi, 87 % en fin de journée ; au printemps, en été, en automne)",
+     "trigger": "pente sud (28°) à 1615 m, sous le Mont Court (1719 m, à 250 m au nord), sur la route de crête reliant Cagnorina au col de Tende",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7) à 96 %, qu'aucun texte ne localisait, à 250 m du Mont Court. Ozone (InfoZone Tende) donne comme parcours de cross du site : « de Cagnorina au col de Tende via le Mont Court (1719 m) », et Cagnorina est un site « thermo-dynamique » par régime de sud (FFVL 721, catalogue du vol libre) ; Maurice Baldi (Roya Parapente) y a fait un 60 km aller-retour col de Tende – Sospel le 18 septembre 2003. Le Mont Court est donc le relais de la crête ; le point chaud mesure le déclencheur sur sa pente sud. ParaglidingEarth (sites 2550 et 15352) renseigne thermiques, soaring et cross à Cagnorina et au col de Tende. Point chaud mesuré par les traces GPS (kk7) : 96 % toutes périodes (le matin 97 %, à midi 96 %, en fin de journée 87 % ; hiver sous 70 %, printemps 95 %, été 89 %, automne 97 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "medium",
+     "sources": [
+      "S36",
+      "S50",
+      "S73",
+      "S144",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "rochers-de-gata-pente-sud",
+     "name": "Rochers de Gata (Tende) : pente sud à l'est du Mont Court",
+     "lon": 7.608,
+     "lat": 44.1263,
+     "alt_m": 1430,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (97 % le matin, 99 % à midi, 98 % en fin de journée ; au printemps, en été, en automne)",
+     "trigger": "pente sud (33°) à 1430 m, sous les Rochers de Gata (400 m au nord-est) et au-dessus du vallon de Carvaillon, à 3,3 km au nord de Cagnorina",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7) à 100 %, à égalité avec le point chaud de Cagnorina (sous 70 % seulement en hiver), qu'aucun texte ne décrivait. Il est sur la crête qui prolonge celle du Mont Court vers l'est, côté Tende. Les textes (Ozone, FFVL 721) décrivent le parcours Cagnorina – col de Tende sans nommer ce relief : déduction, thermique de pente sud sur le parcours. Point chaud mesuré par les traces GPS (kk7) : 100 % toutes périodes (le matin 97 %, à midi 99 %, en fin de journée 98 % ; hiver sous 70 %, printemps 87 %, été 98 %, automne 97 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S36",
+      "S50",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "mont-deveille-pente-sud",
+     "name": "Mont Déveille (Tende) : pente sud, crête de l'ouest de Tende",
+     "lon": 7.549,
+     "lat": 44.1206,
+     "alt_m": 1599,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (83 % le matin, 92 % à midi, 82 % en fin de journée ; au printemps, en été, en automne)",
+     "trigger": "pente sud (15°) à 1599 m, sous le Mont Déveille (120 m), à 3,1 km à l'ouest du Mont Court",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7) à 92 % toutes périodes, qu'aucun texte ne décrivait. Il se situe à 3,7 km au sud-sud-ouest du col de Tende (fort central) et à 3,1 km à l'ouest du Mont Court, dans le secteur des crêtes que les textes d'Ozone et de la FFVL décrivent entre Cagnorina et le col. Aucun texte ne le cite : déduction. Point chaud mesuré par les traces GPS (kk7) : 92 % toutes périodes (le matin 83 %, à midi 92 %, en fin de journée 82 % ; hiver sous 70 %, printemps 78 %, été 73 %, automne 81 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S36",
+      "S50",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "creppe-de-la-marguerie-giaure",
+     "name": "Crépé de la Marguerie (fort de Giaure) : pente sud-est",
+     "lon": 7.5311,
+     "lat": 44.1329,
+     "alt_m": 2067,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (97 % le matin, 97 % à midi, 86 % en fin de journée ; en été, en automne)",
+     "trigger": "pente sud-est (29°) à 2067 m, sous le Crépé de la Marguerie et à 800 m de Giaure, sur la crête fortifiée à l'ouest du col de Tende",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7) à 97 % toutes périodes, qu'aucun texte ne décrivait, à 3,6 km à l'ouest-sud-ouest du col de Tende. Ozone décrit le col de Tende (fort central, S) comme un « site de soaring et de thermique, vent fort au milieu de la journée, bon potentiel de cross » (ParaglidingEarth, site 15352, renseigne aussi les thermiques) ; ce point chaud est la crête qui le prolonge vers l'ouest, au-dessus du fort de Giaure (déduction : aucun texte ne la cite). Point chaud mesuré par les traces GPS (kk7) : 97 % toutes périodes (le matin 97 %, à midi 97 %, en fin de journée 86 % ; hiver sous 70 %, printemps sous 70 %, été 98 %, automne 89 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S36",
+      "S145",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "coture-baisse-de-la-crouseta",
+     "name": "Coture (Tende) : pente ouest à l'est de Cagnorina",
+     "lon": 7.6417,
+     "lat": 44.1048,
+     "alt_m": 1635,
+     "coord_quality": "approx",
+     "best_hours": "à midi et en fin de journée d'après les traces GPS (91 % à midi, 91 % en fin de journée ; au printemps, en été)",
+     "trigger": "pente ouest (11°) à 1635 m, au-dessus de Coture, sous la Baisse de la Crouseta, à 3,7 km à l'est-nord-est de Cagnorina",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7) à 91 % (l'après-midi : 91 % à midi et en fin de journée, rien le matin ; été 81 %), qu'aucun texte ne décrivait, sur une pente exposée à l'ouest. Aucun texte ne le cite : déduction, thermique de fin d'après-midi sur un versant ouest. Point chaud mesuré par les traces GPS (kk7) : 91 % toutes périodes (le matin sous 70 %, à midi 91 %, en fin de journée 91 % ; hiver sous 70 %, printemps 83 %, été 81 %, automne sous 70 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "cros-de-la-tune-pente-sud",
+     "name": "Crête du Giraud – vallon de la Tune : pente sud",
+     "lon": 7.1645,
+     "lat": 44.0984,
+     "alt_m": 2121,
+     "coord_quality": "approx",
+     "best_hours": "le matin et à midi d'après les traces GPS (99 % le matin, 98 % à midi ; au printemps, en été, en automne)",
+     "trigger": "pente sud (20°) à 2121 m, sous la crête du Giraud et au-dessus du vallon de la Tune, à 1,4 km au sud du Mont Giraud",
+     "description": "Audit d'octobre 2026 : point chaud mesuré par les traces GPS (kk7) à 97 % (le matin 99 %, à midi 98 %, rien en fin de journée ; 98 % en été), qu'aucun texte ne décrivait. Le Mont Giraud (« plafond 2700 m, face ouest de La Colmiane ») et la « pompe à Gaby » de Veillos sont les thermiques décrits à 1,4 et 1,5 km ; le point chaud est la pente sud qui les alimente côté sud-est (déduction : aucun récit ne la cite). Point chaud mesuré par les traces GPS (kk7) : 97 % toutes périodes (le matin 99 %, à midi 98 %, en fin de journée sous 70 % ; hiver sous 70 %, printemps 86 %, été 98 %, automne 92 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S35",
+      "S63",
+      "S125",
+      "S126"
+     ]
+    },
+    {
+     "id": "colmiane-pic-pente-ouest",
+     "name": "La Colmiane – Le Pic : pente ouest sous le décollage",
+     "lon": 7.2166,
+     "lat": 44.059,
+     "alt_m": 1752,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (75 % le matin, 79 % à midi, 84 % en fin de journée ; au printemps, en été, en automne)",
+     "trigger": "pente nord-ouest (17°) à 1752 m, sous le décollage du Pic (SO/O, 1772 m), au-dessus du col de la Colmiane",
+     "description": "Audit d'octobre 2026 : le décollage du Pic (fiche FFVL 905, SO/O, « attention au vent d'est » ; Ozone : « Le Pic, SO – O, 1790 m ») n'avait aucun thermique à moins de 3 km (la Balme de la Frema, 3,2 km). Ozone, qui décrit les décollages de la Colmiane, ajoute que le vent « peut facilement passer de montant à rentrant par-dessus le col, derrière l'atterrissage principal » ; un pilote du fil de forum de 2018 (S151) garde de la Colmiane des souvenirs de compétitions où « les thermiques étaient en route » et conseille « de ne pas voler en milieu de journée ». Un point chaud kk7 à 78 % (84 % en fin de journée, 80 % en été) se trouve à 105 m du décollage, sur la pente ouest, ce qui concorde avec un versant qui ne chauffe que l'après-midi. Mesure sous 80 % : faible confiance. Point chaud mesuré par les traces GPS (kk7) : 78 % toutes périodes (le matin 75 %, à midi 79 %, en fin de journée 84 % ; hiver sous 70 %, printemps 76 %, été 80 %, automne 84 %). Position du point chaud, altitude du terrain IGN.",
+     "confidence": "low",
+     "sources": [
+      "S149",
+      "S35",
+      "S53",
+      "S125",
+      "S126",
+      "S151"
+     ]
     }
    ],
    "soaring_spots": [
@@ -6426,8 +7132,8 @@
      "lon": 6.9361,
      "lat": 44.2331,
      "coord_quality": "source",
-     "alt_m": 1600,
-     "description": "PGE / Ozone : champs au pied des pistes d'Auron, à faucher (fenaison) ; face est ; par vent fort approche en milieu de vallée.",
+     "alt_m": 1456,
+     "description": "PGE / Ozone : champs au pied des pistes d'Auron, à faucher (fenaison) ; face est ; par vent fort approche en milieu de vallée. Audit d'octobre 2026 : l'altitude déclarée (1600 m, celle de la station) ne correspond pas à la position, qui est l'atterrissage de ParaglidingEarth (site 2555, 6.9361 E 44.2331 N ; terrain IGN 1456 m) ; position conservée, altitude ramenée sur le terrain.",
      "sources": [
       "S34",
       "S38",
@@ -8040,6 +8746,267 @@
    "type": "pdf",
    "lang": "fr",
    "notes": "Récit : col de Veillos, brise de vallée tardive, « les thermiques du Pétoumier »."
+  },
+  {
+   "id": "S125",
+   "title": "Paragliding Thermal Maps (kk7) : points chauds de thermiques mesurés par les traces GPS",
+   "url": "https://thermal.kk7.ch/",
+   "publisher": "thermal.kk7.ch (CC BY-NC-SA 4.0)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Probabilités de thermique (toutes saisons, matin / milieu de journée / fin de journée) lues dans les fichiers téléchargés le 7 octobre 2026 ; ne disent pas ce qui déclenche."
+  },
+  {
+   "id": "S126",
+   "title": "Géoportail IGN : toponymes (géocodeur), altimétrie RGE ALTI",
+   "url": "https://data.geopf.fr/geocodage/search",
+   "publisher": "IGN",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Toponymes (index poi) et altitude du terrain (RGE ALTI, résolution métrique) à la position des éléments créés ou corrigés lors de l’audit d’octobre 2026."
+  },
+  {
+   "id": "S127",
+   "title": "Moustiers Sainte-Marie besoin de conseils (fil de forum, août-septembre 2016)",
+   "url": "https://www.parapentiste.info/forum/sites-de-vols/moustiers-saintemarie-besoin-de-conseils-t45131.0.html",
+   "publisher": "parapentiste.info",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Réponse d’un pilote : « vol du soir à Courchon… des plafonds à plus de 2000 m à 20h et survol des gorges du Verdon »."
+  },
+  {
+   "id": "S128",
+   "title": "Fiche FFVL AIGUINES LE PUITS [1638]",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1638",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain n°1638 (relevé ffvl_sites_alpes.json du 07/10/2026) : coordonnées, orientations, description et dangers."
+  },
+  {
+   "id": "S129",
+   "title": "Fiche FFVL AIGUINES LES VERNIS [13699]",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13699",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain n°13699 (relevé ffvl_sites_alpes.json du 07/10/2026) : coordonnées, orientations, description et dangers."
+  },
+  {
+   "id": "S130",
+   "title": "Fiche FFVL SAINT-GENIEZ - LES RAYES [223]",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/223",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain n°223 (relevé ffvl_sites_alpes.json du 07/10/2026) : coordonnées, orientations, description et dangers."
+  },
+  {
+   "id": "S131",
+   "title": "ParaglidingEarth : St Geniez - le Trainon (site 2525)",
+   "url": "http://www.paraglidingearth.com/?site=2525",
+   "publisher": "ParaglidingEarth",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche collaborative du décollage (site 2525) : orientations et indicateurs « thermiques », « soaring », « cross » renseignés par les contributeurs, tels que lus dans l’export de l’API le 07/10/2026."
+  },
+  {
+   "id": "S132",
+   "title": "ParaglidingEarth : Moustiers Ste.Marie - Mt.Denier (site 2536)",
+   "url": "http://www.paraglidingearth.com/?site=2536",
+   "publisher": "ParaglidingEarth",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche collaborative du décollage (site 2536) : orientations et indicateurs « thermiques », « soaring », « cross » renseignés par les contributeurs, tels que lus dans l’export de l’API le 07/10/2026."
+  },
+  {
+   "id": "S133",
+   "title": "ParaglidingEarth : Banon (site 7226)",
+   "url": "http://www.paraglidingearth.com/?site=7226",
+   "publisher": "ParaglidingEarth",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche collaborative du décollage (site 7226) : orientations et indicateurs « thermiques », « soaring », « cross » renseignés par les contributeurs, tels que lus dans l’export de l’API le 07/10/2026."
+  },
+  {
+   "id": "S134",
+   "title": "ParaglidingEarth : Aiguines (site 3073)",
+   "url": "http://www.paraglidingearth.com/?site=3073",
+   "publisher": "ParaglidingEarth",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche collaborative du décollage (site 3073) : orientations et indicateurs « thermiques », « soaring », « cross » renseignés par les contributeurs, tels que lus dans l’export de l’API le 07/10/2026."
+  },
+  {
+   "id": "S135",
+   "title": "Après l’effort… Lachens – Clue de Riolan, 30,7 km, 26 juin 2005 (N. Fabre)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/NicolasFabre03.pdf",
+   "publisher": "Au gré de l’air",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Récit : décollage du Lachens ouest à 11h45 « en plein début de cycle », plafond 1900 m, puis « beau thermique » vers Bauroux jusqu’à 2400 m."
+  },
+  {
+   "id": "S136",
+   "title": "Roquebrune – St-Vallier-de-Thiey, 20 janvier 2015 (« God Bless the Macaroni »)",
+   "url": "https://myniceflights.com/2015/01/20/roquebrune-st-vallier-de-thiey/",
+   "publisher": "myniceflights",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Récit : thermiques « provenant des faces ouest sous le vent » en transit vers le Mont Macaron, puis sur « la plus grande zone calcaire » du Macaron, « ça bipe » ; site au « rendement minable »."
+  },
+  {
+   "id": "S137",
+   "title": "Fiche FFVL CANTARON - MONT MACARON [1653]",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1653",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain n°1653 (relevé ffvl_sites_alpes.json du 07/10/2026) : coordonnées, orientations, description et dangers."
+  },
+  {
+   "id": "S138",
+   "title": "ParaglidingEarth : Lachens South (site 3067)",
+   "url": "http://www.paraglidingearth.com/?site=3067",
+   "publisher": "ParaglidingEarth",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche collaborative du décollage (site 3067) : orientations et indicateurs « thermiques », « soaring », « cross » renseignés par les contributeurs, tels que lus dans l’export de l’API le 07/10/2026."
+  },
+  {
+   "id": "S139",
+   "title": "ParaglidingEarth : Gourdon-Kennedy (site 10748)",
+   "url": "http://www.paraglidingearth.com/?site=10748",
+   "publisher": "ParaglidingEarth",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche collaborative du décollage (site 10748) : orientations et indicateurs « thermiques », « soaring », « cross » renseignés par les contributeurs, tels que lus dans l’export de l’API le 07/10/2026."
+  },
+  {
+   "id": "S140",
+   "title": "ParaglidingEarth : Gourdon (L’Embarnier) (site 2549)",
+   "url": "http://www.paraglidingearth.com/?site=2549",
+   "publisher": "ParaglidingEarth",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche collaborative du décollage (site 2549) : orientations et indicateurs « thermiques », « soaring », « cross » renseignés par les contributeurs, tels que lus dans l’export de l’API le 07/10/2026."
+  },
+  {
+   "id": "S141",
+   "title": "ParaglidingEarth : le Puet (site 11629)",
+   "url": "http://www.paraglidingearth.com/?site=11629",
+   "publisher": "ParaglidingEarth",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche collaborative du décollage (site 11629) : orientations et indicateurs « thermiques », « soaring », « cross » renseignés par les contributeurs, tels que lus dans l’export de l’API le 07/10/2026."
+  },
+  {
+   "id": "S142",
+   "title": "ParaglidingEarth : Sospel - Tete de la lavina (site 11823)",
+   "url": "http://www.paraglidingearth.com/?site=11823",
+   "publisher": "ParaglidingEarth",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche collaborative du décollage (site 11823) : orientations et indicateurs « thermiques », « soaring », « cross » renseignés par les contributeurs, tels que lus dans l’export de l’API le 07/10/2026."
+  },
+  {
+   "id": "S143",
+   "title": "ParaglidingEarth : Sospel - Montegrosso (site 22397)",
+   "url": "http://www.paraglidingearth.com/?site=22397",
+   "publisher": "ParaglidingEarth",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche collaborative du décollage (site 22397) : orientations et indicateurs « thermiques », « soaring », « cross » renseignés par les contributeurs, tels que lus dans l’export de l’API le 07/10/2026."
+  },
+  {
+   "id": "S144",
+   "title": "ParaglidingEarth : Cagnorina - Tende (site 2550)",
+   "url": "http://www.paraglidingearth.com/?site=2550",
+   "publisher": "ParaglidingEarth",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche collaborative du décollage (site 2550) : orientations et indicateurs « thermiques », « soaring », « cross » renseignés par les contributeurs, tels que lus dans l’export de l’API le 07/10/2026."
+  },
+  {
+   "id": "S145",
+   "title": "ParaglidingEarth : Col di Tenda (site 15352)",
+   "url": "http://www.paraglidingearth.com/?site=15352",
+   "publisher": "ParaglidingEarth",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche collaborative du décollage (site 15352) : orientations et indicateurs « thermiques », « soaring », « cross » renseignés par les contributeurs, tels que lus dans l’export de l’API le 07/10/2026."
+  },
+  {
+   "id": "S146",
+   "title": "Fiche FFVL KENNEDY [290]",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/290",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain n°290 (relevé ffvl_sites_alpes.json du 07/10/2026) : coordonnées, orientations, description et dangers."
+  },
+  {
+   "id": "S147",
+   "title": "Fiche FFVL SOSPEL - LAVINA [227]",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/227",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain n°227 (relevé ffvl_sites_alpes.json du 07/10/2026) : coordonnées, orientations, description et dangers."
+  },
+  {
+   "id": "S148",
+   "title": "Fiche FFVL SOSPEL - MONTE GROSSO [229]",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/229",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain n°229 (relevé ffvl_sites_alpes.json du 07/10/2026) : coordonnées, orientations, description et dangers."
+  },
+  {
+   "id": "S149",
+   "title": "Fiche FFVL LA COLMIANE - LE PIC [905]",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/905",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain n°905 (relevé ffvl_sites_alpes.json du 07/10/2026) : coordonnées, orientations, description et dangers."
+  },
+  {
+   "id": "S150",
+   "title": "Fiche FFVL LACHENS OUEST [557]",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/557",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain n°557 (relevé ffvl_sites_alpes.json du 07/10/2026) : coordonnées, orientations, description et dangers."
+  },
+  {
+   "id": "S151",
+   "title": "La Colmiane (fil de forum, 2018)",
+   "url": "https://www.parapentiste.info/forum/sites-de-vols/la-colmiane-t51663.0.html",
+   "publisher": "parapentiste.info",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Réponse d’un pilote (17 août 2018) : souvenirs de compétitions, « les thermiques étaient en route… de ne pas voler en milieu de journée »."
+  },
+  {
+   "id": "S152",
+   "title": "Fiche FFVL Peille – Lai Barrai [1576]",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1576",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain n°1576 (Monaco Voltige) : site falaise très fréquenté, « brises thermiques », mêmes horaires de chasse que Roquebrune."
+  },
+  {
+   "id": "S153",
+   "title": "Fiche FFVL LES VALETTES [13378]",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13378",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain n°13378 (relevé ffvl_sites_alpes.json du 07/10/2026) : coordonnées, orientations, description et dangers."
   }
  ]
 }

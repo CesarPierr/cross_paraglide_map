@@ -33,7 +33,10 @@ export async function createDb(url: string): Promise<Db> {
     return wrap(pg);
   }
   const { default: postgres } = await import('postgres');
-  const sql = postgres(url, { max: 10, idle_timeout: 30, prepare: true, onnotice: () => {} });
+  // Queries pass JSON as text (`$1::jsonb`, same as PGlite): keep strings as-is instead of
+  // letting the driver JSON-encode them a second time into a scalar.
+  const json = (oid: number) => ({ to: oid, from: [oid], serialize: (x: unknown) => (typeof x === 'string' ? x : JSON.stringify(x)), parse: (x: string) => JSON.parse(x) as unknown });
+  const sql = postgres(url, { max: 10, idle_timeout: 30, prepare: true, onnotice: () => {}, types: { json: json(114), jsonb: json(3802) } });
   const wrap = (s: typeof sql | postgresLib.TransactionSql): Db => ({
     kind: 'postgres',
     async query<T>(text: string, params: unknown[] = []) {

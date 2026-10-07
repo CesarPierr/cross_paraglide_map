@@ -4,7 +4,16 @@ Pile de production : **Nginx** (front statique + proxy `/api`) → **API Node 22
 **PostgreSQL 16 + PostGIS 3.4**. Un petit VPS (2 vCPU, 2 Go) suffit largement : le calcul du vent
 est fait par les navigateurs, le serveur ne sert que des données mises en cache.
 
-## Avec Docker Compose (recommandé)
+## Script d'installation (VM ou serveur)
+
+```bash
+bash deploy/install.sh --port 8080          # depuis un clone, ou via curl (voir l'en-tête du script)
+```
+
+Il clone ou met à jour le dépôt, génère `.env` avec des secrets aléatoires, construit et démarre la
+pile, recharge l'atlas et affiche l'URL. Il est idempotent : le relancer met à jour.
+
+## Avec Docker Compose (manuel)
 
 ```bash
 git clone https://github.com/CesarPierr/cross_paraglide_map.git && cd cross_paraglide_map

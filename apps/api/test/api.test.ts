@@ -49,8 +49,10 @@ let ctx: AppContext;
 let quota: QuotaMeter;
 
 beforeAll(async () => {
-  db = await createDb('pglite:memory');
+  // TEST_DATABASE_URL=postgres://… runs the suite against a real PostgreSQL/PostGIS (CI).
+  db = await createDb(process.env.TEST_DATABASE_URL ?? 'pglite:memory');
   await migrate(db);
+  await db.exec('DELETE FROM contributions; DELETE FROM http_cache; DELETE FROM api_usage;');
   await seedAtlas(db, atlas);
   await seedSites(db, [
     { id: '38D001A', provider: 'ffvl', kind: 'takeoff', name: 'Saint-Hilaire Sud', lon: 5.8867, lat: 45.3075, altitude: 975, orientations: ['O', 'SO'], status: 'official' },

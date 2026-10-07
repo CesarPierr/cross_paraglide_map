@@ -7,6 +7,15 @@ on:
 jobs:
   check:
     runs-on: ubuntu-latest
+    services:
+      postgis:
+        image: postgis/postgis:16-3.4-alpine
+        env:
+          POSTGRES_DB: brises
+          POSTGRES_USER: brises
+          POSTGRES_PASSWORD: brises
+        ports: ['5432:5432']
+        options: --health-cmd "pg_isready -U brises" --health-interval 5s --health-retries 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -17,5 +26,15 @@ jobs:
       - run: npm run typecheck
       - run: npm run lint
       - run: npm test
+      - name: API tests on PostgreSQL/PostGIS
+        run: npx vitest run apps/api
+        env:
+          TEST_DATABASE_URL: postgres://brises:brises@localhost:5432/brises
       - run: npm run build -w @brises/web
       - run: npm run build -w @brises/api
+      - name: Docker images build
+        run: docker compose build
+        env:
+          POSTGRES_PASSWORD: ci
+          ADMIN_TOKEN: ci
+          IP_SALT: ci

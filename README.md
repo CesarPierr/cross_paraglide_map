@@ -78,7 +78,8 @@ docs             Architecture, méthodologie, déploiement, données, benchmark 
 - [Architecture et points d'extension](docs/ARCHITECTURE.md)
 - [Méthodologie du modèle de vent](docs/METHODOLOGIE.md)
 - [Données : contrat, ajout d'une collecte, contributions](docs/DONNEES.md)
-- [Déploiement serveur](docs/DEPLOYMENT.md)
+- [Déploiement serveur](docs/DEPLOYMENT.md) · installation en une commande : `deploy/install.sh`
+- [Passation : reprise du développement, déploiement SSH, seconde passe de recherche](docs/PASSATION.md)
 - [Benchmark des sources météo et règles de cache](docs/WEATHER_BENCHMARK.md)
 - [Qualité des données](docs/DATA_QA.md) · [Synthèse de la recherche](reports/Brises%20des%20Alpes%20fran%C3%A7aises.md)
 

@@ -119,9 +119,23 @@ function confidence(c: string | undefined): 'high' | 'medium' | 'low' {
   return c === 'high' || c === 'medium' ? c : 'low';
 }
 
+/** Period words used in the sources, with the [start, end] legal-time window they imply. */
+const PERIODS: [RegExp, number, number][] = [
+  [/fin de nuit|début de matinée|petit matin/, 5, 9.5],
+  [/fin de matinée/, 11, 12],
+  [/début d.après-midi/, 13, 15],
+  [/milieu d.après-midi|mi-après-midi/, 14, 16.5],
+  [/fin d.après-midi/, 16, 19],
+  [/après-midi/, 12.5, 18.5],
+  [/mi-journée|(?<!après-)midi/, 12, 13],
+  [/fin de journée|soirée|\bsoir\b/, 17, 20.5],
+  [/matin|matinée/, 8, 11.5],
+  [/journée/, 11, 18.5],
+];
+
 /** Parse the free-text hours of a breeze into a legal-time window. */
 export function parseHours(text: string | undefined, kind: string): [number, number] | null {
-  const t = (text ?? '').toLowerCase().replace(/\s+/g, ' ');
+  let t = (text ?? '').toLowerCase().replace(/\s+/g, ' ');
   const hm = (h: string, m?: string) => Number(h) + (m ? Number(m) / 60 : 0);
   const range = t.match(/(\d{1,2})\s*h\s*(\d{2})?\s*(?:-|–|—|à|->|→)\s*(\d{1,2})\s*h\s*(\d{2})?/);
   if (range) {
@@ -131,15 +145,21 @@ export function parseHours(text: string | undefined, kind: string): [number, num
   }
   const from = t.match(/(?:dès|à partir de|levée|depuis)\s*≈?\s*(\d{1,2})\s*h\s*(\d{2})?/);
   if (from) return [hm(from[1], from[2]), 19];
-  if (kind === 'downvalley' || kind === 'katabatic' || /nuit|crépuscule/.test(t)) {
-    if (/fin de nuit/.test(t)) return [4, 9.5];
+  if (kind === 'downvalley' || kind === 'katabatic' || /\bnuit\b|crépuscule/.test(t)) {
+    if (/fin de nuit/.test(t) && !/crépuscule/.test(t)) return [4, 9.5];
     return [20.5, 9.5];
   }
-  if (/fin d.après-midi|fin de journée|soir/.test(t) && !/journée thermique/.test(t)) return [16, 20.5];
-  if (/fin de matinée/.test(t)) return [11, 18.5];
-  if (/matin/.test(t) && !/après-midi/.test(t)) return [7.5, 11.5];
-  if (/après-midi/.test(t)) return [12.5, 18.5];
-  return null;
+  // Span of every period mentioned ("fin de matinée à fin d'après-midi" → 11h-19h).
+  let start = Infinity;
+  let end = -Infinity;
+  for (const [re, a, b] of PERIODS) {
+    if (re.test(t)) {
+      start = Math.min(start, a);
+      end = Math.max(end, b);
+      t = t.replace(re, ' ');
+    }
+  }
+  return Number.isFinite(start) ? [start, end] : null;
 }
 
 const DEFAULT_SPEED: Record<string, number> = {

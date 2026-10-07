@@ -25,11 +25,14 @@ const OVERLAYS: { key: OverlayMode; label: string; hint: string }[] = [
   { key: 'thermal', label: 'Potentiel thermique', hint: 'Soleil sur la pente, altitude, reliefs saillants' },
   { key: 'convergence', label: 'Convergences calculées', hint: 'Violet : air qui converge et monte · Bleu : divergence' },
   { key: 'lift', label: 'Ascendances estimées', hint: 'Thermique + dynamique + convergence (m/s)' },
+  { key: 'speed', label: 'Force du vent', hint: 'Vitesse du vent à la hauteur choisie' },
 ];
 
 const LAYERS: { key: LayerKey; label: string; group: 'vent' | 'spots' | 'fond' }[] = [
   { key: 'particles', label: 'Particules de vent 3D', group: 'vent' },
-  { key: 'breezes', label: 'Brises documentées', group: 'vent' },
+  { key: 'comets', label: 'Flux animés des brises connues', group: 'vent' },
+  { key: 'thermalColumns', label: 'Colonnes thermiques animées', group: 'vent' },
+  { key: 'breezes', label: 'Tracés des brises documentées', group: 'vent' },
   { key: 'convergences', label: 'Convergences documentées', group: 'vent' },
   { key: 'thermals', label: 'Thermiques connus', group: 'spots' },
   { key: 'soaring', label: 'Spots de soaring', group: 'spots' },

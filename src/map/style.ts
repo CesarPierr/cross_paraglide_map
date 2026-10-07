@@ -70,11 +70,6 @@ export function buildStyle(): StyleSpecification {
         maxzoom: 13,
         encoding: 'terrarium',
       },
-      openfreemap: {
-        type: 'vector',
-        url: 'https://tiles.openfreemap.org/planet',
-        attribution: '<a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a> © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',
-      },
       'kk7-thermals': {
         type: 'raster',
         tiles: [`https://thermal.kk7.ch/tiles/thermals_all_all/{z}/{x}/{y}.png?src=${KK7_SRC}`],
@@ -125,6 +120,13 @@ export function buildStyle(): StyleSpecification {
     },
   };
 }
+
+/** Vector source for labels; added after load so a third-party outage never blocks the map. */
+export const LABEL_SOURCE = {
+  type: 'vector' as const,
+  url: 'https://tiles.openfreemap.org/planet',
+  attribution: '<a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a> © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',
+};
 
 /** Label layers from OpenFreeMap (OpenMapTiles schema), added on top of everything. */
 export const LABEL_LAYERS = [

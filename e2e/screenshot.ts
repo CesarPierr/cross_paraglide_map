@@ -26,14 +26,13 @@ try {
   console.log('model ready after', Date.now() - t0, 'ms');
 } catch {
   console.log('model NOT ready; status =', await page.locator('.status').textContent());
+  console.log(errors.slice(0, 30).join('\n'));
 }
 await page.waitForTimeout(4000);
 await page.screenshot({ path: `${out}/01-overview.png` });
 
 // Fly to the Grésivaudan at 15h and probe a point.
-await page.evaluate(() => {
-  location.hash = '#11.2/45.33/5.93/-30/68';
-});
+await page.evaluate('location.hash = "#11.2/45.33/5.93/-30/68"');
 await page.waitForTimeout(6000);
 await page.screenshot({ path: `${out}/02-gresivaudan.png` });
 await page.mouse.click(720, 520);
@@ -41,8 +40,8 @@ await page.waitForTimeout(2500);
 await page.screenshot({ path: `${out}/03-probe.png` });
 
 // West wind 25 km/h + exposure overlay.
-await page.getByRole('button', { name: 'Ouest' }).click();
-await page.getByText('Au vent / sous le vent').click();
+await page.getByRole('button', { name: 'Ouest', exact: true }).click();
+await page.getByRole('radio', { name: /Au vent/ }).check();
 await page.waitForSelector('.status.ok', { timeout: 60000 });
 await page.waitForTimeout(3000);
 await page.screenshot({ path: `${out}/04-west-exposure.png` });

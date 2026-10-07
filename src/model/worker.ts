@@ -23,6 +23,7 @@ import { analyseTerrain, type Terrain } from './terrain';
 declare const self: DedicatedWorkerGlobalScope;
 
 export type WorkerRequest =
+  | { type: 'build'; id: number; demUrl: string; meta: GridMeta; breezes: CuratedBreezeInput[] }
   | { type: 'init'; id: number; demUrl: string; meta: GridMeta }
   | { type: 'curated'; id: number; breezes: CuratedBreezeInput[] }
   | { type: 'compute'; id: number; params: ModelParams; overlay: OverlayMode }
@@ -56,10 +57,41 @@ async function overlayBlob(mode: OverlayMode, result: FieldResult, gKmh: number,
   return canvas.convertToBlob({ type: 'image/png' });
 }
 
+/** Interleaves four per-cell fields into one RGBA float array (GPU texture layout). */
+function pack4(n: number, a: ArrayLike<number>, b: ArrayLike<number>, c: ArrayLike<number>, d: ArrayLike<number>): Float32Array {
+  const out = new Float32Array(n * 4);
+  for (let k = 0; k < n; k++) {
+    out[k * 4] = a[k];
+    out[k * 4 + 1] = b[k];
+    out[k * 4 + 2] = c[k];
+    out[k * 4 + 3] = d[k];
+  }
+  return out;
+}
+
 self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
   const msg = e.data;
   try {
-    if (msg.type === 'init') {
+    if (msg.type === 'build') {
+      // GPU mode: analyse once, hand packed textures to the main thread, keep nothing.
+      const t0 = performance.now();
+      const raw = await decodeDem(msg.demUrl, msg.meta);
+      const grid = new Grid(msg.meta);
+      const t = analyseTerrain(grid, raw);
+      const cur = rasterizeCurated(t, msg.breezes);
+      const n = grid.size;
+      const index = new Float32Array(n);
+      for (let k = 0; k < n; k++) index[k] = cur.index[k];
+      const pack = {
+        tZ: pack4(n, t.z, t.gx, t.gy, t.tpi),
+        tV: pack4(n, t.floor, t.env, t.axisX, t.axisY),
+        tW: pack4(n, t.valley, t.lakeX, t.lakeY, t.water),
+        tR: pack4(n, t.seaX, t.seaY, t.plainX, t.plainY),
+        tC: pack4(n, cur.weight, cur.tx, cur.ty, index),
+        breezes: cur.breezes,
+      };
+      self.postMessage({ type: 'built', id: msg.id, pack, ms: performance.now() - t0 }, [pack.tZ.buffer, pack.tV.buffer, pack.tW.buffer, pack.tR.buffer, pack.tC.buffer]);
+    } else if (msg.type === 'init') {
       const t0 = performance.now();
       const raw = await decodeDem(msg.demUrl, msg.meta);
       const grid = new Grid(msg.meta);

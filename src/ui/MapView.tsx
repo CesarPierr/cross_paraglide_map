@@ -23,6 +23,7 @@ export function MapView() {
       onProbe: (probe) => useRuntime.getState().set({ probe }),
     });
     setController(controller);
+    if (import.meta.env.DEV) (window as unknown as { __ctrl: MapController }).__ctrl = controller;
     let prev = useApp.getState();
     controller.apply(prev, null);
     const unsub = useApp.subscribe((s) => {

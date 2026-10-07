@@ -7,6 +7,7 @@ import type { GridMeta } from '../model/grid';
 import type { OverlayMode } from '../model/overlays';
 import type { SunPosition } from '../model/sun';
 import type { WorkerRequest } from '../model/worker';
+import type { StaticPack } from '../gpu/engine';
 
 export interface FieldMessage {
   field: Float32Array;
@@ -51,6 +52,11 @@ export class ModelClient {
       this.pending.set(id, { resolve: resolve as (v: unknown) => void, reject });
       this.worker.postMessage({ ...body, id }, transfer);
     });
+  }
+
+  /** GPU mode: terrain analysis + curated rasterisation, returned as packed textures. */
+  build(demUrl: string, meta: GridMeta, breezes: CuratedBreezeInput[]): Promise<{ pack: StaticPack; ms: number }> {
+    return this.call({ type: 'build', demUrl, meta, breezes });
   }
 
   init(demUrl: string, meta: GridMeta): Promise<{ elevation: Float32Array; ms: number }> {

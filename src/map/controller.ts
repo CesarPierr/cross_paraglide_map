@@ -9,6 +9,7 @@ import {
   Marker,
   NavigationControl,
   ScaleControl,
+  setWorkerUrl,
   type ExpressionSpecification,
   type ImageSource,
   type LayerSpecification,
@@ -17,13 +18,20 @@ import {
 } from 'maplibre-gl';
 import type { Atlas, AtlasFeature, FeatureCategory } from '../data/atlas-types';
 import { ModelClient, type FieldMessage, type ProbeMessage } from '../engine/model-client';
+import { timeState } from '../gpu/engine';
+import { supportsFloatTargets } from '../gpu/gl-utils';
+import { WindScene, type SceneSettings } from '../gpu/wind-scene';
 import { windowActivity, type ModelParams } from '../model/field';
 import { Grid, type GridMeta } from '../model/grid';
 import type { OverlayMode } from '../model/overlays';
 import { CURRENT_YEAR, type AppState, type Basemap, type LayerKey } from '../state/store';
+import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url';
 import { addIcons } from './icons';
-import { buildStyle, LABEL_LAYERS } from './style';
+import { buildStyle, LABEL_LAYERS, LABEL_SOURCE } from './style';
 import { WindParticleLayer, type ParticleSettings } from './wind-particles';
+
+// MapLibre v6 resolves its worker next to its own module, which bundlers move: point at it explicitly.
+setWorkerUrl(maplibreWorkerUrl);
 
 const EMPTY_PNG = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==';
 
@@ -63,6 +71,8 @@ export class MapController {
   private model = new ModelClient();
   private grid: Grid | null = null;
   private particles: WindParticleLayer | null = null;
+  private scene: WindScene | null = null;
+  private gpu = false;
   private atlas: Atlas | null = null;
   private featureIndex = new Map<string, AtlasFeature>();
   private state: AppState | null = null;
@@ -70,7 +80,6 @@ export class MapController {
   private computing = false;
   private dirty = false;
   private computeTimer = 0;
-  private dashTimer = 0;
   private overlayUrl: string | null = null;
   private probeMarker: Marker | null = null;
   private lastProbe: { lon: number; lat: number } | null = null;
@@ -99,7 +108,8 @@ export class MapController {
     this.map.addControl(new NavigationControl({ visualizePitch: true, showCompass: true }), 'bottom-right');
     this.map.addControl(new ScaleControl({ unit: 'metric' }), 'bottom-right');
     this.map.addControl(new GeolocateControl({ trackUserLocation: false }), 'bottom-right');
-    this.map.on('load', () => void this.onLoad());
+    // Start as soon as the style is parsed: waiting for 'load' would block on unreachable third-party tiles.
+    this.map.once('style.load', () => void this.onLoad());
     this.map.on('error', (e) => {
       // Missing tiles (e.g. IGN outside France) are expected; keep the console quiet.
       if ((e.error as { status?: number } | undefined)?.status) return;
@@ -124,14 +134,30 @@ export class MapController {
       this.addDataLayers(atlas);
       this.events.onStatus({ phase: 'terrain', message: 'Analyse du relief (vallées, pentes, lacs)…' });
       const demUrl = new URL('data/dem.png', document.baseURI).href;
-      const { elevation } = await this.model.init(demUrl, meta);
-      await this.model.setCurated(atlas.curated);
-      this.particles = new WindParticleLayer(this.grid, this.particleSettings());
-      this.particles.setElevation(elevation);
-      map.addLayer(this.particles, 'hazards');
+      const gl = map.getCanvas().getContext('webgl2');
+      this.gpu = !!gl && supportsFloatTargets(gl);
+      if (this.gpu) {
+        // GPU path: the worker analyses the relief once and hands over packed textures.
+        const { pack } = await this.model.build(demUrl, meta, atlas.curated);
+        this.model.dispose();
+        this.scene = new WindScene(this.grid, pack, atlas.curated, BREEZE_COLORS, this.sceneSettings());
+        this.scene.setThermalSpots(atlas.features.thermals.map((f) => ({ name: f.properties.name, lon: f.geometry.coordinates[0] as number, lat: f.geometry.coordinates[1] as number })));
+        this.scene.setOnUpdated(() => this.emitTime());
+        map.addLayer(this.scene.engineLayer, 'bm-s2');
+        map.addLayer(this.scene.drapeLayer, 'routes-line');
+        map.addLayer(this.scene.sceneLayer, 'landings');
+      } else {
+        // Fallback: CPU model in the worker, CPU particles and image overlay.
+        const { elevation } = await this.model.init(demUrl, meta);
+        await this.model.setCurated(atlas.curated);
+        this.particles = new WindParticleLayer(this.grid, this.particleSettings());
+        this.particles.setElevation(elevation);
+        map.addLayer(this.particles, 'landings');
+      }
       this.ready = true;
       if (this.state) this.apply(this.state, null);
       this.scheduleCompute(0);
+      this.events.onStatus({ phase: 'ready' });
     } catch (err) {
       console.error(err);
       this.events.onStatus({ phase: 'error', message: err instanceof Error ? err.message : String(err) });
@@ -141,7 +167,6 @@ export class MapController {
       map.on('mouseenter', id, () => (map.getCanvas().style.cursor = 'pointer'));
       map.on('mouseleave', id, () => (map.getCanvas().style.cursor = ''));
     }
-    this.startDashAnimation();
   }
 
   private addDataLayers(atlas: Atlas): void {
@@ -198,7 +223,6 @@ export class MapController {
         'line-color': kindColor,
         'line-width': ['interpolate', ['linear'], ['zoom'], 6, 1.5, 12, 4],
         'line-opacity': ['*', 0.95, active, conf],
-        'line-dasharray': [0, 4, 3],
       },
     });
     map.addLayer({
@@ -294,6 +318,7 @@ export class MapController {
     pointLayer('takeoffs', 'takeoff', 7);
     pointLayer('hazards', 'hazard', 7);
 
+    map.addSource('openfreemap', LABEL_SOURCE);
     for (const l of LABEL_LAYERS) map.addLayer(l as LayerSpecification);
     map.addLayer({
       id: 'massif-labels',
@@ -311,34 +336,6 @@ export class MapController {
     });
   }
 
-  /** Marching-dash animation of breeze lines (direction of the flow). */
-  private startDashAnimation(): void {
-    const seq: number[][] = [
-      [0, 4, 3],
-      [0.5, 4, 2.5],
-      [1, 4, 2],
-      [1.5, 4, 1.5],
-      [2, 4, 1],
-      [2.5, 4, 0.5],
-      [3, 4, 0],
-      [0, 0.5, 3, 3.5],
-      [0, 1, 3, 3],
-      [0, 1.5, 3, 2.5],
-      [0, 2, 3, 2],
-      [0, 2.5, 3, 1.5],
-      [0, 3, 3, 1],
-      [0, 3.5, 3, 0.5],
-    ];
-    let step = 0;
-    const tick = () => {
-      if (this.map.getLayer('breezes-core') && this.state?.layers.breezes) {
-        step = (step + 1) % seq.length;
-        this.map.setPaintProperty('breezes-core', 'line-dasharray', seq[step]);
-      }
-    };
-    this.dashTimer = window.setInterval(tick, 90);
-  }
-
   private particleSettings(): ParticleSettings {
     const s = this.state;
     return {
@@ -349,6 +346,30 @@ export class MapController {
       speed: s?.particleSpeed ?? 1,
       exaggeration: s?.exaggeration ?? 1.2,
     };
+  }
+
+  private sceneSettings(): SceneSettings {
+    const s = this.state;
+    return {
+      particles: s?.layers.particles ?? true,
+      particleCount: s?.particleCount ?? 12000,
+      particleSpeed: s?.particleSpeed ?? 1,
+      colorMode: s?.particleColor ?? 'speed',
+      heightMode: s?.heightMode ?? 'agl',
+      heightM: s ? (s.heightMode === 'agl' ? s.heightAgl : s.heightAsl) : 80,
+      exaggeration: s?.exaggeration ?? 1.2,
+      comets: s?.layers.comets ?? true,
+      thermals: s?.layers.thermalColumns ?? true,
+      overlay: s?.overlay ?? 'none',
+      overlayOpacity: s?.overlayOpacity ?? 0.85,
+    };
+  }
+
+  /** Sun and solar time for the UI (cheap, computed on the main thread). */
+  private emitTime(): void {
+    if (!this.grid || !this.state) return;
+    const t = timeState(this.grid, this.modelParams(this.state));
+    this.events.onField({ sun: t.sun, solarHour: t.solarHour, ms: 0 });
   }
 
   private modelParams(s: AppState): ModelParams {
@@ -370,6 +391,12 @@ export class MapController {
 
   private async compute(): Promise<void> {
     if (!this.ready || !this.state) return;
+    if (this.scene) {
+      this.scene.setParams(this.modelParams(this.state));
+      this.emitTime();
+      if (this.lastProbe) void this.probe(this.lastProbe.lon, this.lastProbe.lat, false);
+      return;
+    }
     if (this.computing) {
       this.dirty = true;
       return;
@@ -416,9 +443,13 @@ export class MapController {
       this.particles.setSettings(this.particleSettings());
       this.particles.setEnabled(s.layers.particles);
     }
+    this.scene?.setSettings(this.sceneSettings());
     if (changed('hour') || changed('month0') || !prev) this.updateBreezeActivity(s.hour);
     const modelKeys: (keyof AppState)[] = ['hour', 'month0', 'day', 'synopticFrom', 'synopticKmh', 'heightMode', 'heightAgl', 'heightAsl', 'breezeScale', 'overlay'];
-    if (!prev || modelKeys.some((k) => prev[k] !== s[k])) this.scheduleCompute(s.playing ? 0 : 80);
+    if (!prev || modelKeys.some((k) => prev[k] !== s[k])) {
+      if (this.scene) void this.compute();
+      else this.scheduleCompute(s.playing ? 0 : 80);
+    }
   }
 
   private setBasemap(b: Basemap): void {
@@ -497,8 +528,13 @@ export class MapController {
       } else this.probeMarker.setLngLat([lon, lat]);
     }
     try {
-      const result = await this.model.probe(lon, lat);
-      this.events.onProbe({ lon, lat, result });
+      if (this.scene) {
+        const r = await this.scene.probe(lon, lat);
+        this.events.onProbe({ lon, lat, result: r ? { cell: r, curatedName: r.curatedName, convergence: r.convergence } : { cell: null } });
+      } else {
+        const result = await this.model.probe(lon, lat);
+        this.events.onProbe({ lon, lat, result });
+      }
     } catch {
       /* model not ready yet */
     }
@@ -540,10 +576,9 @@ export class MapController {
   }
 
   dispose(): void {
-    window.clearInterval(this.dashTimer);
     window.clearTimeout(this.computeTimer);
     if (this.overlayUrl) URL.revokeObjectURL(this.overlayUrl);
-    this.model.dispose();
+    if (!this.gpu) this.model.dispose();
     this.map.remove();
   }
 }

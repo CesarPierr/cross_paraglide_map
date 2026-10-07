@@ -4,7 +4,7 @@
 import type { FieldResult } from './field';
 import { clamp, smoothstep } from './raster';
 
-export type OverlayMode = 'none' | 'exposure' | 'thermal' | 'convergence' | 'lift';
+export type OverlayMode = 'none' | 'exposure' | 'thermal' | 'convergence' | 'lift' | 'speed';
 
 export function renderOverlay(mode: OverlayMode, f: FieldResult, gKmh: number, out: Uint8ClampedArray): void {
   const n = f.thermal.length;
@@ -66,6 +66,13 @@ export function renderOverlay(mode: OverlayMode, f: FieldResult, gKmh: number, o
         b = 230;
         a = 0.35 * s;
       }
+    } else if (mode === 'speed') {
+      const kmh = Math.hypot(f.field[k * 4], f.field[k * 4 + 1]) * 3.6;
+      const s = smoothstep(3, 40, kmh);
+      r = Math.round(60 + 180 * s);
+      g = Math.round(140 + 60 * (1 - Math.abs(s - 0.5) * 2));
+      b = Math.round(240 * (1 - s));
+      a = 0.2 + 0.4 * s;
     } else if (mode === 'lift') {
       const lift = f.thermal[k] * 2.5 + Math.max(f.dynamic[k], -1.5) + clamp(f.convergence[k], -1.5, 2.5);
       if (lift > 0.3) {

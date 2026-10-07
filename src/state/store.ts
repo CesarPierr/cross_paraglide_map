@@ -9,6 +9,8 @@ export type Basemap = 'ign-ortho' | 's2' | 'ign-plan' | 'otm';
 
 export type LayerKey =
   | 'particles'
+  | 'comets'
+  | 'thermalColumns'
   | 'breezes'
   | 'convergences'
   | 'hazards'
@@ -35,6 +37,7 @@ export interface AppState {
   heightAsl: number;
   breezeScale: number;
   overlay: OverlayMode;
+  overlayOpacity: number;
   layers: Record<LayerKey, boolean>;
   basemap: Basemap;
   exaggeration: number;
@@ -64,8 +67,11 @@ export const useApp = create<AppState>((set) => ({
   heightAsl: 2500,
   breezeScale: 1,
   overlay: 'none',
+  overlayOpacity: 0.85,
   layers: {
     particles: true,
+    comets: true,
+    thermalColumns: true,
     breezes: true,
     convergences: true,
     hazards: false,

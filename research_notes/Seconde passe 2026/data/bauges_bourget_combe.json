@@ -507,11 +507,13 @@
           "alt_m": 900,
           "best_hours": "12h-19h (démarrage dès 12h/13h les meilleures journées)",
           "trigger": "falaise ouest sous le Nivolet, brise de nord qui s'ajoute au thermique",
-          "description": "Thermique marqué dès le début d'après-midi à la sortie du décollage ; vols du soir agréables et possibles tard en été ; après le relief supérieur on raccroche le Revard et les faces ouest vers le Semnoz. Coordonnées FFVL 527.",
+          "description": "Thermique marqué dès le début d'après-midi à la sortie du décollage ; vols du soir agréables et possibles tard en été ; après le relief supérieur on raccroche le Revard et les faces ouest vers le Semnoz. Coordonnées FFVL 527. Récits : en sortie de déco, gain devant le Malpassant puis aller-retours sous les falaises (« radada ») vers 1240 m avant de passer sous le vent du Pertuiset (01/06/2020) ; la cote d'accroche suivante est le Revard.",
           "sources": [
             "S29",
-            "S51"
-          ]
+            "S51",
+            "S38"
+          ],
+          "confidence": "medium"
         },
         {
           "id": "epine-chaine-ouest",
@@ -521,11 +523,14 @@
           "alt_m": 1150,
           "best_hours": "14h-17h (très fort) ; calme après 17h-18h",
           "trigger": "chaîne boisée orientée ouest dominant le lac, brise de plaine",
-          "description": "« Activité thermique soutenue en milieu d'après-midi » ; il faut maîtriser le décollage dans un thermique « très fort » entre 14h et 17h (Ailes du Lac, FFVL 1435).",
+          "description": "« Activité thermique soutenue en milieu d'après-midi » ; il faut maîtriser le décollage dans un thermique « très fort » entre 14h et 17h (Ailes du Lac, FFVL 1435). Récits : raccrochage des faces ouest d'Aiguebelette cité parmi les points engagés du tour de Chartreuse ; extraction du 23/06/2025 de l'Épine puis crête jusqu'au Mont Grelle.",
           "sources": [
             "S48",
-            "S36"
-          ]
+            "S36",
+            "S98",
+            "S104"
+          ],
+          "confidence": "medium"
         },
         {
           "id": "revard-falaise-sire",
@@ -535,10 +540,80 @@
           "alt_m": 1491,
           "best_hours": "après-midi d'été",
           "trigger": "falaises ouest du Revard-Nivolet sous la brise de nord",
-          "description": "« Ça a l'air de porter au dessus du toboggan du Revard (là où se trouvent les fils électriques) » ; thermiques devant la tour de Bange, au Pertuiset, et un thermique ascendant devant les aéromodélistes au Semnoz (carnets Largeault). Emplacements non cartographiés : position = décollage.",
+          "description": "« Ça a l'air de porter au dessus du toboggan du Revard (là où se trouvent les fils électriques) » ; thermiques devant la tour de Bange, au Pertuiset, et un thermique ascendant devant les aéromodélistes au Semnoz (carnets Largeault). Emplacements non cartographiés : position = décollage. Spots détaillés : Le Pertuiset, Col de la Cochette/Bange, Tour des Ébats.",
           "sources": [
             "S38",
             "S39"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "pertuiset-revard",
+          "name": "Le Pertuiset (thermique sous le Revard, avant la tour)",
+          "lon": 5.973,
+          "lat": 45.6609,
+          "alt_m": 1443,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "début d'après-midi (14h30)",
+          "trigger": "falaise du Pertuiset sous le vent du Revard",
+          "description": "RELANCE entre Vérel et le Revard : « en avançant sous le vent du Pertuiset ça donne convenablement et je me retrouve à l'étage du dessus ; j'aurais dû travailler le thermique au-dessus du Pertuiset » ; une aile passe ensuite « au-dessus du toboggan du Revard » (fils électriques) à 1630 m.",
+          "sources": [
+            "S38",
+            "S107"
+          ]
+        },
+        {
+          "id": "relais-mont-du-chat",
+          "name": "Relais (TDF) du Mont du Chat",
+          "lon": 5.8214,
+          "lat": 45.6598,
+          "alt_m": 1463,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "fin d'après-midi (17h55 un jour de retard) ; midi à 15h les bonnes journées",
+          "trigger": "relais hertzien sur la crête, thermique qui « passe » alors que la Dent du Chat elle-même est du dynamique laminaire",
+          "description": "RELANCE de la traversée Aiguebelette – Dent du Chat – Sapenay : « pas de thermique à la dent du Chat, c'est du dynamique laminaire… finalement un thermique passe au relais du Chat et me voilà à 1900 m » (20/04/2021) ; un autre vol y enroule un « thermique bleu » à 2000-2200 m (20/07/2020). Position : tour hertzienne TDF (OSM).",
+          "sources": [
+            "S101",
+            "S102",
+            "S107"
+          ]
+        },
+        {
+          "id": "mont-de-la-charvaz",
+          "name": "Mont de la Charvaz (relance au nord de la Dent du Chat, avant le Sapenay)",
+          "lon": 5.8381,
+          "lat": 45.7239,
+          "alt_m": 938,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "fin d'après-midi",
+          "trigger": "petit relief au nord du Mont du Chat, au bord de la CTR de Chambéry",
+          "description": "RELANCE : « arrivé au mont de la Charvaz à 1100 m, bon thermique qui décale vers le sud-est » (20/04/2021) ; autre ascendance à 1350 m en continuant vers le nord. Piège : rester à l'ouest de la CTR 1 de Chambéry. Un autre pilote voit des ailes sur le Mont Charvaz depuis le Mont du Chat (20/07/2020).",
+          "sources": [
+            "S101",
+            "S102",
+            "S106"
+          ]
+        },
+        {
+          "id": "mont-grelle-grilles-pains",
+          "name": "Mont Grelle – « grilles-pains » (Épine)",
+          "lon": 5.8129,
+          "lat": 45.5166,
+          "alt_m": 1352,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "début d'après-midi (13h pour un décollage de l'Épine)",
+          "trigger": "crête de l'Épine, pylônes (« grilles-pains »), raccrochage délicat sous le vent",
+          "description": "RELANCE du cheminement Épine → Grelle → Beauvoir : « cheminement sur la crête jusqu'au Mont Grelle puis au Mont Beauvoir » (23/06/2025) ; « raccroche tranquillement… vers les grille-pains puis la Dent du Chat » ; « raccrochage des grilles-pains du Mont Grêle » parmi les points engagés du tour de Chartreuse. Mont Beauvoir : mauvais placement par vent de nord-ouest (20/04/2021) ; ligne THT sur le PDF du club.",
+          "sources": [
+            "S98",
+            "S102",
+            "S104",
+            "S15",
+            "S101"
           ]
         }
       ],
@@ -1066,9 +1141,21 @@
               "lat": 45.6268
             },
             {
+              "name": "Le Pertuiset (relance)",
+              "lon": 5.973,
+              "lat": 45.6609,
+              "coord_quality": "source"
+            },
+            {
               "name": "Revard (déco)",
               "lon": 5.9748,
               "lat": 45.6832
+            },
+            {
+              "name": "Col de la Cochette / Bange (relance)",
+              "lon": 6.032,
+              "lat": 45.7151,
+              "coord_quality": "source"
             },
             {
               "name": "Semnoz Ouest (déco)",
@@ -1077,7 +1164,7 @@
             }
           ],
           "distance_km": 23.0,
-          "description": "Classique de l'après-midi par brise de nord : sortir de Vérel (sans virage les bons jours), Revard, transition vers Bange (col de la Cochette ~1550 m au départ, raccroche vers 1200-1350 m), puis Semnoz (transition de 5 min), faces ouest du Semnoz. Records Z'éléphants : aller simple le plus rapide au Semnoz en 39 min 18 s ; A/R le plus tôt dans la saison le 12/02/2020 (Zeleph). Waypoints placés : déco de départ, Revard, déco du Semnoz ; Bange et le col de la Cochette ne sont pas placés. Bulle de quiétude de faucons au col de la Cochette.",
+          "description": "Classique de l'après-midi par brise de nord : sortir de Vérel (sans virage les bons jours), Revard, transition vers Bange (col de la Cochette ~1550 m au départ, raccroche vers 1200-1350 m), puis Semnoz (transition de 5 min), faces ouest du Semnoz. Records Z'éléphants : aller simple le plus rapide au Semnoz en 39 min 18 s ; A/R le plus tôt dans la saison le 12/02/2020 (Zeleph). Waypoints placés : déco de départ, Revard, déco du Semnoz ; Bange et le col de la Cochette ne sont pas placés. Bulle de quiétude de faucons au col de la Cochette. Relances : Pertuiset, toboggan du Revard, Cochette/Bange, épaule du Semnoz (voir spots).",
           "sources": [
             "S29",
             "S38",
@@ -1105,10 +1192,14 @@
             }
           ],
           "distance_km": 27.0,
-          "description": "La fiche FFVL de l'atterro des Marais décrit un cross « au Nord vers la Dent du Chat ou au Sud vers la Chartreuse, voire le Vercors ». Pas de transition de plaine : on suit la chaîne ; au nord le col du Chat est dans la CTR (pas de passage vers la Charvaz par le relief). Distance = somme des segments entre waypoints (indicative).",
+          "description": "La fiche FFVL de l'atterro des Marais décrit un cross « au Nord vers la Dent du Chat ou au Sud vers la Chartreuse, voire le Vercors ». Pas de transition de plaine : on suit la chaîne ; au nord le col du Chat est dans la CTR (pas de passage vers la Charvaz par le relief). Distance = somme des segments entre waypoints (indicative). Relances citées : grilles-pains du Mont Grelle, Mont Beauvoir (se placer au vent par NO), relais du Mont du Chat (thermique), Mont de la Charvaz.",
           "sources": [
             "S49",
-            "S36"
+            "S36",
+            "S98",
+            "S101",
+            "S102",
+            "S104"
           ]
         },
         {
@@ -1481,13 +1572,16 @@
           "alt_m": 894,
           "best_hours": "11h-15h environ (matinée jusqu'au début d'après-midi)",
           "trigger": "sortie de décollage : à gauche 'la pompe à Roger', en avançant et contournant le relief par la droite 'la combe', 'le mamelon' (quand on passe dessous, il est temps de rejoindre l'atterro), 'la sapinère'",
-          "description": "La carte du club indique en orange les emplacements habituels des thermiques et en rouge les zones à rouleaux à éviter ; positions précises non reportées ici (position = décollage). Sur la face est des Bauges au-dessus, le Pré Ravier est le départ de cross en vol rando ; une 'pompe' le long de la falaise aux oiseaux au-dessus de Montlambert a servi de relais au retour (Bluehouse).",
+          "description": "La carte du club indique en orange les emplacements habituels des thermiques et en rouge les zones à rouleaux à éviter ; positions précises non reportées ici (position = décollage). Sur la face est des Bauges au-dessus, le Pré Ravier est le départ de cross en vol rando ; une 'pompe' le long de la falaise aux oiseaux au-dessus de Montlambert a servi de relais au retour (Bluehouse). Autres repères : extraction sur le Mont Charvet au-dessus (voir spot dédié) ; relais du retour : gros cumulus sur « la falaise aux oiseaux » ; au retour d'une journée de nord, Montlambert est sous le vent de la brise de Chambéry (risque de s'y poser).",
           "sources": [
             "S34",
             "S23",
-            "S78"
+            "S78",
+            "S98",
+            "S97"
           ],
-          "coord_quality": "approx"
+          "coord_quality": "approx",
+          "confidence": "medium"
         },
         {
           "id": "chamoux-montendry-combe",
@@ -1512,10 +1606,66 @@
           "alt_m": 1456,
           "best_hours": "après-midi",
           "trigger": "face sud de l'Arclusaz",
-          "description": "L'envol peut être perturbé par l'activité thermique ; atterro de petite surface entouré de vignes, thermique très technique (FFVL 142). Le vent de Sud sortant de la Maurienne rebondit au pied de l'Arclusaz.",
+          "description": "L'envol peut être perturbé par l'activité thermique ; atterro de petite surface entouré de vignes, thermique très technique (FFVL 142). Le vent de Sud sortant de la Maurienne rebondit au pied de l'Arclusaz. Voir aussi dent-d'Arclusaz (sommet) pour le plafond de 2200-2700 m des cheminements.",
           "sources": [
             "S74",
-            "S34"
+            "S34",
+            "S96"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "tours-de-montmayeur-relance",
+          "name": "Tours de Montmayeur (relance du retour des Bauges)",
+          "lon": 6.1234,
+          "lat": 45.4894,
+          "alt_m": 759,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "milieu à fin d'après-midi",
+          "trigger": "petit relief « frappé de plein fouet par la brise de Chambéry »",
+          "description": "RELANCE du retour vers Lumbin : on arrive aux Tours à 860-900 m après une longue glissade depuis Montlambert (« en général ça marche, tellement ce petit relief est frappé de plein fouet par la brise de Chambéry ») ; « le dernier passage compliqué avant le final glide » ; une autre option est la vallée des Huiles.",
+          "sources": [
+            "S23",
+            "S40",
+            "S15"
+          ]
+        },
+        {
+          "id": "vallee-des-huiles-relance",
+          "name": "Vallée des Huiles (thermique du milieu de vallée)",
+          "lon": 6.1993,
+          "lat": 45.4807,
+          "alt_m": 831,
+          "coord_quality": "approx",
+          "confidence": "low",
+          "best_hours": "après-midi",
+          "trigger": "milieu de la vallée sous les cumulus (déduction de l'emplacement)",
+          "description": "RELANCE de la traversée vers Chamoux/Grand Arc : « au milieu de la vallée des Huiles je trouve un thermique sympa qui me remonte à 2400 et la brise me décale vers le Grand Arc » (09/04/2017) ; « plein intermédiaire sous des barbulles, 10 minutes à 1 m/s, ma porte de sortie » (17/07/2019, qui situe la vallée à l'entrée de la Maurienne, d'où la position approximative au centre du Val des Huiles). Piège : brise qui contre la traversée.",
+          "sources": [
+            "S103",
+            "S40",
+            "S15",
+            "S106"
+          ]
+        },
+        {
+          "id": "grand-arc-plafond",
+          "name": "Grand Arc et Petit Arc (plafond avant Albertville ou retour Chamoux)",
+          "lon": 6.3648,
+          "lat": 45.5664,
+          "alt_m": 2371,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "milieu d'après-midi (14h-16h)",
+          "trigger": "crêtes du Grand Arc, combe sud, thermiques puissants",
+          "description": "PLAFOND : « Petit Arc plafond à 3000 » (09/04/2017) ; « re-2900 sous la combe sud du Grand Arc, direction Chamoux » (17/07/2019) ; transition Arclusaz → Grand Arc puis retour par la Grande Lanche (juin 2025) ; Val Pelouse – Chamoux – Grand Arc (juillet 2026).",
+          "sources": [
+            "S103",
+            "S40",
+            "S98",
+            "S99",
+            "S15"
           ]
         }
       ],
@@ -1822,10 +1972,11 @@
             }
           ],
           "distance_km": 44.0,
-          "description": "Bluehouse (25/04/2024) : du Colombier à 2700 m on choisit Montlambert (gros cumulus sur la falaise aux oiseaux) plutôt que la Galoppaz, puis transition vers les Tours de Montmayeur (arrivée à 860 m, -1840 m sur 8 km), passage des lignes, crête de Montraillant, demi-heure à 900 m avant de sauter sur Brâme-Farine et le final à Lumbin. Le triangle de 202 km (Pays de Gex) a lui aussi choisi ce retour par les avant-reliefs en remontant au vent (Villard-d'Héry), contre la forte brise. Waypoints : Brâme-Farine et la crête de Montraillant non placés ; le trajet final Lumbin n'est pas rectiligne.",
+          "description": "Bluehouse (25/04/2024) : du Colombier à 2700 m on choisit Montlambert (gros cumulus sur la falaise aux oiseaux) plutôt que la Galoppaz, puis transition vers les Tours de Montmayeur (arrivée à 860 m, -1840 m sur 8 km), passage des lignes, crête de Montraillant, demi-heure à 900 m avant de sauter sur Brâme-Farine et le final à Lumbin. Le triangle de 202 km (Pays de Gex) a lui aussi choisi ce retour par les avant-reliefs en remontant au vent (Villard-d'Héry), contre la forte brise. Waypoints : Brâme-Farine et la crête de Montraillant non placés ; le trajet final Lumbin n'est pas rectiligne. Relance intermédiaire du retour : Tours de Montmayeur (860-900 m) puis Bramefarine côté Belledonne.",
           "sources": [
             "S23",
-            "S40"
+            "S40",
+            "S100"
           ]
         },
         {
@@ -1849,10 +2000,14 @@
             }
           ],
           "distance_km": 10,
-          "description": "Le PDF St Hil'Air donne trois parcours : en rouge 10 km départ >2000 m mini, arrivée 900-1000 m (de la Dent d'Arclusaz au Grand Arc, passage au nord de Chamoux) ; en orange 7 km départ >1800 m arrivée 1100 m ; en jaune 7 km départ >2000 m arrivée 900-1000 m ; en vert 8 km départ >1800 m jusqu'à l'atterro de Montlambert. Brise forte à Chamoux et zone sous le vent (p. 26). Waypoints : Arclusaz, zone de Chamoux, Grand Arc (sommet, Wikipédia) ; l'arrivée exacte de la figure est plus à l'ouest du sommet.",
+          "description": "Le PDF St Hil'Air donne trois parcours : en rouge 10 km départ >2000 m mini, arrivée 900-1000 m (de la Dent d'Arclusaz au Grand Arc, passage au nord de Chamoux) ; en orange 7 km départ >1800 m arrivée 1100 m ; en jaune 7 km départ >2000 m arrivée 900-1000 m ; en vert 8 km départ >1800 m jusqu'à l'atterro de Montlambert. Brise forte à Chamoux et zone sous le vent (p. 26). Waypoints : Arclusaz, zone de Chamoux, Grand Arc (sommet, Wikipédia) ; l'arrivée exacte de la figure est plus à l'ouest du sommet. Plafonds relevés : Arclusaz 2200-2700 m, Petit Arc 3000 m, Grand Arc 2900 m ; relance possible au milieu de la vallée des Huiles (2400 m).",
           "sources": [
             "S15",
-            "S41"
+            "S41",
+            "S96",
+            "S97",
+            "S103",
+            "S40"
           ]
         },
         {
@@ -1881,6 +2036,69 @@
             "S15",
             "S41"
           ]
+        },
+        {
+          "id": "montlambert-arclusaz-grand-arc-chamoux",
+          "name": "Montlambert – Charvet – Pelat – Arclusaz – Roche Torse – Grand Arc – Grande Lanche – Chamoux (stage cross, 27/06/2025)",
+          "waypoints": [
+            {
+              "name": "Montlambert (déco)",
+              "lon": 6.1048,
+              "lat": 45.5529,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Mont Charvet (extraction)",
+              "lon": 6.0936,
+              "lat": 45.5616,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Mont Pelat",
+              "lon": 6.1142,
+              "lat": 45.5939,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Dent d'Arclusaz (plafond)",
+              "lon": 6.1737,
+              "lat": 45.6005,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Roche Torse",
+              "lon": 6.2565,
+              "lat": 45.6239,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Grand Arc (plafond)",
+              "lon": 6.3648,
+              "lat": 45.5664,
+              "coord_quality": "source"
+            },
+            {
+              "name": "La Grande Lanche",
+              "lon": 6.3902,
+              "lat": 45.6031,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Chamoux (atterro)",
+              "lon": 6.2149,
+              "lat": 45.5406,
+              "coord_quality": "approx"
+            }
+          ],
+          "distance_km": 47,
+          "description": "Cheminement classique de la face est des Bauges et de la Lauzière : extraction sur le Mont Charvet, cheminement sur le Mont Pelat, transition sur la Dent d'Arclusaz, Roche Torse puis retour à l'Arclusaz, transition sur le Grand Arc, Grande Lanche, retour au Grand Arc puis Chamoux. Plafonds 2200-2700 m à l'Arclusaz ; vitesse de brise forte au Col du Frêne et à Tamié (venturis du PDF du club). Distance = longueur de la ligne brisée des points.",
+          "sources": [
+            "S98",
+            "S96",
+            "S97",
+            "S15",
+            "S99"
+          ]
         }
       ],
       "tips": [
@@ -1888,7 +2106,8 @@
         "Chamoux : en été ne pas se promener sous le vent de l'atterro (face vallée) si on veut rentrer ; la brise peut scotcher jusqu'à 1400 m [S35].",
         "Montlambert : le matin jusqu'en début d'après-midi ; en fin d'après-midi la brise redescend du sommet et il devient impossible de décoller [S34].",
         "Retour de cross par la Combe : se placer au vent par les avant-reliefs (Villard-d'Héry, Brâme-Farine) et prévoir une marge pour la forte brise [S40][S23].",
-        "Ne pas finir bas sous le vent de Montmélian : zone très dangereuse selon le CHVD [S3]."
+        "Ne pas finir bas sous le vent de Montmélian : zone très dangereuse selon le CHVD [S3].",
+        "Retour des Bauges vers Lumbin : Colombier → Montlambert (falaise aux oiseaux) → Tours de Montmayeur (860-900 m) → Bramefarine ; ne pas viser les Tours sans cumulus au-dessus de Montlambert [S23][S100]."
       ]
     },
     {
@@ -2669,13 +2888,15 @@
           "alt_m": 1000,
           "best_hours": "avant l'établissement de la brise (début d'après-midi) ; raccroche vers 1100-1200 m",
           "trigger": "face ouest/NO de la Savoyarde et du Montgelas battue par la brise de Chambéry",
-          "description": "Bluehouse : viser « l'air de service du Granier sur l'autoroute puis la face ouest de la Savoyarde où une belle tache rouge est bien marquée sur la carte des thermiques », avec une laisse de chien ; raccroche à 1100 m puis 1600 m (hauteur conseillée pour la Galoppaz) en peu de temps. Pays de Gex : Savoyarde raccrochée facilement à 1200 m, avant que les brises ne rentrent. Position approximative d'après le MNT (épaule ouest du Montgelas, crête ~1240 m).",
+          "description": "Bluehouse : viser « l'air de service du Granier sur l'autoroute puis la face ouest de la Savoyarde où une belle tache rouge est bien marquée sur la carte des thermiques », avec une laisse de chien ; raccroche à 1100 m puis 1600 m (hauteur conseillée pour la Galoppaz) en peu de temps. Pays de Gex : Savoyarde raccrochée facilement à 1200 m, avant que les brises ne rentrent. Position approximative d'après le MNT (épaule ouest du Montgelas, crête ~1240 m). Rôle : RELANCE/pompe de la transition Chartreuse → Bauges, à viser depuis l'air de service du Granier (« laisse de chien » pour compenser la brise de Chambéry). Autre repère de l'arrivée : « St Marcel d'en haut, le thermique de service » côté Chartreuse (800 m, 13h10).",
           "sources": [
             "S23",
             "S40",
-            "S3"
+            "S3",
+            "S101"
           ],
-          "coord_quality": "approx"
+          "coord_quality": "approx",
+          "confidence": "medium"
         },
         {
           "id": "colombier-margeriaz-roc-des-boeufs",
@@ -2685,11 +2906,225 @@
           "alt_m": 1998,
           "best_hours": "13h-17h (été)",
           "trigger": "crêtes du Colombier, Margériaz, Buffaz, Mont Charvet, Mont Morbier, Arclusaz, Trélod, Charbon, Roc des Bœufs",
-          "description": "La carte PNR 2011 place des spirales thermiques sur Margériaz, Buffaz, Mont Charvet, Galoppaz, Colombier, Mont Morbier, col du Frêne, Arclusaz, Trélod, Charbon, Roc des Bœufs, Mont Peney/Nivolet, Revard. Plafonds relevés : Mont Julioz 2700 m, Roc des Bœufs 2500-2700 m, Margériaz 2380 m (Bluehouse, Largeault). Position = sommet du Colombier.",
+          "description": "La carte PNR 2011 place des spirales thermiques sur Margériaz, Buffaz, Mont Charvet, Galoppaz, Colombier, Mont Morbier, col du Frêne, Arclusaz, Trélod, Charbon, Roc des Bœufs, Mont Peney/Nivolet, Revard. Plafonds relevés : Mont Julioz 2700 m, Roc des Bœufs 2500-2700 m, Margériaz 2380 m (Bluehouse, Largeault). Position = sommet du Colombier. Récits : « Colombier d'Aillon coiffé d'un bon cum » (2019), face nord du Colombier « re 2700 m » (24/04/2024), « se refaire sur le Colombier » après la Galoppaz (avril 2022). Les crêtes sont détaillées ci-dessus par spot (Galoppaz, Julioz, Margériaz, Roc des Bœufs, Arclusaz).",
           "sources": [
             "S27",
             "S23",
-            "S38"
+            "S38",
+            "S100",
+            "S97"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "pic-de-la-sauge-relance",
+          "name": "Pic de la Sauge (relance après la Savoyarde, départ vers Belledonne)",
+          "lon": 6.0588,
+          "lat": 45.5513,
+          "alt_m": 1612,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "milieu à fin d'après-midi (12h50 depuis le nord, 15h20 au retour)",
+          "trigger": "épaule nord-ouest au vent puis sommet, thermo-dynamique avec la brise",
+          "description": "RELANCE et PLAFOND : après la Savoyarde, « avec Michel nous remontons en thermo-dynamique au Pic de la Sauge… ça va mieux à 2200 » (01/06/2019) ; arrivée de l'autre sens à 2350 m à 12h50 (20/04/2021). C'est aussi le point de départ du retour : « je pars à 2400 entre le pic de la Sauge et le lac de la Tuile, c'est nickel pour partir en transition sur Bramefarine ». Position : sommet OSM (le thermodynamique se joue sur l'épaule NO déjà modélisée en soaring).",
+          "sources": [
+            "S100",
+            "S101",
+            "S3",
+            "S15",
+            "S107"
+          ]
+        },
+        {
+          "id": "mont-charvet-extraction",
+          "name": "Mont Charvet (extraction depuis Montlambert)",
+          "lon": 6.0936,
+          "lat": 45.5616,
+          "alt_m": 1521,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "début d'après-midi (décollage de Montlambert vers 13h)",
+          "trigger": "croupe de la face est des Bauges au-dessus de Montlambert, spirale thermique de la carte PNR",
+          "description": "DÉCLENCHEUR de l'extraction au-dessus de Montlambert : « décollé de Montlambert, extraction sur le mont Charvet, cheminement sur le mont Pelat, transition sur la dent d'Arclusaz » (juin 2025). Le Charvet porte aussi une spirale thermique sur la carte PNR des Bauges.",
+          "sources": [
+            "S98",
+            "S27",
+            "S107"
+          ]
+        },
+        {
+          "id": "mont-pelat-cheminement",
+          "name": "Mont Pelat (cheminement vers l'Arclusaz)",
+          "lon": 6.1142,
+          "lat": 45.5939,
+          "alt_m": 1518,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "début d'après-midi à milieu d'après-midi",
+          "trigger": "crête de la face est des Bauges entre Mont Charvet et Dent d'Arclusaz",
+          "description": "POINT DE RELANCE du cheminement Montlambert → Arclusaz, enchaîné avec le Charvet (juin 2025) et le Col du Frêne par le stage d'avril 2022 ; par vent de nord la brise de Chambéry est extrêmement forte sous le vent du Col du Frêne et la plupart se posent à Montlambert au retour.",
+          "sources": [
+            "S98",
+            "S97",
+            "S15"
+          ]
+        },
+        {
+          "id": "galoppaz-relance",
+          "name": "Pointe de la Galoppaz (relance entre la Savoyarde et le Colombier)",
+          "lon": 6.0666,
+          "lat": 45.5659,
+          "alt_m": 1566,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "milieu d'après-midi",
+          "trigger": "épaule sud-ouest de la Galoppaz, premier relief au-delà de la Savoyarde",
+          "description": "RELANCE : après la Savoyarde on raccroche à 1100 m puis monte à 1600 m, « la hauteur de départ conseillée pour transiter sur la Galoppaz » ; en avril 2022 « une petite branche au sud vers la Pointe de la Galoppaz avant de se refaire sur le Colombier ». Un jour de brise, deux ailes n'y montaient pas : choisir alors Montlambert.",
+          "sources": [
+            "S23",
+            "S97",
+            "S15"
+          ]
+        },
+        {
+          "id": "dent-arclusaz-plafond",
+          "name": "Dent d'Arclusaz (plafond avant Grand Arc, Chamoux ou Roc des Bœufs)",
+          "lon": 6.1737,
+          "lat": 45.6005,
+          "alt_m": 1832,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "milieu d'après-midi (13h-16h)",
+          "trigger": "sommet et faces ouest de l'Arclusaz, thermiques puissants",
+          "description": "PLAFOND/RELANCE : « à l'Arclusaz le plaf nous assure un bon 2200/2400 » (19/07/2020) ; « thermiques très puissants (+6), plafs à 2700 m » (30/04/2022) ; départ des transitions vers le Grand Arc (> 2000 m mini selon le PDF du club) et vers Chamoux ; relance du retour du Roc des Bœufs (juillet 2026).",
+          "sources": [
+            "S96",
+            "S97",
+            "S98",
+            "S99",
+            "S15"
+          ]
+        },
+        {
+          "id": "dents-de-pleuven-trelod",
+          "name": "Dents de Pleuven et faces ouest du Trélod",
+          "lon": 6.1879,
+          "lat": 45.6775,
+          "alt_m": 1771,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "début à milieu d'après-midi",
+          "trigger": "faces ouest en thermodynamique, brise d'été forte (rester au vent)",
+          "description": "RELANCE du cheminement Arclusaz → Roc des Bœufs : « aux Dents de Pleuven ça monte des briques sur la face ouest en thermodynamique ; l'été les brises sont fortes, rester au vent, jamais la face sud » ; « le cheminement sur les faces O du Trélod est facile, entre 2000 et 2200 » avant la transition vers le Roc des Bœufs. Dérogation de la réserve : voir hazard de la RNCFS.",
+          "sources": [
+            "S96"
+          ]
+        },
+        {
+          "id": "roc-des-boeufs-ascenseur",
+          "name": "Roc des Bœufs (ascenseur après le lac d'Annecy ; bout du roc)",
+          "lon": 6.1669,
+          "lat": 45.7553,
+          "alt_m": 1624,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "milieu d'après-midi (15h-16h)",
+          "trigger": "crête et bout du roc, brise remontant du lac d'Annecy, falaise nue sous la première ligne électrique",
+          "description": "RELANCE/PLAFOND : « le Roc des Bœufs porte, c'est facile de le remonter avec la brise qui remonte du lac » ; « au bout du roc, des ailes satellisées au nuage… thermique à 2500 m » (01/06/2020) ; 2200 m après avoir « repris le thermique entendu plus tôt » (04/07/2020) ; 2700 m au retour du lac ; « raccroche aisée » (avril 2022). Piège : ligne électrique et brise vers le nord : y arriver au-dessus de 1550 m.",
+          "sources": [
+            "S38",
+            "S39",
+            "S23",
+            "S97",
+            "S99",
+            "S15"
+          ]
+        },
+        {
+          "id": "mont-julioz-plafond",
+          "name": "Mont Julioz (plafond, relais vers l'École/Arclusaz et le Margériaz)",
+          "lon": 6.16,
+          "lat": 45.7058,
+          "alt_m": 1578,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "milieu d'après-midi",
+          "trigger": "crête du Julioz, deux petites croupes en avant (« bitards ») qui donnent un appui",
+          "description": "PLAFOND : 2700 m (24/04/2024), liaison Roc des Bœufs → Julioz → École → Arclusaz (avril 2022) ; point de départ du saut vers le Margériaz ; « deux bitards devant le Mont Julioz » donnent un simple appui (04/07/2020).",
+          "sources": [
+            "S23",
+            "S97",
+            "S38",
+            "S39"
+          ]
+        },
+        {
+          "id": "margeriaz-arete-plafond",
+          "name": "Margériaz (arête qui monte « toute seule », plafond avant le Revard)",
+          "lon": 6.0341,
+          "lat": 45.6351,
+          "alt_m": 1719,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "milieu d'après-midi (16h dans les carnets)",
+          "trigger": "arête du Margériaz, croix des bergers",
+          "description": "PLAFOND : « une fois sur l'arête, ça monte tout seul, je n'ai qu'à cheminer le long de l'arête » (01/06/2020) ; 2380 m au sommet avant la transition vers la Tour de l'Angle Est, 2300 m « pas mal pour cette transition » ; un autre vol y enroule « péniblement » au nuage. Position : sommet (IGN).",
+          "sources": [
+            "S38",
+            "S39",
+            "S27",
+            "S106"
+          ]
+        },
+        {
+          "id": "tour-des-ebats-angle-est",
+          "name": "Tour des Ébats / Tour de l'Angle Est (relance de fin de tour des Bauges)",
+          "lon": 5.9999,
+          "lat": 45.696,
+          "alt_m": 1379,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "fin d'après-midi (retour du Margériaz)",
+          "trigger": "tours du rebord du Revard, appui au vent en nord-ouest",
+          "description": "RELANCE de fin de parcours : au retour du Margériaz « en m'approchant de la tour des Ébats… un peu de portance, je fais mon virage au-dessus de la tour » (2020) ; « je contourne le pied de la tour et repasse en nord-ouest, là l'appui ne me fait pas défaut ; je remonte la tour, puis la croix du Nivolet » (04/07/2020). Position : Tour des Ébats (IGN) ; Tour de l'Angle Est à 700 m (5.9914, 45.6898).",
+          "sources": [
+            "S38",
+            "S39",
+            "S106"
+          ]
+        },
+        {
+          "id": "col-de-la-cochette-bange",
+          "name": "Col de la Cochette et Bange (relance Revard → Semnoz)",
+          "lon": 6.032,
+          "lat": 45.7151,
+          "alt_m": 1364,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "milieu d'après-midi (15h)",
+          "trigger": "col de la Cochette puis relief de Bange, face ouest ensoleillée",
+          "description": "RELANCE de la transition Revard → Semnoz (via Bange) : on « se refait au-dessus du col de la Cochette », thermique puissant mais court vers le déco de Bange ; ascendance au nord du relief de Bange jusqu'à 1900 m qui décale vers l'est avant le saut vers le Semnoz (01/06/2020) ; sortie de Bange à 1450 m puis raccroche du Semnoz sous 1100 m (04/07/2020). Position : col (OSM), le thermique de Bange n'étant pas localisé plus précisément.",
+          "sources": [
+            "S38",
+            "S39",
+            "S107"
+          ]
+        },
+        {
+          "id": "semnoz-face-ouest-epaule",
+          "name": "Semnoz : épaule et face ouest (devant les aéromodélistes, Crêt de Châtillon)",
+          "lon": 6.0975,
+          "lat": 45.7975,
+          "alt_m": 1602,
+          "coord_quality": "approx",
+          "confidence": "medium",
+          "best_hours": "milieu d'après-midi",
+          "trigger": "face ouest bien éclairée devant l'épaule, combe SSO sous le décollage",
+          "description": "RELANCE avant le Roc des Bœufs : « je monte devant l'épaule jusque vers 1500 m, puis sur la face ouest bien éclairée je trouve une superbe ascendance devant les aéromodélistes » qui décale vers le nord-est (2180 m) ; « thermique pas si fort juste à l'angle de la route avant le crêt de Châtillon » (2050 m). Le guide de l'école note la combe SSO sous le décollage où les thermiques se forment, avec décollage parfois sous leur vent. Position approximative (déduite des récits).",
+          "sources": [
+            "S38",
+            "S39",
+            "S105"
           ]
         }
       ],
@@ -3022,13 +3457,16 @@
             }
           ],
           "distance_km": 40.0,
-          "description": "CHVD : transition de 10 km, difficile (« fortes brises et fortes turbulences à prévoir »). Hauteur de départ « suffisante » : 2400 m en général (ça passe parfois depuis 2200 m, les guns partent sous 2000 m, parfois 1900 m) ; avec du sud qui pousse on peut partir un peu plus bas, avec du nord qui contre plus de marge. Alternative : Pointe de la Bornée ou Mont Joigny au nord du col du Granier (transition plus courte, mais plafonds moins bons). Faire au moins la première moitié de la transition en direction du Mont Saint-Michel, puis entrer dans la couche de brise vers 1200 m et ajuster le cap pour que la dérive mène à l'épaule NO du Montgelas (laisse de chien : la brise forcit en descendant). Saison de ski : contourner le lac de Saint-André par la droite (TMA de Chambéry). St Hil'Air : 10 km >2400 m (arrivée 1000 m) ou 12 km >2300 m depuis Saint-Marcel (arrivée 900 m). Après la Savoyarde : Pic de la Sauge → Galoppaz → Mont de la Buffaz → Colombier → Julioz → Roc des Bœufs → lac d'Annecy. À éviter : option sud-est vers Montlambert (zone sous le vent de Montmélian, mortelle dans les années 1990) ; ne pas viser le rocher de la Savoyarde (venturi). Les waypoints Sauge et Montgelas sont approximatifs ; distance totale non calculée (tracé multi-étapes).",
+          "description": "CHVD : transition de 10 km, difficile (« fortes brises et fortes turbulences à prévoir »). Hauteur de départ « suffisante » : 2400 m en général (ça passe parfois depuis 2200 m, les guns partent sous 2000 m, parfois 1900 m) ; avec du sud qui pousse on peut partir un peu plus bas, avec du nord qui contre plus de marge. Alternative : Pointe de la Bornée ou Mont Joigny au nord du col du Granier (transition plus courte, mais plafonds moins bons). Faire au moins la première moitié de la transition en direction du Mont Saint-Michel, puis entrer dans la couche de brise vers 1200 m et ajuster le cap pour que la dérive mène à l'épaule NO du Montgelas (laisse de chien : la brise forcit en descendant). Saison de ski : contourner le lac de Saint-André par la droite (TMA de Chambéry). St Hil'Air : 10 km >2400 m (arrivée 1000 m) ou 12 km >2300 m depuis Saint-Marcel (arrivée 900 m). Après la Savoyarde : Pic de la Sauge → Galoppaz → Mont de la Buffaz → Colombier → Julioz → Roc des Bœufs → lac d'Annecy. À éviter : option sud-est vers Montlambert (zone sous le vent de Montmélian, mortelle dans les années 1990) ; ne pas viser le rocher de la Savoyarde (venturi). Les waypoints Sauge et Montgelas sont approximatifs ; distance totale non calculée (tracé multi-étapes). Relances citées : Pic de la Sauge (thermodynamique, 2200-2400 m), Galoppaz (≥ 1600 m en arrivant de la Savoyarde), Colombier (cum), Julioz (2700 m).",
           "sources": [
             "S3",
             "S15",
             "S40",
             "S23",
-            "S33"
+            "S33",
+            "S100",
+            "S101",
+            "S97"
           ]
         },
         {
@@ -3041,9 +3479,21 @@
               "lat": 45.6268
             },
             {
+              "name": "Le Pertuiset (relance)",
+              "lon": 5.973,
+              "lat": 45.6609,
+              "coord_quality": "source"
+            },
+            {
               "name": "Revard (déco)",
               "lon": 5.9748,
               "lat": 45.6832
+            },
+            {
+              "name": "Col de la Cochette / Bange (relance)",
+              "lon": 6.032,
+              "lat": 45.7151,
+              "coord_quality": "source"
             },
             {
               "name": "Semnoz Ouest (déco)",
@@ -3066,17 +3516,24 @@
               "lat": 45.6358
             },
             {
+              "name": "Tour des Ébats / Angle Est (relance)",
+              "lon": 5.9999,
+              "lat": 45.696,
+              "coord_quality": "source"
+            },
+            {
               "name": "Montagny (atterro)",
               "lon": 5.9316,
               "lat": 45.61
             }
           ],
           "distance_km": 57.0,
-          "description": "Récits de Franck Largeault (vols 162 du 01/06/2020 et 186 du 04/07/2020) : Revard (tour des Ébats, 40 min), transition vers Bange (1550 m au départ, raccroche 1200 m vers le col de la Cochette), Semnoz (face ouest, 2180 m), Roc des Bœufs (ligne électrique, 2500 m en thermique), traversée directe vers le Margériaz via le Mont Julioz (13 min), arête du Margériaz (2380 m au sommet) puis transition de 16 min vers la 'tour de l'angle est' du Revard (perte de 200 m puis air ascendant au-dessus de la vallée) et retour à Montagny, 3 h 10 à 3 h 16. Zeleph : le dernier jour du Vérel-La Mer, raccroche à la Sauge et à la Galoppaz puis glissade le long du Margériaz et glide final vers Montagny (120 km). Waypoints approximatifs sur Bange et la tour de l'angle est (non placés).",
+          "description": "Récits de Franck Largeault (vols 162 du 01/06/2020 et 186 du 04/07/2020) : Revard (tour des Ébats, 40 min), transition vers Bange (1550 m au départ, raccroche 1200 m vers le col de la Cochette), Semnoz (face ouest, 2180 m), Roc des Bœufs (ligne électrique, 2500 m en thermique), traversée directe vers le Margériaz via le Mont Julioz (13 min), arête du Margériaz (2380 m au sommet) puis transition de 16 min vers la 'tour de l'angle est' du Revard (perte de 200 m puis air ascendant au-dessus de la vallée) et retour à Montagny, 3 h 10 à 3 h 16. Zeleph : le dernier jour du Vérel-La Mer, raccroche à la Sauge et à la Galoppaz puis glissade le long du Margériaz et glide final vers Montagny (120 km). Waypoints approximatifs sur Bange et la tour de l'angle est (non placés). Points de relance réellement cités (carnets Largeault, juin-juillet 2020) : Malpassant → Pertuiset → toboggan du Revard → Cochette/Bange → épaule du Semnoz → bout du Roc des Bœufs (2500 m) → Julioz → arête du Margériaz (2300-2400 m avant la transition) → Tour des Ébats.",
           "sources": [
             "S38",
             "S39",
-            "S33"
+            "S33",
+            "S107"
           ]
         },
         {
@@ -3101,6 +3558,49 @@
             "S23",
             "S41"
           ]
+        },
+        {
+          "id": "faces-est-bauges-arclusaz-roc-des-boeufs",
+          "name": "Faces est des Bauges : Arclusaz – Pleuven – Trélod – Roc des Bœufs – Dents de Lanfon (19/07/2020)",
+          "waypoints": [
+            {
+              "name": "Dent d'Arclusaz",
+              "lon": 6.1737,
+              "lat": 45.6005,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Dents de Pleuven (face ouest)",
+              "lon": 6.1879,
+              "lat": 45.6775,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Faces ouest du Trélod",
+              "lon": 6.1941,
+              "lat": 45.6885,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Roc des Bœufs",
+              "lon": 6.1669,
+              "lat": 45.7553,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Dents de Lanfon",
+              "lon": 6.2417,
+              "lat": 45.8611,
+              "coord_quality": "source"
+            }
+          ],
+          "distance_km": 31,
+          "description": "Cheminement à hauteur des crêtes depuis la Sambuy : Arclusaz (plafond 2200-2400 m), Dents de Pleuven (« ça monte des briques » face ouest en thermodynamique, rester au vent, jamais la face sud en été), faces ouest du Trélod (2000-2200 m), transition vers le Roc des Bœufs (> 2000 m, « une rigolade »), puis Planfait et les Dents de Lanfon (2400 m, conditions turbulentes). Distance = longueur de la ligne brisée.",
+          "sources": [
+            "S96",
+            "S97",
+            "S99"
+          ]
         }
       ],
       "tips": [
@@ -3111,7 +3611,9 @@
         "Voler en début d'après-midi ou quand l'activité thermique décroît si l'on ne connaît pas le secteur : les brises (30-35 km/h) peuvent clouer au sol près d'École, Aillons, Lescheraines, Allèves [S26].",
         "Croiser les balises Semnoz et Revard avec celle de la Sambuy (nord-est des Bauges) pour lire la circulation d'ensemble [S26].",
         "Réserve des Bauges : jamais à moins de 300 m/sol dedans, même si le thermique y est ; bulles de quiétude Buffaz 1750 m, Compôte 1200 m [S86][S84].",
-        "Galoppaz et Puygros sont interdits par arrêté municipal : ne pas s'y poser ni y décoller [S33]."
+        "Galoppaz et Puygros sont interdits par arrêté municipal : ne pas s'y poser ni y décoller [S33].",
+        "Retour du Margériaz vers le Revard : partir à 2300-2400 m de l'arête du Margériaz, relancer à la Tour des Ébats en passant au vent (nord-ouest) [S38][S39].",
+        "Entrée dans les Bauges depuis la Savoyarde : raccrocher la pompe de la face ouest (1100 m), monter à 1600 m pour la Galoppaz, puis Sauge → Colombier → Julioz (2700 m) [S23][S100]."
       ]
     }
   ],
@@ -4388,6 +4890,114 @@
       "type": "web",
       "lang": "fr",
       "notes": "Lu : règles de vol rando (atterrissage dans champ fauché loin des troupeaux, plier hors des champs, petits groupes, annoncer au club dès une dizaine de pilotes), sites jaunes de vol rando sans décollage officiel, sites bleus gérés par les clubs voisins, bulles rouges."
+    },
+    {
+      "id": "S96",
+      "title": "La Sambuy (Serge D., 19/07/2020)",
+      "url": "http://clubsthilair.fr/2020/07/24/19-07-2020-la-sambuy/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Cheminement des faces est des Bauges : Arclusaz (plafond 2200-2400 m), Dents de Pleuven (« ça monte des briques » face ouest en thermodynamique, jamais la face sud), faces O du Trélod (2000-2200 m), Roc des Bœufs (> 2000 m), Planfait, Dents de Lanfon, Parmelan."
+    },
+    {
+      "id": "S97",
+      "title": "Stage cross avril 2022 (Nicolas Rovira)",
+      "url": "http://clubsthilair.fr/2022/05/03/stage-cross-avril-2022/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "28/04 : Tamié, Dent d'Arclusaz, Montlambert, Mont Pelat, Galoppaz, Colombier, Julioz, Roc des Bœufs (plafonds 3200 m, brises très inhospitalières) ; 30/04 : Lanfonnet, Roc des Bœufs « raccroche aisée », Julioz, École, Arclusaz (thermiques +6, plafs 2700 m), Col du Frêne, Mont Pelat, Montlambert sous la brise de Chambéry."
+    },
+    {
+      "id": "S98",
+      "title": "Récit de stage cross itinérant dans les Alpes du Sud (juin 2025)",
+      "url": "http://clubsthilair.fr/2025/08/05/recit-de-stage-cross-itinerant-dans-les-alpes-du-sud/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Vendredi 27 juin : Montlambert 13h, extraction sur le Mont Charvet, cheminement sur le Mont Pelat, transition sur la Dent d'Arclusaz, Roche Torse, retour Arclusaz, transition Grand Arc, Grande Lanche, retour Grand Arc, transition Chamoux. Lundi 23 juin : Épine, crête jusqu'au Mont Grelle puis Mont Beauvoir."
+    },
+    {
+      "id": "S99",
+      "title": "Retour sur le stage Cross Niveau 1 (juillet 2026)",
+      "url": "http://clubsthilair.fr/2026/07/21/retour-sur-le-stage-cross-niveau-1/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Jour 2 : Dents de Lanfon, Roc des Bœufs, traversée des Bauges jusqu'à la Dent de l'Arclusaz, raccroche Chamoux. Jour 1 : Val Pelouse, Chamoux, Grand Arc. Jour 5 : Revard → Semnoz → Roc des Bœufs."
+    },
+    {
+      "id": "S100",
+      "title": "Premières 100, 150 et 200 patates ! (récit de Serge, 01/06/2019)",
+      "url": "http://clubsthilair.fr/2019/07/05/premieres-100-150-et-200-patates/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Granier → Mont Gelas (brise soutenue qui hache les thermiques) → Pic de la Sauge (thermo-dynamique, 2200 m) → Colombier (cum) → départ 2400 m entre Sauge et lac de la Tuile → Bramefarine (1100 m, thermodynamique 1300 m au nord) → Saint-Genis."
+    },
+    {
+      "id": "S101",
+      "title": "Cross hasardeux de 154 kil (Patrick Villeneuve, 20/04/2021)",
+      "url": "http://clubsthilair.fr/2021/04/20/cross-hasardeux-de-154-kil/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Sambuy (éperon NO, 2250 m) → Pic de la Sauge 2350 m (12h50) → Saint-Marcel d'en haut (800 m, « thermique de service », 13h10) ; retour : Mont Beauvoir, relais du Mont du Chat (thermique 1900 m à 17h55), Mont de la Charvaz (1100 → 1300 m)."
+    },
+    {
+      "id": "S102",
+      "title": "Mon Col Vert des 200 kils (Simon B., 20/07/2020)",
+      "url": "http://clubsthilair.fr/2020/07/27/mon-col-vert-des-200-kils-simon-b/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Scia 3100 m → Aiguebelette (grille-pains, relais du Chat : thermique bleu jusqu'à 2000-2200 m) → Mont Outheran → Saint-Genis."
+    },
+    {
+      "id": "S103",
+      "title": "Sortie navette aux Richards, 9 avril 2017 (Serge)",
+      "url": "http://clubsthilair.fr/2017/04/11/sortie-navette-du-9-avril-course-contre-les-joufflus/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Vallée des Huiles contrée par la brise ; thermique au milieu de la vallée vers 2400 m qui décale vers le Grand Arc ; Petit Arc 2200 m, plafond 3000 m."
+    },
+    {
+      "id": "S104",
+      "title": "Aérologie et cheminement cross en Chartreuse et aux alentours (fil parapentiste.info)",
+      "url": "https://www.parapentiste.info/forum/meteo-aerologie/aerologie-et-cheminement-cross-en-chartreuse-et-aux-alentours-t43513.0.html",
+      "publisher": "parapentiste.info",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Tour de Chartreuse : raccrochage des faces ouest d'Aiguebelette, grilles-pains du Mont Grêle, raccrochage de l'Outheran."
+    },
+    {
+      "id": "S105",
+      "title": "Parapente Semnoz : guide pratique (Bauges Parapente)",
+      "url": "https://www.bauges-parapente.com/parapente-semnoz/",
+      "publisher": "Bauges Parapente",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Combe bien exposée au soleil sous le décollage à droite (orientée SSO) où les thermiques se forment ; risque d'être sous le vent du thermique ; ne pas dépasser la cassure du relief."
+    },
+    {
+      "id": "S106",
+      "title": "IGN – géocodeur Géoplateforme (lieux-dits, sommets, ruines)",
+      "url": "https://data.geopf.fr/geocodage/completion/?text=Tour%20des%20Ebats&type=PositionOfInterest",
+      "publisher": "IGN (Géoplateforme)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Positions : Tour des Ébats (5.9999, 45.6960), Tour de l'Angle Est (5.9914, 45.6898), Margériaz (6.0341, 45.6351), Dent d'Arclusaz, Tours de Montmayeur (6.1234, 45.4894), Val des Huiles (6.1993, 45.4807), Mont de la Charvaz (5.8381, 45.7239), Mont Grelle (5.8129, 45.5166), Saint-Marcel d'en haut (5.9639, 45.4450)."
+    },
+    {
+      "id": "S107",
+      "title": "OpenStreetMap – sommets et cols des Bauges et du Bourget",
+      "url": "https://www.openstreetmap.org/node/416114868",
+      "publisher": "OpenStreetMap",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Nœuds : Pic de la Sauge (45.5513 N, 6.0588 E, 1612 m), Mont Charvet 1572 m, Mont Pelat 1543 m, Pointe de la Galoppaz 1681 m, Roc des Bœufs, Mont Julioz 1672 m, Le Pertuiset 1400 m (45.6609, 5.9730), Col de la Cochette 1320 m (45.7151, 6.0320), Crêt de Châtillon 1702 m, Dent de Pleuven 1771 m, Grand Arc, tour hertzienne TDF du Mont du Chat (45.6598, 5.8214), Brame-Farine (45.4050, 6.0454)."
     }
   ]
 }

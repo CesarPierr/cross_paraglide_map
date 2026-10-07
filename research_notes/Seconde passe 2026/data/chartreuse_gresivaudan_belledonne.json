@@ -907,12 +907,15 @@
           "coord_quality": "approx",
           "best_hours": "dès le milieu de matinée (3 h après le lever du soleil) ; renforcement l'après-midi",
           "trigger": "falaise calcaire et combe du funiculaire orientées à l'est, ensoleillées tôt",
-          "description": "Les décollages permettent de décoller tôt ; dès l'activité thermique, déclenchements juste en sortie de déco (« soyez prêt à piloter dès le début »). La fiche FFVL du déco Est parle de thermique canalisé par la combe du funiculaire, qui peut être fort. Position estimée devant les décos.",
+          "description": "Les décollages permettent de décoller tôt ; dès l'activité thermique, déclenchements juste en sortie de déco (« soyez prêt à piloter dès le début »). La fiche FFVL du déco Est parle de thermique canalisé par la combe du funiculaire, qui peut être fort. Position estimée devant les décos. Récits : « on enroule tous un thermique au-dessus du déco nord » (15h30, septembre 2023, très fréquenté) ; en mars des « thermiques bien velus » passent le plateau ; XC Mag : thermique de la maison en avant du déco, tailwind possible sur la grande moquette sud.",
           "sources": [
             "S1",
             "S92",
-            "S29"
-          ]
+            "S29",
+            "S101",
+            "S40"
+          ],
+          "confidence": "medium"
         },
         {
           "id": "pilier-sud-dent-de-crolles",
@@ -923,11 +926,13 @@
           "coord_quality": "approx",
           "best_hours": "fin de matinée à début d'après-midi",
           "trigger": "pilier rocheux plein sud",
-          "description": "Raccrochage classique pour monter de la Combe/Manival vers la Dent, puis la crête vers le nord ; plusieurs récits y relèvent le thermique de départ. Peut être mou ; une couche de vent de sud est possible tout en bas. Position estimée.",
+          "description": "Raccrochage classique pour monter de la Combe/Manival vers la Dent, puis la crête vers le nord ; plusieurs récits y relèvent le thermique de départ. Peut être mou ; une couche de vent de sud est possible tout en bas. Position estimée. Matmute raccroche « le thermique sur le pilier Sud » après un repli par l'école d'escalade et monte aux nuages ; en 2020 le pilier est « mou » avec une couche de vent de sud : rester dans la zone moyenne et se laisser pousser au nord jusqu'au Pas de Rocheplane. Rôle : RELANCE entre Manival/Bec Charvet et la Dent.",
           "sources": [
             "S22",
-            "S42"
-          ]
+            "S42",
+            "S106"
+          ],
+          "confidence": "medium"
         },
         {
           "id": "manival-bec-charvet",
@@ -938,12 +943,16 @@
           "coord_quality": "source",
           "best_hours": "milieu de matinée à début d'après-midi",
           "trigger": "combe du Manival et pointe du Bec Charvet",
-          "description": "Au sud de Saint-Hilaire, la combe du Manival est la coupure à bien franchir : il faut y monter à 1200-1400 m avant de continuer vers le Saint-Eynard ou de transiter sur Saint-Pancrasse (1600 m mini) vers la Dent. Premier thermique cité après le Manival ; manque d'altitude au Bec Charvet = repli par l'école d'escalade.",
+          "description": "Au sud de Saint-Hilaire, la combe du Manival est la coupure à bien franchir : il faut y monter à 1200-1400 m avant de continuer vers le Saint-Eynard ou de transiter sur Saint-Pancrasse (1600 m mini) vers la Dent. Premier thermique cité après le Manival ; manque d'altitude au Bec Charvet = repli par l'école d'escalade. Compléments (récits) : placement idéal = Manival avant le start puis monter directement sur les crêtes du Saint-Eynard (manche 2017) ; « ne pas se rater au Manival » (forum, parcours facile des faces est) ; Matmute rate le cycle au Bec Charvet et se replie à l'école d'escalade ; en 2020 petit thermique « désagréable » à la pointe du Bec Charvet.",
           "sources": [
             "S27",
             "S22",
-            "S30"
-          ]
+            "S30",
+            "S102",
+            "S32",
+            "S42"
+          ],
+          "confidence": "medium"
         },
         {
           "id": "col-du-coq-saint-pancrasse",
@@ -969,12 +978,14 @@
           "coord_quality": "source",
           "best_hours": "toute la journée thermique",
           "trigger": "falaise est du Saint-Eynard",
-          "description": "Crête de soaring du bassin grenoblois : « ça monte tout le long » selon le vol de groupe de 2021 ; thermique à l'Emeindras pour repartir vers la Dent ; excellente crête par vent de S/SO modéré. Point = fort (Wikipédia).",
+          "description": "Crête de soaring du bassin grenoblois : « ça monte tout le long » selon le vol de groupe de 2021 ; thermique à l'Emeindras pour repartir vers la Dent ; excellente crête par vent de S/SO modéré. Point = fort (Wikipédia). Rôle : premier objectif du parcours classique (Antennes → Château Nardent → fort) ; le Saint-Eynard est aussi la jonction avec la transition depuis le Moucherotte (« ça monte tout le long », mais turbulent à certaines heures). Une seconde pompe se trouve vers l'Émeindras pour repartir vers la Dent.",
           "sources": [
             "S37",
             "S26",
-            "S29"
-          ]
+            "S29",
+            "S22"
+          ],
+          "confidence": "medium"
         },
         {
           "id": "rachais-bastille",
@@ -985,13 +996,14 @@
           "coord_quality": "source",
           "best_hours": "début d'après-midi",
           "trigger": "falaise du Rachais au-dessus de Grenoble",
-          "description": "Raccrochage au bout du parcours sud ; thermiques désordonnés vers 1300 m ; plafond 2270 m noté un jour de plafond haut. Au-dessus de la ZIT de Grenoble : zone de 1200 m minimum.",
+          "description": "Raccrochage au bout du parcours sud ; thermiques désordonnés vers 1300 m ; plafond 2270 m noté un jour de plafond haut. Au-dessus de la ZIT de Grenoble : zone de 1200 m minimum. Rôle : demi-tour/RELANCE du parcours sud : « j'ai trouvé la pompe qui me ramènera à la maison » (Matmute, retour du Rachais vers le Saint-Eynard) ; vol de groupe 2021 : le Rachais remonte vers 1300 m pour passer sur le Saint-Eynard.",
           "sources": [
             "S22",
             "S35",
             "S37",
             "S30"
-          ]
+          ],
+          "confidence": "medium"
         },
         {
           "id": "neron",
@@ -1002,10 +1014,11 @@
           "coord_quality": "source",
           "best_hours": "début d'après-midi",
           "trigger": "falaises du Néron",
-          "description": "Le récit du 154 km regrette d'avoir négligé le passage par le Néron, qui assurait le plafond pour rejoindre la Montagne du Sac et les rochers de Chalves.",
+          "description": "Le récit du 154 km regrette d'avoir négligé le passage par le Néron, qui assurait le plafond pour rejoindre la Montagne du Sac et les rochers de Chalves. Rôle : point de relance pour sortir de la cuvette grenobloise vers la Montagne du Sac : « un magnifique cum sur le Néron » négligé à tort.",
           "sources": [
             "S35"
-          ]
+          ],
+          "confidence": "medium"
         },
         {
           "id": "chamechaude-pinea",
@@ -1016,11 +1029,13 @@
           "coord_quality": "source",
           "best_hours": "après 12h",
           "trigger": "hauts du massif ; face est de Chamechaude",
-          "description": "Thermiques dessinés sur la carte PNR/CD38 à la Pinéa, au Col de Porte-Chamechaude et au Sappey. Le récit de 2020 trouve un « gros thermique teigneux sous le vent » à la face est de Chamechaude (sortie à 2700 m) ; plafonds 3000 m sur Grand Som et Scia le même jour.",
+          "description": "Thermiques dessinés sur la carte PNR/CD38 à la Pinéa, au Col de Porte-Chamechaude et au Sappey. Le récit de 2020 trouve un « gros thermique teigneux sous le vent » à la face est de Chamechaude (sortie à 2700 m) ; plafonds 3000 m sur Grand Som et Scia le même jour. Un stage cross (2026) enchaîne Scia, Pravouta, Chamechaude puis revient sur Pravouta pour raccrocher la Dent : Chamechaude et Pravouta servent de relais dans l'intérieur du massif.",
           "sources": [
             "S29",
-            "S42"
-          ]
+            "S42",
+            "S106"
+          ],
+          "confidence": "medium"
         },
         {
           "id": "scia-grand-som-charmant-som",
@@ -1047,12 +1062,14 @@
           "coord_quality": "source",
           "best_hours": "milieu à fin d'après-midi",
           "trigger": "falaises du Granier, face ouest en cas de vent d'ouest",
-          "description": "Deux thermiques dessinés sur le Granier (carte PNR/CD38). Plafonds généreux jusqu'à 2300 m sans être « démonté » à 14h30 (récit 2021) ; avant la montagne du Granier, passer par la face ouest si le vent est d'ouest ; la face est est souvent contrée par la brise de nord de Chambéry.",
+          "description": "Deux thermiques dessinés sur le Granier (carte PNR/CD38). Plafonds généreux jusqu'à 2300 m sans être « démonté » à 14h30 (récit 2021) ; avant la montagne du Granier, passer par la face ouest si le vent est d'ouest ; la face est est souvent contrée par la brise de nord de Chambéry. Point de départ des transitions : « je pars à 2500 du Granier pour le Mont Gelas » (Bauges) ; 2300 m « sans se faire démonter » à 14h30. Rôle : PLAFOND avant la Savoyarde ou avant Belledonne depuis le cirque de Saint-Même.",
           "sources": [
             "S29",
             "S37",
-            "S27"
-          ]
+            "S27",
+            "S36"
+          ],
+          "confidence": "medium"
         },
         {
           "id": "sainte-marie-du-mont-barraux",
@@ -1063,10 +1080,232 @@
           "coord_quality": "source",
           "best_hours": "après 11h",
           "trigger": "crêtes successives de la façade est entre Saint-Hilaire et Barraux",
-          "description": "Sur le parcours Barraux (16 km), « plusieurs bons thermiques sur les crêtes », mais il faut assurer le plafond à chaque transition et se méfier du nord qui peut bloquer vers Saint-Bernard.",
+          "description": "Sur le parcours Barraux (16 km), « plusieurs bons thermiques sur les crêtes », mais il faut assurer le plafond à chaque transition et se méfier du nord qui peut bloquer vers Saint-Bernard. Rôle : point de départ de la traversée vers le Saint-Genis (« depuis Sainte-Marie-du-Mont prendre +2200 m est une bonne idée »).",
           "sources": [
             "S27",
             "S29"
+          ],
+          "confidence": "medium"
+        },
+        {
+          "id": "antennes-st-hilaire",
+          "name": "Les Antennes (Saint-Hilaire) – « frontière sud du bocal »",
+          "lon": 5.8755,
+          "lat": 45.2939,
+          "alt_m": 720,
+          "coord_quality": "approx",
+          "confidence": "medium",
+          "best_hours": "à partir de la fin de matinée (départs de cross vers 11h-12h) ; encore actif l'après-midi mais dur à franchir quand la brise est établie",
+          "trigger": "falaises basses et pylônes FT/TDF au sud de Crolles, premier relief un peu saillant au sud du plateau des Petites Roches",
+          "description": "POINT DE RELANCE et limite du « bocal » de Saint-Hilaire : on y enroule pour prendre de la hauteur avant de quitter les falaises basses vers Château Nardent et le Saint-Eynard (« à quelle altitude quitter les antennes » est la question des aiglons du club). Matmute : « J'arrive aux Antennes, la frontière Sud du bocal de Saint Hil… j'enroule ». Au-delà de 15h30 la percée jusqu'aux antennes est une mauvaise option (« bataille pour remonter mais aussi pour tenir »). Position déduite : le seul groupe de pylônes sur ce relief (nœuds OSM FT/TDF, 45.2938 N 5.8755 E) ; le lieu-dit exact n'est pas cartographié, d'où approx (altitude = sol du MNT). Le thermique du pylône Orange 1 km au sud du déco (45.3024 N 5.8787 E) est un autre candidat peu probable.",
+          "sources": [
+            "S22",
+            "S99",
+            "S101",
+            "S109"
+          ]
+        },
+        {
+          "id": "chateau-nardent",
+          "name": "Château Nardent (point clé du parcours classique vers le Saint-Eynard)",
+          "lon": 5.8384,
+          "lat": 45.2805,
+          "alt_m": 1217,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "fin de matinée à début d'après-midi (« nombreuses ailes balisent déjà le chemin »)",
+          "trigger": "croupe boisée et rocheuse de Château Nardent (sommet 1217 m, Plateau-des-Petites-Roches / Saint-Ismier) au pied de l'Émeindras",
+          "description": "POINT DE RACCROCHE du parcours classique Saint-Hilaire → Saint-Eynard, après les Antennes. Matmute : « Arrivée vers Château Nardent… je reconnais tous ces points-clé du parcours classique vers le Saint Eynard. Je raccroche pas trop mal » ; elle s'y sert des autres ailes comme indicateurs. Pour un pilote en perte de confiance c'est aussi la limite psychologique (« je ne dépasse plus Château Nardent »). Position : lieu-dit IGN et sommet OSM.",
+          "sources": [
+            "S22",
+            "S100",
+            "S99",
+            "S108",
+            "S109"
+          ]
+        },
+        {
+          "id": "gencives-dent-de-crolles",
+          "name": "Gencives de la Dent de Crolles (Saint-Pancrasse)",
+          "lon": 5.8548,
+          "lat": 45.304,
+          "alt_m": 1600,
+          "coord_quality": "approx",
+          "confidence": "medium",
+          "best_hours": "milieu de journée (arrivée vers 14h pour un départ à 12h)",
+          "trigger": "pied rocheux de la Dent, au-dessus de Saint-Pancrasse, premier relief collé à la Dent",
+          "description": "POINT DE RELANCE pour monter vers la Dent de Crolles depuis le Manival : il faut être à 1400 m au Manival puis 1600 m minimum à Saint-Pancrasse pour « partir vers les gencives de la Dent » (Jean-Nono) ; on arrive aux gencives vers 14h pour un départ de Saint-Hilaire à midi (Axel, plafond 2400 m ensuite). Un compétiteur enchaîne Bec Charvet puis les gencives sans enrouler et ne s'arrête pas aux « pare-avalanches », car « ça monte en ligne droite plus loin collé au relief ». Position approximative déduite du texte et de la carte (le terme ne désigne pas un lieu-dit cartographié).",
+          "sources": [
+            "S27",
+            "S107",
+            "S102",
+            "S99"
+          ]
+        },
+        {
+          "id": "emeindras",
+          "name": "Émeindras (forêt et col, relance vers la Dent)",
+          "lon": 5.8039,
+          "lat": 45.2836,
+          "alt_m": 1350,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "après-midi (vers 13h30-15h dans les récits)",
+          "trigger": "forêt et col de l'Émeindras, derrière la crête du Saint-Eynard, versant sous le Bec Charvet",
+          "description": "POINT DE RELANCE entre le Saint-Eynard et la Dent de Crolles : « un bon thermique nous remonte à 2000 au niveau de l'Émeindras direction la Dent » (vol de groupe du 06/09/2021) ; « en passant au-dessus de la forêt de l'Émeindras, un gentil thermique me cueille et me remonte à 2100 m » (récit du 11/08/2020). Position : col de l'Émeindras (IGN).",
+          "sources": [
+            "S37",
+            "S42",
+            "S108"
+          ]
+        },
+        {
+          "id": "faces-est-dent-de-crolles-bellefond",
+          "name": "Faces est de la Dent de Crolles – Col de Bellefond (plafond de la voie classique vers le Granier)",
+          "lon": 5.865,
+          "lat": 45.315,
+          "alt_m": 1680,
+          "coord_quality": "approx",
+          "confidence": "medium",
+          "best_hours": "après 13h-14h ; on reste à l'est des nuages tant que la face ouest n'est pas active",
+          "trigger": "hautes falaises est de la réserve (Dent, Dôme de Bellefond) alimentées en fin de matinée",
+          "description": "PLAFOND et ascenseur du cheminement classique : remontée en face est « où les plafonds sont vers 2200 » ; « la traversée de la Chartreuse se fait sans problème sur les faces est de la Dent entre 2000 et 2200, quasi pas un virage jusqu'au Granier » ; 2850 m « sous la Dent » un jour de gros plafond. Au nord du col de Bellefond les plafonds peuvent être plus bas que la crête : rester au vent des nuages avant de basculer en face ouest. Position approximative sur la crête (déduction d'après les trajectoires décrites).",
+          "sources": [
+            "S37",
+            "S36",
+            "S103",
+            "S27"
+          ]
+        },
+        {
+          "id": "pas-de-rocheplane",
+          "name": "Pas de Rocheplane (sortie par la crête)",
+          "lon": 5.8734,
+          "lat": 45.3295,
+          "alt_m": 1850,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "début d'après-midi (après avoir remonté la face est depuis le pilier sud)",
+          "trigger": "col de la crête nord de la Dent, en sortie de la couche de vent de sud de la face est",
+          "description": "DÉCLENCHEUR/PLAFOND du passage vers le nord : en poussant le long de la Dent « jusqu'au Pas de Rocheplane, je parviens enfin à sortir de cette couche de vent de sud et à passer les crêtes… à 2800 m » (11/08/2020). Étape de la route Dent → Granier. Position : col (IGN).",
+          "sources": [
+            "S42",
+            "S27",
+            "S108"
+          ]
+        },
+        {
+          "id": "cirque-saint-meme-bascule",
+          "name": "Cirque de Saint-Même (point de bascule face ouest / plafond avant Belledonne)",
+          "lon": 5.8913,
+          "lat": 45.3928,
+          "alt_m": 960,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "milieu d'après-midi (14h30 dans le vol de groupe de 2021)",
+          "trigger": "cirque calcaire plein ouest, au pied du Granier côté Chartreuse intérieure",
+          "description": "RELANCE/PLAFOND : on bascule des faces est vers l'ouest « au cirque de St-Même quasiment sans enrouler jusqu'au Granier » ; au retour du Granier on y soigne le plafond (2200-2400 m) avant la transition vers le Saint-Genis. Règle de la réserve : survol du cirque à 1900 m minimum du 1er février au 30 août (nidification de l'aigle), passer plutôt par l'Alpette de Chapareillan. Position : cirque de Saint-Même (IGN). (altitude = fond du cirque ; les plafonds cités sont ceux du vol.)",
+          "sources": [
+            "S37",
+            "S29",
+            "S108"
+          ]
+        },
+        {
+          "id": "scia-plafond-transition",
+          "name": "La Scia (thermique de service, plafond 3000 m et départ vers Aiguebelette)",
+          "lon": 5.847,
+          "lat": 45.346,
+          "alt_m": 1791,
+          "coord_quality": "approx",
+          "confidence": "medium",
+          "best_hours": "après-midi (vol vers 13h-14h)",
+          "trigger": "sommet de la Scia et faces au soleil au centre du massif",
+          "description": "PLAFOND : « quitte les lieux après le thermique de service à 3100 m » (20/07/2020) puis glisse vers Aiguebelette ; nouveau « 3000 m » à la Scia le 11/08/2020 ; point de passage de la boucle Pravouta – Chamechaude – Pravouta – Dent (stage 2026). Position approximative proche du déco de la Scia (fiche FFVL).",
+          "sources": [
+            "S103",
+            "S42",
+            "S106",
+            "S29"
+          ]
+        },
+        {
+          "id": "montagne-du-sac",
+          "name": "Montagne du Sac (au vent, face ouest du Néron vers Chalves)",
+          "lon": 5.684,
+          "lat": 45.2644,
+          "alt_m": 1119,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "milieu d'après-midi (14h30) quand la brise de nord-ouest est établie",
+          "trigger": "crête de la Montagne du Sac, thermique « couché » par la brise au vent de la crête",
+          "description": "POINT DE RELANCE pour le tour de Chartreuse par l'ouest depuis le Rachais : après le Néron, face à la brise on peut y être bloqué ; la sortie est de revenir « là où ça montait, au vent de la montagne du sac » (remonté à 2000 m), puis de passer à l'ouest des rochers de Chalves. Le même récit conclut que le passage par le Néron aurait assuré le plafond. Position : crête IGN.",
+          "sources": [
+            "S35",
+            "S108"
+          ]
+        },
+        {
+          "id": "falaises-touvet-saint-vincent",
+          "name": "Falaises de La Terrasse – Le Touvet – Saint-Vincent-de-Mercuze (crêtes de la façade est)",
+          "lon": 5.919,
+          "lat": 45.365,
+          "alt_m": 900,
+          "coord_quality": "approx",
+          "confidence": "low",
+          "best_hours": "à partir de 11h (falaises plein est, soleil de matinée)",
+          "trigger": "barres rocheuses est successives entre Saint-Hilaire et Barraux",
+          "description": "Déduction : sur le parcours Barraux de Jean-Nono (16 km) la trace d'exemple marque une série de thermiques sur les crêtes « savoir les trouver et les exploiter sera le challenge », avec des relances à chaque transition (diapositive 22) ; ils se placent sur les barres est au-dessus du Touvet, de Saint-Vincent-de-Mercuze et de La Flachère (falaises plein est au soleil dès la fin de matinée). Position approximative, d'après le dessin de la trace, non mesurée.",
+          "sources": [
+            "S27"
+          ]
+        },
+        {
+          "id": "falaises-lumbin-plateau",
+          "name": "Falaises de Lumbin (retour sur le plateau de Saint-Hilaire)",
+          "lon": 5.902,
+          "lat": 45.312,
+          "alt_m": 700,
+          "coord_quality": "approx",
+          "confidence": "low",
+          "best_hours": "début d'après-midi (manche de 12h15 à 15h)",
+          "trigger": "falaises basses entre Lumbin et le déco, sorties au-dessus du plateau",
+          "description": "POINT DE RELANCE du retour en vallée : « arrivé aux falaises de Lumbin, Daniel enroule le premier thermique qu'il trouve ; je sais que ça monte mieux un peu plus loin… je sors comme une balle au-dessus du plateau » (manche de compétition 2017). Position approximative.",
+          "sources": [
+            "S102"
+          ]
+        },
+        {
+          "id": "saint-marcel-d-en-haut",
+          "name": "Saint-Marcel d'en haut (thermique de service au pied du Granier, retour des Bauges)",
+          "lon": 5.9639,
+          "lat": 45.445,
+          "alt_m": 855,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "début d'après-midi (13h10 dans le récit)",
+          "trigger": "hameau de Chapareillan au pied des falaises est du Granier, versant exposé à l'est",
+          "description": "RELANCE à l'arrivée de la transition Bauges → Chartreuse : « je vise St Marcel, je connais et je sais que ça va le faire à cette heure-là… arrivée à St Marcel d'en haut à 800 m à 13h10, le thermique de service est là et me remonte illico, en dérivant vers le sud » ; on le quitte à 1500 m pour rejoindre les falaises. Position : lieu-dit IGN.",
+          "sources": [
+            "S35",
+            "S108"
+          ]
+        },
+        {
+          "id": "mont-outheran-face-ouest",
+          "name": "Mont Outheran et Corbelet (face ouest, raccroche après le Granier)",
+          "lon": 5.8472,
+          "lat": 45.4664,
+          "alt_m": 1611,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "milieu à fin d'après-midi",
+          "trigger": "face ouest du Corbelet puis de l'Outheran, au vent de la brise de nord-ouest",
+          "description": "RELANCE du tour de Chartreuse par l'ouest : depuis le Granier, viser le col entre Corbelet et Outheran ; « si descendu par la brise de nord, tu raccroches en bas du Corbelet vers 850-900 m en face ouest et ça remonte facile jusqu'au sommet de l'Outheran » (forum) ; en 2020 « le thermique au-dessus des crêtes de Saint-Pierre-d'Entremont donne très bien », ce qui permet de basculer vers le Saint-Genis à 2100 m. Quitter l'Outheran à 1800-1900 m ne suffit pas toujours pour raccrocher au sud du Mont Grelle.",
+          "sources": [
+            "S34",
+            "S103",
+            "S35"
           ]
         }
       ],
@@ -1592,6 +1831,18 @@
               "coord_quality": "source"
             },
             {
+              "name": "Les Antennes (relance, frontière sud du bocal)",
+              "lon": 5.8755,
+              "lat": 45.2939,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Château Nardent (raccroche)",
+              "lon": 5.8384,
+              "lat": 45.2805,
+              "coord_quality": "source"
+            },
+            {
               "name": "Combe du Manival",
               "lon": 5.8283,
               "lat": 45.2568,
@@ -1605,11 +1856,15 @@
             }
           ],
           "distance_km": 14,
-          "description": "Parcours le plus facile : monter à 1200 m au Manival et suivre la crête du Saint-Eynard. Au passage, Château Nardant et les antennes marquent la frontière sud du bocal (récit du Grand tour du Bocal) ; aller au Rachais est plus engagé (au-dessus de Grenoble).",
+          "description": "Parcours le plus facile : monter à 1200 m au Manival et suivre la crête du Saint-Eynard. Au passage, Château Nardant et les antennes marquent la frontière sud du bocal (récit du Grand tour du Bocal) ; aller au Rachais est plus engagé (au-dessus de Grenoble). Ordre réellement volé (Grand tour du Bocal, 15/04/2018) : déco sud → Antennes (on enroule) → Château Nardent (« points-clés du parcours classique vers le Saint-Eynard », on raccroche) → Manival → fort du Saint-Eynard ; le retour passe par le Bec Charvet et le pilier sud.",
           "sources": [
             "S27",
             "S22",
-            "S30"
+            "S30",
+            "S99",
+            "S100",
+            "S108",
+            "S109"
           ]
         },
         {
@@ -1623,10 +1878,28 @@
               "coord_quality": "approx"
             },
             {
+              "name": "Château Nardent (raccroche)",
+              "lon": 5.8384,
+              "lat": 45.2805,
+              "coord_quality": "source"
+            },
+            {
               "name": "Saint-Pancrasse",
               "lon": 5.8606,
               "lat": 45.2928,
               "coord_quality": "source"
+            },
+            {
+              "name": "Gencives de la Dent (relance)",
+              "lon": 5.8548,
+              "lat": 45.304,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Pilier sud de la Dent",
+              "lon": 5.8548,
+              "lat": 45.3045,
+              "coord_quality": "approx"
             },
             {
               "name": "Dent de Crolles",
@@ -1636,9 +1909,13 @@
             }
           ],
           "distance_km": 9,
-          "description": "Au Manival monter au moins à 1400 m, transiter sur Saint-Pancrasse, monter à 1600 m minimum pour partir vers la Dent (« les gencives de la Dent ») ; facile selon le club.",
+          "description": "Au Manival monter au moins à 1400 m, transiter sur Saint-Pancrasse, monter à 1600 m minimum pour partir vers la Dent (« les gencives de la Dent ») ; facile selon le club. Variante de l'enchaînement réellement volé : Bec Charvet → (école d'escalade en repli) → pilier sud → faces est de la Dent ; Matmute (2018) et Giom (2020) y relancent sur le pilier sud, Axel (2023) aux gencives vers 14h.",
           "sources": [
-            "S27"
+            "S27",
+            "S22",
+            "S42",
+            "S107",
+            "S102"
           ]
         },
         {
@@ -1671,7 +1948,7 @@
             }
           ],
           "distance_km": 16,
-          "description": "Parcours vers le nord, plus difficile : de crête en crête, plafond assuré à chaque transition, attention au nord qui peut bloquer vers Saint-Bernard ; respecter la bulle du circaète entre Lumbin et La Terrasse (>300 m/sol) ; atteindre ensuite les hautes falaises (2000 m).",
+          "description": "Parcours vers le nord, plus difficile : de crête en crête, plafond assuré à chaque transition, attention au nord qui peut bloquer vers Saint-Bernard ; respecter la bulle du circaète entre Lumbin et La Terrasse (>300 m/sol) ; atteindre ensuite les hautes falaises (2000 m). Relances sur les barres est du Touvet, de Saint-Vincent-de-Mercuze et de La Flachère (diapositive 22 de la préparation cross) avant Sainte-Marie-du-Mont et Barraux.",
           "sources": [
             "S27",
             "S30"
@@ -1686,6 +1963,12 @@
               "lon": 5.8553,
               "lat": 45.3081,
               "coord_quality": "source"
+            },
+            {
+              "name": "Faces est / Col de Bellefond (plafond)",
+              "lon": 5.865,
+              "lat": 45.315,
+              "coord_quality": "approx"
             },
             {
               "name": "Pas de Rocheplane",
@@ -1711,7 +1994,8 @@
           "sources": [
             "S27",
             "S31",
-            "S37"
+            "S37",
+            "S36"
           ]
         },
         {
@@ -1896,7 +2180,9 @@
         "La brise de Voreppe et celle du Grésivaudan sont fortes : les transitions Rachais–Néron–Sassenage et Saint-Genis demandent de la marge (laisse de chien) [S30].",
         "Plafonds plus généreux au centre du massif (Grand Som, Scia, Chamechaude) qu'en bordure ; s'y rendre par la Dent de Crolles ou depuis le Saint-Eynard par l'Écoutoux [S32][S30].",
         "Survol : bulle circaète Lumbin–La Terrasse (> 300 m/sol), Saint-Même (> 1900 m du 1er février au 30 août), ZIT Grenoble (1200 m), Versoud (1400 m), Granier FL95 [S30][S31].",
-        "Hautes vallées (Saint-Pierre-de-Chartreuse, Entremont, Col de Porte, Sappey, Saint-Pancrasse) : seuls les flux dessinés sur la carte PNR/CD38 et la carte Largeault existent ; aucun horaire ni vitesse n'a été trouvé [S29][S28]."
+        "Hautes vallées (Saint-Pierre-de-Chartreuse, Entremont, Col de Porte, Sappey, Saint-Pancrasse) : seuls les flux dessinés sur la carte PNR/CD38 et la carte Largeault existent ; aucun horaire ni vitesse n'a été trouvé [S29][S28].",
+        "Parcours classique Saint-Eynard : déco sud → Antennes (on y enroule, frontière du bocal) → Château Nardent (raccroche) → Manival (≥ 1200 m) → fort ; ne pas s'aventurer aux Antennes après 15h30 avec la brise [S22][S99][S101][S27].",
+        "Pour la Dent : Manival ≥ 1400 m, Saint-Pancrasse ≥ 1600 m, puis « gencives » et pilier sud ; en cas de repli, Bec Charvet → école d'escalade [S27][S22][S102]."
       ]
     },
     {
@@ -2662,6 +2948,18 @@
               "coord_quality": "source"
             },
             {
+              "name": "Les Antennes (relance)",
+              "lon": 5.8755,
+              "lat": 45.2939,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Château Nardent (raccroche)",
+              "lon": 5.8384,
+              "lat": 45.2805,
+              "coord_quality": "source"
+            },
+            {
               "name": "Fort du Saint-Eynard",
               "lon": 5.7625,
               "lat": 45.2353,
@@ -2699,7 +2997,7 @@
             }
           ],
           "distance_km": null,
-          "description": "« Le classico local » (récit de 2018, 15 avril) : décollage Sud, Antennes (frontière sud du bocal), Château Nardant, Saint-Eynard puis Rachais (retenant son souffle au-dessus de la Bastille), retour par le Bec Charvet, école d'escalade, pilier sud de la Dent, crête vers le nord ; traversée vers Saint-Genis arrivée à 1250 m, puis Sept Laux et retour sur Lumbin. Distance non indiquée.",
+          "description": "« Le classico local » (récit de 2018, 15 avril) : décollage Sud, Antennes (frontière sud du bocal), Château Nardant, Saint-Eynard puis Rachais (retenant son souffle au-dessus de la Bastille), retour par le Bec Charvet, école d'escalade, pilier sud de la Dent, crête vers le nord ; traversée vers Saint-Genis arrivée à 1250 m, puis Sept Laux et retour sur Lumbin. Distance non indiquée. Premiers points clés depuis le déco sud : Antennes puis Château Nardent (S22).",
           "sources": [
             "S22"
           ]
@@ -2782,7 +3080,7 @@
             }
           ],
           "distance_km": 116.31,
-          "description": "Vol de Yann Subileau (Enzo 2, 28/03/2017, 5h21, 21,8 km/h) : balises Néron, relais du Mont du Chat, Bramefarine ; branches 49,4 / 34,3 / 32,6 km. Un autre triangle de Yvan Wolf (Omega 8, 30/05/2012, 137,6 km) passe par Bastille, Dent du Chat et le Grand Miceau. Position du relais du Mont du Chat approchée par la Dent du Chat (Wikipédia) ; Bramefarine estimée d'après le PDF du club (p. 19) et le voisinage du lac du Flumet.",
+          "description": "Vol de Yann Subileau (Enzo 2, 28/03/2017, 5h21, 21,8 km/h) : balises Néron, relais du Mont du Chat, Bramefarine ; branches 49,4 / 34,3 / 32,6 km. Un autre triangle de Yvan Wolf (Omega 8, 30/05/2012, 137,6 km) passe par Bastille, Dent du Chat et le Grand Miceau. Position du relais du Mont du Chat approchée par la Dent du Chat (Wikipédia) ; Bramefarine estimée d'après le PDF du club (p. 19) et le voisinage du lac du Flumet. Relances d'arrivée : Bramefarine (thermodynamique 1100-1300 m) avant le glide final vers Lumbin.",
           "sources": [
             "S15"
           ]
@@ -3414,12 +3712,15 @@
           "coord_quality": "approx",
           "best_hours": "début d'après-midi",
           "trigger": "pointe sud et face sud ou nord selon la brise",
-          "description": "Premier déclencheur fiable de la face ouest de Belledonne après la traversée (FlySaintHilaire) ; arrivée vers 1250 m sur le Saint-Genis, « bien désordonné » avec un effet de groupe pour trouver la porte de sortie dans la face sud (plafond 1800-1900 m le 06/09/2021). Position estimée d'après le PDF du club (p. 19).",
+          "description": "Premier déclencheur fiable de la face ouest de Belledonne après la traversée (FlySaintHilaire) ; arrivée vers 1250 m sur le Saint-Genis, « bien désordonné » avec un effet de groupe pour trouver la porte de sortie dans la face sud (plafond 1800-1900 m le 06/09/2021). Position estimée d'après le PDF du club (p. 19). Autres arrivées : 1100 m « pas très facile » (2020), 1100 m « bien meilleur mais turbulent » (2019) ; porte de sortie dans la face sud ; relance pour passer au Crêt du Poulet.",
           "sources": [
             "S16",
             "S22",
-            "S37"
-          ]
+            "S37",
+            "S103",
+            "S36"
+          ],
+          "confidence": "medium"
         },
         {
           "id": "cret-du-poulet",
@@ -3430,12 +3731,15 @@
           "coord_quality": "source",
           "best_hours": "milieu à fin d'après-midi",
           "trigger": "« trouée brune » (coupes de bois) sur la crête",
-          "description": "Cap pris depuis le second sommet de Saint-Genis (≥ 1800 m) vers la trouée brune ; thermique trouvé « sur les coupes de bois » vers 1700 m (carnet 2020) ; faiblard certains jours.",
+          "description": "Cap pris depuis le second sommet de Saint-Genis (≥ 1800 m) vers la trouée brune ; thermique trouvé « sur les coupes de bois » vers 1700 m (carnet 2020) ; faiblard certains jours. Plafond 2800 m un jour de fin de journée (09/04/2017) ; arrivée « en fin de cycle » (2019) ; faible en 2021 mais « ça le fait avec un peu de patience ».",
           "sources": [
             "S27",
             "S41",
-            "S37"
-          ]
+            "S37",
+            "S104",
+            "S36"
+          ],
+          "confidence": "medium"
         },
         {
           "id": "pipay-jas-des-lievres",
@@ -3446,12 +3750,14 @@
           "coord_quality": "source",
           "best_hours": "après-midi",
           "trigger": "crête au-dessus des remontées mécaniques de Pipay",
-          "description": "Thermiques francs à Pipay (« matérialisation des nuages ») ; 2800 m au Jas des Lièvres, « une valeur sûre en Belledonne » selon le récit de 2019 ; crête qui monte vers 2600 m au Col du Pra.",
+          "description": "Thermiques francs à Pipay (« matérialisation des nuages ») ; 2800 m au Jas des Lièvres, « une valeur sûre en Belledonne » selon le récit de 2019 ; crête qui monte vers 2600 m au Col du Pra. Prapoutel : on s'y « refait à 1500 m au soleil » (2017) ; Sept Laux : 3000 m (2017). Rôle : PLAFOND de la crête avant la traversée du Grand Replomb et du Grand Colon.",
           "sources": [
             "S36",
             "S37",
-            "S27"
-          ]
+            "S27",
+            "S104"
+          ],
+          "confidence": "medium"
         },
         {
           "id": "grand-colon",
@@ -3482,6 +3788,57 @@
           "sources": [
             "S65",
             "S39"
+          ]
+        },
+        {
+          "id": "roche-beranger",
+          "name": "Roche Béranger (plafond avant la traversée vers le Connex)",
+          "lon": 5.8752,
+          "lat": 45.1107,
+          "alt_m": 1750,
+          "coord_quality": "source",
+          "confidence": "medium",
+          "best_hours": "milieu à fin d'après-midi (vol de 14h-16h)",
+          "trigger": "éperon sous la Croix de Chamrousse, premier relief au sud de la station",
+          "description": "RELANCE/PLAFOND de la fin de la crête de Belledonne : « 2150 → 2650 m à Roche Béranger » (09/04/2017), « 2500 m » (06/09/2021), « 2400 m pour partir sur le Connex » (01/06/2019). Permet de traverser vers le Connex (transition Chamrousse → Vercors, > 15 km). Position : lieu-dit IGN.",
+          "sources": [
+            "S104",
+            "S37",
+            "S36",
+            "S108"
+          ]
+        },
+        {
+          "id": "antenne-station-collet-allevard",
+          "name": "Antenne de la station du Collet d'Allevard (raccroche avant Val Pelouse)",
+          "lon": 6.1047,
+          "lat": 45.3924,
+          "alt_m": 1450,
+          "coord_quality": "approx",
+          "confidence": "low",
+          "best_hours": "après-midi",
+          "trigger": "mât TDF et crêtes sous le Malatrait, face ouest au-dessus du Collet",
+          "description": "RELANCE de fin de crête : « cheminement sur le Crêt du Poulet pour une raccroche au niveau de l'antenne de la station d'Allevard. Un dernier petit plein pour rejoindre Val Pelouse ». Position déduite : mât TDF de 46 m (OSM) près du décollage de Malatrait ; le récit ne donne pas de coordonnée.",
+          "sources": [
+            "S105",
+            "S109"
+          ]
+        },
+        {
+          "id": "bramefarine",
+          "name": "Bramefarine (arrivée des Bauges, thermodynamique puis relance vers Saint-Genis)",
+          "lon": 6.0454,
+          "lat": 45.405,
+          "alt_m": 1120,
+          "coord_quality": "approx",
+          "confidence": "medium",
+          "best_hours": "fin d'après-midi (retour de 15h-17h)",
+          "trigger": "relief ouest de Belledonne (relation OSM Brame-Farine) frappé par la brise de Chambéry",
+          "description": "POINT DE RELANCE à l'arrivée de la transition Combe de Savoie / Bauges → Belledonne (départ conseillé > 2300 m du Colombier ou 2400 m de la Sauge, arrivée visée 900 m) : « j'arrive à 1100 m et ça remonte en thermodynamique à 1300 m, facile au nord ; je longe Bramefarine vers le sud, la brise est très forte ; je pars sur le Saint-Genis » (01/06/2019) ; « Bramefarine très généreuse aujourd'hui » (17/07/2019). Position : centre de la relation OSM, approximative.",
+          "sources": [
+            "S36",
+            "S111",
+            "S15"
           ]
         }
       ],
@@ -3972,6 +4329,12 @@
               "coord_quality": "source"
             },
             {
+              "name": "Roche Béranger (plafond 2400-2650 m)",
+              "lon": 5.8752,
+              "lat": 45.1107,
+              "coord_quality": "source"
+            },
+            {
               "name": "Cap sur Vif (milieu de la ligne droite, indicatif)",
               "lon": 5.7867,
               "lat": 45.091,
@@ -3985,11 +4348,12 @@
             }
           ],
           "distance_km": 15,
-          "description": "PDF du club (p. 28) : plus de 15 km, départ > 2000 m, arrivée au sol (Vif, Le Gua, ...) ; récits de 2019-2021 : Roche Béranger 2400-2500 m puis Connex (reprise basse en face NO au vent de la brise, thermodynamique 970 → 1300 m), puis retour sur le Serpaton.",
+          "description": "PDF du club (p. 28) : plus de 15 km, départ > 2000 m, arrivée au sol (Vif, Le Gua, ...) ; récits de 2019-2021 : Roche Béranger 2400-2500 m puis Connex (reprise basse en face NO au vent de la brise, thermodynamique 970 → 1300 m), puis retour sur le Serpaton. Plafond de départ habituel : Roche Béranger (2400-2650 m dans trois récits).",
           "sources": [
             "S15",
             "S36",
-            "S37"
+            "S37",
+            "S104"
           ]
         },
         {
@@ -4047,7 +4411,8 @@
         "Au Collet d'Allevard, par brise ou nord, ne jamais descendre au-delà de l'antenne côté Veyton ni dépasser la digue : Venturi sans vache de secours [S58][S60].",
         "À Pipay, la brise de Fond de France peut créer un point dur : assurer un beau plafond avant de suivre la crête jusqu'au premier télésiège [S27].",
         "Chamrousse : 10 km/h de vent pur maximum, ne pas décoller par canicule + vent + heures les plus chaudes ; en soirée de forte canicule la brise du Grésivaudan dépasse 25 km/h jusqu'à 2500 m [S65].",
-        "Pinsot, Bachat-Bouloud et Saint-Mury : aucun document de club ou fiche d'aérologie lu (seul le Grand Replomb a une fiche FFVL sommaire) ; les flèches Largeault de Pinsot et d'Allevard ne portent ni horaire ni vitesse."
+        "Pinsot, Bachat-Bouloud et Saint-Mury : aucun document de club ou fiche d'aérologie lu (seul le Grand Replomb a une fiche FFVL sommaire) ; les flèches Largeault de Pinsot et d'Allevard ne portent ni horaire ni vitesse.",
+        "Fin de la crête sud : Roche Béranger (2400-2650 m) est le plafond de départ vers le Connex [S104][S37][S36]."
       ]
     }
   ],
@@ -5146,6 +5511,123 @@
       "type": "web",
       "lang": "fr",
       "notes": "Fiche FFVL n°14306 (atterro, commune MONTBONNOT-SAINT-MARTIN) : coordonnées 45.2210 N 5.8060 E, altitude 230 m, vents favorables non renseigné, défavorables non renseigné. Données issues de ffvl_sites_alpes.json (relevé du 07/10/2026)."
+    },
+    {
+      "id": "S99",
+      "title": "Les Aiglonnes et Aiglons du Club St'Hil (Gwen, 13/04/2021)",
+      "url": "http://clubsthilair.fr/2021/04/13/les-aiglonnes-et-aiglons-du-club-sthil/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Présentation des « cheminements classiques au départ de St Hil » (Saint-Eynard, Dent de Crolles, Granier, traversée Belledonne, Plagnes) fondés sur les documents de Jean-nono (= PDF « Préparation Cross » S27 et « Les cross pour les débutants », post 1450) ; question type : « à quelle altitude quitter les antennes ». Tuto vidéo associé : post 2066."
+    },
+    {
+      "id": "S100",
+      "title": "Le plaisir du vol – récit (Matmute, 15/04/2021)",
+      "url": "http://clubsthilair.fr/2021/04/15/le-plaisir-du-vol-recit/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Récit : « désormais je ne dépasse plus Château Nardent » (limite psychologique du bocal côté sud)."
+    },
+    {
+      "id": "S101",
+      "title": "Récit sortie 1ère Plumes – septembre 2023 (Agathe)",
+      "url": "http://clubsthilair.fr/2023/09/10/recit-sortie-1ere-plumes-septembre-2023/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "À 15h30, thermique enroulé au-dessus du déco nord ; « percée jusqu'aux antennes » = mauvaise décision de l'après-midi, bataille pour remonter."
+    },
+    {
+      "id": "S102",
+      "title": "Récit de la manche de compétition du 03/06/2017 (Benjamin) – benj.docx",
+      "url": "https://clubsthilair.wordpress.com/wp-content/uploads/2017/06/benj.docx",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Manche St Hil : start au Manival 12h15, B1 aux réservoirs avant le Saint-Eynard ; placement Manival puis crêtes du Saint-Eynard, Bec Charvet sans enrouler, « gencives de la Dent », pare-avalanches, retour par les falaises de Lumbin. Contexte : post 1420."
+    },
+    {
+      "id": "S103",
+      "title": "Mon Col Vert des 200 kils (Simon B., 20/07/2020)",
+      "url": "http://clubsthilair.fr/2020/07/27/mon-col-vert-des-200-kils-simon-b/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Passage Saint-Eynard / sous la Dent (2850 m) / Scia (« thermique de service », 3100 m) ; retour par Saint-Genis 1100 m, Grand Colon 2800 m."
+    },
+    {
+      "id": "S104",
+      "title": "Sortie navette aux Richards, 9 avril 2017 (Serge)",
+      "url": "http://clubsthilair.fr/2017/04/11/sortie-navette-du-9-avril-course-contre-les-joufflus/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Traversée de Belledonne du sud au nord : Roche Béranger 2150->2650 m, Grand Colon, Prapoutel (refait à 1500 m), Crêt du Poulet 2800 m, Sept Laux 3000 m, vallée des Huiles."
+    },
+    {
+      "id": "S105",
+      "title": "Récit de stage cross itinérant dans les Alpes du Sud (juin 2025)",
+      "url": "http://clubsthilair.fr/2025/08/05/recit-de-stage-cross-itinerant-dans-les-alpes-du-sud/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Lundi 23 juin : crête de Belledonne, « raccroche au niveau de l'antenne de la station d'Allevard » avant Val Pelouse."
+    },
+    {
+      "id": "S106",
+      "title": "Retour sur le stage Cross Niveau 1 (juillet 2026)",
+      "url": "http://clubsthilair.fr/2026/07/21/retour-sur-le-stage-cross-niveau-1/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Jour 4 (09/07/2026) : Scia, Pravouta, Chamechaude, Pravouta, raccroche Dent de Crolles, faces est jusqu'au Saint-Genis."
+    },
+    {
+      "id": "S107",
+      "title": "Récit d'une Dent (Axel, 27/04/2023)",
+      "url": "http://clubsthilair.fr/2023/05/01/recit-dune-dent-by-axel/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Décollage Saint-Hilaire ~12h, « gencives de la Dent de Crolles » vers 14h, plafond 2400 m, thermiques à +7 m/s."
+    },
+    {
+      "id": "S108",
+      "title": "IGN – géocodeur : le Château Nardent",
+      "url": "https://data.geopf.fr/geocodage/completion/?text=Chateau%20Nardent&type=PositionOfInterest",
+      "publisher": "IGN (Géoplateforme)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Lieu-dit non habité 5.8391 E, 45.2812 N (Plateau-des-Petites-Roches). Même requête pour Col de l'Émeindras (5.8039, 45.2836), Montagne du Sac (5.6840, 45.2644), Roche Béranger (5.8752, 45.1107), Pas de Rocheplane (5.8734, 45.3295)."
+    },
+    {
+      "id": "S109",
+      "title": "OpenStreetMap – nœuds Château Nardent, pylônes FT/TDF (Saint-Hilaire/Crolles), mât TDF du Collet d'Allevard",
+      "url": "https://www.openstreetmap.org/node/416114868",
+      "publisher": "OpenStreetMap",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Château Nardent : sommet 1217 m (nœud 416114868). Pylônes man_made=tower « FT » et « TDF » à 45.2938 N, 5.8755 E (nœuds 278456461/464/466) ; mât TDF 46 m au Collet d'Allevard, 45.3924 N, 6.1047 E (nœud 5157489260). Lien OSM : https://www.openstreetmap.org/node/278456464 et https://www.openstreetmap.org/node/5157489260."
+    },
+    {
+      "id": "S110",
+      "title": "Club St Hil'Air – soirée cross avancé 30/03/2018 : « CROSS_Massifs et Transitions »",
+      "url": "http://clubsthilair.fr/2018/04/09/soiree-cross-avance-30-mars-2018/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Annonce du document de Jérôme (= PDF S15) « qui documente toutes les transitions et les cheminements à connaître »."
+    },
+    {
+      "id": "S111",
+      "title": "De la Chartreuse aux Aravis en revenant par Albertville : triangle plat 202 km du 17/07/19 (École de Parapente des Monts Jura)",
+      "url": "https://www.parapentepaysdegex.fr/post/le-triangle-du-17-07-19-de-la-chartreuse-aux-aravis-en-revenant-par-albertville-202-km",
+      "publisher": "École de Parapente des Monts Jura (Sur un nuage)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Récit local (page enregistrée dans .cache/research/docs/bauges_bourget_combe/web/gex202.html) : Granier à 2350 m pour la Savoyarde, raccroche à 1200 m ; retour par les Tours de Montmayeur ou la vallée des Huiles ; « Bramefarine très généreuse »."
     }
   ]
 }

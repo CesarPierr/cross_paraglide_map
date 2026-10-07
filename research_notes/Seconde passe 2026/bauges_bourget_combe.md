@@ -67,3 +67,18 @@ F1 à F5 (CHVD, Savoyarde), F6 (PNR 2011), F7 (Annecy-Aravis 2009), F8 (Largeaul
 ## URL bloquées ou échouées
 
 Voir `.cache/research/blocked_urls.txt` : carte PNR 2011 d'origine (parcdesbauges.com, 403), téléchargements Jimdo de toutleparapente (renvoient du HTML), ancienne URL lac-annecy.com (404), récit tichodromes (DNS), FFVL en curl (Cloudflare ; navigateur OK). Nominatim a renvoyé 429 après huit requêtes ; Overpass a expiré : les coordonnées de villages viennent de Wikipédia.
+
+## Thermiques et points de relance (passe complémentaire)
+
+Relus pour cette passe : carnets Largeault 162 et 186 (petit tour des Bauges, Vérel → Revard → Bange → Semnoz → Roc des Bœufs → Margériaz → tour des Ébats), Bluehouse 201 km (2024), triangle 202 km du Pays de Gex (2019), site Montlamb'air (Montlambert, Chamoux), guide du Semnoz de Bauges Parapente, PDF « Cross, massifs et transitions » (p. 21-27) et six récits du club St Hil'Air qui traversent les Bauges (La Sambuy 2020, stage cross avril 2022, stage itinérant 2025, stage niveau 1 2026, 154 km 2021, 100-150-200 patates 2019, Col Vert 2020, Richards 2017). Sources ajoutées S96 à S107.
+
+**Avant → après (thermiques)** : bourget-chambery 3 → 7, combe-de-savoie 3 → 6, bauges 2 → 14. Routes : deux nouvelles (`montlambert-arclusaz-grand-arc-chamoux` pour la combe, `faces-est-bauges-arclusaz-roc-des-boeufs` pour les Bauges, avec waypoints réellement volés) ; waypoints de relance ajoutés au petit tour des Bauges, à Vérel-Semnoz, à la transition Chartreuse-Bauges, au retour de la Combe et à la transition Grand Arc ; trois tips ajoutés. Chaque point porte `confidence` et un rôle (déclencheur, relance, plafond).
+
+**Points ajoutés**
+- Bauges : Pic de la Sauge (relance et plafond 2200-2400 m, trois récits), Mont Charvet (extraction depuis Montlambert), Mont Pelat, Galoppaz (≥ 1600 m en arrivant de la Savoyarde), Dent d'Arclusaz (plafond 2200-2700 m), Dents de Pleuven et Trélod (thermodynamique face ouest), Roc des Bœufs (ascenseur après le lac d'Annecy, six récits), Mont Julioz (2700 m), Margériaz (arête, 2300-2400 m), Col de la Cochette/Bange, épaule du Semnoz (position approx).
+- Bourget : Le Pertuiset, Tour des Ébats / Angle Est (relance du retour), relais TDF du Mont du Chat (thermique alors que la Dent du Chat est du dynamique laminaire), Mont de la Charvaz, Mont Grelle / grilles-pains.
+- Combe : Tours de Montmayeur (860-900 m à l'arrivée), vallée des Huiles (confiance low : deux récits discordants sur l'emplacement), Grand Arc / Petit Arc (plafond 2900-3000 m).
+- Complétés : face ouest de la Savoyarde, Colombier-Margériaz-Roc des Bœufs (rôles et plafonds), Montlambert, Arclusaz (face sud), Vérel, Revard, Épine.
+- Côté Chartreuse (fichier du lot Chartreuse) : Saint-Marcel d'en haut, Mont Outheran, Bramefarine.
+
+**Non localisé ou incertain** : thermique « bout de Bange » (point placé au col de la Cochette), « aéromodélistes » du Semnoz et angle de route avant le Crêt de Châtillon (position approx de l'épaule), vallée des Huiles (le récit de 2019 la place à l'entrée de la Maurienne, l'IGN au Val des Huiles : position approx, low), Mont Beauvoir et Dent du Chat (aucun thermique décrit : dynamique laminaire), emplacement exact de la « falaise aux oiseaux » de Montlambert. Les carnets Largeault donnent des hauteurs de raccroche mais jamais de coordonnées. La carte PNR (spirales thermiques de Buffaz, Charbon, Mont Morbier, Peney) reste sans géoréférencement : Buffaz et Charbon n'ont pas été ajoutés.

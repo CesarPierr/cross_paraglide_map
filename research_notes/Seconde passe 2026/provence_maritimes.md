@@ -83,3 +83,51 @@ Aucun schéma annoté de flèches de brise de mer (type PDF de formation) n'a é
 
 Voir `.cache/research/blocked_urls.txt` (lignes `provence_maritimes`) : fiches FFVL et actualité PNM (Cloudflare), compte rendu CDVL06 (vide), sites de la ligue PACA et des CD 04/06, `flystandre.com` (hors ligne, copies Wayback utilisées), page Ozone actuelle (vide), Parapente Mag hors-série (payant), articles XC Mag réservés aux abonnés.
 Contraintes de l'outillage : WebSearch et WebFetch ont atteint leur quota en cours de travail ; le navigateur intégré n'a pas pu ouvrir d'onglet (limite d'onglets atteinte) ; recherches faites par curl, archive.org, API publiques (ParaglidingEarth, Overpass, Biodiv-Sports).
+
+## Thermiques et points de relance (passe complémentaire)
+
+Brief : `.cache/research/BRIEF_THERMIQUES.md`, avec la consigne d'extrapoler à partir des récits de pilotes. La seconde passe n'avait retenu que les lieux appelés « thermique ». Cette passe ajoute les points de **déclenchement, de relance et de plafond** que les pilotes citent le long des cheminements classiques. Convention de confiance : plusieurs récits concordants = `medium` ; récit isolé = `medium` si le lieu est précis, sinon `low` ; extrapolation sans récit explicite = `low` avec « déduction » dans la description.
+
+### Volumes (thermal_spots, avant → après)
+
+| Massif | Avant | Après |
+|---|---|---|
+| saint-andre-verdon | 6 | 12 |
+| haut-verdon-allos | 1 | 18 |
+| prealpes-digne-lure | 3 | 8 |
+| prealpes-grasse-castellane | 3 | 13 |
+| prealpes-nice-var | 3 | 10 |
+| mercantour | 2 | 18 |
+| **Total** | **18** | **79** |
+
+Sources ajoutées : S99 à S124 (récits PDF d'Au gré de l'air, XC Mag, summits.fr, ro2g.com). 11 anciens thermiques ont été complétés (description, sources, confiance) sans changer leur `id` : `antenne-reyniere`, `crete-des-serres-angle`, `crete-de-cadun`, `moustiers-montdenier-thermiques`, `montagne-de-gache`, `bleine-combe-et-pic-aigle`, `cheiron-jerusalem-miroirs`, `courmettes-antennes`, `baou-des-blancs`, `baou-de-saint-jeannet` et `colmiane-balme-petoumier`. Leurs positions d'origine sont conservées.
+
+### Ce qui a été ajouté, d'où
+
+**Saint-André / Chalvet (cheminement Dormillouse).** Source principale : les récits d'Au gré de l'air (Berchet 13 et 23 juin 2006, Jacqueline 25 mars 2011 et 9 avril 2011, Fernandez 24 mai 2010, Armant 22 avril 2006 et 30 juin 2006, Briois 2006 et 2008, Salvi 2011), la page « Vols de distance » du club, la carte des points chauds de FlyStAndre (F1) et la fiche XC Mag de Petit (2025). Dans l'ordre volé : face S/SE du Chalvet dès 10h30 (`chalvet-deco-sud-matin`) → carrière avant les antennes (zone où l'on zérote) → antennes de la Reynière (plafond ~2100 m ; « à l'ombre » le matin) → bout de la montagne de l'Allier → sommet du Meunier → crête de Lambruisse → Séoune (escarpement ouest avant le col) → montagne de Tournon → pointe nord du Cheval Blanc (2600 m) → col de Talon (plein) → Côte Longue (2800 m sur la pointe sud) → Boules ou Carton (pointe ouest, col de la Baisse) → crête de la Chau → Tromas → tête du Bau → tête de l'Estrop (3680 m) ; retour : Cadun, Vachière, **montagne de Chamatte de Thorame** (à ne pas confondre avec le Pic de Chamatte), Cordeil, Maurel, crête des Serres. Les routes `saint-andre-dormillouse-ar` et `saint-andre-coste-longue-carton` reçoivent ces points comme `waypoints`.
+
+**Bleine → Saint-André.** Combe SE à gauche du déco, Pic de l'Aigle (« Pic de l'Aiglo » IGN), bois brûlé, pente SE des Lattes (« le plus beau nuage du secteur » le matin), Col des Portes, Teillon, Crémon, Bernarde (Vauplane), Fourneuby. Sources : page « Vols de distance » d'Au gré de l'air, Ozone, Armant 2006, Berchet 2005 et 2006, Jacqueline 2011 et 2012.
+
+**Gréolières et Gourdon → Saint-Jeannet.** Gréolières : « carrière » à gauche du 300 (brise des gorges du Loup + thermique du rond-point), col de l'antenne avant Coursegoules (confluence col de Vence × gorges du Loup), Jérusalem / miroirs. Gourdon : village (zone A, faible et encombrée), antennes de Courmettes, maisons bulles de Tourrettes, deuxième rideau des crêtes de Tourrettes, buttes des vaches du Moustachu / des chevaux, butte avant le baou des Blancs, baou des Blancs, des Noirs, de Saint-Jeannet, de la Gaude. Source : PDF Armant (2006) p. 1 (carte annotée A à P, lue en image) et p. 3 (photos), récit de Briois du 16 janvier 2009 (S107).
+
+**Digne, Moustiers, Sisteron.** Montdenier (8 m/s, 4050 m), Mourre de Chanier (3300 m), Montagne de Coupe / Couard (3500 m), thermique avant le Cousson, Mouchon, Gâche, falaise thermodynamique de Sumiou le soir, Rocher de la Baume (source touristique, `low`).
+
+**Mercantour.** Roquebrune : Mont Gros, falaises de Gorbio, crêtes de Sainte-Agnès, « thermique du retour », Castellar / « thermique de la Taupe », Razet, Agaisen (deux sources divergentes). Haut Var / Colmiane : Rochecline (localisé : sommet « Roche Cline » 2415 m, OSM), La Colletta, Mounier, Lauvet d'Ilonse, Mont Saint-Honorat (divergent), La Balme, Mont Giraud, Cime de Suorcas, Peïra Cava, Férion. Valberg : Mont des Moulinés et Col des Huerris (un seul récit, `low`).
+
+Autres ajouts : un danger `aup-eperon-deux-flux` (montagne de l'Aup, où le sud se divise en deux flux), `waypoints` ajoutés à `col-de-bleine-saint-andre`, `greolieres-coursegoules-ar`, `gourdon-saint-jeannet`, `bleyne-moustiers-digne-saint-andre`, `saint-andre-allos-tinee`, `mont-vial-menton`, `roquebrune-sospel-col-de-castillon`. Les `bbox` de `haut-verdon-allos`, `prealpes-grasse-castellane`, `mercantour` et `saint-andre-verdon` ont été légèrement élargies pour que les nouveaux points restent dans leur massif. Les `extracted_to` des figures F1 et F3 sont complétés ; la figure F5 (même carte FlyStAndre que F1) est ajoutée pour `haut-verdon-allos`, car ses relais sont dans ce massif.
+
+### Extrapolations et réserves (confiance `low`)
+
+- Maisons bulles, butte du Moustachu, butte avant le baou des Blancs, deuxième rideau de Tourrettes : positions **déduites de la carte annotée d'Armant** (ajustement sur Tourrettes, baou des Blancs, Saint-Jeannet ; erreur de l'ordre de 0,5 à 1 km), donc `approx`.
+- `sapee-sapet-lee-vautour` : identification du « Sapet » de Petit avec le sommet de la Sapée (déduction).
+- `rocher-de-la-baume-sisteron`, `valberg-*` : une seule source non pilote ou un récit isolé.
+- `roquebrune-thermique-du-retour`, `roquebrune-castellar-butte-taupe` : lieux décrits mais non cartographiés, positions estimées.
+
+### Ce que je n'ai pas pu localiser ou trouver
+
+- Antennes exactes du Chalvet (Reynière) et de Courmettes ; bois brûlé de Bleine ; col de l'antenne avant Coursegoules ; « carrière » avant les antennes du Chalvet : points `approx`.
+- Caduc (sommet à 3200 m cité par Armant) et le petit Cordeil ne sont pas retrouvés comme thermiques distincts.
+- **Montagne de Lure** (Contras, Lure nord) : aucun récit de cross ni thermique nommé. Banon, Oraison, Aiguines : rien au-delà des fiches FFVL déjà exploitées. Digne (Andran, Cousson) : pas de récit de relance local, seulement le thermique de la route Mont Denier – Coupe.
+- Valberg, Péone, Isola 2000 : aucun site FFVL, un seul récit local (ro2g). WebSearch n'a rien donné sur Valberg, Sisteron et Lure.
+- XContest et la CFD (Cloudflare / connexion) restent fermés ; les traces ne sont pas lues. Les fiches FFVL de ces sites restent bloquées (voir `.cache/research/blocked_urls.txt`).
+- Les autres images annotées du lot ont été regardées (FlyStAndre, PDF Armant p. 1 et 3) ; la carte de traces d'Au gré de l'air n'a pas été utilisée pour de nouveaux points.

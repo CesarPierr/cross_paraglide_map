@@ -10,7 +10,7 @@
     6.33,
     43.8,
     6.62,
-    44.03
+    44.06
    ],
    "center": [
     6.5078,
@@ -340,6 +340,22 @@
      "sources": [
       "S95"
      ]
+    },
+    {
+     "id": "aup-eperon-deux-flux",
+     "name": "Montagne de l'Aup : éperon où le sud se divise en deux flux (transition Mouchon → Crémon)",
+     "kind": "other",
+     "lon": 6.4721,
+     "lat": 43.9041,
+     "coord_quality": "source",
+     "radius_km": 2,
+     "conditions": "régime de sud-est à sud avec brise rentrante, l'après-midi (≈ 16h)",
+     "description": "« Pas la moindre once d'ouest » : « un bon sud qui se sépare en deux flux sur cet éperon au-dessus du Mandarom » ; arrivé à 2500 m on est « complètement scotché dans du turbulent » et le plan Crémon devient risqué, d'où repli sur la crête des Serres (Jacqueline 2012). Armant (2006) tente la même glissade Coupe → Aup → Crémon en passant à ras des pré-reliefs et frôle le lac. Position OSM (sommet de la montagne de l'Aup).",
+     "sources": [
+      "S60",
+      "S115",
+      "S75"
+     ]
     }
    ],
    "thermal_spots": [
@@ -382,11 +398,15 @@
      "alt_m": null,
      "best_hours": "13h-17h",
      "trigger": "coin de la crête des Serres, où se rencontrent le thermique de brise d'ouest et d'autres flux",
-     "description": "Récit du 9 avril 2011 : à l'angle de la crête des Serres, grosse ascendance placée « logiquement à cet endroit » qui porte à 4100-4200 m ; le thermique y change de direction avec l'altitude (NE contré, SE, puis nord poussé par du sud) d'où des turbulences aux changements de cap. Position approchée (entre Saint-André et le Pic de Chamatte, d'après la carte de points chauds de FlyStAndre).",
+     "description": "Récit du 9 avril 2011 : à l'angle de la crête des Serres, grosse ascendance placée « logiquement à cet endroit » qui porte à 4100-4200 m ; le thermique y change de direction avec l'altitude (NE contré, SE, puis nord poussé par du sud) d'où des turbulences aux changements de cap. Position approchée (entre Saint-André et le Pic de Chamatte, d'après la carte de points chauds de FlyStAndre). Point de relance et plafond du retour vers Saint-André : « logiquement on fait le plein pour aller sur Maurel » (Jacqueline 2011) ; en fin de journée « la crête des Serres est très généreuse », presque 1000 m repris sans effort à 19h40 (Armant 2006), et 3200 m à la montée du matin (Briois 2006) ; d'autres jours le thermique s'y fait coucher par une petite brise (Briois 2008).",
      "sources": [
+      "S26",
       "S59",
-      "S26"
-     ]
+      "S103",
+      "S105",
+      "S106"
+     ],
+     "confidence": "medium"
     },
     {
      "id": "pic-de-chamatte",
@@ -429,12 +449,120 @@
      "alt_m": null,
      "best_hours": "12h-16h",
      "trigger": "crête à antennes au NNO du Chalvet (premier relais du cross vers le nord)",
-     "description": "Premier point chaud de la route nord (« Antenna – Le Reynière » sur la carte FlyStAndre ; départ de l'itinéraire Chalvet–Reynière–Serres–Chamatte). Position estimée sur le sommet OSM « Sommet de la Reynière » (nœud 12406892339), qui peut ne pas être exactement le site des antennes.",
+     "description": "Premier point chaud de la route nord (« Antenna – Le Reynière » sur la carte FlyStAndre ; départ de l'itinéraire Chalvet–Reynière–Serres–Chamatte). Position estimée sur le sommet OSM « Sommet de la Reynière » (nœud 12406892339), qui peut ne pas être exactement le site des antennes. Déclencheur et point de relance : on y fait le plafond (≈ 2100 m) avant de glisser vers Lambruisse, et un thermique qui dérive vers le nord au-dessus des antennes pousse à 2100 m (« bingo 2400 m attrapé en dérivant au bout de la crête des antennes vers Lambruisse », Jacqueline 2011). Le matin les antennes sont à l'ombre et « ne donnent pas envie » (Fernandez 2010) : il faut attendre un cycle, et l'arrivée est turbulente (Berchet 2006) ; par tendance est, les thermiques sont décalés à l'ouest de la crête (Salvi 2011). Guillard (2006) y trouve un thermique « puissant » à 3300 m par jour de 22 avril. Position estimée sur le sommet OSM de la Reynière ; le lieu exact des antennes n'est pas confirmé (le sommet voisin de l'Allier, 1790 m, est un autre candidat).",
      "sources": [
       "S26",
       "S29",
+      "S62",
+      "S75",
+      "S99",
+      "S101",
+      "S102",
+      "S104"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "carriere-avant-antennes",
+     "name": "La carrière avant les antennes (face ouest du Chalvet)",
+     "lon": 6.4682,
+     "lat": 43.9963,
+     "coord_quality": "approx",
+     "alt_m": null,
+     "best_hours": "11h30-13h (démarrage du cycle)",
+     "trigger": "carrière et croupe de la face ouest du Chalvet, entre le décollage SO/O et les antennes",
+     "description": "Point de relance : premier endroit où l'on zérote ou l'on raccroche après le déco en prenant la face ouest vers le nord, avant les antennes ; on y arrive souvent bas (« on s'enfonce en y allant »). Position estimée à mi-chemin entre le déco ouest et les antennes (la carrière n'est pas localisée). « Nous zonons quelque peu sur la carrière avant les antennes » (Jacqueline 2011) ; « Sur la carrière avant les antennes, je trouve quelque chose pour zéroter » (Fernandez 2010).",
+     "sources": [
+      "S101",
+      "S102"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "montagne-de-maurel-face-ouest",
+     "name": "Montagne de Maurel (face ouest, relais de la vallée de Thorame)",
+     "lon": 6.5293,
+     "lat": 44.0126,
+     "coord_quality": "source",
+     "alt_m": 1772,
+     "best_hours": "13h-19h30",
+     "trigger": "montagne boisée à l'ouest de la vallée du Verdon, face ouest chauffée l'après-midi, qui restitue le soir",
+     "description": "Point de relance entre la crête des Serres et le Cordeil : « pas besoin d'un gros plein » (Au gré de l'air) mais ~2300 m pour filer ensuite sur le grand Cordeil ; Briois (2008) « se refait sur Maurel, plafond 2500 m » ; Armant (2006) passe de Cordeil à Maurel en n'y perdant que 200 m malgré le soleil couché (« les forêts continuaient à restituer leur chaleur ») ; Berchet (2006) y trouve de quoi tenir sur la face ouest à l'ombre jusqu'à l'atterro. Pas d'atterrissage sur la face ouest (arbres). Position OSM (station de mesure du Mont Maurel).",
+     "sources": [
+      "S55",
+      "S106",
+      "S103",
+      "S99"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "puy-de-rent-thorame",
+     "name": "Puy de Rent (relais côté Thorame, peu fiable)",
+     "lon": 6.5902,
+     "lat": 44.0211,
+     "coord_quality": "source",
+     "alt_m": 1996,
+     "best_hours": "après-midi",
+     "trigger": "sommet isolé à l'est de la vallée de Thorame, exposé aux brises",
+     "description": "Déduction à partir de récits divergents : point de dernière chance entre Cordeil et la crête des Serres. Guillard (2006) « plonge au pied du Puy de Rent et remonte au-dessus du sommet » ; mais Rodde (récit 100 km), Berchet (2006) constatent « pas de thermique au rendez-vous » ou pas de passage possible (sous le vent, contré par la brise). À utiliser comme repli, pas comme relais.",
+     "sources": [
+      "S104",
+      "S99",
+      "S109",
       "S75"
-     ]
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "mouchon-plein-3400",
+     "name": "Sommet de Mouchon (plein à 3400 m, relais vers l'Aup)",
+     "lon": 6.4304,
+     "lat": 43.988,
+     "coord_quality": "source",
+     "alt_m": 1593,
+     "best_hours": "15h-16h",
+     "trigger": "sommet isolé à l'ouest de Saint-André ; zone R196C activable",
+     "description": "Point de relance sur la boucle de l'ouest : « à la verticale du Mouchon je suis toujours à 3400 m ; de quoi envisager une glissade directe vers la montagne de l'Aup puis le Crémon » (Jacqueline 2012) ; fait partie des circuits FlyStAndre (Chalvet – Cheval Blanc – Sapée – Mouchon ; Chalvet – Mouchon – Coupe – Cheval Blanc). « Une voile en basse couche zone sur le Mouchon » à 16h. Position OSM.",
+     "sources": [
+      "S60",
+      "S26",
+      "S75"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "sapee-sapet-lee-vautour",
+     "name": "Le Sapet (sommet de la Sapée) : thermique sous le vent indiqué par un vautour, plafond 3000 m",
+     "lon": 6.4182,
+     "lat": 44.0469,
+     "coord_quality": "approx",
+     "alt_m": 1701,
+     "best_hours": "fin d'après-midi (retour du Cheval Blanc)",
+     "trigger": "sommet ouest de Lambruisse ; thermodynamique dans la brise de vallée puis thermique sous le vent du Sapet",
+     "description": "Déduction d'identification : le « Le Sapet » du récit de Petit (2025) est pris pour le Sommet de la Sapet / Sapée (OSM, 1701 m), seule homonymie plausible entre le Cheval Blanc et Saint-André. Plafond et relance du grand triangle de l'Izoard : « 3000 m au Cheval Blanc et encore au Sapet » ; au retour, « thermodynamique dans la brise de vallée puis un thermique sous le vent du Sapet, indiqué par un vautour : 300 m précieux, juste de quoi repasser confortablement le Cheval Blanc » (Petit 2025). Voir aussi la ligne Sapée de la boucle de l'ouest.",
+     "sources": [
+      "S120",
+      "S75"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "chalvet-deco-sud-matin",
+     "name": "Face sud / sud-est du Chalvet (premiers thermiques dès 10h30)",
+     "lon": 6.4914,
+     "lat": 43.9766,
+     "coord_quality": "source",
+     "alt_m": 1515,
+     "best_hours": "10h30-11h30 (faibles), avant que la face SO prenne le relais",
+     "trigger": "face S/SE du Chalvet, devant le déco sud (FFVL 5168), au-dessus du lac",
+     "description": "Déclencheur du matin : « les thermiques sur le Chalvet démarrent devant le déco sud vers 10h30, faibles au début : bon moment pour les pilotes à faible expérience » (FlyStAndre) ; « ça monte immédiatement bien devant le déco sud » à 11h30 (Jacqueline 2011) ; les rapaces enroulent déjà vers le sud du déco sous un voile de cirrus. À ~11h30 le vent de pente tourne : le déco sud passe sous le vent, on migre vers le SO/O.",
+     "sources": [
+      "S23",
+      "S101",
+      "S29"
+     ],
+     "confidence": "medium"
     }
    ],
    "soaring_spots": [
@@ -659,10 +787,28 @@
        "coord_quality": "source"
       },
       {
+       "name": "La carrière avant les antennes",
+       "lon": 6.4682,
+       "lat": 43.9963,
+       "coord_quality": "approx"
+      },
+      {
        "name": "Antennes de la Reynière",
        "lon": 6.4565,
        "lat": 44.0139,
        "coord_quality": "approx"
+      },
+      {
+       "name": "Montagne de l'Allier",
+       "lon": 6.4535,
+       "lat": 44.0218,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Sommet du Meunier",
+       "lon": 6.4607,
+       "lat": 44.0476,
+       "coord_quality": "source"
       },
       {
        "name": "Montagne de Charvet",
@@ -671,9 +817,51 @@
        "coord_quality": "source"
       },
       {
+       "name": "Sommet de Séoune",
+       "lon": 6.4492,
+       "lat": 44.0725,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Montagne de Tournon",
+       "lon": 6.4225,
+       "lat": 44.0969,
+       "coord_quality": "source"
+      },
+      {
        "name": "Cheval Blanc",
        "lon": 6.4238,
        "lat": 44.127,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Col de Talon",
+       "lon": 6.4733,
+       "lat": 44.1414,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Côte Longue",
+       "lon": 6.489,
+       "lat": 44.1204,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Montagne de Boules",
+       "lon": 6.5004,
+       "lat": 44.1736,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Montagne du Carton",
+       "lon": 6.4599,
+       "lat": 44.1815,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Crête de la Chau",
+       "lon": 6.4695,
+       "lat": 44.211,
        "coord_quality": "source"
       },
       {
@@ -690,7 +878,7 @@
       }
      ],
      "distance_km": 110,
-     "description": "Itinéraire de référence : décoller 11h30-13h, enchaîner les arêtes nord-sud (Reynière, Charvet, Cheval Blanc), recharger au col de Talon, Montagne de Boules / Carton / col de la Baisse, crête de la Chau, puis le « Tromas » (souvent très généreux, brises multiples ; il peut être « mal organisé ») ; les ~20 km suivants se font en suivant la crête de la Blanche (« autoroute à planeurs ») jusqu'au fort de Dormillouse. Retour par la même ligne ; au retour, passer par Cadun / Montagne de Vachière plutôt que lutter contre les fortes brises de la Bléone ; passage par Chamatte au retour pour 120 km. Compter ~7 h la première fois. Départ possible d'abord vers Mouchon / Montagne de Coupe en circuit court. ",
+     "description": "Itinéraire de référence : décoller 11h30-13h, enchaîner les arêtes nord-sud (Reynière, Charvet, Cheval Blanc), recharger au col de Talon, Montagne de Boules / Carton / col de la Baisse, crête de la Chau, puis le « Tromas » (souvent très généreux, brises multiples ; il peut être « mal organisé ») ; les ~20 km suivants se font en suivant la crête de la Blanche (« autoroute à planeurs ») jusqu'au fort de Dormillouse. Retour par la même ligne ; au retour, passer par Cadun / Montagne de Vachière plutôt que lutter contre les fortes brises de la Bléone ; passage par Chamatte au retour pour 120 km. Compter ~7 h la première fois. Départ possible d'abord vers Mouchon / Montagne de Coupe en circuit court. Relais décrits par les pilotes, dans l'ordre : carrière avant les antennes, antennes (plafond ~2100 m), bout de la montagne de l'Allier, Meunier, crête de Lambruisse, Séoune, montagne de Tournon, pointe nord du Cheval Blanc, col de Talon, Côte Longue, Boules ou Carton, crête de la Chau, Tromas (Berchet 2006, Jacqueline 2011, Fernandez 2010). Retour : Cadun, Vachière, montagne de Chamatte de Thorame, Cordeil, Maurel, crête des Serres.",
      "sources": [
       "S24",
       "S26",
@@ -698,7 +886,12 @@
       "S29",
       "S55",
       "S59",
-      "S62"
+      "S62",
+      "S99",
+      "S101",
+      "S102",
+      "S103",
+      "S104"
      ]
     },
     {
@@ -846,10 +1039,10 @@
    "parent_massif": "Préalpes de Castellane / Haut-Verdon (Alpes-de-Haute-Provence)",
    "summary": "Vallée du Verdon orientée nord-sud entre Saint-André et Allos : c'est le couloir est du grand cross Saint-André – Dormillouse, bordé à l'ouest par les arêtes Maurel / Cordeil / Coste Longue / Carton et à l'est par les contreforts du Mercantour (Mont Pelat, Fort Carra). La vallée elle-même n'est presque pas documentée en vol local (pas de site FFVL : seulement un déco à Beauvezer et un à Thorame cités par des pilotes, et le site de speed-riding de la Foux d'Allos) ; ce que l'on sait vient des récits de cross. Les pilotes y décrivent une confluence en milieu d'après-midi dans la « transition de la vallée de Thorame » et entre Cordeil et Maurel, un « bocal de Colmars » volable en local, de bons thermiques sur Rochecline (« les plus beaux plafs de Saint-André ») et le passage délicat vers le haut Var en été à cause de brises plus fortes. La brise de vallée montante (sud → nord) est déduite et reste à confirmer. À l'est, le parc national du Mercantour impose de rester à plus de 1000 m au-dessus du sol.",
    "bbox": [
-    6.4678,
+    6.4,
     43.928,
     6.82,
-    44.2811
+    44.3
    ],
    "center": [
     6.6617,
@@ -1006,12 +1199,311 @@
      "alt_m": 2202,
      "best_hours": "fin d'après-midi",
      "trigger": "haute crête au soleil à l'ouest d'Allos",
-     "description": "Passage de glisse des routes vers Dormillouse : « grand moment de vol libre dans un beau thermique doux et régulier » vers 17h25 (2011) ; sert de relais avec la brise de la Bléone et le col de Vachière. Position OSM (nœud 4148720199).",
+     "description": "Passage de glisse des routes vers Dormillouse : « grand moment de vol libre dans un beau thermique doux et régulier » vers 17h25 (2011) ; sert de relais avec la brise de la Bléone et le col de Vachière. Position OSM (nœud 4148720199). Point de relance du retour : on y arrive du Tromas par le Caduc/Aiguillette ; « hautes crêtes de Cadun : un thermique m'y attend » (Salvi 2011), « dynamique sur le bout de la crête du Cadun » grâce à la brise de la Bléone (Berchet 2006), « raccrocher le Cadun en lambeaux » (Armant). Plus facile que de lutter contre la Bléone par le Caduc jusqu'à la montagne de Vachière (Au gré de l'air).",
      "sources": [
+      "S55",
       "S59",
       "S62",
+      "S75",
+      "S99"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "montagne-de-l-allier",
+     "name": "Montagne de l'Allier (bout de la crête des antennes)",
+     "lon": 6.4535,
+     "lat": 44.0218,
+     "coord_quality": "source",
+     "alt_m": 1790,
+     "best_hours": "midi-fin d'après-midi (plafonds ~1900-2100 m en début de cycle)",
+     "trigger": "croupe d'orientation SO au nord des antennes, point de départ de la transition vers Lambruisse et le Meunier",
+     "description": "Point de relance : le groupe de Berchet (2006) se met en position « au bout de la montagne de l'Allier en vue d'une transition sur le sommet du Meunier » ; il faut y faire le plafond (1900 m suffisent pour raccrocher les crêtes de Lambruisse, 2100 m en début de cycle). Position OSM (nœud « Sommet de l'Allier »).",
+     "sources": [
+      "S99",
       "S75"
-     ]
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "sommet-de-meunier",
+     "name": "Sommet du Meunier (relance après l'Allier)",
+     "lon": 6.4607,
+     "lat": 44.0476,
+     "coord_quality": "source",
+     "alt_m": 1742,
+     "best_hours": "midi-milieu d'après-midi",
+     "trigger": "sommet N-S au-dessus de Lambruisse, première arête raccrochée après la transition depuis l'Allier",
+     "description": "Point de relance : « je raccroche très bas Meunier… je monte en crabe tout le long pour enfin prendre un bon thermique et sortir de la fournaise » (Berchet 2006) ; de là le groupe cheminera jusqu'à Séoune. Position OSM.",
+     "sources": [
+      "S99",
+      "S75"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "crete-de-lambruisse",
+     "name": "Crête de Lambruisse (angle côté antennes)",
+     "lon": 6.455,
+     "lat": 44.035,
+     "coord_quality": "approx",
+     "alt_m": null,
+     "best_hours": "midi-14h",
+     "trigger": "angle de la crête de Lambruisse le plus proche des antennes, sur le cheminement Allier – Meunier – Séoune",
+     "description": "Point de relance : on revient « s'appuyer sur l'angle de la crête de Lambruisse (angle le plus proche des antennes) où Christophe enroule » (Jacqueline 2011) ; Fernandez (2010) trouve « une belle pompe en milieu de vallée en rejoignant Lambruisse ». Position estimée entre l'Allier et le Meunier (l'angle exact n'est pas localisé).",
+     "sources": [
+      "S101",
+      "S102",
+      "S99"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "seoune-escarpement-ouest",
+     "name": "Séoune (escarpement ouest avant le col, thermique de transition)",
+     "lon": 6.4492,
+     "lat": 44.0725,
+     "coord_quality": "source",
+     "alt_m": 1694,
+     "best_hours": "13h-15h",
+     "trigger": "léger escarpement ouest avant le col de Séoune (1387 m, OSM 6.4436/44.0780), croupe sommitale de Séoune",
+     "description": "Déclencheur et relance vers Tournon et Cheval Blanc : « je table sur le léger escarpement ouest avant le col de Séoune et c'est bien là que nous commençons à monter » (Jacqueline 2011), thermique qui dérive vers le NE ; « un bon thermique au sommet de Séoune pour Victor lui donnera le ticket pour la montagne de Tournon » (Berchet 2006). Position : sommet de Séoune (OSM).",
+     "sources": [
+      "S101",
+      "S99",
+      "S104",
+      "S75"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "montagne-de-tournon",
+     "name": "Montagne de Tournon (avant-relief du Cheval Blanc)",
+     "lon": 6.4225,
+     "lat": 44.0969,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "13h-15h",
+     "trigger": "crête de Tournon, prolongement sud du Cheval Blanc",
+     "description": "Point de relance : on y arrive de Séoune puis on « cheminera en ligne de crête jusqu'au Cheval Blanc en profitant des quelques pompes qui montent les plafonds de 2 ou 300 mètres » (Berchet 2006) ; Guillard (2006) « remonte la montagne de Tournon » et arrive sur le Cheval Blanc. Position IGN (crête de Tournon).",
+     "sources": [
+      "S99",
+      "S104"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "cheval-blanc-pointe-nord",
+     "name": "Cheval Blanc, pointe nord (relance vers le Carton)",
+     "lon": 6.4238,
+     "lat": 44.127,
+     "coord_quality": "approx",
+     "alt_m": 2323,
+     "best_hours": "14h-16h (plafonds 500 m plus bas que Côte Longue si la Bléone apporte de l'humidité)",
+     "trigger": "pointe nord du Cheval Blanc, crête exposée aux brises de la Bléone",
+     "description": "Point de relance et plafond : « le premier vrai thermique digne de ce nom que nous trouve Victor à la pointe nord du Cheval Blanc nous monte à plus de 2600 m et dérive vers le nord » (Berchet 2006), puis transition vers le Carton (raccrochage 300 m repris en milieu de transition). Fernandez (2010) : « ça ne monte pas des masses sur Cheval Blanc », on avance à hauteur de crête ou sous la crête et on bascule sur les faces nord ; Armant (2006) note des plafonds inférieurs de 500 m à ceux de Côte Longue. Position : sommet OSM (le point précis de la pointe nord n'est pas donné). Plafond du grand triangle de l'Izoard : Petit (07/08/2025) y monte à 3000 m, par vent qui tourne ouest-nord-ouest ; Lambert (2023) et Hamard le trouvent trop agité par nord fort (fermetures, thermiques qui dérivent).",
+     "sources": [
+      "S26",
+      "S99",
+      "S102",
+      "S103",
+      "S120"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "col-de-talon-plein",
+     "name": "Col de Talon (plein entre Côte Longue et Cheval Blanc)",
+     "lon": 6.4733,
+     "lat": 44.1414,
+     "coord_quality": "source",
+     "alt_m": 1869,
+     "best_hours": "13h-16h",
+     "trigger": "col entre le Cheval Blanc et Côte Longue",
+     "description": "Point de relance : « on refait en général un bon plein au-dessus du col de Talon (entre le Cheval Blanc et Cote Longue) » avant de choisir entre Boules, Carton ou le col de la Baisse (Au gré de l'air). Position OSM du col.",
+     "sources": [
+      "S55",
+      "S75"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "coste-longue-pointe-sud",
+     "name": "Côte Longue (crête de bascule, plein à 2800 m sur la pointe sud)",
+     "lon": 6.489,
+     "lat": 44.1204,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "13h-15h30",
+     "trigger": "longue crête N-S, thermique musclé « boulet de canon » côté nord, bascule des brises",
+     "description": "Point de relance et plafond : 2500 m suffisent pour la raccrocher depuis Cordeil ; ne pas choisir entre est et ouest et rester sur la crête (brise de nord à l'autre bout), viser ~2800 m sur la pointe sud pour rejoindre la vallée de la Bléone (Au gré de l'air). « Sous le nuage de Côte Longue, décalé en sud-sud-ouest » à 3200 m (Armant 2006) ; « le thermique y est musclé » (Rodde) ; « modeste plein 2500-2600 » un jour de voile (Salvi 2011). Position IGN (Montagne de Coste Longue).",
+     "sources": [
+      "S55",
+      "S103",
+      "S109",
+      "S62"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "montagne-de-boules",
+     "name": "Montagne de Boules (plein côté nord)",
+     "lon": 6.5004,
+     "lat": 44.1736,
+     "coord_quality": "source",
+     "alt_m": 2391,
+     "best_hours": "13h-16h",
+     "trigger": "sommet entre Côte Longue et Carton, où l'on arrive par la montagne de Chamatte (Thorame)",
+     "description": "Point de relance : alternative au Carton ; en rasant Boules on remonte « au niveau du sommet (2395 m) », suffisant pour glisser sur La Chaux (Jacqueline 2011) ; Au gré de l'air la cite comme l'un des trois choix de plein avant La Chau. Position OSM.",
+     "sources": [
+      "S55",
+      "S101",
+      "S75"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "montagne-du-carton-pointe-ouest",
+     "name": "Carton (pointe ouest) et col de la Baisse",
+     "lon": 6.4599,
+     "lat": 44.1815,
+     "coord_quality": "approx",
+     "alt_m": 2123,
+     "best_hours": "13h-16h",
+     "trigger": "pointe ouest de la montagne du Carton, arête entre Cheval Blanc et La Chaux ; col de la Baisse entre Boules et Carton",
+     "description": "Point de relance : « je bascule sur la pointe ouest du Carton et là ça repart bien » (Fernandez 2010) ; « le Carton va me sauver » (Rodde) ; « une pompe organisée sur la forêt en avant du relief » (Berchet 2006) ; le col de la Baisse « marche souvent très bien avec assez d'altitude » (Au gré de l'air). Beaucoup de mal à y raccrocher quand on arrive bas par le cirque (Fernandez 2010). Position : sommet du Carton (OSM), pointe ouest non localisée précisément.",
+     "sources": [
+      "S102",
+      "S109",
+      "S99",
+      "S55",
+      "S101"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "crete-de-la-chau",
+     "name": "Crête de la Chau (arête ouest, thermique « au milieu »)",
+     "lon": 6.4695,
+     "lat": 44.211,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "14h-16h",
+     "trigger": "arête ouest de la crête de la Chau, rognon rocheux au vent de la brise",
+     "description": "Point de relance : « la crête de la Chau, ça sort toujours très bien au milieu » (Au gré de l'air) ; « sur La Chaux ça monte bien sur l'arête ouest » (Fernandez 2010) ; Jacqueline (2011) trouve à moins de 300 m au vent, sur un rognon rocheux, un excellent thermique (2800 m) alors que l'arrivée basse dans la descendance du col était mal organisée ; Armant (2006) y voit « un beau joufflu ». Plafond d'où l'on part vers le Tromas. Position IGN.",
+     "sources": [
+      "S55",
+      "S102",
+      "S101",
+      "S103"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "sommet-du-tromas",
+     "name": "Tromas (falaises sud et faces SO, souvent généreux mais mal organisé)",
+     "lon": 6.4821,
+     "lat": 44.2622,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "14h-16h",
+     "trigger": "falaises sud-ouest du Tromas, sous l'influence de plusieurs brises (Bléone, vallée de l'Estrop)",
+     "description": "Plafond et déclencheur du cheminement : « le fameux Tromas, souvent très généreux et sous l'influence de plusieurs brises » (Au gré de l'air) ; Armant (2006) y monte de 2300 à 3100 m « décalé en nord-ouest par un drôle de thermique », « sous le vent de thermiques plus puissants » ; Jacqueline (2011) et Berchet (2006) le trouvent turbulent ou « mal organisé ». C'est le dernier gros plein avant la crête de la Blanche (tête de l'Estrop, Pic des Têtes). Position IGN du sommet.",
+     "sources": [
+      "S55",
+      "S103",
+      "S99",
+      "S59",
+      "S101"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "montagne-de-chamatte-thorame",
+     "name": "Montagne de Chamatte de Thorame (relais de retour, à ne pas confondre avec le Pic de Chamatte)",
+     "lon": 6.5317,
+     "lat": 44.1254,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "16h-19h",
+     "trigger": "croupe au nord de Thorame-Haute, où l'on passe au retour depuis Vachière avant le Cordeil",
+     "description": "Point de relance du retour : « Jean-Paul trouve le thermique sur la montagne de Chamatte qui le propulse à 3100 m, assez pour transiter vers le Cordeil » (Berchet 2006) ; « on fait le plein à 3000 m sur la montagne de Chamatte dans le plus fort thermique de la journée » (Briois 2008) ; Armant (2006) l'exploite à 18h59 « juste ce qu'il faut » pour raccrocher Cordeil. Peu exposée aux brises, elle est parfois « pourrie, turbulente » (Jacqueline 2011). Attention à l'homonyme : le Pic de Chamatte (1879 m) est à 20 km au sud-est de Saint-André ; les récits de retour parlent de cette montagne de Thorame (Au gré de l'air : « on peut poursuivre au nord de Thorame-Haute par la Montagne de Chamatte »).",
+     "sources": [
+      "S99",
+      "S106",
+      "S103",
+      "S101",
+      "S55"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "montagne-de-cordeil",
+     "name": "Montagne de Cordeil (Grand Cordeil, « pompe du Cordeil »)",
+     "lon": 6.5294,
+     "lat": 44.0679,
+     "coord_quality": "source",
+     "alt_m": 2115,
+     "best_hours": "12h30-17h",
+     "trigger": "grand sommet à l'ouest de Thorame, point de passage entre Maurel et Côte Longue",
+     "description": "Point de relance : « plafond à 3000 m environ » (Fabre 2005), « j'assure bien mon plafond devant Cordeil avant de partir sur Cote Longue » (Armant, Rodde) ; raccrocher le Cordeil depuis Chamatte au retour est délicat : en dessous du col on se fait contrer, la ravine entre petit et grand Cordeil permet de remonter en dynamique (Berchet 2006) ; Jacqueline (2011) : « le Cordeuil me semble presque une motte de terre » depuis 4100 m. Position OSM (pic de Cordœil).",
+     "sources": [
+      "S55",
+      "S110",
+      "S109",
+      "S99",
+      "S59"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "rochecline",
+     "name": "Rochecline (Roche Cline) : entrée du haut Var, plafonds de Saint-André",
+     "lon": 6.6599,
+     "lat": 44.2215,
+     "coord_quality": "source",
+     "alt_m": 2415,
+     "best_hours": "fin d'après-midi au printemps, toute la journée l'été",
+     "trigger": "relief au-dessus d'Allos, à l'entrée du haut Var, face à la vallée du Var",
+     "description": "Plafond et relance vers le haut Var / la Tinée : « Rochecline : magnifique, ça marche bien comme en été ! Les plus beaux plafs des pilotes de Saint-André ont souvent été faits ici » (Salvi 2011). On y arrive de Cadun par une transition vers l'est, avec un thermique de vallée dans la transition. Identification du relief par homonymie : le sommet « Roche Cline » (2415 m, OSM / IGN, commune d'Allos) ; les récits ne donnent pas de coordonnées (auparavant « non localisé »).",
+     "sources": [
+      "S62",
+      "S75"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "tete-du-bau",
+     "name": "Tête du Bau (thermique plus confortable, juste avant le Tromas)",
+     "lon": 6.4704,
+     "lat": 44.2729,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "14h",
+     "trigger": "sommet au nord du Tromas, sur la ligne vers la Blanche",
+     "description": "Point de relance : « sur la tête du Bau, où le thermique est plus confortable » (Armant, récit de 2005) ; « 14h12 Thermique de la Tête du Bau » (récit illustré de Donius, 2006). Position IGN.",
+     "sources": [
+      "S121",
+      "S122"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "tete-de-l-estrop",
+     "name": "Tête de l'Estrop (plafond de la Blanche : 3680 m)",
+     "lon": 6.5042,
+     "lat": 44.2861,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "16h30-17h",
+     "trigger": "tête de l'Estrop, sur la crête de la Blanche (« autoroute à planeurs »)",
+     "description": "Plafond du retour : « 16h34, 3680 m, tête de l'Estrop » après avoir « batailler pour tenir la voile » (Armant 30/06/2006) ; « 17h05 tout juste ce qu'il faut de plafonds sur l'Estrop pour espérer raccrocher le Cadun » (Armant 2005) ; Au gré de l'air : plafond du Tromas puis 20 km faciles le long de la Blanche jusqu'à Dormillouse. Position IGN.",
+     "sources": [
+      "S115",
+      "S121",
+      "S55"
+     ],
+     "confidence": "medium"
     }
    ],
    "soaring_spots": [],
@@ -1068,6 +1560,12 @@
        "coord_quality": "source"
       },
       {
+       "name": "Rochecline (Roche Cline)",
+       "lon": 6.6599,
+       "lat": 44.2215,
+       "coord_quality": "source"
+      },
+      {
        "name": "Allos (Rochecline, lac d'Allos)",
        "lon": 6.6289,
        "lat": 44.2409,
@@ -1087,7 +1585,7 @@
       }
      ],
      "distance_km": 109,
-     "description": "Vol de printemps : antennes, Cote-Longue (2500-2600 m), Carton, Tromas (2950 m), retour par Cadun, Rochecline puis traversée du haut Var entre Entraunes et Estenc jusqu'à la Tinée ; l'auteur note que l'été « les brises plus fortes rendent le sujet plus aventureux » et qu'il avait aussi fait Bleine – Tinée le 18 mars 2009 (3850 m plus au sud). Points intermédiaires approximatifs (Allos = village).",
+     "description": "Vol de printemps : antennes, Cote-Longue (2500-2600 m), Carton, Tromas (2950 m), retour par Cadun, Rochecline puis traversée du haut Var entre Entraunes et Estenc jusqu'à la Tinée ; l'auteur note que l'été « les brises plus fortes rendent le sujet plus aventureux » et qu'il avait aussi fait Bleine – Tinée le 18 mars 2009 (3850 m plus au sud). Points intermédiaires approximatifs (Allos = village). Relais : antennes, Côte Longue, Carton, Tromas, retour par Cadun puis Rochecline (relance et plafond), traversée du haut Var entre Entraunes et Estenc.",
      "sources": [
       "S62",
       "S61"
@@ -1104,6 +1602,24 @@
        "coord_quality": "source"
       },
       {
+       "name": "Montagne de Cordeil",
+       "lon": 6.5294,
+       "lat": 44.0679,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Côte Longue",
+       "lon": 6.489,
+       "lat": 44.1204,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Col de Talon",
+       "lon": 6.4733,
+       "lat": 44.1414,
+       "coord_quality": "source"
+      },
+      {
        "name": "Montagne de Boules",
        "lon": 6.5004,
        "lat": 44.1736,
@@ -1116,6 +1632,12 @@
        "coord_quality": "source"
       },
       {
+       "name": "Crête de la Chau",
+       "lon": 6.4695,
+       "lat": 44.211,
+       "coord_quality": "source"
+      },
+      {
        "name": "Sommet du Tromas",
        "lon": 6.4828,
        "lat": 44.263,
@@ -1125,9 +1647,13 @@
      "distance_km": null,
      "description": "Séquence du texte d'Au gré de l'air : Maurel (« pas besoin d'un gros plein »), ~2300 m pour filer sur le grand Cordeil, 2500 m pour raccrocher Côte Longue, bascule sur Côte Longue (rester sur la crête, ne pas choisir entre est et ouest, brise de nord souvent à l'autre bout ; 2800 m sur la pointe sud pour rejoindre la vallée de la Bléone), plein au-dessus du col de Talon (entre Cheval Blanc et Côte Longue), puis Montagne de Boules / Le Carton / col de la Baisse, crête de la Chau, Tromas. Cordeil, Coste Longue, col de Talon non retrouvés sur OSM. Rochecline (relief à l'entrée du haut Var, « plus beaux plafs des pilotes de Saint-André ») n'a pas pu être localisé.",
      "sources": [
-      "S55",
       "S26",
-      "S62"
+      "S55",
+      "S62",
+      "S99",
+      "S101",
+      "S102",
+      "S109"
      ]
     }
    ],
@@ -1607,11 +2133,13 @@
      "alt_m": 1357,
      "best_hours": "milieu d'après-midi, printemps-été",
      "trigger": "grande montagne N-S au-dessus de la Durance, au nord de Sisteron",
-     "description": "Un pilote local passe souvent sur Gâche en cross « en milieu d'après-midi et plutôt au printemps ou en été » et y trouve toujours de très bons thermiques ; planeurs en ridge autour. Position OSM (nœud 2516066667).",
+     "description": "Un pilote local passe souvent sur Gâche en cross « en milieu d'après-midi et plutôt au printemps ou en été » et y trouve toujours de très bons thermiques ; planeurs en ridge autour. Position OSM (nœud 2516066667). Relais de cross : un pilote local passe souvent sur Gâche « en milieu d'après-midi, plutôt au printemps ou en été » et y trouve « toujours de très bons thermiques » ; en régime de brise le secteur est « brassé » : brise de Sisteron vers la Motte-du-Caire et débord de Saint-Geniez par le col (forum Gâche) ; le déco nord est surtout un site de fin d'après-midi quand les thermiques ne hachent plus le dynamique de nord.",
      "sources": [
       "S67",
+      "S72",
       "S75"
-     ]
+     ],
+     "confidence": "medium"
     },
     {
      "id": "oraison-atterro-dust",
@@ -1636,12 +2164,98 @@
      "alt_m": 1398,
      "best_hours": "10h-18h",
      "trigger": "serre exposée S/SO/O/NO au-dessus de Moustiers",
-     "description": "Ancienne fiche : déclenchement thermique vers 10h, très favorable en ouest, site facile ; FFVL 13094 : « aérologie forte dans l'après-midi » ; Courchon (1208) : déclenchement vers 13h, dangereux par vent de nord/nord-ouest. Récit de 2012 : vautours fauves au Mont Denier.",
+     "description": "Ancienne fiche : déclenchement thermique vers 10h, très favorable en ouest, site facile ; FFVL 13094 : « aérologie forte dans l'après-midi » ; Courchon (1208) : déclenchement vers 13h, dangereux par vent de nord/nord-ouest. Récit de 2012 : vautours fauves au Mont Denier. Relance et plafond des cross à l'ouest de Castellane : « dès le début de la crête du Mont Denier j'attrape un petit thermique dérivant » puis 1300 m de gain en 11 minutes avec trois vautours (Jacqueline 2012, par régime d'est) ; « Serre de Montdenier : attachez vos ceintures : ce sera du 8 m/s jusqu'au plaf » (plafond 4050 m, 2014) ; Armant (2006) y arrive vers midi après un début « quasi plaine ». Retard de réveil si le sol est humide (Armant 19 juillet 2006 : « le Mont Denier commençait à s'allumer de beaux cumulus »).",
      "sources": [
       "S48",
+      "S60",
       "S73",
-      "S60"
-     ]
+      "S114",
+      "S115",
+      "S116"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "mourre-de-chanier-plafond",
+     "name": "Mourre de Chanier (plafond de 3300 m sur la route Fourneuby – Mont Denier)",
+     "lon": 6.351,
+     "lat": 43.8417,
+     "coord_quality": "source",
+     "alt_m": 1930,
+     "best_hours": "12h30-13h",
+     "trigger": "sommet à l'ouest de Castellane, repère de nuage en début de transition vers Moustiers",
+     "description": "Plafond de la transition : « 12h51, 3300 m, petites barbules du Mourre de Chanier : je suis arrivé suffisamment haut pour ne pas être gêné par les brises » (Armant 30/06/2006), avant de viser les barbules du Mont Denier. Position OSM / IGN (sommet).",
+     "sources": [
+      "S115",
+      "S75"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "montagne-de-coupe-couard",
+     "name": "Montagne de Coupe – sommet du Couard (crête généreuse, axe confluent Vachière – Couard)",
+     "lon": 6.3499,
+     "lat": 44.1007,
+     "coord_quality": "source",
+     "alt_m": 1988,
+     "best_hours": "14h-16h",
+     "trigger": "longue crête de falaises, sommet du Couard à l'extrémité nord, face au flux de sud-est ou de sud-ouest",
+     "description": "Relance et plafond entre Digne et Cheval Blanc : « la crête est généreuse et je rentre enfin dans un thermique saint-andréen : plafond 3500 m » (Jacqueline 2012, flux de SE) ; Armant (2006) la remonte « en profitant de cet axe privilégié car passablement confluant qui relie le col de Vachière au sommet du Couard » et plafonne 2985 m « sommet d'un thermique bleu au sud de la montagne de Coupe » ; mais une mauvaise lecture du nuage l'a un jour envoyé « sous le vent du thermique » et trop bas sur le Couard (« gros cafouillage »). Par vent de nord ou nord-est, le trajet Couard → Cheval Blanc est ingrat (petits thermiques qui ne tiennent pas, grosses dégueulantes). FlyStAndre / XC Mag la décrivent comme un triangle de 50 km à longer « sur les falaises ». Position OSM du sommet du Couar ; la montagne de Coupe est 5 km au SO (6.3332/44.0576).",
+     "sources": [
+      "S60",
+      "S115",
+      "S27",
+      "S26",
+      "S73"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "cousson-thermique-balise-vautours",
+     "name": "Thermique avant le Cousson (balisé par les vautours, plafond 3400 m)",
+     "lon": 6.2398,
+     "lat": 44.0538,
+     "coord_quality": "source",
+     "alt_m": 1484,
+     "best_hours": "13h-15h",
+     "trigger": "thermique de vallée de Digne sous le Cousson, repéré par les vautours fauves",
+     "description": "Relance en régime d'est : « ils me balisent encore un beau thermique avant le Cousson. Je file dans cette direction pour refaire un plein à 3400 m environ » (Jacqueline 2012), sur la route Mont Denier → Blayeul → montagne de Coupe. Position : déco du Cousson (FFVL). Déduction : le thermique est à proximité du Cousson, pas sur le relief lui-même.",
+     "sources": [
+      "S60",
+      "S44"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "sumiou-falaise-thermodynamique-du-soir",
+     "name": "Sumiou : ascendance thermodynamique de la falaise en fin d'après-midi",
+     "lon": 5.8635,
+     "lat": 44.138,
+     "coord_quality": "source",
+     "alt_m": 1241,
+     "best_hours": "17h-18h40 (même à l'ombre)",
+     "trigger": "falaise de nord-est de Sumiou, restitution thermodynamique douce",
+     "description": "Soaring et relance du soir : « décollage à 17h00, on se fait immédiatement satelliser 100 m au-dessus ; une grosse ascendance thermodynamique le long de la falaise mais très douce, comme à Saint-Geniez » alors que toute la zone est à l'ombre (forum Sumiou) ; autre pilote : sous le vent possible d'une brise thermique de la vallée du Jabron l'après-midi.",
+     "sources": [
+      "S69",
+      "S45"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "rocher-de-la-baume-sisteron",
+     "name": "Rocher de la Baume (falaises calcaires de Sisteron chauffées dès le milieu de matinée)",
+     "lon": 5.9472,
+     "lat": 44.2,
+     "coord_quality": "approx",
+     "alt_m": null,
+     "best_hours": "dès le milieu de matinée (printemps, été) ; restitution douce en fin d'après-midi",
+     "trigger": "falaises calcaires de la Baume, « gigantesques panneaux solaires » (guide touristique)",
+     "description": "Déclencheur indiqué par un guide commercial : plafonds « souvent supérieurs à 3000 m en été », point de transit classique vers Saint-André / Dormillouse ou les Baronnies (summits.fr). Déduction : source touristique non pilote, position approchée : lieu-dit la Baume (IGN, Sisteron). À confirmer par des récits.",
+     "sources": [
+      "S117"
+     ],
+     "confidence": "low"
     }
    ],
    "soaring_spots": [
@@ -2335,6 +2949,18 @@
        "coord_quality": "source"
       },
       {
+       "name": "Cousson (Digne)",
+       "lon": 6.2398,
+       "lat": 44.0538,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Montagne de Coupe (sommet du Couard)",
+       "lon": 6.3499,
+       "lat": 44.1007,
+       "coord_quality": "source"
+      },
+      {
        "name": "Digne-les-Bains",
        "lon": 6.2346,
        "lat": 44.0918,
@@ -2360,10 +2986,11 @@
       }
      ],
      "distance_km": 126,
-     "description": "Récit d'un vol par vent d'est/sud-est (10 km/h annoncés) : sortie du col de Bleyne vers 2200 m, transition de groupe Lattes – Teillon (+10 km/h poussés par l'est), passage au vent de Castellane par le Destourbes, Mont Denier (vautours), survol de Digne à 3400 m, Blayeul, montagne de Coupe (retour contré par le SE), Mouchon, Montagne de l'Aup (sud divisé en deux flux sur l'éperon au-dessus du Mandarom), crête des Serres, Chamatte, puis retour vers Bleyne via Crémon / Vauplane / Soleilhas / Arpille. Point Teillon = crête OSM (approx).",
+     "description": "Récit d'un vol par vent d'est/sud-est (10 km/h annoncés) : sortie du col de Bleyne vers 2200 m, transition de groupe Lattes – Teillon (+10 km/h poussés par l'est), passage au vent de Castellane par le Destourbes, Mont Denier (vautours), survol de Digne à 3400 m, Blayeul, montagne de Coupe (retour contré par le SE), Mouchon, Montagne de l'Aup (sud divisé en deux flux sur l'éperon au-dessus du Mandarom), crête des Serres, Chamatte, puis retour vers Bleyne via Crémon / Vauplane / Soleilhas / Arpille. Point Teillon = crête OSM (approx). Relais cités : plein des Lattes (éperon au vent), Teillon, thermique de Castellane (Destourbes), Mont Denier (vautours, 1300 m en 11 min), thermique avant le Cousson (3400 m), Coupe/Couard (3500 m), Mouchon (3400 m), puis montagne de l'Aup (éperon à deux flux), crête des Serres, Pic de Chamatte.",
      "sources": [
+      "S26",
       "S60",
-      "S26"
+      "S115"
      ]
     },
     {
@@ -2410,7 +3037,7 @@
     6.4728,
     43.5113,
     7.1649,
-    43.8871
+    43.9
    ],
    "center": [
     6.9322,
@@ -2820,11 +3447,14 @@
      "alt_m": 1501,
      "best_hours": "dès 10h30 (été)",
      "trigger": "combe orientée sud immédiatement à gauche du déco, puis crête ouest et « bois brûlé »",
-     "description": "Au gré de l'air : premier plein dans la petite combe à gauche du déco (« fonctionne très bien en général »), possible extraction au Pic de l'Aigle un peu à l'est ; plafonds de 3000-3500 m fréquents (on voit la mer), 2500 m suffisent pour avancer vers La Ferrière ; deuxième pompe au bois brûlé ; les premiers thermiques sont « un peu teigneux » en basses couches.",
+     "description": "Au gré de l'air : premier plein dans la petite combe à gauche du déco (« fonctionne très bien en général »), possible extraction au Pic de l'Aigle un peu à l'est ; plafonds de 3000-3500 m fréquents (on voit la mer), 2500 m suffisent pour avancer vers La Ferrière ; deuxième pompe au bois brûlé ; les premiers thermiques sont « un peu teigneux » en basses couches. Premier plein (déclencheur) : combe SE à gauche du déco, « fonctionne très bien en général » ; Armant (2006) la tient en « zéro » quelques minutes avant que « ça parte dans un gentil petit thermique décalé en sud-est » à 11h20 ; « les thermiques purs du matin le long des crêtes du col de Bleyne » sont « faciles, tranquilles et larges » (Armant 2006). Extraction au Pic de l'Aigle (Pic de l'Aiglo, 6.8332/43.8153), 3000-3500 m possibles ; 2500 m suffisent pour avancer vers La Ferrière.",
      "sources": [
+      "S31",
       "S55",
-      "S31"
-     ]
+      "S103",
+      "S112"
+     ],
+     "confidence": "medium"
     },
     {
      "id": "cheiron-jerusalem-miroirs",
@@ -2835,12 +3465,14 @@
      "alt_m": 1768,
      "best_hours": "midi-fin d'après-midi",
      "trigger": "sommet de Jérusalem (4 pylônes) et falaise sud du Cheiron",
-     "description": "« C'est au-dessus des miroirs, au niveau du sommet de Jérusalem, que l'on trouve en général les meilleurs thermiques » ; la belle falaise forme un « ascenseur » jusqu'au 700. Thermiques toute l'année même par nord en altitude (Ozone, XC Mag). Position OSM (nœud 2602221010).",
+     "description": "« C'est au-dessus des miroirs, au niveau du sommet de Jérusalem, que l'on trouve en général les meilleurs thermiques » ; la belle falaise forme un « ascenseur » jusqu'au 700. Thermiques toute l'année même par nord en altitude (Ozone, XC Mag). Position OSM (nœud 2602221010). Plafond du cheminement : « c'est au-dessus des miroirs, au niveau du sommet de Jérusalem, que l'on trouve en général les meilleurs thermiques » ; nuage visible sur le Cheiron dès 11h, plafond ~1700 m un jour d'hiver (Parapentor 2006) ; point de départ des bascules vers Fourneuby / Bleine (TMA de Nice à 2000 m) ou vers Gourdon (Gros Pounch, Calern).",
      "sources": [
-      "S55",
+      "S28",
       "S32",
-      "S28"
-     ]
+      "S55",
+      "S111"
+     ],
+     "confidence": "medium"
     },
     {
      "id": "gourdon-cavillore-falaise",
@@ -2857,6 +3489,175 @@
       "S66",
       "S42"
      ]
+    },
+    {
+     "id": "pic-de-l-aigle-bleine",
+     "name": "Pic de l'Aigle (Pic de l'Aiglo) : extraction à l'est du déco de Bleine",
+     "lon": 6.8332,
+     "lat": 43.8153,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "11h-13h",
+     "trigger": "sommet un peu à l'est du déco, extraction au-dessus du vallon ruiné",
+     "description": "Déclencheur et plafond : « on peut aussi aller s'extraire au Pic de l'Aigle, juste un peu plus loin en Est ; l'extraction est l'occasion de voir la mer » ; on y fait 3000-3500 m (Au gré de l'air) ; Armant (2006) voit un pilote gratter « le caillou sous le Pic de l'Aigle » avant que ça déclenche pour de bon. Position IGN (« Pic de l'Aiglo », Andon).",
+     "sources": [
+      "S55",
+      "S103",
+      "S31"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "bleine-bois-brule",
+     "name": "Bois brûlé (deuxième pompe après Bleine)",
+     "lon": 6.77,
+     "lat": 43.81,
+     "coord_quality": "approx",
+     "alt_m": null,
+     "best_hours": "11h-13h",
+     "trigger": "zone de bois brûlé, facilement repérable, sur la crête entre le col de Bleine et La Ferrière",
+     "description": "Point de relance (« deuxième pompe de service ») : « la deuxième pompe se trouve en général au niveau du bois brûlé (facilement repérable) » (Au gré de l'air) ; « le bois brûlé est fidèle à lui-même, toujours généreux en thermique » (Fernandez) ; en 2013 il monte « à plus de 2000 m » ; mais « tendu » et à ratisser en zérotant un jour humide (2014). Un récit y fait un point bas avant la transition des Lattes (2005). Position estimée : le bois brûlé n'est pas localisé sur les cartes (entre Bleine et La Ferrière).",
+     "sources": [
+      "S55",
+      "S112",
+      "S113",
+      "S114"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "pente-se-des-lattes",
+     "name": "Grande pente sud-est au-dessus des Lattes (nuage du matin, éperon au vent)",
+     "lon": 6.7318,
+     "lat": 43.8226,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "11h30-13h",
+     "trigger": "grande pente SE au-dessus du hameau des Lattes ; éperon au vent signalé par Parapentor",
+     "description": "Point de relance avant la transition du Teillon : « comme souvent en matinée, c'est le plus beau nuage du secteur, grâce à la grande pente sud-est au-dessus des Lattes » (Armant 2006, 2800 m à 12h) ; Jacqueline (2012) : « un beau thermique placé logiquement sur un éperon au vent ». Venturi à survoler : faire 2500 m avant (Au gré de l'air). Position du hameau des Lattes (source) ; l'éperon exact n'est pas indiqué.",
+     "sources": [
+      "S103",
+      "S60",
+      "S55"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "col-des-portes",
+     "name": "Col des Portes (« ça sort presque toujours »)",
+     "lon": 6.6298,
+     "lat": 43.8345,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "13h-15h",
+     "trigger": "col juste avant le Teillon, sous le vent d'ouest en fin de journée",
+     "description": "Point de relance : « on chemine directement en ouest vers le Col des Portes (juste avant le Teillon). Parfois il faut chercher un peu mais ça sort presque toujours avec un bon plafond » (Au gré de l'air) ; Guillard (2006) y trouve « un thermique bien généreux » (3300 m). Plus on arrive tard, plus la brise d'ouest est forte.",
+     "sources": [
+      "S55",
+      "S104"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "sommet-du-teillon",
+     "name": "Teillon (sommet : thermiques puissants, brise d'ouest)",
+     "lon": 6.6006,
+     "lat": 43.8432,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "13h-16h",
+     "trigger": "crête du Teillon, côté ouest ensoleillé ; passage au vent d'ouest",
+     "description": "Point de relance sur la route Bleine – Saint-André : « au sommet les thermiques sont vraiment puissants » (Berchet 2005) ; Ozone : passer le col de Barnabé ou « pousser sur la face ouest du Teillon et sauter » ; « un gros thermique me propulse à 2900 m » (Rodde). On arrive sous le vent de la brise d'ouest, d'autant plus fort que l'heure avance. Position IGN (crête du Teillon).",
+     "sources": [
+      "S31",
+      "S113",
+      "S108",
+      "S55"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "cremon-pointe-ouest",
+     "name": "Crémon (pointe de la crête, angle SO, face ouest)",
+     "lon": 6.5752,
+     "lat": 43.886,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "13h-19h30",
+     "trigger": "pointe de la crête du Crémon ; angle sud-ouest et face ouest, chauffés l'après-midi",
+     "description": "Point de relance entre Teillon et crête des Serres : « ça sort toujours très bien sur la pointe de la crête » (Au gré de l'air) ; « un thermique puissant à l'angle SO du Crémon » (Berchet 2006, négligé, erreur) ; un +5 sur la face ouest ; Armant le soir (19h40) vise « la bonne restit' du Crémon, dont les faces ouest sont encore chauffées par les derniers rayons du soleil » ; récit de 2013 (S113) : « bip bip, 2500 » dès l'arrivée. Position OSM du sommet.",
+     "sources": [
+      "S55",
+      "S103",
+      "S113",
+      "S75"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "vauplane-bernarde",
+     "name": "La Bernarde / Vauplane (nuage de Vauplane)",
+     "lon": 6.6374,
+     "lat": 43.8953,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "12h-14h",
+     "trigger": "croupe de la Bernarde au-dessus de la station de Vauplane, atteinte en transition au-dessus de Soleilhas",
+     "description": "Point de relance : 2500 m pour transiter au-dessus de Soleilhas et « raccrocher la Bernarde au-dessus de la station de Vauplane » (Au gré de l'air) ; « 2900 m au nuage de Vauplane » à 12h20 (Armant 2006) ; plein de 3350 m en remontant au vent (Jacqueline 2011). Ne pas forcer en basses couches : sous le vent du Teillon et dans le venturi du col de Saint-Barnabé.",
+     "sources": [
+      "S55",
+      "S103",
+      "S59"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "pic-de-fourneuby",
+     "name": "Pic de Fourneuby (canalise les thermiques du coin)",
+     "lon": 6.892,
+     "lat": 43.8265,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "11h-14h",
+     "trigger": "petit sommet qui prolonge la chaîne de Bleine vers Gréolières, déco herbeux",
+     "description": "Déclencheur : « Fourneby semble canaliser tous les thermiques du coin » (récit 2013) ; en 2011 un thermique doux dès le décollage puis « couche d'est » jusqu'à 2700 m ; en 2014 les thermiques y étaient moins éveillés que sur Bleine (sol humide). Départ des cross vers Bleine et Saint-André quand la route de Bleine est fermée.",
+     "sources": [
+      "S59",
+      "S113",
+      "S114"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "greolieres-carriere-300",
+     "name": "La « carrière » à gauche du déco du 300 (extraction vers le 700)",
+     "lon": 6.9545,
+     "lat": 43.8013,
+     "coord_quality": "approx",
+     "alt_m": null,
+     "best_hours": "11h-15h",
+     "trigger": "carrière canalisant la brise des gorges du Loup, thermiques du fond de vallée (rond-point) et petite barre rocheuse derrière",
+     "description": "Déclencheur et point de relance sur le cheminement Gréolières – Coursegoules : « sans nécessairement prendre de gaz, aller rejoindre la carrière sur la gauche du déco. Là se trouve canalisée la brise des gorges du Loup ainsi que les thermiques issus du fond de vallée au niveau du rond-point » ; 30 m suffisent pour s'appuyer sur la petite barre rocheuse derrière, puis on retourne au-dessus du déco et on rejoint « l'ascenseur que forme la belle falaise qui nous conduit au 700 » (Au gré de l'air). Position estimée à proximité du déco du 300 (FFVL).",
+     "sources": [
+      "S55",
+      "S40"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "greolieres-col-antenne-coursegoules",
+     "name": "Col de l'antenne avant Coursegoules (confluence col de Vence × gorges du Loup)",
+     "lon": 7.03,
+     "lat": 43.801,
+     "coord_quality": "approx",
+     "alt_m": null,
+     "best_hours": "midi-17h",
+     "trigger": "col où se rencontrent la brise du col de Vence et celle des gorges du Loup, antenne",
+     "description": "Point de relance : « au niveau du col, on trouve la confluence entre la brise venant du col de Vence et celle venant des gorges du Loup » ; on y cheminera depuis les miroirs, puis crête au-dessus de Coursegoules jusqu'au bout du Viériou (Au gré de l'air). Position estimée (le col de l'antenne n'est pas localisé).",
+     "sources": [
+      "S55"
+     ],
+     "confidence": "medium"
     }
    ],
    "soaring_spots": [
@@ -3377,6 +4178,12 @@
        "coord_quality": "source"
       },
       {
+       "name": "Carrière à gauche du déco 300",
+       "lon": 6.9545,
+       "lat": 43.8013,
+       "coord_quality": "approx"
+      },
+      {
        "name": "Jérusalem / 700 (miroirs)",
        "lon": 6.9849,
        "lat": 43.8168,
@@ -3404,9 +4211,10 @@
      "distance_km": 20,
      "description": "Départ du 300 puis extraction à la « carrière » à gauche du déco (brise des gorges du Loup + thermiques du rond-point), petite barre rocheuse, falaise qui mène au 700 puis cheminement jusqu'au col de l'antenne (confluence col de Vence × gorges du Loup) et au bout du Viériou ; retour par le même itinéraire. Avec un bon plafond (TMA à 2000 m !) : bascule NO sur Fourneuby puis Col de Bleine, ou sud (hiver, brises maritimes faibles) vers Gourdon via Gorges du Loup / Puy de Tourrettes, ou depuis le Cheiron via Gros Pounch et Calern. Passage vers la Montagne de Thorenc difficile (grande zone sans atterrissage, souvent du nord) ; échappée vers Castelleras possible mais peu de posés.",
      "sources": [
-      "S55",
       "S28",
-      "S32"
+      "S32",
+      "S55",
+      "S111"
      ]
     },
     {
@@ -3418,6 +4226,18 @@
        "lon": 6.8039,
        "lat": 43.8151,
        "coord_quality": "source"
+      },
+      {
+       "name": "Pic de l'Aigle",
+       "lon": 6.8332,
+       "lat": 43.8153,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Bois brûlé (approx.)",
+       "lon": 6.77,
+       "lat": 43.81,
+       "coord_quality": "approx"
       },
       {
        "name": "La Ferrière",
@@ -3435,6 +4255,18 @@
        "name": "Col des Portes",
        "lon": 6.6298,
        "lat": 43.8345,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Teillon (crête)",
+       "lon": 6.6006,
+       "lat": 43.8432,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Sommet de Crémon",
+       "lon": 6.5752,
+       "lat": 43.886,
        "coord_quality": "source"
       },
       {
@@ -3463,11 +4295,14 @@
       }
      ],
      "distance_km": 30,
-     "description": "Itinéraire de référence (Au gré de l'air) : décoller dès 10h30, premier plein dans la combe, extraction au Pic de l'Aigle, 2500 m pour avancer en ouest vers La Ferrière, deuxième pompe au bois brûlé ; première transition vers le Teillon au-dessus des Lattes avec 2500 m (venturi !) ; plein ~2000 m puis cheminer vers le Col des Portes (ça sort presque toujours) ; variante par le Teillon (crête 6.5887/43.8455) puis Crémon (« ça sort toujours très bien sur la pointe de la crête ») ; sinon ~2500 m pour transiter au-dessus de Soleilhas et raccrocher la Bernarde au-dessus de Vauplane (ne pas forcer en basses couches : sous le vent du Teillon et dans le venturi du col de Saint-Barnabé) ; dernier plein puis Pic de Chamatte, crête des Serres et Saint-André. Ozone propose une variante : montée haute sur la Montagne de Thorenc, glisse vers l'ouest sur la crête ouest du zigzag du sentier, Teillon, Crémon ou Chamatte. Retour vers Bleyne « possible mais pas facile ».",
+     "description": "Itinéraire de référence (Au gré de l'air) : décoller dès 10h30, premier plein dans la combe, extraction au Pic de l'Aigle, 2500 m pour avancer en ouest vers La Ferrière, deuxième pompe au bois brûlé ; première transition vers le Teillon au-dessus des Lattes avec 2500 m (venturi !) ; plein ~2000 m puis cheminer vers le Col des Portes (ça sort presque toujours) ; variante par le Teillon (crête 6.5887/43.8455) puis Crémon (« ça sort toujours très bien sur la pointe de la crête ») ; sinon ~2500 m pour transiter au-dessus de Soleilhas et raccrocher la Bernarde au-dessus de Vauplane (ne pas forcer en basses couches : sous le vent du Teillon et dans le venturi du col de Saint-Barnabé) ; dernier plein puis Pic de Chamatte, crête des Serres et Saint-André. Ozone propose une variante : montée haute sur la Montagne de Thorenc, glisse vers l'ouest sur la crête ouest du zigzag du sentier, Teillon, Crémon ou Chamatte. Retour vers Bleyne « possible mais pas facile ». Relais classiques dans l'ordre : combe SE et Pic de l'Aigle, bois brûlé, pente SE des Lattes (nuage du matin), Col des Portes ou Teillon, Crémon, Bernarde (Vauplane), Pic de Chamatte, crête des Serres.",
      "sources": [
-      "S55",
       "S31",
-      "S60"
+      "S55",
+      "S60",
+      "S103",
+      "S112",
+      "S113"
      ]
     },
     {
@@ -3961,11 +4796,14 @@
      "alt_m": 1248,
      "best_hours": "après-midi d'hiver / demi-saison (plafonds ~900-1200 m)",
      "trigger": "falaises et crête de Courmettes ; antennes",
-     "description": "Armant : « à partir des antennes de Courmettes (D), plus on s'enfonce vers Saint-Jeannet, plus les conditions sont stables » ; il faut y faire le plafond maximal (≥ 900 m) pour passer par l'étage du bas ; si le plafond est ≥ ~1200 m on passe par l'étage du haut vers les crêtes de Tourrettes. Position estimée sur le Pic de Courmettes (OSM) : les antennes ne sont pas localisées.",
+     "description": "Armant : « à partir des antennes de Courmettes (D), plus on s'enfonce vers Saint-Jeannet, plus les conditions sont stables » ; il faut y faire le plafond maximal (≥ 900 m) pour passer par l'étage du bas ; si le plafond est ≥ ~1200 m on passe par l'étage du haut vers les crêtes de Tourrettes. Position estimée sur le Pic de Courmettes (OSM) : les antennes ne sont pas localisées. Relance clé : « à partir des antennes de Courmettes (D), plus on s'enfonce vers Saint-Jeannet, plus les conditions sont stables » ; plafond maximal à y faire (≥ 900 m par l'étage du bas, ~1200 m par l'étage du haut) ; « JP fait un bon plafond aux antennes » (Briois 2009, 1300 m) ; Dijols 2006 : « le thermique est si bon aux Courmettes ». Au retour on « raccroche sous les falaises des antennes » depuis les maisons-bulles avec 750 m mini. Position estimée sur le Pic de Courmettes (OSM) : les antennes sont plus probablement au sud-est du sommet sur la carte d'Armant.",
      "sources": [
       "S57",
-      "S75"
-     ]
+      "S75",
+      "S107",
+      "S123"
+     ],
+     "confidence": "medium"
     },
     {
      "id": "baou-des-blancs",
@@ -3976,11 +4814,13 @@
      "alt_m": 673,
      "best_hours": "après-midi",
      "trigger": "falaise plein sud au-dessus de Vence",
-     "description": "« Le Baou des Blancs est plus généreux et dispose surtout d'une bonne falaise plein sud donnant un bon appui » (Armant) ; il faut ~100 m au-dessus des crêtes pour la transition depuis la butte précédente. Position OSM.",
+     "description": "« Le Baou des Blancs est plus généreux et dispose surtout d'une bonne falaise plein sud donnant un bon appui » (Armant) ; il faut ~100 m au-dessus des crêtes pour la transition depuis la butte précédente. Position OSM. « Le Baou des Blancs est plus généreux et dispose surtout d'une bonne falaise plein sud donnant un bon appui » (Armant 2006) ; on y enroule « un bon truc » avant la transition vers le baou de Saint-Jeannet (Briois 2009). Il faut ~100 m au-dessus des crêtes pour la transition depuis la butte précédente.",
      "sources": [
       "S57",
-      "S75"
-     ]
+      "S75",
+      "S107"
+     ],
+     "confidence": "medium"
     },
     {
      "id": "baou-de-saint-jeannet",
@@ -3991,11 +4831,124 @@
      "alt_m": 801,
      "best_hours": "après-midi",
      "trigger": "falaises « molles » du Baou de Saint-Jeannet ; Baou de la Gaude meilleur appui",
-     "description": "Armant : le Baou de Saint-Jeannet n'est souvent efficace pour tenir dans les falaises que si l'on arrive suffisamment haut (au pied des falaises il n'y a souvent rien : mieux vaut se lancer au-dessus du village) ; le Baou de la Gaude (7.1486/43.7551) offre de meilleurs appuis mais la proximité de la vallée du Var rend les conditions souvent très stables ; le haut des crêtes suffit pour passer de l'un à l'autre. Position OSM du Baou de Saint-Jeannet.",
+     "description": "Armant : le Baou de Saint-Jeannet n'est souvent efficace pour tenir dans les falaises que si l'on arrive suffisamment haut (au pied des falaises il n'y a souvent rien : mieux vaut se lancer au-dessus du village) ; le Baou de la Gaude (7.1486/43.7551) offre de meilleurs appuis mais la proximité de la vallée du Var rend les conditions souvent très stables ; le haut des crêtes suffit pour passer de l'un à l'autre. Position OSM du Baou de Saint-Jeannet. Armant : n'est souvent efficace pour tenir dans les falaises que si l'on arrive suffisamment haut ; « mieux vaut se lancer au-dessus du village » ; le haut des crêtes suffit pour passer du baou de Saint-Jeannet au baou de la Gaude. Briois (2009) y a perdu un beau thermique avant de partir vers la Gaude.",
      "sources": [
       "S57",
+      "S75",
+      "S107"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "gourdon-village-a",
+     "name": "Gourdon village (zone A, thermiques faibles et étroits)",
+     "lon": 6.9788,
+     "lat": 43.7195,
+     "coord_quality": "approx",
+     "alt_m": null,
+     "best_hours": "dès que ça tient sur le village (matin d'hiver)",
+     "trigger": "village et falaises sous l'Embarnier",
+     "description": "Déclencheur de départ du « grand bocal » : en hiver, thermiques « faibles et étroits (Gourdon, A), souvent encombrés de beaucoup d'ailes » ; « il faut partir le plus tôt possible de l'Embarnier, dès que ça tient sur le village » ; Le 16 janvier 2009 un pilote conseille à Briois « l'option village plutôt que Cavillore » ; il lui faut alors 3 thermiques pour atteindre 1300 m (S107). Position approximative : centre de la commune (Nominatim), le bas de la face du village n'est pas localisé ; carte Armant, lettre A.",
+     "sources": [
+      "S57",
+      "S107"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "tourettes-maisons-bulles",
+     "name": "Les « maisons bulles » de Tourrettes (petite falaise, brise de sud)",
+     "lon": 7.0465,
+     "lat": 43.7203,
+     "coord_quality": "approx",
+     "alt_m": null,
+     "best_hours": "après-midi (dernière ascendance exploitable certains jours d'hiver)",
+     "trigger": "petite falaise sous le déco de Tourrettes, « souvent bien alimentée en brise de sud »",
+     "description": "Relance et dernière ascendance : « certaines journées, la dernière ascendance exploitable est celle des maisons bulles (G) juste avant le déco de Tourettes (H) » (Armant 2006) ; 50 m au-dessus du déco de Tourrettes suffisent pour s'y jeter, et on y « refait » assez pour l'ultime glissade vers les antennes de Courmettes (750 m mini). Position estimée d'après la carte annotée (lettre G, p.1) : approximative.",
+     "sources": [
+      "S57"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "tourettes-deuxieme-rideau",
+     "name": "Deuxième rideau de Tourrettes : crêtes de Tourrettes (zones E, I, J) et Caire",
+     "lon": 7.0563,
+     "lat": 43.727,
+     "coord_quality": "approx",
+     "alt_m": null,
+     "best_hours": "si l'inversion n'est pas trop basse",
+     "trigger": "plateaux de Courmettes et de Tourrettes, crêtes derrière les petits plateaux (J) ; crête intermédiaire du Caire",
+     "description": "Plafond de l'étage du haut : « si l'inversion n'est pas trop basse, il y a un deuxième rideau de thermiques (E, I, J) plus au nord, derrière les petits plateaux de Courmettes et de Tourettes » ; avec ~1200 m aux antennes, on passe directement aux plus hautes crêtes de Tourrettes (J) (Armant 2006). Briois (2009) : « ça monte bien jusque la crête intermédiaire du Caire ». Position estimée sur la carte (déco de Tourrettes, lettre H).",
+     "sources": [
+      "S57",
+      "S107"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "tourettes-butte-moustachu-chevaux",
+     "name": "Buttes au-dessus des vaches du Moustachu et des chevaux (dernière chance du retour)",
+     "lon": 7.0718,
+     "lat": 43.7303,
+     "coord_quality": "approx",
+     "alt_m": null,
+     "best_hours": "après-midi",
+     "trigger": "butte au-dessus du terrain aux chevaux (K) et petite butte au-dessus de la vache du Moustachu (13)",
+     "description": "Point de relance du retour depuis le baou des Blancs : « certaines journées on peut encore trouver quelque chose sur la butte au-dessus du terrain aux chevaux (K) voire sur la petite butte au-dessus de la vache du moustachu (13) » où « une petite bulle déclenche parfois » et permet de raccrocher le déco de Tourrettes (Armant 2006). Position estimée sur la carte : approximative.",
+     "sources": [
+      "S57"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "butte-avant-baou-des-blancs",
+     "name": "Butte avant le Baou des Blancs (relais thermique)",
+     "lon": 7.0897,
+     "lat": 43.734,
+     "coord_quality": "approx",
+     "alt_m": null,
+     "best_hours": "après-midi",
+     "trigger": "butte (L) juste avant le Baou des Blancs, peu d'appui",
+     "description": "Point de relance : « un thermique relais sur la montagne (L) avant le Baou des Blancs est souvent indispensable » (Armant 2006) ; transition courte portée par la brise depuis le baou des Blancs, avec ≥ 100 m au-dessus des crêtes. Position estimée sur la carte annotée : approximative.",
+     "sources": [
+      "S57"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "baou-des-noirs",
+     "name": "Baou des Noirs (« gros plafond » avant Saint-Jeannet ; ligne HT)",
+     "lon": 7.1241,
+     "lat": 43.743,
+     "coord_quality": "source",
+     "alt_m": 640,
+     "best_hours": "après-midi",
+     "trigger": "croupe entre les baous des Blancs et de Saint-Jeannet, avec ligne haute tension",
+     "description": "Point de relance : « 50 m au-dessus du baou des Noirs suffisent pour se jeter vers Saint-Jeannet » (+100 m pour raccrocher) ; au retour, prendre le maximum de gaz sur le baou des Noirs avant de basculer sur les Blancs ; Briois (2009) y touche un bon thermique qui le décale derrière la ligne. Piège : la ligne HT qui plonge vers le sud.",
+     "sources": [
+      "S57",
+      "S107",
       "S75"
-     ]
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "baou-de-la-gaude",
+     "name": "Baou de la Gaude (meilleurs appuis, mais proche du Var : conditions stables)",
+     "lon": 7.1486,
+     "lat": 43.7551,
+     "coord_quality": "source",
+     "alt_m": 796,
+     "best_hours": "après-midi",
+     "trigger": "falaise du baou de la Gaude, appuis meilleurs que Saint-Jeannet",
+     "description": "Plafond du bout de cheminement : Armant (2006) « de bien meilleurs appuis » mais conditions souvent très stables ; Briois (2009) y est « accueilli comme un malpropre par un thermique teigneux » qui le monte à 1300 m (+3/+4), et lui permet de repartir en retour vers le baou des Noirs.",
+     "sources": [
+      "S57",
+      "S107",
+      "S75"
+     ],
+     "confidence": "medium"
     }
    ],
    "soaring_spots": [
@@ -4342,10 +5295,28 @@
        "coord_quality": "approx"
       },
       {
+       "name": "Maisons bulles de Tourrettes (approx.)",
+       "lon": 7.0465,
+       "lat": 43.7203,
+       "coord_quality": "approx"
+      },
+      {
        "name": "Tourrettes-sur-Loup",
        "lon": 7.0589,
        "lat": 43.7158,
        "coord_quality": "source"
+      },
+      {
+       "name": "Buttes des chevaux et du Moustachu (approx.)",
+       "lon": 7.0718,
+       "lat": 43.7303,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Butte avant le baou des Blancs (approx.)",
+       "lon": 7.0897,
+       "lat": 43.734,
+       "coord_quality": "approx"
       },
       {
        "name": "Baou des Blancs",
@@ -4373,12 +5344,13 @@
       }
      ],
      "distance_km": 17,
-     "description": "Référence du « grand bocal » de Gourdon (17 km aller environ, ~35 km A/R) : partir de l'Embarnier le plus tôt possible, dès que ça tient sur le village ; plafond ≥ 1200 m aux antennes de Courmettes pour passer par l'étage du haut (crêtes de Tourrettes), sinon étage du bas avec ≥ 900 m ; relais thermique indispensable sur la butte avant le Baou des Blancs ; ne pas passer en face de Vence sous les cônes des vaches des Blancs et de l'éléphant bleu ; baou des Noirs ≥ +50 m pour se jeter vers Saint-Jeannet (+100 m pour raccrocher), puis glisser dans le Var pour un atterro facile ; retour difficile, notamment entre le baou des Blancs et Tourrettes (retour seulement par l'étage du bas, très délicat avec petite tendance ouest). Meilleures conditions à partir de janvier quand la neige est présente sur les massifs derrière. Les vaches (7 principales, cf. landings) sont non officielles. 40 km en triangle en près de 3 h en 2017 (forum).",
+     "description": "Référence du « grand bocal » de Gourdon (17 km aller environ, ~35 km A/R) : partir de l'Embarnier le plus tôt possible, dès que ça tient sur le village ; plafond ≥ 1200 m aux antennes de Courmettes pour passer par l'étage du haut (crêtes de Tourrettes), sinon étage du bas avec ≥ 900 m ; relais thermique indispensable sur la butte avant le Baou des Blancs ; ne pas passer en face de Vence sous les cônes des vaches des Blancs et de l'éléphant bleu ; baou des Noirs ≥ +50 m pour se jeter vers Saint-Jeannet (+100 m pour raccrocher), puis glisser dans le Var pour un atterro facile ; retour difficile, notamment entre le baou des Blancs et Tourrettes (retour seulement par l'étage du bas, très délicat avec petite tendance ouest). Meilleures conditions à partir de janvier quand la neige est présente sur les massifs derrière. Les vaches (7 principales, cf. landings) sont non officielles. 40 km en triangle en près de 3 h en 2017 (forum). Relais dans l'ordre du récit d'Armant : village de Gourdon puis Cavillore, antennes de Courmettes (plafond ≥ 900-1200 m), maisons bulles ou deuxième rideau (crêtes de Tourrettes), buttes (K, L), baou des Blancs, baou des Noirs, baou de Saint-Jeannet puis baou de la Gaude ; retour avec Noirs puis Blancs puis buttes jusqu'au déco de Tourrettes.",
      "sources": [
+      "S55",
       "S57",
       "S58",
       "S66",
-      "S55"
+      "S107"
      ]
     },
     {
@@ -4427,8 +5399,8 @@
    "parent_massif": "Alpes-Maritimes (Mercantour)",
    "summary": "Hautes vallées nord-sud (Tinée, Vésubie, Roya, haut Var) qui débouchent sur le Var ou sur la mer, au pied d'un parc national dont le survol est interdit à moins de 1000 m au-dessus du sol. Les brises de vallée y sont fortes et précoces l'été : « venturi fort à partir de 12h30 » à Saint-Étienne-de-Tinée, brise massive entre Isola et le Caire Gros, fortes brises de vallée à Cagnorina et au Col de Tende, brise de SE de Vintimille qui nourrit la Roya et la Bévéra. La brise de mer est le fait majeur : elle remonte le Var, la Vésubie et la Roya l'après-midi et rencontre l'ouest/les brises de vallées de l'intérieur (zone de confluence vers Ascros, convergence à Sospel entre brise de la Bévéra et brise du col de Castillon, confluence de La Raya à La Colmiane). Peu de sites officiels : Auron (Cime de la Bercha, S), La Colmiane (Veillos, Balme, Pic ; O/SO), Roya (Cagnorina, Col de Tende), Sospel (Agaisen, Lavina, Monte Grosso) ; Valberg, Isola et la Vésubie n'ont pas de fiche exploitable. Les routes de cross sont des vols de grand relief (Mont Vial – Menton 130 km, Colmiane – Gélas – Tende, Saint-André – Tinée) à faire au printemps ou par vent d'ouest/nord frais, avec Lombarde (nord rafaleux du golfe de Gênes) à redouter.",
    "bbox": [
-    6.8,
-    43.82,
+    6.74,
+    43.74,
     7.65,
     44.3
    ],
@@ -4931,12 +5903,15 @@
      "alt_m": 2204,
      "best_hours": "midi-fin d'après-midi (été)",
      "trigger": "barres calcaires de la Balme de la Frema au-dessus de la vallée de la Vésubie",
-     "description": "Ancien catalogue : « thermique au-dessus de la Balme de la Frema, toute en calcaire, souvent 300 à 600 m de gain en plus » ; le vol au Pétoumier est favorable en thermiques et dynamique tout le long ; récit de 2012 : plafond 2850 m à la Balme « dans une confluence plus à l'ouest que d'habitude ». Position FFVL 13131 (déco de la Balme).",
+     "description": "Ancien catalogue : « thermique au-dessus de la Balme de la Frema, toute en calcaire, souvent 300 à 600 m de gain en plus » ; le vol au Pétoumier est favorable en thermiques et dynamique tout le long ; récit de 2012 : plafond 2850 m à la Balme « dans une confluence plus à l'ouest que d'habitude ». Position FFVL 13131 (déco de la Balme). Plafond classique : « thermique au-dessus de la Balme de la Frema, toute en calcaire, souvent 300 à 600 m de gain en plus » ; 2850 m à la Balme « dans une confluence plus à l'ouest que d'habitude » (Salvi 2012) ; Parapentor (2006) y enroule « les thermiques du Pétoumier » ; Ozone : par ouest monter haut vers le Pétoumier plutôt que le bol de l'est (rotor de La Raya). Relance vers le Gélas, la Vésubie ou Sospel.",
      "sources": [
-      "S73",
+      "S35",
+      "S53",
       "S64",
-      "S53"
-     ]
+      "S73",
+      "S124"
+     ],
+     "confidence": "medium"
     },
     {
      "id": "colmiane-veillos-gaby",
@@ -4953,6 +5928,256 @@
       "S35",
       "S53"
      ]
+    },
+    {
+     "id": "roquebrune-mont-gros-plein",
+     "name": "Mont Gros (et plus à l'ouest) : premier plein du grand bocal de Roquebrune",
+     "lon": 7.4427,
+     "lat": 43.7655,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "dès la fin de matinée (hiver : 850-1050 m)",
+     "trigger": "sommet du Mont Gros, déco de Roquebrune ; plafonds plus sérieux parfois plus à l'ouest",
+     "description": "Déclencheur : « on va essayer de s'élever au niveau du Mont Gros ou plus à l'ouest (des fois on doit aller à l'ouest chercher les plafs les plus sérieux) » (guide 2021) ; un récit d'hiver note que le thermique du Mont Gros n'est « pas très généreux, tout le monde peine sous 850 m » avant de partir vers l'Italie (2014). Alternative : thermique vers le col de la Coupière (on se rapproche, mais on perd du temps si on ne trouve rien).",
+     "sources": [
+      "S85",
+      "S119"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "roquebrune-gorbio-falaises",
+     "name": "Falaises de Gorbio (thermique fort et large, relance vers Sainte-Agnès)",
+     "lon": 7.445,
+     "lat": 43.7922,
+     "coord_quality": "approx",
+     "alt_m": null,
+     "best_hours": "midi-milieu d'après-midi",
+     "trigger": "falaises de Gorbio au-dessus de la route, « thermique assez fort et large »",
+     "description": "Point de relance sur le « grand bocal » de Roquebrune : après le Mont Gros « taper au-dessus de la route sur les falaises de Gorbio », puis la crête à l'est ; « le thermique est assez fort et large, c'est assez simple » ; on peut le finir ou passer sur Sainte-Agnès. Par ouest, « ça va bien monter à Gorbio et ça va bien pénétrer » (guide 2021). Position IGN du site d'escalade de Gorbio.",
+     "sources": [
+      "S85"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "roquebrune-sainte-agnes-cretes",
+     "name": "Sainte-Agnès (crêtes sommitales, « au large vers le drapeau »)",
+     "lon": 7.4617,
+     "lat": 43.8004,
+     "coord_quality": "approx",
+     "alt_m": null,
+     "best_hours": "midi-milieu d'après-midi",
+     "trigger": "crêtes sommitales de Sainte-Agnès ; « une fois au-dessus des crêtes, ça monte partout »",
+     "description": "Plafond du grand bocal et point de rebond vers Sospel : « le thermique y sera au large vers le drapeau (attention : petite ligne sous le drapeau) ; une fois au-dessus des crêtes sommitales ça monte partout. Lui aussi est assez simple » (guide 2021). Position : village de Sainte-Agnès (IGN), le thermique est sur les crêtes au-dessus.",
+     "sources": [
+      "S85"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "roquebrune-thermique-du-retour",
+     "name": "« Thermique du retour » (face ouest de Sainte-Agnès, au-dessus du cimetière)",
+     "lon": 7.452,
+     "lat": 43.799,
+     "coord_quality": "approx",
+     "alt_m": null,
+     "best_hours": "après-midi",
+     "trigger": "face ouest de Sainte-Agnès, au-dessus du cimetière, plateau sous Sainte-Agnès",
+     "description": "Relance du retour de Castellar vers Roquebrune : « il marche bien la plupart du temps, il est très homogène et assez fort ; il permet de raccrocher Sainte-Agnès ; il faut arriver au moins à mi-pente ; attention aux tendances ouest, la finesse diminue » ; repère en venant de l'ouest : arriver un peu au-dessus du cimetière (guide 2021). Position estimée d'après la description (non localisée sur les cartes).",
+     "sources": [
+      "S85"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "roquebrune-castellar-butte-taupe",
+     "name": "Castellar : butte sous les falaises et « thermique de la Taupe »",
+     "lon": 7.488,
+     "lat": 43.806,
+     "coord_quality": "approx",
+     "alt_m": null,
+     "best_hours": "après-midi",
+     "trigger": "butte sous les falaises de Castellar (à l'ouest sous le bassin) ; « thermique de la Taupe » comme solution de repli, plutôt un bricolage",
+     "description": "Points de relance au-delà de Sainte-Agnès : choix 1 « Castellar » (butte, puis falaises, sortie sur la crête frontalière) ou choix 2 « thermique de la Taupe en première intention » (conseillé avec une aile B : on arrive plus haut, plage assurée) ; « in fine ça peut ne sortir qu'au thermique de la Taupe, qui est plutôt un bricolage qu'un truc clean » (guide 2021). Position estimée près de Castellar (village 7.4996/43.802) : approximatif.",
+     "sources": [
+      "S85"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "sospel-razet-col-de-castillon",
+     "name": "Mont Razet (crêtes avant le col de Castillon, verrou de brise de mer)",
+     "lon": 7.479,
+     "lat": 43.8474,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "après-midi",
+     "trigger": "sommet du Razet : arriver près du sommet pour se retrouver sur les crêtes, verrou du col de Castillon",
+     "description": "Relance du retour de Sospel : « il faut arriver assez près du sommet du Razet pour se retrouver sur les crêtes assez vite : on y prendra tout ce qu'on peut et on ira à Sainte-Agnès ou au pire au thermique du retour » ; passer le col de Castillon nettement plus haut que les lignes (guide 2021) ; Salvi (2012) vole « face à la brise de mer » sous le vent d'est au-delà du Razet. Brise renforcée l'été.",
+     "sources": [
+      "S85",
+      "S64"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "sospel-agaisen-the-lift",
+     "name": "Mont Agaisen (« The Lift » pour Ozone, souvent tardif et stable pour un pilote local)",
+     "lon": 7.4545,
+     "lat": 43.8869,
+     "coord_quality": "source",
+     "alt_m": 740,
+     "best_hours": "fin de matinée (Ozone) ; plutôt tardif (guide 2021)",
+     "trigger": "déco SO de l'Agaisen, grosses ascendances régulières selon Ozone",
+     "description": "Deux sources divergent : Ozone : « the locals call it The Lift, for its large, regular thermals ; people have flown to Saint-André from here » ; le guide de Roquebrune : « ne jamais se contenter de viser le sommet de l'Agaisin, souvent assez tardif côté ascendances, il peut être stable » (on arrive trop tôt de Roquebrune, surtout en hiver). Aperçu des deux versions, confiance basse.",
+     "sources": [
+      "S37",
+      "S85",
+      "S74"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "colmiane-mont-giraud",
+     "name": "Mont Giraud (plafond 2700 m, face ouest de La Colmiane)",
+     "lon": 7.1595,
+     "lat": 44.1102,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "après-midi (été)",
+     "trigger": "sommet à l'ouest de la vallée, face à la Colmiane ; traversée de vallée depuis les Aiguillettes",
+     "description": "Point de relance du circuit de La Colmiane : « puis traverser sur le Mont Giraud à l'ouest » (Ozone) ; vol d'été du 10 août 2011 : Mont Giraud 2700 m avant le Pétoumier (Salvi). Position IGN du sommet.",
+     "sources": [
+      "S35",
+      "S63"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "lauvet-d-ilonse-relais",
+     "name": "Lauvet d'Ilonse (plein 1900 → 2990 m avant la transition vers La Colmiane)",
+     "lon": 7.058,
+     "lat": 44.0599,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "14h45",
+     "trigger": "sommet du Lauvet d'Ilonse, sous le gros nuage de Beuil, au vent",
+     "description": "Relance clé de la traversée Mounier – Beuil – La Colmiane : « 14h45, 1900 m au Lauvet d'Ilonse : j'ai réussi à me mettre au vent, j'enroule et je fais 2990 m avant de transiter vers la Colmiane » (Salvi 2012) ; en 2019 un vol échoue entre Lauvet d'Ilonse et la Tinée (cisaillement nord × brises des canyons).",
+     "sources": [
+      "S64",
+      "S86"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "mounier-thermique-3200",
+     "name": "Mont Mounier (plafond 3200 m, nuage au-dessus de Beuil)",
+     "lon": 6.9717,
+     "lat": 44.1542,
+     "coord_quality": "source",
+     "alt_m": 2817,
+     "best_hours": "14h30",
+     "trigger": "grand massif de Mounier, thermiques de la Colletta et nuage de Beuil servant de repère",
+     "description": "Plafond du haut Var : « 14h34, 3200 m au large du Mounier » ; la Colletta (Châteauneuf-d'Entraunes) avait donné 3850 m en 2009 et des « minasses » à +10 en 2012 ; le gros nuage au-dessus de Beuil sert de repère pour transiter vers la Colmiane (Salvi 2012).",
+     "sources": [
+      "S64",
+      "S61"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "la-colletta-entraunes",
+     "name": "La Colletta (Châteauneuf-d'Entraunes) : très gros thermiques",
+     "lon": 6.8174,
+     "lat": 44.1494,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "13h-14h30",
+     "trigger": "sommet de la Colletta au-dessus du haut Var",
+     "description": "« Il y a 3 ans presque jour pour jour il m'avait propulsé à 3850 m ; aujourd'hui des grosses minasses avec des coups de vario démoniaques à +10 » : thermiques violents, gros nuage (Salvi 2012, 14h13) ; souvenir de 2009 au même endroit (3850 m, plafond de la journée). Relais de la remontée du haut Var.",
+     "sources": [
+      "S64",
+      "S61"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "mont-saint-honorat-est",
+     "name": "Mont Saint-Honorat (côté est : 3000 m en 2009, rien en 2012)",
+     "lon": 6.7644,
+     "lat": 44.0763,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "14h",
+     "trigger": "crêtes autour du Saint-Honorat, au-dessus du haut Var",
+     "description": "Deux récits divergent : « thermiques sur thermiques, je fais 3000 m et reste à l'est du Saint-Honorat » (Salvi 2009) ; « le Saint-Honorat ne donne rien, j'ai largement de quoi traverser la vallée » (Salvi 2012, vol à 2750 m). Relais utile par régime de sud / sud-ouest ; confiance basse.",
+     "sources": [
+      "S61",
+      "S64"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "cime-de-suorcas-peira-cava",
+     "name": "Cime de Suorcas – Peïra Cava – crête de Mandine (relais Colmiane → Sospel)",
+     "lon": 7.3628,
+     "lat": 43.9334,
+     "coord_quality": "source",
+     "alt_m": null,
+     "best_hours": "15h-16h30",
+     "trigger": "crêtes entre la Vésubie et le Bévéra ; thermique « fort et compliqué » à Peïra Cava",
+     "description": "Relances sur la route La Colmiane → Sospel : « après 16 km sans enrouler, je raccroche la Cime de Suorcas à 1920 m et ça remonte ; Peïra Cava, crête de Mandine : le glide jusqu'à un Sospel huileux est acquis » (Salvi 2012) ; à Peïra Cava « je dois me battre : thermique fort et compliqué » puis 2000 m au col avant le Férion (myniceflights 2021). Position IGN de Peïra Cava ; Suorcas à 7.3493/43.968, Mandine 7.3918/43.9175.",
+     "sources": [
+      "S64",
+      "S93"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "ferion-antennes-lignes",
+     "name": "Férion (au-dessus des lignes THT, « thermique du Férion »)",
+     "lon": 7.2727,
+     "lat": 43.8682,
+     "coord_quality": "approx",
+     "alt_m": null,
+     "best_hours": "après-midi",
+     "trigger": "sommet / col du Férion, avec ligne électrique ; nuage de Férion visible depuis Peïra Cava",
+     "description": "Relance de la route Colmiane – Férion – Gréolières : « on doit taper le Férion, entravé par une ligne ; au-dessus des lignes j'ai trouvé de quoi reprendre du gaz » (myniceflights 2021) ; le nuage du Férion est un repère même par jour de stabilité. Position approchée (plusieurs toponymes Férion : Mont Férion 7.2727/43.8682 retenu).",
+     "sources": [
+      "S93"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "valberg-mont-des-moulines",
+     "name": "Valberg – Mont des Moulinés (déco ~2083 m, « tiré vers le haut » dès 11h)",
+     "lon": 6.9885,
+     "lat": 44.1302,
+     "coord_quality": "source",
+     "alt_m": 2083,
+     "best_hours": "11h (octobre), avant 10h l'été",
+     "trigger": "dôme sommital du Mont des Moulinés, face au Mounier, brise de sud/sud-est légère",
+     "description": "Seul récit local trouvé : au sommet vers 11h, brise de sud-sud-est, décollage sur le dôme, « tout de suite tiré vers le haut, l'aérologie était vraiment idéale » ; atterro 1510 m, dénivelé 570 m, mais forte brise de sud 20-30 km/h dès 11h au Col des Huerris, aérologie « compliquée et perturbée l'été », gradient à la pente école (pilote local, ro2g). Pas de site FFVL. Position IGN du Mont des Moulinés (déco non localisé).",
+     "sources": [
+      "S118"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "valberg-col-des-huerris",
+     "name": "Valberg – Col des Huerris (1765 m) : brise de sud laminaire, thermiques sur le mamelon de la pente école",
+     "lon": 6.9394,
+     "lat": 44.1059,
+     "coord_quality": "source",
+     "alt_m": 1765,
+     "best_hours": "matin avant 10h ; brise de sud 20-30 km/h l'après-midi",
+     "trigger": "pelouse et mamelon devant la pente école, golf de Valberg ; déco herbeux plutôt que pierres",
+     "description": "Déduction à partir d'un seul récit : au col des Huerris, brise laminaire de sud de 20-30 km/h jusqu'au coucher (jeu de voile au sol) ; le même pilote ne peut pas décoller vers 10h (déco de pierres, aérologie « de cul ») et le vent forcit d'un coup à 11h ; le secteur près du golf est jugé « pas compatible » par jour d'orage. À utiliser comme repère de brise, pas comme thermique assuré.",
+     "sources": [
+      "S118"
+     ],
+     "confidence": "low"
     }
    ],
    "soaring_spots": [
@@ -5335,6 +6560,12 @@
        "coord_quality": "source"
       },
       {
+       "name": "Lauvet d'Ilonse",
+       "lon": 7.058,
+       "lat": 44.0599,
+       "coord_quality": "source"
+      },
+      {
        "name": "Beuil",
        "lon": 6.99,
        "lat": 44.0945,
@@ -5344,6 +6575,18 @@
        "name": "La Colmiane (La Balme)",
        "lon": 7.2187,
        "lat": 44.0877,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Cime de Suorcas",
+       "lon": 7.3493,
+       "lat": 43.968,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Crête de Mandine",
+       "lon": 7.3918,
+       "lat": 43.9175,
        "coord_quality": "source"
       },
       {
@@ -5360,7 +6603,7 @@
       }
      ],
      "distance_km": 130,
-     "description": "Décollage Mont Vial 11h15 (2285 m, dérive ENE), remontée du haut Var « bleu », passage vers Auron, Raya / Balme avec confluence plus à l'ouest que d'habitude (2850 m), Caire Gros, Férion, Peïra-Cava, Mandine, glide vers Sospel puis arrivée à la plage de Roquebrune/Menton face à la brise de mer venant du col de Castillon (10 km/h d'est huileux au-dessus de l'eau). Printemps (neige fraîche).",
+     "description": "Décollage Mont Vial 11h15 (2285 m, dérive ENE), remontée du haut Var « bleu », passage vers Auron, Raya / Balme avec confluence plus à l'ouest que d'habitude (2850 m), Caire Gros, Férion, Peïra-Cava, Mandine, glide vers Sospel puis arrivée à la plage de Roquebrune/Menton face à la brise de mer venant du col de Castillon (10 km/h d'est huileux au-dessus de l'eau). Printemps (neige fraîche). Relais décrits : La Colletta (très gros thermiques), Mounier 3200 m, nuage au-dessus de Beuil, Lauvet d'Ilonse (plein 2990 m avant la transition), Balme (2850 m), Cime de Suorcas (raccroche à 1920 m), Peïra Cava / Mandine.",
      "sources": [
       "S64"
      ]
@@ -5465,6 +6708,18 @@
        "coord_quality": "source"
       },
       {
+       "name": "Col de la Coupière",
+       "lon": 7.447,
+       "lat": 43.7755,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Falaises de Gorbio",
+       "lon": 7.445,
+       "lat": 43.7922,
+       "coord_quality": "approx"
+      },
+      {
        "name": "Sainte-Agnès",
        "lon": 7.4615,
        "lat": 43.8004,
@@ -5490,7 +6745,7 @@
       }
      ],
      "distance_km": null,
-     "description": "Guide de P. Salvi : depuis le grand bocal de Roquebrune viser la crête au SO du Monte Grosso (pas l'Agaisen, souvent tardif et stable), avec brise forte : viser la crête et non les faces ouest ; pour le retour, arriver près du sommet du Razet et passer le col de Castillon nettement plus haut que les lignes (effet de verrou), sinon porter sa croix face à la forte brise. Autres options : Mangiabo → Authion → Madone de Fenestre → Roquebillière → Venanson → La Colmiane (en évitant le Parc), ou vers la Roya et Tende, ou vers l'Italie (Bevera, Isolabona, Rochetta).",
+     "description": "Guide de P. Salvi : depuis le grand bocal de Roquebrune viser la crête au SO du Monte Grosso (pas l'Agaisen, souvent tardif et stable), avec brise forte : viser la crête et non les faces ouest ; pour le retour, arriver près du sommet du Razet et passer le col de Castillon nettement plus haut que les lignes (effet de verrou), sinon porter sa croix face à la forte brise. Autres options : Mangiabo → Authion → Madone de Fenestre → Roquebillière → Venanson → La Colmiane (en évitant le Parc), ou vers la Roya et Tende, ou vers l'Italie (Bevera, Isolabona, Rochetta). Relais dans l'ordre : Mont Gros (ou plus à l'ouest), falaises de Gorbio, crêtes de Sainte-Agnès, puis Castellar (butte, falaises) ou « thermique de la Taupe » ; retour par le « thermique du retour » (face ouest de Sainte-Agnès), puis Gorbio et le col de la Coupière.",
      "sources": [
       "S85"
      ]
@@ -5578,12 +6833,13 @@
    "shows": "Densité des thermiques relevés dans les pistes GPS d'octobre autour de Saint-André : axe principal Chalvet – Antenne-Reynière – Montagne de Charvet – Cheval Blanc – Dormillouse, branches Crête de Serres / Pic de Chammatte à l'est, Montagne de Coupe, Coste Longue, Grand Cordeil, Mouchon à l'ouest, Seyne et Dormillouse au nord. Aucune flèche de brise n'est dessinée : la carte est utilisée pour localiser les relais de cross.",
    "extracted_to": [
     "antenne-reyniere",
+    "carriere-avant-antennes",
+    "crete-des-serres-angle",
     "montagne-de-charvet",
     "pic-de-chamatte",
-    "crete-des-serres-angle",
-    "saint-andre-dormillouse-ar",
     "saint-andre-chamatte-reyniere",
-    "saint-andre-circuit-ouest"
+    "saint-andre-circuit-ouest",
+    "saint-andre-dormillouse-ar"
    ],
    "sources": [
     "S26"
@@ -5614,13 +6870,20 @@
    "page_url": "http://www.augredelair.fr/wp-content/uploads/2015/01/luc_armant_club20.pdf",
    "pdf_page": 1,
    "publisher": "Au gré de l'air (Luc Armant)",
-   "shows": "Carte IGN annotée du grand bocal Gourdon – Courmettes – Tourrettes – baous de Vence – Saint-Jeannet : atterrissages numérotés (faciles, délicats, très délicats, non repérés), zones d'ascendance (A à P) et trajets de transition entre les cônes de finesse ; p.3 : photos des falaises des Maisons Bulles et du deuxième rideau de thermiques.",
+   "shows": "Carte IGN annotée du grand bocal Gourdon – Courmettes – Tourrettes – baous de Vence – Saint-Jeannet : atterrissages numérotés (faciles, délicats, très délicats, non repérés), zones d'ascendance (A à P) et trajets de transition entre les cônes de finesse ; p.3 : photos des falaises des Maisons Bulles et du deuxième rideau de thermiques. Les zones d'ascendance thermique (taches vertes A à P) sont reprises en points de relance (voir thermal_spots du massif prealpes-nice-var) ; positions déduites de la carte, donc approximatives.",
    "extracted_to": [
-    "gourdon-saint-jeannet",
-    "courmettes-antennes",
-    "baou-des-blancs",
+    "baou-de-la-gaude",
     "baou-de-saint-jeannet",
-    "baou-des-noirs-dynamique"
+    "baou-des-blancs",
+    "baou-des-noirs",
+    "baou-des-noirs-dynamique",
+    "butte-avant-baou-des-blancs",
+    "courmettes-antennes",
+    "gourdon-saint-jeannet",
+    "gourdon-village-a",
+    "tourettes-butte-moustachu-chevaux",
+    "tourettes-deuxieme-rideau",
+    "tourettes-maisons-bulles"
    ],
    "sources": [
     "S57"
@@ -5643,6 +6906,30 @@
    "sources": [
     "S55",
     "S98"
+   ]
+  },
+  {
+   "id": "F5",
+   "massif": "haut-verdon-allos",
+   "title": "Carte des points chauds thermiques d'octobre (FlyStAndre) : relais du cross vers Dormillouse (secteur Haut-Verdon)",
+   "image_url": "https://static.wixstatic.com/media/39bcf3_c268c9b69704466eb677fad2beb14bf8~mv2.png",
+   "page_url": "https://web.archive.org/web/2022/https://www.flystandre.com/single-post/Saint-Andre-Les-Alpes-XC-Inspiration",
+   "pdf_page": null,
+   "publisher": "FlyStAndre (copie Wayback)",
+   "shows": "Même carte que F1, partie nord : Cheval Blanc, Coste Longue, Grand Cordeil, Dormillouse. Les relais cités par les récits (Allier, Meunier, Lambruisse, Tromas, Chau, Estrop) en sont rapprochés ; la carte ne les nomme pas tous.",
+   "extracted_to": [
+    "crete-de-la-chau",
+    "crete-de-lambruisse",
+    "montagne-de-l-allier",
+    "sommet-de-meunier",
+    "sommet-du-tromas",
+    "tete-de-l-estrop",
+    "cheval-blanc-pointe-nord",
+    "coste-longue-pointe-sud",
+    "montagne-de-cordeil"
+   ],
+   "sources": [
+    "S26"
    ]
   }
  ],
@@ -6519,6 +7806,240 @@
    "type": "web",
    "lang": "fr",
    "notes": "Image d'illustration de la page « Les vols de distance » : carte de densité de traces GPS Gréolières – Col de Bleine – Teillon – Saint-André – Dormillouse – Savines."
+  },
+  {
+   "id": "S99",
+   "title": "Aller-retour bouclé Saint-André – Dormillouse, 23 juin 2006 (V. Berchet et le groupe)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/victor_berchet_Victor20060623.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit de groupe, 5 pilotes, 101 km : antennes, montagne de l'Allier, Meunier, Séoune, Tournon, Cheval Blanc (pointe nord), Carton, La Chaux, Tromas, la Blanche, retour par Chamatte (Thorame), Cordeil, Maurel."
+  },
+  {
+   "id": "S100",
+   "title": "Aller-retour Saint-André – Dormillouse, 13 juin 2006 (V. Berchet)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/victor_berchet_Victor20060613.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit 96 km (posé à Thorame-Haute) : mêmes relais que le 23 juin."
+  },
+  {
+   "id": "S101",
+   "title": "Saint-André – Mont Dauphin, 85 km, 25 mars 2011 (G. Jacqueline)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/gilles_jacqueline_StAndreMontDauphin.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit : déco sud, carrière avant les antennes, antennes, crête de Lambruisse, col de Séoune, Coste Longue, Boules, La Chaux, Tromas, Blanche, Morgon, venturi de Saint-Alban."
+  },
+  {
+   "id": "S102",
+   "title": "Saint-André – Dormillouse, 24 mai 2010 (J.-M. Fernandez)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/jm_fernandez_RecitStAndreDormillouse24mai2010.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit : carrière puis antennes, pompe en milieu de vallée vers Lambruisse, Cheval Blanc, Carton (pointe ouest), La Chaux (arête ouest), Tromas, Blanche, retour par Cadun, Vachière, Chamatte de Thorame, Cordeil."
+  },
+  {
+   "id": "S103",
+   "title": "Bleyne – Chaillol – La Bernarde, 218 km, 22 avril 2006 (L. Armant)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/luc_armant_RecitLucArmant22avril2006.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit horodaté : nuage des Lattes, Vauplane, Pic de Chamatte, crête des Serres, Maurel, Cordeil, Côte Longue, La Chaux, Tromas, Blanche, retour par Vachière, Chamatte de Thorame, Cordeil, Maurel, crête des Serres, Crémon."
+  },
+  {
+   "id": "S104",
+   "title": "Récit du 22 avril 2006, Col de Bleine (T. Guillard)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/RecitThierryGuillard22avril2006.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit : col des Portes, Chamatte, crête des Serres, Reynière, Séoune, montagne de Tournon, Cheval Blanc, Cordeil, Puy de Rent."
+  },
+  {
+   "id": "S105",
+   "title": "Récit du 22 avril 2006 (D. Briois)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/RecitDavidBriois22avril2006.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit court : transition Chamatte (3000 m), crête des Serres (3200 m)."
+  },
+  {
+   "id": "S106",
+   "title": "Bleine – Dormillouse – Thorame, 29 août 2008 (D. Briois)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/BleineDormillouseThorame29aout2008DavidBriois.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit : Bernarde, crête des Serres, Maurel (2500 m), Tromas (3000 m), Cadun, thermique de Chamatte."
+  },
+  {
+   "id": "S107",
+   "title": "Les baous de la Côte d'Azur : Gourdon – Baou de la Gaude – Courmettes, 16 janvier 2009 (D. Briois)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/LesBaous16Janvier2009DavidBriois.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit d'hiver : village de Gourdon, Cavillore, antennes de Courmettes, baous des Noirs et des Blancs, plafonds de 1300 m."
+  },
+  {
+   "id": "S108",
+   "title": "Premier 100 bornes (O. Rodde)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/OlivierRodde1.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit : Bleine – Saint-André – Dormillouse, Pic de Chamatte, crête de Barnabé, Cheval Blanc, la Blanche."
+  },
+  {
+   "id": "S109",
+   "title": "Aller-retour Dormillouse (O. Rodde)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/OlivierRodde2.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit : Cordeil, Côte Longue, La Chaux, Tromas, Carton, Puy de Rent."
+  },
+  {
+   "id": "S110",
+   "title": "Col de Bleyne – Côte Longue, 25 mai 2005 (N. Fabre)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/NicolasFabre02.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit : Bleyne, Teillon, ruines au-dessus du lac de Castillon, Cordeil."
+  },
+  {
+   "id": "S111",
+   "title": "A/R Gréolières – Coursegoules, 14 février 2006 (A. Rogé, « Parapentor »)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/Parapentor_Alain1.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit d'hiver : tunnels, Vérriou, Jérusalem, Coursegoules."
+  },
+  {
+   "id": "S112",
+   "title": "Col de Bleine, 8 octobre (J.-M. Fernandez, « B comme Bleine »)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/JMF3.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit : « le bois brûlé est fidèle à lui-même, toujours généreux en thermique »."
+  },
+  {
+   "id": "S113",
+   "title": "Mon premier cross : Fourneby – Saint-André, 14 avril 2013",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/20130414-Mon-premier-cross-Fourneby-Saint-André.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit : Fourneby, bois brûlé, Teillon, Crémon, crête des Serres, carrière avant Saint-André."
+  },
+  {
+   "id": "S114",
+   "title": "Cheiron – Thorame, 12 juin 2014",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/2014-06-12-Cheiron-Thorame.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit : Fourneuby, bois brûlé, Serre de Montdenier (8 m/s), Montagne de Coupe, Dormillouse, retour jusqu'à Thorame."
+  },
+  {
+   "id": "S115",
+   "title": "Triangle Fourneuby – Moustiers – Coupe – la Blanche, 30 juin 2006 (L. Armant)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/luc_armant_luc30.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit horodaté : Mont Denier, plateau de Valensole, nuage du Mourre de Chanier (3300 m), sommet au sud de la montagne de Coupe, Cheval Blanc, Tromas, tête de l'Estrop (3680 m), retour par Vachière puis Coupe."
+  },
+  {
+   "id": "S116",
+   "title": "Triangle de 125 km en Marche et Vol, 19 juillet 2006 (L. Armant)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/luc_armant_luc32.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit court : Mont Denier (sol humide, retard de réveil), Beynes, la Gourrée, cap sur le Cheval Blanc."
+  },
+  {
+   "id": "S117",
+   "title": "Parapente Sisteron 2026 : voler au Rocher de la Baume (guide)",
+   "url": "https://www.summits.fr/article/parapente-sisteron-guide",
+   "publisher": "summits.fr",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Guide commercial : falaises calcaires de Sisteron chauffées dès le milieu de matinée au printemps et en été, plafonds souvent > 3000 m, Sisteron point de transit classique vers Saint-André / Dormillouse ou les Baronnies. Peu détaillé."
+  },
+  {
+   "id": "S118",
+   "title": "Valberg – Beuil – Daluis (page « Chez Brico », parapente)",
+   "url": "http://ro2g.com/brico/valberg-beuil.html",
+   "publisher": "ro2g.com (pilote local)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Récits courts : Col des Huerris 1765 m (brise de sud laminaire 20-30 km/h), Mont des Moulinés 2083 m (atterro 1510 m, dénivelé 570 m), aérologie compliquée l'été, meilleure en octobre."
+  },
+  {
+   "id": "S119",
+   "title": "Alea jacta est : Roquebrune – Isolabona – San Stefano, 22 février 2014",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/Rqb_SanStef_22022014.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit d'hiver au départ de Roquebrune : Mont Gros, thermique à 1050 m, frontière, antenne au-dessus de laquelle on sort des basses couches, crête au nord d'Isolabona."
+  },
+  {
+   "id": "S120",
+   "title": "New junior FAI triangle record of 301km (Hans Petit, XC Mag, 14/08/2025)",
+   "url": "https://xcmag.com/?p=122440",
+   "publisher": "XC Mag (Cross Country Magazine)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Récit du 301,1 km du 07/08/2025 depuis le col de l'Izoard : Cheval Blanc à 3000 m et Le Sapet à 3000 m, thermique sous le vent du Sapet indiqué par un vautour (+300 m) au retour."
+  },
+  {
+   "id": "S121",
+   "title": "Bleyne – Serre-Ponçon aller-retour, triangle de 169 km, 2005 (L. Armant)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/luc_armant_Luc22.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit : combe SE de Bleyne, Cordeil, Côte Longue, La Chaux, tête du Bau, la Blanche, estrop et Cadun au retour."
+  },
+  {
+   "id": "S122",
+   "title": "En compagnie d'un oiseau rare… (V. Donius, récit illustré, 2006)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/valerie_donius_Valerie2.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit horodaté d'un vol avec Luc Armant : rue de nuages vers les antennes (12h50), approche de Boules (13h40), thermique de la tête du Bau (14h12), gauche du Tromas (15h13)."
+  },
+  {
+   "id": "S123",
+   "title": "Ma X-alps ! (B. Dijols, 11 février 2006)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/Bruno1.pdf",
+   "publisher": "Au gré de l'air – récit de vol",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit d'hiver : cheminement Gourdon, Cavillore, antennes de Courmettes, Coursegoules ; « le thermique est si bon aux Courmettes »."
+  },
+  {
+   "id": "S124",
+   "title": "Mini sortie club à La Colmiane, 22 octobre 2006 (A. Rogé, « Parapentor »)",
+   "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/Parapentor_Alain3.pdf",
+   "publisher": "Au gré de l'air – récit de sortie",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Récit : col de Veillos, brise de vallée tardive, « les thermiques du Pétoumier »."
   }
  ]
 }

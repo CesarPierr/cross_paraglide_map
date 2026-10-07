@@ -599,16 +599,17 @@
         {
           "id": "huez-toits",
           "name": "Toits d'Huez / pentes sous l'Éclose",
-          "lon": 6.06,
-          "lat": 45.0833,
+          "lon": 6.0533,
+          "lat": 45.0774,
           "alt_m": 1500,
           "best_hours": "13h-14h (été)",
-          "trigger": "Village d'Huez et schistes qui descendent du Bras",
-          "description": "Le guide de site conseille de viser le clocher d'Huez (« ascendances au-dessus des toits ») puis de raccrocher les schistes du Bras ; thermiques dès 13h-14h pour les bons pilotes, avec risque d'être contré ensuite par la brise de vallée.",
+          "trigger": "Village d'Huez (toits, clocher) et schistes qui descendent du Bras ; sur le cheminement de l'Éclose",
+          "description": "Le guide de site conseille de viser le clocher d'Huez (« ascendances au-dessus des toits ») puis de raccrocher les schistes du Bras ; thermiques dès 13h-14h pour les bons pilotes, avec risque d'être contré ensuite par la brise de vallée. Rôle : déclencheur au départ de l'Éclose (premier point du cheminement classique) puis relance vers les schistes du Bras. Position corrigée : église Saint-Ferréol du village d'Huez (géocodeur IGN), le « clocher d'Huez » du guide. Le service de l'école locale confirme que, dès fin février, les conditions thermiques permettent de monter jusqu'à 3000 m au-dessus de l'Alpe d'Huez et de survoler Oz, Vaujany, Auris et Villard-Reculas.",
           "sources": [
-            "S1"
+            "S1",
+            "S114"
           ],
-          "coord_quality": "approx"
+          "coord_quality": "source"
         },
         {
           "id": "villard-reymond-falaise",
@@ -618,9 +619,10 @@
           "alt_m": 1700,
           "best_hours": "fin de matinée - début d'après-midi",
           "trigger": "Falaise échauffée par le soleil depuis le matin",
-          "description": "« On peut aussi, en fin de matinée ou début d'après-midi, tirer à gauche et essayer de tenir devant la falaise chauffée depuis le matin » : possibilité de tenir une heure dans de petites ascendances (guide de site). Position déduite du décollage.",
+          "description": "« On peut aussi, en fin de matinée ou début d'après-midi, tirer à gauche et essayer de tenir devant la falaise chauffée depuis le matin » : possibilité de tenir une heure dans de petites ascendances (guide de site). Position déduite du décollage. Un compte rendu CHVD de novembre 2024 note aussi, à Prégentil, que « le thermique qui vient du versant sud reste raisonnable en cette saison mais peut devenir gênant plus tôt dans l'année », et que la crête sud lance parfois « un petit courant d'air de travers ou carrément arrière » au décollage nord. Rôle : déclencheur au pied du décollage ; thermique de travers à surveiller au décollage au printemps et en été.",
           "sources": [
-            "S1"
+            "S1",
+            "S108"
           ],
           "coord_quality": "approx"
         },
@@ -653,6 +655,316 @@
             "S1"
           ],
           "coord_quality": "source"
+        },
+        {
+          "id": "bras-schistes-huez",
+          "name": "Schistes du Bras (Huez – Villard-Reculas)",
+          "lon": 6.047,
+          "lat": 45.0882,
+          "coord_quality": "source",
+          "best_hours": "13h-14h (été) ; l'après-midi",
+          "trigger": "Schistes et pentes sèches qui descendent du Bras, au-dessus de la combe du Bras, exposés au sud-ouest",
+          "description": "Point de relance du cheminement classique de l'Éclose : après le clocher d'Huez, « tirer à droite et tenter de raccrocher les schistes qui descendent du Bras » (guide de site, page Éclose). Le guide du 2e tronçon décrit le même point en sens inverse : depuis Poutran, suivre l'arête pour remonter vers le Bras en passant au-dessus de Villard-Reculas avant de déboucher sur Bourg-d'Oisans. Rôle : relance entre Huez / Poutran et la descente sur Bourg (atterrissages du Vert et des Essoulieux, où la brise de vallée contre après 13h). Position : sommet « le Bras » (géocodeur IGN) ; l'extension exacte des schistes n'est pas décrite.",
+          "confidence": "medium",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "id": "signal-huez-pentes",
+          "name": "Pentes du Signal (Alpe d'Huez), thermique de printemps",
+          "lon": 6.0602,
+          "lat": 45.1014,
+          "alt_m": 2104,
+          "coord_quality": "source",
+          "best_hours": "12h-14h (mars-avril) ; thermique possible dès février",
+          "trigger": "Versants du Signal et de la station au-dessus du rond-point des pistes, au soleil, avec neige résiduelle en contraste",
+          "description": "Déclencheur et plafond des vols de printemps depuis le Signal. Un ancien habitant de la station : « du Signal à cette époque (avril) il y a de quoi enrouler sévère » ; un autre signale des « thermiques possibles en février ». L'école locale annonce de la grimpe jusqu'à 3000 m à partir de fin février, avec survol d'Oz, Vaujany, Auris et Villard-Reculas. Les statistiques Syride placent le pic de décollage du Signal entre 12h et 14h, de mars à avril, avec des vols de 187 et 166 km. En été le site reste calme (« vent faible, alimentation par les brises de pente »).",
+          "confidence": "medium",
+          "sources": [
+            "S3",
+            "S114",
+            "S42",
+            "S53"
+          ]
+        },
+        {
+          "id": "poutran-arete-relance",
+          "name": "Arête et combe de Poutran (relance vers le Bras)",
+          "lon": 6.0768,
+          "lat": 45.1084,
+          "coord_quality": "source",
+          "best_hours": "fin de matinée et après-midi (thermiques de fin de matinée plutôt côté ouest)",
+          "trigger": "Arête du col de Poutran et pentes de la combe, entre le 2e tronçon et Villard-Reculas",
+          "description": "Point de passage du cheminement classique depuis le 2e tronçon (2700 m) : « partir vers Poutran, suivre l'arête pour essayer de remonter vers le Bras en passant au-dessus de Villard-Reculas et déboucher sur Bourg-d'Oisans ». Le guide précise que « les thermiques de fin de matinée sont plutôt ouest » au 2e tronçon ; un ancien de la station dit de la combe de Poutran qu'elle « marche pas toujours mais quand ça fait… » (soaring, accessible après la fonte des neiges). Rôle : relance en tête de combe, avant la traversée vers le Bras. Position : col du Poutran (IGN).",
+          "confidence": "medium",
+          "sources": [
+            "S1",
+            "S3",
+            "S60"
+          ]
+        },
+        {
+          "id": "alpe-huez-2700-pentes-ouest",
+          "name": "Pentes ouest sous le décollage de 2700 (2e tronçon)",
+          "lon": 6.1032,
+          "lat": 45.1197,
+          "coord_quality": "source",
+          "best_hours": "fin de matinée puis après-midi (« souvent meilleur en fin d'aprem »)",
+          "trigger": "Faces sud et ouest sous l'arrivée du 2e tronçon, cailloux et gros rochers qui chauffent",
+          "description": "Déclencheur du vol de soaring de l'après-midi : le décollage du 2e tronçon est « plutôt balistique le matin, soaring l'après-midi », avec des thermiques de fin de matinée « plutôt ouest » (guide de site). Un ancien habitant ajoute que le décollage de 2700 est « souvent meilleur en fin d'après-midi ». Rôle : déclencheur au départ des deux cheminements classiques, vers Poutran / le Bras / Bourg ou vers Vaujany / le Collet.",
+          "confidence": "medium",
+          "sources": [
+            "S1",
+            "S3",
+            "VS12"
+          ]
+        },
+        {
+          "id": "sabot-crete-cote-belle",
+          "name": "Crête de Côte Belle et du col du Sabot (relance vers l'Alpe d'Huez)",
+          "lon": 6.0981,
+          "lat": 45.1804,
+          "coord_quality": "source",
+          "best_hours": "à partir de 16h (été) ; soaring de 2 à 3 h",
+          "trigger": "Crête et pentes herbeuses au sud-ouest du col du Sabot, au-dessus des chalets de Côte Belle",
+          "description": "Point de raccroche cité par trois guides de site : depuis le Pic Blanc ou le 2e tronçon, on traverse le plateau vers l'Eau d'Olle pour « passer l'après-midi à faire du soaring à Côte Belle » ; depuis la Cheminée de Vaujany il est possible de « raccrocher à Côte Belle et de remonter le plus haut possible avant de décider de se poser ». Au décollage du Sabot, vers 16h, on va chercher les « ascendances dynamiques sur le relief à gauche du décollage » et on remonte la crête ; repasser au-dessus du décollage est courant, on peut grimper jusqu'à 2700 m puis tenter de rejoindre l'Alpe d'Huez ; 2 à 3 h de vol sont courantes. Rôle : relance puis plafond avant la traversée du plateau (vers l'Alpe d'Huez) ou du retour à Vaujany (atterrissage du Collet, vent rarement au-dessus de 15 km/h). Position : chalets de Côte Belle (IGN).",
+          "confidence": "medium",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "id": "cheminee-vaujany-ascenseur",
+          "name": "Cheminée de Vaujany : « l'ascenseur » de 16h",
+          "lon": 6.0585,
+          "lat": 45.1655,
+          "coord_quality": "approx",
+          "best_hours": "à partir de 16h (été)",
+          "trigger": "Pente sud-est sous les palissades et filets paravalanche, sous le câble de la cheminée d'équilibre EDF",
+          "description": "Déclencheur de l'après-midi à la Cheminée de Vaujany : « si vous décollez vers 16 heures, vous avez l'impression dès le départ de vous trouver dans un ascenseur ». Le guide conseille de faire le plein à proximité du décollage puis de longer le relief vers la gauche en direction du Rissiou (voir les Rochers du Rissiou). Vol d'après-midi réservé aux pilotes confirmés ; par vent fort de nord, ne pas y aller. Position déduite du décollage (cône herbeux près d'un pylône, sentier à partir de la cheminée d'équilibre) ; non donnée par une coordonnée.",
+          "confidence": "medium",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "id": "rissiou-rochers",
+          "name": "Rochers du Rissiou (Vaujany), du Petit Chalvet au col du Sabot",
+          "lon": 6.0799,
+          "lat": 45.1862,
+          "coord_quality": "source",
+          "best_hours": "après-midi (à partir de 16h au décollage de la Cheminée) ; octobre : petits thermiques au sommet",
+          "trigger": "Barre rocheuse et antécimes du Rissiou (Petit Chalvet 2315 m) au-dessus de Vaujany, face au glacier des Grandes Rousses",
+          "description": "Cheminement de soaring de l'après-midi : après la Cheminée, « suivre les Rochers du Rissiou et aller en direction du col du Sabot », « soaring grandiose » face aux glaciers des Grandes Rousses ; depuis le Dôme des Petites Rousses, on peut aussi traverser la vallée, raccrocher à la Cheminée puis suivre le Rissiou jusqu'au Collet. Un compte rendu d'octobre mentionne « quelques petits thermiques bien agréables pour la saison » au Petit Chalvet, antécime du Rissiou. Rôle : relance puis liaison vers Côte Belle et le col du Sabot. Position : Rocher Rissiou (IGN).",
+          "confidence": "medium",
+          "sources": [
+            "S1",
+            "S112"
+          ]
+        },
+        {
+          "id": "deux-alpes-diable-toura-jandri",
+          "name": "Tête Moute, Tête de la Toura et crête du Jandri (relance après le Diable)",
+          "lon": 6.1593,
+          "lat": 44.9915,
+          "coord_quality": "source",
+          "best_hours": "début d'après-midi (décollage du sommet du Diable à 13h45, septembre)",
+          "trigger": "Chaîne Tête Moute - Diable - Tête de la Toura - Jandri, faces exposées au sud-est au-dessus du plan du Lac (1600 m de dénivelé)",
+          "description": "Déclencheur du vol de montagne des Deux Alpes vers le fond du Vénéon : décollé du haut du télésiège du Diable (2800 m) et basculé au sud-est vers la Tête Moute, « 1600 m au-dessus du Vénéon, le thermique ne se fait pas attendre » ; le Diable, la Tête de la Toura et le Jandri donnent une « aérologie consistante » qui porte « largement au-dessus de la station ». Rôle : déclencheur puis relance pour entamer le cheminement vers la vallée de la Selle et les faces sud de la Meije. Même conseil d'un moniteur du coin : décoller en sud-ouest en haut du Diable et voler sur les faces sud vers la Bérarde, ne s'engager que si l'on est assez haut pour assurer le retour. Position : Tête Moute (IGN) ; Tête de la Toura : 6.1824 E, 44.9840 N.",
+          "confidence": "medium",
+          "sources": [
+            "S103"
+          ]
+        },
+        {
+          "id": "plat-de-la-selle-face-sud",
+          "name": "Face sud de l'Aiguille du Plat de la Selle (ravine sèche de 1500 m)",
+          "lon": 6.2225,
+          "lat": 44.9644,
+          "coord_quality": "source",
+          "best_hours": "début d'après-midi (vol de septembre, thermique encore actif jusqu'à 17h)",
+          "trigger": "Grande ravine sèche et face sud de l'Aiguille du Plat de la Selle, plus de 1500 m de dénivelé, « bon chauffage solaire »",
+          "description": "Relance puis plafond (plus de 3600 m) du vol Deux Alpes - Meije : après la traversée de la vallée de la Selle, « sitôt sur la face sud de l'Aiguille du Plat de la Selle, je me fais grimper » ; il faut parfois bien incliner et cadencer le virage pour garder la pompe. La ligne de crête derrière conduit au massif du Soreiller, à la Tête de la Gandolière puis aux Têtes du Replat, qui offrent « souvent une pente bien alimentée en ascendance ». Vol de très haute montagne dans le Parc national des Écrins, réglementation du survol à respecter.",
+          "confidence": "medium",
+          "sources": [
+            "S103"
+          ]
+        },
+        {
+          "id": "pointe-thorant-pompe",
+          "name": "Pointe Thorant (arête et ravine, « pompe fiable »)",
+          "lon": 6.263,
+          "lat": 44.996,
+          "coord_quality": "source",
+          "best_hours": "milieu d'après-midi (avant 16h15, après plus d'une heure passée sur l'arête ; septembre)",
+          "trigger": "Arête rocheuse et ravine de la Pointe Thorant, à l'ouest du Râteau",
+          "description": "Point de relance avant l'assaut de la Meije : trop bas pour attaquer les parois sud, le pilote passe devant le Râteau et file à l'ouest, jusqu'aux ravines et arêtes de la Pointe Thorant, « une belle pompe fiable » où il passe plus d'une heure à s'élever sur l'arête pour regagner l'altitude perdue au-dessus des glaciers. Rôle : relance (regagner environ 3600 m) avant la brèche de la Meije.",
+          "confidence": "medium",
+          "sources": [
+            "S103"
+          ]
+        },
+        {
+          "id": "meije-breche-face-sud",
+          "name": "Brèche et face sud de la Meije : pompes vers 3600-3850 m",
+          "lon": 6.2993,
+          "lat": 45.004,
+          "coord_quality": "source",
+          "best_hours": "fin d'après-midi (16h15 en septembre 2006) ; milieu d'après-midi en août 2021",
+          "trigger": "Parois et arêtes sud de la Meije, au pied de la pyramide Duhamel ; cirque rocheux dégagé au soleil",
+          "description": "Plafond le plus haut de la haute vallée de la Romanche. Récit de 2006 : à 16h15, à 3600 m, « au pied de la pyramide Duhamel l'ascendance est efficace mais douce », en moins d'un quart d'heure le pilote passe au-dessus des sommets. Récit de 2021 : « une grosse pompe qui nous propulse à 7 m/s jusqu'à 3850 m » juste avant la Meije. Un pilote local décrit l'entrée par le nord : décoller de La Grave à 3200 m par léger nord, passer au large des Enfetchores et se jeter sur la Meijette (voir ce point) d'où un thermique remonte jusqu'au sommet. Rôle : plafond et point de passage obligé entre les Deux Alpes / la Bérarde et le Lautaret ; attention à la Lombarde et aux brises. Position : brèche de la Meije (IGN).",
+          "confidence": "medium",
+          "sources": [
+            "S103",
+            "S106",
+            "S49"
+          ]
+        },
+        {
+          "id": "meijette-la-grave",
+          "name": "La Meijette (La Grave) : thermique vers le sommet de la Meije",
+          "lon": 6.3091,
+          "lat": 45.0181,
+          "coord_quality": "source",
+          "best_hours": "non précisé (vol de journée, décollage de La Grave à 3200 m)",
+          "trigger": "Arête de la Meijette, sud-ouest de la Meije, atteinte en passant au large des Enfetchores",
+          "description": "Un pilote du forum décrit le chemin pour survoler la Meije depuis La Grave : « tu décolles de La Grave à 3200 m avec un léger nord, tu passes au large des Enfetchores pour te jeter sur la Meijette ; de là un thermique te remonte direct au sommet, mais c'est par la face nord ». Il prévient : attention à la Lombarde, et poser plutôt à Villar-d'Arêne qu'à La Grave l'après-midi. Rôle : déclencheur. Récit isolé (forum), position de l'arête donnée par l'IGN.",
+          "confidence": "medium",
+          "sources": [
+            "S49"
+          ]
+        },
+        {
+          "id": "grande-ruine-plafond",
+          "name": "Grande Ruine : plafond de fin d'après-midi (cumulus)",
+          "lon": 6.3303,
+          "lat": 44.9692,
+          "coord_quality": "source",
+          "best_hours": "17h (septembre 2006)",
+          "trigger": "Massif de la Grande Ruine, cumulus qui se forment 100 m au-dessus des sommets",
+          "description": "Après la Meije : « 17 h au plafond à la Grande Ruine, schuss vers la Barre » ; des cumulus se forment 100 m au-dessus de la Grande Ruine et de la Barre des Écrins, qui « tendent les bras ». L'activité thermique mollit autour de 17h10 à l'aplomb du col des Écrins, et le retour se fait par le toboggan de Pié Bérarde. Rôle : plafond avant la transition vers la Barre des Écrins ou le retour vers La Bérarde.",
+          "confidence": "medium",
+          "sources": [
+            "S103"
+          ]
+        },
+        {
+          "id": "deux-alpes-coche-muzelle",
+          "name": "Crête de la Coche vers la Muzelle (Deux Alpes)",
+          "lon": 6.1325,
+          "lat": 44.9628,
+          "coord_quality": "source",
+          "best_hours": "après-midi (thermique fort l'été) ; fin de matinée pour finir à Venosc",
+          "trigger": "Crête qui prolonge les Perrons vers le sud, du col de la Coche de Lanchâtra vers la Roche de la Muzelle ; petite brise de pente sur le versant sud-est",
+          "description": "Promenade classique des Deux Alpes décrite par le guide de site : « partir vers la Coche, après avoir fait le plein (au-dessus des Perrons), et faire du soaring le long de l'arête en direction de la Muzelle » ; décollé en fin de matinée, on peut aller poser à Venosc (attention : conditions très fortes l'après-midi à Venosc). Rôle : relance après le plein des Perrons, puis soaring le long de la crête. Les vols rando du club CHVD confirment des brises thermiques sur ce versant : « petit brisou » qui monte du versant SE au col de la Coche (journée voilée, ascendances faibles et étroites au-dessus de l'atterrissage), « petite brise thermique » qui alimente le décollage de la Muzelle. Position : col de la Coche de Lanchâtra (IGN), sur l'arête entre les Perrons et la Muzelle.",
+          "confidence": "medium",
+          "sources": [
+            "S1",
+            "S111",
+            "S120"
+          ]
+        },
+        {
+          "id": "deux-alpes-rachas",
+          "name": "Montagne de Rachas (Deux Alpes), arête de soaring",
+          "lon": 6.1566,
+          "lat": 44.9944,
+          "coord_quality": "source",
+          "best_hours": "à partir de 16h (déco du Diable) ; après-midi",
+          "trigger": "Crête de Rachas, versant sud-ouest exposé au-dessus de la station et du trou de Venosc",
+          "description": "Le guide de site indique que les pilotes chevronnés peuvent décoller du « trou de Venosc et remonter jusqu'au Rachas en vol de pente », puis se livrer à un beau soaring le long des crêtes : « on s'élève facilement de plusieurs centaines de mètres et il est possible d'aller survoler le Rachas ». Rôle : plafond de la balade des Deux Alpes, avant d'aller vers la Coche ou la Muzelle. Au retour vers l'arête qui plonge dans la vallée du Vénéon, l'endroit est souvent turbulent avec de grosses fermetures : garder de la marge au relief. Position : montagne de Rachas (IGN) ; l'identification du « Rachas » du guide avec ce sommet reste à confirmer.",
+          "confidence": "medium",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "id": "aiguille-de-venosc-matin",
+          "name": "Aiguille de Venosc : ascendances du matin (traversée du Vénéon)",
+          "lon": 6.0871,
+          "lat": 44.9674,
+          "coord_quality": "source",
+          "best_hours": "matin",
+          "trigger": "Versant de l'Aiguille de Venosc, de l'autre côté de la vallée du Vénéon par rapport aux Deux Alpes",
+          "description": "Un vol biplace de l'école des Deux Alpes décrit une « traversée de la vallée du Vénéon avant d'aller chercher les ascendances matinales pour tenter de survoler le Pic de Venosc, avec vue sur le lac de la Muzelle et les Écrins, et le village de Venosc où l'on se pose peut-être ». Source commerciale, un seul texte : il confirme surtout l'existence d'une relance du matin sur ce versant. Position : Aiguille de Venosc (IGN), l'école écrit « Pic de Venosc ».",
+          "confidence": "medium",
+          "sources": [
+            "S23"
+          ]
+        },
+        {
+          "id": "goleon-raccroche-lautaret",
+          "name": "Aiguille du Goléon : raccroche manqué après la traversée du Lautaret (lieu à confirmer)",
+          "lon": 6.3261,
+          "lat": 45.1034,
+          "coord_quality": "source",
+          "best_hours": "après-midi (vol léger thermique vers 14h en juin)",
+          "trigger": "Faces de l'aiguille du Goléon, face à la Meije, au-dessus de Valfroide et de La Grave",
+          "description": "Récit d'un cross du 31 août 2021 depuis le Granon : après la Meije, « on traverse le col du Lautaret et pour la deuxième fois dans ce vol je loupe le thermique au raccrochage sur le Goléon » ; le pilote est alors « aplati par la brise » et pose en fond de vallée à Monêtier-les-Bains. Attention : l'aiguille du Goléon est à l'ouest du col, ce qui ne colle pas avec l'ordre du récit ; la position est celle de l'aiguille (IGN), le lieu exact du raccroche reste à confirmer. Le Goléon est aussi un décollage de montagne (brèche du Bec de Grenier) où un vol de juin est « légèrement thermique sans plus » vers 14h. Rôle : point de relance cité comme clé, que la brise de la Romanche et du Lautaret rend sanctionnant pour qui arrive bas.",
+          "confidence": "low",
+          "sources": [
+            "S106",
+            "S117"
+          ]
+        },
+        {
+          "id": "lautaret-plafond-4050",
+          "name": "Au-dessus du col du Lautaret : plafond à 4050 m",
+          "lon": 6.4051,
+          "lat": 45.0354,
+          "coord_quality": "source",
+          "best_hours": "après-midi (été)",
+          "trigger": "Col du Lautaret et sommets qui l'entourent : point de rencontre des deux bassins météo",
+          "description": "Retour d'un cross du 15 août 2020 depuis le Granon : après la Meije et les faces sud de La Grave, « un petit 4050 m au-dessus du col du Lautaret », puis un point au-dessus du Fort de l'Infernet avant de rejoindre Saint-Chaffrey ; une tentative sur les aiguilles d'Arves a été interdite par un nord puissant. Rôle : plafond de transit entre la Meije et le Briançonnais. La brise de la Romanche et celle de la Guisane se rencontrent régulièrement entre le Lautaret et Briançon : ne pas être trop bas.",
+          "confidence": "medium",
+          "sources": [
+            "S107",
+            "S31"
+          ]
+        },
+        {
+          "id": "pic-col-ornon-rochail",
+          "name": "Pic du col d'Ornon (faces est du Rochail) : nuage à 3400 m",
+          "lon": 6.0158,
+          "lat": 44.9956,
+          "coord_quality": "source",
+          "best_hours": "11h30-13h (fin juillet, décollage du glacier à 11h15)",
+          "trigger": "Faces est du Rochail et du Pic du col d'Ornon, cumulus sur les sommets",
+          "description": "Récit du 22 juillet 2006 : du glacier du Rochail (3000 m), le pilote file vers les faces est, remonte tout doucement 400 m plus bas et se retrouve « au nuage au-dessus du Pic du col d'Ornon à environ 3400 m » (aérologie généreuse mais calme, sans vent). Rôle : déclencheur puis plafond avant de traverser vers le Grand Armet, le Grand Galbert, le Taillefer et Belledonne.",
+          "confidence": "medium",
+          "sources": [
+            "S104"
+          ]
+        },
+        {
+          "id": "grand-galbert-faces-sud-est",
+          "name": "Faces sud-est du Grand Galbert et du Taillefer (relance vers Belledonne)",
+          "lon": 5.9594,
+          "lat": 45.0903,
+          "coord_quality": "source",
+          "best_hours": "début d'après-midi (juillet)",
+          "trigger": "Faces sud-est dégarnies du Grand Armet au Grand Galbert, cumulus au-dessus",
+          "description": "Cheminement du 22 juillet 2006 depuis le Rochail : « les faces est du Grand Armet au Grand Galbert me semblent bien accueillantes avec des jolis petits cumulus » ; en visant une face sud-est dégarnie, le pilote perd peu d'altitude et ça remonte doux : nuage au Grand Galbert, pareil au Taillefer, vers 3250 m, puis « schuss sur Belledonne ». Rôle : relance avant la traversée de la Romanche vers Belledonne ; le retour a échoué à cause d'un voile d'ouest et d'une brise montante dans la vallée de la Romanche (posé au grand plat au sud de Gavet, brise de 10 km/h). Position : sommet du Grand Galbert (IGN).",
+          "confidence": "medium",
+          "sources": [
+            "S104"
+          ]
+        },
+        {
+          "id": "signal-de-lhomme-relance",
+          "name": "Signal de l'Homme (Auris) : relance avant la descente sur Bourg-d'Oisans",
+          "lon": 6.0861,
+          "lat": 45.0663,
+          "coord_quality": "source",
+          "best_hours": "après-midi (déduction)",
+          "trigger": "Crête du Signal de l'Homme, au-dessus d'Auris, exposée au sud-ouest",
+          "description": "Déduction : le guide du Pic Blanc indique que, quand on décide de rejoindre la vallée, on se dirige vers le Signal de l'Homme puis sur Bourg-d'Oisans ; la crête sommitale, au soleil de l'après-midi, est le dernier relief déclencheur avant la plaine (« si vous parvenez jusqu'à la pointe de l'Herpie, c'est gagné »). Le texte ne parle pas explicitement d'ascendance en ce lieu : à vérifier sur le terrain. Rôle présumé : dernière relance sur le grand vol Pic Blanc → Bourg-d'Oisans ; attention à la brise de vallée passé 13h au Vert. La fiche FFVL du site d'hiver d'Auris note que l'aérologie peut être forte au printemps lors des fortes variations d'enneigement entre le bas et le haut du versant (déduction : le contraste neige / sol nu déclenche des thermiques sur ce versant) et qu'il est idéal par vent faible ou brise montante de la plaine de Bourg-d'Oisans.",
+          "confidence": "low",
+          "sources": [
+            "S1",
+            "S50"
+          ]
         }
       ],
       "soaring_spots": [
@@ -722,6 +1034,23 @@
             "S1"
           ],
           "coord_quality": "approx"
+        },
+        {
+          "id": "soaring-pic-bayle-face-nord",
+          "name": "Face nord du Pic Bayle (Grandes Rousses), soaring d'automne",
+          "lon": 6.1355,
+          "lat": 45.1379,
+          "coord_quality": "source",
+          "wind_dirs": [
+            "NW",
+            "NNW",
+            "W"
+          ],
+          "description": "Récit du 11 novembre : vent d'ouest en altitude, NNW sous le col de la Pyramide ; décollage face NW vers 3200 m, puis « en face nord du Pic Bayle, ça monte bien » : 3550 m puis 3720 m pour le plus haut, 1h40 de vol, retour tard « vent de face ascendant » vers Oz. Ascendance de pente et thermique d'automne, pas un cheminement de cross ; zone réglementée R222 à vérifier, secousses près du Pic du Lac Blanc.",
+          "confidence": "medium",
+          "sources": [
+            "S105"
+          ]
         }
       ],
       "takeoffs": [
@@ -1300,6 +1629,251 @@
             "S49",
             "S34"
           ]
+        },
+        {
+          "id": "alpe-huez-2700-poutran-bras-bourg",
+          "name": "Parcours classique du 2e tronçon : Poutran → Le Bras → Villard-Reculas → Bourg-d'Oisans",
+          "waypoints": [
+            {
+              "name": "Alpe d'Huez – 2700 (2e tronçon)",
+              "lon": 6.1032,
+              "lat": 45.1197,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Arête de Poutran",
+              "lon": 6.0768,
+              "lat": 45.1084,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Le Bras (schistes)",
+              "lon": 6.047,
+              "lat": 45.0882,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Villard-Reculas",
+              "lon": 6.0332,
+              "lat": 45.0935,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Bourg-d'Oisans – Le Vert",
+              "lon": 6.0414,
+              "lat": 45.0454,
+              "coord_quality": "source"
+            }
+          ],
+          "distance_km": 12.3,
+          "description": "Premier choix du guide de site au départ du 2e tronçon (2700 m, sud ou ouest) : « partir vers Poutran, suivre l'arête pour essayer de remonter vers le Bras en passant au-dessus de Villard-Reculas et déboucher sur Bourg-d'Oisans » ; on pose au Vert ou aux Essoulieux (brise de vallée forte après 13h, turbulences dues aux grands arbres aux Essoulieux). Points de relance : thermiques de fin de matinée plutôt côté ouest au départ, arête de Poutran, schistes du Bras (voir les thermiques de même nom). Variante : tourner à droite après le décollage vers Vaujany et le Collet (câbles du téléphérique et catex). Distance à vol d'oiseau, ordre des points d'après le guide ; position de Poutran, du Bras et de Villard-Reculas : IGN.",
+          "sources": [
+            "S1",
+            "S3"
+          ]
+        },
+        {
+          "id": "eclose-huez-bras-vert",
+          "name": "Parcours classique de l'Éclose : clocher d'Huez → schistes du Bras → Bourg-d'Oisans",
+          "waypoints": [
+            {
+              "name": "Alpe d'Huez – Éclose",
+              "lon": 6.0646,
+              "lat": 45.0871,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Église d'Huez (toits)",
+              "lon": 6.0533,
+              "lat": 45.0774,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Le Bras (schistes)",
+              "lon": 6.047,
+              "lat": 45.0882,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Bourg-d'Oisans – Le Vert",
+              "lon": 6.0414,
+              "lat": 45.0454,
+              "coord_quality": "source"
+            }
+          ],
+          "distance_km": 7.5,
+          "description": "Plan de vol du guide de site : aller « tout droit en direction du clocher de l'église d'Huez (ascendances au-dessus des toits) », puis « tirer à droite et tenter de raccrocher les schistes qui descendent du Bras ». Vers 13h ou 14h les bons pilotes trouvent des ascendances et font un joli soaring au-dessus de l'Éclose, mais il faut alors se reposer au décollage car la brise de vallée risque de contrer pour aller se poser à Bourg ; les possibilités d'atterrissage en chemin sont plus que réduites. Posé au Vert ou aux Essoulieux si l'on est trop bas. Vol technique.",
+          "sources": [
+            "S1",
+            "S41"
+          ]
+        },
+        {
+          "id": "sabot-cote-belle-vers-alpe-huez",
+          "name": "Col du Sabot → crête de Côte Belle → retour vers l'Alpe d'Huez (soaring de l'après-midi)",
+          "waypoints": [
+            {
+              "name": "Vaujany – col du Sabot",
+              "lon": 6.1049,
+              "lat": 45.1829,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Chalets de Côte Belle",
+              "lon": 6.0981,
+              "lat": 45.1804,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Alpe d'Huez – station 1800",
+              "lon": 6.0687,
+              "lat": 45.0982,
+              "coord_quality": "approx"
+            }
+          ],
+          "distance_km": 10.0,
+          "description": "Au décollage du Sabot (sud / sud-ouest, vers 16h) : ascendances dynamiques sur le relief à gauche du décollage, on remonte la crête, on repasse au-dessus du décollage, on peut grimper jusqu'à 2700 m « et ensuite tenter de gagner l'Alpe d'Huez » ; sinon belle balade jusqu'au-dessus de la cascade de Vaujany ; 2 à 3 h de vol sont courantes ; cisaillements possibles si la brise de vallée est bien établie ; atterrissage devant les tennis du Collet (vent rarement au-dessus de 15 km/h). Le dernier point est la station : le guide ne donne pas de point intermédiaire pour la traversée du plateau, l'alignement est indicatif.",
+          "sources": [
+            "S1",
+            "S54"
+          ]
+        },
+        {
+          "id": "deux-alpes-diable-bearde-meije-ecrins",
+          "name": "Vol de montagne du 5 septembre 2006 : Diable → Plat de la Selle → Meije → Barre des Écrins → La Bérarde",
+          "waypoints": [
+            {
+              "name": "Les 2 Alpes – sommet du Diable (déco ~2800 m)",
+              "lon": 6.1471,
+              "lat": 44.997,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Tête Moute",
+              "lon": 6.1593,
+              "lat": 44.9915,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Tête de la Toura",
+              "lon": 6.1824,
+              "lat": 44.984,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Aiguille du Plat de la Selle",
+              "lon": 6.2225,
+              "lat": 44.9644,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Massif du Soreiller",
+              "lon": 6.2437,
+              "lat": 44.9701,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Pointe Thorant",
+              "lon": 6.263,
+              "lat": 44.996,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Brèche de la Meije",
+              "lon": 6.2993,
+              "lat": 45.004,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Grande Ruine",
+              "lon": 6.3303,
+              "lat": 44.9692,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Barre des Écrins",
+              "lon": 6.3599,
+              "lat": 44.9224,
+              "coord_quality": "source"
+            },
+            {
+              "name": "La Bérarde",
+              "lon": 6.2928,
+              "lat": 44.9333,
+              "coord_quality": "source"
+            }
+          ],
+          "distance_km": 30.7,
+          "description": "Récit d'un pilote du CHVD, en septembre 2006, journée de grand beau sans vent, stable en basse couche et faiblement instable en altitude (isotherme 0 °C à 4800 m) : décollage à 13h45 du haut du télésiège du Diable (2800 m), thermique immédiat vers la Tête Moute, la Toura et le Jandri, traversée de la vallée de la Selle, ravine sèche de l'Aiguille du Plat de la Selle (plus de 3600 m), crête jusqu'au Soreiller, relance de la Pointe Thorant (plus d'une heure), brèche de la Meije à 16h15 vers 3600 m, plafond à la Grande Ruine à 17h, glide vers la Barre des Écrins, puis retour au « toboggan de Pié Bérarde », brise du Vénéon contre à l'arrivée ; posé à la confluence du Vénéon et de la Lavey, dans un pré de 50 m de diamètre, après un choix d'atterrissage jugé mauvais. Vol de très haute montagne dans le cœur du Parc national des Écrins : réglementation de survol, aérologie très forte. Les points de passage sont ceux nommés dans le récit (positions IGN), l'ordre exact peut différer ; distance à vol d'oiseau.",
+          "sources": [
+            "S103",
+            "S15"
+          ]
+        },
+        {
+          "id": "rochail-grand-galbert-gavet",
+          "name": "Cross improvisé du 22 juillet 2006 : Rochail → Pic du col d'Ornon → Grand Galbert → Belledonne → Gavet",
+          "waypoints": [
+            {
+              "name": "Rochail (décollage du glacier, 3000 m)",
+              "lon": 6.0312,
+              "lat": 44.9798,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Pic du col d'Ornon",
+              "lon": 6.0158,
+              "lat": 44.9956,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Grand Galbert",
+              "lon": 5.9594,
+              "lat": 45.0903,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Gavet (posé au sud du village)",
+              "lon": 5.9031,
+              "lat": 45.0919,
+              "coord_quality": "approx"
+            }
+          ],
+          "distance_km": 18.0,
+          "description": "Décollage vers 11h15 du glacier du Rochail, nuage à 3400 m au-dessus du Pic du col d'Ornon, faces est du Grand Armet au Grand Galbert (nuages vers 3250 m, Taillefer également), traversée de la Romanche vers Belledonne et les faces est jusqu'à la hauteur de Livet ; demi-tour à cause d'un voile d'ouest, posé dans la vallée de la Romanche au grand plat au sud de Gavet (brise de 10 km/h). Le pilote n'avait pas prévu de partir en cross : « quand les conditions sont là, improviser un cross en petite tenue est tout à fait possible ». Positions IGN ; le posé est situé approximativement au village de Gavet ; distance à vol d'oiseau.",
+          "sources": [
+            "S104"
+          ]
+        },
+        {
+          "id": "deux-alpes-coche-muzelle-venosc",
+          "name": "Promenade classique des Deux Alpes : Perrons → crête de la Coche → Muzelle, retour à Venosc",
+          "waypoints": [
+            {
+              "name": "Les 2 Alpes – Les Perrons",
+              "lon": 6.1274,
+              "lat": 44.9987,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Col de la Coche de Lanchâtra",
+              "lon": 6.1325,
+              "lat": 44.9628,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Venosc – atterrissage",
+              "lon": 6.1172,
+              "lat": 44.9868,
+              "coord_quality": "source"
+            }
+          ],
+          "distance_km": 6.9,
+          "description": "Guide de site : partir vers la Coche après avoir fait le plein au-dessus des Perrons, puis faire du soaring le long de l'arête en direction de la Muzelle ; si l'on a décollé en fin de matinée, on peut poser à Venosc, où les conditions sont très fortes l'après-midi (venturi). Pilotes chevronnés. Certains partent en cross de montagne vers la Meije (voir l'autre itinéraire). Positions IGN ; la Roche de la Muzelle (6.1063 ; 44.9304) est le terme de l'arête, non rejoint par la ligne tracée.",
+          "sources": [
+            "S1",
+            "S111"
+          ]
         }
       ],
       "tips": [
@@ -1309,7 +1883,12 @@
         "Par vent de Nord, éviter les Perrons et le Sabot ; viser le Signal (N-E faible) ou le 2700 (N/NO faible) [S1][VS12].",
         "En hiver, inversion fréquente : ne pas descendre se poser dans un stratus épais en fond de vallée, privilégier les atterrissages d'altitude (Alpe d'Huez, Auris) [S2].",
         "La Grave : par léger nord on part de 3200 m vers la Meijette et on y trouve du thermique ; l'après-midi poser plutôt à Villar-d'Arêne qu'à La Grave ; se méfier de la Lombarde [S49].",
-        "Dans le cœur du Parc des Écrins (Vénéon, face sud de La Grave) : aucun aménagement, pas de survol sous 1000 m du 1er novembre au 30 juin [S15]."
+        "Dans le cœur du Parc des Écrins (Vénéon, face sud de La Grave) : aucun aménagement, pas de survol sous 1000 m du 1er novembre au 30 juin [S15].",
+        "Éclose : si les ascendances de 13h-14h au-dessus des toits d'Huez vous remontent, reposez-vous au décollage plutôt que de forcer vers Bourg où la brise de vallée contre [S1].",
+        "Alpe d'Huez / Vaujany : Côte Belle est le point de raccroche commun du Pic Blanc, du 2e tronçon et de la Cheminée ; on y remonte jusqu'à 2700 m avant de tenter l'Alpe d'Huez [S1].",
+        "Deux Alpes : faire le plein au-dessus des Perrons avant de partir vers la Coche, le Rachas ou la Muzelle ; l'arête qui plonge dans le Vénéon est turbulente au retour [S1].",
+        "Vol de montagne Deux Alpes → Meije (2006) : relances Tête Moute / Toura, Plat de la Selle (3600 m), Pointe Thorant, brèche de la Meije, plafond à la Grande Ruine ; ne s'engager que si l'on a la hauteur pour revenir à La Bérarde [S103].",
+        "Au-dessus de La Grave, la Meijette et la brèche de la Meije donnent les pompes (jusqu'à 7 m/s, 3850 m) ; la brise de la Romanche écrase ceux qui arrivent bas sur le Lautaret [S49][S106]."
       ]
     },
     {
@@ -1547,7 +2126,56 @@
           ]
         }
       ],
-      "thermal_spots": [],
+      "thermal_spots": [
+        {
+          "id": "lauziere-face-ouest-entree-maurienne",
+          "name": "Face ouest de la Lauzière : relance après la traversée de l'entrée de la Maurienne",
+          "lon": 6.3662,
+          "lat": 45.4592,
+          "coord_quality": "approx",
+          "best_hours": "milieu de journée : « un peu tôt » pour la face ouest ; la brise de vallée monte ensuite",
+          "trigger": "Face ouest du Grand Pic de la Lauzière, première relance après la traversée de la Maurienne depuis le bout de Belledonne",
+          "description": "Cross du 28 août 2024 depuis Chamrousse : arrivés au bout de Belledonne, les pilotes transitent sur la Maurienne et hésitent entre les faces est et ouest de la Lauzière ; par crainte de se retrouver sous le vent de la brise ils choisissent la face ouest, « pas encore très généreuse car un peu tôt » : l'un en sort rapidement, un autre « galère 40 minutes entre 1600 et 1800 m », un troisième renonce et se pose au fond de la vallée, « la brise n'étant pas encore trop forte ni trop turbulente », en marche avant. Le premier fait ensuite « le nuage au Grand Pic de la Lauzière » (point de départ de la traversée de la Tarentaise, où il reste scotché à mi-pente dans la brise) ; l'auteur du récit tente ensuite la face sud du Grand Arc, qui remonte facilement le long de l'arête (plafond de 2900 m). Rôle : relance à l'entrée de la Maurienne ; plus tard dans la journée la brise de basses couches empêche de raccrocher le Grand Arc au retour. Position : sommet du Grand Pic de la Lauzière (IGN), la face ouest n'est pas localisée plus précisément.",
+          "confidence": "medium",
+          "sources": [
+            "S110"
+          ]
+        },
+        {
+          "id": "montgellafrey-crete-depart-cross",
+          "name": "Montgellafrey : crêtes de Belledonne au-dessus du décollage (départ de cross)",
+          "lon": 6.3164,
+          "lat": 45.4081,
+          "coord_quality": "approx",
+          "best_hours": "à partir de 10h (pic des décollages Syride), avant la brise de La Chambre",
+          "trigger": "Crête et pentes est-sud-est de Belledonne au-dessus de la Grande Léchère / du Mollaret",
+          "description": "Déduction : un pilote local désigne Montgellafrey comme « le site qui permet de beaux départs en cross, vers les Bauges, Belledonne… » et les statistiques Syride donnent un pic de décollage vers 10h et des vols de 206 et 175 km ; le lieu précis du premier thermique n'est décrit nulle part. Le décollage est exposé à l'est, avec souvent un vent de travers voire dans le dos (balise Pioupiou 633), et l'atterrissage de La Chambre devient fort l'après-midi. Rôle présumé : déclencheur sur la crête au-dessus du décollage, puis relance le long de Belledonne vers le nord. À confirmer par une trace ou un récit.",
+          "confidence": "low",
+          "sources": [
+            "S6",
+            "S43",
+            "S7",
+            "MS2"
+          ]
+        },
+        {
+          "id": "jarrier-balme-crete-cols",
+          "name": "Jarrier : crête au-dessus de La Balme et du Grand Châtelard (« rester haut » vers Glandon et Croix de Fer)",
+          "lon": 6.3197,
+          "lat": 45.2919,
+          "alt_m": 1570,
+          "coord_quality": "source",
+          "best_hours": "le matin (sites « uniquement le matin ») ; déduction : fin de matinée",
+          "trigger": "Faces sud-est et sud-ouest de la crête de Jarrier, au-dessus des décollages",
+          "description": "Déduction : le cahier technique du comité départemental de Savoie propose, en été, de rester haut au-dessus de la brise vers les cols du Glandon et de la Croix de Fer, ou d'attendre la fin d'après-midi pour redescendre en vallée ; les décollages de Jarrier (La Balme, SE, et Grand Châtelard, SO) sont des sites « uniquement le matin » à finesse faible vers Saint-Jean (2,5 à 2,9). Rôle présumé : déclencheur sur la crête au-dessus du décollage puis relance vers les cols ; aucun récit ne décrit une ascendance précise ici.",
+          "confidence": "low",
+          "sources": [
+            "MS1",
+            "MS2",
+            "S71"
+          ]
+        }
+      ],
       "soaring_spots": [
         {
           "id": "soaring-col-du-glandon",
@@ -1809,7 +2437,8 @@
         "Au printemps/été, soit rester haut au-dessus de la brise (cols du Glandon et de la Croix de Fer), soit attendre la fin d'après-midi pour redescendre dans la vallée [MS1].",
         "Par vent du nord, ne pas poser côté nord du terrain de La Chambre : s'approcher de la chapelle, protégée par le relief [S7].",
         "Si la brise est trop forte en vol, envisager un posé de secours en pente au-dessus de la couche de brise [MS4].",
-        "Grand Châtelard et La Balme : décollage uniquement le matin ; finesse 2,9 et 2,5 jusqu'à Saint-Jean, donc peu de marge face à la brise [MS2]."
+        "Grand Châtelard et La Balme : décollage uniquement le matin ; finesse 2,9 et 2,5 jusqu'à Saint-Jean, donc peu de marge face à la brise [MS2].",
+        "Depuis le bout de Belledonne, la face ouest de la Lauzière est peu généreuse en milieu de journée ; arriver plus haut ou plus tard, car la brise de basses couches devient vite forte à l'entrée de la Maurienne [S110]."
       ]
     },
     {
@@ -2192,12 +2821,80 @@
           "alt_m": 2350,
           "best_hours": "début d'après-midi (octobre) ; dès 11h l'été",
           "trigger": "Relief sous le déco de l'Ours / Angle Bellecôte",
-          "description": "Un pilote du forum : 2350 m est « l'altitude minimale pour prendre le thermique dans cette vallée de la Pointe de Bellecôte ou sur la Turra plus à l'Est », puis on glisse facilement jusqu'au-dessus de Termignon le long des pentes de la Dent Parrachée (2800 m maximum). Position = Angle Bellecôte (FFVL 621) ; la Turra est à l'est.",
+          "description": "Un pilote du forum : 2350 m est « l'altitude minimale pour prendre le thermique dans cette vallée de la Pointe de Bellecôte ou sur la Turra plus à l'Est », puis on glisse facilement jusqu'au-dessus de Termignon le long des pentes de la Dent Parrachée (2800 m maximum). Position = Angle Bellecôte (FFVL 621) ; la Turra est à l'est. Plafonds cités : 3600 m un jour de Lombarde en mars 2012 (« enroulage avec des planeurs »), « moyen de faire des plafs à 4000 » en août selon les traces du club Vol libre Vanoise sur la CFD ; à l'inverse, lors de la D'Tour du 30 septembre 2023, les plafonds annoncés vers 2500 m n'ont pas été au rendez-vous (voile limitant la convection à l'ouest d'Aussois, thermiques peu puissants, brise de 20 km/h dans la vallée). Rôle : déclencheur depuis le décollage de l'Ours / Angle Bellecôte, puis plafond avant de glisser vers Termignon.",
           "sources": [
             "S5",
-            "S81"
+            "S81",
+            "S115",
+            "S109"
           ],
           "coord_quality": "approx"
+        },
+        {
+          "id": "turra-falaises-termignon",
+          "name": "Falaises de la Turra (Termignon) : « thermique exceptionnel »",
+          "lon": 6.8406,
+          "lat": 45.2986,
+          "coord_quality": "source",
+          "best_hours": "toute l'année ; d'avril à octobre en vol de cross (trace de 144 km le 17 avril 2026)",
+          "trigger": "Falaises de la Turra, exposées au soleil, que fréquentent vautours et gypaètes en toutes saisons",
+          "description": "Les fiches de randonnée des offices de tourisme décrivent aux falaises de la Turra, « si prisées des adeptes de sports aériens », « un courant d'air chaud ascendant très particulier, un thermique exceptionnel qui fait la joie des vautours et gypaètes en toutes saisons ». Le pilote du forum cité pour Aussois place l'altitude minimale pour prendre le thermique « de la Pointe de Bellecôte ou sur la Turra plus à l'est » à 2350 m. Syride signale une trace de 144 km décollée de la Turra le 17 avril 2026. Rôle : déclencheur et plafond de la Haute-Maurienne, juste à l'est d'Aussois sur le cheminement vers Termignon et Val Cenis. Attention : couple de gypaètes barbus et zone de sensibilité majeure à la Turra (interdiction de vol en 2021 jusqu'au 15 août ; Vanoise) : vérifier l'arrêté en vigueur avant d'y voler. Position : sommet de la Turra de Termignon (OSM).",
+          "confidence": "medium",
+          "sources": [
+            "S113",
+            "S5",
+            "S116"
+          ]
+        },
+        {
+          "id": "sollieres-sardieres-relance",
+          "name": "Au-dessus de Sollières-Sardières : relance au retour de Termignon",
+          "lon": 6.8079,
+          "lat": 45.2638,
+          "coord_quality": "source",
+          "best_hours": "début d'après-midi (octobre)",
+          "trigger": "Village de Sollières-Sardières et pentes de rive gauche de l'Arc, au pied de la Dent Parrachée",
+          "description": "Compte rendu d'un vol d'octobre 2021 : « de retour de Termignon j'étais dans du +4 au-dessus de Sollière », alors que la Lombarde passait depuis le lac du Mont-Cenis puis que la brise s'installait. Rôle : relance sur le chemin du retour Termignon → Aussois ; le retour vers l'amont ou vers Aussois contre la brise montante reste difficile (un pilote du forum n'a « jamais réussi le retour » depuis Bonneval). Position : mairie de Sollières-Sardières (IGN) ; l'aérodrome de Sollières-Sardières est tout proche, voir la zone d'aérodrome.",
+          "confidence": "medium",
+          "sources": [
+            "S5",
+            "S4"
+          ]
+        },
+        {
+          "id": "arcelle-val-cenis-relance",
+          "name": "Arcelle / crêtes de Val Cenis : relance sur la route Aussois → Bonneval",
+          "lon": 6.9366,
+          "lat": 45.2734,
+          "alt_m": 2302,
+          "coord_quality": "source",
+          "best_hours": "après-midi ; fins de journée (restitution) à l'Arcelle",
+          "trigger": "Crêtes et pentes de l'Arcelle, exposées au sud, au-dessus de Lanslevillard",
+          "description": "Déduction : le cheminement classique remonte la vallée avec la brise montante d'Aussois vers Termignon, Val Cenis puis Bonneval ; les reliefs ensoleillés de l'Arcelle (décollage FFVL 14178 à 2302 m) sont les seuls déclencheurs entre la Turra et Bonneval, « verrou » où l'on doit normalement poser. Un ancien habitué de la station (qui n'y a pas volé lui-même) écrit que l'été, au milieu d'après-midi, l'aérologie de Val Cenis est forte, « généralement au-dessus de la couche stable », avec une brise toujours établie en bas. Aucun récit ne décrit un thermique précis ici ; la fiche d'un site de soaring de fin de journée à l'Arcelle va dans le sens d'une brise de restitution.",
+          "confidence": "low",
+          "sources": [
+            "S4",
+            "S94",
+            "MS6",
+            "S121"
+          ]
+        },
+        {
+          "id": "druges-grande-feiche-dernier-relief",
+          "name": "Bonneval-sur-Arc (Les Druges, Grande Feiche) : dernier relief avant le verrou",
+          "lon": 7.0421,
+          "lat": 45.378,
+          "alt_m": 2215,
+          "coord_quality": "source",
+          "best_hours": "après-midi d'août à octobre (période de pic des décollages Syride)",
+          "trigger": "Pentes sud-ouest au-dessus de Bonneval-sur-Arc, en tête de vallée",
+          "description": "Déduction : au bout du cross classique Aussois → Termignon → Val Cenis → Bonneval, Bonneval « constitue un verrou en fond de vallée qui impose normalement de se poser » (forum) ; les pentes des Druges / de la Grande Feiche (FFVL 3153, 14179, 14180) sont le dernier relief ensoleillé avant la tête de vallée et la frontière, dans un secteur où la Vanoise impose des secteurs de survol à respecter. Syride place les décollages de Bonneval d'août à octobre. Aucune ascendance précise n'est décrite.",
+          "confidence": "low",
+          "sources": [
+            "S4",
+            "S46",
+            "S90"
+          ]
         }
       ],
       "soaring_spots": [
@@ -2596,11 +3293,12 @@
             }
           ],
           "distance_km": 28.9,
-          "description": "Forum (2012) : « un classique possible : profiter du début de brise montante en Maurienne pour partir vers Termignon, Val Cenis puis en direction de Bonneval » ; beaucoup de chamois ; retour jamais réussi, trop contré par la brise ; Bonneval fait verrou et impose de se poser. Un autre message (2020) : depuis Aussois on peut remonter vers Bonneval/Arc ou descendre vers Aiton. Contrainte : Vanoise (secteurs de l'arrêté 2026-31). Distance à vol d'oiseau.",
+          "description": "Forum (2012) : « un classique possible : profiter du début de brise montante en Maurienne pour partir vers Termignon, Val Cenis puis en direction de Bonneval » ; beaucoup de chamois ; retour jamais réussi, trop contré par la brise ; Bonneval fait verrou et impose de se poser. Un autre message (2020) : depuis Aussois on peut remonter vers Bonneval/Arc ou descendre vers Aiton. Contrainte : Vanoise (secteurs de l'arrêté 2026-31). Distance à vol d'oiseau. Relances citées sur le cheminement : pointe de Bellecôte / Turra au départ (2350 m minimum), glide le long des pentes de la Dent Parrachée jusqu'au-dessus de Termignon (2800 m maximum en octobre), thermique à +4 au-dessus de Sollières au retour. Lors de la D'Tour de 2023, les pilotes engagés vers Lanslebourg / Val Cenis par faible plafond ont posé à Lanslebourg faute de portance, puis un pilote est reparti du col de Sollières (vent de nord) et a fini sous le plateau à Bramans.",
           "sources": [
             "S4",
             "S6",
-            "S18"
+            "S18",
+            "S109"
           ]
         },
         {
@@ -2644,6 +3342,36 @@
             "S4",
             "S6"
           ]
+        },
+        {
+          "id": "aussois-barbier-arplane-norma",
+          "name": "D'Tour d'Aussois, parcours « Corneille » n° 2 : col du Barbier → col d'Arplane → La Norma",
+          "waypoints": [
+            {
+              "name": "Col du Barbier (Aussois)",
+              "lon": 6.7156,
+              "lat": 45.237,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Col d'Arplane",
+              "lon": 6.6195,
+              "lat": 45.1689,
+              "coord_quality": "source"
+            },
+            {
+              "name": "La Norma",
+              "lon": 6.6986,
+              "lat": 45.2014,
+              "coord_quality": "source"
+            }
+          ],
+          "distance_km": 17.9,
+          "description": "Parcours de 23 km de la compétition amicale D'Tour (1er octobre 2023) : partir du col du Barbier vers l'ouest, rejoindre le col d'Arplane puis revenir par la Norma. La première balise semble accessible, la seconde n'est possible qu'en gagnant beaucoup d'altitude, et beaucoup de pilotes prévoient de reposer entre les deux pour redécoller plus haut ; une brise plus forte que prévue vers Modane oblige à poser accéléré (stade de foot de Modane). Seuls deux pilotes ont bouclé le parcours. Respecter les zones protégées de la Vanoise (secteur Orgère / Barbier). Positions IGN ; distance à vol d'oiseau entre les trois points (l'organisation annonce 23 km de parcours).",
+          "sources": [
+            "S109",
+            "S18"
+          ]
         }
       ],
       "tips": [
@@ -2653,7 +3381,9 @@
         "Se méfier de la Lombarde et du foehn : ne pas compter se poser en vallée quand ça rentre d'Italie [S4][S79].",
         "Aussois : se poser de préférence à Plan de la Croix (grand, dégagé) ; la route des barrages est réservée aux bons niveaux [S96][S97].",
         "Vanoise : décoller seulement des sites listés dans l'arrêté, jamais atterrir en cœur de parc ; demande d'autorisation préalable pour la Dent Parrachée [S18][S88].",
-        "Petit vol de fin de journée à Aussois depuis le Fort Marie-Christine (déco technique), possible jusqu'à la nuit en se reposant derrière le déco ; renseignements auprès du club de Modane / des pilotes locaux [S4]."
+        "Petit vol de fin de journée à Aussois depuis le Fort Marie-Christine (déco technique), possible jusqu'à la nuit en se reposant derrière le déco ; renseignements auprès du club de Modane / des pilotes locaux [S4].",
+        "Aussois : le thermique ne se prend qu'à partir de 2300-2350 m (Bellecôte, Turra) ; plafonds de 2500 m en automne contre 3600-4000 m en mars et en août [S5][S109][S115].",
+        "Turra : thermique réputé mais couple de gypaètes et zone de sensibilité majeure ; vérifier l'arrêté de la Vanoise avant d'y voler [S113][S18]."
       ]
     },
     {
@@ -2873,7 +3603,88 @@
           ]
         }
       ],
-      "thermal_spots": [],
+      "thermal_spots": [
+        {
+          "id": "grand-galibier-plan-lachat",
+          "name": "Grand Galibier : remontée depuis la butte de Plan Lachat (plus de 3200 m)",
+          "lon": 6.4339,
+          "lat": 45.0638,
+          "alt_m": 3228,
+          "coord_quality": "source",
+          "best_hours": "non précisé (vol de journée) ; déduction : après-midi",
+          "trigger": "Pentes du Grand Galibier au-dessus de Plan Lachat, dominant le départ de la route du col",
+          "description": "Un pilote qui a appris à Plan Lachat en 1988 le décrit comme « le meilleur spot du coin » : « très bon rendement avec remontée sur le Grand Galibier assez fréquente, plus de 3200 m ». Le décollage se fait par un chemin de 250 m de dénivelé depuis la route ; la fiche FFVL demande un peu de brise et du nord et signale un vent souvent fort au déco avec venturi (pilotes confirmés). Rôle : plafond du secteur, atteint en remontant depuis la butte de soaring ; point de départ possible vers le Galibier, le Lautaret ou la Haute-Maurienne. Position : sommet du Grand Galibier (IGN).",
+          "confidence": "medium",
+          "sources": [
+            "S8",
+            "MS7",
+            "S45"
+          ]
+        },
+        {
+          "id": "galibier-sud-thermique",
+          "name": "Col du Galibier sud : décollage à bon potentiel thermique",
+          "lon": 6.4078,
+          "lat": 45.0642,
+          "alt_m": 2642,
+          "coord_quality": "approx",
+          "best_hours": "journée (club : « beaux vols de fin de journée dans la brise » à Plan Lachat)",
+          "trigger": "Pentes sud du col du Galibier, seul décollage du secteur accessible avec très peu de marche",
+          "description": "Le club de Briançon écrit du « col du Galibier sud » : « décollage sauvage avec bon potentiel thermique, le seul de ce secteur accessible avec très peu de marche ». Rôle : déclencheur au départ des cross du Galibier. Le secteur est au milieu de plusieurs zones militaires réglementées (R221 / R222) : vérifier leur activité, vol interdit et tirs à balles réelles quand elles sont actives. Position du col (Wikipédia) ; l'emplacement du décollage au sud du col n'est pas précisé par la source.",
+          "confidence": "medium",
+          "sources": [
+            "S33"
+          ]
+        },
+        {
+          "id": "granges-du-galibier-depart-300",
+          "name": "Granges du Galibier : déclencheur des grands cross (300 km)",
+          "lon": 6.4225,
+          "lat": 45.0801,
+          "coord_quality": "source",
+          "best_hours": "non précisé (décollage dès le matin pour les 300 km)",
+          "trigger": "Pente herbeuse des Granges du Galibier, sous le col du Galibier",
+          "description": "Le club de Briançon écrit de ce décollage sauvage, possible « depuis n'importe où dans cette belle pente herbeuse » : « ce décollage peut offrir un potentiel énorme de cross » et cite « le 300 FAI historique du Galibier et le 300 Galibier / Liechtenstein ». XContest garde deux vols de plus de 300 km décollés du secteur (314,68 km le 17 juillet 2014 ; 316,69 km le 6 juillet 2017), dont la trace n'est pas lisible sans compte. Rôle : déclencheur puis départ de cross vers le nord (Maurienne) ou l'est ; l'itinéraire de ces vols n'a pas pu être lu. Position : lieu-dit des Granges du Galibier (IGN).",
+          "confidence": "medium",
+          "sources": [
+            "S33",
+            "S38",
+            "S39"
+          ]
+        },
+        {
+          "id": "valmeinier-station-thermique",
+          "name": "Station de Valmeinier : « thermique qui sort de la station »",
+          "lon": 6.4958,
+          "lat": 45.173,
+          "alt_m": 1800,
+          "coord_quality": "approx",
+          "best_hours": "après-midi (été)",
+          "trigger": "Bâti de la station (parkings, bars, télésièges) de Valmeinier 1800 qui chauffe au soleil",
+          "description": "Un pilote qui a décollé du Gros Crey l'été (vol « assez fort ») a voulu se poser en haut de la station : « ça reprenait du +4 en approche et une fois enfin près du sol ça montait de partout », au milieu des bars, télésièges et poussettes ; il conseille de choisir « le parking du milieu un peu en retrait, bien aligné à la brise, à côté de ce thermique qui sort de la station ». Un autre pilote local privilégie les vols du matin ou du soir, se méfiant des conditions thermiques de l'après-midi. Rôle : déclencheur en fin de vol, piège à l'atterrissage (voir l'atterrissage de Valmeinier) mais aussi relance possible pour qui reste en l'air. Position : Valmeinier 1800 (IGN), le point exact du thermique n'est pas donné.",
+          "confidence": "medium",
+          "sources": [
+            "S8"
+          ]
+        },
+        {
+          "id": "crey-du-quart-crete",
+          "name": "Crête du Crey du Quart (Valloire) : déclencheur de début d'après-midi",
+          "lon": 6.471,
+          "lat": 45.1591,
+          "alt_m": 2534,
+          "coord_quality": "source",
+          "best_hours": "à partir de la fin de matinée (déduction)",
+          "trigger": "Crête sommitale du Crey du Quart, face aux Aiguilles d'Arves, exposée à l'ouest et au sud",
+          "description": "Déduction : le Crey du Quart (2534 m, OpenStreetMap) est un décollage de Valloire (vols biplace à ski des écoles locales, vols Syride) ; un pilote local recommande néanmoins les vols du matin ou du soir à cause des conditions thermiques de l'après-midi. Rôle présumé : déclencheur de la crête puis relance vers la Setaz ou le Gros Crey. Aucune ascendance précise n'est décrite.",
+          "confidence": "low",
+          "sources": [
+            "S48",
+            "S8",
+            "MS8"
+          ]
+        }
+      ],
       "soaring_spots": [
         {
           "id": "soaring-plan-lachat",
@@ -2967,12 +3778,12 @@
         {
           "id": "granges-du-galibier",
           "name": "Granges du Galibier (décollage sauvage)",
-          "lon": 6.4078,
-          "lat": 45.0642,
+          "lon": 6.4225,
+          "lat": 45.0801,
           "alt_m": null,
           "orientations": [],
-          "coord_quality": "approx",
-          "description": "Club de Briançon : « décollage sauvage possible depuis n'importe où dans cette belle pente herbeuse », qui « peut offrir un potentiel énorme de cross » (il cite deux 300 km XContest : 17/07/2014, 314,68 km, et 06/07/2017, 316,69 km). Position non donnée : placée au col du Galibier par défaut (approximative).",
+          "coord_quality": "source",
+          "description": "Club de Briançon : « décollage sauvage possible depuis n'importe où dans cette belle pente herbeuse », qui « peut offrir un potentiel énorme de cross » (il cite deux 300 km XContest : 17/07/2014, 314,68 km, et 06/07/2017, 316,69 km). Position non donnée : placée au col du Galibier par défaut (approximative). Position corrigée (seconde passe thermiques) : lieu-dit Granges du Galibier du géocodeur IGN, sur la route entre Plan Lachat et le col, au lieu de la position du col.",
           "sources": [
             "S33",
             "S38",
@@ -3090,12 +3901,40 @@
           ]
         }
       ],
-      "xc_routes": [],
+      "xc_routes": [
+        {
+          "id": "plan-lachat-grand-galibier",
+          "name": "Plan Lachat → Grand Galibier (remontée classique) et grands cross du Galibier",
+          "waypoints": [
+            {
+              "name": "Plan Lachat – décollage",
+              "lon": 6.4415,
+              "lat": 45.0867,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Grand Galibier",
+              "lon": 6.4339,
+              "lat": 45.0638,
+              "coord_quality": "source"
+            }
+          ],
+          "distance_km": 2.6,
+          "description": "Classique de Plan Lachat : après le décollage (250 m de dénivelé depuis la route), butte de soaring par brise légère de nord, puis remontée sur le Grand Galibier « assez fréquente, plus de 3200 m ». Au-delà, le col du Galibier et les Granges du Galibier sont les points de départ des grands cross documentés par le club de Briançon (300 km FAI de 2014 et 2017 ; 314,68 km et 316,69 km sur XContest) dont l'itinéraire n'a pas pu être lu ; vérifier les zones militaires R221 / R222 et l'altiport de Valloire-Bonnenuit. Segment tracé : uniquement la remontée documentée (distance à vol d'oiseau).",
+          "sources": [
+            "S8",
+            "S33",
+            "S38",
+            "S39"
+          ]
+        }
+      ],
       "tips": [
         "À Plan Lachat, une brise légère de nord est idéale ; au-delà, attention au venturi [MS7].",
         "À Valmeinier, se poser au parking du milieu, en retrait et aligné à la brise, en tenant compte du thermique qui sort de la station [S8].",
         "Galibier : le secteur est au milieu de zones militaires réglementées (R221/R222) : se renseigner sur les NOTAM avant tout cross ; le club de Briançon cite deux 300 km au départ des Granges du Galibier (2014, 2017) [S33][S38][S39].",
-        "Les départs d'été autour de Valloire sont peu fréquentés (« il y a peu de monde à voler par ici ») : prévenir quelqu'un de son plan de vol [S8]."
+        "Les départs d'été autour de Valloire sont peu fréquentés (« il y a peu de monde à voler par ici ») : prévenir quelqu'un de son plan de vol [S8].",
+        "Plan Lachat : par brise légère de nord, la remontée sur le Grand Galibier dépasse souvent 3200 m ; les Granges du Galibier et le Galibier sud servent de départ aux 300 km [S8][S33]."
       ]
     }
   ],
@@ -4316,6 +5155,177 @@
       "type": "web",
       "lang": "fr",
       "notes": "Fiche FFVL n° 3094, relevée le 2026-10-07 : coordonnées 45.2532, 6.24297, altitude 2037 m."
+    },
+    {
+      "id": "S103",
+      "title": "Survol de la Meije (récit de vol du 5 septembre 2006, Deux Alpes → Bérarde → Meije → Barre des Écrins)",
+      "url": "https://www.chvd.org/2006/11/05/survol-de-la-meije/",
+      "publisher": "CHVD (Club des Hommes Volants du Dauphiné)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Récit détaillé d'un vol de montagne : décollage au sommet du télésiège du Diable (2800 m) à 13h45, thermiques au-dessus du Vénéon, face sud de l'Aiguille du Plat de la Selle (3600 m), pointe Thorant, brèche de la Meije à 16h15, plafond à la Grande Ruine à 17h, retour par La Bérarde."
+    },
+    {
+      "id": "S104",
+      "title": "Petit vol haute montagne : le Rochail (récit du 22 juillet 2006)",
+      "url": "https://www.chvd.org/2006/07/24/petit-vol-haute-montagne-le-rochail/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Décollage du glacier du Rochail (3000 m) à 11h15, nuage à 3400 m au-dessus du Pic du col d'Ornon, faces est du Grand Armet au Grand Galbert, Taillefer, traversée vers Belledonne, posé au sud de Gavet."
+    },
+    {
+      "id": "S105",
+      "title": "Soaring aux Grandes Rousses (récit du 11 novembre)",
+      "url": "https://www.chvd.org/2015/12/24/soaring-aux-grandes-rousses/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Vol d'automne depuis le col de la Pyramide (3200 m, face NW) : ascendance sur la face nord du Pic Bayle jusqu'à 3550-3720 m, retour à Oz."
+    },
+    {
+      "id": "S106",
+      "title": "+7 m/s dans les Écrins (récit du 31 août 2021, Col du Granon → Meije → Lautaret)",
+      "url": "https://www.chvd.org/2021/08/31/7m-s-dans-les-ecrins/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Cross depuis le col du Granon : pompe à 7 m/s jusqu'à 3850 m juste avant la Meije, traversée du Lautaret, raccroche manqué sur le Goléon."
+    },
+    {
+      "id": "S107",
+      "title": "Cross dans les Écrins du 15 août 2020",
+      "url": "https://www.chvd.org/2020/08/21/cross-dans-les-ecrins-du-15-aout-2020/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Vol de 69 km en triangle depuis le Granon : Meije, faces sud, traversée au niveau de La Grave, plafond à 4050 m au-dessus du col du Lautaret."
+    },
+    {
+      "id": "S108",
+      "title": "Prégentil (vol rando du 18 novembre 2024, Villard-Reymond)",
+      "url": "https://www.chvd.org/2024/11/18/pregentil/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Décollage nord à 1938 m ; mention du thermique qui monte du versant sud, plus gênant au printemps et en été."
+    },
+    {
+      "id": "S109",
+      "title": "La D'tour : première réussie ! (D'Tour d'Aussois, 30 septembre - 1er octobre 2023)",
+      "url": "https://www.chvd.org/2023/10/09/la-dtour-premiere-reussie/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Compte rendu d'une compétition marche-et-vol autour d'Aussois : plafonds annoncés vers 2500 m, voile limitant la convection à l'ouest d'Aussois, brise de 20 km/h dans la vallée, brise forte vers Modane, parcours Barbier - Arplane - La Norma, 20 balises dont le Grand Arc, le col du Galibier et le fond de la vallée de Bonneval."
+    },
+    {
+      "id": "S110",
+      "title": "Cross dans les faces est de Belledonne (28 août 2024)",
+      "url": "https://www.chvd.org/2024/09/02/cross-dans-les-faces-est-de-belledonne/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Cross de 100 km depuis Chamrousse jusqu'à Albertville : transit de la Maurienne vers la face ouest de la Lauzière, brise en basses couches, plafonds de 2900 à 3400 m."
+    },
+    {
+      "id": "S111",
+      "title": "Coche de Lanchâtra (vol rando du 6 septembre 2025)",
+      "url": "https://www.chvd.org/2025/09/09/coche-de-lanchatra/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Décollage SE au col de la Coche (2260 m), « petit brisou » qui monte du versant SE, ascendances faibles et étroites en rive droite au-dessus de l'atterrissage de Venosc (journée voilée)."
+    },
+    {
+      "id": "S112",
+      "title": "Vol rando au Petit Chalvet - Grandes Rousses (octobre 2019)",
+      "url": "https://www.chvd.org/2019/10/29/vol-rando-au-petit-chalvet-grandes-rousses/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Petit Chalvet, antécime du Rissiou (2315 m) au-dessus de Vaujany : « quelques petits thermiques bien agréables pour la saison » ; atterrissage dans les champs d'Oz."
+    },
+    {
+      "id": "S113",
+      "title": "Escapade pédestre à la Turra (fiche de circuit, Aussois / Haute-Maurienne)",
+      "url": "https://www.cirkwi.com/fr/circuit/252754-escapade-pedestre-a-la-turra",
+      "publisher": "Cirkwi / offices de tourisme de Haute-Maurienne",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Décrit les falaises de la Turra, « prisées des adeptes de sports aériens », avec un courant d'air chaud ascendant qui fait la joie des vautours et gypaètes en toutes saisons."
+    },
+    {
+      "id": "S114",
+      "title": "Parapente Alpe d'Huez - Bourg d'Oisans (école, page d'accueil)",
+      "url": "https://parapentealpedhuez.com/",
+      "publisher": "Parapente Alpe d'Huez (école)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Vol « ascendance » : à partir de fin février les conditions thermiques permettent de monter jusqu'à 3000 m au-dessus de l'Alpe d'Huez et de survoler Oz, Vaujany, Auris et Villard-Reculas ; vol « panorama » du Signal à Bourg-d'Oisans."
+    },
+    {
+      "id": "S115",
+      "title": "Bisanne ou Aussois en août ? (fil de discussion)",
+      "url": "https://www.parapentiste.info/forum/sites-de-vols/bisanne-ou-aussois-en-aout-t63593.0.html",
+      "publisher": "parapentiste.info (forum)",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Réponses de pilotes locaux (janvier 2024) : plafonds à 4000 m possibles à Aussois en août (traces du club Vol libre Vanoise sur la CFD), brise de Maurienne inutilisable l'après-midi, nécessité de se poser avant midi ou de se reposer en altitude."
+    },
+    {
+      "id": "S116",
+      "title": "Syride - Turra de Termignon (site de vol)",
+      "url": "https://syride.com/en/flying-sites/Turra_De_Termignon",
+      "publisher": "Syride",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Page du site de vol de la Turra : dernier vol long publié 144 km (17 avril 2026, décollage Turra) ; altitude du site 1840 m selon Syride."
+    },
+    {
+      "id": "S117",
+      "title": "Visite au gros Léon (aiguille du Goléon, 26 juin 2011)",
+      "url": "https://www.chvd.org/2011/06/29/visite-au-gros-leon/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Décollage sud à la brèche du Bec de Grenier, vol « légèrement thermique sans plus » vers 14h au-dessus de Valfroide / La Grave."
+    },
+    {
+      "id": "S118",
+      "title": "Aiguille orientale de la Saussaz (topo CHVD, 2 juillet 2025)",
+      "url": "https://www.chvd.org/2025/07/02/aiguille-orientale-de-la-saussaz/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Topo de vol rando au-dessus de La Grave : les rochers sous le sommet génèrent une petite brise ; brise du vallon active vers 12h à l'atterrissage."
+    },
+    {
+      "id": "S119",
+      "title": "Site Valfréjus (fil de discussion)",
+      "url": "https://www.parapentiste.info/forum/sites-de-vols/site-valfrejus-t59117.0.html",
+      "publisher": "parapentiste.info (forum)",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Conseils de pilotes locaux (juillet 2021) : ne pas descendre dans la vallée de Modane en milieu de journée (brise très forte), Grand Vallon / Belle Plinier plutôt l'après-midi, aérologie particulière à la limite d'influence Nord/Sud (Lombarde)."
+    },
+    {
+      "id": "S120",
+      "title": "Vol dans un Écrin (vallon de la Muzelle, 3 septembre 2014)",
+      "url": "https://www.chvd.org/2014/09/09/vol-dans-un-ecrin-2/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Décollage au pied de la voie normale de la Muzelle (2500 m), « petite brise thermique » qui alimente le décollage, glide vers Venosc."
+    },
+    {
+      "id": "S121",
+      "title": "val cenis (Savoie) (fil de discussion)",
+      "url": "https://www.parapentiste.info/forum/index.php/topic,2652.0.html",
+      "publisher": "parapentiste.info (forum)",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Fil de 2007 (relancé en 2025) : un habitué de la station, qui n'y a pas volé lui-même, décrit une aérologie d'été forte au milieu d'après-midi, au-dessus de la couche stable, brise toujours établie en bas, atterrissage officiel sur la route du col de la Madeleine (Lanslevillard)."
     }
   ]
 }

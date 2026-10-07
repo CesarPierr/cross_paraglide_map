@@ -41,9 +41,16 @@ function inside(p: LngLat, ring: LngLat[]): boolean {
   return c;
 }
 
+/** Beyond this distance from every sector outline, a take-off is outside the Alps the atlas covers (Jura, Bugey, lower Rhône…). */
+const OUTSIDE_KM = 8;
+
 function sectorOf(p: LngLat, massifs: AtlasMassif[]): AtlasMassif | undefined {
-  const sectors = massifs.filter((m) => m.id !== 'alpes-francaises');
-  return sectors.find((m) => m.outline && inside(p, m.outline)) ?? sectors.sort((a, b) => km(p, a.center) - km(p, b.center))[0];
+  const sectors = massifs.filter((m) => m.id !== 'alpes-francaises' && m.outline?.length);
+  const within = sectors.find((m) => inside(p, m.outline!));
+  if (within) return within;
+  const edge = (m: AtlasMassif) => Math.min(...m.outline!.map((c) => km(p, c)));
+  const near = sectors.map((m) => ({ m, d: edge(m) })).sort((a, b) => a.d - b.d)[0];
+  return near && near.d <= OUTSIDE_KM ? near.m : undefined;
 }
 
 function main() {
@@ -52,10 +59,14 @@ function main() {
   const rows = ffvl.rows.map((r) => Object.fromEntries(ffvl.cols.map((c, i) => [c, r[i]]))) as Record<string, string | number>[];
   const takeoffs = rows.filter((r) => /d[ée]co/i.test(String(r.fonctions)) && !/interdit/i.test(String(r.praticabilite)));
   const bySector = new Map<string, { m: AtlasMassif; total: number; gaps: string[] }>();
+  const outside: string[] = [];
   for (const t of takeoffs) {
     const p: LngLat = [Number(t.lon), Number(t.lat)];
     const m = sectorOf(p, atlas.massifs);
-    if (!m) continue;
+    if (!m) {
+      outside.push(`${t.name} (FFVL ${t.id})`);
+      continue;
+    }
     const e = bySector.get(m.id) ?? { m, total: 0, gaps: [] };
     e.total++;
     const climb = nearest(p, atlas.features.thermals);
@@ -70,7 +81,7 @@ function main() {
   const out = [
     '# Couverture de l’atlas par rapport aux décollages officiels',
     '',
-    `Généré par \`npm run data:coverage\`. Pour chaque décollage FFVL ouvert à la pratique (${total}), l’atlas doit documenter un thermique ou point de relance à moins de ${CLIMB_KM} km et une brise à moins de ${BREEZE_KM} km. Couverts : **${covered}/${total} (${Math.round((covered / total) * 100)} %)**.`,
+    `Généré par \`npm run data:coverage\`. Pour chaque décollage FFVL ouvert à la pratique (${total}), l’atlas doit documenter un thermique ou point de relance à moins de ${CLIMB_KM} km et une brise à moins de ${BREEZE_KM} km. Couverts : **${covered}/${total} (${Math.round((covered / total) * 100)} %)**. ${outside.length} décollages de la liste sont à plus de ${OUTSIDE_KM} km de tout secteur (Jura, Bugey, bas Rhône…) et ne sont pas comptés.`,
     '',
     '| Secteur | Décollages | Couverts | Taux |',
     '| --- | --- | --- | --- |',
@@ -79,6 +90,10 @@ function main() {
     '## Décollages sans aérologie documentée à proximité',
     '',
     ...list.filter((x) => x.gaps.length).flatMap((x) => [`### ${x.m.shortName}`, '', ...x.gaps.map((g) => `- ${g}`), '']),
+    '## Hors périmètre',
+    '',
+    outside.join(' · '),
+    '',
   ];
   writeFileSync(join(ROOT, 'docs/COUVERTURE.md'), out.join('\n'));
   console.log(`couverture ${covered}/${total} → docs/COUVERTURE.md`);

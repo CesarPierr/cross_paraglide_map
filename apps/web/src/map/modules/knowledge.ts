@@ -193,7 +193,7 @@ export class KnowledgeModule implements MapModule {
     point('soaring', 'soaring', 9.5);
     point('thermals', 'thermal', 9);
     point('takeoffs', 'takeoff', 9.5);
-    point('hazards', 'hazard', 9);
+    point('hazards', 'hazard', 10);
 
     ctx.addLayer(
       {

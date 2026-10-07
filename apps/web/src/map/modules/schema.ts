@@ -227,7 +227,7 @@ export class SchemaModule implements MapModule {
           'text-max-angle': 35,
           'text-allow-overlap': false,
         },
-        paint: { 'text-color': kindColor, 'text-halo-color': 'rgba(2,6,23,0.95)', 'text-halo-width': 1.8 },
+        paint: { 'text-color': kindColor, 'text-halo-color': 'rgba(2,6,23,0.95)', 'text-halo-width': 1.5 },
       },
       'labels',
     );
@@ -342,7 +342,7 @@ export class SchemaModule implements MapModule {
           'text-ignore-placement': true,
           'text-max-width': 8,
         },
-        paint: { 'text-color': '#f8fafc', 'text-halo-color': 'rgba(2,6,23,0.9)', 'text-halo-width': 2.2 },
+        paint: { 'text-color': '#f8fafc', 'text-halo-color': 'rgba(2,6,23,0.9)', 'text-halo-width': 1.5 },
       },
       'labels',
     );

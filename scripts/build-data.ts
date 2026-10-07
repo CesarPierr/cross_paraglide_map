@@ -844,11 +844,16 @@ function main() {
       return null;
     }
   };
+  const regionRank = (file: string) => {
+    const i = REGION_ORDER.indexOf(file.replace('.json', ''));
+    return i < 0 ? REGION_ORDER.length : i;
+  };
   const listJson = (dir: string) =>
     existsSync(dir)
       ? readdirSync(dir)
           .filter((f) => f.endsWith('.json'))
-          .sort((a, b) => REGION_ORDER.indexOf(a.replace('.json', '')) - REGION_ORDER.indexOf(b.replace('.json', '')))
+          // Region batches first (they create the sectors), then the cross-cutting files that only add to them.
+          .sort((a, b) => regionRank(a) - regionRank(b) || a.localeCompare(b))
           .map((f) => ({ dir, file: f }))
       : [];
   const secondPass = listJson(SECOND_PASS);

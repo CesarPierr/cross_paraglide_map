@@ -1,0 +1,2585 @@
+{
+ "topic": "Fiches officielles FFVL : comblement des trous de couverture (thermiques, brises, dangers)",
+ "massifs": [
+  {
+   "id": "prealpes-digne-lure",
+   "breezes": [
+    {
+     "id": "ffvl197-brise-ouest-est-calavon",
+     "name": "Brise ouest-est de la Méditerranée par la vallée du Calavon vers Rustrel",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Coustellet",
+       "lon": 5.1447,
+       "lat": 43.8676,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Apt",
+       "lon": 5.3971,
+       "lat": 43.8758,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Rustrel - Saint-Maurin (atterrissage)",
+       "lon": 5.4592,
+       "lat": 43.9241,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Rustrel - Beausses (décollage)",
+       "lon": 5.4763,
+       "lat": 43.9419,
+       "coord_quality": "source"
+      }
+     ],
+     "description": "La fiche de Rustrel explique que le réchauffement du massif des Alpes entraîne une brise ouest-est provenant de la Méditerranée, canalisée par les Monts de Vaucluse au nord et le Luberon au sud (texte de la fiche tronqué à cet endroit). Tracé d'après les villes de la vallée du Calavon (Coustellet, Apt) jusqu'à Rustrel. Heure et force non précisées, la brise s'installe après la phase purement thermique de midi.",
+     "confidence": "medium",
+     "sources": [
+      "S31",
+      "S33"
+     ]
+    }
+   ],
+   "hazards": [
+    {
+     "id": "ffvl14291-rustrel-survol-interdit",
+     "name": "Rustrel : survol interdit de la pente entre le déco sud et le village (300 m/sol)",
+     "kind": "other",
+     "lon": 5.4765,
+     "lat": 43.9413,
+     "radius_km": 0.8,
+     "coord_quality": "approx",
+     "description": "La fiche demande de respecter scrupuleusement l'interdiction de survol de la pente entre le décollage sud et le village de Rustrel (300 m/sol minimum) : site sensible, zone réglementée en sortie de déco, il ne faut pas survoler la pente avant 300 m de gain. Position approximative, au décollage sud.",
+     "confidence": "medium",
+     "conditions": "toute l'année",
+     "sources": [
+      "S32",
+      "S31"
+     ]
+    },
+    {
+     "id": "ffvl200-grou-de-bane-ligne",
+     "name": "Grou de Bane : fossé et ligne électrique à l'atterrissage",
+     "kind": "other",
+     "lon": 5.6396,
+     "lat": 44.0424,
+     "radius_km": 0.4,
+     "coord_quality": "approx",
+     "description": "La fiche signale à l'atterrissage de L'Orge un fossé et une ligne électrique, ainsi que les cultures à respecter.",
+     "confidence": "medium",
+     "sources": [
+      "S35",
+      "S34"
+     ]
+    },
+    {
+     "id": "ffvl1771-malijai-lignes-tht",
+     "name": "Malijai - Blanchon : lignes THT autour du décollage",
+     "kind": "other",
+     "lon": 6.0339,
+     "lat": 44.0611,
+     "radius_km": 0.8,
+     "coord_quality": "approx",
+     "description": "La fiche mentionne une ligne THT au nord du décollage (à 700 m) et une autre au sud, en contrebas du déco, ainsi qu'un canal EDF à l'ouest, le survol de Malijai pour rejoindre l'atterrissage officiel et la proximité du centre de vol à voile de Saint-Auban. Terrain temporairement non praticable, site en test. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S37"
+     ]
+    }
+   ],
+   "thermal_spots": [
+    {
+     "id": "ffvl197-rustrel-thermique-midi",
+     "name": "Rustrel : décollage en conditions purement thermiques à partir de midi",
+     "lon": 5.4763,
+     "lat": 43.9419,
+     "alt_m": 942,
+     "coord_quality": "approx",
+     "best_hours": "vers midi et début d'après-midi",
+     "trigger": "ensoleillement du site après une matinée à l'ombre",
+     "description": "Selon l'aérologie de la fiche, le site est à l'ombre le matin ; l'ensoleillement se fait sentir vers midi et en début d'après-midi, ce qui permet un décollage en conditions « purement thermiques » avant que la brise ne s'installe. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S31",
+      "S32"
+     ]
+    },
+    {
+     "id": "ffvl1305-contras-sud-convection",
+     "name": "Contras Sud : convection estivale très puissante",
+     "lon": 5.7143,
+     "lat": 44.1007,
+     "alt_m": 1317,
+     "coord_quality": "approx",
+     "best_hours": "été",
+     "trigger": "face sud de Lure",
+     "description": "La fiche précise qu'en été la convection peut être très puissante à Contras Sud, ce qui exige une grande prudence jusqu'à l'atterrissage. Le régime de brise est orienté sud à sud-sud-ouest ; vent de sud-est léger en dessous de 20 km/h. Aire de décollage réduite. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S36"
+     ]
+    }
+   ],
+   "soaring_spots": [
+    {
+     "id": "ffvl199-grou-de-bane-est",
+     "name": "Grou de Bane : déco Est, bon rendement par vent d'est modéré",
+     "lon": 5.635,
+     "lat": 44.05,
+     "coord_quality": "approx",
+     "wind_dirs": [
+      "E",
+      "SE",
+      "S"
+     ],
+     "description": "Selon la fiche, le décollage Est de Grou de Bane donne un « bon rendement même par vent modéré » et c'est l'un des endroits privilégiés pour les conditions de retour d'est dans les Alpes du Sud ; idéal par vent de sud à sud-est, vol déconseillé par vent de nord et d'ouest. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S34"
+     ]
+    }
+   ],
+   "takeoffs": [
+    {
+     "id": "ffvl197-rustrel-beausses",
+     "name": "Rustrel - Beausses",
+     "lon": 5.4763,
+     "lat": 43.9419,
+     "alt_m": 942,
+     "coord_quality": "source",
+     "orientations": [
+      "SO",
+      "O"
+     ],
+     "description": "Décollage de Rustrel (Vaucluse) orienté sud-ouest à ouest. Le départ ouest demande une bonne maîtrise face voile et se montre turbulent avec une composante nord ; le départ sud est technique (petit, faible pente, aérologie souvent forte), en bordure de la zone réglementée. Atterrissage de Saint-Maurin, finesse 4, visible depuis le départ sud. Site à l'ombre le matin.",
+     "confidence": "medium",
+     "sources": [
+      "S31"
+     ]
+    },
+    {
+     "id": "ffvl14291-rustrel-sud",
+     "name": "Rustrel - Sud",
+     "lon": 5.4765,
+     "lat": 43.9413,
+     "alt_m": 938,
+     "coord_quality": "source",
+     "orientations": [
+      "S"
+     ],
+     "description": "Décollage sud de Rustrel, petit et plat, particulièrement technique : décollage en falaise délicat (relief et aérologie). Il permet de décoller tôt pour partir en cross. Terrain temporairement non praticable pour le vol libre selon la fiche (aménagements en cours).",
+     "confidence": "medium",
+     "sources": [
+      "S32"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "bourget-chambery",
+   "breezes": [
+    {
+     "id": "ffvl326-brise-pente-colombier",
+     "name": "Brise de pente du Grand Colombier (de Culoz vers le radiophare)",
+     "kind": "slope",
+     "waypoints": [
+      {
+       "name": "Colombier (atterrissage, pied de la pente)",
+       "lon": 5.7397,
+       "lat": 45.8569,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Colombier - Radiophare (crête)",
+       "lon": 5.7575,
+       "lat": 45.8814,
+       "coord_quality": "source"
+      }
+     ],
+     "description": "La fiche de La Croix prévient que la « brise de pente » peut devenir très forte l'après-midi : elle monte la face ouest du Grand Colombier. Aucune heure précise ni vitesse chiffrée ; très forte est interprété ici comme 25 km/h typique (déduction). Tracé du pied de la pente (atterrissage de Colombier) à la crête.",
+     "confidence": "medium",
+     "hours": "après-midi",
+     "speed_kmh": {
+      "typical": 25,
+      "max": 35
+     },
+     "sources": [
+      "S42",
+      "S43"
+     ]
+    },
+    {
+     "id": "ffvl1113-brise-pente-sapenay-belvedere",
+     "name": "Brise de pente de l'après-midi vers le Belvédère de Sapenay",
+     "kind": "slope",
+     "waypoints": [
+      {
+       "name": "Sapenay - Bouilloux (atterrissage)",
+       "lon": 5.8544,
+       "lat": 45.8022,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Sapenay - Belvédère (décollage)",
+       "lon": 5.8642,
+       "lat": 45.8111,
+       "coord_quality": "source"
+      }
+     ],
+     "description": "La fiche indique que le Belvédère est favorable « par régime de brise » avec un vent météo de secteur sud-ouest à nord-ouest, et facile l'après-midi à partir de 14h jusqu'à la tombée de la nuit par vent météo d'ouest. Tracé du pied de la pente (atterrissage de Bouilloux) à la crête : déduction.",
+     "confidence": "low",
+     "hours": "à partir de 14h jusqu'à la tombée de la nuit",
+     "sources": [
+      "S46"
+     ]
+    }
+   ],
+   "hazards": [
+    {
+     "id": "ffvl148-mont-tournier-tma",
+     "name": "Mont Tournier : TMA 1 et 2 de Chambéry, 1000 m du vendredi au lundi",
+     "kind": "airspace",
+     "lon": 5.6883,
+     "lat": 45.6327,
+     "radius_km": 2.0,
+     "coord_quality": "approx",
+     "description": "Le site est sous les TMA 1 et 2 de Chambéry : altitude maximale 1000 m du vendredi matin au lundi 11h UTC lorsque la TMA est classée D, puis FL115 (environ 3500 m) lorsqu'elle est classée E, d'après la fiche. Le plafond est à peine 370 m au-dessus du décollage pendant les périodes classées D.",
+     "confidence": "medium",
+     "conditions": "TMA classée D : du vendredi matin au lundi 11h UTC",
+     "sources": [
+      "S38"
+     ]
+    },
+    {
+     "id": "ffvl149-mont-tournier-lignes-ht",
+     "name": "Mont Tournier : lignes à haute tension le long de la nationale et près de l'atterrissage",
+     "kind": "other",
+     "lon": 5.6899,
+     "lat": 45.6427,
+     "radius_km": 0.8,
+     "coord_quality": "approx",
+     "description": "La fiche attire l'attention sur les lignes à haute tension qui longent la nationale et passent près de l'atterrissage.",
+     "confidence": "medium",
+     "sources": [
+      "S39",
+      "S38"
+     ]
+    },
+    {
+     "id": "ffvl311-parves-rouleaux-plateau",
+     "name": "Montagne de Parves : rouleaux du plateau sous le décollage par vent fort",
+     "kind": "lee-rotor",
+     "lon": 5.7281,
+     "lat": 45.7392,
+     "radius_km": 0.8,
+     "coord_quality": "approx",
+     "description": "La fiche recommande, par vent fort, de se méfier des rouleaux du plateau situés sous le décollage.",
+     "confidence": "medium",
+     "conditions": "vent fort",
+     "sources": [
+      "S40"
+     ]
+    },
+    {
+     "id": "ffvl311-parves-ligne-ht",
+     "name": "Montagne de Parves : ligne à haute tension au sud du décollage",
+     "kind": "other",
+     "lon": 5.7281,
+     "lat": 45.7392,
+     "radius_km": 0.5,
+     "coord_quality": "approx",
+     "description": "La fiche signale une ligne à haute tension au sud du décollage. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S40"
+     ]
+    },
+    {
+     "id": "ffvl311-parves-biotope-virignin",
+     "name": "Falaises de Virignin : survol interdit à moins de 150 m du sol",
+     "kind": "other",
+     "lon": 5.7132,
+     "lat": 45.7178,
+     "radius_km": 1.5,
+     "coord_quality": "approx",
+     "description": "Les falaises de Virignin sont en zone de protection de biotope : survol interdit à moins de 150 m du sol, toute l'année, d'après la fiche de la Montagne de Parves. Position approximative (commune de Virignin).",
+     "confidence": "medium",
+     "conditions": "toute l'année",
+     "sources": [
+      "S40"
+     ]
+    },
+    {
+     "id": "ffvl13126-parves-atterro-ligne",
+     "name": "Parves - Belley : ligne électrique à proximité de l'atterrissage",
+     "kind": "other",
+     "lon": 5.7182,
+     "lat": 45.7473,
+     "radius_km": 0.5,
+     "coord_quality": "approx",
+     "description": "La fiche de l'atterrissage de Parves - Belley signale une ligne électrique à proximité.",
+     "confidence": "medium",
+     "sources": [
+      "S41",
+      "S40"
+     ]
+    },
+    {
+     "id": "ffvl327-colombier-chanduraz-sous-le-vent",
+     "name": "Falaise de Chanduraz : zone sous le vent à éviter depuis le radiophare",
+     "kind": "lee-rotor",
+     "lon": 5.7501,
+     "lat": 45.8692,
+     "radius_km": 1.0,
+     "coord_quality": "approx",
+     "description": "Depuis le décollage du radiophare, la fiche de La Croix recommande d'éviter la zone sous le vent de la falaise de Chanduraz, et de longer plutôt le relief en direction du sud-est avant de dégager en plaine. Position approximative (hameau de Chanduraz).",
+     "confidence": "medium",
+     "sources": [
+      "S43",
+      "S42"
+     ]
+    },
+    {
+     "id": "ffvl327-colombier-ligne-tht",
+     "name": "Colombier : ligne très haute tension entre le radiophare et La Croix",
+     "kind": "other",
+     "lon": 5.7593,
+     "lat": 45.8944,
+     "radius_km": 1.6,
+     "coord_quality": "approx",
+     "description": "La fiche du radiophare signale une ligne très haute tension entre le radiophare et La Croix ; celle de La Croix cite aussi la TMA et une ligne haute tension. Position approximative (milieu du tronçon).",
+     "confidence": "medium",
+     "sources": [
+      "S43",
+      "S42"
+     ]
+    },
+    {
+     "id": "ffvl326-colombier-gain-interdit",
+     "name": "Colombier : interdiction de gain d'altitude, vol limité à 1530 m",
+     "kind": "airspace",
+     "lon": 5.7612,
+     "lat": 45.9074,
+     "radius_km": 2.0,
+     "coord_quality": "approx",
+     "description": "La fiche de La Croix indique qu'il est interdit de réaliser du gain (pas de convention FFVL) et celle du radiophare fixe l'altitude de vol maximale à 1530 m. Le site ne se prête pas au soaring ni aux ascendances.",
+     "confidence": "medium",
+     "sources": [
+      "S42",
+      "S43"
+     ]
+    },
+    {
+     "id": "ffvl329-innimond-atterro-ligne",
+     "name": "Innimond : ligne électrique en approche côté relief, atterrissage très humide",
+     "kind": "other",
+     "lon": 5.6144,
+     "lat": 45.7736,
+     "radius_km": 0.5,
+     "coord_quality": "approx",
+     "description": "La fiche signale à l'atterrissage une ligne électrique en approche côté relief, et un terrain pouvant être très humide. Position de l'atterrissage d'Innimond (fiche voisine).",
+     "confidence": "medium",
+     "sources": [
+      "S44"
+     ]
+    },
+    {
+     "id": "ffvl701-glandieu-biotope",
+     "name": "Cascade de Glandieu : arrêté de biotope, survol interdit à moins de 150 m du sol",
+     "kind": "other",
+     "lon": 5.6153,
+     "lat": 45.6717,
+     "radius_km": 1.0,
+     "coord_quality": "approx",
+     "description": "La fiche rappelle l'arrêté de biotope du département de l'Ain : survol interdit à moins de 150 m du sol toute l'année. Position approximative, au décollage.",
+     "confidence": "medium",
+     "conditions": "toute l'année",
+     "sources": [
+      "S45"
+     ]
+    },
+    {
+     "id": "ffvl1113-sapenay-couloir-chambery",
+     "name": "Sapenay : couloir d'approche de Chambéry - Aix-les-Bains, gain limité à 300 m",
+     "kind": "airspace",
+     "lon": 5.8642,
+     "lat": 45.8111,
+     "radius_km": 2.0,
+     "coord_quality": "approx",
+     "description": "Les sites de Sapenay sont sous l'axe final de l'aéroport de Chambéry - Aix-les-Bains : interdiction de gain d'altitude supérieur à 300 m au-dessus du décollage en période de charters pour le Belvédère, ne pas voler au-dessus de 320 m au-dessus du décollage pour Bouilloux ; Sapenay Nord est dans l'axe de descente vers la piste du Bourget (TMA de classe E). Lire les panneaux au décollage.",
+     "confidence": "medium",
+     "conditions": "période de charters (Belvédère)",
+     "sources": [
+      "S46",
+      "S49",
+      "S47"
+     ]
+    }
+   ],
+   "thermal_spots": [
+    {
+     "id": "ffvl148-mont-tournier-falaise",
+     "name": "Mont Tournier : forts thermiques déclenchant en avant de la grande falaise",
+     "lon": 5.6883,
+     "lat": 45.6327,
+     "alt_m": 633,
+     "coord_quality": "approx",
+     "trigger": "grande falaise devant le décollage",
+     "description": "La fiche met en garde contre de « forts thermiques » qui se déclenchent en avant, sur la grande falaise du décollage : le site fonctionne en brises thermiques ou par nord-ouest faible, et aussi par nord faible avec thermique. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S38"
+     ]
+    },
+    {
+     "id": "ffvl13086-sapenay-nord-instabilite",
+     "name": "Sapenay Nord : instabilité marquée par vent de sud à sud-ouest",
+     "lon": 5.8663,
+     "lat": 45.822,
+     "alt_m": 887,
+     "coord_quality": "approx",
+     "trigger": "faces sud-ouest de Sapenay Nord",
+     "description": "La fiche des décollages de Sapenay Nord (Peillat-Ducret et Guichon) donne comme aérologie « de sud à sud-ouest avec instabilité marquée » : conditions thermiques actives sur la pente. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S47",
+      "S48"
+     ]
+    },
+    {
+     "id": "ffvl1438-banchet-cumulus-plaine",
+     "name": "Le Banchet : nombreux cumulus en plaine et peu de vent",
+     "lon": 5.7315,
+     "lat": 45.5668,
+     "alt_m": 562,
+     "coord_quality": "approx",
+     "trigger": "chaîne de l'Épine, thermiques de plaine",
+     "description": "Pour le Banchet, la fiche décrit comme aérologie « nombreux cumulus en plaine et peu de vent » : situation thermique de plaine, à lire comme des ascendances actives (déduction). Position approximative, au décollage.",
+     "confidence": "low",
+     "sources": [
+      "S59"
+     ]
+    }
+   ],
+   "soaring_spots": [],
+   "takeoffs": [
+    {
+     "id": "ffvl148-mont-tournier",
+     "name": "Mont Tournier - Saint-Maurice-de-Rotherens",
+     "lon": 5.6883,
+     "lat": 45.6327,
+     "alt_m": 633,
+     "coord_quality": "source",
+     "orientations": [
+      "O",
+      "NO"
+     ],
+     "description": "Décollage en falaise orienté ouest à nord-ouest, très technique : course d'élan très courte et peu pentue, turbulent, déconseillé aux parapentes par conditions thermiques et ventées. Aérologie de la fiche : brises thermiques et/ou vent météo de nord-ouest faible, fonctionne aussi par nord faible avec thermique. Convention d'un an reconductible.",
+     "confidence": "medium",
+     "sources": [
+      "S38"
+     ]
+    },
+    {
+     "id": "ffvl311-montagne-de-parves",
+     "name": "Montagne de Parves",
+     "lon": 5.7281,
+     "lat": 45.7392,
+     "alt_m": 595,
+     "coord_quality": "source",
+     "orientations": [
+      "SO",
+      "O",
+      "NO"
+     ],
+     "description": "Décollage orienté sud-ouest à nord-ouest, court, qui se termine par une petite falaise. Sous la TMA de Chambéry 2. Balise openwindmap PP1009.",
+     "confidence": "medium",
+     "sources": [
+      "S40"
+     ]
+    },
+    {
+     "id": "ffvl326-colombier-la-croix",
+     "name": "Colombier - La Croix",
+     "lon": 5.7612,
+     "lat": 45.9074,
+     "alt_m": 1522,
+     "coord_quality": "source",
+     "orientations": [
+      "O"
+     ],
+     "description": "Décollage orienté ouest, sans convention FFVL (statut de la fiche), avec interdiction de réaliser du gain. Attention au vent et à la brise de pente, qui peut devenir très forte l'après-midi. Il est préférable de longer le relief en direction du sud-est avant de dégager en plaine. TMA et ligne haute tension.",
+     "confidence": "medium",
+     "sources": [
+      "S42"
+     ]
+    },
+    {
+     "id": "ffvl327-colombier-radiophare",
+     "name": "Colombier - Radiophare",
+     "lon": 5.7575,
+     "lat": 45.8814,
+     "alt_m": 1437,
+     "coord_quality": "source",
+     "orientations": [
+      "SO",
+      "O",
+      "NO"
+     ],
+     "description": "Décollage orienté sud-ouest à nord-ouest, altitude de vol maximale 1530 m. Ligne très haute tension entre le radiophare et La Croix.",
+     "confidence": "medium",
+     "sources": [
+      "S43"
+     ]
+    },
+    {
+     "id": "ffvl701-cascade-glandieu",
+     "name": "Cascade de Glandieu",
+     "lon": 5.6153,
+     "lat": 45.6717,
+     "alt_m": 483,
+     "coord_quality": "source",
+     "orientations": [
+      "SO",
+      "O"
+     ],
+     "description": "Décollage exigu (25 x 30 m) orienté sud-ouest à ouest, qui se termine par une falaise. Délicat par vent nul, turbulent par vent de sud et de nord-ouest ; les conditions peuvent être fortes par rapport au faible dénivelé. Fermé pour la chasse du 15 octobre au 31 décembre.",
+     "confidence": "medium",
+     "sources": [
+      "S45"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "baronnies",
+   "breezes": [
+    {
+     "id": "ffvl1318-brise-pente-rachas",
+     "name": "Brise de pente du Mont Rachas (face sud)",
+     "kind": "slope",
+     "waypoints": [
+      {
+       "name": "Atterrissage Mont Rachas - Montagne de la Lance (pied de pente)",
+       "lon": 5.0348,
+       "lat": 44.487,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Mont Rachas Sud (décollage)",
+       "lon": 5.0098,
+       "lat": 44.5022,
+       "coord_quality": "source"
+      }
+     ],
+     "description": "La fiche du Mont Rachas Sud donne comme aérologie « brise de pente ou vent de S ou SE » ; la fiche de l'atterrissage voisin précise vent faible de sud, nord turbulent l'été en nord-ouest. Tracé du pied de la pente (atterrissage) à la crête du décollage. Ni heure, ni force n'est précisée.",
+     "confidence": "medium",
+     "sources": [
+      "S61",
+      "S62"
+     ]
+    },
+    {
+     "id": "ffvl1745-brise-ouest-saint-jean",
+     "name": "Brise d'ouest de Saint-Jean (Sault) : de l'atterrissage au décollage",
+     "kind": "slope",
+     "waypoints": [
+      {
+       "name": "Saint-Jean (atterrissage)",
+       "lon": 5.3957,
+       "lat": 44.0397,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Saint-Jean - Latour de Durfort (décollage)",
+       "lon": 5.4032,
+       "lat": 44.0412,
+       "coord_quality": "source"
+      }
+     ],
+     "description": "Les fiches du décollage et de l'atterrissage de Saint-Jean donnent comme aérologie une « brise d'ouest » qui porte le vol de pente. En fin de journée la brise diminue et une légère brise descendante s'installe. Heure et force non précisées.",
+     "confidence": "medium",
+     "sources": [
+      "S66",
+      "S67"
+     ]
+    },
+    {
+     "id": "ffvl13236-brise-sud-rissas",
+     "name": "Brise de sud du Rissas (15-20 km/h)",
+     "kind": "slope",
+     "waypoints": [
+      {
+       "name": "Le Rissas (atterrissage)",
+       "lon": 5.1629,
+       "lat": 44.1923,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Le Rissas (décollage)",
+       "lon": 5.1675,
+       "lat": 44.1958,
+       "coord_quality": "source"
+      }
+     ],
+     "description": "La fiche de l'atterrissage du Rissas indique une « brise de 15-20 km/h » et/ou des thermiques ; celle du décollage une brise de sud. Tracé du pied de la pente à la crête (sud-ouest vers nord-est).",
+     "confidence": "medium",
+     "speed_kmh": {
+      "typical": 17,
+      "max": 20
+     },
+     "sources": [
+      "S72",
+      "S73"
+     ]
+    }
+   ],
+   "hazards": [
+    {
+     "id": "ffvl1312-rachas-atterro-ligne",
+     "name": "Mont Rachas : ligne électrique et rivière en approche de l'atterrissage",
+     "kind": "other",
+     "lon": 5.0348,
+     "lat": 44.487,
+     "radius_km": 0.6,
+     "coord_quality": "approx",
+     "description": "Le décollage sud est à finesse 6,25 de l'atterrissage, avec une ligne électrique et une rivière à franchir : ne pas trop attendre pour rentrer à l'atterrissage si l'on ne trouve pas de gain immédiat. Vignes avec piquets en fer au nord du terrain.",
+     "confidence": "medium",
+     "sources": [
+      "S62",
+      "S61"
+     ]
+    },
+    {
+     "id": "ffvl1312-rachas-atterro-nord-ouest",
+     "name": "Mont Rachas - Montagne de la Lance : atterrissage turbulent par vent de nord-ouest l'été",
+     "kind": "landing-turbulence",
+     "lon": 5.0348,
+     "lat": 44.487,
+     "radius_km": 0.6,
+     "coord_quality": "approx",
+     "description": "L'atterrissage dessert la Montagne de la Lance et le Mont Rachas : vent faible de sud ou de nord, turbulent l'été par vent de nord-ouest (note de la fiche).",
+     "confidence": "medium",
+     "conditions": "été, vent de nord-ouest",
+     "sources": [
+      "S62"
+     ]
+    },
+    {
+     "id": "ffvl1523-arfuyen-turbulent-thermique",
+     "name": "Arfuyen : site du matin, très turbulent dès que le thermique s'établit",
+     "kind": "other",
+     "lon": 5.1021,
+     "lat": 44.1913,
+     "radius_km": 1.0,
+     "coord_quality": "approx",
+     "description": "Pour la fiche d'Arfuyen, le site est du matin, praticable en condition calme (moins de 20 km/h de vent de face), et devient très turbulent en conditions thermiques. Position approximative, au décollage.",
+     "confidence": "medium",
+     "conditions": "conditions thermiques (dès le milieu de journée)",
+     "sources": [
+      "S63"
+     ]
+    },
+    {
+     "id": "ffvl1524-arfuyen-atterro-turbulent",
+     "name": "Arfuyen : atterrissage très turbulent en conditions thermiques, aérologie compliquée l'été",
+     "kind": "landing-turbulence",
+     "lon": 5.1075,
+     "lat": 44.1811,
+     "radius_km": 0.6,
+     "coord_quality": "approx",
+     "description": "Les fiches des deux atterrissages d'Arfuyen indiquent une aérologie compliquée en été et un terrain très turbulent en conditions thermiques.",
+     "confidence": "medium",
+     "conditions": "conditions thermiques, été",
+     "sources": [
+      "S64",
+      "S65",
+      "S63"
+     ]
+    },
+    {
+     "id": "ffvl1746-saint-jean-gradient",
+     "name": "Saint-Jean : gradient très présent à l'atterrissage en fin de journée",
+     "kind": "landing-turbulence",
+     "lon": 5.3957,
+     "lat": 44.0397,
+     "radius_km": 0.6,
+     "coord_quality": "approx",
+     "description": "Selon la fiche, l'atterrissage a un gradient très présent en fin de journée, à l'heure où la brise commence à diminuer et où le vol de pente est moins évident ; une légère brise descendante qui s'installe accentue le phénomène.",
+     "confidence": "medium",
+     "conditions": "fin de journée, brise qui diminue",
+     "sources": [
+      "S67",
+      "S66"
+     ]
+    },
+    {
+     "id": "ffvl1764-ventoux-fonfiole",
+     "name": "Mont Ventoux nord : combe de Fonfiole, aérologie à respecter",
+     "kind": "other",
+     "lon": 5.2785,
+     "lat": 44.1747,
+     "radius_km": 1.0,
+     "coord_quality": "approx",
+     "description": "La fiche déconseille d'entrer dans la combe de Fonfiole, dont les rochers génèrent une aérologie qui impose le respect ; on ne « tâte » cette aérologie qu'en bordure de la combe. Position approximative, sous le décollage nord.",
+     "confidence": "medium",
+     "sources": [
+      "S68"
+     ]
+    },
+    {
+     "id": "ffvl13470-seigneur-atterro-lignes",
+     "name": "Le Seigneur - Les Grayaux : lignes électriques en bord de la D1",
+     "kind": "other",
+     "lon": 5.3706,
+     "lat": 44.0951,
+     "radius_km": 0.5,
+     "coord_quality": "approx",
+     "description": "La fiche de l'atterrissage des Grayaux signale, au sud du site, des lignes électriques en bord de la D1. Ne pas utiliser le terrain pendant les foins (juin à début juillet).",
+     "confidence": "medium",
+     "sources": [
+      "S75",
+      "S74"
+     ]
+    }
+   ],
+   "thermal_spots": [
+    {
+     "id": "ffvl1309-lance-sud-restitution",
+     "name": "Montagne de la Lance Sud : restitution de brise de sud-ouest",
+     "lon": 5.0844,
+     "lat": 44.4638,
+     "alt_m": 1162,
+     "coord_quality": "approx",
+     "trigger": "pente sud-ouest (restitution)",
+     "description": "La fiche décrit pour la Lance Sud un vent de secteur sud-ouest faible ou des conditions de brise « bien en restit de sud ouest » (restitution de la chaleur de la pente sud-ouest), sans intérêt l'hiver. Heure non précisée. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S60"
+     ]
+    },
+    {
+     "id": "ffvl13236-rissas-thermiques",
+     "name": "Le Rissas : thermiques et brise de sud",
+     "lon": 5.1675,
+     "lat": 44.1958,
+     "alt_m": 530,
+     "coord_quality": "approx",
+     "trigger": "pente sud du Rissas",
+     "description": "La fiche du Rissas donne comme aérologie « brise de sud et/ou thermiques » ; celle de l'atterrissage parle d'une brise de 15 à 20 km/h et/ou de thermiques. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S72",
+      "S73"
+     ]
+    }
+   ],
+   "soaring_spots": [
+    {
+     "id": "ffvl1745-saint-jean-vol-de-pente",
+     "name": "Saint-Jean (Sault) : vol de pente en brise d'ouest",
+     "lon": 5.4032,
+     "lat": 44.0412,
+     "coord_quality": "approx",
+     "wind_dirs": [
+      "O",
+      "NO"
+     ],
+     "description": "Selon la fiche de l'atterrissage, le vol de pente est porté par la brise d'ouest jusqu'à ce qu'elle diminue en fin de journée, ce qui rend le vol de pente moins évident. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S66",
+      "S67"
+     ]
+    },
+    {
+     "id": "ffvl13236-rissas-soaring",
+     "name": "Le Rissas : soaring en brise de sud",
+     "lon": 5.1675,
+     "lat": 44.1958,
+     "coord_quality": "approx",
+     "wind_dirs": [
+      "S",
+      "SO"
+     ],
+     "description": "La fiche précise un vol en soaring en brise de sud, et thermiques, sur un dénivelé de 180 m. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S72",
+      "S73"
+     ]
+    }
+   ],
+   "takeoffs": [
+    {
+     "id": "ffvl1309-lance-sud",
+     "name": "Montagne de la Lance - Sud",
+     "lon": 5.0844,
+     "lat": 44.4638,
+     "alt_m": 1162,
+     "coord_quality": "source",
+     "orientations": [
+      "S",
+      "SO"
+     ],
+     "description": "Décollage orienté sud à sud-ouest (Le Pègue). Aérologie de la fiche : vent de secteur sud-ouest faible ou condition de brise, « bien en restit de sud ouest », sans intérêt l'hiver. Clôtures et troupeaux de moutons à respecter.",
+     "confidence": "medium",
+     "sources": [
+      "S60"
+     ]
+    },
+    {
+     "id": "ffvl1318-rachas-sud",
+     "name": "Mont Rachas - Sud",
+     "lon": 5.0098,
+     "lat": 44.5022,
+     "alt_m": 810,
+     "coord_quality": "source",
+     "orientations": [
+      "SE",
+      "S"
+     ],
+     "description": "Décollage orienté sud-est à sud, favorable en hiver, peu de rendement par vent de nord et peu utilisé. Il est souvent de travers droit, donc sous le vent des arbres. Un autre décollage plus haut permet de décoller au nord, mais le rendement est souvent décevant et il n'y a pas d'atterrissage côté nord. Déconseillé aux pilotes débutants non accompagnés.",
+     "confidence": "medium",
+     "sources": [
+      "S61"
+     ]
+    },
+    {
+     "id": "ffvl1523-arfuyen",
+     "name": "Arfuyen",
+     "lon": 5.1021,
+     "lat": 44.1913,
+     "alt_m": 560,
+     "coord_quality": "source",
+     "orientations": [
+      "E",
+      "SE"
+     ],
+     "description": "Décollage du matin orienté est à sud-est, praticable uniquement en condition calme (moins de 20 km/h de vent de face) et très turbulent en conditions thermiques. Interdit en période de chasse. Zone R55AE d'Orange. Passer à l'atterrissage avant de monter pour repérer les cultures.",
+     "confidence": "medium",
+     "sources": [
+      "S63"
+     ]
+    },
+    {
+     "id": "ffvl1745-saint-jean-durfort",
+     "name": "Saint-Jean - Latour de Durfort",
+     "lon": 5.4032,
+     "lat": 44.0412,
+     "alt_m": 1004,
+     "coord_quality": "source",
+     "orientations": [
+      "O",
+      "NO"
+     ],
+     "description": "Décollage de Sault orienté ouest à nord-ouest, dans le parc naturel régional du Mont-Ventoux. Aérologie de la fiche : brise d'ouest. Site sensible : respecter les zones d'accès et de stationnement des panneaux ; interdiction de poser sur la falaise à droite du décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S66"
+     ]
+    },
+    {
+     "id": "ffvl1764-ventoux-nord",
+     "name": "Mont Ventoux Nord",
+     "lon": 5.2785,
+     "lat": 44.1747,
+     "alt_m": 1859,
+     "coord_quality": "source",
+     "orientations": [
+      "N",
+      "NE",
+      "NO"
+     ],
+     "description": "Décollage du sommet vers le nord (Mont Serein), orienté nord à nord-ouest. Atterrissage nord du Mont Serein interdit lorsque les sports d'hiver occupent l'espace. Versant nord : protection des lieux de nidification de l'aigle royal et du faucon pèlerin (conditions de vol vers Savoillan données dans la fiche, texte tronqué). Zone aérienne R71 (FL75, 2250 m maximum en semaine).",
+     "confidence": "medium",
+     "sources": [
+      "S68"
+     ]
+    },
+    {
+     "id": "ffvl1767-ventoux-sud-cretes",
+     "name": "Mont Ventoux Sud - Les Crêtes",
+     "lon": 5.2644,
+     "lat": 44.1739,
+     "alt_m": 1821,
+     "coord_quality": "source",
+     "orientations": [
+      "SE",
+      "S"
+     ],
+     "description": "Décollage du sommet orienté sud-est à sud, de niveau confirmé ; activités commerciales soumises à autorisation du club gestionnaire (Fan de Lune). Zone aérienne R71 (FL75, 2250 m maximum en semaine). Voir le panneau sur le site.",
+     "confidence": "medium",
+     "sources": [
+      "S69"
+     ]
+    },
+    {
+     "id": "ffvl13509-ventoux-sud-chapelle",
+     "name": "Mont Ventoux Sud - La Chapelle",
+     "lon": 5.2751,
+     "lat": 44.173,
+     "alt_m": 1858,
+     "coord_quality": "source",
+     "orientations": [
+      "SE",
+      "S"
+     ],
+     "description": "Décollage du sommet orienté sud-est à sud, praticable par vent de sud et/ou sud-est ; fortement déconseillé par vent nul : préférer l'autre décollage sud (Les Crêtes) quand le vent est faible ou insuffisant. Zone aérienne R71 (FL75, 2250 m maximum en semaine).",
+     "confidence": "medium",
+     "sources": [
+      "S70"
+     ]
+    },
+    {
+     "id": "ffvl13236-le-rissas",
+     "name": "Le Rissas - Beaumont-du-Ventoux",
+     "lon": 5.1675,
+     "lat": 44.1958,
+     "alt_m": 530,
+     "coord_quality": "source",
+     "orientations": [
+      "S",
+      "SO"
+     ],
+     "description": "Décollage de 180 m de dénivelé, accessible à pied en 30 minutes, orienté sud à sud-ouest ; vol en soaring par brise de sud et thermiques. Respecter les propriétés privées et n'utiliser que les sentiers balisés (GR91). Club Dent'Ailes Free-Vol.",
+     "confidence": "medium",
+     "sources": [
+      "S72"
+     ]
+    },
+    {
+     "id": "ffvl13469-le-seigneur",
+     "name": "Le Seigneur - Monieux",
+     "lon": 5.363,
+     "lat": 44.0877,
+     "alt_m": 963,
+     "coord_quality": "source",
+     "orientations": [
+      "NE",
+      "E"
+     ],
+     "description": "Décollage orienté nord-est à est (« site favorable en E et NE »), niveau débutant. Zone R71A de Salon (FL75 à FL195).",
+     "confidence": "medium",
+     "sources": [
+      "S74"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "chartreuse",
+   "thermal_spots": [
+    {
+     "id": "ffvl1214-grand-ratz-thermique-sortie",
+     "name": "Le Grand Ratz : fort thermique en sortie de déco",
+     "lon": 5.6359,
+     "lat": 45.3293,
+     "alt_m": 803,
+     "coord_quality": "approx",
+     "trigger": "falaise devant le décollage",
+     "description": "La fiche du Grand Ratz (décollage en falaise orienté ouest) demande de se méfier du fort thermique en sortie de déco, avec des rouleaux qui donnent du vent arrière au décollage. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S76"
+     ]
+    },
+    {
+     "id": "ffvl13287-saint-hugues-declenchements",
+     "name": "Saint-Hugues (atterrissage) : déclenchements thermiques dans tous les sens",
+     "lon": 5.8064,
+     "lat": 45.3256,
+     "alt_m": 867,
+     "coord_quality": "source",
+     "trigger": "conditions thermiques installées au-dessus du fond de vallée",
+     "description": "La fiche de l'atterrissage de Saint-Hugues prévient qu'en conditions thermiques, malgré son apparente facilité, il faut l'aborder concentré : « des déclenchements thermiques se font dans tous les sens ». Aérologie : début et fin de journée plus calmes.",
+     "confidence": "medium",
+     "sources": [
+      "S77"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "diois",
+   "breezes": [
+    {
+     "id": "ffvl13301-brise-pente-matin-solaure",
+     "name": "Brise de pente du matin de Solaure",
+     "kind": "slope",
+     "waypoints": [
+      {
+       "name": "Solaure - Le Seillon Rivage (atterrissage)",
+       "lon": 5.3948,
+       "lat": 44.6834,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Solaure (décollage)",
+       "lon": 5.3535,
+       "lat": 44.6912,
+       "coord_quality": "source"
+      }
+     ],
+     "description": "La fiche de Solaure donne comme aérologie la « brise de pente du matin » avec un léger vent de sud : on vole par sud faible, thermiques ou brise de pente, et seulement en l'absence de la brise de la vallée du Diois, qui arrive de l'ouest et met le site sous le vent. Tracé du pied de la pente (atterrissage) au décollage.",
+     "confidence": "medium",
+     "hours": "matin",
+     "sources": [
+      "S81",
+      "S82"
+     ]
+    }
+   ],
+   "hazards": [
+    {
+     "id": "ffvl730-roynac-renforcement-sud",
+     "name": "Roynac - Col du Devès : renforcement brutal du vent de sud",
+     "kind": "strong-breeze",
+     "lon": 4.9366,
+     "lat": 44.6575,
+     "radius_km": 1.5,
+     "coord_quality": "approx",
+     "description": "La fiche met en garde contre le renforcement du vent de sud, qui peut être brutal : par sud établi, le sud se renforce rapidement et arrive en travers gauche au décollage.",
+     "confidence": "medium",
+     "conditions": "vent de sud établi",
+     "sources": [
+      "S78"
+     ]
+    },
+    {
+     "id": "ffvl730-roynac-rotor",
+     "name": "Roynac - Col du Devès : rotor derrière le décollage",
+     "kind": "lee-rotor",
+     "lon": 4.9366,
+     "lat": 44.6575,
+     "radius_km": 0.4,
+     "coord_quality": "approx",
+     "description": "La fiche signale qu'une repose au décollage est possible, mais qu'il faut se méfier du rotor derrière le déco.",
+     "confidence": "medium",
+     "sources": [
+      "S78"
+     ]
+    },
+    {
+     "id": "ffvl1316-saint-maurice-vent-rhone",
+     "name": "Saint-Maurice et Plaines de Poët : le vent se renforce vers la vallée du Rhône (25 km/h à la balise)",
+     "kind": "strong-breeze",
+     "lon": 5.076,
+     "lat": 44.564,
+     "radius_km": 2.5,
+     "coord_quality": "approx",
+     "description": "Les fiches de Saint-Maurice - Les Antennes et des Plaines de Poët avertissent que par vent soutenu il se renforce à mesure qu'on se rapproche de la vallée du Rhône (et change de direction) : rester attentif ; pour un vol serein le vent maximal ne doit pas dépasser 25 km/h à la balise des plaines (4,3 km à l'ouest). Position approximative, au décollage de Saint-Maurice.",
+     "confidence": "medium",
+     "conditions": "vent soutenu, balise des plaines > 25 km/h",
+     "sources": [
+      "S80",
+      "S79"
+     ]
+    }
+   ],
+   "thermal_spots": [
+    {
+     "id": "ffvl13301-solaure-thermiques-matin",
+     "name": "Solaure : thermiques du matin par sud faible",
+     "lon": 5.3535,
+     "lat": 44.6912,
+     "alt_m": 1221,
+     "coord_quality": "approx",
+     "best_hours": "matin (avant la brise de la Drôme)",
+     "trigger": "face sud de Solaure",
+     "description": "Selon la fiche, on vole à Solaure par sud faible, thermiques ou brise de pente, ou un mélange des trois, essentiellement les matins ensoleillés, avant l'arrivée de la brise de la vallée du Diois. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S81"
+     ]
+    }
+   ],
+   "takeoffs": [
+    {
+     "id": "ffvl730-roynac-col-du-deves",
+     "name": "Roynac - Col du Devès",
+     "lon": 4.9366,
+     "lat": 44.6575,
+     "alt_m": 434,
+     "coord_quality": "source",
+     "orientations": [
+      "S",
+      "SO",
+      "O"
+     ],
+     "description": "Décollage orienté sud à ouest (La Roche-sur-Grane). Aérologie de la fiche : régime de sud-ouest ; balise idéale 14/25 km/h de sud-ouest. Travers gauche au décollage par sud établi. Espace aérien C au nord du site à partir de FL65 (environ 1900 m).",
+     "confidence": "medium",
+     "sources": [
+      "S78"
+     ]
+    },
+    {
+     "id": "ffvl5114-plaines-de-poet",
+     "name": "Les Plaines de Poët",
+     "lon": 5.0216,
+     "lat": 44.5579,
+     "alt_m": 880,
+     "coord_quality": "source",
+     "orientations": [
+      "N",
+      "NO"
+     ],
+     "description": "Décollage toléré, non conventionné, orienté nord à nord-ouest (Eyzahut) : discrétion et respect demandés, pas d'atterrissage pour ce site. Le vent se renforce et change de direction à mesure qu'on se rapproche de la vallée du Rhône.",
+     "confidence": "medium",
+     "sources": [
+      "S79"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "grenoble-cuvette",
+   "hazards": [
+    {
+     "id": "ffvl13474-poisat-lignes-ht",
+     "name": "Poisat : lignes électriques à haute tension",
+     "kind": "other",
+     "lon": 5.7772,
+     "lat": 45.1545,
+     "radius_km": 0.8,
+     "coord_quality": "approx",
+     "description": "La fiche du décollage de Poisat (niveau confirmé, en cours d'élaboration) signale des lignes électriques à haute tension. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S83"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "haute-maurienne",
+   "hazards": [
+    {
+     "id": "ffvl620-aussois-foehn-sud",
+     "name": "Aussois : effet de foehn par vent de sud fort",
+     "kind": "foehn",
+     "lon": 6.7355,
+     "lat": 45.2482,
+     "radius_km": 2.0,
+     "coord_quality": "approx",
+     "description": "Les fiches du Grand Jeu et de l'Angle Bellecôte signalent un effet de foehn par vent de sud fort et un décollage sous le vent par vent de secteur ouest à nord-est (nord-ouest à nord-est pour Bellecôte) ; attention aussi par vent météo supérieur à 25 km/h. Position approximative, au Grand Jeu.",
+     "confidence": "medium",
+     "conditions": "vent de sud fort",
+     "sources": [
+      "S84",
+      "S85"
+     ]
+    }
+   ],
+   "thermal_spots": [
+    {
+     "id": "ffvl620-aussois-thermique-ete",
+     "name": "Aussois (Grand Jeu - Angle Bellecôte) : activité thermique forte en été dès 11h",
+     "lon": 6.7355,
+     "lat": 45.2482,
+     "alt_m": 2114,
+     "coord_quality": "approx",
+     "best_hours": "en été à partir de 11h (plus tôt par vent de nord)",
+     "trigger": "pentes d'Aussois (Grand Jeu, Angle Bellecôte)",
+     "description": "Les fiches d'Aussois (Sommet du Grand Jeu et Angle Bellecôte) indiquent un vent de vallée et une activité thermique forte en été à partir de 11h, plus tôt si le vent météo est de nord. Le décollage est fortement déconseillé en été l'après-midi : conditions de vol très turbulentes. Position approximative, au Grand Jeu.",
+     "confidence": "medium",
+     "sources": [
+      "S84",
+      "S85"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "combe-de-savoie",
+   "hazards": [
+    {
+     "id": "ffvl1986-languots-atterro-lignes",
+     "name": "Plan des Languots (Gilly) : lignes électriques à franchir avant l'atterrissage en agglomération",
+     "kind": "other",
+     "lon": 6.3622,
+     "lat": 45.6578,
+     "radius_km": 0.6,
+     "coord_quality": "approx",
+     "description": "La fiche du décollage de Plan des Languots précise que l'atterrissage est en agglomération : il faut quitter le relief suffisamment tôt pour survoler les lignes électriques avec une marge confortable. Le terrain est étroit (28 m de large pour les deltas).",
+     "confidence": "medium",
+     "sources": [
+      "S88",
+      "S89"
+     ]
+    },
+    {
+     "id": "ffvl1986-languots-atterro-brise",
+     "name": "Plan des Languots (Gilly) : atterrissage sensible et turbulent par brise, déconseillé par nord fort",
+     "kind": "landing-turbulence",
+     "lon": 6.3622,
+     "lat": 45.6578,
+     "radius_km": 0.6,
+     "coord_quality": "approx",
+     "description": "La fiche de l'atterrissage de Plan des Languots dit qu'il est facile par sud-ouest ou nord-est, mais sensible et turbulent par brise et déconseillé par vent de nord fort. La fiche du décollage interdit de voler par vent de nord ou brise de vallée installée dans la vallée de la Tamié.",
+     "confidence": "medium",
+     "conditions": "brise installée, vent de nord fort",
+     "sources": [
+      "S88",
+      "S89"
+     ]
+    }
+   ],
+   "thermal_spots": [
+    {
+     "id": "ffvl317-molliet-declenchements",
+     "name": "Val Pelouse - Le Molliet : déclenchements thermiques en milieu de journée",
+     "lon": 6.14,
+     "lat": 45.4397,
+     "alt_m": 713,
+     "coord_quality": "source",
+     "best_hours": "milieu de journée",
+     "trigger": "fond de vallée du Molliet",
+     "description": "La fiche de l'atterrissage du Molliet prévient d'être attentif lors des déclenchements thermiques en milieu de journée ; le vent n'y est pas toujours bien établi et l'atterrissage n'est pas visible du décollage de Val Pelouse.",
+     "confidence": "medium",
+     "sources": [
+      "S86",
+      "S87"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "prealpes-grasse-castellane",
+   "hazards": [
+    {
+     "id": "ffvl928-bargemon-camp-canjuers",
+     "name": "Bargemon : camp militaire de Canjuers au nord de l'atterrissage, ne pas le survoler",
+     "kind": "airspace",
+     "lon": 6.5678,
+     "lat": 43.6412,
+     "radius_km": 1.5,
+     "coord_quality": "approx",
+     "description": "Les fiches de Bargemon (décollage de la table d'orientation et atterrissage du Col du Bel Homme) demandent de ne pas survoler le camp de Canjuers, situé en bordure de l'atterrissage au nord ; vérifier les NOTAM sur le site du club. Atterrissage non visible du décollage : en cas de perte d'altitude, se poser au sud du village. Position approximative, à l'atterrissage.",
+     "confidence": "medium",
+     "sources": [
+      "S91",
+      "S90"
+     ]
+    },
+    {
+     "id": "ffvl5027-puet-gradient-sortie",
+     "name": "Le Puet : gradient en sortie de décollage par tendance ouest",
+     "kind": "other",
+     "lon": 6.8284,
+     "lat": 43.7101,
+     "radius_km": 0.5,
+     "coord_quality": "approx",
+     "description": "La fiche du Puet signale un gradient en sortie de décollage par tendance ouest, sur la partie droite en décollant ; le site est dangereux par vent de nord et ne convient pas à un pilote débutant sans guidage. Position approximative, au décollage.",
+     "confidence": "medium",
+     "conditions": "tendance ouest",
+     "sources": [
+      "S92"
+     ]
+    },
+    {
+     "id": "ffvl5321-sainte-luce-gradient",
+     "name": "Chapelle Sainte-Luce : atterrissage très court avec gradient marqué par vent d'ouest",
+     "kind": "landing-turbulence",
+     "lon": 6.836,
+     "lat": 43.7026,
+     "radius_km": 0.5,
+     "coord_quality": "approx",
+     "description": "Selon la fiche, la zone d'atterrissage est très courte, avec la chapelle en entrée de terrain (approche par vent d'ouest, gradient assez marqué) ou en fin de terrain (approche par vent d'est) ; demander conseil aux membres du club présents. L'atterrissage du Grand Pré voisin est interdit.",
+     "confidence": "medium",
+     "conditions": "approche par vent d'ouest",
+     "sources": [
+      "S93",
+      "S92"
+     ]
+    }
+   ],
+   "thermal_spots": [
+    {
+     "id": "ffvl1899-bargemon-thermiques-ete",
+     "name": "Bargemon : thermiques parfois très puissants en plein été",
+     "lon": 6.5615,
+     "lat": 43.6389,
+     "alt_m": 1017,
+     "coord_quality": "approx",
+     "best_hours": "plein été",
+     "trigger": "versant sud-est de Bargemon",
+     "description": "La fiche de la table d'orientation de Bargemon précise qu'en plein été les thermiques peuvent être très puissants (décollage orienté sud-est à sud, sans autre précision d'heure). Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S90"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vanoise",
+   "hazards": [
+    {
+     "id": "ffvl14088-avanchers-ouest-oppose-brise",
+     "name": "Les Avanchers (Valmorel) : vent d'ouest ou de sud-ouest opposé à la brise, onde possible",
+     "kind": "other",
+     "lon": 6.4586,
+     "lat": 45.4785,
+     "radius_km": 1.5,
+     "coord_quality": "approx",
+     "description": "La fiche de l'atterrissage des Avanchers (Valmorel) indique que le vent de nord est favorable, mais que l'ouest et le sud-ouest sont dangereux dans cette vallée car ils s'opposent au sens de la brise ; soutenus, ils peuvent couler dans la vallée, créer de l'onde et rendre l'atterrissage très dangereux. Atterrissage bordé d'une route de chaque côté, léger dévers.",
+     "confidence": "medium",
+     "conditions": "vent d'ouest ou de sud-ouest soutenu",
+     "sources": [
+      "S94"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "tarentaise",
+   "breezes": [
+    {
+     "id": "ffvl13702-catabatique-marquise-sainte-foy",
+     "name": "Flux catabatique du matin de la Marquise vers Sainte-Foy",
+     "kind": "katabatic",
+     "waypoints": [
+      {
+       "name": "La Marquise Ouest (décollage)",
+       "lon": 6.9262,
+       "lat": 45.591,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Sainte-Foy - atterrissage haut",
+       "lon": 6.9228,
+       "lat": 45.5846,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Sainte-Foy - Le Bochet bas",
+       "lon": 6.9011,
+       "lat": 45.5877,
+       "coord_quality": "source"
+      }
+     ],
+     "description": "La fiche de la Marquise Ouest recommande l'après-midi, « une fois le catabatique inexistant » : un flux catabatique descendant existe donc le matin et cesse avant l'après-midi, ce que confirment les fiches des atterrissages (vent légèrement descendant par catabatique). Heure de fin et vitesse non précisées. Tracé du décollage vers les atterrissages de Sainte-Foy.",
+     "confidence": "medium",
+     "hours": "matin (cesse avant l'après-midi)",
+     "sources": [
+      "S95",
+      "S96",
+      "S97"
+     ]
+    }
+   ],
+   "thermal_spots": [
+    {
+     "id": "ffvl13704-bochet-ascendances-printemps",
+     "name": "Sainte-Foy (Le Bochet bas) : brise soutenue et ascendances thermiques au printemps",
+     "lon": 6.9011,
+     "lat": 45.5877,
+     "alt_m": 1620,
+     "coord_quality": "source",
+     "best_hours": "printemps (après-midi)",
+     "trigger": "brise soutenue de printemps au-dessus du fond de vallée",
+     "description": "La fiche de l'atterrissage du Bochet bas indique que l'atterrissage peut être délicat avec un vent fort, ou une brise soutenue avec des ascendances thermiques au printemps ; la fiche de la Marquise Ouest conseille, par brise au printemps ou vent météo d'ouest, l'après-midi.",
+     "confidence": "medium",
+     "sources": [
+      "S97",
+      "S95"
+     ]
+    },
+    {
+     "id": "ffvl13678-la-gare-thermique-ete",
+     "name": "La Gare (Bourg-Saint-Maurice) : terrain thermique en été dès 11h",
+     "lon": 6.7734,
+     "lat": 45.6177,
+     "alt_m": 820,
+     "coord_quality": "source",
+     "best_hours": "été, quelquefois à partir de 11h",
+     "trigger": "proximité de la ville de Bourg-Saint-Maurice",
+     "description": "La fiche de La Gare indique un terrain d'atterrissage thermique en été, quelquefois à partir de 11h, à cause de la proximité de la ville et d'une brise forte ; une confluence peut durer très tard. La fiche l'ouvre seulement du 1er juillet au 31 août (statut FFVL par ailleurs affiché comme interdit).",
+     "confidence": "medium",
+     "sources": [
+      "S98"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "haut-giffre",
+   "thermal_spots": [
+    {
+     "id": "ffvl1091-flocons-verts-thermiques",
+     "name": "Les Carroz (Flocons Verts) : thermiques turbulents en pleine journée",
+     "lon": 6.6408,
+     "lat": 46.0219,
+     "alt_m": 1144,
+     "coord_quality": "source",
+     "best_hours": "pleine journée",
+     "trigger": "pentes au-dessus du terrain, thermiques de fond de vallée",
+     "description": "La fiche de l'atterrissage des Flocons Verts dit qu'il peut être turbulent en pleine journée en cas de thermiques ; dans ce cas atterrir vers le haut du terrain ou à Araches. Terrain en pente descendante, conditions favorables face à la brise. Celle d'Araches note aussi un atterrissage turbulent l'après-midi.",
+     "confidence": "medium",
+     "sources": [
+      "S99",
+      "S100",
+      "S101"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vercors-nord",
+   "thermal_spots": [
+    {
+     "id": "ffvl135-lia-nord-ouest-thermique",
+     "name": "La Lia : nord-ouest et thermique",
+     "lon": 5.4373,
+     "lat": 45.1754,
+     "alt_m": 755,
+     "coord_quality": "approx",
+     "trigger": "pente d'herbe orientée nord-ouest au-dessus des gorges du Nan",
+     "description": "La fiche de La Lia (décollage en pente d'herbe bordé de grands arbres, orienté nord-ouest) donne comme aérologie « nord-ouest et thermique » : le site marche par vent de nord-ouest avec du thermique. Le survol des gorges du Nan à basse altitude peut être turbulent. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S102",
+      "S103"
+     ]
+    },
+    {
+     "id": "ffvl1039-alevoux-atterro-declenchements",
+     "name": "L'Alevoux (atterrissage) : déclenchements thermiques très turbulents en approche finale",
+     "lon": 5.362,
+     "lat": 45.1228,
+     "alt_m": 359,
+     "coord_quality": "source",
+     "trigger": "champ entouré de noyeraies",
+     "description": "La fiche de l'atterrissage de L'Alevoux signale que le terrain est sujet à des déclenchements thermiques très turbulents en approche finale (léger nord ; tolérance très précaire, champ entouré de noyeraies).",
+     "confidence": "medium",
+     "sources": [
+      "S104",
+      "S105"
+     ]
+    },
+    {
+     "id": "ffvl13562-pas-de-lane-thermique-nord",
+     "name": "Pas de l'Âne : conditions thermiques et léger vent du nord",
+     "lon": 5.4445,
+     "lat": 45.1308,
+     "alt_m": 1350,
+     "coord_quality": "approx",
+     "trigger": "falaise du Pas de l'Âne",
+     "description": "La fiche du Pas de l'Âne donne comme aérologie « conditions thermiques et léger vent du nord » : décollage en falaise très bien alimenté par vent de nord, turbulences fortes dans le cirque de Malleval pour l'atterrissage par vent soutenu. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S106",
+      "S107"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "serre-poncon-embrunais",
+   "hazards": [
+    {
+     "id": "ffvl13066-chorges-ligne-tht",
+     "name": "Chorges (Les Ballons) : ligne THT 220 kV sur la montagne sous les décollages",
+     "kind": "other",
+     "lon": 6.2843,
+     "lat": 44.5937,
+     "radius_km": 1.0,
+     "coord_quality": "approx",
+     "description": "Les fiches des Ballons et de l'atterrissage des Césaris signalent une ligne THT de 220 000 V un peu plus bas sur la montagne, loin sous le décollage ; la fiche de Serre Michèle mentionne des rotations d'hélicoptères (NOTAM) pour la construction de ces lignes. Position approximative, aux Ballons.",
+     "confidence": "medium",
+     "sources": [
+      "S108",
+      "S109",
+      "S110"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "champsaur-valgaudemar",
+   "hazards": [
+    {
+     "id": "ffvl14138-gorges-lignes-electriques",
+     "name": "Les Gorges (Puy de Manse) : lignes électriques à proximité de l'atterrissage",
+     "kind": "other",
+     "lon": 6.1602,
+     "lat": 44.6244,
+     "radius_km": 0.5,
+     "coord_quality": "approx",
+     "description": "La fiche de l'atterrissage des Gorges signale des lignes électriques à proximité, en plus d'un relief irrégulier et d'un terrain non nettoyé. Site interdit du 1er juin au 15 novembre.",
+     "confidence": "medium",
+     "sources": [
+      "S111",
+      "S112"
+     ]
+    }
+   ],
+   "thermal_spots": [
+    {
+     "id": "ffvl14138-gorges-declenchement-thermique",
+     "name": "Puy de Manse - Les Gorges (atterrissage) : possibilité de déclenchements thermiques",
+     "lon": 6.1602,
+     "lat": 44.6244,
+     "alt_m": 1350,
+     "coord_quality": "source",
+     "trigger": "terrain en légère pente à l'atterrissage",
+     "description": "La fiche du nouvel atterrissage des Gorges (site en cours d'aménagement, repérage conseillé) mentionne, comme aérologie, la possibilité de déclenchement thermique ; terrain en légère pente, relief irrégulier. Interdit du 1er juin au 15 novembre comme le Puy de Manse.",
+     "confidence": "medium",
+     "sources": [
+      "S111",
+      "S112"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "gapencais-ceuse",
+   "thermal_spots": [
+    {
+     "id": "ffvl3048-cuberselle-thermique-matin",
+     "name": "Cuberselle : thermique du matin de l'autre côté de la crête",
+     "lon": 5.8089,
+     "lat": 44.548,
+     "alt_m": 1236,
+     "coord_quality": "approx",
+     "best_hours": "le matin",
+     "trigger": "de l'autre côté de la crête de Cuberselle",
+     "description": "La fiche de Cuberselle précise que le matin le décollage est légèrement sous le vent d'un thermique qui se forme de l'autre côté de la crête ; décollage S/SO en brise, au bout de la crête, quasiment en falaise. Position approximative, au décollage (le thermique est de l'autre côté de la crête).",
+     "confidence": "medium",
+     "sources": [
+      "S113"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "saint-andre-verdon",
+   "hazards": [
+    {
+     "id": "ffvl1206-reine-jeanne-ligne",
+     "name": "Moustiers - La Reine Jeanne : atterrissage le long d'une ligne électrique",
+     "kind": "other",
+     "lon": 6.2145,
+     "lat": 43.8334,
+     "radius_km": 0.5,
+     "coord_quality": "approx",
+     "description": "La fiche de l'atterrissage de la Reine Jeanne signale qu'il se trouve le long d'une ligne électrique ; c'est le seul atterrissage autorisé de la vallée, après une longue transition (Saint-Clair est interdit). Ne pas se vacher dans les champs ni les prés ; en cas de posé obligatoire, sortir immédiatement du champ pour plier.",
+     "confidence": "medium",
+     "sources": [
+      "S114",
+      "S115"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "mercantour",
+   "breezes": [
+    {
+     "id": "ffvl14294-brise-roya-col-de-tende",
+     "name": "Brise de vallée de la Roya de Tende au Col de Tende",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Tende",
+       "lon": 7.5934,
+       "lat": 44.0889,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Col de Tende (décollage)",
+       "lon": 7.5686,
+       "lat": 44.1507,
+       "coord_quality": "source"
+      }
+     ],
+     "description": "La fiche du Col de Tende indique comme aérologie « sud avec flux de brise de vallée » et prévient qu'il faut atterrir avant que la brise de vallée devienne trop forte ; elle prolonge vers le col la brise de la Roya déjà décrite jusqu'à Tende. Pas d'heure ni de force chiffrées.",
+     "confidence": "medium",
+     "sources": [
+      "S118"
+     ]
+    }
+   ],
+   "hazards": [
+    {
+     "id": "ffvl14293-larmacreuse-ligne-gradient",
+     "name": "Tende - Larmacreuse : ligne électrique le long de la rivière et gradient en période chaude",
+     "kind": "landing-turbulence",
+     "lon": 7.6066,
+     "lat": 44.0961,
+     "radius_km": 0.5,
+     "coord_quality": "approx",
+     "description": "La fiche de l'atterrissage de Larmacreuse signale une ligne électrique à proximité, qui longe la rivière Refrei, et un terrain souvent soumis à du gradient de vent en période chaude : avoir de la vitesse en finale. Dans ce vallon il n'y a pas de véritable brise installée : flux généralement montant de sud-ouest, parfois descendant, auquel cas l'approche se fait en aval du terrain.",
+     "confidence": "medium",
+     "conditions": "période chaude",
+     "sources": [
+      "S117",
+      "S116"
+     ]
+    },
+    {
+     "id": "ffvl904-colmiane-lignes-electriques",
+     "name": "La Colmiane (Veillos, Soum du Pra) : lignes électriques",
+     "kind": "other",
+     "lon": 7.1908,
+     "lat": 44.0961,
+     "radius_km": 1.0,
+     "coord_quality": "approx",
+     "description": "La fiche de Veillos met en garde contre les lignes électriques (« attention aux lignes électriques ») ; celle de l'atterrissage de Soum du Pra signale aussi les lignes, ainsi que de nombreux enfants et l'accès au camping. Position approximative, à Veillos.",
+     "confidence": "medium",
+     "sources": [
+      "S119",
+      "S120"
+     ]
+    }
+   ],
+   "thermal_spots": [
+    {
+     "id": "ffvl721-cagnorina-thermo-dynamique",
+     "name": "Cagnorina : site thermo-dynamique par régime de sud, fort en milieu de journée",
+     "lon": 7.5968,
+     "lat": 44.0974,
+     "alt_m": 1110,
+     "coord_quality": "approx",
+     "best_hours": "milieu de journée (fort)",
+     "trigger": "pente de Cagnorina par régime de sud",
+     "description": "La fiche de Cagnorina (décollage et atterrissage au même endroit) donne comme aérologie « thermo-dynamique avec régime de Sud » ; l'atterrissage se fait au décollage, avec des conditions fortes en milieu de journée et une brise de vallée qui peut rentrer fortement assez rapidement. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S116"
+     ]
+    },
+    {
+     "id": "ffvl14294-col-de-tende-thermique",
+     "name": "Col de Tende : conditions thermiques et soaring par léger vent de sud",
+     "lon": 7.5686,
+     "lat": 44.1507,
+     "alt_m": 1900,
+     "coord_quality": "approx",
+     "best_hours": "très fort en pleine journée de chaleur ; plus calme en fin de journée",
+     "trigger": "versant sud du col",
+     "description": "La fiche du Col de Tende donne comme aérologie : sud avec flux de brise de vallée, conditions thermiques, soaring par léger vent météo de sud ; les conditions peuvent être très fortes en pleine journée de chaleur, il vaut mieux décoller et atterrir avant que la brise de vallée devienne trop forte, ou voler en fin de journée. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S118"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "prealpes-nice-var",
+   "hazards": [
+    {
+     "id": "ffvl1653-macaron-lignes-ht",
+     "name": "Cantaron - Mont Macaron : site très complexe à cause des lignes électriques à haute tension",
+     "kind": "other",
+     "lon": 7.3064,
+     "lat": 43.7906,
+     "radius_km": 1.5,
+     "coord_quality": "approx",
+     "description": "Les fiches du Mont Macaron et de l'atterrissage de Cantaron signalent une ligne électrique à haute tension et un site très complexe par rapport aux lignes électriques ; site à mettre en fonction la première année avec de très bons pilotes, réservé aux membres du club. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S121",
+      "S122"
+     ]
+    },
+    {
+     "id": "ffvl14270-giordano-ligne-ht",
+     "name": "Breil-sur-Roya (Campé Giordano) : ligne haute tension 150 à 200 m sous le décollage",
+     "kind": "other",
+     "lon": 7.5017,
+     "lat": 43.9483,
+     "radius_km": 0.6,
+     "coord_quality": "approx",
+     "description": "La fiche signale une ligne électrique à haute tension à 150-200 m en dessous du décollage. Respecter les interdictions liées au parc du Mercantour. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S123"
+     ]
+    }
+   ],
+   "thermal_spots": [
+    {
+     "id": "ffvl14270-giordano-thermo-dynamique",
+     "name": "Breil-sur-Roya (Campé Robert Giordano) : thermo-dynamique au décollage",
+     "lon": 7.5017,
+     "lat": 43.9483,
+     "alt_m": 813,
+     "coord_quality": "approx",
+     "trigger": "décollage thermo-dynamique",
+     "description": "La fiche du site de Robert Giordano (projet, support en bois) donne comme aérologie « thermo-dynamique au décollage ». Site réservé aux pilotes brevetés FFVL, décollage orienté est à sud-ouest. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S123"
+     ]
+    }
+   ]
+  },
+  {
+   "id": "vercors-est-sud",
+   "hazards": [
+    {
+     "id": "ffvl13417-touviere-sous-le-vent-planeurs",
+     "name": "La Touvière : sous le vent par vent d'est, planeurs dans l'espace aérien, point d'aboutissement lointain",
+     "kind": "landing-turbulence",
+     "lon": 5.1335,
+     "lat": 44.8975,
+     "radius_km": 0.6,
+     "coord_quality": "approx",
+     "description": "La fiche de La Touvière signale qu'on est sous le vent en régime de vent d'est, que l'espace aérien est partagé avec des planeurs, et qu'en raison de la pente descendante du terrain le point d'aboutissement peut se situer loin dans le prolongement de l'axe final. L'atterrissage de l'Empereur est fermé depuis janvier 2018.",
+     "confidence": "medium",
+     "conditions": "régime de vent d'est",
+     "sources": [
+      "S124",
+      "S125"
+     ]
+    },
+    {
+     "id": "ffvl1433-saint-jean-sud-lignes-gradient",
+     "name": "Saint-Jean-en-Royans Sud : lignes électriques au nord et à l'ouest, gradient",
+     "kind": "landing-turbulence",
+     "lon": 5.2906,
+     "lat": 45.0035,
+     "radius_km": 0.5,
+     "coord_quality": "approx",
+     "description": "La fiche de l'atterrissage sud de Saint-Jean-en-Royans signale des lignes électriques au nord et à l'ouest du terrain, des noyers sur trois côtés et un gradient possible : garder un maximum de vitesse en finale, PTU main gauche vers le nord-est. Aérologie : petit nord, régime de brise établi. Terrain temporairement non praticable selon la fiche.",
+     "confidence": "medium",
+     "sources": [
+      "S127",
+      "S128"
+     ]
+    }
+   ],
+   "thermal_spots": [
+    {
+     "id": "ffvl13417-touviere-bulles-thermiques",
+     "name": "La Touvière (Peyrus) : bulles thermiques près du sol à l'atterrissage",
+     "lon": 5.1335,
+     "lat": 44.8975,
+     "alt_m": 550,
+     "coord_quality": "source",
+     "trigger": "bulles thermiques près du sol au-dessus du terrain",
+     "description": "La fiche de l'atterrissage de La Touvière (terrain étroit mais très long, visible depuis le décollage des Limouches) signale que la présence de bulles thermiques près du sol peut allonger involontairement la phase finale ; à l'inverse, on peut parfois se retrouver dans une aérologie catabatique. Aérologie : nord faible.",
+     "confidence": "medium",
+     "sources": [
+      "S124",
+      "S125"
+     ]
+    },
+    {
+     "id": "ffvl1514-saint-martin-aerologie-13h-17h",
+     "name": "Pas de Saint-Martin : aérologie généreuse de 13h à 17h quand l'activité thermique est présente",
+     "lon": 5.465,
+     "lat": 45.0228,
+     "alt_m": 1243,
+     "coord_quality": "approx",
+     "best_hours": "13h-17h",
+     "trigger": "falaises ouest du Pas de Saint-Martin",
+     "description": "La fiche du Pas de Saint-Martin note une aérologie généreuse entre 13h et 17h lorsque l'activité thermique est présente ; la brise est souvent soutenue, l'alimentation au décollage souvent forte, renforcée par le vent du nord. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S126"
+     ]
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "S31",
+   "title": "Fiche FFVL Rustrel - Beausses (n° 197)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/197",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Rustrel) : description, aérologie, restrictions."
+  },
+  {
+   "id": "S32",
+   "title": "Fiche FFVL Rustrel - Sud (n° 14291)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/14291",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Rustrel) : description, dangers, restrictions."
+  },
+  {
+   "id": "S33",
+   "title": "Fiche FFVL Rustrel - St-Maurin (n° 198)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/198",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Rustrel) : description."
+  },
+  {
+   "id": "S34",
+   "title": "Fiche FFVL Grou de Bane - la Croix (n° 199)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/199",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Banon) : description, aérologie, dangers."
+  },
+  {
+   "id": "S35",
+   "title": "Fiche FFVL Grou de Bane - l'Orge (n° 200)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/200",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Banon) : dangers."
+  },
+  {
+   "id": "S36",
+   "title": "Fiche FFVL Contras - Sud (n° 1305)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1305",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, L'Hospitalet) : aérologie, dangers."
+  },
+  {
+   "id": "S37",
+   "title": "Fiche FFVL Malijai - Blanchon (n° 1771)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1771",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Malijai) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S38",
+   "title": "Fiche FFVL Mont Tournier - Saint-Maurice-De-Rotherens (n° 148)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/148",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Saint-Maurice-De-Rotherens) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S39",
+   "title": "Fiche FFVL Mont Tournier (n° 149)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/149",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, La Balme) : coordonnées et orientations."
+  },
+  {
+   "id": "S40",
+   "title": "Fiche FFVL Montagne de Parves (n° 311)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/311",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Parves) : description."
+  },
+  {
+   "id": "S41",
+   "title": "Fiche FFVL Parves - Belley (n° 13126)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13126",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Coron (Belley)) : dangers."
+  },
+  {
+   "id": "S42",
+   "title": "Fiche FFVL Colombier - la Croix (n° 326)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/326",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Anglefort - Culoz) : description, dangers."
+  },
+  {
+   "id": "S43",
+   "title": "Fiche FFVL Colombier - Radiophare (n° 327)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/327",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Anglefort - Culoz) : description."
+  },
+  {
+   "id": "S44",
+   "title": "Fiche FFVL Innimond - la Table d'Orientation (n° 329)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/329",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Innimond) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S45",
+   "title": "Fiche FFVL Cascade de Glandieu (n° 701)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/701",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, St Benoit) : description, dangers."
+  },
+  {
+   "id": "S46",
+   "title": "Fiche FFVL Sapenay - le Belvedere - Delta (n° 1113)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1113",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Cessens) : description, aérologie, dangers."
+  },
+  {
+   "id": "S47",
+   "title": "Fiche FFVL Sapenay Nord - Peillat Ducret (n° 13086)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13086",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Cessens) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S48",
+   "title": "Fiche FFVL Sapenay - Nord - Guichon (n° 13087)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13087",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Cessens) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S49",
+   "title": "Fiche FFVL Sapenay - Sud-Ouest - \"bouilloux\" (n° 1150)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1150",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Cessens) : description, dangers."
+  },
+  {
+   "id": "S59",
+   "title": "Fiche FFVL Le Banchet (n° 1438)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1438",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Verel De Montbel) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S60",
+   "title": "Fiche FFVL Montagne de la Lance - Sud (n° 1309)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1309",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Le Pegue) : aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S61",
+   "title": "Fiche FFVL Mont Rachas - Sud (n° 1318)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1318",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, La Roche Saint Secret) : description, aérologie, dangers."
+  },
+  {
+   "id": "S62",
+   "title": "Fiche FFVL Mont Rachas et Montagne de la Lance (n° 1312)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1312",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, La Roche Saint Secret) : aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S63",
+   "title": "Fiche FFVL Arfuyen (n° 1523)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1523",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Malaucene) : description, aérologie, dangers."
+  },
+  {
+   "id": "S64",
+   "title": "Fiche FFVL Arfuyen (n° 1524)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1524",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Malaucene) : dangers."
+  },
+  {
+   "id": "S65",
+   "title": "Fiche FFVL Arfuyen - Arfuyen (n° 13551)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13551",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Malaucene) : dangers."
+  },
+  {
+   "id": "S66",
+   "title": "Fiche FFVL Saint Jean - Latour de Durfort (n° 1745)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1745",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Sault) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S67",
+   "title": "Fiche FFVL Saint Jean (n° 1746)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1746",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Sault) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S68",
+   "title": "Fiche FFVL Mont Ventoux Nord (n° 1764)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1764",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Beaumont Du Ventoux) : description, dangers, restrictions."
+  },
+  {
+   "id": "S69",
+   "title": "Fiche FFVL Mont Ventoux Sud - les Cretes (n° 1767)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1767",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Bedoin) : description, dangers, restrictions."
+  },
+  {
+   "id": "S70",
+   "title": "Fiche FFVL Mont Ventoux Sud - la Chapelle (n° 13509)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13509",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Bedoin) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S72",
+   "title": "Fiche FFVL Le Rissas - Beaumont du Ventoux (n° 13236)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13236",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Beaumont Du Ventoux) : description, aérologie, dangers."
+  },
+  {
+   "id": "S73",
+   "title": "Fiche FFVL Le Rissas - Beaumont du Ventoux (n° 13241)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13241",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Beaumont Du Ventoux) : aérologie, dangers."
+  },
+  {
+   "id": "S74",
+   "title": "Fiche FFVL Le Seigneur (n° 13469)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13469",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Monieux) : description, aérologie, dangers."
+  },
+  {
+   "id": "S75",
+   "title": "Fiche FFVL Le Seigneur - les Grayaux (n° 13470)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13470",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Monieux) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S76",
+   "title": "Fiche FFVL Le Grand Ratz (n° 1214)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1214",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, La Buisse) : description."
+  },
+  {
+   "id": "S77",
+   "title": "Fiche FFVL Saint Hugues - St Hugues (n° 13287)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13287",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, St Pierre De Chartreuse) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S78",
+   "title": "Fiche FFVL Roynac - Col du Deves (n° 730)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/730",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, La Roche-Sur-Grane) : description, aérologie, dangers."
+  },
+  {
+   "id": "S79",
+   "title": "Fiche FFVL Les Plaines de Poet (n° 5114)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/5114",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Eyzahut) : description, aérologie."
+  },
+  {
+   "id": "S80",
+   "title": "Fiche FFVL Saint Maurice - les Antennes (n° 1316)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1316",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Dieulefit) : description, aérologie, dangers."
+  },
+  {
+   "id": "S81",
+   "title": "Fiche FFVL Solaure (n° 13301)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13301",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Montmaur-En-Diois) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S82",
+   "title": "Fiche FFVL Solaure - le Seillon Rivage (n° 13302)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13302",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Montmaur-En-Diois) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S83",
+   "title": "Fiche FFVL Poisat (n° 13474)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13474",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Poisat) : description, aérologie, dangers."
+  },
+  {
+   "id": "S84",
+   "title": "Fiche FFVL Aussois - Sommet du Grand Jeu (n° 620)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/620",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Aussois) : description."
+  },
+  {
+   "id": "S85",
+   "title": "Fiche FFVL Aussois - Angle Bellecote Ete (n° 621)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/621",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Aussois) : description, dangers."
+  },
+  {
+   "id": "S86",
+   "title": "Fiche FFVL Val Pelouse - Molliet (n° 317)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/317",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Arvillard) : description, dangers."
+  },
+  {
+   "id": "S87",
+   "title": "Fiche FFVL Val Pelouse (n° 316)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/316",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Arvillard) : description, aérologie, dangers."
+  },
+  {
+   "id": "S88",
+   "title": "Fiche FFVL Plan des Languots (n° 1986)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1986",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Gilly-Sur-Isere) : description."
+  },
+  {
+   "id": "S89",
+   "title": "Fiche FFVL Plan des Languots (n° 174)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/174",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Mercury) : description."
+  },
+  {
+   "id": "S90",
+   "title": "Fiche FFVL Bargemon - Table d'Orientation (n° 1899)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1899",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Bargemon) : description."
+  },
+  {
+   "id": "S91",
+   "title": "Fiche FFVL Bargemon - Col du Bel Homme (n° 928)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/928",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Bargemon) : dangers."
+  },
+  {
+   "id": "S92",
+   "title": "Fiche FFVL Le Puet (n° 5027)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/5027",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Saint-Vallier-De Thiey) : description, dangers."
+  },
+  {
+   "id": "S93",
+   "title": "Fiche FFVL Chapelle Sainte-Luce (n° 5321)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/5321",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Saint-Vallier-De-Thiey) : description, dangers, restrictions."
+  },
+  {
+   "id": "S94",
+   "title": "Fiche FFVL Les Avanchers (n° 14088)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/14088",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Les Avanchers-Valmorel) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S95",
+   "title": "Fiche FFVL Sainte-Foy Hiver - la Marquise Ouest (n° 13702)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13702",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Sainte Foy Tarentaise) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S96",
+   "title": "Fiche FFVL Sainte-Foy Hiver - Dz Planbois (n° 13706)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13706",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Sainte Foy Tarentaise) : description, aérologie, dangers."
+  },
+  {
+   "id": "S97",
+   "title": "Fiche FFVL Sainte-Foy Hiver - le Bochet Bas (n° 13704)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13704",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Sainte Foy Tarentaise) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S98",
+   "title": "Fiche FFVL La Gare (n° 13678)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13678",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Bourg-Saint-Maurice) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S99",
+   "title": "Fiche FFVL Les Carroz d'Araches - Flocon Vert (n° 1091)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1091",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Les Carroz - Araches La Frasse) : description, dangers."
+  },
+  {
+   "id": "S100",
+   "title": "Fiche FFVL Les Carroz d'Araches - Araches (n° 1045)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1045",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Les Carroz - Araches La Frasse) : description, dangers."
+  },
+  {
+   "id": "S101",
+   "title": "Fiche FFVL Les Carroz d'Araches - la Kedeusaz (n° 1044)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1044",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Les Carroz - Araches La Frasse) : description, dangers."
+  },
+  {
+   "id": "S102",
+   "title": "Fiche FFVL La Lia (n° 135)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/135",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Malleval En Vercors) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S103",
+   "title": "Fiche FFVL Cognin - la Lia (n° 136)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/136",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Cognin Les Gorges) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S104",
+   "title": "Fiche FFVL l'Alevoux (n° 1039)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1039",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, St Pierre De Cherennes) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S105",
+   "title": "Fiche FFVL l'Alevoux (n° 1038)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1038",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, St Pierre De Cherennes) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S106",
+   "title": "Fiche FFVL Malleval - Pas de l'Ane (n° 13562)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13562",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Malleval) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S107",
+   "title": "Fiche FFVL Malleval - Pas de l'Ane (n° 134)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/134",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Malleval) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S108",
+   "title": "Fiche FFVL Les Ballons (n° 13066)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13066",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Chorges) : description, dangers."
+  },
+  {
+   "id": "S109",
+   "title": "Fiche FFVL La Batie Neuve - les Cesaris (n° 13693)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13693",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, La Batie Neuve) : description, aérologie, dangers."
+  },
+  {
+   "id": "S110",
+   "title": "Fiche FFVL Chorges - Serre Michele (n° 13380)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13380",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Chorges) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S111",
+   "title": "Fiche FFVL Les Gorges (n° 14138)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/14138",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Forest-Saint-Julien) : dangers, restrictions."
+  },
+  {
+   "id": "S112",
+   "title": "Fiche FFVL Puy de Manse (n° 14137)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/14137",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Forest-Saint-Julien) : aérologie, restrictions."
+  },
+  {
+   "id": "S113",
+   "title": "Fiche FFVL Cuberselle (n° 3048)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/3048",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Veynes) : description, dangers."
+  },
+  {
+   "id": "S114",
+   "title": "Fiche FFVL Moustiers-Sainte-Marie - la Reine Jeanne (n° 1206)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1206",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Moustiers-Sainte-Marie) : description, dangers."
+  },
+  {
+   "id": "S115",
+   "title": "Fiche FFVL Moustiers-Sainte-Marie - Courchon (n° 1208)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1208",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Moustiers-Sainte-Marie) : description."
+  },
+  {
+   "id": "S116",
+   "title": "Fiche FFVL Cagnorina (n° 721)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/721",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Tende) : description, aérologie, dangers."
+  },
+  {
+   "id": "S117",
+   "title": "Fiche FFVL Larmacreuse (n° 14293)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/14293",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Tende) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S118",
+   "title": "Fiche FFVL Col de Tende (n° 14294)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/14294",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Tende) : description, aérologie, dangers."
+  },
+  {
+   "id": "S119",
+   "title": "Fiche FFVL La Colmiane - Veillos (n° 904)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/904",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Valdeblore) : description, aérologie, dangers."
+  },
+  {
+   "id": "S120",
+   "title": "Fiche FFVL Soum du Pra (n° 908)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/908",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Valdeblore) : dangers."
+  },
+  {
+   "id": "S121",
+   "title": "Fiche FFVL Cantaron - Mont Macaron (n° 1653)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1653",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Cantaron) : description, dangers."
+  },
+  {
+   "id": "S122",
+   "title": "Fiche FFVL Cantaron (n° 1654)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1654",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Cantaron) : description."
+  },
+  {
+   "id": "S123",
+   "title": "Fiche FFVL Campe Robert Giordano (n° 14270)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/14270",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Breil-Sur-Roya) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S124",
+   "title": "Fiche FFVL La Touviere (n° 13417)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13417",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Peyrus) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S125",
+   "title": "Fiche FFVL Les Limouches (n° 728)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/728",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Peyrus) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S126",
+   "title": "Fiche FFVL Le Pas Saint-Martin (n° 1514)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1514",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, St Martin En Vercors) : description, aérologie, dangers."
+  },
+  {
+   "id": "S127",
+   "title": "Fiche FFVL Saint Jean en Royans - Sud (n° 1433)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1433",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Saint Jean En Royans) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S128",
+   "title": "Fiche FFVL Saint-Jean-En-Royans - Gaudissart (n° 1434)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1434",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Saint Jean En Royans) : description, aérologie, dangers, restrictions."
+  }
+ ]
+}

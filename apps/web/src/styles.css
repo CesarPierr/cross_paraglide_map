@@ -3587,3 +3587,48 @@ div.summary {
     padding: 6px 8px;
   }
 }
+
+/* Phone: the hour slider gets its own full-width row; one thumbnail switches the basemap. */
+@media (max-width: 860px) {
+  :root {
+    --timebar-h: 84px;
+  }
+  .timebar {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr) auto auto;
+    grid-template-rows: 34px 26px;
+    column-gap: 8px;
+    row-gap: 4px;
+    align-items: center;
+    padding: 6px 10px 8px;
+  }
+  .timebar .play {
+    grid-row: 1 / span 2;
+  }
+  .timebar .time-main {
+    display: contents;
+  }
+  .timebar .time-labels {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .timebar .time-sun {
+    display: none;
+  }
+  .timebar .month {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .timebar .wind-chip {
+    grid-column: 4;
+    grid-row: 1;
+  }
+  .timebar .time-track {
+    grid-column: 2 / span 3;
+    grid-row: 2;
+    align-self: start;
+  }
+  .basemap-switch button.on {
+    display: none;
+  }
+}

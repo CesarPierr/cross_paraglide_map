@@ -68,7 +68,7 @@ const SCHEMA_KEEP: (keyof AppState['layers'])[] = ['comets', 'thermalColumns'];
 function effectiveState(s: AppState): AppState {
   // Picking a massif: only the sector names, so they read at a glance.
   if (s.schemaPicking && !s.schemaMassif)
-    return { ...s, overlay: 'none', layers: { ...s.layers, ...Object.fromEntries([...LIVE_ONLY, 'sitesOfficial', 'airspace', 'airspaceProtect', 'airspaceActivity'].map((k) => [k, false])) } };
+    return { ...s, overlay: 'none', layers: { ...s.layers, ...Object.fromEntries([...LIVE_ONLY, 'labels', 'sitesOfficial', 'airspace', 'airspaceProtect', 'airspaceActivity'].map((k) => [k, false])) } };
   if (!s.schemaMassif) return s;
   const off = LIVE_ONLY.filter((k) => !SCHEMA_KEEP.includes(k) && !(s.schemaWind && k === 'particles'));
   return { ...s, exaggeration: s.schema3d ? s.exaggeration : 0, overlay: 'none', layers: { ...s.layers, ...Object.fromEntries([...off, 'airspace', 'airspaceProtect', 'airspaceActivity'].map((k) => [k, false])) } };

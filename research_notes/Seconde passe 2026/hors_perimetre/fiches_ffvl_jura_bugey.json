@@ -1,0 +1,1713 @@
+{
+ "topic": "Fiches FFVL hors périmètre alpin (Jura, Bugey, Revermont, Vaucluse ouest) : extraites avec les fiches des Alpes, non compilées dans l'atlas",
+ "massifs": [
+  {
+   "id": "jura-bugey",
+   "breezes": [
+    {
+     "id": "ffvl55-brise-saint-claude-essard",
+     "name": "Brise de vallée de Saint-Claude vers l'Essard et Septmoncel",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Saint-Claude",
+       "lon": 5.8644,
+       "lat": 46.3875,
+       "coord_quality": "source"
+      },
+      {
+       "name": "L'Essard (atterrissage)",
+       "lon": 5.8768,
+       "lat": 46.3723,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Septmoncel",
+       "lon": 5.912,
+       "lat": 46.3703,
+       "coord_quality": "source"
+      }
+     ],
+     "description": "La fiche de l'atterrissage de l'Essard dit qu'en général la brise de vallée vient de Saint-Claude, en travers gauche du terrain (vu face à la pente, donc face à l'est). Elle remonte donc la vallée de Saint-Claude vers Septmoncel. Ni heure, ni force n'est précisée.",
+     "confidence": "medium",
+     "sources": [
+      "S4",
+      "S3"
+     ]
+    },
+    {
+     "id": "ffvl1933-brise-bellegarde-bouant",
+     "name": "Brise de vallée de Bellegarde vers Les Prés Gelés et Le Bouant",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Bellegarde-sur-Valserine",
+       "lon": 5.8308,
+       "lat": 46.1074,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Les Prés Gelés (atterrissage)",
+       "lon": 5.8244,
+       "lat": 46.1397,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Le Bouant (décollage)",
+       "lon": 5.8391,
+       "lat": 46.1611,
+       "coord_quality": "source"
+      }
+     ],
+     "description": "La fiche du Bouant donne comme aérologie une « brise de vallée venant de Bellegarde » ; celle des Prés Gelés parle d'une brise de sud, et celle de la Charmante de brises de sud-ouest légères. Elle remonte donc de Bellegarde vers Lancrans et Confort. Ni heure ni force n'est précisée.",
+     "confidence": "medium",
+     "sources": [
+      "S7",
+      "S6",
+      "S5"
+     ]
+    },
+    {
+     "id": "ffvl13673-brise-saint-claude-bienne",
+     "name": "Brise montante de Saint-Claude vers Cinquétral (vallée de la Bienne)",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Saint-Claude",
+       "lon": 5.8644,
+       "lat": 46.3875,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Les Cheneviers (atterrissage)",
+       "lon": 5.8617,
+       "lat": 46.4239,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Les Cibles (atterrissage)",
+       "lon": 5.8711,
+       "lat": 46.442,
+       "coord_quality": "source"
+      }
+     ],
+     "description": "La fiche de l'atterrissage des Cibles (Cinquétral) indique une « brise montante de St Claude ». Celle des Cheneviers parle d'une brise du printemps, suffisante au décollage, qui n'a pas encore tourné au nord-ouest. Ni heure, ni force n'est précisée.",
+     "confidence": "medium",
+     "sources": [
+      "S12",
+      "S10",
+      "S11"
+     ]
+    }
+   ],
+   "hazards": [
+    {
+     "id": "ffvl17-noirmont-tma",
+     "name": "Noirmont : plafond TMA de Genève à 300 m au-dessus du relief",
+     "kind": "airspace",
+     "lon": 6.1072,
+     "lat": 46.4872,
+     "radius_km": 1.5,
+     "coord_quality": "approx",
+     "description": "Les décollages du Noirmont sont sous la TMA de Genève : altitude maximale 300 m au-dessus du relief, soit 1900 m QNH d'après la fiche. Le plafond est très proche du décollage, ce qui interdit de monter dans les ascendances au-delà.",
+     "confidence": "medium",
+     "conditions": "toute l'année",
+     "sources": [
+      "S1",
+      "S2"
+     ]
+    },
+    {
+     "id": "ffvl54-septmoncel-ligne-ht",
+     "name": "Septmoncel : ligne à haute tension au milieu du cirque",
+     "kind": "other",
+     "lon": 5.8984,
+     "lat": 46.371,
+     "radius_km": 0.8,
+     "coord_quality": "approx",
+     "description": "La fiche signale une ligne à haute tension au milieu du cirque, à juger par rapport aux pylônes en gardant de bonnes marges de sécurité. Position approximative (au décollage).",
+     "confidence": "medium",
+     "sources": [
+      "S3"
+     ]
+    },
+    {
+     "id": "ffvl54-septmoncel-rouleau",
+     "name": "Septmoncel : rouleau au décollage par vent d'est, nord ou sud",
+     "kind": "lee-rotor",
+     "lon": 5.8984,
+     "lat": 46.371,
+     "radius_km": 0.3,
+     "coord_quality": "approx",
+     "description": "La fiche recommande de toujours vérifier que la biroute du décollage du haut est bien orientée, pour éviter de décoller dans le rouleau en cas de vent d'est, de nord ou de sud.",
+     "confidence": "medium",
+     "conditions": "vent d'est, de nord ou de sud",
+     "sources": [
+      "S3"
+     ]
+    },
+    {
+     "id": "ffvl601-sorgia-venturi-nantua",
+     "name": "Sorgia : accélération du vent de nord-ouest par la vallée de Nantua",
+     "kind": "venturi",
+     "lon": 5.856,
+     "lat": 46.1382,
+     "radius_km": 1.5,
+     "coord_quality": "approx",
+     "description": "La fiche met en garde lors des rentrées de vent de nord-ouest fort, dues à l'accélération de la vallée de Nantua : dans ces conditions le décollage est sous le vent du relief de droite. Bien surveiller la manche à air en sortant du déco.",
+     "confidence": "medium",
+     "conditions": "rentrée de vent de N/O fort",
+     "sources": [
+      "S5"
+     ]
+    },
+    {
+     "id": "ffvl601-sorgia-reserve-tma",
+     "name": "Sorgia : TMA de Genève et réserve naturelle (survol réglementé)",
+     "kind": "airspace",
+     "lon": 5.856,
+     "lat": 46.1382,
+     "radius_km": 2.0,
+     "coord_quality": "approx",
+     "description": "Le décollage de la Charmante est sous la TMA de Genève 1 (1050 m ou 300 m/sol) et dans la Réserve naturelle du Haut-Jura : la Combe de l'Enfer est interdite de survol à moins de 150 m du sol et des parois toute l'année (arrêté de biotope), d'autres parties forestières sont réglementées. Position approximative.",
+     "confidence": "medium",
+     "sources": [
+      "S5",
+      "S6"
+     ]
+    },
+    {
+     "id": "ffvl602-pres-geles-brise-no",
+     "name": "Prés Gelés : brise forte de nord-ouest et vent de la vallée de Nantua",
+     "kind": "strong-breeze",
+     "lon": 5.8244,
+     "lat": 46.1397,
+     "radius_km": 1.0,
+     "coord_quality": "approx",
+     "description": "Aux Prés Gelés (atterrissage de Sorgia et du Bouant), la fiche prévient qu'en cas de brise forte venant du nord-ouest, l'atterrissage peut être difficile à atteindre ; la fiche du Bouant parle d'un vent de vallée de la vallée de Nantua, de nord-ouest soutenu, à cet atterrissage. Par brise ordinaire de sud, rien de particulier.",
+     "confidence": "medium",
+     "conditions": "brise forte de N/O (vent de la vallée de Nantua)",
+     "sources": [
+      "S6",
+      "S7"
+     ]
+    },
+    {
+     "id": "ffvl1933-bouant-ligne-electrique",
+     "name": "Le Bouant : ligne électrique en bordure du décollage",
+     "kind": "other",
+     "lon": 5.8391,
+     "lat": 46.1611,
+     "radius_km": 0.3,
+     "coord_quality": "approx",
+     "description": "La fiche signale une ligne électrique en bordure du décollage. Peu de danger toutefois : un rideau d'arbres sépare le déco de la ligne, qui plonge rapidement sous le décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S7"
+     ]
+    },
+    {
+     "id": "ffvl1519-charmy-rouleaux",
+     "name": "Crête de Charmy : rouleaux par vent d'ouest et de nord",
+     "kind": "lee-rotor",
+     "lon": 5.8358,
+     "lat": 46.1608,
+     "radius_km": 0.4,
+     "coord_quality": "approx",
+     "description": "La fiche signale des rouleaux au décollage de la crête de Charmy (pré sud) par vent d'ouest et de nord.",
+     "confidence": "medium",
+     "conditions": "vent d'ouest et de nord",
+     "sources": [
+      "S8"
+     ]
+    },
+    {
+     "id": "ffvl603-champfromier-tma",
+     "name": "Champfromier : secteur 4 de la TMA de Genève à 300 m/sol",
+     "kind": "airspace",
+     "lon": 5.8144,
+     "lat": 46.2147,
+     "radius_km": 1.5,
+     "coord_quality": "approx",
+     "description": "Le site est dans le secteur 4 de la TMA de Genève (limites données par la fiche : 6000 ft / 1824 m AMSL et 1000 ft / 300 m AGL). Respect impératif de l'espace aérien contrôlé.",
+     "confidence": "medium",
+     "sources": [
+      "S9"
+     ]
+    },
+    {
+     "id": "ffvl811-cheneviers-rouleaux",
+     "name": "Les Cheneviers : brise de travers droit et rouleaux",
+     "kind": "lee-rotor",
+     "lon": 5.8729,
+     "lat": 46.4242,
+     "radius_km": 0.3,
+     "coord_quality": "approx",
+     "description": "La fiche note que la brise a tendance à arriver de travers droit et à générer quelques rouleaux : prendre le temps d'un gonflage propre avant de s'élancer.",
+     "confidence": "medium",
+     "conditions": "par brise, avant la rotation au nord-ouest",
+     "sources": [
+      "S10"
+     ]
+    },
+    {
+     "id": "ffvl13672-ligne-electrique-1",
+     "name": "Côtes de Bienne : ligne électrique sur la crête (première ligne)",
+     "kind": "other",
+     "lon": 5.8878,
+     "lat": 46.4438,
+     "radius_km": 0.3,
+     "coord_quality": "approx",
+     "description": "Selon la fiche, deux lignes électriques coupent la crête à 700 m et à 1800 m du décollage en direction du nord-est. Position approximative d'après la distance et la direction données (700 m au nord-est).",
+     "confidence": "medium",
+     "sources": [
+      "S11"
+     ]
+    },
+    {
+     "id": "ffvl13672-ligne-electrique-2",
+     "name": "Côtes de Bienne : ligne électrique sur la crête (seconde ligne)",
+     "kind": "other",
+     "lon": 5.8979,
+     "lat": 46.4508,
+     "radius_km": 0.3,
+     "coord_quality": "approx",
+     "description": "Selon la fiche, deux lignes électriques coupent la crête à 700 m et à 1800 m du décollage en direction du nord-est. Position approximative d'après la distance et la direction données (1800 m au nord-est).",
+     "confidence": "medium",
+     "sources": [
+      "S11"
+     ]
+    },
+    {
+     "id": "ffvl627-balvay-atterro-sud-fort",
+     "name": "Balvay : atterrissage turbulent par vent de sud fort",
+     "kind": "landing-turbulence",
+     "lon": 5.4577,
+     "lat": 46.1819,
+     "radius_km": 0.5,
+     "coord_quality": "approx",
+     "description": "La fiche de l'atterrissage de Balvay le dit turbulent par vent de sud fort et recommande de faire attention au « sous le vent ».",
+     "confidence": "medium",
+     "conditions": "vent de sud fort",
+     "sources": [
+      "S14",
+      "S13"
+     ]
+    },
+    {
+     "id": "ffvl1473-les-vignes-chalet",
+     "name": "Les Vignes : survol du chalet de la falaise interdit",
+     "kind": "other",
+     "lon": 5.4728,
+     "lat": 46.1725,
+     "radius_km": 0.3,
+     "coord_quality": "approx",
+     "description": "La fiche interdit rigoureusement le survol du petit chalet situé en bord de falaise, à droite du décollage, et celui du village de Balvay.",
+     "confidence": "medium",
+     "sources": [
+      "S15"
+     ]
+    },
+    {
+     "id": "ffvl1080-mont-myon-atterro",
+     "name": "Mont Myon : atterrissage en dévers, turbulent par vent de nord modéré",
+     "kind": "landing-turbulence",
+     "lon": 5.3883,
+     "lat": 46.3283,
+     "radius_km": 0.5,
+     "coord_quality": "approx",
+     "description": "La fiche du décollage précise que l'atterrissage est en dévers et turbulent par vent de nord modéré. Position de l'atterrissage du Mont Myon (fiche voisine).",
+     "confidence": "medium",
+     "conditions": "vent de nord modéré",
+     "sources": [
+      "S17"
+     ]
+    },
+    {
+     "id": "ffvl1428-port-ligne-ht",
+     "name": "Port - Carouge : ligne HT en bout de crête à gauche du déco",
+     "kind": "other",
+     "lon": 5.5736,
+     "lat": 46.1586,
+     "radius_km": 0.4,
+     "coord_quality": "approx",
+     "description": "La fiche signale une ligne haute tension en bout de crête, à gauche du décollage. Position approximative (au décollage).",
+     "confidence": "medium",
+     "sources": [
+      "S18"
+     ]
+    },
+    {
+     "id": "ffvl1429-port-atterro-gradient",
+     "name": "Port : gradient de vent à l'atterrissage",
+     "kind": "landing-turbulence",
+     "lon": 5.5661,
+     "lat": 46.16,
+     "radius_km": 0.5,
+     "coord_quality": "approx",
+     "description": "La fiche de l'atterrissage de Port demande de faire attention au gradient de vent (et de ne pas survoler à basse altitude le cimetière ni la ville).",
+     "confidence": "medium",
+     "sources": [
+      "S19",
+      "S18"
+     ]
+    },
+    {
+     "id": "ffvl1430-vesanciere-vent-arriere",
+     "name": "La Vesancière : vent arrière au décollage en fin de journée",
+     "kind": "other",
+     "lon": 6.0803,
+     "lat": 46.3678,
+     "radius_km": 0.3,
+     "coord_quality": "approx",
+     "description": "La fiche demande de ne pas décoller par vent arrière, même faible, ce qui se produit typiquement en fin de journée : le vent s'inverse alors sur le décollage orienté sud-est à sud-ouest.",
+     "confidence": "medium",
+     "conditions": "fin de journée",
+     "sources": [
+      "S20"
+     ]
+    },
+    {
+     "id": "ffvl1431-vesanciere-atterro-ligne",
+     "name": "La Vesancière : ligne haute tension et atterrissage de secours étroit",
+     "kind": "other",
+     "lon": 6.0944,
+     "lat": 46.3571,
+     "radius_km": 0.5,
+     "coord_quality": "approx",
+     "description": "La fiche de l'atterrissage du haut rappelle de faire attention à la ligne haute tension. L'atterrissage du bas (secours) est étroit, en dévers et réservé aux pilotes confirmés : possible par vent de SE à SO, à proscrire par vent de N à NO.",
+     "confidence": "medium",
+     "sources": [
+      "S21",
+      "S20"
+     ]
+    },
+    {
+     "id": "ffvl1465-pmr-atterro-lignes",
+     "name": "Petit Mont Rond (Gex-la-Ville) : lignes électriques à l'approche",
+     "kind": "other",
+     "lon": 6.0647,
+     "lat": 46.3428,
+     "radius_km": 0.5,
+     "coord_quality": "approx",
+     "description": "La fiche de l'atterrissage de Gex-la-Ville signale une ligne électrique le long du chemin, une haie d'arbres, et une ligne à survoler 200 m en amont du terrain. Terrain de secours du Pailly en dévers avec câble de téléski.",
+     "confidence": "medium",
+     "sources": [
+      "S23",
+      "S22"
+     ]
+    },
+    {
+     "id": "ffvl1466-mijoux-cables-ligne",
+     "name": "Mijoux : câbles du télésiège et ligne haute tension",
+     "kind": "other",
+     "lon": 6.0108,
+     "lat": 46.3664,
+     "radius_km": 0.4,
+     "coord_quality": "approx",
+     "description": "La fiche signale à proximité du décollage les câbles du télésiège et une ligne à haute tension sur la gauche.",
+     "confidence": "medium",
+     "sources": [
+      "S24"
+     ]
+    },
+    {
+     "id": "ffvl1466-mijoux-turbulences",
+     "name": "Mijoux : turbulences par vent de nord et de sud-ouest",
+     "kind": "other",
+     "lon": 6.0108,
+     "lat": 46.3664,
+     "radius_km": 0.8,
+     "coord_quality": "approx",
+     "description": "La fiche annonce des turbulences au décollage de Mijoux par vent de nord et de sud-ouest.",
+     "confidence": "medium",
+     "conditions": "vent de N et de SO",
+     "sources": [
+      "S24"
+     ]
+    },
+    {
+     "id": "ffvl1467-mijoux-atterro-gradient",
+     "name": "Mijoux : gradient et ligne électrique à l'atterrissage par vent de vallée",
+     "kind": "landing-turbulence",
+     "lon": 6.0033,
+     "lat": 46.3719,
+     "radius_km": 0.5,
+     "coord_quality": "approx",
+     "description": "La fiche de l'atterrissage de Mijoux met en garde contre le gradient en cas de vent de vallée assez fort, avec une ligne électrique à surveiller.",
+     "confidence": "medium",
+     "conditions": "vent de vallée assez fort",
+     "sources": [
+      "S25",
+      "S24"
+     ]
+    },
+    {
+     "id": "ffvl1466-turet-biotope",
+     "name": "Mijoux - Col de la Faucille : survol interdit à moins de 150 m (falaise de Mijoux, forêt du Turet)",
+     "kind": "other",
+     "lon": 6.0108,
+     "lat": 46.3664,
+     "radius_km": 2.0,
+     "coord_quality": "approx",
+     "description": "Par arrêté de biotope, la falaise de Mijoux au nord du décollage et la forêt du Turet au nord du col de la Faucille sont interdites de survol à moins de 150 m du sol, en permanence selon la fiche de Mijoux ; la fiche de la Vesancière ajoute le 15/12 au 30/06 pour la forêt du Turet, avec les falaises du Turet, de Vieille Maison et du Pralet interdites toute l'année. Position approximative.",
+     "confidence": "medium",
+     "conditions": "toute l'année (forêt du Turet : 15/12 au 30/06)",
+     "sources": [
+      "S24",
+      "S22",
+      "S20"
+     ]
+    },
+    {
+     "id": "ffvl13450-narderan-brutal",
+     "name": "Creux de Narderan : aérologie souvent brutale",
+     "kind": "other",
+     "lon": 5.9372,
+     "lat": 46.2476,
+     "radius_km": 1.0,
+     "coord_quality": "approx",
+     "description": "Les fiches de Thoiry (La Pierre de l'Ours) et de Crozet (Les Deux Potes) recommandent d'éviter le survol dans et au-dessus du creux de Narderan, où l'aérologie est souvent brutale. Position approximative, d'après le chalet de Narderans.",
+     "confidence": "medium",
+     "sources": [
+      "S27",
+      "S26"
+     ]
+    },
+    {
+     "id": "ffvl13450-reserve-haute-chaine",
+     "name": "Réserve naturelle du Haut-Jura (Crozet - Thoiry) : survol interdit à moins de 150 m",
+     "kind": "other",
+     "lon": 5.9436,
+     "lat": 46.2527,
+     "radius_km": 2.5,
+     "coord_quality": "approx",
+     "description": "Dans la Réserve naturelle de la Haute Chaîne du Jura, La Calame et La Ramaz sont interdites de survol à moins de 150 m du sol du 15/12 au 30/06 (zone de quiétude de la faune sauvage) ; Roche Franche, sur l'autre versant, est une zone de protection de biotope interdite en permanence. Position approximative, au décollage de Thoiry.",
+     "confidence": "medium",
+     "conditions": "15/12 au 30/06 (Roche Franche : toute l'année)",
+     "sources": [
+      "S27",
+      "S26"
+     ]
+    },
+    {
+     "id": "ffvl1616-catray-descendances",
+     "name": "Catray : descendances et vol sous le vent sur un plateau boisé",
+     "kind": "downdraft",
+     "lon": 5.7565,
+     "lat": 46.1105,
+     "radius_km": 1.5,
+     "coord_quality": "approx",
+     "description": "La fiche invite à bien identifier les conditions à risque avant de décoller (vol sous le vent, descendances importantes) : le plateau boisé est peu incliné, sans vache possible, et la finesse nécessaire pour le passer est de 5,5.",
+     "confidence": "medium",
+     "sources": [
+      "S28"
+     ]
+    },
+    {
+     "id": "ffvl13659-poizat-atterro-turbulent",
+     "name": "Poizat-Lalleyriat : approche turbulente et gradient à l'atterrissage",
+     "kind": "landing-turbulence",
+     "lon": 5.7116,
+     "lat": 46.1516,
+     "radius_km": 1.0,
+     "coord_quality": "approx",
+     "description": "Selon les fiches de L'Angleton et de l'atterrissage du Lac : approches possiblement très turbulentes par vent fort et thermiques puissants, gradient important au posé surtout en milieu d'après-midi, vent météo de nord supérieur à 20 km/h ; la fiche conseille d'éviter de voler en milieu de journée.",
+     "confidence": "medium",
+     "conditions": "milieu d'après-midi, vent de nord > 20 km/h",
+     "sources": [
+      "S30",
+      "S29"
+     ]
+    },
+    {
+     "id": "ffvl1269-evosges-sud-albarine",
+     "name": "Évosges : vallée de l'Albarine, vent de sud canalisé et thermique très turbulent",
+     "kind": "venturi",
+     "lon": 5.4864,
+     "lat": 45.9514,
+     "radius_km": 2.0,
+     "coord_quality": "approx",
+     "description": "La vallée de l'Albarine, orientée nord-ouest - sud-est sous le décollage, canalise le vent de sud en sud-est : par vent de sud supérieur à 15 km/h le site est inutilisable en dynamique et le thermique est très turbulent.",
+     "confidence": "medium",
+     "conditions": "vent de sud > 15 km/h",
+     "sources": [
+      "S50"
+     ],
+     "secteur_initial": "bourget-chambery"
+    },
+    {
+     "id": "ffvl1271-torcieu-ligne-ht",
+     "name": "Torcieu : ligne haute tension derrière le décollage",
+     "kind": "other",
+     "lon": 5.3972,
+     "lat": 45.9111,
+     "radius_km": 0.4,
+     "coord_quality": "approx",
+     "description": "La fiche signale une ligne haute tension en arrière du décollage, un décollage court et technique et un atterrissage haut technique. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S52"
+     ],
+     "secteur_initial": "bourget-chambery"
+    },
+    {
+     "id": "ffvl1272-torcieu-atterro-gradient",
+     "name": "Torcieu : atterrissage turbulent (gradient) en été",
+     "kind": "landing-turbulence",
+     "lon": 5.4047,
+     "lat": 45.9177,
+     "radius_km": 0.5,
+     "coord_quality": "approx",
+     "description": "La fiche de l'atterrissage de Torcieu note qu'il est turbulent (gradient) en été.",
+     "confidence": "medium",
+     "conditions": "été",
+     "sources": [
+      "S53",
+      "S52"
+     ],
+     "secteur_initial": "bourget-chambery"
+    },
+    {
+     "id": "ffvl1274-souclin-interdit-parapente",
+     "name": "Saint-Sorlin - Souclin : décollage interdit aux parapentes",
+     "kind": "other",
+     "lon": 5.4119,
+     "lat": 45.8803,
+     "radius_km": 0.3,
+     "coord_quality": "approx",
+     "description": "La fiche indique que le décollage de Souclin est interdit aux parapentes : le respect de cette règle conditionne la survie du site. Zones d'arrêté de biotope à consulter auprès du club.",
+     "confidence": "medium",
+     "sources": [
+      "S55"
+     ],
+     "secteur_initial": "bourget-chambery"
+    },
+    {
+     "id": "ffvl1951-luisandre-venturi",
+     "name": "Mont Luisandre : venturi par vent supérieur à 20 km/h",
+     "kind": "venturi",
+     "lon": 5.4186,
+     "lat": 45.9775,
+     "radius_km": 1.0,
+     "coord_quality": "approx",
+     "description": "La fiche indique un effet de venturi par vent supérieur à 20 km/h et un site turbulent par vent de sud.",
+     "confidence": "medium",
+     "conditions": "vent > 20 km/h",
+     "sources": [
+      "S57"
+     ],
+     "secteur_initial": "bourget-chambery"
+    },
+    {
+     "id": "ffvl1951-luisandre-allymes",
+     "name": "Les Allymes : survol du village non autorisé",
+     "kind": "other",
+     "lon": 5.4006,
+     "lat": 45.9716,
+     "radius_km": 0.5,
+     "coord_quality": "approx",
+     "description": "Le survol du village des Allymes n'est pas autorisé afin de respecter la vie privée des habitants ; le survol du château est autorisé.",
+     "confidence": "medium",
+     "sources": [
+      "S57"
+     ],
+     "secteur_initial": "bourget-chambery"
+    },
+    {
+     "id": "ffvl1953-luisandre-atterro-turbulent",
+     "name": "Mont Luisandre : atterrissage en contre-pente et très souvent turbulent",
+     "kind": "landing-turbulence",
+     "lon": 5.4139,
+     "lat": 45.9753,
+     "radius_km": 0.5,
+     "coord_quality": "approx",
+     "description": "La fiche de l'atterrissage du haut signale une contre-pente et un terrain très souvent turbulent.",
+     "confidence": "medium",
+     "sources": [
+      "S58",
+      "S57"
+     ],
+     "secteur_initial": "bourget-chambery"
+    },
+    {
+     "id": "ffvl1875-romaniere-opies-turbulences",
+     "name": "Barres Rouges - tour des Opies : fortes turbulences, 150 m de réserve minimum",
+     "kind": "other",
+     "lon": 4.9828,
+     "lat": 43.7122,
+     "radius_km": 1.5,
+     "coord_quality": "approx",
+     "description": "La fiche demande de garder beaucoup de marge avec le relief, surtout autour de la tour des Opies, très propice aux fortes turbulences : éviter ce secteur avec moins de 150 m de réserve, risque de se laisser entraîner sous le vent des reliefs. En cas de perte d'altitude derrière la première barre, ne pas rentrer directement vers la plaine au sud mais s'échapper de la combe vers l'ouest de préférence. Position approximative d'après le sommet des Opies.",
+     "confidence": "medium",
+     "conditions": "selon le vent météo et la brise de mer",
+     "sources": [
+      "S71"
+     ],
+     "secteur_initial": "baronnies"
+    },
+    {
+     "id": "ffvl1875-romaniere-plafonds",
+     "name": "Alpilles : plafond 750 m sur la plaine, 1350 m sur le massif, autorisation de Salon à l'est des Glauges",
+     "kind": "airspace",
+     "lon": 4.9854,
+     "lat": 43.7021,
+     "radius_km": 3.0,
+     "coord_quality": "approx",
+     "description": "Altitude maximale 750 m sur la plaine et au sud des Opies, 1350 m sur le massif au nord des Opies ; autorisation de vol préalable à demander à la base aérienne de Salon pour voler à l'est du vallon des Glauges. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S71"
+     ],
+     "secteur_initial": "baronnies"
+    }
+   ],
+   "thermal_spots": [
+    {
+     "id": "ffvl55-essard-pente-ouest",
+     "name": "L'Essard : pente plein ouest thermique aux heures chaudes",
+     "lon": 5.8768,
+     "lat": 46.3723,
+     "alt_m": 520,
+     "coord_quality": "source",
+     "trigger": "pente plein ouest de l'atterrissage",
+     "description": "La fiche de l'atterrissage de l'Essard précise qu'il se fait sur une pente orientée plein ouest et qu'il faut éviter de s'y poser « aux périodes les plus thermiques de la journée » : la pente de l'atterrissage chauffe et déclenche des ascendances en journée.",
+     "confidence": "medium",
+     "sources": [
+      "S4",
+      "S3"
+     ]
+    },
+    {
+     "id": "ffvl1473-les-vignes-thermique",
+     "name": "Les Vignes : site fortement thermique et turbulent",
+     "lon": 5.4728,
+     "lat": 46.1725,
+     "alt_m": 606,
+     "coord_quality": "approx",
+     "description": "La fiche décrit le site des Vignes comme turbulent et « fortement thermique » : pas d'heure ni de déclencheur précisés. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S15"
+     ]
+    },
+    {
+     "id": "ffvl778-montcusel-restitution",
+     "name": "Montcusel : bon rendement hors feuilles et restitution des soirs d'été",
+     "lon": 5.659,
+     "lat": 46.3392,
+     "alt_m": 660,
+     "coord_quality": "approx",
+     "best_hours": "soirs d'été",
+     "trigger": "pente ouest / sud-ouest (restitution du soir)",
+     "description": "La fiche indique un « très bon rendement » quand il n'y a plus de feuilles (automne-hiver) par temps sec, et une bonne restitution les soirs d'été sur la pente ouest à sud-ouest. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S16"
+     ]
+    },
+    {
+     "id": "ffvl13659-poizat-thermiques-midi",
+     "name": "Poizat-Lalleyriat (le Lac) : thermiques puissants en milieu de journée",
+     "lon": 5.7116,
+     "lat": 46.1516,
+     "alt_m": 840,
+     "coord_quality": "source",
+     "best_hours": "milieu de journée",
+     "description": "La fiche de l'atterrissage du Lac évoque des « thermiques puissants » qui rendent l'approche très turbulente et conseille d'éviter de voler en milieu de journée.",
+     "confidence": "medium",
+     "sources": [
+      "S30",
+      "S29"
+     ]
+    },
+    {
+     "id": "ffvl13659-angleton-restitution",
+     "name": "L'Angleton : restitution de fin de journée en régime de nord",
+     "lon": 5.7055,
+     "lat": 46.1422,
+     "alt_m": 1163,
+     "coord_quality": "approx",
+     "best_hours": "fin de journée (été)",
+     "trigger": "régime de nord pas trop fort",
+     "description": "Selon la fiche du Lac, un régime de nord pas trop fort en fin de journée, en été, donne la restitution sur la pente de L'Angleton ; la brise rentre presque toujours du sud-ouest. Position approximative, au décollage de L'Angleton.",
+     "confidence": "medium",
+     "sources": [
+      "S30",
+      "S29"
+     ]
+    },
+    {
+     "id": "ffvl1269-evosges-thermique-deco",
+     "name": "Évosges : très bon rendement thermique devant le déco, redressé par un léger nord",
+     "lon": 5.4864,
+     "lat": 45.9514,
+     "alt_m": 770,
+     "coord_quality": "approx",
+     "trigger": "plateau d'Évosges, thermique devant le déco",
+     "description": "Selon la fiche, le rendement thermique d'Évosges est « très bon » : le site accepte bien un nord faible, un léger nord étant même idéal car il redresse le thermique devant le déco. Attention au thermique sous le vent par vent de nord trop fort (limite : si cela tient à Torcieu). Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S50"
+     ],
+     "secteur_initial": "bourget-chambery"
+    },
+    {
+     "id": "ffvl13328-oncieu-thermique-fort",
+     "name": "Oncieu - Col d'Évosges : thermique fort, site parfois très turbulent",
+     "lon": 5.4856,
+     "lat": 45.9644,
+     "alt_m": 759,
+     "coord_quality": "approx",
+     "description": "La fiche de ce décollage signale un thermique fort et un site parfois très turbulent. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S51"
+     ],
+     "secteur_initial": "bourget-chambery"
+    }
+   ],
+   "takeoffs": [
+    {
+     "id": "ffvl17-noirmont-piste-noire",
+     "name": "Noirmont - piste noire n°1",
+     "lon": 6.1072,
+     "lat": 46.4872,
+     "alt_m": 1395,
+     "coord_quality": "source",
+     "orientations": [
+      "O",
+      "NO"
+     ],
+     "description": "Décollage des Rousses orienté ouest à nord-ouest. La fiche indique « brise et vent de Ouest à Nord Ouest », des épicéas de chaque côté du départ et une sortie des sapins délicate par vent fort, surtout de nord à nord-est. Aucune convention n'autorise le vol libre sur ce terrain (statut de la fiche). Situé sous la TMA de Genève.",
+     "confidence": "medium",
+     "sources": [
+      "S1"
+     ]
+    },
+    {
+     "id": "ffvl18-noirmont-piste-rouge",
+     "name": "Noirmont - piste rouge n°2",
+     "lon": 6.1051,
+     "lat": 46.4804,
+     "alt_m": 1429,
+     "coord_quality": "source",
+     "orientations": [
+      "O",
+      "NO"
+     ],
+     "description": "Décollage des Rousses orienté ouest à nord-ouest, à moins d'1 km de la piste noire n°1. Épicéas de chaque côté, sortie des sapins délicate par vent fort. Aucune convention n'autorise le vol libre sur ce terrain (statut de la fiche). Sous la TMA de Genève.",
+     "confidence": "medium",
+     "sources": [
+      "S2"
+     ]
+    },
+    {
+     "id": "ffvl54-septmoncel",
+     "name": "Septmoncel",
+     "lon": 5.8984,
+     "lat": 46.371,
+     "alt_m": 1027,
+     "coord_quality": "source",
+     "orientations": [
+      "SO",
+      "O",
+      "NO"
+     ],
+     "description": "Décollage orienté ouest à nord-ouest (parapente à 1050 m, delta à 1020 m). Aérologie de la fiche : « de Sud-Ouest à Nord-Ouest en passant par l'Ouest, faible à modéré ». Vérifier la biroute du haut pour ne pas décoller dans le rouleau par vent d'est, de nord ou de sud. L'atterrissage de l'Essard est en pente ; limitation au FL75 (TMA de Genève).",
+     "confidence": "medium",
+     "sources": [
+      "S3"
+     ]
+    },
+    {
+     "id": "ffvl601-sorgia-charmante",
+     "name": "Sorgia - La Charmante",
+     "lon": 5.856,
+     "lat": 46.1382,
+     "alt_m": 1348,
+     "coord_quality": "source",
+     "orientations": [
+      "S",
+      "SO",
+      "O",
+      "NO"
+     ],
+     "description": "Décollage orienté sud à nord-ouest, sous la TMA de Genève 1 (1050 m ou 300 m au-dessus du sol, le plus élevé des deux). Aérologie de la fiche : « brises, S/O léger ». Danger par vent d'est et de nord-est fort et par vent de sud fort. Réglementation de la réserve naturelle à respecter ; la Combe de l'Enfer est interdite de survol à moins de 150 m du sol et des parois toute l'année.",
+     "confidence": "medium",
+     "sources": [
+      "S5"
+     ]
+    },
+    {
+     "id": "ffvl1933-le-bouant",
+     "name": "Le Bouant",
+     "lon": 5.8391,
+     "lat": 46.1611,
+     "alt_m": 1037,
+     "coord_quality": "source",
+     "orientations": [
+      "S",
+      "SO"
+     ],
+     "description": "Décollage de Confort orienté sud à sud-ouest, sous la TMA Genève 3 et en bordure des TMA Genève 1 et 2. Aérologie de la fiche : brise de vallée venant de Bellegarde. Ligne électrique en bordure du décollage (rideau d'arbres, ligne plongeant sous le déco). Route d'accès de Menthières juste au-dessus : ne pas stationner dans le virage.",
+     "confidence": "medium",
+     "sources": [
+      "S7"
+     ]
+    },
+    {
+     "id": "ffvl1519-bouant-crete-charmy",
+     "name": "Le Bouant - Crête de Charmy pré sud",
+     "lon": 5.8358,
+     "lat": 46.1608,
+     "alt_m": 977,
+     "coord_quality": "source",
+     "orientations": [
+      "S"
+     ],
+     "description": "Décollage de Confort orienté sud, temporairement non praticable pour le vol libre selon la fiche. Attention aux rouleaux par vent d'ouest et de nord.",
+     "confidence": "medium",
+     "sources": [
+      "S8"
+     ]
+    },
+    {
+     "id": "ffvl603-champfromier-haut-lan",
+     "name": "Champfromier - Sur le Haut Lan",
+     "lon": 5.8144,
+     "lat": 46.2147,
+     "alt_m": 1199,
+     "coord_quality": "source",
+     "orientations": [
+      "SE",
+      "S"
+     ],
+     "description": "Décollage orienté sud-est à sud, un peu court, qui demande une finesse importante pour rejoindre l'atterrissage du village. Dangereux par vent d'ouest. Atterrissage de Conjocle proscrit pendant la fenaison.",
+     "confidence": "medium",
+     "sources": [
+      "S9"
+     ]
+    },
+    {
+     "id": "ffvl811-cheneviers",
+     "name": "Les Cheneviers",
+     "lon": 5.8729,
+     "lat": 46.4242,
+     "alt_m": 865,
+     "coord_quality": "source",
+     "orientations": [
+      "SE",
+      "S",
+      "SO"
+     ],
+     "description": "Décollage de Cinquétral orienté sud-est à sud-ouest, qui finit en falaise. Favorable par vent de sud, de sud-ouest et par brise. Au printemps, avant la feuillaison, par temps sec, quand l'instabilité génère une brise suffisante et avant qu'elle ne tourne au nord-ouest. Balise openwindmap PP236.",
+     "confidence": "medium",
+     "sources": [
+      "S10"
+     ]
+    },
+    {
+     "id": "ffvl13672-cotes-de-bienne",
+     "name": "Cinquétral - Côtes de Bienne",
+     "lon": 5.8813,
+     "lat": 46.4393,
+     "alt_m": 870,
+     "coord_quality": "source",
+     "orientations": [
+      "N",
+      "NO"
+     ],
+     "description": "Décollage de Saint-Claude orienté nord à nord-ouest. Aérologie de la fiche : idéal à partir du milieu d'après-midi par vent faible de nord-ouest à nord, jusqu'en soirée. Sous la TMA de Genève (FL75).",
+     "confidence": "medium",
+     "sources": [
+      "S11"
+     ]
+    },
+    {
+     "id": "ffvl626-balvay-chateau",
+     "name": "Balvay - Le Château",
+     "lon": 5.4648,
+     "lat": 46.1824,
+     "alt_m": 616,
+     "coord_quality": "source",
+     "orientations": [
+      "S"
+     ],
+     "description": "Décollage technique et court, orienté sud, à rejoindre à pied (15 min) ; le village de Balvay est interdit aux véhicules. Aérologie de la fiche : « 15/20 km/h de vent de sud ». Sous la TMA de Lyon 04 (1980 m maximum).",
+     "confidence": "medium",
+     "sources": [
+      "S13"
+     ]
+    },
+    {
+     "id": "ffvl1473-les-vignes",
+     "name": "Les Vignes",
+     "lon": 5.4728,
+     "lat": 46.1725,
+     "alt_m": 606,
+     "coord_quality": "source",
+     "orientations": [
+      "O"
+     ],
+     "description": "Décollage de Leyssard orienté ouest, court, fortement déconseillé par vent de sud et de nord-ouest. Site turbulent et fortement thermique. Survol rigoureusement interdit du petit chalet en bord de falaise à droite du déco ; ne pas survoler le village de Balvay.",
+     "confidence": "medium",
+     "sources": [
+      "S15"
+     ]
+    },
+    {
+     "id": "ffvl778-montcusel",
+     "name": "Montcusel (ex Chancia)",
+     "lon": 5.659,
+     "lat": 46.3392,
+     "alt_m": 660,
+     "coord_quality": "source",
+     "orientations": [
+      "SO",
+      "O",
+      "NO"
+     ],
+     "description": "Décollage orienté sud-ouest à nord-ouest, réputé court sans vent. Aérologie de la fiche : « de Nord-Ouest à Sud-Ouest en passant par l'Ouest, faible à modéré » ; turbulent et complexe si le vent météo est soutenu ou fort. Limitation FL75 (TMA de Lyon).",
+     "confidence": "medium",
+     "sources": [
+      "S16"
+     ]
+    },
+    {
+     "id": "ffvl1080-mont-myon",
+     "name": "Mont Myon - Pressiat",
+     "lon": 5.3974,
+     "lat": 46.3307,
+     "alt_m": 633,
+     "coord_quality": "source",
+     "orientations": [
+      "SO",
+      "O",
+      "NO"
+     ],
+     "description": "Décollage orienté sud-ouest à nord-ouest. Aérologie de la fiche : ouest et nord-ouest, « ciel de traîne ». Atterrissage en dévers, turbulent par vent de nord modéré. Sous la TMA de Lyon 4 (1980 m) et près de la R45 (RTBA).",
+     "confidence": "medium",
+     "sources": [
+      "S17"
+     ]
+    },
+    {
+     "id": "ffvl1428-port-carouge",
+     "name": "Port - Carouge",
+     "lon": 5.5736,
+     "lat": 46.1586,
+     "alt_m": 700,
+     "coord_quality": "source",
+     "orientations": [
+      "N",
+      "SO",
+      "O",
+      "NO"
+     ],
+     "description": "Décollage de Port orienté nord, sud-ouest à nord-ouest, bordé d'arbres. Conditions généreuses d'ouest à nord faible ; vol fortement déconseillé par vent de sud, sud-est, est et nord-est. Altitude maximale 1980 m (proximité de la TMA de Genève).",
+     "confidence": "medium",
+     "sources": [
+      "S18"
+     ]
+    },
+    {
+     "id": "ffvl1430-vesanciere",
+     "name": "La Vesancière",
+     "lon": 6.0803,
+     "lat": 46.3678,
+     "alt_m": 1266,
+     "coord_quality": "source",
+     "orientations": [
+      "SE",
+      "S",
+      "SO"
+     ],
+     "description": "Décollage orienté sud-est à sud-ouest : pente douce sur 50 m puis rupture sur une petite falaise. Ne pas décoller par vent arrière, même faible, comme cela arrive typiquement en fin de journée. Sous la TMA de Genève et dans la réserve naturelle (survol réglementé).",
+     "confidence": "medium",
+     "sources": [
+      "S20"
+     ]
+    },
+    {
+     "id": "ffvl1464-petit-mont-rond",
+     "name": "Petit Mont Rond",
+     "lon": 6.0183,
+     "lat": 46.3586,
+     "alt_m": 1534,
+     "coord_quality": "source",
+     "orientations": [
+      "NE",
+      "E",
+      "SE"
+     ],
+     "description": "Décollage en falaise orienté nord-est à sud-est, donc très court : mieux vaut une voile bien alimentée. Sous la TMA de Genève. Zone de protection de biotope (falaise nord de Mijoux et forêt du Turet) : survol interdit à moins de 150 m du sol. Balise holfuy 1169.",
+     "confidence": "medium",
+     "sources": [
+      "S22"
+     ]
+    },
+    {
+     "id": "ffvl1466-mijoux",
+     "name": "Mijoux",
+     "lon": 6.0108,
+     "lat": 46.3664,
+     "alt_m": 1319,
+     "coord_quality": "source",
+     "orientations": [
+      "O",
+      "NO"
+     ],
+     "description": "Décollage orienté ouest à nord-ouest. Proximité d'obstacles : câbles du télésiège et ligne à haute tension sur la gauche ; turbulences par vent de nord et de sud-ouest ; attention au cap au décollage. TMA de Genève à respecter.",
+     "confidence": "medium",
+     "sources": [
+      "S24"
+     ]
+    },
+    {
+     "id": "ffvl1462-crozet-deux-potes",
+     "name": "Crozet - Les Deux Potes",
+     "lon": 5.9833,
+     "lat": 46.2986,
+     "alt_m": 1513,
+     "coord_quality": "source",
+     "orientations": [
+      "NE",
+      "E",
+      "SE",
+      "S"
+     ],
+     "description": "Décollage orienté nord-est à sud, sous la TMA de Genève. Éviter le survol dans et au-dessus du creux de Narderan, où l'aérologie est souvent brutale. Le sud-est du site (La Calame, La Ramaz) est interdit de survol à moins de 150 m du sol du 15/12 au 30/06.",
+     "confidence": "medium",
+     "sources": [
+      "S26"
+     ]
+    },
+    {
+     "id": "ffvl13450-pierre-de-lours",
+     "name": "Thoiry - La Pierre de l'Ours",
+     "lon": 5.9436,
+     "lat": 46.2527,
+     "alt_m": 1398,
+     "coord_quality": "source",
+     "orientations": [
+      "E",
+      "SE"
+     ],
+     "description": "Décollage orienté est à sud-est, accessible à pied (vol rando). Éviter le survol du creux de Narderan, à l'aérologie souvent brutale, ne pas survoler le village et faire attention aux pylônes d'éclairage du terrain de foot. Au nord du site (La Calame, La Ramaz), survol interdit à moins de 150 m du sol du 15/12 au 30/06 ; l'autre versant (Roche Franche) est interdit en permanence.",
+     "confidence": "medium",
+     "sources": [
+      "S27"
+     ]
+    },
+    {
+     "id": "ffvl1616-catray",
+     "name": "Catray",
+     "lon": 5.7565,
+     "lat": 46.1105,
+     "alt_m": 1074,
+     "coord_quality": "source",
+     "orientations": [
+      "E",
+      "SE"
+     ],
+     "description": "Décollage orienté est à sud-est, très court, proche de l'aérodrome de Bellegarde-Vouvray et sous la TMA Genève 2. Plateau peu pentu et boisé, sans vache possible : bien identifier les conditions à risque (vol sous le vent, descendances importantes), la finesse théorique pour passer le plateau étant de 5,5.",
+     "confidence": "medium",
+     "sources": [
+      "S28"
+     ]
+    },
+    {
+     "id": "ffvl1664-angleton",
+     "name": "Poizat-Lalleyriat - L'Angleton",
+     "lon": 5.7055,
+     "lat": 46.1422,
+     "alt_m": 1163,
+     "coord_quality": "source",
+     "orientations": [
+      "N",
+      "NO"
+     ],
+     "description": "Décollage étroit orienté nord à nord-ouest, sans difficulté particulière ; méfiance par vent fort de secteur ouest. L'atterrissage est sur un plateau, avec des approches turbulentes possibles par vent de nord supérieur à 20 km/h et un gradient important au posé, surtout en milieu d'après-midi.",
+     "confidence": "medium",
+     "sources": [
+      "S29"
+     ]
+    },
+    {
+     "id": "ffvl329-innimond-table",
+     "name": "Innimond - La Table d'orientation",
+     "lon": 5.5918,
+     "lat": 45.7849,
+     "alt_m": 1027,
+     "coord_quality": "source",
+     "orientations": [
+      "N",
+      "NE",
+      "E"
+     ],
+     "description": "Décollage orienté nord à est, très court et étroit, qui exige obligatoirement du vent de face (aérologie : « vent de NE »). Turbulent par vent de nord fort. Convention avec l'ONF.",
+     "confidence": "medium",
+     "sources": [
+      "S44"
+     ],
+     "secteur_initial": "bourget-chambery"
+    },
+    {
+     "id": "ffvl1269-evosges",
+     "name": "Évosges",
+     "lon": 5.4864,
+     "lat": 45.9514,
+     "alt_m": 770,
+     "coord_quality": "source",
+     "orientations": [
+      "S",
+      "SO",
+      "O"
+     ],
+     "description": "Décollage orienté sud-ouest au bord d'un plateau (700 m), temporairement non praticable pour le vol libre ; le site n'est plus référencé FFVL. Zones d'arrêté de biotope (voir le panneau au décollage). Premiers 100 m souvent turbulents.",
+     "confidence": "medium",
+     "sources": [
+      "S50"
+     ],
+     "secteur_initial": "bourget-chambery"
+    },
+    {
+     "id": "ffvl13328-oncieu-col-evosges",
+     "name": "Oncieu - Col d'Évosges",
+     "lon": 5.4856,
+     "lat": 45.9644,
+     "alt_m": 759,
+     "coord_quality": "source",
+     "orientations": [
+      "SO"
+     ],
+     "description": "Décollage orienté sud-ouest, pentu, de niveau technique élevé et en cours d'élaboration. Aérologie de la fiche : vent de sud-ouest faible (moins de 10 km/h). TMA de Lyon Saint-Exupéry : ne pas dépasser 1950 m/sol.",
+     "confidence": "medium",
+     "sources": [
+      "S51"
+     ],
+     "secteur_initial": "bourget-chambery"
+    },
+    {
+     "id": "ffvl1271-torcieu-antenne",
+     "name": "Torcieu - Antenne relais",
+     "lon": 5.3972,
+     "lat": 45.9111,
+     "alt_m": 555,
+     "coord_quality": "source",
+     "orientations": [
+      "N",
+      "NE",
+      "NO"
+     ],
+     "description": "Décollage orienté nord au fond d'une large combe, court et technique, exploitable de nord-ouest à nord-est, idéal par vent inférieur à 15 km/h ; il ne supporte pas le nord fort. Dans la TMA 2 de Lyon (1350 m maximum) et en zone d'arrêté de biotope.",
+     "confidence": "medium",
+     "sources": [
+      "S52"
+     ],
+     "secteur_initial": "bourget-chambery"
+    },
+    {
+     "id": "ffvl1273-saint-sorlin",
+     "name": "Saint-Sorlin",
+     "lon": 5.3989,
+     "lat": 45.88,
+     "alt_m": 656,
+     "coord_quality": "source",
+     "orientations": [
+      "S",
+      "SO",
+      "O"
+     ],
+     "description": "Décollage court et étroit orienté sud-ouest, ouvert sur la vallée du Rhône bien dégagée : rarement turbulent en l'air, le décollage restant le point délicat (rangée d'arbres en sortie, vent souvent de travers). Dans la TMA 2 de Lyon (1350 m maximum) et zones d'arrêté de biotope à consulter auprès du club.",
+     "confidence": "medium",
+     "sources": [
+      "S54"
+     ],
+     "secteur_initial": "bourget-chambery"
+    },
+    {
+     "id": "ffvl1476-le-chanay",
+     "name": "Le Chanay",
+     "lon": 5.5116,
+     "lat": 45.943,
+     "alt_m": 952,
+     "coord_quality": "source",
+     "orientations": [
+      "SE",
+      "S"
+     ],
+     "description": "Décollage court et déversant sur l'est, orienté sud-est à sud, utilisé par vent fort : site de soaring plutôt fréquenté pour le vol en dynamique (aérologie : « S<20km/h »). Maîtrise du décollage par vent fort impérative. TMA à 1980 m.",
+     "confidence": "medium",
+     "sources": [
+      "S56"
+     ],
+     "secteur_initial": "bourget-chambery"
+    },
+    {
+     "id": "ffvl1951-mont-luisandre",
+     "name": "Mont Luisandre",
+     "lon": 5.4186,
+     "lat": 45.9775,
+     "alt_m": 773,
+     "coord_quality": "source",
+     "orientations": [
+      "SO",
+      "O"
+     ],
+     "description": "Décollage court orienté sud-ouest à ouest, aérologie « vent de secteur SO à O » : ne pas décoller par vent de sud, site turbulent par vent de sud. Ne pas s'engager dans les combes de part et d'autre du Mont Luisandre (pas d'atterrissage possible). Arbres en contrebas du terrain.",
+     "confidence": "medium",
+     "sources": [
+      "S57"
+     ],
+     "secteur_initial": "bourget-chambery"
+    },
+    {
+     "id": "ffvl1875-romaniere-barres-rouges",
+     "name": "Romanière - Barres Rouges",
+     "lon": 4.9854,
+     "lat": 43.7021,
+     "alt_m": 251,
+     "coord_quality": "source",
+     "orientations": [
+      "S",
+      "SO"
+     ],
+     "description": "Décollage des Alpilles (Eyguières) orienté sud à sud-ouest, court et technique en cas de forte brise ; le gonflage face voile doit être maîtrisé. Aérologie de la fiche : « brise mer ». La configuration complexe du site génère de nombreuses zones de fortes turbulences qui évoluent avec le vent météo et la brise.",
+     "confidence": "medium",
+     "sources": [
+      "S71"
+     ],
+     "secteur_initial": "baronnies"
+    }
+   ],
+   "name": "Jura sud, Bugey, Revermont (hors périmètre)",
+   "soaring_spots": [
+    {
+     "id": "ffvl1271-torcieu-dynamique-combe",
+     "name": "Torcieu : dynamique de la combe dès une composante de nord",
+     "lon": 5.3972,
+     "lat": 45.9111,
+     "coord_quality": "approx",
+     "wind_dirs": [
+      "NO",
+      "N",
+      "NE"
+     ],
+     "description": "La vallée de l'Albarine canalise le vent depuis Ambérieu et la combe orientée nord donne, d'après la fiche, un « super dynamique » dès qu'il y a une composante de nord (site exploitable de nord-ouest à nord-est, idéal sous 15 km/h, ne supporte pas le nord fort).",
+     "confidence": "medium",
+     "sources": [
+      "S52"
+     ],
+     "secteur_initial": "bourget-chambery"
+    },
+    {
+     "id": "ffvl1273-saint-sorlin-sud",
+     "name": "Saint-Sorlin : appui dynamique par vent établi de sud à sud-est",
+     "lon": 5.3989,
+     "lat": 45.88,
+     "coord_quality": "approx",
+     "wind_dirs": [
+      "S",
+      "SE"
+     ],
+     "description": "Selon la fiche, le site est plutôt fréquenté par vent de sud à sud-est établi ; l'appui dynamique est d'autant moins bon que la composante d'est est importante.",
+     "confidence": "medium",
+     "sources": [
+      "S54"
+     ],
+     "secteur_initial": "bourget-chambery"
+    },
+    {
+     "id": "ffvl1476-chanay-dynamique",
+     "name": "Le Chanay : vol en dynamique par vent fort",
+     "lon": 5.5116,
+     "lat": 45.943,
+     "coord_quality": "approx",
+     "wind_dirs": [
+      "SE",
+      "S"
+     ],
+     "description": "La fiche décrit Le Chanay comme un site à soaring plutôt fréquenté en cas de vent fort pour le vol en dynamique, avec un décollage court et déversant. Position approximative, au décollage.",
+     "confidence": "medium",
+     "sources": [
+      "S56"
+     ],
+     "secteur_initial": "bourget-chambery"
+    }
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Fiche FFVL Noirmont - Piste Noire N°1 (n° 17)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/17",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Les Rousses) : aérologie, dangers."
+  },
+  {
+   "id": "S2",
+   "title": "Fiche FFVL Noirmont - Piste Rouge N°2 (n° 18)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/18",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Les Rousses) : description."
+  },
+  {
+   "id": "S3",
+   "title": "Fiche FFVL Septmoncel (n° 54)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/54",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Septmoncel) : description, aérologie, dangers."
+  },
+  {
+   "id": "S4",
+   "title": "Fiche FFVL l'Essard - Saint Claude (n° 55)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/55",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Villard Saint Sauveur) : description, aérologie, dangers."
+  },
+  {
+   "id": "S5",
+   "title": "Fiche FFVL Sorgia - la Charmante (n° 601)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/601",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Lancrans) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S6",
+   "title": "Fiche FFVL Sorgia - les Pres Geles (n° 602)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/602",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Lancrans) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S7",
+   "title": "Fiche FFVL Le Bouant (n° 1933)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1933",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Confort) : description, aérologie, dangers."
+  },
+  {
+   "id": "S8",
+   "title": "Fiche FFVL Le Bouant - Crete de Charmy Pre Sud (n° 1519)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1519",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Confort) : description."
+  },
+  {
+   "id": "S9",
+   "title": "Fiche FFVL Champfromier - sur le Haut Lan (n° 603)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/603",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Champfromier) : description, dangers."
+  },
+  {
+   "id": "S10",
+   "title": "Fiche FFVL Les Cheneviers (n° 811)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/811",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Cinquetral) : description, aérologie, dangers."
+  },
+  {
+   "id": "S11",
+   "title": "Fiche FFVL Cinquetral Cotes de Bienne (n° 13672)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13672",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Saint-Claude) : description, aérologie, dangers."
+  },
+  {
+   "id": "S12",
+   "title": "Fiche FFVL Cinquetral Cotes de Bienne - les Cibles (n° 13673)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13673",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Saint-Claude) : aérologie, dangers."
+  },
+  {
+   "id": "S13",
+   "title": "Fiche FFVL Balvay - le Chateau (n° 626)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/626",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Balvay) : description, aérologie, dangers."
+  },
+  {
+   "id": "S14",
+   "title": "Fiche FFVL Balvay (n° 627)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/627",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Bolozon) : description, aérologie, dangers."
+  },
+  {
+   "id": "S15",
+   "title": "Fiche FFVL Les Vignes (n° 1473)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1473",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Leyssard) : description."
+  },
+  {
+   "id": "S16",
+   "title": "Fiche FFVL Montcusel (ex Chancia) (n° 778)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/778",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Montcusel) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S17",
+   "title": "Fiche FFVL Mont Myon - Pressiat (n° 1080)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1080",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Pressiat) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S18",
+   "title": "Fiche FFVL Port - Carouge (n° 1428)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1428",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Port) : description, aérologie, dangers."
+  },
+  {
+   "id": "S19",
+   "title": "Fiche FFVL Port (n° 1429)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1429",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Port) : dangers."
+  },
+  {
+   "id": "S20",
+   "title": "Fiche FFVL La Vesanciere (n° 1430)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1430",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Vesancy) : description, dangers."
+  },
+  {
+   "id": "S21",
+   "title": "Fiche FFVL La Vesanciere - Haut (n° 1431)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1431",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Vesancy) : description, dangers."
+  },
+  {
+   "id": "S22",
+   "title": "Fiche FFVL Petit Mont Rond (n° 1464)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1464",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Mijoux) : description, dangers."
+  },
+  {
+   "id": "S23",
+   "title": "Fiche FFVL Petit Mont Rond - Gex la Ville (n° 1465)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1465",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Gex) : description, dangers."
+  },
+  {
+   "id": "S24",
+   "title": "Fiche FFVL Mijoux (n° 1466)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1466",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Mijoux) : description, dangers."
+  },
+  {
+   "id": "S25",
+   "title": "Fiche FFVL Mijoux (n° 1467)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1467",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Mijoux) : description, dangers."
+  },
+  {
+   "id": "S26",
+   "title": "Fiche FFVL Crozet - les Deux Potes (n° 1462)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1462",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Crozet) : description, dangers."
+  },
+  {
+   "id": "S27",
+   "title": "Fiche FFVL Thoiry - la Pierre de l'Ours (n° 13450)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13450",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Thoiry) : description, dangers."
+  },
+  {
+   "id": "S28",
+   "title": "Fiche FFVL Catray (n° 1616)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1616",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Chatillon En Michaille) : description, dangers."
+  },
+  {
+   "id": "S29",
+   "title": "Fiche FFVL Poizat-Lalleyriat - l'Angleton (n° 1664)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1664",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Lalleyriat) : description."
+  },
+  {
+   "id": "S30",
+   "title": "Fiche FFVL Poizat-Lalleyriat - le Lac (n° 13659)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13659",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Poizat Lalleyriat) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S57",
+   "title": "Fiche FFVL Mont Luisandre (n° 1951)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1951",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Saint Rambert) : description, aérologie, dangers."
+  },
+  {
+   "id": "S51",
+   "title": "Fiche FFVL Oncieu Col d'Evosges (n° 13328)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/13328",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Oncieu) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S54",
+   "title": "Fiche FFVL Saint Sorlin (n° 1273)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1273",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Saint Sorlin) : description, aérologie, dangers."
+  },
+  {
+   "id": "S53",
+   "title": "Fiche FFVL Torcieu (n° 1272)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1272",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Torcieu) : dangers."
+  },
+  {
+   "id": "S58",
+   "title": "Fiche FFVL Mont Luisandre (n° 1953)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1953",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Amberieux En Bugey) : description."
+  },
+  {
+   "id": "S56",
+   "title": "Fiche FFVL Le Chanay (n° 1476)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1476",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Tenay) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S50",
+   "title": "Fiche FFVL Evosges (n° 1269)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1269",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Evosges) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S71",
+   "title": "Fiche FFVL Romaniere - Barres Rouges (n° 1875)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1875",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Eyguieres) : description, aérologie, dangers."
+  },
+  {
+   "id": "S52",
+   "title": "Fiche FFVL Torcieu - Antenne Relais (n° 1271)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1271",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Torcieu) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S44",
+   "title": "Fiche FFVL Innimond - la Table d'Orientation (n° 329)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/329",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Innimond) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S55",
+   "title": "Fiche FFVL Saint Sorlin - Souclin (n° 1274)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/1274",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle du terrain (récolte 2026, Souclin) : description."
+  }
+ ]
+}

@@ -6,6 +6,7 @@
  * and in unit tests.
  */
 import type { CuratedBreezeInfo } from '@brises/shared';
+import { CuratedLayerKind, curatedLayerKind } from './curated';
 import { compassFr, windFromDeg, windVector } from './grid';
 import { clamp, smoothstep } from './raster';
 import { RULES } from './rules';
@@ -61,6 +62,21 @@ function cycle(t: number, s: [number, number, number, number], nightValue: numbe
   if (t <= c) return 1;
   if (t < d) return 1 - smoothstep(c, d, t);
   return -nightValue * smoothstep(d, d + 2, t);
+}
+
+/**
+ * Along-valley wind relative to its peak, as a function of ζ = height above the
+ * valley floor / valley depth (crest envelope − floor): full speed in the lower
+ * part of the valley (jet), decreasing to zero at about crest height, then a weak
+ * return flow (antiwind) above the crests. See `RULES.valleyProfile` for sources.
+ * Mirrored in apps/web/src/gpu/model-glsl.ts.
+ */
+export function valleyProfile(zeta: number): number {
+  const [jet, top] = RULES.valleyProfile;
+  const [a0, a1, a2, a3] = RULES.valleyAntiwindZone;
+  const core = 1 - smoothstep(jet, top, zeta);
+  const anti = RULES.valleyAntiwind * smoothstep(a0, a1, zeta) * (1 - smoothstep(a2, a3, zeta));
+  return core - anti;
 }
 
 /** Activity 0..1 of a curated breeze given its legal-time window, with 1 h ramps. */
@@ -202,6 +218,8 @@ export interface WindContext {
   curated: CuratedLayer | null;
   /** Per-breeze activity (signed: negative never used, 0..1) at this hour. */
   curatedActivity: Float32Array;
+  /** Per-breeze vertical structure (`CuratedLayerKind`). */
+  curatedKind: Uint8Array;
   g: [number, number];
   gSpeed: number;
   gKmh: number;
@@ -215,8 +233,10 @@ export function makeWindContext(terrain: Terrain, time: TimeContext, params: Mod
   const g = windVector(params.synoptic.fromDeg, gSpeed);
   const r = (params.synoptic.fromDeg * Math.PI) / 180;
   const activity = new Float32Array(curated?.breezes.length ?? 0);
+  const kinds = new Uint8Array(curated?.breezes.length ?? 0);
   curated?.breezes.forEach((b, i) => {
     activity[i] = b.window ? windowActivity(params.hour, b.window) : Math.max(0, time.valleyPhase);
+    kinds[i] = curatedLayerKind(b.kind);
   });
   return {
     terrain,
@@ -224,6 +244,7 @@ export function makeWindContext(terrain: Terrain, time: TimeContext, params: Mod
     params,
     curated,
     curatedActivity: activity,
+    curatedKind: kinds,
     g,
     gSpeed,
     gKmh: params.synoptic.speedKmh,
@@ -258,6 +279,9 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   const insol = c.time.insol[k];
   out.insolation = insol;
 
+  // ζ: height of the evaluation point above the valley floor, in valley depths
+  // (crest envelope − floor). In ASL mode this is the same air layer whatever the
+  // ground below (valley centre, sidewall or plateau).
   const depth = Math.max(t.env[k] - t.floor[k], 150);
   const level = (z + hh - t.floor[k]) / depth;
   out.valleyLevel = level;
@@ -276,9 +300,10 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   } else out.slope[0] = out.slope[1] = 0;
 
   // --- Valley breeze: up-valley by day (against drainage), down-valley at night.
+  // Vertical profile: jet in the lower valley, zero at crest height, weak antiwind above.
   const vPhase = c.time.valleyPhase * (c.time.valleyPhase > 0 ? c.time.season : 1);
-  const inValley = 1 - smoothstep(0.45, 0.95, level);
-  const vSpeed = RULES.valleyBreezeMax * vPhase * t.valley[k] * inValley * scale;
+  const vProfile = valleyProfile(level);
+  const vSpeed = RULES.valleyBreezeMax * vPhase * t.valley[k] * vProfile * scale;
   out.valley[0] = -t.axisX[k] * vSpeed;
   out.valley[1] = -t.axisY[k] * vSpeed;
 
@@ -308,13 +333,49 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
     if (idx >= 0) {
       const b = c.curated.breezes[idx];
       const act = c.curatedActivity[idx];
-      const isValleyKind = b.kind !== 'regional' && b.kind !== 'plain-to-mountain';
-      const hf = isValleyKind ? 1 - smoothstep(0.5, 1.0, level) : Math.exp(-hh / 1200);
-      cw = c.curated.weight[k] * hf;
-      const sp = b.speedMs * act * scale;
+      const kind = c.curatedKind[idx];
+      // hf: how much the documented breeze overrides the generic flow at this height;
+      // vf: its speed relative to the documented (low-level) speed. The override must
+      // last as high as the generic flow it replaces: where the documented direction
+      // differs from the generic one (Grésivaudan: NE → SW towards Grenoble, against
+      // the generic up-drainage direction), a weight fading faster than the generic
+      // valley wind would make both cancel aloft. The height decay is therefore put
+      // on the speed, and the weight only fades for slope breezes (thin layer under
+      // the valley flow) and above the antiwind layer.
+      let hf = 1;
+      let vf = 1;
+      if (kind === CuratedLayerKind.Valley) {
+        const [, , a2, a3] = RULES.valleyAntiwindZone;
+        hf = 1 - smoothstep(a2, a3, level);
+        vf = vProfile;
+      } else if (kind === CuratedLayerKind.Slope) {
+        hf = 1 - smoothstep(RULES.curatedSlopeLayer[0], RULES.curatedSlopeLayer[1], hh);
+      } else {
+        // Terrain-following ~1 km inflow; channelled in a valley it fills the valley
+        // at least as the valley wind does (positive part of the profile).
+        vf = Math.max(Math.exp(-hh / RULES.curatedDeepDepth), vProfile);
+      }
+      // An inactive documented breeze (outside its hours) says nothing about the flow
+      // now: its override fades with its activity instead of imposing a calm.
+      cw = c.curated.weight[k] * hf * act;
+      const sp = b.speedMs * act * vf * scale;
       out.curated[0] = c.curated.tx[k] * sp;
       out.curated[1] = c.curated.ty[k] * sp;
       out.curatedIndex = idx;
+      // The documented breeze tells which way the along-valley flow goes in its
+      // corridor. Where it contradicts the generic valley wind (whose sign only comes
+      // from the drainage), the generic one is turned to the documented sense, with a
+      // short transition at the corridor edge; otherwise the two cancel wherever the
+      // override weight is below 1, a calm hole that grows with height now that the
+      // valley wind reaches the crests.
+      if (kind !== CuratedLayerKind.Slope) {
+        const agree = (-t.axisX[k] * c.curated.tx[k] - t.axisY[k] * c.curated.ty[k]) * c.time.valleyPhase;
+        if (agree < 0) {
+          const flip = 1 - 2 * smoothstep(0, RULES.curatedAlignWeight, c.curated.weight[k] * act);
+          out.valley[0] *= flip;
+          out.valley[1] *= flip;
+        }
+      }
     }
   }
   out.curatedWeight = cw;

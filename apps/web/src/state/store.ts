@@ -83,7 +83,7 @@ export const useApp = create<AppState>((set) => ({
   synopticKmh: 0,
   heightMode: 'agl',
   heightAgl: 80,
-  heightAsl: 2500,
+  heightAsl: 1500,
   breezeScale: 1,
   overlay: 'none',
   overlayOpacity: 0.85,

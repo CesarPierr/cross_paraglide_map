@@ -12,6 +12,22 @@ export type { CuratedBreezeInput };
 
 const VALLEY_KINDS = new Set(['valley', 'downvalley', 'lake', 'pass-transfer', 'katabatic']);
 
+/** Vertical structure of a curated breeze, shared by the CPU model and the GPU engine. */
+export const CuratedLayerKind = {
+  /** Plain → mountain and regional flows: ~1 km thick, terrain following (Weissmann et al. 2005, S4). */
+  Deep: 0,
+  /** Valley-scale flows: follow the valley-wind profile (`valleyProfile`). */
+  Valley: 1,
+  /** Slope breezes: a layer of ~100–200 m above the ground (`RULES.curatedSlopeLayer`). */
+  Slope: 2,
+} as const;
+
+export function curatedLayerKind(kind: string): number {
+  if (VALLEY_KINDS.has(kind)) return CuratedLayerKind.Valley;
+  if (kind === 'slope') return CuratedLayerKind.Slope;
+  return CuratedLayerKind.Deep;
+}
+
 export function rasterizeCurated(t: Terrain, breezes: CuratedBreezeInput[]): CuratedLayer {
   const { grid } = t;
   const { width: w, height: h, size: n } = grid;

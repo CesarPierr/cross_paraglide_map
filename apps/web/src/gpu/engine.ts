@@ -7,7 +7,7 @@
  * what makes the hour / wind / height sliders feel live.
  */
 import type { CellResult, CuratedBreezeInfo, ModelParams } from '@brises/model';
-import { windowActivity } from '@brises/model';
+import { curatedLayerKind, windowActivity } from '@brises/model';
 import { windVector, type Grid } from '@brises/model';
 import { smoothstep } from '@brises/model';
 import { RULES } from '@brises/model';
@@ -71,8 +71,6 @@ export function timeState(grid: Grid, p: ModelParams): TimeState {
 }
 
 export const SAMPLE_MAX = 64;
-
-const VALLEY_KINDS = new Set(['valley', 'downvalley', 'lake', 'pass-transfer', 'katabatic']);
 
 export class GpuWindEngine {
   readonly grid: Grid;
@@ -160,7 +158,7 @@ export class GpuWindEngine {
       // Curated breeze activity depends on the hour.
       this.breezes.forEach((b, i) => {
         const act = b.window ? windowActivity(p.hour, b.window) : Math.max(0, this.time!.valleyPhase);
-        this.breezeData.set([b.speedMs, act, VALLEY_KINDS.has(b.kind) ? 1 : 0, 0], i * 4);
+        this.breezeData.set([b.speedMs, act, curatedLayerKind(b.kind), 0], i * 4);
       });
     }
     this.params = p;

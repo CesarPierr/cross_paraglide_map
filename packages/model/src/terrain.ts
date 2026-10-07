@@ -14,7 +14,7 @@ export interface Terrain {
   /** Slightly smoothed elevation gradient, east and north components (m/m). */
   gx: Float32Array;
   gy: Float32Array;
-  /** Valley floor (local minimum envelope) and ridge envelope elevations (m). */
+  /** Valley floor (local minimum envelope, ~1.7 km) and crest envelope (~6 km) elevations (m). */
   floor: Float32Array;
   env: Float32Array;
   /** Local relief: elevation minus its ~1.5 km mean (m). Positive on spurs and ridges. */
@@ -56,6 +56,10 @@ export const LAKE_SEEDS: Array<[string, number, number]> = [
   ['Lac du Mont-Cenis', 6.94, 45.235],
   ['Lac du Chambon', 6.165, 45.04],
 ];
+
+/** Crest envelope: max-filter radius and smoothing radius, in cells (≈ 216 m). */
+const ENV_RADIUS = 28;
+const ENV_SMOOTH = 10;
 
 const N8X = [1, 1, 0, -1, -1, -1, 0, 1];
 const N8Y = [0, 1, 1, 1, 0, -1, -1, -1];
@@ -247,12 +251,23 @@ export function analyseTerrain(grid: Grid, rawElevation: Float32Array): Terrain 
   const tpi = new Float32Array(n);
   for (let k = 0; k < n; k++) tpi[k] = z[k] - zMid[k];
 
-  // Valley floor & ridge envelopes (~2 km scale), smoothed.
+  // Valley floor envelope (~1.7 km local minimum), smoothed.
   const floor = blur(extremumFilter(z, w, h, 8, false), w, h, 5);
-  const env = blur(extremumFilter(z, w, h, 12, true), w, h, 6);
+  // Local relief envelope (~2.6 km): how incised the channel is (valley presence weight below).
+  const envLocal = blur(extremumFilter(z, w, h, 12, true), w, h, 6);
+  // Crest envelope: height of the ridges that bound the valley atmosphere, which sets
+  // the thickness of the valley-wind layer (it fills the valley up to about ridge-top
+  // height, Zardi & Whiteman 2013). Alpine valleys are 10–15 km crest to crest (the
+  // Chartreuse crest is ~6.5 km from the Isère at Saint-Hilaire), so the max is taken
+  // within ENV_RADIUS ≈ 6 km, then smoothed: ~2 000 m over the Grésivaudan,
+  // ~2 600 m in Tarentaise, ~2 150 m at Annecy. The former ~2.6 km envelope only saw
+  // the lower slopes (≈ 1 000 m over the Grésivaudan) and cut the valley wind off a
+  // few hundred metres above the floor.
+  const env = blur(extremumFilter(z, w, h, ENV_RADIUS, true), w, h, ENV_SMOOTH);
   for (let k = 0; k < n; k++) {
     if (floor[k] > z[k]) floor[k] = z[k];
     if (env[k] < z[k]) env[k] = z[k];
+    if (envLocal[k] < z[k]) envLocal[k] = z[k];
   }
 
   // Drainage network.
@@ -303,7 +318,7 @@ export function analyseTerrain(grid: Grid, rawElevation: Float32Array): Terrain 
     const presence = smoothstep(0.004, 0.05, bwt[k] / Math.max(sizeMax[k], 0.3));
     // Size: log of the upstream area (≈30 km² → 0, ≈3000 km² → 1).
     const size = clamp((sizeMax[k] - 0.9) / 2.1, 0, 1);
-    const depth = smoothstep(80, 600, env[k] - floor[k]);
+    const depth = smoothstep(80, 600, envLocal[k] - floor[k]);
     valley[k] = coherence * presence * Math.sqrt(size) * (0.3 + 0.7 * depth);
   }
 

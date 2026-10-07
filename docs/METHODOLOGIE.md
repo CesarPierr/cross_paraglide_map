@@ -46,6 +46,15 @@ par lancer de rayon sur le MNT (passe GPU dédiée). La saison module l'intensit
 Chaque régime a une épaisseur : l'altitude d'évaluation (au-dessus du sol ou absolue) atténue les
 brises de pente puis de vallée et fait apparaître le vent météo au-dessus des crêtes.
 
+Profil vertical de la brise de vallée (`RULES.valleyProfile`, Zardi & Whiteman 2013) : la profondeur
+de la vallée est mesurée jusqu'aux crêtes voisines (enveloppe sur ≈ 6 km). La brise garde toute sa
+force jusqu'à 30 % de cette profondeur, en garde la moitié vers 65 % et s'éteint à hauteur des
+crêtes ; un contre-courant faible (`valleyAntiwind`, 15 %, hypothèse) apparaît juste au-dessus.
+Au-dessus de Saint-Hilaire, à 15 h en juillet sans vent, la brise du Grésivaudan reste ainsi
+sensible à 1500 m (≈ 6 à 10 km/h) et s'efface vers 2500 m. Les brises documentées de l'atlas
+suivent le même profil selon leur type (vallée, pente, régionale : `curatedLayerKind`), ne
+s'appliquent que dans leurs horaires, et donnent leur sens à la brise générique dans leur couloir.
+
 ## 4. Connaissance locale (atlas)
 
 Les brises documentées (tracés de l'atlas, recalés sur le fond de vallée par plus court chemin sur

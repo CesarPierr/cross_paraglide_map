@@ -17,7 +17,7 @@ uniform highp sampler2D tV;   // floor, env, axisX, axisY
 uniform highp sampler2D tW;   // valley, lakeX, lakeY, water
 uniform highp sampler2D tR;   // seaX, seaY, plainX, plainY
 uniform highp sampler2D tC;   // curated weight, tx, ty, index
-uniform highp sampler2D tB;   // per curated breeze: speedMs, activity, valleyKind, 0
+uniform highp sampler2D tB;   // per curated breeze: speedMs, activity, layer kind (0 deep, 1 valley, 2 slope), 0
 uniform highp sampler2D tInsol;
 uniform ivec2 uGrid;
 uniform float uPy0;
@@ -39,6 +39,13 @@ const float R_SLOPE_MAX = ${f(RULES.slopeBreezeMax)};
 const float R_SLOPE_DEPTH = ${f(RULES.slopeBreezeDepth)};
 const float R_KATABATIC = ${f(RULES.katabaticMax)};
 const float R_VALLEY_MAX = ${f(RULES.valleyBreezeMax)};
+const float R_VALLEY_JET = ${f(RULES.valleyProfile[0])};
+const float R_VALLEY_TOP = ${f(RULES.valleyProfile[1])};
+const float R_ANTI = ${f(RULES.valleyAntiwind)};
+const vec4 R_ANTI_ZONE = vec4(${RULES.valleyAntiwindZone.map(f).join(', ')});
+const vec2 R_CUR_SLOPE = vec2(${RULES.curatedSlopeLayer.map(f).join(', ')});
+const float R_CUR_DEEP = ${f(RULES.curatedDeepDepth)};
+const float R_CUR_ALIGN = ${f(RULES.curatedAlignWeight)};
 const float R_PLAIN_MAX = ${f(RULES.plainBreezeMax)};
 const float R_LAKE_MAX = ${f(RULES.lakeBreezeMax)};
 const float R_SEA_MAX = ${f(RULES.seaBreezeMax)};
@@ -64,6 +71,13 @@ float cellSize(int j) {
 bool inside(ivec2 p) { return p.x >= 0 && p.y >= 0 && p.x < uGrid.x && p.y < uGrid.y; }
 
 ivec2 stepCell(ivec2 c, vec2 dir, float d) { return ivec2(floor(vec2(c) + dir * d + 0.5)); }
+
+// Along-valley wind vs height (field.ts → valleyProfile).
+float valleyProfile(float zeta) {
+  float core = 1.0 - smoothstep(R_VALLEY_JET, R_VALLEY_TOP, zeta);
+  float anti = R_ANTI * smoothstep(R_ANTI_ZONE.x, R_ANTI_ZONE.y, zeta) * (1.0 - smoothstep(R_ANTI_ZONE.z, R_ANTI_ZONE.w, zeta));
+  return core - anti;
+}
 
 Cell evalCell(ivec2 c) {
   Cell o;
@@ -94,10 +108,10 @@ Cell evalCell(ivec2 c) {
   float slopeSpeed = R_SLOPE_MAX * slopeForce * slopeFactor * exp(-hh / R_SLOPE_DEPTH) * uBreezeScale;
   o.slope = gmag > 1e-6 ? Z.yz / gmag * slopeSpeed : vec2(0.0);
 
-  // Valley breeze.
+  // Valley breeze: jet in the lower valley, zero at crest height, weak antiwind above.
   float vPhase = uValleyPhase * (uValleyPhase > 0.0 ? uSeason : 1.0);
-  float inValley = 1.0 - smoothstep(0.45, 0.95, level);
-  float vSpeed = R_VALLEY_MAX * vPhase * W.x * inValley * uBreezeScale;
+  float vProfile = valleyProfile(level);
+  float vSpeed = R_VALLEY_MAX * vPhase * W.x * vProfile * uBreezeScale;
   o.valley = -V.zw * vSpeed;
 
   // Plain, lake and sea breezes.
@@ -114,10 +128,23 @@ Cell evalCell(ivec2 c) {
   if (CU.x > 0.0) {
     int idx = int(CU.w + 0.5);
     vec4 B = texelFetch(tB, ivec2(idx, 0), 0);
-    float hf = B.z > 0.5 ? 1.0 - smoothstep(0.5, 1.0, level) : exp(-hh / 1200.0);
-    o.cw = CU.x * hf;
-    o.curated = CU.yz * B.x * B.y * uBreezeScale;
+    // hf: override weight, vf: speed factor with height (see field.ts).
+    float hf = 1.0;
+    float vf = max(exp(-hh / R_CUR_DEEP), vProfile);
+    if (B.z > 1.5) {
+      hf = 1.0 - smoothstep(R_CUR_SLOPE.x, R_CUR_SLOPE.y, hh);
+      vf = 1.0;
+    } else if (B.z > 0.5) {
+      hf = 1.0 - smoothstep(R_ANTI_ZONE.z, R_ANTI_ZONE.w, level);
+      vf = vProfile;
+    }
+    o.cw = CU.x * hf * B.y;
+    o.curated = CU.yz * B.x * B.y * vf * uBreezeScale;
     o.cidx = float(idx);
+    // Generic valley wind turned to the documented sense (see field.ts).
+    if (B.z < 1.5 && dot(-V.zw, CU.yz) * uValleyPhase < 0.0) {
+      o.valley *= 1.0 - 2.0 * smoothstep(0.0, R_CUR_ALIGN, CU.x * B.y);
+    }
   }
   vec2 b = o.slope + (o.valley + o.regional) * (1.0 - o.cw) + o.curated * o.cw;
 

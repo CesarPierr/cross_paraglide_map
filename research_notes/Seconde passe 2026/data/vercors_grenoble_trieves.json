@@ -1559,11 +1559,11 @@
      "name": "Col Vert : pompe de service dans les pierriers",
      "lon": 5.6005,
      "lat": 45.0452,
-     "alt_m": null,
+     "alt_m": 1598,
      "coord_quality": "approx",
      "best_hours": "dès 10h30-11h",
      "trigger": "Pierriers et petits ravins à droite du déco est (après le pilier), chauffés par le soleil du matin",
-     "description": "Déclencheur du déco est du Col Vert : « la pompe de service est dans les pierriers à droite après le pilier », décollage conseillé à partir de 10h30-11h (topo CHVD). Un récit confirme que ça monte « dans les petits ravins à droite du déco » mais faiblement, avec une extraction parfois laborieuse jusqu'au-dessus des crêtes du Gerbier (31 juillet 2020). Point de départ des deux circuits classiques (nord vers le Moucherotte, sud vers le Grand Veymont et le Dévoluy). Position approximative près du déco (altitude du déco : 1635 m selon le topo CHVD, 1469 m dans la fiche FFVL 5122).",
+     "description": "Déclencheur du déco est du Col Vert : « la pompe de service est dans les pierriers à droite après le pilier », décollage conseillé à partir de 10h30-11h (topo CHVD). Un récit confirme que ça monte « dans les petits ravins à droite du déco » mais faiblement, avec une extraction parfois laborieuse jusqu'au-dessus des crêtes du Gerbier (31 juillet 2020). Point de départ des deux circuits classiques (nord vers le Moucherotte, sud vers le Grand Veymont et le Dévoluy). Position approximative près du déco (altitude du déco : 1635 m selon le topo CHVD, 1469 m dans la fiche FFVL 5122). Audit d'octobre 2026 : altitude du terrain IGN à cette position (1598 m, pente de 25° exposée à l'est) ; l'altitude de 1469 m de la fiche FFVL ne colle pas aux coordonnées de la fiche (terrain à 1616 m), le topo CHVD donne 1635 m. Aucun point chaud kk7 à moins de 2,5 km.",
      "sources": [
       "S197",
       "S196",
@@ -1631,19 +1631,21 @@
     {
      "id": "mollard-eperon-arrivee-transition-neron",
      "name": "Le Mollard / éperon de Sassenage : raccroche en arrivant du Néron",
-     "lon": 5.6465,
-     "lat": 45.1895,
-     "alt_m": null,
-     "coord_quality": "approx",
+     "lon": 5.6528,
+     "lat": 45.1949,
+     "alt_m": 828,
+     "coord_quality": "measured",
      "best_hours": "vers midi et après-midi (brise de Grenoble établie)",
-     "trigger": "Éperon et falaises de Sassenage sous Saint-Nizier ; l'arrivée se fait dans la brise de nord de Voreppe, au-dessus des lignes à haute tension",
-     "description": "Raccroche délicate de la transition Chartreuse - Vercors : en arrivant sous le Mollard près de Saint-Nizier, on est dans la brise de nord de Voreppe et dans des « thermiques hachés » juste au-dessus des lignes 400 kV (20 avril 2021) ; le 26 mars 2022 une trentaine d'ailes se disputaient le thermique, point bas à 500 m, lignes franchies à 960 m. Conseil du fil parapentiste.info : un plafond de 1700 m suffit, avec au choix la dynamique sur l'éperon (Sassenage) si la brise de vallée est déjà établie, sinon le thermique sur les falaises suivantes. Rachais : 1800 m depuis le Néron pour être sûr de raccrocher au-dessus des lignes. Position approximative (hameau du Mollard).",
+     "trigger": "Falaises et pentes est sous le hameau du Mollard (Saint-Nizier), au-dessus des lignes à haute tension, face à la brise de nord de Voreppe ; le point est celui du point chaud des traces GPS",
+     "description": "Raccroche délicate de la transition Chartreuse - Vercors : en arrivant sous le Mollard près de Saint-Nizier, on est dans la brise de nord de Voreppe et dans des « thermiques hachés » juste au-dessus des lignes 400 kV (20 avril 2021) ; le 26 mars 2022 une trentaine d'ailes se disputaient le thermique, point bas à 500 m, lignes franchies à 960 m. Conseil du fil parapentiste.info : un plafond de 1700 m suffit, avec au choix la dynamique sur l'éperon (Sassenage) si la brise de vallée est déjà établie, sinon le thermique sur les falaises suivantes. Rachais : 1800 m depuis le Néron pour être sûr de raccrocher au-dessus des lignes. Audit d'octobre 2026 : position corrigée. Le point était le hameau du Mollard (plateau de Saint-Nizier, terrain IGN 1096 m, pente de 8°), où personne ne prend de hauteur : le récit du 26 mars 2022 a son point bas à 500 m et franchit les lignes à 960 m, donc le thermique disputé par une trentaine d'ailes est au pied des falaises, sous le hameau. Les traces GPS (kk7) y mesurent un point chaud à 95 % (95 % le matin, 94 % à midi, 80 % en fin de journée, toute l'année), à 770 m au nord-est du hameau : pente de 40° exposée est, terrain IGN 828 m, à 390 m du sommet du Mollard Gargot (IGN, 1069 m).",
      "sources": [
       "S195",
       "S194",
       "S213",
       "S208",
-      "S220"
+      "S220",
+      "S230",
+      "S261"
      ],
      "confidence": "medium"
     },
@@ -1747,6 +1749,150 @@
       "S226"
      ],
      "confidence": "medium"
+    },
+    {
+     "id": "seyssins-rochers-du-chatelard-face-sud-est",
+     "name": "Rocher du Châtelard (face sud-est au-dessus de Seyssins, sous Saint-Nizier)",
+     "lon": 5.6556,
+     "lat": 45.1411,
+     "alt_m": 888,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (99 % le matin, 98 % à midi, 76 % en fin de journée), toute l'année",
+     "trigger": "pente rocheuse de 43° exposée sud-est (Rocher du Châtelard, toponyme IGN à 570 m au nord) au pied des falaises de Saint-Nizier, au-dessus de Seyssins et de Claix",
+     "description": "Audit d'octobre 2026 : le plus fort point chaud du secteur (98 % toutes périodes, toute l'année) n'était décrit par aucun texte. Il est à 1,75 km au sud-est du décollage nord du Moucherotte (fiche FFVL 5262 : « bascule efficace en face E »), sur la marche basse de la face est du Vercors. Le récit CHVD du 7 février 2024 (descente du Moucherotte, décollage ouest) décrit un vol « à jouer dans les bullettes en face Est, au dessus de Seyssins » : c'est la zone. Position : celle du point chaud (terrain IGN 888 m, pente de 43° au sud-est, relief proche : falaises jusqu'à 1134 m) ; le déclencheur est déduit du relief, aucun texte ne nomme le rocher. Premier étage naturel des vols au Moucherotte vers le col de Comboire.",
+     "sources": [
+      "S262",
+      "S119",
+      "S230",
+      "S261"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "peuil-claix-pentes-est",
+     "name": "Le Peuil (Claix) : pentes est sous le décollage",
+     "lon": 5.6542,
+     "lat": 45.1237,
+     "alt_m": 764,
+     "coord_quality": "approx",
+     "best_hours": "matin et milieu de journée (87 % le matin et à midi, aucun point chaud en fin de journée) : l'exposition est perd le soleil l'après-midi",
+     "trigger": "pente de 40° exposée sud-est/est, 160 m sous le décollage du Peuil (923 m) ; l'ombre arrive en début d'après-midi",
+     "description": "Audit d'octobre 2026 : déduction. Le décollage plein est du Peuil (FFVL 3022 « Grange du Mure », 936 m ; topo CHVD : 923 m, « bon départ de cross », comme le col du Baure) n'avait aucun thermique documenté à moins de 2,3 km. Le récit du 3 mai 2023 le dit « bien alimenté, plein est » : décollage à 11 h, puis départ à droite vers le sud sur les faces est. Les traces GPS (kk7) mesurent à 950 m au nord-nord-est du décollage un point chaud à 87 % qui ne fonctionne que le matin et à midi, ce qui colle avec une pente est. Position : celle du point chaud ; aucun récit ne décrit le déclencheur. Rôle : premier thermique des vols du matin avant de basculer sur les faces est du Moucherotte ou vers le Pré du Four.",
+     "sources": [
+      "S263",
+      "S222",
+      "S147",
+      "S230",
+      "S261"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "alevoux-rocher-pentes-nord-ouest",
+     "name": "Rocher de l'Alevoux : pentes nord-ouest sous le décollage",
+     "lon": 5.3781,
+     "lat": 45.1242,
+     "alt_m": 681,
+     "coord_quality": "approx",
+     "best_hours": "milieu de journée et soir (96 % à midi et en fin de journée, 85 % le matin), toute l'année",
+     "trigger": "pente de 44° exposée nord-ouest sous le Rocher de l'Alevoux (toponyme IGN à 100 m), juste en dessous du décollage (841 m)",
+     "description": "Audit d'octobre 2026 : le décollage de l'Alevoux (FFVL 1038, « idéal NO », 230 décollages en 2025) n'avait que le thermique du terrain d'atterrissage, pas celui du relief. Les traces GPS (kk7) mesurent à 246 m du décollage un point chaud à 96 % toutes périodes, plus fort l'après-midi et le soir que le matin, conforme à l'exposition nord-ouest. La fiche signale aussi que la cascade du Ruzand est « sous le vent par tendance Nord » (voir le point chaud voisin). Position : celle du point chaud, à 160 m sous le décollage ; le déclencheur est déduit du relief, aucun récit ne le décrit. Rôle : thermique de service pour remonter à la hauteur du décollage puis au plateau de Saint-Pierre-de-Chérennes, étape du tour du Vercors (« Plaf au pré de cinq sous et transit sur saint Pierre de Chérenne »).",
+     "sources": [
+      "S138",
+      "S139",
+      "S52",
+      "S230",
+      "S261"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "ruzand-cascade-falaises-nord-ouest",
+     "name": "Falaises du Ruzand (au nord de l'Alevoux)",
+     "lon": 5.385,
+     "lat": 45.1302,
+     "alt_m": 690,
+     "coord_quality": "approx",
+     "best_hours": "milieu de journée et soir (93 % à midi, 92 % en fin de journée, 72 % le matin), toute l'année",
+     "trigger": "pente de 40° exposée nord-ouest, à 100 m du ruisseau du Ruzand (cascade) à 1 km au nord-nord-est du décollage de l'Alevoux",
+     "description": "Audit d'octobre 2026 : déduction. Deuxième point chaud kk7 (94 %) de l'Alevoux, sur la même ligne de falaises que le précédent, à 1 km au nord-nord-est du décollage. La fiche FFVL 1038 demande de ne pas trop s'approcher de « la grande cascade du Ruzand qui est sous le vent par tendance Nord » : la zone est donc à la fois un thermique mesuré et un secteur turbulent quand le vent météo tourne au nord. Aucun récit ne décrit le déclencheur ; position et heures sont celles du point chaud.",
+     "sources": [
+      "S138",
+      "S230",
+      "S261"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "playnet-chateau-bernard-faces-est",
+     "name": "Tours du Playnet (faces est, cirque de Château-Bernard)",
+     "lon": 5.6027,
+     "lat": 44.983,
+     "alt_m": 1479,
+     "coord_quality": "approx",
+     "best_hours": "matin et milieu de journée (83 % le matin, 78 % à midi), printemps et été ; le récit le trouve en fin de journée au retour du Grand Veymont",
+     "trigger": "rebord des escarpements du Playnet, sur la face est du Vercors, dans le cirque de Château-Bernard (lieu-dit Playnet, toponyme IGN à 250 m)",
+     "description": "Audit d'octobre 2026 : récit CHVD de juin 2006 (décollage du Pas de la Balme à 1830 m, vol le long des faces est jusqu'au Grand Veymont puis retour vers le nord) : « au niveau des tours du playnet à 1550m il y a enfin un thermique, un vrai, étroit mais actif. Je remonte donc à la crête pour aller tourner devant le pas de la balme » ; l'auteur se prépare à « zéroter le long des faces EST » et rame au retour dans des thermiques « nainifiés ». Les traces GPS (kk7) mesurent un point chaud à 80 % à 250 m du lieu-dit Playnet (1479 m au terrain IGN, rebord à 120 m au-dessus de la moyenne du relief alentour). Un seul récit, ancien, mais précis sur le lieu : point de relance sur le retour des faces est vers Gresse et le Pas de la Balme.",
+     "sources": [
+      "S264",
+      "S230",
+      "S261"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "crete-de-la-ferriere-point-bas-serpaton",
+     "name": "Crête de la Ferrière (point bas technique du cross Serpaton – Deux Sœurs)",
+     "lon": 5.5965,
+     "lat": 44.9767,
+     "alt_m": 1390,
+     "coord_quality": "approx",
+     "best_hours": "matin et milieu de journée (95 % le matin, 94 % à midi, 76 % en fin de journée), printemps, été et automne ; le cross du Serpaton y passe vers midi",
+     "trigger": "pente de 39° exposée sud-est sous la crête de la Ferrière (toponyme IGN « Crête de la Ferrière » à 100 m), entre le col de Soliet et les rochers de Pierre Dieu",
+     "description": "Audit d'octobre 2026 : le point chaud kk7 le plus fort entre Villard-de-Lans et Gresse (94 %) tombe sur la crête de la Ferrière, toponyme IGN à 100 m. C'est le « point bas assez technique » du cross classique du Serpaton : « Cross 1: Pilier nord - crêt de la ferrière (point bas assez technique) - les 2 sœurs. Le crêt de la ferrière est à peu prés à 1100 ou 1200. La transition jusqu'à lui est très facile mais peu faire rentrer dans la stabilité de basse couche » (Barbules, repris par la fiche parapentiste.info). On y arrive donc bas, et c'est là qu'il faut s'extraire avant le thermique généreux des Deux Sœurs, 3 km au nord-nord-ouest (le cross par le sud, via le Grand Veymont, « d'éviter le point bas de la ferrière »). Position : celle du point chaud (terrain IGN 1390 m, pente de 39° au sud-est, 84 m au-dessus de la moyenne alentour) ; l'altitude de 1100-1200 m des récits est celle de l'arrivée du pilote sur la pente, pas celle de la crête.",
+     "sources": [
+      "S66",
+      "S211",
+      "S230",
+      "S261",
+      "S196"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "col-de-l-arc-face-ouest-allieres",
+     "name": "Col de l'Arc – Pic Saint-Michel : face ouest au-dessus des Allières",
+     "lon": 5.6027,
+     "lat": 45.0793,
+     "alt_m": 1596,
+     "coord_quality": "approx",
+     "best_hours": "89 % à midi, 91 % en fin de journée (aucun point chaud le matin) ; toute l'année ; aucun point chaud le matin : la face ouest chauffe l'après-midi",
+     "trigger": "pente de 38° exposée ouest, 750 m à l'ouest du col de l'Arc (1780 m) et 1,8 km au sud des Allières, sous la crête du Pic Saint-Michel",
+     "description": "Audit d'octobre 2026 : déduction. Le Pic Saint-Michel et le col de l'Arc n'avaient comme thermique que la spirale de la carte du PNR (position lue sur la carte) et la face est du col, du matin. Les traces GPS (kk7) mesurent sur la face ouest, côté Lans, un point chaud à 91 % l'après-midi et le soir (89 % à midi, 91 % en fin de journée, rien le matin), toute l'année : c'est le versant ouest que les Tichodromes mentionnent pour le sommet du Pic (« un déco du sommet en orientation ouest, immenses atterros… », « un vol direct permet de poser à Lans en Vercors », « si cela tient sur la crête, départ de cross au choix, vers le nord ou vers le sud ») et que Lans en l'Air donne en « restitution » du soir. Aucun texte ne décrit ce thermique ; position et heures sont celles du point chaud (terrain IGN 1596 m).",
+     "sources": [
+      "S52",
+      "S45",
+      "S230",
+      "S261"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "ffvl2227-autrans-la-plaine-thermique-fevrier",
+     "name": "La Plaine (Autrans) : possible thermique fin février par vent d'ouest",
+     "lon": 5.5319,
+     "lat": 45.1729,
+     "alt_m": 1023,
+     "coord_quality": "source",
+     "ffvl_id": 2227,
+     "best_hours": "fin février, par vent d'ouest (pente école ; non recommandé l'été à cause des fourrages)",
+     "trigger": "pente école herbeuse de La Plaine, au nord-est d'Autrans, ensoleillée en hiver",
+     "description": "Audit d'octobre 2026 : déduction. La fiche FFVL 2227 (« La Plaine (Autrans) », NO/O) écrit : « Spot idéal pour débuter par vent de nord-nord ouest, possible thermique fin février vent d'ouest. Attention spot non recommandé l'été, respect des fourrages des agriculteurs ». Seule indication d'un thermique à cet endroit, d'où la confiance faible ; aucun point chaud kk7 à moins de 3 km. Position : celle de la fiche (le terrain IGN y est à 1023 m, comme dans la fiche).",
+     "sources": [
+      "S269",
+      "S261"
+     ],
+     "confidence": "low"
     }
    ],
    "soaring_spots": [
@@ -2018,12 +2164,12 @@
      "name": "Col Vert - FFVL 5122",
      "lon": 5.6001,
      "lat": 45.0448,
-     "alt_m": 1469,
+     "alt_m": 1616,
      "coord_quality": "source",
      "orientations": [
       "E"
      ],
-     "description": "Départ face est (cabane du Col Vert) pour cross matinal vers le sud ; fiche FFVL issue de ParaglidingEarth (S125, S55).",
+     "description": "Départ face est (cabane du Col Vert) pour cross matinal vers le sud ; fiche FFVL issue de ParaglidingEarth (S125, S55). Altitude corrigée (octobre 2026) : le terrain IGN à la position de la fiche FFVL est à 1616 m, le topo CHVD donne 1635 m ; les 1469 m de la fiche FFVL (issue de ParaglidingEarth) ne correspondent pas à ces coordonnées.",
      "sources": [
       "S125",
       "S55"
@@ -3601,17 +3747,19 @@
     {
      "id": "but-sapiau-pompe-col-de-rousset",
      "name": "But Sapiau : pompe et plafond de sortie du col de Rousset",
-     "lon": 5.4175,
-     "lat": 44.826,
-     "alt_m": null,
-     "coord_quality": "source",
-     "best_hours": "après-midi",
+     "lon": 5.4135,
+     "lat": 44.8213,
+     "alt_m": 1321,
+     "coord_quality": "measured",
+     "best_hours": "après-midi d'après le texte ; 99 % le matin et à midi, 93 % en fin de journée d'après les traces GPS",
      "trigger": "Pointe du But Sapiau et crête entre les vallées de Chamaloc et de Romeyer",
-     "description": "Relance et plafond du col de Rousset : si l'on a raté la pompe qui est devant le déco, longer les versants ouest du But Sapiau jusqu'à la crête entre Chamaloc et Romeyer, où l'on remonte « devant la pointe du But Sapiau » ; une fois le plein fait, transition vers le But de l'Aiglette et les faces sud du Vercors, vers la vallée de Saint-Agnan ou vers la Dent de Die. Récit de 2025 : « un bon plein au-dessus de la butte de Sapiau » pour arriver à la Dent de Die. Éviter de virer à droite après le déco vers le cirque sous le col (aérologie difficile).",
+     "description": "Relance et plafond du col de Rousset : si l'on a raté la pompe qui est devant le déco, longer les versants ouest du But Sapiau jusqu'à la crête entre Chamaloc et Romeyer, où l'on remonte « devant la pointe du But Sapiau » ; une fois le plein fait, transition vers le But de l'Aiglette et les faces sud du Vercors, vers la vallée de Saint-Agnan ou vers la Dent de Die. Récit de 2025 : « un bon plein au-dessus de la butte de Sapiau » pour arriver à la Dent de Die. Éviter de virer à droite après le déco vers le cirque sous le col (aérologie difficile). Audit d'octobre 2026 : position ramenée sur le point chaud des traces GPS (kk7 : 99 % toutes périodes, 95-99 % en avril, juillet et octobre), à 610 m au sud-ouest du sommet IGN du But Sapiau (5.4175 E, 44.8260 N) et à 100 m du gouffre du But Sapiau : le texte de Vol Libre Diois parle des « versants ouest du but Sapiau » et de « remonter devant la pointe du But Sapiau », pas du sommet. Pente de 33° exposée sud-ouest, terrain IGN 1321 m.",
      "sources": [
       "S57",
       "S61",
-      "S226"
+      "S226",
+      "S230",
+      "S261"
      ],
      "confidence": "medium"
     },
@@ -3650,16 +3798,229 @@
     {
      "id": "pilier-nord-serpaton-extraction",
      "name": "Pilier nord du Serpaton : extraction du départ du cross",
-     "lon": 5.587,
-     "lat": 44.914,
-     "alt_m": null,
-     "coord_quality": "approx",
-     "best_hours": "10h30-12h (déco de la matinée)",
+     "lon": 5.5944,
+     "lat": 44.9155,
+     "alt_m": 1539,
+     "coord_quality": "measured",
+     "best_hours": "10h30-12h (déco de la matinée) ; 91 % le matin, 82 % à midi, aucun point chaud le soir d'après les traces GPS",
      "trigger": "Pilier nord du Serpaton, bord de l'alpage exposé à l'est",
-     "description": "Déduction : le cross classique commence par « pilier nord, crêt de la Ferrière, Deux Sœurs » (parapentiste.info) ; le pilier nord est donc le point où l'on s'extrait avant de traverser vers le Crêt de la Ferrière (environ 1100-1200 m) ; si le sud pousse fort et que les plafonds sont généreux, on peut même raccrocher les Deux Sœurs directement. Position approximative, à confirmer.",
+     "description": "Déduction : le cross classique commence par « pilier nord, crêt de la Ferrière, Deux Sœurs » (parapentiste.info) ; le pilier nord est donc le point où l'on s'extrait avant de traverser vers le Crêt de la Ferrière (environ 1100-1200 m) ; si le sud pousse fort et que les plafonds sont généreux, on peut même raccrocher les Deux Sœurs directement.  Audit d'octobre 2026 : position ramenée sur le point chaud des traces GPS (kk7 : 91 % toutes périodes, 91 % le matin, 82 % à midi, aucun le soir), à 600 m à l'est-nord-est de l'ancien point approximatif et à 570 m au nord-nord-est du décollage du Pas du Serpaton : pente de 41° exposée à l'est à 1539 m, ce qui retrouve l'exposition à l'est que le fichier donnait au pilier nord (bord de l'alpage) et le profil de matinée du texte (décollage 10h30-12h).",
      "sources": [
       "S211",
-      "S66"
+      "S66",
+      "S230",
+      "S261"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "saint-jean-royans-gaudissart-antennes",
+     "name": "Antennes de Gaudissart (Saint-Jean-en-Royans)",
+     "lon": 5.316,
+     "lat": 45.0073,
+     "alt_m": 768,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (79 % le matin, 99 % à midi et en fin de journée), toute l'année",
+     "trigger": "falaise exposée nord-ouest sous le décollage du col Gaudissart, à la hauteur des antennes (790 m), au-dessus de l'aérodrome",
+     "description": "Audit d'octobre 2026 : le décollage de Gaudissart (FFVL 1434, tremplin delta et nouveau décollage parapente rouvert le 31 mai 2025) n'avait aucun thermique à moins de 7 km, alors que les traces GPS (kk7) y mesurent le point chaud le plus fort de tout le secteur (100 % à midi et le soir, toute l'année), à 115 m du décollage. Le club des Tichodromes le confirme sans le nommer, dans la consigne d'atterrissage : « Quand tu es aux antennes, et à l'altitude des antennes (790m), arrête de gratter, pars te poser », en insistant pour quitter le relief à cette altitude : l'ascendance des antennes est le dernier endroit où l'on gratte avant de se poser à l'aérodrome, avec un venturi vers Combe Laval plus bas. La fiche FFVL précise « léger vent de Nord, site protégé des vents plus soutenus de la vallée du Rhône » et que l'aérologie locale du nouveau décollage est « inconnue à ce jour ». Position : celle du point chaud (terrain IGN 768 m, pente nord-ouest de 37°).",
+     "sources": [
+      "S162",
+      "S53",
+      "S265",
+      "S230",
+      "S261"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "tete-de-la-dame-faces-sud",
+     "name": "Tête de la Dame (faces sud du Vercors, Omblèze)",
+     "lon": 5.2573,
+     "lat": 44.851,
+     "alt_m": 1260,
+     "coord_quality": "approx",
+     "best_hours": "milieu de journée et soir (91 % le matin, 92 % à midi, 87 % en fin de journée), toute l'année ; les faces sud sont « parfaitement exposées » en milieu de journée",
+     "trigger": "pente de 36° exposée plein sud, 770 m au sud-sud-est de la Tête de la Dame (sommet IGN, 1506 m), à 530 m du pas de Rouisse",
+     "description": "Audit d'octobre 2026 : le tour du Vercors des Tichodromes (depuis le col de l'Arc) fait suivre les faces est le matin, puis « en mi-journée, on vire plein ouest pour se faire toutes les faces sud du Vercors qui à cette heure là seront parfaitement exposées. On arrive à la bonne heure à la Tête de la Dame pour prendre le thermique de 14 h du roc de Touleau qui permet de transiter sur notre bon vieux col des Limouches ». Les traces GPS (kk7) placent un point chaud à 92 % sur la pente sud sous la Tête de la Dame : c'est l'étape qui précède le thermique du Roc de Toulau (4,5 km au nord-nord-ouest, déjà décrit). Position : celle du point chaud ; le texte nomme la Tête de la Dame sans situer le thermique plus précisément.",
+     "sources": [
+      "S52",
+      "S54",
+      "S230",
+      "S261"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "toulau-tete-de-la-dame-faces-sud-ouest",
+     "name": "Faces sud-ouest entre la Tête de la Dame et le Roc de Toulau",
+     "lon": 5.2405,
+     "lat": 44.8607,
+     "alt_m": 1224,
+     "coord_quality": "approx",
+     "best_hours": "matin et milieu de journée (93 % le matin, 87 % à midi, 69 % en fin de journée), printemps, été et automne",
+     "trigger": "pente de 22° exposée sud-ouest, 1 km à l'ouest-nord-ouest de la Tête de la Dame",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 (90 %) sur le versant sud-ouest entre la Tête de la Dame et le Roc de Toulau, c'est-à-dire sur le trajet du tour du Vercors par les faces sud (voir le point chaud de la Tête de la Dame). Aucun texte ne le décrit ; la pente est moins raide (22°) que celle de la Tête de la Dame et le relief proche ne présente pas de rupture marquée. Position et heures sont celles du point chaud.",
+     "sources": [
+      "S52",
+      "S230",
+      "S261"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "but-de-l-aiglette-faces-sud",
+     "name": "But de l'Aiglette (faces sud du Vercors, au-dessus de Chamaloc)",
+     "lon": 5.3685,
+     "lat": 44.8215,
+     "alt_m": 1393,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (97 % le matin et à midi, 87 % en fin de journée), toute l'année",
+     "trigger": "pente de 36° exposée plein sud sous le But de l'Aiglette (sommet IGN, 1524 m, à 170 m) et les Rochers de l'Aiglette (435 m)",
+     "description": "Audit d'octobre 2026 : Vol Libre Diois (col de Rousset) : « si vous avez fait le plein sur le but Sapiau vous pouvez tenter une transition directe vers l'ouest sur le but de l'Aiglette et les versants sud du Vercors ». Les traces GPS (kk7) mesurent 97 % sur la pente sud du But de l'Aiglette, 3,7 km à l'ouest-sud-ouest du col de Rousset, le deuxième point chaud de tout le Vercors. C'est le premier thermique des faces sud pour qui part du col de Rousset vers l'ouest (Tête de la Dame, Roc de Toulau, col des Limouches) ; sens inverse : dernier point de relance avant la transition sur But Sapiau. Position : celle du point chaud (terrain IGN 1389 m).",
+     "sources": [
+      "S57",
+      "S52",
+      "S230",
+      "S261"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "pas-de-la-sausse-leoncel",
+     "name": "Pas de la Sausse (Léoncel) : pentes sud-est de la Montagne de la Sausse",
+     "lon": 5.2116,
+     "lat": 44.8873,
+     "alt_m": 1394,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (96 % le matin, 91 % à midi, 86 % en fin de journée), toute l'année",
+     "trigger": "pente de 33° exposée sud-est, 260 m au sud du pas de la Sausse (col IGN, 1394 m), sous la Montagne de la Sausse (sommet à 1 km)",
+     "description": "Audit d'octobre 2026 : déduction. Le décollage de La Sausse (Léoncel) (FFVL 5334, fiche en brouillon, 28 décollages relevés en 2025 par les traces) n'avait aucun thermique à moins de 1,2 km et le thermique de Léoncel est décrit sur les pentes du décollage ouest, 1,9 km plus au nord. Les traces GPS (kk7) mesurent 96 % au pas de la Sausse, sur le versant sud-est de la Montagne de la Sausse, à 1,8 km du décollage de la Sausse et à 1,9 km de celui de Léoncel (« plouf du matin, thermique l'après-midi », 850 m de dénivelé). Aucun texte ne décrit ce déclencheur ; position et heures sont celles du point chaud.",
+     "sources": [
+      "S159",
+      "S156",
+      "S230",
+      "S261"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "font-d-urle-faces-sud-gagere",
+     "name": "Faces sud sous Font d'Urle (Puy de la Gagère)",
+     "lon": 5.3242,
+     "lat": 44.8787,
+     "alt_m": 1286,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (91 % le matin, 92 % à midi, 85 % en fin de journée), printemps, été et automne",
+     "trigger": "pente de 37° exposée sud, au pied des escarpements de Font d'Urle (porte d'Urle à 1,6 km, Puy de la Gagère à 1,4 km), sur la face sud du Vercors",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 92 % sur la face sud du plateau de Font d'Urle, qui n'a ni fiche FFVL ni page de club (voir les doutes de la passe 2026 : aucun site FFVL à Vassieux ni à Font d'Urle). Il se place sur la ligne des faces sud du Vercors que le tour du Vercors des Tichodromes suit en milieu de journée. Aucun texte ne le décrit ; position et heures sont celles du point chaud.",
+     "sources": [
+      "S52",
+      "S230",
+      "S261"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "but-saint-genix-vassieux-pente-sud",
+     "name": "But Saint-Genix (Vassieux-en-Vercors) : pente sud",
+     "lon": 5.3318,
+     "lat": 44.8276,
+     "alt_m": 1470,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (88 % le matin, 92 % à midi, 88 % en fin de journée), toute l'année",
+     "trigger": "pente de 34° exposée sud, 290 m au sud-ouest du But Saint-Genix (sommet IGN, 1644 m), au-dessus du col de la Chau",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 92 % sur la pente sud du But Saint-Genix, au sud du plateau de Vassieux, à 6 km à l'est de la Tête de la Dame et 7 km à l'ouest du col de Rousset : un maillon des faces sud du Vercors (voir le But de l'Aiglette). Aucun texte ne le décrit ; position et heures sont celles du point chaud.",
+     "sources": [
+      "S52",
+      "S230",
+      "S261"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "quinquambaye-faces-est-grand-veymont",
+     "name": "Côte de Quinquambaye (faces est sous le Grand Veymont)",
+     "lon": 5.5405,
+     "lat": 44.8685,
+     "alt_m": 1661,
+     "coord_quality": "approx",
+     "best_hours": "matin et milieu de journée (97 % le matin, 96 % à midi, 87 % en fin de journée), printemps, été et automne",
+     "trigger": "pente de 34° exposée sud-est sous la côte de Quinquambaye (crête IGN, saddle à 1750 m, à 220 m), 1,1 km à l'est du sommet du Grand Veymont",
+     "description": "Audit d'octobre 2026 : déduction. Le Grand Veymont est décrit comme plafond et point d'extraction du cheminement des faces est (plafonds de 2300 à 3200 m, fil parapentiste.info « Vercors et Dévoluy »), mais la pente qui l'alimente côté Gresse n'avait pas de thermique propre. Les traces GPS (kk7) mesurent 97 % sur la pente sud-est de la côte de Quinquambaye, 1,1 km à l'est du sommet : c'est le deuxième point chaud du Vercors, actif tout le jour, sur le passage obligé des cross du Serpaton, du Col Vert et du Moucherotte qui se séparent au Grand Veymont. Aucun texte ne le décrit ; position et heures sont celles du point chaud. Réserve naturelle des Hauts-Plateaux : 300 m sol minimum.",
+     "sources": [
+      "S33",
+      "S230",
+      "S261"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "montagne-de-la-pale-nord-serpaton",
+     "name": "Montagne de la Pale (crête nord du Serpaton)",
+     "lon": 5.5883,
+     "lat": 44.9322,
+     "alt_m": 1687,
+     "coord_quality": "approx",
+     "best_hours": "matin et milieu de journée (92 % le matin, 90 % à midi, aucun point chaud en fin de journée), toute l'année",
+     "trigger": "rebord est de la crête, pente de 37° exposée à l'est sous le sommet de la Pale (1734 m, à 15 m du point), sur l'alpage qui prolonge le Serpaton vers le nord",
+     "description": "Audit d'octobre 2026 : déduction. Le cross classique du Serpaton commence par « Cross 1: Pilier nord - crêt de la ferrière (point bas assez technique) - les 2 sœurs » (Barbules, parapentiste.info) : on longe la crête vers le nord avant de s'extraire. Le point chaud kk7 suivant sur cette crête, au-delà du pilier nord (`pilier-nord-serpaton-extraction`, 91 %, placé sur sa mesure), est la Montagne de la Pale (91 %), 2,2 km plus au nord, avec le même profil du matin et du midi, sans soir, comme une face est. À lire avec le crêt de la Ferrière (`crete-de-la-ferriere-point-bas-serpaton`, vercors-nord), où le cross continue. Position et heures sont celles du point chaud.",
+     "sources": [
+      "S66",
+      "S211",
+      "S230",
+      "S261"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "ffvl1036-musan-thermiques-matinaux",
+     "name": "Musan : conditions thermiques matinales",
+     "lon": 5.2356,
+     "lat": 44.9897,
+     "alt_m": 1070,
+     "coord_quality": "source",
+     "ffvl_id": 1036,
+     "best_hours": "matin, sans vent météo",
+     "trigger": "pente boisée très raide sous le décollage de Musan (orienté NE/E/SE), chauffée par le soleil du matin",
+     "description": "Audit d'octobre 2026 : la fiche FFVL du décollage de Musan (1070 m, NE/E/SE) donne comme aérologie « pas de vent météo ; conditions thermiques matinales » ; le texte était rangé avec le danger (décollage court, très pentu, boisé, dangereux par vent de nord ou de sud) et ne produisait aucun thermique. Position : celle du décollage de la fiche. Aucun point chaud kk7 à moins de 6 km (site peu volé), aucun récit : seule la fiche dit l'heure, le matin.",
+     "sources": [
+      "S160",
+      "S261"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "ffvl1234-serpaton-ouest-500-fin-de-journee",
+     "name": "Serpaton Ouest 500 : thermo-dynamique de fin de journée, plafond vers le sud",
+     "lon": 5.5896,
+     "lat": 44.905,
+     "alt_m": 1677,
+     "coord_quality": "source",
+     "ffvl_id": 1234,
+     "best_hours": "fin de journée, quand la brise de NNO est constante (faiblissante vers 18 h en été)",
+     "trigger": "crête et alpages exposés N/NO du Serpaton Ouest, sous la manche à air à droite des antennes",
+     "description": "Audit d'octobre 2026 : la fiche FFVL du Serpaton Ouest 500 (N/NO, 1677 m) dit : « en fin de journée lorsque brise de NNO est constante, vol en thermo-dynamique. Si la brise ne couche pas trop les thermiques il est possible de faire le plafond en longeant la crête vers le S, attention alors au respect de la zone réglementée du parc du Vercors (crête du Brisou, Mont-Aiguille et Grand Veymont) ». Le thermique de fin de journée du Serpaton Ouest n'était rattaché qu'au déco intermédiaire, 900 m plus loin ; ici c'est le déco Ouest 500 lui-même, position de la fiche. Aucun point chaud kk7 à moins de 2,7 km.",
+     "sources": [
+      "S149",
+      "S261"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "limouches-cirque-peyrus-pente-sud-ouest",
+     "name": "Les Limouches : pente sud-ouest au nord du cirque de Peyrus",
+     "lon": 5.144,
+     "lat": 44.9014,
+     "alt_m": 887,
+     "coord_quality": "approx",
+     "best_hours": "99 % le matin, 96 % à midi, 89 % en fin de journée ; toute l'année ; « site d'après-midi » pour la fiche FFVL, départ possible vers la plaine de Valence",
+     "trigger": "pente de 34° exposée sud-ouest, 1,1 km au nord du décollage des Limouches (992 m) et 930 m de l'atterrissage de la Touvière, dans le cirque de Peyrus",
+     "description": "Audit d'octobre 2026 : déduction. Le décollage des Limouches (FFVL 728, N/NO : « Nord faible », « déco court orienté Nord-Nord-Ouest, sous le vent par Nord Est, renforcement rapide du vent (mistral) » ; site d'après-midi sous le vent de l'est, avec départ possible vers la plaine de Valence, 540 m de dénivelé selon infos-parapente) n'avait que les « bulles thermiques près du sol » de l'atterrissage de la Touvière, 930 m plus au sud-ouest. Les traces GPS (kk7) placent à 1,1 km au nord du décollage, sur la pente sud-ouest qui ferme le cirque, un point chaud à 95 % (99 % le matin, 96 % à midi, 89 % le soir, toute l'année), le plus fort du Vercors drômois avec Gaudissart. Même vol dans le cirque que celui des Limouches : ne pas traverser le cirque en présence de vent de nord fort (fiche). Position et heures sont celles du point chaud.",
+     "sources": [
+      "S165",
+      "S54",
+      "S230",
+      "S261"
      ],
      "confidence": "low"
     }
@@ -4504,13 +4865,13 @@
     {
      "id": "courtet-combe-droite-deco",
      "name": "Combe à droite du déco de Courtet (faces ouest)",
-     "lon": 5.797,
-     "lat": 44.771,
-     "alt_m": 1365,
+     "lon": 5.7963,
+     "lat": 44.7706,
+     "alt_m": 1273,
      "coord_quality": "approx",
      "best_hours": "fin d'après-midi / soir (restitution)",
      "trigger": "Falaises des faces ouest chauffées par le soleil couchant ; combe à droite du déco",
-     "description": "Récit d'une pilote : sortie par la droite du déco vers les faces ouest, premier thermique dans la combe juste à droite, « ascenseur direct jusqu'aux nuages » avec une sorte de restitution (vario qui bipe en continu) (S62). Position approx. à côté du déco FFVL.",
+     "description": "Récit d'une pilote : sortie par la droite du déco vers les faces ouest, premier thermique dans la combe juste à droite, « ascenseur direct jusqu'aux nuages » avec une sorte de restitution (vario qui bipe en continu) (S62). Position approx. à côté du déco FFVL. Audit d'octobre 2026 : position ramenée sur le point chaud des traces GPS (kk7 : 99 % toutes périodes, 60 m), 90 m sous le décollage de la fiche FFVL ; altitude lue sur le terrain IGN (1273 m ; les 1365 m déclarés étaient ceux du décollage).",
      "sources": [
       "S62"
      ]
@@ -4532,13 +4893,13 @@
     {
      "id": "courtet-pompe-devant-deco",
      "name": "Courtet : pompe devant le déco",
-     "lon": 5.7965,
-     "lat": 44.7701,
-     "alt_m": null,
+     "lon": 5.7963,
+     "lat": 44.7706,
+     "alt_m": 1273,
      "coord_quality": "approx",
      "best_hours": "après 14h (site de l'après-midi, donne jusque tard en été)",
      "trigger": "Pente et combes en avant du déco ouest, au pied de la barre de l'Obiou",
-     "description": "Déclencheur : « la pompe à couillons est souvent installée devant le déco un peu en avant » (topo CHVD) ; au premier décollage de mai 2022 le thermique est trouvé « sur la gauche du déco » et les pilotes sont rapidement au plafond vers 2300 m, tandis que le récit d'une pilote place le premier thermique dans la combe à droite (voir courtet-combe-droite-deco). Les deux versions sont conservées. En fin de journée, thermiques encore présents jusqu'à 18h15 (plafond 2768 m, vent de nord, 30 avril 2026). On fait facilement les crêtes à 2700 m (Tête de l'Obiou, Grand Ferrand). Position approximative.",
+     "description": "Déclencheur : « la pompe à couillons est souvent installée devant le déco un peu en avant » (topo CHVD) ; au premier décollage de mai 2022 le thermique est trouvé « sur la gauche du déco » et les pilotes sont rapidement au plafond vers 2300 m, tandis que le récit d'une pilote place le premier thermique dans la combe à droite (voir courtet-combe-droite-deco). Les deux versions sont conservées. En fin de journée, thermiques encore présents jusqu'à 18h15 (plafond 2768 m, vent de nord, 30 avril 2026). On fait facilement les crêtes à 2700 m (Tête de l'Obiou, Grand Ferrand). Position approximative. Audit d'octobre 2026 : position ramenée sur le point chaud des traces GPS (kk7 : 99 % toutes périodes, 60 m), 90 m sous le décollage de la fiche FFVL ; altitude lue sur le terrain IGN (1273 m ; les 1365 m déclarés étaient ceux du décollage).",
      "sources": [
       "S202",
       "S203",
@@ -4550,16 +4911,18 @@
     {
      "id": "fluchaire-ratier-bouchon",
      "name": "Arête de Fluchaire : thermique « de folie » jusqu'au Ratier",
-     "lon": 5.8201,
-     "lat": 44.7736,
-     "alt_m": null,
-     "coord_quality": "source",
+     "lon": 5.8131,
+     "lat": 44.7765,
+     "alt_m": 1813,
+     "coord_quality": "measured",
      "best_hours": "vers 13h20 (début d'après-midi)",
      "trigger": "Arête de Fluchaire, face ouest/sud-ouest chauffée sous la Tête de l'Obiou",
-     "description": "Relance depuis le Châtel ou depuis Courtet vers l'Obiou : « un thermique de folie sur l'arête de Fluchaire qui me fera grimper comme un bouchon jusqu'au Ratier » ; plafond 3150 m ensuite à l'Obiou, puis Grand Ferrand (récit du 3 juillet 2022, sud-ouest à ouest 10-15 km/h en altitude).",
+     "description": "Relance depuis le Châtel ou depuis Courtet vers l'Obiou : « un thermique de folie sur l'arête de Fluchaire qui me fera grimper comme un bouchon jusqu'au Ratier » ; plafond 3150 m ensuite à l'Obiou, puis Grand Ferrand (récit du 3 juillet 2022, sud-ouest à ouest 10-15 km/h en altitude). Audit d'octobre 2026 : position ramenée sur le point chaud des traces GPS (kk7 : 91 % toutes périodes, 90 % à midi, 89 % le soir, rien le matin), à 635 m à l'ouest-nord-ouest du toponyme IGN « Arête de Fluchaire » (5.8201 E, 44.7736 N) : pente de 35° exposée ouest à 1813 m, ce qui retrouve la face ouest/sud-ouest chauffée décrite par le fichier et le « thermique de folie » de début d'après-midi (13h20).",
      "sources": [
       "S204",
-      "S226"
+      "S226",
+      "S230",
+      "S261"
      ],
      "confidence": "medium"
     },
@@ -4650,6 +5013,94 @@
       "S223"
      ],
      "confidence": "medium"
+    },
+    {
+     "id": "rochassac-faces-ouest-sous-la-bergerie",
+     "name": "Rochassac : faces ouest sous la bergerie (crête de Fluchaire)",
+     "lon": 5.8087,
+     "lat": 44.7862,
+     "alt_m": 1414,
+     "coord_quality": "approx",
+     "best_hours": "toute la journée d'après les traces GPS (90 % le matin, 93 % à midi et en fin de journée), toute l'année ; le topo CHVD parle de « thermiques du soir »",
+     "trigger": "pente de 26° exposée ouest, 450 m à l'ouest et 260 m sous le décollage de la bergerie de Rochassac, sur la crête de Fluchaire",
+     "description": "Audit d'octobre 2026 : le décollage de Rochassac (FFVL 3070, bergerie, 1674 m, 50 décollages en 2025 ; hors fiche, aucun texte d'aérologie) n'avait de thermique documenté qu'à 1,5 km (l'arête de Fluchaire, plus au sud-est). Le vol rando CHVD du 13 juillet 2024 (décollage ouest un peu au-dessus des cabanes, de la bergerie et des pylônes) note « faibles ascendances sur la crête de Fluchaire » et conclut que, « comme souvent dans le Trièves, on fait tout pour arriver le plus tard possible mais on décolle toujours un peu trop tôt pour profiter des thermiques du soir ». Les traces GPS (kk7) mesurent à 450 m du décollage un point chaud à 93 % toutes périodes, actif toute l'année. Les récits de Courtet (22 avril et 26 mai 2025) passent « à Rochassac » en promenade avec des thermiques doux. Position : celle du point chaud (terrain IGN 1414 m) ; le déclencheur est la pente ouest, déduit du relief.",
+     "sources": [
+      "S171",
+      "S266",
+      "S230",
+      "S261"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "tete-chevaliere-pente-sud-est-pas-de-l-essaure",
+     "name": "Faces sud-est sous la Tête Chevalière (au-dessus du pas de l'Essaure)",
+     "lon": 5.5532,
+     "lat": 44.8013,
+     "alt_m": 1688,
+     "coord_quality": "approx",
+     "best_hours": "matin et milieu de journée (99 % le matin, 97 % à midi, aucun point chaud en fin de journée), printemps, été et automne",
+     "trigger": "pente de 32° exposée sud-est, 1,1 km à l'est du sommet de la Tête Chevalière (1951 m) et 1 km au nord-ouest du pas de l'Essaure, sur les avant-reliefs est du Vercors",
+     "description": "Audit d'octobre 2026 : déduction. Le point chaud kk7 le plus fort du Trièves (98 %) est sur les avant-reliefs entre le Grand Veymont et le Jocou, 1,1 km à l'est de la Tête Chevalière. Le récit CHVD du 28 juillet 2026 (déjà cité pour la Tête Chevalière) dit : « On traverse sur la Tête Chevalière qui, un peu mesquine, nous remonte juste ce qu'il faut » entre le Grand Veymont et le Jocou, avant le col de Bachal qui « ne donne rien » : le point chaud est la pente qui porte les pilotes de ce passage obligé ; il est à 1,1 km du sommet, le rapprochement avec le thermique du récit n'est donc pas prouvé. Pas de soir : comme une face est, le soleil la quitte en début d'après-midi.",
+     "sources": [
+      "S214",
+      "S230",
+      "S261"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "tete-de-praorzel-chichilianne",
+     "name": "Tête de Praorzel (pente est au-dessus de Chichilianne)",
+     "lon": 5.5828,
+     "lat": 44.7782,
+     "alt_m": 1618,
+     "coord_quality": "approx",
+     "best_hours": "matin et milieu de journée (92 % le matin, 90 % à midi, 76 % en fin de journée), printemps et été",
+     "trigger": "pente de 34° exposée est sous le sommet de la Tête de Praorzel (1691 m, à 70 m), en rebord de la barrière est du Vercors au sud de Chichilianne",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 91 % sans texte propre, sur la barrière est du Vercors au sud de Chichilianne. La carte du PNR du Vercors place une spirale thermique entre le Mont Aiguille et Clelles (thermique `chichilianne-spirale`, position lue sur la carte, 3 km au nord-est de ce point) : le rapprochement n'est pas prouvé. Les pilotes du Serpaton et du Col Vert longent cette barrière à l'aller vers le Mont Aiguille et le Jocou. Position et heures sont celles du point chaud.",
+     "sources": [
+      "S49",
+      "S230",
+      "S261"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "courtet-faces-ouest-vers-rochassac",
+     "name": "Courtet : faces ouest au nord du décollage (vers les alpages de Rochassac)",
+     "lon": 5.8025,
+     "lat": 44.7782,
+     "alt_m": 1255,
+     "coord_quality": "approx",
+     "best_hours": "91 % le matin, 97 % à midi, 97 % en fin de journée ; toute l'année ; le vol de Courtet est « habituellement autour de 15h pour les premiers bons thermiques » (CHVD, avril 2025)",
+     "trigger": "pente raide (53°) exposée ouest, 1 km au nord du décollage de Courtet et 110 m sous lui, sur le cheminement qui mène aux alpages de Rochassac",
+     "description": "Audit d'octobre 2026 : déduction. Les récits de Courtet de 2025 décrivent un « cheminement en partant devant le déco pour rejoindre les alpages, cap sur « l'Australie », survol des cabanes de Rochassac » (stage Prévol, 24-25 mai) et une « petite promenade sur l'Australie, à Rochassac et en direction du Châtel » où « ça monte tranquillement un peu partout » (22 avril). Les traces GPS (kk7) mesurent 96 % toutes périodes, toute l'année, sur la pente ouest qui borde ce cheminement, 1 km au nord du décollage et 1 km au nord-nord-est du thermique de la combe à droite du déco. Aucun récit ne la nomme ; position et heures sont celles du point chaud (terrain IGN 1255 m). Le thermique de Rochassac (`rochassac-faces-ouest-sous-la-bergerie`) est à 1 km au nord-est.",
+     "sources": [
+      "S202",
+      "S267",
+      "S268",
+      "S230",
+      "S261"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "tete-de-gaudissart-pente-est",
+     "name": "Tête de Gaudissart (avant-reliefs est du Vercors, entre le Serpaton et le Mont Aiguille)",
+     "lon": 5.5687,
+     "lat": 44.851,
+     "alt_m": 1435,
+     "coord_quality": "approx",
+     "best_hours": "96 % le matin, 95 % à midi (aucun point chaud en fin de journée) ; printemps, été",
+     "trigger": "pente de 26° exposée est, au pied de la Tête de Gaudissart (sommet IGN, 1489 m, à 30 m), 600 m au nord-est du col des Pellas",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 95 % (96 % le matin, 95 % à midi, rien le soir) sur la barrière est du Vercors entre Gresse et le Mont Aiguille, sur la ligne que suivent les vols du Serpaton et du Col Vert vers le Mont Aiguille, le Jocou et l'Obiou (« le Mont Aiguille qu'on longe (survol interdit) pour raccrocher les avants reliefs », CHVD, 3 mai 2023). Le thermique de l'est du Mont Aiguille (`mont-aiguille-est-thermique`, spirale de la carte du PNR, position lue sur la carte) en est à 1,5 km. Aucun texte ne décrit ce point ; position et heures sont celles du point chaud (profil de face est : le soleil la quitte en début d'après-midi).",
+     "sources": [
+      "S222",
+      "S230",
+      "S261"
+     ],
+     "confidence": "low"
     }
    ],
    "soaring_spots": [
@@ -8448,6 +8899,87 @@
    "type": "web",
    "lang": "fr",
    "notes": "Décollage ouest de 2141 m, « vaste espace en herbe à pente douce » ; « bulles thermodynamiques bien présentes » ; atterrissage à Vizille ou Cholonge ; vautours qui aident à détecter les thermiques."
+  },
+  {
+   "id": "S261",
+   "title": "Altitudes du terrain (RGE ALTI, IGN Géoplateforme)",
+   "url": "https://data.geopf.fr/altimetrie/1.0/calcul/alti/rest/elevation.json",
+   "publisher": "IGN / Géoplateforme",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Service d'altimétrie (RGE ALTI métrique) : altitude du terrain à la position des points ; exposition et pente lues sur une grille de 100 m autour du point."
+  },
+  {
+   "id": "S262",
+   "title": "CHVD : récit « Moucherotte sans auto » (7 février 2024)",
+   "url": "https://www.chvd.org/2024/02/08/moucherotte-sans-auto/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Descente du Moucherotte en face est : « jouer dans les bullettes en face Est, au dessus de Seyssins » (30 min de vol), atterrissage au col de Comboire."
+  },
+  {
+   "id": "S263",
+   "title": "CHVD : topo « Le Peuil » (Jack, 11 novembre 2024)",
+   "url": "https://www.chvd.org/2024/11/11/le-peuil-2/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Décollage plein est à 923 m (Claix), « bon départ de cross », ressemble au col du Baure (même orientation, même altitude, même pente) ; ligne électrique à mi-pente."
+  },
+  {
+   "id": "S264",
+   "title": "CHVD : « Vol Libre (sans voiture) » (juin 2006)",
+   "url": "https://www.chvd.org/2006/06/14/vol-libre-sans-voiture/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Pas de la Balme, faces est de Château-Bernard : « au niveau des tours du playnet à 1550m il y a enfin un thermique, un vrai, étroit mais actif »."
+  },
+  {
+   "id": "S265",
+   "title": "Les Tichodromes : « IMPORTANT - Atterrissage St Jean en Royans 2026 »",
+   "url": "https://www.tichodromes.com/blog/important-atterrissage-st-jean-en-royans-2026.html",
+   "publisher": "Les Tichodromes (club, Valence)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Consigne d'atterrissage de l'aérodrome : « Quand tu es aux antennes, et à l'altitude des antennes (790m), arrête de gratter, pars te poser » ; quitter le relief à cette altitude à cause du venturi vers Combe Laval."
+  },
+  {
+   "id": "S266",
+   "title": "CHVD : vol rando « Rochassac » (13 juillet 2024)",
+   "url": "https://www.chvd.org/2024/07/14/rochassac/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Décollage ouest au-dessus des cabanes de Rochassac : « faibles ascendances sur la crête de Fluchaire » ; « on décolle toujours un peu trop tôt pour profiter des thermiques du soir »."
+  },
+  {
+   "id": "S267",
+   "title": "CHVD : « Week-End Thermique avec l'école Prévol » (mai 2025)",
+   "url": "https://www.chvd.org/2025/05/26/week-end-thermique-avec-lecole-prevol/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "À Courtet : « cheminement en partant devant le déco pour rejoindre les alpages, cap sur l'Australie, survol des cabanes de Rochassac »."
+  },
+  {
+   "id": "S268",
+   "title": "CHVD : « Courtet Vol et La Berche Via Ferrata » (22 avril 2025)",
+   "url": "https://www.chvd.org/2025/04/22/via-ferrata-la-berche-et-vol-a-courtet/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Le vol de Courtet est « habituellement autour de 15h pour les premiers bons thermiques » ; promenade « sur l'Australie, à Rochassac et en direction du Châtel »."
+  },
+  {
+   "id": "S269",
+   "title": "Fiche FFVL terrain 2227 - La Plaine (Autrans)",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/2227",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche officielle : « Spot idéal pour débuter par vent de nord-nord ouest, possible thermique fin février vent d'ouest. Attention spot non recommandé l'été ». Coordonnées 45.1729 N, 5.5319 E, 1023 m."
   }
  ]
 }

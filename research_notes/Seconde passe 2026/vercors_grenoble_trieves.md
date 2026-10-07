@@ -121,3 +121,60 @@ Volumes avant → après : brises 7 → 7, convergences 3 → 3, hazards 7 → 7
 - Aucun récit ne décrit les ascendances de Vizille, de Notre-Dame-de-Mésage ni des Corbières (points chauds à 86-89 %), ni de la Dent de Moirans et du Petit Montaud (secteur Vercors nord) ; non créés.
 - L'ascendance mesurée de la Grande Sûre (le Moine, rochers de Pierre Taillée), documentée par un récit CHVD de septembre 2024, relève du secteur Chartreuse : non créée ici.
 - La carte des brises à l'atterrissage de Chalais (PiouPiou 111) renvoie à une photo Google non lisible.
+
+
+## Audit des thermiques (octobre 2026)
+
+Contexte et méthode : voir la section du même nom dans `chartreuse_gresivaudan_belledonne.md`. Pour Vercors nord, Vercors est et sud et Trièves, les listes de lacunes (`docs/COUVERTURE.md`, `docs/KK7_CROISEMENT.md`, `docs/POSITIONS.md`) ont été reprises une à une, puis recroisées avec les fiches FFVL (colonnes `aerologie`, `description`, `dangers`), le corpus CHVD (1326 récits et topos), les pages du club des Tichodromes, Vol Libre Diois, Barbules et les traces GPS (kk7). Pour chaque point chaud, la pente (exposition, inclinaison, altitude) a été lue sur le terrain IGN (RGE ALTI) à la position du point, et le toponyme le plus proche cherché dans le géocodeur IGN. Le contrôle a montré aussi que la liste des points chauds forts de `KK7_CROISEMENT.md` ne montre pas ceux qui tombent entre 600 m et 1 km d'un thermique documenté : ils n'étaient ni rattachés à lui (au-delà de 600 m) ni ajoutés comme thermiques mesurés (en deçà de 1 km). Plusieurs de ces points chauds (But Sapiau, pilier nord du Serpaton, Fluchaire) et le Mollard (à 770 m) étaient en réalité les vrais thermiques décrits par des textes dont la position n'était qu'approchée ; ils sont corrigés ci-dessous. Même cas pour Saint-Vincent-les-Forts (voir `brianconnais_ecrins_queyras_ubaye.md`).
+
+### Vercors nord (`vercors-nord`)
+
+**Thermiques créés (8)**
+- `seyssins-rochers-du-chatelard-face-sud-est` (`medium`) : le plus fort point chaud du secteur (98 %, toute l'année) n'avait aucun texte. Pente de 43° exposée sud-est sous les falaises de Saint-Nizier, au-dessus de Seyssins ; le récit CHVD du 7 février 2024 décrit la descente du Moucherotte « à jouer dans les bullettes en face Est, au dessus de Seyssins ».
+- `playnet-chateau-bernard-faces-est` (`medium`) : récit CHVD de juin 2006, « au niveau des tours du playnet à 1550m il y a enfin un thermique, un vrai, étroit mais actif ». Le lieu-dit Playnet (toponyme IGN) est dans le cirque de Château-Bernard, à 250 m d'un point chaud à 80 %.
+- `crete-de-la-ferriere-point-bas-serpaton` (`medium`) : le point chaud à 94 % tombe à 100 m de la « Crête de la Ferrière » (toponyme IGN), le « point bas assez technique » du cross du Serpaton vers les Deux Sœurs (Barbules, parapentiste.info). Il avait été retenu d'abord comme « Pierre Dieu » : le toponyme de Barbules l'identifie.
+- `peuil-claix-pentes-est`, `alevoux-rocher-pentes-nord-ouest`, `ruzand-cascade-falaises-nord-ouest`, `col-de-l-arc-face-ouest-allieres`, `ffvl2227-autrans-la-plaine-thermique-fevrier` (`low`) : le Peuil (topo CHVD, 923 m, plein est, « bon départ de cross » ; point chaud du matin et de midi, comme une pente est) ; l'Alevoux (deux points chauds à 96 % et 94 % sur les pentes nord-ouest sous le Rocher de l'Alevoux, le décollage « idéal NO » n'avait que le thermique de l'atterrissage ; la fiche prévient que la cascade du Ruzand est « sous le vent par tendance Nord ») ; la face ouest du col de l'Arc (91 % l'après-midi et le soir, sans rien le matin) ; La Plaine d'Autrans (fiche FFVL 2227 : « possible thermique fin février vent d'ouest »).
+
+**Positions corrigées**
+- `mollard-eperon-arrivee-transition-neron` : le point était le hameau du Mollard (plateau de Saint-Nizier, 1096 m). Le récit du 26 mars 2022 a son point bas à 500 m et franchit les lignes à 960 m : le thermique des trente ailes est au pied des falaises. Position ramenée sur le point chaud à 95 % (770 m au nord-est, pente de 40° exposée est, 828 m).
+- `col-vert` et `col-vert-pompe-pierriers` : altitude de la fiche FFVL (1469 m) incompatible avec ses coordonnées (terrain IGN 1616 m ; topo CHVD 1635 m) ; altitudes lues sur le terrain.
+- `ffvl135-lia-nord-ouest-thermique`, `ffvl13562-pas-de-lane-thermique-nord` (dans `fiches_ffvl.json`) : positions de la fiche FFVL, terrain IGN cohérent (751 m pour 755 m, 1357 m pour 1350 m) : passées de `approx` à `source` ; ils sont « loin de tout point chaud » parce que les gorges du Nan et le cirque de Malleval sont très peu tracés (1,3 km et 3,5 km).
+- Non modifiés après contrôle : `bec-de-l-orient-relais-pompe` (sommet IGN, relais téléphonique non localisé) et `pas-des-rages-plafond-raccroche` (col IGN) : aucun point chaud à moins de 2,7 km pour le premier et aucun à moins de 4 km pour le second.
+
+**Lacunes écartées**
+- Méaudre – Le Crêt (FFVL 953) : « vol du matin », « aérologie plus délicate l'après-midi », mais aucun texte ne parle d'ascendance et aucune trace ne passe à moins de 9 km ; l'exposition NE du matin est déjà portée par la brise de pente `est-vercors-pente-matin`.
+- Petit Montaud (FFVL 5092) : « pratique strictement interdite » sur ce terrain ; le point chaud voisin est celui de Montaud (`montaud-pompe-tremplin-delta`).
+- Atterrissages de Corrençon-Belvé et de la Côte 2000, `alevoux-sud-est-ruzand` : les textes parlent d'une approche turbulente (« gradient et thermiques », « déclenchements thermiques ») sans déclencheur localisable ; le thermique de l'Alevoux est créé en amont et celui de l'atterrissage existait déjà.
+- `reserve-hauts-plateaux-sud` (Vercors est et sud) : espace aérien, le mot « plafond » désigne la limite de survol.
+- Points chauds à 83-85 % sans texte : face ouest de Saint-Paul-de-Varces (885 m), face nord de Combahurat (bassin du Drac), pente ouest sous Corrençon-Belvé (1765 m) : laissés au rapport KK7.
+
+### Vercors est et sud (`vercors-est-sud`)
+
+**Thermiques créés (12)**
+- `saint-jean-royans-gaudissart-antennes` (`medium`) : 100 % à midi et le soir, à 115 m du décollage ; la consigne des Tichodromes (2026) dit « quand tu es aux antennes, et à l'altitude des antennes (790m), arrête de gratter, pars te poser ». La fiche reconnaît une « influence sur l'aérologie locale inconnue à ce jour » pour le nouveau décollage.
+- Les faces sud du Vercors, que le tour du Vercors des Tichodromes suit « en mi-journée » parce qu'elles sont « parfaitement exposées » : `tete-de-la-dame-faces-sud` (`medium`, 92 %, « on arrive à la bonne heure à la Tête de la Dame pour prendre le thermique de 14 h du roc de Touleau »), `but-de-l-aiglette-faces-sud` (`medium`, 97 %, « transition directe vers l'ouest sur le but de l'Aiglette et les versants sud du Vercors », Vol Libre Diois), puis en `low` `toulau-tete-de-la-dame-faces-sud-ouest`, `font-d-urle-faces-sud-gagere`, `but-saint-genix-vassieux-pente-sud`, `pas-de-la-sausse-leoncel` (96 % sur la Montagne de la Sausse, décollage « La Sausse » à 28 décollages en 2025).
+- `ffvl1036-musan-thermiques-matinaux` (`medium`, fiche FFVL : « pas de vent météo ; conditions thermiques matinales ») et `ffvl1234-serpaton-ouest-500-fin-de-journee` (`medium`, fiche FFVL : « vol en thermo-dynamique », plafond en longeant la crête vers le sud) : textes officiels qui ne produisaient rien.
+- `quinquambaye-faces-est-grand-veymont` (97 %), `montagne-de-la-pale-nord-serpaton` (91 %), `limouches-cirque-peyrus-pente-sud-ouest` (95 %) en `low`.
+
+**Positions corrigées**
+- `but-sapiau-pompe-col-de-rousset` : position ramenée sur le point chaud à 99 % (610 m au sud-ouest du sommet, à 100 m du gouffre du But Sapiau) : le texte parle des « versants ouest du but Sapiau », pas du sommet.
+- `pilier-nord-serpaton-extraction` : position approximative remplacée par le point chaud à 91 %, sur la pente est à 1539 m, 570 m au nord-nord-est du décollage du Pas du Serpaton (« bord de l'alpage exposé à l'est », décollage 10h30-12h, matin et midi sans soir).
+
+**Lacunes écartées**
+- Pré Valet – Rocher de Courba (FFVL 1046) : décollage ouest sans texte d'aérologie, aucun point chaud à moins de 8 km.
+- Limouches carrière (FFVL 14203) : lacune de brise seulement.
+- Points chauds à 81-87 % le long des faces sud (est du col de Rousset, plateau de Vassieux, sud de Léoncel, etc.) : laissés au rapport KK7.
+
+### Trièves (`trieves`)
+
+**Thermiques créés (5)**
+- `rochassac-faces-ouest-sous-la-bergerie` (`medium`) : le décollage de Rochassac n'avait de thermique documenté qu'à 1,5 km ; le topo CHVD du 13 juillet 2024 note « faibles ascendances sur la crête de Fluchaire » et « on décolle toujours un peu trop tôt pour profiter des thermiques du soir ». Point chaud à 93 % à 450 m, pente ouest.
+- `tete-chevaliere-pente-sud-est-pas-de-l-essaure` (98 %), `tete-de-praorzel-chichilianne` (91 %), `courtet-faces-ouest-vers-rochassac` (96 %, sur le cheminement « devant le déco pour rejoindre les alpages, cap sur l'Australie » du stage Prévol), `tete-de-gaudissart-pente-est` (95 %) en `low`.
+
+**Positions corrigées**
+- `courtet-combe-droite-deco` et `courtet-pompe-devant-deco` : ramenés sur le point chaud à 99 % (60 m), altitude du terrain IGN (1273 m ; les 1365 m déclarés étaient ceux du décollage).
+- `fluchaire-ratier-bouchon` : ramené sur le point chaud à 91 % (635 m à l'ouest-nord-ouest du toponyme IGN de l'arête), pente ouest de 35° à 1813 m.
+
+**Lacunes écartées**
+- `lus-croix-haute-venturi-jocou` (danger : le mot « thermique » décrit le vol d'altitude du Jocou, déjà couvert par trois thermiques) ; `chichilianne-spirale` et `jocou-antenne-emetteur-est` (positions lues sur la carte du PNR ou le mât OSM, loin de tout point chaud ≥ 70 % : laissés `approx`).
+- Points chauds à 82-89 % (Avers, Seysse, col de Trapeynier, Goutaroux) : sans texte, laissés au rapport KK7.

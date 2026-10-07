@@ -145,3 +145,51 @@ Volumes avant → après : brises 7 → 7, convergences 1 → 1, hazards 7 → 7
 - Aucun récit de pilote ne décrit les ascendances d'Abriès, de Saint-Véran, d'Aiguilles, de Molines ni de Château-Queyras (forum de 2013 sans réponse), ni la haute Val Pellice en vol ; les sept points italiens autres que Sarsenà ne reposent que sur les traces GPS.
 - Les pages Chocard « grands cross au départ du Col de l'Izoard » et « Puy Aillaud » ne contiennent que des liens vers des traces non lisibles ; les traces de Potel et de Petit (XContest, connexion) ne donnent pas les points de passage de l'est.
 - Effet de bord à connaître : les contours de secteur sont construits sur les éléments étudiés (enveloppe convexe tamponnée de 2,5 km). Documenter Sarsenà (7,114 °E) a repoussé le contour du Queyras de 0,06° vers l'est, d'où quatre nouveaux points chauds à 90-96 % dans le secteur (7,14 à 7,19 °E, autour de Villanova Pellice et du Giuic, 44.821 à 44.835 °N) que le rapport KK7 liste maintenant et que je n'ai pas traités : le club VentoRelativo décrit le Giuic (décollage de Sea di Torre, 1257 m, S/SO, 44.839933 N 7.197992 E, atterrissage au Blancio) mais l'ajouter étendrait encore le contour vers Pinerolo. À trancher par le propriétaire : documenter la Val Pellice complète ou la laisser hors atlas.
+
+
+## Audit des thermiques (octobre 2026)
+
+Contexte et méthode : voir la section du même nom dans `chartreuse_gresivaudan_belledonne.md` et celle de `vercors_grenoble_trieves.md` (pente, exposition et altitude lues sur le terrain IGN à chaque point chaud ; toponymes IGN ; topos de Chocard Airlines et carte du club en KML, fiches FFVL, récits CHVD). Secteurs repris : Briançonnais – Guisane, Vallouise – haute Durance, Serre-Ponçon – Embrunais, Ubaye. Le Queyras, traité par la passe « secteurs minces », n'a pas été repris ; ses points chauds de la Val Pellice italienne restent hors atlas.
+
+### Briançonnais – Guisane (`brianconnais-guisane`)
+
+**Thermiques créés (2)**
+- `granon-petit-area-pente-sud` (`medium`) : le Petit Aréa est « la zone qui s'active en premier dans la journée » (fiche FFVL 14077, topo Chocard) ; point chaud à 92 % à 140 m, sur la pente sud à 2139 m. Les crêtes du Granon n'avaient qu'une position lue sur le topo, à 1,8 km.
+- `granon-tronchets-pentes-sud-est` (`low`) : le topo écrit des Tronchets qu'il « permet quand même de beaux vols thermiques si l'instabilité est suffisante » ; point chaud à 88 % à 1 km à l'est et 200 m plus haut.
+
+**Positions corrigées**
+- `atterro-pontillas` (1684 m → 1388 m) et `atterro-hiver-casse-du-boeuf` (1690 m → 1399 m) : altitudes lues sur le terrain IGN (les positions, pré du plan d'eau et front de neige de Villeneuve, ne sont pas en cause).
+
+**Non résolu** : `serre-chevalier-foret` (2195 m déclarés, 2371 m au terrain) et `serre-chevalier-vallons` (2234 m, 2506 m ; vents favorables NE/E/SE alors que la pente du point est au sud-ouest) : décollages d'hiver à ski dont ni le topo Chocard ni la carte du club ne donnent la position ; aucune pente à l'altitude déclarée et à la bonne exposition à moins de 700 m pour Vallons. Notes ajoutées aux descriptions.
+
+**Lacunes écartées** : Montgenèvre – Le Chalvet (décollage d'hiver à ski, 5,9 km du thermique le plus proche, aucun point chaud à moins de 11 km) ; Serre Chevalier – Vallons (hiver, voir plus haut) ; Prorel (87 % à 1 km de la Croix de la Nore, qui a déjà les barres de Notre-Dame-des-Neiges à 615 m) ; Puy Chalvin (83 %) ; points chauds de haute montagne à 80-89 % (Paillon, Chamoissière) sans texte.
+
+### Vallouise – haute Durance (`ecrins-vallouise-haute-durance`)
+
+**Thermiques créés (15)**
+- `alpages-pelvoux-pente-sud-est` (`medium`) : 98 % à 550 m du décollage des Alpages. Le topo de Vallouise (Chocard) : alpage « vol plus long, extraction en thermique plus facile, souvent au dessus de la couche d'inversion » et secteur où « les thermiques peuvent se mettre en place assez tôt (à partir de 9h00 parfois !) à toutes les saisons » ; la carte du club le donne « souvent la meilleure option à l'automne ». Le mot « bulle » du danger des Alpages est ainsi traité.
+- La ligne des faces sud du cross « Promenade dans les Écrins » (Chocard, plafond 4170 m le 21 juillet 2021 : « le cheminement au dessus des crètes entre le Blanche et les Bans est idéal avec des faces exposées Sud ») : `blanche-faces-sud-pente` (`medium`, 94 %), `clapouse-faces-sud-est-pente` (94 %), `entrayques-faces-sud-pente` (93 %), `aguyes-pied-sud-ouest` (99 %), `aguyes-crete-sud` (92 %), `boeufs-rouges-gersa-pente` (93 %), `sialouze-faces-sud-pente` (94 %), `malamort-clausis-pente-sud-est` (90 %). Le thermique documenté « crête entre la Blanche et les Bans » n'avait qu'une position de milieu de route (2 à 3 km au nord des points chauds) ; il est conservé et renvoie à ces éléments.
+- `serre-buzard-crete-roche-aigue` (97 %, crête qui prolonge Serre Buzard vers la Roche Aiguë), `puy-saint-vincent-pentes-est-lauzes` (96 %), `la-pendine-sommet-pente-est` (89 %, FFVL « La Pendine » sans thermique à moins de 5,7 km), `clocher-saint-clement-pentes-ouest` (96 %), `fressinieres-testa-moute-pente-est` (81 %, Testa Moute et Aujards sans thermique à moins de 4,8 km), `ponteil-falaises-sud` (81 %, Le Ponteil et Roche Charnière) en `low`.
+
+**Lacunes écartées**
+- La Condamine (3,3 km du thermique le plus proche, hotspot à 4,3 km) et Les Têtes de L'Argentière (3,2 km ; zone « souvent très turbulente » sous la Lombarde) : décollages de marche et vol sans texte d'aérologie.
+- Dangers `coeur-parc-ecrins`, `lombarde-sous-le-vent-tete-aval`, `rentree-ouest-entraigues`, `sous-le-vent-tete-du-puy`, `les-alpages` : les mots « thermique » et « bulle » y désignent la zone sous le vent, la « bulle de protection » des hauts sommets ou la réglementation du cœur ; les thermiques de la Tête d'Aval et de la Tête du Puy sont déjà décrits (positions à 560 m et 580 m des sommets IGN, vérifiées).
+
+### Serre-Ponçon – Embrunais (`serre-poncon-embrunais`)
+
+**Thermiques créés (3, `medium`)**
+- `saint-vincent-falaise-sous-le-deco` : point chaud à 98 % (97 à 99 % à toutes les saisons) à 360 m au nord du décollage, c'est-à-dire la falaise ; invisible dans le rapport KK7 parce qu'à 880 m du thermique approximatif de la plaine. Fiche FFVL : « conditions fortes l'après midi (juin juillet août) […] seul site utilisable par mistral ».
+- `chorges-clot-rond-pente-sud-ouest` : 100 % le matin, 99 % à midi, rien le soir, 860 m à l'ouest du Clot Rond ; les fiches de Clot Rond, des Ballons et des Jambons disent « à utiliser plutôt le matin pour des départs en cross ».
+- `mont-guillaume-deco-pente-sud-ouest` : la fiche FFVL dit « régime de brise thermique dominante (secteur SW) » ; point chaud à 85 % à 195 m du décollage.
+
+**Positions corrigées** : `atterro-reallon-courtier` (1500 m → 1598 m, terrain IGN).
+
+**Lacunes écartées** : Chorges – Champ Froid (FFVL 13381, « déco orienté plein sud ») : aucun texte d'ascendance, point chaud à 75 % à 2,2 km (vers le lac) et à 100 % à 3,0 km (le Clot Rond, créé ci-dessus) ; points chauds à 80-87 % (Chabrières, Les Orres, Morgon) déjà couverts à moins de 3 km par des thermiques décrits.
+
+### Ubaye (`ubaye`)
+
+**Thermiques créés (2, `low`)** : `faucon-barcelonnette-pente-sud-est` (88 % à 263 m du décollage de Faucon, 94 % le matin) et `decollage-de-la-croix-pente-sud-est` (83 % à 790 m du point « Décollage de la Croix » de la carte Chocard).
+
+**Lacunes écartées** : les sept décollages « sommet de vol rando » (Aiguille Grande, Aiguille Pierre André, La Meyna, Parrias Coupa, Pointe des Cirques, Tête de Moïse, Tête de Parassac) : sommets cités par un topo de vol rando sans orientation ni heure, aucun point chaud à moins de 5,8 km ; rien n'a été créé (une description serait inventée).
+
+**Non résolu** : `pointe-des-cirques-ubaye` (3234 m déclarés, 3099 m au point) et `aiguille-pierre-andre-ubaye` (2812 m, 2688 m) : positions de géocodeur décalées de quelques centaines de mètres du sommet ; le point exact du sommet n'a pas pu être établi sans ambiguïté sur le MNT.

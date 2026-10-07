@@ -158,3 +158,45 @@ Volumes avant → après : brises 3 → 3, convergences 0 → 0, hazards 4 → 4
 **Introuvable**
 - Mont Thabor (FFVL 5242, 3178 m) : aucun point chaud mesuré à moins de 5 km, aucun texte d'aérologie ; aucun thermique ni brise n'a été créé (une description serait inventée). Reste ouvert dans COUVERTURE.
 - Aucun récit de thermique à Albiez, Valloire, Valmeinier ni aux Karellis en dehors de ceux déjà décrits ; itinéraires des 300 km du Galibier toujours derrière XContest et la CFD.
+
+
+## Audit des thermiques (octobre 2026)
+
+Contexte et méthode : voir la section du même nom dans `chartreuse_gresivaudan_belledonne.md` et celle de `vercors_grenoble_trieves.md` (pente, exposition et altitude lues sur le terrain IGN à chaque point chaud ; toponymes IGN ; corpus CHVD, topos de clubs, fiches FFVL, arrêté du Parc national de la Vanoise). Les secteurs Maurienne et Arves – Thabor – Galibier, traités par la passe « secteurs minces », n'ont pas été repris. Les points chauds des crêtes sud de Belledonne (Chamrousse, Grand Colon), classés par la géométrie dans l'Oisans, sont traités ici.
+
+### Oisans – Grandes Rousses (`oisans-grandes-rousses`)
+
+**Thermiques créés (8)**
+- `ffvl1243-deux-alpes-diable-thermique-apres-midi` (`medium`) : la fiche FFVL du Diable donne « brises thermiques, léger vent d'ouest ou léger nord ouest » et « Conditions Thermiques Fortes L'après midi » ; le texte n'avait donné que le décollage.
+- `eclose-huez-pente-sud-ouest` (`low`) : le décollage de l'Éclose (« alimenté par la brise de pente montant d'Huez ») n'avait de thermique qu'à 1,4 km ; point chaud à 87 % à 208 m.
+- `mais-pentes-sud-est-deux-alpes-ouest` (97 %), `huez-sardonne-pentes-ouest` (93 %, versant ouest de l'arête Huez – Oz, 1040 m), `saperan-mirebel-plateau-sud` (92 %) et `petit-van-chamrousse-oisans-est` (90 %), tous deux sur la crête sud de Belledonne au-dessus de Livet-et-Gavet, `dome-de-la-lauze-pente-sud-est` (91 %, 3326 m) et `roche-d-alvau-glaciers-sud` (93 %, 3528 m, cœur du Parc national des Écrins) en `low`, sans texte : positions et heures sont celles des points chauds.
+
+**Positions corrigées**
+- `grave-glacier-meije` (décollage) : l'ancien point (6.3075 E) tombait à 3085 m sur une face nord-ouest, 3 km à l'est du col des Ruillans (toponyme IGN, 3204 m, soit l'altitude de 3200 m du terminus du téléphérique des Glaciers de la Meije) ; ramené sur le col.
+- `cheminee-vaujany` (décollage) : altitude 1600 m → 1817 m (terrain IGN) ; le topo CHVD de la Scia place la cheminée d'équilibre à 1706 m et le décollage 10 à 15 minutes plus haut.
+- `huez-toits` : altitude 1500 m → 1394 m (terrain IGN à l'église Saint-Ferréol).
+- `villar-darene-lac-du-pontet` : déjà recalé par la passe « secteurs minces » ; l'alerte de `POSITIONS.md` est périmée.
+
+**Lacunes écartées**
+- `soaring-pic-bayle-face-nord` : soaring d'automne en face nord du Pic Bayle (3200-3700 m), ascendance de pente et non thermique de cheminement ; reste en soaring.
+- `bourg-oisans-atterrissages-brise`, `ecrins-coeur-survol` : le mot « thermique » décrit la brise de l'atterrissage ou la réglementation du cœur du Parc.
+- Points chauds sous le seuil de 90 % (Croix de Chamrousse 88 %, Coche 89 %, Pyramide du Lauzon 89 %) et les deux points chauds à 88 % et 91 % de la falaise des Perrons, à 560 et 620 m du thermique déjà décrit : même thermique, laissés au rapport KK7.
+- Thermiques de haute montagne (`herpie-pointe`, `rissiou-rochers`, `plat-de-la-selle-face-sud`, `meijette-la-grave`, `goleon-raccroche-lautaret`, `lautaret-plafond-4050`, `pic-col-ornon-rochail`) : positions de récits, sans point chaud à moins de 2 km parce que les traces GPS y sont rares ; conservés.
+
+### Haute-Maurienne (`haute-maurienne`)
+
+**Thermiques créés (8)**
+- `turra-aussois-pentes-sud-est-matin` (`medium`, 99 % le matin seulement, pente de 47° au sud-est) et `loza-dent-parrachee-pentes-sud-est` (`medium`, 98 % toute l'année) : le fil « Aussois en automne » donne « 2350m, altitude minimale pour prendre le thermique dans cette vallée de la Pointe de Bellecôte ou sur la Turra plus à l'Est, puis on peut facilement glisser jusqu'au dessus de Termignon le long des pentes de la Dent Parrachée » ; le thermique d'Aussois n'était situé qu'à la Pointe de Bellecôte. Les secteurs « Turra » et « Dent Parrachée » (survol à moins de 1000 m autorisé) viennent de l'arrêté 2026-31 du Parc national de la Vanoise.
+- `aussois-grand-jeu-pentes-sud` (`medium`, 96 %, 100 % en janvier) : la fiche FFVL parle d'« activité thermique forte en été à partir de 11h00 » ; le thermique documenté n'était qu'un point approximatif au décollage.
+- `orgere-estive-pentes-sud` (`medium`, 95 % le matin et à midi, « vol du matin essentiellement » selon la fiche) et `aussois-plan-de-la-croix-thermique` (`medium`, « il faut prendre en compte que le thermique est bien présent, donc souvent pas simple de passer dessous », fil de discussion d'octobre).
+- `termignon-adrets-sud-est-replat-des-canons` (94 %), `dent-parrachee-pente-sud-est-3177` (93 %, FFVL 5240), `barbier-moure-cobroute-pente-sud-est` (83 %, FFVL 5243) en `low`.
+
+**Positions corrigées**
+- `orgere-estive` (décollage FFVL 622) : les coordonnées de la fiche (45.2295 N) tombent à 2170 m pour 2421 m déclarés ; l'aire de décollage de l'Estive (POI IGN, 45.2513 N, 6.6630 E) est à 2426 m, 2,4 km plus au nord. Le point chaud d'Orgère est donc à 2,8 km au sud du décollage et non à 400 m.
+- `valfrejus-punta-bagna` : altitude lue sur le terrain (2720 m ; la fiche donne 2368 m) ; laquelle des deux informations est fausse n'est pas résolu.
+- `druges-grande-feiche-dernier-relief` : position approximative (le décollage) remplacée par le point chaud à 96 % à 620 m au sud-ouest (pente sud de 27°, 2045 m).
+
+**Lacunes écartées**
+- Mont-Cenis soaring (FFVL 14172, 14173) : site de soaring documenté comme tel (`soaring-mont-cenis`), aucun point chaud à moins de 5 km.
+- Vallonbrun (FFVL 14175, « vol du matin, peu de vent ») : aucun texte d'ascendance, aucun point chaud à moins de 8 km.
+- Valfréjus – Punta Bagna (FFVL 623) : « utilisé l'hiver essentiellement », aucun point chaud à moins de 3,7 km.

@@ -877,6 +877,42 @@
       "S92",
       "S93"
      ]
+    },
+    {
+     "id": "granon-petit-area-pente-sud",
+     "name": "Granon – Petit Aréa : pente sud sous le décollage",
+     "lon": 6.5784,
+     "lat": 44.9612,
+     "alt_m": 2139,
+     "coord_quality": "approx",
+     "best_hours": "92 % le matin, 91 % à midi, 81 % en fin de journée ; printemps, été, automne ; « la zone qui s'active en premier dans la journée » (topo Chocard Airlines)",
+     "trigger": "pente rocailleuse de 30° exposée sud-est/sud, 110 m sous le décollage historique du Petit Aréa (2250 m), à 140 m de celui-ci, au sud",
+     "description": "Audit d'octobre 2026 : le décollage du Petit Aréa (FFVL 14077, sud, SE/S/SO/O) n'avait de thermique documenté qu'à 1,8 km (les crêtes du Granon, position lue sur le topo). La fiche FFVL et le topo de Chocard Airlines disent la même chose : « décollage historique, orienté Sud et rocailleux. De par son orientation il s'agit de la zone qui s'active en premier dans la journée » ; « Le top en cas de Sud soutenu car il permet de faire de belles session de soaring ». Les traces GPS (kk7) mesurent à 140 m au sud du décollage un point chaud à 92 % (92 % le matin, 91 % à midi, 81 % le soir, toute la belle saison). Brise de la Durance « montant de Briançon en milieu/fin de matinée », à éviter l'après-midi de fin de printemps à la fin de l'été (brise forte à très forte). Position : celle du point chaud (terrain IGN 2139 m).",
+     "sources": [
+      "S1",
+      "S3",
+      "S105",
+      "S113"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "granon-tronchets-pentes-sud-est",
+     "name": "Granon – Tronchets : pentes sud au-dessus du hameau (beaux vols thermiques si l'instabilité suffit)",
+     "lon": 6.6086,
+     "lat": 44.9514,
+     "alt_m": 2116,
+     "coord_quality": "approx",
+     "best_hours": "92 % le matin, 88 % à midi (aucun point chaud en fin de journée) ; été, automne ; brise de la Durance « en milieu/fin de matinée »",
+     "trigger": "pente de 27° exposée sud, 1 km à l'est du décollage des Tronchets et 200 m plus haut, entre la pente école et le col de Granon (1,3 km)",
+     "description": "Audit d'octobre 2026 : déduction. Le topo de Chocard Airlines (et la fiche FFVL 14078) écrit des Tronchets : « majoritairement un site de ploufs, utilisé par les écoles ou les débutants. Il permet quand même de beaux vols thermiques si l'instabilité est suffisante » ; ce texte (le mot « thermique » du site) ne produisait aucun élément et le décollage n'avait de thermique documenté qu'à 2,2 km. Les traces GPS (kk7) mesurent à 1 km à l'est un point chaud à 88 % (92 % le matin, 88 % à midi, aucun le soir), sur la pente sud qui monte vers le col de Granon : c'est là que les vols des Tronchets, une fois sortis de la pente forestière, trouvent leur ascendance. Les toits du hameau sont sous le décollage : dégager vite du relief (fiche FFVL). Position : celle du point chaud (terrain IGN 2116 m).",
+     "sources": [
+      "S2",
+      "S3",
+      "S105",
+      "S113"
+     ],
+     "confidence": "low"
     }
    ],
    "soaring_spots": [
@@ -1113,7 +1149,7 @@
       "NE",
       "NW"
      ],
-     "description": "Utilisable uniquement à l'ouverture hivernale ; décollage à ski préférable, technique, réservé aux pilotes BPC ; N faible ; câbles de remontées.",
+     "description": "Utilisable uniquement à l'ouverture hivernale ; décollage à ski préférable, technique, réservé aux pilotes BPC ; N faible ; câbles de remontées. Audit d'octobre 2026 : l'altitude de la fiche FFVL 13667 (2195 m) ne colle pas aux coordonnées de la fiche (terrain IGN à 2371 m) ; une pente exposée au nord/nord-est à 2195-2205 m existe à 470-600 m au nord-nord-est, sans que rien ne permette de choisir entre les deux : position et altitude laissées en l'état, à vérifier sur place.",
      "sources": [
       "S22",
       "S18"
@@ -1132,7 +1168,7 @@
       "E",
       "SE"
      ],
-     "description": "Décollage à ski, période d'ouverture hivernale ; vent d'E faible ; câbles.",
+     "description": "Décollage à ski, période d'ouverture hivernale ; vent d'E faible ; câbles. Audit d'octobre 2026 : l'altitude de la fiche FFVL 13668 (2234 m) ne colle pas aux coordonnées de la fiche (terrain IGN à 2506 m, pente de 9° exposée au sud-ouest alors que les vents favorables sont NE/E/SE) ; aucune pente exposée à l'est à 2234 m n'existe dans les 700 m autour : position et altitude laissées en l'état, à vérifier sur place.",
      "sources": [
       "S23"
      ],
@@ -1193,9 +1229,9 @@
      "name": "Pontillas (La Salle-les-Alpes)",
      "lon": 6.5519,
      "lat": 44.9493,
-     "alt_m": 1684,
+     "alt_m": 1388,
      "coord_quality": "source",
-     "description": "Vers le plan d'eau du Pontillas ; grand pré avec grands arbres épars, parc de jeux avec drapeaux pour lire le vent ; zone conventionnée courte (atterrissage précis, pliage en bordure). Souvent impraticable l'après-midi au printemps-été ; brise de la Romanche (NO) contre brise de Durance (SE), souvent pas clairement établie. Utilisé en cas de déco du Petit Aréa ; géré par Air Piou Piou.",
+     "description": "Vers le plan d'eau du Pontillas ; grand pré avec grands arbres épars, parc de jeux avec drapeaux pour lire le vent ; zone conventionnée courte (atterrissage précis, pliage en bordure). Souvent impraticable l'après-midi au printemps-été ; brise de la Romanche (NO) contre brise de Durance (SE), souvent pas clairement établie. Utilisé en cas de déco du Petit Aréa ; géré par Air Piou Piou. Audit d'octobre 2026 : altitude corrigée, lue sur le terrain IGN à la position de la fiche FFVL (1388 m, terrain plat à 1 %), la fiche donnant 1684 m ; la position est celle d'un pré au bord du plan d'eau du Pontillas / du front de neige de Villeneuve et n'est pas en cause.",
      "sources": [
       "S7",
       "S3"
@@ -1219,9 +1255,9 @@
      "name": "Villeneuve / Casse du Bœuf (atterro d'hiver)",
      "lon": 6.5604,
      "lat": 44.9433,
-     "alt_m": 1690,
+     "alt_m": 1399,
      "coord_quality": "source",
-     "description": "Utilisable uniquement à l'ouverture hivernale de la station (10 décembre-20 avril environ) ; câbles de chaque côté, habitations au nord, skieurs débutants à proximité ; approche technique : préférer le Pontillas.",
+     "description": "Utilisable uniquement à l'ouverture hivernale de la station (10 décembre-20 avril environ) ; câbles de chaque côté, habitations au nord, skieurs débutants à proximité ; approche technique : préférer le Pontillas. Audit d'octobre 2026 : altitude corrigée, lue sur le terrain IGN à la position de la fiche FFVL (1399 m, terrain plat à 1 %), la fiche donnant 1690 m ; la position est celle d'un pré au bord du plan d'eau du Pontillas / du front de neige de Villeneuve et n'est pas en cause.",
      "sources": [
       "S25",
       "S18",
@@ -2326,7 +2362,7 @@
      "coord_quality": "approx",
      "best_hours": "journée d'été",
      "trigger": "crêtes aux faces exposées au sud entre la Blanche et les Bans",
-     "description": "Cheminement : « le cheminement au-dessus des crêtes entre la Blanche et les Bans est idéal avec des faces exposées sud ». Souvent turbulent à la Blanche (du SO peut rentrer de la vallée de Jas la Croix et de l'ouest des Bans) : garder de bonnes marges. Un peu de NO sur l'Ailefroide. Position approximative (entre deux repères de la route).",
+     "description": "Cheminement : « le cheminement au-dessus des crêtes entre la Blanche et les Bans est idéal avec des faces exposées sud ». Souvent turbulent à la Blanche (du SO peut rentrer de la vallée de Jas la Croix et de l'ouest des Bans) : garder de bonnes marges. Un peu de NO sur l'Ailefroide. Position approximative (entre deux repères de la route). Audit d'octobre 2026 : position toujours approximative (milieu de la route entre les repères) ; les points chauds des traces GPS se placent sur les faces sud elles-mêmes, 2 à 3 km au sud de ce point : voir `blanche-faces-sud-pente`, `clapouse-faces-sud-est-pente`, `entrayques-faces-sud-pente`, `aguyes-pied-sud-ouest`, `aguyes-crete-sud` et `boeufs-rouges-gersa-pente`.",
      "confidence": "medium",
      "sources": [
       "S37"
@@ -2362,6 +2398,264 @@
      "sources": [
       "MS14"
      ]
+    },
+    {
+     "id": "alpages-pelvoux-pente-sud-est",
+     "name": "Les Alpages (Puy Aillaud – Pelvoux) : pente sud-est sous le décollage",
+     "lon": 6.4596,
+     "lat": 44.8483,
+     "alt_m": 1901,
+     "coord_quality": "approx",
+     "best_hours": "dès 9h (topo Chocard : « à partir de 9h00 parfois ») ; traces GPS : 98 % le matin, 98 % à midi, 90 % en fin de journée, toute l'année",
+     "trigger": "pente de 33° exposée sud-est, 550 m au sud-sud-est du décollage des Alpages, sur le versant exposé sud-est que le sentier de Puy Aillaud vers la Blanche traverse",
+     "description": "Audit d'octobre 2026 : le décollage des Alpages (marche et vol) n'avait de thermique documenté qu'à 1,8 km (Puy Aillaud) et le mot « bulle » de son danger n'avait rien produit. Le topo Chocard Airlines de la vallée de Vallouise compare l'alpage à Puy Aillaud : « vol plus long, extraction en thermique plus facile, souvent au-dessus de la couche d'inversion et plus sauvage » ; la carte du club dit « idéal pour les journées stables, c'est d'ailleurs souvent la meilleure option à l'automne ». Le topo du secteur de Vallouise : « Secteur plutôt du matin ou début d'aprem (de par l'orientation SE du site). Les thermiques peuvent se mettre en place assez tôt (à partir de 9h00 parfois !) à toutes les saisons ». Les traces GPS (kk7) mesurent à 550 m du décollage un point chaud à 98 % toutes périodes et toute l'année (le plus fort du bocal de Vallouise). Position : celle du point chaud (terrain IGN 1901 m). Piège : si la brise est déjà présente, il est impossible de sentir une entrée de nord (Chambran).",
+     "sources": [
+      "S32",
+      "S10",
+      "S105",
+      "S113"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "serre-buzard-crete-roche-aigue",
+     "name": "Serre Buzard : pente sud-est de la crête de Roche Aiguë (Saint-Étienne)",
+     "lon": 6.529,
+     "lat": 44.6349,
+     "alt_m": 1490,
+     "coord_quality": "approx",
+     "best_hours": "96 % le matin, 96 % à midi, 88 % en fin de journée ; printemps, été, hiver ; décoller tôt (10-12 h) l'été, après la brise est trop forte (fiche FFVL)",
+     "trigger": "pente de 39° exposée sud-est, 1,4 km à l'ouest-sud-ouest du décollage de Serre Buzard (1407 m), sur la crête qui mène à la Roche Aiguë (sommet IGN, 1853 m), au-dessus du hameau de Saint-Étienne",
+     "description": "Audit d'octobre 2026 : déduction. Serre Buzard (FFVL 13224, « super site de cross, ou de plouf du matin, très rapidement alimenté par la brise de la Durance ») n'avait que le thermique des falaises à gauche du décollage (récit de mars 2010). Les traces GPS (kk7) placent à 1,4 km à l'ouest-sud-ouest un point chaud à 97 % (96 % le matin et à midi, 88 % le soir ; printemps, été, hiver), le plus fort de la haute Durance, sur la crête qui prolonge le site vers la Roche Aiguë : la fiche note que « très bon par faible N, NE, SE en altitude » et le récit de mars 2010 un pilote local qui part ensuite plein sud vers le Mont Guillaume. Aucun texte ne décrit ce thermique ; position et heures sont celles du point chaud (terrain IGN 1490 m). Brise soutenue à forte l'après-midi tout l'été : site déconseillé de juin à septembre.",
+     "sources": [
+      "S10",
+      "S105",
+      "S113"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "puy-saint-vincent-pentes-est-lauzes",
+     "name": "Puy-Saint-Vincent : pentes est sous la crête des Bans (haut des Lauzes)",
+     "lon": 6.4538,
+     "lat": 44.823,
+     "alt_m": 2188,
+     "coord_quality": "approx",
+     "best_hours": "97 % le matin, 95 % à midi (aucun point chaud en fin de journée) ; toute l'année",
+     "trigger": "pente de 19° exposée nord-est/est, 1,6 km au nord-nord-ouest du sommet du télésiège des Lauzes (hiver) et 2,3 km au nord de La Pendine, sur le domaine skiable de Puy-Saint-Vincent",
+     "description": "Audit d'octobre 2026 : déduction. Le sommet du télésiège des Lauzes (décollage d'hiver) et La Pendine n'avaient aucun thermique à moins de 4,8 km ; les traces GPS (kk7) mesurent à 1,6 km au nord des Lauzes un point chaud à 96 % le matin et à midi, rien le soir, toute l'année, sur une pente exposée à l'est qui chauffe tôt. Les textes de Puy-Saint-Vincent (Chocard) ne décrivent que l'accès (télésiège d'été vers la crête des Bans) et la traversée très haute du Fournel (étroit, turbulent et sans atterrissage, selon les fiches du secteur). Position et heures sont celles du point chaud ; le déclencheur est déduit du relief.",
+     "sources": [
+      "S10",
+      "S105",
+      "S113"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "la-pendine-sommet-pente-est",
+     "name": "La Pendine (Puy-Saint-Vincent) : pente est sous le sommet",
+     "lon": 6.4562,
+     "lat": 44.8025,
+     "alt_m": 2664,
+     "coord_quality": "approx",
+     "best_hours": "89 % le matin, 88 % à midi, 84 % en fin de journée ; printemps, été, automne",
+     "trigger": "replat exposé à l'est (19°), à 230 m du sommet de la Pendine (2749 m, IGN), au pied du décollage",
+     "description": "Audit d'octobre 2026 : déduction. Le décollage de la Pendine (marche et vol, « Décollage confortable accès possible l'été en télésiège (crète des bans) + marche environ 450 D+ », carte Chocard) n'avait aucun thermique à moins de 5,7 km. Les traces GPS (kk7) mesurent à 213 m du décollage un point chaud à 89 % toutes périodes, du printemps à l'automne. Aucun texte ne le décrit ; position et heures sont celles du point chaud.",
+     "sources": [
+      "S10",
+      "S105",
+      "S113"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "clocher-saint-clement-pentes-ouest",
+     "name": "Pic du Clocher (Saint-Clément-sur-Durance) : pentes ouest au-dessus de la Durance",
+     "lon": 6.5863,
+     "lat": 44.6086,
+     "alt_m": 2015,
+     "coord_quality": "approx",
+     "best_hours": "78 % le matin, 93 % à midi, 95 % en fin de journée ; toute l'année",
+     "trigger": "pente de 43° exposée ouest/sud-ouest, 650 m à l'ouest du Pic du Clocher (2472 m), sur le versant qui domine la Durance en aval de Saint-Clément",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 96 % (surtout à midi et le soir, toute l'année) à 3,6 km au sud de l'arête Saint-Clément – Risoul dont le récit de mars 2010 (cross Prorel → Embrun) fait la dernière relance dure sous la brise ; il décrit la même ligne de reliefs côté Embrun. Aucun texte ne décrit ce point ; position et heures sont celles du point chaud. La brise de Durance est de face à cet endroit (20 à 40 km/h en fin d'après-midi dans le récit).",
+     "sources": [
+      "S10",
+      "S105",
+      "S113"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "blanche-faces-sud-pente",
+     "name": "La Blanche : pente sud (cheminement vers les Bans)",
+     "lon": 6.4335,
+     "lat": 44.85,
+     "alt_m": 2584,
+     "coord_quality": "approx",
+     "best_hours": "94 % le matin, 93 % à midi, 82 % en fin de journée ; toute l'année",
+     "trigger": "pente de 42° exposée sud, 850 m au sud de la Blanche (2954 m, IGN), sous la crête des Barres",
+     "description": "Audit d'octobre 2026 : le topo Chocard du cross difficile prévient : « souvent turbulent au niveau de la Blanche, du Sud-Ouest peut rentrer de la vallée de Jas la Croix et de l'Ouest des Bans ». Les traces GPS (kk7) mesurent 94 % sur la pente sud de la Blanche, actif toute la journée et toute l'année. Elle fait partie du cheminement « Promenade dans les Écrins » (Chocard Airlines, cross difficile, plafond 4170 m le 21 juillet 2021) : « Le cheminement au dessus des crètes entre le Blanche et les Bans est idéal avec des faces exposées Sud ». Respecter la réglementation du cœur du Parc national des Écrins (survol autorisé du 1er juillet au 31 octobre ; voir `coeur-parc-ecrins`).Position et heures sont celles du point chaud (terrain IGN 2584 m).",
+     "sources": [
+      "S37",
+      "S35",
+      "S105",
+      "S113"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "clapouse-faces-sud-est-pente",
+     "name": "Pointe de Clapouse : pente sud-est",
+     "lon": 6.4201,
+     "lat": 44.8498,
+     "alt_m": 2850,
+     "coord_quality": "approx",
+     "best_hours": "94 % le matin, 93 % à midi, 85 % en fin de journée ; printemps, été, automne",
+     "trigger": "pente de 22° exposée sud-est, 210 m de la Pointe de Clapouse (2988 m, IGN) et 770 m du collet de Rascrouset",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 94 % sur les pentes de la Pointe de Clapouse, 1,4 km à l'ouest de la Blanche, sans description propre. Elle fait partie du cheminement « Promenade dans les Écrins » (Chocard Airlines, cross difficile, plafond 4170 m le 21 juillet 2021) : « Le cheminement au dessus des crètes entre le Blanche et les Bans est idéal avec des faces exposées Sud ». Respecter la réglementation du cœur du Parc national des Écrins (survol autorisé du 1er juillet au 31 octobre ; voir `coeur-parc-ecrins`).Position et heures sont celles du point chaud (terrain IGN 2850 m).",
+     "sources": [
+      "S37",
+      "S105",
+      "S113"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "entrayques-faces-sud-pente",
+     "name": "Entrayques : pente sud sous le collet de Rascrouset",
+     "lon": 6.4102,
+     "lat": 44.8422,
+     "alt_m": 2534,
+     "coord_quality": "approx",
+     "best_hours": "94 % le matin, 92 % à midi (aucun point chaud en fin de journée) ; été, automne",
+     "trigger": "pente de 27° exposée sud, 1 km de la falaise d'Entrayques (secteur 3, IGN) et 1,2 km du collet de Rascrouset",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 93 % (matin et midi, été et automne) au pied sud de la crête de Clapouse, au-dessus de la falaise d'escalade d'Entrayques (IGN). Aucun texte ne décrit ce point. Elle fait partie du cheminement « Promenade dans les Écrins » (Chocard Airlines, cross difficile, plafond 4170 m le 21 juillet 2021) : « Le cheminement au dessus des crètes entre le Blanche et les Bans est idéal avec des faces exposées Sud ». Respecter la réglementation du cœur du Parc national des Écrins (survol autorisé du 1er juillet au 31 octobre ; voir `coeur-parc-ecrins`).Position et heures sont celles du point chaud.",
+     "sources": [
+      "S37",
+      "S105",
+      "S113"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "aguyes-pied-sud-ouest",
+     "name": "Crête des Aguyés : pied sud-ouest (entrée de la Pilatte)",
+     "lon": 6.3906,
+     "lat": 44.8444,
+     "alt_m": 2775,
+     "coord_quality": "approx",
+     "best_hours": "99 % le matin, 99 % à midi, 93 % en fin de journée ; été, automne",
+     "trigger": "pente de 36° exposée sud-ouest, 1,5 km au sud de la crête des Aguyés (IGN)",
+     "description": "Audit d'octobre 2026 : déduction. Le plus fort point chaud kk7 des Écrins après les Alpages (99 % le matin et à midi, 93 % le soir, été et automne), sans description propre. Elle fait partie du cheminement « Promenade dans les Écrins » (Chocard Airlines, cross difficile, plafond 4170 m le 21 juillet 2021) : « Le cheminement au dessus des crètes entre le Blanche et les Bans est idéal avec des faces exposées Sud ». Respecter la réglementation du cœur du Parc national des Écrins (survol autorisé du 1er juillet au 31 octobre ; voir `coeur-parc-ecrins`).Position et heures sont celles du point chaud (terrain IGN 2775 m).",
+     "sources": [
+      "S37",
+      "S105",
+      "S113"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "aguyes-crete-sud",
+     "name": "Crête des Aguyés : faces sud (Pointe Guyard)",
+     "lon": 6.3923,
+     "lat": 44.8527,
+     "alt_m": 3115,
+     "coord_quality": "approx",
+     "best_hours": "92 % le matin, 92 % à midi, 84 % en fin de journée ; été, automne",
+     "trigger": "pente de 34° exposée sud, 430 m au sud de la crête des Aguyés (IGN) et 800 m de la Pointe Guyard (3461 m), 900 m au nord du point chaud précédent",
+     "description": "Audit d'octobre 2026 : déduction. Deuxième point chaud kk7 (92 %) sur la même ligne de faces sud, 900 m au-dessus et au nord du précédent. Elle fait partie du cheminement « Promenade dans les Écrins » (Chocard Airlines, cross difficile, plafond 4170 m le 21 juillet 2021) : « Le cheminement au dessus des crètes entre le Blanche et les Bans est idéal avec des faces exposées Sud ». Respecter la réglementation du cœur du Parc national des Écrins (survol autorisé du 1er juillet au 31 octobre ; voir `coeur-parc-ecrins`).Position et heures sont celles du point chaud (terrain IGN 3115 m).",
+     "sources": [
+      "S37",
+      "S105",
+      "S113"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "boeufs-rouges-gersa-pente",
+     "name": "Crête des Bœufs Rouges : pente sud-est (ancien glacier du Gersa)",
+     "lon": 6.3659,
+     "lat": 44.8483,
+     "alt_m": 2899,
+     "coord_quality": "approx",
+     "best_hours": "93 % le matin, 93 % à midi, 77 % en fin de journée ; été, automne",
+     "trigger": "pente de 23° exposée sud/sud-est, 850 m de la crête des Bœufs Rouges et 610 m de l'ancien glacier du Gersa (IGN), sous la Pointe Holmes (3365 m)",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 93 % à l'extrémité ouest du cheminement des faces sud, 1,9 km à l'ouest des Aguyés, en direction des Bans. Elle fait partie du cheminement « Promenade dans les Écrins » (Chocard Airlines, cross difficile, plafond 4170 m le 21 juillet 2021) : « Le cheminement au dessus des crètes entre le Blanche et les Bans est idéal avec des faces exposées Sud ». Respecter la réglementation du cœur du Parc national des Écrins (survol autorisé du 1er juillet au 31 octobre ; voir `coeur-parc-ecrins`).Position et heures sont celles du point chaud (terrain IGN 2899 m).",
+     "sources": [
+      "S37",
+      "S105",
+      "S113"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "sialouze-faces-sud-pente",
+     "name": "Aiguille de Sialouze : faces sud (au-dessus du glacier Noir)",
+     "lon": 6.3861,
+     "lat": 44.8817,
+     "alt_m": 3249,
+     "coord_quality": "approx",
+     "best_hours": "94 % le matin, 94 % à midi, 90 % en fin de journée ; été, automne",
+     "trigger": "pente de 41° exposée sud, 710 m de l'Aiguille de Sialouze (3576 m) et 510 m de la brèche de Sialouze (3319 m), sur les faces sud du massif du Pelvoux",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 94 % (matin, midi et soir) à 3249 m, sur les faces sud du massif du Pelvoux, 4 km au nord des Aguyés ; vol de très haute montagne dans le cœur du Parc national des Écrins, jamais décrit par les topos du club. Respecter la réglementation du cœur du Parc national des Écrins (survol autorisé du 1er juillet au 31 octobre ; voir `coeur-parc-ecrins`). Position et heures sont celles du point chaud.",
+     "sources": [
+      "S37",
+      "S39",
+      "S105",
+      "S113"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "malamort-clausis-pente-sud-est",
+     "name": "Pic de Malamort : pente sud-est (vallon de Clausis)",
+     "lon": 6.3752,
+     "lat": 44.8213,
+     "alt_m": 2725,
+     "coord_quality": "approx",
+     "best_hours": "93 % le matin, 90 % à midi (aucun point chaud en fin de journée) ; été, automne",
+     "trigger": "pente de 32° exposée sud-est, 2 km du Pic de Malamort (3335 m) et 2,1 km du col du Loup (Valgaudemar)",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 90 % (matin et midi, été et automne), au sud du cheminement des Bans, côté Puy-Saint-Vincent / Valgaudemar. Aucun texte ne le décrit. Respecter la réglementation du cœur du Parc national des Écrins (survol autorisé du 1er juillet au 31 octobre ; voir `coeur-parc-ecrins`). Position et heures sont celles du point chaud.",
+     "sources": [
+      "S37",
+      "S105",
+      "S113"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "fressinieres-testa-moute-pente-est",
+     "name": "Fressinières : pente est au-dessus de Testa Moute",
+     "lon": 6.5087,
+     "lat": 44.7701,
+     "alt_m": 2216,
+     "coord_quality": "approx",
+     "best_hours": "84 % le matin, 76 % à midi, 73 % en fin de journée ; printemps, été",
+     "trigger": "pente de 25° exposée est, 930 m du décollage de Testa Moute et 680 m de la Tête de la Lauzière (2397 m)",
+     "description": "Audit d'octobre 2026 : déduction. Les décollages de Testa Moute et des Aujards (marche et vol, « Un petit peu plus haut que les Aujards et parfois mieux orienté dans la brise locale de Fress[inières] », carte Chocard) n'avaient aucun thermique à moins de 4,8 km. Les traces GPS (kk7) mesurent à 930 m de Testa Moute un point chaud à 81 % (matin, midi et soir, printemps et été) sur la pente est qui monte vers la Tête de la Lauzière ; un second point à 81 % se trouve 850 m au sud-sud-ouest. La vallée de Fressinières est sous le vent de la Lombarde (« souvent très turbulent », carte Lombarde du club). Position et heures sont celles du point chaud.",
+     "sources": [
+      "S10",
+      "S105",
+      "S113"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "ponteil-falaises-sud",
+     "name": "Le Ponteil (Saint-Crépin) : pente sud sous les falaises",
+     "lon": 6.5575,
+     "lat": 44.7145,
+     "alt_m": 1827,
+     "coord_quality": "approx",
+     "best_hours": "87 % le matin, 84 % à midi (aucun point chaud en fin de journée) ; printemps, été",
+     "trigger": "pente de 30° exposée sud, 125 m des falaises du Ponteil (IGN) et 1,5 km au nord de Roche Charnière",
+     "description": "Audit d'octobre 2026 : déduction. Le décollage du Ponteil (« Site peu fréquenté Surtout volable en fin d'automne quand la brise de la Durance est très faible », carte Chocard) et celui de Roche Charnière (« décollage idéal en S à E, grande et douce pente herbeuse ») n'avaient aucun thermique à moins de 5,9 km. Les traces GPS (kk7) mesurent à 128 m des falaises du Ponteil un point chaud à 81 % le matin et à midi. Aucun texte ne le décrit ; position et heures sont celles du point chaud.",
+     "sources": [
+      "S10",
+      "S105",
+      "S113"
+     ],
+     "confidence": "low"
     }
    ],
    "soaring_spots": [
@@ -3537,7 +3831,7 @@
      "coord_quality": "approx",
      "best_hours": "fin de journée, jusqu'aux derniers rayons de soleil",
      "trigger": "petite plaine entre le déco de Saint-Vincent et le lac, confluence de brises",
-     "description": "Point de relance de fin de vol : au retour du Morgon, on « se laisse glisser sur la petite plaine devant Saint-Vincent où se forment souvent confluences et restitutions jusqu'aux derniers rayons de soleil ». Le soir, quand l'activité thermique cesse, il ne reste que la brise laminaire du lac ; attention à l'inversion de brise brutale peu avant le coucher du soleil. Position approximative (plaine entre déco et lac).",
+     "description": "Point de relance de fin de vol : au retour du Morgon, on « se laisse glisser sur la petite plaine devant Saint-Vincent où se forment souvent confluences et restitutions jusqu'aux derniers rayons de soleil ». Le soir, quand l'activité thermique cesse, il ne reste que la brise laminaire du lac ; attention à l'inversion de brise brutale peu avant le coucher du soleil. Position approximative (plaine entre déco et lac). Audit d'octobre 2026 : position toujours approximative (plaine devant le village) ; le point chaud mesuré de Saint-Vincent (98 %) est la falaise sous le décollage, 880 m plus au nord-est : voir `saint-vincent-falaise-sous-le-deco`.",
      "confidence": "low",
      "sources": [
       "S87"
@@ -3682,6 +3976,60 @@
      "sources": [
       "HS16"
      ]
+    },
+    {
+     "id": "saint-vincent-falaise-sous-le-deco",
+     "name": "Saint-Vincent-les-Forts : falaise et pente ouest sous le décollage",
+     "lon": 6.371,
+     "lat": 44.4465,
+     "alt_m": 1183,
+     "coord_quality": "approx",
+     "best_hours": "98 % le matin, 99 % à midi, 98 % en fin de journée ; toute l'année ; fiche FFVL : « conditions fortes l'après-midi (juin, juillet, août) », très bonnes en fin d'après-midi (restitution)",
+     "trigger": "pente de 38° exposée ouest, 360 m au nord du décollage de Saint-Vincent (départ « falaise » au-dessus d'une route, 1275 m) et 90 m sous lui",
+     "description": "Audit d'octobre 2026 : le décollage de Saint-Vincent-les-Forts (FFVL 1361, O/NO : « Site réservé aux bons pilotes : décollage court, départ falaise au dessus d'une route, conditions fortes l'après midi (juin juillet août) […] seul site utilisable par mistral ») est présenté par les guides du lac comme un site à la fois thermique et dynamique, départ de cross, à l'aérologie réputée exceptionnelle et au temps de vol quasi garanti (le club Différen'ciel : « superbe site pour les vols du soir en conditions calmes », « possibilité de cross local (Dormillouse, Grand Morgon) »), mais n'avait que la restitution de la plaine, à 870 m, sans position mesurée. Les traces GPS (kk7) placent à 360 m au nord du décollage le plus fort point chaud du secteur (98 %, de 97 à 99 % à toutes les saisons, de 93 % en janvier) : la falaise elle-même. Position : celle du point chaud (terrain IGN 1183 m) ; c'est le thermique qui permet de repartir vers Dormillouse et la Blanche (cross vers le sud) et d'où l'on peut presque toujours reposer au déco.",
+     "sources": [
+      "HS12",
+      "HS14",
+      "S105",
+      "S113"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "chorges-clot-rond-pente-sud-ouest",
+     "name": "Chorges – Clot Rond : pente sud sous le départ de cross du matin",
+     "lon": 6.2588,
+     "lat": 44.5954,
+     "alt_m": 1978,
+     "coord_quality": "approx",
+     "best_hours": "100 % le matin, 99 % à midi (aucun point chaud en fin de journée) ; toute l'année ; « plutôt le matin » (fiche FFVL)",
+     "trigger": "pente de 42° exposée sud, 860 m à l'ouest du décollage de Clot Rond (SW) et du Petit Clot Rond (S), 1995 m",
+     "description": "Audit d'octobre 2026 : les décollages de Clot Rond (FFVL 13067 : « Déco SW, à utiliser plutôt le matin, les brises vont s'orienter du SE à l'W pendant la journée » ; 430 m de D+ depuis le parking de Naune Paze selon le club) et des Jambons (FFVL 13068 : « Déco SE à S, à utiliser plutôt le matin pour des départs en cross ») n'avaient comme thermique documenté que les pentes SE des Jambons (position de la fiche, 73 %) 1,2 km à l'est. Les traces GPS (kk7) donnent à 860 m à l'ouest du Clot Rond le point chaud le plus fort de toute la haute Durance côté Serre-Ponçon : 100 % le matin, 99 % à midi, rien le soir, toute l'année, exactement le profil de départ de cross du matin des fiches. Position : celle du point chaud (terrain IGN 1978 m) ; il alimente la montée vers le Piolit (`therm-piolit-passage`, 1,1 km).",
+     "sources": [
+      "S62",
+      "S60",
+      "S61",
+      "S105",
+      "S113"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "mont-guillaume-deco-pente-sud-ouest",
+     "name": "Mont Guillaume : pente sud-ouest sous le décollage (brise thermique dominante)",
+     "lon": 6.4301,
+     "lat": 44.5689,
+     "alt_m": 1544,
+     "coord_quality": "approx",
+     "best_hours": "90 % le matin, 85 % à midi, 71 % en fin de journée ; printemps, été, automne ; fiche FFVL : décoller à partir de midi, forte brise l'après-midi en fin de printemps et été",
+     "trigger": "pente de 31° exposée sud-ouest, 195 m du décollage de Puy-Sanières (1603 m) et 60 m sous lui",
+     "description": "Audit d'octobre 2026 : la fiche FFVL 669 du Mont Guillaume dit : « régime de brise thermique dominante (secteur SW) et modérée, vent météo faible », puis avertit que « la constatation de vent « travers droit », même redressé au passage du thermique, n'est pas favorable au décollage en toute sécurité » (deux lignes à haute tension en avant du déco). Ce texte n'avait donné qu'un danger (`mont-guillaume-ht`) et le décollage n'avait de thermique qu'à 1,7 km (les faces du Mont Guillaume, position approximative). Les traces GPS (kk7) mesurent à 195 m du décollage un point chaud à 85 % (90 % le matin, 85 % à midi, 71 % le soir ; printemps, été et automne). Position : celle du point chaud (terrain IGN 1544 m, pente de 31° au sud-ouest).",
+     "sources": [
+      "HS17",
+      "S105",
+      "S113"
+     ],
+     "confidence": "medium"
     }
    ],
    "soaring_spots": [
@@ -4198,9 +4546,9 @@
      "name": "Réallon – Le Courtier",
      "lon": 6.3596,
      "lat": 44.5801,
-     "alt_m": 1500,
+     "alt_m": 1598,
      "coord_quality": "source",
-     "description": "Atterro près du téléski du Courtier.",
+     "description": "Atterro près du téléski du Courtier. Audit d'octobre 2026 : altitude lue sur le terrain IGN à la position de la fiche FFVL 13583 (1598 m), la fiche donnant 1500 m ; la position (près du téléski du Courtier) n'est pas en cause.",
      "sources": [
       "S67"
      ],
@@ -5873,6 +6221,41 @@
      "sources": [
       "S49"
      ]
+    },
+    {
+     "id": "faucon-barcelonnette-pente-sud-est",
+     "name": "Faucon-de-Barcelonnette : pente sud-est sous le décollage (colline d'entraînement)",
+     "lon": 6.6694,
+     "lat": 44.4004,
+     "alt_m": 1514,
+     "coord_quality": "approx",
+     "best_hours": "94 % le matin, 79 % à midi (aucun point chaud en fin de journée) ; printemps, été ; surtout le matin",
+     "trigger": "pente de 29° exposée sud-est, à 260 m du décollage de Faucon (S/SO, 1601 m) et 90 m sous lui",
+     "description": "Audit d'octobre 2026 : déduction. Le décollage de Faucon-de-Barcelonnette (FFVL 5209, S/SO ; colline d'entraînement facile, vols de 10 à 25 minutes selon Ultimate France) n'avait de thermique documenté qu'à 2,4 km (Soleil Bœuf), alors que les traces GPS (kk7) mesurent à 263 m un point chaud à 88 % (94 % le matin, 79 % à midi, rien le soir ; avril à juillet). C'est le profil d'un versant sud-est qui chauffe tôt et que la brise de l'Ubaye vient couper en fin de matinée (l'atterrissage de La Chaup est le plus pratique de la vallée, mais la brise y est forte). Aucun texte ne parle d'ascendance en ce lieu ; position et heures sont celles du point chaud.",
+     "sources": [
+      "HS40",
+      "S49",
+      "S105",
+      "S113"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "decollage-de-la-croix-pente-sud-est",
+     "name": "Décollage de la Croix (Barcelonnette) : pentes sud-est au-dessus des Granges",
+     "lon": 6.6852,
+     "lat": 44.4095,
+     "alt_m": 1565,
+     "coord_quality": "approx",
+     "best_hours": "85 % le matin, 86 % à midi (aucun point chaud en fin de journée) ; printemps, été",
+     "trigger": "pente de 29° exposée sud-est, 790 m à l'est du point « Décollage de la Croix » de la carte Chocard (1654 m), entre les hameaux de Bouzoulières et de Rata",
+     "description": "Audit d'octobre 2026 : déduction. Le point « Décollage de la Croix » de la carte Chocard Airlines (sans description) n'avait aucun thermique à moins de 2,2 km. Les traces GPS (kk7) mesurent à 790 m à l'est un point chaud à 83 % (85 % le matin, 86 % à midi, rien le soir ; printemps et été), sur le versant qui domine Barcelonnette à l'est. Position et heures sont celles du point chaud ; le déclencheur est déduit du relief.",
+     "sources": [
+      "S10",
+      "S105",
+      "S113"
+     ],
+     "confidence": "low"
     }
    ],
    "soaring_spots": [
@@ -8356,6 +8739,15 @@
    "type": "web",
    "lang": "en",
    "notes": "Du col Agnel le 9 juillet 2016 à 9h36 : cumulus de base 3500 m, d'abord cap au sud vers le Verdon puis point de contournement au nord-ouest près de Notre-Dame-de-la-Salette."
+  },
+  {
+   "id": "S113",
+   "title": "Altitudes du terrain (RGE ALTI, IGN Géoplateforme)",
+   "url": "https://data.geopf.fr/altimetrie/1.0/calcul/alti/rest/elevation.json",
+   "publisher": "IGN / Géoplateforme",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Service d'altimétrie (RGE ALTI métrique) : altitude du terrain à la position des points ; exposition et pente lues sur une grille de 100 m autour du point."
   }
  ]
 }

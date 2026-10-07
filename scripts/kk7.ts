@@ -141,6 +141,8 @@ export interface Kk7Report {
   outside: number;
   /** Strong hotspots (≥ 0.9) still without any text, by sector. */
   gaps: Map<string, { name: string; p: number; lon: number; lat: number; when: string }[]>;
+  /** Strong hotspots (≥ 0.9) 600 m to 1 km from a documented thermal: the same climb misplaced, or a second one. */
+  between: { name: string; p: number; lon: number; lat: number; nearest: string; d: number }[];
   /** Documented thermals more than 2 km from every hotspot. */
   far: { id: string; name: string; d: number; coordQuality?: string }[];
 }
@@ -175,7 +177,7 @@ export function integrateKk7(ctx: Kk7Context): Kk7Report | null {
       'Probabilité de trouver un thermique, calculée sur les traces de vol publiées (XContest, etc.), par moment de la journée et par saison. Licence CC BY-NC-SA 4.0, téléchargé le 7 octobre 2026. Dit où ça monte, pas pourquoi.',
   };
 
-  const report: Kk7Report = { hotspots: base.length, matched: 0, moved: [], added: 0, outside: 0, gaps: new Map(), far: [] };
+  const report: Kk7Report = { hotspots: base.length, matched: 0, moved: [], added: 0, outside: 0, gaps: new Map(), far: [], between: [] };
   const hotIndex = new PointIndex(base);
   const used = new Set<Hotspot>();
 
@@ -213,7 +215,9 @@ export function integrateKk7(ctx: Kk7Context): Kk7Report | null {
 
   // 2. Strong hotspots no text describes: thermals of their own, in the sector that contains them.
   const documented = new PointIndex(
-    ctx.features.thermals.filter((f) => f.geometry.type === 'Point').map((f) => ({ lon: (f.geometry.coordinates as LngLat)[0], lat: (f.geometry.coordinates as LngLat)[1] })),
+    ctx.features.thermals
+      .filter((f) => f.geometry.type === 'Point')
+      .map((f) => ({ lon: (f.geometry.coordinates as LngLat)[0], lat: (f.geometry.coordinates as LngLat)[1], id: f.properties.id, name: f.properties.name })),
   );
   const takeoffs = new PointIndex(
     ctx.features.takeoffs.filter((f) => f.geometry.type === 'Point').map((f) => ({ lon: (f.geometry.coordinates as LngLat)[0], lat: (f.geometry.coordinates as LngLat)[1], name: f.properties.name })),
@@ -249,7 +253,11 @@ export function integrateKk7(ctx: Kk7Context): Kk7Report | null {
   for (const h of base) {
     if (used.has(h) || h.p < NEW_MIN_P) continue;
     const p: LngLat = [h.lon, h.lat];
-    if (documented.near(p, CLEAR_M).length) continue;
+    const close = documented.near(p, CLEAR_M)[0];
+    if (close) {
+      if (h.p >= 0.9 && inFrance(h)) report.between.push({ name: close.item.name, p: h.p, lon: h.lon, lat: h.lat, nearest: close.item.id, d: Math.round(close.d) });
+      continue;
+    }
     const m = inFrance(h) ? sectorOf(p) : null;
     if (!m) {
       report.outside++;
@@ -321,6 +329,12 @@ export function kk7Markdown(r: Kk7Report, massifs: AtlasMassif[], date: string):
       ...list.sort((a, b) => b.p - a.p).map((g) => `- ${g.name} — ${pct(g.p)}, ${g.lat.toFixed(4)} N ${g.lon.toFixed(4)} E — ${g.when}`),
       '',
     ]),
+    `## Points chauds forts à 600 m – 1 km d’un thermique documenté (${r.between.length})`,
+    '',
+    'Ni rattachés ni ajoutés : soit le thermique documenté est mal placé (le recaler sur le point chaud), soit c’est une seconde ascendance à décrire.',
+    '',
+    ...r.between.sort((a, b) => b.p - a.p).map((b) => `- ${pct(b.p)}, ${b.lat.toFixed(4)} N ${b.lon.toFixed(4)} E — à ${b.d} m de \`${b.nearest}\` ${b.name}`),
+    '',
     '## Thermiques documentés loin de tout point chaud',
     '',
     ...r.far.map((f) => `- \`${f.id}\` ${f.name} (position ${f.coordQuality ?? '?'})`),

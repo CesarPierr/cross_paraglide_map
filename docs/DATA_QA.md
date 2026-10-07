@@ -5,16 +5,16 @@ Généré par `npm run data:build` le 2026-10-07.
 ## Volumes
 
 - massifs : 46
-- sources : 1560
-- breezes : 276
+- sources : 1640
+- breezes : 277
 - convergences : 81
-- hazards : 523
-- thermals : 1126
+- hazards : 527
+- thermals : 1124
 - soaring : 117
-- takeoffs : 533
-- landings : 300
-- routes : 183
-- figures : 161
+- takeoffs : 542
+- landings : 307
+- routes : 184
+- figures : 163
 
 ## Points à vérifier (1)
 

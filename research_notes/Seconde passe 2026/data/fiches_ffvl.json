@@ -1186,7 +1186,7 @@
      "coord_quality": "approx",
      "best_hours": "en été à partir de 11h (plus tôt par vent de nord)",
      "trigger": "pentes d'Aussois (Grand Jeu, Angle Bellecôte)",
-     "description": "Les fiches d'Aussois (Sommet du Grand Jeu et Angle Bellecôte) indiquent un vent de vallée et une activité thermique forte en été à partir de 11h, plus tôt si le vent météo est de nord. Le décollage est fortement déconseillé en été l'après-midi : conditions de vol très turbulentes. Position approximative, au Grand Jeu.",
+     "description": "Les fiches d'Aussois (Sommet du Grand Jeu et Angle Bellecôte) indiquent un vent de vallée et une activité thermique forte en été à partir de 11h, plus tôt si le vent météo est de nord. Le décollage est fortement déconseillé en été l'après-midi : conditions de vol très turbulentes. Position approximative, au Grand Jeu. Audit d'octobre 2026 : le thermique des pentes d'Aussois mesuré par les traces GPS (96 %) est 560 m au sud du Grand Jeu : voir `aussois-grand-jeu-pentes-sud`.",
      "confidence": "medium",
      "sources": [
       "S84",
@@ -1439,9 +1439,9 @@
      "lon": 5.4373,
      "lat": 45.1754,
      "alt_m": 755,
-     "coord_quality": "approx",
+     "coord_quality": "source",
      "trigger": "pente d'herbe orientée nord-ouest au-dessus des gorges du Nan",
-     "description": "La fiche de La Lia (décollage en pente d'herbe bordé de grands arbres, orienté nord-ouest) donne comme aérologie « nord-ouest et thermique » : le site marche par vent de nord-ouest avec du thermique. Le survol des gorges du Nan à basse altitude peut être turbulent. Position approximative, au décollage.",
+     "description": "La fiche de La Lia (décollage en pente d'herbe bordé de grands arbres, orienté nord-ouest) donne comme aérologie « nord-ouest et thermique » : le site marche par vent de nord-ouest avec du thermique. Le survol des gorges du Nan à basse altitude peut être turbulent. Position approximative, au décollage. Audit d'octobre 2026 : position vérifiée, c'est celle de la fiche FFVL du décollage (terrain IGN à 751 m pour 755 m déclarés à La Lia ; 1357 m pour 1350 m au Pas de l'Âne) ; aucun point chaud kk7 à moins de 1,3 km (La Lia) et 3,5 km (Pas de l'Âne) : la zone des gorges du Nan et du cirque de Malleval est peu volée.",
      "confidence": "medium",
      "sources": [
       "S102",
@@ -1469,9 +1469,9 @@
      "lon": 5.4445,
      "lat": 45.1308,
      "alt_m": 1350,
-     "coord_quality": "approx",
+     "coord_quality": "source",
      "trigger": "falaise du Pas de l'Âne",
-     "description": "La fiche du Pas de l'Âne donne comme aérologie « conditions thermiques et léger vent du nord » : décollage en falaise très bien alimenté par vent de nord, turbulences fortes dans le cirque de Malleval pour l'atterrissage par vent soutenu. Position approximative, au décollage.",
+     "description": "La fiche du Pas de l'Âne donne comme aérologie « conditions thermiques et léger vent du nord » : décollage en falaise très bien alimenté par vent de nord, turbulences fortes dans le cirque de Malleval pour l'atterrissage par vent soutenu. Position approximative, au décollage. Audit d'octobre 2026 : position vérifiée, c'est celle de la fiche FFVL du décollage (terrain IGN à 751 m pour 755 m déclarés à La Lia ; 1357 m pour 1350 m au Pas de l'Âne) ; aucun point chaud kk7 à moins de 1,3 km (La Lia) et 3,5 km (Pas de l'Âne) : la zone des gorges du Nan et du cirque de Malleval est peu volée.",
      "confidence": "medium",
      "sources": [
       "S106",

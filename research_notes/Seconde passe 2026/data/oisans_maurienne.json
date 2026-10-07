@@ -601,10 +601,10 @@
      "name": "Toits d'Huez / pentes sous l'Éclose",
      "lon": 6.0533,
      "lat": 45.0774,
-     "alt_m": 1500,
+     "alt_m": 1394,
      "best_hours": "13h-14h (été)",
      "trigger": "Village d'Huez (toits, clocher) et schistes qui descendent du Bras ; sur le cheminement de l'Éclose",
-     "description": "Le guide de site conseille de viser le clocher d'Huez (« ascendances au-dessus des toits ») puis de raccrocher les schistes du Bras ; thermiques dès 13h-14h pour les bons pilotes, avec risque d'être contré ensuite par la brise de vallée. Rôle : déclencheur au départ de l'Éclose (premier point du cheminement classique) puis relance vers les schistes du Bras. Position corrigée : église Saint-Ferréol du village d'Huez (géocodeur IGN), le « clocher d'Huez » du guide. Le service de l'école locale confirme que, dès fin février, les conditions thermiques permettent de monter jusqu'à 3000 m au-dessus de l'Alpe d'Huez et de survoler Oz, Vaujany, Auris et Villard-Reculas.",
+     "description": "Le guide de site conseille de viser le clocher d'Huez (« ascendances au-dessus des toits ») puis de raccrocher les schistes du Bras ; thermiques dès 13h-14h pour les bons pilotes, avec risque d'être contré ensuite par la brise de vallée. Rôle : déclencheur au départ de l'Éclose (premier point du cheminement classique) puis relance vers les schistes du Bras. Position corrigée : église Saint-Ferréol du village d'Huez (géocodeur IGN), le « clocher d'Huez » du guide. Le service de l'école locale confirme que, dès fin février, les conditions thermiques permettent de monter jusqu'à 3000 m au-dessus de l'Alpe d'Huez et de survoler Oz, Vaujany, Auris et Villard-Reculas. Audit d'octobre 2026 : altitude corrigée, lue sur le terrain IGN à l'église Saint-Ferréol (1394 m ; les 1500 m déclarés étaient ceux du village).",
      "sources": [
       "S1",
       "S114"
@@ -965,6 +965,143 @@
       "S1",
       "S50"
      ]
+    },
+    {
+     "id": "mais-pentes-sud-est-deux-alpes-ouest",
+     "name": "Le Mais : pentes sud-est à l'ouest du plateau des Deux Alpes",
+     "lon": 6.1098,
+     "lat": 45.0,
+     "alt_m": 1633,
+     "coord_quality": "approx",
+     "best_hours": "99 % le matin, 98 % à midi, 78 % en fin de journée ; printemps, été, automne",
+     "trigger": "pente de 37° exposée sud-est, au bord ouest du plateau des Deux Alpes, 1 km au sud du Mais (sommet IGN, 2106 m) et 1,4 km à l'ouest de la falaise des Perrons",
+     "description": "Audit d'octobre 2026 : déduction. Le deuxième point chaud kk7 d'Oisans (97 %, actif toute la journée) n'était décrit par aucun texte. Il est à 1,4 km à l'ouest du thermique de la falaise des Perrons (décollage FFVL 13104, ouest-sud, « les conditions peuvent être très généreuse l'après midi »), sur le versant sud-est qui domine le trou de Venosc. Le topo CHVD du Pied Moutet note qu'au col de Mais (2058 m) on peut décoller « en ouest et en est, direction Venosc » : c'est la crête qui surplombe ce versant. Aucun récit ne parle d'ascendance en ce point ; position et heures sont celles du point chaud (terrain IGN 1629 m). Il se trouve du côté de Venosc, plus calme que la falaise des Perrons où volent ensemble les parapentistes de la station et les biplaces (guide de site).",
+     "sources": [
+      "S145",
+      "S1",
+      "S139",
+      "S144"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "huez-sardonne-pentes-ouest",
+     "name": "Sardonne (versant ouest de l'arête Huez – Oz, au-dessus de la Romanche)",
+     "lon": 6.0318,
+     "lat": 45.1142,
+     "alt_m": 1040,
+     "coord_quality": "approx",
+     "best_hours": "87 % le matin, 91 % à midi, 82 % en fin de journée ; printemps, été",
+     "trigger": "pente de 37° exposée ouest, 1,1 km au sud-ouest du hameau de Sardonne (Oz), sur le versant qui descend de l'arête Huez – Oz vers la plaine de la Romanche",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 93 % (87 % le matin, 91 % à midi, 82 % en fin de journée) sur le versant ouest de l'arête qui sépare l'Alpe d'Huez d'Oz, à 1040 m seulement, à 4 km au nord-ouest du décollage de l'Éclose et à 2,6 km du Signal. Les textes du secteur décrivent les ascendances plus haut (clocher d'Huez, schistes du Bras, Signal) et les atterrissages de Bourg-d'Oisans en bas (stade municipal : « attention aux brises de vallée pouvant devenir fortes et turbulentes », « terrain à privilégier le matin par vent faible et activité thermique faible ») : le point est l'étage inférieur de ce cheminement, où l'on peut se rattraper avant de se poser. Aucun texte ne le décrit ; position et heures sont celles du point chaud.",
+     "sources": [
+      "S1",
+      "S139",
+      "S144"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "eclose-huez-pente-sud-ouest",
+     "name": "Éclose (Huez) : pente sud-ouest sous le décollage",
+     "lon": 6.0669,
+     "lat": 45.0861,
+     "alt_m": 1763,
+     "coord_quality": "approx",
+     "best_hours": "87 % le matin, 88 % à midi, 82 % en fin de journée ; printemps, hiver",
+     "trigger": "pente de 22° exposée sud-ouest, à 200 m du décollage de l'Éclose (1747 m), au-dessus du village d'Huez",
+     "description": "Audit d'octobre 2026 : déduction. Le décollage de l'Éclose (FFVL 1923, SO/O/NO) n'avait de thermique documenté qu'à 1,4 km, au clocher d'Huez. La fiche FFVL dit : « conditions calmes le matin ; alimenté par la brise de pente montant d'Huez ». Les traces GPS (kk7) mesurent à 208 m du décollage un point chaud à 87 % toutes périodes, actif en hiver et au printemps ; les statistiques Syride citées dans la fiche du secteur concentrent les décollages de 11h à 13h, avec un pic en mai et un second en octobre. Le point est donc le premier relief qui alimente le vol de l'Éclose avant le clocher d'Huez (`huez-toits`, 1,4 km au sud-ouest) puis les schistes du Bras. Position et heures sont celles du point chaud.",
+     "sources": [
+      "S1",
+      "S139",
+      "S144"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "saperan-mirebel-plateau-sud",
+     "name": "Rocher de Saperan / Pic de Mirebel (crête sud de Belledonne, au-dessus de Livet-et-Gavet)",
+     "lon": 5.9567,
+     "lat": 45.1414,
+     "alt_m": 2508,
+     "coord_quality": "approx",
+     "best_hours": "95 % le matin, 80 % à midi (aucun point chaud en fin de journée) ; été, automne",
+     "trigger": "replat exposé au sud (21°) au pied du Rocher de Saperan (sommet IGN, 2475 m, à 90 m), 270 m au sud du Pic de Mirebel",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 92 % (95 % le matin, 80 % à midi, aucun le soir) sur la crête sud de Belledonne, entre la Croix de Chamrousse et le Grand Colon (3,3 km au sud-sud-est du Grand Colon, au-dessus de Livet-et-Gavet et des gorges de la Romanche). Il est à 2,4 km du plafond du vallon de la Pra (4146 m) déjà décrit. Aucun texte ne le décrit ; le profil (matin fort, pas de soir) est celui d'un replat bien exposé qui chauffe tôt, point de départ naturel des vols qui longent la crête vers le Grand Colon ou traversent la Romanche vers les Grandes Rousses. Position et heures sont celles du point chaud (terrain IGN 2508 m).",
+     "sources": [
+      "S1",
+      "S139",
+      "S144"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "petit-van-chamrousse-oisans-est",
+     "name": "Petit Van (crête sud de Belledonne, à l'est de la Croix de Chamrousse)",
+     "lon": 5.9361,
+     "lat": 45.1251,
+     "alt_m": 1970,
+     "coord_quality": "approx",
+     "best_hours": "95 % le matin, 81 % à midi (aucun point chaud en fin de journée) ; printemps, été, automne",
+     "trigger": "pente de 33° exposée sud-est/est, 500 m au sud-est du Petit Van (sommet IGN, 2439 m) et 760 m du Grand Van, sur la crête sud de Belledonne",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 90 % (95 % le matin, 81 % à midi, aucun le soir) sur la crête sud de Belledonne, 2,2 km à l'est de la Croix de Chamrousse, sans texte propre ; le profil du matin est celui d'une face est qui perd le soleil en début d'après-midi. Le point chaud de la Croix de Chamrousse (88 %, sous le seuil de cette liste) est à 3 km à l'ouest, le plafond du vallon de la Pra (4146 m, déjà décrit) à 4 km au nord. Position et heures sont celles du point chaud.",
+     "sources": [
+      "S1",
+      "S139",
+      "S144"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "dome-de-la-lauze-pente-sud-est",
+     "name": "Dôme de la Lauze (pentes sud-est, La Grave)",
+     "lon": 6.2474,
+     "lat": 44.9932,
+     "alt_m": 3326,
+     "coord_quality": "approx",
+     "best_hours": "92 % à midi, 89 % en fin de journée (aucun point chaud le matin) ; été, automne",
+     "trigger": "pente de 32° exposée sud-est sous le Dôme de la Lauze (3568 m, à 450 m) et le col de la Lauze (490 m), à 1 km à l'ouest de la Pointe Thorant",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 91 % (92 % à midi, 89 % le soir, aucun le matin) à 3326 m, au pied sud-est du Dôme de la Lauze, à 1 km à l'ouest de la Pointe Thorant dont le récit de septembre 2006 fait une « belle pompe fiable » où l'on passe plus d'une heure avant l'assaut de la Meije. Il décrit la même zone d'altitude, côté glaciers. Vol de très haute montagne dans le Parc national des Écrins (réglementation de survol à vérifier). Aucun texte ne le décrit ; position et heures sont celles du point chaud.",
+     "sources": [
+      "S1",
+      "S139",
+      "S144"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "roche-d-alvau-glaciers-sud",
+     "name": "Roche d'Alvau (faces sud, massif des Écrins)",
+     "lon": 6.3436,
+     "lat": 44.9437,
+     "alt_m": 3528,
+     "coord_quality": "approx",
+     "best_hours": "85 % le matin, 93 % à midi, 93 % en fin de journée ; été, automne",
+     "trigger": "pente de 37° exposée sud, 90 m sous le sommet sud-est de la Roche d'Alvau (3628 m), entre la brèche supérieure d'Alvau et la brèche d'Alvau",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 93 % (actif toute la journée, été et automne), le plus haut du secteur (3528 m), au sud-sud-est de la Grande Ruine, dont le plafond de fin d'après-midi (cumulus à 17h, septembre 2006) est déjà décrit à 3 km. Les récits de très haute montagne (Meije, Grande Ruine, Barre des Écrins) montent à 3600-4000 m en septembre et en août ; aucun ne nomme la Roche d'Alvau. Vol réservé aux pilotes engagés dans le cœur du Parc national des Écrins (survol réglementé). Position et heures sont celles du point chaud.",
+     "sources": [
+      "S1",
+      "S139",
+      "S144"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "ffvl1243-deux-alpes-diable-thermique-apres-midi",
+     "name": "Les 2 Alpes – Le Diable : conditions thermiques fortes l'après-midi",
+     "lon": 6.1471,
+     "lat": 44.997,
+     "alt_m": 2367,
+     "coord_quality": "source",
+     "ffvl_id": 1243,
+     "best_hours": "l'après-midi (brises thermiques, léger vent d'ouest ou de nord-ouest) ; guide de site : décollage intéressant à partir de 16 h",
+     "trigger": "pentes sous et autour du sommet du télésiège du Diable (2367 m), faces ouest/nord-ouest",
+     "description": "Audit d'octobre 2026 : la fiche FFVL 1243 du Diable (O/NO) donne comme aérologie « brises thermiques, léger vent d'ouest ou léger nord ouest » et comme description « Conditions Thermiques Fortes L'après midi », avec « attention au vent météo, surtout au vent de sud ». Ce texte n'avait donné que le décollage ; les thermiques décrits à proximité (`deux-alpes-diable-toura-jandri`, crête Tête Moute – Toura – Jandri, et `deux-alpes-rachas`) sont des relances 800 m plus loin. Position : celle de la fiche FFVL (terrain IGN cohérent). Aucun point chaud kk7 à moins de 2,7 km (vol d'altitude peu tracé).",
+     "sources": [
+      "S58",
+      "S144"
+     ],
+     "confidence": "medium"
     }
    ],
    "soaring_spots": [
@@ -1261,28 +1398,29 @@
      "name": "Cheminée de Vaujany (décollage de l'après-midi)",
      "lon": 6.0585,
      "lat": 45.1655,
-     "alt_m": 1600,
+     "alt_m": 1817,
      "orientations": [
       "SE"
      ],
-     "description": "Guide de site : 1600 m, orienté Sud-Est, au-dessus du lac d'Allemond ; le matin pour pilotes de 15-20 vols, l'après-midi pilotes confirmés (soaring vers le Rissiou et le col du Sabot) ; accès par la route de la cheminée d'équilibre EDF et 10-15 min de sentier ; ne pas y aller par Nord fort. Position estimée sous Vaujany.",
+     "description": "Guide de site : 1600 m, orienté Sud-Est, au-dessus du lac d'Allemond ; le matin pour pilotes de 15-20 vols, l'après-midi pilotes confirmés (soaring vers le Rissiou et le col du Sabot) ; accès par la route de la cheminée d'équilibre EDF et 10-15 min de sentier ; ne pas y aller par Nord fort. Position estimée sous Vaujany. Audit d'octobre 2026 : altitude corrigée, lue sur le terrain IGN à la position du point (1817 m, pente de 20° exposée au sud). Le guide de site donne 1600 m mais le topo CHVD de la Scia de Vaujany place la cheminée d'équilibre elle-même à 1706 m et le décollage 10 à 15 minutes de sentier plus haut, dans la clairière des palissades paravalanches : l'altitude de 1600 m est celle de la route, pas du décollage.",
      "sources": [
-      "S1"
+      "S1",
+      "S146"
      ],
      "coord_quality": "approx"
     },
     {
      "id": "grave-glacier-meije",
      "name": "La Grave – Glaciers de la Meije (col des Ruillans, ~3200 m)",
-     "lon": 6.3075,
-     "lat": 45.0105,
-     "alt_m": 3200,
+     "lon": 6.2641,
+     "lat": 45.0089,
+     "alt_m": 3204,
      "orientations": [
       "N",
       "S",
       "W"
      ],
-     "description": "Guide de site : 3300 m, décollages N (50 m à gauche de la gare, petit dôme), S (face au glacier) et O (couloir raide) ; décoller vers 10h au plus tard pour les moins expérimentés ; atterrissage difficile. Vols biplace seulement le matin. Position estimée du terminus du télécabine ; la fiche FFVL 5212 « Glacier du Vallon » (3196 m, favorable E) est un autre point, dans le cœur du parc.",
+     "description": "Guide de site : 3300 m, décollages N (50 m à gauche de la gare, petit dôme), S (face au glacier) et O (couloir raide) ; décoller vers 10h au plus tard pour les moins expérimentés ; atterrissage difficile. Vols biplace seulement le matin. Position estimée du terminus du télécabine ; la fiche FFVL 5212 « Glacier du Vallon » (3196 m, favorable E) est un autre point, dans le cœur du parc. Audit d'octobre 2026 : position corrigée. L'ancien point (6.3075 E, 45.0105 N), à 3 km à l'est, tombait sur une face nord-ouest à 3085 m sur le terrain IGN. Le col des Ruillans (toponyme IGN) est à 6.2641 E, 45.0089 N et à 3204 m, ce qui retrouve l'altitude de 3200 m du terminus du téléphérique des Glaciers de la Meije ; les décollages (nord à 50 m de la gare, sud face au glacier) sont dans les 100 m autour, et le point reste approximatif.",
      "sources": [
       "S1",
       "S17",
@@ -3729,19 +3867,163 @@
     {
      "id": "druges-grande-feiche-dernier-relief",
      "name": "Bonneval-sur-Arc (Les Druges, Grande Feiche) : dernier relief avant le verrou",
-     "lon": 7.0421,
-     "lat": 45.378,
-     "alt_m": 2215,
-     "coord_quality": "source",
-     "best_hours": "après-midi d'août à octobre (période de pic des décollages Syride)",
+     "lon": 7.0361,
+     "lat": 45.3743,
+     "alt_m": 2045,
+     "coord_quality": "measured",
+     "best_hours": "après-midi d'août à octobre (pic Syride) ; 89 % le matin, 97 % à midi, 90 % le soir d'après les traces GPS",
      "trigger": "Pentes sud-ouest au-dessus de Bonneval-sur-Arc, en tête de vallée",
-     "description": "Déduction : au bout du cross classique Aussois → Termignon → Val Cenis → Bonneval, Bonneval « constitue un verrou en fond de vallée qui impose normalement de se poser » (forum) ; les pentes des Druges / de la Grande Feiche (FFVL 3153, 14179, 14180) sont le dernier relief ensoleillé avant la tête de vallée et la frontière, dans un secteur où la Vanoise impose des secteurs de survol à respecter. Syride place les décollages de Bonneval d'août à octobre. Aucune ascendance précise n'est décrite.",
+     "description": "Déduction : au bout du cross classique Aussois → Termignon → Val Cenis → Bonneval, Bonneval « constitue un verrou en fond de vallée qui impose normalement de se poser » (forum) ; les pentes des Druges / de la Grande Feiche (FFVL 3153, 14179, 14180) sont le dernier relief ensoleillé avant la tête de vallée et la frontière, dans un secteur où la Vanoise impose des secteurs de survol à respecter. Syride place les décollages de Bonneval d'août à octobre. Aucune ascendance précise n'est décrite. Audit d'octobre 2026 : position ramenée sur le point chaud des traces GPS (kk7 : 96 % toutes périodes, 97 % à midi, 97 % en octobre, 89 % en juillet, rien l'hiver ni au printemps), à 620 m au sud-ouest de l'ancien point (le décollage de la fiche FFVL) ; pente de 27° exposée sud (terrain IGN 2045 m, la fiche donne 2215 m pour le décollage). Il confirme la déduction du dernier relief ensoleillé avant la tête de vallée.",
      "confidence": "low",
      "sources": [
       "S4",
       "S46",
-      "S90"
+      "S90",
+      "S139",
+      "S144"
      ]
+    },
+    {
+     "id": "turra-aussois-pentes-sud-est-matin",
+     "name": "La Turra (Aussois – Sollières) : pente sud-est du matin",
+     "lon": 6.7631,
+     "lat": 45.2558,
+     "alt_m": 2200,
+     "coord_quality": "approx",
+     "best_hours": "99 % le matin (aucun point chaud à midi ni en fin de journée) ; printemps, été, automne ; le forum donne 2350 m comme altitude minimale pour le prendre",
+     "trigger": "pente de 47° exposée sud-est, 300 m au sud-est des ruines de la Turra (toponyme IGN), sous le Roc des Corneilles, au-dessus de Sollières-Sardières",
+     "description": "Audit d'octobre 2026 : le fil « Aussois en automne » (parapentiste.info, octobre 2019 et 2021) dit : « montée jusqu'au déco de l'Ours, 2350m, altitude minimale pour prendre le thermique dans cette vallée de la Pointe de Bellecôte ou sur la Turra plus à l'Est, puis on peut facilement glisser jusqu'au dessus de Termignon le long des pentes de la Dent Parrachée ». Le thermique d'Aussois n'était documenté qu'à la Pointe de Bellecôte ; la Turra, 1,8 km plus à l'est, n'avait rien. Les traces GPS (kk7) y mesurent 99 % le matin et rien l'après-midi (pente de 47° exposée sud-est qui perd le soleil), le plus fort point chaud du secteur : c'est le premier déclencheur du glissé vers Termignon. À ne pas confondre avec les falaises de la Turra de Termignon (`turra-falaises-termignon`), 8 km à l'est. Vol dans le secteur « Turra » de l'arrêté de survol du Parc national de la Vanoise (16 mai - 31 octobre pour les secteurs de la Turra, des Adrets de Val-Cenis et de Bessans, selon l'arrêté 2026-31). Position : celle du point chaud (terrain IGN 2200 m).",
+     "sources": [
+      "S5",
+      "S18",
+      "S139",
+      "S144"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "loza-dent-parrachee-pentes-sud-est",
+     "name": "La Loza – pentes de la Dent Parrachée (entre Aussois et Termignon)",
+     "lon": 6.7758,
+     "lat": 45.2633,
+     "alt_m": 2148,
+     "coord_quality": "approx",
+     "best_hours": "98 % le matin, 97 % à midi, 82 % en fin de journée ; toute l'année ; le forum parle de 2800 m maximum",
+     "trigger": "pente de 37° exposée sud-est, 600 m au sud du lieu-dit La Loza (IGN), sur le flanc sud de la Dent Parrachée au-dessus de la vallée de l'Arc",
+     "description": "Audit d'octobre 2026 : le fil « Aussois en automne » (parapentiste.info) décrit le glissé de la Turra vers Termignon « le long des pentes de la Dent Parrachée. 2800m max mais c'est franchement beau comme vol » ; ces pentes n'avaient aucun thermique propre dans l'atlas (la relance de Sollières-Sardières, plus bas, est à 2,5 km). Les traces GPS (kk7) mesurent 98 % sur la pente sud-est au sud de La Loza, actif toute la journée et toute l'année (98 % le matin, 97 % à midi, 82 % le soir), à 2,7 km du décollage de la Fournache. Le secteur de « la Loza » (hors zone de sensibilité majeure du gypaète, ZSM du 1er avril au 31 octobre) fait partie des secteurs où l'arrêté du Parc national de la Vanoise 2026-31 autorise le survol à moins de 1000 m. Position : celle du point chaud (terrain IGN 2148 m).",
+     "sources": [
+      "S5",
+      "S18",
+      "S139",
+      "S144"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "termignon-adrets-sud-est-replat-des-canons",
+     "name": "Termignon : adrets au sud-est du village (Replat des Canons)",
+     "lon": 6.8369,
+     "lat": 45.2635,
+     "alt_m": 2174,
+     "coord_quality": "approx",
+     "best_hours": "80 % le matin, 94 % à midi, 87 % en fin de journée ; printemps, hiver",
+     "trigger": "pente de 25° exposée ouest, 1,2 km du Replat des Canons (IGN), à 2,4 km au sud-est de Termignon, sur l'adret",
+     "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 94 % (surtout à midi et le soir, en hiver et au printemps) sur l'adret au sud-est de Termignon, au bout du glissé décrit par le forum (Turra → pentes de la Dent Parrachée → « au-dessus de Termignon »). Les relances de Sollières-Sardières (2,3 km à l'ouest) et des falaises de la Turra de Termignon (4 km au nord) sont déjà décrites ; ce point-ci ne l'était pas. Aucun texte ne le décrit ; position et heures sont celles du point chaud. Secteur « Adrets de Val-Cenis » de l'arrêté de survol du Parc national de la Vanoise.",
+     "sources": [
+      "S5",
+      "S18",
+      "S139",
+      "S144"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "dent-parrachee-pente-sud-est-3177",
+     "name": "Dent Parrachée : pente sud-est sous le sommet (3177 m)",
+     "lon": 6.7638,
+     "lat": 45.2843,
+     "alt_m": 3177,
+     "coord_quality": "approx",
+     "best_hours": "94 % le matin, 74 % à midi (aucun point chaud en fin de journée) ; été, automne",
+     "trigger": "pente de 47° exposée sud-est, 800 m au sud-est du sommet de la Dent Parrachée (3697 m), au-dessus de l'ancien glacier du Coin du Govard (485 m)",
+     "description": "Audit d'octobre 2026 : déduction. Le décollage de la Dent Parrachée (FFVL 5240, 3697 m, vol de très haute montagne soumis à autorisation systématique du Parc national de la Vanoise) n'avait aucun thermique à moins de 3 km alors qu'un point chaud kk7 à 93 % (94 % le matin, 74 % à midi) se trouve à 0,9 km, sur la pente sud-est sous le sommet, à 3177 m. Aucun texte ne le décrit ; position et heures sont celles du point chaud. Le secteur de « la Dent Parrachée » est un de ceux où l'arrêté 2026-31 autorise le survol à moins de 1000 m toute l'année ; le décollage lui-même reste soumis à autorisation (fiche FFVL).",
+     "sources": [
+      "S88",
+      "S18",
+      "S139",
+      "S144"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "orgere-estive-pentes-sud",
+     "name": "Orgère (Villarodin-Bourget) : pentes sud sous l'Estive",
+     "lon": 6.6625,
+     "lat": 45.2263,
+     "alt_m": 2131,
+     "coord_quality": "approx",
+     "best_hours": "95 % le matin, 92 % à midi (aucun point chaud en fin de journée) ; toute l'année ; la fiche FFVL dit « vol du matin essentiellement »",
+     "trigger": "pente de 29° exposée sud-est, 500 m au sud-sud-ouest de l'Estiva (ruines IGN), sur les alpages d'Orgère",
+     "description": "Audit d'octobre 2026 : la fiche FFVL 622 de l'Estive (SE/S/SO) dit : « vol montagne, aucun aménagement. Vol du matin essentiellement. Vent de vallée pouvant être très fort à partir de 11/12h. Site sensible. Proximité du Parc national de la Vanoise ». Les traces GPS (kk7) mesurent un point chaud à 95 % le matin et à midi, rien le soir, sur les alpages d'Orgère, ce qui colle avec le « vol du matin ». Remarque sur la position du décollage : les coordonnées de la fiche (45.2295 N) tombent à 2170 m, alors que l'aire de décollage de l'Estive (POI IGN, 45.2513 N, 6.6630 E) est à 2426 m, l'altitude de la fiche : le décollage est 2,4 km plus au nord et le point chaud est à 2,8 km au sud de lui, en direction de l'atterrissage d'Orgère (secteur « Orgère » de l'arrêté de survol, 16 mai - 31 octobre). Position du thermique : celle du point chaud.",
+     "sources": [
+      "S18",
+      "S139",
+      "S144"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "barbier-moure-cobroute-pente-sud-est",
+     "name": "Le Barbier : pente sud-est sous Moure Cobroute",
+     "lon": 6.7164,
+     "lat": 45.2345,
+     "alt_m": 2259,
+     "coord_quality": "approx",
+     "best_hours": "84 % le matin, 75 % à midi (aucun point chaud en fin de journée) ; toute l'année",
+     "trigger": "pente de 31° exposée sud-est, 250 m de la Moure Cobroute (2309 m) et du col du Barbier (2295 m), à 930 m à l'est du décollage du Barbier",
+     "description": "Audit d'octobre 2026 : déduction. Le décollage du Barbier (FFVL 5243, 2295 m, fiche issue des traces, sans texte) n'avait aucun thermique à moins de 3,3 km alors qu'un point chaud kk7 à 83 % (matin et midi, toute l'année) se trouve à 927 m, sur la pente sud-est entre le col du Barbier et la Moure Cobroute. Le secteur du « Barbier Est » figure parmi ceux où l'arrêté du Parc national de la Vanoise autorise le survol à moins de 1000 m toute l'année, avec un couloir de vol au-dessus de la forêt d'Orgère du 1er novembre au 15 mai pour le « Barbier ». Position et heures sont celles du point chaud.",
+     "sources": [
+      "S18",
+      "S139",
+      "S144"
+     ],
+     "confidence": "low"
+    },
+    {
+     "id": "aussois-plan-de-la-croix-thermique",
+     "name": "Aussois – Plan de la Croix (atterrissage) : thermique présent sur le terrain",
+     "lon": 6.753,
+     "lat": 45.2316,
+     "alt_m": 1520,
+     "coord_quality": "source",
+     "ffvl_id": 14170,
+     "best_hours": "octobre (fil d'octobre 2019 et 2021), en journée",
+     "trigger": "grand champ dégagé du Plan de la Croix, à côté du village d'Aussois",
+     "description": "Audit d'octobre 2026 : le mot « thermique » du texte de l'atterrissage n'avait donné aucun élément. Le fil « Aussois en automne » (parapentiste.info) : « J'ai pu posé à l'autre atterro de la Croix, à peine plus loin du centre du village. Bien plus accueillant, très long, dégagé, sans arbres, bien en face de la brise, juste parfait mais il faut prendre en compte que le thermique est bien présent, donc souvent pas simple de passer dessous ». Un thermique de fond de vallée est donc présent sur le terrain en automne : il rallonge la finale. Position : celle de la fiche FFVL 14170 (1520 m).",
+     "sources": [
+      "S5",
+      "S96",
+      "S144"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "aussois-grand-jeu-pentes-sud",
+     "name": "Aussois – Grand Jeu : pentes sud sous le décollage (le thermique d'Aussois dès 11 h)",
+     "lon": 6.7356,
+     "lat": 45.2432,
+     "alt_m": 2044,
+     "coord_quality": "approx",
+     "best_hours": "à partir de 11h en été, plus tôt si vent météo de nord (fiches FFVL) ; traces GPS : 95 % le matin, 97 % à midi, 93 % en fin de journée, toute l'année (100 % en janvier)",
+     "trigger": "pente de 28° exposée sud, 560 m au sud du décollage du Grand Jeu (2114 m) et 1,2 km au sud-ouest d'Angle Bellecôte, sur les pistes d'Aussois",
+     "description": "Audit d'octobre 2026 : les fiches FFVL d'Aussois (Sommet du Grand Jeu 620, Angle Bellecôte 621) disent « Vent de vallée et activité thermique forte en été à partir de 11h00, plus tôt si vent météo de N. Décollage fortement déconseillé en été l'après midi, conditions de vols très turbulentes ». Le thermique documenté (`ffvl620-aussois-thermique-ete`) n'était qu'une position approximative au Grand Jeu. Les traces GPS (kk7) mesurent, à 560 m sous le Grand Jeu, un point chaud à 96 % (95 % le matin, 97 % à midi, 93 % le soir), actif toute l'année et plus encore en hiver (100 % en janvier) : c'est le thermique des pentes d'Aussois, le plus fort de Haute-Maurienne avec la Turra. Position : celle du point chaud (terrain IGN 2044 m).",
+     "sources": [
+      "S80",
+      "S81",
+      "S139",
+      "S144"
+     ],
+     "confidence": "medium"
     }
    ],
    "soaring_spots": [
@@ -3851,12 +4133,12 @@
      "name": "Valfréjus – Punta Bagna (FFVL 623)",
      "lon": 6.6712,
      "lat": 45.1445,
-     "alt_m": 2368,
+     "alt_m": 2720,
      "orientations": [
       "N",
       "NW"
      ],
-     "description": "2368 m, utilisé essentiellement l'hiver ; « attention par vent de sud > 10 km/h ; favorable par vent de N à NO > 20 km/h ». Soaring de Nord (forum).",
+     "description": "2368 m, utilisé essentiellement l'hiver ; « attention par vent de sud > 10 km/h ; favorable par vent de N à NO > 20 km/h ». Soaring de Nord (forum). Audit d'octobre 2026 : altitude lue sur le terrain IGN à la position de la fiche FFVL 623 (2720 m, replat de 6° exposé au nord) ; la fiche donne 2368 m, sans que l'on sache laquelle des deux informations est fausse (le sommet de la Punta Bagna, toponyme IGN à 6.6801 E, 45.1432 N, est à 2840 m). Aucun point chaud kk7 à moins de 3,7 km : site d'hiver (« utilisé l'hiver essentiellement »), pas de thermique documenté.",
      "sources": [
       "S85",
       "S4"
@@ -3867,19 +4149,19 @@
     {
      "id": "orgere-estive",
      "name": "Villarodin-Bourget – L'Estive (FFVL 622)",
-     "lon": 6.6658,
-     "lat": 45.2295,
-     "alt_m": 2421,
+     "lon": 6.663,
+     "lat": 45.2513,
+     "alt_m": 2426,
      "orientations": [
       "SE",
       "S",
       "SW"
      ],
-     "description": "2421 m, vol montagne sans aménagement, vol du matin essentiellement, vent de vallée pouvant être très fort dès 11/12h, site sensible près de la Vanoise ; D215 au Freney puis D10 jusqu'au refuge de l'Orgère, 45 min de marche.",
+     "description": "2421 m, vol montagne sans aménagement, vol du matin essentiellement, vent de vallée pouvant être très fort dès 11/12h, site sensible près de la Vanoise ; D215 au Freney puis D10 jusqu'au refuge de l'Orgère, 45 min de marche. Audit d'octobre 2026 : position corrigée. Les coordonnées de la fiche FFVL 622 (45.2295 N, 6.6658 E) tombent à 2170 m sur le terrain IGN pour 2421 m déclarés. L'aire de décollage de l'Estive (POI IGN « Modane Valfrejus - Aire de Décollage l'Estive ») est à 45.2513 N, 6.6630 E, soit 2,4 km plus au nord, à 2426 m : l'altitude de la fiche (pente de 12°, exposée au sud-est). Le point chaud d'Orgère est donc 2,8 km au sud du décollage et non à 400 m.",
      "sources": [
       "S83"
      ],
-     "coord_quality": "source",
+     "coord_quality": "approx",
      "ffvl_id": 622
     },
     {
@@ -6469,6 +6751,33 @@
    "type": "web",
    "lang": "fr",
    "notes": "Site 2987 : décollage 1696 m orienté N, SO, O, NO, thermiques et soaring signalés ; accès à pied 5 minutes depuis le bout de la route."
+  },
+  {
+   "id": "S144",
+   "title": "Altitudes du terrain (RGE ALTI, IGN Géoplateforme)",
+   "url": "https://data.geopf.fr/altimetrie/1.0/calcul/alti/rest/elevation.json",
+   "publisher": "IGN / Géoplateforme",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Service d'altimétrie (RGE ALTI métrique) : altitude du terrain à la position des points ; exposition et pente lues sur une grille de 100 m autour du point."
+  },
+  {
+   "id": "S145",
+   "title": "CHVD : topo « Pied Moutet » (O. Linder, 25 octobre 2020)",
+   "url": "https://www.chvd.org/2020/10/25/pied-moutet/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Montée des Touches par la Faurie et le Rocher d'Avis au col de Mais (2058 m) : « possibilité d'y décoller en ouest et en est, direction Venosc » ; décollage du Pied Moutet à 2339 m."
+  },
+  {
+   "id": "S146",
+   "title": "CHVD : topo « La Scia de Vaujany » (O. Linder, 26 octobre 2020)",
+   "url": "https://www.chvd.org/2020/10/27/la-scia-de-vaujany/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Montée depuis la cheminée d'équilibre de Vaujany (1706 m) par la sente au sud-est ; plusieurs décollages en montant, dont un « officiel » à 15 minutes de la cheminée."
   }
  ]
 }

@@ -12,6 +12,7 @@ import { existsSync, readdirSync, readFileSync, writeFileSync, mkdirSync } from 
 import { join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import type { CuratedBreezeInput } from '@brises/model';
+import type { BreezeCondition } from '@brises/shared';
 import type { Atlas, AtlasFeature, AtlasFeatureProps, AtlasFigure, AtlasMassif, AtlasSource, FeatureCategory, ModelRule } from '@brises/shared';
 import { analyseTerrain, type Terrain } from '@brises/model';
 import { loadDem } from '@brises/model/node';
@@ -66,6 +67,8 @@ interface RawBreeze {
   speed_kmh?: { typical?: number | null; max?: number | null } | null;
   season?: string;
   layer_depth_m?: string | number | null;
+  /** Optional: condition under which the breeze exists ("canicule", "par vent de nord"…); "" = none. */
+  condition?: string | null;
   description?: string;
   confidence?: string;
   sources?: string[];
@@ -230,45 +233,241 @@ function confidence(c: string | undefined): 'high' | 'medium' | 'low' {
 
 /** Period words used in the sources, with the [start, end] legal-time window they imply. */
 const PERIODS: [RegExp, number, number][] = [
-  [/fin de nuit|début de matinée|petit matin/, 5, 9.5],
-  [/fin de matinée/, 11, 12],
-  [/début d.après-midi/, 13, 15],
-  [/milieu d.après-midi|mi-après-midi/, 14, 16.5],
-  [/fin d.après-midi/, 16, 19],
-  [/après-midi/, 12.5, 18.5],
-  [/mi-journée|(?<!après-)midi/, 12, 13],
-  [/fin de journée|soirée|\bsoir\b/, 17, 20.5],
-  [/matin|matinée/, 8, 11.5],
-  [/journée/, 11, 18.5],
+  [/fin de nuit|petit matin|lever du (?:jour|soleil)/g, 5, 9.5],
+  [/début de matinée/g, 7, 9.5],
+  [/fin de matinée/g, 11, 12],
+  [/début d.après-midi/g, 13, 15],
+  [/milieu d.après-midi|mi-après-midi|plein après-midi/g, 14, 16.5],
+  [/fin d.après-midi/g, 16, 19],
+  [/après-midi/g, 12.5, 18.5],
+  [/mi-journée|(?<!après-)midi/g, 12, 13],
+  [/mi-matinée|milieu de matinée|cours de matinée/g, 9.5, 11],
+  [/tombée de la nuit|coucher du soleil/g, 20, 21],
+  [/fin de journée|soirée|\bsoir\b|(?:très )?tard\b/g, 17, 20.5],
+  [/matin|matinée/g, 8, 11.5],
+  [/journée|\bde jour\b/g, 11, 18.5],
 ];
 
-/** Parse the free-text hours of a breeze into a legal-time window. */
+/** Hour token; not a duration ("2 h après", "3 h d'ensoleillement"). */
+const HOUR = String.raw`(\d{1,2})\s*h\s*(\d{2})?(?!\s*(?:après|avant|d.enso|de (?:soleil|vol)))`;
+/** Peak mentions ("maximum vers 14h-17h", "pic 15h", "forte de 14h à 17h") describe the peak, not the window. */
+const PEAK = new RegExp(String.raw`(?:maximum|max\.?|pic|meilleure?s?|(?:très )?forte?s?|soutenue)\s*(?:vers|à|de|entre|:)?\s*[~≈]?\s*${HOUR}(?:\s*(?:-|–|—|à|et)\s*${HOUR})?`, 'g');
+const RANGE = new RegExp(String.raw`${HOUR}\s*(?:-|–|—|à|->|→)\s*${HOUR}`, 'g');
+const ONSET_WORDS = String.raw`(?:dès|à partir d[eu]|levée|depuis|après|vers|début|s.établit|s.installe)`;
+const FROM = new RegExp(String.raw`${ONSET_WORDS}\s*[~≈]?\s*${HOUR}`, 'g');
+/** Onset given by a period word: "dès la fin de matinée", "à partir de midi". */
+const FROM_PERIOD = new RegExp(
+  String.raw`(?:dès|à partir d[eu]|depuis|se met en place|s.installe|en place)\s+(?:en |au )?(?:cours de |la |le |l.|vers )?(fin de matinée|mi-matinée|milieu de matinée|mi-journée|midi|matinée|matin|début d.après-midi|après-midi)`,
+);
+const PERIOD_ONSET: Record<string, number> = { 'fin de matinée': 11, 'mi-matinée': 10, 'milieu de matinée': 10, 'mi-journée': 12, midi: 12, matinée: 10, matin: 8, "début d'après-midi": 13, 'après-midi': 12.5 };
+/** Summer sunrise in the French Alps, legal time (05h45–05h50 at the solstice, rule `cycle-horaire-brise-vallee`). */
+const SUMMER_SUNRISE = 5.8;
+const LONE = new RegExp(String.raw`(?<![\d,.])${HOUR}(?![\d])`, 'g');
+
+/**
+ * Parse the free-text hours of a breeze into a legal-time window: the span of the
+ * explicit ranges, onsets ("dès 11h", "dès la fin de matinée"), lone hours and
+ * period words, ignoring peak mentions ("maximum vers 14h-17h"). The first clause
+ * (before ";") describes the breeze; later ones often describe something else (the
+ * evening reversal, the calm morning), so they are only read when the first one
+ * gives no window or describes a calm / descending phase. Night kinds cross
+ * midnight when the text speaks of the night.
+ */
 export function parseHours(text: string | undefined, kind: string): [number, number] | null {
-  let t = (text ?? '').toLowerCase().replace(/\s+/g, ' ');
-  const hm = (h: string, m?: string) => Number(h) + (m ? Number(m) / 60 : 0);
-  const range = t.match(/(\d{1,2})\s*h\s*(\d{2})?\s*(?:-|–|—|à|->|→)\s*(\d{1,2})\s*h\s*(\d{2})?/);
-  if (range) {
-    const a = hm(range[1], range[2]);
-    const b = hm(range[3], range[4]);
-    if (a >= 0 && a < 24 && b >= 0 && b <= 24) return [a, b];
-  }
-  const from = t.match(/(?:dès|à partir de|levée|depuis)\s*≈?\s*(\d{1,2})\s*h\s*(\d{2})?/);
-  if (from) return [hm(from[1], from[2]), 19];
-  if (kind === 'downvalley' || kind === 'katabatic' || /\bnuit\b|crépuscule/.test(t)) {
-    if (/fin de nuit/.test(t) && !/crépuscule/.test(t)) return [4, 9.5];
-    return [20.5, 9.5];
-  }
-  // Span of every period mentioned ("fin de matinée à fin d'après-midi" → 11h-19h).
-  let start = Infinity;
-  let end = -Infinity;
-  for (const [re, a, b] of PERIODS) {
-    if (re.test(t)) {
-      start = Math.min(start, a);
-      end = Math.max(end, b);
-      t = t.replace(re, ' ');
+  const full = (text ?? '').toLowerCase().replace(/\s+/g, ' ').replace(/’/g, "'");
+  const nightKind = kind === 'downvalley' || kind === 'katabatic';
+  // Clauses about another phase of the day (calm morning, evening reversal, a mere
+  // possibility) do not give the window of the breeze itself.
+  const other = nightKind ? /montant|ascendant|(?<!régime )calme|possible/ : /(?<!régime |brise )calme|descendant|redescend|catabatique|possible|pas de brise/;
+  if (full.includes(';')) {
+    for (const clause of full.split(';')) {
+      if (other.test(clause)) continue;
+      const w = parseClause(clause, kind);
+      if (w) return w;
     }
   }
-  return Number.isFinite(start) ? [start, end] : null;
+  return parseClause(full, kind);
+}
+
+function parseClause(text: string, kind: string): [number, number] | null {
+  let t = text;
+  const hm = (h: string, m?: string) => Number(h) + (m ? Number(m) / 60 : 0);
+  const ok = (h: number) => h >= 0 && h <= 24;
+  t = t.replace(PEAK, ' ');
+  let start = Infinity;
+  let end = -Infinity;
+  const take = (a: number, b: number) => {
+    start = Math.min(start, a);
+    end = Math.max(end, b);
+  };
+  let onset = Infinity;
+  // "3 h après le lever du soleil", "dès 3 h d'ensoleillement": onset counted from
+  // sunrise, ≈ 5h50 legal time in summer (rule `cycle-horaire-brise-vallee`).
+  for (const r of t.matchAll(/(\d{1,2})\s*h(?:eures?)?\s*(?:après le lever du (?:soleil|jour)|d.ensoleillement)/g)) {
+    onset = Math.min(onset, SUMMER_SUNRISE + Number(r[1]));
+    take(onset, onset);
+  }
+  t = t.replace(/(\d{1,2})\s*h(?:eures?)?\s*(?:après le lever du (?:soleil|jour)|d.ensoleillement)/g, ' ');
+  // Explicit ranges. One crossing midnight ("21h-09h") is a night window on its own.
+  let ranged = false;
+  for (const r of t.matchAll(RANGE)) {
+    const a = hm(r[1], r[2]);
+    const b = hm(r[3], r[4]);
+    if (!ok(a) || !ok(b)) continue;
+    // "dès 11h-12h", "levée 11h-13h": the onset happens within that range, the breeze goes on.
+    if (new RegExp(`${ONSET_WORDS}\\s*[~≈]?\\s*$`).test(t.slice(Math.max(0, (r.index ?? 0) - 16), r.index))) {
+      onset = Math.min(onset, a);
+      take(a, b);
+      continue;
+    }
+    if (b < a) return [a, b];
+    ranged = true;
+    take(a, b);
+  }
+  t = t.replace(RANGE, ' ');
+  for (const r of t.matchAll(FROM)) {
+    const a = hm(r[1], r[2]);
+    if (!ok(a)) continue;
+    onset = Math.min(onset, a);
+    take(a, a);
+  }
+  t = t.replace(FROM, ' ');
+  const fp = t.match(FROM_PERIOD);
+  if (fp) {
+    const a = PERIOD_ONSET[fp[1]] ?? 12;
+    onset = Math.min(onset, a);
+    take(a, a);
+  }
+  // Lone hours only when no explicit range is given ("7h-9h, avant les brises de 12h").
+  if (!ranged) {
+    for (const r of t.matchAll(LONE)) {
+      const a = hm(r[1], r[2]);
+      if (ok(a)) take(a, a);
+    }
+  }
+  const nightKind = kind === 'downvalley' || kind === 'katabatic';
+  const nightWord = /\bnuit|crépuscule|nocturne/.test(t.replace(/tombée de la nuit/g, ''));
+  const dayPeriod = /matin|midi|journée/.test(t);
+  if (!Number.isFinite(start) && (nightKind || (nightWord && !dayPeriod))) {
+    if (/fin de nuit/.test(t) && !/crépuscule/.test(t)) return [4, 9.5];
+    // Evening-only drainage ("fin de journée (soirée d'été)") keeps its evening window.
+    if (nightWord || /\bmatin/.test(t) || !/soir|fin de journée/.test(t)) return [20.5, 9.5];
+  }
+  // Span of every period mentioned ("fin de matinée à fin d'après-midi" → 11h-19h).
+  // An explicit range is more precise than the period words around it ("en journée,
+  // très forte l'après-midi (≈13h-19h)").
+  if (!ranged) {
+    for (const [re, a, b] of PERIODS) {
+      if (re.test(t)) {
+        take(a, b);
+        t = t.replace(re, ' ');
+      }
+      re.lastIndex = 0;
+    }
+    // A day breeze lasting "jusqu'à la nuit".
+    if (Number.isFinite(start) && nightWord && !nightKind) end = Math.max(end, 21);
+  }
+  if (!Number.isFinite(start)) return null;
+  if (Number.isFinite(onset)) start = onset;
+  // With an onset, early ranges are onset times elsewhere ("vers 11h à Moûtiers, 12h-13h à Bourg").
+  if (Number.isFinite(onset) && ranged && end < 14) ranged = false;
+  // An onset ("dès 12h") or a lone hour without an explicit end: breezes last until
+  // the evening decline (≈ 19h, RULES.valleySchedule).
+  if (end <= start || (Number.isFinite(onset) && !ranged)) end = Math.max(end, 19);
+  return [start, end];
+}
+
+// ---------- Conditional breezes ("seulement par canicule", "par Lombarde"...) ----------
+const DIRS: [RegExp, number][] = [
+  [/^(?:nord[- ]est|ne)$/i, 45],
+  [/^(?:nord[- ]ouest|no|nw)$/i, 315],
+  [/^(?:sud[- ]est|se)$/i, 135],
+  [/^(?:sud[- ]ouest|so|sw)$/i, 225],
+  [/^(?:nord|n)$/i, 0],
+  [/^(?:sud|s)$/i, 180],
+  [/^(?:est|e)$/i, 90],
+  [/^(?:ouest|o|w)$/i, 270],
+];
+const DIR_TOKEN = String.raw`(?:nord[- ]est|nord[- ]ouest|sud[- ]est|sud[- ]ouest|nord|sud|est|ouest|NE|NO|NW|SE|SO|SW|N|S|E|O|W)`;
+/** Named winds of the French Alps: direction they blow from (deg). */
+const NAMED_WINDS: [RegExp, number, string][] = [
+  [/lombarde/i, 90, 'Lombarde (flux d’est)'],
+  [/\bbise\b/i, 45, 'bise (nord-est)'],
+  [/mistral/i, 350, 'mistral (nord)'],
+  [/foehn|föhn/i, 180, 'foehn (flux de sud)'],
+];
+
+function dirDeg(token: string): number | null {
+  const parts = token.split(/[/–-](?=[A-Za-z])/).map((p) => p.trim());
+  const degs = parts.map((p) => DIRS.find(([re]) => re.test(p))?.[1]).filter((d): d is number => d !== undefined);
+  if (!degs.length) return null;
+  // Circular mean of "E/SE", "S–SE"...
+  const x = degs.reduce((a, d) => a + Math.sin((d * Math.PI) / 180), 0);
+  const y = degs.reduce((a, d) => a + Math.cos((d * Math.PI) / 180), 0);
+  return Math.round(((Math.atan2(x, y) * 180) / Math.PI + 360) % 360);
+}
+
+/** Synoptic wind cited by a text ("par vent de nord", "flux d'E/SE", "bise", "Lombarde"): direction it blows from and speed if given. */
+export function windFromText(text: string | undefined): { fromDeg: number; kmh: number | null; label: string; at: number } | null {
+  if (!text) return null;
+  const kmhM = text.match(/(\d{2,3})\s*km\/h/) ?? null;
+  const ndsM = text.match(/(\d{1,3})\s*(?:nds|nœuds|kt)/i);
+  const kmh = kmhM ? Number(kmhM[1]) : ndsM ? Math.round(Number(ndsM[1]) * 1.852) : null;
+  const dirRe = new RegExp(
+    String.raw`(?:vent|flux|situations?|régime)\s+(?:météo\s+|synoptique\s+|de\s+flux\s+)?(?:de\s+secteur\s+|de\s+|d['’]\s*)(${DIR_TOKEN}(?:\s*[/–-]\s*${DIR_TOKEN})*)(?![\w])`,
+    'i',
+  );
+  const m = text.match(dirRe);
+  if (m) {
+    const d = dirDeg(m[1].replace(/\s+/g, ''));
+    const tok = m[1].trim();
+    if (d !== null) return { fromDeg: d, kmh, label: `vent météo ${/^[eoEO]/.test(tok) ? 'd’' : 'de '}${tok}`, at: m.index ?? 0 };
+  }
+  let best: { fromDeg: number; kmh: number | null; label: string; at: number } | null = null;
+  for (const [re, deg, label] of NAMED_WINDS) {
+    const at = text.search(re);
+    if (at >= 0 && (!best || at < best.at)) best = { fromDeg: deg, kmh, label, at };
+  }
+  return best;
+}
+
+/** Words that make a condition a mere modulation ("renforcement par canicule", "plus tôt par vent de nord"). */
+const MODULATION = /surtout|aussi|parfois|plus tôt|plus tard|renforc|même|toute l.année|comme|souvent|y compris/i;
+
+/**
+ * Condition of a documented breeze: the explicit `condition` field of the research
+ * JSON when present (an empty string means "unconditional"), else keywords of its
+ * name and of the first clause of its hours. Descriptions are not scanned: they
+ * cite many winds as context, not as a condition.
+ */
+export function parseCondition(b: { name?: string; hours?: string; condition?: string | null }): BreezeCondition | null {
+  const explicit = typeof b.condition === 'string';
+  const texts = explicit
+    ? [b.condition!.trim()]
+    : [(b.name ?? '').replace(/\([^)]*\)/g, ' '), (b.hours ?? '').split(';')[0]];
+  if (explicit && !texts[0]) return null;
+  for (const raw of texts) {
+    const t = raw.toLowerCase();
+    if (!t.trim()) continue;
+    const heat = t.search(/fortes? chaleurs?|canicule/);
+    if (heat >= 0 && (explicit || !MODULATION.test(t.slice(0, heat)))) return { label: 'par forte chaleur (canicule)', regime: 'heatwave' };
+    const winter = t.search(/\ben hiver\b|hivernal|hivernaux|sous inversion/);
+    if (winter >= 0 && (explicit || (!MODULATION.test(t.slice(0, winter)) && !/nocturne|nuit/.test(t)))) return { label: 'en hiver, sous inversion', regime: 'winter' };
+    const w = windFromText(raw);
+    if (w) {
+      // Without an explicit field, a wind is a condition only when it heads the text:
+      // "Lombarde par le col…", "Flux d'est (…)", "épisodique (situations de flux d'E/SE)", "par vent de nord…".
+      const head = t.slice(0, w.at);
+      if (explicit || (w.at < 40 && !MODULATION.test(head) && !/brise|journée|après-midi|matin|soir|vers|inverse/.test(head))) {
+        // Below ~10 km/h the breezes are pure: a wind-driven flow needs at least that
+        // (model rule `seuils-synoptique-vs-brise`, S8).
+        const minKmh = w.kmh ?? 10;
+        return { label: `par ${w.label} (≥ ${minKmh} km/h)`, wind: { fromDeg: w.fromDeg, minKmh } };
+      }
+    }
+  }
+  // An explicit condition the model cannot evaluate: kept, never simulated.
+  return explicit ? { label: `si : ${texts[0]}` } : null;
 }
 
 const DEFAULT_SPEED: Record<string, number> = {
@@ -626,6 +825,8 @@ function main() {
         const id = uniqueId(`${mid}/${b.id}`);
         const coords = breezePath(terrain, b.kind, wps);
         const window = parseHours(b.hours, b.kind);
+        const condition = parseCondition(b);
+        if (condition && !condition.wind && !condition.regime) qa.push(`${mid}: brise « ${b.name} » : condition non interprétable par le modèle (« ${condition.label} »), jamais simulée`);
         const typical = b.speed_kmh?.typical ?? null;
         const speed = typical ?? (b.speed_kmh?.max ? b.speed_kmh.max * 0.6 : DEFAULT_SPEED[b.kind] ?? 12);
         const conf = confidence(b.confidence);
@@ -644,7 +845,11 @@ function main() {
           windowStart: window?.[0],
           windowEnd: window?.[1],
           speedKmh: Math.round(speed),
+          ...(condition
+            ? { condition: condition.label, ...(condition.wind ? { conditionWindFrom: condition.wind.fromDeg, conditionWindKmh: condition.wind.minKmh } : {}) }
+            : {}),
           details: {
+            ...(condition ? { Condition: `seulement ${condition.label}` } : {}),
             ...(b.hours ? { Horaires: b.hours } : {}),
             ...(b.speed_kmh && (b.speed_kmh.typical || b.speed_kmh.max)
               ? { Force: `${b.speed_kmh.typical ?? '?'} km/h typique${b.speed_kmh.max ? `, ${b.speed_kmh.max} km/h max` : ''}` }
@@ -662,6 +867,7 @@ function main() {
           kind: b.kind,
           speedMs: speed / 3.6,
           window,
+          ...(condition ? { condition } : {}),
           coords,
           radiusM: RADIUS[b.kind] ?? 1500,
           strength: conf === 'high' ? 1 : conf === 'medium' ? 0.85 : 0.55,

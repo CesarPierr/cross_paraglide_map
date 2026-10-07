@@ -57,7 +57,8 @@ vec3 speedRamp(float kmh) {
   if (kmh < 12.0) return mix(c1, c2, (kmh - 5.0) / 7.0);
   if (kmh < 22.0) return mix(c2, c3, (kmh - 12.0) / 10.0);
   if (kmh < 35.0) return mix(c3, c4, (kmh - 22.0) / 13.0);
-  return mix(c4, c5, clamp((kmh - 35.0) / 20.0, 0.0, 1.0));
+  // Legend (ui/Legend.tsx): 0, 5, 12, 22, 35, 50+ km/h — full pink at 50 km/h.
+  return mix(c4, c5, clamp((kmh - 35.0) / 15.0, 0.0, 1.0));
 }
 
 vec3 liftRamp(float w) {

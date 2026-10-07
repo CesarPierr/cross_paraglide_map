@@ -7,7 +7,7 @@
  * what makes the hour / wind / height sliders feel live.
  */
 import type { CellResult, CuratedBreezeInfo, ModelParams } from '@brises/model';
-import { curatedLayerKind, windowActivity } from '@brises/model';
+import { curatedActivity, curatedLayerKind, thermalDayFactor } from '@brises/model';
 import { windVector, type Grid } from '@brises/model';
 import { smoothstep } from '@brises/model';
 import { RULES } from '@brises/model';
@@ -22,6 +22,8 @@ export interface StaticPack {
   tW: Float32Array;
   tR: Float32Array;
   tC: Float32Array;
+  /** Conditional breezes (second curated layer). */
+  tC2: Float32Array;
   breezes: CuratedBreezeInfo[];
 }
 
@@ -31,6 +33,7 @@ export interface TimeState {
   valleyPhase: number;
   waterPhase: number;
   season: number;
+  thermalDay: number;
   night: boolean;
 }
 
@@ -60,13 +63,15 @@ export function timeState(grid: Grid, p: ModelParams): TimeState {
   const sun = sunPosition(utc, lat, lon);
   const solarHour = solarTime(utc, lon);
   const season = Math.min(1, Math.max(0.2, (noonElevation(p.month0, p.day, lat) - 18) / 48));
+  const valleyPhase = cycle(solarHour, RULES.valleySchedule, RULES.valleyNightRatio);
   return {
     sun,
     solarHour,
     season,
     night: sun.elevation < 3,
-    valleyPhase: cycle(solarHour, RULES.valleySchedule, RULES.valleyNightRatio),
+    valleyPhase,
     waterPhase: cycle(solarHour, RULES.waterSchedule, 0.25),
+    thermalDay: thermalDayFactor(p.month0, p.day, lat, solarHour, valleyPhase),
   };
 }
 
@@ -88,7 +93,7 @@ export class GpuWindEngine {
   params: ModelParams | null = null;
 
   private gl: WebGL2RenderingContext;
-  private tex: Record<'V' | 'W' | 'R' | 'C' | 'B' | 'insol' | 'probe' | 'hot' | 'sample', WebGLTexture> = {} as never;
+  private tex: Record<'V' | 'W' | 'R' | 'C' | 'C2' | 'B' | 'insol' | 'probe' | 'hot' | 'sample', WebGLTexture> = {} as never;
   private fbInsol!: WebGLFramebuffer;
   private fbField!: WebGLFramebuffer;
   private fbLift!: WebGLFramebuffer;
@@ -102,6 +107,8 @@ export class GpuWindEngine {
   private timeKey = '';
   private dirtyField = true;
   private dirtyTime = true;
+  private dirtyBreezes = true;
+  private breezeKey = '';
   private hotBlock = 6;
   private hotW: number;
   private hotH: number;
@@ -122,6 +129,7 @@ export class GpuWindEngine {
     this.tex.R = createTexture(gl, w, h, { ...half, data: pack.tR });
     // Curated breeze index must stay exact: 32-bit.
     this.tex.C = createTexture(gl, w, h, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: pack.tC });
+    this.tex.C2 = createTexture(gl, w, h, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: pack.tC2 });
     this.tex.B = createTexture(gl, Math.max(1, pack.breezes.length), 1, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: this.breezeData });
     this.tex.insol = createTexture(gl, w, h, { internal: gl.R16F, format: gl.RED, type: gl.FLOAT });
     this.fieldTex = createTexture(gl, w, h, { ...half, filter: lin });
@@ -155,11 +163,16 @@ export class GpuWindEngine {
       this.timeKey = key;
       this.time = timeState(this.grid, p);
       this.dirtyTime = true;
-      // Curated breeze activity depends on the hour.
+    }
+    // Curated breeze activity depends on the hour and, for conditional breezes, on
+    // the synoptic wind, the month and the heatwave option (field.ts → curatedActivity).
+    const breezeKey = `${key}-${p.synoptic.fromDeg}-${p.synoptic.speedKmh}-${p.heatwave ? 1 : 0}`;
+    if (breezeKey !== this.breezeKey) {
+      this.breezeKey = breezeKey;
       this.breezes.forEach((b, i) => {
-        const act = b.window ? windowActivity(p.hour, b.window) : Math.max(0, this.time!.valleyPhase);
-        this.breezeData.set([b.speedMs, act, curatedLayerKind(b.kind), 0], i * 4);
+        this.breezeData.set([b.speedMs, curatedActivity(b, p, this.time!.valleyPhase), curatedLayerKind(b.kind), 0], i * 4);
       });
+      this.dirtyBreezes = true;
     }
     this.params = p;
     this.dirtyField = true;
@@ -181,6 +194,7 @@ export class GpuWindEngine {
       ['tW', this.tex.W],
       ['tR', this.tex.R],
       ['tC', this.tex.C],
+      ['tC2', this.tex.C2],
       ['tB', this.tex.B],
       ['tInsol', this.tex.insol],
     ];
@@ -196,6 +210,7 @@ export class GpuWindEngine {
     gl.uniform1f(u.uSunElev, t.sun.elevation);
     gl.uniform1f(u.uSeason, t.season);
     gl.uniform1f(u.uValleyPhase, t.valleyPhase);
+    gl.uniform1f(u.uThermalDay, t.thermalDay);
     gl.uniform1f(u.uWaterPhase, t.waterPhase);
     gl.uniform2f(u.uG, g[0], g[1]);
     gl.uniform1f(u.uGSpeed, p.synoptic.speedKmh / 3.6);
@@ -225,9 +240,12 @@ export class GpuWindEngine {
     if (!this.params || !this.needsUpdate) return false;
     const gl = this.gl;
     const { width: w, height: h } = this.grid;
-    if (this.dirtyTime) {
+    if (this.dirtyBreezes) {
       gl.bindTexture(gl.TEXTURE_2D, this.tex.B);
       gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, Math.max(1, this.breezes.length), 1, gl.RGBA, gl.FLOAT, this.breezeData);
+      this.dirtyBreezes = false;
+    }
+    if (this.dirtyTime) {
       const { sun } = this.time!;
       const el = (sun.elevation * Math.PI) / 180;
       const az = (sun.azimuth * Math.PI) / 180;
@@ -281,9 +299,10 @@ export class GpuWindEngine {
     const { p, u } = this.progs.probe;
     gl.useProgram(p);
     this.bindModelUniforms(u);
-    gl.activeTexture(gl.TEXTURE7);
+    // After the 8 model textures (units 0–7, bindModelUniforms).
+    gl.activeTexture(gl.TEXTURE8);
     gl.bindTexture(gl.TEXTURE_2D, this.liftTex);
-    gl.uniform1i(u.tLift, 7);
+    gl.uniform1i(u.tLift, 8);
     gl.uniform2i(u.uCell, Math.floor(x), Math.floor(y));
     this.draw(this.fbProbe, 8, 1, 1);
     const out = new Float32Array(32);

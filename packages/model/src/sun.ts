@@ -57,6 +57,14 @@ export function solarTime(dateUtc: Date, lon: number): number {
   return (((h + lon / 15) % 24) + 24) % 24;
 }
 
+/** Local solar time of sunrise (decimal hours) on a flat horizon. */
+export function sunriseSolarHour(month0: number, day: number, lat: number): number {
+  const doy = Math.floor((Date.UTC(2026, month0, day) - Date.UTC(2026, 0, 0)) / 86400000);
+  const dec = 23.44 * Math.sin(((2 * Math.PI) / 365) * (doy - 81)) * RAD;
+  const cosH0 = Math.max(-1, Math.min(1, -Math.tan(lat * RAD) * Math.tan(dec)));
+  return 12 - Math.acos(cosH0) / RAD / 15;
+}
+
 /** Sun elevation at local solar noon (degrees), used as a seasonal intensity proxy. */
 export function noonElevation(month0: number, day: number, lat: number): number {
   const doy = Math.floor((Date.UTC(2026, month0, day) - Date.UTC(2026, 0, 0)) / 86400000);

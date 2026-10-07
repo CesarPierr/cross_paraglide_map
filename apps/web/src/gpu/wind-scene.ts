@@ -12,7 +12,7 @@
 import type { CustomLayerInterface, CustomRenderMethodInput, CustomTerrainRenderInput, Map as MlMap } from 'maplibre-gl';
 import type { CuratedBreezeInput } from '@brises/model';
 import type { ModelParams } from '@brises/model';
-import { windowActivity } from '@brises/model';
+import { conditionFactor, windowActivity } from '@brises/model';
 import type { Grid } from '@brises/model';
 import type { OverlayMode } from '../engine/cpu-overlays';
 import { smoothstep } from '@brises/model';
@@ -56,6 +56,7 @@ interface CometTrack {
   color: [number, number, number];
   speedMs: number;
   window: [number, number] | null;
+  condition: CuratedBreezeInput['condition'];
   strength: number;
   phases: number[];
 }
@@ -135,6 +136,7 @@ export class WindScene {
         color: hexToRgb(breezeColors[b.kind] ?? '#38bdf8'),
         speedMs: b.speedMs,
         window: b.window,
+        condition: b.condition ?? null,
         strength: b.strength,
         phases: Array.from({ length: n }, (_, i) => (i + Math.random() * 0.5) / n),
       };
@@ -208,7 +210,7 @@ export class WindScene {
     this.gl = gl;
     this.engine = new GpuWindEngine(gl, this.grid, this.pack);
     // The packed arrays now live on the GPU.
-    this.pack = { ...this.pack, tZ: new Float32Array(0), tV: new Float32Array(0), tW: new Float32Array(0), tR: new Float32Array(0), tC: new Float32Array(0) };
+    this.pack = { ...this.pack, tZ: new Float32Array(0), tV: new Float32Array(0), tW: new Float32Array(0), tR: new Float32Array(0), tC: new Float32Array(0), tC2: new Float32Array(0) };
     if (this.params) this.engine.setParams(this.params);
     this.hmapTex = createTexture(gl, this.hmapSize, this.hmapSize, { internal: gl.RGBA16F, format: gl.RGBA, type: gl.HALF_FLOAT, filter: gl.LINEAR });
     const mk = (vs: string, fs: string, label: string) => {
@@ -543,7 +545,9 @@ export class WindScene {
     let comets = 0;
     for (const tr of this.tracks) {
       if (tr.length < 2) continue;
-      const act = tr.window ? windowActivity(params.hour, tr.window) : windowActivity(params.hour, [11, 19]);
+      // Conditional breezes only stream when their condition holds (field.ts → curatedActivity).
+      const cond = tr.condition ? conditionFactor(tr.condition, params) : 1;
+      const act = cond * (tr.window ? windowActivity(params.hour, tr.window) : tr.condition?.wind ? 1 : windowActivity(params.hour, [11, 19]));
       if (act < 0.05) continue;
       active.push({ tr, act });
       comets += tr.phases.length;

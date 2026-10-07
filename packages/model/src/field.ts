@@ -5,12 +5,12 @@
  * at a chosen height. Pure functions over typed arrays: runs in a Web Worker
  * and in unit tests.
  */
-import type { CuratedBreezeInfo } from '@brises/shared';
+import type { BreezeCondition, CuratedBreezeInfo } from '@brises/shared';
 import { CuratedLayerKind, curatedLayerKind } from './curated';
 import { compassFr, windFromDeg, windVector } from './grid';
 import { clamp, smoothstep } from './raster';
 import { RULES } from './rules';
-import { legalTimeToUtc, noonElevation, solarTime, sunPosition, type SunPosition } from './sun';
+import { legalTimeToUtc, noonElevation, solarTime, sunPosition, sunriseSolarHour, type SunPosition } from './sun';
 import type { Terrain } from './terrain';
 
 export type { CuratedBreezeInfo };
@@ -26,10 +26,12 @@ export interface ModelParams {
   height: { mode: 'agl' | 'asl'; meters: number };
   /** User multiplier on thermal breezes (1 = model default). */
   breezeScale: number;
+  /** Heatwave day: enables the breezes documented "par forte chaleur / canicule" (default off). */
+  heatwave?: boolean;
 }
 
-/** A known breeze rasterised on the grid: dominant curated breeze per cell. */
-export interface CuratedLayer {
+/** Dominant curated breeze per cell, for one layer. */
+export interface CuratedRaster {
   /** Index into `breezes` or -1. */
   index: Int16Array;
   /** Influence 0..1. */
@@ -37,6 +39,16 @@ export interface CuratedLayer {
   /** Unit flow direction (east, north). */
   tx: Float32Array;
   ty: Float32Array;
+}
+
+/** Known breezes rasterised on the grid (see `rasterizeCurated`). */
+export interface CuratedLayer {
+  /** Regular valley-scale and regional breezes. */
+  main: CuratedRaster;
+  /** Conditional breezes, taking their corridor over when their condition holds. */
+  cond: CuratedRaster;
+  /** Slope and katabatic breezes: thin near-ground layer under the others. */
+  thin: CuratedRaster;
   breezes: CuratedBreezeInfo[];
 }
 
@@ -49,6 +61,8 @@ export interface TimeContext {
   valleyPhase: number;
   waterPhase: number;
   season: number;
+  /** 0..1 development of the thermals through the day (`thermalDayFactor`). */
+  thermalDay: number;
   /** Insolation 0..1 per cell including cast shadows. */
   insol: Float32Array;
 }
@@ -79,12 +93,58 @@ export function valleyProfile(zeta: number): number {
   return core - anti;
 }
 
+/**
+ * 0..1 development of the thermals through the day. Morning: nothing until
+ * RULES.thermalOnset[0] hours after sunrise, fully developed RULES.thermalOnset[1]
+ * hours after it (the per-cell insolation carries the exposure: east faces are lit
+ * first). Afternoon: follows the decline of the valley-wind cycle, down to half.
+ * Shared with the GPU (uThermalDay).
+ */
+export function thermalDayFactor(month0: number, day: number, lat: number, solarHour: number, valleyPhase: number): number {
+  const rise = sunriseSolarHour(month0, day, lat);
+  const [d0, d1] = RULES.thermalOnset;
+  if (solarHour < 13) return smoothstep(rise + d0, rise + d1, solarHour);
+  // Afternoon: thermals weaken with the decline of the valley-wind cycle, down to half.
+  return 0.5 + 0.5 * Math.max(0, valleyPhase);
+}
+
 /** Activity 0..1 of a curated breeze given its legal-time window, with 1 h ramps. */
 export function windowActivity(hour: number, w: [number, number]): number {
   const [a, b] = w;
   if (b > a) return smoothstep(a - 0.5, a + 0.75, hour) * (1 - smoothstep(b - 0.75, b + 0.5, hour));
   // Window across midnight (night / morning down-valley breezes).
   return Math.max(smoothstep(a - 0.5, a + 0.75, hour), 1 - smoothstep(b - 0.75, b + 0.5, hour));
+}
+
+/** Angle between two meteorological directions, 0..180°. */
+function angleDiff(a: number, b: number): number {
+  const d = Math.abs((((a - b) % 360) + 360) % 360);
+  return d > 180 ? 360 - d : d;
+}
+
+/** 0..1: how far the simulated situation meets the condition of a conditional breeze. */
+export function conditionFactor(c: BreezeCondition, p: ModelParams): number {
+  if (c.wind) {
+    const [s0, s1] = RULES.conditionSector;
+    const dir = 1 - smoothstep(s0, s1, angleDiff(p.synoptic.fromDeg, c.wind.fromDeg));
+    return dir * smoothstep(0.6 * c.wind.minKmh, c.wind.minKmh, p.synoptic.speedKmh);
+  }
+  if (c.regime === 'heatwave') return p.heatwave ? 1 : 0;
+  if (c.regime === 'winter') return RULES.winterMonths.includes(p.month0) ? 1 : 0;
+  // A condition the model cannot evaluate is never met.
+  return 0;
+}
+
+/**
+ * Activity 0..1 of a documented breeze: its hours (or the generic valley cycle),
+ * times its condition. A wind-driven conditional flow without hours (Lombarde)
+ * blows whenever its wind does. Shared by the CPU model and the GPU engine.
+ */
+export function curatedActivity(b: CuratedBreezeInfo, p: ModelParams, valleyPhase: number): number {
+  const f = b.condition ? conditionFactor(b.condition, p) : 1;
+  if (f <= 0) return 0;
+  const base = b.window ? windowActivity(p.hour, b.window) : b.condition?.wind ? 1 : Math.max(0, valleyPhase);
+  return base * f;
 }
 
 const SHADOW_STEPS = [1, 2, 3, 4, 6, 8, 11, 15, 20, 26, 34, 44, 56, 70];
@@ -139,13 +199,15 @@ export function computeTimeContext(t: Terrain, p: ModelParams): TimeContext {
       }
     }
   }
+  const valleyPhase = cycle(solarHour, RULES.valleySchedule, RULES.valleyNightRatio);
   return {
     sun,
     solarHour,
     night: sun.elevation < 0,
-    valleyPhase: cycle(solarHour, RULES.valleySchedule, RULES.valleyNightRatio),
+    valleyPhase,
     waterPhase: cycle(solarHour, RULES.waterSchedule, 0.25),
     season,
+    thermalDay: thermalDayFactor(p.month0, p.day, centerLat, solarHour, valleyPhase),
     insol,
   };
 }
@@ -235,7 +297,7 @@ export function makeWindContext(terrain: Terrain, time: TimeContext, params: Mod
   const activity = new Float32Array(curated?.breezes.length ?? 0);
   const kinds = new Uint8Array(curated?.breezes.length ?? 0);
   curated?.breezes.forEach((b, i) => {
-    activity[i] = b.window ? windowActivity(params.hour, b.window) : Math.max(0, time.valleyPhase);
+    activity[i] = curatedActivity(b, params, time.valleyPhase);
     kinds[i] = curatedLayerKind(b.kind);
   });
   return {
@@ -309,10 +371,16 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
 
   // --- Regional: plain → mountain, lake and sea breezes.
   const plainPhase = Math.max(c.time.valleyPhase, -0.2) * c.time.season;
-  const plainDecay = Math.exp(-hh / 900);
+  // In a valley channel the plain → mountain inflow and the sea or lake breeze are
+  // what feeds the valley wind (S4–S7, rule `aspiration-plaine-montagne`; the sea
+  // breeze "pousse contre les brises de vallée", S33): they are not added on top of
+  // it, which doubled the speed in coastal and foreland valleys (30–35 km/h with no
+  // synoptic wind), only kept outside the channels.
+  const outside = 1 - t.valley[k];
+  const plainDecay = Math.exp(-hh / 900) * outside;
   const wPhase = c.time.waterPhase * (c.time.waterPhase > 0 ? c.time.season : 1);
-  const lakeDecay = Math.exp(-hh / 250);
-  const seaDecay = Math.exp(-hh / 700);
+  const lakeDecay = Math.exp(-hh / 250) * outside;
+  const seaDecay = Math.exp(-hh / 700) * outside;
   out.regional[0] =
     (RULES.plainBreezeMax * plainPhase * plainDecay * t.plainX[k] +
       RULES.lakeBreezeMax * wPhase * lakeDecay * t.lakeX[k] +
@@ -324,15 +392,34 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
       RULES.seaBreezeMax * wPhase * seaDecay * t.seaY[k]) *
     scale;
 
-  // --- Curated local knowledge overrides the generic valley/regional flow.
+  // --- Curated local knowledge overrides the generic flow.
   let cw = 0;
   out.curatedIndex = -1;
   out.curated[0] = out.curated[1] = 0;
+  let thinW = 0;
+  let thinX = 0;
+  let thinY = 0;
+  let thinIdx = -1;
   if (c.curated) {
-    const idx = c.curated.index[k];
+    const cl = c.curated;
+    let idx = cl.main.index[k];
+    let wgt = cl.main.weight[k];
+    let tx = cl.main.tx[k];
+    let ty = cl.main.ty[k];
+    let act = idx >= 0 ? c.curatedActivity[idx] : 0;
+    // A conditional breeze takes its corridor over when its condition holds: the
+    // condition, not the corridor weight, says which of the two flows is there.
+    const ci = cl.cond.index[k];
+    const ca = ci >= 0 ? c.curatedActivity[ci] : 0;
+    if (ci >= 0 && cl.cond.weight[k] * ca > wgt * act * (1 - ca)) {
+      idx = ci;
+      wgt = cl.cond.weight[k];
+      tx = cl.cond.tx[k];
+      ty = cl.cond.ty[k];
+      act = c.curatedActivity[ci];
+    }
     if (idx >= 0) {
-      const b = c.curated.breezes[idx];
-      const act = c.curatedActivity[idx];
+      const b = cl.breezes[idx];
       const kind = c.curatedKind[idx];
       // hf: how much the documented breeze overrides the generic flow at this height;
       // vf: its speed relative to the documented (low-level) speed. The override must
@@ -340,16 +427,13 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
       // differs from the generic one (Grésivaudan: NE → SW towards Grenoble, against
       // the generic up-drainage direction), a weight fading faster than the generic
       // valley wind would make both cancel aloft. The height decay is therefore put
-      // on the speed, and the weight only fades for slope breezes (thin layer under
-      // the valley flow) and above the antiwind layer.
+      // on the speed, and the weight only fades above the antiwind layer.
       let hf = 1;
-      let vf = 1;
+      let vf: number;
       if (kind === CuratedLayerKind.Valley) {
         const [, , a2, a3] = RULES.valleyAntiwindZone;
         hf = 1 - smoothstep(a2, a3, level);
         vf = vProfile;
-      } else if (kind === CuratedLayerKind.Slope) {
-        hf = 1 - smoothstep(RULES.curatedSlopeLayer[0], RULES.curatedSlopeLayer[1], hh);
       } else {
         // Terrain-following ~1 km inflow; channelled in a valley it fills the valley
         // at least as the valley wind does (positive part of the profile).
@@ -357,31 +441,55 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
       }
       // An inactive documented breeze (outside its hours) says nothing about the flow
       // now: its override fades with its activity instead of imposing a calm.
-      cw = c.curated.weight[k] * hf * act;
+      cw = wgt * hf * act;
       const sp = b.speedMs * act * vf * scale;
-      out.curated[0] = c.curated.tx[k] * sp;
-      out.curated[1] = c.curated.ty[k] * sp;
+      out.curated[0] = tx * sp;
+      out.curated[1] = ty * sp;
       out.curatedIndex = idx;
       // The documented breeze tells which way the along-valley flow goes in its
-      // corridor. Where it contradicts the generic valley wind (whose sign only comes
-      // from the drainage), the generic one is turned to the documented sense, with a
-      // short transition at the corridor edge; otherwise the two cancel wherever the
-      // override weight is below 1, a calm hole that grows with height now that the
-      // valley wind reaches the crests.
-      if (kind !== CuratedLayerKind.Slope) {
-        const agree = (-t.axisX[k] * c.curated.tx[k] - t.axisY[k] * c.curated.ty[k]) * c.time.valleyPhase;
-        if (agree < 0) {
-          const flip = 1 - 2 * smoothstep(0, RULES.curatedAlignWeight, c.curated.weight[k] * act);
-          out.valley[0] *= flip;
-          out.valley[1] *= flip;
-        }
+      // corridor, and when. Where it contradicts the generic valley wind (whose sign
+      // only comes from the drainage), the generic one is turned to the documented
+      // sense, with a short transition at the corridor edge; otherwise the two cancel
+      // wherever the override weight is below 1. Where it agrees by day, its hours
+      // replace the generic valley-wind schedule (a breeze documented only in the late
+      // afternoon is not simulated at noon by the generic flow underneath).
+      const agree = (-t.axisX[k] * tx - t.axisY[k] * ty) * c.time.valleyPhase;
+      const corridor = smoothstep(0, RULES.curatedAlignWeight, wgt);
+      if (agree < 0) {
+        const flip = 1 - 2 * smoothstep(0, RULES.curatedAlignWeight, wgt * act);
+        out.valley[0] *= flip;
+        out.valley[1] *= flip;
+      } else if (c.time.valleyPhase > 0) {
+        const timing = 1 - corridor * (1 - act);
+        out.valley[0] *= timing;
+        out.valley[1] *= timing;
       }
     }
+    // Thin layer: a documented slope or katabatic breeze near the ground, under
+    // (and replacing there) the slope, valley and regional flows.
+    const ti = cl.thin.index[k];
+    if (ti >= 0) {
+      const tAct = c.curatedActivity[ti];
+      const [l0, l1] = c.curatedKind[ti] === CuratedLayerKind.Katabatic ? RULES.curatedKatabaticLayer : RULES.curatedSlopeLayer;
+      thinW = cl.thin.weight[k] * tAct * (1 - smoothstep(l0, l1, hh));
+      const sp = cl.breezes[ti].speedMs * tAct * scale;
+      thinX = cl.thin.tx[k] * sp;
+      thinY = cl.thin.ty[k] * sp;
+      thinIdx = ti;
+    }
+  }
+  const bx0 = out.slope[0] + (out.valley[0] + out.regional[0]) * (1 - cw) + out.curated[0] * cw;
+  const by0 = out.slope[1] + (out.valley[1] + out.regional[1]) * (1 - cw) + out.curated[1] * cw;
+  const bx = bx0 * (1 - thinW) + thinX * thinW;
+  const by = by0 * (1 - thinW) + thinY * thinW;
+  // The probe reports the documented breeze that matters most at this height.
+  if (thinW > cw) {
+    out.curated[0] = thinX;
+    out.curated[1] = thinY;
+    out.curatedIndex = thinIdx;
+    cw = thinW;
   }
   out.curatedWeight = cw;
-
-  const bx = out.slope[0] + (out.valley[0] + out.regional[0]) * (1 - cw) + out.curated[0] * cw;
-  const by = out.slope[1] + (out.valley[1] + out.regional[1]) * (1 - cw) + out.curated[1] * cw;
 
   // --- Synoptic wind and the relief.
   const z0 = z + hh;
@@ -452,7 +560,7 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   const elevF = 0.55 + 0.45 * smoothstep(400, 2200, z);
   const convexF = 0.55 + 0.45 * smoothstep(-60, 140, t.tpi[k]);
   const windF = 1 - 0.6 * smoothstep(20, 45, c.gKmh);
-  const dayF = Math.max(0, c.time.valleyPhase) * 0.5 + 0.5;
+  const dayF = c.time.thermalDay;
   out.thermal = t.water[k] ? 0 : day * clamp(insol * c.time.season * elevF * convexF * windF * dayF, 0, 1);
 
   out.turbulence = clamp(lee * smoothstep(8, 35, c.gKmh) + out.venturi * smoothstep(15, 45, c.gKmh) * 0.6, 0, 1);

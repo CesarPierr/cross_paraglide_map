@@ -46,6 +46,13 @@ export const RULES = {
    */
   curatedSlopeLayer: [100, 300] as [number, number],
   /**
+   * Same for documented katabatic flows: full up to 50 m, gone at 150 m. Downslope
+   * flows are 3–100 m thick with their maximum within 1–15 m of the ground (S3,
+   * rule `cycle-brise-pente`); the Taillefer–Charbon flow under the Annecy lake
+   * breeze is described as 50–100 m thick.
+   */
+  curatedKatabaticLayer: [50, 150] as [number, number],
+  /**
    * e-folding height (m above ground) of documented plain → mountain and regional
    * breezes: the inflow towards the Alps fills the lowest ~1 000 m and more in the
    * afternoon (Weissmann et al. 2005, S4; rule `aspiration-plaine-montagne`).
@@ -57,6 +64,19 @@ export const RULES = {
    * a linear transition (assumption: the outer part of the corridor, d ≳ 0.8 R).
    */
   curatedAlignWeight: 0.4,
+  /**
+   * Conditional breezes "par vent de X": full when the simulated synoptic wind is
+   * within ±45° of X (the sector named by the source, one octant each side), gone
+   * beyond ±70° (assumption). Speed: from 60 % to 100 % of the condition's minimum,
+   * itself 10 km/h by default (below, régime de brise pur: rule `seuils-synoptique-vs-brise`, S8).
+   */
+  conditionSector: [45, 70] as [number, number],
+  /**
+   * Months (0 = January) where "en hiver / sous inversion" breezes are simulated:
+   * November to February, the season of persistent inversions in the Grenoble
+   * valleys (Largeron & Staquet 2016, S37 of the research notes).
+   */
+  winterMonths: [10, 11, 0, 1],
   /** Plain → mountain inflow at the foreland, m/s. */
   plainBreezeMax: 2.5,
   /** Lake breeze near shore, m/s. */
@@ -75,6 +95,17 @@ export const RULES = {
   convergenceDepth: 700,
   /** Solar-time schedule of the valley-breeze cycle (hours): [reversal AM, full, decline, reversal PM]. */
   valleySchedule: [9.5, 13, 16.5, 19.5] as [number, number, number, number],
+  /**
+   * Thermal onset, hours after sunrise: none for the first 2.5 h, fully developed
+   * 4.5 h after sunrise (≈ 10h20 legal time in July); exposure comes from the per-cell
+   * insolation (east faces lit first). Saint-Hilaire east face (research sheet): "du
+   * lever du soleil à 2 h après : calme ; … dès 3 h d'ensoleillement : thermiques".
+   * Before, thermals reached half strength at sunrise; the explicit onsets of the
+   * documented spots ("dès 10h", "3 h après le lever du soleil") then came 2.25 h
+   * early in the model (median, 16/23 more than 1 h early); now 1.5 h, and the spots
+   * documented "le matin" still start in the morning (`npm run model:check`).
+   */
+  thermalOnset: [2.5, 4.5] as [number, number],
   /** Lake/sea breeze schedule (solar hours). */
   waterSchedule: [9, 11.5, 17, 19.5] as [number, number, number, number],
 };

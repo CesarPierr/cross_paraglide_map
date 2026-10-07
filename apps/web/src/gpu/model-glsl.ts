@@ -16,8 +16,9 @@ uniform highp sampler2D tZ;   // z, gx, gy, tpi
 uniform highp sampler2D tV;   // floor, env, axisX, axisY
 uniform highp sampler2D tW;   // valley, lakeX, lakeY, water
 uniform highp sampler2D tR;   // seaX, seaY, plainX, plainY
-uniform highp sampler2D tC;   // curated weight, tx, ty, index
-uniform highp sampler2D tB;   // per curated breeze: speedMs, activity, layer kind (0 deep, 1 valley, 2 slope), 0
+uniform highp sampler2D tC;   // curated layers main, cond: (index + weight, flow angle) × 2 (curated.ts → packCuratedLayers)
+uniform highp sampler2D tC2;  // curated thin layer (slope, katabatic): index + weight, flow angle
+uniform highp sampler2D tB;   // per curated breeze: speedMs, activity, layer kind (0 deep, 1 valley, 2 slope, 3 katabatic), 0
 uniform highp sampler2D tInsol;
 uniform ivec2 uGrid;
 uniform float uPy0;
@@ -27,6 +28,7 @@ uniform float uSunElev;
 uniform float uSeason;
 uniform float uValleyPhase;
 uniform float uWaterPhase;
+uniform float uThermalDay;   // field.ts → thermalDayFactor
 uniform vec2 uG;
 uniform float uGSpeed;
 uniform float uGKmh;
@@ -44,6 +46,7 @@ const float R_VALLEY_TOP = ${f(RULES.valleyProfile[1])};
 const float R_ANTI = ${f(RULES.valleyAntiwind)};
 const vec4 R_ANTI_ZONE = vec4(${RULES.valleyAntiwindZone.map(f).join(', ')});
 const vec2 R_CUR_SLOPE = vec2(${RULES.curatedSlopeLayer.map(f).join(', ')});
+const vec2 R_CUR_KATA = vec2(${RULES.curatedKatabaticLayer.map(f).join(', ')});
 const float R_CUR_DEEP = ${f(RULES.curatedDeepDepth)};
 const float R_CUR_ALIGN = ${f(RULES.curatedAlignWeight)};
 const float R_PLAIN_MAX = ${f(RULES.plainBreezeMax)};
@@ -72,6 +75,16 @@ bool inside(ivec2 p) { return p.x >= 0 && p.y >= 0 && p.x < uGrid.x && p.y < uGr
 
 ivec2 stepCell(ivec2 c, vec2 dir, float d) { return ivec2(floor(vec2(c) + dir * d + 0.5)); }
 
+// Packed curated layer (index + weight, angle) → index, weight, unit direction.
+struct Cur { int idx; float w; vec2 t; };
+Cur unpackCur(vec2 v) {
+  Cur r;
+  r.idx = v.x < 0.0 ? -1 : int(floor(v.x));
+  r.w = v.x < 0.0 ? 0.0 : fract(v.x);
+  r.t = vec2(cos(v.y), sin(v.y));
+  return r;
+}
+
 // Along-valley wind vs height (field.ts → valleyProfile).
 float valleyProfile(float zeta) {
   float core = 1.0 - smoothstep(R_VALLEY_JET, R_VALLEY_TOP, zeta);
@@ -86,6 +99,7 @@ Cell evalCell(ivec2 c) {
   vec4 W = texelFetch(tW, c, 0);
   vec4 R = texelFetch(tR, c, 0);
   vec4 CU = texelFetch(tC, c, 0);
+  vec4 CT = texelFetch(tC2, c, 0);
   float z = Z.x;
   float h = uHeightMode < 0.5 ? uHeightM : uHeightM - z;
   o.elev = z;
@@ -117,36 +131,52 @@ Cell evalCell(ivec2 c) {
   // Plain, lake and sea breezes.
   float plainPhase = max(uValleyPhase, -0.2) * uSeason;
   float wPhase = uWaterPhase * (uWaterPhase > 0.0 ? uSeason : 1.0);
+  // Not added to the valley wind inside valley channels (field.ts).
   o.regional = (R_PLAIN_MAX * plainPhase * exp(-hh / 900.0) * R.zw
     + R_LAKE_MAX * wPhase * exp(-hh / 250.0) * W.yz
-    + R_SEA_MAX * wPhase * exp(-hh / 700.0) * R.xy) * uBreezeScale;
+    + R_SEA_MAX * wPhase * exp(-hh / 700.0) * R.xy) * (1.0 - W.x) * uBreezeScale;
 
-  // Curated breezes.
+  // Curated breezes (field.ts): main layer, or the conditional one when its condition holds.
   o.cw = 0.0;
   o.cidx = -1.0;
   o.curated = vec2(0.0);
-  if (CU.x > 0.0) {
-    int idx = int(CU.w + 0.5);
-    vec4 B = texelFetch(tB, ivec2(idx, 0), 0);
-    // hf: override weight, vf: speed factor with height (see field.ts).
+  Cur curM = unpackCur(CU.xy);
+  Cur curC = unpackCur(CU.zw);
+  float actM = curM.idx >= 0 ? texelFetch(tB, ivec2(curM.idx, 0), 0).y : 0.0;
+  float actC = curC.idx >= 0 ? texelFetch(tB, ivec2(curC.idx, 0), 0).y : 0.0;
+  if (curC.idx >= 0 && curC.w * actC > curM.w * actM * (1.0 - actC)) curM = curC;
+  if (curM.idx >= 0) {
+    vec4 B = texelFetch(tB, ivec2(curM.idx, 0), 0);
+    // hf: override weight, vf: speed factor with height.
     float hf = 1.0;
     float vf = max(exp(-hh / R_CUR_DEEP), vProfile);
-    if (B.z > 1.5) {
-      hf = 1.0 - smoothstep(R_CUR_SLOPE.x, R_CUR_SLOPE.y, hh);
-      vf = 1.0;
-    } else if (B.z > 0.5) {
+    if (B.z > 0.5) {
       hf = 1.0 - smoothstep(R_ANTI_ZONE.z, R_ANTI_ZONE.w, level);
       vf = vProfile;
     }
-    o.cw = CU.x * hf * B.y;
-    o.curated = CU.yz * B.x * B.y * vf * uBreezeScale;
-    o.cidx = float(idx);
-    // Generic valley wind turned to the documented sense (see field.ts).
-    if (B.z < 1.5 && dot(-V.zw, CU.yz) * uValleyPhase < 0.0) {
-      o.valley *= 1.0 - 2.0 * smoothstep(0.0, R_CUR_ALIGN, CU.x * B.y);
-    }
+    o.cw = curM.w * hf * B.y;
+    o.curated = curM.t * B.x * B.y * vf * uBreezeScale;
+    o.cidx = float(curM.idx);
+    // Generic valley wind turned to the documented sense, or following its hours.
+    float agree = dot(-V.zw, curM.t) * uValleyPhase;
+    if (agree < 0.0) o.valley *= 1.0 - 2.0 * smoothstep(0.0, R_CUR_ALIGN, curM.w * B.y);
+    else if (uValleyPhase > 0.0) o.valley *= 1.0 - smoothstep(0.0, R_CUR_ALIGN, curM.w) * (1.0 - B.y);
   }
   vec2 b = o.slope + (o.valley + o.regional) * (1.0 - o.cw) + o.curated * o.cw;
+  // Thin layer: documented slope / katabatic breeze near the ground.
+  Cur curT = unpackCur(CT.xy);
+  if (curT.idx >= 0) {
+    vec4 B = texelFetch(tB, ivec2(curT.idx, 0), 0);
+    vec2 lay = B.z > 2.5 ? R_CUR_KATA : R_CUR_SLOPE;
+    float tw = curT.w * B.y * (1.0 - smoothstep(lay.x, lay.y, hh));
+    vec2 tv = curT.t * B.x * B.y * uBreezeScale;
+    b = b * (1.0 - tw) + tv * tw;
+    if (tw > o.cw) {
+      o.curated = tv;
+      o.cidx = float(curT.idx);
+      o.cw = tw;
+    }
+  }
 
   // Synoptic wind: shelter (Winstral Sx) along the upwind direction.
   float z0 = z + hh;
@@ -192,7 +222,7 @@ Cell evalCell(ivec2 c) {
   float elevF = 0.55 + 0.45 * smoothstep(400.0, 2200.0, z);
   float convexF = 0.55 + 0.45 * smoothstep(-60.0, 140.0, Z.w);
   float windF = 1.0 - 0.6 * smoothstep(20.0, 45.0, uGKmh);
-  float dayF = max(0.0, uValleyPhase) * 0.5 + 0.5;
+  float dayF = uThermalDay;
   o.thermal = W.w > 0.5 ? 0.0 : day * clamp(insol * uSeason * elevF * convexF * windF * dayF, 0.0, 1.0);
   o.turb = clamp(o.lee * smoothstep(8.0, 35.0, uGKmh) + o.venturi * smoothstep(15.0, 45.0, uGKmh) * 0.6, 0.0, 1.0);
   return o;

@@ -1,5 +1,19 @@
 /** Types of the compiled research atlas (atlas.json / API), produced by scripts/build-data.ts. */
 
+/**
+ * Condition under which a documented breeze exists ("seulement par canicule",
+ * "par Lombarde"...). A conditional breeze stays in the atlas but only enters the
+ * simulation when its condition is met.
+ */
+export interface BreezeCondition {
+  /** Short French text completing "seulement si …" / "seulement par …". */
+  label: string;
+  /** Synoptic wind required: meteorological direction (deg, where it blows from) and minimum speed. */
+  wind?: { fromDeg: number; minKmh: number };
+  /** Thermal regime required: heatwave (simulation option), winter / persistent inversion (Nov–Feb). */
+  regime?: 'heatwave' | 'winter';
+}
+
 /** A documented breeze as the wind model consumes it. */
 export interface CuratedBreezeInfo {
   id: string;
@@ -8,6 +22,8 @@ export interface CuratedBreezeInfo {
   speedMs: number;
   /** Active window in legal time [start, end] (hours), null = follow the generic valley cycle. */
   window: [number, number] | null;
+  /** Only simulated when this condition holds (absent = regular breeze). */
+  condition?: BreezeCondition | null;
 }
 
 export interface CuratedBreezeInput extends CuratedBreezeInfo {
@@ -79,6 +95,11 @@ export interface AtlasFeatureProps {
   windowStart?: number;
   windowEnd?: number;
   speedKmh?: number;
+  /** Breezes: "seulement si …" text of a conditional breeze (see `BreezeCondition`). */
+  condition?: string;
+  /** Breezes: synoptic wind of a wind-conditional breeze (direction it blows from, deg; minimum speed, km/h). */
+  conditionWindFrom?: number;
+  conditionWindKmh?: number;
   /** Elevation check for points: DEM elevation minus declared altitude (m). */
   altDelta?: number;
 }

@@ -3,7 +3,7 @@
  * Web Worker running the wind model off the main thread.
  * Protocol: see `src/engine/model-client.ts`.
  */
-import { rasterizeCurated, type CuratedBreezeInput } from '@brises/model';
+import { packCuratedLayers, rasterizeCurated, type CuratedBreezeInput } from '@brises/model';
 import {
   computeField,
   computeTimeContext,
@@ -80,17 +80,15 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
       const t = analyseTerrain(grid, raw);
       const cur = rasterizeCurated(t, msg.breezes);
       const n = grid.size;
-      const index = new Float32Array(n);
-      for (let k = 0; k < n; k++) index[k] = cur.index[k];
       const pack = {
         tZ: pack4(n, t.z, t.gx, t.gy, t.tpi),
         tV: pack4(n, t.floor, t.env, t.axisX, t.axisY),
         tW: pack4(n, t.valley, t.lakeX, t.lakeY, t.water),
         tR: pack4(n, t.seaX, t.seaY, t.plainX, t.plainY),
-        tC: pack4(n, cur.weight, cur.tx, cur.ty, index),
+        ...packCuratedLayers(cur),
         breezes: cur.breezes,
       };
-      self.postMessage({ type: 'built', id: msg.id, pack, ms: performance.now() - t0 }, [pack.tZ.buffer, pack.tV.buffer, pack.tW.buffer, pack.tR.buffer, pack.tC.buffer]);
+      self.postMessage({ type: 'built', id: msg.id, pack, ms: performance.now() - t0 }, [pack.tZ.buffer, pack.tV.buffer, pack.tW.buffer, pack.tR.buffer, pack.tC.buffer, pack.tC2.buffer]);
     } else if (msg.type === 'init') {
       const t0 = performance.now();
       const raw = await decodeDem(msg.demUrl, msg.meta);

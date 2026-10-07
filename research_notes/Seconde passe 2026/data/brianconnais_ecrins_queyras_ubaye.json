@@ -41,13 +41,13 @@
        "coord_quality": "source"
       }
      ],
-     "hours": "dès la mi-matinée ; forte en début d'après-midi (été) ; faiblit vers 16h (été)",
+     "hours": "10h30-16h30 (été) : dès la mi-matinée, forte en début d'après-midi, faiblit vers 16h",
      "speed_kmh": {
-      "typical": 30,
+      "typical": 25,
       "max": 45
      },
      "season": "avril-octobre",
-     "description": "La Durance remonte toutes les Alpes du Sud sur un axe sud-ouest, ce qui en fait un « accélérateur à brise très puissant » : à Briançon elle fait des pointes à plus de 40 km/h (Chocard). Les fiches FFVL du Petit Aréa et des Tronchets parlent de la « brise de la Durance montant de Briançon en milieu/fin de matinée » et recommandent d'éviter les décos l'après-midi de fin de printemps à fin d'été (brise forte à très forte) ; aux atterros de Saint-Chaffrey et de Saint-Blaise les brises dépassent parfois 40 km/h et rentrent assez tôt. Les tendances S à O la renforcent et la font entrer tôt et brusquement. La brise ne dépasse pas la zone de confluence (Saint-Chaffrey → Le Monêtier selon l'heure). Vitesse typique = interprétation de « forte ».",
+     "description": "La Durance remonte toutes les Alpes du Sud sur un axe sud-ouest, ce qui en fait un « accélérateur à brise très puissant » : à Briançon elle fait des pointes à plus de 40 km/h (Chocard). Les fiches FFVL du Petit Aréa et des Tronchets parlent de la « brise de la Durance montant de Briançon en milieu/fin de matinée » et recommandent d'éviter les décos l'après-midi de fin de printemps à fin d'été (brise forte à très forte) ; aux atterros de Saint-Chaffrey et de Saint-Blaise les brises dépassent parfois 40 km/h et rentrent assez tôt. Les tendances S à O la renforcent et la font entrer tôt et brusquement. La brise ne dépasse pas la zone de confluence (Saint-Chaffrey → Le Monêtier selon l'heure). Vitesse typique = interprétation de « forte ». (Vitesse typique ramenée à 25 km/h sur le couloir, seconde passe : les sources donnent des pointes à plus de 40 km/h à Briançon.)",
      "confidence": "high",
      "sources": [
       "MS13",
@@ -95,13 +95,13 @@
        "coord_quality": "source"
       }
      ],
-     "hours": "matin (descente vers Saint-Chaffrey avant la brise de Durance) ; inversion de la Guisane vers 16h (été) ; reprise brusque en fin de journée",
+     "hours": "8h-10h30 (été) : le matin, avant l'arrivée de la brise de Durance",
      "speed_kmh": {
       "typical": null,
       "max": null
      },
      "season": "mai-septembre (tendances NO : toute l'année)",
-     "description": "La vallée de la Romanche, longue et étroite, produit une brise puissante qui passe le col du Lautaret et dévale la Guisane ; le matin on l'observe souvent descendre vers Saint-Chaffrey avant que n'entre la brise de Durance (Chocard). Selon le forum de 2009, vers 16 h en été la brise de la Guisane faiblit puis vient du haut de la vallée ; la limite de l'inversion est souvent entre Le Monêtier/Le Casset et Saint-Chaffrey, un peu au sud de l'atterro. En fin de journée, quand la brise de Durance faiblit, la Romanche reprend brusquement le dessus, surtout par tendance NO. Aucune vitesse documentée (pas de chiffre dans les sources).",
+     "description": "La vallée de la Romanche, longue et étroite, produit une brise puissante qui passe le col du Lautaret et dévale la Guisane ; le matin on l'observe souvent descendre vers Saint-Chaffrey avant que n'entre la brise de Durance (Chocard). Selon le forum de 2009, vers 16 h en été la brise de la Guisane faiblit puis vient du haut de la vallée ; la limite de l'inversion est souvent entre Le Monêtier/Le Casset et Saint-Chaffrey, un peu au sud de l'atterro. En fin de journée, quand la brise de Durance faiblit, la Romanche reprend brusquement le dessus, surtout par tendance NO. Aucune vitesse documentée (pas de chiffre dans les sources). La reprise de fin de journée (après l'inversion de 16h) n'est pas simulée séparément.",
      "confidence": "high",
      "sources": [
       "S5",
@@ -1515,11 +1515,11 @@
      ],
      "hours": "dès la mi-matinée (alimente Serre Buzard très vite) ; forte dès la fin de matinée en été ; tard le soir en automne anticyclonique",
      "speed_kmh": {
-      "typical": 30,
+      "typical": 25,
       "max": 45
      },
      "season": "avril-octobre",
-     "description": "La Durance remonte les Alpes du Sud depuis les Bouches-du-Rhône sur un axe SW et fait des pointes à plus de 40 km/h à Briançon ; elle se fait sentir jusqu'aux Têtes de L'Argentière (2044 m) et aux Crêtes de Peyrolles (2645 m) et oblige à éviter les fonds de vallée dès la mi-journée l'été (Chocard). Serre Buzard est « très rapidement alimenté par la brise de la Durance » (FFVL) et l'atterro des Chamousses reçoit une brise faible à modérée venant d'Embrun. Selon les fiches de 2009, les brises sont souvent fortes même en automne dans des situations très anticycloniques (double canalisation entre les flancs et une couche d'inversion). Sur le vol d'avril 2010 de Briançon à Embrun, 40 km/h de brise à l'arrivée à Embrun et 20 km/h à 2100 m près de Risoul. Les tendances S à O la renforcent. Vitesse typique = interprétation.",
+     "description": "La Durance remonte les Alpes du Sud depuis les Bouches-du-Rhône sur un axe SW et fait des pointes à plus de 40 km/h à Briançon ; elle se fait sentir jusqu'aux Têtes de L'Argentière (2044 m) et aux Crêtes de Peyrolles (2645 m) et oblige à éviter les fonds de vallée dès la mi-journée l'été (Chocard). Serre Buzard est « très rapidement alimenté par la brise de la Durance » (FFVL) et l'atterro des Chamousses reçoit une brise faible à modérée venant d'Embrun. Selon les fiches de 2009, les brises sont souvent fortes même en automne dans des situations très anticycloniques (double canalisation entre les flancs et une couche d'inversion). Sur le vol d'avril 2010 de Briançon à Embrun, 40 km/h de brise à l'arrivée à Embrun et 20 km/h à 2100 m près de Risoul. Les tendances S à O la renforcent. Vitesse typique = interprétation. (Vitesse typique ramenée à 25 km/h sur le couloir, seconde passe : les valeurs plus fortes citées sont des pointes locales.)",
      "confidence": "high",
      "sources": [
       "MS13",
@@ -1643,13 +1643,13 @@
        "coord_quality": "source"
       }
      ],
-     "hours": "soir (sommets enneigés et vallées à l'ombre), automne-hiver (catabatique) ; aussi par vent météo d'O",
+     "hours": "19h30-9h (été, le soir et la nuit) ; automne-hiver aussi en journée",
      "speed_kmh": {
       "typical": 20,
       "max": 30
      },
      "season": "toute l'année",
-     "description": "Paraglidream signale une forte brise descendante le soir ; Chocard décrit la brise descendante (« souvent le cas quand le vent météo O est présent », ou catabatique à l'automne et en hiver, de la vallée d'Entraygues vers l'entrée de la vallée) et le catabatique qui descend des Bans en automne (bonnes conditions de gonflage). Forum de 2008 : quand les sommets sont enneigés et les vallées à l'ombre, les deux brises descendantes des Bans et d'Ailefroide créent une petite confluence à l'est de Puy Aillaud. Les sources disent seulement « forte » : 20/30 km/h est une interprétation.",
+     "description": "Paraglidream signale une forte brise descendante le soir ; Chocard décrit la brise descendante (« souvent le cas quand le vent météo O est présent », ou catabatique à l'automne et en hiver, de la vallée d'Entraygues vers l'entrée de la vallée) et le catabatique qui descend des Bans en automne (bonnes conditions de gonflage). Forum de 2008 : quand les sommets sont enneigés et les vallées à l'ombre, les deux brises descendantes des Bans et d'Ailefroide créent une petite confluence à l'est de Puy Aillaud. Les sources disent seulement « forte » : 20/30 km/h est une interprétation. (Horaires précisés, seconde passe : « le soir » placé après 19h30, quand la brise montante de la Gyronde est tombée.)",
      "confidence": "medium",
      "sources": [
       "MS16",
@@ -4529,12 +4529,6 @@
      "kind": "valley",
      "waypoints": [
       {
-       "name": "Château-Ville-Vieille",
-       "lon": 6.7917,
-       "lat": 44.7575,
-       "coord_quality": "source"
-      },
-      {
        "name": "Arvieux",
        "lon": 6.7397,
        "lat": 44.7672,
@@ -4559,7 +4553,7 @@
       "max": null
      },
      "season": "mai-octobre",
-     "description": "Chocard (Izoard) : « la brise est souvent très soutenue à partir de midi voire plus tôt et peut rester forte tard même tard dans la saison » au niveau de l'atterro d'Arvieux ; avec un vent météo d'O la brise de la Durance peut dégouliner par le vallon des chalets de Clapeyto et rendre la masse d'air turbulente. De par son altitude et son exposition, la brise de pente ne prend pas le dessus au col : décollage vent arrière par tendance O à N. Sens montant déduit ; pas de vitesse.",
+     "description": "Chocard (Izoard) : « la brise est souvent très soutenue à partir de midi voire plus tôt et peut rester forte tard même tard dans la saison » au niveau de l'atterro d'Arvieux ; avec un vent météo d'O la brise de la Durance peut dégouliner par le vallon des chalets de Clapeyto et rendre la masse d'air turbulente. De par son altitude et son exposition, la brise de pente ne prend pas le dessus au col : décollage vent arrière par tendance O à N. Sens montant déduit ; pas de vitesse. (Tracé commencé à Arvieux, seconde passe : partant de Château-Ville-Vieille, il redescendait d'abord le Guil à contresens de sa brise.)",
      "confidence": "medium",
      "sources": [
       "S27",
@@ -5318,7 +5312,8 @@
      "sources": [
       "S80",
       "S78"
-     ]
+     ],
+     "condition": "vent météo d'E ou de SE"
     }
    ],
    "convergences": [],

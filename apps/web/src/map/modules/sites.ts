@@ -38,7 +38,7 @@ export class SitesModule implements MapModule {
           id: `sites-${kind}`,
           type: 'symbol',
           source: 'ext-sites',
-          minzoom: 8,
+          minzoom: 9.5,
           filter: ['all', ['==', ['get', 'kind'], kind === 'takeoff' ? 'takeoff' : 'landing'], ['!', ['get', 'dup']]],
           layout: {
             'icon-image': ['case', official, kind, `${kind}-community`],

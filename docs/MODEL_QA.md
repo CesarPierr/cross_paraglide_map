@@ -1,6 +1,6 @@
 # Contrôle du modèle de vent contre l’atlas
 
-Généré par `npm run model:check` le 2026-10-07 sur `apps/web/public/data/atlas.json` (atlas du 2026-10-07), modèle TypeScript de référence (`packages/model`) sur le MNT réel. Durée : 6,5 s.
+Généré par `npm run model:check` le 2026-10-07 sur `apps/web/public/data/atlas.json` (atlas du 2026-10-07), modèle TypeScript de référence (`packages/model`) sur le MNT réel. Durée : 6,6 s.
 
 ## Critères
 
@@ -13,29 +13,30 @@ Généré par `npm run model:check` le 2026-10-07 sur `apps/web/public/data/atla
 
 | Catégorie | Réussis | Testés | Taux | Non testables |
 | --- | --- | --- | --- | --- |
-| brises | 238 | 257 | 93 % | 1 |
-| convergences | 60 | 70 | 86 % | 9 |
-| thermiques | 367 | 443 | 83 % | 0 |
+| brises | 238 | 256 | 93 % | 2 |
+| convergences | 59 | 70 | 84 % | 9 |
+| thermiques | 370 | 446 | 83 % | 0 |
 | pièges | 108 | 151 | 72 % | 44 |
-| **total** | **773** | **921** | **84 %** | 54 |
+| **total** | **775** | **923** | **84 %** | 55 |
 
 Contrôles élémentaires des brises :
 
 | Contrôle | Réussis | Testés | Taux |
 | --- | --- | --- | --- |
-| hors condition | 10 | 10 | 100 % |
-| hors horaires | 230 | 236 | 97 % |
-| sens, 30 % couche | 237 | 246 | 96 % |
+| condition | 0 | 1 | 0 % |
+| hors condition | 11 | 11 | 100 % |
+| hors horaires | 228 | 234 | 97 % |
+| sens, 30 % couche | 238 | 245 | 97 % |
 | sens, 30 % de l’altitude atteinte | 10 | 10 | 100 % |
-| sens, 60 % couche | 238 | 247 | 96 % |
+| sens, 60 % couche | 239 | 246 | 97 % |
 | sens, 60 % de l’altitude atteinte | 9 | 10 | 90 % |
-| sens, sol | 248 | 257 | 96 % |
+| sens, sol | 249 | 256 | 97 % |
 | tracé | 0 | 1 | 0 % |
-| vitesse, 30 % couche | 114 | 116 | 98 % |
+| vitesse, 30 % couche | 113 | 115 | 98 % |
 | vitesse, 30 % de l’altitude atteinte | 10 | 10 | 100 % |
-| vitesse, 60 % couche | 115 | 116 | 99 % |
+| vitesse, 60 % couche | 114 | 115 | 99 % |
 | vitesse, 60 % de l’altitude atteinte | 9 | 10 | 90 % |
-| vitesse, sol | 124 | 126 | 98 % |
+| vitesse, sol | 123 | 125 | 98 % |
 
 Calendrier : déclenchement des thermiques au début explicite (« dès 10h », « à partir de midi », « 3 h après le lever du soleil ») : écart médian modèle − fiche -1,50 h sur 53 sites (34 trop tôt, 8 trop tard). Les heures « après-midi » ou « 12h-17h » des fiches de thermiques décrivent souvent la meilleure période plutôt que le déclenchement : seuls les débuts explicites mesurent un décalage systématique.
 
@@ -43,9 +44,9 @@ Calendrier : déclenchement des thermiques au début explicite (« dès 10h », 
 
 | Secteur | Brises | Convergences | Thermiques | Pièges | Total |
 | --- | --- | --- | --- | --- | --- |
-| Alpes françaises | 26/26 | 13/13 | – | 6/6 | 45/45 |
+| Alpes françaises | 25/25 | 13/13 | – | 6/6 | 44/44 |
 | Aravis | 6/7 | 2/2 | 16/17 | 1/3 | 25/29 |
-| Arves – Galibier | 3/3 | – | 3/5 | – | 6/8 |
+| Arves – Galibier | 2/3 | – | 3/5 | – | 5/8 |
 | Baronnies | 4/4 | – | 4/8 | 2/4 | 10/16 |
 | Bauges | 8/8 | 4/5 | 14/14 | 2/2 | 28/29 |
 | Beaufortain | 3/4 | 1/2 | 9/9 | 1/3 | 14/18 |
@@ -66,8 +67,8 @@ Calendrier : déclenchement des thermiques au début explicite (« dès 10h », 
 | Faucigny – Arve | 6/7 | – | 8/10 | 6/7 | 20/24 |
 | Gapençais – Céüse | 4/4 | 1/1 | 6/7 | 2/2 | 13/14 |
 | Giffre | 3/4 | – | 10/10 | 1/4 | 14/18 |
-| Grésivaudan | 5/5 | 3/3 | – | 1/2 | 9/10 |
-| Haut-Verdon | 1/1 | 2/2 | 15/16 | – | 18/19 |
+| Grésivaudan | 5/5 | 2/3 | – | 1/2 | 8/10 |
+| Haut-Verdon | 1/1 | 2/2 | 17/18 | – | 20/21 |
 | Haute-Maurienne | 4/4 | – | 3/5 | 3/3 | 10/12 |
 | Lac d’Annecy | 9/10 | 5/6 | 17/17 | 2/3 | 33/36 |
 | Matheysine – Drac | 2/3 | – | 1/1 | 3/5 | 6/9 |
@@ -78,12 +79,12 @@ Calendrier : déclenchement des thermiques au début explicite (« dès 10h », 
 | Préalpes de Grasse | 3/3 | 3/4 | 13/13 | 2/4 | 21/24 |
 | Préalpes de Nice | 5/5 | 1/1 | 8/10 | 0/2 | 14/18 |
 | Queyras | 7/7 | 0/1 | 1/2 | 1/1 | 9/11 |
-| Saint-André | 3/4 | 1/1 | 10/11 | 1/2 | 15/18 |
+| Saint-André | 3/4 | 1/1 | 11/12 | 1/2 | 16/19 |
 | Salève | 2/2 | – | 4/5 | 1/1 | 7/8 |
 | Serre-Ponçon | 2/3 | – | 10/14 | 5/5 | 17/22 |
-| Tarentaise | 6/7 | 3/4 | 10/14 | 5/5 | 24/30 |
+| Tarentaise | 7/7 | 3/4 | 10/14 | 5/5 | 25/30 |
 | Trièves | 2/2 | – | 7/9 | 1/2 | 10/13 |
-| Ubaye | 2/3 | – | 4/4 | 3/3 | 9/10 |
+| Ubaye | 3/3 | – | 4/4 | 3/3 | 10/10 |
 | Val Montjoie | 2/2 | 2/2 | 4/5 | 1/1 | 9/10 |
 | Vallouise – haute Durance | 6/7 | 1/2 | 9/14 | 5/6 | 21/29 |
 | Vanoise | 4/4 | – | 4/6 | 3/3 | 11/13 |
@@ -96,12 +97,12 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 
 | Catégorie | modèle | donnée | limite |
 | --- | --- | --- | --- |
-| brises | 5 | 8 | 6 |
-| convergences | 1 | 9 | 0 |
+| brises | 5 | 7 | 6 |
+| convergences | 1 | 10 | 0 |
 | thermiques | 42 | 0 | 34 |
 | pièges | 0 | 0 | 43 |
 
-### Brises (19)
+### Brises (18)
 
 - **Brise montante de la basse vallée de l'Arve (Annemasse → Bonneville → Marignier → Cluses) (vallée)** — `arve-faucigny/arve-basse-vallee-montante`, Faucigny – Arve · *modèle* · juillet 16h15, sans vent météo · couches : altitude atteinte documentée 2500 m
   - sens, 60 % de l’altitude atteinte : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 50 % (cos médian 0,71)
@@ -120,11 +121,6 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 - **Brise de vallée remontant le vallon de Roselend et soleil sur les parois NO (vol du soir) (pente)** — `beaufortain/brise-pente-roselend-soir`, Beaufortain · *limite* · juillet 18h45, sans vent météo · couches : brise de pente 100–200 m (S1, règle cycle-brise-pente)
   - hors horaires (14h30) : attendu composante < 2 km/h ; obtenu 4 km/h (6 km/h avec l’écoulement nocturne et les autres brises documentées)
   - cause probable : hors horaires : composante dans le sens du tracé hors horaires : pente 2 km/h, vallée générique 2 km/h, plaine/lac/mer 0 km/h, vent météo 0 km/h (brise documentée active à 0 %)
-- **Flux descendant des Chapieux, renforcé par la brise de Beaufort (Roselend → Les Chapieux → Bourg-Saint-Maurice) (descendante)** — `tarentaise/brise-chapieux-roselend`, Tarentaise · *modèle* · juillet 3h00, sans vent météo · couches : profondeur locale de la vallée (crêtes − fond)
-  - sens, sol (50 m) : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 58 % (cos médian 0,91)
-  - sens, 30 % profondeur : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 58 % (cos médian 0,96)
-  - sens, 60 % profondeur : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 58 % (cos médian 0,96)
-  - cause probable : sol (50 m) : flux générique opposé (vallée générique -1 km/h le long du tracé) malgré la brise documentée (poids 0,50) ; 30 % profondeur : flux générique opposé (vallée générique -1 km/h le long du tracé) malgré la brise documentée (poids 0,50) ; 60 % profondeur : flux générique opposé (vallée générique -0 km/h le long du tracé) malgré la brise documentée (poids 0,50)
 - **Restitution du soir d'Aiguebelette (pentes au-dessus du lac) (pente)** — `bourget-chambery/restitution-aiguebelette`, Bourget – Chambéry · *limite* · juillet 19h30, sans vent météo · couches : brise de pente 100–200 m (S1, règle cycle-brise-pente)
   - hors horaires (15h30) : attendu composante < 2 km/h ; obtenu 5 km/h (13 km/h avec l’écoulement nocturne et les autres brises documentées)
   - cause probable : hors horaires : composante dans le sens du tracé hors horaires : pente 2 km/h, vallée générique 2 km/h, plaine/lac/mer -0 km/h, vent météo 0 km/h (brise documentée active à 0 %)
@@ -150,29 +146,26 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
   - vitesse, sol (50 m) : attendu 12–37 km/h (doc. 23 km/h) ; obtenu 10 km/h
   - vitesse, 30 % couche (300 m sol) : attendu 12–37 km/h (doc. 23 km/h) ; obtenu 10 km/h
   - cause probable : sol (50 m) : cellules attribuées à une autre brise documentée : matheysine/drac-matheysine-champsaur (poids propre moyen 0,07) ; 30 % couche (300 m sol) : cellules attribuées à une autre brise documentée : matheysine/drac-matheysine-champsaur (poids propre moyen 0,07)
+- **Thermique de la station de Valmeinier (brise de pente et thermique à l'atterrissage) (pente)** — `arves-thabor-galibier/valmeinier-thermique-station`, Arves – Galibier · *modèle* · juillet 15h30, sans vent météo · couches : brise de pente 100–200 m (S1, règle cycle-brise-pente)
+  - sens, sol (50 m) : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 44 % (cos médian 0,42)
+  - sens, 30 % couche (60 m sol) : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 44 % (cos médian 0,45)
+  - sens, 60 % couche (120 m sol) : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 56 % (cos médian 0,52)
+  - cause probable : sol (50 m) : flux générique opposé (vallée générique -1 km/h le long du tracé) malgré la brise documentée (poids 0,43) ; 30 % couche (60 m sol) : flux générique opposé (vallée générique -1 km/h le long du tracé) malgré la brise documentée (poids 0,43) ; 60 % couche (120 m sol) : flux générique opposé (vallée générique -1 km/h le long du tracé) malgré la brise documentée (poids 0,42)
 - **Flux d'est (Lombarde) dans la haute Clarée (Italie → Névache) (transfert de col, seulement par vent météo d’est (≥ 10 km/h))** — `brianconnais-guisane/lombarde-haute-claree`, Briançonnais · *modèle* · juillet 17h30, vent météo 90° 15 km/h · couches : profondeur locale de la vallée (crêtes − fond)
   - sens, 60 % profondeur : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 57 % (cos médian 0,52)
   - cause probable : 60 % profondeur : flux générique opposé (pente -0 km/h le long du tracé) malgré la brise documentée (poids 0,85)
 - **Brise de pente du Prorel (Saint-Blaise → Notre-Dame-des-Neiges → Croix de la Nore) (pente)** — `brianconnais-guisane/brise-pente-prorel`, Briançonnais · *limite* · juillet 15h30, sans vent météo · couches : brise de pente 100–200 m (S1, règle cycle-brise-pente)
   - hors horaires (10h00) : attendu composante < 2 km/h ; obtenu 3 km/h
   - cause probable : hors horaires : composante dans le sens du tracé hors horaires : pente 3 km/h, vallée générique -0 km/h, plaine/lac/mer -0 km/h, vent météo 0 km/h (brise documentée active à 0 %)
-- **Brise descendante du soir et catabatique de Vallouise (Ailefroide → Pelvoux → Vallouise → Les Vigneaux) (descendante)** — `ecrins-vallouise-haute-durance/brise-descendante-vallouise`, Vallouise – haute Durance · *donnée* · juillet 18h45, sans vent météo · couches : profondeur locale de la vallée (crêtes − fond)
-  - sens, sol (50 m) : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 0 % (cos médian -0,98)
-  - vitesse, sol (50 m) : attendu 10–32 km/h (doc. 20 km/h) ; obtenu 7 km/h
-  - sens, 30 % profondeur : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 0 % (cos médian -0,98)
-  - vitesse, 30 % profondeur : attendu 10–32 km/h (doc. 20 km/h) ; obtenu 7 km/h
-  - sens, 60 % profondeur : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 0 % (cos médian -0,98)
-  - vitesse, 60 % profondeur : attendu 6–32 km/h (doc. 20 km/h) ; obtenu 4 km/h
-  - cause probable : sol (50 m) : cellules attribuées à une autre brise documentée : ecrins-vallouise-haute-durance/brise-montante-gyronde (poids propre moyen 0,00) ; sol (50 m) : cellules attribuées à une autre brise documentée : ecrins-vallouise-haute-durance/brise-montante-gyronde (poids propre moyen 0,00) ; 30 % profondeur : cellules attribuées à une autre brise documentée : ecrins-vallouise-haute-durance/brise-montante-gyronde (poids propre moyen 0,00) ; 30 % profondeur : cellules attribuées à une autre brise documentée : ecrins-vallouise-haute-durance/brise-montante-gyronde (poids propre moyen 0,00) ; 60 % profondeur : cellules attribuées à une autre brise documentée : ecrins-vallouise-haute-durance/brise-montante-gyronde (poids propre moyen 0,00) ; 60 % profondeur : cellules attribuées à une autre brise documentée : ecrins-vallouise-haute-durance/brise-montante-gyronde (poids propre moyen 0,00)
+- **Brise descendante du soir et catabatique de Vallouise (Ailefroide → Pelvoux → Vallouise → Les Vigneaux) (descendante)** — `ecrins-vallouise-haute-durance/brise-descendante-vallouise`, Vallouise – haute Durance · *donnée* · juillet 2h15, sans vent météo · couches : profondeur locale de la vallée (crêtes − fond)
+  - vitesse, sol (50 m) : attendu 10–32 km/h (doc. 20 km/h) ; obtenu 5 km/h
+  - vitesse, 30 % profondeur : attendu 10–32 km/h (doc. 20 km/h) ; obtenu 5 km/h
+  - vitesse, 60 % profondeur : attendu 6–32 km/h (doc. 20 km/h) ; obtenu 3 km/h
+  - cause probable : sol (50 m) : cellules attribuées à une autre brise documentée : ecrins-vallouise-haute-durance/brise-montante-gyronde (poids propre moyen 0,00) ; 30 % profondeur : cellules attribuées à une autre brise documentée : ecrins-vallouise-haute-durance/brise-montante-gyronde (poids propre moyen 0,00) ; 60 % profondeur : cellules attribuées à une autre brise documentée : ecrins-vallouise-haute-durance/brise-montante-gyronde (poids propre moyen 0,00)
 - **Brise du lac de Serre-Ponçon (lac → pentes de Saint-Vincent et de Savines) (lac)** — `serre-poncon-embrunais/brise-lac-serre-poncon`, Serre-Ponçon · *donnée* · juillet 15h15, sans vent météo · couches : profondeur locale de la vallée (crêtes − fond)
   - sens, sol (50 m) : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 50 % (cos médian 0,49)
   - sens, 30 % profondeur : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 33 % (cos médian 0,20)
   - cause probable : sol (50 m) : poids de la brise documentée faible sur le tracé (0,34) : tracé hors du fond de vallée ou en bout de couloir ; 30 % profondeur : cellules attribuées à une autre brise documentée : alpes-francaises/ubaye (poids propre moyen 0,28)
-- **Brise / vent d'est de Larche (Italie → Larche plage → Maljasset) (transfert de col)** — `ubaye/brise-larche-italie`, Ubaye · *donnée* · juillet 14h45, sans vent météo · couches : profondeur locale de la vallée (crêtes − fond)
-  - sens, sol (50 m) : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 40 % (cos médian -0,97)
-  - sens, 30 % profondeur : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 40 % (cos médian -0,98)
-  - sens, 60 % profondeur : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 40 % (cos médian -0,98)
-  - cause probable : sol (50 m) : cellules attribuées à une autre brise documentée : ubaye/brise-ubaye (poids propre moyen 0,34) ; 30 % profondeur : cellules attribuées à une autre brise documentée : ubaye/brise-ubaye (poids propre moyen 0,34) ; 60 % profondeur : cellules attribuées à une autre brise documentée : ubaye/brise-ubaye (poids propre moyen 0,34)
 - **Flux de la cuvette de Gap vers le Champsaur par le col Bayard (deux sens rapportés) (transfert de col)** — `champsaur-valgaudemar/brise-gap-col-bayard`, Champsaur · *modèle* · juillet 15h30, sans vent météo · couches : profondeur locale de la vallée (crêtes − fond)
   - sens, sol (50 m) : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 58 % (cos médian 0,78)
   - sens, 30 % profondeur : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 58 % (cos médian 0,73)
@@ -182,7 +175,7 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
   - hors horaires (8h00) : attendu composante < 2 km/h ; obtenu 3 km/h (-1 km/h avec l’écoulement nocturne et les autres brises documentées)
   - cause probable : hors horaires : composante dans le sens du tracé hors horaires : pente 2 km/h, vallée générique -3 km/h, plaine/lac/mer -0 km/h, vent météo 0 km/h (brise documentée active à 0 %)
 
-### Convergences (10)
+### Convergences (11)
 
 - **Confluence de Menthon-Saint-Bernard / Talloires (rive est, Roc de Chère)** — `lac-annecy/confluence-menthon-talloires`, Lac d’Annecy · *donnée* · juillet 15h30, sans vent météo, 80 m sol
   - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne -0,00 m/s, 50 % > 0
@@ -191,23 +184,26 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
   - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne -0,49 m/s, 33 % > 0
   - cause probable : convergence présente mais décalée ou intermittente (max 0,24 m/s sur la ligne)
 - **Confluence Chapieux / Tarentaise à Bourg-Saint-Maurice (Versoyen – Gare)** — `tarentaise/confluence-bourg-saint-maurice`, Tarentaise · *modèle* · juillet 15h45, bise (nord-est) 15 km/h, 80 m sol
-  - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne -0,47 m/s, 33 % > 0
+  - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne -0,51 m/s, 0 % > 0
   - cause probable : les flux modélisés ne se rencontrent pas sur cette ligne à cette heure
 - **Confluence du secteur d'École (brise de la Compôte × vent météo de N ou S)** — `bauges/confluence-ecole-compote`, Bauges · *donnée* · juillet 15h30, sans vent météo, 80 m sol
   - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne 0,61 m/s, 40 % > 0
   - cause probable : convergence présente mais décalée ou intermittente (max 3,04 m/s sur la ligne)
+- **Confluence nuageuse entre le Saint-Eynard et Chamrousse (signe de brise forte)** — `gresivaudan/confluence-chamrousse-saint-eynard`, Grésivaudan · *donnée* · juillet 18h45, sans vent météo, 80 m sol
+  - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne 0,78 m/s, 45 % > 0
+  - cause probable : convergence présente mais décalée ou intermittente (max 6,12 m/s sur la ligne)
 - **Confluence Durance / Romanche-Guisane (de Saint-Chaffrey au Monêtier)** — `brianconnais-guisane/conv-saint-chaffrey-granon`, Briançonnais · *donnée* · juillet 15h00, sans vent météo, 80 m sol
-  - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne -0,03 m/s, 14 % > 0
-  - cause probable : convergence présente mais décalée ou intermittente (max 6,00 m/s sur la ligne)
+  - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne -0,26 m/s, 14 % > 0
+  - cause probable : convergence présente mais décalée ou intermittente (max 3,97 m/s sur la ligne)
 - **Confluence brise de Durance / Lombarde (La Vachette → descente de la Durance)** — `brianconnais-guisane/conv-lombarde-vachette`, Briançonnais · *donnée* · juillet 17h30, Lombarde (flux d’est) 15 km/h, 80 m sol
-  - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne 1,15 m/s, 42 % > 0
-  - cause probable : convergence présente mais décalée ou intermittente (max 10,81 m/s sur la ligne)
+  - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne 0,96 m/s, 42 % > 0
+  - cause probable : convergence présente mais décalée ou intermittente (max 9,65 m/s sur la ligne)
 - **Confluence brise SE / vent météo d'O dans la vallée de Vallouise** — `ecrins-vallouise-haute-durance/conv-vallouise-brise-se-vent-ouest`, Vallouise – haute Durance · *donnée* · juillet 9h45, sans vent météo, 80 m sol
   - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne 0,02 m/s, 38 % > 0
   - cause probable : convergence présente mais décalée ou intermittente (max 2,82 m/s sur la ligne)
 - **Confluence brise montante / Lombarde descendant le Guil (Mont-Dauphin – Guillestre)** — `queyras/conv-mont-dauphin-lombarde-guil`, Queyras · *donnée* · juillet 15h15, Lombarde (flux d’est) 15 km/h, 80 m sol
-  - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne 0,37 m/s, 40 % > 0
-  - cause probable : convergence présente mais décalée ou intermittente (max 2,55 m/s sur la ligne)
+  - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne 0,29 m/s, 40 % > 0
+  - cause probable : convergence présente mais décalée ou intermittente (max 2,15 m/s sur la ligne)
 - **Convergence mobile E/O sur le champ d'atterrissage de Thorenc (Col de Bleine)** — `prealpes-grasse-castellane/convergence-bleine-atterro`, Préalpes de Grasse · *donnée* · juillet 14h45, sans vent météo, 80 m sol
   - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne -0,32 m/s, 33 % > 0
   - cause probable : convergence présente mais décalée ou intermittente (max 0,18 m/s sur la ligne)
@@ -525,7 +521,7 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
   - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 19 km/h
   - cause probable : brise modélisée moins forte que décrite à cet endroit
 - **Forte brise descendante du soir (Vallouise) (strong-breeze)** — `ecrins-vallouise-haute-durance/brise-descendante-soir-vallouise`, Vallouise – haute Durance · *limite* · juillet 18h45, sans vent météo, 80 m sol, rayon 3,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 17 km/h
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 10 km/h
   - cause probable : brise modélisée moins forte que décrite à cet endroit
 - **Déco d’Aspres saturé par la brise (strong-breeze)** — `buech-laragne-chabre/aspres-breeze-14-16`, Buëch – Chabre · *limite* · juillet 15h00, sans vent météo, 80 m sol, rayon 2,0 km
   - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 12 km/h
@@ -582,6 +578,7 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 ## Non testables
 
 - brises · Le Pontias (vent descendant de l'Eygues sur Nyons) (catabatique) (`baronnies/pontias`) : tracé trop court
+- brises · Prolongement d'altitude de la Durance vers Champsaur - Valbonnais - Maurienne (schéma Briffe) (régionale, seulement si : schéma conceptuel de grande échelle, illustratif (non simulé dans les vallées)) (`alpes-francaises/briffe-durance-vers-maurienne`) : si : schéma conceptuel de grande échelle, illustratif (non simulé dans les vallées)
 - convergences · Confluence brise thermique / vent de vallée à Boismint (Les Menuires) (`vanoise/confluence-boismint`) : Été (le catalogue indique le site « en été uniquement »)
 - convergences · Confluence nuageuse La Terrasse / Tencin (observation de pilote, temps orageux) (`gresivaudan/confluence-nuageuse-la-terrasse-tencin`) : temps virant à l'orage (observée plusieurs fois, dont probablement la Coupe Icare 2014)
 - convergences · Confluence agitée de front froid au niveau de Crolles – Lumbin (`gresivaudan/confluence-front-froid-crolles-lumbin`) : passage d'un front froid stagnant sur l'arc alpin, toute saison, à n'importe quel moment
@@ -641,12 +638,7 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 Repérés automatiquement ; à corriger dans les JSON de `research_notes/`, pas dans l’atlas compilé. Le fichier indiqué est celui de la première source citée (une source partagée est rattachée au premier fichier qui la cite) : à confirmer avec le préfixe de l’identifiant (secteur).
 
 - `bornes/brise-parmelan-dingy` (annecy_bornes_aravis.json) : horaires non analysables (« non documenté ») : la brise suit le cycle générique de vallée
-- `tarentaise/brise-isere-tarentaise` (tarentaise_vanoise.json) : vitesse typique 30 km/h, au-dessus des valeurs typiques (brise de vallée 3–7 m/s ≈ 10–25 km/h, S3 ; 30–40 km/h seulement en quelques sites connus) : valeur de pointe plutôt que typique ? Le modèle l’applique sur tout le couloir pendant toute la fenêtre
 - `tarentaise/brise-petit-saint-bernard` (tarentaise_vanoise.json) : horaires non analysables (« Non documenté en régime de brise ; flux inverse (Italie → Bourg-Saint-Maurice) lors du foehn, à toute heure ») : la brise suit le cycle générique de vallée
-- `maurienne/brise-montante-maurienne` (oisans_maurienne.json) : vitesse typique 35 km/h, au-dessus des valeurs typiques (brise de vallée 3–7 m/s ≈ 10–25 km/h, S3 ; 30–40 km/h seulement en quelques sites connus) : valeur de pointe plutôt que typique ? Le modèle l’applique sur tout le couloir pendant toute la fenêtre
-- `haute-maurienne/brise-montante-haute-maurienne` (oisans_maurienne.json) : vitesse typique 30 km/h, au-dessus des valeurs typiques (brise de vallée 3–7 m/s ≈ 10–25 km/h, S3 ; 30–40 km/h seulement en quelques sites connus) : valeur de pointe plutôt que typique ? Le modèle l’applique sur tout le couloir pendant toute la fenêtre
-- `brianconnais-guisane/brise-durance-basse-guisane` (brianconnais_ecrins_queyras_ubaye.json) : vitesse typique 30 km/h, au-dessus des valeurs typiques (brise de vallée 3–7 m/s ≈ 10–25 km/h, S3 ; 30–40 km/h seulement en quelques sites connus) : valeur de pointe plutôt que typique ? Le modèle l’applique sur tout le couloir pendant toute la fenêtre
-- `ecrins-vallouise-haute-durance/brise-durance-embrun-briancon` (brianconnais_ecrins_queyras_ubaye.json) : vitesse typique 30 km/h, au-dessus des valeurs typiques (brise de vallée 3–7 m/s ≈ 10–25 km/h, S3 ; 30–40 km/h seulement en quelques sites connus) : valeur de pointe plutôt que typique ? Le modèle l’applique sur tout le couloir pendant toute la fenêtre
 - `diois/brise-trieves-lus` (devoluy_gap_buech_diois.json) : horaires non analysables (« sans horaire dans les sources (régime de brise d'été) ») : la brise suit le cycle générique de vallée
 - `prealpes-digne-lure/brise-pente-lure-sud-contras` (provence_maritimes.json) : horaires non analysables (« régime de brise orienté S à SSO ; SE léger < 20 km/h ; convection l'été « très puissante » ») : la brise suit le cycle générique de vallée
 - `prealpes-nice-var/brise-de-mer-roquebrune` (provence_maritimes.json) : horaires non analysables (« jour ; site volé surtout l'hiver et en arrière-saison (voir restrictions horaires) ») : la brise suit le cycle générique de vallée
@@ -656,11 +648,3 @@ Repérés automatiquement ; à corriger dans les JSON de `research_notes/`, pas 
 - `bourget-chambery/restitution-aiguebelette` (bauges_bourget_combe.json) : hors de ses horaires (15h30), son couloir est occupé par une autre brise documentée du même sens : doublon probable du même flux (à fusionner, ou horaires à harmoniser)
 - `oisans-grandes-rousses/huez-brise-de-pente` (vercors_grenoble_trieves.json) : hors de ses horaires (10h30), son couloir est occupé par une autre brise documentée du même sens : doublon probable du même flux (à fusionner, ou horaires à harmoniser)
 - `mercantour/brise-bevera-sospel` (provence_maritimes.json) : hors de ses horaires (14h30), son couloir est occupé par une autre brise documentée du même sens : doublon probable du même flux (à fusionner, ou horaires à harmoniser)
-- `beaufortain/brise-descendante-doron ↔ tarentaise/brise-chapieux-roselend` (montblanc_beaufortain.json) : brises opposées dans le même couloir aux mêmes heures (20h30–9h30 / 20h30–9h30, cos -0,99), sans condition qui les distingue : elles se remplacent cellule par cellule. Ajouter un champ `condition` à celle qui n’existe que dans certaines situations, ou corriger le sens d’un tracé.
-- `gresivaudan/brise-voreppe ↔ alpes-francaises/isere-gresivaudan-combe-de-savoie-gresivaudan` (bauges_bourget_combe.json) : brises opposées dans le même couloir aux mêmes heures (11h00–19h00 / 11h00–19h00, cos -0,98), sans condition qui les distingue : elles se remplacent cellule par cellule. Ajouter un champ `condition` à celle qui n’existe que dans certaines situations, ou corriger le sens d’un tracé.
-- `arves-thabor-galibier/brise-arvan ↔ alpes-francaises/briffe-durance-vers-maurienne` (oisans_maurienne.json) : brises opposées dans le même couloir aux mêmes heures (11h00–18h30 / 13h00–18h00, cos -0,82), sans condition qui les distingue : elles se remplacent cellule par cellule. Ajouter un champ `condition` à celle qui n’existe que dans certaines situations, ou corriger le sens d’un tracé.
-- `brianconnais-guisane/brise-durance-basse-guisane ↔ brianconnais-guisane/transfert-lautaret-guisane` (brianconnais_ecrins_queyras_ubaye.json) : brises opposées dans le même couloir aux mêmes heures (10h00–19h00 / 8h00–11h30, cos -1,00), sans condition qui les distingue : elles se remplacent cellule par cellule. Ajouter un champ `condition` à celle qui n’existe que dans certaines situations, ou corriger le sens d’un tracé.
-- `ecrins-vallouise-haute-durance/brise-montante-gyronde ↔ ecrins-vallouise-haute-durance/brise-descendante-vallouise` (brianconnais_ecrins_queyras_ubaye.json) : brises opposées dans le même couloir aux mêmes heures (10h00–19h00 / 17h00–20h30, cos -1,00), sans condition qui les distingue : elles se remplacent cellule par cellule. Ajouter un champ `condition` à celle qui n’existe que dans certaines situations, ou corriger le sens d’un tracé.
-- `queyras/brise-guil ↔ queyras/brise-arvieux-izoard` (brianconnais_ecrins_queyras_ubaye.json) : brises opposées dans le même couloir aux mêmes heures (12h30–18h30 / 12h00–19h00, cos -0,99), sans condition qui les distingue : elles se remplacent cellule par cellule. Ajouter un champ `condition` à celle qui n’existe que dans certaines situations, ou corriger le sens d’un tracé.
-- `ecrins-vallouise-haute-durance/brise-descendante-vallouise` (brianconnais_ecrins_queyras_ubaye.json) : le modèle souffle partout à l’opposé du tracé : tracé peut-être inversé (à vérifier dans la source)
-- `ubaye/brise-larche-italie` (brianconnais_ecrins_queyras_ubaye.json) : le modèle souffle partout à l’opposé du tracé : tracé peut-être inversé (à vérifier dans la source)

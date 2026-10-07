@@ -59,9 +59,34 @@ s'appliquent que dans leurs horaires, et donnent leur sens à la brise génériq
 
 Les brises documentées (tracés de l'atlas, recalés sur le fond de vallée par plus court chemin sur
 le MNT) sont rastérisées : dans leur couloir, elles remplacent la direction calculée et imposent
-leur force typique et leurs horaires (extraits du texte : « fin de matinée à fin d'après-midi »…).
-Leur poids diminue avec la confiance de la source et avec le vent météo (une brise forte résiste
-mieux qu'une faible).
+leur force typique et leurs horaires (extraits du texte : « fin de matinée à fin d'après-midi »,
+« dès 11h », « 3 h après le lever du soleil » ; les mentions de pic sont ignorées). Leur poids
+diminue avec la confiance de la source et avec le vent météo (une brise forte résiste mieux
+qu'une faible) et suit leur activité horaire : hors de ses heures, une brise documentée ne force
+pas le calme, et la brise générique de son couloir prend son sens.
+
+- **Couches** (`curatedLayerKind`) : les brises de vallée suivent le profil vertical du § 3 ; les
+  brises de pente (100–200 m, S1) et catabatiques (50–150 m, S3) forment une couche mince près du
+  sol, sous la brise de vallée ; les flux régionaux occupent ≈ 1200 m (S4).
+- **Brises conditionnelles** : une brise qui n'existe que dans une situation (« par forte
+  chaleur », « en hiver, sous inversion », « par vent de nord », « par Lombarde »…) porte une
+  condition, explicite (champ `condition`) ou lue dans son nom et ses horaires. Elle reste
+  affichée avec un badge et n'entre dans la simulation que si la condition est remplie : vent
+  météo dans le secteur (± 45°, nul au-delà de 70°) et assez fort, option « canicule », mois de
+  novembre à février. Une condition que le modèle ne sait pas évaluer (schéma conceptuel) n'est
+  jamais simulée.
+- **Plaine, lac, mer** : l'aspiration de la plaine et les brises de lac ou de mer alimentent la
+  brise de vallée au lieu de s'y ajouter (composante régionale × (1 − vallée)).
+
+## 4 bis. Contrôle de fidélité (`npm run model:check`)
+
+Chaque élément de l'atlas est confronté au modèle de référence sur le vrai MNT : brises le long
+de leur tracé, à leurs heures, au sol et à 30 et 60 % de leur couche (sens, vitesse documentée,
+silence hors horaires ou hors condition) ; convergences à l'heure indiquée ; thermiques à leurs
+heures et à leur début documenté ; pièges sous le vent météo qu'ils citent. Le rapport
+(`docs/MODEL_QA.md`) classe les échecs en défaut du modèle, défaut de donnée ou limite assumée, et
+liste les données à corriger. À l'atlas de la seconde passe : 93 % des brises, 84 % des
+convergences, 83 % des thermiques conformes.
 
 ## 5. Vent météo et relief
 
@@ -82,7 +107,10 @@ mieux qu'une faible).
 - **Convergence** : divergence horizontale lissée du champ, convertie en vitesse verticale sur
   une épaisseur de 700 m. Les lignes de convergence ressortent là où deux brises se rencontrent.
 - **Potentiel thermique** : ensoleillement × convexité du relief (éperons, crêtes > creux) ×
-  saison, diminué sous le vent et par le vent fort.
+  saison, diminué sous le vent et par le vent fort. Il ne démarre que 2 h 30 après le lever du
+  soleil et atteint son plein 4 h 30 après (`RULES.thermalOnset`, fiche de Saint-Hilaire :
+  « dès 3 h d'ensoleillement : thermiques ») ; avant, une pente au soleil ne fait encore que de la
+  brise de pente.
 - **Ascendance totale** (sonde) : dynamique + thermique + convergence.
 
 ## 7. Prévision du point (sonde)
@@ -102,6 +130,8 @@ géopotentiel) et hauteur de couche limite ECMWF IFS. Indicateurs :
 - Pas de dynamique : pas de fœhn, de ressauts, d'ondes, ni d'interaction stable/instable fine.
 - Les horaires de brise suivent une journée ensoleillée type ; nébulosité et humidité du sol ne
   sont pas prises en compte dans la simulation.
-- La recherche documentaire a été menée avec un accès web restreint : certaines coordonnées sont
-  estimées (signalées dans les fiches, liste dans `docs/DATA_QA.md`) et plusieurs secteurs restent
-  peu documentés. Les retours de pilotes sont le moyen prévu pour combler ces lacunes.
+- Le déclenchement thermique reste en avance d'environ 1 h 30 en médiane sur les débuts documentés
+  (`docs/MODEL_QA.md`) : les fiches « le matin » et « dès 11h » tirent en sens opposés.
+- La recherche (deux passes, 1435 sources) laisse des secteurs moins documentés (basse Maurienne,
+  Queyras, Champsaur, Montagne de Lure) et des positions estimées, signalées dans les fiches. Les
+  retours de pilotes sont le moyen prévu pour combler ces lacunes.

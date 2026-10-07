@@ -16,6 +16,6 @@ Généré par `npm run data:build` le 2026-10-07.
 - routes : 168
 - figures : 159
 
-## Points à vérifier (0)
+## Points à vérifier (1)
 
-
+- alpes-francaises: brise « Prolongement d'altitude de la Durance vers Champsaur - Valbonnais - Maurienne (schéma Briffe) » : condition non interprétable par le modèle (« si : schéma conceptuel de grande échelle, illustratif (non simulé dans les vallées) »), jamais simulée

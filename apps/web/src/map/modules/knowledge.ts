@@ -188,11 +188,12 @@ export class KnowledgeModule implements MapModule {
         },
         'points',
       );
-    point('landings', 'landing', 9);
-    point('soaring', 'soaring', 7);
-    point('thermals', 'thermal', 6);
-    point('takeoffs', 'takeoff', 7);
-    point('hazards', 'hazard', 8);
+    // Hundreds of items: they appear as one zooms in, so the overview stays readable.
+    point('landings', 'landing', 10);
+    point('soaring', 'soaring', 9.5);
+    point('thermals', 'thermal', 9);
+    point('takeoffs', 'takeoff', 9.5);
+    point('hazards', 'hazard', 9);
 
     ctx.addLayer(
       {

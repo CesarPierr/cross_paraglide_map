@@ -782,6 +782,101 @@
      "sources": [
       "S3"
      ]
+    },
+    {
+     "id": "therm-conf-fontenil-janus",
+     "name": "Confluence de Briançon : verticale du Fontenil / vers le Janus",
+     "lon": 6.6577,
+     "lat": 44.9031,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "après-midi, brise de sud et NO faible",
+     "trigger": "confluence brise de sud / NO faible sur Briançon",
+     "description": "Ascendance de confluence : entre brise de sud et vent météo de NO à N, la confluence se place sur Briançon même si le vent est faible, « verticale Le Fontenil ou vers le Janus » ; position très stable de l'ascendance, plus forte que les autres mais relativement calme. Plus au sud (verrou glaciaire de L'Argentière) si le vent est plus fort.",
+     "confidence": "medium",
+     "sources": [
+      "MS14",
+      "S91"
+     ]
+    },
+    {
+     "id": "therm-conf-briancon-sud",
+     "name": "Confluence Durance / Lombarde : verticale de Briançon Sud (« Monsieur Meuble »)",
+     "lon": 6.6245,
+     "lat": 44.8831,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "fin d'après-midi, Lombarde de force égale à la brise",
+     "trigger": "confluence brise de Durance / Lombarde",
+     "description": "Quand la Lombarde est de la même vitesse que la brise, la confluence se tient souvent à la verticale de la zone d'activités de Briançon Sud (« verticale Monsieur Meuble ! ») après avoir commencé vers La Vachette. Ascendance stable. Position = zone artisanale Briançon Sud (IGN).",
+     "confidence": "medium",
+     "sources": [
+      "MS14",
+      "S91"
+     ]
+    },
+    {
+     "id": "therm-conf-saint-chaffrey",
+     "name": "Confluence de Saint-Chaffrey (Durance / Guisane)",
+     "lon": 6.5952,
+     "lat": 44.9291,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "après-midi, brise de Durance installée",
+     "trigger": "brise remontant la Durance rencontre la brise ou le petit NO de la Guisane",
+     "description": "« Le point de confluence est très souvent situé vers Saint-Chaffrey » ; le Granon voit aussi cette confluence (« déco du Granon et de la Dent droite : dans une confluence entre celle qui remonte la Durance et celle qui vient par le Lautaret, un peu spécial (risque turbulent) mais ça peut super bien voler »). Au sol, attention à l'inversion radicale de la brise le soir à l'atterro.",
+     "confidence": "medium",
+     "sources": [
+      "MS14",
+      "MS15"
+     ]
+    },
+    {
+     "id": "therm-combeynot-plafond",
+     "name": "Combeynot (face à la Meije et à la Barre) : plafond depuis le Granon",
+     "lon": 6.4154,
+     "lat": 44.9967,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "journée d'été",
+     "trigger": "hautes faces du Combeynot, au-dessus du Lautaret",
+     "description": "Plafond : depuis le col du Granon (déco à 2400 m, va bien par flux de sud même avec 30-40 km/h à la balise du Prorel) « on peut monter super haut (plafs 4000 jeudi dernier en bi, au Combeynot face à la Meije et la Barre) ». Position = Pic du Lac de Combeynot (IGN), repère du massif.",
+     "confidence": "low",
+     "sources": [
+      "MS15",
+      "S91"
+     ]
+    },
+    {
+     "id": "therm-serre-chevalier-est-matin",
+     "name": "Faces est sous le sommet de Serre Chevalier (premier déclencheur avant le Granon)",
+     "lon": 6.55,
+     "lat": 44.9124,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "matin (avant le Granon)",
+     "trigger": "faces est au-dessus de Chantemerle, déco plein est à droite en sortant du télécabine",
+     "description": "Chocard : le déco plein est de Serre Chevalier « se met en route plus tôt que le Granon ». Déduction : les faces est chauffent les premières, d'où un déclencheur de matinée au-dessus du Chantemerle avant que le Granon (SO) ne prenne le relais l'après-midi ; aucun récit ne décrit la montée. Site technique (BPC).",
+     "confidence": "low",
+     "sources": [
+      "S18"
+     ]
+    },
+    {
+     "id": "therm-galibier-pente-herbeuse",
+     "name": "Galibier : pente herbeuse sauvage « bon potentiel thermique »",
+     "lon": 6.4415,
+     "lat": 45.0867,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "fin de journée dans la brise ; thermiques d'été (heure non précisée)",
+     "trigger": "pente herbeuse sous le col du Galibier (Plan Lachat 2038 m, décollage sauvage possible partout)",
+     "description": "Chocard : « décollage sauvage avec bon potentiel thermique », « peut offrir un potentiel énorme de cross » (300 km FAI historiques) ; beaux vols de fin de journée dans la brise quand elle n'est pas trop forte ; secteur entouré de zones militaires réglementées. Position approximative = Plan Lachat (site de vol libre IGN).",
+     "confidence": "medium",
+     "sources": [
+      "S92",
+      "S93"
+     ]
     }
    ],
    "soaring_spots": [
@@ -1297,6 +1392,38 @@
      "description": "Compte rendu d'avril 2010 : jour de beaux plafonds où « les crosseurs atteignaient non sans mal Névache pour les meilleurs, Val-des-Prés pour les autres », au nord de Briançon, vers la Clarée, contre la Lombarde thermique de fin d'après-midi. Départ précis non indiqué (déduction : Prorel ou Granon). Un seul témoignage.",
      "sources": [
       "S28"
+     ]
+    },
+    {
+     "id": "granon-lautaret-aller-retour",
+     "name": "Cross facile Briançonnais : Granon → col du Lautaret et retour",
+     "waypoints": [
+      {
+       "name": "Granon (Petit Aréa)",
+       "lon": 6.5779,
+       "lat": 44.9624
+      },
+      {
+       "name": "Combeynot (plafond)",
+       "lon": 6.4154,
+       "lat": 44.9967
+      },
+      {
+       "name": "Col du Lautaret",
+       "lon": 6.4047,
+       "lat": 45.0355
+      },
+      {
+       "name": "Granon (retour)",
+       "lon": 6.5779,
+       "lat": 44.9624
+      }
+     ],
+     "distance_km": 33.6,
+     "description": "« Un cross facile : petit tour, sans trop d'engagement, jusqu'au col du Lautaret et retour » (forum parapentiste.info 2012) ; départ du Granon par flux de sud (même avec 30-40 km/h à la balise du Prorel), plafonds à 4000 m cités vers le Combeynot. Piège : brise de la Romanche qui franchit le Lautaret et redescend la Guisane, vent fort et venturis au col ; atterro de Saint-Chaffrey (inversion radicale de la brise le soir).",
+     "sources": [
+      "MS15",
+      "S12"
      ]
     }
    ],
@@ -2092,10 +2219,11 @@
      "coord_quality": "source",
      "best_hours": "après-midi",
      "trigger": "pente caillouteuse plein S",
-     "description": "Site réputé « atomique » : thermique très puissant dès la sortie du déco (voir « pétards »).",
+     "description": "Site réputé « atomique » : thermique très puissant dès la sortie du déco (voir « pétards »). Point de relance et plafond du cross Prorel → Embrun (26/03/2010) : après la Croix d'Aquila, « la suite jusqu'au déco de Bouchier n'est pas compliquée par de toutes petites transitions » pour ne pas retomber dans la Lombarde ; plafond à 3000 m devant Bouchier avant de basculer sur la zone brûlée.",
      "sources": [
       "S10",
-      "MS14"
+      "MS14",
+      "S28"
      ]
     },
     {
@@ -2108,6 +2236,129 @@
      "best_hours": "après-midi",
      "trigger": "confluence brise / vent météo",
      "description": "Les confluences se reconnaissent à la position très stable de l'ascendance, plus forte que ailleurs et relativement calme : repère utile pour monter avant la transition. Position indicative entre Briançon et le verrou de L'Argentière.",
+     "sources": [
+      "MS14"
+     ]
+    },
+    {
+     "id": "therm-aquila-rocher-sud",
+     "name": "Rocher sud de la face est de la Croix d'Aquila (relance après le Prorel)",
+     "lon": 6.5641,
+     "lat": 44.8745,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "dès 13h (vol du 26/03/2010), printemps",
+     "trigger": "petit rocher orienté sud sous la Croix d'Aquila, à l'abri de la Lombarde au-dessus de 2300 m",
+     "description": "Premier point de relance du cross Prorel → Embrun : décollé du Prorel à 13h15, « sur un petit rocher orienté sud de la face est de la croix j'enroule un +1,5 plaqué au fond du vallon par la Lombarde jusqu'à 2300 m », où l'on récupère un léger vent d'est. « C'était la clé du vol : ne pas se faire choper par la Lombarde ». Position = repère « Sous la Croix d'Aquila » (déco marche et vol), approximative pour le rocher.",
+     "confidence": "medium",
+     "sources": [
+      "S28"
+     ]
+    },
+    {
+     "id": "therm-zone-bruleee-argentiere",
+     "name": "Zone brûlée au-dessus de L'Argentière : thermique sous le vent de la Lombarde",
+     "lon": 6.57,
+     "lat": 44.8,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "milieu d'après-midi (mars)",
+     "trigger": "versant brûlé au-dessus de L'Argentière, thermique sous le vent de la Lombarde",
+     "description": "Point de relance après Bouchier : on récupère à 1900 m un thermique « sous le vent de la Lombarde » qui brasse, « des trucs hachés menu » jusqu'à 2400 m où il se redresse et devient du +4 ; ensuite « une rue de plafond à 3200 » jusqu'à Guillestre (en partie dans le nuage, à la boussole). Position = repère du récit, approximative.",
+     "confidence": "medium",
+     "sources": [
+      "S28"
+     ]
+    },
+    {
+     "id": "therm-mont-dauphin-cumulus",
+     "name": "Mont-Dauphin : cumulus de confluence brise / Lombarde du Guil",
+     "lon": 6.6248,
+     "lat": 44.6682,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "milieu d'après-midi",
+     "trigger": "confluence entre la brise montante de la Durance et la Lombarde descendant le Guil, matérialisée par un cumulus",
+     "description": "Point de relance : « à la verticale de Mont-Dauphin il y a un petit cum qui matérialise la confluence entre la brise montante et la Lombarde qui descend par la vallée du Guil, ce qui me permet de reprendre 300 m ». Voir aussi la confluence conv-mont-dauphin-lombarde-guil. Position = village (IGN).",
+     "confidence": "medium",
+     "sources": [
+      "S28",
+      "S91"
+     ]
+    },
+    {
+     "id": "therm-arete-clement-risoul",
+     "name": "Arête Saint-Clément – Risoul : relance dure sous la brise",
+     "lon": 6.6,
+     "lat": 44.64,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "fin d'après-midi (brise de 20 à 40 km/h)",
+     "trigger": "arête boisée de mélèzes entre Saint-Clément et Risoul, au vent de la brise d'Embrun",
+     "description": "Dernière relance du cross Prorel → Embrun : passé à 30 m au-dessus des mélèzes, contré par 20 km/h de brise à 2100 m, il faut « grapiller mètre par mètre » pendant 15 minutes pour sortir de la brise à 2400 m, puis un gros cumulus (10 minutes d'enroulage) ; ensuite 40 km/h de brise de face jusqu'à la zone industrielle d'Embrun. Risoul est sous le vent de la brise classique. Position approximative.",
+     "confidence": "medium",
+     "sources": [
+      "S28"
+     ]
+    },
+    {
+     "id": "therm-agneaux-barre",
+     "name": "Entre les Agneaux et la Barre des Écrins : thermique « plus rentable, loin du relief »",
+     "lon": 6.366,
+     "lat": 44.9275,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "été, après-midi (vol du 21 juillet 2021)",
+     "trigger": "couloir d'air entre les Agneaux et la Barre, loin des parois ; faces sud de la Barre",
+     "description": "Plafond du cross difficile : « les faces sud de la Barre donnent bien mais on a tendance à chercher le thermique entre les Agneaux et la Barre, c'est plus rentable et loin du relief » ; au retour « on fait un plein sur les Agneaux pour cheminer au-dessus des crêtes ». Plafond 4170 m le 21 juillet 2021. Respecter les dates du cœur du Parc. Position approximative entre Agneaux (route Chocard) et Barre des Écrins (IGN 6.3599, 44.9224).",
+     "confidence": "medium",
+     "sources": [
+      "S37",
+      "S91"
+     ]
+    },
+    {
+     "id": "therm-crete-blanche-bans",
+     "name": "Crête entre la Blanche et les Bans (faces sud)",
+     "lon": 6.423,
+     "lat": 44.87,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "journée d'été",
+     "trigger": "crêtes aux faces exposées au sud entre la Blanche et les Bans",
+     "description": "Cheminement : « le cheminement au-dessus des crêtes entre la Blanche et les Bans est idéal avec des faces exposées sud ». Souvent turbulent à la Blanche (du SO peut rentrer de la vallée de Jas la Croix et de l'ouest des Bans) : garder de bonnes marges. Un peu de NO sur l'Ailefroide. Position approximative (entre deux repères de la route).",
+     "confidence": "medium",
+     "sources": [
+      "S37"
+     ]
+    },
+    {
+     "id": "therm-serre-buzard-falaises",
+     "name": "Falaises à gauche du déco de Serre Buzard",
+     "lon": 6.5446,
+     "lat": 44.64,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "vers 12h30 (vol de mars 2010) ; déco conseillé 10h-12h en été",
+     "trigger": "falaises sous le déco, à gauche, et pentes sud ; brise de Durance",
+     "description": "Relance après le décollage : « retour sous les falaises à gauche et après avoir bataillé un quart d'heure à 200 m sol, je reprends un beau thermique et repasse 500 m au-dessus du déco » ; des chocards enroulent un thermique plus loin devant. Un local part ensuite plein sud vers le Mont Guillaume (cross possible). Position = déco de Serre Buzard (approximative pour les falaises).",
+     "confidence": "medium",
+     "sources": [
+      "S42",
+      "HS16"
+     ]
+    },
+    {
+     "id": "therm-conf-verrou-argentiere",
+     "name": "Verrou glaciaire au nord de L'Argentière : confluence déplacée",
+     "lon": 6.58,
+     "lat": 44.853,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "après-midi, vent météo NO plus fort",
+     "trigger": "brise de sud contre NO plus fort, verrou glaciaire au nord de L'Argentière",
+     "description": "Si le vent météo de NO est un peu plus fort, la confluence avec la brise de sud se fait « souvent vers le verrou glaciaire au nord de L'Argentière » ; ascendance stable, calme. Position issue de la géométrie de la convergence (approx).",
+     "confidence": "medium",
      "sources": [
       "MS14"
      ]
@@ -2635,7 +2886,7 @@
       }
      ],
      "distance_km": 13.0,
-     "description": "Parcours FlyXC de Chocard : très confortable car toujours en finesse de l'atterro de Vallouise, idéal pour un premier cross ; réalisé le 22 novembre 2021 avec un plafond de 2900 m (« pas de thermique à Narreyroux »). Points de passage lus sur le tracé FlyXC (positions arrondies).",
+     "description": "Parcours FlyXC de Chocard : très confortable car toujours en finesse de l'atterro de Vallouise, idéal pour un premier cross ; réalisé le 22 novembre 2021 avec un plafond de 2900 m (« pas de thermique à Narreyroux »). Points de passage lus sur le tracé FlyXC (positions arrondies). Plafond 2900 m le 22 novembre 2021 et « pas de thermique à Narreyroux » ce jour-là : arriver à Narreyroux avec de la hauteur en saison fraîche.",
      "sources": [
       "S44"
      ]
@@ -2705,6 +2956,11 @@
        "coord_quality": "approx"
       },
       {
+       "name": "Crête Blanche – Bans (faces sud)",
+       "lon": 6.423,
+       "lat": 44.87
+      },
+      {
        "name": "Bans",
        "lon": 6.414,
        "lat": 44.887,
@@ -2721,6 +2977,11 @@
        "lon": 6.383,
        "lat": 44.933,
        "coord_quality": "approx"
+      },
+      {
+       "name": "Entre les Agneaux et la Barre (thermique rentable)",
+       "lon": 6.366,
+       "lat": 44.9275
       },
       {
        "name": "Agneaux",
@@ -2754,7 +3015,7 @@
       }
      ],
      "distance_km": 35.0,
-     "description": "Parcours FlyXC (deuxième des deux tracés proposés) du 21 juillet 2021, plafond 4170 m, dans le cœur du Parc (respecter la zone et ses dates). Souvent turbulent à la Blanche : du SW peut rentrer de la vallée de Jas la Croix et de l'O des Bans ; le cheminement sur les crêtes entre la Blanche et les Bans est idéal (faces exposées S) ; un peu de NO sur l'Ailefroide, garder des marges ; les faces S de la Barre donnent bien mais il est plus rentable de chercher entre les Agneaux et la Barre ; au retour plein sur les Agneaux ; on retrouve la brise de sud dès qu'on rentre dans la Vallouise (en été on est vite très ralenti si on est trop bas). Plafond 4170 m.",
+     "description": "Parcours FlyXC (deuxième des deux tracés proposés) du 21 juillet 2021, plafond 4170 m, dans le cœur du Parc (respecter la zone et ses dates). Souvent turbulent à la Blanche : du SW peut rentrer de la vallée de Jas la Croix et de l'O des Bans ; le cheminement sur les crêtes entre la Blanche et les Bans est idéal (faces exposées S) ; un peu de NO sur l'Ailefroide, garder des marges ; les faces S de la Barre donnent bien mais il est plus rentable de chercher entre les Agneaux et la Barre ; au retour plein sur les Agneaux ; on retrouve la brise de sud dès qu'on rentre dans la Vallouise (en été on est vite très ralenti si on est trop bas). Plafond 4170 m. Points de relance dans l'ordre volé : crête Blanche – Bans (faces sud), thermique entre les Agneaux et la Barre (plus rentable, loin du relief), plein sur les Agneaux au retour, retour de la brise de sud dès la vallée de Vallouise (ralentissement si l'on est trop bas en été).",
      "sources": [
       "S37",
       "S39"
@@ -2814,7 +3075,7 @@
       }
      ],
      "distance_km": 46.0,
-     "description": "Récit de J.-M. (forum Para Briançon, 26/03/2010) : déco Prorel à 13h15, Lombarde sous 2300 m dans le vallon de la Croix d'Aquila (ne pas se faire « choper »), plafond 3000 m à Bouchier, thermique sous le vent de la Lombarde au-dessus de L'Argentière (hachés jusqu'à 2400 m, puis +4), plafond 3200 m jusqu'à Guillestre en nuage à la boussole, petit cumulus matérialisant à la verticale de Mont-Dauphin la confluence entre la brise montante et la Lombarde descendant le Guil, arête de Saint-Clément à Risoul à 30 m des mélèzes contre 20 km/h de brise à 2100 m, 40 km/h de brise à plein gaz vers Embrun, atterro zone industrielle d'Embrun. Le vol dans le nuage est critiqué dans le fil. Distance mesurée à vol d'oiseau entre waypoints approximatifs.",
+     "description": "Récit de J.-M. (forum Para Briançon, 26/03/2010) : déco Prorel à 13h15, Lombarde sous 2300 m dans le vallon de la Croix d'Aquila (ne pas se faire « choper »), plafond 3000 m à Bouchier, thermique sous le vent de la Lombarde au-dessus de L'Argentière (hachés jusqu'à 2400 m, puis +4), plafond 3200 m jusqu'à Guillestre en nuage à la boussole, petit cumulus matérialisant à la verticale de Mont-Dauphin la confluence entre la brise montante et la Lombarde descendant le Guil, arête de Saint-Clément à Risoul à 30 m des mélèzes contre 20 km/h de brise à 2100 m, 40 km/h de brise à plein gaz vers Embrun, atterro zone industrielle d'Embrun. Le vol dans le nuage est critiqué dans le fil. Distance mesurée à vol d'oiseau entre waypoints approximatifs. Relances dans l'ordre volé : rocher sud de la face est de la Croix d'Aquila (+1,5 sous la Lombarde), plafond 3000 m devant Bouchier, zone brûlée de L'Argentière (récupérer à 1900 m puis +4 dès 2400 m), rue de plafond à 3200 m jusqu'à Guillestre, cumulus de confluence de Mont-Dauphin (+300 m), arête Saint-Clément – Risoul (relance dure sous la brise).",
      "sources": [
       "S28"
      ]
@@ -3188,6 +3449,19 @@
       "S45",
       "S30"
      ]
+    },
+    {
+     "id": "chabrieres-degueulante-brise-gap",
+     "name": "Chabrières : brise de Gap contre la transition Morgon → Chabrières, dégueulante",
+     "kind": "downdraft",
+     "lon": 6.3347,
+     "lat": 44.5829,
+     "radius_km": 3,
+     "conditions": "brise de Gap / flux de S qui renforce la brise d'ouest sur le lac, après-midi",
+     "description": "Plusieurs pilotes se sont fait « enterrer » en visant le Pic de Chabrières depuis le Morgon (plaf 3000 m) : brise forte de face, dégueulante, pose fréquente vers Chorges. Les skyways FlyXC montrent surtout le sens inverse (Chabrières → Morgon, poussé par la brise).",
+     "sources": [
+      "S88"
+     ]
     }
    ],
    "thermal_spots": [
@@ -3200,10 +3474,11 @@
      "coord_quality": "approx",
      "best_hours": "à partir de midi",
      "trigger": "faces sommitales",
-     "description": "Zone de thermique très fort en régime de brise classique (carte Chocard) ; super vols de restitution en fin de journée ; déco d'après-midi.",
+     "description": "Zone de thermique très fort en régime de brise classique (carte Chocard) ; super vols de restitution en fin de journée ; déco d'après-midi. Point de relance entre le Morgon et le Guillaume : la transition Morgon → Guillaume « marche très bien, tu es brise de cul et le Guillaume sort de très bas en appui dynamique jusque très haut » ; plafond 2950 m cité au Guillaume (2012) et 3000 m au Morgon. Dans l'autre sens (Dormillouse → vallée du Drac), le Guillaume est aussi le repli lorsque la brise de Gap contre à Chabrières.",
      "sources": [
       "S15",
-      "HS16"
+      "HS16",
+      "S88"
      ]
     },
     {
@@ -3215,10 +3490,197 @@
      "coord_quality": "approx",
      "best_hours": "toute la journée en brise",
      "trigger": "faces du Grand Morgon",
-     "description": "Zone de thermique très fort en régime de brise classique ; au nord du bras de l'Ubaye, le Morgon offre un volume protégé pour les vols de Saint-Vincent.",
+     "description": "Zone de thermique très fort en régime de brise classique ; au nord du bras de l'Ubaye, le Morgon offre un volume protégé pour les vols de Saint-Vincent. Relance après la Blanche : on attaque le Morgon par l'ouest pour profiter de l'appui de la brise de l'Ubaye (« tu anticipes la brise de l'Ubaye qui va te ramener sur la pente ouest du Morgon ») ; si le nord météo est trop fort, les thermiques sous le vent du Morgon sont « encore plus atomiques » et il faut éviter d'être venturisé au bout est du lac. Le retour de Dormillouse vers le Morgon ramène ensuite sur la plaine de Saint-Vincent.",
      "sources": [
       "S15",
-      "HS14"
+      "HS14",
+      "S87"
+     ]
+    },
+    {
+     "id": "therm-seouve-saint-jean",
+     "name": "Ravin de la Séouve / Saint-Jean-Montclar (sortie de Saint-Vincent)",
+     "lon": 6.3747,
+     "lat": 44.4246,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "journées thermiques, après le décollage (heure non précisée)",
+     "trigger": "combe et pentes autour du ravin de la Séouve et de la station de Saint-Jean-Montclar, au nord-ouest du déco de Saint-Vincent",
+     "description": "Déclencheur / point de relance pour s'extraire de Saint-Vincent : « en allant chercher les thermiques du ravin de la Séouve et près de la station de Saint-Jean-de-Montclar, tu te fais satelliser jusqu'à Dormillouse » (réponse #4). Le même fil cite le plateau de la Chau (Montclar) comme déco plus facile pour sortir. Position du ravin = toponyme IGN (point sur le cours d'eau), donc approximative.",
+     "confidence": "medium",
+     "sources": [
+      "S87",
+      "S91"
+     ]
+    },
+    {
+     "id": "therm-dormillouse-relance",
+     "name": "Dormillouse (Montclar) : point de relance clé vers la Blanche",
+     "lon": 6.38542,
+     "lat": 44.40753,
+     "alt_m": 2459,
+     "coord_quality": "source",
+     "best_hours": "à partir de la fin de matinée (déduction) ; déco du matin possible à pied",
+     "trigger": "sommet-déco de Dormillouse (2459 m), crête qui domine le lac",
+     "description": "Point de relance : tous les récits du fil de Saint-Vincent font de la remontée à Dormillouse la clé du cross : « le grand classique c'est de remonter à Dormillouse et d'enquiller la crête de la Blanche jusqu'à plus soif », « l'extraction et la montée à Dormillouse… le key point de ce vol ». Il permet ensuite la crête de la Blanche vers le sud ou la traversée vers le Morgon ; au retour il est la porte vers le Morgon. Coordonnées = déco FFVL de Dormillouse.",
+     "confidence": "medium",
+     "sources": [
+      "S87"
+     ]
+    },
+    {
+     "id": "therm-st-vincent-plaine-restitution",
+     "name": "Plaine devant Saint-Vincent : confluences et restitution du soir",
+     "lon": 6.363,
+     "lat": 44.452,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "fin de journée, jusqu'aux derniers rayons de soleil",
+     "trigger": "petite plaine entre le déco de Saint-Vincent et le lac, confluence de brises",
+     "description": "Point de relance de fin de vol : au retour du Morgon, on « se laisse glisser sur la petite plaine devant Saint-Vincent où se forment souvent confluences et restitutions jusqu'aux derniers rayons de soleil ». Le soir, quand l'activité thermique cesse, il ne reste que la brise laminaire du lac ; attention à l'inversion de brise brutale peu avant le coucher du soleil. Position approximative (plaine entre déco et lac).",
+     "confidence": "low",
+     "sources": [
+      "S87"
+     ]
+    },
+    {
+     "id": "therm-chabrieres-conflue",
+     "name": "Crête de Chabrières / Chanteloube : conflue entre Morgon et Piolit",
+     "lon": 6.3347,
+     "lat": 44.5829,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "après-midi, brise de Gap installée",
+     "trigger": "crête de Chabrières (Réallon) face à la brise remontant de Gap ; confluence côté baie de Chanteloube",
+     "description": "Point de passage et de relance du chemin Chorges → Saint-Vincent : « on fait souvent la transition Piolit → Morgon et soit on passe par Chabrières, soit par Chanteloube pour chopper une conflue qui nous fait arriver plus haut et plus haut vent ». Dans le sens inverse, Morgon → Chabrières est quasi impossible en B ou C : on bute dans la brise de Gap qui lèche les pentes (« dégueulante, fortement contré »). Position = crête de Chabrières (IGN) ; la conflue de Chanteloube n'est pas localisée précisément.",
+     "confidence": "medium",
+     "sources": [
+      "S88",
+      "S91"
+     ]
+    },
+    {
+     "id": "therm-colombis-relance",
+     "name": "Mont Colombis (Théus) : relance avant la Bâtie-Neuve",
+     "lon": 6.2161,
+     "lat": 44.4924,
+     "alt_m": 1711,
+     "coord_quality": "source",
+     "best_hours": "après-midi (brise de pente)",
+     "trigger": "pentes du Mont Colombis sous le vent de la brise de Durance",
+     "description": "Point de relance sur la variante Dormillouse > barrage > Colombis > Bâtie-Neuve > Piolit > Ancelle : on traverse « en plaine » vers le barrage (confluences, pas d'appui franc) puis on remonte sur le Colombis (« gaffe à la brise qui remonte la Durance ») pour aller raccrocher la Bâtie-Neuve. Fiche FFVL : très bonnes conditions thermiques par brise de pente.",
+     "confidence": "medium",
+     "sources": [
+      "S88",
+      "S90"
+     ]
+    },
+    {
+     "id": "therm-batie-neuve-relance",
+     "name": "La Bâtie-Neuve : thermique au déco, relance vers le Piolit",
+     "lon": 6.2355,
+     "lat": 44.5841,
+     "alt_m": 1595,
+     "coord_quality": "source",
+     "best_hours": "après-midi (déco SW à utiliser l'après-midi)",
+     "trigger": "face SW sous le déco, thermique de pente",
+     "description": "Point de relance entre Colombis et le Piolit, puis vers Ancelle (variante a du fil t24405 : le raccrochage n'a pas été testé par l'auteur, exemple de trace seulement). La fiche FFVL note que le vent N/O est redressé par le thermique au décollage ; SPVL : déco SW de l'après-midi, brises du SE à l'ouest dans la journée, déco court et pentu souvent très alimenté.",
+     "confidence": "low",
+     "sources": [
+      "S88",
+      "S64",
+      "S89"
+     ]
+    },
+    {
+     "id": "therm-piolit-passage",
+     "name": "Piolit (SW/SE) : relais vers Ancelle et la vallée du Drac",
+     "lon": 6.2662,
+     "lat": 44.603,
+     "alt_m": 2410,
+     "coord_quality": "source",
+     "best_hours": "après-midi (Piolit SW) ; matin (Piolit SE)",
+     "trigger": "sommet-déco herbeux à 2410 m, passage obligé vers le Champsaur",
+     "description": "Plafond / porte de sortie vers le Drac : les itinéraires de remontée (Dormillouse > Morgon > Chabrières > Piolit > Ancelle) passent par le Piolit avant le Champsaur ; Piolit SW est à utiliser l'après-midi, Piolit SE le matin (brises du SE à l'ouest dans la journée). Déduction : l'existence d'un déclencheur à cet endroit repose sur la position de relais du cheminement, aucun récit ne décrit la montée elle-même.",
+     "confidence": "low",
+     "sources": [
+      "S88",
+      "S89"
+     ]
+    },
+    {
+     "id": "therm-jambons-matin",
+     "name": "Pentes SE/S des Jambons et de Pra-Gasta (déclencheur du matin, Chorges)",
+     "lon": 6.2719,
+     "lat": 44.6012,
+     "alt_m": 2160,
+     "coord_quality": "source",
+     "best_hours": "matin (départs en cross avant l'entrée de la brise)",
+     "trigger": "faces SE à S au soleil dès le matin, alpage",
+     "description": "Déclencheur du matin pour les départs de cross de Chorges : SPVL recommande Jambons, Pra-Gasta et Ballons « le matin pour des départs en cross », avant que les brises tournent du SE à l'ouest. Déduction : faces SE/S chauffées tôt, donc premiers thermiques ; aucun récit n'en décrit la forme.",
+     "confidence": "low",
+     "sources": [
+      "S89"
+     ]
+    },
+    {
+     "id": "therm-orres-telesiege",
+     "name": "Les Orres : thermique au-dessus du télésiège (fin de journée)",
+     "lon": 6.5559,
+     "lat": 44.5229,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "fin d'après-midi (vers 16h en mars)",
+     "trigger": "pistes et gare du télésiège sous le déco",
+     "description": "« Le thermique au-dessus de la cabine du télésiège donnait bien » (vol de mars vers 16h, plus d'une heure de vol au coucher du soleil). Récit unique, lieu seulement indicatif (position approximative = déco Costias).",
+     "confidence": "low",
+     "sources": [
+      "HS16"
+     ]
+    },
+    {
+     "id": "therm-conf-embrun-clement",
+     "name": "Confluence d'Embrun : entre Saint-Clément et la baie Saint-Michel",
+     "lon": 6.5,
+     "lat": 44.57,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "après-midi, nord météo de Briançon et de Gap",
+     "trigger": "rencontre des flux de nord venant de Briançon et de Gap",
+     "description": "Entre vent météo de nord venant de Briançon et de Gap, la confluence se situe « généralement entre Saint-Clément et la baie Saint-Michel » (ascendance au nord de Serre-Ponçon, autour d'Embrun). Position approximative d'après la convergence.",
+     "confidence": "low",
+     "sources": [
+      "MS14"
+     ]
+    },
+    {
+     "id": "therm-montclar-lachau-relance",
+     "name": "Plateau de la Chau (Montclar) : sortie facile vers la Blanche",
+     "lon": 6.3705,
+     "lat": 44.403,
+     "alt_m": 1870,
+     "coord_quality": "source",
+     "best_hours": "12h, 16h ou 18h selon le niveau (déco très pratiqué en août)",
+     "trigger": "plateau herbeux de Lachau (1870-1960 m), accès par télésiège, vers la crête de la Blanche",
+     "description": "Point de départ plus facile que Saint-Vincent pour les cross : « il est préférable de décoller du plateau de Lachau si le télésiège fonctionne, l'accès à la crête de la Blanche y est plus facile » ; « souvent plus facile de sortir depuis Montclar car le déco est à 1960 m » ; de Montclar on peut rejoindre Saint-Vincent en finesse. « Remonter à Dormillouse est fréquent, ensuite autoroute de la Blanche ». Piège : un thermique déclenche dans une combe à droite sous le déco (fermetures possibles).",
+     "confidence": "medium",
+     "sources": [
+      "S87"
+     ]
+    },
+    {
+     "id": "therm-pierre-arnoux-aprem",
+     "name": "Pierre-Arnoux (Savines) : thermique d'après-midi, départ de cross ou soaring",
+     "lon": 6.399,
+     "lat": 44.5126,
+     "alt_m": 1300,
+     "coord_quality": "source",
+     "best_hours": "après-midi ; restitution de fin de journée",
+     "trigger": "face ouest / nord-ouest au-dessus du lac, praticable quand le lac est bas",
+     "description": "infos-parapente : « site thermique l'après-midi », « belles opportunités pour partir en cross ou même faire du soaring », super vols de restitution en fin de journée ; forte brise l'après-midi en été et sous le vent de la crête par vent de sud. Source unique, sans détail sur le déclencheur (déduction : face ouest au soleil l'après-midi).",
+     "confidence": "low",
+     "sources": [
+      "HS16"
      ]
     }
    ],
@@ -3833,27 +4295,119 @@
       {
        "name": "Saint-Vincent-les-Forts (déco)",
        "lon": 6.3715,
-       "lat": 44.4433,
-       "coord_quality": "source"
+       "lat": 44.4433
+      },
+      {
+       "name": "Ravin de la Séouve / Saint-Jean",
+       "lon": 6.3747,
+       "lat": 44.4246
       },
       {
        "name": "Dormillouse",
        "lon": 6.3854,
-       "lat": 44.4075,
-       "coord_quality": "source"
+       "lat": 44.4075
+      },
+      {
+       "name": "Pic des Têtes (crête de la Blanche)",
+       "lon": 6.4671,
+       "lat": 44.3015
+      },
+      {
+       "name": "Tête de l'Estrop",
+       "lon": 6.5042,
+       "lat": 44.2861
+      },
+      {
+       "name": "Dormillouse (retour)",
+       "lon": 6.3854,
+       "lat": 44.4075
+      },
+      {
+       "name": "Grand Morgon (versant ouest)",
+       "lon": 6.398,
+       "lat": 44.4919
+      },
+      {
+       "name": "Plaine devant Saint-Vincent",
+       "lon": 6.363,
+       "lat": 44.452
+      }
+     ],
+     "distance_km": 52.2,
+     "description": "Pour les départs de cross, privilégier un départ vers le sud en direction de Dormillouse ou de la Blanche : en régime de brise c'est ce qu'il y a de mieux (infos-parapente) ; Différen'ciel évoque un cross local Dormillouse / Grand Morgon, le Morgon étant un volume protégé ; la traversée de la Durance sous le barrage fait partie des itinéraires de ce site (résumé de première passe). Points de passage indicatifs (aucun tracé publié lu). Ordre réellement volé d'après le fil parapentiste.info : extraction de Saint-Vincent par la Séouve et Saint-Jean, relance à Dormillouse, 20 km de crête de la Blanche jusqu'à la tête de l'Estrop (« le plus technique est de s'extraire de Saint-Vincent »), retour à Dormillouse, traversée vers le Morgon en abordant son versant ouest, puis glissade vers la plaine de Saint-Vincent (confluences et restitution). Poser plutôt au col Saint-Jean. Piège : brise de l'Ubaye, Pic de Bernardez haché et contrant par composante nord.",
+     "sources": [
+      "HS16",
+      "HS14",
+      "S87",
+      "S91"
+     ]
+    },
+    {
+     "id": "dormillouse-vers-drac",
+     "name": "Dormillouse → vallée du Drac (variantes de remontée vers Ancelle)",
+     "waypoints": [
+      {
+       "name": "Dormillouse",
+       "lon": 6.3854,
+       "lat": 44.4075
       },
       {
        "name": "Grand Morgon",
        "lon": 6.398,
-       "lat": 44.4919,
-       "coord_quality": "source"
+       "lat": 44.4919
+      },
+      {
+       "name": "Mont Guillaume",
+       "lon": 6.4228,
+       "lat": 44.583
+      },
+      {
+       "name": "Col du Barle",
+       "lon": 6.3304,
+       "lat": 44.6386
+      },
+      {
+       "name": "Ancelle (Champsaur)",
+       "lon": 6.2237,
+       "lat": 44.6358
       }
      ],
-     "distance_km": 13.0,
-     "description": "Pour les départs de cross, privilégier un départ vers le sud en direction de Dormillouse ou de la Blanche : en régime de brise c'est ce qu'il y a de mieux (infos-parapente) ; Différen'ciel évoque un cross local Dormillouse / Grand Morgon, le Morgon étant un volume protégé ; la traversée de la Durance sous le barrage fait partie des itinéraires de ce site (résumé de première passe). Points de passage indicatifs (aucun tracé publié lu).",
+     "distance_km": 37.8,
+     "description": "Deux variantes d'après le fil t24405 : (a) Dormillouse > barrage > Mont Colombis > Bâtie-Neuve > Piolit > Ancelle (conflues sans appui franc au-dessus du lac, brise de Durance au Colombis) ; (b) Dormillouse > Morgon > Guillaume > Barles > Ancelle ou Orcières (Morgon → Guillaume facile, brise de cul ; sauter ensuite le fond de la vallée des Gourniers vers la face SE près du Barle est difficile en régime de brise, il faut beaucoup de plafond). Morgon → Chabrières direct : voir le danger de la brise de Gap. Hors régime de brise (flux de sud), c'est plus facile (vols de record).",
      "sources": [
-      "HS16",
-      "HS14"
+      "S88"
+     ]
+    },
+    {
+     "id": "piolit-chabrieres-morgon",
+     "name": "Chorges (Piolit) → Chabrières / Chanteloube → Morgon → Dormillouse (sens Gap → Saint-Vincent)",
+     "waypoints": [
+      {
+       "name": "Piolit SW",
+       "lon": 6.2662,
+       "lat": 44.603
+      },
+      {
+       "name": "Crête de Chabrières",
+       "lon": 6.3347,
+       "lat": 44.5829
+      },
+      {
+       "name": "Grand Morgon",
+       "lon": 6.398,
+       "lat": 44.4919
+      },
+      {
+       "name": "Dormillouse",
+       "lon": 6.3854,
+       "lat": 44.4075
+      }
+     ],
+     "distance_km": 26.6,
+     "description": "Sens le plus fréquent d'après le fil t24405 (traces FlyXC) : transition Piolit → Morgon par Chabrières, ou par Chanteloube pour chercher une conflue qui arrive « plus haut et plus haut vent » ; la brise de Gap pousse dans ce sens. Le sens inverse est beaucoup plus dur (voir la route dormillouse-vers-drac).",
+     "sources": [
+      "S88",
+      "S89"
      ]
     }
    ],
@@ -4304,11 +4858,12 @@
      "coord_quality": "approx",
      "best_hours": "fin de matinée à fin d'après-midi",
      "trigger": "faces de l'Izoard et de Rochebrune",
-     "description": "Thermique très fort en régime de brise classique ; point de départ de très grands cross (record du monde de triangle FAI).",
+     "description": "Thermique très fort en régime de brise classique ; point de départ de très grands cross (record du monde de triangle FAI). Première ascendance après le décollage : lors du record FAI, décollage face nord puis « nous jeter sous le vent pour trouver les premiers thermiques » avec 15 km/h de vent arrière (pratique réservée aux très bons pilotes selon Chocard) ; à l'automne l'Izoard (déco Coste Belle, côté Queyras) donne des « thermiques généreux » le long des arêtes effilées.",
      "sources": [
       "S15",
       "S27",
-      "S73"
+      "S73",
+      "MS15"
      ]
     },
     {
@@ -4858,9 +5413,86 @@
       "S79",
       "S80"
      ]
+    },
+    {
+     "id": "bernardez-hache-contrant",
+     "name": "Pic de Bernardez : zone hachée, très contrante par brise à composante nord",
+     "kind": "other",
+     "lon": 6.4112,
+     "lat": 44.3672,
+     "radius_km": 3,
+     "conditions": "brise avec composante nord, cross sur la Blanche",
+     "description": "« N'oublie pas le pic de Bernardez, zone assez hachée et très très contrante avec la brise ayant une composante nord » (réponse #17).",
+     "sources": [
+      "S87",
+      "S91"
+     ]
     }
    ],
-   "thermal_spots": [],
+   "thermal_spots": [
+    {
+     "id": "therm-blanche-pic-des-tetes",
+     "name": "Crête de la Blanche (Dormillouse → Pic des Têtes → tête de l'Estrop)",
+     "lon": 6.4671,
+     "lat": 44.3015,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "journée ; plafonds 2700-3000 m banals, plus de 3000 m cités",
+     "trigger": "crête continue d'environ 20 km orientée à l'ouest et au sud, faces au soleil",
+     "description": "Plafond / cheminement : « l'autoroute de la Blanche » : 20 km de crête continue de Dormillouse à la tête de l'Estrop, où il suffit souvent de suivre la crête sans enrouler, mais « les thermiques sur la Blanche ne sont pas de tout repos » et sont puissants. Plafonds de 2700-3000 m « assez banals », plus de 3000 m par un jour de nord (« pas un pet de vent de nord »). Surveiller l'ombre des nuages et se décaler à l'ouest si les nuages l'imposent ; au-delà du Pic des Têtes on change de vallée et la récupération devient scabreuse. Position = Pic des Têtes (IGN) comme repère de la crête.",
+     "confidence": "medium",
+     "sources": [
+      "S87",
+      "S91"
+     ]
+    },
+    {
+     "id": "therm-dome-alpe-soir",
+     "name": "Dôme de l'Alp (Le Sauze) : thermiques de soirée à fort gain",
+     "lon": 6.7227,
+     "lat": 44.3506,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "soirée",
+     "trigger": "crête du Dôme de l'Alp (2200 m) au-dessus de la station du Sauze, décollage et atterrissage au même endroit",
+     "description": "Plafond du soir : selon un moniteur d'Incondition'aile cité par Ultimate France, « le vol du soir est exceptionnel avec des thermiques de qualité qui permettent de gagner beaucoup de hauteur » (Barre des Écrins et Mont Blanc visibles par bonne visibilité). Position approximative (téléski « Dôme » du Sauze, OSM) : le déco n'a pas de coordonnées dans les sources.",
+     "confidence": "medium",
+     "sources": [
+      "S49"
+     ]
+    },
+    {
+     "id": "therm-soleil-boeuf-matin-soir",
+     "name": "Soleil Bœuf : site du matin et du soir au-dessus de Barcelonnette",
+     "lon": 6.6518,
+     "lat": 44.4205,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "matin et soir",
+     "trigger": "crête de Soleil Bœuf (2190-2214 m), 1060 m au-dessus de Barcelonnette",
+     "description": "Déclencheur / relance d'après Ultimate France : « le site marche surtout le matin et le soir », vols de 15 à 45 minutes au-dessus de Barcelonnette. Déduction : exposition au soleil en début et fin de journée ; le milieu de journée est dominé par la brise de l'Ubaye, aucune source n'y décrit de thermique précis.",
+     "confidence": "low",
+     "sources": [
+      "S49",
+      "S93"
+     ]
+    },
+    {
+     "id": "therm-pra-loup-est",
+     "name": "Pra-Loup : face est au-dessus de la station (déclencheur du matin)",
+     "lon": 6.5947,
+     "lat": 44.3552,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "matin (déduction)",
+     "trigger": "faces est du domaine de Pra-Loup, déco plein est à 2045 m",
+     "description": "Déduction : le déco « plein est » est décrit comme fiable (Ultimate France, vol de 15-20 min, 1000 m de dénivelé) ; les faces est se réchauffent en matinée et déclenchent avant l'entrée de la brise. Aucun récit ne parle de thermique à cet endroit.",
+     "confidence": "low",
+     "sources": [
+      "S49"
+     ]
+    }
+   ],
    "soaring_spots": [
     {
      "id": "soaring-seolanes",
@@ -6736,7 +7368,7 @@
    "publisher": "FFVL (gestionnaire : SERRE PONCON VOL LIBRE)",
    "type": "web",
    "lang": "fr",
-   "notes": "Fiche lue en entier. 44.5841, 6.2355, 1595 m ; favorables S;SO;O ; défavorables N;NE;E;SE;NO. "
+   "notes": "Fiche lue en entier. 44.5841, 6.2355, 1595 m ; favorables S;SO;O ; défavorables N;NE;E;SE;NO.  | Fiche : vent N/O redressé par le thermique au décollage ; coordonnées 44.5841, 6.2355, 1595 m."
   },
   {
    "id": "S65",
@@ -6935,6 +7567,69 @@
    "type": "web",
    "lang": "fr",
    "notes": "Liste des six phénomènes (Durance, Ouest et Nord à Vallouise, Romanche, Lombarde, dust devils) et carte des pièges pour le cross (My Maps)."
+  },
+  {
+   "id": "S87",
+   "title": "Cross au départ de Saint-Vincent les Forts (fil de discussion)",
+   "url": "https://www.parapentiste.info/forum/sites-de-vols/cross-au-depart-de-saintvincent-les-forts-t43511.0.html",
+   "publisher": "parapentiste.info (forum)",
+   "type": "forum",
+   "lang": "fr",
+   "notes": "Réponses #1 (piment), #4 (slidinsky), #7, #9, #17, #19, #32, #37 ; 25 mars 2016 et 2018 ; pages .0, .10, .25, .50 du fil."
+  },
+  {
+   "id": "S88",
+   "title": "Remontée de Dormillouse vers la vallée du Drac (fil de discussion)",
+   "url": "https://www.parapentiste.info/forum/techniques-de-cross/remontee-de-dormillouse-vers-la-vallee-du-drac-t24405.0.html",
+   "publisher": "parapentiste.info (forum)",
+   "type": "forum",
+   "lang": "fr",
+   "notes": "Réponses de 2012 et de septembre 2021 (#2, #4, #6, #7) : itinéraires Dormillouse > Morgon > Guillaume/Chabrières > Piolit > Ancelle."
+  },
+  {
+   "id": "S89",
+   "title": "Serre-Ponçon Vol Libre – Les sites (fiches de décollage de Chorges)",
+   "url": "https://spvl.fr/index.php/les-sites/",
+   "publisher": "Serre-Ponçon Vol Libre (SPVL)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Une fiche par déco (coordonnées GPS, altitude, heures conseillées) : Piolit SW/SE, Jambons, Pra Gasta, Ballons, Clot Rond, Bâtie Neuve, Serre Michèle, Champ Froid, La Fourche, Réallon."
+  },
+  {
+   "id": "S90",
+   "title": "FFVL – Colombis [637]",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/637",
+   "publisher": "FFVL",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche : favorables par brise de pente, très bonnes conditions thermiques ; 44.4924, 6.2161, 1711 m."
+  },
+  {
+   "id": "S91",
+   "title": "Géocodeur IGN (data.geopf.fr) – toponymes cités par les pilotes",
+   "url": "https://data.geopf.fr/geocodage/completion/?text=Pic%20des%20T%C3%AAtes&type=PositionOfInterest",
+   "publisher": "IGN",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Positions de lieux-dits : Pic des Têtes (6.4671, 44.3015), Tête de l'Estrop, Crête de Chabrières, Barre des Écrins, Mont-Dauphin, Le Fontenil, Zone artisanale Briançon Sud, Pic du Lac de Combeynot, Pic de Bernardez."
+  },
+  {
+   "id": "S92",
+   "title": "Chocard Airlines – Col du Galibier",
+   "url": "https://www.chocard-airlines.fr/topo-du-secteur/les-sites/col-du-galibier",
+   "publisher": "Chocard Airlines (club de Briançon)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Décollage sauvage « avec bon potentiel thermique », vols de fin de journée dans la brise ; 300 km FAI historiques depuis le Galibier."
+  },
+  {
+   "id": "S93",
+   "title": "Géocodeur IGN – Soleil Bœuf, Pra Loup, Le Sauze, col du Galibier, Plan Lachat",
+   "url": "https://data.geopf.fr/geocodage/completion/?text=Soleil%20B%C5%93uf&type=PositionOfInterest",
+   "publisher": "IGN",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Soleil Bœuf 6.6518/44.4205 ; Pra Loup 6.6038/44.3732 ; col du Galibier 6.4079/45.0641 ; Plan Lachat 6.4415/45.0867 ; Grande Séolane 6.5462/44.3375."
   }
  ]
 }

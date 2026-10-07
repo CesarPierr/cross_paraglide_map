@@ -70,3 +70,28 @@ Rien de démontré faux n'a été retiré. Les formulations erronées ci-dessus 
 
 ## 5. URL bloquées (consignées dans `.cache/research/blocked_urls.txt`)
 XContest (401), fiches FFVL en curl (Cloudflare, lues au navigateur), Curl'Air (Cloudflare en curl), Ubaye Parapente (contenu JS/images), Nominatim (429).
+
+
+## 6. Thermiques et points de relance (passe complémentaire)
+
+Passe demandée par `BRIEF_THERMIQUES.md` : la seconde passe n'avait gardé comme `thermal_spots` que les endroits explicitement appelés « thermique ». Cette passe y ajoute les ascendances de relance, de déclenchement et de plafond que les pilotes nomment le long des cheminements. Convention de confiance : plusieurs récits concordants ou un récit précis = `medium` ; récit isolé ou lieu imprécis = `low` ; extrapolation par le relief et l'exposition, sans récit = `low` avec « déduction » dans la description.
+
+Volumes de `thermal_spots` (avant → après) : Briançonnais–Guisane 4 → 10, Écrins–Vallouise–haute Durance 6 → 14, Serre-Ponçon–Embrunais 2 → 14, Queyras 2 → 2 (description de l'Izoard complétée), Ubaye 0 → 4. Au total 14 → 44. Quatre descriptions existantes ont été complétées (Bouchier, Morgon, Mont Guillaume, Izoard) sans changer d'identifiant.
+
+### Ajouté, avec sources
+- **Saint-Vincent-les-Forts** (fil parapentiste.info « Cross au départ de Saint-Vincent les Forts », 2016 et 2018) : ravin de la Séouve et Saint-Jean-Montclar (sortie vers Dormillouse), Dormillouse comme point de relance clé, crête de la Blanche (jusqu'à la tête de l'Estrop, plafonds 2700-3000 m), plateau de la Chau (Montclar), plaine de restitution devant Saint-Vincent ; piège du Pic de Bernardez. La route `st-vincent-dormillouse-morgon` est reconstruite dans l'ordre volé (8 points).
+- **Dormillouse → Drac** (fil t24405) : Morgon, Mont Guillaume (« brise de cul », appui dynamique), Chabrières et Chanteloube (conflue), Colombis, Bâtie-Neuve, Piolit ; danger de la dégueulante de Chabrières ; deux routes nouvelles (`dormillouse-vers-drac`, `piolit-chabrieres-morgon`).
+- **Chorges** (fiches SPVL, FFVL) : déclencheurs du matin aux Jambons / Pra-Gasta, Colombis, Bâtie-Neuve (confiance basse pour les deux derniers, aucune ascendance décrite).
+- **Prorel → Embrun** (récit du 26/03/2010) : rocher sud de la Croix d'Aquila, zone brûlée de L'Argentière, cumulus de confluence de Mont-Dauphin, arête Saint-Clément – Risoul ; la route porte maintenant l'ordre des relances.
+- **Vallouise** (Chocard, cross difficile) : thermique entre les Agneaux et la Barre (plafond 4170 m en 2021), crête Blanche – Bans ; waypoints correspondants insérés.
+- **Confluences de la Durance** (forum t228, fiches de 2009) : Fontenil / Janus, Briançon Sud (« Monsieur Meuble »), Saint-Chaffrey, verrou de L'Argentière, Embrun, repères d'ascendance stable.
+- **Briançonnais** : Combeynot (plafond 4000 m depuis le Granon), Galibier (« bon potentiel thermique »), Serre Chevalier face est (déduction), route Granon → Lautaret.
+- **Ubaye** : Dôme de l'Alp (thermiques du soir, Ultimate France), Soleil Bœuf et Pra-Loup (déductions, confiance basse).
+- Serre Buzard : falaises à gauche du déco (récit du 2 mars 2010). Les Orres : thermique du télésiège (récit isolé, position approximative).
+
+### Non localisé ou non lu
+- Position exacte des conflues de Chanteloube et des falaises de Serre Buzard (approx). Aucune coordonnée pour le Dôme de l'Alp (téléski OSM utilisé).
+- Facebook de Parapente Embrun (« thermique de la Fourche ») et blog Curl'Air (403 Cloudflare) : non lus, rien n'a été repris.
+- Vidéo YouTube « Triangle de 138 km depuis Barcelonnette » : navigation refusée, route non ajoutée. Scribd « Le parapente dans le Briançonnais » : contenu non rendu.
+- Images annotées de Chocard (liens Google Sites tokenisés, 403 en curl) : lues au navigateur, la carte « brises locales et thermiques (en rouge) » correspond aux polygones KML déjà extraits. Aucun thermique nommé trouvé pour Puy-Saint-Vincent, Abriès, Saint-Véran, Guillestre hors Mont-Dauphin.
+- Points non extrapolés faute d'indice : Queyras (hors Izoard et Ceillac).

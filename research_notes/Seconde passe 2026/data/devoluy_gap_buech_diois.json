@@ -220,7 +220,7 @@
      "alt_m": 1664,
      "best_hours": "midi-17h (été)",
      "trigger": "reliefs encadrant le col; début de thermique « fort peu de temps après midi »",
-     "description": "« Gros plafs au Noyer (on y a déjà fait plus de 4000) »; départ de cross vers le Taillefer, Belledonne et le Grésivaudan (trace Noyer → Chamoux, un peu plus de 100 km); sortie du « bocal » en s'appuyant sur les reliefs sud.",
+     "description": "« Gros plafs au Noyer (on y a déjà fait plus de 4000) »; départ de cross vers le Taillefer, Belledonne et le Grésivaudan (trace Noyer → Chamoux, un peu plus de 100 km); sortie du « bocal » en s'appuyant sur les reliefs sud. Divergence entre sources : Différen'ciel le décrit comme un site du matin ou de faible régime d'est (« les reliefs qui encadrent le décollage permettent d'exploiter les premiers thermiques dans la matinée »), le forum du lac du Sautet situe le début du thermique « fort peu de temps après midi ». Pour sortir du « bocal » on s'appuie sur les reliefs sud, puis on transite vers la montagne de Faraut au nord.",
      "sources": [
       "S29",
       "S57",
@@ -238,6 +238,68 @@
      "description": "« Très bon départ de cross » (trace CFD citée): des pilotes sont sur la crête de l'Obiou dès 11h du matin depuis le col des Faïsses. Position = col OSM, approximative.",
      "sources": [
       "S29"
+     ]
+    },
+    {
+     "id": "therm-faraut-longer",
+     "name": "Montagne de Faraut : relais envisagé vers le lac du Sautet",
+     "lon": 5.9508,
+     "lat": 44.7314,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "après-midi (déduction)",
+     "trigger": "crête de Faraut, longée jusqu'au bout après la sortie du bocal du Noyer",
+     "description": "Relais décrit comme itinéraire (non volé par l'auteur) depuis le col du Noyer : après avoir quitté le bocal en s'appuyant sur les reliefs sud, « transiter vers le Faraud au nord et le longer jusqu'au bout », puis arriver au lac du Sautet ; 360° à 2500 m. Déduction : l'ascendance de la crête repose sur le relief et l'exposition, aucun récit ne la décrit.",
+     "confidence": "low",
+     "sources": [
+      "S57",
+      "S188"
+     ]
+    },
+    {
+     "id": "therm-vacheres-cluse-chaine",
+     "name": "Chaîne Tête de Vachères – Tête de la Cluse – Pic de Bure (enchaînement)",
+     "lon": 5.7991,
+     "lat": 44.6744,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "après-midi, plafonds modestes (récit de juin)",
+     "trigger": "sommets du Dévoluy occidental enchaînés depuis le Chamousset",
+     "description": "Relances successives du transit Diois → Gap : après le pique-nique au Chamousset, « un vol de rêve au-dessus des beaux sommets comme la Tête de Vachères, la Tête de la Cluse puis le Pic de Bure et son décor lunaire (ces thermiques lunaires aussi d'ailleurs) ». Face à Gap l'auteur renonce à la transition vers Chorges. Position = Tête de Vachères (IGN).",
+     "confidence": "medium",
+     "sources": [
+      "S83",
+      "S188"
+     ]
+    },
+    {
+     "id": "therm-obiou-faces-ouest",
+     "name": "Faces ouest rocailleuses du Rattier / Bonnet de l'Évêque / Obiou",
+     "lon": 5.8387,
+     "lat": 44.7742,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "après-midi (déduction)",
+     "trigger": "faces ouest rocailleuses de la crête du Rattier vers la tête de l'Obiou",
+     "description": "Parapente Montagne : après le vol rando depuis la crête du Rattier, « des thermiques tardent sur ces faces W rocailleuses pour rallonger la balade » (vers le Grand Ferrand et les falaises du Dévoluy). Position = tête de l'Obiou (déco rando) par défaut, lieu des thermiques approximatif ; aucune heure fournie, donc déduction pour l'après-midi (faces ouest).",
+     "confidence": "low",
+     "sources": [
+      "S193"
+     ]
+    },
+    {
+     "id": "therm-chauvet-festre",
+     "name": "Chauvet (face au col du Festre) : rando-vol ultra-classique",
+     "lon": 5.8553,
+     "lat": 44.6652,
+     "alt_m": 1500,
+     "coord_quality": "source",
+     "best_hours": "journée, activité thermique à surveiller quand elle forcit",
+     "trigger": "face est vers le col du Festre",
+     "description": "« En NE, le vol rando ultra-classique est le Chauvet face au col du Festre (attention aux troupeaux) ; ça peut voler partout en faisant attention quand l'activité thermique forcit » (fil Superdévoluy). Lieu de relance potentiel vers Bure et Veynes ; aucun détail de thermique. Déduction pour le déclencheur.",
+     "confidence": "low",
+     "sources": [
+      "S28"
      ]
     }
    ],
@@ -859,10 +921,25 @@
      "alt_m": 1540,
      "best_hours": "après-midi (été)",
      "trigger": "pente herbeuse face SO au-dessus de Pont-du-Fossé",
-     "description": "Bon rendement permettant le départ en cross vers Grenoble ou Savines; vol possible par nord faible.",
+     "description": "Bon rendement permettant le départ en cross vers Grenoble ou Savines; vol possible par nord faible. Divergence : un fil de 2012 note que « les Richards, ça décolle le matin », alors que la fiche Différen'ciel décrit un bon rendement à proximité de la station d'Orcières (départ en cross vers Grenoble ou Savines) et une brise à l'atterro dès le début d'après-midi.",
      "sources": [
       "S68",
       "S160"
+     ]
+    },
+    {
+     "id": "therm-cuchon-antennes",
+     "name": "Cuchon d'Ancelle : antennes (déco d'été) et soaring S/SO",
+     "lon": 6.2153,
+     "lat": 44.6332,
+     "alt_m": 1750,
+     "coord_quality": "source",
+     "best_hours": "été, en brise ou vent de sud",
+     "trigger": "pentes sous les antennes du Cuchon, face S/SO",
+     "description": "Différen'ciel : l'été « le décollage aux antennes est suffisant en cas de brises ou de vent de secteur sud » ; site à soaring par S/SO, restitution du soir excellente (voir therm-cuchon). Déduction : le déclencheur d'été est la pente des antennes ; la sortie en cross est jugée difficile.",
+     "confidence": "low",
+     "sources": [
+      "S64"
      ]
     }
    ],
@@ -1536,6 +1613,19 @@
       "S159",
       "S82"
      ]
+    },
+    {
+     "id": "charance-ceuse-traversee-contree",
+     "name": "Traversée Charance → Céüse : vent contraire vers la Fressinouse",
+     "kind": "other",
+     "lon": 5.94,
+     "lat": 44.53,
+     "radius_km": 4,
+     "conditions": "cross vers le sud-ouest depuis le pic de Gleize / Charance",
+     "description": "Un pilote qui tente de raccrocher la Céüse depuis les faces est du Pic de Gleize via Charance ne réussit pas : « ça contrait en traversant vers la Fressinouse ».",
+     "sources": [
+      "S60"
+     ]
     }
    ],
    "thermal_spots": [
@@ -1580,6 +1670,69 @@
      "sources": [
       "S53",
       "S65"
+     ]
+    },
+    {
+     "id": "therm-guiziere-matin",
+     "name": "Col de Guizière : premiers thermiques du matin",
+     "lon": 6.0455,
+     "lat": 44.5907,
+     "alt_m": 1672,
+     "coord_quality": "source",
+     "best_hours": "matin, avant que la brise soit trop forte",
+     "trigger": "pente herbeuse ouverte sur le bassin gapençais",
+     "description": "Déclencheur du matin : « site du matin permettant un départ en cross pour profiter des premiers thermiques de la journée avant que la brise ne soit trop forte » ; il permet de rejoindre la croupe de Charance (relance suivante).",
+     "confidence": "medium",
+     "sources": [
+      "S66"
+     ]
+    },
+    {
+     "id": "therm-charance-croupe",
+     "name": "Croupe de Charance : déclencheur vers le Bure",
+     "lon": 6.0184,
+     "lat": 44.5676,
+     "alt_m": 1556,
+     "coord_quality": "source",
+     "best_hours": "après-midi (brises généreuses) et régime de sud",
+     "trigger": "croupe herbeuse ouverte sur le bassin gapençais et la vallée du Buëch",
+     "description": "Déclencheur et relance : « bon rendement thermique pour les départs en cross, notamment vers le massif de Bure » ; particulièrement intéressant par régime de sud ou lorsque les brises sont généreuses. Dans les schémas de Briffe, un flux monte de Gap vers Charance puis vers le Bure.",
+     "confidence": "medium",
+     "sources": [
+      "S65",
+      "S53"
+     ]
+    },
+    {
+     "id": "therm-petite-ceuse-deco",
+     "name": "Petite Céüse : thermique devant le déco et sur le plateau de Sigoyer",
+     "lon": 5.9425,
+     "lat": 44.4719,
+     "alt_m": 1681,
+     "coord_quality": "source",
+     "best_hours": "à partir de la fin de matinée",
+     "trigger": "pente de la Petite Céüse et épingle de la piste ; plateau de Sigoyer",
+     "description": "Déclencheur : à la Petite Céüse, « il y a souvent un thermique devant le déco ou au-dessus de l'épingle de la piste, et un peu partout sur le plateau de Sigoyer » ; à la Grande Céüse, passé le début de matinée, on se fait secouer par les thermiques dès l'aplomb de la falaise. Le même fil cite un cross des faces est du pic de Gleize vers Charance puis Céüse : raccrocher la Céüse « contrait en traversant vers la Fressinouse ».",
+     "confidence": "medium",
+     "sources": [
+      "S60"
+     ]
+    },
+    {
+     "id": "therm-pic-de-gleize",
+     "name": "Pic de Gleize : décollage vers 2000 m, thermique en fin de matinée",
+     "lon": 6.044,
+     "lat": 44.6336,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "fin de matinée",
+     "trigger": "pentes sous le sommet, face est vers Charance",
+     "description": "« Le pic de Gleize, ça décolle très bien vers 2000 m sous le sommet et en fin de matinée il y a de quoi monter en thermique et partir se promener » (fil Pic de Bure) ; un autre message tente le cross des faces est du Gleize vers le sud puis Charance, et raccrocher la Céüse (échec : ça contre en traversant vers la Fressinouse).",
+     "confidence": "medium",
+     "sources": [
+      "S191",
+      "S188",
+      "S60"
      ]
     }
    ],
@@ -1936,13 +2089,19 @@
        "lon": 6.0184,
        "lat": 44.5676,
        "coord_quality": "source"
+      },
+      {
+       "name": "Pic de Bure",
+       "lon": 5.9351,
+       "lat": 44.6267
       }
      ],
-     "distance_km": 3.3,
-     "description": "Départ du matin pour profiter des premiers thermiques avant la brise, rejoindre Charance puis le massif de Bure (Différen'ciel). Distance du premier tronçon calculée.",
+     "distance_km": 12.7,
+     "description": "Départ du matin pour profiter des premiers thermiques avant la brise, rejoindre Charance puis le massif de Bure (Différen'ciel). Distance du premier tronçon calculée. Ordre volé : premiers thermiques du matin au col de Guizière, relance à la croupe de Charance (bon rendement), puis transition vers le massif de Bure, cible classique des départs de Charance.",
      "sources": [
       "S66",
-      "S65"
+      "S65",
+      "S53"
      ]
     },
     {
@@ -2583,6 +2742,19 @@
       "S53",
       "S21"
      ]
+    },
+    {
+     "id": "st-genis-combe-ouest-degueulante",
+     "name": "Saint-Genis : première combe à l'ouest, contre et dégueulante",
+     "kind": "downdraft",
+     "lon": 5.79,
+     "lat": 44.382,
+     "radius_km": 1.5,
+     "conditions": "transition Beaumont → Saint-Genis, brise d'ouest",
+     "description": "Un pilote parti de Beaumont à 2700 m arrive « très bas, genre 50 m plus bas c'était posé » dans la première combe à l'ouest de la montagne de Saint-Genis : le flux contre et dégueule, la remontée jusqu'au-dessus de la crête est désagréable. Position approximative.",
+     "sources": [
+      "S185"
+     ]
     }
    ],
    "thermal_spots": [
@@ -2594,11 +2766,12 @@
      "alt_m": 1330,
      "best_hours": "11h-15h (été), plafonds ≈ 3300 m cités",
      "trigger": "face sud de la crête E-O au-dessus de la Méouge",
-     "description": "Thermiques « de rêve, bien larges, bien power, ascenseurs pour les nuages » (forum); thermiques forts dès midi (Flylaragne); plafonds 3300 m et triangles ≈ 193 km cités (S9).",
+     "description": "Thermiques « de rêve, bien larges, bien power, ascenseurs pour les nuages » (forum); thermiques forts dès midi (Flylaragne); plafonds 3300 m et triangles ≈ 193 km cités (S9). Heures : « des thermiques bien puissants sur la crête de Chabre mais hyper cools… en fin de manche vers 16h, bien plus forts et plus agréables qu'à 12h30 » (pilote, 2016). Si le premier thermique est raté, l'atterro du bas permet un second essai (500 m de dénivelé).",
      "sources": [
       "S58",
       "S85",
-      "S9"
+      "S9",
+      "S185"
      ]
     },
     {
@@ -2609,11 +2782,12 @@
      "alt_m": 1545,
      "best_hours": "après-midi (été)",
      "trigger": "sommet de Beaumont (antennes), crête E-O au-dessus de Serres",
-     "description": "Relais classique depuis Chabre (balise de la WaterFly: rayon 1000 m, « franchir la vallée après avoir fait un plafond conséquent »); les pilotes de Laragne y posent aussi (Beaumont/Longeagne au nord).",
+     "description": "Relais classique depuis Chabre (balise de la WaterFly: rayon 1000 m, « franchir la vallée après avoir fait un plafond conséquent »); les pilotes de Laragne y posent aussi (Beaumont/Longeagne au nord). Récit de pilotes (Laragne, 2016) : « la crête de Beaumont et ses antennes : sûrement la montagne la plus fumante du coin, pas de thermique inférieur à +3, le rendez-vous des planeurs et souvent le meilleur plafond de la journée » ; il vaut mieux arriver haut (2000-2200 m depuis Orpierre) pour prendre le thermique au-dessus de la crête, celui des antennes étant « très bon », car arriver bas oblige à choisir un côté et expose à être sous le vent. Depuis Beaumont on repart vers Saint-Genis ou vers le nord (Serres).",
      "sources": [
       "S49",
       "S50",
-      "S58"
+      "S58",
+      "S185"
      ]
     },
     {
@@ -2624,11 +2798,12 @@
      "alt_m": 1432,
      "best_hours": "après-midi (été)",
      "trigger": "barre de Saint-Genis (E-O)",
-     "description": "Soaring thermo-dynamique possible sur plus de 4 km vers l'ouest depuis le décollage du Colombier; sert de relais retour de Bure vers Chabre (« retour par Saint-Genis »).",
+     "description": "Soaring thermo-dynamique possible sur plus de 4 km vers l'ouest depuis le décollage du Colombier; sert de relais retour de Bure vers Chabre (« retour par Saint-Genis »). Plafond minimal : environ 2300 m pour transiter vers Saint-Genis avec du sud (2000 m pour Orpierre ou le col Saint-Jean). Piège : la combe la plus à l'ouest de la montagne de Saint-Genis (« parti à 2700 de Beaumont, ça contrait et dégueulait, arrivé très bas »).",
      "sources": [
       "S48",
       "S70",
-      "S49"
+      "S49",
+      "S185"
      ]
     },
     {
@@ -2656,6 +2831,86 @@
      "sources": [
       "S21",
       "S85"
+     ]
+    },
+    {
+     "id": "therm-orpierre-relance-2000",
+     "name": "Orpierre : monter à 2000-2200 m avant de transiter vers Beaumont",
+     "lon": 5.6979,
+     "lat": 44.3143,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "après-midi (journées de brise)",
+     "trigger": "falaises et pentes au-dessus d'Orpierre, entre Chabre ouest et Beaumont",
+     "description": "Point de relance obligatoire : « il faut prendre le temps, sur Orpierre, de monter au minimum à 2000 m avant de transiter, 2200 c'est encore mieux » ; l'aller-retour Chabre – col Saint-Jean donne des suées quand on est bas entre Barret et Ballons. Parcours classiques cités : Chabre – Orpierre – Beaumont – Serres – Aspres – Bure, ou Chabre – Saint-Genis – Aujour – Céüse – Bure. Position = village (IGN).",
+     "confidence": "medium",
+     "sources": [
+      "S185",
+      "S188"
+     ]
+    },
+    {
+     "id": "therm-col-saint-ange",
+     "name": "Col Saint-Ange (balise B31, rayon 1000 m) : relais ouest de la crête de Chabre",
+     "lon": 5.7042,
+     "lat": 44.2831,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "après-midi (déduction)",
+     "trigger": "extrémité ouest de la crête de Chabre, avant la traversée plein nord vers Suillet",
+     "description": "Relais des deux topos WaterFly : « en longeant la crête de Chabre, dirigez-vous vers le col Saint-Ange (B31) » puis traversée plein nord vers Suillet (2026) ou Orpierre (2025). La balise a un rayon de 1000 m, signe d'un point de passage large. Déduction : aucun récit ne décrit l'ascendance, la position repose sur la balise.",
+     "confidence": "low",
+     "sources": [
+      "S49",
+      "S50"
+     ]
+    },
+    {
+     "id": "therm-rocher-de-garde",
+     "name": "Rocher de la Garde (balise B37) : relais entre Orpierre et Beaumont",
+     "lon": 5.7267,
+     "lat": 44.3458,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "après-midi (déduction)",
+     "trigger": "rocher à l'est du relief, sur la traversée Orpierre – Beaumont",
+     "description": "Relais des topos WaterFly 2025 et 2026 : traverser Orpierre pour transiter par le rocher de Garde puis les antennes de Beaumont « après avoir fait un plafond conséquent » (le plafond se fait à Beaumont). Déduction : un rocher exposé au soleil sert de déclencheur ; aucun récit ne détaille la montée.",
+     "confidence": "low",
+     "sources": [
+      "S49",
+      "S50"
+     ]
+    },
+    {
+     "id": "therm-rosans-epine-plaine",
+     "name": "Plaine de Rosans / L'Épine : thermiques et conflue (sud-est + brise)",
+     "lon": 5.4717,
+     "lat": 44.391,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "après-midi",
+     "trigger": "plaines et larges vallées du Buëch et des Baronnies, confluence de brises",
+     "description": "Alternative rarement pratiquée mais « très efficace certaines journées (sud-est + brise = conflu ?) » ; le pilote précise qu'il y a de nombreux thermiques dans les plaines du Buëch et des Baronnies et plaide pour une stratégie « de plaine » : cheminement aux nuages plutôt qu'aux reliefs, reliefs bas (1500-1700 m) et plafonds hauts (2500-3000 m). Lieu imprécis (position = Rosans).",
+     "confidence": "low",
+     "sources": [
+      "S185"
+     ]
+    },
+    {
+     "id": "therm-durbonas-crete",
+     "name": "Crête de Durbonas : relais de la Longeagne vers le Pic de Bure",
+     "lon": 5.7691,
+     "lat": 44.6102,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "milieu de journée à après-midi",
+     "trigger": "crête de Durbonas au nord d'Aspres",
+     "description": "Relais décrit pour le cross depuis Aspres : depuis la Longeagne, attendre de pouvoir monter à 2000 m, partir vers le nord en direction du Durbonas puis bifurquer à l'est vers le Pic de Bure (les pilotes de Lans en l'Air en 2026 n'y sont pas parvenus, un pilote local atteint le Bure en fin de journée). Fiche d'Aspres : « en milieu de journée, la Longeagne est le rendez-vous des pilotes de cross pour qui le Dévoluy et le Pic de Bure est un beau défi ».",
+     "confidence": "medium",
+     "sources": [
+      "S187",
+      "S186",
+      "S188"
      ]
     }
    ],
@@ -3508,6 +3763,74 @@
      "sources": [
       "S70"
      ]
+    },
+    {
+     "id": "xc-aspres-durbonas-bure",
+     "name": "Aspres (Longeagne) → crête de Durbonas → Pic de Bure",
+     "waypoints": [
+      {
+       "name": "Longeagne (Aspres)",
+       "lon": 5.7131,
+       "lat": 44.5409
+      },
+      {
+       "name": "Crête de Durbonas",
+       "lon": 5.7691,
+       "lat": 44.6102
+      },
+      {
+       "name": "Pic de Bure",
+       "lon": 5.9351,
+       "lat": 44.6267
+      }
+     ],
+     "distance_km": 22.2,
+     "description": "Itinéraire classique depuis Aspres vers le Dévoluy : plafond à 2000 m en local, nord vers le Durbonas, est vers le Bure ; arrivée possible aux Richards. Sans nord météo : Aspres est sans protection du vent du nord (voler alors à la montagne d'Oule).",
+     "sources": [
+      "S187",
+      "S186"
+     ]
+    },
+    {
+     "id": "xc-chabre-orpierre-beaumont-aspres-bure",
+     "name": "Chabre → Orpierre → Beaumont → Serres → Aspres → Pic de Bure (ligne droite vers le nord)",
+     "waypoints": [
+      {
+       "name": "Chabre (déco sud)",
+       "lon": 5.7634,
+       "lat": 44.2976
+      },
+      {
+       "name": "Orpierre",
+       "lon": 5.6979,
+       "lat": 44.3143
+      },
+      {
+       "name": "Beaumont (antennes)",
+       "lon": 5.685,
+       "lat": 44.3831
+      },
+      {
+       "name": "Serres",
+       "lon": 5.7169,
+       "lat": 44.4297
+      },
+      {
+       "name": "Longeagne (Aspres)",
+       "lon": 5.7131,
+       "lat": 44.5409
+      },
+      {
+       "name": "Pic de Bure",
+       "lon": 5.9351,
+       "lat": 44.6267
+      }
+     ],
+     "distance_km": 51.4,
+     "description": "Parcours cité par un pilote de Laragne : monter à 2000-2200 m à Orpierre, transiter vers Beaumont (thermique des antennes, meilleur plafond du jour), puis Serres et Aspres. Le fond de vallée vers Serres pour basculer sur Aspres peut être difficile à franchir (question posée dans le fil).",
+     "sources": [
+      "S185"
+     ]
     }
    ],
    "tips": [
@@ -3519,7 +3842,8 @@
     "Aspres: viser un décollage avant 14h ou après 16h l'été; la balise d'Aspres est la plus fiable pour juger le vent du secteur (aussi pour Cuberselle) [S21][S85][S109].",
     "Mison: ne pas voler seul la première fois; attendre 20 minutes que le flux se stabilise avant de décoller vers 19h [S108].",
     "Chabre: ne pas se garer dans le demi-tour de la plateforme hélicoptère; navette quasi inexistante en haut (récupération par la route) [S87][S59].",
-    "Espaces aériens: R71 Salon actif en semaine (FL075), FL115 le week-end [S86]."
+    "Espaces aériens: R71 Salon actif en semaine (FL075), FL115 le week-end [S86].",
+    "Plafonds minimaux avant de transiter : 2000 m pour Orpierre ou le col Saint-Jean, 2000-2200 m pour Beaumont, 2300 m pour Saint-Genis avec du sud ; les jours à 2700-3000 m on suit les rues de cumulus [t43511]"
    ]
   },
   {
@@ -3840,6 +4164,19 @@
      "sources": [
       "S129"
      ]
+    },
+    {
+     "id": "beaumont-nyons-face-brise",
+     "name": "Retour de Beaumont vers Nyons : tout face à la brise",
+     "kind": "strong-breeze",
+     "lon": 5.5,
+     "lat": 44.36,
+     "radius_km": 8,
+     "conditions": "après-midi, brise d'ouest du Rhône",
+     "description": "Aller des Baronnies vers le Buëch et la Durance est facile ; revenir vers Nyons depuis le rocher de Beaumont est « tout face brise, nettement plus corsé », sauf rue de nuages exceptionnelle de Beaumont à Nyons (fil de 2015). Position approximative sur l'axe Rosans.",
+     "sources": [
+      "S192"
+     ]
     }
    ],
    "thermal_spots": [
@@ -3869,6 +4206,99 @@
      "sources": [
       "S85",
       "S144"
+     ]
+    },
+    {
+     "id": "therm-buc-ouest-aprem",
+     "name": "Buc Ouest : thermiques de l'après-midi puis restitution",
+     "lon": 5.4784,
+     "lat": 44.2127,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "à partir de 14h (plus tôt par vent d'ouest ou NO), puis restitution du soir",
+     "trigger": "faces ouest de Buc sous le vent d'ouest du Rhône",
+     "description": "Déclencheur de l'après-midi : « à partir de 14h environ Buc commence à marcher » ; après deux heures de chasse aux thermiques qui mènent souvent à un cross, l'air se lisse et donne une restitution douce. XC depuis Buc : par-dessus Bergiès puis vers Sisteron, ou par Lachau vers Ribiers ; parfois traversée vers la crête de Laragne-Chabre.",
+     "confidence": "medium",
+     "sources": [
+      "S85"
+     ]
+    },
+    {
+     "id": "therm-buc-est-matin",
+     "name": "Buc Est – La Tanière : thermique dès le milieu de la matinée",
+     "lon": 5.478,
+     "lat": 44.2164,
+     "alt_m": 1223,
+     "coord_quality": "source",
+     "best_hours": "dès le milieu de la matinée (régime de brise d'est du matin)",
+     "trigger": "faces est de Buc, au soleil le matin",
+     "description": "Fiche FFVL : « site thermique dès le milieu de la matinée », régime de brise d'est du matin ou léger flux de sud/est ; gros venturi au bout de la crête entre les montagnes de Buc et du Fort. Journée type de Séderon : vol du matin depuis Le Fort ou Bergiès sud, cross de midi depuis Bergiès nord, restitution du soir à Buc.",
+     "confidence": "medium",
+     "sources": [
+      "S128",
+      "S85"
+     ]
+    },
+    {
+     "id": "therm-milmandre-falaises",
+     "name": "Col de Milmandre : falaises à gauche, puis Baume Noire à droite",
+     "lon": 5.2361,
+     "lat": 44.303,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "printemps et été (déclenchements puissants) ; soaring en fin de journée",
+     "trigger": "falaises à gauche du déco et falaises de la Baume Noire de l'autre côté du col",
+     "description": "Fiche FFVL : « déclenchements thermiques puissants au printemps et en été », décollage dans un venturi du col ; il faut sortir en glissant sur les falaises à gauche, puis on peut traverser le col pour rejoindre les falaises de la Baume Noire à droite. Soaring confortable en fin de journée. Position = déco FFVL (altitude FFVL jugée erronée dans la passe précédente).",
+     "confidence": "medium",
+     "sources": [
+      "S126",
+      "S188"
+     ]
+    },
+    {
+     "id": "therm-col-ey-combe-est",
+     "name": "Première combe à l'est du col d'Ey : prise d'altitude avant les crêtes",
+     "lon": 5.29,
+     "lat": 44.311,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "quand le nord est suffisant dans la vallée",
+     "trigger": "première combe à l'est du col, puis crêtes derrière le déco",
+     "description": "Fiche FFVL du col d'Ey (671) : « après avoir pris de l'altitude entre le col et la première combe à l'est, rejoindre les crêtes derrière le déco » ; fonctionne dès que le vent de nord est suffisant dans la vallée (balise du col de Soubeyrand). Par mistral : abrité mais renforcement brutal au-dessus des crêtes. Position approximative (à l'est du déco FFVL).",
+     "confidence": "medium",
+     "sources": [
+      "S38",
+      "S38"
+     ]
+    },
+    {
+     "id": "therm-villefranche-declenchements",
+     "name": "Villefranche-le-Château : posé « dans les déclenchements »",
+     "lon": 5.5212,
+     "lat": 44.2201,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "après-midi, journée tonique à Bergiès",
+     "trigger": "plaine de Villefranche, au pied de Buc et Bergiès",
+     "description": "Un pilote qui renonce au cross un jour tonique (juillet 2015) préfère poser à Villefranche-le-Château, « dans les déclenchements » : l'air y est déjà actif en fin d'après-midi. Atterro d'école de Séderon ; l'atterro est donc un lieu de thermiques de plaine, pas un relais fiable.",
+     "confidence": "low",
+     "sources": [
+      "S192"
+     ]
+    },
+    {
+     "id": "therm-garde-grosse-relais",
+     "name": "Garde-Grosse (Nyons) : déco du relais sur la crête au nord de Nyons",
+     "lon": 5.1543,
+     "lat": 44.3367,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "après-midi (déduction)",
+     "trigger": "faces exposées au sud-ouest sous le relais de Garde-Grosse, matin frais descendant l'Eygues (Pontias)",
+     "description": "Déduction : le déco du relais de Garde-Grosse est l'unique déclencheur évident de Nyons (face SO au-dessus de la plaine, brise d'ouest l'après-midi) ; aucun récit de vol thermique ni de cross n'a été trouvé. Dangers de la fiche : travers N-NE, ouest fort, ligne HT à droite du déco.",
+     "confidence": "low",
+     "sources": [
+      "S35"
      ]
     }
    ],
@@ -4309,24 +4739,21 @@
       {
        "name": "Buc",
        "lon": 5.4733,
-       "lat": 44.2251,
-       "coord_quality": "source"
+       "lat": 44.2251
       },
       {
        "name": "Bergiès",
        "lon": 5.5114,
-       "lat": 44.2035,
-       "coord_quality": "source"
+       "lat": 44.2035
       },
       {
        "name": "Sisteron",
        "lon": 5.9444,
-       "lat": 44.1963,
-       "coord_quality": "source"
+       "lat": 44.1963
       }
      ],
      "distance_km": 38.4,
-     "description": "Cross de Buc: survoler Bergiès puis aller vers l'est sur Sisteron, ou passer par Lachau puis Ribiers; autres variantes: traverser sur la crête de Laragne-Chabre. Atterrissages officiels au pied de Buc, à Villefranche et à l'église de Lachau.",
+     "description": "Cross de Buc: survoler Bergiès puis aller vers l'est sur Sisteron, ou passer par Lachau puis Ribiers; autres variantes: traverser sur la crête de Laragne-Chabre. Atterrissages officiels au pied de Buc, à Villefranche et à l'église de Lachau. Complément Flylaragne : journée type de Séderon = vol du matin depuis Le Fort ou Bergiès sud, cross de midi depuis Bergiès nord (vallée ouverte à l'est, glisse de 6-7 km sans second thermique), restitution du soir à Buc ; de Buc, par Bergiès vers Sisteron ou par Lachau vers Ribiers.",
      "sources": [
       "S85"
      ]
@@ -4932,6 +5359,19 @@
       "S53",
       "S71"
      ]
+    },
+    {
+     "id": "boulc-degueulante",
+     "name": "Boulc : dégueulante derrière la crête visée",
+     "kind": "downdraft",
+     "lon": 5.5677,
+     "lat": 44.6471,
+     "radius_km": 2.5,
+     "conditions": "brise de vallée, cross Glandasse → Boulc",
+     "description": "Récit du 16 juin : en visant une crête à l'arrière de Boulc « je me retrouve dans une dégueulante qui prédit la fin de mon vol » ; 40 minutes de combat à basse hauteur avant de remonter au nuage au-dessus de Toussière.",
+     "sources": [
+      "S83"
+     ]
     }
    ],
    "thermal_spots": [
@@ -4971,7 +5411,7 @@
      "alt_m": 1486,
      "best_hours": "matin (premiers cumulus de la vallée)",
      "trigger": "faces est",
-     "description": "Le club y situe « les premiers cumulus de la vallée » le matin, exploités depuis le col de Volvent avant l'entrée de la brise d'ouest.",
+     "description": "Le club y situe « les premiers cumulus de la vallée » le matin, exploités depuis le col de Volvent avant l'entrée de la brise d'ouest. Le déco du col de Volvent donne accès à « toutes les faces est de la montagne d'Aucelon : c'est là qu'on trouve les premiers cumulus de la vallée » (vol du matin, brise d'ouest possible dès midi-14h).",
      "sources": [
       "S80",
       "S97"
@@ -4999,7 +5439,7 @@
      "alt_m": 1619,
      "best_hours": "après-midi (été)",
      "trigger": "versants ouest du But Sapiau",
-     "description": "Au départ du Rousset, longer les versants ouest du But Sapiau pour rejoindre la crête Chamaloc/Romeyer et trouver de quoi remonter devant la pointe; éviter le cirque sous le col, aérologiquement difficile.",
+     "description": "Au départ du Rousset, longer les versants ouest du But Sapiau pour rejoindre la crête Chamaloc/Romeyer et trouver de quoi remonter devant la pointe; éviter le cirque sous le col, aérologiquement difficile. Récit du 16 juin (Rousset → Gap) : « au-dessus de la butte de Sapiau, je fais un bon plein pour arriver pas trop bas à la Dent de Die » ; le plafond de la journée était assez bas.",
      "sources": [
       "S77",
       "S83"
@@ -5008,14 +5448,224 @@
     {
      "id": "therm-dent-de-die",
      "name": "But de l'Aiglette / Dent de Die (arête)",
-     "lon": 5.3688,
-     "lat": 44.8231,
+     "lon": 5.449,
+     "lat": 44.8008,
      "alt_m": 1524,
      "best_hours": "après-midi (été)",
      "trigger": "arête sous la Dent de Die face au vent",
-     "description": "Arête « sous la dent de Die » (face au vent) qui dépose sur les versants ouest du Glandasse ou les avant-reliefs sur Die; coordonnées = But de l'Aiglette (proche); position approximative.",
+     "description": "Arête « sous la dent de Die » (face au vent) qui dépose sur les versants ouest du Glandasse ou les avant-reliefs sur Die; coordonnées = But de l'Aiglette (proche); position approximative. Correction de position (passe thermiques) : le récit Rousset → Gap vole But Sapiau puis la Dent de Die avant le dôme du Glandasse ; position remplacée par la Dent de Die (IGN, rochers de Romeyer), l'ancien repère (But de l'Aiglette, à l'ouest) correspondait à la variante vers les versants sud du Vercors.",
+     "sources": [
+      "S77",
+      "S83",
+      "S188"
+     ],
+     "coord_quality": "source"
+    },
+    {
+     "id": "therm-col-beaumont-plafond",
+     "name": "Col de Beaumont : plafond de sortie de la vallée de Luc",
+     "lon": 5.4407,
+     "lat": 44.5744,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "après-midi (thermiques 10-11h faces sud, 12-13h faces nord)",
+     "trigger": "sortie sud de la vallée de Luc par la crête de Clamontard, pompes sur le cirque de Beaumont",
+     "description": "Plafond / relance clé du cross Luc → Serres → Durance : « une fois cette difficulté vaincue, vous devez normalement finir au plafond à la verticale du col de Beaumont. Le plus dur est fait, dans 30 bornes vous êtes dans la Durance ». La carte du club marque plusieurs pompes rouges sur le cirque de Beaumont ; il faut soigner son plafond avant le col, sinon on se retrouve trop bas et contré (pose derrière Poyols). La plupart des pompes de cet itinéraire « pètent sous le vent » : voler près des cumulus.",
+     "confidence": "medium",
+     "sources": [
+      "S73",
+      "S72",
+      "S190"
+     ]
+    },
+    {
+     "id": "therm-plateau-saint-dizier",
+     "name": "Plateau de Saint-Dizier : pompes de l'autoroute sud",
+     "lon": 5.4782,
+     "lat": 44.5145,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "après-midi",
+     "trigger": "plateau et reliefs de Saint-Dizier-en-Diois sur l'autoroute Clamontard – Valdrôme",
+     "description": "Relance intermédiaire sur l'itinéraire sud (Clamontard → Valdrôme → Serres) : la carte « cross sud » du club marque en rouge plusieurs pompes sur le plateau de Saint-Dizier, entre le cirque de Beaumont et Valdrôme. « Les pompes difficiles à louper sont marquées en rouge ». Position = village de Saint-Dizier-en-Diois (IGN), les taches rouges ne sont pas géoréférencées avec précision.",
+     "confidence": "medium",
+     "sources": [
+      "S72",
+      "S190",
+      "S188"
+     ]
+    },
+    {
+     "id": "therm-valdrome-limite-plafonds",
+     "name": "Valdrôme / col de Cabre : limite des plafonds, relance avant la Durance",
+     "lon": 5.5729,
+     "lat": 44.5048,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "après-midi",
+     "trigger": "relief de Valdrôme, limite aérologique Diois / Buëch",
+     "description": "Plafond : « une limite très nette est marquée au sud à partir de Valdrôme ou du col de Cabre : dans ces secteurs les plafonds sont souvent plus hauts » (club du Diois). La carte du cross sud y place plusieurs pompes rouges avant la sortie vers Serres et la Durance. À l'inverse, vers le nord après le Vercors, les plafonds baissent.",
+     "confidence": "medium",
+     "sources": [
+      "S71",
+      "S72",
+      "S190",
+      "S188"
+     ]
+    },
+    {
+     "id": "therm-rousset-pompe-deco",
+     "name": "Col de Rousset : pompe devant le déco",
+     "lon": 5.4135,
+     "lat": 44.8316,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "après-midi (été) ; premiers thermiques de la saison l'hiver",
+     "trigger": "pente devant le déco du col de Rousset",
+     "description": "Déclencheur à la sortie du déco : « si vous avez loupé la pompe qui est devant le déco, la solution est de chercher à longer les versants ouest du But Sapiau » pour rejoindre la crête Chamaloc/Romeyer (relance devant la pointe). Site « particulièrement tordu » par chaud. Voir But Sapiau (relance suivante).",
+     "confidence": "medium",
      "sources": [
       "S77"
+     ]
+    },
+    {
+     "id": "therm-chatillon-point-cle",
+     "name": "Châtillon-en-Diois : point clé avant le raccroché du Glandasse",
+     "lon": 5.4852,
+     "lat": 44.6951,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "après-midi (brise du Diois installée)",
+     "trigger": "verrou de Châtillon où la brise diverge à l'ouest, flancs sud du Glandasse",
+     "description": "Point de relance difficile : « il est difficile de raccrocher le Glandasse (à Châtillon) car la brise est latérale à la pente, vous êtes sous le vent un peu partout » ; il faut arriver le plus haut possible sur les flancs sud du Glandasse pour ne pas « faire de l'huile ». Châtillon est le seul endroit où l'on peut voir un parapente reculer en basse couche. La carte du cross nord y marque plusieurs pompes rouges.",
+     "confidence": "medium",
+     "sources": [
+      "S72",
+      "S71",
+      "S189"
+     ]
+    },
+    {
+     "id": "therm-glandasse-falaises-bande",
+     "name": "Falaises du Glandasse (bande de pompes de la carte du club)",
+     "lon": 5.478,
+     "lat": 44.752,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "après-midi",
+     "trigger": "grandes falaises du Glandasse, bande continue de pompes entre Die et le dôme",
+     "description": "Plafond du cross nord : sur la carte du club, une bande rouge continue longe les falaises du Glandasse entre Die et le dôme ; le récit Rousset → Gap rejoint un gros nuage bien au-dessus du dôme du Glandasse avant de filer sur Grésière. Déduction partielle : la position de la bande est lue sur une carte IGN annotée sans coordonnées, donc approximative.",
+     "confidence": "low",
+     "sources": [
+      "S189",
+      "S83",
+      "S72"
+     ]
+    },
+    {
+     "id": "therm-lus-jarjatte-chamousset",
+     "name": "Entrée du vallon de la Jarjatte / Chamousset : ça monte « tranquille »",
+     "lon": 5.7634,
+     "lat": 44.6563,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "fin d'après-midi (pose-pique-nique vers 16h30)",
+     "trigger": "reliefs à droite de l'entrée du vallon de la Jarjatte, sommet herbeux du Chamousset",
+     "description": "Relance après Lus-la-Croix-Haute : la crête choisie à droite de Lus est turbulente (un petit plein), puis « pour les reliefs à droite de l'entrée du vallon de la Jarjatte, heureusement là ça monte tranquille » jusqu'au sommet herbeux du Chamousset (pose pique-nique à 16h30). Porte d'entrée du Dévoluy avant la tête de Vachères.",
+     "confidence": "medium",
+     "sources": [
+      "S83"
+     ]
+    },
+    {
+     "id": "therm-clamontard-vautours",
+     "name": "Clamontard : relais des vautours (pompes partagées)",
+     "lon": 5.4412,
+     "lat": 44.6031,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "journée d'été",
+     "trigger": "crête de Clamontard, relais des vautours fauves entre les charniers du Vercors et ceux des Baronnies",
+     "description": "Indicateur d'ascendance : le club note que les vautours « se servent de Clamontard comme relais » et que parapentes et deltas partagent « les mêmes pompes » avec eux. Hors saison sensible des vautours. Complète la pompe habituelle à gauche du déco.",
+     "confidence": "medium",
+     "sources": [
+      "S73",
+      "S72"
+     ]
+    },
+    {
+     "id": "therm-duffre-sud-est-matin",
+     "name": "Le Duffre (Valdrôme) : face sud-est, cross tôt le matin",
+     "lon": 5.6036,
+     "lat": 44.4655,
+     "alt_m": 1757,
+     "coord_quality": "source",
+     "best_hours": "tôt le matin (« on a dit : tôt !! »)",
+     "trigger": "face SE du sommet du Duffre (1757 m), montée par la crête",
+     "description": "Déclencheur du matin : « la face sud-est est très propice au départ en cross tôt le matin » ; l'itinéraire de montée « va monter plus fort » une fois sur la crête. C'est le départ du cross sud du Diois vers la Durance.",
+     "confidence": "medium",
+     "sources": [
+      "S78"
+     ]
+    },
+    {
+     "id": "therm-jocou-altitude",
+     "name": "Jocou : thermiques d'altitude parfois forts",
+     "lon": 5.6471,
+     "lat": 44.7242,
+     "alt_m": 2051,
+     "coord_quality": "source",
+     "best_hours": "journée (vent de sud renforcé par un venturi à l'est)",
+     "trigger": "sommet du Jocou (2051 m) au-dessus de la vallée de Lus-la-Croix-Haute",
+     "description": "Départ de cross ou de vol rando : « vol en altitude, donc avec des thermiques parfois forts » ; plus de vent de sud qu'à Lesches ou Aureille à cause d'un venturi à l'est du Jocou dans la vallée de Lus.",
+     "confidence": "medium",
+     "sources": [
+      "S79"
+     ]
+    },
+    {
+     "id": "therm-baise-dent-de-die",
+     "name": "Montagne de Baise → Dent de Die / avant-reliefs vers le Glandasse",
+     "lon": 5.3737,
+     "lat": 44.7786,
+     "alt_m": 830,
+     "coord_quality": "source",
+     "best_hours": "après-midi, brise bien axée de face",
+     "trigger": "décollage étroit face à la brise, puis relief vers la Dent de Die et avant-reliefs du Glandasse",
+     "description": "Relance : « si les conditions sont favorables on pourra se décaler en prenant de l'altitude vers la Dent de Die ou suivre les avant-reliefs vers le sud pour ensuite raccrocher la montagne de Glandasse ». Site volable seulement avec brise bien axée de face (pas de vent météo N ou S).",
+     "confidence": "medium",
+     "sources": [
+      "S81"
+     ]
+    },
+    {
+     "id": "therm-justin-soir",
+     "name": "Croix de Justin : thermiques hachés, vol du soir",
+     "lon": 5.3496,
+     "lat": 44.7434,
+     "alt_m": 948,
+     "coord_quality": "source",
+     "best_hours": "soirée, en régime de brise",
+     "trigger": "antennes et crête derrière le déco, face à Die",
+     "description": "Piège plus que gain : site volable en régime de brise seulement, « thermiques hachés » ; plutôt un vol du soir ; pour aller se poser il faut passer la crête à droite du déco assez haut pour ne pas être sous le vent.",
+     "confidence": "medium",
+     "sources": [
+      "S74"
+     ]
+    },
+    {
+     "id": "therm-st-genis-arete-sw",
+     "name": "Saint-Genis : la pompe devant l'arête sud-ouest",
+     "lon": 5.3205,
+     "lat": 44.7733,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "après-midi (déduction)",
+     "trigger": "devant l'arête sud-ouest de la montagne de Saint-Genis, après la crête de Ponet",
+     "description": "Relance du cheminement de Solaure : cirque d'Aurel, transition délicate vers la crête de Ponet (turbulente), puis « petit tuyau pour le Saint-Genis : la pompe se trouve devant l'arête sud-ouest » ; une fois au sommet de Saint-Genis, plusieurs choix sur les versants sud du Vercors. Position non localisée : le sommet de Saint-Genis (Vercors sud) n'a pu être géocodé, le repère de la crête de Ponet est utilisé faute de mieux (coord_quality approx, confiance basse).",
+     "confidence": "low",
+     "sources": [
+      "S75"
      ]
     }
    ],
@@ -5610,24 +6260,21 @@
       {
        "name": "Solaure",
        "lon": 5.3535,
-       "lat": 44.6912,
-       "coord_quality": "source"
+       "lat": 44.6912
       },
       {
        "name": "Cirque d'Aurel",
        "lon": 5.2986,
-       "lat": 44.695,
-       "coord_quality": "approx"
+       "lat": 44.695
       },
       {
        "name": "Crête de Ponet",
        "lon": 5.3205,
-       "lat": 44.7733,
-       "coord_quality": "approx"
+       "lat": 44.7733
       }
      ],
-     "distance_km": 0,
-     "description": "Départ à droite vers le cirque d'Aurel, transition délicate mais faisable vers la crête de Ponet (turbulente), puis Saint-Genis (pompe devant l'arête SO) et les versants sud du Vercors; départ à gauche pour traverser la Drôme vers les falaises du Glandasse. Waypoints approximatifs.",
+     "distance_km": 13.2,
+     "description": "Départ à droite vers le cirque d'Aurel, transition délicate mais faisable vers la crête de Ponet (turbulente), puis Saint-Genis (pompe devant l'arête SO) et les versants sud du Vercors; départ à gauche pour traverser la Drôme vers les falaises du Glandasse. Waypoints approximatifs. Ordre volé d'après le club : départ à droite vers le cirque d'Aurel (facile), transition délicate vers Ponet (turbulent), pompe devant l'arête SO de Saint-Genis, puis versants sud du Vercors ; départ à gauche par thermiques généreux : traversée de la vallée de la Drôme vers les falaises du Glandasse. Pas de brise du Diois (site sous le vent).",
      "sources": [
       "S75"
      ]
@@ -5647,6 +6294,11 @@
        "lon": 5.4174,
        "lat": 44.8265,
        "coord_quality": "source"
+      },
+      {
+       "name": "Dent de Die",
+       "lon": 5.449,
+       "lat": 44.8008
       },
       {
        "name": "Glandasse (dôme)",
@@ -5698,7 +6350,7 @@
       }
      ],
      "distance_km": 0,
-     "description": "Décollage 13h au col naturel; plafond bas puis plein sur le But Sapiau, Dent de Die, face du Glandasse traversée à mi-hauteur, nuage sur le dôme; Grésière puis Boulc (dégueulante, 40 min de combat) puis Toussière; transition vers Lus-la-Croix-Haute, pose pique-nique sur le Chamousset (16h30), reprise par la tête de Vachères, tête de la Cluse, Pic de Bure, puis pose près de Veynes (« comme les cadors la veille »). Distance non donnée; waypoints partiellement approximatifs.",
+     "description": "Décollage 13h au col naturel; plafond bas puis plein sur le But Sapiau, Dent de Die, face du Glandasse traversée à mi-hauteur, nuage sur le dôme; Grésière puis Boulc (dégueulante, 40 min de combat) puis Toussière; transition vers Lus-la-Croix-Haute, pose pique-nique sur le Chamousset (16h30), reprise par la tête de Vachères, tête de la Cluse, Pic de Bure, puis pose près de Veynes (« comme les cadors la veille »). Distance non donnée; waypoints partiellement approximatifs. Ordre réellement volé d'après le récit : pompe devant le déco, plein sur le But Sapiau, Dent de Die, dôme du Glandasse (nuage), Boulc (dégueulante), crête turbulente à droite de Lus, entrée de la Jarjatte et Chamousset, puis tête de Vachères, tête de la Cluse et Pic de Bure.",
      "sources": [
       "S83"
      ]
@@ -6348,6 +7000,45 @@
    ],
    "sources": [
     "S184"
+   ]
+  },
+  {
+   "id": "F19-diois-nord",
+   "massif": "diois",
+   "title": "Carte des cross classiques du Diois (nord) : pompes en rouge de Lesches à Rousset",
+   "image_url": "https://www.vol-libre-diois.fr/wp-content/uploads/2022/06/cross-nord.jpg",
+   "page_url": "https://www.vol-libre-diois.fr/cross-classiques-du-diois/",
+   "pdf_page": null,
+   "publisher": "Vol Libre Diois",
+   "shows": "Carte IGN annotée par Vol Libre Diois : trajet en flèches Lesches → Châtillon (carrefour de flèches) → falaises du Glandasse → Die → col de Rousset → Vassieux ; taches rouges (« pompes difficiles à louper ») à Lesches, Boulc/Châtillon, bande le long des falaises du Glandasse, Die et col de Rousset. Légende : « les pompes difficiles à louper sont marquées en rouge ».",
+   "extracted_to": [
+    "therm-chatillon-point-cle",
+    "therm-glandasse-falaises-bande",
+    "therm-rousset-pompe-deco"
+   ],
+   "sources": [
+    "S189",
+    "S72"
+   ]
+  },
+  {
+   "id": "F20-diois-sud",
+   "massif": "diois",
+   "title": "Carte des cross classiques du Diois (sud) : autoroute Clamontard – Valdrôme – Serres",
+   "image_url": "https://www.vol-libre-diois.fr/wp-content/uploads/2022/06/cross-sud.jpg",
+   "page_url": "https://www.vol-libre-diois.fr/cross-classiques-du-diois/",
+   "pdf_page": null,
+   "publisher": "Vol Libre Diois",
+   "shows": "Carte IGN annotée : trajet en flèche de Clamontard par le cirque de Beaumont et le plateau de Saint-Dizier jusqu'à Valdrôme puis vers Serres et la Durance ; taches rouges (pompes) le long du trajet, concentrées sur le cirque de Beaumont, le plateau de Saint-Dizier et près de Valdrôme.",
+   "extracted_to": [
+    "therm-col-beaumont-plafond",
+    "therm-plateau-saint-dizier",
+    "therm-valdrome-limite-plafonds",
+    "therm-clamontard-pompe"
+   ],
+   "sources": [
+    "S190",
+    "S72"
    ]
   }
  ],
@@ -7484,7 +8175,7 @@
    "publisher": "FFVL",
    "type": "web",
    "lang": "fr",
-   "notes": "Fiche officielle FFVL n°1016 (coordonnées, orientations favorables/défavorables, dangers)."
+   "notes": "Fiche officielle FFVL n°1016 (coordonnées, orientations favorables/défavorables, dangers). | Déclenchements thermiques puissants au printemps et en été ; sortir du déco sur les falaises à gauche puis traverser le col vers la Baume Noire."
   },
   {
    "id": "S127",
@@ -7502,7 +8193,7 @@
    "publisher": "FFVL",
    "type": "web",
    "lang": "fr",
-   "notes": "Fiche officielle FFVL n°1580 (coordonnées, orientations favorables/défavorables, dangers)."
+   "notes": "Fiche officielle FFVL n°1580 (coordonnées, orientations favorables/défavorables, dangers). | Site thermique dès le milieu de la matinée ; régime de brise d'est du matin ; gros venturi au bout de la crête entre Buc et Le Fort."
   },
   {
    "id": "S129",
@@ -7980,6 +8671,87 @@
    "type": "web",
    "lang": "fr",
    "notes": "Dossier Drive public cité dans le fil parapentiste.info t63770 (27/02/2024). Cinq captures de la vidéo de Karlis (https://www.youtube.com/watch?v=4Kmqz_IOmCA, non visionnée) : « Brises Laragne (Chabre) », « Baronnies Serres », « global Baronnies Diois Durance », « Aspres sur Buëch – global Baronnies Diois », « global Alpes sud-ouest (Local / West blocks / South blocks) ». Flèches bleues de brise sur fond Google Maps terrain, cercles rouges en pointillés (zones à dust devils / ascendances, légende non donnée), bandes orange (reliefs/lignes de crête, légende non donnée). Les mêmes flèches ont été numérisées dans la carte Google My Maps de F. Largeault (KML). Fichiers lus en .cache/research/docs/devoluy_gap_buech_diois/drive_brises/."
+  },
+  {
+   "id": "S185",
+   "title": "Cross au départ de Saint-Vincent les Forts (fil de discussion) – messages sur Laragne/Chabre",
+   "url": "https://www.parapentiste.info/forum/sites-de-vols/cross-au-depart-de-saintvincent-les-forts-t43511.0.html",
+   "publisher": "parapentiste.info (forum)",
+   "type": "forum",
+   "lang": "fr",
+   "notes": "Réponses #24 à #30 (27 mars 2016) : classiques depuis Laragne, Beaumont, Saint-Genis, altitudes minimales de transit ; pages .0, .10, .25 du fil."
+  },
+  {
+   "id": "S186",
+   "title": "Site d'Aspres – La Longeagne (fiche de site, M. Farrugia)",
+   "url": "https://frg-sport.com/Parapente/Sites/Aspres.pdf",
+   "publisher": "frg-sport.com / Michel Farrugia",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Page unique : trois décos (Relais SE, Sud, SO-O), « rendez-vous des pilotes de cross pour qui le Dévoluy et le Pic de Bure est un beau défi », antennes de Saint-Apôtre."
+  },
+  {
+   "id": "S187",
+   "title": "Récit : Vol bivouac Aspres – Vercors (Lans en l'Air)",
+   "url": "https://www.lansenlair.org/2026/08/03/recit-vol-bivouac-aspres-vercors/",
+   "publisher": "Lans en l'Air (club)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Plan de vol depuis la Longeagne : monter à 2000 m, nord vers le Durbonas, puis est vers le Pic de Bure ; un pilote local atteint le Bure en fin de journée."
+  },
+  {
+   "id": "S188",
+   "title": "Géocodeur IGN (data.geopf.fr) – toponymes cités par les pilotes",
+   "url": "https://data.geopf.fr/geocodage/completion/?text=Dent%20de%20Die&type=PositionOfInterest",
+   "publisher": "IGN",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Positions : Dent de Die, Crête de Durbonas, Tête de Vachères, Valdrôme, Saint-Dizier-en-Diois, Orpierre, Montagne de Faraut, Baume Noire, Boulc."
+  },
+  {
+   "id": "S189",
+   "title": "Vol Libre Diois – carte des cross classiques (nord : Lesches – Châtillon – Glandasse – Rousset)",
+   "url": "https://www.vol-libre-diois.fr/wp-content/uploads/2022/06/cross-nord.jpg",
+   "publisher": "Vol Libre Diois",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Carte IGN annotée : trajets en flèches, « pompes difficiles à louper » en taches rouges (Lesches, Châtillon, falaises du Glandasse, Rousset, Die)."
+  },
+  {
+   "id": "S190",
+   "title": "Vol Libre Diois – carte des cross classiques (sud : Clamontard – Valdrôme – Serres)",
+   "url": "https://www.vol-libre-diois.fr/wp-content/uploads/2022/06/cross-sud.jpg",
+   "publisher": "Vol Libre Diois",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Carte IGN annotée : autoroute Clamontard → cirque de Beaumont → plateau de Saint-Dizier → Valdrôme → vers Serres et la Durance, pompes en rouge."
+  },
+  {
+   "id": "S191",
+   "title": "Pic de Bure.... (fil de discussion)",
+   "url": "https://www.parapentiste.info/forum/recits/pic-de-bure-t45376.0.html",
+   "publisher": "parapentiste.info (forum)",
+   "type": "forum",
+   "lang": "fr",
+   "notes": "Récit de vol rando (10 septembre) et réponses : pic de Gleize « ça décolle très bien vers 2000 sous le sommet et en fin de matinée y a de quoi monter en thermique », petite et grande Céüze depuis le col des Guérins."
+  },
+  {
+   "id": "S192",
+   "title": "Vidéo de cross dans les Baronnies qui finit en plaine… à la maison (fil de discussion)",
+   "url": "https://www.parapentiste.info/forum/videos-de-vol-libre/video-de-cross-dans-les-baronnies-qui-finit-en-plaine-a-la-maison-t40593.0.html",
+   "publisher": "parapentiste.info (forum)",
+   "type": "forum",
+   "lang": "fr",
+   "notes": "Juillet 2015 : Bergiès tonique, pose à Villefranche-le-Château « dans les déclenchements » ; retour de Beaumont vers Nyons « tout face brise » ; réponses #1, #8."
+  },
+  {
+   "id": "S193",
+   "title": "Itinéraires marche et vol Dévoluy sauvage (Parapente Montagne)",
+   "url": "https://parapentemontagne.fr/itineraires-marche-et-vol-devoluy-sauvage/",
+   "publisher": "Parapente Montagne",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Itinéraire Rattier – Bonnet de l'Évêque – Obiou : « des thermiques tardent sur ces faces W rocailleuses pour rallonger la balade »."
   }
  ]
 }

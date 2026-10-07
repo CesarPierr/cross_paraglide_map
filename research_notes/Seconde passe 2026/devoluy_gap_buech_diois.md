@@ -73,3 +73,24 @@ Les flèches de Briffe sont qualitatives (perspective Google Earth) : les positi
 ## URL bloquées
 
 Ajoutées à `.cache/research/blocked_urls.txt` : boutique Flying Karlis (Guide to Chabre), vidéo YouTube de Karlis, index `cataloguevollibre.free.fr/Dept-05/` (403), fiches FFVL en curl (403 Cloudflare, lisibles dans le navigateur intégré).
+
+
+## Thermiques et points de relance (passe complémentaire)
+
+Passe demandée par `BRIEF_THERMIQUES.md`. Convention de confiance : plusieurs récits concordants ou un récit précis = `medium` ; récit isolé ou lieu imprécis = `low` ; extrapolation par le relief et l'exposition, sans récit = `low` avec « déduction » dans la description.
+
+Volumes de `thermal_spots` (avant → après) : devoluy 3 → 7, champsaur-valgaudemar 2 → 3, gapencais-ceuse 3 → 7, buech-laragne-chabre 5 → 10, baronnies 2 → 8, diois 6 → 19. Au total 21 → 54. Sept descriptions existantes complétées (Noyer, Beaumont, Chabre crête, Saint-Genis, But Sapiau, Aucelon, Richards). Deux figures ajoutées (F19-diois-nord, F20-diois-sud).
+
+### Ajouté, avec sources
+- **Diois** (Vol Libre Diois, pages cross classiques, Rousset, Baise, Solaure, Valdrôme, Jocou, Justin, Volvent, récit Rousset → Gap ; images annotées des cartes nord et sud, regardées) : col de Beaumont (plafond de sortie), plateau de Saint-Dizier, Valdrôme / col de Cabre (limite des plafonds), pompe devant le déco du Rousset, Châtillon (raccroché du Glandasse), falaises du Glandasse, entrée de la Jarjatte / Chamousset, Duffre (cross tôt le matin), Jocou, Baise → Dent de Die, Justin (thermiques hachés), vautours à Clamontard, pompe devant l'arête SO de Saint-Genis. La position de la Dent de Die a été corrigée (IGN) et la route `xc-rousset-gap` reçoit le waypoint manquant ; danger de la dégueulante de Boulc.
+- **Laragne / Chabre / Aspres** (fil parapentiste.info « Cross au départ de Saint-Vincent les Forts », réponses sur Laragne ; topos WaterFly ; fiche d'Aspres) : Orpierre (monter à 2000-2200 m avant de transiter), antennes de Beaumont (meilleur plafond du jour), seuil de 2300 m pour Saint-Genis, combe ouest de Saint-Genis (dégueulante), plaine de Rosans / L'Épine, Durbonas, col Saint-Ange et rocher de la Garde (déductions) ; deux routes nouvelles (Aspres → Durbonas → Bure, Chabre → Orpierre → Beaumont → Aspres → Bure).
+- **Gap** : Guizière (premiers thermiques), Charance (déclencheur vers le Bure), Petite Céüse, Pic de Gleize ; la route Guizière → Charance atteint le Bure.
+- **Dévoluy** : faces ouest du Rattier / Obiou (basse confiance), Chauvet (déduction), chaîne Vachères – Cluse – Bure, Faraut ; divergence de sources sur l'heure du Noyer notée.
+- **Champsaur** : antennes du Cuchon (déduction).
+- **Baronnies** : Buc Ouest et Buc Est (Flylaragne, FFVL), col de Milmandre (falaises), col d'Ey (première combe à l'est), Villefranche-le-Château, Garde-Grosse (déduction, basse confiance) ; danger du retour Beaumont → Nyons face à la brise.
+
+### Non localisé ou non lu
+- Le sommet de Saint-Genis (Diois / Vercors sud) n'est pas géocodable : position de la pompe reprise sur le repère de Ponet, `approx`, confiance basse. Taches rouges des cartes du Diois non géoréférencées : positions lues sur le terrain par toponyme, `approx`.
+- Cercles rouges en pointillés des cartes de Karlis (Chabre, Orpierre) : légende non donnée, non repris. Vidéo YouTube de Karlis, livre « Guide to Chabre », PDF « Chabre Challenge » : toujours bloqués.
+- Aucun récit de thermique trouvé pour Nyons, Soubeyrand, Buis, Mévouillon (hors Bergiès et Buc), Valgaudemar, Chaillol, Orcières, ni pour Serres et Veynes ; Facebook de Parapente Embrun non lu. WebSearch ne remonte que des pages commerciales pour les Baronnies.
+- Les altitudes plafond proviennent de récits isolés et ne sont pas des moyennes.

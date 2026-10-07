@@ -9,13 +9,14 @@ import { getController } from './controller-ref';
 import { FeedbackBar, startDraft } from './Feedback';
 import { FigureGallery } from './Figures';
 import { IconBack, IconMountain, IconPlus, IconSearch, IconTarget } from './icons';
-import { SheetHandle, useIsMobile } from './mobile';
+import { SheetHandle, showBrowse, useIsMobile } from './mobile';
 import { RichText, SourceList } from './Sources';
 
 /** Opens the schematic all-in-one view of a massif. */
 export function openSchema(massifId: string) {
   useRuntime.getState().set({ feature: null });
-  useApp.getState().set({ schemaMassif: massifId, selectedMassif: massifId, mobileSheet: 'browse' });
+  useApp.getState().set({ schemaMassif: massifId, selectedMassif: massifId, schemaPicking: false });
+  showBrowse();
 }
 
 const SECTION_ORDER: FeatureCategory[] = ['breezes', 'convergences', 'hazards', 'thermals', 'soaring', 'takeoffs', 'landings', 'routes'];
@@ -141,6 +142,15 @@ function MassifSheet({ m, atlas }: { m: AtlasMassif; atlas: Atlas }) {
         <button className="btn small primary" onClick={() => openSchema(m.id)}>
           <IconSchema /> Vue schéma
         </button>
+        <button
+          className="btn small"
+          onClick={() => {
+            openSchema(m.id);
+            useApp.getState().set({ tourStep: 0 });
+          }}
+        >
+          Présente-moi ce massif
+        </button>
         <button className="btn ghost small" onClick={() => getController()?.flyToBbox(m.bbox, { maxZoom: 11 })}>
           <IconMountain size={15} /> Survoler en 3D
         </button>
@@ -257,7 +267,7 @@ function SchemaBlock({ title, children, count }: { title: string; children: Reac
 
 /** All-in-one reading of a massif for a typical summer day, in sync with the schematic map. */
 function SchemaPanel({ m, atlas }: { m: AtlasMassif; atlas: Atlas }) {
-  const { schemaPhase, set } = useApp();
+  const { schemaPhase, tourStep, set } = useApp();
   const slot = SCHEMA_PHASES.find((p) => p.key === schemaPhase)!;
   const feats = useMemo(() => {
     const get = (cat: FeatureCategory) => atlas.features[cat].filter((f) => f.properties.massif === m.id).map((f) => f.properties);
@@ -283,6 +293,11 @@ function SchemaPanel({ m, atlas }: { m: AtlasMassif; atlas: Atlas }) {
       </button>
       <p className="eyebrow">Vue schéma · journée d’été type</p>
       <h2>{m.shortName}</h2>
+      {tourStep === null && (
+        <button className="btn small tour-start" onClick={() => set({ tourStep: 0 })}>
+          Présente-moi ce massif
+        </button>
+      )}
       <div className="chips phase-chips" role="tablist" aria-label="Moment de la journée">
         {SCHEMA_PHASES.map((p) => (
           <button key={p.key} role="tab" aria-selected={p.key === schemaPhase} className={`chip ${p.key === schemaPhase ? 'active' : ''}`} onClick={() => set({ schemaPhase: p.key })}>
@@ -481,14 +496,29 @@ function MassifBrowser({ atlas }: { atlas: Atlas }) {
 export function Sidebar() {
   const atlas = useRuntime((r) => r.atlas);
   const feature = useRuntime((r) => r.feature);
-  const { selectedMassif, schemaMassif, panelOpen, mobileSheet } = useApp();
+  const { selectedMassif, schemaMassif, browseOpen, mobileSheet } = useApp();
   const mobile = useIsMobile();
   const massif = atlas?.massifs.find((m) => m.id === selectedMassif);
   const schema = atlas?.massifs.find((m) => m.id === schemaMassif);
-  const open = mobile ? mobileSheet === 'browse' : panelOpen;
+  const open = mobile ? mobileSheet === 'browse' : browseOpen || !!feature || !!schema || !!massif;
   return (
     <aside className={`sidebar panel ${open ? '' : 'collapsed'}`} aria-label="Massifs et connaissances locales">
-      {mobile && <SheetHandle />}
+      {mobile ? (
+        <SheetHandle />
+      ) : (
+        !schema && (
+          <button
+            className="icon-btn ghost panel-close"
+            aria-label="Fermer le panneau"
+            onClick={() => {
+              useRuntime.getState().set({ feature: null });
+              useApp.getState().set({ browseOpen: false, selectedMassif: null });
+            }}
+          >
+            ×
+          </button>
+        )
+      )}
       {!atlas ? (
         <div className="skeleton">
           <span />

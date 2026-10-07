@@ -12,6 +12,7 @@
  *   model DEM, so particles hug the visible relief.
  */
 import type { CustomLayerInterface, CustomRenderMethodInput, Map as MlMap } from 'maplibre-gl';
+import { pacerFor } from './frame-pacer';
 import { EARTH_CIRCUMFERENCE, type Grid } from '@brises/model';
 
 export type ParticleColorMode = 'speed' | 'lift';
@@ -359,7 +360,9 @@ export class WindParticleLayer implements CustomLayerInterface {
     const px = (vb[2] - vb[0]) * 0.05;
     const py = (vb[3] - vb[1]) * 0.05;
     const bounds: [number, number, number, number] = [vb[0] - px, vb[1] - py, vb[2] + px, vb[3] + py];
-    const key = bounds.map((v) => v.toFixed(7)).join(',') + `|${this.settings.exaggeration}|${this.frameCounter >> 4}`;
+    // Re-rendered when the view moves, and periodically only while terrain tiles are still loading.
+    const loading = !this.map?.areTilesLoaded();
+    const key = bounds.map((v) => v.toFixed(7)).join(',') + `|${this.settings.exaggeration}|${loading ? this.frameCounter >> 4 : 'loaded'}`;
     if (key === this.hmapKey) return;
     this.hmapKey = key;
     this.hmapBounds = bounds;
@@ -494,6 +497,6 @@ export class WindParticleLayer implements CustomLayerInterface {
     gl.drawArraysInstanced(gl.TRIANGLE_STRIP, 0, (TRAIL + 1) * 2, this.ages.length);
     gl.depthMask(true);
     gl.bindVertexArray(null);
-    this.map?.triggerRepaint();
+    if (this.map) pacerFor(this.map).request();
   }
 }

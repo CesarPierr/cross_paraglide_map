@@ -10,6 +10,7 @@
  * - `scene`   (3D): wind particles, breeze comets and thermal bubbles.
  */
 import type { CustomLayerInterface, CustomRenderMethodInput, CustomTerrainRenderInput, Map as MlMap } from 'maplibre-gl';
+import { pacerFor } from '../map/frame-pacer';
 import type { CuratedBreezeInput } from '@brises/model';
 import type { ModelParams } from '@brises/model';
 import { conditionFactor, windowActivity } from '@brises/model';
@@ -346,7 +347,9 @@ export class WindScene {
         const py = (vb[3] - vb[1]) * 0.05;
         const bounds: [number, number, number, number] = [vb[0] - px, vb[1] - py, vb[2] + px, vb[3] + py];
         this.frame++;
-        const key = bounds.map((v) => v.toFixed(7)).join(',') + `|${this.settings.exaggeration}|${this.frame >> 5}`;
+        // Re-rendered when the view moves, and every 32 frames only while terrain tiles are still loading.
+        const loading = !this.map?.areTilesLoaded();
+        const key = bounds.map((v) => v.toFixed(7)).join(',') + `|${this.settings.exaggeration}|${loading ? this.frame >> 5 : 'loaded'}`;
         if (key !== this.hmapKey) {
           this.hmapKey = key;
           this.hmapBounds = bounds;
@@ -533,7 +536,8 @@ export class WindScene {
 
     gl.depthMask(true);
     gl.bindVertexArray(null);
-    if (this.sceneVisible()) this.map?.triggerRepaint();
+    // Paced: capped and lowered when idle (see map/frame-pacer.ts).
+    if (this.sceneVisible() && this.map) pacerFor(this.map).request();
   }
 
   private drawComets(gl: WebGL2RenderingContext, opts: CustomRenderMethodInput, dpr: number): void {

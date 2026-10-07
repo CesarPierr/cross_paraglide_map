@@ -26,6 +26,16 @@ const LAYERS = [
   'schema-route-label',
   'schema-title',
 ] as const;
+const PICK_LAYERS = ['schema-pick-dot', 'schema-pick-label'] as const;
+
+/** Role of a thermal on the classic routes, read from its sourced description. */
+export function thermalRole(text: string | undefined): string | null {
+  const t = (text ?? '').toLowerCase();
+  if (/plafond|plaf\b/.test(t)) return 'plafond';
+  if (/relance|raccroch|remonter|recharge/.test(t)) return 'relance';
+  if (/d[ée]clench/.test(t)) return 'déclencheur';
+  return null;
+}
 
 /** Does an activity window [start, end) (hours, may wrap past midnight) overlap a slot? */
 export function activeInSlot(start: number | undefined, end: number | undefined, [a, b]: [number, number]): boolean {
@@ -62,12 +72,18 @@ function addArrowImage(map: MlMap): void {
 
 export class SchemaModule implements MapModule {
   readonly id = 'schema';
-  readonly clickableLayers = ['schema-breeze', 'schema-conv', 'schema-conv-point', 'schema-points', 'schema-routes'];
+  readonly clickableLayers = ['schema-pick-dot', 'schema-pick-label', 'schema-breeze', 'schema-conv', 'schema-conv-point', 'schema-points', 'schema-routes'];
   private ctx: ModuleContext | null = null;
   private massif: string | null = null;
   private savedCamera: { center: [number, number]; zoom: number; pitch: number; bearing: number } | null = null;
 
-  constructor(private describeAtlas: (id: string) => FeatureDetails | null) {}
+  private picking = false;
+  private threeD = false;
+
+  constructor(
+    private describeAtlas: (id: string) => FeatureDetails | null,
+    private pick: (massifId: string) => void,
+  ) {}
 
   add(ctx: ModuleContext): void {
     this.ctx = ctx;
@@ -234,7 +250,57 @@ export class SchemaModule implements MapModule {
       },
       'analysis',
     );
+    // Picker: every sector as a clickable name, shown while choosing which massif to draw.
+    map.addSource('schema-pick', {
+      type: 'geojson',
+      data: {
+        type: 'FeatureCollection',
+        features: ctx.atlas.massifs
+          .filter((m) => m.id !== 'alpes-francaises')
+          .map((m) => ({ type: 'Feature', geometry: { type: 'Point', coordinates: m.center }, properties: { id: m.id, name: m.shortName } })),
+      },
+    });
+    ctx.addLayer(
+      {
+        id: 'schema-pick-dot',
+        type: 'circle',
+        source: 'schema-pick',
+        paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 7, 6, 10, 9], 'circle-color': '#38bdf8', 'circle-stroke-color': '#e0f2fe', 'circle-stroke-width': 2 },
+      },
+      'labels',
+    );
+    ctx.addLayer(
+      {
+        id: 'schema-pick-label',
+        type: 'symbol',
+        source: 'schema-pick',
+        layout: {
+          'text-field': ['get', 'name'],
+          'text-font': ['Noto Sans Bold'],
+          'text-size': ['interpolate', ['linear'], ['zoom'], 7, 12, 10, 15],
+          'text-offset': [0, 1.1],
+          'text-anchor': 'top',
+          'text-padding': 2,
+          'text-allow-overlap': true,
+          'text-ignore-placement': true,
+        },
+        paint: { 'text-color': '#f0f9ff', 'text-halo-color': 'rgba(8,47,73,0.95)', 'text-halo-width': 2.4 },
+      },
+      'labels',
+    );
     this.setVisible(false);
+    this.setPicking(false);
+  }
+
+  private setPicking(on: boolean): void {
+    const map = this.ctx!.map;
+    for (const id of PICK_LAYERS) if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none');
+  }
+
+  select(id: string, props: Record<string, unknown>): boolean {
+    if (!this.picking || props.name === undefined || !this.ctx!.atlas.massifs.some((m) => m.id === id)) return false;
+    this.pick(id);
+    return true;
   }
 
   private setVisible(on: boolean): void {
@@ -244,8 +310,19 @@ export class SchemaModule implements MapModule {
 
   apply(s: AppState, prev: AppState | null): void {
     if (!this.ctx) return;
-    if (prev && prev.schemaMassif === s.schemaMassif && prev.schemaPhase === s.schemaPhase) return;
     const map = this.ctx.map;
+    if (!prev || prev.schemaPicking !== s.schemaPicking) {
+      this.picking = s.schemaPicking;
+      this.setPicking(s.schemaPicking);
+      // Step back to see the neighbouring sectors and pick one.
+      if (s.schemaPicking) map.easeTo({ zoom: Math.min(map.getZoom(), 8.4), pitch: Math.min(map.getPitch(), 35), duration: 900 });
+    }
+    if (prev && prev.schema3d !== s.schema3d && s.schemaMassif) {
+      this.threeD = s.schema3d;
+      map.easeTo({ pitch: s.schema3d ? 52 : 0, duration: 900 });
+    }
+    this.threeD = s.schema3d;
+    if (prev && prev.schemaMassif === s.schemaMassif && prev.schemaPhase === s.schemaPhase) return;
     if (!s.schemaMassif) {
       if (this.massif) this.exit();
       return;
@@ -267,7 +344,7 @@ export class SchemaModule implements MapModule {
             [m.bbox[0], m.bbox[1]],
             [m.bbox[2], m.bbox[3]],
           ],
-          { padding: wide ? { top: 80, bottom: 110, left: 410, right: 40 } : { top: 70, bottom: 300, left: 16, right: 16 }, pitch: 0, bearing: 0, duration: 1600, maxZoom: 12 },
+          { padding: wide ? { top: 110, bottom: 110, left: 410, right: 40 } : { top: 110, bottom: 300, left: 16, right: 16 }, pitch: this.threeD ? 52 : 0, bearing: this.threeD ? map.getBearing() : 0, duration: 1600, maxZoom: 12 },
         );
       }
     }
@@ -302,7 +379,10 @@ export class SchemaModule implements MapModule {
         if (cat === 'breezes' && !activeInSlot(p.windowStart, p.windowEnd, slot)) continue;
         let label = p.name;
         if (cat === 'breezes') label = `${p.name} · ${p.speedKmh ?? '?'} km/h`;
-        else if (cat === 'thermals' && p.details?.Heures) label = `${p.name} (${p.details.Heures})`;
+        else if (cat === 'thermals') {
+          const role = thermalRole(p.description);
+          label = [p.name, role && `${role === 'plafond' ? '▲' : role === 'relance' ? '↻' : '◆'} ${role}`, p.details?.Heures].filter(Boolean).join(' · ');
+        }
         else if (cat === 'takeoffs' && p.details?.Orientation) label = `${p.name} · ${p.details.Orientation}`;
         else if (cat === 'routes' && p.details?.Distance) label = `${p.name} · ${p.details.Distance}`;
         out.push({

@@ -9,7 +9,7 @@
  * - writes a QA report (docs/DATA_QA.md).
  */
 import { existsSync, readdirSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
-import { join, resolve } from 'node:path';
+import { join, relative, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import type { CuratedBreezeInput } from '@brises/model';
 import type { BreezeCondition } from '@brises/shared';
@@ -669,10 +669,12 @@ function densify(coords: [number, number][], stepDeg = 0.01): [number, number][]
 }
 
 const round5 = (v: number) => Math.round(v * 1e5) / 1e5;
+/** Breeze paths follow 216 m DEM cells: 4 decimals (≈ 10 m) keep them exact and halve their weight. */
+const round4 = (v: number) => Math.round(v * 1e4) / 1e4;
 
 function breezePath(t: Terrain, kind: string, wps: (RawPoint & { lon: number; lat: number })[]): [number, number][] {
   const g = t.grid;
-  if (!SNAP_KINDS.has(kind)) return densify(wps.map((p) => [p.lon, p.lat] as [number, number])).map(([x, y]) => [round5(x), round5(y)]);
+  if (!SNAP_KINDS.has(kind)) return densify(wps.map((p) => [p.lon, p.lat] as [number, number])).map(([x, y]) => [round4(x), round4(y)]);
   const cells = wps.map((p) => snapToFloor(t, p.lon, p.lat, 5));
   let path: [number, number][] = [];
   for (let i = 0; i < cells.length - 1; i++) {
@@ -680,7 +682,7 @@ function breezePath(t: Terrain, kind: string, wps: (RawPoint & { lon: number; la
     path = path.concat(i === 0 ? seg : seg.slice(1));
   }
   const smooth = chaikin(simplify(path, 0.8), 3);
-  return smooth.map(([i, j]) => [round5(g.colLon(i + 0.5)), round5(g.rowLat(j + 0.5))]);
+  return smooth.map(([i, j]) => [round4(g.colLon(i + 0.5)), round4(g.rowLat(j + 0.5))]);
 }
 
 function demAt(t: Terrain, lon: number, lat: number): number | null {
@@ -753,6 +755,7 @@ function main() {
   const curated: CuratedBreezeInput[] = [];
   const rules: ModelRule[] = [];
   const figures: AtlasFigure[] = [];
+  const dossiers: Record<string, string> = {};
   /** `${massif}/${raw item id}` → atlas feature id (ids get a suffix when they collide). */
   const rawToFeature = new Map<string, string>();
   const usedIds = new Set<string>();
@@ -1017,6 +1020,8 @@ function main() {
         previous.bbox = [Math.min(b[0], bbox[0]), Math.min(b[1], bbox[1]), Math.max(b[2], bbox[2]), Math.max(b[3], bbox[3])].map((v) => Math.round(v * 1e4) / 1e4) as typeof b;
         continue;
       }
+      const notes = join(dir, '..', `${base}.md`);
+      if (existsSync(notes)) dossiers[mid] = relative(ROOT, notes);
       massifs.push({
         id: mid,
         name: m.name,
@@ -1075,6 +1080,7 @@ function main() {
     curated,
     rules,
     figures,
+    dossiers,
     stats: {
       massifs: massifs.length,
       sources: Object.keys(sources).length,

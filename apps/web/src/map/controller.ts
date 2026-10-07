@@ -19,6 +19,7 @@ import {
 import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url';
 import type { DataClient } from '../data/client';
 import type { AppState } from '../state/store';
+import { budgetFor, onPowerContextChange, pacerFor } from './frame-pacer';
 import { addIcons } from './icons';
 import { AirspaceModule } from './modules/airspace';
 import { KnowledgeModule } from './modules/knowledge';
@@ -41,6 +42,8 @@ export interface ControllerEvents {
   onFeature: (details: FeatureDetails | null) => void;
   onProbe: (probe: { lon: number; lat: number; result: ProbeResult | null } | null) => void;
   onModuleEvent: (e: ModuleEvent) => void;
+  /** A massif was picked on the map for the schema view. */
+  onPickMassif: (massifId: string) => void;
   /** Map picked a point for a contribution ("place on map" mode). */
   onPick: (lngLat: [number, number]) => void;
 }
@@ -49,9 +52,16 @@ export interface ControllerEvents {
 const LIVE_ONLY: (keyof AppState['layers'])[] = ['particles', 'comets', 'thermalColumns', 'breezes', 'convergences', 'hazards', 'thermals', 'soaring', 'takeoffs', 'landings', 'routes', 'kk7Thermals', 'kk7Skyways', 'sitesCommunity'];
 
 /** The state the map actually renders: the schema view flattens the relief and swaps the live layers for its diagram. */
+/** Documented breeze flows and thermal columns stay under the schema; particles only on demand. */
+const SCHEMA_KEEP: (keyof AppState['layers'])[] = ['comets', 'thermalColumns'];
+
 function effectiveState(s: AppState): AppState {
+  // Picking a massif: only the sector names, so they read at a glance.
+  if (s.schemaPicking && !s.schemaMassif)
+    return { ...s, overlay: 'none', layers: { ...s.layers, ...Object.fromEntries([...LIVE_ONLY, 'sitesOfficial', 'airspace', 'airspaceProtect', 'airspaceActivity'].map((k) => [k, false])) } };
   if (!s.schemaMassif) return s;
-  return { ...s, exaggeration: 0, overlay: 'none', layers: { ...s.layers, ...Object.fromEntries(LIVE_ONLY.map((k) => [k, false])) } };
+  const off = LIVE_ONLY.filter((k) => !SCHEMA_KEEP.includes(k) && !(s.schemaWind && k === 'particles'));
+  return { ...s, exaggeration: s.schema3d ? s.exaggeration : 0, overlay: 'none', layers: { ...s.layers, ...Object.fromEntries(off.map((k) => [k, false])) } };
 }
 
 export class MapController {
@@ -67,6 +77,7 @@ export class MapController {
   private hover: Popup;
   private picking = false;
   private disposed = false;
+  private offPower: () => void = () => {};
 
   constructor(
     container: HTMLElement,
@@ -86,6 +97,8 @@ export class MapController {
         [10.5, 47.6],
       ],
       hash: true,
+      // Retina screens render 4× the pixels: capped by the energy budget.
+      pixelRatio: Math.min(window.devicePixelRatio || 1, budgetFor('auto').maxDpr),
       attributionControl: { compact: true },
       canvasContextAttributes: { antialias: true, powerPreference: 'high-performance' },
     });
@@ -97,6 +110,10 @@ export class MapController {
     this.hover = new Popup({ closeButton: false, closeOnClick: false, className: 'hover-tip', offset: 14, maxWidth: '260px' });
     // Start as soon as the style is parsed: waiting for 'load' would block on unreachable third-party tiles.
     this.map.once('style.load', () => void this.start());
+    // Battery plugged / unplugged: the auto budget changes.
+    this.offPower = onPowerContextChange(() => this.state && this.applyAll(this.state, null));
+    // The attribution stays a small (i) button until opened.
+    this.map.once('load', () => this.map.getContainer().querySelector('.maplibregl-ctrl-attrib')?.classList.remove('maplibregl-compact-show'));
     this.map.on('error', (e) => {
       if ((e.error as { status?: number } | undefined)?.status) return; // missing tiles are expected
       console.warn(e.error);
@@ -128,7 +145,10 @@ export class MapController {
         () => this.emitTime(),
       );
       const knowledge = this.knowledge;
-      const schema = new SchemaModule((id) => knowledge.describe(id));
+      const schema = new SchemaModule(
+        (id) => knowledge.describe(id),
+        (id) => this.events.onPickMassif(id),
+      );
       this.modules = [new ReliefModule(), new Kk7Module(), new AirspaceModule(), this.knowledge, schema, new SitesModule(this.data.siteProviders()), new LabelsModule(), this.wind];
       for (const m of this.modules) if (m !== this.wind) await m.add(ctx);
       this.ready = true;
@@ -158,7 +178,13 @@ export class MapController {
     this.applyAll(s, this.prevApplied);
   }
 
+  private applyPower(s: AppState): void {
+    pacerFor(this.map).setMode(s.power);
+    this.map.setPixelRatio(Math.min(window.devicePixelRatio || 1, budgetFor(s.power).maxDpr));
+  }
+
   private applyAll(raw: AppState, prev: AppState | null): void {
+    if (!prev || prev.power !== raw.power) this.applyPower(raw);
     const s = effectiveState(raw);
     for (const m of this.modules) m.apply(s, prev);
     this.prevApplied = s;
@@ -197,6 +223,7 @@ export class MapController {
     const hit = this.map.queryRenderedFeatures(e.point, { layers: this.clickable })[0];
     if (hit) {
       const owner = this.modules.find((m) => m.clickableLayers?.includes(hit.layer.id));
+      if (owner?.select?.(String(hit.properties?.id), hit.properties ?? {})) return;
       const details = owner?.describe?.(String(hit.properties?.id), hit.properties ?? {}) ?? null;
       if (details) {
         this.events.onFeature(details);
@@ -274,6 +301,7 @@ export class MapController {
 
   dispose(): void {
     this.disposed = true;
+    this.offPower();
     for (const m of this.modules) m.dispose?.();
     this.map.remove();
   }

@@ -4,6 +4,7 @@
  * Goes through the DataClient: API in production, GitHub issue otherwise.
  */
 import type { ContributionInput, FeedbackSummary } from '@brises/shared';
+import { showBrowse } from './mobile';
 import { useEffect, useState } from 'react';
 import { useApp, useRuntime, type ContributionDraft } from '../state/store';
 import { getController, getDataClient } from './controller-ref';
@@ -23,7 +24,7 @@ function context(): ContributionInput['context'] {
 
 export function startDraft(d: Omit<ContributionDraft, 'points' | 'picking'> & { points?: [number, number][] }) {
   useRuntime.getState().set({ draft: { points: [], picking: false, ...d } });
-  useApp.getState().set({ panelOpen: true });
+  showBrowse();
 }
 
 export function FeedbackBar({ targetRef, title }: { targetRef: string; title: string }) {

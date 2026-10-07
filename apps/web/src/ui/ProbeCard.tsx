@@ -5,6 +5,7 @@ import { useApp, useRuntime } from '../state/store';
 import { getController, getDataClient } from './controller-ref';
 import { startDraft } from './Feedback';
 import { fmtHour } from './format';
+import { NearbySources } from './Nearby';
 import { ProfileChart } from './ProfileChart';
 import { IconClose, IconPlus, IconSun } from './icons';
 
@@ -177,6 +178,7 @@ export function ProbeCard() {
           </div>
         </>
       )}
+      <NearbySources lon={probe.lon} lat={probe.lat} />
       <PointForecastBlock lon={probe.lon} lat={probe.lat} />
       <button className="link-btn add-here" onClick={() => startDraft({ kind: 'new', points: [[probe.lon, probe.lat]] })}>
         <IconPlus size={14} /> Signaler un phénomène ici

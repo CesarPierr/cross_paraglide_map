@@ -40,10 +40,11 @@ export async function seedAtlas(db: Db, atlas: Atlas): Promise<void> {
     for (const part of chunk(curated, 100))
       await tx.query(`INSERT INTO curated_breezes (id, sort, data) SELECT x->>'id', (x->>'sort')::int, x->'data' FROM jsonb_array_elements($1::jsonb) x`, [JSON.stringify(part)]);
     await tx.query(`INSERT INTO model_rules (id, data) SELECT x->>'id', x FROM jsonb_array_elements($1::jsonb) x`, [JSON.stringify(atlas.rules)]);
-    await tx.query(`INSERT INTO atlas_meta (key, value) VALUES ('regions', $1::jsonb), ('generatedAt', $2::jsonb), ('figures', $3::jsonb)`, [
+    await tx.query(`INSERT INTO atlas_meta (key, value) VALUES ('regions', $1::jsonb), ('generatedAt', $2::jsonb), ('figures', $3::jsonb), ('dossiers', $4::jsonb)`, [
       JSON.stringify(atlas.regions),
       JSON.stringify(atlas.generatedAt),
       JSON.stringify(atlas.figures ?? []),
+      JSON.stringify(atlas.dossiers ?? {}),
     ]);
   });
 }

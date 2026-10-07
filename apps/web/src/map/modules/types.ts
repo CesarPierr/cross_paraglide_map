@@ -61,6 +61,8 @@ export interface MapModule {
   /** Called on every app-state change; modules diff what concerns them. */
   apply(state: AppState, prev: AppState | null): void;
   describe?(featureId: string, properties: Record<string, unknown>): FeatureDetails | null;
+  /** Handles a click itself (e.g. picking a massif); returns true when it did. */
+  select?(featureId: string, properties: Record<string, unknown>): boolean;
   dispose?(): void;
 }
 

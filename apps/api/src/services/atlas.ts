@@ -73,6 +73,7 @@ export async function loadAtlas(db: Db): Promise<Atlas> {
     curated: curatedRows.map((r) => r.data),
     rules: rules.map((r) => r.data),
     figures: (metaMap.figures as Atlas['figures']) ?? [],
+    dossiers: (metaMap.dossiers as Atlas['dossiers']) ?? {},
     stats: { massifs: massifs.length, sources: sources.length, ...Object.fromEntries(CATEGORIES.map((c) => [c, features[c].length])) },
   };
 }

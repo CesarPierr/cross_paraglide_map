@@ -147,5 +147,7 @@ export interface Atlas {
   rules: ModelRule[];
   /** Annotated figures from clubs and federations (optional: older atlases have none). */
   figures?: AtlasFigure[];
+  /** Research dossier (notes: sources read, changes, gaps) of each massif, repository-relative path. */
+  dossiers?: Record<string, string>;
   stats: Record<string, number>;
 }

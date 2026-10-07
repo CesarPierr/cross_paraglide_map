@@ -4,6 +4,7 @@ import { createDataClient, type DataClient } from '../data/client';
 import { MapController } from '../map/controller';
 import { useApp, useRuntime } from '../state/store';
 import { setController, setDataClient } from './controller-ref';
+import { showBrowse } from './mobile';
 
 export function MapView() {
   const ref = useRef<HTMLDivElement>(null);
@@ -23,9 +24,14 @@ export function MapView() {
         onTime: ({ sunAzimuth, sunElevation, solarHour }) => rt().set({ sun: { azimuth: sunAzimuth, elevation: sunElevation }, solarHour }),
         onFeature: (feature) => {
           rt().set({ feature });
-          if (feature) useApp.getState().set(window.matchMedia('(max-width: 860px)').matches ? { mobileSheet: 'browse' } : { panelOpen: true });
+          if (feature) showBrowse();
         },
         onProbe: (probe) => rt().set({ probe }),
+        onPickMassif: (id) => {
+          rt().set({ feature: null });
+          useApp.getState().set({ schemaPicking: false, schemaMassif: id, selectedMassif: id });
+          showBrowse();
+        },
         onModuleEvent: (e) => {
           if (e.type === 'status') rt().set({ moduleMessage: e.message });
         },

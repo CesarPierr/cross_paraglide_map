@@ -10,7 +10,7 @@ import { BREEZE_COLORS, COLORS } from '../map/palette';
 import { useApp, useRuntime } from '../state/store';
 import { getController } from './controller-ref';
 import { IconSearch } from './icons';
-import { isMobileNow } from './mobile';
+import { showBrowse } from './mobile';
 
 interface Result {
   key: string;
@@ -61,7 +61,7 @@ function score(hay: string, words: string[]): number {
   return s;
 }
 
-const showSheet = () => (isMobileNow() ? useApp.getState().set({ mobileSheet: 'browse' }) : useApp.getState().set({ panelOpen: true }));
+const showSheet = showBrowse;
 
 function openDetails(d: FeatureDetails) {
   useRuntime.getState().set({ feature: d });

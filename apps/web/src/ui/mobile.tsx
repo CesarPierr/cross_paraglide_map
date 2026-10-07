@@ -1,23 +1,13 @@
 import { useEffect, useState } from 'react';
 import { useApp, useRuntime, type MobileSheet } from '../state/store';
-import { getController } from './controller-ref';
 import { IconLayers, IconMountain, IconWind } from './icons';
 
-/** Opens the schematic view of the sector under the map centre (the smallest one containing it). */
-export function schemaHere(): boolean {
-  const atlas = useRuntime.getState().atlas;
-  const c = getController()?.map.getCenter();
-  if (!atlas || !c) return false;
-  const hit = atlas.massifs
-    .filter((m) => m.id !== 'alpes-francaises' && c.lng >= m.bbox[0] && c.lng <= m.bbox[2] && c.lat >= m.bbox[1] && c.lat <= m.bbox[3])
-    .sort((a, b) => (a.bbox[2] - a.bbox[0]) * (a.bbox[3] - a.bbox[1]) - (b.bbox[2] - b.bbox[0]) * (b.bbox[3] - b.bbox[1]))[0];
-  if (!hit) return false;
-  useRuntime.getState().set({ feature: null });
-  useApp.getState().set({ schemaMassif: hit.id, selectedMassif: hit.id, ...(isMobileNow() ? { mobileSheet: 'browse' as const } : { panelOpen: true }) });
-  return true;
-}
-
 const QUERY = '(max-width: 860px)';
+
+/** Shows the sector / sheet panel: bottom sheet on phones, left panel on desktop. */
+export function showBrowse(): void {
+  useApp.getState().set(isMobileNow() ? { mobileSheet: 'browse' } : { browseOpen: true });
+}
 
 /** True on phone-sized screens, where panels become bottom sheets (one at a time). */
 export function useIsMobile(): boolean {
@@ -85,7 +75,7 @@ export function MobileDock() {
           </button>
         );
       })}
-      <button className={schema ? 'active' : ''} onClick={() => (schema ? useApp.getState().set({ schemaMassif: null }) : schemaHere() || useApp.getState().set({ mobileSheet: 'browse' }))} aria-label={schema ? 'Revenir à la vue 3D' : 'Choisir un massif pour la vue schéma'}>
+      <button className={schema ? 'active' : ''} onClick={() => useApp.getState().set(schema ? { schemaMassif: null, tourStep: null } : { schemaPicking: true, mobileSheet: 'none' })} aria-label={schema ? 'Revenir à la vue 3D' : 'Choisir un massif pour la vue schéma'}>
         <IconLayers size={18} />
         <span>{schema ? 'Vue 3D' : 'Schéma'}</span>
       </button>

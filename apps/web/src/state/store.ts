@@ -1,5 +1,6 @@
 import type { Atlas, ContributionInput } from '@brises/shared';
 import { create } from 'zustand';
+import type { PowerMode } from '../map/frame-pacer';
 import type { OverlayMode } from '../engine/cpu-overlays';
 import type { FeatureDetails } from '../map/modules/types';
 import type { ProbeResult } from '../map/modules/wind';
@@ -52,6 +53,10 @@ export interface AppState {
   heightAgl: number;
   heightAsl: number;
   breezeScale: number;
+  /** Heatwave day: enables the breezes documented « par forte chaleur ». */
+  heatwave: boolean;
+  /** Energy budget of the rendering, chosen automatically (battery, device, activity). */
+  power: PowerMode;
   overlay: OverlayMode;
   overlayOpacity: number;
   layers: Record<LayerKey, boolean>;
@@ -64,7 +69,18 @@ export interface AppState {
   /** Schematic, flattened all-in-one view of a massif (null = live 3D view). */
   schemaMassif: string | null;
   schemaPhase: SchemaPhase;
+  /** Waiting for the user to pick a massif on the map for the schema view. */
+  schemaPicking: boolean;
+  /** Schema drawn on the 3D relief instead of a flat map. */
+  schema3d: boolean;
+  /** Simulated wind particles drawn under the schema (documented flows always are). */
+  schemaWind: boolean;
+  /** Guided presentation of the schema massif: current step, null when off. */
+  tourStep: number | null;
+  /** Right-hand settings panel (desktop). */
   panelOpen: boolean;
+  /** Left-hand sector list (desktop); sheets of a sector, feature or schema open it on their own. */
+  browseOpen: boolean;
   mobileSheet: MobileSheet;
   aboutOpen: boolean;
   set: (patch: Partial<AppState>) => void;
@@ -85,6 +101,8 @@ export const useApp = create<AppState>((set) => ({
   heightAgl: 80,
   heightAsl: 1500,
   breezeScale: 1,
+  heatwave: false,
+  power: 'auto',
   overlay: 'none',
   overlayOpacity: 0.85,
   layers: {
@@ -117,7 +135,12 @@ export const useApp = create<AppState>((set) => ({
   selectedMassif: null,
   schemaMassif: null,
   schemaPhase: 'afternoon',
+  schemaPicking: false,
+  schema3d: false,
+  schemaWind: false,
+  tourStep: null,
   panelOpen: !isSmall,
+  browseOpen: false,
   mobileSheet: 'none',
   aboutOpen: false,
   set: (patch) => set(patch),

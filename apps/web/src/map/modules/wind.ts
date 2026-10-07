@@ -4,6 +4,7 @@
  * in a worker, CPU particles and an image overlay.
  */
 import type { CuratedBreezeInput } from '@brises/shared';
+import { budgetFor } from '../frame-pacer';
 import type { CellResult, GridMeta, ModelParams } from '@brises/model';
 import type { ImageSource } from 'maplibre-gl';
 import { ModelClient } from '../../engine/model-client';
@@ -19,7 +20,8 @@ export type ProbeResult = CellResult & { convergence: number; curatedName: strin
 
 const EMPTY_PNG = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==';
 
-const MODEL_KEYS: (keyof AppState)[] = ['hour', 'month0', 'day', 'synopticFrom', 'synopticKmh', 'heightMode', 'heightAgl', 'heightAsl', 'breezeScale'];
+const MODEL_KEYS: (keyof AppState)[] = ['hour', 'month0', 'day', 'synopticFrom', 'synopticKmh', 'heightMode', 'heightAgl', 'heightAsl', 'breezeScale', 'heatwave'];
+// (power changes only the rendering budget, not the model)
 
 export function modelParams(s: AppState): ModelParams {
   return {
@@ -30,6 +32,7 @@ export function modelParams(s: AppState): ModelParams {
     synoptic: { fromDeg: s.synopticFrom, speedKmh: s.synopticKmh },
     height: { mode: s.heightMode, meters: s.heightMode === 'agl' ? s.heightAgl : s.heightAsl },
     breezeScale: s.breezeScale,
+    heatwave: s.heatwave,
   };
 }
 
@@ -86,7 +89,7 @@ export class WindModule implements MapModule {
     const s = this.state;
     return {
       particles: s?.layers.particles ?? true,
-      particleCount: s?.particleCount ?? 12000,
+      particleCount: Math.min(s?.particleCount ?? 12000, budgetFor(s?.power ?? 'auto').maxParticles),
       particleSpeed: s?.particleSpeed ?? 1,
       colorMode: s?.particleColor ?? 'speed',
       heightMode: s?.heightMode ?? 'agl',

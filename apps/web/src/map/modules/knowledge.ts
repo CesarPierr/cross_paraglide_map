@@ -16,7 +16,7 @@ const GROUPS: Partial<Record<LayerKey, string[]>> = {
   breezes: ['breezes-glow', 'breezes-core', 'breezes-core-low', 'breezes-arrows', 'breezes-hit', 'breezes-label'],
   convergences: ['convergences-glow', 'convergences-line', 'convergences-point'],
   hazards: ['hazards'],
-  thermals: ['thermals'],
+  thermals: ['thermals', 'thermals-measured'],
   soaring: ['soaring'],
   takeoffs: ['takeoffs'],
   landings: ['landings'],
@@ -33,7 +33,7 @@ export function shortLabel(name: string): string {
 
 export class KnowledgeModule implements MapModule {
   readonly id = 'atlas';
-  readonly clickableLayers = ['breezes-hit', 'convergences-line', 'convergences-point', 'hazards', 'thermals', 'soaring', 'takeoffs', 'landings', 'routes-line'];
+  readonly clickableLayers = ['breezes-hit', 'convergences-line', 'convergences-point', 'hazards', 'thermals', 'thermals-measured', 'soaring', 'takeoffs', 'landings', 'routes-line'];
   private ctx: ModuleContext | null = null;
   private index = new Map<string, AtlasFeature>();
 
@@ -192,6 +192,20 @@ export class KnowledgeModule implements MapModule {
     point('landings', 'landing', 10);
     point('soaring', 'soaring', 9.5);
     point('thermals', 'thermal', 9);
+    // Hotspots known only from GPS tracks (kk7): smaller, unlabelled, from closer in.
+    ctx.map.setFilter('thermals', ['!=', ['get', 'origin'], 'kk7']);
+    ctx.addLayer(
+      {
+        id: 'thermals-measured',
+        type: 'symbol',
+        source: 'thermals',
+        minzoom: 10.5,
+        filter: ['==', ['get', 'origin'], 'kk7'],
+        layout: { 'icon-image': 'thermal', 'icon-size': ['interpolate', ['linear'], ['zoom'], 10.5, 0.42, 13, 0.7], 'icon-allow-overlap': true, 'symbol-sort-key': ['-', 1, ['get', 'kk7P']] },
+        paint: { 'icon-opacity': 0.72 },
+      },
+      'points',
+    );
     point('takeoffs', 'takeoff', 9.5);
     point('hazards', 'hazard', 10);
 

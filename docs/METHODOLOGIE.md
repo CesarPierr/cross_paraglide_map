@@ -88,6 +88,30 @@ heures et à leur début documenté ; pièges sous le vent météo qu'ils citent
 liste les données à corriger. À l'atlas de la seconde passe : 93 % des brises, 84 % des
 convergences, 83 % des thermiques conformes.
 
+## 4 ter. Traces GPS et positions (`npm run data:build`, `scripts/research/check_altitudes.py`)
+
+Les textes disent pourquoi et quand ça monte ; les traces GPS disent où. Les points chauds de
+[thermal.kk7.ch](https://thermal.kk7.ch) (probabilité de trouver un thermique, calculée sur les
+traces publiées, par moment de la journée — du lever du soleil à +6 h, de +6 à +9 h, au-delà — et
+par saison) sont croisés avec les thermiques documentés (`scripts/kk7.ts`) :
+
+- un thermique documenté avec un point chaud à moins de 600 m en reçoit la probabilité et le
+  profil horaire ; si sa position n'était qu'approximative, il est recalé sur le point mesuré ;
+- un point chaud d'au moins 80 % qu'aucun texte ne décrit (rien à moins de 1 km) devient un
+  thermique « mesuré » (`origin: 'kk7'`), affiché plus discrètement, animé selon sa probabilité,
+  exclu du contrôle de fidélité (il ne décrit aucun phénomène) ;
+- `docs/KK7_CROISEMENT.md` liste, secteur par secteur, les points chauds forts encore sans texte
+  et les thermiques documentés loin de tout point chaud : c'est la liste de recherche.
+
+Les données kk7 sont sous licence CC BY-NC-SA 4.0 : l'atlas qui les intègre hérite de cette
+licence (attribution, pas d'usage commercial, partage à l'identique).
+
+Les positions sont contrôlées par l'altitude : le terrain IGN (RGE ALTI, précision métrique) à la
+position d'un point est comparé à son altitude déclarée (`docs/POSITIONS.md`). Les positions
+vérifiées (fiche FFVL, toponyme IGN ou OSM, point chaud, terrain) sont consignées avec leur
+méthode dans `research_notes/Seconde passe 2026/positions/corrections.json`, qui prime sur les
+fichiers de recherche.
+
 ## 5. Vent météo et relief
 
 - **Saisie** : vent « des crêtes » (direction, force), ou prévision AROME (moyenne vectorielle

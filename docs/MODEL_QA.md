@@ -1,6 +1,6 @@
 # Contrôle du modèle de vent contre l’atlas
 
-Généré par `npm run model:check` le 2026-10-07 sur `apps/web/public/data/atlas.json` (atlas du 2026-10-07), modèle TypeScript de référence (`packages/model`) sur le MNT réel. Durée : 10,8 s.
+Généré par `npm run model:check` le 2026-10-07 sur `apps/web/public/data/atlas.json` (atlas du 2026-10-07), modèle TypeScript de référence (`packages/model`) sur le MNT réel. Durée : 10,9 s.
 
 ## Critères
 
@@ -13,11 +13,11 @@ Généré par `npm run model:check` le 2026-10-07 sur `apps/web/public/data/atla
 
 | Catégorie | Réussis | Testés | Taux | Non testables |
 | --- | --- | --- | --- | --- |
-| brises | 253 | 272 | 93 % | 2 |
+| brises | 256 | 274 | 93 % | 2 |
 | convergences | 62 | 72 | 86 % | 9 |
-| thermiques | 405 | 490 | 83 % | 0 |
+| thermiques | 407 | 491 | 83 % | 0 |
 | pièges | 109 | 158 | 69 % | 48 |
-| **total** | **829** | **992** | **84 %** | 59 |
+| **total** | **834** | **995** | **84 %** | 59 |
 
 Contrôles élémentaires des brises :
 
@@ -25,20 +25,20 @@ Contrôles élémentaires des brises :
 | --- | --- | --- | --- |
 | condition | 0 | 1 | 0 % |
 | hors condition | 11 | 11 | 100 % |
-| hors horaires | 233 | 239 | 97 % |
-| sens, 30 % couche | 253 | 261 | 97 % |
+| hors horaires | 234 | 240 | 98 % |
+| sens, 30 % couche | 256 | 263 | 97 % |
 | sens, 30 % de l’altitude atteinte | 10 | 10 | 100 % |
-| sens, 60 % couche | 253 | 262 | 97 % |
+| sens, 60 % couche | 256 | 264 | 97 % |
 | sens, 60 % de l’altitude atteinte | 9 | 10 | 90 % |
-| sens, sol | 264 | 272 | 97 % |
+| sens, sol | 267 | 274 | 97 % |
 | tracé | 0 | 1 | 0 % |
-| vitesse, 30 % couche | 121 | 123 | 98 % |
+| vitesse, 30 % couche | 123 | 125 | 98 % |
 | vitesse, 30 % de l’altitude atteinte | 10 | 10 | 100 % |
-| vitesse, 60 % couche | 122 | 123 | 99 % |
+| vitesse, 60 % couche | 124 | 125 | 99 % |
 | vitesse, 60 % de l’altitude atteinte | 9 | 10 | 90 % |
-| vitesse, sol | 131 | 133 | 98 % |
+| vitesse, sol | 133 | 135 | 99 % |
 
-Calendrier : déclenchement des thermiques au début explicite (« dès 10h », « à partir de midi », « 3 h après le lever du soleil ») : écart médian modèle − fiche -0,75 h sur 56 sites (20 trop tôt, 12 trop tard). Les heures « après-midi » ou « 12h-17h » des fiches de thermiques décrivent souvent la meilleure période plutôt que le déclenchement : seuls les débuts explicites mesurent un décalage systématique.
+Calendrier : déclenchement des thermiques au début explicite (« dès 10h », « à partir de midi », « 3 h après le lever du soleil ») : écart médian modèle − fiche -0,63 h sur 56 sites (19 trop tôt, 12 trop tard). Les heures « après-midi » ou « 12h-17h » des fiches de thermiques décrivent souvent la meilleure période plutôt que le déclenchement : seuls les débuts explicites mesurent un décalage systématique.
 
 ## Taux de réussite par secteur
 
@@ -50,7 +50,7 @@ Calendrier : déclenchement des thermiques au début explicite (« dès 10h », 
 | Baronnies | 7/7 | – | 5/10 | 2/4 | 14/21 |
 | Bauges | 8/8 | 4/5 | 14/14 | 2/2 | 28/29 |
 | Beaufortain | 3/4 | 1/2 | 8/9 | 1/3 | 13/18 |
-| Belledonne | 11/12 | 2/2 | 15/17 | 2/5 | 30/36 |
+| Belledonne | 12/12 | 2/2 | 16/17 | 2/5 | 32/36 |
 | Bornes | 3/3 | 2/2 | 8/9 | 1/2 | 14/16 |
 | Bourget – Chambéry | 5/7 | 1/1 | 10/10 | 3/5 | 19/23 |
 | Briançonnais | 5/7 | 2/3 | 5/10 | 7/7 | 19/27 |
@@ -61,9 +61,9 @@ Calendrier : déclenchement des thermiques au début explicite (« dès 10h », 
 | Chartreuse | 12/15 | 2/2 | 23/26 | 3/3 | 40/46 |
 | Combe de Savoie | 3/4 | – | 6/7 | 1/2 | 10/13 |
 | Cuvette grenobloise | 7/7 | 1/1 | 1/1 | 2/2 | 11/11 |
-| Dévoluy | 1/1 | 1/1 | 6/7 | 1/1 | 9/10 |
+| Dévoluy | 1/1 | 1/1 | 5/7 | 1/1 | 8/10 |
 | Digne – Lure | 5/5 | – | 9/10 | 4/5 | 18/20 |
-| Diois | 10/10 | – | 15/20 | 5/9 | 30/39 |
+| Diois | 10/10 | – | 14/20 | 5/9 | 29/39 |
 | Faucigny – Arve | 6/7 | – | 8/10 | 6/7 | 20/24 |
 | Gapençais – Céüse | 4/4 | 1/1 | 6/8 | 2/2 | 13/15 |
 | Giffre | 3/4 | – | 11/11 | 1/4 | 15/19 |
@@ -77,10 +77,10 @@ Calendrier : déclenchement des thermiques au début explicite (« dès 10h », 
 | Mercantour | 8/8 | 1/2 | 18/20 | 3/5 | 30/35 |
 | Oisans | 7/7 | 1/1 | 19/25 | 3/3 | 30/36 |
 | Préalpes de Grasse | 3/3 | 3/4 | 14/14 | 2/4 | 22/25 |
-| Préalpes de Nice | 5/5 | 1/1 | 9/11 | 0/2 | 15/19 |
+| Préalpes de Nice | 5/5 | 1/1 | 10/11 | 0/2 | 16/19 |
 | Queyras | 7/7 | 1/1 | 1/2 | 1/1 | 10/11 |
 | Saint-André | 3/4 | 1/1 | 10/12 | 1/2 | 15/19 |
-| Salève | 2/2 | – | 3/5 | 1/1 | 6/8 |
+| Salève | 4/4 | – | 4/6 | 1/1 | 9/11 |
 | Serre-Ponçon | 2/3 | – | 11/14 | 5/5 | 18/22 |
 | Tarentaise | 8/8 | 4/4 | 12/16 | 5/5 | 29/33 |
 | Trièves | 2/2 | – | 7/9 | 1/2 | 10/13 |
@@ -89,7 +89,7 @@ Calendrier : déclenchement des thermiques au début explicite (« dès 10h », 
 | Vallouise – haute Durance | 6/7 | 1/2 | 9/14 | 5/6 | 21/29 |
 | Vanoise | 4/4 | – | 5/6 | 3/3 | 12/13 |
 | Vercors est & sud | 6/6 | – | 12/14 | 1/3 | 19/23 |
-| Vercors nord | 7/7 | 2/2 | 18/26 | 2/3 | 29/38 |
+| Vercors nord | 7/7 | 2/2 | 19/26 | 2/3 | 30/38 |
 
 ## Échecs
 
@@ -97,12 +97,12 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 
 | Catégorie | modèle | donnée | limite |
 | --- | --- | --- | --- |
-| brises | 6 | 7 | 6 |
+| brises | 6 | 6 | 6 |
 | convergences | 3 | 7 | 0 |
-| thermiques | 39 | 0 | 46 |
+| thermiques | 39 | 0 | 45 |
 | pièges | 0 | 0 | 49 |
 
-### Brises (19)
+### Brises (18)
 
 - **Brise montante de la basse vallée de l'Arve (Annemasse → Bonneville → Marignier → Cluses) (vallée)** — `arve-faucigny/arve-basse-vallee-montante`, Faucigny – Arve · *modèle* · juillet 16h15, sans vent météo · couches : altitude atteinte documentée 2500 m
   - sens, 60 % de l’altitude atteinte : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 50 % (cos médian 0,72)
@@ -138,11 +138,6 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 - **Brise d'ouest de l'après-midi sur les faces ouest (Grand Ratz, Grande Sûre) (pente)** — `chartreuse/brise-ouest-apres-midi`, Chartreuse · *limite* · juillet 17h00, sans vent météo · couches : brise de pente 100–200 m (S1, règle cycle-brise-pente)
   - hors horaires (12h30) : attendu composante < 2 km/h ; obtenu 4 km/h
   - cause probable : hors horaires : composante dans le sens du tracé hors horaires : pente 2 km/h, vallée générique 0 km/h, plaine/lac/mer 1 km/h, vent météo 0 km/h (brise documentée active à 0 %)
-- **Ascendances des faces est de Belledonne (lac de Grand-Maison → Pas de la Coche), plus précoces que la face ouest (pente)** — `belledonne/brise-pente-est-belledonne`, Belledonne · *donnée* · juillet 13h00, sans vent météo · couches : brise de pente 100–200 m (S1, règle cycle-brise-pente)
-  - sens, sol (50 m) : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 25 % (cos médian 0,25)
-  - sens, 30 % couche (60 m sol) : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 25 % (cos médian 0,34)
-  - sens, 60 % couche (120 m sol) : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 38 % (cos médian 0,31)
-  - cause probable : sol (50 m) : flux générique opposé (vallée générique -2 km/h le long du tracé) malgré la brise documentée (poids 0,48) ; 30 % couche (60 m sol) : flux générique opposé (vallée générique -2 km/h le long du tracé) malgré la brise documentée (poids 0,48) ; 60 % couche (120 m sol) : cellules attribuées à une autre brise documentée : oisans-grandes-rousses/eau-d-olle-brise (poids propre moyen 0,33)
 - **Vent du nord thermique des lacs de Laffrey (plateau matheysin) (plaine → montagne)** — `matheysine/laffrey-nord-plateau`, Matheysine – Drac · *donnée* · juillet 15h30, sans vent météo · couches : aspiration plaine → montagne ≈ 1000 m (S4)
   - vitesse, sol (50 m) : attendu 12–37 km/h (doc. 23 km/h) ; obtenu 10 km/h
   - vitesse, 30 % couche (300 m sol) : attendu 12–37 km/h (doc. 23 km/h) ; obtenu 10 km/h
@@ -214,7 +209,7 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
   - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne -0,61 m/s, 0 % > 0
   - cause probable : les flux modélisés ne se rencontrent pas sur cette ligne à cette heure
 
-### Thermiques (85)
+### Thermiques (84)
 
 - **Secteur du Coin (pied de la face ouest)** — `saleve-genevois/saleve-coin-thermique`, Salève · *limite* · juillet 14h45
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,28 (médiane 0,30, rang 28 %)
@@ -276,7 +271,7 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,28 (médiane 0,35, rang 29 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -140 m, altitude 831 m)
 - **Falaise est devant les décollages de Saint-Hilaire** — `chartreuse/facade-est-st-hilaire`, Chartreuse · *modèle* · juillet 13h54
-  - déclenchement : attendu colonne thermique à ±1 h du début documenté (8h48) ; obtenu 10h00 (trop tard)
+  - déclenchement : attendu colonne thermique à ±1 h du début documenté (8h48) ; obtenu 10h15 (trop tard)
   - cause probable : déclenchement décalé par rapport au début documenté
 - **Cirque de Saint-Même (point de bascule face ouest / plafond avant Belledonne)** — `chartreuse/cirque-saint-meme-bascule`, Chartreuse · *limite* · juillet 15h15
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,28 (médiane 0,37, rang 19 %)
@@ -284,18 +279,12 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 - **Face ouest de Chamrousse (Aiguille / Croix)** — `belledonne/chamrousse-face-ouest`, Belledonne · *modèle* · juillet 16h00
   - déclenchement : attendu colonne thermique à ±1 h du début documenté (13h00) ; obtenu 11h30 (trop tôt)
   - cause probable : déclenchement décalé par rapport au début documenté
-- **Plagnes (Collet d'Allevard) : premier plein en groupe puis cheminement vers le Grand Charnier** — `belledonne/plagnes-premier-plein-allevard`, Belledonne · *modèle* · juillet 15h15
-  - déclenchement : attendu colonne thermique à ±1 h du début documenté (11h30) ; obtenu 10h00 (trop tôt)
-  - cause probable : déclenchement décalé par rapport au début documenté
 - **Parking et atterrissage de l'Aigle (déclenchements thermiques)** — `vercors-nord/aigle-parking-thermique`, Vercors nord · *limite* · juillet 15h30
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,33 (médiane 0,36, rang 38 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -97 m, altitude 1022 m)
 - **Thermique en avant (à l'ouest) du massif de l'Aigle** — `vercors-nord/aigle-thermique-avant-massif`, Vercors nord · *limite* · juillet 17h30
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,27 (médiane 0,27, rang 50 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -94 m, altitude 1009 m)
-- **Escarpement rocheux à droite du déco de la Côte 2000 (1700 m)** — `vercors-nord/cote-2000-escarpement`, Vercors nord · *modèle* · juillet 15h30
-  - déclenchement : attendu colonne thermique à ±1 h du début documenté (12h30) ; obtenu 11h00 (trop tôt)
-  - cause probable : déclenchement décalé par rapport au début documenté
 - **Face sud d'Autrans-Bellecombe** — `vercors-nord/bellecombe-generosite`, Vercors nord · *modèle* · juillet 14h30
   - déclenchement : attendu colonne thermique à ±1 h du début documenté (10h00) ; obtenu 12h00 (trop tard)
   - cause probable : déclenchement décalé par rapport au début documenté
@@ -324,7 +313,7 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
   - déclenchement : attendu colonne thermique à ±1 h du début documenté (16h00) ; obtenu 11h15 (trop tôt)
   - cause probable : déclenchement décalé par rapport au début documenté
 - **Cheminée de Vaujany : « l'ascenseur » de 16h** — `oisans-grandes-rousses/cheminee-vaujany-ascenseur`, Oisans · *modèle* · juillet 17h30
-  - déclenchement : attendu colonne thermique à ±1 h du début documenté (16h00) ; obtenu 11h45 (trop tôt)
+  - déclenchement : attendu colonne thermique à ±1 h du début documenté (16h00) ; obtenu 11h00 (trop tôt)
   - cause probable : déclenchement décalé par rapport au début documenté
 - **Rochers du Rissiou (Vaujany), du Petit Chalvet au col du Sabot** — `oisans-grandes-rousses/rissiou-rochers`, Oisans · *modèle* · juillet 17h30
   - déclenchement : attendu colonne thermique à ±1 h du début documenté (16h00) ; obtenu 10h00 (trop tôt)
@@ -340,7 +329,7 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
   - déclenchement : attendu colonne thermique au plus tard à 9h45 (heures documentées 8h00–11h30) ; obtenu 10h45 (trop tard)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI 112 m, altitude 1494 m)
 - **Pointe de Bellecôte et Turra (thermique d'Aussois)** — `haute-maurienne/bellecote-turra`, Haute-Maurienne · *modèle* · juillet 14h00
-  - déclenchement : attendu colonne thermique à ±1 h du début documenté (13h00) ; obtenu 10h30 (trop tôt)
+  - déclenchement : attendu colonne thermique à ±1 h du début documenté (13h00) ; obtenu 10h15 (trop tôt)
   - cause probable : déclenchement décalé par rapport au début documenté
 - **Au-dessus de Sollières-Sardières : relance au retour de Termignon** — `haute-maurienne/sollieres-sardieres-relance`, Haute-Maurienne · *limite* · juillet 14h00
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,40 (médiane 0,51, rang 20 %)
@@ -394,6 +383,9 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 - **Ceillac (faces sud de la combe)** — `queyras/thermiques-ceillac`, Queyras · *limite* · juillet 13h00
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,42 (médiane 0,50, rang 27 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -95 m, altitude 1817 m)
+- **Col des Faïsses (Obiou)** — `devoluy/therm-faisses`, Dévoluy · *modèle* · juillet 15h00
+  - déclenchement : attendu colonne thermique à ±1 h du début documenté (11h00) ; obtenu 9h45 (trop tôt)
+  - cause probable : déclenchement décalé par rapport au début documenté
 - **Chauvet (face au col du Festre) : rando-vol ultra-classique** — `devoluy/therm-chauvet-festre`, Dévoluy · *limite* · juillet 14h45
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,40 (médiane 0,49, rang 26 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -77 m, altitude 1450 m)
@@ -421,6 +413,9 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 - **Villefranche-le-Château : posé « dans les déclenchements »** — `baronnies/therm-villefranche-declenchements`, Baronnies · *limite* · juillet 14h45
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,31 (médiane 0,34, rang 34 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -86 m, altitude 802 m)
+- **Faces est de la montagne d’Aucelon** — `diois/therm-aucelon-est`, Diois · *modèle* · juillet 9h45
+  - déclenchement : attendu colonne thermique au plus tard à 9h45 (heures documentées 8h00–11h30) ; obtenu 10h30 (trop tard)
+  - cause probable : déclenchement décalé par rapport au début documenté
 - **Valdrôme / col de Cabre : limite des plafonds, relance avant la Durance** — `diois/therm-valdrome-limite-plafonds`, Diois · *limite* · juillet 15h30
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,29 (médiane 0,38, rang 14 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -104 m, altitude 800 m)
@@ -448,9 +443,6 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 - **Gourdon village (zone A, thermiques faibles et étroits)** — `prealpes-nice-var/gourdon-village-a`, Préalpes de Nice · *modèle* · juillet 9h45
   - déclenchement : attendu colonne thermique à ±1 h du début documenté (8h00) ; obtenu 10h30 (trop tard)
   - cause probable : déclenchement décalé par rapport au début documenté
-- **Deuxième rideau de Tourrettes : crêtes de Tourrettes (zones E, I, J) et Caire** — `prealpes-nice-var/tourettes-deuxieme-rideau`, Préalpes de Nice · *limite* · juillet 13h30 (heures non précisées : milieu de journée supposé)
-  - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,33 (médiane 0,35, rang 40 %)
-  - cause probable : relief concave ou bas pour le modèle (convexité TPI -64 m, altitude 598 m)
 - **Castellar : butte sous les falaises et « thermique de la Taupe »** — `mercantour/roquebrune-castellar-butte-taupe`, Mercantour · *limite* · juillet 15h30
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,28 (médiane 0,30, rang 43 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -196 m, altitude 131 m)
@@ -461,7 +453,7 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,31 (médiane 0,39, rang 19 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -169 m, altitude 869 m)
 - **Solaure : thermiques du matin par sud faible** — `diois/ffvl13301-solaure-thermiques-matin`, Diois · *modèle* · juillet 9h45
-  - déclenchement : attendu colonne thermique au plus tard à 9h45 (heures documentées 8h00–11h30) ; obtenu 10h30 (trop tard)
+  - déclenchement : attendu colonne thermique au plus tard à 9h45 (heures documentées 8h00–11h30) ; obtenu 10h15 (trop tard)
   - cause probable : déclenchement décalé par rapport au début documenté
 - **La Gare (Bourg-Saint-Maurice) : terrain thermique en été dès 11h** — `tarentaise/ffvl13678-la-gare-thermique-ete`, Tarentaise · *limite* · juillet 15h00
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,29 (médiane 0,41, rang 14 %)
@@ -471,8 +463,8 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -63 m, altitude 355 m)
 - **Cuberselle : thermique du matin de l'autre côté de la crête** — `gapencais-ceuse/ffvl3048-cuberselle-thermique-matin`, Gapençais – Céüse · *limite* · juillet 9h45
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,00 (médiane 0,00, rang 0 %)
-  - déclenchement : attendu colonne thermique au plus tard à 9h45 (heures documentées 8h00–11h30) ; obtenu 11h30 (trop tard)
-  - cause probable : relief concave ou bas pour le modèle (convexité TPI 73 m, altitude 1150 m)
+  - déclenchement : attendu colonne thermique au plus tard à 9h45 (heures documentées 8h00–11h30) ; obtenu 11h45 (trop tard)
+  - cause probable : relief concave ou bas pour le modèle (convexité TPI -7 m, altitude 1044 m)
 - **La Touvière (Peyrus) : bulles thermiques près du sol à l'atterrissage** — `vercors-est-sud/ffvl13417-touviere-bulles-thermiques`, Vercors est & sud · *limite* · juillet 13h30 (heures non précisées : milieu de journée supposé)
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,28 (médiane 0,33, rang 18 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -163 m, altitude 572 m)
@@ -709,4 +701,3 @@ Repérés automatiquement ; à corriger dans les JSON de `research_notes/`, pas 
 - `bourget-chambery/restitution-aiguebelette` (bauges_bourget_combe.json) : hors de ses horaires (15h30), son couloir est occupé par une autre brise documentée du même sens : doublon probable du même flux (à fusionner, ou horaires à harmoniser)
 - `oisans-grandes-rousses/huez-brise-de-pente` (vercors_grenoble_trieves.json) : hors de ses horaires (10h30), son couloir est occupé par une autre brise documentée du même sens : doublon probable du même flux (à fusionner, ou horaires à harmoniser)
 - `mercantour/brise-bevera-sospel` (provence_maritimes.json) : hors de ses horaires (14h30), son couloir est occupé par une autre brise documentée du même sens : doublon probable du même flux (à fusionner, ou horaires à harmoniser)
-- `belledonne/brise-pente-est-belledonne ↔ oisans-grandes-rousses/eau-d-olle-brise` (chartreuse_gresivaudan_belledonne.json) : brises opposées dans le même couloir aux mêmes heures (11h00–15h00 / 11h00–19h00, cos -0,97), sans condition qui les distingue : elles se remplacent cellule par cellule. Ajouter un champ `condition` à celle qui n’existe que dans certaines situations, ou corriger le sens d’un tracé.

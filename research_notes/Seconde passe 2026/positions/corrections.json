@@ -1,0 +1,17 @@
+{
+  "doc": "Positions vérifiées qui remplacent celles des fichiers de recherche (clé : massif/id brut). Chaque correction dit comment elle a été établie : altitude du terrain IGN (RGE ALTI) comparée à l'altitude déclarée, fiche FFVL, toponyme IGN ou OSM, point chaud des traces GPS (kk7). Appliquées par scripts/build-data.ts.",
+  "corrections": {
+    "val-montjoie-saint-gervais/mont-d-arbois-avenaz": {
+      "lon": 6.6694,
+      "lat": 45.8549,
+      "method": "coordonnées de la fiche FFVL ; le terrain IGN y est à 1832 m pour 1830 m déclarés (1954 m à l'ancienne position)",
+      "date": "2026-10-07"
+    },
+    "lac-annecy/semnoz-ouest": {
+      "lon": 6.0952,
+      "lat": 45.8048,
+      "method": "coordonnées de la fiche FFVL ; le terrain IGN y est à 1490 m pour 1480 m déclarés (1249 m à l'ancienne position)",
+      "date": "2026-10-07"
+    }
+  }
+}

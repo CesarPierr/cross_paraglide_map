@@ -90,7 +90,17 @@ export interface AtlasFeatureProps {
   confidence?: 'high' | 'medium' | 'low';
   /** Global source ids, comma separated (MapLibre flattens arrays). */
   sources: string;
-  coordQuality?: 'source' | 'approx' | 'mixed';
+  /** `measured`: position of a thermal hotspot computed from GPS tracks (thermal.kk7.ch). */
+  coordQuality?: 'source' | 'approx' | 'mixed' | 'measured';
+  /** Thermals: `kk7` for a hotspot found only in GPS tracks, not yet described by any text. */
+  origin?: 'research' | 'kk7';
+  /** Thermals: probability of the matching kk7 hotspot (0–1) and its distance to the documented point (m). */
+  kk7P?: number;
+  kk7DistM?: number;
+  /** Thermals: kk7 hotspot probability by time of day — sunrise to +6 h, +6 to +9 h, later (0 when absent). */
+  kk7Morning?: number;
+  kk7Midday?: number;
+  kk7Evening?: number;
   /** Free-form extra details shown in the popup: label → value. */
   details?: Record<string, string>;
   /** Breezes: legal-time active window, typical speed (km/h). */

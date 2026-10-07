@@ -784,7 +784,8 @@ function findConflicts(): Conflict[] {
 const t0 = performance.now();
 breezes.forEach((b, i) => checkBreeze(b, i));
 atlas.features.convergences.forEach(checkConvergence);
-atlas.features.thermals.forEach(checkThermal);
+// Hotspots known only from GPS tracks describe no phenomenon to reproduce.
+atlas.features.thermals.filter((f) => f.properties.origin !== 'kk7').forEach(checkThermal);
 atlas.features.hazards.forEach(checkHazard);
 const conflicts = findConflicts();
 const ms = performance.now() - t0;

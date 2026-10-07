@@ -980,11 +980,14 @@
      "alt_m": 803,
      "coord_quality": "approx",
      "trigger": "falaise devant le décollage",
-     "description": "La fiche du Grand Ratz (décollage en falaise orienté ouest) demande de se méfier du fort thermique en sortie de déco, avec des rouleaux qui donnent du vent arrière au décollage. Position approximative, au décollage.",
+     "description": "La fiche du Grand Ratz (décollage en falaise orienté ouest) demande de se méfier du fort thermique en sortie de déco, avec des rouleaux qui donnent du vent arrière au décollage. Position approximative, au décollage. Horaire : le club de Saint-Hilaire place l'activité des versants ouest de Chartreuse « après 15h/16h » ; un pilote local confirme un thermique fréquent l'après-midi vers 15h.",
      "confidence": "medium",
      "sources": [
-      "S76"
-     ]
+      "S76",
+      "S1",
+      "S2"
+     ],
+     "best_hours": "après-midi, vers 15h (faces ouest actives après 15h-16h)"
     },
     {
      "id": "ffvl13287-saint-hugues-declenchements",
@@ -2580,6 +2583,24 @@
    "type": "web",
    "lang": "fr",
    "notes": "Fiche officielle du terrain (récolte 2026, Saint Jean En Royans) : description, aérologie, dangers, restrictions."
+  },
+  {
+   "id": "S1",
+   "title": "Cross, massifs et transitions",
+   "url": "https://clubsthilair.fr/wp-content/uploads/2018/04/cross_massifs-et-transitions.pdf",
+   "publisher": "Club St Hil'Air",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Page Chartreuse : « Versant Ouest, après 15h/16h, tendance NO à O »."
+  },
+  {
+   "id": "S2",
+   "title": "Témoignage d’un pilote local du Grand Ratz (porteur du projet)",
+   "url": "",
+   "publisher": "Témoignage direct",
+   "type": "testimony",
+   "lang": "fr",
+   "notes": "Recueilli le 7 octobre 2026 : « normalement, il y a un thermique aussi souvent l’après-midi vers 15h » au Grand Ratz."
   }
  ]
 }

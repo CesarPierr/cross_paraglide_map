@@ -4,7 +4,7 @@
  * events. Feature-specific logic lives in ./modules.
  */
 import { Grid } from '@brises/model';
-import type { Atlas } from '@brises/shared';
+import type { Atlas, AtlasFeatureProps } from '@brises/shared';
 import {
   GeolocateControl,
   Map as MlMap,
@@ -52,10 +52,14 @@ export interface ControllerEvents {
  * How firmly the sources describe a climb, for its animation when learning a massif:
  * ceilings and relaunch points first, discounted by the confidence of the sources.
  */
-function documentedStrength(description: string | undefined, confidence: string | undefined): number {
-  const role = thermalRole(description);
+function documentedStrength(p: AtlasFeatureProps): number {
+  // A hotspot known only from GPS tracks: as strong as it is likely.
+  if (p.origin === 'kk7') return 0.35 + 0.5 * (p.kk7P ?? 0.8);
+  const role = thermalRole(p.description);
   const base = role === 'plafond' ? 1 : role === 'relance' ? 0.95 : role === 'déclencheur' ? 0.85 : 0.7;
-  return base * (confidence === 'low' ? 0.6 : confidence === 'high' ? 1 : 0.9);
+  // Confirmed by the tracks: the documented climb is a sure one.
+  const measured = p.kk7P !== undefined ? 1 + 0.15 * p.kk7P : 1;
+  return Math.min(1, base * (p.confidence === 'low' ? 0.6 : p.confidence === 'high' ? 1 : 0.9) * measured);
 }
 
 /** Layers replaced by the schematic diagram while a schema view is open. */
@@ -159,7 +163,7 @@ export class MapController {
           lat: f.geometry.coordinates[1] as number,
           massif: f.properties.massif,
           // Read at display time: the descriptions arrive with the atlas text, after the first render.
-          documented: () => documentedStrength(f.properties.description, f.properties.confidence),
+          documented: () => documentedStrength(f.properties),
         })),
         () => this.emitTime(),
       );

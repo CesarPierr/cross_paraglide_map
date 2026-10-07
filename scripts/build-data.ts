@@ -17,6 +17,7 @@ import type { Atlas, AtlasFeature, AtlasFeatureProps, AtlasFigure, AtlasMassif, 
 import { analyseTerrain, type Terrain } from '@brises/model';
 import { splitAtlas } from '@brises/shared';
 import { loadDem } from '@brises/model/node';
+import { integrateKk7, kk7Markdown, type Kk7Report } from './kk7';
 
 const ROOT = process.cwd();
 const RESEARCH = join(ROOT, 'research_notes', 'Brises des Alpes françaises', 'data');
@@ -889,6 +890,13 @@ function main() {
     return id;
   };
 
+  // Verified positions (research_notes/…/positions/corrections.json) override the researched ones.
+  const positionsFile = join(ROOT, 'research_notes', 'Seconde passe 2026', 'positions', 'corrections.json');
+  const positions = new Map(
+    Object.entries(existsSync(positionsFile) ? (JSON.parse(readFileSync(positionsFile, 'utf8')) as { corrections: Record<string, { lon: number; lat: number; method: string }> }).corrections : {}),
+  );
+  const positionsUsed = new Set<string>();
+
   for (const { dir, file } of files) {
     const parsed = readRaw(dir, file);
     if (!parsed) continue;
@@ -1036,12 +1044,14 @@ function main() {
             qa.push(`${mid}: ${cat} « ${it.name} » sans coordonnées valides`);
             continue;
           }
-          let lon = it.lon;
-          let lat = it.lat;
+          const verified = positions.get(`${mid}/${it.id}`);
+          if (verified) positionsUsed.add(`${mid}/${it.id}`);
+          let lon = verified?.lon ?? it.lon;
+          let lat = verified?.lat ?? it.lat;
           let dem = demAt(terrain, lon, lat);
           let altDelta = dem !== null && isNum(it.alt_m) ? Math.round(dem - it.alt_m) : undefined;
           let moved = false;
-          if (altDelta !== undefined && Math.abs(altDelta) > 250 && it.coord_quality !== 'source' && isNum(it.alt_m)) {
+          if (!verified && altDelta !== undefined && Math.abs(altDelta) > 250 && it.coord_quality !== 'source' && isNum(it.alt_m)) {
             // Approximate position clearly at the wrong altitude: move it to the nearest
             // terrain at the declared altitude (the coarse DEM flattens summits by ~100-200 m).
             const fixed = relocateByAltitude(terrain, lon, lat, it.alt_m, 2500);
@@ -1059,7 +1069,8 @@ function main() {
           const details = extra(it);
           const clean = cleanDescription(it.description);
           if (clean.note) details['Note de collecte'] = clean.note;
-          if (moved) details['Position'] = 'approximative, recalée sur l’altitude déclarée';
+          if (verified) details['Position'] = `vérifiée : ${verified.method}`;
+          else if (moved) details['Position'] = 'approximative, recalée sur l’altitude déclarée';
           else if (it.coord_quality !== 'source') details['Position'] = 'approximative';
           push(cat, {
             type: 'Feature',
@@ -1073,7 +1084,7 @@ function main() {
               description: clean.text,
               confidence: it.confidence ? confidence(it.confidence) : undefined,
               sources: mapSources(it.sources).join(','),
-              coordQuality: it.coord_quality === 'source' ? 'source' : 'approx',
+              coordQuality: verified || it.coord_quality === 'source' ? 'source' : 'approx',
               altDelta,
               details,
             },
@@ -1189,12 +1200,25 @@ function main() {
     }
   }
 
+  for (const key of positions.keys()) if (!positionsUsed.has(key)) qa.push(`position vérifiée pour un élément introuvable : ${key}`);
+
   // Written guided visits: steps tied to atlas items (their sources back the narration).
   const tours = readTours(rawToFeature, massifs, features);
 
   // Sector outlines: the area covered by each sector's items (hull, buffered), split with
   // its neighbours along equidistance lines so the shapes tile the map without overlaps.
   computeOutlines(massifs, features);
+
+  // Thermal hotspots measured from GPS tracks: confirm, place and complete the documented
+  // thermals (after the outlines, which stay those of the researched items).
+  const kk7 = integrateKk7({
+    dir: join(ROOT, 'research_notes', 'Seconde passe 2026', 'sources', 'kk7'),
+    massifs,
+    features,
+    sources,
+    uniqueId,
+    altitude: (lon, lat) => demAt(terrain, lon, lat) ?? undefined,
+  });
 
   // Number the features (MapLibre feature-state needs numeric ids).
   let fid = 1;
@@ -1236,7 +1260,12 @@ function main() {
         .map(([k, v]) => `- ${k} : ${v}`)
         .join('\n')}\n\n## Points à vérifier (${qa.length})\n\n${qa.map((q) => `- ${q}`).join('\n')}\n`,
   );
-  console.log(atlas.stats, `${qa.length} QA warnings`);
+  if (kk7) writeFileSync(join(ROOT, 'docs', 'KK7_CROISEMENT.md'), kk7Markdown(kk7, massifs, atlas.generatedAt.slice(0, 10)));
+  console.log(atlas.stats, `${qa.length} QA warnings`, kk7 ? kk7Summary(kk7) : '');
+}
+
+function kk7Summary(r: Kk7Report): string {
+  return `kk7 : ${r.matched} thermiques confirmés (${r.moved.length} recalés), ${r.added} points chauds ajoutés, ${r.far.length} thermiques loin de tout point chaud`;
 }
 
 // Run only when executed directly (the helpers above are unit-tested).

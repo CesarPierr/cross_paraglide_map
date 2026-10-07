@@ -60,6 +60,10 @@ function main() {
   const takeoffs = rows.filter((r) => /d[ée]co/i.test(String(r.fonctions)) && !/interdit/i.test(String(r.praticabilite)));
   const bySector = new Map<string, { m: AtlasMassif; total: number; gaps: string[] }>();
   const outside: string[] = [];
+  // Thermals described by texts; hotspots known only from GPS tracks (kk7) are counted apart.
+  const documented = atlas.features.thermals.filter((f) => f.properties.origin !== 'kk7');
+  const measured = atlas.features.thermals.filter((f) => f.properties.origin === 'kk7');
+  let withTracks = 0;
   for (const t of takeoffs) {
     const p: LngLat = [Number(t.lon), Number(t.lat)];
     const m = sectorOf(p, atlas.massifs);
@@ -69,19 +73,34 @@ function main() {
     }
     const e = bySector.get(m.id) ?? { m, total: 0, gaps: [] };
     e.total++;
-    const climb = nearest(p, atlas.features.thermals);
+    const climb = nearest(p, documented);
+    const hot = nearest(p, measured);
+    if (climb.d > CLIMB_KM && hot.d <= CLIMB_KM) withTracks++;
     const breeze = nearest(p, atlas.features.breezes);
-    const missing = [climb.d > CLIMB_KM && `aucun thermique à moins de ${CLIMB_KM} km (le plus proche : ${climb.name}, ${climb.d.toFixed(1)} km)`, breeze.d > BREEZE_KM && `aucune brise à moins de ${BREEZE_KM} km`].filter(Boolean);
+    const missing = [climb.d > CLIMB_KM && `aucun thermique décrit à moins de ${CLIMB_KM} km (le plus proche : ${climb.name}, ${climb.d.toFixed(1)} km)${hot.d <= CLIMB_KM ? ` — point chaud mesuré par les traces GPS à ${hot.d.toFixed(1)} km, à documenter` : ''}`, breeze.d > BREEZE_KM && `aucune brise à moins de ${BREEZE_KM} km`].filter(Boolean);
     if (missing.length) e.gaps.push(`${t.name} (FFVL ${t.id}, ${t.alt ?? '?'} m, vents ${t.vents_favorables || '?'}) : ${missing.join(' ; ')}`);
     bySector.set(m.id, e);
   }
+  // Items whose text mentions a climb while no thermal is described within 1 km (how the Grand Ratz thermal was missed).
+  const CLIMB_WORDS = /thermique|pompe|ascendance|plafond|ça monte|déclench|bulle/i;
+  const NO_CLIMB = /pas de thermique|peu thermique|sans thermique/i;
+  const textual: string[] = [];
+  for (const cat of ['takeoffs', 'soaring', 'hazards', 'landings'] as const)
+    for (const f of atlas.features[cat]) {
+      if (f.geometry.type !== 'Point') continue;
+      const text = `${f.properties.description} ${Object.values(f.properties.details ?? {}).join(' ')}`;
+      const word = text.match(CLIMB_WORDS)?.[0];
+      if (!word || NO_CLIMB.test(text) || nearest(f.geometry.coordinates, documented).d <= 1) continue;
+      const hot = nearest(f.geometry.coordinates, measured);
+      textual.push(`\`${f.properties.id}\` ${f.properties.name} (« ${word} »)${hot.d <= 1 ? ` — point chaud mesuré à ${Math.round(hot.d * 1000)} m` : ''}`);
+    }
   const list = [...bySector.values()].sort((a, b) => b.gaps.length / b.total - a.gaps.length / a.total);
   const covered = list.reduce((s, x) => s + x.total - x.gaps.length, 0);
   const total = list.reduce((s, x) => s + x.total, 0);
   const out = [
     '# Couverture de l’atlas par rapport aux décollages officiels',
     '',
-    `Généré par \`npm run data:coverage\`. Pour chaque décollage FFVL ouvert à la pratique (${total}), l’atlas doit documenter un thermique ou point de relance à moins de ${CLIMB_KM} km et une brise à moins de ${BREEZE_KM} km. Couverts : **${covered}/${total} (${Math.round((covered / total) * 100)} %)**. ${outside.length} décollages de la liste sont à plus de ${OUTSIDE_KM} km de tout secteur (Jura, Bugey, bas Rhône…) et ne sont pas comptés.`,
+    `Généré par \`npm run data:coverage\`. Pour chaque décollage FFVL ouvert à la pratique (${total}), l’atlas doit documenter un thermique ou point de relance à moins de ${CLIMB_KM} km et une brise à moins de ${BREEZE_KM} km. Couverts : **${covered}/${total} (${Math.round((covered / total) * 100)} %)**. ${outside.length} décollages de la liste sont à plus de ${OUTSIDE_KM} km de tout secteur (Jura, Bugey, bas Rhône…) et ne sont pas comptés. Parmi les décollages sans thermique décrit, ${withTracks} ont un point chaud mesuré par les traces GPS (thermal.kk7.ch) à moins de ${CLIMB_KM} km.`,
     '',
     '| Secteur | Décollages | Couverts | Taux |',
     '| --- | --- | --- | --- |',
@@ -90,6 +109,12 @@ function main() {
     '## Décollages sans aérologie documentée à proximité',
     '',
     ...list.filter((x) => x.gaps.length).flatMap((x) => [`### ${x.m.shortName}`, '', ...x.gaps.map((g) => `- ${g}`), '']),
+    `## Textes qui parlent d’un thermique sans thermique décrit à moins de 1 km (${textual.length})`,
+    '',
+    'Déco, soaring, piège ou atterrissage dont la description mentionne une ascendance : le thermique est à créer (position, déclencheur, heures) à partir du texte et des sources citées.',
+    '',
+    ...textual.sort().map((t) => `- ${t}`),
+    '',
     '## Hors périmètre',
     '',
     outside.join(' · '),

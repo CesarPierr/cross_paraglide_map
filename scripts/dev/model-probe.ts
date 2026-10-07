@@ -1,6 +1,6 @@
-import { computeField, computeTimeContext, evalCell, makeWindContext, newCellResult, describeVector, type ModelParams } from '../../src/model/field';
-import { analyseTerrain } from '../../src/model/terrain';
-import { loadDem } from '../../src/model/test-utils';
+import { computeField, computeTimeContext, evalCell, makeWindContext, newCellResult, describeVector, type ModelParams } from '@brises/model';
+import { analyseTerrain } from '@brises/model';
+import { loadDem } from '@brises/model/node';
 
 const { grid, elevation } = loadDem();
 let t0 = performance.now();

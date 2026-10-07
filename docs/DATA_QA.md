@@ -6,7 +6,7 @@ Généré par `npm run data:build` le 2026-10-07.
 
 - massifs : 46
 - sources : 278
-- breezes : 95
+- breezes : 96
 - convergences : 18
 - hazards : 69
 - thermals : 12

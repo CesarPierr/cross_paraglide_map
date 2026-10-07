@@ -14,11 +14,11 @@ import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { PNG } from 'pngjs';
-import { DEM_BBOX, DEM_ZOOM } from '../src/model/grid-config';
+import { DEM_BBOX, DEM_ZOOM } from '@brises/model';
 
 const TILE = 256;
 const CACHE = join(process.cwd(), '.cache', 'terrarium');
-const OUT_DIR = join(process.cwd(), 'public', 'data');
+const OUT_DIR = join(process.cwd(), 'apps', 'web', 'public', 'data');
 
 const lonToPx = (lon: number, z: number) => ((lon + 180) / 360) * TILE * 2 ** z;
 const latToPx = (lat: number, z: number) => {

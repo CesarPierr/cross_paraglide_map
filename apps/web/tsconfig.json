@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "../../node_modules/.tmp/web.tsbuildinfo",
+    "lib": ["ES2022", "DOM", "DOM.Iterable", "WebWorker"],
+    "jsx": "react-jsx",
+    "useDefineForClassFields": true,
+    "types": ["vite/client", "geojson"]
+  },
+  "include": ["src", "../../packages/shared/src", "../../packages/model/src"],
+  "exclude": ["../../packages/model/src/node.ts", "**/*.test.ts"]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@brises/shared",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Types and validation schemas shared by the web app, the API and the data pipeline.",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@sinclair/typebox": "^0.34.52"
+  }
+}

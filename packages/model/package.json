@@ -1,0 +1,14 @@
+{
+  "name": "@brises/model",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Conceptual mountain wind model (terrain analysis, sun, thermal breezes, synoptic wind over relief). Pure TypeScript, runs in browsers, workers and Node.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./node": "./src/node.ts"
+  },
+  "dependencies": {
+    "@brises/shared": "*"
+  }
+}

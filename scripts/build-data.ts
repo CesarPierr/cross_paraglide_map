@@ -10,10 +10,10 @@
  */
 import { readdirSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
-import type { CuratedBreezeInput } from '../src/model/curated';
-import type { Atlas, AtlasFeature, AtlasFeatureProps, AtlasMassif, AtlasSource, FeatureCategory, ModelRule } from '../src/data/atlas-types';
-import { analyseTerrain, type Terrain } from '../src/model/terrain';
-import { loadDem } from '../src/model/test-utils';
+import type { CuratedBreezeInput } from '@brises/model';
+import type { Atlas, AtlasFeature, AtlasFeatureProps, AtlasMassif, AtlasSource, FeatureCategory, ModelRule } from '@brises/shared';
+import { analyseTerrain, type Terrain } from '@brises/model';
+import { loadDem } from '@brises/model/node';
 
 const ROOT = process.cwd();
 const RESEARCH = join(ROOT, 'research_notes', 'Brises des Alpes françaises', 'data');
@@ -107,6 +107,88 @@ const REGION_LABELS: Record<string, string> = {
   synoptic_convergences_xc: 'Échelle des Alpes',
 };
 const REGION_ORDER = Object.keys(REGION_LABELS);
+
+/** Short display names for map labels and lists (the full research name stays in the sheet). */
+const SHORT_NAMES: Record<string, string> = {
+  'saleve-genevois': 'Salève',
+  'arve-faucigny': 'Faucigny – Arve',
+  'haut-giffre': 'Giffre',
+  chablais: 'Chablais',
+  'lac-annecy': 'Lac d’Annecy',
+  bornes: 'Bornes',
+  aravis: 'Aravis',
+  'mont-blanc-chamonix': 'Chamonix – Mont-Blanc',
+  'val-montjoie-saint-gervais': 'Val Montjoie',
+  'val-arly-megeve': 'Megève – Val d’Arly',
+  beaufortain: 'Beaufortain',
+  tarentaise: 'Tarentaise',
+  vanoise: 'Vanoise',
+  'bourget-chambery': 'Bourget – Chambéry',
+  'combe-de-savoie': 'Combe de Savoie',
+  bauges: 'Bauges',
+  chartreuse: 'Chartreuse',
+  gresivaudan: 'Grésivaudan',
+  belledonne: 'Belledonne',
+  'grenoble-cuvette': 'Cuvette grenobloise',
+  'vercors-nord': 'Vercors nord',
+  'vercors-est-sud': 'Vercors est & sud',
+  trieves: 'Trièves',
+  matheysine: 'Matheysine – Drac',
+  'oisans-grandes-rousses': 'Oisans',
+  maurienne: 'Maurienne',
+  'haute-maurienne': 'Haute-Maurienne',
+  'arves-thabor-galibier': 'Arves – Galibier',
+  'brianconnais-guisane': 'Briançonnais',
+  'ecrins-vallouise-haute-durance': 'Vallouise – haute Durance',
+  devoluy: 'Dévoluy',
+  'champsaur-valgaudemar': 'Champsaur',
+  'gapencais-ceuse': 'Gapençais – Céüse',
+  'buech-laragne-chabre': 'Buëch – Chabre',
+  baronnies: 'Baronnies',
+  diois: 'Diois',
+  'serre-poncon-embrunais': 'Serre-Ponçon',
+  queyras: 'Queyras',
+  ubaye: 'Ubaye',
+  'saint-andre-verdon': 'Saint-André',
+  'haut-verdon-allos': 'Haut-Verdon',
+  'prealpes-digne-lure': 'Digne – Lure',
+  'prealpes-grasse-castellane': 'Préalpes de Grasse',
+  'prealpes-nice-var': 'Préalpes de Nice',
+  mercantour: 'Mercantour',
+  'alpes-francaises': 'Alpes françaises',
+};
+
+/** Fallback short name: drop the parenthesised details and generic prefixes. */
+function shortName(id: string, name: string): string {
+  if (SHORT_NAMES[id]) return SHORT_NAMES[id];
+  return name
+    .split(' (')[0]
+    .replace(/^(Massif|Chaîne) (des|du|de la|de l’|de l')\s*/i, '')
+    .split(',')[0]
+    .trim();
+}
+
+/**
+ * Splits research-method remarks (how a fact was collected, coordinate caveats)
+ * out of the pilot-facing description; they are kept as a discreet note.
+ */
+export function cleanDescription(text: string | undefined): { text: string; note: string | null } {
+  if (!text) return { text: '', note: null };
+  const notes: string[] = [];
+  let t = text.replace(/\[(?:Source|Sources|Note|NB)[^\]]*\]/gi, (m) => {
+    notes.push(m.slice(1, -1));
+    return '';
+  });
+  t = t.replace(/(?:^|\s)(Coordonnées?\s*:[^\n]*?(?:\.|$))/gi, (_m, g: string) => {
+    notes.push(g.trim());
+    return ' ';
+  });
+  t = t.replace(/(?:^|\s)((?:Attribution|Extrait|Paraphrase)[^.\n]*(?:incertaine|moteur de recherche|non vérifi)[^.\n]*\.)/gi, (_m, g: string) => {
+    notes.push(g.trim());
+    return ' ';
+  });
+  return { text: t.replace(/\s{2,}/g, ' ').trim(), note: notes.length ? notes.join(' ') : null };
+}
 
 const qa: string[] = [];
 
@@ -490,13 +572,14 @@ function main() {
         const speed = typical ?? (b.speed_kmh?.max ? b.speed_kmh.max * 0.6 : DEFAULT_SPEED[b.kind] ?? 12);
         const conf = confidence(b.confidence);
         const quality = wps.every((p) => p.coord_quality === 'source') ? 'source' : wps.some((p) => p.coord_quality === 'source') ? 'mixed' : 'approx';
+        const clean = cleanDescription(b.description);
         const props: AtlasFeatureProps = {
           id,
           category: 'breezes',
           massif: mid,
           name: b.name,
           kind: b.kind,
-          description: b.description ?? '',
+          description: clean.text,
           confidence: conf,
           sources: mapSources(b.sources).join(','),
           coordQuality: quality,
@@ -511,6 +594,7 @@ function main() {
             ...(b.season ? { Saison: b.season } : {}),
             ...(b.layer_depth_m ? { Épaisseur: String(b.layer_depth_m) } : {}),
             Trajet: wps.map((p) => p.name).filter(Boolean).join(' → '),
+            ...(clean.note ? { 'Note de collecte': clean.note } : {}),
           },
         };
         push('breezes', { type: 'Feature', geometry: { type: 'LineString', coordinates: coords }, properties: props });
@@ -584,6 +668,8 @@ function main() {
           if (!moved && altDelta !== undefined && Math.abs(altDelta) > 300)
             qa.push(`${mid}: ${cat} « ${it.name} » altitude déclarée ${it.alt_m} m, MNT ${Math.round(dem!)} m (écart ${altDelta} m, coord ${it.coord_quality ?? '?'})`);
           const details = extra(it);
+          const clean = cleanDescription(it.description);
+          if (clean.note) details['Note de collecte'] = clean.note;
           if (moved) details['Position'] = 'approximative, recalée sur l’altitude déclarée';
           else if (it.coord_quality !== 'source') details['Position'] = 'approximative';
           push(cat, {
@@ -595,7 +681,7 @@ function main() {
               massif: mid,
               name: it.name ?? '',
               kind: it.kind,
-              description: it.description ?? '',
+              description: clean.text,
               confidence: it.confidence ? confidence(it.confidence) : undefined,
               sources: mapSources(it.sources).join(','),
               coordQuality: it.coord_quality === 'source' ? 'source' : 'approx',
@@ -659,6 +745,7 @@ function main() {
       massifs.push({
         id: mid,
         name: m.name,
+        shortName: shortName(mid, m.name),
         region,
         parent: m.parent_massif,
         summary: m.summary ?? '',
@@ -691,7 +778,7 @@ function main() {
       ...Object.fromEntries(Object.entries(features).map(([k, v]) => [k, v.length])),
     },
   };
-  writeFileSync(join(ROOT, 'public', 'data', 'atlas.json'), JSON.stringify(atlas));
+  writeFileSync(join(ROOT, 'apps', 'web', 'public', 'data', 'atlas.json'), JSON.stringify(atlas));
   mkdirSync(join(ROOT, 'docs'), { recursive: true });
   writeFileSync(
     join(ROOT, 'docs', 'DATA_QA.md'),

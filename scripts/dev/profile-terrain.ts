@@ -1,5 +1,5 @@
-import { blur, extremumFilter } from '../../src/model/raster';
-import { loadDem } from '../../src/model/test-utils';
+import { blur, extremumFilter } from '@brises/model';
+import { loadDem } from '@brises/model/node';
 const { grid, elevation } = loadDem();
 const w = grid.width, h = grid.height;
 let t = performance.now();

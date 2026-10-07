@@ -94,3 +94,32 @@ Constat de départ : la seconde passe ne retenait que les endroits appelés « t
 **Méthode de positionnement** : sommets, cols et lieux-dits par le géocodeur IGN et OSM (`coord_quality: source`) ; points « sous le sommet » ou « à mi-chemin » en `approx`. Altitudes comparées au MNT IGN.
 
 **Introuvable ou non traité** : arête de Tricot (ascendance difficile, non localisée), Roche de Mya, falaises du Biolley, Roche Plane et Pas d'Outray (Trace Ta Route, non placés ; Roche Plane est distinct de Roche Parstire). La Pointe Percée (raccroche à 2400 puis 3400 m) relève du lot Annecy–Aravis, uniquement en waypoint ici. Pas de récit exploitable trouvé pour Combloux (hors Rochebrune et Cordon) ni pour une relance précise entre Hauteluce et le Cormet. Aucune image annotée de thermiques trouvée (brochure p. 19 vue : photos sans flèches). Pages inaccessibles ajoutées à `blocked_urls.txt` (forum parapente.aix.free.fr, Wikiloc, fil parapentiste.info de Combloux, accès direct à laileetlacuisse.fr). Nombreux sites commerciaux (écoles, offices) lus sans information de relance. L'onglet du navigateur intégré a été fermé.
+
+## Passe secteurs minces
+
+Date : 7 octobre 2026. Même convention de confiance : récit précis ou plusieurs récits = `medium`, extrapolation du relief = `low` avec « déduction ». Identifiants existants conservés, rien supprimé. `npm run data:build -- --check` : aucune alerte nouvelle.
+
+### Megève – Val d'Arly (`val-arly-megeve`)
+
+Volumes avant → après : brises 2 → 4, convergences 1 → 2, hazards 7 → 8, thermiques 3 → 7, soarings 1 → 1, décollages 4 → 4, atterrissages 5 → 5, effets synoptiques 5 → 5 (deux complétés), routes 2 → 5, conseils 6 → 10 ; 9 sources (S155 à S163).
+
+**Sources nouvelles**
+- Récits du CHVD lus en entier : triangle FAI de 108 km depuis le Signal de Bisanne (8 août 2020 selon le titre ; l'adresse et les légendes de photos portent 8 juillet, date du titre retenue), vol de canicule de Bisanne vers le Mont Blanc (18-19 août 2012), « Premier avec les crosseux » (22 avril 2007, Bisanne → Praz-sur-Arly → Aravis), compétitions des Saisies (avril 2022 et avril 2024, traversée du Val d'Arly, forte brise sur Megève).
+- Récit *Blues Team* (mai 2015), fin du vol du col de Bleine à Passy : Saisies, Crest-Voland, Flumet, Notre-Dame-de-Bellecombe, Praz-sur-Arly, confluence au-dessus de Megève, verrou de Combloux.
+- Fil de discussion parapentiste.info « Cross au départ de Megève » (2008) : confluence des brises de SO et de N à Megève, Rochebrune site d'après-midi. Les dernières réponses du fil sont une description humoristique en patois d'un parcours, non retenue.
+- Vol bivouac du CHVD de février 2011 (col des Aravis → Tête du Torraz → Flumet par vent de sud).
+- Positions : géocodeur IGN.
+
+**Ajouté ou corrigé**
+- *Thermiques et relances* : sous la Tête du Torraz (thermique violent de février 2011, par vent de sud), au-dessus de Praz-sur-Arly (3100 m en 2020, 3000 m en 2007), Aiguille Croche (3135 m, plafond du jour), Mont Joly (derniers thermiques côté Megève avant le Mont Blanc, 3200 m en 2012).
+- *Convergence* : nouvelle fiche au-dessus de Megève (habituellement vers Praz-sur-Arly), avec plus de 7 km de glisse sans enrouler vers Combloux (une première rédaction plaçait la confluence au-dessus de Praz-sur-Arly ; corrigée avec le texte « au-dessus de la station ») ; la convergence du col de Megève est complétée par le forum de 2008 et la compétition de 2024.
+- *Brises* : horaires et observations ajoutés à la brise de l'Arly (Signal de Bisanne à décoller avant midi, très forte brise le 14 avril 2024, appui sous le vent entre Notre-Dame-de-Bellecombe et Praz-sur-Arly) et à celle du bassin de Sallanches ; deux écoulements descendants matinaux (Arly et Arve vers Sallanches) en `low`, avec « déduction » et horaires 21h-9h distincts.
+- *Danger* : très forte brise face au verrou de Megève (balise B6 de la compétition 2024).
+- *Routes* : `bisanne-aiguille-croche-praz-aravis-2020`, `bisanne-mont-joly-mont-blanc-2012`, `saisies-flumet-praz-megeve-combloux-2015` (extraits de vols plus longs ; points nommés et localisés seulement).
+- *Effets synoptiques* : sud (2015 et février 2011, posé entre Flumet et Saint-Nicolas-la-Chapelle) et nord (brise de l'Arve) complétés.
+
+**Introuvable ou non fait**
+- Aucune brise documentée pour Flumet, Crest-Voland et Notre-Dame-de-Bellecombe en dehors des récits de cross ci-dessus ; aucun horaire chiffré de la brise de l'Arly ; les écoulements matinaux restent des déductions.
+- Pas de récit local sur Rochebrune plus précis que la brochure et les fiches FFVL déjà utilisées ; le site du club de Megève ne contient pas de description (voir `pages_bloquees.txt`) ; traces CFD et XContest inaccessibles.
+- Les vols de la Plaine Joux, de Varan et du Mont Joly côté Saint-Gervais appartiennent à d'autres secteurs et n'ont pas été traités.
+

@@ -1,0 +1,108 @@
+{
+  "massif": "vanoise",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "La Vanoise et les Trois Vallées en un coup d'œil",
+      "text": "Cette zone est un faisceau de vallées qui rejoignent l'Isère à Moûtiers : le Doron de Bozel, avec Bozel, Champagny et Pralognan ; la vallée de Saint-Bon, avec Courchevel ; la vallée des Allues, avec Méribel ; et le Doron de Belleville, avec Les Menuires et Val Thorens. Le cœur du Parc national de la Vanoise commence à environ 1,3 km de Pralognan. Retenez une idée simple : la brise s'allume vers 13h sur les terrains bas, puis devient forte, si bien qu'on vole le matin ou le soir, et l'on respecte le parc. Les sources sont surtout des fiches FFVL et ParaglidingEarth, peu de récits : les vitesses citées plus loin sont des interprétations.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le matin, avant que la brise ne s'allume",
+      "text": "Le matin, à Bozel, le vent est nul, voire légèrement descendant. C'est le moment des décollages tournés vers l'est et le sud : Les Monts, à décoller en matinée avant que la brise s'allume vers 13h ; les Tovets, à Courchevel, avant 13h, quand la brise de vallée prend le dessus ; et le Mont Jovet, sur ses pentes sud-est et sud au-dessus de Bozel, qui donne des thermiques de fin de matinée et un excellent départ de cross précoce, à condition de partir avant 12h30, car le vent peut passer par-derrière.",
+      "focus": ["les-monts-bozel", "tovets-courchevel", "mont-jovet-thermique"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "L'après-midi, les brises des vallées montent fort",
+      "text": "À Bozel, la brise montante du Doron de Bozel s'allume vers le milieu de journée ; en été, elle peut être forte, avec des turbulences marquées. À Pralognan, dès 11h-11h30, elle prend le dessus et le décollage passe vent arrière. Dans la vallée de Saint-Bon, la brise est forte à très forte l'après-midi au Bouc Blanc, et celle du Doron de Belleville souffle l'après-midi d'été jusqu'à Val Thorens. Aucune source ne chiffre ces brises : les vitesses de 20 à 40 km/h de l'atlas ne sont que des interprétations de ces mots.",
+      "focus": ["brise-doron-bozel", "brise-saint-bon-courchevel", "brise-doron-belleville"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "À Belleville, la brise thermique rencontre le vent de vallée",
+      "text": "Dans la vallée de Belleville, à Boismint, la brise thermique des pentes rencontre le vent de vallée du Doron : un catalogue ancien parle d'une très bonne confluence. Le site fonctionne par régime de brise de vallée et sert à l'initiation, sur une pente faible, en été. Plus haut, les vents sont plus forts à la Moraine à cause du venturi du glacier du Col, un goulot où le vent accélère, et la brise thermique de la face sud de la Cime de Caron peut y être très forte en été.",
+      "focus": ["confluence-boismint", "venturi-moraine-caron", "boismint-menuires"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le soir, le Bouc Blanc et les Deux Lacs",
+      "text": "Le Bouc Blanc, soufflé au milieu de l'après-midi, se joue très tôt ou très tard, et c'est son meilleur moment : le soir, on peut redescendre sur la Dent du Villard et y remonter dans la brise de vallée, avec une navette du club l'été depuis Bozel pour les vols de fin d'après-midi. À Val Thorens, les Deux Lacs sont un décollage du soir, sur la piste, dans l'axe thermique de la vallée de Belleville, au plus fort du vent ; mieux vaut se poser près du décollage, car le vent change en fin de thermique.",
+      "focus": ["bouc-blanc-evening", "dent-du-villard-relance-du-soir", "dent-du-villard-soir", "deux-lacs-belleville-soir"],
+      "phase": "evening"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "La Loze, le Mont de la Chambre et les terrains de foot de Bozel",
+      "text": "Le col de la Loze, à Courchevel, est d'après ParaglidingEarth le meilleur site de thermiques d'hiver et de début de printemps des Trois Vallées, avec des thermiques dès février quand il y a peu de vent ; l'été, les conditions y sont fortes, mais moins qu'au Bouc Blanc. Au Mont de la Chambre, aux Menuires, le vol est essentiellement thermique sur les pentes ouest et sud-ouest, avec des conditions parfois fortes l'après-midi. Et dans le bas de la vallée, à Bozel, des déclenchements thermiques se forment en approche, au-dessus des terrains de foot et des pylônes : un déclencheur autant qu'un piège d'atterrissage.",
+      "focus": ["col-de-la-loze-thermique", "mont-de-la-chambre-thermique", "bozel-terrains-de-foot-declencheur"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Courchevel et Méribel : Bouc Blanc, Loze, Tovets, Pas du Lac",
+      "text": "À Courchevel, le Bouc Blanc (2187 m, nord-ouest) peut être soufflé en milieu d'après-midi ; le col de la Loze (2304 m), décollage et repose faciles, accueille beaucoup de biplaces professionnels ; les Tovets (1800 m, est) sont le vol du matin, avec atterrissage obligatoire à Bozel. L'atterrissage principal est Le Praz, 950 m sous le Bouc Blanc, où la gare du télécabine crée des turbulences par forte brise. À Méribel, le Pas du Lac (2611 m) se prend l'hiver à ski ; on se pose à Plan Lançon, le long d'une ligne électrique, sans aller plus loin par vent de sud en fin de journée.",
+      "focus": ["bouc-blanc-courchevel", "col-de-la-loze", "tovets-courchevel", "le-praz-courchevel-1300", "pas-du-lac-meribel"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Bozel et Pralognan : Les Prés, l'atterrissage, le Bochor",
+      "text": "À Bozel, Les Prés (1574 m) sont un site d'après-midi quand la brise est en place, avec une ligne à haute tension 200 m en dessous ; l'atterrissage de Bozel (852 m), base de loisirs entre stade et lac, a un fort gradient en été. À Pralognan, le décollage du Pachut, dans le secteur du Bochor, est de convention inconnue ; le télécabine du Bochor monte l'été à un décollage de 2020 m. Ce décollage est très délicat dès qu'il y a une composante est, à éviter par sud-sud-est, et passe vent arrière dès 11h-11h30. On se pose au Plateau, près de la route, où la brise de vallée est forte l'après-midi.",
+      "focus": ["les-pres-bozel", "bozel-atterrissage", "le-pachut-pralognan", "pralognan-atterrissage"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Belleville : Boismint, les Deux Lacs, la Cime de Caron",
+      "text": "À Belleville, le décollage conventionné de Boismint (2269 m, niveau autonome), à pente faible, est un site d'initiation, avec un atterrissage au plan d'eau où l'on trouve des promeneurs, une tyrolienne et un fort gradient par brise de vallée ; on n'y atterrit pas l'hiver. Les Deux Lacs (2381 m) décollent sur une piste, dans l'axe thermique de la vallée. La Cime de Caron (3069 m), face nord sur la piste noire, est le meilleur versant de nord-est à nord-ouest : jamais de décollage ni d'atterrissage sur piste ouverte, et jour sans vol par foehn. À Saint-Martin, la Tougnète (2298 m) est interdite l'hiver, sur la piste de ski.",
+      "focus": ["boismint-menuires", "boismint-plan-de-l-eau", "deux-lacs-val-thorens", "caron-nord", "tougnete-saint-martin"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Brise forte à l'atterrissage : Bozel, Bouc Blanc, Jovet",
+      "text": "À Bozel, les conditions sont musclées en milieu de journée, surtout en été : fort gradient, déclenchements thermiques en approche au-dessus des terrains de foot et des pylônes, lignes électriques sur le versant sud. L'atterrissage de Bozel est obligatoire pour les vols des Tovets. Au Bouc Blanc, la FFVL parle de conditions fortes à très fortes en milieu d'après-midi, avec des câbles de téléski à gauche du décollage. Au Mont Jovet et aux Prés, il ne faut pas décoller s'il y a des rafales de nord qui descendent du Jovet, surtout par vent météo d'ouest et brise forte, en début d'après-midi.",
+      "focus": ["brise-forte-bozel-atterrissage", "bouc-blanc-brise-forte", "rafales-descendantes-mont-jovet"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "L'altiport de Méribel et le cœur du Parc de la Vanoise",
+      "text": "Au col de la Loze, une zone est à éviter pour ne pas gêner l'approche des avions de l'altiport de Méribel : on ne survole ni l'altiport ni l'axe de piste, sauf haut, donc pas de vol direct vers Méribel pour y atterrir. Le cœur du Parc national de la Vanoise est à environ 1,3 km de Pralognan : l'arrêté de 2026, expérimental jusqu'à fin 2028, n'autorise le survol à moins de 1000 m du sol que dans des secteurs listés, tous en Maurienne, ce qui l'interdit à Pralognan. On ne décolle que sur les sites de l'annexe, et un vol de montagne depuis la Grande Casse ou le Grand Bec exige une autorisation individuelle, demandée par e-mail une semaine avant.",
+      "focus": ["loze-altiport-meribel", "coeur-pnv-pralognan-grande-casse"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par sud : le foehn de Belleville, le vent de sud de Méribel",
+      "text": "Par vent de tendance sud, Belleville est sous l'effet de foehn : Boismint est fortement déconseillé, la Cime de Caron est un jour sans vol, et aux Deux Lacs le sud donne un fort foehn, alors que le nord donne de forts vents thermiques. Un catalogue ancien écrit au contraire « attention au vent de nord : foehn » au Mont de la Chambre, une divergence que l'atlas conserve. À Méribel, un fort vent de sud arrive en fin de journée : il ne faut jamais aller plus loin que l'atterrissage. Et au Mont Jovet, on ne vole pas par vent de sud fort.",
+      "focus": ["foehn-belleville-caron", "meribel-vent-de-sud-soir", "mont-jovet", "deux-lacs-belleville-soir"],
+      "phase": "afternoon",
+      "wind": { "from": "S", "kmh": 20 },
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par nord : Boismint et les Deux Lacs, mais pas le Jovet",
+      "text": "Par vent de nord, Boismint et les Deux Lacs, tournés vers le nord, sont favorables, avec de forts vents thermiques aux Deux Lacs, et le Bouc Blanc est favorable du nord à l'ouest. En revanche, le Mont Jovet, orienté du sud-est au sud-ouest, tourne le dos au nord, et les rafales de nord qui en descendent interdisent le décollage aux Prés.",
+      "focus": ["boismint-menuires", "deux-lacs-val-thorens", "bouc-blanc-evening", "mont-jovet", "rafales-descendantes-mont-jovet"],
+      "phase": "afternoon",
+      "wind": { "from": "N", "kmh": 20 },
+      "view": "massif"
+    },
+    {
+      "chapter": "Les transitions",
+      "title": "Sortir de la Vanoise : Moûtiers et la Tarentaise",
+      "text": "On rejoint et on quitte cette zone par Moûtiers, où trois vallées de brise se rejoignent : l'Isère venant d'Albertville, le Doron de Bozel et le Doron de Belleville. Aucune source ne décrit une ligne de convergence ; l'éperon du Mont Jovet et de Montgirod, entre l'Isère et le Doron de Bozel, serait le site d'observation naturel, à confirmer. Un cross depuis le Mont Jovet ou Montgirod part avant 12h30 et reste hors du Parc national, au sud et au sud-est du Jovet.",
+      "focus": ["tarentaise/confluence-moutiers", "tarentaise/montgirod-arcachat-se", "mont-jovet-thermique"],
+      "view": "massif"
+    }
+  ]
+}

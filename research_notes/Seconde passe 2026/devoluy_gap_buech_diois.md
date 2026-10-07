@@ -94,3 +94,32 @@ Volumes de `thermal_spots` (avant → après) : devoluy 3 → 7, champsaur-valga
 - Cercles rouges en pointillés des cartes de Karlis (Chabre, Orpierre) : légende non donnée, non repris. Vidéo YouTube de Karlis, livre « Guide to Chabre », PDF « Chabre Challenge » : toujours bloqués.
 - Aucun récit de thermique trouvé pour Nyons, Soubeyrand, Buis, Mévouillon (hors Bergiès et Buc), Valgaudemar, Chaillol, Orcières, ni pour Serres et Veynes ; Facebook de Parapente Embrun non lu. WebSearch ne remonte que des pages commerciales pour les Baronnies.
 - Les altitudes plafond proviennent de récits isolés et ne sont pas des moyennes.
+
+## Passe secteurs minces
+
+Date : 7 octobre 2026. Convention de confiance : récit précis ou plusieurs récits = `medium` ; extrapolation du relief = `low` avec « déduction ». Identifiants existants conservés, rien supprimé. `npm run data:build -- --check` : aucune alerte nouvelle.
+
+### Champsaur et Valgaudemar (`champsaur-valgaudemar`)
+
+Volumes avant → après : brises 3 → 3 (trois complétées, Valgaudemar passée de `low` à `medium`), convergences 0 → 1, hazards 5 → 7, thermiques 3 → 7, soarings 3 → 4, décollages 8 → 12, atterrissages 5 → 7, effets synoptiques 5 → 6 (quatre complétés), routes 2 → 5, conseils 5 → 10 ; 17 sources (S194 à S210).
+
+**Sources nouvelles**
+- Fil parapentiste.info « Voler dans le Champsaur » (2017-2021) lu en entier : avis de pilotes locaux sur Orcières, Ancelle, les Richards, le Vieux Chaillol et le col de la Pisse.
+- Récits du CHVD lus en entier : rando-cross du Col Vert vers le Champsaur et le Valgaudemar (juillet 2026), semaine itinérante de mai 2026, vol bivouac de retour de mi-août 2024, Trans'Alps 2024, vols des Richards (31 mars 2021), Col Vert « sudistes » (31 juillet 2020), semaine itinérante 2014, week-end du Noyer (11-12 septembre 2010), vol de l'Olan au Valgaudemar (30 septembre 2009), topo du Vieux Chaillol et « camp de base du Frêne » (juin-juillet 2025).
+- Fil parapentiste.info « Vol rando dans le Valgaudemar – col de Pétarel » (août 2026) ; récit Blues Team de mai 2015 (bordure ouest des Écrins) ; fiche FFVL 5041 du Vieux Chaillol (accès, altitude 1030 m incohérente) et site ParaglidingEarth 15526 (3120 m).
+- Positions : géocodeur IGN.
+
+**Ajouté ou corrigé**
+- *Thermiques et relances* : Grun de Saint-Maurice (3500 m), Banc du Peyron (1100 m en 8 minutes), éperon sud de l'Olan, entrée de la vallée de Champoléon (restitution du soir) ; Richards et Cuchon complétés.
+- *Brises* : matin très calme puis brise installée toute la journée à Orcières, installation parfois chaotique en début d'après-midi aux Richards, brise « ronflante » du Valgaudemar (10-15 km/h à l'atterrissage de La Chapelle), observation de compétition au col Bayard ; les directions de la brise du Drac (deux versions contradictoires) ne sont pas tranchées.
+- *Convergence* : confluence des brises de vallée à l'entrée de la vallée de Champoléon (`low`, géométrie indicative, récit du Cairn d'Orcières à 17h30).
+- *Dangers* : brise de la vallée de Valbonnais et combe du Goulet derrière La Salette ; Vieux Chaillol (vol imposé vers le sud par le Parc des Écrins) ; atterrissage des Richards enrichi (venturi par ouest, gradient par sud, nord + brise).
+- *Nouveaux sites* : Vieux Chaillol (sommet), Soleil Bœuf de Saint-Michel-de-Chaillol, col de Pétarel, replat sous le pas de l'Olan, atterrissages du Frêne et de La Chapelle-en-Valgaudémar, soaring du soir sur Archinard.
+- *Routes* : parcours classique des Richards vers Grenoble (jusqu'au Colombier), rando-cross Pic de Bure → Valgaudemar → Valbonnais (juillet 2026), vol bivouac Piolit → Richards → Colombier (août 2024).
+- Une correction a été faite avant enregistrement : l'orientation du Soleil Bœuf de Chaillol est « de l'ouest à l'est par le sud » (le nord-ouest avait été ajouté par erreur).
+
+**Introuvable**
+- Aucun horaire ni vitesse de la brise du Drac ; le sens montant (de Gap ou de Vizille) reste contradictoire entre sources ; le Valgaudemar n'a toujours aucun site officiel FFVL.
+- Traces des cross de Champsaur (CFD, XContest, Syride) inaccessibles ; Cuchon de Molines, Ratz de Bec et Coiro (point exact) non localisés par le géocodeur ; confluence du Drac Blanc et du Drac Noir non localisée précisément.
+- Les sites de Réallon (col de la Gardette, station, fiches 3069/13583), de La Bâtie-Neuve et de Rabou n'ont pas été traités (autres secteurs).
+

@@ -1,0 +1,101 @@
+{
+  "massif": "trieves",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "Le Trièves : un bassin abrité entre le Vercors et l'Obiou",
+      "text": "Le Trièves est un bassin ouvert entre la barrière est du Vercors, avec le Mont Aiguille et le Grand Veymont, et l'Obiou, le Grand Ferrand et le Dévoluy. Son site de référence est Courtet, au pied de la face ouest de l'Obiou, que les écoles et les clubs décrivent comme protégé du vent du nord : on y vole même quand le reste de l'Isère est cloué au sol. L'air du bassin descend l'après-midi du Drac vers le col de la Croix-Haute. Retenez deux rôles : un site refuge pour les jours de vent du nord, et un tremplin vers l'Obiou, le Dévoluy et le Pic de Bure.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "L'après-midi, la brise du Drac descend le Trièves",
+      "text": "Dans la vallée du Drac, un vent de nord thermique se lève entre 11 h et 13 h et atteint son maximum vers 15 h : les sources des kiteurs de Monteynard l'attribuent à la forte chaleur au fond du Trièves. Il remonte jusqu'à Monestier-de-Clermont, où l'atterrissage du Col du Fau le sent dès 11 h. Dans le Trièves, les flèches de la carte du Parc dessinent ensuite une brise nord-sud qui descend le bassin, franchit le col de la Croix-Haute et se poursuit vers le Buëch, mais aucun club n'en donne les heures ni la force. Une brise du Diois remonte aussi par le col de Menée vers Le Percy : elle ne repose que sur la carte, avec une confiance faible.",
+      "focus": ["matheysine/drac-monteynard-nord", "vercors-est-sud/drac-trieves-brise-monestier", "trieves-brise-croix-haute", "diois-col-de-menee-brise"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Courtet, un site de l'après-midi",
+      "text": "À Courtet, les conditions sont belles et calmes le matin, et le décollage est souvent bien alimenté par la brise. Mais la journée thermique commence surtout après 14 h, et le site donne jusque tard en été. Le thermique de service est souvent installé devant le déco, un peu en avant, au pied de la barre de l'Obiou : lors du premier décollage de mai 2022, les pilotes étaient rapidement au plafond vers 2300 m. Les récits se contredisent sur le côté du premier thermique, à gauche du déco selon le topo, dans la combe à droite selon une pilote, et l'on garde les deux versions.",
+      "focus": ["courtet", "courtet-pompe-devant-deco", "courtet-combe-droite-deco"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le soir, la restitution de la face ouest",
+      "text": "Face à l'ouest, les falaises de Courtet chauffent jusqu'au coucher du soleil, puis rendent cette chaleur à l'air : c'est la restitution. Le site FFVL est d'ailleurs décrit comme idéal pour le thermique ou la restitution, avec 500 m de dénivelé et de généreuses ascendances. Une pilote raconte un vol du soir : sortie par la droite du déco, premier thermique dans la combe voisine, puis crête après crête, par le col de la Brèche où l'on peut penser qu'il y a une confluence, jusqu'au Châtel en une vingtaine de minutes, à plus de 2000 m. Le retour se fait par la vallée, avec la perte d'altitude au-dessus des crêtes de Courtet.",
+      "focus": ["courtet-restitution", "courtet-combe-droite-deco", "courtet-col-de-la-breche-chatel"],
+      "phase": "evening"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Fluchaire, Obiou, Grand Ferrand : de grands plafonds",
+      "text": "Depuis le Châtel ou depuis Courtet, l'arête de Fluchaire, chauffée sous la Tête de l'Obiou, a donné à un pilote un thermique extraordinaire qui l'a fait grimper comme un bouchon jusqu'au Ratier, vers 13 h 20 le 3 juillet 2022. Au-dessus, l'Obiou plafonnait à 3150 m ce jour-là, puis on a enchaîné vers le Grand Ferrand. Les thermiques de la face nord-ouest portent même jusqu'à 3300 m. On y arrive en général à partir de 14 h, assez facilement à 2700 m, et c'est de là que partent les cross vers le Dévoluy et le Pic de Bure.",
+      "focus": ["fluchaire-ratier-bouchon", "obiou-grand-ferrand-plafond", "chatel-relance-bocal-courtet"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Courtet et le Châtel : deux décollages, un seul atterrissage",
+      "text": "Courtet, à 1365 m, est le premier site du Trièves. On y accède en voiture à moins de 50 m du parking, mais la pente est marquée et le décollage, revêtu d'un textile, demande une bonne alimentation de face : les vents favorables sont le nord et le nord-ouest, les défavorables le sud-est et le sud. Il est ouvert aux deltas. Le Châtel de Mens, à 1918 m, est un grand espace herbeux au sommet, à une heure de marche depuis Cordéac, qui s'ouvre au nord, au sud, au sud-ouest, à l'ouest et au nord-ouest. On se pose à Courtet, favorable par nord-ouest, jamais sur la parcelle du Châtel à Mens.",
+      "focus": ["courtet", "courtet-atterro", "le-chatel-mens", "chatel-atterro-interdit"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Le tour du bocal : 45 km autour de Courtet",
+      "text": "Le tour du bocal est le petit triangle FAI de 45 km du topo de Courtet. On commence par faire le plafond au-dessus du déco avec le thermique de devant, puis on part au nord sur le Châtel. De là, on transite plein sud sur le Mesnil, une pyramide un peu en plaine à gauche du déco, où il faut chercher un peu où ça monte ; par vent de nord, il y a probablement une confluence sur sa face sud, sous le vent, qui déclenche un gros thermique. On file ensuite plein ouest pour raccrocher le Jocou, de l'autre côté du col de Lus-la-Croix-Haute, avant de revenir au déco.",
+      "focus": ["courtet-tour-du-bocal-45km", "courtet-pompe-devant-deco", "chatel-relance-bocal-courtet", "mont-de-menil-pyramide-relance", "jocou-pompe-avant-deco-est"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Du Jocou à l'Obiou",
+      "text": "Le déco est du Jocou permet de partir tôt, en faisant le plafond avec le thermique qui se trouve 100 à 200 m devant le déco, vers l'est ; le premier plafond est vers 2500 m. On met ensuite le cap sur l'antenne de l'émetteur, plein est, où en général un bon thermique attend, pour continuer vers l'Obiou. Il reste à passer le Mesnil, où il faut chercher où ça monte : par vent de nord, le thermique déclenché par la confluence sur sa face sud permet de faire très vite le sommet de l'Obiou, et d'après le topo la suite est une formalité. Un retour par l'atterrissage de Courtet est possible.",
+      "focus": ["jocou-antenne-mesnil-obiou", "jocou-pompe-avant-deco-est", "jocou-antenne-emetteur-est", "mont-de-menil-pyramide-relance", "obiou-grand-ferrand-plafond"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Le venturi du Jocou et le verrou de Châtillon",
+      "text": "Par vent de sud, il faut s'attendre à plus de vent en altitude au Jocou qu'à Lesches ou à Aureille : à l'est du sommet, la vallée de Lus-la-Croix-Haute se resserre et produit un effet venturi, c'est-à-dire une accélération du vent. De l'autre côté, à Châtillon-en-Diois, la brise de nord qui s'installe vite à partir de midi diverge vers l'ouest : c'est le seul endroit où l'on peut voir un parapente reculer en basse couche. Les fortes brises de la vallée y rendent le Glandasse difficile à raccrocher, car elles viennent de côté par rapport à la pente.",
+      "focus": ["lus-croix-haute-venturi-jocou", "chatillon-verrou-brise"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Chasse, rapaces et atterrissage fermé",
+      "text": "À Courtet, les jeudi, samedi et dimanche de chasse, aucun véhicule ne monte sur la piste avant 13 h : on peut décoller avant en montant à pied. Le propriétaire du champ du Châtel à Mens ne veut plus d'activité de vol libre sur sa parcelle, il ne faut donc pas s'y poser. Autour du col de Menée et du Percy, la carte du Parc dessine des zones de nidification de l'aigle royal, de janvier à septembre, du vautour fauve, de janvier à août, et du faucon pèlerin, de janvier à juillet : il faut rester bien au-dessus des falaises et éviter de les survoler bas.",
+      "focus": ["courtet-chasse-acces", "chatel-atterro-interdit", "trieves-rapaces-archiane-percy"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par vent de nord ou de nord-ouest : Courtet, le repli",
+      "text": "Quand le nord souffle, il s'étale dans la vallée : Courtet reste volable, et c'est le repli principal par nord fort, avec Montaud et Montlambert, les écoles insistant sur sa protection. Le Châtel est lui aussi favorable au nord, comme au nord-ouest, et l'après-midi la brise nord-sud descend le Trièves vers la Croix-Haute. Plus au nord, le lac de Monteynard monte à 12-20 nœuds.",
+      "focus": ["courtet", "courtet-restitution", "le-chatel-mens", "trieves-brise-croix-haute"],
+      "wind": { "from": "N", "kmh": 25 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par sud ou sud-est : Courtet se ferme, le Châtel s'ouvre",
+      "text": "Courtet est défavorable par sud-est et par sud. Le Châtel, lui, est favorable par sud et par sud-ouest. Par vent de sud, le venturi renforce le vent à l'est du Jocou, où l'on aura plus de vent en altitude qu'en plaine, et le col Pigeon est alors le meilleur départ.",
+      "focus": ["courtet", "le-chatel-mens", "lus-croix-haute-venturi-jocou"],
+      "wind": { "from": "S", "kmh": 15 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Les transitions",
+      "title": "Du Trièves vers le Dévoluy, le Mont Aiguille et le Diois",
+      "text": "Depuis Courtet, on rejoint les faces ouest du Dévoluy, c'est-à-dire l'Obiou et le Grand Ferrand : aucun parcours détaillé n'est documenté, mais c'est de là que partent les cross vers le Dévoluy et le Pic de Bure. À l'est du Vercors, des pilotes font régulièrement des allers-retours jusqu'au Mont Aiguille depuis le Serpaton et le Trièves, en respectant la réserve des Hauts-Plateaux. Par le sud-ouest, le premier vol jusqu'à Gap par le Dévoluy est parti du col de Rousset, par le Glandasse, la Toussière et Lus-la-Croix-Haute.",
+      "focus": ["courtet-devoluy-faces-ouest", "obiou-grand-ferrand-plafond", "vercors-est-sud/vercors-barriere-est-moucherotte-mont-aiguille", "rousset-glandasse-toussiere-devoluy-gap"],
+      "view": "massif"
+    }
+  ]
+}

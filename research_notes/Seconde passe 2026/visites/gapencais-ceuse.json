@@ -1,0 +1,117 @@
+{
+  "massif": "gapencais-ceuse",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "Gap : une cuvette où se rejoignent trois brises",
+      "text": "Gap est un carrefour entre la Durance, qui arrive de Tallard, le Buëch, par le col de la Freissinouse et Veynes, et le Champsaur, par le col Bayard. La ville occupe une cuvette où ces trois brises se rejoignent. Le matin, on décolle de Guizière et de la Tête de la Clape avant la brise ; Charance prend ensuite le relais pour les départs en cross vers le Pic de Bure ; et la falaise de Céüse est le moteur thermique classique des planeurs de Gap-Tallard.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le matin, Guizière et la Tête de la Clape avant la brise",
+      "text": "Le col de Guizière, orienté est à sud-est, est décrit comme un site du matin qui permet un départ en cross pour profiter des premiers thermiques avant que la brise ne soit trop forte. Il est ouvert sur le bassin gapençais et permet de rejoindre la croupe de Charance. La Tête de la Clape, à La Roche-des-Arnauds, est elle aussi plutôt un site du matin : elle peut se trouver sous le vent du sud-ouest à partir de la mi-journée.",
+      "focus": ["col-de-guiziere", "therm-guiziere-matin", "tete-de-la-clape", "clape-matin"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "L'après-midi, trois brises convergent sur Gap",
+      "text": "La brise de la Durance, très régulière dans la cluse, remonte par Tallard et gagne la cuvette de Gap. Celle du Buëch arrive par Veynes et la Freissinouse, et celles du Champsaur passent le col Bayard. Ces brises se rencontrent au-dessus de la cuvette, ce qui crée probablement une zone d'ascendance au-dessus de Gap et de Charance ; mais cette convergence repose sur des schémas en perspective et sa géométrie reste très approximative. Il vaut mieux ne pas se placer sous le vent des brises croisées.",
+      "focus": ["brise-durance-tallard", "brise-tallard-gap", "brise-veynes-gap", "convergence-cuvette-gap"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "À Céüse, la falaise sud travaille de 12 h à 17 h",
+      "text": "Les faces sud de la Malaup, de la Céüsette et de Céüse reçoivent une brise de pente qui monte depuis la Durance, de 12 h à 17 h en été. Les planeurs de Gap-Tallard, largués à 1500 m au-dessus de la Malaup, partent vers la Petite Céüse puis suivent la falaise jusqu'à la Grande Céüse, avec des plafonds de 2200 à 2500 m et jusqu'à 3000 m ; le micro-climat de Tallard permet même l'onde. En parapente, à la Petite Céüse, un thermique est souvent présent devant le déco ou au-dessus de l'épingle de la piste, et un peu partout sur le plateau de Sigoyer.",
+      "focus": ["brise-pente-ceuse-sud", "falaise-ceuse", "therm-malaup", "therm-petite-ceuse-deco"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le soir, Charance en restitution, Rabou qui change d'orientation",
+      "text": "La croupe de Charance est un site excellent par régime de sud, avec des jeux de pente sur le décollage herbeux, et très agréable le soir en restitution, c'est-à-dire quand la pente chauffée dans la journée rend sa chaleur à l'air. C'est un site de niveau vert, qui accueille les débutants. À Rabou, orienté ouest à nord-ouest, il faut au contraire surveiller en fin de journée le changement d'orientation effective : quand la brise tombe et que le vent météo reprend, le décollage ne regarde plus dans la même direction.",
+      "focus": ["soar-charance", "charance", "rabou", "rabou-changement"],
+      "phase": "evening"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Charance et Gleize : les rampes vers le Bure",
+      "text": "La croupe de Charance a un bon rendement thermique pour les départs en cross, surtout vers le massif de Bure, notamment par régime de sud ou quand les brises sont généreuses. Dans les schémas de Briffe, un flux monte de Gap vers Charance puis vers le Bure, la cible classique de la transition. Le pic de Gleize décolle très bien vers 2000 m sous le sommet, et en fin de matinée il y a de quoi monter en thermique et partir se promener.",
+      "focus": ["therm-charance-croupe", "therm-pic-de-gleize", "therm-bure-gap"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Charance et Guizière : un site vert, un site du matin",
+      "text": "Charance est le site le plus pratiqué, avec 462 décollages en 2024 : un déco herbeux de niveau vert, à 45 minutes à une heure de marche pour 400 m de dénivelé, dangereux par régime de nord. L'atterrissage officiel n'a pas de parking : on se pose au Clot, en bas, en cours de conventionnement, ou plus haut au Correo, où des manches à air aident mais où le terrain est technique en régime de brise. Le col de Guizière n'a pas d'atterrissage officiel : on se pose dans le champ près de la chapelle de Charance.",
+      "focus": ["charance", "charance-clot", "charance-correo", "col-de-guiziere"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Céüse : la Petite, le plateau sud et le plateau nord-ouest",
+      "text": "La Petite Céüse, accessible par une montée plus courte depuis le col des Guérins, est le départ pour suivre les falaises vers la Grande Céüse. Le décollage plein sud du plateau, au point coté 1794, permet d'être en l'air bien avant la cassure et de faire toute la falaise en long, mais il est non officiel et secoue dès qu'on passe l'aplomb de la falaise, sauf tôt le matin. Le plateau nord-ouest se vole par régime de nord ou d'ouest faible, avec la balise d'Aspres-Longeagne pour indicateur. On se pose à Sigoyer, où il y a de la place, ou dans la vallée de Veynes, en sortant par le verrou.",
+      "focus": ["petite-ceuse", "ceuse-sud-plateau", "soar-ceuse-sud", "ceuse-nord-ouest", "sigoyer", "veynes-vallee"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "De Guizière au Pic de Bure",
+      "text": "Le départ du matin profite des premiers thermiques au col de Guizière, avant la brise, puis rejoint la croupe de Charance pour une relance à bon rendement, avant la transition vers le massif de Bure, la cible classique des départs de Charance. Les planeurs de Gap-Tallard font un tour d'environ 44 km en 1 h 15 : Céüse, Pic de Bure, Dévoluy, Charance. Cette ligne de reliefs est probablement exploitable en parapente comme transition entre Buëch, Dévoluy et Gap, mais c'est une déduction.",
+      "focus": ["xc-guiziere-charance", "therm-guiziere-matin", "therm-charance-croupe", "therm-bure-gap", "circuit-ceuse-bure-charance"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Nord, mistral et traversées contrées",
+      "text": "Par régime de nord, Charance et Guizière sont dangereux. Par mistral, les schémas de Briffe montrent un flux qui contourne le Pic de Bure et rabat sur la plaine de Gap-Tallard, avec des rotors autour de l'aérodrome et sous la Malaup. Au plateau intérieur de Céüse, côté nord-ouest, il faut être sûr qu'il n'y a pas de brise, sinon ce coin est sous le vent. Enfin, une tentative de raccrocher Céüse depuis les faces est du pic de Gleize, par Charance, a échoué : le vent contrait en traversant vers la Freissinouse.",
+      "focus": ["gap-nord-charance", "gap-mistral-rotors", "ceuse-no-sous-le-vent", "charance-ceuse-traversee-contree"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Tallard, zones R196 et bergers de Céüse",
+      "text": "L'aérodrome de Gap-Tallard, à 14 km au sud de Gap, a une activité intense en juillet-août : vols à voile en onde et en thermique, hélicoptères militaires de l'ALAT au nord de la zone, et remorquage avec largage sur la Malaup à 1500 m. Il faut respecter la zone de l'aérodrome. Les zones R196 sont activables par NOTAM, hors mercredi, samedi, dimanche et jours fériés, et du 1er juillet au 15 septembre. À Céüse, du 1er juin au 30 octobre, les bergers et leurs patous ont la priorité.",
+      "focus": ["tallard-alat", "r196-gap", "ceuse-nord-ouest"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par nord ou mistral : Charance et Guizière à proscrire",
+      "text": "Par régime de nord, la FFVL et Différen'ciel s'accordent : Charance et Guizière sont dangereux. Céüse nord-ouest est en revanche exploitable par nord faible, la balise d'Aspres donnant l'indication. Par mistral, les rotors se forment autour de l'aérodrome et sous la Malaup.",
+      "focus": ["gap-nord-charance", "ceuse-nord-ouest", "gap-mistral-rotors"],
+      "wind": { "from": "N", "kmh": 20 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par sud ou sud-est : Charance et Céüse",
+      "text": "Par régime de sud, Charance est excellent, avec des brises généreuses, et les faces sud de Céüse donnent leur brise de pente. Par sud-est, Guizière et la Tête de la Clape servent le matin, et Charance reste favorable.",
+      "focus": ["soar-charance", "charance", "soar-ceuse-sud", "col-de-guiziere", "tete-de-la-clape"],
+      "wind": { "from": "S", "kmh": 15 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par ouest : Rabou et Céüse nord-ouest",
+      "text": "Par ouest ou nord-ouest, c'est Rabou, orienté ouest à nord-ouest, qui s'ouvre, avec Céüse nord-ouest par vent d'ouest faible. Les sources divergent sur l'orientation de Rabou : sud-ouest selon la FFVL, ouest à nord-ouest selon la fiche locale. Par sud-ouest, la Tête de la Clape peut être sous le vent dès la mi-journée.",
+      "focus": ["soar-rabou", "rabou", "ceuse-nord-ouest", "clape-matin"],
+      "wind": { "from": "O", "kmh": 15 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Les transitions",
+      "title": "Vers le Bure, le Buëch, le Diois et Serre-Ponçon",
+      "text": "Au nord-est, la cible est le Pic de Bure, par Charance, puis la traversée du Dévoluy jusqu'à Veynes avant de revenir vers Gap. Par le Buëch, le classique d'Aspres monte à 2000 m en local, part au nord vers le Durbonas, puis à l'est vers le Bure. Depuis le Diois, les vols classiques cités par le club vont de Luc à Serres ou à Gap-Tallard, soit 64 km, le vol du 11 juin 2017 finissant près de Veynes. Vers l'est, la Bâtie-Neuve, côté Serre-Ponçon, est un gros potentiel de départ en cross, avant que la brise ne s'installe.",
+      "focus": ["devoluy/therm-bure-sud", "devoluy/xc-devoluy-traversee", "buech-laragne-chabre/xc-aspres-durbonas-bure", "xc-luc-gap", "serre-poncon-embrunais/la-batie-neuve"],
+      "view": "massif"
+    }
+  ]
+}

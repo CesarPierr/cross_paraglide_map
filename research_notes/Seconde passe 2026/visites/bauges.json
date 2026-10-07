@@ -1,0 +1,115 @@
+{
+  "massif": "bauges",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "Les Bauges en un coup d'œil",
+      "text": "Les Bauges sont un grand plateau karstique, ouvert au nord sur Annecy et au sud-ouest sur la cluse de Chambéry, avec les plus hautes cimes à l'est. Deux grandes brises y entrent en sens inverse : celle d'Annecy descend les vallées intérieures, celle de Chambéry remonte par le sud-ouest, et elles se rencontrent en des points prévisibles que les pilotes exploitent. Le massif est aussi strictement réglementé : une réserve de chasse et de faune sauvage interdit de le survoler à moins de 300 m du sol. Retenez que le vent de nord ou de sud y est toujours plus fort à l'ouest qu'à l'est, si bien qu'on peut voler au cœur des Bauges quand le Semnoz et le Revard sont impossibles.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le tour du soleil : la face est d'abord, les faces ouest ensuite",
+      "text": "Le massif se lit en suivant le soleil. La face est, au-dessus de la Combe de Savoie, se vole de 11h à 15h : un récit décolle de Montlambert vers 13h et extrait sur le Mont Charvet. Les faces ouest des crêtes intérieures prennent ensuite le relais, avec des spirales thermiques de 13h à 17h sur le Colombier, le Margériaz, le Julioz et le Roc des Bœufs, et la face ouest du Margériaz après 15h30. En fin de journée, les récits trouvent encore de la portance à la Tour des Ébats, au rebord du Revard, en nord-ouest.",
+      "focus": ["mont-charvet-extraction", "colombier-margeriaz-roc-des-boeufs", "margeriaz-arete", "tour-des-ebats-angle-est"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Deux brises opposées : Annecy par le nord, Chambéry par le sud-ouest",
+      "text": "Des langues de brise venues d'Annecy redescendent les vallées intérieures vers le sud : du col de Leschaux vers le Chéran, puis Lescheraines et Le Châtelard, avant de se diviser vers École, Sainte-Reine et Aillon ; l'une d'elles remonte de Lescheraines vers le col de Plainpalais. Face à elles, la brise de Chambéry entre par la combe de Saint-Jean-d'Arvey, vers Thoiry et le col des Prés. Ces brises atteignent 30 à 35 km/h et peuvent forcer à un atterrissage scotché sur place, près d'École, d'Aillons, de Lescheraines et d'Allèves : on vole donc en début d'après-midi, ou quand l'activité thermique décroît.",
+      "focus": ["langues-annecy-vallees-bauges", "brise-lescheraines-plainpalais", "brise-chambery-arvey-thoiry", "lescheraines-alleves-scotche"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Là où elles se rencontrent : Savoyarde, Margériaz, col du Frêne",
+      "text": "La rencontre des brises se fait en des points prévisibles. Au Margériaz, de part et d'autre du col de Plainpalais, la brise de Chambéry et celle de Lescheraines se rejoignent souvent sous un beau cumulus, avec des plafonds de 2380 à 2500 m. Au col du Frêne, la brise de Sainte-Reine rencontre celle de la Combe de Savoie, mais le col est aussi une zone sous le vent. Dans le secteur d'École, la brise de la Compôte peut rencontrer un vent météo de nord ou de sud : une confluence qui scotche à l'atterrissage autant qu'elle porte. Et à la Savoyarde, la branche de la brise de Chambéry qui coupe le virage rencontre les langues d'Annecy : c'est la convergence la plus nette.",
+      "focus": ["confluence-margeriaz-plainpalais", "confluence-col-du-frene", "confluence-ecole-compote", "convergence-savoyarde"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "La Savoyarde, porte d'entrée par le Granier",
+      "text": "L'épaule nord-ouest du Montgelas, que les pilotes appellent la Savoyarde, est au vent de la brise de Chambéry : on y remonte en dynamique partout, même très bas, en faisant des allers-retours face au vent. Il n'y a pas de thermique au sommet, et la seconde épaule, orientée ouest, 1 km plus au sud, permet de remonter d'une épaule à l'autre vers 900 m. La face ouest de la Savoyarde est la pompe de la transition : on la raccroche vers 1100-1200 m, avant que les brises ne rentrent. De là, l'épaule forestière nord-ouest du Pic de la Sauge reprend très bas en dynamique, jusqu'à 2200 m.",
+      "focus": ["savoyarde-epaule-nord-ouest", "savoyarde-face-ouest-pompe", "sauge-epaule-nord-ouest", "pic-de-la-sauge-relance"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Le cœur du massif : Galoppaz, Colombier, Julioz, Margériaz",
+      "text": "Après la Savoyarde, on raccroche à 1100 m puis on monte à 1600 m, la hauteur de départ conseillée pour transiter sur la Galoppaz, premier relief au-delà ; un jour de brise, deux ailes n'y montaient pas, et il valait mieux choisir Montlambert. La Galoppaz n'est qu'un relais : son décollage et son atterrissage sont interdits. Le Colombier d'Aillon, coiffé d'un bon cumulus, grimpe jusqu'à 2700 m, comme le Mont Julioz, dont deux petites croupes donnent un simple appui. L'arête du Margériaz, ensuite, monte toute seule : on chemine le long de l'arête, avec 2380 m au sommet avant la transition vers la Tour de l'Angle Est du Revard.",
+      "focus": ["galoppaz-relance", "galoppaz-puygros-interdits", "colombier-margeriaz-roc-des-boeufs", "mont-julioz-plafond", "margeriaz-arete-plafond"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Les faces est : Charvet, Pelat, Arclusaz, Pleuven, Trélod",
+      "text": "Depuis Montlambert, l'extraction se fait sur le Mont Charvet, puis on chemine sur le Mont Pelat avant de transiter sur la Dent d'Arclusaz, dont les thermiques sont très puissants, avec des plafonds de 2200 à 2700 m. Par vent de nord, la brise de Chambéry est extrêmement forte sous le vent du col du Frêne, et la plupart des pilotes se posent à Montlambert au retour. Un itinéraire de juillet 2020, parti de la Sambuy, longe ensuite les crêtes : aux Dents de Pleuven, ça monte des briques en thermodynamique sur la face ouest, en restant au vent, jamais sur la face sud en été ; puis les faces ouest du Trélod, entre 2000 et 2200 m, avant la transition vers le Roc des Bœufs, à plus de 2000 m, jugée une rigolade.",
+      "focus": ["mont-charvet-extraction", "mont-pelat-cheminement", "dent-arclusaz-plafond", "dents-de-pleuven-trelod", "faces-est-bauges-arclusaz-roc-des-boeufs"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Le vol rando : décoller à pied, se poser sans terrain officiel",
+      "text": "Dans les Bauges, presque tous les décollages sont des vols rando, à pied. Le Margériaz (1743 m), face sud à sud-ouest, n'a aucun atterrissage officiel en vallée ; le Colombier est réservé aux experts et non conventionné, avec comme atterrissage officiel le camping des Aillons, de niveau confirmé, dangereux dès qu'il y a de la brise, où il est interdit de poser court. Le Trélod (2050 m) a trois couloirs de décollage dans la zone de recherche de la réserve, signalés par des bornes : gonflage et pente-école interdits, et l'on ne repasse pas dans la zone. La plaine de la Compôte est un atterrissage de vol rando non conventionné. Règle générale : repérer avant la montée un champ fauché loin des troupeaux, rassembler la voile en boule et sortir du champ pour plier.",
+      "focus": ["margeriaz", "colombier-bauges", "trelod", "camping-aillons", "compote-etre", "margeriaz-pas-d-atterro"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Chartreuse → Bauges par la Savoyarde",
+      "text": "La transition depuis le Granier, de 10 km, est difficile : fortes brises et fortes turbulences à prévoir. La hauteur de départ suffisante est en général 2400 m, parfois 2200 m, les guns partant sous 2000 m, parfois 1900 m ; avec du sud qui pousse, on peut partir un peu plus bas, avec du nord qui contre, il faut plus de marge. On vise d'abord le Mont Saint-Michel pour être au nord quand on entre dans la brise, vers 1200 m, puis on ajuste le cap. Le Granier est sous la TMA de Lyon, limitée au FL95, environ 2900 m, et en saison de ski, on contourne par la droite le petit lac de Saint-André pour éviter la TMA de Chambéry. Si une bulle de faucon pèlerin est active à la pointe sud des Bauges, on vise la falaise à gauche de la bulle.",
+      "focus": ["transition-chartreuse-bauges-savoyarde", "transition-tma-granier-savoyarde", "bulle-savoyarde-faucon"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Le petit tour des Bauges, 57 km",
+      "text": "Le petit tour, raconté en juin et juillet 2020, part de Vérel et passe le Revard à la tour des Ébats, puis transite vers Bange depuis le col de la Cochette, vers 1550 m, avec une raccroche vers 1200 m, avant de gagner la face ouest du Semnoz, jusqu'à 2180 m. Après le Roc des Bœufs, où la ligne électrique est un repère et où un thermique atteint 2500 m, la traversée directe vers le Margériaz passe par le Mont Julioz en treize minutes ; puis l'arête du Margériaz, à 2380 m au sommet, ouvre une transition de seize minutes vers la tour de l'angle est du Revard, avec une perte de 200 m avant l'air ascendant au-dessus de la vallée. Deux bulles de quiétude jalonnent le parcours : celle de Bange, un faucon pèlerin, à passer à 1200 m minimum, et celle du Margériaz, un aigle royal, à passer à 1800 m.",
+      "focus": ["petit-tour-des-bauges", "col-de-la-cochette-bange", "roc-des-boeufs-ascenseur", "bulle-bange-semnoz", "bulle-margeriaz-roc-des-boeufs"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "La réserve et les bulles de quiétude",
+      "text": "La réserve nationale de chasse et de faune sauvage interdit de survoler à moins de 300 m du sol, sauf dans quatre zones autorisées et pour les trois décollages du Trélod. En cross, on peut longer la limite, mais on n'y passe jamais à moins de 300 m, même si le thermique y est. S'y ajoutent des bulles de quiétude de rapaces : un aigle royal à la falaise de la Buffaz, à passer à 1750 m minimum de janvier à août, et des faucons pèlerins à la falaise de la Compôte, à 1200 m minimum.",
+      "focus": ["reserve-bauges-300m", "buffaz-bulle-aigles", "compote-bulle-faucons"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Cisaillements, venturis et vignes : les pièges de la bordure",
+      "text": "Dans le petit vallon entre le Mont Saint-Michel et le Montgelas, les cisaillements sont violents entre chaque couche, sous toutes les brises : un enfer, selon un récit. Au pied de la Savoyarde, la bande où la brise est forte est tapissée de piquets de vignes : on ne s'y pose pas. Au col du Frêne et au col de Tamié, repères du club de Saint-Hilaire, on est dans une zone sous le vent avec venturi. Enfin, au Roc des Bœufs, l'arrivée basse au sud expose à être coincé sous le vent de la brise d'Annecy : le CHVD recommande le crochet par le Mont Julioz.",
+      "focus": ["savoyarde-vallon-cisaillements", "savoyarde-bande-vignes", "col-du-frene-venturi", "col-de-tamie-venturi", "roc-des-boeufs-sous-le-vent"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par nord : les brises s'additionnent au vent",
+      "text": "Par vent de nord, le vent et les brises s'additionnent. La brise de Chambéry est extrêmement forte sous le vent du col du Frêne, et la pente-école du Peillet, en dessous, est turbulente quand la brise et le vent de nord descendent du col ; la plupart des pilotes se posent à Montlambert au retour. Dans le secteur d'École, la confluence entre la brise de la Compôte et le vent de nord est autant un piège d'atterrissage qu'une source de portance. Et pour la transition depuis le Granier, un nord qui contre demande plus de marge.",
+      "focus": ["mont-pelat-cheminement", "col-du-frene-venturi", "confluence-ecole-compote", "transition-chartreuse-bauges-savoyarde"],
+      "phase": "afternoon",
+      "wind": { "from": "N", "kmh": 20 },
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par sud ou sud-ouest : la poussée vers la Savoyarde",
+      "text": "Par vent de sud ou de sud-ouest, les décollages de vol rando du Margériaz, de la Couleuvre et du Trélod, tournés vers le sud et le sud-ouest, sont dans l'axe. Un petit sud-ouest pousse dans le bon sens pour la transition depuis le Granier : on peut partir un peu plus bas qu'avec du nord qui contre. Mais le sud contre le retour : un récit de la traversée de 8,4 km depuis les Dents de Lanfon parle d'un sud de 18 km/h de face. Et à Montlambert, par vent de sud, le vent sort de la Maurienne et arrive en rafales, de travers à gauche.",
+      "focus": ["margeriaz", "la-couleuvre", "transition-chartreuse-bauges-savoyarde", "transition-roc-des-boeufs-lanfon", "combe-de-savoie/montlambert-sud-maurienne"],
+      "phase": "afternoon",
+      "wind": { "from": "SO", "kmh": 15 },
+      "view": "massif"
+    },
+    {
+      "chapter": "Les transitions",
+      "title": "Sortir des Bauges : Grand Arc, Combe de Savoie, Annecy",
+      "text": "Vers l'est, depuis la Dent d'Arclusaz, la transition vers le Grand Arc, de 10 km, demande plus de 2000 m au départ selon le club de Saint-Hilaire. Au retour des Bauges vers Lumbin, on enchaîne le Colombier, Montlambert, les Tours de Montmayeur et Brâme-Farine, en évitant de viser les Tours sans cumulus au-dessus de Montlambert. Vers Annecy, la traversée du Roc des Bœufs vers les Dents de Lanfon demande plus de 1800 m au départ, avec la brise forte du lac sur la traversée. Et du Semnoz, la crête de 35 km mène au Revard pour un aller-retour d'une cinquantaine de kilomètres.",
+      "focus": ["combe-de-savoie/transition-arclusaz-grand-arc", "combe-de-savoie/retour-combe-colombier-montlambert-bramefarine", "transition-roc-des-boeufs-lanfon", "lac-annecy/semnoz-revard"],
+      "view": "massif"
+    }
+  ]
+}

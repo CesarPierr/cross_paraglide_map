@@ -5,7 +5,7 @@
       "id": "saleve-genevois",
       "name": "Salève et Genevois",
       "parent_massif": "Préalpes du Nord (avant-pays genevois)",
-      "summary": "Le Salève est le « balcon de Genève », un chaînon isolé orienté SO-NE qui domine le bassin genevois, avec trois décollages sur deux secteurs de vent : Téléphérique (N) et Table d'orientation (N-NO) pour le flux de nord ou la faible bise, Les Crêts (O-SO, 1264 m) pour le soaring du flux d'ouest et les restitutions de fin de journée (le « Magic Salève » des clubs). Aucune brise de vallée n'est documentée dans le Genevois lui-même : les sources de clubs décrivent des brises de pente, un gradient et des thermiques « surprenants » l'été aux décollages comme aux atterrissages (Le Coin, Troinex). La contrainte dominante est l'espace aérien de Genève : CTR interdite, TMA1 plafonnée à 1050 m AMSL côté plaine et TMA2 à 1700 m AMSL sur le relief. Les atterrissages ont changé : Troinex (Suisse) est depuis septembre 2026 réservé aux titulaires du brevet de pilote (IPPI 4) selon un message FFVL relayé par le CVLS ; Jules Ferry (débutants) et Le Coin (confirmés, très thermique) sont les alternatives françaises. Pour le cross, il faut franchir les plaines autour du Salève : les récits parlent du Môle (parti vers 16h), de Sur Cou et Annecy par La Roche, ou du Môle puis Samoëns, jamais d'une transition facile ; le Challenge permanent du club de Genève propose une boucle autour du Petit Salève.",
+      "summary": "Le Salève est le « balcon de Genève », un chaînon isolé orienté SO-NE qui domine le bassin genevois, avec trois décollages sur deux secteurs de vent : Téléphérique (N) et Table d'orientation (N-NO) pour le flux de nord ou la faible bise, Les Crêts (O-SO, 1264 m) pour le soaring du flux d'ouest et les restitutions de fin de journée (le « Magic Salève » des clubs). Aucun club ne décrit de brise de vallée dans le Genevois : les sources de clubs parlent de brises de pente, d'un gradient et de thermiques « surprenants » l'été aux décollages comme aux atterrissages (Le Coin, Troinex). Seule MétéoSuisse décrit le séchard, brise diurne de NE du Petit-Lac qui se prolonge jusque sur les pentes ensoleillées du Salève (≈10h-16h, faible). La contrainte dominante est l'espace aérien de Genève : CTR interdite, TMA1 plafonnée à 1050 m AMSL côté plaine et TMA2 à 1700 m AMSL sur le relief. Les atterrissages ont changé : Troinex (Suisse) est depuis septembre 2026 réservé aux titulaires du brevet de pilote (IPPI 4) selon un message FFVL relayé par le CVLS ; Jules Ferry (débutants) et Le Coin (confirmés, très thermique) sont les alternatives françaises. Pour le cross, il faut franchir les plaines autour du Salève : les récits parlent du Môle (parti vers 16h), de Sur Cou et Annecy par La Roche, ou du Môle puis Samoëns, jamais d'une transition facile ; le Challenge permanent du club de Genève propose une boucle autour du Petit Salève. Pour le cross, le récit le plus précis (17 avril 2016) montre la difficulté : environ une heure à zéro devant le Téléphérique avant le thermique du plafond (1645 m, sous la TMA2), un premier point bas à 984 m à 4 km du décollage, puis un « désert » de ≈15 km dont le thermique de la Chapelle-Rambaud permet de rejoindre Sous-Dine et le Parmelan avant Planfait ; en pleine canicule le 21 août 2023, un triangle de 143 km Salève – Saint-Ferréol – mont Billiat a été volé en 6 h 20.",
       "bbox": [
         5.95,
         46.02,
@@ -89,6 +89,75 @@
             "S119",
             "S13"
           ]
+        },
+        {
+          "id": "saleve-sechard-petit-lac",
+          "name": "Séchard : brise diurne de NE du Petit-Lac qui se prolonge sur les pentes ensoleillées du Salève",
+          "kind": "lake",
+          "waypoints": [
+            {
+              "name": "Nyon (extrémité nord-est du Petit-Lac)",
+              "lon": 6.2403,
+              "lat": 46.3821,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Genève, rade (Jet d'eau)",
+              "lon": 6.1559,
+              "lat": 46.2074,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Table d'orientation (face nord-ouest du Salève)",
+              "lon": 6.1891,
+              "lat": 46.1487,
+              "coord_quality": "source"
+            }
+          ],
+          "hours": "10h-16h (se lève vers 10h, s'estompe dès 16h ; beau temps estival)",
+          "speed_kmh": {
+            "typical": 8,
+            "max": 19
+          },
+          "season": "été, situation de haute pression",
+          "description": "MétéoSuisse (blog « Les vents du Léman », 2023) : le séchard est la brise diurne de NE canalisée entre le Jura et les Préalpes savoyardes, qui souffle dans l'axe du Petit-Lac ; le réchauffement des reliefs crée des ascendances qui aspirent l'air du lac vers les côtes, si bien que le séchard « se prolonge jusque sur les pentes ensoleillées du Salève, du Vuache et du Jura ». Force généralement de 1 à 2 Bf, parfois 3 Bf ; des nuages qui réduisent le soleil l'atténuent, un faible courant de NE en altitude l'accentue, et la journée se termine parfois par des orages isolés. Vitesse : le texte écrit « 7-10 km/h » pour 3 Bf alors que le tableau de la SISL donne 7 à 10 nœuds (≈12 à 19 km/h) ; ici typique ≈8 km/h (1-2 Bf), maximum ≈19 km/h. Tracé : axe du Petit-Lac (Nyon, Genève) puis face nord-ouest du Salève ; la source ne donne pas de trajet plus précis. Cohérent avec les décollages du Téléphérique et de la Table, favorables par flux de nord faible dès 13h, mais aucun club ne relie les deux (rapprochement non sourcé).",
+          "confidence": "medium",
+          "sources": [
+            "S117",
+            "S33",
+            "S218"
+          ]
+        },
+        {
+          "id": "saleve-ecoulement-descendant-matinal",
+          "name": "Écoulement descendant des faces ouest du Salève (Les Crêts → Le Coin) la nuit et en début de matinée, déduction",
+          "kind": "downvalley",
+          "waypoints": [
+            {
+              "name": "Les Crêts (décollage)",
+              "lon": 6.1718,
+              "lat": 46.1302,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Le Coin (atterrissage, pied de la face)",
+              "lon": 6.1606,
+              "lat": 46.1334,
+              "coord_quality": "source"
+            }
+          ],
+          "hours": "21h-9h (nuit et début de matinée, déduction)",
+          "speed_kmh": {
+            "typical": 5,
+            "max": 10
+          },
+          "season": "été (déduction)",
+          "description": "Déduction : aucun club n'évoque de vent descendant au Salève. MétéoSuisse rappelle que les brises de beau temps remontent les versants de jour et les descendent de nuit, et que les brises nocturnes du Léman se lèvent entre 17h et 19h pour persister jusque vers 7-9h ; la face ouest étant éclairée surtout l'après-midi, le flux de pente y reste descendant tard dans la matinée. Les Crêts se volent surtout en fin de journée (restitution) et le Téléphérique dès 13h, ce qui laisse la matinée aux faces exposées plus tôt. Faible, non utilisable en décision de vol.",
+          "confidence": "low",
+          "sources": [
+            "S117",
+            "S54"
+          ]
         }
       ],
       "convergences": [],
@@ -102,7 +171,7 @@
           "radius_km": 15,
           "coord_quality": "source",
           "conditions": "permanent ; repères au sol : autoroute et gare d'arrivée du téléphérique",
-          "description": "CVLG : dans la CTR le vol est interdit à toute altitude ; dans la TMA1 il est autorisé jusqu'à 1050 m AMSL, dans la TMA2 jusqu'à 1700 m AMSL. Les fiches FFVL donnent 1675-1680 m avant l'autoroute et 1060-1065 m après (côté plaine) ; le CVLS indique 1670 m ; Randovol parle d'une TMA à 1000 m sol (divergence de présentation, vérifier la carte à voile suisse). Au Salève la TMA est donc la limite du plafond, mais un pilote note qu'elle « ne limite aucun cross » : c'est la traversée des plaines qui limite.",
+          "description": "CVLG : dans la CTR le vol est interdit à toute altitude ; dans la TMA1 il est autorisé jusqu'à 1050 m AMSL, dans la TMA2 jusqu'à 1700 m AMSL. Les fiches FFVL donnent 1675-1680 m avant l'autoroute et 1060-1065 m après (côté plaine) ; le CVLS indique 1670 m ; Randovol parle d'une TMA à 1000 m sol (divergence de présentation, vérifier la carte à voile suisse). Au Salève la TMA est donc la limite du plafond, mais un pilote note qu'elle « ne limite aucun cross » : c'est la traversée des plaines qui limite. Précisions d'un récit de cross (2016) : TMA2 de Genève plancher 1000 ft sol (≈300 m/sol), plafond 5500 ft MSL (1674 m en atmosphère standard) ; plus à l'est dans la zone du cross vers Annecy, TMA6 FL85 (2589 m) puis TMA7 FL105 (3198 m) jusqu'au Parmelan ; CTR d'Annecy du sol à 3500 ft MSL (1065 m). Le Salève est sur les trajectoires d'arrivée des gros porteurs (PTU). À vérifier sur la carte aérienne du jour.",
           "confidence": "high",
           "sources": [
             "S12",
@@ -113,7 +182,8 @@
             "S37",
             "S64",
             "S79",
-            "S54"
+            "S54",
+            "S211"
           ]
         },
         {
@@ -158,12 +228,13 @@
           "radius_km": 0.8,
           "coord_quality": "source",
           "conditions": "vent de sud ; enclos à vaches de printemps à l'automne ; mai-juin pour les faucons pèlerins",
-          "description": "CVLS et FFVL : malsain en sud (secteurs défavorables NE, E, SE, S) ; s'écarter des falaises en mai et juin (couple de faucons pèlerins) ; interdiction de gonfler ou décoller hors de l'enclos tant qu'il y a des vaches ; modélistes à gauche ; repose et wagas peu adaptés aux heures d'affluence (2719 décollages en 2025).",
+          "description": "CVLS et FFVL : malsain en sud (secteurs défavorables NE, E, SE, S) ; s'écarter des falaises en mai et juin (couple de faucons pèlerins) ; interdiction de gonfler ou décoller hors de l'enclos tant qu'il y a des vaches ; modélistes à gauche ; repose et wagas peu adaptés aux heures d'affluence (2719 décollages en 2025). Retour d'expérience : le 6 décembre 2019, la balise du Salève annonçait « Sud 22/32 » à la radio ; au décollage des Crêts le vent était fort et assez turbulent, le pilote a gonflé en face et décollé dès le premier gonflage, puis s'est éloigné tout de suite de la falaise, avant de se poser au Coin.",
           "confidence": "high",
           "sources": [
             "S54",
             "S14",
-            "S12"
+            "S12",
+            "S217"
           ]
         },
         {
@@ -234,6 +305,23 @@
             "S123",
             "S37"
           ]
+        },
+        {
+          "id": "saleve-sortie-plaine-desert-annecy",
+          "name": "Sortie du Salève vers Annecy : plafond sous la TMA2, point bas à 4 km, « désert » de ≈15 km",
+          "kind": "other",
+          "lon": 6.2388,
+          "lat": 46.0709,
+          "coord_quality": "approx",
+          "radius_km": 8,
+          "conditions": "flux de nord-ouest léger à modéré, vol de mi-avril ; plaine thermique mais plafond bas",
+          "description": "Récit du 17 avril 2016 (Téléphérique, décollage 13h47) : environ une heure à zéro devant le décollage avant de trouver le thermique qui monte à 1645 m, sous le plafond de la TMA2 (1674 m en atmosphère standard) ; le premier cap, vers un petit cumulus à La Muraz, ne donne rien : premier point bas à 984 m (260 m/sol) à 4 km du décollage, dérive de 25 km/h vers le NO ; un thermique à 700 m/sol remonte le pilote jusqu'à La Chapelle-Rambaud, d'où il traverse un « désert » de ≈15 km avant les reliefs (Pointe d'Andey, Sur Cou, Sous-Dine, Parmelan). Le pilote dit qu'il aurait dû attendre un peu plus avant de partir. Longer le Salève vers Cruseilles pour rejoindre Annecy est possible mais se heurte à la CTR d'Annecy (sol à 1065 m MSL). Un second pilote local conseille de partir des faces est dès 11h-12h au printemps, la plaine étant souvent active tôt mais à plafond bas. Position : La Chapelle-Rambaud (IGN), centre indicatif du « désert » dont aucune limite précise n'est donnée.",
+          "confidence": "medium",
+          "sources": [
+            "S211",
+            "S212",
+            "S219"
+          ]
         }
       ],
       "thermal_spots": [
@@ -292,11 +380,12 @@
           "trigger": "falaise du Salève plein sud/est devant le décollage du téléphérique et au pied des câbles",
           "role": "déclencheur",
           "confidence": "medium",
-          "description": "Paragliding Map : « thermique statique devant le décollage et tout autour » ; FFVL : aérologie très délicate, gradient et thermiques surprenants, câbles du téléphérique à proximité. Déclencheur de départ du cross vers le Môle ou Sur Cou : le forum rappelle que la TMA du Salève ne limite aucun cross, la vraie difficulté étant de traverser les plaines qui l'entourent (un pilote a rejoint le Môle en partant à 16h).",
+          "description": "Paragliding Map : « thermique statique devant le décollage et tout autour » ; FFVL : aérologie très délicate, gradient et thermiques surprenants, câbles du téléphérique à proximité. Déclencheur de départ du cross vers le Môle ou Sur Cou : le forum rappelle que la TMA du Salève ne limite aucun cross, la vraie difficulté étant de traverser les plaines qui l'entourent (un pilote a rejoint le Môle en partant à 16h). Récit du 17 avril 2016 : décollé du Téléphérique à 13h47 par flux de nord-ouest léger à modéré, un pilote « zerotte » environ une heure avant de trouver le thermique qui le monte à 1645 m, juste sous la TMA2 ; il note qu'il aurait dû attendre que le soleil chauffe mieux la face ouest.",
           "sources": [
             "S200",
             "S119",
-            "S64"
+            "S64",
+            "S211"
           ],
           "coord_quality": "source"
         },
@@ -310,10 +399,27 @@
           "trigger": "pointe de Sur Cou, premier relief au vent de la plaine de La Roche, faces ouest/sud au soleil",
           "role": "point de relance",
           "confidence": "low",
-          "description": "Déduction : sur la route Salève → La Roche-sur-Foron → Sur Cou → Annecy (cross vidéo de 2012, forum t26068), Sur Cou est le premier relief atteint après la plaine ; ses faces exposées au soleil l'après-midi servent de relance avant Andey et le bassin d'Annecy. Aucun récit ne décrit le thermique ; raisonnement d'après le relief et l'exposition.",
+          "description": "Déduction : sur la route Salève → La Roche-sur-Foron → Sur Cou → Annecy (cross vidéo de 2012, forum t26068), Sur Cou est le premier relief atteint après la plaine ; ses faces exposées au soleil l'après-midi servent de relance avant Andey et le bassin d'Annecy. Aucun récit ne décrit le thermique ; raisonnement d'après le relief et l'exposition. Un second récit (2016) cite Sur Cou parmi les reliefs au-delà du « désert » de plaine, avec la Pointe d'Andey, Sous-Dine et le Parmelan, et choisit la ligne plus directe par Sous-Dine.",
           "sources": [
             "S64",
-            "S95"
+            "S95",
+            "S211"
+          ]
+        },
+        {
+          "id": "chapelle-rambaud-thermique-desert-saleve",
+          "name": "La Chapelle-Rambaud (thermique du « désert » entre le Salève et Sous-Dine)",
+          "lon": 6.2388,
+          "lat": 46.0709,
+          "coord_quality": "approx",
+          "best_hours": "milieu d'après-midi (≈15h30 d'après le déroulé du vol, déduction)",
+          "trigger": "zone de plaine bocagère sous la Pointe d'Andey, où un pilote local connaît un thermique récurrent (« le fameux thermique de Pierre »)",
+          "role": "point de relance",
+          "description": "POINT DE RELANCE au milieu de la plaine entre le Salève et Sous-Dine : le 17 avril 2016, après un point bas à 984 m et un thermique qui remonte à 700 m/sol, le pilote rejoint « la chapelle Rambaud » où il trouve « le fameux thermique de Pierre » et gagne « un peu plus de 1000 m de gaz », ce qui permet d'aller raccrocher Sous-Dine. C'est la seule balise de plaine qu'un local lui avait indiquée. Position : église de La Chapelle-Rambaud (IGN), le déclencheur exact n'est pas localisé.",
+          "confidence": "medium",
+          "sources": [
+            "S211",
+            "S219"
           ]
         }
       ],
@@ -490,11 +596,12 @@
         },
         {
           "wind": "NW",
-          "effect": "Table d'orientation idéale (NO) ; Le Coin et Les Crêts à l'écart (SO-O-NO favorables au Coin).",
+          "effect": "Table d'orientation idéale (NO) ; Le Coin et Les Crêts à l'écart (SO-O-NO favorables au Coin). Récit de cross du 17 avril 2016 : par nord-ouest léger à modéré, départ du Téléphérique, dérive de 25 km/h vers le NO au-dessus de la plaine, raccroches de Sous-Dine puis du Parmelan sur des faces orientées NO (le Parmelan secoue ; « en NO c'est pas top non plus »).",
           "sources": [
             "S13",
             "S55",
-            "S15"
+            "S15",
+            "S211"
           ]
         },
         {
@@ -517,11 +624,12 @@
         },
         {
           "wind": "S",
-          "effect": "Crêts malsains ; Téléphérique et Table défavorables (S et E) ; Le Coin turbulent par sud.",
+          "effect": "Crêts malsains ; Téléphérique et Table défavorables (S et E) ; Le Coin turbulent par sud. Le 6 décembre 2019, vent de sud 22/32 annoncé par la balise du Salève : turbulent aux Crêts, décollage d'urgence au premier gonflage.",
           "sources": [
             "S14",
             "S119",
-            "S57"
+            "S57",
+            "S217"
           ]
         },
         {
@@ -647,6 +755,99 @@
             "S64",
             "S63"
           ]
+        },
+        {
+          "id": "saleve-sous-dine-parmelan-planfait-2016",
+          "name": "Salève (Téléphérique) → La Chapelle-Rambaud → Sous-Dine → Parmelan → Dents de Lanfon → Planfait (17 avril 2016)",
+          "waypoints": [
+            {
+              "name": "Téléphérique du Salève (décollage 13h47)",
+              "lon": 6.1943,
+              "lat": 46.1547,
+              "coord_quality": "source"
+            },
+            {
+              "name": "La Muraz (premier point bas 984 m, position de la mairie)",
+              "lon": 6.2062,
+              "lat": 46.1235,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "La Chapelle-Rambaud (thermique du « désert »)",
+              "lon": 6.2388,
+              "lat": 46.0709,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Sous-Dîne (raccroche bas, face NO, puis 2000 m)",
+              "lon": 6.3257,
+              "lat": 46.0038,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Tête du Parmelan (raccroche 500 m plus bas, 2100 m)",
+              "lon": 6.238,
+              "lat": 45.9481,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Dents de Lanfon (attaquées par l'ouest)",
+              "lon": 6.2407,
+              "lat": 45.8614,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Planfait (atterrissage, Talloires)",
+              "lon": 6.2142,
+              "lat": 45.8487,
+              "coord_quality": "source"
+            }
+          ],
+          "distance_km": 41.3,
+          "description": "Cross d'avril 2016 par flux de nord-ouest léger à modéré : décollage du Téléphérique à 13h47, une heure à zéro avant le thermique à 1645 m, point bas à 984 m à 4 km (cumulus de La Muraz sans effet), thermique à 700 m/sol puis celui de la Chapelle-Rambaud (+1000 m), raccroche bas de Sous-Dine sur une petite face NO (2000 m en 20 minutes), départ vers le Parmelan raccroché 500 m plus bas (secoué, 2100 m), approche des Dents de Lanfon par l'ouest (brise du lac d'Annecy), puis pose à Planfait vers 16h30 pour 39 km en ≈3 h (« 39 km en 2 points en 2 h 49 » dans la description vidéo). Le pilote renonce à pousser vers les Bauges ; un commentateur local conseille de décoller plus tôt sur les faces est du Salève (dès 11h-12h au printemps) et de raccrocher le Parmelan ou un autre relief selon l'heure et le flux de nord. Un autre pilote a volé du Téléphérique à Planfait le 3 août 2024 (34 km en 1 h 26), sans détail de trajet. Distance : somme à vol d'oiseau entre les points cités ; les positions de La Muraz et de la Chapelle-Rambaud sont celles des villages.",
+          "sources": [
+            "S211",
+            "S212",
+            "S216",
+            "S219"
+          ]
+        },
+        {
+          "id": "saleve-triangle-143km-2023",
+          "name": "Triangle du Salève : Saint-Ferréol – mont Billiat (21 août 2023, 143 km en 6 h 20)",
+          "waypoints": [
+            {
+              "name": "Salève (décollage, position du Téléphérique par défaut)",
+              "lon": 6.1943,
+              "lat": 46.1547,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Saint-Ferréol (balise près du lac d'Annecy, position de la commune)",
+              "lon": 6.3109,
+              "lat": 45.7809,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Mont Billiat (Chablais)",
+              "lon": 6.5838,
+              "lat": 46.288,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Salève (arrivée)",
+              "lon": 6.1943,
+              "lat": 46.1547,
+              "coord_quality": "approx"
+            }
+          ],
+          "distance_km": 136.2,
+          "description": "Le 21 août 2023, un jour de forte canicule, un pilote genevois a tracé un triangle de 143 km en 6 h 20 depuis le Salève, avec pour balises Saint-Ferréol (derrière le lac d'Annecy) et le mont Billiat (Chablais), dépassant en nombre de points le record de Martin Müller de 2008 sur XContest. Les articles lisibles ne donnent ni les thermiques, ni les horaires intermédiaires, ni le point de décollage exact ; le départ est placé par défaut au Téléphérique et les balises aux communes ou sommets nommés. La somme à vol d'oiseau (≈135 km) est inférieure aux 143 km déclarés : les balises réelles ne sont pas connues et la trace n'a pas pu être lue (XContest bloqué par Cloudflare). Distance : somme à vol d'oiseau entre les points cités.",
+          "sources": [
+            "S214",
+            "S215",
+            "S219"
+          ]
         }
       ],
       "tips": [
@@ -654,7 +855,11 @@
         "Au Téléphérique, rester au vent du col de Monnetier et surveiller câbles et arbres à gauche en sortie de décollage [Paradelta].",
         "Attention aux notifications temporaires (ZRT du G7, Tour de France 2026) publiées par le CVLS : parfois interdiction de survol à 1000 m/sol et 500 m horizontal, donc pas de vol aux Crêts [cvls.fr].",
         "Consulter la bise (MétéoSuisse) et le vent à 850 hPa sur le Salève avant de choisir entre N/NO (Téléphérique, Table) et O/SO (Crêts) [Paradelta, prévisions].",
-        "Le « vachage » arrive à tout le monde : replier en bordure de champ, contacter le propriétaire ou l'un des deux clubs en cas de dégâts [CVLG]."
+        "Le « vachage » arrive à tout le monde : replier en bordure de champ, contacter le propriétaire ou l'un des deux clubs en cas de dégâts [CVLG].",
+        "Pour sortir du Salève vers Annecy par flux de nord-ouest, ne pas partir trop tôt du Téléphérique : un pilote est resté une heure à zéro avant le thermique (1645 m) ; la traversée du « désert » passe par le thermique de la Chapelle-Rambaud [Liberiste 2016].",
+        "Un pilote local conseille de décoller des faces est du Salève dès 11h-12h au printemps (la plaine est active tôt mais avec des plafonds bas) et de raccrocher au Parmelan selon l'heure et le flux de nord [commentaire Liberiste 2017 ; face et décollage non précisés].",
+        "Le séchard (brise de NE du Petit-Lac) souffle faiblement de ≈10h à ≈16h les jours de beau temps d'été et se prolonge sur les pentes du Salève [MétéoSuisse 2023].",
+        "Une balise radio du Salève annonce le vent (« Sud 22/32 » le 6 décembre 2019) : l'écouter avant de monter aux Crêts [Carnet de vol Largeault]."
       ]
     },
     {
@@ -6388,6 +6593,87 @@
       "type": "web",
       "lang": "fr",
       "notes": "Super-Morzine : en conditions thermiques, départ classique pour transiter vers Avoriaz ou la Pointe de Nyon ; Pléney : restitution du soir (ascendance douce et large) ; crêtes de Zore et Avoriaz : départ des vols de distance. Fiabilité modérée (site commercial)."
+    },
+    {
+      "id": "S211",
+      "title": "Du Lac Léman au lac d'Annecy en Parapente (récit de cross, Liberiste, 9 février 2017)",
+      "url": "https://liberiste.com/2017/02/09/lac-leman-lac-dannecy-parapente/",
+      "publisher": "Liberiste (blog de pilote, Salève)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Récit du cross du 17 avril 2016 du Téléphérique du Salève à Planfait (39 km, ≈3 h) : TMA2 (1674 m), zéro pendant ≈1 h avant le thermique à 1645 m, premier point bas à 984 m à 4 km du décollage, thermique de la Chapelle-Rambaud au milieu du « désert » de 15 km, raccroches à Sous-Dine puis au Parmelan (face NO), Dents de Lanfon attaquées par l'ouest (brise du lac d'Annecy) ; commentaires de deux pilotes (Yoann C : décoller sur les faces est dès 11h-12h au printemps ; Tony : Margériaz plutôt que Colombier dans les Bauges)."
+    },
+    {
+      "id": "S212",
+      "title": "YouTube, Du Lac Léman au lac d'Annecy en Parapente (Liberiste, juin 2016)",
+      "url": "https://www.youtube.com/watch?v=vrVb1EgZOPI",
+      "publisher": "YouTube (Liberiste)",
+      "type": "video",
+      "lang": "fr",
+      "notes": "Description : 39 km en 2 points en 2 h 49 ; 1 heure pour sortir du Salève, premier point bas juste derrière, remontée pour traverser le « désert », raccroche à Sous-Dine puis au Parmelan, posé à Planfait."
+    },
+    {
+      "id": "S213",
+      "title": "Liberiste, Site Parapente Salève (11 octobre 2015)",
+      "url": "https://liberiste.com/site-parapente-saleve/",
+      "publisher": "Liberiste (blog de pilote, Salève)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Description des trois décollages et des atterrissages (Pont de Zone 411 m, Troinex 423 m, Le Cercueil 435 m, Le Coin 680 m) ; atterro Pont de Zone : bulles au printemps et en été ; Crêts : site à restitution l'été en fin de journée ; plafond 1680 m et 1050 m en plaine."
+    },
+    {
+      "id": "S214",
+      "title": "Le Dauphiné Libéré, « Parapente : un Genevois établit un nouveau record depuis le Salève » (31 août 2023)",
+      "url": "https://www.ledauphine.com/culture-loisirs/2023/08/31/parapente-un-genevois-etablit-un-nouveau-record-depuis-le-saleve",
+      "publisher": "Le Dauphiné Libéré",
+      "type": "presse",
+      "lang": "fr",
+      "notes": "Début d'article lisible (suite payante) : le 21 août 2023, Hafize Ali Hassan a tracé en 6 h 20 un triangle de 143 km entre le sommet du Salève, Saint-Ferréol (près du lac d'Annecy) et le mont Billiat (Chablais), dépassant en points le record de Martin Müller (2008) sur XContest."
+    },
+    {
+      "id": "S215",
+      "title": "Le Messager, « Le parapentiste Hafize Ali Hassan signe un vol de référence depuis le Salève » (16 septembre 2023)",
+      "url": "https://lessorsavoyard.lemessager.fr/649303889/article/2023-09-16/le-parapentiste-hafize-ali-hassan-signe-un-vol-de-reference-depuis-le-saleve",
+      "publisher": "Le Messager",
+      "type": "presse",
+      "lang": "fr",
+      "notes": "Page en accès refusé (403) ; seul l'extrait du moteur de recherche est lu : le lundi 21 août, « l'un des jours de canicule les plus intenses », vol depuis le Salève avec deux autres sommets dont Saint-Ferréol, derrière le lac d'Annecy."
+    },
+    {
+      "id": "S216",
+      "title": "YouTube, VOL DU SALEVE A ANNECY (Patrick Prince, 3 août 2024)",
+      "url": "https://www.youtube.com/watch?v=ie16mbbEenY",
+      "publisher": "YouTube (Patrick Prince)",
+      "type": "video",
+      "lang": "fr",
+      "notes": "Description : décollage du Téléphérique du Salève (gare d'arrivée), cross de 34 km en 1 h 26 avec atterrissage proche de Planfait le 3 août 2024."
+    },
+    {
+      "id": "S217",
+      "title": "Carnet de Vol Parapente (Largeault), étiquette Salève : vols du 6 décembre 2019 et du 6 février 2020",
+      "url": "https://carnetdevol.largeault.net/tag/saleve/",
+      "publisher": "Carnet de vol (Franck Largeault)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "6 décembre 2019, Crêts : vent de sud annoncé « 22/32 » par la balise du Salève à la radio, turbulent, décollage dès le premier gonflage et éloignement immédiat de la falaise, posé au Coin (bosses, boue) ; 6 février 2020 : vent nul aux Crêts à 17h57, grand décollage permettant la repose."
+    },
+    {
+      "id": "S218",
+      "title": "Position de Nyon et du Jet d'eau (Nominatim / OpenStreetMap)",
+      "url": "https://nominatim.openstreetmap.org/search?format=json&q=Nyon",
+      "publisher": "OpenStreetMap / Nominatim",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Coordonnées de Nyon (6.2403, 46.3821) et du Jet d'eau de Genève (6.1559, 46.2074)."
+    },
+    {
+      "id": "S219",
+      "title": "Position des lieux du cross Salève → Annecy (géocodeur IGN)",
+      "url": "https://data.geopf.fr/geocodage/search?q=Sous%20Dine&index=poi",
+      "publisher": "IGN / Géoplateforme",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Géocodeur IGN : La Muraz (mairie), La Chapelle-Rambaud (église), Sous Dîne, Tête du Parmelan, Dents de Lanfon, Saint-Ferréol, Mont Billiat ; Planfait : fiche FFVL 1157."
     }
   ]
 }

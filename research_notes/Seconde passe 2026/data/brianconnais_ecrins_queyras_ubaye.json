@@ -5175,12 +5175,12 @@
    "id": "ubaye",
    "name": "Ubaye (Barcelonnette, Pra-Loup, Le Sauze, Jausiers, Saint-Pons, Lauzet)",
    "parent_massif": "Alpes du Sud",
-   "summary": "Vallée orientée est-ouest qui débouche sur le bras de l'Ubaye du lac de Serre-Ponçon, près de Saint-Vincent-les-Forts ; abritée des nordiques, elle offre une zone de cross « de Lauzet à Maljasset ». La brise de vallée est forte l'après-midi en été (Jausiers, Halte 2000, Hippodrome de Barcelonnette) : atterros plutôt face à la brise montante ou descendante, vols de Soleil Bœuf plutôt le matin et le soir. Les gorges entre Lauzet et Barcelonnette n'offrent pas d'atterro. Par tendance E-SE la brise de Larche peut venir d'Italie et rester descendante toute la journée ; au sud, par SE/S/SO la brise peut descendre du col de la Bonnette-Restefond, et à l'est on craint la Lombarde (effet de foehn). Les décos documentés sont Faucon-de-Barcelonnette/Point de Vue (S-SO), Soleil Bœuf (toutes orientations, 4x4), Pra-Loup (E-SE) et le Dôme de l'Alpe (Le Sauze, déco = atterro). Les écoles (Ubaye Parapente depuis 1985) vantent l'aérologie et 300 jours de soleil ; l'aérodrome de Saint-Pons accueille le vol à voile.",
+   "summary": "Vallée orientée est-ouest qui débouche sur le bras de l'Ubaye du lac de Serre-Ponçon, près de Saint-Vincent-les-Forts ; abritée des nordiques, elle offre une zone de cross « de Lauzet à Maljasset ». La brise de vallée est forte l'après-midi en été (Jausiers, Halte 2000, Hippodrome de Barcelonnette) : atterros plutôt face à la brise montante ou descendante, vols de Soleil Bœuf plutôt le matin et le soir. Les gorges entre Lauzet et Barcelonnette n'offrent pas d'atterro. Par tendance E-SE la brise de Larche peut venir d'Italie et rester descendante toute la journée ; au sud, par SE/S/SO la brise peut descendre du col de la Bonnette-Restefond, et à l'est on craint la Lombarde (effet de foehn). Les décos documentés sont Faucon-de-Barcelonnette/Point de Vue (S-SO), Soleil Bœuf (toutes orientations, 4x4), Pra-Loup (E-SE) et le Dôme de l'Alpe (Le Sauze, déco = atterro). Les écoles (Ubaye Parapente depuis 1985) vantent l'aérologie et 300 jours de soleil ; l'aérodrome de Saint-Pons accueille le vol à voile. Compléments de la passe « secteurs minces » : au printemps et en été la brise montante devient excessivement forte dès 11h à Barcelonnette et peut empêcher de poser avant 20h, d'où des vols du matin (Soleil Bœuf à 8h00, décollage avant 10h30) et du soir ; à 11h un jour calme la brise de l'atterrissage est encore très faible et vient de Jausiers (descendante) ; dans la haute vallée (tête de Parassac, lac des Sagnes) on décolle avant 10h côté ouest ; les seuls cross documentés sont un triangle de 138 km vers le Champsaur et Dormillouse (avril 2022) et un triangle FAI de 252 km (juillet 2021) dont les points de virage ne sont pas lisibles. Le cœur du Mercantour est interdit à moins de 1000 m/sol hors dérogations situées dans la Tinée.",
    "bbox": [
     6.4,
     44.3,
-    6.9,
-    44.5
+    6.95,
+    44.62
    ],
    "center": [
     6.65,
@@ -5223,13 +5223,13 @@
        "coord_quality": "source"
       }
      ],
-     "hours": "après-midi d'été (forte) ; légère le soir au-dessus du lac",
+     "hours": "dès ≈11h, très forte jusqu'à ≈20h (printemps et été) ; légère le soir au-dessus du lac",
      "speed_kmh": {
       "typical": 20,
       "max": 35
      },
      "season": "mai-septembre",
-     "description": "La fiche FFVL de Jausiers dit que « la brise de vallée peut être très forte en été » et recommande de poser face à la brise montante ou descendante ; Halte 2000 : brise de vallée qui peut être forte l'après-midi en été ; Saint-Ours : brise de vallée très forte en été ; la carte Chocard classe la gorge de l'Ubaye (Le Lauzet–Barcelonnette) en « pas d'attéro possible et souvent fort en brise » et l'atterro de l'Hippodrome en « méfiance avec la force de la brise ». Soleil Bœuf marche surtout le matin et le soir (Ultimate France). Chiffres (20 typique, 35 max) = interprétation de « forte à très forte ».",
+     "description": "La fiche FFVL de Jausiers dit que « la brise de vallée peut être très forte en été » et recommande de poser face à la brise montante ou descendante ; Halte 2000 : brise de vallée qui peut être forte l'après-midi en été ; Saint-Ours : brise de vallée très forte en été ; la carte Chocard classe la gorge de l'Ubaye (Le Lauzet–Barcelonnette) en « pas d'attéro possible et souvent fort en brise » et l'atterro de l'Hippodrome en « méfiance avec la force de la brise ». Soleil Bœuf marche surtout le matin et le soir (Ultimate France). Chiffres (20 typique, 35 max) = interprétation de « forte à très forte ». Compléments de pilotes : un hike and fly à Soleil Bœuf signale une brise de vallée à Barcelonnette « excessivement forte » dès 11h, rendant parfois l'atterrissage impossible jusqu'à 20h au printemps et en été, et pouvant être critique entre 12h et 20h pour traverser l'Ubaye vers La Chaup ; un guide local à la tête de Parassac (haute vallée) la dit forte dès 10h-11h dans toutes les vallées de l'Ubaye (décoller avant 10h) ; un pilote de cross indique le 19 avril 2022 une longue attente avant que la brise le laisse boucler à Barcelonnette, et un autre vol d'avril 2021 est présenté comme réalisé « en respectant le timing de la brise de l'Ubaye ».",
      "confidence": "medium",
      "sources": [
       "S76",
@@ -5237,7 +5237,11 @@
       "S78",
       "S15",
       "S10",
-      "S49"
+      "S49",
+      "S94",
+      "S95",
+      "S100",
+      "S101"
      ]
     },
     {
@@ -5314,6 +5318,44 @@
       "S78"
      ],
      "condition": "vent météo d'E ou de SE"
+    },
+    {
+     "id": "brise-matinale-descendante-ubaye",
+     "name": "Brise matinale descendante de l'Ubaye (Jausiers → Barcelonnette → Le Lauzet)",
+     "kind": "downvalley",
+     "waypoints": [
+      {
+       "name": "Jausiers",
+       "lon": 6.7314,
+       "lat": 44.4186,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Barcelonnette",
+       "lon": 6.6531,
+       "lat": 44.3867,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Le Lauzet-Ubaye",
+       "lon": 6.4328,
+       "lat": 44.4308,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "matin jusqu'à ≈11h (très faible à 11h à Barcelonnette)",
+     "speed_kmh": {
+      "typical": 5,
+      "max": 10
+     },
+     "season": "printemps-été",
+     "description": "Récit de hike and fly à Soleil Bœuf : à 11h, à l'atterrissage de La Chaup, la brise est très faible et vient de Jausiers, donc dirigée d'est en ouest (vers l'aval), alors que la brise montante se lève ensuite ; sur la croupe de Soleil Bœuf, avant 10h le décollage se fait côté est, puis la brise s'établit côté ouest vers 10h20-10h30. Le même récit note qu'il faut décoller entre 10h et 11h au plus tard pour éviter la brise de vallée et les thermiques. Concorde avec la fiche FFVL de Larche plage : matinée et fin de journée par brises faibles. Un seul récit précis (jour calme après un épisode de mistral) : confiance moyenne ; les heures avant 8h ne sont pas documentées.",
+     "confidence": "medium",
+     "sources": [
+      "S94",
+      "S80",
+      "S76"
+     ]
     }
    ],
    "convergences": [],
@@ -5341,12 +5383,13 @@
      "lat": 44.3871,
      "radius_km": 2,
      "coord_quality": "source",
-     "conditions": "après-midi d'été",
-     "description": "Méfiance avec la force de la brise (carte Chocard). L'atterro de La Chaup basse est le plus facile de la vallée (Soleil Bœuf et Point de Vue) ; le Pra-Loup a un atterro serré qui ne convient pas aux débutants.",
+     "conditions": "après-midi d'été (dès ≈11h, jusqu'à ≈20h au printemps et en été)",
+     "description": "Méfiance avec la force de la brise (carte Chocard). L'atterro de La Chaup basse est le plus facile de la vallée (Soleil Bœuf et Point de Vue) ; le Pra-Loup a un atterro serré qui ne convient pas aux débutants. Un hike and fly de printemps ou d'été note que la brise de vallée peut devenir excessivement forte dès 11h et qu'il est parfois impossible de poser avant 20h : poser avant 11h ou le soir.",
      "sources": [
       "S10",
       "S49",
-      "S81"
+      "S81",
+      "S94"
      ]
     },
     {
@@ -5402,11 +5445,14 @@
      "radius_km": 4,
      "coord_quality": "approx",
      "conditions": "toute l'année (1000 m/sol)",
-     "description": "Survol interdit à moins de 1000 m/sol dans le cœur du Parc, quelle que soit la période (carte Chocard) ; la limite nord part du sud du col de la Bonnette-Restefond. Contour complet non reporté : centre indicatif.",
+     "description": "Survol interdit à moins de 1000 m/sol dans le cœur du Parc, quelle que soit la période (carte Chocard) ; la limite nord part du sud du col de la Bonnette-Restefond. Contour complet non reporté : centre indicatif. Texte réglementaire : l'arrêté n° 2016-02 du directeur du Parc (2 juin 2016) maintient l'interdiction de survol non motorisé à moins de 1000 m/sol dans le cœur ; des dérogations individuelles existent du 1er août au 15 octobre pour le vol rando (trois zones : sud de Claï inférieur, sud-ouest du col du Blainon, sud du Mont Mangiabo) et pour le vol distance (couloir de Valabres, Tinée, à plus de 300 m/sol, sans décollage ni atterrissage en cœur). Ces zones sont dans les Alpes-Maritimes (Claï inférieur et col du Blainon sont à Saint-Étienne-de-Tinée d'après le géocodeur IGN), pas dans la vallée de l'Ubaye ; le vol à voile reste interdit toute l'année à moins de 1000 m/sol. Le hike and fly à la tête de Parassac confirme que la limite est matérialisée par des hexagones verts peints sur les rochers et qu'il faut décoller côté ouest.",
      "sources": [
       "S10",
       "S79",
-      "S80"
+      "S80",
+      "S102",
+      "S103",
+      "S95"
      ]
     },
     {
@@ -5421,6 +5467,20 @@
      "sources": [
       "S87",
       "S91"
+     ]
+    },
+    {
+     "id": "lac-des-sagnes-brise-plouf",
+     "name": "Lac des Sagnes : atterrissage au vent du lac quand la brise s'alimente",
+     "kind": "strong-breeze",
+     "lon": 6.8332,
+     "lat": 44.3841,
+     "coord_quality": "approx",
+     "radius_km": 1.5,
+     "conditions": "à partir de 10h-11h, brise de vallée de la haute Ubaye",
+     "description": "Le guide du vol rando de la tête de Parassac conseille de voler tôt pour éviter la brise perturbante et de se méfier de la brise à l'atterrissage pour ne pas finir dans le lac. Le côté est de la tête de Parassac est en cœur du Mercantour (hexagones verts sur les rochers).",
+     "sources": [
+      "S95"
      ]
     }
    ],
@@ -5450,10 +5510,11 @@
      "coord_quality": "approx",
      "best_hours": "soirée",
      "trigger": "crête du Dôme de l'Alp (2200 m) au-dessus de la station du Sauze, décollage et atterrissage au même endroit",
-     "description": "Plafond du soir : selon un moniteur d'Incondition'aile cité par Ultimate France, « le vol du soir est exceptionnel avec des thermiques de qualité qui permettent de gagner beaucoup de hauteur » (Barre des Écrins et Mont Blanc visibles par bonne visibilité). Position approximative (téléski « Dôme » du Sauze, OSM) : le déco n'a pas de coordonnées dans les sources.",
+     "description": "Plafond du soir : selon un moniteur d'Incondition'aile cité par Ultimate France, « le vol du soir est exceptionnel avec des thermiques de qualité qui permettent de gagner beaucoup de hauteur » (Barre des Écrins et Mont Blanc visibles par bonne visibilité). Position approximative (téléski « Dôme » du Sauze, OSM) : le déco n'a pas de coordonnées dans les sources. Horaires de l'école de Barcelonnette : rendez-vous à 13h30 pour le Dôme de l'Alpe (décollage et atterrissage à 2200 m, retour dans la vallée vers 17h), vol réservé aux groupes et aux familles, donc plutôt doux ; le vol du soir est une autre formule de l'école (18h00).",
      "confidence": "medium",
      "sources": [
-      "S49"
+      "S49",
+      "S96"
      ]
     },
     {
@@ -5465,11 +5526,13 @@
      "coord_quality": "source",
      "best_hours": "matin et soir",
      "trigger": "crête de Soleil Bœuf (2190-2214 m), 1060 m au-dessus de Barcelonnette",
-     "description": "Déclencheur / relance d'après Ultimate France : « le site marche surtout le matin et le soir », vols de 15 à 45 minutes au-dessus de Barcelonnette. Déduction : exposition au soleil en début et fin de journée ; le milieu de journée est dominé par la brise de l'Ubaye, aucune source n'y décrit de thermique précis.",
+     "description": "Déclencheur / relance d'après Ultimate France : « le site marche surtout le matin et le soir », vols de 15 à 45 minutes au-dessus de Barcelonnette. Déduction : exposition au soleil en début et fin de journée ; le milieu de journée est dominé par la brise de l'Ubaye, aucune source n'y décrit de thermique précis. Compléments (hike and fly, matin d'un jour calme) : sortie du décollage à 10h40 en tirant à gauche au-dessus de la rangée de mélèzes et du plateau ; l'auteur se souvient d'un thermique enroulé l'année précédente au-dessus de ce plateau avant les ravines, mais ce matin-là l'air était calme, sans ascendance. Horaires de l'école de Barcelonnette : Soleille-Bœuf du matin à 8h00 (vol très doux) et vol du soir à 18h00, les vols thermiques de fin de matinée et d'après-midi étant réservés à une formule plus engagée.",
      "confidence": "low",
      "sources": [
       "S49",
-      "S93"
+      "S93",
+      "S94",
+      "S96"
      ]
     },
     {
@@ -5542,11 +5605,13 @@
       "W",
       "NW"
      ],
-     "description": "Un des meilleurs sites de la vallée : 2214 m, 1060 m de dénivelé, marche surtout le matin et le soir, vols de 15 à 45 min au-dessus de Barcelonnette, 4x4 nécessaire (accès peu fréquenté). Atterro de La Chaup. La fiche FFVL donne 1030 m d'altitude, incohérente avec les autres sources (PGE : 2190 m).",
+     "description": "Un des meilleurs sites de la vallée : 2214 m, 1060 m de dénivelé, marche surtout le matin et le soir, vols de 15 à 45 min au-dessus de Barcelonnette, 4x4 nécessaire (accès peu fréquenté). Atterro de La Chaup. La fiche FFVL donne 1030 m d'altitude, incohérente avec les autres sources (PGE : 2190 m). Hike and fly : 1060 m de dénivelé, 2 à 3 h de marche depuis l'école de Barcelonnette ; décollage herbeux confortable de la croupe, côtés ouest et est au choix, éventuellement sud en remontant vers la tête de Rasinière ; avant 10h le décollage se fait côté est, puis la brise s'établit côté ouest vers 10h20 ; départ de marche vers 7h45 pour décoller entre 10h et 11h au plus tard. L'école donne rendez-vous à 8h00 pour le vol du matin (15 minutes de marche depuis le 4x4).",
      "sources": [
       "S83",
       "S49",
-      "S10"
+      "S10",
+      "S94",
+      "S96"
      ],
      "ffvl_id": 5037
     },
@@ -5581,6 +5646,105 @@
      "sources": [
       "S10"
      ]
+    },
+    {
+     "id": "tete-de-parassac-col-sud",
+     "name": "Tête de Parassac – col au sud (vol rando, haute vallée)",
+     "lon": 6.8556,
+     "lat": 44.3849,
+     "coord_quality": "approx",
+     "orientations": [
+      "W"
+     ],
+     "description": "Vol rando guidé par un local : parking du lac des Sagnes (1890 m, par une piste de 10 km depuis la route du col de Restefond), 900 m de montée en 2 h hors sentier, décollage du col à 2670-2700 m au sud de la tête (herbeux et caillouteux, très confortable), ouest uniquement car l'est entre dans le cœur du Mercantour (survol interdit à moins de 1000 m/sol) ; brise de vallée forte dès 10h-11h, donc décoller avant 10h (le récit décolle à 10h35 dans une brise d'ouest régulière) ; atterrissage devant le lac des Sagnes. Position : sommet de la tête de Parassac (IGN), le col n'est pas localisé précisément.",
+     "sources": [
+      "S95",
+      "S104"
+     ]
+    },
+    {
+     "id": "aiguille-grande-ubaye",
+     "name": "Aiguille Grande (3064 m) – sommet de vol rando",
+     "lon": 6.8377,
+     "lat": 44.555,
+     "alt_m": 3064,
+     "coord_quality": "source",
+     "orientations": [],
+     "description": "Sommet cité parmi les huit gravis par l'auteur du topo « Vols randonnée en Ubaye » (111 vols dans 19 secteurs) pour son film de vol rando « Un souffle de plus » ; l'article ne donne ni l'orientation, ni l'heure, ni l'état du décollage. À ne pas lire comme un décollage équipé ; vérifier la limite du cœur du Mercantour (hexagones verts) avant tout survol.",
+     "sources": [
+      "S98",
+      "S104"
+     ]
+    },
+    {
+     "id": "pointe-des-cirques-ubaye",
+     "name": "Pointe des Cirques (3234 m) – sommet de vol rando",
+     "lon": 6.864,
+     "lat": 44.5477,
+     "alt_m": 3234,
+     "coord_quality": "source",
+     "orientations": [],
+     "description": "Sommet cité parmi les huit gravis par l'auteur du topo « Vols randonnée en Ubaye » (111 vols dans 19 secteurs) pour son film de vol rando « Un souffle de plus » ; l'article ne donne ni l'orientation, ni l'heure, ni l'état du décollage. À ne pas lire comme un décollage équipé ; vérifier la limite du cœur du Mercantour (hexagones verts) avant tout survol.",
+     "sources": [
+      "S98",
+      "S104"
+     ]
+    },
+    {
+     "id": "tete-de-moise-ubaye",
+     "name": "Tête de Moïse (3104 m) – sommet de vol rando",
+     "lon": 6.9347,
+     "lat": 44.4396,
+     "alt_m": 3104,
+     "coord_quality": "source",
+     "orientations": [],
+     "description": "Sommet cité parmi les huit gravis par l'auteur du topo « Vols randonnée en Ubaye » (111 vols dans 19 secteurs) pour son film de vol rando « Un souffle de plus » ; l'article ne donne ni l'orientation, ni l'heure, ni l'état du décollage. À ne pas lire comme un décollage équipé ; vérifier la limite du cœur du Mercantour (hexagones verts) avant tout survol.",
+     "sources": [
+      "S98",
+      "S104"
+     ]
+    },
+    {
+     "id": "parrias-coupa-ubaye",
+     "name": "Parrias Coupa (3240 m) – sommet de vol rando",
+     "lon": 6.8572,
+     "lat": 44.5221,
+     "alt_m": 3240,
+     "coord_quality": "source",
+     "orientations": [],
+     "description": "Sommet cité parmi les huit gravis par l'auteur du topo « Vols randonnée en Ubaye » (111 vols dans 19 secteurs) pour son film de vol rando « Un souffle de plus » ; l'article ne donne ni l'orientation, ni l'heure, ni l'état du décollage. À ne pas lire comme un décollage équipé ; vérifier la limite du cœur du Mercantour (hexagones verts) avant tout survol.",
+     "sources": [
+      "S98",
+      "S104"
+     ]
+    },
+    {
+     "id": "la-meyna-ubaye",
+     "name": "La Meyna (3067 m) – sommet de vol rando",
+     "lon": 6.8589,
+     "lat": 44.4808,
+     "alt_m": 3067,
+     "coord_quality": "source",
+     "orientations": [],
+     "description": "Sommet cité parmi les huit gravis par l'auteur du topo « Vols randonnée en Ubaye » (111 vols dans 19 secteurs) pour son film de vol rando « Un souffle de plus » ; l'article ne donne ni l'orientation, ni l'heure, ni l'état du décollage. À ne pas lire comme un décollage équipé ; vérifier la limite du cœur du Mercantour (hexagones verts) avant tout survol.",
+     "sources": [
+      "S98",
+      "S104"
+     ]
+    },
+    {
+     "id": "aiguille-pierre-andre-ubaye",
+     "name": "Aiguille Pierre André (2812 m) – sommet de vol rando",
+     "lon": 6.8529,
+     "lat": 44.5739,
+     "alt_m": 2812,
+     "coord_quality": "source",
+     "orientations": [],
+     "description": "Sommet cité parmi les huit gravis par l'auteur du topo « Vols randonnée en Ubaye » (111 vols dans 19 secteurs) pour son film de vol rando « Un souffle de plus » ; l'article ne donne ni l'orientation, ni l'heure, ni l'état du décollage. À ne pas lire comme un décollage équipé ; vérifier la limite du cœur du Mercantour (hexagones verts) avant tout survol.",
+     "sources": [
+      "S98",
+      "S104"
+     ]
     }
    ],
    "landings": [
@@ -5591,10 +5755,12 @@
      "lat": 44.3868,
      "alt_m": 1151,
      "coord_quality": "source",
-     "description": "Atterro le plus facile et pratique de la vallée (utilisé par Point de Vue et Soleil Bœuf).",
+     "description": "Atterro le plus facile et pratique de la vallée (utilisé par Point de Vue et Soleil Bœuf). Terrain d'atterrissage de la vallée « tout en herbe, parfaitement plat, d'environ 6 hectares » selon l'école ; hike and fly : hippodrome énorme, mais la brise qui y accueille de 12h à 20h est parfois critique, même pour traverser l'Ubaye ; à 11h par jour calme brise très faible d'est en ouest ; atterrissage à 5 minutes à pied de l'école.",
      "sources": [
       "S81",
-      "S49"
+      "S49",
+      "S97",
+      "S94"
      ],
      "ffvl_id": 3109
     },
@@ -5674,6 +5840,19 @@
       "S78"
      ],
      "ffvl_id": 13347
+    },
+    {
+     "id": "atterro-lac-des-sagnes",
+     "name": "Lac des Sagnes (Jausiers) – terrain devant le lac",
+     "lon": 6.8332,
+     "lat": 44.3841,
+     "alt_m": 1890,
+     "coord_quality": "approx",
+     "description": "Terrain herbeux évident devant le lac des Sagnes, vaste mais au vent du lac lorsque la brise s'alimente : risque de finir à l'eau si l'on ne se méfie pas ; atterrissage du hike and fly de la tête de Parassac. Position : le lac (IGN), le terrain exact n'est pas décrit.",
+     "sources": [
+      "S95",
+      "S104"
+     ]
     }
    ],
    "synoptic_effects": [
@@ -5721,16 +5900,73 @@
       "S77",
       "HS40"
      ]
+    },
+    {
+     "wind": "Mistral",
+     "effect": "Avis divergents : l'effet de mistral rend le décollage de Saint-Vincent-les-Forts trop désagréable pour deux pilotes de hike and fly qui attendent deux jours son arrêt (deux ailes vues au-dessus du lac jugées très dures), alors qu'une première passe notait Saint-Vincent comme le seul site volable par mistral ; le lendemain, après la fin du mistral, le matin est calme à Barcelonnette (brise très faible à 11h).",
+     "sources": [
+      "S94",
+      "S10"
+     ]
     }
    ],
-   "xc_routes": [],
+   "xc_routes": [
+    {
+     "id": "barcelonnette-champsaur-dormillouse-pra-loup-138km-2022",
+     "name": "Barcelonnette → lac de Serre-Ponçon → Champsaur → Dormillouse → Pra-Loup → Barcelonnette (19 avril 2022, 138 km en triangle)",
+     "waypoints": [
+      {
+       "name": "Barcelonnette (départ, décollage non précisé)",
+       "lon": 6.6531,
+       "lat": 44.3867,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Mont Guillaume (« bel enterrement », ordre de passage incertain)",
+       "lon": 6.4324,
+       "lat": 44.5685,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Dormillouse (déco FFVL 5211, 2459 m)",
+       "lon": 6.38542,
+       "lat": 44.40753,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Pra-Loup",
+       "lon": 6.5947,
+       "lat": 44.3552,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Barcelonnette (arrivée)",
+       "lon": 6.6531,
+       "lat": 44.3867,
+       "coord_quality": "approx"
+      }
+     ],
+     "distance_km": 68.5,
+     "description": "Description de la vidéo d'un pilote de cross : départ de Barcelonnette, première traversée du lac de Serre-Ponçon, vol vers le Champsaur, retour par Dormillouse, Pra-Loup et la croix de l'Alpe ; le vol a été très long à cause d'un enterrement au Mont Guillaume et d'une longue attente que la brise laisse le pilote boucler à Barcelonnette. Seuls les points nommés et localisés sont tracés (Champsaur et croix de l'Alpe non localisés ; Dormillouse à la position de la fiche FFVL 5211) ; la distance indiquée est celle du tracé, la distance du vol est de 138 km. Autres vols documentés sans points de passage : triangle FAI de 252 km au départ de Barcelonnette le 24 juillet 2021 (261 km pour un second pilote, « conditions musclées »), tour de Barcelonnette en duo en avril 2021.",
+     "sources": [
+      "S100",
+      "S99",
+      "S101",
+      "S104"
+     ]
+    }
+   ],
    "tips": [
     "Pra-Loup / Le Sauze : décos biplace Soleille-Bœuf, Point de Vue, Dôme de l'Alpe (déco et atterro identiques, bonnes thermiques du soir) [HS41][S49]",
     "Autres terrains FFVL de la vallée : Jausiers, Restefond – Ravin de Clapouse, Halte 2000, Larche plage, Saint-Ours [S76][S77]",
     "Soleil Bœuf : le matin et le soir ; 4x4 pour accéder au déco [S49]",
     "Par tendance E/SE, se méfier de la brise qui vient de Larche et reste descendante toute la journée [S80]",
     "Avant de poser à Jausiers/Halte 2000 : vérifier absence de chevaux ou de bétail, et les dates de foins (15 juin-31 juillet à Halte 2000) [S76][S77]",
-    "Le vol à voile se pratique depuis l'aérodrome de Saint-Pons (CVVU) : prudence aux croisements de trafic [S82]"
+    "Le vol à voile se pratique depuis l'aérodrome de Saint-Pons (CVVU) : prudence aux croisements de trafic [S82]",
+    "Soleil Bœuf : partir à pied vers 7h45 pour décoller entre 10h et 11h au plus tard ; avant 10h le décollage est côté est, puis la brise s'établit côté ouest ; la brise de vallée peut empêcher de poser avant 20h au printemps et en été [hike and fly de Soleil Bœuf].",
+    "Haute Ubaye (tête de Parassac) : décoller avant 10h côté ouest uniquement, car l'est est en cœur du Mercantour ; atterrir devant le lac des Sagnes en tenant compte du vent du lac [hike and fly de Parassac].",
+    "Les vols de l'école de Barcelonnette sont calés par l'aérologie : Soleille-Bœuf à 8h00, Point de vue à 10h00, Dôme de l'Alpe à 13h30 (retour vers 17h), vol du soir à 18h00 [Ubaye Parapente].",
+    "Cœur du Mercantour : le survol reste interdit à moins de 1000 m/sol sauf autorisation individuelle du 1er août au 15 octobre (zones de la Tinée, hors Ubaye) ; vol à voile interdit toute l'année [arrêté 2016-02, FFVL]."
    ]
   }
  ],
@@ -7625,6 +7861,105 @@
    "type": "web",
    "lang": "fr",
    "notes": "Soleil Bœuf 6.6518/44.4205 ; Pra Loup 6.6038/44.3732 ; col du Galibier 6.4079/45.0641 ; Plan Lachat 6.4415/45.0867 ; Grande Séolane 6.5462/44.3375."
+  },
+  {
+   "id": "S94",
+   "title": "Hike and Fly à Soleil Boeuf (Sev et Mika)",
+   "url": "https://sev-et-mika.fr/hike-and-fly-soleil-boeuf/",
+   "publisher": "Sev et Mika (blog de hike and fly)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Récit d'une montée à pied depuis l'école de Barcelonnette : décollage de la croupe herbeuse de Soleil Bœuf (2214 m) vers 10h30, brise de vallée « excessivement forte dès 11h » et atterrissage impossible parfois jusqu'à 20h au printemps et en été, atterrissage de La Chaup par brise très faible d'est en ouest à 11h."
+  },
+  {
+   "id": "S95",
+   "title": "Hike and Fly à la Tête de Parassac (Sev et Mika)",
+   "url": "https://sev-et-mika.fr/hike-and-fly-tete-parassac/",
+   "publisher": "Sev et Mika (blog de hike and fly)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Vol rando guidé par un local entre les cols de Larche et de Restefond : parking du lac des Sagnes (1890 m), décollage du col sud de la tête de Parassac (≈2700 m, ouest uniquement), brise de vallée forte dès 10-11h, limite du cœur du Mercantour (hexagones verts), atterrissage devant le lac des Sagnes au vent du lac."
+  },
+  {
+   "id": "S96",
+   "title": "Baptêmes (Ubaye Parapente) : horaires par site",
+   "url": "https://www.ubaye-parapente.com/index.php/baptemes",
+   "publisher": "Ubaye Parapente (école de Barcelonnette, depuis 1985)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Rendez-vous de l'école : Soleille-Bœuf du matin 8h00 (1060 m, vol très doux), Point de vue 10h00 (460 m), Dôme de l'Alpe 13h30 avec retour vers 17h00 (décollage et atterrissage à 2200 m), vol du soir 18h00 ; vols thermiques « Premium » réalisables en fin de matinée, l'après-midi et le soir."
+  },
+  {
+   "id": "S97",
+   "title": "L'école de parapente et la logistique (Ubaye Parapente)",
+   "url": "https://www.ubaye-parapente.com/index.php/home/l-ecole-de-parapente",
+   "publisher": "Ubaye Parapente (école de Barcelonnette, depuis 1985)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Sites de grands vols de 460 à 1100 m de dénivelé ; terrain d'atterrissage de la vallée « tout en herbe, parfaitement plat, d'environ 6 hectares » ; pente-école derrière l'école ; quatre véhicules 4x4 pour les navettes."
+  },
+  {
+   "id": "S98",
+   "title": "Alpinisme et vols rando parapente en Ubaye avec Sébastien (Rock The Outdoor, juillet 2025)",
+   "url": "https://paragliding.rocktheoutdoor.com/media/8-sommets-ubaye-vol-rando/",
+   "publisher": "Rock The Outdoor",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Huit sommets gravis pour le film « Un souffle de plus » (Pain de Sucre 2560 m, Aiguille Grande 3064 m, Pointe des Cirques 3234 m, Tête de Moïse 3104 m, Parrias Coupa 3240 m, Le Peouvou 3230 m, La Meyna 3067 m, Aiguille Pierre André 2812 m) ; l'auteur du topo « Vols randonnée en Ubaye » décrit 111 vols dans 19 secteurs."
+  },
+  {
+   "id": "S99",
+   "title": "Parapente, CROSS 252 km FAI de Barcelonnette (vidéo, J. Puthod, 24 juillet 2021)",
+   "url": "https://www.youtube.com/watch?v=g8bh6Ccx3gg",
+   "publisher": "Justin Puthod (YouTube)",
+   "type": "video",
+   "lang": "fr",
+   "notes": "Description : triangle FAI de 252 km au départ de Barcelonnette (261 km pour un second pilote), « certainement un des plus gros vols depuis cette vallée », conditions musclées ; points de virage non donnés."
+  },
+  {
+   "id": "S100",
+   "title": "Vol cross : Triangle de 138 km depuis Barcelonnette (vidéo, Clem, 19 avril 2022)",
+   "url": "https://www.youtube.com/watch?v=aeKrKualCDM",
+   "publisher": "Clem (YouTube)",
+   "type": "video",
+   "lang": "fr",
+   "notes": "Description : vol vers le Champsaur après une première traversée du lac de Serre-Ponçon, retour par Dormillouse, Pra-Loup et la croix de l'Alpe ; long à cause d'un enterrement au Mont Guillaume et d'une longue attente de la brise avant de pouvoir boucler à Barcelonnette."
+  },
+  {
+   "id": "S101",
+   "title": "Vol cross parapente Tour de Barcelonnette (vidéo, Clem, 26 avril 2021)",
+   "url": "https://www.youtube.com/watch?v=p9pVJQ_l5f0",
+   "publisher": "Clem (YouTube)",
+   "type": "video",
+   "lang": "fr",
+   "notes": "Description : vol en duo autour de Barcelonnette « en respectant le timing de la brise de l'Ubaye »."
+  },
+  {
+   "id": "S102",
+   "title": "Arrêté n° 2016-02 du 2 juin 2016 réglementant les activités de vol libre dans le cœur du Parc national du Mercantour",
+   "url": "https://aida.ineris.fr/reglementation/arrete-ndeg-2016-02-020616-reglementant-activites-dites-vol-libre-coeur-parc",
+   "publisher": "Parc national du Mercantour (AIDA / Ineris)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Article 2 : vol rando autorisé du 1er août au 15 octobre sur trois zones (sud de Claï inférieur, sud-ouest du col du Blainon, sud du Mont Mangiabo) avec autorisation individuelle ; article 3 : vol distance sans décollage ni atterrissage en cœur, couloir de Valabres (Tinée), au-dessus de 300 m/sol, du 1er août au 15 octobre ; neutralisation possible en cas de nidification."
+  },
+  {
+   "id": "S103",
+   "title": "Réglementation et survols (formation aux pilotes, Gap-Tallard, 29 mai 2026) : parc national du Mercantour",
+   "url": "https://federation.ffvl.fr/sites/ffvl.fr/files/Reglementation-et-survols.pdf",
+   "publisher": "FFVL / Parc national du Mercantour",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Pages 1 à 7 : survol non motorisé du cœur du Mercantour (vol à voile interdit à moins de 1000 m/sol, vol rando 1er août-15 octobre sur trois zones, vol longue distance à 300 m/sol dans un couloir défini, mêmes dates, sans décollage ni atterrissage en cœur), p. 13 de la présentation."
+  },
+  {
+   "id": "S104",
+   "title": "Position des sommets, lacs et lieux-dits de l'Ubaye (géocodeur IGN)",
+   "url": "https://data.geopf.fr/geocodage/search?q=T%C3%AAte%20de%20Parassac&index=poi",
+   "publisher": "IGN / Géoplateforme",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Géocodeur IGN (data.geopf.fr) : Tête de Parassac, Lac des Sagnes, Aiguille Grande, Pointe des Cirques, Tête de Moïse, Parrias Coupa, La Meyna, Aiguille Pierre André, Mont Guillaume, Maljasset, Tête de Rasinière, Claï Inférieur, Col du Blainon."
   }
  ]
 }

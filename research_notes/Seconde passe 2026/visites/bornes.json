@@ -1,0 +1,115 @@
+{
+  "massif": "bornes",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "Les Bornes en un coup d'œil",
+      "text": "Les Bornes bordent le lac d'Annecy à l'est et forment un palier entre le bassin d'Annecy et la chaîne des Aravis. On y trouve le plateau calcaire du Parmelan (1830 m), les Dents de Lanfon, la Tournette, la Sous-Dine, le plateau des Glières et le Mont Lachat de Thônes. Le cœur aérologique du massif est la vallée du Fier, qui relie Annecy à Thônes. Retenez que les Bornes sont avant tout un passage : les grands triangles viennent y virer au Parmelan ou y chercher la porte des Aravis.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le matin, la Pointe de Talamarche ouvre la Tournette",
+      "text": "Le matin, ce sont les crêtes exposées à l'est qui chauffent d'abord. La Pointe de Talamarche, à environ 1850 m, se gagne par deux heures de marche, 1000 m de montée depuis Alex ou le plateau de Verel ; ses thermiques marchent tôt, et elle donne accès vers 10 h à la face est de la Tournette, porte d'entrée des grands cross vers l'est, ou départ matinal vers le sud. C'est le départ idéal des grands triangles de la région.",
+      "focus": ["talamarche", "pointe-de-talamarche", "talamarche-tournette"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "L'après-midi, la brise du Fier monte vers Thônes",
+      "text": "Dans l'après-midi d'été, l'air remonte la vallée du Fier : la carte de vol libre de 2009 dessine une grande flèche d'Annecy-le-Vieux à Thônes, par Dingy-Saint-Clair, Alex et La Balme-de-Thuy, et place des spirales thermiques sur les deux rives à Alex et à La Balme. À Thônes, cette brise se divise vers Saint-Jean-de-Sixt, Manigod et le col du Marais. Par le nord, la brise de la vallée du Borne arrive par Entremont et alimente le même carrefour de vallées de Saint-Jean-de-Sixt. Ces sens sont déduits de la carte : les sources ne donnent ni heures ni vitesses.",
+      "focus": ["brise-fier-thones", "alex-balme-de-thuy", "brise-val-de-borne"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le col de Bluffy : bise d'un côté, confluence de l'autre",
+      "text": "Le col de Bluffy, à 631 m, est le seuil entre la vallée du Fier et le lac d'Annecy. Par bise, le vent de nord-est s'y engouffre et met le décollage de Planfait sous le vent, sans que l'effet de venturi soit chiffré. Par brise, le col est probablement une confluence, c'est-à-dire un lieu de rencontre où l'air est obligé de monter : la brise du lac, venue de Menthon et de Talloires, contre celle du Fier, venue d'Alex. C'est une déduction tirée du forum et de la carte, sans consigne d'exploitation écrite.",
+      "focus": ["col-de-bluffy-ne", "confluence-bluffy"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Le Parmelan : une falaise plein ouest et le col du Pertuis",
+      "text": "Le Parmelan est le premier relief des Bornes face à Annecy : un grand plateau calcaire bordé de falaises. Les récits des triangles de 200 km y viennent virer, avec des plafonds d'environ 2400 m un bon jour, et le forum dit le plafond en général meilleur qu'aux Dents de Lanfon. La falaise ouest, entre le pilier sud et la tête, donne de solides ascendances avant le col du Pertuis, où un carnet de 2020 raconte une fusée de 1900 à 2600 m en six minutes. Attention au pilier sud : c'est un venturi, car la brise de vallée y file vers Thônes.",
+      "focus": ["parmelan-plateau", "parmelan-col-du-pertuis"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Le Mont Lachat de Thônes : la confluence qui danse",
+      "text": "Au Mont Lachat de Thônes, les brises se rencontrent : un récit du triangle de 202 km y trouve un thermique dansant, entre confluence des brises et départs en missiles le long du caillou, et conseille de sortir des thermiques une fois hors de l'influence des brises, où ils se redressent. En arrivant du Danay, il faut rester dans la zone nord, où la brise du Petit-Bornand bute contre la falaise nord, et grimper patiemment dans les bulles jusqu'à la crête. Une fois à la crête, la pointe au-dessus du col de la Buffaz donne le gros plein grâce au thermo-dynamique de la combe sud-ouest, ce qui permet de partir vers le Parmelan. Plus au sud-ouest, par brise de nord, le bois du Mont permet de reprendre en dynamique.",
+      "focus": ["mont-lachat-thones", "confluence-mont-lachat-thones", "lachat-thones-face-nord", "lachat-thones-pointe-buffaz", "bois-du-mont-thones-dynamique"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Le Parmelan : décoller tôt ou tard, se poser à Villaz",
+      "text": "Le Parmelan a deux décollages gérés par les Chamois Volants, tous deux de niveau marron. L'Anglettaz (1579 m, sud-ouest), à dix minutes de marche du chalet, est à son meilleur par régime de sud-ouest ; le Lachat de Naves (1260 m, favorable de sud-ouest à nord-ouest), à une demi-heure de marche, est bon pour les vols de fin de journée. Une consigne locale : les décollages ne sont pas praticables sainement quand la brise et les conditions sont installées, il faut décoller tôt ou en fin de journée. On se pose à Villaz, un pré de fauche à éviter herbe haute (juin et fin août) ; la CTR d'Annecy est juste au nord : ne la pénétrez pas et ne survolez pas Villaz.",
+      "focus": ["anglettaz", "lachat-de-naves", "anglettaz-soaring", "villaz", "villaz-ctr"],
+      "phase": "evening"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Marcher pour décoller de la Tournette, au-dessus de l'inversion",
+      "text": "Quand l'air est trop stable à Planfait en été, les pilotes montent à pied décoller de la Tournette, au-dessus de la couche d'inversion. Le col du Varo, côté lac, est un décollage de rando-vol orienté sud, très bien sans vent ou avec un peu de sud, à éviter par nord ; on se pose à Doussard ou à Perroix. Au nord du sommet, un décollage sur la crête s'ouvre de nord-est à sud-est et prend le soleil très tôt ; avec un vent d'est franc, on passe sous le vent en basculant côté lac. Le Crêt des Mouches, plein sud, est un beau vol mais d'aérologie compliquée, et il se trouve dans la zone de gypaète de l'Arclosan.",
+      "focus": ["tournette-col-du-varo", "tournette-nord-est", "cret-des-mouches"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Le triangle de plus de 100 km autour de la Tournette",
+      "text": "Un classique, d'environ 124 km mesurés sur les sommets, relie la Tournette, la Pointe Percée, la Sous-Dine et la dent d'Arclusaz, avec retour à Planfait, d'après XC Mag. On le démarre tôt, depuis la Pointe de Talamarche. Une variante par les Aravis va jusqu'à la Pointe Percée et revient par le Bargy et le Jallouvre. Le détail des transitions n'est pas décrit, et pour les Glières et la Sous-Dine aucune source de club n'a été trouvée : seules les spirales thermiques de la carte de 2009 y sont documentées, alors volez prudemment en repérant les cumulus.",
+      "focus": ["triangle-tournette-percee-sousdine-arclusaz", "talamarche-tournette", "plateau-des-glieres"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Des Dents de Lanfon au Parmelan par la falaise ouest",
+      "text": "Le topo du forum part des Dents de Lanfon vers 2200-2300 m : on vise le premier angle de falaise en tangentant le bout orienté ouest, on évite la Tête à Turpin, puis on remonte au plus près de la falaise ouest jusqu'au col du Pertuis et à la Tête du Parmelan. Au retour, on fait le plein au col puis on rejoint le pilier nord des Dents ou, avec du gaz, le Roc des Bœufs par la confluence de Bluffy. Les triangles de 199-202 km font de même, avec un Parmelan à environ 2400 m puis un demi-tour ou une poursuite vers Thônes et les Aravis. Au retour, la brise d'Annecy est forte : il vaut mieux contourner par Montmin et le Lanfonnet.",
+      "focus": ["lanfon-parmelan-pertuis", "bauges-lanfon-parmelan-lachat"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Le quadrilatère de 81 km : de l'Étale au Parmelan et au Roc des Bœufs",
+      "text": "Un message de 2005 raconte un quadrilatère de 81 km en 5h35 : décollage de l'Étale à 12h45, Tardevant à 13h33, où la base trop basse empêche de passer le col et impose le demi-tour, puis le Danay et le Lachat de Thônes, le Parmelan à 14h48 et la pointe sud du Roc des Bœufs à 15h50. Le retour se fait par la brise du lac, avec un point bas sous la Tournette avant de rejoindre Sulens, arrivée à 18h20. Le Danay est présenté comme l'option très élégante entre la Pointe Percée et le Lachat de Thônes : on peut y arriver très bas et il faut suivre la dérive du thermique, comme en plaine.",
+      "focus": ["etale-tardevant-parmelan-rdb-81km", "aravis/danay-saint-jean-de-sixt"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Ce qui secoue autour du Parmelan et de la Tournette",
+      "text": "Entre la Tête à Turpin et le refuge du Parmelan, un récit du 202 km décrit une zone affreuse, plein vent et rafaleuse, sans cumulus à l'horizon alors que les Bornes et les Aravis étaient bien marqués : le pilote a fait demi-tour, et il faut prévoir un repli vers le Lachat de Thônes ou les Dents de Lanfon. Par nord-ouest marqué au-dessus de 2000 m, les confluences entre Bornes et Aravis deviennent très turbulentes, avec des descendances de 6 m/s pendant plus de 10 secondes. À l'ouest du plateau, la carte de 2009 signale des câbles, sans préciser leur nature ni leur position. Entre la Tournette et l'Arclosan, la zone est peu confortable, et la zone de gypaète impose de passer à plus de 2100 m ou entre 1100 et 1150 m.",
+      "focus": ["parmelan-tete-a-turpin", "cables-parmelan", "lac-annecy/arclosan-zsm"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par nord : vent arrière au Parmelan, bise vers Bluffy",
+      "text": "Par nord, le vent arrive dans le dos au décollage de l'Anglettaz comme à celui du Lachat de Naves, ce qui est dangereux, et la brise du lac et du Fier domine la basse couche. Par nord-est, le Lachat de Naves est défavorable, et la bise s'engouffre dans le col de Bluffy pour mettre Planfait sous le vent, avec un vent d'est fort près des Dents de Lanfon et du col des Frêtes.",
+      "focus": ["anglettaz-rouleaux", "lachat-de-naves", "col-de-bluffy-ne"],
+      "phase": "afternoon",
+      "wind": { "from": "N", "kmh": 20 },
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par sud-ouest : le meilleur régime du Parmelan",
+      "text": "Le sud-ouest est le meilleur régime de l'Anglettaz, et le Lachat de Naves, sur sa face ouest, est favorable du sud-ouest au nord-ouest : il donne de bons vols de fin de journée avec vue sur Annecy. Par ouest à nord-ouest, on trouve des rouleaux à droite du décollage de l'Anglettaz ; par sud, des rouleaux à gauche, sous le Parmelan, et le Lachat de Naves devient défavorable.",
+      "focus": ["anglettaz-soaring", "anglettaz-rouleaux", "lachat-de-naves"],
+      "phase": "evening",
+      "wind": { "from": "SO", "kmh": 20 },
+      "view": "massif"
+    },
+    {
+      "chapter": "Les transitions",
+      "title": "Sortir des Bornes : Aravis, Bauges, Pointe Percée",
+      "text": "Du Lachat de Thônes, on part vers les Aravis : le triangle de 202 km les suit depuis le Parmelan et le Lachat de Thônes jusqu'au Grand-Bornand et au col des Aravis. Vers la Pointe Percée, la chaîne offre un axe continu pour aller plus loin. Vers l'ouest, la transition depuis le Roc des Bœufs vers les Dents de Lanfon demande plus de 1800 m au départ, et plus de 2100 m vers Montmin ou Planfait, avec la brise forte du lac sur la traversée.",
+      "focus": ["aravis/aravis-202-chartreuse-albertville", "aravis/annecy-aravis-mont-blanc", "bauges/transition-roc-des-boeufs-lanfon"],
+      "view": "massif"
+    }
+  ]
+}

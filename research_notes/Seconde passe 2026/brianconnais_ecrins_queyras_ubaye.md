@@ -95,3 +95,32 @@ Volumes de `thermal_spots` (avant → après) : Briançonnais–Guisane 4 → 10
 - Vidéo YouTube « Triangle de 138 km depuis Barcelonnette » : navigation refusée, route non ajoutée. Scribd « Le parapente dans le Briançonnais » : contenu non rendu.
 - Images annotées de Chocard (liens Google Sites tokenisés, 403 en curl) : lues au navigateur, la carte « brises locales et thermiques (en rouge) » correspond aux polygones KML déjà extraits. Aucun thermique nommé trouvé pour Puy-Saint-Vincent, Abriès, Saint-Véran, Guillestre hors Mont-Dauphin.
 - Points non extrapolés faute d'indice : Queyras (hors Izoard et Ceillac).
+
+## Passe secteurs minces
+
+Date : 7 octobre 2026. Secteurs les moins documentés, traités un par un. Convention de confiance : récit précis ou plusieurs récits = `medium` ; extrapolation du relief = `low` avec « déduction ». Identifiants existants conservés, rien supprimé. `npm run data:build -- --check` : aucune alerte nouvelle.
+
+### Ubaye (`ubaye`)
+
+Volumes avant → après : brises 3 → 4, convergences 0 → 0, hazards 7 → 8, thermiques 4 → 4 (descriptions complétées), soarings 1 → 1, décollages 4 → 11, atterrissages 7 → 8, effets synoptiques 5 → 6, routes 0 → 1, conseils 6 → 10 ; 11 sources (S94 à S104) ; bbox étendue à [6,4 ; 44,3 ; 6,95 ; 44,62] pour couvrir Maljasset et la haute vallée.
+
+**Sources nouvelles**
+- Deux récits de hike and fly du blog *Sev et Mika* : Soleil Bœuf (horaires de brise, côté est avant 10h puis ouest, brise très faible d'est en ouest à 11h à La Chaup, brise excessive dès 11h) et tête de Parassac / lac des Sagnes (haute vallée, brise forte dès 10h-11h, côté ouest uniquement, hexagones verts du Mercantour).
+- Site de l'école *Ubaye Parapente* (baptêmes : horaires par site ; école et logistique : terrain d'atterrissage de 6 ha) ; descriptions des vidéos de cross de deux pilotes (252 km FAI du 24 juillet 2021, 138 km du 19 avril 2022, tour de Barcelonnette d'avril 2021 « en respectant le timing de la brise ») ; article de Rock The Outdoor sur le topo « Vols randonnée en Ubaye » (huit sommets).
+- Réglementation : arrêté n° 2016-02 du Parc national du Mercantour (texte intégral lu, AIDA) et diaporama FFVL « Réglementation et survols » du 29 mai 2026 (pages Mercantour lues en image).
+- Fiches FFVL (Jausiers, Restefond, Halte 2000, Larche plage, Saint-Ours) relues : « vols-randonnées le matin avant la brise ou le soir », « matinée, fin de journée par brises faibles ».
+
+**Ajouté ou corrigé**
+- *Brise montante* : horaire précisé (forte dès 11h, jusqu'à 20h au sol au printemps et en été) ; *brise matinale descendante* ajoutée (`medium`, un seul récit précis, avec la phrase de la fiche de Larche plage) avec horaires distincts de la brise montante.
+- *Soleil Bœuf* : séquence horaire (est avant 10h, ouest vers 10h20), accès à pied, école à 8h00 ; *Dôme de l'Alpe* : rendez-vous 13h30 et retour 17h ; La Chaup : terrain de 6 ha, brise de 12h à 20h parfois critique.
+- *Cœur du Mercantour* : texte réglementaire ajouté (interdiction à moins de 1000 m/sol, dérogations du 1er août au 15 octobre dans trois zones de vol rando et un couloir de vol distance, tous dans les Alpes-Maritimes d'après le géocodeur IGN, donc pas dans l'Ubaye ; vol à voile interdit toute l'année).
+- *Nouveaux sites* : décollage de la tête de Parassac et atterrissage du lac des Sagnes (positions approximatives du col et du terrain), six sommets de vol rando cités par le film de l'auteur du topo (positions IGN, orientation inconnue, description volontairement prudente : décollage non précisé).
+- *Route* : triangle de 138 km vers le Champsaur et Dormillouse (points nommés et localisés seulement ; Dormillouse prise à la position de la fiche FFVL 5211) ; le 252 km FAI et le tour de Barcelonnette sont cités sans points de passage.
+- *Mistral* : effet synoptique ajouté, avec avis divergents sur Saint-Vincent-les-Forts.
+- Une première version de la route plaçait Dormillouse à une position non sourcée ; elle a été corrigée avant enregistrement avec la fiche FFVL.
+
+**Introuvable**
+- Aucun récit de cross avec points de passage dans l'Ubaye (traces XContest/CFD inaccessibles), aucune convergence documentée, aucune vitesse chiffrée de la brise (les km/h restent des interprétations).
+- Pain de Sucre (2560 m, l'un des huit sommets) non localisé par le géocodeur ; Le Peouvou (3230 m) est à Ceillac (Queyras) et n'a pas été ajouté ici.
+- Page « Les sites » de l'école (noms seuls), site du club Lame in Air (pas de site), PDF FFVL du Mercantour en images seules : voir `pages_bloquees.txt`.
+

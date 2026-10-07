@@ -1,0 +1,120 @@
+{
+  "massif": "mont-blanc-chamonix",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "La vallée de Chamonix en un coup d'œil",
+      "text": "Chamonix est une vallée glaciaire étroite, entre les Aiguilles Rouges et le massif du Mont-Blanc. L'air de l'Arve y entre par le bassin de Sallanches et de Passy, passe par les gorges de Servoz, puis remonte vers Chamonix et Argentière. Retenez que la journée y est réglée par les horaires : les faces sud à est des Aiguilles Rouges le matin, la brise de vallée dès 11h, puis les grandes restitutions du soir sous le Plan de l'Aiguille. Et en juillet-août, tout le côté Mont-Blanc est interdit.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le matin, les Aiguilles Rouges se volent dès 8 h",
+      "text": "Côté Aiguilles Rouges, ce sont les faces sud à est qui chauffent les premières. Planpraz et la Flégère se volent dès 8h, jusqu'à la fin de matinée, dans une brise de pente faible mais régulière, avec un air calme avant 11h. ParaglidingEarth fait de la Flégère le meilleur spot de Chamonix pour partir en cross, avec de bons thermiques tôt le matin, surtout les jours de vent léger ou de grande stabilité, quand Planpraz est dans la couche stable. En face, Chamonix.net conseille de traverser vers le parc de Merlet, où les thermiques du matin peuvent être forts.",
+      "focus": ["brise-pente-aiguilles-rouges-matin", "flegere-thermiques-matin", "merlet-thermiques-matin"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Vers 11 h, la brise de la vallée s'installe",
+      "text": "Vers 11h, la brise de l'Arve remonte la vallée ; elle se renforce nettement en début d'après-midi et reste soutenue l'après-midi, le plus souvent entre 20 et 25 km/h, parfois 30, et sensible jusqu'à 2500 m, voire 3000 m. Dès qu'elle s'installe, certains endroits passent sous le vent, c'est-à-dire du mauvais côté du flux : le couloir nord-est de Planpraz, la gare intermédiaire de la Flégère, et au sol l'atterrissage du Savoy, enclavé et bordé de bâtiments, qui devient dangereux. On se pose alors au Bois du Bouchet, en l'abordant au vent des arbres.",
+      "focus": ["brise-montante-vallee-chamonix", "savoy-sous-le-vent-obstacles", "bois-du-bouchet-brise-arbres"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Début d'après-midi : les Grands Montets et les grands plafonds",
+      "text": "Les Grands Montets, au départ du glacier du Pas de Chèvre, n'ont d'intérêt qu'à partir du début d'après-midi, en régime de brises avec un vent météo faible. Les brises y sont parfois renforcées par le vent météo, avec un risque de condensation rapide devant le décollage en milieu d'après-midi. Par conditions optimales, le plafond atteint 4000 m au-dessus des Drus, de l'Aiguille Verte et du Chardonnet. Le retour se fait face à la brise vers le Bouchet : il faut soigner le cône d'autonomie.",
+      "focus": ["brise-pente-grands-montets-apres-midi", "drus-verte-chardonnet"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le soir, les glaciers défilent depuis le Plan de l'Aiguille",
+      "text": "Le Plan de l'Aiguille, face à l'ouest, travaille de la fin de matinée au soir : brises thermiques et thermodynamiques, ou léger flux d'ouest, avec une brise parfois soutenue au décollage. Il est soarable à partir de 15h environ, et réputé pour ses grands vols du soir : 20 à 30 km le long du massif, onze glaciers en deux heures, jusqu'au bout de la vallée. Du côté des Houches, l'épaule ouest du parc de Merlet donne un excellent rendement dynamique en fin d'après-midi, et depuis les Grands Montets, des restitutions sont possibles au Pas de Chèvre et aux Becs Rouges. Le Plan de l'Aiguille est interdit du 1er juillet au 31 août.",
+      "focus": ["brise-pente-plan-aiguille-soir", "restitution-plan-aiguille", "restitution-pas-de-chevre-becs-rouges", "dynamique-merlet"],
+      "phase": "evening"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Planpraz, Flégère, Plan de l'Aiguille : trois décollages, trois horaires",
+      "text": "Planpraz (2000 m, sud et nord-est) est intéressant de 8h jusqu'en début d'après-midi, très fréquenté le matin ; le décollage nord-est sert tôt ou par vent nord-est à est, mais on le quitte dès que le vent s'installe au décollage sud, où il faut passer bien à droite des câbles du Brévent. La Flégère (2350 m, sud à est) se vole de 8h à la fin de matinée, avec les câbles du télésiège de l'Index à droite de la sortie. Le Plan de l'Aiguille (2233 m, ouest) est le site de la fin de matinée au soir, avec des câbles électriques à gauche et ceux du téléphérique à droite ; décollage et survol y sont interdits en juillet-août.",
+      "focus": ["planpraz", "flegere", "flegere-cables", "plan-de-l-aiguille", "cables-plan-aiguille"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Les décollages d'altitude : Grands Montets, Aiguille du Midi, Mont-Blanc",
+      "text": "Les Grands Montets (3240 m, face à l'ouest) se prennent sur le glacier du Pas de Chèvre, très crevassé, qui demande une extrême prudence : accès par le téléphérique de Lognan puis dix minutes de marche sur glacier non balisé, encordement conseillé. L'Aiguille du Midi (3667 m) se vole toute la journée en régime anticyclonique ou par léger flux de nord à nord-ouest ou de sud, mais manque de portance à l'altitude. Le Mont-Blanc se prend en paralpinisme, de nord-est à sud-ouest, mais jamais par vent d'ouest, avec 20 km/h au maximum à 4000 m. Ces deux derniers sont interdits en juillet-août.",
+      "focus": ["grands-montets", "grands-montets-crevasses", "aiguille-du-midi", "mont-blanc"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Les Houches : le Prarion, le Merlet et leurs atterrissages",
+      "text": "Du côté des Houches, le Prarion nord-est est un site du matin : thermiques d'est ou flux descendant la vallée, avec l'atterrissage des Chavants utilisable seulement du début au milieu de matinée, car après 11h il est sous le vent, à la sortie d'un venturi. Le Grand Prarion, plein ouest, sert au début et à la fin d'après-midi, seulement si la brise alimente bien de face, avec une ligne à haute tension 500 m en contrebas. Merlet (sud à sud-ouest) vole en brise thermodynamique et en restitution, de la fin de matinée à la fin d'après-midi, en évitant à droite de la sortie le rouleau du plateau de Coupeau ; on se pose à la gravière de Cachat, très technique.",
+      "focus": ["prarion", "prarion-atterro-chavants-sous-le-vent", "grand-prarion", "merlet", "merlet-rouleau-coupeau", "cachat-graviere"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Où se poser : le Bois du Bouchet et le Savoy",
+      "text": "L'atterrissage officiel de la vallée est le Bois du Bouchet (1042 m), qui dessert Planpraz, le Plan de l'Aiguille, la Flégère, les Grands Montets et l'Aiguille du Midi. Il est invisible depuis les décollages : on le repère avant de monter, on l'aborde au vent des arbres, en circuit en U main gauche, par le nord de la route principale pour rester loin de la zone LF-R 30 A. Le Savoy se réserve au matin avant la brise ; il est interdit l'hiver et a rouvert à l'essai le 22 juillet 2026 aux seuls pilotes inscrits ayant signé la charte. Il n'y a aucun atterrissage à Argentière, et le terrain delta de secours, 500 m en amont, est décrit comme très turbulent et malsain.",
+      "focus": ["bois-du-bouchet", "savoy", "terrain-delta-bouchet", "argentiere-interdictions-juillet-aout"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "La rive droite : du Plan de l'Aiguille à l'Aiguillette des Houches",
+      "text": "Un pilote local décrit le cheminement classique : au départ du Plan de l'Aiguille, on raccroche sur Planpraz, puis la pompe monte jusqu'à 3000 m au-dessus du Brévent, avant de traverser vers l'Aiguillette des Houches. La face sud-est du Brévent chauffe dès la matinée et sert de relance ; l'Aiguillette, pente sud herbeuse qui chauffe vite, est le relais vers Les Houches et le Prarion, avec une brise de vallée qui monte fort dans la journée. Au-delà de la crête ouest et nord-ouest de Planpraz, la réserve des Aiguilles Rouges interdit de survoler à moins de 300 m du sol selon le club, 1000 m selon la brochure de 2008. Le Plan de l'Aiguille étant interdit en juillet-août, ce cheminement se vole hors de cette période.",
+      "focus": ["plan-aiguille-planpraz-brevent-aiguillette", "planpraz-relance-depuis-plan-de-l-aiguille", "brevent-plafond-3000", "aiguillette-des-houches-relais", "reserve-aiguilles-rouges"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Chamonix → Annecy : le plein à Varan avant les Aravis",
+      "text": "Planpraz est le point de départ idéal des cross vers l'ouest et Annecy : le parcours classique traverse la chaîne des Aravis, et un « Annecy and back » de 100 km est cité comme classique. Un récit de juillet 2020, parti de Planpraz, rencontre des plafonds supérieurs à 4000 m. Au retour du haut massif vers Passy, un autre récit utilise la crête ouest de la Pointe de Lapaz comme déclencheur, puis transite à 3200 m vers les sommets au-dessus de Passy, en contournant la zone 30 C. À Varan, il fait un plein qui l'emmène à plus de 3400 m avant de s'attaquer à la transition vers les Aravis.",
+      "focus": ["chamonix-annecy", "pointe-de-lapaz-declencheur", "varan-falaises-barmerousse"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Le tour du Mont-Blanc en parapente",
+      "text": "Le triangle de 75 km depuis Chamonix, raconté en juin 2017, bascule en Suisse par la fenêtre d'Arpette (2700 m), qui exige de bons plafonds, passe en Italie par le Grand Col Ferret (2537 m), moins difficile, et revient en France par le col de Miage (3367 m) : un vol très engagé, dont le versant italien est réglementé en juillet-août. Un carnet d'août 2023, parti de La Clusaz, trouve 3600 m au nord des Aiguilles Rouges, enroule tous les thermiques de plus de 2 m/s en Italie, dont un thermique teigneux sous les Grandes Jorasses à 4000 m, et arrive sous le Mont-Blanc avant 15h à 4200 m. En 2021, un autre pilote enroule un thermique au-dessus du télécabine d'Helbronner.",
+      "focus": ["tour-du-mont-blanc-triangle-75", "tmb-aravis-chamonix-mont-blanc-chapieux", "nord-aiguilles-rouges-plafond-3600", "grandes-jorasses-thermique-italien", "sous-le-mont-blanc-plafond-4200", "helbronner-thermique"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Du 1er juillet au 31 août, le côté Mont-Blanc est interdit",
+      "text": "Les zones LF-R 30 B interdisent décollage et survol du côté Mont-Blanc du 1er juillet au 31 août : Plan de l'Aiguille, Aiguille du Midi, Vallée Blanche, et en général le massif, que les parapentes doivent contourner. La zone 30 C interdit les atterrissages au sommet du Mont-Blanc du 1er juin au 15 octobre, et Chamonix et Saint-Gervais ont pris un arrêté interdisant de se poser dans un rayon de 600 m autour du sommet. La LF-R 30 A, permanente, protège les rotations des hélicoptères de secours près des Bois et du Montenvers, tout près du Bouchet.",
+      "focus": ["zone-reglementee-mont-blanc", "sommet-mont-blanc-atterrissage-interdit", "lf-r-30a-bois-arveyron"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Le foehn, qui piège régulièrement les pilotes",
+      "text": "Le foehn est un phénomène courant à Chamonix, qui a déjà piégé plus d'un pilote ; les vallées les plus exposées sont Chamonix et Les Contamines. Les indices : vent de sud sur les sommets, nuages lenticulaires, mur de foehn débordant des cols, petits cumulus déchiquetés dès le matin, rafales violentes ou souffle chaud et sec descendant la vallée. Il peut rester cantonné entre 1400 et 1800 m, et se déclencher avec environ 20 km/h à 4000 m sans nuages. On surveille l'écart de pression entre Aoste et Annecy, et les balises du Prarion, du Requin et de l'ENSA.",
+      "focus": ["foehn-vallee-chamonix"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par ouest ou nord au-delà de 20 km/h : Planpraz passe sous le vent",
+      "text": "La règle locale est de ne pas voler quand le vent météo dépasse 20 km/h à 2000 m, et de se replier alors sur Plaine-Joux. Au-delà, Planpraz et la Flégère sont sous le vent, les couloirs nord-est et ENSA sont sous le vent, et le Brévent est agressif par vent du nord. Par léger flux d'ouest, au contraire, le Plan de l'Aiguille et le Grand Prarion fonctionnent en se combinant aux brises ; si le vent tourne à l'ouest ou au sud-ouest, le Prarion nord-est ferme.",
+      "focus": ["planpraz-cables-vent-ouest-nord", "plan-de-l-aiguille", "grand-prarion", "prarion"],
+      "phase": "afternoon",
+      "wind": { "from": "O", "kmh": 25 },
+      "view": "massif"
+    },
+    {
+      "chapter": "Les transitions",
+      "title": "Sortir de Chamonix : Valais, Passy, Aravis",
+      "text": "Vers l'est, Planpraz est un départ idéal pour les cross vers la vallée du Rhône valaisan, jusqu'à la Furka ; le passage par le col de Balme est une déduction. Vers l'ouest, un long plané du Grand Prarion vers Chedde passe au-dessus de Servoz, avec des thermiques possibles côté Servoz et Plaine-Joux. Vers les Aravis, la voie passe par Varan puis la Pointe Percée, décrite dans le topo du Faucigny.",
+      "focus": ["chamonix-valais", "grand-prarion-servoz-chedde", "arve-faucigny/chamonix-plate-varan-quatre-tetes-pointe-percee"],
+      "view": "massif"
+    }
+  ]
+}

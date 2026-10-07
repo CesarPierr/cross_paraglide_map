@@ -3589,19 +3589,19 @@
     },
     {
      "id": "brise-pente-est-belledonne",
-     "name": "Ascendances des faces est de Belledonne (lac de Grand-Maison → Pas de la Coche), plus précoces que la face ouest",
+     "name": "Ascendances des faces est de Belledonne (Pas de la Coche → Lac de Belledonne), plus précoces que la face ouest",
      "kind": "slope",
      "waypoints": [
-      {
-       "name": "Lac de Grand-Maison",
-       "lon": 6.1323,
-       "lat": 45.2101,
-       "coord_quality": "source"
-      },
       {
        "name": "Pas de la Coche",
        "lon": 6.0329,
        "lat": 45.2179,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Lac de Belledonne",
+       "lon": 5.999,
+       "lat": 45.1652,
        "coord_quality": "source"
       }
      ],
@@ -3611,7 +3611,7 @@
       "max": null
      },
      "season": "été (récits d'août et de mai)",
-     "description": "Pente ascendante vers la crête, tracée du lac de Grand-Maison (pied) au Pas de la Coche (crête). Récit CHVD du 28 août 2024 : décollage de La Botte, montée à 2700 m puis plafond de 3300 m dans les faces est (« à chaque arête ça reprend facilement »), rue de nuages jusqu'au Pas de la Coche, puis plafonds de 3400 m ; au bout de Belledonne la face ouest de la Lauzière (autre massif) est jugée « encore un peu tôt ». Blues Team (mai 2015) : plus de 3400 m au-dessus du lac de Grand-Maison par vent de sud, qui décale le pilote au-dessus des nuages du versant ouest. Déduction : l'horaire précoce des faces est vient de l'ensoleillement matinal de l'exposition est ; aucune source ne donne de vitesse ni d'heure précise.",
+     "description": "Pente ascendante sur les faces est de la crête, tracée le long de la crête (Pas de la Coche vers le lac de Belledonne, IGN) sans suivre le fond de la vallée de l'Eau d'Olle, dont la brise montante est décrite dans le secteur Oisans (`eau-d-olle-brise`) ; le lac de Grand-Maison (récits) est au pied de ces faces. Récit CHVD du 28 août 2024 : décollage de La Botte, montée à 2700 m puis plafond de 3300 m dans les faces est (« à chaque arête ça reprend facilement »), rue de nuages jusqu'au Pas de la Coche, puis plafonds de 3400 m ; au bout de Belledonne la face ouest de la Lauzière (autre massif) est jugée « encore un peu tôt ». Blues Team (mai 2015) : plus de 3400 m au-dessus du lac de Grand-Maison par vent de sud, qui décale le pilote au-dessus des nuages du versant ouest. Déduction : l'horaire précoce des faces est vient de l'ensoleillement matinal de l'exposition est ; aucune source ne donne de vitesse ni d'heure précise.",
      "confidence": "low",
      "sources": [
       "S131",

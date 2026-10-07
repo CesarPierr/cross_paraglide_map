@@ -1,0 +1,129 @@
+{
+  "massif": "tarentaise",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "La Tarentaise en un coup d'œil",
+      "text": "La Tarentaise est la longue vallée de l'Isère : orientée sud-est entre Albertville et Moûtiers, puis nord-est jusqu'à Bourg-Saint-Maurice, où elle plie à angle droit vers Tignes et Val d'Isère. Au-dessus s'étagent les sites de La Plagne, des Arcs, de Peisey-Vallandry, de Tignes et de Val d'Isère, avec le Parc national de la Vanoise tout proche. Retenez une idée simple : une brise montante forte s'installe en milieu de journée, ce qui impose de voler le matin ou le soir, et, côté haute vallée, le foehn peut tout interdire.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le matin, les faces est au-dessus de Bourg-Saint-Maurice",
+      "text": "Le matin, les pentes est et sud-est au-dessus de Bourg-Saint-Maurice chauffent les premières : du Fort du Truc à la chapelle Saint-Michel, on vole par petite brise de vallée jusqu'à 13h, et un décollage entre 11h30 et 13h30 donne souvent de beaux plafonds, d'après le topo du club. Le Plan de la Boutte est le rendez-vous des crosseurs, tôt le matin, pour les gros cross, mais il est fortement déconseillé aux débutants. En Tarentaise moyenne, Montgirod-Arcachat, face sud-est très raide, travaille dès le début de matinée avec une brise thermique agréable vers 10h ; quand le régime de vallée s'établit, il vient par-dessus dès 11h.",
+      "focus": ["fort-du-truc-chapelle-st-michel", "plan-de-la-boutte", "montgirod-arcachat-se"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "À partir de 11 h, la brise de l'Isère monte, et monte fort",
+      "text": "Dans la Tarentaise moyenne, la brise montante se met en place vers 11h, à Moûtiers et à Centron ; à Bourg-Saint-Maurice, elle arrive vers 12h-13h et devient souvent forte à partir de 14h, avec 30 km/h, voire 40 et plus. À Centron, la vallée forme un venturi, un goulot où le vent accélère, et l'atterrissage de Montgirod devient potentiellement dangereux après 11h. La brise est plus forte encore avec un vent météo de nord ou de nord-ouest. On consulte donc la balise FFVL des Ilettes avant tout vol.",
+      "focus": ["brise-isere-tarentaise", "venturi-centron-montgirod", "brise-forte-tarentaise-apres-midi"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "À Bourg-Saint-Maurice, la brise rencontre l'air des Chapieux",
+      "text": "À Bourg se rencontrent la brise montante de la Tarentaise et un flux descendant de la vallée des Chapieux : les masses d'air froid des glaciers provoquent un flux important, auquel s'ajoute la brise de Beaufort, forte à Roselend, parfois aidée par un vent météo de nord ou nord-ouest. Ce courant s'accélère par effet venturi entre Prainan et Clapet, puis déboule sur Bourg à la rencontre de la brise montante, d'où un enchaînement désordonné de vent de vallée puissant et de vent descendant très fort, avec rouleaux et turbulences. C'est une confluence plus dangereuse qu'utile, dès 11h-12h en été.",
+      "focus": ["brise-chapieux-roselend", "venturi-chapieux-prainan-clapet", "confluence-bourg-saint-maurice"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "À Landry, la brise se partage vers le Ponthurin et les Arcs",
+      "text": "À Landry, la brise de vallée principale se partage : une branche alimente la vallée du Ponthurin, vers Peisey-Nancroix, et donne les meilleures conditions de l'après-midi au versant de Peisey-Nancroix. Elle y est généralement moins forte, au point que le Ponthurin peut offrir un refuge quand la brise est trop forte aux Ilettes. Cette branche bascule ensuite par le col de la Chal vers la vallée de l'Arc : la combe entre l'Aiguille Grive et l'Aiguille Rousse est turbulente, et le versant est de l'Aiguille Rousse, sous le vent de la crête, est jugé particulièrement infréquentable. D'où la consigne : après le décollage de l'Aiguille Grive, dégager vite vers l'ouest.",
+      "focus": ["brise-peisey-nancroix", "brise-col-de-la-chal-arc", "confluence-col-de-la-chal", "rotor-aiguille-rousse-est"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le soir, les Arcs et Peisey-Vallandry restituent",
+      "text": "Le soir, le versant ouest de Peisey-Vallandry, alimenté par la branche de brise qui se divise à Landry, offre des vols de restitution jusqu'à 19h-20h, avec des plafonds fréquents au-delà de 3000 m ; la navette du club monte au Petit Déco entre 17h30 et 18h30 en juillet-août. Aux Arcs, le « 10 de Face », sur la face ouest d'Arc 1800, est ainsi nommé pour son aérologie particulièrement favorable : des vols de performance y sont possibles de 13h45 à 18h30, et un récit y boucle un triangle de 114 km en remontant tranquillement la station dans la brise jusqu'à 2600 m. Les Charmettes sont bonnes en restitution de 17h à 20h, mais leur décollage est interdit du 1er juin au 30 octobre.",
+      "focus": ["versant-peisey-vallandry", "peisey-vallandry-soir", "arcs-10-de-face", "charmettes-petite-chal-restitution"],
+      "phase": "evening"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "La crête des Arcs : rester du côté ouest",
+      "text": "La chaîne des Arcs est presque parallèle à la vallée de l'Isère, donc peu propice au vol de crête ; mais le virage à 90° vers Tignes et Val d'Isère ré-oriente le flux plus à l'est sur les pentes ouest et nord-ouest, si bien qu'on longe facilement la crête du sud vers le nord, de l'Aiguille Grive aux 2 Têtes, plus difficilement du nord vers le sud. Sur les 2 Têtes, la brise s'accélère : par régime de brise établi, il est impératif de rester sur le versant ouest, à Arc 1600, Arc 1800 ou Peisey-Vallandry, car le versant est, Arc 2000, est sous le vent de la crête principale.",
+      "focus": ["crete-des-arcs-grive-2-tetes", "acceleration-2-tetes"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Haute Tarentaise : Tignes et Val d'Isère",
+      "text": "En amont de Bourg, la brise de vallée se poursuit vers Tignes et Val d'Isère : à la Tête de Solaise, l'activité thermique et la brise sont soutenues dès 11h, pour pilotes expérimentés ; à Tignes, les brises sont très confluentes en été, avec un vent d'altitude qui peut rentrer fort et soudainement. À la Tovière, par sud-ouest à ouest, le vol dynamique est possible, et l'été, par conditions instables, la FFVL parle de très beaux plafonds et de vols tardifs. La crête du Lavachet, exposée à l'ouest comme la Tovière, sert probablement de relance vers Val d'Isère, mais c'est une déduction qu'aucun récit ne confirme.",
+      "focus": ["brise-haute-tarentaise", "solaise-face-ouest-thermique", "tignes-toviere-thermique", "tignes-toviere-dynamique", "lavachet-crete-entre-toviere-et-val-d-isere"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Bourg-Saint-Maurice : le Fort de la Platte, le Fort du Truc, la Boutte",
+      "text": "Le Fort de la Platte (2000 m), site du matin en face est, convient aux débutants d'après la FFVL, mais son décollage est dans la zone de tir de la Leissette : on vérifie son activation. Le Fort est un lieu privé, et le club propose une navette en juillet-août. Le Fort du Truc, 500 m plus bas, est peu utilisé. Le Plan de la Boutte n'a pas de décollage officiel mais un accord verbal du propriétaire : il faut refermer les clôtures. Le Mont, à Séez, est strictement interdit dès que les clôtures sont en place : les négociations avec les agriculteurs sont difficiles, et il ne faut ni décoller ni atterrir pour éviter une fermeture définitive.",
+      "focus": ["fort-de-la-platte", "fort-du-truc", "plan-de-la-boutte", "le-mont-seez"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Les Arcs et Peisey-Vallandry : les décollages d'été",
+      "text": "Aux Arcs, Cachette (2134 m), en haut du télésiège, est le décollage d'été face au sud-ouest et à l'ouest, site du matin pour les biplaces, avec une confluence dangereuse à partir de 12h en cas de foehn. Quand le vent est trop de travers à Cachette, on prend l'Arpette (2080 m), à dix minutes de marche : l'ancien Altiport, juste à côté, est strictement interdit. L'Aiguille Grive (2732 m) est le vol mythique des élèves en progression, favorable par vent météo ou brise ; si l'on décolle en début d'après-midi, on dégage vite vers l'ouest. À Peisey-Vallandry, l'Écureuil (1800 m), très raide et bordé d'arbres, est un beau décollage pour le vol du soir.",
+      "focus": ["arc-1600", "arpette-arc-1600", "altiport-arc-1600-interdit", "aiguille-grive", "l-ecureuil"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Où se poser à Bourg : les Ilettes plutôt que La Gare",
+      "text": "Les Ilettes (754 m), entre Landry et Bourg, sont l'atterrissage principal : immense et facile, autorisé à l'année, recommandé comme refuge en confluence moyenne. La brise y devient forte l'après-midi, avec une ligne à haute tension parallèle au terrain, et avec la bise le flux des Chapieux peut y entrer. On les préfère pourtant à La Gare et au Versoyen dès que la brise est installée, car ces deux terrains sont dans une confluence et sous le vent de la ville dès midi l'été. La Gare est autorisée du 1er juillet au 31 août seulement, étroite, utilisable le matin ou en fin de journée ; le Versoyen est autorisé à l'année, avec des arbres d'un côté, un torrent de l'autre, des promeneurs et des chiens.",
+      "focus": ["bourg-saint-maurice-vallee", "atterrissage-ilettes-brise", "la-gare-bourg-saint-maurice", "versoyen-bourg-saint-maurice", "atterrissages-gare-versoyen-turbulence"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Le triangle de 114 km, 1/2 : du Fort de la Platte au Mont-Blanc et aux Aravis",
+      "text": "Un récit de mi-juillet, par vent de nord-nord-ouest, raconte un triangle de 114 km. Le décollage a lieu au Fort de la Platte par basses couches très stables : l'air est sélectif, le pilote observe son collègue pour exploiter au mieux l'ascendance, tandis qu'un autre, passé à côté du thermique, rentre dans la couche stable et se pose. L'extraction se fait au-dessus de la Pointe de Combe Neuve, où l'on fait le plafond, à 3500 m. De là, deux options : filer par le Beaufortain, ou chercher les hauts massifs, qui mènent au Mont-Blanc, puis à Passy, Varan, la Pointe Percée et les Aravis, jusqu'au Mont Charvin.",
+      "focus": ["triangle-114-beaufortain-mont-blanc", "fort-de-la-platte-extraction", "pointe-de-combe-neuve-plafond-3500"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Le triangle de 114 km, 2/2 : le retour par le Beaufortain et la confluence d'Aime",
+      "text": "Le retour passe par la Roche Pourrie, le Mont Mirantin et le Grand Mont, puis le Crêt du Rey, où l'on gagne 150 m précieux pour atteindre la Pointe de la Combe Bénite sans se retrouver sous le vent, malgré le vent de nord. Cette pointe est un perchoir faible : le pilote y reste de longues minutes à gratter, puis saute au milieu du vallon, dans une longue descendance du flux du Cormet d'Arêches. Il ne retrouve de l'ascendance qu'au-dessus d'Aime, dans la confluence entre ce flux descendant et la brise qui remonte vers Bourg : un thermique des plus sains, qui le monte de 300 m. C'est une observation unique, d'un seul vol ; il termine ensuite par les Arcs, dans la brise du soir.",
+      "focus": ["cret-du-rey-relance", "pointe-de-la-combe-benite-perchoir", "flux-descendant-areches-aime", "aime-confluence-thermique"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Parc de la Vanoise, tirs militaires et gypaète : les limites",
+      "text": "Le cœur du Parc national de la Vanoise est tout proche : l'arrêté de 2026 qui règle le survol à moins de 1000 m du sol n'autorise ce survol que dans des secteurs listés, tous en Maurienne ; il n'y en a donc aucun en Tarentaise, et l'on ne décolle que sur les sites de l'annexe. Les champs de tir R 331 et R 332 du 13e BCA concernent le Fort de la Platte, le Fort du Truc et le Plan de la Boutte : l'évitement est obligatoire pendant l'activité. Enfin, des zones de sensibilité du gypaète (Charbonnet, Peisey 3, Gorges de la Daille) changent chaque saison : on se renseigne auprès du PCHT avant de partir.",
+      "focus": ["coeur-pnv-mont-pourri-ponthurin", "coeur-pnv-tignes-val-d-isere", "tir-r331-r332-arbonne-leissette", "zsm-gypaete-charbonnet-plan-de-la-boutte", "zsm-gypaete-peisey-3"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par nord ou nord-ouest : le flux des Chapieux se renforce",
+      "text": "Un vent de nord ou de nord-ouest s'ajoute au flux descendant des Chapieux et à la brise de Beaufort : le venturi entre Prainan et Clapet déboule plus fort sur Bourg, et la brise de l'après-midi, déjà forte, l'est encore davantage. Avec la bise, ce flux peut aller jusqu'à entrer aux Ilettes, avec confluence. À Montgirod, avec un vent de nord à ouest, un vol reste possible avant 13h grâce au microclimat de Centron et de Villette.",
+      "focus": ["venturi-chapieux-prainan-clapet", "atterrissage-ilettes-brise", "brise-forte-tarentaise-apres-midi", "montgirod-arcachat-se"],
+      "phase": "afternoon",
+      "wind": { "from": "NO", "kmh": 20 },
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par sud : le foehn, le « vent du Saint-Bernard »",
+      "text": "Quand un courant de sud, du sud-est au sud-ouest, souffle en altitude, le foehn se déverse d'Italie par le col du Petit-Saint-Bernard : c'est le « vent du Saint-Bernard », d'axe nord-est – sud-ouest sur Bourg-Saint-Maurice, aussi violent qu'instantané. Il se lève et se renforce en quelques minutes, avec des rafales à 80 km/h sans prévenir, peut descendre toute la vallée jusqu'à Moûtiers, et reste violent entre 100 et 500 m du sol alors qu'il est indécelable au sol et au décollage. Un flux de nord-est de 15 km/h ou plus à la balise du col annonce probablement son installation, et la consigne est de ne pas décoller. À Tignes et Val d'Isère, le foehn et la lombarde, vents d'est à sud frontaliers, sont très mauvais, avec de grosses rafales.",
+      "focus": ["foehn-vent-du-saint-bernard", "brise-petit-saint-bernard", "foehn-lombarde-tignes-val-d-isere"],
+      "phase": "afternoon",
+      "wind": { "from": "S", "kmh": 25 },
+      "view": "massif"
+    },
+    {
+      "chapter": "Les transitions",
+      "title": "Sortir de la Tarentaise : Beaufortain, Aravis, Chartreuse",
+      "text": "Du Fort du Truc, un vol d'avril 2015 a bouclé un triangle FAI de 223 km par le Parmelan et Crolles, avant de revenir à Sainte-Foy ; le même pilote avait réalisé 243 km le 12 avril, mais le récit ne décrit pas l'itinéraire entre les sommets. Vers le Beaufortain, la sortie passe par la Légette du Grand Mont, où l'on peut monter à 3200 m. Le col du Petit-Saint-Bernard, enfin, est un terrain de soaring non officiel, où un flux de nord-est impose la vigilance à cause du foehn.",
+      "focus": ["triangle-223-truc-parmelan-crolles", "beaufortain/legette-du-grand-mont-plafond-3200", "col-du-petit-saint-bernard-soaring"],
+      "view": "massif"
+    }
+  ]
+}

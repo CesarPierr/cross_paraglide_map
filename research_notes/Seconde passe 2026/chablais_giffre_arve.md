@@ -122,3 +122,34 @@ Passe du 7 octobre 2026 (brief « thermiques et points de relance »). Thermique
 **Introuvable** : Rochers de Rion (« LA pompe à couillon » du topo de Chamonix vers les Aravis), arête des Saix côté Passy/Sixt, Tête des Mariages et combe de Verreu au Criou, Pas du Taureau et Dent de Barne (Haut-Giffre) : absents d'OSM/Nominatim, cités dans les descriptions seulement. Peu de récits de cross détaillés pour Salève → Môle, Sommand, Praz de Lys et la vallée d'Aulps : les comptes rendus XContest/CFD sont inaccessibles. Le secteur Annecy du Salève (Collonges, cross vers le Môle) reste décrit surtout par les fiches FFVL.
 
 **URL bloquées** : XContest (connexion), CFD `parapente.ffvl.fr/cfd/liste/...` (Cloudflare), vidéos YouTube (descriptions illisibles en curl).
+
+
+## Passe secteurs minces
+
+Date : 7 octobre 2026. Convention de confiance : récit précis ou plusieurs récits = `medium`, extrapolation du relief = `low` avec « déduction ». Identifiants existants conservés, rien supprimé. `npm run data:build -- --check` : aucune alerte sur le massif.
+
+### Salève et Genevois (`saleve-genevois`)
+
+Volumes avant → après : brises 2 → 4, convergences 0 → 0, hazards 8 → 9, thermiques 5 → 6, soarings 2 → 2, décollages 3 → 3, atterrissages 3 → 3, effets synoptiques 7 → 7 (deux complétés), routes 3 → 5, conseils 5 → 9 ; 9 sources nouvelles (S211 et suivantes, voir le JSON).
+
+**Sources nouvelles**
+- Récit du cross du 17 avril 2016 du Téléphérique à Planfait (blog Liberiste, publié le 9 février 2017) et sa vidéo : TMA2, une heure à zéro avant le thermique à 1645 m, point bas à 984 m, thermique de la Chapelle-Rambaud, raccroches de Sous-Dine et du Parmelan ; commentaires de deux pilotes locaux (décoller des faces est dès 11h-12h au printemps ; Margériaz plutôt que Colombier dans les Bauges).
+- Page « Site Parapente Salève » du même blog (2015) : lue, déjà recoupée par les fiches de clubs ; ajoute l'atterrissage « Pont de Zone » (411 m, probablement le même terrain que Jules Ferry : non vérifié, donc pas de fiche créée) et la mention « bulles qui remontent au printemps et en été ».
+- MétéoSuisse, blog « Les vents du Léman » (déjà S117) relu : le séchard se prolonge « jusque sur les pentes ensoleillées du Salève, du Vuache et du Jura », ≈10h-16h ; vitesse en nœuds probable (le texte écrit « km/h »).
+- Presse : Dauphiné Libéré (début lisible seulement) sur le triangle de 143 km du 21 août 2023 ; extrait du Messager (page en 403) pour la date et la canicule.
+- Vidéo de Patrick Prince (3 août 2024) : Téléphérique → Planfait, 34 km en 1 h 26, sans détail de trajet.
+- Carnet de vol de Franck Largeault (6 décembre 2019) : vent de sud 22/32 à la balise du Salève, turbulent aux Crêts.
+- Positions : géocodeur IGN (La Muraz, La Chapelle-Rambaud, Sous-Dîne, Parmelan, Dents de Lanfon, Saint-Ferréol, mont Billiat), fiche FFVL 1157 (Planfait), Nominatim (Nyon, Jet d'eau).
+
+**Ajouté ou corrigé**
+- *Brises* : le séchard (`saleve-sechard-petit-lac`, `medium`, 10h-16h, 1 à 2 Bf, parfois 3 Bf), seule brise « de plaine » documentée ; un écoulement descendant des faces ouest (`saleve-ecoulement-descendant-matinal`, `low`, déduction, horaires 21h-9h distincts). Le résumé du massif, qui disait qu'aucune brise n'était documentée, est corrigé.
+- *Thermique et relance* : La Chapelle-Rambaud, « fameux thermique » au milieu du « désert » de ≈15 km entre le Salève et Sous-Dine ; thermique devant le Téléphérique complété (zéro pendant une heure, 1645 m).
+- *Danger* : sortie du Salève vers Annecy (plafond sous la TMA2, point bas à 4 km, dérive de 25 km/h NO) ; espaces aériens précisés (TMA2 1674 m, TMA6 FL85, TMA7 FL105, CTR d'Annecy 1065 m) ; Crêts par sud complétés par le vol de 2019.
+- *Routes* : `saleve-sous-dine-parmelan-planfait-2016` (points nommés et localisés, Sous-Dine et Parmelan hors de la boîte du massif donc gardés comme balises de route et non comme thermiques) ; `saleve-triangle-143km-2023` (3 balises nommées, somme à vol d'oiseau ≈135 km contre 143 km déclarés, départ placé au Téléphérique par défaut).
+- *Effets synoptiques* : nord-ouest (2016) et sud (2019) complétés ; 4 conseils.
+
+**Introuvable ou non fait**
+- Aucune convergence documentée dans le Genevois : aucun récit ne parle de rencontre de brises entre l'Arve, le Petit-Lac et le Salève ; pas de fiche inventée.
+- Aucun texte de club sur une brise matinale ; l'écoulement descendant reste une déduction. Les « faces est » conseillées pour partir tôt ne sont attribuées à aucun décollage (pas de fiche, seulement un conseil).
+- Traces XContest/CFD des grands vols (dont le 143 km et les vols vers Montreux) inaccessibles ; le Messager (403) non lu au-delà de l'extrait.
+- Les Pomiers (pente de modélistes à 1330 m, face N-NE) cités par un site d'aéromodélisme ne sont pas un décollage de parapente et n'ont pas été retenus.

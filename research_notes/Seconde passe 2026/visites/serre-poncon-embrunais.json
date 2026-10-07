@@ -1,0 +1,108 @@
+{
+  "massif": "serre-poncon-embrunais",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "Serre-Ponçon : la cuvette où se rejoignent la Durance et l'Ubaye",
+      "text": "Serre-Ponçon est la cuvette où se rejoignent la Durance et l'Ubaye, aujourd'hui occupée par le lac. Chaque après-midi d'été, une brise forte remonte l'axe de la Durance : elle rend les atterrissages turbulents après 14-15 h et fait préférer les vols du matin ou de fin d'après-midi. Saint-Vincent-les-Forts, face au lac, est le grand site de restitution, et le seul utilisable par mistral. Sur la rive nord, Chorges se vole le matin, avant que la brise de Gap ne rentre. Les départs de cross se font vers le sud, par Dormillouse et la Blanche, ou en remontant la Durance.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le matin, Chorges et ses faces sud-est",
+      "text": "Sur la rive nord, Chorges est un site du matin : les décollages des Jambons, de Pra-Gasta, des Ballons et du Clot Rond, orientés du sud-est au sud-ouest, sont conseillés le matin pour des départs en cross, avant que les brises ne tournent. À cette heure, la brise est de sud-est, et à l'atterrissage du stade elle est même descendante, de l'est, avant de basculer à l'ouest en cours de matinée. On peut penser que les faces chauffées tôt donnent les premiers thermiques, mais aucun récit n'en décrit la forme.",
+      "focus": ["therm-jambons-matin", "chorges-jambons-haut", "chorges-les-ballons", "chorges-clot-rond", "atterro-chorges-stade"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Vers 11 h, la brise de Gap rentre",
+      "text": "Une brise de vallée peut rentrer de Gap vers 11 h : on la sent à partir de 1000 m, et elle devient vent de nord quand le mistral souffle. À Chorges, les brises tournent progressivement du sud-est le matin à l'ouest dans la journée : à Serre Michèle, on décolle ainsi en travers droit l'après-midi. C'est ce flux de Gap qui pousse les pilotes de la rive nord vers le lac, dans le sens Piolit puis Morgon.",
+      "focus": ["brise-gap-chorges", "chorges-serre-michele", "piolit-chabrieres-morgon"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "L'après-midi, la Durance remonte vers le lac",
+      "text": "La Durance remonte toutes les Alpes du Sud sur un axe sud-ouest ; à Sisteron, la cluse donne des brises de vallée très régulières, très fortes l'après-midi en été. Vers Serre-Ponçon, elle souffle de 12 h à 18 h, avec un maximum entre 14 et 17 h, et l'atterrissage devient turbulent dès qu'elle est forte, généralement après 14-15 h. À Embrun, au Mont Guillaume, la brise est forte l'après-midi en période estivale : on décolle à partir de midi, mais on anticipe l'atterrissage au bord du lac. L'atterrissage de Pierre Plate n'est d'ailleurs conventionné que selon la force de la brise.",
+      "focus": ["brise-durance", "embrun-atterro-brise", "mont-guillaume-deco", "atterro-pierre-plate"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le soir, la restitution au-dessus du lac",
+      "text": "En fin de journée, la brise soutenue de l'après-midi s'adoucit en une légère brise du soir, et les faces ouest au-dessus du lac offrent de super vols de restitution. À Saint-Vincent, orienté ouest à nord-ouest, la fin d'après-midi est souvent magique et le temps de vol quasi garanti. Au retour du Morgon, la petite plaine devant Saint-Vincent voit souvent des confluences et des restitutions jusqu'aux derniers rayons de soleil. Attention à l'inversion brutale de la brise peu avant le coucher du soleil, et à des moutons sur le lac, qui annoncent un renforcement : il faut alors aller poser.",
+      "focus": ["st-vincent-soaring", "brise-lac-serre-poncon", "therm-st-vincent-plaine-restitution", "pierre-arnoux-soaring"],
+      "phase": "evening"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Le Morgon, le Mont Guillaume, Dormillouse : les clés du lac",
+      "text": "Les faces du Mont Guillaume et du Morgon sont les zones thermiques les plus fortes du secteur. Entre les deux, la transition Morgon → Guillaume marche très bien : on est brise de cul, et le Guillaume sort de très bas en appui dynamique jusque très haut, avec des plafonds cités de 2950 m au Guillaume et 3000 m au Morgon. Pour sortir de Saint-Vincent, on va chercher les thermiques du ravin de la Séouve et de Saint-Jean-Montclar, qui mènent jusqu'à Dormillouse. Tous les récits du fil de discussion font de la remontée à Dormillouse la clé du cross.",
+      "focus": ["thermiques-morgon", "thermiques-mont-guillaume", "therm-seouve-saint-jean", "therm-dormillouse-relance"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Saint-Vincent et Montclar : le grand site, et la sortie facile",
+      "text": "Saint-Vincent, à 1275 m, a une aérologie réputée exceptionnelle, mais le décollage est court, en falaise au-dessus d'une route, et les conditions sont fortes l'après-midi de juin à août : il est réservé aux bons pilotes, qui décollent face à la voile et patientent si c'est trop fort. La plage et les campings sont interdits à l'atterrissage du 15 juin au 31 août, et le terrain du lac, entouré d'eau en hautes eaux, est réservé aux confirmés. À Montclar, le plateau de la Chau, à 1870 m, est une grande pente herbeuse facile, d'où l'accès à la crête de la Blanche est plus facile qu'au départ de Saint-Vincent.",
+      "focus": ["st-vincent-deco", "st-vincent-brise-deco", "st-vincent-atterro-plage-interdit", "atterro-st-vincent-lac", "montclar-plateau", "therm-montclar-lachau-relance"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Mont Guillaume et Pierre-Arnoux : du côté d'Embrun et de Savines",
+      "text": "Au Mont Guillaume, le décollage en forêt, orienté sud-ouest, n'est conseillé qu'à partir de midi, à cause de la brise. Deux lignes à haute tension passent sous le déco, et un vent de travers droit, même redressé au passage du thermique, n'est pas favorable au décollage en sécurité. Pierre-Arnoux, au bord du lac, est un site d'après-midi orienté ouest, dans l'axe de la brise, souvent forte. Son atterrissage n'est praticable qu'à lac bas, hors été, sur la plage de la base nautique, ou au théâtre de verdure de Savines, sauf lors de manifestations ; à Embrun, le centre de vacances de Chadenas est privé.",
+      "focus": ["mont-guillaume-deco", "mont-guillaume-ht", "pierre-arnoux", "atterro-pierre-arnoux-voilerie", "atterro-theatre-verdure-savines", "atterro-chadenas"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Le grand classique : Saint-Vincent, Dormillouse, la Blanche, le Morgon",
+      "text": "Pour partir en cross en régime de brise, le meilleur est de filer vers le sud, en direction de Dormillouse ou de la Blanche. D'après le fil de discussion, on s'extrait de Saint-Vincent par la Séouve et Saint-Jean, on relance à Dormillouse, puis on fait 20 km de crête de la Blanche jusqu'à la tête de l'Estrop. Le plus technique est de s'extraire de Saint-Vincent, d'où l'intérêt de partir de Montclar. Au retour, on traverse vers le Morgon en abordant son versant ouest, puis on glisse vers la plaine de Saint-Vincent ; on pose plutôt au col Saint-Jean, en se méfiant de la brise de l'Ubaye et du Pic de Bernardez haché, qui contre par composante nord.",
+      "focus": ["st-vincent-dormillouse-morgon", "therm-seouve-saint-jean", "therm-dormillouse-relance", "therm-montclar-lachau-relance", "atterro-col-saint-jean"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "De Gap à Saint-Vincent, dans le sens de la brise ; l'inverse est dur",
+      "text": "Le sens le plus fréquent relie Chorges à Saint-Vincent : on fait la transition du Piolit au Morgon, par Chabrières, ou par Chanteloube pour chercher une conflue qui arrive plus haut et plus haut vent. La brise de Gap pousse dans ce sens. Le chemin inverse est beaucoup plus dur : plusieurs pilotes se sont fait enterrer en visant le Pic de Chabrières depuis le Morgon, avec une brise forte de face et une dégueulante, et se sont posés vers Chorges. Pour remonter vers Ancelle, une variante passe par le barrage, le Mont Colombis, où il faut se méfier de la brise qui remonte la Durance, puis la Bâtie-Neuve et le Piolit.",
+      "focus": ["piolit-chabrieres-morgon", "therm-chabrieres-conflue", "chabrieres-degueulante-brise-gap", "dormillouse-vers-drac", "therm-colombis-relance"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Sous le vent de la crête : Orres, Réallon, Montclar",
+      "text": "Aux Orres, par vent de sud ou d'est, les décollages de la station sont sous le vent de la crête, ce qui les rend fortement déconseillés ; à Costias, il ne faut jamais décoller de travers, avec une rentrée de nord ou d'est. À Réallon, le décollage sud-est est à utiliser le matin, car l'après-midi il passe sous le vent de la brise de sud-ouest, et le survol des pistes est interdit à moins de 100 m. Au col de la Gardette, un venturi peut être trop fort, et la Lombarde est à surveiller. À Montclar, par sud fort, l'atterrissage du col Saint-Jean est turbulent. La zone militaire R196 concerne Chorges, Serre Buzard et les Orres, mais elle est généralement inactive.",
+      "focus": ["orres-sous-le-vent", "reallon-sous-le-vent-sw", "col-de-la-gardette-venturi", "montclar-lignes-s-fort", "espace-aerien-r196-serre-poncon"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par mistral : Saint-Vincent, le seul site du lac",
+      "text": "Par nord-ouest et par mistral, Saint-Vincent, orienté ouest à nord-ouest, reste volable : c'est l'un des seuls sites volables du secteur, le repli de tous, et il est très fréquenté. Partout ailleurs on vole sous le vent : à Chorges, le vol par vent de nord est un vol sous le vent avec toutes ses conséquences, et la brise de Gap y devient vent de nord. Au Morgon, si le nord est trop fort, les thermiques sous le vent sont encore plus atomiques. Par faible nord en altitude, Serre Buzard est en revanche très bon.",
+      "focus": ["st-vincent-soaring", "chorges-vents-N-E", "thermiques-morgon", "ecrins-vallouise-haute-durance/soaring-serre-buzard", "conv-embrun-nord"],
+      "wind": { "from": "NO", "kmh": 30 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par sud ou par est : presque tout passe sous le vent",
+      "text": "Par vent de sud, Serre Buzard est désagréable, Pierre-Arnoux est sous le vent de la crête, les décollages des Orres sont sous le vent, et Montclar est turbulent par sud fort ; seul Chorges profite d'une tendance sud. Par est, c'est Chorges qui devient de mauvaise qualité, avec des vents de travers aux décollages et une bonne rentrée du vent météo en vallée ; les Orres sont toujours sous le vent, et le Mont Guillaume est défavorable de nord-est à sud-est. Par sud-ouest, au contraire, le Mont Guillaume est favorable et Chorges offre de bonnes conditions, alors que Réallon est sous le vent de la brise.",
+      "focus": ["pierre-arnoux-sous-le-vent-sud", "orres-sous-le-vent", "mont-guillaume-deco", "chorges-vents-N-E", "reallon-sous-le-vent-sw"],
+      "wind": { "from": "S", "kmh": 20 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Les transitions",
+      "title": "Vers l'Ubaye, le Drac et Gap",
+      "text": "Dormillouse sert de relais vers l'Ubaye, et la crête de la Blanche mène vers le sud. Vers le nord-ouest, les cross de remontée vers Ancelle et le Champsaur passent soit par le barrage, le Colombis, la Bâtie-Neuve et le Piolit, avec des conflues sans appui franc au-dessus du lac, soit par le Morgon et le Guillaume en direction des Barles. Cette seconde variante est facile jusqu'au Guillaume, mais le fond de la vallée des Gourniers demande beaucoup de plafond en régime de brise. Hors régime de brise, par flux de sud, tout est plus facile : on a vu des vols de record.",
+      "focus": ["dormillouse-montclar", "dormillouse-vers-drac", "therm-colombis-relance", "therm-batie-neuve-relance", "therm-piolit-passage"],
+      "view": "massif"
+    }
+  ]
+}

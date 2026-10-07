@@ -680,7 +680,7 @@
    "id": "champsaur-valgaudemar",
    "name": "Champsaur et Valgaudemar (Saint-Léger-les-Mélèzes, Ancelle, Chaillol, Laye, Drac)",
    "parent_massif": "Écrins (bordure sud)",
-   "summary": "Haute vallée du Drac, large bocage ensoleillé (« 300 jours de soleil ») dominé au nord par le Vieux Chaillol, réputée depuis 20 ans pour son aérologie. Le site de référence est le Cuchon d'Ancelle/Saint-Léger (S/SO, soaring par sud et sud-ouest, « excellent en fin de journée l'été », restitution du soir avec un peu de sud qui amplifie), alors que les Richards (SO, 1540 m, départs de cross vers Grenoble ou Savines) et Orcières (cairns, brise forte jusqu'en début de soirée) complètent les faces ouest. Les brises sont tirées par deux appels opposés: la brise remontante du Drac (de Vizille vers Corps puis Chauffayer et Saint-Bonnet, selon une carte collaborative) et le flux qui passe le col Bayard depuis la cuvette de Gap (diapo de Gabriel Briffe, sens Gap → Champsaur, contraire à une flèche de la carte collaborative: les deux versions sont conservées). Le col du Noyer (Dévoluy) et le Puy de Manse (soaring 15-25 km/h, interdit du 1er juin au 15 novembre) bordent le secteur; les Écrins voisins imposent la réglementation du parc national. Le Valgaudemar, encaissé, n'est documenté que par une flèche de brise remontante depuis Saint-Firmin; aucun site de vol officiel n'y a été retrouvé.",
+   "summary": "Haute vallée du Drac, large bocage ensoleillé (« 300 jours de soleil ») dominé au nord par le Vieux Chaillol, réputée depuis 20 ans pour son aérologie. Le site de référence est le Cuchon d'Ancelle/Saint-Léger (S/SO, soaring par sud et sud-ouest, « excellent en fin de journée l'été », restitution du soir avec un peu de sud qui amplifie), alors que les Richards (SO, 1540 m, départs de cross vers Grenoble ou Savines) et Orcières (cairns, brise forte jusqu'en début de soirée) complètent les faces ouest. Les brises sont tirées par deux appels opposés: la brise remontante du Drac (de Vizille vers Corps puis Chauffayer et Saint-Bonnet, selon une carte collaborative) et le flux qui passe le col Bayard depuis la cuvette de Gap (diapo de Gabriel Briffe, sens Gap → Champsaur, contraire à une flèche de la carte collaborative: les deux versions sont conservées). Le col du Noyer (Dévoluy) et le Puy de Manse (soaring 15-25 km/h, interdit du 1er juin au 15 novembre) bordent le secteur; les Écrins voisins imposent la réglementation du parc national. Le Valgaudemar, encaissé, n'est documenté que par une flèche de brise remontante depuis Saint-Firmin; aucun site de vol officiel n'y a été retrouvé. Compléments de la passe « secteurs minces » : à Orcières le matin est très calme puis la brise s'installe pour la journée, avec un vol du soir (restitution) aux thermiques doux ; aux Richards la brise s'installe parfois de façon chaotique en début d'après-midi et le nord qui s'y ajoute rend l'atterrissage infréquentable. Les cheminements réels passent par le Cuchon, les Richards, le Grun de Saint-Maurice, La Salette et le Colombier (parcours classique vers Grenoble, plafonds de plus de 3000 m), avec un piège de brise sur la transition Colombier → Coiro. Au Valgaudemar, une brise « ronflante » est citée par un pilote du CHVD, et deux vols rando (Olan, col de Pétarel) documentent des décollages et des champs d'atterrissage ; le Vieux Chaillol est un vol rando plein sud imposé par le Parc des Écrins.",
    "bbox": [
     5.95,
     44.58,
@@ -728,19 +728,22 @@
        "coord_quality": "source"
       }
      ],
-     "hours": "après-midi (été); sans horaire dans la source",
+     "hours": "matin très calme ; installation parfois chaotique en début d'après-midi, forte jusqu'en début de soirée (Orcières, Richards) ; restitution du soir",
      "speed_kmh": {
       "typical": 15,
       "max": 30
      },
      "season": "avril-septembre",
-     "description": "Grande flèche N→S de la carte collaborative suivant le Drac de Vizille à Saint-Jean-Saint-Nicolas; le schéma de Briffe (diapo 60) montre des filets turquoise venant de Grenoble qui convergent vers l'Obiou–Taillefer. Les brises du haut Champsaur sont « fortes jusqu'en début de soirée » aux cairns d'Orcières et dès le début d'après-midi à l'atterro des Richards. Vitesses = interprétation (aucune mesure).",
+     "description": "Grande flèche N→S de la carte collaborative suivant le Drac de Vizille à Saint-Jean-Saint-Nicolas; le schéma de Briffe (diapo 60) montre des filets turquoise venant de Grenoble qui convergent vers l'Obiou–Taillefer. Les brises du haut Champsaur sont « fortes jusqu'en début de soirée » aux cairns d'Orcières et dès le début d'après-midi à l'atterro des Richards. Vitesses = interprétation (aucune mesure). Compléments de pilotes (sans direction nouvelle) : à Orcières « le matin c'est très calme, après la brise s'installe pour la journée », il vaut mieux être posé à midi, et une houle sur le petit lac près de l'atterrissage signale qu'elle se lève (forum, 2017) ; aux Richards « l'installation de la brise en début d'après-midi est parfois chaotique » (CHVD, 2010) ; l'atterrissage officiel d'Orcières est turbulent dans la brise (CHVD, 2014) ; le soir, à 17h30 au Cairn d'Orcières, des conditions anémiques puis du soaring et des thermiques doux pendant au moins une heure (CHVD, 2010). La direction reste celle des deux versions conservées ci-dessus.",
      "confidence": "low",
      "sources": [
       "S55",
       "S53",
       "S151",
-      "S68"
+      "S68",
+      "S194",
+      "S204",
+      "S203"
      ]
     },
     {
@@ -779,12 +782,13 @@
       "max": 25
      },
      "season": "avril-septembre",
-     "description": "Version 1 (Briffe, diapo 60): flux jaune qui part de Gap, franchit le col Bayard et file vers le Champsaur puis Obiou–Taillefer. Version 2 (carte collaborative, flèche La Fare-en-Champsaur → Saint-Bonnet → Romette): sens inverse, Champsaur → Gap. Les deux sources divergent, confiance basse; seul le fait qu'il existe un échange par le col Bayard est commun. Brise de Gap attestée à l'atterro des Richards dès début d'après-midi.",
+     "description": "Version 1 (Briffe, diapo 60): flux jaune qui part de Gap, franchit le col Bayard et file vers le Champsaur puis Obiou–Taillefer. Version 2 (carte collaborative, flèche La Fare-en-Champsaur → Saint-Bonnet → Romette): sens inverse, Champsaur → Gap. Les deux sources divergent, confiance basse; seul le fait qu'il existe un échange par le col Bayard est commun. Brise de Gap attestée à l'atterro des Richards dès début d'après-midi. Observation de compétition (Trans'Alps, août 2024) : la transition au-dessus du col Bayard de Gap vers le nord est interminable, on avance dans la brise en décalant le thermique ; en fin de manche la brise contre à l'arrivée à Chorges.",
      "confidence": "low",
      "sources": [
       "S53",
       "S55",
-      "S68"
+      "S68",
+      "S207"
      ]
     },
     {
@@ -817,20 +821,49 @@
        "coord_quality": "approx"
       }
      ],
-     "hours": "après-midi (été); sans horaire dans la source",
+     "hours": "après-midi (été) ; « brise ronflante » ; 10-15 km/h à l'atterrissage de La Chapelle en fin d'après-midi (30 septembre 2009)",
      "speed_kmh": {
       "typical": 15,
       "max": 25
      },
      "season": "avril-septembre",
-     "description": "Flèche de la carte collaborative (dossier « Ecrins – Valgaudémar ») remontant la vallée depuis Saint-Firmin; aucune autre source lue (pas de site de vol officiel). Tracé et vitesses = déduction à partir de la carte.",
-     "confidence": "low",
+     "description": "Flèche de la carte collaborative (dossier « Ecrins – Valgaudémar ») remontant la vallée depuis Saint-Firmin; aucune autre source lue (pas de site de vol officiel). Tracé et vitesses = déduction à partir de la carte. Un pilote du CHVD écrit que la vallée du Valgaudemar « est connue pour sa brise ronflante », mais offre de grands champs plats accueillants ; le 30 septembre 2009 il se pose près de La Chapelle-en-Valgaudémar dans une brise de 10 à 15 km/h après un vol rando de l'Olan, où l'aérologie du retour est « paisible et bien organisée » ; en juillet 2026 la traversée du Valgaudemar depuis le Banc du Peyron est suivie d'une remontée à 3500 m au Grun de Saint-Maurice. Le sens montant vient de la flèche Largeault (sources précédentes) ; aucun horaire d'inversion n'est donné.",
+     "confidence": "medium",
      "sources": [
-      "S55"
+      "S55",
+      "S205",
+      "S206"
      ]
     }
    ],
-   "convergences": [],
+   "convergences": [
+    {
+     "id": "confluence-brises-champoleon-drac",
+     "name": "Confluence des brises de vallée à l'entrée de la vallée de Champoléon (Drac Blanc / Drac Noir)",
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        6.2486,
+        44.7294
+       ],
+       [
+        6.2298,
+        44.6702
+       ]
+      ]
+     },
+     "when": "soirée (17h30 : thermiques doux du soir) ; journée (champ du croisement des vallées du Drac Blanc et du Drac Noir)",
+     "mechanism": "Récit CHVD du 11 septembre 2010 : du Cairn d'Orcières à 17h30, par conditions anémiques, un pilote file vers l'arête boisée à l'entrée de la vallée de Champoléon « pour aller chercher la confluence des brises de vallée » ; tous remontent paisiblement et font du soaring et des thermiques doux pendant au moins une heure. Le CHVD de 2014 cite aussi un grand champ au croisement des vallées du Drac Blanc et du Drac Noir. Géométrie indicative reliant l'entrée de la vallée de Champoléon (Les Gondouins) au Pont du Fossé (IGN) : la confluence n'est pas localisée par les récits.",
+     "usage": "Relance du soir à la sortie d'Orcières ; à l'atterrissage la brise est turbulente.",
+     "confidence": "low",
+     "sources": [
+      "S204",
+      "S203",
+      "S209"
+     ]
+    }
+   ],
    "hazards": [
     {
      "id": "champsaur-patous",
@@ -853,9 +886,10 @@
      "lat": 44.6707,
      "radius_km": 1,
      "conditions": "Dès le début de l'après-midi (été)",
-     "description": "Brise dès le début d'après-midi, atterrissage technique près de lignes électriques; le propriétaire du champ voisin refuse les parapentes (lire les panneaux FFVL).",
+     "description": "Brise dès le début d'après-midi, atterrissage technique près de lignes électriques; le propriétaire du champ voisin refuse les parapentes (lire les panneaux FFVL). Fiches FFVL 110 et 111 : le décollage peut devenir trop fort une fois la brise en place avec du vent d'ouest ; à l'atterrissage, quand l'ouest rentre dans la vallée l'effet venturi peut être trop fort (se vacher plus loin dans la vallée, plus ouverte), et par sud prononcé l'atterrissage est turbulent avec un fort gradient (surtout pour les biplaceurs) ; « le bocal est bien protégé du nord par les Écrins ». Forum (2017) : une tendance nord qui s'ajoute à la brise en bas rend l'atterrissage infréquentable (les Richards sont bons en sud). Parc national des Écrins à 1 km derrière le décollage, zones de nidification de l'aigle royal.",
      "sources": [
-      "S68"
+      "S68",
+      "S194"
      ]
     },
     {
@@ -896,6 +930,38 @@
      "sources": [
       "S159"
      ]
+    },
+    {
+     "id": "la-salette-valbonnais-brise-goulet",
+     "name": "Derrière La Salette : forte brise de la vallée de Valbonnais, combe du Goulet bousculante",
+     "kind": "strong-breeze",
+     "lon": 5.9786,
+     "lat": 44.8589,
+     "coord_quality": "source",
+     "radius_km": 5,
+     "conditions": "fin d'après-midi par brise de nord au-dessus des crêtes (juillet 2026) ; transition du Colombier au Coiro piégée par la brise (juillet 2020)",
+     "description": "Récit CHVD (rando-cross du Col Vert, juillet 2026) : arrivée derrière La Salette à 2600 m, « malheureusement la brise de la vallée de Valbonnais est très forte » ; la combe du Goulet est bousculante (arrivée à 1300 m, 1000 m regagnés difficilement), la brise de nord passe par-dessus et crée un rodéo ; deux autres voiles se posent à Valbonnais. En juillet 2020 un pilote est piégé par la brise sur la transition du Colombier au Coiro et se refait à Entraigues. Position : sanctuaire de la Salette (IGN).",
+     "sources": [
+      "S206",
+      "S199",
+      "S209"
+     ]
+    },
+    {
+     "id": "vieux-chaillol-ecrins-vol-vers-le-sud",
+     "name": "Vieux Chaillol : vol imposé vers le sud (Parc national des Écrins), col de la Pisse à franchir hors du sous-le-vent",
+     "kind": "airspace",
+     "lon": 6.1897,
+     "lat": 44.7355,
+     "coord_quality": "source",
+     "radius_km": 3,
+     "conditions": "toute la saison de vol rando ; col de la Pisse par vent fort",
+     "description": "Topo CHVD (2025) : seul le secteur sud est acceptable, pour la sécurité comme pour les règles du Parc des Écrins ; la limite réglementaire du vol est marquée par la frontière ombre/soleil du vallon du Tourond (il faut passer la dernière arête à l'ombre pour rejoindre l'atterrissage du Frêne) ; il faut franchir en l'air le col de la Pisse sans être sous le vent et éviter un vent trop fort. Un pilote du forum a passé le col « très haut » (200 m au-dessus) en 2006 sans souci de finesse ; un autre doute avec une aile de finesse 7 (« quelques doutes »).",
+     "sources": [
+      "S197",
+      "S198",
+      "S194"
+     ]
     }
    ],
    "thermal_spots": [
@@ -907,10 +973,12 @@
      "alt_m": 2002,
      "best_hours": "fin de matinée-après-midi; bon en fin de journée l'été",
      "trigger": "face sud du Cuchon au-dessus du plateau d’Ancelle",
-     "description": "« Nombreuses possibilités de vol (thermiques, dynamique) », mais « départ en cross difficile » (Différen'ciel); soaring par S/SO.",
+     "description": "« Nombreuses possibilités de vol (thermiques, dynamique) », mais « départ en cross difficile » (Différen'ciel); soaring par S/SO. Août 2024 : un pilote qui a négligé un thermique au Piolit n'arrive qu'« laborieusement » à repasser 2200 m au Cuchon d'Ancelle ; mai 2026 : le groupe des Richards vole jusqu'au « Cuchon de Molines » (autre relief, non localisé) avant le Grun de Saint-Maurice.",
      "sources": [
       "S64",
-      "S24"
+      "S24",
+      "S201",
+      "S202"
      ]
     },
     {
@@ -921,10 +989,13 @@
      "alt_m": 1540,
      "best_hours": "après-midi (été)",
      "trigger": "pente herbeuse face SO au-dessus de Pont-du-Fossé",
-     "description": "Bon rendement permettant le départ en cross vers Grenoble ou Savines; vol possible par nord faible. Divergence : un fil de 2012 note que « les Richards, ça décolle le matin », alors que la fiche Différen'ciel décrit un bon rendement à proximité de la station d'Orcières (départ en cross vers Grenoble ou Savines) et une brise à l'atterro dès le début d'après-midi.",
+     "description": "Bon rendement permettant le départ en cross vers Grenoble ou Savines; vol possible par nord faible. Divergence : un fil de 2012 note que « les Richards, ça décolle le matin », alors que la fiche Différen'ciel décrit un bon rendement à proximité de la station d'Orcières (départ en cross vers Grenoble ou Savines) et une brise à l'atterro dès le début d'après-midi. Compléments CHVD : le 31 mars 2021 le décollage de 12h18 est alimenté et « la pompe de service » se trouve à droite du décollage après une petite transition ; en mai 2026 une extraction collective (9 pilotes sur 9) permet de partir ensemble en cross par tendance nord ; en août 2024, après les Richards, un pilote rattrape le groupe sous un voile nuageux (+0,2 à +0,5 m/s).",
      "sources": [
       "S68",
-      "S160"
+      "S160",
+      "S200",
+      "S202",
+      "S201"
      ]
     },
     {
@@ -940,6 +1011,68 @@
      "confidence": "low",
      "sources": [
       "S64"
+     ]
+    },
+    {
+     "id": "grun-de-saint-maurice-relance",
+     "name": "Grun de Saint-Maurice : relance et plafond (3500 m) sur la bordure ouest des Écrins",
+     "lon": 6.056,
+     "lat": 44.8156,
+     "coord_quality": "source",
+     "best_hours": "après-midi (juillet 2026, ≈16h)",
+     "trigger": "Sommet en bordure ouest des Écrins après la traversée du Valgaudemar",
+     "description": "POINT DE RELANCE du cheminement Richards → La Salette → Coiro : en juillet 2026, après la traversée du Valgaudemar, le Grun de Saint-Maurice remonte un pilote à 3500 m ; en mai 2026 le groupe des Richards fait route vers lui depuis le Cuchon de Molines ; en mai 2015 la remontée le long de la bordure ouest des Écrins (Grande Autane, Grun de Saint-Maurice) offre des thermiques puissants mais sains et des plafonds de plus de 3400 m. Position : sommet (IGN).",
+     "confidence": "medium",
+     "sources": [
+      "S206",
+      "S202",
+      "S208",
+      "S209"
+     ]
+    },
+    {
+     "id": "banc-du-peyron-relance",
+     "name": "Banc du Peyron (Petit Chaillol) : 1100 m regagnés en 8 minutes",
+     "lon": 6.0754,
+     "lat": 44.76,
+     "coord_quality": "source",
+     "best_hours": "milieu d'après-midi (juillet 2026)",
+     "trigger": "Crête du Banc du Peyron sous le Chaillol, après le passage du Dévoluy",
+     "description": "RELANCE de sauvetage : en juillet 2026, un pilote arrive à 2130 m sous le Banc du Peyron après avoir coupé au plus court depuis le Ratz de Bec (sorti à 3400 m) et se retrouve en 8 minutes 1100 m plus haut, à 3260 m, avant de traverser le Valgaudemar. Position : sommet (IGN).",
+     "confidence": "medium",
+     "sources": [
+      "S206",
+      "S209"
+     ]
+    },
+    {
+     "id": "olan-eperon-sud-thermique",
+     "name": "Éperon sud de l'Olan : thermique doux qui ouvre la voie (Valgaudemar)",
+     "lon": 6.1964,
+     "lat": 44.8476,
+     "coord_quality": "approx",
+     "best_hours": "après-midi (14h15 le 30 septembre 2009)",
+     "trigger": "Éperon sud descendant du sommet de l'Olan, au-dessus du replat de décollage",
+     "description": "DÉCLENCHEUR du vol rando de l'Olan : le décollage a lieu à 14h15 sur un replat herbeux 200 m au-dessus du sentier du pas de l'Olan ; « ça monte gentiment en introduction », doux, mais il ne faut pas rater le thermique qui ouvre la voie ; c'est bon sur l'éperon sud, qui monte comme une scie : les trois têtes de l'Olan sont atteintes en un peu plus d'une demi-heure (cumulus oscillant au niveau des sommets), puis cime du Vallon, col de Chalance, pointe de la Muande, lacs des Rouies, pic des Souffles ; au retour l'aérologie est paisible, avec des endroits qui montent encore plus. Position : pas de l'Olan (IGN), approximative.",
+     "confidence": "medium",
+     "sources": [
+      "S205",
+      "S209"
+     ]
+    },
+    {
+     "id": "orcieres-champoleon-restitution-soir",
+     "name": "Entrée de la vallée de Champoléon : restitution et thermiques doux du soir depuis le Cairn d'Orcières",
+     "lon": 6.2486,
+     "lat": 44.7294,
+     "coord_quality": "approx",
+     "best_hours": "fin d'après-midi et soir (17h30, 11 septembre 2010)",
+     "trigger": "Arête boisée à l'entrée de la vallée de Champoléon, à la confluence des brises de vallée",
+     "description": "RELANCE du soir : après un décollage à 17h30 du Cairn d'Orcières par conditions anémiques (rien à gratter devant le décollage), un pilote file vers l'arête boisée à l'entrée de la vallée de Champoléon pour chercher la confluence des brises de vallée ; « ça remonte, paisiblement » et tous les pilotes ont au moins une heure de soaring et de thermiques doux dans la lumière qui baisse. Position : Les Gondouins (IGN), l'arête n'est pas localisée précisément.",
+     "confidence": "medium",
+     "sources": [
+      "S204",
+      "S209"
      ]
     }
    ],
@@ -988,6 +1121,19 @@
      "sources": [
       "S151",
       "S150"
+     ]
+    },
+    {
+     "id": "orcieres-archinard-dynamique-soir",
+     "name": "Orcières – dynamique sur Archinard en fin d'après-midi (brise forte)",
+     "lon": 6.3179,
+     "lat": 44.6623,
+     "coord_quality": "approx",
+     "wind_dirs": [],
+     "description": "Forum (2017, pilote local) : le vol de fin d'après-midi à Orcières est « plus aléatoire mais magique, gros dynamique sur Archinard » ; prérequis obligatoire : avoir l'habitude du placement dans la brise forte (relief, atterrissage). Direction de la brise non précisée. Position : hameau d'Archinard (IGN), la pente n'est pas localisée précisément.",
+     "sources": [
+      "S194",
+      "S209"
      ]
     }
    ],
@@ -1130,6 +1276,75 @@
       "S157"
      ],
      "ffvl_id": 14137
+    },
+    {
+     "id": "vieux-chaillol-sommet",
+     "name": "Vieux Chaillol – sommet (vol rando, 3163 m)",
+     "lon": 6.1897,
+     "lat": 44.7355,
+     "alt_m": 3163,
+     "orientations": [
+      "S"
+     ],
+     "coord_quality": "source",
+     "ffvl_id": 5041,
+     "description": "Vol rando du Champsaur : décollage immédiatement au sommet, petite zone peu caillouteuse pour étaler l'aile (sardines pour fixer, crampons tôt en saison), sud seulement (règle du Parc des Écrins) ; dénivelé de 1865 m depuis le hameau du Frêne (1565 m depuis la station de Chaillol), 5 h de marche, passage par la cabane des Parisiens, le col de la Pisse et le col du Riou Beyrou ; atterrissage au pré du Frêne. Divergences : la fiche FFVL 5041 donne 1030 m (incohérent), ParaglidingEarth 3120 m (E, SE, S, SO) et le topo CHVD 3163 m ; la fiche note aussi un accès depuis Molines-en-Champsaur (2000 m de montée par la vallée de la Muande). Un pilote du forum a décollé trois fois du sommet plein sud (vol de 1860 m jusqu'aux Gondouins, 2000 m jusqu'à la piste ULM du Drac).",
+     "sources": [
+      "S197",
+      "S196",
+      "S210",
+      "S194"
+     ]
+    },
+    {
+     "id": "soleil-boeuf-champsaur",
+     "name": "Soleil Bœuf (Saint-Michel-de-Chaillol) – sommet de vol rando",
+     "lon": 6.1934,
+     "lat": 44.7023,
+     "coord_quality": "source",
+     "orientations": [
+      "W",
+      "SW",
+      "S",
+      "SE",
+      "E"
+     ],
+     "description": "Vol rando CHVD (28 juin 2025) par le sentier du col du Palastre : décollage sur un large secteur de l'ouest à l'est, nord impossible, sud le plus confortable ; le col du Palastre, plus bas, permet davantage d'orientations. Ne pas confondre avec le Soleil Bœuf de Barcelonnette (Ubaye) ni celui du Dévoluy. Altitude non donnée.",
+     "sources": [
+      "S198",
+      "S209"
+     ]
+    },
+    {
+     "id": "col-de-petarel-valgaudemar",
+     "name": "Col de Pétarel (Valgaudemar, vol rando, 2430 m)",
+     "lon": 6.1701,
+     "lat": 44.7903,
+     "alt_m": 2430,
+     "orientations": [
+      "SW",
+      "W",
+      "NW"
+     ],
+     "coord_quality": "source",
+     "description": "Vol rando de 2026 : bivouac aux lacs de Pétarel (2100 m) puis montée au col ; décollage « moquette » bien orienté du sud-ouest au nord-ouest, course facile sans vent ; vallée raide et pentue, bonne pour la finesse. Position : col de Pétarel (IGN).",
+     "sources": [
+      "S195",
+      "S209"
+     ]
+    },
+    {
+     "id": "olan-replat-pas-de-l-olan",
+     "name": "Replat sous le pas de l'Olan (vol rando du refuge de l'Olan)",
+     "lon": 6.1964,
+     "lat": 44.8476,
+     "coord_quality": "approx",
+     "orientations": [],
+     "description": "Vol rando CHVD du 30 septembre 2009 : montée au refuge de l'Olan depuis La Chapelle-en-Valgaudémar (départ vers 9h, pique-nique à la terrasse), puis 200 m plus haut sur le sentier du pas de l'Olan, au-dessus d'une butte, un petit replat herbeux sert de décollage (14h15) ; atterrissage au champ près de La Chapelle. Position : pas de l'Olan (IGN), le replat n'est pas localisé précisément ; orientation non donnée.",
+     "sources": [
+      "S205",
+      "S209"
+     ]
     }
    ],
    "landings": [
@@ -1194,6 +1409,31 @@
       "S157"
      ],
      "ffvl_id": 14138
+    },
+    {
+     "id": "pre-du-frene-chaillol",
+     "name": "Le Frêne (Saint-Jean-Saint-Nicolas) – grand pré d'atterrissage du Chaillol",
+     "lon": 6.198,
+     "lat": 44.6716,
+     "coord_quality": "approx",
+     "description": "Grand pré en haut du hameau, derrière la chapelle, bien orienté et fauché tôt au printemps, sans trop d'obstacles ; selon le topo CHVD, orienté globalement dans le sens de la brise ou du catabatique, bordé d'arbres assez hauts, avec une pente légère mais irrégulièrement répartie. Position : hameau du Frêne (IGN), pré non délimité.",
+     "sources": [
+      "S198",
+      "S197",
+      "S209"
+     ]
+    },
+    {
+     "id": "la-chapelle-valgaudemar-champs",
+     "name": "La Chapelle-en-Valgaudémar – grands champs plats",
+     "lon": 6.1931,
+     "lat": 44.8177,
+     "coord_quality": "approx",
+     "description": "Récit CHVD de 2009 : grands champs plats accueillants dans la vallée ; atterrissage « comme une fleur » sur le chemin au milieu du champ, dans une brise de 10 à 15 km/h, après un vol rando de l'Olan. Position : village (IGN), champ non localisé.",
+     "sources": [
+      "S205",
+      "S209"
+     ]
     }
    ],
    "synoptic_effects": [
@@ -1217,27 +1457,43 @@
     },
     {
      "wind": "W",
-     "effect": "Col du Palastre fonctionne en brise (côté ouest); Puy de Manse (O/NO, 15-25 km/h) hors interdiction.",
+     "effect": "Col du Palastre fonctionne en brise (côté ouest); Puy de Manse (O/NO, 15-25 km/h) hors interdiction. Aux Richards, l'ouest qui rentre dans la vallée crée un effet venturi à l'atterrissage et peut rendre le décollage trop fort une fois la brise en place (fiches FFVL 110 et 111).",
      "sources": [
       "S154",
-      "S156"
+      "S156",
+      "S68"
      ]
     },
     {
      "wind": "N",
-     "effect": "Les Richards possible par nord faible (attention au nord trop fort); Cuchon: faces nord en fin de journée en régime de nord depuis le sommet; Palastre protégé du nord.",
+     "effect": "Les Richards possible par nord faible (attention au nord trop fort); Cuchon: faces nord en fin de journée en régime de nord depuis le sommet; Palastre protégé du nord. Retours de pilotes : Orcières est l'un des rares sites des Hautes-Alpes volables par nord fort (forum 2017) ; en mai 2014 la tendance nord marquée fait replier le groupe du col du Noyer vers les Richards, site plus protégé ; en mai 2026 une tendance nord annoncée est défavorable pour rentrer des Richards vers Grenoble mais l'extraction collective fonctionne ; mais un nord qui s'ajoute à la brise en bas rend l'atterrissage des Richards infréquentable.",
      "sources": [
       "S68",
       "S24",
-      "S154"
+      "S154",
+      "S194",
+      "S203",
+      "S202"
      ]
     },
     {
      "wind": "E",
-     "effect": "Col du Palastre: côté est avant la brise ou par vent d'est dominant; le col du Noyer (Dévoluy) ne vole qu'en régime d'est faible.",
+     "effect": "Col du Palastre: côté est avant la brise ou par vent d'est dominant; le col du Noyer (Dévoluy) ne vole qu'en régime d'est faible. Orcières ne vole pas par tendance est ou nord-est (forum 2017).",
      "sources": [
       "S154",
-      "S63"
+      "S63",
+      "S194"
+     ]
+    },
+    {
+     "wind": "Vent du Sud",
+     "effect": "Par flux de sud sur les jours de grands cross, le sud pousse dans le bon sens du Colombier vers le Coirot (août 2024) mais la brise de Valbonnais peut piéger la transition (juillet 2020 et 2026) ; entre le Coiro et le Taillefer on mesure 27 km/h de sud à 3400 m (31 mars 2021) et le Coiro est violent par 20 km/h de sud canalisé sur la crête (+8 m/s, mai 2015). Les Richards sont bons en sud.",
+     "sources": [
+      "S201",
+      "S199",
+      "S206",
+      "S200",
+      "S208"
      ]
     }
    ],
@@ -1294,6 +1550,127 @@
      "sources": [
       "S68"
      ]
+    },
+    {
+     "id": "richards-grun-salette-colombier-classique",
+     "name": "Parcours classique des Richards vers Grenoble : Cuchon de Molines → Grun de Saint-Maurice → La Salette → Colombier (puis Coiro, Taillefer)",
+     "waypoints": [
+      {
+       "name": "Les Richards (décollage)",
+       "lon": 6.2315,
+       "lat": 44.6811,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Grun de Saint-Maurice",
+       "lon": 6.056,
+       "lat": 44.8156,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Sanctuaire de Notre-Dame de la Salette (verrou)",
+       "lon": 5.9786,
+       "lat": 44.8589,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Le Colombier (Entraigues)",
+       "lon": 5.9406,
+       "lat": 44.8742,
+       "coord_quality": "source"
+      }
+     ],
+     "distance_km": 31.6,
+     "description": "Le CHVD appelle « parcours classique des Richards vers Grenoble » : Richards (extraction à la pompe de service, plafond de 3000 m et plus), Cuchon de Molines (mai 2026), Grun de Saint-Maurice, verrou de Notre-Dame de la Salette (formalité avec des plafonds de plus de 3000 m, problème avec un plafond bas), Colombier (« fameux thermique au-dessus des vaches », août 2024), transition vers le Coiro, Taillefer (3862 m le 31 juillet 2020), Chamrousse, Vif ou Saint-Hilaire ; le sud pousse bien dans cette direction mais la brise piège la transition Colombier → Coiro les jours de brise forte ; le 31 mars 2021 le même parcours donne 94 km jusqu'à Saint-Nazaire-les-Eymes (décollage à 12h18). La suite après le Colombier est décrite dans le secteur Matheysine ; seuls les points nommés et localisés du Champsaur sont tracés (Cuchon de Molines non localisé).",
+     "sources": [
+      "S199",
+      "S200",
+      "S201",
+      "S202"
+     ]
+    },
+    {
+     "id": "pic-de-bure-banc-peyron-valgaudemar-valbonnais-2026",
+     "name": "Pic de Bure → Banc du Peyron → traversée du Valgaudemar → Grun de Saint-Maurice → La Salette → Valbonnais (juillet 2026, extrait d'une rando-cross du Col Vert)",
+     "waypoints": [
+      {
+       "name": "Pic de Bure (Dévoluy)",
+       "lon": 5.9351,
+       "lat": 44.6266,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Banc du Peyron",
+       "lon": 6.0754,
+       "lat": 44.76,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Grun de Saint-Maurice (3500 m)",
+       "lon": 6.056,
+       "lat": 44.8156,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Sanctuaire de Notre-Dame de la Salette",
+       "lon": 5.9786,
+       "lat": 44.8589,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Valbonnais (pose)",
+       "lon": 5.9046,
+       "lat": 44.8999,
+       "coord_quality": "source"
+      }
+     ],
+     "distance_km": 40.1,
+     "description": "Récit CHVD : du Pic de Bure, un pilote coupe par le sommet du Ratz de Bec (sorti à 3400 m, point non localisé), arrive à 2130 m sous le Banc du Peyron, reprend 1100 m en 8 minutes (3260 m), traverse le Valgaudemar puis le Grun de Saint-Maurice le remonte à 3500 m ; arrivée derrière La Salette à 2600 m avec une forte brise de la vallée de Valbonnais, combe du Goulet bousculante, rodéo sous la brise de nord, pose à Valbonnais ; un autre pilote, passé plus au sud, traverse à 3300 m depuis le Pic de Chaudun et arrive au Pic Queyrel à 2435 m, puis pose à Vif après être allé jusqu'à Orionde. Le tracé est la ligne droite entre les points nommés et localisés.",
+     "sources": [
+      "S206"
+     ]
+    },
+    {
+     "id": "piolit-richards-salette-colombier-2024",
+     "name": "Sous le Piolit (Chorges) → Chabrières → Cuchon d'Ancelle → Richards → La Salette → Colombier (mi-août 2024, extrait d'un vol de Gap à Saint-Martin-d'Uriage)",
+     "waypoints": [
+      {
+       "name": "Aiguilles de Chabrières",
+       "lon": 6.3312,
+       "lat": 44.579,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Cuchon d'Ancelle",
+       "lon": 6.2236,
+       "lat": 44.6356,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Les Richards",
+       "lon": 6.2315,
+       "lat": 44.6811,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Sanctuaire de Notre-Dame de la Salette (pose d'attente de 30 minutes)",
+       "lon": 5.9786,
+       "lat": 44.8589,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Le Colombier (Entraigues)",
+       "lon": 5.9406,
+       "lat": 44.8742,
+       "coord_quality": "source"
+      }
+     ],
+     "distance_km": 47.2,
+     "description": "Vol bivouac de retour vers Grenoble : décollage sous le Piolit, aller-retour aux aiguilles de Chabrières pour jauger la masse d'air (venté, thermiques sous le vent qui déclenchent fort), Cuchon d'Ancelle (2200 m laborieusement), Richards, puis un voile au-dessus du Dévoluy réduit la convection (+0,2 à +0,5 m/s) : deux pilotes posent au sanctuaire de la Salette pour attendre le soleil ; une demi-heure plus tard le « fameux thermique du Colombier au-dessus des vaches » repart, transition vers le Coirot poussée par le sud (thermique trouvé en transition), Tabor, plafond de 3400 m, Taillefer, Chamrousse et pose à Saint-Martin-d'Uriage. Seuls les points nommés et localisés du Champsaur sont tracés.",
+     "sources": [
+      "S201",
+      "S209"
+     ]
     }
    ],
    "tips": [
@@ -1301,7 +1678,12 @@
     "Cuchon: vérifier la présence de patous et contourner les parcs; atterro d'Ancelle ou du lac de Libouze côté Saint-Léger [S24].",
     "Les Richards: l'atterro reçoit la brise dès le début d'après-midi; ne pas poser dans le champ du propriétaire opposé aux parapentes [S68].",
     "Puy de Manse: strictement interdit du 1er juin au 15 novembre [S156].",
-    "Orcières: on ne voit pas l'atterro sur les 100 premiers mètres de vol [S151]."
+    "Orcières: on ne voit pas l'atterro sur les 100 premiers mètres de vol [S151].",
+    "Orcières : très calme le matin, brise installée toute la journée ; être posé à midi, surveiller la houle sur le petit lac près de l'atterrissage ; le vol du soir (17h30) donne du soaring et des thermiques doux mais demande l'habitude de la brise forte [forum 2017, CHVD 2010].",
+    "Les Richards : bons en sud, trop forts une fois la brise en place par vent d'ouest ; avec un nord qui s'ajoute à la brise, l'atterrissage est infréquentable [fiches FFVL, forum 2017].",
+    "Vieux Chaillol : décoller du sommet plein sud uniquement, franchir le col de la Pisse haut et garder la dernière arête à l'ombre pour rejoindre le Frêne [topo CHVD 2025].",
+    "Valgaudemar : vallée raide à la « brise ronflante » ; poser dans les grands champs plats de La Chapelle plutôt qu'en pente, avec 10-15 km/h de brise en fin d'après-midi [CHVD 2009].",
+    "Transition Colombier → Coiro : se méfier de la brise de Valbonnais ; arriver avec de la marge pour se refaire à Entraigues si besoin [CHVD 2020, 2026]."
    ]
   },
   {
@@ -8752,6 +9134,159 @@
    "type": "web",
    "lang": "fr",
    "notes": "Itinéraire Rattier – Bonnet de l'Évêque – Obiou : « des thermiques tardent sur ces faces W rocailleuses pour rallonger la balade »."
+  },
+  {
+   "id": "S194",
+   "title": "Voler dans le Champsaur (fil de discussion, août 2017 – février 2021)",
+   "url": "https://www.parapentiste.info/forum/sites-de-vols/voler-dans-le-champsaur-t48578.0.html",
+   "publisher": "parapentiste.info (forum)",
+   "type": "forum",
+   "lang": "fr",
+   "notes": "Avis de pilotes locaux : Orcières (matin très calme, brise toute la journée, vol par nord fort, pas par tendance E/NE), Ancelle quand Orcières devient trop fort, vol du soir à Orcières (dynamique sur Archinard), Richards (nord + brise = atterrissage infréquentable), Vieux Chaillol et col de la Pisse (finesse)."
+  },
+  {
+   "id": "S195",
+   "title": "Vol rando dans le Valgaudemar – Col de Pétarel 2430 m (fil de discussion, août 2026)",
+   "url": "https://www.parapentiste.info/forum/vol-rando-vol-bivouac/vol-rando-dans-le-valgaudemar-col-de-petarel-2430m-t66087.0.html",
+   "publisher": "parapentiste.info (forum)",
+   "type": "forum",
+   "lang": "fr",
+   "notes": "Vol rando avec bivouac aux lacs de Pétarel (2100 m) puis montée au col (2430 m) : décollage « moquette » bien orienté de SO à NO, course facile sans vent."
+  },
+  {
+   "id": "S196",
+   "title": "Terrain de pratique LE VIEUX CHAILLOL [5041]",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/5041",
+   "publisher": "FFVL (fiche de terrain)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche FFVL 5041 : décollage, 44,7355 N 6,1897 E, altitude 1030 m (incohérente avec ParaglidingEarth : 3120 m), vents favorables E à SO ; accès depuis Chaillol 1600 (1660 m de montée) ou Molines-en-Champsaur (2000 m) par la vallée de la Muande, le col de la Pisse (2334 m) et le col du Riou Beyrou (2695 m)."
+  },
+  {
+   "id": "S197",
+   "title": "Vieux Chaillol (topo CHVD de Dominique Duperray, 1er juillet 2025)",
+   "url": "https://www.chvd.org/2025/07/02/vieux-chaillol/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Décollage du sommet (3163 m), sud, 1865 m de dénivelé, 5 h de marche, passage du col de la Pisse sans être sous le vent, règle du Parc des Écrins imposant le vol vers le sud ; atterrissage au pré du Frêne."
+  },
+  {
+   "id": "S198",
+   "title": "Camp de base : Le Frêne, Champsaur (CHVD, 30 juin 2025)",
+   "url": "https://www.chvd.org/2025/06/30/camp-de-base-le-frene-champsaur/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Vols rando de Soleil Bœuf (O à E, nord impossible, sud confortable, col du Palastre plus bas à orientations plus nombreuses) et du Vieux Chaillol (sud seulement, limite du Parc marquée par la frontière ombre/soleil) ; atterrissage au grand pré du Frêne."
+  },
+  {
+   "id": "S199",
+   "title": "Le Col Vert – Le vol des sudistes du 31 juillet 2020 (CHVD)",
+   "url": "https://www.chvd.org/2020/08/01/le-col-vert-le-vol-des-sudistes-du-31-juillet-2020/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Triangle FAI de 131 km (7h22) : Col Vert, Mont Aiguille, Pic de Bure, traversée de la vallée du Drac vers le Chaillol (3500 m → 2500 m), verrou de Notre-Dame de la Salette, Colombier, Coiro (la brise piège un pilote), Taillefer 3862 m, Vif ; parcours classique des Richards vers Grenoble."
+  },
+  {
+   "id": "S200",
+   "title": "Les Richards – Dent de Crolles – 31/03/2021 (CHVD)",
+   "url": "https://www.chvd.org/2021/04/01/les-richards-31-03-2021/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Décollage des Richards à 12h18 (pompe de service à droite du décollage), SSO de 20 km/h annoncé, 27 km/h de sud à 3400 m entre le Coiro et le Taillefer, 94 km jusqu'à Saint-Nazaire-les-Eymes."
+  },
+  {
+   "id": "S201",
+   "title": "Vol Biv Aoûtien : aller & retour (CHVD, août 2024)",
+   "url": "https://www.chvd.org/2024/09/05/vol-biv-aoutien-aller-retour/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Retour vers Grenoble par le sud des Écrins : décollage sous le Piolit (Chorges), aiguilles de Chabrières, Cuchon d'Ancelle (2200 m laborieusement), Richards, pose au sanctuaire de la Salette pour attendre le soleil, « fameux thermique au Colombier au-dessus des vaches », transition vers le Coirot poussée par le sud, Tabor, Taillefer, Chamrousse, Saint-Martin-d'Uriage."
+  },
+  {
+   "id": "S202",
+   "title": "Semaine itinérante 2026 : mémorable (CHVD, mai 2026)",
+   "url": "https://www.chvd.org/2026/05/25/semaine-itinerante-2026-memorable/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Dernier jour par tendance nord annoncée : extraction collective (9/9) aux Richards, vol groupé jusqu'au Cuchon de Molines puis Grun de Saint-Maurice, thermique velu au Coiro à 15h, plafonds de 3200 m, Taillefer raté, longue transition vers Chamrousse, posé à Vizille."
+  },
+  {
+   "id": "S203",
+   "title": "Semaine itinérante 2014 (CHVD)",
+   "url": "https://www.chvd.org/2014/06/05/semaine-itinerante-2014/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Tendance nord marquée : repli du col du Noyer vers les Richards (site plus protégé) ; Orcières : épaule raccrochée, remontée dans la brise, atterrissage dans le grand champ au croisement des vallées du Drac Blanc et du Drac Noir, brise turbulente à l'atterrissage officiel."
+  },
+  {
+   "id": "S204",
+   "title": "Week-end au Noyer 2010 : du pain, du vin, du thermique… (CHVD, 11-12 septembre 2010)",
+   "url": "https://www.chvd.org/2010/12/05/week-end-au-noyer-2010-du-pain-du-vin-du-thermique/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Vol du samedi : enfilade de sommets jusqu'aux Richards (brise forte réputée, installation parfois chaotique en début d'après-midi), puis vol du soir à 17h30 au Cairn d'Orcières : conditions anémiques, filée vers l'arête boisée à l'entrée de la vallée de Champoléon pour chercher la confluence des brises de vallée, soaring et thermiques doux du soir (au moins une heure de vol)."
+  },
+  {
+   "id": "S205",
+   "title": "L'Olan en douceur (CHVD, vol du 30 septembre 2009)",
+   "url": "https://www.chvd.org/2009/11/10/lolan-en-douceur/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Vol rando du refuge de l'Olan : décollage à 14h15 sur un replat herbeux au-dessus du sentier du pas de l'Olan, thermique de l'éperon sud, trois têtes de l'Olan, cime du Vallon, col de Chalance, pointe de la Muande, pic des Souffles ; la vallée du Valgaudemar est connue pour sa « brise ronflante » ; posé au champ près de La Chapelle-en-Valgaudémar dans 10-15 km/h de brise."
+  },
+  {
+   "id": "S206",
+   "title": "Col Vert, ça crosse ! (CHVD, juillet 2026)",
+   "url": "https://www.chvd.org/2026/07/28/col-vert-ca-crosse/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Rando-cross du Col Vert vers Pic de Bure, Champsaur et Valgaudemar : Banc du Peyron, Grun de Saint-Maurice (3500 m), arrivée derrière La Salette avec forte brise de la vallée de Valbonnais, combe du Goulet bousculante, pose à Valbonnais."
+  },
+  {
+   "id": "S207",
+   "title": "Trans'Alps 2024 (CHVD, compétition de Digne à Chorges)",
+   "url": "https://www.chvd.org/2024/08/29/transalps-2024/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Manche de 110 km vers le nord : transition au-dessus du col Bayard « interminable » dans la brise (thermique décalé), balise du Chaillol 1600 au nord des Richards, brise qui contre à l'arrivée."
+  },
+  {
+   "id": "S208",
+   "title": "« Des Alpes-Maritimes à la Haute-Savoie… 280 km » (Blues Team, mai 2015)",
+   "url": "https://bluesteam.canalblog.com/archives/2015/05/27/32123222.html",
+   "publisher": "Blues Team (blog, Saint-Hilaire-du-Touvet)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Remontée par la bordure ouest des Écrins (Grande Autane, Grun de Saint-Maurice) : thermiques puissants mais sains, plafonds à plus de 3400 m ; au Coiro, vent de sud de 20 km/h canalisé sur la crête et thermique violent (+8 m/s)."
+  },
+  {
+   "id": "S209",
+   "title": "Positions des sommets, cols et hameaux du Champsaur et du Valgaudemar (géocodeur IGN)",
+   "url": "https://data.geopf.fr/geocodage/search?q=Grun%20de%20Saint-Maurice&index=poi",
+   "publisher": "IGN / Géoplateforme",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Géocodeur IGN (data.geopf.fr) : Grun de Saint-Maurice, Banc du Peyron, Pic Queyrel, Soleil Bœuf (Saint-Michel-de-Chaillol), Col de Pétarel, Refuge et Pas de l'Olan, La Chapelle-en-Valgaudémar, Le Frêne, Les Gondouins, Pont du Fossé, Sanctuaire de la Salette, Le Colombier (Entraigues), Aiguilles de Chabrières, Chaillol 1600."
+  },
+  {
+   "id": "S210",
+   "title": "ParaglidingEarth, site 15526 : Le Vieux Chaillol",
+   "url": "https://www.paraglidingearth.com/?site=15526",
+   "publisher": "ParaglidingEarth",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Décollage du sommet : altitude 3120 m, orientations E, SE, S, SO (table locale paraglidingearth_alps.tsv)."
   }
  ]
 }

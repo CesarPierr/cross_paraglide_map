@@ -1,0 +1,106 @@
+{
+  "massif": "gresivaudan",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "Le Grésivaudan en un coup d'œil",
+      "text": "Le Grésivaudan est la vallée de l'Isère entre Montmélian et Grenoble, avec en aval la cluse de Voreppe et le grand « Y » grenoblois. Sa brise va à contre-intuition : l'après-midi, elle ne remonte pas de Grenoble, elle descend du nord, de la cluse de Chambéry vers Grenoble, aspirée par la brise très forte de la cluse de Voreppe. En amont, la brise de la cluse de Chambéry se divise près de Montmélian : une branche à gauche monte la Combe de Savoie vers Albertville, une branche à droite descend vers Grenoble. Retenez une seule chose : dans le Grésivaudan, on lit le vent du nord vers le sud-ouest.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le matin, un air calme, ou qui descend",
+      "text": "Tôt le matin, l'air est calme à Lumbin : vent nul, puis une brise de pente d'est faible en début et milieu de matinée. L'hiver, c'est autre chose : sous une inversion persistante, les vallées grenobloises sont alimentées par des vents thermiques qui s'écoulent des vallées plus élevées, et les brises sont légèrement descendantes ; le conseil alors est de faire autre chose.",
+      "focus": ["lumbin", "drainage-hivernal-grenoble"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Fin de matinée : la brise vient du nord, pas de Grenoble",
+      "text": "À partir de la fin de matinée, à Lumbin, la brise prend une tendance nord et dépasse rarement 15 km/h ; elle monte à 25-30 km/h près de la cluse de Chambéry, d'après le CHVD, et un vent météo de nord la renforce. Six sources confirment ce sens, dont un forum qui rectifie une carte fausse : le Grésivaudan n'est pas sud mais nord. L'explication vient de la cluse de Voreppe, responsable de 75 % de l'aérologie locale selon Vol Libre : dès 11h au printemps et en été, une brise y entre dans la cuvette grenobloise, forte et ascendante en début d'après-midi, et elle aspire dans le Grésivaudan cette brise descendante dite anormale.",
+      "focus": ["brise-nord-gresivaudan", "brise-voreppe"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Début d'après-midi : la confluence au nord-est de Grenoble",
+      "text": "La brise forte de la cluse de Voreppe traverse Grenoble et remonte l'Isère ; au nord-est de la ville, entre Meylan, Montbonnot et Saint-Ismier, elle rencontre la brise du Grésivaudan qu'elle a elle-même aspirée, et les pointes des deux flèches se font face sur les cartes. C'est une belle confluence, avec des varios de 2 à 3 m/s au-dessus de 400-500 m, et par instabilité moyenne, Vol Libre y voit globalement les conditions idéales du vol libre. Son bord ouest, en revanche, est généralement turbulent.",
+      "focus": ["confluence-grenoble"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Par grande chaleur : le faux vent du sud et la brise du soir",
+      "text": "Par fortes chaleurs, de juin à août en situation anticyclonique, il arrive qu'une brise également montante s'établisse dans le Grésivaudan et donne un faux vent du sud à Saint-Hilaire : c'est une source unique, qui juge les conditions bonnes pour le vol libre. En soirée de forte canicule, au pied de Chamrousse, la brise du Grésivaudan se renforce nettement : plus de 25 km/h de vent fixe, des rafales à 35, jusqu'à environ 2500 m. Il y a peu de possibilités d'abréger le vol, et peu de chances de poser à Saint-Martin-d'Uriage avant l'heure légale.",
+      "focus": ["brise-montante-faux-sud", "chamrousse-brise-soir-canicule"],
+      "phase": "evening"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Chalais et les Bannettes, au-dessus de la cluse de Voreppe",
+      "text": "Chalais (1023 m), face au sud, à dix ou vingt minutes à pied du col du monastère, est protégé du nord : favorable par tendance sud, mais la brise de nord se lève en vallée en fin de matinée, forte l'été, et le site n'est alors plus alimenté. Un décollage secondaire, à 923 m, est réservé à l'accès PMR, et la TMA Lyon 15, active en hiver, est proche : à vérifier. Plus haut, les Bannettes (1845 m) sont un décollage de montagne au-dessus de la cluse de Voreppe, dont la fiche FFVL, tirée de traces de vol, ne contient aucune description.",
+      "focus": ["chalais", "chalais-sud", "chalais-pmr", "bannettes-gres"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Se poser à Lumbin ou à Voreppe",
+      "text": "L'atterrissage de Lumbin, grand terrain herbeux de 240 m sans obstacle, est sans piège particulier : la brise de vallée y dépasse rarement 15 km/h, mais peut les dépasser si un vent de nord la renforce. Les turbulences deviennent importantes quand les vents au sol et en altitude soufflent en sens opposés, typique à Lumbin, avec un venturi si une inversion se trouve à moins de 300 m au-dessus du relief. À Voreppe, l'atterrissage de fond de vallée, à 192 m, a une brise de nord souvent forte en milieu de journée et une ligne de 20 kV sur le champ voisin ; le terrain de rugby sert de secours, avec ses éclairages, barrières et filets.",
+      "focus": ["lumbin", "atterro-lumbin-nord", "voreppe-chalais", "atterro-voreppe-brise", "voreppe-rugby-secours"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Traverser le Grésivaudan : de la Chartreuse à Saint-Genis",
+      "text": "La traversée de 10 km entre la Chartreuse et Belledonne part, d'après le club, de plus de 2000 m au col de l'Alpe ou à l'Aulp du Seuil, avec une arrivée vers 1000 m ; FlySaintHilaire recommande plutôt de partir de Sainte-Marie-du-Mont au-dessus de 2200 m, de pointer le Mont Saint-Genis à 8 km et de planer jusqu'à Lumbin. La brise du Grésivaudan impose souvent une laisse de chien incurvée vers le nord. Le parcours du club repart ensuite de Saint-Genis : deuxième pointe avec un plafond confortable, 1800 m au moins, puis cap sur le Crêt du Poulet et la crête jusqu'au premier télésiège de Prapoutel, jusqu'à 2600 m au col du Pra, et retour à Lumbin depuis 2000 m. La brise venue de Fond de France peut y créer un point dur.",
+      "focus": ["traversee-gresivaudan", "cross-saint-genis-prapoutel"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Le grand tour du bocal",
+      "text": "Le classique local, raconté en avril 2018, part du décollage sud de Saint-Hilaire, passe par les Antennes, frontière sud du bocal, puis le Château Nardent, le Saint-Eynard et le Rachais, en retenant son souffle au-dessus de la Bastille. Le retour se fait par le Bec Charvet, l'école d'escalade et le pilier sud de la Dent, puis la crête vers le nord ; la traversée vers Saint-Genis arrive à 1250 m, avant les Sept Laux et le retour sur Lumbin. La distance n'est pas indiquée.",
+      "focus": ["grand-tour-du-bocal"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Les triangles de Saint-Hilaire : Annecy, Dent du Chat, Serpaton",
+      "text": "Depuis Saint-Hilaire, un triangle de 147 km, le 28 mai 2015, a relié le Rachais, le Roc des Bœufs et Saint-Genis en 7h54, à 18,6 km/h. Un autre, de 116 km, en mars 2017, est passé par le Néron, le relais du Mont du Chat et Brâme-Farine, en 5h21 ; Brâme-Farine donne une relance en thermodynamique entre 1100 et 1300 m avant le glide final vers Lumbin. Un vol de groupe de 140 km, en septembre 2021, parti du Serpaton, a traversé la Chartreuse, avec un Saint-Eynard turbulent mais où ça monte tout le long, puis Belledonne, jusqu'à 2700 m au Grand Colon, avant Connex et le retour.",
+      "focus": ["triangle-st-hil-annecy", "triangle-st-hil-dent-du-chat", "vol-de-groupe-140"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Front froid et orage : la cuvette canalise l'air froid",
+      "text": "Quand un front froid stagne sur l'arc alpin, l'air froid pénètre par le bas par la cluse de Voreppe, avec un vent soudain et fort, et emprunte aussi les cols de Vence, du Coq et des Ayes ; le vent rentre aussi par la cluse de Chambéry, et une confluence agitée se forme à Crolles et à Lumbin : une zone turbulente et dangereuse, où il ne faut pas voler, y compris à l'atterrissage de Lumbin. Même un orage relativement lointain, à 50 km, envoie son air froid dans les vallées de l'Y grenoblois, où il est canalisé et accéléré : on écourte les vols dès que le ciel se charge, et on ne décolle pas devant un front d'orage venant de l'ouest.",
+      "focus": ["confluence-front-froid-crolles-lumbin", "orage-cuvette-grenobloise"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Sous le vent de Montmélian et aérodrome du Versoud",
+      "text": "À Montmélian, la branche de la brise de Chambéry qui tourne vers Albertville déferle derrière la ville, et la zone sous le vent est très dangereuse : plusieurs morts dans les années 1990. On évite l'option sud-est de la Savoyarde vers Montlambert. Plus bas, l'aérodrome du Versoud se survole à plus de 1400 m, surtout au retour de Belledonne vers la Chartreuse ou en changeant de vallée ; la fiche de Chamrousse signale un axe de voltige au sud et une forte activité de planeurs et d'avions de loisir.",
+      "focus": ["lee-montmelian-brise-chambery", "versoud-aerodrome"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par air polaire de nord : le Grésivaudan renforcé, Lumbin vite impossible",
+      "text": "Un vent de nord renforce la brise de vallée du nord : Lumbin devient turbulent au-delà de 15 km/h, et Chalais, protégé du nord, ne marche plus en fin de matinée. En air polaire maritime instable de nord ou de nord-est, toute la masse d'air descend vers le sud, et la confluence des vents des deux vallées, au-dessus et au sud de Grenoble, donne de fortes ascendances : exploitable seulement en vol à voile. Le vol libre reste praticable de très bonne heure le matin, avec du soaring de biplace sur la cascade de Saint-Hilaire à 8h30, mais passé 9h30-10h, l'atterrissage de Lumbin devient impossible en sécurité.",
+      "focus": ["confluence-nord-grenoble-sud", "atterro-lumbin-nord", "chalais"],
+      "phase": "morning",
+      "wind": { "from": "N", "kmh": 25 },
+      "view": "massif"
+    },
+    {
+      "chapter": "Les transitions",
+      "title": "Sortir du Grésivaudan : Vercors, Bauges, Belledonne, Annecy",
+      "text": "Vers l'ouest, la transition de Grenoble vers le Vercors part du Rachais ou du Néron, en tenant compte de la ZIT. Vers le nord, depuis le Granier, la Savoyarde ouvre les Bauges. Vers l'est, la traversée du Grésivaudan mène à Belledonne et au Mont Saint-Genis. Et vers Annecy, le triangle de 147 km passe par le Roc des Bœufs.",
+      "focus": ["chartreuse/transition-grenoble-vercors", "chartreuse/passage-savoyarde", "traversee-gresivaudan", "triangle-st-hil-annecy"],
+      "view": "massif"
+    }
+  ]
+}

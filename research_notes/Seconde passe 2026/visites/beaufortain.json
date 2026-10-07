@@ -1,0 +1,108 @@
+{
+  "massif": "beaufortain",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "Le Beaufortain en un coup d'œil",
+      "text": "Le Beaufortain est un massif de décollages d'alpage et de hike-and-fly, au-dessus de la vallée du Doron de Beaufort, dont l'axe débouche sur Albertville. Bisanne, aux Saisies, est le site de club : sa face sud sert le matin, sa face nord-ouest l'après-midi, et les deux sont un portail vers les Aravis et la Combe de Savoie. Plus à l'est, Roselend offre des vols de fin de journée et des décollages d'altitude. Retenez une idée simple : tout se joue sur le sens et l'heure de la brise du Doron, descendante au petit matin, montante dès la fin de matinée.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le matin, la brise descend encore le Doron",
+      "text": "Tôt le matin, à Beaufort, la brise de vallée est encore descendante, d'après un récit d'août 2023. Les versants ensoleillés s'éveillent ensuite : vers 10h, la brise de pente remonte le versant est du Grand Mont, avec des thermiques sur les parterres rocheux du Grand Rognoux, et la FFVL dit Bisanne Sud favorable par brise thermique le matin jusqu'à 12h30. Il faut pourtant de la patience : les cycles sont courts le matin, une barbule se gonfle et se dégonfle, et un pilote a attendu 35 minutes sous le Mont Rosset que la journée se mette en place.",
+      "focus": ["brise-descendante-doron", "grand-mont-versant-est", "bisanne-sud-matin", "mont-rosset-extraction"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "En fin de matinée, la brise du Doron remonte la vallée",
+      "text": "Vers la fin de matinée, la brise commence à remonter la vallée et les pentes ensoleillées à partir de Beaufort, et elle reste forte en milieu d'après-midi, comme au lac de Roselend en août. Les fiches FFVL parlent, à Beaufort et à Arêches, d'un vent de vallée souvent fort l'après-midi, sans vitesse chiffrée. Probablement, elle se prolonge de Beaufort et de Hauteluce vers le plateau des Saisies, mais aucune source ne le décrit.",
+      "focus": ["brise-doron-beaufort", "brise-hauteluce-saisies"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "L'après-midi, la brise d'Ugine passe par-dessus Bisanne",
+      "text": "La brise de la vallée d'Ugine, celle de l'Arly, passe par-dessus la crête de Bisanne et souffle du nord au décollage sud l'après-midi, alors que la brise du Doron monte sur le versant sud : leur rencontre se fait vers la crête, probablement une confluence dont la ligne exacte n'est pas documentée. Passé 12h30, la brise d'Ugine, plus forte que les thermiques, arrive dans le dos à Bisanne Sud ; on décolle alors de Bisanne Nord-Ouest, utilisé surtout l'après-midi, où le vent assez soutenu s'abaisse à partir du milieu d'après-midi. Un plateau devant ce décollage demande de la marge d'altitude.",
+      "focus": ["convergence-col-des-saisies", "bisanne-dos-apres-midi", "bisanne-nord-ouest"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le soir, Roselend prend le relais",
+      "text": "Quand le soleil tape les parois nord-ouest de Roselend, couplé à la brise de vallée qui remonte le vallon, c'est un vol de fin de journée idéal : de la Petite Berge, on longe les falaises du Biolley, 560 m plus bas, et le Cormet est cité comme site de soaring où l'on vole jusqu'à la nuit, surtout par vent de nord. À l'inverse, un récit de septembre 2018 décrit un décollage tardif de Bisanne qui finit presque de nuit sous une forte brise descendante, avec un passage sous le vent de la colline : une seule observation.",
+      "focus": ["roselend-parois-fin-de-journee", "brise-pente-roselend-soir", "soaring-petite-berge-cormet", "brise-descendante-doron"],
+      "phase": "evening"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Les plafonds du haut Beaufortain",
+      "text": "En haut du Beaufortain, les plafonds se gagnent après l'extraction. Un récit d'août 2023 relance du Mont Rosset vers la Pointe de la Terrasse, où le plafond est à 3100 m mais encore mou sous 2400 m, d'où le conseil de rester bien au-dessus. Un autre, de mi-juillet, y arrive après un plafond de 3500 m à la Pointe de Combe Neuve, puis passe par la Pointe de Mya, bien exposée au sud-est, qui lui donne 3800 m. Avant la sortie vers Bourg-Saint-Maurice, la Légette du Grand Mont donne 3200 m en après-midi bien entamée : chaque thermique y monte plus haut que le précédent.",
+      "focus": ["pointe-de-la-terrasse-plafond-3100", "pointe-de-mya-plafond-3800", "legette-du-grand-mont-plafond-3200"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Bisanne : Sud le matin, Nord-Ouest l'après-midi, atterrir à Beaufort",
+      "text": "Bisanne Sud (1933 m), au sommet près du restaurant, est dans l'axe le matin, du sud-est au sud-ouest ; la route est fermée de début juillet à fin août, et l'on prend alors le télésiège au tarif parapente. Bisanne Nord-Ouest (1929 m), à environ 80 m des antennes relais vers Ugine, sert l'après-midi ou par fort vent du nord. L'atterrissage classique est Beaufort (697 m), à 4,5 km et 1300 m sous Bisanne : circuit en U main droite vers Albertville, ligne téléphonique en bout de terrain, vent de vallée souvent fort l'après-midi.",
+      "focus": ["bisanne-sud", "bisanne-nord-ouest", "bisanne-beaufort", "beaufort-atterro-vent-vallee"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Roselend, Grand Mont, Roche Parstire : les décollages à pied",
+      "text": "À l'est, les décollages se gagnent à pied. La Petite Berge (2048 m), une butte large et douce au-dessus du lac de Roselend, à 30 minutes à une heure du refuge du Plan de la Lai, est très confortable ; on se pose au décollage ou dans le champ 200 m plus bas, après accord du propriétaire. Le Grand Mont (2652 m) se vole dès 10h, avec un plan de vol nord-est vers le lac de Saint-Guérin. Roche Parstire (2047 m) est pratiquée sans convention FFVL : il n'y a pas d'atterrissage à Arêches, on se pose à Beaufort, avec une brise de vallée forte l'après-midi. Le Cormet de Roselend, pente école, est fermé selon la FFVL et ouvert selon ParaglidingEarth : il faut se renseigner auprès des Volatiles.",
+      "focus": ["roselend-petite-berge", "grand-mont-areches", "roche-parstire", "roche-parstire-pas-atterro-areches", "roselend-cormet-ferme"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "La petite boucle des Saisies : Bisanne, la Légette, le Mont Clocher",
+      "text": "Un ancien pilote de cross relate une petite boucle de 17 km : un thermique de sortie du décollage de Bisanne le monte à 2500 m, sous les barbules, puis il transite au-dessus du col des Saisies vers la Légette, où la remontée est un peu plus dure, passe au-dessus de la crête et file au Mont Clocher. Le retour se fait à radada par le col, jusqu'à la face sud de Bisanne. L'atterrissage est à Marcôt, officiel, ou dans les champs sous Villard-sur-Doron.",
+      "focus": ["bisanne-saisies-legette-mont-clocher", "la-legette-saisies-relance"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "De la Pierra Menta aux Aravis par Roselend et Bisanne",
+      "text": "Un carnet d'août 2023 décolle de la face est de la Pierra Menta à 11h, après 1h30 d'attente, et passe 35 minutes sous le Mont Rosset avant que la journée se mette en place. Il relance vers la Pointe de la Terrasse, puis cap à l'ouest au-dessus du lac de Roselend jusqu'à Bisanne et le Mont Charvin : retour dans les Aravis en trois heures. Ensuite, avec un fort vent de nord, la Tournette, le lac d'Annecy, le Roc des Bœufs et les Dents de Lanfon, où le pilote se pose faute de pouvoir boucler. Bisanne est un portail de grands cross : un ancien pilote y cite son premier 100 km en 1994, et des départs jusqu'en Valais suisse.",
+      "focus": ["pierra-menta-roselend-bisanne-charvin", "mont-rosset-extraction", "pointe-de-la-terrasse-plafond-3100"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Arrêtés, lignes électriques et cocktail de brises",
+      "text": "Pendant l'ouverture du domaine skiable, les arrêtés de Villard-sur-Doron (Les Saisies) et de Hauteluce limitent le vol libre aux zones de décollage et d'atterrissage balisées : décollage, déploiement et atterrissage hors zone sont interdits, et il faut voler à 50 m au moins des obstacles. Des lignes électriques bordent le col de la Forclaz, vers Albertville, et le sud de l'atterrissage de Marthod. Vers l'est, aux Chapieux, un récit d'août 2023 décrit un cocktail de brises : l'air descend du col de la Seigne et la brise descend du Cormet, et le pilote, trop bas, s'est posé entre Les Chapieux et le Cormet. C'est une seule observation, à interpréter avec prudence.",
+      "focus": ["arrete-vol-libre-saisies-hauteluce", "bisanne-lignes-forclaz", "cormet-chapieux-cocktail-brises", "convergence-chapieux-seigne-cormet"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par nord : Bisanne Nord-Ouest et le Cormet",
+      "text": "Par vent de nord, Bisanne Nord-Ouest est le décollage des vents de nord, alors que Bisanne Sud n'est déconseillé par fort nord que si on l'utilise tard. À Roselend, les meilleures conditions du Cormet sont par vent de nord, et la Petite Berge est favorable au nord et au nord-ouest. En revanche, un flux de nord reste sensible à l'ouest du Mirantin : au Pas de l'Âne, un pilote qui a passé le col vers le sud a gagné 10 km/h de vent et s'est retrouvé sous le vent du Mirantin.",
+      "focus": ["bisanne-nord-ouest", "soaring-petite-berge-cormet", "pas-de-l-ane-sous-le-vent-du-mirantin"],
+      "phase": "afternoon",
+      "wind": { "from": "N", "kmh": 20 },
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par ouest : rouleaux à Bisanne Sud, Roche Parstire dans l'axe",
+      "text": "Par vent d'ouest, Bisanne Sud est sujet aux rouleaux, avec un câble de remontée à droite du décollage. Roche Parstire, tournée vers l'ouest et le nord-ouest, et Fenêtre 7, petit décollage ouest au-dessus de la Combe de Savoie, sont au contraire dans l'axe ; à Fenêtre 7, la brise est souvent de travers à droite, et en vol elle peut devenir soutenue.",
+      "focus": ["bisanne-dos-apres-midi", "roche-parstire", "fenetre-7"],
+      "phase": "afternoon",
+      "wind": { "from": "O", "kmh": 20 },
+      "view": "massif"
+    },
+    {
+      "chapter": "Les transitions",
+      "title": "Sortir du Beaufortain : Aravis, Albertville, Bourg-Saint-Maurice",
+      "text": "Depuis Bisanne, la transition vers les Aravis passe par Albertville, avec un retour compliqué dans les brises, selon le récit du triangle de 202 km. Dans l'autre sens, en arrivant des Aravis, on relance sur la face ouest-nord-ouest de la Roche Pourrie, face à la brise d'Annecy, en montant par paliers de 1700 à 2600 m ; on reste ensuite au vent du Mirantin, car passer le Pas de l'Âne vers le sud met sous le vent. Vers l'est, la Légette du Grand Mont prépare la sortie vers Bourg-Saint-Maurice.",
+      "focus": ["bisanne-albertville-aravis-transition", "roche-pourrie-brise-d-annecy", "legette-du-grand-mont-plafond-3200"],
+      "view": "massif"
+    }
+  ]
+}

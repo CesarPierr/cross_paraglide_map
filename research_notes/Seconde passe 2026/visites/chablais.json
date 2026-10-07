@@ -1,0 +1,122 @@
+{
+  "massif": "chablais",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "Le Chablais, un massif qui regarde le Léman",
+      "text": "Le Chablais ouvre sur le Léman, et c'est le lac qui commande. D'après les cartes de brises, deux grands couloirs mènent à l'intérieur : de Thonon vers la vallée d'Aulps et Morzine, et de Bioge vers la vallée d'Abondance et La Chapelle, avec une flèche du lac vers la Vallée Verte. Le vent synoptique y est marqué : la bise, vent le plus fréquent, froid et sec par beau temps, le sud-ouest d'avant dépression, la vaudaire du Valais et les rafales d'orage appelées bornan et môlan. Retenez une idée simple : le lac fournit à la fois les vents les plus forts du secteur et les brises qui remontent les vallées.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "De la nuit au jour : du morget au rebat",
+      "text": "La nuit, de l'air de terre descend les vallées vers le lac : ces brises nocturnes, que le Léman appelle morget, sont des vents faibles, canalisés par les vallées, qui s'accélèrent sur les reliefs abrupts avant de se disperser en éventail sur l'eau. Le jour, le lac répond par le rebat, qui souffle en sens inverse du vent de la nuit, du large vers la côte, canalisé le long du rivage là où le relief se resserre. Ce n'est donc pas la brise de lac qu'on imagine : MétéoSuisse mesure des brises lacustres faibles, de 9 à 19 km/h environ l'été. Le rebat dure jusqu'en fin d'après-midi, puis laisse la place aux thermiques du soir.",
+      "focus": ["morget-evian", "rebat-thonon", "rebat-evian"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "À Abondance, la brise de vallée se lève dès le matin",
+      "text": "Dans la vallée d'Abondance, la brise de vallée se met en place très tôt et peut être très forte, même avant midi : les sources parlent de très forte, ce que l'on interprète vers 25 km/h, jusqu'à 35. Elle monte de Bioge et du Léman jusqu'à La Chapelle. L'étranglement des Portes joue le rôle d'un venturi, un goulot où le vent accélère, et l'atterrissage officiel d'Abondance, face au gymnase, se trouve juste en sortie : on l'aborde en circuit en U, en estimant la brise avant de se poser. En montant, la Pointe des Follys offre un décollage spacieux et confortable, avec une ligne à très haute tension à ne pas trop passer dessous.",
+      "focus": ["brise-vallee-abondance", "abondance-portes-venturi", "abondance-atterro", "pointe-des-follys"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "L'après-midi, la brise d'Aulps monte vers Morzine",
+      "text": "Dans la vallée d'Aulps, deux cartes de brises tracent une flèche continue de la rive de Thonon à Morzine, par Le Biot. Un blog commercial, source faible, la dit montante l'après-midi, soutenue à forte en milieu et fin de journée, et la vitesse indiquée ici (de l'ordre de 20 km/h) est une interprétation. Pour le pilote, l'avertissement vient de la FFVL : à Super Morzine, la sortie est turbulente en cas de forte brise de vallée. Une autre flèche part du lac vers la Vallée Verte, par Boëge, de confiance basse, où la FFVL prévient à Bellevaux d'un fort vent de vallée et de rouleaux au-delà de 15 km/h.",
+      "focus": ["brise-vallee-aulps", "brise-vallee-verte-boege"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le soir, le Pléney restitue la chaleur",
+      "text": "Quand le rebat s'éteint, la chaleur accumulée dans la journée ressort. Sur le versant forestier du Pléney, à Morzine, la forêt rend cette chaleur et crée une ascendance douce et large, huileuse, qui permet de tenir en l'air jusqu'au coucher du soleil, selon une source commerciale de fiabilité modérée. La même source décrit les restitutions du col de Joux Plane, qui portent longtemps. Plus tard, le morget reprend la main et ramène l'air vers le lac.",
+      "focus": ["pleney-restitution", "morget-evian"],
+      "phase": "evening"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Morzine : de Zore vers Avoriaz, les thermiques de l'après-midi",
+      "text": "Au-dessus de Super Morzine, les pentes et crêtes de Zore, versant sud-ouest, donnent des thermiques actifs entre 13h et 16h : c'est le point de départ classique, d'après des sources commerciales, pour transiter vers Avoriaz ou la Pointe de Nyon, puis vers les vols de distance vers la vallée d'Abondance ou Samoëns. La Pointe de Ressachaux ajoute une ascendance dynamique sur son arête nord-ouest, face à la brise de vallée, et sert de relance au-dessus de la vallée pour rejoindre Avoriaz. À Avoriaz, une anecdote de blog à recouper dit que le premier thermique du début d'après-midi surprend chaque été les pilotes partis de Mont Chéry.",
+      "focus": ["super-morzine-cretes-de-zore", "ressachaux-dynamique-thermique", "avoriaz-premier-thermique", "pointe-de-nyon"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Mont Chéry : un bon départ de cross dès la fin de matinée",
+      "text": "Aux Gets, le Mont Chéry se rejoint par les remontées mécaniques et passe pour un bon départ de cross : 92 décollages y ont été comptés en 2025. Ses faces sud donnent de gros plafonds en été, et un message du forum dit que ça peut marcher dès la fin de matinée ; un blog commercial juge leurs thermiques mieux structurés qu'à Super Morzine. Les sources donnent un dénivelé de 680 m à 1000-1200 m. On se pose aux Gets, avec une ligne électrique en bordure du terrain et du vent de vallée.",
+      "focus": ["mont-chery", "mont-chery-face-sud", "les-gets-atterro"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Super Morzine, ses deux atterrissages et le Pléney",
+      "text": "Super Morzine (1548 m) est le décollage d'été de Morzine-Avoriaz, au bord de la route d'Avoriaz, ouvert de mai à novembre ; il regarde du sud-est au sud-ouest, avec une pente douce à l'arrivée de la télécabine et la zone de gypaète des Ardoisières à gauche. On se pose aux Putheys (1040 m), atterrissage facile près de la manche à air, ou à l'Aubergade (990 m), atterrissage de référence par situation de nord, avec un câble de téléski en bordure. Le survol de l'agglomération se fait à plus de 300 m du sol. Le Pléney, décollage historique orienté nord-est, n'est pas confirmé pour le parapente : sur le domaine skiable, le CLAM cite seulement Super Morzine l'été et le run de Chaux Fleurie.",
+      "focus": ["super-morzine", "morzine-atterro", "morzine-aubergade", "pleney"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Orcier : le site du nord au-dessus de Thonon",
+      "text": "Au-dessus de Thonon, Orcier est le site du club CHOTO, tourné vers le nord et le nord-ouest : le Couteau (1311 m), Notre-Dame d'Hermone (1290 m) et Très le Mont (1361 m), facile à moyen, ouest à nord-ouest. On s'y pose aux Grands Champs, une immense prairie axée nord-sud qui permet d'atterrir par tout vent ; par vent de sud, on se pose dans la moitié sud. Le plafond est celui de la TMA de Genève : ne pas dépasser 500 m au-dessus du relief, soit 1800 m au maximum. L'après-midi, la brise de pente peut être très forte et couvrir un vent de sud-ouest, ce qui rend le vol très désagréable et dangereux.",
+      "focus": ["couteau", "chapelle-hermone", "tres-le-mont", "orcier-grands-champs", "orcier-tma-1800", "brise-pente-orcier"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Thollon et la Dent d'Oche : le vol de pente du nord et la rando",
+      "text": "Au bord du lac, Thollon vole en vent de nord : les Mémises (1597 m), décollage très court qui ne se pratique qu'avec du vent, niveau confirmé, se volent par nord, nord-est ou nord-ouest, et sont défavorables de l'est au sud-ouest. Plus haut, la Dent d'Oche se gagne à pied : on décolle une centaine de mètres au-dessus du refuge (2110 m), sur une courte pente herbeuse face au sud-ouest, pour un vol de 1149 m de dénivelé jusqu'à Bernex-Trossy, voire jusqu'au lac, à Lugrin ou à Thollon. Le passage au refuge est étroit et vif, à cause du venturi du couloir et du thermique de la face sud, et la combe est à éviter par vent d'est ou de nord-est soutenu, à cause des rouleaux.",
+      "focus": ["thollon-memises", "thollon-nord", "dent-d-oche-refuge", "orcier-dent-d-oche-lugrin", "bernex-trossy", "dent-d-oche-est-ne"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Du Revard à Morzine : 85 km par les Bauges, Annecy et les Aravis",
+      "text": "Un stage CLAM de niveau 3, en juin 2026, a relié le Revard à Morzine en 85 km selon son compte rendu : le Revard, le Semnoz, la Tournette, le Rocher de Leschaux, le Mont Orchez, le Pic de Marcelly, puis le Mont Chéry et l'arrivée à Morzine. Une stabilité massive et des voiles de nuages élevés ont obligé à adapter le tracé initial. Seuls cinq points sont placés sur la carte, avec des positions estimées pour le Revard, le Semnoz et la Tournette. C'est un parcours qui relie, d'un trait, les Bauges, Annecy, les Aravis et le Chablais.",
+      "focus": ["clam-niveau3-revard-morzine", "mont-chery"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Les coups de force du lac : orages, bornan, môlan et vaudaire",
+      "text": "Quand des orages éclatent sur les Préalpes, le bornan descend en rafales et avec une grande violence des montagnes de l'arrière-pays, et le môlan en est l'équivalent sur le Petit-Lac : jusqu'à 120 km/h, d'après des sources suisses. Le conseil est simple : atterrir avant les orages, car la rive est dangereuse. La vaudaire, elle, est un vent du Valais de sud-est, de 50 à 80 km/h, soudain et de courte durée, favorisé par l'accélération dans le couloir du Rhône ; elle souffle surtout l'été. À Châtel-Morclan, le foehn de sud est au contraire exploité pour partir en cross, mais attention au nord, à la rangée d'arbres devant le décollage et à la ligne à haute tension qui coupe la vallée.",
+      "focus": ["leman-bornan-molan", "leman-vaudaire", "chatel-morclan-foehn"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Genève, gypaète et réserve de Sixt : les limites à respecter",
+      "text": "Au nord de Morzine, la TMA 6 de Genève commence à environ 2500 m, au nord du col du Corbier, et la TMA 7 à environ 3100 m, au nord du décollage ; la réserve de Sixt-Passy, au sud, interdit le survol à moins de 300 m du sol. Les falaises d'Avoriaz se volent par vent faible et généralement le matin, grâce à la brise thermique, mais la zone de gypaète y impose ses règles : une nouvelle zone est apparue près d'Avoriaz en février 2026, le couple ayant commencé à nicher dans un nouveau nid tout près, en plus de celle des Ardoisières, à gauche du décollage de Super Morzine. À Orcier, c'est la TMA de Genève à 1800 m qui fixe le plafond.",
+      "focus": ["morzine-airspace-tma", "avoriaz-zsm-gypaete", "avoriaz-falaises-matin", "orcier-tma-1800"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par bise ou vent de nord : Orcier, Ressachaux et les rouleaux",
+      "text": "La bise est le vent le plus fréquent du Léman : un vent de beau temps, froid et sec, qui souffle par rafales ininterrompues de 15 à 90 km/h pendant trois, six ou neuf jours d'affilée. Sur le Haut-Lac elle est déviée vers le nord-nord-ouest, ce qui donne probablement un flux de nord-ouest pour les décollages d'Orcier. Le Couteau y est bon par nord mais dangereux par nord-nord-est fort ; à Morzine, Super Morzine est utilisable par vent faible de nord, mais par vent fort le décollage est dans les rouleaux et il ne faut pas voler, alors que la dynamique de Ressachaux est favorable.",
+      "focus": ["leman-bise-rafales", "couteau", "orcier-vents-defavorables", "super-morzine-sortie", "ressachaux-dynamique"],
+      "phase": "afternoon",
+      "wind": { "from": "N", "kmh": 20 },
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par sud ou sud-ouest : dégueulantes à Morzine, Orcier turbulent",
+      "text": "Par tendance sud, Super Morzine reste utilisable par vent faible, mais en cas de forte instabilité ou d'activité thermique prononcée, la vallée devient très turbulente et malsaine, avec de fortes dégueulantes possibles au-dessus de la ville ; on cherche alors la combe à droite du décollage. L'atterrissage de l'Aubergade est sous le vent, turbulent et malsain : on préfère les Putheys. À Orcier, Très le Mont est turbulent par sud-ouest, et la brise de pente peut couvrir ce vent, ce qui rend le vol dangereux.",
+      "focus": ["super-morzine-sortie", "morzine-aubergade-sous-le-vent", "morzine-atterro", "orcier-vents-defavorables"],
+      "phase": "afternoon",
+      "wind": { "from": "S", "kmh": 20 },
+      "view": "massif"
+    },
+    {
+      "chapter": "Les transitions",
+      "title": "Sortir du Chablais : le Giffre, le Criou et le Mont-Blanc",
+      "text": "Depuis Super Morzine, le relais naturel vers le sud est la crête d'Angolon, qui domine la vallée du Giffre, avant la traversée vers Samoëns et la face ouest du Criou : c'est l'enchaînement choisi par les stagiaires CLAM de niveau 3 pour leur boucle de 40 km avec les Grands Vans et l'arête des Saix. Au sud-est, la traversée du Haut-Giffre vers Émosson est la plus technique du tour du Mont-Blanc depuis Morzine : plein au col du Fornet, minimum 3200 m, puis le Pas du Taureau, en restant à plus de 300 m du sol au-dessus de la réserve.",
+      "focus": ["haut-giffre/pointe-d-angolon", "haut-giffre/clam-niveau3-samoens-criou", "haut-giffre/morzine-haut-giffre-emosson"],
+      "view": "massif"
+    }
+  ]
+}

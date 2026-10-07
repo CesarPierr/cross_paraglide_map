@@ -1,0 +1,122 @@
+{
+  "massif": "aravis",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "La chaîne des Aravis en un coup d'œil",
+      "text": "Les Aravis forment une muraille calcaire d'environ 30 km, orientée sud-ouest – nord-est : le Charvin (2409 m), l'Étale (2484 m), le col des Aravis (1487 m), puis la Pointe des Verres et la Pointe Percée (2750 m), en balcon face au Mont-Blanc. L'air y entre par deux grandes portes : la vallée de Thônes et de Saint-Jean-de-Sixt, qui mène à La Clusaz et au Grand-Bornand, et, par le sud, la vallée de Faverges vers Marlens et Ugine. Retenez une idée simple : les brises de ces vallées viennent buter sur la chaîne, et les décollages de station regardent la brise, ce qui fait des Aravis un axe continu pour les grands cross.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le matin, le Charvin donne le départ",
+      "text": "Au sud de la chaîne, du côté d'Ugine, le flanc sud-ouest du Mont Charvin est celui qui chauffe le premier : les récits y situent le premier thermique du matin. Un récit de juin 2019 décolle de Praz Véchin vers 10h30, voit les premières barbules se former sur le Charvin et extrait facilement, à environ 2,5 m/s. Cela vaut pour les jours instables : par jour stable ou chargé, l'extraction est difficile depuis Méruz, le décollage du bas, 500 m sous Praz Véchin.",
+      "focus": ["mont-charvin", "meruz-praz-vechin"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "L'après-midi, la brise de Thônes se divise",
+      "text": "Dans l'après-midi d'été, l'air est aspiré par la vallée de Thônes. La carte de vol libre de 2009 montre cette brise de vallée se divisant en plusieurs branches : une vers Saint-Jean-de-Sixt puis Le Grand-Bornand, une autre vers La Clusaz et le col des Aravis, une troisième vers Manigod par Les Clefs, une dernière vers Serraval par le col du Marais. Ces tracés sont lus sur la carte, sans heure ni vitesse mesurées. Ce qui compte pour le pilote : les décollages de station, comme le Lachat au Grand-Bornand ou le Crêt du Merle à La Clusaz, sont orientés face à cette brise.",
+      "focus": ["brise-thones-la-clusaz-aravis", "brise-saint-jean-grand-bornand", "brise-thones-manigod", "brise-thones-col-du-marais-serraval"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Les brises se rencontrent à Serraval et au col des Aravis",
+      "text": "Par le sud, la brise de la vallée de Faverges monte vers Serraval et Sulens, et deux tracés de brises aboutissent à Serraval, ce qui laisse supposer sa rencontre avec celle de Thônes : deux flux qui se heurtent, donc de l'air qui monte. De l'autre côté de la chaîne, une brise remonte probablement de Flumet vers le col des Aravis, face à celle de La Clusaz ; ce sont des déductions faites sur des tracés, sans source écrite. Les récits disent qu'au col des Aravis « on monte bien » pour se replacer sur les crêtes, et l'hypothèse est que cette confluence en est la cause.",
+      "focus": ["brise-faverges-serraval", "confluence-serraval", "brise-flumet-col-des-aravis", "confluence-col-des-aravis"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le soir, la brise redescend et les dernières faces travaillent",
+      "text": "En fin de journée, le sens de la brise s'inverse dans la vallée du Bouchet : montante l'après-midi, elle devient descendante, ce que montre le circuit d'atterrissage des Potais, qui change de main. Les dernières faces encore au soleil prennent alors le relais, comme les falaises du Jalouvre entre 16 h et 17 h. XC Mag range parmi les belles sorties du soir une balade de fin d'après-midi le long de la chaîne depuis l'Étale, et un décollage du col de la Colombière, orienté sud-est à sud-ouest, est dit bon pour le soaring de fin de journée, même si la FFVL ne confirme pas cette fiche.",
+      "focus": ["brise-vallee-bouchet", "jalouvre-falaise-soleil", "etale", "colombiere-sud"],
+      "phase": "evening"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Autour du col des Aravis : des cumulus presque toujours",
+      "text": "Au col des Aravis, un fil de pilotes de La Clusaz de 2007 (source ancienne, à recouper) dit l'activité thermique pratiquement toujours matérialisée par des cumulus bourgeonnants. Le thermique de service monte sur les faces sud, au-dessus de la Vierge du Châtelard, mais à partir d'une certaine heure la brise du col rentre et complique l'enroulement. Pour ne pas se retrouver sous le vent des thermiques du col, qui partent comme des boulets de canon, on peut passer par la combe de Borderan : sa falaise bien chauffée donne de l'ascendance dès que la brise de vallée de La Clusaz démarre, en tout début d'après-midi. La pente sous le Crêt du Loup et les combes de la face est se déclenchent à la même heure, par cycles non synchrones.",
+      "focus": ["col-des-aravis-vierge", "col-des-aravis-brise-col", "combe-de-borderan", "cret-du-loup-pente"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Plus au sud-ouest : l'Étale, la Dent de Cons, la Belle Étoile",
+      "text": "L'Étale est le chaînon central des Aravis, au sud de La Clusaz : sa face ouest et son sommet donnent un thermique l'après-midi, que l'on découvre parfois trop tard les jours chauds, d'où le conseil de voler haut. Plus au sud-ouest, la chaîne regarde la vallée de Faverges : un récit de juillet 2019 trouve la Dent de Cons « hyper généreuse », coiffée d'un cumulus à 2900 m, alors que la Belle Étoile voisine ne donne rien ce jour-là. Par vent de sud, la croupe sud de la Belle Étoile est une zone de déclenchement évidente.",
+      "focus": ["etale", "dent-de-cons-belle-etoile"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "La Clusaz : des télésièges l'été, et le foehn qui guette",
+      "text": "Les décollages d'été de La Clusaz s'étagent le long des télésièges, ouverts du 1er mai au 31 octobre. Le Crêt du Merle (1473 m) est un petit décollage d'environ 200 m de dénivelé ; le Crêt du Loup (1831 m), au deuxième télésiège, est le décollage principal des vols d'été, avec environ 560 m. L'Aiguille des Calvaires (2035 m) se gagne à pied depuis l'un des deux, et l'Étale part du téléphérique à 2000 m, orienté nord-ouest, mais son statut actuel n'est pas vérifié. Tous regardent le nord, l'ouest ou le nord-ouest ; on se pose à Cortibot, près des tennis, sur la zone fauchée.",
+      "focus": ["cret-du-merle", "cret-du-loup", "aiguille-des-calvaires", "etale-telepherique", "cortibot"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Le Grand-Bornand : un seul décollage, un seul atterrissage",
+      "text": "Au Grand-Bornand, seul le Lachat est autorisé au décollage : à 2020 m, desservi par la télécabine du Rosay puis un télésiège, il offre plus de 1000 m de dénivelé et regarde le sud-ouest, face à la brise de vallée. On décolle sur la zone matérialisée à l'arrivée du télésiège, sans survoler les pistes à moins de 50 m, et le soaring y est interdit. L'après-midi, un thermique devant le décollage monte jusqu'à environ 4 m/s, mais par sud on peut se retrouver sous le vent de la face sud du Lachat. Le seul atterrissage autorisé est celui des Potais, dont le circuit change de main selon que la brise est montante ou descendante : on y anticipe la brise montante et les hors-terrains.",
+      "focus": ["lachat-grand-bornand", "lachat-gb-thermique", "lachat-gb-regles-sous-le-vent", "les-potais", "potais-brise-hors-terrain"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Le tour de la vallée du Grand-Bornand",
+      "text": "Le classique du Grand-Bornand, environ 53 km, part tôt vers le Jalouvre, puis le Roc des Tours et le Lachat de Thônes, avant de revenir par la pointe d'Almet, derrière le décollage, puis la Pointe Percée et le col des Aravis. Il faut des plafonds d'au moins 2500 m, 2300 m pouvant suffire, souvent plus de 3000 m en août. Le Jalouvre se prend de haut, car on y est vite sous le vent ; au Roc des Tours, il faut être sûr de trouver la pompe au pied de la falaise ; sur l'Almet, les récits disent que ça monte facilement de partout. Autour du Bargy et du Jalouvre, des zones de gypaète interdisent le survol à moins de 300 m.",
+      "focus": ["tour-de-la-vallee-grand-bornand", "jalouvre-falaise-soleil", "roc-des-tours", "pointe-d-almet", "pointe-percee-verres", "zsm-gypaete-aravis"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Le grand axe : du Charvin à la Dent de Cons et au-delà",
+      "text": "Les grands triangles utilisent la chaîne comme un axe. Un triangle de 199 km part de Praz Véchin vers 10h30, passe par le Charvin puis la Dent de Cons, avec un vent de sud annoncé à 1500 m qui se mêle à la brise, avant de traverser les Bauges jusqu'à Grenoble et de revenir par Montmin et le Parmelan. Un autre, de 202 km, part de Saint-Hilaire vers 11h30 et suit les faces ouest des Aravis, le col des Aravis, le col du Charvin passé sans grande marge, puis la Dent de Cons à 2900 m. Dans les deux cas la moyenne tourne autour de 25 km/h, et en remontant les crêtes les brises donnent une composante sud ; le retour par Albertville est compliqué par les fortes brises et les dégueulantes.",
+      "focus": ["meruz-charvin-dent-de-cons", "aravis-202-chartreuse-albertville", "mont-charvin"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "D'Annecy aux Aravis par la Tournette et Sulens",
+      "text": "Un récit de septembre 2018 relie Planfait aux Aravis : les Dents de Lanfon, la Tournette, un gros nuage traversé, puis Sulens, la « station-service du parapentiste », coiffée d'un gros cumulus, bon endroit pour recharger à mi-chemin. En venant du Charvin on raccroche facilement Sulens, mais sans se mettre trop au nord : la brise de Faverges contourne la montagne des deux côtés et fait un venturi dans le col entre Sulens et La Tulle. Après les Aravis, le récit traverse vers le Bargy et atteint 2700 m au Jalouvre ; les pilotes de Planfait conseillent ce sens de rotation plutôt que l'inverse. Près de Serraval, la zone de gypaète de l'Arclosan impose de passer à plus de 2100 m ou entre 1100 et 1150 m.",
+      "focus": ["planfait-sulens-aravis-bargy-lachat-2018", "montagne-de-sulens", "sulens-la-tulle-venturi", "arclosan-zsm-aravis"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Ce qui chute ou se retourne sur la chaîne",
+      "text": "Le Jalouvre se prend de haut : depuis le col du Chinaillon, par vent d'ouest à nord-ouest, on est trop sous le vent et on perd de l'altitude. À la Pointe Percée, un pilote au vent de la crête a subi une méga-descendance dont il ignore l'origine, jusqu'à descendre presque au pied des falaises avant d'être remonté par un ascenseur. Sur les faces est, il ne faut pas arriver trop tard : on se retrouve sous le vent aux Quatre-Têtes, avec des thermiques poussifs. Et au col des Aravis, le choix entre le versant sud au soleil et le versant nord exposé à la brise n'est pas évident : mieux vaut arriver haut.",
+      "focus": ["jalouvre-sous-le-vent", "pointe-percee-descendance", "aravis-quatre-tetes-trop-tard", "col-des-aravis-choix-versant"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par sud à sud-ouest : La Clusaz sous le foehn",
+      "text": "Par vent de sud à sud-ouest, les décollages de La Clusaz sont mauvais à cause de l'effet de foehn, ce vent qui franchit la chaîne et redescend de l'autre côté ; leur vent défavorable FFVL est le sud-ouest, et le Crêt du Merle demande déjà de l'attention. À l'Étale, le foehn n'est mauvais que par sud fort. Le Lachat, lui, regarde le sud-ouest, face à la brise de vallée : un sud très léger y est bon, mais plus fort il devient un piège, car le vent météo en altitude s'ajoute à une pente raide.",
+      "focus": ["clusaz-foehn-sud", "cret-du-loup", "etale-telepherique", "lachat-grand-bornand"],
+      "phase": "afternoon",
+      "wind": { "from": "SO", "kmh": 20 },
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par ouest, nord-ouest ou nord : La Clusaz dans l'axe",
+      "text": "Les décollages de La Clusaz regardent le nord, l'ouest et le nord-ouest : par ces vents, ils sont dans l'axe. Au-dessus de 2000 m, un nord-ouest marqué laisse les thermiques exploitables, mais les confluences deviennent très turbulentes, avec des descendances de 6 m/s pendant plus de 10 secondes, comme au retour du triangle de 202 km. Par nord, le Lachat est défavorable, et l'ancien atterrissage de la patinoire, au carrefour de plusieurs vallées, était très turbulent : il n'est plus autorisé, et l'on se pose aux Potais.",
+      "focus": ["aravis-confluences-no", "cret-du-loup", "cret-du-merle", "patinoire-nord"],
+      "phase": "afternoon",
+      "wind": { "from": "NO", "kmh": 20 },
+      "view": "massif"
+    },
+    {
+      "chapter": "Les transitions",
+      "title": "Sortir des Aravis : Bornes, Beaufortain, Faucigny",
+      "text": "Au nord, la brise du Borne, tracée de Saint-Pierre-en-Faucigny au Grand-Bornand, est le chemin classique d'accès aux Aravis depuis le Faucigny, et l'on peut prolonger depuis les Quatre Têtes, sous la Pointe Percée, vers la chaîne. Au sud, après le Charvin et la Dent de Cons, on entre dans le Beaufortain en relançant sur la face ouest-nord-ouest de la Roche Pourrie, face à la brise d'Annecy : un récit y monte par paliers, de 1700 à 2600 m. Vers l'ouest, la Tournette ouvre les Bornes : un triangle de plus de 100 km relie la Tournette, la Pointe Percée, la Sous-Dine et la dent d'Arclusaz.",
+      "focus": ["arve-faucigny/brise-du-borne", "arve-faucigny/quatre-tetes-aravis", "beaufortain/roche-pourrie-brise-d-annecy", "bornes/triangle-tournette-percee-sousdine-arclusaz"],
+      "view": "massif"
+    }
+  ]
+}

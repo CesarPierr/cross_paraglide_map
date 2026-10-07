@@ -1,0 +1,126 @@
+{
+  "massif": "mercantour",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "Le Mercantour : de hautes vallées nord-sud qui s'ouvrent sur la mer",
+      "text": "Le Mercantour est fait de hautes vallées nord-sud, la Tinée, la Vésubie, la Roya et le haut Var, qui débouchent sur le Var ou sur la mer, au pied d'un parc national que l'on ne survole pas à moins de 1000 m au-dessus du sol. Les brises de vallée y sont fortes et précoces l'été. La brise de mer est le fait majeur : elle remonte le Var, la Vésubie et la Roya l'après-midi et rencontre l'ouest et les brises de l'intérieur. Il y a peu de sites officiels : Auron, la Colmiane, la Roya et Sospel ; Valberg, Isola et la Vésubie n'ont pas de fiche exploitable.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le matin, des brises qui descendent ; dès midi, des brises de vallée fortes",
+      "text": "Sous un flux de nord, le Var et la Vésubie sont encore en régime catabatique le matin, c'est-à-dire que l'air froid y descend : un pilote raconte avoir utilisé le thermodynamique de la brise catabatique de la Vésubie, orientée pile en face des plus belles pentes de Bonson. À Sospel, le décollage de la Lavina sert le matin, avant que la brise passe au sud à cause des entrées maritimes. Puis les brises montantes prennent le relais, fortes et précoces : à Saint-Étienne-de-Tinée, un fort venturi à partir de 12 h 30 ; entre Isola et le Caire Gros, une brise massive ; à Cagnorina et au Col de Tende, de fortes brises de vallée en pleine saison, nourries par la brise de sud-est née à l'embouchure de Vintimille.",
+      "focus": ["brise-vesubie", "sospel-lavina", "brise-tinee", "brise-roya", "ffvl14294-brise-roya-col-de-tende"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "L'après-midi, la brise de mer rencontre l'ouest",
+      "text": "La brise de mer remonte le Var et, dans les vallées de l'intérieur, elle rencontre les brises et le vent d'ouest : un pilote situe vers Ascros le début de cette zone de confluence, où l'ascendance dérive vers le nord. À Sospel, la brise de la Bévéra, née à Vintimille, rencontre celle du col de Castillon, qui vient de Menton : ces confluences sont fugaces et surprenantes, mais utiles pour se refaire après un échec au col. À la Colmiane, la brise de vallée rencontre l'ouest au-dessus de La Raya, en une confluence qui était plus à l'ouest que d'habitude en 2012. Dans le haut Var, la brise est plus forte l'été, et elle peut venir de Puget-Théniers plutôt que de la vallée.",
+      "focus": ["prealpes-nice-var/confluence-ascros-puget-theniers", "brise-bevera-sospel", "convergence-sospel-castillon", "convergence-colmiane-raya", "brise-haut-var"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "La Colmiane : la pompe à Gaby, la Balme, le Pétoumier",
+      "text": "Au Veillos, l'ancien catalogue cite la pompe à Gaby, sur la crête des Gasc, et un forumeur compare les thermiques à ceux d'Espagne, forts, sans besoin de vario. À la Balme de la Frema, toute en calcaire, le thermique donne souvent 300 à 600 m de gain en plus, et le plafond était de 2850 m en 2012. Le Pétoumier est favorable en thermiques et en dynamique tout le long, et le Pic l'est en dynamique ouest et par mistral, avec un plafond possible de plus de 4000 m. De l'autre côté de la vallée, le Mont Giraud donne 2700 m en été.",
+      "focus": ["colmiane-veillos-gaby", "colmiane-balme-petoumier", "colmiane-petoumier-soaring", "colmiane-mont-giraud"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "La Colmiane, Auron, Tende : des sites d'altitude",
+      "text": "À la Colmiane, Veillos, la Balme et le Pic se volent par ouest et sud-ouest, avec danger par nord-est, est et sud-est ; il y a des lignes électriques à Veillos, et l'atterrissage de Soum du Pra, un stade, est fréquenté par des enfants. À Auron, la Cime de la Bercha, orientée sud, se rejoint par la télécabine ou une piste 4×4, avec 674 m de dénivelé, mais elle est dangereuse par vent d'ouest et de nord. À Tende, Cagnorina est un site de niveau bleu, en thermodynamique par régime de sud, où l'on se pose au décollage ; le Col de Tende donne du soaring par léger vent de sud, mais ses conditions sont très fortes en pleine journée de chaleur.",
+      "focus": ["colmiane-veillos", "colmiane-la-balme", "soum-du-pra", "auron-bercha", "cagnorina-tende", "col-de-tende"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Sospel : trois décollages pour de longs soarings",
+      "text": "À Sospel, trois décollages permettent de longs soarings et des départs vers la Colmiane, Tende, Gourdon ou les Alpes ligures. L'Agaisen, orienté du sud-est au sud-ouest, avec 400 m de dénivelé, est surnommé The Lift par Ozone, pour ses thermiques larges et réguliers, mais le guide de Roquebrune le juge souvent tardif et stable. La Lavina, à l'est-sud-est, sert le matin. Le Monte Grosso, en bordure du Parc, est réservé aux pilotes expérimentés, et dangereux par ouest à sud-ouest. L'atterrissage du Pigeonnier, obligatoire pour l'Agaisen, a une brise forte et un fort gradient en milieu de journée.",
+      "focus": ["sospel-agaisen", "sospel-agaisen-the-lift", "sospel-lavina", "sospel-monte-grosso", "sospel-longs-soarings", "sospel-pre-saint-etienne"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Du Mont Vial à Menton : le grand vol de 130 km",
+      "text": "Le 24 mars 2012, au printemps, après de la neige fraîche, un pilote décolle du Mont Vial à 11 h 15 et remonte le haut Var, bleu. À la Colletta, les thermiques sont très gros, avec des +10 et un gros nuage ; le Mounier donne 3200 m, et le nuage au-dessus de Beuil sert de repère pour transiter vers la Colmiane. Au Lauvet d'Ilonse, il fait un plein à 2990 m avant la transition, puis atteint 2850 m à la Balme, dans une confluence plus à l'ouest que d'habitude. Après 16 km sans enrouler, il raccroche la Cime de Suorcas à 1920 m, puis traverse Peïra Cava et la crête de Mandine, avec un glide acquis vers Sospel et la plage de Roquebrune, en arrivant face à la brise de mer du col de Castillon.",
+      "focus": ["mont-vial-menton", "la-colletta-entraunes", "mounier-thermique-3200", "lauvet-d-ilonse-relais", "colmiane-balme-petoumier", "cime-de-suorcas-peira-cava"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Le grand bocal de Roquebrune, jusqu'à Sospel et retour",
+      "text": "Depuis Roquebrune, on essaie de s'élever au niveau du Mont Gros, ou plus à l'ouest où les plafonds sont parfois plus sérieux : un récit d'hiver note que tout le monde peine sous 850 m. On tape ensuite les falaises de Gorbio, au-dessus de la route, où le thermique est assez fort, large et simple, puis les crêtes sommitales de Sainte-Agnès, où ça monte partout une fois au-dessus. Le guide de P. Salvi conseille de viser la crête au sud-ouest du Monte Grosso plutôt que l'Agaisen, et, par brise forte, de viser la crête et non les faces ouest. Au retour, il faut arriver près du sommet du Razet, puis passer le col de Castillon nettement plus haut que les lignes, à cause d'un effet de verrou ; le thermique du retour, face ouest de Sainte-Agnès, aide à raccrocher.",
+      "focus": ["roquebrune-sospel-col-de-castillon", "roquebrune-mont-gros-plein", "roquebrune-gorbio-falaises", "roquebrune-sainte-agnes-cretes", "sospel-razet-col-de-castillon", "roquebrune-thermique-du-retour"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Les crêtes frontalières, de la Colmiane au col de Tende",
+      "text": "Le 10 août 2011, par ouest à ouest-nord-ouest léger, un vol d'environ 45 km part de la Colmiane et suit les crêtes frontalières sous les cumulus : Mont Giraud à 2700 m, Pétoumier avec des cumulus à 3000 m, Cime du Mercantour, Pelago, Gélas, puis le col de Tende, avec un posé en altitude près de Castel Frippi ; il reste au-dessus de 1000 m du sol. Un récit d'échec instructif, le 29 avril 2019, raconte à l'inverse un nord-est qui contre l'arrivée à la Colmiane depuis Clans, des cisaillements entre le nord et les brises de la Tinée et des canyons, et l'Arpille contrée par l'ouest.",
+      "focus": ["colmiane-gelas-tende", "colmiane-mont-giraud", "colmiane-esteron-bleine"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Poser tôt dans les vallées : venturi, gradient, lignes",
+      "text": "Partout, l'été, il faut poser avant que la brise soit forte, ou voler en fin de journée. À Saint-Étienne-de-Tinée, le stade a des lignes électriques et un fort venturi dès 12 h 30 ; on peut aussi se poser dans les champs au-dessus du camping d'Auron. À Sospel, le Pigeonnier a une brise forte, des turbulences, un fort gradient, et une ligne électrique au milieu du champ. À Cagnorina et au Col de Tende, on se pose au décollage et la brise peut rentrer fortement assez vite ; le stade de Tende, en bas, n'est utilisable que tôt le matin ou le soir. À Larmacreuse, une ligne longe le Refrei et le gradient est fréquent en période chaude.",
+      "focus": ["saint-etienne-tinee-venturi", "sospel-atterro-gradient", "cagnorina-forte-brise", "col-de-tende-brise", "ffvl14293-larmacreuse-ligne-gradient", "ffvl904-colmiane-lignes-electriques"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Le Parc national et la TMA 9",
+      "text": "Le Parc national du Mercantour interdit le survol à moins de 1000 m au-dessus du sol, toute l'année, et les gardes prennent cette règle très au sérieux ; la marche et vol au Mangiabo, en zone centrale, n'est autorisée que du 1er août au 15 octobre. Les cross du secteur se font bien au-dessus de 1000 m du sol. À Sospel, la TMA 9 limite le plafond à 1981 m ou à 305 m du relief, et les cross vers la Colmiane, Tende, Gourdon ou les Alpes ligures doivent la respecter.",
+      "focus": ["parc-national-mercantour-centre", "tma-9-sospel"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par Lombarde ou nord fort : danger",
+      "text": "La Lombarde est un vent de nord rafaleux et fort, généré par les dépressions du golfe de Gênes : c'est un danger à Sospel. Dans les récits, le nord qui forcit avec l'altitude pousse haut les nuages, avec des ombres aux vitesses variables, et provoque des cisaillements entre le nord et les brises, en particulier à la Tinée et au Lauvet d'Ilonse. Sur la Roya, les conditions sont alors très fortes.",
+      "focus": ["lombarde-sospel", "brise-tinee", "lauvet-d-ilonse-relais"],
+      "wind": { "from": "N", "kmh": 30 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par ouest ou mistral : la Colmiane favorable, Auron dangereux",
+      "text": "Par ouest, les décollages de la Colmiane, orientés ouest et sud-ouest, sont en régime, mais le bol à l'est de Veillos est en rotor sous le vent de La Raya : on monte haut vers le Mont Pétoumier. À Sospel, l'ouest prend vite le pas sur la brise de la Bévéra et condamne les transitions face au vent. Par mistral, Sospel sert de repli, la Colmiane est favorable en dynamique ouest et par mistral, avec un plafond de plus de 4000 m possible, et Auron est dangereux par vent d'ouest et de nord.",
+      "focus": ["colmiane-veillos", "colmiane-rotor-raya", "colmiane-petoumier-soaring", "brise-bevera-sospel", "auron-bercha"],
+      "wind": { "from": "O", "kmh": 20 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par est ou nord-est : danger au sol, plafonds en cross",
+      "text": "Par est, la Colmiane est dangereuse de nord-est à sud-est, Sospel par est marqué, et Roquebrune aussi ; un foehn d'est est possible sur les crêtes frontalières. Un régime d'est ou de nord-est d'altitude donne en revanche de bons plafonds en cross. Le nord-est a contré l'arrivée à la Colmiane depuis Clans en 2019, et l'ensoleillement est tardif au sud de la Colmiane.",
+      "focus": ["colmiane-la-balme", "sospel-atterro-gradient", "colmiane-esteron-bleine", "mont-vial-menton"],
+      "wind": { "from": "E", "kmh": 10 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par sud ou sud-est : la brise de Vintimille domine",
+      "text": "Par sud, Cagnorina et le Col de Tende donnent du thermodynamique et du soaring par léger sud, Auron fonctionne en thermiques, et à Sospel l'Agaisen est ouvert du sud-est au sud-ouest. Un sud combiné à la brise de mer provoque des entrées maritimes rapides. Par sud-est, la brise de Vintimille domine à Sospel et sur la Roya, et la Lavina n'est utilisée que le matin, avant que la brise passe au sud.",
+      "focus": ["ffvl721-cagnorina-thermo-dynamique", "cagnorina-soaring", "ffvl14294-col-de-tende-thermique", "sospel-agaisen", "sospel-lavina", "brise-roya"],
+      "wind": { "from": "S", "kmh": 15 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Les transitions",
+      "title": "Vers Bleine, Saint-André, Gourdon et l'Italie",
+      "text": "Vers l'ouest, la haute vallée du Var relie le Mercantour à Bleine : un vol de mars 2009 passe de Bleine à la Tinée par le haut Var, avec des thermiques jusqu'à 3000 m à l'est du Saint-Honorat. Les cross de Sospel vont vers la Colmiane, Tende, Gourdon ou les Alpes ligures ; l'Agaisen a même été le point de départ d'un vol jusqu'à Saint-André, à environ 75 km. Vers l'est, les crêtes de Tende ouvrent sur l'Italie, où d'autres options mènent vers la Roya, ou par la Bévéra, Isolabona et Rochetta.",
+      "focus": ["bleine-saint-honorat-isola", "sospel-longs-soarings", "colmiane-gelas-tende", "roquebrune-sospel-col-de-castillon"],
+      "view": "massif"
+    }
+  ]
+}

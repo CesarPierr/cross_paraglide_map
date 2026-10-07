@@ -1,0 +1,126 @@
+{
+  "massif": "prealpes-digne-lure",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "Digne, Sisteron, Lure, Moustiers : quatre pays aux régimes différents",
+      "text": "Les Préalpes de Digne et de Lure réunissent quatre sous-secteurs. Autour de Digne, sur la Bléone, ce sont des sites de brise : des brises descendantes le matin, puis des brises uniquement à partir de midi. Autour de Sisteron et de la Durance, Gâche et Sumiou se volent surtout par nord-ouest, en fin de mistral. La Montagne de Lure est une grande barrière est-ouest, dont la face sud est puissante l'été. Plus à l'est, Moustiers et le Montdenier sont des sites de vent d'ouest et de restitution. Le bassin de Digne est aussi la source du vent de sud-ouest qui arrive à Saint-André par Barrême.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le matin, la brise descend sur Digne ; Banon vole par est",
+      "text": "À l'Andran, le matin, la brise est descendante ou un léger vent de nord : la brise du matin offre un doux vent de face de 7 h à 9 h au décollage nord-est. On y décolle donc en nord-est le matin, puis on bascule au sud-ouest dès que les brises tournent. À Banon, Grou de Bane est un site du matin, réservé aux régimes d'est et de sud-est : son décollage est donne un bon rendement même par vent modéré, mais le terrain est turbulent dès que le vent passe à l'ouest. À Rustrel, le site est au contraire à l'ombre le matin, et le thermique n'arrive que vers midi.",
+      "focus": ["brise-descendante-andran-matin", "andran-digne", "ffvl199-grou-de-bane-est", "grou-de-bane-banon", "ffvl197-rustrel-thermique-midi"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "À midi, les brises de la Bléone et de la Durance",
+      "text": "À Digne, à l'Andran, à partir de 12 h, ce sont les brises uniquement : un venturi, c'est-à-dire un resserrement qui accélère l'air, les rend vite fortes côté ouest au décollage. À Villevieille, elles commencent dès 11 h. Les pilotes redoutent aussi les fortes brises de la Bléone au retour des cross. Dans la Durance, la brise remonte de Manosque vers Sisteron : Oraison y est exposé à une brise de vallée souvent trop sud, avec des entrées de vent brutales que les prévisions n'annoncent pas, et devant Gâche, la brise de Sisteron est brassée de thermiques hachés qui remontent vers la Motte-du-Caire.",
+      "focus": ["brise-bleone-digne", "venturi-andran-digne", "villevieille-digne", "brise-durance-manosque-sisteron", "convergence-gache-saint-geniez"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le soir, des restitutions douces à Sumiou, Oraison, Moustiers et Gâche",
+      "text": "En fin d'après-midi, plusieurs sites offrent une ascendance douce, la restitution de la chaleur des pentes. À Sumiou, une falaise nord-est, un pilote a décollé à 17 h et s'est fait immédiatement satelliser 100 m au-dessus, dans une ascendance thermodynamique très douce, alors que toute la zone était à l'ombre. À Oraison, le soaring du soir, par léger vent d'ouest ou brise, est très sympa. À Moustiers, la restitution du soir mène jusqu'au lac de Sainte-Croix, puis à la Reine Jeanne. À Gâche, le dynamique de nord-ouest du soir est beaucoup plus propre qu'en journée, quand les thermiques hachent le vol.",
+      "focus": ["sumiou-falaise-thermodynamique-du-soir", "oraison-restitution-soir", "moustiers-restitution", "gache-dynamique-nord"],
+      "phase": "evening"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Lure, Gâche, la Baume : de grandes faces au soleil",
+      "text": "La face sud de Lure, à Contras, est en régime de brise de sud à sud-sud-ouest ; en été, la convection peut y être très puissante, ce qui demande une grande prudence jusqu'à l'atterrissage, et l'aire de décollage est réduite. Un pilote local passe souvent sur Gâche en cross, en milieu d'après-midi, au printemps ou en été, et y trouve toujours de très bons thermiques, avec des planeurs en ridge autour. À Sisteron, un guide touristique décrit les falaises calcaires de la Baume comme de gigantesques panneaux solaires, chauffés dès le milieu de la matinée, avec des plafonds souvent supérieurs à 3000 m en été : c'est une source non pilote, à confirmer.",
+      "focus": ["brise-pente-lure-sud-contras", "ffvl1305-contras-sud-convection", "montagne-de-gache", "rocher-de-la-baume-sisteron"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Entre Digne et le Cheval Blanc : les relais du cross",
+      "text": "À Moustiers, la serre du Montdenier déclenche dès 10 h, très favorable à l'ouest, avec une aérologie forte l'après-midi ; un récit de 2012, en régime d'est, y gagne 1300 m en 11 minutes avec trois vautours, et un plafond de 4050 m a été cité. Sur la route de Fourneuby, le Mourre de Chanier donne 3300 m, assez haut pour ne pas être gêné par les brises. Au-dessus de Digne, en régime d'est, un thermique avant le Cousson, que balisent les vautours, remonte à 3400 m. La montagne de Coupe, avec le Couard à son extrémité nord, est une crête généreuse sur l'axe confluent du col de Vachière au Couard : 3500 m en 2012, mais une mauvaise lecture du nuage a déjà envoyé un pilote sous le vent du thermique.",
+      "focus": ["moustiers-montdenier-thermiques", "mourre-de-chanier-plafond", "cousson-thermique-balise-vautours", "montagne-de-coupe-couard"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Digne : l'Andran le matin, Villevieille et le Cousson ensuite",
+      "text": "L'Andran est le site de départ des compétitions : on y vole le matin en nord-est, puis en sud-ouest quand les brises tournent ; il est turbulent par vent de nord ou d'ouest, et il faut vérifier que la zone Gap-Valensole n'est pas activée. Villevieille, orienté sud-ouest à ouest, est interdit par vent de sud, avec des brises à partir de 11 h : attention à ne pas reculer. Le Cousson, un décollage pentu mais sain, orienté sud-ouest, se rejoint en minibus, sans accès en voiture. Les atterrissages sont ceux de l'Andran, où le venturi interdit de reculer par brise forte, de Champourcin, à privilégier le matin en brise descendante, et du stade du Cousson, interdit les jours de match.",
+      "focus": ["andran-digne", "villevieille-digne", "cousson", "andran-atterro", "champourcin-digne", "cousson-stade"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Gâche, Sumiou, Contras, Banon, Moustiers, Oraison : un site pour chaque régime",
+      "text": "Gâche, au-dessus de Sisteron, est un site de nord à nord-ouest, volé uniquement vent de face, en fin de mistral faiblissant ; le décollage est court, raide et déventé, de niveau marron. Sumiou, falaise nord-est au-dessus de Valbelle, se vole par nord, mais passe sous le vent de Lure par vent de sud. Contras sud, sur Lure, est un site de brise de niveau bleu, et Grou de Bane, à Banon, est idéal du sud au sud-est. À Oraison, on ne décolle que par ouest ou sud-ouest et l'on ne se repose jamais au déco. Le Montdenier, à Moustiers, est dangereux par vent d'est, de sud-est et de nord.",
+      "focus": ["gache-sisteron", "sumiou", "contras-sud", "grou-de-bane-banon", "oraison-le-relais", "moustiers-montdenier"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Du col de Bleyne à Digne, en régime d'est : 126 km",
+      "text": "Le 28 mars 2012, par vent d'est à sud-est de 10 km/h annoncés, un pilote sort du col de Bleyne vers 2200 m, et une transition de groupe passe des Lattes au Teillon, poussée de 10 km/h par l'est. Il passe au vent de Castellane par le Destourbes, enroule le Mont Denier avec les vautours, survole Digne à 3400 m, puis atteint le Blayeul et la montagne de Coupe, où le retour est contré par le sud-est. Il revient par le Mouchon, la montagne de l'Aup, où le sud se divise en deux flux, la crête des Serres et Chamatte, puis rentre vers Bleyne par Crémon, Vauplane, Soleilhas et Arpille. En altitude, par est marqué, la dérive atteint 45 à 55 km/h.",
+      "focus": ["bleyne-moustiers-digne-saint-andre", "moustiers-montdenier-thermiques", "cousson-thermique-balise-vautours", "montagne-de-coupe-couard"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Venturi, onde-rotor du soir, entrées de vent brutales",
+      "text": "À l'Andran, le venturi accélère les brises : on ne décolle pas en ouest si le vent vient de la droite, et l'on ne recule pas à l'atterrissage par brise forte. Au Cousson, il faut se méfier d'une onde-rotor le soir par ouest ou nord-ouest fort. À Oraison, les entrées de vent sont brutales : on ne décolle pas si la brise de sud est marquée, car on n'atteint pas le terrain, ni par vent de nord, et la repose au déco est interdite. À Sumiou, même un vent de sud faible met le site sous le vent de Lure : il faut se méfier d'une apparente absence de vent. Au plan d'eau de Sisteron, les confluences de vallées font de la turbulence, avec une ligne à haute tension.",
+      "focus": ["venturi-andran-digne", "cousson-onde-rotor-soir", "oraison-entrees-de-vent", "sumiou-sous-le-vent-lure", "plan-deau-sisteron-confluences"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Saint-Auban, Canjuers, Verdon : les règles",
+      "text": "Le centre de vol à voile de Saint-Auban opère 280 jours par an avec 25 planeurs, et l'aéroclub de Sisteron fait de l'onde par mistral : les planeurs sont fréquents sur Gâche et autour des crêtes. La zone militaire R138 de Canjuers, près d'Aiguines, est interdite de pénétration, avec des tirs sol-sol jusqu'à haute altitude. Autour de Moustiers, le parc régional du Verdon demande de ne pas survoler les zones de nidification du vautour fauve du 1er janvier au 31 août et de l'aigle royal du 1er janvier au 30 août. La réserve naturelle régionale de Saint-Maurin, dans les gorges du Verdon, est à ne pas survoler à basse altitude, et à Rustrel, la pente entre le décollage sud et le village est interdite de survol à moins de 300 m du sol.",
+      "focus": ["zone-saint-auban-vol-a-voile", "zone-r138-canjuers-aiguines", "zone-faune-vautour-moustiers", "zone-faune-aigle-sud-moustiers", "rnr-saint-maurin", "ffvl14291-rustrel-survol-interdit"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par mistral, nord ou nord-ouest : l'onde, Gâche et Sumiou",
+      "text": "Par mistral, c'est l'onde : les vols à voile de Sisteron et de Saint-Auban en profitent, surtout l'automne et l'hiver, et la Baume se trouve sous l'onde. Gâche, Sumiou et le nord de Lure sont les sites de nord et de nord-ouest : Gâche en dynamique par fin de mistral, Sumiou en vol du matin avec fin de nord-ouest ou nord faible. À Digne, l'Andran est turbulent par nord et le Cousson défavorable, et Banon est complètement sous le vent. Par nord-ouest, le Montdenier et Courchon sont dangereux.",
+      "focus": ["gache-dynamique-nord", "sumiou-vol-du-soir", "la-baume-onde-mistral", "cousson", "grou-de-bane-banon"],
+      "wind": { "from": "NO", "kmh": 20 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par sud : Sumiou sous le vent de Lure, Villevieille interdit",
+      "text": "Par sud, Sumiou est sous le vent de Lure, ce qui est dangereux, Villevieille est interdit, et à Oraison on n'atteint pas le terrain si la brise de sud est marquée. Saint-Geniez est en revanche volable par léger vent de sud, quand la brise est installée, et Contras sud se vole en régime de sud à sud-sud-ouest. Le soir, à Saint-Geniez, le sud-est peut se renforcer : il ne faut pas se faire piéger par le venturi sur la barre.",
+      "focus": ["sumiou-sous-le-vent-lure", "villevieille-digne", "saint-geniez-soaring", "brise-pente-lure-sud-contras", "oraison-entrees-de-vent"],
+      "wind": { "from": "S", "kmh": 15 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par ouest : Villevieille, Oraison, Montdenier",
+      "text": "Par ouest, Villevieille, Oraison par sud-ouest ou ouest, Contras Saim Buguet et le Montdenier, très favorable, sont ouverts. Banon devient en revanche turbulent dès que le vent passe à l'ouest au-delà du sud-sud-ouest, et l'Andran est délicat en face ouest.",
+      "focus": ["villevieille-digne", "oraison-restitution-soir", "contras-saim-buguet", "moustiers-restitution", "grou-de-bane-banon"],
+      "wind": { "from": "O", "kmh": 20 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par est : le retour d'est de Banon et les cross de Bleyne",
+      "text": "Par est, Grou de Bane est réputé pour le retour d'est : son décollage est donne un bon rendement même par vent modéré. À Moustiers, le Montdenier et Courchon sont dangereux par est et sud-est. Un est marqué permet le cross depuis Bleyne vers Moustiers et Digne, avec des plafonds de 3000 à 3500 m. Par sud-est, Banon peut être turbulent avant l'arrivée d'un front venant du golfe de Gênes, et le retour vers le sud est contré.",
+      "focus": ["ffvl199-grou-de-bane-est", "bleyne-moustiers-digne-saint-andre", "moustiers-montdenier", "moustiers-courchon"],
+      "wind": { "from": "E", "kmh": 10 },
+      "phase": "morning",
+      "view": "massif"
+    },
+    {
+      "chapter": "Les transitions",
+      "title": "Vers Saint-André, le Cheval Blanc et Sisteron",
+      "text": "Vers l'est, un pilote signale un vol rando depuis Archail, par le Cucuyon et le Couard, qui permet, si ça tient, de longer les crêtes jusqu'au Cheval Blanc ; mais les Terres Noires en plein jour sont jugées déconseillées, à cause des turbulences. Vers Saint-André, le Mouchon, la montagne de l'Aup, la crête des Serres et Chamatte forment la route des cross. Vers l'ouest, Sisteron est, selon un guide commercial, un point de transit classique vers Saint-André, Dormillouse ou les Baronnies, et des vols des Baronnies y arrivent depuis Buc.",
+      "focus": ["archail-cucuyon-cheval-blanc", "saint-andre-verdon/saint-andre-chamatte-reyniere", "rocher-de-la-baume-sisteron", "baronnies/xc-buc-berges-sisteron"],
+      "view": "massif"
+    }
+  ]
+}

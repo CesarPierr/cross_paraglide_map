@@ -1,0 +1,101 @@
+{
+  "massif": "val-montjoie-saint-gervais",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "Saint-Gervais et le Val Montjoie en un coup d'œil",
+      "text": "Le secteur de Saint-Gervais et du Val Montjoie, avec Les Contamines, est fait de décollages d'alpage face au Mont-Blanc et de très peu d'atterrissages : à Saint-Gervais, tout converge vers le terrain de la piscine. La vallée du Bon Nant descend vers Le Fayet, où entre la brise de l'Arve. Retenez une idée simple : le matin, on vole sur les versants est, qui chauffent d'abord, vers le Mont Joly ; le soir, c'est la face ouest du Prarion, au-dessus du village, qui prend le relais.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le matin, les faces est du Mont Joly",
+      "text": "Le matin, la face est et sud-est du Mont Joly, sur l'arête herbeuse de Porcherey et de la Tête du Mottey, offre souvent de bons plafonds dès 10h en été : un bon départ de cross, malgré une sortie parfois un peu turbulente. En décollage nord, il ne faut pas gratter trop bas au début, sinon on ne sort plus du vallon. Du Mont Joux, face nord-est, on fait un vol du matin face au Mont-Blanc, balistique jusqu'à la piscine. Aux Contamines, la Kouzna, du nord-est au sud-est, est le départ de cross du matin, avec un optimum vers 11h.",
+      "focus": ["face-est-mont-joly", "porcherey", "mont-d-arbois-avenaz", "la-kouzna"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "L'après-midi, la brise de l'Arve se scinde et remonte le Bon Nant",
+      "text": "Le flux de brise venu de Sallanches se scinde d'abord sur le Mont d'Arbois, puis une seconde fois à l'entrée de la vallée de Saint-Gervais : une branche remonte le Bon Nant, une autre rejoint probablement Servoz et Chamonix. Les vitesses ne sont pas données, mais les effets se voient : la piscine est déconseillée l'après-midi, car trop turbulente dans le vent de vallée ; le Pontet a une brise forte l'après-midi ; et aux Contamines, le vent a tendance à tourner à partir de 12h. On atterrit donc le matin à la piscine, et le vol depuis Mont Joux n'est possible que le matin.",
+      "focus": ["scission-brise-entree-saint-gervais", "brise-bon-nant", "piscine-turbulence-apres-midi"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Début d'après-midi : le versant ouest du Prarion se met à chauffer",
+      "text": "Quand le soleil tourne, le versant ouest du Prarion travaille du début d'après-midi à la nuit. À La Charme, une petite falaise à la sortie du décollage permet aux thermiques de se mettre en place dès le début d'après-midi, devant le décollage ; par vent de nord ou de nord-est marqué à 2000 m, le décollage est coiffé et sous-alimenté. Au Mont Paccard, la grande forêt du versant ouest donne un bon rendement thermique dès mars, avec de petits cross dans le bocal. Sur la crête, vers le col de Voza, la brise montant côté Saint-Gervais rencontre probablement celle qui monte côté Les Houches, mais c'est une déduction non confirmée par les clubs.",
+      "focus": ["la-charme-falaise-declencheur", "mont-paccard-foret-ouest", "convergence-col-de-voza-prarion"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le soir, la restitution au-dessus du village de Saint-Gervais",
+      "text": "Quand le village et le versant du Bettex passent à l'ombre, le relief ne donne plus grand-chose : c'est au milieu de la vallée qu'il faut chercher de très larges et douces ascendances, jusqu'au coucher du soleil. Barbules fait de La Charme le site des plus beaux vols du soir de la région, avec des restitutions au-dessus du village qui tiennent en l'air très tard. Plancert est bon pour la restitution tard le soir, et souvent le dernier site praticable par vent d'ouest.",
+      "focus": ["brise-pente-charme-restitution", "saint-gervais-village-restitution", "restitution-saint-gervais-charme"],
+      "phase": "evening"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Vers le haut massif : les plafonds de Tré-la-Tête et de Miage",
+      "text": "Au-dessus des alpages, le haut massif offre des plafonds exceptionnels : un récit de mi-juillet, par canicule, atteint 3800 m à la Pointe de Mya, face sud-est, puis rencontre à mi-chemin du glacier de Tré-la-Tête une ascendance qui l'emmène à 4300 m, son record d'altitude, en évitant d'entrer dans la réserve des Contamines. L'arête de Tricot, ensuite, est difficile à tenir. Les Dômes de Miage (3600 m) se prennent en paralpinisme, avec un décollage autorisé seulement vers le nord à cause de la réserve : le col des Dômes ou le 3e dôme, pour un vol vers Saint-Gervais, pas au-delà. L'atterrissage conseillé est Passy-Marlioz.",
+      "focus": ["tre-la-tete-ascendance-4300", "beaufortain/pointe-de-mya-plafond-3800", "domes-de-miage"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Saint-Gervais : cinq décollages, un seul atterrissage",
+      "text": "Les décollages de Saint-Gervais s'étagent de part et d'autre de la vallée. À l'est, Mont Joux (1872 m, par les télécabines du Bettex et du Mont d'Arbois) sert au vol du matin, et Porcherey (1870 m), à quinze minutes de marche du parking, aux départs de cross. À l'ouest, Mont Paccard (1312 m) est une tranchée étroite dans les sapins, technique ; La Charme (1850 m) est une pente herbeuse plein ouest ; Plancert (1621 m) offre une tranchée plus large. Tous convergent vers la piscine (827 m), un grand champ avec une manche à air dans l'angle du terrain de foot, à viser sur le chemin tant que les foins ne sont pas faits.",
+      "focus": ["mont-d-arbois-avenaz", "porcherey", "mont-paccard", "la-charme", "plancert", "saint-gervais-piscine"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Les Contamines : la Kouzna, le Pontet et le col du Joly",
+      "text": "La Kouzna (1859 m), au sommet de la télécabine du Signal, a ses conditions idéales par léger nord, bise ou faible sud-est, et défavorables de sud à ouest. L'atterrissage d'été est le Pontet, ouvert du 15 juin au 15 septembre, avec un circuit en U main droite ; le practice de golf prend le relais du 16 septembre au 14 juin, et Notre-Dame-de-la-Gorge sert de secours. Le col du Joly (2017 m) est un site de soaring pour pilotes confirmés, idéal par vent de sud-ouest, mais le décollage y est interdit du 1er au 31 août à cause du bétail, et il n'y a pas d'atterrissage sur place.",
+      "focus": ["la-kouzna", "le-pontet", "practice-golf-contamines", "notre-dame-de-la-gorge", "col-du-joly"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Du Mont Joly aux Saisies et aux Aravis",
+      "text": "Depuis le décollage de Porcherey, l'arête monte directement au sommet du Mont Joly. Une fois au Mont Joly, la brochure dit que c'est la route des Saisies et des Aravis qui paraît la plus logique ; sinon on file en finesse vers la piscine s'il n'y a pas de vent de vallée. Le Mont Joly (2525 m) se prend aussi en hike & fly, avec 1700 m de dénivelé face au Mont-Blanc : un guide commercial en fait le départ des grands cross vers Chamonix ou le lac d'Annecy, avec une fiabilité moyenne. Le club des Volatiles évoque en outre un projet d'aller aux Dômes de Miage et au Mont-Blanc et de revenir.",
+      "focus": ["porcherey-mont-joly-saisies", "mont-joly"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Lignes électriques, réserve et foehn",
+      "text": "Le fond de vallée en amont de la piscine est traversé de nombreuses lignes électriques, et une ligne à haute tension longe tout le vol dynamique de La Charme, Plancert et Mont Paccard, très en avant du décollage de La Charme. À la Kouzna, une autre est à moins de 200 m en sortie, et la brochure signale que les thermiques ne sont pas loin des lignes. La réserve naturelle des Contamines-Montjoie impose de rester à plus de 300 m du sol et réduit considérablement le domaine autorisé, en particulier à l'ouest du 3e dôme de Miage. Enfin, les Contamines sont avec Chamonix la vallée la plus exposée au foehn : le Pontet est déconseillé dans ce cas.",
+      "focus": ["saint-gervais-lignes-electriques", "kouzna-ligne-ht", "reserve-contamines-montjoie", "foehn-les-contamines"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par nord : le Pontet idéal, La Charme teigneuse",
+      "text": "Par flux de nord, le Pontet est idéal pour atterrir, et la Kouzna se vole par léger nord ou bise. En revanche, La Charme devient teigneuse par vent de nord ou de nord-est marqué à 2000 m, parce que le vent coiffe le décollage, et le Mont Joux est déconseillé par vent fort, même de tendance nord.",
+      "focus": ["le-pontet", "la-kouzna", "la-charme", "mont-d-arbois-avenaz"],
+      "phase": "afternoon",
+      "wind": { "from": "N", "kmh": 20 },
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par ouest ou sud : Plancert en dernier recours, sorties malsaines",
+      "text": "Par vent d'ouest, le vol depuis Mont Joux est sous le vent et sans intérêt, alors que Plancert est souvent le dernier site praticable de la région, avec un fort besoin de pénétration pour rejoindre l'atterrissage et une sortie parfois turbulente. Par tendance sud, les sorties du Mont Paccard et de Plancert sont malsaines, sous le vent de l'arête ; le col du Joly se soare par sud à sud-ouest, avec un vent forcissant à surveiller, et la Kouzna n'admet qu'un faible sud-est.",
+      "focus": ["plancert", "mont-paccard-sud", "col-du-joly-soaring", "mont-d-arbois-avenaz"],
+      "phase": "afternoon",
+      "wind": { "from": "SO", "kmh": 20 },
+      "view": "massif"
+    },
+    {
+      "chapter": "Les transitions",
+      "title": "Sortir du Val Montjoie : Saisies, Beaufortain, haut massif",
+      "text": "Vers l'ouest, la route des Saisies mène au Beaufortain : à la Légette, entre le col des Saisies et le Mont Clocher, la relance est difficile après la montée de la matinée. Vers le haut massif, la Pointe de Mya et le glacier de Tré-la-Tête ouvrent des plafonds de 3800 à 4300 m, à condition de ne pas entrer dans la réserve des Contamines.",
+      "focus": ["porcherey-mont-joly-saisies", "beaufortain/la-legette-saisies-relance", "beaufortain/pointe-de-mya-plafond-3800"],
+      "view": "massif"
+    }
+  ]
+}

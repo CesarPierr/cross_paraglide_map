@@ -1,0 +1,115 @@
+{
+  "massif": "bourget-chambery",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "La cluse de Chambéry en un coup d'œil",
+      "text": "Ce secteur est organisé par l'énorme brise de la cluse de Chambéry : l'air de l'Albanais, d'Aix-les-Bains et du lac du Bourget descend du nord vers Chambéry, puis se divise vers les Marches. À l'est, les falaises ouest du Revard et du Nivolet, avec Vérel, reçoivent cette brise de nord tout l'après-midi ; à l'ouest, la chaîne de l'Épine et le Mont du Chat regardent l'ouest, vers Aiguebelette et la plaine de l'Avant-Pays. Retenez deux idées : on vole sur les faces ouest dès que la brise est installée, et l'espace aérien de Chambéry-Aix interdit de quitter le relief, donc jamais de vol en vallée.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Fin de matinée : l'énorme brise de la cluse se lève",
+      "text": "La brise de vallée s'installe dès la fin de matinée à Montagny et à Montlambert, et dure jusqu'en fin d'après-midi : une grande flèche longe le pied ouest du Revard et du Nivolet, passe devant l'aéroport et entre dans la cluse, avec 25 à 30 km/h selon le CHVD. Elle se divise aux Marches en deux branches, l'une qui tourne à gauche vers Albertville, l'autre à droite vers Grenoble. Elle est la plus forte à la pointe sud-ouest des Bauges, par effet venturi, c'est-à-dire par accélération dans un goulot, et un vent de nord la renforce encore.",
+      "focus": ["brise-cluse-chambery", "venturi-pointe-so-bauges"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "L'après-midi, la brise de plaine de l'Épine et la brise du lac",
+      "text": "Du côté ouest, une brise de plaine d'ouest à nord-ouest souffle de la fin de matinée jusqu'à la nuit sur la chaîne de l'Épine, forte entre 14h et 17h : la FFVL la dit favorable, et la vitesse de 15 à 25 km/h de l'atlas n'est qu'une interprétation de brise forte. Sur le lac du Bourget, la brise de lac est un flux léger le long de l'axe du lac, du nord vers Chambéry, qui alimente le décollage du Mont du Chat dès 14h selon la FFVL. Aucun décollage de brise de lac n'est documenté : elle n'est évoquée que comme un flux léger.",
+      "focus": ["brise-epine-avant-pays", "brise-lac-bourget"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le soir, la restitution d'Aiguebelette",
+      "text": "À l'Épine, le thermique est très fort entre 14h et 17h, puis les vols deviennent calmes après 17h-18h. Vient alors la restitution d'Aiguebelette, réputée fameuse mais pas garantie tous les soirs : on la cherche sur les pentes qui dominent le lac, au sud de l'atterrissage, vers 18-19h, pour quelques heures de vol parfaitement calme. Côté Revard, la falaise de Vérel offre elle aussi des vols du soir agréables, possibles tard en été.",
+      "focus": ["epine-province", "restitution-aiguebelette", "verel-falaise"],
+      "phase": "evening"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "Les falaises ouest, de Vérel au Revard",
+      "text": "À Vérel, la falaise ouest sous le Nivolet donne un thermique marqué dès le début d'après-midi à la sortie du décollage, la brise de nord s'ajoutant au thermique ; après ce relief, on raccroche le Revard et les faces ouest vers le Semnoz. Le Pertuiset, sous le vent du Revard, sert de relance : un récit y change d'étage, et son auteur regrette de ne pas avoir travaillé le thermique au-dessus. Sur la face ouest du Revard, les deux brises de pente de Trévignin et de Pugny-Chatenod se rejoignent probablement sous la crête, d'après de petites flèches de confluence sur une carte : c'est une déduction.",
+      "focus": ["verel-falaise", "pertuiset-revard", "brise-pente-revard-trevignin", "confluence-revard-trevignin"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Où ça monte",
+      "title": "L'Épine, le Mont du Chat et les relances de la crête",
+      "text": "Sur la chaîne de l'Épine, tournée vers l'ouest, l'activité thermique est soutenue en milieu d'après-midi ; elle vole bien par toutes orientations du nord-ouest au sud-ouest, faible à modéré, le nord-ouest pour les beaux cross et le sud-ouest pour le thermo-dynamique. Vers le nord, le Mont Grelle et ses pylônes, les « grilles-pains », sont une relance délicate, sous le vent. À la Dent du Chat, un récit ne trouve que du dynamique laminaire, puis un thermique passe au relais du Mont du Chat et le monte à 1900 m ; un autre y enroule un thermique bleu à 2000-2200 m. Plus au nord, le Mont de la Charvaz, au bord de la CTR, donne une relance à 1100 m.",
+      "focus": ["epine-soaring-ouest", "mont-grelle-grilles-pains", "relais-mont-du-chat", "mont-de-la-charvaz"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Vérel, le Sire, le Revard : choisir sa face",
+      "text": "Vérel-Pragondran (900 m), falaise ouest de niveau bleu, est favorable par régime de brise du nord ou vent d'ouest à nord-ouest ; le décollage est sous le vent du thermique et de la brise, avec des rouleaux, et se déconseille aux débutants en début d'après-midi, plutôt en fin de matinée avant la brise ou le soir. Le Sire se partage : le décollage sud, favorable par brise jusqu'en début d'après-midi et par vent de sud à sud-ouest, est impossible par vent de nord ; le décollage nord, favorable par météo de nord-ouest à nord ou brise de l'après-midi, est sous le vent d'une rangée de sapins. Le Revard (1491 m), herbe large accessible aux débutants, est un site de régime de brise.",
+      "focus": ["verel-pragondran", "sire-sud", "sire-nord", "revard"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "Montagny, Brocolis, Topet : se poser dans la CTR",
+      "text": "Montagny (305 m) est l'atterrissage principal de Vérel et du Sire : entouré d'arbres, dans la CTR, avec une tolérance de 50 m au-dessus du sol seulement et sans dépasser la D211. On prépare la perte d'altitude au nord, avant le Petit Sonnaz, et la brise de vallée peut forcir l'après-midi. Par vent de sud, on préfère Brocolis, un beau champ voisin, fermé du 15 décembre à fin avril à cause des charters. Côté Revard, Le Topet-Aixam, à Mouxy, est plus grand et plat, à l'est de l'autoroute ; Trévignin est étroit, avec une ligne électrique côté lac ; tous deux sont interdits tant que les foins ne sont pas fauchés et ramassés.",
+      "focus": ["montagny", "brocolis", "topet-aixam", "trevignin-veniper", "mery-chateau"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les sites",
+      "title": "L'Épine, le Mont du Chat, Sapenay : de l'autre côté de la cluse",
+      "text": "L'Épine, à La Province (1150 m), est le site de l'après-midi : décollage possible dès 11h par brise nulle ou de face, il tient dès 13h et le cross part vers 14h ; on ne passe jamais derrière la crête, à cause de la CTR. Le seul atterrissage officiel est Les Marais, à Nances, dans une zone d'arrêté de biotope où l'on plie hors de la zone. Le Mont du Chat (1456 m), décollage mixte delta-parapente de niveau vert, est favorable par brise dès 14h et vent d'ouest à nord ; la route est fermée de mi-novembre à mi-avril. Sapenay (864 m) est le seul site d'où l'on peut survoler le lac du Bourget, avec une limite de 300 m de gain en période de charters.",
+      "focus": ["epine-province", "epine-les-marais", "mont-du-chat", "sapenay-belvedere"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "De Vérel au Semnoz : l'aller-retour par brise de nord",
+      "text": "C'est le classique de l'après-midi par brise de nord : on sort de Vérel, sans virage les bons jours, on passe le Revard, puis la transition vers Bange part du col de la Cochette, vers 1550 m, avec une raccroche vers 1200-1350 m ; cinq minutes de transition mènent ensuite au Semnoz, dont on suit les faces ouest. Les Z'éléphants Volants en gardent des records : l'aller simple le plus rapide au Semnoz en 39 min 18 s, et l'aller-retour le plus tôt dans la saison le 12 février 2020. Au col de la Cochette, une bulle de quiétude de faucons demande de respecter 250 m.",
+      "focus": ["verel-semnoz-aller-retour", "bulles-quietude-revard-nivolet"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "De l'Épine à la Dent du Chat : on suit la chaîne",
+      "text": "La fiche de l'atterrissage des Marais décrit un cross vers le nord, à la Dent du Chat, ou vers le sud, en Chartreuse, voire au Vercors. Il n'y a pas de transition de plaine : on suit la chaîne. Au nord, le col du Chat est dans la CTR, donc on ne rejoint pas la Charvaz par le relief, et l'on ne vole jamais à l'est de la crête. Les relances citées sont les grilles-pains du Mont Grelle, le Mont Beauvoir, où l'on se place au vent par nord-ouest, le relais du Mont du Chat et le Mont de la Charvaz.",
+      "focus": ["epine-dent-du-chat-ar", "mont-grelle-grilles-pains", "relais-mont-du-chat"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "La CTR de Chambéry-Aix : on vole le long du relief",
+      "text": "La CTR 1, du sol à 1066 m, et la CTR 2, du sol à 1326 m, interdisent le vol, avec une tolérance de 50 m au-dessus du sol sur les atterrissages de Montagny et de Brocolis ; au-dessus, les TMA ont leurs planchers à 914 m et 1676 m. Les crêtes du Revard, du Nivolet, de l'Épine et du Chat bordent la CTR : on vole le long du relief, jamais en vallée, et jamais à l'est de la crête du Chat, ni au-dessus du lac à l'est. En hiver, avec les charters neige, c'est plus contraignant : pas de vol à plus de 300 m au-dessus du relief de l'Épine. Et à l'Épine, une ligne à haute tension traverse la montagne entre le décollage et l'atterrissage : on évite de s'y retrouver coincé derrière en grattant bas.",
+      "focus": ["ctr-tma-chambery-aix", "chat-ctr-est-crete", "epine-ligne-ht"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par nord-ouest : le régime le plus favorable du secteur",
+      "text": "Par nord-ouest, tout s'aligne sur les faces ouest. À l'Épine, c'est le vent des beaux cross vers la Dent du Chat ; au Mont du Chat, on vole par brise dès 14h et vent d'ouest à nord, voire de sud-ouest faible, vers 10 km/h. À Vérel, au Revard et au Nivolet, le thermo-dynamique marche par brise de nord et vent faible de nord-ouest ou d'ouest, avec un soaring doux le soir, limité par la CTR. À Sapenay, le vent de sud-ouest à nord-ouest est favorable.",
+      "focus": ["epine-soaring-ouest", "mont-du-chat-crete", "verel-revard-faces-ouest", "sapenay-belvedere"],
+      "phase": "afternoon",
+      "wind": { "from": "NO", "kmh": 15 },
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par sud ou par est : Vérel déconseillé, l'Épine et le Chat sous le vent",
+      "text": "Par vent de sud, Vérel est déconseillé : si le sud se sent jusqu'au sol, les falaises ouest sont sous le vent et l'air est turbulent et descendant. À Montagny, il y a des turbulences et un fort gradient au moment de poser, et l'on se pose très souvent beaucoup trop court : d'où la préférence pour Brocolis hors période de fermeture. Par vent d'est, même faible, les faces ouest sont sous le vent : à l'Épine, les vols sont aléatoires, malsains voire dangereux, même si les manches à air sont de face ; au Mont du Chat, une manche à air sensible signale les composantes est, qui sont dangereuses.",
+      "focus": ["verel-rouleaux-decollage", "montagny-sud-turbulence", "epine-sous-le-vent-est", "chat-vent-est-sud"],
+      "phase": "afternoon",
+      "wind": { "from": "S", "kmh": 20 },
+      "view": "massif"
+    },
+    {
+      "chapter": "Les transitions",
+      "title": "Sortir du secteur : Granier, Chartreuse, Bauges",
+      "text": "Pour traverser la cluse de Chambéry haut, on part du Granier à 2300-2400 m en général, 1900 m pour les guns, et l'on se place en laisse de chien dès l'entrée dans la couche de brise, vers 1200 m ; au rocher de la Savoyarde, où la brise est la plus forte, il devient quasi impossible de remonter vers le nord. Entre l'Épine et la Chartreuse, le Mont Grêle est une transition sous le vent, avec une ligne à très haute tension : 10 km à partir de plus de 2400 m, ou 5 km à partir de plus de 1600 m, avec brise forte et dégueulantes. Les triangles de 116 et 137 km du club de Saint-Hilaire passent par la Dent du Chat.",
+      "focus": ["chartreuse/passage-savoyarde", "venturi-pointe-so-bauges", "mont-grele-tht-raccroche", "triangle-st-hilaire-dent-du-chat", "chartreuse/transition-aiguebelette"],
+      "view": "massif"
+    }
+  ]
+}

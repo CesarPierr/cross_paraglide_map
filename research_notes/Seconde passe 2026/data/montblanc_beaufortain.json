@@ -2281,7 +2281,7 @@
         6.6175,
         45.8567
       ],
-      "summary": "Megève occupe un ensellement (~1100 m) entre le bassin de l'Arve (Sallanches, Combloux) et le Val d'Arly (Praz-sur-Arly, Flumet, Ugine, Albertville) : « confluence de col » citée par la fiche du Palais des Sports, qui rend l'atterrissage délicat et impossible par vent soutenu de nord à nord-est. Rochebrune (1733-1755 m, O-NO, aussi N/NE) est le site de référence : thermique et brise de vallée, « confluence permettant de longs vols paisibles », thermique de l'Alpette puis départ de cross vers le Mont Joly ou les Aravis ; par vent de sud-ouest le décollage est dangereux (rouleaux) et le survol de l'altiport est interdit. Côté Arve, la brise forte l'après-midi du bassin de Sallanches rend turbulents les atterrissages de Cordon et de Lépigny, et la Tête du Planet n'est plus volable après 13h (brise dans le dos), d'où le repli sur le plateau des Benets. Côté Arly, l'air remonte d'Albertville par Ugine : il est « presque toujours de face » au déco du Méruz, rend inatteignables à la finesse les atterrissages de Marlens et Marthod, et passe au-dessus de la crête de Bisanne l'après-midi. Les sources sont minces pour Flumet, Crest-Voland et Notre-Dame-de-Bellecombe : Ban Rouge/Crêt du Midi (O, balistique, pas d'ascendance particulière) est classé non praticable en été par la FFVL à cause des troupeaux.",
+      "summary": "Megève occupe un ensellement (~1100 m) entre le bassin de l'Arve (Sallanches, Combloux) et le Val d'Arly (Praz-sur-Arly, Flumet, Ugine, Albertville) : « confluence de col » citée par la fiche du Palais des Sports, qui rend l'atterrissage délicat et impossible par vent soutenu de nord à nord-est. Rochebrune (1733-1755 m, O-NO, aussi N/NE) est le site de référence : thermique et brise de vallée, « confluence permettant de longs vols paisibles », thermique de l'Alpette puis départ de cross vers le Mont Joly ou les Aravis ; par vent de sud-ouest le décollage est dangereux (rouleaux) et le survol de l'altiport est interdit. Côté Arve, la brise forte l'après-midi du bassin de Sallanches rend turbulents les atterrissages de Cordon et de Lépigny, et la Tête du Planet n'est plus volable après 13h (brise dans le dos), d'où le repli sur le plateau des Benets. Côté Arly, l'air remonte d'Albertville par Ugine : il est « presque toujours de face » au déco du Méruz, rend inatteignables à la finesse les atterrissages de Marlens et Marthod, et passe au-dessus de la crête de Bisanne l'après-midi. Les sources sont minces pour Flumet, Crest-Voland et Notre-Dame-de-Bellecombe : Ban Rouge/Crêt du Midi (O, balistique, pas d'ascendance particulière) est classé non praticable en été par la FFVL à cause des troupeaux. Compléments de la passe « secteurs minces » : le Val d'Arly se traverse depuis Bisanne (décollage avant midi) par l'Aiguille Croche (3135 m le 8 août 2020) puis le raccroche au-dessus de Praz-sur-Arly (3100 m) vers les Aravis ; le Mont Joly fournit les derniers thermiques avant le Mont Blanc (3200 m le 18 août 2012) ; au-dessus de Megève une confluence des brises de Flumet et de Sallanches (habituellement plus vers Praz-sur-Arly) a permis plus de 7 km de glisse sans enrouler en mai 2015, mais le verrou de Combloux se passe face à une brise très forte (14 avril 2024). Les écoulements descendants du matin sont des déductions de confiance faible.",
       "breezes": [
         {
           "id": "brise-arly",
@@ -2334,13 +2334,17 @@
             "max": null
           },
           "season": "printemps-été",
-          "description": "ParaglidingEarth (Le Méruz, Ugine) : la brise de vallée arrive presque toujours de face au déco ; le matin (face SE) le site donne tout son potentiel, puis la brise devient de plus en plus forte et gêne les thermiques ; les atterrissages de Marlens et Marthod sont « difficilement atteignables à la finesse » à cause d'elle. Fiche FFVL de Bisanne Nord-Ouest : site utilisé « l'après-midi lorsque la brise de vallée en provenance d'Ugine s'est installée » ; la fiche de Marthod indique une approche en général dans le sens Ugine → Albertville, face à la brise. Aucune source ne donne de vitesse ni d'effet venturi dans les gorges de l'Arly (Flumet–Ugine). Les points Flumet et Megève sont approximatifs.",
+          "description": "ParaglidingEarth (Le Méruz, Ugine) : la brise de vallée arrive presque toujours de face au déco ; le matin (face SE) le site donne tout son potentiel, puis la brise devient de plus en plus forte et gêne les thermiques ; les atterrissages de Marlens et Marthod sont « difficilement atteignables à la finesse » à cause d'elle. Fiche FFVL de Bisanne Nord-Ouest : site utilisé « l'après-midi lorsque la brise de vallée en provenance d'Ugine s'est installée » ; la fiche de Marthod indique une approche en général dans le sens Ugine → Albertville, face à la brise. Aucune source ne donne de vitesse ni d'effet venturi dans les gorges de l'Arly (Flumet–Ugine). Les points Flumet et Megève sont approximatifs. Compléments de récits de cross : au Signal de Bisanne (côté Beaufortain de l'Arly) il faut décoller avant que la brise s'installe, vers midi (11h49 le 8 août 2020), car ensuite le décollage « passe cul » ; le 14 avril 2024, par ciel sans cumulus, « très forte brise » sur la vallée de Megève ; en mai 2015, par flux de sud, un pilote est « appuyé » le long de la forêt entre Notre-Dame-de-Bellecombe et Praz-sur-Arly comme sous le vent ; le 22 avril 2007, un pilote note une brise qui décime une partie de la troupe plus au nord, au Grand-Bornand.",
           "confidence": "medium",
           "sources": [
             "S127",
             "S126",
             "S125",
-            "S3"
+            "S3",
+            "S156",
+            "S159",
+            "S155",
+            "S157"
           ]
         },
         {
@@ -2382,7 +2386,7 @@
             "max": null
           },
           "season": "printemps-été",
-          "description": "CMBVL : le flux de brise venu de Sallanches se scinde une première fois sur le Mont d'Arbois (une branche monte vers Combloux/Megève). Fiches : à Cordon « après 13h la brise de vallée est plus forte que le thermique », atterrissages du village et de Rochefort turbulents l'après-midi, brise de vallée forte l'après-midi à Lépigny. Rochebrune : « conditions favorables en vol thermique et brise de vallée » ; Palais des Sports : « régime de brise et faibles courants de nord à ouest ». Vitesses non documentées.",
+          "description": "CMBVL : le flux de brise venu de Sallanches se scinde une première fois sur le Mont d'Arbois (une branche monte vers Combloux/Megève). Fiches : à Cordon « après 13h la brise de vallée est plus forte que le thermique », atterrissages du village et de Rochefort turbulents l'après-midi, brise de vallée forte l'après-midi à Lépigny. Rochebrune : « conditions favorables en vol thermique et brise de vallée » ; Palais des Sports : « régime de brise et faibles courants de nord à ouest ». Vitesses non documentées. Un forum de cross (2008) décrit la brise du Val d'Arve comme un vent de nord venant du bassin de Sallanches, qui rencontre à Megève la brise de sud-ouest montant de l'Arly (voir la confluence).",
           "confidence": "medium",
           "sources": [
             "S51",
@@ -2390,7 +2394,102 @@
             "S119",
             "S122",
             "S123",
-            "S15"
+            "S15",
+            "S161"
+          ]
+        },
+        {
+          "id": "brise-matinale-descendante-arly",
+          "name": "Écoulement descendant matinal du Val d'Arly (Megève → Praz-sur-Arly → Flumet → Ugine → Albertville), déduction",
+          "kind": "downvalley",
+          "waypoints": [
+            {
+              "name": "Megève",
+              "lon": 6.6179,
+              "lat": 45.8567,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Praz-sur-Arly",
+              "lon": 6.582,
+              "lat": 45.8366,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Flumet",
+              "lon": 6.5143,
+              "lat": 45.8176,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Ugine (déco du Méruz)",
+              "lon": 6.4152,
+              "lat": 45.7853,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Albertville",
+              "lon": 6.3925,
+              "lat": 45.6755,
+              "coord_quality": "source"
+            }
+          ],
+          "hours": "21h-9h (nuit et début de matinée, déduction)",
+          "speed_kmh": {
+            "typical": 5,
+            "max": 10
+          },
+          "season": "printemps-été (déduction)",
+          "description": "Déduction : aucune source ne décrit un vent descendant du Val d'Arly. Indices : le déco du Méruz est volable le matin face SE avant que la brise ne devienne forte, Cordon donne des thermiques dès le matin, et le Signal de Bisanne doit être décollé avant ≈11h50 ; la matinée est donc calme ou faiblement alimentée. Raisonnement : la vallée s'écoule vers Albertville la nuit avant l'inversion de la brise montante de fin de matinée. Faible, à ne pas utiliser en décision de vol.",
+          "confidence": "low",
+          "sources": [
+            "S127",
+            "S119",
+            "S156"
+          ]
+        },
+        {
+          "id": "brise-matinale-descendante-arve-megeve",
+          "name": "Écoulement descendant matinal de Megève vers le bassin de Sallanches (Megève → Combloux → Lépigny → Sallanches), déduction",
+          "kind": "downvalley",
+          "waypoints": [
+            {
+              "name": "Megève",
+              "lon": 6.6179,
+              "lat": 45.8567,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Combloux",
+              "lon": 6.6448,
+              "lat": 45.8949,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Atterrissage de Lépigny (Domancy)",
+              "lon": 6.6482,
+              "lat": 45.9186,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Sallanches",
+              "lon": 6.6303,
+              "lat": 45.9361,
+              "coord_quality": "source"
+            }
+          ],
+          "hours": "21h-9h (nuit et début de matinée, déduction)",
+          "speed_kmh": {
+            "typical": 5,
+            "max": 10
+          },
+          "season": "printemps-été (déduction)",
+          "description": "Déduction : aucune source ne décrit un vent descendant vers Sallanches. Indice : à Cordon, thermiques dès le matin et brise de vallée plus forte que le thermique après 13h ; atterrissage de Rochefort à utiliser le matin. Raisonnement : le col de Megève se vide vers l'Arve la nuit, avant l'inversion de la brise de l'après-midi. Faible, non utilisable en décision de vol.",
+          "confidence": "low",
+          "sources": [
+            "S128",
+            "S119",
+            "S123"
           ]
         }
       ],
@@ -2412,14 +2511,45 @@
             ]
           },
           "when": "après-midi d'été, régime de brise",
-          "mechanism": "Megève est sur la ligne de partage des eaux entre l'Arve (Sallanches) et l'Arly (Praz-sur-Arly) : la brise de l'Arve (branche du Mont d'Arbois) et celle de l'Arly s'y rencontrent. La brochure parle de « confluence de col » au Palais des Sports et Barbules d'une « confluence permettant de longs vols paisibles » depuis Rochebrune. Géométrie approximative (Mont d'Arbois → Megève).",
-          "usage": "Longs vols paisibles depuis Rochebrune ; mais l'atterrissage du Palais des Sports est impossible à atteindre par vent soutenu de nord à nord-est et demande de l'attention à la confluence.",
+          "mechanism": "Megève est sur la ligne de partage des eaux entre l'Arve (Sallanches) et l'Arly (Praz-sur-Arly) : la brise de l'Arve (branche du Mont d'Arbois) et celle de l'Arly s'y rencontrent. La brochure parle de « confluence de col » au Palais des Sports et Barbules d'une « confluence permettant de longs vols paisibles » depuis Rochebrune. Géométrie approximative (Mont d'Arbois → Megève). Un forum de cross (2008) décrit la même confluence comme celle des brises de sud-ouest (Arly) et de nord (vallée de l'Arve), « surtout l'été quand les brises sont fortes, mais pourquoi pas en début de saison avec un léger nord », qui permet de s'amuser en grand local ou de faciliter le départ en cross.",
+          "usage": "Longs vols paisibles depuis Rochebrune ; mais l'atterrissage du Palais des Sports est impossible à atteindre par vent soutenu de nord à nord-est et demande de l'attention à la confluence. Le 14 avril 2024, en compétition, la sélection se fait au-dessus de Megève : un thermique très couché par la brise, puis une remontée face à une très forte brise en collant au relief, parfois en marche arrière.",
           "confidence": "medium",
           "sources": [
             "S3",
             "S15",
             "S114",
-            "S51"
+            "S51",
+            "S161",
+            "S159"
+          ]
+        },
+        {
+          "id": "confluence-praz-sur-arly-megeve-combloux-2015",
+          "name": "Confluence des brises de Flumet et de Sallanches au-dessus de Megève (habituellement vers Praz-sur-Arly), glisse vers Combloux",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                6.5702,
+                45.8366
+              ],
+              [
+                6.6138,
+                45.8562
+              ],
+              [
+                6.6346,
+                45.8959
+              ]
+            ]
+          },
+          "when": "fin d'après-midi, par flux de sud faible (mai 2015)",
+          "mechanism": "Récit Blues Team (mai 2015) : la brise venue de Flumet et celle venue de Sallanches confluent « au-dessus de la station » (Megève), le pilote qui cherchait un champ se met à flotter à +0,1 m/s et longe la vallée sur plus de 7 km sans enrouler, à moins de 100 m au-dessus des chalets, jusqu'au verrou de Combloux qu'il passe face à la brise, les pieds dans les arbres, avant de bifurquer vent arrière vers Saint-Gervais. Le pilote précise qu'habituellement la confluence se forme plus vers Praz-sur-Arly, mais que chaque fois qu'il y était passé par flux de sud, le sud avait pris le dessus jusqu'au bout de la vallée. Géométrie : Praz-sur-Arly, Megève, Combloux (IGN) ; le tracé exact du vol n'est pas décrit.",
+          "usage": "Glisse longue sans enrouler à basse hauteur entre Megève et le verrou de Combloux quand la confluence est formée ; piège : le verrou de Combloux se passe face à la brise, avec les pieds dans les arbres.",
+          "confidence": "medium",
+          "sources": [
+            "S155",
+            "S162"
           ]
         }
       ],
@@ -2537,6 +2667,21 @@
             "S117",
             "S113"
           ]
+        },
+        {
+          "id": "megeve-verrou-brise-forte-avril",
+          "name": "Vallée de Megève : très forte brise face au pilote, verrou à passer en collant au relief",
+          "kind": "strong-breeze",
+          "lon": 6.6138,
+          "lat": 45.8562,
+          "coord_quality": "source",
+          "radius_km": 4,
+          "conditions": "après-midi d'avril par ciel bleu sans cumulus (14 avril 2024) ; par flux de sud en mai (2015)",
+          "description": "Compétition des Saisies, 14 avril 2024 : sur le parcours de 32 km en triangle FAI, la sélection se fait à la balise de Megève (B6) : il faut décaler un thermique très couché par la brise puis revenir face à cette « très forte brise » en collant à la pente, parfois en marche arrière ; ceux qui restent à l'écart des grands sapins perdent leur altitude et posent dans la vallée. En mai 2015, par flux de sud, le pilote passe le verrou de Combloux face à la brise, les pieds dans les arbres. Position : Megève (IGN).",
+          "sources": [
+            "S159",
+            "S155"
+          ]
         }
       ],
       "thermal_spots": [
@@ -2587,6 +2732,67 @@
             "S2"
           ],
           "confidence": "low"
+        },
+        {
+          "id": "praz-sur-arly-relance-3100",
+          "name": "Au-dessus de Praz-sur-Arly : relance après la traversée du Val d'Arly (3100 m)",
+          "lon": 6.5702,
+          "lat": 45.8366,
+          "coord_quality": "approx",
+          "best_hours": "début d'après-midi (≈13h)",
+          "trigger": "Pentes sous l'Aiguille Croche et les contreforts des Aravis face à la vallée",
+          "description": "POINT DE RELANCE après la grande transition de Bisanne vers les Aravis : le 8 août 2020 un pilote raccroche au-dessus de Praz-sur-Arly et y refait 3100 m avant de filer sur la Grande Balmaz ; le 22 avril 2007 un pilote traverse « direction Praz-sur-Arly » après un plafond de 3000 m et un autre y refait un plafond vers 3000 m avant de passer direct au-dessus des Aravis. Position : village de Praz-sur-Arly (IGN), l'ascendance exacte n'est pas localisée.",
+          "confidence": "medium",
+          "sources": [
+            "S156",
+            "S157",
+            "S162"
+          ]
+        },
+        {
+          "id": "aiguille-croche-plafond-3135",
+          "name": "Aiguille Croche : plafond du jour (3135 m) avant la traversée du Val d'Arly",
+          "lon": 6.6592,
+          "lat": 45.8005,
+          "coord_quality": "source",
+          "best_hours": "fin de matinée à début d'après-midi (départ de Bisanne à 11h49)",
+          "trigger": "Crête de l'Aiguille Croche face au Mont Blanc",
+          "description": "PLAFOND du cheminement Bisanne → Aravis : le 8 août 2020 le premier thermique (2700 m) est pris au-dessus du décollage, puis cap vers le Mont Blanc et plafond du jour à 3135 m à la verticale de l'Aiguille Croche, d'où part la grande transition vers les Aravis. Position : sommet (IGN).",
+          "confidence": "medium",
+          "sources": [
+            "S156",
+            "S162"
+          ]
+        },
+        {
+          "id": "mont-joly-derniers-thermiques-megeve",
+          "name": "Mont Joly : derniers thermiques côté Megève avant la transition vers le Mont Blanc",
+          "lon": 6.6929,
+          "lat": 45.826,
+          "coord_quality": "source",
+          "best_hours": "début d'après-midi (samedi 18 août 2012, après 12h45)",
+          "trigger": "Crête du Mont Joly, dernière montagne avant la vallée du Bon Nant",
+          "description": "RELANCE / PLAFOND : le 18 août 2012, après un décollage de Bisanne à 12h45 et un thermique de 700 m en 7 minutes (3200 m), le groupe fait ses derniers thermiques sur le Mont Joly avant la transition vers le Mont Vorassay et le massif du Mont Blanc ; le lendemain, avec une inversion et un plafond de 2000 m, trois décollages à pied sont nécessaires pour rejoindre le Mont Joly, où l'on ne parvient pas à monter. Position : sommet (IGN).",
+          "confidence": "medium",
+          "sources": [
+            "S158",
+            "S162"
+          ]
+        },
+        {
+          "id": "torraz-le-char-thermique-violent",
+          "name": "Sous la Tête du Torraz (« le Char ») : thermique violent par vent de sud",
+          "lon": 6.5326,
+          "lat": 45.8618,
+          "coord_quality": "approx",
+          "best_hours": "milieu d'après-midi (février 2011, vers 15h)",
+          "trigger": "Pentes sous la Tête du Torraz, au-dessus de la combe qui mène à la vallée de l'Arly (côté Flumet / La Giettaz)",
+          "description": "Récit CHVD (vol bivouac, 20 février 2011) : après un décollage à 14h30 du col des Aravis par vent de sud régulier et un thermique jusqu'à 2400 m, transition vers la Tête du Torraz ; sous la tête, au lieu-dit « le Char », un thermique « du feu de Dieu » (+5 m/s intégré sur 10 s, voile en parachutale à l'entrée pour l'un des deux pilotes) permet de franchir la combe boisée, face au vent de sud et sans atterrissage possible, et de rejoindre la vallée de l'Arly, où le sud les pose ensuite entre Flumet et Saint-Nicolas-la-Chapelle. Position : sommet de la Tête du Torraz (IGN) ; le lieu-dit « le Char » n'est pas localisé.",
+          "confidence": "medium",
+          "sources": [
+            "S163",
+            "S162"
+          ]
         }
       ],
       "soaring_spots": [
@@ -2767,11 +2973,12 @@
       "synoptic_effects": [
         {
           "wind": "N",
-          "effect": "Rochebrune est volable par vent de secteur nord (selon la brochure) mais l'atterrissage du Palais des Sports devient impossible à atteindre par vent soutenu de nord à nord-est ; à Cordon la Tête du Planet convient par léger nord ; le Crêt du Midi se vole directement vers Praz-sur-Arly.",
+          "effect": "Rochebrune est volable par vent de secteur nord (selon la brochure) mais l'atterrissage du Palais des Sports devient impossible à atteindre par vent soutenu de nord à nord-est ; à Cordon la Tête du Planet convient par léger nord ; le Crêt du Midi se vole directement vers Praz-sur-Arly. Forum de cross (2008) : la brise de nord de la vallée de l'Arve alimente la confluence de Megève.",
           "sources": [
             "S3",
             "S119",
-            "S114"
+            "S114",
+            "S161"
           ]
         },
         {
@@ -2795,10 +3002,13 @@
         },
         {
           "wind": "Vent du Sud",
-          "effect": "À Cordon, la brise favorable est sud mais une tendance météo de sud peut produire des conditions foehniques dangereuses ; par vent de sud forcissant les biplaces de Megève se posent au-dessus de la gare de Rochebrune.",
+          "effect": "À Cordon, la brise favorable est sud mais une tendance météo de sud peut produire des conditions foehniques dangereuses ; par vent de sud forcissant les biplaces de Megève se posent au-dessus de la gare de Rochebrune. Récits de cross : par flux de sud en mai 2015 le pilote est appuyé le long de la forêt entre Notre-Dame-de-Bellecombe et Praz-sur-Arly puis, au-dessus de Megève, une confluence se forme malgré le sud ; en février 2011, un vol rando du col des Aravis est posé par le sud entre Flumet et Saint-Nicolas-la-Chapelle.",
           "sources": [
             "S119",
-            "S59"
+            "S59",
+            "S155",
+            "S158",
+            "S163"
           ]
         },
         {
@@ -2865,6 +3075,124 @@
             "S128"
           ],
           "confidence": "low"
+        },
+        {
+          "id": "bisanne-aiguille-croche-praz-aravis-2020",
+          "name": "Signal de Bisanne → Aiguille Croche → traversée du Val d'Arly → Praz-sur-Arly → Grande Balmaz → Aravis (8 août 2020, extrait d'un triangle FAI de 108 km)",
+          "waypoints": [
+            {
+              "name": "Signal de Bisanne (décollage 11h49)",
+              "lon": 6.5042,
+              "lat": 45.7469,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Aiguille Croche (3135 m)",
+              "lon": 6.6592,
+              "lat": 45.8005,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Praz-sur-Arly (raccroche 3100 m)",
+              "lon": 6.5702,
+              "lat": 45.8366,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "La Grande Balmaz",
+              "lon": 6.4961,
+              "lat": 45.8927,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Col des Aravis",
+              "lon": 6.4649,
+              "lat": 45.8723,
+              "coord_quality": "source"
+            }
+          ],
+          "distance_km": 33.2,
+          "description": "Cross CHVD : décollage à 11h49 du Signal de Bisanne (avant que la brise ne le rende arrière), premier thermique à 2700 m, plafond de 3135 m à l'Aiguille Croche, grande transition vers les Aravis avec raccroche au-dessus de Praz-sur-Arly à 3100 m, puis la rue de cumulus de la chaîne des Aravis à partir de la Grande Balmaz ; un second pilote, arrivé trop bas, pose au col des Aravis. La suite du triangle (Tournette, lac d'Annecy, Roc des Bœufs, Trélod, Dent d'Arclusaz, Grand Arc, Albertville, Beaufort) est hors secteur : 108 km au total en 5h45. Le tracé est la ligne droite entre les points nommés.",
+          "sources": [
+            "S156"
+          ]
+        },
+        {
+          "id": "bisanne-mont-joly-mont-blanc-2012",
+          "name": "Signal de Bisanne → Mont Joly → massif du Mont Blanc (18 août 2012, extrait)",
+          "waypoints": [
+            {
+              "name": "Signal de Bisanne",
+              "lon": 6.5042,
+              "lat": 45.7469,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Mont Joly (derniers thermiques)",
+              "lon": 6.6929,
+              "lat": 45.826,
+              "coord_quality": "source"
+            }
+          ],
+          "distance_km": 17.1,
+          "description": "Vol CHVD de canicule : décollage à 12h45, thermiques éloignés mais très larges (700 m en 7 minutes, 3200 m), derniers thermiques sur le Mont Joly, dernière montagne côté Megève, puis transition à 3200 m vers le Mont Vorassay (2300 m) et le massif du Mont Blanc (le Tricot, col de Miage à 3370 m) ; retour vers l'atterrissage, le dernier pilote arrivant vers 17h30 après un point bas à 2800 m dans la face sud (le col est à 3370 m). Le lendemain, avec une inversion, le plafond de 2000 m oblige à trois décollages à pied pour rejoindre le Mont Joly.",
+          "sources": [
+            "S158"
+          ]
+        },
+        {
+          "id": "saisies-flumet-praz-megeve-combloux-2015",
+          "name": "Les Saisies → Crest-Voland → Flumet → Notre-Dame-de-Bellecombe → Praz-sur-Arly → Megève → Combloux → Saint-Gervais → Passy (mai 2015, extrait d'un 280 km)",
+          "waypoints": [
+            {
+              "name": "Les Saisies",
+              "lon": 6.5407,
+              "lat": 45.7561,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Crest-Voland",
+              "lon": 6.51,
+              "lat": 45.796,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Flumet",
+              "lon": 6.5129,
+              "lat": 45.8183,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Notre-Dame-de-Bellecombe",
+              "lon": 6.5244,
+              "lat": 45.8077,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Praz-sur-Arly (dynamique de pied de butte)",
+              "lon": 6.5702,
+              "lat": 45.8366,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Megève (confluence)",
+              "lon": 6.6138,
+              "lat": 45.8562,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Combloux (verrou)",
+              "lon": 6.6346,
+              "lat": 45.8959,
+              "coord_quality": "source"
+            }
+          ],
+          "distance_km": 22.5,
+          "description": "Fin du vol du col de Bleine à Passy (Blues Team) en flux de sud faiblissant, plafond à peine plus haut que la crête de Bisanne : un nuage au-dessus de Crest-Voland se désagrège à l'arrivée, fuite en avant jusqu'au fond de la vallée où l'on se refait en thermo-dynamique au-dessus de Flumet, Notre-Dame-de-Bellecombe, appuyé le long de la forêt comme sous le vent entre Notre-Dame-de-Bellecombe et Praz-sur-Arly, pose en vue à Praz-sur-Arly mais dynamique de pied de butte (+100 m), puis, au-dessus de Megève, la confluence des brises de Flumet et de Sallanches (plus de 7 km sans enrouler, +0,1 m/s, vers Combloux), verrou de Combloux face à la brise, vent arrière vers Saint-Gervais, espoir de remonter sur le Prarion anéanti par le vent de sud ou le catabatique des Contamines, pose à Passy. Seuls les points nommés et localisés sont tracés (le détail du vol entre Passy et Saint-Gervais est hors secteur).",
+          "sources": [
+            "S155",
+            "S162"
+          ]
         }
       ],
       "tips": [
@@ -2873,7 +3201,11 @@
         "Cordon : partir tôt, car après 13h la brise de vallée dépasse le thermique et souffle dans le dos au déco [S128]",
         "Praz-sur-Arly : atterrir au Plan de Cassioz entre route et ligne électrique, à repérer avant de décoller ; terrain d'été seulement [S115]",
         "Crêt du Midi : décollage interdit l'été (troupeaux), ne pas passer outre [S3]",
-        "Ugine / Méruz : voler le matin (face SE), la brise d'Arly se renforce ensuite et rend Marlens/Marthod difficiles à atteindre [S127]"
+        "Ugine / Méruz : voler le matin (face SE), la brise d'Arly se renforce ensuite et rend Marlens/Marthod difficiles à atteindre [S127]",
+        "Signal de Bisanne (côté Beaufortain) : décoller avant que la brise s'installe (vers midi) ; en été, avant 11h50 par jour de grosse brise [CHVD 2020].",
+        "Après la transition de Bisanne vers les Aravis, viser les pentes au-dessus de Praz-sur-Arly : c'est là que le CHVD a refait 3100 m en 2020 et que d'autres pilotes ont refait 3000 m en 2007 [CHVD].",
+        "À Megève, la confluence des brises de Flumet et de Sallanches permet de longues glissées sans enrouler quand elle est formée, mais le verrou de Combloux se passe face à la brise et en collant au relief [Blues Team 2015, CHVD 2024].",
+        "Le dimanche d'inversion (19 août 2012) le plafond du Mont Joly n'a pas dépassé 2000 m : prévoir la marche et vol plutôt que la transition vers le Mont Blanc [CHVD]."
       ]
     },
     {
@@ -5199,6 +5531,87 @@
       "type": "web",
       "lang": "fr",
       "notes": "Positions : La Légette 45.7565 N 6.5572 E (peak, 1865 m) ; Pas de l'Âne 45.6826 N 6.5413 E ; poteau « La Roche-Pourrie » 45.6837 N 6.4600 E ; Mont Clocher 45.7719 N 6.5913 E (IGN : 1975 m)."
+    },
+    {
+      "id": "S155",
+      "title": "« Des Alpes-Maritimes à la Haute-Savoie… 280 km de pur bonheur… ou presque » (Blues Team, mai 2015)",
+      "url": "https://bluesteam.canalblog.com/archives/2015/05/27/32123222.html",
+      "publisher": "Blues Team (blog, Saint-Hilaire-du-Touvet)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Fin du vol du col de Bleine à Passy : Saisies, Bisanne, Crest-Voland, Flumet, Notre-Dame-de-Bellecombe, Praz-sur-Arly (dynamique de pied de butte), confluence des brises de Flumet et de Sallanches de Praz-sur-Arly à Megève (7 km sans enrouler), verrou de Combloux, Saint-Gervais, Passy."
+    },
+    {
+      "id": "S156",
+      "title": "Bisanne, cross du 8 août 2020 (CHVD)",
+      "url": "https://www.chvd.org/2020/08/10/bisanne-cross-du-8-juillet-2020/",
+      "publisher": "CHVD (club, Grenoble)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Triangle FAI de 108 km depuis le Signal de Bisanne : décollage à 11h49, plafond du jour à 3135 m à la verticale de l'Aiguille Croche, transition vers les Aravis avec raccroche au-dessus de Praz-sur-Arly (3100 m), Grande Balmaz, col des Aravis, Tournette, lac d'Annecy, Grand Arc, Albertville. Date : le titre annonce le 8 août 2020 (publié le 10 août), mais l'adresse de la page et les légendes de photos portent « 8-juillet » / « 8/7 » : date retenue = titre."
+    },
+    {
+      "id": "S157",
+      "title": "Premier avec les crosseux (CHVD, 22 avril 2007)",
+      "url": "https://www.chvd.org/2007/04/30/premier-avec-les-crosseux/",
+      "publisher": "CHVD (club, Grenoble)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Plan de vol : Bisanne, haut des pistes de Megève, Praz-sur-Arly, Aravis, La Clusaz, lac d'Annecy ; plafonds de 2670 puis 3000 m avant la traversée vers Praz-sur-Arly ; barre des Aravis austère, thermodynamique, arrivée au télésiège des Balmes ; 57 km, posé à Doussard."
+    },
+    {
+      "id": "S158",
+      "title": "Petit tour du CHVD vers le Mont Blanc (18-19 août 2012)",
+      "url": "https://www.chvd.org/2012/08/24/petit-tour-du-chvd-vers-le-mont-blanc/",
+      "publisher": "CHVD (club, Grenoble)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Départ du Signal de Bisanne à 12h45 le samedi : thermiques larges, 700 m en 7 minutes, 3200 m, derniers thermiques sur le Mont Joly (dernière montagne côté Megève) avant la transition vers le Mont Blanc ; le dimanche, inversion et plafond de 2000 m seulement : trois décollages à pied pour rejoindre le Mont Joly."
+    },
+    {
+      "id": "S159",
+      "title": "Compète des Saisies 13-14 avril 2024 (CHVD)",
+      "url": "https://www.chvd.org/2024/04/15/compete-des-saisies-13-14-avril-2024/",
+      "publisher": "CHVD (club, Grenoble)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Manche de 32 km en triangle FAI avec transition au-dessus du Val d'Arly : très forte brise sur la vallée de Megève (thermique très couché, remontée face à la brise en collant au relief, parfois en marche arrière), ciel sans cumulus, 100 pilotes à 2600 m avant le start (13h50)."
+    },
+    {
+      "id": "S160",
+      "title": "Compétition des Saisies 17-18 avril 2022 (CHVD)",
+      "url": "https://www.chvd.org/2022/04/24/competition-des-saisies-17-18-avril-2022/",
+      "publisher": "CHVD (club, Grenoble)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Manche vers les Aravis : traversée du Val d'Arly vers les contreforts de la chaîne des Aravis de l'autre côté de la vallée de Praz-sur-Arly ; crête enneigée non franchie faute de hauteur."
+    },
+    {
+      "id": "S161",
+      "title": "Cross au départ de Megève (fil de discussion, novembre 2008)",
+      "url": "https://www.parapentiste.info/forum/techniques-de-cross/cross-au-depart-de-megeve-t9221.0.html",
+      "publisher": "parapentiste.info (forum)",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Avis de pilotes de cross : Rochebrune, site d'après-midi alimenté par une brise de sud-ouest, confluence de Megève entre les brises SO du col des Aravis et N de la vallée de l'Arve (surtout en été) ; vol rando de Praz-sur-Arly ; options de cross voisines (Plaine Joux, Planpraz, col des Aravis)."
+    },
+    {
+      "id": "S162",
+      "title": "Position des villages et sommets du Val d'Arly (géocodeur IGN)",
+      "url": "https://data.geopf.fr/geocodage/search?q=Praz-sur-Arly&index=poi",
+      "publisher": "IGN / Géoplateforme",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Géocodeur IGN (data.geopf.fr) : Praz-sur-Arly, Megève, Combloux, Flumet, Notre-Dame-de-Bellecombe, Crest-Voland, Aiguille Croche, Mont Joly, La Grande Balmaz, Col des Aravis, Les Saisies."
+    },
+    {
+      "id": "S163",
+      "title": "Rando vol dodo rando vol stop dans les Aravis… (CHVD, vol bivouac des 19-20 février 2011)",
+      "url": "https://www.chvd.org/2011/02/21/rando-vol-dodo-rando-vol-stop-dans-les-aravis/",
+      "publisher": "CHVD (club, Grenoble)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Vol du col des Aravis par vent de sud régulier : thermique jusqu'à 2400 m vers la pointe des Aravis, transition vers la Tête du Torraz, thermique violent (+5 m/s intégré sur 10 s) sous la Tête du Torraz, puis le sud pose les pilotes entre Flumet et Saint-Nicolas-la-Chapelle."
     }
   ]
 }

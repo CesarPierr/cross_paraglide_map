@@ -37,7 +37,7 @@ Ce que l'utilisateur a demandé, et qui reste valable :
   serveur local, et **reprendre la recherche complète** sans les limites réseau de l'environnement
   cloud où le projet a été construit.
 
-## 2. État actuel (branche `claude/french-alps-wind-simulation-g2ovxt`)
+## 2. État actuel (branche `main`)
 
 Fait et vérifié :
 
@@ -129,7 +129,7 @@ a déjà Docker. Vérifier l'accès sans interaction : `ssh -o BatchMode=yes use
 
 ```bash
 ssh user@host
-curl -fsSL https://raw.githubusercontent.com/CesarPierr/cross_paraglide_map/claude/french-alps-wind-simulation-g2ovxt/deploy/install.sh \
+curl -fsSL https://raw.githubusercontent.com/CesarPierr/cross_paraglide_map/main/deploy/install.sh \
   | bash -s -- --port 8080
 # ou, depuis un clone existant :
 bash deploy/install.sh --dir ~/brises-des-alpes --port 8080 [--refresh-data]
@@ -271,7 +271,7 @@ surveiller la taille des textures GPU et ajouter des jeux de données au même c
 
 ## 9. Conventions
 
-- Branche de travail : `claude/french-alps-wind-simulation-g2ovxt`, sauf autre consigne de
+- Branche de travail : `main`, sauf autre consigne de
   l'utilisateur. Pas de pull request sans demande. Messages de commit en anglais, à l'impératif,
   avec un corps qui explique le pourquoi.
 - Ne pas ajouter de dépendance lourde sans raison. Le bundle principal fait ~420 Ko gzip, dont
@@ -290,7 +290,7 @@ surveiller la taille des textures GPU et ajouter des jeux de données au même c
 ```text
 Tu reprends le projet « Brises des Alpes » (carte 3D de l'aérologie des Alpes françaises pour le
 parapente) dans le dépôt CesarPierr/cross_paraglide_map, branche
-claude/french-alps-wind-simulation-g2ovxt. Réponds-moi en français.
+main. Réponds-moi en français.
 
 1. Lis docs/PASSATION.md en entier, puis README.md, docs/ARCHITECTURE.md et docs/DONNEES.md.
 2. Déploie l'application sur ma dev VM en SSH selon docs/PASSATION.md § 5. Demande-moi l'hôte,

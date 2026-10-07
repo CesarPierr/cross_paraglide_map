@@ -6,7 +6,7 @@
 #
 # Options:
 #   --dir <path>      install directory            (default: ~/brises-des-alpes)
-#   --branch <name>   git branch                   (default: claude/french-alps-wind-simulation-g2ovxt)
+#   --branch <name>   git branch                   (default: main)
 #   --port <n>        HTTP port of the site        (default: 8080)
 #   --repo <url>      git repository               (default: https://github.com/CesarPierr/cross_paraglide_map.git)
 #   --refresh-data    also re-download FFVL sites and airspace before building (needs Node 22 on the host)
@@ -15,7 +15,7 @@
 set -euo pipefail
 
 DIR="${HOME}/brises-des-alpes"
-BRANCH="claude/french-alps-wind-simulation-g2ovxt"
+BRANCH="main"
 PORT="8080"
 REPO="https://github.com/CesarPierr/cross_paraglide_map.git"
 REFRESH=0

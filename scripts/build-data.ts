@@ -8,7 +8,7 @@
  * - checks declared altitudes of spots against the DEM;
  * - writes a QA report (docs/DATA_QA.md).
  */
-import { readdirSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import type { CuratedBreezeInput } from '@brises/model';
@@ -19,11 +19,22 @@ import { loadDem } from '@brises/model/node';
 const ROOT = process.cwd();
 const RESEARCH = join(ROOT, 'research_notes', 'Brises des Alpes françaises', 'data');
 /**
+ * Second research pass: each of its files is a complete, revised version of the
+ * massifs it describes, so a massif defined here replaces the first-pass one with
+ * the same id instead of being merged with it. Massifs it does not cover keep
+ * their first-pass version.
+ */
+const SECOND_PASS = join(ROOT, 'research_notes', 'Seconde passe 2026', 'data');
+/** `--check`: compile and print the QA warnings without writing the atlas or the report. */
+const CHECK_ONLY = process.argv.includes('--check');
+/**
  * Extra datasets following the same contract (research_notes/<…>/_schema.md),
  * e.g. a complementary collection: `npm run data:build -- data/extra-collection`
  * or BRISES_DATA_DIRS=dir1:dir2. Massifs sharing an id are merged.
  */
-const EXTRA_DIRS = [...process.argv.slice(2), ...(process.env.BRISES_DATA_DIRS ?? '').split(':')].filter(Boolean).map((d) => resolve(ROOT, d));
+const EXTRA_DIRS = [...process.argv.slice(2).filter((a) => !a.startsWith('--')), ...(process.env.BRISES_DATA_DIRS ?? '').split(':')]
+  .filter(Boolean)
+  .map((d) => resolve(ROOT, d));
 
 // ---------- Raw research types (lenient: researchers sometimes add fields) ----------
 interface RawPoint {
@@ -105,10 +116,18 @@ interface RawFile {
 const REGION_LABELS: Record<string, string> = {
   chablais_giffre_arve: 'Haute-Savoie nord',
   annecy_bornes_aravis: 'Annecy, Bornes, Aravis',
+  montblanc_beaufortain: 'Mont-Blanc, Val d’Arly, Beaufortain',
   montblanc_beaufortain_tarentaise: 'Mont-Blanc, Beaufortain, Tarentaise',
+  tarentaise_vanoise: 'Tarentaise, Vanoise',
+  bauges_bourget_combe: 'Bauges, Bourget, Combe de Savoie',
+  chartreuse_gresivaudan_belledonne: 'Chartreuse, Grésivaudan, Belledonne',
   bauges_chartreuse_gresivaudan: 'Bauges, Chartreuse, Grésivaudan, Belledonne',
+  vercors_grenoble_trieves: 'Grenoble, Vercors, Trièves, Matheysine',
   vercors_trieves_oisans: 'Grenoble, Vercors, Trièves, Oisans',
+  oisans_maurienne: 'Oisans, Maurienne, Arves',
   maurienne_brianconnais_ecrins: 'Maurienne, Briançonnais, Écrins',
+  brianconnais_ecrins_queyras_ubaye: 'Briançonnais, Écrins, Queyras, Ubaye',
+  devoluy_gap_buech_diois: 'Dévoluy, Gapençais, Buëch, Baronnies, Diois',
   hautes_alpes_sud: 'Hautes-Alpes sud, Drôme, Ubaye',
   provence_maritimes: 'Alpes de Haute-Provence, Alpes-Maritimes',
   synoptic_convergences_xc: 'Échelle des Alpes',
@@ -498,12 +517,24 @@ function main() {
   const { grid, elevation } = loadDem(ROOT);
   const terrain = analyseTerrain(grid, elevation);
 
-  const files = [RESEARCH, ...EXTRA_DIRS].flatMap((dir) =>
-    readdirSync(dir)
-      .filter((f) => f.endsWith('.json'))
-      .sort((a, b) => REGION_ORDER.indexOf(a.replace('.json', '')) - REGION_ORDER.indexOf(b.replace('.json', '')))
-      .map((f) => ({ dir, file: f })),
-  );
+  const readRaw = (dir: string, file: string): RawFile | null => {
+    try {
+      return JSON.parse(readFileSync(join(dir, file), 'utf8')) as RawFile;
+    } catch (e) {
+      qa.push(`${file}: JSON illisible (${(e as Error).message})`);
+      return null;
+    }
+  };
+  const listJson = (dir: string) =>
+    existsSync(dir)
+      ? readdirSync(dir)
+          .filter((f) => f.endsWith('.json'))
+          .sort((a, b) => REGION_ORDER.indexOf(a.replace('.json', '')) - REGION_ORDER.indexOf(b.replace('.json', '')))
+          .map((f) => ({ dir, file: f }))
+      : [];
+  const secondPass = listJson(SECOND_PASS);
+  const superseded = new Set(secondPass.flatMap(({ dir, file }) => (readRaw(dir, file)?.massifs ?? []).map((m) => m.id)));
+  const files = [...listJson(RESEARCH), ...secondPass, ...EXTRA_DIRS.flatMap(listJson)];
   const slugs = new Set<string>();
 
   const sources: Record<string, AtlasSource> = {};
@@ -531,12 +562,16 @@ function main() {
   };
 
   for (const { dir, file } of files) {
+    const parsed = readRaw(dir, file);
+    if (!parsed) continue;
+    // First-pass massifs revised by the second pass are dropped, not merged.
+    const raw = dir === RESEARCH ? { ...parsed, massifs: parsed.massifs.filter((m) => !superseded.has(m.id)) } : parsed;
+    if (!raw.massifs.length && parsed.massifs.length) continue;
     const base = file.replace('.json', '');
     let slug = base;
     for (let n = 2; slugs.has(slug); n++) slug = `${base}-${n}`;
     slugs.add(slug);
     const region = REGION_LABELS[base] ?? base;
-    const raw = JSON.parse(readFileSync(join(dir, file), 'utf8')) as RawFile;
     // Sources: namespace ids, dedupe by URL.
     const local = new Map<string, string>();
     for (const s of raw.sources ?? []) {
@@ -805,6 +840,11 @@ function main() {
       ...Object.fromEntries(Object.entries(features).map(([k, v]) => [k, v.length])),
     },
   };
+  if (CHECK_ONLY) {
+    console.log(atlas.stats);
+    console.log(qa.map((q) => `- ${q}`).join('\n') || 'aucune alerte');
+    return;
+  }
   writeFileSync(join(ROOT, 'apps', 'web', 'public', 'data', 'atlas.json'), JSON.stringify(atlas));
   mkdirSync(join(ROOT, 'docs'), { recursive: true });
   writeFileSync(

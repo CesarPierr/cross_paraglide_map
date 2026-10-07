@@ -476,9 +476,42 @@
      "sources": [
       "S9"
      ]
+    },
+    {
+     "id": "neron-pointe-sud-sous-le-vent",
+     "name": "Pointe sud du Néron : sous le vent de la brise de Voreppe",
+     "kind": "lee-rotor",
+     "lon": 5.7075,
+     "lat": 45.2294,
+     "radius_km": 1.5,
+     "coord_quality": "source",
+     "conditions": "après-midi, brise de Voreppe établie, en transition Rachais - Néron - Vercors",
+     "description": "Piège plutôt que thermique : sur le cheminement Rachais - Néron - Vercors, il faut éviter la pointe sud du Néron, où l'on arrive sous le vent de la brise de Voreppe ; à 1400 m on bascule du Rachais sur le Néron, puis il faut 1800 m depuis le Néron pour raccrocher le Vercors au-dessus des lignes (topo CHVD du Rachais).",
+     "sources": [
+      "S208",
+      "S226"
+     ]
     }
    ],
-   "thermal_spots": [],
+   "thermal_spots": [
+    {
+     "id": "mont-jalla-bastille-relance",
+     "name": "Mont Jalla / Bastille : bulles de relance sous la ZIT",
+     "lon": 5.7275,
+     "lat": 45.2089,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "après-midi (midi à 16h)",
+     "trigger": "Pentes sud du Mont Jalla et du Rachais, au-dessus de la Bastille",
+     "description": "Relance de la transition Vercors - Chartreuse : on arrive bas (935 m, 1000 m) mais « il y a plein de petites bulles assez faciles à enrouler » (31 juillet 2020) ; en mars 2024, arrivée au Mont Jalla à 1000 m puis remontée le long des pentes du Rachais jusqu'au déco. Zone de la ZIT de Grenoble : ne pas descendre sous 1220 m au-dessus du CEA (P14). Plafond de départ conseillé depuis le Moucherotte : 2300 m ou plus.",
+     "sources": [
+      "S196",
+      "S220",
+      "S226"
+     ],
+     "confidence": "medium"
+    }
+   ],
    "soaring_spots": [
     {
      "id": "poisat-dynamique-brise-nord",
@@ -1317,6 +1350,284 @@
      "sources": [
       "S124"
      ]
+    },
+    {
+     "id": "croix-des-suifs-relance",
+     "name": "Croix des Suifs (Lans) : relance vers le Pic Saint-Michel",
+     "lon": 5.5986,
+     "lat": 45.105,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "après-midi (dès que le thermique s'installe sur l'Aigle, vers 12h-13h)",
+     "trigger": "Sommet boisé de la Croix des Suifs sur le rebord ouest du plateau, exposé au soleil de l'après-midi ; le thermique se décale ensuite sur la station de Lans",
+     "description": "Point de relance entre le massif de l'Aigle et les crêtes. Depuis l'Aigle (déco 300 m), avec environ 300 m de gain on transite sur la Croix des Suifs, on y « récupère la pompe de service » puis on raccroche les crêtes ; depuis le Belvédère, au niveau de la Croix des Suifs ou de la Dent Percée on prend un thermique qui se décale au-dessus de la station de Lans pour rejoindre le Pic Saint-Michel. Citation : « récupérer la pompe de service et raccrocher les crêtes » (Lans en l'Air).",
+     "sources": [
+      "S24",
+      "S38",
+      "S226"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "dent-percee-thermique-pic-saint-michel",
+     "name": "Dent Percée (Lans) : déclencheur sur les falaises ouest",
+     "lon": 5.5952,
+     "lat": 45.0993,
+     "alt_m": 1382,
+     "coord_quality": "source",
+     "best_hours": "après-midi",
+     "trigger": "Bout de falaise de la Dent Percée (rochers au bord du plateau des Ramées, plein ouest)",
+     "description": "Déclencheur et relance : le déco touche l'extrémité des falaises, donc « les thermiques nous emportent directement » (CHVD) ; ce thermique se décale sur la station de Lans et permet de rejoindre le Pic Saint-Michel (Lans en l'Air). Utilisable aussi en arrivant du Belvédère à environ 1400 m.",
+     "sources": [
+      "S38",
+      "S112",
+      "S201",
+      "S226"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "belvedere-pompe-de-service",
+     "name": "Pompe de service du Belvédère (premier relief, faces ouest)",
+     "lon": 5.5925,
+     "lat": 45.0905,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "après-midi (déco de l'après-midi)",
+     "trigger": "Premier relief boisé et falaises juste au-dessus et à droite du déco, plein ouest",
+     "description": "Déclencheur du cheminement classique du Belvédère : « dès qu'on rencontre la pompe de service, il ne faut plus la lâcher jusqu'au plafond » ; on voit d'abord une ferme sur le plateau puis Belledonne derrière la crête ; quand le Grésivaudan apparaît on est assez haut pour transiter plein est et raccrocher les crêtes (Moucherotte, Cornafion, plus loin au sud). Plafonds relevés : 2300 à 2600 m (début mars 2025). Position approximative : un peu à droite et au-dessus du déco.",
+     "sources": [
+      "S199",
+      "S200",
+      "S38"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "crete-des-crocs-sentier-gobert",
+     "name": "Crête des Crocs / sentier Gobert : relance sur les faces ouest",
+     "lon": 5.595,
+     "lat": 45.095,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "après-midi",
+     "trigger": "Falaises et rebord ouest du plateau (crête des Crocs), le long du sentier balcon Gobert",
+     "description": "Point de relance du cross classique du Belvédère : à 1600-1700 m on transite sur la crête des Crocs, au niveau du sentier Gobert ; « la montée au niveau de la crête sommitale est en général très facile » et permet ensuite de continuer en cheminement sur les crêtes (Lans en l'Air). Position approximative (le sentier est une ligne le long des falaises).",
+     "sources": [
+      "S38"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "gerbier-aretes-thermique",
+     "name": "Arêtes du Gerbier : plafond et relance entre Côte 2000 et Cornafion",
+     "lon": 5.5871,
+     "lat": 45.0238,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "dès 11h (face est, vol depuis le Col Vert) ; après-midi (face ouest, vol depuis la Côte 2000)",
+     "trigger": "Arêtes rocheuses du Gerbier, déclenchent sur les deux faces selon l'heure",
+     "description": "Plafond et relance. Depuis la Côte 2000, dès 2000 m on attaque la transition vers les arêtes du Gerbier (Lans en l'Air). Depuis le Col Vert, le pilote ressort « au-dessus des crêtes du Gerbier » où « c'est tout de suite plus facile » : thermique direct jusqu'à 2800 m (CHVD, 31 juillet 2020). Sert de point de passage entre le Col Vert, les Deux Sœurs, le Cornafion et la Côte 2000.",
+     "sources": [
+      "S38",
+      "S196",
+      "S226"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "col-vert-pompe-pierriers",
+     "name": "Col Vert : pompe de service dans les pierriers",
+     "lon": 5.6005,
+     "lat": 45.0452,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "dès 10h30-11h",
+     "trigger": "Pierriers et petits ravins à droite du déco est (après le pilier), chauffés par le soleil du matin",
+     "description": "Déclencheur du déco est du Col Vert : « la pompe de service est dans les pierriers à droite après le pilier », décollage conseillé à partir de 10h30-11h (topo CHVD). Un récit confirme que ça monte « dans les petits ravins à droite du déco » mais faiblement, avec une extraction parfois laborieuse jusqu'au-dessus des crêtes du Gerbier (31 juillet 2020). Point de départ des deux circuits classiques (nord vers le Moucherotte, sud vers le Grand Veymont et le Dévoluy). Position approximative près du déco (altitude du déco : 1635 m selon le topo CHVD, 1469 m dans la fiche FFVL 5122).",
+     "sources": [
+      "S197",
+      "S196",
+      "S198",
+      "S125"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "cornafion-epaule-thermique-ouest",
+     "name": "Épaule du Cornafion : thermique du déco ouest",
+     "lon": 5.5978,
+     "lat": 45.0629,
+     "alt_m": 1900,
+     "coord_quality": "source",
+     "best_hours": "milieu d'après-midi (15h) ; face sud possible plus tôt",
+     "trigger": "Épaule du Cornafion et dalles rocheuses devant le déco ouest, plein soleil de l'après-midi",
+     "description": "Déclencheur sur la barrière ouest du Vercors : un pilote a décollé en ouest « directement dans un thermique tout à fait efficace » qui a porté tout le groupe au-dessus des crêtes (août 2025) ; un autre est sorti sur la crête après 25 minutes de bataille en partant d'une dalle rocheuse (octobre 2022). Relance sur le cheminement Pic Saint-Michel - Gerbier : mais le passage du sommet est « quasi systématiquement très turbulent » (confluence de brises à l'épaule, combe de Pissevache sous le vent), à contourner par l'ouest. Dans la combe de Saint-Paul-de-Varces, sous le Cornafion, une dizaine d'ailes « ratassent » avant de passer le col de Prélenfrey (3 mai 2023).",
+     "sources": [
+      "S228",
+      "S229",
+      "S46",
+      "S38",
+      "S222"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "col-de-l-arc-face-est",
+     "name": "Col de l'Arc : face est, pour remonter jusqu'au Pic Saint-Michel",
+     "lon": 5.6121,
+     "lat": 45.0805,
+     "alt_m": 1780,
+     "coord_quality": "source",
+     "best_hours": "fin de matinée",
+     "trigger": "Face est du col de l'Arc, au pied de la crête du Pic Saint-Michel, chauffée par le soleil du matin",
+     "description": "Relance vers la crête et le Pic Saint-Michel, départ du « Tour du Vercors » : décollage en est en fin de matinée, de préférence quand l'activité permet de remonter à la crête, « sinon la récup de la voiture passera par Grenoble » (Tichodromes). Depuis le Pic, on remonte vers le Moucherotte puis on redescend vers le Grand Veymont.",
+     "sources": [
+      "S52",
+      "S55",
+      "S45"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "moucherotte-plafond-transition-rachais",
+     "name": "Moucherotte : plafond avant la transition vers la Chartreuse",
+     "lon": 5.6395,
+     "lat": 45.1478,
+     "alt_m": 1901,
+     "coord_quality": "source",
+     "best_hours": "matin (faces est) puis après-midi",
+     "trigger": "Sommet et faces est du Moucherotte ; le thermique se place sous le vent de la brise de Voreppe",
+     "description": "Plafond : on y fait le plein (2200 à 2800 m selon les jours) avant de partir vers la Bastille, le Rachais ou le Néron. Récit de 2022 : il faut raccrocher « le thermique du Moucherotte qui est, comme tout bon thermique, complètement sous le vent de la brise » après la transition depuis le Néron. Récit de mars 2024 : « je m'applique pour gratter tout ce que je peux » car la transition vers la Bastille sera longue et contrée. Départs mesurés : 2365 m (juin 2026), 2360 m (mars 2024), 2200 m (mars 2022).",
+     "sources": [
+      "S194",
+      "S220",
+      "S215",
+      "S193",
+      "S9",
+      "S226"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "mollard-eperon-arrivee-transition-neron",
+     "name": "Le Mollard / éperon de Sassenage : raccroche en arrivant du Néron",
+     "lon": 5.6465,
+     "lat": 45.1895,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "vers midi et après-midi (brise de Grenoble établie)",
+     "trigger": "Éperon et falaises de Sassenage sous Saint-Nizier ; l'arrivée se fait dans la brise de nord de Voreppe, au-dessus des lignes à haute tension",
+     "description": "Raccroche délicate de la transition Chartreuse - Vercors : en arrivant sous le Mollard près de Saint-Nizier, on est dans la brise de nord de Voreppe et dans des « thermiques hachés » juste au-dessus des lignes 400 kV (20 avril 2021) ; le 26 mars 2022 une trentaine d'ailes se disputaient le thermique, point bas à 500 m, lignes franchies à 960 m. Conseil du fil parapentiste.info : un plafond de 1700 m suffit, avec au choix la dynamique sur l'éperon (Sassenage) si la brise de vallée est déjà établie, sinon le thermique sur les falaises suivantes. Rachais : 1800 m depuis le Néron pour être sûr de raccrocher au-dessus des lignes. Position approximative (hameau du Mollard).",
+     "sources": [
+      "S195",
+      "S194",
+      "S213",
+      "S208",
+      "S220"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "grande-moucherolle-plafond",
+     "name": "Grande et Petite Moucherolle : plafond entre Villard et Deux Sœurs",
+     "lon": 5.564,
+     "lat": 45.0049,
+     "alt_m": 2284,
+     "coord_quality": "source",
+     "best_hours": "après-midi",
+     "trigger": "Faces ouest et sud de la Grande Moucherolle, éperon de la Petite Moucherolle",
+     "description": "Plafond et relance sur le cheminement des faces est : plafonds de 2600 m relevés avec balade jusqu'à la Petite Moucherolle (mars 2025). Les pilotes qui poussent jusque-là sans plafond suffisant ratent la relance vers la station de Villard (septembre 2023, atterrissage dans un champ à l'entrée nord de Villard) ; au retour vers le nord on enroule au-dessus de Saint-Andéol avant de remonter jusqu'au Moucherotte (juin 2026).",
+     "sources": [
+      "S200",
+      "S219",
+      "S215",
+      "S226"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "montaud-pompe-tremplin-delta",
+     "name": "Montaud : pompe de service à droite (ancien tremplin delta)",
+     "lon": 5.5749,
+     "lat": 45.2448,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "milieu d'après-midi (déco plein ouest)",
+     "trigger": "Rebord de falaise à droite du déco, vers l'ancien tremplin delta",
+     "description": "Déclencheur : « la pompe de service se trouve à droite vers l'ancien tremplin delta » (topo CHVD). Une fois sur la crête on peut se promener assez loin, mais par tendance nord le retour par le col de Montaud est problématique : ne pas dépasser le Bec de l'Orient. Position approximative près du déco.",
+     "sources": [
+      "S206",
+      "S133"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "montaud-antenne-avant-reliefs",
+     "name": "Antenne des avant-reliefs de Montaud (« ça monte tout le temps »)",
+     "lon": 5.5463,
+     "lat": 45.26,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "après-midi et soirée",
+     "trigger": "Mât sur les avant-reliefs à l'ouest de Montaud, bas de pente exposé à l'ouest",
+     "description": "Relance sur la crête avant le Bec de l'Échaillon : avec 1700 m on peut partir plein ouest vers l'antenne des avant-reliefs (topo CHVD). Un vol du soir va jusqu'aux antennes, « un endroit repéré par les spécialistes du cross où ça monte tout le temps ». Position approximative : mât du Mollard Guillon relevé sur OpenStreetMap, identification de l'antenne en déduction à partir de la direction indiquée.",
+     "sources": [
+      "S206",
+      "S207",
+      "S224",
+      "S227"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "bec-de-l-orient-relais-pompe",
+     "name": "Bec de l'Orient : thermique de service après le relais téléphonique",
+     "lon": 5.5449,
+     "lat": 45.2351,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "après-midi",
+     "trigger": "Rebord nord du Vercors au-dessus du relais téléphonique, exposé à l'ouest",
+     "description": "Relance sur la crête nord du Vercors : après Montaud, « un peu après le relais téléphonique, le thermique de service me remonte tout aussi facilement au Bec de l'Orient » (août 2026) ; la crête qui s'enfonce vers le sud (Grands Goulets) donne ensuite en thermodynamique sur toute sa longueur (« si c'est bon au début, c'est bon tout le long »). Par tendance sud, peu de parapentes à Montaud. Dynamique le long de la pente jusqu'à Montaud. Attention à ne pas dépasser le Bec par vent de nord (retour par le col de Montaud).",
+     "sources": [
+      "S209",
+      "S206",
+      "S226"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "bellecombe-antenne-emetteur",
+     "name": "Antenne (émetteur) de Bellecombe : thermique attendu",
+     "lon": 5.5725,
+     "lat": 45.174,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "dès 10h-midi",
+     "trigger": "Mât de l'émetteur de Bellecombe, au-dessus de la combe du déco sud, plein soleil",
+     "description": "Déclencheur près du déco : « je vise l'antenne pour un thermique attendu » (récit CHVD d'août 2020, un peu tôt et un peu bas, on sent que ça monte). Le parking de Bellecombe est à 300 m de l'émetteur selon le club local. Le site donne dès 10h et le thermique est souvent installé dès midi ; arrivé à 2200 m on traverse sur le Moucherotte (Lans en l'Air).",
+     "sources": [
+      "S43",
+      "S227"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "pas-des-rages-plafond-raccroche",
+     "name": "Avant les gorges de la Bourne / Pas des Rages : plafond et raccroche",
+     "lon": 5.4967,
+     "lat": 45.0834,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "après-midi (13h-17h, lorsque l'activité thermique est présente)",
+     "trigger": "Ligne de crête à la verticale des falaises entre la Vierge du Vercors et les gorges de la Bourne ; thermiques à la verticale de la crête",
+     "description": "Plafond et relance du cross des gorges de la Bourne : après la Vierge du Vercors, « si ça tient, continuer vers le nord en vous appuyant sur les thermiques à la verticale de la crête » ; un peu avant les gorges on trouve généralement des thermiques généreux ; pour raccrocher directement la crête au nord au niveau du pas des Rages il vaut mieux monter à 2000-2500 m (1700-1800 m suffisent par le Perrelier). On y trouve parfois des thermiques en milieu de transition au-dessus des gorges. Retour facile, poussé par la brise.",
+     "sources": [
+      "S38",
+      "S226"
+     ],
+     "confidence": "medium"
     }
    ],
    "soaring_spots": [
@@ -2195,6 +2506,24 @@
        "coord_quality": "source"
       },
       {
+       "name": "Pompe de service du Belvédère (premier relief)",
+       "lon": 5.5925,
+       "lat": 45.0905,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Crête des Crocs / sentier Gobert",
+       "lon": 5.595,
+       "lat": 45.095,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Dent Percée / Croix des Suifs (thermique vers la station)",
+       "lon": 5.5986,
+       "lat": 45.105,
+       "coord_quality": "source"
+      },
+      {
        "name": "Pic Saint-Michel",
        "lon": 5.6193,
        "lat": 45.09,
@@ -2213,6 +2542,12 @@
        "coord_quality": "source"
       },
       {
+       "name": "Arêtes du Gerbier",
+       "lon": 5.5871,
+       "lat": 45.0238,
+       "coord_quality": "source"
+      },
+      {
        "name": "Côte 2000",
        "lon": 5.5679,
        "lat": 45.0299,
@@ -2220,13 +2555,18 @@
       }
      ],
      "distance_km": null,
-     "description": "Cross classique des faces ouest : transiter à 1600-1700 m sur la crête des Crocs (sentier Gobert), puis monter facilement la crête sommitale ; vers le sud jusqu'au Gerbier et à la Côte 2000 (cheminement efficace, mais Roc Cornafion quasi systématiquement turbulent) ; vers le nord vers le Pic Saint-Michel, petite transition au col de l'Arc, puis partie nord vers le Moucherotte moins évidente car le relief est moins marqué (S38). Waypoints de la route : décos FFVL.",
+     "description": "Cross classique des faces ouest : transiter à 1600-1700 m sur la crête des Crocs (sentier Gobert), puis monter facilement la crête sommitale ; vers le sud jusqu'au Gerbier et à la Côte 2000 (cheminement efficace, mais Roc Cornafion quasi systématiquement turbulent) ; vers le nord vers le Pic Saint-Michel, petite transition au col de l'Arc, puis partie nord vers le Moucherotte moins évidente car le relief est moins marqué (S38). Waypoints de la route : décos FFVL. Points de relance (passe thermiques) : pompe de service du Belvédère sur le premier relief (plafond 2300-2600 m, puis transit plein est), crête des Crocs au sentier Gobert, thermique de la Croix des Suifs / Dent Percée qui se décale sur la station de Lans, épaule du Cornafion, arêtes du Gerbier (plafond jusqu'à 2800 m).",
      "sources": [
       "S38",
       "S111",
       "S120",
       "S121",
-      "S122"
+      "S122",
+      "S196",
+      "S199",
+      "S200",
+      "S201",
+      "S228"
      ]
     },
     {
@@ -2237,6 +2577,18 @@
        "name": "Côte 2000 (déco O)",
        "lon": 5.5679,
        "lat": 45.0299,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Escarpement rocheux à droite du déco (thermique qui se décale sur la station)",
+       "lon": 5.5685,
+       "lat": 45.0305,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Arêtes du Gerbier",
+       "lon": 5.5871,
+       "lat": 45.0238,
        "coord_quality": "source"
       },
       {
@@ -2253,11 +2605,13 @@
       }
      ],
      "distance_km": null,
-     "description": "Depuis 1700 m ou 1900 m, accrocher le thermique qui se décale sur la station (escarpement à droite du déco) ; transition vers les arêtes du Gerbier dès 2000 m ou vers le Cornafion en direct dès 2200 m ; passer le Cornafion au-dessus ou par l'ouest (pas par l'est : retour sur le plateau non garanti, col de l'Arc très sportif) ; la combe de Pissevache au sud est sous le vent ; se poser aux Blancs ou à l'Aigle (S38).",
+     "description": "Depuis 1700 m ou 1900 m, accrocher le thermique qui se décale sur la station (escarpement à droite du déco) ; transition vers les arêtes du Gerbier dès 2000 m ou vers le Cornafion en direct dès 2200 m ; passer le Cornafion au-dessus ou par l'ouest (pas par l'est : retour sur le plateau non garanti, col de l'Arc très sportif) ; la combe de Pissevache au sud est sous le vent ; se poser aux Blancs ou à l'Aigle (S38). Points de relance (passe thermiques) : thermique de l'escarpement à droite du déco (dès 2000 m, transition vers les arêtes du Gerbier ; dès 2200 m, Cornafion en direct), arêtes du Gerbier, épaule du Cornafion (passage turbulent, à contourner par l'ouest).",
      "sources": [
       "S38",
       "S115",
-      "S122"
+      "S122",
+      "S196",
+      "S228"
      ]
     },
     {
@@ -2283,20 +2637,36 @@
        "coord_quality": "source"
       },
       {
+       "name": "Arêtes du Gerbier",
+       "lon": 5.5871,
+       "lat": 45.0238,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Les Deux Sœurs",
+       "lon": 5.5803,
+       "lat": 45.0043,
+       "coord_quality": "source"
+      },
+      {
        "name": "Grand Veymont",
-       "lon": 5.5236,
+       "lon": 5.5266,
        "lat": 44.8697,
-       "coord_quality": "approx"
+       "coord_quality": "source"
       }
      ],
      "distance_km": null,
-     "description": "Au départ du Moucherotte (face ouest), du col de l'Arc ou du col Vert (face est), cross le long des faces est du Vercors jusqu'au Grand Veymont ; après un bon plein au Moucherotte (2400 m) on peut transiter sur la Chartreuse par le sommet du Rachais (S38). Les pilotes cités par infos-parapente partent tôt du Col Vert, du Serpaton, du Pic Saint-Michel ou du col de l'Arc (S55).",
+     "description": "Au départ du Moucherotte (face ouest), du col de l'Arc ou du col Vert (face est), cross le long des faces est du Vercors jusqu'au Grand Veymont ; après un bon plein au Moucherotte (2400 m) on peut transiter sur la Chartreuse par le sommet du Rachais (S38). Les pilotes cités par infos-parapente partent tôt du Col Vert, du Serpaton, du Pic Saint-Michel ou du col de l'Arc (S55). Points de relance (passe thermiques) : pompe de service du Col Vert dans les pierriers, arêtes du Gerbier (thermique direct à 2800 m), Deux Sœurs, Grande et Petite Moucherolle (plafond 2600 m), col de l'Arc ; au retour, plafond du Moucherotte (2200-2800 m) avant la transition vers le Rachais.",
      "sources": [
       "S38",
       "S55",
       "S119",
       "S121",
-      "S125"
+      "S125",
+      "S193",
+      "S196",
+      "S197",
+      "S200"
      ]
     },
     {
@@ -2316,16 +2686,22 @@
        "coord_quality": "approx"
       },
       {
-       "name": "Col de Romeyère (env.)",
-       "lon": 5.4823,
-       "lat": 45.1546,
-       "coord_quality": "approx"
+       "name": "Pas des Rages (plafond 2000-2500 m)",
+       "lon": 5.4967,
+       "lat": 45.0834,
+       "coord_quality": "source"
       },
       {
-       "name": "Rencurel (gorges de la Bourne, env.)",
-       "lon": 5.4,
-       "lat": 45.07,
-       "coord_quality": "approx"
+       "name": "Col de Romeyère",
+       "lon": 5.4797,
+       "lat": 45.1439,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Rencurel (coteaux)",
+       "lon": 5.4735,
+       "lat": 45.1035,
+       "coord_quality": "source"
       },
       {
        "name": "Méaudre",
@@ -2335,11 +2711,12 @@
       }
      ],
      "distance_km": null,
-     "description": "Faire le maximum de gain en local ; le point dur est la Vierge du Vercors (« extrêmement contré » vers le nord, passer haut) ; après, quitte ou double (retour par la vallée possible) ; 20-30 minutes pour un pilote moyen jusqu'aux gorges, thermiques généreux juste avant ; retour facile poussé par la brise. Depuis le col de Romeyère : assurer 1700-1800 m (2000-2500 m pour raccrocher le pas des Rages), transiter au-dessus des gorges (turbulent, accélérateur utile), rejoindre les coteaux de Rencurel, alimentation irrégulière, vaches faciles (S38). Positions de la Vierge et du col approx.",
+     "description": "Faire le maximum de gain en local ; le point dur est la Vierge du Vercors (« extrêmement contré » vers le nord, passer haut) ; après, quitte ou double (retour par la vallée possible) ; 20-30 minutes pour un pilote moyen jusqu'aux gorges, thermiques généreux juste avant ; retour facile poussé par la brise. Depuis le col de Romeyère : assurer 1700-1800 m (2000-2500 m pour raccrocher le pas des Rages), transiter au-dessus des gorges (turbulent, accélérateur utile), rejoindre les coteaux de Rencurel, alimentation irrégulière, vaches faciles (S38). Positions de la Vierge et du col approx. Points de relance (passe thermiques) : thermiques à la verticale de la crête après la Vierge, thermiques généreux un peu avant les gorges, plafond de 2000-2500 m pour raccrocher au pas des Rages, coteaux de Rencurel.",
      "sources": [
       "S38",
       "S41",
-      "S136"
+      "S136",
+      "S226"
      ]
     },
     {
@@ -2353,16 +2730,16 @@
        "coord_quality": "source"
       },
       {
-       "name": "Col de Romeyère (env.)",
-       "lon": 5.4823,
-       "lat": 45.1546,
-       "coord_quality": "approx"
+       "name": "Col de Romeyère",
+       "lon": 5.4797,
+       "lat": 45.1439,
+       "coord_quality": "source"
       },
       {
-       "name": "Bec de l'Orient (env.)",
-       "lon": 5.5,
-       "lat": 45.23,
-       "coord_quality": "approx"
+       "name": "Bec de l'Orient",
+       "lon": 5.5449,
+       "lat": 45.2351,
+       "coord_quality": "source"
       }
      ],
      "distance_km": 50,
@@ -2379,6 +2756,12 @@
        "name": "Bellecombe",
        "lon": 5.5783,
        "lat": 45.175,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Antenne (émetteur) de Bellecombe",
+       "lon": 5.5725,
+       "lat": 45.174,
        "coord_quality": "source"
       },
       {
@@ -2425,10 +2808,16 @@
        "coord_quality": "approx"
       },
       {
-       "name": "Rachais (env.)",
-       "lon": 5.68,
-       "lat": 45.21,
-       "coord_quality": "approx"
+       "name": "Bastille / Mont Jalla (bulles de relance sous la ZIT)",
+       "lon": 5.7275,
+       "lat": 45.2089,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Rachais",
+       "lon": 5.738,
+       "lat": 45.227,
+       "coord_quality": "source"
       },
       {
        "name": "Saint-Eynard (env.)",
@@ -2438,9 +2827,13 @@
       }
      ],
      "distance_km": 204,
-     "description": "Récit de Sébastien Tournaire (Les Tichodromes) : départ de bonne heure du Moucherotte ; balise FFVL 15-25 km/h de NNE, déco OSO sous le vent d'un bon thermique ; basculer sur les faces est est chaotique (nord présent, thermiques anarchiques), puis l'air devient plus sain après l'épaule du Moucherotte ; vers le sud le long des faces est, on passe peu à peu au-dessus des crêtes (composante NO de 10 km/h), sous le vent de la Moucherolle on se fait plomber ; demi-tour au Petit Veymont ; au retour les thermiques du plateau sont meilleurs que ceux des faces est (air plus sec) ; transition à presque 2700 m du Moucherotte au Rachais en évitant la ZIT de Grenoble (plein nord vers Sassenage recommandé), recharge dans la brise à 800 m au Rachais ; Bastille et Saint-Eynard (nombreuses voiles venues de Saint-Hilaire), puis la Chartreuse par les faces ouest de la Dent de Crolles jusqu'au Granier (S9). Positions des repères approx.",
+     "description": "Récit de Sébastien Tournaire (Les Tichodromes) : départ de bonne heure du Moucherotte ; balise FFVL 15-25 km/h de NNE, déco OSO sous le vent d'un bon thermique ; basculer sur les faces est est chaotique (nord présent, thermiques anarchiques), puis l'air devient plus sain après l'épaule du Moucherotte ; vers le sud le long des faces est, on passe peu à peu au-dessus des crêtes (composante NO de 10 km/h), sous le vent de la Moucherolle on se fait plomber ; demi-tour au Petit Veymont ; au retour les thermiques du plateau sont meilleurs que ceux des faces est (air plus sec) ; transition à presque 2700 m du Moucherotte au Rachais en évitant la ZIT de Grenoble (plein nord vers Sassenage recommandé), recharge dans la brise à 800 m au Rachais ; Bastille et Saint-Eynard (nombreuses voiles venues de Saint-Hilaire), puis la Chartreuse par les faces ouest de la Dent de Crolles jusqu'au Granier (S9). Positions des repères approx. Points de relance (passe thermiques) : plafond au Moucherotte (2200-2800 m) puis transition contrée vers la Bastille, bulles du Mont Jalla et pompe du Rachais ; sens inverse : Néron à 1400 m depuis le Rachais, puis 1800 m depuis le Néron pour raccrocher le Vercors au Mollard / éperon de Sassenage au-dessus des lignes.",
      "sources": [
-      "S9"
+      "S9",
+      "S195",
+      "S208",
+      "S213",
+      "S220"
      ]
     },
     {
@@ -2454,6 +2847,12 @@
        "coord_quality": "source"
       },
       {
+       "name": "Pompe de service (ancien tremplin delta)",
+       "lon": 5.5749,
+       "lat": 45.2448,
+       "coord_quality": "approx"
+      },
+      {
        "name": "Saint-Nizier (atterrissage)",
        "lon": 5.6311,
        "lat": 45.1686,
@@ -2461,10 +2860,13 @@
       }
      ],
      "distance_km": null,
-     "description": "Par nord fort, Montaud est un site du soir thermodynamique « avec départ en cross vers le sud possible » (S8). Waypoints indicatifs : aucun parcours détaillé n'a été trouvé.",
+     "description": "Par nord fort, Montaud est un site du soir thermodynamique « avec départ en cross vers le sud possible » (S8). Waypoints indicatifs : aucun parcours détaillé n'a été trouvé. Points de relance (passe thermiques) : pompe de service à droite du déco, crête puis relais téléphonique et thermique de service jusqu'au Bec de l'Orient (ne pas dépasser le Bec par tendance nord), ou, à 1700 m, antenne des avant-reliefs vers l'ouest (« ça monte tout le temps »).",
      "sources": [
       "S8",
-      "S133"
+      "S133",
+      "S206",
+      "S207",
+      "S209"
      ]
     }
    ],
@@ -2476,7 +2878,9 @@
     "Cornafion : contourner l'épaule par l'ouest (confluence de brises), attention aux dusts en fin de saison [S46].",
     "Les décos du matin (Méaudre, Sagnes, Col de l'Arc) deviennent très turbulents dès la fin de matinée : poser tôt [S42][S47].",
     "Dans les Gorges de la Bourne, entre Pertuson et Cumacle, aucune zone de vachage sur 3 km : prévoir le gain nécessaire avant la crête [S38].",
-    "Zones d'oiseaux : faucon pèlerin janvier-juillet, aigle royal janvier-septembre, vautour fauve et gypaète janvier-août (carte du PNR) : rester bien au-dessus des falaises ou dégager rapidement [S49]."
+    "Zones d'oiseaux : faucon pèlerin janvier-juillet, aigle royal janvier-septembre, vautour fauve et gypaète janvier-août (carte du PNR) : rester bien au-dessus des falaises ou dégager rapidement [S49].",
+    "Du Néron au Vercors : 1800 m depuis le Néron pour raccrocher au-dessus des lignes à haute tension ; éviter la pointe sud du Néron, sous le vent de la brise de Voreppe [S208].",
+    "Au Belvédère, dès qu'on rencontre la pompe de service on ne la lâche plus jusqu'au plafond ; quand le Grésivaudan apparaît, on est assez haut pour transiter plein est [S199]."
    ]
   },
   {
@@ -2919,6 +3323,22 @@
       "S156",
       "S157"
      ]
+    },
+    {
+     "id": "ferriere-point-bas-technique",
+     "name": "Crêt de la Ferrière : point bas technique du cross du Serpaton",
+     "kind": "downdraft",
+     "lon": 5.5957,
+     "lat": 44.9776,
+     "radius_km": 1.5,
+     "coord_quality": "source",
+     "conditions": "au passage entre le Serpaton et les Deux Sœurs, vers 1100-1200 m",
+     "description": "Le crêt de la Ferrière est à peu près à 1100 ou 1200 m : la transition est très facile mais peut faire rentrer dans la stabilité de basse couche ; point bas « assez technique ». La variante par le sud (balise au Grand Veymont) l'évite mais comporte une branche très engagée sans vache possible.",
+     "sources": [
+      "S211",
+      "S66",
+      "S226"
+     ]
     }
    ],
    "thermal_spots": [
@@ -2986,6 +3406,143 @@
       "S55",
       "S156"
      ]
+    },
+    {
+     "id": "deux-soeurs-arzelier-thermique",
+     "name": "Les Deux Sœurs (col de l'Arzelier) : relance généreuse après le Crêt de la Ferrière",
+     "lon": 5.5803,
+     "lat": 45.0043,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "après-midi, dès que l'on arrive du Serpaton (vers midi)",
+     "trigger": "Rocher des Deux Sœurs au-dessus de la station de l'Arzelier, plein soleil",
+     "description": "Relance du cross classique du Serpaton : après le point bas du Crêt de la Ferrière, « ça raccroche généralement d'assez bas et le thermique est très généreux (souvent > +4 m/s) » ; vaches possibles à la station du col de l'Arzelier. Par sud qui pousse et plafonds généreux on peut même raccrocher les Deux Sœurs directement depuis le pilier nord. Premiers plafonds relevés : 3200 m (31 juillet 2020).",
+     "sources": [
+      "S211",
+      "S66",
+      "S196",
+      "S226"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "grand-veymont-plafond-extraction",
+     "name": "Grand Veymont : plafond et point d'extraction du cheminement des faces est",
+     "lon": 5.5266,
+     "lat": 44.8697,
+     "alt_m": 2341,
+     "coord_quality": "source",
+     "best_hours": "en fin de matinée et midi",
+     "trigger": "Sommet du Grand Veymont et pentes avoisinantes",
+     "description": "Plafond et balise commune des cross du Serpaton, du Col Vert et du Moucherotte : plafond à 2300 m, transition sur le Grand Veymont, plafond à 2400 m puis crête jusqu'au Moucherotte (récit de 2007) ; à partir du Grand Veymont les groupes se séparent entre nord, sud (Mont Aiguille, Jocou) ou ouest (tour du Vercors). Plafonds de 3200 m dès 11h49 le 31 juillet 2020. Réserve naturelle : 300 m/sol minimum.",
+     "sources": [
+      "S212",
+      "S198",
+      "S214",
+      "S193",
+      "S211",
+      "S226"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "mont-aiguille-thermiques-puissants",
+     "name": "Mont Aiguille : thermiques puissants autour et au-dessus",
+     "lon": 5.553,
+     "lat": 44.842,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "fin de matinée à début d'après-midi",
+     "trigger": "Falaises et sommet du Mont Aiguille (survol à plus de 300 m/sol)",
+     "description": "Balise et plafond du cheminement sud des faces est : « thermiques puissants générés autour et au-dessus » du Mont Aiguille ; point de demi-tour classique des allers-retours (retour vers le Pic Saint-Michel) ou départ vers le Jocou par les avant-reliefs. Réserve naturelle : 300 m/sol minimum.",
+     "sources": [
+      "S216",
+      "S33",
+      "S198",
+      "S226"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "tete-chevaliere-relance",
+     "name": "Tête Chevalière : relance « juste ce qu'il faut » avant le Jocou",
+     "lon": 5.5392,
+     "lat": 44.8026,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "midi et début d'après-midi",
+     "trigger": "Sommet de la Tête Chevalière, sur l'avant-relief entre Mont Aiguille et Jocou",
+     "description": "Relance sur la traversée Grand Veymont - Jocou : « Tête Chevalière, un peu mesquine, nous remonte juste ce qu'il faut » (récit du 28 juillet 2026) ; derrière, le col de Bachal ne donne rien (point bas à 1520 m), puis on retrouve un thermique pour rejoindre la face nord du Jocou.",
+     "sources": [
+      "S214",
+      "S226"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "but-sapiau-pompe-col-de-rousset",
+     "name": "But Sapiau : pompe et plafond de sortie du col de Rousset",
+     "lon": 5.4175,
+     "lat": 44.826,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "après-midi",
+     "trigger": "Pointe du But Sapiau et crête entre les vallées de Chamaloc et de Romeyer",
+     "description": "Relance et plafond du col de Rousset : si l'on a raté la pompe qui est devant le déco, longer les versants ouest du But Sapiau jusqu'à la crête entre Chamaloc et Romeyer, où l'on remonte « devant la pointe du But Sapiau » ; une fois le plein fait, transition vers le But de l'Aiglette et les faces sud du Vercors, vers la vallée de Saint-Agnan ou vers la Dent de Die. Récit de 2025 : « un bon plein au-dessus de la butte de Sapiau » pour arriver à la Dent de Die. Éviter de virer à droite après le déco vers le cirque sous le col (aérologie difficile).",
+     "sources": [
+      "S57",
+      "S61",
+      "S226"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "roc-de-toulau-thermique-14h",
+     "name": "Roc de Toulau : thermique de 14h vers le col des Limouches",
+     "lon": 5.2389,
+     "lat": 44.8902,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "vers 14h",
+     "trigger": "Roc de Toulau, à l'ouest du Vercors sud",
+     "description": "Relance du Tour du Vercors, face sud : à l'heure où les faces sud sont bien exposées, on arrive à la Tête de la Dame « pour prendre le thermique de 14h du roc de Touleau qui permet de transiter sur notre bon vieux col des Limouches » (Tichodromes). Les rapaces des falaises : ne se servir de ces thermiques que bien au-dessus du bord.",
+     "sources": [
+      "S52",
+      "S226"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "pre-de-cinq-sous-plafond",
+     "name": "Pré de Cinq Sous : plafond avant Saint-Pierre-de-Chérennes",
+     "lon": 5.2218,
+     "lat": 45.0015,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "fin d'après-midi",
+     "trigger": "Pré de Cinq Sous (Hostun), sur le bord ouest du Vercors",
+     "description": "Plafond du Tour du Vercors : « plaf au pré de Cinq Sous et transit sur Saint-Pierre-de-Chérennes », puis remontée jusqu'au Bec de l'Orient (Tichodromes).",
+     "sources": [
+      "S52",
+      "S226"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "pilier-nord-serpaton-extraction",
+     "name": "Pilier nord du Serpaton : extraction du départ du cross",
+     "lon": 5.587,
+     "lat": 44.914,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "10h30-12h (déco de la matinée)",
+     "trigger": "Pilier nord du Serpaton, bord de l'alpage exposé à l'est",
+     "description": "Déduction : le cross classique commence par « pilier nord, crêt de la Ferrière, Deux Sœurs » (parapentiste.info) ; le pilier nord est donc le point où l'on s'extrait avant de traverser vers le Crêt de la Ferrière (environ 1100-1200 m) ; si le sud pousse fort et que les plafonds sont généreux, on peut même raccrocher les Deux Sœurs directement. Position approximative, à confirmer.",
+     "sources": [
+      "S211",
+      "S66"
+     ],
+     "confidence": "low"
     }
    ],
    "soaring_spots": [
@@ -3455,15 +4012,15 @@
       },
       {
        "name": "Grand Veymont",
-       "lon": 5.5236,
+       "lon": 5.5266,
        "lat": 44.8697,
-       "coord_quality": "approx"
+       "coord_quality": "source"
       },
       {
        "name": "Mont Aiguille",
-       "lon": 5.5531,
-       "lat": 44.8419,
-       "coord_quality": "approx"
+       "lon": 5.553,
+       "lat": 44.842,
+       "coord_quality": "source"
       }
      ],
      "distance_km": 36,
@@ -3487,29 +4044,31 @@
        "coord_quality": "source"
       },
       {
-       "name": "Crêt de la Ferrière (env.)",
-       "lon": 5.55,
-       "lat": 44.94,
-       "coord_quality": "approx"
+       "name": "Crêt de la Ferrière",
+       "lon": 5.5957,
+       "lat": 44.9776,
+       "coord_quality": "source"
       },
       {
-       "name": "Les Deux Sœurs (env.)",
-       "lon": 5.56,
-       "lat": 44.985,
-       "coord_quality": "approx"
+       "name": "Les Deux Sœurs",
+       "lon": 5.5803,
+       "lat": 45.0043,
+       "coord_quality": "source"
       },
       {
        "name": "Grand Veymont",
-       "lon": 5.5236,
+       "lon": 5.5266,
        "lat": 44.8697,
-       "coord_quality": "approx"
+       "coord_quality": "source"
       }
      ],
      "distance_km": null,
-     "description": "Barbules : deux départs classiques du Serpaton. Cross 1 : pilier nord, crêt de la Ferrière (point bas assez technique, 1100-1200 m ; transition facile mais risque d'entrer dans la stabilité de basse couche), puis les Deux Sœurs, où ça raccroche généralement d'assez bas avec un thermique très généreux (souvent > +4 m/s), sinon vaches possibles à la station (col de l'Arzelier), champ des lacets en gros dévers : préférer reposer plus haut dans le village. Si le sud pousse assez fort et les plafonds sont généreux on raccroche les Deux Sœurs en direct depuis le pilier nord. Cross 2 par le sud : ajoute une balise au Grand Veymont et évite le point bas de la Ferrière, mais une branche très engagée (pas de vache jusqu'au Grand Veymont) avec première branche face au vent du sud ; temps de parcours équivalents (S66). Le site doit sa célébrité au record de groupe de l'équipe de France du 25 avril 1997 : 279 km, posé à Retkingen (Suisse) (S66). Positions des repères approx.",
+     "description": "Barbules : deux départs classiques du Serpaton. Cross 1 : pilier nord, crêt de la Ferrière (point bas assez technique, 1100-1200 m ; transition facile mais risque d'entrer dans la stabilité de basse couche), puis les Deux Sœurs, où ça raccroche généralement d'assez bas avec un thermique très généreux (souvent > +4 m/s), sinon vaches possibles à la station (col de l'Arzelier), champ des lacets en gros dévers : préférer reposer plus haut dans le village. Si le sud pousse assez fort et les plafonds sont généreux on raccroche les Deux Sœurs en direct depuis le pilier nord. Cross 2 par le sud : ajoute une balise au Grand Veymont et évite le point bas de la Ferrière, mais une branche très engagée (pas de vache jusqu'au Grand Veymont) avec première branche face au vent du sud ; temps de parcours équivalents (S66). Le site doit sa célébrité au record de groupe de l'équipe de France du 25 avril 1997 : 279 km, posé à Retkingen (Suisse) (S66). Positions des repères approx. Points de relance (passe thermiques) : extraction au pilier nord, point bas du crêt de la Ferrière (1100-1200 m), Deux Sœurs (thermique souvent > +4 m/s), plafond au Grand Veymont (2300-2400 m).",
      "sources": [
       "S66",
-      "S150"
+      "S150",
+      "S211",
+      "S212"
      ]
     },
     {
@@ -3524,9 +4083,9 @@
       },
       {
        "name": "Grand Veymont (env.)",
-       "lon": 5.5236,
+       "lon": 5.5266,
        "lat": 44.8697,
-       "coord_quality": "approx"
+       "coord_quality": "source"
       },
       {
        "name": "Pic Saint-Michel",
@@ -3571,6 +4130,64 @@
      "sources": [
       "S55"
      ]
+    },
+    {
+     "id": "col-vert-grand-veymont-jocou-sud",
+     "name": "Col Vert → Gerbier → Deux Sœurs → Grand Veymont → Mont Aiguille → Tête Chevalière → Jocou (circuit sud classique)",
+     "waypoints": [
+      {
+       "name": "Col Vert (déco est)",
+       "lon": 5.6005,
+       "lat": 45.0452,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Arêtes du Gerbier",
+       "lon": 5.5871,
+       "lat": 45.0238,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Les Deux Sœurs",
+       "lon": 5.5803,
+       "lat": 45.0043,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Grand Veymont",
+       "lon": 5.5266,
+       "lat": 44.8697,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Mont Aiguille",
+       "lon": 5.553,
+       "lat": 44.842,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Tête Chevalière",
+       "lon": 5.5392,
+       "lat": 44.8026,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Jocou",
+       "lon": 5.6471,
+       "lat": 44.7243,
+       "coord_quality": "source"
+      }
+     ],
+     "distance_km": null,
+     "description": "Circuit sud depuis le Col Vert, dans l'ordre volé : pompe dans les pierriers du déco (dès 10h30-11h), sortie au-dessus des arêtes du Gerbier (2800 m), Grand Veymont (plafond 3200 m dès midi en juillet 2020), Mont Aiguille (thermiques puissants), Tête Chevalière (relance juste suffisante), col de Bachal sans rien (point bas), face nord du Jocou (extraction pénible puis 3200 m en face sud), puis Dévoluy, Pic de Bure ou transition Champsaur et retour par Valbonnais (triangle FAI de 131 km au topo CHVD). Réserve des Hauts-Plateaux : 300 m/sol minimum au-dessus du Mont Aiguille.",
+     "sources": [
+      "S197",
+      "S196",
+      "S198",
+      "S214",
+      "S216",
+      "S223"
+     ]
     }
    ],
    "tips": [
@@ -3580,7 +4197,8 @@
     "Hauts-Plateaux : 300 m sol minimum, pas de vachage dans la réserve ; crêtes du Brisou, Mont Aiguille et Grand Veymont à respecter [S149][S33].",
     "Col de Rousset : site à vautours, rester loin des falaises et respecter l'altitude minimum de survol de 1100 m indiquée sur la carte du PNR [S154][S49].",
     "Saint-Jean-en-Royans : l'approche de l'aérodrome est réglementée (500/800 m mer, ne pas croiser la piste) ; charger le fichier OpenAir sur l'instrument [S53].",
-    "Au Royans et à Léoncel, le vent de la vallée du Rhône peut se renforcer : vérifier la manche à air pendant la perte d'altitude [S157]."
+    "Au Royans et à Léoncel, le vent de la vallée du Rhône peut se renforcer : vérifier la manche à air pendant la perte d'altitude [S157].",
+    "Aux Deux Sœurs, ça raccroche généralement d'assez bas et le thermique est généreux (souvent plus de 4 m/s) ; sinon vaches possibles à la station de l'Arzelier [S211]."
    ]
   },
   {
@@ -3791,6 +4409,128 @@
      "sources": [
       "S49"
      ]
+    },
+    {
+     "id": "courtet-pompe-devant-deco",
+     "name": "Courtet : pompe devant le déco",
+     "lon": 5.7965,
+     "lat": 44.7701,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "après 14h (site de l'après-midi, donne jusque tard en été)",
+     "trigger": "Pente et combes en avant du déco ouest, au pied de la barre de l'Obiou",
+     "description": "Déclencheur : « la pompe à couillons est souvent installée devant le déco un peu en avant » (topo CHVD) ; au premier décollage de mai 2022 le thermique est trouvé « sur la gauche du déco » et les pilotes sont rapidement au plafond vers 2300 m, tandis que le récit d'une pilote place le premier thermique dans la combe à droite (voir courtet-combe-droite-deco). Les deux versions sont conservées. En fin de journée, thermiques encore présents jusqu'à 18h15 (plafond 2768 m, vent de nord, 30 avril 2026). On fait facilement les crêtes à 2700 m (Tête de l'Obiou, Grand Ferrand). Position approximative.",
+     "sources": [
+      "S202",
+      "S203",
+      "S62",
+      "S218"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "fluchaire-ratier-bouchon",
+     "name": "Arête de Fluchaire : thermique « de folie » jusqu'au Ratier",
+     "lon": 5.8201,
+     "lat": 44.7736,
+     "alt_m": null,
+     "coord_quality": "source",
+     "best_hours": "vers 13h20 (début d'après-midi)",
+     "trigger": "Arête de Fluchaire, face ouest/sud-ouest chauffée sous la Tête de l'Obiou",
+     "description": "Relance depuis le Châtel ou depuis Courtet vers l'Obiou : « un thermique de folie sur l'arête de Fluchaire qui me fera grimper comme un bouchon jusqu'au Ratier » ; plafond 3150 m ensuite à l'Obiou, puis Grand Ferrand (récit du 3 juillet 2022, sud-ouest à ouest 10-15 km/h en altitude).",
+     "sources": [
+      "S204",
+      "S226"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "chatel-relance-bocal-courtet",
+     "name": "Le Châtel : relance du bocal de Courtet",
+     "lon": 5.8114,
+     "lat": 44.8136,
+     "alt_m": 1918,
+     "coord_quality": "source",
+     "best_hours": "après-midi",
+     "trigger": "Sommet et faces ouest du Châtel",
+     "description": "Relance du tour du bocal : après le plafond au-dessus du déco on part au nord sur le Châtel, puis plein sud sur le Mesnil (topo CHVD). Plafond 2768 m en vent de nord (avril 2026), 2300-2800 m au printemps 2022. Les thermiques de la face nord-ouest portent jusqu'à 3300 m en direction de l'Obiou et du Grand Ferrand (Ascension 2020).",
+     "sources": [
+      "S202",
+      "S203",
+      "S217",
+      "S218",
+      "S173"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "mont-de-menil-pyramide-relance",
+     "name": "Mont de Ménil / Mesnil (pyramide) : relance et confluence par nord",
+     "lon": 5.7558,
+     "lat": 44.7605,
+     "alt_m": 1594,
+     "coord_quality": "source",
+     "best_hours": "après-midi",
+     "trigger": "Pyramide du Ménil ; par vent de nord, confluence sur la face sud (sous le vent) qui déclenche un gros thermique",
+     "description": "Relance entre Courtet et le Jocou : « se jeter sur le Mesnil, montagne caractéristique en forme de pyramide… il faut chercher un peu où ça monte » ; « par nord il y a sans doute une confluence sur la face sud (sous le vent donc) qui déclenche un gros thermique » avec lequel on fait le sommet de l'Obiou très rapidement (topo CHVD du Jocou). Dans le tour du bocal de Courtet, on transite plein sud sur le Mesnil puis plein ouest vers le Jocou. Identification du Mesnil au Mont de Ménil d'OpenStreetMap en déduction : à confirmer sur le terrain.",
+     "sources": [
+      "S205",
+      "S202",
+      "S204",
+      "S227"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "jocou-pompe-avant-deco-est",
+     "name": "Jocou : thermique 100 à 200 m devant le déco est",
+     "lon": 5.649,
+     "lat": 44.7243,
+     "alt_m": 2040,
+     "coord_quality": "approx",
+     "best_hours": "tôt (déco est), puis après-midi ; plafond vers 2500 m",
+     "trigger": "Crête herbeuse du Jocou, versant est, en avant du déco",
+     "description": "Déclencheur et plafond : « faire le plafond avec le thermique qui est 100 à 200 m en avant du déco vers l'Est » (topo CHVD) ; le déco est permet de partir tôt et de tenter l'Obiou. Premier plafond vers 2500 m puis transition vers Courtet (Ascension 2020). Le vent de sud est renforcé à l'est du Jocou par un effet venturi dans la vallée de Lus-la-Croix-Haute. Position approximative à l'est du sommet.",
+     "sources": [
+      "S205",
+      "S217",
+      "S59"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "jocou-antenne-emetteur-est",
+     "name": "Antenne de l'émetteur à l'est du Jocou : bon thermique vers l'Obiou",
+     "lon": 5.6782,
+     "lat": 44.7237,
+     "alt_m": null,
+     "coord_quality": "approx",
+     "best_hours": "après-midi",
+     "trigger": "Mât de l'émetteur plein est du Jocou, sur le relief en face de Lalley",
+     "description": "Relance : après le plafond devant le déco, « mettre le cap sur l'antenne de l'émetteur plein Est (en général un bon thermique vous y attend) » pour continuer vers l'Obiou puis le Mesnil (topo CHVD). Position approximative : mât de 24 m relevé sur OpenStreetMap à environ 3 km à l'est du sommet, identification en déduction.",
+     "sources": [
+      "S205",
+      "S227"
+     ],
+     "confidence": "medium"
+    },
+    {
+     "id": "obiou-grand-ferrand-plafond",
+     "name": "Tête de l'Obiou et Grand Ferrand : plafond des crêtes",
+     "lon": 5.8387,
+     "lat": 44.7742,
+     "alt_m": 2789,
+     "coord_quality": "source",
+     "best_hours": "à partir de 14h (plafonds jusqu'à 3150-3300 m)",
+     "trigger": "Barres de l'Obiou et du Grand Ferrand, faces nord-ouest",
+     "description": "Plafond du cheminement des crêtes de Courtet : on y arrive assez facilement à 2700 m ; plafond 3150 m au sommet de l'Obiou (3 juillet 2022) et jusqu'à 3300 m grâce aux thermiques qui déclenchent en face nord-ouest (Ascension 2020). Point de départ des cross vers le Dévoluy et le Pic de Bure.",
+     "sources": [
+      "S202",
+      "S204",
+      "S217",
+      "S223"
+     ],
+     "confidence": "medium"
     }
    ],
    "soaring_spots": [
@@ -3970,12 +4710,15 @@
       }
      ],
      "distance_km": null,
-     "description": "Vol de soirée : sortir par la droite du déco vers les faces ouest, premier thermique dans la combe à droite, puis crête après crête en passant le col de la Brèche (confluence probable) jusqu'au Châtel en une vingtaine de minutes, à plus de 2000 m ; l'Obiou est parfois pris dans les nuages ; retour par la vallée avec la perte d'altitude au-dessus des crêtes de Courtet (S62). Position du col approx.",
+     "description": "Vol de soirée : sortir par la droite du déco vers les faces ouest, premier thermique dans la combe à droite, puis crête après crête en passant le col de la Brèche (confluence probable) jusqu'au Châtel en une vingtaine de minutes, à plus de 2000 m ; l'Obiou est parfois pris dans les nuages ; retour par la vallée avec la perte d'altitude au-dessus des crêtes de Courtet (S62). Position du col approx. Points de relance (passe thermiques) : pompe devant le déco, premier thermique dans la combe à droite (récit) ou à gauche (CHVD), arête de Fluchaire jusqu'au Ratier, plafond de l'Obiou (jusqu'à 3150 m).",
      "confidence": "medium",
      "sources": [
       "S62",
       "S169",
-      "S173"
+      "S173",
+      "S202",
+      "S203",
+      "S204"
      ]
     },
     {
@@ -4046,12 +4789,94 @@
       "S22",
       "S169"
      ]
+    },
+    {
+     "id": "courtet-tour-du-bocal-45km",
+     "name": "Courtet → Châtel → Mesnil → Jocou → retour Courtet (tour du bocal, triangle FAI 45 km)",
+     "waypoints": [
+      {
+       "name": "Courtet (déco)",
+       "lon": 5.7983,
+       "lat": 44.7701,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Le Châtel",
+       "lon": 5.8114,
+       "lat": 44.8136,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Mont de Ménil (Mesnil)",
+       "lon": 5.7558,
+       "lat": 44.7605,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Jocou",
+       "lon": 5.6471,
+       "lat": 44.7243,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Courtet (retour)",
+       "lon": 5.7983,
+       "lat": 44.7701,
+       "coord_quality": "source"
+      }
+     ],
+     "distance_km": 45,
+     "description": "« Le tour du bocal » : plafond au-dessus du déco (pompe devant le déco), départ au nord sur le Châtel, transition plein sud sur le Mesnil un peu en plaine à gauche du déco, plein ouest pour raccrocher le Jocou de l'autre côté du col de Lus-la-Croix-Haute, retour sur le déco : petit triangle FAI de 45 km (topo CHVD). Variante avec balises : Châtel, Mesnil et déco bouclés le plus vite possible. Identification du Mesnil au Mont de Ménil en déduction.",
+     "sources": [
+      "S202",
+      "S203",
+      "S204",
+      "S227"
+     ]
+    },
+    {
+     "id": "jocou-antenne-mesnil-obiou",
+     "name": "Jocou (déco est) → antenne de l'émetteur → Mesnil → Obiou",
+     "waypoints": [
+      {
+       "name": "Jocou (déco est)",
+       "lon": 5.649,
+       "lat": 44.7243,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Antenne de l'émetteur à l'est du Jocou",
+       "lon": 5.6782,
+       "lat": 44.7237,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Mont de Ménil (Mesnil)",
+       "lon": 5.7558,
+       "lat": 44.7605,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Tête de l'Obiou",
+       "lon": 5.8387,
+       "lat": 44.7742,
+       "coord_quality": "source"
+      }
+     ],
+     "distance_km": null,
+     "description": "Cross du déco est du Jocou vers l'Obiou : plafond avec le thermique 100 à 200 m devant le déco, cap sur l'antenne de l'émetteur plein est (bon thermique en général), puis le Mesnil où il faut chercher où ça monte ; par vent de nord, confluence sur sa face sud qui déclenche un gros thermique pour faire le sommet rapidement, puis « la suite est une formalité » (topo CHVD). Retour possible par l'atterrissage de Courtet. Positions de l'antenne et du Mesnil approximatives (déduction).",
+     "sources": [
+      "S205",
+      "S217",
+      "S227"
+     ]
     }
    ],
    "tips": [
     "Par bise, se replier sur Courtet (N/NO), protégé du nord ; mais ne pas y voler par SE ou S [S8][S21][S169].",
     "Courtet les jeudi, samedi et dimanche de chasse : pas de véhicule sur la piste avant 13h, monter à pied pour décoller avant [S169].",
-    "Ne pas atterrir sur le champ du Châtel à Mens (propriétaire opposé) [S174]."
+    "Ne pas atterrir sur le champ du Châtel à Mens (propriétaire opposé) [S174].",
+    "Jocou vers l'Obiou : plafond devant le déco, antenne de l'émetteur plein est, puis le Mesnil où il faut chercher où ça monte [S205]."
    ]
   },
   {
@@ -4411,6 +5236,21 @@
      "sources": [
       "S64",
       "S183"
+     ]
+    },
+    {
+     "id": "valbonnais-combe-du-goulet-rodeo",
+     "name": "Combe du Goulet (Valbonnais) : brise de Valbonnais et rodéo",
+     "kind": "strong-breeze",
+     "lon": 5.911,
+     "lat": 44.9099,
+     "radius_km": 3,
+     "coord_quality": "source",
+     "conditions": "après-midi, au retour du Champsaur vers Grenoble (brise de la vallée de Valbonnais forte, brise de nord par-dessus)",
+     "description": "À l'arrivée derrière La Salette, la brise de la vallée de Valbonnais est très forte ; la combe du Goulet est « bousculante » : un pilote y est descendu à 1300 m, a repris 1000 m avec peine puis a essuyé un « rodéo dans une machine à laver » à cause de la brise de nord qui passe par-dessus (28 juillet 2026) ; il a préféré poser à Valbonnais. Conseil local : passer plutôt par le col du Plan Collet.",
+     "sources": [
+      "S214",
+      "S226"
      ]
     }
    ],
@@ -6491,6 +7331,339 @@
    "type": "web",
    "lang": "fr",
    "notes": "Fiche officielle du terrain n° 13597 : coordonnées, altitude, secteurs de vent favorables/défavorables, description et dangers (lue le 2026-10-07 via le navigateur et le fichier .cache/research/ffvl_sites_alpes.json)."
+  },
+  {
+   "id": "S193",
+   "title": "CHVD : récit « Moucherotte » du 5 mars 2025 (cross Moucherotte, Grand Veymont, Mont Aiguille, retour Chartreuse)",
+   "url": "https://www.chvd.org/2025/03/08/moucherotte-6/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Récit de sortie : plan de vol commun jusqu'au Grand Veymont, retour par le Cornafion et le Moucherotte, passage en Chartreuse par le Rachais."
+  },
+  {
+   "id": "S194",
+   "title": "CHVD : récit « Cross du 26/03/2022 » (St Hilaire, Cornafion, Granier)",
+   "url": "https://www.chvd.org/2022/03/27/cross-du-26-03-2022/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Transition Rachais → Néron → plateau de Saint-Nizier : point bas à 500 m, trentaine d'ailes sur le thermique, lignes à haute tension, thermique du Moucherotte sous le vent de la brise."
+  },
+  {
+   "id": "S195",
+   "title": "CHVD : « Magic Week J1 » (20 avril 2021)",
+   "url": "https://www.chvd.org/2021/04/30/magic-week/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Première transition Néron → Vercors : arrivée sous le Mollard près de Saint-Nizier dans la brise de nord de Voreppe, thermiques hachés au-dessus des lignes 400 kV ; retour par le thermique de la cabane du Rachais."
+  },
+  {
+   "id": "S196",
+   "title": "CHVD : « Le Col Vert, le vol des nordistes du 31 juillet 2020 »",
+   "url": "https://www.chvd.org/2020/08/01/le-col-vert-le-vol-des-nordistes-du-31-juillet-2020/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Col Vert → crêtes du Gerbier (thermique à 2800 m) → Deux Sœurs → Grand Veymont, retour Moucherotte, transition Bastille / Saint-Eynard : bulles sous la ZIT."
+  },
+  {
+   "id": "S197",
+   "title": "CHVD : topo « Col Vert » (août 2020)",
+   "url": "https://www.chvd.org/2020/08/03/col-vert/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Topo du déco est du Col Vert : pompe de service dans les pierriers à droite après le pilier, décollage conseillé dès 10h30-11h, deux circuits classiques (nord et sud)."
+  },
+  {
+   "id": "S198",
+   "title": "CHVD : « Le Col Vert, le vol des sudistes du 31 juillet 2020 »",
+   "url": "https://www.chvd.org/2020/08/01/le-col-vert-le-vol-des-sudistes-du-31-juillet-2020/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Col Vert → Grand Veymont (3280 m dès 11h49) → Mont Aiguille → Jocou → Jarjatte → Pic de Bure → Gap → Écrins → Taillefer."
+  },
+  {
+   "id": "S199",
+   "title": "CHVD : topo « Belvédère » (Lans-en-Vercors, 2019)",
+   "url": "https://www.chvd.org/2019/05/15/belvedere-5/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Déco de l'après-midi : la pompe de service sur le premier relief, à suivre jusqu'au plafond, puis transition plein est pour raccrocher les crêtes (Moucherotte, Cornafion)."
+  },
+  {
+   "id": "S200",
+   "title": "CHVD : récit « Belvédère (Lans-en-Vercors) » du 4 mars 2025",
+   "url": "https://www.chvd.org/2025/03/06/belvedere-lans-en-vercors/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Plafonds 2300 à 2600 m, vols vers Pic Saint-Michel, Cornafion, Moucherotte, Petite Moucherolle."
+  },
+  {
+   "id": "S201",
+   "title": "CHVD : récit « La Dent percée » (1er avril 2021)",
+   "url": "https://www.chvd.org/2021/04/01/la-dent-percee/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Déco de la Dent Percée en bout de falaise : les thermiques emportent directement, attention au soulèvement de l'aile au gonflage."
+  },
+  {
+   "id": "S202",
+   "title": "CHVD : topo « Courtet » (J. Bayol, 2022)",
+   "url": "https://www.chvd.org/2022/05/03/courtet-2/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Pompe devant le déco, crêtes à 2700 m, tour du bocal Courtet - Châtel - Mesnil - Jocou (triangle FAI 45 km)."
+  },
+  {
+   "id": "S203",
+   "title": "CHVD : récit « Courtet » du 1er mai 2022",
+   "url": "https://www.chvd.org/2022/05/03/courtet/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Thermique à gauche du déco, plafond 2300 m puis 2800 m, boucle déco - Châtel - Mesnil."
+  },
+  {
+   "id": "S204",
+   "title": "CHVD : récit « Magic Châtel » (3 juillet 2022)",
+   "url": "https://www.chvd.org/2022/07/04/magic-chatel/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Thermique sur l'arête de Fluchaire jusqu'au Ratier, plafond 3150 m à l'Obiou, Grand Ferrand, Ménil."
+  },
+  {
+   "id": "S205",
+   "title": "CHVD : topo « Jocou » (Jack, 23 mai 2020)",
+   "url": "https://www.chvd.org/2020/05/23/jocou/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Thermique 100 à 200 m devant le déco est, antenne de l'émetteur plein est, Mesnil, confluence sur sa face sud par vent de nord."
+  },
+  {
+   "id": "S206",
+   "title": "CHVD : topo « Montaud » (J. Bayol, 2021)",
+   "url": "https://www.chvd.org/2021/07/12/montaud/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Pompe de service à droite vers l'ancien tremplin delta, antenne sur les avant-reliefs, limites par tendance nord (Bec de l'Orient, La Buffe)."
+  },
+  {
+   "id": "S207",
+   "title": "CHVD : récit « Montaud » du 22 juillet 2022",
+   "url": "https://www.chvd.org/2022/07/23/montaud-2/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Vol du soir jusqu'aux antennes des avant-reliefs, « un endroit repéré par les spécialistes du cross où ça monte tout le temps »."
+  },
+  {
+   "id": "S208",
+   "title": "CHVD : topo « Rachais » (Jack, 2021)",
+   "url": "https://www.chvd.org/2021/04/18/le-rachais/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Pompe de service 200-300 m à droite du déco ; 1400 m pour basculer sur le Néron, 1800 m depuis le Néron pour raccrocher le Vercors au-dessus des lignes ; éviter la pointe sud du Néron (brise de Voreppe)."
+  },
+  {
+   "id": "S209",
+   "title": "CHVD : récit « Cross StHil - Aiguebellette - Vercors » (8 août 2026)",
+   "url": "https://www.chvd.org/2026/09/14/cross-sthil-aiguebellette-vercors/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Retour par la Dent de Moirans, dynamique le long de la pente après Montaud, thermique de service après le relais téléphonique jusqu'au Bec de l'Orient, crête thermodynamique vers les Grands Goulets."
+  },
+  {
+   "id": "S210",
+   "title": "CHVD : récit « Une grande journée de printemps » (20 avril 2021)",
+   "url": "https://www.chvd.org/2021/04/21/une-grande-journee-de-printemps/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Aller-retour Saint-Hilaire - Rachais - Grenoble, plafond 2300 m au Rachais."
+  },
+  {
+   "id": "S211",
+   "title": "parapentiste.info : fiche du site Serpaton",
+   "url": "https://www.parapentiste.info/sites/serpaton.html",
+   "publisher": "parapentiste.info",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Deux départs classiques : pilier nord, crêt de la Ferrière (point bas technique vers 1100-1200 m), Deux Sœurs (thermique souvent > +4 m/s) ; variante sud avec balise au Grand Veymont."
+  },
+  {
+   "id": "S212",
+   "title": "parapentiste.info : récit « samedi 21 serpaton grand veymont annecy » (avril 2007)",
+   "url": "https://www.parapentiste.info/forum/recits/samedi-21-serpaton-grand-veymont-annecy-t3084.0.html",
+   "publisher": "parapentiste.info",
+   "type": "forum",
+   "lang": "fr",
+   "notes": "130 km : plafond 2300 m, transition sur le Grand Veymont, plafond 2400 m, crête jusqu'au Moucherotte puis Chartreuse."
+  },
+  {
+   "id": "S213",
+   "title": "parapentiste.info : fil « transition chartreuse -> vercors » (2006-2007)",
+   "url": "https://www.parapentiste.info/forum/cross/transition-chartreuse-vercors-t1032.5.html",
+   "publisher": "parapentiste.info",
+   "type": "forum",
+   "lang": "fr",
+   "notes": "Du Saint-Eynard, bascule sur la Bastille puis Néron ; plafond 1700 m suffit pour rejoindre le Vercors ; raccroche en dynamique sur l'éperon de Sassenage si la brise de vallée est établie, sinon thermique sur les falaises suivantes ; retour difficile après midi."
+  },
+  {
+   "id": "S214",
+   "title": "CHVD : récit « Col Vert, ça crosse ! » (juillet 2026)",
+   "url": "https://www.chvd.org/2026/07/28/col-vert-ca-crosse/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Col Vert → Grand Veymont (extraction) → Tête Chevalière → Jocou → Dévoluy → Valbonnais ; brise de Valbonnais et combe du Goulet."
+  },
+  {
+   "id": "S215",
+   "title": "CHVD : récit « Col Vert, rando-cross » (juin 2026)",
+   "url": "https://www.chvd.org/2026/06/05/col-vert-rando-cross/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Deux Sœurs, Petite et Grande Moucherolle, Moucherotte, transition vers le Rachais depuis 2365 m."
+  },
+  {
+   "id": "S216",
+   "title": "CHVD : récit « Col Vert » (29 juin 2026)",
+   "url": "https://www.chvd.org/2026/06/29/col-vert-2/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Faces est du Vercors jusqu'au Mont Aiguille : thermiques tout doux le long des crêtes, puissants autour du Mont Aiguille."
+  },
+  {
+   "id": "S217",
+   "title": "CHVD : récit « Ascension 2020 dans le Trièves »",
+   "url": "https://www.chvd.org/2020/05/26/ascension-2020-dans-le-trieves/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Courtet - Châtel - Obiou - Grand Ferrand - Ménil ; Jocou vers Courtet ; thermiques de la face nord-ouest, plafonds 3300 m."
+  },
+  {
+   "id": "S218",
+   "title": "CHVD : récit « Courtet » du 30 avril 2026 (vent de nord)",
+   "url": "https://www.chvd.org/2026/04/30/courtet-6/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Décollage à 18h15, thermiques encore présents, plafond 2768 m, survol du Châtel."
+  },
+  {
+   "id": "S219",
+   "title": "CHVD : récit « Pic Saint Michel » du 7 septembre 2023",
+   "url": "https://www.chvd.org/2023/09/07/pic-saint-michel/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Décollage 15h, plafonds 2400 m, Gerbier, Grande Moucherolle, relance manquée vers la station de Villard."
+  },
+  {
+   "id": "S220",
+   "title": "CHVD : récit « 201 km entre Vercors, Chartreuse, Bauges et Bornes » (mars 2024)",
+   "url": "https://www.chvd.org/2024/04/27/201-km-entre-vercors-chartreuse-bauges-et-bornes/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Transition Néron → Vercors, retour du Moucherotte vers la Bastille, Mont Jalla, Rachais."
+  },
+  {
+   "id": "S221",
+   "title": "CHVD : récit « Rando Moucherotte et cross » (26 juin 2023)",
+   "url": "https://www.chvd.org/2023/06/26/rando-moucherotte-et-cross-26-juin-2023/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Décollage 11h30-12h, tendance ouest persistante, plafonds vers 2700 m jusqu'au Grand Veymont."
+  },
+  {
+   "id": "S222",
+   "title": "CHVD : récit « Le Peuil, cross du mercredi 3 mai 2023 »",
+   "url": "https://www.chvd.org/2023/05/04/le-peuil-cross-du-mercredi-3-mai-2023/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fond de la combe de Saint-Paul-de-Varces sous le Cornafion, dix ailes qui « ratassent » avant de franchir le col de Prélenfrey."
+  },
+  {
+   "id": "S223",
+   "title": "CHVD : récit « Moucherotte » du 11 avril 2025",
+   "url": "https://www.chvd.org/2025/04/14/moucherotte-7/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Cross vers le sud : Grand Veymont, Chichilianne, Jocou, Obiou, Coiro, Pic de Bure."
+  },
+  {
+   "id": "S224",
+   "title": "CHVD : récit « 101 km en triangle FAI entre Chartreuse, Vercors et Belledonne » (mai 2021)",
+   "url": "https://www.chvd.org/2021/06/01/110-km-en-triangle-fai-entre-chartreuse-vercors-et-belledonne/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Grand Ratz → Bec de l'Échaillon : raccrochage facile sur les avant-reliefs de Montaud, thermodynamique du Bec de l'Échaillon sous les lignes."
+  },
+  {
+   "id": "S225",
+   "title": "CHVD : récit « Laffrey » (octobre 2024)",
+   "url": "https://www.chvd.org/2024/10/11/laffrey/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Déco nord de Laffrey près des antennes des Effores ; pas d'aérologie thermique décrite (vol du matin dans le brouillard)."
+  },
+  {
+   "id": "S226",
+   "title": "Géocodeur IGN (data.geopf.fr) : toponymes et sites de vol libre",
+   "url": "https://data.geopf.fr/geocodage/search?index=poi",
+   "publisher": "IGN / Géoplateforme",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Positions des sommets, crêtes, croix et lieux-dits utilisés pour les points de relance (Croix des Suifs, Dent Percée, Arêtes du Gerbier, Grand Veymont, Mont Aiguille, Tête Chevalière, But Sapiau, Fluchaire, Pas des Rages, Mont Jalla, etc.)."
+  },
+  {
+   "id": "S227",
+   "title": "OpenStreetMap (API Overpass) : mâts et antennes, sommet du Mont de Ménil",
+   "url": "https://overpass-api.de/api/interpreter",
+   "publisher": "OpenStreetMap",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Mâts de Bellecombe (44 m, site TDF), du Mollard Guillon, mâts à l'est du Jocou ; Mont de Ménil 1594 m. Requêtes interrogées le 2026-10-07."
+  },
+  {
+   "id": "S228",
+   "title": "CHVD : récit « Cornafion » du 18 août 2025",
+   "url": "https://www.chvd.org/2025/08/20/cornafion-9/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Décollage ouest de l'épaule directement dans un thermique efficace qui porte au-dessus des crêtes."
+  },
+  {
+   "id": "S229",
+   "title": "CHVD : récit « Épaule du Cornafion » (octobre 2022)",
+   "url": "https://www.chvd.org/2022/10/05/epaule-du-cornafion/",
+   "publisher": "Club des Hommes Volants du Dauphiné",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Sortie sur la crête après 25 min de bataille depuis une dalle rocheuse ; allers-retours Cornafion - col de l'Arc."
   }
  ]
 }

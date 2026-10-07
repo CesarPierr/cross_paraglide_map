@@ -41,3 +41,34 @@ F1 (Y grenoblois, 4 images servimg), F8 (carte de Xath), F2-F3-F5 (carte du PNR 
 - aero-sat.com (école de Courtet) sert actuellement du contenu de spam : ignoré. PDF toutleparapente « VolLibreweb.pdf » et images jimcdn inaccessibles : remplacés par la même carte hébergée par Les Tichodromes.
 - Colombier (Valbonnais) : la fiche du club écrit « 31 juin » pour la fin de l'interdiction de survol du parc des Écrins : reprise telle quelle, avec « (sic) ».
 - Lignes Largeault du Diois (13-15, 19-29, etc.) laissées au lot devoluy_gap_buech_diois, sauf 15 (col de Menée → Le Percy) et 20 (Drôme → Romeyer) reprises ici.
+
+## Thermiques et points de relance (passe complémentaire)
+
+Constat de départ : la seconde passe ne retenait comme `thermal_spots` que les endroits explicitement appelés « thermique » (14 éléments). Les pilotes parlent surtout de pompes de service, de raccroches, de plafonds et d'antennes le long des cheminements. Cette passe ajoute **32 points** (thermiques 14 → 46 : cuvette 0 → 1, Vercors nord 7 → 23, Vercors est et sud 4 → 12, Trièves 2 → 9, Matheysine 1 → 1), 3 dangers, 3 routes de cross, 4 conseils et 37 sources (S193 à S229). Rien n'a été supprimé ni renommé. `npm run data:build -- --check` : aucune alerte.
+
+Convention de confiance : plusieurs sources concordantes ou récit précis = `medium` ; extrapolation sans récit explicite = `low` (un seul cas : `pilier-nord-serpaton-extraction`, « déduction » dans la description).
+
+### Sources lues
+- Récits et topos du **CHVD** (club de marche et vol du Dauphiné) : le blog est ouvert à l'API WordPress, les 1326 articles ont été aspirés (`.cache/research/docs/vercors_grenoble_trieves/chvd/`) puis filtrés sur les mots du brief. Une trentaine de récits utilisés (Moucherotte, Col Vert, Belvédère, Dent Percée, Cornafion, Courtet, Châtel, Jocou, Montaud, Rachais, Pic Saint-Michel, Peuil, Magic Week, 201 km, triangle FAI).
+- Relues en entier : Lans en l'Air (idées de cross, Aigle, sites), Tichodromes (versant est depuis le col de l'Arc, Tour du Vercors), Vol Libre Diois (col de Rousset, Jocou, récits), parapentiste.info (fiche et récit du Serpaton, fil « transition Chartreuse → Vercors »), Barbules (Serpaton), fiches FFVL (`ffvl_sites_alpes.json`), carte PNR du Vercors (page 1 relue : les spirales de thermiques y sont sans nom, déjà exploitées).
+- Positions : géocodeur IGN pour les sommets, crêtes, croix et lieux-dits (S226), OpenStreetMap/Overpass pour les mâts et le Mont de Ménil (S227), FFVL pour les décos.
+
+### Ajouté
+- **Vercors nord** : Croix des Suifs et Dent Percée (relances Aigle/Belvédère → Pic Saint-Michel), pompe de service du Belvédère, crête des Crocs au sentier Gobert, arêtes du Gerbier (plafond 2800 m), pompe des pierriers du Col Vert, épaule du Cornafion, col de l'Arc face est, plafond du Moucherotte (avant la transition vers la Chartreuse), le Mollard / éperon de Sassenage (raccroche en arrivant du Néron), Grande et Petite Moucherolle, pompe et antenne de Montaud, relais du Bec de l'Orient, antenne de Bellecombe, Pas des Rages (plafond avant les gorges de la Bourne).
+- **Cuvette** : bulles du Mont Jalla / Bastille (relance sous la ZIT) ; piège de la pointe sud du Néron (rangé en danger, pas en thermique).
+- **Vercors est et sud** : Deux Sœurs (> +4 m/s), plafond du Grand Veymont, Mont Aiguille, Tête Chevalière, But Sapiau (col de Rousset), Roc de Toulau (thermique de 14h), Pré de Cinq Sous, pilier nord du Serpaton (déduction), point bas du Crêt de la Ferrière (danger).
+- **Trièves** : pompe devant le déco de Courtet, arête de Fluchaire, Châtel, Mont de Ménil (confluence par nord), pompe et antenne de l'émetteur du Jocou, plafond de l'Obiou et du Grand Ferrand. Routes : tour du bocal de Courtet (45 km) et Jocou → Mesnil → Obiou.
+- **Matheysine** : danger de la combe du Goulet (brise de Valbonnais, 28 juillet 2026).
+- **Routes** : waypoints insérés dans l'ordre volé dans `belvedere-crocs-cornafion-moucherotte`, `cote2000-lans`, `faces-est-moucherotte-grand-veymont`, `moucherotte-petit-veymont-rachais-chartreuse`, `autrans-moucherotte-neron`, `gorges-bourne-st-martin`, `montaud-sud`, plus la route nouvelle `col-vert-grand-veymont-jocou-sud`. Positions « env. » devenues sourcées (IGN) : Rachais, col de Romeyère, Bec de l'Orient, Rencurel, Crêt de la Ferrière, Deux Sœurs, Grand Veymont, Mont Aiguille.
+
+### Divergences et doutes
+- Courtet : le premier thermique est « sur la gauche du déco » (CHVD) ou « dans la combe à droite » (récit Vol Libre Diois) : les deux sont conservés.
+- Col Vert : altitude du déco 1635 m (topo CHVD) contre 1469 m (FFVL 5122) ; altitude non renseignée sur la pompe.
+- Antenne de Montaud et antenne de l'émetteur du Jocou : identifiées par déduction à des mâts OSM (Mollard Guillon, mât à 3 km à l'est du Jocou), position `approx`. Le Mesnil est identifié au Mont de Ménil d'OSM, à confirmer.
+- Le Mollard : position du hameau (IGN), l'éperon exact de la raccroche n'est pas localisé.
+
+### Non localisé ou non documenté
+- Rachais et Saint-Eynard (pompe du Rachais, Château Nardant, Antennes de Saint-Hilaire) relèvent du lot Chartreuse : non repris ici.
+- « Antenne de Pennes » (récit Solaure, Diois), Tête de la Dame, col de Bachal : hors lot ou sans coordonnée trouvée.
+- Laffrey, Sénépy, Monteynard : aucun récit de pilote décrivant des raccroches ou des plafonds (seuls la brise, le soaring du Conest et le vol du matin du Sénépy sont documentés) ; Mens (hors Châtel), Lalley, Clelles, Vassieux, Font d'Urle : rien d'exploitable. Laffrey : fil CHVD sans aérologie thermique, topo EOSYA illisible sans JavaScript.
+- Pages bloquées : voir `.cache/research/blocked_urls.txt` (3 lignes ajoutées).

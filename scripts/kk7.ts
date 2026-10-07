@@ -220,6 +220,10 @@ export function integrateKk7(ctx: Kk7Context): Kk7Report | null {
   );
   const topoFile = join(ctx.dir, 'osm_toponymes.json');
   const toponyms = new PointIndex<Toponym>(existsSync(topoFile) ? (JSON.parse(readFileSync(topoFile, 'utf8')) as { features: Toponym[] }).features : []);
+  // Commune containing each hotspot (geo.api.gouv.fr, cached): null means outside France, where the atlas stops.
+  const communesFile = join(ctx.dir, 'communes.json');
+  const communes = existsSync(communesFile) ? (JSON.parse(readFileSync(communesFile, 'utf8')) as { points: Record<string, string | null> }).points : {};
+  const inFrance = (h: Hotspot) => communes[`${h.lon.toFixed(6)},${h.lat.toFixed(6)}`] !== null;
   const sectors = ctx.massifs.filter((m) => m.id !== 'alpes-francaises' && m.outline && m.outline.length >= 3);
   const sectorOf = (p: LngLat) => {
     const m = sectors.find((s) => inside(p, s.outline!));
@@ -246,7 +250,7 @@ export function integrateKk7(ctx: Kk7Context): Kk7Report | null {
     if (used.has(h) || h.p < NEW_MIN_P) continue;
     const p: LngLat = [h.lon, h.lat];
     if (documented.near(p, CLEAR_M).length) continue;
-    const m = sectorOf(p);
+    const m = inFrance(h) ? sectorOf(p) : null;
     if (!m) {
       report.outside++;
       continue;

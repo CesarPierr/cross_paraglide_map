@@ -1,0 +1,678 @@
+{
+  "topic": "Chablais, Haut-Giffre, Faucigny / vallée de l'Arve (Annemasse → Passy), Salève–Genevois, influence du Léman",
+  "research_limitations": "Lecture directe des pages impossible (proxy de sortie bloquant tous les domaines) et budget de recherche web épuisé après 12 requêtes : le contenu provient des résumés du moteur de recherche (paraphrases, pas de citations exactes vérifiées). Coordonnées des villages : GeoNames (S35). Coordonnées des décos/atterros/sommets/cols : estimations de mémoire marquées coord_quality=approx, à vérifier sur les fiches FFVL.",
+  "massifs": [
+    {
+      "id": "saleve-genevois",
+      "name": "Salève et Genevois",
+      "parent_massif": "Préalpes du Nord (avant-pays genevois)",
+      "summary": "Le Salève est un relief isolé au-dessus du bassin genevois. Il dispose de décos pour plusieurs secteurs de vent : Téléphérique (N–NE) et Table d'orientation (NW à NE) pour la bise ou le nord modéré, les Crêts (SW à W, 1264 m) pour le flux d'ouest. Il y a quatre atterrissages (Pont de Zone, Cercueil, Pomier, Troinex côté suisse). Les sources signalent une pente souvent turbulente, où il faut s'éloigner du relief pour trouver les thermiques. Le plafond est contraint par les espaces aériens de Genève (déduction, non sourcé ici). Aucune donnée sourcée n'a été trouvée sur la brise du bassin genevois, le sous-le-vent du Salève par bise ou la transition Salève → Môle.",
+      "bbox": [5.95, 46.02, 6.35, 46.26],
+      "center": [6.17, 46.13],
+      "breezes": [],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "saleve-pente-turbulente",
+          "name": "Pente du Salève souvent turbulente",
+          "kind": "other",
+          "lon": 6.1800, "lat": 46.1690, "radius_km": 3,
+          "coord_quality": "approx",
+          "conditions": "Secteur de vent N à NE (vol de pente).",
+          "description": "Le résumé de recherche indique un secteur de vent nord à nord-est, une pente souvent turbulente et la nécessité de s'éloigner pour trouver les thermiques. L'attribution est incertaine : le résumé mélange une page d'aéromodélisme (vol de pente) et la page des décollages du Salève.",
+          "confidence": "medium",
+          "sources": ["S17", "S12"]
+        },
+        {
+          "id": "geneve-espace-aerien",
+          "name": "Espaces aériens de l'aéroport de Genève (CTR/TMA)",
+          "kind": "airspace",
+          "lon": 6.1457, "lat": 46.2022, "radius_km": 15,
+          "coord_quality": "source",
+          "conditions": "Permanent ; plafond à vérifier sur la carte VFR en vigueur.",
+          "description": "Déduction / connaissance générale, non sourcée dans cette recherche : le Salève et le Genevois sont sous les espaces contrôlés de Genève, ce qui limite le plafond en cross. Le point est le centre de Genève (GeoNames), pas la limite de l'espace aérien.",
+          "confidence": "low",
+          "sources": ["S35"]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [
+        {
+          "id": "saleve-faces-nord",
+          "name": "Salève – faces nord (Téléphérique / Table d'orientation)",
+          "lon": 6.1800, "lat": 46.1690,
+          "coord_quality": "approx",
+          "wind_dirs": ["N", "NE", "NW"],
+          "description": "Décos orientés N–NE (Téléphérique) et NW à NE (Table d'orientation), donc volables par bise ou vent du nord. Le vol de pente (aéromodélisme) y est pratiqué par N à NE. La pente est décrite comme souvent turbulente.",
+          "sources": ["S12", "S13", "S17"]
+        }
+      ],
+      "takeoffs": [
+        {
+          "id": "saleve-telepherique-table",
+          "name": "Salève – Téléphérique / Table d'orientation",
+          "lon": 6.1800, "lat": 46.1690, "alt_m": null,
+          "coord_quality": "approx",
+          "orientations": ["N", "NE", "NW"],
+          "description": "Deux décos proches : Téléphérique (N–NE) et Table d'orientation (NW à NE, fiche FFVL 1966). Ce sont les décos de bise ou de nord. Altitude non obtenue. Coordonnées estimées près de la gare haute du téléphérique.",
+          "sources": ["S12", "S13"]
+        },
+        {
+          "id": "saleve-les-crets",
+          "name": "Salève – Les Crêts (Collonges-sous-Salève)",
+          "lon": 6.1700, "lat": 46.1330, "alt_m": 1264,
+          "coord_quality": "approx",
+          "orientations": ["SW", "W"],
+          "description": "Déco orienté SW à W, à 1264 m (fiche FFVL terrain 1421), pour le flux d'ouest ou de sud-ouest. Les secteurs de vent favorables et défavorables sont publiés sur la fiche FFVL (non lue).",
+          "sources": ["S12", "S14"]
+        }
+      ],
+      "landings": [
+        {
+          "id": "saleve-troinex",
+          "name": "Troinex (atterrissage suisse du Salève)",
+          "lon": 6.1475, "lat": 46.1631, "alt_m": null,
+          "coord_quality": "approx",
+          "description": "Un des quatre atterrissages du Salève, avec Pont de Zone, Cercueil et Pomier (coordonnées de ces trois-là non obtenues). Le point placé est le centre du village de Troinex (GeoNames), pas le terrain lui-même.",
+          "sources": ["S12", "S35"]
+        }
+      ],
+      "synoptic_effects": [
+        {
+          "wind": "Bise",
+          "effect": "Les décos nord (Téléphérique N–NE, Table d'orientation NW–NE) sont utilisés par bise ou nord, et la pente est souvent turbulente. Le sous-le-vent du versant SE (côté Bornes) par bise n'est pas documenté dans les sources lues.",
+          "sources": ["S12", "S17"]
+        },
+        {
+          "wind": "N",
+          "effect": "Même configuration que par bise : décos nord et vol de pente par N à NE.",
+          "sources": ["S12", "S17"]
+        },
+        {
+          "wind": "SW",
+          "effect": "Déco des Crêts (orienté SW–W, 1264 m) utilisable.",
+          "sources": ["S12", "S14"]
+        },
+        {
+          "wind": "W",
+          "effect": "Déco des Crêts (SW–W) utilisable.",
+          "sources": ["S12", "S14"]
+        }
+      ],
+      "xc_routes": [],
+      "tips": [
+        "Choisir le déco selon le vent : Téléphérique ou Table d'orientation par bise/nord, les Crêts par SW–W [S12]",
+        "Pente souvent turbulente : s'écarter du relief pour trouver les thermiques [S17]"
+      ]
+    },
+    {
+      "id": "arve-faucigny",
+      "name": "Faucigny – vallée de l'Arve (Annemasse → Cluses → Sallanches → Passy) et Le Môle",
+      "parent_massif": "Préalpes du Nord / Faucigny",
+      "summary": "D'après le club de Passy, les deux phénomènes majeurs de l'Arve sont le foehn (rotors, air très perturbé) et la brise de vallée de Sallanches. Cette brise entre par Sallanches, où elle peut être très forte. Elle rend souvent l'atterrissage du plan d'eau de Passy impossible en journée, faiblit en tournant vers Passy et se divise autour du Mont d'Arbois puis à l'entrée de la vallée de Saint-Gervais. Une source pédagogique donne jusqu'à ~50 km/h dans les longues vallées comme l'Arve ou aux rétrécissements. Plaine-Joux (S/SE, 1350–1360 m) a des thermiques réguliers mais un vent de vallée très fort, parfois violent, l'après-midi. On s'y pose en travers au plan d'eau, et l'atterro de Passy devient « sous le vent » une fois la brise établie. Le Môle se vole selon le flux : atterro à La Tour par nord, à Ayse par sud. La brise est très forte au col-parking de Chez Berroud. Rien de sourcé n'a été trouvé sur la basse Arve, ni sur les confluences avec le Giffre (Marignier) et le Borne, ni sur Mont-Saxonnex et la Pointe d'Andey.",
+      "bbox": [6.20, 45.84, 6.80, 46.16],
+      "center": [6.50, 46.03],
+      "breezes": [
+        {
+          "id": "arve-basse-vallee-montante",
+          "name": "Brise montante de la basse vallée de l'Arve (bassin genevois → Cluses)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Genève", "lon": 6.1457, "lat": 46.2022, "coord_quality": "source" },
+            { "name": "Annemasse", "lon": 6.2378, "lat": 46.1944, "coord_quality": "source" },
+            { "name": "Arthaz-Pont-Notre-Dame", "lon": 6.2660, "lat": 46.1594, "coord_quality": "source" },
+            { "name": "Contamine-sur-Arve", "lon": 6.3384, "lat": 46.1294, "coord_quality": "source" },
+            { "name": "Bonneville", "lon": 6.4073, "lat": 46.0802, "coord_quality": "source" },
+            { "name": "Marignier", "lon": 6.5000, "lat": 46.0901, "coord_quality": "source" },
+            { "name": "Cluses", "lon": 6.5750, "lat": 46.0625, "coord_quality": "source" }
+          ],
+          "hours": "après-midi (été) – heures non précisées par les sources",
+          "speed_kmh": { "typical": null, "max": 50 },
+          "season": "avril-septembre",
+          "description": "Rock The Outdoor indique que la brise de vallée peut atteindre 50 km/h dans les longues vallées comme la vallée de l'Arve, ou par venturi aux rétrécissements. Le tracé depuis le bassin genevois jusqu'à Cluses est une déduction (schéma classique de brise montante). Aucune source locale ne décrit l'heure d'établissement ni la force sur ce tronçon.",
+          "confidence": "low",
+          "sources": ["S1"]
+        },
+        {
+          "id": "brise-de-sallanches",
+          "name": "Brise de vallée de Sallanches (Cluses → Sallanches → Passy → Le Fayet)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Cluses", "lon": 6.5750, "lat": 46.0625, "coord_quality": "source" },
+            { "name": "Magland", "lon": 6.6201, "lat": 46.0197, "coord_quality": "source" },
+            { "name": "Sallanches", "lon": 6.6316, "lat": 45.9442, "coord_quality": "source" },
+            { "name": "Passy", "lon": 6.6876, "lat": 45.9203, "coord_quality": "source" },
+            { "name": "Saint-Gervais-les-Bains / Le Fayet", "lon": 6.7138, "lat": 45.8929, "coord_quality": "source" }
+          ],
+          "hours": "en journée, très forte l'après-midi (≈13h-19h en été, heures exactes non précisées)",
+          "speed_kmh": { "typical": 25, "max": 50 },
+          "season": "printemps-été (saison thermique)",
+          "description": "Club de Passy (CMBVL) : la brise « entre par le côté de Sallanches, où elle peut être très forte », et rend souvent l'atterrissage du plan d'eau de Passy impossible en journée. Elle faiblit en tournant vers Passy. L'écoulement se divise une première fois autour du Mont d'Arbois et une seconde fois à l'entrée de la vallée de Saint-Gervais (paraphrase d'un résumé de recherche). Haute-Savoie Tourisme décrit un vent de vallée très fort l'après-midi, avec des conditions parfois violentes. Les vitesses sont une interprétation : 25 km/h typique pour « très forte », 50 km/h maximum selon Rock The Outdoor pour l'Arve.",
+          "confidence": "high",
+          "sources": ["S2", "S3", "S4", "S6", "S8", "S1"]
+        },
+        {
+          "id": "branche-mont-arbois-combloux-megeve",
+          "name": "Branche ouest du Mont d'Arbois (Sallanches → Combloux → Megève)",
+          "kind": "pass-transfer",
+          "waypoints": [
+            { "name": "Sallanches", "lon": 6.6316, "lat": 45.9442, "coord_quality": "source" },
+            { "name": "Domancy", "lon": 6.6474, "lat": 45.9142, "coord_quality": "source" },
+            { "name": "Combloux", "lon": 6.6344, "lat": 45.8967, "coord_quality": "source" },
+            { "name": "Megève", "lon": 6.6129, "lat": 45.8523, "coord_quality": "source" }
+          ],
+          "hours": "après-midi (été)",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "printemps-été",
+          "description": "Le CMBVL dit que la brise de Sallanches « se divise une première fois autour du Mont d'Arbois ». Le tracé de cette branche par Combloux vers Megève est mon interprétation géographique (déduction).",
+          "confidence": "low",
+          "sources": ["S2"]
+        },
+        {
+          "id": "brise-pente-plaine-joux",
+          "name": "Brise de pente du versant S/SE de Plaine-Joux",
+          "kind": "slope",
+          "waypoints": [
+            { "name": "Passy", "lon": 6.6876, "lat": 45.9203, "coord_quality": "source" },
+            { "name": "Plaine-Joux (déco)", "lon": 6.7330, "lat": 45.9540, "coord_quality": "approx" }
+          ],
+          "hours": "fin de matinée-après-midi (été)",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "toute l'année (site volé à l'année), thermique surtout printemps-été",
+          "description": "Plaine-Joux est orienté sud/sud-est, avec des « thermiques réguliers ». L'aérologie devient turbulente quand la brise de vallée s'installe.",
+          "confidence": "medium",
+          "sources": ["S3", "S4", "S6"]
+        }
+      ],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "passy-plan-d-eau-brise",
+          "name": "Atterrissage du plan d'eau de Passy (Chedde) : brise très forte",
+          "kind": "strong-breeze",
+          "lon": 6.7090, "lat": 45.9150, "radius_km": 1.5,
+          "coord_quality": "approx",
+          "conditions": "Après-midi en saison thermique, brise de vallée établie.",
+          "description": "Vent de vallée très fort l'après-midi, posé souvent en travers du terrain. Selon le CMBVL, l'atterrissage au lac est souvent impossible en journée. Les fiches indiquent que l'atterrissage de Passy est à éviter une fois la brise établie, car il est « sous le vent », et que l'aérologie devient turbulente.",
+          "sources": ["S2", "S6", "S7", "S8"]
+        },
+        {
+          "id": "arve-foehn",
+          "name": "Foehn dans la vallée de l'Arve (rotors)",
+          "kind": "foehn",
+          "lon": 6.6316, "lat": 45.9442, "radius_km": 12,
+          "coord_quality": "source",
+          "conditions": "Pression plus haute côté italien du Mont-Blanc que côté français (flux de S/SE).",
+          "description": "Le CMBVL qualifie la vallée de l'Arve de régulièrement touchée par le foehn : l'air est forcé de franchir le massif, d'où des rotors et un air très perturbé sous le vent. Le point est Sallanches (GeoNames).",
+          "sources": ["S2"]
+        },
+        {
+          "id": "arve-venturi-retrecissement",
+          "name": "Brise renforcée par venturi aux rétrécissements de l'Arve (cluse de Cluses–Magland)",
+          "kind": "venturi",
+          "lon": 6.6000, "lat": 46.0400, "radius_km": 4,
+          "coord_quality": "approx",
+          "conditions": "Après-midi, brise montante établie.",
+          "description": "Rock The Outdoor : la brise peut atteindre 50 km/h dans les longues vallées comme l'Arve, ou par effet venturi là où la vallée se resserre. La localisation à la cluse entre Cluses et Magland est une déduction : la source ne nomme pas de lieu.",
+          "confidence": "low",
+          "sources": ["S1"]
+        },
+        {
+          "id": "mole-col-chez-berroud",
+          "name": "Le Môle – brise très forte au col-parking de Chez Berroud",
+          "kind": "strong-breeze",
+          "lon": 6.4350, "lat": 46.1120, "radius_km": 1.5,
+          "coord_quality": "approx",
+          "conditions": "Brise de vallée établie (après-midi).",
+          "description": "Randovol signale de nombreuses possibilités de poser près de Chez Berroud, mais avertit que la brise de vallée peut être très forte au niveau du parking, situé à un col (paraphrase d'un résumé de recherche).",
+          "sources": ["S18"]
+        }
+      ],
+      "thermal_spots": [
+        {
+          "id": "plaine-joux-plateau",
+          "name": "Plateau de Plaine-Joux",
+          "lon": 6.7330, "lat": 45.9540, "alt_m": 1360,
+          "coord_quality": "approx",
+          "best_hours": "non précisé (avant l'établissement de la forte brise d'après-midi)",
+          "trigger": "Versant orienté sud/sud-est au-dessus de Passy.",
+          "description": "Les sources décrivent l'orientation S/SE et des « thermiques réguliers ». L'après-midi, le vent de vallée est très fort et les conditions parfois violentes.",
+          "sources": ["S3", "S4"]
+        }
+      ],
+      "soaring_spots": [],
+      "takeoffs": [
+        {
+          "id": "plaine-joux",
+          "name": "Plaine-Joux (Passy)",
+          "lon": 6.7330, "lat": 45.9540, "alt_m": 1360,
+          "coord_quality": "approx",
+          "orientations": ["S", "SE"],
+          "description": "Plateau face au Mont-Blanc, 1360 m (FFVL) ou 1350 m (commune), 760 m de dénivelé. Orientation S/SE et thermiques réguliers. L'après-midi, le vent de vallée est très fort et les conditions parfois violentes ; l'aérologie devient turbulente quand la brise s'installe. Atterrissages : Passy-Chedde (plan d'eau) et Passy-Marlioz.",
+          "sources": ["S3", "S4", "S5", "S6", "S7", "S9"]
+        },
+        {
+          "id": "le-mole",
+          "name": "Le Môle (sommet)",
+          "lon": 6.4575, "lat": 46.1031, "alt_m": 1861,
+          "coord_quality": "approx",
+          "orientations": ["N", "S"],
+          "description": "Déco au sommet (1861 m selon Randovol). Accès par Viuz-en-Sallaz → Saint-Jean-de-Tholome → Bovère → Chez Berroud (parking au col), puis piste 4x4 jusqu'au Petit Môle et sentier. Le sommet se vole selon le flux : atterro à La Tour par vent du nord, à Ayse par vent du sud, plus un champ sous le cimetière. Les orientations N et S sont déduites de ces atterros conseillés, non lues sur une fiche.",
+          "sources": ["S18", "S19"]
+        },
+        {
+          "id": "agy-saint-sigismond",
+          "name": "Plateau d'Agy (Saint-Sigismond)",
+          "lon": 6.6250, "lat": 46.0850, "alt_m": null,
+          "coord_quality": "approx",
+          "orientations": [],
+          "description": "Déco utilisé par l'école Agy Plane, atterrissage à Cluses (quartier du Noiret). Aucune information aérologique n'a été obtenue.",
+          "sources": ["S10", "S11"]
+        }
+      ],
+      "landings": [
+        {
+          "id": "passy-plan-d-eau",
+          "name": "Passy – plan d'eau (Chedde)",
+          "lon": 6.7090, "lat": 45.9150, "alt_m": null,
+          "coord_quality": "approx",
+          "description": "Brise de vallée très forte l'après-midi, posé souvent en travers. Selon le CMBVL, le terrain est souvent inutilisable en journée. Utiliser l'autre atterrissage (Passy-Marlioz, coordonnées non obtenues) selon les consignes locales.",
+          "sources": ["S2", "S6", "S7", "S8"]
+        },
+        {
+          "id": "mole-la-tour",
+          "name": "La Tour (atterro du Môle par vent du nord)",
+          "lon": 6.4293, "lat": 46.1345, "alt_m": null,
+          "coord_quality": "approx",
+          "description": "« Parfait si vent du nord » selon Randovol (paraphrase). Le point est le centre du village (GeoNames), pas le terrain.",
+          "sources": ["S18", "S35"]
+        },
+        {
+          "id": "mole-ayse",
+          "name": "Ayse (atterro du Môle par vent du sud)",
+          "lon": 6.4333, "lat": 46.0833, "alt_m": null,
+          "coord_quality": "approx",
+          "description": "Atterrissage conseillé par vent du sud (Randovol). Le point est le centre du village (GeoNames).",
+          "sources": ["S18", "S35"]
+        },
+        {
+          "id": "cluses-noiret",
+          "name": "Cluses – le Noiret",
+          "lon": 6.5750, "lat": 46.0625, "alt_m": null,
+          "coord_quality": "approx",
+          "description": "Atterrissage du déco d'Agy. Le point est le centre de Cluses (GeoNames), le terrain exact n'a pas été obtenu.",
+          "sources": ["S10", "S35"]
+        }
+      ],
+      "synoptic_effects": [
+        {
+          "wind": "Foehn",
+          "effect": "Vallée de l'Arve régulièrement touchée quand la pression est plus haute côté italien : rotors et air très perturbé sous le vent du Mont-Blanc.",
+          "sources": ["S2"]
+        },
+        {
+          "wind": "N",
+          "effect": "Le Môle : se poser à La Tour, côté nord, au vent du relief.",
+          "sources": ["S18"]
+        },
+        {
+          "wind": "S",
+          "effect": "Le Môle : se poser à Ayse, côté sud, dans la vallée de l'Arve.",
+          "sources": ["S18"]
+        }
+      ],
+      "xc_routes": [],
+      "tips": [
+        "À Passy, ne pas compter sur le plan d'eau en plein après-midi : la brise de Sallanches y est très forte et l'on se pose en travers [S2]",
+        "Au Môle, choisir l'atterro au vent du relief : La Tour par nord, Ayse par sud [S18]",
+        "Par situation de foehn (pression plus forte côté italien), éviter l'Arve : rotors et air très perturbé [S2]"
+      ]
+    },
+    {
+      "id": "haut-giffre",
+      "name": "Giffre et Haut-Giffre (Mieussy – Praz de Lys–Sommand – Taninges – Samoëns – Sixt)",
+      "parent_massif": "Préalpes du Nord / Chablais–Giffre",
+      "summary": "Mieussy est le « berceau du parapente » (premier vol depuis le Pertuiset en juin 1978). Son atterrissage, le seul pour les décos du Pertuiset et de la Platière, peut être rude par vent du nord ou forte brise. La Platière se vole en thermique et en dynamique par SW–W. À Samoëns, le Plateau des Saix (1632 m, orienté N–NW, ~900 m de dénivelé) et La Bourgeoise sont les décos, avec un atterro à l'ouest du village près de la piscine. Ce terrain devient turbulent par brise de vallée modérée à forte. Une page commerciale présente la vallée du Giffre comme abritée des vents dominants. Le sens de la brise du Giffre (montante Marignier → Taninges → Samoëns → Sixt) est déduit, pas documenté. Rien de sourcé n'a été trouvé sur le Roc d'Enfer, les routes cross ou les convergences.",
+      "bbox": [6.45, 46.02, 6.90, 46.18],
+      "center": [6.65, 46.09],
+      "breezes": [
+        {
+          "id": "brise-montante-giffre",
+          "name": "Brise montante de la vallée du Giffre (Marignier → Samoëns → Sixt)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Marignier", "lon": 6.5000, "lat": 46.0901, "coord_quality": "source" },
+            { "name": "Taninges", "lon": 6.5923, "lat": 46.1088, "coord_quality": "source" },
+            { "name": "Samoëns", "lon": 6.7265, "lat": 46.0828, "coord_quality": "source" },
+            { "name": "Sixt-Fer-à-Cheval", "lon": 6.7760, "lat": 46.0560, "coord_quality": "approx" }
+          ],
+          "hours": "après-midi (été) – heures non précisées",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "printemps-été",
+          "description": "L'existence d'une brise de vallée « modérée à forte » rendant le terrain de Samoëns turbulent est sourcée. Le sens montant et le tracé sont une déduction (schéma classique). Une page commerciale décrit la vallée comme protégée des vents dominants, avec une aérologie calme.",
+          "confidence": "medium",
+          "sources": ["S23", "S25", "S26"]
+        }
+      ],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "mieussy-atterro-nord",
+          "name": "Atterrissage de Mieussy rude par vent du nord ou forte brise",
+          "kind": "landing-turbulence",
+          "lon": 6.5242, "lat": 46.1337, "radius_km": 1,
+          "coord_quality": "approx",
+          "conditions": "Vent du nord fort à très fort, ou forte brise.",
+          "description": "Praz de Lys Sommand Tourisme : des vents du nord forts à très forts peuvent se produire, et l'atterrissage peut être rude par vent du nord ou forte brise. C'est le seul atterrissage pour le Pertuiset et la Platière.",
+          "sources": ["S21"]
+        },
+        {
+          "id": "samoens-atterro-turbulent",
+          "name": "Atterrissage de Samoëns turbulent par brise modérée à forte",
+          "kind": "landing-turbulence",
+          "lon": 6.7200, "lat": 46.0830, "radius_km": 1,
+          "coord_quality": "approx",
+          "conditions": "Brise de vallée modérée à forte (après-midi).",
+          "description": "Le terrain, à l'ouest du village près de la piscine et des tennis, peut être turbulent par brise de vallée modérée à forte.",
+          "sources": ["S23", "S25"]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [
+        {
+          "id": "la-platiere",
+          "name": "La Platière (Praz de Lys–Sommand / Mieussy)",
+          "lon": 6.5700, "lat": 46.1500,
+          "coord_quality": "approx",
+          "wind_dirs": ["SW", "W"],
+          "description": "Vol thermique et dynamique par vent de SW et W. Atterrissage unique à Mieussy, rude par vent du nord ou forte brise.",
+          "sources": ["S20", "S21"]
+        }
+      ],
+      "takeoffs": [
+        {
+          "id": "la-platiere-deco",
+          "name": "La Platière",
+          "lon": 6.5700, "lat": 46.1500, "alt_m": null,
+          "coord_quality": "approx",
+          "orientations": ["SW", "W"],
+          "description": "Déco en pente dans un milieu préservé. Thermique et dynamique par SW–W. Atterrissage à Mieussy. Altitude non obtenue.",
+          "sources": ["S20", "S21"]
+        },
+        {
+          "id": "samoens-plateau-des-saix",
+          "name": "Samoëns – Plateau des Saix",
+          "lon": 6.7130, "lat": 46.0600, "alt_m": 1632,
+          "coord_quality": "approx",
+          "orientations": ["N", "NW"],
+          "description": "1632 m, ~900 m de dénivelé, orienté N à NW. Le second déco est La Bourgeoise (coordonnées non obtenues). Atterrissage à l'ouest du village, turbulent par brise modérée à forte.",
+          "sources": ["S23", "S24", "S25"]
+        }
+      ],
+      "landings": [
+        {
+          "id": "mieussy-atterro",
+          "name": "Mieussy",
+          "lon": 6.5242, "lat": 46.1337, "alt_m": null,
+          "coord_quality": "approx",
+          "description": "Seul atterrissage pour le Pertuiset (site du premier vol en parapente, juin 1978) et la Platière. Rude par vent du nord ou forte brise. Le point est le centre du village (GeoNames).",
+          "sources": ["S21", "S22", "S35"]
+        },
+        {
+          "id": "samoens-atterro",
+          "name": "Samoëns – piscine / tennis",
+          "lon": 6.7200, "lat": 46.0830, "alt_m": null,
+          "coord_quality": "approx",
+          "description": "À l'ouest du village, très dégagé, turbulent par brise de vallée modérée à forte.",
+          "sources": ["S23", "S25"]
+        }
+      ],
+      "synoptic_effects": [
+        {
+          "wind": "N",
+          "effect": "Vents du nord forts à très forts possibles à Mieussy, avec un atterrissage rude.",
+          "sources": ["S21"]
+        },
+        {
+          "wind": "SW",
+          "effect": "La Platière fonctionne en thermique et en dynamique.",
+          "sources": ["S20"]
+        },
+        {
+          "wind": "W",
+          "effect": "La Platière fonctionne en thermique et en dynamique.",
+          "sources": ["S20"]
+        }
+      ],
+      "xc_routes": [],
+      "tips": [
+        "Mieussy : un seul atterro, à éviter par nord fort ou brise forte [S21]",
+        "Samoëns : se poser avant que la brise ne devienne modérée à forte, le terrain devient turbulent [S23]"
+      ]
+    },
+    {
+      "id": "chablais",
+      "name": "Chablais français et rive sud du Léman (Thonon–Évian, vallées d'Aulps et d'Abondance, Morzine–Les Gets)",
+      "parent_massif": "Préalpes du Nord / Chablais",
+      "summary": "Côté Léman, les sources nautiques décrivent un cycle de brises thermiques. Le jour souffle la brise de lac (rebat, appelée séchard sur le Petit-Lac) ; au crépuscule, la brise de terre (morget ; noms nocturnes locaux jorasson, bisoton, dézaley). S'y ajoutent des vents d'orage violents en rafales descendant de l'arrière-pays (bornan ; môlan pour le Petit-Lac) et la vaudaire venue du Valais, chaude et sèche quand elle est due au foehn. À Super Morzine (1548 m), la sortie est turbulente par forte brise de vallée. Le résumé de recherche indique que la brise monte l'après-midi dans l'axe de la vallée d'Aulps et peut devenir soutenue à forte en milieu ou fin de journée. Le Pléney est orienté NE (~1500 m) et le Mont Chéry (Les Gets, 680 m de dénivelé) est un site évolutif. Aucune source parapente n'a été trouvée sur la jonction entre la brise du Léman et les brises des Dranses, sur la vallée d'Abondance ou sur Bernex et la Dent d'Oche.",
+      "bbox": [6.25, 46.15, 6.90, 46.45],
+      "center": [6.60, 46.30],
+      "breezes": [
+        {
+          "id": "rebat-evian",
+          "name": "Brise de lac (rebat) – rive d'Évian",
+          "kind": "lake",
+          "waypoints": [
+            { "name": "Léman au large d'Évian", "lon": 6.5800, "lat": 46.4350, "coord_quality": "approx" },
+            { "name": "Évian-les-Bains", "lon": 6.5879, "lat": 46.4011, "coord_quality": "source" },
+            { "name": "Larringes", "lon": 6.5732, "lat": 46.3674, "coord_quality": "source" }
+          ],
+          "hours": "journée (heures non précisées)",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "saison chaude",
+          "description": "Les sources nautiques décrivent une brise de lac diurne appelée « rebat » (« séchard » sur le Petit-Lac), remplacée au crépuscule par la brise de terre (« morget »). La pénétration vers le plateau de Gavot (Larringes) est une déduction.",
+          "confidence": "medium",
+          "sources": ["S32", "S33", "S34"]
+        },
+        {
+          "id": "rebat-thonon",
+          "name": "Brise de lac (rebat) – rive de Thonon",
+          "kind": "lake",
+          "waypoints": [
+            { "name": "Léman au large de Thonon", "lon": 6.4800, "lat": 46.3950, "coord_quality": "approx" },
+            { "name": "Thonon-les-Bains", "lon": 6.4833, "lat": 46.3667, "coord_quality": "source" },
+            { "name": "Allinges", "lon": 6.4636, "lat": 46.3366, "coord_quality": "source" }
+          ],
+          "hours": "journée (heures non précisées)",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "saison chaude",
+          "description": "Même brise de lac diurne (rebat). Sa pénétration vers les collines d'Allinges est une déduction.",
+          "confidence": "medium",
+          "sources": ["S32", "S33"]
+        },
+        {
+          "id": "morget-evian",
+          "name": "Brise de terre du soir (morget) – rive d'Évian",
+          "kind": "katabatic",
+          "waypoints": [
+            { "name": "Larringes", "lon": 6.5732, "lat": 46.3674, "coord_quality": "source" },
+            { "name": "Évian-les-Bains", "lon": 6.5879, "lat": 46.4011, "coord_quality": "source" },
+            { "name": "Léman au large d'Évian", "lon": 6.5800, "lat": 46.4350, "coord_quality": "approx" }
+          ],
+          "hours": "crépuscule et nuit",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "toute l'année, marquée en saison chaude",
+          "description": "Brise de terre (« morget ») qui prend le relais au crépuscule. Les noms nocturnes varient selon le lieu (jorasson, bisoton, dézaley).",
+          "confidence": "medium",
+          "sources": ["S32", "S33"]
+        },
+        {
+          "id": "brise-vallee-aulps",
+          "name": "Brise montante de la vallée d'Aulps (Thonon → Morzine)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Thonon-les-Bains", "lon": 6.4833, "lat": 46.3667, "coord_quality": "source" },
+            { "name": "Lyaud", "lon": 6.5287, "lat": 46.3366, "coord_quality": "source" },
+            { "name": "Le Biot", "lon": 6.6330, "lat": 46.2650, "coord_quality": "approx" },
+            { "name": "Saint-Jean-d'Aulps", "lon": 6.6530, "lat": 46.2340, "coord_quality": "approx" },
+            { "name": "Morzine", "lon": 6.7066, "lat": 46.1815, "coord_quality": "source" }
+          ],
+          "hours": "après-midi, soutenue à forte en milieu/fin de journée",
+          "speed_kmh": { "typical": 20, "max": 30 },
+          "season": "printemps-été",
+          "description": "Résumé de recherche des pages Morzine (FFVL site 645) : la brise de vallée monte l'après-midi dans l'axe de la vallée d'Aulps et peut devenir soutenue à forte en milieu ou fin de journée, avec une sortie turbulente à Super Morzine en cas de forte brise. Les vitesses interprètent « soutenue à forte » (20 typique, 30 max). Le départ depuis le Léman (Thonon) est une déduction.",
+          "confidence": "medium",
+          "sources": ["S27", "S28"]
+        },
+        {
+          "id": "brise-vallee-abondance",
+          "name": "Brise montante de la vallée d'Abondance (Bioge → Châtel)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Bioge (confluence des Dranses)", "lon": 6.5500, "lat": 46.3200, "coord_quality": "approx" },
+            { "name": "Abondance", "lon": 6.7203, "lat": 46.2803, "coord_quality": "source" },
+            { "name": "La Chapelle-d'Abondance", "lon": 6.7870, "lat": 46.2950, "coord_quality": "approx" },
+            { "name": "Châtel", "lon": 6.8423, "lat": 46.2666, "coord_quality": "source" }
+          ],
+          "hours": "après-midi (été) – déduction",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "printemps-été",
+          "description": "Déduction : aucune source sur cette brise n'a été trouvée. Innov'Mountains dit seulement que les brises de vallée conditionnent l'orientation des décos dans le Chablais.",
+          "confidence": "low",
+          "sources": ["S31"]
+        }
+      ],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "super-morzine-sortie",
+          "name": "Super Morzine – sortie turbulente par forte brise",
+          "kind": "strong-breeze",
+          "lon": 6.7230, "lat": 46.1930, "radius_km": 1.5,
+          "coord_quality": "approx",
+          "conditions": "Brise de vallée forte (milieu ou fin d'après-midi).",
+          "description": "La fiche signale des brises de pente et de vallée, avec une sortie turbulente en cas de forte brise de vallée.",
+          "sources": ["S27"]
+        },
+        {
+          "id": "leman-bornan-molan",
+          "name": "Rafales d'orage (bornan, môlan) sur la rive du Léman",
+          "kind": "other",
+          "lon": 6.4833, "lat": 46.3667, "radius_km": 15,
+          "coord_quality": "source",
+          "conditions": "Orages sur l'arrière-pays (Préalpes du Chablais et du Faucigny).",
+          "description": "Le bornan descend en rafales et avec une grande violence des montagnes de l'arrière-pays ; le môlan joue le même rôle sur le Petit-Lac. Ce sont des vents d'orage dangereux pour les atterrissages en bord de lac. Le point est Thonon (GeoNames).",
+          "sources": ["S32", "S33"]
+        },
+        {
+          "id": "leman-vaudaire",
+          "name": "Vaudaire (vent du Valais, foehn) sur le Haut-Lac",
+          "kind": "foehn",
+          "lon": 6.6674, "lat": 46.4033, "radius_km": 12,
+          "coord_quality": "source",
+          "conditions": "Situation de foehn dans le Valais.",
+          "description": "La vaudaire débouche du Valais sur le Léman. Produite par le foehn, elle donne un courant chaud et sec. Le point est Lugrin (GeoNames), sur la rive française de l'extrémité est.",
+          "sources": ["S32", "S33"]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [
+        {
+          "id": "super-morzine",
+          "name": "Super Morzine",
+          "lon": 6.7230, "lat": 46.1930, "alt_m": 1548,
+          "coord_quality": "approx",
+          "orientations": [],
+          "description": "1548 m (FFVL 645), soit environ 550 m de dénivelé jusqu'à l'atterro de Morzine (1000 m). Brises de pente et de vallée, sortie turbulente par forte brise de vallée. Accès par la route d'Avoriaz ou la télécabine de Super Morzine. Orientation non obtenue.",
+          "sources": ["S27", "S28", "S30"]
+        },
+        {
+          "id": "pleney",
+          "name": "Le Pléney (Morzine)",
+          "lon": 6.6930, "lat": 46.1700, "alt_m": 1500,
+          "coord_quality": "approx",
+          "orientations": ["NE"],
+          "description": "Déco orienté nord-est, ~1500 m, accessible par télécabine.",
+          "sources": ["S27", "S29"]
+        },
+        {
+          "id": "mont-chery",
+          "name": "Mont Chéry (Les Gets)",
+          "lon": 6.6450, "lat": 46.1650, "alt_m": null,
+          "coord_quality": "approx",
+          "orientations": [],
+          "description": "Site évolutif adapté aux débutants, 680 m de dénivelé (ialpes). Aérologie non obtenue.",
+          "sources": ["S30"]
+        }
+      ],
+      "landings": [
+        {
+          "id": "morzine-atterro",
+          "name": "Morzine",
+          "lon": 6.7066, "lat": 46.1815, "alt_m": 1000,
+          "coord_quality": "approx",
+          "description": "Atterrissage de Morzine à ~1000 m (ialpes). Le point est le centre de Morzine (GeoNames), pas le terrain.",
+          "sources": ["S30", "S35"]
+        }
+      ],
+      "synoptic_effects": [
+        {
+          "wind": "Foehn",
+          "effect": "La vaudaire (foehn du Valais) débouche sur le Haut-Lac, chaude et sèche, et touche l'extrémité est de la rive française (Saint-Gingolph–Évian).",
+          "sources": ["S32", "S33"]
+        },
+        {
+          "wind": "Bise",
+          "effect": "Les sources nautiques citent la bise comme vent général du Léman. Je n'ai trouvé aucune source parapente sur son effet dans les vallées du Chablais français.",
+          "sources": ["S32"]
+        }
+      ],
+      "xc_routes": [],
+      "tips": [
+        "Super Morzine : décoller avant que la brise de vallée ne forcisse, la sortie devient turbulente [S27]",
+        "En bord de Léman, un orage sur l'arrière-pays peut envoyer de violentes rafales jusqu'au rivage (bornan, môlan) [S32]"
+      ]
+    }
+  ],
+  "sources": [
+    { "id": "S1", "title": "Brises de pente et brises de vallée en parapente : comprendre leur fonctionnement", "url": "https://paragliding.rocktheoutdoor.com/media/les-brises-de-vallee/", "publisher": "Rock The Outdoor (média parapente)", "type": "web", "lang": "fr", "notes": "Brise jusqu'à 50 km/h dans les longues vallées comme l'Arve ou par venturi aux rétrécissements. Vu via un résumé de recherche." },
+    { "id": "S2", "title": "Météo & aérologie locale – Passy", "url": "https://www.cmbvl.fr/en/info/weather", "publisher": "CMBVL (club de vol libre, Passy)", "type": "web", "lang": "fr", "notes": "Foehn et brise de Sallanches : brise très forte côté Sallanches, plan d'eau souvent impossible, division au Mont d'Arbois et à l'entrée de la vallée de Saint-Gervais. Page non lue (bloquée), contenu vu via un résumé de recherche." },
+    { "id": "S3", "title": "Sites d'envol, zones et aires de décollage et atterrissage en Haute-Savoie", "url": "https://www.haute-savoie-tourisme.org/loisirs/lieux-sportifs/sites-d-envol-et-d-atterissage", "publisher": "Haute-Savoie Tourisme", "type": "web", "lang": "fr", "notes": "Plaine-Joux : vent de vallée très fort l'après-midi, conditions parfois violentes, orientation S/SE, thermiques réguliers." },
+    { "id": "S4", "title": "Aire de décollage de Plaine-Joux – Passy (74)", "url": "https://www.haute-savoie-tourisme.org/loisirs/lieux-sportifs/sites-d-envol-et-d-atterissage/124385-aire-de-decollage-de-plaine-joux", "publisher": "Haute-Savoie Tourisme", "type": "web", "lang": "fr", "notes": "Fiche du déco de Plaine-Joux." },
+    { "id": "S5", "title": "Aire de décollage de Plaine-Joux", "url": "https://www.passy-mont-blanc.com/en/equipement/aire-de-decollage-de-plaine-joux/", "publisher": "Office de tourisme Passy Mont-Blanc", "type": "web", "lang": "fr", "notes": "Plateau à 1350 m face à Saint-Gervais, Megève, Combloux et Cordon." },
+    { "id": "S6", "title": "Terrain de pratique PASSY – PLAINE JOUX [124]", "url": "https://federation.ffvl.fr/terrain/124", "publisher": "FFVL", "type": "web", "lang": "fr", "notes": "1360 m. Atterrissage de Passy à éviter une fois la brise établie (sous le vent), aérologie turbulente quand la brise s'installe. Vu via un résumé de recherche." },
+    { "id": "S7", "title": "Terrain de pratique PASSY – PLAINE JOUX – CHEDDE [1087]", "url": "https://federation.ffvl.fr/sites_pratique/voir/1087", "publisher": "FFVL", "type": "web", "lang": "fr", "notes": "Atterrissages Passy-Chedde et Passy-Marlioz." },
+    { "id": "S8", "title": "Terrain d'atterrissage du plan d'eau à Passy", "url": "https://www.lofficiel.net/terrain-d-atterrissage-du-plan-d-eau_8_2984.aspx", "publisher": "L'Officiel (annuaire local)", "type": "web", "lang": "fr", "notes": "Brise de vallée très forte l'après-midi, posé souvent en travers du terrain." },
+    { "id": "S9", "title": "Vol libre au Pays du Mont-Blanc", "url": "https://federation.ffvl.fr/sites/ffvl.fr/files/Massifdumontblancchamonix.pdf", "publisher": "FFVL", "type": "pdf", "lang": "fr", "notes": "Plaine-Joux 1360 m, 760 m de dénivelé (selon résumé). PDF non lu." },
+    { "id": "S10", "title": "Agy Plane parapente – Laurent Broisin – Cluses (74)", "url": "https://www.haute-savoie-tourisme.org/loisirs/activites-sportives/parapente/635736-agy-plane-parapente-laurent-broisin", "publisher": "Haute-Savoie Tourisme", "type": "web", "lang": "fr", "notes": "Déco du plateau d'Agy (Saint-Sigismond), atterrissage à Cluses, quartier du Noiret." },
+    { "id": "S11", "title": "Aire de décollage de parapente d'Agy à Saint-Sigismond", "url": "https://www.lofficiel.net/aire-de-decollage-de-parapente-d-agy_8_3007.aspx", "publisher": "L'Officiel (annuaire local)", "type": "web", "lang": "fr", "notes": "Existence du déco d'Agy." },
+    { "id": "S12", "title": "Les décollages (site de vol du Salève)", "url": "https://www.paradelta.ch/site-de-vols/les-decollages/", "publisher": "Paradelta (club genevois)", "type": "web", "lang": "fr", "notes": "3 décos (Téléphérique N–NE, Table d'orientation NW–NE, Crêts SW–W) et 4 atterros (Pont de Zone, Cercueil, Pomier, Troinex)." },
+    { "id": "S13", "title": "Terrain de pratique SALEVE – LA TABLE D'ORIENTATION [1966]", "url": "https://federation.ffvl.fr/sites_pratique/voir/1966", "publisher": "FFVL", "type": "web", "lang": "fr", "notes": "Fiche FFVL, contenu non lu." },
+    { "id": "S14", "title": "Terrain de pratique SALEVE – LES CRETS [1421]", "url": "https://federation.ffvl.fr/terrain/1421", "publisher": "FFVL", "type": "web", "lang": "fr", "notes": "Collonges-sous-Salève, 1264 m, secteurs de vent favorables/défavorables." },
+    { "id": "S15", "title": "Terrain de pratique SALEVE – LE COIN [1993]", "url": "https://federation.ffvl.fr/terrain/1993", "publisher": "FFVL", "type": "web", "lang": "fr", "notes": "Existence seulement, contenu non lu." },
+    { "id": "S16", "title": "Vol libre pour les parapentistes du Salève", "url": "http://www.signegeneve.ch/thematique/sport/vol-libre-pour-les-parapentistes-du-saleve.html", "publisher": "Signé Genève", "type": "web", "lang": "fr", "notes": "Club fondé en 1974 par des deltistes, ~300 membres." },
+    { "id": "S17", "title": "Les pentes du Salève (74)", "url": "https://aeromodelisme74.jimdofree.com/le-vol-de-pente/les-pentes/le-sal%C3%A8ve-74/", "publisher": "Aéromodélisme 74", "type": "web", "lang": "fr", "notes": "Vol de pente : secteur N à N-NE, pente souvent turbulente (attribution incertaine dans le résumé)." },
+    { "id": "S18", "title": "Le Môle 1861 m – Rando Parapente en Chablais", "url": "https://randovol.e-monsite.com/pages/autres-sites/le-mole-1861-m.html", "publisher": "Randovol (site perso de vol-rando)", "type": "web", "lang": "fr", "notes": "Accès, brise très forte au parking-col de Chez Berroud, atterros La Tour (nord) et Ayse (sud)." },
+    { "id": "S19", "title": "Randonnée et parapente au Môle", "url": "https://www.vivre-en-haute-savoie.com/randonnee-et-parapente-au-mole/", "publisher": "Vivre en Haute-Savoie", "type": "web", "lang": "fr", "notes": "Vol-rando au Môle (contenu non détaillé)." },
+    { "id": "S20", "title": "Taking off from La Platière", "url": "https://en.prazdelys-sommand.com/equipement/taking-off-from-la-platiere/", "publisher": "Office de tourisme Praz de Lys Sommand", "type": "web", "lang": "en", "notes": "Vol thermique et dynamique par SW et W." },
+    { "id": "S21", "title": "Mieussy landing site", "url": "https://en.prazdelys-sommand.com/equipement/mieussy-landing-site/", "publisher": "Office de tourisme Praz de Lys Sommand", "type": "web", "lang": "en", "notes": "Seul atterro du Pertuiset et de la Platière ; nord fort à très fort possible ; posé rude par nord ou forte brise." },
+    { "id": "S22", "title": "Parapente – Praz de Lys Sommand Tourisme", "url": "https://en.prazdelys-sommand.com/activities/parapente/", "publisher": "Office de tourisme Praz de Lys Sommand", "type": "web", "lang": "en", "notes": "Mieussy berceau du parapente, premier vol depuis le Pertuiset en juin 1978." },
+    { "id": "S23", "title": "Terrain de pratique SAMOENS [1172]", "url": "https://federation.ffvl.fr/sites_pratique/voir/1172", "publisher": "FFVL", "type": "web", "lang": "fr", "notes": "Saix 1632 m N–NW ~900 m ; La Bourgeoise ; atterro piscine/tennis turbulent par brise modérée à forte." },
+    { "id": "S24", "title": "Décollage du plateau des Saix en hiver", "url": "https://www.samoens.com/decollage-du-plateau-des-saix-en-hiver/", "publisher": "Office de tourisme de Samoëns", "type": "web", "lang": "fr", "notes": "Déco des Saix." },
+    { "id": "S25", "title": "Samoëns Les Saix – Rando Parapente en Chablais", "url": "https://randovol.e-monsite.com/pages/autres-sites/samoens-les-saix.html", "publisher": "Randovol", "type": "web", "lang": "fr", "notes": "Atterro à l'ouest du village, turbulent par brise." },
+    { "id": "S26", "title": "Baptême de l'air en parapente à Samoëns", "url": "https://www.sport-decouverte.com/bapteme-parapente-vallee-giffre-samoens.html", "publisher": "Sport Découverte (commercial)", "type": "web", "lang": "fr", "notes": "Vallée du Giffre « protégée des vents dominants » (discours promotionnel)." },
+    { "id": "S27", "title": "Terrain de pratique SUPER MORZINE [645]", "url": "https://federation.ffvl.fr/sites_pratique/voir/645", "publisher": "FFVL", "type": "web", "lang": "fr", "notes": "1548 m ; brises de pente et de vallée ; sortie turbulente par forte brise ; brise de la vallée d'Aulps l'après-midi (selon résumé)." },
+    { "id": "S28", "title": "Morzine-Avoriaz, tout sur le parapente", "url": "http://locweb.chez-alice.fr/pageparapente.html", "publisher": "Site perso local", "type": "web", "lang": "fr", "notes": "Sites de Morzine-Avoriaz." },
+    { "id": "S29", "title": "Paragliding Morzine – Evolution 2", "url": "https://evolution2.com/en/morzine/paragliding-summer", "publisher": "Evolution 2 (école)", "type": "web", "lang": "en", "notes": "Pléney NE ~1500 m (selon résumé)." },
+    { "id": "S30", "title": "Parapente Léman Chablais en Haute-Savoie", "url": "https://haute-savoie.ialpes.com/parapente/chablais-parapente.htm", "publisher": "ialpes", "type": "web", "lang": "fr", "notes": "Super Morzine 1550 → Morzine 1000 (550 m) ; Mont Chéry 680 m de dénivelé." },
+    { "id": "S31", "title": "Parapente vol libre Chablais Léman", "url": "https://innov-mountains.fr/fr/massifstourisme/massifs-france/alpes-nord/chablais-et-leman/activites-hors-neige-chablem/parapente-vol-libre-chablem", "publisher": "Innov'Mountains", "type": "web", "lang": "fr", "notes": "Les brises de vallée guident l'orientation des décos ; replis indiqués." },
+    { "id": "S32", "title": "Vue d'ensemble des vents du lac Léman : vents généraux, d'orages, diurnes et nocturnes", "url": "https://www.info.boaton.fr/post/lac-l%C3%A9man-tout-ce-qu-il-faut-savoir", "publisher": "Boaton (nautisme)", "type": "web", "lang": "fr", "notes": "Rebat/séchard (jour), morget (crépuscule), bornan/môlan (orage), vaudaire (Valais, foehn)." },
+    { "id": "S33", "title": "Le Léman – Caractéristiques", "url": "https://sisl.ch/images/Dossiers_techniques/le_leman.pdf", "publisher": "Société Internationale de Sauvetage du Léman (SISL)", "type": "pdf", "lang": "fr", "notes": "Classification des vents du Léman. PDF non lu en entier." },
+    { "id": "S34", "title": "Vaudaire, joran, rebat, séchard ou dézaley…", "url": "http://www.cepob.ch/grenier/meteo/ArtJMFVentCH_AllezSavoir_Sept2010.pdf", "publisher": "CEPOB / Allez Savoir (Univ. Lausanne), sept. 2010", "type": "pdf", "lang": "fr", "notes": "Article sur les vents locaux suisses et lémaniques. Non lu en entier." },
+    { "id": "S35", "title": "GeoNames cities1000 (rg_cities1000.csv du paquet reverse_geocoder 1.5.1)", "url": "https://pypi.org/project/reverse_geocoder/", "publisher": "GeoNames via reverse_geocoder (PyPI)", "type": "web", "lang": "en", "notes": "Source des coordonnées de villages marquées coord_quality=source." },
+    { "id": "S36", "title": "Cartographie des brises dans les Alpes du nord (forum)", "url": "https://www.parapentiste.info/forum/techniques-de-cross/cartographie-des-brises-dans-les-alpes-du-nord-t35042.0.html", "publisher": "parapentiste.info (forum)", "type": "forum", "lang": "fr", "notes": "Repéré mais non lu (domaine bloqué). Source prioritaire à exploiter." },
+    { "id": "S37", "title": "Le Salève (forum)", "url": "https://www.parapentiste.info/forum/sites-de-vols/le-saleve-t42993.0.html", "publisher": "parapentiste.info (forum)", "type": "forum", "lang": "fr", "notes": "Repéré mais non lu." },
+    { "id": "S38", "title": "Les Quatre Têtes en parapente depuis Burzier", "url": "https://parapentemontagne.fr/quatre-tetes-parapente/", "publisher": "parapentemontagne.fr", "type": "web", "lang": "fr", "notes": "Vol-rando au-dessus de Sallanches/Magland. Repéré mais non lu." }
+  ]
+}

@@ -1,0 +1,2024 @@
+{
+ "topic": "Brises d'échelle alpine, régimes synoptiques, convergences et autoroutes de cross (Alpes françaises)",
+ "massifs": [
+  {
+   "id": "alpes-francaises",
+   "name": "Alpes françaises (échelle régionale)",
+   "parent_massif": "Alpes occidentales",
+   "summary": "Par journée thermique d'été à vent faible, les Alpes françaises fonctionnent comme une grande dépression thermique qui aspire l'air des plaines (Bas-Dauphiné, Avant-Pays, bassin genevois, Provence) sur environ 1000 m d'épaisseur, tandis que chaque grande vallée (Isère/Grésivaudan, Arve, Tarentaise, Maurienne, Durance) développe une brise montante de 15 à 35 km/h, jusqu'à 50 km/h aux rétrécissements. Les brises démarrent avec le soleil sur les pentes, s'établissent en vallée en fin de matinée, culminent entre 14h et 17h puis s'inversent le soir. Les meilleures lignes de cross suivent les crêtes où deux brises opposées se rencontrent (configuration reine des Préalpes) et, au sud, les grandes lignes Écrins–Dévoluy–Durance utilisées par les triangles de 300 à 358 km. Le vent synoptique renforce, dévie ou détruit ces brises : au-delà d'environ 20 km/h il devient fort pour le parapente, les convergences se décalent et des zones sous le vent turbulentes s'étendent sur 7 à 20 fois la hauteur du relief. Bise, foehn, Lombarde et Mistral ont chacun leurs abris (Haute-Tarentaise par bise, Saint-Vincent-les-Forts et Oraison par Mistral/NW).",
+   "bbox": [
+    4.8,
+    43.1,
+    7.7,
+    46.45
+   ],
+   "center": [
+    6.2,
+    44.9
+   ],
+   "breezes": [
+    {
+     "id": "aspiration-bas-dauphine-voreppe",
+     "name": "Aspiration plaine→montagne de la basse Isère vers la cluse de Voreppe",
+     "kind": "plain-to-mountain",
+     "waypoints": [
+      {
+       "name": "Valence",
+       "lon": 4.9,
+       "lat": 44.9333,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Romans-sur-Isère",
+       "lon": 5.0562,
+       "lat": 45.0464,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Saint-Marcellin",
+       "lon": 5.3239,
+       "lat": 45.1519,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Tullins",
+       "lon": 5.4861,
+       "lat": 45.2986,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Voreppe",
+       "lon": 5.6332,
+       "lat": 45.2948,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Grenoble",
+       "lon": 5.7167,
+       "lat": 45.1667,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "12h-19h (été), pic 15h-17h ; nuit : écoulement inverse faible",
+     "speed_kmh": {
+      "typical": 8,
+      "max": 15
+     },
+     "season": "avril-septembre",
+     "layer_depth_m": "~1000 m au-dessus de la plaine l'après-midi (ordre de grandeur de l'Alpine pumping)",
+     "description": "Déduction pour le tracé : l'aspiration générale de l'air des plaines vers la dépression thermique alpine (1-3 m/s dans les 1000 m inférieurs, jusqu'à 100 km de l'avant-pays, S4) est supposée entrer par la basse vallée de l'Isère et la cluse de Voreppe pour alimenter la cuvette grenobloise. Les sources suisses parlent d'air plus frais « aspiré » des plaines vers les Alpes (S7). La circulation de l'avant-pays est plus sensible au vent synoptique que les brises internes (S6).",
+     "confidence": "low",
+     "sources": [
+      "S4",
+      "S5",
+      "S6",
+      "S7",
+      "S38"
+     ]
+    },
+    {
+     "id": "isere-gresivaudan-combe-de-savoie",
+     "name": "Brise montante de l'Isère : Grésivaudan et Combe de Savoie",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Grenoble",
+       "lon": 5.7167,
+       "lat": 45.1667,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Saint-Ismier",
+       "lon": 5.8286,
+       "lat": 45.2471,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Crolles",
+       "lon": 5.8782,
+       "lat": 45.282,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Le Touvet",
+       "lon": 5.9489,
+       "lat": 45.3581,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Pontcharra",
+       "lon": 6.0142,
+       "lat": 45.4329,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Montmélian",
+       "lon": 6.0505,
+       "lat": 45.4999,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Albertville",
+       "lon": 6.3906,
+       "lat": 45.6745,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "11h-19h (été), pic 14h-17h",
+     "speed_kmh": {
+      "typical": 20,
+      "max": 35
+     },
+     "season": "avril-septembre",
+     "layer_depth_m": "200-500 m au-dessus du fond (valeur générique des sources parapente)",
+     "description": "La brise du Grésivaudan remonte vers le nord/nord-est (correction signalée sur les cartes de brises, S15). Valeurs génériques de brise de vallée : 15-35 km/h sur 200-500 m, paroxysme quand les deux versants sont au soleil, pic 14h-16/17h (S1) ; ordre de grandeur scientifique 3-10 m/s au centre des vallées (S3). Le Grésivaudan sépare Chartreuse/Bauges (W) et Belledonne (E) : il alimente les deux lignes de convergence de crête.",
+     "confidence": "medium",
+     "sources": [
+      "S15",
+      "S1",
+      "S3",
+      "S38"
+     ]
+    },
+    {
+     "id": "cluse-chambery",
+     "name": "Brise de la cluse de Chambéry (lac du Bourget → Combe de Savoie)",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Aix-les-Bains",
+       "lon": 5.9224,
+       "lat": 45.6834,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Chambéry",
+       "lon": 5.9333,
+       "lat": 45.5667,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Montmélian",
+       "lon": 6.0505,
+       "lat": 45.4999,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "12h-19h (été)",
+     "speed_kmh": {
+      "typical": 12,
+      "max": 20
+     },
+     "season": "avril-septembre",
+     "layer_depth_m": "quelques centaines de m (déduction)",
+     "description": "Déduction : flux d'après-midi supposé aspiré du lac du Bourget/Avant-Pays vers la Combe de Savoie à travers la cluse de Chambéry, entre Chartreuse et Bauges. Aucune source consultée ne confirme son sens ni sa force.",
+     "confidence": "low",
+     "sources": [
+      "S38"
+     ]
+    },
+    {
+     "id": "lac-annecy-faverges",
+     "name": "Brise du lac d'Annecy vers Faverges",
+     "kind": "lake",
+     "waypoints": [
+      {
+       "name": "Annecy",
+       "lon": 6.1167,
+       "lat": 45.9,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Sevrier",
+       "lon": 6.1403,
+       "lat": 45.8642,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Saint-Jorioz",
+       "lon": 6.165,
+       "lat": 45.8329,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Doussard",
+       "lon": 6.2194,
+       "lat": 45.7756,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Faverges",
+       "lon": 6.293,
+       "lat": 45.7475,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "11h-19h (été), soutenue l'après-midi",
+     "speed_kmh": {
+      "typical": 15,
+      "max": 25
+     },
+     "season": "avril-septembre",
+     "layer_depth_m": "quelques centaines de m",
+     "description": "« La brise vient frapper le Roc des Bœufs où il y a généralement un support dynamique, puis elle continue vers la vallée de Faverges ou la vallée des Bauges » (S9). L'après-midi la brise est souvent soutenue ; vent de vallée constant les jours thermiques quel que soit le vent général (S16, attribution probable). Vitesses = valeurs génériques (S1).",
+     "confidence": "medium",
+     "sources": [
+      "S9",
+      "S16",
+      "S1",
+      "S38"
+     ]
+    },
+    {
+     "id": "arve",
+     "name": "Brise montante de l'Arve (bassin genevois → Chamonix)",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Genève",
+       "lon": 6.1457,
+       "lat": 46.2022,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Annemasse",
+       "lon": 6.2378,
+       "lat": 46.1944,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Bonneville",
+       "lon": 6.4073,
+       "lat": 46.0802,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Cluses",
+       "lon": 6.575,
+       "lat": 46.0625,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Sallanches",
+       "lon": 6.6316,
+       "lat": 45.9442,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Passy",
+       "lon": 6.6876,
+       "lat": 45.9203,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Les Houches",
+       "lon": 6.7961,
+       "lat": 45.8901,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Chamonix-Mont-Blanc",
+       "lon": 6.8693,
+       "lat": 45.9237,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "11h-19h (été), pic 14h-17h",
+     "speed_kmh": {
+      "typical": 25,
+      "max": 50
+     },
+     "season": "avril-septembre",
+     "layer_depth_m": "200-500 m (générique)",
+     "description": "L'Arve est citée parmi les longues vallées alpines où la brise peut atteindre 50 km/h (S2). Départ dans le bassin genevois : déduction (aspiration plaine→montagne).",
+     "confidence": "medium",
+     "sources": [
+      "S2",
+      "S1",
+      "S38"
+     ]
+    },
+    {
+     "id": "tarentaise",
+     "name": "Brise montante de la Tarentaise",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Albertville",
+       "lon": 6.3906,
+       "lat": 45.6745,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Moûtiers",
+       "lon": 6.5333,
+       "lat": 45.4833,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Aime",
+       "lon": 6.6504,
+       "lat": 45.5556,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Bourg-Saint-Maurice",
+       "lon": 6.769,
+       "lat": 45.6172,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "11h-19h (été), pic 14h-17h",
+     "speed_kmh": {
+      "typical": 25,
+      "max": 50
+     },
+     "season": "avril-septembre",
+     "layer_depth_m": "200-500 m (générique)",
+     "description": "Tarentaise citée comme vallée à brise pouvant atteindre 50 km/h (S2). La Haute-Tarentaise (secteur des Arcs) reste volable sous 2500 m par bise de 40 km/h relevée à Annecy/Chambéry/Grenoble (S10).",
+     "confidence": "medium",
+     "sources": [
+      "S2",
+      "S10",
+      "S38"
+     ]
+    },
+    {
+     "id": "maurienne",
+     "name": "Brise montante de la Maurienne",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Montmélian",
+       "lon": 6.0505,
+       "lat": 45.4999,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Aiguebelle (Val-d'Arc)",
+       "lon": 6.307,
+       "lat": 45.543,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "La Chambre",
+       "lon": 6.3025,
+       "lat": 45.3587,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Saint-Jean-de-Maurienne",
+       "lon": 6.35,
+       "lat": 45.2833,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Saint-Michel-de-Maurienne",
+       "lon": 6.4726,
+       "lat": 45.2184,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Modane",
+       "lon": 6.6667,
+       "lat": 45.2,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "11h-19h (été), pic 14h-17h",
+     "speed_kmh": {
+      "typical": 25,
+      "max": 50
+     },
+     "season": "avril-septembre",
+     "layer_depth_m": "200-500 m (générique)",
+     "description": "Maurienne citée comme longue vallée où la brise atteint 50 km/h (S2). Par Lombarde (E), flux contraire sur la haute vallée (S12).",
+     "confidence": "medium",
+     "sources": [
+      "S2",
+      "S12",
+      "S38"
+     ]
+    },
+    {
+     "id": "romanche-oisans",
+     "name": "Brise montante de la Romanche (Grenoble → Oisans)",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Grenoble",
+       "lon": 5.7167,
+       "lat": 45.1667,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Vizille",
+       "lon": 5.7707,
+       "lat": 45.0782,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Livet-et-Gavet",
+       "lon": 5.9333,
+       "lat": 45.1078,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Le Bourg-d'Oisans",
+       "lon": 6.03,
+       "lat": 45.055,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Mont-de-Lans",
+       "lon": 6.1314,
+       "lat": 45.0363,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "11h-19h (été)",
+     "speed_kmh": {
+      "typical": 20,
+      "max": 35
+     },
+     "season": "avril-septembre",
+     "layer_depth_m": "200-500 m (générique)",
+     "description": "Déduction : vallée longue et encaissée, valeurs génériques des sources parapente (S1) ; rétrécissement des gorges (Livet) propice à l'accélération (S1, S21).",
+     "confidence": "low",
+     "sources": [
+      "S1",
+      "S21",
+      "S38"
+     ]
+    },
+    {
+     "id": "drac-trieves",
+     "name": "Brise montante du Drac vers le Trièves et la Matheysine",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Grenoble",
+       "lon": 5.7167,
+       "lat": 45.1667,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Vif",
+       "lon": 5.6776,
+       "lat": 45.0544,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Monestier-de-Clermont",
+       "lon": 5.634,
+       "lat": 44.915,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Mens",
+       "lon": 5.7514,
+       "lat": 44.8175,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "11h-19h (été)",
+     "speed_kmh": {
+      "typical": 15,
+      "max": 25
+     },
+     "season": "avril-septembre",
+     "layer_depth_m": "quelques centaines de m",
+     "description": "Déduction : remontée vers le sud depuis la cuvette grenobloise ; rencontre possible, dans le Trièves, d'air remontant du sud (col de la Croix-Haute / Buëch). Non confirmé par une source consultée.",
+     "confidence": "low",
+     "sources": [
+      "S1",
+      "S38"
+     ]
+    },
+    {
+     "id": "basse-durance",
+     "name": "Remontée de la basse Durance (Provence → Sisteron)",
+     "kind": "regional",
+     "waypoints": [
+      {
+       "name": "Pertuis",
+       "lon": 5.5028,
+       "lat": 43.6925,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Manosque",
+       "lon": 5.7869,
+       "lat": 43.8288,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Oraison",
+       "lon": 5.9176,
+       "lat": 43.9161,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Les Mées",
+       "lon": 5.9768,
+       "lat": 44.0307,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Château-Arnoux-Saint-Auban",
+       "lon": 5.997,
+       "lat": 44.094,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Sisteron",
+       "lon": 5.9462,
+       "lat": 44.1876,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "11h-19h (été), renforcée l'après-midi par la brise de mer (déduction)",
+     "speed_kmh": {
+      "typical": 15,
+      "max": 30
+     },
+     "season": "avril-septembre",
+     "layer_depth_m": "plusieurs centaines de m à ~1000 m (déduction)",
+     "description": "La Durance est citée parmi les longues vallées à brise forte (S2) ; le régime d'altitude du Pays des Écrins est une brise « alimentée par la Durance » (S14). Le couplage avec la brise de mer provençale est une déduction fondée sur le mécanisme brise de mer/brise de vallée décrit par Aupetit (S33).",
+     "confidence": "low",
+     "sources": [
+      "S2",
+      "S14",
+      "S33",
+      "S38"
+     ]
+    },
+    {
+     "id": "moyenne-haute-durance",
+     "name": "Brise montante de la moyenne et haute Durance (Sisteron → Briançon)",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Sisteron",
+       "lon": 5.9462,
+       "lat": 44.1876,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Tallard",
+       "lon": 6.055,
+       "lat": 44.4613,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Chorges",
+       "lon": 6.2775,
+       "lat": 44.5471,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Embrun",
+       "lon": 6.4953,
+       "lat": 44.5639,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Guillestre",
+       "lon": 6.6495,
+       "lat": 44.6595,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Briançon",
+       "lon": 6.642,
+       "lat": 44.8998,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "11h-19h (été), forte en milieu d'après-midi",
+     "speed_kmh": {
+      "typical": 25,
+      "max": 50
+     },
+     "season": "avril-septembre",
+     "layer_depth_m": "200-500 m (générique)",
+     "description": "Brise de Durance forte (jusqu'à 50 km/h, S2) ; au déco de Saint-Vincent-les-Forts les brises de vallée « peuvent être particulièrement fortes, surtout en milieu d'après-midi » (S13) ; rarement très soutenue à Vallouise mais forte en Durance (S14). Dans le Briançonnais, par temps calme, les brises remontent toutes les vallées en fin de matinée et début d'après-midi (S17).",
+     "confidence": "medium",
+     "sources": [
+      "S2",
+      "S13",
+      "S14",
+      "S17",
+      "S38"
+     ]
+    },
+    {
+     "id": "buech",
+     "name": "Brise montante du Buëch (Sisteron → Veynes)",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Sisteron",
+       "lon": 5.9462,
+       "lat": 44.1876,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Laragne-Montéglin",
+       "lon": 5.8167,
+       "lat": 44.3167,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Serres",
+       "lon": 5.7158,
+       "lat": 44.4286,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Veynes",
+       "lon": 5.8167,
+       "lat": 44.5333,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "11h-19h (été)",
+     "speed_kmh": {
+      "typical": 15,
+      "max": 30
+     },
+     "season": "avril-septembre",
+     "layer_depth_m": "quelques centaines de m",
+     "description": "Déduction : affluent de la Durance orienté S→N, alimentant la zone Laragne–Céüse–Dévoluy. Valeurs génériques (S1).",
+     "confidence": "low",
+     "sources": [
+      "S1",
+      "S38"
+     ]
+    },
+    {
+     "id": "ubaye",
+     "name": "Brise montante de l'Ubaye",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Saint-Vincent-les-Forts",
+       "lon": 6.374,
+       "lat": 44.445,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Le Lauzet-Ubaye",
+       "lon": 6.43,
+       "lat": 44.43,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Barcelonnette",
+       "lon": 6.6518,
+       "lat": 44.3869,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Jausiers",
+       "lon": 6.7295,
+       "lat": 44.4171,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "11h-19h (été)",
+     "speed_kmh": {
+      "typical": 20,
+      "max": 35
+     },
+     "season": "avril-septembre",
+     "layer_depth_m": "quelques centaines de m",
+     "description": "Déduction : vallée longue affluente de Serre-Ponçon. Par Lombarde (E), flux contraire sur la haute Ubaye (S12).",
+     "confidence": "low",
+     "sources": [
+      "S1",
+      "S12",
+      "S38"
+     ]
+    },
+    {
+     "id": "brise-mer-provence-durance",
+     "name": "Brise de mer provençale vers la basse Durance",
+     "kind": "regional",
+     "waypoints": [
+      {
+       "name": "Marseille",
+       "lon": 5.3811,
+       "lat": 43.297,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Aix-en-Provence",
+       "lon": 5.4497,
+       "lat": 43.5283,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Pertuis",
+       "lon": 5.5028,
+       "lat": 43.6925,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "12h-19h (été) (déduction)",
+     "speed_kmh": {
+      "typical": 15,
+      "max": 25
+     },
+     "season": "mai-septembre",
+     "layer_depth_m": "quelques centaines de m (déduction)",
+     "description": "Déduction : la brise de mer pénètre l'après-midi et vient « pousser contre » les brises de vallée, créant une convergence puissante exploitée en cross (mécanisme cité par S33). Pénétration, horaires et force non documentés dans les sources consultées. Détruite par Mistral (déduction).",
+     "confidence": "low",
+     "sources": [
+      "S33",
+      "S38"
+     ]
+    },
+    {
+     "id": "brise-mer-var-verdon",
+     "name": "Brise de mer varoise vers le Haut-Var et Castellane",
+     "kind": "regional",
+     "waypoints": [
+      {
+       "name": "Fréjus",
+       "lon": 6.7352,
+       "lat": 43.4329,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Draguignan",
+       "lon": 6.4667,
+       "lat": 43.5333,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Castellane",
+       "lon": 6.5167,
+       "lat": 43.85,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "12h-19h (été) (déduction)",
+     "speed_kmh": {
+      "typical": 12,
+      "max": 20
+     },
+     "season": "mai-septembre",
+     "layer_depth_m": "quelques centaines de m (déduction)",
+     "description": "Déduction : remontée de l'air marin vers les Préalpes de Castellane/Digne, susceptible d'alimenter les convergences du secteur de Saint-André-les-Alpes. Aucune source consultée ne le chiffre.",
+     "confidence": "low",
+     "sources": [
+      "S33",
+      "S38"
+     ]
+    },
+    {
+     "id": "descendante-gresivaudan-nuit",
+     "name": "Vent descendant nocturne Grésivaudan → Grenoble → cluse de Voreppe",
+     "kind": "downvalley",
+     "waypoints": [
+      {
+       "name": "Pontcharra",
+       "lon": 6.0142,
+       "lat": 45.4329,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Crolles",
+       "lon": 5.8782,
+       "lat": 45.282,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Grenoble",
+       "lon": 5.7167,
+       "lat": 45.1667,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Voreppe",
+       "lon": 5.6332,
+       "lat": 45.2948,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Tullins",
+       "lon": 5.4861,
+       "lat": 45.2986,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "21h-09h (été) ; peut persister toute la journée en hiver sous inversion",
+     "speed_kmh": {
+      "typical": 8,
+      "max": 15
+     },
+     "season": "toute l'année (dominant en hiver)",
+     "layer_depth_m": "quelques dizaines à centaines de m",
+     "description": "Les vallées ont un vent descendant la nuit (S3). En hiver, sous inversion persistante, superposition de vents descendants issus des différentes vallées autour de Grenoble toute la journée au-dessus d'une couche convective d'environ 50 m (S37). Vitesses : déduction.",
+     "confidence": "medium",
+     "sources": [
+      "S3",
+      "S37",
+      "S38"
+     ]
+    }
+   ],
+   "convergences": [
+    {
+     "id": "ligne-prealpes-nord",
+     "name": "Ligne de convergence des Préalpes du Nord (Vercors – Chartreuse – Bauges – Bornes/Aravis)",
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        5.525,
+        44.87
+       ],
+       [
+        5.638,
+        45.148
+       ],
+       [
+        5.854,
+        45.307
+       ],
+       [
+        5.93,
+        45.463
+       ],
+       [
+        6.287,
+        45.831
+       ],
+       [
+        6.485,
+        45.959
+       ]
+      ]
+     },
+     "coord_quality": "approx",
+     "when": "Jours thermiques à vent synoptique faible (<10-15 km/h en crête), ~12h-18h ; meilleure 14h-17h",
+     "mechanism": "Deux brises montantes opposées se rencontrent au sommet des crêtes : côté externe, l'aspiration plaine→montagne (Bas-Dauphiné, Avant-Pays, Albanais) ; côté interne, les brises de vallée Grésivaudan/Combe de Savoie/lac d'Annecy. « Configuration reine des Préalpes, et celle qui produit les plus longues lignes d'ascendance » (S9).",
+     "usage": "Axe nord-sud des cross Annecy ↔ Grenoble ↔ Vercors (échappées des Bauges vers Annecy/Aravis ou Grenoble/Chartreuse, S30 ; triangles 185-202 km, S27/S28). Dangers : confluences très turbulentes si du NW >2000 m s'en mêle (S28), surdéveloppement (déduction). Géométrie tracée sur les sommets principaux : approximative.",
+     "confidence": "medium",
+     "sources": [
+      "S9",
+      "S30",
+      "S27",
+      "S28"
+     ]
+    },
+    {
+     "id": "ligne-interne-belledonne-lauziere",
+     "name": "Ligne interne Belledonne – Lauzière",
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        5.883,
+        45.123
+       ],
+       [
+        5.995,
+        45.17
+       ],
+       [
+        6.425,
+        45.49
+       ]
+      ]
+     },
+     "coord_quality": "approx",
+     "when": "Jours thermiques à vent faible, après-midi",
+     "mechanism": "Déduction : brise du Grésivaudan/Combe de Savoie sur le flanc W contre brises de la Romanche et de la Maurienne sur le flanc E.",
+     "usage": "Chamrousse est un point de virage de triangle FAI des Préalpes (S27) ; Belledonne figure dans les tours des Hautes-Alpes (S24). Ligne non décrite comme telle dans les sources consultées.",
+     "confidence": "low",
+     "sources": [
+      "S27",
+      "S24"
+     ]
+    },
+    {
+     "id": "ligne-laragne-ceuse-devoluy",
+     "name": "Ligne Laragne – Céüse – Dévoluy – Obiou",
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        5.8167,
+        44.3167
+       ],
+       [
+        5.95,
+        44.505
+       ],
+       [
+        5.934,
+        44.627
+       ],
+       [
+        5.838,
+        44.765
+       ]
+      ]
+     },
+     "coord_quality": "approx",
+     "when": "Jours thermiques, après-midi (déduction)",
+     "mechanism": "Déduction : air remontant du sud par la Durance et le Buëch contre les brises du Drac/Champsaur/Trièves.",
+     "usage": "La traversée du Drac vers le Dévoluy fait partie de l'itinéraire du triangle record de 350 km (S22) ; Dévoluy point de virage du FAI 185 km (S27). Convergence non nommée dans les sources consultées.",
+     "confidence": "low",
+     "sources": [
+      "S22",
+      "S27"
+     ]
+    },
+    {
+     "id": "ligne-est-ecrins-durance",
+     "name": "Ligne Est-Écrins / haute Durance (Embrun – Briançon – Izoard)",
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        6.4953,
+        44.5639
+       ],
+       [
+        6.556,
+        44.793
+       ],
+       [
+        6.642,
+        44.8998
+       ],
+       [
+        6.735,
+        44.82
+       ]
+      ]
+     },
+     "coord_quality": "approx",
+     "when": "Jours thermiques, fin de matinée à fin d'après-midi",
+     "mechanism": "Déduction : brise de Durance (forte, S13/S14) et brises des vallées affluentes (Vallouise, Guil, Clarée) ; régime de brise général des vallées briançonnaises (S17).",
+     "usage": "Départ du record du monde de triangle FAI 350,53 km depuis le col de l'Izoard (S22) ; « attaquer les faces est des Écrins » (S24). Cross vers le sud depuis Saint-Vincent en régime de brise (S13).",
+     "confidence": "low",
+     "sources": [
+      "S22",
+      "S24",
+      "S13",
+      "S17"
+     ]
+    },
+    {
+     "id": "ligne-saint-andre-ubaye",
+     "name": "Ligne Saint-André-les-Alpes – Seyne – Ubaye",
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        6.5089,
+        43.9672
+       ],
+       [
+        6.3563,
+        44.3504
+       ],
+       [
+        6.43,
+        44.43
+       ]
+      ]
+     },
+     "coord_quality": "approx",
+     "when": "Jours thermiques, après-midi (déduction)",
+     "mechanism": "Déduction : flux remontant du sud (Verdon/Asse/Bléone, possiblement nourri par la brise de mer) contre les brises de la Durance et de l'Ubaye.",
+     "usage": "Saint-André est la base de vols de 193 km FAI et 224 km (S26). Géométrie reconstruite, non vérifiée.",
+     "confidence": "low",
+     "sources": [
+      "S26"
+     ]
+    },
+    {
+     "id": "front-brise-mer-provence",
+     "name": "Front de brise de mer de Haute-Provence (Forcalquier – Valensole – Riez – Castellane)",
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        5.7833,
+        43.9667
+       ],
+       [
+        5.9832,
+        43.838
+       ],
+       [
+        6.093,
+        43.8179
+       ],
+       [
+        6.5167,
+        43.85
+       ]
+      ]
+     },
+     "coord_quality": "approx",
+     "when": "Après-midi d'été par vent synoptique faible ; ligne mobile qui progresse vers le nord (déduction)",
+     "mechanism": "La brise de mer pousse contre les brises de vallée/l'air continental : convergence puissante exploitée en cross (S33). Position et horaires : déduction.",
+     "usage": "Exploitable en cross ; air marin plus humide/stable derrière le front (déduction). Détruit par Mistral (déduction).",
+     "confidence": "low",
+     "sources": [
+      "S33"
+     ]
+    }
+   ],
+   "hazards": [
+    {
+     "id": "brise-forte-arve",
+     "name": "Brise forte de l'Arve (Sallanches – Passy)",
+     "kind": "strong-breeze",
+     "lon": 6.6876,
+     "lat": 45.9203,
+     "radius_km": 10,
+     "conditions": "Été, 13h-18h, régime de brise ; renforcée si vent synoptique de même sens (déduction)",
+     "description": "Brises jusqu'à 50 km/h dans l'Arve (S2). Atterrissages de fond de vallée exposés.",
+     "sources": [
+      "S2",
+      "S38"
+     ]
+    },
+    {
+     "id": "brise-forte-tarentaise",
+     "name": "Brise forte de la Tarentaise (Moûtiers – Aime)",
+     "kind": "strong-breeze",
+     "lon": 6.6504,
+     "lat": 45.5556,
+     "radius_km": 15,
+     "conditions": "Été, 13h-18h",
+     "description": "Brises jusqu'à 50 km/h en Tarentaise (S2).",
+     "sources": [
+      "S2",
+      "S38"
+     ]
+    },
+    {
+     "id": "brise-forte-maurienne",
+     "name": "Brise forte de la Maurienne",
+     "kind": "strong-breeze",
+     "lon": 6.35,
+     "lat": 45.2833,
+     "radius_km": 20,
+     "conditions": "Été, 13h-18h",
+     "description": "Brises jusqu'à 50 km/h en Maurienne (S2, S17).",
+     "sources": [
+      "S2",
+      "S17",
+      "S38"
+     ]
+    },
+    {
+     "id": "brise-forte-serre-poncon",
+     "name": "Brise forte de la Durance à Serre-Ponçon",
+     "kind": "strong-breeze",
+     "lon": 6.374,
+     "lat": 44.445,
+     "radius_km": 15,
+     "coord_quality": "approx",
+     "conditions": "Été, milieu d'après-midi",
+     "description": "Au déco de Saint-Vincent-les-Forts, brises de vallée « particulièrement fortes, surtout en milieu d'après-midi » (S13) ; Durance jusqu'à 50 km/h (S2).",
+     "sources": [
+      "S13",
+      "S2"
+     ]
+    },
+    {
+     "id": "foehn-sud-versants-nord",
+     "name": "Foehn de sud sur les versants nord de la crête frontière (zone indicative)",
+     "kind": "foehn",
+     "lon": 6.769,
+     "lat": 45.6172,
+     "radius_km": 60,
+     "conditions": "Flux de sud en altitude avant perturbation, HP côté italien, baisse côté français ; lenticulaires, mur de foehn aux cols",
+     "description": "Vent violent, chaud et sec, qui se renforce en progressant : pilotes dans 15 km/h repoussés par rafales >30-35 km/h ; turbulences fortes sous le vent (S11). Centre et rayon choisis pour couvrir Haute-Tarentaise/Haute-Maurienne/Chamonix : déduction.",
+     "sources": [
+      "S11"
+     ]
+    },
+    {
+     "id": "lombarde-cretes-frontalieres",
+     "name": "Lombarde sur les crêtes frontalières (Maurienne – Queyras – Ubaye)",
+     "kind": "other",
+     "lon": 6.642,
+     "lat": 44.8998,
+     "radius_km": 70,
+     "conditions": "Retour d'est lié à une dégradation méditerranéenne",
+     "description": "Vent de NE à SE sur les crêtes frontalières, fortes précipitations possibles sur les crêtes (S12). Zone indicative (déduction).",
+     "sources": [
+      "S12"
+     ]
+    }
+   ],
+   "thermal_spots": [],
+   "soaring_spots": [],
+   "takeoffs": [],
+   "landings": [],
+   "synoptic_effects": [
+    {
+     "wind": "Bise",
+     "effect": "Bise (NE ; définie NW à NE par le club de Haute-Tarentaise) : canalisée dans les grandes vallées et l'avant-pays ; la Haute-Tarentaise (secteur des Arcs) reste volable sous 2500 m même avec 40 km/h de bise relevés à Annecy, Chambéry ou Grenoble (S10). Déduction (confiance faible) : s'oppose à la brise montante du Grésivaudan (orientée NE) et à l'aspiration plaine→montagne sur les faces NW des Préalpes ; convergences de crête décalées vers le SW/l'intérieur des massifs ; faces SW sous le vent.",
+     "sources": [
+      "S10"
+     ]
+    },
+    {
+     "wind": "N",
+     "effect": "Déduction (confiance faible) : dans les Alpes du Sud, renforce les écoulements descendants des vallées N–S (Durance aval de Serre-Ponçon, Buëch) et freine/annule leurs brises montantes ; faces sud sous le vent ; les brises des vallées E–W (Maurienne, Tarentaise) restent moins affectées sous les crêtes.",
+     "sources": [],
+     "confidence": "low"
+    },
+    {
+     "wind": "NW",
+     "effect": "Saint-Vincent-les-Forts est le seul site volable du secteur par vent de NW (avec Oraison) et est protégé du Mistral (S13). En Préalpes du Nord, un récit 2019 décrit du NW au-dessus de 2000 m avec des confluences très turbulentes (S28). Déduction : faces NW des Préalpes au vent (dynamique + thermique), Grésivaudan/Trièves sous le vent, convergences poussées vers le SE.",
+     "sources": [
+      "S13",
+      "S28"
+     ]
+    },
+    {
+     "wind": "W",
+     "effect": "Déduction (confiance faible) : renforce l'entrée d'air par les Préalpes occidentales (Vercors, Chartreuse, Bauges) ; la convergence des Préalpes glisse vers le Grésivaudan et la ligne Belledonne ; versants E des Préalpes sous le vent (zone turbulente ~10 × H, S18-S20).",
+     "sources": [
+      "S18",
+      "S19",
+      "S20"
+     ],
+     "confidence": "low"
+    },
+    {
+     "wind": "SW",
+     "effect": "Déduction (confiance faible) : aligné avec la Durance amont et l'axe Isère/Grésivaudan, il renforce les brises montantes (vallées très ventées, cf. brises jusqu'à 50 km/h, S2) ; souvent pré-frontal avec risque de surdéveloppement sur les convergences ; faces NE sous le vent.",
+     "sources": [
+      "S2"
+     ],
+     "confidence": "low"
+    },
+    {
+     "wind": "Foehn",
+     "effect": "Foehn de sud : violent, chaud et sec, se renforce en progressant ; 15 km/h puis rafales >30-35 km/h ; vents forts et turbulents sous le vent ; signes : lenticulaires, mur de foehn débordant des cols, HP côté italien et baisse côté français (S11). Déduction : remonte les vallées du sud (Durance, Ubaye) en renfort de brise, descend sur les versants nord de la crête frontière ; brises détruites quand il atteint le fond de vallée.",
+     "sources": [
+      "S11"
+     ]
+    },
+    {
+     "wind": "Lombarde",
+     "effect": "Lombarde (E, de NE à SE) : souffle sur les crêtes frontalières, surtout Ubaye, Queyras, Maurienne ; associée à un retour d'est méditerranéen, fortes précipitations possibles sur les crêtes (S12). Déduction : s'oppose aux brises montantes des hautes vallées frontalières ; Préalpes occidentales peu concernées.",
+     "sources": [
+      "S12"
+     ]
+    },
+    {
+     "wind": "Mistral",
+     "effect": "Saint-Vincent-les-Forts est protégé du Mistral ; par NW seuls Saint-Vincent et Oraison restent volables dans le secteur (S13). Déduction : N/NW canalisé dans le Rhône et la basse Durance, il détruit la brise de mer provençale et le front de brise de mer ; vallées N–S des Alpes du Sud en écoulement descendant.",
+     "sources": [
+      "S13"
+     ]
+    }
+   ],
+   "xc_routes": [
+    {
+     "id": "triangle-fai-izoard-record",
+     "name": "Triangle FAI record du monde depuis le col de l'Izoard (B. Lambert, 2023)",
+     "waypoints": [
+      {
+       "name": "Col de l'Izoard",
+       "lon": 6.735,
+       "lat": 44.82,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Vieux Chaillol",
+       "lon": 6.17,
+       "lat": 44.725,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Pic de Bure",
+       "lon": 5.934,
+       "lat": 44.627,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Col de l'Izoard",
+       "lon": 6.735,
+       "lat": 44.82,
+       "coord_quality": "approx"
+      }
+     ],
+     "distance_km": 350.5,
+     "description": "350,53 km en triangle FAI le 20/08/2023, décollage peu avant 10h au col de l'Izoard, retour après 11 h de vol (S22). Itinéraire décrit : traversée des Écrins, remontée vers le Vieux Chaillol, franchissement du Drac vers le Dévoluy (S22, attribution probable). Points de virage reconstruits (approx). Battu par É. Potel : 352 km puis 358,58 km le 18/08/2025 (S23), lieux non vérifiés.",
+     "sources": [
+      "S22",
+      "S23"
+     ]
+    },
+    {
+     "id": "fai-185-vercors-diois-devoluy-chamrousse",
+     "name": "Triangle FAI 185 km Vercors – Diois – Dévoluy – Chamrousse (2019)",
+     "waypoints": [
+      {
+       "name": "Villard-de-Lans",
+       "lon": 5.5528,
+       "lat": 45.0707,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Die",
+       "lon": 5.3667,
+       "lat": 44.75,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Pic de Bure",
+       "lon": 5.934,
+       "lat": 44.627,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Chamrousse (Croix)",
+       "lon": 5.883,
+       "lat": 45.123,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Villard-de-Lans",
+       "lon": 5.5528,
+       "lat": 45.0707,
+       "coord_quality": "source"
+      }
+     ],
+     "distance_km": 185,
+     "description": "Triangle FAI du 19/07/2019 « Vercors - Diois - Dévoluy - Les Richards - Chamrousse » (S27). Points reconstruits à partir du titre (lieu-dit « Les Richards » non localisé) : approximatif.",
+     "sources": [
+      "S27"
+     ]
+    },
+    {
+     "id": "triangle-plat-202-chartreuse-aravis",
+     "name": "Triangle plat 202 km Chartreuse – Aravis – Albertville (2019)",
+     "waypoints": [
+      {
+       "name": "Saint-Hilaire (du Touvet)",
+       "lon": 5.8833,
+       "lat": 45.3,
+       "coord_quality": "source"
+      },
+      {
+       "name": "La Clusaz",
+       "lon": 6.4238,
+       "lat": 45.9052,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Albertville",
+       "lon": 6.3906,
+       "lat": 45.6745,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Saint-Hilaire (du Touvet)",
+       "lon": 5.8833,
+       "lat": 45.3,
+       "coord_quality": "source"
+      }
+     ],
+     "distance_km": 202,
+     "description": "Triangle plat du 17/07/2019 de la Chartreuse aux Aravis en revenant par Albertville (S28). Points = communes repères (point de départ exact non vérifié) ; suit la ligne des Préalpes puis la Combe de Savoie.",
+     "sources": [
+      "S28"
+     ]
+    },
+    {
+     "id": "ligne-prealpes-annecy-grenoble",
+     "name": "Ligne des Préalpes du Nord Annecy ↔ Chartreuse ↔ Vercors",
+     "waypoints": [
+      {
+       "name": "Talloires",
+       "lon": 6.2142,
+       "lat": 45.8404,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Mont Granier",
+       "lon": 5.93,
+       "lat": 45.463,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Saint-Hilaire (du Touvet)",
+       "lon": 5.8833,
+       "lat": 45.3,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Lans-en-Vercors",
+       "lon": 5.5857,
+       "lat": 45.1279,
+       "coord_quality": "source"
+      }
+     ],
+     "distance_km": 100,
+     "description": "Itinéraire classique le long de la convergence de crête des Préalpes : les longues crêtes des Bauges permettent de s'échapper vers Annecy/Aravis au nord ou vers Grenoble/Chartreuse au sud (S30). Transitions clés : cluse de Chambéry et cluse de Voreppe (déduction). Distance approximative.",
+     "sources": [
+      "S30",
+      "S9"
+     ]
+    }
+   ],
+   "tips": [
+    "Les brises les plus fortes soufflent entre 14h et 16-17h : planifier les traversées de grandes vallées avant ou après ce créneau, ou très haut [S1].",
+    "Dans les longues vallées (Arve, Tarentaise, Maurienne, Durance) et aux rétrécissements, la brise peut dépasser 50 km/h : prévoir l'atterrissage tôt ou sur un affluent [S2].",
+    "Chercher les plus longues lignes d'ascendance sur les crêtes des Préalpes où deux brises opposées se rencontrent [S9].",
+    "Vent météo + brise opposée = confluence, mais aussi turbulence : au-delà de 20 km/h le vent est fort pour le parapente [S8].",
+    "Sous le vent, s'éloigner d'environ 10 fois la hauteur du relief (7 à 20 fois selon la forme et la force du vent) [S18].",
+    "Par bise forte en Isère/Savoie, la Haute-Tarentaise peut rester volable sous 2500 m [S10].",
+    "Par Mistral/NW, Saint-Vincent-les-Forts et Oraison sont les refuges du secteur Durance [S13].",
+    "Foehn : se méfier d'un vent de 15 km/h qui monte brutalement à 30-35 km/h en rafales ; lenticulaires et mur de foehn aux cols = rester au sol [S11].",
+    "Un col est un tube venturi : y arriver au-dessus des crêtes pour juger la dérive [S21].",
+    "Les records alpins se font en triangle depuis les grandes lignes des Hautes-Alpes (Izoard, Écrins, Dévoluy) : départ tôt (avant 10h) et 11 h de vol pour 350 km [S22]."
+   ]
+  }
+ ],
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Brises de pente et brises de vallée en parapente : comprendre leur fonctionnement",
+   "url": "https://paragliding.rocktheoutdoor.com/media/les-brises-de-vallee/",
+   "publisher": "Rock The Outdoor (magazine parapente)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Brise de pente 15-30 km/h sur 100-200 m ; brise de vallée 15-35 km/h sur 200-500 m ; >50 km/h vallées étroites ; heures les plus fortes 14h-16/17h ; descente le long des pentes au coucher. Lu via extraits de recherche (page bloquée)."
+  },
+  {
+   "id": "S2",
+   "title": "Le phénomène des brises de vallées",
+   "url": "https://paragliding.rocktheoutdoor.com/conseils/le-phenomene-des-brises-de-vallees/",
+   "publisher": "Rock The Outdoor",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Brises jusqu'à 50 km/h dans les longues vallées alpines (Arve, Tarentaise, Maurienne, Durance) ou par venturi aux rétrécissements. Via extraits."
+  },
+  {
+   "id": "S3",
+   "title": "Diurnal Mountain Wind Systems (Zardi & Whiteman 2013, in Mountain Weather Research and Forecasting, Springer, p.35-119)",
+   "url": "https://atoc.colorado.edu/~cassano/atoc4500/lecture_notes/2013_zardi_whiteman.pdf",
+   "publisher": "Springer / D. Zardi, C.D. Whiteman",
+   "type": "pdf",
+   "lang": "en",
+   "notes": "Vallée: pic 3-10 m/s au centre ; pente montante 1-5 m/s, épaisseur 20-200 m ; descendante 3-100 m, max à 1-15 m ; phases du cycle. Via extraits (PDF bloqué)."
+  },
+  {
+   "id": "S4",
+   "title": "The Alpine Mountain-Plain Circulation: Airborne Doppler Lidar Measurements and Numerical Simulations (Weissmann et al. 2005, MWR 133(11):3095)",
+   "url": "https://journals.ametsoc.org/mwr/article/133/11/3095/67452/The-Alpine-Mountain-Plain-Circulation-Airborne",
+   "publisher": "American Meteorological Society",
+   "type": "web",
+   "lang": "en",
+   "notes": "Flux avant-pays→Alpes 1-3 m/s dans les 1000 m inférieurs (1-4 m/s), couche ≥1000 m l'après-midi, jusqu'à 100 km dans l'avant-pays (campagne VERTIKATOR 2002)."
+  },
+  {
+   "id": "S5",
+   "title": "An Overview of the VERTIKATOR Project and Results of Alpine Pumping",
+   "url": "https://www.researchgate.net/publication/224780394_An_Overview_of_the_VERTIKATOR_Project_and_Results_of_Alpine_Pumping",
+   "publisher": "ResearchGate (article scientifique)",
+   "type": "web",
+   "lang": "en",
+   "notes": "Résultats Alpine pumping, été 2002."
+  },
+  {
+   "id": "S6",
+   "title": "Thermal circulation in South Bavaria - climatology and synoptic aspects (Lugauer & Winkler 2005)",
+   "url": "https://www.osti.gov/etdeweb/biblio/20590473",
+   "publisher": "Meteorologische Zeitschrift / OSTI",
+   "type": "web",
+   "lang": "en",
+   "notes": "Circulation thermique de l'avant-pays plus influencée par le flux synoptique que les vents de vallée internes ; convergence de l'Allgäu par flux faible/de sud → fréquence orageuse."
+  },
+  {
+   "id": "S7",
+   "title": "Berg- und Talwind: das tägliche Auf und Ab des Windes in den Alpen",
+   "url": "https://www.srf.ch/meteo/meteo-stories/berg-und-talwind-das-taegliche-auf-und-ab-des-windes-in-den-alpen",
+   "publisher": "SRF Meteo",
+   "type": "web",
+   "lang": "de",
+   "notes": "Dépression thermique alpine qui aspire l'air des plaines ; vent de vallée moyen ~2 m/s ; Alpine pumping par beau temps anticyclonique faible."
+  },
+  {
+   "id": "S8",
+   "title": "2.3 Vent et brise de pente",
+   "url": "https://www.finesseplus.org/2020/07/18/2-3-vent-et-brise-de-pente/",
+   "publisher": "Finesse Plus (pédagogie vol libre)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Vent > 20 km/h = fort ; > 20 km/h de face au déco = dangereux ; brises renforcées ou déviées par le vent météo → turbulences de confluence. Via extraits."
+  },
+  {
+   "id": "S9",
+   "title": "Confluences aérologiques parapente – Ascendances",
+   "url": "https://annecyminivoiles.com/confluences-aerologiques-parapente/",
+   "publisher": "Annecy Mini Voiles (école)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Deux types de confluence (deux brises sur une crête = configuration reine des Préalpes ; vent météo + brise) ; brise du lac sur le Roc des Bœufs puis vers Faverges ou les Bauges."
+  },
+  {
+   "id": "S10",
+   "title": "Aérologie Haute Tarentaise",
+   "url": "https://pcht.org/articles.php?lng=fr&pg=977&mnuid=426&tconfig=0",
+   "publisher": "Parapente Club Haute Tarentaise",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Secteur des Arcs relativement abrité de la bise (NW à NE) : vol sous 2500 m même avec 40 km/h de bise à Annecy, Chambéry ou Grenoble."
+  },
+  {
+   "id": "S11",
+   "title": "Le foehn, le vent des Alpes",
+   "url": "https://parapente360.com/documents-pedagogique-parapente/foehn-vent-chaud-sec/",
+   "publisher": "Parapente 360",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Foehn de sud ; pilotes dans 15 km/h repoussés par rafales >30-35 km/h ; indices (lenticulaires, mur de foehn, HP côté italien)."
+  },
+  {
+   "id": "S12",
+   "title": "Lombarde (vent)",
+   "url": "https://wikiwand.com/fr/Lombarde_(vent)",
+   "publisher": "Wikipédia (via Wikiwand)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Vent de NE à SE sur les crêtes frontalières (Ubaye, Queyras, Maurienne), retour d'est, fortes précipitations sur les crêtes."
+  },
+  {
+   "id": "S13",
+   "title": "Vol sur le site parapente Saint Vincent Les Forts (04)",
+   "url": "https://paragliding.rocktheoutdoor.com/spots/vol-site-parapente-saint-vincent-les-forts/",
+   "publisher": "Rock The Outdoor",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Abrité du Mistral, seul site volable du secteur par NW (avec Oraison) ; brises de vallée fortes au déco en milieu d'après-midi ; cross vers le sud (Dormillouse, Grand Morgon)."
+  },
+  {
+   "id": "S14",
+   "title": "Parapente pour tous : Altitude et grand air dans le Pays des Écrins",
+   "url": "https://paragliding.rocktheoutdoor.com/voyages/parapente-pays-ecrins/",
+   "publisher": "Rock The Outdoor",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Brise rarement soutenue à Vallouise mais forte en Durance ; régime de brise alimenté par la Durance (attribution probable)."
+  },
+  {
+   "id": "S15",
+   "title": "Cartographie des brises dans les Alpes du Nord (fil de forum)",
+   "url": "https://www.parapentiste.info/forum/techniques-de-cross/cartographie-des-brises-dans-les-alpes-du-nord-t35042.0.html",
+   "publisher": "parapentiste.info (forum)",
+   "type": "forum",
+   "lang": "fr",
+   "notes": "Correction : la brise du Grésivaudan remonte vers le nord. Contenu complet non lu (bloqué)."
+  },
+  {
+   "id": "S16",
+   "title": "Le site de vol d'Annecy",
+   "url": "https://www.annecy-vol-libre.com/infos/le-site-de-vol-dannecy/",
+   "publisher": "Annecy Vol Libre (club)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Vent de vallée constant les jours thermiques quel que soit le vent général (attribution probable)."
+  },
+  {
+   "id": "S17",
+   "title": "Aérologie du Briançonnais",
+   "url": "https://parabriancon.forumactif.org/t228-aerologie-du-brianconnais",
+   "publisher": "Forum Para Briançon",
+   "type": "forum",
+   "lang": "fr",
+   "notes": "Par temps calme les brises remontent toutes les vallées en fin de matinée / début d'après-midi."
+  },
+  {
+   "id": "S18",
+   "title": "Pilotage parapente et paramoteur",
+   "url": "https://notech.franceserv.com/pilotage.html",
+   "publisher": "notech (site pédagogique)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Lot de résultats sur le sous-le-vent : 10 × H règle de base, 7-20 × H, 4-5 × H en vertical, 3-7 km ; attribution exacte partagée avec S19/S20."
+  },
+  {
+   "id": "S19",
+   "title": "Vents et masses d'air (Cahier du BIA)",
+   "url": "https://sites.ac-nancy-metz.fr/ciras/cahierdubia/mto2/ventsetmassesdair.html",
+   "publisher": "CIRAS académie Nancy-Metz",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Idem S18 (lot de résultats sur rotors et sous-le-vent)."
+  },
+  {
+   "id": "S20",
+   "title": "Au vent et sous le vent en parapente : comprendre pour voler sûr",
+   "url": "https://parapente360.com/documents-pedagogique-parapente/au-vent-et-sous-le-vent/",
+   "publisher": "Parapente 360",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Idem S18 ; rotor si arête vive, plus violent si relief haut et anguleux."
+  },
+  {
+   "id": "S21",
+   "title": "Les dangers du vol en montagne",
+   "url": "https://www.aerovfr.com/2021/11/les-dangers-du-vol-en-montagne",
+   "publisher": "AeroVFR",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Un col = portion de tube venturi ; accélération aux rétrécissements et aux sommets."
+  },
+  {
+   "id": "S22",
+   "title": "Baptiste établit un nouveau record du monde en triangle FAI (Enzo 4)",
+   "url": "https://flyozone.com/paragliders/fr/news/baptiste-set-a-new-fai-triangle-world-record-on-the-enzo-4",
+   "publisher": "Ozone",
+   "type": "web",
+   "lang": "fr",
+   "notes": "350,53 km FAI le 20/08/2023, départ col de l'Izoard avant 10h, 11 h de vol ; Écrins - Vieux Chaillol - Drac - Dévoluy (attribution probable)."
+  },
+  {
+   "id": "S23",
+   "title": "Records vols de distance en parapente en France",
+   "url": "https://www.xcfinder.com/fr/records",
+   "publisher": "XCFinder",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Plus grand triangle FAI 358,58 km (É. Potel, 18/08/2025) ; 352 km (Potel, 6 août, année non explicite)."
+  },
+  {
+   "id": "S24",
+   "title": "Le grand tour des Hautes-Alpes en parapente (Damien Lacaze)",
+   "url": "https://alpinemag.fr/tour-des-hautes-alpes-parapente-damien-lacaze/",
+   "publisher": "Alpine Mag",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Écrins, Dévoluy, Belledonne, Cerces, Queyras ; faces est des Écrins."
+  },
+  {
+   "id": "S25",
+   "title": "300 km FAI",
+   "url": "https://ontoparapente.fr/2021/04/29/300-km-fai/",
+   "publisher": "Onto Parapente (blog)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Triangle 300 km à portée, 350 km réalisables dans les Alpes du Sud."
+  },
+  {
+   "id": "S26",
+   "title": "Cross parapente de 224 km au départ de Saint André par Karlis (04)",
+   "url": "https://paragliding.rocktheoutdoor.com/cross-parapente/cross-parapente-de-224-km-depart-de-saint-andre-karlis/",
+   "publisher": "Rock The Outdoor",
+   "type": "web",
+   "lang": "fr",
+   "notes": "224 km en 8h55 depuis Saint-André-les-Alpes ; mention d'un FAI de 193 km."
+  },
+  {
+   "id": "S27",
+   "title": "Vercors - Diois - Dévoluy - Les Richards - Chamrousse : le triangle FAI 185 km du 19/07/2019",
+   "url": "https://www.parapentepaysdegex.fr/post/vercors-diois-d%C3%A9voluy-les-richards-chamrousse-le-triangle-fai-185-km-du-19-07-2019",
+   "publisher": "Parapente Pays de Gex (club)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Récit de triangle FAI en Préalpes."
+  },
+  {
+   "id": "S28",
+   "title": "De la Chartreuse aux Aravis en revenant par Albertville : le triangle plat 202 km du 17/07/19",
+   "url": "https://www.parapentepaysdegex.fr/post/le-triangle-du-17-07-19-de-la-chartreuse-aux-aravis-en-revenant-par-albertville-202-km",
+   "publisher": "Parapente Pays de Gex (club)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Récit de triangle plat ; un des récits 2019 mentionne du NW >2000 m et des confluences très turbulentes."
+  },
+  {
+   "id": "S29",
+   "title": "Triangle de 336 km dans les Alpes par Romain Beaugey",
+   "url": "https://paragliding.rocktheoutdoor.com/cross-parapente/cross-triangle-336km-alpes-sl16/",
+   "publisher": "Rock The Outdoor",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Triangle 336 km (détails non lus)."
+  },
+  {
+   "id": "S30",
+   "title": "Stage cross parapente Alpes, entre Annecy et Chambéry",
+   "url": "https://www.bauges-parapente.com/stage-cross-parapente/",
+   "publisher": "Bauges Parapente (école)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Longues crêtes des Bauges : échappées vers Annecy/Aravis au nord ou Grenoble/Chartreuse au sud (attribution probable)."
+  },
+  {
+   "id": "S31",
+   "title": "Cartes des principales brises de vallées des Alpes",
+   "url": "https://toutleparapente.fr/principales-brises-de-vall%C3%A9es/",
+   "publisher": "toutleparapente.fr",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Cartes des brises de vallée des Alpes françaises et suisses et des confluences des Alpes du Sud (non consultées en détail)."
+  },
+  {
+   "id": "S32",
+   "title": "La carte des brises de vallée des Alpes du Nord",
+   "url": "https://paragliding.rocktheoutdoor.com/media/carte-brises-alpes-du-nord/",
+   "publisher": "Rock The Outdoor",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Carte (non consultée)."
+  },
+  {
+   "id": "S33",
+   "title": "Les visiteurs du ciel – Hubert Aupetit (guide météo pour le vol libre)",
+   "url": "https://paragliding.rocktheoutdoor.com/boutique/les-visiteurs-du-ciel/",
+   "publisher": "Hubert Aupetit / Rock The Outdoor",
+   "type": "book",
+   "lang": "fr",
+   "notes": "Aérologie de petite échelle, vol en montagne, ciel français ; convergence brise de mer contre brise de vallée exploitée en cross."
+  },
+  {
+   "id": "S34",
+   "title": "Le manuel du vol libre – Hubert Aupetit (FFVL)",
+   "url": "https://www.amazon.fr/manuel-vol-libre-Hubert-Aupetit/dp/2950864414",
+   "publisher": "FFVL",
+   "type": "book",
+   "lang": "fr",
+   "notes": "Manuel de référence FFVL (météo, aérologie, vol de distance). Non consulté."
+  },
+  {
+   "id": "S35",
+   "title": "Thermal Flying – Burkhard Martens",
+   "url": "https://xcmag.com/product/thermal-flying-new-edition/",
+   "publisher": "Cross Country Magazine",
+   "type": "book",
+   "lang": "en",
+   "notes": "Vents de vallée, convergences. Non consulté."
+  },
+  {
+   "id": "S36",
+   "title": "Topo cross parapente, 40 itinéraires en France et 5 vols de légende",
+   "url": "https://paragliding.rocktheoutdoor.com/produit/topo-cross-parapente-40-itineraires-france/",
+   "publisher": "Rock The Outdoor",
+   "type": "book",
+   "lang": "fr",
+   "notes": "Itinéraires Alpes du Nord/Sud avec orientation des brises et pièges. Non consulté."
+  },
+  {
+   "id": "S37",
+   "title": "The Atmospheric Boundary Layer during Wintertime Persistent Inversions in the Grenoble Valleys (Largeron & Staquet)",
+   "url": "https://bibliotheque.meteo.fr/pub/DOC00041851-the-atmospheric-boundary-layer-during-wintertime-p.html",
+   "publisher": "Météo-France bibliothèque",
+   "type": "web",
+   "lang": "en",
+   "notes": "Hiver : superposition de vents descendants des vallées autour de Grenoble ; couche convective ~50 m."
+  },
+  {
+   "id": "S38",
+   "title": "GeoNames cities1000 (embarqué dans le paquet Python reverse_geocoder 1.5.1)",
+   "url": "https://download.geonames.org/export/dump/",
+   "publisher": "GeoNames",
+   "type": "web",
+   "lang": "en",
+   "notes": "Source des coordonnées des communes marquées coord_quality=source."
+  },
+  {
+   "id": "S39",
+   "title": "Les brises (support de formation)",
+   "url": "http://www.ata-vollibre.fr/ATA/wp-content/fichiers/formation/lesBrises.pdf",
+   "publisher": "ATA vol libre (club)",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Support pédagogique identifié, non consulté (accès bloqué)."
+  },
+  {
+   "id": "S40",
+   "title": "Préparation Cross – Météo et Cross, Pression et Fronts, Vent Météo au Sol",
+   "url": "https://clubsthilair.fr/wp-content/uploads/2017/06/prc3a9pa-cross-sthil.pdf",
+   "publisher": "Club de Saint-Hilaire du Touvet",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Support cross identifié, non consulté (accès bloqué)."
+  },
+  {
+   "id": "S41",
+   "title": "Les Massifs - Les Transitions - Cross",
+   "url": "https://clubsthilair.fr/wp-content/uploads/2018/04/cross_massifs-et-transitions.pdf",
+   "publisher": "Club de Saint-Hilaire du Touvet (copie Bluehouse)",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Transitions entre massifs autour du Grésivaudan ; identifié, non consulté."
+  },
+  {
+   "id": "S42",
+   "title": "Météo parapente Bauges : les 7 outils incontournables",
+   "url": "https://www.bauges-parapente.com/meteo-parapente-bauges/",
+   "publisher": "Bauges Parapente",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Cartes des Bauges signalant les zones de confluence potentielles (petites flèches bleues)."
+  },
+  {
+   "id": "S43",
+   "title": "NOAA Solar Calculator (algorithme de position solaire)",
+   "url": "https://gml.noaa.gov/grad/solcalc/",
+   "publisher": "NOAA",
+   "type": "web",
+   "lang": "en",
+   "notes": "Algorithme utilisé pour calculer lever/midi solaire/coucher en heure légale d'été (Grenoble, Gap, Annecy)."
+  }
+ ],
+ "model_rules": [
+  {
+   "id": "cycle-horaire-brise-vallee",
+   "topic": "Brise de vallée en fonction de l'heure",
+   "rule": "Facteur multiplicatif f(h) appliqué à la vitesse de pic de la brise de vallée (heure légale d'été, journée thermique de juin-juillet). Démarrage en fin de matinée (parfois plus tôt dans les petites vallées hautes), pic 14h-17h, déclin après 18h, inversion en vent descendant en soirée. Forme de la courbe = hypothèse calée sur les heures sourcées.",
+   "numbers": {
+    "heure_legale_ete": "UTC+2",
+    "f": {
+     "08": 0.0,
+     "09": 0.05,
+     "10": 0.15,
+     "11": 0.35,
+     "12": 0.55,
+     "13": 0.75,
+     "14": 0.9,
+     "15": 1.0,
+     "16": 1.0,
+     "17": 0.85,
+     "18": 0.6,
+     "19": 0.35,
+     "20": 0.1,
+     "21": -0.1,
+     "22": -0.2,
+     "00": -0.25,
+     "04": -0.3,
+     "07": -0.15
+    },
+    "midi_solaire_alpes_fr": "13h30-13h45 (avril-septembre)",
+    "lever_solstice": "05h45-05h50",
+    "coucher_solstice": "21h25-21h30",
+    "lever_mi_septembre": "07h12",
+    "coucher_mi_septembre": "19h50",
+    "decalage_petite_vallee_h": -1.0,
+    "decalage_aspiration_plaine_h": 0.75,
+    "amplitude_printemps_septembre": 0.7
+   },
+   "sources": [
+    "S1",
+    "S17",
+    "S3",
+    "S43"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "cycle-brise-pente",
+   "topic": "Brise de pente : démarrage, pic, inversion",
+   "rule": "La brise montante démarre dès que le versant est ensoleillé, croît jusqu'au milieu de journée puis décroît jusqu'au coucher ; elle bascule en brise descendante dès que le versant passe à l'ombre (avant le coucher dans les vallées profondes).",
+   "numbers": {
+    "vitesse_montante_kmh": {
+     "science": "4-18 (1-5 m/s)",
+     "parapente": "15-30 (inclut probablement la brise de vallée)",
+     "recommande_simulation": {
+      "typical": 8,
+      "max": 18
+     }
+    },
+    "epaisseur_montante_m": {
+     "science": "20-200",
+     "parapente": "100-200"
+    },
+    "descendante_nuit": {
+     "epaisseur_m": "3-100",
+     "hauteur_du_max_m": "1-15",
+     "vitesse_kmh": "4-10 (déduction)"
+    }
+   },
+   "sources": [
+    "S1",
+    "S3"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "brise-pente-exposition",
+   "topic": "Brise de pente en fonction de l'exposition et du soleil",
+   "rule": "V_pente = V_max × max(0, cos θi), θi = angle entre la direction du soleil et la normale au versant (calculé avec la position solaire). Versant à l'ombre : brise descendante faible. Fenêtres indicatives (heure d'été) : E 7h-12h ; SE 8h-14h ; S 10h-16h ; SW 12h-18h ; W 14h-20h ; N : faible toute la journée. Déduction physique (rayonnement direct), non sourcée en tant que formule.",
+   "numbers": {
+    "V_max_kmh": 18,
+    "V_ombre_kmh": -3,
+    "fenetres_ete": {
+     "E": "7-12h",
+     "SE": "8-14h",
+     "S": "10-16h",
+     "SW": "12-18h",
+     "W": "14-20h",
+     "N": "faible"
+    }
+   },
+   "sources": [
+    "S43"
+   ],
+   "confidence": "low"
+  },
+  {
+   "id": "brise-vallee-taille",
+   "topic": "Brise de vallée en fonction de la taille de la vallée",
+   "rule": "La vitesse de pic dépend de la longueur, de l'altitude et des rétrécissements de la vallée (S1). Classes proposées (pic estival) ; correction de continuité V ∝ 1/section pour les rétrécissements. Classes = hypothèse calée sur les fourchettes sourcées.",
+   "numbers": {
+    "petite_vallee_laterale_<10km": "8-15 km/h",
+    "vallee_moyenne_10-40km": "15-25 km/h",
+    "grande_vallee_>40km (Grésivaudan, Maurienne, Tarentaise, Arve, Durance)": "20-35 km/h",
+    "grand_axe_avec_retrecissement": "40-50+ km/h",
+    "science_centre_vallee": "11-36 km/h (3-10 m/s)",
+    "moyenne_journaliere_suisse": "~7 km/h (2 m/s)"
+   },
+   "sources": [
+    "S1",
+    "S2",
+    "S3",
+    "S7"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "epaisseur-couches",
+   "topic": "Épaisseur des couches de brise",
+   "rule": "Brise de pente : quelques dizaines à 200 m ; brise de vallée : 200-500 m (parfois plus), à plafonner sous la hauteur des crêtes (hypothèse : 50-80 % de la profondeur de la vallée) ; aspiration plaine→montagne : ~1000 m et plus l'après-midi, jusqu'à 100 km de l'avant-pays.",
+   "numbers": {
+    "pente_m": "20-200",
+    "vallee_m": "200-500",
+    "vallee_fraction_profondeur": "0.5-0.8 (hypothèse)",
+    "plaine_montagne_m": "~1000+",
+    "plaine_montagne_portee_km": 100
+   },
+   "sources": [
+    "S1",
+    "S3",
+    "S4"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "aspiration-plaine-montagne",
+   "topic": "Circulation plaine→montagne (Alpine pumping)",
+   "rule": "Flux lent mais épais de l'avant-pays vers les Alpes l'après-midi, bien développé par beau temps sous faible influence anticyclonique ; plus sensible au vent synoptique que les brises internes (pondération synoptique plus forte en plaine qu'en vallée).",
+   "numbers": {
+    "vitesse_kmh": "4-11 (1-3 m/s), jusqu'à 14 (4 m/s)",
+    "epaisseur_m": "~1000",
+    "portee_km": 100,
+    "poids_synoptique_plaine_vs_vallee": "plaine > vallée (qualitatif)"
+   },
+   "sources": [
+    "S4",
+    "S5",
+    "S6",
+    "S7"
+   ],
+   "confidence": "high"
+  },
+  {
+   "id": "combinaison-synoptique-brise",
+   "topic": "Combinaison vent synoptique / brise",
+   "rule": "V(z) = V_brise(z) + w(z) × C × V_syn. w(z) = 0 au fond d'une vallée profonde, croît linéairement jusqu'à 1 à la hauteur des crêtes + 300 m ; C = facteur de canalisation sous les crêtes (projection de V_syn sur l'axe de vallée × 0,3-0,6) ; au-dessus des crêtes, C = 1 (vecteur complet). Même sens → renforcement ; sens opposé → la brise résiste tant que V_syn(crête) < ~15-20 km/h, la confluence glissant vers le versant sous le vent. Le vent météo qui franchit une crête bute contre la brise du versant opposé (confluence vent météo + brise, S9) ; brises « renforcées ou déviées » par le vent météo avec turbulences de confluence (S8). Fond de vallée : brise robuste les jours thermiques (Annecy, S16). Pondération et facteurs = hypothèse.",
+   "numbers": {
+    "w_fond_vallee": 0.0,
+    "w_cretes_plus_300m": 1.0,
+    "C_canalisation": "0.3-0.6",
+    "seuil_resistance_brise_kmh": "15-20",
+    "augmentation_w_apres_midi": "+0.1 à +0.2 par mélange convectif (hypothèse)"
+   },
+   "sources": [
+    "S8",
+    "S9",
+    "S16",
+    "S6"
+   ],
+   "confidence": "low"
+  },
+  {
+   "id": "seuils-synoptique-vs-brise",
+   "topic": "Seuils où le vent synoptique domine les brises",
+   "rule": "Vent synoptique mesuré à 2000-3000 m : <10 km/h régime de brise pur ; 10-20 km/h régime mixte (brises renforcées/affaiblies selon l'alignement, convergences déplacées de quelques km) ; 20-30 km/h synoptique dominant sur les crêtes, sous-le-vent turbulent, brises seulement dans les fonds profonds/abrités ; >30 km/h vol déconseillé hors abris. Seul le seuil « >20 km/h = fort, dangereux de face au déco » est sourcé (S8) ; exemples : 40 km/h de bise en vallée avec vol possible en Haute-Tarentaise abritée (S10) ; foehn 15 km/h → rafales 30-35 km/h (S11).",
+   "numbers": {
+    "brise_pure_kmh": "<10",
+    "mixte_kmh": "10-20",
+    "synoptique_domine_kmh": "20-30",
+    "vol_deconseille_kmh": ">30",
+    "seuil_fort_parapente_kmh": 20,
+    "bise_vallee_abri_exemple_kmh": 40,
+    "foehn_rafales_kmh": "30-35"
+   },
+   "sources": [
+    "S8",
+    "S10",
+    "S11"
+   ],
+   "confidence": "low"
+  },
+  {
+   "id": "etendue-sous-le-vent",
+   "topic": "Étendue de la zone sous le vent / rotors",
+   "rule": "Zone turbulente sous le vent de longueur L = k × H (H = hauteur de la crête au-dessus du fond aval), k = 10 par défaut, 7 à 20 selon force du vent et forme du relief ; perturbation verticale jusqu'à 4-5 × H pour un relief large ; influence typique 3-7 km en aval. Rotor seulement si arête vive ; plus le relief est haut et anguleux, plus la turbulence va loin et est violente. Activation proposée (hypothèse) : composante perpendiculaire à la crête ≥ ~15 km/h.",
+   "numbers": {
+    "k_defaut": 10,
+    "k_min": 7,
+    "k_max": 20,
+    "vertical_facteur_H": "4-5",
+    "influence_km": "3-7",
+    "seuil_activation_kmh": "~15 (hypothèse)"
+   },
+   "sources": [
+    "S18",
+    "S19",
+    "S20"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "venturi-cols-retrecissements",
+   "topic": "Effet venturi aux cols et rétrécissements",
+   "rule": "Un col est une portion de tube venturi (S21) et les vallées qui se rétrécissent produisent des brises >50 km/h (S1). Facteur proposé par conservation du débit : V_col = V_amont × (A_amont / A_col), borné à ×1,2-×2,0. Facteur = hypothèse.",
+   "numbers": {
+    "facteur_min": 1.2,
+    "facteur_max": 2.0,
+    "brise_retrecissement_max_kmh": 50
+   },
+   "sources": [
+    "S21",
+    "S1"
+   ],
+   "confidence": "low"
+  },
+  {
+   "id": "deplacement-convergence",
+   "topic": "Déplacement des convergences par le vent synoptique",
+   "rule": "La ligne de confluence se décale dans le sens du vent synoptique : ~0 km pour V_syn <5 km/h, quelques km (vers le versant sous le vent) pour 10-20 km/h, détruite ou plaquée sur la crête aval au-delà de ~25-30 km/h. Hypothèse dérivée du mécanisme « vent météo qui bute contre la brise du versant opposé » (S9).",
+   "numbers": {
+    "decalage_km_par_10kmh": "2-5 (hypothèse)",
+    "destruction_kmh": "25-30 (hypothèse)"
+   },
+   "sources": [
+    "S9"
+   ],
+   "confidence": "low"
+  },
+  {
+   "id": "convergence-surdeveloppement",
+   "topic": "Convergences et surdéveloppement",
+   "rule": "Les lignes de convergence de bordure alpine concentrent l'ascendance et favorisent les orages (exemple de l'Allgäu par flux faible ou de sud). Dans la simulation, augmenter le risque de surdéveloppement sur les lignes de convergence l'après-midi, surtout par flux de S/SW humide.",
+   "numbers": {
+    "heure_risque": "15h-19h (hypothèse)"
+   },
+   "sources": [
+    "S6"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "transition-soir-nuit",
+   "topic": "Transition du soir et régime nocturne",
+   "rule": "Au coucher, l'air se refroidit plus vite en altitude et descend le long des pentes (S1) ; le vent de vallée devient descendant la nuit (S3). En hiver à Grenoble, vents descendants superposés persistant toute la journée au-dessus d'une couche de ~50 m (S37).",
+   "numbers": {
+    "debut_descendante_pente": "au passage à l'ombre du versant",
+    "debut_descendant_vallee": "1-3 h après le coucher (hypothèse)",
+    "fin_descendant_vallee": "1-3 h après le lever (hypothèse)",
+    "couche_convective_hiver_m": 50
+   },
+   "sources": [
+    "S1",
+    "S3",
+    "S37"
+   ],
+   "confidence": "medium"
+  },
+  {
+   "id": "brise-mer-provence",
+   "topic": "Brise de mer et Alpes du Sud",
+   "rule": "La brise de mer pousse contre les brises de vallée et crée une convergence puissante exploitée en cross (S33). Pénétration vers la basse Durance/Haut-Var l'après-midi, détruite par Mistral : paramètres non sourcés.",
+   "numbers": {
+    "vitesse_kmh": "10-20 (hypothèse)",
+    "arrivee_pertuis_manosque": "14h-17h (hypothèse)"
+   },
+   "sources": [
+    "S33"
+   ],
+   "confidence": "low"
+  }
+ ]
+}

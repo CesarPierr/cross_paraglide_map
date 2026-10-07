@@ -1,0 +1,1015 @@
+{
+ "topic": "Aérologie parapente – Alpes-de-Haute-Provence et Alpes-Maritimes (Saint-André, Digne/Lure, Haut-Verdon, Castellane/Grasse, Nice/Var, Mercantour)",
+ "research_status": "Recherche interrompue : quota de recherche web épuisé après 6 requêtes et accès direct aux pages (Aérogliss, FFVL, paraglidingearth, Wikipédia, offices de tourisme) bloqué par le proxy ; contenu issu de résumés de moteur de recherche. Les objets sans coordonnées connues portent lon/lat = null et coord_quality = \"missing\" : ne pas les afficher sur la carte tant qu'ils ne sont pas complétés.",
+ "massifs": [
+  {
+   "id": "saint-andre-verdon",
+   "name": "Saint-André-les-Alpes – Chalvet – Lac de Castillon",
+   "parent_massif": "Préalpes de Castellane / Haut-Verdon (Alpes-de-Haute-Provence)",
+   "summary": "Site international du Chalvet, école Aérogliss depuis 1982, « emblématique des Alpes du Sud », réputé pour ses thermiques puissants et le cross d'avril à octobre. Le vol s'organise autour de deux décollages : Sud-Est le matin, Sud-Ouest (1540 m) à partir de midi (utilisé dès 11 h en conditions de brise). En conditions thermiques établies la brise atteint 25 à 30 km/h au déco Sud-Ouest. Une brise qualifiée de « classique » remonte du lac de Castillon vers Saint-André et peut être assez prononcée en fin d'après-midi, mais les sources notent qu'on y voit rarement des brises aussi fortes que vers Briançon. Un agrégateur évoque une « convergence majeure » au-dessus du relief, non localisée. L'atterrissage du lac est très thermique et peut devenir turbulent l'après-midi ; Moriez est préférable par vent d'Ouest/Nord-Ouest. Les convergences enseignées localement, les déclencheurs (« les rochers ») et les routes de cross n'ont pas pu être documentés. Recherche interrompue : quota de recherche web épuisé après 6 requêtes et accès direct aux pages (Aérogliss, FFVL, paraglidingearth, Wikipédia, offices de tourisme) bloqué par le proxy ; contenu issu de résumés de moteur de recherche.",
+   "bbox": [
+    6.3285,
+    43.8071,
+    6.5859,
+    44.008
+   ],
+   "center": [
+    6.5078,
+    43.968
+   ],
+   "breezes": [
+    {
+     "id": "brise-lac-castillon-saint-andre",
+     "name": "Brise remontant du lac de Castillon vers Saint-André",
+     "kind": "lake",
+     "waypoints": [
+      {
+       "name": "Lac de Castillon (rive de Saint-Julien-du-Verdon)",
+       "lon": 6.5459,
+       "lat": 43.9097,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Saint-André-les-Alpes",
+       "lon": 6.5078,
+       "lat": 43.968,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "après-midi, plus marquée en fin d'après-midi (été) ; régime de brise au déco SO dès 11 h",
+     "speed_kmh": {
+      "typical": 15,
+      "max": 30
+     },
+     "season": "avril-octobre",
+     "description": "Résumé de source : « la classique brise » (désignée « brise de mer » dans le résumé) « remonte du lac vers Saint-André » et peut être « assez prononcée, en particulier en fin d'après-midi », mais on observe « rarement de fortes brises comme vers Briançon ». Au déco Sud-Ouest, en conditions thermiques établies, « la brise peut atteindre 25 à 30 km/h ». Vitesse typique de 15 km/h = interprétation. Non tranché : brise de lac locale, brise de vallée du Verdon, ou air marin méditerranéen arrivant par le sud.",
+     "confidence": "medium",
+     "sources": [
+      "S1",
+      "S2",
+      "S19",
+      "S15",
+      "S18"
+     ]
+    }
+   ],
+   "convergences": [],
+   "hazards": [
+    {
+     "id": "atterro-lac-turbulent",
+     "name": "Atterrissage du lac thermique / turbulent l'après-midi",
+     "kind": "landing-turbulence",
+     "lon": 6.5078,
+     "lat": 43.968,
+     "coord_quality": "approx",
+     "radius_km": 1.5,
+     "conditions": "période thermique, plein après-midi",
+     "description": "L'atterrissage du lac « peut devenir turbulent en période thermique » ; « en plein après-midi, cette zone d'atterrissage est très thermique et déclenche facilement ». Point placé sur le village (GeoNames), position exacte du terrain non disponible.",
+     "sources": [
+      "S1",
+      "S2"
+     ]
+    },
+    {
+     "id": "brise-forte-deco-so",
+     "name": "Brise soutenue au décollage Sud-Ouest du Chalvet",
+     "kind": "strong-breeze",
+     "lon": null,
+     "lat": null,
+     "coord_quality": "missing",
+     "radius_km": 1,
+     "conditions": "conditions thermiques établies, surtout en fin de journée quand les brises de vallée montent",
+     "description": "« En conditions thermiques établies, la brise peut atteindre 25 à 30 km/h » au déco SO, ce qui demande une bonne maîtrise du gonflage ; un agrégateur note un vent au déco parfois fort plus tard dans la journée. Coordonnées du déco non obtenues.",
+     "sources": [
+      "S1",
+      "S5",
+      "S6"
+     ]
+    }
+   ],
+   "thermal_spots": [
+    {
+     "id": "atterro-lac-thermique",
+     "name": "Zone d'atterrissage du lac (Saint-André)",
+     "lon": 6.5078,
+     "lat": 43.968,
+     "coord_quality": "approx",
+     "alt_m": null,
+     "best_hours": "plein après-midi",
+     "trigger": "zone d'atterrissage en fond de vallée au bord du lac",
+     "description": "« En plein après-midi, cette zone d'atterrissage est très thermique et déclenche facilement. » Coordonnées = village (approx).",
+     "sources": [
+      "S2"
+     ]
+    }
+   ],
+   "soaring_spots": [
+    {
+     "id": "chalvet-restitution-soir",
+     "name": "Chalvet – vol de restitution du soir",
+     "lon": null,
+     "lat": null,
+     "coord_quality": "missing",
+     "wind_dirs": [
+      "SW",
+      "S"
+     ],
+     "description": "Agrégateur : une fois l'activité thermique calmée, des conditions douces de soirée persistent souvent jusqu'au coucher du soleil. Directions de vent = déduction à partir de l'orientation du déco principal (SO).",
+     "sources": [
+      "S5",
+      "S6"
+     ]
+    }
+   ],
+   "takeoffs": [
+    {
+     "id": "chalvet-sud-ouest",
+     "name": "Chalvet Sud-Ouest (déco principal)",
+     "lon": null,
+     "lat": null,
+     "coord_quality": "missing",
+     "alt_m": 1540,
+     "orientations": [
+      "SW"
+     ],
+     "description": "Déco principal du Chalvet, 1540 m, « utilisé à partir de 11 h en conditions de brise » ; en conditions thermiques établies la brise y atteint 25-30 km/h. Utilisé à partir de midi selon un agrégateur. Coordonnées non obtenues (fiche FFVL inaccessible).",
+     "sources": [
+      "S1",
+      "S5",
+      "S6"
+     ]
+    },
+    {
+     "id": "chalvet-sud-est",
+     "name": "Chalvet Sud-Est (déco du matin)",
+     "lon": null,
+     "lat": null,
+     "coord_quality": "missing",
+     "alt_m": null,
+     "orientations": [
+      "SE"
+     ],
+     "description": "Déco du matin (« South-East in the morning ») ; le vol au Chalvet « demande une maîtrise experte des brises de vallée complexes » (agrégateur).",
+     "sources": [
+      "S5",
+      "S6"
+     ]
+    }
+   ],
+   "landings": [
+    {
+     "id": "atterro-lac-saint-andre",
+     "name": "Atterrissage du lac (Saint-André-les-Alpes)",
+     "lon": 6.5078,
+     "lat": 43.968,
+     "coord_quality": "approx",
+     "alt_m": null,
+     "description": "Atterrissage officiel au bord du lac de Castillon ; très thermique en plein après-midi, peut devenir turbulent en période thermique. Coordonnées = village (GeoNames), terrain exact non obtenu.",
+     "sources": [
+      "S1",
+      "S2",
+      "S15"
+     ]
+    },
+    {
+     "id": "atterro-moriez",
+     "name": "Atterrissage de Moriez",
+     "lon": 6.4627,
+     "lat": 43.9637,
+     "coord_quality": "approx",
+     "alt_m": null,
+     "description": "« Utilisé par vent d'Ouest ou de Nord-Ouest », « souvent préférable » à l'atterrissage du lac qui peut devenir turbulent en période thermique. Coordonnées = centroïde de la commune (approx).",
+     "sources": [
+      "S1",
+      "S18"
+     ]
+    }
+   ],
+   "synoptic_effects": [
+    {
+     "wind": "W",
+     "effect": "Par vent d'Ouest/Nord-Ouest, l'atterrissage de Moriez est utilisé et souvent préférable à celui du lac.",
+     "sources": [
+      "S1"
+     ]
+    },
+    {
+     "wind": "NW",
+     "effect": "Idem vent d'Ouest : atterrissage de Moriez. Comportement des déco et des brises par Mistral non documenté dans les sources accessibles.",
+     "sources": [
+      "S1"
+     ]
+    }
+   ],
+   "xc_routes": [],
+   "tips": [
+    "Matin : déco Sud-Est ; à partir de 11 h-midi : déco Sud-Ouest (1540 m) en régime de brise [S1][S5]",
+    "En conditions thermiques établies, s'attendre à 25-30 km/h de brise au déco Sud-Ouest [S1]",
+    "Par vent d'Ouest/Nord-Ouest ou quand l'atterrissage du lac devient turbulent l'après-midi, viser Moriez [S1]",
+    "Une « convergence majeure » au-dessus du relief est signalée par un agrégateur, sans localisation — à confirmer auprès de l'école [S5]",
+    "Conflit d'altitude : sommet du Chalvet 1613 m (topo rando) vs « près de 1500 m » (office de tourisme) ; déco SO 1540 m [S8][S4][S1]"
+   ]
+  },
+  {
+   "id": "haut-verdon-allos",
+   "name": "Haut-Verdon (Thorame, Beauvezer, Colmars, Allos)",
+   "parent_massif": "Alpes-de-Haute-Provence – Haut-Verdon",
+   "summary": "Vallée du Verdon orientée nord-sud entre Saint-André-les-Alpes et Allos, axe de la route de cross Saint-André–Allos–Ubaye. Aucune source accessible ne documente les brises, décollages (Allos, Colmars, Beauvezer) ou pièges de ce secteur : seule la géométrie de la brise montante est proposée, par déduction (brise de vallée diurne remontant le Verdon du lac de Castillon vers Allos). Recherche interrompue : quota de recherche web épuisé après 6 requêtes et accès direct aux pages (Aérogliss, FFVL, paraglidingearth, Wikipédia, offices de tourisme) bloqué par le proxy ; contenu issu de résumés de moteur de recherche.",
+   "bbox": [
+    6.4678,
+    43.928,
+    6.7017,
+    44.2811
+   ],
+   "center": [
+    6.6617,
+    44.1724
+   ],
+   "breezes": [
+    {
+     "id": "brise-vallee-haut-verdon",
+     "name": "Brise montante du Haut-Verdon (Saint-André → Allos)",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Saint-André-les-Alpes",
+       "lon": 6.5078,
+       "lat": 43.968,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Thorame-Haute",
+       "lon": 6.6009,
+       "lat": 44.0858,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Beauvezer",
+       "lon": 6.5978,
+       "lat": 44.144,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Colmars",
+       "lon": 6.6617,
+       "lat": 44.1724,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Allos",
+       "lon": 6.6286,
+       "lat": 44.2411,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "journée thermique (horaires non sourcés)",
+     "speed_kmh": {
+      "typical": null,
+      "max": null
+     },
+     "season": "printemps-été",
+     "description": "Déduction : prolongement vers l'amont de la brise qui « remonte du lac vers Saint-André » [S2], selon le mécanisme général de la brise de vallée diurne [S20]. Aucune donnée locale de vitesse ni d'horaire. Points Thorame-Haute, Beauvezer, Colmars = centroïdes de commune (approx).",
+     "confidence": "low",
+     "sources": [
+      "S2",
+      "S20",
+      "S15",
+      "S18"
+     ]
+    }
+   ],
+   "convergences": [],
+   "hazards": [],
+   "thermal_spots": [],
+   "soaring_spots": [],
+   "takeoffs": [],
+   "landings": [],
+   "synoptic_effects": [],
+   "xc_routes": [],
+   "tips": [
+    "Secteur non documenté par les sources accessibles : vérifier auprès des écoles/club du Haut-Verdon et des fiches FFVL d'Allos/Colmars/Beauvezer (déduction)"
+   ]
+  },
+  {
+   "id": "prealpes-digne-lure",
+   "name": "Préalpes de Digne, Sisteron, Moyenne Durance et Montagne de Lure",
+   "parent_massif": "Préalpes du Sud (Alpes-de-Haute-Provence)",
+   "summary": "Grand pôle de vol à voile (Aéroclub International de Sisteron, CNVV de Saint-Auban, 280 jours d'activité par an) grâce à une aérologie qualifiée d'« exceptionnelle ». Les situations de Mistral, fréquentes en automne et en hiver, permettent de beaux vols d'onde (vol à voile). Les brises de la Durance (Manosque → Sisteron) et de la Bléone (Malijai → Digne) ne sont proposées ici que par déduction topographique ; décollages de Digne/Cousson, Sisteron et Lure, et effets du Mistral sur le vol libre non documentés dans les sources accessibles. Recherche interrompue : quota de recherche web épuisé après 6 requêtes et accès direct aux pages (Aérogliss, FFVL, paraglidingearth, Wikipédia, offices de tourisme) bloqué par le proxy ; contenu issu de résumés de moteur de recherche.",
+   "bbox": [
+    5.7394,
+    43.7888,
+    6.3492,
+    44.3046
+   ],
+   "center": [
+    5.9764,
+    44.0296
+   ],
+   "breezes": [
+    {
+     "id": "brise-durance-manosque-sisteron",
+     "name": "Brise montante de la Durance (Manosque → Sisteron)",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Manosque",
+       "lon": 5.7869,
+       "lat": 43.8288,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Oraison",
+       "lon": 5.9184,
+       "lat": 43.9173,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Peyruis",
+       "lon": 5.9403,
+       "lat": 44.0288,
+       "coord_quality": "source"
+      },
+      {
+       "name": "L'Escale",
+       "lon": 6.0238,
+       "lat": 44.0816,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Volonne",
+       "lon": 6.0142,
+       "lat": 44.1104,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Aubignosc",
+       "lon": 5.9686,
+       "lat": 44.1296,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Sisteron",
+       "lon": 5.9464,
+       "lat": 44.19,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "journée thermique (horaires non sourcés)",
+     "speed_kmh": {
+      "typical": null,
+      "max": null
+     },
+     "season": "printemps-été",
+     "description": "Déduction : brise de vallée diurne remontant l'axe de la Durance vers le nord selon le mécanisme général des brises [S20]. Aucune source locale.",
+     "confidence": "low",
+     "sources": [
+      "S20",
+      "S15"
+     ]
+    },
+    {
+     "id": "brise-bleone-digne",
+     "name": "Brise montante de la Bléone (Malijai → Digne → Le Brusquet)",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Malijai",
+       "lon": 6.0304,
+       "lat": 44.046,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Mallemoisson",
+       "lon": 6.1256,
+       "lat": 44.0469,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Digne-les-Bains",
+       "lon": 6.232,
+       "lat": 44.0925,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Le Brusquet",
+       "lon": 6.3092,
+       "lat": 44.1613,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "journée thermique (horaires non sourcés)",
+     "speed_kmh": {
+      "typical": null,
+      "max": null
+     },
+     "season": "printemps-été",
+     "description": "Déduction : brise de vallée diurne remontant la Bléone depuis la Durance vers Digne puis l'amont [S20]. Aucune source locale.",
+     "confidence": "low",
+     "sources": [
+      "S20",
+      "S15"
+     ]
+    }
+   ],
+   "convergences": [],
+   "hazards": [],
+   "thermal_spots": [],
+   "soaring_spots": [],
+   "takeoffs": [],
+   "landings": [],
+   "synoptic_effects": [
+    {
+     "wind": "Mistral",
+     "effect": "Vol à voile : « les situations de Mistral, fréquentes en automne et en hiver, permettent de beaux vols d'onde » à Sisteron. Impact sur le vol libre à Lure et Digne (faces sous le vent, rotors, seuils) non documenté dans les sources accessibles.",
+     "sources": [
+      "S10"
+     ]
+    }
+   ],
+   "xc_routes": [],
+   "tips": [
+    "La région de Sisteron/Saint-Auban est un des plus grands centres de vol à voile de France grâce à l'aérologie des Alpes-de-Haute-Provence [S10][S21]"
+   ]
+  },
+  {
+   "id": "prealpes-grasse-castellane",
+   "name": "Préalpes de Castellane et de Grasse (Castellane, Gréolières, Bleine, Thorenc, Gourdon, Courmes)",
+   "parent_massif": "Préalpes de Castellane / Préalpes de Grasse",
+   "summary": "Premier rideau de reliefs face à la Méditerranée. Mécanisme régional documenté par la littérature vol à voile : par isobares lâches (vents faibles en surface), la brise de mer s'installe, son air froid supprime la convection sur une large bande côtière, et le front de brise se stabilise souvent à quelques kilomètres à l'intérieur des terres en créant une vaste ligne de thermiques. Le front se marque par des cumulus plus développés (parfois à double base) ou au contraire par une éclaircie ; la ligne d'ascendances est juste derrière le front. Gréolières : décollage « des crêtes » (1800 m selon une école niçoise), à 45 min de Nice. Castellane : 2 sites confidentiels, non officiels, réservés aux locaux. Heures d'arrivée de la brise, position du front et convergences de Gréolières/Bleine non documentées. Recherche interrompue : quota de recherche web épuisé après 6 requêtes et accès direct aux pages (Aérogliss, FFVL, paraglidingearth, Wikipédia, offices de tourisme) bloqué par le proxy ; contenu issu de résumés de moteur de recherche.",
+   "bbox": [
+    6.4728,
+    43.5113,
+    7.1649,
+    43.8871
+   ],
+   "center": [
+    6.9322,
+    43.8073
+   ],
+   "breezes": [
+    {
+     "id": "brise-de-mer-prealpes-grasse",
+     "name": "Brise de mer pénétrant vers les Préalpes de Grasse",
+     "kind": "regional",
+     "waypoints": [
+      {
+       "name": "Cannes",
+       "lon": 7.0127,
+       "lat": 43.5513,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Grasse",
+       "lon": 6.9254,
+       "lat": 43.6578,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Saint-Vallier-de-Thiey",
+       "lon": 6.8478,
+       "lat": 43.6984,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "journée, par isobares lâches (horaires non sourcés)",
+     "speed_kmh": {
+      "typical": null,
+      "max": null
+     },
+     "season": "printemps-été",
+     "description": "Source régionale vol à voile (résumé) : « lorsque les isobares sont espacées… des brises de mer peuvent se développer ; cet air froid venu de la mer supprime toute possibilité de convection sur une large bande parallèle à la côte ». Tracé Cannes→Grasse→Saint-Vallier = déduction (axe sud-nord vers le premier relief).",
+     "confidence": "low",
+     "sources": [
+      "S10",
+      "S11",
+      "S15"
+     ]
+    }
+   ],
+   "convergences": [
+    {
+     "id": "front-brise-de-mer-prealpes-grasse",
+     "name": "Front de brise de mer (position indicative sur le premier rideau des Préalpes de Grasse)",
+     "geometry": {
+      "type": "LineString",
+      "coordinates": [
+       [
+        6.8478,
+        43.6984
+       ],
+       [
+        6.9637,
+        43.7242
+       ],
+       [
+        7.0589,
+        43.7157
+       ],
+       [
+        7.1118,
+        43.7225
+       ],
+       [
+        7.143,
+        43.7472
+       ]
+      ]
+     },
+     "when": "journées de brise de mer par isobares lâches ; heures non sourcées",
+     "mechanism": "Air marin froid et humide (brise de mer) contre l'air continental chauffé : convergence au front, soulèvement de l'air continental, les bulles thermiques sont « décollées » ; ligne d'ascendances juste derrière le front ; cumulus plus développés ou à double base, ou éclaircie.",
+     "usage": "Les sources vol à voile décrivent une « vaste ligne de thermiques » exploitable. Côté mer du front : convection supprimée. POSITION = DÉDUCTION : les sources disent seulement « à quelques kilomètres à l'intérieur des terres » ; la ligne tracée suit le premier relief (Saint-Vallier – Gourdon – Vence – Saint-Jeannet). Position réelle à Gréolières/Saint-André/Castellane non documentée.",
+     "confidence": "low",
+     "sources": [
+      "S10",
+      "S11",
+      "S12",
+      "S13",
+      "S14",
+      "S18"
+     ]
+    }
+   ],
+   "hazards": [],
+   "thermal_spots": [],
+   "soaring_spots": [],
+   "takeoffs": [
+    {
+     "id": "greolieres-cretes",
+     "name": "Gréolières – décollage des crêtes",
+     "lon": null,
+     "lat": null,
+     "coord_quality": "missing",
+     "alt_m": 1800,
+     "orientations": [],
+     "description": "École niçoise : « à 45 minutes de Nice, on décolle des crêtes de Gréolières 1800 m », mer Méditerranée à l'horizon. Orientation et coordonnées non obtenues ; altitude à vérifier (fiche FFVL).",
+     "sources": [
+      "S9"
+     ]
+    }
+   ],
+   "landings": [],
+   "synoptic_effects": [],
+   "xc_routes": [],
+   "tips": [
+    "Castellane : 2 sites de parapente confidentiels, non officiels et réservés aux pilotes locaux ; le site accessible le plus proche est le Chalvet (Saint-André), à ~20 min par le lac de Castillon [S7]",
+    "Un front de brise se repère à ses cumulus plus développés (parfois à double base) ou, au contraire, à une éclaircie ; l'ascendance est juste derrière le front, côté terre [S12][S13][S14]"
+   ]
+  },
+  {
+   "id": "prealpes-nice-var",
+   "name": "Préalpes de Nice et basse vallée du Var (Nice, Saint-Jeannet, Levens)",
+   "parent_massif": "Préalpes de Nice",
+   "summary": "Basse vallée du Var ouverte plein sud sur la mer, entre Saint-Jeannet/Gattières (rive droite) et Levens/Aspremont (rive gauche). Aucune source accessible ne documente les décollages (Saint-Jeannet, Levens), la force ou l'heure de la brise du Var ni la pénétration de la brise de mer dans ce secteur ; la brise montante du Var est tracée par déduction (brise de mer prolongée en brise de vallée). Recherche interrompue : quota de recherche web épuisé après 6 requêtes et accès direct aux pages (Aérogliss, FFVL, paraglidingearth, Wikipédia, offices de tourisme) bloqué par le proxy ; contenu issu de résumés de moteur de recherche.",
+   "bbox": [
+    6.7705,
+    43.6332,
+    7.3061,
+    43.9899
+   ],
+   "center": [
+    7.1906,
+    43.8185
+   ],
+   "breezes": [
+    {
+     "id": "brise-var-montante",
+     "name": "Brise montante du Var (embouchure → Entrevaux)",
+     "kind": "plain-to-mountain",
+     "waypoints": [
+      {
+       "name": "Saint-Laurent-du-Var",
+       "lon": 7.19,
+       "lat": 43.6732,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Gattières",
+       "lon": 7.1757,
+       "lat": 43.7595,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Le Broc",
+       "lon": 7.1688,
+       "lat": 43.8088,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Saint-Martin-du-Var",
+       "lon": 7.1906,
+       "lat": 43.8185,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Villars-sur-Var",
+       "lon": 7.0973,
+       "lat": 43.937,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Puget-Théniers",
+       "lon": 6.8938,
+       "lat": 43.956,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Entrevaux",
+       "lon": 6.8105,
+       "lat": 43.9499,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "journée (horaires non sourcés)",
+     "speed_kmh": {
+      "typical": null,
+      "max": null
+     },
+     "season": "printemps-été",
+     "description": "Déduction : brise de mer entrant par l'embouchure du Var et se prolongeant en brise de vallée vers l'amont [S12][S20]. Aucune source locale.",
+     "confidence": "low",
+     "sources": [
+      "S12",
+      "S20",
+      "S15"
+     ]
+    }
+   ],
+   "convergences": [],
+   "hazards": [],
+   "thermal_spots": [],
+   "soaring_spots": [],
+   "takeoffs": [],
+   "landings": [],
+   "synoptic_effects": [],
+   "xc_routes": [],
+   "tips": []
+  },
+  {
+   "id": "mercantour",
+   "name": "Mercantour – Tinée, Vésubie, Roya, Haut-Var (Isola, Valberg, Auron)",
+   "parent_massif": "Alpes-Maritimes – Mercantour",
+   "summary": "Hautes vallées nord-sud débouchant sur le Var ou la mer. Aucune source accessible ne documente les décollages (Valberg, Auron, Isola), les brises de Tinée/Vésubie/Roya, ni l'effet de la Lombarde. Les brises montantes sont tracées par déduction topographique (brise de vallée diurne remontant chaque vallée vers le nord). Recherche interrompue : quota de recherche web épuisé après 6 requêtes et accès direct aux pages (Aérogliss, FFVL, paraglidingearth, Wikipédia, offices de tourisme) bloqué par le proxy ; contenu issu de résumés de moteur de recherche.",
+   "bbox": [
+    6.8132,
+    43.8773,
+    7.6337,
+    44.2964
+   ],
+   "center": [
+    7.1182,
+    44.1213
+   ],
+   "breezes": [
+    {
+     "id": "brise-tinee",
+     "name": "Brise montante de la Tinée",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Clans",
+       "lon": 7.1481,
+       "lat": 43.9957,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Saint-Sauveur-sur-Tinée",
+       "lon": 7.1182,
+       "lat": 44.1213,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Isola",
+       "lon": 7.0529,
+       "lat": 44.1857,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Saint-Étienne-de-Tinée",
+       "lon": 6.925,
+       "lat": 44.2564,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "journée (non sourcé)",
+     "speed_kmh": {
+      "typical": null,
+      "max": null
+     },
+     "season": "printemps-été",
+     "description": "Déduction : brise de vallée diurne remontant la Tinée vers le nord [S20]. Saint-Sauveur = centroïde de commune (approx). Aucune source locale.",
+     "confidence": "low",
+     "sources": [
+      "S20",
+      "S15",
+      "S18"
+     ]
+    },
+    {
+     "id": "brise-vesubie",
+     "name": "Brise montante de la Vésubie",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Utelle",
+       "lon": 7.2473,
+       "lat": 43.9173,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Lantosque",
+       "lon": 7.3117,
+       "lat": 43.9745,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Roquebillière",
+       "lon": 7.3073,
+       "lat": 44.012,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Saint-Martin-Vésubie",
+       "lon": 7.2558,
+       "lat": 44.0689,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "journée (non sourcé)",
+     "speed_kmh": {
+      "typical": null,
+      "max": null
+     },
+     "season": "printemps-été",
+     "description": "Déduction : brise de vallée diurne remontant la Vésubie vers le nord [S20]. Aucune source locale.",
+     "confidence": "low",
+     "sources": [
+      "S20",
+      "S15"
+     ]
+    },
+    {
+     "id": "brise-roya",
+     "name": "Brise montante de la Roya (Breil → Tende)",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Breil-sur-Roya",
+       "lon": 7.5147,
+       "lat": 43.9376,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Tende",
+       "lon": 7.5937,
+       "lat": 44.0875,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "journée (non sourcé)",
+     "speed_kmh": {
+      "typical": null,
+      "max": null
+     },
+     "season": "printemps-été",
+     "description": "Déduction : brise de vallée diurne remontant la Roya vers le nord [S20]. Aucune source locale.",
+     "confidence": "low",
+     "sources": [
+      "S20",
+      "S15"
+     ]
+    },
+    {
+     "id": "brise-haut-var",
+     "name": "Brise montante du Haut-Var (Puget-Théniers → Guillaumes)",
+     "kind": "valley",
+     "waypoints": [
+      {
+       "name": "Puget-Théniers",
+       "lon": 6.8938,
+       "lat": 43.956,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Guillaumes",
+       "lon": 6.8532,
+       "lat": 44.0903,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "journée (non sourcé)",
+     "speed_kmh": {
+      "typical": null,
+      "max": null
+     },
+     "season": "printemps-été",
+     "description": "Déduction : brise de vallée diurne remontant le Var (gorges de Daluis) vers Guillaumes [S20]. Aucune source locale.",
+     "confidence": "low",
+     "sources": [
+      "S20",
+      "S15"
+     ]
+    }
+   ],
+   "convergences": [],
+   "hazards": [],
+   "thermal_spots": [],
+   "soaring_spots": [],
+   "takeoffs": [],
+   "landings": [],
+   "synoptic_effects": [],
+   "xc_routes": [],
+   "tips": []
+  }
+ ],
+ "sources": [
+  {
+   "id": "S1",
+   "title": "Site de vol parapente de Saint André les Alpes",
+   "url": "https://www.aerogliss.com/qui-sommes-nous/le-site-de-saint-andre-les-alpes-2/",
+   "publisher": "Aérogliss (école de parapente, Saint-André-les-Alpes)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Page non ouvrable (proxy) ; contenu via résumé de recherche : déco SO 1540 m utilisé dès 11 h en brise, brise 25-30 km/h en conditions établies, atterrissage Moriez par O/NO préférable au lac turbulent en période thermique. Attribution exacte entre S1/S5/S6 incertaine."
+  },
+  {
+   "id": "S2",
+   "title": "Atterrissages parapente Saint André les Alpes / Atterrissage : le lac",
+   "url": "https://www.aerogliss.com/qui-sommes-nous/le-site-de-saint-andre-les-alpes-2/atterrissages-parapente-saint-andre-les-alpes/",
+   "publisher": "Aérogliss",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Via résumé de recherche : atterrissage du lac très thermique en plein après-midi ; brise qui remonte du lac vers Saint-André, assez prononcée en fin d'après-midi."
+  },
+  {
+   "id": "S3",
+   "title": "Aérogliss Ecole de parapente (Saint-André-les-Alpes)",
+   "url": "https://www.verdontourisme.com/offres/aerogliss-ecole-de-parapente-saint-andre-les-alpes-fr-2918549/",
+   "publisher": "Verdon Tourisme",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Site international du Chalvet, école depuis 1982, site emblématique des Alpes du Sud (formation, compétitions, Coupe du monde)."
+  },
+  {
+   "id": "S4",
+   "title": "Aérogliss Paragliding School in Saint-André-les-Alpes",
+   "url": "https://www.castellane-verdon.com/en/commerce-service/aerogliss-ecole-de-parapente/",
+   "publisher": "Office de tourisme Castellane-Verdon",
+   "type": "web",
+   "lang": "en",
+   "notes": "Sommet du Chalvet « près de 1500 m », survol de Saint-André, Moriez, Verdon, lac de Castillon."
+  },
+  {
+   "id": "S5",
+   "title": "Parapente Saint-André-les-Alpes – Guides et prévisions",
+   "url": "https://www.spots.guru/guides/parapente-saint-andre-les-alpes?locale=en",
+   "publisher": "spots.guru (agrégateur)",
+   "type": "web",
+   "lang": "en",
+   "notes": "Agrégateur : thermiques puissants, cross avril-octobre, « convergence majeure » au-dessus du relief, deux décos (SE matin, SO dès midi), brises de vallée complexes."
+  },
+  {
+   "id": "S6",
+   "title": "ST ANDRE LES ALPES – Sites de parapente",
+   "url": "https://www.paraglidingmap.com/regions/st-andre-les-alpes",
+   "publisher": "paraglidingmap.com (agrégateur)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Agrégateur cité dans les résultats ; vent au déco parfois fort en fin de journée, restitution du soir jusqu'au coucher du soleil (attribution S5/S6 incertaine)."
+  },
+  {
+   "id": "S7",
+   "title": "Castellane – parapente Verdon",
+   "url": "https://www.aerogliss.com/infos-pratiques/castellane-parapente-verdon/",
+   "publisher": "Aérogliss",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Seulement 2 sites à Castellane, confidentiels, non officiels, réservés aux pilotes locaux ; Chalvet à ~20 min."
+  },
+  {
+   "id": "S8",
+   "title": "Sommet de Chalvet (1 613 m)",
+   "url": "https://www.rando-alpes-haute-provence.fr/trek/204882-Sommet-de-Chalvet-(1-613-m)",
+   "publisher": "Rando Alpes de Haute-Provence (CD04)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Altitude du sommet du Chalvet : 1613 m (titre de la fiche)."
+  },
+  {
+   "id": "S9",
+   "title": "Parapente Nice – vol tandem",
+   "url": "https://www.nice-parapente.fr/en/",
+   "publisher": "Nice Parapente (école)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "« À 45 minutes de Nice, on décolle des crêtes de Gréolières 1800 m », mer à l'horizon."
+  },
+  {
+   "id": "S10",
+   "title": "Des conditions idéales",
+   "url": "https://www.volavoile-sisteron.com/des-conditions-ideales",
+   "publisher": "Aéroclub International de Sisteron (vol à voile)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Aérologie exceptionnelle des AHP ; Mistral fréquent automne-hiver = vols d'onde ; texte sur la brise de mer et le front qui se stabilise à quelques km dans les terres (attribution S10/S11 incertaine)."
+  },
+  {
+   "id": "S11",
+   "title": "Cours théorique : La météo du Vol à Voile",
+   "url": "https://www.pba.asso.fr/le-vol-a-voile/instruction/cours-theorique-la-meteo-du-vol-a-voile",
+   "publisher": "PBA (club de vol à voile)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Origine possible du passage sur la brise de mer (isobares espacées, suppression de la convection côtière, front stabilisé à quelques km des côtes)."
+  },
+  {
+   "id": "S12",
+   "title": "Régime de brise",
+   "url": "https://fr.wikipedia.org/wiki/R%C3%A9gime_de_brise",
+   "publisher": "Wikipédia",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Front de brise marqué par cumulus plus développés ou éclaircie ; convergence ; cumulus à double base."
+  },
+  {
+   "id": "S13",
+   "title": "Confluences aérologiques parapente",
+   "url": "https://annecyminivoiles.com/confluences-aerologiques-parapente/",
+   "publisher": "Annecy Mini Voiles",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Le front progresse vers l'arrière-pays en soulevant l'air continental ; ligne d'ascendances juste derrière le front."
+  },
+  {
+   "id": "S14",
+   "title": "Brise de mer et front de brise",
+   "url": "https://meteofrance.gf/fr/actualites/brise-de-mer-et-front-de-brise",
+   "publisher": "Météo-France (Guyane)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Mécanisme général de la brise de mer et du front de brise."
+  },
+  {
+   "id": "S15",
+   "title": "GeoNames cities500 (points de localités)",
+   "url": "https://download.geonames.org/export/dump/cities500.zip",
+   "publisher": "GeoNames (CC BY 4.0), via le paquet npm cities-500-structured",
+   "type": "web",
+   "lang": "en",
+   "notes": "Coordonnées des villages (coord_quality=source)."
+  },
+  {
+   "id": "S16",
+   "title": "GeoNames cities1000",
+   "url": "https://download.geonames.org/export/dump/cities1000.zip",
+   "publisher": "GeoNames, via le paquet pypi reverse_geocoder",
+   "type": "web",
+   "lang": "en",
+   "notes": "Recoupement des coordonnées de villes."
+  },
+  {
+   "id": "S17",
+   "title": "countries-states-cities-database",
+   "url": "https://github.com/dr5hn/countries-states-cities-database",
+   "publisher": "dr5hn (GitHub)",
+   "type": "web",
+   "lang": "en",
+   "notes": "Château-Arnoux-Saint-Auban : 44.0801 N, 5.9942 E."
+  },
+  {
+   "id": "S18",
+   "title": "france-geojson – communes 04 et 06",
+   "url": "https://github.com/gregoiredavid/france-geojson",
+   "publisher": "Grégoire David (GitHub)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Polygones communaux ; centroïdes calculés pour Moriez, Saint-Julien-du-Verdon, Thorame-Haute, Beauvezer, Colmars, Gréolières, Gourdon, Andon, Saint-Sauveur-sur-Tinée, Beuil (coord_quality=approx, erreur possible de plusieurs km)."
+  },
+  {
+   "id": "S19",
+   "title": "Stage St André les Alpes",
+   "url": "https://lesailesduleman.ch/stages/lieu/57-st-andre-les-alpes",
+   "publisher": "Les Ailes du Léman (école suisse)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Origine possible de la remarque « rarement de fortes brises comme vers Briançon » (attribution S2/S19 incertaine)."
+  },
+  {
+   "id": "S20",
+   "title": "Les brises (niveau vert)",
+   "url": "http://liberiste.com/wp-content/uploads/2019/12/15-parapente-Les-brises.pdf",
+   "publisher": "Pierre-Paul Ménégoz",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "Cours général sur les brises de pente/vallée/mer ; sert de base aux déductions de direction des brises de vallée."
+  },
+  {
+   "id": "S21",
+   "title": "Avec le CNVV, ça plane pour tous à Saint-Auban !",
+   "url": "https://www.frequencemistral.com/Avec-le-CNVV-ca-plane-pour-tous-a-Saint-Auban-_a7900.html",
+   "publisher": "Fréquence Mistral",
+   "type": "web",
+   "lang": "fr",
+   "notes": "CNVV de Saint-Auban : 280 jours d'activité par an, 25 planeurs."
+  }
+ ]
+}

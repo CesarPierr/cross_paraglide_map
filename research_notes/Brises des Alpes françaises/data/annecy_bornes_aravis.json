@@ -1,0 +1,1431 @@
+{
+  "topic": "Annecy – Bornes – Aravis : brises thermiques et vents locaux",
+  "massifs": [
+    {
+      "id": "lac-annecy",
+      "name": "Lac d'Annecy (Forclaz, Planfait, Talloires, Doussard, Semnoz, Roc des Bœufs)",
+      "parent_massif": "Préalpes du Nord – bassin annécien (Bornes à l'est, Bauges au sud-ouest)",
+      "summary": "Chaque jour de beau temps, une brise de lac/vallée s'installe le long de l'axe du lac, du nord-nord-ouest vers le sud-sud-est, d'Annecy vers Doussard (vers 13h30 un bon jour selon XC Mag) ; elle est « souvent soutenue » l'après-midi. Elle alimente en dynamique les faces ouest/nord-ouest de la rive est (Forclaz, Planfait, Lanfonnet, Dents de Lanfon) et la face ouest du Roc des Bœufs, puis se prolonge vers la vallée de Faverges ou vers les Bauges. Le cross de base suit les crêtes exposées ouest de la rive est jusqu'aux Dents de Lanfon : on y fait au moins 1900 m avant de traverser vers le Roc des Bœufs, en attendant qu'il soit éclairé par l'ouest. Le grand tour contourne le nord du lac par la ville d'Annecy et le Semnoz. Pièges principaux : atterrissage de Doussard en brise soutenue (gradient, turbulence par nord-est) et, en fin de journée, brise descendante de sud-ouest de 50 à 100 m venue du Taillefer et du Charbon, qui glisse sous la brise du nord et oblige à poser face au village. Par bise/nord-est, Planfait devient très turbulent (vent arrière via le col de Bluffy) alors que la Forclaz reste parfois volable ; par sud, c'est la Forclaz qui est la plus sensible.",
+      "bbox": [
+        6.04,
+        45.73,
+        6.33,
+        45.93
+      ],
+      "center": [
+        6.18,
+        45.83
+      ],
+      "breezes": [
+        {
+          "id": "brise-lac-annecy",
+          "name": "Brise du lac d'Annecy (Annecy → Doussard → Faverges)",
+          "kind": "lake",
+          "waypoints": [
+            {
+              "name": "Annecy",
+              "lon": 6.1167,
+              "lat": 45.9,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Sevrier",
+              "lon": 6.1403,
+              "lat": 45.8642,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Duingt (détroit)",
+              "lon": 6.2003,
+              "lat": 45.8264,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Doussard",
+              "lon": 6.2194,
+              "lat": 45.7756,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Faverges",
+              "lon": 6.293,
+              "lat": 45.7475,
+              "coord_quality": "source"
+            }
+          ],
+          "hours": "≈13h30-19h un bon jour d'été (régime diurne) ; souvent soutenue l'après-midi",
+          "speed_kmh": {
+            "typical": 15,
+            "max": 25
+          },
+          "season": "avril-octobre (meilleure aérologie en saison thermique)",
+          "description": "XC Mag : « A valley breeze sets up down the lake from the north-west every day. It starts working around 1.30pm on a good day. » Infos-Parapente : l'aérologie dépend principalement de la brise venant du lac, le flux allant principalement d'Annecy vers Doussard ; la brise tape le Roc des Bœufs (dynamique en général) puis continue vers la vallée de Faverges ou vers la vallée des Bauges. Annecy Vol Libre : « En après-midi, la brise est souvent soutenue » (paraphrase). Vitesses : aucune valeur chiffrée dans les sources ; 15 km/h typique et 25 km/h max sont une interprétation de « soutenue ». Le dernier tronçon Doussard → Faverges vient de la phrase d'Infos-Parapente ; l'endroit où cette brise rencontre une éventuelle brise venue d'Ugine n'est pas documenté.",
+          "confidence": "high",
+          "sources": [
+            "S3",
+            "S4",
+            "S2"
+          ]
+        },
+        {
+          "id": "brise-pente-forclaz",
+          "name": "Brise de pente des faces ouest/nord-ouest de la Forclaz",
+          "kind": "slope",
+          "waypoints": [
+            {
+              "name": "Atterrissage de Verthier",
+              "lon": 6.239,
+              "lat": 45.809,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Décollage Col de la Forclaz",
+              "lon": 6.2556,
+              "lat": 45.8231,
+              "coord_quality": "source"
+            }
+          ],
+          "hours": "après-midi (été), quand la brise du lac est établie",
+          "speed_kmh": {
+            "typical": null,
+            "max": null
+          },
+          "season": "avril-septembre",
+          "description": "Grands Espaces : « Thermals are often generous, but the valley breeze is significant. Favor the west and northwest faces to stay in the breeze's flow. » Les faces sud-est sont « généreuses mais souvent beaucoup plus turbulentes ». La fiche FFVL donne comme conditions idéales un léger sud-ouest associé à la brise du lac.",
+          "confidence": "medium",
+          "sources": [
+            "S1",
+            "S12"
+          ]
+        },
+        {
+          "id": "brise-descendante-taillefer-charbon",
+          "name": "Brise descendante de fin de journée du Taillefer/Charbon (Doussard)",
+          "kind": "katabatic",
+          "waypoints": [
+            {
+              "name": "Pentes est du Taillefer / Charbon",
+              "lon": 6.195,
+              "lat": 45.765,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Atterrissage de Doussard",
+              "lon": 6.224,
+              "lat": 45.789,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "fin de journée (soirée d'été), alors que la brise du lac souffle encore au-dessus",
+          "speed_kmh": {
+            "typical": null,
+            "max": null
+          },
+          "season": "été",
+          "layer_depth_m": "50 à 100 m au-dessus du sol ; au-dessus, la brise de vallée de nord reste active",
+          "description": "Grands Espaces : en fin de journée, une brise descendante de sud-ouest peut s'installer sur les faces est des Bauges (Charbon, Roc des Bœufs) dans une couche d'environ 50 à 100 m, alors qu'au-dessus la brise de vallée (nord) est encore bien active. Fiche de l'atterrissage de Doussard : la brise descendante du Taillefer et du Charbon glisse sous la brise de vallée et fait poser face au village alors qu'à 100 m on est encore poussé par la brise de vallée (paraphrase). Point de départ des pentes approximatif.",
+          "confidence": "medium",
+          "sources": [
+            "S1",
+            "S14"
+          ]
+        }
+      ],
+      "convergences": [
+        {
+          "id": "confluence-doussard-soir",
+          "name": "Confluence de fin de journée de Doussard (brise du lac / brise descendante des Bauges)",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                6.224,
+                45.789
+              ],
+              [
+                6.219,
+                45.799
+              ]
+            ]
+          },
+          "when": "fin d'après-midi / soirée d'été, quand les faces est des Bauges passent à l'ombre",
+          "mechanism": "Une brise descendante de sud-ouest (50 à 100 m d'épaisseur) issue des faces est des Bauges (Taillefer, Charbon, Roc des Bœufs) glisse sous la brise de vallée de nord du lac, encore active au-dessus.",
+          "usage": "Grands Espaces : « the meeting of the two creates a wide lift zone between the landing and the lake, and even above the landing ». Cela permet de rester en l'air tard, mais complique l'arrivée : on peut devoir poser face au sud (vers le village / Faverges, PT8) alors qu'à 100 m on recule encore vers le sud, avec un cisaillement près du sol. Géométrie approximative (atterrissage → rive sud du lac).",
+          "confidence": "medium",
+          "sources": [
+            "S1",
+            "S14",
+            "S2"
+          ]
+        }
+      ],
+      "hazards": [
+        {
+          "id": "doussard-atterro-brise",
+          "name": "Atterrissage de Doussard : brise soutenue, gradient, inversion du soir",
+          "kind": "landing-turbulence",
+          "lon": 6.224,
+          "lat": 45.789,
+          "coord_quality": "approx",
+          "radius_km": 1,
+          "conditions": "après-midi en brise du lac soutenue ; vent de nord-est ; fin de journée (brise descendante SO sous la brise N)",
+          "description": "Atterrissage de la salle polyvalente, 460 m, à l'entrée du village : « technique et peut être assez turbulent par vent de Nord-Est » (paraphrase). Circuits : PTU main droite pour poser face au nord (lac), PT8 pour poser face au sud (Faverges). En fin de journée, la brise descendante du Taillefer et du Charbon fait poser face au village alors qu'à 100 m on est encore poussé par la brise du lac.",
+          "sources": [
+            "S10",
+            "S2",
+            "S14",
+            "S1"
+          ]
+        },
+        {
+          "id": "planfait-bise",
+          "name": "Planfait par bise / nord-est : décollage sous le vent",
+          "kind": "lee-rotor",
+          "lon": 6.223,
+          "lat": 45.8532,
+          "coord_quality": "source",
+          "radius_km": 1.5,
+          "conditions": "vent de nord-est (bise) établi",
+          "description": "Grands Espaces : par nord-est, le vent passe par le col de Bluffy et le décollage se retrouve sous le vent, avec des passages de vent arrière (et parfois de face) ; conditions très turbulentes, voire dangereuses. Atterrissage (Perroix) également turbulent. Par N/NE fort, la Forclaz peut rester volable.",
+          "sources": [
+            "S9",
+            "S1"
+          ]
+        },
+        {
+          "id": "lanfon-fretes-vent-est",
+          "name": "Dents de Lanfon / col des Frêtes exposés au vent d'est",
+          "kind": "lee-rotor",
+          "lon": 6.2344,
+          "lat": 45.8653,
+          "coord_quality": "approx",
+          "radius_km": 2,
+          "conditions": "vent d'est / nord-est en altitude",
+          "description": "Grands Espaces : en montant dans les thermiques près des Dents de Lanfon et du col des Frêtes, on est beaucoup plus exposé au vent d'est et la turbulence est bien plus forte.",
+          "sources": [
+            "S9"
+          ]
+        },
+        {
+          "id": "forclaz-vent-sud",
+          "name": "Forclaz par vent du sud",
+          "kind": "other",
+          "lon": 6.2556,
+          "lat": 45.8231,
+          "coord_quality": "source",
+          "radius_km": 1.5,
+          "conditions": "vent synoptique de sud, surtout s'il est fort",
+          "description": "Grands Espaces : l'orientation nord-ouest et l'altitude plus élevée rendent la Forclaz plus sensible au vent du sud que Planfait. FFVL : éviter le sud fort à cause des lignes haute tension et de la route en approche (dos au lac).",
+          "sources": [
+            "S1",
+            "S12"
+          ]
+        },
+        {
+          "id": "coche-cabane-nord",
+          "name": "Coche Cabane par vent du nord : forts rouleaux",
+          "kind": "lee-rotor",
+          "lon": 6.246,
+          "lat": 45.809,
+          "coord_quality": "approx",
+          "radius_km": 1,
+          "conditions": "vent de nord",
+          "description": "« Décollage délicat par vent du nord (forts rouleaux) ». Barbules applique cette mise en garde à Coche Cabane ; le résumé de la fiche FFVL Forclaz–Montmin la mentionnait aussi (attribution ambiguë entre les fiches 1447 et 1259). Coordonnées approximatives.",
+          "sources": [
+            "S10",
+            "S12"
+          ]
+        },
+        {
+          "id": "verthier-gradient",
+          "name": "Atterrissage de Verthier : gradient par nord",
+          "kind": "landing-turbulence",
+          "lon": 6.239,
+          "lat": 45.809,
+          "coord_quality": "approx",
+          "radius_km": 0.5,
+          "conditions": "vent de nord ; vent fort",
+          "description": "Barbules : 470 m ; gradient par vent du nord, turbulent par vent fort. À 2048 m du déco de la Forclaz (finesse 2,7).",
+          "sources": [
+            "S11",
+            "S10"
+          ]
+        },
+        {
+          "id": "semnoz-nord",
+          "name": "Semnoz par vent du nord",
+          "kind": "other",
+          "lon": 6.08,
+          "lat": 45.81,
+          "coord_quality": "approx",
+          "radius_km": 2,
+          "conditions": "vent de nord",
+          "description": "Pages du site : fonctionne de NO à SO ; danger par vent du nord. Coordonnées approximatives.",
+          "sources": [
+            "S18"
+          ]
+        }
+      ],
+      "thermal_spots": [
+        {
+          "id": "dents-de-lanfon",
+          "name": "Dents de Lanfon",
+          "lon": 6.2344,
+          "lat": 45.8653,
+          "coord_quality": "approx",
+          "alt_m": 1824,
+          "best_hours": "après-midi (depuis Planfait)",
+          "trigger": "pinacles et barres calcaires au-dessus de Talloires, au bout des crêtes exposées ouest alimentées par la brise du lac",
+          "description": "Depuis Planfait, on rejoint les Dents de Lanfon en thermique ; c'est le point de recharge clé du petit tour. Il faut au moins 1900 m avant de transiter vers le Roc des Bœufs. Attention au vent d'est près du col des Frêtes.",
+          "sources": [
+            "S3",
+            "S4",
+            "S9",
+            "S24"
+          ]
+        },
+        {
+          "id": "roc-des-boeufs-ouest",
+          "name": "Roc des Bœufs (face ouest)",
+          "lon": 6.175,
+          "lat": 45.778,
+          "coord_quality": "approx",
+          "alt_m": null,
+          "best_hours": "après-midi, une fois la face éclairée par l'ouest",
+          "trigger": "face exposée à la brise du lac (dynamique) + thermique",
+          "description": "Infos-Parapente : la brise du lac donne en général de la dynamique sur le Roc des Bœufs et le thermique fait le reste. Viser la face ouest le plus haut possible et ne pas transiter avant qu'elle soit éclairée par l'ouest. Coordonnées approximatives.",
+          "sources": [
+            "S3",
+            "S25"
+          ]
+        },
+        {
+          "id": "tournette-face-est",
+          "name": "La Tournette (face est)",
+          "lon": 6.2867,
+          "lat": 45.83,
+          "coord_quality": "approx",
+          "alt_m": 2351,
+          "best_hours": "dès ≈10h",
+          "trigger": "grande face est calcaire, au soleil le matin",
+          "description": "XC Mag : un départ de la Pointe de Talamarche « opens the doors of La Tournette (2,350 m) by its east face around 10am ». Coordonnées approximatives.",
+          "sources": [
+            "S5",
+            "S24"
+          ]
+        }
+      ],
+      "soaring_spots": [
+        {
+          "id": "forclaz-faces-ouest",
+          "name": "Faces ouest/nord-ouest Forclaz – Lanfonnet – Dents de Lanfon",
+          "lon": 6.2556,
+          "lat": 45.8231,
+          "coord_quality": "source",
+          "wind_dirs": [
+            "NW",
+            "W"
+          ],
+          "description": "Thermo-dynamique dans la brise du lac. XC Mag : « a simple soar north along the west-facing ridges to the Dents de Lanfon » ; Grands Espaces : privilégier les faces O et NO pour rester dans le flux de la brise.",
+          "sources": [
+            "S4",
+            "S1"
+          ]
+        },
+        {
+          "id": "planfait-soaring",
+          "name": "Planfait (falaise au-dessus de Perroix)",
+          "lon": 6.223,
+          "lat": 45.8532,
+          "coord_quality": "source",
+          "wind_dirs": [
+            "NW",
+            "W",
+            "SW"
+          ],
+          "description": "Brise de vallée très souvent dominante, qui permet de voler par presque toutes conditions ; part plus tôt que la Forclaz. Gradient à l'atterrissage par brise soutenue. Interdit par NE (décollage sous le vent).",
+          "sources": [
+            "S9",
+            "S4",
+            "S2"
+          ]
+        },
+        {
+          "id": "roc-des-boeufs-dynamique",
+          "name": "Roc des Bœufs (dynamique de la brise du lac)",
+          "lon": 6.175,
+          "lat": 45.778,
+          "coord_quality": "approx",
+          "wind_dirs": [
+            "N",
+            "NW"
+          ],
+          "description": "Dynamique en général assurée par la brise du lac qui vient buter sur le relief. Coordonnées approximatives.",
+          "sources": [
+            "S3"
+          ]
+        },
+        {
+          "id": "semnoz-crete-ouest",
+          "name": "Crête ouest du Semnoz",
+          "lon": 6.086,
+          "lat": 45.799,
+          "coord_quality": "approx",
+          "wind_dirs": [
+            "W",
+            "NW",
+            "SW"
+          ],
+          "description": "Crête exposée ouest sur ~35 km vers le sud (aller-retour 70 km « facile » selon XC Mag) ; fonctionne de NO à SO ; danger par nord. Coordonnées approximatives.",
+          "sources": [
+            "S7",
+            "S18"
+          ]
+        }
+      ],
+      "takeoffs": [
+        {
+          "id": "forclaz",
+          "name": "Col de la Forclaz (Montmin)",
+          "lon": 6.2556,
+          "lat": 45.8231,
+          "coord_quality": "source",
+          "alt_m": 1224,
+          "orientations": [
+            "W",
+            "NW"
+          ],
+          "description": "Déco principal du lac, orienté O/ONO/NO (Barbules). Altitudes selon les sources : 1224 m (Barbules), 1240 m (Annecy Vol Libre), 1257 m (Grands Espaces), 1280 m (Talloires). Plus de 2500 décollages/jour en pleine saison. Thermiques souvent généreux mais brise importante : rester sur les faces O/NO. Plus sensible au sud que Planfait. Atterrissages : Verthier (finesse 2,7) et Doussard (finesse 5,8).",
+          "sources": [
+            "S10",
+            "S2",
+            "S1",
+            "S13",
+            "S28"
+          ]
+        },
+        {
+          "id": "planfait",
+          "name": "Planfait (Talloires)",
+          "lon": 6.223,
+          "lat": 45.8532,
+          "coord_quality": "source",
+          "alt_m": 916,
+          "orientations": [
+            "NW",
+            "W",
+            "SW"
+          ],
+          "description": "Trouée dans la forêt au bord d'une falaise, 916-960 m, 400 m au-dessus de Perroix. Démarre un peu plus tôt que la Forclaz et mène directement aux Dents de Lanfon. Facile sauf par vent de travers ; très fréquenté. Très turbulent voire dangereux par nord-est (bise via le col de Bluffy). Géré par Les Chamois Volants.",
+          "sources": [
+            "S9",
+            "S4",
+            "S13",
+            "S2"
+          ]
+        },
+        {
+          "id": "coche-cabane",
+          "name": "Coche Cabane (Forclaz)",
+          "lon": 6.246,
+          "lat": 45.809,
+          "coord_quality": "approx",
+          "alt_m": 1190,
+          "orientations": [],
+          "description": "Accès par un sentier depuis le col de la Forclaz ; plus calme que le déco principal. Délicat par vent du nord (forts rouleaux). Orientation non trouvée ; coordonnées approximatives.",
+          "sources": [
+            "S13",
+            "S10",
+            "S12"
+          ]
+        },
+        {
+          "id": "entrevernes",
+          "name": "Entrevernes",
+          "lon": 6.19,
+          "lat": 45.8,
+          "coord_quality": "approx",
+          "alt_m": null,
+          "orientations": [],
+          "description": "Déco du matin de la rive ouest, qui prend les premiers thermiques ; étroit et technique, taillé entre les arbres. À +300 m au-dessus de la crête, transiter vers la face est raide du Roc des Bœufs ou vers le Charbon. Orientation non précisée dans les extraits ; coordonnées approximatives.",
+          "sources": [
+            "S6",
+            "S25"
+          ]
+        },
+        {
+          "id": "semnoz-ouest",
+          "name": "Semnoz Ouest",
+          "lon": 6.08,
+          "lat": 45.81,
+          "coord_quality": "approx",
+          "alt_m": 1480,
+          "orientations": [
+            "W",
+            "NW",
+            "SW"
+          ],
+          "description": "Déco à 1480 m (≥900 m de dénivelé), à 30 min d'Annecy, moins fréquenté que Planfait et la Forclaz ; régulier le matin, thermiques doux l'après-midi ; posé en haut possible. Danger par nord. Coordonnées approximatives.",
+          "sources": [
+            "S18",
+            "S7"
+          ]
+        }
+      ],
+      "landings": [
+        {
+          "id": "doussard",
+          "name": "Doussard – salle polyvalente / Bout du Lac",
+          "lon": 6.224,
+          "lat": 45.789,
+          "coord_quality": "approx",
+          "alt_m": 460,
+          "description": "Atterrissage principal de la Forclaz (4468 m, finesse 5,8). Grand champ près du lac, manches à air, zones séparées biplace/écoles/autonomes. PTU main droite posé face N, PT8 posé face S. Brise souvent soutenue l'après-midi ; turbulent par NE ; inversion du soir (brise SO du Taillefer/Charbon). Balise FFVL « Doussard atterro » (balisemeteo idBalise=3720). Coordonnées approximatives.",
+          "sources": [
+            "S10",
+            "S2",
+            "S22",
+            "S14",
+            "S1"
+          ]
+        },
+        {
+          "id": "perroix",
+          "name": "Perroix (Talloires)",
+          "lon": 6.2106,
+          "lat": 45.8485,
+          "coord_quality": "approx",
+          "alt_m": null,
+          "description": "Atterrissage de Planfait, orienté N/S, géré par Les Chamois Volants. Planfait est 400 m au-dessus. Gradient et brise souvent soutenue ; turbulent par NE. Altitude « 540 m » selon la smartmap (douteuse). Coordonnées approximatives (valeur 45.8485/6.2106 d'un extrait de recherche à l'attribution confuse).",
+          "sources": [
+            "S13",
+            "S9",
+            "S2"
+          ]
+        },
+        {
+          "id": "verthier",
+          "name": "Verthier (Doussard)",
+          "lon": 6.239,
+          "lat": 45.809,
+          "coord_quality": "approx",
+          "alt_m": 470,
+          "description": "Atterrissage proche du déco de la Forclaz (2048 m, finesse 2,7). Gradient par nord, turbulent par vent fort. Coordonnées approximatives.",
+          "sources": [
+            "S11",
+            "S10"
+          ]
+        },
+        {
+          "id": "viuz-la-chiesaz",
+          "name": "Viuz-la-Chiesaz (pied ouest du Semnoz)",
+          "lon": 6.0621,
+          "lat": 45.8108,
+          "coord_quality": "source",
+          "alt_m": null,
+          "description": "Atterrissage recensé par Barbules (Atterrissage:Viuz la Chiesaz). Coordonnées = centre du village (GeoNames), pas le terrain lui-même. Le rattachement au Semnoz Ouest est une déduction géographique.",
+          "sources": [
+            "S10",
+            "S26"
+          ]
+        },
+        {
+          "id": "marlens",
+          "name": "Marlens (entre Faverges et Ugine)",
+          "lon": 6.355,
+          "lat": 45.769,
+          "coord_quality": "approx",
+          "alt_m": 450,
+          "description": "Atterrissage à 450 m entre Faverges et Ugine. Attribution de la source incertaine ; coordonnées approximatives.",
+          "sources": [
+            "S27"
+          ]
+        }
+      ],
+      "synoptic_effects": [
+        {
+          "wind": "Bise",
+          "effect": "Bise / NE : Planfait devient très turbulent, voire dangereux (le vent passe par le col de Bluffy, décollage sous le vent, atterrissage de Perroix turbulent) ; Dents de Lanfon et col des Frêtes exposés au vent d'est avec une turbulence bien plus forte ; l'atterrissage de Doussard devient technique et turbulent par NE ; la Forclaz peut rester volable par N/NE fort.",
+          "sources": [
+            "S9",
+            "S1",
+            "S10"
+          ]
+        },
+        {
+          "wind": "N",
+          "effect": "Nord : Coche Cabane délicat (forts rouleaux) ; gradient à Verthier et turbulence par vent fort ; Semnoz dangereux. La fiche FFVL Forclaz–Montmin cite toutefois N, O et NO comme secteurs favorables (à recouper).",
+          "sources": [
+            "S10",
+            "S11",
+            "S18",
+            "S12"
+          ]
+        },
+        {
+          "wind": "S",
+          "effect": "Sud : la Forclaz (orientée NO, plus haute) est plus sensible que Planfait ; éviter le sud fort (lignes haute tension, route en approche dos au lac).",
+          "sources": [
+            "S1",
+            "S12"
+          ]
+        },
+        {
+          "wind": "SW",
+          "effect": "Léger sud-ouest associé à la brise du lac : conditions idéales à la Forclaz selon la fiche FFVL. Semnoz volable jusqu'au SO.",
+          "sources": [
+            "S12",
+            "S18"
+          ]
+        },
+        {
+          "wind": "W",
+          "effect": "Ouest à nord-ouest : régime de la crête ouest du Semnoz (fonctionne de NO à SO) ; les faces O/NO de la rive est restent dans l'axe de la brise du lac.",
+          "sources": [
+            "S18",
+            "S1"
+          ]
+        },
+        {
+          "wind": "E",
+          "effect": "Est : turbulence forte près des Dents de Lanfon et du col des Frêtes.",
+          "sources": [
+            "S9"
+          ]
+        }
+      ],
+      "xc_routes": [
+        {
+          "id": "petit-tour-du-lac",
+          "name": "Petit tour du lac (Forclaz – Dents de Lanfon – Roc des Bœufs – Doussard)",
+          "waypoints": [
+            {
+              "name": "Décollage Col de la Forclaz",
+              "lon": 6.2556,
+              "lat": 45.8231,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Lanfonnet",
+              "lon": 6.239,
+              "lat": 45.856,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Dents de Lanfon",
+              "lon": 6.2344,
+              "lat": 45.8653,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Roc des Bœufs (face ouest)",
+              "lon": 6.175,
+              "lat": 45.778,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Atterrissage de Doussard",
+              "lon": 6.224,
+              "lat": 45.789,
+              "coord_quality": "approx"
+            }
+          ],
+          "distance_km": 20,
+          "description": "Cross le plus accessible depuis la Forclaz ou Planfait. Depuis la Forclaz : rocher du Roux puis Lanfonnet jusqu'aux Dents de Lanfon (ou directement depuis Planfait). Recharge aux Dents de Lanfon : au moins 1900 m avant de traverser le lac vers la face ouest du Roc des Bœufs, à aborder le plus haut possible et seulement une fois éclairée par l'ouest. Au Roc des Bœufs, dynamique de la brise du lac + thermique ; de là, vers les Bauges ou retour à Doussard. Distance calculée sur waypoints approximatifs (≈20 km).",
+          "sources": [
+            "S3",
+            "S25",
+            "S4"
+          ]
+        },
+        {
+          "id": "grand-tour-du-lac",
+          "name": "Grand tour du lac (par la ville d'Annecy et le Semnoz)",
+          "waypoints": [
+            {
+              "name": "Décollage Col de la Forclaz",
+              "lon": 6.2556,
+              "lat": 45.8231,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Dents de Lanfon",
+              "lon": 6.2344,
+              "lat": 45.8653,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Mont Veyrier",
+              "lon": 6.1714,
+              "lat": 45.9061,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Annecy",
+              "lon": 6.1167,
+              "lat": 45.9,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Semnoz (crête)",
+              "lon": 6.086,
+              "lat": 45.799,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Roc des Bœufs (face ouest)",
+              "lon": 6.175,
+              "lat": 45.778,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Atterrissage de Doussard",
+              "lon": 6.224,
+              "lat": 45.789,
+              "coord_quality": "approx"
+            }
+          ],
+          "distance_km": 39,
+          "description": "Le grand tour passe au-dessus de la bordure de la ville d'Annecy. Récit de club : plafonds de 2400 à 3100 m, Semnoz comme repère et recharge, pertes d'altitude notables dans les transitions. Une page touristique donne environ 40 km « en respectant les balises » pour le tour du lac, ce qui correspond à la distance calculée ici. Le sens (rive est vers le nord puis Semnoz) et le passage par le Mont Veyrier sont une déduction ; waypoints approximatifs.",
+          "sources": [
+            "S8",
+            "S19",
+            "S4",
+            "S25"
+          ]
+        }
+      ],
+      "tips": [
+        "Planfait « starts working a bit earlier » que la Forclaz et mène directement aux Dents de Lanfon [S4]",
+        "Aux Dents de Lanfon, ne pas partir vers le Roc des Bœufs sous 1900 m [S3]",
+        "Ne pas traverser vers le Roc des Bœufs trop tôt : attendre que sa face ouest soit éclairée [S25]",
+        "Faces sud-est autour de la Forclaz : généreuses mais beaucoup plus turbulentes [S1]",
+        "En fin de journée à Doussard, s'attendre à poser face au village (sud) même si à 100 m la brise du lac pousse encore vers le sud [S14][S1]",
+        "Par bise/NE : oublier Planfait, la Forclaz peut rester volable [S9][S1]",
+        "Le Semnoz offre une crête ouest de ~35 km vers le sud (aller-retour 70 km) [S7]"
+      ]
+    },
+    {
+      "id": "bornes",
+      "name": "Massif des Bornes (Tournette, Parmelan, Glières, Sous-Dine, vallée de Thônes)",
+      "parent_massif": "Préalpes du Nord",
+      "summary": "Les Bornes bordent le lac à l'est et forment la première marche vers les Aravis ; les sources accessibles décrivent surtout leurs abords. La Tournette (2351 m) se prend tôt par sa face est depuis la Pointe de Talamarche (≈10h). Le Parmelan, Sous-Dine et la Pointe Percée servent de points de virage dans les grands triangles (100 à 200 km) entre Annecy, Aravis, Bauges et Chartreuse ; un pilote note des hésitations sur le Parmelan. Le col de Bluffy (631 m) est la porte par laquelle le nord-est s'engouffre vers Planfait. La vallée de Thônes canalise une brise montante vers Saint-Jean-de-Sixt et le Grand-Bornand : la partie haute est déduite de l'orientation SO « face à la brise de vallée » du Lachat, la partie basse est une déduction. Aucune donnée fiable trouvée sur les Glières, Sous-Dine et le Parmelan eux-mêmes.",
+      "bbox": [
+        6.15,
+        45.8,
+        6.55,
+        46.07
+      ],
+      "center": [
+        6.32,
+        45.93
+      ],
+      "breezes": [
+        {
+          "id": "brise-fier-thones",
+          "name": "Brise montante du Fier / vallée de Thônes (Annecy → Thônes → Grand-Bornand)",
+          "kind": "valley",
+          "waypoints": [
+            {
+              "name": "Annecy-le-Vieux",
+              "lon": 6.1439,
+              "lat": 45.9197,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Dingy-Saint-Clair",
+              "lon": 6.2245,
+              "lat": 45.9081,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Thônes",
+              "lon": 6.3257,
+              "lat": 45.8812,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Saint-Jean-de-Sixt",
+              "lon": 6.4099,
+              "lat": 45.9222,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Le Grand-Bornand",
+              "lon": 6.4411,
+              "lat": 45.9435,
+              "coord_quality": "source"
+            }
+          ],
+          "hours": "journée (été) ; brise descendante le soir (inversion attestée à l'atterrissage des Potais)",
+          "speed_kmh": {
+            "typical": null,
+            "max": null
+          },
+          "season": "avril-septembre",
+          "description": "Partie haute (Saint-Jean-de-Sixt → Grand-Bornand) appuyée sur les sources : le déco du Lachat est orienté SO/OSO « face à la brise de vallée » et l'atterrissage des Potais connaît « brise montante » et « brise descendante ». Partie basse (Annecy → défilé de Dingy → Thônes) : déduction géographique, non documentée. Le tracé suit le Fier puis le Nom.",
+          "confidence": "low",
+          "sources": [
+            "S15",
+            "S16"
+          ]
+        }
+      ],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "col-de-bluffy-ne",
+          "name": "Col de Bluffy : passage du nord-est vers le lac",
+          "kind": "other",
+          "lon": 6.227,
+          "lat": 45.872,
+          "coord_quality": "approx",
+          "radius_km": 2,
+          "conditions": "bise / vent de nord-est",
+          "description": "Grands Espaces : par nord-est, le vent « atteint le col de Bluffy » et met le décollage de Planfait sous le vent. Il s'agit d'un couloir entre la vallée de Thônes et le lac ; l'effet venturi précis n'est pas décrit. Coordonnées approximatives.",
+          "sources": [
+            "S9",
+            "S24"
+          ]
+        }
+      ],
+      "thermal_spots": [
+        {
+          "id": "pointe-de-talamarche",
+          "name": "Pointe de Talamarche",
+          "lon": 6.278,
+          "lat": 45.858,
+          "coord_quality": "approx",
+          "alt_m": 1800,
+          "best_hours": "matin (thermiques précoces), Tournette vers 10h",
+          "trigger": "crête exposée est, au soleil le matin",
+          "description": "XC Mag : déco exposé est, les thermiques y marchent tôt ; c'est la porte de la face est de la Tournette vers 10h. Coordonnées approximatives.",
+          "sources": [
+            "S5"
+          ]
+        }
+      ],
+      "soaring_spots": [],
+      "takeoffs": [
+        {
+          "id": "talamarche",
+          "name": "Pointe de Talamarche (rando-vol)",
+          "lon": 6.278,
+          "lat": 45.858,
+          "coord_quality": "approx",
+          "alt_m": 1800,
+          "orientations": [
+            "E"
+          ],
+          "description": "1000 m de montée depuis Villard-Dessus (Alex) ou La Sauffaz (plateau de Verel). Exposé est, thermiques tôt ; départ idéal pour la Tournette et les grands triangles. Coordonnées approximatives.",
+          "sources": [
+            "S5"
+          ]
+        }
+      ],
+      "landings": [],
+      "synoptic_effects": [
+        {
+          "wind": "Bise",
+          "effect": "NE : le flux passe par le col de Bluffy vers le lac et rend Planfait dangereux ; vent d'est fort près des Dents de Lanfon et du col des Frêtes.",
+          "sources": [
+            "S9"
+          ]
+        },
+        {
+          "wind": "NW",
+          "effect": "NO marqué au-dessus de 2000 m (observation d'un vol de 202 km) : confluences très turbulentes et dégueulantes marquées (-6 m/s pendant plus de 10 s) sur l'itinéraire Bornes–Aravis.",
+          "sources": [
+            "S17"
+          ]
+        }
+      ],
+      "xc_routes": [
+        {
+          "id": "triangle-tournette-percee-sousdine-arclusaz",
+          "name": "Triangle 100+ km Tournette / Pointe Percée / Sous-Dine / Dent d'Arclusaz",
+          "waypoints": [
+            {
+              "name": "Décollage de Planfait",
+              "lon": 6.223,
+              "lat": 45.8532,
+              "coord_quality": "source"
+            },
+            {
+              "name": "La Tournette",
+              "lon": 6.2867,
+              "lat": 45.83,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Pointe Percée",
+              "lon": 6.54,
+              "lat": 45.999,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Sous-Dine",
+              "lon": 6.345,
+              "lat": 46.0,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Dent d'Arclusaz (Bauges)",
+              "lon": 6.175,
+              "lat": 45.615,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Décollage de Planfait",
+              "lon": 6.223,
+              "lat": 45.8532,
+              "coord_quality": "source"
+            }
+          ],
+          "distance_km": 119,
+          "description": "XC Mag : « A classic 100+ km triangle to go for is La Tournette / Pointe Percée / Sous-Dine / Dent Arclusaz back to Planfait. » Le détail des transitions (traversée de la vallée de Thônes, retour par Annecy/Semnoz/Bauges vers la Dent d'Arclusaz) n'est pas documenté ; distance calculée sur waypoints approximatifs (balises de virage).",
+          "sources": [
+            "S4"
+          ]
+        },
+        {
+          "id": "talamarche-tournette",
+          "name": "Pointe de Talamarche → face est de la Tournette (départ matinal)",
+          "waypoints": [
+            {
+              "name": "Pointe de Talamarche",
+              "lon": 6.278,
+              "lat": 45.858,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "La Tournette",
+              "lon": 6.2867,
+              "lat": 45.83,
+              "coord_quality": "approx"
+            }
+          ],
+          "distance_km": 3,
+          "description": "Départ de rando-vol tôt (déco exposé est), on rejoint la face est de la Tournette vers 10h, porte d'entrée des grands cross vers l'est.",
+          "sources": [
+            "S5"
+          ]
+        }
+      ],
+      "tips": [
+        "Le Parmelan est un point de virage des triangles de 200 km (Saint-Hilaire–Parmelan, Praz-Vechin–Grenoble–Parmelan) [S23]",
+        "Sur le 202 km Chartreuse–Aravis–Albertville, le pilote a perdu du temps à hésiter au-dessus du Parmelan [S17]",
+        "Départ tôt pour la Tournette : Pointe de Talamarche, face est, vers 10h [S5]"
+      ]
+    },
+    {
+      "id": "aravis",
+      "name": "Chaîne des Aravis (Grand-Bornand, La Clusaz, col des Aravis, Charvin, Manigod, Sulens)",
+      "parent_massif": "Préalpes du Nord",
+      "summary": "Chaîne calcaire d'environ 30 km orientée SO–NE (Charvin 2409 m, Étale 2484 m, col des Aravis 1487 m jusqu'à la Pointe Percée), en balcon face au Mont-Blanc ; c'est une branche majeure des grands cross (triangle plat de 202 km Chartreuse–Aravis–Albertville). Les décos de station sont orientés pour décoller face à la brise de vallée qui remonte de Thônes vers le nord-est : Lachat au Grand-Bornand (SO, 2100 m), Crêt du Merle (NO) et Beauregard à La Clusaz. À l'atterrissage des Potais (vallée du Bouchet), la brise s'inverse en fin de journée : PTU main gauche en brise montante, main droite en brise descendante. Par nord-ouest marqué au-dessus de 2000 m, les confluences de brise deviennent très turbulentes et les dégueulantes fortes (-6 m/s pendant plus de 10 s). Les sources accessibles ne donnent pas de détail sur les convergences de la chaîne, Manigod/Sulens, le Charvin ni l'effet de foehn.",
+      "bbox": [
+        6.33,
+        45.78,
+        6.6,
+        46.03
+      ],
+      "center": [
+        6.45,
+        45.89
+      ],
+      "breezes": [
+        {
+          "id": "brise-vallee-bouchet",
+          "name": "Brise de la vallée du Bouchet (Grand-Bornand)",
+          "kind": "valley",
+          "waypoints": [
+            {
+              "name": "Le Grand-Bornand",
+              "lon": 6.4411,
+              "lat": 45.9435,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Atterrissage des Potais (vallée du Bouchet)",
+              "lon": 6.46,
+              "lat": 45.937,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "montante en journée, descendante en fin de journée/soirée",
+          "speed_kmh": {
+            "typical": null,
+            "max": null
+          },
+          "season": "été (et hiver pour l'atterrissage)",
+          "description": "Les Ailes du Grand-Bornand : au terrain des Potais, PTU main gauche par « brise montante », main droite par « brise descendante ». Office de tourisme : « aérologie saine en brise montante ou descendante ». Le sens de la brise montante (du village vers l'amont de la vallée, à l'est) est une déduction ; position du terrain approximative.",
+          "confidence": "medium",
+          "sources": [
+            "S15",
+            "S16"
+          ]
+        },
+        {
+          "id": "brise-thones-la-clusaz-aravis",
+          "name": "Brise montante Thônes → La Clusaz → col des Aravis",
+          "kind": "valley",
+          "waypoints": [
+            {
+              "name": "Thônes",
+              "lon": 6.3257,
+              "lat": 45.8812,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Les Villards-sur-Thônes",
+              "lon": 6.37,
+              "lat": 45.9,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "La Clusaz",
+              "lon": 6.4238,
+              "lat": 45.9052,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Col des Aravis",
+              "lon": 6.465,
+              "lat": 45.873,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "journée (été) – déduction",
+          "speed_kmh": {
+            "typical": null,
+            "max": null
+          },
+          "season": "avril-septembre",
+          "description": "Déduction : brise de vallée montant de Thônes vers La Clusaz et le col des Aravis, cohérente avec l'orientation des décos de station « face à la brise de vallée » dans les vallées voisines (Lachat). Non documentée explicitement pour La Clusaz.",
+          "confidence": "low",
+          "sources": []
+        }
+      ],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "aravis-confluences-no",
+          "name": "Confluences turbulentes par NO en altitude (chaîne des Aravis)",
+          "kind": "other",
+          "lon": 6.465,
+          "lat": 45.873,
+          "coord_quality": "approx",
+          "radius_km": 15,
+          "conditions": "flux de nord-ouest marqué au-dessus de 2000 m, journée thermique forte",
+          "description": "Retour du triangle de 202 km du 17/07/2019 : NO marqué au-dessus de 2000 m, « très turbulent aux confluences », dégueulantes marquées de plus de 10 s à -6 m/s. Localisation générale (chaîne), pas un point précis.",
+          "sources": [
+            "S17"
+          ]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [
+        {
+          "id": "lachat-grand-bornand",
+          "name": "Le Lachat (Le Grand-Bornand)",
+          "lon": 6.395,
+          "lat": 45.937,
+          "coord_quality": "approx",
+          "alt_m": 2100,
+          "orientations": [
+            "SW",
+            "W"
+          ],
+          "description": "Seul déco autorisé (arrêté municipal), à l'arrivée du télésiège du Lachat ; orientation principale SO/OSO « face à la brise de vallée », NE seulement par conditions calmes. Accès par la télécabine du Rosay puis le télésiège du Lachat, ou à pied par le col de Châtillon. Plus de 1000 m de dénivelé. Coordonnées approximatives.",
+          "sources": [
+            "S15",
+            "S16"
+          ]
+        },
+        {
+          "id": "cret-du-merle",
+          "name": "Crêt du Merle (La Clusaz)",
+          "lon": 6.433,
+          "lat": 45.892,
+          "coord_quality": "approx",
+          "alt_m": 1473,
+          "orientations": [
+            "NW"
+          ],
+          "description": "Déco en haut d'un télésiège, orienté nord-ouest ; altitude 1473 ou 1513 m selon la source. Coordonnées approximatives.",
+          "sources": [
+            "S21"
+          ]
+        },
+        {
+          "id": "beauregard",
+          "name": "Beauregard (La Clusaz)",
+          "lon": 6.408,
+          "lat": 45.901,
+          "coord_quality": "approx",
+          "alt_m": 1700,
+          "orientations": [],
+          "description": "Déco en haut de la télécabine de Beauregard (~1700 m) ; orientation non trouvée. Coordonnées approximatives.",
+          "sources": [
+            "S21"
+          ]
+        },
+        {
+          "id": "petit-sulens",
+          "name": "Petit Sulens (rando-vol)",
+          "lon": 6.36,
+          "lat": 45.838,
+          "coord_quality": "approx",
+          "alt_m": 1759,
+          "orientations": [],
+          "description": "Rando-vol depuis le parking du col de Plan Bois ; orientation et aérologie non documentées dans les extraits. Coordonnées approximatives.",
+          "sources": [
+            "S20"
+          ]
+        }
+      ],
+      "landings": [
+        {
+          "id": "les-potais",
+          "name": "Les Potais (vallée du Bouchet, Le Grand-Bornand)",
+          "lon": 6.46,
+          "lat": 45.937,
+          "coord_quality": "approx",
+          "alt_m": null,
+          "description": "Seul atterrissage officiel du Lachat (été et hiver). PTU main gauche par brise montante, main droite par brise descendante. Coordonnées approximatives.",
+          "sources": [
+            "S15",
+            "S16"
+          ]
+        }
+      ],
+      "synoptic_effects": [
+        {
+          "wind": "NW",
+          "effect": "NO marqué au-dessus de 2000 m : les thermiques restent exploitables, mais les confluences sont très turbulentes et les dégueulantes fortes (-6 m/s pendant plus de 10 s).",
+          "sources": [
+            "S17"
+          ]
+        },
+        {
+          "wind": "NE",
+          "effect": "Décollage du Lachat en NE possible seulement par conditions calmes.",
+          "sources": [
+            "S15"
+          ]
+        }
+      ],
+      "xc_routes": [
+        {
+          "id": "annecy-aravis-mont-blanc",
+          "name": "Annecy → Aravis → vers le Mont-Blanc",
+          "waypoints": [
+            {
+              "name": "Dents de Lanfon",
+              "lon": 6.2344,
+              "lat": 45.8653,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "La Tournette",
+              "lon": 6.2867,
+              "lat": 45.83,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Mont Charvin",
+              "lon": 6.44,
+              "lat": 45.81,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Col des Aravis",
+              "lon": 6.465,
+              "lat": 45.873,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "L'Étale",
+              "lon": 6.456,
+              "lat": 45.859,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Pointe Percée",
+              "lon": 6.54,
+              "lat": 45.999,
+              "coord_quality": "approx"
+            }
+          ],
+          "distance_km": 44,
+          "description": "XC Mag : depuis les Dents de Lanfon, les pilotes partent « east into the bigger mountains and towards Mt Blanc ». Le tracé Tournette → Charvin → col des Aravis → Étale → Pointe Percée (le long de la chaîne SO–NE) et les transitions sont une déduction ; aucune source accessible ne précise où recharger. Attention aux confluences turbulentes par NO en altitude.",
+          "confidence": "low",
+          "sources": [
+            "S4",
+            "S17"
+          ]
+        }
+      ],
+      "tips": [
+        "Chaîne d'environ 30 km SO–NE entre le Charvin et l'Étale, puis jusqu'à la Pointe Percée : un axe continu pour les grands cross [S24]",
+        "Grands triangles (202 km Chartreuse–Aravis–Albertville) : environ 25 km/h de moyenne, départ vers 11h30 [S17]",
+        "Grand-Bornand : seul le Lachat est autorisé ; NE uniquement par calme [S15]"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Col de la Forclaz, Talloires – infos pratiques site",
+      "url": "https://grandsespaces.com/en/paragliding-school-annecy/practical-info-2/forclaz-takeoff/",
+      "publisher": "École Les Grands Espaces (Annecy)",
+      "type": "web",
+      "lang": "en",
+      "notes": "Brise de vallée importante (privilégier faces O/NO) ; N/NE fort : Planfait turbulent, Forclaz parfois volable ; Forclaz plus sensible au sud que Planfait ; faces SE généreuses mais turbulentes ; brise descendante SO de 50-100 m sur faces est des Bauges (Charbon, Roc des Bœufs) sous brise N -> zone ascendante entre atterro et lac. Lu via extraits de moteur de recherche (fetch bloqué)."
+    },
+    {
+      "id": "S2",
+      "title": "Le site de vol d'Annecy",
+      "url": "https://www.annecy-vol-libre.com/infos/le-site-de-vol-dannecy/",
+      "publisher": "École Annecy Vol Libre",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Déco Forclaz 1240 m ; brise souvent soutenue l'après-midi ; Doussard : PTU main droite posé face N (lac), PT8 posé face S (Faverges) ; Planfait NO/O/SO, gradient à l'atterro par brise soutenue. Lu via extraits de recherche."
+    },
+    {
+      "id": "S3",
+      "title": "Paragliding above Lake Annecy",
+      "url": "https://infos-parapente.com/en/paragliding-above-lake-annecy/",
+      "publisher": "Infos-Parapente",
+      "type": "web",
+      "lang": "en",
+      "notes": "Flux principal Annecy -> Doussard ; la brise tape le Roc des Bœufs (dynamique) puis continue vers la vallée de Faverges ou des Bauges ; petit tour du lac : Dents de Lanfon mini 1900 m pour transiter au Roc des Bœufs."
+    },
+    {
+      "id": "S4",
+      "title": "Guide to Annecy, France",
+      "url": "https://xcmag.com/travel-guide/guide-to-annecy-france/",
+      "publisher": "Cross Country Magazine",
+      "type": "web",
+      "lang": "en",
+      "notes": "Brise de vallée du NO le long du lac, ~13h30 un bon jour ; crêtes exposées ouest jusqu'aux Dents de Lanfon ; Planfait part plus tôt ; triangle 100+ km Tournette / Pointe Percée / Sous-Dine / Dent d'Arclusaz / Planfait."
+    },
+    {
+      "id": "S5",
+      "title": "Annecy's Secret Sites: Pointe de Talamarche",
+      "url": "https://xcmag.com/travel-guide/annecys-secret-sites-pointe-de-talamarche/",
+      "publisher": "Cross Country Magazine",
+      "type": "web",
+      "lang": "en",
+      "notes": "Déco 1800 m exposé est, 1000 m de montée depuis Villard-Dessus (Alex) ou La Sauffaz ; Tournette par sa face est vers 10h."
+    },
+    {
+      "id": "S6",
+      "title": "Annecy's Secret Sites: Entrevernes",
+      "url": "https://xcmag.com/travel-guide/annecys-secret-sites-entrevernes/",
+      "publisher": "Cross Country Magazine",
+      "type": "web",
+      "lang": "en",
+      "notes": "Déco du matin, premiers thermiques ; à +300 m transiter vers la face est raide du Roc des Bœufs ou vers le Charbon."
+    },
+    {
+      "id": "S7",
+      "title": "Annecy's Secret Sites: Semnoz",
+      "url": "https://xcmag.com/travel-guide/annecys-secret-sites-semnoz/",
+      "publisher": "Cross Country Magazine",
+      "type": "web",
+      "lang": "en",
+      "notes": "Crête exposée ouest sur ~35 km vers le sud ; aller-retour 70 km facile."
+    },
+    {
+      "id": "S8",
+      "title": "Annecy: Le Grand Tour du Lac",
+      "url": "https://xcmag.com/fly-better/paragliding-techniques-paramotoring-skills/annecy-le-grand-tour-du-lac/",
+      "publisher": "Cross Country Magazine",
+      "type": "web",
+      "lang": "en",
+      "notes": "Le grand tour du lac passe au-dessus de la bordure de la ville d'Annecy."
+    },
+    {
+      "id": "S9",
+      "title": "Site de Planfait – infos pratiques",
+      "url": "https://grandsespaces.com/en/paragliding-school-annecy/practical-info-2/planfait-takeoff/",
+      "publisher": "École Les Grands Espaces (Annecy)",
+      "type": "web",
+      "lang": "en",
+      "notes": "916 m, 400 m au-dessus de Perroix ; brise de vallée très souvent dominante ; NE : vent par le col de Bluffy, déco sous le vent, très turbulent voire dangereux ; Dents de Lanfon / col des Frêtes exposés au vent d'est."
+    },
+    {
+      "id": "S10",
+      "title": "Barbules Wiki – Décollage Col de la Forclaz / Site Annecy",
+      "url": "http://barbules.fr/index.php/Decollage:COL_DE_LA_FORCLAZ",
+      "publisher": "Barbules (wiki communautaire des sites)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Forclaz 45°49'23\"N 6°15'20\"E, 1224 m, O/ONO/NO ; Verthier 2048 m (finesse 2,7), Doussard salle polyvalente 4468 m (finesse 5,8), 460 m ; page Site:Annecy (https://barbules.fr/index.php/Site:Annecy) : Doussard technique/turbulent par NE, Coche Cabane délicat par N (forts rouleaux)."
+    },
+    {
+      "id": "S11",
+      "title": "Barbules Wiki – Atterrissage Verthier",
+      "url": "http://barbules.fr/index.php/Atterrissage:VERTHIER",
+      "publisher": "Barbules",
+      "type": "web",
+      "lang": "fr",
+      "notes": "470 m ; gradient par vent du nord, turbulent par vent fort."
+    },
+    {
+      "id": "S12",
+      "title": "FFVL – Terrain Col de la Forclaz – Montmin [1447] et Coche Cabanne [1259]",
+      "url": "https://federation.ffvl.fr/terrain/1447",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Conditions idéales : léger SO + brise du lac ; secteurs favorables N, O, NO ; éviter sud fort (lignes HT, route en approche dos au lac) ; délicat par nord (forts rouleaux) – attribution 1447 vs 1259 ambiguë. Fiche 1259 : https://federation.ffvl.fr/terrain/1259"
+    },
+    {
+      "id": "S13",
+      "title": "Les sites de parapente de Talloires-Montmin (smartmap)",
+      "url": "https://www.talloires-lac-annecy.com/en/move/aerial-sports/paragliding-sites",
+      "publisher": "Office de tourisme Talloires-Montmin",
+      "type": "web",
+      "lang": "en",
+      "notes": "Forclaz 1280 m ; Planfait O/SO 950 m, facile sauf vent de travers, très fréquenté ; Coche Cabane 1190 m ; Perroix N/S ; club Les Chamois Volants gère Planfait et Perroix. Coordonnées Planfait 45.8532, 6.223 via smartmap (https://smartmap.talloires-lac-annecy.com/en/activities/planfait-paragliding-take-off-site)."
+    },
+    {
+      "id": "S14",
+      "title": "Aire d'atterrissage de Doussard (fiche Apidae)",
+      "url": "https://www.haute-savoie-tourisme.org/loisirs/lieux-sportifs/sites-d-envol-et-d-atterissage/220456-aire-d-atterrissage-de-doussard",
+      "publisher": "Haute-Savoie Tourisme / Auvergne-Rhône-Alpes Tourisme",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Fin de journée : brise descendante du Taillefer et du Charbon qui glisse sous la brise de vallée -> poser face au village alors qu'à 100 m on est encore poussé par la brise. Attribution probable (extrait de recherche). Version AURA : https://www.auvergnerhonealpes-tourisme.com/en/fiches/paragliding-landing-doussard/"
+    },
+    {
+      "id": "S15",
+      "title": "Sites – Les Ailes du Grand-Bornand",
+      "url": "https://les-ailes-grandbornand.fr/sites/",
+      "publisher": "Club Les Ailes du Grand-Bornand",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Lachat 2100 m seul déco autorisé, orientation SO face à la brise de vallée, NE seulement par calme ; atterro Les Potais (vallée du Bouchet) : PTU main gauche brise montante, main droite brise descendante."
+    },
+    {
+      "id": "S16",
+      "title": "Parapente : décollage du Lachat – Le Grand-Bornand",
+      "url": "https://www.haute-savoie-tourisme.org/loisirs/lieux-sportifs/sites-d-envol-et-d-atterissage/74646-parapente-decollage-du-lachat",
+      "publisher": "Haute-Savoie Tourisme (Apidae)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Orientation principale O-S-O face à la brise de vallée, possible N-E ; atterro vallée du Bouchet : aérologie saine en brise montante ou descendante ; >1000 m de dénivelé."
+    },
+    {
+      "id": "S17",
+      "title": "De la Chartreuse aux Aravis en revenant par Albertville : le triangle plat 202 km du 17/07/19",
+      "url": "https://www.parapentepaysdegex.fr/post/le-triangle-du-17-07-19-de-la-chartreuse-aux-aravis-en-revenant-par-albertville-202-km",
+      "publisher": "École Parapente Pays de Gex",
+      "type": "web",
+      "lang": "fr",
+      "notes": "NO marqué >2000 m, très turbulent aux confluences, dégueulantes >10 s à -6 m/s ; hésitations sur le Parmelan ; 25 km/h de moyenne, départ 11h30."
+    },
+    {
+      "id": "S18",
+      "title": "Le Semnoz – sites de vol (Delta Club Annecy) / Parapente Semnoz (Bauges Parapente) / FFVL Semnoz Ouest [5078]",
+      "url": "http://deltaclubannecy.fr/club-delta-annecy/les-sites-de-vol/2:le-semnoz",
+      "publisher": "Delta Club Annecy ; Bauges Parapente ; FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Déco 1480 m, ≥900 m de dénivelé, fonctionne NO à SO, danger par vent du nord, régulier le matin, posé en haut possible, moins fréquenté. Autres URL : https://www.bauges-parapente.com/parapente-semnoz/ ; https://federation.ffvl.fr/terrain/5078 (résumé de recherche fusionné)."
+    },
+    {
+      "id": "S19",
+      "title": "Le grand Tour du Lac Annecy (récit)",
+      "url": "https://thermiquefrancilien.org/archives/2019_old/recits-des-membres/23-tour-lac-annecy-dominique.html",
+      "publisher": "Club Thermique Francilien",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Plafonds 2400 -> 2700 -> 3100 m ; Semnoz repère ; pertes d'altitude dans les transitions."
+    },
+    {
+      "id": "S20",
+      "title": "PARAPENTE : Rando-Vol Bivouac à SULENS + Praz d'Zeures",
+      "url": "https://www.trace-ta-route.com/parapente-aravis-randonnee-vol-bivouac-sulens/",
+      "publisher": "Blog Trace Ta Route",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Accès col de Plan Bois, décollage Petit Sulens 1759 m."
+    },
+    {
+      "id": "S21",
+      "title": "Le vol libre en parapente à La Clusaz / Informations pratiques Fluide Parapente",
+      "url": "https://www.visiter-laclusaz.com/activite/62-parapente/63-vol-libre-en-parapente",
+      "publisher": "Visiter La Clusaz ; Fluide Parapente",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Crêt du Merle (télésiège, 1473-1513 m, NO) ; Beauregard (télécabine, ~1700 m). Autre URL : https://www.fluide-parapente.fr/informations-pratiques/"
+    },
+    {
+      "id": "S22",
+      "title": "Atterrissage parapente Annecy : le site de Doussard",
+      "url": "https://www.deltaevasion.com/notre-univers/blog/atterrissage-parapente-annecy-doussard/",
+      "publisher": "École Delta Evasion",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Grand champ en fond de vallée près du lac, manches à air, zones biplace/écoles/autonomes ; « brise douce et stable, souvent ascendante l'après-midi » (texte commercial)."
+    },
+    {
+      "id": "S23",
+      "title": "Triangles plats 200 km Saint-Hilaire–Parmelan (01/06/19) et 199 km Praz-Vechin–Grenoble–Parmelan (08/06/19)",
+      "url": "https://www.parapentepaysdegex.fr/post/saint-hilaire-parmelan-par-les-bauges-et-retour-belledonne-le-triangle-plat-200-km-du-01-06-19",
+      "publisher": "École Parapente Pays de Gex",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Le Parmelan comme point de virage de grands triangles. Autre URL : https://www.parapentepaysdegex.fr/post/de-praz-vechin-%C3%A0-grenoble-en-revenant-par-le-parmelan-le-triangle-plat-199-km-du-08-06-19"
+    },
+    {
+      "id": "S24",
+      "title": "Dents de Lanfon / Aravis Range / Col des Aravis / Bornes Massif",
+      "url": "https://en.wikipedia.org/wiki/Dents_de_Lanfon",
+      "publisher": "Wikipedia",
+      "type": "web",
+      "lang": "en",
+      "notes": "Dents de Lanfon 1824 m (Veyrier au N, Lanfonnet et Tournette 2351 m au S) ; chaîne des Aravis ~30 km SO-NE, Étale 2484 m, Charvin 2409 m ; col des Aravis 1487 m ; col de Bluffy 631 m relie Annecy à Thônes."
+    },
+    {
+      "id": "S25",
+      "title": "Paragliding around Lake Annecy",
+      "url": "https://www.lacannecy.com/en/paragliding-around-lake-annecy/",
+      "publisher": "Lac Annecy Accueil et Découverte",
+      "type": "web",
+      "lang": "en",
+      "notes": "Tour du lac ~40 km en respectant les balises ; viser la face O du Roc des Bœufs le plus haut possible, ne pas transiter avant qu'il soit éclairé par l'ouest ; Entrevernes : déco du matin étroit entre les arbres. Attribution probable (résumé de recherche multi-pages)."
+    },
+    {
+      "id": "S26",
+      "title": "GeoNames cities1000 (via paquet reverse_geocoder 1.5.1)",
+      "url": "https://pypi.org/project/reverse_geocoder/",
+      "publisher": "GeoNames",
+      "type": "web",
+      "lang": "en",
+      "notes": "Coordonnées des villages (Annecy, Sevrier, Talloires, Doussard, Faverges, Thônes, Dingy-Saint-Clair, Saint-Jean-de-Sixt, Le Grand-Bornand, La Clusaz, Viuz-la-Chiesaz, Ugine...)."
+    },
+    {
+      "id": "S27",
+      "title": "Paragliding in Annecy (atterrissages Perroix, Doussard, Marlens)",
+      "url": "https://www.barnes-montblanc.com/en/news/to-do-at-lake-annecy-9/paragliding-in-annecy-41",
+      "publisher": "Barnes Mont-Blanc (page touristique)",
+      "type": "web",
+      "lang": "en",
+      "notes": "Marlens, atterrissage 450 m entre Faverges et Ugine ; Doussard 460 m. Attribution incertaine (résumé de recherche multi-pages)."
+    },
+    {
+      "id": "S28",
+      "title": "The Best Paragliding Sites in Annecy",
+      "url": "https://www.grandsespaces.com/en/blog/best-paragliding-sites-in-annecy",
+      "publisher": "École Les Grands Espaces",
+      "type": "web",
+      "lang": "en",
+      "notes": "Forclaz : plus de 2500 décollages/jour en pleine saison ; Planfait route la plus rapide vers les Dents de Lanfon en thermique."
+    }
+  ]
+}

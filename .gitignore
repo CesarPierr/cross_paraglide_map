@@ -1,0 +1,9 @@
+node_modules
+dist
+.cache
+*.local
+.DS_Store
+test-results
+playwright-report
+/tmp
+*.tsbuildinfo

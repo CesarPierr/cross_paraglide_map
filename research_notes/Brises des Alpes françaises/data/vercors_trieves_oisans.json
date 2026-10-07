@@ -1,0 +1,1332 @@
+{
+  "topic": "Vercors, Trièves, Matheysine, Oisans et cuvette grenobloise – brises et vents locaux",
+  "massifs": [
+    {
+      "id": "grenoble-cuvette",
+      "name": "Cuvette grenobloise (cluse de Voreppe, confluence Isère–Drac)",
+      "parent_massif": "Sillon alpin",
+      "summary": "Carrefour de trois vallées (Isère par la cluse de Voreppe, Grésivaudan, Drac/Romanche). En journée, la brise de vallée entre par la cluse de Voreppe depuis le NW et 'rafraîchit la ville lors des après-midi agréables' (S29) ; Monin (1962) attribue la prédominance des vents de NW de journée à Grenoble à cet effet de brise de vallée. Par déduction, ce flux alimente ensuite les brises montantes du Drac (vers Monteynard et le Trièves) et de la Romanche (vers l'Oisans). La nuit et en début de matinée l'écoulement s'inverse (brise de montagne ; 'Matinière' d'E à Saint-Étienne-de-Saint-Geoirs). Par flux synoptique de NW, le vent s'accélère dans la cluse et se détend sur Grenoble. Pour le cross, la cuvette est une zone basse et urbanisée de transition ; aucune source obtenue sur ses thermiques.",
+      "bbox": [
+        5.55,
+        45.03,
+        5.9,
+        45.33
+      ],
+      "center": [
+        5.7245,
+        45.1885
+      ],
+      "breezes": [
+        {
+          "id": "isere-voreppe-brise-montante",
+          "name": "Brise de vallée de NW par la cluse de Voreppe",
+          "kind": "valley",
+          "waypoints": [
+            {
+              "name": "Voreppe (cluse)",
+              "lon": 5.6361,
+              "lat": 45.2947,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Saint-Égrève",
+              "lon": 5.6829,
+              "lat": 45.2329,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Grenoble",
+              "lon": 5.7245,
+              "lat": 45.1885,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "après-midi par beau temps (horaire précis non donné par les sources)",
+          "speed_kmh": {
+            "typical": null,
+            "max": null
+          },
+          "season": "toute l'année par beau temps, surtout belle saison",
+          "description": "'La brise de vallée venant du nord-ouest rafraîchit la ville lors des après-midi agréables' ; cluse de Voreppe orientée SE–NW, vent soufflant principalement du NW vers le SE (S29/S30). Monin (1962) : à Grenoble, la prédominance des vents de NW de journée s'explique par un effet de brise de vallée (S28). Force non chiffrée dans les extraits obtenus.",
+          "confidence": "medium",
+          "sources": [
+            "S28",
+            "S29",
+            "S30"
+          ]
+        },
+        {
+          "id": "grenoble-matiniere-descendante",
+          "name": "Brise de montagne de fin de nuit ('Matinière') sortant vers la Bièvre",
+          "kind": "downvalley",
+          "waypoints": [
+            {
+              "name": "Grenoble",
+              "lon": 5.7245,
+              "lat": 45.1885,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Voreppe (cluse)",
+              "lon": 5.6361,
+              "lat": 45.2947,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Saint-Étienne-de-Saint-Geoirs",
+              "lon": 5.3464,
+              "lat": 45.3394,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "fin de nuit – début de matinée",
+          "speed_kmh": {
+            "typical": null,
+            "max": null
+          },
+          "season": "toute l'année",
+          "description": "Monin (1962) décrit la 'Matinière', vent d'E de fin de nuit et de début de matinée observé à Saint-Étienne-de-Saint-Geoirs, comme un effet de brise de montagne. Le tracé par la cluse de Voreppe est une déduction (la source ne détaille pas le trajet).",
+          "confidence": "low",
+          "sources": [
+            "S28"
+          ]
+        }
+      ],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "cluse-voreppe-acceleration",
+          "name": "Accélération du NW dans la cluse de Voreppe",
+          "kind": "venturi",
+          "lon": 5.6361,
+          "lat": 45.2947,
+          "radius_km": 4,
+          "coord_quality": "approx",
+          "conditions": "Flux synoptique de NW (surtout l'hiver, air froid et humide) ; brise de NW l'après-midi.",
+          "description": "Les vents forts dominants à Grenoble sont des vents de NW froids et humides qui s'accélèrent dans la cluse de Voreppe et se détendent en arrivant sur Grenoble (S29/S30).",
+          "sources": [
+            "S29",
+            "S30"
+          ]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [],
+      "landings": [],
+      "synoptic_effects": [
+        {
+          "wind": "NW",
+          "effect": "Le NW s'engouffre dans la cluse de Voreppe, y accélère puis se détend sur la cuvette ; il s'ajoute à la brise de vallée de NW de l'après-midi (S29/S30). Conséquences plus au sud (Drac/Monteynard renforcés) : voir massif Matheysine.",
+          "sources": [
+            "S29",
+            "S30"
+          ]
+        }
+      ],
+      "xc_routes": [],
+      "tips": [
+        "La brise de journée à Grenoble vient du NW (cluse de Voreppe) : par déduction, prévoir des atterrissages face au NW/N dans la cuvette l'après-midi [S28][S29]."
+      ]
+    },
+    {
+      "id": "vercors-nord",
+      "name": "Vercors Nord (Saint-Nizier/Moucherotte, Lans, Villard, Corrençon)",
+      "parent_massif": "Préalpes du Nord – Vercors",
+      "summary": "Plateau et vallée de Lans–Villard bordés à l'E par la barrière Moucherotte – Pic Saint-Michel qui domine Grenoble. À Lans (site de l'Aigle, orienté W), la brise est 'classiquement Nord Sud', s'oriente OSO quand le thermique est établi (dès 12h), est souvent forte et renforcée par le vent du nord, avec des rouleaux près du relief de la 'vierge' (S24). Au Moucherotte, la balise peut indiquer 15-25 km/h de NNE alors que le déco OSO se retrouve sous le vent d'un bon thermique (S9) : la crête sépare probablement le flux de la cuvette et celui du plateau (déduction). Par N fort, Montaud (bord NE du massif) est un site du soir thermodynamique avec départ en cross vers le sud (S8). Villard-de-Lans et Corrençon se volent selon l'orientation du jour, avec remontées l'hiver (S26). Aucune source obtenue sur Côte 2000 ni sur les convergences du plateau.",
+      "bbox": [
+        5.45,
+        44.98,
+        5.72,
+        45.3
+      ],
+      "center": [
+        5.59,
+        45.12
+      ],
+      "breezes": [
+        {
+          "id": "val-de-lans-brise",
+          "name": "Brise du val de Lans (N→S, renforcée par le nord)",
+          "kind": "valley",
+          "waypoints": [
+            {
+              "name": "Engins",
+              "lon": 5.6214,
+              "lat": 45.1953,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Lans-en-Vercors",
+              "lon": 5.5886,
+              "lat": 45.1278,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Villard-de-Lans",
+              "lon": 5.5531,
+              "lat": 45.0711,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "dès 12h, parfois forte en milieu d'après-midi (été) ; calme le matin",
+          "speed_kmh": {
+            "typical": 15,
+            "max": 25
+          },
+          "season": "printemps-été",
+          "description": "Site de l'Aigle : 'la brise est généralement orientée classiquement Nord Sud' ; quand le thermique est établi le flux s'oriente fréquemment OSO ; brise 'souvent forte', 'peut être renforcée par le vent du nord', déco 'souvent fortement alimenté' (S24, paraphrase). Valeurs km/h = interprétation de 'forte'. Le sens N→S et l'entrée par Engins sont une interprétation (déduction) : la source peut décrire l'axe sans le sens.",
+          "confidence": "medium",
+          "sources": [
+            "S24"
+          ]
+        },
+        {
+          "id": "aigle-brise-de-pente-oso",
+          "name": "Flux OSO montant sur le versant ouest (Aigle)",
+          "kind": "slope",
+          "waypoints": [
+            {
+              "name": "Lans-en-Vercors",
+              "lon": 5.5886,
+              "lat": 45.1278,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Déco de l'Aigle (Lans)",
+              "lon": 5.605,
+              "lat": 45.125,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "12h-17h (thermique établi)",
+          "speed_kmh": {
+            "typical": 15,
+            "max": 25
+          },
+          "season": "printemps-été",
+          "description": "Quand les conditions thermiques sont établies, le flux s'oriente fréquemment Ouest Sud-Ouest sur le site de l'Aigle, orienté ouest (S24).",
+          "confidence": "medium",
+          "sources": [
+            "S24"
+          ]
+        }
+      ],
+      "convergences": [
+        {
+          "id": "crete-saint-nizier-moucherotte",
+          "name": "Convergence probable de la crête Saint-Nizier – Moucherotte – Pic Saint-Michel",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                5.6311,
+                45.1686
+              ],
+              [
+                5.6373,
+                45.1502
+              ],
+              [
+                5.6153,
+                45.1033
+              ]
+            ]
+          },
+          "when": "après-midi thermique (heures non documentées)",
+          "mechanism": "Déduction : flux montant de la cuvette grenobloise sur la face E (balise du Moucherotte à 15-25 km/h de NNE selon S9) contre flux OSO montant le versant Lans (S24).",
+          "usage": "Le déco OSO du Moucherotte 'peut se trouver sous le vent d'un bon thermique' (S9) : se méfier d'un déco faussement calme ou arrière. Aucun usage cross documenté.",
+          "confidence": "low",
+          "sources": [
+            "S9",
+            "S24"
+          ]
+        }
+      ],
+      "hazards": [
+        {
+          "id": "aigle-vierge-rouleaux",
+          "name": "Rouleaux de brise à la 'vierge' (Aigle, Lans)",
+          "kind": "lee-rotor",
+          "lon": 5.605,
+          "lat": 45.125,
+          "radius_km": 0.5,
+          "coord_quality": "approx",
+          "conditions": "Brise forte de l'après-midi, renforcée par le N.",
+          "description": "'Le passage de la « vierge » à droite du déco est souvent turbulent à cause des rouleaux provoqués par la brise' (S24, paraphrase). Coordonnées approximatives (position de village/sommet, non vérifiée sur une fiche de site).",
+          "sources": [
+            "S24"
+          ]
+        },
+        {
+          "id": "moucherotte-deco-oso-sous-le-vent",
+          "name": "Déco OSO du Moucherotte sous le vent du thermique",
+          "kind": "other",
+          "lon": 5.6373,
+          "lat": 45.1502,
+          "radius_km": 1,
+          "coord_quality": "source",
+          "conditions": "Journées thermiques avec balise à 15-25 km/h de NNE.",
+          "description": "Conditions 'singulières' : balise à 15-25 km/h de NNE alors que le déco orienté OSO peut se trouver sous le vent d'un bon thermique (S9, attribution incertaine).",
+          "sources": [
+            "S9"
+          ]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [
+        {
+          "id": "moucherotte-nord",
+          "name": "Moucherotte (N) – FFVL 5262",
+          "lon": 5.6373,
+          "lat": 45.1502,
+          "alt_m": 1840,
+          "coord_quality": "source",
+          "orientations": [
+            "N"
+          ],
+          "description": "Déco à 1840 m, secteur favorable nord (S11). Un déco orienté OSO existe aussi près de la balise FFVL du Moucherotte (environ 600 m de D+ depuis Saint-Nizier) ; il peut être sous le vent d'un thermique quand la balise indique du NNE (S9).",
+          "sources": [
+            "S11",
+            "S9"
+          ]
+        },
+        {
+          "id": "lans-aigle",
+          "name": "Site de l'Aigle (Lans-en-Vercors)",
+          "lon": 5.605,
+          "lat": 45.125,
+          "alt_m": null,
+          "coord_quality": "approx",
+          "orientations": [
+            "W"
+          ],
+          "description": "Site-école majeur du Vercors Nord : trois décos à 100, 200 et 300 m au-dessus de l'atterrissage. Idéal par vent calme de N, NO, O, SO, S ; calme le matin ; thermique dès 12h, parfois fort en milieu d'après-midi ; brise souvent forte. Géré par le CDVL, l'école ALTO et le club Lans en l'Air (S24). Le déco voisin du Belvédère (1401 m, W, volable NW à SW) est un autre site de Lans (S25). Coordonnées approximatives (position de village/sommet, non vérifiée sur une fiche de site).",
+          "sources": [
+            "S24",
+            "S25"
+          ]
+        }
+      ],
+      "landings": [
+        {
+          "id": "saint-nizier-terrain-3135",
+          "name": "Saint-Nizier – terrain FFVL 3135",
+          "lon": 5.6311,
+          "lat": 45.1686,
+          "alt_m": 1180,
+          "coord_quality": "source",
+          "description": "Terrain noté fermé au vol ; 0 décollage et 22 atterrissages en 2025 (sert d'atterrissage) (S10).",
+          "sources": [
+            "S10"
+          ]
+        }
+      ],
+      "synoptic_effects": [
+        {
+          "wind": "N",
+          "effect": "Renforce la brise du val de Lans, déco de l'Aigle souvent fortement alimenté (S24) ; balise du Moucherotte à 15-25 km/h de NNE possible (S9). Par N fort, Montaud est un 'site du soir thermodynamique très sympa, avec départ en cross vers le sud possible' (S8).",
+          "sources": [
+            "S24",
+            "S9",
+            "S8"
+          ]
+        },
+        {
+          "wind": "W",
+          "effect": "Vents faibles de W, NW ou SW : l'Aigle (vent calme N à S par l'W) et le Belvédère (NW à SW) sont volables (S24, S25).",
+          "sources": [
+            "S24",
+            "S25"
+          ]
+        }
+      ],
+      "xc_routes": [],
+      "tips": [
+        "À l'Aigle, éviter de passer près de la 'vierge' à droite du déco : rouleaux de brise [S24].",
+        "Par nord fort, Montaud est un site du soir thermodynamique avec départ en cross vers le sud possible [S8].",
+        "Sites gérés par des clubs actifs (Lans en l'Air, Tichodromes) ; écoles à Lans et Gresse [S27].",
+        "Au Moucherotte, une balise NNE 15-25 km/h peut cohabiter avec un déco OSO sous le vent du thermique : bien lire les cycles [S9]."
+      ]
+    },
+    {
+      "id": "vercors-est-sud",
+      "name": "Vercors Est et Sud (Gresse, Serpaton, Grand Veymont, Mont Aiguille ; Vassieux–Rousset–Font d'Urle)",
+      "parent_massif": "Préalpes du Nord – Vercors",
+      "summary": "Le Balcon Est du Vercors, des Deux Sœurs au Grand Veymont et au Mont Aiguille, domine la vallée de la Gresse et le Trièves (S20). Le Serpaton (col à 1586 m) en est le site phare : le Serpaton Ouest se vole par W/NW et idéalement en fin d'après-midi 'quand la brise de NNO est constante' (thermo-dynamique) (S17) ; le Serpaton Est a pour secteurs défavorables N, NE, SW, W et NW (S18), donc sous le vent par flux d'ouest. La brise de NNO de fin de journée est interprétée comme la brise montante de la vallée de la Gresse depuis Vif (déduction). Des pilotes font régulièrement des allers-retours sur le Vercors jusqu'au Mont Aiguille (S23). AUCUNE source obtenue sur le Vercors Sud (Vassieux, col du Rousset, Font d'Urle), le Royans/Presles, le soaring de la falaise est par vent d'E, ni sur les rotors détaillés par W.",
+      "bbox": [
+        5.25,
+        44.7,
+        5.7,
+        45.0
+      ],
+      "center": [
+        5.52,
+        44.88
+      ],
+      "breezes": [
+        {
+          "id": "gresse-brise-nno",
+          "name": "Brise de NNO de la vallée de la Gresse (fin d'après-midi)",
+          "kind": "valley",
+          "waypoints": [
+            {
+              "name": "Vif",
+              "lon": 5.6714,
+              "lat": 45.0553,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Saint-Guillaume",
+              "lon": 5.6097,
+              "lat": 44.9533,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Gresse-en-Vercors",
+              "lon": 5.5636,
+              "lat": 44.9006,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "fin d'après-midi (été)",
+          "speed_kmh": {
+            "typical": 15,
+            "max": null
+          },
+          "season": "printemps-été",
+          "description": "Fiche FFVL Serpaton Ouest : conditions idéales 'en fin d'après-midi quand la brise de NNO est constante', vol thermo-dynamique (S17). La valeur de 15 km/h est une interprétation (brise suffisante pour du thermo-dynamique). Tracé Vif → Gresse = déduction topographique (vallée de la Gresse ouverte au N vers le Drac).",
+          "confidence": "medium",
+          "sources": [
+            "S17"
+          ]
+        }
+      ],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "balcon-est-sous-le-vent-ouest",
+          "name": "Versant est (Serpaton Est, balcon est) sous le vent par flux d'ouest",
+          "kind": "lee-rotor",
+          "lon": 5.6,
+          "lat": 44.915,
+          "radius_km": 6,
+          "coord_quality": "approx",
+          "conditions": "Flux synoptique de W/NW (aussi N, NE, SW d'après la fiche du Serpaton Est).",
+          "description": "Secteurs défavorables du Serpaton Est – Pas du Serpaton : N, NE, SW, W, NW (S18). L'extension à tout le pied du balcon est (Gresse, Grand Veymont, Mont Aiguille) et la présence de rotors sont une déduction non sourcée. Coordonnées approximatives (position de village/sommet, non vérifiée sur une fiche de site).",
+          "sources": [
+            "S18"
+          ]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [
+        {
+          "id": "serpaton-ouest-thermodynamique",
+          "name": "Serpaton Ouest (thermo-dynamique de fin de journée)",
+          "lon": 5.6,
+          "lat": 44.915,
+          "coord_quality": "approx",
+          "wind_dirs": [
+            "NNW",
+            "NW",
+            "W"
+          ],
+          "description": "Secteurs favorables O et NO ; idéal en fin d'après-midi quand la brise de NNO est constante (S17). Coordonnées approximatives (position de village/sommet, non vérifiée sur une fiche de site).",
+          "sources": [
+            "S17"
+          ]
+        }
+      ],
+      "takeoffs": [
+        {
+          "id": "serpaton-ouest-500",
+          "name": "Le Serpaton Ouest 500 (FFVL 1234)",
+          "lon": 5.6,
+          "lat": 44.915,
+          "alt_m": null,
+          "coord_quality": "approx",
+          "orientations": [
+            "W",
+            "NW"
+          ],
+          "description": "Vent favorable O et NO ; fin d'après-midi par brise de NNO constante (S17). Col du Serpaton à 1586 m, environ 45 min de Grenoble (S20) ; altitude exacte du déco non obtenue. Autre terrain référencé : Serpaton – Col du Fau (S19). Coordonnées approximatives (position de village/sommet, non vérifiée sur une fiche de site).",
+          "sources": [
+            "S17",
+            "S20",
+            "S19"
+          ]
+        },
+        {
+          "id": "serpaton-est",
+          "name": "Le Serpaton Est – Le Pas du Serpaton (FFVL 1235)",
+          "lon": 5.6,
+          "lat": 44.915,
+          "alt_m": null,
+          "coord_quality": "approx",
+          "orientations": [
+            "E"
+          ],
+          "description": "Secteurs défavorables : N, NE, SW, W, NW (S18). Vue sur le Balcon Est du Vercors (S20). Orientation E déduite du nom. Coordonnées approximatives (position de village/sommet, non vérifiée sur une fiche de site).",
+          "sources": [
+            "S18",
+            "S20"
+          ]
+        }
+      ],
+      "landings": [],
+      "synoptic_effects": [
+        {
+          "wind": "W",
+          "effect": "Serpaton Ouest volable par O/NO (S17) ; Serpaton Est défavorable par W, NW et SW (S18) → versant est sous le vent.",
+          "sources": [
+            "S17",
+            "S18"
+          ]
+        },
+        {
+          "wind": "N",
+          "effect": "N et NE défavorables au Serpaton Est (S18).",
+          "sources": [
+            "S18"
+          ]
+        }
+      ],
+      "xc_routes": [
+        {
+          "id": "vercors-barriere-est-moucherotte-mont-aiguille",
+          "name": "Barrière est du Vercors : Moucherotte → Grand Veymont → Mont Aiguille",
+          "waypoints": [
+            {
+              "name": "Moucherotte (déco N, FFVL 5262)",
+              "lon": 5.6373,
+              "lat": 45.1502,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Pic Saint-Michel",
+              "lon": 5.6153,
+              "lat": 45.1033,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Grand Veymont",
+              "lon": 5.5236,
+              "lat": 44.8697,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Mont Aiguille",
+              "lon": 5.5531,
+              "lat": 44.8419,
+              "coord_quality": "approx"
+            }
+          ],
+          "distance_km": 36,
+          "description": "Itinéraire largement déduit : la source dit seulement que de nombreux pilotes font des allers-retours au-dessus du Vercors, notamment au Mont Aiguille (S23). La brise de N/NNO du Trièves et de la Gresse l'après-midi (S17) donnerait un vent arrière vers le sud ; le versant est est piégeux par W (S18). Transitions et points de recharge non documentés ; un fil de forum « Vercors et Dévoluy » (techniques de cross) existe mais n'a pas pu être lu (S33).",
+          "confidence": "low",
+          "sources": [
+            "S23",
+            "S17",
+            "S18",
+            "S33"
+          ]
+        }
+      ],
+      "tips": [
+        "Serpaton Ouest : attendre la fin d'après-midi et une brise de NNO constante pour le thermo-dynamique [S17]."
+      ]
+    },
+    {
+      "id": "trieves",
+      "name": "Trièves (Mens, Monestier-de-Clermont, Courtet, col de la Croix-Haute)",
+      "parent_massif": "Préalpes – Trièves",
+      "summary": "Bassin ouvert entre la barrière est du Vercors et l'Obiou/Dévoluy. Les sources de kite de Monteynard attribuent le vent du nord du lac à la 'forte chaleur au fond de la vallée du Trièves' combinée aux ascendances sur les sommets (S3) : l'après-midi, le nord du Trièves est donc aspiré par un flux de N à NNO venu de Grenoble par le Drac et la Gresse (S17). Par bise, 'le Nord s'étalant dans la vallée', le Courtet (orienté O, au pied du Grand Ferrand et de l'Obiou) vole souvent quand rien ne vole ailleurs (S8, S21). Sites de Mens/Châtel et Courtet utilisés par les écoles (S20, S22). AUCUNE source obtenue sur la convergence du Trièves, l'aérologie de Mens/Châtel ou le venturi du col de la Croix-Haute.",
+      "bbox": [
+        5.5,
+        44.65,
+        5.95,
+        44.98
+      ],
+      "center": [
+        5.72,
+        44.82
+      ],
+      "breezes": [],
+      "convergences": [],
+      "hazards": [],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [
+        {
+          "id": "courtet",
+          "name": "Le Courtet (Saint-Baudille-et-Pipet)",
+          "lon": 5.7783,
+          "lat": 44.7853,
+          "alt_m": null,
+          "coord_quality": "approx",
+          "orientations": [
+            "W"
+          ],
+          "description": "'Site en O, mais le Nord s'étalant dans la vallée, il permet souvent de voler quand ça ne vole pas ailleurs' (S8) ; au pied du Grand Ferrand et de l'Obiou, réputé protégé des vents du nord (S21, S20). Position = village de Saint-Baudille-et-Pipet ; la position exacte du déco n'a pas été obtenue.",
+          "sources": [
+            "S8",
+            "S21",
+            "S20"
+          ]
+        }
+      ],
+      "landings": [],
+      "synoptic_effects": [
+        {
+          "wind": "Bise",
+          "effect": "Le nord 's'étale dans la vallée' du Trièves ; le Courtet (O) reste volable et fait partie des trois options principales par nord fort autour de Grenoble avec Montaud et Montlambert (S8, S21). Au nord du bassin, Monteynard passe à 12-20 nds (voir Matheysine).",
+          "sources": [
+            "S8",
+            "S21",
+            "S1"
+          ]
+        }
+      ],
+      "xc_routes": [],
+      "tips": [
+        "Par bise, se replier sur le Courtet (orienté O, protégé du nord) [S8][S21]."
+      ]
+    },
+    {
+      "id": "matheysine",
+      "name": "Matheysine et Drac (lac de Monteynard, lacs de Laffrey, La Mure, Sénépy)",
+      "parent_massif": "Préalpes – Matheysine",
+      "summary": "Secteur dominé par le vent du nord. Monteynard, 'deuxième lac le plus venté d'Europe', fonctionne l'été presque uniquement par N thermique (S1, S3, S4). Celui-ci se lève entre 11h et 13h, culmine vers 15h, faiblit vers 16h30-18h et reprend parfois vers 17h plus orienté ouest. Il souffle à 8-15 nds sans vent synoptique et à 12-20 nds avec du nord en altitude. Mécanisme : réchauffement des pentes et du fond du Trièves, canalisation et venturi dans les anciennes gorges du Drac (S3-S5). NE ou NW rendent le plan d'eau plus turbulent, le sud plus 'rodéo' (S1). Sur le plateau matheysin, Laffrey a aussi un vent dominant de N thermique de 10-15 nds, canalisé par le plateau (S6). Le site de vol de Laffrey se vole par bise légère (<15 km/h) avec du thermique, ou en dynamique pur par 20-30 km/h, et s'évite par N fort et instable (S8). Déco du Sénépy (alpage, 1365 m, Saint-Arey) géré par Envol Sud Isère (S31). Pour le cross, le couloir du Drac est un tube de vent de N l'après-midi : transitions basses et atterrissages à faire face au N.",
+      "bbox": [
+        5.6,
+        44.83,
+        5.9,
+        45.13
+      ],
+      "center": [
+        5.73,
+        44.97
+      ],
+      "breezes": [
+        {
+          "id": "drac-monteynard-nord",
+          "name": "Vent du nord thermique du Drac / lac de Monteynard",
+          "kind": "valley",
+          "waypoints": [
+            {
+              "name": "Le Pont-de-Claix",
+              "lon": 5.6983,
+              "lat": 45.1233,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Vif",
+              "lon": 5.6714,
+              "lat": 45.0553,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Saint-Georges-de-Commiers",
+              "lon": 5.7064,
+              "lat": 45.0453,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Barrage de Monteynard-Avignonet",
+              "lon": 5.6888,
+              "lat": 44.9636,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Treffort (plage)",
+              "lon": 5.6669,
+              "lat": 44.9236,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Mayres-Savel",
+              "lon": 5.7178,
+              "lat": 44.8836,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "levée 11h-13h (parfois ~13h), max ~15h, faiblit 16h30-18h ; reprise possible ~17h plus orientée W (été)",
+          "speed_kmh": {
+            "typical": 20,
+            "max": 37
+          },
+          "season": "été (beau temps)",
+          "layer_depth_m": "non documenté",
+          "description": "'Se lève en fin de matinée', 'entre 11h et 13h', 'souffle sur toutes les plages', le plus fort vers 15h puis faiblit jusqu'à 16h30 ; reprend vers 17h 'plus orienté ouest' (S1). 8-15 nds (15-28 km/h) par beau temps sans vent dominant ou avec un faible sud en altitude ; 12-20 nds (22-37 km/h) avec du nord dominant en altitude (S1). Mécanisme (paraphrase) : réchauffement des pentes, canalisation dans le couloir des anciennes gorges du Drac, forte chaleur au fond du Trièves + ascendances sur les sommets, venturi dans la vallée étroite du barrage ; 'essentiellement par vent du nord (bise et/ou thermique)' (S3-S5). Le tronçon amont Pont-de-Claix → Saint-Georges-de-Commiers est une déduction (continuité avec la brise de NW de la cuvette, S28).",
+          "confidence": "high",
+          "sources": [
+            "S1",
+            "S3",
+            "S4",
+            "S5",
+            "S2"
+          ]
+        },
+        {
+          "id": "laffrey-nord-plateau",
+          "name": "Vent du nord thermique des lacs de Laffrey (plateau matheysin)",
+          "kind": "plain-to-mountain",
+          "waypoints": [
+            {
+              "name": "Vizille",
+              "lon": 5.7714,
+              "lat": 45.0778,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Laffrey",
+              "lon": 5.7683,
+              "lat": 45.0131,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Saint-Théoffrey",
+              "lon": 5.7739,
+              "lat": 44.9947,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "La Mure",
+              "lon": 5.7883,
+              "lat": 44.9017,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "après-midi (été) – horaire précis non documenté",
+          "speed_kmh": {
+            "typical": 23,
+            "max": 28
+          },
+          "season": "été",
+          "description": "Direction dominante du N 'grâce à un phénomène thermique spécifique', vitesse moyenne 10 à 15 nœuds (18-28 km/h) ; la configuration du lac, niché sur le plateau matheysin, canalise ces vents du nord (S6, résumé). Base nautique au sud du grand lac (Saint-Théoffrey) (S7). Entrée par Vizille et prolongement vers La Mure = déduction.",
+          "confidence": "medium",
+          "sources": [
+            "S6",
+            "S7"
+          ]
+        }
+      ],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "monteynard-venturi-gorges-drac",
+          "name": "Venturi des anciennes gorges du Drac (Monteynard)",
+          "kind": "venturi",
+          "lon": 5.69,
+          "lat": 44.93,
+          "radius_km": 6,
+          "coord_quality": "approx",
+          "conditions": "Après-midi d'été (11h-18h), renforcé par la bise / N en altitude (jusqu'à ~20 nds).",
+          "description": "Le vent est 'accéléré par l'effet venturi de la vallée étroite du barrage' et canalisé par les parois raides des gorges (S3-S5, paraphrase). Couloir à éviter en transition basse et pour atterrir face au sud. Coordonnées approximatives (position de village/sommet, non vérifiée sur une fiche de site).",
+          "sources": [
+            "S3",
+            "S4",
+            "S5",
+            "S1"
+          ]
+        },
+        {
+          "id": "monteynard-sud-rafales",
+          "name": "Vent du sud irrégulier et rafaleux sur Monteynard",
+          "kind": "strong-breeze",
+          "lon": 5.69,
+          "lat": 44.93,
+          "radius_km": 6,
+          "coord_quality": "approx",
+          "conditions": "Flux synoptique de sud.",
+          "description": "Par vent du sud, la navigation devient plus 'rodéo', avec un vent irrégulier et des rafales brutales ; NE et NW donnent aussi un plan d'eau plus turbulent (S1).",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "id": "laffrey-nord-fort-instable",
+          "name": "Laffrey par nord fort et instable",
+          "kind": "other",
+          "lon": 5.7683,
+          "lat": 45.0131,
+          "radius_km": 2,
+          "coord_quality": "approx",
+          "conditions": "Bise forte + instabilité.",
+          "description": "'Il vaut mieux éviter d'y voler quand c'est Nord fort et instable' (S8).",
+          "sources": [
+            "S8"
+          ]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [
+        {
+          "id": "laffrey-dynamique-bise",
+          "name": "Laffrey (dynamique par bise)",
+          "lon": 5.7683,
+          "lat": 45.0131,
+          "coord_quality": "approx",
+          "wind_dirs": [
+            "N"
+          ],
+          "description": "'Soit légère bise (<15km/h) et un peu de thermique, soit 20 à 30kmh en dynamique pur' ; à éviter par N fort et instable (S8). Position = village de Laffrey ; la position exacte du déco n'a pas été obtenue.",
+          "sources": [
+            "S8"
+          ]
+        }
+      ],
+      "takeoffs": [
+        {
+          "id": "senepy-alpage",
+          "name": "Alpage du Sénépy (Saint-Arey)",
+          "lon": 5.74,
+          "lat": 44.87,
+          "alt_m": 1365,
+          "coord_quality": "approx",
+          "orientations": [],
+          "description": "Déco parapente à 1365 m dans un alpage (vaches), à 5 min à pied du parking ; géré par Envol Sud Isère (S31). Orientation non obtenue. Position approximative (commune de Saint-Arey).",
+          "sources": [
+            "S31"
+          ]
+        }
+      ],
+      "landings": [],
+      "synoptic_effects": [
+        {
+          "wind": "Bise",
+          "effect": "Monteynard passe de 8-15 nds à 12-20 nds de N (S1) : le couloir du Drac devient très venté l'après-midi. À Laffrey, voler soit par bise légère <15 km/h avec du thermique, soit en dynamique pur par 20-30 km/h ; éviter le N fort et instable (S8).",
+          "sources": [
+            "S1",
+            "S8"
+          ]
+        },
+        {
+          "wind": "S",
+          "effect": "Monteynard : vent irrégulier, rafales brutales ('rodéo') (S1).",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "wind": "NE",
+          "effect": "NE ou NW : vent plus turbulent sur Monteynard (S1).",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "wind": "Mistral",
+          "effect": "Monteynard est réputé pour des épisodes de mistral (vent synoptique de N) en plus de son thermique (S2).",
+          "sources": [
+            "S2"
+          ]
+        }
+      ],
+      "xc_routes": [],
+      "tips": [
+        "Le N de Monteynard est établi de ~13h à ~18h, avec un maximum vers 15h : éviter les transitions basses dans le couloir du Drac à ces heures [S1][S3].",
+        "Si la bise souffle en altitude, compter 12-20 nds au ras du lac [S1]."
+      ]
+    },
+    {
+      "id": "oisans-grandes-rousses",
+      "name": "Romanche et Oisans (Bourg-d'Oisans, Alpe d'Huez, Grandes Rousses)",
+      "parent_massif": "Alpes internes – Oisans",
+      "summary": "La Romanche rejoint le Drac à Champ-sur-Drac (S32). Plaine de Bourg-d'Oisans au pied de l'Alpe d'Huez. Les fiches FFVL insistent toutes sur la brise de vallée : 'pouvant être fortes à partir de la mi-journée (en été surtout)' (Éclose), 'pouvant devenir fortes et turbulentes' (Stade municipal), 'fortes (à partir de la mi-journée et en été)' (La Minardière), 'fortes brises de vallée l'été' (Le Vert) (S13-S16). Le matin est calme et les décos sont alimentés par les brises de pente montant de Huez (S13). Le déco 2700 (2612 m) est idéal par faible N/NW (S12). Stratégie : voler le matin et en début d'après-midi, poser avant que la brise ne forcisse. Direction montante (de Vizille vers Bourg-d'Oisans) déduite de la topographie. AUCUNE source obtenue sur les Deux Alpes, Venosc, Ornon, Taillefer ou la traversée Grenoble–Oisans.",
+      "bbox": [
+        5.75,
+        44.9,
+        6.3,
+        45.2
+      ],
+      "center": [
+        6.03,
+        45.07
+      ],
+      "breezes": [
+        {
+          "id": "romanche-brise-montante",
+          "name": "Brise de vallée de la Romanche vers Bourg-d'Oisans",
+          "kind": "valley",
+          "waypoints": [
+            {
+              "name": "Vizille",
+              "lon": 5.7714,
+              "lat": 45.0778,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Séchilienne",
+              "lon": 5.8372,
+              "lat": 45.0542,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Livet-et-Gavet (gorges)",
+              "lon": 5.9333,
+              "lat": 45.1047,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Rochetaillée",
+              "lon": 6.005,
+              "lat": 45.1144,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Le Bourg-d'Oisans",
+              "lon": 6.0306,
+              "lat": 45.0561,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "à partir de la mi-journée, après-midi (surtout en été)",
+          "speed_kmh": {
+            "typical": 20,
+            "max": 35
+          },
+          "season": "été",
+          "description": "Atterrissages de Bourg-d'Oisans : 'Attention aux brises de vallée pouvant devenir fortes et turbulentes' (S14) ; 'Les brises de vallée peuvent être fortes (à partir de la mi-journée et en été)' (S15) ; 'Attention aux fortes brises de vallée l'été' (S16). Valeurs km/h = interprétation de 'fortes'. Le sens (montant de Vizille par les gorges de Livet-Gavet vers la plaine) est une déduction topographique.",
+          "confidence": "medium",
+          "sources": [
+            "S14",
+            "S15",
+            "S16",
+            "S13"
+          ]
+        },
+        {
+          "id": "huez-brise-de-pente",
+          "name": "Brises de pente montant de Huez vers l'Alpe d'Huez",
+          "kind": "slope",
+          "waypoints": [
+            {
+              "name": "Le Bourg-d'Oisans",
+              "lon": 6.0306,
+              "lat": 45.0561,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Huez",
+              "lon": 6.0631,
+              "lat": 45.0839,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Alpe d'Huez – L'Éclose",
+              "lon": 6.064,
+              "lat": 45.089,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "matinée (calme) à mi-journée",
+          "speed_kmh": {
+            "typical": null,
+            "max": null
+          },
+          "season": "printemps-été",
+          "description": "Éclose : conditions idéales par matinées calmes, déco alimenté par les brises de pente montant de Huez (S13).",
+          "confidence": "medium",
+          "sources": [
+            "S13"
+          ]
+        }
+      ],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "bourg-oisans-atterrissages-brise",
+          "name": "Atterrissages de Bourg-d'Oisans : brise forte et turbulente",
+          "kind": "landing-turbulence",
+          "lon": 6.0306,
+          "lat": 45.0561,
+          "radius_km": 3,
+          "coord_quality": "approx",
+          "conditions": "À partir de la mi-journée, surtout en été.",
+          "description": "Avertissements FFVL sur les terrains Stade municipal, La Minardière et Le Vert (S14-S16). Coordonnées approximatives (position de village/sommet, non vérifiée sur une fiche de site).",
+          "sources": [
+            "S14",
+            "S15",
+            "S16"
+          ]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [
+        {
+          "id": "alpe-huez-eclose",
+          "name": "Alpe d'Huez – Éclose (FFVL 1923)",
+          "lon": 6.064,
+          "lat": 45.089,
+          "alt_m": 1747,
+          "coord_quality": "approx",
+          "orientations": [],
+          "description": "Commune de Huez, 1747 m. Matinées calmes, déco alimenté par les brises de pente montant de Huez ; 'Attention aux brises de vallée pouvant être fortes à partir de la mi-journée (en été surtout)' (S13). Orientation non obtenue. Coordonnées approximatives (position de village/sommet, non vérifiée sur une fiche de site).",
+          "sources": [
+            "S13"
+          ]
+        },
+        {
+          "id": "alpe-huez-2700",
+          "name": "Alpe d'Huez – 2700 (FFVL 2342)",
+          "lon": 6.095,
+          "lat": 45.11,
+          "alt_m": 2612,
+          "coord_quality": "approx",
+          "orientations": [
+            "N",
+            "NW",
+            "W"
+          ],
+          "description": "Déco à 2612 m ; secteurs favorables N, W, NW, idéal par faible N et NW (S12). Atterrissage dans la plaine de Bourg-d'Oisans ou à la station. Position très approximative (domaine d'altitude au-dessus de la station) : à vérifier.",
+          "sources": [
+            "S12",
+            "S34"
+          ]
+        }
+      ],
+      "landings": [
+        {
+          "id": "bourg-oisans-atterrissages",
+          "name": "Atterrissages de Bourg-d'Oisans (Stade municipal, La Minardière, Le Vert)",
+          "lon": 6.0306,
+          "lat": 45.0561,
+          "alt_m": null,
+          "coord_quality": "approx",
+          "description": "Trois terrains FFVL dans la plaine, le long de la Romanche (S34) ; tous signalent des brises de vallée fortes, voire turbulentes, dès la mi-journée en été (S14-S16). Position = bourg ; positions exactes des terrains non obtenues.",
+          "sources": [
+            "S14",
+            "S15",
+            "S16",
+            "S34"
+          ]
+        }
+      ],
+      "synoptic_effects": [
+        {
+          "wind": "N",
+          "effect": "Le déco 2700 (2612 m) est idéal par faible N et NW ; secteurs favorables N, W, NW (S12).",
+          "sources": [
+            "S12"
+          ]
+        }
+      ],
+      "xc_routes": [],
+      "tips": [
+        "Voler l'Alpe d'Huez le matin (matinées calmes à l'Éclose) et poser à Bourg-d'Oisans avant que la brise de vallée ne devienne forte, dès la mi-journée en été [S13][S15]."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Kitesurf au Lac de Monteynard : un paradis alpin pour les riders (et pages sœurs kite-surf-lac-de-monteynard, lac-de-monteynard-spot-kitesurf)",
+      "url": "https://vvanat.fr/blog/kitesurf-lac-de-monteynard/",
+      "publisher": "VVA Natation (blog, agrégateur secondaire)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Thermique de N : levée 11h-13h (ou ~13h), max ~15h, faiblit jusqu'à 16h30/18h, reprise ~17h plus W ; 8-15 nds sans vent / 12-20 nds avec N en altitude ; NE/NW plus turbulent ; S 'rodéo'. Lu uniquement via résumé du moteur de recherche (fetch bloqué)."
+    },
+    {
+      "id": "S2",
+      "title": "Lac du Monteynard - Spot de windsurf à Treffort",
+      "url": "https://sportihome.com/en/s/spot/windsurfing/France---Auvergne-Rhone-Alpes---Treffort/002340/lac-du-monteynard",
+      "publisher": "Sportihome",
+      "type": "web",
+      "lang": "en",
+      "notes": "Lac 'légendaire' : thermique de mi-journée et épisodes de mistral ; 2e lac le plus venté d'Europe ; plage de Treffort petite, ponton sous le vent par N. Via résumé de recherche."
+    },
+    {
+      "id": "S3",
+      "title": "Le vent au lac de Monteynard",
+      "url": "https://le-shack-sur-le-lac.mystrikingly.com/blog/le-vent-au-lac-de-monteynard",
+      "publisher": "Le Shack sur le lac (école/loueur windsurf-kite)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Mécanisme : réchauffement des pentes, canalisation dans les anciennes gorges du Drac, chaleur du fond du Trièves + ascendances sur les sommets, effet venturi ; lac 'essentiellement par vent du nord (bise et/ou thermique)'. Via résumé groupé avec S4/S5 (attribution exacte incertaine)."
+    },
+    {
+      "id": "S4",
+      "title": "Le monteynard pour les nuls",
+      "url": "https://www.onekite.com/post/33239",
+      "publisher": "Onekite (forum kitesurf)",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Guide communautaire du spot ; même résumé groupé que S3."
+    },
+    {
+      "id": "S5",
+      "title": "Wingfoil School Lac de Monteynard Grenoble",
+      "url": "https://www.wing-and-foil-school.com/Wingfoil-grenoble-lac-monteynard.b.htm",
+      "publisher": "Wing and Foil School",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Même résumé groupé que S3 (venturi des gorges du Drac)."
+    },
+    {
+      "id": "S6",
+      "title": "Le Lac de Laffrey et la planche à voile",
+      "url": "https://vvanat.fr/blog/lac-de-laffrey-windsurf/",
+      "publisher": "VVA Natation (blog, agrégateur secondaire)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Vent dominant N d'origine thermique, 10-15 nds, canalisé par le plateau matheysin. Via résumé."
+    },
+    {
+      "id": "S7",
+      "title": "Activités nautiques (planche à voile...) – lac de Laffrey",
+      "url": "https://www.alpes-isere.com/?p=52122",
+      "publisher": "Alpes Isère Tourisme",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Base nautique au sud du grand lac de Laffrey, accès par Saint-Théoffrey ; lac sur Laffrey, Cholonge, Saint-Théoffrey."
+    },
+    {
+      "id": "S8",
+      "title": "Où voler par vent de Nord autour de Grenoble ?",
+      "url": "https://www.parapentiste.info/forum/meteo-aerologie/ou-voler-par-vent-de-nord-autour-de-grenoble-t5840.0.html",
+      "publisher": "Parapentiste.info (forum)",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Laffrey : bise légère <15 km/h + thermique ou 20-30 km/h dynamique pur, éviter N fort instable ; Courtet : 'le Nord s'étalant dans la vallée' ; Montaud : site du soir thermodynamique, cross vers le sud."
+    },
+    {
+      "id": "S9",
+      "title": "204 kms dans les Alpes...",
+      "url": "http://www.tichodromes.org/node/1432",
+      "publisher": "Club Les Tichodromes (Gresse-en-Vercors)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Attribution incertaine (résumé groupé) : déco près de la balise FFVL non loin du sommet du Moucherotte (600 m de D+), balise NNE 15-25 km/h alors que le déco OSO peut être sous le vent d'un bon thermique."
+    },
+    {
+      "id": "S10",
+      "title": "Terrain de pratique ST NIZIER MOUCHEROTTES [3135]",
+      "url": "https://federation.ffvl.fr/terrain/3135",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "45.1686, 5.63115, 1180 m ; fermé au vol ; 0 décollage / 22 atterrissages en 2025."
+    },
+    {
+      "id": "S11",
+      "title": "Terrain de pratique MOUCHEROTTE (N) [5262]",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/5262",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Déco 45.15022, 5.6373, 1840 m, secteur favorable N."
+    },
+    {
+      "id": "S12",
+      "title": "Terrain de pratique ALPE D'HUEZ - BOURG D'OISANS - 2700 [2342]",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/2342",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Déco 2612 m ; secteurs favorables N, W, NW ; idéal faible N et NW."
+    },
+    {
+      "id": "S13",
+      "title": "Terrain de pratique ALPE D'HUEZ - BOURG D'OISANS - ECLOSE [1923]",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/1923",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Huez, 1747 m ; 'Attention aux brises de vallée pouvant être fortes à partir de la mi-journée (en été surtout)' ; matinées calmes alimentées par les brises de pente montant de Huez."
+    },
+    {
+      "id": "S14",
+      "title": "Terrain de pratique ALPE D'HUEZ - BOURG D'OISANS - STADE MUNICIPAL [13499]",
+      "url": "https://federation.ffvl.fr/terrain/13499",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Atterrissage : 'Attention aux brises de vallée pouvant devenir fortes et turbulentes'."
+    },
+    {
+      "id": "S15",
+      "title": "Terrain de pratique ALPE D'HUEZ - BOURG D'OISANS - LA MINARDIERE [1924]",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/1924",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Atterrissage : 'Les brises de vallée peuvent être fortes (à partir de la mi-journée et en été)'."
+    },
+    {
+      "id": "S16",
+      "title": "Terrain de pratique ALPE D'HUEZ - BOURG D'OISANS - LE VERT [13473]",
+      "url": "https://federation.ffvl.fr/terrain/13473",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Atterrissage : 'Attention aux fortes brises de vallée l'été'."
+    },
+    {
+      "id": "S17",
+      "title": "Terrain de pratique LE SERPATON OUEST 500 [1234]",
+      "url": "https://federation.ffvl.fr/terrain/1234",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Secteurs favorables O et NO ; idéal en fin d'après-midi quand la brise de NNO est constante (thermo-dynamique)."
+    },
+    {
+      "id": "S18",
+      "title": "Terrain de pratique LE SERPATON EST - LE PAS DU SERPATON [1235]",
+      "url": "https://federation.ffvl.fr/terrain/1235",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Secteurs défavorables N, NE, SW, W, NW (résumé ; mention ambiguë S/SSW)."
+    },
+    {
+      "id": "S19",
+      "title": "Terrain de pratique LE SERPATON - COL DU FAU [1232]",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/1232",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Nom seulement (contenu non obtenu)."
+    },
+    {
+      "id": "S20",
+      "title": "Parapente et vol – Trièves",
+      "url": "https://www.trieves-vercors.fr/en/activities/parapente-et-vol/",
+      "publisher": "Office de tourisme du Trièves",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Serpaton : vue sur le Balcon Est du Vercors (Deux Sœurs, Grand Veymont, Mont Aiguille) ; sites Courtet (Saint-Baudille-et-Pipet) et Châtel (Mens) ; col du Serpaton 1586 m."
+    },
+    {
+      "id": "S21",
+      "title": "Les sites de vol en parapente en Isère",
+      "url": "https://isairparapente.fr/sites-vol/",
+      "publisher": "Is'Air Parapente (école, Trièves)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Courtet au pied du Grand Ferrand et de l'Obiou, réputé protégé des vents du nord ; vole quand les autres sites isérois sont cloués au sol (résumé groupé avec S20)."
+    },
+    {
+      "id": "S22",
+      "title": "Baptême parapente Trièves & Mens",
+      "url": "https://matheysineparapente.fr/bapteme-parapente-trieves-mens/",
+      "publisher": "Matheysine Parapente (école)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Décollage près de Mens, survol de la plaine du Trièves ; vue Dévoluy, Mont Aiguille, crêtes du Vercors."
+    },
+    {
+      "id": "S23",
+      "title": "Prendre son envol dans le Vercors",
+      "url": "https://www.trieves-vercors.fr/le-blog/prendre-son-envol-dans-le-vercors/",
+      "publisher": "Office de tourisme du Trièves",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Nombreux pilotes en allers-retours au-dessus du Vercors, notamment au Mont Aiguille (résumé)."
+    },
+    {
+      "id": "S24",
+      "title": "Site de l'Aigle (Lans-en-Vercors) + fiches FFVL 1893/1892",
+      "url": "https://www.lansenlair.org/sites-de-vol/site-de-laigle/",
+      "publisher": "Club Lans en l'Air / FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "3 décos à 100/200/300 m ; vent calme N, NO, O, SO, S ; brise 'classiquement Nord Sud', OSO quand le thermique est établi ; souvent forte, renforcée par le N ; rouleaux à la 'vierge' ; thermique dès 12h, fort en milieu d'après-midi. Via résumé (en anglais)."
+    },
+    {
+      "id": "S25",
+      "title": "Le Belvédère - Parapente",
+      "url": "https://www.vercors-experience.com/le-belvedere-parapente.html",
+      "publisher": "Vercors Experience (école)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Déco du Belvédère 1401 m, orientation W, volable NW à SW."
+    },
+    {
+      "id": "S26",
+      "title": "Autres sites de vol sur le Vercors : Montaud, Villard-de-Lans, Corrençon...",
+      "url": "https://www.parapente-isere.com/parapente-vercors-villard-de-lans-hiver-correncon-montaud.html",
+      "publisher": "Parapente Isère (école)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Sites choisis selon l'orientation du jour ; remontées mécaniques l'hiver à Villard et Corrençon."
+    },
+    {
+      "id": "S27",
+      "title": "Faire du parapente dans le Vercors",
+      "url": "https://infos-parapente.com/parapente-vercors/",
+      "publisher": "Infos Parapente",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Écoles à Lans et Gresse ; clubs Lans en l'Air et Tichodromes."
+    },
+    {
+      "id": "S28",
+      "title": "Vents locaux et vents généraux dans la région de Grenoble (Monin, Revue de géographie alpine, 1962)",
+      "url": "https://www.persee.fr/doc/rga_0035-1121_1962_num_50_1_1019",
+      "publisher": "Revue de géographie alpine / Persée",
+      "type": "pdf",
+      "lang": "fr",
+      "notes": "Comparaison Grenoble / Saint-Étienne-de-Saint-Geoirs ; vents locaux des trois vallées ; NW de journée à Grenoble = brise de vallée ; 'Matinière' (E de fin de nuit) = brise de montagne. Via résumé."
+    },
+    {
+      "id": "S29",
+      "title": "Climat de l'Isère",
+      "url": "https://fr.wikipedia.org/wiki/Climat_de_l'Is%C3%A8re",
+      "publisher": "Wikipédia",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Brise de vallée de NW rafraîchissant Grenoble l'après-midi ; cluse de Voreppe orientée SE-NW ; NW froid et humide qui s'accélère dans la cluse et se détend sur Grenoble (résumé groupé avec S30)."
+    },
+    {
+      "id": "S30",
+      "title": "Caractéristiques climatiques et développement urbain : l'exemple de la cuvette grenobloise (Voreppe, Pont-de-Claix, Saint-Ismier)",
+      "url": "https://www.persee.fr/doc/rga_0035-1121_1972_num_60_2_1264",
+      "publisher": "Revue de géographie alpine / Persée (1972)",
+      "type": "pdf",
+      "lang": "fr",
+      "notes": "Climatologie de la cuvette (même résumé que S29)."
+    },
+    {
+      "id": "S31",
+      "title": "Terrain de pratique ALPAGE du Senepy [14266] (et 14267)",
+      "url": "https://federation.ffvl.fr/terrain/14266",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Déco parapente, Saint-Arey (38350), 1365 m, 5 min du parking, alpage ; gestion Envol Sud Isère."
+    },
+    {
+      "id": "S32",
+      "title": "Drac (river)",
+      "url": "https://en.wikipedia.org/wiki/Drac_(river)",
+      "publisher": "Wikipedia",
+      "type": "web",
+      "lang": "en",
+      "notes": "Romanche se jette dans le Drac à Champ-sur-Drac ; Drac dans l'Isère à Grenoble."
+    },
+    {
+      "id": "S33",
+      "title": "Vercors et Dévoluy (techniques de cross)",
+      "url": "https://www.parapentiste.info/forum/techniques-de-cross/vercors-et-devoluy-t54102.0.html",
+      "publisher": "Parapentiste.info (forum)",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Fil existant sur le cross Vercors–Dévoluy ; contenu NON lu (accès bloqué)."
+    },
+    {
+      "id": "S34",
+      "title": "Grand vol – Alpe d'Huez / Bourg d'Oisans",
+      "url": "https://uk.bourgdoisans.com/activite/great-flight/",
+      "publisher": "Office de tourisme Bourg d'Oisans",
+      "type": "web",
+      "lang": "en",
+      "notes": "Vols biplace de l'Alpe d'Huez, atterrissage le long de la Romanche dans la plaine de Bourg-d'Oisans."
+    }
+  ]
+}

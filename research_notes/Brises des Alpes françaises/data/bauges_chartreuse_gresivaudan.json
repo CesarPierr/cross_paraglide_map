@@ -1,0 +1,1069 @@
+{
+  "topic": "Bauges, Bourget/cluse de Chambéry, Combe de Savoie, Chartreuse, Grésivaudan, Belledonne",
+  "massifs": [
+    {
+      "id": "bourget-chambery",
+      "name": "Lac du Bourget, cluse de Chambéry et Avant-Pays savoyard",
+      "parent_massif": "Préalpes du Nord",
+      "summary": "La cluse de Chambéry est la grande porte basse par laquelle l'air de l'avant-pays et du lac du Bourget pénètre dans le sillon alpin: une 'énorme brise' de plaine-montagne, assez forte (25-30 km/h selon le CHVD), orientée du nord vers le sud de Chambéry à Montmélian. Elle est maximale par effet Venturi à la pointe sud-ouest des Bauges, puis se divise à Montmélian en une branche vers Albertville (Combe de Savoie) et une branche vers Grenoble (Grésivaudan). Pour le cross, c'est la transition la plus délicate du secteur (passage de la Savoyarde, ~10 km, vent fort et turbulences, sous-le-vent dangereux au-dessus de Montmélian). Une légère brise de lac du Bourget est décrite en fin d'après-midi par une école (source commerciale). Aucune donnée fiable trouvée sur Mont du Chat, Dent du Chat, Épine, Nivolet ou Vérel.",
+      "bbox": [
+        5.7,
+        45.5,
+        5.99,
+        45.82
+      ],
+      "center": [
+        5.89,
+        45.64
+      ],
+      "breezes": [
+        {
+          "id": "brise-cluse-chambery",
+          "name": "Brise de la cluse de Chambéry (entrée plaine-montagne)",
+          "kind": "plain-to-mountain",
+          "waypoints": [
+            {
+              "name": "Aix-les-Bains",
+              "lon": 5.9153,
+              "lat": 45.6886,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Le Bourget-du-Lac",
+              "lon": 5.8597,
+              "lat": 45.6467,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Chambéry",
+              "lon": 5.9222,
+              "lat": 45.5664,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Challes-les-Eaux",
+              "lon": 5.9839,
+              "lat": 45.5472,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Montmélian",
+              "lon": 6.0464,
+              "lat": 45.5003,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "fin de matinée à fin d'après-midi (été) — horaire déduit de l'apparition de la brise de nord à Lumbin en fin de matinée",
+          "speed_kmh": {
+            "typical": 25,
+            "max": 30
+          },
+          "season": "printemps-été (saison thermique)",
+          "description": "« L'énorme brise de la cluse de Chambéry se divise en deux branches, une tournant à gauche vers Albertville, et une autre à droite vers Grenoble » (CHVD). Brises 'assez fortes en général (25/30 km/h)'; 'la brise de Chambéry est la plus forte à la pointe sud-ouest des Bauges par effet Venturi en bout de cluse'. Une école décrit la cluse comme un 'couloir thermique naturel' avec ascendances dès le milieu de matinée. Tracé exact (passage par Aix/Le Bourget) = déduction géographique. [Source lue via extrait de moteur de recherche uniquement.] Coordonnées: valeurs de mémoire (type Wikipedia/Geonames) non revérifiées, accès web bloqué pendant la recherche — à contrôler.",
+          "confidence": "medium",
+          "sources": [
+            "S3",
+            "S14",
+            "S19"
+          ]
+        },
+        {
+          "id": "brise-lac-bourget",
+          "name": "Brise de lac du Bourget (fin d'après-midi)",
+          "kind": "lake",
+          "waypoints": [
+            {
+              "name": "Lac du Bourget (centre)",
+              "lon": 5.8667,
+              "lat": 45.7333,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Le Bourget-du-Lac",
+              "lon": 5.8597,
+              "lat": 45.6467,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Chambéry",
+              "lon": 5.9222,
+              "lat": 45.5664,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "fin d'après-midi (été)",
+          "speed_kmh": {
+            "typical": 8,
+            "max": 12
+          },
+          "season": "été",
+          "description": "Source commerciale: « une légère brise fraîche qui monte du lac du Bourget en fin d'après-midi » apporte de la régularité. Vitesses = interprétation de 'légère'. Direction/tracé vers Chambéry = déduction (non précisé par la source). [Source lue via extrait de moteur de recherche uniquement.] Coordonnées: valeurs de mémoire (type Wikipedia/Geonames) non revérifiées, accès web bloqué pendant la recherche — à contrôler.",
+          "confidence": "low",
+          "sources": [
+            "S14"
+          ]
+        }
+      ],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "venturi-pointe-so-bauges",
+          "name": "Venturi en bout de cluse (pointe sud-ouest des Bauges)",
+          "kind": "venturi",
+          "lon": 5.9839,
+          "lat": 45.5472,
+          "radius_km": 4,
+          "coord_quality": "approx",
+          "conditions": "après-midi d'été, brise de cluse établie; renforcé par flux de nord (déduction)",
+          "description": "'La brise de Chambéry est la plus forte à la pointe sud-ouest des Bauges par effet Venturi en bout de cluse' (CHVD). Position du marqueur approximative (secteur Challes / extrémité SO des Bauges). [Source lue via extrait de moteur de recherche uniquement.]",
+          "sources": [
+            "S3"
+          ]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [],
+      "landings": [],
+      "synoptic_effects": [],
+      "xc_routes": [],
+      "tips": [
+        "Traverser la cluse de Chambéry haut et tôt: la brise y atteint 25-30 km/h et accélère à la pointe SO des Bauges [S3].",
+        "Décollage de Vérel-Pragondran (club Les Z'éléphants Volants) au-dessus de Chambéry: aérologie non documentée dans cette recherche [S24]."
+      ]
+    },
+    {
+      "id": "combe-de-savoie",
+      "name": "Combe de Savoie (Montmélian – Albertville)",
+      "parent_massif": "Sillon alpin",
+      "summary": "La Combe de Savoie est alimentée par la branche 'gauche' de la brise de la cluse de Chambéry, qui tourne vers Albertville: la brise y est de secteur sud/sud-ouest (côté Chamoux, 'la brise est Sud'), soit l'inverse du Grésivaudan voisin où elle est de nord. Cette branche 'coupe le virage en passant par dessus la Savoyarde, et déferle derrière Montmélian': la zone sous le vent au-dessus de Montmélian est décrite comme très dangereuse (plusieurs morts dans les années 1990). Le déco de Montlambert (SE) se vole surtout le matin jusqu'en début d'après-midi. Le point de partage des deux branches se situe vers Montmélian (divergence, pas convergence).",
+      "bbox": [
+        6.0,
+        45.45,
+        6.42,
+        45.7
+      ],
+      "center": [
+        6.2,
+        45.57
+      ],
+      "breezes": [
+        {
+          "id": "branche-albertville",
+          "name": "Branche Albertville de la brise de Chambéry (brise de Combe de Savoie)",
+          "kind": "plain-to-mountain",
+          "waypoints": [
+            {
+              "name": "Chambéry",
+              "lon": 5.9222,
+              "lat": 45.5664,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Montmélian",
+              "lon": 6.0464,
+              "lat": 45.5003,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Saint-Pierre-d'Albigny",
+              "lon": 6.1556,
+              "lat": 45.5681,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Albertville",
+              "lon": 6.3925,
+              "lat": 45.6758,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "fin de matinée à fin d'après-midi (été) — horaire déduit",
+          "speed_kmh": {
+            "typical": 25,
+            "max": 30
+          },
+          "season": "printemps-été",
+          "description": "Branche « tournant à gauche vers Albertville » qui « coupe même le virage en passant par dessus la Savoyarde, et déferle derrière Montmélian » (CHVD). Sur le forum parapentiste: dans le Grésivaudan la brise est Nord alors que 'juste au-dessus (côté Chamoux par exemple) la brise est Sud'. 25-30 km/h = valeur générale donnée par le CHVD pour les deux branches. [Source lue via extrait de moteur de recherche uniquement.] Coordonnées: valeurs de mémoire (type Wikipedia/Geonames) non revérifiées, accès web bloqué pendant la recherche — à contrôler.",
+          "confidence": "medium",
+          "sources": [
+            "S3",
+            "S9"
+          ]
+        }
+      ],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "sous-le-vent-montmelian",
+          "name": "Sous-le-vent de la brise de Chambéry au-dessus de Montmélian",
+          "kind": "lee-rotor",
+          "lon": 6.0464,
+          "lat": 45.5003,
+          "radius_km": 3,
+          "coord_quality": "approx",
+          "conditions": "après-midi, brise de cluse établie (branche Albertville passant par-dessus la Savoyarde)",
+          "description": "'La zone sous le vent de la brise de Chambéry, au-dessus de Montmélian, est très dangereuse, plusieurs morts dans les années 90' (CHVD, reformulé). La branche Albertville 'déferle derrière Montmélian'. [Source lue via extrait de moteur de recherche uniquement.]",
+          "sources": [
+            "S3"
+          ]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [],
+      "landings": [],
+      "synoptic_effects": [],
+      "xc_routes": [],
+      "tips": [
+        "Montlambert (déco SE, accès D201 Montmélian -> Saint-Pierre-d'Albigny): « offre surtout des conditions de vol le matin jusqu'en début d'après-midi, car en fin d'après-midi, la brise redescend du sommet » [S8].",
+        "Dans la Combe la brise est de secteur Sud (vers Albertville), à l'inverse du Grésivaudan (Nord) — ne pas transposer la lecture d'une vallée à l'autre [S9][S3]."
+      ]
+    },
+    {
+      "id": "bauges",
+      "name": "Massif des Bauges (Revard, Margériaz, Nivolet, Arclusaz, Trélod)",
+      "parent_massif": "Préalpes du Nord",
+      "summary": "Les sources trouvées décrivent surtout la bordure sud-ouest du massif: des 'langues de brise plus étroites venant d'Annecy' descendent les vallées intérieures des Bauges vers le sud et convergent avec la branche Albertville de la brise de Chambéry dans le secteur de la Savoyarde (extrémité SO, au-dessus de Montmélian), zone de vent fort et de turbulences. La carte vol libre du PNR des Bauges figure brises de vallée et 'confluences' mais n'a pas pu être lue. Contraintes réglementaires fortes: vol interdit sous 300 m dans la réserve nationale de chasse et de faune sauvage, sauf 4 zones et 3 décos du Trélod. Décos routiers: Semnoz et nouveau déco des Fées au Margériaz; Revard = site parapente/delta/speed-riding. Pas de données sourcées sur les déclencheurs ni les horaires de brise sur Revard, Nivolet, Arclusaz.",
+      "bbox": [
+        5.9,
+        45.5,
+        6.3,
+        45.8
+      ],
+      "center": [
+        6.1,
+        45.65
+      ],
+      "breezes": [
+        {
+          "id": "langues-annecy-vallees-bauges",
+          "name": "Langues de brise venant d'Annecy dans les vallées intérieures des Bauges (vers le sud)",
+          "kind": "regional",
+          "waypoints": [
+            {
+              "name": "Lescheraines",
+              "lon": 6.1083,
+              "lat": 45.7086,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Le Châtelard",
+              "lon": 6.1347,
+              "lat": 45.6853,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Saint-Pierre-d'Albigny",
+              "lon": 6.1556,
+              "lat": 45.5681,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "après-midi (été) — non précisé par la source",
+          "speed_kmh": {
+            "typical": null,
+            "max": null
+          },
+          "season": "printemps-été",
+          "description": "CHVD: « des langues de brise plus étroites venant d'Annecy et descendant les vallées intérieures des Bauges vers le sud », qui convergent avec la branche Albertville de la brise de Chambéry dans le secteur de la Savoyarde. Le choix des vallées (axe Chéran Lescheraines - Le Châtelard puis vers le sud) est une déduction: la source ne nomme pas les vallées. Vitesse non donnée. [Source lue via extrait de moteur de recherche uniquement.] Coordonnées: valeurs de mémoire (type Wikipedia/Geonames) non revérifiées, accès web bloqué pendant la recherche — à contrôler.",
+          "confidence": "low",
+          "sources": [
+            "S3"
+          ]
+        }
+      ],
+      "convergences": [
+        {
+          "id": "convergence-savoyarde",
+          "name": "Convergence du secteur de la Savoyarde (pointe SO des Bauges)",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                5.9839,
+                45.5472
+              ],
+              [
+                6.0464,
+                45.5003
+              ]
+            ]
+          },
+          "when": "après-midi d'été, une fois la brise de cluse établie (horaire déduit). Géométrie très approximative: segment Challes-les-Eaux – Montmélian servant de proxy pour la Savoyarde, dont la position exacte n'a pas pu être vérifiée.",
+          "mechanism": "La branche Albertville de la brise de la cluse de Chambéry, qui coupe le virage par-dessus la Savoyarde, rencontre les langues de brise venant d'Annecy et descendant vers le sud les vallées intérieures des Bauges (CHVD).",
+          "usage": "Passage obligé de la transition Chartreuse -> Bauges ('passage de la Savoyarde', ~10 km): 'vent fort et turbulences attendus à la Savoyarde'; ne pas finir bas sous le vent au-dessus de Montmélian (zone mortelle dans les années 90).",
+          "confidence": "medium",
+          "sources": [
+            "S3"
+          ]
+        }
+      ],
+      "hazards": [
+        {
+          "id": "reserve-bauges-300m",
+          "name": "Réserve nationale de chasse et de faune sauvage des Bauges – vol interdit sous 300 m/sol",
+          "kind": "airspace",
+          "lon": 6.17,
+          "lat": 45.68,
+          "radius_km": 7,
+          "coord_quality": "approx",
+          "conditions": "permanent (réglementation)",
+          "description": "Vol interdit sous 300 m sauf dans 4 zones de vol autorisées et 3 décollages sur le Trélod. Marqueur placé très approximativement au cœur nord-est du massif (Trélod/Arcalod): consulter la carte du PNR pour le périmètre réel. [Source lue via extrait de moteur de recherche uniquement.]",
+          "sources": [
+            "S11",
+            "S12"
+          ]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [
+        {
+          "id": "revard",
+          "name": "Mont Revard (site de vol libre)",
+          "lon": 5.9819,
+          "lat": 45.6711,
+          "alt_m": null,
+          "coord_quality": "approx",
+          "orientations": [],
+          "description": "Site de vol libre (parapente, delta, speed-riding) au-dessus d'Aix-les-Bains. Orientation et aérologie non documentées dans cette recherche; position approximative du plateau du Revard. Coordonnées: valeurs de mémoire (type Wikipedia/Geonames) non revérifiées, accès web bloqué pendant la recherche — à contrôler.",
+          "sources": [
+            "S13"
+          ]
+        }
+      ],
+      "landings": [],
+      "synoptic_effects": [],
+      "xc_routes": [],
+      "tips": [
+        "Décos routiers des Bauges: Semnoz et nouveau déco des Fées au Margériaz [S11].",
+        "Dans la réserve des Bauges, pas de vol sous 300 m hors des 4 zones autorisées et des 3 décos du Trélod [S11][S12].",
+        "Carte des brises du PNR des Bauges (brises de vallées + confluences) à consulter avant un cross [S11][S10]."
+      ]
+    },
+    {
+      "id": "chartreuse",
+      "name": "Massif de la Chartreuse (Saint-Hilaire, Dent de Crolles, Granier, Chamechaude, Charmant Som)",
+      "parent_massif": "Préalpes du Nord",
+      "summary": "La façade est de la Chartreuse (plateau des Petites Roches, ~1000 m, au pied des falaises de la Dent de Crolles) donne sur le Grésivaudan: décos Sud et Nord de Saint-Hilaire orientés est, volables tôt le matin. En début/milieu de matinée une brise de pente tendance Est, faible, monte la pente; dès la fin de matinée la brise de vallée de nord du Grésivaudan s'installe en bas (≤15 km/h, turbulente si vent météo de nord). Saint-Hilaire est la grande base de cross: traversée du Grésivaudan vers Belledonne (~10 km, partir au-dessus de 2200 m), passage de la Savoyarde vers les Bauges via le Granier (~10 km, vent fort). Aucune source trouvée sur les brises des plateaux et hautes vallées (Saint-Pierre-de-Chartreuse, Col de Porte, Désert d'Entremont) ni sur les déclencheurs précis (Bec Margain, Dent de Crolles).",
+      "bbox": [
+        5.62,
+        45.22,
+        5.98,
+        45.5
+      ],
+      "center": [
+        5.82,
+        45.36
+      ],
+      "breezes": [
+        {
+          "id": "brise-pente-est-st-hilaire",
+          "name": "Brise de pente de la façade est (Saint-Hilaire / Petites Roches)",
+          "kind": "slope",
+          "waypoints": [
+            {
+              "name": "Lumbin",
+              "lon": 5.9136,
+              "lat": 45.3086,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Saint-Hilaire – plateau des Petites Roches (point DMS 45°18'41\"N 5°53'22\"E)",
+              "lon": 5.8894,
+              "lat": 45.3114,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Dent de Crolles",
+              "lon": 5.8531,
+              "lat": 45.3089,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "début à milieu de matinée (été), avant l'installation de la brise de vallée de nord",
+          "speed_kmh": {
+            "typical": 5,
+            "max": 10
+          },
+          "season": "printemps-été",
+          "description": "À l'atterrissage de Lumbin: calme ou nul tôt le matin, puis 'brise de pente tendance Est, généralement assez faible' en début/milieu de matinée, avant la brise de vallée de nord. Vitesses = interprétation de 'assez faible'. [Source lue via extrait de moteur de recherche uniquement.] Coordonnées: valeurs de mémoire (type Wikipedia/Geonames) non revérifiées, accès web bloqué pendant la recherche — à contrôler.",
+          "confidence": "medium",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "convergences": [],
+      "hazards": [],
+      "thermal_spots": [
+        {
+          "id": "facade-est-st-hilaire",
+          "name": "Façade est de la Chartreuse (Saint-Hilaire / pied de la Dent de Crolles)",
+          "lon": 5.8894,
+          "lat": 45.3114,
+          "alt_m": 1000,
+          "coord_quality": "approx",
+          "best_hours": "matin (décollage possible tôt)",
+          "trigger": "pente et falaises orientées est, ensoleillées tôt (mécanisme = déduction)",
+          "description": "Les décos de Saint-Hilaire orientés est 'permettent de décoller tôt le matin'. Déclencheurs précis le long des falaises (Bec Margain, Dent de Crolles) non documentés dans cette recherche. [Source lue via extrait de moteur de recherche uniquement.]",
+          "sources": [
+            "S1",
+            "S2"
+          ]
+        }
+      ],
+      "soaring_spots": [],
+      "takeoffs": [
+        {
+          "id": "st-hilaire-sud-nord",
+          "name": "Saint-Hilaire-du-Touvet – décollages Sud et Nord (Plateau des Petites Roches)",
+          "lon": 5.8894,
+          "lat": 45.3114,
+          "alt_m": 1000,
+          "coord_quality": "approx",
+          "orientations": [
+            "E"
+          ],
+          "description": "Deux décos (Sud et Nord) à ~1000 m, orientés est, volables tôt le matin; selon l'aérologie des décos entre 800 et 2200 m sont utilisés dans le secteur. Point unique pour les deux décos: coordonnées 45°18'41\"N 5°53'22\"E issues d'un extrait de recherche qui les qualifiait d''atterrissage', mais elles tombent au niveau du plateau (incohérence signalée). [Source lue via extrait de moteur de recherche uniquement.]",
+          "sources": [
+            "S1",
+            "S2"
+          ]
+        },
+        {
+          "id": "mont-granier",
+          "name": "Mont Granier (vol-rando)",
+          "lon": 5.9289,
+          "lat": 45.4636,
+          "alt_m": 1933,
+          "coord_quality": "approx",
+          "orientations": [],
+          "description": "Vol-rando documenté par vent de SO avec 'thermiques variables'; falaises face à Chambéry et au lac du Bourget. Point = sommet approximatif, pas un déco précis; altitude du sommet. Coordonnées: valeurs de mémoire (type Wikipedia/Geonames) non revérifiées, accès web bloqué pendant la recherche — à contrôler.",
+          "sources": [
+            "S17"
+          ]
+        }
+      ],
+      "landings": [],
+      "synoptic_effects": [
+        {
+          "wind": "SW",
+          "effect": "Granier volé par vent de SO avec thermiques variables (un seul récit, pas de règle générale).",
+          "sources": [
+            "S17"
+          ]
+        }
+      ],
+      "xc_routes": [
+        {
+          "id": "passage-savoyarde",
+          "name": "Passage de la Savoyarde (Chartreuse -> Bauges)",
+          "waypoints": [
+            {
+              "name": "Saint-Hilaire – plateau des Petites Roches (point DMS 45°18'41\"N 5°53'22\"E)",
+              "lon": 5.8894,
+              "lat": 45.3114,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Mont Granier",
+              "lon": 5.9289,
+              "lat": 45.4636,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Montmélian",
+              "lon": 6.0464,
+              "lat": 45.5003,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Saint-Pierre-d'Albigny",
+              "lon": 6.1556,
+              "lat": 45.5681,
+              "coord_quality": "approx"
+            }
+          ],
+          "distance_km": null,
+          "description": "Transition clé de la Chartreuse vers les Bauges: longue (~10 km pour la traversée elle-même) et difficile, 'vent fort et turbulences attendus à la Savoyarde'; la branche Albertville de la brise de Chambéry y passe et déferle derrière Montmélian (sous-le-vent mortel). Convergence avec les brises venant d'Annecy dans ce secteur. Les points intermédiaires (Granier, Saint-Pierre-d'Albigny) sont une déduction d'itinéraire. [Source lue via extrait de moteur de recherche uniquement.]",
+          "sources": [
+            "S3"
+          ]
+        }
+      ],
+      "tips": [
+        "Décos est de Saint-Hilaire: voler tôt; en bas, la brise passe d'Est faible (matin) à Nord (dès la fin de matinée) [S1].",
+        "Plateaux et hautes vallées (Saint-Pierre-de-Chartreuse, Entremont): aucune donnée de brise trouvée — à documenter (Vol Libre n°298, 'Surfez le vent dans l'Y grenoblois') [S9]."
+      ]
+    },
+    {
+      "id": "gresivaudan",
+      "name": "Vallée du Grésivaudan (Montmélian – Pontcharra – Grenoble) et cluse de Voreppe",
+      "parent_massif": "Sillon alpin",
+      "summary": "L'après-midi, la brise du Grésivaudan souffle du NORD (de Chambéry vers Grenoble), contrairement à l'intuition d'une brise montante depuis Grenoble: c'est la branche 'droite' de l'énorme brise de la cluse de Chambéry. À Lumbin: calme tôt, brise de pente Est faible le matin, puis brise de vallée tendance Nord dès la fin de matinée, qui forcit dans la journée mais dépasse rarement 15 km/h; un vent météo de nord la renforce et rend l'atterrissage turbulent. Au nord-ouest, la cluse de Voreppe fait entrer une 'brise de nord qui remonte la vallée' vers Grenoble dès la fin de matinée/mi-journée, souvent forte en été; la prédominance des vents de NO en journée à Grenoble est attribuée à un effet de brise de vallée. Les deux flux se rejoignent probablement au-dessus de Grenoble (déduction). Aucune source trouvée pour une 'brise' ou 'convergence de Pontcharra'.",
+      "bbox": [
+        5.6,
+        45.15,
+        6.1,
+        45.52
+      ],
+      "center": [
+        5.88,
+        45.32
+      ],
+      "breezes": [
+        {
+          "id": "brise-nord-gresivaudan",
+          "name": "Brise de nord du Grésivaudan (branche Grenoble de la brise de Chambéry)",
+          "kind": "plain-to-mountain",
+          "waypoints": [
+            {
+              "name": "Montmélian",
+              "lon": 6.0464,
+              "lat": 45.5003,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Pontcharra",
+              "lon": 6.0161,
+              "lat": 45.435,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Le Touvet",
+              "lon": 5.95,
+              "lat": 45.3578,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Lumbin",
+              "lon": 5.9136,
+              "lat": 45.3086,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Crolles",
+              "lon": 5.8792,
+              "lat": 45.2847,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Le Versoud",
+              "lon": 5.8628,
+              "lat": 45.2194,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Grenoble",
+              "lon": 5.7245,
+              "lat": 45.1885,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "fin de matinée -> soir (été), forcit au fil de la journée",
+          "speed_kmh": {
+            "typical": 15,
+            "max": 30
+          },
+          "season": "printemps-été",
+          "description": "Lumbin: 'à partir de la fin de matinée, la brise de vallée s'établit tendance Nord', forcit dans la journée mais 'dépasse rarement 15 km/h'; atterrissage Office de Tourisme: brise 'très souvent tendance Nord', ≤15 km/h, turbulente si vent météo de nord. CHVD: la brise de la cluse de Chambéry se divise en une branche 'à droite vers Grenoble' (25/30 km/h près de la cluse). Forum: 'le Grésivaudan n'est pas Sud mais Nord'. typical = valeur Lumbin, max = valeur CHVD près de la cluse. [Source lue via extrait de moteur de recherche uniquement.] Coordonnées: valeurs de mémoire (type Wikipedia/Geonames) non revérifiées, accès web bloqué pendant la recherche — à contrôler.",
+          "confidence": "high",
+          "sources": [
+            "S1",
+            "S3",
+            "S9"
+          ]
+        },
+        {
+          "id": "brise-voreppe",
+          "name": "Brise de la cluse de Voreppe (entrée NO vers Grenoble)",
+          "kind": "plain-to-mountain",
+          "waypoints": [
+            {
+              "name": "Voreppe",
+              "lon": 5.6369,
+              "lat": 45.2964,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Saint-Égrève",
+              "lon": 5.6833,
+              "lat": 45.2333,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Grenoble",
+              "lon": 5.7245,
+              "lat": 45.1885,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "fin de matinée / mi-journée -> soir (été)",
+          "speed_kmh": {
+            "typical": 20,
+            "max": 30
+          },
+          "season": "printemps-été (forte en été)",
+          "description": "FFVL Chalais: atterrissage en fond de vallée 'soumis à un régime de brise (souvent forte)'; 'brise de nord qui remonte la vallée et apparaît en fin de matinée (forte en été)'; Chalais-Voreppe Rivalières: brise de nord pouvant 'apparaître à la mi-journée et forcir assez fortement'. Guichet du Savoir: à Grenoble la prédominance des vents de NO en journée s'explique par un effet de brise de vallée. Vitesses = interprétation de 'souvent forte'. [Source lue via extrait de moteur de recherche uniquement.] Coordonnées: valeurs de mémoire (type Wikipedia/Geonames) non revérifiées, accès web bloqué pendant la recherche — à contrôler.",
+          "confidence": "medium",
+          "sources": [
+            "S4",
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        {
+          "id": "drainage-hivernal-grenoble",
+          "name": "Écoulements descendants nocturnes/hivernaux vers Grenoble",
+          "kind": "downvalley",
+          "waypoints": [
+            {
+              "name": "Le Touvet",
+              "lon": 5.95,
+              "lat": 45.3578,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Crolles",
+              "lon": 5.8792,
+              "lat": 45.2847,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Grenoble",
+              "lon": 5.7245,
+              "lat": 45.1885,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "nuit et matin, surtout en hiver sous inversion",
+          "speed_kmh": {
+            "typical": null,
+            "max": null
+          },
+          "season": "hiver (inversions persistantes)",
+          "description": "Étude Largeron & Staquet (2016): sous inversion persistante, la dynamique de couche limite des vallées grenobloises résulte de 'vents thermiques s'écoulant des vallées plus élevées qui entourent Grenoble', même schéma d'un épisode à l'autre. Tracé dans le Grésivaudan = déduction (la source, lue en extrait, ne nomme pas les vallées). [Source lue via extrait de moteur de recherche uniquement.] Coordonnées: valeurs de mémoire (type Wikipedia/Geonames) non revérifiées, accès web bloqué pendant la recherche — à contrôler.",
+          "confidence": "low",
+          "sources": [
+            "S18"
+          ]
+        }
+      ],
+      "convergences": [
+        {
+          "id": "confluence-grenoble",
+          "name": "Rencontre Voreppe / Grésivaudan au-dessus de Grenoble (hypothèse)",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                5.6833,
+                45.2333
+              ],
+              [
+                5.7245,
+                45.1885
+              ]
+            ]
+          },
+          "when": "après-midi d'été (déduction)",
+          "mechanism": "Déduction: la brise de NO de la cluse de Voreppe et la brise de nord du Grésivaudan entrent toutes deux dans la cuvette grenobloise; elles se rejoindraient au-dessus de Grenoble avant de remonter vers le sud (Drac/Romanche, hors périmètre). Aucune source ne décrit explicitement cette convergence.",
+          "usage": "Non documenté; à vérifier avec 'Surfez le vent dans l'Y grenoblois' (Vol Libre n°298, 2001).",
+          "confidence": "low",
+          "sources": []
+        }
+      ],
+      "hazards": [
+        {
+          "id": "atterro-lumbin-nord",
+          "name": "Atterrissages de Saint-Hilaire (Lumbin / Office de Tourisme) par vent de nord",
+          "kind": "landing-turbulence",
+          "lon": 5.9136,
+          "lat": 45.3086,
+          "radius_km": 2,
+          "coord_quality": "approx",
+          "conditions": "après-midi, quand un vent météo de nord renforce la brise de vallée de nord",
+          "description": "'Si le vent météo de nord renforce la brise, l'atterrissage peut devenir turbulent' (reformulé). Marqueur au village de Lumbin (position de l'atterro non vérifiée). [Source lue via extrait de moteur de recherche uniquement.]",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "id": "atterro-voreppe-brise",
+          "name": "Atterrissage de fond de vallée à Voreppe (Chalais) – brise souvent forte",
+          "kind": "strong-breeze",
+          "lon": 5.6369,
+          "lat": 45.2964,
+          "radius_km": 2,
+          "coord_quality": "approx",
+          "conditions": "à partir de la fin de matinée / mi-journée, surtout en été",
+          "description": "Atterrissage 'soumis à un régime de brise (souvent forte)'; brise de nord qui 'forcit assez fortement'. [Source lue via extrait de moteur de recherche uniquement.]",
+          "sources": [
+            "S4",
+            "S5"
+          ]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [],
+      "landings": [
+        {
+          "id": "lumbin",
+          "name": "Atterrissage de Lumbin (site de Saint-Hilaire)",
+          "lon": 5.9136,
+          "lat": 45.3086,
+          "alt_m": null,
+          "coord_quality": "approx",
+          "description": "Calme tôt le matin; brise de pente tendance Est faible en début/milieu de matinée; brise de vallée tendance Nord dès la fin de matinée, rarement >15 km/h. Un second atterrissage 'Office de Tourisme' a le même régime (Nord, ≤15 km/h). Marqueur = village de Lumbin, position exacte de l'atterro non vérifiée. [Source lue via extrait de moteur de recherche uniquement.] Coordonnées: valeurs de mémoire (type Wikipedia/Geonames) non revérifiées, accès web bloqué pendant la recherche — à contrôler.",
+          "sources": [
+            "S1"
+          ]
+        }
+      ],
+      "synoptic_effects": [
+        {
+          "wind": "N",
+          "effect": "Renforce la brise de vallée de nord du Grésivaudan; atterrissages de Saint-Hilaire (Lumbin, Office de Tourisme) turbulents.",
+          "sources": [
+            "S1"
+          ]
+        },
+        {
+          "wind": "NW",
+          "effect": "En hiver surtout, vents forts froids et humides de NO accélérés dans la cluse de Voreppe puis détendus sur Grenoble ('effet canon à neige').",
+          "sources": [
+            "S7"
+          ]
+        }
+      ],
+      "xc_routes": [
+        {
+          "id": "traversee-gresivaudan",
+          "name": "Traversée du Grésivaudan Chartreuse -> Belledonne",
+          "waypoints": [
+            {
+              "name": "Saint-Hilaire – plateau des Petites Roches (point DMS 45°18'41\"N 5°53'22\"E)",
+              "lon": 5.8894,
+              "lat": 45.3114,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Le Touvet",
+              "lon": 5.95,
+              "lat": 45.3578,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Col du Barioz",
+              "lon": 6.0203,
+              "lat": 45.338,
+              "coord_quality": "approx"
+            }
+          ],
+          "distance_km": 10,
+          "description": "Transition la plus directe vers l'est: ~10 km au-dessus du Grésivaudan, partir proprement au-dessus de 2200 m côté Chartreuse et bien lire la brise de vallée en dessous. Points cités: l'Aulp du Seuil, 'St Genis' (nom tel que dans l'extrait, non vérifié), Col du Barioz. Avec une brise de nord, viser au nord de l'objectif pour compenser la dérive vers Grenoble (déduction). [Source lue via extrait de moteur de recherche uniquement.]",
+          "sources": [
+            "S15",
+            "S16"
+          ]
+        }
+      ],
+      "tips": [
+        "Dans le Grésivaudan l'après-midi, la brise vient du NORD (Chambéry -> Grenoble), pas de Grenoble: prévoir l'approche d'atterro face au nord [S1][S3][S9].",
+        "La brise de Voreppe (cluse NO) apparaît en fin de matinée / mi-journée et est souvent forte en été en fond de vallée [S4][S5].",
+        "Le terme 'brise/convergence de Pontcharra' n'a été retrouvé dans aucune source consultée; le point de partage documenté est Montmélian (divergence de la brise de Chambéry) [S3]."
+      ]
+    },
+    {
+      "id": "belledonne",
+      "name": "Chaîne de Belledonne – balcon (Prapoutel/Sept Laux, Chamrousse, Col du Barioz, Allevard, Saint-Mury)",
+      "parent_massif": "Massifs cristallins externes",
+      "summary": "Données très lacunaires dans cette recherche (pages des sites inaccessibles). Le versant de Belledonne qui donne sur le Grésivaudan est orienté ouest/nord-ouest; une source commerciale indique que les pentes orientées ouest donnent dès le printemps des thermiques puissants et réguliers et que les crêtes produisent des ascendances dynamiques. On y arrive depuis la Chartreuse par la traversée du Grésivaudan (~10 km, départ au-dessus de 2200 m), le Col du Barioz étant cité comme point de transition. En bas, la brise de vallée du Grésivaudan est de nord l'après-midi. Aucune donnée sourcée sur Prapoutel, Chamrousse, Allevard ou Saint-Mury.",
+      "bbox": [
+        5.85,
+        45.1,
+        6.2,
+        45.45
+      ],
+      "center": [
+        6.0,
+        45.27
+      ],
+      "breezes": [
+        {
+          "id": "brise-pente-balcon-belledonne",
+          "name": "Brise de pente du versant ouest de Belledonne (balcon)",
+          "kind": "slope",
+          "waypoints": [
+            {
+              "name": "Villard-Bonnot",
+              "lon": 5.8914,
+              "lat": 45.2408,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Prapoutel",
+              "lon": 5.9944,
+              "lat": 45.256,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "après-midi (versant ouest) — déduction",
+          "speed_kmh": {
+            "typical": null,
+            "max": null
+          },
+          "season": "printemps-été",
+          "description": "Source commerciale (attribution incertaine): 'les pentes orientées ouest génèrent dès le printemps des thermiques puissants et réguliers'. Tracé pied de pente -> Prapoutel et horaire = déduction. [Source lue via extrait de moteur de recherche uniquement.] Coordonnées: valeurs de mémoire (type Wikipedia/Geonames) non revérifiées, accès web bloqué pendant la recherche — à contrôler.",
+          "confidence": "low",
+          "sources": [
+            "S20"
+          ]
+        }
+      ],
+      "convergences": [],
+      "hazards": [],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [],
+      "landings": [],
+      "synoptic_effects": [],
+      "xc_routes": [],
+      "tips": [
+        "Arrivée depuis la Chartreuse par le Col du Barioz / balcon après la traversée du Grésivaudan (~10 km) [S15].",
+        "Sites Prapoutel, Chamrousse, Allevard, Saint-Mury: aérologie non documentée dans cette recherche."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Informations et Topo sur le site de parapente de Saint Hilaire du Touvet",
+      "url": "https://www.airshop-parapente.com/informations-et-topo-sur-le-site-de-parapente-de-saint-hilaire-du-touvet/",
+      "publisher": "Airshop Parapente (magasin/école)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Cycle de brise à l'atterrissage de Lumbin et de l'Office de Tourisme: calme le matin tôt, brise de pente tendance Est faible, brise de vallée tendance Nord dès la fin de matinée, rarement >15 km/h, turbulente si vent météo de nord. Lu uniquement via extrait de moteur de recherche (page bloquée)."
+    },
+    {
+      "id": "S2",
+      "title": "Décollage Sud / Décollage Nord – Plateau des Petites Roches",
+      "url": "https://www.chartreuse-tourisme.com/en/touristic_sheet/decollage-sud-plateau-des-petites-roches-en-2716860",
+      "publisher": "Chartreuse Tourisme",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Décollages sud et nord ~1000 m (parapente et delta). Voir aussi fiche nord: https://www.chartreuse-tourisme.com/en/touristic_sheet/decollage-nord-plateau-des-petites-roches-en-2717525 . Un extrait de recherche (attribution incertaine, possiblement https://www.manawa.com/fr-FR/activite/france/grenoble/parapente/stage-2-jours-vol-solo-en-parapente-a-saint-hilaire-du-touvet-pres-de-grenoble/17479) donne 045°18'41\"N 005°53'22\"E qualifié d''atterrissage' et des décollages entre 800 et 2200 m."
+    },
+    {
+      "id": "S3",
+      "title": "Le passage de la Savoyarde",
+      "url": "https://www.chvd.org/2020/06/22/le-passage-de-la-savoyarde/",
+      "publisher": "CHVD (club de vol libre)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Source clé: brise de la cluse de Chambéry se divisant en deux branches (Albertville / Grenoble), 25-30 km/h, Venturi à la pointe SO des Bauges, sous-le-vent mortel au-dessus de Montmélian, langues de brise venant d'Annecy dans les vallées intérieures des Bauges convergeant secteur de la Savoyarde; transition Chartreuse->Bauges de 10 km. Lu via extraits de recherche."
+    },
+    {
+      "id": "S4",
+      "title": "Terrain de pratique CHALAIS [324]",
+      "url": "https://federation.ffvl.fr/terrain/324",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Site orienté sud au-dessus de Voreppe; atterrissage en fond de vallée soumis à un régime de brise souvent forte; protégé de la brise de nord qui remonte la vallée et apparaît en fin de matinée (forte en été). Extrait de recherche."
+    },
+    {
+      "id": "S5",
+      "title": "Terrain de pratique CHALAIS - VOREPPE RIVALIERES [325]",
+      "url": "https://federation.ffvl.fr/terrain/325",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Brise de nord pouvant apparaître à la mi-journée et forcir assez fortement. Extrait de recherche."
+    },
+    {
+      "id": "S6",
+      "title": "Chalais: FFVL paragliding site (Voreppe)",
+      "url": "https://www.chartreuse-tourisme.com/en/offers/chalais-ffvl-paragliding-site-voreppe-en-2716746/",
+      "publisher": "Chartreuse Tourisme",
+      "type": "web",
+      "lang": "en",
+      "notes": "Reprend la fiche FFVL Chalais."
+    },
+    {
+      "id": "S7",
+      "title": "Vent violent à Grenoble",
+      "url": "https://www.guichetdusavoir.org/question/voir/31121",
+      "publisher": "Guichet du Savoir (Bibliothèque municipale de Lyon)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Prédominance des vents de NO en journée à Grenoble expliquée par un effet de brise de vallée; vents forts de NO hivernaux accélérés par la cluse de Voreppe (l'extrait situe à tort la cluse au NE)."
+    },
+    {
+      "id": "S8",
+      "title": "Décollage de parapente Montlambert",
+      "url": "https://tourisme.coeurdesavoie.fr/fiches/decollage-de-parapente-montlambert-260800/",
+      "publisher": "Cœur de Savoie Tourisme",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Déco orienté SE, vol le matin jusqu'en début d'après-midi; 'en fin d'après-midi, la brise redescend du sommet'; accès D201 Montmélian -> Saint-Pierre-d'Albigny. Voir aussi https://www.montlambair.org/site-montlambert/ (club Les Indiens de Montlamb'air)."
+    },
+    {
+      "id": "S9",
+      "title": "cartographie des brises dans les Alpes du nord (fil de forum)",
+      "url": "https://www.parapentiste.info/forum/techniques-de-cross/cartographie-des-brises-dans-les-alpes-du-nord-t35042.0.html",
+      "publisher": "parapentiste.info (forum)",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Grésivaudan brise 'plutôt orientée Nord', 'juste au-dessus (côté Chamoux) la brise est Sud'; correction d'une carte ('le Grésivaudan n'est pas Sud mais Nord'); référence à 'Surfez le vent dans l'Y grenoblois', Vol Libre n°298 (2001). Page 2: https://parapentiste.info/forum/techniques-de-cross/cartographie-des-brises-dans-les-alpes-du-nord-t35042.20.html;wap2="
+    },
+    {
+      "id": "S10",
+      "title": "La carte des brises de vallée des Alpes du Nord",
+      "url": "https://paragliding.rocktheoutdoor.com/media/carte-brises-alpes-du-nord/",
+      "publisher": "Rock The Outdoor / Franck Largeault (école EPIC Chambéry)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Carte compilée à partir des cartes vol libre PNR Bauges, PNR Chartreuse, PN Vercors, carte suisse des brises, Bugey. Contenu cartographique non consulté."
+    },
+    {
+      "id": "S11",
+      "title": "Carte vol libre Bauges (Destination vol libre – légende)",
+      "url": "https://infos-parapente.com/wp-content/uploads/2021/11/Carte_vol-libre_Bauges_.pdf",
+      "publisher": "PNR du Massif des Bauges",
+      "type": "pdf",
+      "lang": "fr",
+      "notes": "Légende: décos, atterros, thermiques, balises, dynamique, brises de vallées, confluences. Décos routiers: Semnoz, nouveau déco des Fées au Margériaz. Interdiction de voler sous 300 m dans la réserve sauf 4 zones et 3 décos du Trélod. Contenu de la carte non lu."
+    },
+    {
+      "id": "S12",
+      "title": "Parc des Bauges – voler avec les rapaces",
+      "url": "https://www.cdvl-savoie.fr/voler-avec-les-rapaces/parc-des-bauges/",
+      "publisher": "CDVL Savoie",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Règles de survol de la réserve nationale de chasse et de faune sauvage des Bauges (attribution partagée avec S11)."
+    },
+    {
+      "id": "S13",
+      "title": "Site de vol libre du Revard",
+      "url": "https://www.chamberymontagnes.com/en/fiche/revard-free-flight-site/",
+      "publisher": "Grand Chambéry Montagnes (office de tourisme)",
+      "type": "web",
+      "lang": "en",
+      "notes": "Revard: site parapente, delta, speed-riding. Pas d'aérologie dans l'extrait."
+    },
+    {
+      "id": "S14",
+      "title": "Baptême Parapente Chambéry",
+      "url": "https://www.bauges-parapente.com/parapente-chambery/",
+      "publisher": "Bauges Parapente (école, page commerciale)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Cluse de Chambéry 'couloir thermique naturel', ascendances dès le milieu de matinée; légère brise fraîche montant du lac du Bourget en fin d'après-midi en été. Fiabilité moyenne-faible (ton marketing)."
+    },
+    {
+      "id": "S15",
+      "title": "Cross, massifs et transitions",
+      "url": "https://clubsthilair.fr/wp-content/uploads/2018/04/cross_massifs-et-transitions.pdf",
+      "publisher": "Club St Hil'Air",
+      "type": "pdf",
+      "lang": "fr",
+      "notes": "Transitions depuis Saint-Hilaire vers Vercors, Bauges, Belledonne; traversée Grésivaudan ~10 km 'via Saint-Genis' (nom tel que dans l'extrait), départ au-dessus de 2200 m côté Chartreuse; points: l'Aulp du Seuil, St Genis, Col du Barioz. Miroir: https://www.bluehouse.fr/wp-content/uploads/2019/04/Z-cross_massifs-et-transitions.pdf . Lu via extraits uniquement."
+    },
+    {
+      "id": "S16",
+      "title": "Cross Country Paragliding – Saint-Hilaire",
+      "url": "https://flysainthilaire.com/cross-country/",
+      "publisher": "Fly Saint-Hilaire (école)",
+      "type": "web",
+      "lang": "en",
+      "notes": "Possiblement source d'une partie de l'extrait sur la traversée vers Belledonne (attribution partagée avec S15)."
+    },
+    {
+      "id": "S17",
+      "title": "Vol Rando 105 (vol 211) – Le Granier",
+      "url": "https://carnetdevol.largeault.net/2020/08/10/vol-rando-105-vol-211-le-granier/",
+      "publisher": "Carnet de vol de Franck Largeault (EPIC Chambéry)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Vol-rando au Granier par vent de SO, thermiques variables. Autres vols: Vol 162 petit tour des Bauges (https://carnetdevol.largeault.net/2020/06/01/vol-162-petit-tour-des-bauges/)."
+    },
+    {
+      "id": "S18",
+      "title": "The Atmospheric Boundary Layer during Wintertime Persistent Inversions in the Grenoble Valleys",
+      "url": "https://www.frontiersin.org/journals/earth-science/articles/10.3389/feart.2016.00070/epub",
+      "publisher": "Largeron & Staquet, Frontiers in Earth Science 4:70 (2016)",
+      "type": "web",
+      "lang": "en",
+      "notes": "Régime hivernal stable: dynamique de couche limite due aux vents thermiques s'écoulant des vallées plus élevées entourant Grenoble; même schéma d'écoulement d'un épisode à l'autre (géométrie du relief). Extrait de recherche seulement."
+    },
+    {
+      "id": "S19",
+      "title": "Relief et structure dans les massifs subalpins des environs de Grenoble",
+      "url": "http://www.geol-alp.com/varietes/relief_struct_grenoble.html",
+      "publisher": "geol-alp (M. Gidon)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Géographie des cluses de Grenoble et Chambéry. Voir aussi Persée 1957 'Le problème des cluses préalpines: la cluse de Chambéry' https://www.persee.fr/doc/rga_0035-1121_1957_num_45_1_1950 et 'La Cluse de l'Isère' (1913) https://www.persee.fr/doc/rga_0249-6178_1913_num_1_3_5495"
+    },
+    {
+      "id": "S20",
+      "title": "Votre baptême parapente face à Belledonne",
+      "url": "https://www.lahautparapente.com/vol-bapteme-parapente-belledonne",
+      "publisher": "Là-Haut Parapente (école, page commerciale)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Attribution incertaine de l'extrait: versants ouest = thermiques puissants et réguliers dès le printemps; crêtes = ascendances dynamiques."
+    },
+    {
+      "id": "S21",
+      "title": "Annuaire – Club St Hil'Air",
+      "url": "https://www.petites-roches.org/vivre-sur-le-plateau/annuaire-plateau-pratique/club-st-hilair/",
+      "publisher": "Mairie du Plateau des Petites Roches",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Club historique créé en 1974, >200 pilotes."
+    },
+    {
+      "id": "S22",
+      "title": "Premier Grand tour du Bocal par Matmute",
+      "url": "https://clubsthilair.fr/2018/04/20/premier-grand-tour-du-bocal-par-matmute/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Boucle 'Grand tour du Bocal' (cuvette grenobloise); contenu non lisible."
+    },
+    {
+      "id": "S23",
+      "title": "201 km entre Vercors, Chartreuse, Bauges et Bornes",
+      "url": "https://www.bluehouse.fr/JB6/carnet-de-vol/2024/04/26/201-km/",
+      "publisher": "Carnet de vol JB6 (bluehouse.fr)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Récit de cross 201 km (26/04/2024) traversant Chartreuse et Bauges; contenu non lisible."
+    },
+    {
+      "id": "S24",
+      "title": "Aire de décollage de Vérel / Décollage de Verel Pragondran",
+      "url": "https://www.zeleph.com/nos-sites/verel-pragondran/",
+      "publisher": "Les Z'éléphants Volants (club, Chambéry)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Déco de Vérel-Pragondran au-dessus de Chambéry; voir aussi https://www.chamberymontagnes.com/fiche/aire-de-decollage-de-verel/ . Aérologie non lue."
+    },
+    {
+      "id": "S25",
+      "title": "où voler par vent de Nord autour de Grenoble ?",
+      "url": "https://www.parapentiste.info/forum/meteo-aerologie/ou-voler-par-vent-de-nord-autour-de-grenoble-t5840.0.html",
+      "publisher": "parapentiste.info (forum)",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Fil existant, contenu non récupéré."
+    }
+  ]
+}

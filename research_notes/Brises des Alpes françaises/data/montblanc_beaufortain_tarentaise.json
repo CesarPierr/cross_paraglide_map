@@ -1,0 +1,809 @@
+{
+  "topic": "Mont-Blanc/Chamonix, Val Montjoie, Megève/Val d'Arly, Beaufortain, Tarentaise, Vanoise",
+  "notes": "Collecte limitée : WebFetch bloqué sur tous les domaines et quota WebSearch épuisé ; toutes les infos proviennent de résumés de résultats de recherche (souvent des paraphrases anglaises de pages françaises). Coordonnées 'source' uniquement pour Planpraz, Flégère et Bois du Bouchet (GPS publiés). Toutes les autres coordonnées sont des positions approximatives de villages/sommets (coord_quality 'approx'), à vérifier. Les items 'confidence: low' sans source sont des déductions physiques (brise montante de vallée standard), signalées comme telles.",
+  "massifs": [
+    {
+      "id": "mont-blanc-chamonix",
+      "name": "Vallée de Chamonix – Aiguilles Rouges – Mont-Blanc",
+      "parent_massif": "Massif du Mont-Blanc",
+      "summary": "Vallée encaissée où la brise montante (vallée de l'Arve) s'établit franchement en début d'après-midi : « généralement soutenue l'après-midi (entre 20 et 30 km/h) » au Bois du Bouchet, avec renforcement à surveiller dès le début d'après-midi. Les décos des Aiguilles Rouges orientés S à E (Flégère, Planpraz) sont des sites du matin (8h – fin de matinée/début d'après-midi) ; le Plan de l'Aiguille (face O) est le site des grandes restitutions du soir le long du massif (20-30 km, « 11 glaciers » en 2 h), mais il est interdit du 1er juillet au 31 août (zones LF-R 30 A/B, arrêté du 13 octobre 2008 ; ZRT 30 C H24 du 1er juin au 15 octobre). Les Grands Montets (déco sur glacier ~3100 m) permettent des vols hauts (plafonds jusqu'à 4000 m les meilleurs jours). Au Prarion, l'atterrissage des Chavants passe sous le vent d'un relief dès que la brise s'installe (à éviter après 11h). Cross classiques : Planpraz → Annecy via la chaîne des Aravis, ou Planpraz → Valais. Réserve des Aiguilles Rouges : 1000 m/sol minimum au-delà de la crête O/NO de Planpraz.",
+      "bbox": [6.70, 45.80, 7.10, 46.07],
+      "center": [6.8694, 45.9237],
+      "breezes": [
+        {
+          "id": "brise-montante-vallee-chamonix",
+          "name": "Brise montante de la vallée de Chamonix (Arve)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Servoz", "lon": 6.7628, "lat": 45.9294, "coord_quality": "approx" },
+            { "name": "Les Houches", "lon": 6.7989, "lat": 45.8906, "coord_quality": "approx" },
+            { "name": "Chamonix-Mont-Blanc", "lon": 6.8694, "lat": 45.9237, "coord_quality": "approx" },
+            { "name": "Atterrissage du Bois du Bouchet", "lon": 6.8786, "lat": 45.9314, "coord_quality": "source" },
+            { "name": "Argentière", "lon": 6.9258, "lat": 45.9833, "coord_quality": "approx" }
+          ],
+          "hours": "début d'après-midi – fin d'après-midi (été) ; renforcement marqué dès le début d'après-midi",
+          "speed_kmh": { "typical": 22, "max": 30 },
+          "season": "printemps-été (saison thermique)",
+          "description": "Fiche officielle du Bois du Bouchet : brise de vallée « généralement soutenue l'après-midi (entre 20 et 30 km/h) », « attention au renforcement de la brise de vallée en début d'après-midi » (formulation FR reconstruite d'un extrait). Brochure Pays du Mont-Blanc : « thermic valley winds can be as strong as 30 kph but are more often between 20-25 kph », « valley wind of the Arve valley ». Le sens (aval → amont, des Houches vers Chamonix/Argentière) est déduit de la géométrie de la vallée et de la mention « 500 m en amont (nord) » pour le terrain de secours. Alimentation par les gorges de Servoz depuis le bassin de Passy/Le Fayet : non documentée (déduction).",
+          "confidence": "high",
+          "sources": ["S1", "S2"]
+        },
+        {
+          "id": "brise-pente-aiguilles-rouges-matin",
+          "name": "Brises de pente matinales des Aiguilles Rouges (Planpraz, Flégère)",
+          "kind": "slope",
+          "waypoints": [
+            { "name": "Chamonix-Mont-Blanc", "lon": 6.8694, "lat": 45.9237, "coord_quality": "approx" },
+            { "name": "Déco de Planpraz", "lon": 6.8550, "lat": 45.9356, "coord_quality": "source" },
+            { "name": "Le Brévent", "lon": 6.8369, "lat": 45.9344, "coord_quality": "approx" }
+          ],
+          "hours": "8h – fin de matinée / début d'après-midi",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "printemps-été",
+          "description": "Les fiches officielles donnent des créneaux matinaux sur des faces S à E : Planpraz (S et NE, 2000 m) « intéressant de 8h jusqu'en début d'après-midi » ; Flégère (S à E, 2350 m) « de 8h à la fin de matinée ». La brise de pente elle-même n'est pas décrite : sa présence est déduite de l'orientation et des horaires.",
+          "confidence": "medium",
+          "sources": ["S4", "S6", "S2"]
+        },
+        {
+          "id": "brise-pente-plan-aiguille-soir",
+          "name": "Brise / restitution du soir sous le Plan de l'Aiguille (face O)",
+          "kind": "slope",
+          "waypoints": [
+            { "name": "Chamonix-Mont-Blanc", "lon": 6.8694, "lat": 45.9237, "coord_quality": "approx" },
+            { "name": "Déco du Plan de l'Aiguille", "lon": 6.8810, "lat": 45.8925, "coord_quality": "approx" }
+          ],
+          "hours": "journée thermique et surtout soirée (restitution)",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "printemps, juin, septembre-octobre (site interdit 1er juillet – 31 août)",
+          "description": "Fiche du déco : « brises thermiques et thermodynamiques, ou flux météo d'ouest faible » ; « en conditions thermiques une bonne expérience est nécessaire, la brise peut être soutenue au déco ». Décollage face à l'ouest « idéal pour les vols du soir ». Chamonix.net : site réputé pour ses grands vols du soir, 20-30 km le long du massif, « 11 glaciers » en 2 h jusqu'au bout de la vallée.",
+          "confidence": "medium",
+          "sources": ["S5", "S12"]
+        }
+      ],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "zone-reglementee-mont-blanc",
+          "name": "Zones réglementées du massif du Mont-Blanc (LF-R 30 A/B, ZRT 30 C)",
+          "kind": "airspace",
+          "lon": 6.8652, "lat": 45.8326, "radius_km": 8,
+          "coord_quality": "approx",
+          "conditions": "LF-R 30 A/B : du 1er juillet au 31 août (arrêté du 13 octobre 2008). ZRT 30 C : H24 du 1er juin au 15 octobre (après création de la zone de protection des habitats naturels du Mont-Blanc).",
+          "description": "Survol interdit aux PUL (parapente, delta) en été dans les zones rouges, dont la Vallée Blanche, le Plan de l'Aiguille et l'Aiguille du Moine. Quiconque survole la zone, « volontairement ou involontairement », s'expose à des poursuites pénales, des amendes et la confiscation du matériel. SUP AIP 2021 : limites inférieures de LF-R 30 B modifiées et nouvelles limites latérales de part et d'autre de LF-R 30 A entre le « lac des Gaillands » et la « pointe de Gigord » (1er juillet – 31 août). Cercle indicatif centré sur le sommet : consulter la carte SIA pour les vrais polygones.",
+          "sources": ["S10", "S32", "S9", "S11", "S29"]
+        },
+        {
+          "id": "cables-plan-aiguille",
+          "name": "Câbles du téléphérique de l'Aiguille du Midi au Plan de l'Aiguille",
+          "kind": "other",
+          "lon": 6.8810, "lat": 45.8925, "radius_km": 1,
+          "coord_quality": "approx",
+          "conditions": "permanent ; site interdit en juillet-août",
+          "description": "Câbles électriques du téléphérique à gauche en sortie de déco, câbles du téléphérique à droite. Décollage et survol interdits en juillet et août par arrêté ministériel (trafic hélicoptère cité).",
+          "sources": ["S5", "S33"]
+        },
+        {
+          "id": "reserve-aiguilles-rouges",
+          "name": "Réserve naturelle des Aiguilles Rouges : 1000 m/sol minimum",
+          "kind": "airspace",
+          "lon": 6.8875, "lat": 45.9813, "radius_km": 4,
+          "coord_quality": "approx",
+          "conditions": "permanent",
+          "description": "Au-delà de la crête sommitale O/NO de Planpraz, survol à moins de 1000 m/sol interdit au-dessus de la réserve naturelle des Aiguilles Rouges. Point placé approximativement au Lac Blanc (dans la réserve), rayon indicatif.",
+          "sources": ["S30"]
+        },
+        {
+          "id": "bois-du-bouchet-brise-arbres",
+          "name": "Bois du Bouchet : brise d'après-midi et arbres",
+          "kind": "landing-turbulence",
+          "lon": 6.8786, "lat": 45.9314, "radius_km": 0.8,
+          "coord_quality": "source",
+          "conditions": "après-midi d'été, brise 20-30 km/h",
+          "description": "Terrain bordé d'arbres : l'aborder en restant au vent des arbres, notamment ceux du petit chemin d'accès à la gravière. Atterrissage non visible depuis les décos, à repérer avant de monter. Brochure : certains atterrissages sont au vent et difficiles à atteindre par brise forte.",
+          "sources": ["S1", "S2"]
+        },
+        {
+          "id": "terrain-secours-hiver-bouchet",
+          "name": "Terrain de secours hivernal (terrain delta, 500 m en amont du Bouchet)",
+          "kind": "landing-turbulence",
+          "lon": 6.8786, "lat": 45.9359, "radius_km": 0.5,
+          "coord_quality": "approx",
+          "conditions": "période d'ouverture des pistes de ski alpin et de fond (arrêté municipal)",
+          "description": "Quand les atterrissages du Bouchet et de Savoy sont interdits par arrêté municipal, il faut se poser sur le terrain delta 500 m en amont (nord), décrit comme « aérologiquement malsain et dangereux ». Position calculée 500 m au nord du Bouchet (approx).",
+          "sources": ["S1", "S26"]
+        },
+        {
+          "id": "planpraz-cables-vent-ouest-nord",
+          "name": "Planpraz : câbles du Brévent et turbulences par vent d'O/N",
+          "kind": "other",
+          "lon": 6.8550, "lat": 45.9356, "radius_km": 1,
+          "coord_quality": "source",
+          "conditions": "vent d'ouest ou de nord > 20 km/h à 2000 m",
+          "description": "Câbles sud-ouest du téléphérique du Brévent devant la sortie du déco : se décaler bien à droite pour passer sous les câbles. Prudence par vent d'ouest et de nord supérieur à 20 km/h à 2000 m : conditions turbulentes.",
+          "sources": ["S4"]
+        },
+        {
+          "id": "flegere-cables",
+          "name": "Flégère : câbles du téléphérique à droite du déco",
+          "kind": "other",
+          "lon": 6.8759, "lat": 45.9685, "radius_km": 0.8,
+          "coord_quality": "source",
+          "conditions": "permanent",
+          "description": "Attention aux câbles du téléphérique à droite de l'aire de décollage.",
+          "sources": ["S6"]
+        },
+        {
+          "id": "grands-montets-crevasses",
+          "name": "Grands Montets : déco sur glacier crevassé",
+          "kind": "other",
+          "lon": 6.9680, "lat": 45.9580, "radius_km": 1,
+          "coord_quality": "approx",
+          "conditions": "été, crevasses qui s'élargissent en août-septembre",
+          "description": "Décollage sur le glacier du Pas de Chèvre, prudence extrême : nombreuses crevasses ouvertes en été, très élargies en août-septembre.",
+          "sources": ["S7"]
+        },
+        {
+          "id": "prarion-atterro-chavants-sous-le-vent",
+          "name": "Les Houches – atterrissage des Chavants sous le vent d'un relief",
+          "kind": "landing-turbulence",
+          "lon": 6.7989, "lat": 45.8906, "radius_km": 1.5,
+          "coord_quality": "approx",
+          "conditions": "dès l'installation de la brise de vallée, en pratique après 11h",
+          "description": "Fiche du Prarion : l'atterrissage est sous le vent d'un relief quand la brise de vallée s'installe ; « après 11h l'atterrissage devient aléatoire », à éviter l'après-midi « par brise quasi quotidienne ». Turbulences aussi en bout de déco. Point placé sur Les Houches (position exacte des Chavants non obtenue).",
+          "sources": ["S8"]
+        }
+      ],
+      "thermal_spots": [
+        {
+          "id": "versant-servoz-plaine-joux",
+          "name": "Versant Servoz / Plaine-Joux (transition vers Chedde)",
+          "lon": 6.7628, "lat": 45.9294, "alt_m": null,
+          "coord_quality": "approx",
+          "best_hours": "non précisé",
+          "trigger": "non précisé",
+          "description": "Brochure Pays du Mont-Blanc (extrait) : on peut rejoindre l'atterrissage de Chedde en survolant Servoz, en trouvant des thermiques côté Servoz et Plaine-Joux.",
+          "sources": ["S2"]
+        },
+        {
+          "id": "drus-verte-chardonnet",
+          "name": "Drus – Aiguille Verte – Chardonnet (vols hauts depuis les Grands Montets)",
+          "lon": 6.9706, "lat": 45.9344, "alt_m": 4122,
+          "coord_quality": "approx",
+          "best_hours": "matin à mi-journée",
+          "trigger": "haute montagne granitique ; plafond jusqu'à 4000 m les meilleurs jours",
+          "description": "Depuis les Grands Montets, par conditions optimales, un plafond à 4000 m permet de monter très haut au-dessus des Drus, de l'Aiguille Verte et du Chardonnet ; départs de cross le matin. Vérifier la compatibilité avec les zones réglementées estivales.",
+          "sources": ["S7"]
+        }
+      ],
+      "soaring_spots": [
+        {
+          "id": "restitution-plan-aiguille",
+          "name": "Restitution du soir le long du massif depuis le Plan de l'Aiguille",
+          "lon": 6.8810, "lat": 45.8925,
+          "coord_quality": "approx",
+          "wind_dirs": ["W"],
+          "description": "Vols du soir thermodynamiques le long des faces nord du massif : 20-30 km, « 11 glaciers » traversés en 2 h jusqu'au bout de la vallée. Le déco fonctionne aussi en flux d'ouest faible. Interdit du 1er juillet au 31 août.",
+          "sources": ["S5", "S12"]
+        },
+        {
+          "id": "restitution-pas-de-chevre-becs-rouges",
+          "name": "Restitution du Pas de Chèvre et des Becs Rouges (Grands Montets)",
+          "lon": 6.9680, "lat": 45.9580,
+          "coord_quality": "approx",
+          "wind_dirs": [],
+          "description": "Vols de restitution du soir possibles sur le Pas de Chèvre et les Becs Rouges en décollant le soir des Grands Montets.",
+          "sources": ["S7"]
+        }
+      ],
+      "takeoffs": [
+        {
+          "id": "planpraz",
+          "name": "Planpraz – Brévent",
+          "lon": 6.8550, "lat": 45.9356, "alt_m": 2000,
+          "coord_quality": "source",
+          "orientations": ["S", "NE"],
+          "description": "GPS N45°56'08\" E006°51'18\", 2000 m (2032 m selon l'OT), dénivelé 1000 m. Intéressant de 8h jusqu'en début d'après-midi. Câbles SO du téléphérique du Brévent devant la sortie du déco. Turbulent par vent d'O ou de N > 20 km/h à 2000 m. Balise FFVL au sommet du Brévent (500 m au-dessus). Point de départ idéal des cross vers le Valais ou vers Annecy. Atterrissage : Bois du Bouchet.",
+          "sources": ["S4", "S2", "S13"]
+        },
+        {
+          "id": "flegere",
+          "name": "La Flégère",
+          "lon": 6.8759, "lat": 45.9685, "alt_m": 2350,
+          "coord_quality": "source",
+          "orientations": ["S", "SE", "E"],
+          "description": "GPS N45°58'06.6\" E006°52'33.4\", orientation sud à est, 2350 m, dénivelé 1350 m. Créneau de 8h à la fin de matinée ; non praticable en hiver. Câbles du téléphérique à droite du déco.",
+          "sources": ["S6"]
+        },
+        {
+          "id": "plan-de-l-aiguille",
+          "name": "Plan de l'Aiguille",
+          "lon": 6.8810, "lat": 45.8925, "alt_m": 2231,
+          "coord_quality": "approx",
+          "orientations": ["W", "NE"],
+          "description": "2231 m, 5 min à pied en aval de la gare intermédiaire de l'Aiguille du Midi. Décollage face à l'ouest (idéal le soir) ; côté NE utilisable par vent de nord. Brises thermiques/thermodynamiques ou flux d'ouest faible ; brise parfois soutenue au déco. Câbles électriques à gauche et câbles du téléphérique à droite. Décollage et survol interdits en juillet-août.",
+          "sources": ["S5", "S2"]
+        },
+        {
+          "id": "grands-montets",
+          "name": "Grands Montets (glacier du Pas de Chèvre)",
+          "lon": 6.9680, "lat": 45.9580, "alt_m": 3100,
+          "coord_quality": "approx",
+          "orientations": ["W"],
+          "description": "Déco vers 3100 m (2100 m de dénivelé) sur le glacier du Pas de Chèvre, face à l'ouest vers Chamonix. Crevasses. Départs de cross le matin ; restitution du soir sur le Pas de Chèvre et les Becs Rouges.",
+          "sources": ["S7"]
+        },
+        {
+          "id": "prarion",
+          "name": "Le Prarion (Les Houches)",
+          "lon": 6.7437, "lat": 45.8961, "alt_m": 1853,
+          "coord_quality": "approx",
+          "orientations": ["NE", "W"],
+          "description": "Déco NE : 1853 m, 843 m de dénivelé (brochure ; GPS publié « N 45° 53' 46'' - E 006°44'62'' », secondes de longitude invalides, interprétées ici en minutes décimales). Fiche OT : orientation NE/O, point haut 1945 m. Site du matin « avec thermiques d'est ou flux descendant la vallée (bise ou léger foehn) ». Barre de fer d'un mètre scellée dans un plot béton (ancrage de dameuse), invisible depuis le déco. La Chamoniarde : le Grand Prarion n'est volable que si la brise est bien de face, en général en début ou en fin d'après-midi.",
+          "sources": ["S8", "S3", "S9"]
+        }
+      ],
+      "landings": [
+        {
+          "id": "bois-du-bouchet",
+          "name": "Bois du Bouchet (Chamonix)",
+          "lon": 6.8786, "lat": 45.9314, "alt_m": 1040,
+          "coord_quality": "source",
+          "description": "Atterrissage officiel de la vallée (GPS N45°55'53\" E006°52'43\", 1040-1046 m). Brise d'après-midi 20-30 km/h. Bordé d'arbres : approche au vent des arbres. Interdit par arrêté municipal pendant l'ouverture des pistes de ski (secours : terrain delta 500 m au nord, « aérologiquement malsain et dangereux »).",
+          "sources": ["S1", "S2", "S26"]
+        },
+        {
+          "id": "savoy",
+          "name": "Atterrissage de Savoy (Chamonix)",
+          "lon": 6.8650, "lat": 45.9258, "alt_m": null,
+          "coord_quality": "approx",
+          "description": "Atterrissage autorisé, fermé et interdit en hiver (période des pistes). Position approximative au pied du Brévent.",
+          "sources": ["S9", "S1"]
+        },
+        {
+          "id": "les-chavants",
+          "name": "Les Chavants (Les Houches)",
+          "lon": 6.7989, "lat": 45.8906, "alt_m": null,
+          "coord_quality": "approx",
+          "description": "Atterrissage du Prarion, au lieu-dit les Chavants en bout de route, grand champ à gauche, aire de pliage indiquée sur le panneau du club. Sous le vent d'un relief quand la brise s'établit : à éviter après 11h. Position placée sur Les Houches (approx).",
+          "sources": ["S8"]
+        }
+      ],
+      "synoptic_effects": [
+        {
+          "wind": "W",
+          "effect": "Planpraz devient turbulent par vent d'ouest > 20 km/h à 2000 m. Le Plan de l'Aiguille (déco O) fonctionne par flux d'ouest faible combiné aux brises.",
+          "sources": ["S4", "S5"]
+        },
+        {
+          "wind": "N",
+          "effect": "Planpraz turbulent par vent de nord > 20 km/h à 2000 m. Au Plan de l'Aiguille, le côté NE du déco est utilisable par vent de nord.",
+          "sources": ["S4", "S5"]
+        },
+        {
+          "wind": "Bise",
+          "effect": "Flux descendant la vallée de Chamonix : le Prarion NE fonctionne le matin (« thermiques d'est ou flux descendant la vallée (bise ou léger foehn) »). Par régime de NE, « les brises diurnes priment sur le vent météo, protégeant le site » (attribution Planpraz/Plaine-Joux incertaine dans la source).",
+          "sources": ["S8", "S3"]
+        },
+        {
+          "wind": "Foehn",
+          "effect": "Seule mention trouvée : un « léger foehn » donne un flux descendant la vallée, exploitable le matin au Prarion NE. Aucune source sur les effets de foehn plus fort (sous le vent du Mont-Blanc).",
+          "sources": ["S8"]
+        }
+      ],
+      "xc_routes": [
+        {
+          "id": "chamonix-annecy",
+          "name": "Chamonix → Annecy (classique, par la chaîne des Aravis)",
+          "waypoints": [
+            { "name": "Déco de Planpraz", "lon": 6.8550, "lat": 45.9356, "coord_quality": "source" },
+            { "name": "Sallanches (traversée de l'Arve vers les Aravis, supposée)", "lon": 6.6317, "lat": 45.9367, "coord_quality": "approx" },
+            { "name": "Annecy", "lon": 6.1294, "lat": 45.8992, "coord_quality": "approx" }
+          ],
+          "distance_km": 56,
+          "description": "XC Mag : Planpraz est le point de départ idéal des cross vers l'ouest et Annecy ; le parcours classique comporte la traversée sur la chaîne des Aravis. Le point de traversée de l'Arve (vers Sallanches/Passy) est une déduction ; la distance est la somme des segments droits.",
+          "sources": ["S13", "S14"]
+        },
+        {
+          "id": "chamonix-valais",
+          "name": "Chamonix → Valais (Suisse)",
+          "waypoints": [
+            { "name": "Déco de Planpraz", "lon": 6.8550, "lat": 45.9356, "coord_quality": "source" },
+            { "name": "Col de Balme", "lon": 6.9820, "lat": 46.0260, "coord_quality": "approx" },
+            { "name": "Martigny", "lon": 7.0725, "lat": 46.1028, "coord_quality": "approx" }
+          ],
+          "distance_km": 25,
+          "description": "XC Mag : Planpraz est un départ idéal pour les cross vers la grande vallée du Rhône valaisan. Le passage par le col de Balme est une déduction (aucune source sur l'itinéraire précis).",
+          "sources": ["S13"]
+        }
+      ],
+      "tips": [
+        "Voler tôt côté Aiguilles Rouges (Flégère, Planpraz) : créneaux annoncés de 8h à la fin de matinée / début d'après-midi, avant le renforcement de la brise [S4][S6]",
+        "Repérer le Bois du Bouchet avant de monter (invisible des décos) et l'aborder au vent des arbres ; brise 20-30 km/h l'après-midi [S1][S2]",
+        "Au Prarion, ne pas compter sur l'atterrissage des Chavants après 11h (sous le vent d'un relief quand la brise s'installe) [S8]",
+        "Du 1er juillet au 31 août : Plan de l'Aiguille, Aiguille du Midi et Vallée Blanche interdits (LF-R 30 A/B) ; ZRT 30 C H24 du 1er juin au 15 octobre ; risque de poursuites et de confiscation [S10][S9][S32]",
+        "Atterrissages autorisés : Bois du Bouchet, Savoy (fermé l'hiver), gravière Cachat ; assurance RC et casque obligatoires [S9]",
+        "Réserve des Aiguilles Rouges : rester à plus de 1000 m/sol au-delà de la crête O/NO de Planpraz [S30]"
+      ]
+    },
+    {
+      "id": "val-montjoie-saint-gervais",
+      "name": "Saint-Gervais – Val Montjoie (Les Contamines)",
+      "parent_massif": "Massif du Mont-Blanc",
+      "summary": "Secteur très peu documenté par les sources accessibles. À Saint-Gervais, les biplaces décollent du versant Bettex – Mont d'Arbois (alpage de l'Avenaz ou Mont d'Arbois, « face au Mont-Blanc ») et se posent derrière la piscine ; durées de 10-15 min à 25-30 min « selon l'aérologie ». Une aire de décollage officielle existe aux Contamines-Montjoie (fiche non lue). La brise montante du Bon Nant (Le Fayet → Les Contamines) et une convergence au col de Voza / Prarion entre le versant Saint-Gervais et le versant des Houches sont des déductions non confirmées.",
+      "bbox": [6.66, 45.72, 6.80, 45.93],
+      "center": [6.7125, 45.8500],
+      "breezes": [
+        {
+          "id": "brise-bon-nant",
+          "name": "Brise montante du Bon Nant (Val Montjoie)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Le Fayet", "lon": 6.7036, "lat": 45.9068, "coord_quality": "approx" },
+            { "name": "Saint-Gervais-les-Bains", "lon": 6.7125, "lat": 45.8922, "coord_quality": "approx" },
+            { "name": "Les Contamines-Montjoie", "lon": 6.7271, "lat": 45.8215, "coord_quality": "approx" },
+            { "name": "Notre-Dame de la Gorge", "lon": 6.7175, "lat": 45.7903, "coord_quality": "approx" }
+          ],
+          "hours": "après-midi (été) – non documenté",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "printemps-été",
+          "description": "Déduction : brise montante de vallée standard remontant le Bon Nant vers les Contamines. Aucune source trouvée sur sa force ni sur ses horaires.",
+          "confidence": "low",
+          "sources": []
+        }
+      ],
+      "convergences": [
+        {
+          "id": "convergence-col-de-voza-prarion",
+          "name": "Convergence col de Voza – Prarion (versant Saint-Gervais / versant Les Houches)",
+          "geometry": { "type": "LineString", "coordinates": [[6.7437, 45.8961], [6.7583, 45.8779]] },
+          "when": "après-midi d'été (déduction)",
+          "mechanism": "Déduction : rencontre sur la crête Prarion – col de Voza des brises montant du côté Saint-Gervais/Bionnay et du côté Les Houches. Indice indirect : La Chamoniarde indique que le Grand Prarion n'est volable que si la brise est bien de face (début ou fin d'après-midi), et la fiche OT signale l'installation quasi quotidienne de la brise. Géométrie approximative.",
+          "usage": "Non documenté. À confirmer par des sources locales (club des Houches / Saint-Gervais).",
+          "confidence": "low",
+          "sources": ["S9", "S8"]
+        }
+      ],
+      "hazards": [],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [
+        {
+          "id": "mont-d-arbois-avenaz",
+          "name": "Mont d'Arbois / alpage de l'Avenaz (Saint-Gervais, versant Bettex)",
+          "lon": 6.6570, "lat": 45.8640, "alt_m": null,
+          "coord_quality": "approx",
+          "orientations": [],
+          "description": "Décollage « face au Mont-Blanc » depuis l'alpage de l'Avenaz ou le Mont d'Arbois (accès en 4×4 ou en téléphérique) pour des vols calmes sur le versant Bettex – Mont d'Arbois. Vols de 10-15 min ou 25-30 min selon l'aérologie. Coordonnées approximatives (sommet du Mont d'Arbois).",
+          "sources": ["S16"]
+        }
+      ],
+      "landings": [
+        {
+          "id": "saint-gervais-piscine",
+          "name": "Saint-Gervais (derrière la piscine)",
+          "lon": 6.7125, "lat": 45.8922, "alt_m": null,
+          "coord_quality": "approx",
+          "description": "Atterrissage des biplaces derrière la piscine de Saint-Gervais. Position placée sur le centre de Saint-Gervais (approx).",
+          "sources": ["S16"]
+        }
+      ],
+      "synoptic_effects": [],
+      "xc_routes": [],
+      "tips": [
+        "Une fiche officielle « Aire de décollage parapente – Les Contamines-Montjoie » existe (Haute-Savoie Mont-Blanc Tourisme) : à consulter [S31]"
+      ]
+    },
+    {
+      "id": "val-arly-megeve",
+      "name": "Megève – Val d'Arly (Combloux, Praz-sur-Arly, Flumet)",
+      "parent_massif": "Val d'Arly / Aravis-Mont-Blanc",
+      "summary": "Secteur peu documenté par les sources accessibles. Megève occupe un ensellement (~1100 m) entre le bassin de l'Arve (Sallanches) et le Val d'Arly (Praz-sur-Arly, Flumet, Ugine, Albertville). Rochebrune (déco 1755 m, atterrissage dans la plaine de Praz-sur-Arly, 755 m de dénivelé) est décrit comme favorable « en vol thermique et brises de vallée » (Barbules). Une convergence entre la brise montant de l'Arly et celle montant de l'Arve sur l'ensellement de Megève est plausible mais non confirmée (déduction).",
+      "bbox": [6.38, 45.67, 6.70, 45.94],
+      "center": [6.6175, 45.8567],
+      "breezes": [
+        {
+          "id": "brise-arly",
+          "name": "Brise montante du Val d'Arly (Albertville → Megève)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Albertville", "lon": 6.3925, "lat": 45.6758, "coord_quality": "approx" },
+            { "name": "Ugine", "lon": 6.4156, "lat": 45.7514, "coord_quality": "approx" },
+            { "name": "Flumet", "lon": 6.5153, "lat": 45.8186, "coord_quality": "approx" },
+            { "name": "Praz-sur-Arly", "lon": 6.5717, "lat": 45.8378, "coord_quality": "approx" },
+            { "name": "Megève", "lon": 6.6175, "lat": 45.8567, "coord_quality": "approx" }
+          ],
+          "hours": "après-midi (été) – non documenté",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "printemps-été",
+          "description": "Déduction : brise montante standard de l'Arly depuis la confluence d'Albertville vers l'ensellement de Megève. Aucune source sur la force, les horaires ou un effet venturi dans les gorges de l'Arly.",
+          "confidence": "low",
+          "sources": []
+        },
+        {
+          "id": "brise-arve-vers-megeve",
+          "name": "Brise montant du bassin de Sallanches vers Megève (Combloux / Demi-Quartier)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Sallanches", "lon": 6.6317, "lat": 45.9367, "coord_quality": "approx" },
+            { "name": "Combloux", "lon": 6.6410, "lat": 45.8963, "coord_quality": "approx" },
+            { "name": "Megève", "lon": 6.6175, "lat": 45.8567, "coord_quality": "approx" }
+          ],
+          "hours": "après-midi (été) – non documenté",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "printemps-été",
+          "description": "Déduction : flux montant du bassin de l'Arve vers l'ensellement de Megève. Non documenté.",
+          "confidence": "low",
+          "sources": []
+        }
+      ],
+      "convergences": [
+        {
+          "id": "convergence-ensellement-megeve",
+          "name": "Convergence de l'ensellement de Megève (Arve / Arly)",
+          "geometry": { "type": "LineString", "coordinates": [[6.6570, 45.8640], [6.6175, 45.8567]] },
+          "when": "après-midi d'été (déduction)",
+          "mechanism": "Déduction : Megève est sur la ligne de partage des eaux entre l'Arve (Sallanches) et l'Arly (Praz-sur-Arly) ; les brises montantes des deux côtés devraient s'y rencontrer. Géométrie approximative (Mont d'Arbois → Megève).",
+          "usage": "Non documenté par les sources consultées.",
+          "confidence": "low",
+          "sources": []
+        }
+      ],
+      "hazards": [],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [
+        {
+          "id": "rochebrune",
+          "name": "Rochebrune (Megève)",
+          "lon": 6.6110, "lat": 45.8440, "alt_m": 1755,
+          "coord_quality": "approx",
+          "orientations": [],
+          "description": "Déco à 1755 m, atterrissage dans la plaine de Praz-sur-Arly (755 m de dénivelé) ; biplaces de 15 à 35 min selon l'aérologie (école présente depuis 1990). Barbules : conditions favorables « en vol thermique et brises de vallée ». Coordonnées approximatives.",
+          "sources": ["S17", "S15"]
+        }
+      ],
+      "landings": [
+        {
+          "id": "plaine-praz-sur-arly",
+          "name": "Plaine de Praz-sur-Arly",
+          "lon": 6.5717, "lat": 45.8378, "alt_m": 1000,
+          "coord_quality": "approx",
+          "description": "Atterrissage des vols de Rochebrune (altitude déduite : 1755 m − 755 m). Position placée sur le village de Praz-sur-Arly.",
+          "sources": ["S17"]
+        }
+      ],
+      "synoptic_effects": [],
+      "xc_routes": [],
+      "tips": []
+    },
+    {
+      "id": "beaufortain",
+      "name": "Beaufortain (Les Saisies, Hauteluce, Beaufort, Arêches)",
+      "parent_massif": "Beaufortain",
+      "summary": "Les sources accessibles ne documentent pratiquement pas l'aérologie du Beaufortain. Les Saisies (plateau à ~1650 m, 30 min d'Albertville et de Megève) accueille des biplaces (RDV des écoles au 71 avenue des JO) ; le Signal de Bisanne culmine à 1930 m. Un récit de rando-vol bivouac de 5 jours avec 5 décos existe (Trace Ta Route, non lu). Le régime proposé ici (brise du Doron de Beaufort depuis Albertville, branche de Hauteluce vers le col des Saisies, convergence sur le plateau des Saisies avec la brise du Val d'Arly) est une déduction à confirmer.",
+      "bbox": [6.40, 45.62, 6.76, 45.80],
+      "center": [6.5733, 45.7194],
+      "breezes": [
+        {
+          "id": "brise-doron-beaufort",
+          "name": "Brise montante du Doron de Beaufort",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Albertville", "lon": 6.3925, "lat": 45.6758, "coord_quality": "approx" },
+            { "name": "Queige", "lon": 6.4492, "lat": 45.7128, "coord_quality": "approx" },
+            { "name": "Villard-sur-Doron", "lon": 6.5378, "lat": 45.7339, "coord_quality": "approx" },
+            { "name": "Beaufort", "lon": 6.5733, "lat": 45.7194, "coord_quality": "approx" },
+            { "name": "Cormet de Roselend", "lon": 6.6430, "lat": 45.6940, "coord_quality": "approx" }
+          ],
+          "hours": "après-midi (été) – non documenté",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "printemps-été",
+          "description": "Déduction : brise montante standard du Doron de Beaufort depuis la confluence d'Albertville. Aucune source trouvée.",
+          "confidence": "low",
+          "sources": []
+        },
+        {
+          "id": "brise-hauteluce-saisies",
+          "name": "Brise montante du vallon de Hauteluce vers le col des Saisies",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Beaufort", "lon": 6.5733, "lat": 45.7194, "coord_quality": "approx" },
+            { "name": "Hauteluce", "lon": 6.5833, "lat": 45.7500, "coord_quality": "approx" },
+            { "name": "Les Saisies", "lon": 6.5331, "lat": 45.7586, "coord_quality": "approx" }
+          ],
+          "hours": "après-midi (été) – non documenté",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "printemps-été",
+          "description": "Déduction : flux montant de Beaufort/Hauteluce vers le plateau des Saisies. Non documenté.",
+          "confidence": "low",
+          "sources": []
+        }
+      ],
+      "convergences": [
+        {
+          "id": "convergence-col-des-saisies",
+          "name": "Convergence du col des Saisies (Beaufortain / Val d'Arly)",
+          "geometry": { "type": "LineString", "coordinates": [[6.5050, 45.7380], [6.5331, 45.7586]] },
+          "when": "après-midi d'été (déduction)",
+          "mechanism": "Déduction : rencontre sur le plateau des Saisies (Bisanne → Saisies) de la brise montant du Beaufortain (Hauteluce/Villard-sur-Doron) et de celle montant du Val d'Arly (Flumet/Notre-Dame-de-Bellecombe/Crest-Voland). Géométrie approximative.",
+          "usage": "Non documenté par les sources consultées.",
+          "confidence": "low",
+          "sources": []
+        }
+      ],
+      "hazards": [],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [],
+      "landings": [],
+      "synoptic_effects": [],
+      "xc_routes": [],
+      "tips": [
+        "Biplaces aux Saisies : RDV des écoles au 71 avenue des JO ; plateau du Beaufortain à 30 min d'Albertville et de Megève [S18]",
+        "Récit de rando-vol bivouac de 5 jours avec 5 décos dans le Beaufortain (Trace Ta Route), à exploiter lors d'une prochaine passe [S28]"
+      ]
+    },
+    {
+      "id": "tarentaise",
+      "name": "Tarentaise (Albertville → Moûtiers → Bourg-Saint-Maurice → Val d'Isère)",
+      "parent_massif": "Tarentaise",
+      "summary": "Longue vallée de l'Isère, coudée à Moûtiers (axe SE d'Albertville à Moûtiers, puis NE jusqu'à Bourg-Saint-Maurice). La brise montante y devient « assez forte en milieu d'après-midi » (école d'Albertville) ; les références pédagogiques citent la Tarentaise parmi les vallées où la brise peut atteindre 50 km/h par effet venturi dans les rétrécissements. Le PCHT (Parapente Club Haute Tarentaise, fondé en 1986, sites de Sainte-Foy à La Plagne, du Fort de la Platte au domaine des Arcs) indique que la brise principale « se divise à Landry pour alimenter la vallée de Peisey-Nancroix » et que le versant Peisey-Vallandry offre les meilleures conditions d'après-midi. Décos officiels aux Arcs (Vezaille, Cachette, Clocheret, Clocheret Bas, Altiport à Arc 1600), atterrissages dans la vallée près de Bourg ; à Val d'Isère, déco au sommet de Solaise (~2500 m). Aucune source trouvée sur la Lombarde ni sur les échanges au col du Petit-Saint-Bernard.",
+      "bbox": [6.38, 45.43, 7.02, 45.70],
+      "center": [6.6497, 45.5550],
+      "breezes": [
+        {
+          "id": "brise-isere-tarentaise",
+          "name": "Brise montante de Tarentaise (Albertville → Bourg-Saint-Maurice)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Albertville", "lon": 6.3925, "lat": 45.6758, "coord_quality": "approx" },
+            { "name": "La Bâthie", "lon": 6.4489, "lat": 45.6278, "coord_quality": "approx" },
+            { "name": "Aigueblanche", "lon": 6.5020, "lat": 45.5050, "coord_quality": "approx" },
+            { "name": "Moûtiers", "lon": 6.5317, "lat": 45.4847, "coord_quality": "approx" },
+            { "name": "Aime", "lon": 6.6497, "lat": 45.5550, "coord_quality": "approx" },
+            { "name": "Landry", "lon": 6.7330, "lat": 45.5760, "coord_quality": "approx" },
+            { "name": "Bourg-Saint-Maurice", "lon": 6.7700, "lat": 45.6186, "coord_quality": "approx" }
+          ],
+          "hours": "fin de matinée – fin d'après-midi ; maximum vers 14h-17h (référence générale)",
+          "speed_kmh": { "typical": 25, "max": 50 },
+          "season": "printemps-été",
+          "description": "École d'Albertville : la brise devient « assez forte en milieu d'après-midi » et les après-midis d'été sont plus turbulents. Références pédagogiques : dans les longues vallées « comme la Tarentaise, la Maurienne, la Durance », la brise de vallée peut atteindre 50 km/h, en partie par effet venturi dans les rétrécissements, avec un maximum entre 14h et 16-17h. Vitesse typique (25 km/h) = interprétation de « assez forte ». Le PCHT signale la division de la brise à Landry (voir la branche de Peisey). Attribution exacte des extraits incertaine.",
+          "confidence": "medium",
+          "sources": ["S25", "S24", "S19"]
+        },
+        {
+          "id": "brise-peisey-nancroix",
+          "name": "Branche de la brise vers Peisey-Nancroix (division à Landry)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Landry", "lon": 6.7330, "lat": 45.5760, "coord_quality": "approx" },
+            { "name": "Peisey-Nancroix", "lon": 6.7560, "lat": 45.5440, "coord_quality": "approx" }
+          ],
+          "hours": "après-midi (été)",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "printemps-été",
+          "description": "PCHT (Aérologie Haute Tarentaise, via extrait) : « la brise principale se divise à Landry pour alimenter la vallée de Peisey-Nancroix », ce qui donne les meilleures conditions d'après-midi sur le versant de Peisey-Vallandry (formulation FR reconstruite).",
+          "confidence": "medium",
+          "sources": ["S19"]
+        },
+        {
+          "id": "brise-haute-tarentaise",
+          "name": "Brise montante de Haute-Tarentaise (Bourg → Val d'Isère)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Bourg-Saint-Maurice", "lon": 6.7700, "lat": 45.6186, "coord_quality": "approx" },
+            { "name": "Séez", "lon": 6.7990, "lat": 45.6240, "coord_quality": "approx" },
+            { "name": "Sainte-Foy-Tarentaise", "lon": 6.8830, "lat": 45.5900, "coord_quality": "approx" },
+            { "name": "Val d'Isère", "lon": 6.9800, "lat": 45.4481, "coord_quality": "approx" }
+          ],
+          "hours": "après-midi (été) – non documenté",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "printemps-été",
+          "description": "Déduction : prolongement de la brise de Tarentaise vers Sainte-Foy et Val d'Isère. Aucune source trouvée.",
+          "confidence": "low",
+          "sources": []
+        },
+        {
+          "id": "brise-petit-saint-bernard",
+          "name": "Flux montant vers le col du Petit-Saint-Bernard",
+          "kind": "pass-transfer",
+          "waypoints": [
+            { "name": "Séez", "lon": 6.7990, "lat": 45.6240, "coord_quality": "approx" },
+            { "name": "La Rosière", "lon": 6.8500, "lat": 45.6270, "coord_quality": "approx" },
+            { "name": "Col du Petit-Saint-Bernard", "lon": 6.8836, "lat": 45.6803, "coord_quality": "approx" }
+          ],
+          "hours": "après-midi (été) – non documenté",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "printemps-été",
+          "description": "Déduction : flux montant de Séez vers le col (2188 m), qui relie la Tarentaise au Val d'Aoste. Échanges avec l'Italie (Lombarde, transfert de col) non documentés.",
+          "confidence": "low",
+          "sources": []
+        }
+      ],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "brise-forte-tarentaise-apres-midi",
+          "name": "Brise forte de Tarentaise l'après-midi",
+          "kind": "strong-breeze",
+          "lon": 6.3925, "lat": 45.6758, "radius_km": 5,
+          "coord_quality": "approx",
+          "conditions": "après-midi d'été, maximum en milieu d'après-midi",
+          "description": "Brise « assez forte en milieu d'après-midi », après-midis d'été turbulents (école d'Albertville). Jusqu'à 50 km/h possibles dans les longues vallées comme la Tarentaise, avec effet venturi dans les rétrécissements (référence générale ; tronçons de venturi précis non documentés). Point placé à Albertville, à titre indicatif.",
+          "sources": ["S25", "S24"]
+        }
+      ],
+      "thermal_spots": [
+        {
+          "id": "versant-peisey-vallandry",
+          "name": "Versant de Peisey-Vallandry",
+          "lon": 6.7560, "lat": 45.5440, "alt_m": null,
+          "coord_quality": "approx",
+          "best_hours": "après-midi",
+          "trigger": "versant alimenté par la branche de brise qui se divise à Landry",
+          "description": "PCHT : meilleures conditions d'après-midi sur le versant de Peisey-Vallandry, grâce à la brise principale qui se divise à Landry. Point placé sur Peisey-Nancroix (approx).",
+          "sources": ["S19"]
+        }
+      ],
+      "soaring_spots": [],
+      "takeoffs": [
+        {
+          "id": "arc-1600",
+          "name": "Les Arcs – Arc 1600 (Vezaille, Cachette, Clocheret, Clocheret Bas, Altiport)",
+          "lon": 6.7944, "lat": 45.5878, "alt_m": null,
+          "coord_quality": "approx",
+          "orientations": [],
+          "description": "Décos officiels saisonniers : Vezaille (Arc 1600) et, pour les solos, Cachette, Clocheret, Clocheret Bas et Altiport (Arc 1600), entre autres ; accès par funiculaire et remontées selon ouverture. Atterrissages dans la vallée près de Bourg-Saint-Maurice. Sites gérés par le PCHT. Point unique placé sur Arc 1600 (approx).",
+          "sources": ["S21", "S20"]
+        },
+        {
+          "id": "solaise-val-d-isere",
+          "name": "Solaise (Val d'Isère)",
+          "lon": 6.9956, "lat": 45.4396, "alt_m": 2500,
+          "coord_quality": "approx",
+          "orientations": [],
+          "description": "Décollage au sommet de Solaise (~2500 m), vue sur le lac du Chevril et le barrage de Tignes ; décollage à ski en hiver. Coordonnées approximatives.",
+          "sources": ["S23"]
+        }
+      ],
+      "landings": [
+        {
+          "id": "bourg-saint-maurice-vallee",
+          "name": "Fond de vallée de Bourg-Saint-Maurice (dont Les Ilettes, Hauteville)",
+          "lon": 6.7700, "lat": 45.6186, "alt_m": null,
+          "coord_quality": "approx",
+          "description": "Les vols des Arcs se posent dans la vallée près de Bourg-Saint-Maurice ; le PCHT documente l'« Atterrissage des Ilettes (Hauteville) » (fiche non lue). Point placé sur Bourg-Saint-Maurice (approx).",
+          "sources": ["S21", "S34"]
+        }
+      ],
+      "synoptic_effects": [],
+      "xc_routes": [],
+      "tips": [
+        "Document clé à lire : « Aerologie-de-la-Tarentaise.pdf » et la page « Aérologie Hte Tarentaise » du PCHT ; balises via winds.mobi [S19][S20]",
+        "Les grands triangles de plaine passent par la cluse d'Albertville (ex. triangle plat de 202 km Chartreuse – Aravis – Albertville du 17/07/2019) [S27]"
+      ]
+    },
+    {
+      "id": "vanoise",
+      "name": "Vanoise – Trois Vallées et Doron de Bozel (Courchevel, Méribel, Belleville, Bozel, Pralognan)",
+      "parent_massif": "Vanoise",
+      "summary": "Les sources accessibles se limitent à des informations de prestataires. À Courchevel, les biplaces décollent du col de la Loze (ou plus haut, de La Saulire) et se posent au Praz (Courchevel 1300) ; les vols durent de 7 à 60 min selon les conditions, avec des circuits en thermique depuis la Loze. Les brises des Dorons (Bozel/Pralognan, Belleville, Les Allues) alimentées depuis la confluence de Moûtiers sont des déductions. Aucune source trouvée sur Pralognan, Méribel, les Belleville ni sur les transitions vers la Maurienne.",
+      "bbox": [6.45, 45.26, 6.95, 45.50],
+      "center": [6.6506, 45.4428],
+      "breezes": [
+        {
+          "id": "brise-doron-bozel",
+          "name": "Brise montante du Doron de Bozel (Moûtiers → Pralognan)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Moûtiers", "lon": 6.5317, "lat": 45.4847, "coord_quality": "approx" },
+            { "name": "Brides-les-Bains", "lon": 6.5672, "lat": 45.4531, "coord_quality": "approx" },
+            { "name": "Bozel", "lon": 6.6506, "lat": 45.4428, "coord_quality": "approx" },
+            { "name": "Pralognan-la-Vanoise", "lon": 6.7203, "lat": 45.3825, "coord_quality": "approx" }
+          ],
+          "hours": "après-midi (été) – non documenté",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "printemps-été",
+          "description": "Déduction : brise montante du Doron de Bozel alimentée depuis la confluence de Moûtiers. Aucune source trouvée.",
+          "confidence": "low",
+          "sources": []
+        },
+        {
+          "id": "brise-doron-belleville",
+          "name": "Brise montante du Doron de Belleville",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Moûtiers", "lon": 6.5317, "lat": 45.4847, "coord_quality": "approx" },
+            { "name": "Saint-Martin-de-Belleville", "lon": 6.5050, "lat": 45.3800, "coord_quality": "approx" },
+            { "name": "Les Menuires", "lon": 6.5383, "lat": 45.3239, "coord_quality": "approx" }
+          ],
+          "hours": "après-midi (été) – non documenté",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "printemps-été",
+          "description": "Déduction : brise montante de la vallée des Belleville. Aucune source trouvée.",
+          "confidence": "low",
+          "sources": []
+        },
+        {
+          "id": "brise-allues-meribel",
+          "name": "Brise montante de la vallée des Allues (Méribel)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Brides-les-Bains", "lon": 6.5672, "lat": 45.4531, "coord_quality": "approx" },
+            { "name": "Méribel", "lon": 6.5658, "lat": 45.3967, "coord_quality": "approx" }
+          ],
+          "hours": "après-midi (été) – non documenté",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "printemps-été",
+          "description": "Déduction : brise montante de la vallée des Allues vers Méribel. Aucune source trouvée.",
+          "confidence": "low",
+          "sources": []
+        }
+      ],
+      "convergences": [],
+      "hazards": [],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [
+        {
+          "id": "col-de-la-loze",
+          "name": "Col de la Loze (Courchevel)",
+          "lon": 6.6040, "lat": 45.4040, "alt_m": 2304,
+          "coord_quality": "approx",
+          "orientations": [],
+          "description": "Décollage des biplaces (à ski en hiver) ; vols de 7 à 60 min selon les conditions, en simple descente ou en circuit thermique depuis la Loze. Départs aussi possibles de La Saulire. Coordonnées et altitude approximatives.",
+          "sources": ["S22"]
+        }
+      ],
+      "landings": [
+        {
+          "id": "le-praz-courchevel-1300",
+          "name": "Le Praz (Courchevel 1300)",
+          "lon": 6.6260, "lat": 45.4330, "alt_m": 1300,
+          "coord_quality": "approx",
+          "description": "Atterrissage des vols de la Loze, au Praz (navette gratuite). Coordonnées approximatives.",
+          "sources": ["S22"]
+        }
+      ],
+      "synoptic_effects": [],
+      "xc_routes": [],
+      "tips": []
+    }
+  ],
+  "sources": [
+    { "id": "S1", "title": "Terrain d'atterrissage du Bois du Bouchet (fiche officielle APIDAE)", "url": "https://hautesavoiemontblanc-tourisme.com/offres/terrain-datterrissage-du-bois-du-bouchet-chamonix-mont-blanc-fr-5884696/", "publisher": "Haute-Savoie Mont-Blanc Tourisme / OT Chamonix (mêmes textes sur combloux.com, passy-mont-blanc.com)", "type": "web", "lang": "fr", "notes": "Brise de vallée soutenue l'après-midi, 20-30 km/h ; renforcement en début d'après-midi ; approche au vent des arbres ; interdiction hivernale et terrain de secours delta 500 m au nord. Lu via extraits de recherche uniquement." },
+    { "id": "S2", "title": "Vol libre au Pays du Mont-Blanc / Free flying in the Mont Blanc Region (brochure)", "url": "https://www.chamonix.com/sites/default/files/media/brochures/vol-libre-anglais.pdf", "publisher": "Office de Tourisme de Chamonix / clubs locaux", "type": "pdf", "lang": "en", "notes": "GPS des décos et atterrissages (Planpraz, Bois du Bouchet), brise de l'Arve 20-25 km/h jusqu'à 30 km/h, survol de Servoz vers Chedde. Version FR : https://www.airsportschamonix.fr/wp-content/uploads/2023/01/vol_libre_chamonix_Mont-Blanc_fr.pdf" },
+    { "id": "S3", "title": "Vol libre au Pays du Mont-Blanc (PDF hébergé par la FFVL)", "url": "https://federation.ffvl.fr/sites/ffvl.fr/files/Massifdumontblancchamonix.pdf", "publisher": "FFVL", "type": "pdf", "lang": "fr", "notes": "GPS du Prarion NE (« N 45° 53' 46'' - E 006°44'62'' », 1853 m) ; « régime de NE : les brises diurnes priment sur le vent météo » (site exact incertain dans l'extrait)." },
+    { "id": "S4", "title": "Décollage de Planpraz – Brévent (fiche officielle)", "url": "https://hautesavoiemontblanc-tourisme.com/offres/decollage-de-planpraz-brevent-chamonix-mont-blanc-fr-5885016/", "publisher": "Haute-Savoie Mont-Blanc Tourisme / OT Chamonix", "type": "web", "lang": "fr", "notes": "S et NE, 2032 m, de 8h au début d'après-midi ; câbles SO ; turbulent par vent d'O/N > 20 km/h à 2000 m." },
+    { "id": "S5", "title": "Décollage du Plan de l'Aiguille (fiche officielle)", "url": "https://hautesavoiemontblanc-tourisme.com/offres/decollage-du-plan-de-laiguille-chamonix-mont-blanc-fr-5884743/", "publisher": "Haute-Savoie Mont-Blanc Tourisme / OT Chamonix (copie sur combloux.com)", "type": "web", "lang": "fr", "notes": "2231 m, O et NE ; brises thermiques/thermodynamiques ou flux d'O faible ; câbles ; interdit en juillet-août." },
+    { "id": "S6", "title": "La Flégère – parapente", "url": "https://www.chamonix.net/francais/loisirs/parapente/la-flegere", "publisher": "Chamonix.net", "type": "web", "lang": "fr", "notes": "GPS N45°58'06.6\" E006°52'33.4\", S à E, 2350 m, de 8h à la fin de matinée, câbles à droite." },
+    { "id": "S7", "title": "Grands Montets – parapente", "url": "https://www.chamonix.net/francais/loisirs/parapente/grands-montets", "publisher": "Chamonix.net", "type": "web", "lang": "fr", "notes": "Déco sur le glacier du Pas de Chèvre ~3100 m, crevasses, plafond 4000 m, restitution Pas de Chèvre / Becs Rouges." },
+    { "id": "S8", "title": "Décollage du Prarion (fiche officielle)", "url": "https://hautesavoiemontblanc-tourisme.com/offres/decollage-du-prarion-les-houches-fr-5884871/", "publisher": "Haute-Savoie Mont-Blanc Tourisme / OT Les Houches", "type": "web", "lang": "fr", "notes": "NE/O, 1945 m ; site du matin (thermiques d'E ou flux descendant, bise ou léger foehn) ; atterrissage des Chavants aléatoire après 11h, sous le vent d'un relief." },
+    { "id": "S9", "title": "Free flying (Vol libre)", "url": "https://www.chamoniarde.com/en/your-activities/free-flying", "publisher": "La Chamoniarde (société de prévention et de secours en montagne)", "type": "web", "lang": "en", "notes": "Restriction du 1er juillet au 31 août ; LF-R 30 A/B ; ZRT 30 C H24 du 1er juin au 15 octobre ; atterrissages autorisés ; Grand Prarion volable si brise de face." },
+    { "id": "S10", "title": "Survol du massif du Mont-Blanc : rappel de l'arrêté du 13 octobre 2008 (actualité du 20/08/2012)", "url": "https://www.chamonix.net/francais/actualite/2012-08-20.htm", "publisher": "Chamonix.net", "type": "web", "lang": "fr", "notes": "Zones interdites aux PUL du 1er juillet au 31 août ; parapentes observés en Vallée Blanche, Plan de l'Aiguille, Aiguille du Moine ; sanctions." },
+    { "id": "S11", "title": "Un SUP AIP pour le secteur du Mont-Blanc", "url": "https://aerovfr.com/2021/05/un-sup-aip-pour-le-secteur-du-mont-blanc", "publisher": "AeroVFR", "type": "web", "lang": "fr", "notes": "Modification de LF-R 30 B entre le lac des Gaillands et la pointe de Gigord, 1er juillet – 31 août." },
+    { "id": "S12", "title": "Paragliding from Plan de l'Aiguille", "url": "https://www.chamonix.net/english/leisure/paragliding/plan-aiguille", "publisher": "Chamonix.net", "type": "web", "lang": "en", "notes": "Grands vols du soir, 20-30 km, « 11 glaciers » en 2 h (attribution partagée avec nomadness.benlo.com/chamonix.html)." },
+    { "id": "S13", "title": "Guide to Chamonix, France", "url": "https://xcmag.com/travel-guide/guide-to-chamonix-france/", "publisher": "Cross Country Magazine", "type": "web", "lang": "en", "notes": "Planpraz départ idéal pour le Valais ou vers Annecy ; traversée sur la chaîne des Aravis du cross classique Chamonix-Annecy." },
+    { "id": "S14", "title": "Paragliding in Chamonix (guide)", "url": "https://www.seechamonix.com/paragliding/guide", "publisher": "SeeChamonix", "type": "web", "lang": "en", "notes": "Plaine-Joux plus doux que la vallée, de midi à tard (attribution partagée avec XC Mag)." },
+    { "id": "S15", "title": "Site : Chamonix – Vallée du Mont Blanc", "url": "http://barbules.fr/index.php/Site:Chamonix_-_Vall%C3%A9e_du_Mont_Blanc", "publisher": "Barbules Wiki", "type": "web", "lang": "fr", "notes": "Rochebrune : thermique et brises de vallée ; Plaine-Joux : brises de pente ; certains sites ont des vents de vallée très forts l'après-midi." },
+    { "id": "S16", "title": "Vol « balade » biplace (Saint-Gervais)", "url": "https://hautesavoiemontblanc-tourisme.com/offres/vol-balade-biplace-saint-gervais-les-bains-fr-5829194/", "publisher": "Haute-Savoie Mont-Blanc Tourisme / Itinér'Air", "type": "web", "lang": "fr", "notes": "Déco Avenaz / Mont d'Arbois face au Mont-Blanc ; atterrissage derrière la piscine ; durées selon l'aérologie." },
+    { "id": "S17", "title": "Baptême en parapente (Megève Rochebrune)", "url": "https://hautesavoiemontblanc-tourisme.com/offres/bapteme-en-parapente-megeve-fr-5831400/", "publisher": "Haute-Savoie Mont-Blanc Tourisme / école de Megève", "type": "web", "lang": "fr", "notes": "Déco Rochebrune 1755 m, atterrissage plaine de Praz-sur-Arly, 755 m de dénivelé." },
+    { "id": "S18", "title": "Parapente aux Saisies", "url": "https://www.belambra.fr/guides/destinations/les-saisies/parapente-les-saisies", "publisher": "Belambra (guide de destination)", "type": "web", "lang": "fr", "notes": "Plateau du Beaufortain, 30 min d'Albertville/Megève ; RDV 71 avenue des JO." },
+    { "id": "S19", "title": "Aérologie Hte Tarentaise", "url": "https://pcht.org/articles.php?lng=fr&pg=977&mnuid=426&tconfig=0", "publisher": "Parapente Club Haute Tarentaise (PCHT)", "type": "web", "lang": "fr", "notes": "Division de la brise à Landry vers Peisey-Nancroix, versant Peisey-Vallandry l'après-midi (attribution via extrait, probable)." },
+    { "id": "S20", "title": "PCHT – accueil et téléchargements (Aerologie-de-la-Tarentaise.pdf)", "url": "https://www.pcht.org/download.php", "publisher": "Parapente Club Haute Tarentaise (PCHT)", "type": "web", "lang": "fr", "notes": "Club fondé le 26/03/1986 ; sites de Sainte-Foy à La Plagne, du Fort de la Platte au domaine des Arcs ; PDF d'aérologie de la Tarentaise ; balises winds.mobi." },
+    { "id": "S21", "title": "Où faire du parapente en Savoie", "url": "https://www.bouger-voyager.com/ou-faire-parapente-savoie/", "publisher": "Bouger-Voyager (voir aussi lesarcs.com et belambra.fr/les-arcs)", "type": "web", "lang": "fr", "notes": "Décos officiels des Arcs (Vezaille, Cachette, Clocheret, Clocheret Bas, Altiport) ; atterrissage près de Bourg-Saint-Maurice." },
+    { "id": "S22", "title": "Baptême de parapente à Courchevel depuis le col de la Loze", "url": "https://www.manawa.com/fr-FR/activite/france/courchevel-les-trois-vallees/parapente/bapteme-de-parapente-a-courchevel-depuis-le-col-de-la-loze/9181", "publisher": "Manawa (prestataire)", "type": "web", "lang": "fr", "notes": "Déco col de la Loze / La Saulire ; vols de 7 à 60 min ; atterrissage Le Praz (Courchevel 1300)." },
+    { "id": "S23", "title": "Paragliding in the French Alps (Val d'Isère)", "url": "https://airelles.com/en/destination/val-d-isere-hotel/experiences/paragliding-french-alps", "publisher": "Airelles", "type": "web", "lang": "en", "notes": "Déco au sommet de Solaise ~2500 m." },
+    { "id": "S24", "title": "Régime de brise", "url": "https://fr.wikipedia.org/wiki/R%C3%A9gime_de_brise", "publisher": "Wikipédia (et P.-P. Ménégoz, « Les brises » PDF)", "type": "web", "lang": "fr", "notes": "Brise de vallée jusqu'à 50 km/h dans les longues vallées (Tarentaise, Maurienne, Durance), venturi ; maximum 14h-17h. Référence générale ; attribution exacte incertaine." },
+    { "id": "S25", "title": "Vol et baptême en parapente Albertville", "url": "https://www.lahautparapente.com/vol-et-bapteme-en-parapente-alberville", "publisher": "Là-Haut Parapente (école)", "type": "web", "lang": "fr", "notes": "Brise assez forte en milieu d'après-midi ; après-midis d'été plus turbulents (attribution via extrait)." },
+    { "id": "S26", "title": "Chamonix : atterrissage interdit au Bois du Bouchet", "url": "https://www.chamonix.net/francais/actualite/chamonix-atterrissage-interdit-parapente-au-bois-du-bouchet", "publisher": "Chamonix.net", "type": "web", "lang": "fr", "notes": "Interdiction hivernale de l'atterrissage du Bouchet." },
+    { "id": "S27", "title": "De la Chartreuse aux Aravis en revenant par Albertville : triangle plat de 202 km du 17/07/19", "url": "https://www.parapentepaysdegex.fr/post/le-triangle-du-17-07-19-de-la-chartreuse-aux-aravis-en-revenant-par-albertville-202-km", "publisher": "Parapente Pays de Gex (club)", "type": "web", "lang": "fr", "notes": "Récit de cross passant par Albertville (non lu)." },
+    { "id": "S28", "title": "Parapente : 5 décos rando-vol bivouac dans le Beaufortain", "url": "https://www.trace-ta-route.com/parapente-beaufortain-randonnee-vol-bivouac-5-jours/", "publisher": "Trace Ta Route (blog)", "type": "web", "lang": "fr", "notes": "Récit de rando-vol de 5 jours (non lu)." },
+    { "id": "S29", "title": "Avis CSRPN – dérogation APPHN Mont-Blanc (DDT74, 05/05/2022)", "url": "https://www.auvergne-rhone-alpes.developpement-durable.gouv.fr/IMG/pdf/020_avis_csrpn_derogation_apphn_mont_blanc_ddt74_20220505.pdf", "publisher": "DREAL Auvergne-Rhône-Alpes", "type": "pdf", "lang": "fr", "notes": "Contexte de l'arrêté de protection des habitats naturels du Mont-Blanc (non lu)." },
+    { "id": "S30", "title": "Take off from Planpraz – Brévent", "url": "https://en.chamonix.com/activities/summer/paragliding/take-off-from-planpraz-brevent", "publisher": "Office de Tourisme de Chamonix", "type": "web", "lang": "en", "notes": "Au-delà de la crête sommitale O/NO, survol de la réserve des Aiguilles Rouges interdit à moins de 1000 m/sol." },
+    { "id": "S31", "title": "Aire de décollage parapente – Les Contamines-Montjoie", "url": "https://hautesavoiemontblanc-tourisme.com/offres/aire-de-decollage-parapente-les-contamines-montjoie-fr-5884780/", "publisher": "Haute-Savoie Mont-Blanc Tourisme", "type": "web", "lang": "fr", "notes": "Fiche existante, contenu non récupéré." },
+    { "id": "S32", "title": "Mont Blanc restricted zones", "url": "https://xcmag.com/?p=44321", "publisher": "Cross Country Magazine", "type": "web", "lang": "en", "notes": "Zone en vigueur depuis octobre 2008, du 1er juillet au 31 août ; poursuites pénales, amendes, confiscation." },
+    { "id": "S33", "title": "Paragliding Aiguille du Midi", "url": "https://www.chamonix.net/english/leisure/paragliding/aiguille-du-midi", "publisher": "Chamonix.net", "type": "web", "lang": "en", "notes": "Aiguille du Midi interdite en juillet-août ; restrictions pour la Vallée Blanche (déco sud) ; trafic hélicoptère cité pour le Plan de l'Aiguille." },
+    { "id": "S34", "title": "Atterrissage des Ilettes (Hauteville)", "url": "https://pcht.org/decos_atterros/atterro_ilettes.php", "publisher": "Parapente Club Haute Tarentaise (PCHT)", "type": "web", "lang": "fr", "notes": "Fiche d'atterrissage (non lue)." }
+  ]
+}

@@ -1,0 +1,1595 @@
+{
+  "topic": "Hautes-Alpes Sud, Drôme et Ubaye (Dévoluy, Champsaur, Gapençais, Buëch-Chabre, Baronnies, Diois, Serre-Ponçon, Queyras, Ubaye)",
+  "massifs": [
+    {
+      "id": "devoluy",
+      "name": "Dévoluy (Superdévoluy, Obiou, Pic de Bure, Aurouze)",
+      "parent_massif": "Préalpes du Sud",
+      "summary": "Massif calcaire haut et très ouvert aux flux de nord: selon les pilotes, « le Dévoluy n'est pas du tout abrité du mistral et ne vole que quand la météo est faible ». L'été, les brises de vallée peuvent y être très fortes, avec une tendance sud qui crée des zones sous le vent; un air calme est indispensable au décollage (plusieurs essais parfois nécessaires). Pour le cross, le Dévoluy (Pic de Bure, Aurouze) est un relais d'altitude entre le Buëch/Céüse et le Champsaur: les planeurs de Gap-Tallard y bouclent le circuit Céüse – Pic de Bure – Dévoluy – Charance. Aucune source n'a pu être lue sur les convergences du Dévoluy dans cette session.",
+      "bbox": [
+        5.78,
+        44.58,
+        6.02,
+        44.82
+      ],
+      "center": [
+        5.92,
+        44.68
+      ],
+      "breezes": [
+        {
+          "id": "brise-vallee-devoluy",
+          "name": "Brise de vallée du Dévoluy (tendance sud)",
+          "kind": "valley",
+          "waypoints": [
+            {
+              "name": "Agnières-en-Dévoluy",
+              "lon": 5.8717,
+              "lat": 44.6633,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Saint-Étienne-en-Dévoluy",
+              "lon": 5.9411,
+              "lat": 44.6956,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Corps (lac du Sautet)",
+              "lon": 5.9461,
+              "lat": 44.8164,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "après-midi (été)",
+          "speed_kmh": {
+            "typical": 20,
+            "max": 30
+          },
+          "season": "été",
+          "description": "Les pilotes signalent « de très fortes brises de vallée, surtout l'été », avec une tendance à venir du sud (sous le vent sur certaines faces) et un écoulement « du sud vers le nord ». Vitesses = interprétation de « très fortes ». Le tracé exact (via col du Festre / vallée de la Souloise) est une déduction.",
+          "confidence": "low",
+          "sources": [
+            "S28",
+            "S29"
+          ]
+        }
+      ],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "devoluy-mistral",
+          "name": "Exposition totale au mistral / nord",
+          "kind": "other",
+          "lon": 5.9411,
+          "lat": 44.6956,
+          "radius_km": 8,
+          "conditions": "Mistral ou flux de nord synoptique, même modéré",
+          "description": "« Le Dévoluy n'est pas du tout abrité du mistral et ne vole que quand la météo est faible ». Position approximative (centre du massif).",
+          "sources": [
+            "S28"
+          ]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [],
+      "landings": [],
+      "synoptic_effects": [
+        {
+          "wind": "Mistral",
+          "effect": "Secteur non abrité: ne vole que par météo faible; brises de vallée et sous le vent marqués.",
+          "sources": [
+            "S28"
+          ]
+        },
+        {
+          "wind": "N",
+          "effect": "Par tendance nord, le résumé de source évoque un massif qui peut rester longtemps pris (nuages/brouillard) – formulation d'origine non vérifiée.",
+          "sources": [
+            "S28"
+          ]
+        }
+      ],
+      "xc_routes": [],
+      "tips": [
+        "Voler le Dévoluy uniquement par météo faible: aucun abri contre le mistral [S28].",
+        "Au décollage de Superdévoluy, attendre un cycle calme: la brise de vallée l'été peut être très forte [S28].",
+        "Biplaces au départ de Superdévoluy (Parapente Max) [S45]."
+      ]
+    },
+    {
+      "id": "champsaur-valgaudemar",
+      "name": "Champsaur et Valgaudemar (Saint-Léger-les-Mélèzes, Ancelle, Chaillol, Laye)",
+      "parent_massif": "Écrins (bordure sud)",
+      "summary": "Haute vallée du Drac au nord de Gap, très ensoleillée (« 300 jours de soleil »), réputée « depuis 20 ans pour son aérologie propice au vol ». Le site de référence documenté est le Cuchon d'Ancelle / Saint-Léger (déco sommet 1600 m, atterrissage d'Ancelle 1466 m), le choix du décollage se faisant selon l'orientation du vent. Les sources consultables n'ont rien donné sur la brise du Drac, le col Bayard (passage Gap–Champsaur) ni les transitions vers le Dévoluy et Orcières; ces éléments restent à documenter.",
+      "bbox": [
+        5.95,
+        44.6,
+        6.35,
+        44.85
+      ],
+      "center": [
+        6.15,
+        44.68
+      ],
+      "breezes": [],
+      "convergences": [],
+      "hazards": [],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [
+        {
+          "id": "cuchon-sommet",
+          "name": "Cuchon d'Ancelle et St Léger – Sommet du Cuchon",
+          "lon": 6.2236,
+          "lat": 44.6356,
+          "alt_m": 1600,
+          "orientations": [],
+          "description": "Déco principal FFVL (355 décollages / 104 atterrissages en 2025). Orientation non précisée dans le résumé de la fiche; le déco est choisi selon le vent.",
+          "sources": [
+            "S24",
+            "S27"
+          ]
+        },
+        {
+          "id": "cuchon-intermediaire",
+          "name": "Cuchon d'Ancelle et St Léger – Intermédiaire",
+          "lon": 6.2153,
+          "lat": 44.6332,
+          "alt_m": 1600,
+          "orientations": [],
+          "description": "Déco intermédiaire FFVL (altitude renvoyée 1600 m, probablement plus bas – à vérifier).",
+          "sources": [
+            "S25"
+          ]
+        }
+      ],
+      "landings": [
+        {
+          "id": "ancelle-atterro",
+          "name": "Ancelle",
+          "lon": 6.1976,
+          "lat": 44.6296,
+          "alt_m": 1466,
+          "description": "Atterrissage FFVL (211 atterrissages en 2025).",
+          "sources": [
+            "S26"
+          ]
+        }
+      ],
+      "synoptic_effects": [],
+      "xc_routes": [],
+      "tips": [
+        "Champsaur: décollage choisi selon l'orientation du vent du jour (plusieurs décos) [S27]."
+      ]
+    },
+    {
+      "id": "gapencais-ceuse",
+      "name": "Gapençais et Céüse (Gap, Charance, Céüse, Tallard, Col Bayard)",
+      "parent_massif": "Préalpes du Sud",
+      "summary": "Carrefour entre la Durance (Tallard), le Buëch et le Champsaur. La falaise de Céüse est le moteur thermique classique: les planeurs de Gap-Tallard partent vers la Petite Céüse pour remonter le long des falaises verticales jusqu'à la Grande Céüse, avec des plafonds de 2200-2500 m voire 3000 m, puis bouclent Pic de Bure – Dévoluy – Charance. Charance (1556 m) est le déco de proximité de Gap, très fréquenté. Rabou est un site orienté O/NO où le relais brise / vent météo en fin de journée peut changer l'orientation effective. La brise de Durance remonte par Tallard l'après-midi. Les lignes de convergence enseignées autour de Gap/Tallard n'ont pas pu être documentées dans cette session.",
+      "bbox": [
+        5.85,
+        44.42,
+        6.2,
+        44.65
+      ],
+      "center": [
+        6.03,
+        44.53
+      ],
+      "breezes": [],
+      "convergences": [],
+      "hazards": [],
+      "thermal_spots": [
+        {
+          "id": "falaise-ceuse",
+          "name": "Falaises de Céüse (Petite → Grande Céüse)",
+          "lon": 5.9333,
+          "lat": 44.5,
+          "alt_m": 2016,
+          "best_hours": "12h-17h (été)",
+          "trigger": "barre rocheuse verticale (falaise calcaire) orientée sud/sud-est",
+          "description": "Circuit planeur de Gap-Tallard: départ vers la Petite Céüse « pour profiter des ascendances » qui mènent à la Grande Céüse le long des falaises; plafonds courants 2200-2500 m, jusqu'à 3000 m. Coordonnées approximatives (sommet de Céüse de mémoire). Heures = déduction.",
+          "sources": [
+            "S30"
+          ]
+        }
+      ],
+      "soaring_spots": [],
+      "takeoffs": [
+        {
+          "id": "charance",
+          "name": "Gap – La Croupe de Charance",
+          "lon": 6.0184,
+          "lat": 44.5676,
+          "alt_m": 1556,
+          "orientations": [],
+          "description": "Déco FFVL au-dessus de Gap (462 décollages / 69 atterrissages en 2024), ~1h de marche / 400 m D+. Variante 'Correo' [13737]. Orientation non précisée dans le résumé.",
+          "sources": [
+            "S23"
+          ]
+        }
+      ],
+      "landings": [],
+      "synoptic_effects": [
+        {
+          "wind": "NW",
+          "effect": "Rabou (orientation O/NO) est un site de vent d'ouest à nord-ouest; en fin de journée, quand la brise tombe et que le vent météo reprend le dessus, l'orientation effective peut changer.",
+          "sources": [
+            "S42"
+          ]
+        }
+      ],
+      "xc_routes": [
+        {
+          "id": "circuit-ceuse-bure-charance",
+          "name": "Circuit Céüse – Pic de Bure – Dévoluy – Charance (référence planeur)",
+          "waypoints": [
+            {
+              "name": "Tallard (aérodrome)",
+              "lon": 6.0547,
+              "lat": 44.4625,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Céüse",
+              "lon": 5.9333,
+              "lat": 44.5,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Pic de Bure",
+              "lon": 5.935,
+              "lat": 44.628,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Charance",
+              "lon": 6.0184,
+              "lat": 44.5676,
+              "coord_quality": "source"
+            },
+            {
+              "name": "Tallard (aérodrome)",
+              "lon": 6.0547,
+              "lat": 44.4625,
+              "coord_quality": "approx"
+            }
+          ],
+          "distance_km": 0,
+          "description": "Tour planeur annoncé en ~1h15 au départ de Gap-Tallard: Céüse (falaises), Pic de Bure, Dévoluy, Charance. Distance non donnée par la source (0 = inconnu). Ligne de reliefs fiable au nord-ouest de Gap, exploitable en parapente comme ligne de transition Buëch–Dévoluy–Gap (déduction).",
+          "sources": [
+            "S30"
+          ]
+        }
+      ],
+      "tips": [
+        "Céüse: partir de la Petite Céüse et suivre les falaises vers la Grande Céüse [S30].",
+        "Rabou (O/NO): attention au changement d'orientation quand la brise retombe en fin de journée [S42]."
+      ]
+    },
+    {
+      "id": "buech-laragne-chabre",
+      "name": "Bochaine, Buëch, Laragne et Montagne de Chabre (Aspres, Serres, Veynes, Laragne)",
+      "parent_massif": "Préalpes du Sud",
+      "summary": "Site international de vol libre de la Montagne de Chabre (crête E-O ~1350 m au-dessus de Laragne), « aérologie exceptionnelle » grâce à l'ensoleillement; décos nord et sud, volable par la plupart des vents. Départs cross tôt, décollages le plus souvent en début d'après-midi, moins venté que d'autres sites: fenêtre plus large. Les vallées du Buëch, larges, offrent des posés imprévus sûrs. Sur la crête, les thermiques/brise du sud rencontrent un vent météo de nord faible: dust devils violents (notamment aux Espranons). Par nord fort, ondes fréquentes; par O-NO, éviter le déco nord 1. Au nord, Aspres–Longeagne (S, 1526 m) est un site de brise/vent de sud, souvent trop chargé entre 14h et 16h et dangereux par fort NO. Chabre a accueilli le championnat de France de distance (2017); triangles ~193 km avec plafond 3300 m.",
+      "bbox": [
+        5.6,
+        44.2,
+        5.95,
+        44.6
+      ],
+      "center": [
+        5.78,
+        44.38
+      ],
+      "breezes": [
+        {
+          "id": "brise-buech",
+          "name": "Brise montante du Buëch (Sisteron → Laragne → Serres → Aspres)",
+          "kind": "valley",
+          "waypoints": [
+            {
+              "name": "Sisteron",
+              "lon": 5.9439,
+              "lat": 44.1947,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Ribiers",
+              "lon": 5.8644,
+              "lat": 44.2308,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Laragne-Montéglin",
+              "lon": 5.8225,
+              "lat": 44.3164,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Serres",
+              "lon": 5.7169,
+              "lat": 44.4289,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Aspres-sur-Buëch",
+              "lon": 5.75,
+              "lat": 44.5242,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "13h-18h (été)",
+          "speed_kmh": {
+            "typical": 20,
+            "max": 35
+          },
+          "season": "avril-septembre",
+          "description": "Déduction: brise de vallée montante le long du Buëch. Indice indirect: à Aspres (déco sud de la Longeagne), le déco est « souvent bien alimenté » et peut devenir impossible entre 14h et 16h, en régime de brise / vent de sud. Pas de vitesse mesurée publiée retrouvée.",
+          "confidence": "low",
+          "sources": [
+            "S21"
+          ]
+        },
+        {
+          "id": "brise-pente-chabre-sud",
+          "name": "Brise de pente / thermique de la face sud de Chabre",
+          "kind": "slope",
+          "waypoints": [
+            {
+              "name": "Laragne-Montéglin",
+              "lon": 5.8225,
+              "lat": 44.3164,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Chabre – Top (déco)",
+              "lon": 5.7634,
+              "lat": 44.2976,
+              "coord_quality": "source"
+            }
+          ],
+          "hours": "fin de matinée – après-midi",
+          "speed_kmh": {
+            "typical": 10,
+            "max": 20
+          },
+          "season": "printemps-été",
+          "description": "Le panneau du site cite la « brise thermique du matin » parmi les conditions favorables; les thermiques « venant du sud » remontent la face sud et rencontrent le vent de nord faible sur la crête (dust devils). Vitesses = interprétation.",
+          "confidence": "medium",
+          "sources": [
+            "S2",
+            "S3"
+          ]
+        }
+      ],
+      "convergences": [
+        {
+          "id": "convergence-crete-chabre",
+          "name": "Convergence de crête de Chabre (thermiques sud / vent de nord faible)",
+          "geometry": {
+            "type": "LineString",
+            "coordinates": [
+              [
+                5.7794,
+                44.3044
+              ],
+              [
+                5.7761,
+                44.3031
+              ],
+              [
+                5.7668,
+                44.2987
+              ],
+              [
+                5.7634,
+                44.2976
+              ]
+            ]
+          },
+          "when": "Fin de matinée à début d'après-midi, quand la brise prend le relais d'un vent météo de nord faible; conditions stables, sèches, légèrement ventées.",
+          "mechanism": "Les thermiques et la brise montant de la face sud (Buëch) rencontrent un vent synoptique de nord faible sur la crête.",
+          "usage": "Zone d'ascendance marquée mais génératrice de dust devils violents, notamment au décollage des Espranons (sud): surveiller les tourbillons de poussière avant de décoller. Géométrie = ligne des décollages FFVL le long de la crête.",
+          "confidence": "medium",
+          "sources": [
+            "S3",
+            "S2"
+          ]
+        }
+      ],
+      "hazards": [
+        {
+          "id": "chabre-dust-devils",
+          "name": "Dust devils de Chabre / Espranons",
+          "kind": "other",
+          "lon": 5.7634,
+          "lat": 44.2976,
+          "radius_km": 2,
+          "conditions": "Vent météo de nord faible + thermiques/brise du sud; temps stable, sec, légèrement venté",
+          "description": "« Dust devils violents » quand les thermiques du sud rencontrent le vent de nord faible; au déco des Espranons quand la brise prend le relais du vent de nord.",
+          "sources": [
+            "S3",
+            "S2"
+          ]
+        },
+        {
+          "id": "chabre-ondes-nord",
+          "name": "Ondes et rouleaux par vent de nord",
+          "kind": "lee-rotor",
+          "lon": 5.7634,
+          "lat": 44.2976,
+          "radius_km": 5,
+          "conditions": "Vent de nord qui se renforce (souvent rapide)",
+          "description": "Le vent de nord « devient très vite trop fort », avec de fréquentes formations d'ondes sud ou nord; le panneau du site mentionne aussi les rouleaux.",
+          "sources": [
+            "S2",
+            "S8"
+          ]
+        },
+        {
+          "id": "aspres-breeze-14-16",
+          "name": "Déco d'Aspres saturé par la brise",
+          "kind": "strong-breeze",
+          "lon": 5.7131,
+          "lat": 44.5409,
+          "radius_km": 2,
+          "conditions": "Été, 14h-16h, régime de brise/vent de sud",
+          "description": "Déco « souvent bien alimenté », peut devenir impossible entre 14h et 16h; maîtrise du décollage par vent fort requise.",
+          "sources": [
+            "S21"
+          ]
+        },
+        {
+          "id": "aspres-nw",
+          "name": "Aspres par fort nord-ouest / mistral",
+          "kind": "lee-rotor",
+          "lon": 5.7131,
+          "lat": 44.5409,
+          "radius_km": 4,
+          "conditions": "NO fort; mistral annoncé en vallée du Rhône",
+          "description": "Site turbulent et dangereux par fort NO; « attention à l'aérologie quand le mistral est annoncé dans la vallée du Rhône ».",
+          "sources": [
+            "S21",
+            "S22"
+          ]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [
+        {
+          "id": "chabre-nord-soaring",
+          "name": "Chabre face nord (décos Table d'orientation)",
+          "lon": 5.7761,
+          "lat": 44.3031,
+          "wind_dirs": [
+            "N",
+            "NE"
+          ],
+          "description": "Décos nord à nord-est (1 parapente, 2 delta). Volable par vent de nord faible; le nord devient très vite trop fort (ondes). Par tendance O-NO le déco nord 1 est déconseillé (le NO est dévié vers le haut, effets d'ouest devant le déco).",
+          "sources": [
+            "S6",
+            "S2",
+            "S8"
+          ]
+        },
+        {
+          "id": "chabre-sud-soaring",
+          "name": "Chabre face sud (Top / Espranons)",
+          "lon": 5.7634,
+          "lat": 44.2976,
+          "wind_dirs": [
+            "S",
+            "SW"
+          ],
+          "description": "Thermodynamique en brise du sud; attention aux dust devils quand un nord faible persiste au sommet. Orientations SW = déduction.",
+          "sources": [
+            "S2",
+            "S3",
+            "S4"
+          ]
+        }
+      ],
+      "takeoffs": [
+        {
+          "id": "chabre-top",
+          "name": "Montagne de Chabre – Top – Sud – Nord",
+          "lon": 5.7634,
+          "lat": 44.2976,
+          "alt_m": 1330,
+          "orientations": [
+            "S",
+            "N"
+          ],
+          "description": "Déco le plus actif (662 décollages en 2025). Double orientation S/N selon le régime (brise de sud ou nord faible).",
+          "sources": [
+            "S4",
+            "S2"
+          ]
+        },
+        {
+          "id": "chabre-feignants",
+          "name": "Montagne de Chabre – Les Feignants",
+          "lon": 5.7668,
+          "lat": 44.2987,
+          "alt_m": 1283,
+          "orientations": [
+            "S"
+          ],
+          "description": "Deuxième déco (426 décollages en 2023). Orientation S déduite de la liste du panneau (déco 2 = S), correspondance non confirmée.",
+          "sources": [
+            "S5",
+            "S2"
+          ]
+        },
+        {
+          "id": "chabre-table-orientation",
+          "name": "Montagne de Chabre – Table d'orientation",
+          "lon": 5.7761,
+          "lat": 44.3031,
+          "alt_m": 1262,
+          "orientations": [
+            "N",
+            "NE"
+          ],
+          "description": "3 décollages nord (1 parapente, 2 delta). Par nord faible; éviter par O-NO.",
+          "sources": [
+            "S6",
+            "S2"
+          ]
+        },
+        {
+          "id": "chabre-table-orientation-2",
+          "name": "Montagne de Chabre – Table d'orientation 2",
+          "lon": 5.7794,
+          "lat": 44.3044,
+          "alt_m": 1219,
+          "orientations": [
+            "N"
+          ],
+          "description": "Déco nord secondaire (orientation déduite de la zone 'décos nord').",
+          "sources": [
+            "S7",
+            "S6"
+          ]
+        },
+        {
+          "id": "aspres-longeagne-sud",
+          "name": "Aspres – La Longeagne – Sud",
+          "lon": 5.7131,
+          "lat": 44.5409,
+          "alt_m": 1526,
+          "orientations": [
+            "SE",
+            "S",
+            "SW",
+            "W"
+          ],
+          "description": "Secteurs favorables SE, S, SO, O; défavorables N, NE, NO. Régime de brise / vent de sud; déco parfois impossible 14h-16h. Déco nord 'Longeagne Nord' (1550 m, parapente) et 'Saint-Apôtre – Antennes' existent. Atterrissage à l'aérodrome du Chevalet (survol des pistes interdit, approche entre pistes nord et est). Balises sur l'aérodrome et au déco.",
+          "sources": [
+            "S21",
+            "S22"
+          ]
+        }
+      ],
+      "landings": [],
+      "synoptic_effects": [
+        {
+          "wind": "N",
+          "effect": "Chabre: vent de nord faible favorable (décos nord); devient très vite trop fort avec ondes fréquentes. Nord faible + thermiques sud = dust devils sur la crête.",
+          "sources": [
+            "S2",
+            "S3",
+            "S8"
+          ]
+        },
+        {
+          "wind": "NW",
+          "effect": "Chabre: déco nord 1 déconseillé par tendance O à NO (NO dévié vers le haut, effets d'ouest devant le déco). Aspres: turbulent et dangereux par fort NO.",
+          "sources": [
+            "S2",
+            "S21"
+          ]
+        },
+        {
+          "wind": "Mistral",
+          "effect": "Aspres: vigilance dès que le mistral est annoncé en vallée du Rhône.",
+          "sources": [
+            "S21",
+            "S22"
+          ]
+        },
+        {
+          "wind": "S",
+          "effect": "Aspres–Longeagne Sud en conditions idéales en régime de brise / vent de sud (secteurs SE à O favorables), mais déco saturé 14h-16h.",
+          "sources": [
+            "S21"
+          ]
+        }
+      ],
+      "xc_routes": [],
+      "tips": [
+        "Chabre: départs cross possibles tôt, décollage le plus souvent en début d'après-midi; fenêtre souvent plus large qu'ailleurs [S1][S10].",
+        "Les vallées du Buëch sont larges: posés imprévus généralement sûrs [S11].",
+        "Avant de décoller aux Espranons par nord faible, guetter les dust devils [S3].",
+        "Chabre: championnat de France de distance 2017; triangle ~193 km avec plafond 3300 m cité; record du site détenu par Flying Karlis depuis 2017 [S9][S43].",
+        "Aspres: viser un décollage avant 14h ou après 16h l'été [S21]."
+      ]
+    },
+    {
+      "id": "baronnies",
+      "name": "Baronnies (Buis-les-Baronnies, Nyons, Mévouillon)",
+      "parent_massif": "Préalpes du Sud",
+      "summary": "Préalpes provençales sèches entre l'Eygues et l'Ouvèze. Nombreux petits sites permettant de voler presque par tous les vents (l'École des Baronnies exploite 8 décos et 3 pentes école à moins de 20 min de Mévouillon). Au col d'Ey (Buis), site de nord à nord-ouest: abrité par mistral mais avec renforcements brutaux au-dessus des crêtes. À Nyons, Garde-Grosse (918 m) se vole par vent d'ouest; le nord y est possible mais turbulent. Le Pontias, vent frais matinal descendant la vallée de l'Eygues sur Nyons, marque la phase nocturne/matinale avant l'établissement des brises.",
+      "bbox": [
+        5.05,
+        44.2,
+        5.55,
+        44.45
+      ],
+      "center": [
+        5.28,
+        44.32
+      ],
+      "breezes": [
+        {
+          "id": "pontias",
+          "name": "Le Pontias (vent descendant de l'Eygues sur Nyons)",
+          "kind": "katabatic",
+          "waypoints": [
+            {
+              "name": "Défilé de l'Eygues en amont de Nyons",
+              "lon": 5.165,
+              "lat": 44.37,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Nyons",
+              "lon": 5.1406,
+              "lat": 44.3608,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "nuit et matin",
+          "speed_kmh": {
+            "typical": 10,
+            "max": 20
+          },
+          "season": "toute l'année, apprécié l'été",
+          "description": "« Vent frais du matin qui arrive à Nyons », soufflant le matin et rafraîchissant le début des journées; la légende le fait naître d'un rocher près de la chapelle Notre-Dame de Réparat. Tracé (descente de la vallée de l'Eygues) et vitesses = interprétation.",
+          "confidence": "medium",
+          "sources": [
+            "S37"
+          ]
+        }
+      ],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "col-ey-mistral",
+          "name": "Renforcement brutal du mistral au-dessus des crêtes (col d'Ey)",
+          "kind": "strong-breeze",
+          "lon": 5.2714,
+          "lat": 44.2758,
+          "radius_km": 6,
+          "conditions": "Mistral",
+          "description": "Site abrité par mistral « mais le vent peut se renforcer brutalement, surtout au-dessus des crêtes ». Position approximative (Buis-les-Baronnies, coordonnées du déco non récupérées).",
+          "sources": [
+            "S38"
+          ]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [
+        {
+          "id": "garde-grosse",
+          "name": "Nyons – Garde-Grosse",
+          "lon": 5.1544,
+          "lat": 44.3366,
+          "wind_dirs": [
+            "W"
+          ],
+          "description": "918 m; favorable vent d'ouest; décollage possible par N mais turbulent. Coordonnées = balise Garde-Grosse (938 m), proche du déco.",
+          "sources": [
+            "S35",
+            "S36"
+          ]
+        }
+      ],
+      "takeoffs": [
+        {
+          "id": "nyons-garde-grosse",
+          "name": "Nyons – Garde-Grosse",
+          "lon": 5.1544,
+          "lat": 44.3366,
+          "alt_m": 918,
+          "orientations": [
+            "W"
+          ],
+          "description": "Accès: sortir de Nyons direction Gap, 100 m après le tunnel prendre à droite vers le relais de Garde-Grosse. Coordonnées = balise (approx. pour le déco).",
+          "sources": [
+            "S35",
+            "S36"
+          ]
+        }
+      ],
+      "landings": [],
+      "synoptic_effects": [
+        {
+          "wind": "Mistral",
+          "effect": "Col d'Ey (N, NE, NO favorables) abrité mais renforcements brutaux au-dessus des crêtes; Garde-Grosse volable au nord mais turbulent.",
+          "sources": [
+            "S38",
+            "S35"
+          ]
+        },
+        {
+          "wind": "W",
+          "effect": "Garde-Grosse (Nyons) est le site d'ouest.",
+          "sources": [
+            "S35"
+          ]
+        }
+      ],
+      "xc_routes": [],
+      "tips": [
+        "Baronnies: 8 décos et 3 pentes école autour de Mévouillon permettent de trouver une face volable quel que soit le vent [S39].",
+        "Col d'Ey: déco 100 m au-dessus du col (entre Sainte-Jalle et Buis), secteurs N/NE/NO [S38].",
+        "Balise Garde-Grosse (Ailes des Baronnies), VHF 143.9875 [S36]."
+      ]
+    },
+    {
+      "id": "diois",
+      "name": "Diois (Die, Glandasse, Col du Rousset sud, Couspeau, Saint-Nazaire-le-Désert)",
+      "parent_massif": "Préalpes du Sud / Vercors sud",
+      "summary": "Moyenne vallée de la Drôme sous les falaises sud du Vercors (Glandasse), au « microclimat entre influences montagnardes et provençales ». Décos classiques: Croix de Justin au-dessus de Die face au Glandasse, Glandasse (S, 1780 m, 2h30 de marche depuis Châtillon-en-Diois), col du Rousset, Clamontard au-dessus des Claps de Luc-en-Diois, Montagne du Puy (Lesches). Le Glandasse se vole en brise de pente et par vent météo de sud-ouest. À l'ouest, la Montagne de Couspeau (déco sous le Grand Delmas ~1425 m) offre du vol de base au vol de perf avec potentiel cross (cap SSE par la crête de Cotebelle). La brise de la Drôme et les convergences avec le Vercors n'ont pas été documentées dans cette session.",
+      "bbox": [
+        5.05,
+        44.55,
+        5.6,
+        44.85
+      ],
+      "center": [
+        5.35,
+        44.72
+      ],
+      "breezes": [
+        {
+          "id": "brise-drome",
+          "name": "Brise montante de la Drôme (Crest → Die → Luc-en-Diois)",
+          "kind": "valley",
+          "waypoints": [
+            {
+              "name": "Crest",
+              "lon": 5.0228,
+              "lat": 44.7289,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Saillans",
+              "lon": 5.1956,
+              "lat": 44.6969,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Die",
+              "lon": 5.3703,
+              "lat": 44.7536,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Luc-en-Diois",
+              "lon": 5.4475,
+              "lat": 44.6153,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "12h-18h (été)",
+          "speed_kmh": {
+            "typical": 15,
+            "max": 25
+          },
+          "season": "avril-septembre",
+          "description": "Déduction: brise de vallée montante classique le long de la Drôme; aucune source locale lue sur son horaire ou sa force. Vitesses indicatives.",
+          "confidence": "low",
+          "sources": []
+        },
+        {
+          "id": "brise-pente-glandasse",
+          "name": "Brise de pente de la face sud du Glandasse",
+          "kind": "slope",
+          "waypoints": [
+            {
+              "name": "Châtillon-en-Diois",
+              "lon": 5.4842,
+              "lat": 44.6947,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Glandasse (crête sud)",
+              "lon": 5.46,
+              "lat": 44.73,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "fin de matinée – après-midi",
+          "speed_kmh": {
+            "typical": 10,
+            "max": 20
+          },
+          "season": "printemps-automne",
+          "description": "Le déco sud du Glandasse (1780 m) est favorable « avec brises de pente et vents météo de sud-ouest ». Points approximatifs; vitesses = interprétation.",
+          "confidence": "medium",
+          "sources": [
+            "S32"
+          ]
+        }
+      ],
+      "convergences": [],
+      "hazards": [],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [],
+      "landings": [],
+      "synoptic_effects": [
+        {
+          "wind": "SW",
+          "effect": "Glandasse (S) favorable par vent météo de sud-ouest et brise de pente.",
+          "sources": [
+            "S32"
+          ]
+        }
+      ],
+      "xc_routes": [],
+      "tips": [
+        "Couspeau: depuis le déco sous le Grand Delmas, sans gagner d'altitude et par conditions modérées, cap SSE pour franchir la crête de Cotebelle vers des atterrissages tranquilles [S33].",
+        "Couspeau: accès par le col de la Bouchaudière, parking ~1020 m, ~1h de montée jusqu'à ~1425 m [S33][S34].",
+        "Diois: décos Croix de Justin (face au Glandasse), col du Rousset, Clamontard (Claps de Luc), Montagne du Puy (Lesches) [S31]."
+      ]
+    },
+    {
+      "id": "serre-poncon-embrunais",
+      "name": "Serre-Ponçon et Embrunais (Chorges, Savines, Mont Morgon, Embrun, Mont Guillaume, Saint-Vincent-les-Forts)",
+      "parent_massif": "Alpes du Sud",
+      "summary": "Axe de la Durance remonté chaque après-midi d'été par une brise forte: 30-40 km/h dans la cluse de Sisteron, atterrissages de Serre-Ponçon turbulents après 14-15h, « forte brise l'après-midi » à Embrun. Mont Guillaume (1603 m, Embrun) se décolle à partir de midi, atterrissage au bord du lac (Chadenas) ou intermédiaire à Pierre Plate. Saint-Vincent-les-Forts (1275 m, O/NO), à la confluence Durance–Ubaye, est le site de fin d'après-midi et l'un des seuls volables du secteur par nord-ouest; le massif du Morgon y offre un volume protégé et les reliefs de Dormillouse et Blanche servent de relais pour partir en cross. La brise de lac de Serre-Ponçon et les lignes de convergence associées n'ont pas pu être documentées dans cette session.",
+      "bbox": [
+        6.15,
+        44.38,
+        6.6,
+        44.65
+      ],
+      "center": [
+        6.38,
+        44.51
+      ],
+      "breezes": [
+        {
+          "id": "brise-durance",
+          "name": "Brise de la Durance (Sisteron → Tallard → Serre-Ponçon → Embrun)",
+          "kind": "valley",
+          "waypoints": [
+            {
+              "name": "Sisteron",
+              "lon": 5.9439,
+              "lat": 44.1947,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "La Saulce",
+              "lon": 6.0058,
+              "lat": 44.4236,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Tallard",
+              "lon": 6.0547,
+              "lat": 44.4625,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Barrage de Serre-Ponçon",
+              "lon": 6.27,
+              "lat": 44.47,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Savines-le-Lac",
+              "lon": 6.4053,
+              "lat": 44.525,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Embrun",
+              "lon": 6.4953,
+              "lat": 44.5644,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "12h-18h (été), maximum ~14h-17h",
+          "speed_kmh": {
+            "typical": 25,
+            "max": 40
+          },
+          "season": "mai-septembre (forte de juin à septembre)",
+          "description": "À Sisteron, la cluse de la Durance crée « des conditions de brise de vallée très régulières »; l'été la brise « peut être très forte (30-40 km/h) l'après-midi », posés en crabe ou en marche arrière, vols conseillés 9-11h et après 17h. Vers Serre-Ponçon, l'atterrissage devient turbulent « dès que la brise est forte, généralement après 14-15h en été ». À Embrun (Mont Guillaume): « forte brise l'après-midi en période estivale ». Le tracé sur le lac (barrage → Savines) et la valeur typique sont des interprétations.",
+          "confidence": "medium",
+          "sources": [
+            "S15",
+            "S16",
+            "S18",
+            "S19"
+          ]
+        }
+      ],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "embrun-atterro-brise",
+          "name": "Brise forte et turbulences aux atterrissages du lac (Embrun / Serre-Ponçon)",
+          "kind": "landing-turbulence",
+          "lon": 6.4953,
+          "lat": 44.5644,
+          "radius_km": 5,
+          "conditions": "Été, après ~14-15h",
+          "description": "Atterrissage turbulent dès que la brise est forte, généralement après 14-15h l'été; un site du lac est même déconseillé de juin à septembre (brises trop fortes). Position approximative (secteur Embrun/Chadenas).",
+          "sources": [
+            "S16",
+            "S18",
+            "S19"
+          ]
+        },
+        {
+          "id": "st-vincent-brise-deco",
+          "name": "Brise soutenue au déco de Saint-Vincent",
+          "kind": "strong-breeze",
+          "lon": 6.3715,
+          "lat": 44.4433,
+          "radius_km": 2,
+          "conditions": "Été, milieu d'après-midi",
+          "description": "« En été, les brises au décollage peuvent être particulièrement soutenues, en particulier en milieu d'après-midi »; conditions excellentes en fin d'après-midi.",
+          "sources": [
+            "S13"
+          ]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [
+        {
+          "id": "st-vincent-soaring",
+          "name": "Saint-Vincent-les-Forts",
+          "lon": 6.3715,
+          "lat": 44.4433,
+          "wind_dirs": [
+            "W",
+            "NW"
+          ],
+          "description": "Secteurs favorables O et NO; par nord-ouest « un des seuls sites volables du coin »; très bonnes conditions en fin d'après-midi (restitution).",
+          "sources": [
+            "S12",
+            "S13",
+            "S14"
+          ]
+        }
+      ],
+      "takeoffs": [
+        {
+          "id": "st-vincent-deco",
+          "name": "Saint-Vincent-les-Forts",
+          "lon": 6.3715,
+          "lat": 44.4433,
+          "alt_m": 1275,
+          "orientations": [
+            "W",
+            "NW"
+          ],
+          "description": "Aérologie réputée « exceptionnelle », temps de vol quasi garanti; brise soutenue au déco en milieu d'après-midi l'été; excellent en fin d'après-midi. Le massif du Morgon (au nord, de l'autre côté du bras de l'Ubaye) crée un volume protégé; relais vers Dormillouse et Blanche.",
+          "sources": [
+            "S12",
+            "S13",
+            "S14"
+          ]
+        },
+        {
+          "id": "mont-guillaume-deco",
+          "name": "Embrun – Mont Guillaume",
+          "lon": 6.4325,
+          "lat": 44.5686,
+          "alt_m": 1603,
+          "orientations": [],
+          "description": "Déco en forêt (commune Puy-Sanières, gestion Curl'Air), à privilégier à partir de midi; forte brise l'après-midi l'été. Atterrissage intermédiaire 'Pierre Plate' (1260 m) et atterrissage principal au centre de vacances de Chadenas au bord du lac (~800 m). Orientation non précisée dans le résumé.",
+          "sources": [
+            "S17",
+            "S18",
+            "S19"
+          ]
+        }
+      ],
+      "landings": [],
+      "synoptic_effects": [
+        {
+          "wind": "NW",
+          "effect": "Saint-Vincent-les-Forts (O/NO) reste volable par nord-ouest: « un des seuls sites volables du coin ».",
+          "sources": [
+            "S13"
+          ]
+        },
+        {
+          "wind": "Mistral",
+          "effect": "Par mistral/NO modéré, Saint-Vincent est le repli du secteur (déduction à partir de son orientation O/NO et de la mention NO).",
+          "sources": [
+            "S13"
+          ]
+        }
+      ],
+      "xc_routes": [],
+      "tips": [
+        "Mont Guillaume: décoller à partir de midi, mais anticiper la brise forte de l'après-midi à l'atterrissage du lac [S18][S19].",
+        "Serre-Ponçon l'été: viser les atterrissages avant 14h ou en fin de journée [S16].",
+        "Saint-Vincent: utiliser le volume protégé du Morgon, puis Dormillouse/Blanche pour partir en cross; la traversée de la Durance sous le barrage fait partie des itinéraires [S14].",
+        "Sisteron (sud du secteur): vols conseillés 9-11h et après 17h l'été; 12h-16h réservé aux confirmés [S15]."
+      ]
+    },
+    {
+      "id": "queyras",
+      "name": "Queyras (vallée du Guil)",
+      "parent_massif": "Alpes du Sud (frontière italienne)",
+      "summary": "Vallée haute et sèche du Guil, entre Guillestre et la frontière italienne. Une école de parapente du Queyras est référencée à la FFVL, mais aucune source décrivant la brise du Guil, les décos ou l'effet de la Lombarde (vent d'est venant d'Italie) n'a pu être lue dans cette session. La brise ci-dessous est une simple déduction (brise montante classique de vallée), à valider.",
+      "bbox": [
+        6.6,
+        44.6,
+        7.05,
+        44.85
+      ],
+      "center": [
+        6.82,
+        44.75
+      ],
+      "breezes": [
+        {
+          "id": "brise-guil",
+          "name": "Brise montante du Guil (Guillestre → Abriès)",
+          "kind": "valley",
+          "waypoints": [
+            {
+              "name": "Guillestre",
+              "lon": 6.6497,
+              "lat": 44.6614,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Château-Ville-Vieille",
+              "lon": 6.7928,
+              "lat": 44.7578,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Aiguilles",
+              "lon": 6.8711,
+              "lat": 44.7833,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Abriès",
+              "lon": 6.9264,
+              "lat": 44.7967,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "12h-18h (été)",
+          "speed_kmh": {
+            "typical": 15,
+            "max": 25
+          },
+          "season": "mai-septembre",
+          "description": "Déduction: brise de vallée montante le long du Guil; aucune source locale lue. Vitesses indicatives.",
+          "confidence": "low",
+          "sources": []
+        }
+      ],
+      "convergences": [],
+      "hazards": [],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [],
+      "landings": [],
+      "synoptic_effects": [],
+      "xc_routes": [],
+      "tips": [
+        "Une école de parapente est basée dans le Queyras (FFVL structure 109): à contacter pour l'aérologie locale [S44]."
+      ]
+    },
+    {
+      "id": "ubaye",
+      "name": "Ubaye (Barcelonnette, Pra-Loup, Le Sauze, Jausiers, Saint-Pons)",
+      "parent_massif": "Alpes du Sud",
+      "summary": "Vallée orientée est-ouest qui débouche sur le bras de l'Ubaye du lac de Serre-Ponçon, près de Saint-Vincent-les-Forts. Les décos documentés sont Faucon-Barcelonnette (1601 m), Jausiers, Restefond et, pour les biplaces de Pra-Loup / Le Sauze, Soleille-Bœuf, Point de Vue et Dôme de l'Alpe. Les écoles locales (Ubaye Parapente depuis 1985) vantent l'aérologie et l'ensoleillement, mais aucune source lue ne quantifie la brise d'Ubaye ni ne décrit de convergence. La brise ci-dessous est une déduction à valider.",
+      "bbox": [
+        6.4,
+        44.3,
+        6.9,
+        44.5
+      ],
+      "center": [
+        6.65,
+        44.4
+      ],
+      "breezes": [
+        {
+          "id": "brise-ubaye",
+          "name": "Brise montante de l'Ubaye (Serre-Ponçon → Barcelonnette → Jausiers)",
+          "kind": "valley",
+          "waypoints": [
+            {
+              "name": "Saint-Vincent-les-Forts (confluence)",
+              "lon": 6.3715,
+              "lat": 44.4433,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Le Lauzet-Ubaye",
+              "lon": 6.4339,
+              "lat": 44.43,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Barcelonnette",
+              "lon": 6.6514,
+              "lat": 44.3872,
+              "coord_quality": "approx"
+            },
+            {
+              "name": "Jausiers",
+              "lon": 6.7289,
+              "lat": 44.4167,
+              "coord_quality": "approx"
+            }
+          ],
+          "hours": "12h-18h (été)",
+          "speed_kmh": {
+            "typical": 20,
+            "max": 30
+          },
+          "season": "mai-septembre",
+          "description": "Déduction: brise montante de l'Ubaye depuis le lac vers Barcelonnette; aucune source locale lue sur son horaire ou sa force. Le premier point utilise le déco de Saint-Vincent comme repère de la confluence.",
+          "confidence": "low",
+          "sources": []
+        }
+      ],
+      "convergences": [],
+      "hazards": [],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [
+        {
+          "id": "faucon-barcelonnette",
+          "name": "Faucon-de-Barcelonnette",
+          "lon": 6.6669,
+          "lat": 44.402,
+          "alt_m": 1601,
+          "orientations": [],
+          "description": "Déco FFVL au-dessus de Barcelonnette (rive nord). Orientation non précisée dans le résumé.",
+          "sources": [
+            "S40"
+          ]
+        }
+      ],
+      "landings": [],
+      "synoptic_effects": [],
+      "xc_routes": [],
+      "tips": [
+        "Pra-Loup / Le Sauze: décos biplace Soleille-Bœuf, Point de Vue, Dôme de l'Alpe [S41].",
+        "Autres terrains FFVL de la vallée: Jausiers, Restefond – Ravin de Clapouse, Halte 2000 [S40]."
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Site international de vol libre de la Montagne de Chabre - Laragne",
+      "url": "https://www.sisteron-buech.fr/en/equipement/site-international-de-vol-libre-de-la-montagne-de-chabre-laragne/",
+      "publisher": "Office de tourisme Sisteron-Buëch",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Présentation du site: aérologie exceptionnelle, ensoleillement, départs cross tôt, décollages en début d'après-midi, fenêtre plus large car moins venté. Lu via résumé de moteur de recherche uniquement (fetch bloqué)."
+    },
+    {
+      "id": "S2",
+      "title": "Site de vol libre Laragne - Chabre (panneau d'information)",
+      "url": "https://www.sisteronais-buech.fr/wp-content/uploads/2024/12/Panneau_chabre-B-1.pdf",
+      "publisher": "Communauté de communes du Sisteronais-Buëch",
+      "type": "pdf",
+      "lang": "fr",
+      "notes": "Panneau du site: altitudes (1352 m), décollages N/S, vent N faible favorable, ondes par N fort, déco nord 1 déconseillé par O-NO, dust devils, rouleaux. Lu via résumé de moteur de recherche."
+    },
+    {
+      "id": "S3",
+      "title": "Les surprises aérologiques – quelques situations aérologiques qui peuvent surprendre",
+      "url": "https://lestoilesdusud-parapente.fr/images/stories/doc_public/meteo/surprisesaerologiques2.pdf",
+      "publisher": "Club Les Toiles du Sud",
+      "type": "pdf",
+      "lang": "fr",
+      "notes": "Dust devils violents à Chabre quand thermiques du sud rencontrent vent météo de nord faible; décollage des Espranons. Lu via résumé de moteur de recherche."
+    },
+    {
+      "id": "S4",
+      "title": "Terrain de pratique MONTAGNE DE CHABRE - TOP - SUD - NORD [1375]",
+      "url": "https://federation.ffvl.fr/terrain/1375",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "44.2976, 5.7634, 1330 m; 662 décollages en 2025."
+    },
+    {
+      "id": "S5",
+      "title": "Terrain de pratique MONTAGNE DE CHABRE - LES FEIGNANTS [13534]",
+      "url": "https://federation.ffvl.fr/terrain/13534",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "44.2987, 5.7668, 1283 m; 426 décollages en 2023."
+    },
+    {
+      "id": "S6",
+      "title": "Terrain de pratique MONTAGNE DE CHABRE - TABLE D'ORIENTATION [13535]",
+      "url": "https://federation.ffvl.fr/terrain/13535",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "44.3031, 5.7761, 1262 m; 3 décollages nord (1 parapente, 2 delta)."
+    },
+    {
+      "id": "S7",
+      "title": "Terrain de pratique MONTAGNE DE CHABRE - TABLE D'ORIENTATION 2 [13746]",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/13746",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "44.30438, 5.77936, 1219 m."
+    },
+    {
+      "id": "S8",
+      "title": "Catalogue vol libre – Hautes-Alpes 05-05 Laragne (décollages Chabre Nord, Espranons)",
+      "url": "http://cataloguevollibre.free.fr/Sites-Vol-Libre/Departements/Dept-05/05-05.html",
+      "publisher": "cataloguevollibre (site amateur)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Chabre Nord 1265 m orientation N, Espranons 1300 m orientation S; vent de N vite trop fort, ondes. Lu via résumé."
+    },
+    {
+      "id": "S9",
+      "title": "FLYING KARLIS, le parapente et la montagne de Chabre",
+      "url": "https://camping-monteglin.com/blog/flyingkarlis-cours-progression-chabre/",
+      "publisher": "Camping Laragne Montéglin (blog)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Records du site (Flying Karlis depuis 2017), championnat de France de distance 2017, triangle 193 km plafond 3300 m. Attribution exacte via résumé de recherche (moyenne)."
+    },
+    {
+      "id": "S10",
+      "title": "Cet été, on teste le vol libre ! (Laragne)",
+      "url": "https://camping-monteglin.com/blog/tester-le-vol-libre-parapente-deltaplane/",
+      "publisher": "Camping Laragne Montéglin (blog)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Départs cross tôt, décollages début d'après-midi, moins venté que d'autres sites. Lu via résumé."
+    },
+    {
+      "id": "S11",
+      "title": "Site de vol libre de Chabre",
+      "url": "https://www.sisteronais-buech.fr/vivre-en-sisteronais-buech/se-divertir/vol-libre-chabre/",
+      "publisher": "Communauté de communes du Sisteronais-Buëch",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Site agréé FFVL, adapté à la plupart des orientations; vallées du Buëch larges permettant des posés imprévus en sécurité."
+    },
+    {
+      "id": "S12",
+      "title": "Terrain de pratique SAINT-VINCENT-LES-FORTS [1361]",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/1361",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Décollage 44.4433, 6.3715, 1275 m. Fiche voisine [1362] et 'ST VINCENT LAC' [14189] non lues."
+    },
+    {
+      "id": "S13",
+      "title": "Vol sur le site parapente Saint Vincent Les Forts (04)",
+      "url": "https://paragliding.rocktheoutdoor.com/spots/vol-site-parapente-saint-vincent-les-forts/",
+      "publisher": "Rock the Outdoor",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Secteurs O et NO; un des seuls sites volables par NO; brises soutenues au déco en milieu d'après-midi; très bon en fin d'après-midi. Lu via résumé."
+    },
+    {
+      "id": "S14",
+      "title": "St Vincent les Forts",
+      "url": "https://www.differen-ciel.fr/2000/11/22/st-vincent-les-forts/",
+      "publisher": "Différen'Ciel (école)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Massif du Morgon = volume protégé; reliefs de Dormillouse et Blanche; cross en conditions de brise; traversée de la Durance sous le barrage. Lu via résumé (géographie partiellement confuse dans le résumé)."
+    },
+    {
+      "id": "S15",
+      "title": "Parapente Sisteron : voler au Rocher de la Baume",
+      "url": "https://www.summits.fr/article/parapente-sisteron-guide",
+      "publisher": "Summits.fr",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Cluse de la Durance: brise de vallée très régulière, 30-40 km/h l'après-midi en été, atterrissage en crabe/marche arrière, vols 9-11h et après 17h, 12-16h réservé aux confirmés."
+    },
+    {
+      "id": "S16",
+      "title": "Faire du parapente à Serre-Ponçon. Tout ce qu'il faut savoir !",
+      "url": "https://infos-parapente.com/parapente-serre-poncon/",
+      "publisher": "Infos-parapente.com",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Atterrissage turbulent dès que la brise est forte, généralement après 14-15h en été; un site déconseillé de juin à septembre (brises trop fortes) – site exact non identifié dans le résumé."
+    },
+    {
+      "id": "S17",
+      "title": "Terrain de pratique MONT GUILLAUME [669]/[670]",
+      "url": "https://federation.ffvl.fr/terrain/669",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Déco 44.5686, 6.4325, 1603 m, commune Puy-Sanières, gestionnaire Curl'Air; atterrissage intermédiaire 'Pierre Plate' 1260 m."
+    },
+    {
+      "id": "S18",
+      "title": "Vol en parapente Le Must Embrun - le Mont Guillaume ascendance",
+      "url": "https://www.sair-poncon-parapente.com/produit/vol-en-parapente-le-must-mont-guillaume-ascendance/",
+      "publisher": "S'Air Ponçon Parapente (école)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Forte brise l'après-midi en été; déco à privilégier à partir de midi. Attribution partagée avec S19 (résumé de recherche)."
+    },
+    {
+      "id": "S19",
+      "title": "Vol en parapente au-dessus du lac de Serre-Ponçon",
+      "url": "https://www.serreponcon.com/parapente-serre-poncon/",
+      "publisher": "Serreponcon.com",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Atterrissage au centre de vacances de Chadenas (Embrun), bord du lac, ~800 m; déco en forêt du Mont Guillaume ~1600 m."
+    },
+    {
+      "id": "S20",
+      "title": "Sur l'Embrunais – sites de vol libre",
+      "url": "https://www.alpes-envol.fr/pages/sites-de-vol-libre/l-embrunais/",
+      "publisher": "Alpes-Envol",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Sites de l'Embrunais, panorama sur Serre-Ponçon. Non lu en entier."
+    },
+    {
+      "id": "S21",
+      "title": "Terrain de pratique ASPRES - LA LONGEAGNE - SUD [1391] (Site ASPRES 05009)",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/1391",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "44.5409, 5.7131, 1526 m, commune La Faurie; secteurs favorables SE, S, SO, O; défavorables N, NE, NO; déco parfois impossible 14h-16h; mistral; NO fort turbulent; atterrissage aérodrome du Chevalet."
+    },
+    {
+      "id": "S22",
+      "title": "Aérodrome d'Aspres sur Buëch",
+      "url": "https://www.alpes-envol.fr/pages/aerodromes/aerodrome-d-aspres-sur-buech/",
+      "publisher": "Alpes-Envol",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Balises météo sur l'aérodrome et sur la Longeagne; attention quand le mistral est annoncé en vallée du Rhône."
+    },
+    {
+      "id": "S23",
+      "title": "Terrain de pratique LA CROUPE DE CHARANCE [13718]",
+      "url": "https://federation.ffvl.fr/terrain/13718",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "44.5676, 6.0184, 1556 m; 462 décollages / 69 atterrissages en 2024; montée ~1h/400 m. Variante Correo [13737]."
+    },
+    {
+      "id": "S24",
+      "title": "Terrain de pratique CUCHON D'ANCELLE ET ST. LEGER - SOMMET DU CUCHON [13577]",
+      "url": "https://federation.ffvl.fr/terrain/13577",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "44.6356, 6.2236, 1600 m; 355 décollages / 104 atterrissages en 2025."
+    },
+    {
+      "id": "S25",
+      "title": "Terrain de pratique CUCHON D'ANCELLE ET ST. LEGER - INTERMEDIAIRE [13578]",
+      "url": "https://federation.ffvl.fr/terrain/13578",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "44.6332, 6.2153 (altitude renvoyée 1600 m, à vérifier)."
+    },
+    {
+      "id": "S26",
+      "title": "Terrain de pratique ANCELLE [5215]",
+      "url": "https://federation.ffvl.fr/terrain/5215",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Atterrissage 44.6296, 6.19763, 1466 m; 211 atterrissages en 2025."
+    },
+    {
+      "id": "S27",
+      "title": "Parapente – Champsaur Valgaudemar",
+      "url": "https://www.champsaur-valgaudemar.com/en/to-see-to-do-2/activites-visites/vol-libre/",
+      "publisher": "Office de tourisme Champsaur-Valgaudemar",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Champsaur réputé depuis 20 ans pour son aérologie, 300 jours de soleil; déco choisi selon le vent."
+    },
+    {
+      "id": "S28",
+      "title": "Superdevoluy (fil de discussion)",
+      "url": "https://www.parapentiste.info/forum/sites-de-vols/superdevoluy-t22564.0.html",
+      "publisher": "Parapentiste.info (forum)",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Dévoluy pas abrité du mistral, ne vole que par météo faible; très fortes brises de vallée en été; tendance sud; décollages en plusieurs essais. Lu via résumé."
+    },
+    {
+      "id": "S29",
+      "title": "Devoluy / Joue du loup (fil de discussion)",
+      "url": "https://www.parapentiste.info/forum/sites-de-vols/devoluy-joue-du-loup-t45026.0.html",
+      "publisher": "Parapentiste.info (forum)",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Brises de vallée analysées en montée, tendance sud créant du sous le vent. Lu via résumé."
+    },
+    {
+      "id": "S30",
+      "title": "Promenade en planeur – Gap-Tallard",
+      "url": "https://www.planeur-gaptallard.fr/promenade/",
+      "publisher": "Planeur Gap-Tallard.FR",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Départ vers la Petite Céüse, ascendances jusqu'à la Grande Céüse le long des falaises; plafonds 2200-2500 m voire 3000 m; tour Céüse, Pic de Bure, Dévoluy, Charance en 1h15."
+    },
+    {
+      "id": "S31",
+      "title": "Air Element – vol biplace au-dessus du Diois",
+      "url": "https://www.air-element.com/en/experiment-a-paragliding-tandem-flight-above-the-diois/",
+      "publisher": "Air Element (école, Luc-en-Diois)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Décollages Clamontard (Claps de Luc), Croix de Justin face au Glandasse, Col de Rousset, Montagne du Puy (Lesches); microclimat entre influences montagnardes et provençales."
+    },
+    {
+      "id": "S32",
+      "title": "Catalogue vol libre – Drôme 26-05 (Glandasse)",
+      "url": "http://cataloguevollibre.free.fr/Sites-Vol-Libre/Departements/Dept-26/26-05.html",
+      "publisher": "cataloguevollibre (site amateur)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Déco Glandasse orientation S, 1780 m, 2h30 depuis Châtillon-en-Diois par GR91; favorable brises de pente et vent météo SO. Attribution via résumé."
+    },
+    {
+      "id": "S33",
+      "title": "La Montagne de Couspeau",
+      "url": "http://www.tichodromes.org/couspeau",
+      "publisher": "Les Tichodromes (club)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Déco sous le Grand Delmas ~1425 m; accès col de la Bouchaudière; cap SSE pour franchir la crête de Cotebelle; potentiel cross."
+    },
+    {
+      "id": "S34",
+      "title": "[Drôme] Saint-Nazaire - Couspeau",
+      "url": "https://www.martinpierre.fr/pages/randonnees-d-un-jour/europe/france-rhone-alpes/rhone-alpes-saint-nazaire-couspeau.html",
+      "publisher": "Martin Pierre (blog)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Couspeau: rando-vol, du vol de base au vol de perf."
+    },
+    {
+      "id": "S35",
+      "title": "Terrain de pratique NYONS - GARDE-GROSSE [139]",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/139",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "918 m, favorable O; décollage possible par N mais turbulent; accès par relais de Garde-Grosse."
+    },
+    {
+      "id": "S36",
+      "title": "Balise Garde-Grosse Nyons",
+      "url": "https://www.balisemeteo.com/balise.php?idBalise=168",
+      "publisher": "Balisemeteo / FFVL (Ailes des Baronnies)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Balise 44.3366, 5.1544, 938 m, VHF 143.9875."
+    },
+    {
+      "id": "S37",
+      "title": "Que faire à Nyons en une journée ?",
+      "url": "https://www.vivreanyons.fr/que-faire-nyons/nyons-1-jour/",
+      "publisher": "Vivre à Nyons",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Le Pontias, vent frais du matin qui arrive à Nyons; légende de Notre-Dame de Réparat."
+    },
+    {
+      "id": "S38",
+      "title": "Terrain de pratique COL D'EY - PRINCIPAL [671]",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/671",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Déco 100 m au-dessus du col d'Ey (Sainte-Jalle / Buis); secteurs N, NE, NO; par mistral abrité mais renforcement brutal au-dessus des crêtes."
+    },
+    {
+      "id": "S39",
+      "title": "Sites de vol aux alentours – École de Parapente des Baronnies",
+      "url": "https://provence-parapente.com/sites-de-vol-aux-alentours/",
+      "publisher": "École de Parapente des Baronnies (Mévouillon)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "8 décollages et 3 pentes école à moins de 20 min, vol quelle que soit l'orientation du vent."
+    },
+    {
+      "id": "S40",
+      "title": "Terrain de pratique FAUCON BARCELONNETTE [5209]",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/5209",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Déco 44.40197, 6.66687, 1601 m. Autres fiches: Jausiers [13413], Restefond - Ravin de Clapouse [13414], Halte 2000 [13320] (non lues)."
+    },
+    {
+      "id": "S41",
+      "title": "Pra Loup Parapente (Christophe Pichet) – biplaces Pra-Loup / Le Sauze",
+      "url": "https://www.praloupparapente.com/",
+      "publisher": "Pra Loup Parapente",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Décollages Soleille-Bœuf, Point de Vue, Dôme de l'Alpe (via résumé de recherche); Ubaye Parapente présent depuis 1985."
+    },
+    {
+      "id": "S42",
+      "title": "Fiche site de vol libre de Rabou (Orientation Ouest / Nord-Ouest)",
+      "url": "https://www.alpes-envol.fr/medias/files/site.de.rabou.pdf.pdf",
+      "publisher": "Alpes-Envol",
+      "type": "pdf",
+      "lang": "fr",
+      "notes": "Orientation O/NO; quand la brise tombe en fin de journée et que le vent météo reprend le dessus, l'orientation peut changer (attribution via résumé)."
+    },
+    {
+      "id": "S43",
+      "title": "Laragne-Chabre (28-29/04/18) – compétition FFVL",
+      "url": "https://parapente.ffvl.fr/compet/3266",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Compétition à Laragne-Chabre; aussi 14-15/06/08 (compet 884)."
+    },
+    {
+      "id": "S44",
+      "title": "ECOLE DE PARAPENTE DU QUEYRAS (structure FFVL 109)",
+      "url": "https://federation.ffvl.fr/structure/109",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Existence d'une école dans le Queyras; aucune donnée aérologique récupérée."
+    },
+    {
+      "id": "S45",
+      "title": "Admire the Dévoluy massif from the air",
+      "url": "https://www.ledevoluy.com/winter/envies/experiences-to-live/admire-the-devoluy-massif-from-the-air/",
+      "publisher": "Office de tourisme du Dévoluy",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Biplaces à Superdévoluy (Parapente Max)."
+    }
+  ]
+}

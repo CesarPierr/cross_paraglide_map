@@ -1,0 +1,742 @@
+{
+  "topic": "Maurienne, Arves-Thabor-Galibier, Briançonnais-Guisane, Vallouise-Écrins et haute Durance",
+  "massifs": [
+    {
+      "id": "maurienne",
+      "name": "Maurienne (Aiguebelle – Saint-Jean – Saint-Michel – Modane)",
+      "parent_massif": "Alpes du Nord – Savoie",
+      "summary": "Longue vallée de l'Arc, orientée N-S d'Aiguebelle à Saint-Jean puis O-E jusqu'à Modane : la brise montante y est puissante en été, le CDVL 73 parle d'une brise de vallée souvent forte, jusqu'à 50 km/h. Les décos (stations de 1500 à plus de 2000 m) sont orientés SE à SW avec 1000-1200 m de dénivelé au-dessus de Saint-Jean. Le club local (L'Envol de la Croix des Fleurs) recommande de voler le matin et de se poser à Saint-Jean avant 11h l'été ; sinon il faut rester en altitude au-dessus de la brise ou attendre la fin d'après-midi pour redescendre dans la vallée. L'atterrissage de Saint-Jean est jugé technique. Par vent de nord, depuis La Balme, rester loin du Sappey. Aucune convergence ni route de cross n'a pu être documentée pour la basse Maurienne avec les sources accessibles. Toutes les coordonnées sont approximatives (non vérifiées sur fiche).",
+      "bbox": [6.20, 45.15, 6.70, 45.60],
+      "center": [6.40, 45.33],
+      "breezes": [
+        {
+          "id": "brise-montante-maurienne",
+          "name": "Brise montante de Maurienne (Aiguebelle → Modane)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Aiguebelle", "lon": 6.3061, "lat": 45.5428, "coord_quality": "approx" },
+            { "name": "La Chambre", "lon": 6.3000, "lat": 45.3581, "coord_quality": "approx" },
+            { "name": "Saint-Jean-de-Maurienne", "lon": 6.3456, "lat": 45.2769, "coord_quality": "approx" },
+            { "name": "Saint-Michel-de-Maurienne", "lon": 6.4694, "lat": 45.2203, "coord_quality": "approx" },
+            { "name": "Orelle", "lon": 6.5372, "lat": 45.2094, "coord_quality": "approx" },
+            { "name": "Modane", "lon": 6.6667, "lat": 45.2000, "coord_quality": "approx" }
+          ],
+          "hours": "≈11h-19h (été) ; posé en vallée conseillé avant 11h à Saint-Jean, ou en fin d'après-midi",
+          "speed_kmh": { "typical": 30, "max": 50 },
+          "season": "printemps-été",
+          "layer_depth_m": "non documenté pour la Maurienne (ordre de grandeur général 200-500 m ou plus selon S4)",
+          "description": "Le cahier technique du CDVL 73 décrit une brise de vallée souvent forte l'été, jusqu'à 50 km/h, et conseille au printemps et en été soit de voler en altitude pour éviter la forte brise, soit de voler en fin d'après-midi pour se poser dans la vallée (extrait reformulé). Le club de Saint-Jean indique pour l'atterrissage (540 m, orienté NW/SE dans l'axe de vallée) : attention au vent de vallée l'été, se poser avant 11h. Un article général cite la Maurienne parmi les longues vallées où la brise peut atteindre 50 km/h. Le sens (de l'aval vers l'amont, Aiguebelle → Modane) est celui de toute brise de vallée diurne ; la valeur typique de 30 km/h est une interprétation.",
+          "confidence": "medium",
+          "sources": ["S1", "S2", "S4"]
+        }
+      ],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "brise-forte-atterro-saint-jean",
+          "name": "Brise de vallée forte à l'atterrissage de Saint-Jean-de-Maurienne",
+          "kind": "strong-breeze",
+          "lon": 6.3456, "lat": 45.2769, "radius_km": 3,
+          "coord_quality": "approx",
+          "conditions": "Été, à partir de ≈11h ; jusqu'à 50 km/h selon le CDVL 73",
+          "description": "Le club local demande de se poser avant 11h l'été ; atterrissage décrit comme technique (travaux de la gare). Le CDVL 73 propose sinon de rester haut ou d'attendre la fin d'après-midi.",
+          "sources": ["S1", "S2"]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [
+        {
+          "id": "grand-chatelard",
+          "name": "Grand Châtelard (accès par Jarrier)",
+          "lon": 6.2960, "lat": 45.2830, "alt_m": 2000,
+          "coord_quality": "approx",
+          "orientations": ["SW"],
+          "description": "Déco SW à 2000 m, accès depuis Jarrier (maison forestière de l'Oullaz, « Sur la Balme », 1h de marche). Vol uniquement le matin ; attention au vent de vallée ; finesse 2,9 jusqu'à l'atterrissage de Saint-Jean. Position très approximative (estimée d'après l'accès et la finesse), à vérifier.",
+          "sources": ["S2"]
+        },
+        {
+          "id": "la-balme-jarrier",
+          "name": "La Balme (Jarrier)",
+          "lon": 6.3165, "lat": 45.2870, "alt_m": 1580,
+          "coord_quality": "approx",
+          "orientations": ["SE"],
+          "description": "Déco SE à 1580 m, décollage vers la croix sous le village. Vol uniquement le matin ; attention au vent de vallée ; par vent du nord, rester loin du Sappey. Finesse 2,5 jusqu'à Saint-Jean. Position très approximative, à vérifier.",
+          "sources": ["S2"]
+        }
+      ],
+      "landings": [
+        {
+          "id": "atterro-saint-jean-de-maurienne",
+          "name": "Saint-Jean-de-Maurienne (rue Louis Sibué, face à la caserne des pompiers)",
+          "lon": 6.3470, "lat": 45.2780, "alt_m": 540,
+          "coord_quality": "approx",
+          "description": "Orienté NW et SE (axe de vallée). Attention au vent de vallée l'été : se poser avant 11h. Atterrissage technique (travaux de la gare). Le CDVL 73 indique un atterrissage en vallée « à 800 m » : divergence d'altitude avec le club (540 m).",
+          "sources": ["S2", "S1"]
+        }
+      ],
+      "synoptic_effects": [
+        {
+          "wind": "N",
+          "effect": "Depuis La Balme, par vent du nord, rester loin du Sappey (secteur sous le vent signalé par le club).",
+          "sources": ["S2"]
+        }
+      ],
+      "xc_routes": [],
+      "tips": [
+        "L'été, voler le matin et se poser à Saint-Jean avant 11h [S2]",
+        "Au printemps/été, soit rester haut au-dessus de la brise, soit attendre la fin d'après-midi pour redescendre dans la vallée [S1]",
+        "Si la brise est trop forte en vol, envisager un posé de secours en pente au-dessus de la couche de brise [S4]"
+      ]
+    },
+    {
+      "id": "haute-maurienne",
+      "name": "Haute-Maurienne (Modane – Aussois – Val Cenis – Bessans – Bonneval)",
+      "parent_massif": "Alpes du Nord – Savoie / Vanoise",
+      "summary": "De Modane à Bonneval, la vallée de l'Arc se resserre (Aussois, Termignon) puis s'ouvre sur Lanslebourg–Lanslevillard et Bessans. La brise de vallée y est signalée forte dès 11h l'été : à Aussois « vent de vallée et thermique forts l'été à partir de 11h, plus tôt par vent de nord », à Val Cenis brise de vallée forte dès 11h. On privilégie donc les vols du matin et les vols du soir en restitution (Arcelles). Le col du Mont-Cenis est une porte d'entrée de la Lombarde : les fiches de Val Cenis demandent de se méfier de ce vent venu d'Italie. Selon Météo-France (Y. Giezendanner), la Lombarde touche la haute Maurienne lors de flux de SE avec dépression méditerranéenne et fortes précipitations côté italien. Aucune donnée publique trouvée sur Bessans/Bonneval. Coordonnées approximatives.",
+      "bbox": [6.65, 45.15, 7.20, 45.45],
+      "center": [6.90, 45.28],
+      "breezes": [
+        {
+          "id": "brise-montante-haute-maurienne",
+          "name": "Brise montante de Haute-Maurienne (Modane → Bonneval)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Modane", "lon": 6.6667, "lat": 45.2000, "coord_quality": "approx" },
+            { "name": "Aussois", "lon": 6.7419, "lat": 45.2272, "coord_quality": "approx" },
+            { "name": "Termignon", "lon": 6.8153, "lat": 45.2775, "coord_quality": "approx" },
+            { "name": "Lanslebourg", "lon": 6.8781, "lat": 45.2856, "coord_quality": "approx" },
+            { "name": "Lanslevillard", "lon": 6.9111, "lat": 45.2908, "coord_quality": "approx" },
+            { "name": "Bessans", "lon": 6.9906, "lat": 45.3203, "coord_quality": "approx" },
+            { "name": "Bonneval-sur-Arc", "lon": 7.0475, "lat": 45.3717, "coord_quality": "approx" }
+          ],
+          "hours": "dès ≈11h (été), plus tôt par vent de nord ; jusqu'en fin d'après-midi",
+          "speed_kmh": { "typical": 25, "max": 35 },
+          "season": "été",
+          "description": "Aussois : « vent de vallée et thermique forts l'été à partir de 11h, plus tôt si vent du nord » (rendu d'extrait). Article général : vallée étroite à Aussois favorisant une forte brise dès 11h30 l'été. Val Cenis/Arcelles : brise de vallée forte dès 11h. Les sources disent seulement « forte » : 25/35 km/h est une interprétation. Le prolongement Bessans–Bonneval est une déduction (non documenté).",
+          "confidence": "medium",
+          "sources": ["S3", "S4", "S5", "S6"]
+        },
+        {
+          "id": "lombarde-mont-cenis",
+          "name": "Lombarde par le col du Mont-Cenis",
+          "kind": "pass-transfer",
+          "waypoints": [
+            { "name": "Suse (Susa, Italie)", "lon": 7.0500, "lat": 45.1375, "coord_quality": "approx" },
+            { "name": "Col du Mont-Cenis", "lon": 6.9006, "lat": 45.2597, "coord_quality": "approx" },
+            { "name": "Lanslevillard", "lon": 6.9111, "lat": 45.2908, "coord_quality": "approx" },
+            { "name": "Lanslebourg", "lon": 6.8781, "lat": 45.2856, "coord_quality": "approx" }
+          ],
+          "hours": "épisodique (situations de flux d'E/SE), hiver comme été",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "toute l'année",
+          "description": "Les fiches de Val Cenis (Arcelles) mettent en garde contre la « lombarde », vent venant d'Italie. Selon Météo-France (Y. Giezendanner, cité par Lyon Capitale), la Lombarde concerne la haute Maurienne et la haute Tarentaise quand une dépression méditerranéenne et un flux de SE provoquent de fortes précipitations côté italien ; phénomène naturel, plusieurs fois par an, hiver comme été. Contexte synoptique : anticyclone froid sur l'Europe centrale et dépression au sud de Nice. Le trajet exact par le Mont-Cenis et sa vitesse ne sont pas documentés : tracé déduit de la géographie.",
+          "confidence": "low",
+          "sources": ["S5", "S6", "S22", "S23", "S24"]
+        }
+      ],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "brise-forte-aussois",
+          "name": "Vent de vallée fort à Aussois",
+          "kind": "strong-breeze",
+          "lon": 6.7419, "lat": 45.2272, "radius_km": 3,
+          "coord_quality": "approx",
+          "conditions": "Été, dès 11h (plus tôt par vent de nord)",
+          "description": "Vallée étroite : vent de vallée et thermique forts l'été à partir de 11h. Décos Angle Bellecôte et le Djoin ; atterrissages la Charrière et la Croix (positions non relevées).",
+          "sources": ["S3", "S4"]
+        },
+        {
+          "id": "lombarde-val-cenis",
+          "name": "Lombarde au col du Mont-Cenis / Val Cenis",
+          "kind": "foehn",
+          "lon": 6.9006, "lat": 45.2597, "radius_km": 6,
+          "coord_quality": "approx",
+          "conditions": "Situations de flux d'E/SE avec dépression méditerranéenne (retour d'est)",
+          "description": "Vent d'Italie qui déborde la frontière ; fiches de Val Cenis : « méfiance avec la lombarde ».",
+          "sources": ["S5", "S6", "S23"]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [
+        {
+          "id": "arcelles-val-cenis",
+          "name": "Arcelles (Val Cenis, route du Mont-Cenis)",
+          "lon": 6.9000, "lat": 45.2650, "alt_m": null,
+          "coord_quality": "approx",
+          "orientations": ["NE", "W"],
+          "description": "Accès depuis Lanslevillard vers le col du Mont-Cenis, tourner à gauche vers Arcelles 500 m avant le col. Bonne restitution et beaux vols du soir ; brise de vallée forte dès 11h ; méfiance avec la lombarde. Position estimée, à vérifier.",
+          "sources": ["S5", "S6"]
+        }
+      ],
+      "landings": [
+        {
+          "id": "atterro-lanslevillard",
+          "name": "Lanslevillard (prés en amont du village, D902, près de l'école Antipodes)",
+          "lon": 6.9180, "lat": 45.2940, "alt_m": null,
+          "coord_quality": "approx",
+          "description": "Terrain privé : se renseigner auprès des professionnels de Val Cenis avant usage (fiche FFVL 14176). Brise de vallée forte dès 11h.",
+          "sources": ["S5", "S6"]
+        }
+      ],
+      "synoptic_effects": [
+        {
+          "wind": "N",
+          "effect": "À Aussois, la brise de vallée et le thermique forts arrivent plus tôt que 11h par vent de nord.",
+          "sources": ["S3"]
+        },
+        {
+          "wind": "Lombarde",
+          "effect": "Vent d'E/NE venu d'Italie qui déborde la frontière (Mont-Cenis) : danger signalé à Val Cenis ; associé à de fortes précipitations côté italien (flux de SE, dépression méditerranéenne). Les fiches ne donnent pas de seuil de force.",
+          "sources": ["S5", "S6", "S22", "S23", "S24"]
+        }
+      ],
+      "xc_routes": [],
+      "tips": [
+        "Privilégier le matin et le soir : brise de vallée forte dès 11h en été [S3][S5]",
+        "Arcelles : beaux vols du soir en restitution [S6]",
+        "Se méfier de la Lombarde en situation de retour d'est [S5][S23]"
+      ]
+    },
+    {
+      "id": "arves-thabor-galibier",
+      "name": "Arves – Sybelles – Valloire – Galibier – Thabor",
+      "parent_massif": "Alpes du Nord – Savoie (rive gauche de la Maurienne)",
+      "summary": "Hautes vallées latérales au sud de la Maurienne : Arvan (Sybelles), Valloirette (Valloire–Galibier) et massif du Thabor. Les sources accessibles portent surtout sur Valloire : déco du Crey du Quart (≈2500 m par télésiège, vols hiver/été) et col du Galibier (biplaces). La fiche FFVL du secteur Plan Lachat–Galibier décrit un site de soaring dans la brise de nord (secteurs favorables N, NE, NW ; défavorables E, SE, S, SW, W), avec un vent souvent fort au déco et des effets venturi. La brise de la Valloirette remonte donc du nord (Saint-Michel–Télégraphe) vers le Galibier. Aucune source consultée ne décrit la transfluence au Galibier vers le Lautaret ni l'aérologie des Sybelles ou du Thabor. Coordonnées approximatives.",
+      "bbox": [6.15, 45.03, 6.65, 45.30],
+      "center": [6.42, 45.15],
+      "breezes": [
+        {
+          "id": "brise-valloirette",
+          "name": "Brise montante de la Valloirette (Saint-Michel → Galibier)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Saint-Michel-de-Maurienne", "lon": 6.4694, "lat": 45.2203, "coord_quality": "approx" },
+            { "name": "Col du Télégraphe", "lon": 6.4447, "lat": 45.2031, "coord_quality": "approx" },
+            { "name": "Valloire", "lon": 6.4297, "lat": 45.1656, "coord_quality": "approx" },
+            { "name": "Plan Lachat", "lon": 6.4190, "lat": 45.0880, "coord_quality": "approx" },
+            { "name": "Col du Galibier", "lon": 6.4078, "lat": 45.0642, "coord_quality": "approx" }
+          ],
+          "hours": "journée (été) ; heures non documentées",
+          "speed_kmh": { "typical": 20, "max": 30 },
+          "season": "été",
+          "description": "Fiche FFVL du secteur Valloire–Galibier : conditions idéales « brise légère de Nord », secteurs favorables N, NE, NW ; vent souvent fort au déco (pilotes confirmés) ; soaring possible en restant au vent de la brise ; attention aux effets venturi. Les champs peuvent provenir de la fiche du Crey du Quart plutôt que de Plan Lachat (extrait ambigu). Sens N→S déduit de ces secteurs favorables et de l'axe de la vallée ; vitesses = interprétation de « souvent fort ».",
+          "confidence": "medium",
+          "sources": ["S7"]
+        }
+      ],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "venturi-plan-lachat-galibier",
+          "name": "Effets venturi et vent fort au déco (Valloire–Galibier)",
+          "kind": "venturi",
+          "lon": 6.4190, "lat": 45.0880, "radius_km": 3,
+          "coord_quality": "approx",
+          "conditions": "Brise de nord établie ; vent météo de secteur E à W défavorable",
+          "description": "Vent souvent fort au déco (réservé aux pilotes confirmés) ; attention aux effets venturi.",
+          "sources": ["S7"]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [
+        {
+          "id": "soaring-plan-lachat",
+          "name": "Butte de Plan Lachat (vallée de Valloire)",
+          "lon": 6.4190, "lat": 45.0880,
+          "coord_quality": "approx",
+          "wind_dirs": ["N", "NE", "NW"],
+          "description": "Petite butte pour le soaring dans la brise de nord ; rester au vent de la brise ; effets venturi ; vent souvent fort.",
+          "sources": ["S7"]
+        }
+      ],
+      "takeoffs": [
+        {
+          "id": "crey-du-quart",
+          "name": "Crey du Quart (Valloire)",
+          "lon": 6.4000, "lat": 45.1750, "alt_m": 2500,
+          "coord_quality": "approx",
+          "orientations": [],
+          "description": "Sommet de la crête du Crey du Quart, accès par télésiège du domaine Valloire Galibier Thabor ; ≈2500 m ; vols à ski l'hiver, face aux Aiguilles d'Arves. Orientation non relevée. Position très approximative, à vérifier.",
+          "sources": ["S8"]
+        },
+        {
+          "id": "col-du-galibier",
+          "name": "Col du Galibier (biplaces de Valloire)",
+          "lon": 6.4078, "lat": 45.0642, "alt_m": 2642,
+          "coord_quality": "approx",
+          "orientations": [],
+          "description": "Déco utilisé par les biplaceurs de Valloire (navette depuis la D902) ; aussi cité par les écoles de Briançon selon le vent du jour. Altitude = altitude du col.",
+          "sources": ["S9", "S25"]
+        }
+      ],
+      "landings": [],
+      "synoptic_effects": [
+        {
+          "wind": "N",
+          "effect": "Favorable (avec NE et NW) au secteur Valloire–Galibier : brise légère de nord idéale ; vent souvent fort au déco et venturi.",
+          "sources": ["S7"]
+        },
+        {
+          "wind": "S",
+          "effect": "E, SE, S, SW et W sont listés comme secteurs défavorables pour le site de Valloire–Galibier.",
+          "sources": ["S7"]
+        }
+      ],
+      "xc_routes": [],
+      "tips": [
+        "À Valloire–Galibier, une brise légère de nord est idéale ; au-delà, attention au venturi [S7]"
+      ]
+    },
+    {
+      "id": "brianconnais-guisane",
+      "name": "Briançonnais – Guisane – Lautaret – Clarée – Montgenèvre",
+      "parent_massif": "Alpes du Sud – Hautes-Alpes",
+      "summary": "Briançon est au carrefour de trois vallées principales aux régimes de brise différents : la Durance au sud, ouverte au S-SW et à la brise montante ; la Guisane vers le Lautaret, qui canalise bien le NW ; la Clarée/Montgenèvre au nord-est, porte de la Lombarde. L'après-midi, la brise de la Durance (plus de 40 km/h à Briançon selon Chocard Airlines) entre dans la basse Guisane. Elle y rencontre très souvent vers Saint-Chaffrey la brise et/ou le petit NW qui descend la Guisane depuis le Lautaret. Au Granon, on vole l'été dans cette confluence, particulière (risque de turbulence) mais qui peut très bien marcher. Par Lombarde (vent d'E d'Italie descendant le col de Montgenèvre, souvent bouché, effet de foehn local), la convergence avec la brise de Durance naît vers La Vachette puis redescend la Durance. Le Prorel (déco Croix de la Nore, posé Saint-Blaise) se vole par N et S mais pas par NE/E, avec des conditions parfois très fortes au printemps et en été. Coordonnées approximatives.",
+      "bbox": [6.38, 44.84, 6.82, 45.12],
+      "center": [6.60, 44.94],
+      "breezes": [
+        {
+          "id": "brise-durance-basse-guisane",
+          "name": "Brise de Durance entrant dans la basse Guisane (Briançon → Saint-Chaffrey)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Briançon", "lon": 6.6436, "lat": 44.8986, "coord_quality": "approx" },
+            { "name": "Saint-Chaffrey", "lon": 6.6081, "lat": 44.9256, "coord_quality": "approx" },
+            { "name": "Chantemerle", "lon": 6.5867, "lat": 44.9311, "coord_quality": "approx" }
+          ],
+          "hours": "après-midi (été)",
+          "speed_kmh": { "typical": 30, "max": 45 },
+          "season": "printemps-été",
+          "description": "Prolongement de la brise montante de la Durance qui atteint plus de 40 km/h à Briançon (Chocard Airlines). Elle remonte la basse Guisane jusqu'à la convergence, très souvent située vers Saint-Chaffrey, avec le flux descendant de la Guisane (forum parabriancon, parapentiste.info). Vitesse typique = interprétation.",
+          "confidence": "medium",
+          "sources": ["S13", "S14", "S15"]
+        },
+        {
+          "id": "transfert-lautaret-guisane",
+          "name": "Flux venant du Lautaret / petit NW descendant la Guisane",
+          "kind": "pass-transfer",
+          "waypoints": [
+            { "name": "Col du Lautaret", "lon": 6.4044, "lat": 45.0347, "coord_quality": "approx" },
+            { "name": "Le Monêtier-les-Bains", "lon": 6.5083, "lat": 44.9764, "coord_quality": "approx" },
+            { "name": "La Salle-les-Alpes (Villeneuve)", "lon": 6.5686, "lat": 44.9450, "coord_quality": "approx" },
+            { "name": "Chantemerle", "lon": 6.5867, "lat": 44.9311, "coord_quality": "approx" }
+          ],
+          "hours": "après-midi (été) en régime de brise ; aussi par vent synoptique de NW",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "été (brise) / toute l'année (NW)",
+          "description": "Les sources locales parlent de « la brise (et/ou petit nord-ouest descendant la Guisane) » et, au Granon, de la brise « qui vient par le Lautaret », qui converge avec la brise de Durance. La Guisane canalise bien le NW. Le Lautaret, limite Romanche/Guisane, est un col très venté (fermetures de route pour vent fort). L'origine Oisans (débordement de la brise de la Romanche) est une déduction ; aucune vitesse documentée.",
+          "confidence": "medium",
+          "sources": ["S14", "S15", "S20", "S21"]
+        },
+        {
+          "id": "lombarde-montgenevre",
+          "name": "Lombarde descendant le col de Montgenèvre",
+          "kind": "pass-transfer",
+          "waypoints": [
+            { "name": "Cesana Torinese (Italie)", "lon": 6.7942, "lat": 44.9536, "coord_quality": "approx" },
+            { "name": "Col de Montgenèvre", "lon": 6.7250, "lat": 44.9325, "coord_quality": "approx" },
+            { "name": "Les Alberts", "lon": 6.7000, "lat": 44.9250, "coord_quality": "approx" },
+            { "name": "La Vachette", "lon": 6.6700, "lat": 44.9150, "coord_quality": "approx" },
+            { "name": "Briançon", "lon": 6.6436, "lat": 44.8986, "coord_quality": "approx" }
+          ],
+          "hours": "fréquente l'après-midi, en situation d'E",
+          "speed_kmh": { "typical": 20, "max": null },
+          "season": "toute l'année",
+          "description": "Fiche FFVL du Prorel : Lombarde = effet de foehn local, le vent vient d'Italie et descend le col de Montgenèvre, souvent bouché. À Montgenèvre, ce vent d'est s'accélère au col, est fréquent notamment l'après-midi, peut se renforcer rapidement et devenir très turbulent ; il peut ne pas être ressenti au déco du Chalvet mais souffler à 20 km/h au col ou aux Alberts. Sa convergence avec la brise de Durance naît vers La Vachette puis redescend la Durance.",
+          "confidence": "medium",
+          "sources": ["S10", "S12", "S14"]
+        },
+        {
+          "id": "brise-claree",
+          "name": "Brise montante de la Clarée (La Vachette → Névache)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "La Vachette", "lon": 6.6700, "lat": 44.9150, "coord_quality": "approx" },
+            { "name": "Val-des-Prés", "lon": 6.6767, "lat": 44.9447, "coord_quality": "approx" },
+            { "name": "Plampinet", "lon": 6.6900, "lat": 44.9930, "coord_quality": "approx" },
+            { "name": "Névache", "lon": 6.6053, "lat": 45.0203, "coord_quality": "approx" }
+          ],
+          "hours": "journée (été) – déduction",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "été",
+          "description": "Déduction : aucune source accessible ne décrit la brise de la Clarée. Tracé = brise de vallée diurne théorique de l'aval vers l'amont. À confirmer auprès des clubs briançonnais.",
+          "confidence": "low",
+          "sources": []
+        }
+      ],
+      "convergences": [
+        {
+          "id": "conv-saint-chaffrey-granon",
+          "name": "Convergence de Saint-Chaffrey / confluence du Granon",
+          "geometry": { "type": "LineString", "coordinates": [[6.6064, 44.9631], [6.5950, 44.9300], [6.5800, 44.9100]] },
+          "when": "Après-midi d'été en régime de brise ; brise de Durance contre brise/petit NW descendant la Guisane",
+          "mechanism": "La brise montante de la Durance remonte la basse Guisane et rencontre la brise et/ou le petit nord-ouest qui descend la Guisane depuis le Lautaret.",
+          "usage": "Très souvent située vers Saint-Chaffrey. Au Granon, l'été, on vole dans cette confluence, particulière (risque de turbulence) mais qui peut très bien marcher. Ligne tracée en travers de la vallée Granon → Chantemerle/Saint-Chaffrey → versant sud (géométrie approximative).",
+          "confidence": "medium",
+          "sources": ["S14", "S15"]
+        },
+        {
+          "id": "conv-briancon-verrou-argentiere",
+          "name": "Confluence brise de sud / NW-N météo (Briançon ↔ verrou de L'Argentière)",
+          "geometry": { "type": "LineString", "coordinates": [[6.6436, 44.8986], [6.5800, 44.8530], [6.5600, 44.8050]] },
+          "when": "Journée avec vent synoptique de NW à N : au-dessus de Briançon si le vent est faible, plus au sud s'il est un peu plus fort",
+          "mechanism": "Brise montante de la Durance (sud) contre vent météo de NW-N descendant vers Briançon.",
+          "usage": "Position glissante le long de la Durance : au-dessus de Briançon par vent faible, souvent vers le verrou glaciaire au nord de L'Argentière par vent plus soutenu. Repère pour les transitions Briançon–L'Argentière.",
+          "confidence": "medium",
+          "sources": ["S13", "S14"]
+        },
+        {
+          "id": "conv-lombarde-vachette",
+          "name": "Convergence brise de Durance / Lombarde (La Vachette → Durance)",
+          "geometry": { "type": "LineString", "coordinates": [[6.6700, 44.9150], [6.6436, 44.8986], [6.6100, 44.8750]] },
+          "when": "Situation de Lombarde (vent d'E d'Italie), surtout l'après-midi",
+          "mechanism": "La Lombarde descend le col de Montgenèvre (souvent bouché) et s'oppose à la brise montante de la Durance.",
+          "usage": "La convergence commence vers La Vachette puis redescend progressivement la vallée de la Durance. Zone turbulente : la Lombarde peut se renforcer rapidement.",
+          "confidence": "medium",
+          "sources": ["S14", "S10", "S12"]
+        }
+      ],
+      "hazards": [
+        {
+          "id": "venturi-lautaret",
+          "name": "Col du Lautaret – passage venté Romanche/Guisane",
+          "kind": "venturi",
+          "lon": 6.4044, "lat": 45.0347, "radius_km": 3,
+          "coord_quality": "approx",
+          "conditions": "Vents d'O ou d'E canalisés ; après-midi en régime de brise",
+          "description": "Col (2058 m) entre Romanche et Guisane, régulièrement fermé à la circulation pour vent très fort ; spot de kite réputé capter les vents d'E et d'O. Aucune fiche parapente consultée ne décrit précisément le venturi : à confirmer.",
+          "sources": ["S20", "S21", "S26"]
+        },
+        {
+          "id": "lombarde-col-montgenevre",
+          "name": "Lombarde au col de Montgenèvre / Les Alberts",
+          "kind": "foehn",
+          "lon": 6.7250, "lat": 44.9325, "radius_km": 4,
+          "coord_quality": "approx",
+          "conditions": "Vent d'E d'Italie, fréquent l'après-midi ; col souvent bouché",
+          "description": "Peut ne pas être ressentie au déco du Chalvet mais souffler à 20 km/h au col ou aux Alberts, ce qui devient très turbulent ; renforcement rapide.",
+          "sources": ["S12", "S10"]
+        },
+        {
+          "id": "brise-forte-briancon",
+          "name": "Brise de Durance forte à Briançon (posé Saint-Blaise)",
+          "kind": "strong-breeze",
+          "lon": 6.6290, "lat": 44.8810, "radius_km": 3,
+          "coord_quality": "approx",
+          "conditions": "Après-midi d'été",
+          "description": "La brise de Durance peut dépasser 40 km/h à Briançon. Le posé de Saint-Blaise est un très grand terrain dans l'axe de la vallée, avec une ligne haute tension au nord.",
+          "sources": ["S13", "S10", "S11"]
+        },
+        {
+          "id": "prorel-conditions-fortes",
+          "name": "Prorel : conditions très fortes au printemps et en été",
+          "kind": "other",
+          "lon": 6.6000, "lat": 44.8930, "radius_km": 2,
+          "coord_quality": "approx",
+          "conditions": "Printemps et été, en journée",
+          "description": "Fiche FFVL : idéal en brises légères sans vent météo ; au printemps et en été les conditions peuvent être très fortes. Décollage et atterrissage interdits sur les pistes ; distances minimales de 50 m latéralement et 15 m verticalement de toutes les installations.",
+          "sources": ["S10"]
+        },
+        {
+          "id": "turbulence-confluence-granon",
+          "name": "Turbulence de confluence au Granon",
+          "kind": "landing-turbulence",
+          "lon": 6.6064, "lat": 44.9631, "radius_km": 2,
+          "coord_quality": "approx",
+          "conditions": "Été, régime de brise",
+          "description": "Confluence brise de Durance / flux du Lautaret : particulière, risque de turbulence.",
+          "sources": ["S15"]
+        }
+      ],
+      "thermal_spots": [],
+      "soaring_spots": [],
+      "takeoffs": [
+        {
+          "id": "prorel-croix-de-la-nore",
+          "name": "Briançon – Le Prorel – Croix de la Nore (FFVL 2359)",
+          "lon": 6.6000, "lat": 44.8930, "alt_m": 2400,
+          "coord_quality": "approx",
+          "orientations": [],
+          "description": "Accès par la télécabine du Prorel (saisons été 1/07-30/08 et hiver 15/12-15/04). Vent idéal : brises légères sans vent météo ; secteurs favorables N et S, défavorables NE et E. Attention à la Lombarde (foehn local par Montgenèvre). Hiver idéal (≈1200 m de dénivelé, thermiques dès mi-février) ; printemps-été parfois très fort. Altitude déduite des 1200 m de dénivelé ; orientation et position exacte non relevées.",
+          "sources": ["S10"]
+        },
+        {
+          "id": "col-du-granon",
+          "name": "Col du Granon",
+          "lon": 6.6064, "lat": 44.9631, "alt_m": 2404,
+          "coord_quality": "approx",
+          "orientations": [],
+          "description": "Déco utilisé selon le vent du jour (aussi pour l'initiation). L'été on y vole en régime de brise, dans la confluence brise de Durance / flux du Lautaret : turbulent mais peut très bien marcher. Altitude = altitude du col.",
+          "sources": ["S15", "S19", "S25"]
+        },
+        {
+          "id": "serre-chevalier-remontees",
+          "name": "Serre-Chevalier (sommet de Serre-Chevalier / télésièges de Forêt et des Vallons)",
+          "lon": 6.5600, "lat": 44.9220, "alt_m": null,
+          "coord_quality": "approx",
+          "orientations": [],
+          "description": "Décos au sommet des remontées (Forêt, Vallons, ou Prorel) choisis selon l'aérologie du jour ; posé au parking de la gendarmerie de Saint-Chaffrey. Position très approximative (secteur sommet de Serre-Chevalier), à vérifier.",
+          "sources": ["S17", "S19"]
+        },
+        {
+          "id": "chalvet-montgenevre",
+          "name": "Le Chalvet (Montgenèvre)",
+          "lon": 6.7290, "lat": 44.9150, "alt_m": null,
+          "coord_quality": "approx",
+          "orientations": [],
+          "description": "Arrivée du télésiège du Chalvet, un peu à l'ouest ; zone large, sécurisée et balisée gérée par Origin'Air. La Lombarde peut être absente au déco mais souffler à 20 km/h au col ou aux Alberts. Position estimée.",
+          "sources": ["S12", "S27"]
+        }
+      ],
+      "landings": [
+        {
+          "id": "atterro-saint-blaise",
+          "name": "Briançon – Saint-Blaise (FFVL 13227)",
+          "lon": 6.6290, "lat": 44.8810, "alt_m": null,
+          "coord_quality": "approx",
+          "description": "Sortie sud de Briançon le long de la route nationale ; très grand terrain dans l'axe de la vallée ; ligne haute tension sur le côté nord. Brise de Durance pouvant dépasser 40 km/h à Briançon.",
+          "sources": ["S10", "S11", "S13"]
+        },
+        {
+          "id": "atterro-saint-chaffrey",
+          "name": "Saint-Chaffrey – parking de la gendarmerie (Chantemerle)",
+          "lon": 6.5900, "lat": 44.9290, "alt_m": null,
+          "coord_quality": "approx",
+          "description": "Atterrissage des biplaces de Serre-Chevalier. Proche de la convergence fréquente de Saint-Chaffrey (déduction : direction du vent changeante l'après-midi).",
+          "sources": ["S17", "S14"]
+        },
+        {
+          "id": "atterro-montgenevre",
+          "name": "Montgenèvre station (à l'est de l'obélisque)",
+          "lon": 6.7280, "lat": 44.9320, "alt_m": null,
+          "coord_quality": "approx",
+          "description": "Se poser de préférence à l'est de l'obélisque pour éviter les lignes. Zone exposée à la Lombarde (col).",
+          "sources": ["S12"]
+        }
+      ],
+      "synoptic_effects": [
+        {
+          "wind": "N",
+          "effect": "Prorel : N favorable. La confluence brise de sud / vent de N-NW se place au-dessus de Briançon par vent faible, plus au sud (souvent vers le verrou nord de L'Argentière) par vent plus soutenu.",
+          "sources": ["S10", "S13", "S14"]
+        },
+        {
+          "wind": "NW",
+          "effect": "La Guisane canalise bien le NW : petit NW descendant la Guisane depuis le Lautaret, qui converge avec la brise de Durance vers Saint-Chaffrey.",
+          "sources": ["S14"]
+        },
+        {
+          "wind": "S",
+          "effect": "La Durance au sud de Briançon est ouverte au S-SW et à la brise montante ; S favorable au Prorel.",
+          "sources": ["S10", "S14"]
+        },
+        {
+          "wind": "Lombarde",
+          "effect": "Vent d'E d'Italie descendant le col de Montgenèvre (souvent bouché), effet de foehn local ; NE et E défavorables au Prorel ; fréquente l'après-midi, renforcement rapide et forte turbulence vers le col et Les Alberts ; convergence avec la brise de Durance née vers La Vachette puis redescendant la Durance.",
+          "sources": ["S10", "S12", "S14"]
+        },
+        {
+          "wind": "E",
+          "effect": "Secteurs NE et E défavorables au Prorel (voir Lombarde).",
+          "sources": ["S10"]
+        }
+      ],
+      "xc_routes": [],
+      "tips": [
+        "Le site se choisit selon le vent du jour : Granon, Galibier, Vallouise, Puy Chalvin… [S25]",
+        "Au Granon, l'été, on vole dans la confluence Durance/Lautaret : ça marche bien mais c'est turbulent [S15]",
+        "Col de Montgenèvre bouché côté Italie = Lombarde probable ; surveiller la convergence qui descend depuis La Vachette [S10][S14]",
+        "Le Prorel se vole idéalement en brises légères sans vent météo ; printemps-été parfois très fort [S10]",
+        "Les écoles de Serre-Chevalier vantent des « vents de vallée réguliers » et des thermiques puissants fin printemps-été (texte promotionnel, sans chiffres) [S18]"
+      ]
+    },
+    {
+      "id": "ecrins-vallouise-haute-durance",
+      "name": "Vallouise – Pelvoux – Puy-Saint-Vincent – haute Durance (Embrun → Briançon)",
+      "parent_massif": "Alpes du Sud – Hautes-Alpes / Écrins",
+      "summary": "Vallouise (Gyronde), Pelvoux et Puy-Saint-Vincent sont entourés de très hauts sommets : on y vole en régime de brises (pente et vallée) plutôt qu'en vent météo. Puy-Aillaud est un site du matin (orientation SE) où l'aérologie peut démarrer tôt, parfois dès 9h30 en toutes saisons. Quand la brise est forte, les faces ouest entre la Tête d'Amont et la Condamine sont sous le vent de la brise : il faut voler haut. Le soir, une forte brise descendante est à surveiller. La haute Durance d'Embrun à Briançon porte la brise de Durance, qui remonte selon un axe SW et dépasse 40 km/h à Briançon. Par vent de NW-N un peu soutenu, la confluence avec la brise de sud se cale souvent vers le verrou glaciaire au nord de L'Argentière. Coordonnées approximatives.",
+      "bbox": [6.35, 44.55, 6.70, 44.92],
+      "center": [6.53, 44.75],
+      "breezes": [
+        {
+          "id": "brise-durance-embrun-briancon",
+          "name": "Brise montante de la Durance (Embrun → Briançon)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "Embrun", "lon": 6.4950, "lat": 44.5644, "coord_quality": "approx" },
+            { "name": "Mont-Dauphin", "lon": 6.6236, "lat": 44.6694, "coord_quality": "approx" },
+            { "name": "Saint-Crépin", "lon": 6.6014, "lat": 44.7081, "coord_quality": "approx" },
+            { "name": "La Roche-de-Rame", "lon": 6.5833, "lat": 44.7500, "coord_quality": "approx" },
+            { "name": "L'Argentière-la-Bessée", "lon": 6.5569, "lat": 44.7908, "coord_quality": "approx" },
+            { "name": "Prelles", "lon": 6.5800, "lat": 44.8530, "coord_quality": "approx" },
+            { "name": "Briançon", "lon": 6.6436, "lat": 44.8986, "coord_quality": "approx" }
+          ],
+          "hours": "après-midi (été) ; heures précises non documentées",
+          "speed_kmh": { "typical": 30, "max": 45 },
+          "season": "printemps-été",
+          "description": "Chocard Airlines (club de Briançon) : la brise de la Durance remonte selon un axe sud-ouest, se fait sentir jusqu'aux « Têtes » au-dessus de L'Argentière (2044 m, formulation de l'extrait à vérifier) et peut dépasser 40 km/h à Briançon. Un article général cite la Durance parmi les longues vallées où la brise peut atteindre 50 km/h. Vitesse typique = interprétation.",
+          "confidence": "medium",
+          "sources": ["S13", "S4"]
+        },
+        {
+          "id": "brise-montante-gyronde",
+          "name": "Brise montante de la Gyronde (L'Argentière → Vallouise → Pelvoux)",
+          "kind": "valley",
+          "waypoints": [
+            { "name": "L'Argentière-la-Bessée", "lon": 6.5569, "lat": 44.7908, "coord_quality": "approx" },
+            { "name": "Vallouise", "lon": 6.4886, "lat": 44.8464, "coord_quality": "approx" },
+            { "name": "Pelvoux", "lon": 6.4753, "lat": 44.8731, "coord_quality": "approx" },
+            { "name": "Ailefroide", "lon": 6.4442, "lat": 44.8856, "coord_quality": "approx" }
+          ],
+          "hours": "journée (été) ; aérologie parfois dès 9h30 à Puy-Aillaud",
+          "speed_kmh": { "typical": null, "max": null },
+          "season": "toutes saisons (vol en régime de brises)",
+          "description": "Paraglidream : site entouré de très hauts sommets, on vole en aérologie (brises de pente et de vallée) plutôt qu'en vent météo ; quand la brise est forte, les faces ouest entre Tête d'Amont et Condamine sont sous le vent. Le tracé de la brise de vallée montante est une déduction de cette description ; vitesse non documentée.",
+          "confidence": "low",
+          "sources": ["S16"]
+        },
+        {
+          "id": "brise-descendante-vallouise",
+          "name": "Brise descendante du soir en Vallouise",
+          "kind": "downvalley",
+          "waypoints": [
+            { "name": "Ailefroide", "lon": 6.4442, "lat": 44.8856, "coord_quality": "approx" },
+            { "name": "Pelvoux", "lon": 6.4753, "lat": 44.8731, "coord_quality": "approx" },
+            { "name": "Vallouise", "lon": 6.4886, "lat": 44.8464, "coord_quality": "approx" },
+            { "name": "L'Argentière-la-Bessée", "lon": 6.5569, "lat": 44.7908, "coord_quality": "approx" }
+          ],
+          "hours": "soir",
+          "speed_kmh": { "typical": 20, "max": 30 },
+          "season": "toutes saisons",
+          "description": "Paraglidream signale une forte brise descendante le soir, à surveiller. Les sources disent seulement « forte » : 20/30 km/h est une interprétation.",
+          "confidence": "medium",
+          "sources": ["S16"]
+        }
+      ],
+      "convergences": [],
+      "hazards": [
+        {
+          "id": "sous-le-vent-tete-amont-condamine",
+          "name": "Faces ouest Tête d'Amont – Condamine sous le vent de la brise",
+          "kind": "lee-rotor",
+          "lon": 6.4700, "lat": 44.8200, "radius_km": 3,
+          "coord_quality": "approx",
+          "conditions": "Brise forte (journée)",
+          "description": "Quand la brise est forte, les faces ouest entre la Tête d'Amont et la Condamine sont sous le vent : voler haut. Position très approximative (secteur Puy-Saint-Vincent).",
+          "sources": ["S16"]
+        },
+        {
+          "id": "brise-descendante-soir-vallouise",
+          "name": "Forte brise descendante du soir (Vallouise)",
+          "kind": "strong-breeze",
+          "lon": 6.4886, "lat": 44.8464, "radius_km": 3,
+          "coord_quality": "approx",
+          "conditions": "Soir",
+          "description": "Forte brise descendante le soir, à prendre en compte pour les posés de Vallouise.",
+          "sources": ["S16"]
+        }
+      ],
+      "thermal_spots": [
+        {
+          "id": "pentes-se-puy-aillaud",
+          "name": "Pentes SE de Puy-Aillaud",
+          "lon": 6.4720, "lat": 44.8530, "alt_m": null,
+          "coord_quality": "approx",
+          "best_hours": "dès 9h30 (toutes saisons)",
+          "trigger": "Versant orienté SE ensoleillé tôt",
+          "description": "Site du matin : l'aérologie peut démarrer tôt, parfois dès 9h30 en toutes saisons.",
+          "sources": ["S16"]
+        }
+      ],
+      "soaring_spots": [],
+      "takeoffs": [
+        {
+          "id": "puy-aillaud",
+          "name": "Vallouise – Puy-Aillaud (FFVL 1124)",
+          "lon": 6.4720, "lat": 44.8530, "alt_m": null,
+          "coord_quality": "approx",
+          "orientations": ["SE"],
+          "description": "1h de marche depuis Vallouise ou 15 min par la route. Site du matin, aérologie parfois dès 9h30. Vol en régime de brise ; faces ouest Tête d'Amont–Condamine sous le vent si brise forte ; forte brise descendante le soir. Position estimée.",
+          "sources": ["S16"]
+        },
+        {
+          "id": "puy-saint-vincent-lauze",
+          "name": "Puy-Saint-Vincent – sommet du télésiège de la Lauze",
+          "lon": 6.4700, "lat": 44.8150, "alt_m": null,
+          "coord_quality": "approx",
+          "orientations": [],
+          "description": "Déco en haut du télésiège de la Lauze ; posé à Puy-Saint-Vincent 1400. Position très approximative, à vérifier.",
+          "sources": ["S16"]
+        }
+      ],
+      "landings": [
+        {
+          "id": "atterro-vallouise-chambonettes",
+          "name": "Vallouise – parking des Chambonettes",
+          "lon": 6.4900, "lat": 44.8440, "alt_m": null,
+          "coord_quality": "approx",
+          "description": "Posé de Puy-Aillaud. Attention à la forte brise descendante du soir.",
+          "sources": ["S16"]
+        },
+        {
+          "id": "atterro-psv-1400",
+          "name": "Puy-Saint-Vincent 1400",
+          "lon": 6.4853, "lat": 44.8236, "alt_m": 1400,
+          "coord_quality": "approx",
+          "description": "Posé des vols depuis le télésiège de la Lauze. Coordonnées = village de Puy-Saint-Vincent (approx.).",
+          "sources": ["S16"]
+        }
+      ],
+      "synoptic_effects": [
+        {
+          "wind": "N",
+          "effect": "Par vent de NW-N un peu soutenu, la confluence avec la brise de Durance descend souvent vers le verrou glaciaire au nord de L'Argentière (voir convergence du secteur Briançonnais).",
+          "sources": ["S13", "S14"]
+        },
+        {
+          "wind": "S",
+          "effect": "Vallouise/PSV : site entouré de très hauts sommets, on y vole en régime de brises plutôt qu'en vent météo.",
+          "sources": ["S16"]
+        }
+      ],
+      "xc_routes": [],
+      "tips": [
+        "Puy-Aillaud est un site du matin : l'aérologie peut démarrer dès 9h30 [S16]",
+        "Brise forte = voler haut, les faces ouest Tête d'Amont–Condamine sont sous le vent [S16]",
+        "Anticiper la forte brise descendante du soir pour le posé [S16]"
+      ]
+    }
+  ],
+  "sources": [
+    { "id": "S1", "title": "Cahier technique des principaux sites de Savoie", "url": "http://cdvl73.free.fr/cahier_technique_des_principaux_.htm", "publisher": "CDVL 73 (Comité départemental de vol libre de Savoie)", "type": "web", "lang": "fr", "notes": "Maurienne / Saint-Jean : orientations SE à SW, 1000-1200 m de dénivelé, décos 1500->2000 m, brise de vallée souvent forte jusqu'à 50 km/h l'été ; voler haut ou en fin d'après-midi. Lu via extrait de moteur de recherche (page non accessible)." },
+    { "id": "S2", "title": "L'Envol de la Croix des Fleurs – Les sites de vol", "url": "http://lenvoldelacroixdesfleurs.e-monsite.com/pages/les-sites-de-vol.html", "publisher": "Club L'Envol de la Croix des Fleurs (Saint-Jean-de-Maurienne)", "type": "web", "lang": "fr", "notes": "Grand Châtelard (SW, 2000 m), La Balme (SE, 1580 m), atterrissage Saint-Jean 540 m : vol le matin, se poser avant 11h l'été. Lu via extrait." },
+    { "id": "S3", "title": "Sites d'envol et d'atterrissage de parapente à Aussois", "url": "http://www.maurienne-tourisme.com/visiter_bouger/sites-d-envol-et-d-atterissage-de-parapente-a-aussois-5270645/", "publisher": "Maurienne Tourisme (aussi sur outdooractive.com)", "type": "web", "lang": "fr", "notes": "2 décos (Angle Bellecôte, le Djoin), 2 posés (la Charrière, la Croix) ; vent de vallée et thermique forts l'été dès 11h, plus tôt par vent de nord. Lu via extrait." },
+    { "id": "S4", "title": "Brises de pente et brises de vallée en parapente : comprendre leur fonctionnement", "url": "https://paragliding.rocktheoutdoor.com/media/les-brises-de-vallee/", "publisher": "Rock The Outdoor", "type": "web", "lang": "fr", "notes": "Brise 15-35 km/h sur 200-500 m ; jusqu'à 50 km/h dans les longues vallées (Arve, Tarentaise, Maurienne, Durance) ; Aussois forte brise dès 11h30. Lu via extrait." },
+    { "id": "S5", "title": "Terrain de pratique LANSLEVILLARD [14176]", "url": "https://federation.ffvl.fr/terrain/14176", "publisher": "FFVL", "type": "web", "lang": "fr", "notes": "Atterrissage privé de Lanslevillard ; se renseigner auprès des pros de Val Cenis. Lu via extrait." },
+    { "id": "S6", "title": "Arcelles Val Cenis – fiche spot parapente", "url": "https://www.spots.guru/new_spots/paragliding-arcelles-val-cenis", "publisher": "spots.guru", "type": "web", "lang": "fr", "notes": "Déco NE et W ; posé en amont de Lanslevillard près D902 / école Antipodes ; méfiance lombarde ; bonne restitution ; brise forte dès 11h. Extrait mélangé avec S5." },
+    { "id": "S7", "title": "Terrain de pratique PLAN LACHAT GALIBIER [13680]", "url": "https://federation.ffvl.fr/terrain/13680", "publisher": "FFVL", "type": "web", "lang": "fr", "notes": "Vent souvent fort au déco ; soaring au vent de la brise ; venturi ; brise légère de Nord idéale ; favorables N, NE, NW, défavorables E, SE, S, SW, W. Champs possiblement issus de la fiche Crey du Quart (extrait ambigu)." },
+    { "id": "S8", "title": "Activités aériennes à Valloire / Lenvair parapente", "url": "https://www.valloire.net/en/profiter-de-valloire/activites-outdoor/dans-les-airs/", "publisher": "Office de tourisme de Valloire ; parapente-maurienne.com (Lenvair)", "type": "web", "lang": "fr", "notes": "Déco du Crey du Quart (≈2500 m) via télésiège, vols à ski face aux Aiguilles d'Arves. Lu via extrait." },
+    { "id": "S9", "title": "Baptême parapente Valloire – col du Galibier", "url": "https://www.checkyeti.com/fr/d/946/6763", "publisher": "CheckYeti", "type": "web", "lang": "fr", "notes": "Navette jusqu'au déco du col du Galibier ; RDV D902 après La Ferme du Galibier." },
+    { "id": "S10", "title": "Terrain de pratique BRIANCON - LE PROREL - CROIX DE LA NORE [2359]", "url": "https://federation.ffvl.fr/terrain/2359", "publisher": "FFVL (gestionnaire : club Chocard Airlines)", "type": "web", "lang": "fr", "notes": "Brises légères sans vent météo ; N et S favorables, NE et E défavorables ; Lombarde = foehn local par Montgenèvre souvent bouché ; hiver 1200 m de dénivelé ; printemps-été très fort ; posé Saint-Blaise, ligne HT. Lu via extrait." },
+    { "id": "S11", "title": "Terrain de pratique BRIANCON - LE PROREL - SAINT-BLAISE [13227]", "url": "https://federation.ffvl.fr/terrain/13227", "publisher": "FFVL", "type": "web", "lang": "fr", "notes": "Atterrissage de Saint-Blaise (05100 Briançon), parapente et delta." },
+    { "id": "S12", "title": "Découverte du ski de rando et vol à Montgenèvre", "url": "https://sev-et-mika.fr/ski-rando-vol-parapente-montgenevre/", "publisher": "Blog Sev et Mika (attribution probable de l'extrait ; autres candidats : location-appartement-a-montgenevre.fr, origin-air.com)", "type": "web", "lang": "fr", "notes": "Déco du Chalvet, posé à l'est de l'obélisque ; Lombarde fréquente l'après-midi, 20 km/h au col ou aux Alberts alors que calme au Chalvet, très turbulent." },
+    { "id": "S13", "title": "La brise de la Durance (topo du secteur – phénomènes locaux et pièges)", "url": "https://www.chocard-airlines.fr/topo-du-secteur/ph%C3%A9nom%C3%A8nes-locaux-et-pi%C3%A8ges/la-brise-de-la-durance", "publisher": "Chocard Airlines (club de vol libre de Briançon)", "type": "web", "lang": "fr", "notes": "Brise de Durance axe SW, > 40 km/h à Briançon ; confluence avec NW-N sur Briançon ou vers le verrou nord de L'Argentière. Lu via extrait." },
+    { "id": "S14", "title": "Aérologie du Briançonnais", "url": "https://parabriancon.forumactif.org/t228-aerologie-du-brianconnais", "publisher": "Forum parabriancon", "type": "forum", "lang": "fr", "notes": "Carrefour de 3 vallées ; convergences Saint-Chaffrey (Durance vs Guisane/NW) et La Vachette (Durance vs Lombarde). Lu via extrait." },
+    { "id": "S15", "title": "Nouveau à Briançon – infos sur sites", "url": "https://www.parapentiste.info/forum/sites-de-vols/nouveau-a-briancon-infos-sur-sites-t24833.0.html", "publisher": "Forum parapentiste.info", "type": "forum", "lang": "fr", "notes": "Granon l'été : confluence brise de Durance / brise du Lautaret, turbulente mais peut très bien marcher. Lu via extrait." },
+    { "id": "S16", "title": "Sites de décollage parapente à Vallouise et Puy St Vincent", "url": "https://www.paraglidream.com/sites-de-vol-en-vallouise", "publisher": "Paraglidream (école) ; voir aussi FFVL terrain 1124 Vallouise – Puy Aillaud", "type": "web", "lang": "fr", "notes": "Puy-Aillaud SE site du matin dès 9h30 ; vol en régime de brises ; faces ouest Tête d'Amont–Condamine sous le vent ; forte brise descendante du soir ; posés Chambonettes et PSV 1400. Lu via extrait." },
+    { "id": "S17", "title": "Baptême de parapente à Serre Chevalier", "url": "https://www.adrenactive.com/bapteme-parapente-serre-chevalier-8212.htm", "publisher": "Adrenactive", "type": "web", "lang": "fr", "notes": "Décos télésiège de Forêt, des Vallons, télécabine du Prorel ; posé parking gendarmerie Saint-Chaffrey." },
+    { "id": "S18", "title": "Pourquoi voler en parapente à Serre Chevalier ?", "url": "https://www.axesse.com/pourquoi-voler-en-parapente-a-serre-chevalier/", "publisher": "Axesse Parapente (école)", "type": "web", "lang": "fr", "notes": "Texte promotionnel : thermiques puissants fin printemps/été, vents de vallée réguliers ; pas de chiffres." },
+    { "id": "S19", "title": "Site:Serre-Chevalier", "url": "http://barbules.fr/index.php/Site:Serre-Chevalier", "publisher": "Barbules Wiki", "type": "web", "lang": "fr", "notes": "Liste des décos : Granon, Petit Aréa, Yret, Sommet de Serre-Chevalier, Prorel, Grand Aréa, Ombilic – Gondrands, Croix de la Nore, Les Tronchets." },
+    { "id": "S20", "title": "Col du Lautaret", "url": "https://en.wikipedia.org/wiki/Col_du_Lautaret", "publisher": "Wikipedia", "type": "web", "lang": "en", "notes": "Col à 2058 m, limite Romanche / Guisane." },
+    { "id": "S21", "title": "Vent fort : le col du Lautaret fermé à la circulation", "url": "https://france3-regions.franceinfo.fr/auvergne-rhone-alpes/isere/vent-fort-col-du-lautaret-ferme-circulation-deviation-mise-place-1792255.html", "publisher": "France 3 Régions (voir aussi Alpes 1 : alpesdusud.alpes1.com, « Le col du Lautaret fermé à cause d'un vent très fort »)", "type": "web", "lang": "fr", "notes": "Fermetures du col pour vent très fort." },
+    { "id": "S22", "title": "The Lombarde", "url": "https://www.weatheronline.pl/reports/wind/The-Lombarde.htm", "publisher": "WeatherOnline", "type": "web", "lang": "en", "notes": "Vent d'E à NE sur la frontière franco-italienne, issu de Lombardie ; violent et froid l'hiver." },
+    { "id": "S23", "title": "Lombarde – explications de Yan Giezendanner (Météo-France)", "url": "https://www.lyoncapitale.fr/?p=120069", "publisher": "Lyon Capitale", "type": "web", "lang": "fr", "notes": "Lombarde sur haute Tarentaise et haute Maurienne : dépression méditerranéenne + flux de SE, fortes chutes côté italien ; plusieurs fois par an, hiver comme été." },
+    { "id": "S24", "title": "Lombarde (glossary entry)", "url": "https://glossarystaging.ametsoc.net/wiki/Lombarde", "publisher": "American Meteorological Society – Glossary", "type": "web", "lang": "en", "notes": "Anticyclone froid sur l'est de la France / Europe centrale et dépression au sud de Nice." },
+    { "id": "S25", "title": "Parapente Briançon (Emotion'Air) – fiche prestataire", "url": "https://provence-alpes-cotedazur.com/de/offres/parapente-briancon-de-2861275/", "publisher": "Comité régional de tourisme Provence-Alpes-Côte d'Azur", "type": "web", "lang": "fr", "notes": "Sites choisis selon le vent : col du Granon, col du Galibier, Vallouise, Puy Chalvin." },
+    { "id": "S26", "title": "Col du Lautaret – backcountry wiki", "url": "https://pistehors.com/backcountry/wiki/Hautes-Alpes/Col-Du-Lautaret", "publisher": "PisteHors", "type": "web", "lang": "en", "notes": "Attribution probable : le col est un spot de kite qui capte les vents d'E et d'O." },
+    { "id": "S27", "title": "Parapente à ski à Montgenèvre", "url": "http://origin-air.com/bapteme-parapente-hiver-montgenevre/", "publisher": "Origin'Air Parapente", "type": "web", "lang": "fr", "notes": "École gestionnaire de la zone de déco du Chalvet." }
+  ]
+}

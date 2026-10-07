@@ -77,7 +77,7 @@ function effectiveState(s: AppState): AppState {
   if (!s.schemaMassif) return s;
   const off = LIVE_ONLY.filter((k) => !SCHEMA_KEEP.includes(k) && !(s.schemaWind && k === 'particles'));
   // The diagram writes its own title: the live map's sector names would overlap it.
-  return { ...s, exaggeration: s.schema3d ? s.exaggeration : 0, overlay: 'none', layers: { ...s.layers, ...Object.fromEntries([...off, 'labels', 'airspace', 'airspaceProtect', 'airspaceActivity'].map((k) => [k, false])) } };
+  return { ...s, exaggeration: s.schema3d ? s.exaggeration || 1.3 : 0, overlay: 'none', layers: { ...s.layers, ...Object.fromEntries([...off, 'labels', 'airspace', 'airspaceProtect', 'airspaceActivity'].map((k) => [k, false])) } };
 }
 
 export class MapController {
@@ -191,6 +191,8 @@ export class MapController {
       this.modules = [new ReliefModule(), new Kk7Module(), this.airspace, this.knowledge, schema, new SitesModule(this.data.siteProviders()), new LabelsModule(), this.wind];
       for (const m of this.modules) if (m !== this.wind) await m.add(ctx);
       this.ready = true;
+      // A phone starting flat (no relief until asked): seen from above, not tilted over a flat map.
+      if (isPhoneLayout() && this.state?.exaggeration === 0 && map.getPitch() > 0) map.jumpTo({ pitch: 0 });
       for (const run of this.deferred.values()) run();
       this.deferred.clear();
       if (this.state) this.applyAll(this.state, null);

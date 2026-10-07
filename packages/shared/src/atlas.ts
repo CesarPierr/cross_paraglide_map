@@ -163,6 +163,18 @@ export interface AtlasTourStep {
   wind?: { fromDeg: number; kmh: number };
   /** "massif" frames the whole sector; default frames the step's features. */
   view?: 'massif' | 'features';
+  /** Places the text names (villages, summits, cols, rivers), in reading order: pinned on the map, highlighted in the text. */
+  places?: AtlasTourPlace[];
+}
+
+export interface AtlasTourPlace {
+  /** As written in the text. */
+  name: string;
+  /** Official name (IGN gazetteer) or the atlas item it was located from. */
+  label: string;
+  lon: number;
+  lat: number;
+  kind?: string;
 }
 
 export interface Atlas {

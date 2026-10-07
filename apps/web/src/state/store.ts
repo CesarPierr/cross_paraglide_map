@@ -106,6 +106,8 @@ function remembered<T extends string, D>(key: string, allowed: readonly T[], fal
   return fallback;
 }
 
+const PHONE_START = typeof window !== 'undefined' && window.matchMedia('(pointer: coarse) and (max-width: 860px)').matches;
+
 export function remember(key: string, value: string): void {
   try {
     localStorage.setItem(key, value);
@@ -155,7 +157,8 @@ export const useApp = create<AppState>((set) => ({
     hillshade: true,
   },
   basemap: 'topo',
-  exaggeration: 1.3,
+  // Phone: flat until the user asks for the relief (3D button, remembered); terrain is the heaviest part of a frame there.
+  exaggeration: PHONE_START && remembered('brises.relief', ['3d'] as const, null) === null ? 0 : 1.3,
   particleCount: isSmall ? 7000 : 16000,
   particleSpeed: 1,
   particleColor: 'speed',

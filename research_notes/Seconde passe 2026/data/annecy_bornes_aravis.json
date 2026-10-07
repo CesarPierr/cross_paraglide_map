@@ -1418,19 +1418,22 @@
         },
         {
           "id": "planfait-devant-le-deco",
-          "name": "Planfait : thermique devant le décollage (sortie du bocal)",
+          "name": "Planfait : thermique à droite (nord) du décollage, premier gain avant les Dents de Lanfon",
           "lon": 6.22101,
           "lat": 45.85439,
           "alt_m": 846,
           "coord_quality": "approx",
-          "best_hours": "toute la journée : 100 % le matin, 100 % à midi, 99 % le soir",
-          "trigger": "pente à 70 m sous le décollage de Planfait, face à l'ouest-nord-ouest",
-          "description": "Résolution des limites (octobre 2026) : déduction. Point chaud kk7 à 100 % (toute la journée : 100 % le matin, 100 % à midi, 99 % le soir) à 200 m au nord-ouest du décollage de Planfait (916 m), sur un flanc à 846 m, pente de 24° exposée à l’ouest. Le récit d'avril 2008 raconte qu'on peine à sortir du « bocal » de Planfait avant de rejoindre l'épaule vers les Dents de Lanfon (`epaule-planfait-dents-de-lanfon`) : le thermique de sortie peut être celui-ci, sans que le récit le localise.",
-          "confidence": "low",
+          "best_hours": "après-midi (décollages vers 15 h à 17 h dans les deux récits)",
+          "trigger": "pente exposée à l'ouest-nord-ouest juste sous et à droite du décollage de Planfait (falaise de Talloires), chauffée par le soleil de l'après-midi",
+          "description": "Déclencheur et premier gain de hauteur du cheminement classique Planfait vers les Dents de Lanfon : un pilote local conseille de prendre environ 200 m au-dessus du décollage, puis de chercher la pompe au nord des Dents. Dans un récit de février 2020, l'auteur va « à droite du déco vers le nord » parce qu'il a vu plusieurs ailes s'y « catapulter » un peu plus tôt, sans trouver la pompe lui-même ; il monte finalement droit au-dessus du déco en se décalant vers les Dents de Lanfon. Un second récit (mai 2021, redécollage à 17 h) décrit la même technique : « un peu de gaz » au-dessus du déco puis décalage vers le nord des Dents. Le point chaud kk7 (100 % le matin, à midi et le soir) est à environ 200 m au nord-ouest du décollage et 70 m plus bas : il correspond au côté droit (nord) du déco cité dans le récit ; le rapprochement reste une inférence. Un topo de 2006 du club CHVD décrit le même début de cheminement : quelques aller-retour devant le déco pour repérer le meilleur thermique, puis la traversée vers la « porte » et l'épaule de l'arête nord. Fiabilité : Deux récits du même auteur (le conseil de la méthode traditionnelle est rapporté de seconde main) ; la position exacte du thermique « à droite du déco » n'est pas donnée, le rapprochement avec le point chaud kk7 est une inférence. Le récit de 2020 date de février : la saison kk7 est « toute l'année ».",
+          "confidence": "medium",
           "sources": [
             "S89",
             "S3",
-            "S96"
+            "S96",
+            "S98",
+            "S99",
+            "S100"
           ]
         },
         {
@@ -1452,19 +1455,21 @@
         },
         {
           "id": "lanfonnet-bas-face-ouest",
-          "name": "Lanfonnet : bas de la face ouest (Roche Murraz)",
+          "name": "Lanfonnet : « gencives » et trois combes du bas de la face ouest",
           "lon": 6.25431,
           "lat": 45.84387,
           "alt_m": 1433,
           "coord_quality": "approx",
-          "best_hours": "toute la journée : 85 % le matin, 94 % à midi, 94 % le soir",
-          "trigger": "face ouest du Lanfonnet, 360 m sous le sommet, à 260 m de la Roche Murraz",
-          "description": "Résolution des limites (octobre 2026) : déduction. Point chaud kk7 à 94 % (toute la journée : 85 % le matin, 94 % à midi, 94 % le soir) à 700 m au sud du sommet du Lanfonnet, 360 m plus bas, sur un flanc à 1433 m, pente de 30° exposée au sud-ouest, à 260 m de la Roche Murraz (OSM). C'est peut-être le bas de la même ascendance que `lanfonnet-face-ouest` : le carnet de vol de 2020 note qu'« à chaque montée on est décalé vers le sud ». Aucune source ne décrit ce pied de face séparément.",
-          "confidence": "low",
+          "best_hours": null,
+          "trigger": "pentes d'alpage et combes sous la barre du Lanfonnet (1795 m), face ouest / sud-ouest au-dessus de Roche Murraz, entretenues par la brise du lac et le soleil",
+          "description": "Point de sauvetage et de relance du cheminement classique Planfait / Forclaz vers le Lanfonnet : un pilote local décrit que, même arrivé bas, « au niveau des gencives », on joue avec la brise sur l'une des trois combes qui « vont très bien toutes les trois », et que ça remonte toujours assez pour se garantir un atterrissage à Planfait. Un récit de février 2020 confirme qu'on retourne « sur la face sud-ouest du Lanfonnet pour remonter ». Le point chaud kk7 (flanc exposé au sud-ouest à 1433 m, 360 m sous le sommet) est à 372 m du lieu-dit Les Combes et 262 m de la Roche Murraz (IGN) : il correspond au bas de ces combes ; le texte ne donne pas de coordonnées, le rapprochement est une inférence. Fiabilité : Le texte de 2006 donne le nom des « gencives » et des « combes » sans position ; leur association avec le lieu-dit Les Combes (IGN, 372 m) et le point chaud est une inférence. Pas d'heure précise dans le texte de 2006 ; le vol de février 2020 a décollé à 14 h 55.",
+          "confidence": "medium",
           "sources": [
             "S82",
             "S91",
-            "S96"
+            "S96",
+            "S101",
+            "S102"
           ]
         },
         {
@@ -2646,18 +2651,20 @@
         },
         {
           "id": "tournette-col-du-varo-thermique",
-          "name": "La Tournette : pentes sous le col du Varo (rando-vol sud)",
+          "name": "Tournette : bulles entre le décollage du col du Varo et les Rochers du Varo",
           "lon": 6.2725,
           "lat": 45.8341,
           "alt_m": 1689,
           "coord_quality": "approx",
-          "best_hours": "milieu de journée et soir (93 % à midi, 96 % en fin de journée, rien le matin)",
-          "trigger": "alpages et pierriers sous le col du Varo et le refuge de la Tournette, versant sud de la Tournette face au lac",
-          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 96 % toutes périodes (97 % en été) au pied des Rochers du Varo, à 730 m du refuge de la Tournette, sur le secteur du décollage de rando-vol « La Tournette – col du Varo » (S/SO, « très bien sans vent ou avec un peu de sud », forum 2018 ; 2150 m depuis le chalet de l'Aulp selon Infos-Parapente). Aucune source du dossier ne décrit ce thermique ; les récits parlent de la face est (matin) et du sommet. Il se situe sous le départ naturel des vols de rando de la Tournette sud, et c'est là que l'on enroule au retour vers le lac. Position : celle du point chaud.",
-          "confidence": "low",
+          "best_hours": "milieu de journée en octobre (vol après un casse-croûte au décollage, d'après l'enchaînement du récit)",
+          "trigger": "pentes et falaises exposées à l'ouest entre le décollage du col du Varo et les Rochers du Varo, sous la crête de la Tournette",
+          "description": "Point d'accroche du vol-rando de la Tournette par le col du Varo : en octobre 2008, deux pilotes décollent du décollage de la Tournette (le col du Varo, voisin des Rochers du Varo, d'après le topo du club), « tiennent à hauteur du déco » et vont jusqu'aux Rochers du Varo « en prenant de bonnes bulles » ; les deux suivants font ensuite « de nombreux aller-retour entre le déco et les rochers de Varo » avant de partir vers le Lanfonnet et les Dents de Lanfon. Le point chaud kk7 (flanc exposé à l'ouest à 1689 m, 93 % à midi et 96 % le soir de printemps à automne) est à 566 m des Rochers du Varo (IGN) : le récit situe l'ascendance entre le décollage et ces rochers, ce qui correspond à cet intervalle ; le rapprochement reste une inférence. Fiabilité : Un seul récit décrit l'ascendance (octobre 2008, sans heure précise) ; le topo de 2025 sert de confirmation du décollage et de la forte présence d'air portant. L'identification des « Rochers de Varo » du texte avec la falaise IGN à 566 m du point chaud est supposée. Le récit ne nomme pas explicitement le col du Varo comme décollage.",
+          "confidence": "medium",
           "sources": [
             "S3",
-            "S96"
+            "S96",
+            "S103",
+            "S104"
           ]
         },
         {
@@ -4031,18 +4038,19 @@
         },
         {
           "id": "roc-des-arces-col-de-chatillon",
-          "name": "Roc des Arces – col de Châtillon (Le Grand-Bornand)",
+          "name": "Roc des Arces (Le Grand-Bornand) : « la pompe classique » devant le décollage du Lachat",
           "lon": 6.4658,
           "lat": 45.95282,
           "alt_m": 1705,
           "coord_quality": "approx",
-          "best_hours": "toute la journée : 100 % le matin, 100 % à midi, 98 % le soir",
-          "trigger": "pentes du Roc des Arces (1772 m), sous le col de Châtillon",
-          "description": "Résolution des limites (octobre 2026) : déduction. Point chaud kk7 à 100 % (toute la journée : 100 % le matin, 100 % à midi, 98 % le soir) à 843 m à l’ouest-sud-ouest du thermique du Lachat (`lachat-gb-thermique`, recalé sur un autre point chaud), sur terrain presque plat à 1705 m, à 70 m du Roc des Arces et 360 m du col de Châtillon (OSM). Le fil du Grand-Bornand (parapentiste.info) décrit le tour de la vallée par le Lachat puis la Pointe d'Almet, sans parler de ce relief.",
-          "confidence": "low",
+          "best_hours": null,
+          "trigger": "barre et pentes du Roc des Arces au-dessus du col de Châtillon, premier relief rencontré après le décollage du Lachat, déneigé et chauffé par le soleil",
+          "description": "Première pompe du cheminement au départ du Lachat du Grand-Bornand : un pilote qui a fréquenté le site explique qu'après le décollage « la pompe classique est droit devant sur le Roc des Arces », où l'on se refait « assez régulièrement », avant de choisir selon le vent le Roc des Bœufs, La Clusaz ou le lac d'Annecy ; un autre pilote ajoute, quand le Roc des Arces n'a pas de neige, que « c'est thermique assuré ». Le point chaud kk7 (terrain presque plat à 1705 m, 100 % le matin, à midi et le soir, toute l'année) est à 71 m du sommet « Roc des Arces » (OSM) et à 362 m du col de Châtillon : il correspond à ce relief nommé ; les messages ne donnent pas d'heure. Fiabilité : Deux messages d'un même fil de forum de janvier 2007 (conditions hivernales évoquées), sans heure ni saison précise ; le « Roc des Arces » du texte est supposé être le sommet nommé par l'IGN/OSM à 71 m du point chaud.",
+          "confidence": "medium",
           "sources": [
             "S71",
-            "S96"
+            "S96",
+            "S105"
           ]
         }
       ],
@@ -5874,6 +5882,78 @@
       "type": "web",
       "lang": "fr",
       "notes": "Récit d'une sortie de quinze pilotes depuis la Sambuy : « extraction classique sur la face NE de la Sambuy et direction les faces Est des Bauges vers l'Arclusaz »."
+    },
+    {
+      "id": "S98",
+      "title": "Marche et vol 51 (vol 130) – Planfait",
+      "url": "https://carnetdevol.largeault.net/2020/02/12/marche-et-vol-51-vol-130-planfait/",
+      "publisher": "Carnet de vol de Franck Largeault",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Vol du 12/02/2020, vent N-NO faible, brise présente, décollage 14 h 55 : ailes vues se catapulter à droite du déco vers le nord, puis montée au-dessus du déco ; méthode traditionnelle rapportée : 200 m de gain au-dessus du déco puis pompe au nord des Dents."
+    },
+    {
+      "id": "S99",
+      "title": "Vol 328/329 – Montlambert/Aravis et retour",
+      "url": "https://carnetdevol.largeault.net/2021/05/03/vol-328-329-montlambert-aravis-et-retour/",
+      "publisher": "Carnet de vol de Franck Largeault",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Second vol du 03/05/2021, redécollage de Planfait à 17 h : technique « standard », un peu de gaz au-dessus du déco puis décalage vers le nord des Dents de Lanfon."
+    },
+    {
+      "id": "S100",
+      "title": "Débuter en cross 1 (CHVD, 06/12/2006)",
+      "url": "https://www.chvd.org/2006/12/06/debuter-en-cross-1/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Planfait : après le décollage, un ou deux aller-retour pour voir où se trouve le meilleur thermique, monter d'un étage de 30 à 50 m, puis traverser la combe vers une petite barre rocheuse (la « porte ») accolée à l'épaule de l'arête nord montant aux Dents de Lanfon."
+    },
+    {
+      "id": "S101",
+      "title": "Débuter en cross 2 (CHVD, 11/12/2006)",
+      "url": "https://www.chvd.org/2006/12/11/debuter-en-cross-2/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Aller-retour Dents de Lanfon – Forclaz : au Lanfonnet, même au niveau des gencives on joue avec la brise sur une des trois combes, qui remontent toujours assez pour poser à Planfait."
+    },
+    {
+      "id": "S102",
+      "title": "Marche et vol 51 (vol 130) – Planfait (12/02/2020)",
+      "url": "https://carnetdevol.largeault.net/2020/02/12/marche-et-vol-51-vol-130-planfait/",
+      "publisher": "Carnet de vol de Franck Largeault",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Après plusieurs plafonds au Lanfonnet (2483 m), retour sur la face sud-ouest du Lanfonnet pour remonter avant de filer vers les Dents."
+    },
+    {
+      "id": "S103",
+      "title": "La Tournette – 26 octobre 2008 (récit CHVD, 01/11/2008)",
+      "url": "https://www.chvd.org/2008/11/01/la-tournette-26-octobre-2008/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Montée de 1 h 30 depuis le parking de départ, décollage sans vent météo avec une légère brise : bulles jusqu'aux Rochers du Varo, nombreux aller-retour déco – Rochers du Varo, puis Lanfonnet et Dents de Lanfon ; atterrissage à Planfait."
+    },
+    {
+      "id": "S104",
+      "title": "Col du Varo (topo CHVD de Dominique Duperray, 15/09/2025)",
+      "url": "https://www.chvd.org/2025/09/15/col-du-varo/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Décollage à 2151 m sur un large secteur sud, pentes herbeuses régulières ; « on est vite dans beaucoup de gaz dès le début du vol ». Ne décrit pas d'ascendance précise."
+    },
+    {
+      "id": "S105",
+      "title": "Grand Bornand (fil parapentiste.info, 14–15/01/2007)",
+      "url": "https://www.parapentiste.info/forum/sites-de-vols/grand-bornand-t2225.0.html",
+      "publisher": "parapentiste.info",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Réponse #3 (gwen) : le déco classique est au sommet du Lachat (de Châtillon) ; après le déco, la pompe classique est droit devant sur le Roc des Arces. Réponse #11 : surtout si le Roc des Arces n'a pas de neige, c'est thermique assuré."
     }
   ]
 }

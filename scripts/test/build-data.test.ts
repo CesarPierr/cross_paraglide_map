@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { cleanDescription, parseCondition, parseHours } from '../build-data';
+import { cleanDescription, parseCondition, parseHours, placesIn } from '../build-data';
 
 describe('parseHours', () => {
   it('reads explicit ranges', () => {
@@ -67,5 +67,17 @@ describe('parseCondition', () => {
     expect(parseCondition({ name: 'x', hours: 'après-midi', condition: 'par vent de nord 20 km/h' })).toEqual({ label: 'par vent météo de nord (≥ 20 km/h)', wind: { fromDeg: 0, minKmh: 20 } });
     expect(parseCondition({ name: 'Lombarde', hours: '', condition: '' })).toBeNull();
     expect(parseCondition({ name: 'x', condition: 'quand la neige fond' })).toEqual({ label: 'si : quand la neige fond' });
+  });
+});
+
+describe('placesIn', () => {
+  const known = {
+    'Saint-Pierre': { lon: 1, lat: 1, label: 'Saint-Pierre' },
+    'Saint-Pierre-de-Chartreuse': { lon: 2, lat: 2, label: 'Saint-Pierre-de-Chartreuse' },
+    Voiron: { lon: 3, lat: 3, label: 'Voiron' },
+  };
+  it('finds named places in reading order, the longest name first, whole words only', () => {
+    const found = placesIn('De Saint-Pierre-de-Chartreuse au Voironnais, puis Voiron et Saint-Pierre.', known);
+    expect(found.map((p) => p.name)).toEqual(['Saint-Pierre-de-Chartreuse', 'Voiron', 'Saint-Pierre']);
   });
 });

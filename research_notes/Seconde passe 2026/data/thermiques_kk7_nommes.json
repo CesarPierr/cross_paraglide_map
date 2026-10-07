@@ -1,0 +1,271 @@
+{
+  "topic": "Points chauds des traces GPS (thermal.kk7.ch) nommés et expliqués par des récits (octobre 2026) : chaque thermique est placé sur son point chaud ; heures et déclencheur viennent des textes cités",
+  "massifs": [
+    {
+      "id": "chartreuse",
+      "thermal_spots": [
+        {
+          "id": "lances-de-malissard-sud",
+          "name": "Lances de Malissard, lance sud (face sud-ouest, au-dessus du col de Bellefond)",
+          "lon": 5.8712,
+          "lat": 45.3444,
+          "alt_m": 1800,
+          "coord_quality": "source",
+          "best_hours": "après-midi (récit d'août : vol de 16 h à 18 h) ; en hiver sur vent météo de sud-ouest (récit du 29/12/2006)",
+          "trigger": "crête rocheuse des Lances de Malissard, face sud-ouest / ouest chauffée l'après-midi ; le col de Bellefond est juste à l'est",
+          "description": "Relance au sud de la Dent de Crolles, sur la crête qui mène au Granier : on y arrive de la Dent par le col de Bellefond, ou bas depuis la Roche de Fitta et le col de Fontanieux, et on s'y refait avant de repartir vers la Dent ou le Granier. Trois récits concordent : en décembre 2006, avec un vent de sud-ouest établi, des pilotes partis du col de Bellefond cherchent « le thermique situé sur la face SW des Lances de Malissard » et le trouvent après une trentaine de minutes ; en août 2020, un pilote bas se refait grâce à « la convection en face ouest » puis enroule vers les lances sud, tandis qu'un autre se refait en face sud-ouest du col de Bellefont ; au printemps 2006, un pilote note un joli thermique au nord des Lances. Un commentaire de vol CFD de mars 2022 dit aussi que le thermique des Lances de Malissard monte bien tout en restant doux (extrait lu dans un moteur de recherche, page non ouverte). Le point chaud kk7 (flanc de 25° exposé au sud-ouest à 1798 m) est à 322 m du sommet de la lance sud (OSM) et à 478 m du col de Bellefont : il correspond à la « face SW » décrite ; le rapprochement reste une inférence puisque les textes ne donnent pas de coordonnées. Fiabilité : Les textes disent « face SW / face ouest des Lances », sans préciser quelle lance : le point chaud est sur la lance sud (322 m du sommet OSM). Heures d'été déduites de l'horaire du vol d'août 2020 ; l'heure du vol de décembre 2006 n'est pas donnée. Le commentaire CFD de 2022 n'a pas pu être relu sur la page.",
+          "confidence": "medium",
+          "sources": [
+            "S1",
+            "S2",
+            "S3",
+            "S4"
+          ]
+        },
+        {
+          "id": "falaise-des-egaux-corbel",
+          "name": "Les Égaux (Corbel) : falaise et pentes des Égaux, relance entre la Pointe du Frou et l'Outheran",
+          "lon": 5.8063,
+          "lat": 45.4418,
+          "alt_m": 896,
+          "coord_quality": "source",
+          "best_hours": "après-midi (plein à 16 h 07 en avril ; reprise « au nord des Égaux » lors d'un vol de juillet)",
+          "trigger": "petite falaise au-dessus du hameau des Égaux (Corbel), croupe exposée à l'ouest, avant le col des Égaux",
+          "description": "Relance intermédiaire de la Chartreuse nord, entre les falaises de la Pointe du Frou / Grande Sûre et le mont Outheran. Deux récits indépendants la décrivent : en avril 2021, le pilote qui se dirige vers la pointe de la Cochette « refait un petit plein » à mi-chemin sur la petite falaise du hameau des Égaux (16 h 07, 1600 m) ; en juillet 2023, une pilote partie de Jusson passe la Pointe du Frou, y trouve un thermique qui lui permet de dériver pendant la transition sur les Égaux, puis « reprend » au nord des Égaux jusqu'en haut de l'Outheran. Un fil de forum de 2023 mentionne aussi, vers le col des Égaux, un « thermique de la face » qui contre les pilotes arrivant de l'Outheran. Le hameau des Égaux (IGN) est à 464 m du point chaud kk7 (croupe de 29° exposée à l'ouest, 888 m), le col des Égaux à 486 m : l'identification se fait sur le toponyme ; les textes ne disent pas sur quelle face exactement. Fiabilité : Deux récits précis (avril 2021 et juillet 2023, tous deux l'après-midi) plus un message de forum plus vague ; le point chaud kk7 est annoncé « printemps, été, automne (rien en hiver) » et surtout midi et soir, ce qui concorde. Le récit de 2023 situe la reprise « au nord des Égaux » alors que le point chaud est à l'ouest-sud-ouest du hameau (464 m) ; le forum ne parle pas d'une montée utilisable, seulement d'un thermique qui gêne.",
+          "confidence": "medium",
+          "sources": [
+            "S5",
+            "S6",
+            "S7"
+          ]
+        },
+        {
+          "id": "cochette-chartreuse-nord",
+          "name": "La Cochette (Chartreuse nord) : relance avant la gorge du Guiers Vif",
+          "lon": 5.8337,
+          "lat": 45.4556,
+          "alt_m": 1454,
+          "coord_quality": "source",
+          "best_hours": null,
+          "trigger": "croupe de la Cochette, exposée à l'ouest, entre le mont Outheran et la gorge du Guiers Vif (à ne pas confondre avec le col de la Cochette des Bauges, près de Bange)",
+          "description": "Point de passage et de relance de la face ouest nord de la Chartreuse, entre le mont Outheran et les montagnes du Guiers Vif / Guiers Mort (retour par la Grande Sûre). Récit de septembre 2026 : arrivé en haut de l'Outheran sans ascendance, face à une forte brise, le pilote « trouve finalement l'ascendance salvatrice sur la Cochette » et transite à 1800 m par-dessus la gorge du Guiers Vif. Trois autres textes confirment que la Cochette est le passage obligé du cheminement (« normalement il faut passer par la Cochette », 2012 ; transit vers la pointe de la Cochette en 2021) et que la relance y est parfois laborieuse : un pilote raconte avoir perdu plus d'une heure à « grenouiller à la croix de la Cochette » en avril 2016 pour raccrocher le Mont Grêle. Le point chaud kk7 est à 159 m de la Croix de la Cochette (OSM) : l'identification se fait sur le toponyme ; le récit ne précise pas sur quelle face de la Cochette on monte. Fiabilité : Deux textes décrivent une ascendance à la Cochette (septembre 2026 : trouvée ; avril 2016 : plus d'une heure de lutte), deux autres ne confirment que le passage. Aucune heure donnée. Le kk7 indique surtout le printemps (midi et soir), compatible avec le récit d'avril 2016.",
+          "confidence": "medium",
+          "sources": [
+            "S8",
+            "S9",
+            "S10",
+            "S11"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mont-blanc-chamonix",
+      "thermal_spots": [
+        {
+          "id": "falaises-de-plate-cheminee",
+          "name": "Falaises de Platé (sous la Cheminée de Platé) : thermiques le long des falaises",
+          "lon": 6.7223,
+          "lat": 45.9566,
+          "alt_m": 1770,
+          "coord_quality": "source",
+          "best_hours": "journée, quand la brise montante est bien installée ; en automne, quand la stabilité atteint les basses couches",
+          "trigger": "falaises calcaires du rebord sud du désert de Platé (1800 à 2100 m), exposées au sud, au-dessus de Plaine-Joux ; la croupe sud du point chaud est au pied de la falaise",
+          "description": "Relais le long du rebord sud de Platé, sur la ligne Aiguillette des Houches – Pormenaz – Platé – Varan : le club CMBVL écrit que, depuis le décollage de Platé, « lorsque la brise montante est bien installée, il y a généralement des thermiques généreux à proximité des falaises », et qu'en automne « tu pourras facilement raccrocher des thermiques le long des falaises ». Un pilote qui décrit en 2007 le cheminement Planpraz – Aiguillette – Pormenaz – Varan conseille de « continuer jusqu'à la falaise de la pointe de Platé, qui remonte bien ». Le point chaud kk7 (croupe de 31° exposée au sud à 1773 m, 94 % le matin et 89 % à midi toute l'année) est à 130 m d'une falaise OSM (1809–1933 m) et à 654 m de la Cheminée de Platé ; la Pointe de Platé est à 1,2 km. Le rapprochement entre les falaises citées et ce point est une inférence : les deux textes parlent des falaises sans les situer plus précisément. Fiabilité : Les textes parlent des falaises de Platé en général (fiche de décollage et message de 2007) ; la distance de 130 m est celle de la falaise OSM la plus proche du point chaud, la Pointe de Platé étant à 1,2 km et le décollage de Platé à 1,4 km. Pas d'heure précise.",
+          "confidence": "medium",
+          "sources": [
+            "S12",
+            "S13"
+          ]
+        },
+        {
+          "id": "moine-mer-de-glace-moraines",
+          "name": "Sous l'Aiguille du Moine : moraines et clapiers au soleil (rive droite de la Mer de Glace)",
+          "lon": 6.9578,
+          "lat": 45.9144,
+          "alt_m": 2993,
+          "coord_quality": "source",
+          "best_hours": "après-midi (quand le versant de la Vallée Blanche est à l'ombre)",
+          "trigger": "pentes, clapiers et moraines exposés à l'ouest sous l'Aiguille du Moine, au soleil l'après-midi alors que la Vallée Blanche est à l'ombre",
+          "description": "Solution de sauvetage et de relance pour les vols de l'Aiguille du Midi par la Vallée Blanche : un pilote chevronné explique que l'après-midi tout est à l'ombre côté Montenvers et qu'on descend vite ; « la solution est de traverser la Mer de Glace après avoir passé le refuge du Requin afin d'attraper les thermiques sur les moraines et les clapiers au soleil situés sous le Moine et les Flammes de Pierre ». Le point chaud kk7 (croupe exposée à l'ouest, 2989 m, 84 % à midi et 84 % le soir, été et automne) est à 377 m de l'Aiguille du Moine : il correspond à ce versant ensoleillé de l'après-midi ; le texte parle des moraines situées plus bas, le rapprochement est une inférence. L'auteur ne vole depuis l'Aiguille du Midi qu'à partir de septembre, à la fin de l'interdiction de juillet-août, ce qui est compatible avec les saisons kk7 (été et automne). Fiabilité : Deux messages d'une même pilote (2015 et 2018) dans deux fils différents ; ils décrivent des vols en configuration « rando » depuis l'Aiguille du Midi, avec des thermiques à une altitude plus basse que le point chaud (2989 m). Aucune heure précise hormis « l'après-midi ».",
+          "confidence": "medium",
+          "sources": [
+            "S14",
+            "S15"
+          ]
+        },
+        {
+          "id": "flammes-de-pierre-mer-de-glace-moraines",
+          "name": "Sous les Flammes de Pierre : moraines et clapiers au soleil (rive droite de la Mer de Glace)",
+          "lon": 6.9434,
+          "lat": 45.9258,
+          "alt_m": 2765,
+          "coord_quality": "source",
+          "best_hours": "après-midi (quand la Vallée Blanche et le Montenvers sont à l'ombre)",
+          "trigger": "pentes et clapiers exposés au sud-ouest sous les Flammes de Pierre, face aux Drus, ensoleillés l'après-midi",
+          "description": "Même relance que sous l'Aiguille du Moine pour les vols de l'Aiguille du Midi : après le refuge du Requin, on traverse la Mer de Glace pour « attraper les thermiques sur les moraines et les clapiers au soleil situés sous le Moine et les Flammes de Pierre », et si c'est bon on peut aller jusqu'aux Drus, où le thermique est « costaud » mais mêlé de brise. Le point chaud kk7 (croupe exposée au sud-ouest, 2770 m, 80 % à midi et le soir, de printemps à automne) est à 166 m du Diamant des Flammes de Pierre et 373 m des Flammes de Pierre (OSM) ; le texte donne le nom du secteur mais pas de coordonnées, le rapprochement reste une inférence. Fiabilité : Deux messages d'une même pilote (2015 et 2018), partagés avec le point de l'Aiguille du Moine ; le texte situe les thermiques « sous » les Flammes de Pierre, donc plus bas que le point chaud (2770 m) ; aucune heure hormis « l'après-midi ».",
+          "confidence": "medium",
+          "sources": [
+            "S16",
+            "S17"
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "id": "S1",
+      "title": "Chartreuse hivernale – Survol des 4 sommets de 2000m (Antoine Jammes, 30/12/2006)",
+      "url": "https://www.chvd.org/2006/12/30/chartreuse-hivernale-survol-des-4-sommets-de-2000m/",
+      "publisher": "CHVD (club de vol libre grenoblois)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Sortie du 29/12/2006 : décollage du col de Bellefond, soaring dans la combe par vent de SW, puis « recherche du thermique situé sur la face SW des Lances de malissard », 30 minutes de bataille avant de survoler le sommet."
+    },
+    {
+      "id": "S2",
+      "title": "Vol Rando 105 (vol 211) – Le Granier",
+      "url": "https://carnetdevol.largeault.net/2020/08/10/vol-rando-105-vol-211-le-granier/",
+      "publisher": "Carnet de vol de Franck Largeault",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Vol du 10/08/2020 (décollage du Granier à 16 h, 1 h 57 de vol) : arrivée bas aux Lances par le col de Fontanieux (venturi), refait grâce à la convection en face ouest, enroule vers les lances sud ; un autre pilote se refait en face SO du col de Bellefont."
+    },
+    {
+      "id": "S3",
+      "title": "Le Créneau du 31 mars (récit CHVD, 03/04/2006)",
+      "url": "https://www.chvd.org/2006/04/03/le-creneau-du-31-mars/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Au col de Bellefond le pilote choisit Mallissard : « Au Nord des Lances, joli thermique » qui permet de passer vers Saint-Même."
+    },
+    {
+      "id": "S4",
+      "title": "Le vol de SIMON BOUVOT du 25/03/2022 (CFD, FFVL)",
+      "url": "https://parapente.ffvl.fr/cfd/liste/vol/20316178",
+      "publisher": "FFVL – Coupe Fédérale de Distance",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Commentaire du pilote : le thermique aux Lances de Malissard monte bien tout en étant doux. Page protégée (HTTP 403 / Cloudflare) : phrase lue dans un extrait de moteur de recherche, non vérifiée sur la page."
+    },
+    {
+      "id": "S5",
+      "title": "Cross hasardeux de 154 kil (récit de Patrick Villeneuve, 20/04/2021)",
+      "url": "http://clubsthilair.fr/2021/04/20/cross-hasardeux-de-154-kil/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Passage « 15h20 transit vers la Cochette » : plein sur la falaise du hameau « Les égaux » à 16 h 07, 1600 m."
+    },
+    {
+      "id": "S6",
+      "title": "Jusson (vol rando CHVD du 22/07/2023)",
+      "url": "https://www.chvd.org/2023/07/22/jusson/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Récit d'une pilote partie de la prairie de Jusson (vent NNW, brise de Chambéry) : thermique à la pointe du Frou pour dériver vers les Égaux, puis « au Nord des Égaux j'ai repris jusqu'en haut de l'Outhéran »."
+    },
+    {
+      "id": "S7",
+      "title": "Transition Savoyarde -> Granier face ouest (fil parapentiste.info)",
+      "url": "https://www.parapentiste.info/forum/techniques-de-cross/transition-savoyarde-granier-face-ouest-t62128.0.html",
+      "publisher": "parapentiste.info",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Réponse #8 du 22/02/2023 : vers le col des Égaux on se retrouve sous le vent ou contré par le thermique de la face."
+    },
+    {
+      "id": "S8",
+      "title": "Cross StHil – Aiguebellette – Vercors (récit CHVD, 14/09/2026)",
+      "url": "https://www.chvd.org/2026/09/14/cross-sthil-aiguebellette-vercors/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Après l'Outheran, forte brise de face : ascendance trouvée sur la Cochette puis transition à 1800 m au-dessus de la gorge du Guiers Vif."
+    },
+    {
+      "id": "S9",
+      "title": "Triangle chartrousien en marche et vol (récit CHVD, 09/08/2012)",
+      "url": "https://www.chvd.org/2012/08/09/triangle-chartrousien-en-marche-et-vol/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Vers le massif de l'Épine : la longue transition au-dessus des gorges du Guiers passe normalement par la Cochette ; plafonds bas et vent de face ce jour-là."
+    },
+    {
+      "id": "S10",
+      "title": "Cross hasardeux de 154 kil (récit de Patrick Villeneuve, 20/04/2021)",
+      "url": "http://clubsthilair.fr/2021/04/20/cross-hasardeux-de-154-kil/",
+      "publisher": "Club St Hil'Air",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Après les gorges du Guiers Mort, « il faut que je passe par la Cochette » pour rejoindre le mont Outheran ; plein repris à mi-chemin sur la falaise des Égaux."
+    },
+    {
+      "id": "S11",
+      "title": "Cross autour de la Chartreuse (fil parapentiste.info, réponse de bbair69 du 11/04/2017)",
+      "url": "https://www.parapentiste.info/forum/videos/cross-autour-de-la-chartreuse-t47424.0.html",
+      "publisher": "parapentiste.info",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Vol d'avril 2016 : « plus d'1 heure à grenouiller à la croix de la Cochette » pour raccrocher le Mont Grêle (relance laborieuse un jour de printemps à voile d'altitude)."
+    },
+    {
+      "id": "S12",
+      "title": "Platé (fiche de décollage, Club Mont-Blanc Vol Libre)",
+      "url": "https://www.cmbvl.fr/sites/plat%C3%A9",
+      "publisher": "CMBVL – Club Mont-Blanc Vol Libre",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Rubrique « Le décollage » et « Le vol » : thermiques généreux à proximité des falaises quand la brise montante est installée ; en automne, thermiques faciles à raccrocher le long des falaises."
+    },
+    {
+      "id": "S13",
+      "title": "'Crosser' les alpes : région ARAVIS - Parmelan (fil parapentiste.info, réponse #14 du 03/03/2007)",
+      "url": "https://www.parapentiste.info/forum/techniques-de-cross/crosser-les-alpes-region-aravis-parmelan-t2620.10.html",
+      "publisher": "parapentiste.info",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Page 2 du fil, message du 03/03/2007 : de Planpraz, plein sur l'Aiguillette des Houches, éboulis sous le Dérochoir (thermique possible sur l'arête de Pormenaz), puis « la falaise de la pointe de Platé, qui remonte bien », puis Varan."
+    },
+    {
+      "id": "S14",
+      "title": "Conseil pour vol de l'aiguille du midi (fil parapentiste.info, réponse #10 du 15/02/2015)",
+      "url": "https://www.parapentiste.info/forum/vol-rando-vol-bivouac/conseil-pour-vol-de-laiguille-du-midi-t38594.0.html",
+      "publisher": "parapentiste.info",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Message de « Mme POB » (plus de 2000 vols) : au départ de l'Aiguille du Midi, l'après-midi la Vallée Blanche est à l'ombre ; traverser la Mer de Glace après le Requin pour les thermiques des moraines et clapiers au soleil sous le Moine et les Flammes de Pierre ; vers les Drus thermiques costauds avec de la brise."
+    },
+    {
+      "id": "S15",
+      "title": "intermédiaire aiguille du midi (fil parapentiste.info, réponse de « Mme POB » du 25/06/2018)",
+      "url": "https://www.parapentiste.info/forum/sites-de-vols/intermediaire-aiguille-du-midi-t51318.0.html",
+      "publisher": "parapentiste.info",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Même pilote, trois ans plus tard : au départ de l'Aiguille du Midi, « le matin, il y a un petit thermique sur la face E du Grépon ; l'après-midi, il faut traverser la Mer de Glace pour aller en prendre un sur le Moine et les Flammes de Pierre », ce qui aide à passer la brise de vallée et le rouleau de l'arête du Montenvers."
+    },
+    {
+      "id": "S16",
+      "title": "Conseil pour vol de l'aiguille du midi (fil parapentiste.info, réponse #10 du 15/02/2015)",
+      "url": "https://www.parapentiste.info/forum/vol-rando-vol-bivouac/conseil-pour-vol-de-laiguille-du-midi-t38594.0.html",
+      "publisher": "parapentiste.info",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Même message que pour l'Aiguille du Moine : thermiques sur les moraines et clapiers sous le Moine et les Flammes de Pierre l'après-midi ; Drus plus costaud avec de la brise."
+    },
+    {
+      "id": "S17",
+      "title": "intermédiaire aiguille du midi (fil parapentiste.info, réponse de « Mme POB » du 25/06/2018)",
+      "url": "https://www.parapentiste.info/forum/sites-de-vols/intermediaire-aiguille-du-midi-t51318.0.html",
+      "publisher": "parapentiste.info",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Même pilote, trois ans plus tard : au départ de l'Aiguille du Midi, « le matin, il y a un petit thermique sur la face E du Grépon ; l'après-midi, il faut traverser la Mer de Glace pour aller en prendre un sur le Moine et les Flammes de Pierre », ce qui aide à passer la brise de vallée et le rouleau de l'arête du Montenvers."
+    }
+  ]
+}

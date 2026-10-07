@@ -6,9 +6,9 @@
  * time slot and pulses the place it talks about; "Approfondir" opens the full
  * sourced detail. Built from the atlas only.
  */
-import type { Atlas, AtlasFeature, AtlasFeatureProps, AtlasMassif, FeatureCategory } from '@brises/shared';
+import type { Atlas, AtlasFeature, AtlasFeatureProps, AtlasMassif, AtlasTourPlace, FeatureCategory } from '@brises/shared';
 import { Marker } from 'maplibre-gl';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { activeInSlot, thermalRole } from '../map/modules/schema';
 import { SCHEMA_PHASES, useApp, useRuntime, type SchemaPhase } from '../state/store';
 import { getController } from './controller-ref';
@@ -41,6 +41,8 @@ interface Step {
   leadSrc?: string[];
   /** Atlas items the step talks about: highlighted on the schema. */
   ids?: string[];
+  /** Places the text names: pinned on the map, highlighted in the text. */
+  places?: AtlasTourPlace[];
   focus: LngLat[];
 }
 
@@ -124,13 +126,24 @@ function dayPart(p: AtlasFeatureProps): 'matin' | 'après-midi' | 'soir' | null 
 }
 
 /** A written visit (research_notes/…/visites): narration tied to atlas items. */
+/** Camera frame of a written step: the whole sector, or its items and named places together. */
+function frameOf(wholeSector: boolean, feats: AtlasFeature[], places: AtlasTourPlace[], m: AtlasMassif): Pick<Step, 'bbox' | 'point' | 'zoom'> {
+  const named = places.map((p): LngLat => [p.lon, p.lat]);
+  const pts: LngLat[] = [...feats.flatMap(coordsOf), ...named];
+  // The whole sector and the surroundings its text names (the camera clamps to the sector ±25 %).
+  if (wholeSector || !pts.length) return { bbox: boxOf([[m.bbox[0], m.bbox[1]], [m.bbox[2], m.bbox[3]], ...named], 0) ?? m.bbox };
+  if (pts.length === 1) return { point: pts[0], zoom: 12.3 };
+  return { bbox: boxOf(pts, 0.02) };
+}
+
 function writtenTour(atlas: Atlas, m: AtlasMassif): Step[] | null {
   const steps = atlas.tours?.[m.id];
   if (!steps?.length) return null;
   const byId = new Map(Object.values(atlas.features).flatMap((list) => list.map((f) => [f.properties.id, f] as const)));
+  // The visited massif itself is the whole frame, not a pin in its middle.
+  const own = (places?: AtlasTourPlace[]) => places?.filter((p) => !(p.kind === 'massif' && p.label === m.shortName));
   return steps.map((st) => {
     const feats = st.features.map((id) => byId.get(id)).filter((f): f is AtlasFeature => !!f);
-    const single = feats.length === 1 && feats[0].geometry.type === 'Point' ? (feats[0].geometry.coordinates as LngLat) : undefined;
     return {
       chapter: st.chapter,
       title: st.title,
@@ -139,7 +152,9 @@ function writtenTour(atlas: Atlas, m: AtlasMassif): Step[] | null {
       ids: st.features,
       more: feats.map((f) => ({ text: `${f.properties.name}${f.properties.description ? ` — ${sentences(f.properties.description, 1, 200)}` : ''}`, id: f.properties.id, src: srcOf(f.properties) })),
       sourceIds: st.sources,
-      ...(st.view === 'massif' || !feats.length ? { bbox: m.bbox } : single ? { point: single, zoom: 12.3 } : { bbox: boxOf(feats.flatMap(coordsOf), 0.02) }),
+      places: own(st.places),
+      // The frame holds the items and the places the text names, so a reader new to the area sees where they are.
+      ...frameOf(st.view === 'massif', feats, own(st.places) ?? [], m),
       phase: st.phase,
       wind: st.wind ? { fromDeg: st.wind.fromDeg, kmh: st.wind.kmh } : undefined,
       focus: [],
@@ -420,6 +435,28 @@ function Refs({ ids, order, atlas }: { ids?: string[]; order: string[]; atlas: A
   );
 }
 
+/** Text with the places it names as highlighted words: tap one to see it pulse on the map. */
+function PlaceText({ text, places, onPick }: { text: string; places?: AtlasTourPlace[]; onPick: (p: AtlasTourPlace, move?: boolean) => void }) {
+  if (!places?.length) return <>{text}</>;
+  const byName = new Map(places.map((p) => [p.name, p]));
+  const names = [...byName.keys()].sort((a, b) => b.length - a.length).map((n) => n.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+  const re = new RegExp(`(?<![\\p{L}\\-])(${names.join('|')})(?![\\p{L}\\-])`, 'u');
+  return (
+    <>
+      {text.split(re).map((part, i) => {
+        const pl = i % 2 === 1 ? byName.get(part) : undefined;
+        return pl ? (
+          <button key={i} className="place-ref" onClick={() => onPick(pl)} onMouseEnter={() => onPick(pl, false)} title={pl.label}>
+            {part}
+          </button>
+        ) : (
+          part
+        );
+      })}
+    </>
+  );
+}
+
 export function MassifTour() {
   const { tourStep, schemaMassif, schema3d, set } = useApp();
   const atlas = useRuntime((r) => r.atlas);
@@ -428,6 +465,13 @@ export function MassifTour() {
   const step = tourStep !== null ? steps[tourStep] : undefined;
   const [deeper, setDeeper] = useState<number | null>(null);
   const active = tourStep !== null;
+  // Each step starts at its top (on a phone the sheet would stay scrolled to the previous step's end).
+  const card = useRef<HTMLDivElement>(null);
+  /** Pins of the places named by the current step, by name as written. */
+  const pins = useRef(new Map<string, HTMLElement>());
+  useEffect(() => {
+    card.current?.scrollTo({ top: 0 });
+  }, [tourStep]);
   const mobile = useIsMobile();
   // Phone: the visit is the bottom sheet; the camera frames the map above it.
   const snap = useSheet((x) => x.snap);
@@ -482,8 +526,32 @@ export function MassifTour() {
       el.className = 'tour-focus';
       return new Marker({ element: el }).setLngLat(p).addTo(map);
     });
-    return () => markers.forEach((mk) => mk.remove());
+    // The places the text names, pinned with their name, one after the other in reading order.
+    pins.current.clear();
+    const placeMarkers = (step.places ?? []).map((pl, i) => {
+      // MapLibre positions the outer element with a transform: the appear animation runs on the inner one.
+      const root = document.createElement('div');
+      const el = document.createElement('div');
+      el.className = 'tour-place';
+      el.style.animationDelay = `${0.15 + i * 0.12}s`;
+      const dot = document.createElement('i');
+      const label = document.createElement('span');
+      label.textContent = pl.name;
+      label.title = pl.label;
+      el.append(dot, label);
+      root.append(el);
+      pins.current.set(pl.name, el);
+      return new Marker({ element: root, anchor: 'left', offset: [-6, 0] }).setLngLat([pl.lon, pl.lat]).addTo(map);
+    });
+    return () => [...markers, ...placeMarkers].forEach((mk) => mk.remove());
   }, [step, schema3d, massif, snap]);
+
+  /** A place word tapped in the text: its pin pulses, and the map brings it into view if needed. */
+  const pick = (pl: AtlasTourPlace, move = true) => {
+    for (const [name, el] of pins.current) el.classList.toggle('on', name === pl.name);
+    const map = getController()?.map;
+    if (move && map && !map.getBounds().contains([pl.lon, pl.lat])) map.easeTo({ center: [pl.lon, pl.lat], duration: 700 });
+  };
 
   // Highlight cleared when the visit ends.
   useEffect(() => {
@@ -511,7 +579,7 @@ export function MassifTour() {
   );
   const quit = () => set({ tourStep: null });
   return (
-    <div className="tour panel" role="dialog" aria-label={`Présentation : ${massif.shortName}`}>
+    <div ref={card} className="tour panel" role="dialog" aria-label={`Présentation : ${massif.shortName}`}>
       {mobile ? (
         <>
           <SheetHandle visit onClose={quit} closeLabel="Quitter la présentation">
@@ -536,7 +604,7 @@ export function MassifTour() {
       )}
       {step.lead && (
         <p className="tour-lead">
-          {step.lead}
+          <PlaceText text={step.lead} places={step.places} onPick={pick} />
           <Refs ids={step.leadSrc} order={order} atlas={atlas} />
         </p>
       )}

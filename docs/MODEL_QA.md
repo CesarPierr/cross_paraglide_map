@@ -15,9 +15,9 @@ Généré par `npm run model:check` le 2026-10-07 sur `apps/web/public/data/atla
 | --- | --- | --- | --- | --- |
 | brises | 257 | 275 | 93 % | 2 |
 | convergences | 62 | 72 | 86 % | 9 |
-| thermiques | 707 | 817 | 87 % | 0 |
+| thermiques | 713 | 823 | 87 % | 0 |
 | pièges | 111 | 161 | 69 % | 49 |
-| **total** | **1137** | **1325** | **86 %** | 60 |
+| **total** | **1143** | **1331** | **86 %** | 60 |
 
 Contrôles élémentaires des brises :
 
@@ -56,9 +56,9 @@ Calendrier : déclenchement des thermiques au début explicite (« dès 10h », 
 | Briançonnais | 5/7 | 2/3 | 7/12 | 7/7 | 21/29 |
 | Buëch – Chabre | 6/6 | 3/3 | 14/16 | 3/7 | 26/32 |
 | Chablais | 8/8 | – | 18/20 | 5/5 | 31/33 |
-| Chamonix – Mont-Blanc | 5/5 | – | 16/21 | 1/1 | 22/27 |
+| Chamonix – Mont-Blanc | 5/5 | – | 19/24 | 1/1 | 25/30 |
 | Champsaur | 2/3 | 1/1 | 14/16 | 0/1 | 17/21 |
-| Chartreuse | 12/15 | 2/2 | 35/37 | 3/3 | 52/57 |
+| Chartreuse | 12/15 | 2/2 | 38/40 | 3/3 | 55/60 |
 | Combe de Savoie | 3/4 | – | 16/19 | 1/2 | 20/25 |
 | Cuvette grenobloise | 7/7 | 1/1 | 7/7 | 2/2 | 17/17 |
 | Dévoluy | 1/1 | 1/1 | 7/8 | 1/1 | 10/11 |

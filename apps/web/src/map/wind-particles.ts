@@ -364,6 +364,10 @@ export class WindParticleLayer implements CustomLayerInterface {
     const loading = !this.map?.areTilesLoaded();
     const key = bounds.map((v) => v.toFixed(7)).join(',') + `|${this.settings.exaggeration}|${loading ? this.frameCounter >> 4 : 'loaded'}`;
     if (key === this.hmapKey) return;
+    // An extra terrain render pass: while the camera moves, four times a second is enough.
+    const now = performance.now();
+    if (this.map?.isMoving() && now - this.lastHmapTime < 250) return;
+    this.lastHmapTime = now;
     this.hmapKey = key;
     this.hmapBounds = bounds;
     options.renderTerrainHeightMap({ texture: this.hmapTex, width: this.hmapSize, height: this.hmapSize, bounds });
@@ -371,6 +375,7 @@ export class WindParticleLayer implements CustomLayerInterface {
   }
 
   private frameCounter = 0;
+  private lastHmapTime = 0;
 
   private step(dt: number): void {
     const map = this.map!;

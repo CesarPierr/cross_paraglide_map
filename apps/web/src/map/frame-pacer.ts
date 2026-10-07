@@ -30,8 +30,8 @@ const BUDGETS: Record<'eco' | 'balanced' | 'max' | 'phone' | 'phoneLight', Budge
   max: { activeFps: 60, idleFps: 30, deepIdleFps: 20, maxDpr: 3, maxParticles: 40000 },
   // Phones: a small, sharp screen. A steady rate with few particles reads better (and costs less)
   // than many particles stuttering at 8-15 fps on a blurry 1x canvas.
-  phone: { activeFps: 30, idleFps: 24, deepIdleFps: 15, maxDpr: 2, maxParticles: 3500 },
-  phoneLight: { activeFps: 24, idleFps: 20, deepIdleFps: 12, maxDpr: 1.5, maxParticles: 2000 },
+  phone: { activeFps: 30, idleFps: 24, deepIdleFps: 15, maxDpr: 1.5, maxParticles: 2500 },
+  phoneLight: { activeFps: 24, idleFps: 20, deepIdleFps: 12, maxDpr: 1.25, maxParticles: 1500 },
 };
 
 const IDLE_AFTER_MS = 15000;

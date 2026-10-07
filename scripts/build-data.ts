@@ -13,7 +13,7 @@ import { join, relative, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import type { CuratedBreezeInput } from '@brises/model';
 import type { BreezeCondition } from '@brises/shared';
-import type { Atlas, AtlasFeature, AtlasFeatureProps, AtlasFigure, AtlasMassif, AtlasSource, AtlasTourStep, FeatureCategory, ModelRule } from '@brises/shared';
+import type { Atlas, AtlasFeature, AtlasFeatureProps, AtlasFigure, AtlasMassif, AtlasSource, AtlasTourPlace, AtlasTourStep, FeatureCategory, ModelRule } from '@brises/shared';
 import { analyseTerrain, type Terrain } from '@brises/model';
 import { splitAtlas } from '@brises/shared';
 import { loadDem } from '@brises/model/node';
@@ -723,11 +723,32 @@ function relocateByAltitude(t: Terrain, lon: number, lat: number, alt: number, m
 const VISITS = join(ROOT, 'research_notes', 'Seconde passe 2026', 'visites');
 const WIND_DEG: Record<string, number> = { N: 0, NE: 45, E: 90, SE: 135, S: 180, SO: 225, SW: 225, O: 270, W: 270, NO: 315, NW: 315 };
 
+/** Places of the gazetteer named in a text, in reading order; the longest name wins where names overlap. */
+export function placesIn(text: string, known: Record<string, { lon: number; lat: number; label: string; kind?: string }>): AtlasTourPlace[] {
+  const names = Object.keys(known).sort((a, b) => b.length - a.length);
+  if (!names.length) return [];
+  const esc = (x: string) => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const re = new RegExp(`(?<![\\p{L}\\-])(?:${names.map(esc).join('|')})(?![\\p{L}\\-])`, 'gu');
+  const out: AtlasTourPlace[] = [];
+  const seen = new Set<string>();
+  for (const m of text.matchAll(re)) {
+    const k = known[m[0]];
+    const key = `${k.lon},${k.lat}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push({ name: m[0], label: k.label, lon: k.lon, lat: k.lat, ...(k.kind ? { kind: k.kind } : {}) });
+  }
+  return out;
+}
+
 function readTours(rawToFeature: Map<string, string>, massifs: AtlasMassif[], features: Record<FeatureCategory, AtlasFeature[]>): Record<string, AtlasTourStep[]> {
   const out: Record<string, AtlasTourStep[]> = {};
   if (!existsSync(VISITS)) return out;
   const byId = new Map(Object.values(features).flatMap((list) => list.map((f) => [f.properties.id, f] as const)));
-  for (const file of readdirSync(VISITS).filter((f) => f.endsWith('.json'))) {
+  // Places named by the visits, located once by scripts/research/visit_places.py (massif → name → place).
+  const lieuxFile = join(VISITS, '_lieux.json');
+  const lieux = existsSync(lieuxFile) ? (JSON.parse(readFileSync(lieuxFile, 'utf8')) as Record<string, Record<string, { lon: number; lat: number; label: string; kind?: string }>>) : {};
+  for (const file of readdirSync(VISITS).filter((f) => f.endsWith('.json') && !f.startsWith('_'))) {
     const raw = JSON.parse(readFileSync(join(VISITS, file), 'utf8')) as {
       massif: string;
       steps: { chapter: string; title: string; text: string; focus?: string[]; phase?: AtlasTourStep['phase']; wind?: { from: string; kmh: number }; view?: AtlasTourStep['view'] }[];
@@ -746,12 +767,14 @@ function readTours(rawToFeature: Map<string, string>, massifs: AtlasMassif[], fe
         .filter((x): x is string => !!x);
       const sources = [...new Set(ids.flatMap((id) => (byId.get(id)?.properties.sources ?? '').split(',').filter(Boolean)))];
       const deg = st.wind ? WIND_DEG[st.wind.from.toUpperCase()] : undefined;
+      const places = placesIn(`${st.title}\n${st.text}`, lieux[raw.massif] ?? {});
       return {
         chapter: st.chapter,
         title: st.title,
         text: st.text,
         features: ids,
         sources,
+        ...(places.length ? { places } : {}),
         ...(st.phase ? { phase: st.phase } : {}),
         ...(st.wind && deg !== undefined ? { wind: { fromDeg: deg, kmh: st.wind.kmh } } : {}),
         ...(st.view ? { view: st.view } : {}),

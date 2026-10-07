@@ -83,6 +83,7 @@ export class WindScene {
   /** Hotspots fading in or out (keyed by position) so the columns never pop when the view or the hour changes. */
   private hotFade = new Map<string, { h: Hotspot; a: number; on: boolean }>();
   private lastFadeTime = 0;
+  private lastHmapTime = 0;
   private hotspotVersion = -1;
   private lastHotspotTime = 0;
   private spots: ThermalSpot[] = [];
@@ -389,7 +390,10 @@ export class WindScene {
         // Re-rendered when the view moves, and every 32 frames only while terrain tiles are still loading.
         const loading = !this.map?.areTilesLoaded();
         const key = bounds.map((v) => v.toFixed(7)).join(',') + `|${this.settings.exaggeration}|${loading ? this.frame >> 5 : 'loaded'}`;
-        if (key !== this.hmapKey) {
+        // An extra terrain render pass: while the camera moves, four times a second is enough (exact again once it stops).
+        const moving = this.map?.isMoving() && now - this.lastHmapTime < 250;
+        if (key !== this.hmapKey && !moving) {
+          this.lastHmapTime = now;
           this.hmapKey = key;
           this.hmapBounds = bounds;
           opts.renderTerrainHeightMap({ texture: this.hmapTex, width: this.hmapSize, height: this.hmapSize, bounds });

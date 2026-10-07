@@ -8,7 +8,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { create } from 'zustand';
 import { BASEMAPS } from '../map/style';
-import { useApp } from '../state/store';
+import { remember, useApp } from '../state/store';
 import { getController } from './controller-ref';
 import { IconLayers, IconMountain, IconWind } from './icons';
 import { goTo, useMode, type Mode } from './modes';
@@ -180,29 +180,24 @@ export function MobileDock() {
 /** Phone map buttons, top right: base map (one tap to the other) and 2D / 3D. Pinch, twist and two-finger tilt do the rest. */
 export function MobileRail() {
   const basemap = useApp((s) => s.basemap);
-  const [pitched, setPitched] = useState(false);
-  useEffect(() => {
-    const map = getController()?.map;
-    if (!map) return;
-    const on = () => setPitched(map.getPitch() > 10);
-    on();
-    map.on('pitchend', on);
-    return () => void map.off('pitchend', on);
-  });
+  // 3D = the relief and a tilted view; 2D = a flat map seen from above (much lighter for a phone).
+  const relief = useApp((s) => s.exaggeration > 0);
   if (!useIsMobile()) return null;
   const other = basemap === 'topo' ? 'ign-ortho' : 'topo';
+  const toggle3d = () => {
+    const on = !relief;
+    useApp.getState().set({ exaggeration: on ? 1.3 : 0 });
+    remember('brises.relief', on ? '3d' : '2d');
+    getController()?.map.easeTo({ pitch: on ? 55 : 0, duration: 700 });
+  };
   return (
     <div className="mobile-rail">
       <button className={`rail-btn bm-${other}`} onClick={() => useApp.getState().set({ basemap: other })} aria-label={`Fond ${BASEMAPS[other].label}`}>
         <span className="bm-thumb" aria-hidden />
         <small>{BASEMAPS[other].label}</small>
       </button>
-      <button
-        className="rail-btn text"
-        onClick={() => getController()?.map.easeTo({ pitch: pitched ? 0 : 55, duration: 700 })}
-        aria-label={pitched ? 'Vue de dessus (2D)' : 'Vue en relief (3D)'}
-      >
-        {pitched ? '2D' : '3D'}
+      <button className="rail-btn text" onClick={toggle3d} aria-label={relief ? 'Carte à plat (2D)' : 'Relief en 3D'} aria-pressed={relief}>
+        {relief ? '2D' : '3D'}
       </button>
     </div>
   );

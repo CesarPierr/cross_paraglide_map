@@ -828,19 +828,22 @@
         },
         {
           "id": "brevent-faces-sud-est-plan-lachat",
-          "name": "Brévent : faces sud-est au-dessus de Plan Lachat",
+          "name": "Brévent : faces sud-est devant Planpraz (« ça monte partout devant le Brévent », raccroche de Chamonix)",
           "lon": 6.84139,
           "lat": 45.92679,
           "alt_m": 1941,
           "coord_quality": "approx",
-          "best_hours": "toute la journée : 98 % le matin, 95 % à midi, 76 % le soir",
-          "trigger": "faces sud-est du Brévent, à 560 m sous le sommet, au-dessus de Plan Lachat",
-          "description": "Résolution des limites (octobre 2026) : déduction. Point chaud kk7 à 96 % (toute la journée : 98 % le matin, 95 % à midi, 76 % le soir) à 831 m au sud-sud-est du sommet du Brévent (`brevent-plafond-3000`), 560 m plus bas, sur un flanc à 1941 m, pente de 35° exposée au sud-est, à 610 m de Plan Lachat et 900 m de la Tête de Bellachat (OSM). Le récit du cheminement Plan de l'Aiguille → Planpraz → Brévent dit seulement que « ça monte jusqu'à 3000 m au-dessus du Brévent » : ce point mesuré est probablement l'ascendance basse qui alimente ce plafond.",
-          "confidence": "low",
+          "best_hours": "de midi à la fin d'après-midi (midi : « ça monte partout devant le Brévent » ; 17 h–18 h : « ça monte encore de partout » à l'ombre)",
+          "trigger": "grande face sud-est du Brévent (35°) chauffée dès midi, au-dessus de Plan Lachat, sous le décollage de Planpraz ; brise de vallée de Chamonix en soirée",
+          "description": "Déclencheur et point de raccroche de la rive gauche de Chamonix, utilisé pour partir vers les Aiguilles Rouges ou pour revenir du Mont Joly / Prarion. Récit du Tour du Mont Blanc (21/08/2023) : arrivé à midi, de nombreuses voiles tournent déjà au-dessus du Brévent, « ça monte partout devant le Brévent » ; le même pilote conclut son vol à 17–18 h par une pente sous le Brévent « tout à l'ombre, mais curieusement ça monte encore de partout ». Deux autres récits décrivent la raccroche du Brévent depuis le Prarion ou le Mont Joly : « ça monte très fort, mais c'est aussi très très turbulent. Un vrai rodéo » (juin 2025) et, par canicule, des thermiques « monstres » mêlés à une brise « dantesque » (août 2025), sortie au-dessus du Brévent à 3100 m. Le point chaud kk7 (flanc de 35° exposé au sud-est à 1941 m, 98 % le matin et 95 % à midi toute l'année) est sur cette face, à 839 m du sommet et à 613 m du lieu-dit Plan Lachat (IGN) ; les récits parlent du Brévent en général, le rapprochement avec ce point est une inférence. Fiabilité : Le Brévent est cité comme un ensemble ; le sommet est à 839 m du point chaud (hors des 700 m stricts), mais le point est sur la face sud-est du Brévent (profil IGN continu de 2507 m au sommet à 1941 m). Aucune précision sur Plan Lachat. Les récits d'été mentionnent de fortes turbulences à l'arrivée par vent d'ouest.",
+          "confidence": "medium",
           "sources": [
             "S150",
             "S37",
-            "S164"
+            "S164",
+            "S55",
+            "S90",
+            "S129"
           ]
         }
       ],
@@ -5933,6 +5936,33 @@
       "type": "web",
       "lang": "fr",
       "notes": "Probabilités de thermique (toutes saisons, matin / milieu de journée / fin de journée) lues dans les fichiers téléchargés le 7 octobre 2026 ; ne disent pas ce qui déclenche."
+    },
+    {
+      "id": "S55",
+      "title": "Tour du Mont Blanc (récit CHVD, 28/08/2023)",
+      "url": "https://www.chvd.org/2023/08/28/tour-du-mont-blanc/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Vol du 21/08/2023 : arrivée à Chamonix à midi, décollage de Planpraz, « ça monte partout devant le Brévent », plafond puis départ vers les Aiguilles Rouges ; en fin de vol (17 h–18 h), pente sous le Brévent à l'ombre où ça monte encore."
+    },
+    {
+      "id": "S90",
+      "title": "Cross à Bisanne (récit CHVD, 05/06/2025)",
+      "url": "https://www.chvd.org/2025/06/05/cross-a-bisanne/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Arrivée du Prarion vers le Brévent : « Ça monte très fort, mais c'est aussi très très turbulent », vent d'ouest ; sortie de la vallée 600 m plus haut."
+    },
+    {
+      "id": "S129",
+      "title": "Bisanne 10/08/2025 (récit CHVD, 11/08/2025)",
+      "url": "https://www.chvd.org/2025/08/11/bisanne-10-08-2025/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Raccroche au Brévent par canicule : thermiques « monstres » et brise forte ; sortie au-dessus du Brévent à 3100 m."
     }
   ]
 }

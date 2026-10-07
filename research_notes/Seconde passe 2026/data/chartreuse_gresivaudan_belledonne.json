@@ -1329,35 +1329,43 @@
         },
         {
           "id": "charmant-som-versant-est",
-          "name": "Charmant Som : versant est-sud-est sous la bergerie",
+          "name": "Charmant Som : thermique de l'épaule sud (sous le décollage vol-rando est / sud-est)",
           "lon": 5.763,
           "lat": 45.3203,
           "alt_m": 1707,
           "coord_quality": "approx",
-          "best_hours": "matin et milieu de journée (point chaud kk7 : 83 % le matin, 76 % toutes périodes)",
-          "trigger": "versant E/SE/S sous le décollage de la bergerie du Charmant Som, pelouses et barres exposées dès le matin",
-          "description": "Audit d'octobre 2026 : déduction. Le décollage vol-rando du Charmant Som (fiche FFVL 5119, E-SE-S, « peut convenir aux débutants et biplace ») n'avait aucun thermique à moins de 3 km, alors que la carte PNR/CD38 y place une icône « thermique » (même icône que la Scia, le Grand Som et la Grande Sûre) et que les traces GPS (kk7) mesurent un point chaud à 350 m au sud du décollage. Aucun récit ne le décrit : la position est celle du point chaud, sur le versant exposé sous le décollage, pas un déclencheur observé. Le Charmant Som relie les hautes vallées de Saint-Pierre-de-Chartreuse à Chamechaude (ligne n°21 de la carte Largeault).",
-          "confidence": "low",
+          "best_hours": "le matin et jusqu'à midi (« le Charmant Som, c'est mieux le matin »)",
+          "trigger": "épaule et pentes exposées à l'est / sud-est sous le sommet du Charmant Som (décollages vol-rando est et sud-est), chauffées par le soleil du matin",
+          "description": "Thermique de décollage du Charmant Som en vol-rando : les récits du CHVD disent que « le thermique de l'épaule sud fonctionne bien » et permet de survoler le sommet (24/10/2021), qu'il y a « une petite brise thermique bien sympathique » en haut (27/03/2022), que « les thermiques étaient au rendez-vous » en novembre 2018 (un pilote fait un tour de Chartreuse vers la Pinéa) et que tout le groupe « joue tranquillement devant et au-dessus du décollage » le matin du 23/08/2026. Un récit de novembre 2025 conclut que le Charmant Som, « c'est mieux le matin », ce qui concorde avec le profil kk7 (83 % le matin, 74 % à midi, rien le soir). Le point chaud (croupe exposée au sud-est, 1707 m) est à 343 m du décollage FFVL du Charmant Som et à 539 m du sommet : c'est l'épaule sud-est décrite, le rapprochement reste une inférence puisque les récits ne donnent pas de coordonnées. Fiabilité : Quatre récits de vol-rando concordants mais qui parlent du décollage et de l'épaule sans coordonnées ; la position de l'« épaule sud » par rapport au point chaud est une inférence (point chaud à 343 m du décollage FFVL, 539 m du sommet). Heures : seule la mention « mieux le matin » est explicite.",
+          "confidence": "medium",
           "sources": [
             "S29",
             "S85",
-            "S138"
+            "S138",
+            "S2",
+            "S6",
+            "S8",
+            "S11"
           ]
         },
         {
           "id": "la-pinea-sarcenas",
-          "name": "La Pinéa : pente sous la crête (icône PNR)",
+          "name": "La Pinéa : crête et face sud (thermiques toniques, relais Chamechaude – Néron)",
           "lon": 5.7349,
           "lat": 45.2804,
           "alt_m": 1393,
           "coord_quality": "approx",
-          "best_hours": "toute la journée d'après les traces GPS (89 % le matin) ; horaire non décrit par les textes",
-          "trigger": "pente sud de la crête de la Pinéa (1771 m), au-dessus de Sarcenas et du Sappey",
-          "description": "Audit d'octobre 2026 : déduction. La carte PNR/CD38 dessine une icône « thermique » à la Pinéa, distincte de celles de Chamechaude et du Sappey, que l'ancien élément « Chamechaude et La Pinéa » plaçait au seul sommet de Chamechaude. Les traces GPS (kk7) mesurent un point chaud à 900 m au sud du sommet de la Pinéa (89 % toutes périodes, 89 % le matin) : la position est celle de ce point chaud. Aucun récit n'en parle.",
-          "confidence": "low",
+          "best_hours": "milieu de journée (12 h 12 à 12 h 41 dans le récit d'avril 2023)",
+          "trigger": "croupe sud de la Pinéa, flancs exposés au sud sous le sommet (1771 m), entre le Sappey et Sarcenas",
+          "description": "Relais de l'intérieur de la Chartreuse entre Chamechaude, le Néron et la Grande Sûre. En avril 2023, un pilote arrivé du Néron se met à « tricoter » 30 minutes dans la face sud de la Pinéa (12 h 12 à 12 h 41) avant de passer au-dessus du sommet, puis de transiter sur Chamechaude ; en août 2012, il « transite rapidement sur la crête sud de la Pinéa » où « les thermiques sont très toniques » ; en juillet 2020, un pilote peine à « négocier l'ascenseur de la Pinéa » ; en 2007 « Chamechaude-Pinéa, Pinéa-Néron, trop facile ». Le profil altimétrique IGN entre le sommet (1737 m) et le point chaud kk7 (croupe exposée au sud à 1393 m) descend de façon continue avec des flancs plus bas des deux côtés : le point chaud est donc sur la crête sud elle-même, à 915 m du sommet. Fiabilité : Le sommet de la Pinéa est à 915 m du point chaud ; le rapprochement repose sur le fait que le point chaud se trouve sur la crête sud / face sud décrite (profil IGN). Les récits ne donnent pas de position plus précise ni de saison autre que le printemps et l'été.",
+          "confidence": "medium",
           "sources": [
             "S29",
-            "S138"
+            "S138",
+            "S12",
+            "S13",
+            "S14",
+            "S19"
           ]
         },
         {
@@ -6859,6 +6867,78 @@
       "type": "web",
       "lang": "fr",
       "notes": "Fiche officielle du terrain (issue des traces CFD) : « Si c'est du vent ou du nord : sur le col, juste à côté de la route ; par vent de sud, voler entre le col du Glandon et le col de la Croix de Fer »."
+    },
+    {
+      "id": "S2",
+      "title": "Charmant Som (vol rando CHVD du 24/10/2021)",
+      "url": "https://www.chvd.org/2021/10/25/charmant-som/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Décollage sud-est à 1800 m : « Le thermique de l'épaule sud fonctionne bien et nous permet de survoler le sommet »."
+    },
+    {
+      "id": "S6",
+      "title": "Un Charmant Som charmant (vol rando CHVD du 27/03/2022)",
+      "url": "https://www.chvd.org/2022/03/27/un-charmant-som-charmant/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Décollage est à 1850 m : en haut une petite brise thermique ; on peut ensuite monter en suivant les crêtes vers le Grand Som."
+    },
+    {
+      "id": "S8",
+      "title": "Charmant Som v2 (vol rando CHVD du 07/11/2025)",
+      "url": "https://www.chvd.org/2025/11/10/charmant-som-v2/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Décollage sud-est à 1850 m : nuage sur Chamechaude qui balise un thermique ; « le Charmant Som, c'est mieux le matin »."
+    },
+    {
+      "id": "S11",
+      "title": "Charmant Som – 18 novembre 2018",
+      "url": "https://www.chvd.org/2018/11/18/charman-som-18-novembre-2018/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Décollage est à 1850 m : « les thermiques étaient au rendez-vous »."
+    },
+    {
+      "id": "S12",
+      "title": "Cross à la Pinéa (récit CHVD, 28/04/2023)",
+      "url": "https://www.chvd.org/2023/04/28/cross-a-la-pinea/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Vol du 27/04/2023 : arrivée du Néron, 30 minutes dans la face sud de la Pinéa (12 h 12 – 12 h 41), puis transition sur Chamechaude."
+    },
+    {
+      "id": "S13",
+      "title": "Triangle chartrousien en marche et vol (CHVD, 09/08/2012)",
+      "url": "https://www.chvd.org/2012/08/09/triangle-chartrousien-en-marche-et-vol/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Après l'Écoutoux, transit sur la crête sud de la Pinéa : thermiques très toniques, puis 2200 m à la Scia."
+    },
+    {
+      "id": "S14",
+      "title": "La Scia – 7 juillet 2020 (CHVD)",
+      "url": "https://www.chvd.org/2020/08/09/la-scia-7-juillet-2020/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Retour de la Grande Sûre par Chamechaude et la Pinéa : un pilote a du mal à négocier « l'ascenseur de la Pinéa » et manque son but d'un kilomètre."
+    },
+    {
+      "id": "S19",
+      "title": "Mon premier 8 en sud Chartreuse (CHVD, 26/04/2007)",
+      "url": "https://www.chvd.org/2007/04/26/mon-premier-8-en-sud-chartreuse/",
+      "publisher": "CHVD",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Retour par Pinéa, Néron et Rachais : « Chamechaude-Pinéa, Pinéa-Néron, trop facile »."
     }
   ]
 }

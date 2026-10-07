@@ -3371,6 +3371,75 @@ div.summary {
   filter: brightness(1.12);
 }
 
+/* Places named by a visit step: highlighted words in the text, labelled pins on the map. */
+.place-ref {
+  display: inline;
+  padding: 0 2px;
+  margin: 0 -1px;
+  border: 0;
+  border-bottom: 1.5px dotted #fbbf24;
+  border-radius: 3px;
+  background: rgba(251, 191, 36, 0.1);
+  color: #fde68a;
+  font: inherit;
+  cursor: pointer;
+}
+.place-ref:hover,
+.place-ref:focus-visible {
+  background: rgba(251, 191, 36, 0.25);
+}
+
+.tour-place {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  pointer-events: none;
+  opacity: 0;
+  animation: place-in 0.35s ease-out forwards;
+}
+.tour-place i {
+  flex: none;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #fbbf24;
+  border: 2px solid #1c1917;
+  box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.35);
+}
+.tour-place span {
+  padding: 2px 7px;
+  border-radius: 6px;
+  background: rgba(28, 25, 23, 0.86);
+  color: #fef3c7;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.tour-place.on i {
+  animation: place-pulse 1s ease-out 3;
+}
+.tour-place.on span {
+  background: #fbbf24;
+  color: #1c1917;
+}
+@keyframes place-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes place-pulse {
+  0% {
+    box-shadow: 0 0 0 2px rgba(251, 191, 36, 0.6);
+  }
+  100% {
+    box-shadow: 0 0 0 16px rgba(251, 191, 36, 0);
+  }
+}
+
 /* =====================================================================
    Phone (≤ 860 px). The map fills the screen; one bottom sheet at a time
    holds the list, the massif page, a detail, the layers or the visit

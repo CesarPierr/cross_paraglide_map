@@ -2,8 +2,8 @@
 
 Généré par `npm run data:build` le 2026-10-07. 2680 points chauds kk7 de probabilité ≥ 70 % dans le périmètre téléchargé.
 
-- Thermiques documentés confirmés par un point chaud à moins de 600 m : **496**, dont **58** recalés sur la position mesurée (leur position n’était qu’approximative).
-- Points chauds ≥ 80 % qu’aucun texte ne décrit, ajoutés comme thermiques « mesurés » : **330** (624 autres hors des secteurs).
+- Thermiques documentés confirmés par un point chaud à moins de 600 m : **502**, dont **58** recalés sur la position mesurée (leur position n’était qu’approximative).
+- Points chauds ≥ 80 % qu’aucun texte ne décrit, ajoutés comme thermiques « mesurés » : **324** (624 autres hors des secteurs).
 - Thermiques documentés à plus de 2 km de tout point chaud : **119** (site peu volé, ou position à vérifier).
 
 ## Points chauds forts (≥ 90 %) sans description, par secteur

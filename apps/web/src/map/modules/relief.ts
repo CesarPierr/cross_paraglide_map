@@ -17,7 +17,8 @@ export class ReliefModule implements MapModule {
     const map = this.ctx?.map;
     if (!map) return;
     if (!prev || prev.basemap !== s.basemap) this.setBasemap(s.basemap);
-    if (!prev || prev.exaggeration !== s.exaggeration) map.setTerrain({ source: 'terrain', exaggeration: s.exaggeration });
+    // Flat: no terrain at all (an exaggeration of 0 still renders every tile through the terrain pass).
+    if (!prev || prev.exaggeration !== s.exaggeration) map.setTerrain(s.exaggeration > 0 ? { source: 'terrain', exaggeration: s.exaggeration } : null);
     if (!prev || prev.layers.hillshade !== s.layers.hillshade) map.setLayoutProperty('hillshade', 'visibility', s.layers.hillshade ? 'visible' : 'none');
     if (!prev || prev.hour !== s.hour || prev.month0 !== s.month0 || prev.day !== s.day) this.lightBySun(s);
   }

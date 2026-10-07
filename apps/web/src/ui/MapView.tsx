@@ -36,6 +36,11 @@ export function MapView() {
           if (e.type === 'status') rt().set({ moduleMessage: e.message });
         },
         onPick: (lngLat) => {
+          const plan = rt().plan;
+          if (plan?.picking) {
+            rt().set({ plan: { ...plan, points: [...plan.points, lngLat], names: [...plan.names, ''] } });
+            return;
+          }
           const d = rt().draft;
           if (!d) return;
           const multi = d.category === 'breeze' || d.category === 'convergence';

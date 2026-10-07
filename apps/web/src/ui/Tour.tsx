@@ -81,6 +81,13 @@ const sentences = (t: string | undefined, n: number, max: number) => {
   return out.length > max ? `${out.slice(0, max - 1).trimEnd()}…` : out;
 };
 
+/** Waypoint names sometimes carry coordinates ("(point DMS 45°18'41\"N …)"): keep the place name. */
+export const cleanPlace = (n: string) =>
+  n
+    .replace(/\s*\((?:[^()]*\b(?:DMS|°|coord|lat|lon)\b[^()]*|[^()]*\d+°[^()]*)\)/gi, '')
+    .replace(/\s*\d+°\d+['’]\d+(?:[.,]\d+)?["”]?\s*[NS]\s*\d+°\d+['’]\d+(?:[.,]\d+)?["”]?\s*[EOW]/g, '')
+    .trim();
+
 const coordsOf = (f: AtlasFeature): LngLat[] => (f.geometry.type === 'Point' ? [f.geometry.coordinates] : f.geometry.coordinates);
 
 function boxOf(points: LngLat[], pad = 0.02): [number, number, number, number] | undefined {
@@ -233,7 +240,7 @@ export function buildTour(atlas: Atlas, m: AtlasMassif): Step[] {
   for (const r of routes) {
     const p = r.properties;
     const pts = coordsOf(r);
-    const names = (p.details?.Points ?? '').split(' → ');
+    const names = (p.details?.Points ?? '').split(' → ').map(cleanPlace);
     steps.push({
       chapter: 'Cheminements',
       title: p.name,

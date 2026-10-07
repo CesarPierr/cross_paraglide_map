@@ -8,6 +8,7 @@
  */
 import type { ExpressionSpecification, FilterSpecification } from 'maplibre-gl';
 import type { AppState, LayerKey } from '../../state/store';
+import { EXPLAIN } from '../../glossary';
 import { AIRSPACE_COLORS } from '../palette';
 import { bboxOf, type FeatureDetails, type MapModule, type ModuleContext } from './types';
 
@@ -83,13 +84,14 @@ const TOGGLE_GROUPS: [LayerKey, Group[]][] = [
   ['airspaceActivity', ['activity']],
 ];
 
-const LAYERS = ['airspace-fill', 'airspace-line', 'airspace-label'] as const;
+const LAYERS = ['airspace-fill', 'airspace-line', 'airspace-hit', 'airspace-label'] as const;
 
 export class AirspaceModule implements MapModule {
   readonly id = 'airspace';
-  readonly clickableLayers = ['airspace-fill'];
+  // Large zones would swallow every click: they are picked on their outline; the probe lists the ones under a point.
+  readonly clickableLayers = ['airspace-hit'];
   private ctx: ModuleContext | null = null;
-  private features = new Map<string, { props: AirspaceProps; coords: number[][] }>();
+  private features = new Map<string, { props: AirspaceProps; coords: number[][]; rings: number[][][] }>();
   private meta: Pick<AirspaceFile, 'source' | 'url' | 'license' | 'release'> | null = null;
   private loading: Promise<void> | null = null;
   private groups: Group[] = [];
@@ -106,8 +108,8 @@ export class AirspaceModule implements MapModule {
       const fc = (await fetch('data/airspace.json').then((r) => r.json())) as AirspaceFile;
       this.meta = { source: fc.source, url: fc.url, license: fc.license, release: fc.release };
       for (const f of fc.features) {
-        const coords = f.geometry.type === 'Polygon' ? f.geometry.coordinates.flat() : f.geometry.coordinates.flat(2);
-        this.features.set(f.properties.id, { props: f.properties, coords });
+        const rings = f.geometry.type === 'Polygon' ? f.geometry.coordinates : f.geometry.coordinates.flat();
+        this.features.set(f.properties.id, { props: f.properties, coords: rings.flat(), rings });
       }
       const { map } = ctx;
       map.addSource('airspace', { type: 'geojson', data: fc });
@@ -131,6 +133,7 @@ export class AirspaceModule implements MapModule {
         },
         'areas',
       );
+      ctx.addLayer({ id: 'airspace-hit', type: 'line', source: 'airspace', paint: { 'line-color': '#000', 'line-opacity': 0.001, 'line-width': 14 } }, 'areas');
       ctx.addLayer(
         {
           id: 'airspace-label',
@@ -173,6 +176,24 @@ export class AirspaceModule implements MapModule {
     else if (this.features.size) this.refresh();
   }
 
+  /** Zones (of the families shown) containing a point, lowest floor first. */
+  at(lon: number, lat: number): AirspaceProps[] {
+    if (!this.groups.length) return [];
+    const inside = (ring: number[][]) => {
+      let c = false;
+      for (let i = 0, j = ring.length - 1; i < ring.length; j = i++) {
+        const [xi, yi] = ring[i];
+        const [xj, yj] = ring[j];
+        if (yi > lat !== yj > lat && lon < ((xj - xi) * (lat - yi)) / (yj - yi) + xi) c = !c;
+      }
+      return c;
+    };
+    return [...this.features.values()]
+      .filter((f) => this.groups.includes(f.props.group) && f.rings.some(inside))
+      .map((f) => f.props)
+      .sort((a, b) => a.floorM - b.floorM);
+  }
+
   describe(id: string): FeatureDetails | null {
     const f = this.features.get(id);
     if (!f) return null;
@@ -199,6 +220,7 @@ export class AirspaceModule implements MapModule {
         { label: 'SIA : cartes et SUP AIP', url: 'https://www.sia.aviation-civile.gouv.fr/' },
       ],
       bbox: bboxOf(f.coords),
+      explain: EXPLAIN.airspace,
       attribution: this.meta?.license ? `${this.meta.source} · ${this.meta.license}` : undefined,
     };
   }

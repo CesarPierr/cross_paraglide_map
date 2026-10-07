@@ -1,6 +1,6 @@
 import type { Atlas, AtlasMassif, FeatureCategory } from '@brises/shared';
 import { compassFr } from '@brises/model';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { activeInSlot } from '../map/modules/schema';
 import type { FeatureDetails } from '../map/modules/types';
 import { BREEZE_COLORS, COLORS } from '../map/palette';
@@ -10,6 +10,7 @@ import { FeedbackBar, startDraft } from './Feedback';
 import { FigureGallery } from './Figures';
 import { IconBack, IconMountain, IconPlus, IconSearch, IconTarget } from './icons';
 import { SheetHandle, showBrowse, useIsMobile } from './mobile';
+import { RoutesBrowser } from './Routes';
 import { RichText, SourceList } from './Sources';
 
 /** Opens the schematic all-in-one view of a massif. */
@@ -50,6 +51,19 @@ function openFeature(ref: string) {
   c?.flyToBbox(d.bbox);
 }
 
+/** What the phenomenon is, in plain words: open for beginners, one tap away for the others. */
+function Explain({ text }: { text: string }) {
+  const level = useApp((s) => s.level);
+  const [open, setOpen] = useState(level === 'decouverte');
+  return open ? (
+    <p className="explain">{text}</p>
+  ) : (
+    <button className="link-btn explain-toggle" onClick={() => setOpen(true)}>
+      Qu’est-ce que c’est ?
+    </button>
+  );
+}
+
 function FeatureSheet({ f, atlas }: { f: FeatureDetails; atlas: Atlas }) {
   const massif = f.massifId ? atlas.massifs.find((m) => m.id === f.massifId) : undefined;
   const back = () => {
@@ -73,6 +87,7 @@ function FeatureSheet({ f, atlas }: { f: FeatureDetails; atlas: Atlas }) {
         </div>
       )}
       {f.stat && <p className="big-stat">{f.stat}</p>}
+      {f.explain && <Explain key={f.ref} text={f.explain} />}
       {f.details && f.details.length > 0 && (
         <dl className="details">
           {f.details.map(([k, v]) => (
@@ -99,6 +114,21 @@ function FeatureSheet({ f, atlas }: { f: FeatureDetails; atlas: Atlas }) {
           </a>
         ))}
       </div>
+      {f.ref.startsWith('atlas:') && atlas.features.routes.some((r) => r.properties.id === f.ref.slice(6)) && (
+        <button
+          className="btn small primary"
+          onClick={() => {
+            const r = atlas.features.routes.find((x) => x.properties.id === f.ref.slice(6))!;
+            useRuntime.getState().set({
+              feature: null,
+              plan: { points: r.geometry.coordinates as [number, number][], names: (r.properties.details?.Points ?? '').split(' → '), picking: false, title: r.properties.name },
+            });
+            useApp.getState().set({ browseTab: 'routes', schemaMassif: null, selectedMassif: null, browseOpen: true });
+          }}
+        >
+          Lire tronçon par tronçon
+        </button>
+      )}
       {f.ref.startsWith('atlas:') && <FigureGallery atlas={atlas} featureId={f.ref.slice(6)} title="Figures d’origine" />}
       {f.sourceIds && <SourceList ids={f.sourceIds} atlas={atlas} />}
       {f.attribution && <p className="muted small" dangerouslySetInnerHTML={{ __html: f.attribution }} />}
@@ -133,11 +163,7 @@ function MassifSheet({ m, atlas }: { m: AtlasMassif; atlas: Atlas }) {
       <p className="eyebrow">{m.region}</p>
       <h2>{m.shortName}</h2>
       {m.name !== m.shortName && <p className="subtitle">{m.name}</p>}
-      {m.summary && (
-        <p className="summary">
-          <RichText text={m.summary} atlas={atlas} order={m.sources} />
-        </p>
-      )}
+      {m.summary && <Summary text={m.summary} atlas={atlas} order={m.sources} />}
       <div className="sheet-actions">
         <button className="btn small primary" onClick={() => openSchema(m.id)}>
           <IconSchema /> Vue schéma
@@ -215,6 +241,25 @@ function MassifSheet({ m, atlas }: { m: AtlasMassif; atlas: Atlas }) {
       <SourceList ids={m.sources} atlas={atlas} limit={6} title="Sources du massif" />
       <FeedbackBar key={m.id} targetRef={`massif:${m.id}`} title={m.shortName} />
     </article>
+  );
+}
+
+/** Sector summary: the first sentences, the rest one tap away. */
+function Summary({ text, atlas, order }: { text: string; atlas: Atlas; order: string[] }) {
+  const [open, setOpen] = useState(false);
+  const short = text.match(/^(?:[^.!?]+[.!?]+\s*){1,3}/)?.[0]?.trim() ?? text;
+  const folded = !open && short.length < text.length - 20;
+  return (
+    <div className="summary">
+      <p>
+        <RichText text={folded ? short : text} atlas={atlas} order={order} />
+      </p>
+      {folded && (
+        <button className="link-btn" onClick={() => setOpen(true)}>
+          Lire la suite
+        </button>
+      )}
+    </div>
   );
 }
 
@@ -326,11 +371,7 @@ function SchemaPanel({ m, atlas }: { m: AtlasMassif; atlas: Atlas }) {
           <i className="sw-line dotted" style={{ background: COLORS.route }} /> transition
         </span>
       </div>
-      {m.summary && (
-        <p className="summary">
-          <RichText text={m.summary} atlas={atlas} order={m.sources} />
-        </p>
-      )}
+      {m.summary && <Summary text={m.summary} atlas={atlas} order={m.sources} />}
       <SchemaBlock title={`Brises ${slot.label.toLowerCase()}`} count={active.length}>
         {active.map((b) => (
           <SchemaItem
@@ -496,13 +537,19 @@ function MassifBrowser({ atlas }: { atlas: Atlas }) {
 export function Sidebar() {
   const atlas = useRuntime((r) => r.atlas);
   const feature = useRuntime((r) => r.feature);
-  const { selectedMassif, schemaMassif, browseOpen, mobileSheet } = useApp();
+  const { selectedMassif, schemaMassif, browseOpen, mobileSheet, browseTab } = useApp();
   const mobile = useIsMobile();
   const massif = atlas?.massifs.find((m) => m.id === selectedMassif);
   const schema = atlas?.massifs.find((m) => m.id === schemaMassif);
   const open = mobile ? mobileSheet === 'browse' : browseOpen || !!feature || !!schema || !!massif;
+  // A new sheet starts at its top.
+  const ref = useRef<HTMLElement>(null);
+  const contentKey = feature?.ref ?? (schema ? `schema:${schema.id}` : massif ? `massif:${massif.id}` : `browse:${browseTab}`);
+  useEffect(() => {
+    ref.current?.scrollTo({ top: 0 });
+  }, [contentKey]);
   return (
-    <aside className={`sidebar panel ${open ? '' : 'collapsed'}`} aria-label="Massifs et connaissances locales">
+    <aside ref={ref} className={`sidebar panel ${open ? '' : 'collapsed'}`} aria-label="Massifs et connaissances locales">
       {mobile ? (
         <SheetHandle />
       ) : (
@@ -532,7 +579,17 @@ export function Sidebar() {
       ) : massif ? (
         <MassifSheet m={massif} atlas={atlas} />
       ) : (
-        <MassifBrowser atlas={atlas} />
+        <>
+          <div className="seg browse-tabs" role="tablist" aria-label="Parcourir">
+            <button role="tab" aria-selected={browseTab === 'massifs'} className={browseTab === 'massifs' ? 'on' : ''} onClick={() => useApp.getState().set({ browseTab: 'massifs' })}>
+              Massifs
+            </button>
+            <button role="tab" aria-selected={browseTab === 'routes'} className={browseTab === 'routes' ? 'on' : ''} onClick={() => useApp.getState().set({ browseTab: 'routes' })}>
+              Itinéraires
+            </button>
+          </div>
+          {browseTab === 'routes' ? <RoutesBrowser atlas={atlas} /> : <MassifBrowser atlas={atlas} />}
+        </>
       )}
     </aside>
   );

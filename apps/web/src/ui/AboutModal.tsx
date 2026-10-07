@@ -20,6 +20,14 @@ export function AboutModal() {
         <IconClose size={18} />
       </button>
       <h2 id="about-title">Brises des Alpes</h2>
+      <button
+        className="btn small"
+        onClick={() => {
+          set({ aboutOpen: false, welcomeOpen: true });
+        }}
+      >
+        Revoir l’accueil et les parcours
+      </button>
       <p className="lead">Explorer comment le relief, le soleil et le vent météo dessinent les brises, les convergences et les zones porteuses des Alpes françaises.</p>
       <p className="note">
         <b>Outil pédagogique, pas une prévision.</b> Le vent affiché vient d’un modèle conceptuel (relief, soleil, connaissances locales publiées). Il ne remplace ni la

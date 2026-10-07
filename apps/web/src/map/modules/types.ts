@@ -47,6 +47,8 @@ export interface FeatureDetails {
   /** Explicit links (external directories). */
   links?: { label: string; url: string }[];
   warning?: string;
+  /** Plain-language explanation of the phenomenon (shown first to beginners). */
+  explain?: string;
   /** For "fly to" and the massif back-link. */
   bbox: [number, number, number, number];
   massifId?: string;

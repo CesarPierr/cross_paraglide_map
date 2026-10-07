@@ -6,6 +6,7 @@ import { IconHelp, IconMenu } from './ui/icons';
 import { MobileDock, useIsMobile } from './ui/mobile';
 import { NavPad } from './ui/NavPad';
 import { MassifTour } from './ui/Tour';
+import { Welcome } from './ui/Welcome';
 import { SCHEMA_PHASES } from './state/store';
 import { SearchBox } from './ui/Search';
 import { Legend } from './ui/Legend';
@@ -155,7 +156,20 @@ export default function App() {
       <MapView />
       <header className="topbar panel">
         {!mobile && (
-          <button className={`icon-btn ${browseOpen ? 'on' : ''}`} onClick={() => set({ browseOpen: !browseOpen })} aria-label="Liste des massifs" title="Massifs">
+          <button
+            className={`icon-btn ${browseOpen ? 'on' : ''}`}
+            onClick={() => {
+              // From a sheet: back to the list; from the list: close it.
+              const listShown = browseOpen && !feature && !schemaMassif && !selectedMassif;
+              if (listShown) set({ browseOpen: false });
+              else {
+                useRuntime.getState().set({ feature: null });
+                set({ browseOpen: true, selectedMassif: null, schemaMassif: null, tourStep: null });
+              }
+            }}
+            aria-label="Massifs et itinéraires"
+            title="Massifs"
+          >
             <IconMenu />
           </button>
         )}
@@ -191,6 +205,7 @@ export default function App() {
       <NavPad />
       <SchemaBanner />
       <MassifTour />
+      <Welcome />
       <ProbeCard />
       <ContributionPanel />
       <AboutModal />

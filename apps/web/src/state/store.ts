@@ -1,5 +1,6 @@
 import type { Atlas, ContributionInput } from '@brises/shared';
 import { create } from 'zustand';
+import type { Level } from '../glossary';
 import type { PowerMode } from '../map/frame-pacer';
 import type { OverlayMode } from '../engine/cpu-overlays';
 import type { FeatureDetails } from '../map/modules/types';
@@ -83,8 +84,32 @@ export interface AppState {
   browseOpen: boolean;
   mobileSheet: MobileSheet;
   aboutOpen: boolean;
+  /** Level of detail chosen on the welcome card (remembered in this browser). */
+  level: Level;
+  welcomeOpen: boolean;
+  /** Left panel tab: sectors or cross-country routes. */
+  browseTab: 'massifs' | 'routes';
   set: (patch: Partial<AppState>) => void;
   toggleLayer: (key: LayerKey) => void;
+}
+
+/** Per-browser convenience settings (never required: the app works without storage). */
+function remembered<T extends string, D>(key: string, allowed: readonly T[], fallback: D): T | D {
+  try {
+    const v = localStorage.getItem(key);
+    if (v && (allowed as readonly string[]).includes(v)) return v as T;
+  } catch {
+    // Storage unavailable: default.
+  }
+  return fallback;
+}
+
+export function remember(key: string, value: string): void {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    // Not persisted: still applied for this visit.
+  }
 }
 
 const isSmall = typeof window !== 'undefined' && window.matchMedia?.('(max-width: 860px)').matches;
@@ -143,6 +168,9 @@ export const useApp = create<AppState>((set) => ({
   browseOpen: false,
   mobileSheet: 'none',
   aboutOpen: false,
+  level: remembered('brises.level', ['decouverte', 'pilote', 'expert'] as const, 'pilote'),
+  welcomeOpen: remembered('brises.welcomed', ['1'] as const, null) === null,
+  browseTab: 'massifs',
   set: (patch) => set(patch),
   toggleLayer: (key) => set((s) => ({ layers: { ...s.layers, [key]: !s.layers[key] } })),
 }));
@@ -171,6 +199,8 @@ export interface RuntimeState {
   probe: { lon: number; lat: number; result: ProbeResult | null } | null;
   feature: FeatureDetails | null;
   draft: ContributionDraft | null;
+  /** Route being planned or highlighted: turn points and whether map clicks add points. */
+  plan: { points: [number, number][]; names: string[]; picking: boolean; title?: string } | null;
   toast: string | null;
   set: (patch: Partial<RuntimeState>) => void;
 }
@@ -185,6 +215,7 @@ export const useRuntime = create<RuntimeState>((set) => ({
   probe: null,
   feature: null,
   draft: null,
+  plan: null,
   toast: null,
   set: (patch) => set(patch),
 }));

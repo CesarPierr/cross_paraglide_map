@@ -7,6 +7,7 @@
  * moving), R/F tilt, +/− zoom, N north, Échap leaves the schema view.
  */
 import { useEffect, useRef, useState } from 'react';
+import { useApp } from '../state/store';
 import { getController } from './controller-ref';
 import { useIsMobile } from './mobile';
 
@@ -123,6 +124,7 @@ const Arrow = ({ r }: { r: number }) => (
 
 export function NavPad() {
   const motion = useMotion();
+  const touring = useApp((s) => s.tourStep !== null);
   const mobile = useIsMobile();
   const [open, setOpen] = useState(!mobile);
   const [help, setHelp] = useState(false);
@@ -159,6 +161,8 @@ export function NavPad() {
     };
   }, [motion]);
 
+  // The guided visit drives the camera: the pad steps aside.
+  if (touring) return null;
   return (
     <div className={`navpad panel ${open ? 'open' : ''}`} aria-label="Navigation">
       {open && (

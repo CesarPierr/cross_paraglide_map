@@ -10,6 +10,7 @@ import type { AtlasFeature, FeatureCategory } from '@brises/shared';
 import type { ExpressionSpecification, FilterSpecification, GeoJSONSource, Map as MlMap } from 'maplibre-gl';
 import { SCHEMA_PHASES, type AppState, type SchemaPhase } from '../../state/store';
 import { BREEZE_COLORS, COLORS } from '../palette';
+import { shortLabel } from './knowledge';
 import type { FeatureDetails, MapModule, ModuleContext } from './types';
 
 const LAYERS = [
@@ -377,14 +378,14 @@ export class SchemaModule implements MapModule {
         const own = p.massif === massifId;
         if (!own && !inBox(f)) continue;
         if (cat === 'breezes' && !activeInSlot(p.windowStart, p.windowEnd, slot)) continue;
-        let label = p.name;
-        if (cat === 'breezes') label = `${p.name} · ${p.speedKmh ?? '?'} km/h`;
+        let label = shortLabel(p.name);
+        if (cat === 'breezes') label = `${shortLabel(p.name)} · ${p.speedKmh ?? '?'} km/h`;
         else if (cat === 'thermals') {
           const role = thermalRole(p.description);
-          label = [p.name, role && `${role === 'plafond' ? '▲' : role === 'relance' ? '↻' : '◆'} ${role}`, p.details?.Heures].filter(Boolean).join(' · ');
+          label = [shortLabel(p.name), role && `${role === 'plafond' ? '▲' : role === 'relance' ? '↻' : '◆'} ${role}`, p.details?.Heures].filter(Boolean).join(' · ');
         }
-        else if (cat === 'takeoffs' && p.details?.Orientation) label = `${p.name} · ${p.details.Orientation}`;
-        else if (cat === 'routes' && p.details?.Distance) label = `${p.name} · ${p.details.Distance}`;
+        else if (cat === 'takeoffs' && p.details?.Orientation) label = `${shortLabel(p.name)} · ${p.details.Orientation}`;
+        else if (cat === 'routes' && p.details?.Distance) label = `${shortLabel(p.name)} · ${p.details.Distance}`;
         out.push({
           type: 'Feature',
           geometry: f.geometry,

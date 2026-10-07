@@ -61,7 +61,7 @@ function effectiveState(s: AppState): AppState {
     return { ...s, overlay: 'none', layers: { ...s.layers, ...Object.fromEntries([...LIVE_ONLY, 'sitesOfficial', 'airspace', 'airspaceProtect', 'airspaceActivity'].map((k) => [k, false])) } };
   if (!s.schemaMassif) return s;
   const off = LIVE_ONLY.filter((k) => !SCHEMA_KEEP.includes(k) && !(s.schemaWind && k === 'particles'));
-  return { ...s, exaggeration: s.schema3d ? s.exaggeration : 0, overlay: 'none', layers: { ...s.layers, ...Object.fromEntries(off.map((k) => [k, false])) } };
+  return { ...s, exaggeration: s.schema3d ? s.exaggeration : 0, overlay: 'none', layers: { ...s.layers, ...Object.fromEntries([...off, 'airspace', 'airspaceProtect', 'airspaceActivity'].map((k) => [k, false])) } };
 }
 
 export class MapController {
@@ -69,6 +69,7 @@ export class MapController {
   private modules: MapModule[] = [];
   private wind: WindModule | null = null;
   private knowledge: KnowledgeModule | null = null;
+  private airspace: AirspaceModule | null = null;
   private state: AppState | null = null;
   private prevApplied: AppState | null = null;
   private ready = false;
@@ -149,7 +150,8 @@ export class MapController {
         (id) => knowledge.describe(id),
         (id) => this.events.onPickMassif(id),
       );
-      this.modules = [new ReliefModule(), new Kk7Module(), new AirspaceModule(), this.knowledge, schema, new SitesModule(this.data.siteProviders()), new LabelsModule(), this.wind];
+      this.airspace = new AirspaceModule();
+      this.modules = [new ReliefModule(), new Kk7Module(), this.airspace, this.knowledge, schema, new SitesModule(this.data.siteProviders()), new LabelsModule(), this.wind];
       for (const m of this.modules) if (m !== this.wind) await m.add(ctx);
       this.ready = true;
       if (this.state) this.applyAll(this.state, null);
@@ -258,6 +260,11 @@ export class MapController {
     this.events.onProbe(null);
   }
 
+  /** Airspaces of the shown families above a point (for the probe). */
+  airspacesAt(lon: number, lat: number) {
+    return this.airspace?.at(lon, lat) ?? [];
+  }
+
   // ---------- Navigation ----------
 
   describe(ref: string): FeatureDetails | null {
@@ -280,6 +287,41 @@ export class MapController {
         duration: 2200,
         maxZoom: opts.maxZoom ?? 12.5,
       },
+    );
+  }
+
+  /** Draws a route (planned or highlighted): line, numbered turn points. */
+  setRoute(points: [number, number][]): void {
+    const map = this.map;
+    const data: GeoJSON.FeatureCollection = {
+      type: 'FeatureCollection',
+      features: [
+        ...(points.length > 1 ? [{ type: 'Feature' as const, geometry: { type: 'LineString' as const, coordinates: points }, properties: {} }] : []),
+        ...points.map((p, i) => ({ type: 'Feature' as const, geometry: { type: 'Point' as const, coordinates: p }, properties: { n: String(i + 1) } })),
+      ],
+    };
+    const src = map.getSource('route-plan') as { setData?: (d: GeoJSON.FeatureCollection) => void } | undefined;
+    if (src?.setData) {
+      src.setData(data);
+      return;
+    }
+    map.addSource('route-plan', { type: 'geojson', data } as SourceSpecification);
+    map.addLayer({ id: 'route-plan-casing', type: 'line', source: 'route-plan', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#1e1b4b', 'line-width': 7, 'line-opacity': 0.7 } }, slotMarker('labels'));
+    map.addLayer({ id: 'route-plan-line', type: 'line', source: 'route-plan', layout: { 'line-cap': 'round', 'line-join': 'round' }, paint: { 'line-color': '#fde68a', 'line-width': 3.5 } }, slotMarker('labels'));
+    map.addLayer(
+      { id: 'route-plan-pt', type: 'circle', source: 'route-plan', filter: ['==', ['geometry-type'], 'Point'], paint: { 'circle-radius': 10, 'circle-color': '#fde68a', 'circle-stroke-color': '#1e1b4b', 'circle-stroke-width': 2 } },
+      slotMarker('labels'),
+    );
+    map.addLayer(
+      {
+        id: 'route-plan-n',
+        type: 'symbol',
+        source: 'route-plan',
+        filter: ['==', ['geometry-type'], 'Point'],
+        layout: { 'text-field': ['get', 'n'], 'text-font': ['Noto Sans Bold'], 'text-size': 11, 'text-allow-overlap': true },
+        paint: { 'text-color': '#1e1b4b' },
+      },
+      slotMarker('labels'),
     );
   }
 

@@ -37,13 +37,16 @@ watch(page);
 const shot = (name: string) => page.screenshot({ path: `${out}/${name}.png` });
 await page.goto(`${url}#9.4/45.3/5.9/-10/50`, { waitUntil: 'domcontentloaded' });
 await ready(page);
-await shot('d01-home');
-
-await page.getByRole('button', { name: 'Vue schéma' }).click();
+await shot('d00-welcome');
+await page.locator('.welcome').getByRole('radio', { name: /Je fais du cross/ }).click();
+await page.locator('.welcome').getByRole('button', { name: /Découvrir un massif/ }).click();
 await page.waitForTimeout(2500);
 await shot('d02-picker');
+await page.locator('.schema-banner').getByRole('button', { name: 'Annuler' }).click();
+await page.waitForTimeout(1500);
+await shot('d01-home');
 
-await page.getByTitle('Massifs').click();
+await page.getByTitle('Massifs', { exact: true }).click();
 await page.getByRole('button', { name: 'Vue schéma : Chartreuse' }).click();
 await page.waitForTimeout(3500);
 await shot('d03-schema');
@@ -66,15 +69,44 @@ await page.locator('.tour').getByRole('button', { name: 'Quitter la présentatio
 await page.locator('.schema-banner').getByRole('button', { name: 'Vue live' }).click();
 await page.waitForTimeout(2500);
 
-await page.mouse.click(800, 500);
+// An empty spot of the Grésivaudan floor (no marker): the probe and nearby sources.
+await page.evaluate('location.hash = "#12.2/45.27/5.86/0/0"');
+await page.waitForTimeout(3500);
+await page.mouse.click(760, 470);
 await page.waitForTimeout(2500);
 await shot('d07-probe');
+if (await page.locator('.probe-card .close').count()) await page.locator('.probe-card .close').click();
+await page.evaluate('location.hash = "#9.4/45.3/5.9/-10/50"');
+await page.waitForTimeout(2000);
+
+// Routes: documented route read leg by leg, then a traced one.
+await page.getByTitle('Massifs', { exact: true }).click();
+await page.getByRole('tab', { name: 'Itinéraires' }).click();
+await page.waitForTimeout(500);
+await shot('d08-routes');
+await page.locator('.browser .region li button').first().click();
+await page.waitForTimeout(3000);
+await shot('d09-route-legs');
+await page.getByRole('button', { name: 'Fermer l’itinéraire' }).click();
+await page.getByRole('button', { name: 'Tracer mon itinéraire' }).click();
+for (const [x, y] of [
+  [600, 420],
+  [700, 380],
+  [820, 450],
+])
+  await page.mouse.click(x, y);
+await page.waitForTimeout(1500);
+await shot('d10-plan');
+await page.close();
 
 // ---------- Phone ----------
 const phone = await browser.newPage({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, deviceScaleFactor: 2 });
 watch(phone);
 await phone.goto(`${url}#9.4/45.3/5.9/-10/50`, { waitUntil: 'domcontentloaded' });
 await ready(phone);
+await phone.screenshot({ path: `${out}/m00-welcome.png` });
+await phone.getByRole('button', { name: 'Juste explorer la carte' }).click();
+await phone.waitForTimeout(1000);
 await phone.screenshot({ path: `${out}/m01-home.png` });
 await phone.locator('.mobile-dock').getByRole('button', { name: /Massifs/ }).click();
 await phone.waitForTimeout(800);

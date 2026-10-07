@@ -8,6 +8,7 @@ import type { AtlasFeature, FeatureCategory } from '@brises/shared';
 import { windowActivity } from '@brises/model';
 import type { AppState, LayerKey } from '../../state/store';
 import { CATEGORY_LABELS, CONFIDENCE_LABELS, KIND_LABELS } from '@brises/shared';
+import { EXPLAIN } from '../../glossary';
 import { BREEZE_COLORS, COLORS } from '../palette';
 import { bboxOf, type FeatureDetails, type MapModule, type ModuleContext } from './types';
 
@@ -23,6 +24,13 @@ const GROUPS: Partial<Record<LayerKey, string[]>> = {
   labels: ['massif-labels'],
 };
 
+/** Short map label: no parenthetical, cut at a dash or comma, at most ~30 characters. */
+export function shortLabel(name: string): string {
+  let t = name.replace(/\s*\([^)]*\)/g, '').trim();
+  if (t.length > 30) t = t.split(/\s[–—-]\s|,|:/)[0].trim();
+  return t.length > 32 ? `${t.slice(0, 30).trimEnd()}…` : t || name;
+}
+
 export class KnowledgeModule implements MapModule {
   readonly id = 'atlas';
   readonly clickableLayers = ['breezes-hit', 'convergences-line', 'convergences-point', 'hazards', 'thermals', 'soaring', 'takeoffs', 'landings', 'routes-line'];
@@ -33,8 +41,11 @@ export class KnowledgeModule implements MapModule {
     this.ctx = ctx;
     const { map, atlas } = ctx;
     for (const list of Object.values(atlas.features)) for (const f of list) this.index.set(f.properties.id, f);
-    for (const cat of Object.keys(atlas.features) as FeatureCategory[])
-      map.addSource(cat, { type: 'geojson', data: { type: 'FeatureCollection', features: atlas.features[cat] } as GeoJSON.FeatureCollection });
+    for (const cat of Object.keys(atlas.features) as FeatureCategory[]) {
+      // Map labels use a short name; the full one stays in the sheet.
+      const features = atlas.features[cat].map((f) => ({ ...f, properties: { ...f.properties, label: shortLabel(f.properties.name) } }));
+      map.addSource(cat, { type: 'geojson', data: { type: 'FeatureCollection', features } as GeoJSON.FeatureCollection });
+    }
     map.addSource('massif-labels', {
       type: 'geojson',
       data: {
@@ -164,7 +175,7 @@ export class KnowledgeModule implements MapModule {
             'icon-image': icon,
             'icon-size': ['interpolate', ['linear'], ['zoom'], 7, 0.55, 12, 0.95],
             'icon-allow-overlap': true,
-            'text-field': ['step', ['zoom'], '', 11, ['get', 'name']],
+            'text-field': ['step', ['zoom'], '', 11, ['get', 'label']],
             'text-font': ['Noto Sans Regular'],
             'text-size': 11,
             'text-offset': [0, 1.3],
@@ -191,7 +202,7 @@ export class KnowledgeModule implements MapModule {
         minzoom: 10,
         layout: {
           'symbol-placement': 'line-center',
-          'text-field': ['concat', ['get', 'name'], '  ', ['to-string', ['get', 'speedKmh']], ' km/h'],
+          'text-field': ['concat', ['get', 'label'], '  ', ['to-string', ['get', 'speedKmh']], ' km/h'],
           'text-font': ['Noto Sans Bold'],
           'text-size': 11,
           'text-offset': [0, -1.1],
@@ -207,7 +218,7 @@ export class KnowledgeModule implements MapModule {
         type: 'symbol',
         source: 'routes',
         minzoom: 9,
-        layout: { 'symbol-placement': 'line-center', 'text-field': ['get', 'name'], 'text-font': ['Noto Sans Italic'], 'text-size': 11, 'text-offset': [0, -1] },
+        layout: { 'symbol-placement': 'line-center', 'text-field': ['get', 'label'], 'text-font': ['Noto Sans Italic'], 'text-size': 11, 'text-offset': [0, -1] },
         paint: { 'text-color': '#fef3c7', 'text-halo-color': 'rgba(30,20,0,0.85)', 'text-halo-width': 1.3 },
       },
       'labels',
@@ -278,6 +289,7 @@ export class KnowledgeModule implements MapModule {
       warning: p.coordQuality && p.coordQuality !== 'source' ? 'Position estimée à partir de descriptions : à vérifier sur la fiche FFVL avant usage.' : undefined,
       bbox: bboxOf(coords),
       massifId: p.massif,
+      explain: (p.kind && EXPLAIN[p.kind]) || EXPLAIN[p.category],
     };
   }
 }

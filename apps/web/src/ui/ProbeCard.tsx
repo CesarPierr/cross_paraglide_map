@@ -104,6 +104,36 @@ function PointForecastBlock({ lon, lat }: { lon: number; lat: number }) {
   );
 }
 
+/** Airspaces above the probed point (only when an airspace family is shown). */
+function AirspacesHere({ lon, lat }: { lon: number; lat: number }) {
+  useApp((s) => s.layers.airspace || s.layers.airspaceProtect || s.layers.airspaceActivity);
+  const zones = getController()?.airspacesAt(lon, lat) ?? [];
+  if (!zones.length) return null;
+  return (
+    <section className="nearby">
+      <p className="nearby-title">Espaces aériens au-dessus de ce point</p>
+      <ul>
+        {zones.slice(0, 5).map((z) => (
+          <li key={z.id}>
+            <button
+              className="nearby-item"
+              onClick={() => {
+                const d = getController()?.describe(`airspace:${z.id}`);
+                if (d) useRuntime.getState().set({ feature: d });
+              }}
+            >
+              <span className="nearby-name">{z.name}</span>
+              <span className="nearby-km">
+                {z.floor.replace(/ \(.*\)/, '')} → {z.ceiling.replace(/ \(.*\)/, '')}
+              </span>
+            </button>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
 export function ProbeCard() {
   const probe = useRuntime((r) => r.probe);
   const { heightMode, heightAgl, heightAsl, synopticKmh } = useApp();
@@ -178,6 +208,7 @@ export function ProbeCard() {
           </div>
         </>
       )}
+      <AirspacesHere lon={probe.lon} lat={probe.lat} />
       <NearbySources lon={probe.lon} lat={probe.lat} />
       <PointForecastBlock lon={probe.lon} lat={probe.lat} />
       <button className="link-btn add-here" onClick={() => startDraft({ kind: 'new', points: [[probe.lon, probe.lat]] })}>

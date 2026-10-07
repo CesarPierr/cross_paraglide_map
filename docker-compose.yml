@@ -1,0 +1,42 @@
+# Production-like stack: PostGIS + API + static front behind Nginx.
+#   cp .env.example .env && docker compose up -d --build
+services:
+  db:
+    image: postgis/postgis:16-3.4-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: brises
+      POSTGRES_USER: brises
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U brises -d brises']
+      interval: 10s
+      retries: 6
+
+  api:
+    build: { context: ., dockerfile: deploy/Dockerfile.api }
+    restart: unless-stopped
+    depends_on:
+      db: { condition: service_healthy }
+    environment:
+      DATABASE_URL: postgres://brises:${POSTGRES_PASSWORD}@db:5432/brises
+      ADMIN_TOKEN: ${ADMIN_TOKEN:?set ADMIN_TOKEN in .env}
+      IP_SALT: ${IP_SALT:?set IP_SALT in .env}
+      CORS_ORIGIN: ${CORS_ORIGIN:-*}
+      WEATHER_DAILY_BUDGET: ${WEATHER_DAILY_BUDGET:-8000}
+      LOG_LEVEL: ${LOG_LEVEL:-info}
+    healthcheck:
+      test: ['CMD-SHELL', 'wget -qO- http://localhost:8080/api/health || exit 1']
+      interval: 30s
+
+  web:
+    build: { context: ., dockerfile: deploy/Dockerfile.web }
+    restart: unless-stopped
+    depends_on: [api]
+    ports:
+      - '${HTTP_PORT:-80}:80'
+
+volumes:
+  db-data:

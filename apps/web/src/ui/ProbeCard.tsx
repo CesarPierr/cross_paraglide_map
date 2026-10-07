@@ -68,7 +68,7 @@ function PointForecastBlock({ lon, lat }: { lon: number; lat: number }) {
   return (
     <div className="forecast">
       <p className="forecast-title">
-        Prévision {h.time.slice(8, 10)}/{h.time.slice(5, 7)} à {fmtHour(h.hour)}
+        Prévision AROME {h.time.slice(8, 10)}/{h.time.slice(5, 7)} à {fmtHour(h.hour)}
       </p>
       <div className="forecast-grid">
         <div>
@@ -76,15 +76,19 @@ function PointForecastBlock({ lon, lat }: { lon: number; lat: number }) {
           <b>{h.cloudBaseM ? `${Math.round(h.cloudBaseM / 50) * 50} m` : '—'}</b>
         </div>
         <div>
-          <span>Couche limite</span>
-          <b>{h.boundaryLayerM ? `${Math.round(h.boundaryLayerM / 50) * 50} m` : '—'}</b>
+          <span title="Épaisseur de la couche convective au-dessus du sol (ECMWF IFS)">Couche limite</span>
+          <b>{h.boundaryLayerM ? `${Math.round(h.boundaryLayerM / 50) * 50} m sol` : '—'}</b>
         </div>
         <div>
           <span>CAPE</span>
           <b>{h.cape !== undefined ? `${Math.round(h.cape)} J/kg` : '—'}</b>
         </div>
         <div>
-          <span>Vent crêtes</span>
+          <span title="Altitude de l’isotherme 0 °C (ECMWF IFS)">Isotherme 0°</span>
+          <b>{h.freezingLevelM ? `${Math.round(h.freezingLevelM / 100) * 100} m` : '—'}</b>
+        </div>
+        <div>
+          <span title="Moyenne vectorielle 850/700 hPa (Météo-France)">Vent crêtes</span>
           <b>{h.synoptic ? `${compassFr(h.synoptic.fromDeg)} ${h.synoptic.speedKmh} km/h` : '—'}</b>
         </div>
       </div>

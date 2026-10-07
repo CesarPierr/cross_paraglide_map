@@ -1,0 +1,21 @@
+# --- build ---
+FROM node:22-alpine AS build
+WORKDIR /repo
+COPY package.json package-lock.json ./
+COPY packages ./packages
+COPY apps/api ./apps/api
+COPY apps/web/package.json ./apps/web/package.json
+RUN npm ci --workspaces --include-workspace-root=false --ignore-scripts \
+ && npm run build -w @brises/api
+
+# --- runtime: bundle + the only external runtime dependency ---
+FROM node:22-alpine
+WORKDIR /app
+ENV NODE_ENV=production
+RUN npm init -y >/dev/null && npm install --omit=dev postgres@3 && npm cache clean --force
+COPY --from=build /repo/apps/api/dist ./dist
+COPY apps/web/public/data/atlas.json ./seed/atlas.json
+USER node
+EXPOSE 8080
+ENV SEED_ATLAS=/app/seed/atlas.json SEED_SITES=/app/seed/sites-ffvl.json
+CMD ["node", "dist/main.js"]

@@ -9,7 +9,8 @@
  * - writes a QA report (docs/DATA_QA.md).
  */
 import { readdirSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
-import { join } from 'node:path';
+import { join, resolve } from 'node:path';
+import { pathToFileURL } from 'node:url';
 import type { CuratedBreezeInput } from '@brises/model';
 import type { Atlas, AtlasFeature, AtlasFeatureProps, AtlasMassif, AtlasSource, FeatureCategory, ModelRule } from '@brises/shared';
 import { analyseTerrain, type Terrain } from '@brises/model';
@@ -17,6 +18,12 @@ import { loadDem } from '@brises/model/node';
 
 const ROOT = process.cwd();
 const RESEARCH = join(ROOT, 'research_notes', 'Brises des Alpes françaises', 'data');
+/**
+ * Extra datasets following the same contract (research_notes/<…>/_schema.md),
+ * e.g. a complementary collection: `npm run data:build -- data/extra-collection`
+ * or BRISES_DATA_DIRS=dir1:dir2. Massifs sharing an id are merged.
+ */
+const EXTRA_DIRS = [...process.argv.slice(2), ...(process.env.BRISES_DATA_DIRS ?? '').split(':')].filter(Boolean).map((d) => resolve(ROOT, d));
 
 // ---------- Raw research types (lenient: researchers sometimes add fields) ----------
 interface RawPoint {
@@ -491,9 +498,13 @@ function main() {
   const { grid, elevation } = loadDem(ROOT);
   const terrain = analyseTerrain(grid, elevation);
 
-  const files = readdirSync(RESEARCH)
-    .filter((f) => f.endsWith('.json'))
-    .sort((a, b) => REGION_ORDER.indexOf(a.replace('.json', '')) - REGION_ORDER.indexOf(b.replace('.json', '')));
+  const files = [RESEARCH, ...EXTRA_DIRS].flatMap((dir) =>
+    readdirSync(dir)
+      .filter((f) => f.endsWith('.json'))
+      .sort((a, b) => REGION_ORDER.indexOf(a.replace('.json', '')) - REGION_ORDER.indexOf(b.replace('.json', '')))
+      .map((f) => ({ dir, file: f })),
+  );
+  const slugs = new Set<string>();
 
   const sources: Record<string, AtlasSource> = {};
   const urlToId = new Map<string, string>();
@@ -519,10 +530,13 @@ function main() {
     return id;
   };
 
-  for (const file of files) {
-    const slug = file.replace('.json', '');
-    const region = REGION_LABELS[slug] ?? slug;
-    const raw = JSON.parse(readFileSync(join(RESEARCH, file), 'utf8')) as RawFile;
+  for (const { dir, file } of files) {
+    const base = file.replace('.json', '');
+    let slug = base;
+    for (let n = 2; slugs.has(slug); n++) slug = `${base}-${n}`;
+    slugs.add(slug);
+    const region = REGION_LABELS[base] ?? base;
+    const raw = JSON.parse(readFileSync(join(dir, file), 'utf8')) as RawFile;
     // Sources: namespace ids, dedupe by URL.
     const local = new Map<string, string>();
     for (const s of raw.sources ?? []) {
@@ -547,8 +561,10 @@ function main() {
     for (const r of raw.model_rules ?? []) rules.push({ id: r.id, topic: r.topic, rule: r.rule, numbers: r.numbers, sources: mapSources(r.sources) });
 
     for (const m of raw.massifs) {
-      const mid = uniqueId(m.id);
-      const items: AtlasMassif['items'] = { breezes: [], convergences: [], hazards: [], thermals: [], soaring: [], takeoffs: [], landings: [], routes: [] };
+      // A massif already described by another file is completed, not duplicated.
+      const previous = massifs.find((x) => x.id === m.id);
+      const mid = previous ? previous.id : uniqueId(m.id);
+      const items: AtlasMassif['items'] = previous?.items ?? { breezes: [], convergences: [], hazards: [], thermals: [], soaring: [], takeoffs: [], landings: [], routes: [] };
       const allCoords: [number, number][] = [];
       const massifSources = new Set<string>();
       const push = (cat: FeatureCategory, f: AtlasFeature) => {
@@ -742,6 +758,17 @@ function main() {
         : [(bbox[0] + bbox[2]) / 2, (bbox[1] + bbox[3]) / 2]) as [number, number];
       const synoptic = (m.synoptic_effects ?? []).map((s) => ({ wind: s.wind, effect: s.effect, sources: mapSources(s.sources) }));
       synoptic.forEach((s) => s.sources.forEach((x) => massifSources.add(x)));
+      const tips = (m.tips ?? []).map((tip) => tip.replace(/\[(S\d+(?:\s*,\s*S\d+)*)\]/g, (_, g: string) => `[${g.split(/\s*,\s*/).map((s) => local.get(s) ?? s).join(', ')}]`));
+      if (previous) {
+        if (m.summary && !previous.summary.includes(m.summary)) previous.summary = [previous.summary, m.summary].filter(Boolean).join('\n\n');
+        previous.tips.push(...tips.filter((t) => !previous.tips.includes(t)));
+        previous.synoptic.push(...synoptic);
+        previous.sources = [...new Set([...previous.sources, ...massifSources])].filter((s) => sources[s]);
+        if (!m.bbox) continue;
+        const b = previous.bbox;
+        previous.bbox = [Math.min(b[0], bbox[0]), Math.min(b[1], bbox[1]), Math.max(b[2], bbox[2]), Math.max(b[3], bbox[3])].map((v) => Math.round(v * 1e4) / 1e4) as typeof b;
+        continue;
+      }
       massifs.push({
         id: mid,
         name: m.name,
@@ -751,8 +778,8 @@ function main() {
         summary: m.summary ?? '',
         bbox: bbox.map((v) => Math.round(v * 1e4) / 1e4) as [number, number, number, number],
         center: [Math.round(center[0] * 1e4) / 1e4, Math.round(center[1] * 1e4) / 1e4],
-        // Inline [S#] references are region-local: rewrite them to global ids.
-        tips: (m.tips ?? []).map((tip) => tip.replace(/\[(S\d+(?:\s*,\s*S\d+)*)\]/g, (_, g: string) => `[${g.split(/\s*,\s*/).map((s) => local.get(s) ?? s).join(', ')}]`)),
+        // Inline [S#] references are region-local: rewritten to global ids above.
+        tips,
         synoptic,
         items,
         sources: [...massifSources].filter((s) => sources[s]),
@@ -790,4 +817,5 @@ function main() {
   console.log(atlas.stats, `${qa.length} QA warnings`);
 }
 
-main();
+// Run only when executed directly (the helpers above are unit-tested).
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main();

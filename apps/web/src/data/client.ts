@@ -6,7 +6,8 @@
  */
 import { openMeteo, type Atlas, type ContributionInput, type FeedbackSummary, type FlyingSite, type PointForecast, type SiteProvider, type SynopticWind, type WeatherProvider } from '@brises/shared';
 import type { GridMeta } from '@brises/model';
-import { ffvlSites, osmSites, pgeSites } from '../services/sites';
+import { osmSites, pgeSites } from '@brises/shared';
+import { ffvlSites } from '../services/sites';
 
 export interface DataClient {
   readonly mode: 'api' | 'static';

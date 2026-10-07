@@ -5,3 +5,4 @@ export * from './providers';
 export * from './sites';
 export * from './weather';
 export * from './open-meteo';
+export * from './directories';

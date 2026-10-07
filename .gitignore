@@ -7,3 +7,6 @@ test-results
 playwright-report
 /tmp
 *.tsbuildinfo
+apps/api/dist
+.data
+.env

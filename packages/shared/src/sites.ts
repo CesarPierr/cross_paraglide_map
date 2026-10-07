@@ -8,10 +8,10 @@ export function parseOrientations(raw: unknown): string[] {
   if (typeof raw !== 'string' || !raw.trim()) return [];
   const t = raw
     .toUpperCase()
+    .replace(/OUEST/g, 'W')
     .replace(/NORD/g, 'N')
     .replace(/SUD/g, 'S')
     .replace(/EST/g, 'E')
-    .replace(/OUEST/g, 'W')
     .replace(/-/g, '')
     .replace(/\bO\b/g, 'W')
     .replace(/SO\b/g, 'SW')

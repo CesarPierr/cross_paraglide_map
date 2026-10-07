@@ -219,3 +219,56 @@ Au total 32 thermiques créés (Dévoluy 1, Gapençais 1, Buëch 5, Baronnies 10
 - Vieux Chaillol (FFVL 5041) : décollage de sommet à 3163 m pour un vol rando de descente plein sud ; aucun texte ne décrit d'ascendance (le point chaud voisin est documenté en `low`, voir ci-dessus).
 - Cairns d'Orcières (FFVL 208 et 13537) : servis par le nouveau thermique à 2,2 km (la limite de 3 km est respectée).
 - `ffvl14138-gorges-declenchement-thermique` (atterrissage des Gorges, position de la fiche) : conservé.
+
+## Résolution des limites (octobre 2026)
+
+Date : 7 octobre 2026. Les limites de données restantes après l'audit des thermiques (`docs/KK7_CROISEMENT.md`, `docs/POSITIONS.md`, `docs/COUVERTURE.md`) ont été reprises pour Dévoluy, Champsaur, Gap, Buëch, Baronnies, Diois. Aucun identifiant supprimé ni renommé ; chaque correction est notée dans la description de l'élément (« Résolution des limites (octobre 2026) : … »).
+
+### 1. Points chauds forts à 600 m – 1 km d'un thermique documenté
+
+Règle de tri appliquée à chaque cas : le thermique documenté est **recalé** sur le point chaud kk7 quand sa position n'était qu'approximative (ou celle du décollage), que le texte de sa source décrit un relief que le point chaud occupe (la crête, la pente, le relief « qui encadre le col ») et qu'il n'a pas déjà son propre point chaud à moins de 600 m ; sinon le point chaud est une **seconde ascendance**, créée à part, `medium` quand un texte la décrit (fiche FFVL, fil de pilotes, récit), `low` avec « déduction » quand seuls le point chaud et le relief l'indiquent. Les élément créés citent la source kk7 (`thermal.kk7.ch`) et la source du texte rapproché, dans l'ordre. Les points chauds forts à 600 m – 1 km passent de 27 à 0 dans `docs/KK7_CROISEMENT.md`.
+
+- **Les Richards** (`therm-richards`, recalé de 776 m) : la position était celle du décollage FFVL. Le récit CHVD du 31 mars 2021 place la « pompe de service » à droite du décollage après une petite transition ; le point chaud kk7 à 100 % (toutes les heures) est à l'ouest du décollage, un peu plus bas, sur la pente herbeuse décrite par la fiche. Recalé, `approx`.
+- **Col du Noyer** (`therm-noyer`, recalé de 658 m) : les sources parlent des « reliefs qui encadrent le décollage » sans les nommer ; le point chaud kk7 à 94 % est sur l'un d'eux (Tête du Tourneau, à 290 m), à l'est-nord-est du col. Recalé, `approx` ; le col reste le décollage.
+- **Falaises de la Baume Noire** (`baume-noire-milmandre-falaises`, `medium`) : la fiche FFVL de Beauvoisin – col de Milmandre décrit deux étages (falaises à gauche du décollage, puis traversée du col vers la Baume Noire à droite) ; le point chaud à 99 % est à 156 m de la Montagne de Baume Noire (IGN). `therm-milmandre-falaises` garde le décollage.
+- **Buc, pentes du nord** (`buc-pentes-nord-ouest-soir`, `low`) : point chaud à 97 % plus fort le soir que le matin, qui concorde avec la « restitution du soir à Buc » de la journée type de Séderon (Flylaragne) sans la localiser.
+- **Chabre, pentes sud sous les Feignants** (`chabre-pentes-sud-feignants`, `low`) : second point chaud (98 %) de la face sud, à 864 m à l'ouest-sud-ouest de `therm-chabre-crete` (déjà recalée par la construction sur un premier point chaud).
+- **Plan du Devès** (`grun-plan-du-deves`, `low`) : point chaud à 91 % à 939 m du Grun de Saint-Maurice, 600 m plus bas : départ probable de la remontée de la bordure ouest des Écrins que racontent CHVD 2026 et Blues Team 2015.
+
+### 2. Écarts d'altitude (`docs/POSITIONS.md`)
+
+Constat préalable : le relevé d'altitudes IGN demandait les points par lots de 100, or le service d'altimétrie (`data.geopf.fr/altimetrie`) n'est exact que jusqu'à une trentaine de points par requête (testé : lots de 25 et 30 identiques aux requêtes unitaires, lots de 33 et plus décalés de 10 à 110 m, parfois bien plus). 1159 des 1349 valeurs du cache `positions/altitudes_ign.json` étaient décalées ; le cache a été régénéré par lots de 25. Sur les altitudes exactes la liste n'était plus de 16 mais de 17 écarts : quatre faux positifs disparaissaient (Plaines de Poët 878 m pour 880 m, Méruz – Char Marin, Roche Veyrand, Aiguille Grande 76 m), cinq écarts apparaissaient (Manival, Mont Julioz, L'Écureuil et le versant de Peisey-Vallandry, Cuchon). Tous sont tranchés : 0 écart. La règle suivie : on garde la position quand elle est confirmée par un repère indépendant (gare d'arrivée de télésiège OSM, point de ParaglidingEarth, nœud OSM d'un sommet, coordonnées du guide papier) et l'on corrige l'altitude ; on déplace la position quand c'est elle que le repère indépendant contredit.
+
+- **Buc Ouest** (`buc-ouest`) : position de la fiche FFVL 210 (girouette, sur la crête, 1311 m de terrain) conservée ; les 1197 m de la fiche sont, par interprétation, le bas de la montée à pied (« décollage possible tout le long de la montée »). Altitude 1311 m.
+- **Rocher de Beaumont – Ouest** (`beaumont-ouest`) : la fiche FFVL 13658 donne 1600 m, au-dessus de la crête du Rocher (1545 m à OSM) ; position conservée (face ouest), altitude 1517 m. **Cuchon** (`cuchon-sommet`) : position au sommet (2002 m OSM), altitude 1900 → 1981 m.
+- **Plaines de Poët** (`ffvl5114-plaines-de-poet`) : écart artificiel (voir ci-dessus), terrain exact 878 m pour 880 m ; rien à changer.
+
+### 3. Thermiques documentés loin de tout point chaud
+
+Examen des 119 thermiques à plus de 2 km de tout point chaud ≥ 70 % : position contrôlée contre le géocodeur IGN (toponyme à moins de 120 m pour 51 d'entre eux), l'altitude déclarée contre le terrain IGN exact (concordante à 35 m près pour 30 autres) et le relief (croupe, flanc ou creux, orientation). Très peu sont mal placés ; la plupart sont loin des points chauds parce que le site est peu volé, parce que l'ascendance est un plafond ou une relance de haute montagne, ou parce qu'elle vient d'une confluence ou d'une plaine que les traces ne distinguent pas. Le plus proche point chaud ≥ 70 % et la raison sont notés ci-dessous ; un point chaud plus faible (30 à 70 %) à moins de 1 km est mentionné quand il existe.
+
+**Gardés à leur place, avec la raison :**
+
+| Élément | Position vérifiée par | Point chaud ≥ 70 % le plus proche | Pourquoi loin des traces |
+| --- | --- | --- | --- |
+| `devoluy/therm-bure-sud` | toponyme IGN « Pic de Bure » à 14 m | 2,4 km (84 %) | haute montagne (au-dessus de 2600 m : peu de traces) |
+| `devoluy/therm-vacheres-cluse-chaine` | toponyme IGN « Tête de Vachères » à 3 m | 2,6 km (70 %) | site peu volé |
+| `devoluy/therm-chauvet-festre` | altitude déclarée 2021 m concordante avec le terrain IGN (2021 m) | 3,6 km (70 %) | site de vol rando |
+| `gapencais-ceuse/falaise-ceuse` | Pic de Céüse (OSM, 2016 m) ; la falaise s'étend plus au sud | 2,2 km (71 %) | site peu volé |
+| `gapencais-ceuse/therm-malaup` | toponyme IGN « Malaup » à 11 m | 6,2 km (77 %) | site peu volé |
+| `gapencais-ceuse/therm-bure-gap` | toponyme IGN « Pic de Bure » à 14 m | 2,4 km (84 %) | haute montagne (au-dessus de 2600 m : peu de traces) |
+| `gapencais-ceuse/therm-pic-de-gleize` | toponyme IGN « Pic de Gleize » à 2 m | 3,0 km (84 %) (plus faible : 394 m (57 %)) | site peu volé |
+| `buech-laragne-chabre/therm-saint-genis` | toponyme IGN « Montagne de l'Aup ou de Saint-Genis » (sommet) à 269 m | 4,3 km (82 %) | site peu volé |
+| `buech-laragne-chabre/therm-rocher-de-garde` | relevé WaterFly (balise B37) ; le toponyme n'existe pas à l'IGN, relief de crête exposé à l'est | 2,6 km (90 %) | ascendance de passage d'un cheminement de cross peu enregistré |
+| `buech-laragne-chabre/therm-rosans-epine-plaine` | position déduite du texte (approximative) | 2,3 km (83 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `buech-laragne-chabre/porte-sereine-barre-saint-genis-ouest` | toponyme IGN « Porte Sereine » à 117 m | 7,2 km (71 %) | site de vol rando |
+| `baronnies/arfuyen-pente-est-sud-est` | toponyme IGN « Arfuyen » à 4 m | 2,6 km (98 %) | site peu volé |
+| `diois/therm-plateau-saint-dizier` | village de Saint-Dizier-en-Diois (IGN) à 166 m ; les taches rouges de la carte du club ne sont pas géoréférencées | 7,9 km (75 %) | site peu volé |
+| `diois/therm-valdrome-limite-plafonds` | toponyme IGN « Valdrôme » (village) à 5 m | 4,6 km (79 %) | ascendance de passage d'un cheminement de cross peu enregistré |
+| `diois/therm-glandasse-falaises-bande` | position déduite du texte (approximative) | 2,2 km (76 %) | site peu volé |
+| `diois/therm-lus-jarjatte-chamousset` | toponyme IGN « Chamousset » (sommet) à 26 m | 2,1 km (70 %) (plus faible : 157 m (64 %)) | site peu volé |
+| `diois/therm-duffre-sud-est-matin` | toponyme IGN « le Duffre » à 18 m | 4,8 km (77 %) (plus faible : 136 m (65 %)) | site peu volé |
+| `diois/therm-justin-soir` | toponyme IGN « la Croix de Justin » à 12 m | 2,8 km (73 %) (plus faible : 338 m (63 %)) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `diois/glandasse-abel-pente-sud` | altitude déclarée 1239 m concordante avec le terrain IGN (1239 m) | 2,3 km (70 %) | site peu volé |
+| `baronnies/ffvl13236-rissas-thermiques` | toponyme IGN « le Rissas » à 13 m | 6,2 km (98 %) | site peu volé (fiche FFVL) |
+| `champsaur-valgaudemar/ffvl14138-gorges-declenchement-thermique` | altitude déclarée 1350 m concordante avec le terrain IGN (1330 m) | 4,5 km (99 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |

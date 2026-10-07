@@ -106,3 +106,35 @@ Les listes de lacunes (`docs/COUVERTURE.md`, `docs/KK7_CROISEMENT.md`, `docs/POS
 - Créés : `val-pelouse-pente-deco` (`medium` : fiche FFVL 316 « conditions favorables par brise », récit CHVD des 24-25 juin 2023 sur la remontée au décollage, point chaud 99 %), `val-pelouse-grande-montagne` (94 %), `champlaurent-pente-deco` (FFVL 1014, 89 %), `montendry-au-berger` (100 %, le point chaud le plus fort du secteur, probable « thermique de départ » de la combe de Montendry décrit par PGE ; rapprochement non prouvé), `montlambert-la-combe-noire` (99 %, rapprochement avec « la combe (le 2) » de la carte du club de Montlambert fondé sur le nom du lieu-dit Combe Noire), `montlambert-atterro-thermiques` (texte de l'atterrissage : « thermiques de déclenchement autour du terrain en été » ; position du terrain), `arclusaz-atterro-vignes` (fiche 143 : « activité thermique très technique » ; position du terrain), `bauges-est-cote-blanche`, `pecloz-armene`, `pointe-de-la-fougere` (points chauds ≥ 90 %, aucun texte), `plan-des-languots-pentes` (FFVL 174, point chaud faible 74 %), `ebaudiaz-pentes-nord-ouest` (FFVL 172, point chaud faible 74 % à 1,5 km).
 - Altitude corrigée : `grand-arc-plafond` (2371 → 2458 m).
 - Lacunes écartées : `bulles-quietude-combe` (rapaces) ; `tours-de-montmayeur-relance` et `vallee-des-huiles-relance` (loin de tout point chaud : relief frappé par la brise de Chambéry et thermique de milieu de vallée, positions IGN et déduites conservées).
+
+## Résolution des limites (octobre 2026)
+
+Date : 7 octobre 2026. Les limites de données restantes après l'audit des thermiques (`docs/KK7_CROISEMENT.md`, `docs/POSITIONS.md`, `docs/COUVERTURE.md`) ont été reprises pour Bauges, Bourget, Combe de Savoie. Aucun identifiant supprimé ni renommé ; chaque correction est notée dans la description de l'élément (« Résolution des limites (octobre 2026) : … »).
+
+### 1. Points chauds forts à 600 m – 1 km d'un thermique documenté
+
+Règle de tri appliquée à chaque cas : le thermique documenté est **recalé** sur le point chaud kk7 quand sa position n'était qu'approximative (ou celle du décollage), que le texte de sa source décrit un relief que le point chaud occupe (la crête, la pente, le relief « qui encadre le col ») et qu'il n'a pas déjà son propre point chaud à moins de 600 m ; sinon le point chaud est une **seconde ascendance**, créée à part, `medium` quand un texte la décrit (fiche FFVL, fil de pilotes, récit), `low` avec « déduction » quand seuls le point chaud et le relief l'indiquent. Les élément créés citent la source kk7 (`thermal.kk7.ch`) et la source du texte rapproché, dans l'ordre. Les points chauds forts à 600 m – 1 km passent de 27 à 0 dans `docs/KK7_CROISEMENT.md`.
+
+- **Roc du Gros Molard** (`sauge-roc-du-gros-molard`, `low`) : point chaud à 96 % (midi et soir) à 815 m du Pic de la Sauge, 440 m plus bas ; le sommet a son propre point chaud à 270 m.
+- **Cusy – Les Perrières** (`cusy-les-perrieres`, `low`) : le second point chaud du contrefort de Cusy, cité dans la description de `cusy-grande-cote`, devient un élément à part.
+- **Vérel-de-Montbel, plaine vers Les Abbés** (`banchet-plaine-les-abbes`, `low`) : second point chaud (94 %) de la plaine du Banchet, à 852 m du thermique de la fiche FFVL (lui-même recalé sur un premier point chaud).
+
+### 2. Écarts d'altitude (`docs/POSITIONS.md`)
+
+Constat préalable : le relevé d'altitudes IGN demandait les points par lots de 100, or le service d'altimétrie (`data.geopf.fr/altimetrie`) n'est exact que jusqu'à une trentaine de points par requête (testé : lots de 25 et 30 identiques aux requêtes unitaires, lots de 33 et plus décalés de 10 à 110 m, parfois bien plus). 1159 des 1349 valeurs du cache `positions/altitudes_ign.json` étaient décalées ; le cache a été régénéré par lots de 25. Sur les altitudes exactes la liste n'était plus de 16 mais de 17 écarts : quatre faux positifs disparaissaient (Plaines de Poët 878 m pour 880 m, Méruz – Char Marin, Roche Veyrand, Aiguille Grande 76 m), cinq écarts apparaissaient (Manival, Mont Julioz, L'Écureuil et le versant de Peisey-Vallandry, Cuchon). Tous sont tranchés : 0 écart. La règle suivie : on garde la position quand elle est confirmée par un repère indépendant (gare d'arrivée de télésiège OSM, point de ParaglidingEarth, nœud OSM d'un sommet, coordonnées du guide papier) et l'on corrige l'altitude ; on déplace la position quand c'est elle que le repère indépendant contredit.
+
+- **Mont Julioz, plafond** (`mont-julioz-plafond`) : position au sommet OSM (1672 m), les 1578 m déclarés étaient faux ; altitude 1662 m.
+
+### 3. Thermiques documentés loin de tout point chaud
+
+Examen des 119 thermiques à plus de 2 km de tout point chaud ≥ 70 % : position contrôlée contre le géocodeur IGN (toponyme à moins de 120 m pour 51 d'entre eux), l'altitude déclarée contre le terrain IGN exact (concordante à 35 m près pour 30 autres) et le relief (croupe, flanc ou creux, orientation). Très peu sont mal placés ; la plupart sont loin des points chauds parce que le site est peu volé, parce que l'ascendance est un plafond ou une relance de haute montagne, ou parce qu'elle vient d'une confluence ou d'une plaine que les traces ne distinguent pas. Le plus proche point chaud ≥ 70 % et la raison sont notés ci-dessous ; un point chaud plus faible (30 à 70 %) à moins de 1 km est mentionné quand il existe.
+
+**Gardés à leur place, avec la raison :**
+
+| Élément | Position vérifiée par | Point chaud ≥ 70 % le plus proche | Pourquoi loin des traces |
+| --- | --- | --- | --- |
+| `bourget-chambery/relais-mont-du-chat` | altitude déclarée 1463 m concordante avec le terrain IGN (1491 m) | 6,4 km (99 %) | ascendance de passage d'un cheminement de cross peu enregistré |
+| `combe-de-savoie/tours-de-montmayeur-relance` | toponyme IGN « Tours de Montmayeur » à 1 m | 5,8 km (79 %) | ascendance de passage d'un cheminement de cross peu enregistré |
+| `combe-de-savoie/vallee-des-huiles-relance` | toponyme IGN « Val des Huiles » à 5 m | 2,6 km (87 %) | site peu volé |
+| `bauges/roc-des-boeufs-ascenseur` | toponyme IGN « Roc des Bœufs » à 3 m | 3,6 km (71 %) (plus faible : 361 m (66 %)) | site peu volé |
+| `bauges/margeriaz-arete-plafond` | toponyme IGN « Mont Margeriaz » à 1 m | 5,4 km (77 %) (plus faible : 596 m (58 %)) | ascendance de passage d'un cheminement de cross peu enregistré |

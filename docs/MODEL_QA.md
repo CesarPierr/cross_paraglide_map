@@ -1,6 +1,6 @@
 # Contrôle du modèle de vent contre l’atlas
 
-Généré par `npm run model:check` le 2026-10-07 sur `apps/web/public/data/atlas.json` (atlas du 2026-10-07), modèle TypeScript de référence (`packages/model`) sur le MNT réel. Durée : 10,9 s.
+Généré par `npm run model:check` le 2026-10-07 sur `apps/web/public/data/atlas.json` (atlas du 2026-10-07), modèle TypeScript de référence (`packages/model`) sur le MNT réel. Durée : 11,1 s.
 
 ## Critères
 
@@ -15,9 +15,9 @@ Généré par `npm run model:check` le 2026-10-07 sur `apps/web/public/data/atla
 | --- | --- | --- | --- | --- |
 | brises | 257 | 275 | 93 % | 2 |
 | convergences | 62 | 72 | 86 % | 9 |
-| thermiques | 686 | 794 | 86 % | 0 |
+| thermiques | 707 | 817 | 87 % | 0 |
 | pièges | 111 | 161 | 69 % | 49 |
-| **total** | **1116** | **1302** | **86 %** | 60 |
+| **total** | **1137** | **1325** | **86 %** | 60 |
 
 Contrôles élémentaires des brises :
 
@@ -45,20 +45,20 @@ Calendrier : déclenchement des thermiques au début explicite (« dès 10h », 
 | Secteur | Brises | Convergences | Thermiques | Pièges | Total |
 | --- | --- | --- | --- | --- | --- |
 | Alpes françaises | 25/25 | 13/13 | – | 6/6 | 44/44 |
-| Aravis | 7/7 | 1/2 | 21/21 | 1/3 | 30/33 |
+| Aravis | 7/7 | 1/2 | 23/23 | 1/3 | 32/35 |
 | Arves – Galibier | 2/3 | – | 7/9 | – | 9/12 |
-| Baronnies | 7/7 | – | 15/20 | 2/4 | 24/31 |
-| Bauges | 8/8 | 4/5 | 14/15 | 2/2 | 28/30 |
+| Baronnies | 7/7 | – | 17/22 | 2/4 | 26/33 |
+| Bauges | 8/8 | 4/5 | 15/17 | 2/2 | 29/32 |
 | Beaufortain | 3/4 | 1/2 | 12/13 | 1/3 | 17/22 |
-| Belledonne | 12/12 | 2/2 | 23/24 | 2/5 | 39/43 |
+| Belledonne | 12/12 | 2/2 | 24/25 | 2/5 | 40/44 |
 | Bornes | 3/3 | 2/2 | 10/11 | 1/2 | 16/18 |
-| Bourget – Chambéry | 5/7 | 1/1 | 13/13 | 3/5 | 22/26 |
+| Bourget – Chambéry | 5/7 | 1/1 | 14/14 | 3/5 | 23/27 |
 | Briançonnais | 5/7 | 2/3 | 7/12 | 7/7 | 21/29 |
-| Buëch – Chabre | 6/6 | 3/3 | 13/15 | 3/7 | 25/31 |
-| Chablais | 8/8 | – | 17/19 | 5/5 | 30/32 |
-| Chamonix – Mont-Blanc | 5/5 | – | 15/20 | 1/1 | 21/26 |
-| Champsaur | 2/3 | 1/1 | 13/15 | 0/1 | 16/20 |
-| Chartreuse | 12/15 | 2/2 | 33/35 | 3/3 | 50/55 |
+| Buëch – Chabre | 6/6 | 3/3 | 14/16 | 3/7 | 26/32 |
+| Chablais | 8/8 | – | 18/20 | 5/5 | 31/33 |
+| Chamonix – Mont-Blanc | 5/5 | – | 16/21 | 1/1 | 22/27 |
+| Champsaur | 2/3 | 1/1 | 14/16 | 0/1 | 17/21 |
+| Chartreuse | 12/15 | 2/2 | 35/37 | 3/3 | 52/57 |
 | Combe de Savoie | 3/4 | – | 16/19 | 1/2 | 20/25 |
 | Cuvette grenobloise | 7/7 | 1/1 | 7/7 | 2/2 | 17/17 |
 | Dévoluy | 1/1 | 1/1 | 7/8 | 1/1 | 10/11 |
@@ -68,19 +68,19 @@ Calendrier : déclenchement des thermiques au début explicite (« dès 10h », 
 | Gapençais – Céüse | 4/4 | 1/1 | 7/9 | 2/2 | 14/16 |
 | Giffre | 3/4 | – | 22/22 | 1/4 | 26/30 |
 | Grésivaudan | 5/5 | 2/3 | 1/1 | 1/2 | 9/11 |
-| Haut-Verdon | 1/1 | 2/2 | 23/24 | – | 26/27 |
+| Haut-Verdon | 1/1 | 2/2 | 24/25 | – | 27/28 |
 | Haute-Maurienne | 4/4 | – | 11/14 | 3/4 | 18/22 |
-| Lac d’Annecy | 10/10 | 5/6 | 23/25 | 2/3 | 40/44 |
+| Lac d’Annecy | 10/10 | 5/6 | 27/29 | 2/3 | 44/48 |
 | Matheysine – Drac | 2/3 | – | 13/14 | 4/7 | 19/24 |
 | Maurienne | 5/5 | – | 15/17 | 5/5 | 25/27 |
 | Megève – Val d’Arly | 3/4 | 1/2 | 8/11 | 0/4 | 12/21 |
-| Mercantour | 8/8 | 1/2 | 25/27 | 3/5 | 37/42 |
-| Oisans | 7/7 | 1/1 | 27/33 | 3/3 | 38/44 |
-| Préalpes de Grasse | 3/3 | 3/4 | 21/23 | 2/4 | 29/34 |
+| Mercantour | 8/8 | 1/2 | 26/28 | 3/5 | 38/43 |
+| Oisans | 7/7 | 1/1 | 28/34 | 3/3 | 39/45 |
+| Préalpes de Grasse | 3/3 | 3/4 | 21/24 | 2/4 | 29/35 |
 | Préalpes de Nice | 5/5 | 1/1 | 16/19 | 0/2 | 22/27 |
 | Queyras | 7/7 | 1/1 | 16/19 | 1/1 | 25/28 |
 | Saint-André | 3/4 | 1/1 | 11/13 | 1/2 | 16/20 |
-| Salève | 4/4 | – | 4/6 | 1/1 | 9/11 |
+| Salève | 4/4 | – | 5/7 | 1/1 | 10/12 |
 | Serre-Ponçon | 2/3 | – | 13/17 | 5/5 | 20/25 |
 | Tarentaise | 8/8 | 4/4 | 26/32 | 5/5 | 43/49 |
 | Trièves | 2/2 | – | 10/14 | 1/2 | 13/18 |
@@ -99,7 +99,7 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 | --- | --- | --- | --- |
 | brises | 6 | 6 | 6 |
 | convergences | 3 | 7 | 0 |
-| thermiques | 45 | 0 | 63 |
+| thermiques | 46 | 0 | 64 |
 | pièges | 0 | 0 | 50 |
 
 ### Brises (18)
@@ -209,7 +209,7 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
   - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne -0,61 m/s, 0 % > 0
   - cause probable : les flux modélisés ne se rencontrent pas sur cette ligne à cette heure
 
-### Thermiques (108)
+### Thermiques (110)
 
 - **Secteur du Coin (pied de la face ouest)** — `saleve-genevois/saleve-coin-thermique`, Salève · *limite* · juillet 14h45
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,28 (médiane 0,30, rang 28 %)
@@ -247,10 +247,9 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 - **Versant Servoz / Plaine-Joux (transition vers Chedde)** — `mont-blanc-chamonix/versant-servoz-plaine-joux`, Chamonix – Mont-Blanc · *limite* · juillet 15h30
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,29 (médiane 0,41, rang 20 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -190 m, altitude 803 m)
-- **Parc de Merlet : thermiques du matin** — `mont-blanc-chamonix/merlet-thermiques-matin`, Chamonix – Mont-Blanc · *limite* · juillet 9h45
-  - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,00 (médiane 0,00, rang 0 %)
-  - déclenchement : attendu colonne thermique au plus tard à 9h45 (heures documentées 8h00–11h30) ; obtenu 11h15 (trop tard)
-  - cause probable : relief concave ou bas pour le modèle (convexité TPI -10 m, altitude 1419 m)
+- **Parc de Merlet : thermiques du matin** — `mont-blanc-chamonix/merlet-thermiques-matin`, Chamonix – Mont-Blanc · *modèle* · juillet 9h45
+  - déclenchement : attendu colonne thermique au plus tard à 9h45 (heures documentées 8h00–11h30) ; obtenu 10h30 (trop tard)
+  - cause probable : déclenchement décalé par rapport au début documenté
 - **Flégère – Index : thermiques tôt le matin** — `mont-blanc-chamonix/flegere-thermiques-matin`, Chamonix – Mont-Blanc · *modèle* · juillet 13h30
   - déclenchement : attendu colonne thermique à ±1 h du début documenté (8h00) ; obtenu 9h45 (trop tard)
   - cause probable : déclenchement décalé par rapport au début documenté
@@ -304,6 +303,9 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 - **Cusy – La Grande Côte : pentes du bas des Bauges ouest** — `bauges/cusy-grande-cote`, Bauges · *limite* · juillet 14h15
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,29 (médiane 0,32, rang 29 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -77 m, altitude 766 m)
+- **Cusy – Les Perrières** — `bauges/cusy-les-perrieres`, Bauges · *limite* · juillet 14h15
+  - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,30 (médiane 0,31, rang 44 %)
+  - cause probable : relief concave ou bas pour le modèle (convexité TPI -79 m, altitude 721 m)
 - **Falaise est devant les décollages de Saint-Hilaire** — `chartreuse/facade-est-st-hilaire`, Chartreuse · *modèle* · juillet 13h54
   - déclenchement : attendu colonne thermique à ±1 h du début documenté (8h48) ; obtenu 10h15 (trop tard)
   - cause probable : déclenchement décalé par rapport au début documenté
@@ -511,6 +513,9 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 - **Les Valettes (Pont-du-Loup) : terrain d'atterrissage thermique** — `prealpes-grasse-castellane/valettes-atterro-thermique`, Préalpes de Grasse · *limite* · juillet 15h30
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,28 (médiane 0,30, rang 33 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -160 m, altitude 140 m)
+- **Gréolières : pentes de la vallée vers Les Arrosans** — `prealpes-grasse-castellane/greolieres-pentes-arrosans`, Préalpes de Grasse · *limite* · juillet 14h15
+  - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,45 (médiane 0,45, rang 49 %)
+  - cause probable : relief concave ou bas pour le modèle (convexité TPI -41 m, altitude 1038 m)
 - **Gourdon village (zone A, thermiques faibles et étroits)** — `prealpes-nice-var/gourdon-village-a`, Préalpes de Nice · *modèle* · juillet 9h45
   - déclenchement : attendu colonne thermique à ±1 h du début documenté (8h00) ; obtenu 10h30 (trop tard)
   - cause probable : déclenchement décalé par rapport au début documenté

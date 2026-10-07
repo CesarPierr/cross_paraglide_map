@@ -196,3 +196,49 @@ Au total 38 thermiques créés (Saint-André 1, Haut-Verdon 6, Digne – Lure 7,
 - Les positions de `crete-des-serres-angle`, `cheval-blanc-pointe-nord`, `greolieres-col-antenne-coursegoules` et `ferion-antennes-lignes` restent approximatives : les récits ne donnent pas de repère plus précis que le toponyme.
 - Les thermiques de Lure et de Banon (Contras, Lure nord) restent sans récit.
 - Le Valberg, Péone et Isola 2000 n'ont toujours aucune fiche FFVL ni récit au-delà de ro2g.
+
+## Résolution des limites (octobre 2026)
+
+Date : 7 octobre 2026. Les limites de données restantes après l'audit des thermiques (`docs/KK7_CROISEMENT.md`, `docs/POSITIONS.md`, `docs/COUVERTURE.md`) ont été reprises pour Alpes du Sud (Saint-André, Verdon, Digne, Grasse, Nice, Mercantour). Aucun identifiant supprimé ni renommé ; chaque correction est notée dans la description de l'élément (« Résolution des limites (octobre 2026) : … »).
+
+### 1. Points chauds forts à 600 m – 1 km d'un thermique documenté
+
+Règle de tri appliquée à chaque cas : le thermique documenté est **recalé** sur le point chaud kk7 quand sa position n'était qu'approximative (ou celle du décollage), que le texte de sa source décrit un relief que le point chaud occupe (la crête, la pente, le relief « qui encadre le col ») et qu'il n'a pas déjà son propre point chaud à moins de 600 m ; sinon le point chaud est une **seconde ascendance**, créée à part, `medium` quand un texte la décrit (fiche FFVL, fil de pilotes, récit), `low` avec « déduction » quand seuls le point chaud et le relief l'indiquent. Les élément créés citent la source kk7 (`thermal.kk7.ch`) et la source du texte rapproché, dans l'ordre. Les points chauds forts à 600 m – 1 km passent de 27 à 0 dans `docs/KK7_CROISEMENT.md`.
+
+- **Veillos / crête des Gasc** (`colmiane-veillos-gaby`, recalé de 615 m) : le catalogue du vol libre place la « pompe à Gaby » sur la crête des Gasc, la croupe qui descend du Veillos vers le vallon du Gasc (IGN, 640 m au sud du point chaud) ; l'ancienne position (2166 m, près du col de Veillos) n'est pas sur cette croupe. Le point chaud kk7 à 100 % (matin et midi, 74 % le soir) y tombe, à 1870 m. Position déduite, `approx`.
+- **Chalvet, face sud du matin** (`chalvet-deco-sud-matin`, recalé de 721 m) : le récit de G. Jacqueline (2011) a des rapaces qui « enroulent vers le sud du déco » et « ça monte immédiatement bien devant le déco sud ». Un point chaud kk7 à 98 %, surtout le matin (99 %, rien le soir), est exactement au sud du décollage sud, sur la face S/SE (1425 m) : le thermique est recalé dessus, le décollage restant alimenté par lui.
+- **Gorbio, crête de la Cime de Biancon** (`gorbio-crete-cime-de-biancon`, `low`) : second point chaud (99 %, absent des traces de juillet) à 687 m à l'est des falaises de Gorbio, sur la crête que le guide de 2021 enchaîne après les falaises. Le thermique des falaises garde sa position (site d'escalade, IGN).
+- **Gréolières, pentes vers Les Arrosans** (`greolieres-pentes-arrosans`, `low`) : second point chaud (95 %) à 883 m à l'est de la carrière du 300 (déjà recalée sur un autre point chaud). Le cheminement d'Au gré de l'air parle de thermiques du fond de vallée au rond-point ; le rapprochement n'est pas prouvé.
+- **Tromas, faces sud-ouest basses** (`tromas-faces-sud-ouest-gourgeas`, `low`) : point chaud à 92 % à 1 km au sud-ouest du sommet (position IGN conservée pour le plafond), 550 m plus bas, sur une pente de 39°.
+
+### 3. Thermiques documentés loin de tout point chaud
+
+Examen des 119 thermiques à plus de 2 km de tout point chaud ≥ 70 % : position contrôlée contre le géocodeur IGN (toponyme à moins de 120 m pour 51 d'entre eux), l'altitude déclarée contre le terrain IGN exact (concordante à 35 m près pour 30 autres) et le relief (croupe, flanc ou creux, orientation). Très peu sont mal placés ; la plupart sont loin des points chauds parce que le site est peu volé, parce que l'ascendance est un plafond ou une relance de haute montagne, ou parce qu'elle vient d'une confluence ou d'une plaine que les traces ne distinguent pas. Le plus proche point chaud ≥ 70 % et la raison sont notés ci-dessous ; un point chaud plus faible (30 à 70 %) à moins de 1 km est mentionné quand il existe.
+
+**Gardés à leur place, avec la raison :**
+
+| Élément | Position vérifiée par | Point chaud ≥ 70 % le plus proche | Pourquoi loin des traces |
+| --- | --- | --- | --- |
+| `saint-andre-verdon/crete-des-serres-angle` | carte des points chauds de FlyStAndre, lecture approximative ; toponyme IGN « Crête des Serres » à 1,4 km | 5,6 km (97 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `saint-andre-verdon/pic-de-chamatte` | toponyme IGN « Pic de Chamatte » à 13 m | 5,3 km (71 %) (plus faible : 419 m (63 %)) | secteur très peu enregistré (Alpes du Sud) |
+| `saint-andre-verdon/montagne-de-maurel-face-ouest` | altitude déclarée 1772 m concordante avec le terrain IGN (1765 m) | 3,8 km (71 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `saint-andre-verdon/puy-de-rent-thorame` | toponyme IGN « Puy de Rent » à 20 m | 4,2 km (71 %) | secteur très peu enregistré (Alpes du Sud) |
+| `haut-verdon-allos/cheval-blanc-pointe-nord` | altitude déclarée 2323 m concordante avec le terrain IGN (2321 m) | 3,2 km (91 %) (plus faible : 705 m (69 %)) | secteur très peu enregistré (Alpes du Sud) |
+| `haut-verdon-allos/col-de-talon-plein` | altitude déclarée 1869 m concordante avec le terrain IGN (1865 m) | 4,0 km (91 %) | secteur très peu enregistré (Alpes du Sud) |
+| `haut-verdon-allos/montagne-de-boules` | toponyme IGN « Montagne de Boules » à 27 m | 3,3 km (96 %) | secteur très peu enregistré (Alpes du Sud) |
+| `haut-verdon-allos/montagne-de-chamatte-thorame` | toponyme IGN « Montagne de Chamatte » à 4 m | 4,5 km (79 %) (plus faible : 263 m (61 %)) | secteur très peu enregistré (Alpes du Sud) |
+| `haut-verdon-allos/tete-de-l-estrop` | toponyme IGN « Tête de l'Estrop » à 6 m | 2,2 km (71 %) | haute montagne (au-dessus de 2600 m : peu de traces) |
+| `prealpes-digne-lure/montagne-de-gache` | altitude déclarée 1357 m concordante avec le terrain IGN (1344 m) | 3,7 km (78 %) | secteur très peu enregistré (Alpes du Sud) |
+| `prealpes-digne-lure/mourre-de-chanier-plafond` | toponyme IGN « Mourre de Chanier » à 26 m | 3,3 km (74 %) | secteur très peu enregistré (Alpes du Sud) |
+| `prealpes-digne-lure/sumiou-falaise-thermodynamique-du-soir` | toponyme IGN « Sumiou » à 0 m | 4,4 km (81 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `prealpes-digne-lure/rocher-de-la-baume-sisteron` | toponyme IGN « la Baume » (Sisteron) à 2 m | 2,1 km (78 %) | site peu volé |
+| `prealpes-grasse-castellane/vauplane-bernarde` | toponyme IGN « Sommet de la Bernarde » à 17 m | 5,3 km (71 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `prealpes-grasse-castellane/greolieres-col-antenne-coursegoules` | position déduite du texte (approximative) | 4,0 km (86 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `mercantour/lauvet-d-ilonse-relais` | toponyme IGN « Lauvet d'Ilonse » à 2 m | 8,6 km (81 %) | secteur très peu enregistré (Alpes du Sud) |
+| `mercantour/mounier-thermique-3200` | toponyme IGN « Mont Mounier » à 4 m | 10,3 km (91 %) | haute montagne (au-dessus de 2600 m : peu de traces) |
+| `mercantour/la-colletta-entraunes` | toponyme IGN « la Colletta » à 3 m | 12,1 km (91 %) | secteur très peu enregistré (Alpes du Sud) |
+| `mercantour/mont-saint-honorat-est` | toponyme IGN « Mont Saint-Honorat » à 11 m | 12,3 km (82 %) | secteur très peu enregistré (Alpes du Sud) |
+| `mercantour/cime-de-suorcas-peira-cava` | toponyme IGN « Peïra Cava » (village) à 2 m ; la Cime de Suorcas est à 4 km, la crête de Mandine à 2,9 km | 5,9 km (83 %) | secteur très peu enregistré (Alpes du Sud) |
+| `mercantour/ferion-antennes-lignes` | toponyme IGN « Mont Férion » à 2 m | 7,8 km (97 %) | secteur très peu enregistré (Alpes du Sud) |
+| `mercantour/valberg-mont-des-moulines` | altitude déclarée 2083 m concordante avec le terrain IGN (2083 m) | 13,3 km (91 %) | secteur très peu enregistré (Alpes du Sud) |
+| `mercantour/valberg-col-des-huerris` | altitude déclarée 1765 m concordante avec le terrain IGN (1763 m) | 14,6 km (91 %) | secteur très peu enregistré (Alpes du Sud) |

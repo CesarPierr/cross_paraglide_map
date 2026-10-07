@@ -200,3 +200,43 @@ Contexte et méthode : voir la section du même nom dans `chartreuse_gresivaudan
 - Mont-Cenis soaring (FFVL 14172, 14173) : site de soaring documenté comme tel (`soaring-mont-cenis`), aucun point chaud à moins de 5 km.
 - Vallonbrun (FFVL 14175, « vol du matin, peu de vent ») : aucun texte d'ascendance, aucun point chaud à moins de 8 km.
 - Valfréjus – Punta Bagna (FFVL 623) : « utilisé l'hiver essentiellement », aucun point chaud à moins de 3,7 km.
+
+## Résolution des limites (octobre 2026)
+
+Date : 7 octobre 2026. Les limites de données restantes après l'audit des thermiques (`docs/KK7_CROISEMENT.md`, `docs/POSITIONS.md`, `docs/COUVERTURE.md`) ont été reprises pour Oisans, Maurienne, Arves – Thabor. Aucun identifiant supprimé ni renommé ; chaque correction est notée dans la description de l'élément (« Résolution des limites (octobre 2026) : … »).
+
+### 1. Points chauds forts à 600 m – 1 km d'un thermique documenté
+
+Règle de tri appliquée à chaque cas : le thermique documenté est **recalé** sur le point chaud kk7 quand sa position n'était qu'approximative (ou celle du décollage), que le texte de sa source décrit un relief que le point chaud occupe (la crête, la pente, le relief « qui encadre le col ») et qu'il n'a pas déjà son propre point chaud à moins de 600 m ; sinon le point chaud est une **seconde ascendance**, créée à part, `medium` quand un texte la décrit (fiche FFVL, fil de pilotes, récit), `low` avec « déduction » quand seuls le point chaud et le relief l'indiquent. Les élément créés citent la source kk7 (`thermal.kk7.ch`) et la source du texte rapproché, dans l'ordre. Les points chauds forts à 600 m – 1 km passent de 27 à 0 dans `docs/KK7_CROISEMENT.md`.
+
+- **Perrons, croupe sous le sommet** (`perrons-pentes-ouest-sous-le-sommet`, `low`) : second point chaud (91 %, midi et soir) à 624 m du décollage ; le thermique de la falaise (`deux-alpes-perrons-falaise`) a son propre point chaud à 560 m.
+
+### 3. Thermiques documentés loin de tout point chaud
+
+Examen des 119 thermiques à plus de 2 km de tout point chaud ≥ 70 % : position contrôlée contre le géocodeur IGN (toponyme à moins de 120 m pour 51 d'entre eux), l'altitude déclarée contre le terrain IGN exact (concordante à 35 m près pour 30 autres) et le relief (croupe, flanc ou creux, orientation). Très peu sont mal placés ; la plupart sont loin des points chauds parce que le site est peu volé, parce que l'ascendance est un plafond ou une relance de haute montagne, ou parce qu'elle vient d'une confluence ou d'une plaine que les traces ne distinguent pas. Le plus proche point chaud ≥ 70 % et la raison sont notés ci-dessous ; un point chaud plus faible (30 à 70 %) à moins de 1 km est mentionné quand il existe.
+
+**Gardés à leur place, avec la raison :**
+
+| Élément | Position vérifiée par | Point chaud ≥ 70 % le plus proche | Pourquoi loin des traces |
+| --- | --- | --- | --- |
+| `oisans-grandes-rousses/herpie-pointe` | altitude déclarée 3000 m concordante avec le terrain IGN (2974 m) | 3,1 km (78 %) | haute montagne (au-dessus de 2600 m : peu de traces) |
+| `oisans-grandes-rousses/alpe-huez-2700-pentes-ouest` | position sourcée (relief cité par le récit) | 3,3 km (78 %) (plus faible : 672 m (69 %)) | haute montagne (au-dessus de 2600 m : peu de traces) |
+| `oisans-grandes-rousses/rissiou-rochers` | toponyme IGN « Rocher Rissiou » à 4 m | 2,1 km (93 %) (plus faible : 473 m (65 %)) | site peu volé |
+| `oisans-grandes-rousses/plat-de-la-selle-face-sud` | position sourcée (relief cité par le récit) | 3,4 km (70 %) | haute montagne (au-dessus de 2600 m : peu de traces) |
+| `oisans-grandes-rousses/meijette-la-grave` | position sourcée (relief cité par le récit) | 2,9 km (85 %) | haute montagne (au-dessus de 2600 m : peu de traces) |
+| `oisans-grandes-rousses/aiguille-de-venosc-matin` | toponyme IGN « Aiguille de Venosc » à 3 m | 2,0 km (81 %) | haute montagne (au-dessus de 2600 m : peu de traces) |
+| `oisans-grandes-rousses/goleon-raccroche-lautaret` | toponyme IGN « Aiguille du Goléon » à 2 m | 2,7 km (75 %) | haute montagne (au-dessus de 2600 m : peu de traces) |
+| `oisans-grandes-rousses/lautaret-plafond-4050` | position sourcée (relief cité par le récit) | 2,4 km (70 %) | ascendance de passage d'un cheminement de cross peu enregistré |
+| `oisans-grandes-rousses/pic-col-ornon-rochail` | toponyme IGN « Pic du Col d'Ornon » à 5 m | 2,8 km (89 %) | haute montagne (au-dessus de 2600 m : peu de traces) |
+| `oisans-grandes-rousses/signal-de-lhomme-relance` | toponyme IGN « Signal de l'Homme » à 5 m | 2,1 km (83 %) | ascendance de passage d'un cheminement de cross peu enregistré |
+| `maurienne/jarrier-balme-crete-cols` | altitude déclarée 1570 m concordante avec le terrain IGN (1569 m) | 6,0 km (81 %) | site peu volé |
+| `haute-maurienne/sollieres-sardieres-relance` | position sourcée (relief cité par le récit) | 2,2 km (83 %) | ascendance de passage d'un cheminement de cross peu enregistré |
+| `haute-maurienne/arcelle-val-cenis-relance` | altitude déclarée 2302 m concordante avec le terrain IGN (2321 m) | 3,7 km (78 %) | ascendance de passage d'un cheminement de cross peu enregistré |
+| `arves-thabor-galibier/valmeinier-station-thermique` | toponyme IGN « Valmeinier 1800 » à 3 m | 7,7 km (93 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `arves-thabor-galibier/crey-du-quart-crete` | altitude déclarée 2534 m concordante avec le terrain IGN (2533 m) | 7,9 km (80 %) | site peu volé |
+
+### 4. Mont Thabor et Les Souillets
+
+Recherche de sources (fiches FFVL, clubs, forums, récits) ; rien n'est créé sans indice.
+
+- **Mont Thabor** (FFVL 5242, 3178 m, Freney ; COUVERTURE le range sous le Briançonnais) : aucun thermique créé, faute d'indice. La fiche FFVL (reprise de C2C, 6 décollages et 0 atterrissage en 2024 sur Syride, sans orientation ni aérologie) dit seulement « beau vol, attention à la finesse ». Lus : le blog Les Pins Volants (novembre 2020, [lespinsvolants.fr](https://www.lespinsvolants.fr/2020/11/mont-thabor-les-copains-thabor.html)) : décollage du sommet vers 9 h, vol d'environ 10 km par le lac Peyron et le refuge jusqu'à 2360 m près du lac Marguerite, « quelques bonnes bulles au passage » et de « grosses dégueulantes », sud établi qui prend le pas sur la brise de pente à l'atterrissage, sans lieu pour les bulles ; le blog Les Pieds sur Terre (octobre 2022, [lespiedssurterre.blog](https://lespiedssurterre.blog/idees-combo-rando-vol-alpinisme-parapente/)) : départ du Lavoir (1925 m, 1400 m de dénivelé), décollage dans la pente sommitale SE à SO, atterrissage sur le plateau au-dessus du Lavoir, aucune aérologie. Ce sont des descentes de vol rando, pas des ascendances. Le site reste un décollage de vol rando sans thermique documenté.

@@ -144,3 +144,33 @@ Les listes de lacunes (`docs/COUVERTURE.md`, `docs/KK7_CROISEMENT.md`, `docs/POS
 ### Beaufortain (`beaufortain`)
 - Créés : `pas-de-l-ane-thermique-sain` (`medium`, récit : « j'exploite le premier thermique que je trouve pour réussir à me dégager », sain jusqu'à 2900 m ; point chaud 94-95 % à 720 m), `beaufortain-la-chapelle-nord-ouest`, `beaufortain-crete-est-6333`, `beaufortain-dunand-lavachay` (`low`, points chauds ≥ 90 %).
 - Écartés : Roche Parstire (FFVL 392) et Fenêtre 7 (FFVL 491) : la fiche ne mentionne que la brise de vallée, et le point chaud le plus proche est à 3,6 et 3,4 km.
+
+## Résolution des limites (octobre 2026)
+
+Date : 7 octobre 2026. Les limites de données restantes après l'audit des thermiques (`docs/KK7_CROISEMENT.md`, `docs/POSITIONS.md`, `docs/COUVERTURE.md`) ont été reprises pour Mont-Blanc, Val Montjoie, Val d’Arly, Beaufortain. Aucun identifiant supprimé ni renommé ; chaque correction est notée dans la description de l'élément (« Résolution des limites (octobre 2026) : … »).
+
+### 1. Points chauds forts à 600 m – 1 km d'un thermique documenté
+
+Règle de tri appliquée à chaque cas : le thermique documenté est **recalé** sur le point chaud kk7 quand sa position n'était qu'approximative (ou celle du décollage), que le texte de sa source décrit un relief que le point chaud occupe (la crête, la pente, le relief « qui encadre le col ») et qu'il n'a pas déjà son propre point chaud à moins de 600 m ; sinon le point chaud est une **seconde ascendance**, créée à part, `medium` quand un texte la décrit (fiche FFVL, fil de pilotes, récit), `low` avec « déduction » quand seuls le point chaud et le relief l'indiquent. Les élément créés citent la source kk7 (`thermal.kk7.ch`) et la source du texte rapproché, dans l'ordre. Les points chauds forts à 600 m – 1 km passent de 27 à 0 dans `docs/KK7_CROISEMENT.md`.
+
+- **Brévent, faces sud-est** (`brevent-faces-sud-est-plan-lachat`, `low`) : point chaud à 96 % à 831 m du sommet, 560 m plus bas, sur une pente de 35° exposée au sud-est ; ascendance basse probable sous le plafond de 3000 m du récit. Le sommet garde le plafond.
+
+### 2. Écarts d'altitude (`docs/POSITIONS.md`)
+
+Constat préalable : le relevé d'altitudes IGN demandait les points par lots de 100, or le service d'altimétrie (`data.geopf.fr/altimetrie`) n'est exact que jusqu'à une trentaine de points par requête (testé : lots de 25 et 30 identiques aux requêtes unitaires, lots de 33 et plus décalés de 10 à 110 m, parfois bien plus). 1159 des 1349 valeurs du cache `positions/altitudes_ign.json` étaient décalées ; le cache a été régénéré par lots de 25. Sur les altitudes exactes la liste n'était plus de 16 mais de 17 écarts : quatre faux positifs disparaissaient (Plaines de Poët 878 m pour 880 m, Méruz – Char Marin, Roche Veyrand, Aiguille Grande 76 m), cinq écarts apparaissaient (Manival, Mont Julioz, L'Écureuil et le versant de Peisey-Vallandry, Cuchon). Tous sont tranchés : 0 écart. La règle suivie : on garde la position quand elle est confirmée par un repère indépendant (gare d'arrivée de télésiège OSM, point de ParaglidingEarth, nœud OSM d'un sommet, coordonnées du guide papier) et l'on corrige l'altitude ; on déplace la position quand c'est elle que le repère indépendant contredit.
+
+- **Merlet** (`merlet`) : la fiche FFVL 1115 (recopiée sur les coordonnées du site du club Gratte-Ciel) place le décollage à 1452 m de terrain pour 1600-1691 m annoncés. Le guide « Vol libre au Pays du Mont-Blanc » (2008) donne 45°54'41" N, 6°49'09" E, 1600 m, 10 min à pied du parking du parc animalier : ce point, à 340 m au nord du parc, est à 1710 m de terrain. Position déplacée (800 m), altitude 1650 → 1710 m. `merlet-thermiques-matin` : le texte parle du parc, non du décollage ; position ramenée sur le parc animalier de Merlet (IGN, 1539 m).
+- **Dômes de Miage** (`domes-de-miage`) : la position (45°48'54.9" N, 6°47'45.9" E) est le col des Dômes (IGN, 5 m, 3520 m) ; les 3600 m sont l'altitude de la voie vers les dômes. Altitude 3600 → 3520 m.
+
+### 3. Thermiques documentés loin de tout point chaud
+
+Examen des 119 thermiques à plus de 2 km de tout point chaud ≥ 70 % : position contrôlée contre le géocodeur IGN (toponyme à moins de 120 m pour 51 d'entre eux), l'altitude déclarée contre le terrain IGN exact (concordante à 35 m près pour 30 autres) et le relief (croupe, flanc ou creux, orientation). Très peu sont mal placés ; la plupart sont loin des points chauds parce que le site est peu volé, parce que l'ascendance est un plafond ou une relance de haute montagne, ou parce qu'elle vient d'une confluence ou d'une plaine que les traces ne distinguent pas. Le plus proche point chaud ≥ 70 % et la raison sont notés ci-dessous ; un point chaud plus faible (30 à 70 %) à moins de 1 km est mentionné quand il existe.
+
+**Gardés à leur place, avec la raison :**
+
+| Élément | Position vérifiée par | Point chaud ≥ 70 % le plus proche | Pourquoi loin des traces |
+| --- | --- | --- | --- |
+| `mont-blanc-chamonix/drus-verte-chardonnet` | toponyme IGN « Aiguille Verte » à 62 m | 2,3 km (81 %) | haute montagne (au-dessus de 2600 m : peu de traces) |
+| `val-montjoie-saint-gervais/face-est-mont-joly` | toponyme IGN « la Tête du Mottey » à 22 m | 4,0 km (78 %) | site peu volé |
+| `val-arly-megeve/mont-joly-derniers-thermiques-megeve` | toponyme IGN « Mont Joly » à 5 m | 2,4 km (78 %) | site peu volé |
+| `val-arly-megeve/megeve-thermique-couche-b6` | toponyme IGN « Megève » à 2 m ; la balise B6 n'est pas localisée plus précisément | 2,6 km (83 %) | site peu volé |

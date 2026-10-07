@@ -98,3 +98,31 @@ Les listes de lacunes (`docs/COUVERTURE.md`, `docs/KK7_CROISEMENT.md`, `docs/POS
 - Positions : altitudes ramenées au terrain IGN pour `fort-du-truc` (1500 → 1770 m : « Fort 1500 » est le nom, la position est celle du site de vol libre du géocodeur IGN), `granier-deco` (1380 → 1555 m), `la-sevoliere` (2095 → 2241 m).
 - Écartés : `tir-r331-r332-arbonne-leissette`, `zsm-gypaete-charbonnet-plan-de-la-boutte`, `zsm-gypaete-peisey-3` (champs de tir, zones gypaète : « plafond » et « bulle » y désignent des règles de survol) ; décollage « Les Chapelles (Inter Dôme) » (FFVL 14154) : aucun point chaud à moins de 4 km, la fiche ne parle que de lignes THT et de foehn.
 - Les cinq thermiques de la liste « loin de tout point chaud » (`tignes-toviere-thermique`, `aime-confluence-thermique`, `cret-du-rey-relance`, `pointe-de-la-combe-benite-perchoir`, `lavachet-crete-entre-toviere-et-val-d-isere`) et deux thermiques des fiches (`ffvl13704`, `ffvl13678`) sont conservés tels quels : positions issues de lieux-dits ou de fiches, thermiques de milieu de vallée ou de crête d'altitude peu volés.
+
+## Résolution des limites (octobre 2026)
+
+Date : 7 octobre 2026. Les limites de données restantes après l'audit des thermiques (`docs/KK7_CROISEMENT.md`, `docs/POSITIONS.md`, `docs/COUVERTURE.md`) ont été reprises pour Tarentaise, Vanoise. Aucun identifiant supprimé ni renommé ; chaque correction est notée dans la description de l'élément (« Résolution des limites (octobre 2026) : … »).
+
+### 2. Écarts d'altitude (`docs/POSITIONS.md`)
+
+Constat préalable : le relevé d'altitudes IGN demandait les points par lots de 100, or le service d'altimétrie (`data.geopf.fr/altimetrie`) n'est exact que jusqu'à une trentaine de points par requête (testé : lots de 25 et 30 identiques aux requêtes unitaires, lots de 33 et plus décalés de 10 à 110 m, parfois bien plus). 1159 des 1349 valeurs du cache `positions/altitudes_ign.json` étaient décalées ; le cache a été régénéré par lots de 25. Sur les altitudes exactes la liste n'était plus de 16 mais de 17 écarts : quatre faux positifs disparaissaient (Plaines de Poët 878 m pour 880 m, Méruz – Char Marin, Roche Veyrand, Aiguille Grande 76 m), cinq écarts apparaissaient (Manival, Mont Julioz, L'Écureuil et le versant de Peisey-Vallandry, Cuchon). Tous sont tranchés : 0 écart. La règle suivie : on garde la position quand elle est confirmée par un repère indépendant (gare d'arrivée de télésiège OSM, point de ParaglidingEarth, nœud OSM d'un sommet, coordonnées du guide papier) et l'on corrige l'altitude ; on déplace la position quand c'est elle que le repère indépendant contredit.
+
+- **L'Écureuil / versant de Peisey-Vallandry** (`l-ecureuil`, `versant-peisey-vallandry`) : position de la fiche FFVL 14153 conservée (pente de 16° exposée à l'ouest, comme les vents favorables), altitude 1800 m (chiffre rond) → 1883 m (terrain IGN).
+
+### 3. Thermiques documentés loin de tout point chaud
+
+Examen des 119 thermiques à plus de 2 km de tout point chaud ≥ 70 % : position contrôlée contre le géocodeur IGN (toponyme à moins de 120 m pour 51 d'entre eux), l'altitude déclarée contre le terrain IGN exact (concordante à 35 m près pour 30 autres) et le relief (croupe, flanc ou creux, orientation). Très peu sont mal placés ; la plupart sont loin des points chauds parce que le site est peu volé, parce que l'ascendance est un plafond ou une relance de haute montagne, ou parce qu'elle vient d'une confluence ou d'une plaine que les traces ne distinguent pas. Le plus proche point chaud ≥ 70 % et la raison sont notés ci-dessous ; un point chaud plus faible (30 à 70 %) à moins de 1 km est mentionné quand il existe.
+
+**Gardés à leur place, avec la raison :**
+
+| Élément | Position vérifiée par | Point chaud ≥ 70 % le plus proche | Pourquoi loin des traces |
+| --- | --- | --- | --- |
+| `tarentaise/tignes-toviere-thermique` | toponyme IGN « Tovière » à 20 m | 4,4 km (72 %) | haute montagne (au-dessus de 2600 m : peu de traces) |
+| `tarentaise/aime-confluence-thermique` | confluence au-dessus d'Aime (texte du récit) ; terrain en creux de vallée, 715 m | 2,8 km (89 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `tarentaise/cret-du-rey-relance` | toponyme IGN « Crêt du Rey » à 3 m | 3,5 km (89 %) | haute montagne (au-dessus de 2600 m : peu de traces) |
+| `tarentaise/pointe-de-la-combe-benite-perchoir` | toponyme IGN « Pointe de Combe Bénite » à 2 m | 2,4 km (89 %) | ascendance de passage d'un cheminement de cross peu enregistré |
+| `tarentaise/lavachet-crete-entre-toviere-et-val-d-isere` | toponyme IGN « Pointe du Lavachet » à 5 m | 4,8 km (85 %) | haute montagne (au-dessus de 2600 m : peu de traces) |
+| `tarentaise/montagne-de-tete-valmorel-thermiques` | altitude déclarée 1801 m concordante avec le terrain IGN (1801 m) | 2,3 km (72 %) | site peu volé |
+| `vanoise/deux-lacs-belleville-soir` | altitude déclarée 2381 m concordante avec le terrain IGN (2378 m) | 2,2 km (74 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `tarentaise/ffvl13704-bochet-ascendances-printemps` | altitude déclarée 1620 m concordante avec le terrain IGN (1614 m) | 2,8 km (85 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `tarentaise/ffvl13678-la-gare-thermique-ete` | altitude déclarée 820 m concordante avec le terrain IGN (806 m) | 2,1 km (70 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |

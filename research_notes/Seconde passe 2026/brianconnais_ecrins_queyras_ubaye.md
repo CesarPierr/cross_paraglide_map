@@ -193,3 +193,40 @@ Contexte et méthode : voir la section du même nom dans `chartreuse_gresivaudan
 **Lacunes écartées** : les sept décollages « sommet de vol rando » (Aiguille Grande, Aiguille Pierre André, La Meyna, Parrias Coupa, Pointe des Cirques, Tête de Moïse, Tête de Parassac) : sommets cités par un topo de vol rando sans orientation ni heure, aucun point chaud à moins de 5,8 km ; rien n'a été créé (une description serait inventée).
 
 **Non résolu** : `pointe-des-cirques-ubaye` (3234 m déclarés, 3099 m au point) et `aiguille-pierre-andre-ubaye` (2812 m, 2688 m) : positions de géocodeur décalées de quelques centaines de mètres du sommet ; le point exact du sommet n'a pas pu être établi sans ambiguïté sur le MNT.
+
+## Résolution des limites (octobre 2026)
+
+Date : 7 octobre 2026. Les limites de données restantes après l'audit des thermiques (`docs/KK7_CROISEMENT.md`, `docs/POSITIONS.md`, `docs/COUVERTURE.md`) ont été reprises pour Briançonnais, Écrins, Queyras, Ubaye. Aucun identifiant supprimé ni renommé ; chaque correction est notée dans la description de l'élément (« Résolution des limites (octobre 2026) : … »).
+
+### 2. Écarts d'altitude (`docs/POSITIONS.md`)
+
+Constat préalable : le relevé d'altitudes IGN demandait les points par lots de 100, or le service d'altimétrie (`data.geopf.fr/altimetrie`) n'est exact que jusqu'à une trentaine de points par requête (testé : lots de 25 et 30 identiques aux requêtes unitaires, lots de 33 et plus décalés de 10 à 110 m, parfois bien plus). 1159 des 1349 valeurs du cache `positions/altitudes_ign.json` étaient décalées ; le cache a été régénéré par lots de 25. Sur les altitudes exactes la liste n'était plus de 16 mais de 17 écarts : quatre faux positifs disparaissaient (Plaines de Poët 878 m pour 880 m, Méruz – Char Marin, Roche Veyrand, Aiguille Grande 76 m), cinq écarts apparaissaient (Manival, Mont Julioz, L'Écureuil et le versant de Peisey-Vallandry, Cuchon). Tous sont tranchés : 0 écart. La règle suivie : on garde la position quand elle est confirmée par un repère indépendant (gare d'arrivée de télésiège OSM, point de ParaglidingEarth, nœud OSM d'un sommet, coordonnées du guide papier) et l'on corrige l'altitude ; on déplace la position quand c'est elle que le repère indépendant contredit.
+
+- **Serre Chevalier – Vallons** (`serre-chevalier-vallons`) : position conservée (fiche FFVL 13668 ; la gare d'arrivée du télésiège des Vallons, OSM, est à 40 m, 2502 m ; la fiche dit « accès remontées mécaniques, 5 minutes de marche »), altitude 2234 → 2506 m (terrain IGN).
+- **Serre Chevalier – Forêt** (`serre-chevalier-foret`) : position conservée (la gare d'arrivée du télésiège de la Forêt, OSM, 2392 m, est à 110 m), altitude 2195 → 2371 m (terrain IGN). Le seul relief à 2195 m alentour est le bas du téléski de l'Alpage, à 470 m, que rien ne désigne comme décollage.
+- **Pointe des Cirques** (`pointe-des-cirques-ubaye`) : position du géocodeur IGN décalée de 140 m (3100 m de terrain pour 3234 m) ; remplacée par le nœud OSM du sommet (ele 3234 m) qui tombe sur le point culminant du relief (3213 m). **Aiguille Pierre André** (`aiguille-pierre-andre-ubaye`) : le géocodeur IGN et OSM tombent sur une pointe de 2717 m, 95 m sous l'altitude cartographiée (2812 m) ; position déplacée de 282 m à l'ouest sur le sommet du relief qui concorde (2841 m), `approx`. **Aiguille Grande** : son terrain exact est à 2988 m pour 3064 m (écart 76 m, sous le seuil), le sommet du MNT (3013 m) est à 60 m du toponyme IGN : laissée en l'état.
+
+### 3. Thermiques documentés loin de tout point chaud
+
+Examen des 119 thermiques à plus de 2 km de tout point chaud ≥ 70 % : position contrôlée contre le géocodeur IGN (toponyme à moins de 120 m pour 51 d'entre eux), l'altitude déclarée contre le terrain IGN exact (concordante à 35 m près pour 30 autres) et le relief (croupe, flanc ou creux, orientation). Très peu sont mal placés ; la plupart sont loin des points chauds parce que le site est peu volé, parce que l'ascendance est un plafond ou une relance de haute montagne, ou parce qu'elle vient d'une confluence ou d'une plaine que les traces ne distinguent pas. Le plus proche point chaud ≥ 70 % et la raison sont notés ci-dessous ; un point chaud plus faible (30 à 70 %) à moins de 1 km est mentionné quand il existe.
+
+- **Fort de la Croix de Bretagne** (`thermiques-fort-croix-bretagne`), **Tête d'Aval** (`thermiques-tete-aval`) et **Tête du Puy** (`thermiques-tete-du-puy`) : leur position, jusque-là `approx`, est le centre du polygone du même nom dans le KML « Zones à éviter » du Chocard Airlines (S15, géoréférencé : écart de 1 à 3 m) ; elle passe en `source` (position de la zone, non d'un déclencheur précis). Le polygone du Fort est à 620 m du fort lui-même (IGN) : c'est la zone de pentes rocheuses, non le fort.
+
+**Gardés à leur place, avec la raison :**
+
+| Élément | Position vérifiée par | Point chaud ≥ 70 % le plus proche | Pourquoi loin des traces |
+| --- | --- | --- | --- |
+| `brianconnais-guisane/thermiques-fort-croix-bretagne` | centre du polygone KML du Chocard (S15) | 5,7 km (82 %) (plus faible : 787 m (68 %)) | site peu volé |
+| `brianconnais-guisane/therm-conf-fontenil-janus` | toponyme IGN « le Fontenil » à 5 m | 5,2 km (75 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `brianconnais-guisane/therm-conf-briancon-sud` | position sourcée (relief cité par le récit) | 3,1 km (83 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `brianconnais-guisane/therm-conf-saint-chaffrey` | position déduite du texte (approximative) | 2,7 km (88 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `ecrins-vallouise-haute-durance/thermiques-tete-aval` | centre du polygone KML du Chocard (S15) | 2,5 km (76 %) | site peu volé |
+| `ecrins-vallouise-haute-durance/thermiques-tete-du-puy` | centre du polygone KML du Chocard (S15) | 2,6 km (78 %) (plus faible : 307 m (61 %)) | site peu volé |
+| `ecrins-vallouise-haute-durance/thermiques-confluences-durance` | position déduite du texte (approximative) | 4,1 km (83 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `ecrins-vallouise-haute-durance/therm-zone-bruleee-argentiere` | position déduite du texte (approximative) | 2,6 km (77 %) | site peu volé |
+| `ecrins-vallouise-haute-durance/therm-mont-dauphin-cumulus` | toponyme IGN « Mont-Dauphin » à 2 m | 2,5 km (73 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `ecrins-vallouise-haute-durance/therm-arete-clement-risoul` | position déduite du texte (approximative) | 3,6 km (96 %) | ascendance de passage d'un cheminement de cross peu enregistré |
+| `ecrins-vallouise-haute-durance/therm-crete-blanche-bans` | position déduite du texte (approximative) | 2,2 km (76 %) | site peu volé |
+| `ecrins-vallouise-haute-durance/therm-conf-verrou-argentiere` | position déduite du texte (approximative) | 2,4 km (89 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `serre-poncon-embrunais/therm-chabrieres-conflue` | toponyme IGN « Crête de Chabrières » à 5 m | 2,3 km (75 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `serre-poncon-embrunais/therm-conf-embrun-clement` | position déduite du texte (approximative) | 4,5 km (81 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |

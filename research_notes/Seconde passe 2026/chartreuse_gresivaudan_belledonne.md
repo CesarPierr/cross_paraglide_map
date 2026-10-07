@@ -154,3 +154,41 @@ Contexte : le propriétaire, pilote local, a relevé l'oubli des Antennes, de Ch
 **Positions corrigées** : `saint-genis` était à 4 km au sud-sud-ouest du sommet (5.9900 E, 45.3150 N, estimé sur le PDF du club, terrain à 1047 m pour 1250 m déclarés) ; le sommet de Saint-Genis est à 6.0117 E, 45.3505 N (toponyme IGN, 1175 m), à 7 km au sud-est de Sainte-Marie-du-Mont comme le dit FlySaintHilaire. Position ramenée sur le point chaud kk7 à 400 m à l'ouest du sommet (93 %, 1041 m). `pipay-jas-des-lievres` est renommé « Jas des Lièvres » (c'est le sommet du Jas).
 
 **Lacunes écartées** : `col-du-barioz-enterrement-arrivee-chartreuse` et `pipay-point-dur` (pièges ; chacun a maintenant un thermique voisin) ; `bramefarine` (position approximative au nord de la crête, côté de l'arrivée des Bauges : conservée, car le récit arrive à 1100 m et « longe Bramefarine vers le sud » ; deux points chauds kk7 à 0,8 et 1,2 km au sud (86 %, 87 %) restent à décrire quand un récit en parlera) ; `puy-gris-belledonne-relance`, `pic-du-frene-grand-charnier-plafond`, `vallon-de-la-pra-plafond-4146`, `comberousse-hautes-cretes-plafond` (plafonds de crête donnés par des récits, positions vérifiées sur les sommets IGN ; loin des points chauds parce que les traces GPS y sont rares et que les thermiques naissent plus bas).
+
+## Résolution des limites (octobre 2026)
+
+Date : 7 octobre 2026. Les limites de données restantes après l'audit des thermiques (`docs/KK7_CROISEMENT.md`, `docs/POSITIONS.md`, `docs/COUVERTURE.md`) ont été reprises pour Chartreuse, Grésivaudan, Belledonne. Aucun identifiant supprimé ni renommé ; chaque correction est notée dans la description de l'élément (« Résolution des limites (octobre 2026) : … »).
+
+### 1. Points chauds forts à 600 m – 1 km d'un thermique documenté
+
+Règle de tri appliquée à chaque cas : le thermique documenté est **recalé** sur le point chaud kk7 quand sa position n'était qu'approximative (ou celle du décollage), que le texte de sa source décrit un relief que le point chaud occupe (la crête, la pente, le relief « qui encadre le col ») et qu'il n'a pas déjà son propre point chaud à moins de 600 m ; sinon le point chaud est une **seconde ascendance**, créée à part, `medium` quand un texte la décrit (fiche FFVL, fil de pilotes, récit), `low` avec « déduction » quand seuls le point chaud et le relief l'indiquent. Les élément créés citent la source kk7 (`thermal.kk7.ch`) et la source du texte rapproché, dans l'ordre. Les points chauds forts à 600 m – 1 km passent de 27 à 0 dans `docs/KK7_CROISEMENT.md`.
+
+- **Combe du Manival** (`manival-combe`, `medium`) : les sources du club exigent 1200-1400 m à la combe du Manival avant la traversée, ce qui ne correspond pas à la pointe du Bec Charvet (1630 m) où `manival-bec-charvet` est placé. Le point chaud kk7 à 99 % est à 1285 m, à 480 m à l'est de la gorge du Manival (IGN) : c'est le thermique de la combe, créé à part. Le Bec Charvet garde sa position.
+- **Château Nardent, rochers des Communaux** (`nardent-rochers-des-communaux`, `low`) : point chaud à 98 % à 780 m à l'est du sommet, 500 m plus bas, aux rochers des Communaux (OSM) ; le sommet reste la raccroche décrite par Matmute.
+- **Jas Mouton** (`far-jas-mouton`, `low`) : point chaud à 97 % (midi et soir) 470 m plus haut que la gorge des Rochers de la Far, étage supérieur probable de la pompe du récit du 31 juillet 2020 ; la gorge garde sa position approximative.
+
+### 2. Écarts d'altitude (`docs/POSITIONS.md`)
+
+Constat préalable : le relevé d'altitudes IGN demandait les points par lots de 100, or le service d'altimétrie (`data.geopf.fr/altimetrie`) n'est exact que jusqu'à une trentaine de points par requête (testé : lots de 25 et 30 identiques aux requêtes unitaires, lots de 33 et plus décalés de 10 à 110 m, parfois bien plus). 1159 des 1349 valeurs du cache `positions/altitudes_ign.json` étaient décalées ; le cache a été régénéré par lots de 25. Sur les altitudes exactes la liste n'était plus de 16 mais de 17 écarts : quatre faux positifs disparaissaient (Plaines de Poët 878 m pour 880 m, Méruz – Char Marin, Roche Veyrand, Aiguille Grande 76 m), cinq écarts apparaissaient (Manival, Mont Julioz, L'Écureuil et le versant de Peisey-Vallandry, Cuchon). Tous sont tranchés : 0 écart. La règle suivie : on garde la position quand elle est confirmée par un repère indépendant (gare d'arrivée de télésiège OSM, point de ParaglidingEarth, nœud OSM d'un sommet, coordonnées du guide papier) et l'on corrige l'altitude ; on déplace la position quand c'est elle que le repère indépendant contredit.
+
+- **Col de Pipay, face ouest** (`col-de-pipay-face-ouest`) : l'altitude de 2015 m était mal reportée (le col est à 2045 m, le point chaud, 775 m plus à l'ouest, à 1857 m) ; altitude 1857 m.
+- **Grande Sûre** (`grande-sure`) : la position de la fiche FFVL 5071 est à 1667 m de terrain pour 1578 m déclarés (la fiche et ParaglidingEarth donnent la même altitude) ; le point de ParaglidingEarth n°21259, à 190 m à l'ouest, est à 1575 m sur une pente de 17° exposée à l'ouest (vents favorables SO/O/NO) : position remplacée. **Manival / Bec Charvet** (`manival-bec-charvet`) : l'altitude 1630 m posée à l'audit venait d'un relevé d'altitude dégradé (voir ci-dessus) ; le terrain exact à la position est à 1723 m (sommet 1738 m à OSM), altitude 1723 m.
+- **Roche Veyrand (Corbel)** (`roche-veyrand-corbel`, écart de 86 m dans POSITIONS.md) : écart artificiel, terrain exact 1275 m pour 1275 m déclarés.
+
+### 3. Thermiques documentés loin de tout point chaud
+
+Examen des 119 thermiques à plus de 2 km de tout point chaud ≥ 70 % : position contrôlée contre le géocodeur IGN (toponyme à moins de 120 m pour 51 d'entre eux), l'altitude déclarée contre le terrain IGN exact (concordante à 35 m près pour 30 autres) et le relief (croupe, flanc ou creux, orientation). Très peu sont mal placés ; la plupart sont loin des points chauds parce que le site est peu volé, parce que l'ascendance est un plafond ou une relance de haute montagne, ou parce qu'elle vient d'une confluence ou d'une plaine que les traces ne distinguent pas. Le plus proche point chaud ≥ 70 % et la raison sont notés ci-dessous ; un point chaud plus faible (30 à 70 %) à moins de 1 km est mentionné quand il existe.
+
+**Gardés à leur place, avec la raison :**
+
+| Élément | Position vérifiée par | Point chaud ≥ 70 % le plus proche | Pourquoi loin des traces |
+| --- | --- | --- | --- |
+| `chartreuse/emeindras` | altitude déclarée 1350 m concordante avec le terrain IGN (1374 m) | 2,0 km (84 %) | ascendance de passage d'un cheminement de cross peu enregistré |
+| `chartreuse/pas-de-la-fosse-thermique` | altitude déclarée 874 m concordante avec le terrain IGN (874 m) | 2,1 km (90 %) | site peu volé |
+| `chartreuse/roche-veyrand-corbel` | toponyme IGN « Roche Veyrand » à 5 m | 3,1 km (81 %) | site peu volé |
+| `belledonne/bramefarine` | centre de la relation OSM (approximative) ; chalet de Brame-Farine (IGN) à 1,0 km, sommet à 1,6 km | 2,1 km (86 %) (plus faible : 539 m (68 %)) | ascendance de passage d'un cheminement de cross peu enregistré |
+| `belledonne/puy-gris-belledonne-relance` | toponyme IGN « Puy Gris » à 5 m | 2,1 km (81 %) | haute montagne (au-dessus de 2600 m : peu de traces) |
+| `belledonne/pic-du-frene-grand-charnier-plafond` | toponyme IGN « Pic du Frêne » à 2 m | 2,3 km (83 %) | haute montagne (au-dessus de 2600 m : peu de traces) |
+| `belledonne/vallon-de-la-pra-plafond-4146` | position déduite du texte (approximative) | 2,2 km (81 %) | ascendance de passage d'un cheminement de cross peu enregistré |
+| `belledonne/comberousse-hautes-cretes-plafond` | toponyme IGN « Pointe de Comberousse » à 3 m | 2,1 km (72 %) | haute montagne (au-dessus de 2600 m : peu de traces) |
+| `chartreuse/ffvl13287-saint-hugues-declenchements` | altitude déclarée 867 m concordante avec le terrain IGN (879 m) | 2,8 km (90 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |

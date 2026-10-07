@@ -99,7 +99,7 @@ Généré par `npm run data:coverage`. Pour chaque décollage FFVL ouvert à la 
 
 ### Dévoluy
 
-- COLLET DU TAT (FFVL 5345, 1705 m, vents O;NO;) : aucun thermique décrit à moins de 3 km (le plus proche : Col du Noyer, 5.4 km)
+- COLLET DU TAT (FFVL 5345, 1705 m, vents O;NO;) : aucun thermique décrit à moins de 3 km (le plus proche : Montagne de Faraut : relais envisagé vers le lac du Sautet, 5.4 km)
 
 ### Bourget – Chambéry
 

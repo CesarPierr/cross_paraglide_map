@@ -2,7 +2,7 @@
 
 Généré par `npm run data:build` le 2026-10-07. 2680 points chauds kk7 de probabilité ≥ 70 % dans le périmètre téléchargé.
 
-- Thermiques documentés confirmés par un point chaud à moins de 600 m : **469**, dont **58** recalés sur la position mesurée (leur position n’était qu’approximative).
+- Thermiques documentés confirmés par un point chaud à moins de 600 m : **496**, dont **58** recalés sur la position mesurée (leur position n’était qu’approximative).
 - Points chauds ≥ 80 % qu’aucun texte ne décrit, ajoutés comme thermiques « mesurés » : **330** (624 autres hors des secteurs).
 - Thermiques documentés à plus de 2 km de tout point chaud : **119** (site peu volé, ou position à vérifier).
 
@@ -18,37 +18,10 @@ Généré par `npm run data:build` le 2026-10-07. 2680 points chauds kk7 de prob
 
 - Point chaud – Col du Petit Pertuis — 93 %, 45.7812 N 5.5941 E — toute la journée, le plus souvent le matin (du lever du soleil à environ 6 h après)
 
-## Points chauds forts à 600 m – 1 km d’un thermique documenté (27)
+## Points chauds forts à 600 m – 1 km d’un thermique documenté (0)
 
 Ni rattachés ni ajoutés : soit le thermique documenté est mal placé (le recaler sur le point chaud), soit c’est une seconde ascendance à décrire.
 
-- 100 %, 44.0942 N 7.1830 E — à 615 m de `mercantour/colmiane-veillos-gaby` Veillos : « pompe à Gaby » et crête des Gasc
-- 100 %, 44.6809 N 6.2217 E — à 776 m de `champsaur-valgaudemar/therm-richards` Les Richards
-- 100 %, 45.8544 N 6.2210 E — à 991 m de `lac-annecy/epaule-planfait-dents-de-lanfon` Épaule de Planfait vers les Dents de Lanfon
-- 100 %, 45.9528 N 6.4658 E — à 843 m de `aravis/lachat-gb-thermique` Thermique du Lachat (Le Grand-Bornand)
-- 99 %, 43.7919 N 7.4535 E — à 687 m de `mercantour/roquebrune-gorbio-falaises` Falaises de Gorbio (thermique fort et large, relance vers Sainte-Agnès)
-- 99 %, 45.2906 N 5.8358 E — à 882 m de `chartreuse/manival-bec-charvet` Manival et pointe du Bec Charvet
-- 99 %, 44.3049 N 5.2264 E — à 802 m de `baronnies/therm-milmandre-falaises` Col de Milmandre : falaises à gauche, puis Baume Noire à droite
-- 98 %, 45.2790 N 5.8482 E — à 782 m de `chartreuse/chateau-nardent` Château Nardent (point clé du parcours classique vers le Saint-Eynard)
-- 98 %, 44.2944 N 5.7589 E — à 864 m de `buech-laragne-chabre/therm-chabre-crete` Crête de Chabre (face sud)
-- 98 %, 43.9701 N 6.4919 E — à 721 m de `saint-andre-verdon/chalvet-deco-sud-matin` Face sud / sud-est du Chalvet (premiers thermiques dès 10h30)
-- 97 %, 44.2233 N 5.4743 E — à 819 m de `baronnies/therm-buc-est-matin` Buc Est – La Tanière : thermique dès le milieu de la matinée
-- 97 %, 45.1990 N 5.9663 E — à 647 m de `belledonne/rochers-de-la-far-gorge-relance` Gorge sous les Rochers de la Far : dynamique de sauvetage devenu ascendance à 4000 m
-- 97 %, 45.8647 N 6.2282 E — à 875 m de `lac-annecy/epaule-planfait-dents-de-lanfon` Épaule de Planfait vers les Dents de Lanfon
-- 96 %, 45.5545 N 6.0493 E — à 815 m de `bauges/pic-de-la-sauge-relance` Pic de la Sauge (relance après la Savoyarde, départ vers Belledonne)
-- 96 %, 45.9268 N 6.8414 E — à 831 m de `mont-blanc-chamonix/brevent-plafond-3000` Brévent (sommet) : plafond du cheminement des Aiguilles Rouges
-- 96 %, 45.8790 N 6.4857 E — à 708 m de `aravis/col-des-aravis-vierge` Col des Aravis – faces sud, thermique « de la Vierge du Châtelard »
-- 96 %, 46.1884 N 6.7288 E — à 639 m de `chablais/super-morzine-cretes-de-zore` Super-Morzine – crêtes de Zore vers Avoriaz
-- 95 %, 43.8016 N 6.9698 E — à 883 m de `prealpes-grasse-castellane/greolieres-carriere-300` La « carrière » à gauche du déco du 300 (extraction vers le 700)
-- 94 %, 46.1316 N 6.1692 E — à 692 m de `saleve-genevois/saleve-coin-thermique` Secteur du Coin (pied de la face ouest)
-- 94 %, 44.6953 N 5.9917 E — à 658 m de `devoluy/therm-noyer` Col du Noyer
-- 94 %, 45.5770 N 5.7297 E — à 852 m de `bourget-chambery/ffvl1438-banchet-cumulus-plaine` Le Banchet : nombreux cumulus en plaine et peu de vent
-- 94 %, 45.8439 N 6.2543 E — à 700 m de `lac-annecy/lanfonnet-face-ouest` Lanfonnet (face ouest)
-- 92 %, 44.2560 N 6.4730 E — à 996 m de `haut-verdon-allos/sommet-du-tromas` Tromas (falaises sud et faces SO, souvent généreux mais mal organisé)
-- 92 %, 45.7534 N 6.0366 E — à 849 m de `bauges/cusy-grande-cote` Cusy – La Grande Côte : pentes du bas des Bauges ouest
-- 91 %, 44.9932 N 6.1256 E — à 624 m de `oisans-grandes-rousses/deux-alpes-perrons-falaise` Falaise des Perrons (Les Deux Alpes)
-- 91 %, 45.8668 N 6.1036 E — à 859 m de `lac-annecy/seynod-vieugy-zone-industrielle` Seynod – Vieugy : thermiques au-dessus des zones d’activités (traversée d’Annecy)
-- 91 %, 44.8101 N 6.0469 E — à 939 m de `champsaur-valgaudemar/grun-de-saint-maurice-relance` Grun de Saint-Maurice : relance et plafond (3500 m) sur la bordure ouest des Écrins
 
 ## Thermiques documentés loin de tout point chaud
 
@@ -107,12 +80,12 @@ Ni rattachés ni ajoutés : soit le thermique documenté est mal placé (le reca
 - `haute-maurienne/arcelle-val-cenis-relance` Arcelle / crêtes de Val Cenis : relance sur la route Aussois → Bonneval (position source)
 - `arves-thabor-galibier/valmeinier-station-thermique` Station de Valmeinier : « thermique qui sort de la station » (position approx)
 - `arves-thabor-galibier/crey-du-quart-crete` Crête du Crey du Quart (Valloire) : déclencheur de début d'après-midi (position source)
-- `brianconnais-guisane/thermiques-fort-croix-bretagne` Fort de la Croix de Bretagne (position approx)
+- `brianconnais-guisane/thermiques-fort-croix-bretagne` Fort de la Croix de Bretagne (position source)
 - `brianconnais-guisane/therm-conf-fontenil-janus` Confluence de Briançon : verticale du Fontenil / vers le Janus (position approx)
 - `brianconnais-guisane/therm-conf-briancon-sud` Confluence Durance / Lombarde : verticale de Briançon Sud (« Monsieur Meuble ») (position source)
 - `brianconnais-guisane/therm-conf-saint-chaffrey` Confluence de Saint-Chaffrey (Durance / Guisane) (position approx)
-- `ecrins-vallouise-haute-durance/thermiques-tete-aval` Tête d'Aval (position approx)
-- `ecrins-vallouise-haute-durance/thermiques-tete-du-puy` Tête du Puy (position approx)
+- `ecrins-vallouise-haute-durance/thermiques-tete-aval` Tête d'Aval (position source)
+- `ecrins-vallouise-haute-durance/thermiques-tete-du-puy` Tête du Puy (position source)
 - `ecrins-vallouise-haute-durance/thermiques-confluences-durance` Confluences de la haute Durance (Briançon, L'Argentière) (position approx)
 - `ecrins-vallouise-haute-durance/therm-zone-bruleee-argentiere` Zone brûlée au-dessus de L'Argentière : thermique sous le vent de la Lombarde (position approx)
 - `ecrins-vallouise-haute-durance/therm-mont-dauphin-cumulus` Mont-Dauphin : cumulus de confluence brise / Lombarde du Guil (position source)

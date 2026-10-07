@@ -20,6 +20,7 @@ CORRECTIONS = BASE / 'positions' / 'corrections.json'
 API = 'https://data.geopf.fr/altimetrie/1.0/calcul/alti/rest/elevation.json'
 LISTS = ['thermal_spots', 'soaring_spots', 'hazards', 'takeoffs', 'landings']
 TOLERANCE_M = 80
+BATCH = 25
 
 
 def key(lon, lat):
@@ -28,8 +29,9 @@ def key(lon, lat):
 
 def fetch(points, cache):
     todo = [p for p in points if key(*p) not in cache]
-    for i in range(0, len(todo), 100):
-        batch = todo[i:i + 100]
+    # The IGN service is exact only for small batches (beyond ~30 points it drifts by 10 to 110 m).
+    for i in range(0, len(todo), BATCH):
+        batch = todo[i:i + BATCH]
         q = f"lon={'|'.join(f'{p[0]:.5f}' for p in batch)}&lat={'|'.join(f'{p[1]:.5f}' for p in batch)}&resource=ign_rge_alti_wld&zonly=true"
         for attempt in range(3):
             try:

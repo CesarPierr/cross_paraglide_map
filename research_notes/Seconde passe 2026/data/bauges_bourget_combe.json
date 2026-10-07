@@ -663,6 +663,21 @@
             "S51",
             "S108"
           ]
+        },
+        {
+          "id": "banchet-plaine-les-abbes",
+          "name": "Vérel-de-Montbel : thermique de plaine vers Les Abbés",
+          "lon": 5.72971,
+          "lat": 45.57704,
+          "alt_m": 387,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée : 87 % le matin, 94 % à midi, 93 % le soir",
+          "trigger": "plaine et premières pentes au pied de la chaîne de l'Épine, vers Les Abbés",
+          "description": "Résolution des limites (octobre 2026) : déduction. Point chaud kk7 à 94 % (toute la journée : 87 % le matin, 94 % à midi, 93 % le soir) à 852 m au nord du Banchet (`ffvl1438-banchet-cumulus-plaine`, recalé sur un autre point chaud), sur un creux à 387 m, pente de 30° exposée à l’ouest, à 330 m du hameau des Abbés (OSM). La fiche FFVL du Banchet parle de « nombreux cumulus en plaine » sans les situer ; celui-ci est le plus bas des deux points chauds de la plaine.",
+          "confidence": "low",
+          "sources": [
+            "S108"
+          ]
         }
       ],
       "soaring_spots": [
@@ -3282,12 +3297,12 @@
           "name": "Mont Julioz (plafond, relais vers l'École/Arclusaz et le Margériaz)",
           "lon": 6.16,
           "lat": 45.7058,
-          "alt_m": 1578,
+          "alt_m": 1662,
           "coord_quality": "source",
           "confidence": "medium",
           "best_hours": "milieu d'après-midi",
           "trigger": "crête du Julioz, deux petites croupes en avant (« bitards ») qui donnent un appui",
-          "description": "PLAFOND : 2700 m (24/04/2024), liaison Roc des Bœufs → Julioz → École → Arclusaz (avril 2022) ; point de départ du saut vers le Margériaz ; « deux bitards devant le Mont Julioz » donnent un simple appui (04/07/2020).",
+          "description": "PLAFOND : 2700 m (24/04/2024), liaison Roc des Bœufs → Julioz → École → Arclusaz (avril 2022) ; point de départ du saut vers le Margériaz ; « deux bitards devant le Mont Julioz » donnent un simple appui (04/07/2020). Résolution des limites (octobre 2026) : tranché : la position est le sommet OSM du Mont Julioz (1672 m) ; les 1578 m déclarés étaient faux (terrain IGN 1662 m). Altitude portée à 1662 m.",
           "sources": [
             "S23",
             "S97",
@@ -3373,9 +3388,43 @@
           "coord_quality": "approx",
           "best_hours": "à midi et le soir d'après les traces GPS (97 % à midi, 96 % le soir, rien le matin)",
           "trigger": "pentes sud-ouest du contrefort de Cusy, au-dessus du Chéran, à l'ouest du Pic de la Sauge",
-          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 96 % toutes périodes (97 % à midi, 96 % le soir), terrain IGN 784 m, à 550 m de La Grande Côte. Aucune source du dossier ne cite les toponymes de ce secteur (La Grande Côte, Le Golet du Pont, Les Perrières). Un second point chaud kk7 (92 %, 745 m, Les Perrières) se trouve à 900 m au nord-est : ensemble, ils dessinent un thermique des premières pentes, actif de midi au soir ; le déclencheur exact reste à documenter.",
+          "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 96 % toutes périodes (97 % à midi, 96 % le soir), terrain IGN 784 m, à 550 m de La Grande Côte. Aucune source du dossier ne cite les toponymes de ce secteur (La Grande Côte, Le Golet du Pont, Les Perrières). Un second point chaud kk7 (92 %, 745 m, Les Perrières) se trouve à 900 m au nord-est : ensemble, ils dessinent un thermique des premières pentes, actif de midi au soir ; le déclencheur exact reste à documenter. Résolution des limites (octobre 2026) : le second point chaud cité ci-dessus (Les Perrières) est maintenant un élément à part, `cusy-les-perrieres` ; cet élément-ci ne porte plus que le premier.",
           "confidence": "low",
           "sources": [
+            "S108"
+          ]
+        },
+        {
+          "id": "sauge-roc-du-gros-molard",
+          "name": "Roc du Gros Molard : pentes à l'ouest-nord-ouest du Pic de la Sauge",
+          "lon": 6.04935,
+          "lat": 45.55445,
+          "alt_m": 1167,
+          "coord_quality": "approx",
+          "best_hours": "midi et soir : 96 % à midi, 97 % le soir, rien le matin",
+          "trigger": "pentes à 440 m sous le Pic de la Sauge, au-dessus d'Entrenants",
+          "description": "Résolution des limites (octobre 2026) : déduction. Point chaud kk7 à 96 % (midi et soir : 96 % à midi, 97 % le soir, rien le matin) à 815 m à l’ouest-nord-ouest du Pic de la Sauge, 440 m plus bas, sur une croupe ou un éperon à 1167 m, pente de 26° exposée à l’ouest, à 620 m du Roc du Gros Molard et 720 m d'Entrenants (OSM). `pic-de-la-sauge-relance` a son propre point chaud à 270 m du sommet ; ce second est plus bas sur le versant. Les récits de la Savoyarde (2019, 2021) ne décrivent que le thermo-dynamique de l'épaule nord-ouest et du sommet. Saisons des traces : printemps, été (rien en hiver ni en automne).",
+          "confidence": "low",
+          "sources": [
+            "S100",
+            "S101",
+            "S107",
+            "S108"
+          ]
+        },
+        {
+          "id": "cusy-les-perrieres",
+          "name": "Cusy – Les Perrières",
+          "lon": 6.03665,
+          "lat": 45.75339,
+          "alt_m": 747,
+          "coord_quality": "approx",
+          "best_hours": "midi et soir : 91 % à midi, 92 % le soir, rien le matin",
+          "trigger": "contrefort de Cusy, au-dessus du Chéran, vers Les Perrières",
+          "description": "Résolution des limites (octobre 2026) : déduction. Second point chaud kk7 du contrefort de Cusy, déjà mentionné dans `cusy-grande-cote` (qui garde la position du premier) : 92 % (midi et soir : 91 % à midi, 92 % le soir, rien le matin), à 849 m au nord-nord-est du premier, sur un flanc à 747 m, pente de 18° exposée au nord-ouest, à 630 m du hameau des Perrières (OSM). Aucune source du dossier ne cite les toponymes de ce secteur. Saisons des traces : printemps, été, automne (rien en hiver).",
+          "confidence": "low",
+          "sources": [
+            "S108",
             "S108"
           ]
         }

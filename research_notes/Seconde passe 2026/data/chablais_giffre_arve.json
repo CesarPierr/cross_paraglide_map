@@ -421,6 +421,23 @@
             "S211",
             "S219"
           ]
+        },
+        {
+          "id": "saleve-falaise-des-balmes",
+          "name": "Salève : falaise des Balmes et de la Corraterie (au-dessus des Crêts)",
+          "lon": 6.16917,
+          "lat": 46.13155,
+          "alt_m": 1152,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée : 82 % le matin, 92 % à midi, 94 % le soir",
+          "trigger": "falaises des Balmes et de la Corraterie, 460 m au-dessus du Coin, près du décollage des Crêts",
+          "description": "Résolution des limites (octobre 2026) : déduction. Point chaud kk7 à 94 % (toute la journée : 82 % le matin, 92 % à midi, 94 % le soir) à 692 m à l’est-sud-est du Coin (`saleve-coin-thermique`, atterrissage à 690 m), 460 m plus haut, sur une croupe ou un éperon à 1152 m, pente de 32° exposée à l’ouest, à 110 m de la falaise des Balmes et de celle de la Corraterie (OSM) et 250 m du décollage Les Crêts (FFVL). La fiche du Coin et le CVLS parlent de « gros déclenchements thermiques » sur l'atterrissage ; celui-ci est le même relief vu d'en haut.",
+          "confidence": "low",
+          "sources": [
+            "S57",
+            "S15",
+            "S220"
+          ]
         }
       ],
       "soaring_spots": [
@@ -4537,6 +4554,24 @@
             "S186",
             "S114"
           ]
+        },
+        {
+          "id": "zore-pentes-est-vers-avoriaz",
+          "name": "Maisons de Zore : pentes à l'est du décollage (vers Avoriaz)",
+          "lon": 6.72878,
+          "lat": 46.18839,
+          "alt_m": 1480,
+          "coord_quality": "approx",
+          "best_hours": "matin et midi : 98 % le matin, 93 % à midi, rien le soir",
+          "trigger": "croupe et pentes sud-est au-dessus des Maisons de Zore, vers Avoriaz",
+          "description": "Résolution des limites (octobre 2026) : déduction. Point chaud kk7 à 96 % (matin et midi : 98 % le matin, 93 % à midi, rien le soir) à 639 m à l’est-sud-est du décollage de Super-Morzine (`super-morzine-cretes-de-zore`), sur une croupe ou un éperon à 1480 m, pente de 33° exposée au sud-est, à 330 m des Maisons de Zore (IGN) et sur la route d'Avoriaz que décrivent Morzinn et Summits (« point de départ classique pour transiter vers Avoriaz »). Les textes ne localisent pas les thermiques de ce trajet. Saisons des traces : printemps, été, automne (rien en hiver).",
+          "confidence": "low",
+          "sources": [
+            "S94",
+            "S210",
+            "S27",
+            "S220"
+          ]
         }
       ],
       "soaring_spots": [
@@ -4841,14 +4876,14 @@
           "name": "Châtel - Morclan",
           "lon": 6.858,
           "lat": 46.2765,
-          "alt_m": 1870,
+          "alt_m": 1966,
           "coord_quality": "source",
           "ffvl_id": 1180,
           "orientations": [
             "SE",
             "W"
           ],
-          "description": "Altitude : 1376 m sur la fiche FFVL, 1867-1963 m à ParaglidingEarth et au MNT (retenu : 1870 m). Départ de cross par effet de foehn ; SE-O ; thermiques à l'atterrissage ; attention au nord, aux arbres et à la ligne HT ; L'Ortaz (1182, SO) voisin.",
+          "description": "Altitude : 1376 m sur la fiche FFVL, 1867-1963 m à ParaglidingEarth et au MNT (retenu : 1870 m). Départ de cross par effet de foehn ; SE-O ; thermiques à l'atterrissage ; attention au nord, aux arbres et à la ligne HT ; L'Ortaz (1182, SO) voisin. Résolution des limites (octobre 2026) : tranché : la position (fiche FFVL 1180 « Morclan sommet ») est au sommet, où le terrain IGN est à 1966 m et ParaglidingEarth (n°3034) à 1963 m. Les 1870 m retenus jusque-là étaient l'altitude du second site de ParaglidingEarth, « sous le sommet » (n°6870, 1867 m, 6.8606 E, 46.2722 N, 1845 m de terrain), à 410 m au sud-est, qui n'est pas dans l'atlas. Altitude portée à 1966 m.",
           "sources": [
             "S172",
             "S173"

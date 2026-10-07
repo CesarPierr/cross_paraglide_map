@@ -9,7 +9,7 @@ Généré par `npm run data:build` le 2026-10-07.
 - breezes : 277
 - convergences : 81
 - hazards : 527
-- thermals : 1124
+- thermals : 1147
 - soaring : 117
 - takeoffs : 542
 - landings : 307

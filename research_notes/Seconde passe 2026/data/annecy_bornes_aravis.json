@@ -1245,7 +1245,7 @@
           "trigger": "crête ouest du Roc des Bœufs alimentée par la brise du lac, au niveau de la première ligne THT",
           "role": "plafond",
           "confidence": "medium",
-          "description": "Forum (t19784) : on raccroche le Roc en dynamique sur la crête jusqu'à la première ligne électrique, et pour boucler on repart d'environ cette première ligne après un bon plafond ; point de départ conseillé vers la Forclaz (t52861 : première ligne HT nord, 1700 m suffisent). Le carnet de 2020 y trouve « tout de suite un bon petit thermique » à 1600 m. Position approximative sur la crête (lignes non localisées).",
+          "description": "Forum (t19784) : on raccroche le Roc en dynamique sur la crête jusqu'à la première ligne électrique, et pour boucler on repart d'environ cette première ligne après un bon plafond ; point de départ conseillé vers la Forclaz (t52861 : première ligne HT nord, 1700 m suffisent). Le carnet de 2020 y trouve « tout de suite un bon petit thermique » à 1600 m. Position approximative sur la crête (lignes non localisées). Résolution des limites (octobre 2026) : position conservée, mais les lignes sont maintenant localisées (OpenStreetMap) : une ligne de 400 kV franchit la crête à 1,15 km plus au nord (6.1710 E, 45.7735 N, 1602 m) et une ligne de 225 kV plus loin au nord-nord-est, hors de la crête du Roc ; les textes ne disent pas laquelle est « la première » (selon le sens d'arrivée), d'où l'absence de déplacement. Un point chaud kk7 faible (54 %) existe à 240 m de la position, aucun ≥ 70 % à moins de 3,4 km.",
           "sources": [
             "S88",
             "S87",
@@ -1345,7 +1345,7 @@
           "coord_quality": "approx",
           "best_hours": "milieu de journée et soir (94 % à midi, 92 % le soir, jamais le matin)",
           "trigger": "zones d'activités et lotissements de Seynod (Vieugy, Sur Bacon), au pied du Semnoz nord",
-          "description": "Audit d'octobre 2026 : déduction. Deux points chauds kk7 forts dans la plaine de Seynod, hors de tout relief : 6.0995 E, 45.8596 N (92 %) et 6.1036 E, 45.8668 N (91 %, 519 m, vers La Culaz). Le topo de la traversée d'Annecy (t2807) raccroche « le relief derrière la Visitation au-dessus de la zone industrielle », change d'arête, puis longe la seconde jusqu'à la ligne de Quintal ; il juge que « avant la ligne il n'y a rien de bien flagrant ». Ces thermiques de plaine, mesurés de midi au soir, sont sur ce trajet, sans que le texte les décrive. Position : celle du premier point chaud.",
+          "description": "Audit d'octobre 2026 : déduction. Deux points chauds kk7 forts dans la plaine de Seynod, hors de tout relief : 6.0995 E, 45.8596 N (92 %) et 6.1036 E, 45.8668 N (91 %, 519 m, vers La Culaz). Le topo de la traversée d'Annecy (t2807) raccroche « le relief derrière la Visitation au-dessus de la zone industrielle », change d'arête, puis longe la seconde jusqu'à la ligne de Quintal ; il juge que « avant la ligne il n'y a rien de bien flagrant ». Ces thermiques de plaine, mesurés de midi au soir, sont sur ce trajet, sans que le texte les décrive. Position : celle du premier point chaud. Résolution des limites (octobre 2026) : le second point chaud cité ci-dessus (6.1036 E, 45.8668 N) est maintenant un élément à part, `seynod-la-culaz` ; cet élément-ci ne porte plus que le premier.",
           "confidence": "low",
           "sources": [
             "S83",
@@ -1413,6 +1413,73 @@
           "sources": [
             "S97",
             "S28",
+            "S96"
+          ]
+        },
+        {
+          "id": "planfait-devant-le-deco",
+          "name": "Planfait : thermique devant le décollage (sortie du bocal)",
+          "lon": 6.22101,
+          "lat": 45.85439,
+          "alt_m": 846,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée : 100 % le matin, 100 % à midi, 99 % le soir",
+          "trigger": "pente à 70 m sous le décollage de Planfait, face à l'ouest-nord-ouest",
+          "description": "Résolution des limites (octobre 2026) : déduction. Point chaud kk7 à 100 % (toute la journée : 100 % le matin, 100 % à midi, 99 % le soir) à 200 m au nord-ouest du décollage de Planfait (916 m), sur un flanc à 846 m, pente de 24° exposée à l’ouest. Le récit d'avril 2008 raconte qu'on peine à sortir du « bocal » de Planfait avant de rejoindre l'épaule vers les Dents de Lanfon (`epaule-planfait-dents-de-lanfon`) : le thermique de sortie peut être celui-ci, sans que le récit le localise.",
+          "confidence": "low",
+          "sources": [
+            "S89",
+            "S3",
+            "S96"
+          ]
+        },
+        {
+          "id": "lanfon-pointe-nord-bluffy",
+          "name": "Dents de Lanfon : pentes sous la Pointe Nord (côté Bluffy)",
+          "lon": 6.22822,
+          "lat": 45.86467,
+          "alt_m": 1038,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée : 96 % le matin, 97 % à midi, 96 % le soir",
+          "trigger": "pentes sous la Pointe Nord (1681 m) des Dents de Lanfon, au-dessus de Bluffy",
+          "description": "Résolution des limites (octobre 2026) : déduction. Point chaud kk7 à 97 % (toute la journée : 96 % le matin, 97 % à midi, 96 % le soir) à 875 m au nord-nord-ouest de la position approximative de l'épaule de Planfait, sur un flanc à 1038 m, pente de 25° exposée à l’ouest, à 1 km de la Pointe Nord et de Bluffy. Il n'est pas sur l'axe Planfait – Dents du récit de 2008 (`epaule-planfait-dents-de-lanfon`, conservée à sa position approximative) : c'est un autre thermique du bas des Dents, que les sources ne décrivent pas.",
+          "confidence": "low",
+          "sources": [
+            "S89",
+            "S3",
+            "S96"
+          ]
+        },
+        {
+          "id": "lanfonnet-bas-face-ouest",
+          "name": "Lanfonnet : bas de la face ouest (Roche Murraz)",
+          "lon": 6.25431,
+          "lat": 45.84387,
+          "alt_m": 1433,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée : 85 % le matin, 94 % à midi, 94 % le soir",
+          "trigger": "face ouest du Lanfonnet, 360 m sous le sommet, à 260 m de la Roche Murraz",
+          "description": "Résolution des limites (octobre 2026) : déduction. Point chaud kk7 à 94 % (toute la journée : 85 % le matin, 94 % à midi, 94 % le soir) à 700 m au sud du sommet du Lanfonnet, 360 m plus bas, sur un flanc à 1433 m, pente de 30° exposée au sud-ouest, à 260 m de la Roche Murraz (OSM). C'est peut-être le bas de la même ascendance que `lanfonnet-face-ouest` : le carnet de vol de 2020 note qu'« à chaque montée on est décalé vers le sud ». Aucune source ne décrit ce pied de face séparément.",
+          "confidence": "low",
+          "sources": [
+            "S82",
+            "S91",
+            "S96"
+          ]
+        },
+        {
+          "id": "seynod-la-culaz",
+          "name": "Seynod – La Culaz : plaine au nord de Vieugy",
+          "lon": 6.10359,
+          "lat": 45.86682,
+          "alt_m": 518,
+          "coord_quality": "approx",
+          "best_hours": "midi et soir : 93 % à midi, 91 % le soir, rien le matin",
+          "trigger": "zone d'activités et lotissements au nord de Vieugy, vers La Culaz",
+          "description": "Résolution des limites (octobre 2026) : déduction. Second point chaud kk7 de la plaine de Seynod, déjà mentionné dans `seynod-vieugy-zone-industrielle` (qui garde la position du premier) : 91 % (midi et soir : 93 % à midi, 91 % le soir, rien le matin), à 859 m au nord-nord-est du premier, sur un flanc à 518 m, pente de 9° exposée au nord-ouest, à 720 m du hameau de La Culaz (OSM). C'est le trajet du topo de la traversée d'Annecy (t2807), qui ne décrit pas de thermique ici. Saisons des traces : printemps, été (rien en hiver ni en automne).",
+          "confidence": "low",
+          "sources": [
+            "S83",
             "S96"
           ]
         }
@@ -3942,6 +4009,39 @@
           "description": "Audit d'octobre 2026 : déduction. Point chaud kk7 à 92 % toutes périodes à 260 m du lieu-dit Nant Pareux et à 730 m du Treu (1835 m, sommet des Aravis cité sur le blog Speed&rando). Aucun récit de vol ne décrit ce versant. Position : celle du point chaud.",
           "confidence": "low",
           "sources": [
+            "S96"
+          ]
+        },
+        {
+          "id": "col-des-aravis-pentes-borderan",
+          "name": "Col des Aravis : grandes pentes herbeuses sous l'Aiguille de Borderan",
+          "lon": 6.48571,
+          "lat": 45.87901,
+          "alt_m": 1775,
+          "coord_quality": "approx",
+          "best_hours": "matin et midi : 98 % le matin, 91 % à midi, rien le soir",
+          "trigger": "grandes pentes herbeuses à l'est du col, sous l'Aiguille de Borderan (2492 m)",
+          "description": "Résolution des limites (octobre 2026) : Un pilote de La Clusaz écrit sur parapentiste.info (t2599, 2007) : « les grandes pentes herbeuses en dessous de l'Aiguille de Borderan permettent de bien monter », alors que sous la Pointe des Aravis « c'est pas bien net » ; la combe de Borderan (falaise chauffée) est aussi l'étage au-dessus du col. Le point chaud kk7 (96 %, matin et midi : 98 % le matin, 91 % à midi, rien le soir) est à 708 m au nord-est de la Vierge du Châtelard (`col-des-aravis-vierge`, position vérifiée), sur un flanc à 1775 m, pente de 31° exposée au sud, à 1 km de l'Aiguille : c'est la mesure de ces pentes. Position : celle du point chaud.",
+          "confidence": "medium",
+          "sources": [
+            "S72",
+            "S86",
+            "S96"
+          ]
+        },
+        {
+          "id": "roc-des-arces-col-de-chatillon",
+          "name": "Roc des Arces – col de Châtillon (Le Grand-Bornand)",
+          "lon": 6.4658,
+          "lat": 45.95282,
+          "alt_m": 1705,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée : 100 % le matin, 100 % à midi, 98 % le soir",
+          "trigger": "pentes du Roc des Arces (1772 m), sous le col de Châtillon",
+          "description": "Résolution des limites (octobre 2026) : déduction. Point chaud kk7 à 100 % (toute la journée : 100 % le matin, 100 % à midi, 98 % le soir) à 843 m à l’ouest-sud-ouest du thermique du Lachat (`lachat-gb-thermique`, recalé sur un autre point chaud), sur terrain presque plat à 1705 m, à 70 m du Roc des Arces et 360 m du col de Châtillon (OSM). Le fil du Grand-Bornand (parapentiste.info) décrit le tour de la vallée par le Lachat puis la Pointe d'Almet, sans parler de ce relief.",
+          "confidence": "low",
+          "sources": [
+            "S71",
             "S96"
           ]
         }

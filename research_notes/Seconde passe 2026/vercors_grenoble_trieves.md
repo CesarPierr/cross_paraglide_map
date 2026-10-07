@@ -178,3 +178,31 @@ Contexte et méthode : voir la section du même nom dans `chartreuse_gresivaudan
 **Lacunes écartées**
 - `lus-croix-haute-venturi-jocou` (danger : le mot « thermique » décrit le vol d'altitude du Jocou, déjà couvert par trois thermiques) ; `chichilianne-spirale` et `jocou-antenne-emetteur-est` (positions lues sur la carte du PNR ou le mât OSM, loin de tout point chaud ≥ 70 % : laissés `approx`).
 - Points chauds à 82-89 % (Avers, Seysse, col de Trapeynier, Goutaroux) : sans texte, laissés au rapport KK7.
+
+## Résolution des limites (octobre 2026)
+
+Date : 7 octobre 2026. Les limites de données restantes après l'audit des thermiques (`docs/KK7_CROISEMENT.md`, `docs/POSITIONS.md`, `docs/COUVERTURE.md`) ont été reprises pour Vercors, Grenoble, Trièves, Matheysine. Aucun identifiant supprimé ni renommé ; chaque correction est notée dans la description de l'élément (« Résolution des limites (octobre 2026) : … »).
+
+### 3. Thermiques documentés loin de tout point chaud
+
+Examen des 119 thermiques à plus de 2 km de tout point chaud ≥ 70 % : position contrôlée contre le géocodeur IGN (toponyme à moins de 120 m pour 51 d'entre eux), l'altitude déclarée contre le terrain IGN exact (concordante à 35 m près pour 30 autres) et le relief (croupe, flanc ou creux, orientation). Très peu sont mal placés ; la plupart sont loin des points chauds parce que le site est peu volé, parce que l'ascendance est un plafond ou une relance de haute montagne, ou parce qu'elle vient d'une confluence ou d'une plaine que les traces ne distinguent pas. Le plus proche point chaud ≥ 70 % et la raison sont notés ci-dessous ; un point chaud plus faible (30 à 70 %) à moins de 1 km est mentionné quand il existe.
+
+**Gardés à leur place, avec la raison :**
+
+| Élément | Position vérifiée par | Point chaud ≥ 70 % le plus proche | Pourquoi loin des traces |
+| --- | --- | --- | --- |
+| `vercors-nord/col-vert-pompe-pierriers` | altitude déclarée 1598 m concordante avec le terrain IGN (1598 m) | 2,4 km (76 %) | site peu volé |
+| `vercors-nord/bec-de-l-orient-relais-pompe` | toponyme IGN « Bec de l'Orient » à 6 m | 2,7 km (100 %) | ascendance de passage d'un cheminement de cross peu enregistré |
+| `vercors-nord/pas-des-rages-plafond-raccroche` | toponyme IGN « Pas des Rages » (col) à 2 m | 6,3 km (81 %) | ascendance de passage d'un cheminement de cross peu enregistré |
+| `vercors-nord/ffvl2227-autrans-la-plaine-thermique-fevrier` | altitude déclarée 1023 m concordante avec le terrain IGN (1024 m) | 3,2 km (97 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `trieves/chichilianne-spirale` | position déduite du texte (approximative) | 3,0 km (91 %) | site peu volé |
+| `trieves/jocou-antenne-emetteur-est` | position déduite du texte (approximative) | 2,0 km (78 %) | site peu volé |
+| `matheysine/colombiers-restitution-du-soir` | toponyme IGN « Colombiers » à 0 m | 3,0 km (80 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `vercors-nord/ffvl135-lia-nord-ouest-thermique` | toponyme IGN « la Lia » à 31 m | 5,3 km (85 %) | site peu volé (fiche FFVL) |
+| `vercors-nord/ffvl13562-pas-de-lane-thermique-nord` | altitude déclarée 1350 m concordante avec le terrain IGN (1357 m) | 3,5 km (85 %) | site peu volé (fiche FFVL) |
+
+### 4. Mont Thabor et Les Souillets
+
+Recherche de sources (fiches FFVL, clubs, forums, récits) ; rien n'est créé sans indice.
+
+- **Les Souillets** (FFVL 3009, 1390 m ; IGN : « les Souillets » est un sommet de La Morte à 310 m du décollage, au-dessus de l'Alpe du Grand Serre) : aucun thermique créé, faute d'indice. La fiche FFVL est vide (13 décollages en 2025, sans orientation). Lus : le fil « infos déco Alpe du Grand Serre » (Envol Sud Isère, janvier 2018, [forumactif](https://envolsudisere.forumactif.org/t3297-infos-deco-alpe-du-grand-serre)) qui cite les décollages du Pas de la Vache, du Pérolier, du Serriou, de la crête du Grand Serre et du Désert (« Paul décolle du désert avec descente sur Séchilienne »), jamais les Souillets, et ne dit rien d'une ascendance ; le fil « Site du côté de l'Alpe du Grand Serre ? » (parapentiste.info t15284, juillet 2010, [lien](https://www.parapentiste.info/forum/sites-de-vols/site-du-cote-de-lalpe-du-grand-serre-t15284.0.html)) qui cite Taillefer, Grand Armet, Courtet, Lavaldens, Jas d'Oris, Le Connex, Laffrey et les Tibannes, avec seulement un « attention à la brise de nord à partir de midi », sans les Souillets ; la vidéo « Alpe du Grand Serre décollage en parapente du Désert » (YouTube) dont seul le titre est lisible ; le club Envol Matheysin (matheysineparapente.fr : Le Connex, Laffrey, Sénépy, Courtet, Jas d'Oris) et son fil de création du site de Laffrey (parapentiste.info t4878) ne parlent pas des Souillets ; les pages « Souillets » des offices du tourisme sont des circuits de raquettes et de VTT (domaine nordique, 1360-1440 m). Le terrain IGN à la position est une croupe de 17° exposée à l'ouest à 1395 m (compatible avec les 1390 m de la fiche), ce qui ne dit rien sur les thermiques.

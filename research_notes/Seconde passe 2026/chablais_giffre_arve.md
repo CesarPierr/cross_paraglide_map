@@ -191,3 +191,35 @@ Le point chaud de la Chevran (94 %) est traité dans l'Arve (voir ci-dessous) et
 
 - Position : `saleve-carriere-etrembieres` : altitude estimée 520 m, terrain 827 m à la position (au niveau de Monnetier) ; altitude corrigée, position non vérifiée (la carrière n'est pas cartographiée).
 - Écartés : `geneve-espace-aerien` (espaces aériens) ; `saleve-troinex-thermique`, `sur-cou-relance-saleve`, `chapelle-rambaud-thermique-desert-saleve` (loin de tout point chaud : plaine peu volée ou position approximative d'après le récit).
+
+## Résolution des limites (octobre 2026)
+
+Date : 7 octobre 2026. Les limites de données restantes après l'audit des thermiques (`docs/KK7_CROISEMENT.md`, `docs/POSITIONS.md`, `docs/COUVERTURE.md`) ont été reprises pour Chablais, Giffre, Arve, Salève. Aucun identifiant supprimé ni renommé ; chaque correction est notée dans la description de l'élément (« Résolution des limites (octobre 2026) : … »).
+
+### 1. Points chauds forts à 600 m – 1 km d'un thermique documenté
+
+Règle de tri appliquée à chaque cas : le thermique documenté est **recalé** sur le point chaud kk7 quand sa position n'était qu'approximative (ou celle du décollage), que le texte de sa source décrit un relief que le point chaud occupe (la crête, la pente, le relief « qui encadre le col ») et qu'il n'a pas déjà son propre point chaud à moins de 600 m ; sinon le point chaud est une **seconde ascendance**, créée à part, `medium` quand un texte la décrit (fiche FFVL, fil de pilotes, récit), `low` avec « déduction » quand seuls le point chaud et le relief l'indiquent. Les élément créés citent la source kk7 (`thermal.kk7.ch`) et la source du texte rapproché, dans l'ordre. Les points chauds forts à 600 m – 1 km passent de 27 à 0 dans `docs/KK7_CROISEMENT.md`.
+
+- **Maisons de Zore** (`zore-pentes-est-vers-avoriaz`, `low`) : point chaud à 96 % (matin et midi) à 639 m du décollage de Super-Morzine, sur la route d'Avoriaz que décrivent Morzinn et Summits.
+- **Salève, falaise des Balmes** (`saleve-falaise-des-balmes`, `low`) : point chaud à 94 % au sommet de la falaise, à 250 m du décollage des Crêts, 460 m au-dessus du Coin (atterrissage).
+
+### 2. Écarts d'altitude (`docs/POSITIONS.md`)
+
+Constat préalable : le relevé d'altitudes IGN demandait les points par lots de 100, or le service d'altimétrie (`data.geopf.fr/altimetrie`) n'est exact que jusqu'à une trentaine de points par requête (testé : lots de 25 et 30 identiques aux requêtes unitaires, lots de 33 et plus décalés de 10 à 110 m, parfois bien plus). 1159 des 1349 valeurs du cache `positions/altitudes_ign.json` étaient décalées ; le cache a été régénéré par lots de 25. Sur les altitudes exactes la liste n'était plus de 16 mais de 17 écarts : quatre faux positifs disparaissaient (Plaines de Poët 878 m pour 880 m, Méruz – Char Marin, Roche Veyrand, Aiguille Grande 76 m), cinq écarts apparaissaient (Manival, Mont Julioz, L'Écureuil et le versant de Peisey-Vallandry, Cuchon). Tous sont tranchés : 0 écart. La règle suivie : on garde la position quand elle est confirmée par un repère indépendant (gare d'arrivée de télésiège OSM, point de ParaglidingEarth, nœud OSM d'un sommet, coordonnées du guide papier) et l'on corrige l'altitude ; on déplace la position quand c'est elle que le repère indépendant contredit.
+
+- **Châtel – Morclan** (`chatel-morclan`) : la position (fiche FFVL 1180 « sommet ») est au sommet, 1966 m de terrain, 1963 m à ParaglidingEarth n°3034 ; les 1870 m retenus étaient ceux du second site de ParaglidingEarth « sous le sommet » (n°6870, 1867 m, à 410 m au sud-est, 1845 m de terrain), absent de l'atlas. Altitude 1966 m.
+
+### 3. Thermiques documentés loin de tout point chaud
+
+Examen des 119 thermiques à plus de 2 km de tout point chaud ≥ 70 % : position contrôlée contre le géocodeur IGN (toponyme à moins de 120 m pour 51 d'entre eux), l'altitude déclarée contre le terrain IGN exact (concordante à 35 m près pour 30 autres) et le relief (croupe, flanc ou creux, orientation). Très peu sont mal placés ; la plupart sont loin des points chauds parce que le site est peu volé, parce que l'ascendance est un plafond ou une relance de haute montagne, ou parce qu'elle vient d'une confluence ou d'une plaine que les traces ne distinguent pas. Le plus proche point chaud ≥ 70 % et la raison sont notés ci-dessous ; un point chaud plus faible (30 à 70 %) à moins de 1 km est mentionné quand il existe.
+
+**Gardés à leur place, avec la raison :**
+
+| Élément | Position vérifiée par | Point chaud ≥ 70 % le plus proche | Pourquoi loin des traces |
+| --- | --- | --- | --- |
+| `saleve-genevois/saleve-troinex-thermique` | altitude déclarée 423 m concordante avec le terrain IGN (420 m) | 2,7 km (87 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `saleve-genevois/sur-cou-relance-saleve` | toponyme IGN « Sur Cou » à 9 m | 4,4 km (75 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `saleve-genevois/chapelle-rambaud-thermique-desert-saleve` | église de La Chapelle-Rambaud (IGN) à 88 m | 8,0 km (71 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `arve-faucigny/derochoir-eboulis-pormenaz` | position sourcée (relief cité par le récit) | 2,3 km (90 %) | site peu volé |
+| `chablais/pleney-restitution` | position sourcée (relief cité par le récit) | 2,1 km (95 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `haut-giffre/ffvl1091-flocons-verts-thermiques` | altitude déclarée 1144 m concordante avec le terrain IGN (1138 m) | 3,0 km (80 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |

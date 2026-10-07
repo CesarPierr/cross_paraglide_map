@@ -534,13 +534,13 @@
         {
           "id": "merlet-thermiques-matin",
           "name": "Parc de Merlet : thermiques du matin",
-          "lon": 6.8124,
-          "lat": 45.9065,
-          "alt_m": 1691,
+          "lon": 6.81998,
+          "lat": 45.90835,
+          "alt_m": 1539,
           "coord_quality": "source",
           "best_hours": "matin",
           "trigger": "versant sud-ouest du parc de Merlet, face au Prarion",
-          "description": "Chamonix.net conseille de traverser la vallée vers le parc Merlet où les thermiques du matin peuvent être forts et permettent de bons gains de hauteur.",
+          "description": "Chamonix.net conseille de traverser la vallée vers le parc Merlet où les thermiques du matin peuvent être forts et permettent de bons gains de hauteur. Résolution des limites (octobre 2026) : tranché : le texte de chamonix.net parle du parc de Merlet, pas du décollage. L'ancienne position (1691 m déclarés) était celle de la fiche FFVL du décollage, à 1452 m de terrain. Position ramenée sur le parc animalier de Merlet (toponyme IGN, 1539 m de terrain), à 622 m ; altitude portée à 1539 m.",
           "sources": [
             "S53",
             "S84"
@@ -825,6 +825,23 @@
           "sources": [
             "S164"
           ]
+        },
+        {
+          "id": "brevent-faces-sud-est-plan-lachat",
+          "name": "Brévent : faces sud-est au-dessus de Plan Lachat",
+          "lon": 6.84139,
+          "lat": 45.92679,
+          "alt_m": 1941,
+          "coord_quality": "approx",
+          "best_hours": "toute la journée : 98 % le matin, 95 % à midi, 76 % le soir",
+          "trigger": "faces sud-est du Brévent, à 560 m sous le sommet, au-dessus de Plan Lachat",
+          "description": "Résolution des limites (octobre 2026) : déduction. Point chaud kk7 à 96 % (toute la journée : 98 % le matin, 95 % à midi, 76 % le soir) à 831 m au sud-sud-est du sommet du Brévent (`brevent-plafond-3000`), 560 m plus bas, sur un flanc à 1941 m, pente de 35° exposée au sud-est, à 610 m de Plan Lachat et 900 m de la Tête de Bellachat (OSM). Le récit du cheminement Plan de l'Aiguille → Planpraz → Brévent dit seulement que « ça monte jusqu'à 3000 m au-dessus du Brévent » : ce point mesuré est probablement l'ascendance basse qui alimente ce plafond.",
+          "confidence": "low",
+          "sources": [
+            "S150",
+            "S37",
+            "S164"
+          ]
         }
       ],
       "soaring_spots": [
@@ -1038,16 +1055,16 @@
         {
           "id": "merlet",
           "name": "Merlet (Les Houches)",
-          "lon": 6.8124,
-          "lat": 45.9065,
-          "alt_m": 1650,
+          "lon": 6.81917,
+          "lat": 45.91139,
+          "alt_m": 1710,
           "coord_quality": "source",
           "ffvl_id": 1115,
           "orientations": [
             "S",
             "SW"
           ],
-          "description": "Club : 45°54'24.2\"N 6°48'44.9\"E, 1600 m (1691 m sur la fiche FFVL), 10 min à pied du parking du parc animalier. Fin de matinée à fin d'après-midi, brises thermodynamiques et restitution. Éviter le survol du parc animalier. Atterrissage : gravière de Cachat, très technique (torrent, piste ULM privée).",
+          "description": "Club : 45°54'24.2\"N 6°48'44.9\"E, 1600 m (1691 m sur la fiche FFVL), 10 min à pied du parking du parc animalier. Fin de matinée à fin d'après-midi, brises thermodynamiques et restitution. Éviter le survol du parc animalier. Atterrissage : gravière de Cachat, très technique (torrent, piste ULM privée). Résolution des limites (octobre 2026) : tranché : la position de la fiche FFVL 1115 (6.8124 E, 45.9065 N, 1452 m de terrain), recopiée sur celle du site du club Gratte-Ciel, ne peut pas être à 1600-1691 m. Le guide papier « Vol libre au Pays du Mont-Blanc » (clubs, 2008, S3) donne pour Merlet 45°54'41\" N, 6°49'09\" E, 1600 m, dénivelé 600 m, « 10 min à pied du parking du parc animalier en suivant le sentier de l'Aiguillette » : ce point, à 340 m au nord du parc, est à 1710 m de terrain, compatible avec les 1691 m de la fiche (à 20 m près) et avec la montée de 10 minutes depuis le parking (le point de la fiche est plus bas que le parc, à 1539 m). Position déplacée de 753 m, altitude portée à 1710 m (terrain IGN).",
           "sources": [
             "S43",
             "S3",
@@ -2235,13 +2252,13 @@
           "name": "Dômes de Miage (paralpinisme)",
           "lon": 6.7961,
           "lat": 45.8153,
-          "alt_m": 3600,
+          "alt_m": 3520,
           "coord_quality": "source",
           "orientations": [
             "N",
             "NW"
           ],
-          "description": "45°48'54.9\"N 6°47'45.9\"E, 3600 m, dénivelé 3000 m, voie glaciaire PD. Décollages au sommet autorisés seulement vers le nord (réserve) : col des Dômes (« sécurit » alimenté au nord, pente très raide) ou 3e dôme (vol vers Saint-Gervais, pas au-delà). Atterrissage conseillé : Passy-Marlioz, « aérologiquement sain à toute heure ».",
+          "description": "45°48'54.9\"N 6°47'45.9\"E, 3600 m, dénivelé 3000 m, voie glaciaire PD. Décollages au sommet autorisés seulement vers le nord (réserve) : col des Dômes (« sécurit » alimenté au nord, pente très raide) ou 3e dôme (vol vers Saint-Gervais, pas au-delà). Atterrissage conseillé : Passy-Marlioz, « aérologiquement sain à toute heure ». Résolution des limites (octobre 2026) : tranché : la position (45°48'54.9\" N, 6°47'45.9\" E) est le col des Dômes (toponyme IGN à 5 m, 3520 m de terrain) ; les 3600 m sont l'altitude de la voie vers les dômes (OSM : 2e dôme 3633 m, dôme sud 3673 m). Altitude de la position portée à 3520 m.",
           "sources": [
             "S47",
             "S3"

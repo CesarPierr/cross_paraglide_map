@@ -138,3 +138,38 @@ Les listes de lacunes (`docs/COUVERTURE.md`, `docs/KK7_CROISEMENT.md`, `docs/POS
 - `col-des-aravis-brise-col` et `col-des-aravis-choix-versant` : pièges du col des Aravis ; le thermique de la Vierge du Châtelard, décrit dans `col-des-aravis-vierge` à 1,2 km, porte déjà ce même fil de 2007.
 - `aravis-quatre-tetes-trop-tard` : zone sous le vent (« thermiques poussifs et petteux sous le vent ») donnée comme piège, pas comme relance.
 - `sulens-la-tulle-venturi` : venturi ; le thermique de Sulens est décrit à 1,9 km.
+
+## Résolution des limites (octobre 2026)
+
+Date : 7 octobre 2026. Les limites de données restantes après l'audit des thermiques (`docs/KK7_CROISEMENT.md`, `docs/POSITIONS.md`, `docs/COUVERTURE.md`) ont été reprises pour Lac d’Annecy, Bornes, Aravis. Aucun identifiant supprimé ni renommé ; chaque correction est notée dans la description de l'élément (« Résolution des limites (octobre 2026) : … »).
+
+### 1. Points chauds forts à 600 m – 1 km d'un thermique documenté
+
+Règle de tri appliquée à chaque cas : le thermique documenté est **recalé** sur le point chaud kk7 quand sa position n'était qu'approximative (ou celle du décollage), que le texte de sa source décrit un relief que le point chaud occupe (la crête, la pente, le relief « qui encadre le col ») et qu'il n'a pas déjà son propre point chaud à moins de 600 m ; sinon le point chaud est une **seconde ascendance**, créée à part, `medium` quand un texte la décrit (fiche FFVL, fil de pilotes, récit), `low` avec « déduction » quand seuls le point chaud et le relief l'indiquent. Les élément créés citent la source kk7 (`thermal.kk7.ch`) et la source du texte rapproché, dans l'ordre. Les points chauds forts à 600 m – 1 km passent de 27 à 0 dans `docs/KK7_CROISEMENT.md`.
+
+- **Planfait, deux points chauds** (100 % et 97 %) autour de `epaule-planfait-dents-de-lanfon`, dont la position approximative (sur l'axe Planfait – Dents du récit de 2008) est conservée car aucun des deux n'est sur cet axe : `planfait-devant-le-deco` (`low`, 200 m devant le décollage, c'est peut-être le thermique de « sortie du bocal ») et `lanfon-pointe-nord-bluffy` (`low`, sous la Pointe Nord).
+- **Col des Aravis, pentes de Borderan** (`col-des-aravis-pentes-borderan`, `medium`) : le fil t2599 (pilotes de La Clusaz, 2007) dit que « les grandes pentes herbeuses en dessous de l'Aiguille de Borderan permettent de bien monter » alors que sous la Pointe des Aravis « c'est pas bien net » ; le point chaud à 96 % (matin et midi) est sur ces pentes. `col-des-aravis-vierge` garde la statue de la Vierge.
+- **Lanfonnet, bas de la face ouest** (`lanfonnet-bas-face-ouest`, `low`) : point chaud à 94 % à 700 m au sud du sommet, 360 m plus bas ; peut-être la même ascendance (le carnet de 2020 note un décalage vers le sud à chaque montée), d'où la prudence.
+- **Seynod – La Culaz** (`seynod-la-culaz`, `low`) : le second point chaud de la plaine de Seynod, que `seynod-vieugy-zone-industrielle` mentionnait dans sa description, devient un élément à part ; la description du premier le dit.
+- **Roc des Arces** (`roc-des-arces-col-de-chatillon`, `low`) : point chaud à 100 % à 843 m à l'ouest-sud-ouest du thermique du Lachat, déjà recalé par la construction sur un autre point chaud.
+
+### 2. Écarts d'altitude (`docs/POSITIONS.md`)
+
+Constat préalable : le relevé d'altitudes IGN demandait les points par lots de 100, or le service d'altimétrie (`data.geopf.fr/altimetrie`) n'est exact que jusqu'à une trentaine de points par requête (testé : lots de 25 et 30 identiques aux requêtes unitaires, lots de 33 et plus décalés de 10 à 110 m, parfois bien plus). 1159 des 1349 valeurs du cache `positions/altitudes_ign.json` étaient décalées ; le cache a été régénéré par lots de 25. Sur les altitudes exactes la liste n'était plus de 16 mais de 17 écarts : quatre faux positifs disparaissaient (Plaines de Poët 878 m pour 880 m, Méruz – Char Marin, Roche Veyrand, Aiguille Grande 76 m), cinq écarts apparaissaient (Manival, Mont Julioz, L'Écureuil et le versant de Peisey-Vallandry, Cuchon). Tous sont tranchés : 0 écart. La règle suivie : on garde la position quand elle est confirmée par un repère indépendant (gare d'arrivée de télésiège OSM, point de ParaglidingEarth, nœud OSM d'un sommet, coordonnées du guide papier) et l'on corrige l'altitude ; on déplace la position quand c'est elle que le repère indépendant contredit.
+
+- **Méruz – Char Marin** (écart de 108 m dans POSITIONS.md) : écart artificiel (voir ci-dessus), terrain exact 1173 m pour 1173 m déclarés.
+
+### 3. Thermiques documentés loin de tout point chaud
+
+Examen des 119 thermiques à plus de 2 km de tout point chaud ≥ 70 % : position contrôlée contre le géocodeur IGN (toponyme à moins de 120 m pour 51 d'entre eux), l'altitude déclarée contre le terrain IGN exact (concordante à 35 m près pour 30 autres) et le relief (croupe, flanc ou creux, orientation). Très peu sont mal placés ; la plupart sont loin des points chauds parce que le site est peu volé, parce que l'ascendance est un plafond ou une relance de haute montagne, ou parce qu'elle vient d'une confluence ou d'une plaine que les traces ne distinguent pas. Le plus proche point chaud ≥ 70 % et la raison sont notés ci-dessous ; un point chaud plus faible (30 à 70 %) à moins de 1 km est mentionné quand il existe.
+
+- **Roc des Bœufs – première ligne HT** (`roc-des-boeufs-premiere-ligne-ht`) : lignes maintenant localisées sur OpenStreetMap (400 kV qui franchit la crête 1,15 km au nord, à 6.1710 E, 45.7735 N, 1602 m ; 225 kV plus loin au nord-nord-est) mais les textes ne disent pas laquelle est « la première » (selon le sens d'arrivée) : position conservée, note ajoutée.
+
+**Gardés à leur place, avec la raison :**
+
+| Élément | Position vérifiée par | Point chaud ≥ 70 % le plus proche | Pourquoi loin des traces |
+| --- | --- | --- | --- |
+| `lac-annecy/roc-des-boeufs-ouest` | toponyme IGN « Roc des Bœufs » à 56 m | 3,6 km (71 %) (plus faible : 360 m (66 %)) | site peu volé |
+| `lac-annecy/roc-des-boeufs-premiere-ligne-ht` | position déduite du texte (approximative) | 3,4 km (78 %) (plus faible : 239 m (54 %)) | site peu volé |
+| `lac-annecy/doussard-thermiques-bout-du-lac` | position déduite du texte (entre l'atterrissage et le lac) | 3,7 km (78 %) | plaine, confluence, vol du soir ou zone bâtie : peu de relief, peu de traces |
+| `bornes/bois-du-mont-thones-dynamique` | position approximative : le fil dit « au sud-ouest de Thônes (bois du mont ?) » ; le « Bois du Mont » de l'IGN est à 1,5 km, au sud-est, d'où le doute | 4,2 km (88 %) | site peu volé |

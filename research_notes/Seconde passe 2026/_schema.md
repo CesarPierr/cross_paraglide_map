@@ -16,6 +16,15 @@ seconde passe qui porte le même `id` (pas de fusion). Conséquences :
   n'est créé que si aucun secteur existant ne le couvre ; il porte alors `parent_massif` ;
 - réutiliser les `id` des éléments existants quand on les corrige, pour garder des liens stables.
 
+## Brises conditionnelles
+
+Une brise qui n'existe que dans une situation particulière (« par forte chaleur », « par vent de
+nord », « par bise », « sous inversion », « par Lombarde », « en hiver ») porte un champ
+`condition` en texte court, par exemple `"condition": "canicule"` ou `"condition": "vent de N > 15 km/h"`.
+Elle est affichée avec un badge et n'entre dans la simulation que si la condition est remplie.
+Deux brises opposées dans le même couloir doivent être distinguées par leur `condition` ou leurs
+horaires, sinon elles s'annulent dans le modèle.
+
 ## Coordonnées
 
 Références locales (non versionnées, dans `.cache/research/`) :

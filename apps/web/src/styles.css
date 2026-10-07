@@ -3396,10 +3396,12 @@ div.summary {
   }
 
   /* Top bar: logo, search, help. */
+  /* Above the map buttons: its search results open over them. */
   .topbar {
     top: var(--gap);
     left: var(--gap);
     right: var(--gap);
+    z-index: 9;
     width: auto;
     height: 48px;
     padding: 6px 8px;

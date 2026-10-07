@@ -134,7 +134,8 @@ function AirspacesHere({ lon, lat }: { lon: number; lat: number }) {
   );
 }
 
-export function ProbeCard() {
+/** The probe, shown as a sheet in the left panel (bottom sheet on phones). */
+export function ProbeSheet() {
   const probe = useRuntime((r) => r.probe);
   const { heightMode, heightAgl, heightAsl, synopticKmh } = useApp();
   if (!probe) return null;
@@ -142,7 +143,7 @@ export function ProbeCard() {
   const close = () => getController()?.clearProbe();
   if (!c)
     return (
-      <div className="probe-card panel">
+      <div className="probe-card sheet">
         <button className="close" onClick={close} aria-label="Fermer">
           <IconClose size={16} />
         </button>
@@ -163,7 +164,7 @@ export function ProbeCard() {
             : { tone: '', text: 'Exposition neutre au vent météo.' };
   const heightTxt = heightMode === 'agl' ? `${heightAgl} m sol` : `${heightAsl} m (${Math.max(0, Math.round(c.heightAgl))} m sol)`;
   return (
-    <div className="probe-card panel" aria-live="polite">
+    <div className="probe-card sheet" aria-live="polite">
       <button className="close" onClick={close} aria-label="Fermer la sonde">
         <IconClose size={16} />
       </button>

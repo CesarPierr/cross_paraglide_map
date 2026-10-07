@@ -27,10 +27,10 @@ export class ReliefModule implements MapModule {
     const vis = (id: string, on: boolean) => map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none');
     vis('bm-s2', b === 'ign-ortho');
     vis('bm-ign-ortho', b === 'ign-ortho');
-    vis('bm-ign-plan', b === 'ign-plan');
-    vis('bm-otm', b === 'otm');
-    // Relief tints stay underneath imagery as a fallback; stronger shading on the bare relief.
-    map.setPaintProperty('hillshade', 'hillshade-exaggeration', b === 'relief' ? 0.75 : 0.45);
+    vis('bm-topo', b === 'topo');
+    // Relief tints stay underneath imagery as a fallback; stronger shading on the bare relief,
+    // lighter on the topo map which already draws its own relief.
+    map.setPaintProperty('hillshade', 'hillshade-exaggeration', b === 'relief' ? 0.75 : b === 'topo' ? 0.28 : 0.45);
   }
 
   /** Real sun position: slopes facing the sun light up, the others fall into shade. */

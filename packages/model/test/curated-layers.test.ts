@@ -13,7 +13,9 @@ import {
   newCellResult,
   rasterizeCurated,
   sunriseSolarHour,
-  thermalDayFactor,
+  sunSamples,
+  thermalDecline,
+  thermalOnset,
   type CuratedBreezeInput,
   type ModelParams,
 } from '../src';
@@ -110,14 +112,49 @@ describe('corridor specificity', () => {
   });
 });
 
-describe('thermal onset', () => {
-  it('develops thermals from 2.5 h to 4.5 h after sunrise (Saint-Hilaire: « dès 3 h d’ensoleillement »)', () => {
+describe('thermal onset, face by face', () => {
+  /** Sunshine hours since sunrise of a plane slope (aspect, slope in degrees) at 45°N. */
+  const sunHoursOf = (hour: number, aspect: number, slope: number) => {
+    const s = sunSamples(2026, 6, 15, hour, 45.2, 6.3);
+    const a = (aspect * Math.PI) / 180;
+    const sl = (slope * Math.PI) / 180;
+    const n = [Math.sin(sl) * Math.sin(a), Math.sin(sl) * Math.cos(a), Math.cos(sl)];
+    let e = 0;
+    for (let i = 0; i < s.length; i += 4) e += s[i + 3] * Math.max(0, n[0] * s[i] + n[1] * s[i + 1] + n[2] * s[i + 2]);
+    return e;
+  };
+  it('samples the sun path from sunrise, in hours of full sun', () => {
     const rise = sunriseSolarHour(6, 15, 45);
     expect(rise).toBeGreaterThan(4);
     expect(rise).toBeLessThan(4.6);
-    expect(thermalDayFactor(6, 15, 45, rise + 2.4, -0.4)).toBe(0);
-    expect(thermalDayFactor(6, 15, 45, rise + 4.5, 0.3)).toBe(1);
-    expect(thermalDayFactor(6, 15, 45, 18, 0)).toBe(0.5);
+    expect(sunSamples(2026, 6, 15, 5, 45.2, 6.3).length).toBe(0); // before sunrise (legal 5h)
+    const flatNoon = sunHoursOf(13.5, 0, 0);
+    expect(flatNoon).toBeGreaterThan(3);
+    expect(flatNoon).toBeLessThan(7.5); // less than the hours since sunrise
+  });
+  it('lights east faces first, west faces in the afternoon, flat floors in between', () => {
+    const at = (h: number) => [90, 0, 270].map((asp) => thermalOnset(sunHoursOf(h, asp, asp === 0 ? 0 : 30)));
+    const [east, flat, west] = at(10.5);
+    expect(east).toBeGreaterThan(flat);
+    expect(flat).toBeGreaterThan(west);
+    expect(west).toBe(0);
+    // Saint-Hilaire: calm until ~2 h after sunrise (≈ 8h legal), thermals after 3 h of sun.
+    expect(thermalOnset(sunHoursOf(7.5, 90, 30))).toBe(0);
+    expect(thermalOnset(sunHoursOf(10.5, 90, 30))).toBeGreaterThan(0.95);
+    expect(thermalOnset(sunHoursOf(15, 270, 30))).toBeGreaterThan(0.95);
+  });
+  it('keeps the afternoon decline', () => {
+    expect(thermalDecline(10, 0.5)).toBe(1);
+    expect(thermalDecline(18, 0)).toBe(0.5);
+  });
+  it('is computed per cell by the time context', () => {
+    const p = params(14);
+    const tc = computeTimeContext(terrain, p);
+    // Synthetic valley running east–west: by 14h the south-facing slope (north side,
+    // row 30) has had more sun than the north-facing one (row 50); early on a July
+    // morning the sun rises in the north-east and the order is reversed.
+    expect(tc.sunHours[30 * grid.width + 60]).toBeGreaterThan(tc.sunHours[50 * grid.width + 60]);
+    expect(computeTimeContext(terrain, params(5)).sunHours.every((v) => v === 0)).toBe(true);
   });
 });
 

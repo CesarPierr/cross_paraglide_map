@@ -4,7 +4,7 @@
  * fallback), this one drives the interactive GPU rendering.
  */
 import { EARTH_CIRCUMFERENCE } from '@brises/model';
-import { RULES } from '@brises/model';
+import { RULES, SUN_SAMPLES_MAX } from '@brises/model';
 
 const f = (v: number) => (Number.isInteger(v) ? `${v}.0` : `${v}`);
 
@@ -28,7 +28,7 @@ uniform float uSunElev;
 uniform float uSeason;
 uniform float uValleyPhase;
 uniform float uWaterPhase;
-uniform float uThermalDay;   // field.ts → thermalDayFactor
+uniform float uThermalDecline;   // field.ts → thermalDecline
 uniform vec2 uG;
 uniform float uGSpeed;
 uniform float uGKmh;
@@ -47,6 +47,7 @@ const float R_ANTI = ${f(RULES.valleyAntiwind)};
 const vec4 R_ANTI_ZONE = vec4(${RULES.valleyAntiwindZone.map(f).join(', ')});
 const vec2 R_CUR_SLOPE = vec2(${RULES.curatedSlopeLayer.map(f).join(', ')});
 const vec2 R_CUR_KATA = vec2(${RULES.curatedKatabaticLayer.map(f).join(', ')});
+const vec2 R_SUN_H = vec2(${RULES.thermalSunHours.map(f).join(', ')});
 const float R_CUR_DEEP = ${f(RULES.curatedDeepDepth)};
 const float R_CUR_ALIGN = ${f(RULES.curatedAlignWeight)};
 const float R_PLAIN_MAX = ${f(RULES.plainBreezeMax)};
@@ -109,7 +110,8 @@ Cell evalCell(ivec2 c) {
   float gmag = length(Z.yz);
   o.slopeDeg = degrees(atan(gmag));
   o.aspect = gmag > 1e-6 ? mod(degrees(atan(-Z.y, -Z.z)) + 360.0, 360.0) : 0.0;
-  float insol = texelFetch(tInsol, c, 0).r;
+  vec2 IN = texelFetch(tInsol, c, 0).rg;   // insolation, sunshine hours since sunrise
+  float insol = IN.x;
   o.insol = insol;
   float depth = max(V.y - V.x, 150.0);
   float level = (z + hh - V.x) / depth;
@@ -222,14 +224,19 @@ Cell evalCell(ivec2 c) {
   float elevF = 0.55 + 0.45 * smoothstep(400.0, 2200.0, z);
   float convexF = 0.55 + 0.45 * smoothstep(-60.0, 140.0, Z.w);
   float windF = 1.0 - 0.6 * smoothstep(20.0, 45.0, uGKmh);
-  float dayF = uThermalDay;
+  // Onset per slope from the sunshine it received since sunrise (field.ts → thermalOnset).
+  float dayF = smoothstep(R_SUN_H.x, R_SUN_H.y, IN.y) * uThermalDecline;
   o.thermal = W.w > 0.5 ? 0.0 : day * clamp(insol * uSeason * elevF * convexF * windF * dayF, 0.0, 1.0);
   o.turb = clamp(o.lee * smoothstep(8.0, 35.0, uGKmh) + o.venturi * smoothstep(15.0, 45.0, uGKmh) * 0.6, 0.0, 1.0);
   return o;
 }
 `;
 
-/** Pass 1: insolation with cast shadows (time dependent only). */
+/**
+ * Pass 1 (time dependent only): instantaneous insolation with cast shadows (r) and
+ * sunshine received since sunrise, in hours of full sun on the slope, without cast
+ * shadows (g; field.ts → computeTimeContext, sun path from sun.ts → sunSamples).
+ */
 export const INSOLATION_FS = `#version 300 es
 precision highp float;
 precision highp int;
@@ -241,6 +248,8 @@ uniform vec3 uSun;        // unit vector east, north, up
 uniform float uTanEl;
 uniform float uAtten;     // low-sun attenuation
 uniform vec2 uSunStep;    // grid step towards the sun
+uniform vec4 uSunS[${SUN_SAMPLES_MAX}];   // sun path since sunrise: unit vector, weight (h)
+uniform int uSunN;
 out vec4 outColor;
 const float PI = 3.141592653589793;
 const float CIRC = ${EARTH_CIRCUMFERENCE.toFixed(3)};
@@ -249,8 +258,15 @@ void main() {
   ivec2 c = ivec2(gl_FragCoord.xy);
   vec4 Z = texelFetch(tZ, c, 0);
   vec3 n = vec3(-Z.y, -Z.z, 1.0);
-  float cosInc = dot(n, uSun) / length(n);
-  if (cosInc <= 0.0 || uAtten <= 0.0) { outColor = vec4(0.0); return; }
+  float inv = 1.0 / length(n);
+  float sunH = 0.0;
+  for (int i = 0; i < ${SUN_SAMPLES_MAX}; i++) {
+    if (i >= uSunN) break;
+    float cs = dot(n, uSunS[i].xyz) * inv;
+    if (cs > 0.0) sunH += uSunS[i].w * cs;
+  }
+  float cosInc = dot(n, uSun) * inv;
+  if (cosInc <= 0.0 || uAtten <= 0.0) { outColor = vec4(0.0, sunH, 0.0, 1.0); return; }
   float my = (uPy0 + float(c.y) + 0.5) / uWorldPx;
   float lat = atan(sinh(PI * (1.0 - 2.0 * my)));
   float cs = CIRC * cos(lat) / uWorldPx;
@@ -265,7 +281,7 @@ void main() {
       if (shade >= 1.0) break;
     }
   }
-  outColor = vec4(cosInc * (1.0 - shade) * uAtten, 0.0, 0.0, 1.0);
+  outColor = vec4(cosInc * (1.0 - shade) * uAtten, sunH, 0.0, 1.0);
 }`;
 
 /** Pass 2: the wind field (MRT). */

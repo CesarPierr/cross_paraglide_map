@@ -12,7 +12,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { activeInSlot, thermalRole } from '../map/modules/schema';
 import { SCHEMA_PHASES, useApp, useRuntime, type SchemaPhase } from '../state/store';
 import { getController } from './controller-ref';
-import { isMobileNow, showBrowse } from './mobile';
+import { isMobileNow, showSheet } from './mobile';
 
 type LngLat = [number, number];
 interface Line {
@@ -39,6 +39,8 @@ interface Step {
   wind?: { fromDeg: number; kmh: number };
   /** Sources of the lead sentence. */
   leadSrc?: string[];
+  /** Atlas items the step talks about: highlighted on the schema. */
+  ids?: string[];
   focus: LngLat[];
 }
 
@@ -121,7 +123,33 @@ function dayPart(p: AtlasFeatureProps): 'matin' | 'après-midi' | 'soir' | null 
   return null;
 }
 
+/** A written visit (research_notes/…/visites): narration tied to atlas items. */
+function writtenTour(atlas: Atlas, m: AtlasMassif): Step[] | null {
+  const steps = atlas.tours?.[m.id];
+  if (!steps?.length) return null;
+  const byId = new Map(Object.values(atlas.features).flatMap((list) => list.map((f) => [f.properties.id, f] as const)));
+  return steps.map((st) => {
+    const feats = st.features.map((id) => byId.get(id)).filter((f): f is AtlasFeature => !!f);
+    const single = feats.length === 1 && feats[0].geometry.type === 'Point' ? (feats[0].geometry.coordinates as LngLat) : undefined;
+    return {
+      chapter: st.chapter,
+      title: st.title,
+      lead: st.text,
+      leadSrc: st.sources,
+      ids: st.features,
+      more: feats.map((f) => ({ text: `${f.properties.name}${f.properties.description ? ` — ${sentences(f.properties.description, 1, 200)}` : ''}`, id: f.properties.id, src: srcOf(f.properties) })),
+      sourceIds: st.sources,
+      ...(st.view === 'massif' || !feats.length ? { bbox: m.bbox } : single ? { point: single, zoom: 12.3 } : { bbox: boxOf(feats.flatMap(coordsOf), 0.02) }),
+      phase: st.phase,
+      wind: st.wind ? { fromDeg: st.wind.fromDeg, kmh: st.wind.kmh } : undefined,
+      focus: [],
+    };
+  });
+}
+
 export function buildTour(atlas: Atlas, m: AtlasMassif): Step[] {
+  const written = writtenTour(atlas, m);
+  if (written) return written;
   const own = (cat: FeatureCategory) => atlas.features[cat].filter((f) => f.properties.massif === m.id);
   const thermals = own('thermals');
   const hazards = own('hazards');
@@ -161,7 +189,8 @@ export function buildTour(atlas: Atlas, m: AtlasMassif): Step[] {
       lines: active.slice(1, 4).map((f) => ({ text: `${f.properties.name}${f.properties.speedKmh ? ` · ${f.properties.speedKmh} km/h` : ''}`, id: f.properties.id, src: srcOf(f.properties) })),
       more: active.map((f) => ({ text: `${f.properties.name} — ${sentences(f.properties.description, 2, 260)}`, id: f.properties.id, src: srcOf(f.properties) })),
       sourceIds: active.flatMap((f) => srcOf(f.properties)),
-      bbox: m.bbox,
+      bbox: boxOf(active.slice(0, 3).flatMap(coordsOf), 0.02) ?? m.bbox,
+      ids: active.slice(0, 4).map((f) => f.properties.id),
       phase: k,
       focus: [],
     });
@@ -178,6 +207,7 @@ export function buildTour(atlas: Atlas, m: AtlasMassif): Step[] {
       more: [{ text: clean(p.description), id: p.id, src: srcOf(p) }],
       sourceIds: p.sources.split(',').filter(Boolean),
       bbox: boxOf(coordsOf(c), 0.03),
+      ids: [p.id],
       phase: 'afternoon',
       focus: coordsOf(c).slice(0, 1),
     });
@@ -196,7 +226,8 @@ export function buildTour(atlas: Atlas, m: AtlasMassif): Step[] {
         more: thermals.map((t) => ({ text: [t.properties.name, t.properties.details?.Heures, sentences(t.properties.description, 1, 160)].filter(Boolean).join(' · '), id: t.properties.id, src: srcOf(t.properties) })),
         sourceIds: thermals.flatMap((t) => srcOf(t.properties)),
         bbox: boxOf(thermals.flatMap(coordsOf), 0.03),
-        focus: thermals.slice(0, 6).map((t) => coordsOf(t)[0]),
+        ids: thermals.map((t) => t.properties.id),
+        focus: [],
       });
   }
 
@@ -205,7 +236,7 @@ export function buildTour(atlas: Atlas, m: AtlasMassif): Step[] {
   const keyThermals = thermals
     .slice()
     .sort((a, b) => rank(a.properties) - rank(b.properties) || (CONF_RANK[a.properties.confidence ?? 'medium'] ?? 1) - (CONF_RANK[b.properties.confidence ?? 'medium'] ?? 1))
-    .slice(0, 5);
+    .slice(0, 6);
   for (const t of keyThermals) {
     const p = t.properties;
     const at = coordsOf(t)[0];
@@ -224,7 +255,8 @@ export function buildTour(atlas: Atlas, m: AtlasMassif): Step[] {
       ],
       sourceIds: p.sources.split(',').filter(Boolean),
       point: at,
-      zoom: 12.6,
+      zoom: 12.4,
+      ids: [p.id, ...hz.map((h) => h.properties.id)],
       phase: dayPart(p) === 'matin' ? 'morning' : dayPart(p) === 'soir' ? 'evening' : 'afternoon',
       focus: [at],
     });
@@ -233,10 +265,12 @@ export function buildTour(atlas: Atlas, m: AtlasMassif): Step[] {
   // 5. Classic routes, walked waypoint by waypoint with the climbs met on the way.
   const [w, s, e, n] = m.bbox;
   const inside = ([x, y]: LngLat) => x >= w && x <= e && y >= s && y <= n;
+  // Local classic routes first: most of their points inside the sector, then the longer crosses.
+  const share = (r: AtlasFeature) => coordsOf(r).filter(inside).length / coordsOf(r).length;
   const routes = atlas.features.routes
     .filter((r) => coordsOf(r).filter(inside).length >= 2)
-    .sort((a, b) => Number(b.properties.massif === m.id) - Number(a.properties.massif === m.id) || coordsOf(b).length - coordsOf(a).length)
-    .slice(0, 2);
+    .sort((a, b) => Number(share(b) >= 0.7) - Number(share(a) >= 0.7) || Number(b.properties.massif === m.id) - Number(a.properties.massif === m.id) || coordsOf(b).length - coordsOf(a).length)
+    .slice(0, 1);
   for (const r of routes) {
     const p = r.properties;
     const pts = coordsOf(r);
@@ -248,10 +282,11 @@ export function buildTour(atlas: Atlas, m: AtlasMassif): Step[] {
       leadSrc: srcOf(p),
       more: [{ text: clean(p.description), id: p.id, src: srcOf(p) }],
       sourceIds: p.sources.split(',').filter(Boolean),
-      bbox: boxOf(pts, 0.03),
+      bbox: boxOf(pts.filter(inside).length >= 2 ? pts.filter(inside) : pts, 0.03),
+      ids: [p.id],
       focus: [],
     });
-    pts.slice(0, 8).forEach((pt, i) => {
+    pts.slice(0, 6).forEach((pt, i) => {
       const th = near(pt, thermals, 1.5)[0];
       const hz = near(pt, hazards, 1.5)[0];
       steps.push({
@@ -263,7 +298,8 @@ export function buildTour(atlas: Atlas, m: AtlasMassif): Step[] {
         more: th ? [{ text: clean(th.properties.description), id: th.properties.id, src: srcOf(th.properties) }] : undefined,
         sourceIds: (th ?? r).properties.sources.split(',').filter(Boolean),
         point: pt,
-        zoom: 12,
+        zoom: 11.6,
+        ids: [p.id, ...(th ? [th.properties.id] : []), ...(hz ? [hz.properties.id] : [])],
         phase: 'afternoon',
         focus: [pt],
       });
@@ -285,6 +321,7 @@ export function buildTour(atlas: Atlas, m: AtlasMassif): Step[] {
       sourceIds: p.sources.split(',').filter(Boolean),
       point: coordsOf(h)[0],
       zoom: 12,
+      ids: [p.id],
       focus: [coordsOf(h)[0]],
     });
   });
@@ -302,7 +339,8 @@ export function buildTour(atlas: Atlas, m: AtlasMassif): Step[] {
         ...landings.map((l) => ({ text: `Atterro : ${l.properties.name}`, id: l.properties.id })),
       ],
       bbox: boxOf([...takeoffs, ...landings].flatMap(coordsOf), 0.03),
-      focus: [...takeoffs, ...landings].map((f) => coordsOf(f)[0]),
+      ids: [...takeoffs, ...landings].map((f) => f.properties.id),
+      focus: [],
     });
 
   // 8. Synoptic wind: one step per documented regular effect, simulated on the map.
@@ -321,7 +359,8 @@ export function buildTour(atlas: Atlas, m: AtlasMassif): Step[] {
       bbox: m.bbox,
       phase: 'afternoon',
       wind: from === null ? undefined : { fromDeg: from, kmh: /fort|violent|> ?3\d/i.test(x.effect) ? 35 : 25 },
-      focus: related.map((h) => coordsOf(h)[0]),
+      ids: related.map((h) => h.properties.id),
+      focus: [],
     });
   }
 
@@ -337,7 +376,8 @@ export function buildTour(atlas: Atlas, m: AtlasMassif): Step[] {
       title: 'Vers les autres massifs',
       lead: neighbours.size ? `Les itinéraires documentés relient ${m.shortName} à ${[...neighbours].slice(0, 5).join(', ')}.` : 'Itinéraires documentés qui sortent du secteur.',
       lines: neighbourRoutes.map((r) => ({ text: [r.properties.name, r.properties.details?.Distance].filter(Boolean).join(' · '), id: r.properties.id })),
-      bbox: boxOf(neighbourRoutes.flatMap(coordsOf), 0.03),
+      bbox: m.bbox,
+      ids: neighbourRoutes.map((r) => r.properties.id),
       focus: [],
     });
   }
@@ -348,7 +388,7 @@ function openFeature(id: string) {
   const d = getController()?.describe(`atlas:${id}`);
   if (!d) return;
   useRuntime.getState().set({ feature: d });
-  showBrowse();
+  showSheet();
 }
 
 const REPO_BLOB = 'https://github.com/CesarPierr/cross_paraglide_map/blob/main/';
@@ -396,32 +436,50 @@ export function MassifTour() {
     return () => useApp.getState().set(saved);
   }, [active]);
 
-  // Camera, time slot, wind and pulsing markers of the current step.
+  // Camera, time slot, wind, highlight and pulsing markers of the current step.
   useEffect(() => {
-    const map = getController()?.map;
-    if (!step || !map) return;
+    const c = getController();
+    const map = c?.map;
+    if (!step || !map || !massif) return;
     const patch: Partial<ReturnType<typeof useApp.getState>> = {};
     if (step.phase) Object.assign(patch, { schemaPhase: step.phase, hour: PHASE_HOUR[step.phase] });
     Object.assign(patch, step.wind ? { synopticFrom: step.wind.fromDeg, synopticKmh: step.wind.kmh } : { synopticKmh: 0 });
     useApp.getState().set(patch);
-    const pad = isMobileNow() ? { top: 110, bottom: 340, left: 20, right: 20 } : { top: 110, bottom: 300, left: 420, right: 60 };
-    const pitch = schema3d ? 55 : 0;
-    if (step.point) map.flyTo({ center: step.point, zoom: step.zoom ?? 12.3, pitch, duration: 1500, padding: pad, essential: true });
-    else if (step.bbox)
-      map.fitBounds(
+    c.highlightSchema(step.ids ?? []);
+    const pad = isMobileNow() ? { top: 110, bottom: 340, left: 20, right: 20 } : { top: 100, bottom: 290, left: 400, right: 60 };
+    const pitch = schema3d ? 50 : 0;
+    // Steady moves: ease (no fly-out arc), framed inside the sector.
+    const [w, s, e, n] = massif.bbox;
+    const mw = (e - w) * 0.25;
+    const mh = (n - s) * 0.25;
+    const clamp = (b: [number, number, number, number]): [number, number, number, number] => {
+      const r: [number, number, number, number] = [Math.max(b[0], w - mw), Math.max(b[1], s - mh), Math.min(b[2], e + mw), Math.min(b[3], n + mh)];
+      return r[0] < r[2] && r[1] < r[3] ? r : massif.bbox;
+    };
+    if (step.point) map.easeTo({ center: step.point, zoom: step.zoom ?? 12.3, pitch, duration: 1100, padding: pad, essential: true });
+    else {
+      const b = clamp(step.bbox ?? massif.bbox);
+      const cam = map.cameraForBounds(
         [
-          [step.bbox[0], step.bbox[1]],
-          [step.bbox[2], step.bbox[3]],
+          [b[0], b[1]],
+          [b[2], b[3]],
         ],
-        { padding: pad, pitch, duration: 1500, maxZoom: 12.5 },
+        { padding: pad, maxZoom: 12.5 },
       );
-    const markers = step.focus.slice(0, 8).map((p) => {
+      if (cam) map.easeTo({ ...cam, pitch, bearing: map.getBearing(), duration: 1100, essential: true });
+    }
+    const markers = step.focus.slice(0, 6).map((p) => {
       const el = document.createElement('div');
       el.className = 'tour-focus';
       return new Marker({ element: el }).setLngLat(p).addTo(map);
     });
     return () => markers.forEach((mk) => mk.remove());
-  }, [step, schema3d]);
+  }, [step, schema3d, massif]);
+
+  // Highlight cleared when the visit ends.
+  useEffect(() => {
+    if (!active) getController()?.highlightSchema([]);
+  }, [active]);
 
   if (!step || tourStep === null || !atlas || !massif) return null;
   const go = (i: number) => {

@@ -16,9 +16,9 @@ export const SCHEMA_PHASES: { key: SchemaPhase; label: string; hours: [number, n
 ];
 
 /** Panels shown as bottom sheets on phones (one at a time). */
-export type MobileSheet = 'none' | 'browse' | 'settings' | 'legend';
+export type MobileSheet = 'none' | 'browse';
 
-export type Basemap = 'ign-ortho' | 'relief' | 'ign-plan' | 'otm';
+export type Basemap = 'topo' | 'ign-ortho' | 'relief';
 
 export type LayerKey =
   | 'particles'
@@ -80,6 +80,8 @@ export interface AppState {
   tourStep: number | null;
   /** Right-hand settings panel (desktop). */
   panelOpen: boolean;
+  /** On-demand panel: conditions (from the time bar) or layers (from the map). */
+  popover: 'conditions' | 'layers' | null;
   /** Left-hand sector list (desktop); sheets of a sector, feature or schema open it on their own. */
   browseOpen: boolean;
   mobileSheet: MobileSheet;
@@ -152,7 +154,7 @@ export const useApp = create<AppState>((set) => ({
     kk7Skyways: false,
     hillshade: true,
   },
-  basemap: 'ign-ortho',
+  basemap: 'topo',
   exaggeration: 1.3,
   particleCount: isSmall ? 7000 : 16000,
   particleSpeed: 1,
@@ -165,6 +167,7 @@ export const useApp = create<AppState>((set) => ({
   schemaWind: false,
   tourStep: null,
   panelOpen: !isSmall,
+  popover: null,
   browseOpen: false,
   mobileSheet: 'none',
   aboutOpen: false,

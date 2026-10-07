@@ -7,10 +7,11 @@ import type { FeatureCategory, FlyingSite } from '@brises/shared';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { FeatureDetails } from '../map/modules/types';
 import { BREEZE_COLORS, COLORS } from '../map/palette';
-import { useApp, useRuntime } from '../state/store';
+import { useRuntime } from '../state/store';
 import { getController } from './controller-ref';
 import { IconSearch } from './icons';
-import { showBrowse } from './mobile';
+import { showSheet } from './mobile';
+import { openMassif } from './modes';
 
 interface Result {
   key: string;
@@ -61,7 +62,7 @@ function score(hay: string, words: string[]): number {
   return s;
 }
 
-const showSheet = showBrowse;
+
 
 function openDetails(d: FeatureDetails) {
   useRuntime.getState().set({ feature: d });
@@ -169,12 +170,7 @@ export function SearchBox() {
           title: m.shortName,
           meta: m.region,
           color: '#e2e8f0',
-          run: () => {
-            useRuntime.getState().set({ feature: null });
-            useApp.getState().set({ selectedMassif: m.id });
-            showSheet();
-            getController()?.flyToBbox(m.bbox, { maxZoom: 11 });
-          },
+          run: () => openMassif(m.id),
         });
     }
     const shortName = new Map(atlas.massifs.map((m) => [m.id, m.shortName]));

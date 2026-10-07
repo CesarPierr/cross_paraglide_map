@@ -1,0 +1,122 @@
+{
+  "massif": "chartreuse",
+  "auteur": "rédigée à partir de l'atlas (seconde passe 2026) ; chaque étape cite les éléments documentés qu'elle montre",
+  "steps": [
+    {
+      "chapter": "Le massif",
+      "title": "La Chartreuse en un coup d'œil",
+      "text": "La Chartreuse est une forteresse calcaire posée entre Grenoble, Chambéry et Voiron. À l'est, elle domine le Grésivaudan par de grandes falaises : Saint-Hilaire, la Dent de Crolles, le Granier. À l'intérieur, des vallées (Guiers, Saint-Pierre-de-Chartreuse) et des sommets plus hauts (Chamechaude, Grand Som). À l'ouest, des crêtes plus basses regardent Voiron. Retenez une idée simple : c'est un massif du matin à l'est et du soir à l'ouest, parce que le soleil chauffe les faces dans cet ordre.",
+      "focus": [],
+      "view": "massif"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le matin, la façade est s'éveille",
+      "text": "Au lever du soleil, tout est calme et l'air froid de la nuit descend encore des combes vers la vallée. Puis le soleil frappe les falaises est : l'air qui les longe se réchauffe et remonte vers les crêtes, c'est la brise de pente, faible mais régulière. Environ trois heures après le lever, cette brise se transforme en thermiques qui se décrochent juste devant les décollages de Saint-Hilaire.",
+      "focus": ["brise-descendante-st-nazaire", "brise-pente-est-st-hilaire", "facade-est-st-hilaire"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Fin de matinée : la brise du Grésivaudan, à contre-intuition",
+      "text": "En bas, une brise de vallée s'installe en fin de matinée. Contrairement à l'intuition, elle ne remonte pas de Grenoble vers Chambéry : elle souffle du nord, de Chapareillan vers Crolles, et dépasse rarement 15 km/h à Lumbin. Elle est aspirée par la cluse de Voreppe, où une brise forte entre dans la cuvette grenobloise dès 11 h au printemps et en été. Les deux se rencontrent au-dessus de Grenoble.",
+      "focus": ["gresivaudan/brise-nord-gresivaudan", "gresivaudan/brise-voreppe", "gresivaudan/confluence-grenoble"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "L'après-midi au cœur du massif",
+      "text": "À l'intérieur, chaque vallée aspire l'air vers ses cols : le Guiers Mort remonte vers Saint-Pierre, puis l'air file vers le Col du Cucheron, où il rencontre celui qui monte d'Entremont. Plus au nord, la grosse brise de Chambéry franchit le Col du Granier à partir de 14 h et y croise la brise d'Entremont. Ces rencontres de brises sont des convergences : l'air n'a pas d'autre choix que de monter.",
+      "focus": ["brise-guiers-mort", "brise-saint-pierre-cucheron", "brise-cucheron-entremont", "convergence-col-du-cucheron", "brise-col-du-granier-chambery", "convergence-col-du-granier"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "La journée de l'air",
+      "title": "Le soir, l'ouest prend le relais",
+      "text": "Quand la façade est passe à l'ombre, ce sont les versants ouest qui travaillent : après 15-16 h, avec une tendance de nord-ouest à ouest, le Grand Ratz et la Grande Sûre deviennent des sites du soir, propices au soaring. Tard le soir, l'air recommence à descendre des combes vers Saint-Nazaire.",
+      "focus": ["brise-ouest-apres-midi", "grand-ratz-ouest", "grande-sure", "brise-descendante-st-nazaire"],
+      "phase": "evening"
+    },
+    {
+      "chapter": "Saint-Hilaire",
+      "title": "Trois décollages, un plateau",
+      "text": "À Saint-Hilaire, on choisit son décollage selon l'heure. Le déco Nord, alimenté le premier par la brise de pente, sert le matin et par tendance nord. Le déco Est prend le relais en milieu de matinée. Le déco Sud est à privilégier quand les thermiques sont établis ou par sud. Attention : le thermique qui se déclenche sur la falaise devant les décos fait parfois souffler le vent dans le dos au Nord et au Sud, par cycles. On se pose sur le plateau, à l'office du tourisme, ou en bas à Lumbin.",
+      "focus": ["st-hilaire-nord-moquette", "st-hilaire-est", "st-hilaire-sud-nord", "thermique-devant-decos-st-hilaire", "office-tourisme-st-hilaire", "gresivaudan/lumbin"],
+      "phase": "morning"
+    },
+    {
+      "chapter": "Saint-Hilaire",
+      "title": "Le « bocal » : des kilomètres le long des falaises",
+      "text": "Le bocal, c'est l'espace entre les falaises de Saint-Hilaire et la vallée. Brise de pente et thermiques s'y combinent : on chemine le long des falaises sans enrouler beaucoup, vers le Saint-Eynard au sud ou vers Barraux au nord. Au retour vers le plateau, les falaises de Lumbin offrent souvent le premier thermique pour remonter.",
+      "focus": ["falaises-est-st-hilaire", "facade-est-st-hilaire", "falaises-lumbin-plateau"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Vers le sud, 1/3 : les Antennes",
+      "text": "Le parcours classique part vers le Saint-Eynard. Première étape : les Antennes, la frontière sud du bocal. On y enroule pour prendre de la hauteur avant de quitter les falaises basses, car la suite demande de la marge.",
+      "focus": ["antennes-st-hilaire", "route-st-eynard"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Vers le sud, 2/3 : le Manival et Château Nardent",
+      "text": "La combe du Manival est la coupure à bien franchir : il faut y monter vers 1200 à 1400 m avant de continuer. Château Nardent est le point de raccroche suivant, souvent balisé par d'autres ailes. Dans la combe, la brise remonte de Saint-Ismier vers le Col de Baure.",
+      "focus": ["manival-bec-charvet", "chateau-nardent", "brise-montante-manival"],
+      "phase": "midday"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Vers le sud, 3/3 : le Saint-Eynard et le Rachais",
+      "text": "La crête du Saint-Eynard est la récompense : les récits disent que ça monte tout le long. L'Émeindras sert de relance pour repartir vers la Dent. Au bout, le Rachais et la Bastille, avec des thermiques plus désordonnés. Au-dessus de Grenoble, la ZIT impose de rester au-dessus de 1200 m ou de la contourner.",
+      "focus": ["fort-saint-eynard", "emeindras", "rachais-bastille", "zit-grenoble"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Monter à la Dent de Crolles",
+      "text": "Pour aller plus haut, on remonte par étages : au moins 1400 m au Manival, puis 1600 m sur les gencives de Saint-Pancrasse avant de partir vers la Dent. Le pilier sud donne souvent le thermique de départ, et les faces est de la Dent servent d'ascenseur vers des plafonds de 2200 m. Le Pas de Rocheplane permet de sortir de la couche par la crête.",
+      "focus": ["gencives-dent-de-crolles", "pilier-sud-dent-de-crolles", "faces-est-dent-de-crolles-bellefond", "pas-de-rocheplane", "route-dent-de-crolles"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Le parcours classique",
+      "title": "Vers le nord : la crête jusqu'au Granier",
+      "text": "Vers le nord, les crêtes de Sainte-Marie-du-Mont et de Barraux offrent plusieurs bons thermiques, mais il faut assurer le plafond à chaque transition. Le cirque de Saint-Même sert de bascule vers l'ouest et de relance, puis le Granier donne des plafonds généreux. Deux règles : au Granier, la TMA de Lyon limite à environ 2850 m, et l'aigle royal niche à Saint-Même du 1er février au 30 août.",
+      "focus": ["sainte-marie-du-mont-barraux", "cirque-saint-meme-bascule", "thermique-mont-granier", "tma-lyon-granier", "saint-meme-alpette-de-la-dame", "route-granier"],
+      "phase": "afternoon"
+    },
+    {
+      "chapter": "Les pièges",
+      "title": "Ce qui surprend en Chartreuse",
+      "text": "Un nord même faible déborde sur le massif : au Col du Coq, un pilote raconte une « baffe monstrueuse » en thermiquant tranquillement. Par sud au-delà de 20 km/h, la vallée de Perquelin devient très turbulente à l'atterrissage. À Lumbin, un nord qui renforce la brise rend le terrain agité. Enfin, la combe entre Lumbin et La Terrasse se survole à plus de 300 m du sol pour le circaète.",
+      "focus": ["col-du-coq-nord", "perquelin-sud", "gresivaudan/atterro-lumbin-nord", "bulle-circaete-lumbin-terrasse"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par vent de nord",
+      "text": "Avec du nord, le déco Nord de Saint-Hilaire est favorisé dès 10 km/h, mais le déco Sud passe sous le vent. Les cols (Coq, Vence, Ayes) deviennent turbulents, et la brise du Grésivaudan, renforcée, agite l'atterrissage de Lumbin. Regardez sur la carte comment le flux s'organise.",
+      "focus": ["col-du-coq-nord", "gresivaudan/atterro-lumbin-nord", "st-hilaire-nord-moquette"],
+      "wind": { "from": "N", "kmh": 20 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Selon le vent météo",
+      "title": "Par sud-ouest ou ouest",
+      "text": "Le bocal de Saint-Hilaire est bien protégé de l'ouest, à l'abri derrière la Dent. Par sud-ouest modéré, à l'approche d'une dépression, la crête du Saint-Eynard offre un excellent soaring, à condition que le vent annoncé en altitude ne soit pas trop fort. L'après-midi, les faces ouest travaillent par tendance ouest à nord-ouest.",
+      "focus": ["saint-eynard-so", "brise-ouest-apres-midi"],
+      "wind": { "from": "SO", "kmh": 20 },
+      "phase": "afternoon",
+      "view": "massif"
+    },
+    {
+      "chapter": "Les transitions",
+      "title": "Sortir de la Chartreuse",
+      "text": "Trois portes : la Savoyarde vers les Bauges, depuis le Granier avec au moins 2300 m ; la traversée du Grésivaudan vers Belledonne et Saint-Genis, en partant au-dessus de 2000 m ; la transition de Grenoble vers le Vercors, depuis le Rachais ou le Néron, en tenant compte de la ZIT. À l'ouest, une transition mène vers Aiguebelette.",
+      "focus": ["passage-savoyarde", "gresivaudan/traversee-gresivaudan", "transition-grenoble-vercors", "transition-aiguebelette"],
+      "view": "massif"
+    }
+  ]
+}

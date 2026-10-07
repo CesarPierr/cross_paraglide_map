@@ -6,17 +6,22 @@
 import { createHash } from 'node:crypto';
 import { promisify } from 'node:util';
 import { brotliCompress, constants, gzip } from 'node:zlib';
-import type { Atlas, AtlasFeature, AtlasMassif, FeatureCategory } from '@brises/shared';
+import { splitAtlas, type Atlas, type AtlasFeature, type AtlasMassif, type FeatureCategory } from '@brises/shared';
 import type { Db } from '../db/client';
 
 const brotli = promisify(brotliCompress);
 const gz = promisify(gzip);
 
-export interface SerializedAtlas {
+export interface SerializedPart {
   etag: string;
   raw: Buffer;
   br: Buffer;
   gzip: Buffer;
+}
+
+/** Core part of the atlas (served by GET /atlas), its text part, and the full atlas in memory. */
+export interface SerializedAtlas extends SerializedPart {
+  text: SerializedPart;
   atlas: Atlas;
 }
 
@@ -62,6 +67,7 @@ export async function loadAtlas(db: Db): Promise<Atlas> {
       synoptic: m.synoptic,
       items: items.get(m.id) ?? (Object.fromEntries(CATEGORIES.map((c) => [c, []])) as unknown as AtlasMassif['items']),
       sources: m.sources,
+      outline: (metaMap.outlines as Record<string, [number, number][]> | undefined)?.[m.id],
     };
   });
   return {
@@ -74,12 +80,18 @@ export async function loadAtlas(db: Db): Promise<Atlas> {
     rules: rules.map((r) => r.data),
     figures: (metaMap.figures as Atlas['figures']) ?? [],
     dossiers: (metaMap.dossiers as Atlas['dossiers']) ?? {},
+    tours: (metaMap.tours as Atlas['tours']) ?? {},
     stats: { massifs: massifs.length, sources: sources.length, ...Object.fromEntries(CATEGORIES.map((c) => [c, features[c].length])) },
   };
 }
 
 export async function serializeAtlas(atlas: Atlas): Promise<SerializedAtlas> {
-  const raw = Buffer.from(JSON.stringify(atlas));
-  const [br, gzipped] = await Promise.all([brotli(raw, { params: { [constants.BROTLI_PARAM_QUALITY]: 9 } }), gz(raw, { level: 9 })]);
-  return { etag: `"${createHash('sha1').update(raw).digest('base64url')}"`, raw, br, gzip: gzipped, atlas };
+  const { core, text } = splitAtlas(atlas);
+  const pack = async (o: unknown): Promise<SerializedPart> => {
+    const raw = Buffer.from(JSON.stringify(o));
+    const [br, gzipped] = await Promise.all([brotli(raw, { params: { [constants.BROTLI_PARAM_QUALITY]: 9 } }), gz(raw, { level: 9 })]);
+    return { etag: `"${createHash('sha1').update(raw).digest('base64url')}"`, raw, br, gzip: gzipped };
+  };
+  const [c, t] = await Promise.all([pack(core), pack(text)]);
+  return { ...c, text: t, atlas };
 }

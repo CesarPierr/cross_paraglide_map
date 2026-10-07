@@ -53,7 +53,9 @@ export class LabelsModule implements MapModule {
   }
 
   apply(s: AppState, prev: AppState | null): void {
-    if (prev && prev.layers.labels === s.layers.labels) return;
-    for (const l of LAYERS) this.ctx?.map.setLayoutProperty(l.id, 'visibility', s.layers.labels ? 'visible' : 'none');
+    if (prev && prev.layers.labels === s.layers.labels && prev.basemap === s.basemap) return;
+    // The topo map prints its own place names: ours would double them.
+    const on = s.layers.labels && s.basemap !== 'topo';
+    for (const l of LAYERS) this.ctx?.map.setLayoutProperty(l.id, 'visibility', on ? 'visible' : 'none');
   }
 }

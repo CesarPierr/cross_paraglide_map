@@ -10,7 +10,7 @@ import { COLORS } from '../map/palette';
 import { useApp, useRuntime } from '../state/store';
 import { getController } from './controller-ref';
 import { IconSearch } from './icons';
-import { showBrowse } from './mobile';
+import { showSheet } from './mobile';
 import { cleanPlace } from './Tour';
 import { analyseRoute, distKm, type LegReport, type LngLat } from './route-analysis';
 
@@ -39,7 +39,7 @@ function openAtlas(id: string) {
   const d = c?.describe(`atlas:${id}`);
   if (!d) return;
   useRuntime.getState().set({ feature: d });
-  showBrowse();
+  showSheet();
 }
 
 /** Shows a documented route as the current plan (drawn, analysed below). */

@@ -1,19 +1,18 @@
 import { useEffect } from 'react';
 import { AboutModal } from './ui/AboutModal';
-import { ControlPanel } from './ui/ControlPanel';
+import { BasemapSwitch } from './ui/BasemapSwitch';
 import { ContributionPanel } from './ui/Feedback';
-import { IconHelp, IconMenu } from './ui/icons';
-import { MobileDock, useIsMobile } from './ui/mobile';
-import { NavPad } from './ui/NavPad';
-import { MassifTour } from './ui/Tour';
-import { Welcome } from './ui/Welcome';
-import { SCHEMA_PHASES } from './state/store';
-import { SearchBox } from './ui/Search';
-import { Legend } from './ui/Legend';
+import { IconHelp } from './ui/icons';
 import { MapView } from './ui/MapView';
-import { ProbeCard } from './ui/ProbeCard';
+import { MobileDock, useIsMobile } from './ui/mobile';
+import { goTo, ModeTabs } from './ui/modes';
+import { NavPad } from './ui/NavPad';
+import { MapTools, Popover } from './ui/Popovers';
+import { SearchBox } from './ui/Search';
 import { Sidebar } from './ui/Sidebar';
 import { TimeBar } from './ui/TimeBar';
+import { MassifTour } from './ui/Tour';
+import { Welcome } from './ui/Welcome';
 import { useApp, useRuntime } from './state/store';
 
 function StatusPill() {
@@ -65,11 +64,11 @@ function useShortcuts() {
       else if (e.key === 'ArrowLeft' && e.shiftKey) s.set({ hour: Math.max(5, s.hour - 0.25), playing: false });
       else if (e.key === 'Escape') {
         const rt = useRuntime.getState();
-        // Close what is on top first, then leave the schema view.
-        if (rt.feature || rt.draft) rt.set({ feature: null, draft: null });
+        // Close what is on top first: popover, sheet, visit, then back to the map.
+        if (s.popover) s.set({ popover: null });
+        else if (rt.feature || rt.draft) rt.set({ feature: null, draft: null });
         else if (s.tourStep !== null) s.set({ tourStep: null });
-        else if (s.schemaPicking) s.set({ schemaPicking: false });
-        else if (s.schemaMassif) s.set({ schemaMassif: null });
+        else goTo('carte');
       }
     };
     window.addEventListener('keydown', onKey);
@@ -78,101 +77,17 @@ function useShortcuts() {
 }
 
 /** Always-visible banner of the schema view, with the way back to 3D. */
-function SchemaBanner() {
-  const { schemaMassif, schemaPhase, schemaPicking, schema3d, schemaWind, tourStep } = useApp();
-  const atlas = useRuntime((r) => r.atlas);
-  if (schemaPicking)
-    return (
-      <div className="schema-banner panel" role="status">
-        <span>Touchez le massif à afficher en schéma</span>
-        <button className="btn small ghost" onClick={() => useApp.getState().set({ schemaPicking: false })}>
-          Annuler
-        </button>
-      </div>
-    );
-  if (!schemaMassif) return null;
-  const m = atlas?.massifs.find((x) => x.id === schemaMassif);
-  const phase = SCHEMA_PHASES.find((p) => p.key === schemaPhase);
-  return (
-    <div className="schema-banner panel" role="status">
-      <span>
-        Vue schéma · <b>{m?.shortName ?? schemaMassif}</b> · {phase?.label.toLowerCase()}
-      </span>
-      <div className="seg small" role="radiogroup" aria-label="Relief">
-        <button className={!schema3d ? 'on' : ''} onClick={() => useApp.getState().set({ schema3d: false })} role="radio" aria-checked={!schema3d}>
-          2D
-        </button>
-        <button className={schema3d ? 'on' : ''} onClick={() => useApp.getState().set({ schema3d: true })} role="radio" aria-checked={schema3d}>
-          3D
-        </button>
-      </div>
-      <button className={`btn small ghost ${schemaWind ? 'on' : ''}`} aria-pressed={schemaWind} onClick={() => useApp.getState().set({ schemaWind: !schemaWind })} title="Vent simulé sous le schéma">
-        Particules {schemaWind ? 'on' : 'off'}
-      </button>
-      {tourStep === null && (
-        <button className="btn small" onClick={() => useApp.getState().set({ tourStep: 0 })}>
-          Présente-moi ce massif
-        </button>
-      )}
-      <button className="btn small primary" onClick={() => useApp.getState().set({ schemaMassif: null, tourStep: null })}>
-        Vue live
-      </button>
-    </div>
-  );
-}
-
-function IconSliders() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden>
-      <path d="M4 7h10M18 7h2M4 17h4M12 17h8" />
-      <circle cx="16" cy="7" r="2" />
-      <circle cx="10" cy="17" r="2" />
-    </svg>
-  );
-}
-
-function SchemaToggle() {
-  const schema = useApp((s) => s.schemaMassif);
-  return (
-    <button
-      className={`btn small schema-toggle ${schema ? 'active' : ''}`}
-      onClick={() => useApp.getState().set(schema ? { schemaMassif: null, tourStep: null } : { schemaPicking: !useApp.getState().schemaPicking })}
-      title={schema ? 'Revenir à la vue 3D live' : 'Choisir un massif à afficher en schéma'}
-    >
-      {schema ? 'Vue 3D live' : 'Vue schéma'}
-    </button>
-  );
-}
-
 export default function App() {
-  const { panelOpen, browseOpen, selectedMassif, schemaMassif, set } = useApp();
+  const { browseOpen, schemaMassif, schemaPicking, set } = useApp();
   const feature = useRuntime((r) => r.feature);
+  const probe = useRuntime((r) => r.probe);
   const mobile = useIsMobile();
-  const sideOpen = !mobile && (browseOpen || !!feature || !!schemaMassif || !!selectedMassif);
-  const ctrlOpen = !mobile && panelOpen;
+  const sideOpen = !mobile && (browseOpen || schemaPicking || !!feature || !!probe || !!schemaMassif);
   useShortcuts();
   return (
-    <div className={`app ${mobile ? 'is-mobile' : ''} ${sideOpen ? 'side-open' : ''} ${ctrlOpen ? 'ctrl-open' : ''}`}>
+    <div className={`app ${mobile ? 'is-mobile' : ''} ${sideOpen ? 'side-open' : ''}`}>
       <MapView />
       <header className="topbar panel">
-        {!mobile && (
-          <button
-            className={`icon-btn ${browseOpen ? 'on' : ''}`}
-            onClick={() => {
-              // From a sheet: back to the list; from the list: close it.
-              const listShown = browseOpen && !feature && !schemaMassif && !selectedMassif;
-              if (listShown) set({ browseOpen: false });
-              else {
-                useRuntime.getState().set({ feature: null });
-                set({ browseOpen: true, selectedMassif: null, schemaMassif: null, tourStep: null });
-              }
-            }}
-            aria-label="Massifs et itinéraires"
-            title="Massifs"
-          >
-            <IconMenu />
-          </button>
-        )}
         <div className="brand">
           <span className="logo" aria-hidden>
             <svg viewBox="0 0 32 32" width="22" height="22">
@@ -186,27 +101,21 @@ export default function App() {
           </div>
           <StatusPill />
         </div>
+        {!mobile && <ModeTabs />}
         <SearchBox />
-        {!mobile && <SchemaToggle />}
-        {!mobile && (
-          <button className={`icon-btn ${panelOpen ? 'on' : ''}`} onClick={() => set({ panelOpen: !panelOpen })} aria-label={panelOpen ? 'Masquer les réglages' : 'Afficher les réglages'} title="Réglages">
-            <IconSliders />
-          </button>
-        )}
         <button className="icon-btn" onClick={() => set({ aboutOpen: true })} aria-label="Aide et méthodologie">
           <IconHelp />
         </button>
       </header>
       <Sidebar />
-      <ControlPanel />
       <TimeBar />
-      <Legend />
+      <MapTools />
+      <BasemapSwitch />
+      <Popover />
       <MobileDock />
       <NavPad />
-      <SchemaBanner />
       <MassifTour />
       <Welcome />
-      <ProbeCard />
       <ContributionPanel />
       <AboutModal />
       <LoadingVeil />

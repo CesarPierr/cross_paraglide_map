@@ -39,6 +39,9 @@ export interface ThermalSpot {
   name: string;
   lon: number;
   lat: number;
+  massif?: string;
+  /** Strength from the documentation (0..1): how firmly the sources describe this climb. */
+  documented?: () => number;
 }
 
 type ProbeResult = ReturnType<GpuWindEngine['probe']>;
@@ -190,8 +193,23 @@ export class WindScene {
   }
 
   setThermalSpots(spots: ThermalSpot[]): void {
-    this.spots = spots.slice(0, 32);
+    this.spots = spots;
   }
+
+  /**
+   * Learning a massif: its documented climbs are shown as the sources describe
+   * them (strength from the documentation, whatever the hour). null = live
+   * simulation (the model decides from the hour, season and wind).
+   */
+  setDocumentedMassif(id: string | null): void {
+    if (this.documentedMassif === id) return;
+    this.documentedMassif = id;
+    this.hotspotVersion = -1;
+    this.map?.triggerRepaint();
+  }
+
+  private documentedMassif: string | null = null;
+  private hotspotView = '';
 
   /** Model breakdown at a point, resolved on the next frame. */
   probe(lon: number, lat: number): Promise<ProbeResult> {
@@ -319,25 +337,36 @@ export class WindScene {
       this.pendingProbe = null;
       resolve(engine.probe(lon, lat));
     }
-    // Thermal hotspots: refresh at most ~3 times per second after field changes.
+    // Thermal hotspots: refresh at most ~3 times per second after a field change or a view move.
     const now = performance.now();
-    if (this.settings.thermals && engine.version !== this.hotspotVersion && now - this.lastHotspotTime > 300 && engine.params) {
+    const b = this.map!.getBounds();
+    const view = [b.getWest(), b.getSouth(), b.getEast(), b.getNorth()].map((v) => v.toFixed(2)).join(',');
+    if (this.settings.thermals && (engine.version !== this.hotspotVersion || view !== this.hotspotView) && now - this.lastHotspotTime > 300 && engine.params) {
       this.hotspotVersion = engine.version;
+      this.hotspotView = view;
       this.lastHotspotTime = now;
-      const model = engine.hotspots(70, 4, 0.45);
-      const spotSamples = engine.sample(this.spots.slice(0, SAMPLE_MAX).map((s) => [s.lon, s.lat]));
-      const known: Hotspot[] = this.spots.map((s, i) => {
+      const toHot = (s: ThermalSpot, strength: number): Hotspot => {
         const r = (s.lat * Math.PI) / 180;
-        return {
-          lon: s.lon,
-          lat: s.lat,
-          mx: (s.lon + 180) / 360,
-          my: (1 - Math.asinh(Math.tan(r)) / Math.PI) / 2,
-          strength: Math.min(1, spotSamples[i * 4] * 1.15),
-        };
-      });
-      const near = (a: Hotspot, b: Hotspot) => Math.hypot(a.lon - b.lon, (a.lat - b.lat) * 1.4) < 0.04;
-      this.hotspots = [...known.filter((k) => k.strength > 0.25), ...model.filter((m) => !known.some((k) => near(k, m)))].slice(0, 96);
+        return { lon: s.lon, lat: s.lat, mx: (s.lon + 180) / 360, my: (1 - Math.asinh(Math.tan(r)) / Math.PI) / 2, strength };
+      };
+      // Known climbs in view (all of them, not the first few of the list).
+      const pad = 0.05;
+      const inView = this.spots.filter((s) => s.lon > b.getWest() - pad && s.lon < b.getEast() + pad && s.lat > b.getSouth() - pad && s.lat < b.getNorth() + pad);
+      if (this.documentedMassif) {
+        // Learning: the documented climbs of the massif, as described, whatever the hour.
+        this.hotspots = inView
+          .filter((s) => s.massif === this.documentedMassif)
+          .map((s) => toHot(s, s.documented?.() ?? 0.7))
+          .slice(0, 96);
+      } else {
+        // More known climbs in view than the GPU sampler takes: the best documented first.
+        const sampled = inView.length > SAMPLE_MAX ? [...inView].sort((x, y) => (y.documented?.() ?? 0) - (x.documented?.() ?? 0)).slice(0, SAMPLE_MAX) : inView;
+        const spotSamples = engine.sample(sampled.map((s) => [s.lon, s.lat]));
+        const known = sampled.map((s, i) => toHot(s, Math.min(1, spotSamples[i * 4] * 1.15)));
+        const model = engine.hotspots(70, 4, 0.45);
+        const near = (a: Hotspot, c: Hotspot) => Math.hypot(a.lon - c.lon, (a.lat - c.lat) * 1.4) < 0.04;
+        this.hotspots = [...known.filter((k) => k.strength > 0.25), ...model.filter((m) => !known.some((k) => near(k, m)))].slice(0, 96);
+      }
     }
     // Terrain height map for the 3D layers.
     if (this.sceneVisible() && opts.renderTerrainHeightMap && this.hmapTex) {
@@ -425,7 +454,8 @@ export class WindScene {
     const engine = this.engine;
     if (!engine || !engine.params || !this.settings.particles || !this.progUpdate) return;
     const now = performance.now();
-    const dt = this.lastTime ? Math.min(0.05, (now - this.lastTime) / 1000) : 0.016;
+    // Up to 0.12 s per step: at a reduced frame rate the particles keep their real speed.
+    const dt = this.lastTime ? Math.min(0.12, (now - this.lastTime) / 1000) : 0.016;
     this.lastTime = now;
     const vb = this.viewMercator();
     if (!vb) return;

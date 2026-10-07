@@ -44,7 +44,8 @@ export class SitesModule implements MapModule {
             'icon-image': ['case', official, kind, `${kind}-community`],
             'icon-size': ['interpolate', ['linear'], ['zoom'], 8, 0.45, 13, 0.85],
             'icon-allow-overlap': true,
-            'text-field': ['step', ['zoom'], '', 12, ['concat', ['get', 'name'], ['case', ['has', 'orient'], ['concat', '\n', ['get', 'orient']], '']]],
+            // Names from closer in: the documented climbs and hazards keep their labels first.
+            'text-field': ['step', ['zoom'], '', 12.8, ['concat', ['get', 'name'], ['case', ['has', 'orient'], ['concat', '\n', ['get', 'orient']], '']]],
             'text-font': ['Noto Sans Regular'],
             'text-size': 10.5,
             'text-offset': [0, 1.2],

@@ -1,7 +1,8 @@
 /**
- * User journeys in headless Chromium, with screenshots: discover a massif
- * (picker, schema, guided visit), read a place (probe and nearby sources),
- * and the phone layout. Fails on page errors.
+ * User journeys in headless Chromium, with screenshots: welcome, massifs
+ * (sector map → massif page → guided visit), a probed point, the conditions
+ * and layers panels, cross-country routes, and the phone layout. Fails on page
+ * errors.
  *
  *   npx tsx apps/web/e2e/journeys.ts [url] [outDir]
  *   CHROMIUM_PATH=… to point at a Chromium binary.
@@ -41,49 +42,49 @@ await shot('d00-welcome');
 await page.locator('.welcome').getByRole('radio', { name: /Je fais du cross/ }).click();
 await page.locator('.welcome').getByRole('button', { name: /Découvrir un massif/ }).click();
 await page.waitForTimeout(2500);
-await shot('d02-picker');
-await page.locator('.schema-banner').getByRole('button', { name: 'Annuler' }).click();
-await page.waitForTimeout(1500);
-await shot('d01-home');
+await shot('d01-massifs-map');
 
-await page.getByTitle('Massifs', { exact: true }).click();
-await page.getByRole('button', { name: 'Vue schéma : Chartreuse' }).click();
-await page.waitForTimeout(3500);
-await shot('d03-schema');
-
-await page.locator('.schema-banner').getByRole('button', { name: 'Présente-moi ce massif' }).click();
-await page.waitForTimeout(2500);
-await shot('d04-tour-overview');
-for (let i = 0; i < 4; i++) {
+await page.locator('.sidebar').getByRole('button', { name: /^Chartreuse/ }).first().click();
+await page.waitForTimeout(3000);
+await shot('d02-massif-tour');
+for (let i = 0; i < 5; i++) {
   await page.locator('.tour').getByRole('button', { name: 'Suivant' }).click();
-  await page.waitForTimeout(1800);
+  await page.waitForTimeout(1600);
 }
-await shot('d05-tour-step5');
+await shot('d03-tour-step6');
 const deeper = page.locator('.tour').getByRole('button', { name: /Approfondir/ });
 if (await deeper.count()) {
   await deeper.click();
   await page.waitForTimeout(500);
-  await shot('d06-tour-deeper');
+  await shot('d04-tour-deeper');
 }
 await page.locator('.tour').getByRole('button', { name: 'Quitter la présentation' }).click();
-await page.locator('.schema-banner').getByRole('button', { name: 'Vue live' }).click();
-await page.waitForTimeout(2500);
+await page.waitForTimeout(800);
+await shot('d05-massif-page');
+await page.getByRole('button', { name: 'Fermer le massif' }).click();
+await page.waitForTimeout(1500);
 
-// An empty spot of the Grésivaudan floor (no marker): the probe and nearby sources.
+// Live map: a probed point on the Grésivaudan floor.
 await page.evaluate('location.hash = "#12.2/45.27/5.86/0/0"');
 await page.waitForTimeout(3500);
 await page.mouse.click(760, 470);
 await page.waitForTimeout(2500);
-await shot('d07-probe');
-if (await page.locator('.probe-card .close').count()) await page.locator('.probe-card .close').click();
-await page.evaluate('location.hash = "#9.4/45.3/5.9/-10/50"');
-await page.waitForTimeout(2000);
+await shot('d06-probe');
+await page.keyboard.press('Escape');
 
-// Routes: documented route read leg by leg, then a traced one.
-await page.getByTitle('Massifs', { exact: true }).click();
-await page.getByRole('tab', { name: 'Itinéraires' }).click();
+await page.locator('.wind-chip').click();
 await page.waitForTimeout(500);
-await shot('d08-routes');
+await shot('d07-conditions');
+await page.locator('.wind-chip').click();
+await page.getByRole('button', { name: /Calques/ }).click();
+await page.waitForTimeout(500);
+await shot('d08-layers');
+await page.getByRole('button', { name: /Calques/ }).click();
+
+// Cross: a documented route read leg by leg, then a traced one.
+await page.evaluate('location.hash = "#9.4/45.3/5.9/-10/50"');
+await page.getByRole('tab', { name: 'Cross' }).click();
+await page.waitForTimeout(600);
 await page.locator('.browser .region li button').first().click();
 await page.waitForTimeout(3000);
 await shot('d09-route-legs');
@@ -109,11 +110,14 @@ await phone.getByRole('button', { name: 'Juste explorer la carte' }).click();
 await phone.waitForTimeout(1000);
 await phone.screenshot({ path: `${out}/m01-home.png` });
 await phone.locator('.mobile-dock').getByRole('button', { name: /Massifs/ }).click();
-await phone.waitForTimeout(800);
+await phone.waitForTimeout(2000);
 await phone.screenshot({ path: `${out}/m02-massifs.png` });
-await phone.locator('.mobile-dock').getByRole('button', { name: /Vent/ }).click();
+await phone.locator('.mobile-dock').getByRole('button', { name: /Calques/ }).click();
 await phone.waitForTimeout(800);
-await phone.screenshot({ path: `${out}/m03-settings.png` });
+await phone.screenshot({ path: `${out}/m03-layers.png` });
+await phone.locator('.wind-chip').click();
+await phone.waitForTimeout(800);
+await phone.screenshot({ path: `${out}/m04-conditions.png` });
 
 await browser.close();
 if (errors.length) {

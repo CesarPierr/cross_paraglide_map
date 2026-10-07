@@ -90,3 +90,33 @@ Date : 7 octobre 2026. Objectif : ajouter aux `thermal_spots` les points de racc
 - **Aucun point de relance nommé** trouvé pour Saint-Jean-de-Maurienne, Orelle, Saint-Michel, Valfréjus, Termignon (hors Turra), Bessans, Albiez, Saint-Jean-d'Arves et Saint-Sorlin : recherche web sans récit de pilote ; seules des déductions `low` ont été posées pour Jarrier, Montgellafrey, Val Cenis, Bonneval et le Crey du Quart.
 - Le « Rachas » du guide des Deux Alpes est identifié avec la montagne de Rachas de l'IGN sans confirmation ; l'itinéraire de la D'Tour « Gypaète » (20 balises : Grand Arc, col du Galibier, fond de la vallée de Bonneval) n'est pas tracé faute de coordonnées des balises.
 - Aucune image annotée (cheminements dessinés, cercles de thermiques) n'a été trouvée pour ces secteurs : les captures d'écran de la carte de Largeault ne couvrent pas le lot ; aucune figure ajoutée.
+
+## Passe secteurs minces
+
+Date : 7 octobre 2026. Objectif : creuser les secteurs les moins documentés de l'atlas, un par un. Même convention de confiance que plus haut (récit précis ou plusieurs récits = `medium` ; extrapolation du relief = `low` avec « déduction »). Les identifiants existants sont conservés, rien n'est supprimé. `npm run data:build -- --check` : aucune alerte nouvelle (seule l'alerte antérieure du massif `alpes-francaises` reste).
+
+### Maurienne (`maurienne`)
+
+Volumes avant → après : brises 3 → 4, convergences 0 → 0, hazards 4 → 7, thermiques 3 → 4, soarings 1 → 1 (complété), décollages 7 → 9, atterrissages 5 → 6, effets synoptiques 4 → 5, routes 0 → 3, conseils 6 → 10 ; 14 sources (S122 à S135) et 2 figures (F11, F12).
+
+**Sources nouvelles ou relues**
+- *Blues Team* (blog), vol du col de Bleine à Passy, mai 2015 : traversée de la Maurienne depuis les faces est de Belledonne, Grande Lauzière contrée par la brise du nord, Grand Arc, L'Ébaudiaz, Albertville (S123). Récit lu en entier ; il alimente aussi les secteurs Champsaur, Val d'Arly et Matheysine.
+- *CHVD*, vol du 24 mai 2010 (187 km) : crête de Belledonne sud avec du sud dans le dos, traversée de la Maurienne à 18h45, descente de 5 minutes à -100 m/min, crête de Valmorel (S124). Récits de vol au Glandon de 2012, 2017 et 2022 (S125 à S127), stages cross 2019, 2020, 2021 sur l'entrée de la Maurienne (S128 à S130), cross du 28 août 2024 déjà cité (S110, relu pour tracer la route).
+- *La Grosse Miche*, présentation « Cross avancé : massifs et transitions » (2018, PDF) : carte « Belledonne Nord & Lauzière » (page 10) et transition Grand Arc (page 26), lues en image (S122, figures F11 et F12).
+- Forum parapentiste.info : « Transition Bauges → Belledonne » (2008, brise de la Maurienne qui contre à Chamoux, S131) ; « Trois jours de vol rando en Maurienne » (2020, thermique dès 10h, brise installée vers 11h-11h30, S132).
+- Fiches FFVL 2321, 2322, 2323 (Saint-François-Longchamp), absentes de l'atlas jusque-là (S133 à S135).
+
+**Ajouté ou corrigé**
+- *Brise montante* : horaire précisé (installation vers 11h-11h30 « parfois plus tard », 20-30 km/h un jour de brouillard) et comportement à l'entrée de la vallée (la brise pousse vers l'amont ; un jour elle s'éteint). Confiance déjà `high`.
+- *Brise des Villards / Glandon* : passée de `low` à `medium` grâce à trois récits CHVD (brise de nord au col l'après-midi jusqu'à 17h) ; le tracé dans le vallon reste déduit.
+- *Brise matinale descendante* (`low`, déduction) : seule la matinée calme est sourcée (fiche du Mollaret, Syride, thermique de 10h) ; le sens descendant est un raisonnement de relief, avec horaires 21h-9h distincts de la brise montante pour ne pas l'annuler dans le modèle.
+- *Dangers* : entrée de la Maurienne (traversée contrée par la brise ; 6 sources), troupeau et buvette au col du Glandon, câble « Catex » de Saint-François-Longchamp (position approximative, nature déduite).
+- *Thermiques* : point de relance de Belledonne au bout de la chaîne (Pointe de Rognier, position approximative, identification par le nom « rogné » du récit) ; `lauziere-face-ouest-entree-maurienne` complété par deux récits concordants (2010, 2015).
+- *Routes* : `chamrousse-belledonne-est-lauziere-albertville-2024`, `belledonne-faces-est-maurienne-lauziere-ebaudiaz-2015` (extrait d'un 280 km), `belledonne-sud-maurienne-lauziere-valmorel-2010` (extrait d'un 187 km). Chaque point nommé est localisé par le géocodeur IGN ; les points non nommés (col, ligne électrique, atterrissage) ne sont pas tracés.
+- *Soaring du Glandon* : conditions détaillées (nord 15-20 km/h à 2000 m, 1h15 et 600 m de gain ; sud en fin d'après-midi ; arrêt de la brise vers 17h) ; effet synoptique « Vent du Sud » ajouté ; décollages et atterrissage de Saint-François-Longchamp ajoutés.
+
+**Introuvable**
+- Aucun récit ne décrit les ascendances précises de Saint-Jean, du Grand Châtelard, de La Balme ni de Montgellafrey (les départs de cross sont cités, pas leurs relances) ; pas de point de relance nommé à Orelle, Saint-Michel, Sainte-Marie-de-Cuines, Albiez ou La Toussuire.
+- Aucune convergence documentée dans la vallée elle-même ; les brises latérales (Villards, Arvan) n'ont pas de description propre.
+- Traces des cross de Montgellafrey (206 et 175 km), listes CFD, XContest et XCFinder : inaccessibles (voir `pages_bloquees.txt`).
+

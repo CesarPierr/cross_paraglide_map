@@ -13,10 +13,9 @@ const ign = (layer: string, format: 'image/jpeg' | 'image/png') =>
   `https://data.geopf.fr/wmts?SERVICE=WMTS&REQUEST=GetTile&VERSION=1.0.0&LAYER=${layer}&STYLE=normal&FORMAT=${encodeURIComponent(format)}&TILEMATRIXSET=PM&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}`;
 
 export const BASEMAPS: Record<Basemap, { label: string; description: string }> = {
-  'ign-ortho': { label: 'Satellite', description: 'Orthophotos IGN (France), Sentinel‑2 ailleurs' },
-  relief: { label: 'Relief', description: 'Teintes d’altitude et ombrage solaire' },
-  'ign-plan': { label: 'Plan IGN', description: 'Carte topographique IGN' },
-  otm: { label: 'Topo OSM', description: 'OpenTopoMap' },
+  topo: { label: 'Topo', description: 'OpenTopoMap (licence libre) : courbes de niveau, crêtes, noms' },
+  'ign-ortho': { label: 'Satellite', description: 'Orthophotos IGN (Licence Ouverte), Sentinel‑2 ailleurs' },
+  relief: { label: 'Relief', description: 'Teintes d’altitude et ombrage solaire (sans connexion aux fonds externes)' },
 };
 
 /** Muted alpine hypsometric tints. */
@@ -73,19 +72,13 @@ export function buildStyle(): StyleSpecification {
         bounds: [-5.5, 41.2, 10, 51.2],
         attribution: '<a href="https://geoservices.ign.fr" target="_blank" rel="noopener">© IGN – Géoplateforme</a>',
       },
-      'ign-plan': {
-        type: 'raster',
-        tiles: [ign('GEOGRAPHICALGRIDSYSTEMS.PLANIGNV2', 'image/png')],
-        tileSize: 256,
-        maxzoom: 18,
-        attribution: '<a href="https://geoservices.ign.fr" target="_blank" rel="noopener">© IGN – Plan IGN</a>',
-      },
-      otm: {
+      // Topo map under an open licence (CC-BY-SA, OpenStreetMap data): contour lines, ridges, names.
+      topo: {
         type: 'raster',
         tiles: ['https://a.tile.opentopomap.org/{z}/{x}/{y}.png', 'https://b.tile.opentopomap.org/{z}/{x}/{y}.png', 'https://c.tile.opentopomap.org/{z}/{x}/{y}.png'],
         tileSize: 256,
         maxzoom: 17,
-        attribution: '© <a href="https://opentopomap.org" target="_blank" rel="noopener">OpenTopoMap</a> (CC‑BY‑SA), © contributeurs OpenStreetMap',
+        attribution: '© <a href="https://opentopomap.org" target="_blank" rel="noopener">OpenTopoMap</a> (CC‑BY‑SA), © contributeurs <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a>',
       },
       terrain: {
         type: 'raster-dem',
@@ -113,8 +106,7 @@ export function buildStyle(): StyleSpecification {
       },
       { id: 'bm-s2', type: 'raster', source: 's2', paint: { 'raster-fade-duration': 200 } },
       { id: 'bm-ign-ortho', type: 'raster', source: 'ign-ortho', paint: { 'raster-fade-duration': 200 } },
-      { id: 'bm-ign-plan', type: 'raster', source: 'ign-plan', layout: { visibility: 'none' } },
-      { id: 'bm-otm', type: 'raster', source: 'otm', layout: { visibility: 'none' } },
+      { id: 'bm-topo', type: 'raster', source: 'topo', layout: { visibility: 'none' }, paint: { 'raster-fade-duration': 200 } },
       {
         id: 'hillshade',
         type: 'hillshade',

@@ -10,7 +10,7 @@ import type { ImageSource } from 'maplibre-gl';
 import { ModelClient } from '../../engine/model-client';
 import { timeState } from '../../gpu/engine';
 import { supportsFloatTargets } from '../../gpu/gl-utils';
-import { WindScene, type SceneSettings } from '../../gpu/wind-scene';
+import { WindScene, type ThermalSpot, type SceneSettings } from '../../gpu/wind-scene';
 import { CURRENT_YEAR, type AppState } from '../../state/store';
 import { BREEZE_COLORS } from '../palette';
 import { WindParticleLayer, type ParticleSettings } from '../wind-particles';
@@ -53,7 +53,7 @@ export class WindModule implements MapModule {
     private meta: GridMeta,
     private demUrl: string,
     private curated: CuratedBreezeInput[],
-    private thermalSpots: { name: string; lon: number; lat: number }[],
+    private thermalSpots: ThermalSpot[],
     private onUpdated: () => void,
   ) {}
 
@@ -111,6 +111,7 @@ export class WindModule implements MapModule {
     this.state = s;
     const modelChanged = !prev || MODEL_KEYS.some((k) => prev[k] !== s[k]);
     if (this.scene) {
+      this.scene.setDocumentedMassif(s.schemaMassif);
       this.scene.setSettings(this.sceneSettings());
       if (modelChanged) this.scene.setParams(modelParams(s));
     } else if (this.particles) {

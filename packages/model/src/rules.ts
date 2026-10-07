@@ -96,16 +96,20 @@ export const RULES = {
   /** Solar-time schedule of the valley-breeze cycle (hours): [reversal AM, full, decline, reversal PM]. */
   valleySchedule: [9.5, 13, 16.5, 19.5] as [number, number, number, number],
   /**
-   * Thermal onset, hours after sunrise: none for the first 2.5 h, fully developed
-   * 4.5 h after sunrise (≈ 10h20 legal time in July); exposure comes from the per-cell
-   * insolation (east faces lit first). Saint-Hilaire east face (research sheet): "du
-   * lever du soleil à 2 h après : calme ; … dès 3 h d'ensoleillement : thermiques".
-   * Before, thermals reached half strength at sunrise; the explicit onsets of the
-   * documented spots ("dès 10h", "3 h après le lever du soleil") then came 2.25 h
-   * early in the model (median, 16/23 more than 1 h early); now 1.5 h, and the spots
-   * documented "le matin" still start in the morning (`npm run model:check`).
+   * Thermal onset of a slope, in hours of full sun received since sunrise
+   * (`TimeContext.sunHours`: integral of cos(incidence) × low-sun attenuation): none
+   * below E0, fully developed at E1. Faces light up in turn (east in the morning,
+   * west in the afternoon, flat floors in between).
+   * - E0 = 1 h: a 30° east face receives 1 h of full-sun equivalent about 2 h after
+   *   sunrise, the end of the calm phase of the Saint-Hilaire sheet ("du lever du
+   *   soleil à 2 h après : calme ; … dès 3 h d'ensoleillement : thermiques").
+   * - E1 = 3 h: the same face is fully developed 4.5 h after sunrise, the middle of
+   *   the 3.5–5 h after sunrise it takes the sun to break the nocturnal inversion of
+   *   an Alpine valley (Whiteman 2000, Mountain Meteorology, ch. on valley inversion
+   *   breakup; order of magnitude).
+   * Check: `npm run model:check`, explicit documented onsets.
    */
-  thermalOnset: [2.5, 4.5] as [number, number],
+  thermalSunHours: [1, 3] as [number, number],
   /** Lake/sea breeze schedule (solar hours). */
   waterSchedule: [9, 11.5, 17, 19.5] as [number, number, number, number],
 };

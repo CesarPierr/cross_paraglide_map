@@ -8,6 +8,7 @@ describe('parseHours', () => {
   });
   it('spans every period mentioned', () => {
     expect(parseHours("fin de matinée à fin d'après-midi (été)", 'valley')).toEqual([11, 19]);
+    expect(parseHours('dès le milieu de la matinée', 'slope')?.[0]).toBe(9.5);
     expect(parseHours('après-midi (été)', 'valley')).toEqual([12.5, 18.5]);
     expect(parseHours('matinée (calme) à mi-journée', 'valley')).toEqual([8, 13]);
   });

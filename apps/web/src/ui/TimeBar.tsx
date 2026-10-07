@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useApp, useRuntime } from '../state/store';
 import { fmtHour, MONTHS } from './format';
 import { IconMoon, IconPause, IconPlay, IconSun } from './icons';
+import { WindChip } from './Popovers';
 
 const MIN_H = 5;
 const MAX_H = 22;
@@ -81,6 +82,7 @@ export function TimeBar() {
           ))}
         </select>
       </label>
+      <WindChip />
     </div>
   );
 }

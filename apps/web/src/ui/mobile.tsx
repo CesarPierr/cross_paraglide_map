@@ -1,10 +1,17 @@
 import { useEffect, useState } from 'react';
-import { useApp, useRuntime, type MobileSheet } from '../state/store';
+import { useApp } from '../state/store';
 import { IconLayers, IconMountain, IconWind } from './icons';
+import { goTo, useMode, type Mode } from './modes';
+import { togglePopover } from './Popovers';
 
 const QUERY = '(max-width: 860px)';
 
-/** Shows the sector / sheet panel: bottom sheet on phones, left panel on desktop. */
+/** Shows a sheet opened from the map (feature, probe, massif): bottom sheet on phones; the desktop panel opens by itself. */
+export function showSheet(): void {
+  if (isMobileNow()) useApp.getState().set({ mobileSheet: 'browse' });
+}
+
+/** Shows the sector / route lists: bottom sheet on phones, left panel on desktop. */
 export function showBrowse(): void {
   useApp.getState().set(isMobileNow() ? { mobileSheet: 'browse' } : { browseOpen: true });
 }
@@ -24,7 +31,7 @@ export function useIsMobile(): boolean {
 export const isMobileNow = () => typeof window !== 'undefined' && window.matchMedia(QUERY).matches;
 
 /** Grab bar of a bottom sheet: tap to expand / shrink, cross to close. */
-export function SheetHandle() {
+export function SheetHandle({ onClose }: { onClose?: () => void } = {}) {
   const [tall, setTall] = useState(false);
   useEffect(() => {
     document.documentElement.classList.toggle('sheet-tall', tall);
@@ -35,50 +42,41 @@ export function SheetHandle() {
       <button className="grab" onClick={() => setTall(!tall)} aria-label={tall ? 'Réduire le panneau' : 'Agrandir le panneau'}>
         <span />
       </button>
-      <button className="icon-btn ghost close" onClick={() => useApp.getState().set({ mobileSheet: 'none' })} aria-label="Fermer le panneau">
+      <button className="icon-btn ghost close" onClick={() => (onClose ? onClose() : useApp.getState().set({ mobileSheet: 'none' }))} aria-label="Fermer le panneau">
         ×
       </button>
     </div>
   );
 }
 
-function IconBook() {
+export function MobileDock() {
+  const mode = useMode();
+  const popover = useApp((s) => s.popover);
+  if (!useIsMobile()) return null;
+  const tabs: { key: Mode | 'layers'; label: string; icon: React.ReactNode; on: boolean; go: () => void }[] = [
+    { key: 'carte', label: 'Carte', icon: <IconWind size={18} />, on: mode === 'carte' && !popover, go: () => goTo('carte') },
+    { key: 'massifs', label: 'Massifs', icon: <IconMountain size={18} />, on: mode === 'massifs', go: () => goTo('massifs') },
+    { key: 'cross', label: 'Cross', icon: <IconRoute />, on: mode === 'cross', go: () => goTo('cross') },
+    { key: 'layers', label: 'Calques', icon: <IconLayers size={18} />, on: popover === 'layers', go: () => togglePopover('layers') },
+  ];
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      <path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z" />
-      <path d="M4 19V5" />
-    </svg>
+    <nav className="mobile-dock panel" aria-label="Navigation">
+      {tabs.map((t) => (
+        <button key={t.key} className={t.on ? 'active' : ''} aria-pressed={t.on} onClick={t.go}>
+          {t.icon}
+          <span>{t.label}</span>
+        </button>
+      ))}
+    </nav>
   );
 }
 
-const TABS: { key: Exclude<MobileSheet, 'none'>; label: string; icon: React.ReactNode }[] = [
-  { key: 'browse', label: 'Massifs', icon: <IconMountain size={18} /> },
-  { key: 'settings', label: 'Vent & couches', icon: <IconWind size={18} /> },
-  { key: 'legend', label: 'Légende', icon: <IconBook /> },
-];
-
-/** Bottom navigation on phones: one sheet at a time, the map stays visible above. */
-export function MobileDock() {
-  const sheet = useApp((s) => s.mobileSheet);
-  const schema = useApp((s) => s.schemaMassif);
-  const feature = useRuntime((r) => r.feature);
-  if (!useIsMobile()) return null;
+function IconRoute() {
   return (
-    <nav className="mobile-dock panel" aria-label="Panneaux">
-      {TABS.map((t) => {
-        const active = sheet === t.key;
-        const label = t.key === 'browse' && (feature || schema) ? (feature ? 'Fiche' : 'Schéma') : t.label;
-        return (
-          <button key={t.key} className={active ? 'active' : ''} aria-pressed={active} onClick={() => useApp.getState().set({ mobileSheet: active ? 'none' : t.key })}>
-            {t.icon}
-            <span>{label}</span>
-          </button>
-        );
-      })}
-      <button className={schema ? 'active' : ''} onClick={() => useApp.getState().set(schema ? { schemaMassif: null, tourStep: null } : { schemaPicking: true, mobileSheet: 'none' })} aria-label={schema ? 'Revenir à la vue 3D' : 'Choisir un massif pour la vue schéma'}>
-        <IconLayers size={18} />
-        <span>{schema ? 'Vue 3D' : 'Schéma'}</span>
-      </button>
-    </nav>
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+      <circle cx="6" cy="18" r="2" />
+      <circle cx="18" cy="6" r="2" />
+      <path d="M8 18h6a4 4 0 0 0 0-8h-4a4 4 0 0 1 0-8h6" />
+    </svg>
   );
 }

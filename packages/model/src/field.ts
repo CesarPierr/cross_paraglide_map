@@ -10,7 +10,7 @@ import { CuratedLayerKind, curatedLayerKind } from './curated';
 import { compassFr, windFromDeg, windVector } from './grid';
 import { clamp, smoothstep } from './raster';
 import { RULES } from './rules';
-import { legalTimeToUtc, noonElevation, solarTime, sunPosition, sunriseSolarHour, type SunPosition } from './sun';
+import { legalTimeToUtc, noonElevation, solarTime, sunPosition, sunSamples, type SunPosition } from './sun';
 import type { Terrain } from './terrain';
 
 export type { CuratedBreezeInfo };
@@ -61,10 +61,15 @@ export interface TimeContext {
   valleyPhase: number;
   waterPhase: number;
   season: number;
-  /** 0..1 development of the thermals through the day (`thermalDayFactor`). */
-  thermalDay: number;
+  /** Afternoon decline of the thermals, 0.5..1 (`thermalDecline`). */
+  thermalDecline: number;
   /** Insolation 0..1 per cell including cast shadows. */
   insol: Float32Array;
+  /**
+   * Sunshine received by each cell since sunrise, in hours of full sun on its slope
+   * (integral of cos(incidence) × low-sun attenuation, without cast shadows).
+   */
+  sunHours: Float32Array;
 }
 
 /** Smooth trapezoid: -nightValue before a, ramps to 1 at b, 1 until c, back to -nightValue after d. */
@@ -94,18 +99,22 @@ export function valleyProfile(zeta: number): number {
 }
 
 /**
- * 0..1 development of the thermals through the day. Morning: nothing until
- * RULES.thermalOnset[0] hours after sunrise, fully developed RULES.thermalOnset[1]
- * hours after it (the per-cell insolation carries the exposure: east faces are lit
- * first). Afternoon: follows the decline of the valley-wind cycle, down to half.
- * Shared with the GPU (uThermalDay).
+ * Afternoon decline of the thermals, 0.5..1: 1 until 13 h solar time, then follows the
+ * decline of the valley-wind cycle, down to half. The morning onset is per cell
+ * (`thermalOnset`, from the sunshine received since sunrise). Shared with the GPU.
  */
-export function thermalDayFactor(month0: number, day: number, lat: number, solarHour: number, valleyPhase: number): number {
-  const rise = sunriseSolarHour(month0, day, lat);
-  const [d0, d1] = RULES.thermalOnset;
-  if (solarHour < 13) return smoothstep(rise + d0, rise + d1, solarHour);
-  // Afternoon: thermals weaken with the decline of the valley-wind cycle, down to half.
-  return 0.5 + 0.5 * Math.max(0, valleyPhase);
+export function thermalDecline(solarHour: number, valleyPhase: number): number {
+  return solarHour < 13 ? 1 : 0.5 + 0.5 * Math.max(0, valleyPhase);
+}
+
+/**
+ * 0..1 onset of the thermals of a slope from the sunshine it has received since
+ * sunrise (hours of full sun, `TimeContext.sunHours`): east faces start first, west
+ * faces in the afternoon, flat floors in between. See `RULES.thermalSunHours`.
+ * Mirrored in apps/web/src/gpu/model-glsl.ts.
+ */
+export function thermalOnset(sunHours: number): number {
+  return smoothstep(RULES.thermalSunHours[0], RULES.thermalSunHours[1], sunHours);
 }
 
 /** Activity 0..1 of a curated breeze given its legal-time window, with 1 h ramps. */
@@ -199,6 +208,24 @@ export function computeTimeContext(t: Terrain, p: ModelParams): TimeContext {
       }
     }
   }
+  // Cumulative sunshine of each slope since sunrise (no cast shadows: a few sun
+  // positions, analytic, identical on the GPU).
+  const sunHours = new Float32Array(grid.size);
+  const samples = sunSamples(p.year, p.month0, p.day, p.hour, centerLat, centerLon);
+  const ns = samples.length / 4;
+  if (ns > 0) {
+    for (let k = 0; k < grid.size; k++) {
+      const nx = -gx[k];
+      const ny = -gy[k];
+      const inv = 1 / Math.sqrt(nx * nx + ny * ny + 1);
+      let e = 0;
+      for (let s = 0; s < ns; s++) {
+        const c = (nx * samples[s * 4] + ny * samples[s * 4 + 1] + samples[s * 4 + 2]) * inv;
+        if (c > 0) e += samples[s * 4 + 3] * c;
+      }
+      sunHours[k] = e;
+    }
+  }
   const valleyPhase = cycle(solarHour, RULES.valleySchedule, RULES.valleyNightRatio);
   return {
     sun,
@@ -207,8 +234,9 @@ export function computeTimeContext(t: Terrain, p: ModelParams): TimeContext {
     valleyPhase,
     waterPhase: cycle(solarHour, RULES.waterSchedule, 0.25),
     season,
-    thermalDay: thermalDayFactor(p.month0, p.day, centerLat, solarHour, valleyPhase),
+    thermalDecline: thermalDecline(solarHour, valleyPhase),
     insol,
+    sunHours,
   };
 }
 
@@ -560,7 +588,7 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   const elevF = 0.55 + 0.45 * smoothstep(400, 2200, z);
   const convexF = 0.55 + 0.45 * smoothstep(-60, 140, t.tpi[k]);
   const windF = 1 - 0.6 * smoothstep(20, 45, c.gKmh);
-  const dayF = c.time.thermalDay;
+  const dayF = thermalOnset(c.time.sunHours[k]) * c.time.thermalDecline;
   out.thermal = t.water[k] ? 0 : day * clamp(insol * c.time.season * elevF * convexF * windF * dayF, 0, 1);
 
   out.turbulence = clamp(lee * smoothstep(8, 35, c.gKmh) + out.venturi * smoothstep(15, 45, c.gKmh) * 0.6, 0, 1);

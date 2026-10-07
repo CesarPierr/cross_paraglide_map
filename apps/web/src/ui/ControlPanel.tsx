@@ -2,12 +2,11 @@ import { compassFr } from '@brises/model';
 import { useState } from 'react';
 import type { OverlayMode } from '../engine/cpu-overlays';
 import { AIRSPACE_COLORS, BREEZE_COLORS, COLORS } from '../map/palette';
-import { BASEMAPS } from '../map/style';
-import { useApp, useRuntime, type Basemap, type LayerKey } from '../state/store';
+import { useApp, useRuntime, type LayerKey } from '../state/store';
 import { getController, getDataClient } from './controller-ref';
 import { fmtHour, MONTHS } from './format';
-import { IconChevron, IconDownload, IconLayers, IconMountain, IconSpark, IconWind } from './icons';
-import { SheetHandle, useIsMobile } from './mobile';
+import { IconChevron, IconDownload, IconMountain, IconSpark, IconWind } from './icons';
+import { LegendBody } from './Legend';
 import { WindDial } from './WindDial';
 
 const PRESETS: { label: string; from: number; kmh: number; hint: string }[] = [
@@ -203,9 +202,9 @@ function Situation() {
   );
 }
 
-export function ControlPanel() {
+/** Conditions: synoptic wind, heatwave option, reading height (opened from the time bar). */
+export function ConditionsPanel() {
   const s = useApp();
-  const mobile = useIsMobile();
   const [forecastMsg, setForecastMsg] = useState<string | null>(null);
 
   const loadForecast = async () => {
@@ -229,10 +228,8 @@ export function ControlPanel() {
   };
 
   return (
-    <aside className={`control-panel panel ${(mobile ? s.mobileSheet === 'settings' : s.panelOpen) ? '' : 'collapsed'}`} aria-label="Réglages de la simulation">
-      {mobile && <SheetHandle />}
+    <div className="cp conditions">
       <Situation />
-
       <section className="cp-block">
         <h3 className="cp-title">
           <IconWind size={15} /> Vent météo
@@ -276,17 +273,6 @@ export function ControlPanel() {
 
       <section className="cp-block">
         <h3 className="cp-title">
-          <IconLayers size={15} /> Afficher
-        </h3>
-        <div className="tiles">
-          {TILES.map((t) => (
-            <Tile key={t.title} tile={t} />
-          ))}
-        </div>
-      </section>
-
-      <section className="cp-block">
-        <h3 className="cp-title">
           <IconMountain size={15} /> Hauteur de lecture
         </h3>
         <div className="height-row">
@@ -316,6 +302,27 @@ export function ControlPanel() {
         </div>
       </section>
 
+    </div>
+  );
+}
+
+/** Layers: the four families, what the map means, and the rarer options. */
+export function LayersPanel() {
+  const s = useApp();
+  return (
+    <div className="cp layers">
+      <section className="cp-block">
+        <div className="tiles">
+          {TILES.map((t) => (
+            <Tile key={t.title} tile={t} />
+          ))}
+        </div>
+      </section>
+
+      <section className="cp-block">
+        <h3 className="cp-title">Légende</h3>
+        <LegendBody />
+      </section>
       <Section title="Plus d’options" icon={<IconSpark size={16} />} defaultOpen={false}>
         <label className="field">
           <span>Analyse sur le relief</span>
@@ -338,16 +345,7 @@ export function ControlPanel() {
             </label>
           </>
         )}
-        <h4 className="opt-title">Fond de carte</h4>
-        <div className="basemaps" role="radiogroup" aria-label="Fond de carte">
-          {(Object.keys(BASEMAPS) as Basemap[]).map((b) => (
-            <button key={b} className={`basemap bm-${b} ${s.basemap === b ? 'on' : ''}`} onClick={() => s.set({ basemap: b })} title={BASEMAPS[b].description} role="radio" aria-checked={s.basemap === b}>
-              <span className="bm-thumb" aria-hidden />
-              {BASEMAPS[b].label}
-            </button>
-          ))}
-        </div>
-        <h4 className="opt-title">Fond et repères</h4>
+        <h4 className="opt-title">Repères</h4>
         {EXTRA_LAYERS.map((l) => (
           <LayerToggle key={l.key} item={l} />
         ))}
@@ -379,6 +377,6 @@ export function ControlPanel() {
           </button>
         </div>
       </Section>
-    </aside>
+    </div>
   );
 }

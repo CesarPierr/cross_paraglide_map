@@ -62,6 +62,8 @@ export interface AtlasMassif {
   center: [number, number];
   tips: string[];
   synoptic: AtlasSynopticEffect[];
+  /** Sector outline (lon, lat ring) for picking the massif on the map; absent for the regional sector. */
+  outline?: [number, number][];
   /** Feature ids by category, for the side panel. */
   items: Record<FeatureCategory, string[]>;
   sources: string[];
@@ -137,6 +139,22 @@ export interface AtlasFigure {
   sources: string[];
 }
 
+/** One step of a written guided visit of a massif (research_notes/<pass>/visites/<massif>.json). */
+export interface AtlasTourStep {
+  chapter: string;
+  title: string;
+  /** Narration: a few explicit, didactic sentences. */
+  text: string;
+  /** Atlas feature ids shown and highlighted by the step (their sources back the text). */
+  features: string[];
+  /** Extra source ids cited by the step. */
+  sources: string[];
+  phase?: 'morning' | 'midday' | 'afternoon' | 'evening';
+  wind?: { fromDeg: number; kmh: number };
+  /** "massif" frames the whole sector; default frames the step's features. */
+  view?: 'massif' | 'features';
+}
+
 export interface Atlas {
   generatedAt: string;
   massifs: AtlasMassif[];
@@ -149,5 +167,9 @@ export interface Atlas {
   figures?: AtlasFigure[];
   /** Research dossier (notes: sources read, changes, gaps) of each massif, repository-relative path. */
   dossiers?: Record<string, string>;
+  /** Written guided visits by massif id (absent: the app builds one from the data). */
+  tours?: Record<string, AtlasTourStep[]>;
+  /** Set once the text part (descriptions, notes, summaries) is merged (see atlas-split.ts). */
+  textLoaded?: boolean;
   stats: Record<string, number>;
 }

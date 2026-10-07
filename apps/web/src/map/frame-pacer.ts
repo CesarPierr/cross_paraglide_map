@@ -14,7 +14,10 @@ export type PowerMode = 'auto' | 'eco' | 'max';
 
 interface Budget {
   activeFps: number;
+  /** After a short while without input. */
   idleFps: number;
+  /** After several minutes without input. */
+  deepIdleFps: number;
   /** Device pixel ratio cap for the whole map. */
   maxDpr: number;
   /** Upper bound on the number of particles. */
@@ -22,12 +25,13 @@ interface Budget {
 }
 
 const BUDGETS: Record<'eco' | 'balanced' | 'max', Budget> = {
-  eco: { activeFps: 20, idleFps: 5, maxDpr: 1, maxParticles: 6000 },
-  balanced: { activeFps: 30, idleFps: 12, maxDpr: 1.5, maxParticles: 20000 },
-  max: { activeFps: 60, idleFps: 30, maxDpr: 3, maxParticles: 40000 },
+  eco: { activeFps: 24, idleFps: 15, deepIdleFps: 8, maxDpr: 1, maxParticles: 6000 },
+  balanced: { activeFps: 30, idleFps: 24, deepIdleFps: 12, maxDpr: 1.5, maxParticles: 20000 },
+  max: { activeFps: 60, idleFps: 30, deepIdleFps: 20, maxDpr: 3, maxParticles: 40000 },
 };
 
-const IDLE_AFTER_MS = 12000;
+const IDLE_AFTER_MS = 15000;
+const DEEP_IDLE_AFTER_MS = 180000;
 
 let onBattery = false;
 /** Set when the device cannot keep up with the balanced budget (measured frame times). */
@@ -109,7 +113,8 @@ export class FramePacer {
   request(): void {
     if (this.timer !== null || document.hidden) return;
     const b = this.budget;
-    const fps = this.idle() ? b.idleFps : b.activeFps;
+    const quiet = performance.now() - this.lastInput;
+    const fps = quiet > DEEP_IDLE_AFTER_MS ? b.deepIdleFps : quiet > IDLE_AFTER_MS ? b.idleFps : b.activeFps;
     const wait = 1000 / fps - (performance.now() - this.lastFrame);
     const fire = () => {
       this.timer = null;

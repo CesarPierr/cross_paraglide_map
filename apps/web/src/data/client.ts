@@ -4,14 +4,17 @@
  * (files baked into /data + pre-filled GitHub issues for contributions) keeps
  * the map usable without a server, e.g. for a static preview.
  */
-import { openMeteo, type Atlas, type ContributionInput, type FeedbackSummary, type FlyingSite, type PointForecast, type SiteProvider, type SynopticWind, type WeatherProvider } from '@brises/shared';
+import { inflateAtlas, openMeteo, type Atlas, type AtlasText, type ContributionInput, type FeedbackSummary, type FlyingSite, type PointForecast, type SiteProvider, type SynopticWind, type WeatherProvider } from '@brises/shared';
 import type { GridMeta } from '@brises/model';
 import { osmSites, pgeSites } from '@brises/shared';
 import { ffvlSites } from '../services/sites';
 
 export interface DataClient {
   readonly mode: 'api' | 'static';
+  /** Light core of the atlas: enough for the map and the model. */
   atlas(): Promise<Atlas>;
+  /** Text part (descriptions, notes, summaries, figures), merged after the first render. */
+  atlasText(): Promise<AtlasText>;
   demMeta(): Promise<GridMeta>;
   demUrl(): string;
   siteProviders(): SiteProvider[];
@@ -50,7 +53,8 @@ export function contributionIssueUrl(c: ContributionInput): string {
 
 class StaticClient implements DataClient {
   readonly mode = 'static' as const;
-  atlas = () => json<Atlas>(staticUrl('atlas.json'));
+  atlas = () => json<Atlas>(staticUrl('atlas-core.json')).then(inflateAtlas);
+  atlasText = () => json<AtlasText>(staticUrl('atlas-text.json'));
   demMeta = () => json<GridMeta>(staticUrl('dem.json'));
   demUrl = () => staticUrl('dem.png');
   siteProviders = () => [ffvlSites, osmSites, pgeSites];
@@ -75,7 +79,8 @@ function apiSiteProvider(id: 'osm' | 'pge', base: SiteProvider): SiteProvider {
 
 class ApiClient implements DataClient {
   readonly mode = 'api' as const;
-  atlas = () => json<Atlas>(`${API_BASE}/atlas`);
+  atlas = () => json<Atlas>(`${API_BASE}/atlas`).then(inflateAtlas);
+  atlasText = () => json<AtlasText>(`${API_BASE}/atlas/text`);
   demMeta = () => json<GridMeta>(staticUrl('dem.json'));
   demUrl = () => staticUrl('dem.png');
   siteProviders(): SiteProvider[] {

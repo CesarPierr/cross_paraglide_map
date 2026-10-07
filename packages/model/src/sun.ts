@@ -2,6 +2,8 @@
  * Solar position (NOAA low-precision algorithm, ~0.5° accuracy) and French
  * legal-time helpers. Accurate enough to light slopes and pace the breezes.
  */
+import { smoothstep } from './raster';
+
 export interface SunPosition {
   /** Degrees clockwise from north. */
   azimuth: number;
@@ -70,4 +72,39 @@ export function noonElevation(month0: number, day: number, lat: number): number 
   const doy = Math.floor((Date.UTC(2026, month0, day) - Date.UTC(2026, 0, 0)) / 86400000);
   const dec = 23.44 * Math.sin(((2 * Math.PI) / 365) * (doy - 81));
   return 90 - lat + dec;
+}
+
+/** Maximum number of sun positions sampled since sunrise (`sunSamples`); the GPU shader has the same array size. */
+export const SUN_SAMPLES_MAX = 32;
+/** Sampling step of the sun path since sunrise (hours). */
+const SUN_SAMPLE_STEP = 0.5;
+
+/**
+ * Sun positions since sunrise, to integrate the sunshine received by each slope
+ * (cumulative insolation, `TimeContext.sunHours`): midpoints of equal steps of at
+ * most 0.5 h from sunrise (flat horizon) to the given legal time, at most
+ * SUN_SAMPLES_MAX. Four floats per sample: unit vector to the sun (east, north, up)
+ * and weight = step duration (h) × low-sun attenuation (same as the instantaneous
+ * insolation). The CPU model and the GPU engine both use this array.
+ */
+export function sunSamples(year: number, month0: number, day: number, hour: number, lat: number, lon: number): Float32Array {
+  const utc = legalTimeToUtc(year, month0, day, hour);
+  const solar = solarTime(utc, lon);
+  const span = solar - sunriseSolarHour(month0, day, lat);
+  if (span <= 0) return new Float32Array(0);
+  const n = Math.min(SUN_SAMPLES_MAX, Math.ceil(span / SUN_SAMPLE_STEP));
+  const dt = span / n;
+  const out = new Float32Array(n * 4);
+  for (let i = 0; i < n; i++) {
+    const back = span - (i + 0.5) * dt;
+    const s = sunPosition(new Date(utc.getTime() - back * 3600000), lat, lon);
+    if (s.elevation <= -1) continue;
+    const el = s.elevation * RAD;
+    const az = s.azimuth * RAD;
+    out[i * 4] = Math.sin(az) * Math.cos(el);
+    out[i * 4 + 1] = Math.cos(az) * Math.cos(el);
+    out[i * 4 + 2] = Math.sin(Math.max(el, 0.005));
+    out[i * 4 + 3] = dt * smoothstep(-1, 12, s.elevation);
+  }
+  return out;
 }

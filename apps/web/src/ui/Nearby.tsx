@@ -8,7 +8,7 @@ import { useMemo } from 'react';
 import { BREEZE_COLORS, COLORS } from '../map/palette';
 import { useRuntime } from '../state/store';
 import { getController } from './controller-ref';
-import { showBrowse } from './mobile';
+import { showSheet } from './mobile';
 
 const RADIUS_KM = 3;
 const MAX_ITEMS = 6;
@@ -54,7 +54,7 @@ function open(id: string) {
   const d = c?.describe(`atlas:${id}`);
   if (!d) return;
   useRuntime.getState().set({ feature: d });
-  showBrowse();
+  showSheet();
 }
 
 const shortPub = (s: string) => (s.length > 22 ? `${s.slice(0, 21)}…` : s);

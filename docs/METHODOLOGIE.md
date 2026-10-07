@@ -107,10 +107,26 @@ convergences, 83 % des thermiques conformes.
 - **Convergence** : divergence horizontale lissée du champ, convertie en vitesse verticale sur
   une épaisseur de 700 m. Les lignes de convergence ressortent là où deux brises se rencontrent.
 - **Potentiel thermique** : ensoleillement × convexité du relief (éperons, crêtes > creux) ×
-  saison, diminué sous le vent et par le vent fort. Il ne démarre que 2 h 30 après le lever du
-  soleil et atteint son plein 4 h 30 après (`RULES.thermalOnset`, fiche de Saint-Hilaire :
-  « dès 3 h d'ensoleillement : thermiques ») ; avant, une pente au soleil ne fait encore que de la
-  brise de pente.
+  saison, diminué sous le vent et par le vent fort. Le déclenchement se fait **face par face** :
+  chaque maille cumule l'ensoleillement reçu depuis le lever du soleil sur sa propre pente
+  (intégrale de cos(incidence) × atténuation du soleil bas, par pas d'au plus 30 min, sans ombres
+  portées), exprimé en heures équivalentes de plein soleil. Le potentiel est nul en dessous de
+  1 h équivalente et complet à 3 h (`RULES.thermalSunHours`) : une face est à 30° atteint 1 h
+  environ 2 h après le lever (fin de la phase calme de la fiche de Saint-Hilaire : « du lever du
+  soleil à 2 h après : calme ; … dès 3 h d'ensoleillement : thermiques ») et 3 h environ 4 h 30
+  après, au milieu des 3 h 30 à 5 h que met le soleil à détruire l'inversion nocturne d'une
+  vallée alpine (Whiteman 2000, ordre de grandeur). Les faces est démarrent donc le matin, les
+  faces ouest en fin de matinée ou l'après-midi, les fonds plats entre les deux ; l'atténuation de
+  l'après-midi (déclin du cycle des brises, jusqu'à moitié) est inchangée. Ce cumul ne dépend que
+  de l'heure et de la date : il est recalculé dans la passe d'ensoleillement (canal g de la
+  texture), pas à chaque image.
+  Contrôle (`npm run model:check`, 53 débuts explicites des fiches) : écart médian modèle − fiche
+  de −1 h 30 avec l'ancien facteur global à −45 min ; 22 sites à ±1 h au lieu de 11. Restent en
+  avance les débuts « à partir de 16 h » de faces ouest de l'Oisans (Vaujany, Deux-Alpes), qui ne
+  sont pas limités par l'ensoleillement, et en retard d'environ 1 h les faces documentées « dès le
+  matin » ou « dès 8 h » (Flégère, Planpraz, façade de Saint-Hilaire) : le MNT à 216 m adoucit les
+  falaises (la façade de Saint-Hilaire y est une pente de 20° au sud-est), qui reçoivent donc
+  moins de soleil matinal que dans la réalité.
 - **Ascendance totale** (sonde) : dynamique + thermique + convergence.
 
 ## 7. Prévision du point (sonde)

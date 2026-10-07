@@ -26,8 +26,10 @@ const LAYERS = [
   'schema-breeze-label',
   'schema-route-label',
   'schema-title',
+  'schema-hl-line',
+  'schema-hl-point',
 ] as const;
-const PICK_LAYERS = ['schema-pick-dot', 'schema-pick-label'] as const;
+const PICK_LAYERS = ['schema-pick-fill', 'schema-pick-line', 'schema-pick-dot', 'schema-pick-label'] as const;
 
 /** Role of a thermal on the classic routes, read from its sourced description. */
 export function thermalRole(text: string | undefined): string | null {
@@ -73,7 +75,7 @@ function addArrowImage(map: MlMap): void {
 
 export class SchemaModule implements MapModule {
   readonly id = 'schema';
-  readonly clickableLayers = ['schema-pick-dot', 'schema-pick-label', 'schema-breeze', 'schema-conv', 'schema-conv-point', 'schema-points', 'schema-routes'];
+  readonly clickableLayers = ['schema-pick-fill', 'schema-pick-dot', 'schema-pick-label', 'schema-breeze', 'schema-conv', 'schema-conv-point', 'schema-points', 'schema-routes'];
   private ctx: ModuleContext | null = null;
   private massif: string | null = null;
   private savedCamera: { center: [number, number]; zoom: number; pitch: number; bearing: number } | null = null;
@@ -251,22 +253,78 @@ export class SchemaModule implements MapModule {
       },
       'analysis',
     );
-    // Picker: every sector as a clickable name, shown while choosing which massif to draw.
+    // Highlight of the items a guided-visit step talks about (the others are dimmed).
+    ctx.addLayer(
+      {
+        id: 'schema-hl-line',
+        type: 'line',
+        source: 'schema',
+        filter: ['in', ['get', 'id'], ['literal', []]],
+        layout: { 'line-cap': 'round', 'line-join': 'round' },
+        paint: { 'line-color': '#fef08a', 'line-width': 9, 'line-blur': 4, 'line-opacity': 0.75 },
+      },
+      'lines',
+    );
+    ctx.addLayer(
+      {
+        id: 'schema-hl-point',
+        type: 'circle',
+        source: 'schema',
+        filter: ['all', ['==', ['geometry-type'], 'Point'], ['in', ['get', 'id'], ['literal', []]]],
+        paint: { 'circle-radius': 16, 'circle-color': 'rgba(254,240,138,0.18)', 'circle-stroke-color': '#fef08a', 'circle-stroke-width': 2.5 },
+      },
+      'points',
+    );
+    // Picker: the sectors as a map of clickable shapes (outlines computed by the pipeline),
+    // with their names; a sector without outline falls back to a dot.
+    const REGION_TINTS = ['#38bdf8', '#a78bfa', '#34d399', '#fbbf24', '#f472b6', '#2dd4bf', '#fb923c', '#818cf8', '#a3e635'];
+    const regionIndex = new Map(ctx.atlas.regions.map((r, i) => [r, i]));
+    const sectors = ctx.atlas.massifs.filter((m) => m.id !== 'alpes-francaises');
     map.addSource('schema-pick', {
       type: 'geojson',
+      promoteId: 'id',
       data: {
         type: 'FeatureCollection',
-        features: ctx.atlas.massifs
-          .filter((m) => m.id !== 'alpes-francaises')
-          .map((m) => ({ type: 'Feature', geometry: { type: 'Point', coordinates: m.center }, properties: { id: m.id, name: m.shortName } })),
+        features: sectors.map((m) => ({
+          type: 'Feature',
+          geometry: m.outline && m.outline.length >= 3 ? { type: 'Polygon', coordinates: [[...m.outline, m.outline[0]]] } : { type: 'Point', coordinates: m.center },
+          properties: { id: m.id, name: m.shortName, tint: REGION_TINTS[(regionIndex.get(m.region) ?? 0) % REGION_TINTS.length] },
+        })),
       },
     });
+    map.addSource('schema-pick-labels', {
+      type: 'geojson',
+      data: { type: 'FeatureCollection', features: sectors.map((m) => ({ type: 'Feature', geometry: { type: 'Point', coordinates: m.center }, properties: { id: m.id, name: m.shortName } })) },
+    });
+    const hovered = ['boolean', ['feature-state', 'hover'], false] as ExpressionSpecification;
+    ctx.addLayer(
+      {
+        id: 'schema-pick-fill',
+        type: 'fill',
+        source: 'schema-pick',
+        filter: ['==', ['geometry-type'], 'Polygon'],
+        paint: { 'fill-color': ['get', 'tint'], 'fill-opacity': ['case', hovered, 0.42, 0.16] },
+      },
+      'areas',
+    );
+    ctx.addLayer(
+      {
+        id: 'schema-pick-line',
+        type: 'line',
+        source: 'schema-pick',
+        filter: ['==', ['geometry-type'], 'Polygon'],
+        layout: { 'line-join': 'round' },
+        paint: { 'line-color': ['case', hovered, '#ffffff', ['get', 'tint']], 'line-width': ['case', hovered, 3, 1.4], 'line-opacity': 0.9 },
+      },
+      'areas',
+    );
     ctx.addLayer(
       {
         id: 'schema-pick-dot',
         type: 'circle',
         source: 'schema-pick',
-        paint: { 'circle-radius': ['interpolate', ['linear'], ['zoom'], 7, 6, 10, 9], 'circle-color': '#38bdf8', 'circle-stroke-color': '#e0f2fe', 'circle-stroke-width': 2 },
+        filter: ['==', ['geometry-type'], 'Point'],
+        paint: { 'circle-radius': 7, 'circle-color': '#38bdf8', 'circle-stroke-color': '#e0f2fe', 'circle-stroke-width': 2 },
       },
       'labels',
     );
@@ -274,21 +332,30 @@ export class SchemaModule implements MapModule {
       {
         id: 'schema-pick-label',
         type: 'symbol',
-        source: 'schema-pick',
+        source: 'schema-pick-labels',
         layout: {
           'text-field': ['get', 'name'],
           'text-font': ['Noto Sans Bold'],
-          'text-size': ['interpolate', ['linear'], ['zoom'], 7, 12, 10, 15],
-          'text-offset': [0, 1.1],
-          'text-anchor': 'top',
+          'text-size': ['interpolate', ['linear'], ['zoom'], 7, 11.5, 10, 15],
           'text-padding': 2,
           'text-allow-overlap': true,
           'text-ignore-placement': true,
+          'text-max-width': 8,
         },
-        paint: { 'text-color': '#f0f9ff', 'text-halo-color': 'rgba(8,47,73,0.95)', 'text-halo-width': 2.4 },
+        paint: { 'text-color': '#f8fafc', 'text-halo-color': 'rgba(2,6,23,0.9)', 'text-halo-width': 2.2 },
       },
       'labels',
     );
+    // Hover highlight of the sector under the pointer.
+    let hoverId: string | null = null;
+    const setHover = (id: string | null) => {
+      if (hoverId === id) return;
+      if (hoverId) map.setFeatureState({ source: 'schema-pick', id: hoverId }, { hover: false });
+      hoverId = id;
+      if (id) map.setFeatureState({ source: 'schema-pick', id }, { hover: true });
+    };
+    map.on('mousemove', 'schema-pick-fill', (e) => setHover(this.picking ? String(e.features?.[0]?.properties?.id ?? '') || null : null));
+    map.on('mouseleave', 'schema-pick-fill', () => setHover(null));
     this.setVisible(false);
     this.setPicking(false);
   }
@@ -316,7 +383,7 @@ export class SchemaModule implements MapModule {
       this.picking = s.schemaPicking;
       this.setPicking(s.schemaPicking);
       // Step back to see the neighbouring sectors and pick one.
-      if (s.schemaPicking) map.easeTo({ zoom: Math.min(map.getZoom(), 8.4), pitch: Math.min(map.getPitch(), 35), duration: 900 });
+      if (s.schemaPicking) map.easeTo({ zoom: Math.min(map.getZoom(), 8.2), pitch: Math.min(map.getPitch(), 25), duration: 900 });
     }
     if (prev && prev.schema3d !== s.schema3d && s.schemaMassif) {
       this.threeD = s.schema3d;
@@ -371,6 +438,19 @@ export class SchemaModule implements MapModule {
       const cs = f.geometry.type === 'Point' ? [f.geometry.coordinates] : f.geometry.coordinates;
       return cs.some(([x, y]) => x >= w && x <= e && y >= s && y <= n);
     };
+    // The 3 routes most contained in the sector (classic local routes first).
+    const [bw, bs, be, bn] = m.bbox;
+    const share = (f: AtlasFeature) => {
+      const cs = f.geometry.coordinates as [number, number][];
+      return cs.filter(([x, y]) => x >= bw && x <= be && y >= bs && y <= bn).length / cs.length;
+    };
+    const localRoutes = new Set(
+      atlas.features.routes
+        .filter((f) => share(f) >= 0.6)
+        .sort((a, b) => share(b) - share(a))
+        .slice(0, 3)
+        .map((f) => f.properties.id),
+    );
     const out: GeoJSON.Feature[] = [];
     for (const cat of Object.keys(atlas.features) as FeatureCategory[]) {
       for (const f of atlas.features[cat]) {
@@ -378,6 +458,8 @@ export class SchemaModule implements MapModule {
         const own = p.massif === massifId;
         if (!own && !inBox(f)) continue;
         if (cat === 'breezes' && !activeInSlot(p.windowStart, p.windowEnd, slot)) continue;
+        // Routes: only the sector's own classic routes, not every cross passing by.
+        if (cat === 'routes' && !localRoutes.has(p.id)) continue;
         let label = shortLabel(p.name);
         if (cat === 'breezes') label = `${shortLabel(p.name)} · ${p.speedKmh ?? '?'} km/h`;
         else if (cat === 'thermals') {
@@ -423,6 +505,33 @@ export class SchemaModule implements MapModule {
       },
       properties: {},
     });
+  }
+
+  private baseOpacity = new Map<string, unknown>();
+
+  /** Emphasises some items (guided visit) and dims the rest; an empty list restores the schema. */
+  highlight(ids: string[]): void {
+    const map = this.ctx?.map;
+    if (!map || !map.getLayer('schema-hl-line')) return;
+    const list = ['literal', ids];
+    map.setFilter('schema-hl-line', ['in', ['get', 'id'], list] as unknown as FilterSpecification);
+    map.setFilter('schema-hl-point', ['all', ['==', ['geometry-type'], 'Point'], ['in', ['get', 'id'], list]] as unknown as FilterSpecification);
+    const dimmed: [string, string][] = [
+      ['schema-breeze', 'line-opacity'],
+      ['schema-breeze-arrows', 'icon-opacity'],
+      ['schema-conv', 'line-opacity'],
+      ['schema-routes', 'line-opacity'],
+      ['schema-points', 'icon-opacity'],
+      ['schema-points', 'text-opacity'],
+      ['schema-breeze-label', 'text-opacity'],
+    ];
+    for (const [layer, prop] of dimmed) {
+      const key = `${layer}|${prop}`;
+      if (!this.baseOpacity.has(key)) this.baseOpacity.set(key, map.getPaintProperty(layer, prop as never) ?? 1);
+      const base = this.baseOpacity.get(key);
+      const value = ids.length ? ['case', ['in', ['get', 'id'], list], base, ['*', 0.28, base]] : base;
+      map.setPaintProperty(layer, prop as never, value as never);
+    }
   }
 
   describe(id: string): FeatureDetails | null {

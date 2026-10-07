@@ -26,7 +26,7 @@ import { KnowledgeModule } from './modules/knowledge';
 import { Kk7Module } from './modules/kk7';
 import { LabelsModule } from './modules/labels';
 import { ReliefModule } from './modules/relief';
-import { SchemaModule } from './modules/schema';
+import { SchemaModule, thermalRole } from './modules/schema';
 import { SitesModule } from './modules/sites';
 import { slotMarker, type FeatureDetails, type MapModule, type ModuleContext, type ModuleEvent, type Slot } from './modules/types';
 import { WindModule, type ProbeResult } from './modules/wind';
@@ -46,6 +46,16 @@ export interface ControllerEvents {
   onPickMassif: (massifId: string) => void;
   /** Map picked a point for a contribution ("place on map" mode). */
   onPick: (lngLat: [number, number]) => void;
+}
+
+/**
+ * How firmly the sources describe a climb, for its animation when learning a massif:
+ * ceilings and relaunch points first, discounted by the confidence of the sources.
+ */
+function documentedStrength(description: string | undefined, confidence: string | undefined): number {
+  const role = thermalRole(description);
+  const base = role === 'plafond' ? 1 : role === 'relance' ? 0.95 : role === 'déclencheur' ? 0.85 : 0.7;
+  return base * (confidence === 'low' ? 0.6 : confidence === 'high' ? 1 : 0.9);
 }
 
 /** Layers replaced by the schematic diagram while a schema view is open. */
@@ -70,6 +80,7 @@ export class MapController {
   private wind: WindModule | null = null;
   private knowledge: KnowledgeModule | null = null;
   private airspace: AirspaceModule | null = null;
+  private schema: SchemaModule | null = null;
   private state: AppState | null = null;
   private prevApplied: AppState | null = null;
   private ready = false;
@@ -142,14 +153,21 @@ export class MapController {
         meta,
         this.data.demUrl(),
         atlas.curated,
-        atlas.features.thermals.map((f) => ({ name: f.properties.name, lon: f.geometry.coordinates[0] as number, lat: f.geometry.coordinates[1] as number })),
+        atlas.features.thermals.map((f) => ({
+          name: f.properties.name,
+          lon: f.geometry.coordinates[0] as number,
+          lat: f.geometry.coordinates[1] as number,
+          massif: f.properties.massif,
+          // Read at display time: the descriptions arrive with the atlas text, after the first render.
+          documented: () => documentedStrength(f.properties.description, f.properties.confidence),
+        })),
         () => this.emitTime(),
       );
       const knowledge = this.knowledge;
-      const schema = new SchemaModule(
+      const schema = (this.schema = new SchemaModule(
         (id) => knowledge.describe(id),
         (id) => this.events.onPickMassif(id),
-      );
+      ));
       this.airspace = new AirspaceModule();
       this.modules = [new ReliefModule(), new Kk7Module(), this.airspace, this.knowledge, schema, new SitesModule(this.data.siteProviders()), new LabelsModule(), this.wind];
       for (const m of this.modules) if (m !== this.wind) await m.add(ctx);
@@ -258,6 +276,11 @@ export class MapController {
     this.probeMarker?.remove();
     this.probeMarker = null;
     this.events.onProbe(null);
+  }
+
+  /** Emphasises the schema items a guided-visit step talks about. */
+  highlightSchema(ids: string[]): void {
+    this.schema?.highlight(ids);
   }
 
   /** Airspaces of the shown families above a point (for the probe). */

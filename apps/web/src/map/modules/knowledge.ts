@@ -175,7 +175,7 @@ export class KnowledgeModule implements MapModule {
             'icon-image': icon,
             'icon-size': ['interpolate', ['linear'], ['zoom'], 7, 0.55, 12, 0.95],
             'icon-allow-overlap': true,
-            'text-field': ['step', ['zoom'], '', 11, ['get', 'label']],
+            'text-field': ['step', ['zoom'], '', 10.5, ['get', 'label']],
             'text-font': ['Noto Sans Regular'],
             'text-size': 11,
             'text-offset': [0, 1.3],

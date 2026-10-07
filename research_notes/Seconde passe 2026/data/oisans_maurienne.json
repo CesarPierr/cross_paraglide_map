@@ -1895,7 +1895,7 @@
    "id": "maurienne",
    "name": "Maurienne (Aiguebelle, La Chambre, Saint-Jean, Saint-Michel, Orelle, Modane ; vallée des Villards, Glandon, Jarrier)",
    "parent_massif": "Alpes du Nord – Savoie",
-   "summary": "La Maurienne est la grande vallée sèche et encaissée entre l'Isère (cluse d'Aiguebelle) et Modane. Sa brise de vallée est réputée « forte » : plus de 50 km/h l'après-midi à Saint-Jean dès 11h à partir de mars (fiche FFVL), « très forte » à La Chambre d'avril à octobre (rien après 12h), et les pilotes locaux disent qu'elle limite le cross et oblige à partir tôt. Les décollages classiques (Grand Châtelard, La Balme à Jarrier, Montgellafrey/Le Mollaret, La Chal au Chaussy) sont des sites de matinée exposés SE à SO ; les atterrissages sont dans le fond de vallée (La Chambre, Sainte-Marie-de-Cuines, Saint-Jean) et doivent être pris le matin. Le CDVL 73 propose deux stratégies : rester haut vers les cols du Glandon et de la Croix de Fer, ou voler tard l'après-midi pour se poser en vallée. Les vents de sud à sud-ouest apportent un risque de foehn (La Balme, La Chambre) ; le vent du nord renforce la brise et crée un venturi côté nord de l'atterrissage de La Chambre. Contraintes : aérodrome de Saint-Rémy-de-Maurienne près du terrain de La Chambre, lignes HT, chantier du Lyon-Turin sur le site de La Balme. Aucune source retrouvée sur le régime nocturne ni sur la brise descendante du soir.",
+   "summary": "La Maurienne est la grande vallée sèche et encaissée entre l'Isère (cluse d'Aiguebelle) et Modane. Sa brise de vallée est réputée « forte » : plus de 50 km/h l'après-midi à Saint-Jean dès 11h à partir de mars (fiche FFVL), « très forte » à La Chambre d'avril à octobre (rien après 12h), et les pilotes locaux disent qu'elle limite le cross et oblige à partir tôt. Les décollages classiques (Grand Châtelard, La Balme à Jarrier, Montgellafrey/Le Mollaret, La Chal au Chaussy) sont des sites de matinée exposés SE à SO ; les atterrissages sont dans le fond de vallée (La Chambre, Sainte-Marie-de-Cuines, Saint-Jean) et doivent être pris le matin. Le CDVL 73 propose deux stratégies : rester haut vers les cols du Glandon et de la Croix de Fer, ou voler tard l'après-midi pour se poser en vallée. Les vents de sud à sud-ouest apportent un risque de foehn (La Balme, La Chambre) ; le vent du nord renforce la brise et crée un venturi côté nord de l'atterrissage de La Chambre. Contraintes : aérodrome de Saint-Rémy-de-Maurienne près du terrain de La Chambre, lignes HT, chantier du Lyon-Turin sur le site de La Balme. Aucune source ne décrit le régime nocturne ; la brise matinale descendante est une déduction. Les cheminements documentés sont des traversées par le bas de la vallée : depuis le bout de Belledonne (Pointe de Rognier) vers la face ouest de la Lauzière en milieu d'après-midi (40 minutes à gratter entre 1600 et 1800 m en 2024) ou en fin de journée (2010), puis Grand Arc et Albertville ; au sud, les cols du Glandon et de la Croix de Fer offrent du soaring par vent de nord de 15-20 km/h. Saint-François-Longchamp ajoute trois terrains FFVL (Soleil Rouge, Lauzière, station 1650) surtout utilisés à ski.",
    "bbox": [
     6.15,
     45.17,
@@ -1961,14 +1961,14 @@
        "coord_quality": "source"
       }
      ],
-     "hours": "dès ≈11h (dès 11h00 à partir de mars à Saint-Jean) ; à La Chambre « ne pas voler après 12h d'avril à octobre » ; jusqu'en fin d'après-midi ; vol tardif de fin d'après-midi possible",
+     "hours": "dès ≈11h (dès 11h00 à partir de mars à Saint-Jean) ; à La Chambre « ne pas voler après 12h d'avril à octobre » ; jusqu'en fin d'après-midi ; vol tardif de fin d'après-midi possible ; récit de Haute-Maurienne : thermique dès 10h, puis brise de vallée installée vers 11h-11h30, parfois plus tard selon les jours et les lieux",
      "speed_kmh": {
       "typical": 25,
       "max": 55
      },
      "season": "mars-octobre (plus forte avril-août)",
      "layer_depth_m": "non documenté pour la Maurienne (ordre de grandeur général 200-500 m ou plus [rto])",
-     "description": "Fiche FFVL de l'atterrissage de Saint-Jean : « forte brise à partir du mois de mars dès 11h00 du matin (> 50 km/h l'après-midi) ». Fiche de La Chambre : « brise de vallée très forte l'après-midi d'avril à octobre, rendant l'atterrissage impraticable ». Club de Saint-Jean : « attention au vent de vallée l'été, se poser avant 11h » ; à Sainte-Marie-de-Cuines « l'été, ne pas voler de 11 à 17h ». CDVL 73 : brise souvent forte l'été jusqu'à 50 km/h ; voler haut (cols du Glandon et de la Croix de Fer) ou tard dans l'après-midi (poser à Beaune). Forum : « la Maurienne est connue pour sa brise… forte. Ça limite pas mal le cross, faut partir tôt » ; autre avis : « ingérable en Maurienne et en Tarentaise ». La carte « Brises des Alpes » de F. Largeault trace une flèche remontant de la Combe de Savoie par Aiguebelle et Épierre jusqu'à La Chambre (Line 2), puis une flèche de Saint-Jean-de-Maurienne vers Modane, Aussois et Lanslebourg : le sens montant est donc sourcé. (Vitesse typique ramenée à 25 km/h sur le couloir, seconde passe : les valeurs plus fortes citées sont des pointes locales, par exemple à l'atterrissage de Saint-Jean l'après-midi.)",
+     "description": "Fiche FFVL de l'atterrissage de Saint-Jean : « forte brise à partir du mois de mars dès 11h00 du matin (> 50 km/h l'après-midi) ». Fiche de La Chambre : « brise de vallée très forte l'après-midi d'avril à octobre, rendant l'atterrissage impraticable ». Club de Saint-Jean : « attention au vent de vallée l'été, se poser avant 11h » ; à Sainte-Marie-de-Cuines « l'été, ne pas voler de 11 à 17h ». CDVL 73 : brise souvent forte l'été jusqu'à 50 km/h ; voler haut (cols du Glandon et de la Croix de Fer) ou tard dans l'après-midi (poser à Beaune). Forum : « la Maurienne est connue pour sa brise… forte. Ça limite pas mal le cross, faut partir tôt » ; autre avis : « ingérable en Maurienne et en Tarentaise ». La carte « Brises des Alpes » de F. Largeault trace une flèche remontant de la Combe de Savoie par Aiguebelle et Épierre jusqu'à La Chambre (Line 2), puis une flèche de Saint-Jean-de-Maurienne vers Modane, Aussois et Lanslebourg : le sens montant est donc sourcé. (Vitesse typique ramenée à 25 km/h sur le couloir, seconde passe : les valeurs plus fortes citées sont des pointes locales, par exemple à l'atterrissage de Saint-Jean l'après-midi.) Complément (forum, vols rando de Haute-Maurienne, 2020) : un pilote local décrit la brise de vallée qui s'installe vers 11h-11h30, « parfois plus tard suivant les jours et les lieux », et une brise de 20-30 km/h en fond de vallée un jour de brouillard. À l'entrée de la vallée, les récits de cross du CHVD (stages 2019 à 2021) montrent que la brise pousse vers l'amont en direction de Chamoux et d'Aiguebelle (« bien rester à droite ») et qu'elle peut s'éteindre certains jours ; un fil de 2008 la dit contre-brise à Chamoux.",
      "confidence": "high",
      "sources": [
       "S67",
@@ -1978,7 +1978,11 @@
       "S6",
       "S2",
       "MS4",
-      "S13"
+      "S13",
+      "S132",
+      "S130",
+      "S128",
+      "S131"
      ]
     },
     {
@@ -2011,18 +2015,21 @@
        "coord_quality": "source"
       }
      ],
-     "hours": "journée d'été ; heures non documentées",
+     "hours": "l'après-midi : brise de nord au col du Glandon qui souffle jusqu'à ≈17h (récit du 7 octobre 2022) ; heures non documentées plus bas dans la vallée",
      "speed_kmh": {
       "typical": 15,
       "max": 25
      },
      "season": "été",
-     "description": "Déduction : le CDVL 73 conseille, pour échapper à la forte brise de vallée de la Maurienne, de voler en altitude vers les cols du Glandon et de la Croix de Fer. Le col du Glandon est exploitable en soaring : « côté nord par brise et nord faible, côté sud par vent de sud faible » (club) ; la fiche : vent de nord ou de sud faible. Aucune source ne décrit la brise du vallon des Villards lui-même ; tracé et vitesses déduits de la topographie.",
-     "confidence": "low",
+     "description": "Brise de la vallée des Villards (La Chambre → Glandon). Le CHVD décrit, au col du Glandon, une brise de nord l'après-midi qui permet de voler en face nord (7 octobre 2022 : léger vent de sud le matin qui retombe, puis brise de nord, vol laminaire jusqu'à la Croix de Fer, la brise s'arrête vers 17h) ; en 2012 un vent de nord prévu à 15-20 km/h à 2000 m a donné plus d'1h15 de soaring avec près de 600 m de gain, et en 2017 des petits vols en face nord avec, en fin d'après-midi, du soaring en face sud. Le sens (nord au col = air qui monte depuis la Maurienne) est cohérent avec le conseil du CDVL 73 de voler vers les cols du Glandon et de la Croix de Fer pour échapper à la forte brise de vallée. Déduction restante : le tracé et les vitesses dans le vallon lui-même (aucune source ne le décrit) restent déduits du relief. Ancienne description : Déduction : le CDVL 73 conseille, pour échapper à la forte brise de vallée de la Maurienne, de voler en altitude vers les cols du Glandon et de la Croix de Fer. Le col du Glandon est exploitable en soaring : « côté nord par brise et nord faible, côté sud par vent de sud faible » (club) ; la fiche : vent de nord ou de sud faible. Aucune source ne décrit la brise du vallon des Villards lui-même ; tracé et vitesses déduits de la topographie.",
+     "confidence": "medium",
      "sources": [
       "MS1",
       "MS2",
-      "S69"
+      "S69",
+      "S127",
+      "S125",
+      "S126"
      ]
     },
     {
@@ -2055,6 +2062,64 @@
       "S70",
       "MS2",
       "S7"
+     ]
+    },
+    {
+     "id": "brise-matinale-descendante-maurienne",
+     "name": "Brise matinale descendante de la Maurienne (Modane → Saint-Jean → La Chambre → Aiguebelle), déduction",
+     "kind": "downvalley",
+     "waypoints": [
+      {
+       "name": "Modane",
+       "lon": 6.6951,
+       "lat": 45.2015,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Saint-Michel-de-Maurienne",
+       "lon": 6.4671,
+       "lat": 45.219,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Saint-Jean-de-Maurienne",
+       "lon": 6.3508,
+       "lat": 45.277,
+       "coord_quality": "source"
+      },
+      {
+       "name": "La Chambre",
+       "lon": 6.289,
+       "lat": 45.3611,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Épierre",
+       "lon": 6.2917,
+       "lat": 45.4546,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Aiguebelle",
+       "lon": 6.2904,
+       "lat": 45.5537,
+       "coord_quality": "source"
+      }
+     ],
+     "hours": "21h-9h (nuit et début de matinée, déduction) ; avant l'inversion de la brise vers 11h",
+     "speed_kmh": {
+      "typical": 5,
+      "max": 10
+     },
+     "season": "printemps-automne (déduction)",
+     "description": "Déduction : aucune source ne décrit un vent descendant de la Maurienne. Les sources établissent seulement que la matinée est calme et propice au vol (fiche du Mollaret : « brise de pente le matin » ; décollages Syride concentrés de 9h à 11h ; thermique dès 10h en Haute-Maurienne avant l'installation de la brise vers 11h-11h30 ; atterrissage d'Épierre « du matin » pour éviter les brises passé 11h). Raisonnement : sur une vallée de 60 km qui se vide vers la Combe de Savoie, l'air refroidi de la nuit s'écoule vers l'aval avant le réchauffement des versants, puis s'inverse quand la brise montante s'installe. Faible, à ne pas utiliser en décision de vol.",
+     "confidence": "low",
+     "sources": [
+      "S132",
+      "MS2",
+      "S70",
+      "S77",
+      "S43"
      ]
     }
    ],
@@ -2124,6 +2189,55 @@
       "S71",
       "MS2"
      ]
+    },
+    {
+     "id": "entree-maurienne-traversee-brise",
+     "name": "Entrée de la Maurienne (Épierre – Chamoux) : traversée contrée par la brise, retour difficile",
+     "kind": "strong-breeze",
+     "lon": 6.2953,
+     "lat": 45.453,
+     "coord_quality": "source",
+     "radius_km": 5,
+     "conditions": "À partir de la mi-journée ; brise de basses couches qui se renforce l'après-midi (« encore un peu tôt » vers 14h-15h) ; certains jours la brise s'éteint en vallée.",
+     "description": "Point de passage obligé des cross entre Belledonne, la Lauzière et les Bauges. CHVD 2024 : au bout de Belledonne on hésite entre les faces est et ouest de la Lauzière, par peur d'être sous le vent de la brise ; face ouest encore peu généreuse (40 minutes entre 1600 et 1800 m), pose en marche avant au fond de la vallée tant que la brise n'est ni forte ni turbulente. Stages CHVD 2019 et 2020 : traverser l'entrée de la Maurienne depuis le Grand Arc vers l'atterrissage de Chamoux est « difficile » ; les pilotes posent l'un après l'autre avant Chamoux (en 2019 : trop contré par le vent). Stage 2021 : on reste d'ordinaire bien à droite car la brise pousse, mais un jour elle s'est éteinte et il fallait tirer droit. Blues Team 2015 : contré par la brise du nord sur la Grande Lauzière, « scotché au raz des sapins ». Forum 2008 : à Chamoux la brise de la Maurienne contre fort.",
+     "sources": [
+      "S110",
+      "S128",
+      "S129",
+      "S130",
+      "S123",
+      "S131",
+      "S122"
+     ]
+    },
+    {
+     "id": "col-du-glandon-troupeau-buvette-voitures",
+     "name": "Col du Glandon : troupeau, tente-buvette et voitures garées au col",
+     "kind": "other",
+     "lon": 6.1715,
+     "lat": 45.24,
+     "coord_quality": "source",
+     "radius_km": 0.6,
+     "conditions": "Été, jours de fête ou de forte fréquentation ; vols en soaring de face nord par vent de nord.",
+     "description": "Récit CHVD (vol du 26 août 2012, fête au col avec animaux) : le biplaceur professionnel présent rappelle de ne pas se poser au milieu des vaches, ni sur la tente-buvette, ni sur les voitures garées au col, sous peine de condamner le vol sur ce site. Le même récit note qu'un vent de nord trop faible ne suffit pas (deux tentatives bredouilles en 2011 et 2012) et que le nord est un peu moins fort dans les massifs internes.",
+     "sources": [
+      "S125",
+      "S69"
+     ]
+    },
+    {
+     "id": "st-francois-longchamp-cable-catex",
+     "name": "Saint-François-Longchamp : câble « Catex » entre la piste noire et l'Homme de Beure",
+     "kind": "other",
+     "lon": 6.3583,
+     "lat": 45.4442,
+     "coord_quality": "approx",
+     "radius_km": 1.5,
+     "conditions": "Hiver, décollages à ski et hors pistes ; vent de plus de 20 km/h déconseillé au décollage.",
+     "description": "Fiche FFVL 2323 : un câble « Catex » est installé entre le départ de la piste noire et l'Homme de Beure (côté col de la Madeleine) ; sa position exacte est donnée en zone rouge sur le fichier KMZ du comité de Savoie. Les zones de décollage hors pistes ne sont pas entretenues. Position placée au décollage de la Lauzière (le câble n'est pas localisé précisément). Déduction : « Catex » désigne probablement un câble de déclenchement d'avalanches (la fiche ne le précise pas).",
+     "sources": [
+      "S135"
+     ]
     }
    ],
    "thermal_spots": [
@@ -2135,10 +2249,12 @@
      "coord_quality": "approx",
      "best_hours": "milieu de journée : « un peu tôt » pour la face ouest ; la brise de vallée monte ensuite",
      "trigger": "Face ouest du Grand Pic de la Lauzière, première relance après la traversée de la Maurienne depuis le bout de Belledonne",
-     "description": "Cross du 28 août 2024 depuis Chamrousse : arrivés au bout de Belledonne, les pilotes transitent sur la Maurienne et hésitent entre les faces est et ouest de la Lauzière ; par crainte de se retrouver sous le vent de la brise ils choisissent la face ouest, « pas encore très généreuse car un peu tôt » : l'un en sort rapidement, un autre « galère 40 minutes entre 1600 et 1800 m », un troisième renonce et se pose au fond de la vallée, « la brise n'étant pas encore trop forte ni trop turbulente », en marche avant. Le premier fait ensuite « le nuage au Grand Pic de la Lauzière » (point de départ de la traversée de la Tarentaise, où il reste scotché à mi-pente dans la brise) ; l'auteur du récit tente ensuite la face sud du Grand Arc, qui remonte facilement le long de l'arête (plafond de 2900 m). Rôle : relance à l'entrée de la Maurienne ; plus tard dans la journée la brise de basses couches empêche de raccrocher le Grand Arc au retour. Position : sommet du Grand Pic de la Lauzière (IGN), la face ouest n'est pas localisée plus précisément.",
+     "description": "Cross du 28 août 2024 depuis Chamrousse : arrivés au bout de Belledonne, les pilotes transitent sur la Maurienne et hésitent entre les faces est et ouest de la Lauzière ; par crainte de se retrouver sous le vent de la brise ils choisissent la face ouest, « pas encore très généreuse car un peu tôt » : l'un en sort rapidement, un autre « galère 40 minutes entre 1600 et 1800 m », un troisième renonce et se pose au fond de la vallée, « la brise n'étant pas encore trop forte ni trop turbulente », en marche avant. Le premier fait ensuite « le nuage au Grand Pic de la Lauzière » (point de départ de la traversée de la Tarentaise, où il reste scotché à mi-pente dans la brise) ; l'auteur du récit tente ensuite la face sud du Grand Arc, qui remonte facilement le long de l'arête (plafond de 2900 m). Rôle : relance à l'entrée de la Maurienne ; plus tard dans la journée la brise de basses couches empêche de raccrocher le Grand Arc au retour. Position : sommet du Grand Pic de la Lauzière (IGN), la face ouest n'est pas localisée plus précisément. Concordances : en mai 2015 un pilote qui a traversé la Maurienne depuis les faces est de Belledonne « raccroche assez haut sur la Grande Lauzière », contré par la brise du nord, puis remonte jusqu'au nuage sans grande difficulté ; en mai 2010, en fin de journée (18h45), une traversée de Belledonne vers la Lauzière (départ 2300 m, arrivée 1500 m) est remontée « en dynamique et thermique ».",
      "confidence": "medium",
      "sources": [
-      "S110"
+      "S110",
+      "S123",
+      "S124"
      ]
     },
     {
@@ -2174,6 +2290,21 @@
       "MS2",
       "S71"
      ]
+    },
+    {
+     "id": "rognier-bout-de-belledonne-relance-traversee",
+     "name": "Pointe de Rognier (bout de Belledonne) : dernière relance avant la traversée de la Maurienne",
+     "lon": 6.2183,
+     "lat": 45.4234,
+     "coord_quality": "approx",
+     "best_hours": "fin de journée dans le récit de 2010 (traversée vers 18h45) ; milieu d'après-midi en 2024",
+     "trigger": "Épaules herbeuses prolongeant vers l'ouest chaque sommet du sud de Belledonne, puis arête descendant vers l'est qui resserre la vallée",
+     "description": "Point de relance puis départ de transition (pas un thermique nommé par les pilotes). Récit CHVD du 24 mai 2010 : en suivant la crête de Belledonne (Puy Gris, pointe du Gleyzin, pics du Frêne…) à 55-60 km/h avec du sud dans le dos, « pas mal d'ailes » se refont sur les épaules herbeuses à l'ouest des sommets ; au niveau de la « pointe du Rogné » il faut tourner à droite, quitter Belledonne et traverser la Maurienne vers la Lauzière (départ vers 2300 m, arrivée en face vers 1500 m, remontée en dynamique et thermique). Le CHVD 2024 décrit la même transition « au bout de Belledonne » (départ à 3400 m, face ouest de la Lauzière). Identification : le récit orthographie « rogné » ; la pointe de Rognier (IGN, Saint-Rémy-de-Maurienne) correspond à l'extrémité nord-est de Belledonne face à Épierre, d'où la position approximative.",
+     "confidence": "medium",
+     "sources": [
+      "S124",
+      "S110"
+     ]
     }
    ],
    "soaring_spots": [
@@ -2186,11 +2317,14 @@
       "N",
       "S"
      ],
-     "description": "Club de Saint-Jean : deux spots exploitables en brise et par vent météo faible ou nul : côté nord par brise et nord faible, côté sud par vent de sud faible. Fiche : si vent de nord, décoller du col à côté de la route (5 min de marche) ; par vent de sud voler entre Glandon et Croix de Fer. Topo-guide cité par un forum : tendance SO modérée ou flux de N.",
+     "description": "Club de Saint-Jean : deux spots exploitables en brise et par vent météo faible ou nul : côté nord par brise et nord faible, côté sud par vent de sud faible. Fiche : si vent de nord, décoller du col à côté de la route (5 min de marche) ; par vent de sud voler entre Glandon et Croix de Fer. Topo-guide cité par un forum : tendance SO modérée ou flux de N. Retours de pilotes du CHVD : face nord par vent de nord (15-20 km/h à 2000 m, le 26 août 2012 : plus d'1h15 de vol et près de 600 m au-dessus du décollage, vent laminaire) ; en 2011 un vent trop faible ne permettait pas de voler avant que le nord ne se renforce (3 h de « waggas » ensuite pour un pilote local) ; le 27 août 2017, petits vols de face nord et soaring de face sud au coucher du soleil ; le 7 octobre 2022, léger vent de sud le matin qui retombe, brise de nord l'après-midi, vol laminaire vers la Croix de Fer et arrêt de la brise vers 17h.",
      "sources": [
       "MS2",
       "S69",
-      "S10"
+      "S10",
+      "S125",
+      "S126",
+      "S127"
      ],
      "coord_quality": "source",
      "ffvl_id": 5299
@@ -2320,6 +2454,47 @@
      ],
      "coord_quality": "source",
      "ffvl_id": 5232
+    },
+    {
+     "id": "saint-francois-soleil-rouge",
+     "name": "Saint-François-Longchamp – télésiège du Soleil Rouge (FFVL 2321)",
+     "lon": 6.3942,
+     "lat": 45.4111,
+     "alt_m": 2249,
+     "orientations": [
+      "N",
+      "NE",
+      "S",
+      "SW"
+     ],
+     "coord_quality": "source",
+     "ffvl_id": 2321,
+     "description": "Fiche FFVL : décollage hors pistes uniquement, accès par le télésiège de la Lune Bleue ou celui des Marquis ; vents favorables N, NE, S, SO, défavorables E et SE ; ne pas se poser sur les pistes ; terrain conventionné FFVL (CDVL 73). Atterrissage de la station à 1650 m (fiche 2322).",
+     "sources": [
+      "S133",
+      "S134"
+     ]
+    },
+    {
+     "id": "saint-francois-lauziere-telesiege",
+     "name": "Saint-François-Longchamp – télésiège de la Lauzière (FFVL 2323)",
+     "lon": 6.3583,
+     "lat": 45.4442,
+     "alt_m": 2516,
+     "orientations": [
+      "N",
+      "NE",
+      "E",
+      "SE",
+      "S",
+      "SW"
+     ],
+     "coord_quality": "source",
+     "ffvl_id": 2323,
+     "description": "Fiche FFVL : 2516 m, niveau bleu, parapente et speed riding, surtout décollages à ski en hiver (seuls décollages et atterrissages hors pistes autorisés) ; vents favorables N à SO en passant par l'est, défavorables O et NO ; au-delà de 20 km/h de vent le décollage est déconseillé ; zones hors pistes non entretenues ; câble « Catex » entre la piste noire et l'Homme de Beure (voir danger).",
+     "sources": [
+      "S135"
+     ]
     }
    ],
    "landings": [
@@ -2391,17 +2566,32 @@
      ],
      "coord_quality": "source",
      "ffvl_id": 3150
+    },
+    {
+     "id": "atterro-saint-francois-station-1650",
+     "name": "Saint-François-Longchamp – station 1650 (FFVL 2322)",
+     "lon": 6.3667,
+     "lat": 45.4164,
+     "alt_m": 1658,
+     "coord_quality": "source",
+     "ffvl_id": 2322,
+     "description": "Fiche FFVL : atterrissage d'altitude, niveau vert, favorable de N à O par le sud (défavorable à l'est) ; « vent variable pouvant être fort » ; atterrissage sur les pistes de ski interdit ; webcam de la station indiquée sur la fiche.",
+     "sources": [
+      "S134"
+     ]
     }
    ],
    "synoptic_effects": [
     {
      "wind": "N",
-     "effect": "Le vent de nord s'ajoute à la brise de vallée (elle s'installe plus tôt et plus forte) : venturi côté nord de l'atterrissage de La Chambre, passer loin du Sappey depuis La Balme ; le Glandon se vole côté nord par nord faible.",
+     "effect": "Le vent de nord s'ajoute à la brise de vallée (elle s'installe plus tôt et plus forte) : venturi côté nord de l'atterrissage de La Chambre, passer loin du Sappey depuis La Balme ; le Glandon se vole côté nord par nord faible. Au Glandon, le nord de 15-20 km/h à 2000 m donne du soaring laminaire en face nord (1h15 et 600 m de gain le 26 août 2012) mais un nord trop faible ne suffit pas ; le nord est un peu moins fort dans les massifs internes.",
      "sources": [
       "S68",
       "S7",
       "MS2",
-      "S79"
+      "S79",
+      "S125",
+      "S127"
      ]
     },
     {
@@ -2429,16 +2619,184 @@
      "sources": [
       "S79"
      ]
+    },
+    {
+     "wind": "Vent du Sud",
+     "effect": "Par flux de sud en altitude (jours de grands cross), la brise de Maurienne reste de nord/nord-ouest en basses couches et contre le pilote à l'entrée de la vallée : sur la Grande Lauzière en 2015 on « raccroche assez haut » mais « scotché au raz des sapins », puis on remonte jusqu'au nuage. Le sud dans le dos permet en revanche de longer les faces est de Belledonne à 55-60 km/h (2010) avant de traverser la Maurienne en fin de journée. Au Glandon, un léger vent de sud donne du soaring de face sud en fin d'après-midi (2017) mais retombe vite (2022).",
+     "sources": [
+      "S123",
+      "S124",
+      "S126",
+      "S127"
+     ]
     }
    ],
-   "xc_routes": [],
+   "xc_routes": [
+    {
+     "id": "chamrousse-belledonne-est-lauziere-albertville-2024",
+     "name": "Chamrousse → faces est de Belledonne → Maurienne → Lauzière → Grand Arc → Albertville (28 août 2024, > 100 km)",
+     "waypoints": [
+      {
+       "name": "Colline de La Botte (décollage, derrière la Croix de Chamrousse)",
+       "lon": 5.9145,
+       "lat": 45.1229,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Grand Pic de Belledonne",
+       "lon": 5.9915,
+       "lat": 45.1707,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Pas de la Coche",
+       "lon": 6.0329,
+       "lat": 45.2179,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Bout de Belledonne (Pointe de Rognier, identification approximative)",
+       "lon": 6.2183,
+       "lat": 45.4234,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Grand Pic de la Lauzière (face ouest puis sommet)",
+       "lon": 6.3662,
+       "lat": 45.4592,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Le Grand Arc (face sud)",
+       "lon": 6.3648,
+       "lat": 45.5664,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Fort du Mont (Albertville)",
+       "lon": 6.4271,
+       "lat": 45.6783,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Mont Mirantin",
+       "lon": 6.4989,
+       "lat": 45.6842,
+       "coord_quality": "source"
+      }
+     ],
+     "distance_km": 84.4,
+     "description": "Cross CHVD du 28 août 2024 : décollage de l'alpage à 150 m au sud du sommet de La Botte, montée vers 2700 m puis plafond de 3300-3400 m dans les faces est (« à chaque arête ça reprend »), rue de nuages jusqu'au Pas de la Coche, trou de bleu à couper en droite ligne vers la crête au-delà des Sept Laux (un pilote suivant la crête en arc se retrouve bas et pose route du Glandon), puis d'arête en arête jusqu'au bout de Belledonne. Traversée de la Maurienne vers la face ouest de la Lauzière (un peu tôt : 40 minutes entre 1600 et 1800 m), nuage au Grand Pic de la Lauzière, puis face sud du Grand Arc (plafond 2900 m) et plané vers Albertville ; relance dynamique au fort du Mont, plus facile à l'entrée de la Tarentaise (épaule puis Mirantin). Le retour par Albertville est refusé par la brise de basses couches bien plus forte que prévu. Distance annoncée : un peu plus de 100 km ; les points de passage intermédiaires non nommés ne sont pas tracés.",
+     "sources": [
+      "S110"
+     ]
+    },
+    {
+     "id": "belledonne-faces-est-maurienne-lauziere-ebaudiaz-2015",
+     "name": "Faces est de Belledonne → traversée de la Maurienne → Grande Lauzière → Grand Arc → Albertville (mai 2015, extrait d'un vol de 280 km)",
+     "waypoints": [
+      {
+       "name": "Croix de Chamrousse (15h40, « derrière Chamrousse »)",
+       "lon": 5.9026,
+       "lat": 45.1258,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Lac de Grand-Maison (faces est de Belledonne, plus de 3400 m)",
+       "lon": 6.1323,
+       "lat": 45.2101,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Grand Pic de la Lauzière (« Grande Lauzière », contré par la brise du nord)",
+       "lon": 6.3662,
+       "lat": 45.4592,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Le Grand Arc (bullettes sur le versant SE)",
+       "lon": 6.3648,
+       "lat": 45.5664,
+       "coord_quality": "source"
+      },
+      {
+       "name": "L'Ébaudiaz",
+       "lon": 6.3834,
+       "lat": 45.6044,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Albertville (avant 18h)",
+       "lon": 6.3856,
+       "lat": 45.6713,
+       "coord_quality": "source"
+      }
+     ],
+     "distance_km": 77.3,
+     "description": "Extrait du vol du col de Bleine à Passy (Blues Team, mai 2015) : après le Taillefer et Chamrousse (15h40), le pilote choisit le passage « de derrière les fagots » par les faces est de Belledonne, satellisé à plus de 3400 m au-dessus du lac de Grand-Maison, le vent de sud le décalant au-dessus des nuages du versant ouest. Il traverse ensuite la Maurienne, raccroche assez haut sur la Grande Lauzière mais est contré par la brise du nord (premier point bas de la journée), remonte jusqu'au nuage, passe le Grand Arc (bullettes sur le versant SE, plafond très bas sur le versant NO), L'Ébaudiaz, puis Albertville avant 18h en direction du Beaufortain. Le vol se termine à Passy (voir les secteurs Val d'Arly et Mont-Blanc). Distance du vol complet : 280 km ; seul le tronçon Belledonne – Albertville est tracé ici ; la position « Grande Lauzière » est celle du sommet principal (le récit ne précise pas le versant).",
+     "sources": [
+      "S123"
+     ]
+    },
+    {
+     "id": "belledonne-sud-maurienne-lauziere-valmorel-2010",
+     "name": "Belledonne sud → traversée de la Maurienne (18h45) → Lauzière → Valmorel → Moûtiers (24 mai 2010, extrait d'un 187 km)",
+     "waypoints": [
+      {
+       "name": "Puy Gris",
+       "lon": 6.1465,
+       "lat": 45.2957,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Pointe du Gleyzin",
+       "lon": 6.1543,
+       "lat": 45.3115,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Bout de Belledonne (« pointe du Rogné », Pointe de Rognier probable)",
+       "lon": 6.2183,
+       "lat": 45.4234,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Valmorel (crête au-dessus de la station)",
+       "lon": 6.4425,
+       "lat": 45.462,
+       "coord_quality": "approx"
+      },
+      {
+       "name": "Crève-Tête",
+       "lon": 6.4675,
+       "lat": 45.4507,
+       "coord_quality": "source"
+      },
+      {
+       "name": "Moûtiers (atterrissage)",
+       "lon": 6.5381,
+       "lat": 45.4908,
+       "coord_quality": "approx"
+      }
+     ],
+     "distance_km": 42.7,
+     "description": "Extrait du vol du 24 mai 2010 (Montgirod – Annecy – Chartreuse – Belledonne – Moûtiers, 187 km en quadrilatère, 180 km FAI) : après le Granier et le Saint-Genis, le pilote longe Belledonne sud avec du sud dans le dos (Puy Gris, pointe du Gleyzin, pics du Frêne) à 55-60 km/h, puis quitte la crête à la « pointe du Rogné », traverse la Maurienne à 2300 m pour arriver en face vers 1500 m, remonte en dynamique et thermique (il est 18h45) mais se retrouve trop bas sous des plafonds qui descendent ; il passe un petit col avec 50 m de gaz, subit -4 à -6 puis -100 m/min pendant 5 min sous une ligne électrique, et arrive à 2000 m sur la petite crête de Valmorel. La crête est à l'ombre, il grappille jusqu'à Crève-Tête puis longe la crête au-dessus d'Aime pour poser vers Moûtiers à 19h30. Seuls les points nommés par le récit et localisés sont tracés ; la position du col, de la ligne électrique et de l'atterrissage est approximative.",
+     "sources": [
+      "S124"
+     ]
+    }
+   ],
    "tips": [
     "L'été, voler le matin et se poser à Saint-Jean avant 11h [MS2] ; à La Chambre ne rien poser après 12h d'avril à octobre [S68].",
     "Au printemps/été, soit rester haut au-dessus de la brise (cols du Glandon et de la Croix de Fer), soit attendre la fin d'après-midi pour redescendre dans la vallée [MS1].",
     "Par vent du nord, ne pas poser côté nord du terrain de La Chambre : s'approcher de la chapelle, protégée par le relief [S7].",
     "Si la brise est trop forte en vol, envisager un posé de secours en pente au-dessus de la couche de brise [MS4].",
     "Grand Châtelard et La Balme : décollage uniquement le matin ; finesse 2,9 et 2,5 jusqu'à Saint-Jean, donc peu de marge face à la brise [MS2].",
-    "Depuis le bout de Belledonne, la face ouest de la Lauzière est peu généreuse en milieu de journée ; arriver plus haut ou plus tard, car la brise de basses couches devient vite forte à l'entrée de la Maurienne [S110]."
+    "Depuis le bout de Belledonne, la face ouest de la Lauzière est peu généreuse en milieu de journée ; arriver plus haut ou plus tard, car la brise de basses couches devient vite forte à l'entrée de la Maurienne [S110].",
+    "Transiter depuis le Grand Arc en restant plutôt à droite (vers l'amont de la Combe) car la brise pousse ; certains jours elle s'éteint et il faut tirer au plus court [S130 stage CHVD 2021].",
+    "Au bout de Belledonne, partir de très haut (2300 m ou plus) pour traverser la Maurienne : les arrivées en face se font vers 1500-1800 m et la remontée peut prendre 40 minutes [S110, S124].",
+    "Au col du Glandon, ne pas se poser dans le troupeau, sur la tente-buvette ni sur les voitures garées : c'est ce qui menace le vol sur le site [S125].",
+    "Pour un vol rando matinal, viser le thermique de 10h et être posé avant la brise de vallée de 11h-11h30 [S132]."
    ]
   },
   {
@@ -4100,6 +4458,36 @@
    "extracted_to": [
     "brise-valloirette"
    ]
+  },
+  {
+   "id": "F11",
+   "massif": "maurienne",
+   "title": "Carte « Belledonne Nord & Lauzière » (présentation La Grosse Miche)",
+   "page_url": "http://www.lagrossemiche.fr/wp-content/uploads/2018/04/cross_massifs-et-transitions.pdf",
+   "pdf_page": 10,
+   "publisher": "La Grosse Miche (club), J. Ruty",
+   "shows": "Vue satellite de Belledonne nord, de la Lauzière et de l'entrée de la Maurienne : versant ouest « à partir de 14h00 », tracé jaune « versant ouest Maurienne » le long de la Lauzière, flèches bleues d'écoulement de basses couches autour de Chamoux, du Grand Arc, de la Maurienne et de la Tarentaise, repères 1 (vallée des Huiles), 2 (zone sous le vent, brise), 3 (brise forte).",
+   "extracted_to": [
+    "entree-maurienne-traversee-brise"
+   ],
+   "sources": [
+    "S122"
+   ]
+  },
+  {
+   "id": "F12",
+   "massif": "maurienne",
+   "title": "Transition « Grand Arc » Bauges / Lauzière / Belledonne (présentation La Grosse Miche)",
+   "page_url": "http://www.lagrossemiche.fr/wp-content/uploads/2018/04/cross_massifs-et-transitions.pdf",
+   "pdf_page": 26,
+   "publisher": "La Grosse Miche (club), J. Ruty",
+   "shows": "Quatre trajets de transition vers le Grand Arc : Dent d'Arclusaz → Grand Arc (10 km, départ mini 2000 m, arrivée 900-1000 m), Champ-Laurent → Grand Arc (7 km, départ mini 1800 m, arrivée 1100 m), Chamoux → Grand Arc (7 km, départ mini 2000 m, arrivée 900-1000 m), Champ-Laurent → atterrissage de Montlambert (8 km, départ mini 1800 m, arrivée au sol) ; repères 1 (brise forte) et 2 (zone sous le vent).",
+   "extracted_to": [
+    "entree-maurienne-traversee-brise"
+   ],
+   "sources": [
+    "S122"
+   ]
   }
  ],
  "sources": [
@@ -5326,6 +5714,132 @@
    "type": "forum",
    "lang": "fr",
    "notes": "Fil de 2007 (relancé en 2025) : un habitué de la station, qui n'y a pas volé lui-même, décrit une aérologie d'été forte au milieu d'après-midi, au-dessus de la couche stable, brise toujours établie en bas, atterrissage officiel sur la route du col de la Madeleine (Lanslevillard)."
+  },
+  {
+   "id": "S122",
+   "title": "Présentation « Cross avancé : massifs et transitions » (La Grosse Miche, avril 2018)",
+   "url": "http://www.lagrossemiche.fr/wp-content/uploads/2018/04/cross_massifs-et-transitions.pdf",
+   "publisher": "La Grosse Miche (club), présentation de J. Ruty",
+   "type": "pdf",
+   "lang": "fr",
+   "notes": "p.10 : carte « Belledonne Nord & Lauzière » (versant ouest à partir de 14h, repères 1 vallée des Huiles, 2 zone sous le vent (brise), 3 brise forte) ; p.26 : transition « Grand Arc » Bauges / Lauzière / Belledonne (départ minimum 1800-2000 m, arrivée 900-1100 m). Même présentation que celle du club St Hil'Air (soirée « cross avancé » du 30 mars 2018), hébergée aussi par ce club."
+  },
+  {
+   "id": "S123",
+   "title": "« Des Alpes-Maritimes à la Haute-Savoie… 280 km de pur bonheur… ou presque » (récit de vol, Blues Team, mai 2015)",
+   "url": "https://bluesteam.canalblog.com/archives/2015/05/27/32123222.html",
+   "publisher": "Blues Team (blog, Saint-Hilaire-du-Touvet)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Vol du col de Bleine à Passy par flux de sud faible : faces est de Belledonne au-dessus du lac de Grand-Maison, traversée de la Maurienne, Grande Lauzière contrée par la brise du nord, Grand Arc, L'Ébaudiaz, Albertville, Beaufortain, Praz-sur-Arly."
+  },
+  {
+   "id": "S124",
+   "title": "Vol du 24 mai 2010, 187 km (Montgirod – Annecy – Chartreuse – Belledonne – Lauzière)",
+   "url": "https://www.chvd.org/2010/06/07/vol-du-24-mai-2010-187-km/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Récit de R. Brun : traversée de la Maurienne depuis le bout de Belledonne vers la Lauzière vers 18h45 (départ 2300 m, arrivée 1500 m), descente de 5 min à -100 m/min au-delà d'un petit col, crête de Valmorel, pose près de Moûtiers."
+  },
+  {
+   "id": "S125",
+   "title": "Mon premier soaring au Glandon (CHVD, vol du 26 août 2012)",
+   "url": "https://www.chvd.org/2013/07/16/mon-premier-soaring-au-glandon/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Soaring en vent de nord prévu 15-20 km/h à 2000 m, plus d'1h15 de vol, près de 600 m de gain au-dessus du décollage ; consignes d'un biplaceur professionnel (vaches, tente-buvette, voitures) ; deux tentatives précédentes bredouilles (vent trop faible, 2011)."
+  },
+  {
+   "id": "S126",
+   "title": "Session vol au col du Glandon (CHVD, 27 août 2017)",
+   "url": "https://www.chvd.org/2017/08/28/session-vol-au-col-du-glandon-2/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Petits vols en face nord, « waggas » au soleil couchant en face sud en fin d'après-midi."
+  },
+  {
+   "id": "S127",
+   "title": "Glandon-nous dans les bois (CHVD, 7 octobre 2022)",
+   "url": "https://www.chvd.org/2022/10/10/glandon-nous-dans-les-bois/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Journée à tendance sud : léger vent de sud au col le matin, qui retombe ; brise de nord l'après-midi sur la face nord du Glandon, puis vol laminaire vers la Croix de Fer jusqu'à 17h où la brise s'arrête."
+  },
+  {
+   "id": "S128",
+   "title": "Rétrospective stage cross 2019 (CHVD)",
+   "url": "https://www.chvd.org/2019/07/18/retrospective-stage-cross-2019/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Décollage de L'Ébaudiaz, Grand Arc, demi-tour à l'entrée de la Maurienne, transition vers Chamoux ; pose 2 km avant l'atterrissage, « trop contré par le vent » ; dégueulante sur la crête."
+  },
+  {
+   "id": "S129",
+   "title": "Stage cross « cuvée deux mille vins cent bières » (CHVD, 2020)",
+   "url": "https://www.chvd.org/2020/07/22/stage-cross-cuvee-deux-mille-vins-cent-bieres/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Dent d'Arclusaz, Grand Arc, L'Ébaudiaz, tentative difficile pour traverser l'entrée de la Maurienne vers l'atterrissage de Chamoux ; tous posent au fond de la vallée."
+  },
+  {
+   "id": "S130",
+   "title": "Rétrospective stage cross 2021 (CHVD)",
+   "url": "https://www.chvd.org/2021/05/28/retrospective-stage-cross-2021/",
+   "publisher": "CHVD (club, Grenoble)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Transition Dent d'Arclusaz → Grand Arc : on reste d'ordinaire bien à droite car la brise pousse, mais ce jour-là elle s'éteint en vallée et il fallait tirer au plus court."
+  },
+  {
+   "id": "S131",
+   "title": "Transition Bauges -> Belledonne (fil de discussion, juin 2008)",
+   "url": "https://www.parapentiste.info/forum/cross/transition-bauges-belledonne-t7580.0.html",
+   "publisher": "parapentiste.info (forum)",
+   "type": "forum",
+   "lang": "fr",
+   "notes": "Échanges de pilotes de cross sur le passage Arclusaz → Chamoux (brise de la Maurienne qui contre), vallée des Huiles, avant-reliefs et Bramefarine."
+  },
+  {
+   "id": "S132",
+   "title": "Trois jours de vol rando en Maurienne (en étoile) (fil de discussion, novembre 2020)",
+   "url": "https://www.parapentiste.info/forum/vol-rando-vol-bivouac/trois-jours-de-vol-rando-en-maurienne-en-etoile-t57807.0.html",
+   "publisher": "parapentiste.info (forum)",
+   "type": "forum",
+   "lang": "fr",
+   "notes": "Vols rando de Haute-Maurienne (Pointe de Tierce, Ouille du Midi, col du Barbier) : thermique dès 10h, brise de vallée installée vers 11-11h30, 20-30 km/h en vallée un jour de brouillard."
+  },
+  {
+   "id": "S133",
+   "title": "Terrain de pratique SAINT-FRANCOIS-LONGCHAMP - TELESIEGE DU SOLEIL ROUGE [2321]",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/2321",
+   "publisher": "FFVL (fiche de terrain)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche FFVL 2321 : décollage hors pistes, 2249 m, vents favorables N, NE, S, SO ; défavorables E, SE ; accès par les télésièges de la Lune Bleue ou des Marquis ; ne pas se poser sur les pistes."
+  },
+  {
+   "id": "S134",
+   "title": "Terrain de pratique SAINT FRANCOIS LONGCHAMP - STATION 1650 [2322]",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/2322",
+   "publisher": "FFVL (fiche de terrain)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche FFVL 2322 : atterrissage 1658 m, niveau vert, site d'altitude, vent variable pouvant être fort ; atterrissage sur les pistes interdit."
+  },
+  {
+   "id": "S135",
+   "title": "Terrain de pratique SAINT-FRANCOIS-LONGCHAMP - TELESIEGE DE LA LAUZIERE [2323]",
+   "url": "https://federation.ffvl.fr/sites_pratique/voir/2323",
+   "publisher": "FFVL (fiche de terrain)",
+   "type": "web",
+   "lang": "fr",
+   "notes": "Fiche FFVL 2323 : décollage 2516 m, niveau bleu, décollages à ski ; au-delà de 20 km/h de vent déconseillé ; zones hors piste non entretenues ; câble « Catex » entre le départ de la piste noire et l'Homme de Beure."
   }
  ]
 }

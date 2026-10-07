@@ -457,7 +457,7 @@ export class WindParticleLayer implements CustomLayerInterface {
   render(gl: WebGL2RenderingContext, options: CustomRenderMethodInput): void {
     if (!this.enabled || !this.program || !this.fieldU) return;
     const now = performance.now();
-    const dt = this.lastTime ? Math.min(0.05, (now - this.lastTime) / 1000) : 0.016;
+    const dt = this.lastTime ? Math.min(0.12, (now - this.lastTime) / 1000) : 0.016;
     this.lastTime = now;
     this.frameCounter++;
     this.step(dt);

@@ -17,7 +17,8 @@
     "data:sites": "tsx scripts/import-sites.ts",
     "data:contributions": "tsx scripts/import-contributions.ts",
     "model:check": "tsx scripts/check-model.ts",
-    "e2e": "tsx apps/web/e2e/screenshot.ts"
+    "e2e": "tsx apps/web/e2e/screenshot.ts",
+    "data:coverage": "tsx scripts/coverage.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

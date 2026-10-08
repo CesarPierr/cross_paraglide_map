@@ -6,7 +6,7 @@
  * and in unit tests.
  */
 import type { BreezeCondition, CuratedBreezeInfo, CuratedHazardInput } from '@brises/shared';
-import { CuratedLayerKind, curatedLayerKind, hazardActivity } from './curated';
+import { CuratedLayerKind, curatedLayerKind } from './curated';
 import { compassFr, windFromDeg, windVector } from './grid';
 import { clamp, smoothstep } from './raster';
 import { RULES } from './rules';
@@ -51,7 +51,8 @@ export interface CuratedLayer {
   thin: CuratedRaster;
   breezes: CuratedBreezeInfo[];
   /** Documented hazards tied to a synoptic wind: dominant one per cell (see `rasterizeCurated`). */
-  hazard?: { index: Int16Array; weight: Float32Array };
+  /** Up to `HAZARD_SLOTS` documented hazards per cell (hazards sharing a place keep their own slot). */
+  hazardSlots?: { index: Int16Array; weight: Float32Array }[];
   hazards?: CuratedHazardInput[];
 }
 
@@ -126,6 +127,26 @@ export function windowActivity(hour: number, w: [number, number]): number {
   if (b > a) return smoothstep(a - 0.5, a + 0.75, hour) * (1 - smoothstep(b - 0.75, b + 0.5, hour));
   // Window across midnight (night / morning down-valley breezes).
   return Math.max(smoothstep(a - 0.5, a + 0.75, hour), 1 - smoothstep(b - 0.75, b + 0.5, hour));
+}
+
+/**
+ * How much the simulated situation matches a documented hazard's conditions, 0..1.
+ * Wind: full within 60 % of its direction tolerance and above its full speed, none
+ * beyond the tolerance or below its starting speed. Hours: its documented window. A
+ * breeze phenomenon (no wind cited) fades under a strong synoptic wind, as thermal
+ * breezes do; a heatwave one needs the heatwave option. Shared by the CPU model and
+ * the GPU engine.
+ */
+export function hazardActivity(h: CuratedHazardInput, p: { hour: number; synoptic: { fromDeg: number; speedKmh: number }; heatwave?: boolean }): number {
+  if (h.heatwave && !p.heatwave) return 0;
+  const kmh = p.synoptic.speedKmh;
+  let a = 1;
+  if (h.fromDeg !== undefined) {
+    if (kmh <= 0) return 0;
+    a *= (1 - smoothstep(0.6 * h.tolDeg, h.tolDeg, angleDiff(p.synoptic.fromDeg, h.fromDeg))) * smoothstep(h.minKmh, h.fullKmh, kmh);
+  } else a *= 1 - smoothstep(25, 45, kmh);
+  if (h.window) a *= windowActivity(p.hour, h.window);
+  return a;
 }
 
 /** Angle between two meteorological directions, 0..180°. */
@@ -408,7 +429,11 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   // Vertical profile: jet in the lower valley, zero at crest height, weak antiwind above.
   const vPhase = c.time.valleyPhase * (c.time.valleyPhase > 0 ? c.time.season : 1);
   const vProfile = valleyProfile(level);
-  const vSpeed = RULES.valleyBreezeMax * vPhase * t.valley[k] * vProfile * scale;
+  // Where the channel narrows (verrou, goulet), the up-valley wind of the day speeds up,
+  // within the valley-wind layer only (terrain.ts → valleyFunnel). Not the night drainage:
+  // cold air pools upstream of a verrou rather than rushing through it (Whiteman 2000).
+  const funnel = 1 + (t.funnel[k] - 1) * Math.max(0, vProfile) * smoothstep(0, 0.3, c.time.valleyPhase);
+  const vSpeed = RULES.valleyBreezeMax * vPhase * t.valley[k] * vProfile * funnel * scale;
   out.valley[0] = -t.axisX[k] * vSpeed;
   out.valley[1] = -t.axisY[k] * vSpeed;
 
@@ -485,7 +510,7 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
       // An inactive documented breeze (outside its hours) says nothing about the flow
       // now: its override fades with its activity instead of imposing a calm.
       cw = wgt * hf * act;
-      const sp = b.speedMs * act * vf * scale;
+      const sp = b.speedMs * act * vf * funnel * scale;
       out.curated[0] = tx * sp;
       out.curated[1] = ty * sp;
       out.curatedIndex = idx;
@@ -612,27 +637,55 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
 
   out.turbulence = clamp(lee * smoothstep(8, 35, c.gKmh) + out.venturi * smoothstep(15, 45, c.gKmh) * 0.6, 0, 1);
 
-  // Documented hazards: where the synoptic wind matches what the sources describe, their
-  // area shows the effect they report, even where the relief model alone misses it (the
-  // Col du Coq "machine à laver" by light north). Mirrored in model-glsl.ts.
+  // Documented hazards: where the situation (synoptic wind, hours) matches what the
+  // sources describe, their area shows the effect they report, even where the relief
+  // model alone misses it (the Col du Coq "machine à laver" by light north, the strong
+  // breeze at a take-off). Mirrored in model-glsl.ts.
   out.hazardIndex = -1;
   out.hazardWeight = 0;
-  const hz = c.curated?.hazard;
-  const hi = hz ? hz.index[k] : -1;
-  if (hi >= 0) {
-    const a = hz!.weight[k] * c.hazardActivity[hi];
-    if (a > 0) {
+  for (const L of c.curated?.hazardSlots ?? []) {
+    const hi = L ? L.index[k] : -1;
+    if (hi < 0) continue;
+    const a = L!.weight[k] * c.hazardActivity[hi];
+    if (a <= 0) continue;
+    // The probe names the strongest documented hazard of the place.
+    if (a > out.hazardWeight) {
       out.hazardIndex = hi;
       out.hazardWeight = a;
-      const e = c.curated!.hazards![hi].effect;
-      if (e === 'lee') {
-        out.lee = Math.max(out.lee, a);
-        out.turbulence = Math.max(out.turbulence, 0.8 * a);
-      } else if (e === 'venturi') {
-        out.venturi = Math.max(out.venturi, a);
-        out.turbulence = Math.max(out.turbulence, 0.5 * a);
-      } else out.turbulence = Math.max(out.turbulence, 0.8 * a);
     }
+    const hzd = c.curated!.hazards![hi];
+    if (hzd.effect === 'lee') {
+      out.lee = Math.max(out.lee, a);
+      out.turbulence = Math.max(out.turbulence, 0.8 * a);
+    } else if (hzd.effect === 'venturi') {
+      out.venturi = Math.max(out.venturi, a);
+      out.turbulence = Math.max(out.turbulence, 0.5 * a);
+    } else if (hzd.effect === 'wind') {
+      // A documented strong breeze: the wind reaches its speed there, from the direction
+      // the sources give (« dans le dos » at a south take-off: from the north); without
+      // one, along the local flow, or up the slope where the model has almost none.
+      const cur = Math.hypot(out.total[0], out.total[1]);
+      if (hzd.flowFromDeg !== undefined) {
+        // What the local flow lacks along the documented direction is added to it: the
+        // breeze blows the documented way while the cross-flows (convergences) remain.
+        const r = (hzd.flowFromDeg * Math.PI) / 180;
+        const ux = -Math.sin(r);
+        const uy = -Math.cos(r);
+        const lack = Math.max(0, (hzd.targetKmh ?? 25) / 3.6 - (out.total[0] * ux + out.total[1] * uy));
+        out.total[0] += ux * lack * a;
+        out.total[1] += uy * lack * a;
+        out.turbulence = Math.max(out.turbulence, 0.3 * a);
+        continue;
+      }
+      const target = ((hzd.targetKmh ?? 25) / 3.6) * a;
+      if (cur < target) {
+        const ux = cur > 0.3 ? out.total[0] / cur : gmag > 1e-6 ? gxk / gmag : 0;
+        const uy = cur > 0.3 ? out.total[1] / cur : gmag > 1e-6 ? gyk / gmag : 0;
+        out.total[0] = ux * target;
+        out.total[1] = uy * target;
+      }
+      out.turbulence = Math.max(out.turbulence, 0.3 * a);
+    } else out.turbulence = Math.max(out.turbulence, 0.8 * a);
   }
   return out;
 }

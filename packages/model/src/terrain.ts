@@ -6,6 +6,7 @@
  */
 import { Grid } from './grid';
 import { blur, clamp, extremumFilter, smoothstep } from './raster';
+import { RULES } from './rules';
 
 export interface Terrain {
   grid: Grid;
@@ -24,6 +25,12 @@ export interface Terrain {
   axisY: Float32Array;
   /** How clearly the cell belongs to a valley channel (0..1), times valley size (0..1). */
   valley: Float32Array;
+  /**
+   * Speed-up of the valley wind where the channel narrows (verrou, goulet), 1..1.5:
+   * width of the channel against its median width up and down the valley (see
+   * `valleyFunnel`). 1 outside valleys.
+   */
+  funnel: Float32Array;
   /** Onshore direction × proximity for lakes (by day air leaves the lake). */
   lakeX: Float32Array;
   lakeY: Float32Array;
@@ -322,6 +329,8 @@ export function analyseTerrain(grid: Grid, rawElevation: Float32Array): Terrain 
     valley[k] = coherence * presence * Math.sqrt(size) * (0.3 + 0.7 * depth);
   }
 
+  const funnel = valleyFunnel(z, floor, envLocal, axisX, axisY, valley, grid);
+
   // Water breezes.
   const lakeMask = new Float32Array(n);
   const seaMask = new Float32Array(n);
@@ -356,6 +365,7 @@ export function analyseTerrain(grid: Grid, rawElevation: Float32Array): Terrain 
     axisX,
     axisY,
     valley,
+    funnel,
     lakeX: lake.x,
     lakeY: lake.y,
     seaX: sea.x,
@@ -365,4 +375,66 @@ export function analyseTerrain(grid: Grid, rawElevation: Float32Array): Terrain 
     water,
     drainKm2: acc,
   };
+}
+
+/** Valley cells taken into account for the narrowing (clear enough channels). */
+const FUNNEL_MIN_VALLEY = 0.15;
+
+/**
+ * Narrowing of the valley channels. The valley wind carries about the same flow
+ * along the valley: where the channel is narrower than up and down the valley it
+ * speeds up (mass conservation; pilots report the breeze "forte" at the verrous,
+ * goulets and narrow cols: Châtillon-en-Diois, the Combe du Goulet, Megève, the
+ * Roya at Tende). For each valley cell: width of the channel across the axis, up to
+ * a third of the local valley depth above the floor (at least 120 m); against the
+ * median width 0.9–4.3 km up and down the axis. Speed-up (ref / width)^exponent, only
+ * accelerating, at most `RULES.funnelMax`, faded with the clarity of the channel.
+ */
+export function valleyFunnel(z: Float32Array, floor: Float32Array, env: Float32Array, axisX: Float32Array, axisY: Float32Array, valley: Float32Array, grid: Grid): Float32Array {
+  const { width: w, height: h, size: n } = grid;
+  const width = new Float32Array(n);
+  const MAX_STEPS = 25;
+  for (let k = 0; k < n; k++) {
+    if (valley[k] < FUNNEL_MIN_VALLEY) continue;
+    const i0 = k % w;
+    const j0 = (k / w) | 0;
+    // Across the axis, in grid steps (rows grow southwards).
+    const pi = -axisY[k];
+    const pj = -axisX[k];
+    const top = floor[k] + Math.max(120, (env[k] - floor[k]) / 3);
+    let cells = 0;
+    for (const side of [1, -1]) {
+      let s = 1;
+      for (; s <= MAX_STEPS; s++) {
+        const i = Math.round(i0 + side * pi * s);
+        const j = Math.round(j0 + side * pj * s);
+        if (i < 0 || j < 0 || i >= w || j >= h || z[j * w + i] > top) break;
+      }
+      cells += s - 0.5;
+    }
+    width[k] = cells * grid.cellM[j0];
+  }
+  const funnel = new Float32Array(n).fill(1);
+  const OFFSETS = [4, 8, 12, 16, 20];
+  const around: number[] = [];
+  for (let k = 0; k < n; k++) {
+    if (width[k] <= 0) continue;
+    const i0 = k % w;
+    const j0 = (k / w) | 0;
+    around.length = 0;
+    for (const d of OFFSETS)
+      for (const side of [1, -1]) {
+        const i = Math.round(i0 + side * axisX[k] * d);
+        const j = Math.round(j0 - side * axisY[k] * d);
+        if (i < 0 || j < 0 || i >= w || j >= h) continue;
+        const wk = width[j * w + i];
+        if (wk > 0) around.push(wk);
+      }
+    if (around.length < 4) continue;
+    around.sort((a, b) => a - b);
+    const ref = around[around.length >> 1];
+    const up = clamp(Math.pow(ref / width[k], RULES.funnelExponent), 1, RULES.funnelMax);
+    funnel[k] = 1 + (up - 1) * smoothstep(FUNNEL_MIN_VALLEY, 0.4, valley[k]);
+  }
+  return funnel;
 }

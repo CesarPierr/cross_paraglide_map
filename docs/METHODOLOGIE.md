@@ -55,6 +55,15 @@ sensible à 1500 m (≈ 6 à 10 km/h) et s'efface vers 2500 m. Les brises docume
 suivent le même profil selon leur type (vallée, pente, régionale : `curatedLayerKind`), ne
 s'appliquent que dans leurs horaires, et donnent leur sens à la brise générique dans leur couloir.
 
+Rétrécissements (`terrain.ts → valleyFunnel`, `RULES.funnelExponent`, `funnelMax`) : la brise de
+vallée transporte à peu près le même débit le long de la vallée ; là où le chenal est plus étroit
+qu'en amont et en aval (verrou, goulet), elle accélère. Pour chaque maille de vallée, la largeur du
+chenal en travers de l'axe (jusqu'au tiers de la profondeur locale) est comparée à la largeur
+médiane 0,9 à 4,3 km en amont et en aval : accélération (largeur ailleurs / largeur ici)^0,7, au plus
+×1,5, de jour seulement (la nuit, l'air froid s'accumule en amont d'un verrou au lieu de le
+franchir, Whiteman 2000). Les brises fortes signalées aux verrous et goulets (Châtillon-en-Diois,
+Barcelonnette, Saint-Vincent-les-Forts) apparaissent ainsi par le relief seul.
+
 ## 4. Connaissance locale (atlas)
 
 Les brises documentées (tracés de l'atlas, recalés sur le fond de vallée par plus court chemin sur
@@ -131,6 +140,14 @@ fichiers de recherche.
   turbulente, et la sonde nomme le danger avec ses sources. Le relief seul ne voit pas tout : au
   col du Coq par nord faible, il ne trouve presque rien, les pilotes y décrivent une « machine à
   laver ».
+- **Brises fortes documentées** : une brise que les sources disent forte à un endroit (« brise de
+  vallée très forte au col-parking », « dans le dos au déco après 12 h 30 ») y atteint au moins
+  25 km/h (30 si « très forte ») aux heures citées, ou par le vent cité ; jamais par vent météo
+  fort (elle s'efface comme toute brise thermique), seulement par canicule si elle le dit, jamais
+  pour un orage (événement, pas journée type). Sa direction vient des sources quand elles la
+  donnent (`research_notes/…/dangers/directions.json`, relu cas par cas) ; sinon celle de
+  l'écoulement local, ou la montée de la pente au décollage. Un même endroit peut porter jusqu'à
+  quatre dangers documentés aux conditions différentes (rotors par nord, brise forte par sud…).
 - **Exposition (au vent)** : composante du vent face à la pente → ascendance dynamique.
 - **Canalisation** : dans les vallées, le vent est ramené sur l'axe, proportionnellement à la
   profondeur de la vallée.

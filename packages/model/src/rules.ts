@@ -94,6 +94,15 @@ export const RULES = {
    * strong north stays out of the lee, as flown).
    */
   leeHeightShare: 0.25,
+  /**
+   * Narrowing of the valleys (terrain.ts → valleyFunnel): speed-up of the valley wind
+   * (width elsewhere / width here)^exponent, at most `max`. Mass conservation would give
+   * an exponent of 1 for a constant depth; the flow also thickens in a verrou, hence less.
+   * Check: `npm run model:check` (strong breezes reported at verrous and goulets; documented
+   * breeze speeds kept within their range).
+   */
+  funnelExponent: 0.7,
+  funnelMax: 1.5,
   /** Upwind search distance for shelter (cells ≈ 216 m). */
   shelterSteps: [1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 17, 20, 24],
   /** Venturi speed-up at full confinement. */

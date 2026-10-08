@@ -22,8 +22,10 @@ export interface StaticPack {
   tW: Float32Array;
   tR: Float32Array;
   tC: Float32Array;
-  /** Conditional breezes (second curated layer). */
+  /** Thin curated layer and documented hazard slots 1–2. */
   tC2: Float32Array;
+  /** Narrowing of the valleys and documented hazard slots 3–4 (packTerrainExtras). */
+  tF: Float32Array;
   breezes: CuratedBreezeInfo[];
   /** Documented hazards tied to a synoptic wind (their cells are in tC2.z). */
   hazards: CuratedHazardInput[];
@@ -98,7 +100,7 @@ export class GpuWindEngine {
   params: ModelParams | null = null;
 
   private gl: WebGL2RenderingContext;
-  private tex: Record<'V' | 'W' | 'R' | 'C' | 'C2' | 'B' | 'insol' | 'probe' | 'hot' | 'sample', WebGLTexture> = {} as never;
+  private tex: Record<'V' | 'W' | 'R' | 'C' | 'C2' | 'F' | 'B' | 'insol' | 'probe' | 'hot' | 'sample', WebGLTexture> = {} as never;
   private fbInsol!: WebGLFramebuffer;
   private fbField!: WebGLFramebuffer;
   private fbLift!: WebGLFramebuffer;
@@ -138,6 +140,7 @@ export class GpuWindEngine {
     // Curated breeze index must stay exact: 32-bit.
     this.tex.C = createTexture(gl, w, h, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: pack.tC });
     this.tex.C2 = createTexture(gl, w, h, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: pack.tC2 });
+    this.tex.F = createTexture(gl, w, h, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: pack.tF });
     this.tex.B = createTexture(gl, Math.max(1, pack.breezes.length + pack.hazards.length), 1, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: this.breezeData });
     // Instantaneous insolation (r) and sunshine received since sunrise (g), per cell.
     this.tex.insol = createTexture(gl, w, h, { internal: gl.RG16F, format: gl.RG, type: gl.FLOAT });
@@ -183,7 +186,7 @@ export class GpuWindEngine {
       });
       const base = this.breezes.length;
       this.hazards.forEach((h, i) => {
-        this.breezeData.set([0, hazardActivity(h, p), HazardEffect[h.effect], 0], (base + i) * 4);
+        this.breezeData.set([h.effect === 'wind' ? (h.targetKmh ?? 25) / 3.6 : 0, hazardActivity(h, p), HazardEffect[h.effect], h.flowFromDeg !== undefined ? h.flowFromDeg + 1000 : 0], (base + i) * 4);
       });
       this.dirtyBreezes = true;
     }
@@ -208,6 +211,7 @@ export class GpuWindEngine {
       ['tR', this.tex.R],
       ['tC', this.tex.C],
       ['tC2', this.tex.C2],
+      ['tF', this.tex.F],
       ['tB', this.tex.B],
       ['tInsol', this.tex.insol],
     ];
@@ -317,10 +321,10 @@ export class GpuWindEngine {
     const { p, u } = this.progs.probe;
     gl.useProgram(p);
     this.bindModelUniforms(u);
-    // After the 8 model textures (units 0–7, bindModelUniforms).
-    gl.activeTexture(gl.TEXTURE8);
+    // After the 9 model textures (units 0–8, bindModelUniforms).
+    gl.activeTexture(gl.TEXTURE9);
     gl.bindTexture(gl.TEXTURE_2D, this.liftTex);
-    gl.uniform1i(u.tLift, 8);
+    gl.uniform1i(u.tLift, 9);
     gl.uniform2i(u.uCell, Math.floor(x), Math.floor(y));
     this.draw(this.fbProbe, 9, 1, 1);
     const out = new Float32Array(36);

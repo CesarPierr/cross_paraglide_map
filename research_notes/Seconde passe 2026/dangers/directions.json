@@ -1,0 +1,317 @@
+{
+ "alpes-francaises/brise-forte-arve": {
+  "from": 270,
+  "label": "ouest",
+  "pourquoi": "« à Sallanches, brise très forte » ; Brise montante de l'Arve à 0,5 km : O, 11-19 h"
+ },
+ "alpes-francaises/brise-forte-durance-briancon": {
+  "from": 202.5,
+  "label": "sud-sud-ouest",
+  "pourquoi": "« Pointes à plus de 40 km/h à Briançon » ; brise montante de la Durance, 1,0 km : SSO"
+ },
+ "alpes-francaises/brise-forte-maurienne": {
+  "from": 337.5,
+  "label": "nord-nord-ouest",
+  "pourquoi": "« Brises jusqu'à 50 km/h en Maurienne » ; Brise montante de Maurienne à 0,4 km (2 sources) : NNO"
+ },
+ "alpes-francaises/brise-forte-serre-poncon": {
+  "from": 225,
+  "label": "sud-ouest",
+  "pourquoi": "« Brise de Durance : axe sud-ouest, éviter les fonds de vallée dès la mi-journée »"
+ },
+ "alpes-francaises/brise-forte-tarentaise": {
+  "from": 270,
+  "label": "ouest",
+  "pourquoi": "« Brises jusqu'à 50 km/h en Tarentaise » ; brise montante de Tarentaise, 0,4 km : O"
+ },
+ "aravis/col-des-aravis-brise-col": {
+  "from": null,
+  "label": "inconnue",
+  "pourquoi": "« la brise du col rentre » sans direction ; brise Thônes→col (NO) à 2,7 km, hors seuil"
+ },
+ "arve-faucigny/mole-col-chez-berroud": {
+  "from": null,
+  "label": "inconnue",
+  "pourquoi": "« brise de vallée très forte » sans direction ; brises documentées à 2,7 km seulement"
+ },
+ "arve-faucigny/passy-plan-d-eau-brise": {
+  "from": 292.5,
+  "label": "ouest-nord-ouest",
+  "pourquoi": "« brise de Sallanches » ; brise de vallée de Sallanches à 0,1 km : ONO, 12-19 h"
+ },
+ "baronnies/beaumont-nyons-face-brise": {
+  "from": 270,
+  "label": "ouest",
+  "pourquoi": "« brise d'ouest du Rhône » ; retour vers Nyons « tout face brise »"
+ },
+ "baronnies/col-ey-mistral": {
+  "from": 270,
+  "label": "ouest",
+  "pourquoi": "« brise d'ouest puissante l'après-midi » ; « le décollage est sous le vent »"
+ },
+ "bauges/ecole-compote-scotche": {
+  "from": 0,
+  "label": "nord",
+  "pourquoi": "Brise de Sainte-Reine vers le col du Frêne (La Compôte – École) à 0,4 km : N, 12,5-18,5 h"
+ },
+ "beaufortain/bisanne-dos-apres-midi": {
+  "from": 0,
+  "label": "nord",
+  "pourquoi": "« la brise de la vallée d'Ugine… arrive dans le dos » ; Bisanne Sud SE-S-SO"
+ },
+ "beaufortain/cormet-chapieux-cocktail-brises": {
+  "from": null,
+  "label": "inconnue",
+  "pourquoi": "« ça descend du col de la Seigne » puis « la brise descend du Cormet » : deux sens"
+ },
+ "belledonne/grand-colon-brise": {
+  "from": null,
+  "label": "inconnue",
+  "pourquoi": "« souvent la brise est forte et turbulente » ; aucune brise documentée à moins de 3 km"
+ },
+ "belledonne/pipay-point-dur": {
+  "from": 90,
+  "label": "est",
+  "pourquoi": "« la brise peut venir de Fond de France » ; brise documentée vers Pipay, 0,8 km : E"
+ },
+ "bourget-chambery/epine-novalaise-brise-forte": {
+  "from": 292.5,
+  "label": "ouest-nord-ouest",
+  "pourquoi": "« brise forte » ; brise de plaine de l'Avant-Pays vers l'Épine, à 0 km : ONO"
+ },
+ "brianconnais-guisane/brise-forte-briancon": {
+  "from": null,
+  "label": "inconnue",
+  "pourquoi": "« si la brise rentre au sud… au nord » ; brise de Durance (SO) à 2,0 km, hors seuil"
+ },
+ "brianconnais-guisane/cloutage-nord-ouest-puy-chalvin-granon": {
+  "from": 0,
+  "label": "nord",
+  "pourquoi": "« le vent de nord prend le dessus et souffle fort jusqu'au soir » (altitude NO-N)"
+ },
+ "buech-laragne-chabre/aspres-breeze-14-16": {
+  "from": 180,
+  "label": "sud",
+  "pourquoi": "« régime de brise/vent de sud » ; déco Sud « bien alimenté »"
+ },
+ "buech-laragne-chabre/buech-mistral-couloir": {
+  "from": 315,
+  "label": "nord-ouest",
+  "pourquoi": "« descendent dans le Buëch (grand arc de Serres-Laragne vers Sisteron) » : axe NO→SE"
+ },
+ "buech-laragne-chabre/chabre-bascule-ouest": {
+  "from": 270,
+  "label": "ouest",
+  "pourquoi": "« Quand l'ouest entre, le rendement de la face sud chute nettement »"
+ },
+ "buech-laragne-chabre/cuberselle-brise": {
+  "from": null,
+  "label": "inconnue",
+  "pourquoi": "« la brise peut devenir trop forte » sans direction ; brises documentées à 2,3-2,7 km, hors seuil"
+ },
+ "buech-laragne-chabre/mison-inversion": {
+  "from": 202.5,
+  "label": "sud-sud-ouest",
+  "pourquoi": "« inversion brutale du flux du soir » ; brise d'ouest de la Méouge, 1,2 km : SSO, 13,5-20,5 h"
+ },
+ "champsaur-valgaudemar/la-salette-valbonnais-brise-goulet": {
+  "from": null,
+  "label": "inconnue",
+  "pourquoi": "« brise de la vallée de Valbonnais est très forte » ; seule brise proche : prolongement d'altitude"
+ },
+ "chartreuse/brise-chambery-savoyarde-transition": {
+  "from": 315,
+  "label": "nord-ouest",
+  "pourquoi": "« brise de Chambéry » ; « l'épaule nord-ouest du Montgelas, au vent » ; cluse de Chambéry à l'ouest-nord-ouest"
+ },
+ "chartreuse/vercors-brise-rachais-nerons": {
+  "from": 337.5,
+  "label": "nord-nord-ouest",
+  "pourquoi": "« la brise puissante » ; brises de jour de la cluse de Voreppe, 0,4-1 km : NNO, NO, NNO"
+ },
+ "combe-de-savoie/montlambert-nord-fort": {
+  "from": 0,
+  "label": "nord",
+  "pourquoi": "« Seul site… où l'on vole par vent de Nord » ; « le vent peut arriver très vite »"
+ },
+ "combe-de-savoie/montlambert-sud-maurienne": {
+  "from": null,
+  "label": "inconnue",
+  "pourquoi": "« le vent sort de la Maurienne, rebondit… arrive au déco complètement travers gauche » : sens local dévié"
+ },
+ "diois/diois-baise-no": {
+  "from": 225,
+  "label": "sud-ouest",
+  "pourquoi": "« nécessite une brise bien axée de face » ; déco Baise SO-O-S (milieu SO)"
+ },
+ "diois/diois-bascule-ouest": {
+  "from": 270,
+  "label": "ouest",
+  "pourquoi": "« Les fortes brises d'ouest de Couspeau, d'Aucelon et d'Aurel prennent le dessus »"
+ },
+ "diois/diois-chatillon-recul": {
+  "from": 270,
+  "label": "ouest",
+  "pourquoi": "« brise de Die qui diverge vers les cols de Grimone et de Menée » ; 0,3 km : O"
+ },
+ "diois/diois-rousset-technique": {
+  "from": null,
+  "label": "inconnue",
+  "pourquoi": "brises croisées et déco sous le vent par sud : direction non retenue (revue)"
+ },
+ "diois/diois-volvent-brise-ouest": {
+  "from": 270,
+  "label": "ouest",
+  "pourquoi": "« la brise d'ouest peut se lever vite et être forte sur les crêtes »"
+ },
+ "diois/ffvl730-roynac-renforcement-sud": {
+  "from": 180,
+  "label": "sud",
+  "pourquoi": "« par sud établi, le sud se renforce rapidement et arrive en travers gauche au décollage »"
+ },
+ "ecrins-vallouise-haute-durance/brise-descendante-soir-vallouise": {
+  "from": 337.5,
+  "label": "nord-nord-ouest",
+  "pourquoi": "« Forte brise descendante le soir » ; brise descendante du soir de Vallouise, 0,1 km : NNO"
+ },
+ "ecrins-vallouise-haute-durance/serre-buzard-brise-forte": {
+  "from": 247.5,
+  "label": "ouest-sud-ouest",
+  "pourquoi": "« les brises sont vite trop fortes » ; brise montante de la Durance, 1,4 km : OSO"
+ },
+ "grenoble-cuvette/chalais-brise-nord-atterro-voreppe": {
+  "from": 0,
+  "label": "nord",
+  "pourquoi": "« attention à la brise de Nord qui peut apparaître en milieu de journée »"
+ },
+ "gresivaudan/atterro-voreppe-brise": {
+  "from": 0,
+  "label": "nord",
+  "pourquoi": "« brise de nord qui peut apparaître à mi-journée et forcir assez fortement »"
+ },
+ "gresivaudan/chamrousse-brise-soir-canicule": {
+  "from": null,
+  "label": "inconnue",
+  "pourquoi": "« brise du Grésivaudan » sans direction ; brise de Grenoble (NO) à 2,2 km, hors seuil"
+ },
+ "haute-maurienne/brise-forte-aussois": {
+  "from": 270,
+  "label": "ouest",
+  "pourquoi": "« brise de vallée… régulièrement très forte » ; brise montante de Haute-Maurienne, 0,6 km : O"
+ },
+ "matheysine/conest-cisaillement-brise-12h": {
+  "from": null,
+  "label": "inconnue",
+  "pourquoi": "« la brise s'installe dès 12h » sans direction ; aucune brise documentée à moins de 3 km"
+ },
+ "matheysine/monteynard-sud-rafales": {
+  "from": 180,
+  "label": "sud",
+  "pourquoi": "« Par vent du sud, la navigation devient plus 'rodéo' » ; flux synoptique de sud"
+ },
+ "matheysine/valbonnais-combe-du-goulet-rodeo": {
+  "from": null,
+  "label": "inconnue",
+  "pourquoi": "« la brise de la vallée de Valbonnais est très forte » sans direction ; aucune brise documentée"
+ },
+ "maurienne/brise-forte-atterro-saint-jean": {
+  "from": 337.5,
+  "label": "nord-nord-ouest",
+  "pourquoi": "« forte brise dès 11h00 » ; Brise montante de Maurienne à 0,3 km : NNO, 11-19 h"
+ },
+ "maurienne/entree-maurienne-traversee-brise": {
+  "from": 22.5,
+  "label": "nord-nord-est",
+  "pourquoi": "« contré par la brise du nord » ; brise montante de Maurienne, 0,4 km : NNE"
+ },
+ "maurienne/la-chambre-atterro-brise-foehn": {
+  "from": 337.5,
+  "label": "nord-nord-ouest",
+  "pourquoi": "« brise de vallée très forte l'après-midi » ; Brise montante de Maurienne à 0,6 km : NNO, 11-19 h"
+ },
+ "mercantour/cagnorina-forte-brise": {
+  "from": 135,
+  "label": "sud-est",
+  "pourquoi": "« fortes brises de vallée » ; brise de vallée de la Roya, 0,5 km : SE (sans heures)"
+ },
+ "mercantour/col-de-tende-brise": {
+  "from": 180,
+  "label": "sud",
+  "pourquoi": "« sud avec flux de brise de vallée » ; brise de vallée de la Roya, 0,6 km : S"
+ },
+ "oisans-grandes-rousses/sabot-vent-nord": {
+  "from": 0,
+  "label": "nord",
+  "pourquoi": "« Nord trop fort entre par le col » ; « une manche à air… indique l'entrée du Nord »"
+ },
+ "prealpes-digne-lure/oraison-entrees-de-vent": {
+  "from": 180,
+  "label": "sud",
+  "pourquoi": "« ne pas décoller si brise de sud marquée (on n'atteint pas le terrain) »"
+ },
+ "saint-andre-verdon/brise-forte-deco-so": {
+  "from": null,
+  "label": "inconnue",
+  "pourquoi": "« le vent de vallée s'ajoute aux thermiques » ; seule brise ≤1,5 km : brise de pente"
+ },
+ "serre-poncon-embrunais/st-vincent-brise-deco": {
+  "from": 202.5,
+  "label": "sud-sud-ouest",
+  "pourquoi": "« Moutons sur le lac = renforcement » ; brise du lac de Serre-Ponçon, 0 km : SSO, 14-16,5 h"
+ },
+ "tarentaise/brise-forte-tarentaise-apres-midi": {
+  "from": 180,
+  "label": "sud",
+  "pourquoi": "Brise montante de Tarentaise à 0,6 km : S, 11-19 h (Haute-Tarentaise O à 0,9 km)"
+ },
+ "trieves/chatillon-verrou-brise": {
+  "from": 270,
+  "label": "ouest",
+  "pourquoi": "« Le secteur de la brise nord diverge en ouest sur la région de Châtillon et son verrou »"
+ },
+ "ubaye/hippodrome-barcelonnette-brise": {
+  "from": 247.5,
+  "label": "ouest-sud-ouest",
+  "pourquoi": "« brise de vallée… excessivement forte dès 11h » ; brises de l'Ubaye, 0-0,2 km : OSO"
+ },
+ "ubaye/jausiers-brise-chevaux": {
+  "from": 202.5,
+  "label": "sud-sud-ouest",
+  "pourquoi": "« la brise de vallée peut être très forte » ; brise montante de l'Ubaye, 0,2 km : SSO"
+ },
+ "ubaye/lac-des-sagnes-brise-plouf": {
+  "from": null,
+  "label": "inconnue",
+  "pourquoi": "« brise de vallée de la haute Ubaye » sans direction ; aucune brise documentée à moins de 3 km"
+ },
+ "val-arly-megeve/bisanne-brise-arly-dos": {
+  "from": 0,
+  "label": "nord",
+  "pourquoi": "« la brise de vallée souffle déjà dans le dos (nord) »"
+ },
+ "val-arly-megeve/cordon-brise-vent-arriere": {
+  "from": null,
+  "label": "inconnue",
+  "pourquoi": "sources contradictoires ou brises croisées : direction non retenue (revue)"
+ },
+ "val-arly-megeve/megeve-verrou-brise-forte-avril": {
+  "from": null,
+  "label": "inconnue",
+  "pourquoi": "« face à cette très forte brise » sans direction ; brises à 2 km opposées (NE et SO)"
+ },
+ "vanoise/bouc-blanc-brise-forte": {
+  "from": null,
+  "label": "inconnue",
+  "pourquoi": "« conditions fortes à très fortes » sans direction ; seule brise documentée à 2,0 km"
+ },
+ "vanoise/brise-forte-bozel-atterrissage": {
+  "from": null,
+  "label": "inconnue",
+  "pourquoi": "« brise de vallée forte » ; deux brises ≤1,5 km opposées : Saint-Bon E (0,1) et Doron O (1,3)"
+ },
+ "vercors-est-sud/leoncel-renforcement-vent": {
+  "from": null,
+  "label": "inconnue",
+  "pourquoi": "« renforcement du vent » et « aérologie… travers gauche » sans direction ; aucune brise documentée"
+ }
+}

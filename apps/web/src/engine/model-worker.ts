@@ -3,7 +3,7 @@
  * Web Worker running the wind model off the main thread.
  * Protocol: see `src/engine/model-client.ts`.
  */
-import { packCuratedLayers, rasterizeCurated, type CuratedBreezeInput, type CuratedHazardInput } from '@brises/model';
+import { packCuratedLayers, packTerrainExtras, rasterizeCurated, type CuratedBreezeInput, type CuratedHazardInput } from '@brises/model';
 import {
   computeField,
   computeTimeContext,
@@ -86,10 +86,11 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
         tW: pack4(n, t.valley, t.lakeX, t.lakeY, t.water),
         tR: pack4(n, t.seaX, t.seaY, t.plainX, t.plainY),
         ...packCuratedLayers(cur),
+        tF: packTerrainExtras(t, cur),
         breezes: cur.breezes,
         hazards: msg.hazards,
       };
-      self.postMessage({ type: 'built', id: msg.id, pack, ms: performance.now() - t0 }, [pack.tZ.buffer, pack.tV.buffer, pack.tW.buffer, pack.tR.buffer, pack.tC.buffer, pack.tC2.buffer]);
+      self.postMessage({ type: 'built', id: msg.id, pack, ms: performance.now() - t0 }, [pack.tZ.buffer, pack.tV.buffer, pack.tW.buffer, pack.tR.buffer, pack.tC.buffer, pack.tC2.buffer, pack.tF.buffer]);
     } else if (msg.type === 'init') {
       const t0 = performance.now();
       const raw = await decodeDem(msg.demUrl, msg.meta);

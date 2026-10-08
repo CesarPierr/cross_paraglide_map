@@ -44,18 +44,29 @@ export interface CuratedBreezeInput extends CuratedBreezeInfo {
 export interface CuratedHazardInput {
   id: string;
   name: string;
-  /** Effect shown: lee and rotor, venturi (acceleration), or turbulence (foehn, downdraft, landing). */
-  effect: 'lee' | 'venturi' | 'turbulence';
+  /**
+   * Effect shown: lee and rotor, venturi (acceleration), turbulence (foehn, downdraft,
+   * landing), or wind (a strong breeze: the wind there reaches at least `targetKmh`).
+   */
+  effect: 'lee' | 'venturi' | 'turbulence' | 'wind';
   /** Points of the hazard [lon, lat] (one for a place, several along a line). */
   coords: [number, number][];
   /** Radius of influence around each point, metres. */
   radiusM: number;
-  /** Synoptic wind of the sources: meteorological direction (deg) and its tolerance (deg). */
-  fromDeg: number;
+  /** Synoptic wind of the sources: meteorological direction (deg) and its tolerance (deg); absent for a breeze phenomenon. */
+  fromDeg?: number;
   tolDeg: number;
   /** Speeds (km/h) at which the hazard starts to apply, and fully applies. */
   minKmh: number;
   fullKmh: number;
+  /** Documented hours (legal time) of a breeze phenomenon. */
+  window?: [number, number];
+  /** Only on a heatwave day (« par canicule »). */
+  heatwave?: boolean;
+  /** Strong breeze: wind speed reached there (km/h). */
+  targetKmh?: number;
+  /** Strong breeze: where it blows from at this place (deg), when the sources tell it (« dans le dos », « brise de nord »). */
+  flowFromDeg?: number;
 }
 
 export interface AtlasSource {

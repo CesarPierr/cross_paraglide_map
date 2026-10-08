@@ -165,9 +165,11 @@ export function ProbeSheet() {
   const documented = c.hazardName && c.hazardId && c.hazardWeight > 0.3 ? { name: c.hazardName, id: c.hazardId.split('#')[0] } : null;
   const exposure =
     synopticKmh < 3
-      ? { tone: '', text: 'Pas de vent météo : seules les brises thermiques jouent.' }
+      ? documented
+        ? { tone: 'bad', text: 'Danger documenté dans ces conditions :' }
+        : { tone: '', text: 'Pas de vent météo : seules les brises thermiques jouent.' }
       : documented
-        ? { tone: 'bad', text: 'Danger documenté par ce vent :' }
+        ? { tone: 'bad', text: 'Danger documenté dans ces conditions :' }
         : c.lee > 0.35
         ? { tone: 'bad', text: `Sous le vent (abri ${Math.round(c.shelterDeg)}°) : air freiné, rabattant${synopticKmh > 15 ? ', risque de rotors' : ''}.` }
         : c.dynamicLift > 0.6
@@ -204,7 +206,7 @@ export function ProbeSheet() {
           </div>
           <p className={`probe-exposure ${exposure.tone}`}>
             {exposure.text}
-            {documented && synopticKmh >= 3 && (
+            {documented && (
               <>
                 {' '}
                 <button className="link-btn inline" onClick={() => openDocumented(documented.id)}>

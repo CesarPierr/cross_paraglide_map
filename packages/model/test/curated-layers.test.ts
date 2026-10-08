@@ -195,7 +195,7 @@ describe('real DEM, 15 July 15:00, no synoptic wind, 80 m above ground', () => {
 
 describe('documented hazards', () => {
   const hazard = { id: 'h', name: 'Col : turbulent par nord même faible', effect: 'lee' as const, coords: [] as [number, number][], radiusM: 700, fromDeg: 0, tolDeg: 45, minKmh: 5, fullKmh: 12 };
-  const wind = (fromDeg: number, speedKmh: number) => ({ synoptic: { fromDeg, speedKmh } });
+  const wind = (fromDeg: number, speedKmh: number) => ({ hour: 14, synoptic: { fromDeg, speedKmh } });
 
   it('apply only when the simulated wind matches their conditions', () => {
     expect(hazardActivity(hazard, wind(0, 12))).toBe(1);
@@ -222,5 +222,54 @@ describe('documented hazards', () => {
     const south = { ...p, synoptic: { fromDeg: 180, speedKmh: 15 } };
     const off = evalCell(40 * grid.width + 60, makeWindContext(t, computeTimeContext(t, south), south, layer), newCellResult());
     expect(off.hazardWeight).toBe(0);
+  });
+});
+
+describe('documented strong breezes and shared places', () => {
+  const at = (i: number, j: number): [number, number] => [grid.colLon(i + 0.5), grid.rowLat(j + 0.5)];
+  const strong = { id: 's', name: 'Brise forte au déco', effect: 'wind' as const, coords: [at(60, 30)], radiusM: 700, tolDeg: 45, minKmh: 0, fullKmh: 0, window: [12, 18] as [number, number], targetKmh: 25 };
+  const leeByNorth = { id: 'l', name: 'Rotors par nord', effect: 'lee' as const, coords: [at(60, 30)], radiusM: 700, fromDeg: 0, tolDeg: 45, minKmh: 5, fullKmh: 12 };
+  const speedAt = (p: ModelParams, layer: ReturnType<typeof rasterizeCurated>) => {
+    const o = evalCell(30 * grid.width + 60, makeWindContext(terrain, computeTimeContext(terrain, p), p, layer), newCellResult());
+    return { kmh: Math.hypot(o.total[0], o.total[1]) * 3.6, lee: o.lee, hazard: o.hazardIndex };
+  };
+
+  it('reach their documented speed at their hours only', () => {
+    const layer = rasterizeCurated(terrain, [], [strong]);
+    expect(speedAt(params(15), layer).kmh).toBeGreaterThan(24);
+    expect(speedAt(params(15), layer).hazard).toBe(0);
+    expect(speedAt(params(8), layer).kmh).toBeLessThan(15);
+    // Erased by a strong synoptic wind, like thermal breezes.
+    expect(hazardActivity(strong, { hour: 15, synoptic: { fromDeg: 0, speedKmh: 50 } })).toBe(0);
+    // A heatwave one needs the heatwave option.
+    expect(hazardActivity({ ...strong, heatwave: true }, { hour: 15, synoptic: { fromDeg: 0, speedKmh: 0 } })).toBe(0);
+    expect(hazardActivity({ ...strong, heatwave: true }, { hour: 15, synoptic: { fromDeg: 0, speedKmh: 0 }, heatwave: true })).toBe(1);
+  });
+
+  it('keep both hazards of a shared place, each under its own conditions', () => {
+    const layer = rasterizeCurated(terrain, [], [strong, leeByNorth]);
+    const calm = speedAt(params(15), layer);
+    expect(calm.kmh).toBeGreaterThan(24);
+    expect(calm.lee).toBeLessThan(0.35);
+    const north = speedAt(params(15, { synoptic: { fromDeg: 0, speedKmh: 15 } }), layer);
+    expect(north.lee).toBeGreaterThan(0.9);
+    expect(north.kmh).toBeGreaterThan(24);
+  });
+});
+
+describe('valley narrowing', () => {
+  it('speeds the valley wind up in a verrou, not where the valley is even', () => {
+    // East–west valley 2.6 km wide, narrowed to 0.9 km around column 60.
+    const g = new Grid({ zoom: 9, tileSize: 256, px0: 67400, py0: 46600, width: 120, height: 80 });
+    const z = new Float32Array(g.size);
+    for (let j = 0; j < g.height; j++)
+      for (let i = 0; i < g.width; i++) {
+        const half = Math.abs(i - 60) < 4 ? 2 : 6;
+        const d = Math.max(0, Math.abs(j - 40) - half);
+        z[j * g.width + i] = 400 + i * 4 + Math.min(d, 30) ** 1.6 * 9;
+      }
+    const t = analyseTerrain(g, z);
+    expect(t.funnel[40 * g.width + 60]).toBeGreaterThan(1.2);
+    expect(t.funnel[40 * g.width + 30]).toBeLessThan(1.05);
   });
 });

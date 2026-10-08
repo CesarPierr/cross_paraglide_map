@@ -682,8 +682,19 @@ function checkHazard(f: AtlasFeature): void {
     res.checks.push({ name: 'conditions', ok: false, expected: 'vent météo cité (direction) ou horaire de brise', got: cond || '(absent)' });
     return;
   }
-  const s: Scenario = { month0: 6, hour: window ? midWindow(window) : 14, wind: wind ? { fromDeg: wind.fromDeg, kmh: wind.kmh } : undefined };
-  res.scenario = `juillet ${hourTxt(s.hour)}${wind ? `, ${wind.label} ${wind.kmh} km/h` : ', sans vent météo'}, 80 m sol, à ${radius} m du point`;
+  // Storm outflows and fronts are events, not a regular day: the model does not simulate them.
+  if (kind === 'strong-breeze' && /orage|cumulonimbus|cu-?nims?|front froid|tempête/i.test(`${p.name} ${cond}`)) {
+    res.status = 'non testable';
+    res.checks.push({ name: 'conditions', ok: false, expected: 'situation régulière', got: 'événement orageux, non simulé' });
+    return;
+  }
+  const s: Scenario = {
+    month0: 6,
+    hour: window ? midWindow(window) : 14,
+    wind: wind ? { fromDeg: wind.fromDeg, kmh: wind.kmh } : undefined,
+    heatwave: /canicule|forte chaleur/i.test(cond),
+  };
+  res.scenario = `juillet ${hourTxt(s.hour)}${wind ? `, ${wind.label} ${wind.kmh} km/h` : ', sans vent météo'}${s.heatwave ? ', canicule' : ''}, 80 m sol, à ${radius} m du point`;
   const [lon, lat] = f.geometry.type === 'Point' ? f.geometry.coordinates : f.geometry.coordinates[0];
   const k = cellAt(lon, lat);
   if (k < 0) {

@@ -49,48 +49,45 @@ function emptyRaster(n: number): CuratedRaster & { score: Float32Array } {
 }
 
 /** Effect of a documented hazard, as the GPU codes it (tB row, z). */
-export const HazardEffect = { lee: 0, venturi: 1, turbulence: 2 } as const;
+export const HazardEffect = { lee: 0, venturi: 1, turbulence: 2, wind: 3 } as const;
+
+/** Documented hazards a cell can hold at once (GPU: tC2.z, tC2.w, tF.y, tF.z). */
+export const HAZARD_SLOTS = 4;
 
 /**
- * How much the synoptic wind matches a documented hazard's conditions, 0..1: full
- * within 60 % of its direction tolerance and above its full speed, none beyond the
- * tolerance or below its starting speed. Shared by the CPU model and the GPU engine.
+ * Rasterises the documented hazards as discs around their points, in up to
+ * `HAZARD_SLOTS` layers: each hazard goes to the first layer where it overlaps no
+ * other, so hazards sharing a place with different conditions (a lee by north and a
+ * strong breeze by south at the same take-off) both stay. Beyond that, the highest
+ * weight wins in the last layer.
  */
-export function hazardActivity(h: CuratedHazardInput, p: { synoptic: { fromDeg: number; speedKmh: number } }): number {
-  const kmh = p.synoptic.speedKmh;
-  if (kmh <= 0) return 0;
-  const diff = Math.abs(((p.synoptic.fromDeg - h.fromDeg + 540) % 360) - 180);
-  const dir = 1 - smoothstep(0.6 * h.tolDeg, h.tolDeg, diff);
-  return dir * smoothstep(h.minKmh, h.fullKmh, kmh);
-}
-
-/** Rasterises the documented hazards: dominant (highest weight) one per cell, discs around their points. */
-function rasterizeHazards(t: Terrain, hazards: CuratedHazardInput[]): { index: Int16Array; weight: Float32Array } {
+function rasterizeHazards(t: Terrain, hazards: CuratedHazardInput[]): { index: Int16Array; weight: Float32Array }[] {
   const { grid } = t;
   const { width: w, height: h, size: n } = grid;
-  const index = new Int16Array(n).fill(-1);
-  const weight = new Float32Array(n);
+  const slots = Array.from({ length: HAZARD_SLOTS }, () => ({ index: new Int16Array(n).fill(-1), weight: new Float32Array(n) }));
   const cell = grid.cellM[(h / 2) | 0];
   hazards.forEach((hz, hi) => {
     const R = Math.max(1.5, hz.radiusM / cell);
+    const cells: [number, number][] = [];
     for (const [lon, lat] of hz.coords) {
       if (!grid.contains(lon, lat)) continue;
       const [cx, cy] = grid.toGrid(lon, lat);
       for (let j = Math.max(0, Math.floor(cy - R)); j <= Math.min(h - 1, Math.ceil(cy + R)); j++)
         for (let i = Math.max(0, Math.floor(cx - R)); i <= Math.min(w - 1, Math.ceil(cx + R)); i++) {
           const d = Math.hypot(i + 0.5 - cx, j + 0.5 - cy);
-          if (d > R) continue;
           // Full over the inner 60 % of the radius, fading to the edge; below 1 (GPU packing).
-          const wgt = Math.min(0.999, 1 - smoothstep(0.6 * R, R, d));
-          const k = j * w + i;
-          if (wgt > weight[k]) {
-            weight[k] = wgt;
-            index[k] = hi;
-          }
+          if (d <= R) cells.push([j * w + i, Math.min(0.999, 1 - smoothstep(0.6 * R, R, d))]);
         }
     }
+    const free = slots.findIndex((L) => cells.every(([k]) => L.index[k] < 0 || L.index[k] === hi));
+    const L = slots[free >= 0 ? free : HAZARD_SLOTS - 1];
+    for (const [k, wgt] of cells)
+      if (wgt > L.weight[k]) {
+        L.weight[k] = wgt;
+        L.index[k] = hi;
+      }
   });
-  return { index, weight };
+  return slots;
 }
 
 export function rasterizeCurated(t: Terrain, breezes: CuratedBreezeInput[], hazards: CuratedHazardInput[] = []): CuratedLayer {
@@ -165,7 +162,7 @@ export function rasterizeCurated(t: Terrain, breezes: CuratedBreezeInput[], haza
     cond: strip(cond),
     thin: strip(thin),
     breezes: breezes.map(({ id, name, kind, speedMs, window, condition }) => ({ id, name, kind, speedMs, window, condition: condition ?? null })),
-    hazard: rasterizeHazards(t, hazards),
+    hazardSlots: rasterizeHazards(t, hazards),
     hazards,
   };
 }
@@ -173,8 +170,9 @@ export function rasterizeCurated(t: Terrain, breezes: CuratedBreezeInput[], haza
 /**
  * GPU layout of the three layers in two RGBA float textures: each layer is two
  * floats, `index + min(weight, 0.999)` (−1 when empty) and the flow direction
- * angle (atan2(ty, tx)). tC = main, cond; tC2 = thin, then the documented hazard
- * (`index + min(weight, 0.999)`, −1 when none) and an unused channel.
+ * angle (atan2(ty, tx)). tC = main, cond; tC2 = thin, then the first two documented
+ * hazard slots (`index + min(weight, 0.999)`, −1 when none). The terrain texture tF
+ * holds the narrowing of the valleys and the two other slots (`packTerrainExtras`).
  */
 export function packCuratedLayers(c: CuratedLayer): { tC: Float32Array; tC2: Float32Array } {
   const n = c.main.index.length;
@@ -189,8 +187,26 @@ export function packCuratedLayers(c: CuratedLayer): { tC: Float32Array; tC2: Flo
     put(tC, k * 4, c.main, k);
     put(tC, k * 4 + 2, c.cond, k);
     put(tC2, k * 4, c.thin, k);
-    const hi = c.hazard ? c.hazard.index[k] : -1;
-    tC2[k * 4 + 2] = hi >= 0 && c.hazard!.weight[k] > 0 ? hi + Math.min(c.hazard!.weight[k], 0.999) : -1;
+    tC2[k * 4 + 2] = packHazard(c, 0, k);
+    tC2[k * 4 + 3] = packHazard(c, 1, k);
   }
   return { tC, tC2 };
+}
+
+/** One documented hazard slot of a cell, packed as `index + min(weight, 0.999)` (−1 when none). */
+function packHazard(c: CuratedLayer, slot: number, k: number): number {
+  const L = c.hazardSlots?.[slot];
+  return L && L.index[k] >= 0 && L.weight[k] > 0 ? L.index[k] + Math.min(L.weight[k], 0.999) : -1;
+}
+
+/** GPU texture tF: narrowing of the valleys (terrain.ts → valleyFunnel), then documented hazard slots 3 and 4. */
+export function packTerrainExtras(t: Terrain, c: CuratedLayer): Float32Array {
+  const n = t.funnel.length;
+  const tF = new Float32Array(n * 4);
+  for (let k = 0; k < n; k++) {
+    tF[k * 4] = t.funnel[k];
+    tF[k * 4 + 1] = packHazard(c, 2, k);
+    tF[k * 4 + 2] = packHazard(c, 3, k);
+  }
+  return tF;
 }

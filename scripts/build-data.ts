@@ -450,6 +450,7 @@ function windsOf(text: string): { fromDeg: number; kmh: number | null }[] {
 
 /** Effect a documented hazard shows in the simulation, from its kind (and its words for the unclassified ones). */
 function hazardEffect(p: AtlasFeatureProps): CuratedHazardInput['effect'] | null {
+  if (p.kind === 'strong-breeze') return 'wind';
   if (p.kind === 'lee-rotor') return 'lee';
   if (p.kind === 'venturi') return 'venturi';
   if (p.kind === 'foehn' || p.kind === 'downdraft' || p.kind === 'landing-turbulence') return 'turbulence';
@@ -458,13 +459,31 @@ function hazardEffect(p: AtlasFeatureProps): CuratedHazardInput['effect'] | null
 }
 
 /**
- * Documented hazards tied to a synoptic wind, for the wind model: each one shows its
- * effect where it is reported when the simulated wind matches its conditions. Speeds:
- * "même faible" / "léger" from 5 km/h (full at 12), "fort" from 18 (full at 32), a
- * cited speed from 70 % of it, otherwise from 10 (full at 22). Radius: the one of the
- * sources ("Rayon") within 0.3–1 km (the hazard is where it is reported, not over the whole slope), else 700 m.
+ * Where each documented strong breeze blows from at its place, read in its sources
+ * (research_notes/…/dangers/directions.json: hazard id → { from: deg | null, label,
+ * pourquoi }). Without it the model keeps the local flow's direction.
  */
-export function curatedHazardsOf(hazards: AtlasFeature[]): CuratedHazardInput[] {
+function readHazardDirections(): Record<string, { from: number | null }> {
+  const file = join(ROOT, 'research_notes', 'Seconde passe 2026', 'dangers', 'directions.json');
+  return existsSync(file) ? (JSON.parse(readFileSync(file, 'utf8')) as Record<string, { from: number | null }>) : {};
+}
+
+/** Irregular events a regular afternoon must not show (storm outflows, fronts). */
+const IRREGULAR = /orage|cumulonimbus|cu-?nims?|front froid|tempête/i;
+
+/**
+ * Documented hazards tied to a synoptic wind or to the hours of a breeze, for the wind
+ * model: each one shows its effect where it is reported when the simulated situation
+ * matches its conditions.
+ * - Wind speeds: "même faible" / "léger" from 5 km/h (full at 12), "fort" from 18 (full
+ *   at 32), a cited speed from 70 % of it, otherwise from 10 (full at 22).
+ * - A strong breeze with hours is a breeze phenomenon (the winds cited with it only
+ *   modulate it, as in the model check): it applies at its hours, up to 25 km/h (30 if
+ *   « très fort »), on heatwave days only if it says so; storm outflows are left out.
+ * - Radius: the one of the sources ("Rayon") within 0.3–1 km (the hazard is where it is
+ *   reported, not over the whole slope), else 700 m.
+ */
+export function curatedHazardsOf(hazards: AtlasFeature[], directions: Record<string, { from: number | null }> = {}): CuratedHazardInput[] {
   const out: CuratedHazardInput[] = [];
   for (const f of hazards) {
     const p = f.properties;
@@ -474,18 +493,39 @@ export function curatedHazardsOf(hazards: AtlasFeature[]): CuratedHazardInput[] 
     const t = cond.toLowerCase();
     const rayonKm = Number((p.details?.Rayon ?? '').replace(',', '.').match(/[\d.]+/)?.[0] ?? NaN);
     const radiusM = Number.isFinite(rayonKm) ? Math.min(1000, Math.max(300, rayonKm * 1000)) : 700;
+    const base = { name: p.name, effect, coords: [f.geometry.coordinates as [number, number]], radiusM, tolDeg: 45 };
+    if (effect === 'wind') {
+      if (IRREGULAR.test(`${p.name} ${cond}`)) continue;
+      const window = parseHours(cond, 'valley');
+      const winds = window ? [] : windsOf(cond);
+      if (!window && !winds.length) continue;
+      const from = directions[p.id]?.from;
+      const extra = {
+        targetKmh: /très fort|violent/i.test(`${p.name} ${cond}`) ? 30 : 25,
+        ...(typeof from === 'number' ? { flowFromDeg: from } : {}),
+        ...(window ? { window } : {}),
+        ...(/canicule|forte chaleur/.test(t) ? { heatwave: true } : {}),
+      };
+      // A strong breeze is reported at a take-off or a landing: at most 700 m around it
+      // (a wider disc would add a false divergence at its upwind edge).
+      base.radiusM = Math.min(base.radiusM, 700);
+      if (window) out.push({ id: p.id, ...base, minKmh: 0, fullKmh: 0, ...extra });
+      winds.forEach((w, i) => out.push({ id: i ? `${p.id}#${i}` : p.id, ...base, fromDeg: w.fromDeg, ...speedsOf(t, w.kmh), ...extra }));
+      continue;
+    }
     windsOf(cond).forEach((w, i) => {
-      const [minKmh, fullKmh] = w.kmh
-        ? [Math.round(0.7 * w.kmh), w.kmh]
-        : /faible|léger|leger/.test(t)
-          ? [5, 12]
-          : /\bfort|soutenu|marqué|violent|rafale|tempête/.test(t)
-            ? [18, 32]
-            : [10, 22];
-      out.push({ id: i ? `${p.id}#${i}` : p.id, name: p.name, effect, coords: [f.geometry.coordinates as [number, number]], radiusM, fromDeg: w.fromDeg, tolDeg: 45, minKmh, fullKmh });
+      out.push({ id: i ? `${p.id}#${i}` : p.id, ...base, fromDeg: w.fromDeg, ...speedsOf(t, w.kmh) });
     });
   }
   return out;
+}
+
+/** Synoptic speeds (km/h) at which a hazard starts to apply and fully applies, from its words. */
+function speedsOf(t: string, kmh: number | null): { minKmh: number; fullKmh: number } {
+  if (kmh) return { minKmh: Math.round(0.7 * kmh), fullKmh: kmh };
+  if (/faible|léger|leger/.test(t)) return { minKmh: 5, fullKmh: 12 };
+  if (/\bfort|soutenu|marqué|violent|rafale|tempête/.test(t)) return { minKmh: 18, fullKmh: 32 };
+  return { minKmh: 10, fullKmh: 22 };
 }
 
 /** Words that make a condition a mere modulation ("renforcement par canicule", "plus tôt par vent de nord"). */
@@ -1256,7 +1296,7 @@ function main() {
     sources,
     features,
     curated,
-    curatedHazards: curatedHazardsOf(features.hazards),
+    curatedHazards: curatedHazardsOf(features.hazards, readHazardDirections()),
     rules,
     figures,
     dossiers,

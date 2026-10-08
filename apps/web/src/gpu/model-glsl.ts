@@ -17,9 +17,11 @@ uniform highp sampler2D tV;   // floor, env, axisX, axisY
 uniform highp sampler2D tW;   // valley, lakeX, lakeY, water
 uniform highp sampler2D tR;   // seaX, seaY, plainX, plainY
 uniform highp sampler2D tC;   // curated layers main, cond: (index + weight, flow angle) × 2 (curated.ts → packCuratedLayers)
-uniform highp sampler2D tC2;  // curated thin layer (slope, katabatic): index + weight, flow angle; documented hazard: index + weight
+uniform highp sampler2D tC2;  // curated thin layer (slope, katabatic): index + weight, flow angle; documented hazard slots 1, 2: index + weight
+uniform highp sampler2D tF;   // narrowing of the valleys (terrain.ts → valleyFunnel), documented hazard slots 3, 4, 0
 uniform highp sampler2D tB;   // per curated breeze: speedMs, activity, layer kind (0 deep, 1 valley, 2 slope, 3 katabatic), 0;
-                              // then from uHazBase, per documented hazard: 0, activity, effect (0 lee, 1 venturi, 2 turbulence), 0
+                              // then from uHazBase, per documented hazard: target speed (m/s, strong breeze), activity, effect (0 lee, 1 venturi, 2 turbulence, 3 wind),
+                              // documented direction of a strong breeze + 1000 (deg; 0 = none)
 uniform int uHazBase;
 uniform highp sampler2D tInsol;
 uniform ivec2 uGrid;
@@ -131,7 +133,10 @@ Cell evalCell(ivec2 c) {
   // Valley breeze: jet in the lower valley, zero at crest height, weak antiwind above.
   float vPhase = uValleyPhase * (uValleyPhase > 0.0 ? uSeason : 1.0);
   float vProfile = valleyProfile(level);
-  float vSpeed = R_VALLEY_MAX * vPhase * W.x * vProfile * uBreezeScale;
+  // Speed-up of the day's up-valley wind where the channel narrows, within the valley-wind layer (field.ts).
+  vec4 TF = texelFetch(tF, c, 0);
+  float funnel = 1.0 + (TF.x - 1.0) * max(0.0, vProfile) * smoothstep(0.0, 0.3, uValleyPhase);
+  float vSpeed = R_VALLEY_MAX * vPhase * W.x * vProfile * funnel * uBreezeScale;
   o.valley = -V.zw * vSpeed;
 
   // Plain, lake and sea breezes.
@@ -161,7 +166,7 @@ Cell evalCell(ivec2 c) {
       vf = vProfile;
     }
     o.cw = curM.w * hf * B.y;
-    o.curated = curM.t * B.x * B.y * vf * uBreezeScale;
+    o.curated = curM.t * B.x * B.y * vf * funnel * uBreezeScale;
     o.cidx = float(curM.idx);
     // Generic valley wind turned to the documented sense, or following its hours.
     float agree = dot(-V.zw, curM.t) * uValleyPhase;
@@ -233,19 +238,39 @@ Cell evalCell(ivec2 c) {
   float dayF = smoothstep(R_SUN_H.x, R_SUN_H.y, IN.y) * uThermalDecline;
   o.thermal = W.w > 0.5 ? 0.0 : day * clamp(insol * uSeason * elevF * convexF * windF * dayF, 0.0, 1.0);
   o.turb = clamp(o.lee * smoothstep(8.0, 35.0, uGKmh) + o.venturi * smoothstep(15.0, 45.0, uGKmh) * 0.6, 0.0, 1.0);
-  // Documented hazards matching the synoptic wind (field.ts).
+  // Documented hazards matching the situation (field.ts), up to four per cell.
   o.hidx = -1.0;
   o.hw = 0.0;
-  if (CT.z >= 0.0) {
-    float hi = floor(CT.z);
+  vec4 HS = vec4(CT.zw, TF.yz);
+  for (int q = 0; q < 4; q++) {
+    float hv = HS[q];
+    if (hv < 0.0) continue;
+    float hi = floor(hv);
     vec4 HB = texelFetch(tB, ivec2(uHazBase + int(hi), 0), 0);
-    float a = fract(CT.z) * HB.y;
-    if (a > 0.0) {
+    float a = fract(hv) * HB.y;
+    if (a <= 0.0) continue;
+    if (a > o.hw) {
       o.hidx = hi;
       o.hw = a;
-      if (HB.z < 0.5) { o.lee = max(o.lee, a); o.turb = max(o.turb, 0.8 * a); }
-      else if (HB.z < 1.5) { o.venturi = max(o.venturi, a); o.turb = max(o.turb, 0.5 * a); }
-      else o.turb = max(o.turb, 0.8 * a);
+    }
+    if (HB.z < 0.5) { o.lee = max(o.lee, a); o.turb = max(o.turb, 0.8 * a); }
+    else if (HB.z < 1.5) { o.venturi = max(o.venturi, a); o.turb = max(o.turb, 0.5 * a); }
+    else if (HB.z < 2.5) o.turb = max(o.turb, 0.8 * a);
+    else {
+      // Documented strong breeze: from its documented direction, or at least its speed
+      // along the local flow or up the slope.
+      float cur = length(o.total);
+      float tgt = HB.x * a;
+      if (HB.w > 500.0) {
+        // What the local flow lacks along the documented direction is added (field.ts).
+        float r = radians(HB.w - 1000.0);
+        vec2 u = -vec2(sin(r), cos(r));
+        o.total += u * max(0.0, HB.x - dot(o.total, u)) * a;
+      } else if (cur < tgt) {
+        vec2 u = cur > 0.3 ? o.total / cur : (gmag > 1e-6 ? Z.yz / gmag : vec2(0.0));
+        o.total = u * tgt;
+      }
+      o.turb = max(o.turb, 0.3 * a);
     }
   }
   return o;

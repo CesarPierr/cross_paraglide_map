@@ -1,6 +1,10 @@
 # Rapport d'agent a7e609cecb2d08e0c
 
-**Mission** : Seconde passe de recherche · devoluy_gap_buech_diois
+**Mission** : Recherche lot Dévoluy-Gap-Diois
+
+**Date** : 2026-10-07
+
+**Consigne (début)** : Tu fais la seconde passe de recherche aérologique pour le lot `devoluy_gap_buech_diois` du projet « Brises des Alpes » (dépôt /Users/pierre/paraglide). Lis d'abord en entier /Users/pierre/paraglide/.c
 
 ---
 

@@ -48,7 +48,8 @@ export function MapView() {
         }
       },
       // A sector picked on the map: its page, its schema and the guided presentation.
-      onPickMassif: (id) => openMassif(id, true),
+      // From the chooser, with its guided visit; from a zoomed-out map, its page only.
+      onPickMassif: (id) => openMassif(id, useApp.getState().schemaPicking),
       onModuleEvent: (e) => {
         if (e.type === 'status') rt().set({ moduleMessage: e.message });
       },

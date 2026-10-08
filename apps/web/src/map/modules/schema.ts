@@ -85,6 +85,9 @@ export class SchemaModule implements MapModule {
   private savedCamera: { center: [number, number]; zoom: number; pitch: number; bearing: number } | null = null;
 
   private picking = false;
+  /** Map zoomed out far enough to choose a massif from its shape. */
+  private zoomedOut = false;
+  private touring = false;
   private threeD = false;
 
   constructor(
@@ -360,10 +363,19 @@ export class SchemaModule implements MapModule {
       hoverId = id;
       if (id) map.setFeatureState({ source: 'schema-pick', id }, { hover: true });
     };
-    map.on('mousemove', 'schema-pick-fill', (e) => setHover(this.picking ? String(e.features?.[0]?.properties?.id ?? '') || null : null));
+    map.on('mousemove', 'schema-pick-fill', (e) => setHover(this.pickShown() ? String(e.features?.[0]?.properties?.id ?? '') || null : null));
     map.on('mouseleave', 'schema-pick-fill', () => setHover(null));
     this.setVisible(false);
     this.setPicking(false);
+    // Zoomed out: the sector shapes come back (see refreshPick).
+    const onZoom = () => {
+      const out = map.getZoom() < 8.3;
+      if (out === this.zoomedOut) return;
+      this.zoomedOut = out;
+      this.refreshPick();
+    };
+    map.on('zoomend', onZoom);
+    onZoom();
   }
 
   private setPicking(on: boolean): void {
@@ -371,8 +383,27 @@ export class SchemaModule implements MapModule {
     for (const id of PICK_LAYERS) if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none');
   }
 
+  /**
+   * The sector shapes show in the chooser, and also whenever the map is zoomed out (outside a visit),
+   * so another massif is always one tap away. On the live map its own sector names stay; in a massif
+   * page (live names hidden) the shapes bring theirs.
+   */
+  private refreshPick(): void {
+    const map = this.ctx!.map;
+    const auto = this.zoomedOut && !this.touring;
+    const shown = this.picking || auto;
+    for (const id of PICK_LAYERS) {
+      const on = id === 'schema-pick-label' ? this.picking || (auto && this.massif !== null) : shown;
+      if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none');
+    }
+  }
+
+  private pickShown(): boolean {
+    return this.picking || (this.zoomedOut && !this.touring);
+  }
+
   select(id: string, props: Record<string, unknown>): boolean {
-    if (!this.picking || props.name === undefined || !this.ctx!.atlas.massifs.some((m) => m.id === id)) return false;
+    if (!this.pickShown() || props.name === undefined || !this.ctx!.atlas.massifs.some((m) => m.id === id)) return false;
     this.pick(id);
     return true;
   }
@@ -387,7 +418,6 @@ export class SchemaModule implements MapModule {
     const map = this.ctx.map;
     if (!prev || prev.schemaPicking !== s.schemaPicking) {
       this.picking = s.schemaPicking;
-      this.setPicking(s.schemaPicking);
       // Step back to see the neighbouring sectors and pick one.
       if (s.schemaPicking) {
         // Phone: the sectors around the current view, large enough to read and tap, above the list.
@@ -395,6 +425,8 @@ export class SchemaModule implements MapModule {
         else map.easeTo({ zoom: Math.min(map.getZoom(), 8.2), pitch: Math.min(map.getPitch(), 25), duration: 900 });
       }
     }
+    this.touring = s.tourStep !== null;
+    this.refreshPick();
     if (prev && prev.schema3d !== s.schema3d && s.schemaMassif) {
       this.threeD = s.schema3d;
       map.easeTo({ pitch: s.schema3d ? 52 : 0, duration: 900 });
@@ -407,6 +439,7 @@ export class SchemaModule implements MapModule {
     }
     const entering = this.massif !== s.schemaMassif;
     this.massif = s.schemaMassif;
+    this.refreshPick();
     this.render(s.schemaMassif, s.schemaPhase);
     this.setVisible(true);
     if (entering) {
@@ -430,6 +463,7 @@ export class SchemaModule implements MapModule {
   private exit(): void {
     const map = this.ctx!.map;
     this.massif = null;
+    this.refreshPick();
     this.setVisible(false);
     if (this.savedCamera) map.easeTo({ ...this.savedCamera, padding: { top: 0, bottom: 0, left: 0, right: 0 }, duration: 1400 });
     this.savedCamera = null;

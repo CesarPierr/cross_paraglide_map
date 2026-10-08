@@ -1,0 +1,793 @@
+{
+  "proposals": [
+    {
+      "ref": "chartreuse/kk7-45.3444-5.8712",
+      "new_id": "lances-de-malissard-sud",
+      "name": "Lances de Malissard, lance sud (face sud-ouest, au-dessus du col de Bellefond)",
+      "trigger": "crête rocheuse des Lances de Malissard, face sud-ouest / ouest chauffée l'après-midi ; le col de Bellefond est juste à l'est",
+      "best_hours": "après-midi (récit d'août : vol de 16 h à 18 h) ; en hiver sur vent météo de sud-ouest (récit du 29/12/2006)",
+      "description": "Relance au sud de la Dent de Crolles, sur la crête qui mène au Granier : on y arrive de la Dent par le col de Bellefond, ou bas depuis la Roche de Fitta et le col de Fontanieux, et on s'y refait avant de repartir vers la Dent ou le Granier. Trois récits concordent : en décembre 2006, avec un vent de sud-ouest établi, des pilotes partis du col de Bellefond cherchent « le thermique situé sur la face SW des Lances de Malissard » et le trouvent après une trentaine de minutes ; en août 2020, un pilote bas se refait grâce à « la convection en face ouest » puis enroule vers les lances sud, tandis qu'un autre se refait en face sud-ouest du col de Bellefont ; au printemps 2006, un pilote note un joli thermique au nord des Lances. Un commentaire de vol CFD de mars 2022 dit aussi que le thermique des Lances de Malissard monte bien tout en restant doux (extrait lu dans un moteur de recherche, page non ouverte). Le point chaud kk7 (flanc de 25° exposé au sud-ouest à 1798 m) est à 322 m du sommet de la lance sud (OSM) et à 478 m du col de Bellefont : il correspond à la « face SW » décrite ; le rapprochement reste une inférence puisque les textes ne donnent pas de coordonnées.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Chartreuse hivernale – Survol des 4 sommets de 2000m (Antoine Jammes, 30/12/2006)",
+          "url": "https://www.chvd.org/2006/12/30/chartreuse-hivernale-survol-des-4-sommets-de-2000m/",
+          "publisher": "CHVD (club de vol libre grenoblois)",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Sortie du 29/12/2006 : décollage du col de Bellefond, soaring dans la combe par vent de SW, puis « recherche du thermique situé sur la face SW des Lances de malissard », 30 minutes de bataille avant de survoler le sommet."
+        },
+        {
+          "title": "Vol Rando 105 (vol 211) – Le Granier",
+          "url": "https://carnetdevol.largeault.net/2020/08/10/vol-rando-105-vol-211-le-granier/",
+          "publisher": "Carnet de vol de Franck Largeault",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Vol du 10/08/2020 (décollage du Granier à 16 h, 1 h 57 de vol) : arrivée bas aux Lances par le col de Fontanieux (venturi), refait grâce à la convection en face ouest, enroule vers les lances sud ; un autre pilote se refait en face SO du col de Bellefont."
+        },
+        {
+          "title": "Le Créneau du 31 mars (récit CHVD, 03/04/2006)",
+          "url": "https://www.chvd.org/2006/04/03/le-creneau-du-31-mars/",
+          "publisher": "CHVD",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Au col de Bellefond le pilote choisit Mallissard : « Au Nord des Lances, joli thermique » qui permet de passer vers Saint-Même."
+        },
+        {
+          "title": "Le vol de SIMON BOUVOT du 25/03/2022 (CFD, FFVL)",
+          "url": "https://parapente.ffvl.fr/cfd/liste/vol/20316178",
+          "publisher": "FFVL – Coupe Fédérale de Distance",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Commentaire du pilote : le thermique aux Lances de Malissard monte bien tout en étant doux. Page protégée (HTTP 403 / Cloudflare) : phrase lue dans un extrait de moteur de recherche, non vérifiée sur la page."
+        }
+      ],
+      "quote": "recherche du thermique situé sur la face SW des Lances de malissard",
+      "evidence_distance_m": 322,
+      "reliability_note": "Les textes disent « face SW / face ouest des Lances », sans préciser quelle lance : le point chaud est sur la lance sud (322 m du sommet OSM). Heures d'été déduites de l'horaire du vol d'août 2020 ; l'heure du vol de décembre 2006 n'est pas donnée. Le commentaire CFD de 2022 n'a pas pu être relu sur la page."
+    },
+    {
+      "ref": "chartreuse/kk7-45.4418-5.8063",
+      "new_id": "falaise-des-egaux-corbel",
+      "name": "Les Égaux (Corbel) : falaise et pentes des Égaux, relance entre la Pointe du Frou et l'Outheran",
+      "trigger": "petite falaise au-dessus du hameau des Égaux (Corbel), croupe exposée à l'ouest, avant le col des Égaux",
+      "best_hours": "après-midi (plein à 16 h 07 en avril ; reprise « au nord des Égaux » lors d'un vol de juillet)",
+      "description": "Relance intermédiaire de la Chartreuse nord, entre les falaises de la Pointe du Frou / Grande Sûre et le mont Outheran. Deux récits indépendants la décrivent : en avril 2021, le pilote qui se dirige vers la pointe de la Cochette « refait un petit plein » à mi-chemin sur la petite falaise du hameau des Égaux (16 h 07, 1600 m) ; en juillet 2023, une pilote partie de Jusson passe la Pointe du Frou, y trouve un thermique qui lui permet de dériver pendant la transition sur les Égaux, puis « reprend » au nord des Égaux jusqu'en haut de l'Outheran. Un fil de forum de 2023 mentionne aussi, vers le col des Égaux, un « thermique de la face » qui contre les pilotes arrivant de l'Outheran. Le hameau des Égaux (IGN) est à 464 m du point chaud kk7 (croupe de 29° exposée à l'ouest, 888 m), le col des Égaux à 486 m : l'identification se fait sur le toponyme ; les textes ne disent pas sur quelle face exactement.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Cross hasardeux de 154 kil (récit de Patrick Villeneuve, 20/04/2021)",
+          "url": "http://clubsthilair.fr/2021/04/20/cross-hasardeux-de-154-kil/",
+          "publisher": "Club St Hil'Air",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Passage « 15h20 transit vers la Cochette » : plein sur la falaise du hameau « Les égaux » à 16 h 07, 1600 m."
+        },
+        {
+          "title": "Jusson (vol rando CHVD du 22/07/2023)",
+          "url": "https://www.chvd.org/2023/07/22/jusson/",
+          "publisher": "CHVD",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Récit d'une pilote partie de la prairie de Jusson (vent NNW, brise de Chambéry) : thermique à la pointe du Frou pour dériver vers les Égaux, puis « au Nord des Égaux j'ai repris jusqu'en haut de l'Outhéran »."
+        },
+        {
+          "title": "Transition Savoyarde -> Granier face ouest (fil parapentiste.info)",
+          "url": "https://www.parapentiste.info/forum/techniques-de-cross/transition-savoyarde-granier-face-ouest-t62128.0.html",
+          "publisher": "parapentiste.info",
+          "type": "forum",
+          "lang": "fr",
+          "notes": "Réponse #8 du 22/02/2023 : vers le col des Égaux on se retrouve sous le vent ou contré par le thermique de la face."
+        }
+      ],
+      "quote": "je refais un petit plein à mi-chemin, sur la petite falaise du hameau “Les égaux”",
+      "evidence_distance_m": 464,
+      "reliability_note": "Deux récits précis (avril 2021 et juillet 2023, tous deux l'après-midi) plus un message de forum plus vague ; le point chaud kk7 est annoncé « printemps, été, automne (rien en hiver) » et surtout midi et soir, ce qui concorde. Le récit de 2023 situe la reprise « au nord des Égaux » alors que le point chaud est à l'ouest-sud-ouest du hameau (464 m) ; le forum ne parle pas d'une montée utilisable, seulement d'un thermique qui gêne."
+    },
+    {
+      "ref": "chartreuse/kk7-45.4556-5.8337",
+      "new_id": "cochette-chartreuse-nord",
+      "name": "La Cochette (Chartreuse nord) : relance avant la gorge du Guiers Vif",
+      "trigger": "croupe de la Cochette, exposée à l'ouest, entre le mont Outheran et la gorge du Guiers Vif (à ne pas confondre avec le col de la Cochette des Bauges, près de Bange)",
+      "best_hours": null,
+      "description": "Point de passage et de relance de la face ouest nord de la Chartreuse, entre le mont Outheran et les montagnes du Guiers Vif / Guiers Mort (retour par la Grande Sûre). Récit de septembre 2026 : arrivé en haut de l'Outheran sans ascendance, face à une forte brise, le pilote « trouve finalement l'ascendance salvatrice sur la Cochette » et transite à 1800 m par-dessus la gorge du Guiers Vif. Trois autres textes confirment que la Cochette est le passage obligé du cheminement (« normalement il faut passer par la Cochette », 2012 ; transit vers la pointe de la Cochette en 2021) et que la relance y est parfois laborieuse : un pilote raconte avoir perdu plus d'une heure à « grenouiller à la croix de la Cochette » en avril 2016 pour raccrocher le Mont Grêle. Le point chaud kk7 est à 159 m de la Croix de la Cochette (OSM) : l'identification se fait sur le toponyme ; le récit ne précise pas sur quelle face de la Cochette on monte.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Cross StHil – Aiguebellette – Vercors (récit CHVD, 14/09/2026)",
+          "url": "https://www.chvd.org/2026/09/14/cross-sthil-aiguebellette-vercors/",
+          "publisher": "CHVD",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Après l'Outheran, forte brise de face : ascendance trouvée sur la Cochette puis transition à 1800 m au-dessus de la gorge du Guiers Vif."
+        },
+        {
+          "title": "Triangle chartrousien en marche et vol (récit CHVD, 09/08/2012)",
+          "url": "https://www.chvd.org/2012/08/09/triangle-chartrousien-en-marche-et-vol/",
+          "publisher": "CHVD",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Vers le massif de l'Épine : la longue transition au-dessus des gorges du Guiers passe normalement par la Cochette ; plafonds bas et vent de face ce jour-là."
+        },
+        {
+          "title": "Cross hasardeux de 154 kil (récit de Patrick Villeneuve, 20/04/2021)",
+          "url": "http://clubsthilair.fr/2021/04/20/cross-hasardeux-de-154-kil/",
+          "publisher": "Club St Hil'Air",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Après les gorges du Guiers Mort, « il faut que je passe par la Cochette » pour rejoindre le mont Outheran ; plein repris à mi-chemin sur la falaise des Égaux."
+        },
+        {
+          "title": "Cross autour de la Chartreuse (fil parapentiste.info, réponse de bbair69 du 11/04/2017)",
+          "url": "https://www.parapentiste.info/forum/videos/cross-autour-de-la-chartreuse-t47424.0.html",
+          "publisher": "parapentiste.info",
+          "type": "forum",
+          "lang": "fr",
+          "notes": "Vol d'avril 2016 : « plus d'1 heure à grenouiller à la croix de la Cochette » pour raccrocher le Mont Grêle (relance laborieuse un jour de printemps à voile d'altitude)."
+        }
+      ],
+      "quote": "trouve finalement l’ascendance salvatrice sur la Cochette",
+      "evidence_distance_m": 159,
+      "reliability_note": "Deux textes décrivent une ascendance à la Cochette (septembre 2026 : trouvée ; avril 2016 : plus d'une heure de lutte), deux autres ne confirment que le passage. Aucune heure donnée. Le kk7 indique surtout le printemps (midi et soir), compatible avec le récit d'avril 2016."
+    },
+    {
+      "ref": "mont-blanc-chamonix/kk7-45.9566-6.7223",
+      "new_id": "falaises-de-plate-cheminee",
+      "name": "Falaises de Platé (sous la Cheminée de Platé) : thermiques le long des falaises",
+      "trigger": "falaises calcaires du rebord sud du désert de Platé (1800 à 2100 m), exposées au sud, au-dessus de Plaine-Joux ; la croupe sud du point chaud est au pied de la falaise",
+      "best_hours": "journée, quand la brise montante est bien installée ; en automne, quand la stabilité atteint les basses couches",
+      "description": "Relais le long du rebord sud de Platé, sur la ligne Aiguillette des Houches – Pormenaz – Platé – Varan : le club CMBVL écrit que, depuis le décollage de Platé, « lorsque la brise montante est bien installée, il y a généralement des thermiques généreux à proximité des falaises », et qu'en automne « tu pourras facilement raccrocher des thermiques le long des falaises ». Un pilote qui décrit en 2007 le cheminement Planpraz – Aiguillette – Pormenaz – Varan conseille de « continuer jusqu'à la falaise de la pointe de Platé, qui remonte bien ». Le point chaud kk7 (croupe de 31° exposée au sud à 1773 m, 94 % le matin et 89 % à midi toute l'année) est à 130 m d'une falaise OSM (1809–1933 m) et à 654 m de la Cheminée de Platé ; la Pointe de Platé est à 1,2 km. Le rapprochement entre les falaises citées et ce point est une inférence : les deux textes parlent des falaises sans les situer plus précisément.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Platé (fiche de décollage, Club Mont-Blanc Vol Libre)",
+          "url": "https://www.cmbvl.fr/sites/plat%C3%A9",
+          "publisher": "CMBVL – Club Mont-Blanc Vol Libre",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Rubrique « Le décollage » et « Le vol » : thermiques généreux à proximité des falaises quand la brise montante est installée ; en automne, thermiques faciles à raccrocher le long des falaises."
+        },
+        {
+          "title": "'Crosser' les alpes : région ARAVIS - Parmelan (fil parapentiste.info, réponse #14 du 03/03/2007)",
+          "url": "https://www.parapentiste.info/forum/techniques-de-cross/crosser-les-alpes-region-aravis-parmelan-t2620.10.html",
+          "publisher": "parapentiste.info",
+          "type": "forum",
+          "lang": "fr",
+          "notes": "Page 2 du fil, message du 03/03/2007 : de Planpraz, plein sur l'Aiguillette des Houches, éboulis sous le Dérochoir (thermique possible sur l'arête de Pormenaz), puis « la falaise de la pointe de Platé, qui remonte bien », puis Varan."
+        }
+      ],
+      "quote": "lorsqu'elle est bien installée, il y a généralement des thermiques généreux à proximité des falaises",
+      "evidence_distance_m": 130,
+      "reliability_note": "Les textes parlent des falaises de Platé en général (fiche de décollage et message de 2007) ; la distance de 130 m est celle de la falaise OSM la plus proche du point chaud, la Pointe de Platé étant à 1,2 km et le décollage de Platé à 1,4 km. Pas d'heure précise."
+    },
+    {
+      "ref": "mont-blanc-chamonix/kk7-45.9144-6.9578",
+      "new_id": "moine-mer-de-glace-moraines",
+      "name": "Sous l'Aiguille du Moine : moraines et clapiers au soleil (rive droite de la Mer de Glace)",
+      "trigger": "pentes, clapiers et moraines exposés à l'ouest sous l'Aiguille du Moine, au soleil l'après-midi alors que la Vallée Blanche est à l'ombre",
+      "best_hours": "après-midi (quand le versant de la Vallée Blanche est à l'ombre)",
+      "description": "Solution de sauvetage et de relance pour les vols de l'Aiguille du Midi par la Vallée Blanche : un pilote chevronné explique que l'après-midi tout est à l'ombre côté Montenvers et qu'on descend vite ; « la solution est de traverser la Mer de Glace après avoir passé le refuge du Requin afin d'attraper les thermiques sur les moraines et les clapiers au soleil situés sous le Moine et les Flammes de Pierre ». Le point chaud kk7 (croupe exposée à l'ouest, 2989 m, 84 % à midi et 84 % le soir, été et automne) est à 377 m de l'Aiguille du Moine : il correspond à ce versant ensoleillé de l'après-midi ; le texte parle des moraines situées plus bas, le rapprochement est une inférence. L'auteur ne vole depuis l'Aiguille du Midi qu'à partir de septembre, à la fin de l'interdiction de juillet-août, ce qui est compatible avec les saisons kk7 (été et automne).",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Conseil pour vol de l'aiguille du midi (fil parapentiste.info, réponse #10 du 15/02/2015)",
+          "url": "https://www.parapentiste.info/forum/vol-rando-vol-bivouac/conseil-pour-vol-de-laiguille-du-midi-t38594.0.html",
+          "publisher": "parapentiste.info",
+          "type": "forum",
+          "lang": "fr",
+          "notes": "Message de « Mme POB » (plus de 2000 vols) : au départ de l'Aiguille du Midi, l'après-midi la Vallée Blanche est à l'ombre ; traverser la Mer de Glace après le Requin pour les thermiques des moraines et clapiers au soleil sous le Moine et les Flammes de Pierre ; vers les Drus thermiques costauds avec de la brise."
+        },
+        {
+          "title": "intermédiaire aiguille du midi (fil parapentiste.info, réponse de « Mme POB » du 25/06/2018)",
+          "url": "https://www.parapentiste.info/forum/sites-de-vols/intermediaire-aiguille-du-midi-t51318.0.html",
+          "publisher": "parapentiste.info",
+          "type": "forum",
+          "lang": "fr",
+          "notes": "Même pilote, trois ans plus tard : au départ de l'Aiguille du Midi, « le matin, il y a un petit thermique sur la face E du Grépon ; l'après-midi, il faut traverser la Mer de Glace pour aller en prendre un sur le Moine et les Flammes de Pierre », ce qui aide à passer la brise de vallée et le rouleau de l'arête du Montenvers."
+        }
+      ],
+      "quote": "attraper les thermiques sur les moraines et les clapiers au soleil situés sous le Moine et les Flammes de pierre",
+      "evidence_distance_m": 377,
+      "reliability_note": "Deux messages d'une même pilote (2015 et 2018) dans deux fils différents ; ils décrivent des vols en configuration « rando » depuis l'Aiguille du Midi, avec des thermiques à une altitude plus basse que le point chaud (2989 m). Aucune heure précise hormis « l'après-midi »."
+    },
+    {
+      "ref": "mont-blanc-chamonix/kk7-45.9258-6.9434",
+      "new_id": "flammes-de-pierre-mer-de-glace-moraines",
+      "name": "Sous les Flammes de Pierre : moraines et clapiers au soleil (rive droite de la Mer de Glace)",
+      "trigger": "pentes et clapiers exposés au sud-ouest sous les Flammes de Pierre, face aux Drus, ensoleillés l'après-midi",
+      "best_hours": "après-midi (quand la Vallée Blanche et le Montenvers sont à l'ombre)",
+      "description": "Même relance que sous l'Aiguille du Moine pour les vols de l'Aiguille du Midi : après le refuge du Requin, on traverse la Mer de Glace pour « attraper les thermiques sur les moraines et les clapiers au soleil situés sous le Moine et les Flammes de Pierre », et si c'est bon on peut aller jusqu'aux Drus, où le thermique est « costaud » mais mêlé de brise. Le point chaud kk7 (croupe exposée au sud-ouest, 2770 m, 80 % à midi et le soir, de printemps à automne) est à 166 m du Diamant des Flammes de Pierre et 373 m des Flammes de Pierre (OSM) ; le texte donne le nom du secteur mais pas de coordonnées, le rapprochement reste une inférence.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Conseil pour vol de l'aiguille du midi (fil parapentiste.info, réponse #10 du 15/02/2015)",
+          "url": "https://www.parapentiste.info/forum/vol-rando-vol-bivouac/conseil-pour-vol-de-laiguille-du-midi-t38594.0.html",
+          "publisher": "parapentiste.info",
+          "type": "forum",
+          "lang": "fr",
+          "notes": "Même message que pour l'Aiguille du Moine : thermiques sur les moraines et clapiers sous le Moine et les Flammes de Pierre l'après-midi ; Drus plus costaud avec de la brise."
+        },
+        {
+          "title": "intermédiaire aiguille du midi (fil parapentiste.info, réponse de « Mme POB » du 25/06/2018)",
+          "url": "https://www.parapentiste.info/forum/sites-de-vols/intermediaire-aiguille-du-midi-t51318.0.html",
+          "publisher": "parapentiste.info",
+          "type": "forum",
+          "lang": "fr",
+          "notes": "Même pilote, trois ans plus tard : au départ de l'Aiguille du Midi, « le matin, il y a un petit thermique sur la face E du Grépon ; l'après-midi, il faut traverser la Mer de Glace pour aller en prendre un sur le Moine et les Flammes de Pierre », ce qui aide à passer la brise de vallée et le rouleau de l'arête du Montenvers."
+        }
+      ],
+      "quote": "attraper les thermiques sur les moraines et les clapiers au soleil situés sous le Moine et les Flammes de pierre",
+      "evidence_distance_m": 166,
+      "reliability_note": "Deux messages d'une même pilote (2015 et 2018), partagés avec le point de l'Aiguille du Moine ; le texte situe les thermiques « sous » les Flammes de Pierre, donc plus bas que le point chaud (2770 m) ; aucune heure hormis « l'après-midi »."
+    },
+    {
+      "ref": "lac-annecy/planfait-devant-le-deco",
+      "new_id": "planfait-devant-le-deco",
+      "name": "Planfait : thermique à droite (nord) du décollage, premier gain avant les Dents de Lanfon",
+      "trigger": "pente exposée à l'ouest-nord-ouest juste sous et à droite du décollage de Planfait (falaise de Talloires), chauffée par le soleil de l'après-midi",
+      "best_hours": "après-midi (décollages vers 15 h à 17 h dans les deux récits)",
+      "description": "Déclencheur et premier gain de hauteur du cheminement classique Planfait vers les Dents de Lanfon : un pilote local conseille de prendre environ 200 m au-dessus du décollage, puis de chercher la pompe au nord des Dents. Dans un récit de février 2020, l'auteur va « à droite du déco vers le nord » parce qu'il a vu plusieurs ailes s'y « catapulter » un peu plus tôt, sans trouver la pompe lui-même ; il monte finalement droit au-dessus du déco en se décalant vers les Dents de Lanfon. Un second récit (mai 2021, redécollage à 17 h) décrit la même technique : « un peu de gaz » au-dessus du déco puis décalage vers le nord des Dents. Le point chaud kk7 (100 % le matin, à midi et le soir) est à environ 200 m au nord-ouest du décollage et 70 m plus bas : il correspond au côté droit (nord) du déco cité dans le récit ; le rapprochement reste une inférence. Un topo de 2006 du club CHVD décrit le même début de cheminement : quelques aller-retour devant le déco pour repérer le meilleur thermique, puis la traversée vers la « porte » et l'épaule de l'arête nord.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Marche et vol 51 (vol 130) – Planfait",
+          "url": "https://carnetdevol.largeault.net/2020/02/12/marche-et-vol-51-vol-130-planfait/",
+          "publisher": "Carnet de vol de Franck Largeault",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Vol du 12/02/2020, vent N-NO faible, brise présente, décollage 14 h 55 : ailes vues se catapulter à droite du déco vers le nord, puis montée au-dessus du déco ; méthode traditionnelle rapportée : 200 m de gain au-dessus du déco puis pompe au nord des Dents."
+        },
+        {
+          "title": "Vol 328/329 – Montlambert/Aravis et retour",
+          "url": "https://carnetdevol.largeault.net/2021/05/03/vol-328-329-montlambert-aravis-et-retour/",
+          "publisher": "Carnet de vol de Franck Largeault",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Second vol du 03/05/2021, redécollage de Planfait à 17 h : technique « standard », un peu de gaz au-dessus du déco puis décalage vers le nord des Dents de Lanfon."
+        },
+        {
+          "title": "Débuter en cross 1 (CHVD, 06/12/2006)",
+          "url": "https://www.chvd.org/2006/12/06/debuter-en-cross-1/",
+          "publisher": "CHVD",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Planfait : après le décollage, un ou deux aller-retour pour voir où se trouve le meilleur thermique, monter d'un étage de 30 à 50 m, puis traverser la combe vers une petite barre rocheuse (la « porte ») accolée à l'épaule de l'arête nord montant aux Dents de Lanfon."
+        }
+      ],
+      "quote": "il faut normalement prendre un gain de 200m environ au dessus du déco puis aller chercher la pompe au nord des dents",
+      "evidence_distance_m": 200,
+      "reliability_note": "Deux récits du même auteur (le conseil de la méthode traditionnelle est rapporté de seconde main) ; la position exacte du thermique « à droite du déco » n'est pas donnée, le rapprochement avec le point chaud kk7 est une inférence. Le récit de 2020 date de février : la saison kk7 est « toute l'année »."
+    },
+    {
+      "ref": "lac-annecy/lanfonnet-bas-face-ouest",
+      "new_id": "lanfonnet-bas-face-ouest",
+      "name": "Lanfonnet : « gencives » et trois combes du bas de la face ouest",
+      "trigger": "pentes d'alpage et combes sous la barre du Lanfonnet (1795 m), face ouest / sud-ouest au-dessus de Roche Murraz, entretenues par la brise du lac et le soleil",
+      "best_hours": null,
+      "description": "Point de sauvetage et de relance du cheminement classique Planfait / Forclaz vers le Lanfonnet : un pilote local décrit que, même arrivé bas, « au niveau des gencives », on joue avec la brise sur l'une des trois combes qui « vont très bien toutes les trois », et que ça remonte toujours assez pour se garantir un atterrissage à Planfait. Un récit de février 2020 confirme qu'on retourne « sur la face sud-ouest du Lanfonnet pour remonter ». Le point chaud kk7 (flanc exposé au sud-ouest à 1433 m, 360 m sous le sommet) est à 372 m du lieu-dit Les Combes et 262 m de la Roche Murraz (IGN) : il correspond au bas de ces combes ; le texte ne donne pas de coordonnées, le rapprochement est une inférence.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Débuter en cross 2 (CHVD, 11/12/2006)",
+          "url": "https://www.chvd.org/2006/12/11/debuter-en-cross-2/",
+          "publisher": "CHVD",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Aller-retour Dents de Lanfon – Forclaz : au Lanfonnet, même au niveau des gencives on joue avec la brise sur une des trois combes, qui remontent toujours assez pour poser à Planfait."
+        },
+        {
+          "title": "Marche et vol 51 (vol 130) – Planfait (12/02/2020)",
+          "url": "https://carnetdevol.largeault.net/2020/02/12/marche-et-vol-51-vol-130-planfait/",
+          "publisher": "Carnet de vol de Franck Largeault",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Après plusieurs plafonds au Lanfonnet (2483 m), retour sur la face sud-ouest du Lanfonnet pour remonter avant de filer vers les Dents."
+        }
+      ],
+      "quote": "on joue avec la brise sur une des trois combes, elles vont très bien toutes les trois",
+      "evidence_distance_m": 372,
+      "reliability_note": "Le texte de 2006 donne le nom des « gencives » et des « combes » sans position ; leur association avec le lieu-dit Les Combes (IGN, 372 m) et le point chaud est une inférence. Pas d'heure précise dans le texte de 2006 ; le vol de février 2020 a décollé à 14 h 55."
+    },
+    {
+      "ref": "bornes/tournette-col-du-varo-thermique",
+      "new_id": "tournette-col-du-varo-thermique",
+      "name": "Tournette : bulles entre le décollage du col du Varo et les Rochers du Varo",
+      "trigger": "pentes et falaises exposées à l'ouest entre le décollage du col du Varo et les Rochers du Varo, sous la crête de la Tournette",
+      "best_hours": "milieu de journée en octobre (vol après un casse-croûte au décollage, d'après l'enchaînement du récit)",
+      "description": "Point d'accroche du vol-rando de la Tournette par le col du Varo : en octobre 2008, deux pilotes décollent du décollage de la Tournette (le col du Varo, voisin des Rochers du Varo, d'après le topo du club), « tiennent à hauteur du déco » et vont jusqu'aux Rochers du Varo « en prenant de bonnes bulles » ; les deux suivants font ensuite « de nombreux aller-retour entre le déco et les rochers de Varo » avant de partir vers le Lanfonnet et les Dents de Lanfon. Le point chaud kk7 (flanc exposé à l'ouest à 1689 m, 93 % à midi et 96 % le soir de printemps à automne) est à 566 m des Rochers du Varo (IGN) : le récit situe l'ascendance entre le décollage et ces rochers, ce qui correspond à cet intervalle ; le rapprochement reste une inférence.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "La Tournette – 26 octobre 2008 (récit CHVD, 01/11/2008)",
+          "url": "https://www.chvd.org/2008/11/01/la-tournette-26-octobre-2008/",
+          "publisher": "CHVD",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Montée de 1 h 30 depuis le parking de départ, décollage sans vent météo avec une légère brise : bulles jusqu'aux Rochers du Varo, nombreux aller-retour déco – Rochers du Varo, puis Lanfonnet et Dents de Lanfon ; atterrissage à Planfait."
+        },
+        {
+          "title": "Col du Varo (topo CHVD de Dominique Duperray, 15/09/2025)",
+          "url": "https://www.chvd.org/2025/09/15/col-du-varo/",
+          "publisher": "CHVD",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Décollage à 2151 m sur un large secteur sud, pentes herbeuses régulières ; « on est vite dans beaucoup de gaz dès le début du vol ». Ne décrit pas d'ascendance précise."
+        }
+      ],
+      "quote": "ils tiennent à hauteur du déco et vont jusqu’au rochers de Varo en prenant de bonnes bulles",
+      "evidence_distance_m": 566,
+      "reliability_note": "Un seul récit décrit l'ascendance (octobre 2008, sans heure précise) ; le topo de 2025 sert de confirmation du décollage et de la forte présence d'air portant. L'identification des « Rochers de Varo » du texte avec la falaise IGN à 566 m du point chaud est supposée. Le récit ne nomme pas explicitement le col du Varo comme décollage."
+    },
+    {
+      "ref": "aravis/roc-des-arces-col-de-chatillon",
+      "new_id": "roc-des-arces-col-de-chatillon",
+      "name": "Roc des Arces (Le Grand-Bornand) : « la pompe classique » devant le décollage du Lachat",
+      "trigger": "barre et pentes du Roc des Arces au-dessus du col de Châtillon, premier relief rencontré après le décollage du Lachat, déneigé et chauffé par le soleil",
+      "best_hours": null,
+      "description": "Première pompe du cheminement au départ du Lachat du Grand-Bornand : un pilote qui a fréquenté le site explique qu'après le décollage « la pompe classique est droit devant sur le Roc des Arces », où l'on se refait « assez régulièrement », avant de choisir selon le vent le Roc des Bœufs, La Clusaz ou le lac d'Annecy ; un autre pilote ajoute, quand le Roc des Arces n'a pas de neige, que « c'est thermique assuré ». Le point chaud kk7 (terrain presque plat à 1705 m, 100 % le matin, à midi et le soir, toute l'année) est à 71 m du sommet « Roc des Arces » (OSM) et à 362 m du col de Châtillon : il correspond à ce relief nommé ; les messages ne donnent pas d'heure.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Grand Bornand (fil parapentiste.info, 14–15/01/2007)",
+          "url": "https://www.parapentiste.info/forum/sites-de-vols/grand-bornand-t2225.0.html",
+          "publisher": "parapentiste.info",
+          "type": "forum",
+          "lang": "fr",
+          "notes": "Réponse #3 (gwen) : le déco classique est au sommet du Lachat (de Châtillon) ; après le déco, la pompe classique est droit devant sur le Roc des Arces. Réponse #11 : surtout si le Roc des Arces n'a pas de neige, c'est thermique assuré."
+        }
+      ],
+      "quote": "la pompe classique est droit devant sur le roc des arces",
+      "evidence_distance_m": 71,
+      "reliability_note": "Deux messages d'un même fil de forum de janvier 2007 (conditions hivernales évoquées), sans heure ni saison précise ; le « Roc des Arces » du texte est supposé être le sommet nommé par l'IGN/OSM à 71 m du point chaud."
+    },
+    {
+      "ref": "chartreuse/charmant-som-versant-est",
+      "new_id": "charmant-som-versant-est",
+      "name": "Charmant Som : thermique de l'épaule sud (sous le décollage vol-rando est / sud-est)",
+      "trigger": "épaule et pentes exposées à l'est / sud-est sous le sommet du Charmant Som (décollages vol-rando est et sud-est), chauffées par le soleil du matin",
+      "best_hours": "le matin et jusqu'à midi (« le Charmant Som, c'est mieux le matin »)",
+      "description": "Thermique de décollage du Charmant Som en vol-rando : les récits du CHVD disent que « le thermique de l'épaule sud fonctionne bien » et permet de survoler le sommet (24/10/2021), qu'il y a « une petite brise thermique bien sympathique » en haut (27/03/2022), que « les thermiques étaient au rendez-vous » en novembre 2018 (un pilote fait un tour de Chartreuse vers la Pinéa) et que tout le groupe « joue tranquillement devant et au-dessus du décollage » le matin du 23/08/2026. Un récit de novembre 2025 conclut que le Charmant Som, « c'est mieux le matin », ce qui concorde avec le profil kk7 (83 % le matin, 74 % à midi, rien le soir). Le point chaud (croupe exposée au sud-est, 1707 m) est à 343 m du décollage FFVL du Charmant Som et à 539 m du sommet : c'est l'épaule sud-est décrite, le rapprochement reste une inférence puisque les récits ne donnent pas de coordonnées.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Charmant Som (vol rando CHVD du 24/10/2021)",
+          "url": "https://www.chvd.org/2021/10/25/charmant-som/",
+          "publisher": "CHVD",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Décollage sud-est à 1800 m : « Le thermique de l'épaule sud fonctionne bien et nous permet de survoler le sommet »."
+        },
+        {
+          "title": "Un Charmant Som charmant (vol rando CHVD du 27/03/2022)",
+          "url": "https://www.chvd.org/2022/03/27/un-charmant-som-charmant/",
+          "publisher": "CHVD",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Décollage est à 1850 m : en haut une petite brise thermique ; on peut ensuite monter en suivant les crêtes vers le Grand Som."
+        },
+        {
+          "title": "Charmant Som v2 (vol rando CHVD du 07/11/2025)",
+          "url": "https://www.chvd.org/2025/11/10/charmant-som-v2/",
+          "publisher": "CHVD",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Décollage sud-est à 1850 m : nuage sur Chamechaude qui balise un thermique ; « le Charmant Som, c'est mieux le matin »."
+        },
+        {
+          "title": "Charmant Som – 18 novembre 2018",
+          "url": "https://www.chvd.org/2018/11/18/charman-som-18-novembre-2018/",
+          "publisher": "CHVD",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Décollage est à 1850 m : « les thermiques étaient au rendez-vous »."
+        }
+      ],
+      "quote": "Le thermique de l’épaule sud fonctionne bien et nous permet de survoler le sommet.",
+      "evidence_distance_m": 343,
+      "reliability_note": "Quatre récits de vol-rando concordants mais qui parlent du décollage et de l'épaule sans coordonnées ; la position de l'« épaule sud » par rapport au point chaud est une inférence (point chaud à 343 m du décollage FFVL, 539 m du sommet). Heures : seule la mention « mieux le matin » est explicite."
+    },
+    {
+      "ref": "chartreuse/la-pinea-sarcenas",
+      "new_id": "la-pinea-sarcenas",
+      "name": "La Pinéa : crête et face sud (thermiques toniques, relais Chamechaude – Néron)",
+      "trigger": "croupe sud de la Pinéa, flancs exposés au sud sous le sommet (1771 m), entre le Sappey et Sarcenas",
+      "best_hours": "milieu de journée (12 h 12 à 12 h 41 dans le récit d'avril 2023)",
+      "description": "Relais de l'intérieur de la Chartreuse entre Chamechaude, le Néron et la Grande Sûre. En avril 2023, un pilote arrivé du Néron se met à « tricoter » 30 minutes dans la face sud de la Pinéa (12 h 12 à 12 h 41) avant de passer au-dessus du sommet, puis de transiter sur Chamechaude ; en août 2012, il « transite rapidement sur la crête sud de la Pinéa » où « les thermiques sont très toniques » ; en juillet 2020, un pilote peine à « négocier l'ascenseur de la Pinéa » ; en 2007 « Chamechaude-Pinéa, Pinéa-Néron, trop facile ». Le profil altimétrique IGN entre le sommet (1737 m) et le point chaud kk7 (croupe exposée au sud à 1393 m) descend de façon continue avec des flancs plus bas des deux côtés : le point chaud est donc sur la crête sud elle-même, à 915 m du sommet.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Cross à la Pinéa (récit CHVD, 28/04/2023)",
+          "url": "https://www.chvd.org/2023/04/28/cross-a-la-pinea/",
+          "publisher": "CHVD",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Vol du 27/04/2023 : arrivée du Néron, 30 minutes dans la face sud de la Pinéa (12 h 12 – 12 h 41), puis transition sur Chamechaude."
+        },
+        {
+          "title": "Triangle chartrousien en marche et vol (CHVD, 09/08/2012)",
+          "url": "https://www.chvd.org/2012/08/09/triangle-chartrousien-en-marche-et-vol/",
+          "publisher": "CHVD",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Après l'Écoutoux, transit sur la crête sud de la Pinéa : thermiques très toniques, puis 2200 m à la Scia."
+        },
+        {
+          "title": "La Scia – 7 juillet 2020 (CHVD)",
+          "url": "https://www.chvd.org/2020/08/09/la-scia-7-juillet-2020/",
+          "publisher": "CHVD",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Retour de la Grande Sûre par Chamechaude et la Pinéa : un pilote a du mal à négocier « l'ascenseur de la Pinéa » et manque son but d'un kilomètre."
+        },
+        {
+          "title": "Mon premier 8 en sud Chartreuse (CHVD, 26/04/2007)",
+          "url": "https://www.chvd.org/2007/04/26/mon-premier-8-en-sud-chartreuse/",
+          "publisher": "CHVD",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Retour par Pinéa, Néron et Rachais : « Chamechaude-Pinéa, Pinéa-Néron, trop facile »."
+        }
+      ],
+      "quote": "Les thermiques sont très toniques et il faut bien tenir son aile.",
+      "evidence_distance_m": 915,
+      "reliability_note": "Le sommet de la Pinéa est à 915 m du point chaud ; le rapprochement repose sur le fait que le point chaud se trouve sur la crête sud / face sud décrite (profil IGN). Les récits ne donnent pas de position plus précise ni de saison autre que le printemps et l'été."
+    },
+    {
+      "ref": "mont-blanc-chamonix/brevent-faces-sud-est-plan-lachat",
+      "new_id": "brevent-faces-sud-est-plan-lachat",
+      "name": "Brévent : faces sud-est devant Planpraz (« ça monte partout devant le Brévent », raccroche de Chamonix)",
+      "trigger": "grande face sud-est du Brévent (35°) chauffée dès midi, au-dessus de Plan Lachat, sous le décollage de Planpraz ; brise de vallée de Chamonix en soirée",
+      "best_hours": "de midi à la fin d'après-midi (midi : « ça monte partout devant le Brévent » ; 17 h–18 h : « ça monte encore de partout » à l'ombre)",
+      "description": "Déclencheur et point de raccroche de la rive gauche de Chamonix, utilisé pour partir vers les Aiguilles Rouges ou pour revenir du Mont Joly / Prarion. Récit du Tour du Mont Blanc (21/08/2023) : arrivé à midi, de nombreuses voiles tournent déjà au-dessus du Brévent, « ça monte partout devant le Brévent » ; le même pilote conclut son vol à 17–18 h par une pente sous le Brévent « tout à l'ombre, mais curieusement ça monte encore de partout ». Deux autres récits décrivent la raccroche du Brévent depuis le Prarion ou le Mont Joly : « ça monte très fort, mais c'est aussi très très turbulent. Un vrai rodéo » (juin 2025) et, par canicule, des thermiques « monstres » mêlés à une brise « dantesque » (août 2025), sortie au-dessus du Brévent à 3100 m. Le point chaud kk7 (flanc de 35° exposé au sud-est à 1941 m, 98 % le matin et 95 % à midi toute l'année) est sur cette face, à 839 m du sommet et à 613 m du lieu-dit Plan Lachat (IGN) ; les récits parlent du Brévent en général, le rapprochement avec ce point est une inférence.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Tour du Mont Blanc (récit CHVD, 28/08/2023)",
+          "url": "https://www.chvd.org/2023/08/28/tour-du-mont-blanc/",
+          "publisher": "CHVD",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Vol du 21/08/2023 : arrivée à Chamonix à midi, décollage de Planpraz, « ça monte partout devant le Brévent », plafond puis départ vers les Aiguilles Rouges ; en fin de vol (17 h–18 h), pente sous le Brévent à l'ombre où ça monte encore."
+        },
+        {
+          "title": "Cross à Bisanne (récit CHVD, 05/06/2025)",
+          "url": "https://www.chvd.org/2025/06/05/cross-a-bisanne/",
+          "publisher": "CHVD",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Arrivée du Prarion vers le Brévent : « Ça monte très fort, mais c'est aussi très très turbulent », vent d'ouest ; sortie de la vallée 600 m plus haut."
+        },
+        {
+          "title": "Bisanne 10/08/2025 (récit CHVD, 11/08/2025)",
+          "url": "https://www.chvd.org/2025/08/11/bisanne-10-08-2025/",
+          "publisher": "CHVD",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Raccroche au Brévent par canicule : thermiques « monstres » et brise forte ; sortie au-dessus du Brévent à 3100 m."
+        }
+      ],
+      "quote": "Ça monte partout devant le Brévent.",
+      "evidence_distance_m": 839,
+      "reliability_note": "Le Brévent est cité comme un ensemble ; le sommet est à 839 m du point chaud (hors des 700 m stricts), mais le point est sur la face sud-est du Brévent (profil IGN continu de 2507 m au sommet à 1941 m). Aucune précision sur Plan Lachat. Les récits d'été mentionnent de fortes turbulences à l'arrivée par vent d'ouest."
+    }
+  ],
+  "not_found": [
+    {
+      "ref": "chartreuse/kk7-45.4857-5.7836",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch (domaines pilotes) « Col du Caux », « Mont Beauvoir »",
+      "note": "Aucun texte ne cite le Col du Caux ni La Michalière ; le Mont Beauvoir (1,2 km) n'est cité que comme étape du cheminement vers l'Épine, sans ascendance précise."
+    },
+    {
+      "ref": "chartreuse/kk7-45.3297-5.6844",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Jusson », « Chantabot », « Grande Sûre »",
+      "note": "Jusson est cité surtout comme décollage (prairie de Jusson, brise de face) et la Grande Sûre comme sommet ; le point chaud est à 1,2 km de Jusson et du décollage Grande Sûre. L'élément existant grande-sure-faces-ouest (medium) couvre le secteur."
+    },
+    {
+      "ref": "chartreuse/kk7-45.3746-5.6631",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Rocher de la Garde », « Gorges de Crossey », « Saint-Étienne-de-Crossey »",
+      "note": "Seuls des topos de randonnée parlent du Rocher de la Garde ; aucun récit de vol. Le « Combe Noire » trouvé dans des textes de pilotes est celui du Lanfonnet (Annecy), pas celui de Chartreuse."
+    },
+    {
+      "ref": "gresivaudan/kk7-45.2821-5.8646",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Dessous l'Église », « Bernin » ; fiche FFVL Col de Baure (2,0 km)",
+      "note": "Rien sur ce secteur au-dessus de Bernin/Saint-Nazaire-les-Eymes ; les posts CHVD sur le Col de Baure parlent du décollage et de Château Nardent, pas de ce flanc."
+    },
+    {
+      "ref": "chartreuse/kk7-45.4741-5.7692",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « La Bauche », fiche FFVL BANDE",
+      "note": "Aucun texte ; le décollage voisin « Bande » est signalé par la FFVL comme interdit par les propriétaires. Rien sur la Bauche."
+    },
+    {
+      "ref": "chartreuse/kk7-45.3389-5.6346",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Les Journeaux », « Grand Ratz »",
+      "note": "La brochure vol libre Chartreuse dit seulement de se méfier des forts thermiques à la sortie du décollage du Grand Ratz (point chaud à 1,06 km, hors règle des 700 m) et un récit CHVD de 2026 y trouve une remontée au-dessus de la crête ; rien sur Les Journeaux."
+    },
+    {
+      "ref": "chartreuse/kk7-45.4478-5.9161",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Granier sommet sud », « col de l'Alpette », « Porte de l'Alpette »",
+      "note": "Les récits décrivent le Granier par la face ouest/nord et le col de l'Alpette comme zone de passage (« dégueulante » signalée en 2008) mais aucune ascendance au sommet sud ; l'élément thermique-mont-granier couvre la face ouest."
+    },
+    {
+      "ref": "gresivaudan/kk7-45.3842-5.9192",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Grand Manti », « Belle Chambre », « pas du Fourneau »",
+      "note": "Le Grand Manti n'apparaît que comme repère de cheminement (« plein à 1950 avant de traverser vers Saint-Même »), à 1,1 km du point chaud, sans description d'ascendance locale."
+    },
+    {
+      "ref": "chartreuse/kk7-45.4601-5.9450",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Pas du Pré Ours », « Pas de la Porte », « Porte de l'Alpette »",
+      "note": "Seule mention : « passer à l'intérieur de la Porte de l'Alpette » (fil de forum), sans ascendance ; le « Combe Noire » des textes de pilotes est celui du Lanfonnet."
+    },
+    {
+      "ref": "chartreuse/kk7-45.4589-5.9680",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Bellecombe » Saint-Marcel, fiche parapentiste.info Saint-Marcel (Barraux)",
+      "note": "Les « Bellecombe » des récits (Autrans, Vercors) sont un autre lieu ; la fiche Saint-Marcel (décollage voisin) cite seulement la route par Bellecombe et des conditions cycliques tôt le matin, sans ascendance au hameau."
+    },
+    {
+      "ref": "bornes/kk7-45.8828-6.3676",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Montagne de Vaunessin », « Colomban », « Les Côtes »",
+      "note": "Aucune source sur la Montagne de Vaunessin ; « cabane de Colomban » cité une fois (attente de la pluie), sans ascendance."
+    },
+    {
+      "ref": "lac-annecy/kk7-45.7407-6.3669",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Golet de la Rate », « Col de l'Alpettaz », « Le Plânâ »",
+      "note": "Aucune source ; le « Golet » trouvé est celui de l'Agneau (Margériaz). Les récits évoquent seulement la batterie de l'Alpettaz près d'Ugine comme balise de CFD."
+    },
+    {
+      "ref": "lac-annecy/kk7-45.7656-6.3199",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Roc de Nantbellet », « La Rosay », « Saint-Ferréol »",
+      "note": "Saint-Ferréol n'apparaît que comme balise de cross depuis Marlens ; rien sur le Roc de Nantbellet ni La Rosay."
+    },
+    {
+      "ref": "bornes/kk7-45.9153-6.2430",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Le Signal », « Bonnève », « La Tassonnière »",
+      "note": "Aucune source sur ce relief de la bordure ouest du Parmelan ; les fils sur les brises du Parmelan décrivent d'autres points (Lachat de Nâves, Veyrier, col du Pertuis)."
+    },
+    {
+      "ref": "bornes/kk7-45.9192-6.3415",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Chalets de Lachat », « Mont Lachat de Thônes »",
+      "note": "Le Lachat de Thônes est décrit (pompe de face nord, pointe au-dessus du col de la Buffaz) mais à 1,1–1,5 km du point chaud ; les éléments lachat-thones-face-nord et lachat-thones-pointe-buffaz (medium) existent déjà. Rien sur les Chalets de Lachat."
+    },
+    {
+      "ref": "bornes/kk7-45.9223-6.2907",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Tête de l'Arpettaz », « Tête Ronde », « La Rosière »",
+      "note": "Les textes sur l'Arpettaz concernent le col de l'Arpettaz d'Ugine (autre lieu, 15 km) ; rien sur la Tête de l'Arpettaz des Bornes."
+    },
+    {
+      "ref": "lac-annecy/kk7-45.7735-6.3734",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Mont des Dunes », « La Vignette », « Les Devants »",
+      "note": "Aucune source."
+    },
+    {
+      "ref": "aravis/kk7-45.7778-6.3875",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Col du Fer », « Champ Renier », « Mont des Dunes »",
+      "note": "Le Col du Fer n'apparaît que comme décollage et balise de CFD ; aucune ascendance décrite à 700 m."
+    },
+    {
+      "ref": "lac-annecy/kk7-45.7472-6.3765",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Col de l'Alpettaz », « Mont Melon », « Stalanche », « La Mouchette »",
+      "note": "Aucune source."
+    },
+    {
+      "ref": "aravis/kk7-45.9084-6.4850",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Combe de Bella Cha », « Mont Rachais », « La Petite Torchère »",
+      "note": "La « pointe de Bella Cha » du récit Largeault est à 9 km (Le Reposoir), pas la combe de La Clusaz ; le Mont Rachais des textes est celui de Grenoble."
+    },
+    {
+      "ref": "aravis/kk7-45.8635-6.4037",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Tête de Cabeau », « L'Étale », « Col de Merdassier », fils parapentiste.info t1985, t2599, t14966",
+      "note": "Le fil t2599 décrit les premiers thermiques de La Clusaz (pente du Crêt du Loup, combe de l'Aiguille, combes du Voret et du Fernuy) ; rien sur la Tête de Cabeau."
+    },
+    {
+      "ref": "aravis/kk7-45.9211-6.4644",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; fil parapentiste.info t2599 (La Clusaz) et t2620 ; WebSearch « Tête du Danay », « Le Fernuy »",
+      "note": "Le fil t2599 cite les combes du Voret et du Fernuy comme lieux de premiers thermiques de l'après-midi, mais le Fernuy est à 1,1–1,3 km du point chaud ; le Danay existant (danay-saint-jean-de-sixt) est à 1,8 km."
+    },
+    {
+      "ref": "aravis/kk7-45.7943-6.4459",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Praz Véchin » ; récit parapentepaysdegex.fr du 08/06/2019",
+      "note": "Un seul récit (décollage de Praz Véchin vers 10 h 30, « premières barbulles sur le Charvin », extraction facile à +2,5 m/s) qui ne localise pas la pompe ; le point chaud n'y est pas rattaché de façon assez précise pour un passage en medium."
+    },
+    {
+      "ref": "mont-blanc-chamonix/kk7-45.8764-6.8366",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Petit Béchard », « Gros Béchard »",
+      "note": "Le Petit Béchard n'apparaît que comme limite de la zone réglementée de survol du Mont-Blanc ; aucune ascendance décrite."
+    },
+    {
+      "ref": "aravis/kk7-45.8886-6.5382",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Tête de Ramadieu »",
+      "note": "Aucune source."
+    },
+    {
+      "ref": "mont-blanc-chamonix/kk7-45.9934-6.8915",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Col de Beugeant », « Aiguille des Chamois », « Perséverance »",
+      "note": "Aucune source."
+    },
+    {
+      "ref": "aravis/kk7-45.8049-6.4802",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « La Farcounière », « Le Coquet »",
+      "note": "Aucune source."
+    },
+    {
+      "ref": "aravis/kk7-45.9163-6.4933",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Mont Rachais » (Aravis), « Combe de Grand Crêt », « Crêt Pollet »",
+      "note": "Aucune source ; seule la fiche Paragliding Map cite la combe de Grand Crêt comme décollage facile en hiver."
+    },
+    {
+      "ref": "mont-blanc-chamonix/kk7-45.8845-6.8510",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Mont Corbeau », « Plateau des Pyramides »",
+      "note": "Aucune source ; secteur proche de la zone réglementée du Mont-Blanc."
+    },
+    {
+      "ref": "aravis/kk7-45.8589-6.4229",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; fils parapentiste.info t1985 et t14966",
+      "note": "Un message de 2006 évoque « quelques thermiques en allant vers la Croix Fry ou vers le col de l'Étale » et un autre un détour par Merdassier pour arriver haut au col des Aravis : ce sont des indications de cheminement sans ascendance localisée à 700 m du col de Merdassier (631 m)."
+    },
+    {
+      "ref": "mont-blanc-chamonix/kk7-45.9000-6.9870",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Col de Pierre Joseph », « Aiguille de Talèfre »",
+      "note": "Aucune source (haute montagne, versant du glacier de Talèfre)."
+    },
+    {
+      "ref": "mont-blanc-chamonix/kk7-45.9461-6.9307",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Aiguille à Bochard »",
+      "note": "Bochard n'apparaît que comme balise de CFD depuis Plan Praz ; rien sur une ascendance."
+    },
+    {
+      "ref": "mont-blanc-chamonix/kk7-46.0306-6.8949",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Aiguille de Loriaz », « Cornes de Loriaz », « Gouille du Sassey »",
+      "note": "Loriaz n'apparaît que comme balise de CFD (alpage de la Loriaz) ; aucune ascendance décrite."
+    },
+    {
+      "ref": "mont-blanc-chamonix/kk7-46.0058-6.9815",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Pointe des Berons », « Bec du Picheu »",
+      "note": "Aucune source."
+    },
+    {
+      "ref": "lac-annecy/doussard-thermiques-bout-du-lac",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; fiche FFVL 2251 (Bout du lac), texte Grands Espaces (déjà cité), WebSearch « Doussard » thermique",
+      "note": "Rien de nouveau par rapport au texte de l'école Grands Espaces déjà utilisé ; la fiche FFVL du bout du lac ne parle que de brises thermiques s'ajoutant à une tendance nord, sans lieu. Pas de point chaud kk7 dans le secteur : la position reste approximative."
+    },
+    {
+      "ref": "lac-annecy/seynod-vieugy-zone-industrielle",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; fil parapentiste.info t2807 (traversée d'Annecy), géocodage de l'église de la Visitation",
+      "note": "Le topo raccroche « le relief derrière la Visitation au-dessus de la zone industrielle » ; la basilique de la Visitation d'Annecy est à 4,3 km du point chaud (Seynod-Vieugy), l'identification n'est pas démontrée."
+    },
+    {
+      "ref": "lac-annecy/quintal-la-platiere",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; fil t2807, géométrie OSM de la ligne 225 kV",
+      "note": "Le topo dit « je vais souvent voir juste après la ligne » à Quintal ; la ligne 225 kV passe à 500 m au sud du point chaud, qui semble donc du côté d'arrivée (« avant la ligne, rien de flagrant ») plutôt qu'après elle ; la direction exacte du cheminement n'est pas donnée."
+    },
+    {
+      "ref": "lac-annecy/mont-durant-semnoz-sud-ouest",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Mont Durant » Semnoz",
+      "note": "Aucune source."
+    },
+    {
+      "ref": "lac-annecy/marlens-les-devants-rosset",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Les Devants », « Rosset », « Joëux », fiche Marlens",
+      "note": "Rien ; la fiche du site ne mentionne qu'un départ de cross vers les faces est des Bauges."
+    },
+    {
+      "ref": "lac-annecy/lanfon-pointe-nord-bluffy",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; CHVD « Débuter en cross » 1 à 4, carnet Largeault du 12/02/2020, fils t33880 et t35042",
+      "note": "Les textes décrivent l'épaule de Planfait, la « porte » et la forêt de l'arête nord (déjà couvertes par epaule-planfait-dents-de-lanfon) ; la plus proche (segment épaule – Pointe Nord) est à 745 m du point chaud, et Bluffy n'est cité que comme confluence ou plan de secours, sans ascendance."
+    },
+    {
+      "ref": "lac-annecy/seynod-la-culaz",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; fil t2807",
+      "note": "Le topo ne décrit aucun thermique dans la plaine de La Culaz."
+    },
+    {
+      "ref": "bornes/serraval-aiguille-chappet",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; document Chamois Volants « Voler avec les rapaces » (06/03/2025), WebSearch « Aiguille de Serraval », « Les Teppes »",
+      "note": "Le texte dit que les faces sud des épaules des Grandes Teppes, puis l'Aiguille de Serraval « devraient vous aider à continuer le vol » ; l'Aiguille est à 840 m du point chaud (Les Chappet à 268 m non cités) et la formulation reste une recommandation, pas un constat d'ascendance."
+    },
+    {
+      "ref": "aravis/meruz-char-marin",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; CHVD « Méruze, balade dans les Aravis » (01/06/2020), récit PGE du 08/06/2019",
+      "note": "Les récits parlent du pilier sud du Charvin (1,9 km) et d'une extraction difficile à Méruz, pas des pentes d'Ugine / Char Marin."
+    },
+    {
+      "ref": "aravis/praz-vechin-aiguille-du-bouchet",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; CHVD 01/06/2020, récit PGE du 08/06/2019",
+      "note": "Même constat : rien sur les pentes sous l'Aiguille du Bouchet ; le pilier sud du Charvin est à 1,9 km."
+    },
+    {
+      "ref": "aravis/col-du-passet-tardevant",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Col du Passet », « Pointe de Tardevant », « La Creuse »",
+      "note": "Seule la combe de Tardevant est citée comme balise de CFD ; rien sur le col du Passet."
+    },
+    {
+      "ref": "aravis/le-treu-nant-pareux",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Nant Pareux », « Le Treu »",
+      "note": "Aucune source."
+    },
+    {
+      "ref": "chartreuse/roche-veyrand-corbel",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Roche Veyrand » ; CHVD 21/07/2020",
+      "note": "Un récit de 2020 mentionne un point bas à la Roche Veyrand après l'Outheran, aucun récit d'ascendance ; les autres pages concernent l'escalade et la randonnée."
+    },
+    {
+      "ref": "chartreuse/bannettes-pente-sud",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; CHVD Rochers de Chalves (2018, 2020, 2024), Bannettes (2026), WebSearch « Bannettes »",
+      "note": "Les récits de vol-rando décrivent des bulles « le long des rochers et sur les crêtes » aux Rochers de Chalves (1,06 km) mais rien au Rocher de l'Ouillon ni à la pente du point chaud."
+    },
+    {
+      "ref": "chartreuse/roche-rousse-sappey",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; CHVD 01/06/2021 (« fameux thermique des pistes de ski du Sappey »), géométrie OSM des remontées du Sappey",
+      "note": "Le thermique cité est celui des pistes de ski du Sappey, dont les remontées sont à 1,9–2,4 km du point chaud ; Roche Rousse n'est citée que comme balise de CFD et sentier."
+    },
+    {
+      "ref": "chartreuse/belvedere-du-puy-saint-bernard",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Saint-Bernard-du-Touvet », « Le Prayer »",
+      "note": "Aucune source sur les falaises de Saint-Bernard ; un récit CHVD de 2014 ne mentionne qu'un thermique « au pilier » et un demi-tour à Saint-Bernard."
+    },
+    {
+      "ref": "chartreuse/pierre-morin-saint-ismier",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Pierre Morin », « Roche Chauve », « Saint-Ismier »",
+      "note": "Aucune source."
+    },
+    {
+      "ref": "chartreuse/nardent-rochers-des-communaux",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; tous les récits CHVD et Club St Hil'Air citant Château Nardent (29 articles)",
+      "note": "Les récits décrivent le thermique « sous le sommet » et le « pilier sud » de Château Nardent (785 m) et parlent de gratter bas, jamais des rochers des Communaux ; le point chaud est 500 m plus bas que le sommet."
+    },
+    {
+      "ref": "gresivaudan/chalais-faces-voreppe",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; CHVD Chalais (2016, 2020, 2024, 2026), fiche FFVL Chalais",
+      "note": "Les textes situent la brise thermique et les nuages « au-dessus du décollage / du belvédère de Chalais », à 2 km du point chaud."
+    },
+    {
+      "ref": "mont-blanc-chamonix/plan-de-l-aiguille-thermique-deco",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; page gratte-ciel.club (Plan de l'Aiguille), chamonix.net, outdare, CHVD 2018 et 2026",
+      "note": "Les pages décrivent le décollage (« site intéressant de la fin de matinée au soir, brises thermiques et thermodynamiques ») et une brise soutenue, pas une ascendance localisée : un lieu cité sans ascendance ne suffit pas."
+    },
+    {
+      "ref": "mont-blanc-chamonix/pormenaz-pointe-noire",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; page CMBVL Pormenaz, fil t2620 (07/03/2007)",
+      "note": "Le CMBVL décrit une brise montante excellente mais très forte l'après-midi au décollage des Chalets de Pormenaz (395 m) et un message de 2007 « un thermique sur l'arête de Pormenaz en passant » : indications de site sans localisation à 700 m, et horaires différents du profil kk7 (matin et midi)."
+    },
+    {
+      "ref": "mont-blanc-chamonix/beaux-mollets-signal-forbes",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; fils t38594 et t51318 (Aiguille du Midi), fiche FFVL Beaux Mollets",
+      "note": "Les textes parlent du Montenvers et de l'arête de l'M comme zone de rouleau, pas d'ascendance sous le Signal Forbes."
+    },
+    {
+      "ref": "mont-blanc-chamonix/chamonix-aiguilles-rouges-brouillard",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Aiguilles Rouges du Brouillard »",
+      "note": "Aucune source."
+    },
+    {
+      "ref": "mont-blanc-chamonix/chamonix-charlanon-aiguille-pourrie",
+      "searched": "grep accents-insensible des toponymes à moins de 1,6 km dans les 716 documents du cache (annecy_bornes_aravis, montblanc_beaufortain, chartreuse_gresivaudan_belledonne) et dans les fiches FFVL (aerologie/description) ; flux complets de chvd.org (1326 articles 2001-2026), clubsthilair.fr, carnetdevol.largeault.net, virage-annecy.fr, annecy-vol-libre.com ; fils parapentiste.info lus en entier ; WebSearch « Aiguille Pourrie », « Col Cornu », « La Charlanon »",
+      "note": "Aucune source."
+    }
+  ],
+  "blocked": [
+    {
+      "url": "https://parapente.ffvl.fr/cfd/liste/vol/20316178",
+      "why": "HTTP 403 (protection Cloudflare) ; extrait lu uniquement via un moteur de recherche, page non ouverte."
+    },
+    {
+      "url": "https://html.duckduckgo.com/html/",
+      "why": "CAPTCHA (« Select all squares containing a duck ») dès la première requête : moteur abandonné."
+    },
+    {
+      "url": "https://search.brave.com/search",
+      "why": "Vérification « Vérification que vous n'êtes pas un robot » (captcha) dès la deuxième requête, y compris dans le navigateur intégré : moteur abandonné."
+    },
+    {
+      "url": "https://www.bing.com/search",
+      "why": "Résultats inexploitables avec curl ; dans le navigateur intégré, écran « Une dernière étape – résoudre le défi » après trois requêtes : moteur abandonné."
+    },
+    {
+      "url": "https://parapente.ffvl.fr/cfd/liste/vol/*",
+      "why": "Pages de vols de la Coupe Fédérale de Distance (commentaires de pilotes) : HTTP 403 / Cloudflare pour curl et WebFetch ; seuls des extraits issus de la recherche web ont pu être lus (non vérifiés sur la page)."
+    },
+    {
+      "url": "https://www.chamoisvolants.fr/feed/",
+      "why": "Flux inaccessible (délai dépassé) : non exploité."
+    }
+  ],
+  "summary": "71 candidats examinés (tous : grep des 716 textes du cache et des fiches FFVL, puis flux complets de chvd.org, clubsthilair.fr, du carnet de vol de F. Largeault, de virage-annecy.fr et annecy-vol-libre.com, une trentaine de fils parapentiste.info téléchargés et filtrés par toponymes, et une douzaine de recherches web ciblées).\n13 propositions medium : Lances de Malissard (lance sud), Les Égaux (Corbel), la Cochette, les falaises de Platé, les moraines sous l'Aiguille du Moine et sous les Flammes de Pierre, Planfait (à droite du déco), le bas du Lanfonnet, le col du Varo (Tournette), le Roc des Arces (Grand-Bornand), l'épaule sud du Charmant Som, la crête sud de la Pinéa, les faces sud-est du Brévent.\n58 candidats sans texte exploitable (not_found), souvent parce que le lieu n'est cité qu'à plus de 700 m, comme balise ou comme décollage, sans ascendance.\nSources majeures : blog du CHVD (chvd.org, 1326 articles) qui apporte 9 des 13 propositions, fils parapentiste.info (Aiguille du Midi, Aravis, Grand-Bornand, Parmelan), carnet de vol Largeault, club St Hil'Air, fiche CMBVL de Platé.\nMoteurs de recherche bloqués par des vérifications (DuckDuckGo, Brave, Bing) et pages CFD de la FFVL en 403 : voir « blocked »."
+}

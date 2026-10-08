@@ -1,0 +1,476 @@
+{
+  "proposals": [
+    {
+      "ref": "prealpes-grasse-castellane/kk7-43.8313-6.7233",
+      "new_id": "pensier-eperon-au-dessus-des-lattes",
+      "name": "Le Pensier (éperon au vent au-dessus des Lattes)",
+      "trigger": "éperon exposé au vent sur la grande pente sud-est du Pensier, au-dessus du hameau des Lattes (Saint-Auban), qui chauffe dès la matinée",
+      "best_hours": "matin et jusqu'à midi : nuage « comme souvent en matinée », 2800 m à 12h (Armant, 22 avril 2006) ; kk7 : matin 82 %, midi 70 %, rien le soir, printemps-été",
+      "description": "Point de relance entre le col de Bleine et le Teillon : après la transition depuis le bois brûlé, on raccroche « le Pensier au-dessus des Lattes » avant de basculer vers le col des Portes et le Teillon. Deux récits concordent : Jacqueline (28 mars 2012, régime d'est) y voit « un beau thermique placé logiquement sur un éperon au vent » où deux pilotes montent vers 2800 m ; Armant (22 avril 2006) y fait 2800 m à 12h dans le « plus beau nuage du secteur », dû à « la grande pente sud-est au-dessus des Lattes ». Le point chaud kk7 est sur cette pente sud-est (1465 m, 17°), à 650 m du sommet IGN du Pensier Oriental et à 1,1 km du hameau des Lattes ; son profil du matin colle au récit d'Armant. Le rapprochement repose sur le nom « Pensier » (relief nommé par Jacqueline) et sur l'orientation sud-est de la pente.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Bleyne / Moustiers / Nord Digne / St André / Nord Bleyne, 126 km, 28/03/2012 (G. Jacqueline)",
+          "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/gilles_jacqueline_BleyneDigneBleyne.pdf",
+          "publisher": "Au gré de l'air (club de Gréolières)",
+          "type": "pdf",
+          "lang": "fr",
+          "notes": "p. 2 : transition de groupe vers « le Pensier au-dessus des Lattes », poussée d'est > 10 km/h, thermique sur un éperon au vent signalé par Parapentor, montée vers ~2800 m."
+        },
+        {
+          "title": "Récit du 22 avril 2006, Bleyne – Chaillol – La Bernarde (L. Armant)",
+          "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/luc_armant_RecitLucArmant22avril2006.pdf",
+          "publisher": "Au gré de l'air",
+          "type": "pdf",
+          "lang": "fr",
+          "notes": "p. 1 : décollage 11h20, « 12h00 : 2800 m au-dessus des Lattes », plus beau nuage du secteur en matinée grâce à la grande pente sud-est."
+        },
+        {
+          "title": "Les vols de distance (Au gré de l'air)",
+          "url": "https://www.augredelair.fr/les-vols-de-distance/",
+          "publisher": "Au gré de l'air",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Section Col de Bleine – Saint-André : transition vers le Teillon « au-dessus du hameau des Lattes », faire 2500 m avant à cause du venturi."
+        }
+      ],
+      "quote": "Aux lattes, Parapentor nous indique un beau thermique placé logiquement sur un éperon au vent.",
+      "evidence_distance_m": 650,
+      "reliability_note": "Les mêmes textes décrivent déjà l'élément existant `pente-se-des-lattes` (positionné sur le hameau des Lattes, « éperon exact non indiqué ») : ce point chaud en est probablement la localisation réelle à 1,2 km au nord-ouest ; fusionner ou recaler plutôt que dupliquer. Les récits ne donnent pas la distance exacte entre l'éperon et le sommet du Pensier."
+    },
+    {
+      "ref": "prealpes-grasse-castellane/kk7-43.7242-6.8383",
+      "new_id": "montagne-de-thiey-face-sud",
+      "name": "Montagne de Thiey (face sud, au-dessus de la crête de Saint-Vallier)",
+      "trigger": "face sud de la montagne de Thiey (pente de 25° à 1290 m), premier relief ensoleillé quand on revient de Gourdon par le col du Ferrier et la crête de Saint-Vallier",
+      "best_hours": "non précisée par le récit (dimanche 18 mai 2014, départ tardif de Gourdon) ; kk7 : matin 92 %, midi 87 %, rien le soir, toute l'année",
+      "description": "Raccroche de la remontée Gourdon → Teillon par l'ouest : parti tard de Gourdon, Gourdon–Mézel (18 mai 2014) passe « tout juste » le col du Ferrier, se jette derrière sur la crête de Saint-Vallier et « raccroche la montagne de Thiey, enfin un thermique et un plafond dignes de ce nom », ce qui lui ouvre la progression vers le nord-ouest et le Teillon. Le point chaud kk7 est sur la face sud de cette montagne, à 2,6 km à l'ouest-nord-ouest du col du Ferrier (IGN) et à 0,9 km du sommet de Thiey. Rôle : relance puis plafond après la traversée du fond de vallée entre Gourdon et Saint-Vallier.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Gourdon – Mézel, 18 mai 2014",
+          "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/2014-05-18-Gourdon-Mezel.pdf",
+          "publisher": "Au gré de l'air (récit de vol)",
+          "type": "pdf",
+          "lang": "fr",
+          "notes": "p. 2 : col du Ferrier, crête de Saint-Vallier, « je raccroche la montagne de Thiey, enfin un thermique et un plafond dignes de ce nom »."
+        }
+      ],
+      "quote": "Ouf, je raccroche la montagne de Thiey, enfin un thermique et un plafond dignes de ce nom.",
+      "evidence_distance_m": 872,
+      "reliability_note": "Un seul récit, qui nomme le massif entier (« montagne de Thiey »), pas un point précis ; le point chaud est sur sa face sud, à 872 m du sommet IGN (au-delà des 700 m) et rien n'indique l'heure. Le rapprochement vient de la géographie du trajet (col du Ferrier → crête de Saint-Vallier → Thiey) et de l'exposition sud."
+    },
+    {
+      "ref": "grenoble-cuvette/kk7-45.2891-5.5951",
+      "new_id": "dent-de-moirans-face-ouest",
+      "name": "Dent de Moirans (face ouest, soaring sous la TMA de Lyon)",
+      "trigger": "pente exposée à l'ouest / nord-ouest de la Dent de Moirans, extrémité nord du Vercors, appui dynamique de la brise d'ouest renforcé par le soleil de l'après-midi",
+      "best_hours": "après-midi (vol parti de Saint-Hilaire à ~12h30, passage non horodaté) ; kk7 : midi 84 %, soir 84 %, rien le matin, printemps-été",
+      "description": "Entrée du Vercors depuis la Chartreuse : après la transition Grande Sûre / Rocher de Lorzier, Larvoire (8 août 2026) arrive « facilement en face ouest de la Dent de Moirans » et y fait une « progression facile en dynamique le long de la pente », sous la TMA de Lyon (à ne pas dépasser 1300 m à cet endroit). La pente mène ensuite vers Montaud puis au thermique de service du Bec de l'Orient, avant la longue crête vers le sud. Un récit de 2010 (stage cross CHVD) décrit la même transition : arrivée « directement à la Dent de Moirans » depuis la Grande Sûre, puis thermique à Saint-Quentin. Le point chaud kk7 est sur cette pente nord-ouest, à 194 m du sommet IGN de la Dent de Moirans.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Cross StHil – Aiguebellette – Vercors (8 août 2026)",
+          "url": "https://www.chvd.org/2026/09/14/cross-sthil-aiguebellette-vercors/",
+          "publisher": "CHVD (Club Haut Vol Dauphinois)",
+          "type": "web",
+          "lang": "fr",
+          "notes": "face ouest de la Dent de Moirans sous la TMA de Lyon, progression en dynamique, puis Montaud et Bec de l'Orient."
+        },
+        {
+          "title": "Stage Cross CHVD – Prévol (14 mai 2010)",
+          "url": "https://www.chvd.org/2010/05/14/stage-cross-chvd-prevol/",
+          "publisher": "CHVD",
+          "type": "web",
+          "lang": "fr",
+          "notes": "dimanche : plaf à la Sûre 2600 m, transition « directement à la Dent de Moirans », points bas au pied de Montaud, thermique à Saint-Quentin."
+        }
+      ],
+      "quote": "Progression facile en dynamique le long de la pente.",
+      "evidence_distance_m": 194,
+      "reliability_note": "Le texte décrit de l'ascendance dynamique (brise d'ouest, vol d'été en tendance sud-ouest), pas un thermique ancré ; il ne donne pas l'heure ni de plafond. Le point chaud kk7 (exposition nord-ouest, après-midi) est cohérent mais l'attribution à la même pente repose sur la proximité (194 m)."
+    },
+    {
+      "ref": "vercors-nord/col-de-l-arc-face-ouest-allieres",
+      "new_id": "col-de-l-arc-face-ouest-allieres",
+      "name": "Crête des Crocs, faces ouest au niveau du sentier Gobert (sous le col de l'Arc)",
+      "trigger": "faces ouest sous la crête du Pic Saint-Michel, au niveau du sentier balcon Gobert et de la crête des Crocs ; pente de 28° exposée à l'ouest, chauffée l'après-midi",
+      "best_hours": "après-midi (le texte ne donne pas d'heure) ; kk7 : midi 89 %, soir 91 %, rien le matin, toute l'année",
+      "description": "Relance du cross classique Belvédère → crêtes de Lans-en-Vercors : à 1600-1700 m on transite sur la crête des Crocs « au niveau du sentier Gobert » et « la montée au niveau de la crête sommitale est en général très facile », ce qui permet de continuer sur les crêtes vers le Pic Saint-Michel (au nord) ou le Gerbier (au sud). Le point chaud kk7 se trouve à 270 m du tracé du sentier Gobert (OSM, tronçon vers 5.5996 / 45.0790) et à 510 m de la crête des Crocs (IGN), sur cette même face ouest. Rôle : relance finale avant la crête sommitale.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Idées de Cross : Belvédère vers les crêtes (Lans en l'Air)",
+          "url": "https://www.lansenlair.org/sites-de-vol/idees-de-cross/",
+          "publisher": "Club Lans en l'Air",
+          "type": "web",
+          "lang": "fr",
+          "notes": "1er cross classique : transiter sur la crête des Crocs au niveau du sentier Gobert, montée « très facile » jusqu'à la crête sommitale."
+        }
+      ],
+      "quote": "la montée au niveau de la crête sommitale est en général très facile",
+      "evidence_distance_m": 270,
+      "reliability_note": "Le sentier Gobert longe les faces ouest sur plusieurs kilomètres (OSM, de 45.05 à 45.08 N) : le texte ne dit pas à quel endroit exact de la crête des Crocs ; le rapprochement avec ce point chaud est une inférence de position. L'élément existant `crete-des-crocs-sentier-gobert` (position « approx » à 5.595 / 45.095, soit 1,7 km plus au nord) décrit le même texte : le recaler sur ce point ou fusionner."
+    },
+    {
+      "ref": "prealpes-grasse-castellane/le-puet-pente-sud",
+      "new_id": "le-puet-pente-sud",
+      "name": "Saint-Vallier – Le Puet (pente sud sous le décollage)",
+      "trigger": "pente sud sous le décollage du Puet (SE/S/SO, ~1004 m), descendant vers la chapelle Sainte-Luce ; soaring et thermiques par brise ou vent d'ouest à est",
+      "best_hours": "toute la journée d'après kk7 (matin 96 %, midi 96 %, soir 94 %, toute l'année) ; le texte suggère surtout l'hiver (« peut-être le meilleur site en hiver »)",
+      "description": "Site privé de l'école et du club local de Saint-Vallier-de-Thiey. La fiche collaborative ParaglidingEarth le dit « idéal pour le soaring, thermiques pas trop forts, cross et cross à plat », vol possible par vent d'est, ouest, sud et un peu de nord ; la fiche FFVL 5027 confirme l'orientation sud et le vol « de vent d'ouest à est selon la brise ». Le point chaud kk7, à 175 m au sud du décollage, correspond donc aux thermiques de service et au soaring de la pente sud, sans doute renforcés par la dynamique de la brise vue la probabilité (96 %) à toute heure.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "ParaglidingEarth : le Puet (site 11629)",
+          "url": "http://www.paraglidingearth.com/?site=11629",
+          "publisher": "ParaglidingEarth",
+          "type": "web",
+          "lang": "fr",
+          "notes": "description en anglais : « Ideal for soaring, thermals not too strong, XC an flat XC. Maybe the new better site during winter, it's possible to fly with East, West, south and little north »."
+        },
+        {
+          "title": "FFVL fiche 5027, Le Puet (Saint-Vallier-de-Thiey)",
+          "url": "https://federation.ffvl.fr/sites_pratique/voir/5027",
+          "publisher": "FFVL",
+          "type": "web",
+          "lang": "fr",
+          "notes": "orienté sud, vol de vent d'ouest à est selon la brise, gradient en sortie par tendance ouest (la fiche ne parle pas de thermique ; lue dans ffvl_sites_alpes.json, le serveur renvoie 403 à curl)."
+        }
+      ],
+      "quote": "Ideal for soaring, thermals not too strong, XC an flat XC.",
+      "evidence_distance_m": 175,
+      "reliability_note": "Seule source qui parle de thermique : une fiche collaborative courte, sans heure ni déclencheur précis ; le point chaud mêle probablement thermique et soaring de brise. Le texte vaut pour le site, pas pour une position à moins de 175 m."
+    },
+    {
+      "ref": "prealpes-nice-var/monte-grosso-pente-sud",
+      "new_id": "monte-grosso-pente-sud",
+      "name": "Sospel – Monte Grosso (premier thermique sous le décollage)",
+      "trigger": "pente sud sous le décollage de Monte Grosso (S/SE, 1205-1250 m), en bordure du parc du Mercantour ; premier thermique du matin avant de partir vers l'Authion",
+      "best_hours": "vers 11h-11h30 sur une journée à cumulus (arrivée au déco vers 11h, 27 mai 2015) ; kk7 : matin 96 %, midi 96 %, soir 87 %",
+      "description": "Déclencheur du matin pour les cross de Sospel : le 27 mai 2015, après être monté au déco vers 11h, Salvi décrit « le premier thermique magnifique », régulier, à +3,5 m/s, qui l'emmène « sans peine » à l'Authion alors que le site lui avait déjà fait payer un vent de cul. À l'inverse, le 14 juillet 2015 ses trois compagnons « se font enfoncer à l'étage du bas » et lui doit « s'employer et faire preuve de patience » pour atteindre le Mangiabo : le thermique du bas est sensible à la brise et à la saison. Le point chaud kk7 est à environ 430-470 m au sud du décollage, sur la même pente sud.",
+      "confidence": "medium",
+      "sources": [
+        {
+          "title": "Sospel – Levens – Menton – Rochetta A/R (27 mai 2015)",
+          "url": "https://myniceflights.com/2015/05/27/sospel-levens-rochetta/",
+          "publisher": "myniceflights.com (P. Salvi)",
+          "type": "web",
+          "lang": "fr",
+          "notes": "arrivée au déco vers 11h, « le premier thermique est magnifique… +3.5 », puis l'Authion."
+        },
+        {
+          "title": "Sospel – Colmiane – Roquebrune pendant la X-Alps (14 juillet 2015)",
+          "url": "https://myniceflights.com/2015/07/14/sospel-colmiane-roquebrune-pendant-la-xalps/",
+          "publisher": "myniceflights.com (P. Salvi)",
+          "type": "web",
+          "lang": "fr",
+          "notes": "montée au Grosso, trois compagnons enfoncés « à l'étage du bas », Mangiabo atteint avec patience."
+        },
+        {
+          "title": "Sospel Vol Libre, sites de vol",
+          "url": "http://www.sospelvollibre.com/site/index.php",
+          "publisher": "Sospel Vol Libre",
+          "type": "web",
+          "lang": "fr",
+          "notes": "Monte Grosso : orientation S, SE, brise souvent forte, décollage court ; « les jours de purs thermiques peuvent être puissants dans les pompes de service »."
+        }
+      ],
+      "quote": "Le premier thermique est magnifique, je m'attendais à me faire détruire comme la dernière fois que j'ai décollé du Grosso.",
+      "evidence_distance_m": 471,
+      "reliability_note": "Le récit parle du thermique « après le décollage » sans le localiser plus finement que la pente du Grosso ; le rapprochement avec le point chaud (≈ 470 m au sud du décollage) est une inférence. Le même site est difficile certains jours (brise, vent de cul)."
+    }
+  ],
+  "not_found": [
+    {
+      "ref": "saint-andre-verdon/kk7-43.8442-6.2687",
+      "searched": "Le Pavillon, Montdenier, Font Rouit, Venascle ; cache + web (ADLA, mnf, PGE)",
+      "note": "Point chaud à 1,1 km au sud du décollage de Montdenier, sur une pente basse ; les textes décrivent le Serre du Montdenier à la crête (élément existant), aucun ne nomme cette pente."
+    },
+    {
+      "ref": "prealpes-grasse-castellane/kk7-43.7446-6.7188",
+      "searched": "Tête de Cornet, Cornet de Clars, Barre Claousse, Clars ; cache (ADLA, mnf, pi)",
+      "note": "Aucune occurrence. Le récit Fabre 2005 cite Valderoure (thermique vers 2400 m) mais à ~5 km."
+    },
+    {
+      "ref": "saint-andre-verdon/kk7-43.9740-6.4050",
+      "searched": "Clavoune, Saint-Lions, Mouchon, Clumanc, Aup ; cache ADLA",
+      "note": "Mouchon et Aup sont décrits (plein à 3400 m) mais à 2 à 5 km ; aucun texte ne nomme Clavoune ni Saint-Lions."
+    },
+    {
+      "ref": "prealpes-grasse-castellane/kk7-43.8454-6.8228",
+      "searched": "Pinpinier, Clot des Ribes, Le Claou, Plan d'Ayane ; cache",
+      "note": "Aucune occurrence ; terrain presque plat, seulement une heure (midi). Les récits Bleine → Fourneuby citent le bois brûlé (élément existant) ailleurs."
+    },
+    {
+      "ref": "prealpes-grasse-castellane/kk7-43.7384-6.6687",
+      "searched": "Lachens, Col du Lachens ; cache ADLA/pi/FFVL",
+      "note": "Le point chaud est à 1,2 km de l'élément existant `lachens-pente-sud-est` ; aucun texte ne les distingue."
+    },
+    {
+      "ref": "prealpes-grasse-castellane/kk7-43.7684-7.0525",
+      "searched": "Adrech de Pouis, Nougueiret, Pra de Paoulo ; cache",
+      "note": "Aucune occurrence."
+    },
+    {
+      "ref": "prealpes-nice-var/kk7-43.7865-7.0975",
+      "searched": "Colle de Menon ; cache",
+      "note": "Aucune occurrence."
+    },
+    {
+      "ref": "prealpes-nice-var/kk7-43.8865-7.1634",
+      "searched": "Col de Mantel, Brusquet, Mont Vial, Gilette ; cache ADLA/mnf",
+      "note": "Les récits Mont Vial (Salvi 2012, mnf 2013-2016) vont vers le nord ou la traversée du Var ; aucun ne nomme le col de Mantel."
+    },
+    {
+      "ref": "prealpes-grasse-castellane/kk7-43.7453-7.0161",
+      "searched": "Puy de Tourrettes, Courmes ; cache ADLA/mnf",
+      "note": "Le Puy de Tourrettes n'est cité que comme planée (« ça bipote tout le long » entre Courmes et le Puy, mnf 2016) ou décollage de repli (Dijols 2006), sans thermique ancré ; sommet IGN à 1,07 km."
+    },
+    {
+      "ref": "prealpes-nice-var/kk7-43.8150-7.4601",
+      "searched": "Siricocca, Mont Ours, Razet ; guide Roquebrune (myniceflights 2021)",
+      "note": "Le guide ne cite la pointe de Siriccoca que comme étape (Siricocca > Mont Ours > Sospel) et dit qu'on arrive au Razet « depuis la pointe de Siriccoca (qui ne monte pas très facilement) » : relais possible mais décrit comme difficile, sans heure ni déclencheur. Insuffisant pour medium."
+    },
+    {
+      "ref": "prealpes-nice-var/kk7-43.8088-7.4298",
+      "searched": "Cime de Baudon ; guide Roquebrune 2021",
+      "note": "Citée seulement comme étape à ajouter au nord du bocal « en finesse de Gorbio et de Saint-Agnès », sans mention d'ascendance."
+    },
+    {
+      "ref": "prealpes-nice-var/kk7-43.9090-7.4278",
+      "searched": "Pointe Calvièra, Culfren ; cache",
+      "note": "Aucune occurrence."
+    },
+    {
+      "ref": "prealpes-nice-var/kk7-43.8107-7.5092",
+      "searched": "Orméa, Col du Berceau, Plan de Lion ; guide Roquebrune 2021 et récit Rqb_SanStef_22022014",
+      "note": "Le Berceau est décrit comme un endroit où « ça ne monte pas beaucoup » (guide) et « pas moyen de percer les 850 m pendant quarante minutes au sud du col du Berceau » (récit) : plutôt un point bas. Rien sur l'Orméa."
+    },
+    {
+      "ref": "prealpes-nice-var/kk7-43.7879-7.4223",
+      "searched": "Cabanelles, Pas des Cabanelles, Gariglian ; cache + web",
+      "note": "Seulement le décollage sauvage du Pas des Cabanelles (forum 06) et une mention de la peur d'être au plafond tôt (mnf 2016), sans description d'ascendance."
+    },
+    {
+      "ref": "prealpes-nice-var/kk7-43.9174-7.5555",
+      "searched": "Roche Fourquin, Mont Tron, Cremo ; cache",
+      "note": "Aucune occurrence de Roche Fourquin (Crémo cité ailleurs, à plus de 700 m)."
+    },
+    {
+      "ref": "prealpes-nice-var/kk7-43.8986-7.4628",
+      "searched": "Col du Pérus, Mergil, Agaisen ; cache + PGE",
+      "note": "L'Agaisen (« The Lift ») est à 1,3 km ; aucun texte pour le Pérus."
+    },
+    {
+      "ref": "prealpes-nice-var/kk7-43.7986-7.5191",
+      "searched": "Monte Carpano, Castellar, Berceau ; guide Roquebrune 2021",
+      "note": "Le guide décrit Castellar (butte) et « thermique de la Taupe » sans coordonnées ; impossible de les relier à ce point chaud italien-frontière (2 km à l'est du village)."
+    },
+    {
+      "ref": "vercors-est-sud/kk7-44.8680-5.2065",
+      "searched": "Col de Comberoufle, Pas de Bouchère ; cache + WebSearch + Bing",
+      "note": "Aucun texte de pilote."
+    },
+    {
+      "ref": "vercors-est-sud/kk7-44.8352-5.2388",
+      "searched": "Bec Pointu, Col des Teulières ; cache + WebSearch + Bing",
+      "note": "Uniquement des topos de randonnée."
+    },
+    {
+      "ref": "vercors-est-sud/kk7-44.8176-5.2882",
+      "searched": "Col de Marignac, Pas du Merle ; cache + web",
+      "note": "Aucun texte de pilote."
+    },
+    {
+      "ref": "vercors-est-sud/kk7-44.9225-5.1866",
+      "searched": "Col de Tourniol, Pierre Chauve, Léoncel ; cache (Tichodromes, infos-parapente, FFVL)",
+      "note": "Textes sur Léoncel (plouf du matin, thermique l'après-midi) mais à 2,2 km ; rien sur le col de Tourniol."
+    },
+    {
+      "ref": "vercors-est-sud/kk7-44.8252-5.4629",
+      "searched": "Tête du Faisan, Pas des Econdus ; cache VLD Col de Rousset, web",
+      "note": "Aucun texte de pilote ; la page VLD du col de Rousset parle du But Sapiau (élément existant), pas du Faisan."
+    },
+    {
+      "ref": "vercors-est-sud/kk7-44.9177-5.5591",
+      "searched": "Col des Deux, Le Chomeil ; cache",
+      "note": "Aucune occurrence."
+    },
+    {
+      "ref": "vercors-est-sud/kk7-44.8264-5.4403",
+      "searched": "Pas des Écondus ; cache, WebSearch, Bing",
+      "note": "Uniquement des topos de randonnée."
+    },
+    {
+      "ref": "grenoble-cuvette/kk7-45.0694-5.7884",
+      "searched": "Les Charettes, Mont Sec, Les Corniers ; cache CHVD (Mont Sec = col de la Madeleine, Belledonne, autre lieu)",
+      "note": "Aucun texte sur ce relief de Vizille."
+    },
+    {
+      "ref": "grenoble-cuvette/kk7-45.0917-5.8138",
+      "searched": "Le Chenevier, Chachatier, Pléney ; cache CHVD",
+      "note": "Aucune occurrence."
+    },
+    {
+      "ref": "vercors-nord/kk7-45.1351-5.4005",
+      "searched": "Bellonière, Montchardon, Alevoux ; cache CHVD, Vercors Envol",
+      "note": "Aucune occurrence pour Bellonière."
+    },
+    {
+      "ref": "vercors-nord/kk7-45.0493-5.6326",
+      "searched": "Le Pieu, Les Glandières, Les Gitoux ; cache",
+      "note": "Aucune occurrence."
+    },
+    {
+      "ref": "vercors-nord/kk7-45.0631-5.7404",
+      "searched": "Combahurat, Le Piallon, La Balme ; cache",
+      "note": "Aucune occurrence."
+    },
+    {
+      "ref": "vercors-nord/kk7-45.0039-5.5388",
+      "searched": "Pas de la Balme, Château-Bernard, Playnet ; CHVD 2006 (Survol de la Meije, Petite excursion)",
+      "note": "CHVD : « au niveau des tours du Playnet à 1550 m il y a enfin un thermique, un vrai, étroit mais actif », puis il tourne « devant le pas de la Balme » : mais le pas (IGN 5.5476 / 44.9960) est à 1,1 km du point chaud ; le thermique du Playnet est déjà l'élément `playnet-chateau-bernard-faces-est`."
+    },
+    {
+      "ref": "grenoble-cuvette/kk7-45.2826-5.5738",
+      "searched": "Petit Montaud (FFVL 5092), Montaud ; cache CHVD",
+      "note": "La fiche FFVL 5092 est vide ; les récits CHVD sur Montaud parlent du décollage haut (1280 m). Le même récit que pour la Dent de Moirans (soaring le long de la pente) concerne peut-être aussi ce point chaud, sans le nommer."
+    },
+    {
+      "ref": "vercors-est-sud/kk7-45.0323-5.4599",
+      "searched": "La Vierge du Vercors, Pas de Saint-Martin ; Lans en l'Air (Saint-Martin, idées de cross), FFVL 1514, CHVD",
+      "note": "La Vierge est décrite comme passage turbulent, rouleaux de brise et « extrêmement contré » vers le nord, pas comme ascendance ; « aérologie généreuse de 13h à 17h » vaut pour le décollage."
+    },
+    {
+      "ref": "saint-andre-verdon/col-du-sauvage-pente-sud-ouest",
+      "searched": "Séoune, Tournon, Col du Sauvage ; ADLA (Guillard 2006, Jacqueline 2011, Berchet 2006)",
+      "note": "Guillard quitte la crête pour « trouver un nouveau thermique pour rejoindre la montagne de Tournon » (entre Séoune et Tournon, où est le point chaud), mais sans localisation à 700 m ; reste low."
+    },
+    {
+      "ref": "prealpes-grasse-castellane/la-grangasse-pente-sud",
+      "searched": "La Grangasse, Escragnolles, Valderoure ; ADLA, mnf",
+      "note": "Aucune occurrence."
+    },
+    {
+      "ref": "prealpes-grasse-castellane/vallon-de-clare-pente-sud",
+      "searched": "Vallon de Clare, Courmettes ; ADLA Briois 2009, Dijols 2006",
+      "note": "Le thermique « dans une combe des barres de Courmettes » (Briois) est à plus de 1,3 km, aucun lien établi."
+    },
+    {
+      "ref": "prealpes-grasse-castellane/greolieres-pentes-arrosans",
+      "searched": "Arrosans, Miroirs, rond-point ; ADLA « Les vols de distance », OSM",
+      "note": "Le texte place les thermiques « du fond de vallée au niveau du rond-point » : deux ronds-points sur la D2211 (6.9684 / 43.7942 à 830 m du point chaud, et 6.9419 / 43.7966 à 2,3 km), on ne sait pas lequel ; les « miroirs » du texte sont au-dessus, vers Jérusalem. Inférence trop faible."
+    },
+    {
+      "ref": "prealpes-nice-var/beoulet-pente-sud",
+      "searched": "Le Béoulet, Culfren, Baisse de Linière ; cache mnf/ADLA",
+      "note": "Aucune occurrence."
+    },
+    {
+      "ref": "prealpes-nice-var/tete-dalpe-pente-sud-est",
+      "searched": "Tête d'Alpe, Crémo, Pas Sausson ; cache",
+      "note": "Aucune occurrence (Tête de l'Alpe citée seulement comme objectif lointain, mnf 2013)."
+    },
+    {
+      "ref": "prealpes-nice-var/peille-pente-sud-est-bocal",
+      "searched": "Alcatraz, Lai Barrai, ferrata de Peille ; mnf 2013, récit Rqb_SanStef",
+      "note": "Le récit mnf 2013 trouve « de bons déclenchements » vers la via ferrata de Peille, mais sa position n'est pas résolue (rien dans OSM / IGN) et Lai Barrai est à 1,25 km."
+    },
+    {
+      "ref": "prealpes-nice-var/la-cime-gattieres-pente-sud-est",
+      "searched": "La Cime, Les Cials, Gattières, Bonson ; cache + web",
+      "note": "Gattières n'est cité que comme demi-tour (Armant, Luc26) ; rien de précis."
+    },
+    {
+      "ref": "prealpes-nice-var/mont-macaron-zone-calcaire",
+      "searched": "Mont Macaron ; mnf 2015-01-20 et 2015-03-06",
+      "note": "Un seul récit (« yes ça bipe » sur la zone calcaire), zone non localisée plus finement ; thermique exceptionnel : reste low."
+    },
+    {
+      "ref": "grenoble-cuvette/neron-pied-face-sud-est-saint-martin-le-vinoux",
+      "searched": "Néron, couloir Godefroy, Saint-Martin-le-Vinoux ; CHVD",
+      "note": "Les textes décrivent le sud-est du Néron comme turbulent (sous le vent de la brise de Voreppe) et le sommet comme thermique organisé ; rien sur le pied de la face."
+    },
+    {
+      "ref": "grenoble-cuvette/quaix-sonnarie-aiguille-de-quaix-sud-est",
+      "searched": "Aiguille de Quaix, Sonnarie, Pinéa, Écoutoux ; CHVD",
+      "note": "« Les thermiques sont très toniques » sur la crête sud de la Pinéa (existant) ; Quaix est cité seulement comme lieu de survol calme."
+    },
+    {
+      "ref": "vercors-nord/peuil-claix-pentes-est",
+      "searched": "Le Peuil, Grange du Mure, Malhivert ; CHVD (topo, récits 2024), Vercors Envol",
+      "note": "Décollage « bien alimenté face » mais aucun thermique décrit."
+    },
+    {
+      "ref": "vercors-nord/alevoux-rocher-pentes-nord-ouest",
+      "searched": "Alevoux, Saint-Pierre-de-Chérennes ; Vercors Envol, FFVL 1038, CHVD",
+      "note": "Vercors Envol : excellent départ de cross par N à NO, dénivelé 450 m ; aucun thermique décrit sous le décollage."
+    },
+    {
+      "ref": "vercors-nord/ruzand-cascade-falaises-nord-ouest",
+      "searched": "Ruzand, cascade ; Vercors Envol, FFVL 1038",
+      "note": "Seulement le danger sous le vent de la cascade par tendance nord."
+    },
+    {
+      "ref": "vercors-nord/ffvl2227-autrans-la-plaine-thermique-fevrier",
+      "searched": "La Plaine (Autrans) ; FFVL 2227",
+      "note": "La fiche dit seulement « possible thermique fin février vent d'ouest » : hypothèse unique, reste low."
+    },
+    {
+      "ref": "vercors-est-sud/pilier-nord-serpaton-extraction",
+      "searched": "Pilier nord du Serpaton ; Barbules, parapentiste.info Serpaton, FFVL 1233-1235",
+      "note": "Le cross classique démarre au pilier nord mais aucun texte ne dit qu'on y trouve de l'ascendance."
+    },
+    {
+      "ref": "vercors-est-sud/toulau-tete-de-la-dame-faces-sud-ouest",
+      "searched": "Tête de la Dame, Roc de Toulau ; Vercors Envol (Col de la Bataille), Tichodromes, Bing",
+      "note": "« Bon départ de cross sur le sud du Vercors, déco souvent trop alimenté après 10h30 » (Col de la Bataille) : pas de thermique décrit à ce point chaud."
+    },
+    {
+      "ref": "vercors-est-sud/pas-de-la-sausse-leoncel",
+      "searched": "Pas de la Sausse, Léoncel ; infos-parapente, Tichodromes",
+      "note": "Léoncel : « plouf du matin, thermique l'après-midi » pour le décollage ; rien pour le pas de la Sausse (1,8 km)."
+    },
+    {
+      "ref": "vercors-est-sud/font-d-urle-faces-sud-gagere",
+      "searched": "Font d'Urle, Gagère, Serre de Montué ; Vercors Envol",
+      "note": "« Un peu de convection sur les falaises de Bouvante » (Serre de Montué), trop vague et trop loin."
+    },
+    {
+      "ref": "vercors-est-sud/but-saint-genix-vassieux-pente-sud",
+      "searched": "But Saint-Genix, Col de la Chau ; cache",
+      "note": "Aucune occurrence."
+    },
+    {
+      "ref": "vercors-est-sud/quinquambaye-faces-est-grand-veymont",
+      "searched": "Quinquambaye, Petit Veymont, Grand Veymont ; Tichodromes ticho204",
+      "note": "Le Grand Veymont est un plafond décrit (élément existant) ; rien sur la côte de Quinquambaye."
+    },
+    {
+      "ref": "vercors-est-sud/montagne-de-la-pale-nord-serpaton",
+      "searched": "Montagne de la Pale, Cléton ; Barbules, pi Serpaton",
+      "note": "Aucune occurrence de la Pale."
+    },
+    {
+      "ref": "vercors-est-sud/limouches-cirque-peyrus-pente-sud-ouest",
+      "searched": "Limouches, Peyrus, Pas du Touet ; FFVL 728, infos-parapente, Vercors Envol",
+      "note": "« Plouf du matin, thermique l'après-midi » pour le décollage ; rien sur ce point chaud à 1,1 km."
+    }
+  ],
+  "blocked": [
+    {
+      "url": "https://html.duckduckgo.com/html/",
+      "why": "bot-check (CAPTCHA de type « choisir les canards »), non franchi"
+    },
+    {
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/5027",
+      "why": "403 à curl ; fiches FFVL lues dans research_notes/Seconde passe 2026/sources/ffvl_sites_alpes.json"
+    },
+    {
+      "url": "https://www.bing.com/search (via curl)",
+      "why": "renvoie des résultats génériques « parapente » sans tenir compte de la requête ; le moteur interne du navigateur n'a donné que des topos de randonnée pour Pas des Écondus / Bec Pointu"
+    }
+  ],
+  "summary": "Candidats examinés : 61 passés au crible du cache (toponymes IGN proches, mots-clés), dont une trentaine avec lecture détaillée des récits (CHVD, Au gré de l'air, myniceflights, Vercors Envol, Lans en l'Air, Tichodromes, FFVL, PGE) et quelques recherches web.\nPropositions : 6 en medium (Pensier / Lattes, Montagne de Thiey, Dent de Moirans, crête des Crocs / sentier Gobert, Le Puet, Monte Grosso) ; 3 sont des relocalisations d'éléments déjà décrits (Lattes, Crocs) ou des upgrades de low (Puet, Monte Grosso, Col de l'Arc ouest).\nSources majeures : récits ADLA (Jacqueline 2012, Armant 2006, Gourdon–Mézel 2014), CHVD (8 août 2026, stage 2010), myniceflights (mai et juillet 2015), Lans en l'Air (idées de cross), PGE 11629.\nLe web généraliste (WebSearch, Bing) n'a rien donné pour les points kk7 sans nom de pilote (Vercors sud-ouest, Vercors est, Nice-Var) : la plupart n'ont aucun texte exploitable.\nPoints à relire par un humain : Thiey (distance 872 m) et Dent de Moirans (dynamique, pas thermique ancré)."
+}

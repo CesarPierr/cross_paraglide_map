@@ -1,6 +1,10 @@
 # Rapport d'agent ab6f5e5eae0093edf
 
-**Mission** : Passe thermiques et relances · bauges_bourget_combe, chartreuse_gresivaudan_belledonne
+**Mission** : Thermals pass Chartreuse-Bauges
+
+**Date** : 2026-10-07
+
+**Consigne (début)** : Lis entièrement /Users/pierre/paraglide/.cache/research/BRIEF_THERMIQUES.md et applique-le à tes deux lots : `chartreuse_gresivaudan_belledonne` (massifs chartreuse, gresivaudan, belledonne) et `bauge
 
 ---
 

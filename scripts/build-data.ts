@@ -725,7 +725,7 @@ const VISITS = join(ROOT, 'research_notes', 'Seconde passe 2026', 'visites');
 const WIND_DEG: Record<string, number> = { N: 0, NE: 45, E: 90, SE: 135, S: 180, SO: 225, SW: 225, O: 270, W: 270, NO: 315, NW: 315 };
 
 /** Places of the gazetteer named in a text, in reading order; the longest name wins where names overlap. */
-export function placesIn(text: string, known: Record<string, { lon: number; lat: number; label: string; kind?: string }>): AtlasTourPlace[] {
+export function placesIn(text: string, known: Record<string, { lon: number; lat: number; label: string; kind?: string; massifs?: string[] }>): AtlasTourPlace[] {
   const names = Object.keys(known).sort((a, b) => b.length - a.length);
   if (!names.length) return [];
   const esc = (x: string) => x.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
@@ -737,7 +737,7 @@ export function placesIn(text: string, known: Record<string, { lon: number; lat:
     const key = `${k.lon},${k.lat}`;
     if (seen.has(key)) continue;
     seen.add(key);
-    out.push({ name: m[0], label: k.label, lon: k.lon, lat: k.lat, ...(k.kind ? { kind: k.kind } : {}) });
+    out.push({ name: m[0], label: k.label, lon: k.lon, lat: k.lat, ...(k.kind ? { kind: k.kind } : {}), ...(k.massifs?.length ? { massifs: k.massifs } : {}) });
   }
   return out;
 }
@@ -748,7 +748,7 @@ function readTours(rawToFeature: Map<string, string>, massifs: AtlasMassif[], fe
   const byId = new Map(Object.values(features).flatMap((list) => list.map((f) => [f.properties.id, f] as const)));
   // Places named by the visits, located once by scripts/research/visit_places.py (massif → name → place).
   const lieuxFile = join(VISITS, '_lieux.json');
-  const lieux = existsSync(lieuxFile) ? (JSON.parse(readFileSync(lieuxFile, 'utf8')) as Record<string, Record<string, { lon: number; lat: number; label: string; kind?: string }>>) : {};
+  const lieux = existsSync(lieuxFile) ? (JSON.parse(readFileSync(lieuxFile, 'utf8')) as Record<string, Record<string, { lon: number; lat: number; label: string; kind?: string; massifs?: string[] }>>) : {};
   for (const file of readdirSync(VISITS).filter((f) => f.endsWith('.json') && !f.startsWith('_'))) {
     const raw = JSON.parse(readFileSync(join(VISITS, file), 'utf8')) as {
       massif: string;

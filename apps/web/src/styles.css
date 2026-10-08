@@ -3346,6 +3346,15 @@ div.summary {
 .tour-place.on i {
   animation: place-pulse 1s ease-out 3;
 }
+/* A massif or a region: its name over its dashed outline, no pin. */
+.tour-place.zone span {
+  background: rgba(28, 25, 23, 0.72);
+  border: 1px dashed rgba(251, 191, 36, 0.8);
+  color: #fde68a;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
 .tour-place.on span {
   background: #fbbf24;
   color: #1c1917;

@@ -1,0 +1,3832 @@
+{
+ "alpes-francaises": {
+  "Aix": {
+   "kind": "lieu-dit habité",
+   "label": "Aix-en-Provence",
+   "lat": 43.53874,
+   "lon": 5.41537,
+   "source": "revue"
+  },
+  "Alpes-de-Haute-Provence": null,
+  "Arve": {
+   "kind": "cours d'eau",
+   "label": "l'Arve (vallée de l'Arve, Cluses)",
+   "lat": 46.03724,
+   "lon": 6.58226,
+   "source": "revue"
+  },
+  "Aspres": {
+   "kind": "lieu-dit habité",
+   "label": "Aspres-sur-Buëch",
+   "lat": 44.52389,
+   "lon": 5.75238,
+   "source": "revue"
+  },
+  "Blanche": {
+   "kind": "sommet",
+   "label": "Montagne de la Blanche",
+   "lat": 44.34179,
+   "lon": 6.44426,
+   "source": "revue"
+  },
+  "Bouches-du-Rhône": null,
+  "Chamonix": {
+   "kind": "lieu-dit habité",
+   "label": "Chamonix-Mont-Blanc",
+   "lat": 45.92158,
+   "lon": 6.86508,
+   "source": "revue"
+  },
+  "Chartreuse-Bauges": {
+   "kind": "massif",
+   "label": "Chartreuse-Bauges",
+   "lat": 45.51,
+   "lon": 5.97,
+   "massifs": [
+    "chartreuse",
+    "bauges"
+   ],
+   "source": "revue"
+  },
+  "Contamines": {
+   "kind": "lieu-dit habité",
+   "label": "Les Contamines-Montjoie",
+   "lat": 45.82463,
+   "lon": 6.72673,
+   "source": "revue"
+  },
+  "Dauphiné": null,
+  "Die": {
+   "kind": "lieu-dit habité",
+   "label": "Die",
+   "lat": 44.75821,
+   "lon": 5.36857,
+   "source": "revue"
+  },
+  "Dévoluy-Champsaur": {
+   "kind": "massif",
+   "label": "Dévoluy-Champsaur",
+   "lat": 44.695,
+   "lon": 6.045,
+   "massifs": [
+    "devoluy",
+    "champsaur-valgaudemar"
+   ],
+   "source": "revue"
+  },
+  "Gourdon": {
+   "kind": "lieu-dit habité",
+   "label": "Gourdon (Alpes-Maritimes)",
+   "lat": 43.72126,
+   "lon": 6.97726,
+   "source": "revue"
+  },
+  "Hautes-Alpes": null,
+  "Isère": null,
+  "Léman": {
+   "kind": "lac",
+   "label": "Lac Léman",
+   "lat": 46.39419,
+   "lon": 6.53344,
+   "source": "revue"
+  },
+  "Monges": {
+   "kind": "sommet",
+   "label": "les Monges",
+   "lat": 44.26285,
+   "lon": 6.19411,
+   "source": "revue"
+  },
+  "Néron": {
+   "kind": "sommet",
+   "label": "le Néron (au-dessus de Saint-Égrève)",
+   "lat": 45.22945,
+   "lon": 5.70752,
+   "source": "revue"
+  },
+  "Obiou": {
+   "kind": "sommet",
+   "label": "Grande Tête de l'Obiou",
+   "lat": 44.77512,
+   "lon": 5.83906,
+   "source": "revue"
+  },
+  "Provence": null,
+  "Saint-Hilaire": {
+   "kind": "site de vol libre",
+   "label": "Saint-Hilaire (décollage sud, plateau des Petites Roches)",
+   "lat": 45.3103,
+   "lon": 5.89085,
+   "source": "revue"
+  },
+  "Serre-Ponçon": {
+   "kind": "lac",
+   "label": "Lac de Serre-Ponçon",
+   "lat": 44.50304,
+   "lon": 6.33525,
+   "source": "revue"
+  },
+  "Vercors-Diois": {
+   "kind": "massif",
+   "label": "Vercors-Diois",
+   "lat": 44.91667,
+   "lon": 5.46333,
+   "massifs": [
+    "vercors-nord",
+    "vercors-est-sud",
+    "diois"
+   ],
+   "source": "revue"
+  },
+  "Verdon": {
+   "kind": "lieu-dit habité",
+   "label": "La Palud-sur-Verdon (gorges du Verdon)",
+   "lat": 43.78019,
+   "lon": 6.33942,
+   "source": "revue"
+  },
+  "lac Léman": {
+   "kind": "lac",
+   "label": "Lac Léman",
+   "lat": 46.39419,
+   "lon": 6.53344,
+   "source": "revue"
+  },
+  "vallée de la Drôme": {
+   "kind": "cours d'eau",
+   "label": "la Drôme",
+   "lat": 44.66705,
+   "lon": 5.29896,
+   "source": "revue"
+  }
+ },
+ "aravis": {
+  "Annecy aux Aravis": null,
+  "Autour": null,
+  "Autour du Bargy": null,
+  "Charvin": {
+   "kind": "sommet",
+   "label": "Mont Charvin",
+   "lat": 45.80237,
+   "lon": 6.42011,
+   "source": "revue"
+  },
+  "Colombière": null,
+  "Grand-Bornand": {
+   "kind": "administratif",
+   "label": "Mairie du Grand-Bornand",
+   "lat": 45.94207,
+   "lon": 6.42681,
+   "source": "revue"
+  },
+  "Lachat": {
+   "kind": "site de vol libre",
+   "label": "Mont Lachat (décollage du Grand-Bornand)",
+   "lat": 45.95824,
+   "lon": 6.47669,
+   "source": "revue"
+  },
+  "Lachat au Grand-Bornand": {
+   "kind": "site de vol libre",
+   "label": "Mont Lachat (décollage du Grand-Bornand)",
+   "lat": 45.95824,
+   "lon": 6.47669,
+   "source": "revue"
+  },
+  "Marais": null,
+  "Planfait aux Aravis": null,
+  "Près de Serraval": null,
+  "Saint-Pierre-en-Faucigny au Grand-Bornand": null,
+  "Sortir des Aravis": null,
+  "Vierge du Châtelard": {
+   "kind": "croix",
+   "label": "Vierge du Châtelard (croix)",
+   "lat": 45.87388,
+   "lon": 6.4802,
+   "source": "revue"
+  },
+  "XC Mag": null,
+  "col du Chinaillon": {
+   "kind": "lieu-dit habité",
+   "label": "le Chinaillon",
+   "lat": 45.97354,
+   "lon": 6.45524,
+   "source": "revue"
+  }
+ },
+ "arve-faucigny": {
+  "Annecy": {
+   "kind": "mairie",
+   "label": "Mairie d'Annecy",
+   "lat": 45.89926,
+   "lon": 6.12944,
+   "source": "revue"
+  },
+  "Aoste": null,
+  "Arve d'Annemasse": null,
+  "Barmerousse": {
+   "kind": "pic",
+   "label": "Pointe de Barmerousse",
+   "lat": 45.95264,
+   "lon": 6.6937,
+   "source": "revue"
+  },
+  "C'est": null,
+  "Chamonix": {
+   "kind": "mairie",
+   "label": "Mairie de Chamonix-Mont-Blanc",
+   "lat": 45.92371,
+   "lon": 6.86932,
+   "source": "revue"
+  },
+  "Chamonix aux Aravis": null,
+  "Chamonix-Annecy": null,
+  "Cou": null,
+  "Fiz": {
+   "kind": "sommet",
+   "label": "Rochers des Fiz",
+   "lat": 45.97183,
+   "lon": 6.77284,
+   "source": "revue"
+  },
+  "Lachat": {
+   "kind": "lieu-dit habité",
+   "label": "Lachat d'en haut",
+   "lat": 45.95563,
+   "lon": 6.66818,
+   "source": "revue"
+  },
+  "Marlioz": {
+   "kind": "quartier, zone d'habitation",
+   "label": "Marlioz (Passy)",
+   "lat": 45.91688,
+   "lon": 6.70097,
+   "source": "revue"
+  },
+  "Platé": {
+   "kind": "pic",
+   "label": "Pointe de Platé",
+   "lat": 45.96555,
+   "lon": 6.73128,
+   "source": "revue"
+  },
+  "Requin": {
+   "kind": "refuge",
+   "label": "Refuge du Requin",
+   "lat": 45.88466,
+   "lon": 6.92967,
+   "source": "revue"
+  },
+  "Réserve de Passy": null,
+  "Saix": {
+   "kind": "crête",
+   "label": "Arête des Saix",
+   "lat": 45.96202,
+   "lon": 6.5839,
+   "source": "revue"
+  },
+  "Sixt-Passy": null,
+  "Spotair": null,
+  "Sur Cou": {
+   "kind": "sommet",
+   "label": "Sur Cou",
+   "lat": 46.02002,
+   "lon": 6.34634,
+   "source": "revue"
+  },
+  "Vierge": null,
+  "chaîne des Aravis": {
+   "kind": "massif",
+   "label": "chaîne des Aravis",
+   "lat": 45.89,
+   "lon": 6.45,
+   "massifs": [
+    "aravis"
+   ],
+   "source": "revue"
+  },
+  "vallée de l'Arve": {
+   "kind": "massif",
+   "label": "vallée de l'Arve",
+   "lat": 46.03,
+   "lon": 6.5,
+   "massifs": [
+    "arve-faucigny"
+   ],
+   "source": "revue"
+  }
+ },
+ "arves-thabor-galibier": {
+  "Balme": {
+   "kind": "site de vol libre",
+   "label": "la Balme (Saint-Sorlin-d'Arves)",
+   "lat": 45.2094,
+   "lon": 6.2107,
+   "source": "revue"
+  },
+  "Croix de Fer": {
+   "kind": "col",
+   "label": "Col de la Croix de Fer",
+   "lat": 45.22748,
+   "lon": 6.20352,
+   "source": "revue"
+  },
+  "altiport de Valloire-Bonnenuit": {
+   "kind": "altiport",
+   "label": "Altisurface Valloire-Bonnenuit",
+   "lat": 45.11956,
+   "lon": 6.41932,
+   "source": "revue"
+  }
+ },
+ "baronnies": {
+  "Beaumont": {
+   "kind": "lieu-dit habité",
+   "label": "Beaumont-du-Ventoux",
+   "lat": 44.18357,
+   "lon": 5.1656,
+   "source": "revue"
+  },
+  "Laragne": {
+   "kind": "administratif",
+   "label": "Laragne-Montéglin",
+   "lat": 44.31399,
+   "lon": 5.82786,
+   "source": "revue"
+  },
+  "Monieux": {
+   "kind": "lieu-dit habité",
+   "label": "Monieux",
+   "lat": 44.06775,
+   "lon": 5.36056,
+   "source": "revue"
+  },
+  "Méouge": {
+   "kind": "cours d'eau",
+   "label": "la Méouge",
+   "lat": 44.23676,
+   "lon": 5.65918,
+   "source": "revue"
+  },
+  "Ouvèze": {
+   "kind": "cours d'eau",
+   "label": "l'Ouvèze",
+   "lat": 44.24817,
+   "lon": 5.23128,
+   "source": "revue"
+  },
+  "Ribiers": {
+   "kind": "lieu-dit habité",
+   "label": "Ribiers",
+   "lat": 44.22824,
+   "lon": 5.8569,
+   "source": "revue"
+  },
+  "Rissas": {
+   "kind": "site de vol libre",
+   "label": "le Rissas (site de vol libre)",
+   "lat": 44.19581,
+   "lon": 5.16767,
+   "source": "revue"
+  },
+  "Saint-André": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-André-les-Alpes",
+   "lat": 43.96583,
+   "lon": 6.50798,
+   "source": "revue"
+  },
+  "Saint-André-les-Alpes": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-André-les-Alpes",
+   "lat": 43.96583,
+   "lon": 6.50798,
+   "source": "revue"
+  },
+  "Sault": {
+   "kind": "lieu-dit habité",
+   "label": "Sault",
+   "lat": 44.09547,
+   "lon": 5.41359,
+   "source": "revue"
+  },
+  "Seigneur": {
+   "kind": "site de vol libre",
+   "label": "le Seigneur (site de vol libre)",
+   "lat": 44.0877,
+   "lon": 5.363,
+   "source": "revue"
+  },
+  "Sisteron": {
+   "kind": "lieu-dit habité",
+   "label": "Sisteron",
+   "lat": 44.19765,
+   "lon": 5.93914,
+   "source": "revue"
+  },
+  "Soubeyrand": {
+   "kind": "site de vol libre",
+   "label": "Sainte-Jalle - Soubeyrand (site de vol libre)",
+   "lat": 44.37556,
+   "lon": 5.3332,
+   "source": "revue"
+  },
+  "col d'Ey": {
+   "kind": "site de vol libre",
+   "label": "Col d'Ey (site de vol libre)",
+   "lat": 44.31092,
+   "lon": 5.28191,
+   "source": "revue"
+  }
+ },
+ "bauges": {
+  "Angle Est du Revard": {
+   "kind": "sommet",
+   "label": "la Tour de l'Angle Est",
+   "lat": 45.68975,
+   "lon": 5.99137,
+   "source": "revue"
+  },
+  "Annecy": {
+   "kind": "mairie",
+   "label": "Mairie d'Annecy",
+   "lat": 45.89926,
+   "lon": 6.12944,
+   "source": "revue"
+  },
+  "Bange": {
+   "kind": "sommet",
+   "label": "Montagne de Bange",
+   "lat": 45.73557,
+   "lon": 6.06491,
+   "source": "revue"
+  },
+  "Brâme-Farine": {
+   "kind": "sommet",
+   "label": "Brame-Farine",
+   "lat": 45.39121,
+   "lon": 6.03796,
+   "source": "revue"
+  },
+  "Buffaz": {
+   "kind": "sommet",
+   "label": "Mont de la Buffaz",
+   "lat": 45.59306,
+   "lon": 6.08101,
+   "source": "revue"
+  },
+  "Chambéry": {
+   "kind": "mairie",
+   "label": "Mairie de Chambéry",
+   "lat": 45.56645,
+   "lon": 5.92066,
+   "source": "revue"
+  },
+  "Charvet": null,
+  "Cisaillements": null,
+  "Colombier": {
+   "kind": "sommet",
+   "label": "Mont Colombier",
+   "lat": 45.6444,
+   "lon": 6.11951,
+   "source": "revue"
+  },
+  "Colombier d'Aillon": {
+   "kind": "sommet",
+   "label": "Mont Colombier",
+   "lat": 45.6444,
+   "lon": 6.11951,
+   "source": "revue"
+  },
+  "Et du Semnoz": null,
+  "Frêne": null,
+  "Granier": {
+   "kind": "sommet",
+   "label": "Mont Granier",
+   "lat": 45.46441,
+   "lon": 5.92525,
+   "source": "revue"
+  },
+  "Margériaz": {
+   "kind": "sommet",
+   "label": "Mont Margeriaz",
+   "lat": 45.63509,
+   "lon": 6.0341,
+   "source": "revue"
+  },
+  "Montgelas": {
+   "kind": "sommet",
+   "label": "Sommet de Montgelas",
+   "lat": 45.53796,
+   "lon": 6.02617,
+   "source": "revue"
+  },
+  "Pelat": {
+   "kind": "sommet",
+   "label": "Mont Pelat",
+   "lat": 45.59413,
+   "lon": 6.11376,
+   "source": "revue"
+  },
+  "Règle": null,
+  "S'y": null,
+  "Saint-Hilaire": null,
+  "Sauge": {
+   "kind": "sommet",
+   "label": "Pic de la Sauge",
+   "lat": 45.55131,
+   "lon": 6.05877,
+   "source": "revue"
+  },
+  "Sortir des Bauges": null,
+  "Vérel": {
+   "kind": "site de vol libre",
+   "label": "Vérel-Pragondran",
+   "lat": 45.62673,
+   "lon": 5.94619,
+   "source": "revue"
+  },
+  "col de la Cochette": {
+   "kind": "col",
+   "label": "Col de la Cochette (Arith)",
+   "lat": 45.71519,
+   "lon": 6.03224,
+   "source": "revue"
+  }
+ },
+ "beaufortain": {
+  "Annecy": null,
+  "Arrêtés": null,
+  "Biolley": {
+   "kind": "sommet",
+   "label": "Roc du Biolley",
+   "lat": 45.69393,
+   "lon": 6.662,
+   "source": "revue"
+  },
+  "C'est": null,
+  "Dents de Lanfon": {
+   "kind": "rochers",
+   "label": "Dents de Lanfon",
+   "lat": 45.86136,
+   "lon": 6.24065,
+   "source": "revue"
+  },
+  "Doron": {
+   "kind": "cours d'eau",
+   "label": "le Doron (Beaufort)",
+   "lat": 45.70994,
+   "lon": 6.52431,
+   "source": "revue"
+  },
+  "Doron de Beaufort": {
+   "kind": "cours d'eau",
+   "label": "le Doron (Beaufort)",
+   "lat": 45.70994,
+   "lon": 6.52431,
+   "source": "revue"
+  },
+  "Lai": {
+   "kind": "refuge",
+   "label": "Refuge du Plan de la Lai",
+   "lat": 45.6933,
+   "lon": 6.66907,
+   "source": "revue"
+  },
+  "Légette": {
+   "kind": "col",
+   "label": "Col de la Legette",
+   "lat": 45.7594,
+   "lon": 6.56087,
+   "source": "revue"
+  },
+  "Marcôt": {
+   "kind": "parc de loisirs",
+   "label": "Base de loisirs de Marcot",
+   "lat": 45.72091,
+   "lon": 6.54433,
+   "source": "revue"
+  },
+  "Nord-Ouest": null,
+  "ParaglidingEarth": null,
+  "Passé": null,
+  "Pendant": null,
+  "Pierra Menta aux Aravis": null,
+  "Pointe de Combe Neuve": {
+   "kind": "sommet",
+   "label": "Pointe de la Combe Neuve",
+   "lat": 45.65145,
+   "lon": 6.68858,
+   "source": "revue"
+  },
+  "Probablement": null,
+  "Roc des Bœufs": null,
+  "Terrasse": {
+   "kind": "sommet",
+   "label": "Pointe de la Terrasse",
+   "lat": 45.67016,
+   "lon": 6.72474,
+   "source": "revue"
+  },
+  "Tournette": {
+   "kind": "sommet",
+   "label": "la Tournette (lac d'Annecy)",
+   "lat": 45.82717,
+   "lon": 6.28615,
+   "source": "revue"
+  },
+  "Tôt": null,
+  "Valais": null,
+  "Volatiles": null,
+  "col de la Forclaz": {
+   "kind": "col",
+   "label": "Col de la Forclaz (Queige)",
+   "lat": 45.72577,
+   "lon": 6.44288,
+   "source": "revue"
+  },
+  "lac d'Annecy": {
+   "kind": "lac",
+   "label": "Lac d'Annecy",
+   "lat": 45.84616,
+   "lon": 6.18618,
+   "source": "revue"
+  },
+  "plateau des Saisies": {
+   "kind": "lieu-dit habité",
+   "label": "les Saisies",
+   "lat": 45.75615,
+   "lon": 6.5407,
+   "source": "revue"
+  },
+  "vallée du Doron de Beaufort": {
+   "kind": "massif",
+   "label": "vallée du Doron de Beaufort",
+   "lat": 45.7194,
+   "lon": 6.5733,
+   "massifs": [
+    "beaufortain"
+   ],
+   "source": "revue"
+  },
+  "Âne": {
+   "kind": "col",
+   "label": "Pas de l'Âne",
+   "lat": 45.68019,
+   "lon": 6.49216,
+   "source": "revue"
+  }
+ },
+ "belledonne": {
+  "Aiguillette": {
+   "kind": "site de vol libre",
+   "label": "l'Aiguille (décollage de Chamrousse)",
+   "lat": 45.13015,
+   "lon": 5.88255,
+   "source": "revue"
+  },
+  "Bréda": {
+   "kind": "cours d'eau",
+   "label": "le Bréda (cours d'eau)",
+   "lat": 45.36225,
+   "lon": 6.07901,
+   "source": "revue"
+  },
+  "Collet": {
+   "kind": "lieu-dit habité",
+   "label": "Collet d'Allevard",
+   "lat": 45.39402,
+   "lon": 6.11015,
+   "source": "revue"
+  },
+  "Granier": {
+   "kind": "sommet",
+   "label": "Mont Granier",
+   "lat": 45.46441,
+   "lon": 5.92525,
+   "source": "revue"
+  },
+  "Grenoble": {
+   "kind": "mairie",
+   "label": "Mairie de Grenoble",
+   "lat": 45.18644,
+   "lon": 5.73645,
+   "source": "revue"
+  },
+  "Jas du Lièvre": {
+   "kind": "sommet",
+   "label": "le Jas des Lièvres",
+   "lat": 45.23222,
+   "lon": 6.01671,
+   "source": "revue"
+  },
+  "Plagnes": {
+   "kind": "site de vol libre",
+   "label": "les Plagnes (site de vol libre)",
+   "lat": 45.3855,
+   "lon": 6.148,
+   "source": "revue"
+  }
+ },
+ "bornes": {
+  "Annecy": {
+   "kind": "administratif",
+   "label": "Mairie d'Annecy",
+   "lat": 45.89926,
+   "lon": 6.12944,
+   "source": "revue"
+  },
+  "Balme": {
+   "kind": "administratif",
+   "label": "La Balme-de-Thuy (mairie)",
+   "lat": 45.90113,
+   "lon": 6.27666,
+   "source": "revue"
+  },
+  "Balme-de-Thuy": null,
+  "C'est": null,
+  "Chamois Volants": null,
+  "Dents de Lanfon au Parmelan": null,
+  "Grand-Bornand": {
+   "kind": "administratif",
+   "label": "Mairie du Grand-Bornand",
+   "lat": 45.94207,
+   "lon": 6.42681,
+   "source": "revue"
+  },
+  "La Balme-de-Thuy": {
+   "kind": "administratif",
+   "label": "La Balme-de-Thuy (mairie)",
+   "lat": 45.90113,
+   "lon": 6.27666,
+   "source": "revue"
+  },
+  "Marais": null,
+  "Sortir des Bornes": null,
+  "Turpin": null,
+  "Tête à Turpin": {
+   "kind": "sommet",
+   "label": "Tête à Turpin",
+   "lat": 45.90704,
+   "lon": 6.26273,
+   "source": "revue"
+  },
+  "XC Mag": null,
+  "plateau de Verel": {
+   "kind": "lieu-dit habité",
+   "label": "Vérel",
+   "lat": 45.83802,
+   "lon": 6.23012,
+   "source": "revue"
+  },
+  "Étale au Parmelan": null
+ },
+ "bourget-chambery": {
+  "Albertville": {
+   "kind": "mairie",
+   "label": "Mairie d'Albertville",
+   "lat": 45.67556,
+   "lon": 6.39261,
+   "source": "revue"
+  },
+  "Bange": {
+   "kind": "sommet",
+   "label": "Montagne de Bange",
+   "lat": 45.73557,
+   "lon": 6.06491,
+   "source": "revue"
+  },
+  "C'est": null,
+  "Chambéry": {
+   "kind": "mairie",
+   "label": "Mairie de Chambéry",
+   "lat": 45.56645,
+   "lon": 5.92066,
+   "source": "revue"
+  },
+  "Chambéry-Aix": null,
+  "Granier": {
+   "kind": "sommet",
+   "label": "Mont Granier",
+   "lat": 45.46441,
+   "lon": 5.92525,
+   "source": "revue"
+  },
+  "Marais": {
+   "kind": "marais",
+   "label": "les Marais (Nances)",
+   "lat": 45.57749,
+   "lon": 5.80242,
+   "source": "revue"
+  },
+  "Marches": {
+   "kind": "lieu-dit habité",
+   "label": "Les Marches",
+   "lat": 45.50274,
+   "lon": 5.9998,
+   "source": "revue"
+  },
+  "Mont Grelle": {
+   "kind": "sommet",
+   "label": "Mont Grelle",
+   "lat": 45.51658,
+   "lon": 5.81291,
+   "source": "revue"
+  },
+  "Mont Grêle": {
+   "kind": "sommet",
+   "label": "Mont Grelle",
+   "lat": 45.51658,
+   "lon": 5.81291,
+   "source": "revue"
+  },
+  "Saint-Hilaire": null,
+  "Vient": null,
+  "Vérel": {
+   "kind": "site de vol libre",
+   "label": "Vérel-Pragondran",
+   "lat": 45.62673,
+   "lon": 5.94619,
+   "source": "revue"
+  },
+  "Vérel au Revard": null,
+  "Vérel au Semnoz": null,
+  "Z'éléphants Volants": null,
+  "Épine": {
+   "kind": "sommet",
+   "label": "Montagne de l'Épine",
+   "lat": 45.56859,
+   "lon": 5.82102,
+   "source": "revue"
+  }
+ },
+ "brianconnais-guisane": {
+  "Argentière": {
+   "kind": "mairie",
+   "label": "L'Argentière-la-Bessée (mairie)",
+   "lat": 44.79297,
+   "lon": 6.55922,
+   "source": "revue"
+  },
+  "C'est": null,
+  "CATEX du Rocher Blanc": null,
+  "Croix d'Aquila": {
+   "kind": "croix",
+   "label": "la Croix d'Aquila",
+   "lat": 44.88366,
+   "lon": 6.56106,
+   "source": "revue"
+  },
+  "Croix de Bretagne": {
+   "kind": "ouvrage militaire",
+   "label": "Fort de la Croix de Bretagne",
+   "lat": 44.87365,
+   "lon": 6.6544,
+   "source": "revue"
+  },
+  "Delta": null,
+  "Durance-Clarée": null,
+  "Granon au Lautaret": null,
+  "Italie": null,
+  "Janus": {
+   "kind": "construction",
+   "label": "le Janus",
+   "lat": 44.91096,
+   "lon": 6.71056,
+   "source": "revue"
+  },
+  "Lombarde": null,
+  "Monêtier": {
+   "kind": "mairie",
+   "label": "Le Monêtier-les-Bains (mairie)",
+   "lat": 44.97646,
+   "lon": 6.50805,
+   "source": "revue"
+  },
+  "Nore": {
+   "kind": "site de vol libre",
+   "label": "Croix de la Nore",
+   "lat": 44.9015,
+   "lon": 6.5847,
+   "source": "revue"
+  },
+  "Pendant": null,
+  "Peyrolles": {
+   "kind": "crête",
+   "label": "Crête de Peyrolle",
+   "lat": 44.94813,
+   "lon": 6.63472,
+   "source": "revue"
+  },
+  "Quitter Briançon": null,
+  "Sibouit": {
+   "kind": "crête",
+   "label": "Crête de Cibouit",
+   "lat": 44.94706,
+   "lon": 6.48711,
+   "source": "revue"
+  },
+  "plateau des Tronchets": {
+   "kind": "lieu-dit habité",
+   "label": "les Tronchets",
+   "lat": 44.94731,
+   "lon": 6.59581,
+   "source": "revue"
+  }
+ },
+ "buech-laragne-chabre": {
+  "Beaumont ouest": {
+   "kind": "site de vol libre",
+   "label": "Rocher de Beaumont - Ouest",
+   "lat": 44.38405,
+   "lon": 5.68485,
+   "source": "revue"
+  },
+  "Bure": {
+   "kind": "pic",
+   "label": "Pic de Bure",
+   "lat": 44.62657,
+   "lon": 5.9351,
+   "source": "revue"
+  },
+  "Chevalet": {
+   "kind": "aérodrome",
+   "label": "Aérodrome d'Aspres-sur-Buëch (Chevalet)",
+   "lat": 44.51682,
+   "lon": 5.73762,
+   "source": "revue"
+  },
+  "Melves": {
+   "kind": "mairie",
+   "label": "Mairie de Melve",
+   "lat": 44.35465,
+   "lon": 5.98995,
+   "source": "revue"
+  },
+  "Méouge": {
+   "kind": "gorge",
+   "label": "Gorges de la Méouge",
+   "lat": 44.27651,
+   "lon": 5.78434,
+   "source": "revue"
+  },
+  "Plane": {
+   "kind": "crête",
+   "label": "la Plane (Melve)",
+   "lat": 44.36891,
+   "lon": 5.98595,
+   "source": "revue"
+  },
+  "montagne de Saint-Genis": {
+   "kind": "sommet",
+   "label": "Montagne de l'Aup ou de Saint-Genis",
+   "lat": 44.39383,
+   "lon": 5.83765,
+   "source": "revue"
+  }
+ },
+ "chablais": {
+  "Annecy": {
+   "kind": "mairie",
+   "label": "Mairie d'Annecy",
+   "lat": 45.89926,
+   "lon": 6.12944,
+   "source": "revue"
+  },
+  "Ardoisières": null,
+  "Aulps": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-Jean-d'Aulps",
+   "lat": 46.23293,
+   "lon": 6.65035,
+   "source": "revue"
+  },
+  "C'est": null,
+  "Fornet": {
+   "kind": "col",
+   "label": "Col du Fornet",
+   "lat": 46.16559,
+   "lon": 6.78962,
+   "source": "revue"
+  },
+  "Grands Vans": {
+   "kind": "site de vol libre",
+   "label": "les Grands Vans",
+   "lat": 46.01918,
+   "lon": 6.70942,
+   "source": "revue"
+  },
+  "La Chapelle": {
+   "kind": "lieu-dit habité",
+   "label": "La Chapelle-d'Abondance (village)",
+   "lat": 46.29476,
+   "lon": 6.78534,
+   "source": "revue"
+  },
+  "Mont-Blanc": {
+   "kind": "sommet",
+   "label": "Mont Blanc",
+   "lat": 45.83267,
+   "lon": 6.86463,
+   "source": "revue"
+  },
+  "Morzine-Avoriaz": null,
+  "MétéoSuisse": null,
+  "Pas du Taureau": {
+   "kind": "col",
+   "label": "Pas au Taureau (col)",
+   "lat": 46.12476,
+   "lon": 6.81044,
+   "source": "revue"
+  },
+  "Petit-Lac": null,
+  "Pic de Marcelly": {
+   "kind": "pic",
+   "label": "Pointe de Marcelly",
+   "lat": 46.12836,
+   "lon": 6.57536,
+   "source": "revue"
+  },
+  "Putheys": {
+   "kind": "quartier, zone d'habitation",
+   "label": "les Puteys (atterrissage, Morzine)",
+   "lat": 46.17812,
+   "lon": 6.7117,
+   "source": "revue"
+  },
+  "Revard": {
+   "kind": "sommet",
+   "label": "Mont Revard",
+   "lat": 45.66649,
+   "lon": 5.97784,
+   "source": "revue"
+  },
+  "Rocher de Leschaux": {
+   "kind": "rochers",
+   "label": "Rochers de Leschaux (Brizon)",
+   "lat": 46.01887,
+   "lon": 6.42701,
+   "source": "revue"
+  },
+  "Saix": {
+   "kind": "site de vol libre",
+   "label": "les Saix (site, Samoëns)",
+   "lat": 46.05385,
+   "lon": 6.69763,
+   "source": "revue"
+  },
+  "Semnoz": {
+   "kind": "sommet",
+   "label": "Montagne du Semnoz",
+   "lat": 45.84236,
+   "lon": 6.11874,
+   "source": "revue"
+  },
+  "Seuls": null,
+  "Sixt": {
+   "kind": "lieu-dit habité",
+   "label": "Sixt-Fer-à-Cheval (village)",
+   "lat": 46.04861,
+   "lon": 6.77228,
+   "source": "revue"
+  },
+  "Sixt-Passy": null,
+  "Tournette": {
+   "kind": "sommet",
+   "label": "la Tournette (sommet, Les Clefs)",
+   "lat": 45.82717,
+   "lon": 6.28615,
+   "source": "revue"
+  },
+  "Valais": null,
+  "Zore": {
+   "kind": "lieu-dit habité",
+   "label": "les Maisons de Zore (Morzine)",
+   "lat": 46.19045,
+   "lon": 6.7256,
+   "source": "revue"
+  },
+  "vallée d'Abondance": {
+   "kind": "lieu-dit habité",
+   "label": "Abondance",
+   "lat": 46.27644,
+   "lon": 6.72194,
+   "source": "revue"
+  },
+  "vallée d'Aulps": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-Jean-d'Aulps",
+   "lat": 46.23293,
+   "lon": 6.65035,
+   "source": "revue"
+  },
+  "Émosson": {
+   "kind": "barrage",
+   "label": "Barrage d'Émosson",
+   "lat": 46.06687,
+   "lon": 6.93168,
+   "source": "revue"
+  },
+  "étranglement des Portes": {
+   "kind": "lieu-dit habité",
+   "label": "les Portes (Abondance)",
+   "lat": 46.28301,
+   "lon": 6.70496,
+   "source": "revue"
+  }
+ },
+ "champsaur-valgaudemar": {
+  "Ailleurs": null,
+  "C'est": null,
+  "Coirot": {
+   "kind": "sommet",
+   "label": "le Coiro",
+   "lat": 44.93314,
+   "lon": 5.91326,
+   "source": "revue"
+  },
+  "Colombier": {
+   "kind": "sommet",
+   "label": "le Colombier",
+   "lat": 44.8742,
+   "lon": 5.94055,
+   "source": "revue"
+  },
+  "Colombier au Coiro": null,
+  "Cuchon de Molines": {
+   "kind": "sommet",
+   "label": "le Cuchon",
+   "lat": 44.72794,
+   "lon": 6.11468,
+   "source": "revue"
+  },
+  "Grenoble": {
+   "kind": "administratif",
+   "label": "Grenoble",
+   "lat": 45.18548,
+   "lon": 5.72246,
+   "source": "revue"
+  },
+  "Hautes-Alpes": null,
+  "Parc des Écrins": null,
+  "Ratz de Bec": {
+   "kind": "sommet",
+   "label": "Sommet du Raz de Bec",
+   "lat": 44.66456,
+   "lon": 5.98926,
+   "source": "revue"
+  },
+  "Saint-Bonnet": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-Bonnet-en-Champsaur",
+   "lat": 44.68013,
+   "lon": 6.08061,
+   "source": "revue"
+  },
+  "Seul": null,
+  "Taillefer": {
+   "kind": "sommet",
+   "label": "le Taillefer",
+   "lat": 45.03943,
+   "lon": 5.92428,
+   "source": "revue"
+  },
+  "Valgaudemar": {
+   "kind": "lieu-dit habité",
+   "label": "La Chapelle-en-Valgaudémar",
+   "lat": 44.81771,
+   "lon": 6.19309,
+   "source": "revue"
+  },
+  "Vient": null,
+  "Vizille": {
+   "kind": "lieu-dit habité",
+   "label": "Vizille",
+   "lat": 45.07322,
+   "lon": 5.77519,
+   "source": "revue"
+  },
+  "vallée de Champoléon": {
+   "kind": "administratif",
+   "label": "Champoléon",
+   "lat": 44.72012,
+   "lon": 6.26018,
+   "source": "revue"
+  }
+ },
+ "chartreuse": {
+  "Bastille": {
+   "kind": "ouvrage militaire",
+   "label": "Fort de la Bastille",
+   "lat": 45.1983,
+   "lon": 5.72536,
+   "source": "revue"
+  },
+  "Col de Baure": {
+   "kind": "col",
+   "label": "Col du Baure",
+   "lat": 45.28751,
+   "lon": 5.83746,
+   "source": "revue"
+  },
+  "Coq": {
+   "kind": "col",
+   "label": "Col du Coq",
+   "lat": 45.3024,
+   "lon": 5.83668,
+   "source": "revue"
+  },
+  "Guiers Mort": {
+   "kind": "gorge",
+   "label": "Gorges du Guiers Mort",
+   "lat": 45.36859,
+   "lon": 5.74911,
+   "source": "revue"
+  },
+  "Manival": {
+   "kind": "gorge",
+   "label": "Gorge du Manival",
+   "lat": 45.29075,
+   "lon": 5.82966,
+   "source": "revue"
+  },
+  "Saint-Genis": {
+   "kind": "sommet",
+   "label": "Sommet de Saint-Genis",
+   "lat": 45.35047,
+   "lon": 6.01174,
+   "source": "revue"
+  },
+  "Vence": {
+   "kind": "col",
+   "label": "Col de Vence",
+   "lat": 45.23556,
+   "lon": 5.75089,
+   "source": "revue"
+  }
+ },
+ "combe-de-savoie": {
+  "Arc": null,
+  "Arclusaz au Grand Arc": null,
+  "BioDiv'Sports": null,
+  "Chambéry": {
+   "kind": "mairie",
+   "label": "Mairie de Chambéry",
+   "lat": 45.56645,
+   "lon": 5.92066,
+   "source": "revue"
+  },
+  "Chamoux": {
+   "kind": "mairie",
+   "label": "Mairie de Chamoux-sur-Gelon",
+   "lat": 45.53382,
+   "lon": 6.21407,
+   "source": "revue"
+  },
+  "Charvet": null,
+  "Grande Lanche": {
+   "kind": "sommet",
+   "label": "la Grande Lanche (sommet)",
+   "lat": 45.60307,
+   "lon": 6.39017,
+   "source": "revue"
+  },
+  "Lauzière": null,
+  "Saint-Hilaire": null,
+  "atterrissage de Chamoux-sur-Gelon": {
+   "kind": "mairie",
+   "label": "Mairie de Chamoux-sur-Gelon (atterrissage au village)",
+   "lat": 45.53382,
+   "lon": 6.21407,
+   "source": "revue"
+  }
+ },
+ "devoluy": {
+  "Aspres": {
+   "kind": "lieu-dit habité",
+   "label": "Aspres-sur-Buëch",
+   "lat": 44.52389,
+   "lon": 5.75238,
+   "source": "revue"
+  },
+  "Aurouze": {
+   "kind": "vallée",
+   "label": "Combe d'Aurouze",
+   "lat": 44.61907,
+   "lon": 5.91455,
+   "source": "revue"
+  },
+  "Baumes": {
+   "kind": "crête",
+   "label": "Crête des Baumes",
+   "lat": 44.69084,
+   "lon": 5.91685,
+   "source": "revue"
+  },
+  "C'est": null,
+  "Chabre": {
+   "kind": "sommet",
+   "label": "Montagne de Chabre",
+   "lat": 44.30741,
+   "lon": 5.79596,
+   "source": "revue"
+  },
+  "Chamoux": {
+   "kind": "lieu-dit habité",
+   "label": "Chamoux-sur-Gelon",
+   "lat": 45.53352,
+   "lon": 6.21149,
+   "source": "revue"
+  },
+  "Faraud": {
+   "kind": "pic",
+   "label": "le Faraut",
+   "lat": 44.76747,
+   "lon": 5.95264,
+   "source": "revue"
+  },
+  "Glandasse": {
+   "kind": "montagne",
+   "label": "Montagne du Glandasse",
+   "lat": 44.765,
+   "lon": 5.46467,
+   "source": "revue"
+  },
+  "Noyer": {
+   "kind": "col",
+   "label": "Col du Noyer",
+   "lat": 44.69155,
+   "lon": 5.98571,
+   "source": "revue"
+  },
+  "Obiou": {
+   "kind": "sommet",
+   "label": "Grande Tête de l'Obiou",
+   "lat": 44.77512,
+   "lon": 5.83906,
+   "source": "revue"
+  },
+  "Rousset": {
+   "kind": "col",
+   "label": "Col de Rousset",
+   "lat": 44.83749,
+   "lon": 5.40181,
+   "source": "revue"
+  },
+  "Taillefer": {
+   "kind": "sommet",
+   "label": "le Taillefer",
+   "lat": 45.03943,
+   "lon": 5.92428,
+   "source": "revue"
+  },
+  "Tallard": {
+   "kind": "lieu-dit habité",
+   "label": "Tallard",
+   "lat": 44.46232,
+   "lon": 6.05118,
+   "source": "revue"
+  },
+  "Toussière": {
+   "kind": "sommet",
+   "label": "la Toussière",
+   "lat": 44.65552,
+   "lon": 5.65434,
+   "source": "revue"
+  },
+  "col de Rousset": {
+   "kind": "col",
+   "label": "Col de Rousset",
+   "lat": 44.83749,
+   "lon": 5.40181,
+   "source": "revue"
+  },
+  "plateau de Superdévoluy": {
+   "kind": "lieu-dit habité",
+   "label": "Superdévoluy",
+   "lat": 44.67834,
+   "lon": 5.92701,
+   "source": "revue"
+  },
+  "plateau du Bure": {
+   "kind": "pic",
+   "label": "Pic de Bure",
+   "lat": 44.62657,
+   "lon": 5.9351,
+   "source": "revue"
+  },
+  "été": null
+ },
+ "diois": {
+  "Châtillon": {
+   "kind": "lieu-dit habité",
+   "label": "Châtillon-en-Diois",
+   "lat": 44.69272,
+   "lon": 5.48105,
+   "source": "revue"
+  },
+  "Gap": {
+   "kind": "lieu-dit habité",
+   "label": "Gap",
+   "lat": 44.55437,
+   "lon": 6.07622,
+   "source": "revue"
+  },
+  "Grimone": {
+   "kind": "col",
+   "label": "Col de Grimone",
+   "lat": 44.69144,
+   "lon": 5.65399,
+   "source": "revue"
+  },
+  "Justin": {
+   "kind": "site de vol libre",
+   "label": "la Croix de Justin (site de vol libre)",
+   "lat": 44.74341,
+   "lon": 5.34975,
+   "source": "revue"
+  },
+  "Luc": {
+   "kind": "lieu-dit habité",
+   "label": "Luc-en-Diois",
+   "lat": 44.61508,
+   "lon": 5.45122,
+   "source": "revue"
+  },
+  "Menée": {
+   "kind": "col",
+   "label": "Col de Menée",
+   "lat": 44.75773,
+   "lon": 5.60365,
+   "source": "revue"
+  },
+  "Pic de Bure": {
+   "kind": "pic",
+   "label": "Pic de Bure",
+   "lat": 44.62657,
+   "lon": 5.9351,
+   "source": "revue"
+  },
+  "Rousset": {
+   "kind": "col",
+   "label": "Col de Rousset",
+   "lat": 44.83749,
+   "lon": 5.40181,
+   "source": "revue"
+  },
+  "Saillans": {
+   "kind": "lieu-dit habité",
+   "label": "Saillans",
+   "lat": 44.69463,
+   "lon": 5.19367,
+   "source": "revue"
+  },
+  "Saint-André": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-André-les-Alpes",
+   "lat": 43.96583,
+   "lon": 6.50798,
+   "source": "revue"
+  },
+  "Saint-Genis": null,
+  "tête de la Cluse": {
+   "kind": "sommet",
+   "label": "Tête de la Cluse",
+   "lat": 44.63076,
+   "lon": 5.89003,
+   "source": "revue"
+  },
+  "Échelette": {
+   "kind": "col",
+   "label": "Pas de l'Échelette",
+   "lat": 44.82802,
+   "lon": 5.42925,
+   "source": "revue"
+  }
+ },
+ "ecrins-vallouise-haute-durance": {
+  "Blanche": {
+   "kind": "sommet",
+   "label": "la Blanche (sommet)",
+   "lat": 44.85782,
+   "lon": 6.43332,
+   "source": "revue"
+  },
+  "Bouches-du-Rhône": null,
+  "Condamine": {
+   "kind": "sommet",
+   "label": "Cime de la Condamine",
+   "lat": 44.89233,
+   "lon": 6.51942,
+   "source": "revue"
+  },
+  "Croix d'Aquila": {
+   "kind": "croix",
+   "label": "la Croix d'Aquila",
+   "lat": 44.88366,
+   "lon": 6.56106,
+   "source": "revue"
+  },
+  "Durance": null,
+  "Entraigues": null,
+  "Hors": null,
+  "Lombarde": null,
+  "Lombarde du Guil": null,
+  "Peyrolles": {
+   "kind": "crête",
+   "label": "Crête de Peyrolle",
+   "lat": 44.94813,
+   "lon": 6.63472,
+   "source": "revue"
+  },
+  "Saint-Clément": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-Clément-sur-Durance",
+   "lat": 44.64699,
+   "lon": 6.57668,
+   "source": "revue"
+  },
+  "Saint-Michel": {
+   "kind": "baie",
+   "label": "baie Saint-Michel (lac de Serre-Ponçon)",
+   "lat": 44.52271,
+   "lon": 6.33165,
+   "source": "revue"
+  },
+  "Salcette": {
+   "kind": "croix",
+   "label": "la Croix de la Salcette",
+   "lat": 44.8439,
+   "lon": 6.55186,
+   "source": "revue"
+  },
+  "Seul": null,
+  "Têtes de Château Lebrun": {
+   "kind": "sommet",
+   "label": "Château Lebrun (sommet)",
+   "lat": 44.80209,
+   "lon": 6.52996,
+   "source": "revue"
+  },
+  "Têtes de L'Argentière": {
+   "kind": "sommet",
+   "label": "les Têtes (sommet)",
+   "lat": 44.79724,
+   "lon": 6.52883,
+   "source": "revue"
+  },
+  "atterrissage des Chamousses": {
+   "kind": "lieu-dit habité",
+   "label": "les Chamousses",
+   "lat": 44.63076,
+   "lon": 6.53983,
+   "source": "revue"
+  }
+ },
+ "gapencais-ceuse": {
+  "Briffe": null,
+  "Bure": {
+   "kind": "pic",
+   "label": "Pic de Bure",
+   "lat": 44.62657,
+   "lon": 5.9351,
+   "source": "revue"
+  },
+  "Bâtie-Neuve": {
+   "kind": "lieu-dit habité",
+   "label": "La Bâtie-Neuve",
+   "lat": 44.56656,
+   "lon": 6.20089,
+   "source": "revue"
+  },
+  "C'est": null,
+  "Celle du Buëch": null,
+  "Clape": {
+   "kind": "site de vol libre",
+   "label": "Tête de la Clape",
+   "lat": 44.5857,
+   "lon": 5.9443,
+   "source": "revue"
+  },
+  "Clot": {
+   "kind": "quartier, zone d'habitation",
+   "label": "le Clot de Charance",
+   "lat": 44.57833,
+   "lon": 6.06097,
+   "source": "revue"
+  },
+  "Correo": {
+   "kind": "lieu-dit habité",
+   "label": "Haute Corréo",
+   "lat": 44.56256,
+   "lon": 5.99677,
+   "source": "revue"
+  },
+  "Différen'ciel": null,
+  "Gap-Tallard": {
+   "kind": "aérodrome",
+   "label": "Aérodrome de Gap-Tallard",
+   "lat": 44.45583,
+   "lon": 6.03717,
+   "source": "revue"
+  },
+  "Gleize": {
+   "kind": "pic",
+   "label": "Pic de Gleize",
+   "lat": 44.63361,
+   "lon": 6.04397,
+   "source": "revue"
+  },
+  "Guizière au Pic de Bure": null,
+  "Luc": {
+   "kind": "lieu-dit habité",
+   "label": "Luc-en-Diois",
+   "lat": 44.61508,
+   "lon": 5.45122,
+   "source": "revue"
+  },
+  "Roche-des-Arnauds": {
+   "kind": "lieu-dit habité",
+   "label": "La Roche-des-Arnauds",
+   "lat": 44.56077,
+   "lon": 5.95786,
+   "source": "revue"
+  },
+  "Serre-Ponçon": {
+   "kind": "retenue-barrage",
+   "label": "Lac de Serre-Ponçon",
+   "lat": 44.50304,
+   "lon": 6.33525,
+   "source": "revue"
+  },
+  "Serres": {
+   "kind": "lieu-dit habité",
+   "label": "Serres",
+   "lat": 44.42374,
+   "lon": 5.71442,
+   "source": "revue"
+  },
+  "aérodrome de Gap-Tallard": {
+   "kind": "aérodrome",
+   "label": "Aérodrome de Gap-Tallard",
+   "lat": 44.45583,
+   "lon": 6.03717,
+   "source": "revue"
+  },
+  "massif de Bure": {
+   "kind": "pic",
+   "label": "Pic de Bure",
+   "lat": 44.62657,
+   "lon": 5.9351,
+   "source": "revue"
+  },
+  "plateau de Sigoyer": {
+   "kind": "administratif",
+   "label": "Sigoyer",
+   "lat": 44.47903,
+   "lon": 5.97724,
+   "source": "revue"
+  }
+ },
+ "grenoble-cuvette": {
+  "Au-delà": null,
+  "Ayes": {
+   "kind": "col",
+   "label": "Col des Ayes",
+   "lat": 45.3102,
+   "lon": 5.84228,
+   "source": "revue"
+  },
+  "Bastille": {
+   "kind": "ouvrage militaire",
+   "label": "Fort de la Bastille",
+   "lat": 45.1983,
+   "lon": 5.72536,
+   "source": "revue"
+  },
+  "Bièvre": null,
+  "Coq": {
+   "kind": "col",
+   "label": "Col du Coq",
+   "lat": 45.3024,
+   "lon": 5.83668,
+   "source": "revue"
+  },
+  "Drac": {
+   "kind": "cours d'eau",
+   "label": "le Drac (pont du Drac, Grenoble)",
+   "lat": 45.18902,
+   "lon": 5.70202,
+   "source": "revue"
+  },
+  "Rivalières": {
+   "kind": "lieu-dit habité",
+   "label": "les Rivalières (atterrissage, Voreppe)",
+   "lat": 45.27038,
+   "lon": 5.63889,
+   "source": "revue"
+  },
+  "Vence": {
+   "kind": "col",
+   "label": "Col de Vence",
+   "lat": 45.23556,
+   "lon": 5.75089,
+   "source": "revue"
+  }
+ },
+ "gresivaudan": {
+  "Ayes": {
+   "kind": "col",
+   "label": "Col des Ayes",
+   "lat": 45.3102,
+   "lon": 5.84228,
+   "source": "revue"
+  },
+  "Bastille": {
+   "kind": "ouvrage militaire",
+   "label": "Fort de la Bastille",
+   "lat": 45.1983,
+   "lon": 5.72536,
+   "source": "revue"
+  },
+  "Granier": {
+   "kind": "sommet",
+   "label": "Mont Granier",
+   "lat": 45.46441,
+   "lon": 5.92525,
+   "source": "revue"
+  },
+  "Isère": null,
+  "Saint-Genis": {
+   "kind": "sommet",
+   "label": "Sommet de Saint-Genis",
+   "lat": 45.35047,
+   "lon": 6.01174,
+   "source": "revue"
+  },
+  "Sainte-Marie-du-Mont": {
+   "kind": "administratif",
+   "label": "Sainte-Marie-du-Mont",
+   "lat": 45.4053,
+   "lon": 5.94657,
+   "source": "revue"
+  },
+  "Vence": {
+   "kind": "col",
+   "label": "Col de Vence",
+   "lat": 45.23556,
+   "lon": 5.75089,
+   "source": "revue"
+  },
+  "Versoud": {
+   "kind": "aérodrome",
+   "label": "Aérodrome de Grenoble-Le Versoud",
+   "lat": 45.2176,
+   "lon": 5.84853,
+   "source": "revue"
+  }
+ },
+ "haut-giffre": {
+  "Annemasse": {
+   "kind": "administratif, commune",
+   "label": "Annemasse",
+   "lat": 46.19116,
+   "lon": 6.24288,
+   "source": "revue"
+  },
+  "Aulps": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-Jean-d'Aulps",
+   "lat": 46.23293,
+   "lon": 6.65035,
+   "source": "revue"
+  },
+  "Boutigny": {
+   "kind": "grange, zone d'habitation",
+   "label": "Boutigny (hameau, Taninges)",
+   "lat": 46.15575,
+   "lon": 6.59406,
+   "source": "revue"
+  },
+  "C'est": null,
+  "Choucas": null,
+  "Dames": {
+   "kind": "lac",
+   "label": "Lac aux Dames (Samoëns)",
+   "lat": 46.07867,
+   "lon": 6.71349,
+   "source": "revue"
+  },
+  "Ferme": {
+   "kind": "lieu-dit habité",
+   "label": "la Ferme (atterrissage, Mieussy)",
+   "lat": 46.13128,
+   "lon": 6.52508,
+   "source": "revue"
+  },
+  "Fiz": {
+   "kind": "sommet",
+   "label": "Rochers des Fiz",
+   "lat": 45.97183,
+   "lon": 6.77284,
+   "source": "revue"
+  },
+  "Fornet": {
+   "kind": "col",
+   "label": "Col du Fornet",
+   "lat": 46.16559,
+   "lon": 6.78962,
+   "source": "revue"
+  },
+  "Mont Billiat": {
+   "kind": "sommet",
+   "label": "Mont Billiat (Vailly)",
+   "lat": 46.28804,
+   "lon": 6.58377,
+   "source": "revue"
+  },
+  "Mont-Blanc": {
+   "kind": "sommet",
+   "label": "Mont Blanc",
+   "lat": 45.83267,
+   "lon": 6.86463,
+   "source": "revue"
+  },
+  "Pas du Taureau": {
+   "kind": "col",
+   "label": "Pas au Taureau (col)",
+   "lat": 46.12476,
+   "lon": 6.81044,
+   "source": "revue"
+  },
+  "Rovagnes": {
+   "kind": "lieu-dit habité",
+   "label": "Rovagne (Mieussy)",
+   "lat": 46.16042,
+   "lon": 6.55071,
+   "source": "revue"
+  },
+  "Sixt": {
+   "kind": "lieu-dit habité",
+   "label": "Sixt-Fer-à-Cheval (village)",
+   "lat": 46.04861,
+   "lon": 6.77228,
+   "source": "revue"
+  },
+  "Sixt-Passy": null,
+  "Super Morzine au Criou": null,
+  "Tour Sallière": null,
+  "Vallon": {
+   "kind": "lieu-dit habité",
+   "label": "Vallon d'en bas (Samoëns)",
+   "lat": 46.07513,
+   "lon": 6.74136,
+   "source": "revue"
+  },
+  "ascendance": null,
+  "vallée d'Aulps": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-Jean-d'Aulps",
+   "lat": 46.23293,
+   "lon": 6.65035,
+   "source": "revue"
+  },
+  "vallée de Mieussy": {
+   "kind": "lieu-dit habité",
+   "label": "Mieussy",
+   "lat": 46.1359,
+   "lon": 6.5244,
+   "source": "revue"
+  },
+  "Émosson": {
+   "kind": "barrage",
+   "label": "Barrage d'Émosson",
+   "lat": 46.06687,
+   "lon": 6.93168,
+   "source": "revue"
+  }
+ },
+ "haut-verdon-allos": {
+  "Allier": null,
+  "Baisse": null,
+  "Bau": null,
+  "Blanche": {
+   "kind": "lieu-dit non habité",
+   "label": "la Blanche",
+   "lat": 44.29977,
+   "lon": 6.5151,
+   "source": "revue"
+  },
+  "Boules": {
+   "kind": "sommet",
+   "label": "Montagne de Boules",
+   "lat": 44.17353,
+   "lon": 6.50008,
+   "source": "revue"
+  },
+  "C'est": null,
+  "Chamatte de Thorame": {
+   "kind": "sommet",
+   "label": "Montagne de Chamatte",
+   "lat": 44.12542,
+   "lon": 6.53175,
+   "source": "revue"
+  },
+  "Chau": {
+   "kind": "crête",
+   "label": "Crête de la Chau",
+   "lat": 44.21097,
+   "lon": 6.46955,
+   "source": "revue"
+  },
+  "Estrop": {
+   "kind": "lieu-dit non habité",
+   "label": "l'Estrop",
+   "lat": 44.27319,
+   "lon": 6.51739,
+   "source": "revue"
+  },
+  "FlyingNomad": null,
+  "Grand Cordeil": {
+   "kind": "montagne",
+   "label": "Montagne de Cordeil",
+   "lat": 44.06956,
+   "lon": 6.54345,
+   "source": "revue"
+  },
+  "Maurel": {
+   "kind": "montagne",
+   "label": "Montagne de Maurel",
+   "lat": 44.02301,
+   "lon": 6.52414,
+   "source": "revue"
+  },
+  "Maurel au Tromas": null,
+  "Raccrocher le Cordeil": null,
+  "Saint-André": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-André-les-Alpes",
+   "lat": 43.96583,
+   "lon": 6.50798,
+   "source": "revue"
+  },
+  "Serres": {
+   "kind": "crête",
+   "label": "Crête des Serres",
+   "lat": 43.95967,
+   "lon": 6.56213,
+   "source": "revue"
+  },
+  "vallée de Thorame": {
+   "kind": "lieu-dit habité",
+   "label": "Thorame-Haute",
+   "lat": 44.09628,
+   "lon": 6.55496,
+   "source": "revue"
+  },
+  "vallée du Verdon": null
+ },
+ "haute-maurienne": {
+  "Angle": {
+   "kind": "site de vol libre",
+   "label": "Angle de Bellecôte (décollage)",
+   "lat": 45.25408,
+   "lon": 6.73574,
+   "source": "revue"
+  },
+  "Angle Bellecôte": {
+   "kind": "site de vol libre",
+   "label": "Angle de Bellecôte (décollage)",
+   "lat": 45.25408,
+   "lon": 6.73574,
+   "source": "revue"
+  },
+  "Arc": {
+   "kind": "pont",
+   "label": "Pont de l'Arc (Sollières)",
+   "lat": 45.26227,
+   "lon": 6.80796,
+   "source": "revue"
+  },
+  "Bonneval": {
+   "kind": "mairie",
+   "label": "Bonneval-sur-Arc (mairie)",
+   "lat": 45.37406,
+   "lon": 7.05293,
+   "source": "revue"
+  },
+  "Estive": {
+   "kind": "site de vol libre",
+   "label": "l'Estive (décollage, Villarodin-Bourget)",
+   "lat": 45.25133,
+   "lon": 6.66298,
+   "source": "revue"
+  },
+  "Lombarde": null,
+  "Punta Bagna": {
+   "kind": "sommet",
+   "label": "Punta Bagna (sommet)",
+   "lat": 45.14323,
+   "lon": 6.68009,
+   "source": "revue"
+  },
+  "Sollières-Sardières": {
+   "kind": "mairie",
+   "label": "Sollières-Sardières (mairie déléguée)",
+   "lat": 45.26377,
+   "lon": 6.80788,
+   "source": "revue"
+  },
+  "Turra": {
+   "kind": "ruines",
+   "label": "la Turra (ruines, falaises au-dessus d'Aussois)",
+   "lat": 45.25724,
+   "lon": 6.75982,
+   "source": "revue"
+  },
+  "Valfréjus": {
+   "kind": "lieu-dit habité",
+   "label": "Station de Valfréjus",
+   "lat": 45.17231,
+   "lon": 6.6538,
+   "source": "revue"
+  }
+ },
+ "lac-annecy": {
+  "Annecy": {
+   "kind": "administratif",
+   "label": "Mairie d'Annecy",
+   "lat": 45.89926,
+   "lon": 6.12944,
+   "source": "revue"
+  },
+  "Asters": null,
+  "Bange": null,
+  "Forclaz aux Dents de Lanfon": null,
+  "Pertuis": null,
+  "Revard": {
+   "kind": "sommet",
+   "label": "Mont Revard",
+   "lat": 45.66649,
+   "lon": 5.97784,
+   "source": "revue"
+  },
+  "Roc": {
+   "kind": "rochers",
+   "label": "Roc des Bœufs",
+   "lat": 45.7824,
+   "lon": 6.17393,
+   "source": "revue"
+  },
+  "Roux": {
+   "kind": "rochers",
+   "label": "Rocher du Roux",
+   "lat": 45.82402,
+   "lon": 6.25646,
+   "source": "revue"
+  },
+  "Viuz": {
+   "kind": "lieu-dit habité",
+   "label": "Viuz-la-Chiésaz",
+   "lat": 45.81119,
+   "lon": 6.06468,
+   "source": "revue"
+  }
+ },
+ "matheysine": {
+  "Alpe du Grand Serre": {
+   "kind": "lieu-dit habité",
+   "label": "Station de l'Alpe du Grand Serre",
+   "lat": 45.02406,
+   "lon": 5.85212,
+   "source": "revue"
+  },
+  "Champsaur": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-Bonnet-en-Champsaur",
+   "lat": 44.68013,
+   "lon": 6.08061,
+   "source": "revue"
+  },
+  "Combenon": null,
+  "Drac au Champsaur": null,
+  "Europe": null,
+  "Falcon": {
+   "kind": "lieu-dit non habité",
+   "label": "l'Île Falcon",
+   "lat": 45.04997,
+   "lon": 5.80191,
+   "source": "revue"
+  },
+  "Goulet": null,
+  "Obiou": {
+   "kind": "sommet",
+   "label": "Grande Tête de l'Obiou",
+   "lat": 44.77512,
+   "lon": 5.83906,
+   "source": "revue"
+  },
+  "Salette": {
+   "kind": "administratif",
+   "label": "La Salette-Fallavaux",
+   "lat": 44.8434,
+   "lon": 5.9834,
+   "source": "revue"
+  },
+  "atterrissage d'Entraigues": {
+   "kind": "administratif",
+   "label": "Entraigues",
+   "lat": 44.90196,
+   "lon": 5.94742,
+   "source": "revue"
+  },
+  "lac de Monteynard": {
+   "kind": "retenue-barrage",
+   "label": "Lac de Monteynard-Avignonet",
+   "lat": 44.90009,
+   "lon": 5.69324,
+   "source": "revue"
+  },
+  "montagne du Vet": {
+   "kind": "lieu-dit non habité",
+   "label": "le Vet",
+   "lat": 44.90296,
+   "lon": 5.98259,
+   "source": "revue"
+  },
+  "vallée de Valbonnais": {
+   "kind": "lieu-dit habité",
+   "label": "Valbonnais",
+   "lat": 44.89988,
+   "lon": 5.90456,
+   "source": "revue"
+  }
+ },
+ "maurienne": {
+  "Albertville": {
+   "kind": "lieu-dit habité",
+   "label": "Albertville",
+   "lat": 45.67128,
+   "lon": 6.38561,
+   "source": "revue"
+  },
+  "Aussois": {
+   "kind": "lieu-dit habité",
+   "label": "Aussois",
+   "lat": 45.22881,
+   "lon": 6.74273,
+   "source": "revue"
+  },
+  "Croix de Fer": {
+   "kind": "col",
+   "label": "Col de la Croix de Fer",
+   "lat": 45.22748,
+   "lon": 6.20352,
+   "source": "revue"
+  },
+  "Lauzière": {
+   "kind": "pic",
+   "label": "Grand Pic de la Lauzière",
+   "lat": 45.45922,
+   "lon": 6.36622,
+   "source": "revue"
+  },
+  "Mollaret": {
+   "kind": "lieu-dit habité",
+   "label": "le Mollaret (Saint-François-Longchamp)",
+   "lat": 45.39296,
+   "lon": 6.31242,
+   "source": "revue"
+  },
+  "vallée des Villards": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-Colomban-des-Villards",
+   "lat": 45.29419,
+   "lon": 6.22688,
+   "source": "revue"
+  }
+ },
+ "mercantour": {
+  "Frema": {
+   "kind": "sommet",
+   "label": "Baus de la Frema (sommet près de la Balme)",
+   "lat": 44.08366,
+   "lon": 7.21901,
+   "source": "revue"
+  },
+  "Mont Gros": {
+   "kind": "sommet",
+   "label": "Mont Gros (Roquebrune)",
+   "lat": 43.76582,
+   "lon": 7.44228,
+   "source": "revue"
+  },
+  "Saint-André": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-André-les-Alpes",
+   "lat": 43.96583,
+   "lon": 6.50798,
+   "source": "revue"
+  },
+  "Tinée": {
+   "kind": "cours d'eau",
+   "label": "la Tinée",
+   "lat": 44.10661,
+   "lon": 7.0556,
+   "source": "revue"
+  },
+  "Vésubie": {
+   "kind": "cours d'eau",
+   "label": "la Vésubie",
+   "lat": 44.01148,
+   "lon": 7.29293,
+   "source": "revue"
+  }
+ },
+ "mont-blanc-chamonix": {
+  "Aiguilles Rouges": {
+   "kind": "montagne",
+   "label": "Massif des Aiguilles Rouges",
+   "lat": 45.98775,
+   "lon": 6.86658,
+   "source": "revue"
+  },
+  "Au-delà": null,
+  "Becs Rouges": {
+   "kind": "sommet",
+   "label": "Bec Rouge Supérieur",
+   "lat": 45.97661,
+   "lon": 6.98016,
+   "source": "revue"
+  },
+  "Bouchet": {
+   "kind": "bois",
+   "label": "Bois du Bouchet",
+   "lat": 45.93119,
+   "lon": 6.88137,
+   "source": "revue"
+  },
+  "Chavants": {
+   "kind": "atterrissage",
+   "label": "Base de loisirs des Chavants",
+   "lat": 45.89673,
+   "lon": 6.78138,
+   "source": "revue"
+  },
+  "Contamines": {
+   "kind": "administratif",
+   "label": "Mairie des Contamines-Montjoie",
+   "lat": 45.82256,
+   "lon": 6.72662,
+   "source": "revue"
+  },
+  "Flégère": {
+   "kind": "gare téléphérique",
+   "label": "Gare de la Flégère (décollage)",
+   "lat": 45.96039,
+   "lon": 6.88665,
+   "source": "revue"
+  },
+  "Italie": null,
+  "LF-R": null,
+  "Lognan": {
+   "kind": "gare téléphérique",
+   "label": "Gare de Lognan",
+   "lat": 45.96864,
+   "lon": 6.94331,
+   "source": "revue"
+  },
+  "ParaglidingEarth": null,
+  "Plan de l'Aiguille": {
+   "kind": "site de vol libre",
+   "label": "Plan de l'Aiguille (site de vol libre)",
+   "lat": 45.9047,
+   "lon": 6.8831,
+   "source": "revue"
+  },
+  "Pointe Percée": {
+   "kind": "pic",
+   "label": "Pointe Percée",
+   "lat": 45.95581,
+   "lon": 6.5558,
+   "source": "revue"
+  },
+  "Saint-Gervais": {
+   "kind": "administratif",
+   "label": "Mairie de Saint-Gervais-les-Bains",
+   "lat": 45.89206,
+   "lon": 6.71209,
+   "source": "revue"
+  },
+  "Suisse": null,
+  "chaîne des Aravis": {
+   "kind": "massif",
+   "label": "chaîne des Aravis",
+   "lat": 45.89,
+   "lon": 6.45,
+   "massifs": [
+    "aravis"
+   ],
+   "source": "revue"
+  },
+  "gorges de Servoz": {
+   "kind": "gorge",
+   "label": "Gorges de la Diosaz",
+   "lat": 45.93247,
+   "lon": 6.77819,
+   "source": "revue"
+  },
+  "massif du Mont-Blanc": {
+   "kind": "massif",
+   "label": "massif du Mont-Blanc",
+   "lat": 45.88685,
+   "lon": 6.79095,
+   "massifs": [
+    "mont-blanc-chamonix",
+    "val-montjoie-saint-gervais"
+   ],
+   "source": "revue"
+  },
+  "plateau de Coupeau": {
+   "kind": "lieu-dit habité",
+   "label": "le Coupeau",
+   "lat": 45.90206,
+   "lon": 6.79821,
+   "source": "revue"
+  },
+  "vallée de Chamonix": {
+   "kind": "massif",
+   "label": "vallée de Chamonix",
+   "lat": 45.9237,
+   "lon": 6.8694,
+   "massifs": [
+    "mont-blanc-chamonix"
+   ],
+   "source": "revue"
+  }
+ },
+ "oisans-grandes-rousses": {
+  "Aiguille du Plat": {
+   "kind": "sommet",
+   "label": "Aiguille du Plat de la Selle",
+   "lat": 44.96435,
+   "lon": 6.22253,
+   "source": "revue"
+  },
+  "Briançon": {
+   "kind": "mairie",
+   "label": "Briançon",
+   "lat": 44.89825,
+   "lon": 6.64352,
+   "source": "revue"
+  },
+  "Chambon": {
+   "kind": "retenue-barrage",
+   "label": "lac du Chambon",
+   "lat": 45.04236,
+   "lon": 6.15367,
+   "source": "revue"
+  },
+  "Cheminée": null,
+  "Collet": {
+   "kind": "lieu-dit habité",
+   "label": "le Collet (Vaujany)",
+   "lat": 45.16846,
+   "lon": 6.09495,
+   "source": "revue"
+  },
+  "Deux Alpes": {
+   "kind": "lieu-dit habité",
+   "label": "Les Deux Alpes",
+   "lat": 45.01126,
+   "lon": 6.12417,
+   "source": "revue"
+  },
+  "Freney": {
+   "kind": "lieu-dit habité",
+   "label": "Le Freney-d'Oisans",
+   "lat": 45.04645,
+   "lon": 6.1256,
+   "source": "revue"
+  },
+  "Fréaux": {
+   "kind": "lieu-dit habité",
+   "label": "les Fréaux (La Grave)",
+   "lat": 45.04324,
+   "lon": 6.28322,
+   "source": "revue"
+  },
+  "Grande Ruine": {
+   "kind": "sommet",
+   "label": "la Grande Ruine",
+   "lat": 44.96923,
+   "lon": 6.33033,
+   "source": "revue"
+  },
+  "Guisane": {
+   "kind": "cours d'eau",
+   "label": "la Guisane",
+   "lat": 44.97779,
+   "lon": 6.51116,
+   "source": "revue"
+  },
+  "Meijette": {
+   "kind": "crête",
+   "label": "Arête de la Meijette",
+   "lat": 45.01806,
+   "lon": 6.30906,
+   "source": "revue"
+  },
+  "Perrons": {
+   "kind": "site de vol libre",
+   "label": "Décollage des Perrons (Les Deux Alpes)",
+   "lat": 44.99869,
+   "lon": 6.12719,
+   "source": "revue"
+  },
+  "Toura": {
+   "kind": "sommet",
+   "label": "Tête de la Toura",
+   "lat": 44.98397,
+   "lon": 6.18243,
+   "source": "revue"
+  },
+  "col du Lautaret": {
+   "kind": "col",
+   "label": "Col du Lautaret",
+   "lat": 45.0354,
+   "lon": 6.40513,
+   "source": "revue"
+  }
+ },
+ "prealpes-digne-lure": {
+  "Baume": {
+   "kind": "site d'escalade",
+   "label": "Site d'Escalade de la Baume",
+   "lat": 44.20003,
+   "lon": 5.94788,
+   "source": "revue"
+  },
+  "Buc": {
+   "kind": "montagne",
+   "label": "Montagne du Buc",
+   "lat": 44.20697,
+   "lon": 5.46142,
+   "source": "revue"
+  },
+  "Canjuers": {
+   "kind": "plaine",
+   "label": "Grand Plan de Canjuers",
+   "lat": 43.70217,
+   "lon": 6.29809,
+   "source": "revue"
+  },
+  "Castellane": {
+   "kind": "lieu-dit habité",
+   "label": "Castellane",
+   "lat": 43.84678,
+   "lon": 6.50462,
+   "source": "revue"
+  },
+  "Chamatte": {
+   "kind": "crête",
+   "label": "Crête de Chamatte",
+   "lat": 43.9403,
+   "lon": 6.58877,
+   "source": "revue"
+  },
+  "Couard": {
+   "kind": "sommet",
+   "label": "Sommet de Couar",
+   "lat": 44.10062,
+   "lon": 6.34971,
+   "source": "revue"
+  },
+  "Coupe": null,
+  "Destourbes": {
+   "kind": "montagne",
+   "label": "Destourbes",
+   "lat": 43.82282,
+   "lon": 6.53399,
+   "source": "revue"
+  },
+  "Gap-Valensole": null,
+  "Gênes": null,
+  "Lattes au Teillon": null,
+  "Mont Denier": {
+   "kind": "sommet",
+   "label": "le Montdenier",
+   "lat": 43.89784,
+   "lon": 6.2549,
+   "source": "revue"
+  },
+  "Motte-du-Caire": {
+   "kind": "lieu-dit habité",
+   "label": "La Motte-du-Caire",
+   "lat": 44.3423,
+   "lon": 6.029,
+   "source": "revue"
+  },
+  "Rustrel": {
+   "kind": "lieu-dit habité",
+   "label": "Rustrel",
+   "lat": 43.92209,
+   "lon": 5.48866,
+   "source": "revue"
+  },
+  "Saint-André": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-André-les-Alpes",
+   "lat": 43.96583,
+   "lon": 6.50798,
+   "source": "revue"
+  },
+  "Saint-Maurin": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-Maurin",
+   "lat": 43.81282,
+   "lon": 6.29286,
+   "source": "revue"
+  },
+  "Sainte-Croix": null,
+  "Serres": {
+   "kind": "crête",
+   "label": "Crête des Serres",
+   "lat": 43.95967,
+   "lon": 6.56213,
+   "source": "revue"
+  },
+  "Vachière": null,
+  "Vachière au Couard": null,
+  "Verdon": null,
+  "col de Vachière": {
+   "kind": "col",
+   "label": "Col de Chalufy ou Col de Vachière",
+   "lat": 44.17866,
+   "lon": 6.51686,
+   "source": "revue"
+  },
+  "col de Vachière au Couard": null
+ },
+ "prealpes-grasse-castellane": {
+  "Aigle": null,
+  "Alpes-Maritimes": null,
+  "Bernarde": {
+   "kind": "crête",
+   "label": "Crête de la Bernarde",
+   "lat": 43.89214,
+   "lon": 6.63508,
+   "source": "revue"
+  },
+  "Canjuers": {
+   "kind": "camp militaire",
+   "label": "Camp de Canjuers",
+   "lat": 43.67737,
+   "lon": 6.49668,
+   "source": "revue"
+  },
+  "Castellane": null,
+  "Cavillore": {
+   "kind": "plaine",
+   "label": "Plateau de Cavillore",
+   "lat": 43.73578,
+   "lon": 6.97151,
+   "source": "revue"
+  },
+  "Cheiron de Gréolières": {
+   "kind": "pic",
+   "label": "Cime du Cheiron",
+   "lat": 43.8148,
+   "lon": 6.96974,
+   "source": "revue"
+  },
+  "Gaude": {
+   "kind": "lieu-dit habité",
+   "label": "La Gaude",
+   "lat": 43.71987,
+   "lon": 7.1606,
+   "source": "revue"
+  },
+  "Isère": null,
+  "Mure": null,
+  "Méditerranée": null,
+  "Pic de l'Aigle": {
+   "kind": "sommet",
+   "label": "Pic de l'Aiglo",
+   "lat": 43.81526,
+   "lon": 6.83324,
+   "source": "revue"
+  },
+  "Saint-André": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-André-les-Alpes",
+   "lat": 43.96583,
+   "lon": 6.50798,
+   "source": "revue"
+  },
+  "Saint-Barnabé": {
+   "kind": "col",
+   "label": "Col de Saint-Barnabé",
+   "lat": 43.86511,
+   "lon": 6.6318,
+   "source": "revue"
+  },
+  "Saint-Honorat": {
+   "kind": "sommet",
+   "label": "Mont Saint-Honorat",
+   "lat": 44.07639,
+   "lon": 6.76433,
+   "source": "revue"
+  },
+  "Serres": {
+   "kind": "crête",
+   "label": "Crête des Serres",
+   "lat": 43.95967,
+   "lon": 6.56213,
+   "source": "revue"
+  },
+  "Sinon": null,
+  "Thorenc": {
+   "kind": "lieu-dit habité",
+   "label": "Thorenc Station",
+   "lat": 43.80532,
+   "lon": 6.80884,
+   "source": "revue"
+  },
+  "Tourrettes": {
+   "kind": "lieu-dit habité",
+   "label": "Tourrettes-sur-Loup",
+   "lat": 43.71616,
+   "lon": 7.05877,
+   "source": "revue"
+  },
+  "Valettes": {
+   "kind": "lieu-dit habité",
+   "label": "les Valettes du Loup",
+   "lat": 43.70324,
+   "lon": 7.02347,
+   "source": "revue"
+  },
+  "aller-retour Gréolières": null,
+  "plateau du Cheiron": {
+   "kind": "pic",
+   "label": "Cime du Cheiron",
+   "lat": 43.8148,
+   "lon": 6.96974,
+   "source": "revue"
+  },
+  "vallée du Var": null
+ },
+ "prealpes-nice-var": {
+  "Base": null,
+  "Beaulieu": {
+   "kind": "lieu-dit habité",
+   "label": "Beaulieu-sur-Mer",
+   "lat": 43.70782,
+   "lon": 7.33148,
+   "source": "revue"
+  },
+  "Blancs": {
+   "kind": "sommet",
+   "label": "Baou des Blancs",
+   "lat": 43.73504,
+   "lon": 7.10944,
+   "source": "revue"
+  },
+  "Canadairs": null,
+  "Cavillore": {
+   "kind": "plaine",
+   "label": "Plateau de Cavillore",
+   "lat": 43.73578,
+   "lon": 6.97151,
+   "source": "revue"
+  },
+  "Gaude": {
+   "kind": "sommet",
+   "label": "Bau de la Gaude",
+   "lat": 43.75467,
+   "lon": 7.14802,
+   "source": "revue"
+  },
+  "Gourdon aux Courmettes": null,
+  "Mont Gros": {
+   "kind": "site de vol libre",
+   "label": "Mont Gros (site de vol libre)",
+   "lat": 43.76548,
+   "lon": 7.4427,
+   "source": "revue"
+  },
+  "Noirs": {
+   "kind": "sommet",
+   "label": "Baou des Noirs",
+   "lat": 43.74164,
+   "lon": 7.12578,
+   "source": "revue"
+  },
+  "Roquebrune": {
+   "kind": "lieu-dit habité",
+   "label": "Roquebrune",
+   "lat": 43.76658,
+   "lon": 7.46101,
+   "source": "revue"
+  },
+  "Rotors": null,
+  "Tourrettes": {
+   "kind": "lieu-dit habité",
+   "label": "Tourrettes-sur-Loup",
+   "lat": 43.71616,
+   "lon": 7.05877,
+   "source": "revue"
+  },
+  "intérêt": null,
+  "vallée du Var": null
+ },
+ "queyras": {
+  "Baptiste Lambert": null,
+  "C'est": null,
+  "Chez Marius": null,
+  "Chocard": null,
+  "Clapeyto": {
+   "kind": "lieu-dit habité",
+   "label": "Chalets de Clapeyto",
+   "lat": 44.7968,
+   "lon": 6.68887,
+   "source": "revue"
+  },
+  "Coste Belle": {
+   "kind": "crête",
+   "label": "Crête de Coste Belle",
+   "lat": 44.80794,
+   "lon": 6.74883,
+   "source": "revue"
+  },
+  "Durance": null,
+  "Lombarde": null,
+  "atterrissage d'Arvieux": {
+   "kind": "mairie",
+   "label": "Arvieux (mairie)",
+   "lat": 44.76711,
+   "lon": 6.7388,
+   "source": "revue"
+  },
+  "vallon de Clapeyto": {
+   "kind": "lieu-dit habité",
+   "label": "Chalets de Clapeyto",
+   "lat": 44.7968,
+   "lon": 6.68887,
+   "source": "revue"
+  }
+ },
+ "saint-andre-verdon": {
+  "Bleyne": {
+   "kind": "site de vol libre",
+   "label": "Col de Bleyne (site de vol libre)",
+   "lat": 43.8138,
+   "lon": 6.8111,
+   "source": "revue"
+  },
+  "Cadun": {
+   "kind": "crête",
+   "label": "Crête du Cadun",
+   "lat": 44.23333,
+   "lon": 6.50452,
+   "source": "revue"
+  },
+  "Chau": {
+   "kind": "crête",
+   "label": "Crête de la Chau",
+   "lat": 44.21097,
+   "lon": 6.46955,
+   "source": "revue"
+  },
+  "Dormillouse": {
+   "kind": "ouvrage militaire",
+   "label": "Fort de Dormillouse",
+   "lat": 44.40946,
+   "lon": 6.38649,
+   "source": "revue"
+  },
+  "Mure-Argens": {
+   "kind": "administratif",
+   "label": "La Mure-Argens",
+   "lat": 44.0162,
+   "lon": 6.52854,
+   "source": "revue"
+  },
+  "Seyne": {
+   "kind": "lieu-dit habité",
+   "label": "Seyne",
+   "lat": 44.35214,
+   "lon": 6.35262,
+   "source": "revue"
+  },
+  "Tromas": {
+   "kind": "sommet",
+   "label": "Sommet du Tromas",
+   "lat": 44.26216,
+   "lon": 6.48214,
+   "source": "revue"
+  },
+  "Vachière": {
+   "kind": "sommet",
+   "label": "Montagne de Vachière",
+   "lat": 44.18849,
+   "lon": 6.53594,
+   "source": "revue"
+  },
+  "col de Bleine": {
+   "kind": "col",
+   "label": "Col de Bleine",
+   "lat": 43.81445,
+   "lon": 6.80314,
+   "source": "revue"
+  }
+ },
+ "saleve-genevois": {
+  "Annecy": {
+   "kind": "mairie",
+   "label": "Mairie d'Annecy",
+   "lat": 45.89926,
+   "lon": 6.12944,
+   "source": "revue"
+  },
+  "Beaufort": null,
+  "Billiat": null,
+  "C'est": null,
+  "Cou": null,
+  "Fiz": {
+   "kind": "sommet",
+   "label": "Rochers des Fiz",
+   "lat": 45.97183,
+   "lon": 6.77284,
+   "source": "revue"
+  },
+  "Magic Salève": null,
+  "Mieux": null,
+  "MétéoSuisse": null,
+  "Môle": {
+   "kind": "sommet",
+   "label": "le Môle",
+   "lat": 46.1067,
+   "lon": 6.45431,
+   "source": "revue"
+  },
+  "Par-dessus": null,
+  "Petit-Lac": null,
+  "Planfait": {
+   "kind": "site de vol libre",
+   "label": "Planfait",
+   "lat": 45.85319,
+   "lon": 6.22312,
+   "source": "revue"
+  },
+  "Roche-sur-Foron": {
+   "kind": "mairie",
+   "label": "Mairie de La Roche-sur-Foron",
+   "lat": 46.06688,
+   "lon": 6.31202,
+   "source": "revue"
+  },
+  "Saint-Ferréol": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-Ferréol",
+   "lat": 45.76457,
+   "lon": 6.30788,
+   "source": "revue"
+  },
+  "Salève-Môle-Samoëns": null,
+  "Suisse": null,
+  "Sur Cou": {
+   "kind": "sommet",
+   "label": "Sur Cou",
+   "lat": 46.02002,
+   "lon": 6.34634,
+   "source": "revue"
+  },
+  "Table d'orientation": {
+   "kind": "site de vol libre",
+   "label": "la Table d'Orientation",
+   "lat": 46.14865,
+   "lon": 6.18916,
+   "source": "revue"
+  },
+  "Tour de France": null,
+  "Troinex": null,
+  "Téléphérique": {
+   "kind": "site de vol libre",
+   "label": "Salève (site de décollage du Téléphérique, Monnetier-Mornex)",
+   "lat": 46.15476,
+   "lon": 6.19439,
+   "source": "revue"
+  },
+  "mont Billiat": {
+   "kind": "sommet",
+   "label": "Mont Billiat",
+   "lat": 46.28804,
+   "lon": 6.58377,
+   "source": "revue"
+  }
+ },
+ "serre-poncon-embrunais": {
+  "Blanche": {
+   "kind": "sommet",
+   "label": "Montagne de la Blanche (sommet)",
+   "lat": 44.34179,
+   "lon": 6.44426,
+   "source": "revue"
+  },
+  "Bâtie-Neuve": {
+   "kind": "lieu-dit habité",
+   "label": "La Bâtie-Neuve",
+   "lat": 44.56656,
+   "lon": 6.20089,
+   "source": "revue"
+  },
+  "C'est": null,
+  "Chabrières": {
+   "kind": "crête",
+   "label": "crête de Chabrières",
+   "lat": 44.58295,
+   "lon": 6.33469,
+   "source": "revue"
+  },
+  "Hors": null,
+  "Lombarde": null,
+  "Partout": null,
+  "Pic de Chabrières": {
+   "kind": "sommet",
+   "label": "Aiguilles de Chabrières (sommet)",
+   "lat": 44.57898,
+   "lon": 6.33118,
+   "source": "revue"
+  },
+  "Piolit au Morgon": null,
+  "Saint-Jean": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-Jean (hameau de Montclar)",
+   "lat": 44.41605,
+   "lon": 6.34899,
+   "source": "revue"
+  },
+  "Saint-Jean-Montclar": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-Jean-Montclar (hameau Saint-Jean)",
+   "lat": 44.41605,
+   "lon": 6.34899,
+   "source": "revue"
+  },
+  "Serre-Ponçon": {
+   "kind": "retenue-barrage",
+   "label": "lac de Serre-Ponçon",
+   "lat": 44.50304,
+   "lon": 6.33525,
+   "source": "revue"
+  },
+  "Séouve": {
+   "kind": "cours d'eau",
+   "label": "ravin de la Séouve",
+   "lat": 44.42458,
+   "lon": 6.37468,
+   "source": "revue"
+  }
+ },
+ "tarentaise": {
+  "Boutte": {
+   "kind": "lieu-dit non habité",
+   "label": "le Plan de la Boutte",
+   "lat": 45.64937,
+   "lon": 6.77297,
+   "source": "revue"
+  },
+  "C'est": null,
+  "Charmettes": {
+   "kind": "lieu-dit habité",
+   "label": "les Charmettes (Landry)",
+   "lat": 45.56903,
+   "lon": 6.76372,
+   "source": "revue"
+  },
+  "Clapet": {
+   "kind": "lieu-dit non habité",
+   "label": "le Grand Clapet",
+   "lat": 45.65469,
+   "lon": 6.76003,
+   "source": "revue"
+  },
+  "Crolles": {
+   "kind": "administratif",
+   "label": "Crolles",
+   "lat": 45.27654,
+   "lon": 5.88056,
+   "source": "revue"
+  },
+  "FFVL des Ilettes": null,
+  "Fort": null,
+  "Fort de la Platte": {
+   "kind": "ouvrage militaire (site de vol)",
+   "label": "Fort de la Platte",
+   "lat": 45.63806,
+   "lon": 6.74301,
+   "source": "revue"
+  },
+  "Gare": {
+   "kind": "gare",
+   "label": "Gare de Bourg-Saint-Maurice",
+   "lat": 45.61898,
+   "lon": 6.77146,
+   "source": "revue"
+  },
+  "Haute Tarentaise": {
+   "kind": "massif",
+   "label": "Haute Tarentaise",
+   "lat": 45.57,
+   "lon": 6.7,
+   "massifs": [
+    "tarentaise"
+   ],
+   "source": "revue"
+  },
+  "Italie": null,
+  "Mont-Blanc": {
+   "kind": "sommet",
+   "label": "Mont Blanc",
+   "lat": 45.83267,
+   "lon": 6.86463,
+   "source": "revue"
+  },
+  "Passy": {
+   "kind": "lieu-dit habité",
+   "label": "Passy",
+   "lat": 45.92422,
+   "lon": 6.6914,
+   "source": "revue"
+  },
+  "Peisey-Vallandry": {
+   "kind": "lieu-dit habité",
+   "label": "Vallandry (Peisey-Vallandry)",
+   "lat": 45.55621,
+   "lon": 6.76283,
+   "source": "revue"
+  },
+  "Platte": null,
+  "Platte au Mont-Blanc": null,
+  "Pointe Percée": {
+   "kind": "pic",
+   "label": "Pointe Percée",
+   "lat": 45.95581,
+   "lon": 6.5558,
+   "source": "revue"
+  },
+  "Pointe de Combe Neuve": {
+   "kind": "sommet",
+   "label": "Pointe de la Combe Neuve",
+   "lat": 45.65145,
+   "lon": 6.68858,
+   "source": "revue"
+  },
+  "Ponthurin": {
+   "kind": "cours d'eau",
+   "label": "le Ponturin (vallée du Ponthurin)",
+   "lat": 45.51941,
+   "lon": 6.79891,
+   "source": "revue"
+  },
+  "Prainan": {
+   "kind": "quartier",
+   "label": "Prainan (quartier de Bourg-Saint-Maurice)",
+   "lat": 45.57991,
+   "lon": 6.78092,
+   "source": "revue"
+  },
+  "Saint-Bernard": {
+   "kind": "col",
+   "label": "Col du Petit Saint-Bernard",
+   "lat": 45.68044,
+   "lon": 6.88389,
+   "source": "revue"
+  },
+  "Têtes": {
+   "kind": "sommet",
+   "label": "les Deux Têtes",
+   "lat": 45.58861,
+   "lon": 6.81304,
+   "source": "revue"
+  },
+  "Varan": {
+   "kind": "site de vol libre",
+   "label": "Varan",
+   "lat": 45.94508,
+   "lon": 6.68191,
+   "source": "revue"
+  },
+  "extraction": null,
+  "vallée de l'Isère": {
+   "kind": "massif",
+   "label": "vallée de l'Isère",
+   "lat": 45.57,
+   "lon": 6.7,
+   "massifs": [
+    "tarentaise"
+   ],
+   "source": "revue"
+  },
+  "vallée du Ponthurin": {
+   "kind": "cours d'eau",
+   "label": "le Ponturin (vallée du Ponthurin)",
+   "lat": 45.51941,
+   "lon": 6.79891,
+   "source": "revue"
+  }
+ },
+ "trieves": {
+  "Autour": null,
+  "Brèche": null,
+  "Buëch": null,
+  "Chasse": null,
+  "Châtel": {
+   "kind": "crête",
+   "label": "le Petit Châtel",
+   "lat": 44.82374,
+   "lon": 5.79106,
+   "source": "revue"
+  },
+  "Châtel de Mens": {
+   "kind": "crête",
+   "label": "le Petit Châtel",
+   "lat": 44.82374,
+   "lon": 5.79106,
+   "source": "revue"
+  },
+  "Courtet": {
+   "kind": "site de vol libre",
+   "label": "Décollage FFVL de Courtet",
+   "lat": 44.77005,
+   "lon": 5.79819,
+   "source": "revue"
+  },
+  "Fluchaire": {
+   "kind": "crête",
+   "label": "Arête de Fluchaire",
+   "lat": 44.77361,
+   "lon": 5.82006,
+   "source": "revue"
+  },
+  "Gap": {
+   "kind": "administratif",
+   "label": "Gap",
+   "lat": 44.55437,
+   "lon": 6.07622,
+   "source": "revue"
+  },
+  "Hauts-Plateaux": null,
+  "Isère": null,
+  "Mesnil": null,
+  "Montaud": null,
+  "Montlambert": null,
+  "Obiou": {
+   "kind": "sommet",
+   "label": "Grande Tête de l'Obiou",
+   "lat": 44.77512,
+   "lon": 5.83906,
+   "source": "revue"
+  },
+  "Ratier": {
+   "kind": "sommet",
+   "label": "le Rattier",
+   "lat": 44.75634,
+   "lon": 5.7801,
+   "source": "revue"
+  },
+  "Serpaton": {
+   "kind": "col",
+   "label": "Pas du Serpaton",
+   "lat": 44.91035,
+   "lon": 5.58848,
+   "source": "revue"
+  },
+  "col de Lus-la-Croix-Haute": {
+   "kind": "col",
+   "label": "Col de la Croix Haute",
+   "lat": 44.72386,
+   "lon": 5.67792,
+   "source": "revue"
+  },
+  "lac de Monteynard": {
+   "kind": "retenue-barrage",
+   "label": "Lac de Monteynard-Avignonet",
+   "lat": 44.90009,
+   "lon": 5.69324,
+   "source": "revue"
+  },
+  "vallée de Lus-la-Croix-Haute": {
+   "kind": "administratif",
+   "label": "Lus-la-Croix-Haute",
+   "lat": 44.66567,
+   "lon": 5.70696,
+   "source": "revue"
+  },
+  "vallée du Drac": {
+   "kind": "administratif",
+   "label": "Monteynard",
+   "lat": 44.9768,
+   "lon": 5.70368,
+   "source": "revue"
+  }
+ },
+ "ubaye": {
+  "Abritée": null,
+  "Alp": {
+   "kind": "quartier, zone d'habitation",
+   "label": "l'Alp",
+   "lat": 44.37203,
+   "lon": 6.68266,
+   "source": "revue"
+  },
+  "Alpe": {
+   "kind": "quartier, zone d'habitation",
+   "label": "l'Alp",
+   "lat": 44.37203,
+   "lon": 6.68266,
+   "source": "revue"
+  },
+  "Arche": {
+   "kind": "col",
+   "label": "Col de Larche",
+   "lat": 44.42239,
+   "lon": 6.89835,
+   "source": "revue"
+  },
+  "Au-delà du Pic des Têtes": {
+   "kind": "pic",
+   "label": "Pic des Têtes",
+   "lat": 44.30146,
+   "lon": 6.46705,
+   "source": "revue"
+  },
+  "Blanche": null,
+  "Bonnette-Restefond": {
+   "kind": "col",
+   "label": "Col de la Bonette",
+   "lat": 44.3266,
+   "lon": 6.80753,
+   "source": "revue"
+  },
+  "Chaup": {
+   "kind": "lieu-dit habité",
+   "label": "la Chaup Basse",
+   "lat": 44.38408,
+   "lon": 6.66949,
+   "source": "revue"
+  },
+  "Clapouse": {
+   "kind": "vallée",
+   "label": "Ravin de Clapouse",
+   "lat": 44.34415,
+   "lon": 6.78604,
+   "source": "revue"
+  },
+  "Gimette": {
+   "kind": "bois",
+   "label": "Forêt domaniale de Gimette",
+   "lat": 44.36975,
+   "lon": 6.54903,
+   "source": "revue"
+  },
+  "Italie": null,
+  "Lauzet": {
+   "kind": "lieu-dit habité",
+   "label": "Le Lauzet-Ubaye",
+   "lat": 44.4294,
+   "lon": 6.43266,
+   "source": "revue"
+  },
+  "Lombarde": {
+   "kind": "col",
+   "label": "Col de la Lombarde",
+   "lat": 44.20255,
+   "lon": 7.15009,
+   "source": "revue"
+  },
+  "Séolanes": {
+   "kind": "quartier, zone d'habitation",
+   "label": "les Séolanes",
+   "lat": 44.37177,
+   "lon": 6.60302,
+   "source": "revue"
+  },
+  "col de l'Arche": {
+   "kind": "col",
+   "label": "Col de Larche",
+   "lat": 44.42239,
+   "lon": 6.89835,
+   "source": "revue"
+  },
+  "col de la Bonnette-Restefond": {
+   "kind": "col",
+   "label": "Col de la Bonette",
+   "lat": 44.3266,
+   "lon": 6.80753,
+   "source": "revue"
+  },
+  "hippodrome": null,
+  "école de Barcelonnette": null
+ },
+ "val-arly-megeve": {
+  "Ban Rouge": {
+   "kind": "sommet",
+   "label": "Crêt du Midi (Ban Rouge)",
+   "lat": 45.81179,
+   "lon": 6.58197,
+   "source": "revue"
+  },
+  "C'est": null,
+  "Cet": null,
+  "Mont Blanc": {
+   "kind": "sommet",
+   "label": "Mont Blanc",
+   "lat": 45.83267,
+   "lon": 6.86463,
+   "source": "revue"
+  },
+  "Mont Joly au Mont Blanc": null,
+  "Rochefort": {
+   "kind": "lieu-dit habité",
+   "label": "Rochefort (Cordon)",
+   "lat": 45.92471,
+   "lon": 6.61268,
+   "source": "revue"
+  },
+  "Signal de Bisanne": {
+   "kind": "sommet",
+   "label": "Mont Bisanne",
+   "lat": 45.74699,
+   "lon": 6.50578,
+   "source": "revue"
+  },
+  "Traverser le Val d'Arly": null,
+  "Ugine": {
+   "kind": "mairie",
+   "label": "Mairie d'Ugine",
+   "lat": 45.75267,
+   "lon": 6.41995,
+   "source": "revue"
+  },
+  "massif du Mont Blanc": {
+   "kind": "massif",
+   "label": "massif du Mont Blanc",
+   "lat": 45.9237,
+   "lon": 6.8694,
+   "massifs": [
+    "mont-blanc-chamonix"
+   ],
+   "source": "revue"
+  },
+  "vallée de l'Arly": {
+   "kind": "massif",
+   "label": "vallée de l'Arly",
+   "lat": 45.8567,
+   "lon": 6.6175,
+   "massifs": [
+    "val-arly-megeve"
+   ],
+   "source": "revue"
+  },
+  "vallée de l'Arve": {
+   "kind": "massif",
+   "label": "vallée de l'Arve",
+   "lat": 46.03,
+   "lon": 6.5,
+   "massifs": [
+    "arve-faucigny"
+   ],
+   "source": "revue"
+  }
+ },
+ "val-montjoie-saint-gervais": {
+  "Annecy": null,
+  "Barbules": null,
+  "Chamonix": {
+   "kind": "mairie",
+   "label": "Mairie de Chamonix-Mont-Blanc",
+   "lat": 45.92371,
+   "lon": 6.86932,
+   "source": "revue"
+  },
+  "Fayet": {
+   "kind": "quartier",
+   "label": "le Fayet (quartier de Saint-Gervais)",
+   "lat": 45.90478,
+   "lon": 6.69907,
+   "source": "revue"
+  },
+  "Houches": {
+   "kind": "lieu-dit habité",
+   "label": "les Houches",
+   "lat": 45.89307,
+   "lon": 6.79907,
+   "source": "revue"
+  },
+  "Lignes": null,
+  "Miage": {
+   "kind": "glacier",
+   "label": "Glacier de Miage",
+   "lat": 45.83057,
+   "lon": 6.80384,
+   "source": "revue"
+  },
+  "Mont Clocher": {
+   "kind": "sommet",
+   "label": "Mont Clocher",
+   "lat": 45.77153,
+   "lon": 6.59075,
+   "source": "revue"
+  },
+  "Mont Joly aux Saisies": null,
+  "Pontet": {
+   "kind": "stade",
+   "label": "Parc de loisirs du Pontet (stade)",
+   "lat": 45.80182,
+   "lon": 6.72498,
+   "source": "revue"
+  },
+  "Saisies": {
+   "kind": "col",
+   "label": "Col des Saisies",
+   "lat": 45.75837,
+   "lon": 6.52823,
+   "source": "revue"
+  },
+  "Volatiles": null,
+  "col des Saisies": {
+   "kind": "col",
+   "label": "Col des Saisies",
+   "lat": 45.75837,
+   "lon": 6.52823,
+   "source": "revue"
+  },
+  "lac d'Annecy": {
+   "kind": "lac",
+   "label": "Lac d'Annecy",
+   "lat": 45.84616,
+   "lon": 6.18618,
+   "source": "revue"
+  }
+ },
+ "vanoise": {
+  "Albertville": {
+   "kind": "mairie",
+   "label": "Mairie d'Albertville",
+   "lat": 45.67556,
+   "lon": 6.39261,
+   "source": "revue"
+  },
+  "C'est": null,
+  "Chambre": {
+   "kind": "sommet",
+   "label": "Mont de la Chambre",
+   "lat": 45.31831,
+   "lon": 6.57981,
+   "source": "revue"
+  },
+  "Doron": null,
+  "Et au Mont Jovet": null,
+  "Jovet": {
+   "kind": "sommet",
+   "label": "Mont Jovet (sommet)",
+   "lat": 45.4951,
+   "lon": 6.64124,
+   "source": "revue"
+  },
+  "Loze": {
+   "kind": "col",
+   "label": "Col de la Loze",
+   "lat": 45.40751,
+   "lon": 6.60273,
+   "source": "revue"
+  },
+  "Monts": {
+   "kind": "lieu-dit habité",
+   "label": "les Monts (Bozel)",
+   "lat": 45.45554,
+   "lon": 6.6409,
+   "source": "revue"
+  },
+  "ParaglidingEarth": null,
+  "Pralognan": {
+   "kind": "mairie",
+   "label": "Mairie de Pralognan-la-Vanoise",
+   "lat": 45.38207,
+   "lon": 6.72126,
+   "source": "revue"
+  },
+  "Praz": {
+   "kind": "lieu-dit habité",
+   "label": "Courchevel le Praz",
+   "lat": 45.43202,
+   "lon": 6.62165,
+   "source": "revue"
+  },
+  "Saint-Martin": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-Martin-de-Belleville",
+   "lat": 45.37882,
+   "lon": 6.50408,
+   "source": "revue"
+  },
+  "Trois Vallées": {
+   "kind": "massif",
+   "label": "Trois Vallées",
+   "lat": 45.4,
+   "lon": 6.6506,
+   "massifs": [
+    "vanoise"
+   ],
+   "source": "revue"
+  },
+  "altiport de Méribel": {
+   "kind": "aérodrome",
+   "label": "Altiport de Méribel",
+   "lat": 45.40727,
+   "lon": 6.57836,
+   "source": "revue"
+  },
+  "atterrissage de Bozel": {
+   "kind": "parc de loisirs (atterrissage)",
+   "label": "Base de Loisirs de Bozel",
+   "lat": 45.44166,
+   "lon": 6.65453,
+   "source": "revue"
+  }
+ },
+ "vercors-est-sud": {
+  "Bachal": {
+   "kind": "col",
+   "label": "Col du Bachat",
+   "lat": 44.76132,
+   "lon": 5.61739,
+   "source": "revue"
+  },
+  "Champsaur": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-Bonnet-en-Champsaur",
+   "lat": 44.68013,
+   "lon": 6.08061,
+   "source": "revue"
+  },
+  "Col Vert au Jocou": null,
+  "Deux Sœurs": {
+   "kind": "escarpement",
+   "label": "Rocher des Deux Sœurs",
+   "lat": 45.00433,
+   "lon": 5.58026,
+   "source": "revue"
+  },
+  "Deux Sœurs au Grand Veymont": null,
+  "Drac": null,
+  "Drôme": {
+   "kind": "lieu-dit habité",
+   "label": "Die",
+   "lat": 44.75821,
+   "lon": 5.36857,
+   "source": "revue"
+  },
+  "Ferrière": {
+   "kind": "crête",
+   "label": "Crête de la Ferrière",
+   "lat": 44.97761,
+   "lon": 5.5957,
+   "source": "revue"
+  },
+  "Gaudissart": {
+   "kind": "site de vol libre",
+   "label": "Saint-Jean-en-Royans - Gaudissart",
+   "lat": 45.0068,
+   "lon": 5.3173,
+   "source": "revue"
+  },
+  "Gerbier": {
+   "kind": "crête",
+   "label": "Arêtes du Gerbier",
+   "lat": 45.02381,
+   "lon": 5.58712,
+   "source": "revue"
+  },
+  "Grand Veymont au Mont Aiguille": null,
+  "Hauts-Plateaux": null,
+  "Limouches": {
+   "kind": "col",
+   "label": "Col des Limouches",
+   "lat": 44.88691,
+   "lon": 5.15828,
+   "source": "revue"
+  },
+  "Pic de Bure": {
+   "kind": "pic",
+   "label": "Pic de Bure",
+   "lat": 44.62657,
+   "lon": 5.9351,
+   "source": "revue"
+  },
+  "Retkingen": null,
+  "Rhône": null,
+  "Rivières": {
+   "kind": "lieu-dit habité",
+   "label": "les Rivières",
+   "lat": 44.91048,
+   "lon": 5.569,
+   "source": "revue"
+  },
+  "Rousset": {
+   "kind": "col",
+   "label": "Col de Rousset",
+   "lat": 44.83749,
+   "lon": 5.40181,
+   "source": "revue"
+  },
+  "Royans": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-Jean-en-Royans",
+   "lat": 45.01725,
+   "lon": 5.29081,
+   "source": "revue"
+  },
+  "Saint-Julien": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-Julien-en-Vercors",
+   "lat": 45.05094,
+   "lon": 5.44801,
+   "source": "revue"
+  },
+  "Saint-Thomas": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-Thomas-en-Royans",
+   "lat": 45.04843,
+   "lon": 5.29464,
+   "source": "revue"
+  },
+  "Serpaton": {
+   "kind": "col",
+   "label": "Pas du Serpaton",
+   "lat": 44.91035,
+   "lon": 5.58848,
+   "source": "revue"
+  },
+  "Serpaton Est": {
+   "kind": "site de vol libre",
+   "label": "le Pas du Serpaton",
+   "lat": 44.91066,
+   "lon": 5.5906,
+   "source": "revue"
+  },
+  "Serpaton aux Deux Sœurs": null,
+  "Suisse": null,
+  "Valbonnais": {
+   "kind": "lieu-dit habité",
+   "label": "Valbonnais",
+   "lat": 44.89988,
+   "lon": 5.90456,
+   "source": "revue"
+  },
+  "cirque de Peyrus": {
+   "kind": "lieu-dit habité",
+   "label": "Peyrus",
+   "lat": 44.9125,
+   "lon": 5.10576,
+   "source": "revue"
+  },
+  "col de Bachal": {
+   "kind": "col",
+   "label": "Col du Bachat",
+   "lat": 44.76132,
+   "lon": 5.61739,
+   "source": "revue"
+  },
+  "crêt de la Ferrière": {
+   "kind": "crête",
+   "label": "Crête de la Ferrière",
+   "lat": 44.97761,
+   "lon": 5.5957,
+   "source": "revue"
+  },
+  "vallon de Gresse": {
+   "kind": "administratif",
+   "label": "Gresse-en-Vercors",
+   "lat": 44.89975,
+   "lon": 5.56036,
+   "source": "revue"
+  },
+  "vallée de la Drôme": {
+   "kind": "lieu-dit habité",
+   "label": "Die",
+   "lat": 44.75821,
+   "lon": 5.36857,
+   "source": "revue"
+  },
+  "vallée de la Gresse": {
+   "kind": "administratif",
+   "label": "Gresse-en-Vercors",
+   "lat": 44.89975,
+   "lon": 5.56036,
+   "source": "revue"
+  },
+  "vallée du Drac": null,
+  "vallée du Rhône": null
+ },
+ "vercors-nord": {
+  "Bellecombe": {
+   "kind": "site de vol libre",
+   "label": "Autrans Bellecombe",
+   "lat": 45.175,
+   "lon": 5.57812,
+   "source": "revue"
+  },
+  "Belvédère": null,
+  "Col Vert au Moucherotte": null,
+  "Crêt de Méaudre": {
+   "kind": "site de vol libre",
+   "label": "le Crêt",
+   "lat": 45.11742,
+   "lon": 5.5167,
+   "source": "revue"
+  },
+  "Cumacle": {
+   "kind": "col",
+   "label": "Pas du Cumacle",
+   "lat": 45.18154,
+   "lon": 5.51808,
+   "source": "revue"
+  },
+  "Gerbier": {
+   "kind": "crête",
+   "label": "Arêtes du Gerbier",
+   "lat": 45.02381,
+   "lon": 5.58712,
+   "source": "revue"
+  },
+  "Gobert": null,
+  "Granier": {
+   "kind": "sommet",
+   "label": "Mont Granier",
+   "lat": 45.46441,
+   "lon": 5.92525,
+   "source": "revue"
+  },
+  "Hauts-Plateaux": null,
+  "LTA Vercors": null,
+  "Mollard": null,
+  "Montaud": {
+   "kind": "site de vol libre",
+   "label": "Décollage FFVL de Montaud",
+   "lat": 45.24475,
+   "lon": 5.57489,
+   "source": "revue"
+  },
+  "Orient": {
+   "kind": "sommet",
+   "label": "Bec de l'Orient",
+   "lat": 45.23514,
+   "lon": 5.54485,
+   "source": "revue"
+  },
+  "Pendant": null,
+  "Pertuson": {
+   "kind": "col",
+   "label": "Pas de Pertuson",
+   "lat": 45.1539,
+   "lon": 5.50231,
+   "source": "revue"
+  },
+  "Pissevache": null,
+  "Pré du Four de Varces": {
+   "kind": "site de vol libre",
+   "label": "Pré du Four",
+   "lat": 45.0816,
+   "lon": 5.63271,
+   "source": "revue"
+  },
+  "Qui": null,
+  "Rages": {
+   "kind": "col",
+   "label": "Pas des Rages",
+   "lat": 45.0834,
+   "lon": 5.49672,
+   "source": "revue"
+  },
+  "Royans": {
+   "kind": "lieu-dit habité",
+   "label": "Saint-Jean-en-Royans",
+   "lat": 45.01725,
+   "lon": 5.29081,
+   "source": "revue"
+  },
+  "Sagnes": null,
+  "Vercors au Mollard": null,
+  "Âne de Malleval": {
+   "kind": "site de vol libre",
+   "label": "Aire de Décollage Pas de l'Âne",
+   "lat": 45.13077,
+   "lon": 5.44449,
+   "source": "revue"
+  }
+ }
+}

@@ -7,7 +7,7 @@
  * sourced detail. Built from the atlas only.
  */
 import type { Atlas, AtlasFeature, AtlasFeatureProps, AtlasMassif, AtlasTourPlace, FeatureCategory } from '@brises/shared';
-import { Marker } from 'maplibre-gl';
+import { Marker, type GeoJSONSource, type Map as MapLibreMap } from 'maplibre-gl';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { activeInSlot, thermalRole } from '../map/modules/schema';
 import { SCHEMA_PHASES, useApp, useRuntime, type SchemaPhase } from '../state/store';
@@ -141,7 +141,7 @@ function writtenTour(atlas: Atlas, m: AtlasMassif): Step[] | null {
   if (!steps?.length) return null;
   const byId = new Map(Object.values(atlas.features).flatMap((list) => list.map((f) => [f.properties.id, f] as const)));
   // The visited massif itself is the whole frame, not a pin in its middle.
-  const own = (places?: AtlasTourPlace[]) => places?.filter((p) => !(p.kind === 'massif' && p.label === m.shortName));
+  const own = (places?: AtlasTourPlace[]) => places?.filter((p) => !(p.kind === 'massif' && (p.massifs ? p.massifs.length === 1 && p.massifs[0] === m.id : p.label === m.shortName)));
   return steps.map((st) => {
     const feats = st.features.map((id) => byId.get(id)).filter((f): f is AtlasFeature => !!f);
     return {
@@ -457,6 +457,43 @@ function PlaceText({ text, places, onPick }: { text: string; places?: AtlasTourP
   );
 }
 
+/** Massifs and regions a step names: their sector outlines, dashed, the one under the reader's finger brighter. */
+function showZones(map: MapLibreMap, atlas: Atlas, places: AtlasTourPlace[]) {
+  if (!map.isStyleLoaded() && !map.getSource('tour-zones')) return;
+  const outlines = new Map(atlas.massifs.map((x) => [x.id, x.outline]));
+  const features = places.flatMap((pl) =>
+    (pl.massifs ?? []).flatMap((id) => {
+      const ring = outlines.get(id);
+      if (!ring || ring.length < 3) return [];
+      const closed = ring[0][0] === ring[ring.length - 1][0] && ring[0][1] === ring[ring.length - 1][1] ? ring : [...ring, ring[0]];
+      return [{ type: 'Feature' as const, properties: { name: pl.name }, geometry: { type: 'Polygon' as const, coordinates: [closed] } }];
+    }),
+  );
+  const data = { type: 'FeatureCollection' as const, features };
+  const src = map.getSource('tour-zones') as GeoJSONSource | undefined;
+  if (src) {
+    src.setData(data);
+    return;
+  }
+  map.addSource('tour-zones', { type: 'geojson', data });
+  map.addLayer({ id: 'tour-zones-fill', type: 'fill', source: 'tour-zones', paint: { 'fill-color': '#fbbf24', 'fill-opacity': 0.05 } });
+  map.addLayer({
+    id: 'tour-zones',
+    type: 'line',
+    source: 'tour-zones',
+    layout: { 'line-join': 'round' },
+    paint: { 'line-color': '#fbbf24', 'line-width': 2.2, 'line-opacity': 0.9, 'line-dasharray': [2.2, 1.6] },
+  });
+}
+
+/** The zone named by a tapped word stands out; the others stay dashed and quiet. */
+function lightZone(map: MapLibreMap, name: string | null) {
+  if (!map.getLayer('tour-zones')) return;
+  const on: unknown = ['==', ['get', 'name'], name ?? ''];
+  map.setPaintProperty('tour-zones', 'line-width', ['case', on, 3.6, 2.2] as never);
+  map.setPaintProperty('tour-zones-fill', 'fill-opacity', ['case', on, 0.16, 0.05] as never);
+}
+
 export function MassifTour() {
   const { tourStep, schemaMassif, schema3d, set } = useApp();
   const atlas = useRuntime((r) => r.atlas);
@@ -492,7 +529,7 @@ export function MassifTour() {
   useEffect(() => {
     const c = getController();
     const map = c?.map;
-    if (!step || !map || !massif) return;
+    if (!step || !map || !massif || !atlas) return;
     const patch: Partial<ReturnType<typeof useApp.getState>> = {};
     if (step.phase) Object.assign(patch, { schemaPhase: step.phase, hour: PHASE_HOUR[step.phase] });
     Object.assign(patch, step.wind ? { synopticFrom: step.wind.fromDeg, synopticKmh: step.wind.kmh } : { synopticKmh: 0 });
@@ -526,30 +563,40 @@ export function MassifTour() {
       el.className = 'tour-focus';
       return new Marker({ element: el }).setLngLat(p).addTo(map);
     });
-    // The places the text names, pinned with their name, one after the other in reading order.
+    // The places the text names, pinned with their name, one after the other in reading order;
+    // a massif or a region is an area: its outline dashed, its name in the middle, no pin.
     pins.current.clear();
+    showZones(map, atlas, step.places ?? []);
+    lightZone(map, null);
     const placeMarkers = (step.places ?? []).map((pl, i) => {
       // MapLibre positions the outer element with a transform: the appear animation runs on the inner one.
       const root = document.createElement('div');
       const el = document.createElement('div');
-      el.className = 'tour-place';
+      const zone = !!pl.massifs?.length;
+      el.className = zone ? 'tour-place zone' : 'tour-place';
       el.style.animationDelay = `${0.15 + i * 0.12}s`;
       const dot = document.createElement('i');
       const label = document.createElement('span');
       label.textContent = pl.name;
       label.title = pl.label;
-      el.append(dot, label);
+      el.append(...(zone ? [label] : [dot, label]));
       root.append(el);
       pins.current.set(pl.name, el);
-      return new Marker({ element: root, anchor: 'left', offset: [-6, 0] }).setLngLat([pl.lon, pl.lat]).addTo(map);
+      return zone
+        ? new Marker({ element: root, anchor: 'center' }).setLngLat([pl.lon, pl.lat]).addTo(map)
+        : new Marker({ element: root, anchor: 'left', offset: [-6, 0] }).setLngLat([pl.lon, pl.lat]).addTo(map);
     });
-    return () => [...markers, ...placeMarkers].forEach((mk) => mk.remove());
-  }, [step, schema3d, massif, snap]);
+    return () => {
+      [...markers, ...placeMarkers].forEach((mk) => mk.remove());
+      showZones(map, atlas, []);
+    };
+  }, [step, schema3d, massif, snap, atlas]);
 
   /** A place word tapped in the text: its pin pulses, and the map brings it into view if needed. */
   const pick = (pl: AtlasTourPlace, move = true) => {
     for (const [name, el] of pins.current) el.classList.toggle('on', name === pl.name);
     const map = getController()?.map;
+    if (map) lightZone(map, pl.massifs?.length ? pl.name : null);
     if (move && map && !map.getBounds().contains([pl.lon, pl.lat])) map.easeTo({ center: [pl.lon, pl.lat], duration: 700 });
   };
 

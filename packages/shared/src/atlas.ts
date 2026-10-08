@@ -177,6 +177,8 @@ export interface AtlasTourPlace {
   lon: number;
   lat: number;
   kind?: string;
+  /** A massif or region: the sector(s) whose outline is drawn dashed; lon/lat anchors its name. */
+  massifs?: string[];
 }
 
 export interface Atlas {

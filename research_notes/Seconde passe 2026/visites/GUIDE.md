@@ -77,3 +77,21 @@ visite courte et juste qu'une visite gonflée.
 - Citer les contraintes réglementaires et environnementales documentées (TMA, ZIT,
   zones de quiétude, dates de nidification) au moment où le parcours les rencontre.
 - Pas de focus fourre-tout : 1 à 6 éléments par étape, ceux dont parle le texte.
+
+## Lieux cités
+
+Les noms de lieux du texte sont surlignés et épinglés sur la carte ; un massif ou une région
+couverte par des secteurs (« Belledonne », « le Dévoluy », « le Vercors ») est dessiné comme
+une zone en pointillés. Après avoir écrit ou modifié une visite :
+
+1. `python3 scripts/research/visit_places.py <massif>` localise les nouveaux noms (répertoire
+   IGN ; une commune est placée sur son village, jamais au centre de son territoire) ;
+2. `python3 scripts/research/place_review.py <massif>` affiche chaque étape avec ses lieux,
+   leur commune et leur position : vérifier les homonymes, le type (col, lac, sommet ou
+   hameau) et les directions écrites dans le texte ;
+3. reporter les corrections dans `_lieux_corrections.json` (massif → nom tel qu'écrit → lieu,
+   `{"massifs": [...]}` pour une zone, ou `null` pour retirer un faux lieu), puis relancer
+   l'étape 1. Ces corrections ont le dernier mot et survivent aux relances.
+
+Toutes les visites ont été relues ainsi en octobre 2026 : 736 corrections de lieux, et 12 erreurs
+de direction ou de distance corrigées dans les textes.

@@ -74,7 +74,7 @@ export function TimeBar() {
       </div>
       <label className="month">
         <span className="sr-only">Mois</span>
-        <select value={month0} onChange={(e) => set({ month0: Number(e.target.value), day: 15 })}>
+        <select value={month0} onChange={(e) => set({ month0: Number(e.target.value), day: 15, forecastDay: null })}>
           {MONTHS.map((m, i) => (
             <option key={m} value={i}>
               {m}

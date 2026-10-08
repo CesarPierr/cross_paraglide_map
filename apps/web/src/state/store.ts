@@ -1,4 +1,4 @@
-import type { Atlas, ContributionInput } from '@brises/shared';
+import type { Atlas, ContributionInput, SynopticWind } from '@brises/shared';
 import { create } from 'zustand';
 import type { Level } from '../glossary';
 import type { PowerMode } from '../map/frame-pacer';
@@ -68,6 +68,8 @@ export interface AppState {
    * forecast). Remembered in this browser.
    */
   uiMode: 'explore' | 'simulate';
+  /** Forecast day driving the synoptic wind hour by hour (0 today, 1 tomorrow, 2 the day after); null = set by hand. */
+  forecastDay: number | null;
   layers: Record<LayerKey, boolean>;
   basemap: Basemap;
   exaggeration: number;
@@ -145,6 +147,7 @@ export const useApp = create<AppState>((set) => ({
   simOverlay: 'exposure',
   overlayOpacity: 0.85,
   uiMode: remembered('brises.uimode', ['simulate'] as const, 'explore'),
+  forecastDay: null,
   layers: {
     particles: true,
     comets: true,
@@ -220,6 +223,8 @@ export interface RuntimeState {
   /** Route being planned or highlighted: turn points and whether map clicks add points. */
   plan: { points: [number, number][]; names: string[]; picking: boolean; title?: string } | null;
   toast: string | null;
+  /** Hourly ridge-level wind forecast around the view (forecast mode), and where it was taken. */
+  forecast: { lat: number; lon: number; hours: SynopticWind[]; status: 'loading' | 'ready' | 'error'; message?: string } | null;
   set: (patch: Partial<RuntimeState>) => void;
 }
 
@@ -235,5 +240,6 @@ export const useRuntime = create<RuntimeState>((set) => ({
   draft: null,
   plan: null,
   toast: null,
+  forecast: null,
   set: (patch) => set(patch),
 }));

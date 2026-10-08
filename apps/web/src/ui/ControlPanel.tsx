@@ -3,9 +3,9 @@ import { useState } from 'react';
 import type { OverlayMode } from '../engine/cpu-overlays';
 import { AIRSPACE_COLORS, BREEZE_COLORS, COLORS } from '../map/palette';
 import { useApp, useRuntime, type LayerKey } from '../state/store';
-import { getController, getDataClient } from './controller-ref';
 import { fmtHour, MONTHS } from './format';
-import { IconChevron, IconDownload, IconMountain, IconSpark, IconWind } from './icons';
+import { IconChevron, IconMountain, IconSpark, IconWind } from './icons';
+import { ForecastBlock } from './Forecast';
 import { LegendBody, OverlayLegend } from './Legend';
 import { WindDial } from './WindDial';
 
@@ -205,28 +205,8 @@ function Situation() {
 /** The simulation: synoptic wind, reading of the relief, reading height, forecast. */
 export function SimulationPanel() {
   const s = useApp();
-  const [forecastMsg, setForecastMsg] = useState<string | null>(null);
-
-  const loadForecast = async () => {
-    const c = getController();
-    const w = getDataClient()?.weather();
-    if (!c || !w) return;
-    const center = c.map.getCenter();
-    setForecastMsg('Chargement de la prévision…');
-    try {
-      const hours = await w.synoptic(center.lat, center.lng);
-      const today = new Date().toISOString().slice(0, 10);
-      const h = hours.find((x) => x.time.startsWith(today) && x.hour === Math.round(s.hour)) ?? hours[0];
-      s.set({ synopticFrom: h.fromDeg, synopticKmh: h.speedKmh, month0: Number(h.time.slice(5, 7)) - 1, day: Number(h.time.slice(8, 10)) });
-      const l = h.levels ?? {};
-      setForecastMsg(
-        `Prévu le ${h.time.slice(8, 10)}/${h.time.slice(5, 7)} à ${h.hour}h au centre de la vue : ${l['850hPa'] ? `1500 m ${compassFr(l['850hPa'][0])} ${Math.round(l['850hPa'][1])} km/h, ` : ''}${l['700hPa'] ? `3000 m ${compassFr(l['700hPa'][0])} ${Math.round(l['700hPa'][1])} km/h` : ''}.`,
-      );
-    } catch (e) {
-      setForecastMsg(`Prévision indisponible (${e instanceof Error ? e.message : 'erreur'}).`);
-    }
-  };
-
+  // Setting the wind by hand leaves the forecast.
+  const wind = (patch: { synopticFrom?: number; synopticKmh?: number }) => s.set({ ...patch, forecastDay: null });
   const choose = (o: OverlayMode) => s.set({ overlay: o, simOverlay: o });
   return (
     <div className="cp simulation">
@@ -237,27 +217,24 @@ export function SimulationPanel() {
           <IconWind size={15} /> Vent météo
         </h3>
         <div className="wind-row">
-          <WindDial fromDeg={s.synopticFrom} speedKmh={s.synopticKmh} onChange={(d) => s.set({ synopticFrom: d })} />
+          <WindDial fromDeg={s.synopticFrom} speedKmh={s.synopticKmh} onChange={(d) => wind({ synopticFrom: d })} />
           <div className="wind-sliders">
             <label className="field">
               <span>
                 Vent aux crêtes <b>{s.synopticKmh < 3 ? 'calme' : `${compassFr(s.synopticFrom)} ${s.synopticKmh} km/h`}</b>
               </span>
-              <input type="range" min={0} max={60} step={1} value={s.synopticKmh} onChange={(e) => s.set({ synopticKmh: Number(e.target.value) })} aria-label="Force du vent météo" />
+              <input type="range" min={0} max={60} step={1} value={s.synopticKmh} onChange={(e) => wind({ synopticKmh: Number(e.target.value) })} aria-label="Force du vent météo" />
             </label>
             <div className="chips compact" role="group" aria-label="Situations types">
               {PRESETS.map((p) => (
-                <button key={p.label} className={`chip ${s.synopticKmh === p.kmh && (p.kmh === 0 || s.synopticFrom === p.from) ? 'active' : ''}`} title={p.hint} onClick={() => s.set({ synopticFrom: p.from, synopticKmh: p.kmh })}>
+                <button key={p.label} className={`chip ${s.forecastDay === null && s.synopticKmh === p.kmh && (p.kmh === 0 || s.synopticFrom === p.from) ? 'active' : ''}`} title={p.hint} onClick={() => wind({ synopticFrom: p.from, synopticKmh: p.kmh })}>
                   {p.label}
                 </button>
               ))}
             </div>
           </div>
         </div>
-        <button className="link-btn" onClick={() => void loadForecast()}>
-          <IconDownload size={14} /> Prendre le vent prévu au centre de la carte
-        </button>
-        {forecastMsg && <p className="hint">{forecastMsg}</p>}
+        <ForecastBlock />
       </section>
 
       <section className="cp-block">

@@ -19,7 +19,7 @@ export function togglePopover(k: PopoverKey): void {
 
 /** The current synoptic wind, as a button to the simulation, where it is set. */
 export function WindChip() {
-  const { synopticFrom, synopticKmh, heatwave, uiMode } = useApp();
+  const { synopticFrom, synopticKmh, heatwave, uiMode, forecastDay } = useApp();
   const open = () => {
     setUiMode('simulate');
     // Phone: the settings sheet comes back if it was closed.
@@ -32,6 +32,7 @@ export function WindChip() {
     <button className={`wind-chip ${uiMode === 'simulate' ? 'on' : ''}`} onClick={open} title={uiMode === 'simulate' ? 'Réglages du vent' : 'Régler le vent : mode Simulation'}>
       <IconWind size={15} />
       <span>{synopticKmh < 3 ? 'Vent calme' : `${compassFr(synopticFrom)} ${synopticKmh} km/h`}</span>
+      {forecastDay !== null && <small>prévu</small>}
       {heatwave && <small>canicule</small>}
     </button>
   );

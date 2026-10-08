@@ -3244,6 +3244,53 @@ div.summary {
   min-width: 0;
 }
 
+/* Forecast: the wind by hand or the forecast of a day, hour by hour. */
+.forecast {
+  margin-top: 10px;
+}
+.forecast-days {
+  display: flex;
+  width: 100%;
+}
+.forecast-days button {
+  flex: 1;
+  white-space: nowrap;
+}
+.forecast-strip {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-top: 8px;
+}
+.forecast-strip button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+  padding: 4px 0;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--panel-raised);
+  color: var(--text-2);
+  cursor: pointer;
+}
+.forecast-strip button small {
+  font-size: 10px;
+  color: var(--muted);
+}
+.forecast-strip button b {
+  font-size: 12px;
+  font-weight: 600;
+}
+.forecast-strip button svg {
+  color: #7dd3fc;
+}
+.forecast-strip button.on {
+  border-color: rgba(125, 211, 252, 0.8);
+  background: var(--accent-soft);
+  color: #fff;
+}
+
 /* Probe while simulating: what the sources say, one tap away. */
 .probe-sources {
   margin: 4px 0 10px;

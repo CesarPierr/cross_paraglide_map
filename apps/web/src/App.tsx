@@ -7,6 +7,7 @@ import { MapView } from './ui/MapView';
 import { MobileDock, MobileRail, useIsMobile, useSheetLayout } from './ui/mobile';
 import { goTo, ModeTabs, UiModeSwitch } from './ui/modes';
 import { NavPad } from './ui/NavPad';
+import { useForecastSync } from './ui/Forecast';
 import { MapTools, Popover } from './ui/Popovers';
 import { SearchBox } from './ui/Search';
 import { Sidebar } from './ui/Sidebar';
@@ -88,6 +89,7 @@ export default function App() {
   const sheet = mobile && (visit || !!popover || mobileSheet === 'browse');
   useSheetLayout(visit);
   useShortcuts();
+  useForecastSync();
   return (
     <div className={`app ${mobile ? 'is-mobile' : ''} ${sideOpen ? 'side-open' : ''} ${sheet ? 'has-sheet' : ''} ${visit ? 'in-visit' : ''} ui-${uiMode}`}>
       <MapView />

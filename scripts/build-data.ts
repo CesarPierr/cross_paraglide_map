@@ -18,6 +18,7 @@ import { analyseTerrain, type Terrain } from '@brises/model';
 import { splitAtlas } from '@brises/shared';
 import { loadDem } from '@brises/model/node';
 import { integrateKk7, kk7Markdown, type Kk7Report } from './kk7';
+import { tileSectors } from './tessellation';
 
 const ROOT = process.cwd();
 const RESEARCH = join(ROOT, 'research_notes', 'Brises des Alpes françaises', 'data');
@@ -784,76 +785,6 @@ function readTours(rawToFeature: Map<string, string>, massifs: AtlasMassif[], fe
   return out;
 }
 
-// ---------- Sector outlines ----------
-type XY = [number, number];
-
-function convexHull(pts: XY[]): XY[] {
-  const p = [...pts].sort((a, b) => a[0] - b[0] || a[1] - b[1]);
-  if (p.length < 3) return p;
-  const cross = (o: XY, a: XY, b: XY) => (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0]);
-  const lower: XY[] = [];
-  for (const q of p) {
-    while (lower.length >= 2 && cross(lower[lower.length - 2], lower[lower.length - 1], q) <= 0) lower.pop();
-    lower.push(q);
-  }
-  const upper: XY[] = [];
-  for (const q of [...p].reverse()) {
-    while (upper.length >= 2 && cross(upper[upper.length - 2], upper[upper.length - 1], q) <= 0) upper.pop();
-    upper.push(q);
-  }
-  return [...lower.slice(0, -1), ...upper.slice(0, -1)];
-}
-
-/** Keeps the part of a convex polygon where a·p ≤ c (Sutherland–Hodgman against one half-plane). */
-function clipHalfPlane(poly: XY[], a: XY, c: number): XY[] {
-  const out: XY[] = [];
-  const f = (q: XY) => a[0] * q[0] + a[1] * q[1] - c;
-  for (let i = 0; i < poly.length; i++) {
-    const p = poly[i];
-    const q = poly[(i + 1) % poly.length];
-    const fp = f(p);
-    const fq = f(q);
-    if (fp <= 0) out.push(p);
-    if ((fp <= 0) !== (fq <= 0)) {
-      const t = fp / (fp - fq);
-      out.push([p[0] + t * (q[0] - p[0]), p[1] + t * (q[1] - p[1])]);
-    }
-  }
-  return out;
-}
-
-function computeOutlines(massifs: AtlasMassif[], features: Record<FeatureCategory, AtlasFeature[]>): void {
-  const kx = Math.cos((45 * Math.PI) / 180);
-  const toXY = ([lon, lat]: [number, number]): XY => [lon * kx, lat];
-  const toLL = ([x, y]: XY): [number, number] => [Math.round((x / kx) * 1e3) / 1e3, Math.round(y * 1e3) / 1e3];
-  const sectors = massifs.filter((m) => m.id !== 'alpes-francaises');
-  const centers = new Map(sectors.map((m) => [m.id, toXY(m.center)]));
-  const BUFFER = 0.03; // ≈ 2.5 km around the outermost items
-  for (const m of sectors) {
-    const pts: XY[] = [];
-    for (const cat of Object.keys(features) as FeatureCategory[])
-      for (const f of features[cat]) {
-        if (f.properties.massif !== m.id || cat === 'routes') continue;
-        const cs = f.geometry.type === 'Point' ? [f.geometry.coordinates] : f.geometry.coordinates;
-        for (const c of cs) {
-          const [x, y] = toXY(c as [number, number]);
-          for (let k = 0; k < 8; k++) pts.push([x + BUFFER * Math.cos((k * Math.PI) / 4), y + BUFFER * Math.sin((k * Math.PI) / 4)]);
-        }
-      }
-    // Too few items: the declared extent.
-    if (pts.length < 24) for (const c of [[m.bbox[0], m.bbox[1]], [m.bbox[2], m.bbox[1]], [m.bbox[2], m.bbox[3]], [m.bbox[0], m.bbox[3]]] as [number, number][]) pts.push(toXY(c));
-    let poly = convexHull(pts);
-    const ci = centers.get(m.id)!;
-    for (const [id, cj] of centers) {
-      if (id === m.id) continue;
-      // Closer to ci than to cj: (cj - ci)·p ≤ (|cj|² − |ci|²) / 2
-      const a: XY = [cj[0] - ci[0], cj[1] - ci[1]];
-      poly = clipHalfPlane(poly, a, (cj[0] ** 2 + cj[1] ** 2 - ci[0] ** 2 - ci[1] ** 2) / 2);
-      if (poly.length < 3) break;
-    }
-    if (poly.length >= 3) m.outline = poly.map(toLL);
-  }
-}
 
 // ---------- Main ----------
 function main() {
@@ -1228,9 +1159,11 @@ function main() {
   // Written guided visits: steps tied to atlas items (their sources back the narration).
   const tours = readTours(rawToFeature, massifs, features);
 
-  // Sector outlines: the area covered by each sector's items (hull, buffered), split with
-  // its neighbours along equidistance lines so the shapes tile the map without overlaps.
-  computeOutlines(massifs, features);
+  // Sector outlines: the Alpine area cut into contiguous blocks, each place going to the sector of its
+  // nearest documented item (scripts/tessellation.ts): no holes, no overlaps.
+  const deps = JSON.parse(readFileSync(join(ROOT, 'research_notes', 'Seconde passe 2026', 'sources', 'territoire', 'departements_alpes.geojson'), 'utf8')) as { features: { geometry: { type: string; coordinates: unknown } }[] };
+  const tiling = tileSectors(massifs, features, deps.features);
+  console.log(`secteurs : ${tiling.sectors} blocs jointifs, ${tiling.cells} cellules, ${tiling.reassigned} cellules rattachées à leur voisin`);
 
   // Thermal hotspots measured from GPS tracks: confirm, place and complete the documented
   // thermals (after the outlines, which stay those of the researched items).

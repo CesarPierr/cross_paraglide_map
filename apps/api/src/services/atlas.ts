@@ -68,6 +68,7 @@ export async function loadAtlas(db: Db): Promise<Atlas> {
       items: items.get(m.id) ?? (Object.fromEntries(CATEGORIES.map((c) => [c, []])) as unknown as AtlasMassif['items']),
       sources: m.sources,
       outline: (metaMap.outlines as Record<string, [number, number][]> | undefined)?.[m.id],
+      colorIndex: (metaMap.colors as Record<string, number> | undefined)?.[m.id],
     };
   });
   return {

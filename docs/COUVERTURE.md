@@ -1,79 +1,82 @@
 # Couverture de l’atlas par rapport aux décollages officiels
 
-Généré par `npm run data:coverage`. Pour chaque décollage FFVL ouvert à la pratique (421), l’atlas doit documenter un thermique ou point de relance à moins de 3 km et une brise à moins de 6 km. Couverts : **357/421 (85 %)**. 32 décollages de la liste sont à plus de 8 km de tout secteur (Jura, Bugey, bas Rhône…) et ne sont pas comptés. Parmi les décollages sans thermique décrit, 2 ont un point chaud mesuré par les traces GPS (thermal.kk7.ch) à moins de 3 km.
+Généré par `npm run data:coverage`. Pour chaque décollage FFVL ouvert à la pratique (426), l’atlas doit documenter un thermique ou point de relance à moins de 3 km et une brise à moins de 6 km. Couverts : **357/426 (84 %)**. 27 décollages de la liste sont à plus de 8 km de tout secteur (Jura, Bugey, bas Rhône…) et ne sont pas comptés. Parmi les décollages sans thermique décrit, 4 ont un point chaud mesuré par les traces GPS (thermal.kk7.ch) à moins de 3 km.
 
 | Secteur | Décollages | Couverts | Taux |
 | --- | --- | --- | --- |
-| Trièves (`trieves`) | 2 | 0 | 0 % |
-| Saint-André (`saint-andre-verdon`) | 7 | 3 | 43 % |
-| Digne – Lure (`prealpes-digne-lure`) | 17 | 9 | 53 % |
+| Digne – Lure (`prealpes-digne-lure`) | 22 | 10 | 45 % |
+| Diois (`diois`) | 10 | 5 | 50 % |
+| Trièves (`trieves`) | 4 | 2 | 50 % |
 | Champsaur (`champsaur-valgaudemar`) | 9 | 5 | 56 % |
-| Diois (`diois`) | 8 | 5 | 63 % |
+| Bourget – Chambéry (`bourget-chambery`) | 22 | 13 | 59 % |
 | Préalpes de Grasse (`prealpes-grasse-castellane`) | 18 | 12 | 67 % |
+| Préalpes de Nice (`prealpes-nice-var`) | 3 | 2 | 67 % |
 | Dévoluy (`devoluy`) | 3 | 2 | 67 % |
-| Bourget – Chambéry (`bourget-chambery`) | 19 | 13 | 68 % |
-| Briançonnais (`brianconnais-guisane`) | 10 | 7 | 70 % |
+| Haute-Maurienne (`haute-maurienne`) | 13 | 9 | 69 % |
+| Vercors est & sud (`vercors-est-sud`) | 10 | 7 | 70 % |
 | Baronnies (`baronnies`) | 24 | 17 | 71 % |
 | Beaufortain (`beaufortain`) | 7 | 5 | 71 % |
-| Haute-Maurienne (`haute-maurienne`) | 14 | 10 | 71 % |
-| Vercors est & sud (`vercors-est-sud`) | 11 | 8 | 73 % |
-| Chablais (`chablais`) | 9 | 7 | 78 % |
-| Matheysine – Drac (`matheysine`) | 10 | 8 | 80 % |
-| Préalpes de Nice (`prealpes-nice-var`) | 7 | 6 | 86 % |
-| Buëch – Chabre (`buech-laragne-chabre`) | 16 | 14 | 88 % |
-| Serre-Ponçon (`serre-poncon-embrunais`) | 20 | 18 | 90 % |
-| Vercors nord (`vercors-nord`) | 21 | 20 | 95 % |
-| Tarentaise (`tarentaise`) | 29 | 28 | 97 % |
-| Chamonix – Mont-Blanc (`mont-blanc-chamonix`) | 10 | 10 | 100 % |
-| Megève – Val d’Arly (`val-arly-megeve`) | 5 | 5 | 100 % |
-| Combe de Savoie (`combe-de-savoie`) | 10 | 10 | 100 % |
-| Haut-Verdon (`haut-verdon-allos`) | 1 | 1 | 100 % |
-| Giffre (`haut-giffre`) | 11 | 11 | 100 % |
-| Cuvette grenobloise (`grenoble-cuvette`) | 5 | 5 | 100 % |
-| Gapençais – Céüse (`gapencais-ceuse`) | 7 | 7 | 100 % |
+| Briançonnais (`brianconnais-guisane`) | 8 | 6 | 75 % |
+| Matheysine – Drac (`matheysine`) | 9 | 7 | 78 % |
+| Gapençais – Céüse (`gapencais-ceuse`) | 5 | 4 | 80 % |
+| Chablais (`chablais`) | 11 | 9 | 82 % |
+| Vallouise – haute Durance (`ecrins-vallouise-haute-durance`) | 6 | 5 | 83 % |
+| Serre-Ponçon (`serre-poncon-embrunais`) | 21 | 19 | 90 % |
+| Buëch – Chabre (`buech-laragne-chabre`) | 16 | 15 | 94 % |
+| Vercors nord (`vercors-nord`) | 23 | 22 | 96 % |
+| Tarentaise (`tarentaise`) | 31 | 30 | 97 % |
+| Faucigny – Arve (`arve-faucigny`) | 10 | 10 | 100 % |
+| Megève – Val d’Arly (`val-arly-megeve`) | 3 | 3 | 100 % |
+| Combe de Savoie (`combe-de-savoie`) | 7 | 7 | 100 % |
+| Lac d’Annecy (`lac-annecy`) | 8 | 8 | 100 % |
+| Mercantour (`mercantour`) | 10 | 10 | 100 % |
+| Belledonne (`belledonne`) | 13 | 13 | 100 % |
+| Chartreuse (`chartreuse`) | 15 | 15 | 100 % |
 | Salève (`saleve-genevois`) | 3 | 3 | 100 % |
-| Chartreuse (`chartreuse`) | 6 | 6 | 100 % |
-| Belledonne (`belledonne`) | 11 | 11 | 100 % |
-| Maurienne (`maurienne`) | 10 | 10 | 100 % |
-| Vanoise (`vanoise`) | 13 | 13 | 100 % |
-| Mercantour (`mercantour`) | 6 | 6 | 100 % |
-| Lac d’Annecy (`lac-annecy`) | 6 | 6 | 100 % |
+| Vanoise (`vanoise`) | 12 | 12 | 100 % |
 | Aravis (`aravis`) | 7 | 7 | 100 % |
-| Val Montjoie (`val-montjoie-saint-gervais`) | 10 | 10 | 100 % |
-| Vallouise – haute Durance (`ecrins-vallouise-haute-durance`) | 4 | 4 | 100 % |
-| Faucigny – Arve (`arve-faucigny`) | 2 | 2 | 100 % |
-| Bauges (`bauges`) | 7 | 7 | 100 % |
-| Grésivaudan (`gresivaudan`) | 7 | 7 | 100 % |
+| Chamonix – Mont-Blanc (`mont-blanc-chamonix`) | 9 | 9 | 100 % |
+| Val Montjoie (`val-montjoie-saint-gervais`) | 8 | 8 | 100 % |
+| Giffre (`haut-giffre`) | 6 | 6 | 100 % |
+| Maurienne (`maurienne`) | 10 | 10 | 100 % |
 | Bornes (`bornes`) | 2 | 2 | 100 % |
-| Oisans (`oisans-grandes-rousses`) | 8 | 8 | 100 % |
+| Oisans (`oisans-grandes-rousses`) | 9 | 9 | 100 % |
+| Bauges (`bauges`) | 7 | 7 | 100 % |
 | Ubaye (`ubaye`) | 3 | 3 | 100 % |
-| Arves – Galibier (`arves-thabor-galibier`) | 3 | 3 | 100 % |
+| Saint-André (`saint-andre-verdon`) | 3 | 3 | 100 % |
+| Cuvette grenobloise (`grenoble-cuvette`) | 1 | 1 | 100 % |
+| Arves – Galibier (`arves-thabor-galibier`) | 2 | 2 | 100 % |
 | Queyras (`queyras`) | 3 | 3 | 100 % |
 
 ## Décollages sans aérologie documentée à proximité
-
-### Trièves
-
-- COURTET (FFVL 854, 1365 m, vents N;NO) : aucune brise à moins de 6 km
-- ROCHASSAC (FFVL 3070, 1674 m, vents ?) : aucune brise à moins de 6 km
-
-### Saint-André
-
-- MOUSTIERS-SAINTE-MARIE - COURCHON (FFVL 1208, 904 m, vents S;SO;O) : aucune brise à moins de 6 km
-- AIGUINES LE PUITS (FFVL 1638, 916 m, vents SO) : aucune brise à moins de 6 km
-- MOUSTIERS-SAINTE-MARIE - MONTDENIER (FFVL 13094, 1398 m, vents S;SO;O;NO) : aucune brise à moins de 6 km
-- AIGUINES LES VERNIS (FFVL 13699, 1008 m, vents SO;O;NO) : aucune brise à moins de 6 km
 
 ### Digne – Lure
 
 - GROU DE BANE - LA CROIX (FFVL 199, 1048 m, vents E;SE;S;SO) : aucune brise à moins de 6 km
 - SAINT-GENIEZ - LES RAYES (FFVL 223, 1363 m, vents SE;S;SO) : aucune brise à moins de 6 km
 - SUMIOU (FFVL 362, 1241 m, vents N;NE;NO) : aucune brise à moins de 6 km
+- MOUSTIERS-SAINTE-MARIE - COURCHON (FFVL 1208, 904 m, vents S;SO;O) : aucune brise à moins de 6 km
+- AIGUINES LE PUITS (FFVL 1638, 916 m, vents SO) : aucune brise à moins de 6 km
 - MALIJAI - BLANCHON (FFVL 1771, 766 m, vents E;SE;S;SO;O) : aucun thermique décrit à moins de 3 km (le plus proche : Digne – L'Andran : pente sud-ouest de la Clapière, 14.2 km)
 - GAMBY - CHAREX (FFVL 1943, 905 m, vents O) : aucun thermique décrit à moins de 3 km (le plus proche : Banon – Grou de Bane (La Croix) : pente sud-est des décollages Est et Sud, 3.8 km)
 - CRAU CHETIVE (FFVL 3005, 779 m, vents ?) : aucun thermique décrit à moins de 3 km (le plus proche : Banon – Grou de Bane (La Croix) : pente sud-est des décollages Est et Sud, 11.3 km) ; aucune brise à moins de 6 km
 - CHABRIER (FFVL 5070, 650 m, vents ?) : aucun thermique décrit à moins de 3 km (le plus proche : Aiguines : pente sud-ouest du plateau du Puits, 7.4 km) ; aucune brise à moins de 6 km
 - TRAINON (FFVL 5132, 1631 m, vents SO) : aucune brise à moins de 6 km
+- MOUSTIERS-SAINTE-MARIE - MONTDENIER (FFVL 13094, 1398 m, vents S;SO;O;NO) : aucune brise à moins de 6 km
+- AIGUINES LES VERNIS (FFVL 13699, 1008 m, vents SO;O;NO) : aucune brise à moins de 6 km
+
+### Diois
+
+- ROYNAC - COL DU DEVES (FFVL 730, 434 m, vents S;SO;O) : aucune brise à moins de 6 km
+- MONTAGNE DE RUY - NORD (FFVL 1313, 960 m, vents N;NE;NO) : aucun thermique décrit à moins de 3 km (le plus proche : Montagne de la Lance Sud : restitution de brise de sud-ouest, 7.7 km) — point chaud mesuré par les traces GPS à 0.1 km, à documenter ; aucune brise à moins de 6 km
+- MONTAGNE DE RUY - SUD (FFVL 1314, 1076 m, vents S;SO;O) : aucun thermique décrit à moins de 3 km (le plus proche : Montagne de la Lance Sud : restitution de brise de sud-ouest, 7.8 km) — point chaud mesuré par les traces GPS à 0.8 km, à documenter ; aucune brise à moins de 6 km
+- LES PLAINES DE POET (FFVL 5114, 880 m, vents N;NO) : aucun thermique décrit à moins de 3 km (le plus proche : Saint-Maurice – Les Antennes : pente nord-ouest du décollage, 4.4 km)
+- COL DE VOLENT (FFVL 5184, 1486 m, vents E) : aucune brise à moins de 6 km
+
+### Trièves
+
+- COURTET (FFVL 854, 1365 m, vents N;NO) : aucune brise à moins de 6 km
+- ROCHASSAC (FFVL 3070, 1674 m, vents ?) : aucune brise à moins de 6 km
 
 ### Champsaur
 
@@ -82,11 +85,17 @@ Généré par `npm run data:coverage`. Pour chaque décollage FFVL ouvert à la 
 - LE VIEUX CHAILLOL (FFVL 5041, 1030 m, vents E;SE;S;SO) : aucune brise à moins de 6 km
 - ORCIERES - CAIRN SUD (FFVL 13537, 2036 m, vents SE;S) : aucune brise à moins de 6 km
 
-### Diois
+### Bourget – Chambéry
 
-- ROYNAC - COL DU DEVES (FFVL 730, 434 m, vents S;SO;O) : aucune brise à moins de 6 km
-- LES PLAINES DE POET (FFVL 5114, 880 m, vents N;NO) : aucun thermique décrit à moins de 3 km (le plus proche : Saint-Maurice – Les Antennes : pente nord-ouest du décollage, 4.4 km)
-- COL DE VOLENT (FFVL 5184, 1486 m, vents E) : aucune brise à moins de 6 km
+- MONT TOURNIER - SAINT-MAURICE-DE-ROTHERENS (FFVL 148, 633 m, vents O;NO) : aucune brise à moins de 6 km
+- MONTAGNE DE PARVES (FFVL 311, 595 m, vents SO;O;NO;) : aucune brise à moins de 6 km
+- COLOMBIER - LA CROIX (FFVL 326, 1522 m, vents O) : aucun thermique décrit à moins de 3 km (le plus proche : Sapenay Nord : instabilité marquée par vent de sud à sud-ouest, 12.5 km)
+- COLOMBIER - RADIOPHARE (FFVL 327, 1437 m, vents SO;O;NO) : aucun thermique décrit à moins de 3 km (le plus proche : Sapenay Nord : instabilité marquée par vent de sud à sud-ouest, 10.6 km)
+- INNIMOND - LA TABLE D'ORIENTATION (FFVL 329, 1027 m, vents N;NE;E) : aucun thermique décrit à moins de 3 km (le plus proche : Montagne de Parves : pentes sous le décollage, 11.6 km) — point chaud mesuré par les traces GPS à 0.4 km, à documenter ; aucune brise à moins de 6 km
+- CASCADE DE GLANDIEU (FFVL 701, 483 m, vents SO;O) : aucune brise à moins de 6 km
+- SAINT SORLIN (FFVL 1273, 656 m, vents S;SO;O) : aucun thermique décrit à moins de 3 km (le plus proche : Cascade de Glandieu : thermique sous la falaise, 28.1 km) ; aucune brise à moins de 6 km
+- SAINT SORLIN - SOUCLIN (FFVL 1274, 763 m, vents S;) : aucun thermique décrit à moins de 3 km (le plus proche : Cascade de Glandieu : thermique sous la falaise, 27.5 km) ; aucune brise à moins de 6 km
+- LE CHANAY (FFVL 1476, 952 m, vents SE;S) : aucun thermique décrit à moins de 3 km (le plus proche : Montagne de Parves : pentes sous le décollage, 28.0 km) ; aucune brise à moins de 6 km
 
 ### Préalpes de Grasse
 
@@ -97,24 +106,26 @@ Généré par `npm run data:coverage`. Pour chaque décollage FFVL ouvert à la 
 - COLLE DU MACON (FFVL 3002, 1392 m, vents ?) : aucun thermique décrit à moins de 3 km (le plus proche : Saint-Vallier – Le Puet : pente sud sous le décollage, 4.2 km)
 - LES ANTENNES DE GRASSE (FFVL 5054, 1200 m, vents ?) : aucun thermique décrit à moins de 3 km (le plus proche : Gourdon – L’Embarnier : pente sud-est sous les décollages, 5.3 km)
 
+### Préalpes de Nice
+
+- CANTARON - MONT MACARON (FFVL 1653, 679 m, vents S) : aucune brise à moins de 6 km
+
 ### Dévoluy
 
 - COLLET DU TAT (FFVL 5345, 1705 m, vents O;NO;) : aucun thermique décrit à moins de 3 km (le plus proche : Montagne de Faraut : relais envisagé vers le lac du Sautet, 5.4 km)
 
-### Bourget – Chambéry
+### Haute-Maurienne
 
-- MONT TOURNIER - SAINT-MAURICE-DE-ROTHERENS (FFVL 148, 633 m, vents O;NO) : aucune brise à moins de 6 km
-- MONTAGNE DE PARVES (FFVL 311, 595 m, vents SO;O;NO;) : aucune brise à moins de 6 km
-- COLOMBIER - LA CROIX (FFVL 326, 1522 m, vents O) : aucun thermique décrit à moins de 3 km (le plus proche : Sapenay Nord : instabilité marquée par vent de sud à sud-ouest, 12.5 km)
-- COLOMBIER - RADIOPHARE (FFVL 327, 1437 m, vents SO;O;NO) : aucun thermique décrit à moins de 3 km (le plus proche : Sapenay Nord : instabilité marquée par vent de sud à sud-ouest, 10.6 km)
-- INNIMOND - LA TABLE D'ORIENTATION (FFVL 329, 1027 m, vents N;NE;E) : aucun thermique décrit à moins de 3 km (le plus proche : Montagne de Parves : pentes sous le décollage, 11.6 km) — point chaud mesuré par les traces GPS à 0.4 km, à documenter ; aucune brise à moins de 6 km
-- CASCADE DE GLANDIEU (FFVL 701, 483 m, vents SO;O) : aucune brise à moins de 6 km
+- VALFREJUS - PUNTA BAGNA (FFVL 623, 2368 m, vents N;NO) : aucun thermique décrit à moins de 3 km (le plus proche : Orgère (Villarodin-Bourget) : pentes sud sous l'Estive, 9.1 km)
+- MONT-CENIS (FFVL 14172, 2009 m, vents S) : aucun thermique décrit à moins de 3 km (le plus proche : Arcelle / crêtes de Val Cenis : relance sur la route Aussois → Bonneval, 5.7 km)
+- MONT-CENIS (FFVL 14173, 1889 m, vents ?) : aucun thermique décrit à moins de 3 km (le plus proche : Arcelle / crêtes de Val Cenis : relance sur la route Aussois → Bonneval, 5.8 km)
+- VALLONBRUN (FFVL 14175, 2279 m, vents S;SO;O;NO) : aucun thermique décrit à moins de 3 km (le plus proche : Arcelle / crêtes de Val Cenis : relance sur la route Aussois → Bonneval, 4.0 km)
 
-### Briançonnais
+### Vercors est & sud
 
-- MONT THABOR (FFVL 5242, 3178 m, vents ?) : aucun thermique décrit à moins de 3 km (le plus proche : Station de Valmeinier : « thermique qui sort de la station », 8.5 km) ; aucune brise à moins de 6 km
-- PIC DU GLACIER D'ARSINE (FFVL 5256, 3364 m, vents ?) : aucun thermique décrit à moins de 3 km (le plus proche : Entre les Agneaux et la Barre des Écrins : thermique « plus rentable, loin du relief », 4.6 km) — point chaud mesuré par les traces GPS à 2.6 km, à documenter ; aucune brise à moins de 6 km
-- VALLONS (FFVL 13668, 2234 m, vents NE;E;SE) : aucun thermique décrit à moins de 3 km (le plus proche : Faces est sous le sommet de Serre Chevalier (premier déclencheur avant le Granon), 3.8 km)
+- LES LIMOUCHES (FFVL 728, 992 m, vents N;NO) : aucune brise à moins de 6 km
+- PRE VALET LA SARNA - ROCHER DE COURBA (FFVL 1046, 885 m, vents O;) : aucun thermique décrit à moins de 3 km (le plus proche : Pas de Saint-Martin : aérologie généreuse de 13h à 17h quand l'activité thermique est présente, 7.1 km)
+- LIMOUCHES CARRIERE (FFVL 14203, 880 m, vents N;NO) : aucune brise à moins de 6 km
 
 ### Baronnies
 
@@ -131,42 +142,37 @@ Généré par `npm run data:coverage`. Pour chaque décollage FFVL ouvert à la 
 - ROCHE PARSTIRE (FFVL 392, 2047 m, vents O;NO) : aucun thermique décrit à moins de 3 km (le plus proche : Beaufortain : pentes de Dunand et de Lavachay, 3.6 km)
 - FENETRE 7 (FFVL 491, 1432 m, vents O) : aucun thermique décrit à moins de 3 km (le plus proche : Roche Pourrie : entrée du Beaufortain depuis les Aravis, 3.7 km)
 
-### Haute-Maurienne
+### Briançonnais
 
-- VALFREJUS - PUNTA BAGNA (FFVL 623, 2368 m, vents N;NO) : aucun thermique décrit à moins de 3 km (le plus proche : Orgère (Villarodin-Bourget) : pentes sud sous l'Estive, 9.1 km)
-- MONT-CENIS (FFVL 14172, 2009 m, vents S) : aucun thermique décrit à moins de 3 km (le plus proche : Arcelle / crêtes de Val Cenis : relance sur la route Aussois → Bonneval, 5.7 km)
-- MONT-CENIS (FFVL 14173, 1889 m, vents ?) : aucun thermique décrit à moins de 3 km (le plus proche : Arcelle / crêtes de Val Cenis : relance sur la route Aussois → Bonneval, 5.8 km)
-- VALLONBRUN (FFVL 14175, 2279 m, vents S;SO;O;NO) : aucun thermique décrit à moins de 3 km (le plus proche : Arcelle / crêtes de Val Cenis : relance sur la route Aussois → Bonneval, 4.0 km)
-
-### Vercors est & sud
-
-- LES LIMOUCHES (FFVL 728, 992 m, vents N;NO) : aucune brise à moins de 6 km
-- PRE VALET LA SARNA - ROCHER DE COURBA (FFVL 1046, 885 m, vents O;) : aucun thermique décrit à moins de 3 km (le plus proche : Pas de Saint-Martin : aérologie généreuse de 13h à 17h quand l'activité thermique est présente, 7.1 km)
-- LIMOUCHES CARRIERE (FFVL 14203, 880 m, vents N;NO) : aucune brise à moins de 6 km
-
-### Chablais
-
-- LES BRASSES DELTA (FFVL 1148, 999 m, vents ?) : aucun thermique décrit à moins de 3 km (le plus proche : Pointe des Brasses (relance après le Môle), 4.1 km)
-- CHATEL - MORCLAN SOMMET (FFVL 1180, 1376 m, vents SE;O) : aucune brise à moins de 6 km
+- MONT THABOR (FFVL 5242, 3178 m, vents ?) : aucun thermique décrit à moins de 3 km (le plus proche : Station de Valmeinier : « thermique qui sort de la station », 8.5 km) ; aucune brise à moins de 6 km
+- VALLONS (FFVL 13668, 2234 m, vents NE;E;SE) : aucun thermique décrit à moins de 3 km (le plus proche : Faces est sous le sommet de Serre Chevalier (premier déclencheur avant le Granon), 3.8 km)
 
 ### Matheysine – Drac
 
 - JAS D'ORIS - LES FOND PLAINES (FFVL 195, 1724 m, vents SO) : aucune brise à moins de 6 km
 - LES SOUILLETS (FFVL 3009, 1390 m, vents ?) : aucun thermique décrit à moins de 3 km (le plus proche : Lavaldens et La Morte : faces ouest sous le Taillefer (cheminement par l'ouest), 4.3 km)
 
-### Préalpes de Nice
+### Gapençais – Céüse
 
-- CANTARON - MONT MACARON (FFVL 1653, 679 m, vents S) : aucune brise à moins de 6 km
-
-### Buëch – Chabre
-
-- MISON (FFVL 13538, 688 m, vents SO;O) : aucun thermique décrit à moins de 3 km (le plus proche : Crête de Chabre (face sud), 5.8 km)
 - LA PLANE (FFVL 14251, 1040 m, vents SO;O;NO) : aucun thermique décrit à moins de 3 km (le plus proche : Malaup, 4.3 km)
+
+### Chablais
+
+- LES BRASSES DELTA (FFVL 1148, 999 m, vents ?) : aucun thermique décrit à moins de 3 km (le plus proche : Pointe des Brasses (relance après le Môle), 4.1 km)
+- CHATEL - MORCLAN SOMMET (FFVL 1180, 1376 m, vents SE;O) : aucune brise à moins de 6 km
+
+### Vallouise – haute Durance
+
+- PIC DU GLACIER D'ARSINE (FFVL 5256, 3364 m, vents ?) : aucun thermique décrit à moins de 3 km (le plus proche : Entre les Agneaux et la Barre des Écrins : thermique « plus rentable, loin du relief », 4.6 km) — point chaud mesuré par les traces GPS à 2.6 km, à documenter ; aucune brise à moins de 6 km
 
 ### Serre-Ponçon
 
 - CHABANON SELONNET (FFVL 1818, 1768 m, vents N;S) : aucun thermique décrit à moins de 3 km (le plus proche : Plateau de la Chau (Montclar) : sortie facile vers la Blanche, 9.4 km)
 - CHABANON LES CLOTS (FFVL 14124, 1550 m, vents E;SE) : aucun thermique décrit à moins de 3 km (le plus proche : Plateau de la Chau (Montclar) : sortie facile vers la Blanche, 7.8 km)
+
+### Buëch – Chabre
+
+- MISON (FFVL 13538, 688 m, vents SO;O) : aucun thermique décrit à moins de 3 km (le plus proche : Crête de Chabre (face sud), 5.8 km)
 
 ### Vercors nord
 
@@ -245,4 +251,4 @@ Déco, soaring, piège ou atterrissage dont la description mentionne une ascenda
 
 ## Hors périmètre
 
-NOIRMONT - PISTE NOIRE N°1 (FFVL 17) · NOIRMONT - PISTE ROUGE N°2 (FFVL 18) · SEPTMONCEL (FFVL 54) · SORGIA - LA CHARMANTE (FFVL 601) · CHAMPFROMIER - SUR LE HAUT LAN (FFVL 603) · BALVAY - LE CHATEAU (FFVL 626) · MONTCUSEL (EX CHANCIA) (FFVL 778) · LES CHENEVIERS (FFVL 811) · LE BOUANT - BOGE (FFVL 1069) · MONT MYON - PRESSIAT (FFVL 1080) · EVOSGES (FFVL 1269) · TORCIEU - ANTENNE RELAIS (FFVL 1271) · SAINT SORLIN (FFVL 1273) · SAINT SORLIN - SOUCLIN (FFVL 1274) · MONTAGNE DE RUY - NORD (FFVL 1313) · MONTAGNE DE RUY - SUD (FFVL 1314) · PORT - CAROUGE (FFVL 1428) · LA VESANCIERE (FFVL 1430) · CROZET - LES DEUX POTES (FFVL 1462) · PETIT MONT ROND (FFVL 1464) · MIJOUX (FFVL 1466) · LES VIGNES (FFVL 1473) · LE CHANAY (FFVL 1476) · LE BOUANT - CRETE DE CHARMY PRE SUD (FFVL 1519) · CATRAY (FFVL 1616) · POIZAT-LALLEYRIAT - L'ANGLETON (FFVL 1664) · ROMANIERE - BARRES ROUGES (FFVL 1875) · LE BOUANT (FFVL 1933) · MONT LUISANDRE (FFVL 1951) · ONCIEU COL D'EVOSGES (FFVL 13328) · THOIRY - LA PIERRE DE L'OURS (FFVL 13450) · CINQUETRAL COTES DE BIENNE (FFVL 13672)
+NOIRMONT - PISTE NOIRE N°1 (FFVL 17) · NOIRMONT - PISTE ROUGE N°2 (FFVL 18) · SEPTMONCEL (FFVL 54) · SORGIA - LA CHARMANTE (FFVL 601) · CHAMPFROMIER - SUR LE HAUT LAN (FFVL 603) · BALVAY - LE CHATEAU (FFVL 626) · MONTCUSEL (EX CHANCIA) (FFVL 778) · LES CHENEVIERS (FFVL 811) · LE BOUANT - BOGE (FFVL 1069) · MONT MYON - PRESSIAT (FFVL 1080) · EVOSGES (FFVL 1269) · TORCIEU - ANTENNE RELAIS (FFVL 1271) · PORT - CAROUGE (FFVL 1428) · LA VESANCIERE (FFVL 1430) · CROZET - LES DEUX POTES (FFVL 1462) · PETIT MONT ROND (FFVL 1464) · MIJOUX (FFVL 1466) · LES VIGNES (FFVL 1473) · LE BOUANT - CRETE DE CHARMY PRE SUD (FFVL 1519) · CATRAY (FFVL 1616) · POIZAT-LALLEYRIAT - L'ANGLETON (FFVL 1664) · ROMANIERE - BARRES ROUGES (FFVL 1875) · LE BOUANT (FFVL 1933) · MONT LUISANDRE (FFVL 1951) · ONCIEU COL D'EVOSGES (FFVL 13328) · THOIRY - LA PIERRE DE L'OURS (FFVL 13450) · CINQUETRAL COTES DE BIENNE (FFVL 13672)

@@ -224,11 +224,11 @@ function SchemaPanel({ m, atlas }: { m: AtlasMassif; atlas: Atlas }) {
           </button>
         )}
         <div className="seg small" role="radiogroup" aria-label="Relief">
-          <button className={!schema3d ? 'on' : ''} onClick={() => set({ schema3d: false })} role="radio" aria-checked={!schema3d}>
-            À plat
-          </button>
           <button className={schema3d ? 'on' : ''} onClick={() => set({ schema3d: true })} role="radio" aria-checked={schema3d}>
             Relief 3D
+          </button>
+          <button className={!schema3d ? 'on' : ''} onClick={() => set({ schema3d: false })} role="radio" aria-checked={!schema3d}>
+            À plat
           </button>
         </div>
         <button className={`btn small ghost ${schemaWind ? 'on' : ''}`} aria-pressed={schemaWind} onClick={() => set({ schemaWind: !schemaWind })} title="Particules de vent simulé sous le schéma">

@@ -157,8 +157,8 @@ export const useApp = create<AppState>((set) => ({
     hillshade: true,
   },
   basemap: 'topo',
-  // Phone: flat until the user asks for the relief (3D button, remembered); terrain is the heaviest part of a frame there.
-  exaggeration: PHONE_START && remembered('brises.relief', ['3d'] as const, null) === null ? 0 : 1.3,
+  // 3D by default everywhere; a phone stays flat only if its user chose 2D (button remembered).
+  exaggeration: PHONE_START && remembered('brises.relief', ['2d'] as const, null) === '2d' ? 0 : 1.3,
   particleCount: isSmall ? 7000 : 16000,
   particleSpeed: 1,
   particleColor: 'speed',
@@ -166,7 +166,8 @@ export const useApp = create<AppState>((set) => ({
   schemaMassif: null,
   schemaPhase: 'afternoon',
   schemaPicking: false,
-  schema3d: false,
+  // Massif diagrams in relief by default (flat on demand).
+  schema3d: true,
   schemaWind: false,
   tourStep: null,
   panelOpen: !isSmall,

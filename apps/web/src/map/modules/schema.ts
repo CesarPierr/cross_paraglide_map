@@ -295,7 +295,7 @@ export class SchemaModule implements MapModule {
         features: sectors.map((m) => ({
           type: 'Feature',
           geometry: m.outline && m.outline.length >= 3 ? { type: 'Polygon', coordinates: [[...m.outline, m.outline[0]]] } : { type: 'Point', coordinates: m.center },
-          properties: { id: m.id, name: m.shortName, tint: REGION_TINTS[(regionIndex.get(m.region) ?? 0) % REGION_TINTS.length] },
+          properties: { id: m.id, name: m.shortName, tint: REGION_TINTS[(m.colorIndex ?? regionIndex.get(m.region) ?? 0) % REGION_TINTS.length] },
         })),
       },
     });
@@ -311,9 +311,10 @@ export class SchemaModule implements MapModule {
         type: 'fill',
         source: 'schema-pick',
         filter: ['==', ['geometry-type'], 'Polygon'],
-        paint: { 'fill-color': ['get', 'tint'], 'fill-opacity': ['case', hovered, 0.42, 0.16] },
+        // Schematic: solid tints that read at a glance (they leave once a massif is chosen).
+        paint: { 'fill-color': ['get', 'tint'], 'fill-opacity': ['case', hovered, 0.85, 0.6] },
       },
-      'areas',
+      'points',
     );
     ctx.addLayer(
       {
@@ -322,9 +323,9 @@ export class SchemaModule implements MapModule {
         source: 'schema-pick',
         filter: ['==', ['geometry-type'], 'Polygon'],
         layout: { 'line-join': 'round' },
-        paint: { 'line-color': ['case', hovered, '#ffffff', ['get', 'tint']], 'line-width': ['case', hovered, 3, 1.4], 'line-opacity': 0.9 },
+        paint: { 'line-color': '#ffffff', 'line-width': ['case', hovered, 3.2, 1.6], 'line-opacity': ['case', hovered, 1, 0.85] },
       },
-      'areas',
+      'points',
     );
     ctx.addLayer(
       {
@@ -344,7 +345,7 @@ export class SchemaModule implements MapModule {
         layout: {
           'text-field': ['get', 'name'],
           'text-font': ['Noto Sans Bold'],
-          'text-size': ['interpolate', ['linear'], ['zoom'], 7, 11.5, 10, 15],
+          'text-size': ['interpolate', ['linear'], ['zoom'], 6, 12, 8, 15, 10, 17],
           'text-padding': 3,
           // No piled-up names: the busiest sectors win, the others appear as one zooms in (every shape stays tappable).
           'text-allow-overlap': false,
@@ -390,16 +391,17 @@ export class SchemaModule implements MapModule {
    */
   private refreshPick(): void {
     const map = this.ctx!.map;
-    const auto = this.zoomedOut && !this.touring;
+    // Zoomed out on the live map only: once a massif is open its own diagram takes the map.
+    const auto = this.zoomedOut && !this.touring && this.massif === null;
     const shown = this.picking || auto;
     for (const id of PICK_LAYERS) {
-      const on = id === 'schema-pick-label' ? this.picking || (auto && this.massif !== null) : shown;
+      const on = shown;
       if (map.getLayer(id)) map.setLayoutProperty(id, 'visibility', on ? 'visible' : 'none');
     }
   }
 
   private pickShown(): boolean {
-    return this.picking || (this.zoomedOut && !this.touring);
+    return this.picking || (this.zoomedOut && !this.touring && this.massif === null);
   }
 
   select(id: string, props: Record<string, unknown>): boolean {
@@ -421,8 +423,9 @@ export class SchemaModule implements MapModule {
       // Step back to see the neighbouring sectors and pick one.
       if (s.schemaPicking) {
         // Phone: the sectors around the current view, large enough to read and tap, above the list.
-        if (isPhoneLayout()) map.easeTo({ zoom: Math.min(map.getZoom(), 7.4), pitch: 0, bearing: 0, padding: phonePadding(), duration: 900 });
-        else map.easeTo({ zoom: Math.min(map.getZoom(), 8.2), pitch: Math.min(map.getPitch(), 25), duration: 900 });
+        // Seen in relief, tilted enough to read the valleys, not so much that far sectors shrink.
+        if (isPhoneLayout()) map.easeTo({ zoom: Math.min(map.getZoom(), 7.4), pitch: 40, padding: phonePadding(), duration: 900 });
+        else map.easeTo({ zoom: Math.min(map.getZoom(), 8.2), pitch: 40, duration: 900 });
       }
     }
     this.touring = s.tourStep !== null;

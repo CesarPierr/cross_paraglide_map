@@ -1,16 +1,33 @@
 # Croisement des thermiques documentés avec les traces GPS (thermal.kk7.ch)
 
-Généré par `npm run data:build` le 2026-10-07. 2680 points chauds kk7 de probabilité ≥ 70 % dans le périmètre téléchargé.
+Généré par `npm run data:build` le 2026-10-08. 2680 points chauds kk7 de probabilité ≥ 70 % dans le périmètre téléchargé.
 
 - Thermiques documentés confirmés par un point chaud à moins de 600 m : **502**, dont **58** recalés sur la position mesurée (leur position n’était qu’approximative).
-- Points chauds ≥ 80 % qu’aucun texte ne décrit, ajoutés comme thermiques « mesurés » : **324** (624 autres hors des secteurs).
+- Points chauds ≥ 80 % qu’aucun texte ne décrit, ajoutés comme thermiques « mesurés » : **345** (603 autres hors des secteurs).
 - Thermiques documentés à plus de 2 km de tout point chaud : **119** (site peu volé, ou position à vérifier).
 
 ## Points chauds forts (≥ 90 %) sans description, par secteur
 
 À documenter en priorité : chercher dans les fiches, topos de club et récits ce qui les déclenche et quand.
 
-### Arves – Galibier (1)
+### Mercantour (2)
+
+- Point chaud – La Gardieura — 94 %, 43.7919 N 7.5249 E — le matin (du lever du soleil à environ 6 h après) et en milieu de journée (6 à 9 h après le lever du soleil)
+- Point chaud du déco Auron – Cime de la Bercha — 91 %, 44.2361 N 6.9090 E — le matin (du lever du soleil à environ 6 h après) et en milieu de journée (6 à 9 h après le lever du soleil)
+
+### Diois (1)
+
+- Point chaud – Le Grand Ruy — 98 %, 44.5090 N 5.1564 E — en milieu de journée (6 à 9 h après le lever du soleil) et en fin de journée (plus de 9 h après le lever du soleil)
+
+### Ubaye (1)
+
+- Point chaud – Crête du Sanglier — 95 %, 44.5870 N 6.7978 E — le matin (du lever du soleil à environ 6 h après) et en milieu de journée (6 à 9 h après le lever du soleil)
+
+### Vallouise – haute Durance (1)
+
+- Point chaud – Couloir Tuckett — 91 %, 44.8892 N 6.4109 E — toute la journée, le plus souvent en milieu de journée (6 à 9 h après le lever du soleil)
+
+### Maurienne (1)
 
 - Point chaud vers La Vieille — 91 %, 45.2287 N 6.5791 E — le matin (du lever du soleil à environ 6 h après) et en milieu de journée (6 à 9 h après le lever du soleil)
 

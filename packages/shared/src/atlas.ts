@@ -62,6 +62,8 @@ export interface AtlasMassif {
   center: [number, number];
   tips: string[];
   synoptic: AtlasSynopticEffect[];
+  /** Colour slot of the sector on the schematic map (neighbours never share one). */
+  colorIndex?: number;
   /** Sector outline (lon, lat ring) for picking the massif on the map; absent for the regional sector. */
   outline?: [number, number][];
   /** Feature ids by category, for the side panel. */

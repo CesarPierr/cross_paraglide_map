@@ -1,6 +1,6 @@
 # Contrôle qualité des données de recherche
 
-Généré par `npm run data:build` le 2026-10-07.
+Généré par `npm run data:build` le 2026-10-08.
 
 ## Volumes
 
@@ -9,7 +9,7 @@ Généré par `npm run data:build` le 2026-10-07.
 - breezes : 277
 - convergences : 81
 - hazards : 527
-- thermals : 1147
+- thermals : 1168
 - soaring : 117
 - takeoffs : 542
 - landings : 307

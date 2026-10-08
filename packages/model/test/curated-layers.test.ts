@@ -9,6 +9,7 @@ import {
   curatedActivity,
   evalCell,
   Grid,
+  hazardActivity,
   makeWindContext,
   newCellResult,
   rasterizeCurated,
@@ -189,5 +190,37 @@ describe('real DEM, 15 July 15:00, no synoptic wind, 80 m above ground', () => {
     const med = vals[vals.length >> 1];
     expect(med / doc!).toBeGreaterThanOrEqual(0.5);
     expect(med / doc!).toBeLessThanOrEqual(1.3);
+  });
+});
+
+describe('documented hazards', () => {
+  const hazard = { id: 'h', name: 'Col : turbulent par nord même faible', effect: 'lee' as const, coords: [] as [number, number][], radiusM: 700, fromDeg: 0, tolDeg: 45, minKmh: 5, fullKmh: 12 };
+  const wind = (fromDeg: number, speedKmh: number) => ({ synoptic: { fromDeg, speedKmh } });
+
+  it('apply only when the simulated wind matches their conditions', () => {
+    expect(hazardActivity(hazard, wind(0, 12))).toBe(1);
+    expect(hazardActivity(hazard, wind(20, 15))).toBe(1);
+    expect(hazardActivity(hazard, wind(0, 3))).toBe(0);
+    expect(hazardActivity(hazard, wind(90, 30))).toBe(0);
+    expect(hazardActivity(hazard, wind(180, 30))).toBe(0);
+    expect(hazardActivity(hazard, wind(0, 8))).toBeGreaterThan(0);
+    expect(hazardActivity(hazard, wind(0, 8))).toBeLessThan(1);
+  });
+
+  it('show their effect where they are reported, flagged as documented', () => {
+    const { grid, terrain: t } = valleyTerrain();
+    const [lon, lat] = [grid.colLon(60.5), grid.rowLat(40.5)];
+    const layer = rasterizeCurated(t, [], [{ ...hazard, coords: [[lon, lat]] }]);
+    const p: ModelParams = { year: 2026, month0: 6, day: 15, hour: 14, synoptic: { fromDeg: 0, speedKmh: 15 }, height: { mode: 'agl', meters: 80 }, breezeScale: 1 };
+    const ctx = makeWindContext(t, computeTimeContext(t, p), p, layer);
+    const here = evalCell(40 * grid.width + 60, ctx, newCellResult());
+    expect(here.hazardIndex).toBe(0);
+    expect(here.lee).toBeGreaterThan(0.9);
+    expect(here.turbulence).toBeGreaterThan(0.7);
+    const far = evalCell(40 * grid.width + 100, ctx, newCellResult());
+    expect(far.hazardIndex).toBe(-1);
+    const south = { ...p, synoptic: { fromDeg: 180, speedKmh: 15 } };
+    const off = evalCell(40 * grid.width + 60, makeWindContext(t, computeTimeContext(t, south), south, layer), newCellResult());
+    expect(off.hazardWeight).toBe(0);
   });
 });

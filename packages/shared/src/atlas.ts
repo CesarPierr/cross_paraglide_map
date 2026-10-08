@@ -35,6 +35,29 @@ export interface CuratedBreezeInput extends CuratedBreezeInfo {
   strength: number;
 }
 
+/**
+ * A documented hazard tied to a synoptic wind ("turbulent par nord même faible",
+ * "rouleaux par vent d'ouest"), as the wind model consumes it: where the wind of the
+ * simulation matches, its area shows as lee, venturi or turbulence, flagged as
+ * documented, even where the relief model alone misses it.
+ */
+export interface CuratedHazardInput {
+  id: string;
+  name: string;
+  /** Effect shown: lee and rotor, venturi (acceleration), or turbulence (foehn, downdraft, landing). */
+  effect: 'lee' | 'venturi' | 'turbulence';
+  /** Points of the hazard [lon, lat] (one for a place, several along a line). */
+  coords: [number, number][];
+  /** Radius of influence around each point, metres. */
+  radiusM: number;
+  /** Synoptic wind of the sources: meteorological direction (deg) and its tolerance (deg). */
+  fromDeg: number;
+  tolDeg: number;
+  /** Speeds (km/h) at which the hazard starts to apply, and fully applies. */
+  minKmh: number;
+  fullKmh: number;
+}
+
 export interface AtlasSource {
   id: string;
   title: string;
@@ -188,6 +211,8 @@ export interface Atlas {
   sources: Record<string, AtlasSource>;
   features: Record<FeatureCategory, AtlasFeature[]>;
   curated: CuratedBreezeInput[];
+  /** Documented hazards tied to a synoptic wind (optional: older atlases have none). */
+  curatedHazards?: CuratedHazardInput[];
   rules: ModelRule[];
   /** Annotated figures from clubs and federations (optional: older atlases have none). */
   figures?: AtlasFigure[];

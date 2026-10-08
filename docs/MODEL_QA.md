@@ -1,23 +1,27 @@
 # Contrôle du modèle de vent contre l’atlas
 
-Généré par `npm run model:check` le 2026-10-08 sur `apps/web/public/data/atlas.json` (atlas du 2026-10-08), modèle TypeScript de référence (`packages/model`) sur le MNT réel. Durée : 11,0 s.
+Généré par `npm run model:check` le 2026-10-08 sur `apps/web/public/data/atlas.json` (atlas du 2026-10-08), modèle TypeScript de référence (`packages/model`) sur le MNT réel. Durée : 11,4 s.
 
 ## Critères
 
 - **Brises** : échantillons le long du tracé (10 à 90 % de sa longueur), au milieu de la fenêtre horaire, en juillet sans vent météo (janvier pour une brise d’hiver ; vent météo ou canicule simulés pour une brise conditionnelle). Niveaux : sol (50 m), puis 30 % et 60 % de la couche : altitude atteinte documentée (« Épaisseur » : « sensible jusqu’à 2500 m d’altitude », mesurée depuis le fond de vallée), sinon épaisseur documentée, sinon profondeur locale de la vallée pour les brises de vallée, 200 m pour la pente, 100 m pour un catabatique, 1000 m pour plaine → montagne et régionale. Sens : cos > 0.5 sur au moins 60 % des points. Vitesse (si documentée) : rapport médian modèle / fiche entre 0,5 et 1,6 au sol et à 30 %, au moins 0,3 à 60 % (la brise faiblit vers le haut de la couche, Zardi & Whiteman 2013). Hors horaires (2 h 30 avant le début, ou après la fin) et hors condition : composante le long du tracé < 30 % de la vitesse documentée.
 - **Convergences** : convergence du modèle (divergence lissée, comme la couche « Convergences ») à 80 m sol, à l’heure de « Quand », avec une tolérance d’une maille (216 m) autour de la ligne : moyenne > 0 et au moins la moitié des points > 0.
 - **Thermiques** : potentiel thermique (max sur 3 × 3 mailles, positions approchées) au-dessus de la médiane des terres dans un rayon de 5 km, aux heures « Heures » (12h–15h si non précisées) ; et, quand un début est documenté, colonne thermique affichée (potentiel ≥ 0,22, seuil des colonnes des sites connus) à ±1 h d’un début explicite (« dès 10h », « 3 h après le lever du soleil »), sinon au plus tard au milieu de la période documentée (1 h après son début pour une période courte).
-- **Pièges** : venturi, sous le vent, foehn et brise forte, sous le vent météo cité par « Conditions » (30 km/h par défaut, 40 si « fort », 15 si « faible ») ou à l’heure de brise citée, dans un rayon de min(Rayon, 3 km) : accélération ≥ ×1,15 par rapport à la médiane des fonds de vallée voisins (10 km) ou indice venturi ≥ 0,3 ; abri ou turbulence ≥ 0,35 ; vent descendant ≥ 0,8 × vent météo ou turbulence ≥ 0,3 ; vent ≥ 20 km/h. Sans vent ni horaire cité : non testable.
+- **Pièges** : venturi, sous le vent, foehn et brise forte, sous le vent météo cité par « Conditions » (30 km/h par défaut, 40 si « fort », 15 si « faible ») ou à l’heure de brise citée, au point même (à 330 m près), avec la couche des dangers documentés (ce que voit l’utilisateur) et, à titre indicatif, par le modèle de relief seul : accélération ≥ ×1,15 par rapport à la médiane des fonds de vallée voisins (10 km) ou indice venturi ≥ 0,3 ; abri ou turbulence ≥ 0,35 ; vent descendant ≥ 0,8 × vent météo ou turbulence ≥ 0,3 ; vent ≥ 20 km/h. Sans vent ni horaire cité : non testable.
 
 ## Taux de réussite par catégorie
 
 | Catégorie | Réussis | Testés | Taux | Non testables |
 | --- | --- | --- | --- | --- |
-| brises | 257 | 275 | 93 % | 2 |
+| brises | 258 | 275 | 94 % | 2 |
 | convergences | 62 | 72 | 86 % | 9 |
 | thermiques | 713 | 823 | 87 % | 0 |
-| pièges | 111 | 161 | 69 % | 49 |
-| **total** | **1143** | **1331** | **86 %** | 60 |
+| pièges | 113 | 161 | 70 % | 49 |
+| **total** | **1146** | **1331** | **86 %** | 60 |
+
+Pièges au point par le modèle de relief seul (sans la couche des dangers documentés) : 82/161 (51 %), dont sous le vent 31/53. Le reste n’apparaît que par la couche des dangers documentés, active quand le vent simulé correspond à leurs conditions.
+
+Contrôle : décollages face au vent (première orientation documentée, 20 km/h) affichés sous le vent ou turbulents : 10/462 (2,2 %) — Aouille de Criou (Samoëns) (S) ; Grand Châtelard (accès par Jarrier) (SW) ; Saint-François-Longchamp – télésiège de la Lauzière (FFVL 2323) (N) ; Les Orres – Costias (Haut Forest) (S, danger documenté « Les Orres : sous le vent de la crête par S et E ») ; Soleil Bœuf (N) ; Col des Faïsses (W) ; Chauvet (face au col du Festre) (NE) ; Buc Est – La Tanière (E, danger documenté « Venturi entre Buc et Le Fort ») ; Jocou (Lus-la-Croix-Haute / Châtillon) (S, danger documenté « Jocou : venturi de vent de sud à l’est du sommet ») ; Chalvet Nord (peu utilisé) (N, danger documenté « Décollages du Chalvet sous le vent par Mistral (N/NO) »).
 
 Contrôles élémentaires des brises :
 
@@ -28,7 +32,7 @@ Contrôles élémentaires des brises :
 | hors horaires | 235 | 241 | 98 % |
 | sens, 30 % couche | 257 | 264 | 97 % |
 | sens, 30 % de l’altitude atteinte | 10 | 10 | 100 % |
-| sens, 60 % couche | 257 | 265 | 97 % |
+| sens, 60 % couche | 258 | 265 | 97 % |
 | sens, 60 % de l’altitude atteinte | 9 | 10 | 90 % |
 | sens, sol | 268 | 275 | 97 % |
 | tracé | 0 | 1 | 0 % |
@@ -48,13 +52,13 @@ Calendrier : déclenchement des thermiques au début explicite (« dès 10h », 
 | Aravis | 7/7 | 1/2 | 23/23 | 1/3 | 32/35 |
 | Arves – Galibier | 2/3 | – | 7/9 | – | 9/12 |
 | Baronnies | 7/7 | – | 17/22 | 2/4 | 26/33 |
-| Bauges | 8/8 | 4/5 | 15/17 | 2/2 | 29/32 |
+| Bauges | 8/8 | 4/5 | 15/17 | 0/2 | 27/32 |
 | Beaufortain | 3/4 | 1/2 | 12/13 | 1/3 | 17/22 |
-| Belledonne | 12/12 | 2/2 | 24/25 | 2/5 | 40/44 |
-| Bornes | 3/3 | 2/2 | 10/11 | 1/2 | 16/18 |
-| Bourget – Chambéry | 5/7 | 1/1 | 14/14 | 3/5 | 23/27 |
-| Briançonnais | 5/7 | 2/3 | 7/12 | 7/7 | 21/29 |
-| Buëch – Chabre | 6/6 | 3/3 | 14/16 | 3/7 | 26/32 |
+| Belledonne | 12/12 | 2/2 | 24/25 | 3/5 | 41/44 |
+| Bornes | 3/3 | 2/2 | 10/11 | 2/2 | 17/18 |
+| Bourget – Chambéry | 5/7 | 1/1 | 14/14 | 4/5 | 24/27 |
+| Briançonnais | 6/7 | 2/3 | 7/12 | 6/7 | 21/29 |
+| Buëch – Chabre | 6/6 | 3/3 | 14/16 | 2/7 | 25/32 |
 | Chablais | 8/8 | – | 18/20 | 5/5 | 31/33 |
 | Chamonix – Mont-Blanc | 5/5 | – | 19/24 | 1/1 | 25/30 |
 | Champsaur | 2/3 | 1/1 | 14/16 | 0/1 | 17/21 |
@@ -62,34 +66,34 @@ Calendrier : déclenchement des thermiques au début explicite (« dès 10h », 
 | Combe de Savoie | 3/4 | – | 16/19 | 1/2 | 20/25 |
 | Cuvette grenobloise | 7/7 | 1/1 | 7/7 | 2/2 | 17/17 |
 | Dévoluy | 1/1 | 1/1 | 7/8 | 1/1 | 10/11 |
-| Digne – Lure | 5/5 | – | 16/17 | 4/5 | 25/27 |
+| Digne – Lure | 5/5 | – | 16/17 | 3/5 | 24/27 |
 | Diois | 10/10 | – | 22/28 | 5/9 | 37/47 |
 | Faucigny – Arve | 6/7 | – | 12/16 | 6/7 | 24/30 |
 | Gapençais – Céüse | 4/4 | 1/1 | 7/9 | 2/2 | 14/16 |
-| Giffre | 3/4 | – | 22/22 | 1/4 | 26/30 |
+| Giffre | 3/4 | – | 22/22 | 4/4 | 29/30 |
 | Grésivaudan | 5/5 | 2/3 | 1/1 | 1/2 | 9/11 |
 | Haut-Verdon | 1/1 | 2/2 | 24/25 | – | 27/28 |
-| Haute-Maurienne | 4/4 | – | 11/14 | 3/4 | 18/22 |
+| Haute-Maurienne | 4/4 | – | 11/14 | 4/4 | 19/22 |
 | Lac d’Annecy | 10/10 | 5/6 | 27/29 | 2/3 | 44/48 |
 | Matheysine – Drac | 2/3 | – | 13/14 | 4/7 | 19/24 |
 | Maurienne | 5/5 | – | 15/17 | 5/5 | 25/27 |
-| Megève – Val d’Arly | 3/4 | 1/2 | 8/11 | 0/4 | 12/21 |
+| Megève – Val d’Arly | 3/4 | 1/2 | 8/11 | 1/4 | 13/21 |
 | Mercantour | 8/8 | 1/2 | 26/28 | 3/5 | 38/43 |
-| Oisans | 7/7 | 1/1 | 28/34 | 3/3 | 39/45 |
-| Préalpes de Grasse | 3/3 | 3/4 | 21/24 | 2/4 | 29/35 |
-| Préalpes de Nice | 5/5 | 1/1 | 16/19 | 0/2 | 22/27 |
+| Oisans | 7/7 | 1/1 | 28/34 | 2/3 | 38/45 |
+| Préalpes de Grasse | 3/3 | 3/4 | 21/24 | 3/4 | 30/35 |
+| Préalpes de Nice | 5/5 | 1/1 | 16/19 | 2/2 | 24/27 |
 | Queyras | 7/7 | 1/1 | 16/19 | 1/1 | 25/28 |
 | Saint-André | 3/4 | 1/1 | 11/13 | 1/2 | 16/20 |
 | Salève | 4/4 | – | 5/7 | 1/1 | 10/12 |
-| Serre-Ponçon | 2/3 | – | 13/17 | 5/5 | 20/25 |
+| Serre-Ponçon | 2/3 | – | 13/17 | 4/5 | 19/25 |
 | Tarentaise | 8/8 | 4/4 | 26/32 | 5/5 | 43/49 |
 | Trièves | 2/2 | – | 10/14 | 1/2 | 13/18 |
-| Ubaye | 4/4 | – | 6/6 | 3/4 | 13/14 |
+| Ubaye | 4/4 | – | 6/6 | 2/4 | 12/14 |
 | Val Montjoie | 2/2 | 2/2 | 10/10 | 1/1 | 15/15 |
 | Vallouise – haute Durance | 6/7 | 1/2 | 24/29 | 5/6 | 36/44 |
-| Vanoise | 4/4 | – | 11/12 | 3/3 | 18/19 |
+| Vanoise | 4/4 | – | 11/12 | 1/3 | 16/19 |
 | Vercors est & sud | 6/6 | – | 24/26 | 1/3 | 31/35 |
-| Vercors nord | 7/7 | 2/2 | 26/34 | 2/3 | 37/46 |
+| Vercors nord | 7/7 | 2/2 | 26/34 | 3/3 | 38/46 |
 
 ## Échecs
 
@@ -97,12 +101,12 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 
 | Catégorie | modèle | donnée | limite |
 | --- | --- | --- | --- |
-| brises | 6 | 6 | 6 |
+| brises | 5 | 6 | 6 |
 | convergences | 3 | 7 | 0 |
 | thermiques | 46 | 0 | 64 |
-| pièges | 0 | 0 | 50 |
+| pièges | 0 | 0 | 48 |
 
-### Brises (18)
+### Brises (17)
 
 - **Brise montante de la basse vallée de l'Arve (Annemasse → Bonneville → Marignier → Cluses) (vallée)** — `arve-faucigny/arve-basse-vallee-montante`, Faucigny – Arve · *modèle* · juillet 16h15, sans vent météo · couches : altitude atteinte documentée 2500 m
   - sens, 60 % de l’altitude atteinte : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 50 % (cos médian 0,72)
@@ -147,9 +151,6 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
   - sens, 30 % couche (60 m sol) : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 44 % (cos médian 0,45)
   - sens, 60 % couche (120 m sol) : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 56 % (cos médian 0,52)
   - cause probable : sol (50 m) : flux générique opposé (vallée générique -1 km/h le long du tracé) malgré la brise documentée (poids 0,43) ; 30 % couche (60 m sol) : flux générique opposé (vallée générique -1 km/h le long du tracé) malgré la brise documentée (poids 0,43) ; 60 % couche (120 m sol) : flux générique opposé (vallée générique -1 km/h le long du tracé) malgré la brise documentée (poids 0,42)
-- **Flux d'est (Lombarde) dans la haute Clarée (Italie → Névache) (transfert de col, seulement par vent météo d’est (≥ 10 km/h))** — `brianconnais-guisane/lombarde-haute-claree`, Briançonnais · *modèle* · juillet 17h30, vent météo 90° 15 km/h · couches : profondeur locale de la vallée (crêtes − fond)
-  - sens, 60 % profondeur : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 57 % (cos médian 0,51)
-  - cause probable : 60 % profondeur : flux générique opposé (pente -0 km/h le long du tracé) malgré la brise documentée (poids 0,85)
 - **Brise de pente du Prorel (Saint-Blaise → Notre-Dame-des-Neiges → Croix de la Nore) (pente)** — `brianconnais-guisane/brise-pente-prorel`, Briançonnais · *limite* · juillet 15h30, sans vent météo · couches : brise de pente 100–200 m (S1, règle cycle-brise-pente)
   - hors horaires (10h00) : attendu composante < 2 km/h ; obtenu 3 km/h
   - cause probable : hors horaires : composante dans le sens du tracé hors horaires : pente 3 km/h, vallée générique -0 km/h, plaine/lac/mer -0 km/h, vent météo 0 km/h (brise documentée active à 0 %)
@@ -185,8 +186,8 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
   - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne -0,60 m/s, 0 % > 0
   - cause probable : les flux modélisés ne se rencontrent pas sur cette ligne à cette heure
 - **Confluence des brises de Flumet et de Sallanches au-dessus de Megève (habituellement vers Praz-sur-Arly), glisse vers Combloux** — `val-arly-megeve/confluence-praz-sur-arly-megeve-combloux-2015`, Megève – Val d’Arly · *donnée* · juillet 17h30, vent météo de sud 15 km/h, 80 m sol
-  - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne 0,69 m/s, 38 % > 0
-  - cause probable : convergence présente mais décalée ou intermittente (max 6,01 m/s sur la ligne)
+  - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne 0,65 m/s, 38 % > 0
+  - cause probable : convergence présente mais décalée ou intermittente (max 5,93 m/s sur la ligne)
 - **Rencontre des descentes du col de la Seigne et du Cormet de Roselend aux Chapieux** — `beaufortain/convergence-chapieux-seigne-cormet`, Beaufortain · *donnée* · juillet 15h30, sans vent météo, 80 m sol
   - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne -0,49 m/s, 33 % > 0
   - cause probable : convergence présente mais décalée ou intermittente (max 0,24 m/s sur la ligne)
@@ -551,158 +552,152 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,28 (médiane 0,33, rang 18 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -163 m, altitude 572 m)
 
-### Pièges (50)
+### Pièges (48)
 
-- **Le Môle : brise de vallée très forte au col-parking de Chez Berroud (strong-breeze)** — `arve-faucigny/mole-col-chez-berroud`, Faucigny – Arve · *limite* · juillet 15h30, sans vent météo, 80 m sol, rayon 1,5 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 20 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Platière : par tendance S-SE le décollage près du parking est sous le vent (lee-rotor)** — `haut-giffre/platiere-sud-sous-le-vent`, Giffre · *limite* · juillet 14h00, vent météo de sud 40 km/h, 80 m sol, rayon 0,8 km
-  - effet attendu : attendu abri (sous le vent) ou turbulence ≥ 0,35 ; obtenu abri 0,05, turbulence 0,05
-  - cause probable : relief au vent pas assez haut pour l’indice d’abri (angle max 10°)
-- **Plateau des Saix : rouleaux par vent d'ouest (lee-rotor)** — `haut-giffre/samoens-saix-rouleaux-ouest`, Giffre · *limite* · juillet 14h00, vent météo d’ouest 30 km/h, 80 m sol, rayon 1,0 km
-  - effet attendu : attendu abri (sous le vent) ou turbulence ≥ 0,35 ; obtenu abri 0,15, turbulence 0,14
-  - cause probable : relief au vent pas assez haut pour l’indice d’abri (angle max 11°)
-- **La Bourgeoise : rouleaux en bout de crête par vent de sud et sud-ouest (lee-rotor)** — `haut-giffre/samoens-bourgeoise-rouleaux`, Giffre · *limite* · juillet 14h00, vent météo de S 30 km/h, 80 m sol, rayon 0,8 km
-  - effet attendu : attendu abri (sous le vent) ou turbulence ≥ 0,35 ; obtenu abri 0,00, turbulence 0,07
-  - cause probable : relief au vent pas assez haut pour l’indice d’abri (angle max 0°)
-- **Rafales de cumulonimbus du nord le long du lac (strong-breeze)** — `lac-annecy/lac-cumulonimbus-nord`, Lac d’Annecy · *limite* · juillet 17h30, sans vent météo, 80 m sol, rayon 3,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 17 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Anglettaz / Parmelan : rouleaux selon le régime de vent, CTR proche (lee-rotor)** — `bornes/anglettaz-rouleaux`, Bornes · *limite* · juillet 14h00, vent météo d’ouest 30 km/h, 80 m sol, rayon 1,5 km
-  - effet attendu : attendu abri (sous le vent) ou turbulence ≥ 0,35 ; obtenu abri 0,00, turbulence 0,00
-  - cause probable : relief au vent pas assez haut pour l’indice d’abri (angle max -1°)
-- **Col des Aravis : la brise du col rentre en cours d'après-midi (strong-breeze)** — `aravis/col-des-aravis-brise-col`, Aravis · *limite* · juillet 15h30, sans vent météo, 80 m sol, rayon 2,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 14 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Venturi entre Sulens et La Tulle (brise de Faverges) (venturi)** — `aravis/sulens-la-tulle-venturi`, Aravis · *limite* · juillet 15h30, sans vent météo, 80 m sol, rayon 1,5 km
-  - effet attendu : attendu vent ≥ 1,15 × médiane des fonds de vallée voisins (10 km) ; obtenu max 4 km/h (×0,26 la médiane 14 km/h), venturi 0,00
-  - cause probable : pas de resserrement perpendiculaire au flux détecté à la maille de 216 m
-- **Rochebrune : décollage dangereux par vent de sud-ouest (rouleaux) (lee-rotor)** — `val-arly-megeve/rochebrune-rouleaux-sud-ouest`, Megève – Val d’Arly · *limite* · juillet 14h00, vent météo de SO 30 km/h, 80 m sol, rayon 1,0 km
-  - effet attendu : attendu abri (sous le vent) ou turbulence ≥ 0,35 ; obtenu abri 0,11, turbulence 0,13
-  - cause probable : relief au vent pas assez haut pour l’indice d’abri (angle max 11°)
-- **Cordon / Combloux : brise de vallée dans le dos après 13h, foehn par tendance sud (strong-breeze)** — `val-arly-megeve/cordon-brise-vent-arriere`, Megève – Val d’Arly · *limite* · juillet 16h00, sans vent météo, 80 m sol, rayon 2,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 3 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Brise d'Ugine passant au-dessus de Bisanne : thermiques de la face sud submergés l'après-midi (strong-breeze)** — `val-arly-megeve/bisanne-brise-arly-dos`, Megève – Val d’Arly · *limite* · juillet 15h45, sans vent météo, 80 m sol, rayon 2,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 17 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Vallée de Megève : très forte brise face au pilote, verrou à passer en collant au relief (strong-breeze)** — `val-arly-megeve/megeve-verrou-brise-forte-avril`, Megève – Val d’Arly · *limite* · juillet 15h30, sans vent météo, 80 m sol, rayon 3,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 15 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Bisanne Sud : brise d'Ugine dans le dos après ~12h30, rouleaux par vent d'ouest (strong-breeze)** — `beaufortain/bisanne-dos-apres-midi`, Beaufortain · *limite* · juillet 15h30, sans vent météo, 80 m sol, rayon 1,5 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 8 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Cormet de Roselend – Les Chapieux : « cocktail de brises » (col de la Seigne, Cormet) (strong-breeze)** — `beaufortain/cormet-chapieux-cocktail-brises`, Beaufortain · *limite* · juillet 15h30, sans vent météo, 80 m sol, rayon 3,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 13 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Décollage de Vérel : sous le vent du thermique et de la brise (rouleaux) (lee-rotor)** — `bourget-chambery/verel-rouleaux-decollage`, Bourget – Chambéry · *limite* · juillet 14h30, vent météo de Sud 30 km/h, 80 m sol, rayon 1,0 km
-  - effet attendu : attendu abri (sous le vent) ou turbulence ≥ 0,35 ; obtenu abri 0,02, turbulence 0,02
-  - cause probable : relief au vent pas assez haut pour l’indice d’abri (angle max 9°)
-- **Novalaise : brise forte et posé interdit (strong-breeze)** — `bourget-chambery/epine-novalaise-brise-forte`, Bourget – Chambéry · *limite* · juillet 15h30, sans vent météo, 80 m sol, rayon 2,5 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 18 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Montlambert par vent de Nord fort : protection limitée, 'sortir du bocal' (strong-breeze)** — `combe-de-savoie/montlambert-nord-fort`, Combe de Savoie · *limite* · juillet 14h00, vent météo de nord 20 km/h, 80 m sol, rayon 2,5 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 19 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Brise du Grésivaudan renforcée en soirée de forte canicule (au pied de Chamrousse) (strong-breeze)** — `gresivaudan/chamrousse-brise-soir-canicule`, Grésivaudan · *limite* · juillet 18h45, sans vent météo, 80 m sol, rayon 3,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 16 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Grand Colon : brise forte et turbulente (strong-breeze)** — `belledonne/grand-colon-brise`, Belledonne · *limite* · juillet 15h30, sans vent météo, 80 m sol, rayon 2,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 8 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Col de Pipay / Crêt du Poulet : point dur par brise de Fond de France (strong-breeze)** — `belledonne/pipay-point-dur`, Belledonne · *limite* · juillet 15h30, sans vent météo, 80 m sol, rayon 2,5 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 12 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Crête d'Orionde : lame d'air accélérée et transition Jas des Lièvres → Orionde (venturi)** — `belledonne/orionde-lame-d-air-venturi`, Belledonne · *limite* · juillet 15h15, vent météo de sud 10 km/h, 80 m sol, rayon 2,5 km
-  - effet attendu : attendu vent ≥ 1,15 × médiane des fonds de vallée voisins (10 km) ou indice venturi ≥ 0,3 ; obtenu max 8 km/h (×0,63 la médiane 13 km/h), venturi 0,01
-  - cause probable : pas de resserrement perpendiculaire au flux détecté à la maille de 216 m
-- **Sortie de déco turbulente au Belvédère (sous le vent de la crête) (lee-rotor)** — `vercors-nord/belvedere-deco-sous-le-vent-crete`, Vercors nord · *limite* · juillet 14h00, vent météo de nord 30 km/h, 80 m sol, rayon 0,6 km
-  - effet attendu : attendu abri (sous le vent) ou turbulence ≥ 0,35 ; obtenu abri 0,00, turbulence 0,00
-  - cause probable : relief au vent pas assez haut pour l’indice d’abri (angle max -1°)
-- **Serpaton Est : venturi au sud et brise du Drac au nord (venturi)** — `vercors-est-sud/serpaton-est-venturi`, Vercors est & sud · *limite* · juillet 11h30, sans vent météo, 80 m sol, rayon 1,0 km
-  - effet attendu : attendu vent ≥ 1,15 × médiane des fonds de vallée voisins (10 km) ; obtenu max 5 km/h (×0,51 la médiane 10 km/h), venturi 0,00
-  - cause probable : pas de resserrement perpendiculaire au flux détecté à la maille de 216 m
-- **Léoncel : renforcement du vent et aérologie souvent travers gauche (strong-breeze)** — `vercors-est-sud/leoncel-renforcement-vent`, Vercors est & sud · *limite* · juillet 12h30, sans vent météo, 80 m sol, rayon 1,5 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 4 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Verrou de Châtillon-en-Diois : brise divergeant vers l'ouest, vent reculant en basse couche (strong-breeze)** — `trieves/chatillon-verrou-brise`, Trièves · *limite* · juillet 15h30, sans vent météo, 80 m sol, rayon 3,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 19 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Conest : brise dès 12h et cisaillements importants (strong-breeze)** — `matheysine/conest-cisaillement-brise-12h`, Matheysine – Drac · *limite* · juillet 15h30, sans vent météo, 80 m sol, rayon 2,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 20 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Combe du Goulet (Valbonnais) : brise de Valbonnais et rodéo (strong-breeze)** — `matheysine/valbonnais-combe-du-goulet-rodeo`, Matheysine – Drac · *limite* · juillet 15h30, sans vent météo, 80 m sol, rayon 3,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 19 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Coiro : zone sous le vent de la brise et turbulences de thermique, vent et brise (piège de Valbonnais) (lee-rotor)** — `matheysine/coiro-sous-le-vent-brise-valbonnais`, Matheysine – Drac · *limite* · juillet 15h30, vent météo de sud 30 km/h, 80 m sol, rayon 1,5 km
-  - effet attendu : attendu abri (sous le vent) ou turbulence ≥ 0,35 ; obtenu abri 0,00, turbulence 0,12
-  - cause probable : relief au vent pas assez haut pour l’indice d’abri (angle max 8°)
-- **Forte brise descendante du soir (Vallouise) (strong-breeze)** — `ecrins-vallouise-haute-durance/brise-descendante-soir-vallouise`, Vallouise – haute Durance · *limite* · juillet 18h45, sans vent météo, 80 m sol, rayon 3,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 10 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Lac des Sagnes : atterrissage au vent du lac quand la brise s'alimente (strong-breeze)** — `ubaye/lac-des-sagnes-brise-plouf`, Ubaye · *limite* · juillet 14h30, sans vent météo, 80 m sol, rayon 1,5 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 8 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Derrière La Salette : forte brise de la vallée de Valbonnais, combe du Goulet bousculante (strong-breeze)** — `champsaur-valgaudemar/la-salette-valbonnais-brise-goulet`, Champsaur · *limite* · juillet 17h30, sans vent météo, 80 m sol, rayon 3,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 17 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Déco d’Aspres saturé par la brise (strong-breeze)** — `buech-laragne-chabre/aspres-breeze-14-16`, Buëch – Chabre · *limite* · juillet 15h00, sans vent météo, 80 m sol, rayon 2,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 12 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Bascule ouest de l’après-midi : atterro sud inaccessible (strong-breeze)** — `buech-laragne-chabre/chabre-bascule-ouest`, Buëch – Chabre · *limite* · juillet 16h15, sans vent météo, 80 m sol, rayon 3,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 20 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Cuberselle : déco quasi falaise, brise trop forte (strong-breeze)** — `buech-laragne-chabre/cuberselle-brise`, Buëch – Chabre · *limite* · juillet 15h30, sans vent météo, 80 m sol, rayon 1,5 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 19 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Mistral : flux canalisé dans le Buëch vers Sisteron (strong-breeze)** — `buech-laragne-chabre/buech-mistral-couloir`, Buëch – Chabre · *limite* · juillet 14h00, mistral (nord) 50 km/h, 80 m sol, rayon 3,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 19 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Col d'Ey : renforcement brutal du mistral et sous le vent de la brise d'ouest (strong-breeze)** — `baronnies/col-ey-mistral`, Baronnies · *limite* · juillet 15h30, sans vent météo, 80 m sol, rayon 3,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 17 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Retour de Beaumont vers Nyons : tout face à la brise (strong-breeze)** — `baronnies/beaumont-nyons-face-brise`, Baronnies · *limite* · juillet 15h30, sans vent météo, 80 m sol, rayon 3,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 14 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Verrou de Châtillon-en-Diois : brise forte et recul en basse couche (strong-breeze)** — `diois/diois-chatillon-recul`, Diois · *limite* · juillet 15h30, sans vent météo, 80 m sol, rayon 3,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 19 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Bascule ouest de fin d’après-midi (Couspeau, Aucelon, Aurel) (strong-breeze)** — `diois/diois-bascule-ouest`, Diois · *limite* · juillet 17h30, sans vent météo, 80 m sol, rayon 3,0 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 20 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Col de Volvent : brise d’ouest dès 12-14h (strong-breeze)** — `diois/diois-volvent-brise-ouest`, Diois · *limite* · juillet 13h00, sans vent météo, 80 m sol, rayon 3,0 km
+- **Le Môle : brise de vallée très forte au col-parking de Chez Berroud (strong-breeze)** — `arve-faucigny/mole-col-chez-berroud`, Faucigny – Arve · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
   - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 5 km/h
   - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Montagne de Baise : pas de vent météo de nord ou de sud (strong-breeze)** — `diois/diois-baise-no`, Diois · *limite* · juillet 14h00, vent météo de nord 30 km/h, 80 m sol, rayon 1,5 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 16 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Brise soutenue et venturi au décollage Sud-Ouest du Chalvet (strong-breeze)** — `saint-andre-verdon/brise-forte-deco-so`, Saint-André · *limite* · juillet 16h00, sans vent météo, 80 m sol, rayon 0,8 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 20 km/h
-  - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Oraison : entrées de vent brutales, brise trop sud, repose au déco interdite (strong-breeze)** — `prealpes-digne-lure/oraison-entrees-de-vent`, Digne – Lure · *limite* · juillet 14h45, sans vent météo, 80 m sol, rayon 1,5 km
+- **Rafales de cumulonimbus du nord le long du lac (strong-breeze)** — `lac-annecy/lac-cumulonimbus-nord`, Lac d’Annecy · *limite* · juillet 17h30, sans vent météo, 80 m sol, à 330 m du point
   - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 15 km/h
   - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Gréolières par vent d'ouest : atterro sous la barre du village, déco 300 piégeux (lee-rotor)** — `prealpes-grasse-castellane/greolieres-ouest-turbulence`, Préalpes de Grasse · *limite* · juillet 14h00, vent météo d’ouest 30 km/h, 80 m sol, rayon 2,0 km
-  - effet attendu : attendu abri (sous le vent) ou turbulence ≥ 0,35 ; obtenu abri 0,32, turbulence 0,33
-  - cause probable : relief au vent pas assez haut pour l’indice d’abri (angle max 13°)
-- **Col de Bleine : turbulent par vent d'ouest fort, attention au Mistral (lee-rotor)** — `prealpes-grasse-castellane/bleine-ouest-mistral`, Préalpes de Grasse · *limite* · juillet 14h00, vent météo d’ouest 40 km/h, 80 m sol, rayon 2,0 km
-  - effet attendu : attendu abri (sous le vent) ou turbulence ≥ 0,35 ; obtenu abri 0,00, turbulence 0,22
-  - cause probable : relief au vent pas assez haut pour l’indice d’abri (angle max 8°)
-- **Roquebrune : rotors par vent d'est sur l'atterro, horaires restreints (lee-rotor)** — `prealpes-nice-var/roquebrune-rotors-est`, Préalpes de Nice · *limite* · juillet 14h00, vent météo d’est 30 km/h, 80 m sol, rayon 1,5 km
-  - effet attendu : attendu abri (sous le vent) ou turbulence ≥ 0,35 ; obtenu abri 0,00, turbulence 0,00
-  - cause probable : relief au vent pas assez haut pour l’indice d’abri (angle max 3°)
-- **Éze (Mont Bastide) : rotor de la crête par vent d'est, site fermé en été (lee-rotor)** — `prealpes-nice-var/eze-rotor-est`, Préalpes de Nice · *limite* · juillet 14h00, vent météo d’est 30 km/h, 80 m sol, rayon 1,0 km
-  - effet attendu : attendu abri (sous le vent) ou turbulence ≥ 0,35 ; obtenu abri 0,23, turbulence 0,21
-  - cause probable : relief au vent pas assez haut pour l’indice d’abri (angle max 12°)
-- **Cagnorina : fortes brises de vallée, atterro au déco (strong-breeze)** — `mercantour/cagnorina-forte-brise`, Mercantour · *limite* · juillet 14h45, sans vent météo, 80 m sol, rayon 1,5 km
-  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 19 km/h
+- **Col des Aravis : la brise du col rentre en cours d'après-midi (strong-breeze)** — `aravis/col-des-aravis-brise-col`, Aravis · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 4 km/h
   - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Col de Tende : conditions très fortes en pleine journée (strong-breeze)** — `mercantour/col-de-tende-brise`, Mercantour · *limite* · juillet 14h45, sans vent météo, 80 m sol, rayon 2,0 km
+- **Venturi entre Sulens et La Tulle (brise de Faverges) (venturi)** — `aravis/sulens-la-tulle-venturi`, Aravis · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 1,15 × médiane des fonds de vallée voisins (10 km) ; obtenu max 3 km/h (×0,23 la médiane 14 km/h), venturi 0,00
+  - cause probable : pas de resserrement perpendiculaire au flux détecté à la maille de 216 m
+- **Cordon / Combloux : brise de vallée dans le dos après 13h, foehn par tendance sud (strong-breeze)** — `val-arly-megeve/cordon-brise-vent-arriere`, Megève – Val d’Arly · *limite* · juillet 16h00, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 3 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Brise d'Ugine passant au-dessus de Bisanne : thermiques de la face sud submergés l'après-midi (strong-breeze)** — `val-arly-megeve/bisanne-brise-arly-dos`, Megève – Val d’Arly · *limite* · juillet 15h45, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 3 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Vallée de Megève : très forte brise face au pilote, verrou à passer en collant au relief (strong-breeze)** — `val-arly-megeve/megeve-verrou-brise-forte-avril`, Megève – Val d’Arly · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 13 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Bisanne Sud : brise d'Ugine dans le dos après ~12h30, rouleaux par vent d'ouest (strong-breeze)** — `beaufortain/bisanne-dos-apres-midi`, Beaufortain · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 3 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Cormet de Roselend – Les Chapieux : « cocktail de brises » (col de la Seigne, Cormet) (strong-breeze)** — `beaufortain/cormet-chapieux-cocktail-brises`, Beaufortain · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 5 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Brise de vallée forte à l'atterrissage de Bozel (fort gradient) (strong-breeze)** — `vanoise/brise-forte-bozel-atterrissage`, Vanoise · *limite* · juillet 17h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 20 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Courchevel Bouc Blanc : brises fortes à très fortes l'après-midi (strong-breeze)** — `vanoise/bouc-blanc-brise-forte`, Vanoise · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 2 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Novalaise : brise forte et posé interdit (strong-breeze)** — `bourget-chambery/epine-novalaise-brise-forte`, Bourget – Chambéry · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 14 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Montlambert par vent de Nord fort : protection limitée, 'sortir du bocal' (strong-breeze)** — `combe-de-savoie/montlambert-nord-fort`, Combe de Savoie · *limite* · juillet 14h00, vent météo de nord 20 km/h, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 9 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Col du Frêne : zone sous le vent, venturi (venturi)** — `bauges/col-du-frene-venturi`, Bauges · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 1,15 × médiane des fonds de vallée voisins (10 km) ; obtenu max 16 km/h (×0,79 la médiane 21 km/h), venturi 0,00
+  - cause probable : pas de resserrement perpendiculaire au flux détecté à la maille de 216 m
+- **École – La Compôte : brise forte et confluence (atterrissage) (strong-breeze)** — `bauges/ecole-compote-scotche`, Bauges · *limite* · juillet 14h00, vent météo de nord 30 km/h, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 18 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Brise du Grésivaudan renforcée en soirée de forte canicule (au pied de Chamrousse) (strong-breeze)** — `gresivaudan/chamrousse-brise-soir-canicule`, Grésivaudan · *limite* · juillet 18h45, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 15 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Grand Colon : brise forte et turbulente (strong-breeze)** — `belledonne/grand-colon-brise`, Belledonne · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 5 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Col de Pipay / Crêt du Poulet : point dur par brise de Fond de France (strong-breeze)** — `belledonne/pipay-point-dur`, Belledonne · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 7 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Serpaton Est : venturi au sud et brise du Drac au nord (venturi)** — `vercors-est-sud/serpaton-est-venturi`, Vercors est & sud · *limite* · juillet 11h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 1,15 × médiane des fonds de vallée voisins (10 km) ; obtenu max 4 km/h (×0,45 la médiane 10 km/h), venturi 0,00
+  - cause probable : pas de resserrement perpendiculaire au flux détecté à la maille de 216 m
+- **Léoncel : renforcement du vent et aérologie souvent travers gauche (strong-breeze)** — `vercors-est-sud/leoncel-renforcement-vent`, Vercors est & sud · *limite* · juillet 12h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 4 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Verrou de Châtillon-en-Diois : brise divergeant vers l'ouest, vent reculant en basse couche (strong-breeze)** — `trieves/chatillon-verrou-brise`, Trièves · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 16 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Vent du sud irrégulier et rafaleux sur Monteynard (strong-breeze)** — `matheysine/monteynard-sud-rafales`, Matheysine – Drac · *limite* · juillet 14h00, vent météo de sud 30 km/h, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 8 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Conest : brise dès 12h et cisaillements importants (strong-breeze)** — `matheysine/conest-cisaillement-brise-12h`, Matheysine – Drac · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 14 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Combe du Goulet (Valbonnais) : brise de Valbonnais et rodéo (strong-breeze)** — `matheysine/valbonnais-combe-du-goulet-rodeo`, Matheysine – Drac · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
   - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 17 km/h
   - cause probable : brise modélisée moins forte que décrite à cet endroit
-- **Aussois : effet de foehn par vent de sud fort (foehn)** — `haute-maurienne/ffvl620-aussois-foehn-sud`, Haute-Maurienne · *limite* · juillet 14h00, vent météo de sud 40 km/h, 80 m sol, rayon 2,0 km
-  - effet attendu : attendu vent fort descendant (≥ 32 km/h) ou turbulence ≥ 0,3 ; obtenu max 22 km/h, turbulence 0,23, abri 0,00
-  - cause probable : pas de dynamique de foehn dans le modèle (versant sous le vent abrité au lieu d’un vent descendant) — limite assumée
+- **Col du Sabot : entrée du vent de Nord, cisaillements (strong-breeze)** — `oisans-grandes-rousses/sabot-vent-nord`, Oisans · *limite* · juillet 14h00, vent météo de Nord 40 km/h, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 19 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **« Cloutage » : vent d'altitude NO-N entraîné vers le bas (Puy Chalvin, Granon) (strong-breeze)** — `brianconnais-guisane/cloutage-nord-ouest-puy-chalvin-granon`, Briançonnais · *limite* · juillet 15h15, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 7 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Forte brise descendante du soir (Vallouise) (strong-breeze)** — `ecrins-vallouise-haute-durance/brise-descendante-soir-vallouise`, Vallouise – haute Durance · *limite* · juillet 18h45, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 7 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Brise soutenue au déco de Saint-Vincent (strong-breeze)** — `serre-poncon-embrunais/st-vincent-brise-deco`, Serre-Ponçon · *limite* · juillet 15h15, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 16 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Barcelonnette – atterro de l'Hippodrome : force de la brise (strong-breeze)** — `ubaye/hippodrome-barcelonnette-brise`, Ubaye · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 20 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Lac des Sagnes : atterrissage au vent du lac quand la brise s'alimente (strong-breeze)** — `ubaye/lac-des-sagnes-brise-plouf`, Ubaye · *limite* · juillet 14h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 5 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Derrière La Salette : forte brise de la vallée de Valbonnais, combe du Goulet bousculante (strong-breeze)** — `champsaur-valgaudemar/la-salette-valbonnais-brise-goulet`, Champsaur · *limite* · juillet 17h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 3 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Déco d’Aspres saturé par la brise (strong-breeze)** — `buech-laragne-chabre/aspres-breeze-14-16`, Buëch – Chabre · *limite* · juillet 15h00, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 5 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Bascule ouest de l’après-midi : atterro sud inaccessible (strong-breeze)** — `buech-laragne-chabre/chabre-bascule-ouest`, Buëch – Chabre · *limite* · juillet 16h15, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 3 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Mison : inversion brutale du flux du soir (strong-breeze)** — `buech-laragne-chabre/mison-inversion`, Buëch – Chabre · *limite* · juillet 19h45, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 0 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Cuberselle : déco quasi falaise, brise trop forte (strong-breeze)** — `buech-laragne-chabre/cuberselle-brise`, Buëch – Chabre · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 13 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Mistral : flux canalisé dans le Buëch vers Sisteron (strong-breeze)** — `buech-laragne-chabre/buech-mistral-couloir`, Buëch – Chabre · *limite* · juillet 14h00, mistral (nord) 50 km/h, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 16 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Col d'Ey : renforcement brutal du mistral et sous le vent de la brise d'ouest (strong-breeze)** — `baronnies/col-ey-mistral`, Baronnies · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 8 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Retour de Beaumont vers Nyons : tout face à la brise (strong-breeze)** — `baronnies/beaumont-nyons-face-brise`, Baronnies · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 11 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Verrou de Châtillon-en-Diois : brise forte et recul en basse couche (strong-breeze)** — `diois/diois-chatillon-recul`, Diois · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 16 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Bascule ouest de fin d’après-midi (Couspeau, Aucelon, Aurel) (strong-breeze)** — `diois/diois-bascule-ouest`, Diois · *limite* · juillet 17h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 18 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Col de Volvent : brise d’ouest dès 12-14h (strong-breeze)** — `diois/diois-volvent-brise-ouest`, Diois · *limite* · juillet 13h00, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 4 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Montagne de Baise : pas de vent météo de nord ou de sud (strong-breeze)** — `diois/diois-baise-no`, Diois · *limite* · juillet 14h00, vent météo de nord 30 km/h, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 12 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Brise soutenue et venturi au décollage Sud-Ouest du Chalvet (strong-breeze)** — `saint-andre-verdon/brise-forte-deco-so`, Saint-André · *limite* · juillet 16h00, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 20 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Venturi et brise forte à l'Andran (déco et atterro) (venturi)** — `prealpes-digne-lure/venturi-andran-digne`, Digne – Lure · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 1,15 × médiane des fonds de vallée voisins (10 km) ; obtenu max 14 km/h (×1,01 la médiane 14 km/h), venturi 0,00
+  - cause probable : pas de resserrement perpendiculaire au flux détecté à la maille de 216 m
+- **Oraison : entrées de vent brutales, brise trop sud, repose au déco interdite (strong-breeze)** — `prealpes-digne-lure/oraison-entrees-de-vent`, Digne – Lure · *limite* · juillet 14h45, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 13 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Col de Saint-Barnabé et Soleilhas : sous le vent du Teillon, venturi (venturi)** — `prealpes-grasse-castellane/venturi-col-saint-barnabe`, Préalpes de Grasse · *limite* · juillet 15h30, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 1,15 × médiane des fonds de vallée voisins (10 km) ; obtenu max 9 km/h (×1,03 la médiane 9 km/h), venturi 0,00
+  - cause probable : pas de resserrement perpendiculaire au flux détecté à la maille de 216 m
+- **Cagnorina : fortes brises de vallée, atterro au déco (strong-breeze)** — `mercantour/cagnorina-forte-brise`, Mercantour · *limite* · juillet 14h45, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 17 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
+- **Col de Tende : conditions très fortes en pleine journée (strong-breeze)** — `mercantour/col-de-tende-brise`, Mercantour · *limite* · juillet 14h45, sans vent météo, 80 m sol, à 330 m du point
+  - effet attendu : attendu vent ≥ 20 km/h (« fort », S8) ; obtenu max 13 km/h
+  - cause probable : brise modélisée moins forte que décrite à cet endroit
 
 ## Non testables
 

@@ -10,12 +10,12 @@
  *   metres above the ground that can run under (or against) the valley wind,
  *   as the sources describe (a katabatic flow sliding under the lake breeze).
  */
-import type { CuratedBreezeInput } from '@brises/shared';
+import type { CuratedBreezeInput, CuratedHazardInput } from '@brises/shared';
 import type { CuratedLayer, CuratedRaster } from './field';
 import { smoothstep } from './raster';
 import type { Terrain } from './terrain';
 
-export type { CuratedBreezeInput };
+export type { CuratedBreezeInput, CuratedHazardInput };
 
 /** Valley-scale kinds: follow the valley-wind profile, rasterised on the valley floor and lower slopes. */
 const VALLEY_KINDS = new Set(['valley', 'downvalley', 'lake', 'pass-transfer']);
@@ -48,7 +48,52 @@ function emptyRaster(n: number): CuratedRaster & { score: Float32Array } {
   return { index: new Int16Array(n).fill(-1), weight: new Float32Array(n), tx: new Float32Array(n), ty: new Float32Array(n), score: new Float32Array(n) };
 }
 
-export function rasterizeCurated(t: Terrain, breezes: CuratedBreezeInput[]): CuratedLayer {
+/** Effect of a documented hazard, as the GPU codes it (tB row, z). */
+export const HazardEffect = { lee: 0, venturi: 1, turbulence: 2 } as const;
+
+/**
+ * How much the synoptic wind matches a documented hazard's conditions, 0..1: full
+ * within 60 % of its direction tolerance and above its full speed, none beyond the
+ * tolerance or below its starting speed. Shared by the CPU model and the GPU engine.
+ */
+export function hazardActivity(h: CuratedHazardInput, p: { synoptic: { fromDeg: number; speedKmh: number } }): number {
+  const kmh = p.synoptic.speedKmh;
+  if (kmh <= 0) return 0;
+  const diff = Math.abs(((p.synoptic.fromDeg - h.fromDeg + 540) % 360) - 180);
+  const dir = 1 - smoothstep(0.6 * h.tolDeg, h.tolDeg, diff);
+  return dir * smoothstep(h.minKmh, h.fullKmh, kmh);
+}
+
+/** Rasterises the documented hazards: dominant (highest weight) one per cell, discs around their points. */
+function rasterizeHazards(t: Terrain, hazards: CuratedHazardInput[]): { index: Int16Array; weight: Float32Array } {
+  const { grid } = t;
+  const { width: w, height: h, size: n } = grid;
+  const index = new Int16Array(n).fill(-1);
+  const weight = new Float32Array(n);
+  const cell = grid.cellM[(h / 2) | 0];
+  hazards.forEach((hz, hi) => {
+    const R = Math.max(1.5, hz.radiusM / cell);
+    for (const [lon, lat] of hz.coords) {
+      if (!grid.contains(lon, lat)) continue;
+      const [cx, cy] = grid.toGrid(lon, lat);
+      for (let j = Math.max(0, Math.floor(cy - R)); j <= Math.min(h - 1, Math.ceil(cy + R)); j++)
+        for (let i = Math.max(0, Math.floor(cx - R)); i <= Math.min(w - 1, Math.ceil(cx + R)); i++) {
+          const d = Math.hypot(i + 0.5 - cx, j + 0.5 - cy);
+          if (d > R) continue;
+          // Full over the inner 60 % of the radius, fading to the edge; below 1 (GPU packing).
+          const wgt = Math.min(0.999, 1 - smoothstep(0.6 * R, R, d));
+          const k = j * w + i;
+          if (wgt > weight[k]) {
+            weight[k] = wgt;
+            index[k] = hi;
+          }
+        }
+    }
+  });
+  return { index, weight };
+}
+
+export function rasterizeCurated(t: Terrain, breezes: CuratedBreezeInput[], hazards: CuratedHazardInput[] = []): CuratedLayer {
   const { grid } = t;
   const { width: w, height: h, size: n } = grid;
   const main = emptyRaster(n);
@@ -120,13 +165,16 @@ export function rasterizeCurated(t: Terrain, breezes: CuratedBreezeInput[]): Cur
     cond: strip(cond),
     thin: strip(thin),
     breezes: breezes.map(({ id, name, kind, speedMs, window, condition }) => ({ id, name, kind, speedMs, window, condition: condition ?? null })),
+    hazard: rasterizeHazards(t, hazards),
+    hazards,
   };
 }
 
 /**
  * GPU layout of the three layers in two RGBA float textures: each layer is two
  * floats, `index + min(weight, 0.999)` (−1 when empty) and the flow direction
- * angle (atan2(ty, tx)). tC = main, cond; tC2 = thin, unused.
+ * angle (atan2(ty, tx)). tC = main, cond; tC2 = thin, then the documented hazard
+ * (`index + min(weight, 0.999)`, −1 when none) and an unused channel.
  */
 export function packCuratedLayers(c: CuratedLayer): { tC: Float32Array; tC2: Float32Array } {
   const n = c.main.index.length;
@@ -141,7 +189,8 @@ export function packCuratedLayers(c: CuratedLayer): { tC: Float32Array; tC2: Flo
     put(tC, k * 4, c.main, k);
     put(tC, k * 4 + 2, c.cond, k);
     put(tC2, k * 4, c.thin, k);
-    tC2[k * 4 + 2] = -1;
+    const hi = c.hazard ? c.hazard.index[k] : -1;
+    tC2[k * 4 + 2] = hi >= 0 && c.hazard!.weight[k] > 0 ? hi + Math.min(c.hazard!.weight[k], 0.999) : -1;
   }
   return { tC, tC2 };
 }

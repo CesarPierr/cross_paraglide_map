@@ -3,7 +3,7 @@
  * sliders). Fallback for browsers without float render targets: the CPU model
  * in a worker, CPU particles and an image overlay.
  */
-import type { CuratedBreezeInput } from '@brises/shared';
+import type { CuratedBreezeInput, CuratedHazardInput } from '@brises/shared';
 import { budgetFor } from '../frame-pacer';
 import type { CellResult, GridMeta, ModelParams } from '@brises/model';
 import type { ImageSource } from 'maplibre-gl';
@@ -16,7 +16,7 @@ import { BREEZE_COLORS } from '../palette';
 import { WindParticleLayer, type ParticleSettings } from '../wind-particles';
 import type { MapModule, ModuleContext } from './types';
 
-export type ProbeResult = CellResult & { convergence: number; curatedName: string | null };
+export type ProbeResult = CellResult & { convergence: number; curatedName: string | null; hazardName: string | null; hazardId: string | null };
 
 const EMPTY_PNG = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==';
 
@@ -53,6 +53,7 @@ export class WindModule implements MapModule {
     private meta: GridMeta,
     private demUrl: string,
     private curated: CuratedBreezeInput[],
+    private hazards: CuratedHazardInput[],
     private thermalSpots: ThermalSpot[],
     private onUpdated: () => void,
   ) {}
@@ -62,7 +63,7 @@ export class WindModule implements MapModule {
     const gl = ctx.map.getCanvas().getContext('webgl2');
     if (gl && supportsFloatTargets(gl)) {
       // GPU: the worker analyses the relief once and hands packed textures over.
-      const { pack } = await this.model!.build(this.demUrl, this.meta, this.curated);
+      const { pack } = await this.model!.build(this.demUrl, this.meta, this.curated, this.hazards);
       this.model!.dispose();
       this.model = null;
       this.scene = new WindScene(ctx.grid, pack, this.curated, BREEZE_COLORS, this.sceneSettings());
@@ -74,7 +75,7 @@ export class WindModule implements MapModule {
       this.mode = 'gpu';
     } else {
       const { elevation } = await this.model!.init(this.demUrl, this.meta);
-      await this.model!.setCurated(this.curated);
+      await this.model!.setCurated(this.curated, this.hazards);
       ctx.map.addSource('model-overlay', { type: 'image', url: EMPTY_PNG, coordinates: ctx.grid.corners() });
       ctx.addLayer({ id: 'model-overlay', type: 'raster', source: 'model-overlay', paint: { 'raster-opacity': 0.85, 'raster-resampling': 'linear', 'raster-fade-duration': 0 } }, 'analysis');
       this.particles = new WindParticleLayer(ctx.grid, this.particleSettings());
@@ -153,7 +154,7 @@ export class WindModule implements MapModule {
     if (this.scene) return this.scene.probe(lon, lat);
     if (!this.model) return null;
     const r = await this.model.probe(lon, lat);
-    return r.cell ? { ...r.cell, convergence: r.convergence ?? 0, curatedName: r.curatedName ?? null } : null;
+    return r.cell ? { ...r.cell, convergence: r.convergence ?? 0, curatedName: r.curatedName ?? null, hazardName: r.hazardName ?? null, hazardId: r.hazardId ?? null } : null;
   }
 
   dispose(): void {

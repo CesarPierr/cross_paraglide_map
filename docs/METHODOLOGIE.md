@@ -83,7 +83,11 @@ pas le calme, et la brise générique de son couloir prend son sens.
 Chaque élément de l'atlas est confronté au modèle de référence sur le vrai MNT : brises le long
 de leur tracé, à leurs heures, au sol et à 30 et 60 % de leur couche (sens, vitesse documentée,
 silence hors horaires ou hors condition) ; convergences à l'heure indiquée ; thermiques à leurs
-heures et à leur début documenté ; pièges sous le vent météo qu'ils citent. Le rapport
+heures et à leur début documenté ; pièges sous le vent météo qu'ils citent, au point même (à
+330 m près, et non plus dans un rayon de quelques kilomètres qui laissait passer un effet trouvé
+ailleurs), avec et sans la couche des dangers documentés ; contrôle inverse : un décollage
+documenté pour un vent ne doit pas apparaître sous le vent quand ce vent lui arrive de face
+(`scripts/dev/lee-bench.ts` pour régler l'abri sur ces deux jeux). Le rapport
 (`docs/MODEL_QA.md`) classe les échecs en défaut du modèle, défaut de donnée ou limite assumée, et
 liste les données à corriger. À l'atlas de la seconde passe : 93 % des brises, 84 % des
 convergences, 83 % des thermiques conformes.
@@ -116,9 +120,17 @@ fichiers de recherche.
 
 - **Saisie** : vent « des crêtes » (direction, force), ou prévision AROME (moyenne vectorielle
   850/700 hPa) via la sonde.
-- **Abri (sous le vent)** : indice de Winstral — angle maximal du relief au vent sur 200 m à 5 km ;
-  un angle de 8° à 22° fait passer l'abri de 0 à 1. Les zones abritées perdent le vent météo
-  et gagnent de la turbulence (rotors).
+- **Abri (sous le vent)** : indice de Winstral — angle maximal du relief au vent sur 200 m à 5 km,
+  pris au quart de la hauteur simulée (le décollement et ses rotors collent à la pente sous la
+  crête) ; un angle de 8° à 22° fait passer l'abri de 0 à 1. Les zones abritées perdent le vent
+  météo et gagnent de la turbulence (rotors).
+- **Dangers documentés** : un piège que les sources lient à un vent (« turbulent par nord même
+  faible », « rouleaux par vent d'ouest ») est une zone de 300 m à 1 km autour de l'endroit
+  signalé. Quand le vent simulé correspond (direction à ±45°, force : dès 5 km/h si « même
+  faible », 18 km/h si « fort », 10 km/h sinon), la zone s'affiche sous le vent, en venturi ou
+  turbulente, et la sonde nomme le danger avec ses sources. Le relief seul ne voit pas tout : au
+  col du Coq par nord faible, il ne trouve presque rien, les pilotes y décrivent une « machine à
+  laver ».
 - **Exposition (au vent)** : composante du vent face à la pente → ascendance dynamique.
 - **Canalisation** : dans les vallées, le vent est ramené sur l'axe, proportionnellement à la
   profondeur de la vallée.

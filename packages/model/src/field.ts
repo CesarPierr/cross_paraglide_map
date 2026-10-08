@@ -5,8 +5,8 @@
  * at a chosen height. Pure functions over typed arrays: runs in a Web Worker
  * and in unit tests.
  */
-import type { BreezeCondition, CuratedBreezeInfo } from '@brises/shared';
-import { CuratedLayerKind, curatedLayerKind } from './curated';
+import type { BreezeCondition, CuratedBreezeInfo, CuratedHazardInput } from '@brises/shared';
+import { CuratedLayerKind, curatedLayerKind, hazardActivity } from './curated';
 import { compassFr, windFromDeg, windVector } from './grid';
 import { clamp, smoothstep } from './raster';
 import { RULES } from './rules';
@@ -50,6 +50,9 @@ export interface CuratedLayer {
   /** Slope and katabatic breezes: thin near-ground layer under the others. */
   thin: CuratedRaster;
   breezes: CuratedBreezeInfo[];
+  /** Documented hazards tied to a synoptic wind: dominant one per cell (see `rasterizeCurated`). */
+  hazard?: { index: Int16Array; weight: Float32Array };
+  hazards?: CuratedHazardInput[];
 }
 
 
@@ -269,6 +272,9 @@ export interface CellResult {
   dynamicLift: number;
   thermal: number;
   turbulence: number;
+  /** Documented hazard active here (index into `CuratedLayer.hazards`, −1 none) and its weight 0..1. */
+  hazardIndex: number;
+  hazardWeight: number;
 }
 
 export function newCellResult(): CellResult {
@@ -298,6 +304,8 @@ export function newCellResult(): CellResult {
     dynamicLift: 0,
     thermal: 0,
     turbulence: 0,
+    hazardIndex: -1,
+    hazardWeight: 0,
   };
 }
 
@@ -310,6 +318,8 @@ export interface WindContext {
   curatedActivity: Float32Array;
   /** Per-breeze vertical structure (`CuratedLayerKind`). */
   curatedKind: Uint8Array;
+  /** Per documented hazard: how much the synoptic wind matches its conditions, 0..1. */
+  hazardActivity: Float32Array;
   g: [number, number];
   gSpeed: number;
   gKmh: number;
@@ -328,6 +338,10 @@ export function makeWindContext(terrain: Terrain, time: TimeContext, params: Mod
     activity[i] = curatedActivity(b, params, time.valleyPhase);
     kinds[i] = curatedLayerKind(b.kind);
   });
+  const hazardAct = new Float32Array(curated?.hazards?.length ?? 0);
+  curated?.hazards?.forEach((h, i) => {
+    hazardAct[i] = hazardActivity(h, params);
+  });
   return {
     terrain,
     time,
@@ -335,6 +349,7 @@ export function makeWindContext(terrain: Terrain, time: TimeContext, params: Mod
     curated,
     curatedActivity: activity,
     curatedKind: kinds,
+    hazardActivity: hazardAct,
     g,
     gSpeed,
     gKmh: params.synoptic.speedKmh,
@@ -521,6 +536,10 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
 
   // --- Synoptic wind and the relief.
   const z0 = z + hh;
+  // The lee is looked for closer to the ground than the evaluated level: the separated
+  // flow and its rotor hug the lee slope behind a crest (benchmark: documented lee
+  // hazards seen at their place 32 % → 47 %, take-offs facing the wind still 1 % false).
+  const zs = z + hh * RULES.leeHeightShare;
   let maxTan = -1;
   if (c.gSpeed > 0.05) {
     const steps = RULES.shelterSteps;
@@ -529,7 +548,7 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
       const ii = Math.round(i + c.upI * d);
       const jj = Math.round(j + c.upJ * d);
       if (ii < 0 || jj < 0 || ii >= w || jj >= hgt) break;
-      const tn = (t.z[jj * w + ii] - z0) / (d * cs);
+      const tn = (t.z[jj * w + ii] - zs) / (d * cs);
       if (tn > maxTan) maxTan = tn;
     }
   }
@@ -592,6 +611,29 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   out.thermal = t.water[k] ? 0 : day * clamp(insol * c.time.season * elevF * convexF * windF * dayF, 0, 1);
 
   out.turbulence = clamp(lee * smoothstep(8, 35, c.gKmh) + out.venturi * smoothstep(15, 45, c.gKmh) * 0.6, 0, 1);
+
+  // Documented hazards: where the synoptic wind matches what the sources describe, their
+  // area shows the effect they report, even where the relief model alone misses it (the
+  // Col du Coq "machine à laver" by light north). Mirrored in model-glsl.ts.
+  out.hazardIndex = -1;
+  out.hazardWeight = 0;
+  const hz = c.curated?.hazard;
+  const hi = hz ? hz.index[k] : -1;
+  if (hi >= 0) {
+    const a = hz!.weight[k] * c.hazardActivity[hi];
+    if (a > 0) {
+      out.hazardIndex = hi;
+      out.hazardWeight = a;
+      const e = c.curated!.hazards![hi].effect;
+      if (e === 'lee') {
+        out.lee = Math.max(out.lee, a);
+        out.turbulence = Math.max(out.turbulence, 0.8 * a);
+      } else if (e === 'venturi') {
+        out.venturi = Math.max(out.venturi, a);
+        out.turbulence = Math.max(out.turbulence, 0.5 * a);
+      } else out.turbulence = Math.max(out.turbulence, 0.8 * a);
+    }
+  }
   return out;
 }
 

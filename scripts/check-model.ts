@@ -16,7 +16,11 @@
  *   near-zero outside their hours / outside their condition;
  * - convergences: model convergence positive along the line at the documented time;
  * - thermals: thermal potential above the local median at the documented hours;
- * - hazards (venturi, lee, foehn, strong breeze): expected effect under the cited wind.
+ * - hazards (venturi, lee, foehn, strong breeze): expected effect under the cited wind,
+ *   at the place itself (±330 m), with the documented hazard layer and by the relief
+ *   model alone;
+ * - take-offs facing the wind (first documented orientation, 20 km/h): must not show
+ *   as lee or turbulent (control against a lee drawn everywhere).
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -76,7 +80,9 @@ const breezes: CuratedBreezeInput[] = atlas.curated.map((b) => {
   const hours = f?.properties.details?.Horaires;
   return { ...b, window: parseHours(hours, b.kind), condition: parseCondition({ name: b.name, hours }) };
 });
-const layer: CuratedLayer = rasterizeCurated(terrain, breezes);
+const layer: CuratedLayer = rasterizeCurated(terrain, breezes, atlas.curatedHazards ?? []);
+/** The same without the documented hazards: what the relief model finds by itself. */
+const layerPhysics: CuratedLayer = rasterizeCurated(terrain, breezes);
 
 const timeCache = new Map<string, TimeContext>();
 interface Scenario {
@@ -221,6 +227,8 @@ interface Result {
   name: string;
   massif: string;
   status: 'ok' | 'échec' | 'non testable';
+  /** Hazards: the effect also shows with the relief model alone (documented layer off). */
+  physicsOk?: boolean;
   /** Failed sub-checks, or why it is not testable. */
   checks: { name: string; ok: boolean; expected: string; got: string }[];
   cause?: string;
@@ -635,6 +643,7 @@ function checkThermal(f: AtlasFeature): void {
 }
 
 // ---------- Hazards ----------
+const HAZARD_RADIUS_M = 330;
 function disc(k: number, radiusM: number, step = 1): number[] {
   const i0 = k % W;
   const j0 = (k / W) | 0;
@@ -658,8 +667,9 @@ function checkHazard(f: AtlasFeature): void {
   const cond = p.details?.Conditions ?? '';
   const res: Result = { category: 'pièges', id: p.id, name: `${p.name} (${kind})`, massif: p.massif, status: 'ok', checks: [] };
   results.push(res);
-  const radiusKm = Number((p.details?.Rayon ?? '').replace(',', '.').match(/[\d.]+/)?.[0] ?? 2);
-  const radius = Math.min(3000, Math.max(400, radiusKm * 1000));
+  // At the place itself (±1.5 cells): the effect has to show where the pilots report it,
+  // not somewhere within a few kilometres.
+  const radius = HAZARD_RADIUS_M;
   const window = parseHours(cond, 'valley');
   // A strong breeze with hours is a breeze phenomenon: winds cited around it ("plus tôt
   // par vent de nord") only modulate it.
@@ -673,7 +683,7 @@ function checkHazard(f: AtlasFeature): void {
     return;
   }
   const s: Scenario = { month0: 6, hour: window ? midWindow(window) : 14, wind: wind ? { fromDeg: wind.fromDeg, kmh: wind.kmh } : undefined };
-  res.scenario = `juillet ${hourTxt(s.hour)}${wind ? `, ${wind.label} ${wind.kmh} km/h` : ', sans vent météo'}, 80 m sol, rayon ${fmt(radius / 1000, 1)} km`;
+  res.scenario = `juillet ${hourTxt(s.hour)}${wind ? `, ${wind.label} ${wind.kmh} km/h` : ', sans vent météo'}, 80 m sol, à ${radius} m du point`;
   const [lon, lat] = f.geometry.type === 'Point' ? f.geometry.coordinates : f.geometry.coordinates[0];
   const k = cellAt(lon, lat);
   if (k < 0) {
@@ -682,6 +692,12 @@ function checkHazard(f: AtlasFeature): void {
   }
   const ctx = context(s, { mode: 'agl', meters: 80 });
   const cells = disc(k, radius).filter((kk) => !evalAt(kk, ctx).underground);
+  // The relief model alone (documented hazards off): informative, does not decide the status.
+  const ctxP = context(s, { mode: 'agl', meters: 80 }, layerPhysics);
+  const physics = cells.map((kk) => {
+    const o = evalAt(kk, ctxP);
+    return { lee: o.lee, turb: o.turbulence, ven: o.venturi, sp: speed(o.total) };
+  });
   const vals = cells.map((kk) => {
     const o = evalAt(kk, ctx);
     return { sp: speed(o.total), lee: o.lee, turb: o.turbulence, ven: o.venturi };
@@ -691,6 +707,11 @@ function checkHazard(f: AtlasFeature): void {
   const maxTurb = Math.max(...vals.map((v) => v.turb));
   const maxVen = Math.max(...vals.map((v) => v.ven));
   const synMs = (wind?.kmh ?? 0) / 3.6;
+  const pLee = Math.max(...physics.map((v) => v.lee));
+  const pTurb = Math.max(...physics.map((v) => v.turb));
+  const pVen = Math.max(...physics.map((v) => v.ven));
+  const pSp = Math.max(...physics.map((v) => v.sp));
+  let physicsOk: boolean;
   let ok: boolean;
   let expected: string;
   let got: string;
@@ -704,22 +725,27 @@ function checkHazard(f: AtlasFeature): void {
     const ref = median(wide.length ? wide : [synMs]);
     const accel = maxSp / Math.max(ref, 0.3);
     ok = accel >= 1.15 || (!!wind && maxVen >= 0.3);
+    physicsOk = pSp / Math.max(ref, 0.3) >= 1.15 || (!!wind && pVen >= 0.3);
     expected = `vent ≥ 1,15 × médiane des fonds de vallée voisins (10 km)${wind ? ' ou indice venturi ≥ 0,3' : ''}`;
     got = `max ${kmh(maxSp)} (×${fmt(accel, 2)} la médiane ${kmh(ref)}), venturi ${fmt(maxVen, 2)}`;
   } else if (kind === 'lee-rotor') {
     ok = Math.max(maxLee, maxTurb) >= 0.35;
+    physicsOk = Math.max(pLee, pTurb) >= 0.35;
     expected = 'abri (sous le vent) ou turbulence ≥ 0,35';
     got = `abri ${fmt(maxLee, 2)}, turbulence ${fmt(maxTurb, 2)}`;
   } else if (kind === 'foehn') {
     ok = maxTurb >= 0.3 || maxSp >= 0.8 * synMs;
+    physicsOk = pTurb >= 0.3 || pSp >= 0.8 * synMs;
     expected = `vent fort descendant (≥ ${kmh(0.8 * synMs)}) ou turbulence ≥ 0,3`;
     got = `max ${kmh(maxSp)}, turbulence ${fmt(maxTurb, 2)}, abri ${fmt(maxLee, 2)}`;
   } else {
     ok = maxSp * 3.6 >= STRONG_KMH;
+    physicsOk = pSp * 3.6 >= STRONG_KMH;
     expected = `vent ≥ ${STRONG_KMH} km/h (« fort », S8)`;
     got = `max ${kmh(maxSp)}`;
   }
   res.checks.push({ name: 'effet attendu', ok, expected, got });
+  res.physicsOk = physicsOk;
   if (!ok) {
     res.status = 'échec';
     res.cause =
@@ -787,6 +813,23 @@ atlas.features.convergences.forEach(checkConvergence);
 // Hotspots known only from GPS tracks describe no phenomenon to reproduce.
 atlas.features.thermals.filter((f) => f.properties.origin !== 'kk7').forEach(checkThermal);
 atlas.features.hazards.forEach(checkHazard);
+
+// ---------- Control: take-offs facing the wind ----------
+// A take-off documented for a wind direction is flown with that wind: with it blowing
+// straight in (first documented orientation, 20 km/h), the model must not show it as
+// lee or turbulent. Guards the lee and the documented hazards against false alarms.
+const ORIENT: Record<string, number> = { N: 0, NNE: 22.5, NE: 45, ENE: 67.5, E: 90, ESE: 112.5, SE: 135, SSE: 157.5, S: 180, SSW: 202.5, SSO: 202.5, SW: 225, SO: 225, WSW: 247.5, OSO: 247.5, W: 270, O: 270, WNW: 292.5, ONO: 292.5, NW: 315, NO: 315, NNW: 337.5, NNO: 337.5 };
+const takeoffControl = { n: 0, bad: [] as { name: string; massif: string; orient: string; lee: number; turb: number; hazard: string | null }[] };
+for (const f of atlas.features.takeoffs) {
+  const o = (f.properties.details?.Orientation ?? '').split(/[,;/ ]+/)[0]?.toUpperCase();
+  if (!o || ORIENT[o] === undefined || f.geometry.type !== 'Point') continue;
+  const k = cellAt(f.geometry.coordinates[0] as number, f.geometry.coordinates[1] as number);
+  if (k < 0) continue;
+  const c = evalAt(k, context({ month0: 6, hour: 14, wind: { fromDeg: ORIENT[o], kmh: 20 } }, { mode: 'agl', meters: 80 }));
+  takeoffControl.n++;
+  if (Math.max(c.lee, c.turbulence) >= 0.35)
+    takeoffControl.bad.push({ name: f.properties.name, massif: f.properties.massif, orient: o, lee: c.lee, turb: c.turbulence, hazard: c.hazardIndex >= 0 ? (layer.hazards?.[c.hazardIndex]?.name ?? null) : null });
+}
 const conflicts = findConflicts();
 const ms = performance.now() - t0;
 for (const r of results) if (r.status === 'échec' && !r.kind) r.kind = classify(r);
@@ -858,7 +901,7 @@ lines.push(
 lines.push('- **Convergences** : convergence du modèle (divergence lissée, comme la couche « Convergences ») à 80 m sol, à l’heure de « Quand », avec une tolérance d’une maille (216 m) autour de la ligne : moyenne > 0 et au moins la moitié des points > 0.');
 lines.push('- **Thermiques** : potentiel thermique (max sur 3 × 3 mailles, positions approchées) au-dessus de la médiane des terres dans un rayon de 5 km, aux heures « Heures » (12h–15h si non précisées) ; et, quand un début est documenté, colonne thermique affichée (potentiel ≥ 0,22, seuil des colonnes des sites connus) à ±1 h d’un début explicite (« dès 10h », « 3 h après le lever du soleil »), sinon au plus tard au milieu de la période documentée (1 h après son début pour une période courte).');
 lines.push(
-  `- **Pièges** : venturi, sous le vent, foehn et brise forte, sous le vent météo cité par « Conditions » (30 km/h par défaut, 40 si « fort », 15 si « faible ») ou à l’heure de brise citée, dans un rayon de min(Rayon, 3 km) : accélération ≥ ×1,15 par rapport à la médiane des fonds de vallée voisins (10 km) ou indice venturi ≥ 0,3 ; abri ou turbulence ≥ 0,35 ; vent descendant ≥ 0,8 × vent météo ou turbulence ≥ 0,3 ; vent ≥ ${STRONG_KMH} km/h. Sans vent ni horaire cité : non testable.`,
+  `- **Pièges** : venturi, sous le vent, foehn et brise forte, sous le vent météo cité par « Conditions » (30 km/h par défaut, 40 si « fort », 15 si « faible ») ou à l’heure de brise citée, au point même (à ${HAZARD_RADIUS_M} m près), avec la couche des dangers documentés (ce que voit l’utilisateur) et, à titre indicatif, par le modèle de relief seul : accélération ≥ ×1,15 par rapport à la médiane des fonds de vallée voisins (10 km) ou indice venturi ≥ 0,3 ; abri ou turbulence ≥ 0,35 ; vent descendant ≥ 0,8 × vent météo ou turbulence ≥ 0,3 ; vent ≥ ${STRONG_KMH} km/h. Sans vent ni horaire cité : non testable.`,
 );
 lines.push('');
 lines.push('## Taux de réussite par catégorie');
@@ -872,6 +915,20 @@ for (const c of cats) {
 const all = rate(results);
 lines.push(`| **total** | **${all.ok}** | **${all.tested}** | **${fmt(all.pct, 0)} %** | ${all.untestable} |`);
 lines.push('');
+{
+  const hz = results.filter((x) => x.category === 'pièges' && x.status !== 'non testable');
+  const phys = hz.filter((x) => x.physicsOk).length;
+  const lee = hz.filter((x) => x.name.endsWith('(lee-rotor)'));
+  lines.push(
+    `Pièges au point par le modèle de relief seul (sans la couche des dangers documentés) : ${phys}/${hz.length} (${fmt((100 * phys) / Math.max(1, hz.length), 0)} %), dont sous le vent ${lee.filter((x) => x.physicsOk).length}/${lee.length}. Le reste n’apparaît que par la couche des dangers documentés, active quand le vent simulé correspond à leurs conditions.`,
+  );
+  lines.push('');
+  const tb = takeoffControl.bad;
+  lines.push(
+    `Contrôle : décollages face au vent (première orientation documentée, 20 km/h) affichés sous le vent ou turbulents : ${tb.length}/${takeoffControl.n} (${fmt((100 * tb.length) / Math.max(1, takeoffControl.n), 1)} %)${tb.length ? ' — ' + tb.slice(0, 12).map((b) => `${b.name} (${b.orient}${b.hazard ? `, danger documenté « ${b.hazard.slice(0, 60)} »` : ''})`).join(' ; ') : ''}.`,
+  );
+  lines.push('');
+}
 // Sub-checks of the breezes.
 const sub = new Map<string, { ok: number; n: number }>();
 for (const r of results.filter((x) => x.category === 'brises'))

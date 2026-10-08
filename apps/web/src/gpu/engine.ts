@@ -6,8 +6,8 @@
  * Recomputing the full 1.6 M-cell field takes a few milliseconds, which is
  * what makes the hour / wind / height sliders feel live.
  */
-import type { CellResult, CuratedBreezeInfo, ModelParams } from '@brises/model';
-import { curatedActivity, curatedLayerKind, sunSamples, SUN_SAMPLES_MAX, thermalDecline } from '@brises/model';
+import type { CellResult, CuratedBreezeInfo, CuratedHazardInput, ModelParams } from '@brises/model';
+import { curatedActivity, curatedLayerKind, hazardActivity, HazardEffect, sunSamples, SUN_SAMPLES_MAX, thermalDecline } from '@brises/model';
 import { windVector, type Grid } from '@brises/model';
 import { smoothstep } from '@brises/model';
 import { RULES } from '@brises/model';
@@ -25,6 +25,8 @@ export interface StaticPack {
   /** Conditional breezes (second curated layer). */
   tC2: Float32Array;
   breezes: CuratedBreezeInfo[];
+  /** Documented hazards tied to a synoptic wind (their cells are in tC2.z). */
+  hazards: CuratedHazardInput[];
 }
 
 export interface TimeState {
@@ -106,6 +108,7 @@ export class GpuWindEngine {
   private progs: Record<'insol' | 'field' | 'lift' | 'probe' | 'hot' | 'sample', { p: WebGLProgram; u: Uniforms }> = {} as never;
   private vao!: WebGLVertexArrayObject;
   private breezes: CuratedBreezeInfo[];
+  private hazards: CuratedHazardInput[];
   private breezeData: Float32Array;
   private timeKey = '';
   private dirtyField = true;
@@ -120,7 +123,9 @@ export class GpuWindEngine {
     this.gl = gl;
     this.grid = grid;
     this.breezes = pack.breezes;
-    this.breezeData = new Float32Array(Math.max(1, pack.breezes.length) * 4);
+    this.hazards = pack.hazards;
+    // One row per breeze, then one per documented hazard (from uHazBase).
+    this.breezeData = new Float32Array(Math.max(1, pack.breezes.length + pack.hazards.length) * 4);
     this.hotW = Math.ceil(grid.width / this.hotBlock);
     this.hotH = Math.ceil(grid.height / this.hotBlock);
     const { width: w, height: h } = grid;
@@ -133,13 +138,13 @@ export class GpuWindEngine {
     // Curated breeze index must stay exact: 32-bit.
     this.tex.C = createTexture(gl, w, h, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: pack.tC });
     this.tex.C2 = createTexture(gl, w, h, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: pack.tC2 });
-    this.tex.B = createTexture(gl, Math.max(1, pack.breezes.length), 1, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: this.breezeData });
+    this.tex.B = createTexture(gl, Math.max(1, pack.breezes.length + pack.hazards.length), 1, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: this.breezeData });
     // Instantaneous insolation (r) and sunshine received since sunrise (g), per cell.
     this.tex.insol = createTexture(gl, w, h, { internal: gl.RG16F, format: gl.RG, type: gl.FLOAT });
     this.fieldTex = createTexture(gl, w, h, { ...half, filter: lin });
     this.auxTex = createTexture(gl, w, h, { ...half, filter: lin });
     this.liftTex = createTexture(gl, w, h, { ...half, filter: lin });
-    this.tex.probe = createTexture(gl, 8, 1, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT });
+    this.tex.probe = createTexture(gl, 9, 1, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT });
     this.tex.hot = createTexture(gl, this.hotW, this.hotH, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT });
     this.fbInsol = createFramebuffer(gl, [this.tex.insol]);
     this.fbField = createFramebuffer(gl, [this.fieldTex, this.auxTex]);
@@ -175,6 +180,10 @@ export class GpuWindEngine {
       this.breezeKey = breezeKey;
       this.breezes.forEach((b, i) => {
         this.breezeData.set([b.speedMs, curatedActivity(b, p, this.time!.valleyPhase), curatedLayerKind(b.kind), 0], i * 4);
+      });
+      const base = this.breezes.length;
+      this.hazards.forEach((h, i) => {
+        this.breezeData.set([0, hazardActivity(h, p), HazardEffect[h.effect], 0], (base + i) * 4);
       });
       this.dirtyBreezes = true;
     }
@@ -223,6 +232,7 @@ export class GpuWindEngine {
     gl.uniform1f(u.uHeightMode, p.height.mode === 'asl' ? 1 : 0);
     gl.uniform1f(u.uHeightM, p.height.meters);
     gl.uniform1f(u.uBreezeScale, p.breezeScale);
+    gl.uniform1i(u.uHazBase, this.breezes.length);
   }
 
   private draw(fb: WebGLFramebuffer, w: number, h: number, buffers: number): void {
@@ -246,7 +256,7 @@ export class GpuWindEngine {
     const { width: w, height: h } = this.grid;
     if (this.dirtyBreezes) {
       gl.bindTexture(gl.TEXTURE_2D, this.tex.B);
-      gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, Math.max(1, this.breezes.length), 1, gl.RGBA, gl.FLOAT, this.breezeData);
+      gl.texSubImage2D(gl.TEXTURE_2D, 0, 0, 0, Math.max(1, this.breezes.length + this.hazards.length), 1, gl.RGBA, gl.FLOAT, this.breezeData);
       this.dirtyBreezes = false;
     }
     if (this.dirtyTime) {
@@ -300,7 +310,7 @@ export class GpuWindEngine {
   }
 
   /** Full breakdown of the model at one point (synchronous GPU readback). */
-  probe(lon: number, lat: number): (CellResult & { convergence: number; lift: number; curatedName: string | null }) | null {
+  probe(lon: number, lat: number): (CellResult & { convergence: number; lift: number; curatedName: string | null; hazardName: string | null; hazardId: string | null }) | null {
     if (!this.params || !this.grid.contains(lon, lat)) return null;
     const gl = this.gl;
     const [x, y] = this.grid.toGrid(lon, lat);
@@ -312,12 +322,13 @@ export class GpuWindEngine {
     gl.bindTexture(gl.TEXTURE_2D, this.liftTex);
     gl.uniform1i(u.tLift, 8);
     gl.uniform2i(u.uCell, Math.floor(x), Math.floor(y));
-    this.draw(this.fbProbe, 8, 1, 1);
-    const out = new Float32Array(32);
-    gl.readPixels(0, 0, 8, 1, gl.RGBA, gl.FLOAT, out);
+    this.draw(this.fbProbe, 9, 1, 1);
+    const out = new Float32Array(36);
+    gl.readPixels(0, 0, 9, 1, gl.RGBA, gl.FLOAT, out);
     gl.bindFramebuffer(gl.FRAMEBUFFER, null);
     const v = (i: number): [number, number] => [out[i], out[i + 1]];
     const cidx = Math.round(out[20]);
+    const hidx = out[33] > 0 ? Math.round(out[32]) : -1;
     return {
       total: v(0),
       synoptic: v(2),
@@ -347,6 +358,10 @@ export class GpuWindEngine {
       lift: out[31],
       breeze: [0, 0],
       curatedName: cidx >= 0 ? (this.breezes[cidx]?.name ?? null) : null,
+      hazardIndex: hidx,
+      hazardWeight: out[33],
+      hazardName: hidx >= 0 ? (this.hazards[hidx]?.name ?? null) : null,
+      hazardId: hidx >= 0 ? (this.hazards[hidx]?.id ?? null) : null,
     };
   }
 

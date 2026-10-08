@@ -3,7 +3,7 @@
  * Web Worker running the wind model off the main thread.
  * Protocol: see `src/engine/model-client.ts`.
  */
-import { packCuratedLayers, rasterizeCurated, type CuratedBreezeInput } from '@brises/model';
+import { packCuratedLayers, rasterizeCurated, type CuratedBreezeInput, type CuratedHazardInput } from '@brises/model';
 import {
   computeField,
   computeTimeContext,
@@ -23,9 +23,9 @@ import { analyseTerrain, type Terrain } from '@brises/model';
 declare const self: DedicatedWorkerGlobalScope;
 
 export type WorkerRequest =
-  | { type: 'build'; id: number; demUrl: string; meta: GridMeta; breezes: CuratedBreezeInput[] }
+  | { type: 'build'; id: number; demUrl: string; meta: GridMeta; breezes: CuratedBreezeInput[]; hazards: CuratedHazardInput[] }
   | { type: 'init'; id: number; demUrl: string; meta: GridMeta }
-  | { type: 'curated'; id: number; breezes: CuratedBreezeInput[] }
+  | { type: 'curated'; id: number; breezes: CuratedBreezeInput[]; hazards: CuratedHazardInput[] }
   | { type: 'compute'; id: number; params: ModelParams; overlay: OverlayMode }
   | { type: 'probe'; id: number; lon: number; lat: number };
 
@@ -78,7 +78,7 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
       const raw = await decodeDem(msg.demUrl, msg.meta);
       const grid = new Grid(msg.meta);
       const t = analyseTerrain(grid, raw);
-      const cur = rasterizeCurated(t, msg.breezes);
+      const cur = rasterizeCurated(t, msg.breezes, msg.hazards);
       const n = grid.size;
       const pack = {
         tZ: pack4(n, t.z, t.gx, t.gy, t.tpi),
@@ -87,6 +87,7 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
         tR: pack4(n, t.seaX, t.seaY, t.plainX, t.plainY),
         ...packCuratedLayers(cur),
         breezes: cur.breezes,
+        hazards: msg.hazards,
       };
       self.postMessage({ type: 'built', id: msg.id, pack, ms: performance.now() - t0 }, [pack.tZ.buffer, pack.tV.buffer, pack.tW.buffer, pack.tR.buffer, pack.tC.buffer, pack.tC2.buffer]);
     } else if (msg.type === 'init') {
@@ -98,7 +99,7 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
       self.postMessage({ type: 'ready', id: msg.id, elevation, ms: performance.now() - t0 }, [elevation.buffer]);
     } else if (msg.type === 'curated') {
       if (!terrain) throw new Error('not initialised');
-      curated = rasterizeCurated(terrain, msg.breezes);
+      curated = rasterizeCurated(terrain, msg.breezes, msg.hazards);
       self.postMessage({ type: 'ok', id: msg.id });
     } else if (msg.type === 'compute') {
       if (!terrain) throw new Error('not initialised');
@@ -134,11 +135,14 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
       const k = Math.floor(y) * grid.width + Math.floor(x);
       const cell = evalCell(k, last.ctx, newCellResult());
       const curatedName = cell.curatedIndex >= 0 && curated ? curated.breezes[cell.curatedIndex].name : null;
+      const hazard = cell.hazardIndex >= 0 ? curated?.hazards?.[cell.hazardIndex] : undefined;
       self.postMessage({
         type: 'probe',
         id: msg.id,
         cell,
         curatedName,
+        hazardName: hazard?.name ?? null,
+        hazardId: hazard?.id ?? null,
         convergence: last.result.convergence[k],
         water: terrain.water[k],
         drainKm2: terrain.drainKm2[k],

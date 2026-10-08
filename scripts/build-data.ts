@@ -11,7 +11,7 @@
 import { existsSync, readdirSync, readFileSync, writeFileSync, mkdirSync } from 'node:fs';
 import { join, relative, resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
-import type { CuratedBreezeInput } from '@brises/model';
+import type { CuratedBreezeInput, CuratedHazardInput } from '@brises/model';
 import type { BreezeCondition } from '@brises/shared';
 import type { Atlas, AtlasFeature, AtlasFeatureProps, AtlasFigure, AtlasMassif, AtlasSource, AtlasTourPlace, AtlasTourStep, FeatureCategory, ModelRule } from '@brises/shared';
 import { analyseTerrain, type Terrain } from '@brises/model';
@@ -433,6 +433,59 @@ export function windFromText(text: string | undefined): { fromDeg: number; kmh: 
     if (at >= 0 && (!best || at < best.at)) best = { fromDeg: deg, kmh, label, at };
   }
   return best;
+}
+
+/** Every synoptic wind a hazard's conditions cite: the first, and those listed with it ("vent d'ouest ou de nord-est"). */
+function windsOf(text: string): { fromDeg: number; kmh: number | null }[] {
+  const first = windFromText(text);
+  if (!first) return [];
+  const out = [{ fromDeg: first.fromDeg, kmh: first.kmh }];
+  const more = new RegExp(String.raw`(?:\bou\b|\bet\b|,)\s*(?:par\s+)?(?:(?:vent|flux)\s+)?(?:de\s+|d['’]\s*)(${DIR_TOKEN}(?:\s*[/–-]\s*${DIR_TOKEN})*)(?![\w])`, 'gi');
+  for (const m of text.slice(first.at, first.at + 90).matchAll(more)) {
+    const d = dirDeg(m[1].replace(/\s+/g, ''));
+    if (d !== null && !out.some((o) => Math.abs(((o.fromDeg - d + 540) % 360) - 180) < 30)) out.push({ fromDeg: d, kmh: first.kmh });
+  }
+  return out;
+}
+
+/** Effect a documented hazard shows in the simulation, from its kind (and its words for the unclassified ones). */
+function hazardEffect(p: AtlasFeatureProps): CuratedHazardInput['effect'] | null {
+  if (p.kind === 'lee-rotor') return 'lee';
+  if (p.kind === 'venturi') return 'venturi';
+  if (p.kind === 'foehn' || p.kind === 'downdraft' || p.kind === 'landing-turbulence') return 'turbulence';
+  if (p.kind === 'other' && /turbul|rouleau|rotor|sous le vent|machine à laver|cisaill|rabattant/i.test(`${p.name} ${p.details?.Conditions ?? ''}`)) return 'turbulence';
+  return null;
+}
+
+/**
+ * Documented hazards tied to a synoptic wind, for the wind model: each one shows its
+ * effect where it is reported when the simulated wind matches its conditions. Speeds:
+ * "même faible" / "léger" from 5 km/h (full at 12), "fort" from 18 (full at 32), a
+ * cited speed from 70 % of it, otherwise from 10 (full at 22). Radius: the one of the
+ * sources ("Rayon") within 0.3–1 km (the hazard is where it is reported, not over the whole slope), else 700 m.
+ */
+export function curatedHazardsOf(hazards: AtlasFeature[]): CuratedHazardInput[] {
+  const out: CuratedHazardInput[] = [];
+  for (const f of hazards) {
+    const p = f.properties;
+    const effect = hazardEffect(p);
+    const cond = p.details?.Conditions ?? '';
+    if (!effect || f.geometry.type !== 'Point' || !cond) continue;
+    const t = cond.toLowerCase();
+    const rayonKm = Number((p.details?.Rayon ?? '').replace(',', '.').match(/[\d.]+/)?.[0] ?? NaN);
+    const radiusM = Number.isFinite(rayonKm) ? Math.min(1000, Math.max(300, rayonKm * 1000)) : 700;
+    windsOf(cond).forEach((w, i) => {
+      const [minKmh, fullKmh] = w.kmh
+        ? [Math.round(0.7 * w.kmh), w.kmh]
+        : /faible|léger|leger/.test(t)
+          ? [5, 12]
+          : /\bfort|soutenu|marqué|violent|rafale|tempête/.test(t)
+            ? [18, 32]
+            : [10, 22];
+      out.push({ id: i ? `${p.id}#${i}` : p.id, name: p.name, effect, coords: [f.geometry.coordinates as [number, number]], radiusM, fromDeg: w.fromDeg, tolDeg: 45, minKmh, fullKmh });
+    });
+  }
+  return out;
 }
 
 /** Words that make a condition a mere modulation ("renforcement par canicule", "plus tôt par vent de nord"). */
@@ -1187,6 +1240,7 @@ function main() {
     sources,
     features,
     curated,
+    curatedHazards: curatedHazardsOf(features.hazards),
     rules,
     figures,
     dossiers,

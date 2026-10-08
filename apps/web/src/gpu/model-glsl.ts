@@ -17,8 +17,10 @@ uniform highp sampler2D tV;   // floor, env, axisX, axisY
 uniform highp sampler2D tW;   // valley, lakeX, lakeY, water
 uniform highp sampler2D tR;   // seaX, seaY, plainX, plainY
 uniform highp sampler2D tC;   // curated layers main, cond: (index + weight, flow angle) × 2 (curated.ts → packCuratedLayers)
-uniform highp sampler2D tC2;  // curated thin layer (slope, katabatic): index + weight, flow angle
-uniform highp sampler2D tB;   // per curated breeze: speedMs, activity, layer kind (0 deep, 1 valley, 2 slope, 3 katabatic), 0
+uniform highp sampler2D tC2;  // curated thin layer (slope, katabatic): index + weight, flow angle; documented hazard: index + weight
+uniform highp sampler2D tB;   // per curated breeze: speedMs, activity, layer kind (0 deep, 1 valley, 2 slope, 3 katabatic), 0;
+                              // then from uHazBase, per documented hazard: 0, activity, effect (0 lee, 1 venturi, 2 turbulence), 0
+uniform int uHazBase;
 uniform highp sampler2D tInsol;
 uniform ivec2 uGrid;
 uniform float uPy0;
@@ -57,6 +59,7 @@ const float R_OVERRIDE = ${f(RULES.synopticOverrideKmh)};
 const float R_LEE0 = ${f(RULES.leeAngle[0])};
 const float R_LEE1 = ${f(RULES.leeAngle[1])};
 const float R_VENTURI = ${f(RULES.venturiGain)};
+const float R_LEE_SHARE = ${f(RULES.leeHeightShare)};
 const float SHELTER[${RULES.shelterSteps.length}] = float[](${RULES.shelterSteps.map(f).join(', ')});
 const float CONF[3] = float[](4.0, 8.0, 13.0);
 
@@ -64,6 +67,7 @@ struct Cell {
   vec2 slope; vec2 valley; vec2 curated; vec2 regional; vec2 breeze; vec2 synoptic; vec2 total;
   float elev; float hAgl; float under; float slopeDeg; float aspect; float insol; float level; float depth;
   float cw; float cidx; float wb; float shelter; float lee; float venturi; float chan; float dyn; float thermal; float turb;
+  float hidx; float hw;
 };
 
 float cellSize(int j) {
@@ -182,6 +186,7 @@ Cell evalCell(ivec2 c) {
 
   // Synoptic wind: shelter (Winstral Sx) along the upwind direction.
   float z0 = z + hh;
+  float zs = z + hh * R_LEE_SHARE;  // the lee hugs the slope (field.ts)
   float cs = cellSize(c.y);
   float maxTan = -1.0;
   float conf = 0.0;
@@ -189,7 +194,7 @@ Cell evalCell(ivec2 c) {
     for (int s = 0; s < ${RULES.shelterSteps.length}; s++) {
       ivec2 p = stepCell(c, uUp, SHELTER[s]);
       if (!inside(p)) break;
-      maxTan = max(maxTan, (texelFetch(tZ, p, 0).r - z0) / (SHELTER[s] * cs));
+      maxTan = max(maxTan, (texelFetch(tZ, p, 0).r - zs) / (SHELTER[s] * cs));
     }
     vec2 perp = vec2(-uUp.y, uUp.x);
     float left = -1e9;
@@ -228,6 +233,21 @@ Cell evalCell(ivec2 c) {
   float dayF = smoothstep(R_SUN_H.x, R_SUN_H.y, IN.y) * uThermalDecline;
   o.thermal = W.w > 0.5 ? 0.0 : day * clamp(insol * uSeason * elevF * convexF * windF * dayF, 0.0, 1.0);
   o.turb = clamp(o.lee * smoothstep(8.0, 35.0, uGKmh) + o.venturi * smoothstep(15.0, 45.0, uGKmh) * 0.6, 0.0, 1.0);
+  // Documented hazards matching the synoptic wind (field.ts).
+  o.hidx = -1.0;
+  o.hw = 0.0;
+  if (CT.z >= 0.0) {
+    float hi = floor(CT.z);
+    vec4 HB = texelFetch(tB, ivec2(uHazBase + int(hi), 0), 0);
+    float a = fract(CT.z) * HB.y;
+    if (a > 0.0) {
+      o.hidx = hi;
+      o.hw = a;
+      if (HB.z < 0.5) { o.lee = max(o.lee, a); o.turb = max(o.turb, 0.8 * a); }
+      else if (HB.z < 1.5) { o.venturi = max(o.venturi, a); o.turb = max(o.turb, 0.5 * a); }
+      else o.turb = max(o.turb, 0.8 * a);
+    }
+  }
   return o;
 }
 `;
@@ -336,7 +356,7 @@ void main() {
   outLift = vec4(conv, lift, 0.0, 1.0);
 }`;
 
-/** Probe: 8 texels, each a group of 4 values of the cell breakdown. */
+/** Probe: 9 texels, each a group of 4 values of the cell breakdown. */
 export const PROBE_FS = `#version 300 es
 precision highp float;
 precision highp int;
@@ -355,7 +375,8 @@ void main() {
   else if (k == 4) outColor = vec4(o.insol, o.level, o.depth, o.cw);
   else if (k == 5) outColor = vec4(o.cidx, o.wb, o.shelter, o.lee);
   else if (k == 6) outColor = vec4(o.venturi, o.chan, o.dyn, o.thermal);
-  else outColor = vec4(o.turb, L.x, o.under, L.y);
+  else if (k == 7) outColor = vec4(o.turb, L.x, o.under, L.y);
+  else outColor = vec4(o.hidx, o.hw, 0.0, 0.0);
 }`;
 
 /** Downsampled thermal maxima for hotspot picking: max thermal and its offset in the block. */

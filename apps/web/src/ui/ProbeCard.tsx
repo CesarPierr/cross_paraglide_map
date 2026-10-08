@@ -8,6 +8,15 @@ import { fmtHour } from './format';
 import { NearbySources } from './Nearby';
 import { ProfileChart } from './ProfileChart';
 import { IconClose, IconPlus, IconSun } from './icons';
+import { showSheet } from './mobile';
+
+/** Opens the documented hazard (its text and sources). */
+function openDocumented(id: string) {
+  const d = getController()?.describe(`atlas:${id}`);
+  if (!d) return;
+  useRuntime.getState().set({ feature: d });
+  showSheet();
+}
 
 function Arrow({ v, size = 18 }: { v: [number, number]; size?: number }) {
   const d = describeVector(v);
@@ -152,10 +161,14 @@ export function ProbeSheet() {
     );
   const total = describeVector(c.total);
   const conv = c.convergence ?? 0;
+  // A hazard the sources report for this wind outranks the relief model's reading.
+  const documented = c.hazardName && c.hazardId && c.hazardWeight > 0.3 ? { name: c.hazardName, id: c.hazardId.split('#')[0] } : null;
   const exposure =
     synopticKmh < 3
       ? { tone: '', text: 'Pas de vent météo : seules les brises thermiques jouent.' }
-      : c.lee > 0.35
+      : documented
+        ? { tone: 'bad', text: 'Danger documenté par ce vent :' }
+        : c.lee > 0.35
         ? { tone: 'bad', text: `Sous le vent (abri ${Math.round(c.shelterDeg)}°) : air freiné, rabattant${synopticKmh > 15 ? ', risque de rotors' : ''}.` }
         : c.dynamicLift > 0.6
           ? { tone: 'ok', text: `Au vent : air forcé à monter (~${c.dynamicLift.toFixed(1)} m/s), soaring possible.` }
@@ -189,7 +202,17 @@ export function ProbeSheet() {
             <Row label="Plaine · lac · mer" v={c.regional} />
             <Row label="Vent météo après relief" v={c.synoptic} note={c.channelling > 0.3 ? 'canalisé par la vallée' : undefined} />
           </div>
-          <p className={`probe-exposure ${exposure.tone}`}>{exposure.text}</p>
+          <p className={`probe-exposure ${exposure.tone}`}>
+            {exposure.text}
+            {documented && synopticKmh >= 3 && (
+              <>
+                {' '}
+                <button className="link-btn inline" onClick={() => openDocumented(documented.id)}>
+                  {documented.name}
+                </button>
+              </>
+            )}
+          </p>
           <div className="probe-meters">
             <div>
               <span>Thermique</span>

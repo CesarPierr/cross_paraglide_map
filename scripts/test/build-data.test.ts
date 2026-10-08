@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { cleanDescription, parseCondition, parseHours, placesIn } from '../build-data';
+import { cleanDescription, curatedHazardsOf, parseCondition, parseHours, placesIn } from '../build-data';
 
 describe('parseHours', () => {
   it('reads explicit ranges', () => {
@@ -79,5 +79,23 @@ describe('placesIn', () => {
   it('finds named places in reading order, the longest name first, whole words only', () => {
     const found = placesIn('De Saint-Pierre-de-Chartreuse au Voironnais, puis Voiron et Saint-Pierre.', known);
     expect(found.map((p) => p.name)).toEqual(['Saint-Pierre-de-Chartreuse', 'Voiron', 'Saint-Pierre']);
+  });
+});
+
+describe('curatedHazardsOf', () => {
+  const hz = (name: string, kind: string, Conditions: string, Rayon?: string) =>
+    ({ type: 'Feature', geometry: { type: 'Point', coordinates: [5.8366, 45.3025] }, properties: { id: `m/${name}`, name, kind, massif: 'm', category: 'hazards', sources: '', description: '', details: { Conditions, ...(Rayon ? { Rayon } : {}) } } }) as never;
+
+  it('reads the wind, its strength and the radius of the sources', () => {
+    const [coq] = curatedHazardsOf([hz('Col du Coq', 'lee-rotor', 'vent de nord, même « léger nord forcissant »', '2 km')]);
+    expect(coq).toMatchObject({ effect: 'lee', fromDeg: 0, minKmh: 5, fullKmh: 12, radiusM: 1000 });
+    const [fort] = curatedHazardsOf([hz('Venturi', 'venturi', 'vent de sud fort')]);
+    expect(fort).toMatchObject({ effect: 'venturi', fromDeg: 180, minKmh: 18, radiusM: 700 });
+  });
+
+  it('keeps every wind listed, and skips hazards without a wind or an effect', () => {
+    expect(curatedHazardsOf([hz('Orcier', 'lee-rotor', "vent d'ouest ou de nord-est")]).map((h) => h.fromDeg)).toEqual([270, 45]);
+    expect(curatedHazardsOf([hz('Sans vent', 'lee-rotor', 'en été')])).toEqual([]);
+    expect(curatedHazardsOf([hz('Espace', 'airspace', 'vent de nord')])).toEqual([]);
   });
 });

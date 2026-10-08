@@ -87,6 +87,13 @@ export const RULES = {
   synopticOverrideKmh: 35,
   /** Shelter angle range (deg) mapping to lee factor 0→1 (Winstral Sx). */
   leeAngle: [8, 22] as [number, number],
+  /**
+   * Share of the height above ground at which the shelter angle is taken: the lee and
+   * its rotor hug the slope behind a crest. Check: `npx tsx scripts/dev/lee-bench.ts`
+   * (documented lee hazards at their place; take-offs facing the wind; Montlambert by
+   * strong north stays out of the lee, as flown).
+   */
+  leeHeightShare: 0.25,
   /** Upwind search distance for shelter (cells ≈ 216 m). */
   shelterSteps: [1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 17, 20, 24],
   /** Venturi speed-up at full confinement. */

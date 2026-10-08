@@ -172,6 +172,7 @@ export class MapController {
         meta,
         this.data.demUrl(),
         atlas.curated,
+        atlas.curatedHazards ?? [],
         atlas.features.thermals.map((f) => ({
           name: f.properties.name,
           lon: f.geometry.coordinates[0] as number,

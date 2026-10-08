@@ -1,7 +1,7 @@
 /**
  * Promise-based client for the wind-model Web Worker.
  */
-import type { CuratedBreezeInput } from '@brises/model';
+import type { CuratedBreezeInput, CuratedHazardInput } from '@brises/model';
 import type { CellResult, ModelParams } from '@brises/model';
 import type { GridMeta } from '@brises/model';
 import type { OverlayMode } from './cpu-overlays';
@@ -20,6 +20,8 @@ export interface FieldMessage {
 export interface ProbeMessage {
   cell: CellResult | null;
   curatedName?: string | null;
+  hazardName?: string | null;
+  hazardId?: string | null;
   convergence?: number;
   water?: number;
   drainKm2?: number;
@@ -55,16 +57,16 @@ export class ModelClient {
   }
 
   /** GPU mode: terrain analysis + curated rasterisation, returned as packed textures. */
-  build(demUrl: string, meta: GridMeta, breezes: CuratedBreezeInput[]): Promise<{ pack: StaticPack; ms: number }> {
-    return this.call({ type: 'build', demUrl, meta, breezes });
+  build(demUrl: string, meta: GridMeta, breezes: CuratedBreezeInput[], hazards: CuratedHazardInput[]): Promise<{ pack: StaticPack; ms: number }> {
+    return this.call({ type: 'build', demUrl, meta, breezes, hazards });
   }
 
   init(demUrl: string, meta: GridMeta): Promise<{ elevation: Float32Array; ms: number }> {
     return this.call({ type: 'init', demUrl, meta });
   }
 
-  setCurated(breezes: CuratedBreezeInput[]): Promise<void> {
-    return this.call({ type: 'curated', breezes });
+  setCurated(breezes: CuratedBreezeInput[], hazards: CuratedHazardInput[]): Promise<void> {
+    return this.call({ type: 'curated', breezes, hazards });
   }
 
   compute(params: ModelParams, overlay: OverlayMode): Promise<FieldMessage> {

@@ -39,8 +39,18 @@ const shot = (name: string) => page.screenshot({ path: `${out}/${name}.png` });
 await page.goto(`${url}#9.4/45.3/5.9/-10/50`, { waitUntil: 'domcontentloaded' });
 await ready(page);
 await shot('d00-welcome');
-await page.locator('.welcome').getByRole('radio', { name: /Je fais du cross/ }).click();
-await page.locator('.welcome').getByRole('button', { name: /Découvrir un massif/ }).click();
+// The site tour: a few steps, then skip.
+await page.locator('.welcome').getByRole('button', { name: /Visite du site/ }).click();
+await page.waitForTimeout(2500);
+await shot('d00a-tour-map');
+for (let i = 0; i < 3; i++) {
+  await page.locator('.site-tour').getByRole('button', { name: 'Suivant' }).click();
+  await page.waitForTimeout(2200);
+}
+await shot('d00b-tour-probe');
+await page.locator('.site-tour').getByRole('button', { name: 'Passer' }).click();
+await page.waitForTimeout(800);
+await page.getByRole('tab', { name: 'Massifs' }).click();
 await page.waitForTimeout(2500);
 await shot('d01-massifs-map');
 
@@ -107,7 +117,7 @@ const pshot = (name: string) => phone.screenshot({ path: `${out}/${name}.png` })
 await phone.goto(`${url}#9.4/45.3/5.9/-10/50`, { waitUntil: 'domcontentloaded' });
 await ready(phone);
 await pshot('m00-welcome');
-await phone.getByRole('button', { name: 'Juste explorer la carte' }).click();
+await phone.getByRole('button', { name: 'Explorer directement' }).click();
 await phone.waitForTimeout(1500);
 await pshot('m01-home');
 // Massifs: the sector map above, the list in the sheet; a visit from the list.

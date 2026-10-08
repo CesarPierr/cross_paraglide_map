@@ -2898,78 +2898,6 @@ kbd {
   color: var(--text-2);
 }
 
-.welcome-levels {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  margin-bottom: 14px;
-}
-
-.welcome-levels button,
-.welcome-ways button {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-  padding: 10px 12px;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--panel-raised);
-  text-align: left;
-  cursor: pointer;
-}
-
-.welcome-levels button.on {
-  border-color: var(--accent);
-  background: var(--accent-soft);
-}
-
-.welcome-levels small,
-.welcome-ways small {
-  color: var(--muted);
-  font-size: 11.5px;
-  line-height: 1.35;
-}
-
-.welcome-ways {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  margin-bottom: 14px;
-}
-
-.welcome-ways button {
-  padding: 12px 14px;
-}
-
-.welcome-ways button b {
-  font-size: 14.5px;
-}
-
-.welcome-ways .way-icon {
-  font-size: 18px;
-  line-height: 1;
-  color: var(--accent);
-}
-
-.welcome-label {
-  margin: 0 0 6px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
-
-.welcome .explore {
-  display: block;
-  margin: 2px auto 8px;
-  font-size: 14px;
-}
-
-.welcome-ways button:hover {
-  border-color: var(--accent);
-}
-
 /* ---------- Routes and route planning ---------- */
 .browse-tabs {
   margin: 0 0 10px;
@@ -3440,6 +3368,140 @@ div.summary {
   }
 }
 
+/* Welcome card: what the site is, where its knowledge comes from, its limits. */
+.welcome-block {
+  margin: 0 0 14px;
+}
+.welcome-block h3 {
+  margin: 0 0 4px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.welcome-block p {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.welcome-figures {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.welcome-figures li {
+  padding: 6px 10px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--panel-raised);
+  font-size: 12.5px;
+  color: var(--text-2);
+}
+.welcome-figures b {
+  color: var(--text);
+  font-size: 15px;
+}
+.welcome-uses {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.welcome-uses li + li {
+  margin-top: 4px;
+}
+.welcome-block.warning {
+  padding: 10px 12px;
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  border-radius: 10px;
+  background: rgba(251, 191, 36, 0.08);
+}
+.welcome-block.warning h3 {
+  color: #fbbf24;
+}
+.welcome-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 4px 0 8px;
+}
+.welcome-actions .btn {
+  flex: 1;
+  min-height: 42px;
+  justify-content: center;
+}
+.welcome .method {
+  display: block;
+  margin: 0 auto 6px;
+}
+
+/* Guided tour of the site: the screen dimmed around the element explained, a card beside it. */
+.site-tour {
+  position: fixed;
+  inset: 0;
+  z-index: 45;
+}
+.site-tour .spot {
+  position: fixed;
+  border-radius: 12px;
+  box-shadow:
+    0 0 0 3px #fbbf24,
+    0 0 0 9999px rgba(2, 6, 23, 0.6);
+  pointer-events: none;
+  transition:
+    left 0.25s ease,
+    top 0.25s ease,
+    width 0.25s ease,
+    height 0.25s ease;
+}
+.site-tour .spot-none {
+  position: fixed;
+  inset: 0;
+  background: rgba(2, 6, 23, 0.35);
+}
+.tour-card {
+  position: fixed;
+  width: min(360px, calc(100vw - 24px));
+  padding: 14px 16px 12px;
+  background: var(--panel-solid);
+}
+.tour-card.at-center {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.tour-card h3 {
+  margin: 2px 0 6px;
+  font-size: 17px;
+}
+.tour-card p {
+  margin: 0;
+  color: var(--text-2);
+  font-size: 14px;
+  line-height: 1.5;
+}
+.tour-card .tour-card-count {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+}
+.tour-card-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+.tour-card-nav span {
+  flex: 1;
+}
+
 /* =====================================================================
    Phone (≤ 860 px). The map fills the screen; one bottom sheet at a time
    holds the list, the massif page, a detail, the layers or the visit
@@ -3831,37 +3893,30 @@ div.summary {
     margin-bottom: 14px;
     font-size: 14px;
   }
-  .welcome-ways button {
-    min-height: 118px;
-    padding: 12px;
+    /* Guided tour of the site: the card stays clear of what it points at. */
+  .tour-card {
+    left: 12px;
+    right: 12px;
+    width: auto;
   }
-  .welcome-ways button b {
-    font-size: 14px;
-    line-height: 1.25;
+  .tour-card.at-top {
+    top: calc(12px + env(safe-area-inset-top));
   }
-  .welcome-ways small {
-    font-size: 12px;
+  .tour-card.at-bottom,
+  .tour-card.at-free {
+    bottom: calc(12px + env(safe-area-inset-bottom));
   }
-  .welcome-levels {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
+  /* Welcome: the two actions stay at hand at the bottom of the screen. */
+  .welcome-actions {
+    position: sticky;
+    bottom: 0;
+    margin: 4px -16px 0;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: var(--panel-solid);
+    border-top: 1px solid var(--border);
   }
-  .welcome-levels button {
-    align-items: center;
-    justify-content: center;
-    padding: 10px 6px;
-    text-align: center;
-  }
-  .welcome-levels b {
-    font-size: 12.5px;
-    line-height: 1.25;
-  }
-  .welcome-levels small {
-    display: none;
-  }
-  .welcome .explore {
-    margin-top: auto;
-    padding: 12px;
+  .welcome-actions .btn {
+    min-height: 46px;
     font-size: 15px;
   }
 }

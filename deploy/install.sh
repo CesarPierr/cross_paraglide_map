@@ -99,13 +99,13 @@ docker compose up -d --build --remove-orphans
 
 say "Attente de l'API"
 for _ in $(seq 1 60); do
-  if docker compose exec -T api wget -qO- http://localhost:8080/api/health >/dev/null 2>&1; then
+  if docker compose exec -T api wget -qO- http://127.0.0.1:8080/api/health >/dev/null 2>&1; then
     # Reload the knowledge base from the image (contributions and caches are kept),
     # then restart the API so it re-serialises the atlas.
     docker compose exec -T api node dist/cli/seed.js /app/seed/atlas.json /app/seed/sites-ffvl.json
     docker compose restart api >/dev/null
-    for _ in $(seq 1 30); do docker compose exec -T api wget -qO- http://localhost:8080/api/health >/dev/null 2>&1 && break; sleep 2; done
-    docker compose exec -T api wget -qO- http://localhost:8080/api/health; echo
+    for _ in $(seq 1 30); do docker compose exec -T api wget -qO- http://127.0.0.1:8080/api/health >/dev/null 2>&1 && break; sleep 2; done
+    docker compose exec -T api wget -qO- http://127.0.0.1:8080/api/health; echo
     IP=$(hostname -I 2>/dev/null | awk '{print $1}')
     say "Site prêt : http://${IP:-localhost}:${PORT}"
     say "Jeton de modération : grep ADMIN_TOKEN ${DIR}/.env"

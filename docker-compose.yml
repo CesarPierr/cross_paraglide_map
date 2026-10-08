@@ -28,7 +28,7 @@ services:
       WEATHER_DAILY_BUDGET: ${WEATHER_DAILY_BUDGET:-8000}
       LOG_LEVEL: ${LOG_LEVEL:-info}
     healthcheck:
-      test: ['CMD-SHELL', 'wget -qO- http://localhost:8080/api/health || exit 1']
+      test: ['CMD-SHELL', 'wget -qO- http://127.0.0.1:8080/api/health || exit 1']
       interval: 30s
 
   web:

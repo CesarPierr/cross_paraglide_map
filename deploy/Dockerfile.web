@@ -9,4 +9,6 @@ RUN npm ci --workspaces --include-workspace-root=false --ignore-scripts \
 
 FROM nginx:1.27-alpine
 COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
+COPY deploy/nginx-site.inc /etc/nginx/snippets/site.inc
+COPY deploy/security-headers.inc /etc/nginx/snippets/security-headers.inc
 COPY --from=build /repo/apps/web/dist /usr/share/nginx/html

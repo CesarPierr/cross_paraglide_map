@@ -10,3 +10,5 @@ playwright-report
 apps/api/dist
 .data
 .env
+.htpasswd
+.public-credentials

@@ -78,6 +78,21 @@ if [ "${REFRESH}" = 1 ]; then
   npm run data:airspace || echo "  espaces aériens impossibles, on garde les données existantes"
 fi
 
+# Public port (to forward from the router): one login, random password, written once.
+# The plain password stays in .public-credentials (readable by this user only).
+if [ ! -s .htpasswd ]; then
+  command -v openssl >/dev/null || die "openssl manquant (sudo apt install -y openssl)"
+  [ -d .htpasswd ] && rmdir .htpasswd  # left by a compose run without the file
+  say "Génération de l'accès public (identifiant et mot de passe)"
+  umask 077
+  PUB_USER=invite
+  PUB_PASS=$(head -c 18 /dev/urandom | base64 | tr -dc 'A-Za-z0-9' | head -c 16)
+  printf '%s:%s\n' "${PUB_USER}" "$(openssl passwd -apr1 "${PUB_PASS}")" > .htpasswd
+  printf 'identifiant=%s\nmot_de_passe=%s\n' "${PUB_USER}" "${PUB_PASS}" > .public-credentials
+  chmod 644 .htpasswd  # read by nginx inside the container (hashes only)
+fi
+grep -q '^PUBLIC_PORT=' .env || echo "PUBLIC_PORT=8090" >> .env
+
 say "Construction et démarrage (docker compose)"
 docker compose up -d --build --remove-orphans
 
@@ -93,6 +108,7 @@ for _ in $(seq 1 60); do
     IP=$(hostname -I 2>/dev/null | awk '{print $1}')
     say "Site prêt : http://${IP:-localhost}:${PORT}"
     say "Jeton de modération : grep ADMIN_TOKEN ${DIR}/.env"
+    say "Accès public (port $(sed -n 's/^PUBLIC_PORT=//p' .env), identifiant et mot de passe) : cat ${DIR}/.public-credentials"
     exit 0
   fi
   sleep 3

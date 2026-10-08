@@ -36,7 +36,12 @@ services:
     restart: unless-stopped
     depends_on: [api]
     ports:
+      # Local network (open).
       - '${HTTP_PORT:-80}:80'
+      # Public, to forward from the router: login and password (deploy/install.sh writes ./.htpasswd).
+      - '${PUBLIC_PORT:-8090}:81'
+    volumes:
+      - ./.htpasswd:/etc/nginx/htpasswd:ro
 
 volumes:
   db-data:

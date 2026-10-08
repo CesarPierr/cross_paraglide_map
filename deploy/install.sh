@@ -80,9 +80,10 @@ fi
 
 # Public port (to forward from the router): one login, random password, written once.
 # The plain password stays in .public-credentials (readable by this user only).
-if [ ! -s .htpasswd ]; then
+# A folder in its place is what docker compose leaves when it ran before the file existed.
+[ -d .htpasswd ] && { docker compose stop web >/dev/null 2>&1 || true; rmdir .htpasswd; }
+if [ ! -f .htpasswd ] || [ ! -s .htpasswd ]; then
   command -v openssl >/dev/null || die "openssl manquant (sudo apt install -y openssl)"
-  [ -d .htpasswd ] && rmdir .htpasswd  # left by a compose run without the file
   say "Génération de l'accès public (identifiant et mot de passe)"
   umask 077
   PUB_USER=invite

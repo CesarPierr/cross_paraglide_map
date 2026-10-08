@@ -2027,16 +2027,16 @@
               "coord_quality": "approx"
             },
             {
+              "name": "Combe du Manival",
+              "lon": 5.8358,
+              "lat": 45.2906,
+              "coord_quality": "approx"
+            },
+            {
               "name": "Château Nardent (raccroche)",
               "lon": 5.8384,
               "lat": 45.2805,
               "coord_quality": "source"
-            },
-            {
-              "name": "Combe du Manival",
-              "lon": 5.8283,
-              "lat": 45.2568,
-              "coord_quality": "approx"
             },
             {
               "name": "Fort du Saint-Eynard",
@@ -2063,15 +2063,9 @@
           "waypoints": [
             {
               "name": "Combe du Manival",
-              "lon": 5.8283,
-              "lat": 45.2568,
+              "lon": 5.8358,
+              "lat": 45.2906,
               "coord_quality": "approx"
-            },
-            {
-              "name": "Château Nardent (raccroche)",
-              "lon": 5.8384,
-              "lat": 45.2805,
-              "coord_quality": "source"
             },
             {
               "name": "Saint-Pancrasse",

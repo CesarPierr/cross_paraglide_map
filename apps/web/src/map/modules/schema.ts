@@ -29,6 +29,8 @@ const LAYERS = [
   'schema-title',
   'schema-hl-line',
   'schema-hl-point',
+  'schema-route-pts',
+  'schema-route-num',
 ] as const;
 /** The whole-Alps sector (large-scale breezes, convergences and routes). */
 const OVERVIEW = 'alpes-francaises';
@@ -102,6 +104,8 @@ export class SchemaModule implements MapModule {
     const empty: GeoJSON.FeatureCollection = { type: 'FeatureCollection', features: [] };
     map.addSource('schema', { type: 'geojson', data: empty });
     map.addSource('schema-veil', { type: 'geojson', data: empty });
+    // Turn points of the route a visit step walks through, numbered in flying order.
+    map.addSource('schema-route-pts', { type: 'geojson', data: empty });
     const kindColor = ['match', ['get', 'kind'], ...Object.entries(BREEZE_COLORS).flat(), BREEZE_COLORS.valley] as unknown as ExpressionSpecification;
     // Neighbouring massifs stay visible for the transitions, but faded.
     const own = ['case', ['==', ['get', 'own'], true], 1, 0.35] as ExpressionSpecification;
@@ -296,6 +300,25 @@ export class SchemaModule implements MapModule {
         paint: { 'circle-radius': 16, 'circle-color': 'rgba(254,240,138,0.18)', 'circle-stroke-color': '#fef08a', 'circle-stroke-width': 2.5 },
       },
       'points',
+    );
+    ctx.addLayer(
+      {
+        id: 'schema-route-pts',
+        type: 'circle',
+        source: 'schema-route-pts',
+        paint: { 'circle-radius': 10, 'circle-color': COLORS.route, 'circle-stroke-color': '#ffffff', 'circle-stroke-width': 2, 'circle-pitch-alignment': 'map' },
+      },
+      'labels',
+    );
+    ctx.addLayer(
+      {
+        id: 'schema-route-num',
+        type: 'symbol',
+        source: 'schema-route-pts',
+        layout: { 'text-field': ['get', 'n'], 'text-font': ['Noto Sans Bold'], 'text-size': 12, 'text-allow-overlap': true, 'text-ignore-placement': true },
+        paint: { 'text-color': '#1c1917' },
+      },
+      'labels',
     );
     // Picker: the sectors as a map of clickable shapes (outlines computed by the pipeline),
     // with their names; a sector without outline falls back to a dot.
@@ -586,6 +609,7 @@ export class SchemaModule implements MapModule {
       ['schema-conv-glow', 'line-opacity'],
       ['schema-conv', 'icon-opacity'],
       ['schema-routes', 'line-opacity'],
+      ['schema-route-label', 'text-opacity'],
       ['schema-points', 'icon-opacity'],
       ['schema-points', 'text-opacity'],
       ['schema-breeze-label', 'text-opacity'],
@@ -594,9 +618,19 @@ export class SchemaModule implements MapModule {
       const key = `${layer}|${prop}`;
       if (!this.baseOpacity.has(key)) this.baseOpacity.set(key, map.getPaintProperty(layer, prop as never) ?? 1);
       const base = this.baseOpacity.get(key);
-      const value = ids.length ? ['case', ['in', ['get', 'id'], list], base, ['*', 0.28, base]] : base;
+      // Routes the step does not talk about are hidden: overlapping dashed paths read as
+      // branches of the one it describes.
+      const others = layer.startsWith('schema-route') ? 0 : ['*', 0.28, base];
+      const value = ids.length ? ['case', ['in', ['get', 'id'], list], base, others] : base;
       map.setPaintProperty(layer, prop as never, value as never);
     }
+    const routes = this.ctx!.atlas.features.routes.filter((f) => ids.includes(f.properties.id) && f.geometry.type === 'LineString');
+    (map.getSource('schema-route-pts') as GeoJSONSource | undefined)?.setData({
+      type: 'FeatureCollection',
+      features: routes.flatMap((f) =>
+        (f.geometry.coordinates as [number, number][]).map((c, i) => ({ type: 'Feature' as const, geometry: { type: 'Point' as const, coordinates: c }, properties: { n: String(i + 1) } })),
+      ),
+    });
   }
 
   describe(id: string): FeatureDetails | null {

@@ -1120,6 +1120,19 @@ function main() {
           qa.push(`${mid}: itinéraire « ${r.name} » ignoré (moins de 2 points)`);
           continue;
         }
+        // A sharp turn back at a point placed by estimate is often a misplaced point (the
+        // Manival of the Saint-Eynard route sat 4 km south of its combe): to check.
+        for (let i = 1; i < wps.length - 1; i++) {
+          if (wps[i].coord_quality !== 'approx') continue;
+          const ux = (wps[i].lon - wps[i - 1].lon) * 78;
+          const uy = (wps[i].lat - wps[i - 1].lat) * 111;
+          const vx = (wps[i + 1].lon - wps[i].lon) * 78;
+          const vy = (wps[i + 1].lat - wps[i].lat) * 111;
+          const lu = Math.hypot(ux, uy);
+          const lv = Math.hypot(vx, vy);
+          if (lu > 0.3 && lv > 0.3 && Math.min(lu, lv) < 8 && (ux * vx + uy * vy) / (lu * lv) < -0.87)
+            qa.push(`${mid}: itinéraire « ${r.name} » : demi-tour à « ${wps[i].name ?? i} », position estimée (à vérifier, sauf balise de demi-tour voulue)`);
+        }
         push('routes', {
           type: 'Feature',
           geometry: { type: 'LineString', coordinates: wps.map((p) => [round5(p.lon), round5(p.lat)]) },

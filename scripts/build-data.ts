@@ -1029,6 +1029,8 @@ function main() {
           qa.push(`${mid}: convergence « ${c.name} » sans géométrie exploitable`);
           continue;
         }
+        // Hours of the convergence, so the map shows it when it is active.
+        const when = parseHours(c.when, 'valley');
         push('convergences', {
           type: 'Feature',
           geometry,
@@ -1037,6 +1039,7 @@ function main() {
             category: 'convergences',
             massif: mid,
             name: c.name,
+            ...(when ? { windowStart: when[0], windowEnd: when[1] } : {}),
             description: [c.mechanism, c.usage].filter(Boolean).join('\n\n'),
             confidence: confidence(c.confidence),
             sources: mapSources(c.sources).join(','),

@@ -26,6 +26,36 @@ const ICONS: Record<string, { size: number; draw: Draw }> = {
       c.stroke();
     },
   },
+  // Two flows meeting across a convergence line: arrows from both sides towards the
+  // middle (the line runs along +x; MapLibre rotates the icon with it).
+  'convergence-arrows': {
+    size: 40,
+    draw: (c, s) => {
+      c.lineCap = 'round';
+      c.lineJoin = 'round';
+      const arrow = (y0: number, y1: number) => {
+        const tip = y1;
+        const back = y1 + (y0 < y1 ? -s * 0.13 : s * 0.13);
+        c.beginPath();
+        c.moveTo(s * 0.5, y0);
+        c.lineTo(s * 0.5, tip);
+        c.moveTo(s * 0.38, back);
+        c.lineTo(s * 0.5, tip);
+        c.lineTo(s * 0.62, back);
+      };
+      for (const [w, col] of [
+        [0.2, 'rgba(40,0,60,0.5)'],
+        [0.1, '#f5d0fe'],
+      ] as const) {
+        c.strokeStyle = col;
+        c.lineWidth = s * w;
+        arrow(s * 0.06, s * 0.38);
+        c.stroke();
+        arrow(s * 0.94, s * 0.62);
+        c.stroke();
+      }
+    },
+  },
   takeoff: {
     size: 40,
     draw: (c, s) => {

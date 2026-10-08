@@ -106,7 +106,7 @@ export function LegendBody() {
               <i className="line dashed" style={{ color: BREEZE_COLORS.valley }} /> déduction
             </span>
             <span>
-              <i className="line" style={{ background: COLORS.convergence }} /> convergence
+              <i className="band" style={{ background: COLORS.convergence }} /> convergence : les flux se rencontrent et montent
             </span>
           </div>
         </div>

@@ -79,7 +79,7 @@ function addArrowImage(map: MlMap): void {
 
 export class SchemaModule implements MapModule {
   readonly id = 'schema';
-  readonly clickableLayers = ['schema-pick-fill', 'schema-pick-dot', 'schema-pick-label', 'schema-breeze', 'schema-conv', 'schema-conv-point', 'schema-points', 'schema-routes'];
+  readonly clickableLayers = ['schema-pick-fill', 'schema-pick-dot', 'schema-pick-label', 'schema-breeze', 'schema-conv-glow', 'schema-conv', 'schema-conv-point', 'schema-points', 'schema-routes'];
   private ctx: ModuleContext | null = null;
   private massif: string | null = null;
   private savedCamera: { center: [number, number]; zoom: number; pitch: number; bearing: number } | null = null;
@@ -164,25 +164,40 @@ export class SchemaModule implements MapModule {
       },
       'lines',
     );
+    // Convergences as zones where two flows meet: a soft band, arrows from both sides.
     ctx.addLayer(
       {
         id: 'schema-conv-glow',
         type: 'line',
         source: 'schema',
         filter: ['all', isCat('convergences'), ['==', ['geometry-type'], 'LineString']],
-        layout: { 'line-cap': 'round' },
-        paint: { 'line-color': COLORS.convergence, 'line-width': 16, 'line-blur': 8, 'line-opacity': ['*', 0.45, own] },
+        layout: { 'line-cap': 'round', 'line-join': 'round' },
+        paint: {
+          'line-color': COLORS.convergence,
+          'line-width': ['interpolate', ['exponential', 1.6], ['zoom'], 8, 18, 12, 70],
+          'line-blur': ['interpolate', ['exponential', 1.6], ['zoom'], 8, 10, 12, 34],
+          'line-opacity': ['*', 0.5, own],
+        },
       },
       'lines',
     );
     ctx.addLayer(
       {
         id: 'schema-conv',
-        type: 'line',
+        type: 'symbol',
         source: 'schema',
         filter: ['all', isCat('convergences'), ['==', ['geometry-type'], 'LineString']],
-        layout: { 'line-cap': 'round' },
-        paint: { 'line-color': '#f5d0fe', 'line-width': 3.5, 'line-dasharray': [1.2, 1.2], 'line-opacity': own },
+        layout: {
+          'symbol-placement': 'line',
+          'symbol-spacing': ['interpolate', ['linear'], ['zoom'], 8, 80, 12, 140],
+          'icon-image': 'convergence-arrows',
+          'icon-size': ['interpolate', ['linear'], ['zoom'], 8, 0.7, 12, 1.3],
+          'icon-rotation-alignment': 'map',
+          'icon-pitch-alignment': 'map',
+          'icon-allow-overlap': true,
+          'icon-ignore-placement': true,
+        },
+        paint: { 'icon-opacity': own },
       },
       'lines',
     );
@@ -568,7 +583,8 @@ export class SchemaModule implements MapModule {
     const dimmed: [string, string][] = [
       ['schema-breeze', 'line-opacity'],
       ['schema-breeze-arrows', 'icon-opacity'],
-      ['schema-conv', 'line-opacity'],
+      ['schema-conv-glow', 'line-opacity'],
+      ['schema-conv', 'icon-opacity'],
       ['schema-routes', 'line-opacity'],
       ['schema-points', 'icon-opacity'],
       ['schema-points', 'text-opacity'],

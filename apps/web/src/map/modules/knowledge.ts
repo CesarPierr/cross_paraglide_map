@@ -15,7 +15,7 @@ import { bboxOf, type FeatureDetails, type MapModule, type ModuleContext } from 
 
 const GROUPS: Partial<Record<LayerKey, string[]>> = {
   breezes: ['breezes-glow', 'breezes-core', 'breezes-core-low', 'breezes-arrows', 'breezes-hit', 'breezes-label'],
-  convergences: ['convergences-glow', 'convergences-line', 'convergences-point'],
+  convergences: ['convergences-zone', 'convergences-arrows', 'convergences-point'],
   hazards: ['hazards'],
   thermals: ['thermals', 'thermals-measured'],
   soaring: ['soaring'],
@@ -34,7 +34,7 @@ export function shortLabel(name: string): string {
 
 export class KnowledgeModule implements MapModule {
   readonly id = 'atlas';
-  readonly clickableLayers = ['breezes-hit', 'convergences-line', 'convergences-point', 'hazards', 'thermals', 'thermals-measured', 'soaring', 'takeoffs', 'landings', 'routes-line'];
+  readonly clickableLayers = ['breezes-hit', 'convergences-zone', 'convergences-point', 'hazards', 'thermals', 'thermals-measured', 'soaring', 'takeoffs', 'landings', 'routes-line'];
   private ctx: ModuleContext | null = null;
   private index = new Map<string, AtlasFeature>();
 
@@ -126,25 +126,43 @@ export class KnowledgeModule implements MapModule {
       'lines',
     );
     ctx.addLayer({ id: 'breezes-hit', type: 'line', source: 'breezes', paint: { 'line-color': '#000', 'line-opacity': 0.001, 'line-width': 18 } }, 'lines');
+    // A convergence is a zone where two flows meet and rise, not a line: a soft band,
+    // with arrows from both sides towards its middle; brighter during its hours.
+    const convActive = ['coalesce', ['feature-state', 'active'], 1];
     ctx.addLayer(
       {
-        id: 'convergences-glow',
+        id: 'convergences-zone',
         type: 'line',
         source: 'convergences',
         filter: ['==', ['geometry-type'], 'LineString'],
         layout: { 'line-cap': 'round', 'line-join': 'round' },
-        paint: { 'line-color': COLORS.convergence, 'line-width': ['interpolate', ['linear'], ['zoom'], 6, 6, 12, 22], 'line-blur': 10, 'line-opacity': 0.4 },
+        paint: {
+          'line-color': COLORS.convergence,
+          'line-width': ['interpolate', ['exponential', 1.6], ['zoom'], 6, 8, 9, 22, 12, 70],
+          'line-blur': ['interpolate', ['exponential', 1.6], ['zoom'], 6, 5, 9, 12, 12, 34],
+          'line-opacity': ['*', 0.5, ['+', 0.25, ['*', 0.75, convActive]]] as never,
+        },
       },
       'lines',
     );
     ctx.addLayer(
       {
-        id: 'convergences-line',
-        type: 'line',
+        id: 'convergences-arrows',
+        type: 'symbol',
         source: 'convergences',
+        minzoom: 8,
         filter: ['==', ['geometry-type'], 'LineString'],
-        layout: { 'line-cap': 'round', 'line-join': 'round' },
-        paint: { 'line-color': '#f5d0fe', 'line-width': ['interpolate', ['linear'], ['zoom'], 6, 1.5, 12, 3.5], 'line-dasharray': [1, 1.5] },
+        layout: {
+          'symbol-placement': 'line',
+          'symbol-spacing': ['interpolate', ['linear'], ['zoom'], 8, 80, 12, 140],
+          'icon-image': 'convergence-arrows',
+          'icon-size': ['interpolate', ['linear'], ['zoom'], 8, 0.6, 12, 1.3],
+          'icon-rotation-alignment': 'map',
+          'icon-pitch-alignment': 'map',
+          'icon-allow-overlap': true,
+          'icon-ignore-placement': true,
+        },
+        paint: { 'icon-opacity': ['+', 0.15, ['*', 0.85, convActive]] as never },
       },
       'lines',
     );
@@ -270,9 +288,15 @@ export class KnowledgeModule implements MapModule {
     if (!prev || prev.hour !== s.hour) this.updateActivity(s.hour);
   }
 
-  /** Breezes fade in and out with the hour, following their documented window. */
+  /** Breezes and convergences fade in and out with the hour, following their documented window. */
   private updateActivity(hour: number): void {
     const { map, atlas } = this.ctx!;
+    for (const f of atlas.features.convergences) {
+      const p = f.properties;
+      // Without documented hours: the afternoon, when breezes meet.
+      const w: [number, number] = p.windowStart !== undefined && p.windowEnd !== undefined ? [p.windowStart, p.windowEnd] : [12, 18];
+      map.setFeatureState({ source: 'convergences', id: f.id! }, { active: windowActivity(hour, w) });
+    }
     for (const f of atlas.features.breezes) {
       const p = f.properties;
       const w: [number, number] = p.windowStart !== undefined && p.windowEnd !== undefined ? [p.windowStart, p.windowEnd] : [11, 19];

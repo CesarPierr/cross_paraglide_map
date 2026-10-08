@@ -11,7 +11,7 @@ import { BASEMAPS } from '../map/style';
 import { remember, useApp } from '../state/store';
 import { getController } from './controller-ref';
 import { IconLayers, IconMountain, IconWind } from './icons';
-import { goTo, useMode, type Mode } from './modes';
+import { goTo, setUiMode, useMode } from './modes';
 import { togglePopover } from './Popovers';
 
 const QUERY = '(max-width: 860px)';
@@ -149,21 +149,39 @@ export function SheetHandle({ onClose, visit = false, closeLabel = 'Fermer le pa
 export function MobileDock() {
   const mode = useMode();
   const popover = useApp((s) => s.popover);
+  const uiMode = useApp((s) => s.uiMode);
+  const mobileSheet = useApp((s) => s.mobileSheet);
   if (!useIsMobile()) return null;
-  const tabs: { key: Mode | 'layers'; label: string; icon: React.ReactNode; on: boolean; go: () => void }[] = [
-    { key: 'carte', label: 'Carte', icon: <IconWind size={18} />, on: mode === 'carte' && !popover, go: () => goTo('carte') },
-    { key: 'massifs', label: 'Massifs', icon: <IconMountain size={18} />, on: mode === 'massifs', go: () => goTo('massifs') },
-    { key: 'cross', label: 'Cross', icon: <IconRoute />, on: mode === 'cross', go: () => goTo('cross') },
+  const layersTab = {
+    key: 'layers',
+    label: 'Calques',
+    icon: <IconLayers size={18} />,
+    on: popover === 'layers',
+    go: () => {
+      togglePopover('layers');
+      useSheet.getState().setSnap('half');
+    },
+  };
+  // Simulating: back to exploring, the settings sheet, the layers.
+  const simTabs = [
+    { key: 'explore', label: 'Explorer', icon: <IconMountain size={18} />, on: false, go: () => setUiMode('explore') },
     {
-      key: 'layers',
-      label: 'Calques',
-      icon: <IconLayers size={18} />,
-      on: popover === 'layers',
+      key: 'settings',
+      label: 'Réglages',
+      icon: <IconWind size={18} />,
+      on: mobileSheet === 'browse' && !popover,
       go: () => {
-        togglePopover('layers');
+        useApp.getState().set({ mobileSheet: 'browse', popover: null });
         useSheet.getState().setSnap('half');
       },
     },
+    layersTab,
+  ];
+  const tabs: { key: string; label: string; icon: React.ReactNode; on: boolean; go: () => void }[] = uiMode === 'simulate' ? simTabs : [
+    { key: 'carte', label: 'Carte', icon: <IconWind size={18} />, on: mode === 'carte' && !popover, go: () => goTo('carte') },
+    { key: 'massifs', label: 'Massifs', icon: <IconMountain size={18} />, on: mode === 'massifs', go: () => goTo('massifs') },
+    { key: 'cross', label: 'Cross', icon: <IconRoute />, on: mode === 'cross', go: () => goTo('cross') },
+    layersTab,
   ];
   return (
     <nav className="mobile-dock" aria-label="Navigation">

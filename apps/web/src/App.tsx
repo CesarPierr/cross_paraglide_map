@@ -5,7 +5,7 @@ import { ContributionPanel } from './ui/Feedback';
 import { IconHelp } from './ui/icons';
 import { MapView } from './ui/MapView';
 import { MobileDock, MobileRail, useIsMobile, useSheetLayout } from './ui/mobile';
-import { goTo, ModeTabs } from './ui/modes';
+import { goTo, ModeTabs, UiModeSwitch } from './ui/modes';
 import { NavPad } from './ui/NavPad';
 import { MapTools, Popover } from './ui/Popovers';
 import { SearchBox } from './ui/Search';
@@ -68,7 +68,7 @@ function useShortcuts() {
         if (s.popover) s.set({ popover: null });
         else if (rt.feature || rt.draft) rt.set({ feature: null, draft: null });
         else if (s.tourStep !== null) s.set({ tourStep: null });
-        else goTo('carte');
+        else if (s.uiMode === 'explore') goTo('carte');
       }
     };
     window.addEventListener('keydown', onKey);
@@ -78,18 +78,18 @@ function useShortcuts() {
 
 /** Always-visible banner of the schema view, with the way back to 3D. */
 export default function App() {
-  const { browseOpen, schemaMassif, schemaPicking, mobileSheet, popover, tourStep, set } = useApp();
+  const { browseOpen, schemaMassif, schemaPicking, mobileSheet, popover, tourStep, uiMode, set } = useApp();
   const feature = useRuntime((r) => r.feature);
   const probe = useRuntime((r) => r.probe);
   const mobile = useIsMobile();
-  const sideOpen = !mobile && (browseOpen || schemaPicking || !!feature || !!probe || !!schemaMassif);
+  const sideOpen = !mobile && (uiMode === 'simulate' || browseOpen || schemaPicking || !!feature || !!probe || !!schemaMassif);
   // Phone: one bottom sheet at a time (the visit, a popover or the panel); the time bar only when none is open.
   const visit = mobile && tourStep !== null && !!schemaMassif;
   const sheet = mobile && (visit || !!popover || mobileSheet === 'browse');
   useSheetLayout(visit);
   useShortcuts();
   return (
-    <div className={`app ${mobile ? 'is-mobile' : ''} ${sideOpen ? 'side-open' : ''} ${sheet ? 'has-sheet' : ''} ${visit ? 'in-visit' : ''}`}>
+    <div className={`app ${mobile ? 'is-mobile' : ''} ${sideOpen ? 'side-open' : ''} ${sheet ? 'has-sheet' : ''} ${visit ? 'in-visit' : ''} ui-${uiMode}`}>
       <MapView />
       <header className="topbar panel">
         <div className="brand">
@@ -105,6 +105,7 @@ export default function App() {
           </div>
           <StatusPill />
         </div>
+        {!mobile && <UiModeSwitch />}
         {!mobile && <ModeTabs />}
         <SearchBox />
         <button className="icon-btn" onClick={() => set({ aboutOpen: true })} aria-label="Aide et méthodologie">
@@ -116,6 +117,7 @@ export default function App() {
       <MapTools />
       {!mobile && <BasemapSwitch />}
       <Popover />
+      {mobile && !sheet && <UiModeSwitch />}
       <MobileDock />
       <MobileRail />
       {!mobile && <NavPad />}

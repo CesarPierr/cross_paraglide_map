@@ -5,6 +5,7 @@ import type { FeatureDetails } from '../map/modules/types';
 import { BREEZE_COLORS, COLORS } from '../map/palette';
 import { SCHEMA_PHASES, useApp, useRuntime } from '../state/store';
 import { getController } from './controller-ref';
+import { SimulationPanel } from './ControlPanel';
 import { FeedbackBar, startDraft } from './Feedback';
 import { FigureGallery } from './Figures';
 import { IconBack, IconPlus, IconSearch, IconTarget } from './icons';
@@ -431,15 +432,17 @@ export function Sidebar() {
   const atlas = useRuntime((r) => r.atlas);
   const feature = useRuntime((r) => r.feature);
   const probe = useRuntime((r) => r.probe);
-  const { selectedMassif, schemaMassif, browseOpen, mobileSheet, browseTab } = useApp();
+  const { selectedMassif, schemaMassif, browseOpen, mobileSheet, browseTab, uiMode } = useApp();
+  // Simulation mode: the panel holds the simulation settings, a probe or a detail over them.
+  const sim = uiMode === 'simulate';
   const mobile = useIsMobile();
   const massif = atlas?.massifs.find((m) => m.id === selectedMassif);
   const schema = atlas?.massifs.find((m) => m.id === schemaMassif);
   const schemaPicking = useApp((x) => x.schemaPicking);
-  const open = mobile ? mobileSheet === 'browse' : browseOpen || schemaPicking || !!feature || !!probe || !!schema || !!massif;
+  const open = mobile ? mobileSheet === 'browse' : sim || browseOpen || schemaPicking || !!feature || !!probe || !!schema || !!massif;
   // A new sheet starts at its top.
   const ref = useRef<HTMLElement>(null);
-  const contentKey = feature?.ref ?? (probe ? `probe:${probe.lon},${probe.lat}` : schema ? `schema:${schema.id}` : massif ? `massif:${massif.id}` : `browse:${browseTab}`);
+  const contentKey = feature?.ref ?? (probe ? `probe:${probe.lon},${probe.lat}` : sim ? 'simulation' : schema ? `schema:${schema.id}` : massif ? `massif:${massif.id}` : `browse:${browseTab}`);
   // (Also when it comes back after a visit: it was hidden, and kept the previous content's scroll.)
   const visiting = useApp((x) => x.tourStep !== null);
   useEffect(() => {
@@ -450,18 +453,23 @@ export function Sidebar() {
       {mobile ? (
         <SheetHandle
           onClose={() => {
-            // A detail closes back to the massif page under it; anything else goes back to the map.
-            if (feature && schemaMassif) useRuntime.getState().set({ feature: null });
+            // A detail closes back to the massif page or the simulation under it; anything else goes back to the map.
+            if (sim && (feature || probe)) {
+              useRuntime.getState().set({ feature: null });
+              getController()?.clearProbe();
+            } else if (sim) useApp.getState().set({ mobileSheet: 'none' });
+            else if (feature && schemaMassif) useRuntime.getState().set({ feature: null });
             else goTo('carte');
           }}
         />
       ) : (
         !schema &&
-        !probe && (
+        !probe &&
+        (!sim || feature) && (
           <button
             className="icon-btn ghost panel-close"
-            aria-label="Fermer le panneau"
-            onClick={() => goTo('carte')}
+            aria-label={sim ? 'Retour à la simulation' : 'Fermer le panneau'}
+            onClick={() => (sim ? useRuntime.getState().set({ feature: null }) : goTo('carte'))}
           >
             ×
           </button>
@@ -477,6 +485,8 @@ export function Sidebar() {
         <FeatureSheet f={feature} atlas={atlas} />
       ) : probe ? (
         <ProbeSheet />
+      ) : sim ? (
+        <SimulationPanel />
       ) : schema ? (
         <SchemaPanel m={schema} atlas={atlas} />
       ) : massif ? (

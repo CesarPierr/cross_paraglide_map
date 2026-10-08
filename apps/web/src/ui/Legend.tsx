@@ -12,30 +12,11 @@ const SPEED_STOPS: [string, string][] = [
 ];
 
 /** What the colours and lines of the map mean (shown in the Calques panel). */
-export function LegendBody() {
-  const { overlay, particleColor, layers } = useApp();
+/** Legend of the reading of the relief drawn on the map (simulation mode). */
+export function OverlayLegend() {
+  const overlay = useApp((s) => s.overlay);
   return (
-    <div className="legend-body">
-      {layers.particles && (
-        <div className="legend-block">
-          <h4>{particleColor === 'speed' ? 'Vent simulé (km/h)' : 'Air montant / descendant'}</h4>
-          {particleColor === 'speed' ? (
-            <div className="ramp">
-              {SPEED_STOPS.map(([c, l]) => (
-                <span key={l} style={{ background: c }}>
-                  {l}
-                </span>
-              ))}
-            </div>
-          ) : (
-            <div className="ramp">
-              <span style={{ background: '#4073ff', color: '#fff' }}>descend</span>
-              <span style={{ background: '#dbe6f0' }}>neutre</span>
-              <span style={{ background: '#ff8f1f' }}>monte</span>
-            </div>
-          )}
-        </div>
-      )}
+    <>
       {overlay === 'exposure' && (
         <div className="legend-block">
           <h4>Exposition au vent météo</h4>
@@ -83,6 +64,35 @@ export function LegendBody() {
           </div>
         </div>
       )}
+    </>
+  );
+}
+
+export function LegendBody() {
+  const { particleColor, layers } = useApp();
+  return (
+    <div className="legend-body">
+      {layers.particles && (
+        <div className="legend-block">
+          <h4>{particleColor === 'speed' ? 'Vent simulé (km/h)' : 'Air montant / descendant'}</h4>
+          {particleColor === 'speed' ? (
+            <div className="ramp">
+              {SPEED_STOPS.map(([c, l]) => (
+                <span key={l} style={{ background: c }}>
+                  {l}
+                </span>
+              ))}
+            </div>
+          ) : (
+            <div className="ramp">
+              <span style={{ background: '#4073ff', color: '#fff' }}>descend</span>
+              <span style={{ background: '#dbe6f0' }}>neutre</span>
+              <span style={{ background: '#ff8f1f' }}>monte</span>
+            </div>
+          )}
+        </div>
+      )}
+      <OverlayLegend />
       {(layers.breezes || layers.comets) && (
         <div className="legend-block">
           <h4>Brises documentées</h4>

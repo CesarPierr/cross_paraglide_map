@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import { remember, useApp, useRuntime } from '../state/store';
 import { getController } from './controller-ref';
 import { isMobileNow, useIsMobile } from './mobile';
-import { goTo, openMassif } from './modes';
+import { goTo, openMassif, setUiMode } from './modes';
 
 function finish() {
   remember('brises.welcomed', '1');
@@ -43,9 +43,10 @@ const STEPS: TourStep[] = [
     target: '.timebar',
   },
   {
-    title: 'Le vent météo',
-    text: 'Par défaut l’air est calme : seules les brises jouent. Choisissez un régime (nord, sud, foehn…) pour voir comment il se combine au relief, ou appliquez la prévision du jour.',
-    target: '.wind-chip',
+    title: 'Explorer ou simuler',
+    text: 'Explorer : les massifs, leurs visites, les itinéraires et ce que disent les sources. Simuler : réglez le vent météo (direction, force), lisez le relief (au vent ou sous le vent, thermique, convergences) et prenez le vent prévu. Par défaut l’air est calme : seules les brises jouent.',
+    target: '.ui-mode-switch',
+    run: () => setUiMode('simulate'),
   },
   {
     title: 'Touchez un endroit',

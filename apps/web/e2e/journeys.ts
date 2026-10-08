@@ -82,10 +82,17 @@ await page.waitForTimeout(2500);
 await shot('d06-probe');
 await page.keyboard.press('Escape');
 
+// Simulation: the wind chip opens it; the reading of the relief is one tap.
 await page.locator('.wind-chip').click();
-await page.waitForTimeout(500);
-await shot('d07-conditions');
-await page.locator('.wind-chip').click();
+await page.waitForTimeout(600);
+await page.locator('.simulation').getByRole('button', { name: 'Nord', exact: true }).click();
+await page.waitForTimeout(2500);
+await shot('d07-simulation');
+await page.locator('.simulation').getByRole('radio', { name: /Thermique/ }).click();
+await page.waitForTimeout(2000);
+await shot('d07b-simulation-thermal');
+await page.locator('.ui-mode-switch').getByRole('radio', { name: /Explorer/ }).click();
+await page.waitForTimeout(800);
 await page.getByRole('button', { name: /Calques/ }).click();
 await page.waitForTimeout(500);
 await shot('d08-layers');
@@ -156,8 +163,11 @@ await pshot('m06-layers');
 await phone.locator('.mobile-dock').getByRole('button', { name: /Calques/ }).click();
 await phone.waitForTimeout(600);
 await phone.locator('.wind-chip').click();
+await phone.waitForTimeout(1200);
+await pshot('m07-simulation');
+await phone.locator('.mobile-dock').getByRole('button', { name: /Explorer/ }).click();
 await phone.waitForTimeout(800);
-await pshot('m07-conditions');
+await pshot('m08-back-to-explore');
 
 await browser.close();
 if (errors.length) {

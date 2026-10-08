@@ -146,7 +146,7 @@ function AirspacesHere({ lon, lat }: { lon: number; lat: number }) {
 /** The probe, shown as a sheet in the left panel (bottom sheet on phones). */
 export function ProbeSheet() {
   const probe = useRuntime((r) => r.probe);
-  const { heightMode, heightAgl, heightAsl, synopticKmh } = useApp();
+  const { heightMode, heightAgl, heightAsl, synopticKmh, uiMode } = useApp();
   if (!probe) return null;
   const c = probe.result;
   const close = () => getController()?.clearProbe();
@@ -233,7 +233,15 @@ export function ProbeSheet() {
         </>
       )}
       <AirspacesHere lon={probe.lon} lat={probe.lat} />
-      <NearbySources lon={probe.lon} lat={probe.lat} />
+      {uiMode === 'simulate' ? (
+        // Simulating, the wind comes first: what the sources say is one tap away.
+        <details className="probe-sources">
+          <summary>Ce que disent les sources ici</summary>
+          <NearbySources lon={probe.lon} lat={probe.lat} />
+        </details>
+      ) : (
+        <NearbySources lon={probe.lon} lat={probe.lat} />
+      )}
       <PointForecastBlock lon={probe.lon} lat={probe.lat} />
       <button className="link-btn add-here" onClick={() => startDraft({ kind: 'new', points: [[probe.lon, probe.lat]] })}>
         <IconPlus size={14} /> Signaler un phénomène ici

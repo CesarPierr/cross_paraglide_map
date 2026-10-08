@@ -1,26 +1,35 @@
 /**
- * On-demand panels: "Conditions" (synoptic wind, heatwave, reading height),
- * opened from the time bar, and "Calques" (layer families, legend, options),
- * opened from the map. One at a time; bottom sheets on phones.
+ * On-demand panel "Calques" (layer families, legend, options), opened from the
+ * map; a bottom sheet on phones. The wind is set in the simulation mode, which the
+ * wind chip of the time bar opens.
  */
 import { compassFr } from '@brises/model';
 import { useApp } from '../state/store';
-import { ConditionsPanel, LayersPanel } from './ControlPanel';
+import { LayersPanel } from './ControlPanel';
 import { IconLayers, IconWind } from './icons';
-import { SheetHandle, useIsMobile } from './mobile';
+import { isMobileNow, SheetHandle, useIsMobile, useSheet } from './mobile';
+import { setUiMode } from './modes';
 
-export type PopoverKey = 'conditions' | 'layers';
+export type PopoverKey = 'layers';
 
 export function togglePopover(k: PopoverKey): void {
   const s = useApp.getState();
   s.set({ popover: s.popover === k ? null : k, mobileSheet: 'none' });
 }
 
-/** The current synoptic wind, as a button that opens the conditions. */
+/** The current synoptic wind, as a button to the simulation, where it is set. */
 export function WindChip() {
-  const { synopticFrom, synopticKmh, heatwave, popover } = useApp();
+  const { synopticFrom, synopticKmh, heatwave, uiMode } = useApp();
+  const open = () => {
+    setUiMode('simulate');
+    // Phone: the settings sheet comes back if it was closed.
+    if (isMobileNow()) {
+      useApp.getState().set({ mobileSheet: 'browse', popover: null });
+      useSheet.getState().setSnap('half');
+    }
+  };
   return (
-    <button className={`wind-chip ${popover === 'conditions' ? 'on' : ''}`} onClick={() => togglePopover('conditions')} aria-expanded={popover === 'conditions'} title="Vent météo, canicule, hauteur de lecture">
+    <button className={`wind-chip ${uiMode === 'simulate' ? 'on' : ''}`} onClick={open} title={uiMode === 'simulate' ? 'Réglages du vent' : 'Régler le vent : mode Simulation'}>
       <IconWind size={15} />
       <span>{synopticKmh < 3 ? 'Vent calme' : `${compassFr(synopticFrom)} ${synopticKmh} km/h`}</span>
       {heatwave && <small>canicule</small>}
@@ -48,18 +57,18 @@ export function Popover() {
   if (!popover) return null;
   const close = () => useApp.getState().set({ popover: null });
   return (
-    <div className={`popover panel pop-${popover} ${mobile ? 'as-sheet' : ''}`} role="dialog" aria-label={popover === 'conditions' ? 'Conditions' : 'Calques'}>
+    <div className={`popover panel pop-${popover} ${mobile ? 'as-sheet' : ''}`} role="dialog" aria-label="Calques">
       {mobile ? (
         <SheetHandle onClose={close} />
       ) : (
         <div className="popover-head">
-          <b>{popover === 'conditions' ? 'Conditions' : 'Calques'}</b>
+          <b>Calques</b>
           <button className="icon-btn ghost" onClick={close} aria-label="Fermer">
             ×
           </button>
         </div>
       )}
-      {popover === 'conditions' ? <ConditionsPanel /> : <LayersPanel />}
+      <LayersPanel />
     </div>
   );
 }

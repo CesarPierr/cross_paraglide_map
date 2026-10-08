@@ -3143,6 +3143,120 @@ div.summary {
   color: var(--text);
 }
 
+/* Explorer | Simuler: the two ways of using the map. */
+.ui-mode-switch {
+  display: flex;
+  gap: 2px;
+  padding: 3px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border);
+  flex: none;
+}
+.ui-mode-switch button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--text-2);
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+.ui-mode-switch button.on {
+  background: var(--accent-soft);
+  color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(125, 211, 252, 0.5);
+}
+.ui-mode-switch button:hover:not(.on) {
+  color: var(--text);
+}
+
+/* Simulation panel: the reading of the relief as big buttons. */
+.overlay-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.overlay-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+  color: var(--text-2);
+  font-size: 12.5px;
+  text-align: left;
+  cursor: pointer;
+}
+.overlay-btn b {
+  font-weight: 600;
+}
+.overlay-btn i {
+  flex: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  background: #64748b;
+}
+.overlay-btn.ov-exposure i {
+  background: linear-gradient(135deg, #2ad16e 50%, #eb4034 50%);
+}
+.overlay-btn.ov-thermal i {
+  background: linear-gradient(135deg, #ffe63c, #ff3c00);
+}
+.overlay-btn.ov-convergence i {
+  background: linear-gradient(135deg, #d65cff, #3c78e6);
+}
+.overlay-btn.ov-lift i {
+  background: linear-gradient(135deg, #9adc3c, #ff9a3c);
+}
+.overlay-btn.ov-speed i {
+  background: linear-gradient(135deg, #408cf2, #ffd94d, #f24d4d);
+}
+.overlay-btn.on {
+  color: #fff;
+  border-color: rgba(125, 211, 252, 0.7);
+  background: var(--accent-soft);
+}
+.chips.compact .chip {
+  padding: 2px 8px;
+  font-size: 11.5px;
+}
+.cp.simulation .wind-row {
+  align-items: flex-start;
+}
+.cp.simulation .wind-sliders {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Probe while simulating: what the sources say, one tap away. */
+.probe-sources {
+  margin: 4px 0 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--panel-raised);
+}
+.probe-sources > summary {
+  padding: 8px 10px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-2);
+  cursor: pointer;
+}
+.probe-sources[open] > summary {
+  border-bottom: 1px solid var(--border);
+}
+.probe-sources > :not(summary) {
+  padding: 0 10px;
+}
+
 /* Wind chip in the time bar: the conditions are one tap away. */
 .wind-chip {
   display: inline-flex;
@@ -3560,6 +3674,24 @@ div.summary {
     left: var(--gap);
     right: var(--gap);
     max-height: 60vh;
+  }
+
+  /* Explorer | Simuler under the top bar, left of the map buttons. */
+  .app.is-mobile > .ui-mode-switch {
+    position: absolute;
+    top: calc(var(--gap) + 58px);
+    left: var(--gap);
+    z-index: 6;
+    background: var(--panel-solid);
+    box-shadow: var(--shadow);
+  }
+  .app.is-mobile > .ui-mode-switch button {
+    padding: 6px 10px;
+    font-size: 12.5px;
+  }
+  .overlay-btn {
+    padding: 10px;
+    font-size: 13px;
   }
 
   /* Navigation bar, edge to edge. */

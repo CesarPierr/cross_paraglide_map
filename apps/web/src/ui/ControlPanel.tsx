@@ -6,7 +6,7 @@ import { useApp, useRuntime, type LayerKey } from '../state/store';
 import { getController, getDataClient } from './controller-ref';
 import { fmtHour, MONTHS } from './format';
 import { IconChevron, IconDownload, IconMountain, IconSpark, IconWind } from './icons';
-import { LegendBody } from './Legend';
+import { LegendBody, OverlayLegend } from './Legend';
 import { WindDial } from './WindDial';
 
 const PRESETS: { label: string; from: number; kmh: number; hint: string }[] = [
@@ -22,12 +22,12 @@ const PRESETS: { label: string; from: number; kmh: number; hint: string }[] = [
 ];
 
 const OVERLAYS: { key: OverlayMode; label: string; hint: string }[] = [
-  { key: 'none', label: 'Aucune', hint: '' },
-  { key: 'exposure', label: 'Au vent / sous le vent', hint: 'Vert : l’air monte sur le relief · rouge : abri, rotors · orange : venturi' },
-  { key: 'thermal', label: 'Potentiel thermique', hint: 'Soleil sur la pente, altitude, reliefs saillants' },
-  { key: 'convergence', label: 'Convergences', hint: 'Violet : l’air converge et monte · bleu : il diverge et descend' },
-  { key: 'lift', label: 'Ascendances estimées', hint: 'Thermique + dynamique + convergence' },
+  { key: 'exposure', label: 'Au vent / sous le vent', hint: 'Où l’air monte sur le relief, où il est abrité (rotors), où il accélère' },
+  { key: 'thermal', label: 'Thermique', hint: 'Soleil sur la pente, altitude, reliefs saillants' },
+  { key: 'convergence', label: 'Convergences', hint: 'Où les flux se rencontrent et montent' },
+  { key: 'lift', label: 'Ascendances', hint: 'Thermique, dynamique et convergence réunis' },
   { key: 'speed', label: 'Force du vent', hint: 'Vitesse à la hauteur simulée' },
+  { key: 'none', label: 'Aucune', hint: 'Le relief seul, avec le vent animé' },
 ];
 
 type LayerItem = { key: LayerKey; label: string; color?: string };
@@ -202,8 +202,8 @@ function Situation() {
   );
 }
 
-/** Conditions: synoptic wind, heatwave option, reading height (opened from the time bar). */
-export function ConditionsPanel() {
+/** The simulation: synoptic wind, reading of the relief, reading height, forecast. */
+export function SimulationPanel() {
   const s = useApp();
   const [forecastMsg, setForecastMsg] = useState<string | null>(null);
 
@@ -227,48 +227,65 @@ export function ConditionsPanel() {
     }
   };
 
+  const choose = (o: OverlayMode) => s.set({ overlay: o, simOverlay: o });
   return (
-    <div className="cp conditions">
+    <div className="cp simulation">
+      <p className="eyebrow">Simulation</p>
       <Situation />
       <section className="cp-block">
         <h3 className="cp-title">
           <IconWind size={15} /> Vent météo
         </h3>
-        <div className="chips" role="group" aria-label="Situations types">
-          {PRESETS.map((p) => (
-            <button key={p.label} className={`chip ${s.synopticKmh === p.kmh && (p.kmh === 0 || s.synopticFrom === p.from) ? 'active' : ''}`} title={p.hint} onClick={() => s.set({ synopticFrom: p.from, synopticKmh: p.kmh })}>
-              {p.label}
+        <div className="wind-row">
+          <WindDial fromDeg={s.synopticFrom} speedKmh={s.synopticKmh} onChange={(d) => s.set({ synopticFrom: d })} />
+          <div className="wind-sliders">
+            <label className="field">
+              <span>
+                Vent aux crêtes <b>{s.synopticKmh < 3 ? 'calme' : `${compassFr(s.synopticFrom)} ${s.synopticKmh} km/h`}</b>
+              </span>
+              <input type="range" min={0} max={60} step={1} value={s.synopticKmh} onChange={(e) => s.set({ synopticKmh: Number(e.target.value) })} aria-label="Force du vent météo" />
+            </label>
+            <div className="chips compact" role="group" aria-label="Situations types">
+              {PRESETS.map((p) => (
+                <button key={p.label} className={`chip ${s.synopticKmh === p.kmh && (p.kmh === 0 || s.synopticFrom === p.from) ? 'active' : ''}`} title={p.hint} onClick={() => s.set({ synopticFrom: p.from, synopticKmh: p.kmh })}>
+                  {p.label}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+        <button className="link-btn" onClick={() => void loadForecast()}>
+          <IconDownload size={14} /> Prendre le vent prévu au centre de la carte
+        </button>
+        {forecastMsg && <p className="hint">{forecastMsg}</p>}
+      </section>
+
+      <section className="cp-block">
+        <h3 className="cp-title">
+          <IconSpark size={15} /> Lecture du relief
+        </h3>
+        <div className="overlay-grid" role="radiogroup" aria-label="Lecture du relief">
+          {OVERLAYS.map((o) => (
+            <button key={o.key} role="radio" aria-checked={s.overlay === o.key} className={`overlay-btn ov-${o.key} ${s.overlay === o.key ? 'on' : ''}`} onClick={() => choose(o.key)} title={o.hint}>
+              <i aria-hidden />
+              <b>{o.label}</b>
             </button>
           ))}
         </div>
-        <Disclosure label={`Réglage fin · ${s.synopticKmh < 3 ? 'calme' : `${compassFr(s.synopticFrom)} ${s.synopticKmh} km/h`}`}>
-          <div className="wind-row">
-            <WindDial fromDeg={s.synopticFrom} speedKmh={s.synopticKmh} onChange={(d) => s.set({ synopticFrom: d })} />
-            <div className="wind-sliders">
-              <label className="field">
-                <span>
-                  Vent aux crêtes <b>{s.synopticKmh} km/h</b>
-                </span>
-                <input type="range" min={0} max={60} step={1} value={s.synopticKmh} onChange={(e) => s.set({ synopticKmh: Number(e.target.value) })} />
-              </label>
-              <label className="field">
-                <span>
-                  Brises thermiques <b>×{s.breezeScale.toFixed(1)}</b>
-                </span>
-                <input type="range" min={0} max={2} step={0.1} value={s.breezeScale} onChange={(e) => s.set({ breezeScale: Number(e.target.value) })} />
-              </label>
+        {s.overlay !== 'none' && (
+          <>
+            <p className="hint">{OVERLAYS.find((o) => o.key === s.overlay)?.hint}</p>
+            <div className="legend-body">
+              <OverlayLegend />
             </div>
-          </div>
-          <label className="toggle">
-            <input type="checkbox" checked={s.heatwave} onChange={() => s.set({ heatwave: !s.heatwave })} />
-            <span className="switch" aria-hidden />
-            <span>Journée de canicule (brises « par forte chaleur »)</span>
-          </label>
-          <button className="link-btn" onClick={() => void loadForecast()}>
-            <IconDownload size={14} /> Prendre le vent prévu au centre de la carte
-          </button>
-          {forecastMsg && <p className="hint">{forecastMsg}</p>}
-        </Disclosure>
+            <label className="field">
+              <span>
+                Opacité <b>{Math.round(s.overlayOpacity * 100)} %</b>
+              </span>
+              <input type="range" min={0.2} max={1} step={0.05} value={s.overlayOpacity} onChange={(e) => s.set({ overlayOpacity: Number(e.target.value) })} />
+            </label>
+          </>
+        )}
       </section>
 
       <section className="cp-block">
@@ -302,6 +319,19 @@ export function ConditionsPanel() {
         </div>
       </section>
 
+      <Disclosure label="Brises et canicule">
+        <label className="field">
+          <span>
+            Brises thermiques <b>×{s.breezeScale.toFixed(1)}</b>
+          </span>
+          <input type="range" min={0} max={2} step={0.1} value={s.breezeScale} onChange={(e) => s.set({ breezeScale: Number(e.target.value) })} />
+        </label>
+        <label className="toggle">
+          <input type="checkbox" checked={s.heatwave} onChange={() => s.set({ heatwave: !s.heatwave })} />
+          <span className="switch" aria-hidden />
+          <span>Journée de canicule (brises « par forte chaleur »)</span>
+        </label>
+      </Disclosure>
     </div>
   );
 }
@@ -324,27 +354,6 @@ export function LayersPanel() {
         <LegendBody />
       </section>
       <Section title="Plus d’options" icon={<IconSpark size={16} />} defaultOpen={false}>
-        <label className="field">
-          <span>Analyse sur le relief</span>
-          <select value={s.overlay} onChange={(e) => s.set({ overlay: e.target.value as OverlayMode })}>
-            {OVERLAYS.map((o) => (
-              <option key={o.key} value={o.key}>
-                {o.label}
-              </option>
-            ))}
-          </select>
-        </label>
-        {s.overlay !== 'none' && (
-          <>
-            <p className="hint">{OVERLAYS.find((o) => o.key === s.overlay)?.hint}</p>
-            <label className="field">
-              <span>
-                Opacité <b>{Math.round(s.overlayOpacity * 100)} %</b>
-              </span>
-              <input type="range" min={0.2} max={1} step={0.05} value={s.overlayOpacity} onChange={(e) => s.set({ overlayOpacity: Number(e.target.value) })} />
-            </label>
-          </>
-        )}
         <h4 className="opt-title">Repères</h4>
         {EXTRA_LAYERS.map((l) => (
           <LayerToggle key={l.key} item={l} />

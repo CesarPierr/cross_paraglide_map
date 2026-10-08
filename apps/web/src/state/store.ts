@@ -59,7 +59,15 @@ export interface AppState {
   /** Energy budget of the rendering, chosen automatically (battery, device, activity). */
   power: PowerMode;
   overlay: OverlayMode;
+  /** Reading of the relief kept for the simulation mode while exploring (where none is drawn). */
+  simOverlay: OverlayMode;
   overlayOpacity: number;
+  /**
+   * Two ways of using the map: exploring the local knowledge (massifs, visits, routes,
+   * what the sources say) or simulating the wind (synoptic wind, reading of the relief,
+   * forecast). Remembered in this browser.
+   */
+  uiMode: 'explore' | 'simulate';
   layers: Record<LayerKey, boolean>;
   basemap: Basemap;
   exaggeration: number;
@@ -80,8 +88,8 @@ export interface AppState {
   tourStep: number | null;
   /** Right-hand settings panel (desktop). */
   panelOpen: boolean;
-  /** On-demand panel: conditions (from the time bar) or layers (from the map). */
-  popover: 'conditions' | 'layers' | null;
+  /** On-demand panel: layers (from the map). */
+  popover: 'layers' | null;
   /** Left-hand sector list (desktop); sheets of a sector, feature or schema open it on their own. */
   browseOpen: boolean;
   mobileSheet: MobileSheet;
@@ -132,8 +140,11 @@ export const useApp = create<AppState>((set) => ({
   breezeScale: 1,
   heatwave: false,
   power: 'auto',
-  overlay: 'none',
+  // Exploring draws no reading of the relief; the simulation starts on exposure (au vent / sous le vent).
+  overlay: remembered('brises.uimode', ['simulate'] as const, null) === 'simulate' ? 'exposure' : 'none',
+  simOverlay: 'exposure',
   overlayOpacity: 0.85,
+  uiMode: remembered('brises.uimode', ['simulate'] as const, 'explore'),
   layers: {
     particles: true,
     comets: true,

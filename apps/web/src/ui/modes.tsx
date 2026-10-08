@@ -1,12 +1,44 @@
 /**
- * The three ways through the app: the live map, the massifs (sector map →
- * massif page with its schema and guided visit), and cross-country routes.
- * Opening a massif always shows its schema on the map; closing it returns to
- * the live map. There is no separate "schema view" to toggle.
+ * Two modes of use. Exploring: the live map, the massifs (sector map → massif page
+ * with its schema and guided visit) and cross-country routes, with what the sources
+ * say. Simulating: the synoptic wind, the reading of the relief (exposure, thermals,
+ * convergences…) and the forecast, in one panel. Opening a massif, a visit or a
+ * route goes back to exploring; there is no separate "schema view" to toggle.
  */
-import { useApp, useRuntime } from '../state/store';
+import { IconMountain, IconWind } from './icons';
+import { remember, useApp, useRuntime, type AppState } from '../state/store';
 import { getController } from './controller-ref';
-import { showBrowse, showSheet } from './mobile';
+import { isMobileNow, showBrowse, showSheet, useSheet } from './mobile';
+
+/** Switches between exploring the knowledge and simulating the wind. */
+export function setUiMode(m: AppState['uiMode']): void {
+  const s = useApp.getState();
+  if (s.uiMode === m) return;
+  remember('brises.uimode', m);
+  useRuntime.getState().set({ feature: null });
+  getController()?.clearProbe();
+  if (m === 'simulate') {
+    s.set({ uiMode: m, schemaMassif: null, selectedMassif: null, schemaPicking: false, tourStep: null, popover: null, browseOpen: false, overlay: s.simOverlay });
+    if (isMobileNow()) {
+      s.set({ mobileSheet: 'browse' });
+      useSheet.getState().setSnap('half');
+    }
+  } else s.set({ uiMode: m, simOverlay: s.overlay === 'none' ? s.simOverlay : s.overlay, overlay: 'none', mobileSheet: 'none' });
+}
+
+export function UiModeSwitch() {
+  const uiMode = useApp((s) => s.uiMode);
+  return (
+    <div className="ui-mode-switch" role="radiogroup" aria-label="Mode">
+      <button role="radio" aria-checked={uiMode === 'explore'} className={uiMode === 'explore' ? 'on' : ''} onClick={() => setUiMode('explore')} title="Massifs, visites, itinéraires et ce que disent les sources">
+        <IconMountain size={15} /> Explorer
+      </button>
+      <button role="radio" aria-checked={uiMode === 'simulate'} className={uiMode === 'simulate' ? 'on' : ''} onClick={() => setUiMode('simulate')} title="Vent météo, lecture du relief, prévision">
+        <IconWind size={15} /> Simuler
+      </button>
+    </div>
+  );
+}
 
 export type Mode = 'carte' | 'massifs' | 'cross';
 
@@ -18,6 +50,7 @@ export function useMode(): Mode {
 }
 
 export function goTo(mode: Mode): void {
+  setUiMode('explore');
   const s = useApp.getState();
   useRuntime.getState().set({ feature: null });
   getController()?.clearProbe();
@@ -38,6 +71,7 @@ export function goTo(mode: Mode): void {
 
 /** Opens a massif: its page in the panel and its schema on the map (optionally the guided visit). */
 export function openMassif(id: string, visit = false): void {
+  setUiMode('explore');
   useRuntime.getState().set({ feature: null });
   getController()?.clearProbe();
   useApp.getState().set({ schemaMassif: id, selectedMassif: id, schemaPicking: false, popover: null, tourStep: visit ? 0 : null });
@@ -52,6 +86,8 @@ const TABS: { key: Mode; label: string; hint: string }[] = [
 
 export function ModeTabs() {
   const mode = useMode();
+  const uiMode = useApp((s) => s.uiMode);
+  if (uiMode !== 'explore') return null;
   return (
     <nav className="mode-tabs" role="tablist" aria-label="Navigation">
       {TABS.map((t) => (

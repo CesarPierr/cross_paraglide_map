@@ -54,17 +54,25 @@ du global au détail : les lieux cités sont surlignés dans le texte et épingl
 
 ## Fonctionnalités
 
+Deux modes, un bouton pour passer de l'un à l'autre : **Explorer** (massifs, visites guidées,
+itinéraires, ce que disent les sources) et **Simuler** (vent météo, lecture du relief, prévision).
+
 - **Relief 3D** par défaut (MNT 216 m, exagération réglable, 2D disponible) sur plan topographique
   ou orthophoto, avec l'ombrage solaire réel de l'heure choisie.
 - **Simulation de vent dans le navigateur (WebGL2)** : brises de pente, de vallée, de lac, de plaine
   vers la montagne, vent météo canalisé, abrité ou accéléré, convergences calculées ; repli CPU
   (Web Worker). Changement d'heure, de mois ou de régime de vent instantané.
 - **Animations** : particules de vent, comètes le long des brises documentées, colonnes thermiques ;
-  surcouches exposition, sous le vent, potentiel thermique, convergences, vitesse.
+  convergences dessinées comme des zones où deux flux se rencontrent, actives à leurs heures ;
+  lecture du relief au vent / sous le vent, thermique, convergences, ascendances, force.
 - **Pages de massif** : schéma d'une journée type (matin, midi, après-midi, soir), brises,
   thermiques, pièges et sources, et une visite guidée narrative pour chacun des 46 secteurs.
-- **Prévision du point** (Open-Meteo / AROME) : plafond, couche limite, isotherme 0 °C, et bouton
-  « simuler avec ce vent ».
+- **Prévision** (Open-Meteo, AROME/ARPEGE) : en mode Simuler, le vent d'aujourd'hui, de demain ou
+  d'après-demain pilote la carte heure par heure autour de la vue ; à la sonde, plafond, couche
+  limite, isotherme 0 °C et émagramme simplifié.
+- **Dangers documentés** : un piège que les sources lient à un vent (« turbulent par nord même
+  faible ») s'affiche sous le vent ou turbulent quand le vent simulé correspond, et la sonde le
+  nomme avec ses sources ; le contrôle du modèle les vérifie à l'endroit même.
 - **Sites et espaces aériens** : sites FFVL officiels et communautaires (OpenStreetMap,
   ParaglidingEarth), espaces aériens indicatifs, recherche de décos, villages, brises et massifs.
 - **Retours des pilotes** : « je confirme / pas observé », corrections, ajout d'un phénomène tracé

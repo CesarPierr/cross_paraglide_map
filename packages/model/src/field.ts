@@ -547,8 +547,14 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   let slopeForce: number;
   if (c.time.night || c.time.sun.elevation < 3) slopeForce = -RULES.katabaticMax / RULES.slopeBreezeMax;
   else slopeForce = insol * (0.55 + 0.45 * c.time.season) - 0.08;
-  const slopeFactor = clamp(Math.sin(Math.atan(gmag)) * 2.2, 0, 1);
-  const slopeSpeed = RULES.slopeBreezeMax * slopeForce * slopeFactor * Math.exp(-hh / RULES.slopeBreezeDepth) * scale;
+  // Over a glacier, the air cooled by the ice flows down the slope by day too (glacier wind).
+  const gw = RULES.glacierWind;
+  const glacier = smoothstep(gw.share[0], gw.share[1], t.cover.snow[k]);
+  slopeForce += (-gw.speed / RULES.slopeBreezeMax - slopeForce) * glacier;
+  const slopeDepth = RULES.slopeBreezeDepth + (gw.depth - RULES.slopeBreezeDepth) * glacier;
+  // A glacier wind gathers speed over the length of the ice: full from ≈ 10° of slope.
+  const slopeFactor = clamp(Math.sin(Math.atan(gmag)) * (2.2 + (6 - 2.2) * glacier), 0, 1);
+  const slopeSpeed = RULES.slopeBreezeMax * slopeForce * slopeFactor * Math.exp(-hh / slopeDepth) * scale;
   if (gmag > 1e-6) {
     out.slope[0] = (gxk / gmag) * slopeSpeed;
     out.slope[1] = (gyk / gmag) * slopeSpeed;

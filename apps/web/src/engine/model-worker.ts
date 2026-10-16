@@ -89,10 +89,11 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
         ...packCuratedLayers(cur),
         tF: packTerrainExtras(t, cur),
         tM: pack4(n, t.ridgeGx, t.ridgeGy, t.massGx, t.massGy),
+        tL: pack4(n, t.cover.trees, t.cover.bare, t.cover.snow, t.cover.built),
         breezes: cur.breezes,
         hazards: msg.hazards,
       };
-      self.postMessage({ type: 'built', id: msg.id, pack, ms: performance.now() - t0 }, [pack.tZ.buffer, pack.tV.buffer, pack.tW.buffer, pack.tR.buffer, pack.tC.buffer, pack.tC2.buffer, pack.tF.buffer, pack.tM.buffer]);
+      self.postMessage({ type: 'built', id: msg.id, pack, ms: performance.now() - t0 }, [pack.tZ.buffer, pack.tV.buffer, pack.tW.buffer, pack.tR.buffer, pack.tC.buffer, pack.tC2.buffer, pack.tF.buffer, pack.tM.buffer, pack.tL.buffer]);
     } else if (msg.type === 'init') {
       const t0 = performance.now();
       const [raw, lcPixels] = await Promise.all([decodeDem(msg.demUrl, msg.meta), fetchGridPixels(landcoverUrl(msg.demUrl), msg.meta)]);

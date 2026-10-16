@@ -194,6 +194,21 @@ describe('thermal onset, face by face', () => {
     // A single slope-scale term would keep exp(-350/350) ≈ 0.37 of it at 400 m.
     expect(at(400) / at(50)).toBeGreaterThan(0.5);
   });
+  it('turns the slope breeze downslope over a glacier, by day too', () => {
+    // The same valley with its north side (rows < 36) under ice.
+    const n = grid.size;
+    const snow = new Float32Array(n);
+    for (let k = 0; k < n; k++) snow[k] = ((k / grid.width) | 0) < 36 ? 1 : 0;
+    const iced = analyseTerrain(grid, terrain.z, { trees: new Float32Array(n), bare: new Float32Array(n), snow, built: new Float32Array(n) });
+    const k = 30 * grid.width + 60; // south-facing, sunlit at 14h
+    const p = params(14);
+    const along = (t: typeof terrain) => {
+      const o = evalCell(k, makeWindContext(t, computeTimeContext(t, p), p, null), newCellResult());
+      return o.slope[0] * t.gx[k] + o.slope[1] * t.gy[k]; // > 0 up the slope
+    };
+    expect(along(terrain)).toBeGreaterThan(0);
+    expect(along(iced)).toBeLessThan(0);
+  });
   it('tears the thermals apart in the lee of a relief', () => {
     // North wind over the east–west valley: the slope facing south (row 30, north side)
     // is in the lee of the northern ridge.

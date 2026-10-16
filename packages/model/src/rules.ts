@@ -13,6 +13,16 @@ export const RULES = {
   slopeBreezeDepth: 140,
   /** Night katabatic speed, m/s. */
   katabaticMax: 1.6,
+  /**
+   * Glacier wind: over a melting glacier the air cooled by the ice flows down the slope day
+   * and night (Oerlemans & Grisogono 2002: 2–6 m/s, a jet a few metres above the ice, a
+   * layer of a few tens of metres, persistent on summer afternoons). Where the snow-and-ice
+   * share of a cell goes from `share[0]` to `share[1]`, the slope breeze turns into this
+   * downslope flow of `speed` (m/s), with an e-folding thickness of `depth` (m). It gathers
+   * speed over the length of the ice, so it is full from ≈ 10° of slope (a slope breeze
+   * needs ≈ 27°).
+   */
+  glacierWind: { speed: 3, depth: 60, share: [0.2, 0.6] as [number, number] },
   /** Max up-valley speed in the largest valleys at the afternoon peak, m/s (≈ 25 km/h). */
   valleyBreezeMax: 7,
   /** Night down-valley speed relative to the day maximum. */

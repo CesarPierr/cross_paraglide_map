@@ -18,6 +18,7 @@ uniform highp sampler2D tW;   // valley, lakeX, lakeY, water
 uniform highp sampler2D tR;   // seaX, seaY, plainX, plainY
 uniform highp sampler2D tC;   // curated layers main, cond: (index + weight, flow angle) × 2 (curated.ts → packCuratedLayers)
 uniform highp sampler2D tC2;  // curated thin layer (slope, katabatic): index + weight, flow angle; documented hazard slots 1, 2: index + weight
+uniform highp sampler2D tL;   // land cover shares: trees, bare ground, snow and ice, built-up (landcover.ts)
 uniform highp sampler2D tM;   // gradients of the relief at the ridge and massif scales (terrain.ts → ridgeGx, massGx)
 uniform highp sampler2D tF;   // narrowing of the valleys (terrain.ts → valleyFunnel), documented hazard slots 3, 4, heating of the ground (landcover.ts → surfaceFactor)
 uniform highp sampler2D tB;   // per curated breeze: speedMs, activity, layer kind (0 deep, 1 valley, 2 slope, 3 katabatic), 0;
@@ -49,6 +50,7 @@ uniform float uBreezeScale;
 
 const float R_SLOPE_MAX = ${f(RULES.slopeBreezeMax)};
 const float R_SLOPE_DEPTH = ${f(RULES.slopeBreezeDepth)};
+const vec4 R_GLACIER = vec4(${[...RULES.glacierWind.share, RULES.glacierWind.speed, RULES.glacierWind.depth].map(f).join(', ')});
 const float R_KATABATIC = ${f(RULES.katabaticMax)};
 const float R_VALLEY_MAX = ${f(RULES.valleyBreezeMax)};
 const float R_VALLEY_JET = ${f(RULES.valleyProfile[0])};
@@ -147,8 +149,12 @@ Cell evalCell(ivec2 c) {
 
   // Slope breeze.
   float slopeForce = uNight > 0.5 ? -R_KATABATIC / R_SLOPE_MAX : insol * (0.55 + 0.45 * uSeason) - 0.08;
-  float slopeFactor = clamp(sin(atan(gmag)) * 2.2, 0.0, 1.0);
-  float slopeSpeed = R_SLOPE_MAX * slopeForce * slopeFactor * exp(-hh / R_SLOPE_DEPTH) * uBreezeScale;
+  // Over a glacier, the air cooled by the ice flows down the slope by day too (field.ts → RULES.glacierWind).
+  float glacier = smoothstep(R_GLACIER.x, R_GLACIER.y, texelFetch(tL, c, 0).z);
+  slopeForce += (-R_GLACIER.z / R_SLOPE_MAX - slopeForce) * glacier;
+  float slopeDepth = R_SLOPE_DEPTH + (R_GLACIER.w - R_SLOPE_DEPTH) * glacier;
+  float slopeFactor = clamp(sin(atan(gmag)) * (2.2 + (6.0 - 2.2) * glacier), 0.0, 1.0);
+  float slopeSpeed = R_SLOPE_MAX * slopeForce * slopeFactor * exp(-hh / slopeDepth) * uBreezeScale;
   o.slope = gmag > 1e-6 ? Z.yz / gmag * slopeSpeed : vec2(0.0);
 
   // Valley breeze: jet in the lower valley, zero at crest height, weak antiwind above.

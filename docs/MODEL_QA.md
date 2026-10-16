@@ -1,6 +1,6 @@
 # Contrôle du modèle de vent contre l’atlas
 
-Généré par `npm run model:check` le 2026-10-16 sur `apps/web/public/data/atlas.json` (atlas du 2026-10-16), modèle TypeScript de référence (`packages/model`) sur le MNT réel. Durée : 50,9 s.
+Généré par `npm run model:check` le 2026-10-16 sur `apps/web/public/data/atlas.json` (atlas du 2026-10-16), modèle TypeScript de référence (`packages/model`) sur le MNT réel. Durée : 52,3 s.
 
 ## Critères
 

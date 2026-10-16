@@ -39,10 +39,18 @@ thermiques) et son ensoleillement récent, ombres comprises (inertie thermique, 
 | --- | --- | --- | --- |
 | Brise de pente montante | ensoleillement de la pente, raideur | jusqu'à 3 m/s, couche ≈ 140 m | suit le soleil (retard ≈ 1 h) |
 | Brise catabatique | refroidissement nocturne | 1,6 m/s | nuit |
+| Vent de glacier | air refroidi par la glace (part de neige et glace de la maille) | 3 m/s, couche ≈ 60 m | jour et nuit |
 | Brise de vallée montante | taille de la vallée (surface drainée), suivant l'axe | jusqu'à 7 m/s (≈ 25 km/h) dans les grandes vallées | inversion ≈ 9 h 30, plein ≈ 13 h, déclin 16 h 30, inversion ≈ 19 h 30 (heure solaire) |
 | Brise descendante de vallée | idem, sens inverse | 40 % du jour | nuit, matin |
 | Brise de lac / de mer | distance au rivage, écart de température terre-eau du mois | 3 / 5 m/s | ≈ 9 h → 19 h 30 |
 | Aspiration plaine → montagne | position en avant-pays | 2,5 m/s | après-midi |
+
+Vent de glacier (`RULES.glacierWind`, Oerlemans et Grisogono 2002) : sur un glacier qui fond, l'air
+refroidi par la glace descend la pente de jour comme de nuit, à 2 à 6 m/s dans une couche de quelques
+dizaines de mètres. Là où la part de neige et glace de la maille (WorldCover) passe de 20 à 60 %, la
+brise de pente devient ce flux descendant de 3 m/s, épais de 60 m, déjà complet vers 10° de pente
+parce qu'il prend de la vitesse sur toute la langue. Sur le Glacier Blanc, le Tacul ou Bionnassay,
+l'air descend ainsi à 15 h au lieu de monter avec le soleil.
 
 La brise de lac et de mer suit, en plus du soleil, l'écart de température entre la terre et l'eau
 (`RULES.waterContrast`) : l'eau retarde d'un à deux mois sur la terre, si bien que la brise est la

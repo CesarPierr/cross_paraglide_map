@@ -55,9 +55,8 @@ export interface Terrain {
   drainKm2: Float32Array;
   /** Heating efficiency of the ground, 1 = the mean of the Alps' land (`surfaceFactor`; 1 without land cover). */
   surface: Float32Array;
-  /** Share of the cell covered by snow and ice (glaciers, permanent snow) and by trees, 0..1. */
-  snowIce: Float32Array;
-  trees: Float32Array;
+  /** Shares of the cell covered by trees, bare ground, snow and ice, built-up (0 without land cover). */
+  cover: Landcover;
 }
 
 /** Seed points of the main lakes (lon, lat). Flood-filled on the flat DEM surface. */
@@ -395,8 +394,7 @@ export function analyseTerrain(grid: Grid, rawElevation: Float32Array, landcover
     water,
     drainKm2: acc,
     surface: surfaceFactor(landcover, n),
-    snowIce: landcover ? landcover.snow : new Float32Array(n),
-    trees: landcover ? landcover.trees : new Float32Array(n),
+    cover: landcover ?? { trees: new Float32Array(n), bare: new Float32Array(n), snow: new Float32Array(n), built: new Float32Array(n) },
   };
 }
 

@@ -150,7 +150,7 @@ Autres points, moins prioritaires :
 | 1 | Aile à forces et vitesse inertielle | fait (jeu) : rafales, gradient, arrondi et spirale sortent des forces ; banc 111/111 |
 | 2 | Stabilité de l'air | en partie : le gradient 850–700 hPa de la prévision règle thermiques et brises ; ondes et rotors selon Froude écartés faute de profil réel |
 | 3 | Calendrier propre à chaque vallée | en partie : poche froide du matin pour les thermiques ; la brise de vallée garde l'horaire commun |
-| 4 | Occupation du sol | fait (thermiques : ESA WorldCover, roche et bâti chauffent, forêt moins, glace pas) ; vents de glacier et textures à suivre |
+| 4 | Occupation du sol | fait : thermiques selon le sol (ESA WorldCover) et vents de glacier ; textures du jeu à suivre |
 | 5 | Ascendance de relief multi-échelle | fait (jeu et carte) |
 | 6 | Météo réelle du jour | fait : stabilité de la prévision sur la carte, « météo du jour » dans le jeu |
 | 7 | Thermiques et ombre des nuages | fait (jeu) |

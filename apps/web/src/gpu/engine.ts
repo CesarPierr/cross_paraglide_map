@@ -28,6 +28,8 @@ export interface StaticPack {
   tF: Float32Array;
   /** Gradients of the relief at the ridge and massif scales (dynamic lift by scales). */
   tM: Float32Array;
+  /** Land cover shares: trees, bare ground, snow and ice, built-up (landcover.ts). */
+  tL: Float32Array;
   breezes: CuratedBreezeInfo[];
   /** Documented hazards tied to a synoptic wind (their cells are in tC2.z). */
   hazards: CuratedHazardInput[];
@@ -115,7 +117,7 @@ export class GpuWindEngine {
   params: ModelParams | null = null;
 
   private gl: WebGL2RenderingContext;
-  private tex: Record<'V' | 'W' | 'R' | 'C' | 'C2' | 'F' | 'M' | 'B' | 'insol' | 'probe' | 'hot' | 'sample', WebGLTexture> = {} as never;
+  private tex: Record<'V' | 'W' | 'R' | 'C' | 'C2' | 'F' | 'M' | 'L' | 'B' | 'insol' | 'probe' | 'hot' | 'sample', WebGLTexture> = {} as never;
   private fbInsol!: WebGLFramebuffer;
   private fbField!: WebGLFramebuffer;
   private fbLift!: WebGLFramebuffer;
@@ -157,6 +159,7 @@ export class GpuWindEngine {
     this.tex.C2 = createTexture(gl, w, h, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: pack.tC2 });
     this.tex.F = createTexture(gl, w, h, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: pack.tF });
     this.tex.M = createTexture(gl, w, h, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: pack.tM });
+    this.tex.L = createTexture(gl, w, h, { internal: gl.RGBA16F, format: gl.RGBA, type: gl.FLOAT, data: pack.tL });
     this.tex.B = createTexture(gl, Math.max(1, pack.breezes.length + pack.hazards.length), 1, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: this.breezeData });
     // Instantaneous insolation (r), sunshine received since sunrise (g) and recent sunshine (b), per cell.
     this.tex.insol = createTexture(gl, w, h, { internal: gl.RGBA16F, format: gl.RGBA, type: gl.FLOAT });
@@ -230,6 +233,7 @@ export class GpuWindEngine {
       ['tC2', this.tex.C2],
       ['tF', this.tex.F],
       ['tM', this.tex.M],
+      ['tL', this.tex.L],
       ['tB', this.tex.B],
       ['tInsol', this.tex.insol],
     ];

@@ -237,7 +237,7 @@ export class WindScene {
     this.gl = gl;
     this.engine = new GpuWindEngine(gl, this.grid, this.pack);
     // The packed arrays now live on the GPU.
-    this.pack = { ...this.pack, tZ: new Float32Array(0), tV: new Float32Array(0), tW: new Float32Array(0), tR: new Float32Array(0), tC: new Float32Array(0), tC2: new Float32Array(0), tM: new Float32Array(0) };
+    this.pack = { ...this.pack, tZ: new Float32Array(0), tV: new Float32Array(0), tW: new Float32Array(0), tR: new Float32Array(0), tC: new Float32Array(0), tC2: new Float32Array(0), tM: new Float32Array(0), tL: new Float32Array(0) };
     if (this.params) this.engine.setParams(this.params);
     this.hmapTex = createTexture(gl, this.hmapSize, this.hmapSize, { internal: gl.RGBA16F, format: gl.RGBA, type: gl.HALF_FLOAT, filter: gl.LINEAR });
     const mk = (vs: string, fs: string, label: string) => {

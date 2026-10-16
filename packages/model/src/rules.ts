@@ -158,8 +158,12 @@ export const RULES = {
    * « quand le versant Bettex et le village passent à l'ombre », Aiguebelette « vers
    * 18h-19h jusqu'à la tombée de la nuit »). Values are assumptions of the right order
    * (surface heat flux lagging the radiation by ≈ 1 h).
+   * Cast shadows are marched only for the samples of a sun lower than `shadowBelowDeg`:
+   * above, they change the recent sunshine by less than 0.002 on average over the grid
+   * (a few deep gorges excepted), and skipping them keeps the insolation pass light while
+   * the time bar plays.
    */
-  thermalMemory: { tau: 1, window: 2, share: 0.5 },
+  thermalMemory: { tau: 1, window: 2, share: 0.5, shadowBelowDeg: 25 },
   /**
    * Seasonal intensity of the thermals (`thermalSeasonFactor`), apart from the breezes'
    * `season`. The incidence of the low sun on each slope is already in the insolation;

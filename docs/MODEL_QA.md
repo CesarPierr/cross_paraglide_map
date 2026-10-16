@@ -1,6 +1,6 @@
 # Contrôle du modèle de vent contre l’atlas
 
-Généré par `npm run model:check` le 2026-10-16 sur `apps/web/public/data/atlas.json` (atlas du 2026-10-08), modèle TypeScript de référence (`packages/model`) sur le MNT réel. Durée : 83,3 s.
+Généré par `npm run model:check` le 2026-10-16 sur `apps/web/public/data/atlas.json` (atlas du 2026-10-16), modèle TypeScript de référence (`packages/model`) sur le MNT réel. Durée : 83,4 s.
 
 ## Critères
 
@@ -19,7 +19,7 @@ Généré par `npm run model:check` le 2026-10-16 sur `apps/web/public/data/atla
 | pièges | 155 | 159 | 97 % | 51 |
 | **total** | **1189** | **1329** | **89 %** | 62 |
 
-Pièges au point par le modèle de relief seul (sans la couche des dangers documentés) : 86/159 (54 %), dont sous le vent 31/53. Le reste n’apparaît que par la couche des dangers documentés, active quand le vent simulé correspond à leurs conditions.
+Pièges au point par le modèle de relief seul (sans la couche des dangers documentés) : 88/159 (55 %), dont sous le vent 31/53. Le reste n’apparaît que par la couche des dangers documentés, active quand le vent simulé correspond à leurs conditions.
 
 Contrôle : décollages face au vent (première orientation documentée, 20 km/h) affichés sous le vent ou turbulents : 10/462 (2,2 %) — Aouille de Criou (Samoëns) (S) ; Grand Châtelard (accès par Jarrier) (SW) ; Saint-François-Longchamp – télésiège de la Lauzière (FFVL 2323) (N) ; Les Orres – Costias (Haut Forest) (S, danger documenté « Les Orres : sous le vent de la crête par S et E ») ; Soleil Bœuf (N) ; Col des Faïsses (W) ; Chauvet (face au col du Festre) (NE) ; Buc Est – La Tanière (E, danger documenté « Venturi entre Buc et Le Fort ») ; Jocou (Lus-la-Croix-Haute / Châtillon) (S, danger documenté « Jocou : venturi de vent de sud à l’est du sommet ») ; Chalvet Nord (peu utilisé) (N, danger documenté « Décollages du Chalvet sous le vent par Mistral (N/NO) »).
 

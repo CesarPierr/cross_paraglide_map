@@ -329,7 +329,7 @@ export function computeTimeContext(t: Terrain, p: ModelParams): TimeContext {
   const step = sunSampleStep(p.year, p.month0, p.day, p.hour, centerLat, centerLon);
   if (ns > 0 && step > 0) {
     const { tau, window } = RULES.thermalMemory;
-    const recent: { s: number; kern: number; di: number; dj: number; tanEl: number }[] = [];
+    const recent: { s: number; kern: number; di: number; dj: number; tanEl: number; march?: boolean }[] = [];
     let norm = 0;
     for (let s = ns - 1; s >= 0; s--) {
       const age = (ns - s - 0.5) * step;
@@ -339,6 +339,10 @@ export function computeTimeContext(t: Terrain, p: ModelParams): TimeContext {
       if (samples[s * 4 + 3] <= 0) continue;
       const hz = Math.max(Math.hypot(samples[s * 4], samples[s * 4 + 1]), 1e-4);
       recent.push({ s, kern, di: samples[s * 4] / hz, dj: -samples[s * 4 + 1] / hz, tanEl: samples[s * 4 + 2] / hz });
+    }
+    const shadowTan = Math.tan((RULES.thermalMemory.shadowBelowDeg * Math.PI) / 180);
+    for (const r of recent) {
+      r.march = r.tanEl < shadowTan;
     }
     if (recent.length > 0) {
       for (let j = 0; j < h; j++) {
@@ -352,7 +356,7 @@ export function computeTimeContext(t: Terrain, p: ModelParams): TimeContext {
           for (const r of recent) {
             const c = (nx * samples[r.s * 4] + ny * samples[r.s * 4 + 1] + samples[r.s * 4 + 2]) * inv;
             if (c <= 0) continue;
-            e += samples[r.s * 4 + 3] * r.kern * c * (1 - castShade(z, w, h, i, j, cs, r.di, r.dj, r.tanEl));
+            e += samples[r.s * 4 + 3] * r.kern * c * (r.march ? 1 - castShade(z, w, h, i, j, cs, r.di, r.dj, r.tanEl) : 1);
           }
           sunRecent[k] = e / norm;
         }

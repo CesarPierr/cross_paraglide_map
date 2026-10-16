@@ -343,6 +343,7 @@ const float CIRC = ${EARTH_CIRCUMFERENCE.toFixed(3)};
 const float STEPS[14] = float[](1.0, 2.0, 3.0, 4.0, 6.0, 8.0, 11.0, 15.0, 20.0, 26.0, 34.0, 44.0, 56.0, 70.0);
 const float MEM_TAU = ${f(RULES.thermalMemory.tau)};
 const float MEM_WINDOW = ${f(RULES.thermalMemory.window)};
+const float MEM_SHADOW_TAN = ${f(Math.tan((RULES.thermalMemory.shadowBelowDeg * Math.PI) / 180))};
 // Share of the cell shaded by the relief towards the sun (field.ts → castShade).
 float castShade(ivec2 c, float z0, float cs, vec2 dir, float tanEl) {
   float shade = 0.0;
@@ -385,7 +386,8 @@ void main() {
     float ci = dot(n, S.xyz) * inv;
     if (S.w <= 0.0 || ci <= 0.0) continue;
     float hz = max(length(S.xy), 1e-4);
-    rec += S.w * kern * ci * (1.0 - castShade(c, z0, cs, vec2(S.x, -S.y) / hz, S.z / hz));
+    float tanEl = S.z / hz;
+    rec += S.w * kern * ci * (tanEl < MEM_SHADOW_TAN ? 1.0 - castShade(c, z0, cs, vec2(S.x, -S.y) / hz, tanEl) : 1.0);
   }
   rec = norm > 0.0 ? rec / norm : 0.0;
   float cosInc = dot(n, uSun) * inv;

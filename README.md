@@ -43,6 +43,12 @@ de dos ou de travers, convergences et pièges à l'heure choisie. On peut aussi 
 
 ![Triangle du Salève lu tronçon par tronçon sur le relief 3D](docs/captures/cross.jpg)
 
+**Jeu.** Un simulateur de parapente qui vole dans l'air du modèle : thermiques, brises et nuages
+du jour, relief et orthophotos éclairés par le soleil de l'heure, sol rendu selon sa nature. Ici
+au-dessus du lac d'Annecy, au départ de la Forclaz, un après-midi de juillet.
+
+![Jeu : parapente en thermique au-dessus du lac d'Annecy, cumulus du jour, vario et plafond affichés](docs/captures/jeu.jpg)
+
 **Sur téléphone.** La carte schématique des secteurs, puis la visite guidée de chaque massif,
 du global au détail : les lieux cités sont surlignés dans le texte et épinglés sur la carte.
 

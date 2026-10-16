@@ -159,6 +159,11 @@ Autres points, moins prioritaires :
      6 thermiques d'octobre et de février passent, rien ne régresse (thermiques 712/823) ;
   2. les points chauds « du matin » démarrent 15 à 45 min trop tard, alors que les débuts « dès
      11h » sont en avance : la documentation mêle premiers thermiques et thermiques utiles.
+- **Thermiques sous le vent** : déchirés par le rotor et l'air qui descend (jusqu'à −60 %), comme
+  dans le jeu ; la méthodologie l'annonçait sans que le code le fasse.
+- **Stabilité de l'air** (point 2, premier volet) : le gradient 850–700 hPa de la prévision règle la
+  force des thermiques et la tenue des brises sous le vent d'altitude. Le sous-le-vent selon le
+  nombre de Froude (ondes, rotors, vents de col) reste à faire.
 - **Textes** : un contrôle de fidélité (`scripts/research/text_fidelity.py`) compare chaque réécriture
   à la version committée (directions apparues, effets attribués au mauvais vent, noms de lieux
   perdus). Il a trouvé des orientations et des secteurs de vent ajoutés sans source, et deux effets

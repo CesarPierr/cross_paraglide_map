@@ -31,6 +31,8 @@ uniform float uNight;
 uniform float uSunElev;
 uniform float uSeason;
 uniform float uThermalSeason;   // field.ts → thermalSeasonFactor
+uniform float uInstability;     // field.ts → stabilityFactors (thermal)
+uniform float uOverrideKmh;     // field.ts → stabilityFactors (wind that overrides the breezes)
 uniform float uValleyPhase;
 uniform float uWaterPhase;
 uniform float uThermalDecline;   // field.ts → thermalDecline
@@ -66,7 +68,6 @@ const float R_CUR_ALIGN = ${f(RULES.curatedAlignWeight)};
 const float R_PLAIN_MAX = ${f(RULES.plainBreezeMax)};
 const float R_LAKE_MAX = ${f(RULES.lakeBreezeMax)};
 const float R_SEA_MAX = ${f(RULES.seaBreezeMax)};
-const float R_OVERRIDE = ${f(RULES.synopticOverrideKmh)};
 const float R_LEE0 = ${f(RULES.leeAngle[0])};
 const float R_LEE1 = ${f(RULES.leeAngle[1])};
 const float R_VENTURI = ${f(RULES.venturiGain)};
@@ -239,7 +240,7 @@ Cell evalCell(ivec2 c) {
   float rotor = 0.25 * o.lee * smoothstep(10.0, 30.0, uGKmh) * (1.0 - o.chan);
   o.synoptic = cc * sf - uG * rotor;
 
-  float wb = clamp(1.2 - uGKmh / R_OVERRIDE, 0.15, 1.0);
+  float wb = clamp(1.2 - uGKmh / uOverrideKmh, 0.15, 1.0);
   wb = max(wb, max(clamp(0.6 * W.x * (1.0 - level), 0.0, 0.8), 0.7 * o.lee));
   o.wb = wb;
   o.breeze = b;
@@ -255,7 +256,7 @@ Cell evalCell(ivec2 c) {
   // morning cold pool (field.ts → thermalOnset, coldPoolBurial).
   float burial = coldPoolBurial(z - V.x, V.y - V.x);
   float dayF = smoothstep(mix(R_SUN_H.x, R_POOL_SUN.x, burial), mix(R_SUN_H.y, R_POOL_SUN.y, burial), IN.y) * uThermalDecline;
-  o.thermal = W.w > 0.5 ? 0.0 : clamp(drive * uThermalSeason * elevF * convexF * windF * dayF, 0.0, 1.0);
+  o.thermal = W.w > 0.5 ? 0.0 : clamp(drive * uThermalSeason * uInstability * elevF * convexF * windF * dayF, 0.0, 1.0);
   o.turb = clamp(o.lee * smoothstep(8.0, 35.0, uGKmh) + o.venturi * smoothstep(15.0, 45.0, uGKmh) * 0.6, 0.0, 1.0);
   // Documented hazards matching the situation (field.ts), up to four per cell.
   o.hidx = -1.0;

@@ -70,6 +70,8 @@ export interface AppState {
   uiMode: 'explore' | 'simulate' | 'game';
   /** Forecast day driving the synoptic wind hour by hour (0 today, 1 tomorrow, 2 the day after); null = set by hand. */
   forecastDay: number | null;
+  /** Lapse rate 850–700 hPa (K/km) of the forecast hour; null = standard atmosphere (wind set by hand). */
+  lapseRate: number | null;
   layers: Record<LayerKey, boolean>;
   basemap: Basemap;
   exaggeration: number;
@@ -148,6 +150,7 @@ export const useApp = create<AppState>((set) => ({
   overlayOpacity: 0.85,
   uiMode: remembered('brises.uimode', ['simulate'] as const, 'explore'),
   forecastDay: null,
+  lapseRate: null,
   layers: {
     particles: true,
     comets: true,

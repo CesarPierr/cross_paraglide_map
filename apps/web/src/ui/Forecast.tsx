@@ -70,22 +70,32 @@ export function useForecastSync(): void {
     };
   }, [forecastDay]);
 
-  // The wind of the forecast hour.
+  // The wind and the stability of the air of the forecast hour.
   useEffect(() => {
     if (forecastDay === null || !forecast || forecast.status !== 'ready') return;
-    const h = forecastAt(forecast.hours, forecastDay, hour) as { fromDeg: number; speedKmh: number } | undefined;
+    const h = forecastAt(forecast.hours, forecastDay, hour) as { fromDeg: number; speedKmh: number; lapseRate?: number } | undefined;
     if (!h) return;
     const s = useApp.getState();
-    if (s.synopticFrom !== h.fromDeg || s.synopticKmh !== h.speedKmh) s.set({ synopticFrom: h.fromDeg, synopticKmh: h.speedKmh });
+    const lapse = h.lapseRate ?? null;
+    if (s.synopticFrom !== h.fromDeg || s.synopticKmh !== h.speedKmh || s.lapseRate !== lapse) s.set({ synopticFrom: h.fromDeg, synopticKmh: h.speedKmh, lapseRate: lapse });
   }, [forecastDay, forecast, hour]);
+}
+
+/** Pilots' reading of the lapse rate between 850 and 700 hPa. */
+export function stabilityLabel(lapse: number): string {
+  if (lapse < 3) return 'inversion en altitude : thermiques bloqués bas';
+  if (lapse < 5) return 'air stable : thermiques faibles, brises préservées';
+  if (lapse < 6.5) return 'air moyennement stable';
+  if (lapse < 8) return 'air instable : bons thermiques, le vent descend dans les vallées';
+  return 'air très instable : thermiques forts et turbulents';
 }
 
 /** Chooses the forecast day (or the wind by hand), and shows the day hour by hour. */
 export function ForecastBlock() {
-  const { forecastDay, hour, set } = useApp();
+  const { forecastDay, hour, set, lapseRate } = useApp();
   const forecast = useRuntime((r) => r.forecast);
   const choose = (day: number | null) => {
-    if (day === null) return set({ forecastDay: null });
+    if (day === null) return set({ forecastDay: null, lapseRate: null });
     const d = dayDate(day);
     set({ forecastDay: day, month0: d.getMonth(), day: d.getDate(), playing: false });
   };
@@ -131,8 +141,13 @@ export function ForecastBlock() {
               ))}
             </div>
           )}
+          {lapseRate !== null && (
+            <p className="hint">
+              À {Math.round(hour)} h, {lapseRate.toLocaleString('fr-FR')} °C/km entre 1500 et 3000 m : {stabilityLabel(lapseRate)}.
+            </p>
+          )}
           <p className="hint">
-            Vent prévu aux crêtes (1500–3000 m) au centre de la vue, {labels[forecastDay]} {dayDate(forecastDay).getDate()} {MONTHS[dayDate(forecastDay).getMonth()]}, repris quand vous vous déplacez. Le relief et les brises font le reste ; nuages et instabilité ne sont pas simulés. Données Open-Meteo (AROME/ARPEGE).
+            Vent prévu aux crêtes (1500–3000 m) au centre de la vue, {labels[forecastDay]} {dayDate(forecastDay).getDate()} {MONTHS[dayDate(forecastDay).getMonth()]}, repris quand vous vous déplacez. Le relief et les brises font le reste, et la stabilité de l'air prévue règle la force des thermiques ; les nuages ne sont pas simulés. Données Open-Meteo (AROME/ARPEGE).
           </p>
         </>
       )}

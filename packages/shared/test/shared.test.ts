@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { dewpoint, estimateThermals, parseOrientations, type ProfileLevel } from '../src';
+import { dewpoint, estimateThermals, lapseRate, parseOrientations, type ProfileLevel } from '../src';
 
 describe('orientations', () => {
   it('normalises directory notations to French sectors', () => {
@@ -36,5 +36,16 @@ describe('thermal estimate', () => {
     const e = estimateThermals(inversion, { elevationM: 1000, temperature: 25, dewpoint: 0, month0: 6 });
     expect(e.cumulus).toBe(false);
     expect(e.thermalTopM).toBeLessThan(2600);
+  });
+});
+
+describe('lapse rate 850–700 hPa', () => {
+  it('reads the stability of the air at ridge level', () => {
+    // Standard atmosphere: 6.5 K/km over the standard 1555 m between the two levels.
+    expect(lapseRate(10, -0.1)).toBeCloseTo(6.5, 1);
+    // With the forecast's geopotential heights.
+    expect(lapseRate(8, 0, 1500, 3100)).toBe(5);
+    // An inversion aloft: warmer at 700 hPa.
+    expect(lapseRate(2, 3)).toBeLessThan(0);
   });
 });

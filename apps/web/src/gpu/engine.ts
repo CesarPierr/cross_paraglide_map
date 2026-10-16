@@ -8,7 +8,7 @@
  */
 import type { CellResult, CuratedBreezeInfo, CuratedHazardInput, ModelParams } from '@brises/model';
 import { curatedActivity, curatedLayerKind, hazardActivity, HazardEffect, nightFactor, sunSampleStep, sunSamples, SUN_SAMPLES_MAX, thermalDecline, thermalSeasonFactor } from '@brises/model';
-import { windVector, type Grid } from '@brises/model';
+import { stabilityFactors, windVector, type Grid } from '@brises/model';
 import { smoothstep } from '@brises/model';
 import { RULES } from '@brises/model';
 import { legalTimeToUtc, noonElevation, solarTime, sunPosition, type SunPosition } from '@brises/model';
@@ -237,6 +237,9 @@ export class GpuWindEngine {
     gl.uniform1f(u.uSunElev, t.sun.elevation);
     gl.uniform1f(u.uSeason, t.season);
     gl.uniform1f(u.uThermalSeason, t.thermalSeason);
+    const st = stabilityFactors(p.lapseRate);
+    gl.uniform1f(u.uInstability, st.thermal);
+    gl.uniform1f(u.uOverrideKmh, st.overrideKmh);
     gl.uniform1f(u.uValleyPhase, t.valleyPhase);
     gl.uniform1f(u.uThermalDecline, t.thermalDecline);
     gl.uniform1f(u.uNightFactor, t.nightFactor);

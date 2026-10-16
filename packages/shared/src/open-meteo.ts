@@ -78,7 +78,17 @@ function ridgeWind(t: string, s8: number, d8: number, s7: number, d7: number): S
   };
 }
 
+/**
+ * Lapse rate between 850 and 700 hPa (K/km) from the two temperatures (°C) and, when
+ * given, geopotential heights (m); standard heights otherwise (1457 and 3012 m).
+ */
+export function lapseRate(t850: number, t700: number, z850?: number | null, z700?: number | null): number {
+  const dz = z850 != null && z700 != null && z700 - z850 > 500 ? z700 - z850 : 3012 - 1457;
+  return Math.round(((t850 - t700) / dz) * 1000 * 10) / 10;
+}
+
 const WIND_VARS = ['wind_speed_850hPa', 'wind_direction_850hPa', 'wind_speed_700hPa', 'wind_direction_700hPa'];
+const STABILITY_VARS = ['temperature_850hPa', 'temperature_700hPa', 'geopotential_height_850hPa', 'geopotential_height_700hPa'];
 
 export const openMeteo: WeatherProvider = {
   id: 'open-meteo',
@@ -90,7 +100,7 @@ export const openMeteo: WeatherProvider = {
       {
         latitude: lat.toFixed(3),
         longitude: lon.toFixed(3),
-        hourly: WIND_VARS.join(','),
+        hourly: [...WIND_VARS, ...STABILITY_VARS].join(','),
         models: 'meteofrance_seamless',
         cell_selection: 'nearest',
         wind_speed_unit: 'kmh',
@@ -104,7 +114,10 @@ export const openMeteo: WeatherProvider = {
     h.time.forEach((t, i) => {
       const [s8, d8, s7, d7] = WIND_VARS.map((k) => h[k][i]);
       if (s8 == null || d8 == null || s7 == null || d7 == null) return;
-      out.push(ridgeWind(t, s8, d8, s7, d7));
+      const w = ridgeWind(t, s8, d8, s7, d7);
+      const [t8, t7, z8, z7] = STABILITY_VARS.map((k) => h[k]?.[i]);
+      if (t8 != null && t7 != null) w.lapseRate = lapseRate(t8, t7, z8, z7);
+      out.push(w);
     });
     return out;
   },

@@ -182,6 +182,22 @@ export const RULES = {
    * than absent (assumption on the share).
    */
   leeThermalCut: 0.6,
+  /**
+   * Stability of the air between 850 and 700 hPa (≈ 1 500 → 3 000 m), from the forecast
+   * (`ModelParams.lapseRate`, K/km); `lapseStandard` (standard atmosphere) when the wind is
+   * set by hand. Pilots' rule of thumb: below ≈ 5 K/km the air is stable (weak, low
+   * thermals, breezes left alone under a wind aloft), above ≈ 7 it is unstable (strong
+   * thermals, the wind aloft mixes down into the valleys).
+   * - Thermals × (1 + `lapseThermal` × (Γ − standard)), within `lapseThermalRange`.
+   * - The synoptic wind takes over the breezes from `synopticOverrideKmh` ×
+   *   (1 − `lapseOverride` × (Γ − standard)), within `lapseOverrideRange`.
+   * The slopes are assumptions of the right order, for the forecast mode only.
+   */
+  lapseStandard: 6.5,
+  lapseThermal: 0.18,
+  lapseThermalRange: [0.4, 1.3] as [number, number],
+  lapseOverride: 0.1,
+  lapseOverrideRange: [0.7, 1.4] as [number, number],
   leeThermalWindKmh: [10, 30] as [number, number],
   /** Lake/sea breeze schedule (solar hours). */
   waterSchedule: [9, 11.5, 17, 19.5] as [number, number, number, number],

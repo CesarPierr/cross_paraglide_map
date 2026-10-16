@@ -16,6 +16,8 @@ export interface SynopticWind {
   speedKmh: number;
   /** Optional raw levels, e.g. { '850hPa': [dir, kmh], '700hPa': [dir, kmh] }. */
   levels?: Record<string, [number, number]>;
+  /** Temperature lapse rate between 850 and 700 hPa (K/km): stability of the air at ridge level. */
+  lapseRate?: number;
 }
 
 /** One pressure level of a forecast sounding. */

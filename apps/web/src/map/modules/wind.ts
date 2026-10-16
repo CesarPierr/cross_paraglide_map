@@ -33,6 +33,7 @@ export function modelParams(s: AppState): ModelParams {
     height: { mode: s.heightMode, meters: s.heightMode === 'agl' ? s.heightAgl : s.heightAsl },
     breezeScale: s.breezeScale,
     heatwave: s.heatwave,
+    lapseRate: s.lapseRate ?? undefined,
   };
 }
 

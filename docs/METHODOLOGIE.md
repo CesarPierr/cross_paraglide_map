@@ -156,6 +156,17 @@ fichiers de recherche.
 - **Compétition brise / météo** : au-delà d'environ 35 km/h de vent météo, les brises thermiques
   sont largement effacées ; en dessous, elles se combinent vectoriellement.
 
+**Stabilité de l'air (mode prévision)** (`stabilityFactors`, `RULES.lapseStandard`…) : la prévision
+donne, heure par heure, le gradient de température entre 850 et 700 hPa (≈ 1500 → 3000 m, AROME
+via Open-Meteo, avec les altitudes géopotentielles des deux niveaux). Règle des pilotes : en dessous
+de ≈ 5 °C/km l'air est stable (thermiques faibles et bas), au-dessus de ≈ 7 il est instable (bons
+thermiques, le vent d'altitude descend dans les vallées). Le potentiel thermique est multiplié par
+1 + 0,18 × (Γ − 6,5), entre 0,4 et 1,3 ; le vent météo prend le dessus sur les brises à partir de
+35 km/h × (1 − 0,1 × (Γ − 6,5)), entre × 0,7 et × 1,4 : l'air stable laisse les vallées dans leur
+brise sous un vent fort en altitude. Le vent réglé à la main garde l'atmosphère standard (6,5 °C/km,
+facteurs neutres). Pentes : hypothèses d'ordre de grandeur. Le panneau de prévision affiche le
+gradient de l'heure et sa lecture.
+
 ## 6. Grandeurs dérivées
 
 - **Convergence** : divergence horizontale lissée du champ, convertie en vitesse verticale sur
@@ -227,7 +238,9 @@ géopotentiel) et hauteur de couche limite ECMWF IFS. Indicateurs :
 ## 8. Limites connues
 
 - Résolution 216 m : les petites combes et les effets de détail des décollages échappent au modèle.
-- Pas de dynamique : pas de fœhn, de ressauts, d'ondes, ni d'interaction stable/instable fine.
+- Pas de dynamique : pas de fœhn, de ressauts ni d'ondes ; la stabilité (mode prévision) ne règle que
+  la force des thermiques et la tenue des brises sous le vent d'altitude, pas encore le sous-le-vent
+  (nombre de Froude).
 - Les horaires de brise suivent une journée ensoleillée type ; nébulosité et humidité du sol ne
   sont pas prises en compte dans la simulation.
 - Déclenchement thermique : écart médian de −30 min sur les 58 débuts explicites, testés dans

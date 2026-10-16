@@ -16,6 +16,7 @@ import {
   noonElevation,
   rasterizeCurated,
   sunriseSolarHour,
+  stabilityFactors,
   sunSamples,
   thermalDecline,
   thermalOnset,
@@ -168,6 +169,18 @@ describe('thermal onset, face by face', () => {
     expect(at(1)).toBeGreaterThan(0.55); // February: ≈ 0.65, the breezes' factor gives ≈ 0.3
     expect(at(9)).toBeGreaterThan(at(1)); // October
     expect(at(11)).toBeLessThan(at(1)); // December, lowest sun
+  });
+  it('reads the stability of the air: thermal strength, breezes against the wind aloft', () => {
+    expect(stabilityFactors(undefined)).toEqual(stabilityFactors(6.5));
+    expect(stabilityFactors(6.5).thermal).toBe(1);
+    expect(stabilityFactors(4.5).thermal).toBeLessThan(0.7);
+    expect(stabilityFactors(8.5).thermal).toBeGreaterThan(1.2);
+    // Stable air keeps the valleys in their breeze under a stronger wind aloft.
+    expect(stabilityFactors(4.5).overrideKmh).toBeGreaterThan(stabilityFactors(8.5).overrideKmh);
+    const k = 30 * grid.width + 60;
+    const at = (lapseRate?: number) => evalCell(k, makeWindContext(terrain, computeTimeContext(terrain, params(14)), params(14, { lapseRate }), null), newCellResult()).thermal;
+    expect(at(4.5)).toBeLessThan(at());
+    expect(at(8.5)).toBeGreaterThan(at());
   });
   it('tears the thermals apart in the lee of a relief', () => {
     // North wind over the east–west valley: the slope facing south (row 30, north side)

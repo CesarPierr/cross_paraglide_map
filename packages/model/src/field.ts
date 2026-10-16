@@ -28,6 +28,23 @@ export interface ModelParams {
   breezeScale: number;
   /** Heatwave day: enables the breezes documented "par forte chaleur / canicule" (default off). */
   heatwave?: boolean;
+  /** Lapse rate between 850 and 700 hPa (K/km) from the forecast; standard atmosphere if absent (`stabilityFactors`). */
+  lapseRate?: number;
+}
+
+/**
+ * What the stability of the air (lapse rate 850–700 hPa, K/km) does to the model: thermal
+ * strength factor and synoptic speed (km/h) above which the wind aloft takes over the
+ * breezes. Neutral for the standard atmosphere. See `RULES.lapseStandard`. Shared with the GPU.
+ */
+export function stabilityFactors(lapseRate: number | undefined): { thermal: number; overrideKmh: number } {
+  const d = (lapseRate ?? RULES.lapseStandard) - RULES.lapseStandard;
+  const [t0, t1] = RULES.lapseThermalRange;
+  const [o0, o1] = RULES.lapseOverrideRange;
+  return {
+    thermal: clamp(1 + RULES.lapseThermal * d, t0, t1),
+    overrideKmh: RULES.synopticOverrideKmh * clamp(1 - RULES.lapseOverride * d, o0, o1),
+  };
 }
 
 /** Dominant curated breeze per cell, for one layer. */
@@ -429,6 +446,9 @@ export interface WindContext {
   g: [number, number];
   gSpeed: number;
   gKmh: number;
+  /** Stability of the air (`stabilityFactors`): thermal factor, wind (km/h) that overrides the breezes. */
+  instability: number;
+  overrideKmh: number;
   /** Upwind unit step in grid coordinates. */
   upI: number;
   upJ: number;
@@ -459,6 +479,8 @@ export function makeWindContext(terrain: Terrain, time: TimeContext, params: Mod
     g,
     gSpeed,
     gKmh: params.synoptic.speedKmh,
+    instability: stabilityFactors(params.lapseRate).thermal,
+    overrideKmh: stabilityFactors(params.lapseRate).overrideKmh,
     upI: Math.sin(r),
     upJ: -Math.cos(r),
   };
@@ -701,7 +723,7 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   out.synoptic[1] = cy * speedFactor - gy * rotor;
 
   // Breezes survive under weak synoptic wind, in deep valleys and in the lee.
-  let wb = clamp(1.2 - c.gKmh / RULES.synopticOverrideKmh, 0.15, 1);
+  let wb = clamp(1.2 - c.gKmh / c.overrideKmh, 0.15, 1);
   wb = Math.max(wb, clamp(0.6 * t.valley[k] * (1 - level), 0, 0.8), 0.7 * lee);
   out.breezeWeight = wb;
   out.breeze[0] = bx;
@@ -722,7 +744,7 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   const windF = 1 - 0.6 * smoothstep(20, 45, c.gKmh);
   const burial = coldPoolBurial(z - t.floor[k], t.env[k] - t.floor[k], c.time.nightFactor, c.gKmh);
   const dayF = thermalOnset(c.time.sunHours[k], burial) * c.time.thermalDecline;
-  out.thermal = t.water[k] ? 0 : clamp(drive * c.time.thermalSeason * elevF * convexF * windF * dayF, 0, 1);
+  out.thermal = t.water[k] ? 0 : clamp(drive * c.time.thermalSeason * c.instability * elevF * convexF * windF * dayF, 0, 1);
 
   out.turbulence = clamp(lee * smoothstep(8, 35, c.gKmh) + out.venturi * smoothstep(15, 45, c.gKmh) * 0.6, 0, 1);
 

@@ -13,14 +13,20 @@
           "coord_quality": "source",
           "best_hours": "après-midi (récit d'août : vol de 16 h à 18 h) ; en hiver sur vent météo de sud-ouest (récit du 29/12/2006)",
           "trigger": "crête rocheuse des Lances de Malissard, face sud-ouest / ouest chauffée l'après-midi ; le col de Bellefond est juste à l'est",
-          "description": "Relance au sud de la Dent de Crolles, sur la crête qui mène au Granier : on y arrive de la Dent par le col de Bellefond, ou bas depuis la Roche de Fitta et le col de Fontanieux, et on s'y refait avant de repartir vers la Dent ou le Granier. Trois récits concordent : en décembre 2006, avec un vent de sud-ouest établi, des pilotes partis du col de Bellefond cherchent « le thermique situé sur la face SW des Lances de Malissard » et le trouvent après une trentaine de minutes ; en août 2020, un pilote bas se refait grâce à « la convection en face ouest » puis enroule vers les lances sud, tandis qu'un autre se refait en face sud-ouest du col de Bellefont ; au printemps 2006, un pilote note un joli thermique au nord des Lances. Un commentaire de vol CFD de mars 2022 dit aussi que le thermique des Lances de Malissard monte bien tout en restant doux (extrait lu dans un moteur de recherche, page non ouverte). Le point chaud kk7 (flanc de 25° exposé au sud-ouest à 1798 m) est à 322 m du sommet de la lance sud (OSM) et à 478 m du col de Bellefont : il correspond à la « face SW » décrite ; le rapprochement reste une inférence puisque les textes ne donnent pas de coordonnées. Fiabilité : Les textes disent « face SW / face ouest des Lances », sans préciser quelle lance : le point chaud est sur la lance sud (322 m du sommet OSM). Heures d'été déduites de l'horaire du vol d'août 2020 ; l'heure du vol de décembre 2006 n'est pas donnée. Le commentaire CFD de 2022 n'a pas pu être relu sur la page.",
+          "description": "Relance au sud de la Dent de Crolles, sur la crête qui mène au Granier : on y arrive de la Dent par le col de Bellefond, ou bas depuis la Roche de Fitta et le col de Fontanieux, et l'on s'y refait avant de repartir vers la Dent ou le Granier. Le thermique se trouve sur la face sud-ouest, au-dessus du col de Bellefond.",
           "confidence": "medium",
           "sources": [
             "S1",
             "S2",
             "S3",
             "S4"
-          ]
+          ],
+          "possible": [
+            "Il est arrivé qu'avec un vent de sud-ouest établi, des vols partis du col de Bellefond trouvent ce thermique après une trentaine de minutes.",
+            "Il arrive qu'un vol bas se refasse grâce à la convection de la face ouest, puis enroule vers les lances sud.",
+            "Au printemps, un joli thermique peut se trouver au nord des Lances, et le thermique des Lances peut monter bien tout en restant doux."
+          ],
+          "note": "Position estimée : le point chaud mesuré sur les traces GPS, sur un flanc de 25° exposé au sud-ouest à 1798 m, est à 322 m du sommet de la lance sud et à 478 m du col de Bellefond ; les textes ne donnent pas de coordonnées et ne précisent pas quelle lance est visée. Les heures d'été sont déduites d'un vol d'août. Une source n'a pas pu être relue sur sa page."
         },
         {
           "id": "falaise-des-egaux-corbel",
@@ -31,13 +37,19 @@
           "coord_quality": "source",
           "best_hours": "après-midi (plein à 16 h 07 en avril ; reprise « au nord des Égaux » lors d'un vol de juillet)",
           "trigger": "petite falaise au-dessus du hameau des Égaux (Corbel), croupe exposée à l'ouest, avant le col des Égaux",
-          "description": "Relance intermédiaire de la Chartreuse nord, entre les falaises de la Pointe du Frou / Grande Sûre et le mont Outheran. Deux récits indépendants la décrivent : en avril 2021, le pilote qui se dirige vers la pointe de la Cochette « refait un petit plein » à mi-chemin sur la petite falaise du hameau des Égaux (16 h 07, 1600 m) ; en juillet 2023, une pilote partie de Jusson passe la Pointe du Frou, y trouve un thermique qui lui permet de dériver pendant la transition sur les Égaux, puis « reprend » au nord des Égaux jusqu'en haut de l'Outheran. Un fil de forum de 2023 mentionne aussi, vers le col des Égaux, un « thermique de la face » qui contre les pilotes arrivant de l'Outheran. Le hameau des Égaux (IGN) est à 464 m du point chaud kk7 (croupe de 29° exposée à l'ouest, 888 m), le col des Égaux à 486 m : l'identification se fait sur le toponyme ; les textes ne disent pas sur quelle face exactement. Fiabilité : Deux récits précis (avril 2021 et juillet 2023, tous deux l'après-midi) plus un message de forum plus vague ; le point chaud kk7 est annoncé « printemps, été, automne (rien en hiver) » et surtout midi et soir, ce qui concorde. Le récit de 2023 situe la reprise « au nord des Égaux » alors que le point chaud est à l'ouest-sud-ouest du hameau (464 m) ; le forum ne parle pas d'une montée utilisable, seulement d'un thermique qui gêne.",
+          "description": "Relance intermédiaire de la Chartreuse nord, entre les falaises de la Pointe du Frou et de la Grande Sûre et le mont Outheran. Plusieurs observations situent une relance sur la petite falaise du hameau des Égaux, à mi-chemin vers la pointe de la Cochette, et l'après-midi.",
           "confidence": "medium",
           "sources": [
             "S5",
             "S6",
             "S7"
-          ]
+          ],
+          "possible": [
+            "Il est arrivé qu'on refasse un petit plein à 1600 m, à mi-chemin sur la petite falaise, en se dirigeant vers la pointe de la Cochette.",
+            "Il arrive qu'un vol parti de Jusson passe la Pointe du Frou, trouve un thermique qui le fait dériver pendant la transition sur les Égaux, puis reprenne au nord des Égaux jusqu'en haut de l'Outheran.",
+            "Un thermique de la face peut gêner les pilotes arrivant de l'Outheran, vers le col des Égaux, sans permettre une montée utilisable."
+          ],
+          "note": "Position : le hameau des Égaux, identifié sur le toponyme ; le point chaud mesuré sur les traces GPS, croupe de 29° exposée à l'ouest à 888 m, est à 464 m du hameau et à 486 m du col des Égaux. Les textes ne précisent pas sur quelle face se fait la relance ; le point chaud indique le printemps, l'été et l'automne, surtout à midi et le soir, ce qui concorde."
         },
         {
           "id": "cochette-chartreuse-nord",
@@ -48,14 +60,19 @@
           "coord_quality": "source",
           "best_hours": null,
           "trigger": "croupe de la Cochette, exposée à l'ouest, entre le mont Outheran et la gorge du Guiers Vif (à ne pas confondre avec le col de la Cochette des Bauges, près de Bange)",
-          "description": "Point de passage et de relance de la face ouest nord de la Chartreuse, entre le mont Outheran et les montagnes du Guiers Vif / Guiers Mort (retour par la Grande Sûre). Récit de septembre 2026 : arrivé en haut de l'Outheran sans ascendance, face à une forte brise, le pilote « trouve finalement l'ascendance salvatrice sur la Cochette » et transite à 1800 m par-dessus la gorge du Guiers Vif. Trois autres textes confirment que la Cochette est le passage obligé du cheminement (« normalement il faut passer par la Cochette », 2012 ; transit vers la pointe de la Cochette en 2021) et que la relance y est parfois laborieuse : un pilote raconte avoir perdu plus d'une heure à « grenouiller à la croix de la Cochette » en avril 2016 pour raccrocher le Mont Grêle. Le point chaud kk7 est à 159 m de la Croix de la Cochette (OSM) : l'identification se fait sur le toponyme ; le récit ne précise pas sur quelle face de la Cochette on monte. Fiabilité : Deux textes décrivent une ascendance à la Cochette (septembre 2026 : trouvée ; avril 2016 : plus d'une heure de lutte), deux autres ne confirment que le passage. Aucune heure donnée. Le kk7 indique surtout le printemps (midi et soir), compatible avec le récit d'avril 2016.",
+          "description": "Point de passage et de relance de la face ouest nord de la Chartreuse, entre le mont Outheran et les montagnes du Guiers Vif et du Guiers Mort, en retour par la Grande Sûre. La Cochette est le passage obligé du cheminement.",
           "confidence": "medium",
           "sources": [
             "S8",
             "S9",
             "S10",
             "S11"
-          ]
+          ],
+          "possible": [
+            "Il arrive qu'en arrivant sans ascendance en haut de l'Outheran, face à une forte brise, on trouve l'ascendance salvatrice sur la Cochette, et qu'on transite à 1800 m par-dessus la gorge du Guiers Vif.",
+            "Il arrive que la relance soit laborieuse : un vol a pu tourner longtemps sur place à la croix de la Cochette, pendant plus d'une heure, pour raccrocher le Mont Grêle."
+          ],
+          "note": "Position : la croix de la Cochette, identifiée sur le toponyme ; le point chaud mesuré sur les traces GPS est à 159 m de cette croix. Le texte ne précise pas sur quelle face de la Cochette on monte ; deux textes décrivent une ascendance, deux autres ne confirment que le passage. Aucune heure n'est donnée ; les traces indiquent surtout le printemps, à midi et le soir, ce qui concorde avec la lutte décrite."
         }
       ]
     },
@@ -71,12 +88,17 @@
           "coord_quality": "source",
           "best_hours": "journée, quand la brise montante est bien installée ; en automne, quand la stabilité atteint les basses couches",
           "trigger": "falaises calcaires du rebord sud du désert de Platé (1800 à 2100 m), exposées au sud, au-dessus de Plaine-Joux ; la croupe sud du point chaud est au pied de la falaise",
-          "description": "Relais le long du rebord sud de Platé, sur la ligne Aiguillette des Houches – Pormenaz – Platé – Varan : le club CMBVL écrit que, depuis le décollage de Platé, « lorsque la brise montante est bien installée, il y a généralement des thermiques généreux à proximité des falaises », et qu'en automne « tu pourras facilement raccrocher des thermiques le long des falaises ». Un pilote qui décrit en 2007 le cheminement Planpraz – Aiguillette – Pormenaz – Varan conseille de « continuer jusqu'à la falaise de la pointe de Platé, qui remonte bien ». Le point chaud kk7 (croupe de 31° exposée au sud à 1773 m, 94 % le matin et 89 % à midi toute l'année) est à 130 m d'une falaise OSM (1809–1933 m) et à 654 m de la Cheminée de Platé ; la Pointe de Platé est à 1,2 km. Le rapprochement entre les falaises citées et ce point est une inférence : les deux textes parlent des falaises sans les situer plus précisément. Fiabilité : Les textes parlent des falaises de Platé en général (fiche de décollage et message de 2007) ; la distance de 130 m est celle de la falaise OSM la plus proche du point chaud, la Pointe de Platé étant à 1,2 km et le décollage de Platé à 1,4 km. Pas d'heure précise.",
+          "description": "Relais le long du rebord sud de Platé, sur la ligne Aiguillette des Houches – Pormenaz – Platé – Varan. Lorsque la brise montante est bien installée, il y a généralement des thermiques généreux à proximité des falaises, depuis le décollage de Platé.",
           "confidence": "medium",
           "sources": [
             "S12",
             "S13"
-          ]
+          ],
+          "possible": [
+            "En automne, il arrive qu'on raccroche facilement des thermiques le long des falaises.",
+            "Il arrive qu'on conseille, sur le cheminement de Planpraz à Varan, de continuer jusqu'à la falaise de la pointe de Platé, qui remonte bien."
+          ],
+          "note": "Position : le point chaud mesuré sur les traces GPS, croupe de 31° exposée au sud à 1773 m, est à 130 m d'une falaise (1809-1933 m) et à 654 m de la Cheminée de Platé ; la Pointe de Platé est à 1,2 km. Le rapprochement avec les falaises citées est une inférence, car les textes parlent des falaises sans les situer ; le point a 94 % des relevés le matin et 89 % à midi, toute l'année. Pas d'heure précise."
         },
         {
           "id": "moine-mer-de-glace-moraines",
@@ -87,12 +109,17 @@
           "coord_quality": "source",
           "best_hours": "après-midi (quand le versant de la Vallée Blanche est à l'ombre)",
           "trigger": "pentes, clapiers et moraines exposés à l'ouest sous l'Aiguille du Moine, au soleil l'après-midi alors que la Vallée Blanche est à l'ombre",
-          "description": "Solution de sauvetage et de relance pour les vols de l'Aiguille du Midi par la Vallée Blanche : un pilote chevronné explique que l'après-midi tout est à l'ombre côté Montenvers et qu'on descend vite ; « la solution est de traverser la Mer de Glace après avoir passé le refuge du Requin afin d'attraper les thermiques sur les moraines et les clapiers au soleil situés sous le Moine et les Flammes de Pierre ». Le point chaud kk7 (croupe exposée à l'ouest, 2989 m, 84 % à midi et 84 % le soir, été et automne) est à 377 m de l'Aiguille du Moine : il correspond à ce versant ensoleillé de l'après-midi ; le texte parle des moraines situées plus bas, le rapprochement est une inférence. L'auteur ne vole depuis l'Aiguille du Midi qu'à partir de septembre, à la fin de l'interdiction de juillet-août, ce qui est compatible avec les saisons kk7 (été et automne). Fiabilité : Deux messages d'une même pilote (2015 et 2018) dans deux fils différents ; ils décrivent des vols en configuration « rando » depuis l'Aiguille du Midi, avec des thermiques à une altitude plus basse que le point chaud (2989 m). Aucune heure précise hormis « l'après-midi ».",
+          "description": "Sur la rive droite de la Mer de Glace, sous l'Aiguille du Moine, des moraines et des clapiers exposés au soleil servent de relance aux vols de l'Aiguille du Midi par la Vallée Blanche, lorsque l'après-midi tout est à l'ombre côté Montenvers.",
           "confidence": "medium",
           "sources": [
             "S14",
             "S15"
-          ]
+          ],
+          "possible": [
+            "Il est conseillé de traverser la Mer de Glace après le refuge du Requin, pour attraper ces thermiques des moraines et des clapiers situés au soleil.",
+            "Il arrive que les vols depuis l'Aiguille du Midi se fassent en configuration de randonnée, avec des thermiques à une altitude plus basse que le point mesuré."
+          ],
+          "note": "Position : le point chaud mesuré sur les traces GPS, croupe exposée à l'ouest à 2989 m, est à 377 m de l'Aiguille du Moine ; il a 84 % des relevés à midi et 84 % le soir, en été et en automne. Le texte parle de moraines plus bas, ce qui fait du rapprochement une inférence. L'accès depuis l'Aiguille du Midi est interdit en juillet et en août, ce qui concorde avec les saisons du point chaud ; aucune heure précise, hormis l'après-midi."
         },
         {
           "id": "flammes-de-pierre-mer-de-glace-moraines",
@@ -103,12 +130,17 @@
           "coord_quality": "source",
           "best_hours": "après-midi (quand la Vallée Blanche et le Montenvers sont à l'ombre)",
           "trigger": "pentes et clapiers exposés au sud-ouest sous les Flammes de Pierre, face aux Drus, ensoleillés l'après-midi",
-          "description": "Même relance que sous l'Aiguille du Moine pour les vols de l'Aiguille du Midi : après le refuge du Requin, on traverse la Mer de Glace pour « attraper les thermiques sur les moraines et les clapiers au soleil situés sous le Moine et les Flammes de Pierre », et si c'est bon on peut aller jusqu'aux Drus, où le thermique est « costaud » mais mêlé de brise. Le point chaud kk7 (croupe exposée au sud-ouest, 2770 m, 80 % à midi et le soir, de printemps à automne) est à 166 m du Diamant des Flammes de Pierre et 373 m des Flammes de Pierre (OSM) ; le texte donne le nom du secteur mais pas de coordonnées, le rapprochement reste une inférence. Fiabilité : Deux messages d'une même pilote (2015 et 2018), partagés avec le point de l'Aiguille du Moine ; le texte situe les thermiques « sous » les Flammes de Pierre, donc plus bas que le point chaud (2770 m) ; aucune heure hormis « l'après-midi ».",
+          "description": "Sous les Flammes de Pierre, sur la rive droite de la Mer de Glace, des moraines et des clapiers exposés au soleil servent de relance aux vols de l'Aiguille du Midi.",
           "confidence": "medium",
           "sources": [
             "S16",
             "S17"
-          ]
+          ],
+          "possible": [
+            "Il est conseillé de traverser la Mer de Glace après le refuge du Requin pour atteindre ces thermiques.",
+            "Si c'est bon, on peut aller jusqu'aux Drus, où le thermique peut être costaud, mais mêlé de brise."
+          ],
+          "note": "Position : le point chaud mesuré sur les traces GPS, croupe exposée au sud-ouest à 2770 m, est à 166 m du Diamant des Flammes de Pierre et à 373 m des Flammes de Pierre ; le texte donne le nom du secteur sans coordonnées, et le rapprochement reste une inférence. Le point a 80 % des relevés à midi et le soir, de printemps à automne. Les textes situent les thermiques sous les Flammes de Pierre, donc plus bas que ce point ; aucune heure n'est donnée, hormis l'après-midi."
         }
       ]
     }

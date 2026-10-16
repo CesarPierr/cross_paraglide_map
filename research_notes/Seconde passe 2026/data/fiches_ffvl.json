@@ -34,12 +34,13 @@
               "coord_quality": "source"
             }
           ],
-          "description": "La fiche de Rustrel explique que le réchauffement du massif des Alpes entraîne une brise ouest-est provenant de la Méditerranée, canalisée par les Monts de Vaucluse au nord et le Luberon au sud (texte de la fiche tronqué à cet endroit). Tracé d'après les villes de la vallée du Calavon (Coustellet, Apt) jusqu'à Rustrel. Heure et force non précisées, la brise s'installe après la phase purement thermique de midi.",
+          "description": "Le réchauffement du massif des Alpes entraîne une brise ouest-est provenant de la Méditerranée, canalisée par les Monts de Vaucluse au nord et le Luberon au sud. Le tracé passe par les villes de la vallée du Calavon, Coustellet et Apt, jusqu'à Rustrel. La brise s'installe après la phase purement thermique de midi.",
           "confidence": "medium",
           "sources": [
             "S31",
             "S33"
-          ]
+          ],
+          "note": "Texte source tronqué à cet endroit ; heure et force non précisées."
         }
       ],
       "hazards": [
@@ -51,13 +52,14 @@
           "lat": 43.9413,
           "radius_km": 0.8,
           "coord_quality": "approx",
-          "description": "La fiche demande de respecter scrupuleusement l'interdiction de survol de la pente entre le décollage sud et le village de Rustrel (300 m/sol minimum) : site sensible, zone réglementée en sortie de déco, il ne faut pas survoler la pente avant 300 m de gain. Position approximative, au décollage sud.",
+          "description": "Il faut respecter scrupuleusement l'interdiction de survoler la pente entre le décollage sud et le village de Rustrel (300 m/sol minimum) : c'est un site sensible, une zone réglementée en sortie de décollage, et il ne faut pas survoler la pente avant 300 m de gain.",
           "confidence": "medium",
           "conditions": "toute l'année",
           "sources": [
             "S32",
             "S31"
-          ]
+          ],
+          "note": "Position approximative, au décollage."
         },
         {
           "id": "ffvl200-grou-de-bane-ligne",
@@ -67,7 +69,7 @@
           "lat": 44.0424,
           "radius_km": 0.4,
           "coord_quality": "approx",
-          "description": "La fiche signale à l'atterrissage de L'Orge un fossé et une ligne électrique, ainsi que les cultures à respecter.",
+          "description": "À l'atterrissage de L'Orge, il y a un fossé et une ligne électrique, ainsi que des cultures à respecter.",
           "confidence": "medium",
           "sources": [
             "S35",
@@ -82,11 +84,12 @@
           "lat": 44.0611,
           "radius_km": 0.8,
           "coord_quality": "approx",
-          "description": "La fiche mentionne une ligne THT au nord du décollage (à 700 m) et une autre au sud, en contrebas du déco, ainsi qu'un canal EDF à l'ouest, le survol de Malijai pour rejoindre l'atterrissage officiel et la proximité du centre de vol à voile de Saint-Auban. Terrain temporairement non praticable, site en test. Position approximative, au décollage.",
+          "description": "Une ligne THT passe au nord du décollage, à 700 m, et une autre au sud, en contrebas du décollage ; un canal EDF se trouve à l'ouest. Pour rejoindre l'atterrissage officiel, il faut survoler Malijai, et le centre de vol à voile de Saint-Auban est proche.",
           "confidence": "medium",
           "sources": [
             "S37"
-          ]
+          ],
+          "note": "Terrain temporairement non praticable ; site en test. Position approximative, au décollage."
         }
       ],
       "thermal_spots": [
@@ -99,12 +102,13 @@
           "coord_quality": "approx",
           "best_hours": "vers midi et début d'après-midi",
           "trigger": "ensoleillement du site après une matinée à l'ombre",
-          "description": "Selon l'aérologie de la fiche, le site est à l'ombre le matin ; l'ensoleillement se fait sentir vers midi et en début d'après-midi, ce qui permet un décollage en conditions « purement thermiques » avant que la brise ne s'installe. Position approximative, au décollage.",
+          "description": "Le site est à l'ombre le matin ; l'ensoleillement se fait sentir vers midi et en début d'après-midi, ce qui permet un décollage en conditions « purement thermiques » avant que la brise ne s'installe.",
           "confidence": "medium",
           "sources": [
             "S31",
             "S32"
-          ]
+          ],
+          "note": "Position approximative, au décollage."
         },
         {
           "id": "ffvl1305-contras-sud-convection",
@@ -115,11 +119,12 @@
           "coord_quality": "approx",
           "best_hours": "été",
           "trigger": "face sud de Lure",
-          "description": "La fiche précise qu'en été la convection peut être très puissante à Contras Sud, ce qui exige une grande prudence jusqu'à l'atterrissage. Le régime de brise est orienté sud à sud-sud-ouest ; vent de sud-est léger en dessous de 20 km/h. Aire de décollage réduite. Position approximative, au décollage.",
+          "description": "En été, la convection peut être très puissante à Contras Sud, ce qui exige une grande prudence jusqu'à l'atterrissage. Le régime de brise est orienté sud à sud-sud-ouest. Un vent de sud-est léger, en dessous de 20 km/h, est aussi signalé ; l'aire de décollage est réduite.",
           "confidence": "medium",
           "sources": [
             "S36"
-          ]
+          ],
+          "note": "Position approximative, au décollage."
         }
       ],
       "soaring_spots": [
@@ -134,11 +139,12 @@
             "SE",
             "S"
           ],
-          "description": "Selon la fiche, le décollage Est de Grou de Bane donne un « bon rendement même par vent modéré » et c'est l'un des endroits privilégiés pour les conditions de retour d'est dans les Alpes du Sud ; idéal par vent de sud à sud-est, vol déconseillé par vent de nord et d'ouest. Position approximative, au décollage.",
+          "description": "Le décollage Est de Grou de Bane donne un bon rendement, même par vent modéré. C'est l'un des endroits privilégiés pour les conditions de retour d'est dans les Alpes du Sud. Il est idéal par vent de sud à sud-est, et le vol est déconseillé par vent de nord et d'ouest.",
           "confidence": "medium",
           "sources": [
             "S34"
-          ]
+          ],
+          "note": "Position approximative, au décollage."
         }
       ],
       "takeoffs": [
@@ -153,7 +159,7 @@
             "SO",
             "O"
           ],
-          "description": "Décollage de Rustrel (Vaucluse) orienté sud-ouest à ouest. Le départ ouest demande une bonne maîtrise face voile et se montre turbulent avec une composante nord ; le départ sud est technique (petit, faible pente, aérologie souvent forte), en bordure de la zone réglementée. Atterrissage de Saint-Maurin, finesse 4, visible depuis le départ sud. Site à l'ombre le matin.",
+          "description": "Décollage de Rustrel (Vaucluse), orienté sud-ouest à ouest. Le départ ouest demande une bonne maîtrise face voile et se montre turbulent, avec une composante nord ; le départ sud est technique (petit, à faible pente, avec une aérologie souvent forte), en bordure de la zone réglementée. L'atterrissage de Saint-Maurin, de finesse 4, est visible depuis le départ sud. Le site est à l'ombre le matin.",
           "confidence": "medium",
           "sources": [
             "S31"
@@ -169,11 +175,12 @@
           "orientations": [
             "S"
           ],
-          "description": "Décollage sud de Rustrel, petit et plat, particulièrement technique : décollage en falaise délicat (relief et aérologie). Il permet de décoller tôt pour partir en cross. Terrain temporairement non praticable pour le vol libre selon la fiche (aménagements en cours).",
+          "description": "Décollage sud de Rustrel, petit et plat, particulièrement technique : le décollage en falaise est délicat, à cause du relief et de l'aérologie. Il permet de décoller tôt pour partir en cross.",
           "confidence": "medium",
           "sources": [
             "S32"
-          ]
+          ],
+          "note": "Terrain temporairement non praticable pour le vol libre (aménagements en cours)."
         }
       ]
     },
@@ -198,7 +205,7 @@
               "coord_quality": "source"
             }
           ],
-          "description": "La fiche de La Croix prévient que la « brise de pente » peut devenir très forte l'après-midi : elle monte la face ouest du Grand Colombier. Aucune heure précise ni vitesse chiffrée ; très forte est interprété ici comme 25 km/h typique (déduction). Tracé du pied de la pente (atterrissage de Colombier) à la crête.",
+          "description": "Au site de La Croix, la brise de pente peut devenir très forte l'après-midi : elle monte la face ouest du Grand Colombier. Le tracé va du pied de la pente, à l'atterrissage de Colombier, jusqu'à la crête.",
           "confidence": "medium",
           "hours": "après-midi",
           "speed_kmh": {
@@ -208,7 +215,8 @@
           "sources": [
             "S42",
             "S43"
-          ]
+          ],
+          "note": "Aucune heure précise ni vitesse chiffrée ; « très forte » est interprété ici comme 25 km/h typique (déduction)."
         },
         {
           "id": "ffvl1113-brise-pente-sapenay-belvedere",
@@ -228,12 +236,13 @@
               "coord_quality": "source"
             }
           ],
-          "description": "La fiche indique que le Belvédère est favorable « par régime de brise » avec un vent météo de secteur sud-ouest à nord-ouest, et facile l'après-midi à partir de 14h jusqu'à la tombée de la nuit par vent météo d'ouest. Tracé du pied de la pente (atterrissage de Bouilloux) à la crête : déduction.",
+          "description": "Le Belvédère est favorable par régime de brise, avec un vent météo de sud-ouest à nord-ouest. Il est facile l'après-midi, à partir de 14h jusqu'à la tombée de la nuit, par vent météo d'ouest.",
           "confidence": "low",
           "hours": "à partir de 14h jusqu'à la tombée de la nuit",
           "sources": [
             "S46"
-          ]
+          ],
+          "note": "Tracé du pied de la pente (atterrissage de Bouilloux) à la crête : déduction."
         }
       ],
       "hazards": [
@@ -245,7 +254,7 @@
           "lat": 45.6327,
           "radius_km": 2.0,
           "coord_quality": "approx",
-          "description": "Le site est sous les TMA 1 et 2 de Chambéry : altitude maximale 1000 m du vendredi matin au lundi 11h UTC lorsque la TMA est classée D, puis FL115 (environ 3500 m) lorsqu'elle est classée E, d'après la fiche. Le plafond est à peine 370 m au-dessus du décollage pendant les périodes classées D.",
+          "description": "Le site est sous les TMA 1 et 2 de Chambéry : l'altitude maximale est de 1000 m du vendredi matin au lundi 11h UTC lorsque la TMA est classée D, puis FL115 (environ 3500 m) lorsqu'elle est classée E. Le plafond n'est qu'à 370 m au-dessus du décollage pendant les périodes classées D.",
           "confidence": "medium",
           "conditions": "TMA classée D : du vendredi matin au lundi 11h UTC",
           "sources": [
@@ -260,7 +269,7 @@
           "lat": 45.6427,
           "radius_km": 0.8,
           "coord_quality": "approx",
-          "description": "La fiche attire l'attention sur les lignes à haute tension qui longent la nationale et passent près de l'atterrissage.",
+          "description": "Des lignes à haute tension longent la nationale et passent près de l'atterrissage.",
           "confidence": "medium",
           "sources": [
             "S39",
@@ -275,7 +284,7 @@
           "lat": 45.7392,
           "radius_km": 0.8,
           "coord_quality": "approx",
-          "description": "La fiche recommande, par vent fort, de se méfier des rouleaux du plateau situés sous le décollage.",
+          "description": "Par vent fort, il faut se méfier des rouleaux du plateau situés sous le décollage.",
           "confidence": "medium",
           "conditions": "vent fort",
           "sources": [
@@ -290,11 +299,12 @@
           "lat": 45.7392,
           "radius_km": 0.5,
           "coord_quality": "approx",
-          "description": "La fiche signale une ligne à haute tension au sud du décollage. Position approximative, au décollage.",
+          "description": "Une ligne à haute tension passe au sud du décollage.",
           "confidence": "medium",
           "sources": [
             "S40"
-          ]
+          ],
+          "note": "Position approximative, au décollage."
         },
         {
           "id": "ffvl311-parves-biotope-virignin",
@@ -304,12 +314,13 @@
           "lat": 45.7178,
           "radius_km": 1.5,
           "coord_quality": "approx",
-          "description": "Les falaises de Virignin sont en zone de protection de biotope : survol interdit à moins de 150 m du sol, toute l'année, d'après la fiche de la Montagne de Parves. Position approximative (commune de Virignin).",
+          "description": "Les falaises de Virignin sont en zone de protection de biotope : le survol est interdit à moins de 150 m du sol, toute l'année.",
           "confidence": "medium",
           "conditions": "toute l'année",
           "sources": [
             "S40"
-          ]
+          ],
+          "note": "Information du décollage de la Montagne de Parves ; position approximative (commune de Virignin)."
         },
         {
           "id": "ffvl13126-parves-atterro-ligne",
@@ -319,7 +330,7 @@
           "lat": 45.7473,
           "radius_km": 0.5,
           "coord_quality": "approx",
-          "description": "La fiche de l'atterrissage de Parves - Belley signale une ligne électrique à proximité.",
+          "description": "Une ligne électrique se trouve à proximité de l'atterrissage de Parves - Belley.",
           "confidence": "medium",
           "sources": [
             "S41",
@@ -334,12 +345,13 @@
           "lat": 45.8692,
           "radius_km": 1.0,
           "coord_quality": "approx",
-          "description": "Depuis le décollage du radiophare, la fiche de La Croix recommande d'éviter la zone sous le vent de la falaise de Chanduraz, et de longer plutôt le relief en direction du sud-est avant de dégager en plaine. Position approximative (hameau de Chanduraz).",
+          "description": "Depuis le décollage du radiophare, il faut éviter la zone sous le vent de la falaise de Chanduraz, comme le recommande le site de La Croix, et longer plutôt le relief en direction du sud-est avant de dégager en plaine.",
           "confidence": "medium",
           "sources": [
             "S43",
             "S42"
-          ]
+          ],
+          "note": "Position approximative (hameau de Chanduraz)."
         },
         {
           "id": "ffvl327-colombier-ligne-tht",
@@ -349,12 +361,13 @@
           "lat": 45.8944,
           "radius_km": 1.6,
           "coord_quality": "approx",
-          "description": "La fiche du radiophare signale une ligne très haute tension entre le radiophare et La Croix ; celle de La Croix cite aussi la TMA et une ligne haute tension. Position approximative (milieu du tronçon).",
+          "description": "Une ligne très haute tension passe entre le radiophare et La Croix. La TMA et une ligne haute tension sont aussi signalées sur ce tronçon.",
           "confidence": "medium",
           "sources": [
             "S43",
             "S42"
-          ]
+          ],
+          "note": "Position approximative (milieu du tronçon)."
         },
         {
           "id": "ffvl326-colombier-gain-interdit",
@@ -364,12 +377,13 @@
           "lat": 45.9074,
           "radius_km": 2.0,
           "coord_quality": "approx",
-          "description": "La fiche de La Croix indique qu'il est interdit de réaliser du gain (pas de convention FFVL) et celle du radiophare fixe l'altitude de vol maximale à 1530 m. Le site ne se prête pas au soaring ni aux ascendances.",
+          "description": "À La Croix, il est interdit de réaliser du gain d'altitude, et l'altitude de vol maximale est fixée à 1530 m. Le site ne se prête pas au soaring ni aux ascendances.",
           "confidence": "medium",
           "sources": [
             "S42",
             "S43"
-          ]
+          ],
+          "note": "Aucune convention FFVL pour ce gain."
         },
         {
           "id": "ffvl329-innimond-atterro-ligne",
@@ -379,11 +393,12 @@
           "lat": 45.7736,
           "radius_km": 0.5,
           "coord_quality": "approx",
-          "description": "La fiche signale à l'atterrissage une ligne électrique en approche côté relief, et un terrain pouvant être très humide. Position de l'atterrissage d'Innimond (fiche voisine).",
+          "description": "À l'atterrissage, une ligne électrique se trouve en approche, côté relief, et le terrain peut être très humide.",
           "confidence": "medium",
           "sources": [
             "S44"
-          ]
+          ],
+          "note": "Position de l'atterrissage d'Innimond, reprise d'un site voisin."
         },
         {
           "id": "ffvl701-glandieu-biotope",
@@ -393,12 +408,13 @@
           "lat": 45.6717,
           "radius_km": 1.0,
           "coord_quality": "approx",
-          "description": "La fiche rappelle l'arrêté de biotope du département de l'Ain : survol interdit à moins de 150 m du sol toute l'année. Position approximative, au décollage.",
+          "description": "L'arrêté de biotope du département de l'Ain interdit le survol à moins de 150 m du sol, toute l'année.",
           "confidence": "medium",
           "conditions": "toute l'année",
           "sources": [
             "S45"
-          ]
+          ],
+          "note": "Position approximative, au décollage."
         },
         {
           "id": "ffvl1113-sapenay-couloir-chambery",
@@ -408,14 +424,15 @@
           "lat": 45.8111,
           "radius_km": 2.0,
           "coord_quality": "approx",
-          "description": "Les sites de Sapenay sont sous l'axe final de l'aéroport de Chambéry - Aix-les-Bains : interdiction de gain d'altitude supérieur à 300 m au-dessus du décollage en période de charters pour le Belvédère, ne pas voler au-dessus de 320 m au-dessus du décollage pour Bouilloux ; Sapenay Nord est dans l'axe de descente vers la piste du Bourget (TMA de classe E). Lire les panneaux au décollage.",
+          "description": "Les sites de Sapenay sont sous l'axe final de l'aéroport de Chambéry - Aix-les-Bains. En période de charters, il est interdit de gagner plus de 300 m au-dessus du décollage pour le Belvédère, et il ne faut pas voler au-dessus de 320 m au-dessus du décollage pour Bouilloux. Sapenay Nord est dans l'axe de descente vers la piste du Bourget (TMA de classe E).",
           "confidence": "medium",
           "conditions": "période de charters (Belvédère)",
           "sources": [
             "S46",
             "S49",
             "S47"
-          ]
+          ],
+          "note": "Lire les panneaux au décollage."
         }
       ],
       "thermal_spots": [
@@ -427,11 +444,12 @@
           "alt_m": 633,
           "coord_quality": "approx",
           "trigger": "grande falaise devant le décollage",
-          "description": "La fiche met en garde contre de « forts thermiques » qui se déclenchent en avant, sur la grande falaise du décollage : le site fonctionne en brises thermiques ou par nord-ouest faible, et aussi par nord faible avec thermique. Position approximative, au décollage.",
+          "description": "Il faut se méfier de forts thermiques qui se déclenchent en avant, sur la grande falaise du décollage. Le site fonctionne en brises thermiques, par nord-ouest faible, et aussi par nord faible avec thermique.",
           "confidence": "medium",
           "sources": [
             "S38"
-          ]
+          ],
+          "note": "Position approximative, au décollage."
         },
         {
           "id": "ffvl13086-sapenay-nord-instabilite",
@@ -441,12 +459,13 @@
           "alt_m": 887,
           "coord_quality": "approx",
           "trigger": "faces sud-ouest de Sapenay Nord",
-          "description": "La fiche des décollages de Sapenay Nord (Peillat-Ducret et Guichon) donne comme aérologie « de sud à sud-ouest avec instabilité marquée » : conditions thermiques actives sur la pente. Position approximative, au décollage.",
+          "description": "À Sapenay Nord, l'aérologie est de sud à sud-ouest, avec une instabilité marquée : des conditions thermiques sont actives sur la pente.",
           "confidence": "medium",
           "sources": [
             "S47",
             "S48"
-          ]
+          ],
+          "note": "Position approximative, au décollage."
         },
         {
           "id": "ffvl1438-banchet-cumulus-plaine",
@@ -456,11 +475,12 @@
           "alt_m": 562,
           "coord_quality": "approx",
           "trigger": "chaîne de l'Épine, thermiques de plaine",
-          "description": "Pour le Banchet, la fiche décrit comme aérologie « nombreux cumulus en plaine et peu de vent » : situation thermique de plaine, à lire comme des ascendances actives (déduction). Position approximative, au décollage.",
+          "description": "Au Banchet, l'aérologie est faite de nombreux cumulus en plaine et de peu de vent : c'est une situation thermique de plaine.",
           "confidence": "low",
           "sources": [
             "S59"
-          ]
+          ],
+          "note": "À lire comme des ascendances actives (déduction) ; position approximative, au décollage."
         }
       ],
       "soaring_spots": [],
@@ -476,11 +496,12 @@
             "O",
             "NO"
           ],
-          "description": "Décollage en falaise orienté ouest à nord-ouest, très technique : course d'élan très courte et peu pentue, turbulent, déconseillé aux parapentes par conditions thermiques et ventées. Aérologie de la fiche : brises thermiques et/ou vent météo de nord-ouest faible, fonctionne aussi par nord faible avec thermique. Convention d'un an reconductible.",
+          "description": "Décollage en falaise orienté ouest à nord-ouest, très technique : la course d'élan est très courte et peu pentue, le décollage est turbulent, et il est déconseillé aux parapentes par conditions thermiques et ventées. Le site fonctionne en brises thermiques et/ou par vent météo de nord-ouest faible ; il fonctionne aussi par nord faible avec thermique.",
           "confidence": "medium",
           "sources": [
             "S38"
-          ]
+          ],
+          "note": "Convention d'un an reconductible."
         },
         {
           "id": "ffvl311-montagne-de-parves",
@@ -494,11 +515,12 @@
             "O",
             "NO"
           ],
-          "description": "Décollage orienté sud-ouest à nord-ouest, court, qui se termine par une petite falaise. Sous la TMA de Chambéry 2. Balise openwindmap PP1009.",
+          "description": "Décollage orienté sud-ouest à nord-ouest, court, qui se termine par une petite falaise. Il est sous la TMA de Chambéry 2.",
           "confidence": "medium",
           "sources": [
             "S40"
-          ]
+          ],
+          "note": "Balise openwindmap PP1009."
         },
         {
           "id": "ffvl326-colombier-la-croix",
@@ -510,11 +532,12 @@
           "orientations": [
             "O"
           ],
-          "description": "Décollage orienté ouest, sans convention FFVL (statut de la fiche), avec interdiction de réaliser du gain. Attention au vent et à la brise de pente, qui peut devenir très forte l'après-midi. Il est préférable de longer le relief en direction du sud-est avant de dégager en plaine. TMA et ligne haute tension.",
+          "description": "Décollage orienté ouest, avec interdiction de réaliser du gain. Attention au vent et à la brise de pente, qui peut devenir très forte l'après-midi. Il est préférable de longer le relief en direction du sud-est avant de dégager en plaine. La TMA et une ligne haute tension sont signalées.",
           "confidence": "medium",
           "sources": [
             "S42"
-          ]
+          ],
+          "note": "Sans convention FFVL."
         },
         {
           "id": "ffvl327-colombier-radiophare",
@@ -528,7 +551,7 @@
             "O",
             "NO"
           ],
-          "description": "Décollage orienté sud-ouest à nord-ouest, altitude de vol maximale 1530 m. Ligne très haute tension entre le radiophare et La Croix.",
+          "description": "Décollage orienté sud-ouest à nord-ouest. L'altitude de vol maximale est de 1530 m. Une ligne très haute tension passe entre le radiophare et La Croix.",
           "confidence": "medium",
           "sources": [
             "S43"
@@ -545,11 +568,12 @@
             "SO",
             "O"
           ],
-          "description": "Décollage exigu (25 x 30 m) orienté sud-ouest à ouest, qui se termine par une falaise. Délicat par vent nul, turbulent par vent de sud et de nord-ouest ; les conditions peuvent être fortes par rapport au faible dénivelé. Fermé pour la chasse du 15 octobre au 31 décembre.",
+          "description": "Décollage exigu (25 x 30 m) orienté sud-ouest à ouest, qui se termine par une falaise. Il est délicat par vent nul, turbulent par vent de sud et de nord-ouest ; les conditions peuvent être fortes par rapport au faible dénivelé.",
           "confidence": "medium",
           "sources": [
             "S45"
-          ]
+          ],
+          "note": "Fermé pour la chasse du 15 octobre au 31 décembre."
         }
       ]
     },
@@ -574,12 +598,13 @@
               "coord_quality": "source"
             }
           ],
-          "description": "La fiche du Mont Rachas Sud donne comme aérologie « brise de pente ou vent de S ou SE » ; la fiche de l'atterrissage voisin précise vent faible de sud, nord turbulent l'été en nord-ouest. Tracé du pied de la pente (atterrissage) à la crête du décollage. Ni heure, ni force n'est précisée.",
+          "description": "Au Mont Rachas Sud, l'aérologie est une brise de pente ou un vent de sud ou de sud-est. À l'atterrissage voisin, le vent est faible de sud ; en été, par vent de nord-ouest, le nord y est turbulent.",
           "confidence": "medium",
           "sources": [
             "S61",
             "S62"
-          ]
+          ],
+          "note": "Tracé du pied de la pente (atterrissage) à la crête du décollage. Ni heure ni force précisées."
         },
         {
           "id": "ffvl1745-brise-ouest-saint-jean",
@@ -599,12 +624,13 @@
               "coord_quality": "source"
             }
           ],
-          "description": "Les fiches du décollage et de l'atterrissage de Saint-Jean donnent comme aérologie une « brise d'ouest » qui porte le vol de pente. En fin de journée la brise diminue et une légère brise descendante s'installe. Heure et force non précisées.",
+          "description": "À Saint-Jean, l'aérologie est une brise d'ouest qui porte le vol de pente. En fin de journée, la brise diminue et une légère brise descendante s'installe.",
           "confidence": "medium",
           "sources": [
             "S66",
             "S67"
-          ]
+          ],
+          "note": "Heure et force non précisées."
         },
         {
           "id": "ffvl13236-brise-sud-rissas",
@@ -624,7 +650,7 @@
               "coord_quality": "source"
             }
           ],
-          "description": "La fiche de l'atterrissage du Rissas indique une « brise de 15-20 km/h » et/ou des thermiques ; celle du décollage une brise de sud. Tracé du pied de la pente à la crête (sud-ouest vers nord-est).",
+          "description": "Au Rissas, l'atterrissage indique une brise de 15 à 20 km/h et/ou des thermiques, et le décollage une brise de sud. Le tracé va du pied de la pente à la crête, du sud-ouest vers le nord-est.",
           "confidence": "medium",
           "speed_kmh": {
             "typical": 17,
@@ -645,7 +671,7 @@
           "lat": 44.487,
           "radius_km": 0.6,
           "coord_quality": "approx",
-          "description": "Le décollage sud est à finesse 6,25 de l'atterrissage, avec une ligne électrique et une rivière à franchir : ne pas trop attendre pour rentrer à l'atterrissage si l'on ne trouve pas de gain immédiat. Vignes avec piquets en fer au nord du terrain.",
+          "description": "Le décollage sud est à finesse 6,25 de l'atterrissage, avec une ligne électrique et une rivière à franchir : il ne faut pas trop attendre pour rentrer à l'atterrissage si l'on ne trouve pas de gain immédiat. Des vignes avec piquets en fer se trouvent au nord du terrain.",
           "confidence": "medium",
           "sources": [
             "S62",
@@ -660,7 +686,7 @@
           "lat": 44.487,
           "radius_km": 0.6,
           "coord_quality": "approx",
-          "description": "L'atterrissage dessert la Montagne de la Lance et le Mont Rachas : vent faible de sud ou de nord, turbulent l'été par vent de nord-ouest (note de la fiche).",
+          "description": "L'atterrissage dessert la Montagne de la Lance et le Mont Rachas. Le vent y est faible, de sud ou de nord, et il est turbulent l'été par vent de nord-ouest.",
           "confidence": "medium",
           "conditions": "été, vent de nord-ouest",
           "sources": [
@@ -675,12 +701,13 @@
           "lat": 44.1913,
           "radius_km": 1.0,
           "coord_quality": "approx",
-          "description": "Pour la fiche d'Arfuyen, le site est du matin, praticable en condition calme (moins de 20 km/h de vent de face), et devient très turbulent en conditions thermiques. Position approximative, au décollage.",
+          "description": "Le site est un site du matin, praticable en condition calme (moins de 20 km/h de vent de face), et il devient très turbulent en conditions thermiques.",
           "confidence": "medium",
           "conditions": "conditions thermiques (dès le milieu de journée)",
           "sources": [
             "S63"
-          ]
+          ],
+          "note": "Position approximative, au décollage."
         },
         {
           "id": "ffvl1524-arfuyen-atterro-turbulent",
@@ -690,7 +717,7 @@
           "lat": 44.1811,
           "radius_km": 0.6,
           "coord_quality": "approx",
-          "description": "Les fiches des deux atterrissages d'Arfuyen indiquent une aérologie compliquée en été et un terrain très turbulent en conditions thermiques.",
+          "description": "Aux deux atterrissages d'Arfuyen, l'aérologie est compliquée en été, et le terrain est très turbulent en conditions thermiques.",
           "confidence": "medium",
           "conditions": "conditions thermiques, été",
           "sources": [
@@ -707,7 +734,7 @@
           "lat": 44.0397,
           "radius_km": 0.6,
           "coord_quality": "approx",
-          "description": "Selon la fiche, l'atterrissage a un gradient très présent en fin de journée, à l'heure où la brise commence à diminuer et où le vol de pente est moins évident ; une légère brise descendante qui s'installe accentue le phénomène.",
+          "description": "L'atterrissage de Saint-Jean a un gradient très présent en fin de journée, à l'heure où la brise commence à diminuer et où le vol de pente est moins évident. Une légère brise descendante qui s'installe accentue le phénomène.",
           "confidence": "medium",
           "conditions": "fin de journée, brise qui diminue",
           "sources": [
@@ -723,11 +750,12 @@
           "lat": 44.1747,
           "radius_km": 1.0,
           "coord_quality": "approx",
-          "description": "La fiche déconseille d'entrer dans la combe de Fonfiole, dont les rochers génèrent une aérologie qui impose le respect ; on ne « tâte » cette aérologie qu'en bordure de la combe. Position approximative, sous le décollage nord.",
+          "description": "Il est déconseillé d'entrer dans la combe de Fonfiole : ses rochers génèrent une aérologie qui impose le respect, et l'on ne « tâte » cette aérologie qu'en bordure de la combe.",
           "confidence": "medium",
           "sources": [
             "S68"
-          ]
+          ],
+          "note": "Position approximative, sous le décollage nord."
         },
         {
           "id": "ffvl13470-seigneur-atterro-lignes",
@@ -737,7 +765,7 @@
           "lat": 44.0951,
           "radius_km": 0.5,
           "coord_quality": "approx",
-          "description": "La fiche de l'atterrissage des Grayaux signale, au sud du site, des lignes électriques en bord de la D1. Ne pas utiliser le terrain pendant les foins (juin à début juillet).",
+          "description": "À l'atterrissage des Grayaux, des lignes électriques bordent la D1, au sud du site. Il ne faut pas utiliser le terrain pendant les foins, de juin à début juillet.",
           "confidence": "medium",
           "sources": [
             "S75",
@@ -754,11 +782,12 @@
           "alt_m": 1162,
           "coord_quality": "approx",
           "trigger": "pente sud-ouest (restitution)",
-          "description": "La fiche décrit pour la Lance Sud un vent de secteur sud-ouest faible ou des conditions de brise « bien en restit de sud ouest » (restitution de la chaleur de la pente sud-ouest), sans intérêt l'hiver. Heure non précisée. Position approximative, au décollage.",
+          "description": "À la Lance Sud, le vent est de secteur sud-ouest, faible, ou ce sont des conditions de brise « bien en restit de sud ouest » : c'est la restitution de la chaleur de la pente sud-ouest. Le site n'a pas d'intérêt l'hiver.",
           "confidence": "medium",
           "sources": [
             "S60"
-          ]
+          ],
+          "note": "Heure non précisée ; position approximative, au décollage."
         },
         {
           "id": "ffvl13236-rissas-thermiques",
@@ -768,12 +797,13 @@
           "alt_m": 530,
           "coord_quality": "approx",
           "trigger": "pente sud du Rissas",
-          "description": "La fiche du Rissas donne comme aérologie « brise de sud et/ou thermiques » ; celle de l'atterrissage parle d'une brise de 15 à 20 km/h et/ou de thermiques. Position approximative, au décollage.",
+          "description": "Au Rissas, l'aérologie est une brise de sud et/ou des thermiques. À l'atterrissage, il est question d'une brise de 15 à 20 km/h et/ou de thermiques.",
           "confidence": "medium",
           "sources": [
             "S72",
             "S73"
-          ]
+          ],
+          "note": "Position approximative, au décollage."
         }
       ],
       "soaring_spots": [
@@ -787,12 +817,13 @@
             "O",
             "NO"
           ],
-          "description": "Selon la fiche de l'atterrissage, le vol de pente est porté par la brise d'ouest jusqu'à ce qu'elle diminue en fin de journée, ce qui rend le vol de pente moins évident. Position approximative, au décollage.",
+          "description": "Le vol de pente est porté par la brise d'ouest jusqu'à ce qu'elle diminue en fin de journée, ce qui rend le vol de pente moins évident.",
           "confidence": "medium",
           "sources": [
             "S66",
             "S67"
-          ]
+          ],
+          "note": "Position approximative, au décollage."
         },
         {
           "id": "ffvl13236-rissas-soaring",
@@ -804,12 +835,13 @@
             "S",
             "SO"
           ],
-          "description": "La fiche précise un vol en soaring en brise de sud, et thermiques, sur un dénivelé de 180 m. Position approximative, au décollage.",
+          "description": "Le vol en soaring se fait en brise de sud, et en thermiques, sur un dénivelé de 180 m.",
           "confidence": "medium",
           "sources": [
             "S72",
             "S73"
-          ]
+          ],
+          "note": "Position approximative, au décollage."
         }
       ],
       "takeoffs": [
@@ -824,7 +856,7 @@
             "S",
             "SO"
           ],
-          "description": "Décollage orienté sud à sud-ouest (Le Pègue). Aérologie de la fiche : vent de secteur sud-ouest faible ou condition de brise, « bien en restit de sud ouest », sans intérêt l'hiver. Clôtures et troupeaux de moutons à respecter.",
+          "description": "Décollage orienté sud à sud-ouest (Le Pègue). L'aérologie est un vent de secteur sud-ouest faible, ou une condition de brise « bien en restit de sud ouest », sans intérêt l'hiver. Il faut respecter les clôtures et les troupeaux de moutons.",
           "confidence": "medium",
           "sources": [
             "S60"
@@ -841,7 +873,7 @@
             "SE",
             "S"
           ],
-          "description": "Décollage orienté sud-est à sud, favorable en hiver, peu de rendement par vent de nord et peu utilisé. Il est souvent de travers droit, donc sous le vent des arbres. Un autre décollage plus haut permet de décoller au nord, mais le rendement est souvent décevant et il n'y a pas d'atterrissage côté nord. Déconseillé aux pilotes débutants non accompagnés.",
+          "description": "Décollage orienté sud-est à sud, favorable en hiver, mais avec peu de rendement par vent de nord, et peu utilisé. Il est souvent de travers droit, donc sous le vent des arbres. Un autre décollage, plus haut, permet de décoller au nord, mais le rendement y est souvent décevant, et il n'y a pas d'atterrissage côté nord. Il est déconseillé aux pilotes débutants non accompagnés.",
           "confidence": "medium",
           "sources": [
             "S61"
@@ -858,11 +890,12 @@
             "E",
             "SE"
           ],
-          "description": "Décollage du matin orienté est à sud-est, praticable uniquement en condition calme (moins de 20 km/h de vent de face) et très turbulent en conditions thermiques. Interdit en période de chasse. Zone R55AE d'Orange. Passer à l'atterrissage avant de monter pour repérer les cultures.",
+          "description": "Décollage du matin orienté est à sud-est, praticable uniquement en condition calme (moins de 20 km/h de vent de face), et très turbulent en conditions thermiques. Il faut passer à l'atterrissage avant de monter, pour repérer les cultures.",
           "confidence": "medium",
           "sources": [
             "S63"
-          ]
+          ],
+          "note": "Interdit en période de chasse. Zone R55AE d'Orange."
         },
         {
           "id": "ffvl1745-saint-jean-durfort",
@@ -875,7 +908,7 @@
             "O",
             "NO"
           ],
-          "description": "Décollage de Sault orienté ouest à nord-ouest, dans le parc naturel régional du Mont-Ventoux. Aérologie de la fiche : brise d'ouest. Site sensible : respecter les zones d'accès et de stationnement des panneaux ; interdiction de poser sur la falaise à droite du décollage.",
+          "description": "Décollage de Sault orienté ouest à nord-ouest, dans le parc naturel régional du Mont-Ventoux. L'aérologie est une brise d'ouest. C'est un site sensible : il faut respecter les zones d'accès et de stationnement des panneaux, et il est interdit de poser sur la falaise à droite du décollage.",
           "confidence": "medium",
           "sources": [
             "S66"
@@ -893,11 +926,12 @@
             "NE",
             "NO"
           ],
-          "description": "Décollage du sommet vers le nord (Mont Serein), orienté nord à nord-ouest. Atterrissage nord du Mont Serein interdit lorsque les sports d'hiver occupent l'espace. Versant nord : protection des lieux de nidification de l'aigle royal et du faucon pèlerin (conditions de vol vers Savoillan données dans la fiche, texte tronqué). Zone aérienne R71 (FL75, 2250 m maximum en semaine).",
+          "description": "Décollage du sommet vers le nord (Mont Serein), orienté nord à nord-ouest. L'atterrissage nord du Mont Serein est interdit lorsque les sports d'hiver occupent l'espace. Le versant nord est protégé pour les lieux de nidification de l'aigle royal et du faucon pèlerin. Zone aérienne R71 : FL75, 2250 m maximum en semaine.",
           "confidence": "medium",
           "sources": [
             "S68"
-          ]
+          ],
+          "note": "Conditions de vol vers Savoillan non reprises : texte source tronqué."
         },
         {
           "id": "ffvl1767-ventoux-sud-cretes",
@@ -910,11 +944,12 @@
             "SE",
             "S"
           ],
-          "description": "Décollage du sommet orienté sud-est à sud, de niveau confirmé ; activités commerciales soumises à autorisation du club gestionnaire (Fan de Lune). Zone aérienne R71 (FL75, 2250 m maximum en semaine). Voir le panneau sur le site.",
+          "description": "Décollage du sommet orienté sud-est à sud, de niveau confirmé. Les activités commerciales sont soumises à autorisation du club gestionnaire. La zone aérienne R71 est limitée à FL75, soit 2250 m maximum en semaine.",
           "confidence": "medium",
           "sources": [
             "S69"
-          ]
+          ],
+          "note": "Club gestionnaire : Fan de Lune. Consulter le panneau sur le site."
         },
         {
           "id": "ffvl13509-ventoux-sud-chapelle",
@@ -927,7 +962,7 @@
             "SE",
             "S"
           ],
-          "description": "Décollage du sommet orienté sud-est à sud, praticable par vent de sud et/ou sud-est ; fortement déconseillé par vent nul : préférer l'autre décollage sud (Les Crêtes) quand le vent est faible ou insuffisant. Zone aérienne R71 (FL75, 2250 m maximum en semaine).",
+          "description": "Décollage du sommet orienté sud-est à sud, praticable par vent de sud et/ou sud-est ; il est fortement déconseillé par vent nul. Quand le vent est faible ou insuffisant, il vaut mieux préférer l'autre décollage sud, Les Crêtes. La zone aérienne R71 est limitée à FL75, 2250 m maximum en semaine.",
           "confidence": "medium",
           "sources": [
             "S70"
@@ -944,11 +979,12 @@
             "S",
             "SO"
           ],
-          "description": "Décollage de 180 m de dénivelé, accessible à pied en 30 minutes, orienté sud à sud-ouest ; vol en soaring par brise de sud et thermiques. Respecter les propriétés privées et n'utiliser que les sentiers balisés (GR91). Club Dent'Ailes Free-Vol.",
+          "description": "Décollage de 180 m de dénivelé, accessible à pied en 30 minutes, orienté sud à sud-ouest ; le vol en soaring se fait par brise de sud et thermiques. Il faut respecter les propriétés privées et n'utiliser que les sentiers balisés (GR91).",
           "confidence": "medium",
           "sources": [
             "S72"
-          ]
+          ],
+          "note": "Club : Dent'Ailes Free-Vol."
         },
         {
           "id": "ffvl13469-le-seigneur",
@@ -961,7 +997,7 @@
             "NE",
             "E"
           ],
-          "description": "Décollage orienté nord-est à est (« site favorable en E et NE »), niveau débutant. Zone R71A de Salon (FL75 à FL195).",
+          "description": "Décollage orienté nord-est à est, de niveau débutant. Le site est favorable en est et nord-est. La zone R71A de Salon va de FL75 à FL195.",
           "confidence": "medium",
           "sources": [
             "S74"
@@ -980,14 +1016,18 @@
           "alt_m": 803,
           "coord_quality": "approx",
           "trigger": "falaise devant le décollage",
-          "description": "La fiche du Grand Ratz (décollage en falaise orienté ouest) demande de se méfier du fort thermique en sortie de déco, avec des rouleaux qui donnent du vent arrière au décollage. Position approximative, au décollage. Horaire : le club de Saint-Hilaire place l'activité des versants ouest de Chartreuse « après 15h/16h » ; un pilote local confirme un thermique fréquent l'après-midi vers 15h.",
+          "description": "Au Grand Ratz (décollage en falaise orienté ouest), il faut se méfier du fort thermique en sortie de décollage, avec des rouleaux qui donnent du vent arrière au décollage. À Saint-Hilaire, l'activité des versants ouest de Chartreuse commence après 15h/16h.",
           "confidence": "medium",
           "sources": [
             "S76",
             "S1",
             "S2"
           ],
-          "best_hours": "après-midi, vers 15h (faces ouest actives après 15h-16h)"
+          "best_hours": "après-midi, vers 15h (faces ouest actives après 15h-16h)",
+          "possible": [
+            "Il arrive qu'un thermique fréquent se forme l'après-midi, vers 15h."
+          ],
+          "note": "Position approximative, au décollage."
         },
         {
           "id": "ffvl13287-saint-hugues-declenchements",
@@ -997,7 +1037,7 @@
           "alt_m": 867,
           "coord_quality": "source",
           "trigger": "conditions thermiques installées au-dessus du fond de vallée",
-          "description": "La fiche de l'atterrissage de Saint-Hugues prévient qu'en conditions thermiques, malgré son apparente facilité, il faut l'aborder concentré : « des déclenchements thermiques se font dans tous les sens ». Aérologie : début et fin de journée plus calmes.",
+          "description": "À l'atterrissage de Saint-Hugues, en conditions thermiques, il faut l'aborder concentré, malgré son apparente facilité : des déclenchements thermiques se font dans tous les sens. L'aérologie est plus calme en début et en fin de journée.",
           "confidence": "medium",
           "sources": [
             "S77"
@@ -1026,7 +1066,7 @@
               "coord_quality": "source"
             }
           ],
-          "description": "La fiche de Solaure donne comme aérologie la « brise de pente du matin » avec un léger vent de sud : on vole par sud faible, thermiques ou brise de pente, et seulement en l'absence de la brise de la vallée du Diois, qui arrive de l'ouest et met le site sous le vent. Tracé du pied de la pente (atterrissage) au décollage.",
+          "description": "À Solaure, l'aérologie est la brise de pente du matin, avec un léger vent de sud : on vole par sud faible, en thermiques ou en brise de pente, et seulement en l'absence de la brise de la vallée du Diois, qui arrive de l'ouest et met le site sous le vent. Le tracé va du pied de la pente, à l'atterrissage, jusqu'au décollage.",
           "confidence": "medium",
           "hours": "matin",
           "sources": [
@@ -1044,7 +1084,7 @@
           "lat": 44.6575,
           "radius_km": 1.5,
           "coord_quality": "approx",
-          "description": "La fiche met en garde contre le renforcement du vent de sud, qui peut être brutal : par sud établi, le sud se renforce rapidement et arrive en travers gauche au décollage.",
+          "description": "Il faut se méfier du renforcement du vent de sud, qui peut être brutal : par sud établi, le sud se renforce rapidement et arrive en travers gauche au décollage.",
           "confidence": "medium",
           "conditions": "vent de sud établi",
           "sources": [
@@ -1059,7 +1099,7 @@
           "lat": 44.6575,
           "radius_km": 0.4,
           "coord_quality": "approx",
-          "description": "La fiche signale qu'une repose au décollage est possible, mais qu'il faut se méfier du rotor derrière le déco.",
+          "description": "Une repose au décollage est possible, mais il faut se méfier du rotor derrière le décollage.",
           "confidence": "medium",
           "sources": [
             "S78"
@@ -1073,13 +1113,14 @@
           "lat": 44.564,
           "radius_km": 2.5,
           "coord_quality": "approx",
-          "description": "Les fiches de Saint-Maurice - Les Antennes et des Plaines de Poët avertissent que par vent soutenu il se renforce à mesure qu'on se rapproche de la vallée du Rhône (et change de direction) : rester attentif ; pour un vol serein le vent maximal ne doit pas dépasser 25 km/h à la balise des plaines (4,3 km à l'ouest). Position approximative, au décollage de Saint-Maurice.",
+          "description": "Par vent soutenu, le vent se renforce à mesure qu'on se rapproche de la vallée du Rhône, et il change de direction : il faut rester attentif. Pour un vol serein, le vent maximal ne doit pas dépasser 25 km/h à la balise des plaines, à 4,3 km à l'ouest.",
           "confidence": "medium",
           "conditions": "vent soutenu, balise des plaines > 25 km/h",
           "sources": [
             "S80",
             "S79"
-          ]
+          ],
+          "note": "Position approximative, au décollage de Saint-Maurice - Les Antennes."
         }
       ],
       "thermal_spots": [
@@ -1092,11 +1133,12 @@
           "coord_quality": "approx",
           "best_hours": "matin (avant la brise de la Drôme)",
           "trigger": "face sud de Solaure",
-          "description": "Selon la fiche, on vole à Solaure par sud faible, thermiques ou brise de pente, ou un mélange des trois, essentiellement les matins ensoleillés, avant l'arrivée de la brise de la vallée du Diois. Position approximative, au décollage.",
+          "description": "On vole à Solaure par sud faible, en thermiques ou en brise de pente, ou par un mélange des trois, essentiellement les matins ensoleillés, avant l'arrivée de la brise de la vallée du Diois.",
           "confidence": "medium",
           "sources": [
             "S81"
-          ]
+          ],
+          "note": "Position approximative, au décollage."
         }
       ],
       "takeoffs": [
@@ -1112,7 +1154,7 @@
             "SO",
             "O"
           ],
-          "description": "Décollage orienté sud à ouest (La Roche-sur-Grane). Aérologie de la fiche : régime de sud-ouest ; balise idéale 14/25 km/h de sud-ouest. Travers gauche au décollage par sud établi. Espace aérien C au nord du site à partir de FL65 (environ 1900 m).",
+          "description": "Décollage orienté sud à ouest (La Roche-sur-Grane). L'aérologie est un régime de sud-ouest ; la balise idéale est de 14/25 km/h de sud-ouest. Par sud établi, le vent arrive en travers gauche au décollage. L'espace aérien C est au nord du site, à partir de FL65 (environ 1900 m).",
           "confidence": "medium",
           "sources": [
             "S78"
@@ -1129,7 +1171,7 @@
             "N",
             "NO"
           ],
-          "description": "Décollage toléré, non conventionné, orienté nord à nord-ouest (Eyzahut) : discrétion et respect demandés, pas d'atterrissage pour ce site. Le vent se renforce et change de direction à mesure qu'on se rapproche de la vallée du Rhône.",
+          "description": "Décollage toléré, non conventionné, orienté nord à nord-ouest (Eyzahut) : il faut de la discrétion et du respect, et il n'y a pas d'atterrissage pour ce site. Le vent se renforce et change de direction à mesure qu'on se rapproche de la vallée du Rhône.",
           "confidence": "medium",
           "sources": [
             "S79"
@@ -1148,11 +1190,12 @@
           "lat": 45.1545,
           "radius_km": 0.8,
           "coord_quality": "approx",
-          "description": "La fiche du décollage de Poisat (niveau confirmé, en cours d'élaboration) signale des lignes électriques à haute tension. Position approximative, au décollage.",
+          "description": "Des lignes électriques à haute tension sont signalées au décollage de Poisat.",
           "confidence": "medium",
           "sources": [
             "S83"
-          ]
+          ],
+          "note": "Niveau confirmé, site en cours d'élaboration. Position approximative, au décollage."
         }
       ]
     },
@@ -1167,13 +1210,14 @@
           "lat": 45.2482,
           "radius_km": 2.0,
           "coord_quality": "approx",
-          "description": "Les fiches du Grand Jeu et de l'Angle Bellecôte signalent un effet de foehn par vent de sud fort et un décollage sous le vent par vent de secteur ouest à nord-est (nord-ouest à nord-est pour Bellecôte) ; attention aussi par vent météo supérieur à 25 km/h. Position approximative, au Grand Jeu.",
+          "description": "Au Grand Jeu et à l'Angle Bellecôte, un vent de sud fort donne un effet de foehn, et un décollage est sous le vent par vent de secteur ouest à nord-est (nord-ouest à nord-est pour Bellecôte). Il faut aussi être attentif au vent météo supérieur à 25 km/h.",
           "confidence": "medium",
           "conditions": "vent de sud fort",
           "sources": [
             "S84",
             "S85"
-          ]
+          ],
+          "note": "Position approximative, au Grand Jeu."
         }
       ],
       "thermal_spots": [
@@ -1186,12 +1230,13 @@
           "coord_quality": "approx",
           "best_hours": "en été à partir de 11h (plus tôt par vent de nord)",
           "trigger": "pentes d'Aussois (Grand Jeu, Angle Bellecôte)",
-          "description": "Les fiches d'Aussois (Sommet du Grand Jeu et Angle Bellecôte) indiquent un vent de vallée et une activité thermique forte en été à partir de 11h, plus tôt si le vent météo est de nord. Le décollage est fortement déconseillé en été l'après-midi : conditions de vol très turbulentes. Position approximative, au Grand Jeu. Audit d'octobre 2026 : le thermique des pentes d'Aussois mesuré par les traces GPS (96 %) est 560 m au sud du Grand Jeu : voir `aussois-grand-jeu-pentes-sud`.",
+          "description": "À Aussois (Sommet du Grand Jeu et Angle Bellecôte), le vent de vallée et une activité thermique forte se font sentir en été à partir de 11h, plus tôt si le vent météo est de nord. Le décollage est fortement déconseillé en été l'après-midi : les conditions de vol sont très turbulentes.",
           "confidence": "medium",
           "sources": [
             "S84",
             "S85"
-          ]
+          ],
+          "note": "Position approximative, au Grand Jeu. Une mesure par traces GPS (96 %) situe le thermique des pentes d'Aussois à 560 m au sud du Grand Jeu : voir l'entrée aussois-grand-jeu-pentes-sud."
         }
       ]
     },
@@ -1206,7 +1251,7 @@
           "lat": 45.6578,
           "radius_km": 0.6,
           "coord_quality": "approx",
-          "description": "La fiche du décollage de Plan des Languots précise que l'atterrissage est en agglomération : il faut quitter le relief suffisamment tôt pour survoler les lignes électriques avec une marge confortable. Le terrain est étroit (28 m de large pour les deltas).",
+          "description": "L'atterrissage de Plan des Languots est en agglomération : il faut quitter le relief suffisamment tôt pour survoler les lignes électriques avec une marge confortable. Le terrain est étroit, 28 m de large pour les deltas.",
           "confidence": "medium",
           "sources": [
             "S88",
@@ -1221,7 +1266,7 @@
           "lat": 45.6578,
           "radius_km": 0.6,
           "coord_quality": "approx",
-          "description": "La fiche de l'atterrissage de Plan des Languots dit qu'il est facile par sud-ouest ou nord-est, mais sensible et turbulent par brise et déconseillé par vent de nord fort. La fiche du décollage interdit de voler par vent de nord ou brise de vallée installée dans la vallée de la Tamié.",
+          "description": "L'atterrissage de Plan des Languots est facile par sud-ouest ou nord-est, mais sensible et turbulent par brise, et déconseillé par vent de nord fort. Le décollage interdit de voler par vent de nord ou par brise de vallée installée dans la vallée de la Tamié.",
           "confidence": "medium",
           "conditions": "brise installée, vent de nord fort",
           "sources": [
@@ -1240,7 +1285,7 @@
           "coord_quality": "source",
           "best_hours": "milieu de journée",
           "trigger": "fond de vallée du Molliet",
-          "description": "La fiche de l'atterrissage du Molliet prévient d'être attentif lors des déclenchements thermiques en milieu de journée ; le vent n'y est pas toujours bien établi et l'atterrissage n'est pas visible du décollage de Val Pelouse.",
+          "description": "À l'atterrissage du Molliet, il faut être attentif lors des déclenchements thermiques en milieu de journée ; le vent n'y est pas toujours bien établi. L'atterrissage n'est pas visible du décollage de Val Pelouse.",
           "confidence": "medium",
           "sources": [
             "S86",
@@ -1260,12 +1305,13 @@
           "lat": 43.6412,
           "radius_km": 1.5,
           "coord_quality": "approx",
-          "description": "Les fiches de Bargemon (décollage de la table d'orientation et atterrissage du Col du Bel Homme) demandent de ne pas survoler le camp de Canjuers, situé en bordure de l'atterrissage au nord ; vérifier les NOTAM sur le site du club. Atterrissage non visible du décollage : en cas de perte d'altitude, se poser au sud du village. Position approximative, à l'atterrissage.",
+          "description": "À Bargemon (décollage de la table d'orientation et atterrissage du Col du Bel Homme), il ne faut pas survoler le camp de Canjuers, situé en bordure de l'atterrissage au nord. L'atterrissage n'est pas visible du décollage : en cas de perte d'altitude, il faut se poser au sud du village.",
           "confidence": "medium",
           "sources": [
             "S91",
             "S90"
-          ]
+          ],
+          "note": "Vérifier les NOTAM sur le site du club. Position approximative, à l'atterrissage."
         },
         {
           "id": "ffvl5027-puet-gradient-sortie",
@@ -1275,12 +1321,13 @@
           "lat": 43.7101,
           "radius_km": 0.5,
           "coord_quality": "approx",
-          "description": "La fiche du Puet signale un gradient en sortie de décollage par tendance ouest, sur la partie droite en décollant ; le site est dangereux par vent de nord et ne convient pas à un pilote débutant sans guidage. Position approximative, au décollage.",
+          "description": "Au Puet, un gradient apparaît en sortie de décollage par tendance ouest, sur la partie droite en décollant. Le site est dangereux par vent de nord et ne convient pas aux débutants sans guidage.",
           "confidence": "medium",
           "conditions": "tendance ouest",
           "sources": [
             "S92"
-          ]
+          ],
+          "note": "Position approximative, au décollage."
         },
         {
           "id": "ffvl5321-sainte-luce-gradient",
@@ -1290,7 +1337,7 @@
           "lat": 43.7026,
           "radius_km": 0.5,
           "coord_quality": "approx",
-          "description": "Selon la fiche, la zone d'atterrissage est très courte, avec la chapelle en entrée de terrain (approche par vent d'ouest, gradient assez marqué) ou en fin de terrain (approche par vent d'est) ; demander conseil aux membres du club présents. L'atterrissage du Grand Pré voisin est interdit.",
+          "description": "La zone d'atterrissage est très courte, avec la chapelle en entrée de terrain (approche par vent d'ouest, gradient assez marqué) ou en fin de terrain (approche par vent d'est). Il faut demander conseil aux membres du club présents. L'atterrissage du Grand Pré voisin est interdit.",
           "confidence": "medium",
           "conditions": "approche par vent d'ouest",
           "sources": [
@@ -1309,11 +1356,12 @@
           "coord_quality": "approx",
           "best_hours": "plein été",
           "trigger": "versant sud-est de Bargemon",
-          "description": "La fiche de la table d'orientation de Bargemon précise qu'en plein été les thermiques peuvent être très puissants (décollage orienté sud-est à sud, sans autre précision d'heure). Position approximative, au décollage.",
+          "description": "En plein été, les thermiques peuvent être très puissants, au décollage de la table d'orientation de Bargemon, orienté sud-est à sud, sans autre précision d'heure.",
           "confidence": "medium",
           "sources": [
             "S90"
-          ]
+          ],
+          "note": "Position approximative, au décollage."
         }
       ]
     },
@@ -1328,12 +1376,13 @@
           "lat": 45.4785,
           "radius_km": 1.5,
           "coord_quality": "approx",
-          "description": "La fiche de l'atterrissage des Avanchers (Valmorel) indique que le vent de nord est favorable, mais que l'ouest et le sud-ouest sont dangereux dans cette vallée car ils s'opposent au sens de la brise ; soutenus, ils peuvent couler dans la vallée, créer de l'onde et rendre l'atterrissage très dangereux. Atterrissage bordé d'une route de chaque côté, léger dévers.",
+          "description": "À l'atterrissage des Avanchers (Valmorel), le vent de nord est favorable, mais l'ouest et le sud-ouest sont dangereux dans cette vallée, car ils s'opposent au sens de la brise. Soutenus, ils peuvent couler dans la vallée, créer de l'onde et rendre l'atterrissage très dangereux.",
           "confidence": "medium",
           "conditions": "vent d'ouest ou de sud-ouest soutenu",
           "sources": [
             "S94"
-          ]
+          ],
+          "note": "Atterrissage bordé d'une route de chaque côté, léger dévers."
         }
       ]
     },
@@ -1364,14 +1413,15 @@
               "coord_quality": "source"
             }
           ],
-          "description": "La fiche de la Marquise Ouest recommande l'après-midi, « une fois le catabatique inexistant » : un flux catabatique descendant existe donc le matin et cesse avant l'après-midi, ce que confirment les fiches des atterrissages (vent légèrement descendant par catabatique). Heure de fin et vitesse non précisées. Tracé du décollage vers les atterrissages de Sainte-Foy.",
+          "description": "Le décollage de la Marquise Ouest est recommandé l'après-midi, une fois le catabatique inexistant. Un flux catabatique descendant existe donc le matin et cesse avant l'après-midi, ce que confirment les atterrissages (vent légèrement descendant par catabatique). Le tracé va du décollage vers les atterrissages de Sainte-Foy.",
           "confidence": "medium",
           "hours": "matin (cesse avant l'après-midi)",
           "sources": [
             "S95",
             "S96",
             "S97"
-          ]
+          ],
+          "note": "Heure de fin et vitesse non précisées."
         }
       ],
       "thermal_spots": [
@@ -1384,7 +1434,7 @@
           "coord_quality": "source",
           "best_hours": "printemps (après-midi)",
           "trigger": "brise soutenue de printemps au-dessus du fond de vallée",
-          "description": "La fiche de l'atterrissage du Bochet bas indique que l'atterrissage peut être délicat avec un vent fort, ou une brise soutenue avec des ascendances thermiques au printemps ; la fiche de la Marquise Ouest conseille, par brise au printemps ou vent météo d'ouest, l'après-midi.",
+          "description": "L'atterrissage du Bochet bas peut être délicat avec un vent fort, ou avec une brise soutenue et des ascendances thermiques au printemps. À la Marquise Ouest, l'après-midi est conseillé par brise au printemps ou par vent météo d'ouest.",
           "confidence": "medium",
           "sources": [
             "S97",
@@ -1400,11 +1450,12 @@
           "coord_quality": "source",
           "best_hours": "été, quelquefois à partir de 11h",
           "trigger": "proximité de la ville de Bourg-Saint-Maurice",
-          "description": "La fiche de La Gare indique un terrain d'atterrissage thermique en été, quelquefois à partir de 11h, à cause de la proximité de la ville et d'une brise forte ; une confluence peut durer très tard. La fiche l'ouvre seulement du 1er juillet au 31 août (statut FFVL par ailleurs affiché comme interdit).",
+          "description": "Le terrain de La Gare est un terrain d'atterrissage thermique en été, quelquefois à partir de 11h, à cause de la proximité de la ville et d'une brise forte ; une confluence peut durer très tard. Il n'est ouvert que du 1er juillet au 31 août.",
           "confidence": "medium",
           "sources": [
             "S98"
-          ]
+          ],
+          "note": "Statut par ailleurs affiché comme interdit."
         }
       ]
     },
@@ -1420,7 +1471,7 @@
           "coord_quality": "source",
           "best_hours": "pleine journée",
           "trigger": "pentes au-dessus du terrain, thermiques de fond de vallée",
-          "description": "La fiche de l'atterrissage des Flocons Verts dit qu'il peut être turbulent en pleine journée en cas de thermiques ; dans ce cas atterrir vers le haut du terrain ou à Araches. Terrain en pente descendante, conditions favorables face à la brise. Celle d'Araches note aussi un atterrissage turbulent l'après-midi.",
+          "description": "À l'atterrissage des Flocons Verts, il peut être turbulent en pleine journée en cas de thermiques : il vaut mieux alors atterrir vers le haut du terrain ou à Araches. Le terrain est en pente descendante, avec des conditions favorables face à la brise. L'atterrissage d'Araches est aussi signalé turbulent l'après-midi.",
           "confidence": "medium",
           "sources": [
             "S99",
@@ -1441,12 +1492,13 @@
           "alt_m": 755,
           "coord_quality": "source",
           "trigger": "pente d'herbe orientée nord-ouest au-dessus des gorges du Nan",
-          "description": "La fiche de La Lia (décollage en pente d'herbe bordé de grands arbres, orienté nord-ouest) donne comme aérologie « nord-ouest et thermique » : le site marche par vent de nord-ouest avec du thermique. Le survol des gorges du Nan à basse altitude peut être turbulent. Position approximative, au décollage. Audit d'octobre 2026 : position vérifiée, c'est celle de la fiche FFVL du décollage (terrain IGN à 751 m pour 755 m déclarés à La Lia ; 1357 m pour 1350 m au Pas de l'Âne) ; aucun point chaud kk7 à moins de 1,3 km (La Lia) et 3,5 km (Pas de l'Âne) : la zone des gorges du Nan et du cirque de Malleval est peu volée.",
+          "description": "Le décollage de La Lia est en pente d'herbe bordée de grands arbres, orienté nord-ouest. Le site marche par vent de nord-ouest avec du thermique. Le survol des gorges du Nan à basse altitude peut être turbulent.",
           "confidence": "medium",
           "sources": [
             "S102",
             "S103"
-          ]
+          ],
+          "note": "Position approximative, au décollage. Position vérifiée : terrain IGN à 751 m pour 755 m déclarés (Pas de l'Âne : 1357 m pour 1350 m). Aucun point chaud kk7 à moins de 1,3 km (Pas de l'Âne : 3,5 km) ; la zone des gorges du Nan et du cirque de Malleval est peu volée."
         },
         {
           "id": "ffvl1039-alevoux-atterro-declenchements",
@@ -1456,7 +1508,7 @@
           "alt_m": 359,
           "coord_quality": "source",
           "trigger": "champ entouré de noyeraies",
-          "description": "La fiche de l'atterrissage de L'Alevoux signale que le terrain est sujet à des déclenchements thermiques très turbulents en approche finale (léger nord ; tolérance très précaire, champ entouré de noyeraies).",
+          "description": "À L'Alevoux, le terrain est sujet à des déclenchements thermiques très turbulents en approche finale, par léger nord. La tolérance est très précaire : le champ est entouré de noyeraies.",
           "confidence": "medium",
           "sources": [
             "S104",
@@ -1471,12 +1523,13 @@
           "alt_m": 1350,
           "coord_quality": "source",
           "trigger": "falaise du Pas de l'Âne",
-          "description": "La fiche du Pas de l'Âne donne comme aérologie « conditions thermiques et léger vent du nord » : décollage en falaise très bien alimenté par vent de nord, turbulences fortes dans le cirque de Malleval pour l'atterrissage par vent soutenu. Position approximative, au décollage. Audit d'octobre 2026 : position vérifiée, c'est celle de la fiche FFVL du décollage (terrain IGN à 751 m pour 755 m déclarés à La Lia ; 1357 m pour 1350 m au Pas de l'Âne) ; aucun point chaud kk7 à moins de 1,3 km (La Lia) et 3,5 km (Pas de l'Âne) : la zone des gorges du Nan et du cirque de Malleval est peu volée.",
+          "description": "Au Pas de l'Âne, l'aérologie est faite de conditions thermiques et d'un léger vent du nord. Le décollage en falaise est très bien alimenté par vent de nord, et les turbulences sont fortes dans le cirque de Malleval pour l'atterrissage par vent soutenu.",
           "confidence": "medium",
           "sources": [
             "S106",
             "S107"
-          ]
+          ],
+          "note": "Position approximative, au décollage. Position vérifiée : terrain IGN à 1357 m pour 1350 m déclarés (La Lia : 751 m pour 755 m). Aucun point chaud kk7 à moins de 3,5 km (La Lia : 1,3 km) ; la zone des gorges du Nan et du cirque de Malleval est peu volée."
         }
       ]
     },
@@ -1491,13 +1544,14 @@
           "lat": 44.5937,
           "radius_km": 1.0,
           "coord_quality": "approx",
-          "description": "Les fiches des Ballons et de l'atterrissage des Césaris signalent une ligne THT de 220 000 V un peu plus bas sur la montagne, loin sous le décollage ; la fiche de Serre Michèle mentionne des rotations d'hélicoptères (NOTAM) pour la construction de ces lignes. Position approximative, aux Ballons.",
+          "description": "Une ligne THT de 220 000 V passe un peu plus bas sur la montagne, loin sous le décollage des Ballons et de l'atterrissage des Césaris. Des rotations d'hélicoptères (NOTAM) sont signalées à Serre Michèle pour la construction de ces lignes.",
           "confidence": "medium",
           "sources": [
             "S108",
             "S109",
             "S110"
-          ]
+          ],
+          "note": "Position approximative, aux Ballons."
         }
       ]
     },
@@ -1512,12 +1566,13 @@
           "lat": 44.6244,
           "radius_km": 0.5,
           "coord_quality": "approx",
-          "description": "La fiche de l'atterrissage des Gorges signale des lignes électriques à proximité, en plus d'un relief irrégulier et d'un terrain non nettoyé. Site interdit du 1er juin au 15 novembre.",
+          "description": "À l'atterrissage des Gorges, il y a des lignes électriques à proximité, en plus d'un relief irrégulier et d'un terrain non nettoyé.",
           "confidence": "medium",
           "sources": [
             "S111",
             "S112"
-          ]
+          ],
+          "note": "Site interdit du 1er juin au 15 novembre."
         }
       ],
       "thermal_spots": [
@@ -1529,12 +1584,13 @@
           "alt_m": 1350,
           "coord_quality": "source",
           "trigger": "terrain en légère pente à l'atterrissage",
-          "description": "La fiche du nouvel atterrissage des Gorges (site en cours d'aménagement, repérage conseillé) mentionne, comme aérologie, la possibilité de déclenchement thermique ; terrain en légère pente, relief irrégulier. Interdit du 1er juin au 15 novembre comme le Puy de Manse.",
+          "description": "Au nouvel atterrissage des Gorges, l'aérologie comprend la possibilité de déclenchements thermiques. Le terrain est en légère pente, avec un relief irrégulier.",
           "confidence": "medium",
           "sources": [
             "S111",
             "S112"
-          ]
+          ],
+          "note": "Site en cours d'aménagement, repérage conseillé ; interdit du 1er juin au 15 novembre, comme le Puy de Manse."
         }
       ]
     },
@@ -1550,11 +1606,12 @@
           "coord_quality": "approx",
           "best_hours": "le matin",
           "trigger": "de l'autre côté de la crête de Cuberselle",
-          "description": "La fiche de Cuberselle précise que le matin le décollage est légèrement sous le vent d'un thermique qui se forme de l'autre côté de la crête ; décollage S/SO en brise, au bout de la crête, quasiment en falaise. Position approximative, au décollage (le thermique est de l'autre côté de la crête).",
+          "description": "Le matin, le décollage de Cuberselle est légèrement sous le vent d'un thermique qui se forme de l'autre côté de la crête. Le décollage, orienté sud à sud-ouest, se fait en brise, au bout de la crête, quasiment en falaise.",
           "confidence": "medium",
           "sources": [
             "S113"
-          ]
+          ],
+          "note": "Position approximative, au décollage (le thermique est de l'autre côté de la crête)."
         }
       ]
     },
@@ -1569,7 +1626,7 @@
           "lat": 43.8334,
           "radius_km": 0.5,
           "coord_quality": "approx",
-          "description": "La fiche de l'atterrissage de la Reine Jeanne signale qu'il se trouve le long d'une ligne électrique ; c'est le seul atterrissage autorisé de la vallée, après une longue transition (Saint-Clair est interdit). Ne pas se vacher dans les champs ni les prés ; en cas de posé obligatoire, sortir immédiatement du champ pour plier.",
+          "description": "L'atterrissage de la Reine Jeanne se trouve le long d'une ligne électrique. C'est le seul atterrissage autorisé de la vallée, après une longue transition ; Saint-Clair est interdit. Il ne faut pas se vacher dans les champs ni les prés. En cas de posé obligatoire, il faut sortir immédiatement du champ pour plier.",
           "confidence": "medium",
           "sources": [
             "S114",
@@ -1599,11 +1656,12 @@
               "coord_quality": "source"
             }
           ],
-          "description": "La fiche du Col de Tende indique comme aérologie « sud avec flux de brise de vallée » et prévient qu'il faut atterrir avant que la brise de vallée devienne trop forte ; elle prolonge vers le col la brise de la Roya déjà décrite jusqu'à Tende. Pas d'heure ni de force chiffrées.",
+          "description": "Au Col de Tende, l'aérologie est un sud avec flux de brise de vallée. Il faut atterrir avant que la brise de vallée devienne trop forte. La brise de la Roya, décrite jusqu'à Tende, se prolonge vers le col.",
           "confidence": "medium",
           "sources": [
             "S118"
-          ]
+          ],
+          "note": "Pas d'heure ni de force chiffrées."
         }
       ],
       "hazards": [
@@ -1615,7 +1673,7 @@
           "lat": 44.0961,
           "radius_km": 0.5,
           "coord_quality": "approx",
-          "description": "La fiche de l'atterrissage de Larmacreuse signale une ligne électrique à proximité, qui longe la rivière Refrei, et un terrain souvent soumis à du gradient de vent en période chaude : avoir de la vitesse en finale. Dans ce vallon il n'y a pas de véritable brise installée : flux généralement montant de sud-ouest, parfois descendant, auquel cas l'approche se fait en aval du terrain.",
+          "description": "À l'atterrissage de Larmacreuse, une ligne électrique longe la rivière Refrei à proximité, et le terrain est souvent soumis à du gradient de vent en période chaude : il faut avoir de la vitesse en finale. Dans ce vallon, il n'y a pas de véritable brise installée : le flux est généralement montant de sud-ouest, parfois descendant, et l'approche se fait alors en aval du terrain.",
           "confidence": "medium",
           "conditions": "période chaude",
           "sources": [
@@ -1631,12 +1689,13 @@
           "lat": 44.0961,
           "radius_km": 1.0,
           "coord_quality": "approx",
-          "description": "La fiche de Veillos met en garde contre les lignes électriques (« attention aux lignes électriques ») ; celle de l'atterrissage de Soum du Pra signale aussi les lignes, ainsi que de nombreux enfants et l'accès au camping. Position approximative, à Veillos.",
+          "description": "À Veillos, il faut être attentif aux lignes électriques. À l'atterrissage de Soum du Pra, les lignes sont aussi signalées, ainsi que de nombreux enfants et l'accès au camping.",
           "confidence": "medium",
           "sources": [
             "S119",
             "S120"
-          ]
+          ],
+          "note": "Position approximative, à Veillos."
         }
       ],
       "thermal_spots": [
@@ -1649,11 +1708,12 @@
           "coord_quality": "approx",
           "best_hours": "milieu de journée (fort)",
           "trigger": "pente de Cagnorina par régime de sud",
-          "description": "La fiche de Cagnorina (décollage et atterrissage au même endroit) donne comme aérologie « thermo-dynamique avec régime de Sud » ; l'atterrissage se fait au décollage, avec des conditions fortes en milieu de journée et une brise de vallée qui peut rentrer fortement assez rapidement. Position approximative, au décollage.",
+          "description": "À Cagnorina, le décollage et l'atterrissage se font au même endroit. L'aérologie est thermo-dynamique avec régime de sud ; les conditions sont fortes en milieu de journée, et une brise de vallée peut rentrer fortement assez rapidement.",
           "confidence": "medium",
           "sources": [
             "S116"
-          ]
+          ],
+          "note": "Position approximative, au décollage."
         },
         {
           "id": "ffvl14294-col-de-tende-thermique",
@@ -1664,11 +1724,12 @@
           "coord_quality": "approx",
           "best_hours": "très fort en pleine journée de chaleur ; plus calme en fin de journée",
           "trigger": "versant sud du col",
-          "description": "La fiche du Col de Tende donne comme aérologie : sud avec flux de brise de vallée, conditions thermiques, soaring par léger vent météo de sud ; les conditions peuvent être très fortes en pleine journée de chaleur, il vaut mieux décoller et atterrir avant que la brise de vallée devienne trop forte, ou voler en fin de journée. Position approximative, au décollage.",
+          "description": "Au Col de Tende, l'aérologie est un sud avec flux de brise de vallée, des conditions thermiques et du soaring par léger vent météo de sud. Les conditions peuvent être très fortes en pleine journée de chaleur : il vaut mieux décoller et atterrir avant que la brise de vallée devienne trop forte, ou voler en fin de journée.",
           "confidence": "medium",
           "sources": [
             "S118"
-          ]
+          ],
+          "note": "Position approximative, au décollage."
         }
       ]
     },
@@ -1683,12 +1744,13 @@
           "lat": 43.7906,
           "radius_km": 1.5,
           "coord_quality": "approx",
-          "description": "Les fiches du Mont Macaron et de l'atterrissage de Cantaron signalent une ligne électrique à haute tension et un site très complexe par rapport aux lignes électriques ; site à mettre en fonction la première année avec de très bons pilotes, réservé aux membres du club. Position approximative, au décollage.",
+          "description": "Une ligne électrique à haute tension est signalée au Mont Macaron, et le site est très complexe par rapport aux lignes électriques. Il est à mettre en fonction la première année, avec de très bons pilotes, et il est réservé aux membres du club.",
           "confidence": "medium",
           "sources": [
             "S121",
             "S122"
-          ]
+          ],
+          "note": "Position approximative, au décollage."
         },
         {
           "id": "ffvl14270-giordano-ligne-ht",
@@ -1698,11 +1760,12 @@
           "lat": 43.9483,
           "radius_km": 0.6,
           "coord_quality": "approx",
-          "description": "La fiche signale une ligne électrique à haute tension à 150-200 m en dessous du décollage. Respecter les interdictions liées au parc du Mercantour. Position approximative, au décollage.",
+          "description": "Une ligne électrique à haute tension passe à 150-200 m en dessous du décollage. Il faut respecter les interdictions liées au parc du Mercantour.",
           "confidence": "medium",
           "sources": [
             "S123"
-          ]
+          ],
+          "note": "Position approximative, au décollage."
         }
       ],
       "thermal_spots": [
@@ -1714,11 +1777,12 @@
           "alt_m": 813,
           "coord_quality": "approx",
           "trigger": "décollage thermo-dynamique",
-          "description": "La fiche du site de Robert Giordano (projet, support en bois) donne comme aérologie « thermo-dynamique au décollage ». Site réservé aux pilotes brevetés FFVL, décollage orienté est à sud-ouest. Position approximative, au décollage.",
+          "description": "L'aérologie est thermo-dynamique au décollage. Le site est réservé aux pilotes brevetés FFVL, et le décollage est orienté est à sud-ouest.",
           "confidence": "medium",
           "sources": [
             "S123"
-          ]
+          ],
+          "note": "Site en projet, sur support en bois. Position approximative, au décollage."
         }
       ]
     },
@@ -1733,13 +1797,14 @@
           "lat": 44.8975,
           "radius_km": 0.6,
           "coord_quality": "approx",
-          "description": "La fiche de La Touvière signale qu'on est sous le vent en régime de vent d'est, que l'espace aérien est partagé avec des planeurs, et qu'en raison de la pente descendante du terrain le point d'aboutissement peut se situer loin dans le prolongement de l'axe final. L'atterrissage de l'Empereur est fermé depuis janvier 2018.",
+          "description": "À La Touvière, on est sous le vent en régime de vent d'est. L'espace aérien est partagé avec des planeurs, et en raison de la pente descendante du terrain, le point d'aboutissement peut se situer loin dans le prolongement de l'axe final.",
           "confidence": "medium",
           "conditions": "régime de vent d'est",
           "sources": [
             "S124",
             "S125"
-          ]
+          ],
+          "note": "L'atterrissage de l'Empereur est fermé depuis janvier 2018."
         },
         {
           "id": "ffvl1433-saint-jean-sud-lignes-gradient",
@@ -1749,12 +1814,13 @@
           "lat": 45.0035,
           "radius_km": 0.5,
           "coord_quality": "approx",
-          "description": "La fiche de l'atterrissage sud de Saint-Jean-en-Royans signale des lignes électriques au nord et à l'ouest du terrain, des noyers sur trois côtés et un gradient possible : garder un maximum de vitesse en finale, PTU main gauche vers le nord-est. Aérologie : petit nord, régime de brise établi. Terrain temporairement non praticable selon la fiche.",
+          "description": "À l'atterrissage sud de Saint-Jean-en-Royans, des lignes électriques sont au nord et à l'ouest du terrain, des noyers sont sur trois côtés, et un gradient est possible : il faut garder un maximum de vitesse en finale. L'aérologie est un petit nord, avec un régime de brise établi.",
           "confidence": "medium",
           "sources": [
             "S127",
             "S128"
-          ]
+          ],
+          "note": "PTU main gauche vers le nord-est. Terrain temporairement non praticable."
         }
       ],
       "thermal_spots": [
@@ -1766,7 +1832,7 @@
           "alt_m": 550,
           "coord_quality": "source",
           "trigger": "bulles thermiques près du sol au-dessus du terrain",
-          "description": "La fiche de l'atterrissage de La Touvière (terrain étroit mais très long, visible depuis le décollage des Limouches) signale que la présence de bulles thermiques près du sol peut allonger involontairement la phase finale ; à l'inverse, on peut parfois se retrouver dans une aérologie catabatique. Aérologie : nord faible.",
+          "description": "À La Touvière, le terrain est étroit mais très long, et il est visible depuis le décollage des Limouches. La présence de bulles thermiques près du sol peut allonger involontairement la phase finale ; à l'inverse, on peut parfois se retrouver dans une aérologie catabatique. L'aérologie est un nord faible.",
           "confidence": "medium",
           "sources": [
             "S124",
@@ -1782,11 +1848,12 @@
           "coord_quality": "approx",
           "best_hours": "13h-17h",
           "trigger": "falaises ouest du Pas de Saint-Martin",
-          "description": "La fiche du Pas de Saint-Martin note une aérologie généreuse entre 13h et 17h lorsque l'activité thermique est présente ; la brise est souvent soutenue, l'alimentation au décollage souvent forte, renforcée par le vent du nord. Position approximative, au décollage.",
+          "description": "Au Pas de Saint-Martin, l'aérologie est généreuse entre 13h et 17h lorsque l'activité thermique est présente. La brise est souvent soutenue, et l'alimentation au décollage est souvent forte, renforcée par le vent du nord.",
           "confidence": "medium",
           "sources": [
             "S126"
-          ]
+          ],
+          "note": "Position approximative, au décollage."
         }
       ]
     }

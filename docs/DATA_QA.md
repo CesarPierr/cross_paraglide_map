@@ -1,6 +1,6 @@
 # Contrôle qualité des données de recherche
 
-Généré par `npm run data:build` le 2026-10-08.
+Généré par `npm run data:build` le 2026-10-16.
 
 ## Volumes
 

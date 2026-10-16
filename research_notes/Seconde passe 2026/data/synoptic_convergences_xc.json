@@ -5,7 +5,7 @@
       "id": "alpes-francaises",
       "name": "Alpes françaises (échelle régionale)",
       "parent_massif": "Alpes occidentales",
-      "summary": "Échelle des Alpes françaises : par journée thermique d'été à vent faible, les Alpes forment une dépression thermique qui aspire l'air des plaines (Bas-Dauphiné, Avant-Pays, bassin genevois, Provence, plaine du Pô) ; chaque grande vallée développe une brise montante de 15-35 km/h (20-25 au Pays du Mont-Blanc), avec des pointes de 30 à 50 km/h dans les grandes vallées (Arve, Tarentaise, Maurienne, Durance : plus de 40 km/h à Briançon), sensible jusqu'à 2500-3000 m. Les brises démarrent avec le soleil, s'établissent en vallée en fin de matinée, culminent entre 14h et 17h puis s'inversent le soir. Le sens des brises n'est pas toujours celui qu'on imagine : au débouché de la cluse de Chambéry l'air se partage, vers Albertville (Combe de Savoie) et vers Grenoble (Grésivaudan, brise « de nord »), et les brises d'altitude des Alpes du Sud s'alimentent par la Durance. Les meilleures lignes de cross suivent les crêtes où deux brises opposées se rencontrent (Préalpes du Nord ; Diois, Dévoluy, Buëch ; crête frontalière face à la plaine du Pô ; front de brise de mer du Haut-Var) : triangles de 200 km depuis Saint-Hilaire (Chartreuse - Bauges - Aravis), records de 300 à 358 km depuis le col de l'Izoard par vent de nord de 15-20 km/h ou de nord-ouest (Izoard - Dévoluy - Cheval Blanc - Verdon). Le vent synoptique renforce, dévie ou détruit ces brises : 10 km/h au sommet donnent déjà des turbulences, 20 km/h hachent les thermiques et font proscrire le vol au Pays du Mont-Blanc ; foehn de sud (Chamonix, Contamines), bise, lombarde (crêtes frontalières) et mistral (Alpes du Sud, convergences du Buëch, de Gap-Tallard et du Verdon) ont chacun leurs abris et leurs pièges.",
+      "summary": "Échelle des Alpes françaises : par journée thermique d'été à vent faible, les Alpes forment une dépression thermique qui aspire l'air des plaines (Bas-Dauphiné, Avant-Pays, bassin genevois, Provence, plaine du Pô).\n\nChaque grande vallée développe une brise montante de 15-35 km/h (20-25 au Pays du Mont-Blanc), avec des pointes de 30 à 50 km/h (Arve, Tarentaise, Maurienne, Durance : plus de 40 km/h à Briançon), sensible jusqu'à 2500-3000 m. Elles démarrent avec le soleil, s'établissent en vallée en fin de matinée, culminent de 14h à 17h et s'inversent le soir.\n\nLe sens des brises surprend parfois : au débouché de la cluse de Chambéry, l'air se partage vers Albertville (Combe de Savoie) et vers Grenoble (Grésivaudan, brise « de nord »), et les brises d'altitude des Alpes du Sud s'alimentent par la Durance. Les meilleures lignes de cross suivent les crêtes où deux brises opposées se rencontrent (Préalpes du Nord ; Diois, Dévoluy, Buëch ; crête frontalière face à la plaine du Pô ; front de brise de mer du Haut-Var) : triangles de 200 km depuis Saint-Hilaire (Chartreuse - Bauges - Aravis), records de 300 à 358 km depuis le col de l'Izoard par nord de 15-20 km/h ou nord-ouest (Izoard - Dévoluy - Cheval Blanc - Verdon).\n\nLe vent synoptique renforce, dévie ou détruit ces brises : 10 km/h au sommet donnent des turbulences, 20 km/h hachent les thermiques et font proscrire le vol au Pays du Mont-Blanc. Foehn de sud (Chamonix, Contamines), bise, lombarde (crêtes frontalières) et mistral (Alpes du Sud, convergences du Buëch, de Gap-Tallard et du Verdon) ont chacun leurs abris et pièges.",
       "bbox": [
         4.8,
         43.1,
@@ -66,7 +66,7 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "~1000 m au-dessus de la plaine l'après-midi (ordre de grandeur de l'Alpine pumping)",
-          "description": "Déduction pour le tracé : l'aspiration générale de l'air des plaines vers la dépression thermique alpine (1-3 m/s dans les 1000 m inférieurs, jusqu'à 100 km de l'avant-pays, S3, S4) est supposée entrer par la basse vallée de l'Isère et la cluse de Voreppe pour alimenter la cuvette grenobloise. La circulation de l'avant-pays est plus sensible au vent synoptique que les brises internes (S6) ; fil parapentiste.info : il faut « changer d'échelle » (vallées du Rhône et de la Durance) et penser « pumping alpin » pour comprendre les sens des brises (S15). Les schémas de G. Briffe (diapos 46-54) dessinent bien des flux de la plaine du Rhône vers Vercors-Diois (S45) mais aucune source n'a décrit ce flux entrant précisément par Voreppe.",
+          "description": "L'air des plaines est aspiré vers la dépression thermique alpine, à 1-3 m/s dans les 1000 m inférieurs et jusqu'à 100 km de l'avant-pays. Les schémas de référence dessinent des flux de la plaine du Rhône vers le Vercors et le Diois.",
           "confidence": "low",
           "sources": [
             "S3",
@@ -77,7 +77,12 @@
             "S15",
             "S45",
             "S38"
-          ]
+          ],
+          "possible": [
+            "La circulation de l'avant-pays peut être plus sensible au vent synoptique que les brises internes.",
+            "Pour comprendre le sens des brises, on peut changer d'échelle, en pensant aux vallées du Rhône et de la Durance, et au « pumping alpin »."
+          ],
+          "note": "Entrée par la basse Isère et la cluse de Voreppe : déduction pour alimenter la cuvette grenobloise ; aucune source ne décrit ce flux précisément."
         },
         {
           "id": "isere-gresivaudan-combe-de-savoie-gresivaudan",
@@ -128,7 +133,7 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "200-500 m au-dessus du fond (valeur générique des sources parapente) ; « brise forte » signalée à Lumbin et Bramefarine (S28, S40)",
-          "description": "Correction de la première passe : la brise du Grésivaudan ne remonte PAS vers le nord-est. Lecture corrigée des sources : (1) toutleparapente dit « la brise remonte de Montmélian vers Albertville ! (...) on dirait qu'elle fait Albertville direction Grenoble, ce qui est faux dans la Combe de Savoie, mais vrai dans le Grésivaudan » et « la brise du Grésivaudan n'est pas Sud mais Nord » (S31) : dans le Grésivaudan l'air va de Chambéry/Montmélian vers Grenoble ; (2) le tracé « Grésivaudan » de la carte Largeault est orienté de Porte-de-Savoie vers Bernin, donc vers Grenoble, et le tracé « Chambé-Albé » vers Albertville (S44) ; (3) le fil parapentiste.info (S15) s'interroge sur ces deux brises « diamétralement opposées » juste au débouché de la cluse : l'air de la plaine de Chambéry se partage ; (4) en vol, la brise « venant de Chambéry » dérive la traversée Granier - Savoyarde (S46). Valeurs de brise de vallée génériques : 15-35 km/h, pic 14h-16/17h (S1) ; ordres de grandeur scientifiques 3-10 m/s au centre des vallées (S3). Le Grésivaudan sépare Chartreuse/Bauges (O) et Belledonne (E) ; sa brise rejoint le « Y » grenoblois (Monin 1962, S61 ; schémas Kerkhove, S65, non vus). Les trois sources de la première passe (Airshop « tendance Nord », CHVD, parapentiste.info) étaient correctes : elles disent « de nord », c'est-à-dire vers le sud-ouest.",
+          "description": "Dans le Grésivaudan, l'air va de Chambéry et Montmélian vers Grenoble, et les cartes de brises le tracent de Porte-de-Savoie vers Bernin. Au débouché de la cluse de Chambéry, l'air se partage en deux brises diamétralement opposées ; la brise du Grésivaudan rejoint le « Y » grenoblois. Le Grésivaudan sépare la Chartreuse et les Bauges, à l'ouest, de Belledonne, à l'est.",
           "confidence": "medium",
           "sources": [
             "S31",
@@ -140,7 +145,12 @@
             "S3",
             "S61",
             "S38"
-          ]
+          ],
+          "possible": [
+            "En vol, la brise venant de Chambéry peut dériver la traversée Granier - Savoyarde.",
+            "Il arrive qu'une brise paraisse aller d'Albertville vers Grenoble : c'est le Grésivaudan, non la Combe de Savoie."
+          ],
+          "note": "Remplace la première passe, qui la faisait remonter vers le nord-est : les sources parlent d'une brise « de nord », soit vers le sud-ouest. Vitesses génériques (15 à 35 km/h, pic vers 14h-16/17h, 3 à 10 m/s au centre des vallées) ; schémas non consultés (S65)."
         },
         {
           "id": "isere-gresivaudan-combe-de-savoie-combe",
@@ -191,7 +201,7 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "200-500 m au-dessus du fond (valeur générique des sources parapente)",
-          "description": "« La brise remonte de Montmélian vers Albertville » (S31) ; tracé « Chambé-Albé » de la carte Largeault, de Challes-les-Eaux à Albertville (S44) ; à son entrée dans la Combe de Savoie la brise alimente aussi l'entrée de la Maurienne (voir brise de la Maurienne) et le col du Frêne reçoit la brise de Sainte-Reine face à celle de la Combe de Savoie (S42). Le Beaufortain, les Bauges et la Lauzière se partagent ce flux ; Montlambert et les Tours de Montmayeur sont « frappés de plein fouet par la brise de Chambéry » (S46). Valeurs génériques : 15-35 km/h (S1) ; pas de mesure propre à la Combe de Savoie dans les sources lues.",
+          "description": "La brise remonte de Montmélian vers Albertville, et les cartes de brises la tracent de Challes-les-Eaux à Albertville. À son entrée dans la Combe de Savoie, elle alimente aussi l'entrée de la Maurienne (voir la brise de la Maurienne). Le Beaufortain, les Bauges et la Lauzière se partagent ce flux.",
           "confidence": "medium",
           "sources": [
             "S31",
@@ -200,7 +210,12 @@
             "S46",
             "S1",
             "S38"
-          ]
+          ],
+          "possible": [
+            "Au col du Frêne, la brise de Sainte-Reine arrive face à celle de la Combe de Savoie.",
+            "Il arrive que Montlambert et les Tours de Montmayeur soient frappés de plein fouet par la brise de Chambéry."
+          ],
+          "note": "Vitesses génériques (15 à 35 km/h) ; aucune mesure propre à la Combe de Savoie dans les sources lues."
         },
         {
           "id": "cluse-chambery",
@@ -233,14 +248,18 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "quelques centaines de m (déduction)",
-          "description": "Flux d'après-midi aspiré de l'Avant-Pays et du lac du Bourget vers la Combe de Savoie et le Grésivaudan à travers la cluse de Chambéry, entre Chartreuse et Bauges. Appuis : les tracés de Largeault démarrent à Challes-les-Eaux (Combe de Savoie) et à Porte-de-Savoie (Grésivaudan), c'est-à-dire à la cluse (S44) ; un pilote compense la dérive due « à la brise venant de Chambéry » sur la traversée Granier - Savoyarde (S46) ; le Granier est une zone sous le vent « brise forte » et la Savoyarde, le col du Frêne et le col de Tamié sont signalés zones sous le vent/venturis dans le support St Hil'Air (S41). Force et heures propres à la cluse non chiffrées dans les sources lues (déduction pour 12-20 km/h).",
+          "description": "Flux d'après-midi aspiré de l'Avant-Pays et du lac du Bourget vers la Combe de Savoie et le Grésivaudan, par la cluse de Chambéry, entre la Chartreuse et les Bauges. Les tracés des cartes de brises partent de la cluse, de Challes-les-Eaux et de Porte-de-Savoie. Le Granier est une zone sous le vent de « brise forte » ; la Savoyarde, le col du Frêne et le col de Tamié sont signalés comme zones sous le vent ou venturis.",
           "confidence": "medium",
           "sources": [
             "S44",
             "S46",
             "S41",
             "S38"
-          ]
+          ],
+          "possible": [
+            "Sur la traversée Granier - Savoyarde, il peut falloir compenser la dérive due à la brise venant de Chambéry."
+          ],
+          "note": "Force et heures propres à la cluse non chiffrées dans les sources lues : valeurs déduites (12 à 20 km/h)."
         },
         {
           "id": "lac-annecy-faverges",
@@ -285,7 +304,7 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "quelques centaines de m",
-          "description": "Brise d'après-midi du lac d'Annecy vers Faverges, tracé « Annecy sud » de la carte Largeault (de Duingt/Doussard vers Faverges) et « Annecy nord » (S44). Vent de vallée constant les jours thermiques quel que soit le vent général (S16, attribution non revérifiée) ; au Roc des Bœufs les pilotes font des allers-retours dans la brise le soir (S46). Vitesses = valeurs génériques (S1). La phrase de la première passe attribuée à S9 (« la brise vient frapper le Roc des Bœufs ») n'est pas sur la page lue : retirée.",
+          "description": "Brise d'après-midi du lac d'Annecy vers Faverges. Les cartes de brises la tracent de Duingt et Doussard vers Faverges (tracé « Annecy sud »), avec un second tracé, « Annecy nord ».",
           "confidence": "medium",
           "sources": [
             "S44",
@@ -293,7 +312,12 @@
             "S46",
             "S1",
             "S38"
-          ]
+          ],
+          "possible": [
+            "Il arrive que le vent de vallée soit constant les jours thermiques, quel que soit le vent général.",
+            "Le soir, on peut faire des allers-retours dans la brise au Roc des Bœufs."
+          ],
+          "note": "Vent constant : attribution non revérifiée. Vitesses génériques. Une phrase de la première passe sur le Roc des Bœufs, attribuée à S9, n'est pas sur la page lue : elle est retirée."
         },
         {
           "id": "arve",
@@ -356,7 +380,7 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "sensible jusqu'à 2500 m, parfois 3000 m (S55)",
-          "description": "Tracés de Largeault : Arthaz - Bonneville - Châtillon-sur-Cluses, Cluses - Magland - Sallanches, Passy - Servoz - Chamonix (S44). Plaquette FFVL du Pays du Mont-Blanc : brises thermiques jusqu'à 30 km/h mais « le plus souvent 20-25 km/h », sensibles jusqu'à 2500 m, parfois 3000 m (S55). CMBVL : la brise entre par Sallanches où elle peut être très forte (atterrissage au lac souvent impossible dans la journée), faiblit vers Passy, se divise autour du Mont d'Arbois puis à l'entrée de la vallée de Saint-Gervais, parfois avec un retour d'est/sud-est côté Varan (S56). L'Arve est citée parmi les longues vallées à brise pouvant atteindre 50 km/h (S1) : écart avec les 30 km/h de la plaquette locale, conservé.",
+          "description": "Les cartes de brises tracent la brise montante de l'Arve, d'Arthaz à Châtillon-sur-Cluses par Bonneville, de Cluses à Sallanches par Magland, puis de Passy à Chamonix par Servoz. Au Pays du Mont-Blanc, les brises thermiques atteignent jusqu'à 30 km/h, le plus souvent 20 à 25 km/h, et restent sensibles jusqu'à 2500 m, parfois 3000 m. L'Arve compte parmi les longues vallées où la brise peut atteindre 50 km/h.",
           "confidence": "medium",
           "sources": [
             "S44",
@@ -364,7 +388,12 @@
             "S56",
             "S1",
             "S38"
-          ]
+          ],
+          "possible": [
+            "La brise peut entrer par Sallanches, où elle est parfois très forte : il arrive que l'atterrissage au lac soit impossible dans la journée.",
+            "Elle faiblit vers Passy et se divise autour du Mont d'Arbois, puis à l'entrée de la vallée de Saint-Gervais ; un retour d'est ou de sud-est peut survenir côté Varan."
+          ],
+          "note": "Vitesses : 50 km/h en valeur générale, 30 km/h en valeur locale ; les deux sont conservés."
         },
         {
           "id": "tarentaise",
@@ -409,14 +438,18 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "200-500 m (générique)",
-          "description": "Tracé « Tarentaise - Moûtiers - Bourg » de la carte Largeault, de Moûtiers à Bourg-Saint-Maurice (S44) prolongé en amont (voir brise de la haute Tarentaise) ; Tarentaise citée parmi les vallées à brise pouvant atteindre 50 km/h (S1) ; la Haute-Tarentaise (secteur des Arcs) reste volable sous 2500 m par bise de 40 km/h relevée à Annecy/Chambéry/Grenoble (S10, non revérifié). Le tronçon Albertville - Moûtiers est celui de la première passe (déduction).",
+          "description": "Les cartes de brises tracent la brise de Moûtiers à Bourg-Saint-Maurice, prolongée en amont (voir la brise de la haute Tarentaise). La Tarentaise compte parmi les vallées où la brise peut atteindre 50 km/h.",
           "confidence": "medium",
           "sources": [
             "S44",
             "S1",
             "S10",
             "S38"
-          ]
+          ],
+          "possible": [
+            "Il arrive que le secteur des Arcs, en Haute-Tarentaise, reste volable sous 2500 m malgré une bise de 40 km/h relevée à Annecy, Chambéry ou Grenoble."
+          ],
+          "note": "Source de la Haute-Tarentaise non revérifiée. Le tronçon Albertville - Moûtiers est déduit de la première passe."
         },
         {
           "id": "maurienne",
@@ -479,7 +512,7 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "200-500 m (générique)",
-          "description": "Tracés de Largeault : « Line 2 » de Saint-Pierre-d'Albigny à La Chambre (entrée de la Maurienne depuis la Combe de Savoie) et « Maurienne - St Jean - Mont-Cenis » (S44). Un récit de 202 km décrit un plein à 2500 m « en milieu d'entrée de vallée de la Maurienne » (S28). Maurienne citée parmi les longues vallées à brise pouvant atteindre 50 km/h (S1, S2). Par lombarde (E) flux contraire sur la haute vallée (S12). Mont-Cenis : exemple de « coulée » d'une masse d'air italienne qui s'écoule dans la vallée (exposé de Briffe, diapo 37, S45).",
+          "description": "Les cartes de brises tracent la brise de Saint-Pierre-d'Albigny à La Chambre, qui entre dans la Maurienne depuis la Combe de Savoie, puis de Saint-Jean au Mont-Cenis. La Maurienne compte parmi les longues vallées où la brise peut atteindre 50 km/h. Par lombarde (est), le flux est contraire sur la haute vallée.",
           "confidence": "medium",
           "sources": [
             "S44",
@@ -489,6 +522,10 @@
             "S12",
             "S45",
             "S38"
+          ],
+          "possible": [
+            "Un vol de 202 km a pu faire le plein à 2500 m, à l'entrée de la Maurienne.",
+            "Une masse d'air italienne peut s'écouler dans la vallée, en « coulée » comme au Mont-Cenis."
           ]
         },
         {
@@ -534,7 +571,7 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "200-500 m (générique)",
-          "description": "Déduction : vallée longue et encaissée, valeurs génériques des sources parapente (S1) ; rétrécissement des gorges (Livet) propice à l'accélération (S21). Appui qualitatif : sur le fil parapentiste.info un pilote note que « la vallée du Drac remonte très loin, celle de la Romanche aussi » (S15). Le schéma de Briffe prolonge la brise de la Durance par Champsaur - Valbonnais - Glandon vers la Maurienne (S45).",
+          "description": "Dans cette vallée longue et encaissée, le rétrécissement des gorges du Livet favorise l'accélération de la brise. Le schéma de référence prolonge la brise de la Durance par le Champsaur, le Valbonnais et le Glandon vers la Maurienne.",
           "confidence": "low",
           "sources": [
             "S1",
@@ -542,7 +579,11 @@
             "S15",
             "S45",
             "S38"
-          ]
+          ],
+          "possible": [
+            "La brise peut remonter très loin dans la vallée du Drac, comme dans celle de la Romanche."
+          ],
+          "note": "Tracé déduit ; vitesses génériques."
         },
         {
           "id": "drac-trieves",
@@ -581,14 +622,18 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "quelques centaines de m",
-          "description": "Remontée vers le sud depuis la cuvette grenobloise ; « la vallée du Drac remonte très loin » (S15). L'exposé de Briffe dessine, entre Obiou et Taillefer, des flux venant de Grenoble (traits turquoise) qui rencontrent ceux remontant de Gap par le Champsaur (traits jaunes) le long d'un arc de confluence (S45, diapo 60 et 54). Non chiffrée.",
+          "description": "La brise remonte vers le sud depuis la cuvette grenobloise. Le schéma de référence dessine, entre l'Obiou et le Taillefer, des flux venant de Grenoble (traits turquoise) qui rencontrent ceux remontant de Gap par le Champsaur (traits jaunes), le long d'un arc de confluence.",
           "confidence": "medium",
           "sources": [
             "S15",
             "S45",
             "S1",
             "S38"
-          ]
+          ],
+          "possible": [
+            "La vallée du Drac peut remonter très loin vers le sud."
+          ],
+          "note": "Vitesse non chiffrée."
         },
         {
           "id": "basse-durance",
@@ -633,7 +678,7 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "plusieurs centaines de m à ~1000 m (déduction)",
-          "description": "Début du tracé « Alpes du Sud - Manosque - Briançon » de la carte Largeault (31 sommets, de Jouques à Briançon) (S44). Chocard Airlines : « la vallée de la Durance remonte toutes les Alpes de Haute-Provence et les Hautes-Alpes depuis les Bouches-du-Rhône, sur un axe sud-ouest, longueur qui en fait un accélérateur à brise très puissant » (S57). Le schéma de Briffe (diapos 47/54) dessine la Durance comme artère jaune de Marseille/Aix vers Sisteron puis Serre-Ponçon (S45). Le couplage avec la brise de mer provençale reste une déduction (S33).",
+          "description": "Le tracé de la carte compte 31 sommets, de Jouques à Briançon. La vallée de la Durance remonte les Alpes de Haute-Provence et les Hautes-Alpes depuis les Bouches-du-Rhône, sur un axe sud-ouest ; cette longueur en fait un accélérateur à brise très puissant. Le schéma de référence la dessine comme une artère de Marseille et d'Aix vers Sisteron, puis Serre-Ponçon.",
           "confidence": "medium",
           "sources": [
             "S44",
@@ -642,7 +687,8 @@
             "S33",
             "S2",
             "S38"
-          ]
+          ],
+          "note": "Couplage avec la brise de mer provençale : déduction."
         },
         {
           "id": "moyenne-haute-durance",
@@ -699,7 +745,7 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "200-500 m (générique) ; sensible jusqu'aux Têtes de l'Argentière (2044 m) et aux crêtes de Peyrolles (2645 m) (S57)",
-          "description": "Suite du tracé Largeault « Manosque - Briançon » (S44). Chocard Airlines : pointes à plus de 40 km/h à Briançon ; éviter les fonds de vallée dès la mi-journée l'été (poser tôt ou avoir une repose à mi-pente) ; les tendances Sud à Ouest renforcent la brise et la font entrer tôt et brusquement (S57). Au déco de Saint-Vincent-les-Forts brises « particulièrement fortes, surtout en milieu d'après-midi » (S13, non revérifié) ; rarement très soutenue à Vallouise (S14, non revérifié). Dans le Briançonnais, par temps calme, les brises remontent toutes les vallées en fin de matinée et début d'après-midi (S17). Record du monde : au retour dans la vallée d'Embrun « la brise poussait vers le décollage » (S22, S48).",
+          "description": "Le tracé de la carte suit la Durance de Manosque à Briançon. Les tendances sud à ouest renforcent la brise et la font entrer tôt et brusquement. En été, mieux vaut poser tôt ou prévoir une repose à mi-pente que de rester dans les fonds de vallée dès la mi-journée.",
           "confidence": "medium",
           "sources": [
             "S44",
@@ -711,7 +757,13 @@
             "S48",
             "S2",
             "S38"
-          ]
+          ],
+          "possible": [
+            "À Briançon, la brise peut faire des pointes à plus de 40 km/h ; lors d'un record, au retour dans la vallée d'Embrun, elle poussait vers le décollage.",
+            "Au déco de Saint-Vincent-les-Forts, elle peut être particulièrement forte en milieu d'après-midi ; à Vallouise, elle est rarement très soutenue.",
+            "Dans le Briançonnais, par temps calme, les brises peuvent remonter toutes les vallées en fin de matinée et début d'après-midi."
+          ],
+          "note": "Données de Saint-Vincent-les-Forts et de Vallouise non revérifiées."
         },
         {
           "id": "buech",
@@ -750,14 +802,18 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "quelques centaines de m",
-          "description": "Remontée du Buëch (Sisteron - Laragne - Serres - Veynes) vers Chabre, Céüse et le Dévoluy. Appui : dans le schéma de Briffe (diapo 54), l'artère jaune qui part de la Durance vers le NO suit le Buëch jusqu'au col de Cabre (S45) ; le site de Chabre est décrit avec des vallées du Buëch « larges » permettant des atterrissages imprévus (S62). Non chiffrée : valeurs génériques (S1).",
+          "description": "La brise remonte le Buëch, de Sisteron à Laragne, Serres et Veynes, vers Chabre, Céüse et le Dévoluy. Le schéma de référence suit l'artère jaune partie de la Durance vers le nord-ouest, jusqu'au col de Cabre.",
           "confidence": "medium",
           "sources": [
             "S45",
             "S62",
             "S1",
             "S38"
-          ]
+          ],
+          "possible": [
+            "Les vallées du Buëch, larges, permettent des atterrissages imprévus près de Chabre."
+          ],
+          "note": "Vitesses non chiffrées ; valeurs génériques."
         },
         {
           "id": "ubaye",
@@ -808,7 +864,7 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "quelques centaines de m",
-          "description": "Tracé « Alpes du Sud - Tallard - Barcelonnette » de la carte Largeault, qui suit le lac de Serre-Ponçon puis l'Ubaye (S44) ; tracé « Serre-Ponçon - St Vincent les Forts » et note sur La Javie - Montclar : « l'endroit de la confluence dépend de la force de la brise du lac » (S44). Par lombarde (E), flux contraire sur la haute Ubaye (S12).",
+          "description": "Dans les Alpes du Sud, les cartes de brises tracent une brise qui suit le lac de Serre-Ponçon, passe par Tallard, puis suit l'Ubaye jusqu'à Barcelonnette, avec un second tracé de Serre-Ponçon à Saint-Vincent-les-Forts. Près de La Javie et de Montclar, l'endroit de la confluence dépend de la force de la brise du lac. Par lombarde (est), le flux est contraire sur la haute Ubaye.",
           "confidence": "medium",
           "sources": [
             "S44",
@@ -848,14 +904,15 @@
           },
           "season": "mai-septembre",
           "layer_depth_m": "quelques centaines de m (déduction)",
-          "description": "Tracé « Line 1 » de la carte Largeault, d'Aix-en-Provence à Jouques puis Tavernes/Varages (S44) ; sur les schémas de Briffe (diapos 46-49) des flèches d'air marin et de brise de Durance remontent depuis Marseille/Aix vers la Durance et le Verdon (S45). Pénétration, horaires et force non documentés ; l'exposé indique que la brise de mer « pousse contre » les brises de vallée et crée des confluences exploitées en cross (S33, S45). Détruite par mistral (déduction ; l'exposé de Briffe montre au contraire des lignes de confluence de mistral dans la même zone, voir convergence « Valensole - Verdon »).",
+          "description": "Les cartes de brises tracent la brise de mer d'Aix-en-Provence à Jouques, puis vers Tavernes et Varages. Les schémas de référence montrent des flèches d'air marin et de brise de Durance qui remontent de Marseille et d'Aix vers la Durance et le Verdon. La brise de mer pousse contre les brises de vallée et crée des confluences exploitées en cross.",
           "confidence": "medium",
           "sources": [
             "S44",
             "S45",
             "S33",
             "S38"
-          ]
+          ],
+          "note": "Pénétration, horaires et force non documentés. Destruction par le mistral : déduction ; le schéma montre au contraire des lignes de confluence de mistral dans la même zone (voir la convergence Valensole - Verdon)."
         },
         {
           "id": "brise-mer-var-verdon",
@@ -894,13 +951,14 @@
           },
           "season": "mai-septembre",
           "layer_depth_m": "quelques centaines de m (déduction)",
-          "description": "Tracé « Line 2 » de la carte Largeault (de Fréjus vers l'intérieur par La Motte, Tourtour, Aups) (S44) ; schéma de Briffe (diapos 46-49) : flèches de brise de mer partant du littoral de Fréjus à Nice vers le nord-est et front de convergence plus au nord (voir convergence « Front de brise de mer varois »). Horaires et force non documentés (déduction 12h-19h).",
+          "description": "Les cartes de brises tracent la brise de mer de Fréjus vers l'intérieur, par La Motte, Tourtour et Aups. Le schéma de référence montre des flèches de brise de mer qui partent du littoral, de Fréjus à Nice, vers le nord-est, avec un front de convergence plus au nord (voir la convergence « Front de brise de mer varois »).",
           "confidence": "medium",
           "sources": [
             "S44",
             "S45",
             "S38"
-          ]
+          ],
+          "note": "Horaires et force non documentés ; la plage de 12h à 19h est une déduction."
         },
         {
           "id": "descendante-gresivaudan-nuit",
@@ -945,13 +1003,14 @@
           },
           "season": "toute l'année (dominant en hiver)",
           "layer_depth_m": "quelques dizaines à centaines de m",
-          "description": "Les vallées ont un vent descendant la nuit (S3). En hiver, sous inversion persistante, superposition de vents descendants issus des différentes vallées autour de Grenoble toute la journée au-dessus d'une couche convective d'environ 50 m (S37). Vitesses : déduction.",
+          "description": "Les vallées ont un vent descendant la nuit. En hiver, sous inversion persistante, une superposition de vents descendants issus des différentes vallées autour de Grenoble dure toute la journée, au-dessus d'une couche convective d'environ 50 m.",
           "confidence": "medium",
           "sources": [
             "S3",
             "S37",
             "S38"
-          ]
+          ],
+          "note": "Vitesses : déduction."
         },
         {
           "id": "tarentaise-haute",
@@ -990,13 +1049,14 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "quelques centaines de m (déduction)",
-          "description": "Tracés « Tarentaise - Bourg - Val d'Isère » (et variantes Sassière et Tignes) de la carte Largeault (S44) ; prolongement de la brise de Tarentaise. Vitesses : valeurs génériques (S1). Secteur local détaillé traité par le lot Tarentaise-Vanoise.",
+          "description": "Les cartes de brises tracent la brise jusqu'à Val-d'Isère, par Bourg-Saint-Maurice, avec des variantes par la Sassière et par Tignes, dans le prolongement de la brise de Tarentaise.",
           "confidence": "medium",
           "sources": [
             "S44",
             "S1",
             "S38"
-          ]
+          ],
+          "note": "Vitesses : valeurs génériques. Secteur local détaillé dans le lot Tarentaise-Vanoise."
         },
         {
           "id": "verdon-castellane-thorame",
@@ -1035,13 +1095,17 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "quelques centaines de m",
-          "description": "Tracé « Alpes du Sud - Castellane - Thorame » de la carte Largeault (commentaire : « St André les Alpes ») (S44). Aérogliss : au Chalvet, brise de 25 à 30 km/h en thermique établi, déco SW utilisé dès 11h (S63). Le dernier waypoint est la position du déco (FFVL 5168), pas un sommet du tracé.",
+          "description": "Les cartes de brises tracent la brise de Castellane à Thorame, vers Saint-André-les-Alpes.",
           "confidence": "medium",
           "sources": [
             "S44",
             "S63",
             "S38"
-          ]
+          ],
+          "possible": [
+            "Au Chalvet, la brise peut atteindre 25 à 30 km/h en thermique établi, et le décollage sud-ouest sert dès 11h, en brise."
+          ],
+          "note": "Le dernier point du tracé est la position du décollage (référence FFVL 5168), non un sommet."
         },
         {
           "id": "bleone-digne",
@@ -1086,7 +1150,7 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "quelques centaines de m",
-          "description": "Tracé « Alpes du Sud - Dignes » de la carte Largeault (S44) ; la brise de la Bléone remonte de la Durance vers La Javie, où elle alimente le tracé La Javie - Montclar (voir brise du Bès). Le schéma de Briffe (diapo 62, plateau de Puimichel - Cousson) montre la rencontre des brises de la Bléone et de l'Asse sur le plateau (S45).",
+          "description": "Dans les Alpes du Sud, les cartes de brises tracent la brise de la Bléone jusqu'à Digne. Elle remonte de la Durance vers La Javie, où elle alimente le tracé La Javie - Montclar (voir la brise du Bès). Le schéma de référence montre la rencontre des brises de la Bléone et de l'Asse sur le plateau de Puimichel - Cousson.",
           "confidence": "medium",
           "sources": [
             "S44",
@@ -1131,7 +1195,7 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "quelques centaines de m",
-          "description": "Tracé « La Javie - Montclar » de la carte Largeault, avec la note de l'auteur : « l'endroit de la confluence dépend de la force de la brise du lac » (S44) : la brise venue de Digne rencontre, vers Montclar/Seyne, celle du lac de Serre-Ponçon. Le schéma de Briffe (diapo 61, Blayeul - La Blanche) place une confluence sur la crête entre Saint-Auban/Bléone et Serre-Ponçon (S45).",
+          "description": "Les cartes de brises tracent la brise de La Javie à Montclar, avec une note : l'endroit de la confluence dépend de la force de la brise du lac. La brise venue de Digne rencontre, vers Montclar et Seyne, celle du lac de Serre-Ponçon. Le schéma de référence (diapo 61, Blayeul - La Blanche) place une confluence sur la crête entre Saint-Auban, près de la Bléone, et Serre-Ponçon.",
           "confidence": "medium",
           "sources": [
             "S44",
@@ -1182,13 +1246,14 @@
           },
           "season": "mai-septembre",
           "layer_depth_m": "quelques centaines de m (déduction)",
-          "description": "Tracé « Mercantour » de la carte Largeault, de Colomars (Nice) vers la Tinée et le Mercantour (S44) ; schéma de Briffe (diapos 46-49) : flèches de brise de mer orientées vers le nord-est depuis Nice et le front de convergence qui passe plus au nord (voir convergence). Horaires et force non documentés.",
+          "description": "Les cartes de brises tracent la brise de Colomars (Nice) vers la Tinée et le Mercantour. Le schéma de référence montre des flèches de brise de mer orientées vers le nord-est depuis Nice, avec un front de convergence plus au nord.",
           "confidence": "low",
           "sources": [
             "S44",
             "S45",
             "S38"
-          ]
+          ],
+          "note": "Horaires et force non documentés."
         },
         {
           "id": "briffe-rhone-vers-diois",
@@ -1233,11 +1298,12 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "non documenté",
-          "description": "Flèche violette du schéma de Briffe « Col de Cabre - Toussière » (diapos 59 et 54) : l'air de la vallée du Rhône pénètre dans le Diois par la vallée de la Drôme et butte sur les flux remontant d'Aspres/Buëch (traits jaunes) le long de l'arc de confluence du Diois (S45). Positions lues sur une diapo, approximatives ; vitesses non données.",
+          "description": "Le schéma de référence « Col de Cabre - Toussière » montre une flèche violette : l'air de la vallée du Rhône pénètre dans le Diois par la vallée de la Drôme et bute sur les flux remontant d'Aspres et du Buëch (traits jaunes), le long de l'arc de confluence du Diois.",
           "confidence": "low",
           "sources": [
             "S45"
-          ]
+          ],
+          "note": "Positions lues sur une diapositive, approximatives ; vitesses non données."
         },
         {
           "id": "briffe-durance-vers-maurienne",
@@ -1282,12 +1348,16 @@
           },
           "season": "juin-septembre",
           "layer_depth_m": "non documenté",
-          "description": "Longue flèche jaune du schéma « Régime de brises » de Briffe (diapos 47/54) : la masse d'air de la Durance/Serre-Ponçon se prolonge par le Dévoluy et le Champsaur, franchit le Valbonnais et le Glandon et gagne la Maurienne (exposé, diapos 5-6 : exemple Queyras contre haute Durance avec une « brise venant de Serre-Ponçon », puis Durance, Maurienne et Val de Suse). C'est un schéma conceptuel de grande échelle, non une brise de fond de vallée : à utiliser comme tendance (confiance faible).",
+          "description": "Sur le schéma « Régime de brises », une longue flèche jaune montre la masse d'air de la Durance et de Serre-Ponçon se prolongeant par le Dévoluy et le Champsaur, puis franchissant le Valbonnais et le Glandon pour gagner la Maurienne. C'est un schéma conceptuel de grande échelle, non une brise de fond de vallée.",
           "confidence": "low",
           "sources": [
             "S45"
           ],
-          "condition": "schéma conceptuel de grande échelle, illustratif (non simulé dans les vallées)"
+          "condition": "schéma conceptuel de grande échelle, illustratif (non simulé dans les vallées)",
+          "possible": [
+            "Un exemple du schéma oppose le Queyras à la haute Durance, avec une brise venant de Serre-Ponçon, puis la Durance, la Maurienne et le Val de Suse."
+          ],
+          "note": "À utiliser comme une tendance (confiance faible) ; diapositives 47, 54 et 5-6 du schéma."
         },
         {
           "id": "briffe-plaine-po-val-de-suse",
@@ -1326,11 +1396,15 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "non documenté",
-          "description": "Flèches bleues du schéma de Briffe (diapos 47-54) : l'air de la plaine du Pô remonte les vallées italiennes vers la crête franco-italienne, où il rencontre les flux venus de la Durance et de la Maurienne (voir convergence de la crête frontalière) ; exemple exposé : « coulée du Mont-Cenis » (diapo 37). Positions approximatives (diapo).",
+          "description": "Sur le schéma de référence, des flèches bleues montrent l'air de la plaine du Pô remontant les vallées italiennes vers la crête franco-italienne, où il rencontre les flux venus de la Durance et de la Maurienne (voir la convergence de la crête frontalière).",
           "confidence": "low",
           "sources": [
             "S45"
-          ]
+          ],
+          "possible": [
+            "L'exemple exposé est une « coulée du Mont-Cenis »."
+          ],
+          "note": "Positions approximatives, lues sur une diapositive."
         },
         {
           "id": "briffe-plaine-po-val-d-aoste",
@@ -1369,12 +1443,13 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "non documenté",
-          "description": "Flèche bleue du schéma de Briffe, diapo 54 : brise remontant le Val d'Aoste vers la crête du Mont-Blanc (S45). Hors du territoire français ; utile pour comprendre la confluence de la crête frontalière et le foehn de sud sur la vallée de Chamonix (CMBVL : écart de pression Aoste - Annecy, S56).",
+          "description": "Sur le schéma de référence, une flèche bleue montre la brise remontant le Val d'Aoste vers la crête du Mont-Blanc.",
           "confidence": "low",
           "sources": [
             "S45",
             "S56"
-          ]
+          ],
+          "note": "Hors du territoire français ; utile pour comprendre la confluence de la crête frontalière et le foehn de sud sur la vallée de Chamonix, dont l'écart de pression Aoste - Annecy donne l'indice."
         }
       ],
       "convergences": [
@@ -1412,8 +1487,8 @@
           },
           "coord_quality": "approx",
           "when": "Jours thermiques à vent synoptique faible (<10-15 km/h en crête), ~12h-18h ; meilleure 14h-17h",
-          "mechanism": "Deux brises montantes opposées se rencontrent au sommet des crêtes : côté externe, l'aspiration plaine → montagne (Bas-Dauphiné, Avant-Pays, Albanais) ; côté interne, les brises de vallée Grésivaudan/Combe de Savoie/lac d'Annecy. « Configuration reine des Préalpes, et celle qui produit les plus longues lignes d'ascendance » (S9). La confluence n'est pas à la verticale de la crête mais penche du côté le plus faible (S9). En vol : « on chemine en confluence en slalomant les barbulles » sur les crêtes de la Chartreuse (S28) ; ces crêtes sont « magiques » mais les brises « rentrent » dans l'après-midi (S28).",
-          "usage": "Axe nord-sud des cross Annecy - Grenoble - Vercors (triangles de 185-202 km : S27, S28, S46 ; distance libre Moucherotte - Chevenoz 233 km, S41). Transitions entre massifs et altitudes minimales : voir la chaîne des transitions. Dangers : confluences « très toniques » avec descendances à -6 m/s quand du NW > 2000 m s'en mêle (S28), brises fortes sur les transitions de Grenoble, Chambéry, Annecy (S41), surdéveloppement (déduction). Géométrie tracée sur les sommets principaux : approximative.",
+          "mechanism": "Deux brises montantes opposées se rencontrent au sommet des crêtes : côté externe, l'aspiration plaine-montagne (Bas-Dauphiné, Avant-Pays, Albanais) ; côté interne, les brises du Grésivaudan, de la Combe de Savoie et du lac d'Annecy. C'est la « configuration reine des Préalpes », qui produit les plus longues ascendances. La confluence n'est pas à la verticale de la crête, mais penche du côté le plus faible.",
+          "usage": "Axe nord-sud des cross Annecy - Grenoble - Vercors. Les transitions entre massifs et leurs altitudes minimales sont à voir dans la chaîne des transitions. Sur les transitions de Grenoble, Chambéry et Annecy, les brises sont fortes.",
           "confidence": "medium",
           "sources": [
             "S9",
@@ -1422,7 +1497,13 @@
             "S27",
             "S41",
             "S30"
-          ]
+          ],
+          "possible": [
+            "En vol, on peut cheminer en confluence en slalomant les barbulles sur les crêtes de la Chartreuse, qualifiées de « magiques » ; les brises y « rentrent » dans l'après-midi.",
+            "Quand du nord-ouest s'ajoute au-dessus de 2000 m, les confluences peuvent être « très toniques », avec des descendances à -6 m/s.",
+            "Sur cet axe, des triangles de 185 à 202 km ont été réalisés, et une distance libre de 233 km, de Moucherotte à Chevenoz."
+          ],
+          "note": "Le surdéveloppement est une déduction ; géométrie tracée sur les sommets principaux, approximative."
         },
         {
           "id": "ligne-interne-belledonne-lauziere",
@@ -1446,15 +1527,20 @@
           },
           "coord_quality": "approx",
           "when": "Jours thermiques à vent faible, après-midi",
-          "mechanism": "Déduction : brise du Grésivaudan/Combe de Savoie sur le flanc O contre brises de la Romanche et de la Maurienne sur le flanc E ; la carte Largeault montre des tracés de brise le long du flanc ouest de Belledonne vers la Combe de Savoie (S44). Support St Hil'Air : Belledonne ouest « à partir de 14h », zone turbulente (conflit de brises) à Fond de France (S41).",
-          "usage": "Chamrousse est un point de virage de triangle FAI des Préalpes (S27) ; Belledonne figure dans les tours des Hautes-Alpes (S24). Ligne non décrite comme telle dans les sources consultées.",
+          "mechanism": "Sur le flanc ouest de Belledonne, la brise du Grésivaudan et de la Combe de Savoie rencontre celles de la Romanche et de la Maurienne, qui arrivent par le flanc est. Les cartes de brises tracent une brise le long de ce flanc ouest, vers la Combe de Savoie.",
+          "usage": "Côté ouest de Belledonne, la brise s'installe à partir de 14h ; à Fond de France, la zone est turbulente à cause du conflit des brises.",
           "confidence": "low",
           "sources": [
             "S27",
             "S24",
             "S44",
             "S41"
-          ]
+          ],
+          "possible": [
+            "Chamrousse a été point de virage d'un triangle FAI des Préalpes.",
+            "Belledonne figure dans les tours des Hautes-Alpes."
+          ],
+          "note": "Mécanisme déduit ; ligne non décrite comme telle dans les sources consultées."
         },
         {
           "id": "ligne-laragne-ceuse-devoluy",
@@ -1482,15 +1568,20 @@
           },
           "coord_quality": "approx",
           "when": "Jours thermiques, après-midi (déduction)",
-          "mechanism": "Air remontant du sud par la Durance et le Buëch contre les brises du Drac/Champsaur/Trièves. Schéma de Briffe : confluence Céüse - Charance au-dessus du bassin de Gap (diapo 63), arcs de confluence Obiou - Taillefer et Diois (diapos 59-60) (S45). Dévoluy et Champsaur : « brise forte » et turbulences (thermique/vent/brise) sur la transition Dévoluy-Champsaur (S41).",
-          "usage": "La traversée du Drac vers le Dévoluy fait partie de l'itinéraire du triangle record de 350 km (S22) ; Dévoluy point de virage du FAI 185 km (S27). Convergence non nommée dans les sources consultées.",
+          "mechanism": "L'air remonte du sud par la Durance et le Buëch, contre les brises du Drac, du Champsaur et du Trièves. Le schéma de référence montre une confluence entre Céüse et Charance, au-dessus du bassin de Gap, et des arcs de confluence entre l'Obiou et le Taillefer, et dans le Diois.",
+          "usage": "Sur la transition Dévoluy - Champsaur, la brise est forte, avec des turbulences de thermique, de vent et de brise.",
           "confidence": "medium",
           "sources": [
             "S22",
             "S27",
             "S45",
             "S41"
-          ]
+          ],
+          "possible": [
+            "La traversée du Drac vers le Dévoluy fait partie de l'itinéraire d'un triangle de 350 km.",
+            "Le Dévoluy a été point de virage d'un triangle FAI de 185 km."
+          ],
+          "note": "Horaires : déduction ; convergence non nommée dans les sources consultées."
         },
         {
           "id": "ligne-est-ecrins-durance",
@@ -1518,8 +1609,8 @@
           },
           "coord_quality": "approx",
           "when": "Jours thermiques, fin de matinée à fin d'après-midi",
-          "mechanism": "Brise de Durance (forte, S57) et brises des vallées affluentes (Vallouise, Guil, Clarée) ; régime de brise général des vallées briançonnaises (S17) ; par régime de nord, une confluence glisse vers Briançon - Izoard (voir convergence de mistral Briançon).",
-          "usage": "Départ de la majorité des records du monde de triangle FAI (Izoard : 350,5 km en 2023, 358,6 km en 2025 ; S48, S49) ; route classique Clôt la Cime - Freissinières - Vieux Chaillol - Dévoluy (S50). « Attaquer les faces est des Écrins » (S24).",
+          "mechanism": "La brise de la Durance, forte, se combine à celles des vallées affluentes (Vallouise, Guil, Clarée). Par régime de nord, la confluence glisse vers Briançon et l'Izoard (voir la convergence de mistral de Briançon).",
+          "usage": "Ce secteur est le départ de la majorité des records du monde de triangle FAI : 350,5 km et 358,6 km, partis de l'Izoard.",
           "confidence": "low",
           "sources": [
             "S48",
@@ -1528,6 +1619,11 @@
             "S24",
             "S57",
             "S17"
+          ],
+          "possible": [
+            "Une route classique passe par Clôt la Cime, Freissinières, le Vieux Chaillol et le Dévoluy.",
+            "On peut attaquer les faces est des Écrins.",
+            "Les vallées briançonnaises suivent un régime de brise général."
           ]
         },
         {
@@ -1552,14 +1648,17 @@
           },
           "coord_quality": "approx",
           "when": "Jours thermiques, après-midi (déduction)",
-          "mechanism": "Flux remontant du sud (Verdon/Asse/Bléone, nourri par la brise de mer) contre les brises de la Durance et de l'Ubaye. Appuis : tracés de Largeault Castellane - Thorame (Verdon), Digne - La Javie, La Javie - Montclar avec la note « l'endroit de la confluence dépend de la force de la brise du lac » (S44) ; Briffe diapos 61-62 (S45).",
-          "usage": "Saint-André est la base de vols de 193 km FAI et 224 km (S26). Géométrie reconstruite, non vérifiée.",
+          "mechanism": "Un flux remontant du sud, depuis le Verdon, l'Asse et la Bléone, nourri par la brise de mer, rencontre les brises de la Durance et de l'Ubaye. Les cartes de brises tracent le Verdon de Castellane à Thorame, et la Bléone de Digne à La Javie. Près de La Javie et de Montclar, l'endroit de la confluence dépend de la force de la brise du lac. Le schéma de référence les montre aussi (diapos 61-62).",
           "confidence": "low",
           "sources": [
             "S26",
             "S44",
             "S45"
-          ]
+          ],
+          "possible": [
+            "Saint-André a servi de base à un vol FAI de 193 km et à un vol de 224 km."
+          ],
+          "note": "Géométrie reconstruite, non vérifiée ; horaires déduits."
         },
         {
           "id": "front-brise-mer-provence",
@@ -1587,14 +1686,18 @@
           },
           "coord_quality": "approx",
           "when": "Après-midi d'été par vent synoptique faible ; ligne mobile qui progresse vers le nord (déduction)",
-          "mechanism": "Ligne verte du schéma de Briffe « brise de mer » (diapos 48-49) : l'air marin venu de Fréjus, Cannes et Nice se heurte à l'air continental et aux brises de vallée ; l'exposé la range parmi les confluences biphasées « de type front » (diapos 29-32), avec une ligne de décollement qui avance plus vite que le nuage de confluence (S45). Repérage : changement de direction du vent au sol, arrêt net des cumulus, base plus basse côté marin (S64).",
-          "usage": "Exploitable en cross : monter dans l'air continental au bord du front plutôt que de rechercher la grégarité (S45) ; air marin plus stable/humide derrière le front (S64). Géométrie reconstruite par géoréférencement manuel de la diapo (résidu < 2 km) : approximative.",
+          "mechanism": "L'air marin venu de Fréjus, de Cannes et de Nice se heurte à l'air continental et aux brises de vallée. La ligne verte du schéma de référence (diapos 48-49) range cette confluence parmi les confluences biphasées de type front, où une ligne de décollement avance plus vite que le nuage de confluence.",
+          "usage": "Exploitable en cross : on peut monter dans l'air continental, au bord du front, plutôt que de rechercher la grégarité. On le repère au changement de direction du vent au sol, à l'arrêt net des cumulus et à une base plus basse côté marin.",
           "confidence": "medium",
           "sources": [
             "S45",
             "S64",
             "S9"
-          ]
+          ],
+          "possible": [
+            "Derrière le front, l'air marin peut être plus stable et plus humide."
+          ],
+          "note": "Ligne mobile qui progresse vers le nord : déduction ; géométrie reconstruite par géoréférencement manuel du schéma (résidu < 2 km), approximative."
         },
         {
           "id": "cretes-frontalieres-franco-italiennes",
@@ -1626,13 +1729,17 @@
           },
           "coord_quality": "approx",
           "when": "Jours thermiques, après-midi ; la ligne se décale vers le versant le plus faible selon le vent",
-          "mechanism": "Ligne rouge sombre du schéma de Briffe (diapos 47, 49, 54) : les flux venus de la plaine du Pô (flèches bleues) rencontrent sur la crête les flux remontant de la Durance, de la Maurienne et de l'Ubaye (flèches jaunes). L'exposé note que sans crête franche pour fixer la limite d'un bassin aérologique, « c'est une lutte à celle qui avancera le plus » et que le vent donne l'avantage à l'une ou l'autre masse d'air (diapos 24-27) (S45).",
-          "usage": "Ligne de décollement exploitable sur l'arête frontalière, en restant côté français par temps de brise ; elle se déplace avec le vent (est : l'air italien passe les cols ; lombarde : voir synoptic). Le Vieux Chaillol et Freissinières ont été franchis avec du vent d'est (S50).",
+          "mechanism": "Sur le schéma de référence (ligne rouge sombre), les flux venus de la plaine du Pô, en flèches bleues, rencontrent sur la crête ceux qui remontent de la Durance, de la Maurienne et de l'Ubaye, en flèches jaunes. Sans crête franche pour fixer la limite d'un bassin aérologique, les deux masses d'air luttent pour avancer le plus, et le vent donne l'avantage à l'une ou à l'autre.",
+          "usage": "Ligne de décollement exploitable sur l'arête frontalière, en restant côté français par temps de brise. Elle se déplace avec le vent : par vent d'est, l'air italien passe les cols ; par lombarde, voir l'effet de vent correspondant.",
           "confidence": "medium",
           "sources": [
             "S45",
             "S50"
-          ]
+          ],
+          "possible": [
+            "Le Vieux Chaillol et Freissinières ont été franchis par vent d'est."
+          ],
+          "note": "Diapositives du schéma : 24 à 27, 47, 49 et 54."
         },
         {
           "id": "confluence-obiou-taillefer",
@@ -1664,13 +1771,16 @@
           },
           "coord_quality": "approx",
           "when": "Jours thermiques, après-midi",
-          "mechanism": "Arc orange de la diapo 54 (et diapo 60 « Obiou - Taillefer ») : brises venant de Grenoble par le Drac et le Trièves (traits turquoise) contre l'air qui remonte de Gap par le Champsaur (traits jaunes) (S45).",
-          "usage": "Passage obligé des triangles Vercors - Dévoluy - Chamrousse (S27, S52) ; piège du Valbonnais : une vallée « de derrière » (Oris-en-Rattier) peut prendre le dessus et mettre sous le vent (S27).",
+          "mechanism": "Sur le schéma de référence, un arc orange (diapos 54 et 60) marque la rencontre des brises venant de Grenoble par le Drac et le Trièves (traits turquoise) avec l'air qui remonte de Gap par le Champsaur (traits jaunes).",
           "confidence": "medium",
           "sources": [
             "S45",
             "S27",
             "S52"
+          ],
+          "possible": [
+            "Des triangles Vercors - Dévoluy - Chamrousse passent par cet arc.",
+            "Au Valbonnais, une vallée « de derrière », à Oris-en-Rattier, peut prendre le dessus et mettre sous le vent."
           ]
         },
         {
@@ -1703,14 +1813,18 @@
           },
           "coord_quality": "approx",
           "when": "Jours thermiques, après-midi",
-          "mechanism": "Arc orange de la diapo 54 et diapo 59 « Col de Cabre - Toussière » : l'air du Rhône entré par la Drôme (flèches violettes) rencontre l'air remontant d'Aspres/Buëch (traits jaunes) (S45). L'exposé donne aussi la diapo 74 « Saint-Genis » : confluence entre Serres et Aspres par vent de sud-est.",
-          "usage": "Diois « booming » avec de beaux nuages le jour du record de Pinot (S52) ; vautours sur les faces sud de Die (S27). Position tracée d'après la diapo : approximative.",
+          "mechanism": "Sur le schéma de référence, un arc orange (diapos 54 et 59) : l'air du Rhône entré par la Drôme, en flèches violettes, rencontre l'air remontant d'Aspres et du Buëch, en traits jaunes. Le schéma (diapo 74, « Saint-Genis ») montre aussi une confluence entre Serres et Aspres par vent de sud-est.",
           "confidence": "medium",
           "sources": [
             "S45",
             "S52",
             "S27"
-          ]
+          ],
+          "possible": [
+            "Un jour de record, le Diois était « booming », avec de beaux nuages.",
+            "Il arrive que des vautours tournent sur les faces sud de Die."
+          ],
+          "note": "Position tracée sur la diapositive : approximative."
         },
         {
           "id": "mistral-confluence-buech-crete-de-l-ane",
@@ -1738,13 +1852,16 @@
           },
           "coord_quality": "approx",
           "when": "Régime de mistral/nord-ouest, après-midi",
-          "mechanism": "Ligne orange de la diapo 66 (et diapo 70 « Crêtes de l'Âne - col de Cabre ») : le flux de nord-ouest qui franchit les Baronnies bute sur l'air qui remonte la Durance et le Buëch ; la ligne suit le Buëch de Sisteron à Laragne et au col de Cabre (S45).",
-          "usage": "Confluence « de contournement » exploitable à Laragne - Chabre ; dust devils à Chabre quand la brise prend le dessus sur un nord faible (S62, S67).",
+          "mechanism": "Sur le schéma de référence, une ligne orange (diapos 66 et 70, Crêtes de l'Âne - col de Cabre) : le flux de nord-ouest qui franchit les Baronnies bute sur l'air qui remonte la Durance et le Buëch. La ligne suit le Buëch de Sisteron à Laragne, puis le col de Cabre.",
+          "usage": "Confluence « de contournement » exploitable à Laragne et à Chabre.",
           "confidence": "medium",
           "sources": [
             "S45",
             "S62",
             "S67"
+          ],
+          "possible": [
+            "À Chabre, des dust devils peuvent se former quand la brise prend le dessus sur un nord faible."
           ]
         },
         {
@@ -1773,13 +1890,17 @@
           },
           "coord_quality": "approx",
           "when": "Régime de mistral/nord-ouest, après-midi",
-          "mechanism": "Ligne orange de la diapo 66 : le mistral qui descend le Rhône puis longe la Durance rencontre l'air provençal sur le plateau de Valensole, de Peyruis aux gorges du Verdon ; l'exposé range les confluences de mistral parmi les confluences « de contournement » à l'échelle d'un massif (Écrins, massif entre Durance et Bléone, Lure + Ventoux), diapo 22 (S45).",
-          "usage": "Piste de grand cross vers le sud (Verdon) par mistral ; Hamard a renoncé au Cheval Blanc par nord trop fort en 2023 (S48). Position approximative.",
+          "mechanism": "Sur le schéma de référence, une ligne orange (diapo 66) : le mistral qui descend le Rhône puis longe la Durance rencontre l'air provençal sur le plateau de Valensole, de Peyruis aux gorges du Verdon. Les confluences de mistral de ce type sont dites « de contournement » à l'échelle d'un massif, comme dans les Écrins, le massif entre Durance et Bléone, ou le Lure et le Ventoux (diapo 22).",
+          "usage": "Piste de grand cross vers le sud (Verdon) par mistral.",
           "confidence": "low",
           "sources": [
             "S45",
             "S48"
-          ]
+          ],
+          "possible": [
+            "Il arrive qu'un nord trop fort fasse renoncer au Cheval Blanc."
+          ],
+          "note": "Position approximative."
         },
         {
           "id": "mistral-confluence-gap-tallard",
@@ -1799,12 +1920,13 @@
           },
           "coord_quality": "approx",
           "when": "Régime de mistral/nord-ouest, après-midi",
-          "mechanism": "Ligne orange de la diapo 66 (diapo 71 « Montsérieux - Céüsette ») : flux de mistral venu du Buëch/Dévoluy contre le flux de la Durance au droit de l'aérodrome de Gap-Tallard (S45).",
-          "usage": "Secteur du vol à voile de Gap-Tallard (onde et thermique, falaise de Céüse à 2000 m, Pic de Bure) (S45). Position approximative.",
+          "mechanism": "Sur le schéma de référence, une ligne orange (diapo 66, et diapo 71 « Montsérieux - Céüsette ») : le flux de mistral venu du Buëch et du Dévoluy rencontre le flux de la Durance au droit de l'aérodrome de Gap-Tallard.",
+          "usage": "Le secteur du vol à voile de Gap-Tallard offre onde et thermique, avec la falaise de Céüse à 2000 m et le Pic de Bure.",
           "confidence": "low",
           "sources": [
             "S45"
-          ]
+          ],
+          "note": "Position approximative."
         },
         {
           "id": "mistral-confluence-briancon-izoard",
@@ -1824,14 +1946,17 @@
           },
           "coord_quality": "approx",
           "when": "Régime de nord/mistral, après-midi",
-          "mechanism": "Ligne orange de la diapo 66 au nord de Briançon : flux de nord-ouest passant par le Lautaret et la Guisane contre la brise de la Durance (S45) ; la première passe, d'après Chocard Airlines, la voyait glisser vers L'Argentière avec le nord.",
-          "usage": "Zone du déco de l'Izoard : par nord de 15 km/h, déco en vent arrière face nord puis saut sous le vent (S22). Position approximative.",
+          "mechanism": "Sur le schéma de référence, une ligne orange (diapo 66) au nord de Briançon : le flux de nord-ouest, passant par le Lautaret et la Guisane, rencontre la brise de la Durance.",
           "confidence": "low",
           "sources": [
             "S45",
             "S22",
             "S57"
-          ]
+          ],
+          "possible": [
+            "Près de l'Izoard, par nord de 15 km/h, le décollage peut se faire en vent arrière face nord, puis par un saut sous le vent."
+          ],
+          "note": "Position approximative ; la première passe la faisait glisser vers L'Argentière par vent de nord."
         }
       ],
       "hazards": [
@@ -1843,12 +1968,15 @@
           "lat": 45.9203,
           "radius_km": 10,
           "conditions": "Été, 13h-18h, régime de brise ; renforcée si vent synoptique de même sens (déduction)",
-          "description": "Brises de 20-25 km/h, jusqu'à 30 km/h, sensibles jusqu'à 2500-3000 m (S55) ; à Sallanches, brise très forte, atterrissage au lac souvent impossible dans la journée (S56) ; l'Arve est aussi citée parmi les vallées à 50 km/h (S1).",
+          "description": "Les brises de l'Arve atteignent le plus souvent 20 à 25 km/h, jusqu'à 30 km/h, et restent sensibles jusqu'à 2500-3000 m. L'Arve est aussi citée parmi les vallées où la brise atteint 50 km/h.",
           "sources": [
             "S55",
             "S56",
             "S1",
             "S38"
+          ],
+          "possible": [
+            "À Sallanches, la brise peut être très forte : il arrive que l'atterrissage au lac soit impossible dans la journée."
           ]
         },
         {
@@ -1859,7 +1987,7 @@
           "lat": 45.5556,
           "radius_km": 15,
           "conditions": "Été, 13h-18h",
-          "description": "Brises jusqu'à 50 km/h en Tarentaise (S2).",
+          "description": "En Tarentaise, les brises atteignent jusqu'à 50 km/h.",
           "sources": [
             "S2",
             "S38"
@@ -1873,7 +2001,7 @@
           "lat": 45.2833,
           "radius_km": 20,
           "conditions": "Été, 13h-18h",
-          "description": "Brises jusqu'à 50 km/h en Maurienne (S2, S17).",
+          "description": "En Maurienne, les brises atteignent jusqu'à 50 km/h.",
           "sources": [
             "S2",
             "S17",
@@ -1889,13 +2017,17 @@
           "radius_km": 15,
           "coord_quality": "approx",
           "conditions": "Été, milieu d'après-midi",
-          "description": "Brise de Durance : axe sud-ouest, éviter les fonds de vallée dès la mi-journée (S57) ; au déco de Saint-Vincent-les-Forts brises « particulièrement fortes, surtout en milieu d'après-midi » (S13, non revérifié) ; la confluence avec la brise de la Bléone/du Bès dépend de la force de la brise du lac (S44).",
+          "description": "La brise de la Durance suit un axe sud-ouest : mieux vaut éviter les fonds de vallée dès la mi-journée. La confluence avec la brise de la Bléone et celle du Bès dépend de la force de la brise du lac.",
           "sources": [
             "S57",
             "S13",
             "S44",
             "S2"
-          ]
+          ],
+          "possible": [
+            "Au déco de Saint-Vincent-les-Forts, les brises peuvent être particulièrement fortes, surtout en milieu d'après-midi."
+          ],
+          "note": "Données de Saint-Vincent-les-Forts non revérifiées."
         },
         {
           "id": "foehn-sud-versants-nord",
@@ -1905,13 +2037,17 @@
           "lat": 45.6172,
           "radius_km": 60,
           "conditions": "Flux de sud en altitude avant perturbation (SW à E, parfois NE), HP côté italien et baisse côté français ; foehn probable à -4 hPa (Aoste - Annecy) ; 2-4 hPa de différence = prudence ; lenticulaires, mur de foehn aux cols ; peut se cantonner à 1400-1800 m",
-          "description": "Vent chaud et sec, irrégulier (30 à plus de 100 km/h), vallées de Chamonix et des Contamines les plus exposées (S55) ; un 15 km/h peut passer à plus de 30-35 km/h en rafales (S11) ; rotors et air très perturbé sous le vent, vol à éviter (S56). Centre et rayon (Haute-Tarentaise, Maurienne, Chamonix) : déduction.",
+          "description": "Le foehn de sud est un vent chaud et sec, irrégulier, de 30 à plus de 100 km/h, et les vallées de Chamonix et des Contamines y sont les plus exposées. Sous le vent, les rotors et l'air très perturbé rendent le vol à éviter.",
           "sources": [
             "S55",
             "S56",
             "S40",
             "S11"
-          ]
+          ],
+          "possible": [
+            "Un vent de 15 km/h peut dépasser 30 à 35 km/h en rafales."
+          ],
+          "note": "Centre et rayon (Haute-Tarentaise, Maurienne, Chamonix) : déduction."
         },
         {
           "id": "lombarde-cretes-frontalieres",
@@ -1921,10 +2057,11 @@
           "lat": 44.8998,
           "radius_km": 70,
           "conditions": "Retour d'est lié à une dégradation méditerranéenne",
-          "description": "Vent de NE à SE sur les crêtes frontalières, fortes précipitations possibles sur les crêtes (S12). Zone indicative (déduction).",
+          "description": "Le vent de lombarde souffle de nord-est à sud-est sur les crêtes frontalières, avec de fortes précipitations possibles sur les crêtes.",
           "sources": [
             "S12"
-          ]
+          ],
+          "note": "Zone indicative (déduction)."
         },
         {
           "id": "brise-forte-durance-briancon",
@@ -1934,10 +2071,13 @@
           "lat": 44.898,
           "radius_km": 15,
           "conditions": "Été, dès la mi-journée ; renforcée et précoce par tendances S à O",
-          "description": "Pointes à plus de 40 km/h à Briançon ; la brise est sensible jusqu'aux Têtes de l'Argentière (2044 m) et aux crêtes de Peyrolles (2645 m) ; poser tôt ou avoir une repose à mi-pente (S57).",
+          "description": "À Briançon, la brise est sensible jusqu'aux Têtes de l'Argentière (2044 m) et aux crêtes de Peyrolles (2645 m). Mieux vaut poser tôt ou prévoir une repose à mi-pente.",
           "sources": [
             "S57",
             "S44"
+          ],
+          "possible": [
+            "Il arrive que la brise fasse des pointes à plus de 40 km/h à Briançon."
           ]
         },
         {
@@ -1949,11 +2089,15 @@
           "radius_km": 4,
           "coord_quality": "approx",
           "conditions": "Toute l'année ; survol interdit sous 1220 m au-dessus du CEA (P14), ZIT à 1200 m",
-          "description": "Les transitions Néron - Vercors (5,3 km) et Moucherotte - Rachais coupent la zone : deux récits de 200 km racontent une pénétration (8 s à 1205 m, S46 ; vol non validé à la CFD, S47). Prévoir une « laisse de chien » plein nord vers Sassenage (S47).",
+          "description": "Les transitions Néron - Vercors (5,3 km) et Moucherotte - Rachais coupent ces zones aériennes.",
           "sources": [
             "S46",
             "S47",
             "S41"
+          ],
+          "possible": [
+            "Deux vols de 200 km ont traversé la zone : l'un y a pénétré pendant 8 s à 1205 m ; l'autre n'a pas été validé par la CFD.",
+            "Il est prudent de prévoir une « laisse de chien » plein nord vers Sassenage."
           ]
         },
         {
@@ -1965,10 +2109,11 @@
           "radius_km": 10,
           "coord_quality": "approx",
           "conditions": "CTR Chambéry 1 du 15/12 au 07/04 ; TMA Lyon 11 > 2900 m, TMA 16 > 3500 m sur toute la Chartreuse ; TMA Genève 7 > 3200 m sur Bornes-Aravis",
-          "description": "Plafonds de la Chartreuse, de l'Épine (CTR Chambéry) et des Bornes-Aravis selon le support St Hil'Air (S41) ; position du cercle centrée sur l'aéroport de Chambéry (approx).",
+          "description": "Des plafonds s'appliquent à la Chartreuse, à l'Épine (CTR de Chambéry) et aux Bornes-Aravis.",
           "sources": [
             "S41"
-          ]
+          ],
+          "note": "Position du cercle centrée sur l'aéroport de Chambéry (approximative)."
         },
         {
           "id": "zone-r196-gap-tallard",
@@ -1979,11 +2124,15 @@
           "radius_km": 15,
           "coord_quality": "approx",
           "conditions": "Selon NOTAM R196A/B ; parcs du Vercors et des Bauges 300 m/sol, parc des Écrins 1000 m/sol",
-          "description": "Le support St Hil'Air indique R196A1 à l'ouest de Gap (Dévoluy, Taillefer, Champsaur) et les hauteurs de survol des parcs sur les transitions Vercors - Diois (S41) ; le récit du 185 km traverse le parc du Vercors au-dessus de 300 m/sol (S27). Contour exact non lu (cercle indicatif).",
+          "description": "La zone R196A1 se situe à l'ouest de Gap, sur le Dévoluy, le Taillefer et le Champsaur. Sur les transitions Vercors - Diois, les parcs imposent leurs hauteurs de survol.",
           "sources": [
             "S41",
             "S27"
-          ]
+          ],
+          "possible": [
+            "Un vol de 185 km a traversé le parc du Vercors au-dessus de 300 m/sol."
+          ],
+          "note": "Contour exact non lu : cercle indicatif."
         }
       ],
       "thermal_spots": [],
@@ -2000,14 +2149,20 @@
             "S"
           ],
           "coord_quality": "source",
-          "description": "Décollage N/S (ParaglidingEarth 23667, 2443 m). « Numéro un » des grands triangles : Lambert 350,5 km (2023), Potel 358,6 km (2025), Petit 301 km (2025) y ont décollé entre 9h11 et 10h (S49, S50). Par nord de 15 km/h, déco en vent arrière sur la face nord puis saut sous le vent pour trouver les premiers thermiques (S22) ; par vent d'ouest annoncé, attendre que le plafond monte (S50). Déco absent du fichier FFVL local.",
+          "description": "Le décollage est orienté nord et sud. Le col de l'Izoard est le premier décollage des grands triangles, avec des records de 350,5 km, 358,6 km et 301 km.",
           "pge_id": 23667,
           "sources": [
             "S69",
             "S22",
             "S49",
             "S50"
-          ]
+          ],
+          "possible": [
+            "Ces vols ont décollé entre 9h11 et 10h.",
+            "Par nord de 15 km/h, le décollage peut se faire en vent arrière, face nord, puis par un saut sous le vent pour trouver les premiers thermiques.",
+            "Par vent d'ouest annoncé, il peut être utile d'attendre que le plafond monte."
+          ],
+          "note": "Référence ParaglidingEarth 23667 ; décollage absent du fichier local."
         },
         {
           "id": "colle-dell-agnello",
@@ -2020,19 +2175,23 @@
             "S"
           ],
           "coord_quality": "source",
-          "description": "Décollage de la ligne frontalière (ParaglidingEarth 21233, 2730 m) : Hamard y a décollé à 9h36 le 09/07/2016 pour un triangle FAI de 306 km vers le Verdon et La Salette (S53). Position géographique italienne/frontière.",
+          "description": "Le décollage est orienté nord et sud, sur la ligne frontalière, à 2730 m.",
           "pge_id": 21233,
           "sources": [
             "S69",
             "S53"
-          ]
+          ],
+          "possible": [
+            "Un triangle FAI de 306 km vers le Verdon et La Salette a débuté ici à 9h36."
+          ],
+          "note": "Référence ParaglidingEarth 21233 ; position géographique italienne, à la frontière."
         }
       ],
       "landings": [],
       "synoptic_effects": [
         {
           "wind": "Bise",
-          "effect": "Bise = vent froid et sec de NE à N, d'anticyclone sur les îles Britanniques ou la Scandinavie (S59) ; dans les Alpes françaises elle est surtout ressentie sur l'avant-pays (Léman, Lyonnais, Bas-Dauphiné) et canalisée dans les grandes vallées (S59). Le secteur des Arcs en Haute-Tarentaise reste volable sous 2500 m même avec 40 km/h de bise à Annecy, Chambéry ou Grenoble (S10, non revérifié). Par bise faible à modérée la brise de la Combe de Savoie et du Grésivaudan est contrariée côté Chambéry (déduction) ; par vent de nord annoncé, Saint-Hilaire vole « 8 fois sur 10 » et par fort nord les pilotes se replient sur Montaud, Courtet ou Montlambert (S66) ; sur les Bauges un nord soutenu est plus marqué à l'ouest qu'à l'est du massif, ce qui permet de voler au cœur du massif à l'abri (S42). Bise noire : NE bas surmonté d'un flux chaud et humide de S/SE au-delà de 2000 m (S59), à éviter.",
+          "effect": "Bise : vent froid et sec de nord-est à nord, issu d'un anticyclone sur les îles Britanniques ou la Scandinavie. Dans les Alpes françaises, elle se ressent surtout sur l'avant-pays (Léman, Lyonnais, Bas-Dauphiné) et se canalise dans les grandes vallées. Le secteur des Arcs, en Haute-Tarentaise, reste volable sous 2500 m même avec 40 km/h de bise à Annecy, Chambéry ou Grenoble (point non revérifié). Par bise faible à modérée, la brise de la Combe de Savoie et du Grésivaudan est contrariée côté Chambéry (déduction). Par vent de nord annoncé, Saint-Hilaire vole 8 fois sur 10 ; par fort nord, les pilotes se replient sur Montaud, Courtet ou Montlambert. Sur les Bauges, un nord soutenu est plus marqué à l'ouest qu'à l'est du massif, ce qui permet de voler au cœur du massif à l'abri. Bise noire : un nord-est bas, surmonté d'un flux chaud et humide de sud à sud-est au-delà de 2000 m, à éviter.",
           "sources": [
             "S59",
             "S10",
@@ -2042,7 +2201,7 @@
         },
         {
           "wind": "N",
-          "effect": "Alpes du Nord : nord annoncé = souvent NNE à NW réel (S66) ; au déco du Moucherotte la balise donnait NNE 15/25 avec un thermique sous le vent et des faces est « chaotiques », masse d'air plus saine après l'épaule (S47) ; Saint-Hilaire reste le site le plus praticable par nord modéré (S66). Alpes du Sud : le nord est la condition des plus gros triangles de l'Izoard (nord 15-20 km/h toute la journée : Lambert 350 km 2023, vent arrière au déco face nord puis saut sous le vent ; 20 km/h de face sur la dernière branche ; Hamard retiré par le nord trop fort au Cheval Blanc, S48/S22) mais il rend dangereux le sud du parcours (Cheval Blanc, Monges), crée des dust devils à Chabre quand la brise prend le dessus sur un nord faible (S62, S67) et pousse les thermiques à dériver. Au-dessus de 10 km/h aux cimes : turbulences ; > 20 km/h : thermiques hachés (S40).",
+          "effect": "Par nord annoncé, le vent réel est souvent du nord-nord-est au nord-ouest. Sur les Alpes du Nord, la balise du Moucherotte donnait nord-nord-est 15/25 avec un thermique sous le vent et des faces est chaotiques, l'air étant plus sain après l'épaule du Moucherotte ; par nord modéré, Saint-Hilaire reste le site le plus praticable. Dans les Alpes du Sud, le nord est la condition des plus gros triangles de l'Izoard (nord de 15-20 km/h toute la journée, décollage en vent arrière face nord puis saut sous le vent, et 20 km/h de face sur la dernière branche), mais un nord trop fort a fait renoncer au Cheval Blanc. Il rend dangereux le sud du parcours (Cheval Blanc, Monges), crée des dust devils à Chabre quand la brise prend le dessus sur un nord faible, et pousse les thermiques à dériver. Aux cimes, plus de 10 km/h donnent des turbulences, et plus de 20 km/h hachent les thermiques.",
           "sources": [
             "S66",
             "S47",
@@ -2055,7 +2214,7 @@
         },
         {
           "wind": "NE",
-          "effect": "Régime de NE ou « léger flux descendant la vallée (bise) » : le Pays du Mont-Blanc cite le NE comme orientation de nombreux décollages et un flux de bise descendant l'Arve (S55). Au sud, Saint-Vincent-les-Forts et Oraison étaient donnés comme refuges (S13, non revérifié). Pas de source dédiée au NE seul dans les Alpes du Sud.",
+          "effect": "Régime de nord-est : un léger flux descend la vallée (bise). Le Pays du Mont-Blanc cite le nord-est comme orientation de nombreux décollages, et un flux de bise descend l'Arve. Au sud, Saint-Vincent-les-Forts et Oraison étaient donnés comme refuges (point non revérifié). Le nord-est seul n'est pas documenté dans les Alpes du Sud.",
           "sources": [
             "S55",
             "S13"
@@ -2064,7 +2223,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Le NW renforce par temps de beau temps de traîne les faces au vent des Préalpes et pousse les convergences vers le SE ; vu en vol : NW « assez marqué » au-dessus de 2000 m le 17/07/2019 en Préalpes du Nord (confluences très toniques, descendances jusqu'à -6 m/s, tronçon Tête à Turpin - Parmelan « plein vent, rafaleux ») (S28) ; NW et ombres rendent difficiles le Champsaur et le Valbonnais en fin de journée (S52) ; NW 10 km/h sur le Vercors est (S47) ; aux Alpes du Sud le vent tournant ouest-nord-ouest facilite l'aller vers Saint-André mais durcit le retour (S50). Confluence vent météo + brise : la plus marquée mais mobile, voisine du sous-le-vent et des rotors (S9).",
+          "effect": "Le nord-ouest renforce, par beau temps de traîne, les faces au vent des Préalpes, et pousse les convergences vers le sud-est. En vol, il était assez marqué au-dessus de 2000 m en Préalpes du Nord, avec des confluences très toniques, des descendances jusqu'à -6 m/s, et un tronçon entre la Tête à Turpin et le Parmelan, en plein vent et rafaleux. Le nord-ouest et les ombres rendent difficiles le Champsaur et le Valbonnais en fin de journée, et il y a 10 km/h de nord-ouest sur l'est du Vercors. Dans les Alpes du Sud, le vent tournant d'ouest-nord-ouest facilite l'aller vers Saint-André, mais il durcit le retour. Une confluence entre vent météo et brise est la plus marquée, mais elle reste mobile, voisine du sous-le-vent et des rotors.",
           "sources": [
             "S28",
             "S52",
@@ -2075,7 +2234,7 @@
         },
         {
           "wind": "W",
-          "effect": "Ouest : l'ouest de l'avant-pays pousse l'air contre les faces ouest des Préalpes ; en vol l'ouest « n'est plus gérable » sur le Vercors au-dessus de 2000 m (demi-tour au Pic Saint-Michel) et « repousse rageusement » à 2500 m à l'Aulp du Seuil (S46) ; les 15 km/h d'ouest annoncés peuvent être du NNW (S28). Au Pays du Mont-Blanc, vol à proscrire au-delà de 20 km/h à 2000 m (S55). Par ouest ou sud-ouest la brise de la Durance rentre tôt et brusquement jusqu'aux Têtes de l'Argentière et aux crêtes de Peyrolles (S57).",
+          "effect": "L'ouest de l'avant-pays pousse l'air contre les faces ouest des Préalpes. En vol, un ouest devenu ingérable au-dessus de 2000 m sur le Vercors a fait faire demi-tour au Pic Saint-Michel, et il repousse fortement à 2500 m à l'Aulp du Seuil. Les 15 km/h d'ouest annoncés peuvent être du nord-nord-ouest. Au Pays du Mont-Blanc, le vol est à proscrire au-delà de 20 km/h à 2000 m. Par ouest ou sud-ouest, la brise de la Durance rentre tôt et brusquement, jusqu'aux Têtes de l'Argentière et aux crêtes de Peyrolles.",
           "sources": [
             "S46",
             "S28",
@@ -2085,7 +2244,7 @@
         },
         {
           "wind": "SW",
-          "effect": "Sud-ouest : aligné avec la Durance et l'axe Isère, il renforce les brises montantes (Durance : pointes > 40 km/h à Briançon, tendances S à O qui la font entrer tôt, S57) ; un petit SW de 9 km/h pousse dans le bon sens la traversée Chartreuse-Bauges (S46) ; en revanche un SW annoncé forcissant a « appuyé » la traversée Vercors-Diois (perte de 500 m pour 2 km) et contré le retour de Lus-la-Croix-Haute (S27), et la sortie d'un massif se paie par « plus t'es haut, plus t'es poussé par le météo » (S27) ; au Pic de Bure du SW avec de bien meilleurs thermiques (S50). Pré-frontal : risque de surdéveloppement sur les convergences (S6, déduction pour les Alpes françaises).",
+          "effect": "Le sud-ouest, aligné avec la Durance et l'axe de l'Isère, renforce les brises montantes : à Briançon, la brise de la Durance fait des pointes à plus de 40 km/h, et les tendances sud à ouest la font entrer tôt. Un petit sud-ouest de 9 km/h pousse dans le bon sens la traversée Chartreuse-Bauges. En revanche, un sud-ouest annoncé forcissant a « appuyé » la traversée Vercors-Diois, avec une perte de 500 m pour 2 km, et il a contré le retour de Lus-la-Croix-Haute. La sortie d'un massif se paie d'autant plus que l'on est haut, poussé par le vent météo. Au Pic de Bure, le sud-ouest a donné de bien meilleurs thermiques. Dans le pré-frontal, les convergences peuvent surdévelopper (déduction pour les Alpes françaises).",
           "sources": [
             "S57",
             "S46",
@@ -2096,7 +2255,7 @@
         },
         {
           "wind": "S",
-          "effect": "Vent du sud : opposé aux brises dans les vallées N-S, il crée des cisaillements dans les Bauges (S42) ; à Annecy un sud de 18 km/h aux Dents de Lanfon est de face pour le retour (S46) ; sur les Alpes du Nord il donne une composante sud sur les Aravis (« cheminement à remonter au vent car les brises donnent une composante sud », S28) ; avant une perturbation il prépare le foehn (voir Foehn). À Belledonne sud (Fond de France) la zone est turbulente surtout par vent du sud (S41) ; le Valbonnais a une brise « toujours forte » (S52).",
+          "effect": "Le vent du sud est opposé aux brises dans les vallées nord-sud, et il crée des cisaillements dans les Bauges. À Annecy, un sud de 18 km/h aux Dents de Lanfon est de face pour le retour. Sur les Alpes du Nord, il donne une composante sud sur les Aravis : il faut y remonter au vent, car les brises donnent une composante sud. Avant une perturbation, il prépare le foehn (voir le foehn). À Belledonne sud (Fond de France), la zone est turbulente surtout par vent du sud. Le Valbonnais a une brise toujours forte.",
           "sources": [
             "S42",
             "S46",
@@ -2107,7 +2266,7 @@
         },
         {
           "wind": "SE",
-          "effect": "Sud-est sur les Alpes du Sud : l'exposé de G. Briffe (diapos 73-79) traite le « vent de sud-est » (Saint-Genis/Aspres/Serres) comme un régime à part, qui s'oppose aux brises remontant de la Durance et du Buëch ; schéma lu mais flux non géoréférencé précisément ; renvoie à la lombarde pour les crêtes frontalières.",
+          "effect": "Dans les Alpes du Sud, le vent de sud-est (Saint-Genis, Aspres, Serres) est traité comme un régime à part, qui s'oppose aux brises remontant de la Durance et du Buëch. Le schéma de référence (diapos 73-79) le montre, mais le flux n'y est pas géoréférencé précisément. Pour les crêtes frontalières, voir la lombarde.",
           "sources": [
             "S45",
             "S12"
@@ -2116,7 +2275,7 @@
         },
         {
           "wind": "E",
-          "effect": "Est : fait rentrer l'air italien par les cols frontaliers ; le Vieux Chaillol et Freissinières ont été franchis « poussé par le vent d'est » (S50) ; au Pays du Mont-Blanc le retour d'est/sud-est dans la vallée de Chamonix et vers le Varan accompagne le foehn (S56).",
+          "effect": "Par vent d'est, l'air italien rentre par les cols frontaliers. Le Vieux Chaillol et Freissinières ont été franchis, poussé par ce vent d'est. Au Pays du Mont-Blanc, un retour d'est ou de sud-est dans la vallée de Chamonix, vers le Varan, accompagne le foehn.",
           "sources": [
             "S50",
             "S56"
@@ -2124,7 +2283,7 @@
         },
         {
           "wind": "Foehn",
-          "effect": "Foehn de sud : s'établit avant une perturbation, flux de sud en altitude (SW à E, parfois NE) avec HP côté italien et baisse côté français ; vallées de Chamonix et des Contamines les plus exposées au Pays du Mont-Blanc (S55). Seuils : -4 hPa Aoste moins Annecy pour un foehn probable (S56) ; 2-4 hPa d'écart de part et d'autre d'un massif = prudence maximale (S40) ; 5 hPa Zurich-Milan (S11, corrigé à 4 hPa Zurich-Lugano en commentaire). Il peut se cantonner entre 1400 et 1800 m et se déclencher avec ~20 km/h à 4000 m sans nuage (S55). Indices : lenticulaires, mur de foehn débordant des cols, écharpes depuis l'Italie, cumulus déchiquetés dès le matin, rafales chaudes et sèches descendant la vallée. Un pilote en soaring dans 15 km/h peut être repoussé par plus de 30-35 km/h (S11) ; le foehn est un vent irrégulier : 30 à plus de 100 km/h (S11).",
+          "effect": "Le foehn de sud s'établit avant une perturbation, avec un flux de sud en altitude (sud-ouest à est, parfois nord-est), une haute pression côté italien et une baisse côté français. Les vallées de Chamonix et des Contamines sont les plus exposées au Pays du Mont-Blanc. Un foehn est probable à -4 hPa d'écart entre Aoste et Annecy ; 2 à 4 hPa d'écart de part et d'autre d'un massif imposent une prudence maximale. Pour Zurich-Milan, 5 hPa ont été donnés, corrigés à 4 hPa pour Zurich-Lugano. Le foehn peut se cantonner entre 1400 et 1800 m, et se déclencher avec environ 20 km/h à 4000 m, sans nuage. Les indices sont les lenticulaires, un mur de foehn débordant des cols, des écharpes venues d'Italie, des cumulus déchiquetés dès le matin et des rafales chaudes et sèches qui descendent la vallée. En soaring dans 15 km/h, on peut être repoussé par plus de 30 à 35 km/h. Le foehn est un vent irrégulier, de 30 à plus de 100 km/h.",
           "sources": [
             "S55",
             "S56",
@@ -2134,7 +2293,7 @@
         },
         {
           "wind": "Lombarde",
-          "effect": "Lombarde (NE à SE sur les crêtes frontalières, surtout Ubaye, Queyras, Maurienne) : retour d'est lié à une dépression sur le golfe de Gênes ou advection d'air polaire continental, fortes précipitations sur les crêtes entre Modane et le Mont-Cenis, Abriès et le Queyras, sans dépasser la rive gauche de la Durance (S12). Pour le vol : ciel dégradé et vent d'est sur la crête frontalière, qui s'oppose aux brises remontant les hautes vallées ; l'exposé de Briffe place la confluence entre les flux de la plaine du Pô et ceux de la Durance sur cette même crête (S45).",
+          "effect": "La lombarde, de nord-est à sud-est sur les crêtes frontalières, surtout de l'Ubaye au Queyras et à la Maurienne, est un retour d'est lié à une dépression sur le golfe de Gênes ou à une advection d'air polaire continental. Elle apporte de fortes précipitations sur les crêtes entre Modane et le Mont-Cenis, et entre Abriès et le Queyras, sans dépasser la rive gauche de la Durance. Pour le vol, le ciel est dégradé, et le vent d'est sur la crête frontalière s'oppose aux brises remontant les hautes vallées. Le schéma de référence place la confluence entre les flux de la plaine du Pô et ceux de la Durance sur cette même crête.",
           "sources": [
             "S12",
             "S45"
@@ -2142,7 +2301,7 @@
         },
         {
           "wind": "Mistral",
-          "effect": "Mistral = vent catabatique et de couloir NW à N, canalisé dans la vallée du Rhône jusque vers 3000 m (S60). Schéma de G. Briffe (diapo 66) : une branche descend le Rhône vers la Camargue, une autre court le long de la côte provençale jusqu'à Cannes, une troisième traverse Vercors-Diois-Baronnies vers le Buëch et la Durance (Sisteron-Les Mées), une quatrième contourne le Dévoluy et les Écrins par Champsaur-Embrun et atteint Briançon par le Lautaret ; il génère des confluences « de contournement » (Buëch : crêtes de l'Âne - col de Cabre ; Gap-Tallard : Montsérieux-Céüsette ; Valensole-Verdon ; Briançon-Izoard) (S45). Chabre : dust devils quand la brise prend le dessus sur un nord faible (S62). Saint-Vincent-les-Forts abrité (S13, non revérifié). Le mistral détruit la brise de mer provençale (déduction).",
+          "effect": "Le mistral est un vent catabatique et de couloir, de nord-ouest à nord, canalisé dans la vallée du Rhône jusque vers 3000 m. Le schéma de référence (diapo 66) montre une branche qui descend le Rhône vers la Camargue, une autre qui longe la côte provençale jusqu'à Cannes, une troisième qui traverse Vercors-Diois-Baronnies vers le Buëch et la Durance (Sisteron-Les Mées), et une quatrième qui contourne le Dévoluy et les Écrins par Champsaur-Embrun pour atteindre Briançon par le Lautaret. Il génère des confluences « de contournement » : sur le Buëch, entre les crêtes de l'Âne et le col de Cabre ; à Gap-Tallard, entre Montsérieux et Céüsette ; entre Valensole et le Verdon ; et au nord de Briançon (Briançon-Izoard). À Chabre, des dust devils se forment quand la brise prend le dessus sur un nord faible. Saint-Vincent-les-Forts est abrité, mais ce point n'a pas été revérifié. Le mistral détruit la brise de mer provençale (déduction).",
           "sources": [
             "S60",
             "S45",
@@ -2152,7 +2311,7 @@
         },
         {
           "wind": "Brise de mer",
-          "effect": "Brise de mer provençale et varoise : l'air marin frais pénètre l'après-midi et se heurte à l'air continental et aux brises de vallée ; sur la Côte d'Azur et le Haut-Var, schéma de Briffe (diapos 46-49) : flèches de brise de mer depuis Fréjus, Cannes et Nice vers le nord-est et front de convergence (ligne verte) de l'Argens (Les Arcs) à Gréolières/Haut-Var jusqu'au Mercantour (Vésubie-Tinée), géoréférencé en approx (S45) ; la carte de Largeault montre des brises du littoral remontant l'Argens (Fréjus - Aups - Salernes) et le Var (Nice - Tinée) (S44). Signes : changement de direction du vent au sol, arrêt net des cumulus, base plus basse côté marin (S64) ; un front de brise de mer peut s'étendre sur des dizaines à des centaines de km (S9). Horaires et vitesses non documentés pour la France.",
+          "effect": "La brise de mer provençale et varoise : l'air marin frais pénètre l'après-midi et se heurte à l'air continental et aux brises de vallée. Sur la Côte d'Azur et le Haut-Var, le schéma de référence (diapos 46-49) montre des flèches de brise de mer depuis Fréjus, Cannes et Nice vers le nord-est, et un front de convergence (ligne verte) de l'Argens (Les Arcs) à Gréolières et au Haut-Var, jusqu'au Mercantour (Vésubie - Tinée) ; la position est approximative. Les cartes de brises montrent des brises du littoral remontant l'Argens (Fréjus - Aups - Salernes) et le Var (Nice - Tinée). Signes : changement de direction du vent au sol, arrêt net des cumulus, base plus basse côté marin ; un front de brise de mer peut s'étendre sur des dizaines à des centaines de km. Horaires et vitesses non documentés pour la France.",
           "sources": [
             "S45",
             "S44",
@@ -2228,7 +2387,7 @@
             }
           ],
           "distance_km": 358.6,
-          "description": "Les records du monde de triangle FAI partent tous du col de l'Izoard (Lambert 350,53 km le 20/08/2023 ; Potel 352,2 km le 06/08/2024 puis 358,6 km le 18/08/2025, 11 h de vol, déco 9h27) : XC Mag le présente comme « le numéro un » des grands triangles (six triangles de 300 km le même jour en 2025). Le seul récit détaillé accessible est celui du 301,1 km de Hans Petit (07/08/2025, déco 9h11) : Izoard, Clôt la Cime à 2900 m, Freissinières (poussée par un vent d'est), « route classique » du Vieux Chaillol puis du Dévoluy et du Pic de Bure (vent de sud-ouest mais thermiques à +3 m/s), balise à l'ouest d'Aspres, Céüse et Monges, Cheval Blanc (3000 m) et Le Sapet, vent tournant ouest-nord-ouest, retour par la même route avec une brise de vallée nette sur la fin ; atterrissage au col. Lambert (vent de nord toute la journée, 15 km/h arrière au déco, face nord puis saut sous le vent) a fait 250 km à 38 km/h puis a subi 20 km/h de face sur la dernière branche, avant la vallée d'Embrun où « la brise le poussait vers le décollage » ; Hamard, derrière lui, a renoncé au Cheval Blanc (nord trop fort, fermetures). Potel : aller-retour vers l'est, puis ouest jusqu'à la « Tête du Sapet », sud jusqu'à un point juste au nord des gorges du Verdon, retour vers le nord (triangle quasi équilatéral) ; les points de virage exacts sont sur XContest (accès par connexion) : le tracé ci-dessus est la route classique de Petit, pas la trace des records. Pièges : transitions Dévoluy-Céüse-Monges sous le vent par nord, ombres du matin, brise de Durance de retour par vent d'ouest, base basse côté italien. Départ tôt (avant 10h), l'été (août) et pas de nord > 20 km/h au col. Relais et plafonds du récit de Petit : Clôt la Cime 2900 m (premier plafond), Freissinières (poussé par l'est), Vieux Chaillol, Pic de Bure (thermiques à +3 m/s malgré le sud-ouest), Cheval Blanc 3000 m puis Le Sapet 3000 m ; au retour thermique sous le vent du Sapet marqué par un vautour (+300 m) ; vallée d'Embrun avec brise qui pousse vers le col.",
+          "description": "Les records du monde de triangle FAI partent tous du col de l'Izoard : 350,53 km, puis 352,2 km, puis 358,6 km, ce dernier en 11 h de vol, avec un décollage à 9h27. Le col est le premier décollage des grands triangles. Il vaut mieux partir tôt, avant 10h, en été, sans nord de plus de 20 km/h au col.",
           "sources": [
             "S22",
             "S23",
@@ -2236,7 +2395,24 @@
             "S49",
             "S50",
             "S51"
-          ]
+          ],
+          "possible": [
+            "Un même jour, six triangles de 300 km ont été réalisés.",
+            "Un vol de 301,1 km est parti à 9h11 : il a passé Clôt la Cime à 2900 m, puis Freissinières, poussé par un vent d'est.",
+            "La « route classique » passe par le Vieux Chaillol, le Dévoluy et le Pic de Bure, avec un vent de sud-ouest mais des thermiques à +3 m/s.",
+            "Le trajet a ensuite passé une balise à l'ouest d'Aspres, Céüse et Monges, puis le Cheval Blanc à 3000 m et Le Sapet, avec un vent tournant ouest-nord-ouest.",
+            "Le retour s'est fait par la même route, avec une brise de vallée nette sur la fin, et l'atterrissage au col.",
+            "Le record de 350,53 km a eu un vent de nord toute la journée, un vent arrière de 15 km/h au décollage, face nord, puis un saut sous le vent.",
+            "Ce vol a fait 250 km à 38 km/h, puis a subi 20 km/h de face sur la dernière branche.",
+            "Dans la vallée d'Embrun, la brise poussait vers le décollage.",
+            "Un vol suivant a renoncé au Cheval Blanc, à cause d'un nord trop fort et de fermetures.",
+            "Le triangle de 358,6 km a fait un aller-retour vers l'est, puis est allé à l'ouest jusqu'à la « Tête du Sapet », au sud jusqu'à un point juste au nord des gorges du Verdon, puis vers le nord.",
+            "Les points de virage exacts ne sont accessibles que par connexion à une plateforme de traces : la route décrite est celle du vol de 301,1 km, non la trace des records.",
+            "Pièges : les transitions Dévoluy - Céüse - Monges peuvent être sous le vent par nord, il y a des ombres le matin, la brise de Durance peut revenir par vent d'ouest, et la base est basse côté italien.",
+            "Relais et plafonds du vol de 301,1 km : Clôt la Cime à 2900 m (premier plafond), Freissinières, Vieux Chaillol, Pic de Bure, Cheval Blanc à 3000 m, puis Le Sapet à 3000 m.",
+            "Au retour, un thermique sous le vent du Sapet a été marqué par un vautour (+300 m), et la vallée d'Embrun avait une brise qui pousse vers le col."
+          ],
+          "note": "Un seul détail de vol est accessible : celui du vol de 301,1 km."
         },
         {
           "id": "fai-185-vercors-diois-devoluy-chamrousse",
@@ -2304,10 +2480,24 @@
             }
           ],
           "distance_km": 185,
-          "description": "Récit détaillé (SW annoncé forcissant, inversion 200 m sous le déco, décollage tardif vers 11h). Faces est du Vercors puis Grand Veymont à 2500 m « au vent du nuage » ; traversée du Vercors vers le Diois au-dessus de 300 m/sol (réglementation du parc) : première partie « appuyée » par le SW (perte de 500 m pour 2 km, finesse 4) ; raccrochage exceptionnel des faces sud de Die avec 30 vautours ; retour contré par le sud, point bas à Lus-la-Croix-Haute (col de Pré Pinel, thermiques couchés par les brises) puis massif du Pic de Bure attaqué bas par un pierrier (3500 m). À 16h30 « mauvais temps de passage » : sortie de massif à 3200 m, plaine d'Ancelle sans thermique de brise ; retour vers le nord au vent « plus t'es haut, plus t'es poussé par le météo » : La Prouveyrat 3300 m, Chaperon, Grun de Saint-Maurice, Notre-Dame de la Salette, branche à 50 km/h. Piège du jour : au-dessus du Valbonnais, la remontée vers le Coiro paraît au vent mais la vallée de derrière (Oris-en-Rattier) « prend le dessus » : sous le vent, un partenaire y pose, col passé à 2 m/sol. Final en restitution du soir (13 km pour 1000 m, finesse 13), triangle bouclé pour quelques mètres dans un champ de maïs. Coordonnées des points reconstituées d'après les noms du récit (le déco exact et le tracé CFD ne sont pas accessibles).",
+          "description": "Triangle de 185 km : les faces est du Vercors, puis le Grand Veymont à 2500 m, au vent du nuage ; la traversée du Vercors vers le Diois se fait au-dessus de 300 m/sol, comme l'impose la réglementation du parc.",
           "sources": [
             "S27"
-          ]
+          ],
+          "possible": [
+            "Le décollage était tardif, vers 11h, avec une inversion à 200 m sous le décollage.",
+            "Le sud-ouest annoncé était forcissant et a « appuyé » la première partie : perte de 500 m pour 2 km, finesse 4.",
+            "Un raccrochage exceptionnel des faces sud de Die a eu lieu, avec 30 vautours.",
+            "Au retour, le sud a contré le vol : le point bas était à Lus-la-Croix-Haute, au col de Pré Pinel, où les brises couchaient les thermiques.",
+            "Le massif du Pic de Bure a été attaqué bas, par un pierrier (3500 m).",
+            "À 16h30, le temps de passage était devenu mauvais : sortie de massif à 3200 m, sur la plaine d'Ancelle sans thermique de brise.",
+            "Au retour vers le nord, au vent, le vol est passé par La Prouveyrat à 3300 m, Chaperon, le Grun de Saint-Maurice et Notre-Dame de la Salette, avec une branche à 50 km/h.",
+            "Plus on est haut, plus on est poussé par le vent météo.",
+            "Au-dessus du Valbonnais, la remontée vers le Coiro paraît au vent, mais la vallée de derrière (Oris-en-Rattier) peut prendre le dessus.",
+            "Sous le vent de cette vallée, un autre vol a posé, le col ayant été passé à 2 m du sol.",
+            "En restitution du soir, 13 km pour 1000 m (finesse 13), le triangle a été bouclé pour quelques mètres dans un champ de maïs."
+          ],
+          "note": "Coordonnées des points reconstituées à partir des noms cités ; le décollage exact et le tracé CFD ne sont pas accessibles."
         },
         {
           "id": "triangle-plat-202-chartreuse-aravis",
@@ -2399,11 +2589,26 @@
             }
           ],
           "distance_km": 202,
-          "description": "Récit détaillé : vent d'ouest 15-20 km/h annoncé mais en réalité nord-nord-ouest, « assez marqué » au-dessus de 2000 m, confluences « très toniques » avec descendances de plus de 10 s à -6 m/s. Chartreuse en confluence sur les faces est, Granier à 2350 m « avant que les brises ne rentrent » (raccrochage de la Savoyarde à 1200 m), Bauges au nuage (28 km/h de moyenne sur les 4 premières heures). Erreurs : entre la Tête à Turpin et le refuge du Parmelan « plein vent, rafaleux, pas de cumulus » ; Lachat de Thônes en pleine confluence de brises ; choix de passer par les faces ouest des Aravis (« décision de confort immédiat ») : sur les Aravis il faut remonter au vent car les brises donnent une composante sud. Retour : col du Charvin sans grande marge, Dent de Cons à 2900 m, Grand Arc, puis passage critique de Chamoux (vallée des Huiles sans cumulus ou Tours de Montmayeur) : un plein à 2500 m à l'entrée de la Maurienne a décidé du bouclage ; finale à contre-brise (20 km/h accéléré à 50 % depuis Villard-d'Héry), Lumbin atteint à la règle des 3 km (brise faiblie : 55 km/h accéléré à -2,5 m/s). Moyenne 25 km/h. Le retour de Chamoux/Albertville par les brises de la Combe de Savoie et du Grésivaudan reste le passage « pas favori » de l'auteur. Positions des points reconstituées d'après les noms. Relais et plafonds du récit : faces est de la Chartreuse en confluence, Granier à 2350 m, nuages sur les Bauges, Lachat de Thônes (confluence de brises, thermiques « missiles » le long du rocher, 3000 m une fois sorti), col du Charvin (thermique), Dent de Cons coiffée d'un cumulus à 2900 m (la Belle Étoile ne donne rien), combe sud sous le Grand Arc (2900 m), plein de 2500 m sous des barbules à l'entrée de la Maurienne (10 min dans du +1 m/s : « ma porte de sortie »), Bramefarine « très généreuse » au bout.",
+          "description": "Triangle plat de 202 km, de Saint-Hilaire à Lumbin, par la Chartreuse, les Bauges, les Aravis et la Combe de Savoie. Le retour de Chamoux à Albertville, par les brises de la Combe de Savoie et du Grésivaudan, reste le passage peu favori.",
           "sources": [
             "S28",
             "S41"
-          ]
+          ],
+          "possible": [
+            "Le vent d'ouest annoncé à 15-20 km/h était en réalité du nord-nord-ouest, assez marqué au-dessus de 2000 m.",
+            "Les confluences étaient très toniques, avec des descendances de plus de 10 s à -6 m/s.",
+            "Le Granier a été passé à 2350 m, avant que les brises ne rentrent ; la Savoyarde a été raccrochée à 1200 m.",
+            "Les Bauges ont été franchies au nuage, à 28 km/h de moyenne sur les 4 premières heures.",
+            "Entre la Tête à Turpin et le refuge du Parmelan, c'était plein vent, rafaleux et sans cumulus ; au Lachat de Thônes, on était en pleine confluence de brises.",
+            "Passer par les faces ouest des Aravis a été un choix de confort immédiat : il faut y remonter au vent, car les brises donnent une composante sud.",
+            "Au retour, le col du Charvin a été passé sans grande marge ; la Dent de Cons est à 2900 m, puis le Grand Arc et le passage critique de Chamoux (vallée des Huiles sans cumulus, ou Tours de Montmayeur).",
+            "Un plein à 2500 m, à l'entrée de la Maurienne, a décidé du bouclage : 10 min dans du +1 m/s, sous des barbules, et ce fut la porte de sortie du vol.",
+            "La finale s'est faite à contre-brise, à 20 km/h accéléré à 50 % depuis Villard-d'Héry ; Lumbin a été atteint à la règle des 3 km, la brise ayant faibli (55 km/h accéléré à -2,5 m/s).",
+            "Relais : le Lachat de Thônes, avec des thermiques « missiles » le long du rocher, à 3000 m une fois sorti ; le col du Charvin, avec un thermique.",
+            "Relais : la Dent de Cons, coiffée d'un cumulus à 2900 m, la Belle Étoile ne donnant rien ; la combe sud sous le Grand Arc, à 2900 m.",
+            "Au bout, la Bramefarine était « très généreuse ». La moyenne a été de 25 km/h."
+          ],
+          "note": "Positions des points reconstituées à partir des noms cités."
         },
         {
           "id": "triangle-201-vercors-chartreuse-bauges-bornes-2024",
@@ -2537,10 +2742,27 @@
             }
           ],
           "distance_km": 201,
-          "description": "Journée de printemps très instable dès 10h (déco 10h30), air « fumant » jusqu'à 2500 m, froid intense à 2700 m. Vent d'ouest gênant sur le Vercors (demi-tour au Pic Saint-Michel) ; transition Néron-Vercors de 5,3 km qui côtoie la zone interdite P14 du CEA (marge à prendre, dérive par coup d'ouest) ; retour au Moucherotte puis transition longue et contrée vers la Bastille/Mont Jalla (arrivée à 1000 m, parking de l'Esplanade comme plan B). Ouest « rageur » à 2500 m à l'Aulp du Seuil : se faufiler dans les avant-reliefs, perte de 800 m. Chambéry : transition Granier-Savoyarde de 11,3 km avec un petit SW de 9 km/h qui pousse ; règle : viser d'abord l'« air de service » du Granier sur l'autoroute puis la face ouest de la Savoyarde pour faire la « laisse de chien » qui compense la dérive due à la brise venant de Chambéry ; hauteur de départ conseillée 1600 m pour la Galoppaz. Annecy : traversée du lac (8,4 km) ; aux Dents de Lanfon le sud est à 18 km/h de face pour le retour ; Roc des Bœufs « pas une partie de plaisir ». Retour par Montlambert vers les Tours de Montmayeur (« frappé de plein fouet par la brise de Chambéry ») puis crête de Montraillant : attente d'une demi-heure à 900 m avant la dernière transition sur les pentes de Brâme-Farine et le champ habituel de Lumbin. Positions de plusieurs points approximatives (Néron, Manival). Relais cités dans l'ordre du récit : Néron, Moucherotte, Mont Jalla (transition basse), Saint-Eynard (thermique à +7), Dent de Crolles (bas, sous 1800 m), Aulp du Seuil (2500 m), avants-reliefs jusqu'au col de Marcieu et au Grand Manti, « la pompe du cirque de Saint-Même qui donne à plein régime » sur les faces est du Granier, Granier à 2300 m, puis Savoyarde. Position du cirque de Saint-Même, du col de Marcieu et du Grand Manti : IGN.",
+          "description": "Triangle de 201 km de Saint-Hilaire par le Vercors, la Chartreuse, les Bauges et le lac d'Annecy, avec un retour à Lumbin.",
           "sources": [
             "S46"
-          ]
+          ],
+          "possible": [
+            "Par une journée de printemps, l'air était très instable dès 10h, avec un décollage à 10h30.",
+            "L'air était agité jusqu'à 2500 m, avec un froid intense à 2700 m.",
+            "Un vent d'ouest gênait le Vercors, avec un demi-tour au Pic Saint-Michel.",
+            "La transition Néron - Vercors, de 5,3 km, côtoie la zone interdite P14 du CEA : il faut prendre de la marge, la dérive pouvant venir d'un coup d'ouest.",
+            "Au retour, le Moucherotte, puis une transition longue et contrée vers la Bastille et le Mont Jalla, avec une arrivée à 1000 m et le parking de l'Esplanade comme plan B.",
+            "Un vent d'ouest soutenu à 2500 m, à l'Aulp du Seuil, oblige à se faufiler dans les avant-reliefs, avec une perte de 800 m.",
+            "À Chambéry, la transition Granier - Savoyarde, de 11,3 km, se fait avec un petit sud-ouest de 9 km/h qui pousse.",
+            "Règle : viser d'abord l'« air de service » du Granier, sur l'autoroute, puis la face ouest de la Savoyarde, en faisant la « laisse de chien » qui compense la dérive due à la brise venant de Chambéry.",
+            "La hauteur de départ conseillée est de 1600 m pour la Galoppaz.",
+            "À Annecy, la traversée du lac fait 8,4 km ; aux Dents de Lanfon, un sud de 18 km/h est de face pour le retour, et le Roc des Bœufs est difficile.",
+            "Le retour passe par Montlambert et les Tours de Montmayeur, frappés de plein fouet par la brise de Chambéry, puis par la crête de Montraillant.",
+            "Une attente d'une demi-heure à 900 m précède la dernière transition, sur les pentes de Brâme-Farine et le champ habituel de Lumbin.",
+            "Relais dans l'ordre : Néron, Moucherotte, Mont Jalla (transition basse), Saint-Eynard (thermique à +7), Dent de Crolles (bas, sous 1800 m), Aulp du Seuil (2500 m).",
+            "Ensuite : les avant-reliefs jusqu'au col de Marcieu et au Grand Manti, la pompe du cirque de Saint-Même à plein régime sur les faces est du Granier, puis le Granier à 2300 m et la Savoyarde."
+          ],
+          "note": "Positions de plusieurs points approximatives (Néron, Manival) ; cirque de Saint-Même, col de Marcieu et Grand Manti situés par IGN."
         },
         {
           "id": "distance-libre-col-vert-nord-233",
@@ -2572,10 +2794,16 @@
             }
           ],
           "distance_km": 232.96,
-          "description": "Fiche CFD citée par le support « Cross avancé » de St Hil'Air (page 39) : A. Lebosse, 9 h de vol (8h57), 26 km/h, voile C. Les trois premières balises (Moucherotte, Pas de l'Aiguille, Petite Moucherolle) font un aller-retour dans le Vercors avant la grande branche nord de 175,5 km, le long de la ligne Chartreuse - Bauges - Aravis - Mont-Blanc - Chablais jusqu'à Chevenoz. La note du valideur indique le passage « au-dessus de la ZIT de Grenoble » (point sensible de cette sortie du Vercors). Un autre exemple du même support : Cabane du Col Vert vers le sud (Pic de Bure, Saint-Maurice-en-Valgaudemar) 85,9 km le 23/08/2017. La carte n'indique pas les points intermédiaires de la grande branche.",
+          "description": "Distance libre validée de 233 km : après un aller-retour dans le Vercors par le Moucherotte, le Pas de l'Aiguille et la Petite Moucherolle, la grande branche nord de 175,5 km suit la ligne Chartreuse - Bauges - Aravis - Mont-Blanc - Chablais jusqu'à Chevenoz.",
           "sources": [
             "S41"
-          ]
+          ],
+          "possible": [
+            "Ce vol a duré 9 h de vol (8h57), à 26 km/h.",
+            "Le passage au-dessus de la ZIT de Grenoble, point sensible de la sortie du Vercors, figure dans la note de validation.",
+            "Un autre exemple du même support : une distance de 85,9 km vers le sud, depuis la Cabane du Col Vert, par le Pic de Bure et Saint-Maurice-en-Valgaudemar."
+          ],
+          "note": "La carte n'indique pas les points intermédiaires de la grande branche."
         },
         {
           "id": "triangle-fai-pinot-309-2021",
@@ -2631,11 +2859,20 @@
             }
           ],
           "distance_km": 308.9,
-          "description": "Triangle FAI revendiqué « Saint-Hilaire - Chalencon - Estrop - Saint-Hilaire » (308,9 km ; vitesse sur 300 km 28,6 km/h ; ancien record 237 km, 2003). Le pilote raconte : début sur les faces est de la Chartreuse puis du Vercors, Diois « vraiment booming avec de beaux nuages », même chose pour les Monges et la Blanche ; 6-7 premières heures à 34 km/h ; puis vent de NW et beaucoup d'ombres rendent le Champsaur et le Valbonnais difficiles (« toujours délicat car la brise de vallée y est toujours forte ») ; dernier thermique à Chamrousse juste avant le coucher (les deux derniers pilotes n'ont pas pu monter 5 min plus tôt). Avril est choisi car l'instabilité arrive très tôt dans les basses couches. Le même jour, XCFinder note 319,9 km de Pinot au départ de Saint-Hilaire Nord (record de l'Isère). Les toponymes FAI « Chalencon » et « Estrop » ne sont pas localisés avec certitude (les homonymes OSM ne cadrent pas avec 309 km) : le tracé ci-dessus suit le récit, points approximatifs.",
+          "description": "Record du monde revendiqué : triangle FAI de 308,9 km, Saint-Hilaire, Chalencon, Estrop, puis retour à Saint-Hilaire, à 28,6 km/h sur 300 km. L'ancien record était de 237 km.",
           "sources": [
             "S52",
             "S23"
-          ]
+          ],
+          "possible": [
+            "Le vol a commencé sur les faces est de la Chartreuse, puis du Vercors ; le Diois était « booming », avec de beaux nuages, comme les Monges et la Blanche.",
+            "Pendant les 6 à 7 premières heures, la vitesse était de 34 km/h.",
+            "Ensuite, un vent de nord-ouest et beaucoup d'ombres ont rendu le Champsaur et le Valbonnais difficiles, car la brise de vallée y est toujours forte.",
+            "Le dernier thermique a été trouvé à Chamrousse, juste avant le coucher du soleil ; les deux derniers vols n'ont pas pu monter 5 min plus tôt.",
+            "Avril a été choisi, car l'instabilité arrive très tôt dans les basses couches.",
+            "Le même jour, 319,9 km ont été notés au départ de Saint-Hilaire Nord, record de l'Isère."
+          ],
+          "note": "Chalencon et Estrop ne sont pas localisés avec certitude (les homonymes ne cadrent pas avec 309 km) ; le tracé suit le vol décrit, points approximatifs."
         },
         {
           "id": "triangle-fai-hamard-306-col-agnel-2016",
@@ -2673,10 +2910,16 @@
             }
           ],
           "distance_km": 306,
-          "description": "11 h 01 de vol. Après 70 km avec un groupe le long de la haute chaîne, séparation ; « le terrain à l'ombre » rend le chemin vers le 2e point difficile ; le vent de nord du matin est tombé après les Écrins, ce qui a rapproché le triangle ; vers La Salette base basse (2600 m) puis 4 m/s sur la partie rocheuse et 3700 m au dernier thermique côté français alors que les nuages italiens étaient à 1600 m. Le point sud-ouest exact n'est pas donné (position approximative).",
+          "description": "Triangle de 306 km depuis le col Agnel, vers le Verdon et Notre-Dame de la Salette, en 11 h 01 de vol.",
           "sources": [
             "S53"
-          ]
+          ],
+          "possible": [
+            "Après 70 km en groupe le long de la haute chaîne, le vol s'est séparé ; le terrain à l'ombre a rendu difficile le chemin vers le deuxième point.",
+            "Le vent de nord du matin est tombé après les Écrins, ce qui a rapproché le triangle.",
+            "Vers La Salette, la base était basse (2600 m) ; il y a eu ensuite 4 m/s sur la partie rocheuse et un thermique à 3700 m côté français, alors que les nuages italiens étaient à 1600 m."
+          ],
+          "note": "Point sud-ouest exact non donné : position approximative."
         },
         {
           "id": "distance-libre-gourdon-leman-342",
@@ -2696,11 +2939,15 @@
             }
           ],
           "distance_km": 342,
-          "description": "Vol de 11 h à travers toutes les Alpes françaises, du littoral au Léman (XC Mag, lien vers la trace non lu : aucun point de passage ni condition cités). Conservé comme repère de distance libre sud-nord ; départ Gourdon également record du département 06 (360,1 km de Hamard le 12/08/2024, XCFinder). Itinéraire intermédiaire non documenté.",
+          "description": "Distance libre de 342 km en 11 h de vol, à travers toutes les Alpes françaises, du littoral au Léman, au départ de Gourdon (Préalpes d'Azur).",
           "sources": [
             "S54",
             "S23"
-          ]
+          ],
+          "possible": [
+            "Ce départ de Gourdon est aussi le record du département 06, avec 360,1 km."
+          ],
+          "note": "Trace non lue : aucun point de passage ni condition cités ; itinéraire intermédiaire non documenté. Conservé comme repère de distance libre sud-nord."
         },
         {
           "id": "triangle-aravis-rachais-204-2017",
@@ -2738,10 +2985,14 @@
             }
           ],
           "distance_km": 204.69,
-          "description": "Exemple du support St Hil'Air (p. 43) : A. Finet, 7 h 45, 26,4 km/h, voile D. Triangle bien plus grand que le « classique » Arpettaz/Savoyarde/Parmelan (113 km) : côté sud par la Chartreuse (nord du Rachais), côté nord par les Bornes. Position de la balise « Nord Charvet » approximative (toponyme non localisé).",
+          "description": "Triangle de 204,7 km, bien plus grand que le « classique » Arpettaz - Savoyarde - Parmelan (113 km) : côté sud par la Chartreuse, au nord du Rachais, et côté nord par les Bornes.",
           "sources": [
             "S41"
-          ]
+          ],
+          "possible": [
+            "Ce vol a duré 7 h 45, à 26,4 km/h."
+          ],
+          "note": "Position de la balise « Nord Charvet » approximative : toponyme non localisé."
         },
         {
           "id": "cross-moucherotte-chartreuse-tichodromes",
@@ -2797,10 +3048,21 @@
             }
           ],
           "distance_km": 204,
-          "description": "Récit partiel (copie Wayback 2012 tronquée) d'un premier 200 km de la Drôme : décollage du Moucherotte sous le vent d'un thermique par NNE 15/25 à la balise, faces est « chaotiques » avec le nord bien présent puis, après l'épaule du Moucherotte, masse d'air plus saine ; composante ouest/NW d'environ 10 km/h perçue en dérivant vers le plateau ; sous la couche d'inversion près du col de Vars le partenaire a lutté ; thermiques du plateau meilleurs et plafonds plus hauts que sur les faces est (air plus sec). Erreur de la ZIT de Grenoble : transition Moucherotte vers le Rachais à 2700 m coupée en ligne directe alors qu'il fallait une « laisse de chien » plein nord vers Sassenage ; le vent d'ouest se renforce en descendant, raccrochage du Rachais « dans la brise » à 800 m. À partir de Saint-Eynard, de nombreuses voiles de Saint-Marcel/Saint-Hilaire ; la Chartreuse se traverse vite avec « juste ce qu'il faut de cumulus ». Fin du récit non disponible.",
+          "description": "Un premier 200 km de la Drôme, en mai, du Moucherotte vers la Chartreuse, par les faces est du Vercors, le Petit Veymont et le Rachais.",
           "sources": [
             "S47"
-          ]
+          ],
+          "possible": [
+            "Au décollage du Moucherotte, sous le vent d'un thermique, le vent était de nord-nord-est, 15/25, à la balise.",
+            "Les faces est étaient chaotiques, avec le nord bien présent ; après l'épaule du Moucherotte, la masse d'air était plus saine.",
+            "En dérivant vers le plateau, une composante ouest ou nord-ouest d'environ 10 km/h était perçue.",
+            "Près du col de Vars, sous la couche d'inversion, le vol partenaire a lutté.",
+            "Sur le plateau, les thermiques étaient meilleurs, avec des plafonds plus hauts que sur les faces est, l'air étant plus sec.",
+            "La transition de Moucherotte vers le Rachais, à 2700 m, a été coupée en ligne directe : c'est une erreur au regard de la ZIT de Grenoble, il fallait une « laisse de chien » plein nord vers Sassenage.",
+            "Le vent d'ouest se renforce en descendant, et le Rachais a été raccroché « dans la brise » à 800 m.",
+            "À partir de Saint-Eynard, de nombreuses voiles étaient présentes, de Saint-Marcel et de Saint-Hilaire ; la Chartreuse se traverse vite, avec juste ce qu'il faut de cumulus."
+          ],
+          "note": "Texte partiel (copie tronquée) : la fin du vol n'est pas disponible."
         },
         {
           "id": "distance-libre-richards-chamonix-174",
@@ -2826,10 +3088,14 @@
             }
           ],
           "distance_km": 174.44,
-          "description": "Exemple du support St Hil'Air (p. 46) : E. Chabani, 6 h 57, 25,1 km/h, voile D. Distance libre vers le nord (Champsaur - Chamrousse/Belledonne - Maurienne/Beaufortain - Mont-Blanc). La balise 2 (+99,7 km) n'est pas lisible ; atterrissage à 20,1 km de la balise 2.",
+          "description": "Distance libre de 174 km vers le nord, des Richards (Champsaur) jusqu'à Chamonix (Les Pélerins), par Chamrousse et Belledonne, la Maurienne et le Beaufortain, puis le Mont-Blanc.",
           "sources": [
             "S41"
-          ]
+          ],
+          "possible": [
+            "Ce vol a duré 6 h 57, à 25,1 km/h, et l'atterrissage a eu lieu à 20,1 km de la balise 2."
+          ],
+          "note": "Balise 2 (+99,7 km) non lisible sur le support."
         },
         {
           "id": "ligne-prealpes-annecy-grenoble",
@@ -2885,28 +3151,41 @@
             }
           ],
           "distance_km": 100,
-          "description": "Support « Cross avancé » de St Hil'Air (p. 22-34), valeurs à lire comme minima : Grésivaudan Chartreuse-Belledonne 10 km départ > 2000 m, arrivée 1000 m ; Grenoble Vercors-Chartreuse 10 km départ > 2400 m (arrivée 1200 m) ou 6 km depuis > 1500 m (arrivée 800-900 m), avec la ligne THT et une brise forte ; Aiguebelette Chartreuse-Épine 10 km > 2400 m ou 5 km > 1600 m ; Chambéry Chartreuse-Bauges 10 km > 2400 m (arrivée 1000 m) ou 12 km > 2300 m (arrivée 900 m), « brise forte » sur le Granier ; Cœur de Savoie Bauges-Belledonne 12 km > 2300 m (arrivée 900 m) ; Annecy Bauges-Bornes 7 km > 2100 m (1100 m) ou 8 km > 1800 m (1000 m) ; Ugine Aravis-Bauges 6 km > 2400 m ou 7 km > 2200 m ; Grand Arc Bauges-Lauzière-Belledonne 7-10 km depuis 1800-2000 m ; Beaufortain 6-8 km depuis 2100-2300 m ; Chamrousse-Vercors > 15 km depuis > 2000 m (arrivée au sol) ; Taillefer 8-10 km depuis 2800-2900 m ; Dévoluy-Champsaur 10-12 km > 2900 m (arrivée 1700 m, brise forte). Dans le même support, les 'brises fortes' sont signalées sur les transitions de Grenoble, Aiguebelette, Chambéry, Cœur de Savoie, Annecy, Grand Arc, Beaufortain, Dévoluy-Champsaur ; zones aériennes : TMA Lyon 11 (> 2900 m) et 16 (> 3500 m) sur toute la Chartreuse, CTR Chambéry 1 du 15/12 au 07/04, TMA Genève 7 (> 3200 m), ZIT de Grenoble (1200 m), parc des Bauges 300 m/sol, parc du Vercors 300 m/sol, R196A/B Gap (NOTAM), parc des Écrins 1000 m/sol. Les longues crêtes des Bauges permettent de s'échapper vers Annecy/Aravis au nord ou Grenoble/Chartreuse au sud (Bauges Parapente).",
+          "description": "Ces transitions sont données avec leurs minima, à lire comme tels. Les brises fortes sont signalées sur les transitions de Grenoble, Aiguebelette, Chambéry, Cœur de Savoie, Annecy, Grand Arc, Beaufortain et Dévoluy-Champsaur.",
           "sources": [
             "S41",
             "S30",
             "S9"
-          ]
+          ],
+          "possible": [
+            "Grésivaudan (Chartreuse - Belledonne) : 10 km depuis plus de 2000 m, arrivée à 1000 m. Aiguebelette (Chartreuse - Épine) : 10 km depuis plus de 2400 m, ou 5 km depuis plus de 1600 m.",
+            "Grenoble (Vercors - Chartreuse) : 10 km depuis plus de 2400 m (arrivée à 1200 m), ou 6 km depuis plus de 1500 m (arrivée à 800-900 m), avec la ligne THT et une brise forte.",
+            "Chambéry (Chartreuse - Bauges) : 10 km depuis plus de 2400 m (arrivée à 1000 m), ou 12 km depuis plus de 2300 m (arrivée à 900 m), avec une « brise forte » sur le Granier.",
+            "Cœur de Savoie (Bauges - Belledonne) : 12 km depuis plus de 2300 m (arrivée à 900 m). Annecy (Bauges - Bornes) : 7 km depuis plus de 2100 m (arrivée à 1100 m), ou 8 km depuis plus de 1800 m (arrivée à 1000 m).",
+            "Ugine (Aravis - Bauges) : 6 km depuis plus de 2400 m, ou 7 km depuis plus de 2200 m. Grand Arc (Bauges - Lauzière - Belledonne) : 7 à 10 km depuis 1800 à 2000 m.",
+            "Beaufortain : 6 à 8 km depuis 2100 à 2300 m. Chamrousse (Vercors) : plus de 15 km depuis plus de 2000 m, avec arrivée au sol. Taillefer : 8 à 10 km depuis 2800 à 2900 m.",
+            "Dévoluy - Champsaur : 10 à 12 km depuis plus de 2900 m (arrivée à 1700 m), avec une brise forte.",
+            "Zones à respecter : TMA Lyon 11 (au-dessus de 2900 m) et TMA Lyon 16 (au-dessus de 3500 m) sur toute la Chartreuse ; CTR Chambéry 1 du 15/12 au 07/04 ; TMA Genève 7 (au-dessus de 3200 m) ; ZIT de Grenoble (1200 m).",
+            "Zones à respecter : parcs des Bauges et du Vercors (300 m/sol), la R196A/B de Gap, activable par NOTAM, parc des Écrins (1000 m/sol).",
+            "Les longues crêtes des Bauges permettent de s'échapper vers Annecy et les Aravis au nord, ou vers Grenoble et la Chartreuse au sud."
+          ],
+          "note": "Pages 22 à 34 du support."
         }
       ],
       "tips": [
-        "Les brises les plus fortes soufflent de 14h à 16-17h : traverser les grandes vallées avant ou après, ou très haut ; sur les grandes vallées (Arve, Tarentaise, Maurienne, Durance) elles dépassent 30-40 km/h et sont sensibles jusqu'à 2500-3000 m [S1][S55][S57].",
-        "Atterrir tôt ou à mi-pente en Durance : à Briançon la brise fait des pointes à plus de 40 km/h, éviter les fonds de vallée dès la mi-journée l'été ; les tendances S à O la font entrer tôt et brusquement [S57].",
-        "Le sens des brises dépend du bassin aérologique, pas de la vallée : au débouché de la cluse de Chambéry la brise va vers Albertville dans la Combe de Savoie et vers Grenoble dans le Grésivaudan (« brise de nord ») ; changer d'échelle (vallées du Rhône et de la Durance) pour comprendre [S31][S15][S44].",
-        "Crête avec deux brises opposées : la confluence n'est presque jamais à la verticale de la crête mais penche du côté le plus faible (à force égale, du côté du versant le moins pentu) [S9].",
-        "Vent météo + brise opposée = confluence marquée mais mobile et voisine du sous-le-vent et des rotors ; elle se déplace si le vent météo forcit [S9].",
-        "Seuils : vent au sol > 10 km/h = choisir un déco face au vent ; > 20 km/h = conditions fortes voire dangereuses ; aux cimes 10 km/h = turbulences et 20 km/h = thermiques hachés ; gradient > 10 km/h par 1000 m = thermiques hachés [S40]. Pays du Mont-Blanc : à proscrire au-delà de 20 km/h à 2000 m [S55].",
-        "Traversées entre massifs (minima du club St Hil'Air) : Grésivaudan 10 km depuis > 2000 m ; Grenoble 10 km depuis > 2400 m ; Chambéry 10-12 km depuis > 2300-2400 m ; Annecy 7-8 km depuis > 1800-2100 m ; Dévoluy-Champsaur 10-12 km depuis > 2900 m [S41].",
-        "Granier -> Savoyarde : viser l'air de service du Granier puis la face ouest de la Savoyarde en laissant dériver (« laisse de chien ») pour compenser la brise de Chambéry ; partir du Granier avant que les brises ne rentrent [S46][S28].",
-        "Foehn : surveiller l'écart de pression Aoste - Annecy (-4 hPa), les lenticulaires et le mur de foehn aux cols ; il peut se cantonner à 1400-1800 m ; un 15 km/h peut passer à plus de 30-35 km/h en rafales [S56][S55][S11].",
-        "Izoard : partir avant 10h, l'été ; le nord de 15-20 km/h est une bonne condition (Lambert 2023) mais il rend le Cheval Blanc turbulent et le dernier côté (20 km/h de face) pénible ; la vallée d'Embrun redonne une brise qui pousse vers le déco en fin de journée [S48][S22][S50].",
-        "Par fort nord autour de Grenoble : Montaud, Courtet, Montlambert ; par nord modéré, Saint-Hilaire [S66].",
-        "Respecter les zones aériennes sur les transitions : ZIT de Grenoble (1200 m) et zone P14 du CEA (1220 m) entre Néron et Vercors (deux récits les mordent), parcs du Vercors et des Bauges (300 m/sol), CTR Chambéry [S41][S46][S47].",
-        "Les records se font en août/avril aux heures les plus longues : départ 9h-10h, 11 h de vol pour 350 km ; vérifier que le décollage n'est pas dans une zone de protection de la faune (le 393 km de 2026 depuis Riederalp n'est pas homologable pour cette raison) [S49][S51]."
+        "Les brises les plus fortes soufflent de 14h à 16-17h : traverser les grandes vallées avant ou après, ou très haut ; dans l'Arve, la Tarentaise, la Maurienne et la Durance, elles dépassent 30-40 km/h et restent sensibles jusqu'à 2500-3000 m [S1][S55][S57].",
+        "Atterrir tôt ou à mi-pente en Durance : à Briançon, la brise fait des pointes à plus de 40 km/h, et il faut éviter les fonds de vallée dès la mi-journée, l'été ; les tendances sud à ouest la font entrer tôt et brusquement [S57].",
+        "Le sens des brises dépend du bassin aérologique, non de la vallée : à la sortie de la cluse de Chambéry, la brise va vers Albertville (Combe de Savoie) et vers Grenoble (Grésivaudan, « brise de nord ») ; pour comprendre, changer d'échelle (Rhône, Durance) [S31][S15][S44].",
+        "Crête avec deux brises opposées : la confluence n'est presque jamais à la verticale de la crête, mais penche du côté le plus faible (à force égale, du côté du versant le moins pentu) [S9].",
+        "Vent météo et brise opposée donnent une confluence marquée, mais mobile et voisine du sous-le-vent et des rotors ; elle se déplace si le vent météo forcit [S9].",
+        "Seuils : au sol, plus de 10 km/h impose de décoller face au vent, et plus de 20 km/h rend les conditions fortes, voire dangereuses ; aux cimes, 10 km/h donnent des turbulences et 20 km/h hachent les thermiques, comme un gradient de plus de 10 km/h par 1000 m [S40]. Au Pays du Mont-Blanc, pas de vol au-delà de 20 km/h à 2000 m [S55].",
+        "Traversées entre massifs (minima du support de cross) : Grésivaudan, 10 km au-dessus de 2000 m ; Grenoble, 10 km au-dessus de 2400 m ; Chambéry, 10-12 km au-dessus de 2300-2400 m ; Annecy, 7-8 km au-dessus de 1800-2100 m ; Dévoluy-Champsaur, 10-12 km au-dessus de 2900 m [S41].",
+        "Du Granier vers la Savoyarde : viser l'« air de service » du Granier, puis la face ouest de la Savoyarde en laissant dériver (« laisse de chien ») pour compenser la brise de Chambéry ; partir du Granier avant que les brises ne rentrent [S46][S28].",
+        "Foehn : surveiller l'écart de pression Aoste - Annecy (-4 hPa), les lenticulaires et le mur de foehn aux cols ; il peut se cantonner à 1400-1800 m ; un vent de 15 km/h peut passer à plus de 30-35 km/h en rafales [S56][S55][S11].",
+        "Izoard : partir avant 10h, l'été ; un nord de 15-20 km/h est une bonne condition, mais il rend le Cheval Blanc turbulent et le dernier côté pénible (20 km/h de face) ; la vallée d'Embrun redonne en fin de journée une brise qui pousse vers le décollage [S48][S22][S50].",
+        "Par fort nord autour de Grenoble, voler à Montaud, Courtet ou Montlambert ; par nord modéré, Saint-Hilaire [S66].",
+        "Respecter les zones aériennes sur les transitions : ZIT de Grenoble (1200 m) et zone P14 du CEA (1220 m) entre Néron et Vercors, où deux vols ont pénétré ces zones ; parcs du Vercors et des Bauges (300 m/sol), CTR Chambéry [S41][S46][S47].",
+        "Les records se font en août ou en avril, aux heures les plus longues : départ à 9h-10h, 11 h de vol pour 350 km ; vérifier que le décollage n'est pas en zone de protection de la faune (un vol de 393 km depuis Riederalp n'est pas homologable pour cette raison) [S49][S51]."
       ]
     }
   ],

@@ -62,6 +62,7 @@ const vec2 R_POOL_DEPTH = vec2(${RULES.coldPoolDepth.map(f).join(', ')});
 const vec2 R_POOL_WIND = vec2(${RULES.coldPoolWindKmh.map(f).join(', ')});
 const float R_MEM_SHARE = ${f(RULES.thermalMemory.share)};
 const float R_LEE_CUT = ${f(RULES.leeThermalCut)};
+const vec2 R_EXPOSE = vec2(${RULES.windwardExposure.map(f).join(', ')});
 const vec2 R_LEE_CUT_WIND = vec2(${RULES.leeThermalWindKmh.map(f).join(', ')});
 const float R_CUR_DEEP = ${f(RULES.curatedDeepDepth)};
 const float R_CUR_ALIGN = ${f(RULES.curatedAlignWeight)};
@@ -235,7 +236,11 @@ Cell evalCell(ivec2 c) {
   o.chan = W.x * (1.0 - smoothstep(0.35, 0.9, level));
   float along = dot(uG, V.zw);
   vec2 cc = uG + (V.zw * along * 1.15 - uG) * 0.85 * o.chan;
-  float fh = (0.3 + 0.7 * smoothstep(-0.1, 1.05, level)) * (0.75 + 0.25 * smoothstep(0.0, 400.0, hh));
+  // Except on a face turned to the wind (field.ts → RULES.windwardExposure).
+  float upslope = uGSpeed > 0.05 ? dot(uG, Z.yz) / uGSpeed : 0.0;
+  float exposed = smoothstep(R_EXPOSE.x, R_EXPOSE.y, upslope) * (1.0 - o.lee);
+  float fLevel = 0.3 + 0.7 * smoothstep(-0.1, 1.05, level);
+  float fh = (fLevel + (1.0 - fLevel) * exposed) * (0.75 + 0.25 * smoothstep(0.0, 400.0, hh));
   float sf = fh * (1.0 - 0.85 * o.lee) * (1.0 + R_VENTURI * o.venturi);
   float rotor = 0.25 * o.lee * smoothstep(10.0, 30.0, uGKmh) * (1.0 - o.chan);
   o.synoptic = cc * sf - uG * rotor;

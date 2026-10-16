@@ -161,6 +161,10 @@ Autres points, moins prioritaires :
      11h » sont en avance : la documentation mêle premiers thermiques et thermiques utiles.
 - **Thermiques sous le vent** : déchirés par le rotor et l'air qui descend (jusqu'à −60 %), comme
   dans le jeu ; la méthodologie l'annonçait sans que le code le fasse.
+- **Ascendance dynamique** (point 5, volet modèle) : le vent météo était réduit sur les faces au
+  vent comme au fond d'une vallée abritée (53 % à mi-pente). Corrigé : 47 des 115 sites de soaring
+  permettent de tenir en l'air sous leur vent documenté à 20 km/h, au lieu de 17. Une décomposition
+  par échelles (la portance d'une crête large monte plus haut) en ajouterait 12 : à faire.
 - **Stabilité de l'air** (point 2, premier volet) : le gradient 850–700 hPa de la prévision règle la
   force des thermiques et la tenue des brises sous le vent d'altitude. Le sous-le-vent selon le
   nombre de Froude (ondes, rotors, vents de col) reste à faire.

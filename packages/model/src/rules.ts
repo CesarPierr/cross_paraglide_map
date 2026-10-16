@@ -193,6 +193,14 @@ export const RULES = {
    *   (1 − `lapseOverride` × (Γ − standard)), within `lapseOverrideRange`.
    * The slopes are assumptions of the right order, for the forecast mode only.
    */
+  /**
+   * A face turned to the synoptic wind is not sheltered like a valley floor: the air is
+   * forced up it. The height-in-the-valley reduction of the synoptic wind fades out as the
+   * slope the wind climbs (m/m) goes from `windwardExposure[0]` to `[1]` (≈ 3° to 17°),
+   * unless the face is in the lee of another relief. Check: soaring spots of the atlas
+   * under their documented wind (`model:check`, soaring).
+   */
+  windwardExposure: [0.05, 0.3] as [number, number],
   lapseStandard: 6.5,
   lapseThermal: 0.18,
   lapseThermalRange: [0.4, 1.3] as [number, number],

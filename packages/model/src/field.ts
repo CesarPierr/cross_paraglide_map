@@ -716,7 +716,12 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   const along = gx * t.axisX[k] + gy * t.axisY[k];
   const cx = gx + (t.axisX[k] * along * 1.15 - gx) * 0.85 * chan;
   const cy = gy + (t.axisY[k] * along * 1.15 - gy) * 0.85 * chan;
-  const fh = (0.3 + 0.7 * smoothstep(-0.1, 1.05, level)) * (0.75 + 0.25 * smoothstep(0, 400, hh));
+  // Lower in the valley the synoptic wind is weaker, except on a face turned to the wind,
+  // where the air is forced up the slope (RULES.windwardExposure).
+  const upslope = c.gSpeed > 0.05 ? (gx * gxk + gy * gyk) / c.gSpeed : 0;
+  const exposed = smoothstep(RULES.windwardExposure[0], RULES.windwardExposure[1], upslope) * (1 - lee);
+  const fLevel = 0.3 + 0.7 * smoothstep(-0.1, 1.05, level);
+  const fh = (fLevel + (1 - fLevel) * exposed) * (0.75 + 0.25 * smoothstep(0, 400, hh));
   const speedFactor = fh * (1 - 0.85 * lee) * (1 + RULES.venturiGain * out.venturi);
   const rotor = 0.25 * lee * smoothstep(10, 30, c.gKmh) * (1 - chan);
   out.synoptic[0] = cx * speedFactor - gx * rotor;

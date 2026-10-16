@@ -156,6 +156,13 @@ fichiers de recherche.
 - **Compétition brise / météo** : au-delà d'environ 35 km/h de vent météo, les brises thermiques
   sont largement effacées ; en dessous, elles se combinent vectoriellement.
 
+**Faces au vent** (`RULES.windwardExposure`) : plus bas dans la vallée, le vent météo faiblit
+(abri du relief), sauf sur une face tournée vers lui, où l'air est forcé vers le haut : la
+réduction s'efface quand la pente que le vent remonte passe de 3° à 17°, sauf si la face est
+elle-même sous le vent d'un autre relief. Contrôle sur les 115 sites de soaring de l'atlas, sous
+leur vent documenté à 20 km/h, à 100 m du sol : de l'air qui monte à plus de 1 m/s (de quoi tenir
+en l'air) sur 47 sites au lieu de 17, médiane 0,9 m/s au lieu de 0,6.
+
 **Stabilité de l'air (mode prévision)** (`stabilityFactors`, `RULES.lapseStandard`…) : la prévision
 donne, heure par heure, le gradient de température entre 850 et 700 hPa (≈ 1500 → 3000 m, AROME
 via Open-Meteo, avec les altitudes géopotentielles des deux niveaux). Règle des pilotes : en dessous

@@ -41,8 +41,14 @@ thermiques) et son ensoleillement récent, ombres comprises (inertie thermique, 
 | Brise catabatique | refroidissement nocturne | 1,6 m/s | nuit |
 | Brise de vallée montante | taille de la vallée (surface drainée), suivant l'axe | jusqu'à 7 m/s (≈ 25 km/h) dans les grandes vallées | inversion ≈ 9 h 30, plein ≈ 13 h, déclin 16 h 30, inversion ≈ 19 h 30 (heure solaire) |
 | Brise descendante de vallée | idem, sens inverse | 40 % du jour | nuit, matin |
-| Brise de lac / de mer | distance au rivage | 3 / 5 m/s | ≈ 9 h → 19 h 30 |
+| Brise de lac / de mer | distance au rivage, écart de température terre-eau du mois | 3 / 5 m/s | ≈ 9 h → 19 h 30 |
 | Aspiration plaine → montagne | position en avant-pays | 2,5 m/s | après-midi |
+
+La brise de lac et de mer suit, en plus du soleil, l'écart de température entre la terre et l'eau
+(`RULES.waterContrast`) : l'eau retarde d'un à deux mois sur la terre, si bien que la brise est la
+plus forte au printemps et au début de l'été, quand le lac est encore froid (≈ 10 °C en avril), et
+s'affaiblit à l'automne, quand il est chaud (≈ 23 °C fin août) : × 1 en avril, × 1,1 en mai, × 0,37
+en septembre et × 0,16 en octobre, au lieu de 0,76 / 0,96 / 0,61 / 0,36 avec le seul soleil.
 
 Chaque régime a une épaisseur : l'altitude d'évaluation (au-dessus du sol ou absolue) atténue les
 brises de pente puis de vallée et fait apparaître le vent météo au-dessus des crêtes.

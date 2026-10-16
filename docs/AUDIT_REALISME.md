@@ -168,6 +168,8 @@ Autres points, moins prioritaires :
 - **Stabilité de l'air** (point 2, premier volet) : le gradient 850–700 hPa de la prévision règle la
   force des thermiques et la tenue des brises sous le vent d'altitude. Le sous-le-vent selon le
   nombre de Froude (ondes, rotors, vents de col) reste à faire.
+- **Brise de lac selon la saison** : l'écart terre-eau du mois s'ajoute au soleil ; la brise est
+  la plus forte au printemps (lac froid) et presque nulle en octobre (lac chaud).
 - **Rotors sous l'onde, essai écarté** : sur les 28 dangers de sous-le-vent documentés que le relief
   seul manque (banc `lee-bench`), l'abri est faible à moins de 330 m (0 à 11°) mais fort à 1,5 km
   (14 à 49°), et plusieurs fiches parlent d'ondes (Chabre, Cousson, La Baume, Gap, Chalvet). Un

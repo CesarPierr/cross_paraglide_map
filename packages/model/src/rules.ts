@@ -216,6 +216,15 @@ export const RULES = {
   lapseOverride: 0.1,
   lapseOverrideRange: [0.7, 1.4] as [number, number],
   leeThermalWindKmh: [10, 30] as [number, number],
+  /**
+   * Afternoon land–water temperature contrast by month (January first), relative to July,
+   * which drives the lake and sea breezes on top of the sunshine (`season`): the water
+   * lags the land by one to two months, so the breeze is strongest in spring and early
+   * summer, while the lake is still cold, and fades in autumn, when it is warm (orders of
+   * magnitude from the surface temperatures of the Savoy lakes, ≈ 10 °C in April, 23 °C in
+   * August). Mirrored in apps/web/src/gpu (engine.ts → timeState).
+   */
+  waterContrast: [0.3, 0.6, 1.2, 1.3, 1.3, 1.2, 1.0, 0.9, 0.6, 0.45, 0.25, 0.2],
   /** Lake/sea breeze schedule (solar hours). */
   waterSchedule: [9, 11.5, 17, 19.5] as [number, number, number, number],
 };

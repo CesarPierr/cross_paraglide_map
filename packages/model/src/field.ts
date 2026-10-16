@@ -84,6 +84,8 @@ export interface TimeContext {
   season: number;
   /** Seasonal intensity of the thermals, 0..1 (`thermalSeasonFactor`). */
   thermalSeason: number;
+  /** Daytime strength of the lake and sea breezes: sunshine × land–water contrast (`waterSeasonFactor`). */
+  waterSeason: number;
   /** Afternoon decline of the thermals, 0.5..1 (`thermalDecline`). */
   thermalDecline: number;
   /** Insolation 0..1 per cell including cast shadows. */
@@ -135,6 +137,14 @@ export function valleyProfile(zeta: number): number {
  */
 export function thermalDecline(solarHour: number, valleyPhase: number): number {
   return solarHour < 13 ? 1 : 0.5 + 0.5 * Math.max(0, valleyPhase);
+}
+
+/**
+ * Daytime strength of the lake and sea breezes: the sunshine (`season`) times the
+ * land–water contrast of the month (`RULES.waterContrast`), at most 1.1. Shared with the GPU.
+ */
+export function waterSeasonFactor(month0: number, season: number): number {
+  return Math.min(1.1, season * RULES.waterContrast[((month0 % 12) + 12) % 12]);
 }
 
 /**
@@ -358,6 +368,7 @@ export function computeTimeContext(t: Terrain, p: ModelParams): TimeContext {
     waterPhase: cycle(solarHour, RULES.waterSchedule, 0.25),
     season,
     thermalSeason: thermalSeasonFactor(noonEl),
+    waterSeason: waterSeasonFactor(p.month0, season),
     thermalDecline: thermalDecline(solarHour, valleyPhase),
     insol,
     sunHours,
@@ -553,7 +564,7 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   // synoptic wind), only kept outside the channels.
   const outside = 1 - t.valley[k];
   const plainDecay = Math.exp(-hh / 900) * outside;
-  const wPhase = c.time.waterPhase * (c.time.waterPhase > 0 ? c.time.season : 1);
+  const wPhase = c.time.waterPhase * (c.time.waterPhase > 0 ? c.time.waterSeason : 1);
   const lakeDecay = Math.exp(-hh / 250) * outside;
   const seaDecay = Math.exp(-hh / 700) * outside;
   out.regional[0] =

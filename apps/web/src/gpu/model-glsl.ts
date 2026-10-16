@@ -36,6 +36,7 @@ uniform float uInstability;     // field.ts → stabilityFactors (thermal)
 uniform float uOverrideKmh;     // field.ts → stabilityFactors (wind that overrides the breezes)
 uniform float uValleyPhase;
 uniform float uWaterPhase;
+uniform float uWaterSeason;     // field.ts → waterSeasonFactor
 uniform float uThermalDecline;   // field.ts → thermalDecline
 uniform float uNightFactor;      // sun.ts → nightFactor
 uniform vec2 uG;
@@ -161,7 +162,7 @@ Cell evalCell(ivec2 c) {
 
   // Plain, lake and sea breezes.
   float plainPhase = max(uValleyPhase, -0.2) * uSeason;
-  float wPhase = uWaterPhase * (uWaterPhase > 0.0 ? uSeason : 1.0);
+  float wPhase = uWaterPhase * (uWaterPhase > 0.0 ? uWaterSeason : 1.0);
   // Not added to the valley wind inside valley channels (field.ts).
   o.regional = (R_PLAIN_MAX * plainPhase * exp(-hh / 900.0) * R.zw
     + R_LAKE_MAX * wPhase * exp(-hh / 250.0) * W.yz

@@ -7,7 +7,7 @@
  * what makes the hour / wind / height sliders feel live.
  */
 import type { CellResult, CuratedBreezeInfo, CuratedHazardInput, ModelParams } from '@brises/model';
-import { curatedActivity, curatedLayerKind, hazardActivity, HazardEffect, nightFactor, sunSampleStep, sunSamples, SUN_SAMPLES_MAX, thermalDecline, thermalSeasonFactor } from '@brises/model';
+import { curatedActivity, curatedLayerKind, hazardActivity, HazardEffect, nightFactor, sunSampleStep, sunSamples, SUN_SAMPLES_MAX, thermalDecline, thermalSeasonFactor, waterSeasonFactor } from '@brises/model';
 import { stabilityFactors, windVector, type Grid } from '@brises/model';
 import { smoothstep } from '@brises/model';
 import { RULES } from '@brises/model';
@@ -41,6 +41,8 @@ export interface TimeState {
   season: number;
   /** Seasonal intensity of the thermals (`thermalSeasonFactor`). */
   thermalSeason: number;
+  /** Daytime strength of the lake and sea breezes (`waterSeasonFactor`). */
+  waterSeason: number;
   thermalDecline: number;
   /** Sun path since sunrise (`sunSamples`): 4 floats per sample. */
   sunSamples: Float32Array;
@@ -84,6 +86,7 @@ export function timeState(grid: Grid, p: ModelParams): TimeState {
     solarHour,
     season,
     thermalSeason: thermalSeasonFactor(noonEl),
+    waterSeason: waterSeasonFactor(p.month0, season),
     night: sun.elevation < 3,
     valleyPhase,
     waterPhase: cycle(solarHour, RULES.waterSchedule, 0.25),
@@ -249,6 +252,7 @@ export class GpuWindEngine {
     gl.uniform1f(u.uThermalDecline, t.thermalDecline);
     gl.uniform1f(u.uNightFactor, t.nightFactor);
     gl.uniform1f(u.uWaterPhase, t.waterPhase);
+    gl.uniform1f(u.uWaterSeason, t.waterSeason);
     gl.uniform2f(u.uG, g[0], g[1]);
     gl.uniform1f(u.uGSpeed, p.synoptic.speedKmh / 3.6);
     gl.uniform1f(u.uGKmh, p.synoptic.speedKmh);

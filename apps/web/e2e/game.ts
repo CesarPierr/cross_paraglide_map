@@ -17,11 +17,13 @@ const url = process.argv[2] ?? "http://localhost:5174/";
 const out = process.argv[3] ?? "test-results/game";
 mkdirSync(out, { recursive: true });
 
+// Software rendering by default (any machine); E2E_GPU=1 uses the real GPU (Metal on macOS),
+// much faster with the volumetric clouds: two pilots in one room need it.
 const browser = await chromium.launch({
   executablePath: process.env.CHROMIUM_PATH,
   args: [
     "--use-gl=angle",
-    "--use-angle=swiftshader",
+    process.env.E2E_GPU ? "--use-angle=metal" : "--use-angle=swiftshader",
     "--enable-unsafe-swiftshader",
     "--ignore-gpu-blocklist",
     "--autoplay-policy=no-user-gesture-required",

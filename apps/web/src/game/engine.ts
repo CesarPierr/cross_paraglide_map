@@ -321,7 +321,7 @@ export class GameEngine {
       const g0 = this.world.groundAt(this.spawn.x, this.spawn.y);
       if (g0 !== null) this.spawn.z = g0 + 1.1;
       this.glider.z = this.spawn.z;
-      this.world.glider.setInflation(this.launch.theta, 0, this.launch.facingWing);
+      this.world.glider.setInflation(this.launch.theta, 0, this.launch.facingWing, this.wingGround(this.spawn.heading));
       this.head = { yaw: 0, pitch: -0.05 };
     }
     if (this.task) this.world.setTask(this.task.points, this.task.next);
@@ -669,7 +669,7 @@ export class GameEngine {
     g.vz = 0;
     g.vx = sx * L.run;
     g.vy = sy * L.run;
-    this.world.glider.setInflation(L.theta, L.phi, L.facingWing);
+    this.world.glider.setInflation(L.theta, L.phi, L.facingWing, this.wingGround(psi));
     if (L.phase === 'airborne') {
       // Flying: the glider takes over at the airspeed reached, the wing overhead.
       const z = g.z + 0.3;
@@ -698,8 +698,19 @@ export class GameEngine {
     g.x = this.spawn.x;
     g.y = this.spawn.y;
     g.z = this.groundAt(g.x, g.y) + 1.1;
-    this.world.glider.setInflation(this.launch.theta, 0, this.launch.facingWing);
+    this.world.glider.setInflation(this.launch.theta, 0, this.launch.facingWing, this.wingGround(this.spawn.heading));
     this.incident = null;
+  }
+
+  /**
+   * Height of the ground where the laid-out wing lies, ~6 m behind the pilot against the
+   * run direction psi, relative to the carabiners: the wing rests on the real slope, not
+   * on a flat ground 1.1 m under the pilot.
+   */
+  private wingGround(psi: number): number {
+    const g = this.glider;
+    const ground = this.groundAt(g.x - Math.sin(psi) * 6, g.y - Math.cos(psi) * 6);
+    return Math.max(-6, Math.min(2, ground - g.z));
   }
 
   /**

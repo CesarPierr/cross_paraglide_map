@@ -1,0 +1,473 @@
+/**
+ * Shape of the canopy and its deformations, written twice on purpose: once in GLSL (the
+ * wing is deformed on the GPU, every vertex every frame, for free) and once in JS (the
+ * line attachment points, a few hundred per frame). Both follow the same steps with the
+ * same constants; keep them in sync.
+ *
+ * Wing of a 25 m² EN-B: flat span 11.3 m (flat AR 5.1), projected span 9.1 m, 50 cells,
+ * root chord 2.65 m and 0.84 m at the tips, airfoil ~15 % thick with a rounded nose and a
+ * flat lower surface. Canopy frame = glider frame (x right, y up, z back, metres) with the
+ * carabiners at the origin; the canopy group may be rotated about them on the ground.
+ *
+ * Parameters of a point: a (span, −1 left tip … +1 right tip, proportional to the arc
+ * length), tw (profile, −1 lower trailing edge … 0 nose … +1 upper trailing edge, the
+ * chord fraction being c = tw²), v (position across its cell, 0..1, for the ballooning),
+ * w and kind (0 surface, 1 tip closure with w = 0 on the profile … 1 on the camber line,
+ * 2 stabilo with w = depth below the tip).
+ */
+
+export const HALF_SPAN = 5.65;
+export const N_CELLS = 50;
+/** Anhedral φ(α) = PHI_T α^PHI_P: flat centre, tips curling down to ~90°. */
+const PHI_T = 1.55;
+const PHI_P = 2.3;
+/** Height of the centre of the arc (quarter-chord line) above the carabiners. */
+const ARC_TOP = 7.3;
+/** Chord: C0 √(1 − CK α^PHI_P). */
+export const C0 = 2.65;
+const CK = 0.9;
+/** Quarter-chord line: ZQ0 at the centre (the pilot under ~30 % of the chord), swept back to the tips. */
+const ZQ0 = -0.18;
+const SWEEP = 0.38;
+/** Trim angle (rad, leading edge above the trailing edge) and its change with the speed bar. */
+const TAU0 = 0.05;
+const SB_PITCH = 0.085;
+/** NACA-like profile: thickness parameter (≈15 % with the flat lower surface), camber. */
+const THICK0 = 0.19;
+const CAMBER = 0.035;
+const CAMBER_P = 0.38;
+/** Ballooning of the cells (share of the cell width) and recess of the trailing edge between ribs. */
+const BAL = 0.075;
+const SCALLOP = 0.035;
+/** Trailing edge pulled down at full brake (m) and stabilo depth (m). */
+const BRAKE_DEF = 0.5;
+const STAB_D = 0.34;
+
+// Arc of the quarter-chord line as series in q = α^PHI_P (exact integral of the anhedral).
+const fact = (k: number): number => (k <= 1 ? 1 : k * fact(k - 1));
+const CX = [0, 1, 2, 3].map((n) => ((-1) ** n * PHI_T ** (2 * n)) / (fact(2 * n) * (2 * n * PHI_P + 1)));
+const CY = [0, 1, 2, 3].map((n) => ((-1) ** n * PHI_T ** (2 * n + 1)) / (fact(2 * n + 1) * ((2 * n + 1) * PHI_P + 1)));
+
+/** Ribs: arc position of rib k (0 centre … 25 tip) per side, cells narrower towards the tips. */
+const RIB_K = 0.942;
+const RIB_S = Math.sin(RIB_K);
+export function ribA(k: number): number {
+  return Math.sin((RIB_K * k) / (N_CELLS / 2)) / RIB_S;
+}
+/** Chord positions of the line rows (A, B, C) and the trailing edge. */
+export const ROWS = [0.11, 0.37, 0.66] as const;
+
+/** Deformation state, also the shader's uniforms (same layout). */
+export interface WingDeform {
+  /** brakeL, brakeR, speedbar, time (s). */
+  brake: [number, number, number, number];
+  /** Per side: fold line at the leading edge and at the trailing edge (span |a|), fold angle (rad), crumple (m). */
+  foldL: [number, number, number, number];
+  foldR: [number, number, number, number];
+  /** frontal 0..1, flutter amplitude (m), stall 0..1, spin 0..1 (signed by its side). */
+  misc: [number, number, number, number];
+  /** Ground: cell filling 0..1 (1 flying), section pitch (rad), flattening 0..1, ground height (canopy frame, < −50 = none). */
+  infl: [number, number, number, number];
+  /** Up direction of the glider frame in the canopy frame (for the ground). */
+  up: [number, number, number];
+}
+
+export function newDeform(): WingDeform {
+  return { brake: [0, 0, 0, 0], foldL: [2, 2, 0, 0], foldR: [2, 2, 0, 0], misc: [0, 0, 0, 0], infl: [1, 0, 0, -100], up: [0, 1, 0] };
+}
+
+const clamp = (v: number, a: number, b: number) => (v < a ? a : v > b ? b : v);
+const smooth = (e0: number, e1: number, x: number) => {
+  const t = clamp((x - e0) / (e1 - e0), 0, 1);
+  return t * t * (3 - 2 * t);
+};
+const mix = (a: number, b: number, t: number) => a + (b - a) * t;
+
+function camberLine(c: number): number {
+  return c < CAMBER_P ? (CAMBER / (CAMBER_P * CAMBER_P)) * (2 * CAMBER_P * c - c * c) : (CAMBER / ((1 - CAMBER_P) * (1 - CAMBER_P))) * (1 - 2 * CAMBER_P + 2 * CAMBER_P * c - c * c);
+}
+/** Profile height (share of the chord) at tw (c = tw²) for a thickness parameter t. */
+function profile(tw: number, t: number): number {
+  const c = tw * tw;
+  const sc = Math.abs(tw);
+  const yt = 5 * t * (0.2969 * sc - 0.126 * c - 0.3516 * c * c + 0.2843 * c * c * c - 0.1036 * c * c * c * c);
+  const yc = camberLine(c);
+  return tw >= 0 ? yc + yt : yc - mix(1, 0.55, smooth(0, 0.12, c)) * yt;
+}
+function noise(a: number, c: number, t: number): number {
+  return Math.sin(a * 23 + t * 4.1) * Math.sin(c * 17 - t * 2.3) * 0.6 + Math.sin(a * 57 + c * 31 + t * 7.3) * 0.4;
+}
+
+// Scratch frame of the JS version (no allocation per call).
+const F = { ax: 0, ay: 0, tx: 0, ty: 0, nx: 0, ny: 0 };
+function frame(a: number, alpha: number, q: number): void {
+  const sg = a < 0 ? -1 : 1;
+  const phi = PHI_T * q * sg;
+  F.tx = Math.cos(phi);
+  F.ty = -Math.sin(phi);
+  F.nx = Math.sin(phi);
+  F.ny = Math.cos(phi);
+  const q2 = q * q;
+  F.ax = sg * HALF_SPAN * alpha * (CX[0] + q2 * (CX[1] + q2 * (CX[2] + q2 * CX[3])));
+  F.ay = ARC_TOP - HALF_SPAN * alpha * q * (CY[0] + q2 * (CY[1] + q2 * (CY[2] + q2 * CY[3])));
+}
+const stabDepth = (c: number) => STAB_D * Math.pow(Math.max(0, 1 - Math.abs(c - 0.5) / 0.42), 0.8);
+const chordOf = (q: number) => C0 * Math.sqrt(Math.max(0.02, 1 - CK * q));
+const zqOf = (alpha: number, q: number) => ZQ0 + SWEEP * alpha * q;
+
+export interface Vec3Like {
+  x: number;
+  y: number;
+  z: number;
+}
+
+/**
+ * Deformed position of a wing point in the canopy frame (JS twin of `wingPos` in
+ * WING_GLSL), written into `out` without allocating.
+ */
+export function wingPoint(d: WingDeform, a: number, tw: number, v: number, w: number, kind: number, cw: number, out: Vec3Like): Vec3Like {
+  const sg = a < 0 ? -1 : 1;
+  const alpha = Math.min(Math.abs(a), 1);
+  const q = Math.pow(alpha, PHI_P);
+  const ch = chordOf(q);
+  const c = tw * tw;
+  const time = d.brake[3];
+  const fold = sg < 0 ? d.foldL : d.foldR;
+  const fe = mix(fold[0], fold[1], c);
+  const folding = fold[2] > 0.001;
+  const stall = d.misc[2];
+  const spin = d.misc[3];
+  // Deflation: on the ground before the cells fill (leading edge first), in a stall, on
+  // the inner side of a spin, next to a collapsed part.
+  let defl = mix(0.08, 1, clamp(d.infl[0] * 1.4 - c * 0.4, 0, 1)) * (1 - 0.45 * stall) * (1 - 0.5 * Math.max(0, spin * sg) * alpha);
+  if (folding) defl *= mix(1, 0.55, smooth(fe - 0.18, fe, alpha));
+  let hh = profile(tw, THICK0 * (1 - 0.35 * alpha * alpha)) * ch * defl;
+  if (kind === 1) hh = mix(hh, camberLine(c) * ch * defl, w);
+  let dd = (c - 0.25) * ch;
+  if (kind === 0) {
+    const sv = Math.sin(Math.PI * v);
+    hh += Math.sign(tw) * BAL * (tw >= 0 ? 1 : 0.6) * cw * sv * smooth(0.03, 0.15, c) * (1 - smooth(0.72, 1, c)) * defl;
+    const te = Math.max(0, (c - 0.88) / 0.12);
+    dd -= SCALLOP * sv * te * te;
+  }
+  // Brake: the rear of the profile curls down, more towards the tips.
+  const br = sg < 0 ? d.brake[0] : d.brake[1];
+  let f = Math.max(0, (c - 0.42) / 0.58);
+  f *= f;
+  const disp = BRAKE_DEF * br * clamp(alpha * 1.45, 0, 1) * f * Math.sqrt(ch / C0);
+  hh -= disp;
+  dd -= (0.5 * disp * disp) / (0.58 * ch);
+  // Frontal: the front of the profile tucks under, deeper in the centre.
+  const fr = d.misc[0];
+  if (fr > 0.001) {
+    const cf = 0.12 + 0.36 * fr * (1 - 0.45 * alpha * alpha);
+    if (c < cf) {
+      const ddf = (cf - 0.25) * ch;
+      const hhf = profile(-Math.sqrt(cf), THICK0 * (1 - 0.35 * alpha * alpha)) * ch * defl;
+      const psi = fr * 2.7;
+      const wF = 0.35;
+      const k = psi / wF;
+      const u = ddf - dd;
+      const s = Math.min(u, wF);
+      let wv = (hh - hhf) * mix(1, 0.45, Math.min(1, u / wF)) + noise(a, c, time) * fr * 0.05;
+      const th = s * k;
+      const rest = Math.max(0, u - wF);
+      dd = ddf - Math.sin(th) / k - rest * Math.cos(psi) - wv * Math.sin(th);
+      wv = hhf - (1 - Math.cos(th)) / k - rest * Math.sin(psi) + wv * Math.cos(th);
+      hh = wv;
+    }
+  }
+  // On the ground: the sections lie along the lines (flat behind the pilot) until they fly.
+  const gam = d.infl[1];
+  if (gam !== 0) {
+    const ddA = (ROWS[0] - 0.25) * ch;
+    const hhA = profile(-Math.sqrt(ROWS[0]), THICK0) * ch * defl;
+    const x = dd - ddA;
+    const y = hh - hhA;
+    const cg = Math.cos(gam);
+    const sgm = Math.sin(gam);
+    dd = ddA + x * cg - y * sgm;
+    hh = hhA + x * sgm + y * cg;
+  }
+  // Section frame on the arc; the speed bar pitches the section down about the C row.
+  const tau = TAU0 - SB_PITCH * d.brake[2];
+  const ct = Math.cos(tau);
+  const st = Math.sin(tau);
+  const ct0 = Math.cos(TAU0);
+  const st0 = Math.sin(TAU0);
+  let px: number, py: number, pz: number;
+  let hx: number, hy: number, hz: number;
+  if (folding && alpha > fe) {
+    // Folded part: bent under the wing around the fold line, deflated and crumpled.
+    const ae = sg * fe;
+    const alE = Math.min(Math.abs(ae), 1);
+    const qE = Math.pow(alE, PHI_P);
+    frame(ae, alE, qE);
+    const chE = chordOf(qE);
+    const dX = -F.nx * st;
+    const dY = -F.ny * st;
+    const dZ = ct;
+    hx = F.nx * ct;
+    hy = F.ny * ct;
+    hz = st;
+    const piv = (0.66 - 0.25) * chE;
+    const ox = F.ax + (-F.nx * st0 - dX) * piv;
+    const oy = F.ay + (-F.ny * st0 - dY) * piv;
+    const oz = zqOf(alE, qE) + (ct0 - dZ) * piv;
+    const tox = sg * F.tx;
+    const toy = sg * F.ty;
+    const sb = (alpha - fe) * HALF_SPAN * 0.82;
+    const psi = fold[2];
+    const wB = 0.4;
+    const k = psi / wB;
+    const th = Math.min(sb, wB) * k;
+    const s1 = Math.sin(th) / k;
+    const c1 = (1 - Math.cos(th)) / k;
+    let cx = tox * s1 - hx * c1;
+    let cy = toy * s1 - hy * c1;
+    let cz = -hz * c1;
+    if (sb > wB) {
+      const r = sb - wB;
+      cx += (tox * Math.cos(psi) - hx * Math.sin(psi)) * r;
+      cy += (toy * Math.cos(psi) - hy * Math.sin(psi)) * r;
+      cz += -hz * Math.sin(psi) * r;
+    }
+    const nx = hx * Math.cos(th) + tox * Math.sin(th);
+    const ny = hy * Math.cos(th) + toy * Math.sin(th);
+    const nz = hz * Math.cos(th);
+    const ramp = Math.min(1, sb / wB);
+    const hf = hh * mix(1, 0.35, ramp) + fold[3] * noise(a, c, time) * ramp;
+    const dz2 = dd + zqOf(alpha, q) - zqOf(alE, qE);
+    px = ox + cx + nx * hf + dX * dz2;
+    py = oy + cy + ny * hf + dY * dz2;
+    pz = oz + cz + nz * hf + dZ * dz2;
+    if (kind === 2) {
+      const sd = stabDepth(c) * w;
+      px -= nx * sd;
+      py -= ny * sd;
+      pz -= nz * sd;
+    }
+  } else {
+    frame(a, alpha, q);
+    const dX = -F.nx * st;
+    const dY = -F.ny * st;
+    const dZ = ct;
+    hx = F.nx * ct;
+    hy = F.ny * ct;
+    hz = st;
+    const piv = (0.66 - 0.25) * ch;
+    px = F.ax + (-F.nx * st0 - dX) * piv + dX * dd + hx * hh;
+    py = F.ay + (-F.ny * st0 - dY) * piv + dY * dd + hy * hh;
+    pz = zqOf(alpha, q) + (ct0 - dZ) * piv + dZ * dd + hz * hh;
+    if (kind === 2) {
+      // Stabilo: a fin continuing the tip down towards the lines.
+      const sd = stabDepth(c) * w;
+      px += (sg * F.tx * 0.878 - hx * 0.479) * sd;
+      py += (sg * F.ty * 0.878 - hy * 0.479) * sd;
+      pz += -hz * 0.479 * sd;
+    }
+  }
+  // Stall: the tips come forward (horseshoe), the span shrinks, the fabric flaps.
+  if (stall > 0.001) {
+    pz += stall * (0.5 - 1.6 * alpha * alpha);
+    px *= 1 - 0.2 * stall * alpha * alpha;
+    const n = stall * 0.16 * noise(a * 0.7, c, time * 1.3);
+    px += hx * n;
+    py += hy * n;
+    pz += hz * n;
+  }
+  // Spin: the wing yaws, the inner side going back.
+  if (spin !== 0) {
+    const b = -spin * 0.4;
+    const x = px * Math.cos(b) + pz * Math.sin(b);
+    pz = -px * Math.sin(b) + pz * Math.cos(b);
+    px = x;
+  }
+  // Trailing edge flutter.
+  const fl = d.misc[1] * Math.sin(time * 19 + a * 27 + c * 6) * smooth(0.75, 1, c);
+  px += hx * fl;
+  py += hy * fl;
+  pz += hz * fl;
+  // Ground: nothing below it; laid flat before the inflation.
+  const gy = d.infl[3];
+  if (gy > -50) {
+    const ux = d.up[0];
+    const uy = d.up[1];
+    const uz = d.up[2];
+    const yW = ux * px + uy * py + uz * pz;
+    let y2 = Math.max(yW, gy + 0.01);
+    y2 = mix(y2, gy + 0.01 + (tw > 0 ? 0.03 : 0.0), d.infl[2]);
+    const dy = y2 - yW;
+    px += ux * dy;
+    py += uy * dy;
+    pz += uz * dy;
+  }
+  out.x = px;
+  out.y = py;
+  out.z = pz;
+  return out;
+}
+
+const f = (n: number) => {
+  const s = n.toString();
+  return s.includes('.') || s.includes('e') ? s : `${s}.0`;
+};
+
+/** GLSL twin of wingPoint: `vec3 wingPos(float a, float tw, float v, float w, float kind, float cw)`. */
+export const WING_GLSL = /* glsl */ `
+uniform vec4 uBrake;
+uniform vec4 uFoldL;
+uniform vec4 uFoldR;
+uniform vec4 uMisc;
+uniform vec4 uInfl;
+uniform vec3 uUp;
+float wFoldWeight;
+float camberLine(float c) {
+  return c < ${f(CAMBER_P)} ? ${f(CAMBER / (CAMBER_P * CAMBER_P))} * (${f(2 * CAMBER_P)} * c - c * c) : ${f(CAMBER / ((1 - CAMBER_P) * (1 - CAMBER_P)))} * (${f(1 - 2 * CAMBER_P)} + ${f(2 * CAMBER_P)} * c - c * c);
+}
+float profileH(float tw, float t) {
+  float c = tw * tw;
+  float sc = abs(tw);
+  float yt = 5.0 * t * (0.2969 * sc - 0.126 * c - 0.3516 * c * c + 0.2843 * c * c * c - 0.1036 * c * c * c * c);
+  float yc = camberLine(c);
+  return tw >= 0.0 ? yc + yt : yc - mix(1.0, 0.55, smoothstep(0.0, 0.12, c)) * yt;
+}
+float crumpleN(float a, float c, float t) {
+  return sin(a * 23.0 + t * 4.1) * sin(c * 17.0 - t * 2.3) * 0.6 + sin(a * 57.0 + c * 31.0 + t * 7.3) * 0.4;
+}
+void arcFrame(float a, float alpha, float q, out vec2 A, out vec2 T, out vec2 N) {
+  float sg = a < 0.0 ? -1.0 : 1.0;
+  float phi = ${f(PHI_T)} * q * sg;
+  T = vec2(cos(phi), -sin(phi));
+  N = vec2(sin(phi), cos(phi));
+  float q2 = q * q;
+  A = vec2(sg * ${f(HALF_SPAN)} * alpha * (${f(CX[0])} + q2 * (${f(CX[1])} + q2 * (${f(CX[2])} + q2 * ${f(CX[3])}))),
+           ${f(ARC_TOP)} - ${f(HALF_SPAN)} * alpha * q * (${f(CY[0])} + q2 * (${f(CY[1])} + q2 * (${f(CY[2])} + q2 * ${f(CY[3])}))));
+}
+float stabDepth(float c) { return ${f(STAB_D)} * pow(max(0.0, 1.0 - abs(c - 0.5) / 0.42), 0.8); }
+float chordOf(float q) { return ${f(C0)} * sqrt(max(0.02, 1.0 - ${f(CK)} * q)); }
+float zqOf(float alpha, float q) { return ${f(ZQ0)} + ${f(SWEEP)} * alpha * q; }
+vec3 wingPos(float a, float tw, float v, float w, float kind, float cw) {
+  float sg = a < 0.0 ? -1.0 : 1.0;
+  float alpha = min(abs(a), 1.0);
+  float q = pow(alpha, ${f(PHI_P)});
+  float ch = chordOf(q);
+  float c = tw * tw;
+  float time = uBrake.w;
+  vec4 fold = sg < 0.0 ? uFoldL : uFoldR;
+  float fe = mix(fold.x, fold.y, c);
+  bool folding = fold.z > 0.001;
+  float stall = uMisc.z;
+  float spin = uMisc.w;
+  float defl = mix(0.08, 1.0, clamp(uInfl.x * 1.4 - c * 0.4, 0.0, 1.0)) * (1.0 - 0.45 * stall) * (1.0 - 0.5 * max(0.0, spin * sg) * alpha);
+  if (folding) defl *= mix(1.0, 0.55, smoothstep(fe - 0.18, fe, alpha));
+  float tk = ${f(THICK0)} * (1.0 - 0.35 * alpha * alpha);
+  float hh = profileH(tw, tk) * ch * defl;
+  if (kind > 0.5 && kind < 1.5) hh = mix(hh, camberLine(c) * ch * defl, w);
+  float dd = (c - 0.25) * ch;
+  if (kind < 0.5) {
+#ifndef NO_BALLOON
+    float sv = sin(${f(Math.PI)} * v);
+    hh += sign(tw) * ${f(BAL)} * (tw >= 0.0 ? 1.0 : 0.6) * cw * sv * smoothstep(0.03, 0.15, c) * (1.0 - smoothstep(0.72, 1.0, c)) * defl;
+    float te = max(0.0, (c - 0.88) / 0.12);
+    dd -= ${f(SCALLOP)} * sv * te * te;
+#endif
+  }
+  float br = sg < 0.0 ? uBrake.x : uBrake.y;
+  float f = max(0.0, (c - 0.42) / 0.58);
+  f *= f;
+  float disp = ${f(BRAKE_DEF)} * br * clamp(alpha * 1.45, 0.0, 1.0) * f * sqrt(ch / ${f(C0)});
+  hh -= disp;
+  dd -= 0.5 * disp * disp / (0.58 * ch);
+  float fr = uMisc.x;
+  if (fr > 0.001) {
+    float cf = 0.12 + 0.36 * fr * (1.0 - 0.45 * alpha * alpha);
+    if (c < cf) {
+      float ddf = (cf - 0.25) * ch;
+      float hhf = profileH(-sqrt(cf), tk) * ch * defl;
+      float psi = fr * 2.7;
+      float wF = 0.35;
+      float k = psi / wF;
+      float u = ddf - dd;
+      float s = min(u, wF);
+      float wv = (hh - hhf) * mix(1.0, 0.45, min(1.0, u / wF)) + crumpleN(a, c, time) * fr * 0.05;
+      float th = s * k;
+      float rest = max(0.0, u - wF);
+      dd = ddf - sin(th) / k - rest * cos(psi) - wv * sin(th);
+      hh = hhf - (1.0 - cos(th)) / k - rest * sin(psi) + wv * cos(th);
+      wFoldWeight = max(wFoldWeight, min(1.0, u / wF));
+    }
+  }
+  float gam = uInfl.y;
+  if (gam != 0.0) {
+    float ddA = ${f((ROWS[0] - 0.25))} * ch;
+    float hhA = profileH(${f(-Math.sqrt(ROWS[0]))}, ${f(THICK0)}) * ch * defl;
+    float x = dd - ddA;
+    float y = hh - hhA;
+    float cg = cos(gam);
+    float sgm = sin(gam);
+    dd = ddA + x * cg - y * sgm;
+    hh = hhA + x * sgm + y * cg;
+  }
+  float tau = ${f(TAU0)} - ${f(SB_PITCH)} * uBrake.z;
+  float ct = cos(tau);
+  float st = sin(tau);
+  float ct0 = ${f(Math.cos(TAU0))};
+  float st0 = ${f(Math.sin(TAU0))};
+  vec3 P;
+  vec3 H;
+  vec2 A, T, N;
+  if (folding && alpha > fe) {
+    float ae = sg * fe;
+    float alE = min(abs(ae), 1.0);
+    float qE = pow(alE, ${f(PHI_P)});
+    arcFrame(ae, alE, qE, A, T, N);
+    float chE = chordOf(qE);
+    vec3 D = vec3(-N.x * st, -N.y * st, ct);
+    H = vec3(N.x * ct, N.y * ct, st);
+    float piv = 0.41 * chE;
+    vec3 O = vec3(A.x + (-N.x * st0 - D.x) * piv, A.y + (-N.y * st0 - D.y) * piv, zqOf(alE, qE) + (ct0 - D.z) * piv);
+    vec3 To = vec3(sg * T, 0.0);
+    float sb = (alpha - fe) * ${f(HALF_SPAN * 0.82)};
+    float psi = fold.z;
+    float wB = 0.4;
+    float k = psi / wB;
+    float th = min(sb, wB) * k;
+    vec3 cv = To * (sin(th) / k) - H * ((1.0 - cos(th)) / k);
+    if (sb > wB) cv += (To * cos(psi) - H * sin(psi)) * (sb - wB);
+    vec3 nr = H * cos(th) + To * sin(th);
+    float ramp = min(1.0, sb / wB);
+    float hf = hh * mix(1.0, 0.35, ramp) + fold.w * crumpleN(a, c, time) * ramp;
+    P = O + cv + nr * hf + D * (dd + zqOf(alpha, q) - zqOf(alE, qE));
+    if (kind > 1.5) P -= nr * stabDepth(c) * w;
+    wFoldWeight = max(wFoldWeight, ramp);
+  } else {
+    arcFrame(a, alpha, q, A, T, N);
+    vec3 D = vec3(-N.x * st, -N.y * st, ct);
+    H = vec3(N.x * ct, N.y * ct, st);
+    float piv = 0.41 * ch;
+    P = vec3(A.x + (-N.x * st0 - D.x) * piv, A.y + (-N.y * st0 - D.y) * piv, zqOf(alpha, q) + (ct0 - D.z) * piv) + D * dd + H * hh;
+    if (kind > 1.5) P += (vec3(sg * T, 0.0) * 0.878 - H * 0.479) * stabDepth(c) * w;
+  }
+  if (stall > 0.001) {
+    P.z += stall * (0.5 - 1.6 * alpha * alpha);
+    P.x *= 1.0 - 0.2 * stall * alpha * alpha;
+    P += H * (stall * 0.16 * crumpleN(a * 0.7, c, time * 1.3));
+  }
+  if (spin != 0.0) {
+    float b = -spin * 0.4;
+    float x = P.x * cos(b) + P.z * sin(b);
+    P.z = -P.x * sin(b) + P.z * cos(b);
+    P.x = x;
+  }
+  P += H * (uMisc.y * sin(time * 19.0 + a * 27.0 + c * 6.0) * smoothstep(0.75, 1.0, c));
+  float gy = uInfl.w;
+  if (gy > -50.0) {
+    float yW = dot(uUp, P);
+    float y2 = max(yW, gy + 0.01);
+    y2 = mix(y2, gy + 0.01 + (tw > 0.0 ? 0.03 : 0.0), uInfl.z);
+    P += uUp * (y2 - yW);
+  }
+  return P;
+}
+`;

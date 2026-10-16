@@ -76,6 +76,26 @@ function loadSettings(): Settings {
   }
 }
 
+/** Saves the flight track as an IGC file. */
+function downloadIgc(engine: GameEngine): void {
+  let pilot = 'Pilote';
+  try {
+    pilot = (JSON.parse(localStorage.getItem('brises.game') ?? '{}') as { pilotName?: string }).pilotName?.trim() || pilot;
+  } catch {
+    /* private mode */
+  }
+  const text = engine.igc(pilot);
+  if (!text) return;
+  const d = new Date();
+  const name = `brises-des-alpes-${d.getFullYear()}${String(d.getMonth() + 1).padStart(2, '0')}${String(d.getDate()).padStart(2, '0')}-${engine.takeoff.name.normalize('NFD').replace(/[^\w]+/g, '-').replace(/^-|-$/g, '').toLowerCase()}.igc`;
+  const url = URL.createObjectURL(new Blob([text], { type: 'application/octet-stream' }));
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = name;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+}
+
 const isTouch = () => typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
 
 /** One-shot request from the map (« Voler d'ici »): where to start. */
@@ -826,6 +846,9 @@ export default function GameApp() {
                 }}
               >
                 Revoler
+              </button>
+              <button onClick={() => downloadIgc(eng)} disabled={eng.track.fixes.length < 2} title="La trace du vol, pour la revoir dans un outil de vol (format IGC)">
+                Trace IGC
               </button>
               <button onClick={toMenu}>Menu</button>
             </div>

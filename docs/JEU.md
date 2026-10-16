@@ -120,6 +120,9 @@ vent et peut le traîner s'il ne l'affale pas.
   (`forecast.ts`) : la prévision AROME au décollage pour aujourd'hui donne le vent aux crêtes, la
   masse d'air par le gradient 850–700 hPa (3 °C/km → stable, 9 → très instable) et l'humidité par
   la hauteur de la base des cumulus au-dessus du sol.
+- **Trace IGC** : le vol est enregistré (un point par seconde une fois en l'air) et se télécharge à
+  la fin au format IGC (`igc.ts`), pour le revoir dans les outils de vol habituels ; l'en-tête le
+  marque comme vol simulé (pas d'enregistrement de sécurité G).
 - **Tableau de bord** : vario, pression dans chaque frein (kg, la jauge pulse quand la pression
   mollit avant une fermeture), sellette, accélérateur, aide au décollage puis au posé (course
   d'arrêt) ; sur écran tactile, boutons Affaler et Recommencer.

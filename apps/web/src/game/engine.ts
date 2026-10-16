@@ -16,6 +16,7 @@ import { advanceTask, distanceMadeGood, taskFromRoute, taskLength, type Task } f
 import { Multiplayer, type NetEvent } from './net';
 import type { ModelAir } from './game-worker';
 import { LocalFrame } from './geo';
+import { TrackRecorder, toIgc } from './igc';
 import { GameWorld, type Head, type ViewMode } from './world';
 
 import type { Takeoff } from './takeoffs';
@@ -164,6 +165,8 @@ export class GameEngine {
   private refreshing = false;
   private barByKey = false;
   readonly wing: WingParams;
+  /** The flight track, one fix a second once in the air (IGC export). */
+  readonly track = new TrackRecorder();
   /** All-up weight (kg). */
   readonly mass: number;
   private makeGlider(x: number, y: number, z: number, heading: number): GliderState {
@@ -579,6 +582,10 @@ export class GameEngine {
           if (this.checkGround(this.groundAt(g.x, g.y))) break;
         }
       this.maxAlt = Math.max(this.maxAlt, g.z);
+      if (!this.launch && this.track.due(this.gameT)) {
+        const [lon, lat] = this.frame.toLngLat(g.x, g.y);
+        this.track.push(this.gameT, { hour: this.hour, lon, lat, alt: g.z });
+      }
       if (this.task && !this.launch && !this.landing) {
         const tagged = advanceTask(this.task, this.glider.x, this.glider.y, this.flightS);
         if (tagged) {
@@ -933,7 +940,14 @@ export class GameEngine {
     return out.sort((a, b) => a.distKm - b.distKm);
   }
 
+  /** The flight so far in IGC format, or null before the take-off. */
+  igc(pilot: string): string | null {
+    if (this.track.fixes.length < 2) return null;
+    return toIgc(this.track.fixes, { year: new Date().getFullYear(), month0: this.scenario.month0, day: this.scenario.day, pilot, glider: `Brises des Alpes EN-${this.wing.id}`, site: this.takeoff.name });
+  }
+
   restart(): void {
+    this.track.clear();
     this.glider = this.makeGlider(this.spawn.x, this.spawn.y, this.spawn.z, this.spawn.heading);
     this.controls = { brakeL: 0, brakeR: 0, speedbar: 0, ears: false, weight: 0 };
     this.landing = null;

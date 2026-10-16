@@ -41,13 +41,22 @@ const EXTRA_DIRS = [...process.argv.slice(2).filter((a) => !a.startsWith('--')),
   .map((d) => resolve(ROOT, d));
 
 // ---------- Raw research types (lenient: researchers sometimes add fields) ----------
+/**
+ * How the text of an item is organised (research_notes/…/_methode/STYLE_TEXTES.md):
+ * `description` says what is established, `possible` the isolated observations phrased
+ * as possibilities, `note` how the item was collected (shown discreetly with the facts).
+ */
+interface RawText {
+  possible?: string[];
+  note?: string;
+}
 interface RawPoint {
   name?: string;
   lon?: number | null;
   lat?: number | null;
   coord_quality?: string;
 }
-interface RawItem extends RawPoint {
+interface RawItem extends RawPoint, RawText {
   id?: string;
   kind?: string;
   description?: string;
@@ -61,7 +70,7 @@ interface RawItem extends RawPoint {
   sources?: string[];
   confidence?: string;
 }
-interface RawBreeze {
+interface RawBreeze extends RawText {
   id: string;
   name: string;
   kind: string;
@@ -76,7 +85,7 @@ interface RawBreeze {
   confidence?: string;
   sources?: string[];
 }
-interface RawConvergence {
+interface RawConvergence extends RawText {
   id: string;
   name: string;
   geometry?: { type: string; coordinates: unknown } | null;
@@ -86,7 +95,7 @@ interface RawConvergence {
   confidence?: string;
   sources?: string[];
 }
-interface RawRoute {
+interface RawRoute extends RawText {
   id: string;
   name: string;
   waypoints: RawPoint[];
@@ -221,6 +230,13 @@ export function cleanDescription(text: string | undefined): { text: string; note
     return ' ';
   });
   return { text: t.replace(/\s{2,}/g, ' ').trim(), note: notes.length ? notes.join(' ') : null };
+}
+
+/** The isolated observations of an item, and its collection notes merged with the ones cleaned out of the description. */
+function textExtras(it: RawText, cleanNote: string | null = null): { possible?: string[]; note?: string } {
+  const possible = (it.possible ?? []).map((t) => t.trim()).filter(Boolean);
+  const note = [cleanNote, it.note?.trim()].filter(Boolean).join(' ');
+  return { ...(possible.length ? { possible } : {}), ...(note ? { note } : {}) };
 }
 
 const qa: string[] = [];
@@ -1012,6 +1028,7 @@ function main() {
         const conf = confidence(b.confidence);
         const quality = wps.every((p) => p.coord_quality === 'source') ? 'source' : wps.some((p) => p.coord_quality === 'source') ? 'mixed' : 'approx';
         const clean = cleanDescription(b.description);
+        const bx = textExtras(b, clean.note);
         const props: AtlasFeatureProps = {
           id,
           category: 'breezes',
@@ -1037,8 +1054,9 @@ function main() {
             ...(b.season ? { Saison: b.season } : {}),
             ...(b.layer_depth_m ? { Épaisseur: String(b.layer_depth_m) } : {}),
             Trajet: wps.map((p) => p.name).filter(Boolean).join(' → '),
-            ...(clean.note ? { 'Note de collecte': clean.note } : {}),
+            ...(bx.note ? { 'Note de collecte': bx.note } : {}),
           },
+          ...(bx.possible ? { possible: bx.possible } : {}),
         };
         push('breezes', { type: 'Feature', geometry: { type: 'LineString', coordinates: coords }, properties: props });
         curated.push({
@@ -1083,7 +1101,8 @@ function main() {
             description: [c.mechanism, c.usage].filter(Boolean).join('\n\n'),
             confidence: confidence(c.confidence),
             sources: mapSources(c.sources).join(','),
-            details: { ...(c.when ? { Quand: c.when } : {}) },
+            details: { ...(c.when ? { Quand: c.when } : {}), ...(c.note ? { 'Note de collecte': c.note } : {}) },
+            ...(c.possible?.length ? { possible: c.possible } : {}),
           },
         });
       }
@@ -1118,7 +1137,8 @@ function main() {
             qa.push(`${mid}: ${cat} « ${it.name} » altitude déclarée ${it.alt_m} m, MNT ${Math.round(dem!)} m (écart ${altDelta} m, coord ${it.coord_quality ?? '?'})`);
           const details = extra(it);
           const clean = cleanDescription(it.description);
-          if (clean.note) details['Note de collecte'] = clean.note;
+          const ix = textExtras(it, clean.note);
+          if (ix.note) details['Note de collecte'] = ix.note;
           if (verified) details['Position'] = `vérifiée : ${verified.method}`;
           else if (moved) details['Position'] = 'approximative, recalée sur l’altitude déclarée';
           else if (it.coord_quality !== 'source') details['Position'] = 'approximative';
@@ -1137,6 +1157,7 @@ function main() {
               coordQuality: verified || it.coord_quality === 'source' ? 'source' : 'approx',
               altDelta,
               details,
+              ...(ix.possible ? { possible: ix.possible } : {}),
             },
           });
         }
@@ -1186,7 +1207,9 @@ function main() {
             details: {
               ...(r.distance_km ? { Distance: `${r.distance_km} km` } : {}),
               Points: wps.map((p) => p.name).filter(Boolean).join(' → '),
+              ...(r.note ? { 'Note de collecte': r.note } : {}),
             },
+            ...(r.possible?.length ? { possible: r.possible } : {}),
           },
         });
       }

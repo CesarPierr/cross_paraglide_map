@@ -74,6 +74,31 @@ function loadSettings(): Settings {
 
 const isTouch = () => typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
 
+/** One-shot request from the map (« Voler d'ici »): where to start. */
+function readGoto(): { lon: number; lat: number } | null {
+  try {
+    const g = JSON.parse(localStorage.getItem('brises.game.goto') ?? 'null') as { lon: number; lat: number; t: number } | null;
+    // Valid for a minute: opening the game later starts from the last take-off again.
+    return g && Date.now() - g.t < 60000 ? g : null;
+  } catch {
+    return null;
+  }
+}
+
+/** The take-off nearest to a point, within 1.5 km. */
+function nearestTakeoff(list: Takeoff[], p: { lon: number; lat: number }): Takeoff | null {
+  let best: Takeoff | null = null;
+  let bestD = 1.5;
+  for (const t of list) {
+    const d = Math.hypot((t.lon - p.lon) * 78, (t.lat - p.lat) * 111);
+    if (d < bestD) {
+      bestD = d;
+      best = t;
+    }
+  }
+  return best;
+}
+
 function TakeoffPicker({ list, value, onPick }: { list: Takeoff[] | null; value: Takeoff; onPick: (t: Takeoff) => void }) {
   const [q, setQ] = useState('');
   const [open, setOpen] = useState(false);
@@ -122,7 +147,11 @@ function TakeoffPicker({ list, value, onPick }: { list: Takeoff[] | null; value:
 function Menu({ onStart, error, takeoffs, routes }: { onStart: (s: Settings, t: Takeoff) => void; error: string | null; takeoffs: Takeoff[] | null; routes: AtlasFeature[] }) {
   const [s, setS] = useState<Settings>(loadSettings);
   const set = (p: Partial<Settings>) => setS((o) => ({ ...o, ...p }));
-  const takeoff = takeoffs?.find((t) => t.id === s.takeoffId) ?? SAINT_HILAIRE;
+  // « Voler d'ici » from a take-off sheet of the map: the nearest take-off of the list,
+  // until the pilot picks another one.
+  const [goto, setGoto] = useState(readGoto);
+  const gotoTakeoff = useMemo(() => (goto && takeoffs ? nearestTakeoff(takeoffs, goto) : null), [goto, takeoffs]);
+  const takeoff = gotoTakeoff ?? takeoffs?.find((t) => t.id === s.takeoffId) ?? SAINT_HILAIRE;
   // Documented routes starting within 8 km of the take-off.
   const nearRoutes = useMemo(
     () =>
@@ -146,7 +175,14 @@ function Menu({ onStart, error, takeoffs, routes }: { onStart: (s: Settings, t: 
         <p className="game-lead">
           Le vent, les brises, les effets du relief et les dangers documentés sont ceux du modèle du site ; les thermiques naissent là où il place le potentiel thermique et où des thermiques sont décrits ou mesurés.
         </p>
-        <TakeoffPicker list={takeoffs} value={takeoff} onPick={(t) => set({ takeoffId: t.id })} />
+        <TakeoffPicker
+          list={takeoffs}
+          value={takeoff}
+          onPick={(t) => {
+            setGoto(null);
+            set({ takeoffId: t.id });
+          }}
+        />
         <label className="game-field">
           <span>Aile</span>
           <select value={s.wing} onChange={(e) => set({ wing: e.target.value as WingParams['id'] })}>
@@ -267,7 +303,7 @@ function Menu({ onStart, error, takeoffs, routes }: { onStart: (s: Settings, t: 
         </div>
         {error && <p className="game-error">{error}</p>}
         <div className="game-actions">
-          <button className="game-go" onClick={() => onStart({ ...s, routeId: routeOk ? s.routeId : null }, takeoff)}>
+          <button className="game-go" onClick={() => onStart({ ...s, takeoffId: takeoff.id, routeId: routeOk ? s.routeId : null }, takeoff)}>
             Voler
           </button>
           <button className="game-quit" onClick={() => setUiMode('explore')}>
@@ -496,6 +532,7 @@ export default function GameApp() {
   const startFlight = async (s: Settings, takeoff: Takeoff) => {
     try {
       localStorage.setItem('brises.game', JSON.stringify(s));
+      localStorage.removeItem('brises.game.goto');
     } catch {
       /* private mode */
     }

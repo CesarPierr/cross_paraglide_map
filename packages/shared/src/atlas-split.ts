@@ -1,8 +1,9 @@
 /**
  * The atlas travels in two parts. The core (geometry, names, numbers, source
  * titles) is all the map and the wind model need, so
- * the app becomes interactive with it alone. The text (descriptions, source
- * notes, labelled facts, sector summaries, tips, synoptic effects, figures) is fetched right
+ * the app becomes interactive with it alone. The text (descriptions, isolated
+ * observations, source notes, labelled facts, sector summaries, tips, synoptic effects,
+ * figures) is fetched right
  * after, in the background, and merged in place.
  *
  * The documented breezes are also rasterised by the model from `curated`,
@@ -17,6 +18,8 @@ export interface AtlasText {
   features: Record<string, string>;
   /** Labelled facts of each feature (hours, orientation, route points…). */
   details: Record<string, Record<string, string>>;
+  /** Isolated observations of each feature, phrased as possibilities. */
+  possible?: Record<string, string[]>;
   sources: Record<string, string>;
   massifs: Record<string, { summary: string; tips: string[]; synoptic: AtlasSynopticEffect[] }>;
   figures: AtlasFigure[];
@@ -24,14 +27,15 @@ export interface AtlasText {
 }
 
 export function splitAtlas(a: Atlas): { core: Atlas; text: AtlasText } {
-  const text: AtlasText = { generatedAt: a.generatedAt, features: {}, details: {}, sources: {}, massifs: {}, figures: a.figures ?? [], tours: a.tours ?? {} };
+  const text: AtlasText = { generatedAt: a.generatedAt, features: {}, details: {}, possible: {}, sources: {}, massifs: {}, figures: a.figures ?? [], tours: a.tours ?? {} };
   const features = Object.fromEntries(
     Object.entries(a.features).map(([cat, list]) => [
       cat,
       list.map((f) => {
         if (f.properties.description) text.features[f.properties.id] = f.properties.description;
         if (f.properties.details) text.details[f.properties.id] = f.properties.details;
-        return { ...f, properties: { ...f.properties, description: '', details: undefined } };
+        if (f.properties.possible?.length) text.possible![f.properties.id] = f.properties.possible;
+        return { ...f, properties: { ...f.properties, description: '', details: undefined, possible: undefined } };
       }),
     ]),
   ) as Atlas['features'];
@@ -66,6 +70,8 @@ export function mergeAtlasText(a: Atlas, t: AtlasText): Atlas {
       if (d) f.properties.description = d;
       const x = t.details?.[f.properties.id];
       if (x) f.properties.details = x;
+      const pos = t.possible?.[f.properties.id];
+      if (pos) f.properties.possible = pos;
     }
   for (const [id, notes] of Object.entries(t.sources)) if (a.sources[id]) a.sources[id].notes = notes;
   for (const m of a.massifs) {

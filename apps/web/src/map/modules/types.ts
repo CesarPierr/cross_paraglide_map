@@ -42,6 +42,8 @@ export interface FeatureDetails {
   details?: [string, string][];
   /** Paragraphs; atlas text may carry inline citations like [region:S3]. */
   paragraphs?: string[];
+  /** Isolated observations, not cross-checked, phrased as possibilities (shown apart). */
+  possible?: string[];
   /** Global source ids (atlas) — resolved by the UI. */
   sourceIds?: string[];
   /** Explicit links (external directories). */

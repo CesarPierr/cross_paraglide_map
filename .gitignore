@@ -12,3 +12,6 @@ apps/api/dist
 .env
 .htpasswd
 .public-credentials
+
+# text_edit.py write locks
+*.json.lock

@@ -628,14 +628,15 @@
             ]
           },
           "when": "après-midi d'été, brise de Chambéry établie (14h-14h30 et après)",
-          "mechanism": "Le flux de la cluse de Chambéry, qui passe le col vers le sud-ouest, rencontre la brise qui remonte la vallée d'Entremont : les pointes des deux flèches de la carte Largeault se font face de part et d'autre du col.",
-          "usage": "Tracé schématique déduit des pointes de flèches (aucune source ne décrit explicitement une ligne de convergence). Le col est un passage turbulent ; la face N et E du Granier est sous le vent de la brise (PDF du club, légende 1).",
+          "mechanism": "L'après-midi, le flux de la cluse de Chambéry franchit le col vers le sud-ouest et rencontre la brise qui remonte la vallée d'Entremont : les deux courants se font face de part et d'autre du col.",
+          "usage": "Le col est un passage turbulent, et les faces nord et est du Granier sont sous le vent de cette brise.",
           "confidence": "low",
           "sources": [
             "S28",
             "S29",
             "S15"
-          ]
+          ],
+          "note": "Tracé schématique, déduit des flèches d'une carte de brises : aucune source ne décrit explicitement la ligne de convergence."
         },
         {
           "id": "convergence-col-du-cucheron",
@@ -672,10 +673,13 @@
           "radius_km": 2,
           "coord_quality": "source",
           "conditions": "vent de nord, même « léger nord forcissant » ; front froid (vent soudain et fort dans la cluse)",
-          "description": "Vol Libre n°298 : un pilote raconte une « baffe monstrueuse » au col du Coq alors qu'il thermiquait tranquillement ; un faible écart de vitesse de nord suffit à transformer le col en « machine à laver » car le nord « déborde par-dessus la Chartreuse ». Dans le schéma de front froid, l'air froid emprunte les cols plus élevés (Vence, Coq, Ayes sous la Dent de Crolles), qui deviennent turbulents et dangereux. Le Col du Coq est aussi dans un espace naturel sensible (carte PNR).",
+          "description": "Par vent de nord, même faible, l'air qui déborde par-dessus la Chartreuse rend le col du Coq très turbulent : il suffit que le nord forcisse un peu. Au passage d'un front froid, l'air froid s'engouffre par les cols les plus élevés (Vence, Coq, Ayes sous la Dent de Crolles), qui deviennent dangereux. Le col est aussi dans un espace naturel sensible.",
           "sources": [
             "S26",
             "S29"
+          ],
+          "possible": [
+            "La turbulence peut surprendre brutalement, alors qu'on enroule un thermique tranquille."
           ]
         },
         {
@@ -907,7 +911,7 @@
           "coord_quality": "approx",
           "best_hours": "dès le milieu de matinée (3 h après le lever du soleil) ; renforcement l'après-midi",
           "trigger": "falaise calcaire et combe du funiculaire orientées à l'est, ensoleillées tôt",
-          "description": "Les décollages permettent de décoller tôt ; dès l'activité thermique, déclenchements juste en sortie de déco (« soyez prêt à piloter dès le début »). La fiche FFVL du déco Est parle de thermique canalisé par la combe du funiculaire, qui peut être fort. Position estimée devant les décos. Récits : « on enroule tous un thermique au-dessus du déco nord » (15h30, septembre 2023, très fréquenté) ; en mars des « thermiques bien velus » passent le plateau ; XC Mag : thermique de la maison en avant du déco, tailwind possible sur la grande moquette sud.",
+          "description": "La falaise et la combe du funiculaire, tournées vers l'est, prennent le soleil très tôt : les thermiques s'y déclenchent juste en sortie des décollages, et celui que canalise la combe peut être fort. Il faut être prêt à piloter dès le décollage.",
           "sources": [
             "S1",
             "S92",
@@ -915,7 +919,13 @@
             "S101",
             "S40"
           ],
-          "confidence": "medium"
+          "confidence": "medium",
+          "possible": [
+            "Un thermique se forme souvent au-dessus du décollage Nord, où l'on enroule à plusieurs en milieu d'après-midi.",
+            "Dès le mois de mars, des thermiques vigoureux peuvent traverser le plateau.",
+            "Ce thermique de la falaise peut mettre la grande moquette du décollage Sud en vent arrière."
+          ],
+          "note": "Position estimée devant les décollages."
         },
         {
           "id": "pilier-sud-dent-de-crolles",

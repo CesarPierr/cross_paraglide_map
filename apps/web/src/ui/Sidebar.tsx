@@ -8,8 +8,8 @@ import { getController } from './controller-ref';
 import { SimulationPanel } from './ControlPanel';
 import { FeedbackBar, startDraft } from './Feedback';
 import { FigureGallery } from './Figures';
-import { IconBack, IconPlus, IconSearch, IconTarget } from './icons';
-import { goTo, openMassif } from './modes';
+import { IconBack, IconGlider, IconPlus, IconSearch, IconTarget } from './icons';
+import { goTo, openMassif, setUiMode } from './modes';
 import { SheetHandle, useIsMobile } from './mobile';
 import { ProbeSheet } from './ProbeCard';
 import { RoutesBrowser } from './Routes';
@@ -45,7 +45,21 @@ function Explain({ text }: { text: string }) {
   );
 }
 
+/** Opens the simulator on the take-off nearest to a place (the game's menu picks it up). */
+function flyFrom(f: FeatureDetails): void {
+  const [w, s, e, n] = f.bbox;
+  try {
+    localStorage.setItem('brises.game.goto', JSON.stringify({ lon: (w + e) / 2, lat: (s + n) / 2, name: f.title, t: Date.now() }));
+  } catch {
+    /* private mode: the menu opens on the last take-off */
+  }
+  useRuntime.getState().set({ feature: null });
+  setUiMode('game');
+}
+
 function FeatureSheet({ f, atlas }: { f: FeatureDetails; atlas: Atlas }) {
+  const isTakeoff =
+    (f.ref.startsWith('atlas:') && atlas.features.takeoffs.some((t) => t.properties.id === f.ref.slice(6))) || (f.ref.startsWith('sites:') && (f.category === 'Décollage' || f.category === 'Site de vol'));
   const massif = f.massifId ? atlas.massifs.find((m) => m.id === f.massifId) : undefined;
   const back = () => {
     useRuntime.getState().set({ feature: null });
@@ -84,11 +98,29 @@ function FeatureSheet({ f, atlas }: { f: FeatureDetails; atlas: Atlas }) {
           <RichText text={p} atlas={atlas} order={f.sourceIds} />
         </p>
       ))}
+      {f.possible && f.possible.length > 0 && (
+        <section className="possible" aria-label="Possible aussi">
+          <h3>Possible aussi</h3>
+          <p className="possible-hint">Observations isolées, non recoupées par d’autres sources.</p>
+          <ul>
+            {f.possible.map((t, i) => (
+              <li key={i}>
+                <RichText text={t} atlas={atlas} order={f.sourceIds} />
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
       {f.warning && <p className="note">{f.warning}</p>}
       <div className="sheet-actions">
         <button className="btn ghost small" onClick={() => getController()?.flyToBbox(f.bbox)}>
           <IconTarget size={15} /> Centrer
         </button>
+        {isTakeoff && (
+          <button className="btn small primary" onClick={() => flyFrom(f)} title="Ouvrir le simulateur de vol sur ce décollage">
+            <IconGlider size={15} /> Voler d’ici
+          </button>
+        )}
         {f.links?.map((l) => (
           <a key={l.url} className="btn ghost small" href={l.url} target="_blank" rel="noopener noreferrer">
             {l.label}

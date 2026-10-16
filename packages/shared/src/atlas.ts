@@ -139,6 +139,11 @@ export interface AtlasFeatureProps {
   kk7Evening?: number;
   /** Free-form extra details shown in the popup: label → value. */
   details?: Record<string, string>;
+  /**
+   * Isolated observations, not cross-checked (a single report, a pilot's experience),
+   * phrased as possibilities ("Il arrive que…"); the description keeps what is established.
+   */
+  possible?: string[];
   /** Breezes: legal-time active window, typical speed (km/h). */
   windowStart?: number;
   windowEnd?: number;

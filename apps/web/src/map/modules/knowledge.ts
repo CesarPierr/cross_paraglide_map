@@ -327,6 +327,7 @@ export class KnowledgeModule implements MapModule {
           : undefined,
       details: p.details ? Object.entries(p.details) : undefined,
       paragraphs: p.description ? p.description.split('\n\n') : undefined,
+      possible: p.possible,
       sourceIds: p.sources.split(',').filter(Boolean),
       warning: p.coordQuality && p.coordQuality !== 'source' ? 'Position estimée à partir de descriptions : à vérifier sur la fiche FFVL avant usage.' : undefined,
       bbox: bboxOf(coords),

@@ -836,6 +836,8 @@ export interface FieldResult {
   venturi: Float32Array;
   /** Vertical speed induced by horizontal convergence, m/s (positive = rising). */
   convergence: Float32Array;
+  /** Insolation 0..1 with cast shadows (`TimeContext.insol`). */
+  insolation: Float32Array;
 }
 
 export function computeField(c: WindContext): FieldResult {
@@ -876,7 +878,7 @@ export function computeField(c: WindContext): FieldResult {
     const lift = thermal[k] * 2.5 + Math.max(dynamic[k], -1.5) + clamp(conv[k], -1.5, 2.5);
     field[k * 4 + 2] = lift;
   }
-  return { field, thermal, dynamic, lee, venturi, convergence };
+  return { field, thermal, dynamic, lee, venturi, convergence, insolation: c.time.insol };
 }
 
 function smooth3(src: Float32Array, w: number, h: number): Float32Array {

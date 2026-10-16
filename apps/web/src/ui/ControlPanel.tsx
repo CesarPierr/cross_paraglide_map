@@ -24,6 +24,7 @@ const PRESETS: { label: string; from: number; kmh: number; hint: string }[] = [
 const OVERLAYS: { key: OverlayMode; label: string; hint: string }[] = [
   { key: 'exposure', label: 'Au vent / sous le vent', hint: 'Où l’air monte sur le relief, où il est abrité (rotors), où il accélère' },
   { key: 'thermal', label: 'Thermique', hint: 'Soleil sur la pente, altitude, reliefs saillants' },
+  { key: 'sun', label: 'Soleil et ombres', hint: 'Pentes au soleil et ombres portées du relief, à l’heure choisie' },
   { key: 'convergence', label: 'Convergences', hint: 'Où les flux se rencontrent et montent' },
   { key: 'lift', label: 'Ascendances', hint: 'Thermique, dynamique et convergence réunis' },
   { key: 'speed', label: 'Force du vent', hint: 'Vitesse à la hauteur simulée' },

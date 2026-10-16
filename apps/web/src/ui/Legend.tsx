@@ -43,6 +43,19 @@ export function OverlayLegend() {
           </div>
         </div>
       )}
+      {overlay === 'sun' && (
+        <div className="legend-block">
+          <h4>Soleil et ombres</h4>
+          <div className="swatches">
+            <span>
+              <i style={{ background: '#ffdb8c' }} /> au soleil
+            </span>
+            <span>
+              <i style={{ background: '#1f2b52' }} /> à l’ombre
+            </span>
+          </div>
+        </div>
+      )}
       {(overlay === 'convergence' || overlay === 'lift') && (
         <div className="legend-block">
           <h4>{overlay === 'lift' ? 'Ascendances estimées' : 'Convergence'}</h4>

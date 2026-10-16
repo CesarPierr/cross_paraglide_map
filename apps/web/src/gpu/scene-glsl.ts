@@ -300,7 +300,7 @@ precision highp float;
 uniform highp sampler2D tField;
 uniform highp sampler2D tAux;
 uniform highp sampler2D tLift;
-uniform int uMode;      // 1 exposure, 2 thermal, 3 convergence, 4 lift, 5 speed
+uniform int uMode;      // 1 exposure, 2 thermal, 3 convergence, 4 lift, 5 speed, 6 sun and shade
 uniform float uWindOn;
 uniform float uGKmh;
 uniform float uOpacity;
@@ -362,6 +362,17 @@ void main() {
     vec3 c3 = vec3(0.95, 0.3, 0.3);
     col = kmh < 12.0 ? mix(c0, c1, kmh / 12.0) : kmh < 25.0 ? mix(c1, c2, (kmh - 12.0) / 13.0) : mix(c2, c3, clamp((kmh - 25.0) / 20.0, 0.0, 1.0));
     a = 0.2 + 0.4 * smoothstep(3.0, 40.0, kmh);
+  } else if (uMode == 6) {
+    // Sun and shade at the simulated hour: shade of the relief (own and cast) in blue-grey,
+    // sunlit slopes in warm light, the more so the more squarely they face the sun.
+    float s = A.w;
+    if (s < 0.08) {
+      col = vec3(0.12, 0.17, 0.32);
+      a = 0.5 * (1.0 - s / 0.08);
+    } else {
+      col = vec3(1.0, 0.86, 0.55);
+      a = 0.3 * smoothstep(0.35, 1.0, s);
+    }
   }
   a *= uOpacity;
   fragColor = vec4(col * a, a);

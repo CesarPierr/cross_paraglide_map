@@ -46,7 +46,7 @@ export interface ThermalSpot {
 
 type ProbeResult = ReturnType<GpuWindEngine['probe']>;
 
-const OVERLAY_INDEX: Record<OverlayMode, number> = { none: 0, exposure: 1, thermal: 2, convergence: 3, lift: 4, speed: 5 };
+const OVERLAY_INDEX: Record<OverlayMode, number> = { none: 0, exposure: 1, thermal: 2, convergence: 3, lift: 4, speed: 5, sun: 6 };
 
 function hexToRgb(hex: string): [number, number, number] {
   const n = parseInt(hex.slice(1), 16);

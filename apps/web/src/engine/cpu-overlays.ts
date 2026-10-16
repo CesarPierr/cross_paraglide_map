@@ -4,7 +4,7 @@
 import type { FieldResult } from '@brises/model';
 import { clamp, smoothstep } from '@brises/model';
 
-export type OverlayMode = 'none' | 'exposure' | 'thermal' | 'convergence' | 'lift' | 'speed';
+export type OverlayMode = 'none' | 'exposure' | 'thermal' | 'sun' | 'convergence' | 'lift' | 'speed';
 
 export function renderOverlay(mode: OverlayMode, f: FieldResult, gKmh: number, out: Uint8ClampedArray): void {
   const n = f.thermal.length;
@@ -40,6 +40,20 @@ export function renderOverlay(mode: OverlayMode, f: FieldResult, gKmh: number, o
         g = 170;
         b = 30;
         a = 0.6 * ven;
+      }
+    } else if (mode === 'sun') {
+      // Shade of the relief (own and cast) in blue-grey, sunlit slopes in warm light (scene-glsl.ts).
+      const s = f.insolation[k];
+      if (s < 0.08) {
+        r = 31;
+        g = 43;
+        b = 82;
+        a = 0.5 * (1 - s / 0.08);
+      } else {
+        r = 255;
+        g = 219;
+        b = 140;
+        a = 0.3 * smoothstep(0.35, 1, s);
       }
     } else if (mode === 'thermal') {
       const t = f.thermal[k];

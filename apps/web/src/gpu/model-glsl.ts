@@ -33,6 +33,7 @@ uniform float uSeason;
 uniform float uValleyPhase;
 uniform float uWaterPhase;
 uniform float uThermalDecline;   // field.ts → thermalDecline
+uniform float uNightFactor;      // sun.ts → nightFactor
 uniform vec2 uG;
 uniform float uGSpeed;
 uniform float uGKmh;
@@ -52,6 +53,11 @@ const vec4 R_ANTI_ZONE = vec4(${RULES.valleyAntiwindZone.map(f).join(', ')});
 const vec2 R_CUR_SLOPE = vec2(${RULES.curatedSlopeLayer.map(f).join(', ')});
 const vec2 R_CUR_KATA = vec2(${RULES.curatedKatabaticLayer.map(f).join(', ')});
 const vec2 R_SUN_H = vec2(${RULES.thermalSunHours.map(f).join(', ')});
+const vec2 R_POOL_SUN = vec2(${RULES.coldPoolSunHours.map(f).join(', ')});
+const float R_POOL_SHARE = ${f(RULES.coldPoolShare)};
+const vec2 R_POOL_DEPTH = vec2(${RULES.coldPoolDepth.map(f).join(', ')});
+const vec2 R_POOL_WIND = vec2(${RULES.coldPoolWindKmh.map(f).join(', ')});
+const float R_MEM_SHARE = ${f(RULES.thermalMemory.share)};
 const float R_CUR_DEEP = ${f(RULES.curatedDeepDepth)};
 const float R_CUR_ALIGN = ${f(RULES.curatedAlignWeight)};
 const float R_PLAIN_MAX = ${f(RULES.plainBreezeMax)};
@@ -92,6 +98,13 @@ Cur unpackCur(vec2 v) {
   return r;
 }
 
+// Depth of a cell in the morning cold pool of its valley, 0..1 (field.ts → coldPoolBurial).
+float coldPoolBurial(float hFloor, float vDepth) {
+  float pool = clamp(R_POOL_SHARE * vDepth, R_POOL_DEPTH.x, R_POOL_DEPTH.y) * uNightFactor * (1.0 - smoothstep(R_POOL_WIND.x, R_POOL_WIND.y, uGKmh));
+  if (pool < 1.0) return 0.0;
+  return 1.0 - smoothstep(0.5, 1.0, hFloor / pool);
+}
+
 // Along-valley wind vs height (field.ts → valleyProfile).
 float valleyProfile(float zeta) {
   float core = 1.0 - smoothstep(R_VALLEY_JET, R_VALLEY_TOP, zeta);
@@ -116,7 +129,7 @@ Cell evalCell(ivec2 c) {
   float gmag = length(Z.yz);
   o.slopeDeg = degrees(atan(gmag));
   o.aspect = gmag > 1e-6 ? mod(degrees(atan(-Z.y, -Z.z)) + 360.0, 360.0) : 0.0;
-  vec2 IN = texelFetch(tInsol, c, 0).rg;   // insolation, sunshine hours since sunrise
+  vec3 IN = texelFetch(tInsol, c, 0).rgb;   // insolation, sunshine hours since sunrise, recent sunshine
   float insol = IN.x;
   o.insol = insol;
   float depth = max(V.y - V.x, 150.0);
@@ -230,13 +243,16 @@ Cell evalCell(ivec2 c) {
   o.total = b * wb + o.synoptic;
   o.dyn = dot(o.synoptic, Z.yz) * exp(-hh / 350.0);
 
-  float day = uSunElev > 5.0 ? 1.0 : 0.0;
+  // Direct sun or the heat the ground stored (field.ts → RULES.thermalMemory).
+  float drive = max(uSunElev > 5.0 ? insol : 0.0, R_MEM_SHARE * IN.z * smoothstep(-2.0, 5.0, uSunElev));
   float elevF = 0.55 + 0.45 * smoothstep(400.0, 2200.0, z);
   float convexF = 0.55 + 0.45 * smoothstep(-60.0, 140.0, Z.w);
   float windF = 1.0 - 0.6 * smoothstep(20.0, 45.0, uGKmh);
-  // Onset per slope from the sunshine it received since sunrise (field.ts → thermalOnset).
-  float dayF = smoothstep(R_SUN_H.x, R_SUN_H.y, IN.y) * uThermalDecline;
-  o.thermal = W.w > 0.5 ? 0.0 : day * clamp(insol * uSeason * elevF * convexF * windF * dayF, 0.0, 1.0);
+  // Onset per slope from the sunshine it received since sunrise, later in the valley's
+  // morning cold pool (field.ts → thermalOnset, coldPoolBurial).
+  float burial = coldPoolBurial(z - V.x, V.y - V.x);
+  float dayF = smoothstep(mix(R_SUN_H.x, R_POOL_SUN.x, burial), mix(R_SUN_H.y, R_POOL_SUN.y, burial), IN.y) * uThermalDecline;
+  o.thermal = W.w > 0.5 ? 0.0 : clamp(drive * uSeason * elevF * convexF * windF * dayF, 0.0, 1.0);
   o.turb = clamp(o.lee * smoothstep(8.0, 35.0, uGKmh) + o.venturi * smoothstep(15.0, 45.0, uGKmh) * 0.6, 0.0, 1.0);
   // Documented hazards matching the situation (field.ts), up to four per cell.
   o.hidx = -1.0;
@@ -278,9 +294,10 @@ Cell evalCell(ivec2 c) {
 `;
 
 /**
- * Pass 1 (time dependent only): instantaneous insolation with cast shadows (r) and
- * sunshine received since sunrise, in hours of full sun on the slope, without cast
- * shadows (g; field.ts → computeTimeContext, sun path from sun.ts → sunSamples).
+ * Pass 1 (time dependent only): instantaneous insolation with cast shadows (r), sunshine
+ * received since sunrise, in hours of full sun on the slope, without cast shadows (g),
+ * and recent sunshine with cast shadows, the heat stored by the ground (b; field.ts →
+ * computeTimeContext, sun path from sun.ts → sunSamples).
  */
 export const INSOLATION_FS = `#version 300 es
 precision highp float;
@@ -295,38 +312,61 @@ uniform float uAtten;     // low-sun attenuation
 uniform vec2 uSunStep;    // grid step towards the sun
 uniform vec4 uSunS[${SUN_SAMPLES_MAX}];   // sun path since sunrise: unit vector, weight (h)
 uniform int uSunN;
+uniform float uSunDt;     // duration of a sample (h), sun.ts → sunSampleStep
 out vec4 outColor;
 const float PI = 3.141592653589793;
 const float CIRC = ${EARTH_CIRCUMFERENCE.toFixed(3)};
 const float STEPS[14] = float[](1.0, 2.0, 3.0, 4.0, 6.0, 8.0, 11.0, 15.0, 20.0, 26.0, 34.0, 44.0, 56.0, 70.0);
-void main() {
-  ivec2 c = ivec2(gl_FragCoord.xy);
-  vec4 Z = texelFetch(tZ, c, 0);
-  vec3 n = vec3(-Z.y, -Z.z, 1.0);
-  float inv = 1.0 / length(n);
-  float sunH = 0.0;
-  for (int i = 0; i < ${SUN_SAMPLES_MAX}; i++) {
-    if (i >= uSunN) break;
-    float cs = dot(n, uSunS[i].xyz) * inv;
-    if (cs > 0.0) sunH += uSunS[i].w * cs;
-  }
-  float cosInc = dot(n, uSun) * inv;
-  if (cosInc <= 0.0 || uAtten <= 0.0) { outColor = vec4(0.0, sunH, 0.0, 1.0); return; }
-  float my = (uPy0 + float(c.y) + 0.5) / uWorldPx;
-  float lat = atan(sinh(PI * (1.0 - 2.0 * my)));
-  float cs = CIRC * cos(lat) / uWorldPx;
-  float z0 = Z.x + 2.0;
+const float MEM_TAU = ${f(RULES.thermalMemory.tau)};
+const float MEM_WINDOW = ${f(RULES.thermalMemory.window)};
+// Share of the cell shaded by the relief towards the sun (field.ts → castShade).
+float castShade(ivec2 c, float z0, float cs, vec2 dir, float tanEl) {
   float shade = 0.0;
   for (int s = 0; s < 14; s++) {
-    ivec2 p = ivec2(floor(vec2(c) + uSunStep * STEPS[s] + 0.5));
+    ivec2 p = ivec2(floor(vec2(c) + dir * STEPS[s] + 0.5));
     if (p.x < 0 || p.y < 0 || p.x >= uGrid.x || p.y >= uGrid.y) break;
-    float rise = texelFetch(tZ, p, 0).r - z0 - STEPS[s] * cs * uTanEl;
+    float rise = texelFetch(tZ, p, 0).r - z0 - STEPS[s] * cs * tanEl;
     if (rise > 0.0) {
       shade = max(shade, clamp(rise / 60.0, 0.0, 1.0));
       if (shade >= 1.0) break;
     }
   }
-  outColor = vec4(cosInc * (1.0 - shade) * uAtten, sunH, 0.0, 1.0);
+  return shade;
+}
+void main() {
+  ivec2 c = ivec2(gl_FragCoord.xy);
+  vec4 Z = texelFetch(tZ, c, 0);
+  vec3 n = vec3(-Z.y, -Z.z, 1.0);
+  float inv = 1.0 / length(n);
+  float my = (uPy0 + float(c.y) + 0.5) / uWorldPx;
+  float lat = atan(sinh(PI * (1.0 - 2.0 * my)));
+  float cs = CIRC * cos(lat) / uWorldPx;
+  float z0 = Z.x + 2.0;
+  float sunH = 0.0;
+  for (int i = 0; i < ${SUN_SAMPLES_MAX}; i++) {
+    if (i >= uSunN) break;
+    float ci = dot(n, uSunS[i].xyz) * inv;
+    if (ci > 0.0) sunH += uSunS[i].w * ci;
+  }
+  // Recent sunshine (thermal inertia): the last samples, with cast shadows.
+  float rec = 0.0;
+  float norm = 0.0;
+  for (int i = ${SUN_SAMPLES_MAX} - 1; i >= 0; i--) {
+    if (i >= uSunN) continue;
+    float age = (float(uSunN - i) - 0.5) * uSunDt;
+    if (age > MEM_WINDOW) break;
+    float kern = exp(-age / MEM_TAU);
+    norm += uSunDt * kern;
+    vec4 S = uSunS[i];
+    float ci = dot(n, S.xyz) * inv;
+    if (S.w <= 0.0 || ci <= 0.0) continue;
+    float hz = max(length(S.xy), 1e-4);
+    rec += S.w * kern * ci * (1.0 - castShade(c, z0, cs, vec2(S.x, -S.y) / hz, S.z / hz));
+  }
+  rec = norm > 0.0 ? rec / norm : 0.0;
+  float cosInc = dot(n, uSun) * inv;
+  float ins = cosInc <= 0.0 || uAtten <= 0.0 ? 0.0 : cosInc * (1.0 - castShade(c, z0, cs, uSunStep, uTanEl)) * uAtten;
+  outColor = vec4(ins, sunH, rec, 1.0);
 }`;
 
 /** Pass 2: the wind field (MRT). */

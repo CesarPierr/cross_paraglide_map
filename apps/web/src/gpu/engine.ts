@@ -7,7 +7,7 @@
  * what makes the hour / wind / height sliders feel live.
  */
 import type { CellResult, CuratedBreezeInfo, CuratedHazardInput, ModelParams } from '@brises/model';
-import { curatedActivity, curatedLayerKind, hazardActivity, HazardEffect, sunSamples, SUN_SAMPLES_MAX, thermalDecline } from '@brises/model';
+import { curatedActivity, curatedLayerKind, hazardActivity, HazardEffect, nightFactor, sunSampleStep, sunSamples, SUN_SAMPLES_MAX, thermalDecline } from '@brises/model';
 import { windVector, type Grid } from '@brises/model';
 import { smoothstep } from '@brises/model';
 import { RULES } from '@brises/model';
@@ -40,6 +40,10 @@ export interface TimeState {
   thermalDecline: number;
   /** Sun path since sunrise (`sunSamples`): 4 floats per sample. */
   sunSamples: Float32Array;
+  /** Duration of a sample (h, `sunSampleStep`). */
+  sunStep: number;
+  /** Length of the previous night relative to a summer night (`nightFactor`). */
+  nightFactor: number;
   night: boolean;
 }
 
@@ -79,6 +83,8 @@ export function timeState(grid: Grid, p: ModelParams): TimeState {
     waterPhase: cycle(solarHour, RULES.waterSchedule, 0.25),
     thermalDecline: thermalDecline(solarHour, valleyPhase),
     sunSamples: sunSamples(p.year, p.month0, p.day, p.hour, lat, lon),
+    sunStep: sunSampleStep(p.year, p.month0, p.day, p.hour, lat, lon),
+    nightFactor: nightFactor(p.month0, p.day, lat),
   };
 }
 
@@ -142,8 +148,8 @@ export class GpuWindEngine {
     this.tex.C2 = createTexture(gl, w, h, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: pack.tC2 });
     this.tex.F = createTexture(gl, w, h, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: pack.tF });
     this.tex.B = createTexture(gl, Math.max(1, pack.breezes.length + pack.hazards.length), 1, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: this.breezeData });
-    // Instantaneous insolation (r) and sunshine received since sunrise (g), per cell.
-    this.tex.insol = createTexture(gl, w, h, { internal: gl.RG16F, format: gl.RG, type: gl.FLOAT });
+    // Instantaneous insolation (r), sunshine received since sunrise (g) and recent sunshine (b), per cell.
+    this.tex.insol = createTexture(gl, w, h, { internal: gl.RGBA16F, format: gl.RGBA, type: gl.FLOAT });
     this.fieldTex = createTexture(gl, w, h, { ...half, filter: lin });
     this.auxTex = createTexture(gl, w, h, { ...half, filter: lin });
     this.liftTex = createTexture(gl, w, h, { ...half, filter: lin });
@@ -228,6 +234,7 @@ export class GpuWindEngine {
     gl.uniform1f(u.uSeason, t.season);
     gl.uniform1f(u.uValleyPhase, t.valleyPhase);
     gl.uniform1f(u.uThermalDecline, t.thermalDecline);
+    gl.uniform1f(u.uNightFactor, t.nightFactor);
     gl.uniform1f(u.uWaterPhase, t.waterPhase);
     gl.uniform2f(u.uG, g[0], g[1]);
     gl.uniform1f(u.uGSpeed, p.synoptic.speedKmh / 3.6);
@@ -283,6 +290,7 @@ export class GpuWindEngine {
       const ns = Math.min(SUN_SAMPLES_MAX, this.time!.sunSamples.length / 4);
       if (ns > 0) gl.uniform4fv(u.uSunS, this.time!.sunSamples, 0, ns * 4);
       gl.uniform1i(u.uSunN, ns);
+      gl.uniform1f(u.uSunDt, this.time!.sunStep);
       this.draw(this.fbInsol, w, h, 1);
       this.dirtyTime = false;
     }

@@ -568,16 +568,46 @@ function checkConvergence(f: AtlasFeature): void {
 }
 
 // ---------- Thermals ----------
+/** A word of a season, accents included (JavaScript's \b ignores « é »). */
+const word = (alt: string) => new RegExp(`(?<!\\p{L})(?:${alt})(?!\\p{L})`, 'iu');
+const SUMMER = word('été|juin|juillet|août');
+const SEASONS: [RegExp, number, string][] = [
+  [word('printemps|mars|avril|mai'), 3, 'avril'],
+  [word('automne|septembre|octobre|novembre'), 9, 'octobre'],
+  [word('hiver|décembre|janvier|février'), 1, 'février'],
+];
+/**
+ * The hours of a thermal as the model can test them: the summer clause when the text
+ * has one (« début d'après-midi (octobre) ; dès 11h l'été »), else the clauses that name
+ * no season, without the negated periods (« rien le matin », « aucun point chaud en fin
+ * de journée »); when every clause names a season, the first one, tested in that season
+ * (« dès 13h, printemps » in April). GPS statistics over the whole year stay in July.
+ */
+function thermalHours(hours: string | undefined): { text: string | undefined; month0: number; month: string } {
+  const summer = { month0: 6, month: 'juillet' };
+  if (!hours) return { text: hours, ...summer };
+  const clean = (t: string) => t.replace(/(?<!\p{L})(?:rien|jamais|aucune?(?: point chaud)?|peu utilisé)(?!\p{L})[^,;)]*/giu, ' ');
+  const clauses = hours.split(';');
+  const seasonOf = (c: string) => SEASONS.filter(([re]) => re.test(c));
+  const hot = clauses.find((c) => SUMMER.test(c));
+  if (hot) return { text: clean(hot), ...summer };
+  if (/toute l['’]année|traces GPS|%/i.test(hours)) return { text: clean(hours), ...summer };
+  const plain = clauses.filter((c) => seasonOf(c).length === 0);
+  if (plain.length > 0) return { text: clean(plain.join(';')), ...summer };
+  const first = seasonOf(clauses[0]);
+  return first.length === 1 ? { text: clean(clauses[0]), month0: first[0][1], month: first[0][2] } : { text: clean(hours), ...summer };
+}
+
 function checkThermal(f: AtlasFeature): void {
   const p = f.properties;
-  const hours = p.details?.Heures;
+  const { text: hours, month0, month } = thermalHours(p.details?.Heures);
   let window = parseHours(hours, 'slope');
   const res: Result = { category: 'thermiques', id: p.id, name: p.name, massif: p.massif, status: 'ok', checks: [] };
   results.push(res);
   const assumed = !window;
   if (!window) window = [12, 15];
-  const s: Scenario = { month0: 6, hour: midWindow(window) };
-  res.scenario = `juillet ${hourTxt(s.hour)}${assumed ? ' (heures non précisées : milieu de journée supposé)' : ''}`;
+  const s: Scenario = { month0, hour: midWindow(window) };
+  res.scenario = `${month} ${hourTxt(s.hour)}${assumed ? ' (heures non précisées : milieu de journée supposé)' : ''}`;
   const ctx = context(s, { mode: 'agl', meters: 80 });
   const [lon, lat] = f.geometry.type === 'Point' ? f.geometry.coordinates : f.geometry.coordinates[0];
   const k = cellAt(lon, lat);
@@ -610,7 +640,7 @@ function checkThermal(f: AtlasFeature): void {
   if (!assumed && window[1] > window[0]) {
     let onsetH = NaN;
     for (let hr = 5; hr <= 16; hr += 0.25) {
-      const cx = context({ month0: 6, hour: hr }, { mode: 'agl', meters: 80 });
+      const cx = context({ month0, hour: hr }, { mode: 'agl', meters: 80 });
       let v = 0;
       for (let dj = -1; dj <= 1; dj++) for (let di = -1; di <= 1; di++) v = Math.max(v, evalAt((j0 + dj) * W + i0 + di, cx).thermal);
       if (v >= COLUMN) {

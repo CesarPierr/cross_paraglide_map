@@ -10,7 +10,7 @@ import { CuratedLayerKind, curatedLayerKind } from './curated';
 import { compassFr, windFromDeg, windVector } from './grid';
 import { clamp, smoothstep } from './raster';
 import { RULES } from './rules';
-import { legalTimeToUtc, noonElevation, solarTime, sunPosition, sunSamples, type SunPosition } from './sun';
+import { legalTimeToUtc, nightFactor, noonElevation, solarTime, sunPosition, sunSampleStep, sunSamples, type SunPosition } from './sun';
 import type { Terrain } from './terrain';
 
 export type { CuratedBreezeInfo };
@@ -74,6 +74,13 @@ export interface TimeContext {
    * (integral of cos(incidence) × low-sun attenuation, without cast shadows).
    */
   sunHours: Float32Array;
+  /**
+   * Recent sunshine of each cell, 0..1: its insolation, with cast shadows, over the last
+   * hours weighted by exp(−age / tau) (`RULES.thermalMemory`): the heat its ground stored.
+   */
+  sunRecent: Float32Array;
+  /** Length of the previous night relative to a summer night, 1..1.5 (`nightFactor`). */
+  nightFactor: number;
 }
 
 /** Smooth trapezoid: -nightValue before a, ramps to 1 at b, 1 until c, back to -nightValue after d. */
@@ -117,8 +124,24 @@ export function thermalDecline(solarHour: number, valleyPhase: number): number {
  * faces in the afternoon, flat floors in between. See `RULES.thermalSunHours`.
  * Mirrored in apps/web/src/gpu/model-glsl.ts.
  */
-export function thermalOnset(sunHours: number): number {
-  return smoothstep(RULES.thermalSunHours[0], RULES.thermalSunHours[1], sunHours);
+export function thermalOnset(sunHours: number, burial = 0): number {
+  const [a0, a1] = RULES.thermalSunHours;
+  const [b0, b1] = RULES.coldPoolSunHours;
+  return smoothstep(a0 + (b0 - a0) * burial, a1 + (b1 - a1) * burial, sunHours);
+}
+
+/**
+ * How deep a cell sits in the morning cold pool of its valley, 0 (above it) .. 1 (at
+ * the bottom): its thermals need more sun to break out (`thermalOnset`). The pool fills
+ * a share of the valley depth, more after a long night, and a synoptic wind mixes it
+ * away. See `RULES.coldPoolShare`. Mirrored in apps/web/src/gpu/model-glsl.ts.
+ */
+export function coldPoolBurial(heightAboveFloor: number, valleyDepth: number, night: number, gKmh: number): number {
+  const [d0, d1] = RULES.coldPoolDepth;
+  const [w0, w1] = RULES.coldPoolWindKmh;
+  const pool = clamp(RULES.coldPoolShare * valleyDepth, d0, d1) * night * (1 - smoothstep(w0, w1, gKmh));
+  if (pool < 1) return 0;
+  return 1 - smoothstep(0.5, 1, heightAboveFloor / pool);
 }
 
 /** Activity 0..1 of a curated breeze given its legal-time window, with 1 h ramps. */
@@ -182,6 +205,28 @@ export function curatedActivity(b: CuratedBreezeInfo, p: ModelParams, valleyPhas
 
 const SHADOW_STEPS = [1, 2, 3, 4, 6, 8, 11, 15, 20, 26, 34, 44, 56, 70];
 
+/**
+ * Share 0..1 of cell (i, j) shaded by the relief towards the sun: marches the grid
+ * (di, dj per step, columns east, rows south) and compares the terrain with the line
+ * of sight at the sun's elevation (tan `tanEl`); 60 m of overhang give full shade.
+ */
+function castShade(z: Float32Array, w: number, h: number, i: number, j: number, cs: number, di: number, dj: number, tanEl: number): number {
+  const z0 = z[j * w + i] + 2;
+  let shade = 0;
+  for (let s = 0; s < SHADOW_STEPS.length; s++) {
+    const d = SHADOW_STEPS[s];
+    const ii = Math.round(i + di * d);
+    const jj = Math.round(j + dj * d);
+    if (ii < 0 || jj < 0 || ii >= w || jj >= h) break;
+    const rise = z[jj * w + ii] - z0 - d * cs * tanEl;
+    if (rise > 0) {
+      shade = Math.max(shade, clamp(rise / 60, 0, 1));
+      if (shade >= 1) break;
+    }
+  }
+  return shade;
+}
+
 export function computeTimeContext(t: Terrain, p: ModelParams): TimeContext {
   const { grid, z, gx, gy } = t;
   const { width: w, height: h } = grid;
@@ -213,20 +258,7 @@ export function computeTimeContext(t: Terrain, p: ModelParams): TimeContext {
         const norm = Math.sqrt(nx * nx + ny * ny + 1);
         let cosInc = (nx * sx + ny * sy + sz) / norm;
         if (cosInc <= 0) continue;
-        const z0 = z[k] + 2;
-        let shade = 0;
-        for (let s = 0; s < SHADOW_STEPS.length; s++) {
-          const d = SHADOW_STEPS[s];
-          const ii = Math.round(i + di * d);
-          const jj = Math.round(j + dj * d);
-          if (ii < 0 || jj < 0 || ii >= w || jj >= h) break;
-          const rise = z[jj * w + ii] - z0 - d * cs * tanEl;
-          if (rise > 0) {
-            shade = Math.max(shade, clamp(rise / 60, 0, 1));
-            if (shade >= 1) break;
-          }
-        }
-        cosInc *= 1 - shade;
+        cosInc *= 1 - castShade(z, w, h, i, j, cs, di, dj, tanEl);
         // Low sun is attenuated by the atmosphere.
         insol[k] = cosInc * smoothstep(-1, 12, sun.elevation);
       }
@@ -250,6 +282,41 @@ export function computeTimeContext(t: Terrain, p: ModelParams): TimeContext {
       sunHours[k] = e;
     }
   }
+  // Recent sunshine (thermal inertia): the last few samples, with cast shadows.
+  const sunRecent = new Float32Array(grid.size);
+  const step = sunSampleStep(p.year, p.month0, p.day, p.hour, centerLat, centerLon);
+  if (ns > 0 && step > 0) {
+    const { tau, window } = RULES.thermalMemory;
+    const recent: { s: number; kern: number; di: number; dj: number; tanEl: number }[] = [];
+    let norm = 0;
+    for (let s = ns - 1; s >= 0; s--) {
+      const age = (ns - s - 0.5) * step;
+      if (age > window) break;
+      const kern = Math.exp(-age / tau);
+      norm += step * kern;
+      if (samples[s * 4 + 3] <= 0) continue;
+      const hz = Math.max(Math.hypot(samples[s * 4], samples[s * 4 + 1]), 1e-4);
+      recent.push({ s, kern, di: samples[s * 4] / hz, dj: -samples[s * 4 + 1] / hz, tanEl: samples[s * 4 + 2] / hz });
+    }
+    if (recent.length > 0) {
+      for (let j = 0; j < h; j++) {
+        const cs = grid.cellM[j];
+        for (let i = 0; i < w; i++) {
+          const k = j * w + i;
+          const nx = -gx[k];
+          const ny = -gy[k];
+          const inv = 1 / Math.sqrt(nx * nx + ny * ny + 1);
+          let e = 0;
+          for (const r of recent) {
+            const c = (nx * samples[r.s * 4] + ny * samples[r.s * 4 + 1] + samples[r.s * 4 + 2]) * inv;
+            if (c <= 0) continue;
+            e += samples[r.s * 4 + 3] * r.kern * c * (1 - castShade(z, w, h, i, j, cs, r.di, r.dj, r.tanEl));
+          }
+          sunRecent[k] = e / norm;
+        }
+      }
+    }
+  }
   const valleyPhase = cycle(solarHour, RULES.valleySchedule, RULES.valleyNightRatio);
   return {
     sun,
@@ -261,6 +328,8 @@ export function computeTimeContext(t: Terrain, p: ModelParams): TimeContext {
     thermalDecline: thermalDecline(solarHour, valleyPhase),
     insol,
     sunHours,
+    sunRecent,
+    nightFactor: nightFactor(p.month0, p.day, centerLat),
   };
 }
 
@@ -627,13 +696,17 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   // Orographic vertical speed of the air forced over the slope (dynamic lift).
   out.dynamicLift = (out.synoptic[0] * gxk + out.synoptic[1] * gyk) * Math.exp(-hh / 350);
 
-  // Thermal potential 0..1: sun on the slope, height, convexity, no water, not blown apart.
-  const day = c.time.sun.elevation > 5 ? 1 : 0;
+  // Thermal potential 0..1: sun on the slope or the heat its ground stored (thermal
+  // inertia, a little after sunset too), height, convexity, morning cold pool of the
+  // valley, no water, not blown apart.
+  const el = c.time.sun.elevation;
+  const drive = Math.max(el > 5 ? insol : 0, RULES.thermalMemory.share * c.time.sunRecent[k] * smoothstep(-2, 5, el));
   const elevF = 0.55 + 0.45 * smoothstep(400, 2200, z);
   const convexF = 0.55 + 0.45 * smoothstep(-60, 140, t.tpi[k]);
   const windF = 1 - 0.6 * smoothstep(20, 45, c.gKmh);
-  const dayF = thermalOnset(c.time.sunHours[k]) * c.time.thermalDecline;
-  out.thermal = t.water[k] ? 0 : day * clamp(insol * c.time.season * elevF * convexF * windF * dayF, 0, 1);
+  const burial = coldPoolBurial(z - t.floor[k], t.env[k] - t.floor[k], c.time.nightFactor, c.gKmh);
+  const dayF = thermalOnset(c.time.sunHours[k], burial) * c.time.thermalDecline;
+  out.thermal = t.water[k] ? 0 : clamp(drive * c.time.season * elevF * convexF * windF * dayF, 0, 1);
 
   out.turbulence = clamp(lee * smoothstep(8, 35, c.gKmh) + out.venturi * smoothstep(15, 45, c.gKmh) * 0.6, 0, 1);
 

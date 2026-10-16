@@ -126,6 +126,40 @@ export const RULES = {
    * Check: `npm run model:check`, explicit documented onsets.
    */
   thermalSunHours: [1, 3] as [number, number],
+  /**
+   * Morning cold pool of the valleys (`coldPoolBurial`). The night's cold air fills the
+   * bottom of each valley; the sun must break this inversion before thermals rise out
+   * of it, 3.5–5 h after sunrise (Whiteman 2000, Mountain Meteorology, valley inversion
+   * breakup), while the slopes above it only have a thin surface inversion to warm
+   * (the Saint-Hilaire calibration of `thermalSunHours`, a cliff ≈ 500 m above the floor).
+   * - Depth: `coldPoolShare` of the valley depth (crest envelope − floor), within
+   *   `coldPoolDepth` (m), after a 9 h summer night; a longer night deepens it
+   *   (× night / 9 h, at most × 1.5, `nightFactor`). Summer nocturnal inversions of
+   *   Alpine valleys are a few hundred metres deep (order of magnitude).
+   * - A synoptic wind mixes it away: full below `coldPoolWindKmh[0]`, gone above
+   *   `coldPoolWindKmh[1]` (assumption: a wind that reaches the floor).
+   * - A cell is fully in the pool up to half its depth, out of it above its top; in
+   *   the pool it needs `coldPoolSunHours` instead of `thermalSunHours`: a flat floor
+   *   then shows its first thermal column ≈ 5–6 h after sunrise in July (Montlambert,
+   *   Combe de Savoie: « dès le début d'après-midi »).
+   * Check: `npm run model:check`, explicit documented onsets.
+   */
+  coldPoolShare: 0.35,
+  coldPoolDepth: [100, 500] as [number, number],
+  coldPoolWindKmh: [10, 30] as [number, number],
+  coldPoolSunHours: [2, 4] as [number, number],
+  /**
+   * Heat stored by the ground and the vegetation (thermal inertia). The thermal drive
+   * is max(direct sun, `share` × recent sunshine), the recent sunshine being the mean
+   * insolation, with cast shadows, of the last `window` hours weighted by
+   * exp(−age / `tau`) (`TimeContext.sunRecent`). Thermals outlast the sun by about an
+   * hour on a face that goes into the shade, and a gentle lift remains over the faces
+   * sunlit in the evening: the « restitution du soir » of 82 atlas features (Saint-Gervais
+   * « quand le versant Bettex et le village passent à l'ombre », Aiguebelette « vers
+   * 18h-19h jusqu'à la tombée de la nuit »). Values are assumptions of the right order
+   * (surface heat flux lagging the radiation by ≈ 1 h).
+   */
+  thermalMemory: { tau: 1, window: 2, share: 0.5 },
   /** Lake/sea breeze schedule (solar hours). */
   waterSchedule: [9, 11.5, 17, 19.5] as [number, number, number, number],
 };

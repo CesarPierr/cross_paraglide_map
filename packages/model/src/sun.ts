@@ -87,6 +87,24 @@ const SUN_SAMPLE_STEP = 0.5;
  * and weight = step duration (h) × low-sun attenuation (same as the instantaneous
  * insolation). The CPU model and the GPU engine both use this array.
  */
+/**
+ * Duration (h) of each `sunSamples` step, 0 before sunrise: sample i of n is
+ * (n − i − 0.5) steps old. Used to weight the recent sunshine (thermal inertia).
+ */
+export function sunSampleStep(year: number, month0: number, day: number, hour: number, lat: number, lon: number): number {
+  const span = solarTime(legalTimeToUtc(year, month0, day, hour), lon) - sunriseSolarHour(month0, day, lat);
+  if (span <= 0) return 0;
+  return span / Math.min(SUN_SAMPLES_MAX, Math.ceil(span / SUN_SAMPLE_STEP));
+}
+
+/**
+ * Length of the previous night relative to a 9 h summer night, 1..1.5: longer nights
+ * cool the valleys more and deepen their morning cold pool (`coldPoolBurial`).
+ */
+export function nightFactor(month0: number, day: number, lat: number): number {
+  return Math.min(1.5, Math.max(1, (2 * sunriseSolarHour(month0, day, lat)) / 9));
+}
+
 export function sunSamples(year: number, month0: number, day: number, hour: number, lat: number, lon: number): Float32Array {
   const utc = legalTimeToUtc(year, month0, day, hour);
   const solar = solarTime(utc, lon);

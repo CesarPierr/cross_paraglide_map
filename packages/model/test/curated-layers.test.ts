@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import {
   analyseTerrain,
+  coldPoolBurial,
   computeField,
   computeTimeContext,
   conditionFactor,
@@ -147,6 +148,30 @@ describe('thermal onset, face by face', () => {
   it('keeps the afternoon decline', () => {
     expect(thermalDecline(10, 0.5)).toBe(1);
     expect(thermalDecline(18, 0)).toBe(0.5);
+  });
+  it('starts later at the bottom of a valley cold pool, unless a wind mixes it', () => {
+    // A 1 500 m deep valley: the pool fills 500 m after a summer night.
+    expect(coldPoolBurial(0, 1500, 1, 0)).toBe(1);
+    expect(coldPoolBurial(600, 1500, 1, 0)).toBe(0);
+    expect(coldPoolBurial(0, 1500, 1, 35)).toBe(0);
+    // A longer night deepens it: a slope 450 m up is in the pool in October, not in July.
+    expect(coldPoolBurial(450, 1500, 1.4, 0)).toBeGreaterThan(coldPoolBurial(450, 1500, 1, 0));
+    // The same sunshine starts a free slope but not the floor of the pool.
+    expect(thermalOnset(2.5)).toBeGreaterThan(0.5);
+    expect(thermalOnset(2.5, 1)).toBeLessThan(0.2);
+  });
+  it('keeps the heat stored by a face after the sun leaves it (thermal inertia)', () => {
+    // The recent sunshine is zero before sunrise, and in the evening it outlasts the
+    // instantaneous insolation of a face the low sun no longer heats.
+    const morning = computeTimeContext(terrain, params(5));
+    expect(morning.sunRecent.every((v) => v === 0)).toBe(true);
+    const evening = computeTimeContext(terrain, params(20.5));
+    const k = 30 * grid.width + 60; // south-facing slope: sunlit all day, low sun at 20h30
+    expect(evening.sunRecent[k]).toBeGreaterThan(evening.insol[k]);
+    // The thermal potential follows: positive at 20h30 although the direct sun is weak.
+    const p = params(20.5);
+    const o = evalCell(k, makeWindContext(terrain, evening, p, null), newCellResult());
+    expect(o.thermal).toBeGreaterThan(0);
   });
   it('is computed per cell by the time context', () => {
     const p = params(14);

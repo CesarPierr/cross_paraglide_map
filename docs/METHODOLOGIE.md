@@ -30,7 +30,8 @@ en est la transcription GLSL. Constantes réglables : `packages/model/src/rules.
 Position du soleil (algorithme NOAA), heure légale française (changement d'heure inclus),
 ensoleillement de chaque pente = produit scalaire normale·soleil, avec **ombres portées** calculées
 par lancer de rayon sur le MNT (passe GPU dédiée). La saison module l'intensité (hauteur du soleil
-à midi).
+à midi). La même passe cumule l'ensoleillement de chaque pente depuis le lever (déclenchement des
+thermiques) et son ensoleillement récent, ombres comprises (inertie thermique, § 6).
 
 ## 3. Brises thermiques
 
@@ -180,6 +181,25 @@ fichiers de recherche.
   matin » ou « dès 8 h » (Flégère, Planpraz, façade de Saint-Hilaire) : le MNT à 216 m adoucit les
   falaises (la façade de Saint-Hilaire y est une pente de 20° au sud-est), qui reçoivent donc
   moins de soleil matinal que dans la réalité.
+  **Poche froide du matin** (`coldPoolBurial`, `RULES.coldPoolShare`…) : l'air froid de la nuit
+  remplit le bas de chaque vallée, et le soleil doit détruire cette inversion avant que les
+  thermiques n'en sortent (3 h 30 à 5 h après le lever, Whiteman 2000), alors que les pentes
+  au-dessus n'ont qu'une mince inversion de surface à réchauffer. La poche occupe 35 % de la
+  profondeur de la vallée, entre 100 et 500 m, davantage après une longue nuit (× durée de la
+  nuit / 9 h, au plus × 1,5 : printemps, automne) ; un vent météo de 10 à 30 km/h la brasse.
+  Une maille est dans la poche jusqu'à mi-hauteur, dehors au-dessus de son sommet ; dans la
+  poche, il lui faut 2 à 4 h équivalentes de soleil au lieu de 1 à 3 h. Un fond plat montre
+  ainsi sa première colonne 5 à 6 h après le lever en juillet (Montlambert, « dès le début
+  d'après-midi » : 12 h au lieu de 11 h).
+  **Inertie thermique** (`RULES.thermalMemory`, `TimeContext.sunRecent`) : le moteur thermique
+  est le plus grand du soleil direct et de la moitié de l'ensoleillement récent, c'est-à-dire la
+  moyenne, ombres portées comprises, des 2 dernières heures pondérées par exp(−âge / 1 h). Une face
+  qui passe à l'ombre garde donc des thermiques une heure environ, et une ascendance douce reste
+  le soir sur les faces chauffées l'après-midi et sur les fonds de vallée, un peu après le coucher
+  du soleil : c'est la « restitution du soir » de 82 fiches de l'atlas, que le modèle ignorait.
+  Le cumul et l'ensoleillement récent sont calculés dans la passe d'ensoleillement (canaux g et
+  b), seulement quand l'heure change ; GPU et CPU concordent à 0,001 près (sonde à 7 lieux × 6
+  heures).
 - **Ascendance totale** (sonde) : dynamique + thermique + convergence.
 
 ## 7. Prévision du point (sonde)
@@ -199,8 +219,15 @@ géopotentiel) et hauteur de couche limite ECMWF IFS. Indicateurs :
 - Pas de dynamique : pas de fœhn, de ressauts, d'ondes, ni d'interaction stable/instable fine.
 - Les horaires de brise suivent une journée ensoleillée type ; nébulosité et humidité du sol ne
   sont pas prises en compte dans la simulation.
-- Le déclenchement thermique reste en avance d'environ 1 h 30 en médiane sur les débuts documentés
-  (`docs/MODEL_QA.md`) : les fiches « le matin » et « dès 11h » tirent en sens opposés.
+- Déclenchement thermique : écart médian de −40 min sur les 56 débuts explicites, testés dans
+  leur saison (`docs/MODEL_QA.md`). Les fiches « dès 11h », qui donnent souvent l'heure des
+  thermiques utiles, et les points chauds « le matin », qui démarrent dans le modèle 15 à 45 min
+  après le milieu de matinée, tirent en sens opposés.
+- Automne et hiver : le facteur de saison (hauteur du soleil à midi) s'ajoute à l'incidence déjà
+  faible du soleil bas, si bien qu'aucune colonne thermique n'apparaît en février ni, souvent, en
+  octobre, là où les fiches en décrivent (Riviera : Gourdon, Courmettes, Mont Gros ; Tournette,
+  Aussois en octobre). À recalibrer par la transmission de l'atmosphère et la stabilité du mois
+  plutôt que par un facteur unique.
 - La recherche (deux passes, 1435 sources) laisse des secteurs moins documentés (basse Maurienne,
   Queyras, Champsaur, Montagne de Lure) et des positions estimées, signalées dans les fiches. Les
   retours de pilotes sont le moyen prévu pour combler ces lacunes.

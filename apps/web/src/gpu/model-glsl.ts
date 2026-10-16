@@ -59,6 +59,8 @@ const float R_POOL_SHARE = ${f(RULES.coldPoolShare)};
 const vec2 R_POOL_DEPTH = vec2(${RULES.coldPoolDepth.map(f).join(', ')});
 const vec2 R_POOL_WIND = vec2(${RULES.coldPoolWindKmh.map(f).join(', ')});
 const float R_MEM_SHARE = ${f(RULES.thermalMemory.share)};
+const float R_LEE_CUT = ${f(RULES.leeThermalCut)};
+const vec2 R_LEE_CUT_WIND = vec2(${RULES.leeThermalWindKmh.map(f).join(', ')});
 const float R_CUR_DEEP = ${f(RULES.curatedDeepDepth)};
 const float R_CUR_ALIGN = ${f(RULES.curatedAlignWeight)};
 const float R_PLAIN_MAX = ${f(RULES.plainBreezeMax)};
@@ -290,6 +292,8 @@ Cell evalCell(ivec2 c) {
       o.turb = max(o.turb, 0.3 * a);
     }
   }
+  // Thermals in the lee (relief or documented) are torn apart (field.ts → RULES.leeThermalCut).
+  o.thermal *= 1.0 - R_LEE_CUT * o.lee * smoothstep(R_LEE_CUT_WIND.x, R_LEE_CUT_WIND.y, uGKmh);
   return o;
 }
 `;

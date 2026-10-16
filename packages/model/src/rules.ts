@@ -174,6 +174,15 @@ export const RULES = {
    * Check: `npm run model:check` (thermals tested in the season of their sheet).
    */
   thermalSeason: { transmittance: 0.75, refNoonDeg: 66, winterEfficiency: 0.75 },
+  /**
+   * Thermals in the lee of a relief are torn apart by the rotor and the sinking air:
+   * the thermal potential loses up to `leeThermalCut` of its value where the lee is full,
+   * as the synoptic wind rises from `leeThermalWindKmh[0]` to `[1]` (the game's air mass
+   * does the same, `torn`). Pilots describe these thermals as broken and unusable rather
+   * than absent (assumption on the share).
+   */
+  leeThermalCut: 0.6,
+  leeThermalWindKmh: [10, 30] as [number, number],
   /** Lake/sea breeze schedule (solar hours). */
   waterSchedule: [9, 11.5, 17, 19.5] as [number, number, number, number],
 };

@@ -161,7 +161,9 @@ fichiers de recherche.
 - **Convergence** : divergence horizontale lissée du champ, convertie en vitesse verticale sur
   une épaisseur de 700 m. Les lignes de convergence ressortent là où deux brises se rencontrent.
 - **Potentiel thermique** : ensoleillement × convexité du relief (éperons, crêtes > creux) ×
-  saison, diminué sous le vent et par le vent fort. Le déclenchement se fait **face par face** :
+  saison, diminué par le vent fort et, sous le vent d'un relief (abri ou danger documenté),
+  déchiré par le rotor et l'air qui descend : jusqu'à −60 % quand le sous-le-vent est complet,
+  à mesure que le vent passe de 10 à 30 km/h (`RULES.leeThermalCut`, comme dans le jeu). Le déclenchement se fait **face par face** :
   chaque maille cumule l'ensoleillement reçu depuis le lever du soleil sur sa propre pente
   (intégrale de cos(incidence) × atténuation du soleil bas, par pas d'au plus 30 min, sans ombres
   portées), exprimé en heures équivalentes de plein soleil. Le potentiel est nul en dessous de

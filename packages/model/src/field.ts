@@ -776,6 +776,8 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
       out.turbulence = Math.max(out.turbulence, 0.3 * a);
     } else out.turbulence = Math.max(out.turbulence, 0.8 * a);
   }
+  // Thermals in the lee (relief or documented) are torn apart (RULES.leeThermalCut).
+  out.thermal *= 1 - RULES.leeThermalCut * out.lee * smoothstep(RULES.leeThermalWindKmh[0], RULES.leeThermalWindKmh[1], c.gKmh);
   return out;
 }
 

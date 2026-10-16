@@ -169,6 +169,24 @@ describe('thermal onset, face by face', () => {
     expect(at(9)).toBeGreaterThan(at(1)); // October
     expect(at(11)).toBeLessThan(at(1)); // December, lowest sun
   });
+  it('tears the thermals apart in the lee of a relief', () => {
+    // North wind over the east–west valley: the slope facing south (row 30, north side)
+    // is in the lee of the northern ridge.
+    const calm = params(14);
+    const windy = params(14, { synoptic: { fromDeg: 0, speedKmh: 30 } });
+    const tc = computeTimeContext(terrain, calm);
+    let checked = 0;
+    for (let j = 20; j < 60; j++) {
+      const k = j * grid.width + 60;
+      const a = evalCell(k, makeWindContext(terrain, tc, calm, null), newCellResult());
+      const b = evalCell(k, makeWindContext(terrain, tc, windy, null), newCellResult());
+      if (b.lee < 0.8 || a.thermal < 0.05) continue;
+      checked++;
+      // Wind alone (windF at 30 km/h) would keep ≈ 0.76; the lee takes up to 60 % more.
+      expect(b.thermal / a.thermal).toBeLessThan(0.76 * (1 - 0.6 * 0.8) + 0.01);
+    }
+    expect(checked).toBeGreaterThan(0);
+  });
   it('keeps the heat stored by a face after the sun leaves it (thermal inertia)', () => {
     // The recent sunshine is zero before sunrise, and in the evening it outlasts the
     // instantaneous insolation of a face the low sun no longer heats.

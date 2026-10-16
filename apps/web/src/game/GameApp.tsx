@@ -11,6 +11,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { createDataClient } from '../data/client';
 import { setUiMode } from '../ui/modes';
 import { makeRng, randomWeather, type Scenario } from './airmass';
+import { fetchDayWeather, weatherAt, type DayWeather } from './forecast';
 import { fold, listTakeoffs, type Takeoff } from './takeoffs';
 import { WINGS, type WingParams } from './flight';
 import { normalizeRoomCode, randomRoomCode } from './net';
@@ -31,6 +32,8 @@ interface Settings {
   instability: number;
   humidity: number;
   randomWeather: boolean;
+  /** Today's forecast at the take-off drives the wind and the air mass (forecast.ts). */
+  forecastWeather: boolean;
   showThermals: boolean;
   view: ViewMode;
   wing: WingParams['id'];
@@ -53,6 +56,7 @@ const DEFAULTS: Settings = {
   instability: 0.55,
   humidity: 0.5,
   randomWeather: true,
+  forecastWeather: false,
   showThermals: false,
   view: 'first',
   wing: 'B',
@@ -147,11 +151,27 @@ function TakeoffPicker({ list, value, onPick }: { list: Takeoff[] | null; value:
 function Menu({ onStart, error, takeoffs, routes }: { onStart: (s: Settings, t: Takeoff) => void; error: string | null; takeoffs: Takeoff[] | null; routes: AtlasFeature[] }) {
   const [s, setS] = useState<Settings>(loadSettings);
   const set = (p: Partial<Settings>) => setS((o) => ({ ...o, ...p }));
+  // Today's forecast at the take-off, when chosen.
+  const [dayWx, setDayWx] = useState<{ key: string; status: 'ready' | 'error'; list: DayWeather[]; message?: string } | null>(null);
   // « Voler d'ici » from a take-off sheet of the map: the nearest take-off of the list,
   // until the pilot picks another one.
   const [goto, setGoto] = useState(readGoto);
   const gotoTakeoff = useMemo(() => (goto && takeoffs ? nearestTakeoff(takeoffs, goto) : null), [goto, takeoffs]);
   const takeoff = gotoTakeoff ?? takeoffs?.find((t) => t.id === s.takeoffId) ?? SAINT_HILAIRE;
+  const wxKey = s.forecastWeather ? `${takeoff.lat.toFixed(2)},${takeoff.lon.toFixed(2)}` : '';
+  useEffect(() => {
+    if (!wxKey) return;
+    const ac = new AbortController();
+    const [lat, lon] = wxKey.split(',').map(Number);
+    // Until the answer comes, a key other than wxKey reads as loading.
+    fetchDayWeather(lat, lon, ac.signal)
+      .then((list) => setDayWx({ key: wxKey, status: list.length ? 'ready' : 'error', list, message: list.length ? undefined : 'plus de prévision pour aujourd’hui' }))
+      .catch((e: unknown) => {
+        if (!ac.signal.aborted) setDayWx({ key: wxKey, status: 'error', list: [], message: e instanceof Error ? e.message : String(e) });
+      });
+    return () => ac.abort();
+  }, [wxKey]);
+  const wxNow = s.forecastWeather && dayWx?.key === wxKey && dayWx.status === 'ready' ? weatherAt(dayWx.list, s.hour) : undefined;
   // Documented routes starting within 8 km of the take-off.
   const nearRoutes = useMemo(
     () =>
@@ -216,9 +236,21 @@ function Menu({ onStart, error, takeoffs, routes }: { onStart: (s: Settings, t: 
           </b>
         </label>
         <label className="game-check">
-          <input type="checkbox" checked={s.randomWeather} onChange={(e) => set({ randomWeather: e.target.checked })} /> Météo aléatoire : tirée selon la saison au décollage, puis elle évolue (le vent tourne et forcit, la masse d’air respire, les cumulus se développent l’après-midi)
+          <input type="checkbox" checked={s.forecastWeather} onChange={(e) => set({ forecastWeather: e.target.checked, randomWeather: e.target.checked ? false : s.randomWeather, month0: e.target.checked ? new Date().getMonth() : s.month0 })} /> Météo du jour : la prévision AROME au décollage, aujourd’hui (vent aux crêtes, stabilité de l’air, base des cumulus)
         </label>
-        {!s.randomWeather && (
+        {s.forecastWeather && (
+          <p className="game-wx">
+            {!dayWx || dayWx.key !== wxKey
+              ? 'Chargement de la prévision…'
+              : dayWx.status === 'error' || !wxNow
+                ? `Prévision indisponible (${dayWx.message ?? 'erreur'}) : la météo aléatoire sera utilisée.`
+                : `À ${wxNow.hour} h : vent ${compass(wxNow.windFrom)} ${wxNow.windKmh} km/h aux crêtes${wxNow.lapseRate !== null ? `, ${wxNow.lapseRate.toLocaleString('fr-FR')} °C/km entre 1500 et 3000 m (masse d’air ${label(wxNow.instability, ['stable', 'faible', 'moyenne', 'bonne', 'instable'])})` : ''}${wxNow.cloudBaseM !== null ? `, base des cumulus ≈ ${Math.round(wxNow.cloudBaseM / 50) * 50} m` : ''}${wxNow.cloudCover !== null ? `, ciel couvert à ${Math.round(wxNow.cloudCover)} %` : ''}. Données Open-Meteo.`}
+          </p>
+        )}
+        <label className="game-check">
+          <input type="checkbox" checked={s.randomWeather} disabled={s.forecastWeather} onChange={(e) => set({ randomWeather: e.target.checked })} /> Météo aléatoire : tirée selon la saison au décollage, puis elle évolue (le vent tourne et forcit, la masse d’air respire, les cumulus se développent l’après-midi)
+        </label>
+        {!s.randomWeather && !s.forecastWeather && (
           <>
         <label className="game-field">
           <span>Vent météo</span>
@@ -303,7 +335,21 @@ function Menu({ onStart, error, takeoffs, routes }: { onStart: (s: Settings, t: 
         </div>
         {error && <p className="game-error">{error}</p>}
         <div className="game-actions">
-          <button className="game-go" onClick={() => onStart({ ...s, takeoffId: takeoff.id, routeId: routeOk ? s.routeId : null }, takeoff)}>
+          <button
+            className="game-go"
+            onClick={() =>
+              onStart(
+                {
+                  ...s,
+                  takeoffId: takeoff.id,
+                  routeId: routeOk ? s.routeId : null,
+                  // Today's forecast, or random weather if it could not be had.
+                  ...(s.forecastWeather ? (wxNow ? { windFrom: wxNow.windFrom, windKmh: wxNow.windKmh, instability: wxNow.instability, humidity: wxNow.humidity, randomWeather: false, month0: new Date().getMonth() } : { randomWeather: true, forecastWeather: false }) : {}),
+                },
+                takeoff,
+              )
+            }
+          >
             Voler
           </button>
           <button className="game-quit" onClick={() => setUiMode('explore')}>
@@ -321,7 +367,7 @@ function Keys() {
     <p className="game-keys">Glisse les deux curseurs latéraux pour les freins, fais glisser le paysage pour tourner la tête.</p>
   ) : (
     <p className="game-keys">
-      <kbd>A</kbd>/<kbd>Q</kbd> frein gauche + / − · <kbd>E</kbd>/<kbd>D</kbd> frein droit + / − · <kbd>Espace</kbd> accélérateur (progressif) · au déco : <kbd>Z</kbd> courir / tirer les A, <kbd>Espace</kbd> se retourner · <kbd>O</kbd> oreilles · <kbd>X</kbd> stabilo (cravate) · flèches : tête · <kbd>C</kbd> regard devant · <kbd>V</kbd> vue · <kbd>T</kbd> thermiques ·{' '}
+      <kbd>A</kbd>/<kbd>Q</kbd> frein gauche + / − · <kbd>E</kbd>/<kbd>D</kbd> frein droit + / − · <kbd>S</kbd>/<kbd>F</kbd> sellette gauche / droite · <kbd>Espace</kbd> accélérateur (progressif) · au déco : <kbd>Z</kbd> courir / tirer les A, <kbd>Espace</kbd> se retourner, <kbd>X</kbd> affaler la voile, <kbd>R</kbd> recommencer · <kbd>O</kbd> oreilles · <kbd>X</kbd> en vol : stabilo (cravate) · flèches : tête · <kbd>C</kbd> regard devant · <kbd>V</kbd> vue · <kbd>T</kbd> thermiques ·{' '}
       <kbd>P</kbd> pause et infos · <kbd>M</kbd> son · <kbd>+</kbd>/<kbd>−</kbd> temps accéléré
     </p>
   );
@@ -405,7 +451,7 @@ function WindRose({ h }: { h: Hud }) {
   );
 }
 
-function BrakeBar({ side, v, touch, onChange }: { side: 'L' | 'R'; v: number; touch: boolean; onChange: (v: number) => void }) {
+function BrakeBar({ side, v, pressure, soft, touch, onChange }: { side: 'L' | 'R'; v: number; pressure: number; soft: boolean; touch: boolean; onChange: (v: number) => void }) {
   const ref = useRef<HTMLDivElement>(null);
   const drag = (e: React.PointerEvent) => {
     if (!touch || !ref.current) return;
@@ -415,7 +461,8 @@ function BrakeBar({ side, v, touch, onChange }: { side: 'L' | 'R'; v: number; to
   return (
     <div
       ref={ref}
-      className={`game-brake ${side === 'L' ? 'left' : 'right'} ${touch ? 'touch' : ''}`}
+      className={`game-brake ${side === 'L' ? 'left' : 'right'} ${touch ? 'touch' : ''} ${soft ? 'soft' : ''}`}
+      title={soft ? 'La pression mollit : la voile approche de la fermeture, freinez un peu (pilotage actif)' : undefined}
       onPointerDown={(e) => {
         (e.target as HTMLElement).setPointerCapture(e.pointerId);
         drag(e);
@@ -424,6 +471,7 @@ function BrakeBar({ side, v, touch, onChange }: { side: 'L' | 'R'; v: number; to
       aria-label={side === 'L' ? 'Frein gauche' : 'Frein droit'}
     >
       <div className="gb-fill" style={{ height: `${v * 100}%`, background: v > 0.85 ? '#fb7185' : v > 0.6 ? '#fbbf24' : '#38bdf8' }} />
+      <em>{pressure.toFixed(1)} kg</em>
       <span>{side === 'L' ? (touch ? 'G' : 'A/Q') : touch ? 'D' : 'E/D'}</span>
       <b>{Math.round(v * 100)}%</b>
     </div>
@@ -546,7 +594,7 @@ export default function GameApp() {
       const w = s.randomWeather ? randomWeather(s.month0, makeRng(seed + 17)) : s;
       const scenario: Scenario = {
         month0: s.month0,
-        day: 15,
+        day: s.forecastWeather ? new Date().getDate() : 15,
         hour: s.hour,
         windFrom: w.windFrom,
         windKmh: w.windKmh,
@@ -683,12 +731,31 @@ export default function GameApp() {
                     {hud.launch.facingWing ? 'Tirer les A' : 'Courir'}
                   </button>
                   {hud.launch.facingWing && <button onClick={() => eng?.setLaunchInput(false, true)}>Se retourner</button>}
+                  <button onPointerDown={() => eng?.setLaunchInput(false, false, true)} onPointerUp={() => eng?.setLaunchInput(false, false, false)} onPointerLeave={() => eng?.setLaunchInput(false, false, false)}>
+                    Affaler
+                  </button>
+                  {(hud.launch.phase === 'aborted' || hud.launch.phase === 'ready') && <button onClick={() => eng?.relaunch()}>Recommencer</button>}
                 </div>
               )}
             </div>
           )}
-          <BrakeBar side="L" v={hud.brakeL} touch={touch} onChange={(v) => eng?.setBrake('L', v)} />
-          <BrakeBar side="R" v={hud.brakeR} touch={touch} onChange={(v) => eng?.setBrake('R', v)} />
+          {hud.landing && (
+            <div className="game-launch landing">
+              <strong>{hud.landing.hint}</strong>
+              <div className="gl-row">
+                <span>course {Math.round(hud.landing.speedKmh)} km/h</span>
+              </div>
+              {touch && (
+                <div className="gl-touch">
+                  <button onPointerDown={() => eng?.setLaunchInput(false, false, true)} onPointerUp={() => eng?.setLaunchInput(false, false, false)} onPointerLeave={() => eng?.setLaunchInput(false, false, false)}>
+                    Affaler
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
+          <BrakeBar side="L" v={hud.brakeL} pressure={hud.pressureL} soft={hud.pressureWarn > 0.5} touch={touch} onChange={(v) => eng?.setBrake('L', v)} />
+          <BrakeBar side="R" v={hud.brakeR} pressure={hud.pressureR} soft={hud.pressureWarn > 0.5} touch={touch} onChange={(v) => eng?.setBrake('R', v)} />
           {touch && (
             <button className={`game-bar ${hud.speedbar > 0.5 ? 'on' : ''}`} onPointerDown={() => eng?.setSpeedbar(1)} onPointerUp={() => eng?.setSpeedbar(0)} onPointerLeave={() => eng?.setSpeedbar(0)}>
               Accélérateur
@@ -700,6 +767,10 @@ export default function GameApp() {
               <b style={{ width: `${hud.speedbar * 100}%` }} />
             </i>
             {hud.ears && <strong>Oreilles</strong>}
+            <span title="Sellette : S à gauche, F à droite">Sellette</span>
+            <i className="gw" aria-label={`Sellette ${hud.weight < -0.1 ? 'à gauche' : hud.weight > 0.1 ? 'à droite' : 'au centre'}`}>
+              <b style={{ left: `${50 + hud.weight * 50}%` }} />
+            </i>
           </div>
           {touch && (
             <button className={`game-ears ${hud.ears ? 'on' : ''}`} onClick={() => eng?.toggleEars()}>

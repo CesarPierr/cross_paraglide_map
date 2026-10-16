@@ -116,6 +116,13 @@ vent et peut le traîner s'il ne l'affale pas.
 ### Le jeu
 
 - Tous les décos de l'atlas et de la FFVL dans l'emprise du relief ; départ en l'air ou au déco.
+- **Météo** : réglée à la main, aléatoire selon la saison (puis elle évolue), ou **météo du jour**
+  (`forecast.ts`) : la prévision AROME au décollage pour aujourd'hui donne le vent aux crêtes, la
+  masse d'air par le gradient 850–700 hPa (3 °C/km → stable, 9 → très instable) et l'humidité par
+  la hauteur de la base des cumulus au-dessus du sol.
+- **Tableau de bord** : vario, pression dans chaque frein (kg, la jauge pulse quand la pression
+  mollit avant une fermeture), sellette, accélérateur, aide au décollage puis au posé (course
+  d'arrêt) ; sur écran tactile, boutons Affaler et Recommencer.
 - **Manches de cross** sur les itinéraires documentés : balises dans l'ordre (cylindres de 400 m),
   chrono, distance validée si l'on pose avant le but, finesse nécessaire jusqu'à la balise.
 - **Pause** : ce que disent les sources autour (dangers, brises, thermiques…), **carte topo**

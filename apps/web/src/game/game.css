@@ -325,6 +325,52 @@
 .game-brake span {
   bottom: 18px;
 }
+.game-brake em {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 4px;
+  text-align: center;
+  font-size: 9px;
+  font-style: normal;
+  color: #fff;
+  text-shadow: 0 1px 2px #000;
+}
+/* The pressure goes soft before a fold: a warning for active piloting. */
+.game-brake.soft {
+  border-color: #fbbf24;
+  animation: brake-soft 0.6s ease-in-out infinite alternate;
+}
+@keyframes brake-soft {
+  from {
+    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.6);
+  }
+  to {
+    box-shadow: 0 0 10px 2px rgba(251, 191, 36, 0.6);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .game-brake.soft {
+    animation: none;
+  }
+}
+/* Weight shift in the harness: a marker on a centred track. */
+.game-barind .gw {
+  position: relative;
+  width: 54px;
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.18);
+}
+.game-barind .gw b {
+  position: absolute;
+  top: -2px;
+  width: 4px;
+  height: 10px;
+  margin-left: -2px;
+  border-radius: 2px;
+  background: #e2e8f0;
+}
 .game-brake b {
   bottom: 4px;
 }
@@ -752,4 +798,12 @@
     right: 90px;
     width: 180px;
   }
+}
+
+/* Today's forecast at the take-off (menu). */
+.game-wx {
+  margin: -4px 0 8px 26px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-2, #9fb0c4);
 }

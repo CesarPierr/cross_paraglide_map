@@ -7,7 +7,7 @@
  * what makes the hour / wind / height sliders feel live.
  */
 import type { CellResult, CuratedBreezeInfo, CuratedHazardInput, ModelParams } from '@brises/model';
-import { curatedActivity, curatedLayerKind, hazardActivity, HazardEffect, nightFactor, sunSampleStep, sunSamples, SUN_SAMPLES_MAX, thermalDecline } from '@brises/model';
+import { curatedActivity, curatedLayerKind, hazardActivity, HazardEffect, nightFactor, sunSampleStep, sunSamples, SUN_SAMPLES_MAX, thermalDecline, thermalSeasonFactor } from '@brises/model';
 import { windVector, type Grid } from '@brises/model';
 import { smoothstep } from '@brises/model';
 import { RULES } from '@brises/model';
@@ -37,6 +37,8 @@ export interface TimeState {
   valleyPhase: number;
   waterPhase: number;
   season: number;
+  /** Seasonal intensity of the thermals (`thermalSeasonFactor`). */
+  thermalSeason: number;
   thermalDecline: number;
   /** Sun path since sunrise (`sunSamples`): 4 floats per sample. */
   sunSamples: Float32Array;
@@ -72,12 +74,14 @@ export function timeState(grid: Grid, p: ModelParams): TimeState {
   const utc = legalTimeToUtc(p.year, p.month0, p.day, p.hour);
   const sun = sunPosition(utc, lat, lon);
   const solarHour = solarTime(utc, lon);
-  const season = Math.min(1, Math.max(0.2, (noonElevation(p.month0, p.day, lat) - 18) / 48));
+  const noonEl = noonElevation(p.month0, p.day, lat);
+  const season = Math.min(1, Math.max(0.2, (noonEl - 18) / 48));
   const valleyPhase = cycle(solarHour, RULES.valleySchedule, RULES.valleyNightRatio);
   return {
     sun,
     solarHour,
     season,
+    thermalSeason: thermalSeasonFactor(noonEl),
     night: sun.elevation < 3,
     valleyPhase,
     waterPhase: cycle(solarHour, RULES.waterSchedule, 0.25),
@@ -232,6 +236,7 @@ export class GpuWindEngine {
     gl.uniform1f(u.uNight, t.night ? 1 : 0);
     gl.uniform1f(u.uSunElev, t.sun.elevation);
     gl.uniform1f(u.uSeason, t.season);
+    gl.uniform1f(u.uThermalSeason, t.thermalSeason);
     gl.uniform1f(u.uValleyPhase, t.valleyPhase);
     gl.uniform1f(u.uThermalDecline, t.thermalDecline);
     gl.uniform1f(u.uNightFactor, t.nightFactor);

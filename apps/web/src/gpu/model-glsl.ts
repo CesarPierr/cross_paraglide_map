@@ -30,6 +30,7 @@ uniform float uWorldPx;
 uniform float uNight;
 uniform float uSunElev;
 uniform float uSeason;
+uniform float uThermalSeason;   // field.ts → thermalSeasonFactor
 uniform float uValleyPhase;
 uniform float uWaterPhase;
 uniform float uThermalDecline;   // field.ts → thermalDecline
@@ -252,7 +253,7 @@ Cell evalCell(ivec2 c) {
   // morning cold pool (field.ts → thermalOnset, coldPoolBurial).
   float burial = coldPoolBurial(z - V.x, V.y - V.x);
   float dayF = smoothstep(mix(R_SUN_H.x, R_POOL_SUN.x, burial), mix(R_SUN_H.y, R_POOL_SUN.y, burial), IN.y) * uThermalDecline;
-  o.thermal = W.w > 0.5 ? 0.0 : clamp(drive * uSeason * elevF * convexF * windF * dayF, 0.0, 1.0);
+  o.thermal = W.w > 0.5 ? 0.0 : clamp(drive * uThermalSeason * elevF * convexF * windF * dayF, 0.0, 1.0);
   o.turb = clamp(o.lee * smoothstep(8.0, 35.0, uGKmh) + o.venturi * smoothstep(15.0, 45.0, uGKmh) * 0.6, 0.0, 1.0);
   // Documented hazards matching the situation (field.ts), up to four per cell.
   o.hidx = -1.0;

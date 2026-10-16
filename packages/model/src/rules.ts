@@ -160,6 +160,20 @@ export const RULES = {
    * (surface heat flux lagging the radiation by ≈ 1 h).
    */
   thermalMemory: { tau: 1, window: 2, share: 0.5 },
+  /**
+   * Seasonal intensity of the thermals (`thermalSeasonFactor`), apart from the breezes'
+   * `season`. The incidence of the low sun on each slope is already in the insolation;
+   * what the season adds is (1) the longer path of the noon sun through the atmosphere,
+   * a direct-beam transmittance `transmittance` per air mass (clear sky, 0.7–0.8) relative
+   * to the midsummer noon sun (`refNoonDeg`), and (2) a lower efficiency of cold ground
+   * under more frequent inversions, down to `winterEfficiency` when the noon sun is
+   * lowest (assumption, order of magnitude). A steep south face keeps ≈ 0.7 of its summer
+   * drive in February and October, as the documented winter thermals of the Riviera
+   * (Gourdon, Courmettes, Mont Gros) and the October ones of the Tournette and Aussois
+   * require; the breezes' factor would leave them ≈ 0.3, below any thermal column.
+   * Check: `npm run model:check` (thermals tested in the season of their sheet).
+   */
+  thermalSeason: { transmittance: 0.75, refNoonDeg: 66, winterEfficiency: 0.75 },
   /** Lake/sea breeze schedule (solar hours). */
   waterSchedule: [9, 11.5, 17, 19.5] as [number, number, number, number],
 };

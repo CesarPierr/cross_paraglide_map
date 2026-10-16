@@ -65,6 +65,8 @@ export interface TimeContext {
   valleyPhase: number;
   waterPhase: number;
   season: number;
+  /** Seasonal intensity of the thermals, 0..1 (`thermalSeasonFactor`). */
+  thermalSeason: number;
   /** Afternoon decline of the thermals, 0.5..1 (`thermalDecline`). */
   thermalDecline: number;
   /** Insolation 0..1 per cell including cast shadows. */
@@ -116,6 +118,19 @@ export function valleyProfile(zeta: number): number {
  */
 export function thermalDecline(solarHour: number, valleyPhase: number): number {
   return solarHour < 13 ? 1 : 0.5 + 0.5 * Math.max(0, valleyPhase);
+}
+
+/**
+ * Seasonal intensity of the thermals, 0..1, from the noon sun elevation (deg): direct-beam
+ * transmittance relative to midsummer times the efficiency of the ground, lower in
+ * winter. See `RULES.thermalSeason`. Shared with the GPU (engine.ts → timeState).
+ */
+export function thermalSeasonFactor(noonEl: number): number {
+  const { transmittance, refNoonDeg, winterEfficiency } = RULES.thermalSeason;
+  const airMass = (deg: number) => 1 / Math.sin((Math.max(deg, 5) * Math.PI) / 180);
+  const beam = Math.min(1, transmittance ** (airMass(noonEl) - airMass(refNoonDeg)));
+  const summer = clamp((noonEl - 18) / 48, 0, 1);
+  return beam * (winterEfficiency + (1 - winterEfficiency) * summer);
 }
 
 /**
@@ -325,6 +340,7 @@ export function computeTimeContext(t: Terrain, p: ModelParams): TimeContext {
     valleyPhase,
     waterPhase: cycle(solarHour, RULES.waterSchedule, 0.25),
     season,
+    thermalSeason: thermalSeasonFactor(noonEl),
     thermalDecline: thermalDecline(solarHour, valleyPhase),
     insol,
     sunHours,
@@ -706,7 +722,7 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   const windF = 1 - 0.6 * smoothstep(20, 45, c.gKmh);
   const burial = coldPoolBurial(z - t.floor[k], t.env[k] - t.floor[k], c.time.nightFactor, c.gKmh);
   const dayF = thermalOnset(c.time.sunHours[k], burial) * c.time.thermalDecline;
-  out.thermal = t.water[k] ? 0 : clamp(drive * c.time.season * elevF * convexF * windF * dayF, 0, 1);
+  out.thermal = t.water[k] ? 0 : clamp(drive * c.time.thermalSeason * elevF * convexF * windF * dayF, 0, 1);
 
   out.turbulence = clamp(lee * smoothstep(8, 35, c.gKmh) + out.venturi * smoothstep(15, 45, c.gKmh) * 0.6, 0, 1);
 

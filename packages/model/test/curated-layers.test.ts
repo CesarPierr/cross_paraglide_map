@@ -13,11 +13,13 @@ import {
   hazardActivity,
   makeWindContext,
   newCellResult,
+  noonElevation,
   rasterizeCurated,
   sunriseSolarHour,
   sunSamples,
   thermalDecline,
   thermalOnset,
+  thermalSeasonFactor,
   type CuratedBreezeInput,
   type ModelParams,
 } from '../src';
@@ -159,6 +161,13 @@ describe('thermal onset, face by face', () => {
     // The same sunshine starts a free slope but not the floor of the pool.
     expect(thermalOnset(2.5)).toBeGreaterThan(0.5);
     expect(thermalOnset(2.5, 1)).toBeLessThan(0.2);
+  });
+  it('keeps winter and autumn thermals on sunny faces (seasonal intensity apart from the breezes)', () => {
+    const at = (month0: number) => thermalSeasonFactor(noonElevation(month0, 15, 45));
+    expect(at(6)).toBe(1);
+    expect(at(1)).toBeGreaterThan(0.55); // February: ≈ 0.65, the breezes' factor gives ≈ 0.3
+    expect(at(9)).toBeGreaterThan(at(1)); // October
+    expect(at(11)).toBeLessThan(at(1)); // December, lowest sun
   });
   it('keeps the heat stored by a face after the sun leaves it (thermal inertia)', () => {
     // The recent sunshine is zero before sunrise, and in the evening it outlasts the

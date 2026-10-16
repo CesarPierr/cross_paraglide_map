@@ -200,6 +200,15 @@ fichiers de recherche.
   Le cumul et l'ensoleillement récent sont calculés dans la passe d'ensoleillement (canaux g et
   b), seulement quand l'heure change ; GPU et CPU concordent à 0,001 près (sonde à 7 lieux × 6
   heures).
+  **Saison des thermiques** (`thermalSeasonFactor`, `RULES.thermalSeason`) : les brises gardent le
+  facteur de saison de la § 2, mais l'incidence du soleil bas sur chaque pente est déjà dans
+  l'ensoleillement ; pour les thermiques, la saison n'ajoute que le trajet plus long du soleil
+  de midi dans l'atmosphère (transmittance 0,75 par masse d'air, rapportée au soleil de midi
+  de juillet) et le rendement moindre d'un sol froid sous des inversions plus fréquentes
+  (jusqu'à × 0,75, hypothèse). Une face sud garde ainsi ≈ 0,65 de son intensité d'été en
+  février et 0,7 en octobre, au lieu de 0,3 : les thermiques d'hiver de la Riviera (Gourdon,
+  Courmettes, Tourrettes) et d'octobre (Aussois, Grande Ruine) ont leur colonne, et les fonds
+  de vallée restent sous l'inversion.
 - **Ascendance totale** (sonde) : dynamique + thermique + convergence.
 
 ## 7. Prévision du point (sonde)
@@ -219,15 +228,12 @@ géopotentiel) et hauteur de couche limite ECMWF IFS. Indicateurs :
 - Pas de dynamique : pas de fœhn, de ressauts, d'ondes, ni d'interaction stable/instable fine.
 - Les horaires de brise suivent une journée ensoleillée type ; nébulosité et humidité du sol ne
   sont pas prises en compte dans la simulation.
-- Déclenchement thermique : écart médian de −40 min sur les 56 débuts explicites, testés dans
+- Déclenchement thermique : écart médian de −30 min sur les 58 débuts explicites, testés dans
   leur saison (`docs/MODEL_QA.md`). Les fiches « dès 11h », qui donnent souvent l'heure des
   thermiques utiles, et les points chauds « le matin », qui démarrent dans le modèle 15 à 45 min
   après le milieu de matinée, tirent en sens opposés.
-- Automne et hiver : le facteur de saison (hauteur du soleil à midi) s'ajoute à l'incidence déjà
-  faible du soleil bas, si bien qu'aucune colonne thermique n'apparaît en février ni, souvent, en
-  octobre, là où les fiches en décrivent (Riviera : Gourdon, Courmettes, Mont Gros ; Tournette,
-  Aussois en octobre). À recalibrer par la transmission de l'atmosphère et la stabilité du mois
-  plutôt que par un facteur unique.
+- Automne et hiver : le rendement du sol froid (× 0,75 au plus bas) est une hypothèse ; la neige,
+  qui supprime les thermiques, n'est pas encore modélisée (occupation du sol, audit § 3).
 - La recherche (deux passes, 1435 sources) laisse des secteurs moins documentés (basse Maurienne,
   Queyras, Champsaur, Montagne de Lure) et des positions estimées, signalées dans les fiches. Les
   retours de pilotes sont le moyen prévu pour combler ces lacunes.

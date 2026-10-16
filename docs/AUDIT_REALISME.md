@@ -152,11 +152,11 @@ Autres points, moins prioritaires :
 - GPU et CPU concordent (écart ≤ 0,001 sur 42 sondages), voir `docs/METHODOLOGIE.md` § 6.
 - **Contrôle plus fidèle** : `model:check` teste maintenant chaque thermique dans la saison que dit
   sa fiche, prend la clause d'été quand elle existe et ignore les périodes niées (« rien le matin »).
-  Le score des thermiques baisse (713 → 706 sur 823) parce que le test est plus juste ; il révèle
-  deux défauts :
+  Le test plus juste a révélé deux défauts :
   1. aucune colonne thermique en automne et en hiver là où les fiches en décrivent : le facteur de
-     saison s'ajoute à l'incidence déjà faible du soleil bas (à remplacer par la transmission de
-     l'atmosphère et la stabilité du mois) ;
+     saison des brises s'ajoutait à l'incidence déjà faible du soleil bas. **Corrigé** : les
+     thermiques ont leur propre facteur (transmission de l'atmosphère et rendement du sol froid),
+     6 thermiques d'octobre et de février passent, rien ne régresse (thermiques 712/823) ;
   2. les points chauds « du matin » démarrent 15 à 45 min trop tard, alors que les débuts « dès
      11h » sont en avance : la documentation mêle premiers thermiques et thermiques utiles.
 - **Textes** : un contrôle de fidélité (`scripts/research/text_fidelity.py`) compare chaque réécriture

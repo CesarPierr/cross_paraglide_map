@@ -168,6 +168,14 @@ Autres points, moins prioritaires :
 - **Stabilité de l'air** (point 2, premier volet) : le gradient 850–700 hPa de la prévision règle la
   force des thermiques et la tenue des brises sous le vent d'altitude. Le sous-le-vent selon le
   nombre de Froude (ondes, rotors, vents de col) reste à faire.
+- **Rotors sous l'onde, essai écarté** : sur les 28 dangers de sous-le-vent documentés que le relief
+  seul manque (banc `lee-bench`), l'abri est faible à moins de 330 m (0 à 11°) mais fort à 1,5 km
+  (14 à 49°), et plusieurs fiches parlent d'ondes (Chabre, Cousson, La Baume, Gap, Chalvet). Un
+  rotor placé à une demi-longueur d'onde (λ = 2πU/N, air standard) en aval de la plus haute crête
+  au vent ne gagne qu'un ou deux dangers (26-27 sur 53) et met Montlambert sous le vent par nord
+  fort, contre l'expérience du site : il faudrait le profil de stabilité réel (inversion à hauteur
+  des crêtes) pour placer les ondes. Les positions approchées de plusieurs fiches expliquent aussi
+  une part des écarts.
 - **Textes** : un contrôle de fidélité (`scripts/research/text_fidelity.py`) compare chaque réécriture
   à la version committée (directions apparues, effets attribués au mauvais vent, noms de lieux
   perdus). Il a trouvé des orientations et des secteurs de vent ajoutés sans source, et deux effets

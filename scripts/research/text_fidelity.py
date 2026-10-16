@@ -97,7 +97,7 @@ def check_lot(lot: str) -> list[str]:
                 a = items.get(iid)
                 if a is None:
                     continue
-                context = ' '.join(str(it.get(k, '')) for k in it if k not in TEXT and k != 'sources')
+                context = ' '.join(' '.join(map(str, v)) if isinstance(v, list) else str(v) for k, v in it.items() if k not in TEXT and k != 'sources')
                 compare(f"{m['id']}/{cat}/{iid}", text_of(a, TEXT), text_of(it, TEXT), context, out)
     for mid in om:
         vpath = f'{BASE}/visites/{mid}.json'

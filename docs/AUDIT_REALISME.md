@@ -143,6 +143,22 @@ Autres points, moins prioritaires :
 
 ## 6. Réalisé et constaté (16 octobre)
 
+État des dix changements de la synthèse :
+
+| # | Changement | État |
+|---|---|---|
+| 1 | Aile à forces et vitesse inertielle | fait (jeu) : rafales, gradient, arrondi et spirale sortent des forces ; banc 111/111 |
+| 2 | Stabilité de l'air | en partie : le gradient 850–700 hPa de la prévision règle thermiques et brises ; ondes et rotors selon Froude écartés faute de profil réel |
+| 3 | Calendrier propre à chaque vallée | en partie : poche froide du matin pour les thermiques ; la brise de vallée garde l'horaire commun |
+| 4 | Occupation du sol | à faire (données à télécharger) |
+| 5 | Ascendance de relief multi-échelle | fait (jeu et carte) |
+| 6 | Météo réelle du jour | fait : stabilité de la prévision sur la carte, « météo du jour » dans le jeu |
+| 7 | Thermiques et ombre des nuages | fait (jeu) |
+| 8 | Inertie thermique | fait (thermiques : restitution du soir) |
+| 9 | Ombres portées du relief | fait (carte : lecture « Soleil et ombres ») |
+| 10 | Neige selon le mois | à faire |
+
+
 - **Poche froide du matin** (point 3, volet thermique) : les fonds de vallée déclenchent plus tard
   que les pentes au-dessus de l'inversion, davantage après les longues nuits, sauf si un vent météo
   brasse la vallée. Le calendrier propre à chaque vallée pour la brise elle-même reste à faire.

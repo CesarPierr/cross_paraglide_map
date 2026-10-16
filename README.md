@@ -54,22 +54,36 @@ du global au détail : les lieux cités sont surlignés dans le texte et épingl
 
 ## Fonctionnalités
 
-Deux modes, un bouton pour passer de l'un à l'autre : **Explorer** (massifs, visites guidées,
-itinéraires, ce que disent les sources) et **Simuler** (vent météo, lecture du relief, prévision).
+Trois onglets : **Explorer** (massifs, visites guidées, itinéraires, ce que disent les sources),
+**Simuler** (vent météo, lecture du relief, prévision) et **Jeu** (voler dans le même air).
 
 - **Relief 3D** par défaut (MNT 216 m, exagération réglable, 2D disponible) sur plan topographique
   ou orthophoto, avec l'ombrage solaire réel de l'heure choisie.
 - **Simulation de vent dans le navigateur (WebGL2)** : brises de pente, de vallée, de lac, de plaine
   vers la montagne, vent météo canalisé, abrité ou accéléré, convergences calculées ; repli CPU
   (Web Worker). Changement d'heure, de mois ou de régime de vent instantané.
+- **Thermiques au plus près de la physique** : déclenchement face par face selon le soleil reçu,
+  plus tard au fond des vallées sous l'inversion du matin, restitution du soir quand une face passe
+  à l'ombre, thermiques déchirés sous le vent, intensité propre à chaque saison ; ascendance
+  dynamique par échelles (la portance d'une crête large monte plus haut que celle d'une pente).
 - **Animations** : particules de vent, comètes le long des brises documentées, colonnes thermiques ;
   convergences dessinées comme des zones où deux flux se rencontrent, actives à leurs heures ;
-  lecture du relief au vent / sous le vent, thermique, convergences, ascendances, force.
+  lecture du relief au vent / sous le vent, thermique, soleil et ombres portées de l'heure,
+  convergences, ascendances, force.
 - **Pages de massif** : schéma d'une journée type (matin, midi, après-midi, soir), brises,
   thermiques, pièges et sources, et une visite guidée narrative pour chacun des 46 secteurs.
+  Chaque fiche dit d'abord ce qui est établi, puis ce qui reste possible (observations isolées,
+  sans nom ni date), et garde à part sa note de collecte (position estimée, sources divergentes).
+- **Jeu** : un simulateur de parapente qui vole dans l'air du modèle, sur le relief et l'imagerie
+  de la carte : décollage face ou dos voile, freins, accélérateur, oreilles, ailes EN A, B ou C
+  avec fermetures et pilotage actif, thermiques à enrouler, vautours, ciel et nuages selon
+  l'humidité, manches de cross sur les itinéraires de l'atlas et vol à plusieurs. « Voler
+  d'ici » ouvre le jeu sur le décollage d'une fiche. Voir [JEU.md](docs/JEU.md).
 - **Prévision** (Open-Meteo, AROME/ARPEGE) : en mode Simuler, le vent d'aujourd'hui, de demain ou
-  d'après-demain pilote la carte heure par heure autour de la vue ; à la sonde, plafond, couche
-  limite, isotherme 0 °C et émagramme simplifié.
+  d'après-demain pilote la carte heure par heure autour de la vue, et la stabilité de l'air prévue
+  (gradient 850–700 hPa) règle la force des thermiques et la tenue des brises ; à la sonde,
+  plafond, couche limite, isotherme 0 °C et émagramme simplifié, et pourquoi le thermique est
+  faible ou décalé à cet endroit.
 - **Dangers documentés** : un piège que les sources lient à un vent (« turbulent par nord même
   faible ») s'affiche sous le vent ou turbulent quand le vent simulé correspond, et la sonde le
   nomme avec ses sources ; le contrôle du modèle les vérifie à l'endroit même.
@@ -124,7 +138,7 @@ docs             Architecture, méthodologie, données, qualité, déploiement
 
 ## Documentation
 
-- [Architecture et points d'extension](docs/ARCHITECTURE.md) · [Méthodologie du modèle de vent](docs/METHODOLOGIE.md)
+- [Architecture et points d'extension](docs/ARCHITECTURE.md) · [Méthodologie du modèle de vent](docs/METHODOLOGIE.md) · [Audit de réalisme](docs/AUDIT_REALISME.md) · [Le jeu](docs/JEU.md)
 - [Données : contrat, ajout d'une collecte, contributions](docs/DONNEES.md) · [Positions vérifiées](docs/POSITIONS.md)
 - Qualité : [données](docs/DATA_QA.md) · [modèle](docs/MODEL_QA.md) · [couverture](docs/COUVERTURE.md) · [croisement kk7](docs/KK7_CROISEMENT.md)
 - [Déploiement](docs/DEPLOYMENT.md) (installation en une commande : `deploy/install.sh`) · [Passation](docs/PASSATION.md)

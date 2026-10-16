@@ -6,6 +6,7 @@
  */
 import { Grid } from './grid';
 import { blur, clamp, extremumFilter, smoothstep } from './raster';
+import { surfaceFactor, type Landcover } from './landcover';
 import { RULES } from './rules';
 
 export interface Terrain {
@@ -52,6 +53,11 @@ export interface Terrain {
   water: Uint8Array;
   /** Upstream drainage area (km²). */
   drainKm2: Float32Array;
+  /** Heating efficiency of the ground, 1 = the mean of the Alps' land (`surfaceFactor`; 1 without land cover). */
+  surface: Float32Array;
+  /** Share of the cell covered by snow and ice (glaciers, permanent snow) and by trees, 0..1. */
+  snowIce: Float32Array;
+  trees: Float32Array;
 }
 
 /** Seed points of the main lakes (lon, lat). Flood-filled on the flat DEM surface. */
@@ -247,7 +253,7 @@ function onshoreField(mask: Float32Array, grid: Grid, radius: number): { x: Floa
   return { x, y };
 }
 
-export function analyseTerrain(grid: Grid, rawElevation: Float32Array): Terrain {
+export function analyseTerrain(grid: Grid, rawElevation: Float32Array, landcover: Landcover | null = null): Terrain {
   const { width: w, height: h, size: n } = grid;
   const z = new Float32Array(n);
   const water = new Uint8Array(n);
@@ -388,6 +394,9 @@ export function analyseTerrain(grid: Grid, rawElevation: Float32Array): Terrain 
     plainY,
     water,
     drainKm2: acc,
+    surface: surfaceFactor(landcover, n),
+    snowIce: landcover ? landcover.snow : new Float32Array(n),
+    trees: landcover ? landcover.trees : new Float32Array(n),
   };
 }
 

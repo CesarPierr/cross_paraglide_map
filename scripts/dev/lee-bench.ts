@@ -10,8 +10,8 @@ import { loadDem } from '@brises/model/node';
 import { windFromText } from '../build-data';
 
 const atlas = JSON.parse(readFileSync('apps/web/public/data/atlas.json', 'utf8')) as Atlas;
-const { grid, elevation } = loadDem(process.cwd());
-const terrain = analyseTerrain(grid, elevation);
+const { grid, elevation, landcover } = loadDem(process.cwd());
+const terrain = analyseTerrain(grid, elevation, landcover);
 const W = grid.width;
 const cell = newCellResult();
 const ctxs = new Map<string, ReturnType<typeof makeWindContext>>();

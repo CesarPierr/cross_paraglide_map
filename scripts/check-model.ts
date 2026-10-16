@@ -70,8 +70,8 @@ const STRONG_KMH = 20;
 
 // ---------- Model setup ----------
 const atlas = JSON.parse(readFileSync(ATLAS, 'utf8')) as Atlas;
-const { grid, elevation } = loadDem(ROOT);
-const terrain: Terrain = analyseTerrain(grid, elevation);
+const { grid, elevation, landcover } = loadDem(ROOT);
+const terrain: Terrain = analyseTerrain(grid, elevation, landcover);
 const featureById = new Map(atlas.features.breezes.map((f) => [f.properties.id, f]));
 
 const breezes: CuratedBreezeInput[] = atlas.curated.map((b) => {

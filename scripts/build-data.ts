@@ -897,8 +897,8 @@ function readTours(rawToFeature: Map<string, string>, massifs: AtlasMassif[], fe
 
 // ---------- Main ----------
 function main() {
-  const { grid, elevation } = loadDem(ROOT);
-  const terrain = analyseTerrain(grid, elevation);
+  const { grid, elevation, landcover } = loadDem(ROOT);
+  const terrain = analyseTerrain(grid, elevation, landcover);
 
   const readRaw = (dir: string, file: string): RawFile | null => {
     try {

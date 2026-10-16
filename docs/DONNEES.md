@@ -5,6 +5,7 @@
 | Fichier | Produit par | Contenu |
 | --- | --- | --- |
 | `dem.png` + `dem.json` | `npm run data:dem` | MNT 1094 × 1521 mailles (≈ 216 m) encodé Terrarium, bbox et résolution |
+| `landcover.png` | `npm run data:landcover` | Occupation du sol sur la même grille (ESA WorldCover 10 m 2021, CC BY 4.0) : parts de forêt, de roche et sol nu, de neige et glace, de bâti, sur 6 bits chacune dans les 24 bits d'un pixel RGB ; les quatre tuiles (≈ 330 Mo) sont gardées dans `.cache/worldcover` |
 | `atlas.json` | `npm run data:build` | secteurs, éléments géolocalisés (GeoJSON), brises rastérisables, règles, sources |
 | `airspace.json` | `npm run data:airspace` | espaces aériens simplifiés (planeur-net), à titre indicatif |
 | `sites-ffvl.json` | `npm run data:sites` | sites FFVL (data.gouv) ; absent si l'import n'a pas pu être fait |

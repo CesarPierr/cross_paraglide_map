@@ -162,6 +162,16 @@ fichiers de recherche.
 - **Compétition brise / météo** : au-delà d'environ 35 km/h de vent météo, les brises thermiques
   sont largement effacées ; en dessous, elles se combinent vectoriellement.
 
+**Occupation du sol** (`landcover.ts`, `RULES.surfaceHeating`) : la carte ESA WorldCover 10 m (2021)
+donne pour chaque maille de 216 m la part de forêt, de roche et sol nu, de neige et glace et de bâti.
+Le sol chauffe l'air selon son albédo, son humidité (rapport de Bowen) et sa capacité thermique :
+roche, éboulis, sol sec et bâti × 1,25, prairies et cultures × 1, forêt × 0,8 (elle stocke et rend la
+chaleur le soir), neige et glace × 0,1 (pas de thermique sur un glacier) ; le facteur est divisé par
+sa moyenne sur les terres de toute la grille (0,909), la même pour la carte et pour la fenêtre du
+jeu. Contrôle : 21 thermiques documentés de plus au-dessus de la médiane locale (atterrissages,
+terrains de sport, confluences et plaines bâties, que les pilotes disent déclencher), 7 cas limites
+en moins ; total 1203/1329 au lieu de 1189.
+
 **Faces au vent** (`RULES.windwardExposure`) : plus bas dans la vallée, le vent météo faiblit
 (abri du relief), sauf sur une face tournée vers lui, où l'air est forcé vers le haut : la
 réduction s'efface quand la pente que le vent remonte passe de 3° à 17°, sauf si la face est

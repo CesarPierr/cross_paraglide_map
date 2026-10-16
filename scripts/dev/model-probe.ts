@@ -2,9 +2,9 @@ import { computeField, computeTimeContext, evalCell, makeWindContext, newCellRes
 import { analyseTerrain } from '@brises/model';
 import { loadDem } from '@brises/model/node';
 
-const { grid, elevation } = loadDem();
+const { grid, elevation, landcover } = loadDem();
 let t0 = performance.now();
-const terrain = analyseTerrain(grid, elevation);
+const terrain = analyseTerrain(grid, elevation, landcover);
 console.log('terrain', (performance.now() - t0).toFixed(0), 'ms');
 const params: ModelParams = { year: 2026, month0: 6, day: 15, hour: Number(process.argv[2] ?? 15), synoptic: { fromDeg: Number(process.argv[3] ?? 0), speedKmh: Number(process.argv[4] ?? 0) }, height: { mode: 'agl', meters: 80 }, breezeScale: 1 };
 t0 = performance.now();

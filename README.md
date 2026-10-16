@@ -157,7 +157,8 @@ les activer. Voir [ARCHITECTURE.md](docs/ARCHITECTURE.md#évolutions-prévues).
 
 ## Licences des données
 
-Usage non commercial. Relief : Terrain Tiles (AWS, Mapzen ; SRTM, EU-DEM…), altimétrie IGN
+Usage non commercial. Occupation du sol : © ESA WorldCover project 2021, Contains modified Copernicus
+Sentinel data (2021) processed by ESA WorldCover consortium (CC BY 4.0). Relief : Terrain Tiles (AWS, Mapzen ; SRTM, EU-DEM…), altimétrie IGN
 (RGE ALTI). Imagerie : IGN Géoplateforme, OpenTopoMap, OpenFreeMap / OpenStreetMap. Prévisions :
 Open-Meteo (CC BY 4.0). Sites : FFVL (data.gouv), OpenStreetMap (ODbL), ParaglidingEarth. Espaces
 aériens : planeur-net (indicatif). Points chauds : thermal.kk7.ch (Michael von Känel, usage non

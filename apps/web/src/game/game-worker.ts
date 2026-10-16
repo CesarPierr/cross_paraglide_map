@@ -5,9 +5,12 @@
  * by the relief and the slope breezes, turbulence, lee) and over a window around him
  * (thermal potential, to place the thermals).
  */
+import { fetchGridPixels, landcoverUrl } from '../engine/grid-pixels';
 import {
   analyseTerrain,
   computeTimeContext,
+  cropPixels,
+  unpackLandcover,
   evalCell,
   Grid,
   makeWindContext,
@@ -52,7 +55,7 @@ export interface ModelAir {
 }
 
 let terrain: Terrain | null = null;
-let fullDem: { meta: GridMeta; raw: Float32Array; url: string } | null = null;
+let fullDem: { meta: GridMeta; raw: Float32Array; landcover: Uint8ClampedArray | null; url: string } | null = null;
 let curated: CuratedLayer | null = null;
 let time: { key: string; ctx: TimeContext } | null = null;
 
@@ -128,7 +131,10 @@ self.onmessage = async (e: MessageEvent<GameWorkerRequest>) => {
   try {
     if (msg.type === 'init') {
       const t0 = performance.now();
-      if (!fullDem || fullDem.url !== msg.demUrl) fullDem = { meta: msg.meta, raw: await decodeDem(msg.demUrl, msg.meta), url: msg.demUrl };
+      if (!fullDem || fullDem.url !== msg.demUrl) {
+        const [raw, landcover] = await Promise.all([decodeDem(msg.demUrl, msg.meta), fetchGridPixels(landcoverUrl(msg.demUrl), msg.meta)]);
+        fullDem = { meta: msg.meta, raw, landcover, url: msg.demUrl };
+      }
       // Only a window around the pilot: the sun's integration over the day (shadows) and
       // the terrain analysis cost in proportion to the cells, ~10× less than the whole Alps.
       const full = new Grid(fullDem.meta);
@@ -142,7 +148,9 @@ self.onmessage = async (e: MessageEvent<GameWorkerRequest>) => {
       const meta: GridMeta = { ...fullDem.meta, px0: fullDem.meta.px0 + i0, py0: fullDem.meta.py0 + j0, width: i1 - i0, height: j1 - j0 };
       const raw = new Float32Array(meta.width * meta.height);
       for (let j = 0; j < meta.height; j++) raw.set(fullDem.raw.subarray((j0 + j) * full.width + i0, (j0 + j) * full.width + i1), j * meta.width);
-      terrain = analyseTerrain(new Grid(meta), raw);
+      // The land cover of the same window: the ground's heating, as on the map.
+      const lc = fullDem.landcover ? unpackLandcover(cropPixels(fullDem.landcover, full.width, i0, j0, i1, j1), meta.width * meta.height) : null;
+      terrain = analyseTerrain(new Grid(meta), raw, lc);
       time = null;
       curated = rasterizeCurated(terrain, msg.breezes, msg.hazards);
       self.postMessage({ type: 'ready', id: msg.id, ms: performance.now() - t0 });

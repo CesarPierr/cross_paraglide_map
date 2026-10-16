@@ -19,7 +19,7 @@ uniform highp sampler2D tR;   // seaX, seaY, plainX, plainY
 uniform highp sampler2D tC;   // curated layers main, cond: (index + weight, flow angle) × 2 (curated.ts → packCuratedLayers)
 uniform highp sampler2D tC2;  // curated thin layer (slope, katabatic): index + weight, flow angle; documented hazard slots 1, 2: index + weight
 uniform highp sampler2D tM;   // gradients of the relief at the ridge and massif scales (terrain.ts → ridgeGx, massGx)
-uniform highp sampler2D tF;   // narrowing of the valleys (terrain.ts → valleyFunnel), documented hazard slots 3, 4, 0
+uniform highp sampler2D tF;   // narrowing of the valleys (terrain.ts → valleyFunnel), documented hazard slots 3, 4, heating of the ground (landcover.ts → surfaceFactor)
 uniform highp sampler2D tB;   // per curated breeze: speedMs, activity, layer kind (0 deep, 1 valley, 2 slope, 3 katabatic), 0;
                               // then from uHazBase, per documented hazard: target speed (m/s, strong breeze), activity, effect (0 lee, 1 venturi, 2 turbulence, 3 wind),
                               // documented direction of a strong breeze + 1000 (deg; 0 = none)
@@ -274,7 +274,7 @@ Cell evalCell(ivec2 c) {
   o.burial = burial;
   o.onset = smoothstep(mix(R_SUN_H.x, R_POOL_SUN.x, burial), mix(R_SUN_H.y, R_POOL_SUN.y, burial), IN.y);
   float dayF = o.onset * uThermalDecline;
-  o.thermal = W.w > 0.5 ? 0.0 : clamp(drive * uThermalSeason * uInstability * elevF * convexF * windF * dayF, 0.0, 1.0);
+  o.thermal = W.w > 0.5 ? 0.0 : clamp(drive * uThermalSeason * uInstability * TF.w * elevF * convexF * windF * dayF, 0.0, 1.0);
   o.turb = clamp(o.lee * smoothstep(8.0, 35.0, uGKmh) + o.venturi * smoothstep(15.0, 45.0, uGKmh) * 0.6, 0.0, 1.0);
   // Documented hazards matching the situation (field.ts), up to four per cell.
   o.hidx = -1.0;

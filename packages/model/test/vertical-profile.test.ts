@@ -35,8 +35,8 @@ describe('valley-wind vertical profile', () => {
 
 describe('Grésivaudan at Saint-Hilaire, 15 July 15:00, no synoptic wind (real DEM)', () => {
   const root = process.cwd();
-  const { grid, elevation } = loadDem(root);
-  const terrain = analyseTerrain(grid, elevation);
+  const { grid, elevation, landcover } = loadDem(root);
+  const terrain = analyseTerrain(grid, elevation, landcover);
   const atlas = JSON.parse(readFileSync(join(root, 'apps/web/public/data/atlas.json'), 'utf8')) as { curated: CuratedBreezeInput[] };
   const curated = rasterizeCurated(terrain, atlas.curated);
   // Isère in the Grésivaudan below Saint-Hilaire-du-Touvet (floor ~230 m).

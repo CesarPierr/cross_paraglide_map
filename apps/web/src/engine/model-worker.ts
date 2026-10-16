@@ -3,7 +3,8 @@
  * Web Worker running the wind model off the main thread.
  * Protocol: see `src/engine/model-client.ts`.
  */
-import { packCuratedLayers, packTerrainExtras, rasterizeCurated, type CuratedBreezeInput, type CuratedHazardInput } from '@brises/model';
+import { packCuratedLayers, packTerrainExtras, rasterizeCurated, unpackLandcover, type CuratedBreezeInput, type CuratedHazardInput } from '@brises/model';
+import { fetchGridPixels, landcoverUrl } from './grid-pixels';
 import {
   computeField,
   computeTimeContext,
@@ -75,9 +76,9 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
     if (msg.type === 'build') {
       // GPU mode: analyse once, hand packed textures to the main thread, keep nothing.
       const t0 = performance.now();
-      const raw = await decodeDem(msg.demUrl, msg.meta);
+      const [raw, lcPixels] = await Promise.all([decodeDem(msg.demUrl, msg.meta), fetchGridPixels(landcoverUrl(msg.demUrl), msg.meta)]);
       const grid = new Grid(msg.meta);
-      const t = analyseTerrain(grid, raw);
+      const t = analyseTerrain(grid, raw, lcPixels ? unpackLandcover(lcPixels, grid.size) : null);
       const cur = rasterizeCurated(t, msg.breezes, msg.hazards);
       const n = grid.size;
       const pack = {
@@ -94,9 +95,9 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
       self.postMessage({ type: 'built', id: msg.id, pack, ms: performance.now() - t0 }, [pack.tZ.buffer, pack.tV.buffer, pack.tW.buffer, pack.tR.buffer, pack.tC.buffer, pack.tC2.buffer, pack.tF.buffer, pack.tM.buffer]);
     } else if (msg.type === 'init') {
       const t0 = performance.now();
-      const raw = await decodeDem(msg.demUrl, msg.meta);
+      const [raw, lcPixels] = await Promise.all([decodeDem(msg.demUrl, msg.meta), fetchGridPixels(landcoverUrl(msg.demUrl), msg.meta)]);
       const grid = new Grid(msg.meta);
-      terrain = analyseTerrain(grid, raw);
+      terrain = analyseTerrain(grid, raw, lcPixels ? unpackLandcover(lcPixels, grid.size) : null);
       const elevation = new Float32Array(terrain.z);
       self.postMessage({ type: 'ready', id: msg.id, elevation, ms: performance.now() - t0 }, [elevation.buffer]);
     } else if (msg.type === 'curated') {

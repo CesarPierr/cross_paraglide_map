@@ -185,6 +185,19 @@ export const RULES = {
    * does the same, `torn`). Pilots describe these thermals as broken and unusable rather
    * than absent (assumption on the share).
    */
+  /**
+   * Heating of the air by the ground, by land cover (ESA WorldCover 2021, `surfaceFactor`),
+   * relative to grass. The sensible heat flux depends on the albedo, the moisture (Bowen
+   * ratio) and the heat capacity of the surface: bare rock, scree, dry ground (Bowen ratio
+   * 2–5) and built-up areas (impervious, dark) heat the air more than grass (≈ 0.5–1);
+   * forests absorb a lot but transpire and store the heat (≈ 0.3–1), so their thermals are
+   * weaker by day and they give it back in the evening; snow and ice reflect most of the
+   * sun and stay at 0 °C: no thermals over glaciers. Orders of magnitude (assumptions),
+   * consistent with what pilots say (rocks, scree, villages and fields trigger, forests and
+   * snow do not). `mean`: the mean of the weighted shares over the land of the whole grid,
+   * so that the factor averages 1 and the thermal calibration stays.
+   */
+  surfaceHeating: { trees: 0.8, bare: 1.25, snow: 0.1, built: 1.25, rest: 1, mean: 0.909 },
   leeThermalCut: 0.6,
   /**
    * Stability of the air between 850 and 700 hPa (≈ 1 500 → 3 000 m), from the forecast

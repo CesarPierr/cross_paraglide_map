@@ -781,7 +781,7 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   out.coldPool = burial;
   out.onset = thermalOnset(c.time.sunHours[k], burial);
   const dayF = out.onset * c.time.thermalDecline;
-  out.thermal = t.water[k] ? 0 : clamp(drive * c.time.thermalSeason * c.instability * elevF * convexF * windF * dayF, 0, 1);
+  out.thermal = t.water[k] ? 0 : clamp(drive * c.time.thermalSeason * c.instability * t.surface[k] * elevF * convexF * windF * dayF, 0, 1);
 
   out.turbulence = clamp(lee * smoothstep(8, 35, c.gKmh) + out.venturi * smoothstep(15, 45, c.gKmh) * 0.6, 0, 1);
 

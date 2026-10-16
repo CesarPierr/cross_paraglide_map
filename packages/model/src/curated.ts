@@ -207,6 +207,7 @@ export function packTerrainExtras(t: Terrain, c: CuratedLayer): Float32Array {
     tF[k * 4] = t.funnel[k];
     tF[k * 4 + 1] = packHazard(c, 2, k);
     tF[k * 4 + 2] = packHazard(c, 3, k);
+    tF[k * 4 + 3] = t.surface[k];
   }
   return tF;
 }

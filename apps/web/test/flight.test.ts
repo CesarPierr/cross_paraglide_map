@@ -360,4 +360,14 @@ describe('angle of attack, brake pressure and active piloting', () => {
     expect(gain).toBeGreaterThan(0);
     expect(gain).toBeLessThan(0.02);
   });
+
+  it('a step without time leaves the state as it was (frames with the same timestamp)', () => {
+    const s = newGlider(0, 0, 2000, 0);
+    step(s, hands(), still, 1 / 120, rng);
+    const before = JSON.stringify(s);
+    for (const dt of [0, -0.004]) expect(step(s, hands(), still, dt, rng)).toEqual([]);
+    expect(JSON.stringify(s)).toBe(before);
+    const { s: after } = fly(1, hands(), still, s);
+    expect([after.x, after.y, after.z, after.airspeed, after.vz].every(Number.isFinite)).toBe(true);
+  });
 });

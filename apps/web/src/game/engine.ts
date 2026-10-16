@@ -540,10 +540,12 @@ export class GameEngine {
 
   private loop = (now: number) => {
     this.raf = requestAnimationFrame(this.loop);
-    const real = Math.min(0.1, (now - this.last) / 1000);
+    // A frame's timestamp can equal the previous one or precede the clock read at start:
+    // no time has passed then.
+    const real = Math.min(0.1, Math.max(0, (now - this.last) / 1000));
     this.last = now;
     this.readKeys(real);
-    if (!this.paused && !this.ended) {
+    if (!this.paused && !this.ended && real > 0) {
       const dt = real * this.timeScale;
       this.gameT += dt;
       this.flightS += dt;

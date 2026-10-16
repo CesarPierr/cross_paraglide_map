@@ -437,8 +437,10 @@ const TRIM_SIDE = { cl: 0, cd: 0 };
  */
 const pressureBonus = (b: number) => 24 * DEG * clamp(b - 0.1, 0, 0.4);
 
-/** Advances the glider by `dt` seconds (call with dt ≤ 1/60 for stability). */
+/** Advances the glider by `dt` seconds (call with dt ≤ 1/60 for stability; no time, no step). */
 export function step(s: GliderState, c: Controls, air: AirSample, dt: number, rng: Rng): FlightEvent[] {
+  // The rates below divide by dt: a zero step would turn the whole state into NaN.
+  if (!(dt > 0)) return [];
   let events: FlightEvent[] | null = null;
   const W = s.wing;
   const A = AERO.get(W) ?? wingAero(W);

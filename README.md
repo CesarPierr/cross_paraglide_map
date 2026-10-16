@@ -77,7 +77,9 @@ Trois onglets : **Explorer** (massifs, visites guidées, itinéraires, ce que di
 - **Jeu** : un simulateur de parapente qui vole dans l'air du modèle, sur le relief et l'imagerie
   de la carte : décollage face ou dos voile, freins, accélérateur, oreilles, ailes EN A, B ou C
   avec fermetures et pilotage actif, thermiques à enrouler, vautours, ciel et nuages selon
-  l'humidité, manches de cross sur les itinéraires de l'atlas et vol à plusieurs. « Voler
+  l'humidité, relief éclairé par le soleil de l'heure avec ses ombres portées, sol rendu selon
+  sa nature (forêt, roche et falaises, neige et glaciers, prairies, cultures, bâti, lacs) et
+  neige de saison, manches de cross sur les itinéraires de l'atlas et vol à plusieurs. « Voler
   d'ici » ouvre le jeu sur le décollage d'une fiche. Voir [JEU.md](docs/JEU.md).
 - **Prévision** (Open-Meteo, AROME/ARPEGE) : en mode Simuler, le vent d'aujourd'hui, de demain ou
   d'après-demain pilote la carte heure par heure autour de la vue, et la stabilité de l'air prévue

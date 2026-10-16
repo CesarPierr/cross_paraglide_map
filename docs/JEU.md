@@ -133,7 +133,71 @@ vent et peut le traîner s'il ne l'affale pas.
 - Vario sonore, bruit du vent selon la vitesse, claquement de la voile ; vautours en thermique
   (plus fréquents dans les Préalpes du Sud) ; thermiques visibles en flux rouges (option).
 - Paysage : orthophotos IGN, relief, bâtiments ; les tuiles sont gardées sur l'appareil (service
-  worker `public/tiles-sw.js`) et ne sont pas retéléchargées d'une session à l'autre.
+  worker `public/tiles-sw.js`) et ne sont pas retéléchargées d'une session à l'autre. Lumière, ombres
+  et matériaux du sol : voir ci-dessous.
+
+### Le paysage (`lod.ts`, `ground.ts`, `region.ts`, `materials.ts`)
+
+- **Détail des tuiles par la distance vraie** (`lod.ts`) : MapLibre choisit le niveau de chaque tuile
+  d'après sa distance et l'angle sous lequel elle est vue, en supposant que le point visé est au sol.
+  Avec la caméra du pilote, ce point est en l'air : près de l'horizontale l'orthophoto réclamait ses
+  tuiles les plus fines jusqu'à l'horizon (10 600 tuiles IGN à 89° de tangage, page figée) et le
+  relief s'effondrait en quelques tuiles grossières (relief flou, jupes visibles aux sauts de niveau).
+  Le niveau suit désormais la seule distance à l'œil (texel ≈ pixel à l'écran), plancher donné par la
+  distance au relief le plus proche (une paroi à 30 m de l'aile est aussi nette que le sol à 30 m) ;
+  les tuiles du relief lui-même (maillage et texture où l'image est drapée) suivent la même règle
+  (au plus z17), le Sentinel-2 un niveau en dessous. 130 à 175 tuiles IGN en vol, quel que soit
+  le tangage ; l'axe donné à MapLibre reste à 0,1° au moins de l'horizontale.
+- **Lumière du relief** (`ground.ts`, `region.ts`) : trois niveaux d'altitudes autour du pilote, tirés
+  du relief tel que MapLibre le dessine (6 km à ~6 m, 60 km à ~60 m) et de la grille du modèle de vent
+  (160 km à 216 m, pour les montagnes non chargées, derrière la caméra) ; pour chacun, la pente, les
+  **ombres portées** (marche vers le soleil, pénombre douce) et la part de ciel que le relief laisse
+  voir (horizon dans huit directions : fonds de vallée et gorges moins éclairés). Refait quand les
+  altitudes changent ou que le soleil bouge, réparti sur quelques images. L'orthophoto est lue comme
+  le sol sous la lumière de référence (midi d'été, soleil à 60° au sud), la part de cette lumière
+  propre à la pente retirée, puis éclairée par le soleil de l'heure sur cette pente, derrière les
+  ombres des montagnes et des nuages (clouds.ts), par le ciel ouvert et par le sol en contrebas. Elle
+  remplace l'ombrage de MapLibre. Le planeur et les arbres 3D passent à l'ombre des montagnes et des
+  nuages comme le sol.
+- **Matériaux par type de sol** (`materials.ts`) : chaque pixel est classé d'après la couleur de la
+  photo ramenée en albédo, la pente, l'altitude et les parts d'arbres, de sol nu, de neige et glace et
+  de bâti de la maille ESA WorldCover (216 m) ; seuils lus sur les orthophotos (forêt dense : albédo
+  0,035–0,075, verte ; lacs : cyan saturé, plats ; calcaire : 0,25–0,4, gris ; glacier : > 0,4).
+  Puis un détail procédural (sept motifs générés au démarrage sur le GPU, aucun fichier), qui apparaît
+  là où la photo manque de pixels et fond avec la distance :
+  - forêt : houppiers de tailles diverses, trouées sombres, ombre propre qui grandit quand le soleil
+    baisse, point chaud (plus claire soleil dans le dos, plus sombre à contre-jour) ;
+  - roche et falaises : strates d'épaisseur inégale avec corniches et surplombs, diaclases, coulures
+    sombres, sur les faces verticales (projection latérale) ; au-delà de ~60° la photo, étirée dans
+    la pente, est lissée en travers et les grands bancs (une dizaine de mètres) restent visibles à
+    plusieurs kilomètres ; blocs et éboulis vus du dessus ;
+  - prairie et alpage : touffes et taches ; cultures : sillons, orientés différemment d'une parcelle
+    à l'autre ;
+  - neige et glace : sastrugi en travers du vent, crevasses en travers de l'écoulement des glaciers,
+    reflet doux vers le soleil, scintillement des cristaux tout près ; à l'ombre, la lumière du ciel
+    la rend bleutée ;
+  - eau : reflet du ciel (Fresnel, assombri vers l'horizon où sont les rives), éclat du soleil,
+    rides poussées par le vent du modèle au pilote, brises comprises (plus de rugosité quand elles
+    deviennent plus fines qu'un pixel) ; hauts-fonds turquoise compris ;
+  - bâti : pas de détail ; bâtiments 3D avec murs (enduit, pierre, bois, béton) et toits (ardoise,
+    tuiles, tôle) variés, éclairés du côté du soleil.
+- **Neige de saison** : au-dessus d'une limite mensuelle (≈ 900 m en janvier, 1 650 m en avril,
+  2 500 m en juin), calée sur les limites médianes des Alpes (Hantel et al. 2012 : ≈ 800 m l'hiver,
+  ≈ 3 100 m l'été, plus haute l'hiver à l'ouest) et 250 m plus haute dans les massifs du sud, plus
+  secs (Durand et al. 2009) ; 280 m plus bas en ubac, plus haut en adret, irrégulière près de la
+  limite, absente des faces de plus de ~55° et des affleurements sombres, cachée sous les arbres.
+  De juillet à septembre, l'orthophoto (prise en été) montre déjà la neige de la saison. Les arbres
+  3D suivent aussi la saison (feuillus nus l'hiver, jaunes et orangés en octobre).
+- **Coût** (M1 Pro, 1920×1080, passe du paysage dessinée 200 fois hors écran, médiane) : 0,51–0,56 ms
+  d'origine, 0,64–0,72 ms avec la lumière du relief, 1,11–1,33 ms avec les matériaux. Les passes du
+  relief tournent seulement quand quelque chose change, une étape lourde par image : une mise à jour
+  du niveau proche coûte ≈ 3 ms de GPU répartis sur ~7 images, plus le dessin des altitudes par
+  MapLibre (≈ 2,5 ms, sur une seule image), au plus une fois par seconde (le niveau lointain toutes
+  les 4 s) : ≈ 0,1 ms par image en moyenne en vol.
+  Sur téléphone : niveaux en 512², matériaux sans motifs de détail ; si les images restent lentes,
+  la qualité adaptative du ciel retire les motifs de détail (ordinateur) ou les matériaux
+  (téléphone), la lumière et les ombres du relief restent. Outil de captures et de mesure :
+  `npx tsx scripts/dev/game-capture.ts` (`__game.world.benchGround()`, `benchRelief()` en développement).
 
 ## Commandes
 
@@ -155,6 +219,11 @@ T thermiques, P pause, M son, +/− temps accéléré. Écran tactile : deux cur
 - Bandes EN 926-2 des classes C et D non vérifiées sur la norme ; chiffres du décollage, du posé et de
   la course d'arrêt à caler avec des pilotes.
 - Les thermiques suivent le potentiel du modèle et l'atlas ; ils ne sont pas validés trace par trace.
+- Paysage : le type de sol est déduit de la couleur de la photo (erreurs possibles : champ sombre,
+  toit clair, calcaire pris pour de la neige au-dessus de 2 400 m) ; un bâtiment isolé hors des zones
+  bâties reçoit parfois le détail du sol derrière lui ; les rivières étroites ne sont pas reconnues
+  comme de l'eau ; les lacs ne reflètent pas les montagnes ; le relief proche reste celui des tuiles
+  AWS (~25 m) ; la neige suit une climatologie, pas l'enneigement du jour.
 
 ## Sources principales
 
@@ -173,6 +242,14 @@ T thermiques, P pause, M son, +/− temps accéléré. Écran tactile : deux cur
   https://rosa.uniroma1.it/rosa00/dis_technical_reports/article/download/8850/8821
 - Survitesse sur les crêtes (théorie de Jackson & Hunt, 1975) et effet de sol (McCormick) : formules
   classiques, non relues ici.
+- Limite des neiges : Hantel, M., Maurer, C., Mayer, D. (2012), *The snowline climate of the Alps
+  1961–2010*, Theor. Appl. Climatol. 110, 517–537, https://doi.org/10.1007/s00704-012-0688-9 ;
+  Durand, Y. et al. (2009), *Reanalysis of 47 Years of Climate in the French Alps (1958–2005):
+  Climatology and Trends for Snow Cover*, J. Appl. Meteor. Climatol. 48,
+  https://doi.org/10.1175/2009JAMC1810.1
+- Occupation du sol : ESA WorldCover 10 m 2021 v200 (CC BY 4.0), https://esa-worldcover.org
+- Reflets : microfacettes GGX (Walter et al. 2007, *Microfacet Models for Refraction through Rough
+  Surfaces*, EGSR) et approximation de Fresnel de Schlick (1994).
 - Nuages volumétriques temps réel : Schneider, *The Real-time Volumetric Cloudscapes of Horizon Zero Dawn*
   https://www.advances.realtimerendering.com/s2015/The%20Real-time%20Volumetric%20Cloudscapes%20of%20Horizon%20-%20Zero%20Dawn%20-%20ARTR.pdf
 - Technique de pilotage (thermique, arrondi, décrochage) : https://xcmag.com/fly-better/paragliding-techniques-paramotoring-skills/thermalling-how-tight-should-you-turn/ ,

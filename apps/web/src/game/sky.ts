@@ -34,6 +34,8 @@ import * as THREE from 'three';
 import { ATMO_GLSL, Atmosphere, fullscreenPass, tonemapACES, type Lighting } from './atmosphere';
 import { CloudLayer, type CloudShape, type ViewInfo } from './clouds';
 import { GpuTimer } from './gpu-timer';
+import { TERRAIN_GLSL, type Ground } from './ground';
+import { MATERIAL_GLSL } from './materials';
 
 export type { CloudShape } from './clouds';
 
@@ -41,6 +43,35 @@ const smooth = (a: number, b: number, x: number) => {
   const t = Math.min(1, Math.max(0, (x - a) / (b - a)));
   return t * t * (3 - 2 * t);
 };
+
+/** The landscape pass's `photoRadiance` on the CPU: an sRGB colour of the imagery back into scene light. */
+function photoRadianceCpu(c: [number, number, number], veil: THREE.Vector3, gain: number, sat: number, mid: number, contrast: number): [number, number, number] {
+  const dec = (v: number) => (v <= 0.04045 ? v * 0.0773993808 : Math.pow(v * 0.9478672986 + 0.0521327014, 2.4));
+  const vl = [veil.x, veil.y, veil.z];
+  const y = c.map((v, i) => Math.min(0.97, Math.max(0, (dec(v) - vl[i]) / (1 - vl[i]))));
+  // Inverse of the ACES fit (atmosphere.ts atmoUntonemap).
+  const io = [
+    [0.643038, 0.311187, 0.045775],
+    [0.059269, 0.931436, 0.009295],
+    [0.005962, 0.063929, 0.930118],
+  ];
+  const ii = [
+    [1.764741, -0.675778, -0.088963],
+    [-0.147028, 1.160252, -0.013224],
+    [-0.036337, -0.162436, 1.198773],
+  ];
+  const u = io.map((r) => Math.min(1, Math.max(0, r[0] * y[0] + r[1] * y[1] + r[2] * y[2])));
+  const v = u.map((uu) => {
+    const A = uu * 0.983729 - 1;
+    const B = uu * 0.432951 - 0.0245786;
+    const C = uu * 0.238081 + 0.000090537;
+    return (-B - Math.sqrt(Math.max(B * B - 4 * A * C, 0))) / (2 * A);
+  });
+  const x = ii.map((r) => Math.max(0, (r[0] * v[0] + r[1] * v[1] + r[2] * v[2]) * 0.6 * gain));
+  const l = Math.max(0.2126 * x[0] + 0.7152 * x[1] + 0.0722 * x[2], 1e-6);
+  const k = Math.pow(l / mid, contrast - 1);
+  return x.map((xx) => Math.max(0, l + (xx - l) * sat) * k) as [number, number, number];
+}
 
 /** Radius of a cloud as drawn: a towering one is at least about half as wide as tall (see clouds.ts). */
 const visRadius = (c: CloudShape) => Math.max(c.radius * 1.08, 0.22 * (c.top - c.base));
@@ -151,6 +182,7 @@ const GROUND_FS = /* glsl */ `
 precision highp float;
 ${ATMO_GLSL}
 ${RAY_GLSL}
+${TERRAIN_GLSL}
 uniform sampler2D uScene;
 uniform sampler2D uTDepth;
 uniform sampler2D uShadow;
@@ -168,8 +200,34 @@ uniform float uSat;
 uniform float uGain;
 uniform float uMid;
 uniform float uContrast;
+uniform float uRelief;
+uniform vec3 uSunNorm;
+uniform vec3 uGroundGain;
+uniform vec3 uRefSunNorm;
+uniform vec3 uRefSky;
+uniform vec3 uRefGround;
+uniform vec3 uRefDir;
+uniform float uDelight;
+uniform vec3 uSnowX;
+${MATERIAL_GLSL}
 layout(location = 0) out vec4 fragColor;
 float unpackDepth(vec4 c) { return dot(c, vec4(1.0 / 16777216.0, 1.0 / 65536.0, 1.0 / 256.0, 1.0)); }
+// The imagery back into the light of the scene it shows (the inverse of the camera's curve:
+// at the reference light the photo comes out unchanged), its veil off, a little more
+// contrast and colour than map imagery has; the hillshade's darkening of flat ground undone.
+vec3 photoRadiance(vec3 c) {
+  c = min(c / uHillFlat, vec3(1.0));
+  vec3 x = max(atmoDecode(c) - uVeil, vec3(0.0)) / (1.0 - uVeil);
+  x = atmoUntonemap(x) * uGain;
+  float l = max(dot(x, vec3(0.2126, 0.7152, 0.0722)), 1e-6);
+  return max(mix(vec3(l), x, uSat), vec3(0.0)) * pow(l / uMid, uContrast - 1.0);
+}
+// Distance factor along the far-plane vector from a packed terrain depth.
+float depthScale(float z) {
+  float n = uNF.x;
+  float f = uNF.y;
+  return 2.0 * n / max((f + n) - z * (f - n), 1e-6);
+}
 // Share of the direct sun reaching an absolute point through the clouds.
 float cloudShadow(vec3 pa) {
   if (uShadowOn < 0.5) return 1.0;
@@ -185,8 +243,36 @@ void main() {
   vec3 c = texelFetch(uScene, ivec2(gl_FragCoord.xy), 0).rgb;
   vec3 fv = farVector(uv);
 #ifdef NEAR
+  // Nearer than the depth texture can tell (between MapLibre's near plane, ~30 m, and about
+  // twice that): the view ray marched over the relief's elevations from the near plane (the
+  // ground under the eye is out of view, its elevations not drawn), the hit refined by halving.
   vec3 P = uEye;
   float dist = 0.0;
+  float nearMiss = 1.0;
+  if (uRelief > 0.5) {
+    vec3 rd = normalize(fv);
+    vec3 eyeA = uEye + uAnchor;
+    float t = 0.95 * length(fv) * uNF.x / uNF.y;
+    float t0 = t;
+    float t1 = t;
+    bool hit = false;
+    for (int i = 0; i < 16; i++) {
+      vec3 q = eyeA + rd * t;
+      if (q.z <= terrainH(q.xy)) { hit = true; t1 = t; break; }
+      t0 = t;
+      t *= 1.07;
+    }
+    if (hit) {
+      for (int i = 0; i < 6; i++) {
+        float tm = 0.5 * (t0 + t1);
+        vec3 q = eyeA + rd * tm;
+        if (q.z <= terrainH(q.xy)) t1 = tm; else t0 = tm;
+      }
+      dist = 0.5 * (t0 + t1);
+      P = uEye + rd * dist;
+      nearMiss = 0.0;
+    }
+  }
 #else
   float z = unpackDepth(texture(uTDepth, uv));
   if (z > 1.0005) {
@@ -201,26 +287,90 @@ void main() {
     if (best > 1.0) discard;
     z = best;
   }
-  float n = uNF.x;
-  float f = uNF.y;
-  float s = 2.0 * n / max((f + n) - z * (f - n), 1e-6);
+  float s = depthScale(z);
+  // The depth is at the page's pixels (half the screen's on most phones and retina screens):
+  // inside a surface, interpolated between its four nearest texels (inverse depth, linear
+  // on a plane), so the ground's detail does not come out in blocks.
+  {
+    vec2 tsz = vec2(textureSize(uTDepth, 0));
+    vec2 tf = uv * tsz - 0.5;
+    vec2 ti = floor(tf);
+    vec2 tt = tf - ti;
+    vec4 inv;
+    bool same = true;
+    for (int i = 0; i < 4; i++) {
+      vec2 o = vec2(float(i & 1), float(i >> 1));
+      float zz = unpackDepth(texelFetch(uTDepth, ivec2(clamp(ti + o, vec2(0.0), tsz - 1.0)), 0));
+      if (zz > 1.0005) same = false;
+      float ss = depthScale(zz);
+      inv[i] = 1.0 / max(ss, 1e-9);
+      if (abs(ss - s) > 0.015 * s) same = false;
+    }
+    if (same) s = 1.0 / mix(mix(inv.x, inv.y, tt.x), mix(inv.z, inv.w, tt.x), tt.y);
+  }
   vec3 P = uEye + fv * s;
   float dist = s * length(fv);
 #endif
-  // The hillshade darkens slopes turned from the sun relative to flat ground: flat ground
-  // back to the photo's level.
-  c = min(c / uHillFlat, vec3(1.0));
-  // The imagery back into the light of the scene it shows (the inverse of the camera's
-  // curve: at the reference light the photo comes out unchanged), its veil off, a little
-  // more contrast and colour than map imagery has.
-  vec3 x = max(atmoDecode(c) - uVeil, vec3(0.0)) / (1.0 - uVeil);
-  x = atmoUntonemap(x) * uGain;
-  float l = max(dot(x, vec3(0.2126, 0.7152, 0.0722)), 1e-6);
-  x = max(mix(vec3(l), x, uSat), vec3(0.0)) * pow(l / uMid, uContrast - 1.0);
+  vec3 x = photoRadiance(c);
   // Lit by the light of the hour, the direct part dimmed under the clouds' shadows (the
   // sky's blue remains).
   float sh = cloudShadow(P + uAnchor);
-  x *= uSunGain * mix(uShadowFloor, 1.0, sh) + uSkyGain;
+  if (uRelief > 0.5) {
+    // The relief's light (ground.ts): the photo is the ground under the reference light (a
+    // summer noon from the south), the slope's own share of it taken out, then lit by the
+    // sun of the hour on that slope, behind the mountains' shadows and the clouds', by the
+    // sky the relief leaves open and by the light the ground below sends back; what the
+    // ground is made of (materials.ts) adds its micro-relief, its snow, its reflections.
+    vec3 pa = P + uAnchor;
+    Relief rf = relief(pa.xy);
+    vec3 N = rf.n;
+    float skyOpen = (0.5 + 0.5 * N.z) * rf.sky;
+    float below = 0.5 - 0.5 * N.z;
+    vec3 eRef = uRefSunNorm * max(dot(N, uRefDir), 0.0) + uRefSky * skyOpen + uRefGround * below;
+    vec3 dl = mix(vec3(1.0), max(eRef, vec3(0.45)), uDelight);
+    vec3 xd = x / dl;
+    float sunVis = mix(uShadowFloor, 1.0, sh);
+    if (uMaterials > 0.5) {
+      // Steep faces: the photo is stretched down the fall line; its colour averaged across
+      // (along the screen's rows), between similar pixels only (not over the cliff's edge).
+      vec3 xs = xd;
+#ifndef GROUND_LOW
+      if (N.z < 0.55) {
+        vec3 acc = x;
+        float wsum = 1.0;
+        float lx = lum3(x);
+        for (int i = 0; i < 2; i++) {
+          vec3 xt = photoRadiance(texelFetch(uScene, ivec2(gl_FragCoord.xy + vec2(i == 0 ? 5.0 : -5.0, 0.0)), 0).rgb);
+          float w = exp(-2.0 * abs(lum3(xt) - lx) / max(lx, 1e-4));
+          acc += xt * w;
+          wsum += w;
+        }
+        xs = acc / wsum / dl;
+      }
+#endif
+      x = gShade(xd, xs, uSnowX, pa, normalize(-fv), dist, rf, sunVis);
+      if (uGDebug == 7) {
+        // Not-a-number finder: red in the colour, green in the position's derivatives.
+        bool bad = any(isnan(x)) || any(isinf(x));
+        bool badD = any(isnan(dFdx(pa))) || any(isinf(dFdx(pa))) || any(isnan(dFdy(pa)));
+#ifdef NEAR
+        fragColor = vec4(bad ? 1.0 : 0.0, badD ? 1.0 : 0.0, 0.5 + 0.5 * nearMiss, 1.0);
+#else
+        fragColor = vec4(bad ? 1.0 : 0.0, badD ? 1.0 : 0.0, 0.0, 1.0);
+#endif
+        return;
+      }
+      if (uGDebug >= 5) {
+        fragColor = vec4(gDbg, 1.0);
+        return;
+      }
+    } else {
+      vec3 eNow = uSunNorm * max(dot(N, uSunDir), 0.0) * rf.sun * sunVis + uSkyGain * skyOpen + uGroundGain * below;
+      x = xd * eNow;
+    }
+  } else {
+    x *= uSunGain * mix(uShadowFloor, 1.0, sh) + uSkyGain;
+  }
   // Aerial perspective between the eye and the ground.
   vec3 Lap;
   vec3 Tap;
@@ -311,14 +461,34 @@ export class Sky {
   private raiseT = 0;
   /** Adaptive cloud quality on (development tools turn it off for comparisons). */
   adaptive = true;
+
   private frameEma = 1 / 60;
   /** The landscape pass ran this frame: MapLibre's fog must stay off. */
   groundActive = false;
   light: SkyLight | null = null;
   /** Darkening of flat ground by MapLibre's hillshade (sRGB factor), undone by the landscape pass. */
   hillFlat = 1;
+  /**
+   * The relief's light (ground.ts) in the landscape pass's units (shares of the reference
+   * light's illuminance on flat ground): the sun at normal incidence, the ground's bounce,
+   * and the same for the reference light the photos were taken in (a summer noon, the sun
+   * 60° high in the south).
+   */
+  private relight = {
+    sunNorm: { value: new THREE.Vector3(1, 1, 1) },
+    ground: { value: new THREE.Vector3(0.1, 0.1, 0.1) },
+    refSunNorm: { value: new THREE.Vector3(1, 1, 1) },
+    refSky: { value: new THREE.Vector3(0.2, 0.2, 0.2) },
+    refGround: { value: new THREE.Vector3(0.1, 0.1, 0.1) },
+    refDir: { value: new THREE.Vector3(0, -0.5, Math.sqrt(0.75)) },
+    snowX: { value: new THREE.Vector3(1, 1, 1) },
+  };
 
-  constructor(readonly lowQuality: boolean, floatTargets: boolean) {
+  constructor(
+    readonly lowQuality: boolean,
+    floatTargets: boolean,
+    readonly ground: Ground,
+  ) {
     this.atmo = new Atmosphere(floatTargets);
     const au = this.atmo.uniforms as unknown as Record<string, THREE.IUniform>;
     this.cloudLayer = new CloudLayer(lowQuality, !floatTargets, au);
@@ -369,10 +539,21 @@ export class Sky {
       uGain: { value: 1 / 3.4 },
       uMid: { value: 0.05 },
       uContrast: { value: 1.1 },
+      ...ground.uniforms,
+      uSunNorm: this.relight.sunNorm,
+      uGroundGain: this.relight.ground,
+      uRefSunNorm: this.relight.refSunNorm,
+      uRefSky: this.relight.refSky,
+      uRefGround: this.relight.refGround,
+      uRefDir: this.relight.refDir,
+      uDelight: { value: 0.85 },
+      uSnowX: this.relight.snowX,
     });
     // Terrain beyond the cut (valid packed depth) and nearer than it (the eye's surroundings).
-    this.groundMat = shader(SKY_VS, GROUND_FS, groundUniforms(), { depthTest: true, depthWrite: false, depthFunc: THREE.LessDepth, blending: THREE.NoBlending });
-    this.groundNearMat = shader(SKY_VS, GROUND_FS, groundUniforms(), { depthTest: true, depthWrite: false, depthFunc: THREE.GreaterEqualDepth, blending: THREE.NoBlending }, { NEAR: '1' });
+    // Phones: the materials without their detail stack (materials.ts).
+    const low: Record<string, string> = lowQuality ? { GROUND_LOW: '1' } : {};
+    this.groundMat = shader(SKY_VS, GROUND_FS, groundUniforms(), { depthTest: true, depthWrite: false, depthFunc: THREE.LessDepth, blending: THREE.NoBlending }, low);
+    this.groundNearMat = shader(SKY_VS, GROUND_FS, groundUniforms(), { depthTest: true, depthWrite: false, depthFunc: THREE.GreaterEqualDepth, blending: THREE.NoBlending }, { NEAR: '1', ...low });
     this.groundPass = fullscreenPass(this.groundMat);
     this.groundNearPass = fullscreenPass(this.groundNearMat);
     this.glareMat = shader(
@@ -414,6 +595,25 @@ export class Sky {
     // No correction at all when the sun is low: the golden hour is shot in daylight balance.
     const wbK = 0.2 * smooth(8, 30, elevation);
     const wb = ratio.map((v) => Math.pow(neutral / Math.max(v, 1e-5), wbK));
+    // The relief's light: the sun at normal incidence (its illuminance on flat ground over the
+    // sine of its height), the ground's bounce (π × its radiance), now and in the reference.
+    const sinNow = Math.max(0.02, sunDir.z);
+    const rl = this.relight;
+    rl.sunNorm.value.set(...([0, 1, 2].map((c) => ((sunE[c] / sinNow) / refTot[c]) * wb[c]) as [number, number, number]));
+    const grnd = [k.ground.r, k.ground.g, k.ground.b];
+    rl.ground.value.set(...([0, 1, 2].map((c) => ((Math.PI * grnd[c]) / refTot[c]) * wb[c]) as [number, number, number]));
+    const refSun = [ref.sunIrr.r, ref.sunIrr.g, ref.sunIrr.b];
+    const refSky = [ref.skyIrr.r, ref.skyIrr.g, ref.skyIrr.b];
+    const refGrnd = [ref.ground.r, ref.ground.g, ref.ground.b];
+    const sinRef = rl.refDir.value.z;
+    rl.refSunNorm.value.set(...([0, 1, 2].map((c) => refSun[c] / sinRef / refTot[c]) as [number, number, number]));
+    rl.refSky.value.set(...([0, 1, 2].map((c) => refSky[c] / refTot[c]) as [number, number, number]));
+    rl.refGround.value.set(...([0, 1, 2].map((c) => (Math.PI * refGrnd[c]) / refTot[c]) as [number, number, number]));
+    // Materials: an albedo in the landscape's units (a white ground under the reference
+    // light), the sun at normal incidence for the speculars.
+    const gu = this.ground.uniforms;
+    gu.uAlbedoToX.value.set(refTot[0] / Math.PI, refTot[1] / Math.PI, refTot[2] / Math.PI);
+    gu.uSunX.value.copy(rl.sunNorm.value).multiply(new THREE.Vector3(refTot[0], refTot[1], refTot[2]));
     for (const m of [this.groundMat, this.groundNearMat]) {
       const u = m.uniforms;
       u.uSunGain.value.set(...([0, 1, 2].map((c) => (sunE[c] / refTot[c]) * wb[c]) as [number, number, number]));
@@ -424,6 +624,12 @@ export class Sky {
       u.uMid.value = 0.165 / ref.exposure;
       u.uSat.value = 1.2 - 0.1 * humidity - 0.1 * cover;
       u.uContrast.value = 1.1 - 0.04 * humidity;
+    }
+    // Fresh snow as the photos show it (their snowfields' colour read back like any pixel).
+    {
+      const u = this.groundMat.uniforms;
+      const x = photoRadianceCpu([0.91, 0.925, 0.95], u.uVeil.value as THREE.Vector3, u.uGain.value as number, u.uSat.value as number, u.uMid.value as number, u.uContrast.value as number);
+      this.relight.snowX.value.set(x[0], x[1], x[2]);
     }
     // Clouds: ambient from the sky above and the ground's bounce below.
     const cu = this.cloudLayer.marchMat.uniforms;
@@ -463,6 +669,12 @@ export class Sky {
 
   setClouds(list: CloudShape[], near?: { x: number; y: number }): void {
     this.cloudLayer.setClouds(list, near);
+  }
+
+  /** The clouds' shadow map as the landscape pass reads it (for three.js materials, ground.ts `sunlit`). */
+  get cloudShadowUniforms(): { uShadow: THREE.IUniform; uShadowMap: THREE.IUniform; uShadowOn: THREE.IUniform; uSunDir: THREE.IUniform } {
+    const u = this.groundMat.uniforms;
+    return { uShadow: u.uShadow, uShadowMap: u.uShadowMap, uShadowOn: u.uShadowOn, uSunDir: u.uSunDir };
   }
 
   /** Current clouds of the air mass, for shadows and the dimming under them. */
@@ -531,6 +743,15 @@ export class Sky {
       if (cl.scale <= floor + 1e-3) cl.steps = Math.max(this.lowQuality ? 56 : 96, cl.steps - 16);
       this.adaptT = now;
       this.raiseT = now;
+    } else if (this.frameEma > 0.0195 && !this.ground.lowDetail) {
+      // The clouds at their floor and still slow: the ground's detail stack goes (materials.ts).
+      this.ground.lowDetail = true;
+      this.adaptT = now;
+      this.raiseT = now;
+    } else if (this.frameEma < 0.0172 && now - this.raiseT > 8000 && this.ground.lowDetail) {
+      this.ground.lowDetail = false;
+      this.adaptT = now;
+      this.raiseT = now;
     } else if (this.frameEma < 0.0172 && now - this.raiseT > 8000 && (cl.scale < top - 1e-3 || cl.steps < topSteps)) {
       cl.scale = Math.min(top, cl.scale + 0.04);
       cl.steps = Math.min(topSteps, cl.steps + 16);
@@ -550,7 +771,9 @@ export class Sky {
         this.sceneCopy = new THREE.FramebufferTexture(f.width, f.height);
       }
       r.copyFramebufferToTexture(this.sceneCopy);
+      this.lastSize.set(f.width, f.height);
       this.depthTex.sourceTexture = f.terrainDepth;
+      this.ground.uniforms.uPixAng.value = f.fovY / f.height;
       const sm = this.cloudLayer.shadowMap;
       for (const m of [this.groundMat, this.groundNearMat]) {
         const u = m.uniforms;
@@ -572,6 +795,40 @@ export class Sky {
     r.render(this.skyPass, this.cam);
     this.time('background', false);
   }
+
+  /**
+   * Development: GPU time of the landscape pass (ms per full-screen pass) at the last frame's
+   * view, drawn n times into offscreen targets and waited for by reading a pixel back. Timer
+   * queries and frame times cannot tell it apart in a headless browser on macOS.
+   */
+  benchGround(r: THREE.WebGLRenderer, n = 30): number {
+    const w = this.lastSize.x;
+    const h = this.lastSize.y;
+    if (!w || !h) return NaN;
+    // Two targets in turn: each draw its own render pass, which a tiled GPU cannot skip.
+    const rts = [0, 1].map(() => new THREE.WebGLRenderTarget(w, h, { depthBuffer: false }));
+    const m = this.groundMat;
+    const keep = m.depthTest;
+    m.depthTest = false;
+    m.needsUpdate = true;
+    const px = new Uint8Array(4);
+    r.setRenderTarget(rts[0]);
+    r.render(this.groundPass, this.cam);
+    r.readRenderTargetPixels(rts[0], 0, 0, 1, 1, px);
+    const t0 = performance.now();
+    for (let i = 0; i < n; i++) {
+      r.setRenderTarget(rts[i & 1]);
+      r.render(this.groundPass, this.cam);
+    }
+    r.readRenderTargetPixels(rts[(n - 1) & 1], 0, 0, 1, 1, px);
+    const ms = (performance.now() - t0) / n;
+    r.setRenderTarget(null);
+    m.depthTest = keep;
+    m.needsUpdate = true;
+    for (const rt of rts) rt.dispose();
+    return ms;
+  }
+  private lastSize = new THREE.Vector2();
 
   /** The clouds over the frame (after the world's objects). */
   drawClouds(r: THREE.WebGLRenderer, f: FrameInfo): void {

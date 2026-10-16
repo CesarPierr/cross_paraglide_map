@@ -25,6 +25,10 @@ import { buildGlider, type GliderModel } from './glider';
 import { Sky, type FrameInfo } from './sky';
 import { ThermalFlows, Vultures } from './life';
 import { Forest } from './trees';
+import { clearance, lodByDistance, useTerrainTileZoom, type LodState, type TileZoomFn } from './lod';
+import { Ground, REGION_HALF, REGION_N, type SunUniforms } from './ground';
+import { RegionMaps } from './region';
+import type { GridMeta } from '@brises/model';
 
 export type ViewMode = 'first' | 'third';
 
@@ -35,6 +39,10 @@ export interface Head {
 }
 
 const DEG = 180 / Math.PI;
+/** Smallest angle (deg) between the camera axis given to MapLibre and the level (see placeCamera). */
+const LEVEL_GAP = 0.1;
+/** Distance (m) from the eye to the point MapLibre's camera looks at (see placeCamera). */
+const CENTER_M = 1200;
 /**
  * Pilot's eyes in the glider frame: seated and leaning back, about 0.3 m above and behind
  * the carabiners, so risers, brake handles and the pod sit in the lower part of the view.
@@ -51,19 +59,40 @@ function gameStyle(): StyleSpecification {
     .map((l) => (l.id === 'hillshade' ? { ...l, paint: { ...(l as HillshadeLayerSpecification).paint, 'hillshade-exaggeration': 0.28 } } : l))
     // Where imagery is still loading: a dull land colour rather than night blue (it is hazed like the rest).
     .map((l) => (l.id === 'background' ? { ...l, paint: { 'background-color': '#5d6352' } } : l)) as LayerSpecification[];
-  style.layers.push({
-    id: 'buildings',
-    type: 'fill-extrusion',
-    source: 'ofm',
-    'source-layer': 'building',
-    minzoom: 13,
-    paint: {
-      'fill-extrusion-color': '#d9d2c5',
-      'fill-extrusion-height': ['coalesce', ['get', 'render_height'], 6],
-      'fill-extrusion-base': ['coalesce', ['get', 'render_min_height'], 0],
-      'fill-extrusion-opacity': 0.92,
+  // Buildings: walls of plaster, stone, wood or concrete and roofs of slate, tiles or metal,
+  // drawn per building from its id (as the imagery would show them under the reference
+  // light: the landscape pass relights them with the hour's), each roof a thin slab on top.
+  const pick = (palette: string[]) => ['match', ['%', ['to-number', ['coalesce', ['id'], ['*', 13, ['coalesce', ['get', 'render_height'], 6]]]], palette.length], ...palette.flatMap((c, i) => (i < palette.length - 1 ? [i, c] : [])), palette[palette.length - 1]];
+  const height = ['coalesce', ['get', 'render_height'], 6];
+  style.layers.push(
+    {
+      id: 'buildings',
+      type: 'fill-extrusion',
+      source: 'ofm',
+      'source-layer': 'building',
+      minzoom: 13,
+      paint: {
+        'fill-extrusion-color': pick(['#bdb3a2', '#ab9f8a', '#9d978d', '#866d57', '#b8aa91', '#928d85', '#c2baa9']) as never,
+        'fill-extrusion-height': height as never,
+        'fill-extrusion-base': ['coalesce', ['get', 'render_min_height'], 0],
+        'fill-extrusion-opacity': 1,
+        'fill-extrusion-vertical-gradient': true,
+      },
     },
-  });
+    {
+      id: 'building-roofs',
+      type: 'fill-extrusion',
+      source: 'ofm',
+      'source-layer': 'building',
+      minzoom: 13,
+      paint: {
+        'fill-extrusion-color': pick(['#57524e', '#7a4c3d', '#66615c', '#8a5443', '#4b4947', '#6e5a4d']) as never,
+        'fill-extrusion-height': ['+', height, 0.6] as never,
+        'fill-extrusion-base': height as never,
+        'fill-extrusion-opacity': 1,
+      },
+    },
+  );
   style.sky = {
     'sky-color': '#3f7bc8',
     'horizon-color': '#cfdff0',
@@ -133,6 +162,13 @@ export class GameWorld {
   /** Phones and small screens: fewer ray-marching steps, clouds at a third of the resolution. */
   readonly lowQuality = typeof window !== 'undefined' && (window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 700);
   readonly sky: Sky;
+  /** The relief's light and the terrain's materials (ground.ts), and the region's grids (region.ts). */
+  readonly ground: Ground;
+  private region: RegionMaps | null = null;
+  /** The relief's light was on when MapLibre's hillshade was last set. */
+  private reliefOn = false;
+  /** Sun visibility for three.js materials (trees): relief and cloud shadows (ground.ts `sunlit`). */
+  private sunUniforms: SunUniforms;
   /** Share of the sun reaching the pilot through the clouds (0..1). */
   private sunlight = 1;
   private sunBase = { glider: 2.2 };
@@ -170,6 +206,9 @@ export class GameWorld {
   view: ViewMode = 'first';
   ready: Promise<void>;
   private loaded = false;
+  /** The eye's distance to MapLibre's centre and to the relief, for the tile detail (lod.ts). */
+  private lod: LodState = { centerM: CENTER_M, clearanceM: 100 };
+  private lodT = 0;
 
   constructor(
     container: HTMLElement,
@@ -193,19 +232,31 @@ export class GameWorld {
       maxTileCacheSize: 3000,
       canvasContextAttributes: { antialias: true },
     } as MapOptions);
+    // A raster tile that cannot be decoded (a request cut short as the view moves, a server's
+    // hiccup) is drawn from its parent tile until it loads again: no error in the console for
+    // it; every other error of the map is reported as MapLibre does without a listener.
+    this.map.on('error', (ev) => {
+      const e = ev as unknown as { error?: { message?: string }; sourceId?: string; tile?: unknown };
+      if (e.sourceId && e.tile && /could not be decoded/i.test(e.error?.message ?? '')) return;
+      console.error(e.error ?? ev);
+    });
     // Handlers exist but stay off while flying; the topo pause turns pan and zoom on.
     for (const h of [this.map.dragPan, this.map.scrollZoom, this.map.boxZoom, this.map.dragRotate, this.map.keyboard, this.map.doubleClickZoom, this.map.touchZoomRotate, this.map.touchPitch]) h.disable();
     // The sky and the clouds need float render targets (half floats are enough); without
     // them MapLibre's sky and fog stay and the clouds are drawn straight into the frame.
     const gl = this.map.getCanvas().getContext('webgl2');
     const floatTargets = !!gl && !!(gl.getExtension('EXT_color_buffer_float') || gl.getExtension('EXT_color_buffer_half_float'));
-    this.sky = new Sky(this.lowQuality, floatTargets);
+    this.ground = new Ground(frame, this.lowQuality, gl);
+    this.sky = new Sky(this.lowQuality, floatTargets, this.ground);
     this.glider = buildGlider();
     this.gliderWorld.add(this.glider.root);
     this.flows = new ThermalFlows(this.lowQuality ? 1200 : 2600);
     // Griffon vultures: common in the southern Prealps, rarer northwards.
     this.vultures = new Vultures(frame.lat0 < 44.9 ? 0.75 : frame.lat0 < 45.4 ? 0.45 : 0.2);
-    this.forest = new Forest(this.lowQuality ? 1500 : 4000);
+    // The trees see the sun as the ground does (relief and cloud shadows).
+    const gu = this.ground.uniforms;
+    this.sunUniforms = { uQ0: gu.uQ0, uL0: gu.uL0, uQOn: gu.uQOn, ...this.sky.cloudShadowUniforms, uAnchorW: { value: new THREE.Vector3() } };
+    this.forest = new Forest(this.lowQuality ? 1500 : 4000, this.sunUniforms);
     this.rel.add(this.flows.points, this.vultures.group, this.socks, this.forest.group, this.taskGroup);
     this.worldScene.add(this.rel);
     this.chaseScene.add(this.gliderWorld, this.chaseSun, this.chaseHemi);
@@ -219,12 +270,19 @@ export class GameWorld {
         // A free camera: the point it looks at may be in the air (looking at the horizon).
         this.map.setCenterClampedToGround(false);
         this.map.setVerticalFieldOfView(this.fovDeg);
-        // Detail near the pilot, decaying fast towards the horizon, and a bounded tile count:
-        // looking at the horizon MapLibre would otherwise queue a thousand tiles and the
-        // ones under the wing would wait behind the far ones.
-        this.map.setSourceTileLodParams(4, 2.5, 'ign-ortho');
-        this.map.setSourceTileLodParams(3, 1.5, 's2');
-        this.map.setSourceTileLodParams(6, 3, 'terrain');
+        // Detail by true distance from the eye (lod.ts): the texels of the imagery, and of the
+        // terrain's textures it is drawn into, match the screen's pixels at every distance;
+        // the Sentinel-2 backdrop a level coarser, the elevation tiles one level under the
+        // terrain's (as MapLibre uses them); a bounded tile count whatever the angle of view.
+        for (const [id, bias] of [['ign-ortho', 0], ['s2', -1], ['terrain', -2]] as const) {
+          const src = this.map.getSource(id) as { calculateTileZoom?: TileZoomFn } | undefined;
+          if (src) src.calculateTileZoom = lodByDistance(this.lod, bias);
+        }
+        if (!useTerrainTileZoom(this.map as unknown as Parameters<typeof useTerrainTileZoom>[0], lodByDistance(this.lod, -1)) && import.meta.env.DEV) console.warn('[terrain] tuiles du relief : règle de MapLibre (internes inattendus)');
+        // New elevation tiles: the relief's light redraws its elevations (ground.ts).
+        this.map.on('sourcedata', (e: { sourceId?: string; tile?: unknown }) => {
+          if (e.sourceId === 'terrain' && e.tile) this.ground.terrainChanged();
+        });
         this.map.addLayer(this.layer());
         this.loaded = true;
         resolve();
@@ -249,6 +307,7 @@ export class GameWorld {
     const e = elevation / DEG;
     const dir = new THREE.Vector3(Math.sin(a) * Math.cos(e), Math.cos(a) * Math.cos(e), Math.sin(e)).normalize();
     this.sun.position.copy(dir);
+    this.ground.setSun(dir);
     // The haze fills the convective layer, up to about the cumulus base (from the clouds in
     // view, else the air mass's formula for a valley floor).
     const hazeTop = this.hazeTop > 0 ? this.hazeTop : 1400 + (1 - humidity) * 2800;
@@ -319,6 +378,12 @@ export class GameWorld {
     const alt = Math.max(1.5, elevation);
     const flat = Math.max(0, 1 - 2 * Math.sin((alt * Math.PI) / 180));
     this.sky.hillFlat = own ? 1 - alpha * flat : 1;
+    // The buildings' walls lit from the sun's side (MapLibre's light, its polar angle from the zenith).
+    this.map.setLight({ anchor: 'map', position: [1.5, azimuth, Math.min(88, 90 - Math.max(2, elevation))], color: '#ffffff', intensity: 0.45 });
+    // The relief's own light (ground.ts) shades the slopes and casts the shadows: no hillshade.
+    const relief = own && this.ground.fine;
+    this.map.setLayoutProperty('hillshade', 'visibility', relief ? 'none' : 'visible');
+    if (relief) this.sky.hillFlat = 1;
     this.map.setPaintProperty('hillshade', 'hillshade-method', 'basic');
     this.map.setPaintProperty('hillshade', 'hillshade-illumination-anchor', 'map');
     this.map.setPaintProperty('hillshade', 'hillshade-illumination-direction', azimuth);
@@ -330,6 +395,29 @@ export class GameWorld {
 
   setWind(u: number, v: number): void {
     this.wind = [u, v];
+    // Until the model's wind at the pilot is known: near the water and the snow the wind is
+    // weaker than aloft (friction, ~0.6).
+    if (!this.surfaceWind) this.ground.setWind(0.6 * u, 0.6 * v);
+  }
+
+  /** The site's model wind at the pilot (m/s, east/north, breezes included): ripples on the water, sastrugi. */
+  setSurfaceWind(u: number, v: number): void {
+    this.surfaceWind = true;
+    this.ground.setWind(u, v);
+  }
+  private surfaceWind = false;
+
+  /** The scenario's date (seasonal snow on the ground, the broadleaves' colour). */
+  setSeason(month0: number, day: number): void {
+    this.ground.setSeason(month0, day);
+    this.forest.setSeason(month0);
+  }
+
+  /** The wind model's grid (dem.png, landcover.png): the region's relief and land cover (region.ts). */
+  setRegion(url: string, meta: GridMeta): void {
+    this.region?.dispose();
+    this.region = new RegionMaps(this.frame, url, meta, REGION_N, REGION_HALF);
+    this.ground.setRegion(this.region);
   }
 
   private layer(): CustomLayerInterface {
@@ -354,6 +442,10 @@ export class GameWorld {
         r.setViewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
         const f = this.makeFrameInfo(gl, opts.nearZ, opts.farZ);
         this.frameInfo = f;
+        // The relief's elevations, slopes and shadows (MapLibre's terrain as drawn).
+        const eyeAbs = this.tmpEye.set(f.anchor.x + f.eye.x, f.anchor.y + f.eye.y, f.anchor.z + f.eye.z);
+        this.ground.prepare(r, eyeAbs, f.dirBase, opts.renderTerrainHeightMap);
+        r.setViewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
         this.sky.prepare(r, f);
         r.setRenderTarget(null);
       },
@@ -374,6 +466,12 @@ export class GameWorld {
         f.depthRange[0] = dr[0];
         f.depthRange[1] = dr[1];
         this.sky.drawBackground(r, f);
+        if (this.ground.fine !== this.reliefOn && this.groundPass) {
+          // The relief's light took over (or gave up): MapLibre's hillshade follows.
+          this.reliefOn = this.ground.fine;
+          const c = this.conditions;
+          if (c) setTimeout(() => this.applyMapLight(c.azimuth, c.elevation, c.humidity, c.cover), 0);
+        }
         if (this.sky.groundActive !== this.groundPass) {
           // The landscape pass started (or stopped) working: MapLibre's fog and grading follow.
           this.groundPass = this.sky.groundActive;
@@ -453,6 +551,7 @@ export class GameWorld {
     fovY: 1,
   };
   private fiTmp = [new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()];
+  private tmpEye = new THREE.Vector3();
 
   /**
    * Places the camera for this frame and the glider in the world. Returns the camera
@@ -466,6 +565,7 @@ export class GameWorld {
     const q = gliderQuaternion(st.heading, st.bank, st.pitch);
     this.anchor = { x: st.x, y: st.y, z: st.z };
     this.rel.position.set(-st.x, -st.y, -st.z);
+    (this.sunUniforms.uAnchorW.value as THREE.Vector3).set(st.x, st.y, st.z);
     this.gliderWorld.position.set(0, 0, 0);
     this.gliderWorld.quaternion.copy(q);
     this.glider.update(st);
@@ -502,8 +602,13 @@ export class GameWorld {
     }
     this.eye.copy(eye);
     this.sky.frame(this.anchor, eye, this.wind[0], this.wind[1], dt);
-    // Under a cloud the glider is in the shade: its sun light dims (ray towards the sun).
-    this.sunlight += (this.sky.sunlightAt(st.x, st.y, st.z + 5) - this.sunlight) * Math.min(1, dt * 1.5);
+    // Under a cloud or behind a mountain the glider is in the shade: its sun light dims
+    // (rays towards the sun through the clouds and over the relief).
+    if (now - this.reliefSunT > 400) {
+      this.reliefSunT = now;
+      this.reliefSun = this.reliefSunAt(st.x, st.y, st.z + 3);
+    }
+    this.sunlight += (this.sky.sunlightAt(st.x, st.y, st.z + 5) * this.reliefSun - this.sunlight) * Math.min(1, dt * 1.5);
     const sunI = this.sunBase.glider * (0.08 + 0.92 * this.sunlight);
     this.cockpitSun.intensity = sunI;
     this.chaseSun.intensity = sunI;
@@ -515,7 +620,16 @@ export class GameWorld {
     const roll = Math.atan2(new THREE.Vector3().crossVectors(u0, up).dot(fwd), u0.dot(up)) * DEG;
     const [lon, lat] = this.frame.toLngLat(st.x + eye.x, st.y + eye.y);
     const alt = st.z + eye.z;
-    this.placeCamera(lon, lat, alt, fwd, bearing, pitch, -roll);
+    // The eye's clearance from the relief (tile detail), a few times a second; the region's
+    // grids follow the pilot.
+    if (now - this.lodT > 250) {
+      this.lodT = now;
+      if (Number.isFinite(st.x + st.y + alt)) {
+        this.region?.update(st.x, st.y);
+        this.lod.clearanceM = clearance(st.x + eye.x, st.y + eye.y, alt, this.groundFn);
+      }
+    }
+    this.placeCamera(lon, lat, alt, bearing, pitch, -roll);
     const c = this.map.getCanvas();
     this.cockpitCam.aspect = c.width / Math.max(1, c.height);
     this.cockpitCam.fov = this.fovDeg;
@@ -596,23 +710,90 @@ export class GameWorld {
    * point it looks at (the "centre"): placed on the horizon it would be kilometres away
    * and the ground under the wing blurry. The centre is set ~1.2 km ahead instead, so the
    * tiles near the pilot load at full detail and the detail decays towards the horizon.
+   *
+   * MapLibre's tile selection divides by the camera's height above that centre, which
+   * vanishes when the view is exactly level (pitch 90°): the imagery's selection then asks
+   * for its finest tiles out to the horizon, or never ends, and the page freezes ("Too many
+   * properties to enumerate"). The axis given to MapLibre is kept LEVEL_GAP away from level
+   * (an invisible tilt, ~1 px at the horizon) and the centre placed on that axis, so the
+   * camera stays at the eye.
    */
-  private placeCamera(lon: number, lat: number, alt: number, fwd: THREE.Vector3, bearing: number, pitch: number, roll: number): void {
-    const D = 1200;
+  private placeCamera(lon: number, lat: number, alt: number, bearing: number, pitch: number, roll: number): void {
+    const D = CENTER_M;
+    let p = Math.min(179, Math.max(1, pitch));
+    if (Math.abs(p - 90) < LEVEL_GAP) p = p < 90 ? 90 - LEVEL_GAP : 90 + LEVEL_GAP;
+    // The view axis as MapLibre draws it: pitch from the nadir, bearing from the north.
+    const pr = p / DEG;
+    const br = bearing / DEG;
+    const ax = Math.sin(pr) * Math.sin(br);
+    const ay = Math.sin(pr) * Math.cos(br);
+    const az = -Math.cos(pr);
     const kx = 111320 * Math.cos((lat * Math.PI) / 180);
-    const center: [number, number] = [lon + (fwd.x * D) / kx, lat + (fwd.y * D) / 111320];
-    const elevation = alt + fwd.z * D;
-    const h = this.map.getCanvas().clientHeight || 600;
+    const center: [number, number] = [lon + (ax * D) / kx, lat + (ay * D) / 111320];
+    const elevation = alt + az * D;
+    // A hidden or detached map (zero size) has no projection to update.
+    const canvas = this.map.getCanvas();
+    if (!canvas.clientWidth || !canvas.clientHeight || !Number.isFinite(lon + lat + alt)) return;
+    const h = canvas.clientHeight;
     const ctcd = 0.5 / Math.tan((this.fovDeg * Math.PI) / 360) * h;
     // Metres per pixel such that the camera is D metres from the centre, then the zoom.
     const mpp = D / ctcd;
     const zoom = Math.log2((40075016.686 * Math.cos((center[1] * Math.PI) / 180)) / (512 * mpp));
-    this.map.jumpTo({ center, zoom, elevation, bearing, pitch: Math.min(179, Math.max(1, pitch)), roll });
+    this.map.jumpTo({ center, zoom, elevation, bearing, pitch: p, roll });
   }
 
   setFov(deg: number): void {
     this.fovDeg = deg;
     this.map.setVerticalFieldOfView(deg);
+  }
+
+  private groundFn = (x: number, y: number) => this.groundAt(x, y);
+  private reliefSun = 1;
+  private reliefSunT = 0;
+
+  /**
+   * Share of the sun a point sees over the relief: a march towards the sun over the loaded
+   * terrain, then the region's grid, up to 40 km; soft over ~1° (as the ground's shadows).
+   */
+  private reliefSunAt(x: number, y: number, z: number): number {
+    const s = this.sun.position;
+    if (s.z <= 0) return 0;
+    const hl = Math.hypot(s.x, s.y);
+    if (hl < 1e-4) return 1;
+    const dx = s.x / hl;
+    const dy = s.y / hl;
+    const tanS = s.z / hl;
+    let vis = 1;
+    for (let d = 15; d < 40000; d *= 1.18) {
+      const px = x + dx * d;
+      const py = y + dy * d;
+      const g = (d < 6000 ? this.groundAt(px, py) : null) ?? this.region?.heightAt(px, py) ?? null;
+      if (g === null) continue;
+      const clear = z + d * tanS - g;
+      vis = Math.min(vis, Math.max(0, Math.min(1, 0.5 + (20 * clear) / d)));
+      if (vis <= 0) break;
+    }
+    return vis * vis * (3 - 2 * vis);
+  }
+
+  /** Development: GPU time (ms) of a whole update of the relief's levels (ground.ts `benchRelief`). */
+  benchRelief(n = 5): Record<string, number> {
+    const r = this.renderer;
+    if (!r) return {};
+    r.resetState();
+    const out = this.ground.benchRelief(r, n);
+    r.resetState();
+    return out;
+  }
+
+  /** Development: GPU time (ms) of one landscape pass at the last view (sky.ts `benchGround`). */
+  benchGround(n = 30): number {
+    const r = this.renderer;
+    if (!r) return NaN;
+    r.resetState();
+    const ms = this.sky.benchGround(r, n);
+    r.resetState();
+    return ms;
   }
 
   /** Ground elevation from the loaded terrain tiles (≈10 m), null where not loaded yet. */
@@ -751,6 +932,8 @@ export class GameWorld {
 
   dispose(): void {
     this.sky.dispose();
+    this.ground.dispose();
+    this.region?.dispose();
     this.renderer?.dispose();
     this.map.remove();
   }

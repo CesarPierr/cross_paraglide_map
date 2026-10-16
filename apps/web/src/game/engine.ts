@@ -202,6 +202,9 @@ export class GameEngine {
     this.start = { x: this.spawn.x, y: this.spawn.y };
     this.world = new GameWorld(container, this.frame, this.spawn);
     this.world.setView(opts.view);
+    // The model's grid also gives the landscape its distant relief and land cover; the date its snow.
+    this.world.setRegion(dem.url, dem.meta);
+    this.world.setSeason(scenario.month0, scenario.day);
     this.air = new AirMass(this.frame, scenario);
     this.pilotAir = new PilotAir(this.air, (x, y) => this.world.groundAt(x, y));
     this.hour = scenario.hour;
@@ -525,6 +528,7 @@ export class GameEngine {
         // The pilot's air glides towards each sample (no steps in the wind every 0.2 s).
         this.modelAir = a;
         this.pilotAir.setModel(a);
+        this.world.setSurfaceWind(a.u, a.v);
       })
       .catch(() => {})
       .finally(() => (this.sampling = false));

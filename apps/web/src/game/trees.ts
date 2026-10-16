@@ -4,10 +4,34 @@
  * conifers with some broadleaves, sizes varying — standing on the fine terrain. Seen from
  * high up the orthophotos already show the trees, so they are only grown below ~600 m
  * above the ground, where relief and scale matter (take-off, landing, low passes).
+ *
+ * Their colours are those of real canopies (albedo ~0.05 for conifers, ~0.07 for
+ * broadleaves in summer: as dark as the forests of the orthophotos around them), each tree
+ * a little different; the broadleaves follow the season (bare in winter, fresh green in
+ * spring, yellow and orange in autumn). They take the sun only where the ground does
+ * (shadows of the mountains and of the clouds, ground.ts `sunlit`).
  */
 import type { Map as MlMap } from 'maplibre-gl';
 import * as THREE from 'three';
 import type { LocalFrame } from './geo';
+import { sunlit, type SunUniforms } from './ground';
+
+/** Broadleaf crowns by month (linear albedo): bare twigs in winter, fresh in spring, autumn tints. */
+const BROADLEAF: [number, number, number][] = [
+  [0.06, 0.054, 0.045],
+  [0.06, 0.054, 0.045],
+  [0.058, 0.06, 0.042],
+  [0.055, 0.11, 0.035],
+  [0.05, 0.105, 0.033],
+  [0.045, 0.088, 0.03],
+  [0.045, 0.085, 0.03],
+  [0.046, 0.082, 0.03],
+  [0.05, 0.08, 0.03],
+  [0.11, 0.08, 0.026],
+  [0.08, 0.056, 0.032],
+  [0.06, 0.054, 0.045],
+];
+const CONIFER: [number, number, number] = [0.024, 0.045, 0.024];
 
 type Ring = [number, number][];
 
@@ -35,10 +59,18 @@ export class Forest {
   private plantedAt = { x: 1e12, y: 1e12 };
   private busy = false;
 
-  constructor(private max = 4000) {
-    const needle = new THREE.MeshLambertMaterial({ color: 0x2d4a2b });
-    const leaf = new THREE.MeshLambertMaterial({ color: 0x4f6b35 });
-    const bark = new THREE.MeshLambertMaterial({ color: 0x4a3a2a });
+  private month0 = 6;
+
+  constructor(
+    private max = 4000,
+    sun?: SunUniforms,
+  ) {
+    // White materials: the colour of each tree is its instance colour (albedo, linear).
+    const needle = new THREE.MeshLambertMaterial({ color: 0xffffff });
+    const leaf = new THREE.MeshLambertMaterial({ color: 0xffffff });
+    const bark = new THREE.MeshLambertMaterial();
+    bark.color.setRGB(0.07, 0.05, 0.035, THREE.LinearSRGBColorSpace);
+    if (sun) for (const m of [needle, leaf, bark]) sunlit(m, sun);
     // Unit shapes (1 m tall), scaled per tree; z up.
     const cone = new THREE.ConeGeometry(0.28, 0.85, 7);
     cone.rotateX(Math.PI / 2);
@@ -52,11 +84,19 @@ export class Forest {
     this.conifers = new THREE.InstancedMesh(cone, needle, max);
     this.broad = new THREE.InstancedMesh(crown, leaf, max);
     this.trunks = new THREE.InstancedMesh(trunk, bark, max * 2);
+    // Instance colours allocated once (setColorAt fills them).
+    for (const m of [this.conifers, this.broad]) m.instanceColor = new THREE.InstancedBufferAttribute(new Float32Array(max * 3), 3);
     for (const m of [this.conifers, this.broad, this.trunks]) {
       m.count = 0;
       m.frustumCulled = false;
       this.group.add(m);
     }
+  }
+
+  /** The scenario's month: the broadleaves' colour (re-planted with it). */
+  setSeason(month0: number): void {
+    this.month0 = ((month0 % 12) + 12) % 12;
+    this.plantedAt = { x: 1e12, y: 1e12 };
   }
 
   /** Re-plants around the pilot when he moved ~200 m (low down only). */
@@ -96,6 +136,9 @@ export class Forest {
     const q = new THREE.Quaternion();
     const p = new THREE.Vector3();
     const sc = new THREE.Vector3();
+    const col = new THREE.Color();
+    const bl = BROADLEAF[this.month0];
+    const autumn = this.month0 === 9 || this.month0 === 10;
     let nc = 0;
     let nb = 0;
     let nt = 0;
@@ -117,11 +160,21 @@ export class Forest {
         const h = 12 + 16 * hash(i * 13, j * 5);
         p.set(x, y, z - 0.5);
         q.setFromAxisAngle(new THREE.Vector3(0, 0, 1), hash(i, j * 17) * Math.PI * 2);
+        // Each tree a little darker or lighter, greener or yellower.
+        const shade = 0.75 + 0.5 * hash(i * 5 + 1, j * 3 + 2);
+        const tint = hash(i * 3 + 7, j * 7 + 1) - 0.5;
         if (kind < 0.72 && nc < this.max) {
           sc.set(h * (0.8 + 0.3 * hash(i + 3, j)), h * (0.8 + 0.3 * hash(i, j + 3)), h);
+          col.setRGB(CONIFER[0] * shade * (1 + 0.3 * tint), CONIFER[1] * shade, CONIFER[2] * shade * (1 - 0.2 * tint), THREE.LinearSRGBColorSpace);
+          this.conifers.setColorAt(nc, col);
           this.conifers.setMatrixAt(nc++, m4.compose(p, q, sc));
         } else if (nb < this.max) {
           sc.set(h * 0.9, h * 0.9, h * 0.8);
+          // In autumn the trees turn one by one: some still green, most yellow, a few red.
+          const turn = autumn ? hash(i * 11 + 5, j * 13 + 3) : 0;
+          const c = !autumn ? bl : turn < 0.25 ? BROADLEAF[8] : turn < 0.85 ? bl : [0.13, 0.05, 0.025];
+          col.setRGB(c[0] * shade * (1 + 0.25 * tint), c[1] * shade, c[2] * shade, THREE.LinearSRGBColorSpace);
+          this.broad.setColorAt(nb, col);
           this.broad.setMatrixAt(nb++, m4.compose(p, q, sc));
         } else continue;
         if (nt < this.max * 2) this.trunks.setMatrixAt(nt++, m4.compose(p, q, sc));
@@ -131,5 +184,6 @@ export class Forest {
     this.broad.count = nb;
     this.trunks.count = nt;
     for (const m of [this.conifers, this.broad, this.trunks]) m.instanceMatrix.needsUpdate = true;
+    for (const m of [this.conifers, this.broad]) if (m.instanceColor) m.instanceColor.needsUpdate = true;
   }
 }

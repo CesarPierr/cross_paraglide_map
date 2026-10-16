@@ -83,7 +83,7 @@ struct Cell {
   vec2 slope; vec2 valley; vec2 curated; vec2 regional; vec2 breeze; vec2 synoptic; vec2 total;
   float elev; float hAgl; float under; float slopeDeg; float aspect; float insol; float level; float depth;
   float cw; float cidx; float wb; float shelter; float lee; float venturi; float chan; float dyn; float thermal; float turb;
-  float hidx; float hw;
+  float hidx; float hw; float burial; float onset; float stored;
 };
 
 float cellSize(int j) {
@@ -261,14 +261,19 @@ Cell evalCell(ivec2 c) {
   o.dyn = (d0 - d1) * exp(-hh / R_DYN_H.x) + (d1 - d2) * exp(-hh / R_DYN_H.y) + d2 * exp(-hh / R_DYN_H.z);
 
   // Direct sun or the heat the ground stored (field.ts → RULES.thermalMemory).
-  float drive = max(uSunElev > 5.0 ? insol : 0.0, R_MEM_SHARE * IN.z * smoothstep(-2.0, 5.0, uSunElev));
+  float direct = uSunElev > 5.0 ? insol : 0.0;
+  float storedHeat = R_MEM_SHARE * IN.z * smoothstep(-2.0, 5.0, uSunElev);
+  float drive = max(direct, storedHeat);
+  o.stored = storedHeat > direct && storedHeat > 0.02 ? 1.0 : 0.0;
   float elevF = 0.55 + 0.45 * smoothstep(400.0, 2200.0, z);
   float convexF = 0.55 + 0.45 * smoothstep(-60.0, 140.0, Z.w);
   float windF = 1.0 - 0.6 * smoothstep(20.0, 45.0, uGKmh);
   // Onset per slope from the sunshine it received since sunrise, later in the valley's
   // morning cold pool (field.ts → thermalOnset, coldPoolBurial).
   float burial = coldPoolBurial(z - V.x, V.y - V.x);
-  float dayF = smoothstep(mix(R_SUN_H.x, R_POOL_SUN.x, burial), mix(R_SUN_H.y, R_POOL_SUN.y, burial), IN.y) * uThermalDecline;
+  o.burial = burial;
+  o.onset = smoothstep(mix(R_SUN_H.x, R_POOL_SUN.x, burial), mix(R_SUN_H.y, R_POOL_SUN.y, burial), IN.y);
+  float dayF = o.onset * uThermalDecline;
   o.thermal = W.w > 0.5 ? 0.0 : clamp(drive * uThermalSeason * uInstability * elevF * convexF * windF * dayF, 0.0, 1.0);
   o.turb = clamp(o.lee * smoothstep(8.0, 35.0, uGKmh) + o.venturi * smoothstep(15.0, 45.0, uGKmh) * 0.6, 0.0, 1.0);
   // Documented hazards matching the situation (field.ts), up to four per cell.
@@ -460,7 +465,7 @@ void main() {
   else if (k == 5) outColor = vec4(o.cidx, o.wb, o.shelter, o.lee);
   else if (k == 6) outColor = vec4(o.venturi, o.chan, o.dyn, o.thermal);
   else if (k == 7) outColor = vec4(o.turb, L.x, o.under, L.y);
-  else outColor = vec4(o.hidx, o.hw, 0.0, 0.0);
+  else outColor = vec4(o.hidx, o.hw, o.burial, o.onset + 2.0 * o.stored);
 }`;
 
 /** Downsampled thermal maxima for hotspot picking: max thermal and its offset in the block. */

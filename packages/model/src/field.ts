@@ -405,6 +405,10 @@ export interface CellResult {
   total: [number, number];
   dynamicLift: number;
   thermal: number;
+  /** Why the thermal is what it is: depth in the valley's morning cold pool 0..1, onset 0..1 (`thermalOnset`), driven by the heat stored by the ground (restitution). */
+  coldPool: number;
+  onset: number;
+  restitution: boolean;
   turbulence: number;
   /** Documented hazard active here (index into `CuratedLayer.hazards`, −1 none) and its weight 0..1. */
   hazardIndex: number;
@@ -437,6 +441,9 @@ export function newCellResult(): CellResult {
     total: [0, 0],
     dynamicLift: 0,
     thermal: 0,
+    coldPool: 0,
+    onset: 0,
+    restitution: false,
     turbulence: 0,
     hazardIndex: -1,
     hazardWeight: 0,
@@ -759,12 +766,17 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   // inertia, a little after sunset too), height, convexity, morning cold pool of the
   // valley, no water, not blown apart.
   const el = c.time.sun.elevation;
-  const drive = Math.max(el > 5 ? insol : 0, RULES.thermalMemory.share * c.time.sunRecent[k] * smoothstep(-2, 5, el));
+  const direct = el > 5 ? insol : 0;
+  const stored = RULES.thermalMemory.share * c.time.sunRecent[k] * smoothstep(-2, 5, el);
+  const drive = Math.max(direct, stored);
+  out.restitution = stored > direct && stored > 0.02;
   const elevF = 0.55 + 0.45 * smoothstep(400, 2200, z);
   const convexF = 0.55 + 0.45 * smoothstep(-60, 140, t.tpi[k]);
   const windF = 1 - 0.6 * smoothstep(20, 45, c.gKmh);
   const burial = coldPoolBurial(z - t.floor[k], t.env[k] - t.floor[k], c.time.nightFactor, c.gKmh);
-  const dayF = thermalOnset(c.time.sunHours[k], burial) * c.time.thermalDecline;
+  out.coldPool = burial;
+  out.onset = thermalOnset(c.time.sunHours[k], burial);
+  const dayF = out.onset * c.time.thermalDecline;
   out.thermal = t.water[k] ? 0 : clamp(drive * c.time.thermalSeason * c.instability * elevF * convexF * windF * dayF, 0, 1);
 
   out.turbulence = clamp(lee * smoothstep(8, 35, c.gKmh) + out.venturi * smoothstep(15, 45, c.gKmh) * 0.6, 0, 1);

@@ -1494,6 +1494,16 @@ a.src-title svg {
   border-left-color: var(--warn);
 }
 
+.probe-why {
+  margin: 6px 0 0;
+  padding-left: 16px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--muted);
+}
+.probe-why li + li {
+  margin-top: 2px;
+}
 .probe-meters {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

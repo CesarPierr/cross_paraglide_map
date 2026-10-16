@@ -1,10 +1,11 @@
 import type { PointForecast } from '@brises/shared';
-import { compassFr, describeVector } from '@brises/model';
+import { compassFr, describeVector, noonElevation, thermalSeasonFactor } from '@brises/model';
 import { useState } from 'react';
 import { useApp, useRuntime } from '../state/store';
 import { getController, getDataClient } from './controller-ref';
 import { startDraft } from './Feedback';
 import { fmtHour } from './format';
+import { stabilityLabel } from './Forecast';
 import { NearbySources } from './Nearby';
 import { ProfileChart } from './ProfileChart';
 import { IconClose, IconPlus, IconSun } from './icons';
@@ -143,10 +144,26 @@ function AirspacesHere({ lon, lat }: { lon: number; lat: number }) {
   );
 }
 
+/** Why the thermal is what it is here, in the model's terms (field.ts), or null. */
+function thermalReasons(
+  c: { thermal: number; insolation: number; coldPool: number; onset: number; restitution: boolean; lee: number },
+  s: { synopticKmh: number; lapseRate: number | null; month0: number; day: number },
+): string[] {
+  const out: string[] = [];
+  if (c.restitution && c.thermal > 0.02) out.push('Restitution : la pente, passée à l’ombre, rend la chaleur de la journée, d’où une ascendance douce.');
+  else if (c.insolation < 0.05 && c.thermal < 0.05) out.push('À l’ombre à cette heure : pas de thermique ici.');
+  else if (c.coldPool > 0.5 && c.onset < 0.9) out.push('Fond de vallée encore sous l’inversion du matin : les thermiques en sortent plus tard que sur les pentes.');
+  else if (c.onset < 0.9) out.push('Pente pas encore assez chauffée : les thermiques démarrent après une à trois heures de plein soleil.');
+  if (c.lee > 0.35 && s.synopticKmh > 10) out.push('Sous le vent : thermiques hachés par le rotor et l’air qui descend.');
+  if (s.lapseRate !== null) out.push(`Prévision : ${s.lapseRate.toLocaleString('fr-FR')} °C/km entre 1500 et 3000 m, ${stabilityLabel(s.lapseRate)}.`);
+  if (thermalSeasonFactor(noonElevation(s.month0, s.day, 45)) < 0.85) out.push('Soleil bas de la saison : thermiques plus faibles qu’en été.');
+  return out;
+}
+
 /** The probe, shown as a sheet in the left panel (bottom sheet on phones). */
 export function ProbeSheet() {
   const probe = useRuntime((r) => r.probe);
-  const { heightMode, heightAgl, heightAsl, synopticKmh, uiMode } = useApp();
+  const { heightMode, heightAgl, heightAsl, synopticKmh, uiMode, lapseRate, month0, day } = useApp();
   if (!probe) return null;
   const c = probe.result;
   const close = () => getController()?.clearProbe();
@@ -177,6 +194,7 @@ export function ProbeSheet() {
           : c.venturi > 0.4
             ? { tone: 'warn', text: 'Venturi : vent canalisé et accéléré entre les reliefs.' }
             : { tone: '', text: 'Exposition neutre au vent météo.' };
+  const reasons = thermalReasons(c, { synopticKmh, lapseRate, month0, day });
   const heightTxt = heightMode === 'agl' ? `${heightAgl} m sol` : `${heightAsl} m (${Math.max(0, Math.round(c.heightAgl))} m sol)`;
   return (
     <div className="probe-card sheet" aria-live="polite">
@@ -232,6 +250,13 @@ export function ProbeSheet() {
               <meter min={0} max={1} value={c.turbulence} low={0.3} high={0.6} optimum={0} />
             </div>
           </div>
+          {reasons.length > 0 && (
+            <ul className="probe-why">
+              {reasons.map((r) => (
+                <li key={r}>{r}</li>
+              ))}
+            </ul>
+          )}
         </>
       )}
       <AirspacesHere lon={probe.lon} lat={probe.lat} />

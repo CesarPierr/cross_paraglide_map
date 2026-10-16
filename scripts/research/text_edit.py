@@ -58,7 +58,7 @@ def cmd_list(lot: str, massif: str | None) -> None:
     for m in d['massifs']:
         if massif and m['id'] != massif:
             continue
-        print(json.dumps({'massif': m['id'], 'name': m['name'], 'summary': m.get('summary', ''), 'tips': m.get('tips', []), 'synoptic_effects': [{'index': i, 'wind': e.get('wind'), 'effect': e.get('effect')} for i, e in enumerate(m.get('synoptic_effects', []))]}, ensure_ascii=False))
+        print(json.dumps({'massif': m['id'], 'name': m.get('name', ''), 'summary': m.get('summary', ''), 'tips': m.get('tips', []), 'synoptic_effects': [{'index': i, 'wind': e.get('wind'), 'effect': e.get('effect')} for i, e in enumerate(m.get('synoptic_effects', []))]}, ensure_ascii=False))
         for cat in CATEGORIES:
             for it in m.get(cat, []):
                 row = {'massif': m['id'], 'category': cat, 'id': it.get('id', it.get('name'))}

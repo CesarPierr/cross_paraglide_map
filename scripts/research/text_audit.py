@@ -35,13 +35,13 @@ MASSIF_TEXT = {'summary', 'tips'}
 STEP_TEXT = {'text', 'title'}
 
 ATTRIBUTION = re.compile(
-    r"d['’]après|\bselon (?:un|une|des|le pilote|les pilotes|[A-Z])|racont|témoign|\bforum|commentaire|Vol ?Libre|XC ?Mag|Airshop|"
+    r"d['’]après(?![- ]midi)|\bselon (?:un|une|des|le pilote|les pilotes|(?-i:[A-Z]))|racont|témoign|\bforum|commentaire|Vol ?Libre|XC ?Mag|Airshop|"
     r"fiche FFVL|page FFVL|site (?:de la )?FFVL|\btopo (?:de|du|d['’])|\bblog|vidéo|YouTube|Facebook|Strava|\bun pilote\b|"
     r"\b(?:des|les|plusieurs) pilotes (?:disent|racontent|rapportent|citent|signalent|décrivent|évoquent)|\brécits?\b|"
     r"retour d['’]expérience|cité par|rapporté par|\bn°\s?\d+",
     re.I,
 )
-YEAR = re.compile(r'\b(?:19[5-9]\d|20[0-4]\d)\b')
+YEAR = re.compile(r'(?<!Natura )\b(?:19[5-9]\d|20[0-4]\d)\b(?!\s?m\b)')
 QUOTE = re.compile(r'«\s*([^»]+?)\s*»')
 NUMBER = re.compile(r'\d+(?:[   ]\d{3})*(?:[.,]\d+)?')
 

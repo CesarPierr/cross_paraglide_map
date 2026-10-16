@@ -71,9 +71,11 @@ visite courte et juste qu'une visite gonflée.
 - Expliquer les termes la première fois (brise de pente, convergence, restitution,
   sous le vent…) en une demi-phrase.
 - Chiffres seulement s'ils sont documentés (heures, km/h, altitudes, plafonds).
-- Ce qui vient de récits concordants s'écrit « les récits disent », ce qui est déduit
-  du terrain s'écrit « probablement » ou « on peut s'attendre à » ; ne jamais présenter
-  une déduction comme un fait.
+- Ce qui est recoupé s'énonce simplement, sans attribution (ni « les récits disent », ni
+  « d'après », ni nom, ni date) ; un témoignage isolé s'écrit comme une possibilité (« il
+  peut arriver que… ») ; ce qui est déduit du terrain s'écrit « probablement » ou « on peut
+  s'attendre à » ; ne jamais présenter une déduction comme un fait. Voir
+  `_methode/STYLE_TEXTES.md`, qui prime sur ce guide pour l'écriture.
 - Citer les contraintes réglementaires et environnementales documentées (TMA, ZIT,
   zones de quiétude, dates de nidification) au moment où le parcours les rencontre.
 - Pas de focus fourre-tout : 1 à 6 éléments par étape, ceux dont parle le texte.

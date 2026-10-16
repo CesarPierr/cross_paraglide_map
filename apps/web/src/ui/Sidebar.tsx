@@ -164,13 +164,18 @@ function windMatches(label: string, from: number, kmh: number): boolean {
 /** Sector summary: the first sentences, the rest one tap away. */
 function Summary({ text, atlas, order }: { text: string; atlas: Atlas; order: string[] }) {
   const [open, setOpen] = useState(false);
-  const short = text.match(/^(?:[^.!?]+[.!?]+\s*){1,3}/)?.[0]?.trim() ?? text;
+  // Summaries are written in short paragraphs (the massif in one idea first): the first
+  // one stays visible, the others unfold. Older one-block summaries fold after three sentences.
+  const paragraphs = text.split(/\n\s*\n/).map((p) => p.trim()).filter(Boolean);
+  const short = paragraphs.length > 1 ? paragraphs[0] : (text.match(/^(?:[^.!?]+[.!?]+\s*){1,3}/)?.[0]?.trim() ?? text);
   const folded = !open && short.length < text.length - 20;
   return (
     <div className="summary">
-      <p>
-        <RichText text={folded ? short : text} atlas={atlas} order={order} />
-      </p>
+      {(folded ? [short] : paragraphs.length > 1 ? paragraphs : [text]).map((p, i) => (
+        <p key={i}>
+          <RichText text={p} atlas={atlas} order={order} />
+        </p>
+      ))}
       {folded && (
         <button className="link-btn" onClick={() => setOpen(true)}>
           Lire la suite

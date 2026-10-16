@@ -737,7 +737,12 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   out.total[1] = by * wb + out.synoptic[1];
 
   // Orographic vertical speed of the air forced over the slope (dynamic lift).
-  out.dynamicLift = (out.synoptic[0] * gxk + out.synoptic[1] * gyk) * Math.exp(-hh / 350);
+  // By scales (slope, ridge, massif): the lift of a broad relief reaches higher (RULES.dynamicLiftScales).
+  const [h0, h1, h2] = RULES.dynamicLiftScales.heights;
+  const d0 = out.synoptic[0] * gxk + out.synoptic[1] * gyk;
+  const d1 = out.synoptic[0] * t.ridgeGx[k] + out.synoptic[1] * t.ridgeGy[k];
+  const d2 = out.synoptic[0] * t.massGx[k] + out.synoptic[1] * t.massGy[k];
+  out.dynamicLift = (d0 - d1) * Math.exp(-hh / h0) + (d1 - d2) * Math.exp(-hh / h1) + d2 * Math.exp(-hh / h2);
 
   // Thermal potential 0..1: sun on the slope or the heat its ground stored (thermal
   // inertia, a little after sunset too), height, convexity, morning cold pool of the

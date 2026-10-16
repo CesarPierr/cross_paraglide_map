@@ -163,6 +163,14 @@ elle-même sous le vent d'un autre relief. Contrôle sur les 115 sites de soarin
 leur vent documenté à 20 km/h, à 100 m du sol : de l'air qui monte à plus de 1 m/s (de quoi tenir
 en l'air) sur 47 sites au lieu de 17, médiane 0,9 m/s au lieu de 0,6.
 
+**Ascendance dynamique par échelles** (`RULES.dynamicLiftScales`) : la vitesse verticale U·∇z
+forcée par le relief est décomposée en trois parts, la pente (gradient lissé sur ≈ 0,2 km), la
+crête (≈ 0,5 km) et le massif (≈ 1,2 km), qui s'effacent avec la hauteur sur 350, 700 et 1500 m :
+en écoulement potentiel, la perturbation d'un relief de demi-largeur a s'éteint sur ≈ a. Les parts
+sont des différences d'échelles, si bien qu'une pente uniforme ne compte qu'une fois. La portance
+d'une crête large monte donc plus haut que celle d'une petite pente : 59 sites de soaring sur 115
+au-dessus de 1 m/s (au lieu de 47), médiane 1,0 m/s.
+
 **Stabilité de l'air (mode prévision)** (`stabilityFactors`, `RULES.lapseStandard`…) : la prévision
 donne, heure par heure, le gradient de température entre 850 et 700 hPa (≈ 1500 → 3000 m, AROME
 via Open-Meteo, avec les altitudes géopotentielles des deux niveaux). Règle des pilotes : en dessous

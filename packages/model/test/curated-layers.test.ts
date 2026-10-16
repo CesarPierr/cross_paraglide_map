@@ -182,6 +182,18 @@ describe('thermal onset, face by face', () => {
     expect(at(4.5)).toBeLessThan(at());
     expect(at(8.5)).toBeGreaterThan(at());
   });
+  it('carries the lift of a broad ridge higher than that of a slope (dynamic lift by scales)', () => {
+    // North wind on the north-facing (windward) side of the east–west valley: a smooth,
+    // broad slope, whose lift fades over the massif scale rather than the slope scale.
+    const k = 52 * grid.width + 60;
+    const at = (meters: number) => {
+      const p = params(14, { synoptic: { fromDeg: 0, speedKmh: 25 }, height: { mode: 'agl', meters } });
+      return evalCell(k, makeWindContext(terrain, computeTimeContext(terrain, p), p, null), newCellResult()).dynamicLift;
+    };
+    expect(at(50)).toBeGreaterThan(0.3);
+    // A single slope-scale term would keep exp(-350/350) ≈ 0.37 of it at 400 m.
+    expect(at(400) / at(50)).toBeGreaterThan(0.5);
+  });
   it('tears the thermals apart in the lee of a relief', () => {
     // North wind over the east–west valley: the slope facing south (row 30, north side)
     // is in the lee of the northern ridge.

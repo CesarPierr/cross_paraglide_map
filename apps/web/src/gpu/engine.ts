@@ -26,6 +26,8 @@ export interface StaticPack {
   tC2: Float32Array;
   /** Narrowing of the valleys and documented hazard slots 3–4 (packTerrainExtras). */
   tF: Float32Array;
+  /** Gradients of the relief at the ridge and massif scales (dynamic lift by scales). */
+  tM: Float32Array;
   breezes: CuratedBreezeInfo[];
   /** Documented hazards tied to a synoptic wind (their cells are in tC2.z). */
   hazards: CuratedHazardInput[];
@@ -110,7 +112,7 @@ export class GpuWindEngine {
   params: ModelParams | null = null;
 
   private gl: WebGL2RenderingContext;
-  private tex: Record<'V' | 'W' | 'R' | 'C' | 'C2' | 'F' | 'B' | 'insol' | 'probe' | 'hot' | 'sample', WebGLTexture> = {} as never;
+  private tex: Record<'V' | 'W' | 'R' | 'C' | 'C2' | 'F' | 'M' | 'B' | 'insol' | 'probe' | 'hot' | 'sample', WebGLTexture> = {} as never;
   private fbInsol!: WebGLFramebuffer;
   private fbField!: WebGLFramebuffer;
   private fbLift!: WebGLFramebuffer;
@@ -151,6 +153,7 @@ export class GpuWindEngine {
     this.tex.C = createTexture(gl, w, h, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: pack.tC });
     this.tex.C2 = createTexture(gl, w, h, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: pack.tC2 });
     this.tex.F = createTexture(gl, w, h, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: pack.tF });
+    this.tex.M = createTexture(gl, w, h, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: pack.tM });
     this.tex.B = createTexture(gl, Math.max(1, pack.breezes.length + pack.hazards.length), 1, { internal: gl.RGBA32F, format: gl.RGBA, type: gl.FLOAT, data: this.breezeData });
     // Instantaneous insolation (r), sunshine received since sunrise (g) and recent sunshine (b), per cell.
     this.tex.insol = createTexture(gl, w, h, { internal: gl.RGBA16F, format: gl.RGBA, type: gl.FLOAT });
@@ -208,7 +211,8 @@ export class GpuWindEngine {
     return this.dirtyField || this.dirtyTime;
   }
 
-  private bindModelUniforms(u: Uniforms): void {
+  /** Binds the model textures and uniforms; returns the first free texture unit. */
+  private bindModelUniforms(u: Uniforms): number {
     const gl = this.gl;
     const p = this.params!;
     const t = this.time!;
@@ -222,6 +226,7 @@ export class GpuWindEngine {
       ['tC', this.tex.C],
       ['tC2', this.tex.C2],
       ['tF', this.tex.F],
+      ['tM', this.tex.M],
       ['tB', this.tex.B],
       ['tInsol', this.tex.insol],
     ];
@@ -252,6 +257,7 @@ export class GpuWindEngine {
     gl.uniform1f(u.uHeightM, p.height.meters);
     gl.uniform1f(u.uBreezeScale, p.breezeScale);
     gl.uniform1i(u.uHazBase, this.breezes.length);
+    return units.length;
   }
 
   private draw(fb: WebGLFramebuffer, w: number, h: number, buffers: number): void {
@@ -336,11 +342,11 @@ export class GpuWindEngine {
     const [x, y] = this.grid.toGrid(lon, lat);
     const { p, u } = this.progs.probe;
     gl.useProgram(p);
-    this.bindModelUniforms(u);
-    // After the 9 model textures (units 0–8, bindModelUniforms).
-    gl.activeTexture(gl.TEXTURE9);
+    // After the model textures (bindModelUniforms).
+    const unit = this.bindModelUniforms(u);
+    gl.activeTexture(gl.TEXTURE0 + unit);
     gl.bindTexture(gl.TEXTURE_2D, this.liftTex);
-    gl.uniform1i(u.tLift, 9);
+    gl.uniform1i(u.tLift, unit);
     gl.uniform2i(u.uCell, Math.floor(x), Math.floor(y));
     this.draw(this.fbProbe, 9, 1, 1);
     const out = new Float32Array(36);

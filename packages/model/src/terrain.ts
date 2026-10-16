@@ -15,6 +15,14 @@ export interface Terrain {
   /** Slightly smoothed elevation gradient, east and north components (m/m). */
   gx: Float32Array;
   gy: Float32Array;
+  /**
+   * Gradient of the relief smoothed at the ridge (≈ 0.5 km) and massif (≈ 1.2 km) scales:
+   * the lift of a broad ridge reaches higher than that of a slope (field.ts, dynamic lift).
+   */
+  ridgeGx: Float32Array;
+  ridgeGy: Float32Array;
+  massGx: Float32Array;
+  massGy: Float32Array;
   /** Valley floor (local minimum envelope, ~1.7 km) and crest envelope (~6 km) elevations (m). */
   floor: Float32Array;
   env: Float32Array;
@@ -254,6 +262,8 @@ export function analyseTerrain(grid: Grid, rawElevation: Float32Array): Terrain 
 
   const zs = blur(z, w, h, 1.5);
   const { gx, gy } = gradient(zs, grid);
+  const ridge = gradient(blur(z, w, h, RULES.dynamicLiftScales.ridgeBlur), grid);
+  const mass = gradient(blur(z, w, h, RULES.dynamicLiftScales.massBlur), grid);
   const zMid = blur(z, w, h, 7);
   const tpi = new Float32Array(n);
   for (let k = 0; k < n; k++) tpi[k] = z[k] - zMid[k];
@@ -359,6 +369,10 @@ export function analyseTerrain(grid: Grid, rawElevation: Float32Array): Terrain 
     z,
     gx,
     gy,
+    ridgeGx: ridge.gx,
+    ridgeGy: ridge.gy,
+    massGx: mass.gx,
+    massGy: mass.gy,
     floor,
     env,
     tpi,

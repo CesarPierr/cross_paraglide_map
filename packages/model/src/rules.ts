@@ -201,6 +201,15 @@ export const RULES = {
    * under their documented wind (`model:check`, soaring).
    */
   windwardExposure: [0.05, 0.3] as [number, number],
+  /**
+   * Dynamic lift by scales: the vertical speed U·∇z forced by the slope (gradient smoothed
+   * over ≈ 0.2 km), the ridge (`ridgeBlur` cells, ≈ 0.5 km) and the massif (`massBlur`,
+   * ≈ 1.2 km), each part fading with the height above ground over `heights` (m): in
+   * potential flow the perturbation of a relief of half-width a fades over ≈ a. The parts
+   * are differences of scales (slope − ridge, ridge − massif, massif), so a uniform slope
+   * counts once. Check: soaring spots of the atlas under their documented wind.
+   */
+  dynamicLiftScales: { ridgeBlur: 3.5, massBlur: 8, heights: [350, 700, 1500] as [number, number, number] },
   lapseStandard: 6.5,
   lapseThermal: 0.18,
   lapseThermalRange: [0.4, 1.3] as [number, number],

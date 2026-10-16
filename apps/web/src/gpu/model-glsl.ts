@@ -18,6 +18,7 @@ uniform highp sampler2D tW;   // valley, lakeX, lakeY, water
 uniform highp sampler2D tR;   // seaX, seaY, plainX, plainY
 uniform highp sampler2D tC;   // curated layers main, cond: (index + weight, flow angle) × 2 (curated.ts → packCuratedLayers)
 uniform highp sampler2D tC2;  // curated thin layer (slope, katabatic): index + weight, flow angle; documented hazard slots 1, 2: index + weight
+uniform highp sampler2D tM;   // gradients of the relief at the ridge and massif scales (terrain.ts → ridgeGx, massGx)
 uniform highp sampler2D tF;   // narrowing of the valleys (terrain.ts → valleyFunnel), documented hazard slots 3, 4, 0
 uniform highp sampler2D tB;   // per curated breeze: speedMs, activity, layer kind (0 deep, 1 valley, 2 slope, 3 katabatic), 0;
                               // then from uHazBase, per documented hazard: target speed (m/s, strong breeze), activity, effect (0 lee, 1 venturi, 2 turbulence, 3 wind),
@@ -63,6 +64,7 @@ const vec2 R_POOL_WIND = vec2(${RULES.coldPoolWindKmh.map(f).join(', ')});
 const float R_MEM_SHARE = ${f(RULES.thermalMemory.share)};
 const float R_LEE_CUT = ${f(RULES.leeThermalCut)};
 const vec2 R_EXPOSE = vec2(${RULES.windwardExposure.map(f).join(', ')});
+const vec3 R_DYN_H = vec3(${RULES.dynamicLiftScales.heights.map(f).join(', ')});
 const vec2 R_LEE_CUT_WIND = vec2(${RULES.leeThermalWindKmh.map(f).join(', ')});
 const float R_CUR_DEEP = ${f(RULES.curatedDeepDepth)};
 const float R_CUR_ALIGN = ${f(RULES.curatedAlignWeight)};
@@ -250,7 +252,12 @@ Cell evalCell(ivec2 c) {
   o.wb = wb;
   o.breeze = b;
   o.total = b * wb + o.synoptic;
-  o.dyn = dot(o.synoptic, Z.yz) * exp(-hh / 350.0);
+  // By scales: slope, ridge, massif (field.ts → RULES.dynamicLiftScales).
+  vec4 M = texelFetch(tM, c, 0);
+  float d0 = dot(o.synoptic, Z.yz);
+  float d1 = dot(o.synoptic, M.xy);
+  float d2 = dot(o.synoptic, M.zw);
+  o.dyn = (d0 - d1) * exp(-hh / R_DYN_H.x) + (d1 - d2) * exp(-hh / R_DYN_H.y) + d2 * exp(-hh / R_DYN_H.z);
 
   // Direct sun or the heat the ground stored (field.ts → RULES.thermalMemory).
   float drive = max(uSunElev > 5.0 ? insol : 0.0, R_MEM_SHARE * IN.z * smoothstep(-2.0, 5.0, uSunElev));

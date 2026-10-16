@@ -87,10 +87,11 @@ self.onmessage = async (e: MessageEvent<WorkerRequest>) => {
         tR: pack4(n, t.seaX, t.seaY, t.plainX, t.plainY),
         ...packCuratedLayers(cur),
         tF: packTerrainExtras(t, cur),
+        tM: pack4(n, t.ridgeGx, t.ridgeGy, t.massGx, t.massGy),
         breezes: cur.breezes,
         hazards: msg.hazards,
       };
-      self.postMessage({ type: 'built', id: msg.id, pack, ms: performance.now() - t0 }, [pack.tZ.buffer, pack.tV.buffer, pack.tW.buffer, pack.tR.buffer, pack.tC.buffer, pack.tC2.buffer, pack.tF.buffer]);
+      self.postMessage({ type: 'built', id: msg.id, pack, ms: performance.now() - t0 }, [pack.tZ.buffer, pack.tV.buffer, pack.tW.buffer, pack.tR.buffer, pack.tC.buffer, pack.tC2.buffer, pack.tF.buffer, pack.tM.buffer]);
     } else if (msg.type === 'init') {
       const t0 = performance.now();
       const raw = await decodeDem(msg.demUrl, msg.meta);

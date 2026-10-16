@@ -167,10 +167,15 @@ vent et peut le traîner s'il ne l'affale pas.
   là où la photo manque de pixels et fond avec la distance :
   - forêt : houppiers de tailles diverses, trouées sombres, ombre propre qui grandit quand le soleil
     baisse, point chaud (plus claire soleil dans le dos, plus sombre à contre-jour) ;
-  - roche et falaises : strates d'épaisseur inégale avec corniches et surplombs, diaclases, coulures
-    sombres, sur les faces verticales (projection latérale) ; au-delà de ~60° la photo, étirée dans
-    la pente, est lissée en travers et les grands bancs (une dizaine de mètres) restent visibles à
-    plusieurs kilomètres ; blocs et éboulis vus du dessus ;
+  - roche et falaises : strates d'épaisseur inégale, la plupart affleurantes, quelques-unes en
+    corniche avec le pied à l'ombre, diaclases, coulures sombres, sur les faces verticales
+    (projection latérale) ; les bancs suivent des plis doux (pendage de quelques degrés, jusqu'à
+    ~15°, qui tourne d'une falaise à l'autre) et ne longent donc pas les courbes de niveau ; au-delà
+    de ~60° la photo, étirée dans la pente, est lissée en travers et les grands bancs (une dizaine
+    de mètres) restent visibles à plusieurs kilomètres, en teintes plus qu'en relief ; une forêt
+    sombre dans une maille boisée reste forêt jusqu'à ~68° (le relief grossier raidit la forêt le
+    long d'une barre) ; blocs et éboulis vus du dessus. Le micro-relief n'incline jamais la normale
+    de plus de 45° : au-delà, un texel ne fait qu'un trait noir ;
   - prairie et alpage : touffes et taches ; cultures : sillons, orientés différemment d'une parcelle
     à l'autre ;
   - neige et glace : sastrugi en travers du vent, crevasses en travers de l'écoulement des glaciers,

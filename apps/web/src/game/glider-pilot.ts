@@ -498,6 +498,9 @@ const tD = new THREE.Vector3();
 const tE = new THREE.Vector3();
 const Y = new THREE.Vector3(0, 1, 0);
 const tQ = new THREE.Quaternion();
+const qUp = new THREE.Quaternion();
+const vUp = new THREE.Vector3();
+const vPivot = new THREE.Vector3();
 const tM = new THREE.Matrix4();
 const tS = new THREE.Vector3(1, 1, 1);
 
@@ -669,7 +672,12 @@ export class PilotRig {
       bootM.rotation.set(-sh * 0.3, 0, 0);
     }
     // Hands on the brake handles: up under the pulleys, down to the hips at full brake,
-    // out on the outer A lines with big ears.
+    // out on the outer A lines with big ears. On the take-off they hold the risers too and
+    // go round the carabiners with them as the wing rises: behind the pilot, arms back, in
+    // a forward launch; in front of him facing the wing. In flight the canopy frame is the
+    // glider's and nothing turns.
+    vUp.copy(Y).applyQuaternion(qUp.copy(inp.canopyInv).invert());
+    qUp.setFromUnitVectors(Y, vUp);
     for (let s = 0; s < 2; s++) {
       const sg = s ? 1 : -1;
       const b = Math.min(1, Math.max(0, (s ? st.brakeR : st.brakeL) || 0));
@@ -677,6 +685,8 @@ export class PilotRig {
       const bulge = Math.sin(Math.PI * b);
       h.set(sg * (0.27 + 0.06 * b + 0.045 * bulge), 0.3 - 0.46 * b, 0.0 + 0.13 * b - 0.03 * bulge);
       if (ears > 0) h.lerp(tA.set(sg * 0.34, 0.25, -0.11), Math.min(1, ears * 1.5));
+      vPivot.set(sg * 0.205, 0.015, 0);
+      h.sub(vPivot).applyQuaternion(qUp).add(vPivot);
       // Shoulder in the glider frame (the body leans).
       const sh = this.shoulder;
       sh.lerpVectors(SEATED.shoulder, STANDING.shoulder, k);

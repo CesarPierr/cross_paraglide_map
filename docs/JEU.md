@@ -116,6 +116,9 @@ vent et peut le traîner s'il ne l'affale pas.
 ### Le jeu
 
 - Tous les décos de l'atlas et de la FFVL dans l'emprise du relief ; départ en l'air ou au déco.
+- **Vue pilote** (l'œil suit la tête : assis dans la sellette en vol, debout au déco) ou de
+  l'extérieur. Au déco, les mains tiennent élévateurs et freins et suivent les élévateurs quand la
+  voile monte : bras en arrière face pente, devant soi face à la voile.
 - **Météo** : réglée à la main, aléatoire selon la saison (puis elle évolue), ou **météo du jour**
   (`forecast.ts`) : la prévision AROME au décollage pour aujourd'hui donne le vent aux crêtes, la
   masse d'air par le gradient 850–700 hPa (3 °C/km → stable, 9 → très instable) et l'humidité par

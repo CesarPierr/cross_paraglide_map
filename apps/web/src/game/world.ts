@@ -46,8 +46,11 @@ const CENTER_M = 1200;
 /**
  * Pilot's eyes in the glider frame: seated and leaning back, about 0.3 m above and behind
  * the carabiners, so risers, brake handles and the pod sit in the lower part of the view.
+ * Standing on the take-off the head is up above the shoulders (glider-pilot.ts, STANDING):
+ * left at the seat's place, the eye would look at the pilot's own shoulders from behind.
  */
 const EYE = [0, 0.32, 0.34] as const;
+const EYE_STANDING = [0, 0.43, 0.03] as const;
 
 function gameStyle(): StyleSpecification {
   const style = buildStyle();
@@ -579,10 +582,13 @@ export class GameWorld {
       const qHead = new THREE.Quaternion().setFromEuler(new THREE.Euler(head.pitch + 0.5 * st.pitch, -head.yaw, 0.35 * st.bank, 'YXZ'));
       const qCam = q.clone().multiply(qHead);
       const sag = 0.05 * Math.min(3, Math.max(0, st.load - 1));
-      eye = new THREE.Vector3(0, EYE[1] - sag, EYE[2]).applyQuaternion(q);
+      const ks = this.glider.standing();
+      const ey = EYE[1] + (EYE_STANDING[1] - EYE[1]) * ks - sag;
+      const ez = EYE[2] + (EYE_STANDING[2] - EYE[2]) * ks;
+      eye = new THREE.Vector3(0, ey, ez).applyQuaternion(q);
       fwd = new THREE.Vector3(0, 0, -1).applyQuaternion(qCam);
       up = new THREE.Vector3(0, 1, 0).applyQuaternion(qCam);
-      this.cockpitCam.position.set(0, EYE[1] - sag, EYE[2]);
+      this.cockpitCam.position.set(0, ey, ez);
       this.cockpitCam.quaternion.copy(qHead);
       // The cockpit is drawn in the glider's frame: the sun and the sky's zenith follow its attitude.
       const qi = this.qInv.copy(q).invert();

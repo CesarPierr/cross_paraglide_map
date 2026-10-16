@@ -28,6 +28,8 @@ export interface GliderModel {
   setInflation(theta: number | null, phi?: number, facingWing?: boolean, ground?: number): void;
   /** The pilot's head (hidden in first person: the camera is in it). */
   pilot: THREE.Group;
+  /** 0 seated in the harness … 1 standing on the take-off (the pose's blend, eased). */
+  standing(): number;
   update(st: GliderState): void;
 }
 
@@ -255,5 +257,6 @@ export function buildGlider(colors = { main: 0xd62f2f, stripe: 0xf4f1ea, under: 
 
   setInflation(null);
   update({ brakeL: 0, brakeR: 0, collapse: { side: 0, amount: 0, frontal: 0, cravat: 0, cravatSide: 0 } } as unknown as GliderState);
-  return { root, pilot, update, setInflation };
+  const standing = () => stand * stand * (3 - 2 * stand);
+  return { root, pilot, standing, update, setInflation };
 }

@@ -79,9 +79,9 @@ function loadSettings(): Settings {
 const isTouch = () => typeof window !== 'undefined' && window.matchMedia('(pointer: coarse)').matches;
 
 /** One-shot request from the map (« Voler d'ici »): where to start. */
-function readGoto(): { lon: number; lat: number } | null {
+function readGoto(): { lon: number; lat: number; name?: string } | null {
   try {
-    const g = JSON.parse(localStorage.getItem('brises.game.goto') ?? 'null') as { lon: number; lat: number; t: number } | null;
+    const g = JSON.parse(localStorage.getItem('brises.game.goto') ?? 'null') as { lon: number; lat: number; name?: string; t: number } | null;
     // Valid for a minute: opening the game later starts from the last take-off again.
     return g && Date.now() - g.t < 60000 ? g : null;
   } catch {
@@ -103,7 +103,7 @@ function nearestTakeoff(list: Takeoff[], p: { lon: number; lat: number }): Takeo
   return best;
 }
 
-function TakeoffPicker({ list, value, onPick }: { list: Takeoff[] | null; value: Takeoff; onPick: (t: Takeoff) => void }) {
+function TakeoffPicker({ list, value, pending, onPick }: { list: Takeoff[] | null; value: Takeoff; pending: string | null; onPick: (t: Takeoff) => void }) {
   const [q, setQ] = useState('');
   const [open, setOpen] = useState(false);
   const hits = useMemo(() => {
@@ -115,11 +115,20 @@ function TakeoffPicker({ list, value, onPick }: { list: Takeoff[] | null; value:
     <div className="game-field game-takeoff">
       <span>Déco</span>
       <div>
-        <button className="gt-current" onClick={() => setOpen(!open)}>
-          <strong>{value.name}</strong>
-          <small>
-            {value.massif} · {Math.round(value.alt)} m · {value.orientation}
-          </small>
+        <button className="gt-current" onClick={() => setOpen(!open)} disabled={pending !== null}>
+          {pending !== null ? (
+            <>
+              <strong>{pending}</strong>
+              <small>recherche du décollage…</small>
+            </>
+          ) : (
+            <>
+              <strong>{value.name}</strong>
+              <small>
+                {value.massif} · {Math.round(value.alt)} m · {value.orientation}
+              </small>
+            </>
+          )}
         </button>
         {open && (
           <div className="gt-pop">
@@ -198,6 +207,7 @@ function Menu({ onStart, error, takeoffs, routes }: { onStart: (s: Settings, t: 
         <TakeoffPicker
           list={takeoffs}
           value={takeoff}
+          pending={goto && !takeoffs ? (goto.name ?? 'Décollage demandé') : null}
           onPick={(t) => {
             setGoto(null);
             set({ takeoffId: t.id });
@@ -337,6 +347,7 @@ function Menu({ onStart, error, takeoffs, routes }: { onStart: (s: Settings, t: 
         <div className="game-actions">
           <button
             className="game-go"
+            disabled={goto !== null && !takeoffs}
             onClick={() =>
               onStart(
                 {

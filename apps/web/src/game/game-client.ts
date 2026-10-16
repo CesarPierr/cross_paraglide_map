@@ -18,7 +18,9 @@ export interface PotentialGrid {
 export interface SunInfo {
   sunElevation: number;
   sunAzimuth: number;
+  /** Astronomical season factor, and the seasonal intensity of the thermals (noon sun, ground efficiency) 0..1. */
   season: number;
+  thermalSeason: number;
   decline: number;
 }
 
@@ -56,6 +58,14 @@ export class GameModel {
   async sample(params: ModelParams, points: { lon: number; lat: number; alt: number }[]): Promise<(ModelAir | null)[]> {
     const r = await this.call<{ air: (ModelAir | null)[] }>({ type: 'sample', params, points });
     return r.air;
+  }
+  /**
+   * The model's wind (m/s) above points given as lon/lat pairs, at heights `agl` above its
+   * ground: `u[k * agl.length + l]` for point k and height l.
+   */
+  async winds(params: ModelParams, lonLat: Float64Array, agl: number[]): Promise<{ u: Float32Array; v: Float32Array }> {
+    const r = await this.call<{ u: Float32Array; v: Float32Array }>({ type: 'winds', params, lonLat, agl });
+    return { u: r.u, v: r.v };
   }
   potential(params: ModelParams, bbox: [number, number, number, number], aglM: number): Promise<PotentialGrid> {
     return this.call({ type: 'potential', params, bbox, aglM });

@@ -1,15 +1,17 @@
 /**
- * The game loop: reads the controls, flies the glider through the air (the site's
- * model for the wind and the relief's lift, the air mass for the thermals, sink,
- * clouds and gusts), detects the landing, moves the camera and feeds the HUD.
+ * The game loop: reads the controls, flies the glider through the air (the site's model
+ * for the wind, the fine relief's lift, rotors and gaps, the air mass for the thermals,
+ * sink, clouds and gusts: see pilot-air.ts), handles the take-off and the landing's
+ * run-out on the ground, moves the camera and feeds the HUD.
  */
 import type { Atlas, AtlasFeature } from '@brises/shared';
 import type { GridMeta, ModelParams } from '@brises/model';
-import { AirMass, type Scenario } from './airmass';
+import { AirMass, PROFILE_DZ, type Scenario } from './airmass';
 import { AudioVario } from './audio';
-import { newGlider, step, WINGS, type Controls, type FlightEvent, type GliderState, type WingParams } from './flight';
+import { newGlider, setAirspeed, step, WINGS, type AirSample, type Controls, type FlightEvent, type GliderState, type WingParams } from './flight';
 import { GameModel } from './game-client';
-import { launchStep, newLaunch, type LaunchMode, type LaunchState } from './launch';
+import { landingStep, launchStep, newLanding, newLaunch, touchdown, type LandingState, type LaunchMode, type LaunchState } from './launch';
+import { PilotAir } from './pilot-air';
 import { advanceTask, distanceMadeGood, taskFromRoute, taskLength, type Task } from './task';
 import { Multiplayer, type NetEvent } from './net';
 import type { ModelAir } from './game-worker';
@@ -61,6 +63,15 @@ export interface Hud {
   multi: { room: string; status: string; pilots: { name: string; distKm: number; dz: number }[]; chat: { name: string; text: string; self: boolean }[] } | null;
   /** On the take-off: wing elevation and side angle (deg), airspeed (km/h), what to do. */
   launch: { phase: string; theta: number; phi: number; airKmh: number; facingWing: boolean; mode: LaunchMode; hint: string } | null;
+  /** Brake pressure in each hand (kg): rises with speed and travel, drops before a fold or a stall. */
+  pressureL: number;
+  pressureR: number;
+  /** 0..1: how close the angle of attack is to a fold (the pressure going soft): a warning for active piloting. */
+  pressureWarn: number;
+  /** Weight shift in the harness, -1 (left) … 1 (right). */
+  weight: number;
+  /** After touchdown: run-out speed (km/h) and what to do. */
+  landing: { speedKmh: number; hint: string } | null;
 }
 
 export interface FlightEnd {
@@ -112,12 +123,22 @@ export class GameEngine {
   private model = new GameModel();
   private audio = new AudioVario();
   glider: GliderState;
-  private controls: Controls = { brakeL: 0, brakeR: 0, speedbar: 0, ears: false };
+  private controls: Controls = { brakeL: 0, brakeR: 0, speedbar: 0, ears: false, weight: 0 };
+  /** The air at the pilot each step (model wind, relief, air mass, turbulence), and its buffer. */
+  readonly pilotAir: PilotAir;
+  private airSample: AirSample = { u: 0, v: 0, w: 0, turbulence: 0, wL: 0, wR: 0, agl: 100 };
+  /** Weight shift asked by touch controls (the keys S/F add to it). */
+  private weightInput = 0;
+  /** Game times of the last relief refresh, shade update and wind-profile request. */
+  private reliefT = -1e9;
+  private reliefAt = { x: 1e12, y: 1e12 };
+  private shadeT = 0;
+  private profiling = false;
+  /** Landing run-out on the ground, until the pilot stops. */
+  private landing: LandingState | null = null;
+  private touchKill = false;
   /** Vario as an instrument shows it: filtered over ~0.6 s. */
   private varioF = 0;
-  /** Lift of the wind along the relief at ~10 m resolution (cliffs), from the loaded terrain. */
-  private fineLift: number | null = null;
-  private fineT = 0;
   /** The head looks a little down by default, as a pilot does. */
   head: Head = { yaw: 0, pitch: -0.12 };
   private keys = new Set<string>();
@@ -179,6 +200,7 @@ export class GameEngine {
     this.world = new GameWorld(container, this.frame, this.spawn);
     this.world.setView(opts.view);
     this.air = new AirMass(this.frame, scenario);
+    this.pilotAir = new PilotAir(this.air, (x, y) => this.world.groundAt(x, y));
     this.hour = scenario.hour;
     this.showThermals = opts.showThermals;
     this.timeScale = scenario.timeScale;
@@ -326,7 +348,8 @@ export class GameEngine {
     }
     const p = this.params();
     const sun = await this.model.time(p);
-    this.air.season = Math.max(0, Math.min(1, sun.season));
+    // The thermals' seasonal intensity (noon sun through the air mass, ground efficiency), as the map's model uses it.
+    this.air.season = Math.max(0, Math.min(1, sun.thermalSeason ?? sun.season));
     this.air.hour = this.hour;
     this.sunInfo = sun;
     const grid = await this.model.potential(p, this.bbox(20000), 60);
@@ -343,7 +366,40 @@ export class GameEngine {
       }));
       this.air.placeSources(grid, known, g.x, g.y);
     } else this.air.refreshPotential(grid);
+    // The breezes changed with the hour: the thermals lean with the site's wind again.
+    void this.requestProfiles();
     if (Math.hypot(g.x - this.socksAt.x, g.y - this.socksAt.y) > 9000) await this.placeSocks();
+  }
+
+  /**
+   * The site's wind above the thermal sources within 15 km, at PROFILE_DZ heights: each
+   * thermal leans with the layers it crosses (up a slope in the breeze, then with the wind
+   * aloft), as the pilot drifts with the same wind.
+   */
+  private async requestProfiles(): Promise<void> {
+    if (this.profiling) return;
+    const g = this.glider;
+    const near = this.air.sources.filter((s) => Math.abs(s.x - g.x) < 15000 && Math.abs(s.y - g.y) < 15000);
+    if (!near.length) return;
+    this.profiling = true;
+    try {
+      const lonLat = new Float64Array(near.length * 2);
+      near.forEach((s, k) => {
+        const [lon, lat] = this.frame.toLngLat(s.x, s.y);
+        lonLat[2 * k] = lon;
+        lonLat[2 * k + 1] = lat;
+      });
+      const { u, v } = await this.model.winds(this.params(), lonLat, PROFILE_DZ);
+      this.air.setProfiles(
+        near.map((s) => s.id),
+        u,
+        v,
+      );
+    } catch {
+      // The model is being re-initialised: the thermals keep the wind aloft until next time.
+    } finally {
+      this.profiling = false;
+    }
   }
 
   private async placeSocks(): Promise<void> {
@@ -375,6 +431,7 @@ export class GameEngine {
     else if (k === 'c') this.head = { yaw: 0, pitch: -0.12 };
     else if (k === 'm') this.audio.enabled = !this.audio.enabled;
     else if (k === 'o') this.controls.ears = !this.controls.ears;
+    else if (k === 'r' && this.launch && (this.launch.phase === 'aborted' || this.launch.phase === 'ready')) this.relaunch();
     else if (k === '+' || k === '=') this.timeScale = Math.min(8, this.timeScale * 2);
     else if (k === '-') this.timeScale = Math.max(1, this.timeScale / 2);
   }
@@ -390,9 +447,14 @@ export class GameEngine {
   setSpeedbar(v: number): void {
     this.controls.speedbar = v;
   }
-  /** Touch controls on the take-off: run / pull the A risers, turn around. */
-  setLaunchInput(go: boolean, turn: boolean): void {
+  /** Weight shift in the harness, -1 (left) … 1 (right) (touch controls; keys S/F). */
+  setWeight(v: number): void {
+    this.weightInput = Math.max(-1, Math.min(1, v));
+  }
+  /** Touch controls on the take-off: run / pull the A risers, turn around, kill the wing (C risers). */
+  setLaunchInput(go: boolean, turn: boolean, kill = false): void {
     this.touch = { go, turn };
+    this.touchKill = kill;
   }
   toggleThermals(): void {
     this.showThermals = !this.showThermals;
@@ -432,6 +494,8 @@ export class GameEngine {
     if (k.has('e')) c.brakeR = Math.min(1, c.brakeR + rate);
     if (k.has('d')) c.brakeR = Math.max(0, c.brakeR - rate);
     c.stabilo = k.has('x');
+    // Weight shift: S leans left, F right (on top of the touch control).
+    c.weight = Math.max(-1, Math.min(1, this.weightInput + (k.has('f') ? 1 : 0) - (k.has('s') ? 1 : 0)));
     if (k.has(' ') && !this.launch) {
       c.speedbar = 1;
       this.barByKey = true;
@@ -455,41 +519,12 @@ export class GameEngine {
       .sample(this.params(), [{ lon, lat, alt: this.glider.z }])
       .then(([a]) => {
         if (!a) return;
-        // Smooth the jumps between samples.
-        if (!this.modelAir) this.modelAir = a;
-        else {
-          const m = this.modelAir;
-          const k = 0.5;
-          this.modelAir = { ...a, u: m.u + (a.u - m.u) * k, v: m.v + (a.v - m.v) * k, lift: m.lift + (a.lift - m.lift) * k, turbulence: m.turbulence + (a.turbulence - m.turbulence) * k };
-        }
+        // The pilot's air glides towards each sample (no steps in the wind every 0.2 s).
+        this.modelAir = a;
+        this.pilotAir.setModel(a);
       })
       .catch(() => {})
       .finally(() => (this.sampling = false));
-  }
-
-  /**
-   * Air forced along the relief at the pilot, from the terrain tiles (~10 m): the local
-   * wind times the ground slope along it, fading with the height above the ground on the
-   * scale of the face (a 300 m cliff lifts higher than a 30 m bank). Positive on the face
-   * the wind blows onto, negative behind.
-   */
-  private reliefLift(x: number, y: number, z: number, ground: number, u: number, v: number): number | null {
-    const U = Math.hypot(u, v);
-    if (U < 0.3) return 0;
-    const ux = u / U;
-    const uy = v / U;
-    const at = (d: number) => this.world.groundAt(x + ux * d, y + uy * d);
-    const a = at(-45);
-    const b = at(45);
-    const far = at(-250);
-    const farB = at(250);
-    if (a === null || b === null || far === null || farB === null) return null;
-    const slope = (b - a) / 90;
-    // Height of the face: relief over a few hundred metres along the wind.
-    const face = Math.max(40, Math.max(b, farB, ground) - Math.min(a, far, ground));
-    const agl = Math.max(0, z - ground);
-    const lift = U * Math.max(-1.5, Math.min(2.5, slope)) * Math.exp(-agl / (0.8 * face));
-    return Math.max(-4, Math.min(6, lift));
   }
 
   groundAt(x: number, y: number): number {
@@ -512,44 +547,39 @@ export class GameEngine {
       const h = dt / steps;
       const g = this.glider;
       const ground = this.groundAt(g.x, g.y);
-      const m = this.modelAir;
-      this.fineT -= dt;
-      if (this.fineT <= 0 && m) {
-        this.fineT = 0.1;
-        this.fineLift = this.reliefLift(g.x, g.y, g.z, ground, m.u, m.v);
+      // The relief along the wind through the pilot (~10 times a second or every 15 m).
+      if ((this.gameT - this.reliefT > 0.1 || Math.hypot(g.x - this.reliefAt.x, g.y - this.reliefAt.y) > 15) && this.modelAir) {
+        this.reliefT = this.gameT;
+        this.reliefAt = { x: g.x, y: g.y };
+        this.pilotAir.update(g, ground);
       }
-      const reliefW = this.fineLift ?? m?.lift ?? 0;
+      // Shade on the thermal sources from the cumulus (about once a second).
+      this.shadeT += dt;
+      if (this.shadeT >= 1 && this.sunInfo) {
+        this.air.updateShade(this.sunInfo.sunAzimuth, this.sunInfo.sunElevation, this.gameT, this.shadeT, g.x, g.y);
+        this.shadeT = 0;
+      }
       if (this.launch) this.groundStep(dt, steps);
-      else for (let i = 0; i < steps; i++) {
-        const v = this.air.vertical(g.x, g.y, g.z, ground, this.gameT);
-        // Wing tips, 5 m either side across the heading.
-        const rx = Math.cos(g.heading) * 5;
-        const ry = -Math.sin(g.heading) * 5;
-        const wR = this.air.vertical(g.x + rx, g.y + ry, g.z, ground, this.gameT).w;
-        const wL = this.air.vertical(g.x - rx, g.y - ry, g.z, ground, this.gameT).w;
-        const agl = g.z - ground;
-        const wind = m ? Math.hypot(m.u, m.v) : 0;
-        const turb = Math.min(1, (m?.turbulence ?? 0) + v.shear + (agl < 120 && wind > 4 ? 0.15 : 0));
-        // Turbulence: a frozen field carried by the wind, read at the centre and the tips.
-        const gust = this.air.turbulenceAt(g.x, g.y, g.z, this.gameT, agl, turb);
-        const tR = this.air.turbulenceAt(g.x + rx, g.y + ry, g.z, this.gameT, agl, turb).w;
-        const tL = this.air.turbulenceAt(g.x - rx, g.y - ry, g.z, this.gameT, agl, turb).w;
-        const leeSink = -(m?.lee ?? 0) * wind * 0.25;
-        const events = step(g, this.controls, { u: (m?.u ?? 0) + gust.u, v: (m?.v ?? 0) + gust.v, w: reliefW + v.w + gust.w + leeSink, turbulence: turb, wL: wL + tL, wR: wR + tR }, h, Math.random);
-        if (!Number.isFinite(g.x + g.y + g.z + g.airspeed)) {
-          // Never leave the pilot in a broken state: back to the start.
-          console.error('glider state not finite, restarting', { ...g });
-          this.restart();
-          break;
+      else if (this.landing) this.landingRun(dt, steps);
+      else
+        for (let i = 0; i < steps; i++) {
+          const air = this.pilotAir.sample(g, ground, this.gameT, h, this.airSample);
+          const events = step(g, this.controls, air, h, Math.random);
+          if (!Number.isFinite(g.x + g.y + g.z + g.airspeed + g.vx + g.vy + g.vz)) {
+            // Never leave the pilot in a broken state: back to the start.
+            console.error('glider state not finite, restarting', { ...g });
+            this.restart();
+            break;
+          }
+          this.whiteout += (this.pilotAir.cloud - this.whiteout) * Math.min(1, h * 2);
+          for (const e of events) {
+            this.incident = { text: EVENT_TEXT[e], until: this.flightS + (e === 'reopened' ? 2 : 5) };
+            if (e !== 'reopened' && e !== 'cravat-cleared') this.audio.flap();
+          }
+          if (this.checkGround(this.groundAt(g.x, g.y))) break;
         }
-        this.whiteout += (v.cloud - this.whiteout) * Math.min(1, h * 2);
-        for (const e of events) {
-          this.incident = { text: EVENT_TEXT[e], until: this.flightS + (e === 'reopened' ? 2 : 5) };
-          if (e !== 'reopened' && e !== 'cravat-cleared') this.audio.flap();
-        }
-      }
       this.maxAlt = Math.max(this.maxAlt, g.z);
-      if (this.task && !this.launch) {
+      if (this.task && !this.launch && !this.landing) {
         const tagged = advanceTask(this.task, this.glider.x, this.glider.y, this.flightS);
         if (tagged) {
           this.world.setTask(this.task.points, this.task.next);
@@ -559,8 +589,8 @@ export class GameEngine {
       }
       this.varioF += (g.vz - this.varioF) * Math.min(1, dt / 0.6);
       const gl = this.glider;
-      this.audio.update(this.launch ? 0 : this.varioF, real, this.launch ? this.launch.airspeed : gl.airspeed, Math.min(1, gl.collapse.amount * 1.5 + gl.collapse.frontal + gl.stall + gl.spin));
-      if (!this.launch) this.checkGround(this.groundAt(this.glider.x, this.glider.y));
+      const onGround = !!this.launch || !!this.landing;
+      this.audio.update(onGround ? 0 : this.varioF, real, this.launch ? this.launch.airspeed : gl.airspeed, Math.min(1, gl.collapse.amount * 1.5 + gl.collapse.frontal + gl.stall + gl.spin));
       this.timers.sample -= real;
       if (this.timers.sample <= 0) {
         this.timers.sample = 0.2;
@@ -598,30 +628,34 @@ export class GameEngine {
     }
   };
 
-  /** On the take-off: inflation, control, run, lift-off (see launch.ts). */
+  /** On the take-off: inflation, control, run, lift-off, abort (see launch.ts). */
   private groundStep(dt: number, steps: number): void {
     const L = this.launch!;
     const g = this.glider;
     const m = this.modelAir;
-    const psi = this.spawn.heading;
-    const sx = Math.sin(psi);
-    const sy = Math.cos(psi);
+    const psi0 = this.spawn.heading;
     const u = m?.u ?? 0;
     const v = m?.v ?? 0;
-    // The site's wind at the take-off, relative to the run direction.
+    // The run follows the take-off's direction, steered by the brakes once running.
+    const psi = psi0 + L.dir;
+    const sx = Math.sin(psi);
+    const sy = Math.cos(psi);
+    // The site's wind at the take-off, relative to the run direction (a log profile: the wing is ~6 m up).
     const headwind = -(u * sx + v * sy);
     const crosswind = -(u * sy - v * sx);
     const here = this.groundAt(g.x, g.y);
     const ahead = this.groundAt(g.x + sx * 15, g.y + sy * 15);
     const slope = (here - ahead) / 15;
     const k = this.keys;
-    const input = { go: k.has('z') || k.has('w') || this.touch.go, turn: k.has(' ') || this.touch.turn, brakeL: this.controls.brakeL, brakeR: this.controls.brakeR };
+    const input = { go: k.has('z') || k.has('w') || this.touch.go, turn: k.has(' ') || this.touch.turn, kill: k.has('x') || this.touchKill, brakeL: this.controls.brakeL, brakeR: this.controls.brakeR };
     const h = dt / steps;
     for (let i = 0; i < steps; i++) launchStep(L, input, headwind, crosswind, slope, h);
-    g.x += sx * L.run * dt;
-    g.y += sy * L.run * dt;
+    // Dragged by the wing: the pilot slides downwind.
+    const back = L.drag;
+    g.x += sx * (L.run - back) * dt;
+    g.y += sy * (L.run - back) * dt;
     g.z = this.groundAt(g.x, g.y) + 1.1;
-    g.heading = L.facingWing ? (psi + Math.PI) % (2 * Math.PI) : psi;
+    g.heading = L.facingWing ? (psi + Math.PI) % (2 * Math.PI) : (psi + 2 * Math.PI) % (2 * Math.PI);
     g.brakeL = this.controls.brakeL;
     g.brakeR = this.controls.brakeR;
     g.airspeed = L.airspeed;
@@ -632,8 +666,8 @@ export class GameEngine {
     if (L.phase === 'airborne') {
       // Flying: the glider takes over at the airspeed reached, the wing overhead.
       const z = g.z + 0.3;
-      this.glider = this.makeGlider(g.x, g.y, z, psi);
-      this.glider.airspeed = Math.max(7, L.airspeed);
+      this.glider = this.makeGlider(g.x, g.y, z, (psi + 2 * Math.PI) % (2 * Math.PI));
+      setAirspeed(this.glider, Math.max(7, L.airspeed));
       this.glider.brakeL = this.controls.brakeL;
       this.glider.brakeR = this.controls.brakeR;
       this.launch = null;
@@ -641,27 +675,97 @@ export class GameEngine {
       this.liftoffT = this.flightS;
       this.head = { yaw: 0, pitch: -0.12 };
       this.incident = { text: 'Décollé ! Mains hautes, éloigne-toi du relief', until: this.flightS + 4 };
+    } else if (L.phase === 'aborted') {
+      this.incident = { text: `${L.failReason ?? 'Voile affalée.'} (R pour recommencer)`, until: this.flightS + 6 };
     } else if (L.phase === 'failed') {
       this.ended = true;
       this.cb.onEnd({ kind: 'launch', vz: 0, groundKmh: L.run * 3.6, flightS: this.flightS, distKm: 0, maxAlt: g.z, reason: L.failReason ?? '' });
     }
   }
 
-  private checkGround(ground: number): void {
+  /** After an abort: back to the take-off's spot, the wing laid out again. */
+  relaunch(): void {
+    if (this.startMode === 'air') return;
+    this.launch = newLaunch(this.startMode);
+    const g = this.glider;
+    g.x = this.spawn.x;
+    g.y = this.spawn.y;
+    g.z = this.groundAt(g.x, g.y) + 1.1;
+    this.world.glider.setInflation(this.launch.theta, 0, this.launch.facingWing);
+    this.incident = null;
+  }
+
+  /**
+   * Contact with the ground: the impact along the slope's normal and the speed along it
+   * (see launch.ts touchdown); a fair contact goes on into the run-out. Returns true once
+   * the glider is on the ground.
+   */
+  private checkGround(ground: number): boolean {
     const g = this.glider;
     // Just after lift-off the feet may still brush the slope: no landing for 2 s.
     if (this.flightS - this.liftoffT < 2 && g.z < ground + 0.5) {
       g.z = ground + 0.5;
-      return;
+      if (g.vz < 0) g.vz = 0;
+      return false;
     }
-    if (g.z > ground + 0.2) return;
-    g.z = ground;
+    // The feet touch about a metre below the carabiners.
+    if (g.z > ground + 0.9) return false;
+    // The slope's normal from the fine terrain around the touchdown.
+    const e = 3;
+    const gx = (this.groundAt(g.x + e, g.y) - this.groundAt(g.x - e, g.y)) / (2 * e);
+    const gy = (this.groundAt(g.x, g.y + e) - this.groundAt(g.x, g.y - e)) / (2 * e);
+    const nl = Math.hypot(gx, gy, 1);
+    const td = touchdown(g.vx, g.vy, g.vz, -gx / nl, -gy / nl, 1 / nl);
     const groundKmh = Math.hypot(g.vx, g.vy) * 3.6;
-    const vz = g.vz;
-    // Contact: under 2.5 m/s a landing, 2.5–4 hard, beyond a crash; too fast over the ground
-    // (no flare, tail wind) is hard too.
-    const kind: FlightEnd['kind'] = vz > -2.5 && groundKmh < 30 ? 'landed' : vz > -4 && groundKmh < 42 ? 'hard' : 'crash';
+    g.z = ground + 1.1;
+    if (td.kind === 'crash' || td.kind === 'hard') {
+      this.endFlight(td.kind, g.vz, groundKmh, td.reason);
+      return true;
+    }
+    // Run it out along the ground, in the direction of the motion.
+    const dir = Math.atan2(g.vx, g.vy);
+    this.landing = newLanding(td.along, dir);
+    this.landingVz = g.vz;
+    this.landingKmh = groundKmh;
+    return true;
+  }
+  private landingVz = 0;
+  private landingKmh = 0;
+
+  /** The run-out after touchdown: the pilot runs it out and kills the wing (see launch.ts landingStep). */
+  private landingRun(dt: number, steps: number): void {
+    const L = this.landing!;
+    const g = this.glider;
+    const m = this.modelAir;
+    const sx = Math.sin(L.dir);
+    const sy = Math.cos(L.dir);
+    const headwind = -((m?.u ?? 0) * sx + (m?.v ?? 0) * sy) * 0.6;
+    const here = this.groundAt(g.x, g.y);
+    const ahead = this.groundAt(g.x + sx * 4, g.y + sy * 4);
+    const k = this.keys;
+    const brake = (this.controls.brakeL + this.controls.brakeR) / 2;
+    const h = dt / steps;
+    for (let i = 0; i < steps; i++) landingStep(L, brake, k.has('x') || this.touchKill, headwind, (here - ahead) / 4, h);
+    g.x += sx * L.v * dt;
+    g.y += sy * L.v * dt;
+    g.z = this.groundAt(g.x, g.y) + 1.1;
+    g.vx = sx * L.v;
+    g.vy = sy * L.v;
+    g.vz = 0;
+    g.airspeed = Math.max(0, L.v + headwind);
+    g.brakeL = this.controls.brakeL;
+    g.brakeR = this.controls.brakeR;
+    const settle = Math.exp(-dt / 0.3);
+    g.bank *= settle;
+    g.pitch *= settle;
+    this.world.glider.setInflation(L.theta, 0, false);
+    if (L.phase === 'done') this.endFlight(L.kind, this.landingVz, this.landingKmh, L.reason);
+  }
+
+  private endFlight(kind: FlightEnd['kind'], vz: number, groundKmh: number, reason: string): void {
+    const g = this.glider;
     this.ended = true;
+    this.landing = null;
     this.audio.update(0, 0);
     const t = this.task;
     this.cb.onEnd({
@@ -671,6 +775,7 @@ export class GameEngine {
       flightS: this.flightS,
       distKm: this.distKm(),
       maxAlt: this.maxAlt,
+      reason: reason || undefined,
       task: t ? { name: t.name, goal: t.goalT !== null, time: t.goalT !== null ? fmtTime(t.goalT) : null, madeKm: distanceMadeGood(t, g.x, g.y) / 1000, totalKm: taskLength(t) / 1000, tagged: t.next, count: t.points.length } : undefined,
     });
   }
@@ -708,8 +813,8 @@ export class GameEngine {
     const from = m ? ((Math.atan2(-m.u, -m.v) * 180) / Math.PI + 360) % 360 : 0;
     const hh = Math.floor(this.hour);
     const mm = Math.floor((this.hour - hh) * 60);
-    const base = this.air.cloudBase(ground);
-    const ceiling = this.air.ceiling(ground);
+    const base = this.air.cloudBaseAt(g.x, g.y, ground);
+    const ceiling = this.air.ceilingAt(g.x, g.y, ground);
     if (this.incident && this.flightS > this.incident.until) this.incident = null;
     return {
       alt: g.z,
@@ -740,6 +845,11 @@ export class GameEngine {
       wing: this.wing.id,
       ears: g.ears > 0.5,
       launch: this.launch ? this.launchHud(this.launch) : null,
+      pressureL: g.pressureL,
+      pressureR: g.pressureR,
+      pressureWarn: this.launch || this.landing ? 0 : Math.max(0, Math.min(1, (4 - Math.min(g.marginL, g.marginR)) / 4)),
+      weight: g.weightShift,
+      landing: this.landing ? { speedKmh: Math.round(Math.abs(this.landing.v) * 3.6), hint: this.landing.theta > 0.8 ? 'Cours, puis freins à fond (ou X) pour affaler la voile' : 'Voile affalée' } : null,
       task: this.task ? this.taskHud(this.task) : null,
       multi: this.multi
         ? {
@@ -779,7 +889,11 @@ export class GameEngine {
   private launchHud(L: LaunchState) {
     const deg = (r: number) => Math.round((r * 180) / Math.PI);
     let hint: string;
-    if (L.phase === 'ready') hint = L.mode === 'forward' ? 'Face à la pente : Z pour courir et gonfler' : 'Face à ta voile : Z pour tirer les A (gonflage)';
+    if (L.phase === 'aborted') hint = 'Voile affalée : R pour la replacer et recommencer';
+    else if (L.drag > 0.3) hint = 'La voile te traîne : affale-la (X : les C, ou freins à fond)';
+    else if (L.killing) hint = 'Tu affales la voile (C / freins à fond)';
+    else if (L.wall) hint = 'Vent fort : la voile fait un mur, garde-la basse aux freins puis Z pour la monter';
+    else if (L.phase === 'ready') hint = L.mode === 'forward' ? 'Face à la pente : Z pour courir et gonfler' : 'Face à ta voile : Z pour tirer les A (gonflage)';
     else if (L.theta < 1.1) hint = 'La voile monte… accompagne-la';
     else if (L.theta < 1.7 && L.thetaRate > 0.25) hint = 'Elle arrive au-dessus : un peu de frein (A et E) pour la temporiser';
     else if (Math.abs(L.phi) > 0.25) hint = L.phi > 0 ? 'Elle part à droite : frein gauche (A), place-toi dessous' : 'Elle part à gauche : frein droit (E), place-toi dessous';
@@ -821,7 +935,8 @@ export class GameEngine {
 
   restart(): void {
     this.glider = this.makeGlider(this.spawn.x, this.spawn.y, this.spawn.z, this.spawn.heading);
-    this.controls = { brakeL: 0, brakeR: 0, speedbar: 0, ears: false };
+    this.controls = { brakeL: 0, brakeR: 0, speedbar: 0, ears: false, weight: 0 };
+    this.landing = null;
     if (this.task) {
       this.task.next = 0;
       this.task.tags = [];

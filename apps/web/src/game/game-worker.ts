@@ -28,6 +28,7 @@ export type GameWorkerRequest =
   | { type: 'init'; id: number; demUrl: string; meta: GridMeta; breezes: CuratedBreezeInput[]; hazards: CuratedHazardInput[]; center: [number, number]; radiusM: number }
   | { type: 'time'; id: number; params: ModelParams }
   | { type: 'sample'; id: number; params: ModelParams; points: { lon: number; lat: number; alt: number }[] }
+  | { type: 'winds'; id: number; params: ModelParams; lonLat: Float64Array; agl: number[] }
   | { type: 'potential'; id: number; params: ModelParams; bbox: [number, number, number, number]; aglM: number };
 
 /** Air at one point, from the model. */
@@ -44,6 +45,10 @@ export interface ModelAir {
   /** Thermal potential 0..1 here. */
   thermal: number;
   hazard: string | null;
+  /** Speed-up of the wind through a gap (0..1, already in u, v). */
+  venturi: number;
+  /** Vertical shear of the wind here (1/s): the valley breeze under the wind aloft, an inversion. */
+  shear: number;
 }
 
 let terrain: Terrain | null = null;
@@ -72,8 +77,16 @@ function timeContext(p: ModelParams): TimeContext {
 
 const cell = newCellResult();
 
-/** Model at one point, bilinear over the four surrounding cells. */
+/** Model at one point, bilinear over the four surrounding cells; with the shear over the 60 m above. */
 function sampleAt(p: ModelParams, lon: number, lat: number, alt: number): ModelAir | null {
+  const a = sampleOnce(p, lon, lat, alt);
+  if (!a) return null;
+  const b = sampleOnce(p, lon, lat, alt + 60);
+  if (b) a.shear = Math.hypot(b.u - a.u, b.v - a.v) / 60;
+  return a;
+}
+
+function sampleOnce(p: ModelParams, lon: number, lat: number, alt: number): ModelAir | null {
   const t = terrain!;
   const grid = t.grid;
   if (!grid.contains(lon, lat)) return null;
@@ -84,7 +97,7 @@ function sampleAt(p: ModelParams, lon: number, lat: number, alt: number): ModelA
   const j0 = Math.max(0, Math.min(grid.height - 2, Math.floor(gy - 0.5)));
   const fx = Math.max(0, Math.min(1, gx - 0.5 - i0));
   const fy = Math.max(0, Math.min(1, gy - 0.5 - j0));
-  const out: ModelAir = { u: 0, v: 0, lift: 0, turbulence: 0, lee: 0, ground: 0, thermal: 0, hazard: null };
+  const out: ModelAir = { u: 0, v: 0, lift: 0, turbulence: 0, lee: 0, ground: 0, thermal: 0, hazard: null, venturi: 0, shear: 0 };
   let best = 0;
   for (let dj = 0; dj < 2; dj++) {
     for (let di = 0; di < 2; di++) {
@@ -100,6 +113,7 @@ function sampleAt(p: ModelParams, lon: number, lat: number, alt: number): ModelA
       out.lee += cell.lee * wgt;
       out.ground += cell.elevation * wgt;
       out.thermal += cell.thermal * wgt;
+      out.venturi += cell.venturi * wgt;
       if (cell.hazardIndex >= 0 && cell.hazardWeight * wgt > best) {
         best = cell.hazardWeight * wgt;
         out.hazard = curated?.hazards?.[cell.hazardIndex]?.name ?? null;
@@ -135,11 +149,39 @@ self.onmessage = async (e: MessageEvent<GameWorkerRequest>) => {
     } else if (msg.type === 'time') {
       if (!terrain) throw new Error('not initialised');
       const ctx = timeContext(msg.params);
-      self.postMessage({ type: 'time', id: msg.id, sunElevation: ctx.sun.elevation, sunAzimuth: ctx.sun.azimuth, season: ctx.season, decline: ctx.thermalDecline });
+      self.postMessage({ type: 'time', id: msg.id, sunElevation: ctx.sun.elevation, sunAzimuth: ctx.sun.azimuth, season: ctx.season, thermalSeason: ctx.thermalSeason, decline: ctx.thermalDecline });
     } else if (msg.type === 'sample') {
       if (!terrain) throw new Error('not initialised');
       const air = msg.points.map((q) => sampleAt(msg.params, q.lon, q.lat, q.alt));
       self.postMessage({ type: 'sample', id: msg.id, air });
+    } else if (msg.type === 'winds') {
+      // Wind only, nearest cell, at heights above the model's ground: the profiles above the
+      // thermal sources (a few hundred points, one wind context per height).
+      if (!terrain) throw new Error('not initialised');
+      const t = terrain;
+      const grid = t.grid;
+      const np = msg.lonLat.length / 2;
+      const nl = msg.agl.length;
+      const u = new Float32Array(np * nl);
+      const v = new Float32Array(np * nl);
+      const cells = new Int32Array(np).fill(-1);
+      for (let k = 0; k < np; k++) {
+        const lon = msg.lonLat[2 * k];
+        const lat = msg.lonLat[2 * k + 1];
+        if (!grid.contains(lon, lat)) continue;
+        const [gx, gy] = grid.toGrid(lon, lat);
+        cells[k] = Math.max(0, Math.min(grid.height - 1, Math.floor(gy))) * grid.width + Math.max(0, Math.min(grid.width - 1, Math.floor(gx)));
+      }
+      for (let l = 0; l < nl; l++) {
+        const ctx = makeWindContext(t, timeContext(msg.params), { ...msg.params, height: { mode: 'agl', meters: Math.max(5, msg.agl[l]) } }, curated);
+        for (let k = 0; k < np; k++) {
+          if (cells[k] < 0) continue;
+          evalCell(cells[k], ctx, cell);
+          u[k * nl + l] = cell.total[0];
+          v[k * nl + l] = cell.total[1];
+        }
+      }
+      self.postMessage({ type: 'winds', id: msg.id, u, v }, [u.buffer, v.buffer]);
     } else if (msg.type === 'potential') {
       if (!terrain) throw new Error('not initialised');
       const t = terrain;

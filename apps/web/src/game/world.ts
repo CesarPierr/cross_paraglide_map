@@ -158,6 +158,7 @@ export class GameWorld {
   private cockpitSun = new THREE.DirectionalLight(0xfff4e0, 2.2);
   private hemi = new THREE.HemisphereLight(0xcfe3ff, 0x6b6a55, 1.1);
   private cockpitHemi = new THREE.HemisphereLight(0xcfe3ff, 0x6b6a55, 1.2);
+  private qInv = new THREE.Quaternion();
   private eye = new THREE.Vector3();
   private lastFrame = performance.now();
   private wind: [number, number] = [0, 0];
@@ -252,29 +253,30 @@ export class GameWorld {
     // view, else the air mass's formula for a valley floor).
     const hazeTop = this.hazeTop > 0 ? this.hazeTop : 1400 + (1 - humidity) * 2800;
     const k = this.sky.setLight(dir, elevation, humidity, instability, cover, hazeTop, this.anchor.z + this.eye.z);
-    // Lights of the three.js objects from the same atmosphere: the sunlight's colour after
-    // its path through the air, the sky above and the ground's bounce below, at the level
-    // the eye is adapted to (exposure).
-    const lum = (c: THREE.Color) => 0.2126 * c.r + 0.7152 * c.g + 0.0722 * c.b;
-    const norm = (c: THREE.Color) => c.clone().multiplyScalar(1 / Math.max(c.r, c.g, c.b, 1e-6));
-    const ex = k.exposure / 9.5;
-    const sunColor = norm(k.sun);
-    this.sun.color.copy(sunColor);
-    this.sun.intensity = Math.min(2.6, 2.6 * lum(k.sun) * ex) * (1 - 0.25 * cover);
+    // The three.js objects in the same light and through the same camera as the sky and
+    // the landscape: radiances per unit of sun illuminance, the renderer's exposure and ACES
+    // curve those of the passes. Sun: its irradiance after its path through the air; sky:
+    // its irradiance on a horizontal surface; below: the ground's bounce.
+    if (this.renderer) this.renderer.toneMappingExposure = k.exposure;
+    const s = k.sun;
+    const sm = Math.max(s.r, s.g, s.b, 1e-6);
+    this.sun.color.setRGB(s.r / sm, s.g / sm, s.b / sm, THREE.LinearSRGBColorSpace);
+    this.sun.intensity = sm * (1 - 0.1 * cover);
     this.sunBase.glider = this.sun.intensity;
-    this.cockpitSun.color.copy(sunColor);
+    this.cockpitSun.color.copy(this.sun.color);
     this.cockpitSun.intensity = this.sun.intensity;
-    const skyCol = norm(k.skyAbove).lerp(new THREE.Color(1, 1, 1), 0.35 + 0.3 * cover);
-    const groundCol = norm(k.ground);
-    const hemiI = Math.max(0.35, Math.min(1.5, lum(k.skyAbove) * k.exposure * 1.7));
+    const sky = k.skyIrrCam;
+    const hm = Math.max(sky.r, sky.g, sky.b, 1e-6);
     for (const h of [this.hemi, this.cockpitHemi, this.chaseHemi]) {
-      h.color.copy(skyCol);
-      h.groundColor.copy(groundCol);
-      h.intensity = hemiI;
+      h.color.setRGB(sky.r / hm, sky.g / hm, sky.b / hm, THREE.LinearSRGBColorSpace);
+      h.groundColor.setRGB((Math.PI * k.ground.r) / hm, (Math.PI * k.ground.g) / hm, (Math.PI * k.ground.b) / hm, THREE.LinearSRGBColorSpace);
+      h.intensity = hm;
     }
     this.chaseSun.position.copy(dir);
-    this.chaseSun.color.copy(sunColor);
+    this.chaseSun.color.copy(this.sun.color);
     this.chaseSun.intensity = this.sun.intensity;
+    // The sky is above (z up here; three.js's default would put it in the north).
+    this.hemi.position.set(0, 0, 1);
     this.chaseHemi.position.set(0, 0, 1);
     if (!this.loaded) return;
     this.applyMapLight(azimuth, elevation, humidity, cover);
@@ -303,22 +305,27 @@ export class GameWorld {
     for (const id of ['bm-ign-ortho', 'bm-s2']) {
       this.map.setPaintProperty(id, 'raster-brightness-max', own ? 1 : 0.5 + 0.5 * (0.35 + 0.65 * day));
       this.map.setPaintProperty(id, 'raster-saturation', own ? 0 : -0.15 + 0.15 * day - 0.15 * humidity - 0.15 * cover);
-      this.map.setPaintProperty(id, 'raster-contrast', own ? 0.04 : -0.05 - 0.12 * humidity);
+      this.map.setPaintProperty(id, 'raster-contrast', own ? 0 : -0.05 - 0.12 * humidity);
     }
-    // Lambert shading by the sun's direction, the light raised a little above the real sun
-    // (the photos already hold some shading; flat ground must not go black at dusk): faces
-    // turned away darken bluish, faces to a low sun take a warm highlight.
-    const alt = Math.max(2, elevation) * 0.75 + 15;
-    const s = k.sun;
-    const m = Math.max(s.r, s.g, s.b, 1e-6);
-    const warm = `rgba(${Math.round((255 * s.r) / m)}, ${Math.round((240 * s.g) / m)}, ${Math.round((215 * s.b) / m)}, ${(0.07 + 0.22 * (1 - day)).toFixed(3)})`;
+    // Relief: Lambert shading from the real sun (true slopes), darkening only: a slope turned
+    // away from the sun loses the direct light's share of its illumination, a slope facing a
+    // low sun keeps it all; the landscape pass brings flat ground back to the photo's level,
+    // so slopes facing a low sun come out brighter than the plain, as they are.
+    const lum = (c: THREE.Color) => 0.2126 * c.r + 0.7152 * c.g + 0.0722 * c.b;
+    const sunShare = lum(k.sunIrr) / Math.max(1e-5, lum(k.sunIrr) + lum(k.skyIrr));
+    // MapLibre blends the shade in sRGB: losing the sun's share of the light (linear) is a
+    // darkening of 1 − (1 − share)^(1/2.2) there.
+    const alpha = Math.min(0.85, 1 - Math.pow(1 - 0.95 * sunShare * (1 - 0.3 * cover), 1 / 2.2));
+    const alt = Math.max(1.5, elevation);
+    const flat = Math.max(0, 1 - 2 * Math.sin((alt * Math.PI) / 180));
+    this.sky.hillFlat = own ? 1 - alpha * flat : 1;
     this.map.setPaintProperty('hillshade', 'hillshade-method', 'basic');
     this.map.setPaintProperty('hillshade', 'hillshade-illumination-anchor', 'map');
     this.map.setPaintProperty('hillshade', 'hillshade-illumination-direction', azimuth);
     this.map.setPaintProperty('hillshade', 'hillshade-illumination-altitude', alt);
-    this.map.setPaintProperty('hillshade', 'hillshade-exaggeration', 0.42 + 0.18 * (1 - day));
-    this.map.setPaintProperty('hillshade', 'hillshade-shadow-color', `rgba(14, 22, 44, ${(0.42 + 0.3 * (1 - day)) * (1 - 0.35 * cover)})`);
-    this.map.setPaintProperty('hillshade', 'hillshade-highlight-color', warm);
+    this.map.setPaintProperty('hillshade', 'hillshade-exaggeration', own ? 0.5 : 0.42 + 0.18 * (1 - day));
+    this.map.setPaintProperty('hillshade', 'hillshade-shadow-color', own ? `rgba(0, 0, 0, ${alpha.toFixed(3)})` : `rgba(14, 22, 44, ${(0.42 + 0.3 * (1 - day)) * (1 - 0.35 * cover)})`);
+    this.map.setPaintProperty('hillshade', 'hillshade-highlight-color', own ? 'rgba(255, 255, 255, 0)' : `rgba(255, 240, 215, ${(0.07 + 0.22 * (1 - day)).toFixed(3)})`);
   }
 
   setWind(u: number, v: number): void {
@@ -333,6 +340,9 @@ export class GameWorld {
       onAdd: (map, gl) => {
         this.renderer = new THREE.WebGLRenderer({ canvas: map.getCanvas(), context: gl, antialias: true });
         this.renderer.autoClear = false;
+        // The glider, the birds and the trees through the same filmic curve and exposure as the sky.
+        this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
+        this.renderer.toneMappingExposure = this.sky.light?.exposure ?? 4.2;
       },
       // Offscreen work before MapLibre binds and clears the frame (no extra store/reload of
       // the multisampled frame on tiled GPUs): atmosphere tables, shadow map, clouds.
@@ -361,7 +371,8 @@ export class GameWorld {
           r.render(this.worldScene, this.worldCam);
           return;
         }
-        f.depthRange = [dr[0], dr[1]];
+        f.depthRange[0] = dr[0];
+        f.depthRange[1] = dr[1];
         this.sky.drawBackground(r, f);
         if (this.sky.groundActive !== this.groundPass) {
           // The landscape pass started (or stopped) working: MapLibre's fog and grading follow.
@@ -403,30 +414,45 @@ export class GameWorld {
    */
   private makeFrameInfo(gl: WebGL2RenderingContext, near: number, far: number): FrameInfo {
     const inv = this.worldCam.projectionMatrixInverse;
-    const at = (x: number, y: number, z: number) => new THREE.Vector3(x, y, z).applyMatrix4(inv);
-    const f0 = at(0, 0, 1);
-    const n0 = at(0, 0, -1);
+    const f = this.fi;
+    const f0 = this.fiTmp[0].set(0, 0, 1).applyMatrix4(inv);
+    const n0 = this.fiTmp[1].set(0, 0, -1).applyMatrix4(inv);
     // Camera centre: the view axis extended back from the near plane by near/(far−near) of its length.
-    const eye = n0.clone().sub(f0.clone().sub(n0).multiplyScalar(near / (far - near)));
-    const fx = at(1, 0, 1);
-    const fy = at(0, 1, 1);
+    f.eye.copy(n0).sub(this.fiTmp[2].copy(f0).sub(n0).multiplyScalar(near / (far - near)));
+    f.dirBase.copy(f0).sub(f.eye);
+    f.dirX.set(1, 0, 1).applyMatrix4(inv).sub(f0);
+    f.dirY.set(0, 1, 1).applyMatrix4(inv).sub(f0);
     const terrain = (this.map as unknown as { terrain?: { _fboDepthTexture?: { texture?: WebGLTexture } } }).terrain;
-    return {
-      cam: this.worldCam,
-      width: gl.drawingBufferWidth,
-      height: gl.drawingBufferHeight,
-      eye,
-      anchor: this.anchor,
-      dirBase: f0.clone().sub(eye),
-      dirX: fx.sub(f0),
-      dirY: fy.sub(f0),
-      near,
-      far,
-      depthRange: [0, 1],
-      terrainDepth: terrain?._fboDepthTexture?.texture ?? null,
-      fovY: (this.fovDeg * Math.PI) / 180,
-    };
+    f.width = gl.drawingBufferWidth;
+    f.height = gl.drawingBufferHeight;
+    f.anchor = this.anchor;
+    f.near = near;
+    f.far = far;
+    f.depthRange[0] = 0;
+    f.depthRange[1] = 1;
+    // MapLibre's terrain depth (an internal: without it the landscape pass is skipped and
+    // MapLibre's own fog carries the haze).
+    f.terrainDepth = terrain?._fboDepthTexture?.texture ?? null;
+    f.fovY = (this.fovDeg * Math.PI) / 180;
+    return f;
   }
+
+  private fi: FrameInfo = {
+    cam: this.worldCam,
+    width: 1,
+    height: 1,
+    eye: new THREE.Vector3(),
+    anchor: { x: 0, y: 0, z: 0 },
+    dirBase: new THREE.Vector3(),
+    dirX: new THREE.Vector3(),
+    dirY: new THREE.Vector3(),
+    near: 1,
+    far: 1000,
+    depthRange: [0, 1],
+    terrainDepth: null,
+    fovY: 1,
+  };
+  private fiTmp = [new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()];
 
   /**
    * Places the camera for this frame and the glider in the world. Returns the camera
@@ -458,7 +484,10 @@ export class GameWorld {
       up = new THREE.Vector3(0, 1, 0).applyQuaternion(qCam);
       this.cockpitCam.position.set(0, EYE[1] - sag, EYE[2]);
       this.cockpitCam.quaternion.copy(qHead);
-      this.cockpitSun.position.copy(this.sun.position.clone().applyQuaternion(q.clone().invert()));
+      // The cockpit is drawn in the glider's frame: the sun and the sky's zenith follow its attitude.
+      const qi = this.qInv.copy(q).invert();
+      this.cockpitSun.position.copy(this.sun.position).applyQuaternion(qi);
+      this.cockpitHemi.position.set(0, 0, 1).applyQuaternion(qi);
     } else {
       // Chase camera: behind the glider, orbiting with the arrows.
       const yaw = st.heading + head.yaw;
@@ -475,7 +504,7 @@ export class GameWorld {
     this.sky.frame(this.anchor, eye, this.wind[0], this.wind[1], dt);
     // Under a cloud the glider is in the shade: its sun light dims (ray towards the sun).
     this.sunlight += (this.sky.sunlightAt(st.x, st.y, st.z + 5) - this.sunlight) * Math.min(1, dt * 1.5);
-    const sunI = this.sunBase.glider * (0.25 + 0.75 * this.sunlight);
+    const sunI = this.sunBase.glider * (0.08 + 0.92 * this.sunlight);
     this.cockpitSun.intensity = sunI;
     this.chaseSun.intensity = sunI;
     const bearing = Math.atan2(fwd.x, fwd.y) * DEG;

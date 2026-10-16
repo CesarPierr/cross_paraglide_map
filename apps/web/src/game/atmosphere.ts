@@ -20,10 +20,13 @@
  *   the camera along 64 × 48 view directions over the screen, at 32 distances up to
  *   160 km (froxels), read by the landscape and cloud passes (`atmoAerialLut`), so the
  *   haze on a far ridge, on a far cloud and the sky above them match.
- * Radiances are per unit of sun illuminance; `uExposure` turns them into display values
- * through `atmoTonemap` (1 − e^−x), also used to read the orthophotos back into radiance,
- * with a partial adaptation at dusk (a photographer opens up, but not in proportion).
- * A small CPU copy of the model gives the colours of the lights.
+ *
+ * One camera for everything. Radiances are per unit of sun illuminance at the top of the
+ * atmosphere; `uExposure` scales them and `atmoTonemap` is the ACES filmic curve exactly as
+ * three.js applies it to its own materials (the glider, the birds, the trees: the renderer
+ * uses the same curve and exposure), then the sRGB transfer. The exposure follows the light
+ * of the hour with a partial adaptation at dawn and dusk (a photographer opens up, but not
+ * in proportion). A small CPU copy of the model gives the colours of the lights.
  */
 import * as THREE from 'three';
 
@@ -33,6 +36,21 @@ const RAYLEIGH: [number, number, number] = [5.802e-3, 13.558e-3, 33.1e-3];
 const OZONE: [number, number, number] = [0.65e-3, 1.881e-3, 0.085e-3];
 /** Free-troposphere aerosols above the boundary layer, per km at sea level (clean air). */
 const MIE_BG = 0.0035;
+/**
+ * Exposure of a clear summer noon (radiance per unit sun illuminance → the tone curve's
+ * input): a meadow of the orthophotos keeps about its own brightness, a sunlit cumulus
+ * top comes out near white, the zenith a mid blue.
+ */
+export const EXPOSURE = 4.2;
+
+/** The tone curve on the CPU (three.js's ACES fit), for display colours. Input already exposed. */
+export function tonemapACES(r: number, g: number, b: number, out = new THREE.Color()): THREE.Color {
+  const x = [r / 0.6, g / 0.6, b / 0.6];
+  const i = [0.59719 * x[0] + 0.35458 * x[1] + 0.04823 * x[2], 0.076 * x[0] + 0.90834 * x[1] + 0.01566 * x[2], 0.0284 * x[0] + 0.13383 * x[1] + 0.83777 * x[2]];
+  const f = i.map((v) => (v * (v + 0.0245786) - 0.000090537) / (v * (0.983729 * v + 0.432951) + 0.238081));
+  const c = (v: number) => Math.min(1, Math.max(0, v));
+  return out.setRGB(c(1.60475 * f[0] - 0.53108 * f[1] - 0.07367 * f[2]), c(-0.10208 * f[0] + 1.10813 * f[1] - 0.00605 * f[2]), c(-0.00327 * f[0] - 0.07276 * f[1] + 1.07602 * f[2]), THREE.LinearSRGBColorSpace);
+}
 
 /** Uniforms and functions shared by every shader that needs the atmosphere. */
 export const ATMO_GLSL = /* glsl */ `
@@ -168,10 +186,38 @@ void atmoAerialLut(vec2 uv, float distKm, out vec3 L, out vec3 T) {
   L = mix(L0, textureLod(uApL, b, 0.0).rgb, fk);
   T = mix(T0, textureLod(uApT, b, 0.0).rgb, fk);
 }
-vec3 atmoTonemap(vec3 x) { return 1.0 - exp(-max(x, vec3(0.0))); }
-vec3 atmoUntonemap(vec3 c) { return -log(max(1.0 - min(c, vec3(0.985)), vec3(1e-4))); }
-vec3 atmoEncode(vec3 c) { return pow(max(c, vec3(0.0)), vec3(1.0 / 2.2)); }
-vec3 atmoDecode(vec3 c) { return pow(max(c, vec3(0.0)), vec3(2.2)); }
+// ACES filmic (Hill's fit of the RRT + ODT), exactly three.js's ACESFilmicToneMapping with
+// the exposure already applied: the sky, the landscape, the clouds and the three.js objects
+// go through the same curve.
+vec3 atmoTonemap(vec3 color) {
+  const mat3 ACESIn = mat3(vec3(0.59719, 0.07600, 0.02840), vec3(0.35458, 0.90834, 0.13383), vec3(0.04823, 0.01566, 0.83777));
+  const mat3 ACESOut = mat3(vec3(1.60475, -0.10208, -0.00327), vec3(-0.53108, 1.10813, -0.07276), vec3(-0.07367, -0.00605, 1.07602));
+  color = ACESIn * (max(color, vec3(0.0)) / 0.6);
+  vec3 a = color * (color + 0.0245786) - 0.000090537;
+  vec3 b = color * (0.983729 * color + 0.4329510) + 0.238081;
+  return clamp(ACESOut * (a / b), 0.0, 1.0);
+}
+// The exact inverse of atmoTonemap (an image read back into the scene light it shows):
+// output matrix inverted, the rational fit solved per channel, input matrix inverted.
+vec3 atmoUntonemap(vec3 y) {
+  const mat3 InvOut = mat3(vec3(0.643038, 0.059269, 0.005962), vec3(0.311187, 0.931436, 0.063929), vec3(0.045775, 0.009295, 0.930118));
+  const mat3 InvIn = mat3(vec3(1.764741, -0.147028, -0.036337), vec3(-0.675778, 1.160252, -0.162436), vec3(-0.088963, -0.013224, 1.198773));
+  vec3 u = clamp(InvOut * min(y, vec3(0.97)), 0.0, 1.0);
+  vec3 A = u * 0.983729 - 1.0;
+  vec3 B = u * 0.4329510 - 0.0245786;
+  vec3 C = u * 0.238081 + 0.000090537;
+  vec3 v = (-B - sqrt(max(B * B - 4.0 * A * C, vec3(0.0)))) / (2.0 * A);
+  return max(InvIn * v * 0.6, vec3(0.0));
+}
+// sRGB transfer (three.js's sRGBTransferOETF and its inverse).
+vec3 atmoEncode(vec3 c) {
+  c = max(c, vec3(0.0));
+  return mix(pow(c, vec3(0.41666)) * 1.055 - vec3(0.055), c * 12.92, vec3(lessThanEqual(c, vec3(0.0031308))));
+}
+vec3 atmoDecode(vec3 c) {
+  c = max(c, vec3(0.0));
+  return mix(pow(c * 0.9478672986 + vec3(0.0521327014), vec3(2.4)), c * 0.0773993808, vec3(lessThanEqual(c, vec3(0.04045))));
+}
 `;
 
 const FULLSCREEN_VS = /* glsl */ `
@@ -447,9 +493,11 @@ export interface Lighting {
   horizon: THREE.Color;
   /** Light bounced by the ground (linear radiance): the ambient from below. */
   ground: THREE.Color;
-  /** Illuminance on a horizontal surface from the sun and from the sky (linear). */
+  /** Illuminance on a horizontal surface from the sun and from the sky, at the ground (linear). */
   sunIrr: THREE.Color;
   skyIrr: THREE.Color;
+  /** Sky illuminance on a horizontal surface at the camera's height. */
+  skyIrrCam: THREE.Color;
   /** Display exposure (radiance → tone-mapped value). */
   exposure: number;
   /** 0 night … 1 full day. */
@@ -467,7 +515,7 @@ export class Atmosphere {
     uSkyLut: { value: null as THREE.Texture | null },
     uSunDir: { value: new THREE.Vector3(0, 0, 1) },
     uCamR: { value: RB + 1 },
-    uExposure: { value: 9 },
+    uExposure: { value: EXPOSURE },
     uApL: { value: null as THREE.Texture | null },
     uApT: { value: null as THREE.Texture | null },
     uApMax: { value: 160 },
@@ -636,7 +684,7 @@ export class Atmosphere {
     const lum = (v: V3) => 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2];
     const E = lum(sunIrr) + lum(skyG.E);
     const Eref = 0.9;
-    const adapt = Math.min(4.5, Math.pow(Eref / Math.max(E, 1e-4), 0.45));
+    const adapt = Math.min(6, Math.pow(Eref / Math.max(E, 1e-4), 0.5));
     return {
       sun: col(sunT),
       skyAbove: col(skyCam.L),
@@ -647,7 +695,8 @@ export class Atmosphere {
       ground: col(ground),
       sunIrr: col(sunIrr),
       skyIrr: col(skyG.E),
-      exposure: 9.5 * adapt,
+      skyIrrCam: col(skyCam.E),
+      exposure: EXPOSURE * adapt,
       day: smoothstep(-4, 12, (Math.asin(Math.max(-1, Math.min(1, sun.z))) * 180) / Math.PI),
     };
   }

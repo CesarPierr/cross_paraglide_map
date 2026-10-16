@@ -1,33 +1,39 @@
 /**
  * Sky, light and clouds of the game: the passes drawn in the map's custom layer around
  * the three.js scene, from the physically based atmosphere (atmosphere.ts) and the cumulus
- * volumes (clouds.ts).
+ * (clouds.ts), all seen through one camera: the same exposure and the same filmic tone
+ * curve for the sky, the landscape, the clouds and the three.js objects.
  *
  * Per frame, in order:
- * 1. offscreen: the atmosphere tables when the conditions changed, the cloud shadow map
- *    and the clouds at reduced resolution;
+ * 1. offscreen: the atmosphere tables when the conditions changed, the aerial perspective,
+ *    the cloud maps, their shadow map and the clouds at reduced resolution;
  * 2. landscape: the frame MapLibre drew so far is copied and redrawn where there is
- *    terrain, using MapLibre's own terrain depth (the picking depth it renders at CSS
- *    resolution) to know each pixel's position: the orthophoto is read back into radiance,
- *    relit by the light of the hour (warm and dimmer at dawn and dusk, the direct part
- *    removed under the cloud shadows) and seen through the haze (aerial perspective:
- *    transmittance and in-scattering of the atmosphere along the view ray, bluish towards
- *    distant ridges, brighter towards the sun). MapLibre's own fog is then switched off;
- * 3. the sky where no terrain was drawn (depth test at the far plane): sky radiance from
- *    the atmosphere's sky-view table, the sun's disk with limb darkening, a cirrus veil;
+ *    terrain, using MapLibre's own terrain depth to know each pixel's position. The IGN
+ *    orthophoto is read back into the light of the scene it shows through the exact
+ *    inverse of the tone curve (at the reference light, a clear summer noon, it comes out
+ *    as it is), its veil removed, a little more contrast and colour than map imagery has;
+ *    then it is lit by the light of the hour (the sun's part, warm and low at dawn and
+ *    dusk, removed under the cloud shadows, which leaves the bluer sky light; the camera's
+ *    white balance takes out a fifth of the light's colour) and seen through the haze
+ *    (aerial perspective: transmittance and in-scattering along the view ray, bluish
+ *    towards distant ridges, bright towards the sun). The relief is shaded by MapLibre's
+ *    hillshade from the real sun, relative to flat ground;
+ * 3. the sky where no terrain was drawn: the atmosphere's sky-view table, the sun's disk,
+ *    high cirrus on humid days;
  * 4. (the three.js objects, by the world);
  * 5. the clouds, composited with their depth so the relief hides them;
- * 6. the glare of the sun when it is in view and not hidden by the relief or a cloud.
+ * 6. the sun's glare (the lens) when the sun is in view and not hidden.
  * Phones without float render targets keep MapLibre's sky and fog and get the clouds
- * straight into the frame.
+ * marched straight into an 8-bit image.
  *
  * The CPU side keeps what the game logic needs from the clouds: the share of sun reaching
  * a point (for the glider's light) and soft shadow discs (fallback when the terrain depth
  * is not available).
  */
 import * as THREE from 'three';
-import { ATMO_GLSL, Atmosphere, fullscreenPass, type Lighting } from './atmosphere';
-import { CloudLayer, type CloudShape } from './clouds';
+import { ATMO_GLSL, Atmosphere, fullscreenPass, tonemapACES, type Lighting } from './atmosphere';
+import { CloudLayer, type CloudShape, type ViewInfo } from './clouds';
+import { GpuTimer } from './gpu-timer';
 
 export type { CloudShape } from './clouds';
 
@@ -35,6 +41,9 @@ const smooth = (a: number, b: number, x: number) => {
   const t = Math.min(1, Math.max(0, (x - a) / (b - a)));
   return t * t * (3 - 2 * t);
 };
+
+/** Radius of a cloud as drawn: a towering one is at least about half as wide as tall (see clouds.ts). */
+const visRadius = (c: CloudShape) => Math.max(c.radius * 1.08, 0.22 * (c.top - c.base));
 
 /** What the passes need to know about this frame's camera (world.ts fills it). */
 export interface FrameInfo {
@@ -100,14 +109,14 @@ void main() {
   vec3 dir = normalize(farVector(uv));
   vec3 L = atmoSky(dir);
   float cs = dot(dir, uSunDir);
-  // Sun disk (a little larger than the real 0.27°: it would be a pixel), limb-darkened.
+  // The sun's disk (0.27°, a little more so it keeps a few pixels), limb-darkened.
   float ang = sqrt(max(0.0, 2.0 * (1.0 - cs)));
-  float rs = 0.0085;
-  if (ang < rs * 1.5) {
+  float rs = 0.0062;
+  if (ang < rs * 1.6) {
     float x = clamp(ang / rs, 0.0, 1.0);
     float mu = sqrt(max(0.0, 1.0 - x * x));
     float limb = 1.0 - 0.6 * (1.0 - mu) - 0.2 * (1.0 - mu) * (1.0 - mu);
-    float edge = 1.0 - smoothstep(0.85, 1.15, ang / rs);
+    float edge = 1.0 - smoothstep(1.0 - 1.5 * uPixAng / rs, 1.0 + 1.5 * uPixAng / rs, ang / rs);
     vec3 sunT = raySphere(vec3(0.0, 0.0, uCamR), uSunDir, RB) >= 0.0 ? vec3(0.0) : atmoTransmittance(uCamR, uSunDir.z);
     L += sunT * uSunDisk * limb * edge;
   }
@@ -124,7 +133,7 @@ void main() {
       vec4 f = textureLod(uNoise, vec3(st.x / 45000.0 + patchN * 0.25, st.y / 6000.0, 0.57), log2(max(1.0, foot / 47.0)));
       float fib = f.g * 0.55 + f.b * 0.3 + f.a * 0.15;
       float cov = smoothstep(1.0 - uCirrus * 0.8, 1.25 - uCirrus * 0.8, patchN);
-      float alpha = cov * smoothstep(0.42, 0.8, fib) * 0.5 * smoothstep(0.008, 0.1, dir.z);
+      float alpha = cov * smoothstep(0.42, 0.8, fib) * 0.42 * smoothstep(0.008, 0.1, dir.z);
       float fade = exp(-tc / 90000.0);
       vec3 sunH = raySphere(vec3(0.0, 0.0, RB + 9.0), uSunDir, RB) >= 0.0 ? vec3(0.0) : atmoTransmittance(RB + 9.0, uSunDir.z);
       vec3 Lc = sunH * mix(hgP(cs, 0.75), 1.0 / (4.0 * PI), 0.5) * 2.0 + uAmbTop * 0.8;
@@ -152,21 +161,24 @@ uniform vec3 uEye;
 uniform vec2 uNF;
 uniform vec3 uSunGain;
 uniform vec3 uSkyGain;
+uniform float uShadowFloor;
+uniform float uHillFlat;
+uniform vec3 uVeil;
 uniform float uSat;
+uniform float uGain;
+uniform float uMid;
+uniform float uContrast;
 layout(location = 0) out vec4 fragColor;
 float unpackDepth(vec4 c) { return dot(c, vec4(1.0 / 16777216.0, 1.0 / 65536.0, 1.0 / 256.0, 1.0)); }
 // Share of the direct sun reaching an absolute point through the clouds.
 float cloudShadow(vec3 pa) {
   if (uShadowOn < 0.5) return 1.0;
-  vec2 off = uSunDir.xy / max(uSunDir.z, 0.05);
-  vec2 q = pa.xy - off * (uShadowMap.w - pa.z);
+  vec3 sd = normalize(vec3(uSunDir.xy, max(uSunDir.z, 0.08)));
+  vec2 q = pa.xy + sd.xy / sd.z * (uShadowMap.w - pa.z);
   vec2 suv = (q - uShadowMap.xy) * uShadowMap.z * 0.5 + 0.5;
-  float edge = smoothstep(0.0, 0.06, min(min(suv.x, suv.y), min(1.0 - suv.x, 1.0 - suv.y)));
-  float od = texture(uShadow, suv).r;
-  float t = exp(-od);
-  // Light forward-scattered through the cloud: shadows are never black, softer under thin clouds.
-  t = mix(0.04 + 0.96 * t, 1.0, 1.0 - edge);
-  return mix(1.0, t, smoothstep(0.05, 0.14, uSunDir.z));
+  float edge = smoothstep(0.0, 0.04, min(min(suv.x, suv.y), min(1.0 - suv.x, 1.0 - suv.y)));
+  float t = exp(-texture(uShadow, suv).r);
+  return mix(1.0, t, edge * smoothstep(0.03, 0.1, uSunDir.z));
 }
 void main() {
   vec2 uv = gl_FragCoord.xy / uRes;
@@ -195,18 +207,26 @@ void main() {
   vec3 P = uEye + fv * s;
   float dist = s * length(fv);
 #endif
-  // The photo back to radiance, relit by the light of the hour.
-  vec3 x = atmoUntonemap(atmoDecode(c));
+  // The hillshade darkens slopes turned from the sun relative to flat ground: flat ground
+  // back to the photo's level.
+  c = min(c / uHillFlat, vec3(1.0));
+  // The imagery back into the light of the scene it shows (the inverse of the camera's
+  // curve: at the reference light the photo comes out unchanged), its veil off, a little
+  // more contrast and colour than map imagery has.
+  vec3 x = max(atmoDecode(c) - uVeil, vec3(0.0)) / (1.0 - uVeil);
+  x = atmoUntonemap(x) * uGain;
+  float l = max(dot(x, vec3(0.2126, 0.7152, 0.0722)), 1e-6);
+  x = max(mix(vec3(l), x, uSat), vec3(0.0)) * pow(l / uMid, uContrast - 1.0);
+  // Lit by the light of the hour, the direct part dimmed under the clouds' shadows (the
+  // sky's blue remains).
   float sh = cloudShadow(P + uAnchor);
-  x *= uSunGain * sh + uSkyGain;
-  float l = dot(x, vec3(0.2126, 0.7152, 0.0722));
-  x = mix(vec3(l), x, uSat);
+  x *= uSunGain * mix(uShadowFloor, 1.0, sh) + uSkyGain;
   // Aerial perspective between the eye and the ground.
   vec3 Lap;
   vec3 Tap;
   atmoAerialLut(uv, dist / 1000.0, Lap, Tap);
-  x = x * Tap + Lap * uExposure;
-  vec3 col = atmoEncode(atmoTonemap(x));
+  x = x * Tap + Lap;
+  vec3 col = atmoEncode(atmoTonemap(x * uExposure));
   col += (ignNoise(gl_FragCoord.xy) - 0.5) / 255.0;
   fragColor = vec4(col, 1.0);
 }`;
@@ -226,7 +246,7 @@ void main() {
   if (uOnScreen > 0.5) {
     for (int i = -1; i <= 1; i++)
       for (int j = -1; j <= 1; j++) {
-        vec2 p = uSunUv + vec2(float(i), float(j)) * 0.004;
+        vec2 p = uSunUv + vec2(float(i), float(j)) * 0.003;
         float sky = uHasDepth > 0.5 ? step(1.0005, unpackDepth(textureLod(uTDepth, p, 0.0))) : 1.0;
         float a = uHasClouds > 0.5 ? textureLod(uCloudA, p, 0.0).a : 0.0;
         v += sky * (1.0 - a);
@@ -250,9 +270,8 @@ void main() {
   vec2 uv = gl_FragCoord.xy / uRes;
   vec2 d = (uv - uSunUv) * vec2(uRes.x / uRes.y, 1.0);
   float r = length(d) * uFovY;
-  float g = 0.55 * exp(-r / 0.012) + 0.22 * exp(-r / 0.06) + 0.08 * exp(-r / 0.3);
-  // A faint ring and streak, as a lens adds.
-  g += 0.025 * exp(-pow((r - 0.16) / 0.02, 2.0));
+  // A lens's veiling glare around a very bright source: a tight core and a long faint tail.
+  float g = 0.5 * exp(-r / 0.006) + 0.16 * exp(-r / 0.025) + 0.05 * exp(-r / 0.11) + 0.018 * exp(-r / 0.4);
   fragColor = vec4(uGlareColor * g * vVis, 0.0);
 }`;
 
@@ -261,7 +280,7 @@ function shader(vs: string, fs: string, uniforms: Record<string, THREE.IUniform>
 }
 
 export interface SkyLight extends Lighting {
-  /** Display colours for MapLibre's sky and fog (fallback) and the three.js lights. */
+  /** Display colours for MapLibre's sky and fog (fallback). */
   skyHex: THREE.Color;
   horizonHex: THREE.Color;
 }
@@ -282,13 +301,22 @@ export class Sky {
   private cam = new THREE.Camera();
   private sunDir = new THREE.Vector3(0, 0, 1);
   private t0 = performance.now();
-  private cirrusCover = 0.3;
   private windDir = new THREE.Vector2(1, 0);
+  private sunV = new THREE.Vector4();
+  private timer: GpuTimer | null = null;
+  private view: ViewInfo = { eye: new THREE.Vector3(), anchor: { x: 0, y: 0, z: 0 }, dirBase: new THREE.Vector3(), dirX: new THREE.Vector3(), dirY: new THREE.Vector3(), near: 1, far: 1000, fovY: 1, proj: new THREE.Matrix4() };
+  /** Average GPU time of the passes (ms), in development, where the browser can measure it. */
+  readonly timings: Record<string, number> = {};
+  private adaptT = 0;
+  private raiseT = 0;
+  /** Adaptive cloud quality on (development tools turn it off for comparisons). */
+  adaptive = true;
+  private frameEma = 1 / 60;
   /** The landscape pass ran this frame: MapLibre's fog must stay off. */
   groundActive = false;
-  /** Current clouds, for shadows and the dimming under them. */
-  shapes: CloudShape[] = [];
   light: SkyLight | null = null;
+  /** Darkening of flat ground by MapLibre's hillshade (sRGB factor), undone by the landscape pass. */
+  hillFlat = 1;
 
   constructor(readonly lowQuality: boolean, floatTargets: boolean) {
     this.atmo = new Atmosphere(floatTargets);
@@ -308,7 +336,7 @@ export class Sky {
         ...ray(),
         uZ: { value: 0.999999 },
         uNoise: { value: (this.cloudLayer.marchMat.uniforms.uShape as THREE.IUniform).value },
-        uSunDisk: { value: 38 },
+        uSunDisk: { value: 60 },
         uCirrus: { value: 0.3 },
         uCirrusOff: { value: new THREE.Vector2() },
         uWindDir: { value: new THREE.Vector2(1, 0) },
@@ -332,9 +360,15 @@ export class Sky {
       uAnchor: { value: new THREE.Vector3() },
       uEye: { value: new THREE.Vector3() },
       uNF: { value: new THREE.Vector2(1, 1000) },
-      uSunGain: { value: new THREE.Vector3(0.8, 0.8, 0.8) },
-      uSkyGain: { value: new THREE.Vector3(0.2, 0.2, 0.2) },
-      uSat: { value: 0.9 },
+      uSunGain: { value: new THREE.Vector3(0.83, 0.83, 0.83) },
+      uSkyGain: { value: new THREE.Vector3(0.17, 0.17, 0.17) },
+      uShadowFloor: { value: 0.12 },
+      uHillFlat: { value: 1 },
+      uVeil: { value: new THREE.Vector3(0.004, 0.006, 0.012) },
+      uSat: { value: 1.18 },
+      uGain: { value: 1 / 3.4 },
+      uMid: { value: 0.05 },
+      uContrast: { value: 1.1 },
     });
     // Terrain beyond the cut (valid packed depth) and nearer than it (the eye's surroundings).
     this.groundMat = shader(SKY_VS, GROUND_FS, groundUniforms(), { depthTest: true, depthWrite: false, depthFunc: THREE.LessDepth, blending: THREE.NoBlending });
@@ -349,7 +383,7 @@ export class Sky {
         uSunUv: { value: new THREE.Vector2() },
         uOnScreen: { value: 0 },
         uTDepth: { value: this.depthTex },
-        uCloudA: { value: (this.cloudLayer.compositeMat.uniforms.uColor as THREE.IUniform).value },
+        uCloudA: { value: null },
         uHasDepth: { value: 0 },
         uHasClouds: { value: 0 },
         uGlareColor: { value: new THREE.Color(1, 0.95, 0.85) },
@@ -368,44 +402,42 @@ export class Sky {
     this.sunDir.copy(sunDir).normalize();
     const k = this.atmo.setConditions(this.sunDir, humidity, cover, hazeTopM, 350, camAltM);
     const ref = this.atmo.reference;
-    // Landscape relighting: the photo stands for the reference light (summer noon, clear);
-    // the hour changes the colour and level of the direct and sky parts, partly corrected
-    // as a camera's white balance would.
-    const dirF = (el: number) => 0.3 + 0.7 * Math.max(0, Math.sin((el * Math.PI) / 180));
-    const sunEff = k.sunIrr.clone().multiplyScalar(dirF(elevation) / Math.max(0.02, Math.sin((Math.max(elevation, 1) * Math.PI) / 180)) * (1 - 0.12 * cover));
-    const refSun = ref.sunIrr.clone().multiplyScalar(dirF(60) / Math.sin(Math.PI / 3));
-    const refTot = new THREE.Color(refSun.r + ref.skyIrr.r, refSun.g + ref.skyIrr.g, refSun.b + ref.skyIrr.b);
-    const ex = k.exposure / ref.exposure;
-    const lumOf = (c: THREE.Color) => 0.2126 * c.r + 0.7152 * c.g + 0.0722 * c.b;
-    const balance = (c: THREE.Color) => {
-      const g = new THREE.Color(c.r / refTot.r, c.g / refTot.g, c.b / refTot.b).multiplyScalar(ex);
-      const l = Math.max(1e-5, lumOf(g));
-      return new THREE.Vector3(l + (g.r - l) * 0.6, l + (g.g - l) * 0.6, l + (g.b - l) * 0.6);
-    };
-    const sunGain = balance(sunEff);
-    const skyGain = balance(k.skyIrr);
+    // Landscape: the photo stands for the reference light (a clear summer noon). The hour
+    // changes the level and colour of the direct and sky parts; the camera's white balance
+    // takes out a fifth of the light's colour by day, none when the sun is low (dusk stays
+    // golden, shade stays blue).
+    const refTot = [ref.sunIrr.r + ref.skyIrr.r, ref.sunIrr.g + ref.skyIrr.g, ref.sunIrr.b + ref.skyIrr.b];
+    const sunE = [k.sunIrr.r, k.sunIrr.g, k.sunIrr.b].map((v) => v * (1 - 0.1 * cover));
+    const skyE = [k.skyIrr.r, k.skyIrr.g, k.skyIrr.b];
+    const ratio = [0, 1, 2].map((c) => (sunE[c] + skyE[c]) / refTot[c]);
+    const neutral = 0.2126 * ratio[0] + 0.7152 * ratio[1] + 0.0722 * ratio[2];
+    // No correction at all when the sun is low: the golden hour is shot in daylight balance.
+    const wbK = 0.2 * smooth(8, 30, elevation);
+    const wb = ratio.map((v) => Math.pow(neutral / Math.max(v, 1e-5), wbK));
     for (const m of [this.groundMat, this.groundNearMat]) {
-      m.uniforms.uSunGain.value.copy(sunGain);
-      m.uniforms.uSkyGain.value.copy(skyGain);
-      m.uniforms.uSat.value = 0.9 - 0.12 * humidity - 0.1 * cover;
+      const u = m.uniforms;
+      u.uSunGain.value.set(...([0, 1, 2].map((c) => (sunE[c] / refTot[c]) * wb[c]) as [number, number, number]));
+      u.uSkyGain.value.set(...([0, 1, 2].map((c) => (skyE[c] / refTot[c]) * wb[c]) as [number, number, number]));
+      // The photo is the reference light seen through the reference exposure; mid-grey of
+      // its scene light for the contrast. Humid days and a covered sky look flatter.
+      u.uGain.value = 1 / ref.exposure;
+      u.uMid.value = 0.165 / ref.exposure;
+      u.uSat.value = 1.2 - 0.1 * humidity - 0.1 * cover;
+      u.uContrast.value = 1.1 - 0.04 * humidity;
     }
     // Clouds: ambient from the sky above and the ground's bounce below.
     const cu = this.cloudLayer.marchMat.uniforms;
-    // A face sees about half the sky, and a cloud returns ~80 % of the diffuse light.
-    cu.uAmbSun.value.copy(k.skySun).multiplyScalar(0.75);
-    cu.uAmbAnti.value.copy(k.skyAnti).multiplyScalar(0.75);
+    cu.uAmbSun.value.copy(k.skySun);
+    cu.uAmbAnti.value.copy(k.skyAnti);
     cu.uAmbBot.value.copy(k.ground);
-    cu.uSunColor.value.setRGB(1, 1, 1);
-    if (this.cloudLayer.direct) cu.uSunColor.value.copy(k.sun);
+    cu.uSunColor.value.copy(k.sun);
     this.skyMat.uniforms.uAmbTop.value.copy(k.skyAbove);
-    this.skyMat.uniforms.uGrey.value = 0.22 * cover + 0.1 * humidity;
+    this.skyMat.uniforms.uGrey.value = 0.15 * cover + 0.06 * humidity;
     // High veil: humid days, more ahead of a front than on unstable ones.
-    this.cirrusCover = Math.max(0, Math.min(1, 0.8 * humidity - 0.45 * instability));
-    this.skyMat.uniforms.uCirrus.value = this.cirrusCover;
-    const exp = k.exposure;
+    this.skyMat.uniforms.uCirrus.value = Math.max(0, Math.min(1, 0.8 * humidity - 0.45 * instability));
     const disp = (c: THREE.Color) => {
-      const v = (x: number) => Math.pow(1 - Math.exp(-x * exp), 1 / 2.2);
-      return new THREE.Color(v(c.r), v(c.g), v(c.b));
+      const t = tonemapACES(c.r * k.exposure, c.g * k.exposure, c.b * k.exposure);
+      return new THREE.Color().setRGB(t.r, t.g, t.b, THREE.LinearSRGBColorSpace);
     };
     this.light = { ...k, skyHex: disp(k.zenith), horizonHex: disp(k.horizon) };
     // Without float targets the clouds fade into MapLibre's fog colour with distance.
@@ -414,18 +446,13 @@ export class Sky {
     return this.light;
   }
 
-  /** Per frame: time, wind (towers lean, cirrus drift), camera height for the sky table. */
+  /** Per frame: time, wind (towers lean, cirrus drift, far clouds drift), camera height for the sky table. */
   frame(anchor: { x: number; y: number; z: number }, eye: THREE.Vector3, windU: number, windV: number, dt: number): void {
     const time = (performance.now() - this.t0) / 1000;
-    const cu = this.cloudLayer.marchMat.uniforms;
-    cu.uTime.value = time;
+    this.adapt(dt);
+    this.cloudLayer.setWind(windU, windV, time);
     const ws = Math.hypot(windU, windV);
-    // Towers lean downwind with height: a fifth of the radius per height for 10 m/s.
-    const lean = Math.min(0.3, ws * 0.02);
-    if (ws > 0.1) {
-      cu.uLean.value.set((windU / ws) * lean, (windV / ws) * lean);
-      this.windDir.set(windU / ws, windV / ws);
-    }
+    if (ws > 0.1) this.windDir.set(windU / ws, windV / ws);
     const su = this.skyMat.uniforms;
     su.uCirrusOff.value.x -= windU * 1.8 * dt;
     su.uCirrusOff.value.y -= windV * 1.8 * dt;
@@ -435,8 +462,12 @@ export class Sky {
   }
 
   setClouds(list: CloudShape[], near?: { x: number; y: number }): void {
-    this.shapes = list;
     this.cloudLayer.setClouds(list, near);
+  }
+
+  /** Current clouds of the air mass, for shadows and the dimming under them. */
+  get shapes(): CloudShape[] {
+    return this.cloudLayer.shapes;
   }
 
   private setRays(m: THREE.ShaderMaterial, f: FrameInfo): void {
@@ -447,21 +478,72 @@ export class Sky {
     u.uDirY.value.copy(f.dirY);
   }
 
-  /** Offscreen work of the frame (tables, shadow map, low-resolution clouds). */
+  private time(label: string, on: boolean): void {
+    if (!this.timer) return;
+    if (on) this.timer.begin(label);
+    else this.timer.end();
+  }
+
+  /** Offscreen work of the frame (tables, cloud maps, shadow map, low-resolution clouds). */
   prepare(r: THREE.WebGLRenderer, f: FrameInfo): void {
+    if (!this.timer && import.meta.env.DEV) this.timer = new GpuTimer(r.getContext() as WebGL2RenderingContext);
+    if (this.timer) {
+      this.timer.poll();
+      Object.assign(this.timings, this.timer.ms);
+    }
+    this.time('atmosphere', true);
     this.atmo.update(r);
     this.atmo.updateAerial(r, f.dirBase, f.dirX, f.dirY);
-    const cu = this.cloudLayer.marchMat.uniforms;
-    cu.uAnchor.value.set(f.anchor.x, f.anchor.y, f.anchor.z);
-    cu.uEye.value.copy(f.eye);
-    (f.cam as THREE.Camera & { fovRad?: number }).fovRad = f.fovY;
-    this.cloudLayer.prepare(r, f.cam, f, f.width, f.height, this.sunDir, f.terrainDepth !== null && this.atmo.supported);
+    this.time('atmosphere', false);
+    if (f.terrainDepth) this.depthTex.sourceTexture = f.terrainDepth;
+    this.time('clouds', true);
+    const v = this.view;
+    v.eye = f.eye;
+    v.anchor = f.anchor;
+    v.dirBase = f.dirBase;
+    v.dirX = f.dirX;
+    v.dirY = f.dirY;
+    v.near = f.near;
+    v.far = f.far;
+    v.fovY = f.fovY;
+    v.proj = f.cam.projectionMatrix;
+    this.cloudLayer.prepare(r, v, f.width, f.height, this.sunDir, f.terrainDepth !== null && this.atmo.supported, f.terrainDepth ? this.depthTex : null);
+    this.time('clouds', false);
+  }
+
+  /**
+   * Adaptive quality from the frame time (GPU timer queries are not reliable everywhere:
+   * ANGLE on Metal reports whole command buffers): when frames run long, the clouds lose
+   * resolution first, then steps; when they are comfortably short again, they get them back
+   * one notch at a time.
+   */
+  private adapt(dt: number): void {
+    if (!this.adaptive || dt <= 0 || dt > 0.25) return;
+    this.frameEma += (dt - this.frameEma) * 0.04;
+    const now = performance.now();
+    if (now - this.adaptT < 2000) return;
+    const cl = this.cloudLayer;
+    const top = this.lowQuality ? 0.34 : 0.5;
+    const topSteps = this.lowQuality ? 80 : 160;
+    const floor = this.frameEma > 0.03 ? 0.24 : this.lowQuality ? 0.28 : 0.36;
+    if (this.frameEma > 0.0195 && cl.scale > floor + 1e-3) {
+      cl.scale = Math.max(floor, cl.scale - 0.04);
+      if (cl.scale <= floor + 1e-3) cl.steps = Math.max(this.lowQuality ? 56 : 96, cl.steps - 16);
+      this.adaptT = now;
+      this.raiseT = now;
+    } else if (this.frameEma < 0.0172 && now - this.raiseT > 8000 && (cl.scale < top - 1e-3 || cl.steps < topSteps)) {
+      cl.scale = Math.min(top, cl.scale + 0.04);
+      cl.steps = Math.min(topSteps, cl.steps + 16);
+      this.adaptT = now;
+      this.raiseT = now;
+    }
   }
 
   /** Landscape (relit, hazy, shadowed) and sky, into the frame (default framebuffer bound). */
   drawBackground(r: THREE.WebGLRenderer, f: FrameInfo): void {
     this.groundActive = false;
     if (!this.atmo.supported) return;
+    this.time('background', true);
     if (f.terrainDepth) {
       if (!this.sceneCopy || this.sceneCopy.image.width !== f.width || this.sceneCopy.image.height !== f.height) {
         this.sceneCopy?.dispose();
@@ -469,8 +551,6 @@ export class Sky {
       }
       r.copyFramebufferToTexture(this.sceneCopy);
       this.depthTex.sourceTexture = f.terrainDepth;
-      // NDC depth of the cut between the two landscape passes: MapLibre packs only positive
-      // depths, i.e. beyond about twice its near plane (some 60 m): nearer, the eye's position.
       const sm = this.cloudLayer.shadowMap;
       for (const m of [this.groundMat, this.groundNearMat]) {
         const u = m.uniforms;
@@ -481,6 +561,7 @@ export class Sky {
         u.uNF.value.set(f.near, f.far);
         u.uShadowMap.value.set(sm.cx, sm.cy, 1 / sm.half, sm.zref);
         u.uShadowOn.value = sm.ready && this.cloudLayer.count > 0 ? 1 : 0;
+        u.uHillFlat.value = this.hillFlat;
       }
       r.render(this.groundPass, this.cam);
       r.render(this.groundNearPass, this.cam);
@@ -489,27 +570,26 @@ export class Sky {
     this.setRays(this.skyMat, f);
     this.skyMat.uniforms.uPixAng.value = f.fovY / f.height;
     r.render(this.skyPass, this.cam);
+    this.time('background', false);
   }
 
   /** The clouds over the frame (after the world's objects). */
   drawClouds(r: THREE.WebGLRenderer, f: FrameInfo): void {
-    if (this.cloudLayer.direct) {
-      this.cloudLayer.drawDirect(r, f.cam, f.height);
-      return;
-    }
     const u = this.cloudLayer.compositeMat.uniforms;
     u.uDirBase.value.copy(f.dirBase);
     u.uDirX.value.copy(f.dirX);
     u.uDirY.value.copy(f.dirY);
     u.uNF.value.set(f.near, f.far);
     u.uDR.value.set(f.depthRange[0], f.depthRange[1]);
+    this.time('composite', true);
     this.cloudLayer.drawComposite(r, f.width, f.height);
+    this.time('composite', false);
   }
 
   /** Sun glare when the sun is in (or near) the view and visible. */
   drawGlare(r: THREE.WebGLRenderer, f: FrameInfo): void {
     if (this.sunDir.z < -0.02 || !this.atmo.supported) return;
-    const v = new THREE.Vector4(f.eye.x + this.sunDir.x * 1e5, f.eye.y + this.sunDir.y * 1e5, f.eye.z + this.sunDir.z * 1e5, 1).applyMatrix4(f.cam.projectionMatrix);
+    const v = this.sunV.set(f.eye.x + this.sunDir.x * 1e5, f.eye.y + this.sunDir.y * 1e5, f.eye.z + this.sunDir.z * 1e5, 1).applyMatrix4(f.cam.projectionMatrix);
     if (v.w <= 0) return;
     const sx = (v.x / v.w) * 0.5 + 0.5;
     const sy = (v.y / v.w) * 0.5 + 0.5;
@@ -519,14 +599,17 @@ export class Sky {
     u.uSunUv.value.set(sx, sy);
     u.uOnScreen.value = sx > 0.002 && sx < 0.998 && sy > 0.002 && sy < 0.998 ? 1 : 0;
     u.uHasDepth.value = f.terrainDepth ? 1 : 0;
-    u.uHasClouds.value = this.cloudLayer.count > 0 ? 1 : 0;
-    u.uCloudA.value = (this.cloudLayer.compositeMat.uniforms.uColor as THREE.IUniform).value;
+    const cover = this.cloudLayer.coverTexture;
+    u.uHasClouds.value = cover && this.cloudLayer.count > 0 ? 1 : 0;
+    u.uCloudA.value = cover;
     u.uFovY.value = f.fovY;
     const k = this.light;
     if (k) {
       const s = k.sun;
       const m = Math.max(s.r, s.g, s.b, 1e-4);
-      u.uGlareColor.value.setRGB(s.r / m, (s.g / m) * 0.97, (s.b / m) * 0.9).multiplyScalar(0.55 + 0.45 * k.day);
+      // Dimmer through a thick haze (the sun's own transmittance), never more than a glow.
+      const level = Math.min(1, 1.6 * (0.2126 * s.r + 0.7152 * s.g + 0.0722 * s.b)) * (0.55 + 0.45 * k.day);
+      u.uGlareColor.value.setRGB(s.r / m, (s.g / m) * 0.97, (s.b / m) * 0.92).multiplyScalar(level);
     }
     r.render(this.glarePass, this.cam);
   }
@@ -543,8 +626,8 @@ export class Sky {
       const t = (mid - z) / s.z;
       const px = x + s.x * t;
       const py = y + s.y * t;
-      const d = Math.hypot(px - c.x, py - c.y) / (c.radius * 0.85);
-      if (d < 1.2) light *= 1 - 0.75 * c.size * (1 - smooth(0.6, 1.2, d));
+      const d = Math.hypot(px - c.x, py - c.y) / (visRadius(c) * 0.95);
+      if (d < 1.2) light *= 1 - 0.85 * smooth(0.08, 0.5, c.size) * (1 - smooth(0.7, 1.2, d));
     }
     return light;
   }
@@ -557,7 +640,7 @@ export class Sky {
     for (const c of this.shapes) {
       const g = groundAt(c.x, c.y);
       const h = Math.max(0, (c.base + c.top) / 2 - g);
-      out.push({ x: c.x - (s.x / s.z) * h, y: c.y - (s.y / s.z) * h, r: c.radius * 0.8, k: 0.42 * c.size });
+      out.push({ x: c.x - (s.x / s.z) * h, y: c.y - (s.y / s.z) * h, r: visRadius(c) * 0.85, k: 0.5 * smooth(0.08, 0.5, c.size) });
     }
     return out;
   }
@@ -566,6 +649,7 @@ export class Sky {
     this.atmo.dispose();
     this.cloudLayer.dispose();
     this.sceneCopy?.dispose();
+    this.timer?.dispose();
     for (const m of [this.skyMat, this.groundMat, this.groundNearMat, this.glareMat]) m.dispose();
   }
 }

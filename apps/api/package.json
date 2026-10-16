@@ -18,6 +18,7 @@
     "@fastify/helmet": "^13.1.1",
     "@fastify/rate-limit": "^11.2.0",
     "@fastify/type-provider-typebox": "^6.1.0",
+    "@fastify/websocket": "^11.3.4",
     "@sinclair/typebox": "^0.34.52",
     "fastify": "^5.12.5",
     "postgres": "^3.4.9"

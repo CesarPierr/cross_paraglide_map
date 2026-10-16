@@ -67,7 +67,7 @@ export interface AppState {
    * what the sources say) or simulating the wind (synoptic wind, reading of the relief,
    * forecast). Remembered in this browser.
    */
-  uiMode: 'explore' | 'simulate';
+  uiMode: 'explore' | 'simulate' | 'game';
   /** Forecast day driving the synoptic wind hour by hour (0 today, 1 tomorrow, 2 the day after); null = set by hand. */
   forecastDay: number | null;
   layers: Record<LayerKey, boolean>;

@@ -48,6 +48,13 @@ export const IconSearch = (p: P) => (
     <path d="M20 20l-4.2-4.2" />
   </Svg>
 );
+export const IconGlider = (p: P) => (
+  <Svg {...p}>
+    <path d="M3 9c4-4 14-4 18 0" />
+    <path d="M4 9l7 9M20 9l-7 9M9 9l2.5 9M15 9l-2.5 9" strokeWidth={1.2} />
+    <circle cx="12" cy="19" r="1.4" />
+  </Svg>
+);
 export const IconWind = (p: P) => (
   <Svg {...p}>
     <path d="M3 8h11a3 3 0 1 0-3-3M3 12h16a3 3 0 1 1-3 3M3 16h8" />

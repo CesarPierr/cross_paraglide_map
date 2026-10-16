@@ -1,7 +1,8 @@
 /**
  * Fastify application: JSON API under /api for the map (knowledge base,
- * flying sites, contributions, shared forecast cache). Built by a factory so
- * the server and the tests mount exactly the same thing.
+ * flying sites, contributions, shared forecast cache) and the WebSocket relay
+ * of the multiplayer game (/api/game/ws). Built by a factory so the server and
+ * the tests mount exactly the same thing.
  */
 import compress from '@fastify/compress';
 import cors from '@fastify/cors';
@@ -12,6 +13,7 @@ import type { Config } from './config';
 import type { Db } from './db/client';
 import { atlasRoutes } from './routes/atlas';
 import { contributionRoutes } from './routes/contributions';
+import { registerGameRelay } from './routes/game';
 import { siteRoutes } from './routes/sites';
 import { weatherRoutes } from './routes/weather';
 import { loadAtlas, serializeAtlas, type SerializedAtlas } from './services/atlas';
@@ -60,6 +62,8 @@ export async function buildApp(config: Config, db: Db, overrides: AppOverrides =
   await app.register(cors, { origin: config.corsOrigin === '*' ? true : config.corsOrigin, methods: ['GET', 'POST', 'PATCH'], maxAge: 86400 });
   await app.register(rateLimit, { max: 600, timeWindow: '1 minute' });
   await app.register(compress, { threshold: 1024, encodings: ['br', 'gzip'] });
+  // After the plugins above so upgrades go through the same hooks (rate limit, headers); needs no database.
+  await registerGameRelay(app, { allowedOrigins: config.corsOrigin });
 
   await app.register(
     async (api) => {

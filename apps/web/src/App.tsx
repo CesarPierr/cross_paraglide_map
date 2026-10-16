@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { AboutModal } from './ui/AboutModal';
 import { BasemapSwitch } from './ui/BasemapSwitch';
 import { ContributionPanel } from './ui/Feedback';
@@ -15,6 +15,9 @@ import { TimeBar } from './ui/TimeBar';
 import { MassifTour } from './ui/Tour';
 import { Welcome } from './ui/Welcome';
 import { useApp, useRuntime } from './state/store';
+
+// The simulator (three.js, its own map and model worker) loads only when its tab is opened.
+const GameApp = lazy(() => import('./game/GameApp'));
 
 function StatusPill() {
   const status = useRuntime((r) => r.status);
@@ -79,6 +82,17 @@ function useShortcuts() {
 
 /** Always-visible banner of the schema view, with the way back to 3D. */
 export default function App() {
+  const uiModeNow = useApp((s) => s.uiMode);
+  if (uiModeNow === 'game')
+    return (
+      <Suspense fallback={<div className="veil"><div className="spinner" /><p>Chargement du simulateur…</p></div>}>
+        <GameApp />
+      </Suspense>
+    );
+  return <MapApp />;
+}
+
+function MapApp() {
   const { browseOpen, schemaMassif, schemaPicking, mobileSheet, popover, tourStep, uiMode, set } = useApp();
   const feature = useRuntime((r) => r.feature);
   const probe = useRuntime((r) => r.probe);

@@ -32,6 +32,23 @@ location /data/ {
   try_files $uri =404;
 }
 
+# Multiplayer relay: a long-lived WebSocket. No add_header here, so the security headers of the
+# server level apply as for the rest of /api. The API pings every 15 s, which resets the read
+# timeout; a connection silent for 70 s is dead.
+location = /api/game/ws {
+  proxy_pass http://api:8080;
+  proxy_http_version 1.1;
+  proxy_set_header Upgrade $http_upgrade;
+  proxy_set_header Connection $connection_upgrade;
+  proxy_set_header Host $host;
+  proxy_set_header X-Forwarded-For $remote_addr;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header X-Forwarded-Proto $scheme;
+  proxy_read_timeout 70s;
+  proxy_send_timeout 70s;
+  proxy_buffering off;
+}
+
 location /api/ {
   proxy_pass http://api:8080;
   proxy_http_version 1.1;

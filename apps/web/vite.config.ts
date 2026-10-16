@@ -7,7 +7,8 @@ export default defineConfig({
   plugins: [react()],
   worker: { format: 'es' },
   // In development the API (npm run dev:api) answers on :8080; without it the app falls back to static files.
-  server: { proxy: { '/api': { target: 'http://localhost:8080', changeOrigin: true } } },
+  // `ws: true` lets the multiplayer relay (/api/game/ws) through the same proxy.
+  server: { proxy: { '/api': { target: 'http://localhost:8080', changeOrigin: true, ws: true } } },
   build: {
     target: 'es2022',
     chunkSizeWarningLimit: 1500,
@@ -16,6 +17,7 @@ export default defineConfig({
         manualChunks(id) {
           if (id.includes('node_modules/maplibre-gl')) return 'maplibre';
           if (id.includes('node_modules/react')) return 'react';
+          if (id.includes('node_modules/three')) return 'three';
           return undefined;
         },
       },

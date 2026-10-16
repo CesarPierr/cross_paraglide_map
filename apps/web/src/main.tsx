@@ -26,3 +26,12 @@ if (!supportsWebGL2()) {
     </StrictMode>,
   );
 }
+
+// Map tiles kept on the device (served from it first): see public/tiles-sw.js.
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register(new URL('tiles-sw.js', document.baseURI), { scope: './' }).catch(() => {
+      /* private mode or blocked: the map works without it */
+    });
+  });
+}

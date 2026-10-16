@@ -5,7 +5,7 @@
  * convergences…) and the forecast, in one panel. Opening a massif, a visit or a
  * route goes back to exploring; there is no separate "schema view" to toggle.
  */
-import { IconMountain, IconWind } from './icons';
+import { IconGlider, IconMountain, IconWind } from './icons';
 import { remember, useApp, useRuntime, type AppState } from '../state/store';
 import { getController } from './controller-ref';
 import { isMobileNow, showBrowse, showSheet, useSheet } from './mobile';
@@ -14,10 +14,12 @@ import { isMobileNow, showBrowse, showSheet, useSheet } from './mobile';
 export function setUiMode(m: AppState['uiMode']): void {
   const s = useApp.getState();
   if (s.uiMode === m) return;
-  remember('brises.uimode', m);
+  // The game is not remembered: a reload comes back to the map.
+  if (m !== 'game') remember('brises.uimode', m);
   useRuntime.getState().set({ feature: null });
   getController()?.clearProbe();
-  if (m === 'simulate') {
+  if (m === 'game') s.set({ uiMode: m, popover: null, tourStep: null, mobileSheet: 'none' });
+  else if (m === 'simulate') {
     s.set({ uiMode: m, schemaMassif: null, selectedMassif: null, schemaPicking: false, tourStep: null, popover: null, browseOpen: false, overlay: s.simOverlay });
     if (isMobileNow()) {
       s.set({ mobileSheet: 'browse' });
@@ -35,6 +37,9 @@ export function UiModeSwitch() {
       </button>
       <button role="radio" aria-checked={uiMode === 'simulate'} className={uiMode === 'simulate' ? 'on' : ''} onClick={() => setUiMode('simulate')} title="Vent météo, lecture du relief, prévision">
         <IconWind size={15} /> Simuler
+      </button>
+      <button role="radio" aria-checked={uiMode === 'game'} className={uiMode === 'game' ? 'on' : ''} onClick={() => setUiMode('game')} title="Simulateur de vol dans le vent du modèle">
+        <IconGlider size={15} /> Jeu
       </button>
     </div>
   );

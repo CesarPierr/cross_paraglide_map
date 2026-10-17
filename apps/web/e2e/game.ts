@@ -136,7 +136,8 @@ if (want("solo")) {
   await page.screenshot({ path: `${out}/1-deco-pret.png` });
   // A pilot acting every frame inside the page (polling from here is far too slow with
   // software rendering): run, dab the brakes as the wing comes overhead, brake the high
-  // side when it drifts, hands up once it is stable.
+  // side when it drifts, hands up once flying (both brakes let go together: an uneven
+  // brake held after lift-off turns the wing back into the slope).
   // (A string: the TS transpiler would inject helpers the page does not have.)
   const launched = (await page.evaluate(`new Promise((resolve) => {
     const g = window.__game;
@@ -144,7 +145,11 @@ if (want("solo")) {
     const t0 = performance.now();
     function tick() {
       const l = g.launch;
-      if (!l) return resolve(true);
+      if (!l) {
+        g.setBrake("L", 0.1);
+        g.setBrake("R", 0.1);
+        return resolve(true);
+      }
       if (l.phase === "failed" || performance.now() - t0 > 120000) return resolve(false);
       const dab = l.theta > 1.0 && l.thetaRate > 0.15 ? 0.45 : 0.08;
       const k = Math.max(-0.5, Math.min(0.5, l.phi * 2.5 + l.phiRate));

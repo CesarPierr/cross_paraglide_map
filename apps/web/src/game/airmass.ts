@@ -80,6 +80,15 @@ export interface ThermalSource {
   id: number;
   /** Sharpness of its edge (0.7..1.3). */
   edge: number;
+  /**
+   * Elongation of the core (≥ 1, at the same area) and its long axis (unit, east/north):
+   * along the slope's contour (a thermal off a ridge or a cliff band), at random on the
+   * flat. Mostly round; about one in ten stretched 2–2.6 times: lift a pilot crosses but
+   * cannot circle in.
+   */
+  elong: number;
+  ex: number;
+  ey: number;
   /** Sunlight on the source, lagged by the ground's heat (0..1), and its history (one value every SHADE_STEP s). */
   sun: number;
   sunHist: Float32Array;
@@ -91,7 +100,7 @@ export interface ThermalSource {
   iu: Float32Array | null;
   iv: Float32Array | null;
   /** Cached per-cycle draws. */
-  cyc: { gen: number; life: number; start: number; ramp: number; amp: number };
+  cyc: { gen: number; life: number; start: number; ramp: number; amp: number; reach: number };
 }
 
 export interface Convergence {
@@ -517,6 +526,14 @@ export class AirMass {
     return Math.cos(((s.aspect - this.windFrom) * Math.PI) / 180) * smoothstep(8, 25, s.slope);
   }
 
+  /** Elongation and long axis of a new source's core (see ThermalSource.elong). */
+  private axis(aspect: number, slope: number, r: () => number): { elong: number; ex: number; ey: number } {
+    const e = r();
+    const elong = 1 + 1.6 * e * e * e;
+    const a = slope >= 8 ? ((aspect + 90) * Math.PI) / 180 : r() * Math.PI;
+    return { elong, ex: Math.sin(a), ey: Math.cos(a) };
+  }
+
   private makeSource(x: number, y: number, ground: number, weight: number, potential: number, aspect: number, slope: number, lee: number, name?: string): ThermalSource {
     const r = this.rng;
     const n = 1 + Math.floor(r() * 2.6);
@@ -524,9 +541,9 @@ export class AirMass {
     for (let i = 0; i < n; i++) cores.push({ off: n === 1 ? 0.15 * r() : 0.25 + 0.4 * r(), ang: r() * Math.PI * 2, spin: (r() - 0.5) * 0.03, share: 0.6 + 0.8 * r() });
     const total = cores.reduce((a, c) => a + c.share, 0);
     for (const c of cores) c.share /= total / (n === 1 ? 1 : 1.25);
-    // Not every trigger works every day: documented ones are reliable, the others a coin
-    // toss; a "dud" still bubbles weakly. Sizes: mostly modest, sometimes a big one.
-    const works = r() < 0.5 + 0.5 * weight;
+    // Not every trigger works every day: documented ones are reliable, the others mostly;
+    // a "dud" still bubbles weakly. Sizes: mostly modest, sometimes a big one.
+    const works = r() < 0.65 + 0.35 * weight;
     return {
       x,
       y,
@@ -540,11 +557,12 @@ export class AirMass {
       size: 0.5 + r() * r() * 1.6,
       period: 540 + 720 * r(),
       phase: r(),
-      active: 0.4 + 0.3 * r(),
+      active: 0.7 + 0.25 * r(),
       cores,
       name,
       id: this.nextId++,
       edge: 0.7 + 0.6 * r(),
+      ...this.axis(aspect, slope, r),
       sun: 1,
       sunHist: new Float32Array(SHADE_N).fill(1),
       terrain: ground,
@@ -552,7 +570,7 @@ export class AirMass {
       pv: null,
       iu: null,
       iv: null,
-      cyc: { gen: -1e9, life: 0, start: 0, ramp: 0.3, amp: 1 },
+      cyc: { gen: -1e9, life: 0, start: 0, ramp: 0.3, amp: 1, reach: 1 },
     };
   }
 
@@ -589,14 +607,58 @@ export class AirMass {
         if (top) maxima.push({ i, j, v });
       }
     }
+    // Up to ~1 a km², at least SPACING apart: Allen (2006, from Lenschow) counts ~2 updrafts
+    // a km² at mid-height under a 2 km convective layer, 1.2 met along a line as long as the
+    // layer is deep. Continuous lift along a sunny face is the upslope breeze's
+    // (pilot-air.ts), not these plumes'.
+    const SPACING = 550;
+    const MAX = 1600;
+    const bins = new Map<number, ThermalSource[]>();
+    const bin = (x: number, y: number) => Math.floor(x / SPACING) * 100003 + Math.floor(y / SPACING);
+    const crowded = (x: number, y: number) => {
+      const bx = Math.floor(x / SPACING);
+      const by = Math.floor(y / SPACING);
+      for (let dy = -1; dy <= 1; dy++)
+        for (let dx = -1; dx <= 1; dx++) for (const c of bins.get((bx + dx) * 100003 + by + dy) ?? []) if (Math.hypot(c.x - x, c.y - y) < SPACING) return true;
+      return false;
+    };
+    const keep = (src: ThermalSource) => {
+      const b = bin(src.x, src.y);
+      const l = bins.get(b);
+      if (l) l.push(src);
+      else bins.set(b, [src]);
+    };
+    for (const c of cand) keep(c);
     maxima.sort((a, b) => b.v - a.v);
     for (const m of maxima) {
+      if (cand.length >= MAX) break;
       const x = xs[m.i];
       const y = ys[m.j];
-      if (cand.some((c) => Math.hypot(c.x - x, c.y - y) < 750)) continue;
+      if (crowded(x, y)) continue;
       const c = at(m.i, m.j);
-      cand.push(this.makeSource(x, y, elevation[c], 0.25 + 0.5 * m.v, m.v, aspect[c], slope[c], lee[c]));
-      if (cand.length > 320) break;
+      const src = this.makeSource(x, y, elevation[c], 0.25 + 0.5 * m.v, m.v, aspect[c], slope[c], lee[c]);
+      cand.push(src);
+      keep(src);
+    }
+    // Between the maxima, more triggers where the ground heats well: each cell may host one,
+    // the more likely the higher its potential (sunny slopes many, shade and flats few).
+    const order = Array.from({ length: cols * rows }, (_, k) => k);
+    for (let k = order.length - 1; k > 0; k--) {
+      const q = Math.floor(this.rng() * (k + 1));
+      const tmp = order[k];
+      order[k] = order[q];
+      order[q] = tmp;
+    }
+    for (const c of order) {
+      if (cand.length >= MAX) break;
+      const v = thermal[c];
+      if (v < 0.25 || this.rng() > 0.35 * smoothstep(0.25, 0.7, v)) continue;
+      const x = xs[c % cols];
+      const y = ys[Math.floor(c / cols)];
+      if (crowded(x, y)) continue;
+      const src = this.makeSource(x, y, elevation[c], 0.2 + 0.4 * v, v, aspect[c], slope[c], lee[c]);
+      cand.push(src);
+      keep(src);
     }
     this.sources = cand;
     this.placedAt = { x: cx, y: cy };
@@ -711,14 +773,28 @@ export class AirMass {
       c.gen = gen;
       c.life = clamp(s.active * (1 - 0.35 * torn) * (0.8 + 0.4 * hashU(s.id, gen, 1, 7)), 0.2, 0.9);
       c.start = (1 - c.life) * 0.7 * hashU(s.id, gen, 2, 7);
-      const xi = 0.2 + 0.6 * hashU(s.id, gen, 3, 7);
+      const xi = 0.1 + 0.4 * hashU(s.id, gen, 3, 7);
       c.ramp = xi / (1 + xi);
       c.amp = 0.75 + 0.5 * hashU(s.id, gen, 4, 7);
+      c.reach = this.reachOf(s, gen);
     }
     const x = (u - gen - c.start) / c.life;
     if (x <= 0 || x >= 1) return 0;
     const e = x < c.ramp ? 0.5 - 0.5 * Math.cos((Math.PI * x) / c.ramp) : x > 1 - c.ramp ? 0.5 - 0.5 * Math.cos((Math.PI * (1 - x)) / c.ramp) : 1;
     return e * c.amp;
+  }
+
+  /**
+   * How high a bubble of a source rises, as a share of the layer up to the cloud base (or the
+   * inversion on a blue day): the strong ones reach it and build the cumulus, weaker ones top
+   * out below without a cloud, the more so on a stable day; each bubble draws its own, so the
+   * thermals of a valley do not all top out at the same height. ≥ 0.97: it reaches the base.
+   * About a third of an average source's bubbles reach it on a good day (instability 0.6),
+   * half of a strong one's, one in ten on a stable day.
+   */
+  private reachOf(s: ThermalSource, gen: number): number {
+    const st = this.strength(s) / Math.max(0.5, this.wStar());
+    return clamp(0.9 + 0.45 * (this.instability - 0.6) + 0.25 * (st - 0.8) + 0.4 * (hashU(s.id, gen, 5, 7) - 0.5), 0.4, 1);
   }
 
   /** Sunlight that fed the source at time t (from its history): a shaded trigger stops supplying the bubbles. */
@@ -742,7 +818,7 @@ export class AirMass {
     // Narrow thermals punch harder, wide ones are soft; the wind on a windward face feeds
     // it, in the lee it is torn; a strong wind shears the weak ones apart.
     const wind = 1 + 0.15 * Math.max(0, this.windward(s)) * wf - 0.4 * this.torn(s) - 0.25 * wf * (1 - s.weight);
-    return this.wStar() * (0.45 + 0.85 * s.weight) * s.base * (1.25 - 0.3 * s.size) * wind * smoothstep(0.08, 0.45, s.potential);
+    return this.wStar() * (0.6 + 0.8 * s.weight) * s.base * (1.25 - 0.3 * s.size) * wind * smoothstep(0.08, 0.45, s.potential);
   }
 
   private nearby(x: number, y: number, t: number): ThermalSource[] {
@@ -822,14 +898,24 @@ export class AirMass {
     const tRel = t - climb / rise;
     const act = this.cycle(s, tRel, torn) * (0.15 + 0.85 * this.sunAt(s, tRel));
     if (act <= 0.01) return false;
+    // This bubble's own top (reachOf): the strong ones go to the base, the others stop below.
+    const reach = s.cyc.reach;
+    const full = reach >= 0.97;
+    if (!full && dz > reach * (top - s.ground)) return false;
     const D = Math.max(200, top - s.ground);
     const zeta = Math.min(dz / D, 1);
     let f: number;
     if (z <= top) {
       f = (Math.cbrt(zeta + 0.03) * (1 - 1.1 * zeta)) / 0.457;
-      // Under a cumulus the lift holds and strengthens up to the base; without, it dies at the inversion.
-      f = cumulus ? Math.max(f, 0.75 + 0.35 * smoothstep(0.6, 1, zeta)) : f * (1 - smoothstep(0.82, 1, zeta)) + 0.15 * (1 - smoothstep(0.8, 1, zeta));
-    } else f = 0.9 * (1 - smoothstep(0.6, 1, (z - top) / Math.max(50, cloudTop - top)));
+      if (!full) {
+        // Topping out below the layer: it fades over its last fifth.
+        f *= 1 - smoothstep(0.8, 1, dz / Math.max(100, reach * D));
+      } else {
+        // Under a cumulus the lift holds and strengthens up to the base; without, it dies at the inversion.
+        f = cumulus ? Math.max(f, 0.75 + 0.35 * smoothstep(0.6, 1, zeta)) : f * (1 - smoothstep(0.82, 1, zeta)) + 0.15 * (1 - smoothstep(0.8, 1, zeta));
+      }
+    } else if (full) f = 0.9 * (1 - smoothstep(0.6, 1, (z - top) / Math.max(50, cloudTop - top)));
+    else return false;
     const rc = Math.max(30, 0.102 * Math.cbrt(zeta) * (1 - 0.25 * zeta) * D) * s.size * (0.85 + 0.3 * s.weight) * (z > top ? 1.6 : 1);
     // Lean: the wind of each layer crossed during the rise; under the inversion the decelerating
     // top bends back against it (the column above 3/4 of the layer recedes).
@@ -1073,8 +1159,15 @@ export class AirMass {
       for (const k of s.cores) {
         const a = k.ang + k.spin * tp;
         const off = k.off * (1 + c.torn) * c.rc;
-        const qx = px - Math.cos(a) * off;
-        const qy = py - Math.sin(a) * off;
+        let qx = px - Math.cos(a) * off;
+        let qy = py - Math.sin(a) * off;
+        if (s.elong > 1.05) {
+          // A stretched core (same area): along its long axis it reaches farther, across less.
+          const l = (qx * s.ex + qy * s.ey) / Math.sqrt(s.elong);
+          const h = (-qx * s.ey + qy * s.ex) * Math.sqrt(s.elong);
+          qx = l * s.ex - h * s.ey;
+          qy = l * s.ey + h * s.ex;
+        }
         const along = qx * c.dx + qy * c.dy;
         const across = -qx * c.dy + qy * c.dx;
         const sa = (along < 0 ? c.sUp : c.sDown) * coreR;
@@ -1282,7 +1375,11 @@ export class AirMass {
       const torn = this.torn(s);
       // The cloud grows while the bubbles arrive and dissolves a few minutes after they stop;
       // bubbles from a shaded source are weak.
-      const feed = (tt: number) => this.cycle(s, tt, torn) * (0.15 + 0.85 * this.sunAt(s, tt));
+      // Only the bubbles that reach the base build the cloud (reachOf).
+      const feed = (tt: number) => {
+        const c = this.cycle(s, tt, torn);
+        return s.cyc.reach >= 0.97 ? c * (0.15 + 0.85 * this.sunAt(s, tt)) : 0;
+      };
       const size = Math.min(1, Math.max(feed(t - lag), 0.6 * feed(t - lag - 180), 0.25 * feed(t - lag - 360)));
       if (size < 0.08) continue;
       // The cumulus sits on the column's top, bent back under the inversion like the column.

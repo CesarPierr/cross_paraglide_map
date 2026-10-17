@@ -580,8 +580,19 @@ if (want('air')) {
     fly(s, H(0.15, 0.15), 80, air, (g) => {
       if (k++ % 60 === 0) tr.push(g.vz);
     });
+    // A change of direction of the vario, beyond 0.02 m/s (the sink's plateaus vary by
+    // thousandths of a m/s: not what a noisy vario is).
     let flips = 0;
-    for (let i = 2; i < tr.length; i++) if (Math.sign(tr[i] - tr[i - 1]) !== Math.sign(tr[i - 1] - tr[i - 2])) flips++;
+    let dir = 0;
+    let ref = tr[0];
+    for (let i = 1; i < tr.length; i++) {
+      const d = tr[i] - ref;
+      if (Math.abs(d) < 0.02) continue;
+      const sgn = Math.sign(d);
+      if (dir !== 0 && sgn !== dir) flips++;
+      dir = sgn;
+      ref = tr[i];
+    }
     if (verbose) console.log('  ' + tr.map((v) => v.toFixed(1)).join(' '));
     check('traversée : changements de sens du vario (sur 160)', flips, 0, 14, '', 0);
     const c = newGlider(col.cx, col.cy - 15, 1500, Math.PI / 2);

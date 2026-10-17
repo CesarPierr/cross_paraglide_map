@@ -271,6 +271,25 @@ function fractal(x: number, y: number, z: number, seed: number): number {
   return (vnoise(x, y, z, seed) + 0.62 * vnoise(x * 2.6 + 11.3, y * 2.6 - 7.1, z * 2.6 + 3.7, seed + 17) + 0.384 * vnoise(x * 6.76 - 5.9, y * 6.76 + 13.4, z * 6.76 - 1.3, seed + 29)) * 2.18;
 }
 
+/**
+ * A unit-variance noise with eddies of size L (vertical size zr · L) that stays steady as L
+ * changes along the flight: the fields of the two fixed sizes (powers of 2 m) around L,
+ * blended by where L lies between them. Dividing the coordinates by L itself would jump
+ * through the field at every change of L, the positions being thousands of metres from the
+ * origin: near the ground, where the eddies follow the height, that is white noise, gusts
+ * of 2 m/s from one step to the next, and a wing folding at every take-off.
+ */
+function atScale(noise: (x: number, y: number, z: number, seed: number) => number, x: number, y: number, z: number, L: number, zr: number, dz: number, seed: number): number {
+  const lg = Math.log2(Math.max(1, L));
+  const k = Math.floor(lg);
+  const f = lg - k;
+  const l0 = 2 ** k;
+  const l1 = 2 * l0;
+  const a = noise(x / l0, y / l0, z / (zr * l0) + dz, seed + 37 * k);
+  const b = noise(x / l1, y / l1, z / (zr * l1) + dz, seed + 37 * (k + 1));
+  return (a * (1 - f) + b * f) / Math.sqrt((1 - f) * (1 - f) + f * f);
+}
+
 /** Separable box blur of a grid (radius in cells), twice: close to a Gaussian, edges averaged over what exists. */
 function blur(src: Float32Array, cols: number, rows: number, r: number): Float32Array {
   const cur = Float32Array.from(src);
@@ -1185,14 +1204,14 @@ export class AirMass {
     const seed = this.scenario.seed;
     // Slow evolution of the eddies themselves (Taylor's hypothesis is only approximate).
     const ev = t * 0.02;
-    let w = sigW * fractal(px / Lw, py / Lw, z / (0.8 * Lw) + ev, seed);
-    if (sigX > 0.01) w += sigX * (vnoise(px / Lx, py / Lx, z / Lx + ev * 4, seed + 101) * 2.7);
+    let w = sigW * atScale(fractal, px, py, z, Lw, 0.8, ev, seed);
+    if (sigX > 0.01) w += sigX * (atScale(vnoise, px, py, z, Lx, 1, ev * 4, seed + 101) * 2.7);
     // The thin shear layer at a thermal's edge: eddies of ~10 m, the sharp edges that fold a wing.
     if (sigE > 0.01) w += sigE * (vnoise(px / EDGE_L, py / EDGE_L, z / EDGE_L + ev * 8, seed + 211) * 2.7);
     out.w = w;
     if (wOnly) return;
-    out.u = sigU * fractal(px / Lu + 17.3, py / Lu, z / (0.5 * Lu) + ev, seed + 7) + (sigX > 0.01 ? 0.8 * sigX * vnoise(px / Lx + 5.1, py / Lx, z / Lx, seed + 103) * 2.7 : 0);
-    out.v = sigU * fractal(px / Lu, py / Lu + 29.1, z / (0.5 * Lu) + ev, seed + 13) + (sigX > 0.01 ? 0.8 * sigX * vnoise(px / Lx, py / Lx + 9.7, z / Lx, seed + 107) * 2.7 : 0);
+    out.u = sigU * atScale(fractal, px, py, z, Lu, 0.5, ev, seed + 7) + (sigX > 0.01 ? 0.8 * sigX * atScale(vnoise, px, py, z, Lx, 1, 0, seed + 103) * 2.7 : 0);
+    out.v = sigU * atScale(fractal, px, py, z, Lu, 0.5, ev, seed + 13) + (sigX > 0.01 ? 0.8 * sigX * atScale(vnoise, px, py, z, Lx, 1, 0, seed + 107) * 2.7 : 0);
   }
 
   /** Former API: turbulence from an intensity 0..1 (σ and eddy size from the height above the ground). */

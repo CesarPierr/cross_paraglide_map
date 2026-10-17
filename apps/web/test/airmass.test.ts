@@ -220,4 +220,27 @@ describe('air mass', () => {
     expect(Math.sqrt(s2 / n)).toBeGreaterThan(0.45);
     expect(Math.sqrt(s2 / n)).toBeLessThan(0.75);
   });
+
+  it('frozen turbulence stays smooth while its eddies grow along the path (climbing away from a slope)', () => {
+    const { a } = airWith(0, 0);
+    const o = { u: 0, v: 0, w: 0 };
+    let prevU = 0;
+    let prevW = 0;
+    let maxDu = 0;
+    let maxDw = 0;
+    // Steps of 1/120 s at 12 m/s, kilometres from the origin; the eddies grow 1.5 % a step,
+    // as the height above a slope falling away from the take-off.
+    for (let k = 0, L = 20; k < 200; k++, L *= 1.015) {
+      a.turbInto(3000 + 0.1 * k, 2000, 1000 + 0.02 * k, 0, 0.8, 0.6, L, 0.6 * L, 0.3, Math.min(30, 0.3 * L), o);
+      if (k) {
+        maxDu = Math.max(maxDu, Math.abs(o.u - prevU));
+        maxDw = Math.max(maxDw, Math.abs(o.w - prevW));
+      }
+      prevU = o.u;
+      prevW = o.w;
+    }
+    // σ 0.8 and 0.6 m/s: a step moves the gust by a few hundredths of them, never a new draw.
+    expect(maxDu).toBeLessThan(0.12);
+    expect(maxDw).toBeLessThan(0.12);
+  });
 });

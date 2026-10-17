@@ -50,8 +50,9 @@ const CROSS = [60, 150, 300, 500];
 /**
  * σw (m/s) of the small eddies at a thermal's edge per unit of the air mass's shear there:
  * ≈ 1 m/s at the edge of a strong thermal on an unstable day (Kolmogorov estimate, see
- * airmass EDGE_L). Calibrated on the bench: 40 crossings of strong thermals fold a B flown
- * hands up about once in four, never with active piloting, constantly on the bar.
+ * airmass EDGE_L). On the bench, 40 crossings of strong thermals on a very unstable day
+ * fold a B flown hands up a few times (4 since the frozen turbulence no longer jitters when
+ * its eddies change size; 11 before), never with active piloting, constantly on the bar.
  */
 const EDGE_SIGMA = 1.0;
 

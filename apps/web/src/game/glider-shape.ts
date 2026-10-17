@@ -70,10 +70,12 @@ export interface WingDeform {
   infl: [number, number, number, number];
   /** Up direction of the glider frame in the canopy frame (for the ground). */
   up: [number, number, number];
+  /** Tips flexed by the air under them (m, + = up, at the tip): left, right; two spare. */
+  flex: [number, number, number, number];
 }
 
 export function newDeform(): WingDeform {
-  return { brake: [0, 0, 0, 0], foldL: [2, 2, 0, 0], foldR: [2, 2, 0, 0], misc: [0, 0, 0, 0], infl: [1, 0, 0, -100], up: [0, 1, 0] };
+  return { brake: [0, 0, 0, 0], foldL: [2, 2, 0, 0], foldR: [2, 2, 0, 0], misc: [0, 0, 0, 0], infl: [1, 0, 0, -100], up: [0, 1, 0], flex: [0, 0, 0, 0] };
 }
 
 const clamp = (v: number, a: number, b: number) => (v < a ? a : v > b ? b : v);
@@ -216,7 +218,8 @@ export function wingPoint(d: WingDeform, a: number, tw: number, v: number, w: nu
     const oz = zqOf(alE, qE) + (ct0 - dZ) * piv;
     const tox = sg * F.tx;
     const toy = sg * F.ty;
-    const sb = (alpha - fe) * HALF_SPAN * 0.82;
+    // Arc length from the fold line, the folded fabric bunched up (more the more it crumples).
+    const sb = (alpha - fe) * HALF_SPAN * (0.82 - 1.5 * fold[3]);
     const psi = fold[2];
     const wB = 0.4;
     const k = psi / wB;
@@ -283,6 +286,15 @@ export function wingPoint(d: WingDeform, a: number, tw: number, v: number, w: nu
     pz = -px * Math.sin(b) + pz * Math.cos(b);
     px = x;
   }
+  // A tip flexed up (or down) by a gust under it: the outer span bends along the sections' up.
+  const flex = sg < 0 ? d.flex[0] : d.flex[1];
+  if (flex !== 0) {
+    const fw = smooth(0.3, 1, alpha);
+    const fd = flex * fw * fw;
+    px += hx * fd;
+    py += hy * fd;
+    pz += hz * fd;
+  }
   // Trailing edge flutter.
   const fl = d.misc[1] * Math.sin(time * 19 + a * 27 + c * 6) * smooth(0.75, 1, c);
   px += hx * fl;
@@ -321,6 +333,7 @@ uniform vec4 uFoldR;
 uniform vec4 uMisc;
 uniform vec4 uInfl;
 uniform vec3 uUp;
+uniform vec4 uFlex;
 float wFoldWeight;
 float camberLine(float c) {
   return c < ${f(CAMBER_P)} ? ${f(CAMBER / (CAMBER_P * CAMBER_P))} * (${f(2 * CAMBER_P)} * c - c * c) : ${f(CAMBER / ((1 - CAMBER_P) * (1 - CAMBER_P)))} * (${f(1 - 2 * CAMBER_P)} + ${f(2 * CAMBER_P)} * c - c * c);
@@ -428,7 +441,7 @@ vec3 wingPos(float a, float tw, float v, float w, float kind, float cw) {
     float piv = 0.41 * chE;
     vec3 O = vec3(A.x + (-N.x * st0 - D.x) * piv, A.y + (-N.y * st0 - D.y) * piv, zqOf(alE, qE) + (ct0 - D.z) * piv);
     vec3 To = vec3(sg * T, 0.0);
-    float sb = (alpha - fe) * ${f(HALF_SPAN * 0.82)};
+    float sb = (alpha - fe) * ${f(HALF_SPAN)} * (0.82 - 1.5 * fold.w);
     float psi = fold.z;
     float wB = 0.4;
     float k = psi / wB;
@@ -460,6 +473,9 @@ vec3 wingPos(float a, float tw, float v, float w, float kind, float cw) {
     P.z = -P.x * sin(b) + P.z * cos(b);
     P.x = x;
   }
+  float flex = sg < 0.0 ? uFlex.x : uFlex.y;
+  float fw = smoothstep(0.3, 1.0, alpha);
+  P += H * (flex * fw * fw);
   P += H * (uMisc.y * sin(time * 19.0 + a * 27.0 + c * 6.0) * smoothstep(0.75, 1.0, c));
   float gy = uInfl.w;
   if (gy > -50.0) {

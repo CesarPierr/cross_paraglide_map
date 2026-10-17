@@ -239,7 +239,7 @@ void main() {
   gndC = hemisphereLights[0].groundColor;
 #endif
   // A folded part hangs under the open wing, in its shade.
-  float shade = 1.0 - 0.7 * vFold;
+  float shade = 1.0 - 0.5 * vFold;
   float ndl = dot(N, L);
   float ndu = dot(N, U);
   float diff = max(0.0, (ndl + 0.1) / 1.1) * shade;
@@ -279,6 +279,7 @@ export interface WingUniforms {
   uMisc: { value: THREE.Vector4 };
   uInfl: { value: THREE.Vector4 };
   uUp: { value: THREE.Vector3 };
+  uFlex: { value: THREE.Vector4 };
   uMain: { value: THREE.Color };
   uSecond: { value: THREE.Color };
   uAccent: { value: THREE.Color };
@@ -294,6 +295,7 @@ export function wingUniforms(colors: { main: number; stripe: number; under: numb
     uMisc: { value: new THREE.Vector4() },
     uInfl: { value: new THREE.Vector4(1, 0, 0, -100) },
     uUp: { value: new THREE.Vector3(0, 1, 0) },
+    uFlex: { value: new THREE.Vector4() },
     uMain: { value: new THREE.Color(colors.main) },
     uSecond: { value: new THREE.Color(colors.stripe) },
     uAccent: { value: new THREE.Color(colors.accent ?? 0x23262e) },

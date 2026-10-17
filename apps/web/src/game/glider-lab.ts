@@ -3,7 +3,9 @@
  * front of a plain sky with the game's kind of light (sun + sky/ground hemisphere), a
  * first-person camera at the pilot's eyes (same place and head angles as world.ts), a chase
  * camera, other pilots and vultures, the state editable from the console or a test through
- * window.__lab. Not imported by the app; load it from the dev server (any page of it):
+ * window.__lab; `fly()` flies the flight model in turbulence (the canopy's motion relative
+ * to the pilot), `gpu()` times the glider's draw per part. Not imported by the app; load it
+ * from the dev server (any page of it):
  *
  *   await import('/src/game/glider-lab.ts').then((m) => m.startLab())
  *
@@ -12,7 +14,7 @@
  */
 import * as THREE from 'three';
 import type { AirMass } from './airmass';
-import { newGlider, type GliderState } from './flight';
+import { newGlider, step, type AirSample, type Controls, type GliderState } from './flight';
 import { buildGlider, type GliderModel } from './glider';
 import { ThermalFlows, Vultures } from './life';
 
@@ -58,7 +60,20 @@ export interface Lab {
   thermal(on: boolean): void;
   peer(x: number, y: number, z: number, heading?: number, main?: number): GliderModel;
   render(): void;
+  /**
+   * Flies the flight model for `seconds` (1/120 s steps, a frame every 1/60 s) in a still
+   * air shaken by turbulence 0..1 (vertical gusts at the pilot and at each tip from a few
+   * travelling waves), the glider turned by its bank and pendulum pitch as in the game.
+   * Returns the extremes of the canopy's attitude relative to the pilot (rad).
+   */
+  fly(seconds: number, opts?: { turbulence?: number; brakeL?: number; brakeR?: number; weight?: number; ears?: boolean; speedbar?: number }): { roll: [number, number]; pitch: [number, number]; flex: [number, number] };
   stats(): { levels: { distance: number; tris: number; verts: number; draws: number }[]; updateMs: number };
+  /**
+   * GPU time (ms per draw of the glider, timer query) for the current camera: the whole
+   * glider and each part of the nearest level alone (wing, lines, risers, pilot), the sky
+   * and the other objects hidden; null where the browser has no timer query.
+   */
+  gpu(n?: number): Promise<Record<string, number | null>>;
 }
 
 export function startLab(width = innerWidth, height = innerHeight): Lab {
@@ -101,6 +116,7 @@ export function startLab(width = innerWidth, height = innerHeight): Lab {
   } as unknown as AirMass;
   const peers: GliderModel[] = [];
   let t = 0;
+  let flyT = 0;
   const lab: Lab = {
     renderer,
     scene,
@@ -150,6 +166,41 @@ export function startLab(width = innerWidth, height = innerHeight): Lab {
       peers.push(m);
       return m;
     },
+    fly(seconds, opts = {}) {
+      const c: Controls = { brakeL: opts.brakeL ?? 0, brakeR: opts.brakeR ?? 0, speedbar: opts.speedbar ?? 0, ears: opts.ears ?? false, weight: opts.weight ?? 0 };
+      const turb = opts.turbulence ?? 0;
+      const air: AirSample = { u: 0, v: 0, w: 0, turbulence: turb, wL: 0, wR: 0, agl: 800 };
+      const roll: [number, number] = [0, 0];
+      const pitch: [number, number] = [0, 0];
+      const flex: [number, number] = [0, 0];
+      const g = (x: number) => Math.sin(x) + 0.6 * Math.sin(2.3 * x + 1.1) + 0.35 * Math.sin(5.1 * x + 2.3);
+      const frames = Math.round(seconds * 60);
+      for (let f = 0; f < frames; f++) {
+        for (let k = 0; k < 2; k++) {
+          flyT += 1 / 120;
+          // Gusts of ~1.5 m/s at full turbulence, different at each tip (eddies of a few metres).
+          air.w = 1.5 * turb * g(flyT * 1.7);
+          air.wL = air.w + 1.1 * turb * g(flyT * 2.9 + 4.1);
+          air.wR = air.w + 1.1 * turb * g(flyT * 3.1 + 0.7);
+          step(state, c, air, 1 / 120, Math.random);
+        }
+        glider.root.quaternion.setFromEuler(new THREE.Euler(-state.pitch, 0, -state.bank, 'ZXY'));
+        glider.update(state, 1 / 60);
+        const sw = glider.sway;
+        if (sw) {
+          roll[0] = Math.min(roll[0], sw.roll);
+          roll[1] = Math.max(roll[1], sw.roll);
+          pitch[0] = Math.min(pitch[0], sw.pitch);
+          pitch[1] = Math.max(pitch[1], sw.pitch);
+          flex[0] = Math.min(flex[0], sw.flexL, sw.flexR);
+          flex[1] = Math.max(flex[1], sw.flexL, sw.flexR);
+        }
+      }
+      state.x = 0;
+      state.y = 0;
+      state.z = 1500;
+      return { roll, pitch, flex };
+    },
     render() {
       t += 1 / 30;
       glider.update(state);
@@ -189,6 +240,79 @@ export function startLab(width = innerWidth, height = innerHeight): Lab {
       state.brakeL = 0;
       state.brakeR = 0;
       return { levels, updateMs };
+    },
+    async gpu(n = 200) {
+      const gl = renderer.getContext() as WebGL2RenderingContext;
+      const ext = gl.getExtension('EXT_disjoint_timer_query_webgl2') as { TIME_ELAPSED_EXT: number } | null;
+      const out: Record<string, number | null> = {};
+      let lod: THREE.LOD | null = null;
+      glider.root.traverse((o) => {
+        if ((o as THREE.LOD).isLOD) lod = o as THREE.LOD;
+      });
+      const level = lod ? ((lod as THREE.LOD).levels.find((l) => l.object.visible)?.object ?? glider.root) : glider.root;
+      const canopy = level.children[0];
+      const parts: Record<string, THREE.Object3D[]> = {
+        wing: canopy.children.filter((o) => (o as THREE.Mesh).isMesh && !!((o as THREE.Mesh).material as THREE.ShaderMaterial).uniforms?.uFoldL),
+        lines: canopy.children.filter((o) => (o as THREE.Mesh).isMesh && !!((o as THREE.Mesh).material as THREE.ShaderMaterial).uniforms?.uViewport),
+        risers: canopy.children.filter((o) => !(o as THREE.Mesh).isMesh),
+        pilot: level.children.slice(1),
+      };
+      const all = Object.values(parts).flat();
+      const hidden = scene.children.filter((o) => o !== glider.root && o.visible);
+      for (const o of hidden) o.visible = false;
+      glider.update(state);
+      // Many draws per query (a few draws are lost in the timer's noise), after a warm-up,
+      // the median of 7; an empty draw's time is subtracted. Wall: the same draws with
+      // gl.finish (CPU submission and GPU together).
+      const once = async (): Promise<[number, number]> => {
+        gl.finish();
+        const t0 = performance.now();
+        const q = ext ? gl.createQuery() : null;
+        if (ext && q) gl.beginQuery(ext.TIME_ELAPSED_EXT, q);
+        for (let i = 0; i < n; i++) renderer.render(scene, camera);
+        if (ext && q) gl.endQuery(ext.TIME_ELAPSED_EXT);
+        gl.finish();
+        const wall = (performance.now() - t0) / n;
+        let g = NaN;
+        if (ext && q) {
+          for (let w = 0; w < 400 && !gl.getQueryParameter(q, gl.QUERY_RESULT_AVAILABLE); w++) await new Promise((r) => setTimeout(r, 5));
+          if (gl.getQueryParameter(q, gl.QUERY_RESULT_AVAILABLE)) g = (gl.getQueryParameter(q, gl.QUERY_RESULT) as number) / 1e6 / n;
+          gl.deleteQuery(q);
+        }
+        return [g, wall];
+      };
+      const median = async (): Promise<[number, number]> => {
+        await once();
+        await once();
+        const g: number[] = [];
+        const w: number[] = [];
+        for (let rep = 0; rep < 7; rep++) {
+          const [a, b] = await once();
+          if (Number.isFinite(a)) g.push(a);
+          w.push(b);
+        }
+        g.sort((a, b) => a - b);
+        w.sort((a, b) => a - b);
+        return [g.length ? g[g.length >> 1] : NaN, w[w.length >> 1]];
+      };
+      glider.root.visible = false;
+      const [g0, w0] = await median();
+      glider.root.visible = true;
+      const time = async (): Promise<number | null> => {
+        const [g, w] = await median();
+        out[`wall:${current}`] = Math.max(0, w - w0);
+        return ext && Number.isFinite(g) ? Math.max(0, g - g0) : null;
+      };
+      let current = 'glider';
+      out.glider = await time();
+      for (const [k, objs] of Object.entries(parts)) {
+        for (const o of all) o.visible = objs.includes(o);
+        current = k;
+        out[k] = await time();
+      }
+      for (const o of all) o.visible = true;
+      for (const o of hidden) o.visible = true;
+      return out;
     },
   };
   lab.sun(-35, 60);

@@ -89,6 +89,10 @@ export interface FlightEnd {
   flightS: number;
   distKm: number;
   maxAlt: number;
+  /** Height gained in all the climbs (m), best mean climb over a turn (m/s), when the cloud base (or the ceiling) was reached (s of flight), null if never. */
+  gainM: number;
+  bestClimb: number;
+  ceilingS: number | null;
 }
 
 export interface NearbyInfo {
@@ -648,6 +652,7 @@ export class GameEngine {
           if (this.checkGround(this.groundAt(g.x, g.y))) break;
         }
       this.maxAlt = Math.max(this.maxAlt, g.z);
+      if (!this.launch && !this.landing) this.trackStats(g.x, g.y, g.z, dt);
       if (!this.launch && this.track.due(this.gameT)) {
         const [lon, lat] = this.frame.toLngLat(g.x, g.y);
         this.track.push(this.gameT, { hour: this.hour, lon, lat, alt: g.z });
@@ -761,7 +766,7 @@ export class GameEngine {
       this.incident = { text: `${L.failReason ?? 'Voile affalée.'} (R pour recommencer)`, until: this.flightS + 6 };
     } else if (L.phase === 'failed') {
       this.ended = true;
-      this.cb.onEnd({ kind: 'launch', vz: 0, groundKmh: L.run * 3.6, flightS: this.flightS, distKm: 0, maxAlt: g.z, reason: L.failReason ?? '' });
+      this.cb.onEnd({ kind: 'launch', vz: 0, groundKmh: L.run * 3.6, flightS: this.flightS, distKm: 0, maxAlt: g.z, gainM: 0, bestClimb: 0, ceilingS: null, reason: L.failReason ?? '' });
     }
   }
 
@@ -868,6 +873,28 @@ export class GameEngine {
     if (L.phase === 'done') this.endFlight(L.kind, this.landingVz, this.landingKmh, L.reason);
   }
 
+  /** Performance of the flight for the end card and the records. */
+  private stats = { gain: 0, lastZ: NaN, best: 0, ceilingS: null as number | null, t: 0 };
+
+  private trackStats(x: number, y: number, z: number, dt: number): void {
+    const st = this.stats;
+    // A jump of the position (restart, a test placing the glider) is not a climb.
+    if (Number.isFinite(st.lastZ) && z > st.lastZ && z - st.lastZ < 20) st.gain += z - st.lastZ;
+    st.lastZ = z;
+    st.t += dt;
+    if (st.t >= 0.5) {
+      st.t = 0;
+      const avg = this.climbAverage();
+      if (avg !== null && avg > st.best) st.best = avg;
+      if (st.ceilingS === null) {
+        const ground = this.groundAt(x, y);
+        const base = this.air.cloudBaseAt(x, y, ground);
+        const top = Math.min(base, this.air.ceilingAt(x, y, ground));
+        if (z > top - 100) st.ceilingS = this.flightS;
+      }
+    }
+  }
+
   private endFlight(kind: FlightEnd['kind'], vz: number, groundKmh: number, reason: string): void {
     const g = this.glider;
     this.ended = true;
@@ -881,6 +908,9 @@ export class GameEngine {
       flightS: this.flightS,
       distKm: this.distKm(),
       maxAlt: this.maxAlt,
+      gainM: this.stats.gain,
+      bestClimb: this.stats.best,
+      ceilingS: this.stats.ceilingS,
       reason: reason || undefined,
       task: t ? { name: t.name, goal: t.goalT !== null, time: t.goalT !== null ? fmtTime(t.goalT) : null, madeKm: distanceMadeGood(t, g.x, g.y) / 1000, totalKm: taskLength(t) / 1000, tagged: t.next, count: t.points.length } : undefined,
     });
@@ -1064,6 +1094,7 @@ export class GameEngine {
     }
     this.flightS = 0;
     this.maxAlt = 0;
+    this.stats = { gain: 0, lastZ: NaN, best: 0, ceilingS: null, t: 0 };
     this.ended = false;
     this.paused = false;
     this.incident = null;

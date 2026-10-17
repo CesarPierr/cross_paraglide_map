@@ -720,6 +720,28 @@
   }
 }
 
+/* End of a flight: its numbers, the records it beat. */
+.game-summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 14px;
+  margin: 6px 0;
+}
+.game-record {
+  margin-left: 4px;
+  padding: 0 6px;
+  border-radius: 6px;
+  background: rgba(251, 191, 36, 0.18);
+  color: var(--warn);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.game-touch {
+  font-size: 12px;
+  color: var(--text-2);
+}
+
 /* Take-off: what to do, wing elevation and side angle. */
 .game-launch {
   position: absolute;

@@ -642,6 +642,65 @@ function WeightSlider({ v, onChange }: { v: number; onChange: (v: number) => voi
   );
 }
 
+/** Personal records per take-off, kept in this browser. */
+interface Records {
+  flightS: number;
+  distKm: number;
+  maxAlt: number;
+  gainM: number;
+  bestClimb: number;
+}
+
+/** The flight's numbers, those that beat this take-off's records marked (and saved). */
+function FlightSummary({ end, takeoffId }: { end: FlightEnd; takeoffId: string }) {
+  const [beaten] = useState(() => {
+    const now: Records = { flightS: end.flightS, distKm: end.distKm, maxAlt: end.maxAlt, gainM: end.gainM, bestClimb: end.bestClimb };
+    const out = new Set<keyof Records>();
+    try {
+      const all = JSON.parse(localStorage.getItem('brises.game.records') ?? '{}') as Record<string, Records>;
+      const prev = all[takeoffId];
+      const next = { ...(prev ?? now) };
+      for (const k of Object.keys(now) as (keyof Records)[]) {
+        if (prev && now[k] > prev[k] + 1e-6 && now[k] > 0) out.add(k);
+        next[k] = Math.max(prev?.[k] ?? 0, now[k]);
+      }
+      all[takeoffId] = next;
+      localStorage.setItem('brises.game.records', JSON.stringify(all));
+    } catch {
+      /* private mode: no records */
+    }
+    return out;
+  });
+  const rec = (k: keyof Records) => (beaten.has(k) ? <strong className="game-record"> record</strong> : null);
+  return (
+    <>
+      <p className="game-summary">
+        <span>
+          {Math.floor(end.flightS / 60)} min de vol{rec('flightS')}
+        </span>
+        <span>
+          {end.distKm.toFixed(1)} km du déco{rec('distKm')}
+        </span>
+        <span>
+          plus haut {Math.round(end.maxAlt)} m{rec('maxAlt')}
+        </span>
+        <span>
+          gain {Math.round(end.gainM)} m{rec('gainM')}
+        </span>
+        {end.bestClimb > 0.2 && (
+          <span>
+            meilleur thermique +{end.bestClimb.toFixed(1)} m/s{rec('bestClimb')}
+          </span>
+        )}
+        {end.ceilingS !== null && <span>plafond atteint en {Math.round(end.ceilingS / 60)} min</span>}
+      </p>
+      <p className="game-touch">
+        Contact à {end.vz.toFixed(1)} m/s et {Math.round(end.groundKmh)} km/h sol
+      </p>
+    </>
+  );
+}
+
 function Pause({ engine, onResume, onRestart, onMenu }: { engine: GameEngine; onResume: () => void; onRestart: () => void; onMenu: () => void }) {
   const [items] = useState<NearbyInfo[]>(() => engine.nearby(10));
   const [open, setOpen] = useState<string | null>(null);
@@ -974,9 +1033,7 @@ export default function GameApp() {
             {end.kind === 'launch' ? (
               <p>{end.reason}</p>
             ) : (
-            <p>
-              {Math.round(end.flightS / 60)} min de vol · {end.distKm.toFixed(1)} km · plus haut {Math.round(end.maxAlt)} m · contact à {end.vz.toFixed(1)} m/s et {Math.round(end.groundKmh)} km/h sol
-            </p>
+              <FlightSummary end={end} takeoffId={eng.takeoff.id} />
             )}
             <div className="game-actions">
               <button

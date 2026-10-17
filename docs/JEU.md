@@ -123,6 +123,9 @@ vent et peut le traîner s'il ne l'affale pas.
   même air, plané de thermique en thermique, spirale de ~30 m autour du cœur avec la montée qu'il y
   donne, départ quand il faiblit ou plafonne, virage vers la vallée près du relief ; un groupe qui
   enroule marque un thermique, comme en vrai.
+- **Bilan et records** : en fin de vol, durée, distance au déco, plus haut, gain total, meilleur
+  thermique (moyenne d'un tour), temps pour atteindre le plafond ; les records de chaque déco sont
+  gardés dans le navigateur et signalés quand ils tombent.
 - **Aide au centrage** : à côté de la rose des vents, la trace des 40 dernières secondes autour du
   pilote, cap en haut, colorée par le vario, et l'endroit où ça montait le mieux (vers lequel décaler
   le virage) ; sous le vario, « moy. », la montée moyenne du dernier tour.

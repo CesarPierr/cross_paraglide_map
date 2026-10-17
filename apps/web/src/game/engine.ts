@@ -34,6 +34,8 @@ export interface Hud {
   alt: number;
   agl: number;
   vario: number;
+  /** Mean climb over the last turn when circling (m/s), null otherwise. */
+  climbAvg: number | null;
   airKmh: number;
   groundKmh: number;
   heading: number;
@@ -141,6 +143,9 @@ export class GameEngine {
   private touchKill = false;
   /** Vario as an instrument shows it: filtered over ~0.6 s. */
   private varioF = 0;
+  /** The last minute of flight for the centring aid: position, vario and heading every 0.25 s of game time. */
+  private trailBuf: { x: number; y: number; v: number; h: number }[] = [];
+  private trailT = 0;
   /** The head looks a little down by default, as a pilot does. */
   head: Head = { yaw: 0, pitch: -0.12 };
   private keys = new Set<string>();
@@ -249,6 +254,29 @@ export class GameEngine {
   }
 
   /** The other pilots, interpolated, in this pilot's local frame. */
+  /** The last minute of flight (oldest first) for the centring aid. */
+  trail(): readonly { x: number; y: number; v: number; h: number }[] {
+    return this.trailBuf;
+  }
+
+  /**
+   * Mean climb (m/s) over the last full turn when circling, what a pilot's « moyenne » shows;
+   * null when not turning (less than a half turn in the last 40 s).
+   */
+  climbAverage(): number | null {
+    const b = this.trailBuf;
+    let turn = 0;
+    let sum = 0;
+    let n = 0;
+    for (let i = b.length - 1; i > 0 && n < 160; i--) {
+      sum += b[i].v;
+      n++;
+      turn += Math.abs(Math.atan2(Math.sin(b[i].h - b[i - 1].h), Math.cos(b[i].h - b[i - 1].h)));
+      if (turn >= 2 * Math.PI) return sum / n;
+    }
+    return turn >= Math.PI && n > 0 ? sum / n : null;
+  }
+
   remotePilots(): { id: string; name: string; x: number; y: number; z: number; heading: number; bank: number; pitch: number; collapse: number; brakeL: number; brakeR: number }[] {
     const net = this.net;
     if (!net) return [];
@@ -624,6 +652,14 @@ export class GameEngine {
       this.varioF += (g.vz - this.varioF) * Math.min(1, dt / 0.6);
       const gl = this.glider;
       const onGround = !!this.launch || !!this.landing;
+      if (!onGround) {
+        this.trailT += dt;
+        if (this.trailT >= 0.25) {
+          this.trailT = 0;
+          this.trailBuf.push({ x: gl.x, y: gl.y, v: this.varioF, h: gl.heading });
+          if (this.trailBuf.length > 240) this.trailBuf.shift();
+        }
+      } else this.trailBuf.length = 0;
       this.audio.update(onGround ? 0 : this.varioF, real, this.launch ? this.launch.airspeed : gl.airspeed, Math.min(1, gl.collapse.amount * 1.5 + gl.collapse.frontal + gl.stall + gl.spin));
       this.timers.sample -= real;
       if (this.timers.sample <= 0) {
@@ -878,6 +914,7 @@ export class GameEngine {
       alt: g.z,
       agl: g.z - ground,
       vario: this.varioF,
+      climbAvg: this.climbAverage(),
       airKmh: g.airspeed * 3.6,
       groundKmh: Math.hypot(g.vx, g.vy) * 3.6,
       heading: ((g.heading * 180) / Math.PI + 360) % 360,

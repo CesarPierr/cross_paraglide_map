@@ -452,6 +452,12 @@ function Vario({ h }: { h: Hud }) {
         {Math.abs(v).toFixed(1)}
         <small>m/s</small>
       </div>
+      {h.climbAvg !== null && (
+        <div className={`gv-avg ${h.climbAvg > 0.2 ? 'up' : h.climbAvg < -0.5 ? 'down' : ''}`} title="Moyenne sur le dernier tour">
+          moy. {h.climbAvg >= 0 ? '+' : '−'}
+          {Math.abs(h.climbAvg).toFixed(1)}
+        </div>
+      )}
       <div className="gv-row">
         <span>{Math.round(h.alt)} m</span>
         <span>sol {Math.round(h.agl)} m</span>
@@ -462,6 +468,96 @@ function Vario({ h }: { h: Hud }) {
       </div>
     </div>
   );
+}
+
+/**
+ * Centring aid, as on a pilot's instrument: the last 40 s of track around the glider, heading
+ * up, each point coloured and sized by the climb there, and where the lift was best (the
+ * climb-weighted centre of the last turn): shift the circle towards it.
+ */
+function ThermalAssistant({ engine }: { engine: GameEngine }) {
+  const ref = useRef<HTMLCanvasElement>(null);
+  useEffect(() => {
+    let raf = 0;
+    let last = 0;
+    const draw = (now: number) => {
+      raf = requestAnimationFrame(draw);
+      if (now - last < 66) return;
+      last = now;
+      const c = ref.current;
+      const ctx = c?.getContext('2d');
+      if (!c || !ctx) return;
+      const dpr = Math.min(2, window.devicePixelRatio || 1);
+      const size = c.clientWidth;
+      if (c.width !== Math.round(size * dpr)) {
+        c.width = Math.round(size * dpr);
+        c.height = Math.round(size * dpr);
+      }
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx.clearRect(0, 0, size, size);
+      const trail = engine.trail();
+      if (!trail.length) return;
+      const me = trail[trail.length - 1];
+      const R = size / 2;
+      // ±80 m: a thermalling circle (~30 m, the ring) fills the instrument.
+      const scale = (R - 6) / 80;
+      const ch = Math.cos(me.h);
+      const sh = Math.sin(me.h);
+      // Local metres east/north → screen, heading up.
+      const toScreen = (x: number, y: number): [number, number] => {
+        const dx = x - me.x;
+        const dy = y - me.y;
+        const right = dx * ch - dy * sh;
+        const ahead = dx * sh + dy * ch;
+        return [R + right * scale, R - ahead * scale];
+      };
+      ctx.strokeStyle = 'rgba(255,255,255,0.18)';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.arc(R, R, 30 * scale, 0, Math.PI * 2);
+      ctx.stroke();
+      let wx = 0;
+      let wy = 0;
+      let ws = 0;
+      const from = Math.max(0, trail.length - 160);
+      for (let i = from; i < trail.length; i++) {
+        const p = trail[i];
+        const [sx, sy] = toScreen(p.x, p.y);
+        if (sx < 0 || sy < 0 || sx > size || sy > size) continue;
+        const age = (trail.length - 1 - i) / 160;
+        const v = p.v;
+        ctx.globalAlpha = 0.35 + 0.65 * (1 - age);
+        ctx.fillStyle = v > 0.3 ? '#4ade80' : v < -0.5 ? '#f87171' : '#e2e8f0';
+        ctx.beginPath();
+        ctx.arc(sx, sy, v > 0.3 ? 1.5 + Math.min(4, v * 1.2) : 1.3, 0, Math.PI * 2);
+        ctx.fill();
+        if (i >= trail.length - 100 && v > 0.2) {
+          wx += p.x * v;
+          wy += p.y * v;
+          ws += v;
+        }
+      }
+      ctx.globalAlpha = 1;
+      if (ws > 2) {
+        const [bx, by] = toScreen(wx / ws, wy / ws);
+        ctx.strokeStyle = '#4ade80';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.arc(bx, by, 6, 0, Math.PI * 2);
+        ctx.stroke();
+      }
+      ctx.fillStyle = '#fbbf24';
+      ctx.beginPath();
+      ctx.moveTo(R, R - 7);
+      ctx.lineTo(R + 5, R + 5);
+      ctx.lineTo(R - 5, R + 5);
+      ctx.closePath();
+      ctx.fill();
+    };
+    raf = requestAnimationFrame(draw);
+    return () => cancelAnimationFrame(raf);
+  }, [engine]);
+  return <canvas ref={ref} className="game-assist" aria-label="Aide au centrage : trace colorée par le vario, meilleur endroit entouré" />;
 }
 
 function WindRose({ h }: { h: Hud }) {
@@ -727,6 +823,7 @@ export default function GameApp() {
           <div className="game-hud-top">
             <Vario h={hud} />
             <WindRose h={hud} />
+            {eng && <ThermalAssistant engine={eng} />}
             <div className="game-info">
               <span>{hud.clock}</span>
               <span>

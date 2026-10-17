@@ -16,11 +16,23 @@
  * Texel: RG = normal (x, y) × 0.5 + 0.5 in the pattern's plane, B = height, A = brightness
  * (0.5 = unchanged). Phones (GROUND_LOW) keep the classes, the snow, the water and the
  * canopies' light, without the detail stack.
+ *
+ * Where MapLibre has no imagery at all yet (a place never seen, imagery servers out of
+ * reach), it draws its backdrop in a sentinel colour (`IMAGERY_GAP`, world.ts); the
+ * landscape pass replaces it by a landscape made from the land cover (`gBackdrop`), which
+ * the materials then treat as they treat the photo.
  */
 import * as THREE from 'three';
 import { FULLSCREEN_VERTEX, fullscreenPass } from './atmosphere';
 
 export const DETAIL_LAYERS = 7;
+
+/**
+ * MapLibre's backdrop colour under the imagery while the landscape pass runs: pure magenta,
+ * a colour the orthophotos do not have, still recognisable once darkened by the hillshade or
+ * blended with the imagery along the edges (green under both red and blue, `gGap`).
+ */
+export const IMAGERY_GAP = '#ff00ff';
 
 const DETAIL_FS = /* glsl */ `
 precision highp float;
@@ -279,6 +291,63 @@ float gNoise(vec2 p) {
   vec2 f = fract(p);
   vec2 u = f * f * (3.0 - 2.0 * f);
   return mix(mix(gHash(i), gHash(i + vec2(1.0, 0.0)), u.x), mix(gHash(i + vec2(0.0, 1.0)), gHash(i + vec2(1.0, 1.0)), u.x), u.y);
+}
+
+// --- Imagery gaps. Share of MapLibre's sentinel backdrop (IMAGERY_GAP, magenta) in a pixel of
+// its frame: green well under both red and blue, whatever the hillshade's darkening; partial
+// along the edges, where the imagery's texels and the backdrop's were filtered together.
+float gGap(vec3 c) {
+  float m = max(c.r, c.b);
+  return smoothstep(0.35, 0.75, (min(c.r, c.b) - c.g) / max(m, 0.02)) * smoothstep(0.012, 0.04, m);
+}
+// Patches of a class covering about its share s (0..1) of the ground: where a noise of about
+// uniform distribution (two octaves, cell of T metres) is under the share, edges soft; none
+// where the share is nil.
+float gPatch(vec2 p, float T, float s) {
+  float n = 0.65 * gNoise(p / T) + 0.35 * gNoise(p / (0.37 * T) + 17.3);
+  n = smoothstep(0.18, 0.82, n);
+  return (1.0 - smoothstep(s - 0.07, s + 0.07, n)) * smoothstep(0.01, 0.08, s);
+}
+// A landscape where the imagery is missing, as IGN's summer orthophotos would show it (sRGB):
+// forest, meadows and fields, alpine grass, rock, ice and buildings in patches of a few hundred
+// metres whose shares are those of the land cover around (ESA WorldCover, region.ts); rock
+// rather than trees on steep ground; the meadows browner and the trees darker with altitude; a
+// grain so that it does not look flat close by. N: the relief's normal. (The seasonal snow, the
+// relief's light and the materials' detail come after, as for the photo.)
+vec3 gBackdrop(vec3 pa, vec3 N) {
+  vec2 q = pa.xy;
+  float z = pa.z;
+  // Shares of trees, bare ground and rock, snow and ice, buildings; without the land cover,
+  // forests up to the tree line and rock above.
+  vec4 cov = vec4(0.55 * smoothstep(2100.0, 1700.0, z), smoothstep(2300.0, 2900.0, z), 0.0, 0.0);
+  if (uCoverOn > 0.5) cov = texture(uCover, (q - uCoverRect.xy) * uCoverRect.w);
+  float steep = smoothstep(0.82, 0.5, N.z);
+  float forest = gPatch(q + 11.0, 260.0, cov.r * (1.0 - 0.9 * steep));
+  float rock = gPatch(q + 47.0, 190.0, min(1.0, cov.g + steep * (0.95 - 0.5 * cov.r)));
+  float ice = gPatch(q + 83.0, 420.0, cov.b);
+  float built = gPatch(q + 29.0, 70.0, cov.a) * smoothstep(0.03, 0.12, cov.a) * (1.0 - forest);
+  // (The orthophotos' own colours, read on them: greyer and bluer than the ground looks, the
+  // landscape pass takes their veil off and adds the colour back.)
+  float hi = smoothstep(1400.0, 2300.0, z);
+  vec3 grass = mix(vec3(0.48, 0.51, 0.41), vec3(0.52, 0.51, 0.45), hi) * (0.92 + 0.16 * gNoise(q / 140.0 + 3.0));
+  // Fields on flat low ground: parcels of ~85 × 210 m, green, ripe or ploughed, laid out
+  // their own way in each area of 700 m.
+  float fields = smoothstep(0.985, 0.997, N.z) * smoothstep(900.0, 500.0, z) * (1.0 - cov.a);
+  vec2 area = floor(q / 700.0);
+  float a = 3.1416 * gHash(area + 3.7);
+  vec2 d = q - (area + 0.5) * 700.0;
+  vec2 r = vec2(cos(a) * d.x + sin(a) * d.y, -sin(a) * d.x + cos(a) * d.y);
+  float h = gHash(floor(r / vec2(85.0, 210.0)) + area * 7.31);
+  vec3 field = h < 0.45 ? vec3(0.3, 0.35, 0.33) : (h < 0.75 ? vec3(0.47, 0.49, 0.44) : vec3(0.57, 0.54, 0.51));
+  grass = mix(grass, field, fields);
+  vec3 trees = mix(vec3(0.24, 0.29, 0.25), vec3(0.2, 0.25, 0.24), smoothstep(700.0, 1400.0, z)) * (0.85 + 0.3 * gNoise(q / 30.0));
+  vec3 stone = mix(vec3(0.43, 0.43, 0.41), vec3(0.62, 0.62, 0.59), gNoise(q / 80.0 + 5.0));
+  vec3 town = mix(vec3(0.44, 0.43, 0.42), vec3(0.5, 0.45, 0.42), step(0.55, gNoise(q / 22.0)));
+  vec3 col = mix(grass, trees, forest);
+  col = mix(col, stone, rock * (1.0 - 0.6 * forest));
+  col = mix(col, town, built);
+  col = mix(col, vec3(0.88, 0.9, 0.93), ice);
+  return col * (0.88 + 0.24 * gNoise(q / 9.0));
 }
 // The ground position's change from a pixel to the next (computed once, where all the
 // pixels of a quad run the same code): the patterns are filtered with it, anisotropically,

@@ -17,7 +17,9 @@
  *    white balance takes out a fifth of the light's colour) and seen through the haze
  *    (aerial perspective: transmittance and in-scattering along the view ray, bluish
  *    towards distant ridges, bright towards the sun). The relief is shaded by MapLibre's
- *    hillshade from the real sun, relative to flat ground;
+ *    hillshade from the real sun, relative to flat ground. Where MapLibre had no imagery yet
+ *    (its sentinel backdrop), a landscape made from the land cover takes the photo's place
+ *    (materials.ts);
  * 3. the sky where no terrain was drawn: the atmosphere's sky-view table, the sun's disk,
  *    high cirrus on humid days;
  * 4. (the three.js objects, by the world);
@@ -311,6 +313,21 @@ void main() {
   vec3 P = uEye + fv * s;
   float dist = s * length(fv);
 #endif
+  vec3 pa = P + uAnchor;
+  Relief rf;
+  rf.n = vec3(0.0, 0.0, 1.0);
+  rf.sun = 1.0;
+  rf.sky = 1.0;
+  rf.fine = 0.0;
+  if (uRelief > 0.5) rf = relief(pa.xy);
+  // Where MapLibre had no imagery yet (its sentinel backdrop, world.ts): a landscape made from
+  // the land cover in its place (materials.ts), with the hillshade's darkening of the backdrop;
+  // along the edges, the imagery's part without the backdrop's colour.
+  float gap = gGap(c);
+  if (gap > 0.0) {
+    vec3 seen = vec3(min(c.r, 1.25 * c.g), c.g, min(c.b, 1.25 * c.g));
+    c = mix(seen, gBackdrop(pa, rf.n) * mix(1.0, max(c.r, c.b), gap), gap);
+  }
   vec3 x = photoRadiance(c);
   // Lit by the light of the hour, the direct part dimmed under the clouds' shadows (the
   // sky's blue remains).
@@ -321,8 +338,6 @@ void main() {
     // sun of the hour on that slope, behind the mountains' shadows and the clouds', by the
     // sky the relief leaves open and by the light the ground below sends back; what the
     // ground is made of (materials.ts) adds its micro-relief, its snow, its reflections.
-    vec3 pa = P + uAnchor;
-    Relief rf = relief(pa.xy);
     vec3 N = rf.n;
     float skyOpen = (0.5 + 0.5 * N.z) * rf.sky;
     float below = 0.5 - 0.5 * N.z;
@@ -340,8 +355,9 @@ void main() {
         float wsum = 1.0;
         float lx = lum3(x);
         for (int i = 0; i < 2; i++) {
-          vec3 xt = photoRadiance(texelFetch(uScene, ivec2(gl_FragCoord.xy + vec2(i == 0 ? 5.0 : -5.0, 0.0)), 0).rgb);
-          float w = exp(-2.0 * abs(lum3(xt) - lx) / max(lx, 1e-4));
+          vec3 ct = texelFetch(uScene, ivec2(gl_FragCoord.xy + vec2(i == 0 ? 5.0 : -5.0, 0.0)), 0).rgb;
+          vec3 xt = photoRadiance(ct);
+          float w = exp(-2.0 * abs(lum3(xt) - lx) / max(lx, 1e-4)) * (1.0 - gGap(ct));
           acc += xt * w;
           wsum += w;
         }
@@ -360,7 +376,7 @@ void main() {
 #endif
         return;
       }
-      if (uGDebug >= 5) {
+      if (uGDebug == 5 || uGDebug == 6) {
         fragColor = vec4(gDbg, 1.0);
         return;
       }
@@ -378,6 +394,7 @@ void main() {
   x = x * Tap + Lap;
   vec3 col = atmoEncode(atmoTonemap(x * uExposure));
   col += (ignNoise(gl_FragCoord.xy) - 0.5) / 255.0;
+  if (uGDebug == 9) col = mix(col, vec3(1.0, 0.0, 0.0), 0.6 * gap);
   fragColor = vec4(col, 1.0);
 }`;
 

@@ -15,6 +15,13 @@
  * eye's clearance above the relief around it stands for it (the height above the ground,
  * or less beside a slope), so a cliff 30 m from the wing is as sharp as the ground 30 m
  * below. No allocation per call; finite for any input.
+ *
+ * MapLibre only loads what the view's frustum holds: a head turned quickly, or a place never
+ * seen, showed for up to a second the coarse tiles it had kept as parents (Sentinel-2 at
+ * 25 m a texel stretched over the near slopes: a smooth, plastic green). A ring of tiles
+ * (`TileRing`, `useTileRing`) keeps every direction loaded around the pilot by the same
+ * distance law a few levels coarser (a few dozen tiles): the imagery of any direction is
+ * there at once, only its finest detail still to come.
  */
 
 /** What the zoom rule needs from the camera, updated by the world every frame. */
@@ -64,6 +71,137 @@ export function clearance(x: number, y: number, z: number, ground: (x: number, y
 }
 
 const RINGS = [25, 70, 200];
+
+/** A tile of a source's pyramid. */
+export interface TileXYZ {
+  z: number;
+  x: number;
+  y: number;
+}
+
+/**
+ * The tiles of a disk around the eye, whatever the view: each at the zoom `zoomAt` gives for
+ * the distance (m) of its nearest point to the eye, between `minZoom` and `maxZoom`. The eye
+ * in mercator units (0..1), `unitM` metres per unit there. The tiles do not overlap and
+ * together cover the disk; nearest first.
+ */
+export function diskTiles(ex: number, ey: number, unitM: number, zoomAt: (dM: number) => number, radiusM: number, minZoom: number, maxZoom: number): TileXYZ[] {
+  const out: { t: TileXYZ; d: number }[] = [];
+  if (!(unitM > 0) || !Number.isFinite(ex + ey)) return [];
+  const r = radiusM / unitM;
+  const n0 = 2 ** minZoom;
+  const stack: TileXYZ[] = [];
+  const lo = (v: number) => Math.max(0, Math.floor(v * n0));
+  const hi = (v: number) => Math.min(n0 - 1, Math.floor(v * n0));
+  for (let x = lo(ex - r); x <= hi(ex + r); x++) for (let y = lo(ey - r); y <= hi(ey + r); y++) stack.push({ z: minZoom, x, y });
+  while (stack.length) {
+    const t = stack.pop()!;
+    const n = 2 ** t.z;
+    const dx = Math.min(Math.max(ex, t.x / n), (t.x + 1) / n) - ex;
+    const dy = Math.min(Math.max(ey, t.y / n), (t.y + 1) / n) - ey;
+    const d = Math.hypot(dx, dy) * unitM;
+    if (d > radiusM) continue;
+    if (t.z >= maxZoom || t.z >= Math.floor(zoomAt(d))) {
+      out.push({ t, d });
+      continue;
+    }
+    for (let i = 0; i < 4; i++) stack.push({ z: t.z + 1, x: 2 * t.x + (i & 1), y: 2 * t.y + (i >> 1) });
+  }
+  return out.sort((a, b) => a.d - b.d).map((o) => o.t);
+}
+
+/**
+ * Tiles of one source kept loaded all around the pilot (`useTileRing`): the distance law of
+ * `lodByDistance` with `bias` levels (negative: coarser), within `radiusM`, coarser still if
+ * that would take more than `maxTiles`.
+ */
+export class TileRing {
+  /** The current tiles, nearest first (a new array when they change). */
+  tiles: TileXYZ[] = [];
+  private key = '';
+
+  constructor(
+    readonly bias: number,
+    readonly minZoom: number,
+    readonly maxZoom: number,
+    readonly radiusM: number,
+    readonly maxTiles: number,
+  ) {}
+
+  /**
+   * Around the eye (mercator units, `unitM` metres per unit there), for the zoom whose texels
+   * match the screen's pixels at the centre's distance (`centerZoom`, MapLibre's requested
+   * zoom for this source's tile size). True when the tiles changed.
+   */
+  update(ex: number, ey: number, unitM: number, centerZoom: number, state: LodState): boolean {
+    if (!Number.isFinite(centerZoom)) return false;
+    const floor = Math.max(1, state.clearanceM);
+    let tiles: TileXYZ[] = [];
+    for (let coarser = 0; coarser < 6; coarser++) {
+      const k = centerZoom + this.bias - coarser + Math.log2(Math.max(1, state.centerM));
+      tiles = diskTiles(ex, ey, unitM, (d) => k - Math.log2(Math.hypot(d, floor)), this.radiusM, this.minZoom, this.maxZoom);
+      if (tiles.length <= this.maxTiles) break;
+    }
+    const key = tiles.map((t) => `${t.z}/${t.x}/${t.y}`).join(' ');
+    if (key === this.key) return false;
+    this.key = key;
+    this.tiles = tiles;
+    return true;
+  }
+}
+
+/** The parts of MapLibre's tile manager (an internal) and its tile ids that `useTileRing` uses. */
+interface RingTileId {
+  key: string;
+}
+interface RingTileManager {
+  _updateRetainedTiles(ideal: RingTileId[], zoom: number): Record<string, RingTileId>;
+  _source: { hasTile?(id: RingTileId): boolean };
+  _inViewTiles?: { getAllTiles(): { tileID: RingTileId }[] };
+}
+type RingTileIdClass = new (overscaledZ: number, wrap: number, z: number, x: number, y: number) => RingTileId;
+
+/**
+ * Makes a source's tile manager keep `ring`'s tiles with the view's own: they are added to
+ * its ideal tiles (first, so that a new place's coarse tiles are requested before the view's
+ * fine ones), loaded, kept and drawn wherever the finer tiles are still missing. Returns
+ * false, leaving MapLibre alone, when its internals are not the expected ones.
+ */
+export function useTileRing(map: { style?: { tileManagers?: Record<string, unknown> } }, sourceId: string, ring: TileRing): boolean {
+  const tm = map.style?.tileManagers?.[sourceId] as RingTileManager | undefined;
+  if (!tm || typeof tm._updateRetainedTiles !== 'function' || !tm._source) return false;
+  const original = tm._updateRetainedTiles;
+  // MapLibre's tile id class, taken from the first id seen (not exported).
+  let Id: RingTileIdClass | null = null;
+  let builtFor: TileXYZ[] | null = null;
+  let ids: RingTileId[] = [];
+  tm._updateRetainedTiles = function (this: RingTileManager, ideal: RingTileId[], zoom: number) {
+    Id ??= ((ideal[0] ?? this._inViewTiles?.getAllTiles()[0]?.tileID)?.constructor as RingTileIdClass | undefined) ?? null;
+    if (Id && builtFor !== ring.tiles) {
+      builtFor = ring.tiles;
+      ids = ring.tiles.map((t) => new Id!(t.z, 0, t.z, t.x, t.y)).filter((id) => !this._source.hasTile || this._source.hasTile(id));
+    }
+    // (A ring tile that is also one of the view's is simply listed twice: MapLibre keys them.)
+    return original.call(this, ids.length ? ids.concat(ideal) : ideal, zoom);
+  };
+  return true;
+}
+
+/**
+ * Number of tiles of one source MapLibre keeps decoded (on the GPU) once out of view. Its own
+ * cap is the screen's tile count times five zoom levels (150 tiles on a 1280×800 window,
+ * whatever the map's `maxTileCacheSize`): about one view, so the tiles of a thermal's other
+ * side were already gone when the turn came back to them. Returns false when MapLibre's
+ * internals are not the expected ones.
+ */
+export function setTileCache(map: { style?: { tileManagers?: Record<string, unknown> } }, sourceId: string, tiles: number): boolean {
+  const tm = map.style?.tileManagers?.[sourceId] as { _maxTileCacheSize?: number | null; _maxTileCacheZoomLevels?: number | null } | undefined;
+  if (!tm || !('_maxTileCacheSize' in tm) || !('_maxTileCacheZoomLevels' in tm)) return false;
+  tm._maxTileCacheSize = tiles;
+  // The cap by the screen's size no longer binds.
+  tm._maxTileCacheZoomLevels = 1000;
+  return true;
+}
 
 /** The parts of MapLibre's terrain tile manager (an internal) that the patch below uses. */
 interface RttTile {

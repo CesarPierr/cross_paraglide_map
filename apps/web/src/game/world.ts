@@ -25,8 +25,9 @@ import { buildGlider, type GliderModel } from './glider';
 import { Sky, type FrameInfo } from './sky';
 import { ThermalFlows, Vultures } from './life';
 import { Forest } from './trees';
-import { clearance, lodByDistance, useTerrainTileZoom, type LodState, type TileZoomFn } from './lod';
+import { clearance, lodByDistance, setTileCache, TileRing, useTerrainTileZoom, useTileRing, type LodState, type TileZoomFn } from './lod';
 import { Ground, REGION_HALF, REGION_N, type SunUniforms } from './ground';
+import { IMAGERY_GAP } from './materials';
 import { RegionMaps } from './region';
 import { TerrainHeights } from './heights';
 import type { GridMeta } from '@brises/model';
@@ -52,6 +53,8 @@ const CENTER_M = 1200;
  */
 const EYE = [0, 0.32, 0.34] as const;
 const EYE_STANDING = [0, 0.43, 0.03] as const;
+/** MapLibre's backdrop where no imagery is loaded, when nothing replaces it. */
+const BACKDROP = '#5d6352';
 
 function gameStyle(): StyleSpecification {
   const style = buildStyle();
@@ -61,8 +64,9 @@ function gameStyle(): StyleSpecification {
   style.layers = style.layers
     .filter((l) => l.type !== 'background' || l.id === 'background')
     .map((l) => (l.id === 'hillshade' ? { ...l, paint: { ...(l as HillshadeLayerSpecification).paint, 'hillshade-exaggeration': 0.28 } } : l))
-    // Where imagery is still loading: a dull land colour rather than night blue (it is hazed like the rest).
-    .map((l) => (l.id === 'background' ? { ...l, paint: { 'background-color': '#5d6352' } } : l)) as LayerSpecification[];
+    // Where imagery is still loading: a dull land colour rather than night blue (it is hazed
+    // like the rest); with the landscape pass, a sentinel it replaces (see setBackdrop).
+    .map((l) => (l.id === 'background' ? { ...l, paint: { 'background-color': BACKDROP } } : l)) as LayerSpecification[];
   // Buildings: walls of plaster, stone, wood or concrete and roofs of slate, tiles or metal,
   // drawn per building from its id (as the imagery would show them under the reference
   // light: the landscape pass relights them with the hour's), each roof a thin slab on top.
@@ -213,6 +217,13 @@ export class GameWorld {
   /** The eye's distance to MapLibre's centre and to the relief, for the tile detail (lod.ts). */
   private lod: LodState = { centerM: CENTER_M, clearanceM: 100 };
   private lodT = 0;
+  /**
+   * IGN orthophotos kept loaded in every direction, two levels coarser than the view's,
+   * within 80 km (lod.ts): ~30-90 tiles, ~1 ms of MapLibre's time per frame. Phones a
+   * little coarser and nearer.
+   */
+  private ring = this.lowQuality ? new TileRing(-2.5, 7, 18, 60000, 60) : new TileRing(-2, 7, 18, 80000, 120);
+  private ringAt = { x: 0, y: 0 };
 
   /** The terrain's heights around the pilot, whatever the camera looks at (heights.ts). */
   readonly heights: TerrainHeights;
@@ -288,6 +299,11 @@ export class GameWorld {
           if (src) src.calculateTileZoom = lodByDistance(this.lod, bias);
         }
         if (!useTerrainTileZoom(this.map as unknown as Parameters<typeof useTerrainTileZoom>[0], lodByDistance(this.lod, -1)) && import.meta.env.DEV) console.warn('[terrain] tuiles du relief : règle de MapLibre (internes inattendus)');
+        // The orthophotos all around the pilot (lod.ts): a head turned or a place never seen
+        // shows them at once, a little soft, the finest detail following; and more of them
+        // kept on the GPU out of view (a thermal's other side when the turn comes back to it).
+        const mm = this.map as unknown as Parameters<typeof useTileRing>[0];
+        if (!(useTileRing(mm, 'ign-ortho', this.ring) && setTileCache(mm, 'ign-ortho', this.lowQuality ? 200 : 500)) && import.meta.env.DEV) console.warn('[terrain] anneau de tuiles : internes de MapLibre inattendus');
         // New elevation tiles: the relief's light redraws its elevations (ground.ts).
         this.map.on('sourcedata', (e: { sourceId?: string; tile?: unknown }) => {
           if (e.sourceId === 'terrain' && e.tile) this.ground.terrainChanged();
@@ -400,7 +416,23 @@ export class GameWorld {
     this.map.setPaintProperty('hillshade', 'hillshade-exaggeration', own ? 0.5 : 0.42 + 0.18 * (1 - day));
     this.map.setPaintProperty('hillshade', 'hillshade-shadow-color', own ? `rgba(0, 0, 0, ${alpha.toFixed(3)})` : `rgba(14, 22, 44, ${(0.42 + 0.3 * (1 - day)) * (1 - 0.35 * cover)})`);
     this.map.setPaintProperty('hillshade', 'hillshade-highlight-color', own ? 'rgba(255, 255, 255, 0)' : `rgba(255, 240, 215, ${(0.07 + 0.22 * (1 - day)).toFixed(3)})`);
+    this.setBackdrop();
   }
+
+  /**
+   * What MapLibre draws where no imagery is loaded (a place never seen, or the imagery out of
+   * reach): with the landscape pass, a sentinel colour it replaces by a landscape made from
+   * the land cover (materials.ts), no altitude tints (they would hide it, and spare their
+   * elevation tiles); otherwise, and on the topo map, a dull land colour and the altitude tints.
+   */
+  private setBackdrop(): void {
+    const own = this.groundPass && !this.topo;
+    if (own === this.backdropOwn) return;
+    this.backdropOwn = own;
+    this.map.setPaintProperty('background', 'background-color', own ? IMAGERY_GAP : BACKDROP);
+    if (this.map.getLayer('color-relief')) this.map.setLayoutProperty('color-relief', 'visibility', own ? 'none' : 'visible');
+  }
+  private backdropOwn = false;
 
   setWind(u: number, v: number): void {
     this.wind = [u, v];
@@ -634,12 +666,19 @@ export class GameWorld {
     const [lon, lat] = this.frame.toLngLat(st.x + eye.x, st.y + eye.y);
     const alt = st.z + eye.z;
     // The eye's clearance from the relief (tile detail), a few times a second; the region's
-    // grids follow the pilot.
-    if (now - this.lodT > 250) {
+    // grids follow the pilot. The ring of imagery around the eye too, for the zoom MapLibre
+    // asks of 256-pixel tiles; at once after a jump (a restart, a new place), so that the
+    // new place's coarse tiles are requested before the view's fine ones.
+    const jumped = Math.hypot(st.x - this.ringAt.x, st.y - this.ringAt.y) > 500;
+    if (now - this.lodT > 250 || jumped) {
       this.lodT = now;
       if (Number.isFinite(st.x + st.y + alt)) {
         this.region?.update(st.x, st.y);
         this.lod.clearanceM = clearance(st.x + eye.x, st.y + eye.y, alt, this.groundFn);
+        const mc = MercatorCoordinate.fromLngLat([lon, lat]);
+        this.ring.update(mc.x, mc.y, 40075016.686 * Math.cos((lat * Math.PI) / 180), this.map.getZoom() + 1, this.lod);
+        this.ringAt.x = st.x;
+        this.ringAt.y = st.y;
       }
     }
     this.placeCamera(lon, lat, alt, bearing, pitch, -roll);
@@ -922,6 +961,7 @@ export class GameWorld {
   setTopo(on: boolean, pilot?: { x: number; y: number; heading: number }, features: AtlasFeature[] = []): void {
     if (!this.loaded || on === this.topo) return;
     this.topo = on;
+    this.setBackdrop();
     const m = this.map;
     const handlers = [m.dragPan, m.scrollZoom, m.touchZoomRotate, m.doubleClickZoom];
     if (on && pilot) {

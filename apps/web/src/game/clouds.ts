@@ -28,10 +28,12 @@
  * atmosphere's transmittance at the cloud's height; distant clouds sink into the same aerial
  * perspective as the landscape.
  *
- * Cost. The march runs in a full-screen pass at half the screen's resolution per axis (a
- * third on phones), a quarter of whose pixels are marched each frame (2 × 2 checkerboard); a
+ * Cost. The march runs in a full-screen pass at half to three quarters of the screen's
+ * resolution per axis as the frame time allows (a third on phones; ~0.9 Mpx at most), a
+ * quarter of whose pixels are marched each frame (2 × 2 checkerboard); a
  * resolve pass reprojects the previous result with the clouds' distance and clamps it to
- * the fresh samples. Rays are clipped to the cloud layer and to the relief (MapLibre's
+ * the fresh samples where the eye's move makes the reprojection uncertain (elsewhere the
+ * clamp would cut the edges into the coarse samples' stair steps). Rays are clipped to the cloud layer and to the relief (MapLibre's
  * terrain depth), cross the clear air between clouds in jumps given by the maps' distance
  * field, stop when the cloud is opaque, and take coarser steps and noise with distance. A
  * full-resolution pass composites the result with the clouds' depth so the relief and the
@@ -573,6 +575,9 @@ uniform vec3 uDirBase;
 uniform vec3 uDirX;
 uniform vec3 uDirY;
 uniform float uHistOk;
+// The eye's move since the last frame (m) and the angle of a pixel of the history (rad).
+uniform float uEyeMove;
+uniform float uPixAng;
 layout(location = 0) out vec4 oC;
 layout(location = 1) out vec4 oD;
 void main() {
@@ -621,8 +626,14 @@ void main() {
   }
   vec4 h = texture(uHistC, puv);
   vec4 hd = texture(uHistD, puv);
-  vec4 hc = clamp(h, mn, mx);
   float hdist = h.a > 1e-3 ? hd.r / h.a : distKm;
+  // The history clamped to the coarse samples around (a quarter of the pixels) loses all
+  // the detail finer than them: edges in stair steps. It is needed only where the
+  // reprojection may be off, by the eye's move seen at the cloud's distance (turning is
+  // exact; a glider's few decimetres per frame shift a cloud a few hundred metres away by
+  // a fraction of a pixel): there the clamp comes back.
+  float err = uEyeMove / (max(0.03, min(hdist, distKm)) * 1000.0 * uPixAng);
+  vec4 hc = mix(h, clamp(h, mn, mx), smoothstep(0.35, 1.5, err));
   if (fresh) {
     // The fresh sample, averaged with the clamped history: the step jitter's noise fades
     // over a few frames instead of showing as a fixed dither.
@@ -760,6 +771,7 @@ export class CloudLayer {
   private histOk = false;
   private prevProj = new THREE.Matrix4();
   private prevAnchor = new THREE.Vector3();
+  private prevEye = new THREE.Vector3();
   readonly shadowRT: THREE.WebGLRenderTarget;
   private nearRT: THREE.WebGLRenderTarget;
   private farRT: THREE.WebGLRenderTarget;
@@ -944,6 +956,8 @@ export class CloudLayer {
         uDirX: { value: new THREE.Vector3() },
         uDirY: { value: new THREE.Vector3() },
         uHistOk: { value: 0 },
+        uEyeMove: { value: 0 },
+        uPixAng: { value: 1e-3 },
       },
       { depthTest: false, depthWrite: false, blending: THREE.NoBlending },
     );
@@ -1373,11 +1387,18 @@ export class CloudLayer {
     ru.uDirX.value.copy(view.dirX);
     ru.uDirY.value.copy(view.dirY);
     ru.uHistOk.value = this.histOk ? 1 : 0;
+    ru.uEyeMove.value = Math.hypot(
+      view.anchor.x + view.eye.x - this.prevAnchor.x - this.prevEye.x,
+      view.anchor.y + view.eye.y - this.prevAnchor.y - this.prevEye.y,
+      view.anchor.z + view.eye.z - this.prevAnchor.z - this.prevEye.z,
+    );
+    ru.uPixAng.value = view.fovY / h;
     r.setRenderTarget(cur);
     r.render(this.resolve, this.cam);
     this.histOk = true;
     this.prevProj.copy(view.proj);
     this.prevAnchor.set(view.anchor.x, view.anchor.y, view.anchor.z);
+    this.prevEye.copy(view.eye);
     this.compositeMat.uniforms.uColor.value = cur.textures[0];
     this.compositeMat.uniforms.uDepthT.value = cur.textures[1];
   }

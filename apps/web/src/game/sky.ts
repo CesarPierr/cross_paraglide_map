@@ -735,7 +735,10 @@ export class Sky {
     const now = performance.now();
     if (now - this.adaptT < 2000) return;
     const cl = this.cloudLayer;
-    const top = this.lowQuality ? 0.34 : 0.5;
+    // Up to three quarters of the pixels per axis on a computer when the frames allow it:
+    // at half, a 1:1 screen shows the march's 2-pixel steps on near clouds (a high-density
+    // screen is held to ~0.9 Mpx by the layer anyway).
+    const top = this.lowQuality ? 0.34 : 0.75;
     const topSteps = this.lowQuality ? 80 : 160;
     const floor = this.frameEma > 0.03 ? 0.24 : this.lowQuality ? 0.28 : 0.36;
     if (this.frameEma > 0.0195 && cl.scale > floor + 1e-3) {

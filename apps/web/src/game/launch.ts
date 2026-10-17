@@ -75,6 +75,15 @@ export function newLaunch(mode: LaunchMode): LaunchState {
   return { mode, phase: 'ready', facingWing: mode === 'reverse', theta: 0.05, thetaRate: 0, phi: 0, phiRate: 0, run: 0, dist: 0, airspeed: 0, stable: 0, failReason: null, dir: 0, pullX: 0, pullZ: 0, drag: 0, dragT: 0, killing: false, wall: false };
 }
 
+/**
+ * Back on the feet just after lift-off, the wing still flying above: the run goes on (run
+ * speed and airspeed as they are, the wing overhead and steady, `dir` the run's direction
+ * from the take-off's facing) until the wing carries the pilot again.
+ */
+export function runOn(mode: LaunchMode, run: number, airspeed: number, dir: number): LaunchState {
+  return { ...newLaunch(mode), phase: 'running', facingWing: false, theta: 1.45, run: clamp(run, 0, 6.5), airspeed, stable: 0.3, dir: clamp(dir, -0.7, 0.7) };
+}
+
 const clamp = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v));
 const RHO = 1.12;
 /** Flat area (m²), pilot mass (kg) and the force coefficient of a wing pulling at a high angle of attack. */

@@ -105,7 +105,10 @@ fort, dos à la voile, elle se lève seule en **mur** (basse, bord d'attaque ouv
 avant de la monter ; sa traction croît avec la pression dynamique et, au-delà de ce que tiennent les
 pieds, elle **traîne** le pilote ou l'**arrache** s'il lui fait face voile en l'air ; l'**affaler** (C,
 touche X, ou freins à fond) interrompt proprement le décollage (R pour la replacer). On décolle quand
-elle est stable, la vitesse air suffisante et la pente qui s'ouvre. Échecs expliqués.
+elle est stable, la vitesse air suffisante et la pente qui s'ouvre. Échecs expliqués. La voile quitte le
+sol près de sa vitesse mini (~25 km/h) : par vent de face sur une pente douce, les pieds peuvent
+retoucher dans les secondes qui suivent ; ce n'est pas un posé, le pilote **court encore** et la voile le
+reprend (dans les 10 s après le décollage, contact doux, pente qui descend devant).
 
 Au **posé**, l'impact est jugé le long de la normale à la pente (≤ 2,5 m/s posé, 2,5–4 m/s dur, plus :
 crash ; arriver vent arrière dans une pente montante, c'est la pente qui vient à soi), puis le pilote

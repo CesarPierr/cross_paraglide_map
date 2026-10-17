@@ -10,7 +10,7 @@ import { AirMass, PROFILE_DZ, type Scenario } from './airmass';
 import { AudioVario } from './audio';
 import { newGlider, setAirspeed, step, WINGS, type AirSample, type Controls, type FlightEvent, type GliderState, type WingParams } from './flight';
 import { GameModel } from './game-client';
-import { landingStep, launchStep, newLanding, newLaunch, touchdown, type LandingState, type LaunchMode, type LaunchState } from './launch';
+import { landingStep, launchStep, newLanding, newLaunch, runOn, touchdown, type LandingState, type LaunchMode, type LaunchState } from './launch';
 import { PilotAir } from './pilot-air';
 import { advanceTask, distanceMadeGood, taskFromRoute, taskLength, type Task } from './task';
 import { Multiplayer, type NetEvent } from './net';
@@ -180,6 +180,8 @@ export class GameEngine {
   launch: LaunchState | null = null;
   readonly startMode: 'air' | LaunchMode;
   private liftoffT = -1e9;
+  /** Game time of the last touch-and-go: the pilot runs on by himself for a moment. */
+  private runOnT = -1e9;
   private touch = { go: false, turn: false };
 
   constructor(
@@ -666,7 +668,7 @@ export class GameEngine {
     const ahead = this.groundAt(g.x + sx * 15, g.y + sy * 15);
     const slope = (here - ahead) / 15;
     const k = this.keys;
-    const input = { go: k.has('z') || k.has('w') || this.touch.go, turn: k.has(' ') || this.touch.turn, kill: k.has('x') || this.touchKill, brakeL: this.controls.brakeL, brakeR: this.controls.brakeR };
+    const input = { go: k.has('z') || k.has('w') || this.touch.go || this.flightS - this.runOnT < 3, turn: k.has(' ') || this.touch.turn, kill: k.has('x') || this.touchKill, brakeL: this.controls.brakeL, brakeR: this.controls.brakeR };
     const h = dt / steps;
     for (let i = 0; i < steps; i++) launchStep(L, input, headwind, crosswind, slope, h);
     // Dragged by the wing: the pilot slides downwind.
@@ -748,6 +750,19 @@ export class GameEngine {
     const td = touchdown(g.vx, g.vy, g.vz, -gx / nl, -gy / nl, 1 / nl);
     const groundKmh = Math.hypot(g.vx, g.vy) * 3.6;
     g.z = ground + 1.1;
+    // Just after lift-off, a light touch on a slope that keeps falling away, the wing still
+    // flying and the pilot still facing down the take-off: no landing, he runs on until the
+    // wing carries him again (what pilots do on a light-wind take-off: the wing leaves the
+    // ground near its slowest and needs some height to reach its trim speed).
+    const vh = Math.hypot(g.vx, g.vy);
+    const slopeDown = -(gx * g.vx + gy * g.vy) / Math.max(0.1, vh);
+    const off = Math.atan2(Math.sin(g.heading - this.spawn.heading), Math.cos(g.heading - this.spawn.heading));
+    if (this.startMode !== 'air' && this.flightS - this.liftoffT < 10 && td.kind === null && slopeDown > 0.08 && g.airspeed > 5.5 && Math.abs(off) < 0.7) {
+      this.launch = runOn(this.startMode, vh, g.airspeed, off);
+      this.runOnT = this.flightS;
+      this.incident = { text: 'Les pieds touchent : cours encore, la voile va te reprendre', until: this.flightS + 3 };
+      return true;
+    }
     if (td.kind === 'crash' || td.kind === 'hard') {
       this.endFlight(td.kind, g.vz, groundKmh, td.reason);
       return true;

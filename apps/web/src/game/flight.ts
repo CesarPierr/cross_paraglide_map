@@ -229,6 +229,9 @@ export interface GliderState {
   /** Equilibrium airspeed the pendulum is settled on (m/s) and the CLmax excess low-passed by the stall delay. */
   vEq: number;
   stallLp: number;
+  /** Each half-wing's excess over its CLmax, low-passed like the stall's (separation delay). */
+  exLLp: number;
+  exRLp: number;
   /** Relative deviation of the airspeed from that equilibrium, as the canopy's pitch follows it. */
   speedDev: number;
   /** Brake travel on each side 0.3 s ago, to detect pumping on a collapsed side. */
@@ -400,6 +403,8 @@ export function newGlider(x: number, y: number, z: number, heading: number, wing
     lastAirV: 0,
     vEq: 0,
     stallLp: -1,
+    exLLp: -1,
+    exRLp: -1,
     speedDev: 0,
     pumpL: 0,
     pumpR: 0,
@@ -621,8 +626,12 @@ export function step(s: GliderState, c: Controls, air: AirSample, dt: number, rn
   const clBR = TRIM_SIDE.cl;
   const clL = (clAtt * V * loadL) / vL + 0.5 * (clBL - TRIM0.cl) + (CL_ALPHA * 0.8 * s.tipHpL) / V;
   const clR = (clAtt * V * loadR) / vR + 0.5 * (clBR - TRIM0.cl) + (CL_ALPHA * 0.8 * s.tipHpR) / V;
-  const exL = clL - A.clStall * (1 - 0.08 * (loadL - 1));
-  const exR = clR - A.clStall * (1 - 0.08 * (loadR - 1));
+  // The flow separates over a few tenths of a second, as for the stall above: a tip gust at a
+  // thermal's sharp edge does not spin a wing flown with half brake, a slow deep turn does.
+  s.exLLp += (clL - A.clStall * (1 - 0.08 * (loadL - 1)) - s.exLLp) * Math.min(1, dt / 0.35);
+  s.exRLp += (clR - A.clStall * (1 - 0.08 * (loadR - 1)) - s.exRLp) * Math.min(1, dt / 0.35);
+  const exL = s.exLLp;
+  const exR = s.exRLp;
   // Both sides past CLmax is a stall, not a spin; and a half-wing spins only under its brake
   // (the inner brake of a slow turn, the counter-brake on a collapse), never hands up.
   const sideStall = exL > 0 && exL - Math.max(0, exR) > 0.12 && s.brakeL > 0.35 ? -1 : exR > 0 && exR - Math.max(0, exL) > 0.12 && s.brakeR > 0.35 ? 1 : 0;

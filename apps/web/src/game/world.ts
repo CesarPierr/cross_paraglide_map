@@ -28,6 +28,7 @@ import { Forest } from './trees';
 import { clearance, lodByDistance, useTerrainTileZoom, type LodState, type TileZoomFn } from './lod';
 import { Ground, REGION_HALF, REGION_N, type SunUniforms } from './ground';
 import { RegionMaps } from './region';
+import { TerrainHeights } from './heights';
 import type { GridMeta } from '@brises/model';
 
 export type ViewMode = 'first' | 'third';
@@ -213,11 +214,16 @@ export class GameWorld {
   private lod: LodState = { centerM: CENTER_M, clearanceM: 100 };
   private lodT = 0;
 
+  /** The terrain's heights around the pilot, whatever the camera looks at (heights.ts). */
+  readonly heights: TerrainHeights;
+
   constructor(
     container: HTMLElement,
     readonly frame: LocalFrame,
     start: { x: number; y: number; z: number },
   ) {
+    this.heights = new TerrainHeights(frame);
+    this.heights.around(start.x, start.y);
     const [lon, lat] = frame.toLngLat(start.x, start.y);
     setMaxParallelImageRequests(24);
     this.map = new MlMap({
@@ -561,6 +567,7 @@ export class GameWorld {
    * position (for the cloud white-out and the sound).
    */
   frameUpdate(st: GliderState, head: Head): void {
+    this.heights.around(st.x, st.y);
     if (!this.loaded || this.topo) return;
     const now = performance.now();
     const dt = Math.min(0.1, (now - this.lastFrame) / 1000);
@@ -811,10 +818,20 @@ export class GameWorld {
     return ms;
   }
 
-  /** Ground elevation from the loaded terrain tiles (≈10 m), null where not loaded yet. */
+  /**
+   * Ground elevation (m) from the terrain tiles (≈7 m), whatever is drawn: the tiles read
+   * around the pilot (heights.ts), else a drawn tile's own elevations, else null (not known
+   * yet). MapLibre's query alone answers 0, or a coarse parent's height, where no drawn tile
+   * has its own: the ground jumped under the glider.
+   */
   groundAt(x: number, y: number): number | null {
+    const h = this.heights.at(x, y);
+    if (h !== null) return h;
     if (!this.loaded) return null;
-    return this.map.queryTerrainElevation(this.frame.toLngLat(x, y));
+    const terrain = (this.map as unknown as { terrain?: { getDrawnElevationForLngLat?: (ll: { lng: number; lat: number }, ownDemOnly?: boolean) => number | undefined } | null }).terrain;
+    const [lng, lat] = this.frame.toLngLat(x, y);
+    if (terrain?.getDrawnElevationForLngLat) return terrain.getDrawnElevationForLngLat({ lng, lat }, true) ?? null;
+    return this.map.queryTerrainElevation([lng, lat]);
   }
 
 

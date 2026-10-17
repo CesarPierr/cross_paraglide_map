@@ -314,6 +314,8 @@ export class GameEngine {
     await this.placeSocks();
     this.cb.onStatus('Chargement du paysage…');
     await this.world.ready;
+    // The ground's heights around the start, for the collisions and the relief the wind meets.
+    await this.world.heights.ready(this.spawn.x, this.spawn.y);
     this.applyAtmosphere();
     // A look all around before the start: the tiles of every direction are requested and
     // cached, so turning the head later shows a loaded landscape.

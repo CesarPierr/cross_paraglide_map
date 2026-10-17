@@ -13,6 +13,11 @@ import type { LocalFrame } from './geo';
 
 /** Zoom of the tiles read (the terrain source's maxzoom: ~7 m per pixel here). */
 export const HEIGHTS_ZOOM = 14;
+/**
+ * The same tiles by the bucket's own host name: S3 speaks HTTP/1.1 only, six connections per
+ * host, and MapLibre's relief (by the path-style name) no longer waits behind these.
+ */
+const HEIGHTS_TILES = TERRAIN_TILES.replace('https://s3.amazonaws.com/elevation-tiles-prod/', 'https://elevation-tiles-prod.s3.amazonaws.com/');
 const N = 256;
 /** Tiles kept (7 × 7 around the pilot, ~12 MB). */
 const CAP = 49;
@@ -129,7 +134,7 @@ export class TerrainHeights {
   private async load(tx: number, ty: number): Promise<void> {
     const key = `${tx}/${ty}`;
     try {
-      const url = TERRAIN_TILES.replace('{z}', String(HEIGHTS_ZOOM)).replace('{x}', String(tx)).replace('{y}', String(ty));
+      const url = HEIGHTS_TILES.replace('{z}', String(HEIGHTS_ZOOM)).replace('{x}', String(tx)).replace('{y}', String(ty));
       const res = await fetch(url);
       if (!res.ok) throw new Error(String(res.status));
       const bmp = await createImageBitmap(await res.blob(), { colorSpaceConversion: 'none', premultiplyAlpha: 'none' });

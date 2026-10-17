@@ -15,7 +15,7 @@
 const CACHE = 'brises-tiles-v1';
 const MAX_ENTRIES = 15000;
 const PRUNE_BATCH = 1500;
-const HOSTS = ['data.geopf.fr', 's3.amazonaws.com', 'tiles.maps.eox.at', 'tiles.openfreemap.org', 'a.tile.opentopomap.org', 'b.tile.opentopomap.org', 'c.tile.opentopomap.org'];
+const HOSTS = ['data.geopf.fr', 's3.amazonaws.com', 'elevation-tiles-prod.s3.amazonaws.com', 'tiles.maps.eox.at', 'tiles.openfreemap.org', 'a.tile.opentopomap.org', 'b.tile.opentopomap.org', 'c.tile.opentopomap.org'];
 const BLANK_IGN = { bytes: 1651, sha256: '11c9176ec2896e0a2a5e945e47b0ee223686701c32aab229952b5f150e191bc5' };
 
 function isTile(url) {

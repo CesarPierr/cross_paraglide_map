@@ -132,6 +132,16 @@ vent et peut le traîner s'il ne l'affale pas.
 - **Vue pilote** (l'œil suit la tête : assis dans la sellette en vol, debout au déco) ou de
   l'extérieur. Au déco, les mains tiennent élévateurs et freins et suivent les élévateurs quand la
   voile monte : bras en arrière face pente, devant soi face à la voile.
+- **Pilote et sellette** (`glider-gear.ts`, `glider-pilot.ts`) : pilote de 1,70 m (segments de
+  Winter) allongé à ~35° dans une sellette cocon (speedbag, cockpit avec l'instrument sur les genoux,
+  coque à protection dorsale, carénage arrière), sangles, mousquetons à 42 cm, casque ouvert, gants
+  sur des poignées qui suivent les freins ; cotes des fiches constructeurs (Buzz Z7 MS, Lightness 3,
+  X-Rated 7, élévateurs Cruiser). Au déco il se tient debout, puis court avec une vraie foulée. La
+  voile n'est pas soudée au pilote : elle tourne autour des mousquetons (balancier amorti de ~1,1 s
+  poussé par les accélérations de roulis et de tangage, sellette inclinée de ~5° à fond de
+  transfert, bout d'aile soulevé par une rafale ; estimations, pas des mesures) et, au décollage,
+  repart de sa position au sol. Les suspentes détendues (fermeture, oreilles, mains hautes) se
+  courbent et frémissent.
 - **Météo** : réglée à la main, aléatoire selon la saison (puis elle évolue), ou **météo du jour**
   (`forecast.ts`) : la prévision AROME au décollage pour aujourd'hui donne le vent aux crêtes, la
   masse d'air par le gradient 850–700 hPa (3 °C/km → stable, 9 → très instable) et l'humidité par
@@ -164,6 +174,20 @@ vent et peut le traîner s'il ne l'affale pas.
   les tuiles du relief lui-même (maillage et texture où l'image est drapée) suivent la même règle
   (au plus z17), le Sentinel-2 un niveau en dessous. 130 à 175 tuiles IGN en vol, quel que soit
   le tangage ; l'axe donné à MapLibre reste à 0,1° au moins de l'horizontale.
+- **Image tout autour** (`lod.ts`, `TileRing`) : MapLibre ne charge que ce que la vue contient et
+  n'en garde qu'environ une vue hors champ (le nombre de tuiles de l'écran fois cinq) ; une tête
+  tournée vite montrait une seconde le Sentinel-2 étiré sur les pentes proches. Les orthophotos sont
+  donc gardées chargées dans toutes les directions, deux niveaux plus grossiers que la vue, jusqu'à
+  80 km (30 à 90 tuiles ; téléphone 2,5 niveaux, 60 km), demandées avant les tuiles fines et tout de
+  suite après un saut ; 500 tuiles gardées hors champ (200 sur téléphone). Après un demi-tour, la
+  part d'image sous la moitié de son détail une demi-seconde après l'arrêt est passée de 32–56 % à
+  0–17 % ; au démarrage, le jeu attend ces tuiles la caméra immobile. Coût : +0,6 à 1,1 ms de
+  MapLibre par image, jusqu'à ~175 Mo de tuiles sur le GPU.
+- **Sans image** : là où aucune orthophoto n'est encore chargée, le fond de MapLibre est un magenta
+  témoin que la passe du paysage remplace par un paysage tiré de WorldCover (`gBackdrop` : forêt,
+  prés et champs, alpage, roche, glace, bâti par taches selon leurs parts). Hors de France, la tuile
+  blanche qu'IGN renvoie (toujours les mêmes 1 651 octets) est traitée comme absente par le service
+  worker : la Suisse et l'Italie gardent leur image plus grossière au lieu d'une nappe blanche.
 - **Lumière du relief** (`ground.ts`, `region.ts`) : trois niveaux d'altitudes autour du pilote, tirés
   du relief tel que MapLibre le dessine (6 km à ~6 m, 60 km à ~60 m) et de la grille du modèle de vent
   (160 km à 216 m, pour les montagnes non chargées, derrière la caméra) ; pour chacun, la pente, les
@@ -248,7 +272,11 @@ dans leur bouton (i) une fois en vol.
   toit clair, calcaire pris pour de la neige au-dessus de 2 400 m) ; un bâtiment isolé hors des zones
   bâties reçoit parfois le détail du sol derrière lui ; les rivières étroites ne sont pas reconnues
   comme de l'eau ; les lacs ne reflètent pas les montagnes ; le relief proche reste celui des tuiles
-  AWS (~25 m) ; la neige suit une climatologie, pas l'enneigement du jour.
+  AWS (~25 m) ; la neige suit une climatologie, pas l'enneigement du jour. Le paysage de remplacement
+  n'a ni lacs, ni rivières, ni routes ; les tuiles à cheval sur la frontière gardent leur moitié
+  blanche (un glacier a le même blanc) ; l'arrivée du détail reste un coup de netteté, sans fondu.
+- Pilote : speedbag et carénage rigides (pas de tissu simulé), postures tirées des fiches et de
+  l'anthropométrie, pas de photos.
 
 ## Sources principales
 

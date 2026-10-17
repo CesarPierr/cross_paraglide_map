@@ -495,6 +495,8 @@ function ThermalAssistant({ engine }: { engine: GameEngine }) {
       if (!c || !ctx) return;
       const dpr = Math.min(2, window.devicePixelRatio || 1);
       const size = c.clientWidth;
+      // Hidden (HUD off): nothing to draw, and the scale would turn negative.
+      if (size < 16) return;
       if (c.width !== Math.round(size * dpr)) {
         c.width = Math.round(size * dpr);
         c.height = Math.round(size * dpr);

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { clearance, diskTiles, lodByDistance, setTileCache, TileRing, useTileRing, type LodState, type TileXYZ } from '../src/game/lod';
+import { clearance, diskTiles, lodByDistance, ringLoaded, setTileCache, TileRing, useTileRing, type LodState, type TileXYZ } from '../src/game/lod';
 
 const state: LodState = { centerM: 1200, clearanceM: 50 };
 /** MapLibre's units: the centre 1200 m away is at 0.002 mercator units here. */
@@ -142,6 +142,23 @@ describe('ring of tiles kept around the pilot', () => {
     expect(keys.length).toBe(1 + ring.tiles.filter((t) => t.z < 15).length);
     expect(keys.slice(0, -1).every((k) => Number(k.split('/')[0]) < 15)).toBe(true);
     expect(useTileRing({ style: { tileManagers: {} } }, 'ign', ring)).toBe(false);
+  });
+
+  it('tells how much of the ring MapLibre holds loaded, the tiles it never asked for aside', () => {
+    const ring = new TileRing(-2, 7, 18, 80000, 120);
+    ring.update(ex, ey, unitM, 15.8, lod);
+    const tiles: { state: string; tileID: { canonical: TileXYZ } }[] = [];
+    const map = { style: { tileManagers: { ign: { _inViewTiles: { getAllTiles: () => tiles } } } } };
+    expect(ringLoaded(map, 'ign', ring)).toBe(0);
+    // Half the ring asked for, half of that loaded (one given up), plus a view tile loading.
+    const asked = ring.tiles.slice(0, Math.floor(ring.tiles.length / 2));
+    asked.forEach((t, i) => tiles.push({ state: i % 2 ? 'loading' : i === 0 ? 'errored' : 'loaded', tileID: { canonical: t } }));
+    tiles.push({ state: 'loading', tileID: { canonical: { z: 17, x: 1, y: 2 } } });
+    expect(ringLoaded(map, 'ign', ring)).toBeCloseTo(Math.ceil(asked.length / 2) / asked.length, 6);
+    for (const t of tiles) t.state = 'loaded';
+    expect(ringLoaded(map, 'ign', ring)).toBe(1);
+    expect(ringLoaded({ style: { tileManagers: {} } }, 'ign', ring)).toBe(1);
+    expect(ringLoaded(map, 'ign', new TileRing(-2, 7, 18, 80000, 120))).toBe(1);
   });
 
   it('keeps more tiles of one source decoded out of view', () => {

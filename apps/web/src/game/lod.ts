@@ -188,6 +188,32 @@ export function useTileRing(map: { style?: { tileManagers?: Record<string, unkno
 }
 
 /**
+ * Share (0..1) of `ring`'s tiles that a source patched by `useTileRing` holds with their data
+ * (or given up: missing on the server). Tiles it does not hold (out of the source's bounds, or
+ * not asked for yet) do not count; 0 before any is held, 1 for an empty ring or when MapLibre's
+ * internals are not the expected ones (nothing to wait for).
+ */
+export function ringLoaded(map: { style?: { tileManagers?: Record<string, unknown> } }, sourceId: string, ring: TileRing): number {
+  const tm = map.style?.tileManagers?.[sourceId] as { _inViewTiles?: { getAllTiles?(): { state: string; tileID: { canonical: TileXYZ } }[] } } | undefined;
+  const all = tm?._inViewTiles?.getAllTiles?.();
+  if (!Array.isArray(all) || !ring.tiles.length) return 1;
+  const held = new Map<string, boolean>();
+  for (const t of all) {
+    const c = t.tileID.canonical;
+    held.set(`${c.z}/${c.x}/${c.y}`, t.state === 'loaded' || t.state === 'reloading' || t.state === 'expired' || t.state === 'errored');
+  }
+  let n = 0;
+  let done = 0;
+  for (const t of ring.tiles) {
+    const h = held.get(`${t.z}/${t.x}/${t.y}`);
+    if (h === undefined) continue;
+    n++;
+    if (h) done++;
+  }
+  return n ? done / n : 0;
+}
+
+/**
  * Number of tiles of one source MapLibre keeps decoded (on the GPU) once out of view. Its own
  * cap is the screen's tile count times five zoom levels (150 tiles on a 1280×800 window,
  * whatever the map's `maxTileCacheSize`): about one view, so the tiles of a thermal's other

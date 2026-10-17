@@ -22,10 +22,11 @@ import type { CloudInfo } from './airmass';
 import type { GliderState } from './flight';
 import type { LocalFrame } from './geo';
 import { buildGlider, type GliderModel } from './glider';
+import { EYE_SEATED, EYE_STANDING } from './glider-gear';
 import { Sky, type FrameInfo } from './sky';
 import { ThermalFlows, Vultures } from './life';
 import { Forest } from './trees';
-import { clearance, lodByDistance, setTileCache, TileRing, useTerrainTileZoom, useTileRing, type LodState, type TileZoomFn } from './lod';
+import { clearance, lodByDistance, ringLoaded, setTileCache, TileRing, useTerrainTileZoom, useTileRing, type LodState, type TileZoomFn } from './lod';
 import { Ground, REGION_HALF, REGION_N, type SunUniforms } from './ground';
 import { IMAGERY_GAP } from './materials';
 import { RegionMaps } from './region';
@@ -46,13 +47,13 @@ const LEVEL_GAP = 0.1;
 /** Distance (m) from the eye to the point MapLibre's camera looks at (see placeCamera). */
 const CENTER_M = 1200;
 /**
- * Pilot's eyes in the glider frame: seated and leaning back, about 0.3 m above and behind
- * the carabiners, so risers, brake handles and the pod sit in the lower part of the view.
- * Standing on the take-off the head is up above the shoulders (glider-pilot.ts, STANDING):
- * left at the seat's place, the eye would look at the pilot's own shoulders from behind.
+ * Pilot's eyes in the glider frame (glider-gear.ts, where the body is placed around them):
+ * seated and leaning back, about 0.3 m above and behind the carabiners, so risers, brake
+ * handles and the pod sit in the lower part of the view; standing on the take-off, up above
+ * the shoulders (left at the seat's place, the eye would look at the pilot's own shoulders
+ * from behind).
  */
-const EYE = [0, 0.32, 0.34] as const;
-const EYE_STANDING = [0, 0.43, 0.03] as const;
+const EYE = EYE_SEATED;
 /** MapLibre's backdrop where no imagery is loaded, when nothing replaces it. */
 const BACKDROP = '#5d6352';
 
@@ -691,7 +692,7 @@ export class GameWorld {
     this.chaseCam.updateProjectionMatrix();
     this.flows.setScale((c.clientHeight || 600) / (2 * Math.tan((this.fovDeg * Math.PI) / 360)));
     const ground = this.groundAt(st.x, st.y);
-    if (ground !== null) this.forest.update(this.map, this.frame, st.x, st.y, st.z - ground);
+    if (ground !== null) this.forest.update(this.map, this.frame, st.x, st.y, st.z - ground, this.groundFn);
     // Name tags of the other pilots face the camera and keep a readable size.
     const camWorld = new THREE.Vector3(st.x + eye.x, st.y + eye.y, st.z + eye.z);
     for (const p of this.peers.values()) {
@@ -871,6 +872,24 @@ export class GameWorld {
     const [lng, lat] = this.frame.toLngLat(x, y);
     if (terrain?.getDrawnElevationForLngLat) return terrain.getDrawnElevationForLngLat({ lng, lat }, true) ?? null;
     return this.map.queryTerrainElevation([lng, lat]);
+  }
+
+  /**
+   * Resolves once the imagery all around (the ring, lod.ts) is nearly all there and the view's
+   * relief loaded, or after `timeoutMs`: the view's finest tiles follow within a second or so
+   * (waiting for them all took several seconds more).
+   */
+  imageryAround(timeoutMs: number): Promise<void> {
+    const t0 = performance.now();
+    const mm = this.map as unknown as Parameters<typeof ringLoaded>[0];
+    return new Promise((resolve) => {
+      const check = () => {
+        const ready = ringLoaded(mm, 'ign-ortho', this.ring) >= 0.95 && (!this.map.getSource('terrain') || this.map.isSourceLoaded('terrain'));
+        if (ready || performance.now() - t0 > timeoutMs) resolve();
+        else setTimeout(check, 100);
+      };
+      setTimeout(check, 100);
+    });
   }
 
 

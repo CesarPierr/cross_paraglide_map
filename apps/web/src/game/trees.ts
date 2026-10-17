@@ -57,6 +57,7 @@ export class Forest {
   private broad: THREE.InstancedMesh;
   private trunks: THREE.InstancedMesh;
   private plantedAt = { x: 1e12, y: 1e12 };
+  private retryAt = 0;
   private busy = false;
 
   private month0 = 6;
@@ -99,26 +100,34 @@ export class Forest {
     this.plantedAt = { x: 1e12, y: 1e12 };
   }
 
-  /** Re-plants around the pilot when he moved ~200 m (low down only). */
-  update(map: MlMap, frame: LocalFrame, x: number, y: number, agl: number): void {
+  /**
+   * Re-plants around the pilot when he moved ~200 m (low down only), on the ground's heights
+   * (`ground`, the world's: they are known before MapLibre has drawn the relief, which put the
+   * trees of a start at 0 m, under the slope); a second later again while the land cover or
+   * some heights are still missing.
+   */
+  update(map: MlMap, frame: LocalFrame, x: number, y: number, agl: number, ground: (x: number, y: number) => number | null): void {
     this.group.visible = agl < 650;
     if (!this.group.visible || this.busy || Math.hypot(x - this.plantedAt.x, y - this.plantedAt.y) < 200) return;
+    const now = performance.now();
+    if (now < this.retryAt) return;
     this.busy = true;
     try {
-      this.plant(map, frame, x, y);
-      this.plantedAt = { x, y };
+      if (this.plant(map, frame, x, y, ground)) this.plantedAt = { x, y };
+      else this.retryAt = now + 1000;
     } finally {
       this.busy = false;
     }
   }
 
-  private plant(map: MlMap, frame: LocalFrame, cx: number, cy: number): void {
-    if (!map.getSource('ofm')) return;
+  /** False when the land cover or some of the trees' heights were not there yet. */
+  private plant(map: MlMap, frame: LocalFrame, cx: number, cy: number, ground: (x: number, y: number) => number | null): boolean {
+    if (!map.getSource('ofm') || !map.isSourceLoaded('ofm')) return false;
     let feats: GeoJSON.Feature[];
     try {
       feats = map.querySourceFeatures('ofm', { sourceLayer: 'landcover', filter: ['match', ['get', 'class'], ['wood', 'forest'], true, false] }) as GeoJSON.Feature[];
     } catch {
-      return;
+      return false;
     }
     const R = 650;
     const rings: { ring: Ring; holes: Ring[] }[] = [];
@@ -142,6 +151,7 @@ export class Forest {
     let nc = 0;
     let nb = 0;
     let nt = 0;
+    let missing = 0;
     const step = 14;
     const i0 = Math.floor((cx - R) / step);
     const j0 = Math.floor((cy - R) / step);
@@ -154,8 +164,11 @@ export class Forest {
         if (Math.hypot(x - cx, y - cy) > R) continue;
         const inside = rings.some((r) => inRing(x, y, r.ring) && !r.holes.some((h) => inRing(x, y, h)));
         if (!inside) continue;
-        const z = map.queryTerrainElevation(frame.toLngLat(x, y));
-        if (z === null) continue;
+        const z = ground(x, y);
+        if (z === null) {
+          missing++;
+          continue;
+        }
         const kind = hash(i * 7, j * 11);
         const h = 12 + 16 * hash(i * 13, j * 5);
         p.set(x, y, z - 0.5);
@@ -185,5 +198,6 @@ export class Forest {
     this.trunks.count = nt;
     for (const m of [this.conifers, this.broad, this.trunks]) m.instanceMatrix.needsUpdate = true;
     for (const m of [this.conifers, this.broad]) if (m.instanceColor) m.instanceColor.needsUpdate = true;
+    return missing === 0;
   }
 }

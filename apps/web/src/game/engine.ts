@@ -354,13 +354,6 @@ export class GameEngine {
     // The ground's heights around the start, for the collisions and the relief the wind meets.
     await this.world.heights.ready(this.spawn.x, this.spawn.y);
     this.applyAtmosphere();
-    // A look all around before the start: the tiles of every direction are requested and
-    // cached, so turning the head later shows a loaded landscape.
-    this.cb.onStatus('Préchargement du paysage tout autour…');
-    for (let k = 0; k < 8; k++) {
-      this.world.frameUpdate(this.glider, { yaw: (k * Math.PI) / 4, pitch: -0.25 });
-      await new Promise((r) => setTimeout(r, 280));
-    }
     if (this.launch) {
       // Stand on the real ground (terrain tiles, finer than the take-off sheet's altitude).
       const g0 = this.world.groundAt(this.spawn.x, this.spawn.y);
@@ -369,6 +362,12 @@ export class GameEngine {
       this.world.glider.setInflation(this.launch.theta, 0, this.launch.facingWing, this.wingGround(this.spawn.heading));
       this.head = { yaw: 0, pitch: -0.05 };
     }
+    // The start's view, the camera still, and the imagery all around (the world's ring of
+    // tiles, lod.ts), so that turning the head later shows a loaded landscape. (A look all
+    // around used to request it, the camera spinning behind the loading screen.)
+    this.cb.onStatus('Chargement du paysage tout autour…');
+    this.world.frameUpdate(this.glider, this.head);
+    await this.world.imageryAround(4000);
     if (this.task) this.world.setTask(this.task.points, this.task.next);
     this.cb.onStatus(null);
     void this.connectMulti();

@@ -52,6 +52,8 @@ export interface ModelAir {
   venturi: number;
   /** Vertical shear of the wind here (1/s): the valley breeze under the wind aloft, an inversion. */
   shear: number;
+  /** Heating efficiency of the ground here (land cover; 1 = the mean of the Alps' land). */
+  surface: number;
 }
 
 let terrain: Terrain | null = null;
@@ -100,7 +102,7 @@ function sampleOnce(p: ModelParams, lon: number, lat: number, alt: number): Mode
   const j0 = Math.max(0, Math.min(grid.height - 2, Math.floor(gy - 0.5)));
   const fx = Math.max(0, Math.min(1, gx - 0.5 - i0));
   const fy = Math.max(0, Math.min(1, gy - 0.5 - j0));
-  const out: ModelAir = { u: 0, v: 0, lift: 0, turbulence: 0, lee: 0, ground: 0, thermal: 0, hazard: null, venturi: 0, shear: 0 };
+  const out: ModelAir = { u: 0, v: 0, lift: 0, turbulence: 0, lee: 0, ground: 0, thermal: 0, hazard: null, venturi: 0, shear: 0, surface: 0 };
   let best = 0;
   for (let dj = 0; dj < 2; dj++) {
     for (let di = 0; di < 2; di++) {
@@ -117,6 +119,7 @@ function sampleOnce(p: ModelParams, lon: number, lat: number, alt: number): Mode
       out.ground += cell.elevation * wgt;
       out.thermal += cell.thermal * wgt;
       out.venturi += cell.venturi * wgt;
+      out.surface += (t.surface?.[k] ?? 1) * wgt;
       if (cell.hazardIndex >= 0 && cell.hazardWeight * wgt > best) {
         best = cell.hazardWeight * wgt;
         out.hazard = curated?.hazards?.[cell.hazardIndex]?.name ?? null;

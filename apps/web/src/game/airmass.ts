@@ -404,6 +404,8 @@ export class AirMass {
   private shadeT = -1e9;
   /** Last clouds computed (for the shade). */
   private lastClouds: CloudInfo[] = [];
+  /** The sun's direction at the last shade update (unit, east/north/up). */
+  private sunVec = { x: 0, y: 0, z: 1 };
 
   constructor(
     readonly frame: LocalFrame,
@@ -1232,24 +1234,13 @@ export class AirMass {
   updateShade(sunAzimuthDeg: number, sunElevationDeg: number, t: number, dt: number, px: number, py: number): void {
     const el = (sunElevationDeg * Math.PI) / 180;
     const az = (sunAzimuthDeg * Math.PI) / 180;
-    const sz = Math.sin(el);
-    const sx = Math.cos(el) * Math.sin(az);
-    const sy = Math.cos(el) * Math.cos(az);
-    const clouds = this.lastClouds;
+    this.sunVec.x = Math.cos(el) * Math.sin(az);
+    this.sunVec.y = Math.cos(el) * Math.cos(az);
+    this.sunVec.z = Math.sin(el);
     const push = t - this.shadeT >= SHADE_STEP;
     for (const s of this.sources) {
       if (Math.abs(s.x - px) > 16000 || Math.abs(s.y - py) > 16000) continue;
-      let light = sz <= 0.02 ? 0.3 : 1;
-      if (sz > 0.02) {
-        const z = s.ground + 5;
-        for (const c of clouds) {
-          if (z > c.top) continue;
-          const mid = Math.max(z, (c.base + c.top) / 2);
-          const tt = (mid - z) / sz;
-          const d = Math.hypot(s.x + sx * tt - c.x, s.y + sy * tt - c.y) / (c.radius * 0.85);
-          if (d < 1.2) light *= 1 - 0.8 * c.size * (1 - smoothstep(0.6, 1.2, d));
-        }
-      }
+      const light = this.lightAt(s.x, s.y, s.ground + 5);
       // The ground cools in ~2–3 min under a cloud and needs ~4 min to heat up again.
       const tau = light < s.sun ? 150 : 240;
       s.sun += (light - s.sun) * Math.min(1, dt / tau);
@@ -1259,6 +1250,21 @@ export class AirMass {
       }
     }
     if (push) this.shadeT = t;
+  }
+
+  /** Direct sunlight now at a point of the ground through the cumulus (0..1; 0.3 with the sun down). */
+  lightAt(x: number, y: number, z: number): number {
+    const { x: sx, y: sy, z: sz } = this.sunVec;
+    if (sz <= 0.02) return 0.3;
+    let light = 1;
+    for (const c of this.lastClouds) {
+      if (z > c.top) continue;
+      const mid = Math.max(z, (c.base + c.top) / 2);
+      const tt = (mid - z) / sz;
+      const d = Math.hypot(x + sx * tt - c.x, y + sy * tt - c.y) / (c.radius * 0.85);
+      if (d < 1.2) light *= 1 - 0.8 * c.size * (1 - smoothstep(0.6, 1.2, d));
+    }
+    return light;
   }
 
   /** Cumulus of the active thermals within `range` of a point. */

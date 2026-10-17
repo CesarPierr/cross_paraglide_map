@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { AirMass } from '../src/game/airmass';
 import { newGlider, type AirSample } from '../src/game/flight';
 import { LocalFrame } from '../src/game/geo';
-import { PilotAir, ReliefFlow, surfaceFactor, turbulenceModel, type TurbulenceState } from '../src/game/pilot-air';
+import { anabaticSpeed, PilotAir, ReliefFlow, surfaceFactor, turbulenceModel, type TurbulenceState } from '../src/game/pilot-air';
 
 /** A ridge across a west wind: windward slope ~30° from x = −520, crest 300 m high at x = 0, steep lee to x = 330. */
 const ridge = (x: number) => {
@@ -103,5 +103,45 @@ describe('wind gradient and turbulence at the pilot', () => {
     expect(out.wL).toBeDefined();
     expect(out.agl).toBeCloseTo(3, 0);
     expect(Math.abs(pa.info.relief)).toBeLessThan(0.01);
+  });
+});
+
+describe('upslope breeze along the sunlit relief', () => {
+  // Unit normal of a slope facing the azimuth `aspect` (° from north), `deg` steep; the sun likewise.
+  const normal = (aspect: number, deg: number): [number, number, number] => {
+    const a = (aspect * Math.PI) / 180;
+    const t = (deg * Math.PI) / 180;
+    return [Math.sin(a) * Math.sin(t), Math.cos(a) * Math.sin(t), Math.cos(t)];
+  };
+  const sun = (az: number, el: number): [number, number, number] => {
+    const a = (az * Math.PI) / 180;
+    const e = (el * Math.PI) / 180;
+    return [Math.sin(a) * Math.cos(e), Math.cos(a) * Math.cos(e), Math.sin(e)];
+  };
+  const v = (n: [number, number, number], s: [number, number, number], surface = 1, U = 0, season = 1) => anabaticSpeed(...n, ...s, season, surface, U);
+
+  it('a sunny cliff breathes 2-4 m/s, a shaded face nothing', () => {
+    const noon = sun(180, 65);
+    expect(v(normal(160, 75), noon, 1.3)).toBeGreaterThan(2);
+    expect(v(normal(160, 75), noon, 1.3)).toBeLessThan(4.5);
+    expect(v(normal(340, 75), noon)).toBe(0);
+  });
+
+  it('a face lit at a slant keeps most of its breeze (cube root of the heat flux)', () => {
+    const early = sun(200, 63);
+    const se = v(normal(135, 75), early);
+    const s = v(normal(200, 75), early);
+    expect(se).toBeGreaterThan(0.6 * s);
+  });
+
+  it('weaker on a gentle slope, over forest, and in a wind', () => {
+    const noon = sun(180, 65);
+    expect(v(normal(180, 10), noon)).toBeLessThan(0.5 * v(normal(180, 40), noon));
+    expect(v(normal(180, 40), noon, 0.88)).toBeLessThan(v(normal(180, 40), noon, 1.37));
+    expect(v(normal(180, 40), noon, 1, 8)).toBeLessThan(0.5 * v(normal(180, 40), noon, 1, 0));
+  });
+
+  it('none at night', () => {
+    expect(v(normal(180, 40), sun(180, -5))).toBe(0);
   });
 });

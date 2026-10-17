@@ -368,6 +368,7 @@ export class GameEngine {
     this.air.season = Math.max(0, Math.min(1, sun.thermalSeason ?? sun.season));
     this.air.hour = this.hour;
     this.sunInfo = sun;
+    this.pilotAir.setSun(sun.sunAzimuth, sun.sunElevation);
     const grid = await this.model.potential(p, this.bbox(20000), 60);
     this.applyAtmosphere();
     // Gone far (cross-country): the thermals are placed again around the pilot.

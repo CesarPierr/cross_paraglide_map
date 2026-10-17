@@ -16,6 +16,7 @@
  *   near the ground (σ and eddy sizes from the height and the wind), Lenschow in the
  *   convective layer, plus the lee, the rotor, shear layers and the thermals' edges.
  */
+import { RULES } from '@brises/model';
 import type { AirMass, VerticalAir } from './airmass';
 import type { AirSample, GliderState } from './flight';
 
@@ -33,9 +34,42 @@ export interface ModelAirLike {
   venturi?: number;
   /** Vertical shear of the model's wind at the pilot (1/s). */
   shear?: number;
+  /** Heating efficiency of the ground (land cover; 1 = the mean of the Alps' land). */
+  surface?: number;
 }
 
 const clamp = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v));
+
+/**
+ * The upslope (anabatic) breeze along the sunlit relief near the pilot: the layer the sun
+ * heats against a slope rises along it (Prandtl's slope flow: 1–4 m/s, layers 20 to 200 m
+ * thick, Zardi & Whiteman 2013), the lift pilots soar close to a sunny face or a cliff in the
+ * afternoon, even in a light cross wind. The map's model has it on its 216 m grid, where a
+ * cliff is a smoothed slope and the layer is mixed into the wind at the pilot's height; here
+ * it follows the fine relief: the nearest surface, its slope and its sun, at the model's
+ * speed (RULES.slopeBreezeMax, its insolation and steepness factors) and the ground's
+ * heating (rock more, forest less, snow hardly). A wind across the relief mixes the thin
+ * layer away. ANA_DEPTH: e-folding distance from the surface (m), close to a face.
+ */
+const ANA_DEPTH = 50;
+/** Points searched for the nearest surface: rings (m) × 8 directions, and the point below. */
+const ANA_RINGS = [12, 30, 60, 100, 150];
+
+/**
+ * Up-slope breeze speed (m/s) on a surface of unit normal n under the sun s (unit, z up),
+ * its ground heating and a wind U (m/s). A convective speed goes as the cube root of the
+ * heat flux (Deardorff's w*, slope flows alike): a face the sun strikes at a slant still
+ * breathes well (42 % of the flux, 75 % of the speed), where the map's model is linear.
+ */
+export function anabaticSpeed(nx: number, ny: number, nz: number, sx: number, sy: number, sz: number, season: number, surface: number, U: number): number {
+  if (sz < 0.05) return 0;
+  const ins = Math.max(0, nx * sx + ny * sy + nz * sz) * (0.55 + 0.45 * season);
+  const force = Math.cbrt(clamp((ins - 0.1) / 0.9, 0, 1));
+  const sinT = Math.sqrt(Math.max(0, 1 - nz * nz));
+  const steep = clamp(sinT * 2.2, 0, 1);
+  const mix = 1 / (1 + (U / 6) ** 2);
+  return RULES.slopeBreezeMax * force * steep * clamp(surface, 0.1, 1.5) * mix;
+}
 const smoothstep = (a: number, b: number, x: number) => {
   const t = clamp((x - a) / (b - a), 0, 1);
   return t * t * (3 - 2 * t);
@@ -275,6 +309,9 @@ export interface PilotAirInfo {
   sigmaW: number;
   sigmaX: number;
   sigmaE: number;
+  /** Upslope breeze along the nearest surface (m/s) and the vertical speed it gives here. */
+  anabatic: number;
+  anabaticW: number;
 }
 
 /**
@@ -283,7 +320,12 @@ export interface PilotAirInfo {
  */
 export class PilotAir {
   /** The model's air, smoothed towards its last sample (the 5 Hz samples must not step the wind). */
-  private m = { u: 0, v: 0, lift: 0, turbulence: 0, lee: 0, venturi: 0, shear: 0 };
+  private m = { u: 0, v: 0, lift: 0, turbulence: 0, lee: 0, venturi: 0, shear: 0, surface: 1 };
+  /** The sun (unit vector, east/north/up) and the nearest surface: distance, normal (refreshed with the relief). */
+  private sun = { x: 0, y: 0, z: -1 };
+  private near = { ok: false, d: 1e9, nx: 0, ny: 0, nz: 1, light: 1 };
+  /** Sunlight on that surface, lagged by the ground's heat (cools in ~2–3 min under a cloud, ~4 min to heat again). */
+  private surfSun = 1;
   private target: ModelAirLike | null = null;
   private hasModel = false;
   readonly relief = new ReliefFlow();
@@ -294,7 +336,7 @@ export class PilotAir {
   private tb = { u: 0, v: 0, w: 0 };
   private ts: TurbulenceState = { sigU: 0, sigW: 0, Lu: 100, Lw: 100, sigX: 0, Lx: 20, intensity: 0 };
   private cs = { sigma: 0, length: 100, zi: 2000 };
-  readonly info: PilotAirInfo = { gradient: 1, relief: 0, speedUp: 0, rotor: 0, venturi: 1, sigmaW: 0, sigmaX: 0, sigmaE: 0 };
+  readonly info: PilotAirInfo = { gradient: 1, relief: 0, speedUp: 0, rotor: 0, venturi: 1, sigmaW: 0, sigmaX: 0, sigmaE: 0, anabatic: 0, anabaticW: 0 };
   /** Last cloud white-out at the pilot (0..1). */
   cloud = 0;
 
@@ -314,7 +356,15 @@ export class PilotAir {
       this.m.lee = m.lee;
       this.m.venturi = m.venturi ?? 0;
       this.m.shear = m.shear ?? 0;
+      this.m.surface = m.surface ?? 1;
     }
+  }
+
+  /** The sun's azimuth (° from north) and elevation (°). */
+  setSun(azimuthDeg: number, elevationDeg: number): void {
+    const a = (azimuthDeg * Math.PI) / 180;
+    const e = (elevationDeg * Math.PI) / 180;
+    this.sun = { x: Math.sin(a) * Math.cos(e), y: Math.cos(a) * Math.cos(e), z: Math.sin(e) };
   }
 
   /** The smoothed model wind at the pilot (m/s). */
@@ -325,6 +375,52 @@ export class PilotAir {
   /** Refreshes the relief profile along the wind through the pilot (call ~10 times a second). */
   update(g: GliderState, groundHere: number): void {
     this.relief.update(this.ground, g.x, g.y, g.z, groundHere, this.m.u, this.m.v, this.m.venturi);
+    this.findSurface(g.x, g.y, g.z, groundHere);
+  }
+
+  /**
+   * The nearest point of the relief (below or beside: a cliff's face) and its normal, from the
+   * fine heights: what the upslope breeze flows along.
+   */
+  private findSurface(x: number, y: number, z: number, groundHere: number): void {
+    const n = this.near;
+    let best = Math.max(0, z - groundHere);
+    let bx = x;
+    let by = y;
+    for (const r of ANA_RINGS) {
+      if (r > best + 20) break;
+      for (let k = 0; k < 8; k++) {
+        const a = (k * Math.PI) / 4;
+        const px = x + Math.cos(a) * r;
+        const py = y + Math.sin(a) * r;
+        const h = this.ground(px, py);
+        if (h === null) continue;
+        const d = Math.hypot(r, Math.max(0, z - h));
+        if (d < best) {
+          best = d;
+          bx = px;
+          by = py;
+        }
+      }
+    }
+    const e = 6;
+    const hx0 = this.ground(bx - e, by);
+    const hx1 = this.ground(bx + e, by);
+    const hy0 = this.ground(bx, by - e);
+    const hy1 = this.ground(bx, by + e);
+    if (hx0 === null || hx1 === null || hy0 === null || hy1 === null) {
+      n.ok = false;
+      return;
+    }
+    const gx = (hx1 - hx0) / (2 * e);
+    const gy = (hy1 - hy0) / (2 * e);
+    const l = Math.hypot(gx, gy, 1);
+    n.ok = true;
+    n.d = best;
+    n.nx = -gx / l;
+    n.ny = -gy / l;
+    n.nz = 1 / l;
+    n.light = this.air.lightAt(bx, by, (hx0 + hx1) / 2 + 5);
   }
 
   /** Fills `out` with the air at the glider (centre and tips) for this step of `dt` at game time `t`. */
@@ -341,6 +437,7 @@ export class PilotAir {
       m.lee += (tg.lee - m.lee) * k;
       m.venturi += ((tg.venturi ?? 0) - m.venturi) * k;
       m.shear += ((tg.shear ?? 0) - m.shear) * k;
+      m.surface += ((tg.surface ?? 1) - m.surface) * k;
     }
     const air = this.air;
     const agl = Math.max(0, g.z - groundHere);
@@ -428,11 +525,36 @@ export class PilotAir {
     const gwL = tb.w;
     air.turbInto(g.x + rx, g.y + ry, g.z, t, 0, ts.sigW, ts.Lu, ts.Lw, ts.sigX, ts.Lx, tb, true, sigE);
     const gwR = tb.w;
-    out.u = mu + ux * rotU + va.u + gu;
-    out.v = mv + uy * rotU + va.v + gv;
-    out.w = wRel + rotW + leeSink + va.w + gw;
-    out.wL = wRelL + rotWL + leeSink + wL + gwL;
-    out.wR = wRelR + rotWR + leeSink + wR + gwR;
+    // The upslope breeze along the nearest sunny surface: up the slope, rising with it.
+    let anaU = 0;
+    let anaV = 0;
+    let anaW = 0;
+    let ana = 0;
+    const ns = this.near;
+    if (ns.ok) {
+      this.surfSun += (ns.light - this.surfSun) * Math.min(1, dt / (ns.light < this.surfSun ? 150 : 240));
+      const s = this.sun;
+      ana = anabaticSpeed(ns.nx, ns.ny, ns.nz, s.x, s.y, s.z, air.season, m.surface, U) * this.surfSun;
+      if (ana > 0.01) {
+        const f = ana * Math.exp(-ns.d / ANA_DEPTH);
+        const h = Math.hypot(ns.nx, ns.ny);
+        const sinT = h;
+        const cosT = ns.nz;
+        // Up the slope: against the horizontal part of the normal.
+        if (h > 1e-3) {
+          anaU = (-ns.nx / h) * f * cosT;
+          anaV = (-ns.ny / h) * f * cosT;
+        }
+        anaW = f * sinT;
+      }
+    }
+    this.info.anabatic = ana;
+    this.info.anabaticW = anaW;
+    out.u = mu + ux * rotU + va.u + gu + anaU;
+    out.v = mv + uy * rotU + va.v + gv + anaV;
+    out.w = wRel + rotW + leeSink + va.w + gw + anaW;
+    out.wL = wRelL + rotWL + leeSink + wL + gwL + anaW;
+    out.wR = wRelR + rotWR + leeSink + wR + gwR + anaW;
     out.turbulence = clamp(ts.intensity + sigE / 1.6, 0, 1);
     out.agl = agl;
     this.cloud = va.cloud;

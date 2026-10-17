@@ -212,7 +212,11 @@ vent et peut le traîner s'il ne l'affale pas.
 Clavier : A/Q frein gauche +/−, E/D frein droit +/−, S/F sellette à gauche/droite, Espace accélérateur
 (au déco : se retourner), Z courir / tirer les A, O oreilles, X stabilo en vol / affaler la voile (C)
 au sol, R replacer la voile après un décollage interrompu, flèches : tête, C regard devant, V vue,
-T thermiques, P pause, M son, +/− temps accéléré. Écran tactile : deux curseurs de frein, boutons.
+T thermiques, P pause, M son, +/− temps accéléré. Écran tactile (de préférence en paysage) : deux
+curseurs de frein sur les bords, en vol l'accélérateur et les oreilles à côté d'eux et la sellette en
+curseur au milieu (elle revient au centre quand on la lâche) ; au déco, courir (ou tirer les A),
+affaler et recommencer ; glisser ailleurs pour regarder autour. Les crédits des cartes se replient
+dans leur bouton (i) une fois en vol.
 
 ## Limites connues
 

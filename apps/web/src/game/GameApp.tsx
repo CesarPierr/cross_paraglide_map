@@ -509,6 +509,37 @@ function BrakeBar({ side, v, pressure, soft, touch, onChange }: { side: 'L' | 'R
   );
 }
 
+/** Weight shift on a touch screen: drag sideways, back to the middle when let go. */
+function WeightSlider({ v, onChange }: { v: number; onChange: (v: number) => void }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const drag = (e: React.PointerEvent) => {
+    if (!ref.current) return;
+    const r = ref.current.getBoundingClientRect();
+    onChange(Math.max(-1, Math.min(1, ((e.clientX - r.left) / r.width) * 2 - 1)));
+  };
+  return (
+    <div
+      ref={ref}
+      className="game-weight"
+      role="slider"
+      aria-label="Sellette"
+      aria-valuemin={-1}
+      aria-valuemax={1}
+      aria-valuenow={Math.round(v * 100) / 100}
+      onPointerDown={(e) => {
+        (e.target as HTMLElement).setPointerCapture(e.pointerId);
+        drag(e);
+      }}
+      onPointerMove={(e) => e.buttons && drag(e)}
+      onPointerUp={() => onChange(0)}
+      onPointerCancel={() => onChange(0)}
+    >
+      <span>Sellette</span>
+      <b style={{ left: `${50 + v * 50}%` }} />
+    </div>
+  );
+}
+
 function Pause({ engine, onResume, onRestart, onMenu }: { engine: GameEngine; onResume: () => void; onRestart: () => void; onMenu: () => void }) {
   const [items] = useState<NearbyInfo[]>(() => engine.nearby(10));
   const [open, setOpen] = useState<string | null>(null);
@@ -787,26 +818,33 @@ export default function GameApp() {
           )}
           <BrakeBar side="L" v={hud.brakeL} pressure={hud.pressureL} soft={hud.pressureWarn > 0.5} touch={touch} onChange={(v) => eng?.setBrake('L', v)} />
           <BrakeBar side="R" v={hud.brakeR} pressure={hud.pressureR} soft={hud.pressureWarn > 0.5} touch={touch} onChange={(v) => eng?.setBrake('R', v)} />
-          {touch && (
-            <button className={`game-bar ${hud.speedbar > 0.5 ? 'on' : ''}`} onPointerDown={() => eng?.setSpeedbar(1)} onPointerUp={() => eng?.setSpeedbar(0)} onPointerLeave={() => eng?.setSpeedbar(0)}>
-              Accélérateur
-            </button>
-          )}
-          <div className="game-barind" title="Accélérateur (Espace) et oreilles (O)">
-            <span>Accélérateur</span>
-            <i>
-              <b style={{ width: `${hud.speedbar * 100}%` }} />
-            </i>
-            {hud.ears && <strong>Oreilles</strong>}
-            <span title="Sellette : S à gauche, F à droite">Sellette</span>
-            <i className="gw" aria-label={`Sellette ${hud.weight < -0.1 ? 'à gauche' : hud.weight > 0.1 ? 'à droite' : 'au centre'}`}>
-              <b style={{ left: `${50 + hud.weight * 50}%` }} />
-            </i>
-          </div>
-          {touch && (
-            <button className={`game-ears ${hud.ears ? 'on' : ''}`} onClick={() => eng?.toggleEars()}>
-              Oreilles
-            </button>
+          {touch ? (
+            // Touch: speed bar and ears beside the brakes, the harness a slider in the middle;
+            // none of them on the ground (take-off, landing run).
+            !hud.launch &&
+            !hud.landing && (
+              <>
+                <button className={`game-bar ${hud.speedbar > 0.5 ? 'on' : ''}`} onPointerDown={() => eng?.setSpeedbar(1)} onPointerUp={() => eng?.setSpeedbar(0)} onPointerLeave={() => eng?.setSpeedbar(0)}>
+                  Accélérateur
+                </button>
+                <WeightSlider v={hud.weight} onChange={(v) => eng?.setWeight(v)} />
+                <button className={`game-ears ${hud.ears ? 'on' : ''}`} onClick={() => eng?.toggleEars()}>
+                  Oreilles
+                </button>
+              </>
+            )
+          ) : (
+            <div className="game-barind" title="Accélérateur (Espace) et oreilles (O)">
+              <span>Accélérateur</span>
+              <i>
+                <b style={{ width: `${hud.speedbar * 100}%` }} />
+              </i>
+              {hud.ears && <strong>Oreilles</strong>}
+              <span title="Sellette : S à gauche, F à droite">Sellette</span>
+              <i className="gw" aria-label={`Sellette ${hud.weight < -0.1 ? 'à gauche' : hud.weight > 0.1 ? 'à droite' : 'au centre'}`}>
+                <b style={{ left: `${50 + hud.weight * 50}%` }} />
+              </i>
+            </div>
           )}
           {hud.paused && eng && !end && (
             <Pause

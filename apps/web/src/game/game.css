@@ -16,6 +16,13 @@
 .game-map .maplibregl-ctrl-attrib {
   font-size: 10px;
 }
+/* On a touch screen the credits' (i) above the right brake, clear of the controls. */
+@media (pointer: coarse) {
+  .game-map .maplibregl-ctrl-bottom-right {
+    right: 14px !important;
+    bottom: calc(32px + min(55vh, 380px)) !important;
+  }
+}
 
 .game-menu,
 .game-pause {
@@ -377,8 +384,8 @@
 .game-bar {
   position: absolute;
   bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
+  /* Touch only: beside the left brake, the middle left to the instrument and the harness. */
+  left: 92px;
   padding: 12px 20px;
   border-radius: 12px;
   border: 1px solid var(--border-strong);
@@ -616,10 +623,9 @@
 }
 .game-ears {
   position: absolute;
-  bottom: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 10px 18px;
+  bottom: 24px;
+  right: 92px;
+  padding: 12px 18px;
   border-radius: 12px;
   border: 1px solid var(--border-strong);
   background: rgba(8, 14, 24, 0.6);
@@ -631,8 +637,60 @@
   border-color: var(--warn);
   color: var(--warn);
 }
-.game-bar + .game-barind {
-  bottom: 140px;
+/* Weight shift on a touch screen: a slider back to the middle when let go. */
+.game-weight {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(220px, 30vw);
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(8, 14, 24, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  touch-action: none;
+  z-index: 3;
+}
+.game-weight::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.25);
+}
+.game-weight span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  text-align: center;
+  font-size: 10px;
+  color: var(--text-2);
+  pointer-events: none;
+}
+.game-weight b {
+  position: absolute;
+  top: 6px;
+  bottom: 14px;
+  width: 8px;
+  margin-left: -4px;
+  border-radius: 4px;
+  background: #e2e8f0;
+  pointer-events: none;
+}
+/* A narrow portrait screen: smaller buttons, the harness above them. */
+@media (max-width: 520px) {
+  .game-bar,
+  .game-ears {
+    padding: 10px 10px;
+    font-size: 13px;
+  }
+  .game-weight {
+    bottom: 80px;
+    width: min(200px, calc(100vw - 200px));
+  }
 }
 
 /* Take-off: what to do, wing elevation and side angle. */
@@ -690,6 +748,8 @@
 }
 .gl-touch {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 8px;
 }
 .gl-touch button {

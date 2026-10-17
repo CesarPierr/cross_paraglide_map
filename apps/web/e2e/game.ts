@@ -3,7 +3,8 @@
 /**
  * The simulator ("Jeu" tab) in headless Chromium: a forward launch flown with the keyboard
  * (run, a dab of brake as the wing comes overhead, run on), a cross-country task (HUD and
- * cylinders), the topo pause, and two pilots in the same multiplayer room. Screenshots in
+ * cylinders), the topo pause, two pilots in the same multiplayer room, and a phone held
+ * sideways and upright (touch controls clear of one another). Screenshots in
  * the output directory; fails on page errors. Rendering is software (SwiftShader): frame
  * rates here mean nothing, only behaviour.
  *
@@ -236,6 +237,45 @@ if (want("multi")) {
     m2?.multi?.pilots.map((p) => p.name).join(", ") || "personne",
   );
   await page.screenshot({ path: `${out}/4-multi-alice.png` });
+}
+
+// ---------- 5. A phone, sideways and upright: touch controls clear of one another ----------
+if (want("phone")) {
+  console.log("5. Téléphone");
+  // Pairs of visible controls that overlap (an element and what it contains aside).
+  const overlaps = (p: Page, sel: string) =>
+    p.evaluate(`(() => {
+      const els = [...document.querySelectorAll(${JSON.stringify(sel)})].filter((e) => e.getBoundingClientRect().width > 0);
+      const out = [];
+      for (let i = 0; i < els.length; i++)
+        for (let j = i + 1; j < els.length; j++) {
+          if (els[i].contains(els[j]) || els[j].contains(els[i])) continue;
+          const a = els[i].getBoundingClientRect();
+          const b = els[j].getBoundingClientRect();
+          const w = Math.min(a.right, b.right) - Math.max(a.left, b.left);
+          const h = Math.min(a.bottom, b.bottom) - Math.max(a.top, b.top);
+          if (w > 2 && h > 2) out.push(els[i].className + " / " + els[j].className);
+        }
+      return out;
+    })()`) as Promise<string[]>;
+  const controls = ".game-brake, .game-bar, .game-ears, .game-weight, .game-launch, .gl-touch button, .game-vario, .maplibregl-ctrl-attrib";
+  for (const [w, h, label] of [
+    [844, 390, "couché"],
+    [390, 844, "debout"],
+  ] as const) {
+    const ctx = await browser.newContext({ viewport: { width: w, height: h }, deviceScaleFactor: 2, isMobile: true, hasTouch: true });
+    const p = await ctx.newPage();
+    watch(p, `tél. ${label}`);
+    for (const startMode of ["forward", "air"] as const) {
+      await start(p, { ...base, start: startMode });
+      await p.waitForTimeout(2000);
+      const bad = await overlaps(p, controls);
+      console.log(`  ${label}, ${startMode === "forward" ? "au déco" : "en vol"} :`, bad.length ? `chevauchements ${bad.join(" ; ")}` : "commandes dégagées");
+      if (bad.length) errors.push(`[tél. ${label}] commandes qui se chevauchent : ${bad.join(" ; ")}`);
+    }
+    await p.screenshot({ path: `${out}/5-telephone-${label}.png` });
+    await ctx.close();
+  }
 }
 
 await browser.close();

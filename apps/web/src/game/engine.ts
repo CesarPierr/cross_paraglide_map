@@ -130,6 +130,7 @@ export class GameEngine {
   private airSample: AirSample = { u: 0, v: 0, w: 0, turbulence: 0, wL: 0, wR: 0, agl: 100 };
   /** Weight shift asked by touch controls (the keys S/F add to it). */
   private weightInput = 0;
+  private attribTimer: ReturnType<typeof setTimeout> | undefined;
   /** Game times of the last relief refresh, shade update and wind-profile request. */
   private reliefT = -1e9;
   private reliefAt = { x: 1e12, y: 1e12 };
@@ -330,6 +331,11 @@ export class GameEngine {
     if (this.task) this.world.setTask(this.task.points, this.task.next);
     this.cb.onStatus(null);
     void this.connectMulti();
+    // The credits, shown in full while the landscape loads, fold into their (i) button once
+    // flying: at once on a touch screen (they would cover the HUD of a small one), after a
+    // few seconds on a computer.
+    const touch = typeof window !== 'undefined' && window.matchMedia?.('(pointer: coarse)').matches;
+    this.attribTimer = setTimeout(() => this.world.collapseAttribution(), touch ? 0 : 8000);
     this.last = performance.now();
     this.raf = requestAnimationFrame(this.loop);
   }
@@ -988,6 +994,7 @@ export class GameEngine {
 
   dispose(): void {
     cancelAnimationFrame(this.raf);
+    clearTimeout(this.attribTimer);
     this.netOff?.();
     this.net?.close();
     this.audio.dispose();

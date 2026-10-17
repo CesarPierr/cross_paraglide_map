@@ -658,6 +658,15 @@ export class GameWorld {
     }
   }
 
+  /**
+   * The map's credits folded into their (i) button, as MapLibre does at the first drag of a
+   * map (here the camera never drags it): shown in full while the game loads, then out of
+   * the way of the take-off card and the controls on a small screen.
+   */
+  collapseAttribution(): void {
+    this.map.getContainer().querySelector('.maplibregl-ctrl-attrib.maplibregl-compact')?.classList.remove('maplibregl-compact-show');
+  }
+
   /** Cross-country task: one cylinder per turn point, the next one brighter. */
   setTask(points: { x: number; y: number; r: number; name: string }[] | null, next = 0): void {
     this.taskGroup.clear();

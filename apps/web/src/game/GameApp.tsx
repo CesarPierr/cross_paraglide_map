@@ -35,6 +35,8 @@ interface Settings {
   /** Today's forecast at the take-off drives the wind and the air mass (forecast.ts). */
   forecastWeather: boolean;
   showThermals: boolean;
+  /** Other pilots of the day in the air (virtual). */
+  others: boolean;
   view: ViewMode;
   wing: WingParams['id'];
   start: 'air' | 'forward' | 'reverse';
@@ -58,6 +60,7 @@ const DEFAULTS: Settings = {
   randomWeather: true,
   forecastWeather: false,
   showThermals: false,
+  others: true,
   view: 'first',
   wing: 'B',
   start: 'air',
@@ -306,6 +309,9 @@ function Menu({ onStart, error, takeoffs, routes }: { onStart: (s: Settings, t: 
         )}
         <label className="game-check">
           <input type="checkbox" checked={s.showThermals} onChange={(e) => set({ showThermals: e.target.checked })} /> Afficher les thermiques
+        </label>
+        <label className="game-check">
+          <input type="checkbox" checked={s.others} onChange={(e) => set({ others: e.target.checked })} /> Autres pilotes en l'air
         </label>
         <div className="game-seg" role="radiogroup" aria-label="Mode">
           <button className={!s.routeId ? 'on' : ''} onClick={() => set({ routeId: null })}>
@@ -763,7 +769,7 @@ export default function GameApp() {
         seed,
       };
       engineRef.current?.dispose();
-      const engine = new GameEngine(box.current!, scenario, atlas, { meta, url }, takeoff, { onHud: setHud, onStatus: setStatus, onEnd: setEnd }, { view: s.view, showThermals: s.showThermals, wing: s.wing, start: s.start, mass: s.mass, routeId: s.routeId, multi: s.multi && s.room.length >= 4 ? { room: s.room, name: s.pilotName.trim() || 'Pilote' } : null });
+      const engine = new GameEngine(box.current!, scenario, atlas, { meta, url }, takeoff, { onHud: setHud, onStatus: setStatus, onEnd: setEnd }, { view: s.view, showThermals: s.showThermals, wing: s.wing, start: s.start, mass: s.mass, routeId: s.routeId, multi: s.multi && s.room.length >= 4 ? { room: s.room, name: s.pilotName.trim() || 'Pilote' } : null, others: s.others });
       engineRef.current = engine;
       setEng(engine);
       if (import.meta.env.DEV) (window as unknown as { __game: GameEngine }).__game = engine;

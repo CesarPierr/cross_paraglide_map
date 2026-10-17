@@ -119,6 +119,13 @@ vent et peut le traîner s'il ne l'affale pas.
 ### Le jeu
 
 - Tous les décos de l'atlas et de la FFVL dans l'emprise du relief ; départ en l'air ou au déco.
+- **Autres pilotes** (option du menu) : 3 à 12 parapentistes virtuels selon la journée volent le
+  même air, plané de thermique en thermique, spirale de ~30 m autour du cœur avec la montée qu'il y
+  donne, départ quand il faiblit ou plafonne, virage vers la vallée près du relief ; un groupe qui
+  enroule marque un thermique, comme en vrai.
+- **Aide au centrage** : à côté de la rose des vents, la trace des 40 dernières secondes autour du
+  pilote, cap en haut, colorée par le vario, et l'endroit où ça montait le mieux (vers lequel décaler
+  le virage) ; sous le vario, « moy. », la montée moyenne du dernier tour.
 - **Vue pilote** (l'œil suit la tête : assis dans la sellette en vol, debout au déco) ou de
   l'extérieur. Au déco, les mains tiennent élévateurs et freins et suivent les élévateurs quand la
   voile monte : bras en arrière face pente, devant soi face à la voile.

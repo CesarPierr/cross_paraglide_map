@@ -6,11 +6,12 @@
  */
 import type { Atlas, AtlasFeature } from '@brises/shared';
 import { legalTimeToUtc, RULES, sunPosition, type GridMeta, type ModelParams } from '@brises/model';
-import { AirMass, PROFILE_DZ, type Scenario } from './airmass';
+import { AirMass, makeRng, PROFILE_DZ, type Scenario } from './airmass';
 import { AudioVario } from './audio';
 import { newGlider, setAirspeed, step, WINGS, type AirSample, type Controls, type FlightEvent, type GliderState, type WingParams } from './flight';
 import { GameModel } from './game-client';
 import { landingStep, launchStep, newLanding, newLaunch, runOn, touchdown, type LandingState, type LaunchMode, type LaunchState } from './launch';
+import { AiPilots } from './ai-pilots';
 import { PilotAir } from './pilot-air';
 import { advanceTask, distanceMadeGood, taskFromRoute, taskLength, type Task } from './task';
 import { Multiplayer, type NetEvent } from './net';
@@ -185,6 +186,9 @@ export class GameEngine {
   launch: LaunchState | null = null;
   readonly startMode: 'air' | LaunchMode;
   private liftoffT = -1e9;
+  /** The other pilots of the day (ai-pilots.ts), when wanted. */
+  private others: boolean;
+  private ai: AiPilots | null = null;
   /** Game time of the last touch-and-go: the pilot runs on by himself for a moment. */
   private runOnT = -1e9;
   private touch = { go: false, turn: false };
@@ -196,9 +200,10 @@ export class GameEngine {
     private dem: { meta: GridMeta; url: string },
     readonly takeoff: Takeoff,
     private cb: { onHud: (h: Hud) => void; onStatus: (s: string | null) => void; onEnd: (e: FlightEnd) => void },
-    opts: { view: ViewMode; showThermals: boolean; wing?: WingParams['id']; start?: 'air' | LaunchMode; mass?: number; routeId?: string | null; multi?: { room: string; name: string } | null },
+    opts: { view: ViewMode; showThermals: boolean; wing?: WingParams['id']; start?: 'air' | LaunchMode; mass?: number; routeId?: string | null; multi?: { room: string; name: string } | null; others?: boolean },
   ) {
     this.multi = opts.multi ?? null;
+    this.others = opts.others ?? true;
     this.wing = WINGS[opts.wing ?? 'B'];
     this.mass = opts.mass ?? 95;
     this.startMode = opts.start ?? 'air';
@@ -363,6 +368,12 @@ export class GameEngine {
     if (this.task) this.world.setTask(this.task.points, this.task.next);
     this.cb.onStatus(null);
     void this.connectMulti();
+    if (this.others) {
+      // A busy site on a good day, a few pilots on a poor one.
+      this.ai = new AiPilots(this.air, (x, y) => this.world.groundAt(x, y), makeRng(this.scenario.seed + 7919));
+      const n = Math.max(3, Math.min(12, Math.round(3 + 9 * this.air.convection())));
+      this.ai.populate(n, this.glider.x, this.glider.y, this.glider.z, this.gameT);
+    }
     // The credits, shown in full while the landscape loads, fold into their (i) button once
     // flying: at once on a touch screen (they would cover the HUD of a small one), after a
     // few seconds on a computer.
@@ -689,7 +700,8 @@ export class GameEngine {
     const gg = this.glider;
     this.world.flows.update(this.air, gg.x, gg.y, gg.z, this.gameT, gdt, this.showThermals);
     this.world.vultures.update(this.air, gg.x, gg.y, gg.z, this.gameT, gdt);
-    if (this.net) this.world.setPeers(this.remotePilots());
+    if (this.ai && gdt > 0) for (let rem = gdt; rem > 1e-6; rem -= 0.1) this.ai.step(Math.min(0.1, rem), this.gameT, gg.x, gg.y, gg.z);
+    if (this.net || this.ai) this.world.setPeers(this.ai ? [...this.remotePilots(), ...this.ai.views()] : this.remotePilots());
     this.world.frameUpdate(this.glider, this.head);
     this.timers.hud -= real;
     if (this.timers.hud <= 0) {

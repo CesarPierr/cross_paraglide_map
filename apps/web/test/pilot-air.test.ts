@@ -144,4 +144,15 @@ describe('upslope breeze along the sunlit relief', () => {
   it('none at night', () => {
     expect(v(normal(180, 40), sun(180, -5))).toBe(0);
   });
+
+  it('a face just gone into the shade keeps a breeze from the heat it stored, not after dark', () => {
+    // An east face at 15h: no direct sun, but it had the sun most of the last two hours.
+    const east = normal(90, 60);
+    const after = sun(240, 45);
+    expect(anabaticSpeed(...east, ...after, 1, 1, 0, 0)).toBe(0);
+    const kept = anabaticSpeed(...east, ...after, 1, 1, 0, 0.6);
+    expect(kept).toBeGreaterThan(0.8);
+    expect(kept).toBeLessThan(anabaticSpeed(...east, ...sun(90, 45), 1, 1, 0, 0.6));
+    expect(anabaticSpeed(...east, ...sun(300, -8), 1, 1, 0, 0.6)).toBe(0);
+  });
 });

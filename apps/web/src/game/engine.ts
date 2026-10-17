@@ -5,7 +5,7 @@
  * run-out on the ground, moves the camera and feeds the HUD.
  */
 import type { Atlas, AtlasFeature } from '@brises/shared';
-import type { GridMeta, ModelParams } from '@brises/model';
+import { legalTimeToUtc, RULES, sunPosition, type GridMeta, type ModelParams } from '@brises/model';
 import { AirMass, PROFILE_DZ, type Scenario } from './airmass';
 import { AudioVario } from './audio';
 import { newGlider, setAirspeed, step, WINGS, type AirSample, type Controls, type FlightEvent, type GliderState, type WingParams } from './flight';
@@ -369,6 +369,16 @@ export class GameEngine {
     this.air.hour = this.hour;
     this.sunInfo = sun;
     this.pilotAir.setSun(sun.sunAzimuth, sun.sunElevation);
+    // The sun of the last two hours, for the heat the faces stored (the upslope breeze outlasts the sun).
+    const [slon, slat] = this.frame.toLngLat(gp.x, gp.y);
+    const past: { azimuth: number; elevation: number; weight: number }[] = [];
+    const mem = RULES.thermalMemory;
+    for (let k = 1; k <= 8; k++) {
+      const age = (k * mem.window) / 8;
+      const sp = sunPosition(legalTimeToUtc(p.year, p.month0, p.day, this.hour - age), slat, slon);
+      past.push({ azimuth: sp.azimuth, elevation: sp.elevation, weight: Math.exp(-age / mem.tau) });
+    }
+    this.pilotAir.setSunPast(past);
     const grid = await this.model.potential(p, this.bbox(20000), 60);
     this.applyAtmosphere();
     // Gone far (cross-country): the thermals are placed again around the pilot.

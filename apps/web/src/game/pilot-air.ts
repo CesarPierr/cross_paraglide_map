@@ -60,10 +60,15 @@ const ANA_RINGS = [12, 30, 60, 100, 150];
  * its ground heating and a wind U (m/s). A convective speed goes as the cube root of the
  * heat flux (Deardorff's w*, slope flows alike): a face the sun strikes at a slant still
  * breathes well (42 % of the flux, 75 % of the speed), where the map's model is linear.
+ * `recent`: the sun this surface received over the last hours (0..1, see setSunPast): the
+ * heat it stored keeps the breeze going after the sun leaves it, as the map's model keeps
+ * its thermals (RULES.thermalMemory: max(direct, half the recent), fading at sunset).
  */
-export function anabaticSpeed(nx: number, ny: number, nz: number, sx: number, sy: number, sz: number, season: number, surface: number, U: number): number {
-  if (sz < 0.05) return 0;
-  const ins = Math.max(0, nx * sx + ny * sy + nz * sz) * (0.55 + 0.45 * season);
+export function anabaticSpeed(nx: number, ny: number, nz: number, sx: number, sy: number, sz: number, season: number, surface: number, U: number, recent = 0): number {
+  const direct = sz < 0.05 ? 0 : Math.max(0, nx * sx + ny * sy + nz * sz);
+  const stored = RULES.thermalMemory.share * recent * smoothstep(-0.035, 0.087, sz);
+  const ins = Math.max(direct, stored) * (0.55 + 0.45 * season);
+  if (ins <= 0) return 0;
   const force = Math.cbrt(clamp((ins - 0.1) / 0.9, 0, 1));
   const sinT = Math.sqrt(Math.max(0, 1 - nz * nz));
   const steep = clamp(sinT * 2.2, 0, 1);
@@ -323,7 +328,9 @@ export class PilotAir {
   private m = { u: 0, v: 0, lift: 0, turbulence: 0, lee: 0, venturi: 0, shear: 0, surface: 1 };
   /** The sun (unit vector, east/north/up) and the nearest surface: distance, normal (refreshed with the relief). */
   private sun = { x: 0, y: 0, z: -1 };
-  private near = { ok: false, d: 1e9, nx: 0, ny: 0, nz: 1, light: 1 };
+  private near = { ok: false, d: 1e9, nx: 0, ny: 0, nz: 1, light: 1, recent: 0 };
+  /** The sun over the last two hours (unit vectors with their weights exp(−age/τ)). */
+  private sunPast: { x: number; y: number; z: number; w: number }[] = [];
   /** Sunlight on that surface, lagged by the ground's heat (cools in ~2–3 min under a cloud, ~4 min to heat again). */
   private surfSun = 1;
   private target: ModelAirLike | null = null;
@@ -358,6 +365,15 @@ export class PilotAir {
       this.m.shear = m.shear ?? 0;
       this.m.surface = m.surface ?? 1;
     }
+  }
+
+  /** The sun at earlier times: azimuth and elevation (°) with a weight each (RULES.thermalMemory). */
+  setSunPast(list: { azimuth: number; elevation: number; weight: number }[]): void {
+    this.sunPast = list.map(({ azimuth, elevation, weight }) => {
+      const a = (azimuth * Math.PI) / 180;
+      const e = (elevation * Math.PI) / 180;
+      return { x: Math.sin(a) * Math.cos(e), y: Math.cos(a) * Math.cos(e), z: Math.sin(e), w: weight };
+    });
   }
 
   /** The sun's azimuth (° from north) and elevation (°). */
@@ -421,6 +437,14 @@ export class PilotAir {
     n.ny = -gy / l;
     n.nz = 1 / l;
     n.light = this.air.lightAt(bx, by, (hx0 + hx1) / 2 + 5);
+    // The sun this surface received over the last hours (its stored heat).
+    let sw = 0;
+    let rs = 0;
+    for (const p of this.sunPast) {
+      sw += p.w;
+      if (p.z > 0.05) rs += p.w * Math.max(0, n.nx * p.x + n.ny * p.y + n.nz * p.z);
+    }
+    n.recent = sw > 0 ? rs / sw : 0;
   }
 
   /** Fills `out` with the air at the glider (centre and tips) for this step of `dt` at game time `t`. */
@@ -534,7 +558,7 @@ export class PilotAir {
     if (ns.ok) {
       this.surfSun += (ns.light - this.surfSun) * Math.min(1, dt / (ns.light < this.surfSun ? 150 : 240));
       const s = this.sun;
-      ana = anabaticSpeed(ns.nx, ns.ny, ns.nz, s.x, s.y, s.z, air.season, m.surface, U) * this.surfSun;
+      ana = anabaticSpeed(ns.nx, ns.ny, ns.nz, s.x, s.y, s.z, air.season, m.surface, U, ns.recent) * this.surfSun;
       if (ana > 0.01) {
         const f = ana * Math.exp(-ns.d / ANA_DEPTH);
         const h = Math.hypot(ns.nx, ns.ny);

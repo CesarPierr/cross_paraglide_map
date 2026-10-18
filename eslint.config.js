@@ -15,4 +15,10 @@ export default tseslint.config(
       '@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     },
   },
+  {
+    // The tiles' service worker and the script it loads, served as they are.
+    extends: [js.configs.recommended],
+    files: ['apps/web/public/*.js'],
+    languageOptions: { ecmaVersion: 2022, sourceType: 'script', globals: { ...globals.serviceworker } },
+  },
 );

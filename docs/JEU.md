@@ -207,6 +207,15 @@ vent et peut le traîner s'il ne l'affale pas.
   image quand la tête tourne vite, d'où leur absence sur téléphone. Hors de France, la tuile
   blanche qu'IGN renvoie (toujours les mêmes 1 651 octets) est traitée comme absente par le service
   worker : la Suisse et l'Italie gardent leur image plus grossière au lieu d'une nappe blanche.
+- **Frontière** (`public/tiles-border.js`) : IGN n'a d'images hors de France que jusqu'au niveau 12 ;
+  au-delà, les tuiles à cheval sur la frontière ont leur partie étrangère en blanc pur. Sous les 195
+  tuiles z12 que la frontière traverse (`scripts/dev/border-tiles.ts`, sondage d'IGN), le service
+  worker remplace ce blanc par l'image z12 étirée, celle que montrent déjà les tuiles voisines hors de
+  France : blanc exact à la valeur près, touchant le bord de la tuile, prolongé dans les franges du
+  JPEG et les fines bandes de bord, et seulement là où l'image z12 montre autre chose (un glacier
+  blanc dessous reste tel quel : 0 tuile de glacier modifiée sur 271). Une copie réduite écarte 81 %
+  des tuiles de la zone ; les autres sont décodées, réparées et gardées en cache (~8 ms chacune, hors
+  du fil de la page) ; temps de chargement inchangé.
 - **Lumière du relief** (`ground.ts`, `region.ts`) : trois niveaux d'altitudes autour du pilote, tirés
   du relief tel que MapLibre le dessine (6 km à ~6 m, 60 km à ~60 m) et de la grille du modèle de vent
   (160 km à 216 m, pour les montagnes non chargées, derrière la caméra) ; pour chacun, la pente, les
@@ -292,8 +301,9 @@ dans leur bouton (i) une fois en vol.
   bâties reçoit parfois le détail du sol derrière lui ; les rivières étroites ne sont pas reconnues
   comme de l'eau ; les lacs ne reflètent pas les montagnes ; le relief proche reste celui des tuiles
   AWS (~25 m) ; la neige suit une climatologie, pas l'enneigement du jour. Sur téléphone, le paysage
-  de remplacement n'a ni lacs, ni rivières, ni routes ; les tuiles à cheval sur la frontière gardent
-  leur moitié blanche (un glacier a le même blanc) ; une tuile qui arrive où rien de sa source
+  de remplacement n'a ni lacs, ni rivières, ni routes ; à la frontière, une fine bande blanche isolée
+  au bord d'une tuile peut rester (0,3 % des tuiles de la zone) et le blanc est remplacé par l'image
+  floue du niveau 12, parfois d'une autre teinte ; une tuile qui arrive où rien de sa source
   n'était dessiné (lieu jamais vu, juste après un saut) apparaît sans fondu, et le niveau de détail
   du relief lui-même saute encore.
 - Pilote : speedbag et carénage rigides (pas de tissu simulé) ; postures relevées sur des photos de

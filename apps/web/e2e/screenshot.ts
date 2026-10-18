@@ -17,7 +17,7 @@ const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
 const errors: string[] = [];
 page.on('console', (m) => {
   const t = m.text();
-  if ((m.type() === 'error' || m.type() === 'warning') && !/AJAXError|Failed to load resource|ERR_TUNNEL/.test(t)) errors.push(`[${m.type()}] ${t.slice(0, 300)}`);
+  if ((m.type() === 'error' || m.type() === 'warning') && !/AJAXError|\(\d+\): https?:\/\/|Failed to load resource|ERR_TUNNEL/.test(t)) errors.push(`[${m.type()}] ${t.slice(0, 300)}`);
 });
 page.on('pageerror', (e) => errors.push(`[pageerror] ${e.message}`));
 const shot = async (name: string) => page.screenshot({ path: `${out}/${name}.png` });

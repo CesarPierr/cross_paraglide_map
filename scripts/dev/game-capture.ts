@@ -106,7 +106,8 @@ const errors: string[] = [];
 page.on('pageerror', (e) => errors.push(`[pageerror] ${e.message} ${(e.stack ?? '').split('\n').slice(1, 12).join(' | ')}`));
 page.on('console', (m) => {
   const t = m.text();
-  if (m.type() === 'error' && !/Failed to load resource|AJAXError|WebSocket/.test(t)) errors.push(`[console] ${t.slice(0, 300)}`);
+  // (Tile fetches that fail: MapLibre's AJAXError, "statusText (status): url", its name minified.)
+  if (m.type() === 'error' && !/Failed to load resource|AJAXError|\(\d+\): https?:\/\/|WebSocket/.test(t)) errors.push(`[console] ${t.slice(0, 300)}`);
   if (/^\[(terrain|sol|jeu)\]/.test(t)) console.log('   ', t);
 });
 

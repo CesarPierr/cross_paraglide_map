@@ -22,7 +22,7 @@ const errors: string[] = [];
 const watch = (page: Page) => {
   page.on('pageerror', (e) => errors.push(`[pageerror] ${e.message}`));
   page.on('console', (m) => {
-    if (m.type() === 'error' && !/Failed to load resource|AJAXError/.test(m.text())) errors.push(`[console] ${m.text().slice(0, 240)}`);
+    if (m.type() === 'error' && !/Failed to load resource|AJAXError|\(\d+\): https?:\/\//.test(m.text())) errors.push(`[console] ${m.text().slice(0, 240)}`);
   });
 };
 const ready = async (page: Page) => {

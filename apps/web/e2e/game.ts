@@ -33,10 +33,12 @@ const browser = await chromium.launch({
 const errors: string[] = [];
 const watch = (page: Page, who: string) => {
   page.on("pageerror", (e) => errors.push(`[${who} pageerror] ${e.message}`));
+  // (Tile fetches that fail: MapLibre's AJAXError, "statusText (status): url", its class
+  // name minified in the library's build.)
   page.on("console", (m) => {
     if (
       m.type() === "error" &&
-      !/Failed to load resource|AJAXError|WebSocket/.test(m.text())
+      !/Failed to load resource|AJAXError|\(\d+\): https?:\/\/|WebSocket/.test(m.text())
     )
       errors.push(
         `[${who} console] ${m.text().slice(0, 240)} @ ${m.location().url.split("/").pop()}:${m.location().lineNumber}`,

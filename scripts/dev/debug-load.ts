@@ -5,7 +5,7 @@ const browser = await chromium.launch({
 });
 const page = await browser.newPage({ viewport: { width: 1280, height: 800 } });
 const logs: string[] = [];
-page.on('console', (m) => { const t = m.text(); if (!/AJAXError|Failed to load resource/.test(t)) logs.push(`[${m.type()}] ${t.slice(0, 300)}`); });
+page.on('console', (m) => { const t = m.text(); if (!/AJAXError|\(\d+\): https?:\/\/|Failed to load resource/.test(t)) logs.push(`[${m.type()}] ${t.slice(0, 300)}`); });
 page.on('pageerror', (e) => logs.push(`[pageerror] ${e.message}`));
 await page.goto('http://localhost:5173/', { waitUntil: 'domcontentloaded' });
 for (let i = 0; i < 3; i++) {

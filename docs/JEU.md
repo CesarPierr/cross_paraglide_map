@@ -187,6 +187,14 @@ vent et peut le traîner s'il ne l'affale pas.
   part d'image sous la moitié de son détail une demi-seconde après l'arrêt est passée de 32–56 % à
   0–17 % ; au démarrage, le jeu attend ces tuiles la caméra immobile. Coût : +0,6 à 1,1 ms de
   MapLibre par image, jusqu'à ~175 Mo de tuiles sur le GPU.
+- **Fondu des tuiles** (`imagery-fade.ts`) : sous le relief, MapLibre ne fond pas les rasters (chaque
+  tuile du relief garde sa texture tant que ses tuiles ne changent pas), et une tuile plus fine
+  arrivait d'un coup. Son fondu enchaîné (0,3 s, la tuile mélangée à la plus grossière qu'elle
+  remplace, toujours opaque) est rétabli pour les orthophotos IGN et Sentinel‑2 : les textures du
+  relief qui contiennent un fondu sont redessinées tant qu'il dure (4 par image à tour de rôle, 2 sur
+  téléphone), puis une dernière fois. Sur réseau ralenti, un saut de 10 km donne 4 changements
+  brusques d'image au lieu de 12, une rotation de 180° 1 au lieu de 5 ; en rotation rapide, 4,8
+  textures redessinées par image au lieu de 1,2, soit ~0,05 ms de plus.
 - **Sans image** : là où aucune orthophoto n'est encore chargée, le fond de MapLibre est un magenta
   témoin que la passe du paysage remplace par un paysage tiré de WorldCover (`gBackdrop` : forêt,
   prés et champs, alpage, roche, glace, bâti par taches selon leurs parts). Les lacs, les rivières
@@ -285,8 +293,9 @@ dans leur bouton (i) une fois en vol.
   comme de l'eau ; les lacs ne reflètent pas les montagnes ; le relief proche reste celui des tuiles
   AWS (~25 m) ; la neige suit une climatologie, pas l'enneigement du jour. Sur téléphone, le paysage
   de remplacement n'a ni lacs, ni rivières, ni routes ; les tuiles à cheval sur la frontière gardent
-  leur moitié blanche (un glacier a le même blanc) ; l'arrivée du détail reste un coup de netteté,
-  sans fondu.
+  leur moitié blanche (un glacier a le même blanc) ; une tuile qui arrive où rien de sa source
+  n'était dessiné (lieu jamais vu, juste après un saut) apparaît sans fondu, et le niveau de détail
+  du relief lui-même saute encore.
 - Pilote : speedbag et carénage rigides (pas de tissu simulé) ; postures relevées sur des photos de
   trois-quarts, angles approchés (l'inclinaison du dos reste celle des fiches, faute de vue de profil
   en vol) ; doigts sans plis ni coutures.

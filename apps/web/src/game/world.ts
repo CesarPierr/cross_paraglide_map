@@ -27,6 +27,7 @@ import { Sky, type FrameInfo } from './sky';
 import { ThermalFlows, Vultures } from './life';
 import { Forest } from './trees';
 import { clearance, lodByDistance, ringLoaded, setTileCache, TileRing, useTerrainTileZoom, useTileRing, type LodState, type TileZoomFn } from './lod';
+import { IMAGERY_FADE_MS, useImageryFade } from './imagery-fade';
 import { Ground, REGION_HALF, REGION_N, type SunUniforms } from './ground';
 import { IMAGERY_GAP, IMAGERY_GAP_ROAD, IMAGERY_GAP_WATER } from './materials';
 import { RegionMaps } from './region';
@@ -155,6 +156,8 @@ function gameStyle(): StyleSpecification {
     'fog-ground-blend': 0.35,
     'atmosphere-blend': 0,
   };
+  // A finer tile of imagery fades in over the coarser one it replaces (imagery-fade.ts).
+  for (const l of style.layers) if (l.type === 'raster' && (l.id === 'bm-ign-ortho' || l.id === 'bm-s2')) l.paint = { ...l.paint, 'raster-fade-duration': IMAGERY_FADE_MS };
   return style;
 }
 
@@ -352,6 +355,8 @@ export class GameWorld {
           if (src) src.calculateTileZoom = lodByDistance(this.lod, bias);
         }
         if (!useTerrainTileZoom(this.map as unknown as Parameters<typeof useTerrainTileZoom>[0], lodByDistance(this.lod, -1)) && import.meta.env.DEV) console.warn('[terrain] tuiles du relief : règle de MapLibre (internes inattendus)');
+        // A finer tile fades in over the coarser one it replaces, under the terrain too (imagery-fade.ts).
+        if (!useImageryFade(this.map as unknown as Parameters<typeof useImageryFade>[0], ['ign-ortho', 's2'], { maxRedraws: this.lowQuality ? 2 : 4 }) && import.meta.env.DEV) console.warn('[terrain] fondu des orthophotos : internes de MapLibre inattendus');
         // The orthophotos all around the pilot (lod.ts): a head turned or a place never seen
         // shows them at once, a little soft, the finest detail following; and more of them
         // kept on the GPU out of view (a thermal's other side when the turn comes back to it).

@@ -28,7 +28,7 @@ import { ThermalFlows, Vultures } from './life';
 import { Forest } from './trees';
 import { clearance, lodByDistance, ringLoaded, setTileCache, TileRing, useTerrainTileZoom, useTileRing, type LodState, type TileZoomFn } from './lod';
 import { Ground, REGION_HALF, REGION_N, type SunUniforms } from './ground';
-import { IMAGERY_GAP } from './materials';
+import { IMAGERY_GAP, IMAGERY_GAP_ROAD, IMAGERY_GAP_WATER } from './materials';
 import { RegionMaps } from './region';
 import { TerrainHeights } from './heights';
 import type { GridMeta } from '@brises/model';
@@ -56,18 +56,62 @@ const CENTER_M = 1200;
 const EYE = EYE_SEATED;
 /** MapLibre's backdrop where no imagery is loaded, when nothing replaces it. */
 const BACKDROP = '#5d6352';
+/** The map's lakes, rivers and main roads under the imagery, for the landscape pass (setBackdrop). */
+const GAP_LAYERS = ['gap-water', 'gap-river', 'gap-road'];
+
+/**
+ * A line width (px) that stays `metres[class]` wide on the ground (`other` for the rest of
+ * the classes), at 45° of latitude (3.38 m a pixel at zoom 14; the Alps' 44-46° stay within 2%).
+ */
+function metres(byClass: Record<string, number>, other: number): unknown {
+  const at = (k: number) => ['match', ['get', 'class'], ...Object.entries(byClass).flatMap(([c, m]) => [c, m * k]), other * k];
+  return ['interpolate', ['exponential', 2], ['zoom'], 8, at(1 / (3.38 * 64)), 18, at(16 / 3.38)];
+}
 
 function gameStyle(): StyleSpecification {
   const style = buildStyle();
   // Sentinel-2 only as a low-resolution backdrop (outside France and while IGN loads).
   (style.sources.s2 as { maxzoom?: number }).maxzoom = 12;
   style.sources.ofm = { type: 'vector', url: 'https://tiles.openfreemap.org/planet', attribution: '<a href="https://openfreemap.org" target="_blank" rel="noopener">OpenFreeMap</a> © OpenMapTiles © OpenStreetMap' };
+  // The same map for the water and roads under the imagery, its tiles all around the pilot
+  // (GameWorld.gapRing); the view itself only asks for a few coarse ones.
+  style.sources['ofm-gap'] = { type: 'vector', url: 'https://tiles.openfreemap.org/planet', minzoom: 8, maxzoom: 14, attribution: '' };
   style.layers = style.layers
     .filter((l) => l.type !== 'background' || l.id === 'background')
     .map((l) => (l.id === 'hillshade' ? { ...l, paint: { ...(l as HillshadeLayerSpecification).paint, 'hillshade-exaggeration': 0.28 } } : l))
     // Where imagery is still loading: a dull land colour rather than night blue (it is hazed
     // like the rest); with the landscape pass, a sentinel it replaces (see setBackdrop).
     .map((l) => (l.id === 'background' ? { ...l, paint: { 'background-color': BACKDROP } } : l)) as LayerSpecification[];
+  // Lakes, rivers and main roads where no imagery is loaded, under it, in the sentinel colours
+  // the landscape pass turns into water and asphalt (materials.ts); shown only with its
+  // backdrop (setBackdrop). Not the ones in tunnels, nor the mountain streams (lines on the
+  // map, hardly seen from the air under their trees: blue ribbons down the slopes).
+  const above = ['!=', ['get', 'brunnel'], 'tunnel'];
+  style.layers.splice(
+    style.layers.findIndex((l) => l.id === 'bm-s2'),
+    0,
+    { id: 'gap-water', type: 'fill', source: 'ofm-gap', 'source-layer': 'water', minzoom: 8, layout: { visibility: 'none' }, filter: above as never, paint: { 'fill-color': IMAGERY_GAP_WATER } },
+    {
+      id: 'gap-river',
+      type: 'line',
+      source: 'ofm-gap',
+      'source-layer': 'waterway',
+      minzoom: 10,
+      layout: { visibility: 'none', 'line-cap': 'round', 'line-join': 'round' },
+      filter: ['all', above, ['match', ['get', 'class'], ['river', 'canal'], true, false]] as never,
+      paint: { 'line-color': IMAGERY_GAP_WATER, 'line-width': metres({ river: 18 }, 10) as never },
+    },
+    {
+      id: 'gap-road',
+      type: 'line',
+      source: 'ofm-gap',
+      'source-layer': 'transportation',
+      minzoom: 10,
+      layout: { visibility: 'none', 'line-cap': 'round', 'line-join': 'round' },
+      filter: ['all', above, ['match', ['get', 'class'], ['motorway', 'trunk', 'primary', 'secondary', 'tertiary'], true, false]] as never,
+      paint: { 'line-color': IMAGERY_GAP_ROAD, 'line-width': metres({ motorway: 24, trunk: 14, primary: 9, secondary: 7 }, 6) as never },
+    },
+  );
   // Buildings: walls of plaster, stone, wood or concrete and roofs of slate, tiles or metal,
   // drawn per building from its id (as the imagery would show them under the reference
   // light: the landscape pass relights them with the hour's), each roof a thin slab on top.
@@ -224,6 +268,14 @@ export class GameWorld {
    * little coarser and nearer.
    */
   private ring = this.lowQuality ? new TileRing(-2.5, 7, 18, 60000, 60) : new TileRing(-2, 7, 18, 80000, 120);
+  /**
+   * The map's water and roads under the imagery (the gap layers), three levels coarser all
+   * around, whatever the view: a set of tiles that stays put while the head turns (tiles of
+   * the view's coming and going redrew the terrain's textures five times as often). Drawn
+   * into every terrain texture MapLibre redraws: ~0.5 ms of its time a frame while the head
+   * turns fast, so not on phones.
+   */
+  private gapRing = new TileRing(-3, 8, 14, 50000, 60);
   private ringAt = { x: 0, y: 0 };
 
   /** The terrain's heights around the pilot, whatever the camera looks at (heights.ts). */
@@ -305,6 +357,11 @@ export class GameWorld {
         // kept on the GPU out of view (a thermal's other side when the turn comes back to it).
         const mm = this.map as unknown as Parameters<typeof useTileRing>[0];
         if (!(useTileRing(mm, 'ign-ortho', this.ring) && setTileCache(mm, 'ign-ortho', this.lowQuality ? 200 : 500)) && import.meta.env.DEV) console.warn('[terrain] anneau de tuiles : internes de MapLibre inattendus');
+        // The water and roads under the imagery: their ring, the view's own tiles the coarsest
+        // the source has (and not none: the ring takes MapLibre's tile ids from them).
+        const gap = this.map.getSource('ofm-gap') as { calculateTileZoom?: TileZoomFn } | undefined;
+        if (gap) gap.calculateTileZoom = () => 8;
+        if (!useTileRing(mm, 'ofm-gap', this.gapRing) && import.meta.env.DEV) console.warn('[terrain] anneau de la carte sous l’imagerie : internes de MapLibre inattendus');
         // New elevation tiles: the relief's light redraws its elevations (ground.ts).
         this.map.on('sourcedata', (e: { sourceId?: string; tile?: unknown }) => {
           if (e.sourceId === 'terrain' && e.tile) this.ground.terrainChanged();
@@ -423,8 +480,9 @@ export class GameWorld {
   /**
    * What MapLibre draws where no imagery is loaded (a place never seen, or the imagery out of
    * reach): with the landscape pass, a sentinel colour it replaces by a landscape made from
-   * the land cover (materials.ts), no altitude tints (they would hide it, and spare their
-   * elevation tiles); otherwise, and on the topo map, a dull land colour and the altitude tints.
+   * the land cover and the map's water and roads (materials.ts; not on phones, see gapRing),
+   * no altitude tints (they would hide it, and spare their elevation tiles); otherwise, and on
+   * the topo map, a dull land colour and the altitude tints.
    */
   private setBackdrop(): void {
     const own = this.groundPass && !this.topo;
@@ -432,6 +490,7 @@ export class GameWorld {
     this.backdropOwn = own;
     this.map.setPaintProperty('background', 'background-color', own ? IMAGERY_GAP : BACKDROP);
     if (this.map.getLayer('color-relief')) this.map.setLayoutProperty('color-relief', 'visibility', own ? 'none' : 'visible');
+    for (const id of GAP_LAYERS) if (this.map.getLayer(id)) this.map.setLayoutProperty(id, 'visibility', own && !this.lowQuality ? 'visible' : 'none');
   }
   private backdropOwn = false;
 
@@ -677,7 +736,10 @@ export class GameWorld {
         this.region?.update(st.x, st.y);
         this.lod.clearanceM = clearance(st.x + eye.x, st.y + eye.y, alt, this.groundFn);
         const mc = MercatorCoordinate.fromLngLat([lon, lat]);
-        this.ring.update(mc.x, mc.y, 40075016.686 * Math.cos((lat * Math.PI) / 180), this.map.getZoom() + 1, this.lod);
+        const unitM = 40075016.686 * Math.cos((lat * Math.PI) / 180);
+        this.ring.update(mc.x, mc.y, unitM, this.map.getZoom() + 1, this.lod);
+        // (The map's tiles are 512 pixels: one zoom level under the imagery's 256.)
+        this.gapRing.update(mc.x, mc.y, unitM, this.map.getZoom(), this.lod);
         this.ringAt.x = st.x;
         this.ringAt.y = st.y;
       }

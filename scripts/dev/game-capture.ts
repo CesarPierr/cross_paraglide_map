@@ -7,6 +7,7 @@
  *   npx tsx scripts/dev/game-capture.ts [--out dir] [--scenes falaise,lac] [--hours 8,13,18.5]
  *                                       [--size 1280x800] [--gpu] [--perf] [--url http://localhost:5174/]
  *                                       [--debug 1|2|3|4] [--plain] [--month 0-11] [--dpr 2] [--profile name]
+ *                                       [--no-imagery]
  *
  * Rendering is software (SwiftShader) unless --gpu (Metal through ANGLE, headless): slow
  * but deterministic. A persistent profile in .cache/game-capture-profile keeps the tile
@@ -16,7 +17,10 @@
  * (`__game.world.ground`), vsync off; a large --size and --dpr make the frame GPU-bound,
  * so the differences are the passes' cost. --debug shows the
  * terrain's classes (1), normals (2), sun (3) or sky (4) visibility; --plain the relief's
- * light without the materials; --month overrides the scenes' month.
+ * light without the materials; --month overrides the scenes' month. --no-imagery refuses the
+ * orthophotos and Sentinel-2 (service worker off, own profile): the landscape made from the
+ * land cover and the map's water and roads everywhere (materials.ts `gBackdrop`; --debug 9
+ * shows it).
  */
 import { mkdirSync } from 'node:fs';
 import { join } from 'node:path';
@@ -80,8 +84,9 @@ const debug = Number(arg('debug', '0'));
 const plain = flag('plain');
 const month = arg('month');
 const dpr = Number(arg('dpr', '1'));
+const noImagery = flag('no-imagery');
 // Two runs at once need two profiles (Chrome locks its profile directory).
-const profile = arg('profile', gpu ? 'game-capture-profile-gpu' : 'game-capture-profile')!;
+const profile = arg('profile', noImagery ? 'game-capture-profile-noimg' : gpu ? 'game-capture-profile-gpu' : 'game-capture-profile')!;
 mkdirSync(out, { recursive: true });
 
 const args = gpu
@@ -93,7 +98,9 @@ const ctx: BrowserContext = await chromium.launchPersistentContext(join(process.
   args,
   viewport: { width: W, height: H },
   deviceScaleFactor: dpr,
+  serviceWorkers: noImagery ? 'block' : 'allow',
 });
+if (noImagery) await ctx.route(/data\.geopf\.fr\/wmts.*ORTHOIMAGERY|tiles\.maps\.eox\.at/, (r) => r.abort());
 const page: Page = ctx.pages()[0] ?? (await ctx.newPage());
 const errors: string[] = [];
 page.on('pageerror', (e) => errors.push(`[pageerror] ${e.message} ${(e.stack ?? '').split('\n').slice(1, 12).join(' | ')}`));

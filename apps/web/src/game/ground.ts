@@ -349,7 +349,8 @@ export class Ground {
    * Materials off (relief light only), for comparisons. Debug views: 1 classes, 2 normals,
    * 3 sun, 4 sky, 5 and 6 raw features (luminance, green, trees; saturation, bare, built),
    * 7 not-a-number finder (blue: near pass, brighter where its march missed), 8 no detail,
-   * 9 imagery gaps (red: the land cover's landscape in place of missing imagery).
+   * 9 imagery gaps (red: the land cover's landscape in place of missing imagery; blue its
+   * water, yellow its roads).
    */
   materials = true;
   debug = 0;

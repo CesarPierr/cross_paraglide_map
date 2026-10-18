@@ -185,7 +185,14 @@ vent et peut le traîner s'il ne l'affale pas.
   MapLibre par image, jusqu'à ~175 Mo de tuiles sur le GPU.
 - **Sans image** : là où aucune orthophoto n'est encore chargée, le fond de MapLibre est un magenta
   témoin que la passe du paysage remplace par un paysage tiré de WorldCover (`gBackdrop` : forêt,
-  prés et champs, alpage, roche, glace, bâti par taches selon leurs parts). Hors de France, la tuile
+  prés et champs, alpage, roche, glace, bâti par taches selon leurs parts). Les lacs, les rivières
+  et les routes principales de la carte (OpenStreetMap par OpenFreeMap) sont dessinés sous
+  l'imagerie dans deux autres teintes témoins, rendues en eau (reflets, rides, classe « eau » forcée,
+  rivières en pente comprises) et en asphalte ; pas les torrents (des rubans bleus dans les pentes,
+  quand d'avion on ne les voit guère sous les arbres). Leurs tuiles sont gardées tout autour du
+  pilote quelle que soit la direction du regard : celles de la vue, en entrant et sortant du champ,
+  faisaient redessiner les textures du relief cinq fois plus souvent. Coût : ~0,5 ms de MapLibre par
+  image quand la tête tourne vite, d'où leur absence sur téléphone. Hors de France, la tuile
   blanche qu'IGN renvoie (toujours les mêmes 1 651 octets) est traitée comme absente par le service
   worker : la Suisse et l'Italie gardent leur image plus grossière au lieu d'une nappe blanche.
 - **Lumière du relief** (`ground.ts`, `region.ts`) : trois niveaux d'altitudes autour du pilote, tirés
@@ -272,9 +279,10 @@ dans leur bouton (i) une fois en vol.
   toit clair, calcaire pris pour de la neige au-dessus de 2 400 m) ; un bâtiment isolé hors des zones
   bâties reçoit parfois le détail du sol derrière lui ; les rivières étroites ne sont pas reconnues
   comme de l'eau ; les lacs ne reflètent pas les montagnes ; le relief proche reste celui des tuiles
-  AWS (~25 m) ; la neige suit une climatologie, pas l'enneigement du jour. Le paysage de remplacement
-  n'a ni lacs, ni rivières, ni routes ; les tuiles à cheval sur la frontière gardent leur moitié
-  blanche (un glacier a le même blanc) ; l'arrivée du détail reste un coup de netteté, sans fondu.
+  AWS (~25 m) ; la neige suit une climatologie, pas l'enneigement du jour. Sur téléphone, le paysage
+  de remplacement n'a ni lacs, ni rivières, ni routes ; les tuiles à cheval sur la frontière gardent
+  leur moitié blanche (un glacier a le même blanc) ; l'arrivée du détail reste un coup de netteté,
+  sans fondu.
 - Pilote : speedbag et carénage rigides (pas de tissu simulé), postures tirées des fiches et de
   l'anthropométrie, pas de photos.
 

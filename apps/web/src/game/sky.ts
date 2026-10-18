@@ -321,12 +321,16 @@ void main() {
   rf.fine = 0.0;
   if (uRelief > 0.5) rf = relief(pa.xy);
   // Where MapLibre had no imagery yet (its sentinel backdrop, world.ts): a landscape made from
-  // the land cover in its place (materials.ts), with the hillshade's darkening of the backdrop;
-  // along the edges, the imagery's part without the backdrop's colour.
+  // the land cover and the map's water and roads in its place (materials.ts), with the
+  // hillshade's darkening of the backdrop; along the edges, the imagery's part without the
+  // backdrop's colour.
   float gap = gGap(c);
+  vec2 kind = vec2(0.0);
   if (gap > 0.0) {
+    kind = gGapKind(c);
     vec3 seen = vec3(min(c.r, 1.25 * c.g), c.g, min(c.b, 1.25 * c.g));
-    c = mix(seen, gBackdrop(pa, rf.n) * mix(1.0, max(c.r, c.b), gap), gap);
+    c = mix(seen, gBackdrop(pa, rf.n, kind) * mix(1.0, max(c.r, c.b), gap), gap);
+    gWet = kind.x * gap;
   }
   vec3 x = photoRadiance(c);
   // Lit by the light of the hour, the direct part dimmed under the clouds' shadows (the
@@ -394,7 +398,7 @@ void main() {
   x = x * Tap + Lap;
   vec3 col = atmoEncode(atmoTonemap(x * uExposure));
   col += (ignNoise(gl_FragCoord.xy) - 0.5) / 255.0;
-  if (uGDebug == 9) col = mix(col, vec3(1.0, 0.0, 0.0), 0.6 * gap);
+  if (uGDebug == 9) col = mix(col, mix(mix(vec3(1.0, 0.0, 0.0), vec3(1.0, 0.85, 0.0), kind.y), vec3(0.0, 0.4, 1.0), kind.x), 0.6 * gap);
   fragColor = vec4(col, 1.0);
 }`;
 

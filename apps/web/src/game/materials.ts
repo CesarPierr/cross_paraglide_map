@@ -33,6 +33,13 @@ export const DETAIL_LAYERS = 7;
  * blended with the imagery along the edges (green under both red and blue, `gGap`).
  */
 export const IMAGERY_GAP = '#ff00ff';
+/**
+ * The same backdrop where the map has water (lakes, rivers: red under blue) or a main road
+ * (blue under red), drawn under the imagery (world.ts) and told from the plain magenta by
+ * the ratio of red to blue (`gGapKind`), whatever the darkening.
+ */
+export const IMAGERY_GAP_WATER = '#bf00ff';
+export const IMAGERY_GAP_ROAD = '#ff00bf';
 
 const DETAIL_FS = /* glsl */ `
 precision highp float;
@@ -300,6 +307,14 @@ float gGap(vec3 c) {
   float m = max(c.r, c.b);
   return smoothstep(0.35, 0.75, (min(c.r, c.b) - c.g) / max(m, 0.02)) * smoothstep(0.012, 0.04, m);
 }
+// Which sentinel the backdrop shows: x water (IMAGERY_GAP_WATER), y a road (IMAGERY_GAP_ROAD),
+// both 0 for the plain backdrop.
+vec2 gGapKind(vec3 c) {
+  float d = (c.b - c.r) / max(max(c.r, c.b), 0.02);
+  return vec2(smoothstep(0.1, 0.2, d), smoothstep(0.1, 0.2, -d));
+}
+// Share of water in the backdrop the landscape pass put in this pixel (gClassify makes it water).
+float gWet = 0.0;
 // Patches of a class covering about its share s (0..1) of the ground: where a noise of about
 // uniform distribution (two octaves, cell of T metres) is under the share, edges soft; none
 // where the share is nil.
@@ -312,9 +327,10 @@ float gPatch(vec2 p, float T, float s) {
 // forest, meadows and fields, alpine grass, rock, ice and buildings in patches of a few hundred
 // metres whose shares are those of the land cover around (ESA WorldCover, region.ts); rock
 // rather than trees on steep ground; the meadows browner and the trees darker with altitude; a
-// grain so that it does not look flat close by. N: the relief's normal. (The seasonal snow, the
-// relief's light and the materials' detail come after, as for the photo.)
-vec3 gBackdrop(vec3 pa, vec3 N) {
+// grain so that it does not look flat close by; the lakes, rivers and main roads of the map
+// (kind, gGapKind). N: the relief's normal. (The seasonal snow, the relief's light and the
+// materials' detail come after, as for the photo; the water's reflections too.)
+vec3 gBackdrop(vec3 pa, vec3 N, vec2 kind) {
   vec2 q = pa.xy;
   float z = pa.z;
   // Shares of trees, bare ground and rock, snow and ice, buildings; without the land cover,
@@ -347,7 +363,10 @@ vec3 gBackdrop(vec3 pa, vec3 N) {
   col = mix(col, stone, rock * (1.0 - 0.6 * forest));
   col = mix(col, town, built);
   col = mix(col, vec3(0.88, 0.9, 0.93), ice);
-  return col * (0.88 + 0.24 * gNoise(q / 9.0));
+  col *= 0.88 + 0.24 * gNoise(q / 9.0);
+  // Asphalt as the photos show it, and a lake's dark blue-green.
+  col = mix(col, vec3(0.47, 0.47, 0.45), kind.y);
+  return mix(col, vec3(0.16, 0.27, 0.3), kind.x);
 }
 // The ground position's change from a pixel to the next (computed once, where all the
 // pixels of a quad run the same code): the patterns are filtered with it, anisotropically,
@@ -410,6 +429,8 @@ void gClassify(vec3 rho, vec3 N, vec3 pa, out float forest, out float meadow, ou
   // do not quite flatten.
   float lakeFlat = max(smoothstep(0.999, 0.9999, N.z), smoothstep(0.98, 0.995, N.z) * smoothstep(0.06, 0.1, green + blue));
   water = smoothstep(0.38, 0.5, sat) * step(-0.02, green + blue) * smoothstep(0.22, 0.15, L) * lakeFlat * (1.0 - smoothstep(0.5, 0.85, pTrees));
+  // The map's water where the imagery is missing, rivers on a slope included.
+  water = max(water, gWet);
   ice = smoothstep(0.3, 0.45, L) * smoothstep(0.35, 0.2, sat) * max(smoothstep(0.03, 0.2, pSnow), smoothstep(0.42, 0.6, L) * smoothstep(2400.0, 2900.0, pa.z)) * (1.0 - water);
   float veg = smoothstep(-0.01, 0.025, green);
   // Beyond ~60° the photo is a smear down the fall line: rock whatever it shows; steep

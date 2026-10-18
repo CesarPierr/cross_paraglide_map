@@ -135,8 +135,12 @@ vent et peut le traîner s'il ne l'affale pas.
 - **Pilote et sellette** (`glider-gear.ts`, `glider-pilot.ts`) : pilote de 1,70 m (segments de
   Winter) allongé à ~35° dans une sellette cocon (speedbag, cockpit avec l'instrument sur les genoux,
   coque à protection dorsale, carénage arrière), sangles, mousquetons à 42 cm, casque ouvert, gants
-  sur des poignées qui suivent les freins ; cotes des fiches constructeurs (Buzz Z7 MS, Lightness 3,
-  X-Rated 7, élévateurs Cruiser). Au déco il se tient debout, puis court avec une vraie foulée. La
+  fins (main de 19 × 8,5 cm) refermés sur des poignées de frein tenues comme un manche ; cotes des
+  fiches constructeurs (Buzz Z7 MS, Lightness 3, X-Rated 7, élévateurs Cruiser), postures relevées
+  sur des photos en vol, au déco et en vues embarquées : mains hautes à hauteur des yeux sous les
+  poulies, avant-bras presque verticaux, coudes bas contre la sellette ; en freinant, poings au menton
+  puis aux hanches. Au déco il se tient debout (speedbag vide le long des tibias, carénage dressé
+  derrière le dos), bras en arrière pour gonfler, puis court avec une vraie foulée. La
   voile n'est pas soudée au pilote : elle tourne autour des mousquetons (balancier amorti de ~1,1 s
   poussé par les accélérations de roulis et de tangage, sellette inclinée de ~5° à fond de
   transfert, bout d'aile soulevé par une rafale ; estimations, pas des mesures) et, au décollage,
@@ -283,8 +287,9 @@ dans leur bouton (i) une fois en vol.
   de remplacement n'a ni lacs, ni rivières, ni routes ; les tuiles à cheval sur la frontière gardent
   leur moitié blanche (un glacier a le même blanc) ; l'arrivée du détail reste un coup de netteté,
   sans fondu.
-- Pilote : speedbag et carénage rigides (pas de tissu simulé), postures tirées des fiches et de
-  l'anthropométrie, pas de photos.
+- Pilote : speedbag et carénage rigides (pas de tissu simulé) ; postures relevées sur des photos de
+  trois-quarts, angles approchés (l'inclinaison du dos reste celle des fiches, faute de vue de profil
+  en vol) ; doigts sans plis ni coutures.
 
 ## Sources principales
 

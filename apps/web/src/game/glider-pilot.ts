@@ -1,23 +1,27 @@
 /**
  * The pilot and his gear posed every frame (geometry in glider-gear.ts), in the glider frame
  * (x right, y up, z back, carabiners at the origin):
- * - seated, reclined ~35° in a cocoon harness in flight; standing in a slight crouch, then
- *   running on the take-off (`stand`, eased); the eyes always where the first-person camera
- *   is (world.ts EYE and EYE_STANDING), the body sinking in the harness under load as the
- *   camera does;
- * - the torso (with the seat shell and the rear fairing) pivots about the hips; the
- *   speedbag hangs from the front of the seat: along the legs in flight, shortened in front
- *   of them on the ground, swinging with the run;
+ * - seated, reclined ~35° in a cocoon harness in flight, the head upright; standing leaning
+ *   a little forward, then running on the take-off (`stand`, eased); the eyes always where
+ *   the first-person camera is (world.ts EYE and EYE_STANDING), the body sinking in the
+ *   harness under load as the camera does;
+ * - the torso (with the seat shell and the rear fairing) pivots about the hips: standing,
+ *   the fairing turns up behind the back and sags a little; the speedbag hangs from the
+ *   front of the seat: along the legs in flight, limp down the shins on the ground,
+ *   swinging with the run;
  * - legs folded into the speedbag in flight; on the ground a gait cycle (cadence and stride
  *   from the run speed, the foot planted while under the body, lifted while it swings
  *   forward, the body lowest at mid-stance), solved by two-bone inverse kinematics;
- * - arms by two-bone inverse kinematics, elbows low and out: the fists on the brake toggles
- *   under the pulleys (hands up) down to the hips (full brake), on the outer A lines with
- *   big ears, and on the take-off round the carabiners with the risers as the wing rises;
+ * - arms by two-bone inverse kinematics after photos of pilots in pods: hands up, the fists
+ *   at the eyes' height just under the pulleys, forearms nearly upright and the elbows low
+ *   against the harness's sides; braking, down to the hips with the elbows out and back; on
+ *   the outer A lines with big ears; on the take-off holding the risers out and back, round
+ *   the carabiners with them as the wing rises. The gloves hold their brake handles like a
+ *   stick (the line from the top of the fist), the wrist bent towards the line;
  * - the head compensates part of the bank and of the pendulum's pitch as the camera does,
  *   and looks into the turn;
  * - the risers (canopy frame) run from the carabiners to the maillons, shortened by the
- *   speed bar; the brake lines from the pulleys to the toggles' swivels; the speed lines
+ *   speed bar; the brake lines from the pulleys to the handles' swivels; the speed lines
  *   from the speedbag to the risers.
  * No allocation per frame; geometries and materials are shared by every glider.
  */
@@ -32,6 +36,7 @@ import {
   EYE_STANDING,
   FAIRING_HINGE_T,
   FEET_Y,
+  GRIP,
   NECK_T,
   POD_HINGE_T,
   POD_SPEED_EXIT,
@@ -40,7 +45,7 @@ import {
   SHOULDER_T,
   STANDING,
   STRAP_CHEST_T,
-  TOGGLE_TOP,
+  SWIVEL,
   at,
   bootGeometry,
   carabinerGeometry,
@@ -60,7 +65,6 @@ import {
   shinGeometry,
   strapGeometry,
   thighGeometry,
-  toggleGeometry,
   torsoGeometry,
   torsoToGlider,
   upperArmGeometry,
@@ -159,7 +163,6 @@ function buildShared() {
     fore: forearmGeometry(),
     gloveL: gloveGeometry(false),
     gloveR: gloveGeometry(true),
-    toggle: toggleGeometry(),
     thigh: thighGeometry(),
     shin: shinGeometry(),
     boot: bootGeometry(),
@@ -193,6 +196,9 @@ const tM = new THREE.Matrix4();
 const tS = new THREE.Vector3(1, 1, 1);
 const T3 = new THREE.Vector3();
 const tL = new THREE.Vector3();
+const tG = new THREE.Vector3();
+const tH = new THREE.Vector3();
+const tP = new THREE.Vector3();
 
 const clamp = (v: number, a: number, b: number) => (v < a ? a : v > b ? b : v);
 const mix = (a: number, b: number, t: number) => a + (b - a) * t;
@@ -211,10 +217,38 @@ function alignBone(o: THREE.Object3D, a: THREE.Vector3, b: THREE.Vector3): void 
 /** Seated legs in the speedbag: thigh rising 8° forward, shank 22° below the horizontal (angles from straight down, + forward). */
 const THIGH_SEATED = 1.71;
 const SHIN_SEATED = 1.19;
-/** Fists on the toggles: hands up (under the pulley), full brake (at the hips), big ears (outer A lines pulled down). */
-const HAND_UP = new THREE.Vector3(0.27, 0.22, 0.07);
+/**
+ * Fists on the handles (glider frame, right hand): hands up just under the pulley at the
+ * eyes' height, beside and ~27 cm ahead of the face (photos of pod harnesses in flight:
+ * Advance Impress 4 and Lightness 3, Supair Evo Lite 2, Neo Suspender); full brake at the
+ * hips; big ears (outer A lines pulled down). A light brake (~25 %) brings them to the chin
+ * and the shoulders, as when thermalling.
+ */
+const HAND_UP = new THREE.Vector3(0.265, 0.29, 0.075);
 const HAND_FULL = new THREE.Vector3(0.3, -0.2, 0.13);
 const HAND_EARS = new THREE.Vector3(0.335, 0.24, -0.1);
+/**
+ * On the take-off (before the canopy's turn about the carabiners, see poseArms): the hands
+ * hold the risers and the handles out and back like wings, the arms nearly straight behind
+ * the hips while the wing lies behind, raised with it as it comes up.
+ */
+const HAND_GROUND = new THREE.Vector3(0.44, 0.42, 0.04);
+/**
+ * Elbow directions (glider frame, right arm): hands up, the elbows low and close to the
+ * harness's sides, a little ahead (the forearms nearly upright, as in the photos); hands
+ * at the hips, out and back; on the take-off, back and a little out (the arms behind).
+ */
+const POLE_UP = new THREE.Vector3(0.15, -0.9, -0.35);
+const POLE_DOWN = new THREE.Vector3(0.55, -0.35, 0.75);
+const POLE_GROUND = new THREE.Vector3(0.35, -0.3, 0.9);
+/** A raised fist's natural turn (thumb up, a little in and ahead), where the line runs along the forearm. */
+const THUMB_REST = new THREE.Vector3(-0.45, 0.85, -0.25);
+/**
+ * Standing, the fairing turns up with the back, then sags back this much under its weight
+ * (rad) and shrinks a little, slack without the airflow.
+ */
+const FAIRING_SAG = 0.55;
+const FAIRING_SLACK = 0.2;
 
 export interface RigInput {
   st: GliderState;
@@ -242,7 +276,6 @@ export class PilotRig {
   private upper: THREE.Mesh[] = [];
   private fore: THREE.Mesh[] = [];
   private gloves: THREE.Mesh[] = [];
-  private toggles: THREE.Mesh[] = [];
   private straps: THREE.InstancedMesh;
   private maillons: THREE.InstancedMesh;
   private harnessStraps: THREE.InstancedMesh;
@@ -250,6 +283,7 @@ export class PilotRig {
   private recline: number = SEATED.recline;
   private hands = [new THREE.Vector3(), new THREE.Vector3()];
   private swivels = [new THREE.Vector3(), new THREE.Vector3()];
+  private joints = [0, 1].map(() => ({ shoulder: new THREE.Vector3(), elbow: new THREE.Vector3(), wrist: new THREE.Vector3(), grip: new THREE.Vector3() }));
   private phase = 0;
   private headYaw = 0;
   /** Speedbag bumping about its hinge in flight (rad, rad/s). */
@@ -279,13 +313,12 @@ export class PilotRig {
       }
       const u = new THREE.Mesh(G.upper, m);
       const f = new THREE.Mesh(G.fore, m);
+      // The glove holds its brake handle (one mesh).
       const gl = new THREE.Mesh(i ? G.gloveR : G.gloveL, m);
-      const tg = new THREE.Mesh(G.toggle, m);
       this.upper.push(u);
       this.fore.push(f);
       this.gloves.push(gl);
-      this.toggles.push(tg);
-      this.body.add(u, f, gl, tg);
+      this.body.add(u, f, gl);
     }
     this.body.add(new THREE.Mesh(G.carab, m));
     this.harnessStraps = new THREE.InstancedMesh(G.harnessStrap, m, 4);
@@ -332,9 +365,11 @@ export class PilotRig {
     this.headYaw += (look - this.headYaw) * Math.min(1, dt / 0.4);
     this.pilot.rotation.set(headP + 0.5 * (st.pitch || 0) * fly, -this.headYaw, 0.35 * (st.bank || 0) * fly, 'YXZ');
 
-    // Rear fairing: behind the back in flight, drooping behind the legs standing.
-    this.fairing.rotation.set(1.75 * k, 0, 0);
-    this.fairing.scale.setScalar(1 - 0.5 * k);
+    // Rear fairing: behind the back in flight; standing, it turns up with the back (sewn to
+    // the seat and the back plate) and sags back a little (photos of pilots walking to the
+    // take-off: a rigid fairing stands behind the shoulders).
+    this.fairing.rotation.set(FAIRING_SAG * k, 0, 0);
+    this.fairing.scale.setScalar(1 - FAIRING_SLACK * k);
 
     // Speedbag: bumped in flight by the vertical accelerations (turbulence), a damped
     // spring about its hinge; running, kicked forward by the knees at each step and lifted
@@ -348,12 +383,13 @@ export class PilotRig {
     const podRun = runK * (0.22 + 0.12 * Math.sin(2 * this.phase + 0.5));
     torsoToGlider(POD_HINGE_T, this.hip, recline, tA);
     this.pod.position.copy(tA);
-    this.pod.rotation.set(-1.32 * k + this.podSwing + podRun, 0, 0);
-    // Hanging empty it is shorter (bunched up) and flatter; pushing the bar stretches the legs.
-    this.pod.scale.set(1, 1 - 0.3 * k, (1 - 0.42 * k) * (1 + 0.05 * sb * fly));
+    this.pod.rotation.set(-1.45 * k + this.podSwing + podRun, 0, 0);
+    // Hanging empty it is limp: flat against the legs and bunched up, down to the shins (a
+    // Supair Strike 2 on the take-off); pushing the bar stretches the legs in flight.
+    this.pod.scale.set(1, 1 - 0.55 * k, (1 - 0.4 * k) * (1 + 0.05 * sb * fly));
 
     this.poseLegs(k, runK, v);
-    this.poseArms(inp, ears);
+    this.poseArms(inp, ears, k);
     this.poseHarnessStraps();
     if (lines) this.anchors(inp, lines, sb, ears);
   }
@@ -406,7 +442,7 @@ export class PilotRig {
     }
   }
 
-  private poseArms(inp: RigInput, ears: number): void {
+  private poseArms(inp: RigInput, ears: number, k: number): void {
     const st = inp.st;
     // On the ground the hands hold the risers too and go round the carabiners with them as
     // the wing rises (behind the pilot in a forward launch, in front facing the wing).
@@ -416,26 +452,38 @@ export class PilotRig {
       const sg = s ? 1 : -1;
       const b = clamp((s ? st.brakeR : st.brakeL) || 0, 0, 1);
       const h = this.hands[s];
+      // In flight: from under the pulley down to the hips, bulging out and forward on the way.
       const bulge = Math.sin(Math.PI * b);
       h.lerpVectors(HAND_UP, HAND_FULL, b);
       h.x += 0.04 * bulge;
       h.z -= 0.03 * bulge;
       if (ears > 0) h.lerp(HAND_EARS, Math.min(1, ears * 1.5));
+      // On the take-off: holding the risers, lower and further back with a dab of brake.
+      tP.lerpVectors(POLE_UP, POLE_DOWN, smooth(0.15, 0.9, b));
+      if (k > 0) {
+        h.lerp(tG.set(HAND_GROUND.x, HAND_GROUND.y - 0.3 * b, HAND_GROUND.z + 0.08 * b), k);
+        tP.lerp(POLE_GROUND, k);
+      }
       h.x *= sg;
+      tP.x *= sg;
       vPivot.set(sg * CARABINER_X, LOOP_Y, 0);
       h.sub(vPivot).applyQuaternion(qUp).add(vPivot);
       torsoToGlider(SHOULDER_T, this.hip, this.recline, tF);
       tF.x *= sg;
-      // The line the toggle hangs on: to the brake pulley (or the outer A maillon with ears).
+      // The line the handle hangs on: to the brake pulley (or the outer A maillon with ears).
       if (ears > 0.5) tL.set(sg * RISERS[1].top[0], RISERS[1].top[1], RISERS[1].top[2]);
       else tL.set(sg * PULLEY.x, PULLEY.y, PULLEY.z);
       tL.applyQuaternion(qCan);
-      this.arm(s, tF, h, tL);
+      this.arm(s, tF, h, tL, tP);
     }
   }
 
-  /** Two-bone arm from the shoulder to the fist, the elbow low and out; glove and toggle along the line. */
-  private arm(s: number, sh: THREE.Vector3, fist: THREE.Vector3, lineTo: THREE.Vector3): void {
+  /**
+   * Two-bone arm from the shoulder to the fist, the elbow towards `pole`; the glove (with its
+   * handle) along the forearm, its thumb's side and the handle towards the line, and the
+   * swivel the brake line is tied to.
+   */
+  private arm(s: number, sh: THREE.Vector3, fist: THREE.Vector3, lineTo: THREE.Vector3, pole: THREE.Vector3): void {
     const sg = s ? 1 : -1;
     const L1 = BODY.upperArm;
     const L2 = BODY.forearm + BODY.grip;
@@ -444,35 +492,56 @@ export class PilotRig {
     tB.normalize();
     const cosA = (L1 * L1 + d * d - L2 * L2) / (2 * L1 * d);
     const sinA = Math.sqrt(Math.max(0, 1 - cosA * cosA));
-    tC.set(sg * 0.5, -0.8, 0.35);
-    tC.addScaledVector(tB, -tC.dot(tB)).normalize();
+    tC.copy(pole).addScaledVector(tB, -pole.dot(tB));
+    if (tC.lengthSq() < 1e-8) tC.set(sg, 0, 0).addScaledVector(tB, -sg * tB.x);
+    tC.normalize();
     // Elbow, then the wrist on the line to the fist.
     tD.copy(sh).addScaledVector(tB, cosA * L1).addScaledVector(tC, sinA * L1);
     tE.copy(sh).addScaledVector(tB, d);
     tA.subVectors(tE, tD).normalize();
     alignBone(this.upper[s], sh, tD);
-    alignBone(this.fore[s], tD, tE.copy(tD).addScaledVector(tA, BODY.forearm));
-    // Fist: forearm along +y, the thumb side towards the line, the back of the hand outwards.
-    const fistC = tE.copy(tD).addScaledVector(tA, L2);
-    tB.subVectors(lineTo, fistC).normalize();
+    const wrist = tE.copy(tD).addScaledVector(tA, BODY.forearm);
+    alignBone(this.fore[s], tD, wrist);
+    // Glove: the thumb's side (and the handle) towards the line: first turned about the
+    // forearm (eased towards a raised fist's natural turn where the line runs along it),
+    // then the wrist bent towards the line, up to ~43° (deviation and extension together,
+    // the handle swinging on its swivel: hands up, it hangs nearly upright from the line).
+    tB.subVectors(lineTo, wrist).normalize();
     tC.copy(tB).addScaledVector(tA, -tB.dot(tA));
-    if (tC.lengthSq() < 1e-6) tC.set(0, 0, 1);
-    tC.normalize().multiplyScalar(s ? -1 : 1);
-    T3.crossVectors(tC, tA);
-    tM.makeBasis(tC, tA, T3);
+    tH.set(sg * THUMB_REST.x, THUMB_REST.y, THUMB_REST.z);
+    tH.addScaledVector(tA, -tH.dot(tA));
+    tC.addScaledVector(tH, 0.3);
+    if (tC.lengthSq() < 1e-8) tC.set(0, 0, -1).addScaledVector(tA, tA.z);
+    tC.normalize();
+    const dev = clamp(Math.atan2(tB.dot(tA), Math.max(1e-6, tB.dot(tC))), -0.6, 0.75);
+    const cd = Math.cos(dev);
+    const sd = Math.sin(dev);
+    // Hand axis (y) and thumb (x) turned by `dev` in their plane; the back of the hand (z) stays.
+    tH.copy(tA).multiplyScalar(cd).addScaledVector(tC, -sd);
+    tC.multiplyScalar(cd).addScaledVector(tA, sd);
+    // The right glove is the left one's mirror: its thumb on its −x.
+    if (s) tC.negate();
+    T3.crossVectors(tC, tH);
+    tM.makeBasis(tC, tH, T3);
     const g = this.gloves[s];
     g.quaternion.setFromRotationMatrix(tM);
-    g.position.copy(tD).addScaledVector(tA, BODY.forearm);
-    // Toggle: its long axis along the brake line, its loop round the hand.
-    const tg = this.toggles[s];
-    tC.copy(tA).addScaledVector(tB, -tA.dot(tB));
-    if (tC.lengthSq() < 1e-6) tC.set(1, 0, 0);
-    tC.normalize();
-    T3.crossVectors(tC, tB);
-    tM.makeBasis(tC, tB, T3);
-    tg.quaternion.setFromRotationMatrix(tM);
-    tg.position.copy(fistC);
-    this.swivels[s].copy(fistC).addScaledVector(tB, TOGGLE_TOP);
+    g.position.copy(wrist);
+    // The swivel on the handle's top (glove frame) → the glider frame.
+    this.swivels[s]
+      .copy(wrist)
+      .addScaledVector(tC, s ? -SWIVEL.x : SWIVEL.x)
+      .addScaledVector(tH, SWIVEL.y)
+      .addScaledVector(T3, SWIVEL.z);
+    const j = this.joints[s];
+    j.shoulder.copy(sh);
+    j.elbow.copy(tD);
+    j.wrist.copy(wrist);
+    j.grip.copy(wrist).addScaledVector(tH, GRIP.y).addScaledVector(T3, GRIP.z);
+  }
+
+  /** The posed arm of a side (0 left, 1 right; glider frame): shoulder, elbow, wrist, the handle's grip and swivel (development, tests). */
+  armPose(side: number): { shoulder: THREE.Vector3; elbow: THREE.Vector3; wrist: THREE.Vector3; grip: THREE.Vector3; swivel: THREE.Vector3 } {
+    return { ...this.joints[side], swivel: this.swivels[side] };
   }
 
   /** Harness straps: from each carabiner down to the seat's side and up the chest to the shoulder strap. */

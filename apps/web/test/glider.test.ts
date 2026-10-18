@@ -2,7 +2,23 @@ import * as THREE from 'three';
 import { describe, expect, it } from 'vitest';
 import { newGlider, type GliderState } from '../src/game/flight';
 import { buildGlider, Sway } from '../src/game/glider';
-import { BODY, CARABINER_X, EYE_NECK, EYE_SEATED, EYE_STANDING, FEET_Y, fairingGeometry, podGeometry, shellGeometry, torsoGeometry } from '../src/game/glider-gear';
+import {
+  BODY,
+  CARABINER_X,
+  EYE_NECK,
+  EYE_SEATED,
+  EYE_STANDING,
+  FEET_Y,
+  FINGERS,
+  HANDLE_R,
+  fairingGeometry,
+  fingerJoints,
+  gloveGeometry,
+  handleAxis,
+  podGeometry,
+  shellGeometry,
+  torsoGeometry,
+} from '../src/game/glider-gear';
 import { LineSet } from '../src/game/glider-lines';
 import { PilotRig } from '../src/game/glider-pilot';
 import { newDeform, wingPoint } from '../src/game/glider-shape';
@@ -30,6 +46,39 @@ const still = (over: Partial<GliderState> = {}): GliderState => Object.assign(ne
 function eyeOf(rig: PilotRig): THREE.Vector3 {
   return new THREE.Vector3(...EYE_NECK).applyEuler(rig.pilot.rotation).add(rig.pilot.position);
 }
+
+/** A rig posed seated (stand 0) or standing, both brakes at `b`, the canopy right overhead. */
+function posed(b: number, stand = 0): PilotRig {
+  const rig = new PilotRig();
+  const st = still({ brakeL: b, brakeR: b, vx: 0, vy: 0 });
+  for (let i = 0; i < 3; i++) rig.update({ st, stand, run: 0, dt: 1 / 60, canopyInv: new THREE.Quaternion() }, null);
+  rig.body.updateMatrixWorld(true);
+  return rig;
+}
+
+/** Distance from a point to a segment. */
+function segDist(p: THREE.Vector3, a: THREE.Vector3, b: THREE.Vector3): number {
+  const ab = b.clone().sub(a);
+  const t = Math.min(1, Math.max(0, p.clone().sub(a).dot(ab) / ab.lengthSq()));
+  return a.clone().addScaledVector(ab, t).distanceTo(p);
+}
+
+/** The visible body's vertex nearest to a point (the head, hidden in first person, left out). */
+function clearance(rig: PilotRig, p: THREE.Vector3): number {
+  let best = Infinity;
+  const v = new THREE.Vector3();
+  rig.body.traverse((o) => {
+    const m = o as THREE.Mesh;
+    if (!m.isMesh || (m as THREE.InstancedMesh).isInstancedMesh) return;
+    for (let q: THREE.Object3D | null = m; q; q = q.parent) if (q === rig.pilot) return;
+    const pos = m.geometry.getAttribute('position');
+    for (let i = 0; i < pos.count; i++) best = Math.min(best, v.fromBufferAttribute(pos, i).applyMatrix4(m.matrixWorld).distanceTo(p));
+  });
+  return best;
+}
+
+/** Brake pulley on the right C riser (glider-pilot.ts PULLEY). */
+const PULLEY_R = new THREE.Vector3(0.252, 0.426, 0.072);
 
 describe('pilot and harness', () => {
   it('builds the harness and the body as closed surfaces wound outwards', () => {
@@ -95,6 +144,99 @@ describe('pilot and harness', () => {
     });
     expect(Math.abs(glider.sway!.roll)).toBeLessThanOrEqual(0.14);
     expect(Math.abs(glider.sway!.pitch)).toBeLessThanOrEqual(0.16);
+  });
+});
+
+describe('gloved hands on the brakes', () => {
+  it('makes a fist the size of a real hand in a thin glove', () => {
+    // The hand above its cuff (a hand 19 cm long and 8.5 cm wide, a glove a few mm thick):
+    // breadth with the thumb, knuckles above the wrist, depth from its back to the thumb.
+    const p = gloveGeometry(false, false).getAttribute('position');
+    const box = new THREE.Box3();
+    const v = new THREE.Vector3();
+    for (let i = 0; i < p.count; i++) if (v.fromBufferAttribute(p, i).y > 0.02) box.expandByPoint(v);
+    const size = box.getSize(new THREE.Vector3());
+    expect(size.x).toBeGreaterThan(0.08);
+    expect(size.x).toBeLessThan(0.105);
+    expect(box.max.y).toBeGreaterThan(0.105);
+    expect(box.max.y).toBeLessThan(0.13);
+    expect(size.z).toBeGreaterThan(0.06);
+    expect(size.z).toBeLessThan(0.095);
+  });
+
+  it('closes every finger on the handle, its tip curled back under it', () => {
+    for (const f of FINGERS) {
+      const j = fingerJoints(f);
+      const axis = handleAxis(f.x);
+      let touch = Infinity;
+      for (let k = 0; k < 3; k++) {
+        // Each phalanx clear of the handle (a few mm of glove and padding squeezed at most)…
+        const gap = segDist(axis, j[k], j[k + 1]) - (f.r0 + ((f.r1 - f.r0) * k) / 2) - HANDLE_R;
+        expect(gap).toBeGreaterThan(-0.003);
+        touch = Math.min(touch, gap);
+      }
+      // …and at least one of them on it.
+      expect(touch).toBeLessThan(0.004);
+      expect(j[3].z).toBeGreaterThan(j[2].z);
+    }
+  });
+
+  it('holds the hands up at the eyes, under the pulleys, the elbows low against the harness', () => {
+    const rig = posed(0);
+    for (const s of [0, 1]) {
+      const a = rig.armPose(s);
+      const sg = s ? 1 : -1;
+      expect(Math.abs(a.grip.y - EYE_SEATED[1])).toBeLessThan(0.08);
+      expect(a.grip.z).toBeLessThan(EYE_SEATED[2] - 0.2);
+      expect(a.swivel.y).toBeLessThan(PULLEY_R.y);
+      expect(a.swivel.y).toBeGreaterThan(0.25);
+      expect(a.elbow.y).toBeLessThan(a.shoulder.y - 0.1);
+      expect(sg * a.elbow.x).toBeGreaterThan(0.21);
+      expect(sg * a.elbow.x).toBeLessThan(0.32);
+      // The forearm nearly upright.
+      expect(a.wrist.clone().sub(a.elbow).normalize().y).toBeGreaterThan(0.85);
+    }
+  });
+
+  it('brings the fists to the chin with a light brake and to the hips, elbows back, at full brake', () => {
+    const light = posed(0.25).armPose(1);
+    expect(light.grip.y).toBeLessThan(EYE_SEATED[1] - 0.1);
+    expect(light.grip.y).toBeGreaterThan(light.shoulder.y - 0.03);
+    const full = posed(1).armPose(1);
+    expect(full.grip.y).toBeLessThan(full.shoulder.y - 0.25);
+    expect(full.elbow.z).toBeGreaterThan(full.shoulder.z);
+  });
+
+  it('turns the handle towards the line it hangs on', () => {
+    for (const b of [0, 0.25, 0.5, 1]) {
+      const a = posed(b).armPose(1);
+      const handle = a.swivel.clone().sub(a.grip).normalize();
+      expect(handle.dot(PULLEY_R.clone().sub(a.swivel).normalize())).toBeGreaterThan(0.3);
+    }
+  });
+});
+
+describe('the first-person eye and the pose on the take-off', () => {
+  it('keeps the eye clear of the body, neither in the neck nor in the chest', () => {
+    for (const b of [0, 0.5, 1]) {
+      expect(clearance(posed(b, 0), new THREE.Vector3(...EYE_SEATED))).toBeGreaterThan(0.065);
+      expect(clearance(posed(b, 1), new THREE.Vector3(...EYE_STANDING))).toBeGreaterThan(0.065);
+    }
+  });
+
+  it('lets the empty speedbag hang down the shins and the fairing stand behind the back', () => {
+    const rig = posed(0, 1);
+    const { pod, fairing } = rig as unknown as { pod: THREE.Object3D; fairing: THREE.Object3D };
+    const shoulder = rig.armPose(1).shoulder;
+    const p = new THREE.Box3().setFromObject(pod);
+    // From the seat down below the knees, off the ground, in front of the hips.
+    expect(p.max.y).toBeLessThan(shoulder.y - 0.3);
+    expect(p.min.y).toBeLessThan(FEET_Y + 0.45);
+    expect(p.min.y).toBeGreaterThan(FEET_Y + 0.1);
+    expect(p.min.z).toBeLessThan(shoulder.z - 0.1);
+    const f = new THREE.Box3().setFromObject(fairing);
+    expect(f.max.y).toBeGreaterThan(shoulder.y - 0.05);
+    expect(f.min.z).toBeGreaterThan(shoulder.z + 0.1);
   });
 });
 

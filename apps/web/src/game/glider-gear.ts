@@ -2,9 +2,10 @@
  * Build-time geometry of the pilot and his gear, posed by glider-pilot.ts: a cocoon harness
  * (speedbag pod with its cockpit and instrument, seat shell over the foam back protector,
  * rear fairing, chest strap and carabiners, reserve handle), the pilot (jacket, open-face
- * helmet and sunglasses, gloves, brake toggles, trousers and boots), the risers' hardware
- * and a one-mesh pilot for the distant levels of detail. Built once and shared by every
- * glider; colour and roughness are per vertex (one material), so each posed part is one draw.
+ * helmet and sunglasses, thin gloves closed round the brake handles, trousers and boots),
+ * the risers' hardware and a one-mesh pilot for the distant levels of detail. Built once and
+ * shared by every glider; colour and roughness are per vertex (one material), so each posed
+ * part is one draw.
  *
  * Frames: glider frame (x right, y up, z back, carabiners at the origin); torso frame
  * (origin between the hip joints, +y along the spine, −z the front), placed in the glider
@@ -13,10 +14,13 @@
  * The body is a 1.70 m pilot (segment lengths as fractions of the height after D. A. Winter,
  * Biomechanics and Motor Control of Human Movement: upper arm 0.186 H, forearm 0.146 H,
  * thigh 0.245 H, shank 0.246 H) posed so that its eyes are the first-person camera's
- * (world.ts EYE and EYE_STANDING). The harness follows the Advance Lightness 3 and Woody
- * Valley pods: 40–48 cm of chest strap between the carabiners, the seat 45–53 cm under them
- * along the back (X-Rated 7: 47–53.5 cm), a reclined seat, the legs in a speedbag to a foot
- * plate, the cockpit on the speedbag over the knees.
+ * (world.ts EYE and EYE_STANDING); hands 19 cm long and 8.5 cm wide. The harness follows the
+ * Advance Lightness 3 and Woody Valley pods: 40–48 cm of chest strap between the carabiners,
+ * the seat 45–53 cm under them along the back (X-Rated 7: 47–53.5 cm), a reclined seat, the
+ * legs in a speedbag to a foot plate, the cockpit on the speedbag over the knees. Postures
+ * checked against photos of pilots in pods (Advance Impress 4 and Lightness 3, AirDesign
+ * Sock, Neo Suspender, Supair Evo Lite 2 and Strike 2 on the take-off, Woody Valley Race),
+ * embedded views and Ozone's glove sizes.
  */
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/examples/jsm/utils/BufferGeometryUtils.js';
@@ -37,8 +41,8 @@ export const BODY = {
   ankle: 0.066,
   upperArm: 0.31,
   forearm: 0.25,
-  /** Wrist to the middle of the fist (the toggle's grip). */
-  grip: 0.07,
+  /** Wrist to the middle of the fist along the hand (the handle's grip, GRIP below). */
+  grip: 0.0812,
 } as const;
 
 /** Base of the neck and the shoulder joints in the torso frame. */
@@ -49,8 +53,12 @@ export const EYE_NECK: V3 = [0, 0.11, -0.07];
 /** First-person eyes in the glider frame (world.ts EYE, EYE_STANDING): the body is posed around them. */
 export const EYE_SEATED: V3 = [0, 0.32, 0.34];
 export const EYE_STANDING: V3 = [0, 0.43, 0.03];
-/** Torso recline (rad, + = lying back) and head pitch (+ = tilted back): in the pod, and standing on the take-off. */
-export const SEATED = { recline: 0.61, head: 0.26 } as const;
+/**
+ * Torso recline (rad, + = lying back) and head pitch (+ = tilted back): in the pod (the back
+ * ~35° from the vertical, the head nearly upright, looking ahead: photos of pod harnesses in
+ * flight), and standing on the take-off, leaning a little forward.
+ */
+export const SEATED = { recline: 0.61, head: 0.12 } as const;
 export const STANDING = { recline: -0.21, head: -0.09 } as const;
 /** Soles under the carabiners when standing (engine.ts keeps the carabiners 1.1 m above the ground). */
 export const FEET_Y = -1.1;
@@ -110,9 +118,11 @@ export const C = {
   lens: 0x101318,
   skin: 0xc99678,
   buff: 0x23272e,
-  glove: 0x2c3036,
-  gloveKnuckle: 0x5c626b,
-  gloveCuff: 0x15171a,
+  glove: 0x2b2f36,
+  gloveLeather: 0x4a4038,
+  gloveKnuckle: 0x353a42,
+  gloveCuff: 0x17191c,
+  gloveStrap: 0x30353d,
   toggle: 0xd3352a,
   metal: 0xb7bec7,
   anodised: 0x3b7fc4,
@@ -170,8 +180,8 @@ function ellipsoid(rx: number, ry: number, rz: number, hex: number, rough: numbe
   return finish(new THREE.SphereGeometry(1, ws, hs), hex, rough, m.clone().multiply(M4.makeScale(rx, ry, rz)));
 }
 
-/** A tapered limb along +y from 0 to `len`, rounded ends. */
-function limb(r0: number, r1: number, len: number, hex: number, rough: number, segs = 14): Geo {
+/** A tapered limb along +y from 0 to `len`, rounded ends (the far one `endCap` × r1 long). */
+function limb(r0: number, r1: number, len: number, hex: number, rough: number, segs = 14, endCap = 0.9): Geo {
   const pts: THREE.Vector2[] = [];
   for (let i = 0; i <= 4; i++) {
     const a = -Math.PI / 2 + (i / 4) * (Math.PI / 2);
@@ -184,7 +194,7 @@ function limb(r0: number, r1: number, len: number, hex: number, rough: number, s
   }
   for (let i = 0; i <= 4; i++) {
     const a = (i / 4) * (Math.PI / 2);
-    pts.push(new THREE.Vector2(Math.max(1e-4, Math.cos(a) * r1), len + Math.sin(a) * r1 * 0.9));
+    pts.push(new THREE.Vector2(Math.max(1e-4, Math.cos(a) * r1), len + Math.sin(a) * r1 * endCap));
   }
   return finish(new THREE.LatheGeometry(pts, segs), hex, rough);
 }
@@ -491,48 +501,224 @@ export function headGeometry(detail = 1): Geo {
 export function upperArmGeometry(): Geo {
   return limb(0.054, 0.043, BODY.upperArm, C.jacket, R.fabric, 16);
 }
+/** The sleeve narrows to the wrist and ends flat there, inside the glove's cuff. */
 export function forearmGeometry(): Geo {
-  return limb(0.044, 0.034, BODY.forearm, C.jacket, R.fabric, 16);
+  return limb(0.044, 0.031, BODY.forearm, C.jacket, R.fabric, 16, 0.2);
+}
+
+// ---------------------------------------------------------------------------------------
+// The gloved hands.
+
+/**
+ * The fist's skeleton (left hand: origin at the wrist joint, +y along the hand, +z its back,
+ * +x the thumb's side): a hand 19 cm long and 8.5 cm wide in a glove ~3 mm thick (Ozone Air
+ * M/L: hands 19–20 cm long, 22–24 cm round), closed round the brake handle. Each finger: its
+ * knuckle (MCP joint) across the top of the palm, its phalanges (m) and the flexion of its
+ * three joints (deg): curled round a ~1.9 cm grip, the ring and little fingers the most, as
+ * in a power grip; radii at the base and the tip, the glove included.
+ */
+export const FINGERS = [
+  { x: 0.027, y: 0.096, r0: 0.0106, r1: 0.0091, len: [0.04, 0.025, 0.021], flex: [70, 86, 48] },
+  { x: 0.008, y: 0.099, r0: 0.0108, r1: 0.0093, len: [0.045, 0.028, 0.022], flex: [74, 88, 50] },
+  { x: -0.011, y: 0.096, r0: 0.0103, r1: 0.0088, len: [0.042, 0.027, 0.021], flex: [78, 88, 50] },
+  { x: -0.029, y: 0.09, r0: 0.0093, r1: 0.008, len: [0.036, 0.022, 0.019], flex: [78, 82, 46] },
+] as const;
+/** The thumb from its base on the wrist to its tip, across the index and middle fingers; radii. */
+const THUMB: V3[] = [
+  [0.016, 0.018, -0.008],
+  [0.037, 0.056, -0.03],
+  [0.031, 0.071, -0.061],
+  [0.009, 0.075, -0.066],
+];
+const THUMB_R = [0.0155, 0.0122, 0.0104, 0.0091];
+/** The finger joints of a FINGERS entry (MCP, PIP, DIP, tip), in the glove frame. */
+export function fingerJoints(f: (typeof FINGERS)[number]): THREE.Vector3[] {
+  const out = [new THREE.Vector3(f.x, f.y, 0)];
+  let phi = 0;
+  for (let k = 0; k < 3; k++) {
+    phi += (f.flex[k] * Math.PI) / 180;
+    out.push(out[k].clone().add(new THREE.Vector3(0, f.len[k] * Math.cos(phi), -f.len[k] * Math.sin(phi))));
+  }
+  return out;
+}
+/**
+ * The brake handle in the fist (glove frame): a rigid padded grip ~1.9 cm thick across the
+ * palm under the fingers' first phalanges, its top on the thumb's side towards the line
+ * (held like a stick, as on Advance's and Ozone's handles), a little lower under the little
+ * finger; its axis at a given x.
+ */
+export const HANDLE_R = 0.0096;
+const HANDLE_X: readonly [number, number] = [-0.058, 0.074];
+export function handleAxis(x: number, out = new THREE.Vector3()): THREE.Vector3 {
+  return out.set(x, 0.0812 + 0.1 * x, -0.0248 - 0.01 * x);
+}
+/** The grip's centre (the middle of the fist), and the swivel where the brake line leaves the handle (left glove frame). */
+export const GRIP = handleAxis(0);
+export const SWIVEL = handleAxis(HANDLE_X[1] + 0.024);
+
+/**
+ * A tube swept along a smooth path through `pts` (radius interpolated from point to point),
+ * its start closed flat and its end rounded (a fingertip); `paint` gives each vertex its
+ * colour index from its place along the path (t), its ring centre and its radial direction.
+ */
+function sweep(pts: V3[], radii: number[], segs: number, radial: number, paint: (t: number, c: THREE.Vector3, n: THREE.Vector3) => number, palette: readonly (readonly [number, number])[]): Geo {
+  const curve = new THREE.CatmullRomCurve3(
+    pts.map(([x, y, z]) => new THREE.Vector3(x, y, z)),
+    false,
+    'centripetal',
+  );
+  const frames = curve.computeFrenetFrames(segs, false);
+  // Radius at a parameter (by arc length): linear between the points' own parameters (the
+  // curve passes through point i at t = i/(n−1)).
+  const per = 24;
+  const lens = curve.getLengths(per * (pts.length - 1));
+  const at = pts.map((_, i) => lens[per * i] / lens[lens.length - 1]);
+  const radius = (u: number) => {
+    let i = 0;
+    while (i < at.length - 2 && u > at[i + 1]) i++;
+    const t = Math.min(1, Math.max(0, (u - at[i]) / Math.max(1e-6, at[i + 1] - at[i])));
+    return radii[i] + (radii[i + 1] - radii[i]) * t;
+  };
+  const pos: number[] = [];
+  const col: number[] = [];
+  const idx: number[] = [];
+  const c = new THREE.Vector3();
+  const n = new THREE.Vector3();
+  const push = (p: THREE.Vector3, dir: THREE.Vector3, t: number) => {
+    pos.push(p.x, p.y, p.z);
+    const [hex, rough] = palette[paint(t, c, dir)];
+    COLOR.setHex(hex);
+    col.push(COLOR.r, COLOR.g, COLOR.b, rough);
+  };
+  const v = new THREE.Vector3();
+  const ring = (centre: THREE.Vector3, N: THREE.Vector3, B: THREE.Vector3, r: number, t: number) => {
+    c.copy(centre);
+    for (let j = 0; j < radial; j++) {
+      const a = (j / radial) * Math.PI * 2;
+      n.copy(N).multiplyScalar(Math.cos(a)).addScaledVector(B, Math.sin(a));
+      push(v.copy(centre).addScaledVector(n, r), n, t);
+    }
+  };
+  for (let i = 0; i <= segs; i++) ring(curve.getPointAt(i / segs), frames.normals[i], frames.binormals[i], radius(i / segs), i / segs);
+  // Rounded end: rings closing over the last radius, then the tip.
+  const end = curve.getPointAt(1);
+  const T = frames.tangents[segs];
+  const rEnd = radii[radii.length - 1];
+  const caps = [0.5, 0.82];
+  for (const s of caps) ring(v.copy(end).addScaledVector(T, rEnd * s).clone(), frames.normals[segs], frames.binormals[segs], rEnd * Math.sqrt(1 - s * s), 1);
+  const rings = segs + 1 + caps.length;
+  for (let i = 0; i < rings - 1; i++) {
+    for (let j = 0; j < radial; j++) {
+      const a = i * radial + j;
+      const b = i * radial + ((j + 1) % radial);
+      idx.push(a, b, a + radial, b, b + radial, a + radial);
+    }
+  }
+  const tip = pos.length / 3;
+  c.copy(end);
+  push(v.copy(end).addScaledVector(T, rEnd), T, 1);
+  for (let j = 0; j < radial; j++) idx.push((rings - 1) * radial + j, (rings - 1) * radial + ((j + 1) % radial), tip);
+  // Flat start (inside the palm).
+  const base = pos.length / 3;
+  c.copy(curve.getPointAt(0));
+  push(c, v.copy(frames.tangents[0]).negate(), 0);
+  for (let j = 0; j < radial; j++) idx.push(base, (j + 1) % radial, j);
+  const g = new THREE.BufferGeometry();
+  g.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+  g.setAttribute('color', new THREE.Float32BufferAttribute(col, 4));
+  g.setIndex(idx);
+  g.computeVertexNormals();
+  return g;
 }
 
 /**
- * A gloved fist round a brake toggle (left hand; the right one is its mirror): origin at
- * the wrist, +y along the forearm, +z the back of the hand, +x the thumb's side. Gauntlet,
- * padded back and knuckles, four fingers curled into the palm, the thumb across them.
+ * A gloved fist closed round its brake handle (left hand; the right one is its mirror), in
+ * the glove frame above. A thin glove: fabric back, leather palm and finger pads, the
+ * index's side reinforced (line wear), a short cuff over the sleeve with its strap; the
+ * fingers curled round the handle, the thumb over them. The handle (`handle`, default true):
+ * red padded grip, black ends, the swivel the brake line is tied to.
  */
-export function gloveGeometry(right: boolean): Geo {
+export function gloveGeometry(right: boolean, handle = true): Geo {
+  // The fingers' palette: fabric, leather (colour, roughness).
+  const P = [
+    [C.glove, 0.82],
+    [C.gloveLeather, 0.5],
+  ] as const;
   const parts: Geo[] = [];
-  parts.push(finish(new THREE.CylinderGeometry(0.039, 0.037, 0.055, 16, 1, true), C.gloveCuff, R.fabric, at(0, 0.004, 0.002)));
-  // Hand: palm and back, a padded panel on the back.
-  parts.push(ellipsoid(0.044, 0.047, 0.026, C.glove, 0.7, at(0, 0.062, 0.0), 16, 12));
-  parts.push(ellipsoid(0.034, 0.033, 0.009, C.gloveKnuckle, 0.6, at(0, 0.066, 0.02)));
-  // Fingers curled round the grip: a roll across the front of the fist, with the
-  // knuckles' bumps on top and the fingers' grooves.
-  parts.push(finish(new THREE.CapsuleGeometry(0.0185, 0.05, 6, 14), C.glove, 0.7, at(0, 0.097, -0.01, 0, 0, Math.PI / 2)));
-  for (let i = 0; i < 4; i++) {
-    const x = -0.027 + 0.018 * i;
-    parts.push(ellipsoid(0.0105, 0.0095, 0.0105, C.gloveKnuckle, 0.6, at(x, 0.108 - 0.003 * Math.abs(i - 1.5), 0.008), 8, 6));
-    parts.push(ellipsoid(0.0092, 0.0125, 0.0125, C.glove, 0.7, at(x, 0.097, -0.024), 8, 6));
+  const g0 = new THREE.Vector3();
+  // Fingers: dorsal side fabric, the side towards the handle leather, the index's outer side leather too.
+  FINGERS.forEach((f, i) => {
+    const pts = fingerJoints(f).map((p) => [p.x, p.y, p.z] as [number, number, number]);
+    parts.push(
+      sweep(pts, [f.r0, f.r0 * 0.96, f.r1 * 1.02, f.r1], 9, 8, (_t, c, n) => {
+        handleAxis(c.x, g0).sub(c);
+        g0.x = 0;
+        if (n.dot(g0.normalize()) > 0.3) return 1;
+        if (i === 0 && n.x > 0.7) return 1;
+        return 0;
+      }, P),
+    );
+  });
+  // Thumb: its pad (towards the fist) leather; the web between it and the index.
+  const fistC = new THREE.Vector3(0.006, 0.086, -0.045);
+  parts.push(sweep(THUMB, THUMB_R, 9, 8, (t, c, n) => (t > 0.3 && n.dot(g0.copy(fistC).sub(c).normalize()) > 0.2 ? 1 : 0), P));
+  parts.push(ellipsoid(0.0105, 0.022, 0.011, C.glove, 0.82, at(0.032, 0.071, -0.013, 0.52), 10, 8));
+  // Palm and back (a loft along the hand, built along z then stood up: loft y is the palm's side).
+  const hand: Sec[] = [
+    { z: 0.0, y: 0.0, w: 0.029, ht: 0.018, hb: 0.017 },
+    { z: 0.022, y: 0.001, w: 0.034, ht: 0.022, hb: 0.0155 },
+    { z: 0.045, y: 0.001, w: 0.04, ht: 0.023, hb: 0.0145 },
+    { z: 0.062, y: 0.001, w: 0.0435, ht: 0.02, hb: 0.0145 },
+    { z: 0.075, y: 0.001, w: 0.0452, ht: 0.0155, hb: 0.0145 },
+    { z: 0.086, y: 0.0, w: 0.046, ht: 0.0135, hb: 0.015 },
+    { z: 0.095, y: -0.001, w: 0.045, ht: 0.011, hb: 0.0135 },
+    { z: 0.101, y: -0.002, w: 0.041, ht: 0.0075, hb: 0.0105 },
+    { z: 0.105, y: -0.002, w: 0.032, ht: 0.004, hb: 0.006 },
+    { z: 0.107, y: -0.002, w: 0.018, ht: 0.0015, hb: 0.002 },
+  ];
+  // Leather palm (smoother), fabric back with a knuckle panel.
+  const back = loft(hand, 20, 2.6, (_x, y, s) => (y > lerpSec(hand, s).y + 0.004 ? C.gloveLeather : s > 0.084 ? C.gloveKnuckle : C.glove), 0.8);
+  const bc = back.getAttribute('color');
+  COLOR.setHex(C.gloveLeather);
+  for (let i = 0; i < bc.count; i++) if (Math.abs(bc.getX(i) - COLOR.r) < 1e-6 && Math.abs(bc.getY(i) - COLOR.g) < 1e-6) bc.setW(i, 0.5);
+  parts.push(upright(back));
+  // Cuff: a short gauntlet over the sleeve, its strap across the back, narrowing into the hand.
+  const cuff: Sec[] = [
+    { z: -0.046, y: 0.0, w: 0.0355, ht: 0.0345 },
+    { z: -0.044, y: 0.0, w: 0.0378, ht: 0.0366 },
+    { z: -0.02, y: 0.0, w: 0.0364, ht: 0.0352 },
+    { z: -0.004, y: 0.0, w: 0.0348, ht: 0.0334 },
+    { z: 0.006, y: 0.0, w: 0.0334, ht: 0.0288 },
+    { z: 0.016, y: 0.0, w: 0.0318, ht: 0.0215 },
+  ];
+  parts.push(upright(loft(cuff, 20, 2.2, (_x, y, s) => (s > -0.031 && s < -0.012 && y < -0.012 ? C.gloveStrap : C.gloveCuff), 0.8, [false, false])));
+  if (handle) {
+    // The handle along its axis: black ends, red padded grip; the swivel and its ring at the top.
+    const a = handleAxis(HANDLE_X[0]);
+    const b = handleAxis(HANDLE_X[1]);
+    const d = b.clone().sub(a);
+    const len = d.length();
+    d.normalize();
+    const q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), d);
+    const grip = new THREE.CapsuleGeometry(HANDLE_R, len - 2 * HANDLE_R, 3, 12);
+    const gp = grip.getAttribute('position');
+    const gc = new Float32Array(gp.count * 4);
+    const red = new THREE.Color(C.toggle);
+    const blk = new THREE.Color(C.plastic);
+    for (let i = 0; i < gp.count; i++) {
+      // Along the handle from its bottom (−len/2) to its top (+len/2): black ends.
+      const yy = gp.getY(i);
+      const c = yy > len / 2 - 0.02 || yy < -len / 2 + 0.008 ? blk : red;
+      gc.set([c.r, c.g, c.b, R.plastic], i * 4);
+    }
+    grip.setAttribute('color', new THREE.BufferAttribute(gc, 4));
+    parts.push(finish(grip, -1, R.plastic, new THREE.Matrix4().compose(a.clone().add(b).multiplyScalar(0.5), q, new THREE.Vector3(1, 1, 1))));
+    parts.push(finish(new THREE.CylinderGeometry(0.0042, 0.0042, 0.012, 10), C.metal, R.metal, new THREE.Matrix4().compose(b.clone().addScaledVector(d, 0.009), q, new THREE.Vector3(1, 1, 1))));
+    parts.push(finish(new THREE.TorusGeometry(0.005, 0.0012, 5, 10), C.metal, R.metal, new THREE.Matrix4().compose(b.clone().addScaledVector(d, 0.019), q, new THREE.Vector3(1, 1, 1))));
   }
-  // Thumb along the front of the curled index and middle fingers.
-  const th = new THREE.CapsuleGeometry(0.0105, 0.038, 4, 10);
-  const dir = new THREE.Vector3(-0.026, 0.04, -0.016).normalize();
-  const q = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir);
-  parts.push(finish(th, C.glove, 0.7, new THREE.Matrix4().compose(new THREE.Vector3(0.026, 0.066, -0.03), q, new THREE.Vector3(1, 1, 1))));
   const g = merge(parts);
   return right ? mirrorX(g) : g;
 }
-
-/** Brake toggle (origin at the grip, +y towards the brake line): a semi-rigid loop ~10 × 5 cm and its swivel. */
-export function toggleGeometry(): Geo {
-  return merge([
-    finish(new THREE.TorusGeometry(0.026, 0.006, 6, 22), C.toggle, R.plastic, at(0, 0.024, 0, 0, 0, 0, 1, 1.9, 0.75)),
-    finish(new THREE.CylinderGeometry(0.0048, 0.0048, 0.014, 10), C.metal, R.metal, at(0, 0.078, 0)),
-    finish(new THREE.TorusGeometry(0.0055, 0.0014, 5, 10), C.metal, R.metal, at(0, 0.088, 0, 0, Math.PI / 2, 0)),
-  ]);
-}
-/** Where the brake line leaves the toggle (toggle frame). */
-export const TOGGLE_TOP = 0.093;
 
 export function thighGeometry(): Geo {
   return limb(0.074, 0.054, BODY.thigh, C.trousers, R.fabric, 14);
@@ -778,7 +964,12 @@ export function maillonGeometry(): Geo {
 // ---------------------------------------------------------------------------------------
 // The distant pilot.
 
-/** A seated pilot in one mesh (glider frame), hands at mid-brake, risers: other pilots beyond ~150 m. */
+/**
+ * A seated pilot in one mesh (glider frame), hands at a light brake (as the posed rig at ~30 %:
+ * elbows low at the harness's sides, fists at the chin), risers: other pilots beyond ~150 m.
+ */
+const LOW_ELBOW = new THREE.Vector3(0.275, -0.135, 0.22);
+const LOW_HAND = new THREE.Vector3(0.305, 0.145, 0.068);
 let lowGeo: Geo | null = null;
 export function lowPilotGeometry(): Geo {
   if (lowGeo) return lowGeo;
@@ -794,12 +985,17 @@ export function lowPilotGeometry(): Geo {
   parts.push(fair);
   const neck = torsoToGlider(NECK_T, HIP0, SEATED.recline, new THREE.Vector3());
   parts.push(ellipsoid(0.125, 0.13, 0.15, C.helmet, R.gloss, at(neck.x, neck.y + 0.14, neck.z + 0.01), 8, 6));
+  const bone = (a: THREE.Vector3, b: THREE.Vector3, w: number, hex: number) => {
+    const d = b.clone().sub(a);
+    const m = new THREE.Matrix4().compose(a.clone().add(b).multiplyScalar(0.5), new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.clone().normalize()), new THREE.Vector3(1, 1, 1));
+    return finish(new THREE.BoxGeometry(w, d.length(), w), hex, R.fabric, m);
+  };
   for (const s of [-1, 1]) {
     const sh = torsoToGlider([s * SHOULDER_T[0], SHOULDER_T[1], SHOULDER_T[2]], HIP0, SEATED.recline, new THREE.Vector3());
-    const hand = new THREE.Vector3(s * 0.28, 0.12, 0.08);
-    const d = hand.clone().sub(sh);
-    const m = new THREE.Matrix4().compose(sh.clone().add(hand).multiplyScalar(0.5), new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.clone().normalize()), new THREE.Vector3(1, 1, 1));
-    parts.push(finish(new THREE.BoxGeometry(0.075, d.length(), 0.075), C.jacket, R.fabric, m));
+    const elbow = LOW_ELBOW.clone().setX(s * LOW_ELBOW.x);
+    const hand = LOW_HAND.clone().setX(s * LOW_HAND.x);
+    parts.push(bone(sh, elbow, 0.08, C.jacket), bone(elbow, hand, 0.065, C.jacket));
+    parts.push(finish(new THREE.BoxGeometry(0.075, 0.1, 0.07), C.glove, R.fabric, at(hand.x, hand.y, hand.z)));
     parts.push(finish(new THREE.BoxGeometry(0.02, 0.47, 0.03), C.strap, R.fabric, at(s * 0.225, 0.25, -0.01, 0, 0, -s * 0.05)));
   }
   lowGeo = merge(parts.map((p) => (p.getAttribute('color')?.itemSize === 4 ? p : paint(p, C.harness, R.coated))));

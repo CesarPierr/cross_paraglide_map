@@ -16,6 +16,7 @@ import * as THREE from 'three';
 import type { AirMass } from './airmass';
 import { newGlider, step, type AirSample, type Controls, type GliderState } from './flight';
 import { buildGlider, type GliderModel } from './glider';
+import { EYE_SEATED, EYE_STANDING } from './glider-gear';
 import { ThermalFlows, Vultures } from './life';
 
 const SKY_VERT = /* glsl */ `
@@ -49,7 +50,7 @@ export interface Lab {
   vultures: Vultures;
   /** Sun direction (towards the sun) from azimuth (deg, 0 = ahead of the glider, + = right) and elevation (deg). */
   sun(azimuth: number, elevation: number): void;
-  /** First person: head yaw (+ right) and pitch (+ up), as in the game. */
+  /** First person: head yaw (+ right) and pitch (+ up), as in the game (seated, or standing while the glider stands). */
   first(yaw?: number, pitch?: number, fov?: number): void;
   /** Chase/orbit camera: azimuth (0 = from behind, + = from the right), elevation (rad), distance (m), target height. */
   orbit(yaw: number, el: number, dist: number, targetY?: number, fov?: number): void;
@@ -132,7 +133,9 @@ export function startLab(width = innerWidth, height = innerHeight): Lab {
     },
     first(yaw = 0, pitch = -0.12, fov = 66) {
       camera.fov = fov;
-      camera.position.set(0, 0.32, 0.34);
+      // The eyes seated in the pod or standing on the take-off, as world.ts places them.
+      const k = glider.standing();
+      camera.position.set(0, EYE_SEATED[1] + (EYE_STANDING[1] - EYE_SEATED[1]) * k, EYE_SEATED[2] + (EYE_STANDING[2] - EYE_SEATED[2]) * k);
       camera.quaternion.setFromEuler(new THREE.Euler(pitch, -yaw, 0, 'YXZ'));
       camera.updateProjectionMatrix();
       glider.pilot.visible = false;

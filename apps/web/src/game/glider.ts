@@ -349,8 +349,9 @@ export function buildGlider(colors = { main: 0xd62f2f, stripe: 0xf4f1ea, under: 
         L.lines.setAnchor(side, Anchor.B, side * 0.25, 0.47, -0.01);
         L.lines.setAnchor(side, Anchor.C, side * 0.24, 0.46, 0.05);
         L.lines.setAnchor(side, Anchor.Pulley, side * 0.25, 0.43, 0.07);
+        // The handle's swivel as the posed rig puts it (glider-pilot.ts), hands up to the hips.
         const b = side < 0 ? st.brakeL || 0 : st.brakeR || 0;
-        L.lines.setAnchor(side, Anchor.Handle, side * (0.27 + 0.04 * b), 0.36 - 0.5 * b, 0.06 + 0.07 * b);
+        L.lines.setAnchor(side, Anchor.Handle, side * (0.225 + 0.03 * b + 0.04 * Math.sin(Math.PI * b)), 0.33 - 0.45 * b, 0.036 + 0.07 * b);
       }
     }
     L.lines?.update(d);

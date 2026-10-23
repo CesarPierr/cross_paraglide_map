@@ -1,14 +1,15 @@
 /**
  * The canopy mesh: cells with their ballooning, the airfoil, closed tips and stabilos,
- * deformed on the GPU from a few uniforms (glider-shape.ts), its normals taken by finite
- * differences of the deformed surface. The fragment shader draws a modern design (two
+ * deformed on the GPU from a few uniforms (glider-shape.ts) and, near the camera, the
+ * offsets of a cloth simulation of the skins (Blender, per brake level, loaded in the
+ * background), its normals taken by finite differences of the deformed surface. The fragment shader draws a modern design (two
  * colours, a swoosh, pinstripe, dark tips), the seams and the cell openings, lights the
  * coated ripstop (wrapped diffuse, satin sheen) and lets the sun through: seen from below
  * the wing glows with the colours of both skins, the ribs, seams and diagonal tapes inside
  * drawn as darker lines.
  */
 import * as THREE from 'three';
-import { HALF_SPAN, N_CELLS, WING_GLSL, newDeform, ribA, wingPoint } from './glider-shape';
+import { BASIS_COLS, BASIS_LEVELS, BASIS_ROWS, DYN_N, HALF_SPAN, N_CELLS, WING_GLSL, newDeform, ribA, wingPoint } from './glider-shape';
 
 export interface WingRes {
   /** Cells drawn (50 = every real cell) and columns per cell, points around the profile. */
@@ -271,6 +272,70 @@ void main() {
 }
 `;
 
+/**
+ * The cloth simulation's offsets (public/data/canopy-basis.bin, scripts/blender/canopy-sim.py):
+ * loaded once in the background, shared by every glider, off until it is there (and where it
+ * cannot load). A texture of BASIS_COLS × (BASIS_ROWS × levels) texels, the offsets in RGB
+ * (signed bytes + 128), a scale per level.
+ */
+const basis = {
+  uBasis: { value: new THREE.DataTexture(new Uint8Array([128, 128, 128, 255]), 1, 1) as THREE.Texture },
+  uBasisScale: { value: new THREE.Vector4() },
+  uBasisOn: { value: 0 },
+};
+basis.uBasis.value.needsUpdate = true;
+let basisAsked = false;
+
+/** Reads the basis file; null when it does not match the grid this build expects. */
+export function parseBasis(buf: ArrayBuffer): { tex: THREE.DataTexture; scale: number[] } | null {
+  const dv = new DataView(buf);
+  if (buf.byteLength < 12 || dv.getUint32(0, false) !== 0x434e4231) return null;
+  const cols = dv.getUint16(4, true);
+  const rows = dv.getUint16(6, true);
+  const levels = dv.getUint16(8, true);
+  if (cols !== BASIS_COLS || rows !== BASIS_ROWS || levels !== BASIS_LEVELS.length) return null;
+  const scale: number[] = [];
+  for (let l = 0; l < levels; l++) {
+    if (Math.abs(dv.getFloat32(12 + 4 * l, true) - BASIS_LEVELS[l]) > 1e-3) return null;
+    scale.push(dv.getFloat32(12 + 4 * (levels + l), true));
+  }
+  const o = 12 + 8 * levels;
+  if (buf.byteLength < o + levels * cols * rows * 3) return null;
+  const src = new Int8Array(buf, o, levels * cols * rows * 3);
+  const px = new Uint8Array(cols * rows * levels * 4);
+  for (let l = 0; l < levels; l++)
+    for (let i = 0; i < cols; i++)
+      for (let j = 0; j < rows; j++) {
+        const s = ((l * cols + i) * rows + j) * 3;
+        const t = ((l * rows + j) * cols + i) * 4;
+        px[t] = src[s] + 128;
+        px[t + 1] = src[s + 1] + 128;
+        px[t + 2] = src[s + 2] + 128;
+        px[t + 3] = 255;
+      }
+  const tex = new THREE.DataTexture(px, cols, rows * levels, THREE.RGBAFormat, THREE.UnsignedByteType);
+  tex.magFilter = THREE.LinearFilter;
+  tex.minFilter = THREE.LinearFilter;
+  tex.generateMipmaps = false;
+  tex.needsUpdate = true;
+  return { tex, scale };
+}
+
+function loadBasis(): void {
+  if (basisAsked || typeof document === 'undefined' || typeof fetch === 'undefined') return;
+  basisAsked = true;
+  fetch(new URL('data/canopy-basis.bin', document.baseURI).href)
+    .then((r) => (r.ok ? r.arrayBuffer() : null))
+    .then((buf) => {
+      const b = buf ? parseBasis(buf) : null;
+      if (!b) return;
+      basis.uBasis.value = b.tex;
+      basis.uBasisScale.value.fromArray(b.scale);
+      basis.uBasisOn.value = 1;
+    })
+    .catch(() => {});
+}
+
 /** Uniforms shared by the levels of detail of one glider. */
 export interface WingUniforms {
   uBrake: { value: THREE.Vector4 };
@@ -279,7 +344,8 @@ export interface WingUniforms {
   uMisc: { value: THREE.Vector4 };
   uInfl: { value: THREE.Vector4 };
   uUp: { value: THREE.Vector3 };
-  uFlex: { value: THREE.Vector4 };
+  /** The canopy's own motion per span station (WingDeform.dyn). */
+  uDyn: { value: Float32Array };
   uMain: { value: THREE.Color };
   uSecond: { value: THREE.Color };
   uAccent: { value: THREE.Color };
@@ -295,7 +361,7 @@ export function wingUniforms(colors: { main: number; stripe: number; under: numb
     uMisc: { value: new THREE.Vector4() },
     uInfl: { value: new THREE.Vector4(1, 0, 0, -100) },
     uUp: { value: new THREE.Vector3(0, 1, 0) },
-    uFlex: { value: new THREE.Vector4() },
+    uDyn: { value: new Float32Array(DYN_N * 4) },
     uMain: { value: new THREE.Color(colors.main) },
     uSecond: { value: new THREE.Color(colors.stripe) },
     uAccent: { value: new THREE.Color(colors.accent ?? 0x23262e) },
@@ -313,7 +379,8 @@ export function wingMaterial(u: WingUniforms, balloon: boolean): THREE.ShaderMat
     side: THREE.DoubleSide,
     defines: balloon ? {} : { NO_BALLOON: '' },
   });
-  // Shared objects: one write per frame updates every level.
-  Object.assign(m.uniforms, u);
+  // Shared objects: one write per frame updates every level (the basis: every glider).
+  Object.assign(m.uniforms, u, basis);
+  loadBasis();
   return m;
 }

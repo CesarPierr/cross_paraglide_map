@@ -2,7 +2,8 @@
  * Shape of the canopy and its deformations, written twice on purpose: once in GLSL (the
  * wing is deformed on the GPU, every vertex every frame, for free) and once in JS (the
  * line attachment points, a few hundred per frame). Both follow the same steps with the
- * same constants; keep them in sync.
+ * same constants; keep them in sync. Only the GPU adds the simulated fabric's offsets
+ * (glider-wing.ts): they are zero on the ribs, where the lines are tied.
  *
  * Wing of a 25 m² EN-B: flat span 11.3 m (flat AR 5.1), projected span 9.1 m, 50 cells,
  * root chord 2.65 m and 0.84 m at the tips, airfoil ~15 % thick with a rounded nose and a
@@ -54,6 +55,33 @@ const RIB_S = Math.sin(RIB_K);
 export function ribA(k: number): number {
   return Math.sin((RIB_K * k) / (N_CELLS / 2)) / RIB_S;
 }
+/** Arc position of rib k counted from the left tip (0 … N_CELLS), signed (−1 … +1). */
+export function ribSigned(k: number): number {
+  const r = k - N_CELLS / 2;
+  return Math.sign(r) * ribA(Math.abs(r));
+}
+
+/**
+ * Grid of the simulated fabric's offsets (scripts/blender: the cloth's shape minus this
+ * one, per brake level): BASIS_COLS columns along the span, three per cell, the ribs on
+ * every third; BASIS_ROWS points round the profile from the lower trailing edge by the nose
+ * to the upper one (the trailing edge on the first and the last).
+ */
+export const BASIS_COLS = N_CELLS * 3 + 1;
+export const BASIS_ROWS = 33;
+export const BASIS_LEVELS = [0, 0.35, 0.7, 1] as const;
+/** Profile parameter of a basis row, and the cell of a column with the position across it. */
+export function basisTw(j: number): number {
+  return Math.sin((Math.PI / 2) * (-1 + (2 * j) / (BASIS_ROWS - 1)));
+}
+export function basisColumn(i: number): { a: number; v: number; cw: number } {
+  const k = Math.min(N_CELLS - 1, Math.floor(i / 3));
+  const v = i / 3 - k;
+  const a0 = ribSigned(k);
+  const a1 = ribSigned(k + 1);
+  return { a: a0 + (a1 - a0) * v, v, cw: HALF_SPAN * Math.abs(a1 - a0) };
+}
+
 /** Chord positions of the line rows (A, B, C) and the trailing edge. */
 export const ROWS = [0.11, 0.37, 0.66] as const;
 
@@ -70,12 +98,19 @@ export interface WingDeform {
   infl: [number, number, number, number];
   /** Up direction of the glider frame in the canopy frame (for the ground). */
   up: [number, number, number];
-  /** Tips flexed by the air under them (m, + = up, at the tip): left, right; two spare. */
-  flex: [number, number, number, number];
+  /**
+   * The canopy's own motion (glider.ts WingDynamics), per span station a = −1 + 2i/(DYN_N − 1):
+   * heave (m, along the section's up), surge (m, along the chord, + = back), twist (rad, + =
+   * nose up, about the quarter chord) and the dent of a soft leading edge 0..1.
+   */
+  dyn: Float32Array;
 }
 
+/** Span stations of the canopy's dynamics. */
+export const DYN_N = 9;
+
 export function newDeform(): WingDeform {
-  return { brake: [0, 0, 0, 0], foldL: [2, 2, 0, 0], foldR: [2, 2, 0, 0], misc: [0, 0, 0, 0], infl: [1, 0, 0, -100], up: [0, 1, 0], flex: [0, 0, 0, 0] };
+  return { brake: [0, 0, 0, 0], foldL: [2, 2, 0, 0], foldR: [2, 2, 0, 0], misc: [0, 0, 0, 0], infl: [1, 0, 0, -100], up: [0, 1, 0], dyn: new Float32Array(DYN_N * 4) };
 }
 
 const clamp = (v: number, a: number, b: number) => (v < a ? a : v > b ? b : v);
@@ -96,8 +131,9 @@ function profile(tw: number, t: number): number {
   const yc = camberLine(c);
   return tw >= 0 ? yc + yt : yc - mix(1, 0.55, smooth(0, 0.12, c)) * yt;
 }
+/** Crumpled fabric: warped sines, irregular and slowly moving (−1..1). */
 function noise(a: number, c: number, t: number): number {
-  return Math.sin(a * 23 + t * 4.1) * Math.sin(c * 17 - t * 2.3) * 0.6 + Math.sin(a * 57 + c * 31 + t * 7.3) * 0.4;
+  return 0.55 * Math.sin(a * 13.1 + c * 3.7 + t * 3.1 + 1.3 * Math.sin(c * 5.3 + t * 1.7)) * Math.sin(c * 7.9 - t * 1.9 + a * 5) + 0.3 * Math.sin(a * 31.7 - c * 11.3 + t * 5.3) + 0.15 * Math.sin(a * 71.3 + c * 23.9 + t * 9.1);
 }
 
 // Scratch frame of the JS version (no allocation per call).
@@ -139,9 +175,19 @@ export function wingPoint(d: WingDeform, a: number, tw: number, v: number, w: nu
   const folding = fold[2] > 0.001;
   const stall = d.misc[2];
   const spin = d.misc[3];
-  // Deflation: on the ground before the cells fill (leading edge first), in a stall, on
-  // the inner side of a spin, next to a collapsed part.
-  let defl = mix(0.08, 1, clamp(d.infl[0] * 1.4 - c * 0.4, 0, 1)) * (1 - 0.45 * stall) * (1 - 0.5 * Math.max(0, spin * sg) * alpha);
+  // The canopy's own motion at this span station (linear between the stations).
+  const xs = (clamp(a, -1, 1) + 1) * 0.5 * (DYN_N - 1);
+  const i0 = Math.min(DYN_N - 2, Math.floor(xs)) * 4;
+  const fs = xs - i0 / 4;
+  const dy = d.dyn;
+  const heave = mix(dy[i0], dy[i0 + 4], fs);
+  const surge = mix(dy[i0 + 1], dy[i0 + 5], fs);
+  const twist = mix(dy[i0 + 2], dy[i0 + 6], fs);
+  const dent = mix(dy[i0 + 3], dy[i0 + 7], fs);
+  // Deflation: on the ground before the cells fill (leading edge first, the centre before
+  // the tips), in a stall, on the inner side of a spin, next to a collapsed part.
+  const fill = d.infl[0];
+  let defl = mix(0.08, 1, clamp(fill * 1.4 - c * 0.4 - 0.45 * alpha * alpha * (1 - fill), 0, 1)) * (1 - 0.45 * stall) * (1 - 0.5 * Math.max(0, spin * sg) * alpha);
   if (folding) defl *= mix(1, 0.55, smooth(fe - 0.18, fe, alpha));
   let hh = profile(tw, THICK0 * (1 - 0.35 * alpha * alpha)) * ch * defl;
   if (kind === 1) hh = mix(hh, camberLine(c) * ch * defl, w);
@@ -151,12 +197,23 @@ export function wingPoint(d: WingDeform, a: number, tw: number, v: number, w: nu
     hh += Math.sign(tw) * BAL * (tw >= 0 ? 1 : 0.6) * cw * sv * smooth(0.03, 0.15, c) * (1 - smooth(0.72, 1, c)) * defl;
     const te = Math.max(0, (c - 0.88) / 0.12);
     dd -= SCALLOP * sv * te * te;
+    // A soft leading edge (the angle of attack near the fold, a lull): the nose of each
+    // cell sinks in and wrinkles across the span before a collapse.
+    if (dent > 0.001) {
+      const nose = smooth(0.0, 0.04, c) * (1 - smooth(0.12, 0.3, c));
+      hh -= dent * nose * ch * (tw >= 0 ? 0.035 : -0.012) * (0.55 + 0.45 * sv);
+    }
   }
-  // Brake: the rear of the profile curls down, more towards the tips.
+  // Brake: the rear of the profile curls down, more towards the tips; the trailing edge is
+  // pulled at the brake tabs (every second rib) and sags less between them.
   const br = sg < 0 ? d.brake[0] : d.brake[1];
   let f = Math.max(0, (c - 0.42) / 0.58);
   f *= f;
-  const disp = BRAKE_DEF * br * clamp(alpha * 1.45, 0, 1) * f * Math.sqrt(ch / C0);
+  let disp = BRAKE_DEF * br * clamp(alpha * 1.45, 0, 1) * f * Math.sqrt(ch / C0);
+  if (disp > 0) {
+    const kr = (Math.asin(Math.min(alpha * RIB_S, 1)) / RIB_K) * (N_CELLS / 2);
+    disp *= 1 - 0.22 * smooth(0.8, 1, c) * (0.5 - 0.5 * Math.cos(Math.PI * kr));
+  }
   hh -= disp;
   dd -= (0.5 * disp * disp) / (0.58 * ch);
   // Frontal: the front of the profile tucks under, deeper in the centre.
@@ -270,6 +327,12 @@ export function wingPoint(d: WingDeform, a: number, tw: number, v: number, w: nu
       pz += -hz * 0.479 * sd;
     }
   }
+  // The canopy's own motion: the section heaves along its up, surges along its chord and
+  // twists about its quarter chord.
+  const hd = heave - dd * twist;
+  px += hx * hd + -F.nx * st * surge;
+  py += hy * hd + -F.ny * st * surge;
+  pz += hz * hd + ct * surge;
   // Stall: the tips come forward (horseshoe), the span shrinks, the fabric flaps.
   if (stall > 0.001) {
     pz += stall * (0.5 - 1.6 * alpha * alpha);
@@ -285,15 +348,6 @@ export function wingPoint(d: WingDeform, a: number, tw: number, v: number, w: nu
     const x = px * Math.cos(b) + pz * Math.sin(b);
     pz = -px * Math.sin(b) + pz * Math.cos(b);
     px = x;
-  }
-  // A tip flexed up (or down) by a gust under it: the outer span bends along the sections' up.
-  const flex = sg < 0 ? d.flex[0] : d.flex[1];
-  if (flex !== 0) {
-    const fw = smooth(0.3, 1, alpha);
-    const fd = flex * fw * fw;
-    px += hx * fd;
-    py += hy * fd;
-    pz += hz * fd;
   }
   // Trailing edge flutter.
   const fl = d.misc[1] * Math.sin(time * 19 + a * 27 + c * 6) * smooth(0.75, 1, c);
@@ -333,8 +387,28 @@ uniform vec4 uFoldR;
 uniform vec4 uMisc;
 uniform vec4 uInfl;
 uniform vec3 uUp;
-uniform vec4 uFlex;
+uniform vec4 uDyn[${DYN_N}];
+uniform sampler2D uBasis;
+uniform vec4 uBasisScale;
+uniform float uBasisOn;
 float wFoldWeight;
+#ifndef NO_BALLOON
+// The cloth simulation's offsets from this shape (scripts/blender/canopy-sim.py), at a brake
+// level (the four simulated ones linearly between); zero on the ribs and the line tabs.
+vec3 basisAt(float sg, float alpha, float tw, float br) {
+  float kr = asin(min(alpha * ${f(RIB_S)}, 1.0)) * ${f(N_CELLS / 2 / RIB_K)};
+  float x = (${f((BASIS_COLS - 1) / 2)} + sg * kr * 3.0 + 0.5) / ${f(BASIS_COLS)};
+  float row = (asin(clamp(tw, -1.0, 1.0)) * ${f(2 / Math.PI)} + 1.0) * ${f((BASIS_ROWS - 1) / 2)} + 0.5;
+  float b = clamp(br, 0.0, 1.0);
+  float lp = b < ${f(BASIS_LEVELS[1])} ? b / ${f(BASIS_LEVELS[1])} : b < ${f(BASIS_LEVELS[2])} ? 1.0 + (b - ${f(BASIS_LEVELS[1])}) / ${f(BASIS_LEVELS[2] - BASIS_LEVELS[1])} : 2.0 + (b - ${f(BASIS_LEVELS[2])}) / ${f(BASIS_LEVELS[3] - BASIS_LEVELS[2])};
+  float l0 = min(floor(lp), 2.0);
+  vec4 s0 = vec4(equal(vec4(l0), vec4(0.0, 1.0, 2.0, 3.0)));
+  vec4 s1 = vec4(equal(vec4(l0 + 1.0), vec4(0.0, 1.0, 2.0, 3.0)));
+  vec3 o0 = (texture2D(uBasis, vec2(x, (l0 * ${f(BASIS_ROWS)} + row) / ${f(BASIS_ROWS * BASIS_LEVELS.length)})).xyz * 255.0 - 128.0) * (dot(uBasisScale, s0) / 127.0);
+  vec3 o1 = (texture2D(uBasis, vec2(x, ((l0 + 1.0) * ${f(BASIS_ROWS)} + row) / ${f(BASIS_ROWS * BASIS_LEVELS.length)})).xyz * 255.0 - 128.0) * (dot(uBasisScale, s1) / 127.0);
+  return mix(o0, o1, lp - l0);
+}
+#endif
 float camberLine(float c) {
   return c < ${f(CAMBER_P)} ? ${f(CAMBER / (CAMBER_P * CAMBER_P))} * (${f(2 * CAMBER_P)} * c - c * c) : ${f(CAMBER / ((1 - CAMBER_P) * (1 - CAMBER_P)))} * (${f(1 - 2 * CAMBER_P)} + ${f(2 * CAMBER_P)} * c - c * c);
 }
@@ -346,7 +420,7 @@ float profileH(float tw, float t) {
   return tw >= 0.0 ? yc + yt : yc - mix(1.0, 0.55, smoothstep(0.0, 0.12, c)) * yt;
 }
 float crumpleN(float a, float c, float t) {
-  return sin(a * 23.0 + t * 4.1) * sin(c * 17.0 - t * 2.3) * 0.6 + sin(a * 57.0 + c * 31.0 + t * 7.3) * 0.4;
+  return 0.55 * sin(a * 13.1 + c * 3.7 + t * 3.1 + 1.3 * sin(c * 5.3 + t * 1.7)) * sin(c * 7.9 - t * 1.9 + a * 5.0) + 0.3 * sin(a * 31.7 - c * 11.3 + t * 5.3) + 0.15 * sin(a * 71.3 + c * 23.9 + t * 9.1);
 }
 void arcFrame(float a, float alpha, float q, out vec2 A, out vec2 T, out vec2 N) {
   float sg = a < 0.0 ? -1.0 : 1.0;
@@ -372,7 +446,11 @@ vec3 wingPos(float a, float tw, float v, float w, float kind, float cw) {
   bool folding = fold.z > 0.001;
   float stall = uMisc.z;
   float spin = uMisc.w;
-  float defl = mix(0.08, 1.0, clamp(uInfl.x * 1.4 - c * 0.4, 0.0, 1.0)) * (1.0 - 0.45 * stall) * (1.0 - 0.5 * max(0.0, spin * sg) * alpha);
+  float xs = (clamp(a, -1.0, 1.0) + 1.0) * ${f((DYN_N - 1) / 2)};
+  int i0 = int(min(floor(xs), ${f(DYN_N - 2)}));
+  vec4 dyn = mix(uDyn[i0], uDyn[i0 + 1], xs - float(i0));
+  float fill = uInfl.x;
+  float defl = mix(0.08, 1.0, clamp(fill * 1.4 - c * 0.4 - 0.45 * alpha * alpha * (1.0 - fill), 0.0, 1.0)) * (1.0 - 0.45 * stall) * (1.0 - 0.5 * max(0.0, spin * sg) * alpha);
   if (folding) defl *= mix(1.0, 0.55, smoothstep(fe - 0.18, fe, alpha));
   float tk = ${f(THICK0)} * (1.0 - 0.35 * alpha * alpha);
   float hh = profileH(tw, tk) * ch * defl;
@@ -384,12 +462,20 @@ vec3 wingPos(float a, float tw, float v, float w, float kind, float cw) {
     hh += sign(tw) * ${f(BAL)} * (tw >= 0.0 ? 1.0 : 0.6) * cw * sv * smoothstep(0.03, 0.15, c) * (1.0 - smoothstep(0.72, 1.0, c)) * defl;
     float te = max(0.0, (c - 0.88) / 0.12);
     dd -= ${f(SCALLOP)} * sv * te * te;
+    if (dyn.w > 0.001) {
+      float nose = smoothstep(0.0, 0.04, c) * (1.0 - smoothstep(0.12, 0.3, c));
+      hh -= dyn.w * nose * ch * (tw >= 0.0 ? 0.035 : -0.012) * (0.55 + 0.45 * sv);
+    }
 #endif
   }
   float br = sg < 0.0 ? uBrake.x : uBrake.y;
   float f = max(0.0, (c - 0.42) / 0.58);
   f *= f;
   float disp = ${f(BRAKE_DEF)} * br * clamp(alpha * 1.45, 0.0, 1.0) * f * sqrt(ch / ${f(C0)});
+  if (disp > 0.0) {
+    float kr = asin(min(alpha * ${f(RIB_S)}, 1.0)) * ${f(N_CELLS / 2 / RIB_K)};
+    disp *= 1.0 - 0.22 * smoothstep(0.8, 1.0, c) * (0.5 - 0.5 * cos(${f(Math.PI)} * kr));
+  }
   hh -= disp;
   dd -= 0.5 * disp * disp / (0.58 * ch);
   float fr = uMisc.x;
@@ -460,8 +546,17 @@ vec3 wingPos(float a, float tw, float v, float w, float kind, float cw) {
     H = vec3(N.x * ct, N.y * ct, st);
     float piv = 0.41 * ch;
     P = vec3(A.x + (-N.x * st0 - D.x) * piv, A.y + (-N.y * st0 - D.y) * piv, zqOf(alpha, q) + (ct0 - D.z) * piv) + D * dd + H * hh;
+#ifndef NO_BALLOON
+    // The simulated fabric, on the flying wing only (not folded, tucked, stalled or on the ground).
+    if (kind < 0.5 && uBasisOn > 0.0) {
+      float wB = uBasisOn * smoothstep(0.85, 1.0, uInfl.x) * (1.0 - stall) * (1.0 - min(1.0, fr * 3.0));
+      if (folding) wB *= 1.0 - smoothstep(fe - 0.25, fe, alpha);
+      if (wB > 0.0) P += basisAt(sg, alpha, tw, br) * wB;
+    }
+#endif
     if (kind > 1.5) P += (vec3(sg * T, 0.0) * 0.878 - H * 0.479) * stabDepth(c) * w;
   }
+  P += H * (dyn.x - dd * dyn.z) + vec3(-N.x * st, -N.y * st, ct) * dyn.y;
   if (stall > 0.001) {
     P.z += stall * (0.5 - 1.6 * alpha * alpha);
     P.x *= 1.0 - 0.2 * stall * alpha * alpha;
@@ -473,9 +568,6 @@ vec3 wingPos(float a, float tw, float v, float w, float kind, float cw) {
     P.z = -P.x * sin(b) + P.z * cos(b);
     P.x = x;
   }
-  float flex = sg < 0.0 ? uFlex.x : uFlex.y;
-  float fw = smoothstep(0.3, 1.0, alpha);
-  P += H * (flex * fw * fw);
   P += H * (uMisc.y * sin(time * 19.0 + a * 27.0 + c * 6.0) * smoothstep(0.75, 1.0, c));
   float gy = uInfl.w;
   if (gy > -50.0) {

@@ -228,12 +228,13 @@ const THIGH_SEATED = 1.71;
 const SHIN_SEATED = 1.19;
 /**
  * Fists on the handles (glider frame, right hand): hands up just under the pulley at the
- * eyes' height, beside and ~27 cm ahead of the face (photos of pod harnesses in flight:
+ * eyes' height, just outside the risers and ~33 cm ahead of the face, ~44 cm from the eye
+ * (a fist, not a block at the edge of the view; photos of pod harnesses in flight:
  * Advance Impress 4 and Lightness 3, Supair Evo Lite 2, Neo Suspender); full brake at the
  * hips; big ears (outer A lines pulled down). A light brake (~25 %) brings them to the chin
  * and the shoulders, as when thermalling.
  */
-const HAND_UP = new THREE.Vector3(0.265, 0.29, 0.075);
+const HAND_UP = new THREE.Vector3(0.29, 0.3, 0.01);
 const HAND_FULL = new THREE.Vector3(0.3, -0.2, 0.13);
 const HAND_EARS = new THREE.Vector3(0.335, 0.24, -0.1);
 /**

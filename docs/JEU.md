@@ -158,6 +158,19 @@ vent et peut le traîner s'il ne l'affale pas.
   transfert, bout d'aile soulevé par une rafale ; estimations, pas des mesures) et, au décollage,
   repart de sa position au sol. Les suspentes détendues (fermeture, oreilles, mains hautes) se
   courbent et frémissent.
+- **Voile vivante** (`glider.ts` `WingDynamics`, `glider-shape.ts`) : neuf stations le long de
+  l'envergure, chacune ressort amorti en flexion, avance-recul et vrillage, couplées entre elles (une
+  rafale sous un bout d'aile s'y propage en onde ; bouts ~1,6 Hz, centre ~3 Hz), poussées par les
+  rafales aux bouts d'aile, le roulis, le lacet et la charge ; bord d'attaque qui se creuse à
+  l'approche d'une fermeture. Les fermetures balaient l'aile en ~0,15 s, le rabat claque et rebondit,
+  puis se rouvre vers le bout avec un coup vers l'avant ; oreilles repliées presque à la verticale ;
+  au gonflage, caissons remplis du centre vers les bouts, bouts en retard. **Tissu simulé dans
+  Blender** (`scripts/blender/canopy-sim.py`, sans interface, relançable ; forme exportée par
+  `canopy-export.ts` avec le code du jeu) : voile fermée sous pression (65 Pa), nervures tenues, à
+  quatre niveaux de frein ; ses écarts à la forme du jeu (caissons bombés, bord de fuite festonné
+  entre les pattes de frein) forment une base de 60 ko (`public/data/canopy-basis.bin`, int8) que le
+  shader mélange selon le frein de chaque côté, chargée en arrière-plan. Coût : GPU de l'aile 0,117 →
+  0,135 ms, CPU 0,031 → 0,034 ms par planeur ; dynamique coupée au-delà de 150 m.
 - **Météo** : réglée à la main, aléatoire selon la saison (puis elle évolue), ou **météo du jour**
   (`forecast.ts`) : la prévision AROME au décollage pour aujourd'hui donne le vent aux crêtes, la
   masse d'air par le gradient 850–700 hPa (3 °C/km → stable, 9 → très instable) et l'humidité par

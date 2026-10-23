@@ -65,7 +65,7 @@ export interface Lab {
    * Flies the flight model for `seconds` (1/120 s steps, a frame every 1/60 s) in a still
    * air shaken by turbulence 0..1 (vertical gusts at the pilot and at each tip from a few
    * travelling waves), the glider turned by its bank and pendulum pitch as in the game.
-   * Returns the extremes of the canopy's attitude relative to the pilot (rad).
+   * Returns the extremes of the canopy's attitude relative to the pilot (rad) and of its tips' heave (m).
    */
   fly(seconds: number, opts?: { turbulence?: number; brakeL?: number; brakeR?: number; weight?: number; ears?: boolean; speedbar?: number }): { roll: [number, number]; pitch: [number, number]; flex: [number, number] };
   stats(): { levels: { distance: number; tris: number; verts: number; draws: number }[]; updateMs: number };
@@ -176,6 +176,7 @@ export function startLab(width = innerWidth, height = innerHeight): Lab {
       const roll: [number, number] = [0, 0];
       const pitch: [number, number] = [0, 0];
       const flex: [number, number] = [0, 0];
+      const dyn = glider.dynamics;
       const g = (x: number) => Math.sin(x) + 0.6 * Math.sin(2.3 * x + 1.1) + 0.35 * Math.sin(5.1 * x + 2.3);
       const frames = Math.round(seconds * 60);
       for (let f = 0; f < frames; f++) {
@@ -195,8 +196,13 @@ export function startLab(width = innerWidth, height = innerHeight): Lab {
           roll[1] = Math.max(roll[1], sw.roll);
           pitch[0] = Math.min(pitch[0], sw.pitch);
           pitch[1] = Math.max(pitch[1], sw.pitch);
-          flex[0] = Math.min(flex[0], sw.flexL, sw.flexR);
-          flex[1] = Math.max(flex[1], sw.flexL, sw.flexR);
+        }
+        if (dyn) {
+          // Heave of the tips (first and last stations).
+          const tl = dyn.x[0];
+          const tr = dyn.x[dyn.x.length - 4];
+          flex[0] = Math.min(flex[0], tl, tr);
+          flex[1] = Math.max(flex[1], tl, tr);
         }
       }
       state.x = 0;

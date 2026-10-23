@@ -1,7 +1,8 @@
+import { readFileSync } from 'node:fs';
 import * as THREE from 'three';
 import { describe, expect, it } from 'vitest';
 import { newGlider, type GliderState } from '../src/game/flight';
-import { buildGlider, Sway } from '../src/game/glider';
+import { buildGlider, Sway, WingDynamics } from '../src/game/glider';
 import {
   BODY,
   CARABINER_X,
@@ -21,7 +22,8 @@ import {
 } from '../src/game/glider-gear';
 import { LineSet } from '../src/game/glider-lines';
 import { PilotRig } from '../src/game/glider-pilot';
-import { newDeform, wingPoint } from '../src/game/glider-shape';
+import { BASIS_COLS, BASIS_LEVELS, BASIS_ROWS, DYN_N, newDeform, wingPoint } from '../src/game/glider-shape';
+import { parseBasis } from '../src/game/glider-wing';
 
 /** Signed volume of a closed indexed mesh: positive when its triangles are wound outwards. */
 function signedVolume(g: THREE.BufferGeometry): number {
@@ -269,18 +271,149 @@ describe('canopy relative to the pilot', () => {
     expect(Math.abs(s.roll)).toBeLessThan(0.003);
   });
 
-  it('flexes the tip lifted by a gust and leaves the other one', () => {
-    const s = new Sway();
-    for (let i = 0; i < 60; i++) s.update(still({ tipHpR: 2 }), 1 / 60);
-    expect(s.flexR).toBeCloseTo(0.14, 2);
-    expect(s.flexL).toBe(0);
+});
+
+describe("the canopy's own motion", () => {
+  const tipHeave = (dyn: WingDynamics, side: number) => dyn.x[side < 0 ? 0 : (DYN_N - 1) * 4];
+
+  it('rests in still air', () => {
+    const dyn = new WingDynamics();
+    const d = newDeform();
+    for (let i = 0; i < 300; i++) dyn.update(still(), d, 1 / 60);
+    for (const v of d.dyn) expect(Math.abs(v)).toBeLessThan(1e-6);
+  });
+
+  it('lifts the tip a gust gets under, swings past and settles, the other tip left alone', () => {
+    const dyn = new WingDynamics();
+    const d = newDeform();
+    let peak = 0;
+    for (let i = 0; i < 120; i++) {
+      dyn.update(still({ tipHpR: 2 }), d, 1 / 60);
+      peak = Math.max(peak, tipHeave(dyn, 1));
+    }
+    const settled = tipHeave(dyn, 1);
+    expect(settled).toBeGreaterThan(0.08);
+    expect(settled).toBeLessThan(0.25);
+    // Under-damped: it overshoots its bend before settling.
+    expect(peak).toBeGreaterThan(settled * 1.15);
+    expect(Math.abs(tipHeave(dyn, -1))).toBeLessThan(0.01 * settled + 1e-4);
+    // The section twists up a little with it.
+    expect(dyn.x[(DYN_N - 1) * 4 + 2]).toBeGreaterThan(0.01);
+  });
+
+  it('moves the drawn wing along the section by the heave and the surge', () => {
     const d = newDeform();
     const rest = wingPoint(d, 1, 0, 0, 0, 0, 0, { x: 0, y: 0, z: 0 });
-    d.flex[1] = 0.14;
+    d.dyn[(DYN_N - 1) * 4] = 0.14;
     const bent = wingPoint(d, 1, 0, 0, 0, 0, 0, { x: 0, y: 0, z: 0 });
     expect(Math.hypot(bent.x - rest.x, bent.y - rest.y, bent.z - rest.z)).toBeCloseTo(0.14, 3);
     const left = wingPoint(d, -1, 0, 0, 0, 0, 0, { x: 0, y: 0, z: 0 });
     expect(left.x).toBeCloseTo(-rest.x, 6);
+    d.dyn[(DYN_N - 1) * 4] = 0;
+    d.dyn[(DYN_N - 1) * 4 + 1] = 0.3;
+    const back = wingPoint(d, 1, 0, 0, 0, 0, 0, { x: 0, y: 0, z: 0 });
+    expect(back.z - rest.z).toBeGreaterThan(0.28);
+  });
+
+  it('folds a collapse in over a few frames, slams the flap past its angle and snaps it open', () => {
+    const glider = buildGlider(undefined, { lod: 'high' });
+    const dyn = glider.dynamics!;
+    const st = still({ collapse: { side: -1, amount: 0.55, peak: 0.55, frontal: 0, cravat: 0, cravatSide: 0 } });
+    glider.update(st, 1 / 60);
+    // Not folded at once: the fold line starts its sweep from the tip.
+    expect(dyn.fold[0]).toBeGreaterThan(0.6);
+    let psiMax = 0;
+    for (let i = 0; i < 30; i++) {
+      glider.update(st, 1 / 60);
+      psiMax = Math.max(psiMax, dyn.fold[2]);
+    }
+    expect(dyn.fold[0]).toBeLessThan(0.0);
+    expect(psiMax).toBeGreaterThan(2.6);
+    // The right side stays open.
+    expect(dyn.fold[3]).toBeGreaterThan(1);
+    // Reopening at the EN-B rate: folded most of the way, then the fold runs out fast and
+    // the cells it passes kick up.
+    let kick = 0;
+    let open = -1;
+    for (let i = 0; i < 240; i++) {
+      st.collapse.amount = Math.max(0, 0.55 - 0.2 * (i / 60));
+      glider.update(st, 1 / 60);
+      if (i === 90) expect(dyn.fold[0]).toBeLessThan(0.5);
+      kick = Math.max(kick, dyn.v[0]);
+      if (open < 0 && dyn.fold[0] >= 1) open = i / 60;
+    }
+    expect(open).toBeGreaterThan(1.6);
+    expect(open).toBeLessThan(3);
+    expect(kick).toBeGreaterThan(0.3);
+  });
+
+  it('lets the tips lag behind the centre while the wing rises on the take-off', () => {
+    const glider = buildGlider(undefined, { lod: 'high' });
+    let lag = 0;
+    for (let i = 0; i < 90; i++) {
+      glider.setInflation((1.45 * i) / 90);
+      glider.update(still(), 1 / 60);
+      lag = Math.max(lag, glider.dynamics!.x[1]);
+    }
+    expect(lag).toBeGreaterThan(0.4);
+    for (let i = 0; i < 240; i++) {
+      glider.setInflation(null);
+      glider.update(still(), 1 / 60);
+    }
+    expect(Math.abs(glider.dynamics!.x[1])).toBeLessThan(0.01);
+  });
+
+  it('dents the leading edge as the angle of attack nears the fold', () => {
+    const dyn = new WingDynamics();
+    const d = newDeform();
+    for (let i = 0; i < 30; i++) dyn.update(still({ marginC: 1, marginL: -0.5, marginR: 6 }), d, 1 / 60);
+    expect(d.dyn[3]).toBeGreaterThan(0.6);
+    expect(d.dyn[(DYN_N - 1) * 4 + 3]).toBe(0);
+  });
+});
+
+describe('the simulated fabric (scripts/blender/canopy-sim.py)', () => {
+  const file = readFileSync(new URL('../public/data/canopy-basis.bin', import.meta.url));
+  const buf = file.buffer.slice(file.byteOffset, file.byteOffset + file.byteLength);
+  const b = parseBasis(buf)!;
+  const px = b.tex.image.data as Uint8Array;
+  const off = (l: number, i: number, j: number, k: number) => ((px[((l * BASIS_ROWS + j) * BASIS_COLS + i) * 4 + k] - 128) / 127) * b.scale[l];
+
+  it('matches the grid of this build, small and compact', () => {
+    expect(b).not.toBeNull();
+    expect(b.tex.image.width).toBe(BASIS_COLS);
+    expect(b.tex.image.height).toBe(BASIS_ROWS * BASIS_LEVELS.length);
+    expect(file.byteLength).toBeLessThan(200_000);
+    // A file for another grid is refused (the wing then draws its own shape).
+    const other = buf.slice(0);
+    new DataView(other).setUint16(4, BASIS_COLS + 3, true);
+    expect(parseBasis(other)).toBeNull();
+  });
+
+  it('leaves the ribs where the lines hold them and moves the fabric between by centimetres', () => {
+    let rib = 0;
+    let cell = 0;
+    for (let l = 0; l < BASIS_LEVELS.length; l++)
+      for (let i = 0; i < BASIS_COLS; i++)
+        for (let j = 0; j < BASIS_ROWS; j++)
+          for (let k = 0; k < 3; k++) {
+            const v = Math.abs(off(l, i, j, k));
+            if (i % 3 === 0) rib = Math.max(rib, v);
+            else cell = Math.max(cell, v);
+          }
+    expect(rib).toBeLessThan(0.002);
+    expect(cell).toBeGreaterThan(0.01);
+    expect(cell).toBeLessThan(0.08);
+  });
+
+  it('balloons the cells outwards and keeps the braked trailing edge higher between the brake tabs', () => {
+    // Middle of a centre cell: the lower skin (row 6) further down, the upper (row 26) further up.
+    const mid = (BASIS_COLS - 1) / 2 + 1;
+    expect(off(0, mid, 6, 1)).toBeLessThan(-0.005);
+    expect(off(0, mid, 26, 1)).toBeGreaterThan(0.005);
+    // An outer cell at full brake: its trailing edge (row 0) sags less than the ribs pull it.
+    const outer = 31;
+    expect(off(3, outer, 0, 1)).toBeGreaterThan(off(0, outer, 0, 1) + 0.01);
   });
 });
 

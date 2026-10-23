@@ -551,11 +551,15 @@ function flatAir(opts: Partial<Scenario> = {}, smooth = true) {
   for (let j = 0; j < n; j++) for (let i = 0; i < n; i++) thermal[j * n + i] = smooth ? 0.6 + (i === 10 && j === 10 ? 0.05 : 0) : i === 10 && j === 10 ? 0.9 : 0.05;
   const fill = (v: number) => new Float32Array(n * n).fill(v);
   a.placeSources({ cols: n, rows: n, lon, lat, thermal, elevation: fill(500), aspect: fill(180), slope: fill(2), lee: fill(0) }, [], 0, 0);
-  const src = a.sources.find((s) => Math.abs(s.x - a.frame.toXY(5.95 + 10 * 0.005, 45.05 - 10 * 0.005)[0]) < 300)!;
+  // The source nearest the grid's centre, made a plain round thermal: the checks below do not
+  // depend on the draws of the placement (their number and shapes change with its tuning).
+  const [x0, y0] = a.frame.toXY(5.95 + 10 * 0.005, 45.05 - 10 * 0.005);
+  const src = a.sources.reduce((best, s) => (Math.hypot(s.x - x0, s.y - y0) < Math.hypot(best.x - x0, best.y - y0) ? s : best));
   for (const s of a.sources) if (s !== src) s.base = 0;
   src.base = 1;
   src.weight = 0.7;
   src.size = 0.71;
+  src.elong = 1;
   src.cores = [{ off: 0.01, ang: 0, spin: 0, share: 1 }];
   return { a, src };
 }
@@ -565,7 +569,12 @@ if (want('air')) {
   {
     const { a, src } = flatAir();
     let t0 = 0;
-    for (; t0 < 3000; t0 += 10) if ((a.column(src, 1500, t0)?.w ?? 0) > 2) break;
+    // A core of 2.0-2.6 m/s that keeps it over the minute of the climb below (it expects about
+    // 2.3), not one dying away.
+    for (; t0 < 6000; t0 += 2) {
+      const w = a.column(src, 1500, t0)?.w ?? 0;
+      if (w > 2 && w < 2.6 && [20, 40, 60].every((d) => Math.abs((a.column(src, 1500, t0 + d)?.w ?? 0) - 2.3) < 0.6)) break;
+    }
     const col = a.column(src, 1500, t0)!;
     const air = (t: number, s: GliderState): AirSample => {
       const v = a.vertical(s.x, s.y, s.z, 500, t0 + t);
@@ -868,11 +877,20 @@ if (want('day')) {
   const crossings = (wing: WingParams, mode: 'passive' | 'active' | 'bar', inst: number) => {
     const { a, src } = flatAir({ instability: inst, windKmh: 0 });
     src.base = 1.25;
-    let t0 = 0;
-    for (; t0 < 6000; t0 += 10) if ((a.column(src, 1500, t0)?.w ?? 0) > (inst > 0.7 ? 2.6 : 1.6)) break;
     const pa = new PilotAir(a, () => 500);
     pa.setModel({ u: 0, v: 0, lift: 0, turbulence: 0, lee: 0, ground: 500, venturi: 0, shear: 0 });
     const out: AirSample = { u: 0, v: 0, w: 0, turbulence: 0 };
+    // A moment the bubble at 1500 m is strong when the glider gets to its core (~35 s after the
+    // start), read in the air sampled there: its column alone says nothing of the bubble's age
+    // nor of its own reach.
+    const thr = inst > 0.7 ? 2.6 : 1.6;
+    let t0 = 0;
+    for (; t0 < 6000; t0 += 10) {
+      const col = a.column(src, 1500, t0 + 35);
+      if (!col || col.w <= thr || (a.column(src, 1500, t0)?.w ?? 0) <= 0.5 * thr) continue;
+      pa.sample(newGlider(col.cx, col.cy, 1500, 0, wing), 500, t0 + 35, dt, out);
+      if (out.w > 0.8 * thr) break;
+    }
     let folds = 0;
     let wMax = 0;
     for (let k = 0; k < 40; k++) {

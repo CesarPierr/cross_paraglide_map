@@ -529,21 +529,22 @@ export class AirMass {
   /** Elongation and long axis of a new source's core (see ThermalSource.elong). */
   private axis(aspect: number, slope: number, r: () => number): { elong: number; ex: number; ey: number } {
     const e = r();
-    const elong = 1 + 1.6 * e * e * e;
+    const elong = 1 + 1.0 * e * e * e;
     const a = slope >= 8 ? ((aspect + 90) * Math.PI) / 180 : r() * Math.PI;
     return { elong, ex: Math.sin(a), ey: Math.cos(a) };
   }
 
   private makeSource(x: number, y: number, ground: number, weight: number, potential: number, aspect: number, slope: number, lee: number, name?: string): ThermalSource {
     const r = this.rng;
-    const n = 1 + Math.floor(r() * 2.6);
+    // Mostly one core, sometimes two or three (a broken thermal, harder to centre).
+    const n = 1 + Math.floor(r() * r() * 2.6);
     const cores: Core[] = [];
     for (let i = 0; i < n; i++) cores.push({ off: n === 1 ? 0.15 * r() : 0.25 + 0.4 * r(), ang: r() * Math.PI * 2, spin: (r() - 0.5) * 0.03, share: 0.6 + 0.8 * r() });
     const total = cores.reduce((a, c) => a + c.share, 0);
     for (const c of cores) c.share /= total / (n === 1 ? 1 : 1.25);
     // Not every trigger works every day: documented ones are reliable, the others mostly;
-    // a "dud" still bubbles weakly. Sizes: mostly modest, sometimes a big one.
-    const works = r() < 0.65 + 0.35 * weight;
+    // a "dud" still bubbles weakly. Sizes: mostly wide enough to circle in, sometimes a big one.
+    const works = r() < 0.75 + 0.25 * weight;
     return {
       x,
       y,
@@ -554,7 +555,7 @@ export class AirMass {
       slope,
       lee,
       base: works ? 0.75 + 0.5 * r() : 0.15 + 0.2 * r(),
-      size: 0.5 + r() * r() * 1.6,
+      size: 0.8 + r() * r() * 1.4,
       period: 540 + 720 * r(),
       phase: r(),
       active: 0.7 + 0.25 * r(),
@@ -607,12 +608,13 @@ export class AirMass {
         if (top) maxima.push({ i, j, v });
       }
     }
-    // Up to ~1 a km², at least SPACING apart: Allen (2006, from Lenschow) counts ~2 updrafts
+    // Up to ~2 a km², at least SPACING apart: Allen (2006, from Lenschow) counts ~2 updrafts
     // a km² at mid-height under a 2 km convective layer, 1.2 met along a line as long as the
-    // layer is deep. Continuous lift along a sunny face is the upslope breeze's
+    // layer is deep; the game keeps the upper end of that (testers found too few to fly from
+    // one to the next). Continuous lift along a sunny face is the upslope breeze's
     // (pilot-air.ts), not these plumes'.
-    const SPACING = 550;
-    const MAX = 1600;
+    const SPACING = 400;
+    const MAX = 2600;
     const bins = new Map<number, ThermalSource[]>();
     const bin = (x: number, y: number) => Math.floor(x / SPACING) * 100003 + Math.floor(y / SPACING);
     const crowded = (x: number, y: number) => {
@@ -652,7 +654,7 @@ export class AirMass {
     for (const c of order) {
       if (cand.length >= MAX) break;
       const v = thermal[c];
-      if (v < 0.25 || this.rng() > 0.35 * smoothstep(0.25, 0.7, v)) continue;
+      if (v < 0.2 || this.rng() > 0.6 * smoothstep(0.2, 0.65, v)) continue;
       const x = xs[c % cols];
       const y = ys[Math.floor(c / cols)];
       if (crowded(x, y)) continue;
@@ -818,7 +820,7 @@ export class AirMass {
     // Narrow thermals punch harder, wide ones are soft; the wind on a windward face feeds
     // it, in the lee it is torn; a strong wind shears the weak ones apart.
     const wind = 1 + 0.15 * Math.max(0, this.windward(s)) * wf - 0.4 * this.torn(s) - 0.25 * wf * (1 - s.weight);
-    return this.wStar() * (0.6 + 0.8 * s.weight) * s.base * (1.25 - 0.3 * s.size) * wind * smoothstep(0.08, 0.45, s.potential);
+    return this.wStar() * (0.7 + 0.7 * s.weight) * s.base * (1.3 - 0.3 * s.size) * wind * smoothstep(0.08, 0.45, s.potential);
   }
 
   private nearby(x: number, y: number, t: number): ThermalSource[] {

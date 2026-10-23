@@ -22,6 +22,7 @@ import type { CloudInfo } from './airmass';
 import type { GliderState } from './flight';
 import type { LocalFrame } from './geo';
 import { buildGlider, type GliderModel } from './glider';
+import { headPitch, headRoll } from './glider-pilot';
 import { EYE_SEATED, EYE_STANDING } from './glider-gear';
 import { Sky, type FrameInfo } from './sky';
 import { ThermalFlows, Vultures } from './life';
@@ -160,13 +161,17 @@ function gameStyle(): StyleSpecification {
   return style;
 }
 
-/** Rotation of the glider frame (x right, y up, z back) into east/north/up, with its attitude. */
+/**
+ * Rotation of the glider frame (x right, y up, z back) into east/north/up, with its attitude:
+ * heading, then pitch (nose down along a steep spiral's helix), then bank about the nose (a
+ * pitch applied after the bank would swing the nose out of the turn instead of down).
+ */
 export function gliderQuaternion(heading: number, bank: number, pitch: number, out = new THREE.Quaternion()): THREE.Quaternion {
   const qh = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 0, 1), -heading);
   const qb = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), Math.PI / 2);
   const qr = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 0, 1), -bank);
   const qp = new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0), -pitch);
-  return out.copy(qh).multiply(qb).multiply(qr).multiply(qp);
+  return out.copy(qh).multiply(qb).multiply(qp).multiply(qr);
 }
 
 /** A name tag: text on a transparent plane (turned towards the camera every frame). */
@@ -676,10 +681,11 @@ export class GameWorld {
     let fwd: THREE.Vector3;
     let up: THREE.Vector3;
     if (this.view === 'first') {
-      // The head keeps the horizon steadier than the harness: about a third of the bank and
-      // half of the pendulum pitch are compensated (the risers tilt in the view), and the
-      // body sinks a little in the harness under load.
-      const qHead = new THREE.Quaternion().setFromEuler(new THREE.Euler(head.pitch + 0.5 * st.pitch, -head.yaw, 0.35 * st.bank, 'YXZ'));
+      // The head keeps the horizon steadier than the harness: part of the bank and of the
+      // pitch is compensated, up to what the neck allows (glider-pilot.ts; the risers tilt in
+      // the view, the ground comes ahead in a spiral), and the body sinks a little in the
+      // harness under load.
+      const qHead = new THREE.Quaternion().setFromEuler(new THREE.Euler(head.pitch + headPitch(st.pitch), -head.yaw, headRoll(st.bank), 'YXZ'));
       const qCam = q.clone().multiply(qHead);
       const sag = 0.05 * Math.min(3, Math.max(0, st.load - 1));
       const ks = this.glider.standing();

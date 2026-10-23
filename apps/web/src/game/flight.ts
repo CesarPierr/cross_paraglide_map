@@ -60,6 +60,14 @@ const DEG = Math.PI / 180;
  * in one or two swings, as a paraglider's pitch does.
  */
 const K_SPEED_AOA = 0.9;
+/**
+ * Pitch damping of the pendulum (s): the canopy, with more drag for its mass than the pilot,
+ * lags behind him while the glider gathers speed (higher angle of attack) and runs ahead
+ * while it slows. It damps the zoom and dive that follow a brake change, so that each step
+ * of brake settles on its slower, flatter glide within a few seconds without overshooting
+ * into more sink than before.
+ */
+const K_PITCH_DAMP = 0.2;
 /** Share of a collapsed wing's yaw that skids instead of banking, and how much a skid turns the trajectory flat. */
 const K_SKID = 0.45;
 const K_FLAT = 0.8;
@@ -167,8 +175,13 @@ export interface GliderState {
   vy: number;
   bank: number;
   bankRate: number;
-  /** Pendulum pitch of the wing relative to the pilot (rad, + = wing ahead / diving). */
+  /**
+   * Pitch attitude of the glider (rad, + = nose down / wing ahead): the pendulum's swing,
+   * plus the nose-down of a steeply banked descending path (drawn and sent to the others).
+   */
   pitch: number;
+  /** Pendulum swing of the wing about the pilot (rad, + = wing ahead / diving) and its rate. */
+  swing: number;
   pitchRate: number;
   /** Turn rate the controls ask for (rad/s): sets the bank target. */
   yawRate: number;
@@ -234,19 +247,32 @@ export interface GliderState {
   exRLp: number;
   /** Relative deviation of the airspeed from that equilibrium, as the canopy's pitch follows it. */
   speedDev: number;
+  /** Acceleration along the airflow (m/s², low-passed): the pendulum's pitch damping follows it. */
+  accV: number;
   /** Brake travel on each side 0.3 s ago, to detect pumping on a collapsed side. */
   pumpL: number;
   pumpR: number;
 }
 
-/** Polar of a mid-range (EN-B) wing: brake travel → [horizontal airspeed, sink] (m/s). */
+/**
+ * Polar of a mid-range (EN-B) wing at the middle of its weight range: brake travel →
+ * [horizontal airspeed, sink] (m/s). Hands up ≈ 37.5 km/h sinking 1.1 m/s; every 10 % of
+ * brake costs 1.5–2 km/h down to the minimum sink (≈ 1.0 m/s at 30 %, 31 km/h); beyond, the
+ * sink climbs faster and faster to the minimum speed (≈ 24 km/h at 80 %) before the stall
+ * (manufacturers' figures for EN-B wings: trim 37–39 km/h, minimum 22–25 km/h, minimum sink
+ * 1.0–1.1 m/s; measured polars of the class: glide 9.5–10 a little under trim speed).
+ */
 const POLAR: [number, number, number][] = [
-  [0, 10.4, 1.05],
-  [0.2, 9.4, 0.98],
-  [0.4, 8.5, 1.1],
-  [0.6, 7.6, 1.4],
-  [0.8, 6.8, 2.0],
-  [0.9, 6.2, 2.6],
+  [0, 10.45, 1.12],
+  [0.1, 9.95, 1.035],
+  [0.2, 9.35, 0.995],
+  [0.3, 8.75, 0.98],
+  [0.4, 8.2, 1.03],
+  [0.5, 7.75, 1.14],
+  [0.6, 7.35, 1.32],
+  [0.7, 7.05, 1.6],
+  [0.8, 6.75, 2.0],
+  [0.9, 6.15, 2.6],
   [1, 5.6, 3.4],
 ];
 
@@ -363,6 +389,7 @@ export function newGlider(x: number, y: number, z: number, heading: number, wing
     bank: 0,
     bankRate: 0,
     pitch: 0,
+    swing: 0,
     pitchRate: 0,
     yawRate: 0,
     turnRate: 0,
@@ -406,6 +433,7 @@ export function newGlider(x: number, y: number, z: number, heading: number, wing
     exLLp: -1,
     exRLp: -1,
     speedDev: 0,
+    accV: 0,
     pumpL: 0,
     pumpR: 0,
   };
@@ -514,7 +542,8 @@ export function step(s: GliderState, c: Controls, air: AirSample, dt: number, rn
   if (!(s.vEq > 0)) s.vEq = vEq;
   s.vEq += ((vEq - s.vEq) * dt) / 1.0;
   s.speedDev = clamp((V - s.vEq) / s.vEq, -0.12, 0.25);
-  const aEff = s.alpha + K_SPEED_AOA * s.speedDev;
+  // (Steeply banked the acceleration is the spiral's, which the pendulum does not resist.)
+  const aEff = s.alpha + K_SPEED_AOA * s.speedDev + (K_PITCH_DAMP * clamp(s.accV, -4, 4) * smoothstep(0.7, 0.3, Math.abs(s.bank))) / V;
 
   // Tip gusts: what one side feels more than the other, high-passed by the roll response.
   const tipL = (air.wL ?? air.w) - air.w;
@@ -548,7 +577,7 @@ export function step(s: GliderState, c: Controls, air: AirSample, dt: number, rn
       const fall = Math.max(0, (prevMin - mMin) / dt);
       const severity = -mMin + 0.12 * fall;
       const sym = Math.abs(s.marginL - s.marginR) < 2.5 && s.marginC < 1.5;
-      const pFrontal = sym ? clamp(0.3 + 0.4 * s.speedbar + 1.2 * Math.max(0, s.pitch), 0.1, 0.85) : 0.05;
+      const pFrontal = sym ? clamp(0.3 + 0.4 * s.speedbar + 1.2 * Math.max(0, s.swing), 0.1, 0.85) : 0.05;
       if (rng() < pFrontal) {
         col.frontal = clamp(0.45 + severity / 14, 0.45, 1);
         s.pitchRate -= 0.8 * col.frontal;
@@ -713,6 +742,7 @@ export function step(s: GliderState, c: Controls, air: AirSample, dt: number, rn
   const FL = fax * eLx + fay * eLy + fz * eLz;
   const Fs = fax * esx + fay * esy + fz * esz;
   const av = Fv / (m + ADDED_T * rhoRel);
+  s.accV += (av - s.accV) * Math.min(1, dt / 0.15);
   const aL2 = FL / (m + ADDED_N * rhoRel);
   const as = Fs / (m + ADDED_S * rhoRel);
   const accX = av * evx + aL2 * eLx + as * esx;
@@ -726,12 +756,17 @@ export function step(s: GliderState, c: Controls, air: AirSample, dt: number, rn
   const fwd = fax * sh0 + fay * ch0;
   const pitchEq = clamp(Math.atan2(fwd, Math.max(1, faz)), -0.6, 0.6) - 0.6 * s.stall;
   const pOmega = Math.sqrt(G / LINE_M) / Math.sqrt(1 + (9 * rhoRel) / m);
-  const pitchAcc = pOmega * pOmega * (pitchEq - s.pitch) - 2 * 0.28 * W.damping * pOmega * s.pitchRate;
+  const pitchAcc = pOmega * pOmega * (pitchEq - s.swing) - 2 * 0.28 * W.damping * pOmega * s.pitchRate;
   // Rising air raises the angle of attack: the wing pitches back entering a thermal, surges leaving it.
   const dwAir = air.w - s.lastAirW;
   s.lastAirW = air.w;
   s.pitchRate += pitchAcc * dt - 0.12 * W.gustPitch * clamp(dwAir, -3, 3) + 0.05 * W.gustPitch * clamp(duAlong, -3, 3);
-  s.pitch = clamp(s.pitch + s.pitchRate * dt, -1.2, 1.2);
+  s.swing = clamp(s.swing + s.pitchRate * dt, -1.2, 1.2);
+  // Steeply banked, the whole glider pitches along its path: the line leans into the turn
+  // and the pilot, facing the airflow, has his nose down the descending helix (the ground
+  // ahead in a spiral dive: ≈ 35° at 75° of bank), up and down the path in wingovers. In
+  // straight flight the line hangs vertical whatever the glide angle (hence sin² of the bank).
+  s.pitch = clamp(s.swing - gam * Math.sin(s.bank) ** 2, -1.4, 1.4);
 
   // --- Turn: brakes and weight shift ask for a turn rate; the bank that turn needs follows
   // with a pendular lag; the bank tilts the lift (the trajectory turns), the heading follows

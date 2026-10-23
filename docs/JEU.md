@@ -9,6 +9,14 @@ Code : `apps/web/src/game/` (chargé seulement à l'ouverture de l'onglet).
 
 ### L'aile (`flight.ts`)
 
+- **Freinage par paliers** (EN-B, 95 kg, air calme) : 37,4 km/h et 1,11 m/s bras hauts, 33 km/h à
+  20 %, chute mini 0,97 m/s vers 30 % (31 km/h), 27 km/h et 1,13 m/s à 50 %, 23 km/h et 2 m/s à 80 %,
+  décrochage vers 88 % ; chaque palier de 10 % pris en ~2 s, sans le plongeon qui suivait un coup de
+  frein (amortissement en tangage, coupé en virage serré).
+- **Spirale engagée** : frein d'un côté à 60–75 % (et sellette), 74–77° d'inclinaison, nez bas de
+  30–38°, 10–13 m/s de chute sous ~3,7 g ; sortie mains hautes avec ressource. Le nez bas de la
+  trajectoire s'ajoute au balancier de l'aile, la tête ne compense plus que ~15° de roulis et 8° de
+  tangage : en vue pilote, le sol remplit l'écran.
 - **Point matériel inertiel** : le parapente a sa propre vitesse sol ; l'aile voit la vitesse relative
   à l'air, rafales comprises. Portance perpendiculaire au vent relatif et inclinée par le roulis,
   traînée le long, poids ; **masse ajoutée** de l'air entraîné par la voile (≈ 22 kg normale à la

@@ -18,8 +18,8 @@
  *   the outer A lines with big ears; on the take-off holding the risers out and back, round
  *   the carabiners with them as the wing rises. The gloves hold their brake handles like a
  *   stick (the line from the top of the fist), the wrist bent towards the line;
- * - the head compensates part of the bank and of the pendulum's pitch as the camera does,
- *   and looks into the turn;
+ * - the head compensates part of the bank and of the pendulum's pitch as the camera does
+ *   (up to what the neck allows: the horizon tilts in a spiral), and looks into the turn;
  * - the risers (canopy frame) run from the carabiners to the maillons, shortened by the
  *   speed bar; the brake lines from the pulleys to the handles' swivels; the speed lines
  *   from the speedbag to the risers.
@@ -72,6 +72,15 @@ import {
 } from './glider-gear';
 
 export { lowPilotGeometry };
+
+/**
+ * Roll and pitch (rad) of the glider that the pilot's head levels out, as the first-person
+ * camera in it does (world.ts): about a third of a thermalling turn's bank and half of the
+ * pendulum's small swings, but the neck stops at ~15° of roll and ~8° of pitch, so in a
+ * spiral dive or a wingover the horizon tilts away and the ground comes in front of the eyes.
+ */
+export const headRoll = (bank: number) => 0.27 * Math.tanh(bank / 0.75);
+export const headPitch = (pitch: number) => 0.14 * Math.tanh(pitch / 0.28);
 export function lowPilotMaterial(): THREE.Material {
   return gearMaterial();
 }
@@ -356,14 +365,14 @@ export class PilotRig {
     this.pelvis.position.copy(this.hip);
     this.pelvis.rotation.set(recline, 0, 0);
 
-    // Head on the neck: a third of the bank and half the pendulum's pitch compensated (as the
-    // camera), turned into the turn with a lag.
+    // Head on the neck: part of the bank and of the pitch compensated (as the camera), turned
+    // into the turn with a lag.
     torsoToGlider(NECK_T, this.hip, recline, tA);
     this.pilot.position.copy(tA);
     const fly = 1 - k;
     const look = clamp(0.8 * (st.turnRate || 0) + 0.2 * (st.bank || 0), -0.7, 0.7) * fly;
     this.headYaw += (look - this.headYaw) * Math.min(1, dt / 0.4);
-    this.pilot.rotation.set(headP + 0.5 * (st.pitch || 0) * fly, -this.headYaw, 0.35 * (st.bank || 0) * fly, 'YXZ');
+    this.pilot.rotation.set(headP + headPitch(st.pitch || 0) * fly, -this.headYaw, headRoll(st.bank || 0) * fly, 'YXZ');
 
     // Rear fairing: behind the back in flight; standing, it turns up with the back (sewn to
     // the seat and the back plate) and sags back a little (photos of pilots walking to the

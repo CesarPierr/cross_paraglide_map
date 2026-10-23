@@ -37,6 +37,8 @@ interface Settings {
   showThermals: boolean;
   /** Other pilots of the day in the air (virtual). */
   others: boolean;
+  /** Weight shift with the mouse: the cursor's place across the view (computers). */
+  mouseWeight: boolean;
   view: ViewMode;
   wing: WingParams['id'];
   start: 'air' | 'forward' | 'reverse';
@@ -61,6 +63,7 @@ const DEFAULTS: Settings = {
   forecastWeather: false,
   showThermals: false,
   others: true,
+  mouseWeight: true,
   view: 'first',
   wing: 'B',
   start: 'air',
@@ -313,6 +316,11 @@ function Menu({ onStart, error, takeoffs, routes }: { onStart: (s: Settings, t: 
         <label className="game-check">
           <input type="checkbox" checked={s.others} onChange={(e) => set({ others: e.target.checked })} /> Autres pilotes en l'air
         </label>
+        {!isTouch() && (
+          <label className="game-check" title="La souris à gauche ou à droite de l'écran penche la sellette ; au centre, assis droit">
+            <input type="checkbox" checked={s.mouseWeight} onChange={(e) => set({ mouseWeight: e.target.checked })} /> Sellette à la souris
+          </label>
+        )}
         <div className="game-seg" role="radiogroup" aria-label="Mode">
           <button className={!s.routeId ? 'on' : ''} onClick={() => set({ routeId: null })}>
             Vol libre
@@ -607,7 +615,7 @@ function BrakeBar({ side, v, pressure, soft, touch, onChange }: { side: 'L' | 'R
     >
       <div className="gb-fill" style={{ height: `${v * 100}%`, background: v > 0.85 ? '#fb7185' : v > 0.6 ? '#fbbf24' : '#38bdf8' }} />
       <em>{pressure.toFixed(1)} kg</em>
-      <span>{side === 'L' ? (touch ? 'G' : 'A/Q') : touch ? 'D' : 'E/D'}</span>
+      <span title={touch ? undefined : 'Un appui, un palier de 10 % ; 0 à 9 : les deux freins à la fois'}>{side === 'L' ? (touch ? 'G' : 'A/Q') : touch ? 'D' : 'E/D'}</span>
       <b>{Math.round(v * 100)}%</b>
     </div>
   );
@@ -803,6 +811,7 @@ export default function GameApp() {
   }, [data]);
 
   const startFlight = async (s: Settings, takeoff: Takeoff) => {
+    mouseWeight.current = s.mouseWeight;
     try {
       localStorage.setItem('brises.game', JSON.stringify(s));
       localStorage.removeItem('brises.game.goto');
@@ -870,6 +879,18 @@ export default function GameApp() {
   };
   // Look around by dragging on a touch screen.
   const lookStart = useRef<{ x: number; y: number } | null>(null);
+  /**
+   * Weight shift from the mouse cursor's place across the view, button up: centred in the
+   * middle fifth, full shift a little short of the edges.
+   */
+  const mouseWeight = useRef(false);
+  const leanTo = (e: React.PointerEvent) => {
+    if (!mouseWeight.current || e.pointerType !== 'mouse' || e.buttons || !box.current) return;
+    const r = box.current.getBoundingClientRect();
+    const x = ((e.clientX - r.left) / r.width) * 2 - 1;
+    const v = Math.sign(x) * Math.max(0, Math.abs(x) - 0.1) / 0.75;
+    engineRef.current?.setMouseWeight(v);
+  };
 
   return (
     <div className="game-app">
@@ -878,11 +899,13 @@ export default function GameApp() {
         className="game-map"
         onPointerDown={(e) => (lookStart.current = { x: e.clientX, y: e.clientY })}
         onPointerMove={(e) => {
+          leanTo(e);
           if (!lookStart.current || !e.buttons || !engineRef.current) return;
           engineRef.current.look((e.clientX - lookStart.current.x) * 0.006, -(e.clientY - lookStart.current.y) * 0.006);
           lookStart.current = { x: e.clientX, y: e.clientY };
         }}
         onPointerUp={() => (lookStart.current = null)}
+        onPointerLeave={() => engineRef.current?.setMouseWeight(0)}
       />
       {hud && phase === 'flying' && (
         <>
@@ -1004,7 +1027,7 @@ export default function GameApp() {
                 <b style={{ width: `${hud.speedbar * 100}%` }} />
               </i>
               {hud.ears && <strong>Oreilles</strong>}
-              <span title="Sellette : S à gauche, F à droite">Sellette</span>
+              <span title="Sellette : la souris vers la gauche ou la droite de l'écran, ou S et F">Sellette</span>
               <i className="gw" aria-label={`Sellette ${hud.weight < -0.1 ? 'à gauche' : hud.weight > 0.1 ? 'à droite' : 'au centre'}`}>
                 <b style={{ left: `${50 + hud.weight * 50}%` }} />
               </i>

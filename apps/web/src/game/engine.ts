@@ -113,6 +113,9 @@ function fmtTime(s: number): string {
   return h ? `${h}h${String(m).padStart(2, '0')}` : `${m} min ${String(sec).padStart(2, '0')} s`;
 }
 
+/** A press of a brake key: a tenth of the travel (ten steps from hands up to full brake). */
+const BRAKE_STEP = 0.1;
+
 const EVENT_TEXT: Record<FlightEvent, string> = {
   'collapse-left': 'Fermeture à gauche ! Contre au frein droit, pompe à gauche',
   'collapse-right': 'Fermeture à droite ! Contre au frein gauche, pompe à droite',
@@ -137,6 +140,13 @@ export class GameEngine {
   private airSample: AirSample = { u: 0, v: 0, w: 0, turbulence: 0, wL: 0, wR: 0, agl: 100 };
   /** Weight shift asked by touch controls (the keys S/F add to it). */
   private weightInput = 0;
+  /** Weight shift from the mouse cursor's place across the view (desktop), -1 … 1. */
+  private mouseWeight = 0;
+  /**
+   * Where the hands go: the keys move them a step at a time (BRAKE_STEP), the touch sliders
+   * anywhere; the hands then travel there in a fraction of a second (readKeys).
+   */
+  private brakeTarget = { L: 0, R: 0 };
   private attribTimer: ReturnType<typeof setTimeout> | undefined;
   /** Game times of the last relief refresh, shade update and wind-profile request. */
   private reliefT = -1e9;
@@ -503,6 +513,16 @@ export class GameEngine {
     else if (k === 'r' && this.launch && (this.launch.phase === 'aborted' || this.launch.phase === 'ready')) this.relaunch();
     else if (k === '+' || k === '=') this.timeScale = Math.min(8, this.timeScale * 2);
     else if (k === '-') this.timeScale = Math.max(1, this.timeScale / 2);
+    // Brakes a step at a time (a press, one step): A/Q left, E/D right; 0-9 both at once.
+    else if (k === 'a') this.stepBrake('L', 1);
+    else if (k === 'q') this.stepBrake('L', -1);
+    else if (k === 'e') this.stepBrake('R', 1);
+    else if (k === 'd') this.stepBrake('R', -1);
+    else if (/^[0-9]$/.test(k)) this.brakeTarget = { L: Number(k) * BRAKE_STEP, R: Number(k) * BRAKE_STEP };
+  }
+  private stepBrake(side: 'L' | 'R', n: number): void {
+    const t = this.brakeTarget;
+    t[side] = Math.max(0, Math.min(1, Math.round((t[side] + n * BRAKE_STEP) / BRAKE_STEP) * BRAKE_STEP));
   }
   keyUp(key: string): void {
     this.keys.delete(key.toLowerCase());
@@ -512,6 +532,11 @@ export class GameEngine {
     this.audio.start();
     if (side === 'L') this.controls.brakeL = v;
     else this.controls.brakeR = v;
+    this.brakeTarget[side] = v;
+  }
+  /** Weight shift from the mouse (desktop): the cursor's place across the view, -1 … 1. */
+  setMouseWeight(v: number): void {
+    this.mouseWeight = Math.max(-1, Math.min(1, v));
   }
   setSpeedbar(v: number): void {
     this.controls.speedbar = v;
@@ -555,16 +580,15 @@ export class GameEngine {
 
   private readKeys(dt: number): void {
     const k = this.keys;
-    // Hands move fast enough to dab the brakes when the wing comes overhead at take-off.
-    const rate = 1.5 * dt;
+    // The hands travel to the brake steps asked for: a step in a few hundredths of a second,
+    // hands up to full brake in 0.4 s (fast enough to dab them as the wing comes overhead).
+    const rate = 2.5 * dt;
     const c = this.controls;
-    if (k.has('a')) c.brakeL = Math.min(1, c.brakeL + rate);
-    if (k.has('q')) c.brakeL = Math.max(0, c.brakeL - rate);
-    if (k.has('e')) c.brakeR = Math.min(1, c.brakeR + rate);
-    if (k.has('d')) c.brakeR = Math.max(0, c.brakeR - rate);
+    c.brakeL += Math.max(-rate, Math.min(rate, this.brakeTarget.L - c.brakeL));
+    c.brakeR += Math.max(-rate, Math.min(rate, this.brakeTarget.R - c.brakeR));
     c.stabilo = k.has('x');
-    // Weight shift: S leans left, F right (on top of the touch control).
-    c.weight = Math.max(-1, Math.min(1, this.weightInput + (k.has('f') ? 1 : 0) - (k.has('s') ? 1 : 0)));
+    // Weight shift: the mouse, S leans left, F right, on top of the touch control.
+    c.weight = Math.max(-1, Math.min(1, this.weightInput + this.mouseWeight + (k.has('f') ? 1 : 0) - (k.has('s') ? 1 : 0)));
     if (k.has(' ') && !this.launch) {
       c.speedbar = 1;
       this.barByKey = true;
@@ -651,6 +675,7 @@ export class GameEngine {
           if (this.checkGround(this.groundAt(g.x, g.y))) break;
         }
       this.maxAlt = Math.max(this.maxAlt, g.z);
+      if (!this.launch && !this.landing) this.terrainAhead();
       if (!this.launch && !this.landing) this.trackStats(g.x, g.y, g.z, dt);
       if (!this.launch && this.track.due(this.gameT)) {
         const [lon, lat] = this.frame.toLngLat(g.x, g.y);
@@ -828,6 +853,27 @@ export class GameEngine {
       this.incident = { text: 'Les pieds touchent : cours encore, la voile va te reprendre', until: this.flightS + 3 };
       return true;
     }
+    // The feet brushing a slope while the wing flies (just after the take-off, soaring a face,
+    // a turn close to the relief): a light touch along the slope, not into it, does not end
+    // the flight wherever it happens; the pilot is pushed off along the slope and flies on.
+    // Only lasting contact (dragged along the ground) or a real impact does.
+    const slope = Math.acos(1 / nl);
+    // (brushS: seconds of contact, forgotten as fast as they came; dragged along for 1.5 s, it ends.)
+    const el = this.flightS - this.brushT;
+    this.brushT = this.flightS;
+    this.brushS = Math.max(0, this.brushS - el);
+    if (slope > (15 * Math.PI) / 180 && td.impact < 1.5 && g.airspeed > 6.5 && g.collapse.amount < 0.3 && this.brushS < 1.5) {
+      this.brushS += 2 * Math.min(el, 1 / 30);
+      g.z = ground + 0.95;
+      const vn = g.vx * (-gx / nl) + g.vy * (-gy / nl) + g.vz / nl;
+      if (vn < 0) {
+        g.vx -= (vn * -gx) / nl;
+        g.vy -= (vn * -gy) / nl;
+        g.vz -= vn / nl;
+      }
+      if (!this.incident || this.incident.until < this.flightS) this.incident = { text: 'Les pieds frôlent la pente : écarte-toi du relief', until: this.flightS + 2.5 };
+      return false;
+    }
     if (td.kind === 'crash' || td.kind === 'hard') {
       this.endFlight(td.kind, g.vz, groundKmh, td.reason);
       return true;
@@ -839,6 +885,27 @@ export class GameEngine {
     this.landingKmh = groundKmh;
     return true;
   }
+  /**
+   * The relief ahead (a few times a second): where the path of the next 2 and 4 s meets the
+   * ground, a warning. In the pilot's view the slope under and beside him is out of sight.
+   */
+  private terrainAhead(): void {
+    if (this.flightS - this.aheadT < 0.25) return;
+    this.aheadT = this.flightS;
+    const g = this.glider;
+    if (g.z - this.groundAt(g.x, g.y) < 3) return;
+    for (const t of [2, 4]) {
+      const clear = g.z + g.vz * t - this.groundAt(g.x + g.vx * t, g.y + g.vy * t);
+      if (clear < (t === 2 ? 6 : 0)) {
+        if (!this.incident || this.incident.until < this.flightS) this.incident = { text: 'Relief devant : vire ou écarte-toi', until: this.flightS + 1.5 };
+        return;
+      }
+    }
+  }
+  private aheadT = 0;
+  /** Feet brushing the slopes: time of the last contact and seconds of recent contact (checkGround). */
+  private brushT = 0;
+  private brushS = 0;
   private landingVz = 0;
   private landingKmh = 0;
 
@@ -1079,6 +1146,7 @@ export class GameEngine {
     this.track.clear();
     this.glider = this.makeGlider(this.spawn.x, this.spawn.y, this.spawn.z, this.spawn.heading);
     this.controls = { brakeL: 0, brakeR: 0, speedbar: 0, ears: false, weight: 0 };
+    this.brakeTarget = { L: 0, R: 0 };
     this.landing = null;
     if (this.task) {
       this.task.next = 0;

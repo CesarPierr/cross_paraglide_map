@@ -67,7 +67,11 @@ Code : `apps/web/src/game/` (chargé seulement à l'ouverture de l'onglet).
   hauteur de crête. **Venturi** dans les cols et passages étroits (+22 % dans 300 m). Le « sous le
   vent » du modèle (216 m) complète pour les crêtes plus lointaines.
 - **Thermiques** placés sur le potentiel du modèle (intensité saisonnière `thermalSeason` du modèle) et
-  l'atlas. Profil d'Allen (2006), cycle de vie en cosinus (Rachelson) avec un tirage par bulle (durée,
+  l'atlas, à 400 m l'un de l'autre au moins (haut de la fourchette d'Allen, ~2 par km² à mi-hauteur) :
+  par journée moyenne en juillet à 14 h, 2 à 14 thermiques enroulables dans 2,4 km autour des décos
+  mesurés (Saint-Hilaire, Chamonix, Annecy, Bauges, Vercors, Écrins, Haute-Maurienne, Nyons, Chabre,
+  Ubaye, Verdon, Gréolières ; 0 à 7 avant), montée nette 0,6–2,7 m/s, plus de 3 m/s rare. Un cœur
+  la plupart du temps (deux ou trois parfois), peu allongé, assez large pour y spiraler. Profil d'Allen (2006), cycle de vie en cosinus (Rachelson) avec un tirage par bulle (durée,
   rampes, force), 9 à 21 min ; cœur du côté au vent, descendance plus forte de ce côté ; **bord net** en
   air instable (paroi de ~5 m et tourbillons de 4 m dans la couche de cisaillement, ε ≈ 0,05–0,1 m²/s³ :
   ce qui ferme une aile) ; régime de **bulles** au-delà de ~25 km/h ; chaque thermique est **couché par
@@ -153,6 +157,11 @@ vent et peut le traîner s'il ne l'affale pas.
 - **Trace IGC** : le vol est enregistré (un point par seconde une fois en l'air) et se télécharge à
   la fin au format IGC (`igc.ts`), pour le revoir dans les outils de vol habituels ; l'en-tête le
   marque comme vol simulé (pas d'enregistrement de sécurité G).
+- **Contact avec le relief** : un frôlement léger d'une pente aile en vol (impact sous 1,5 m/s,
+  pente de plus de 15°) ne termine plus le vol, où qu'il arrive : les pieds glissent, le vol continue,
+  un message le signale ; traîné plus de 1,5 s, ou un vrai impact, c'est la fin du vol. Une alerte
+  « Relief devant » prévient quand la trajectoire des 2 à 4 s suivantes rencontre le sol (en vue
+  pilote, la pente sous soi ne se voit pas).
 - **Tableau de bord** : vario, pression dans chaque frein (kg, la jauge pulse quand la pression
   mollit avant une fermeture), sellette, accélérateur, aide au décollage puis au posé (course
   d'arrêt) ; sur écran tactile, boutons Affaler et Recommencer.
@@ -274,7 +283,10 @@ vent et peut le traîner s'il ne l'affale pas.
 
 ## Commandes
 
-Clavier : A/Q frein gauche +/−, E/D frein droit +/−, S/F sellette à gauche/droite, Espace accélérateur
+Clavier : freins par paliers de 10 % (un appui, un palier ; les mains y vont en quelques centièmes
+de seconde) : A/Q frein gauche +/−, E/D frein droit +/−, 0 à 9 les deux freins à 0–90 % ; sellette à la
+souris (le curseur vers la gauche ou la droite de l'écran, centre neutre ; option du menu) ou S/F,
+Espace accélérateur
 (au déco : se retourner), Z courir / tirer les A, O oreilles, X stabilo en vol / affaler la voile (C)
 au sol, R replacer la voile après un décollage interrompu, flèches : tête, C regard devant, V vue,
 T thermiques, P pause, M son, +/− temps accéléré. Écran tactile (de préférence en paysage) : deux

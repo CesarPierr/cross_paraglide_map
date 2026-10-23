@@ -7,7 +7,7 @@
  *   npx tsx scripts/dev/game-capture.ts [--out dir] [--scenes falaise,lac] [--hours 8,13,18.5]
  *                                       [--size 1280x800] [--gpu] [--perf] [--url http://localhost:5174/]
  *                                       [--debug 1|2|3|4] [--plain] [--month 0-11] [--dpr 2] [--profile name]
- *                                       [--no-imagery]
+ *                                       [--no-imagery] [--early 1.5,4]
  *
  * Rendering is software (SwiftShader) unless --gpu (Metal through ANGLE, headless): slow
  * but deterministic. A persistent profile in .cache/game-capture-profile keeps the tile
@@ -20,7 +20,8 @@
  * light without the materials; --month overrides the scenes' month. --no-imagery refuses the
  * orthophotos and Sentinel-2 (service worker off, own profile): the landscape made from the
  * land cover and the map's water and roads everywhere (materials.ts `gBackdrop`; --debug 9
- * shows it).
+ * shows it). --early: images also that many seconds after the pilot is placed, while the
+ * tiles still load (the first hour only).
  */
 import { mkdirSync } from 'node:fs';
 import { join } from 'node:path';
@@ -66,6 +67,16 @@ const SCENES: Scene[] = [
   { name: 'sol', takeoffId: 'chartreuse/st-hilaire-sud-nord', month0: 6, lon: 0, lat: 0, alt: 0, heading: 0, pitch: -14, ground: true },
   // Winter: Chamonix in February (seasonal snow).
   { name: 'hiver', takeoffId: 'mont-blanc-chamonix/planpraz', month0: 1, lon: 6.845, lat: 45.93, alt: 2350, heading: 150, pitch: -6 },
+  // Écrins: the Glacier Blanc up to the Barre des Écrins, from above the Pré de Madame Carle.
+  { name: 'ecrins-blanc', takeoffId: 'ecrins-vallouise-haute-durance/pelvoux-station-sommet', month0: 6, lon: 6.432, lat: 44.902, alt: 2900, heading: 300, pitch: -4 },
+  // The same glaciers from high above (wide view down onto the ice, many tile levels at once).
+  { name: 'ecrins-haut', takeoffId: 'ecrins-vallouise-haute-durance/pelvoux-station-sommet', month0: 6, lon: 6.45, lat: 44.89, alt: 4700, heading: 305, pitch: -22 },
+  // Low over the Glacier Blanc, towards the Barre des Écrins (the ice a hundred metres below).
+  { name: 'ecrins-glace', takeoffId: 'ecrins-vallouise-haute-durance/pelvoux-station-sommet', month0: 6, lon: 6.392, lat: 44.928, alt: 3250, heading: 255, pitch: -10 },
+  // La Meije and its glaciers from above La Grave.
+  { name: 'meije', takeoffId: 'oisans-grandes-rousses/grave-glacier-meije', month0: 6, lon: 6.306, lat: 45.052, alt: 2300, heading: 185, pitch: -2 },
+  // The glaciers of Mont Pelvoux from over Ailefroide.
+  { name: 'pelvoux', takeoffId: 'ecrins-vallouise-haute-durance/pelvoux-station-sommet', month0: 6, lon: 6.468, lat: 44.878, alt: 3300, heading: 290, pitch: -8 },
 ];
 
 const arg = (k: string, d?: string) => {
@@ -85,6 +96,7 @@ const plain = flag('plain');
 const month = arg('month');
 const dpr = Number(arg('dpr', '1'));
 const noImagery = flag('no-imagery');
+const early = (arg('early') ?? '').split(',').filter(Boolean).map(Number);
 // Two runs at once need two profiles (Chrome locks its profile directory).
 const profile = arg('profile', noImagery ? 'game-capture-profile-noimg' : gpu ? 'game-capture-profile-gpu' : 'game-capture-profile')!;
 mkdirSync(out, { recursive: true });
@@ -154,7 +166,7 @@ async function start(s: Scene, hour: number): Promise<void> {
 }
 
 /** Freezes the pilot at the scene's camera and the given hour, waits for the tiles. */
-async function place(s: Scene, hour: number): Promise<void> {
+async function place(s: Scene, hour: number, shots: { at: number; file: string }[] = []): Promise<void> {
   await page.evaluate(`(async () => {
     const g = window.__game;
     g.paused = true;
@@ -177,6 +189,11 @@ async function place(s: Scene, hour: number): Promise<void> {
     if (g.world.ground) g.world.ground.lowDetail = false;
     if (g.world.ground) { g.world.ground.debug = ${debug}; g.world.ground.materials = ${!plain}; }
   })()`);
+  const t0 = Date.now();
+  for (const shot of shots) {
+    await page.waitForTimeout(Math.max(0, shot.at * 1000 - (Date.now() - t0)));
+    await page.screenshot({ path: shot.file });
+  }
   // Tiles: wait until MapLibre has them all (or 90 s), then a few more frames.
   await page.evaluate(`new Promise((resolve) => {
     const m = window.__game.world.map;
@@ -218,7 +235,8 @@ for (const s of scenes) {
     continue;
   }
   for (const h of hours) {
-    await place(s, h);
+    const shots = h === hours[0] ? early.map((at) => ({ at, file: join(out, `${s.name}-${String(h).replace('.', 'h')}-${String(at).replace('.', 's')}.png`) })) : [];
+    await place(s, h, shots);
     const file = join(out, `${s.name}-${String(h).replace('.', 'h')}.png`);
     await page.screenshot({ path: file });
     console.log(`   ${h} h → ${file} (${((Date.now() - t0) / 1000).toFixed(0)} s)`);

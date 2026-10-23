@@ -279,10 +279,13 @@ export const REGION_HALF = 80000;
  * lower in summer in the western Alps as they find; the southern massifs, drier, keep less
  * snow (Durand et al. 2009, J. Appl. Meteor. Climatol. 48: a north-west to south-east
  * gradient of ~60 days of snow cover at 1500 m), ~250 m higher here. From July to September
- * the orthophotos (flown in summer) already show the season's snow: the line is set above
- * the summits' snowfields so as not to add any.
+ * the orthophotos (flown in summer) already show the season's snow, and the glaciers' grey
+ * ice and rock ridges between: the line is set above the highest summits (Mont Blanc,
+ * 4808 m) so as not to add any. (At ~3100-3400 m it painted the Écrins' and Mont Blanc's
+ * glaciers a uniform white, its edges following the coarse normals of the relief's far
+ * levels rather than the photo.)
  */
-const SNOW_LINE = [900, 950, 1250, 1650, 2100, 2500, 3050, 3400, 3400, 2650, 1750, 1100];
+const SNOW_LINE = [900, 950, 1250, 1650, 2100, 2500, 4900, 4900, 4900, 2650, 1750, 1100];
 
 /** Snow line (m) for a month (0-11), day and latitude. */
 export function snowLine(month0: number, day: number, lat: number): number {

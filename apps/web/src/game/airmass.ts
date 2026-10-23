@@ -976,6 +976,15 @@ export class AirMass {
   }
 
   /** Thermal at height z: axis (drifted with the wind), core radius, lift (m/s). */
+  /**
+   * As `column`, without allocating: the column in a scratch object shared by every call, valid
+   * until the next one (for scans over many sources, every frame).
+   */
+  columnShared(s: ThermalSource, z: number, t: number): Column | null {
+    return this.columnInto(s, z, t, this.colShared) ? this.colShared : null;
+  }
+  private colShared = newColumnEx();
+
   column(s: ThermalSource, z: number, t: number): Column | null {
     const c = this.colTmp;
     if (!this.columnInto(s, z, t, c)) return null;

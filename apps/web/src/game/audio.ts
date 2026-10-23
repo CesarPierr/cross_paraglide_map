@@ -6,7 +6,8 @@
  *   and whose pitch rises with it (the rush of air on the helmet, louder on the bar);
  * - the canopy: a sharp flap when a side folds, a rustle while it is stalled or folded;
  * - a ground alert: two falling square tones, unlike any vario sound;
- * - a soft click at each brake step, higher the more brake.
+ * - a soft click at each brake step, higher the more brake;
+ * - a soft chime for the school's important advice and a challenge's goal.
  */
 export class AudioVario {
   private ctx: AudioContext | null = null;
@@ -150,6 +151,31 @@ export class AudioVario {
     o.start(t);
     o.stop(t + 0.06);
   }
+
+  /**
+   * A soft two-note chime (rising fifth, sine): an important piece of advice from the school,
+   * or a challenge's goal. Quieter than the vario, at most one every 1.5 s.
+   */
+  chime(): void {
+    if (!this.ctx || !this.enabled) return;
+    const ctx = this.ctx;
+    const t = ctx.currentTime;
+    if (t - this.chimeT < 1.5) return;
+    this.chimeT = t;
+    for (const [dt, f] of [[0, 660], [0.12, 990]] as const) {
+      const o = ctx.createOscillator();
+      o.type = 'sine';
+      o.frequency.value = f;
+      const g = ctx.createGain();
+      g.gain.setValueAtTime(0.0001, t + dt);
+      g.gain.exponentialRampToValueAtTime(0.045, t + dt + 0.015);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + dt + 0.35);
+      o.connect(g).connect(ctx.destination);
+      o.start(t + dt);
+      o.stop(t + dt + 0.4);
+    }
+  }
+  private chimeT = -10;
 
   dispose(): void {
     void this.ctx?.close();

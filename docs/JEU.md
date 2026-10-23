@@ -189,6 +189,47 @@ vent et peut le traîner s'il ne l'affale pas.
   d'arrêt) ; sur écran tactile, boutons Affaler et Recommencer.
 - **Manches de cross** sur les itinéraires documentés : balises dans l'ordre (cylindres de 400 m),
   chrono, distance validée si l'on pose avant le but, finesse nécessaire jusqu'à la balise.
+- **Défis** (`challenges.ts`, menu « Défi », depuis n'importe quel déco) :
+  - **Plafond** : atteindre le plafond du jour ou la base des cumulus (100 m dessous, là où l'on
+    est ; au moins 200 m au-dessus du déco) le plus vite possible, chrono parti au décollage ;
+  - **Aller-retour** de 5, 10 ou 20 km : une balise puis retour au déco ;
+  - **Triangle FAI** de 10, 25 ou 50 km : trois balises, plus petite branche ≥ 28 % du périmètre,
+    le déco sur un côté ou tout près (parcours déco → B1 → B2 → B3 → déco au plus 15 % plus long
+    que le triangle).
+  Cylindres de 400 m, chrono depuis le décollage, distance validée, vitesse moyenne (ou montée
+  moyenne pour le plafond), réussite ou non dans le bilan, meilleur temps gardé par déco et par
+  défi (`brises.game.challenges`). Les balises sont placées au lancement sur la grille du modèle
+  (216 m) et la journée : dans la grille jouable, sur un relief qui fait des thermiques (au moins
+  200 m de dénivelé dans 2 km : ni plaine, ni mer), sous le plafond du jour avec 250 m de marge
+  (ou sous l'arrivée d'un plané à 8 depuis un déco plus haut que le plafond), les branches le long
+  des reliefs plutôt qu'au-dessus des plaines et des crêtes plus hautes que le plafond, la
+  première face au vent quand il souffle ; nommées d'après le lieu documenté le plus proche.
+  Génération : 5 ms en moyenne (au plus ~150 ms quand une recherche fine est nécessaire), plus le
+  décodage de la grille d'altitudes. Si la journée ne permet aucun parcours valide (déco de haute
+  montagne sous un plafond bas), le meilleur est proposé avec un avertissement. Contrôle sur tous
+  les décos : `npx tsx scripts/dev/challenges-check.ts` (`--all` : la liste du jeu, `--verbose`).
+  Balises sur la vue (le cylindre du départ disparaît une fois parti) et sur la carte topo de la
+  pause, avec le parcours.
+- **Mode école** (`school.ts`, option du menu) : un conseil à la fois, la touche à presser en
+  évidence, le frein à tirer surligné ou une flèche vers où regarder, tiré de l'état réel du vol
+  (lu dix fois par seconde) ; un conseil reste au moins 3,5 s (0,8 s au déco, où les étapes suivent
+  la voile) sauf plus urgent, puis attend avant de revenir ; un petit carillon pour les conseils
+  importants (sécurité, entrée en thermique).
+  - Au déco : le vent sur la pente (de face, de travers, arrière : ne pas décoller), tirer les A et
+    courir, un ou deux paliers de frein quand la voile arrive au-dessus, le côté qui tombe, courir
+    jusqu'au décollage, mains hautes ; chaque échec expliqué (voile qui retombe, qui dépasse, qui part
+    sur le côté, traîné, vent arrière, décollage interrompu). Temps ralenti réglable (×0,75, ×0,5)
+    pendant le décollage.
+  - En vol : l'entrée dans une ascendance et le côté où tourner (le bout d'aile qui se soulève, ou
+    la position du cœur), l'inclinaison (paliers de frein intérieur, sellette), le recentrage vers
+    le meilleur du dernier tour (« ouvre 2–3 s quand tu y fais face »), la sortie du thermique, le
+    plafond, le thermique suivant à portée (≥ 1,2 m/s, atteignable à finesse 7 avec 200 m de marge).
+  - Sécurité : trop de frein (≥ 70 %, près du décrochage), relief devant et le côté le plus bas où
+    virer ; l'atterrissage documenté le plus facile à rejoindre, puis l'approche (perte d'altitude
+    à côté du terrain, prise de terrain en U, base, finale face au vent, arrondi vers 2 m).
+  Coût mesuré (e2e, M1 Pro) : 12–18 µs par image en moyenne pour l'école et les défis, sans
+  allocation par image (le texte n'est refait qu'au changement de conseil ou une fois par seconde ;
+  la recherche des thermiques, deux fois par seconde et toutes les deux secondes, ~20–60 µs).
 - **Pause** : ce que disent les sources autour (dangers, brises, thermiques…), **carte topo**
   interactive.
 - Vario sonore, bruit du vent selon la vitesse, claquement de la voile ; vautours en thermique
@@ -330,6 +371,14 @@ dans leur bouton (i) une fois en vol.
 - Bandes EN 926-2 des classes C et D non vérifiées sur la norme ; chiffres du décollage, du posé et de
   la course d'arrêt à caler avec des pilotes.
 - Les thermiques suivent le potentiel du modèle et l'atlas ; ils ne sont pas validés trace par trace.
+- Défis : le relief exploitable est jugé sur le dénivelé de la grille du modèle (216 m), pas sur le
+  potentiel thermique ; par journée faible, les décos de haute montagne (plafond du modèle vers
+  2 200 m) n'ont pas toujours de triangle de 10 ou 25 km valide (signalé au lancement), et quelques
+  décos de plaine (Leyrieu, Isle-Crémieu) pas de triangle de 25 km tout sur relief. Le parcours
+  dépend du vent du jour : un record compare des parcours de même longueur, pas toujours les mêmes.
+- École : conseils calés sur la technique publiée et le modèle du jeu, pas relus par un moniteur ;
+  la détection de l'entrée en thermique et du côté à tourner lit l'air aux bouts d'aile et le cœur
+  le plus proche (que le pilote ne voit pas en vrai).
 - Paysage : le type de sol est déduit de la couleur de la photo (erreurs possibles : champ sombre,
   toit clair, calcaire pris pour de la neige au-dessus de 2 400 m) ; un bâtiment isolé hors des zones
   bâties reçoit parfois le détail du sol derrière lui ; les rivières étroites ne sont pas reconnues

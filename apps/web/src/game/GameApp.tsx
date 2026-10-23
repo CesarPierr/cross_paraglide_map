@@ -15,7 +15,8 @@ import { fetchDayWeather, weatherAt, type DayWeather } from './forecast';
 import { fold, listTakeoffs, type Takeoff } from './takeoffs';
 import { WINGS, type WingParams } from './flight';
 import { normalizeRoomCode, randomRoomCode } from './net';
-import { GameEngine, SAINT_HILAIRE, type FlightEnd, type Hud, type NearbyInfo } from './engine';
+import { GameEngine, SAINT_HILAIRE, type ChallengeResult, type FlightEnd, type Hud, type NearbyInfo } from './engine';
+import { CHALLENGE_KM, CHALLENGE_LABEL, challengeKey, type ChallengeKind, type ChallengeLevel } from './challenges';
 import type { ViewMode } from './world';
 import './game.css';
 
@@ -45,6 +46,12 @@ interface Settings {
   mass: number;
   /** Cross-country task: id of a documented route, null for free flight. */
   routeId: string | null;
+  /** A challenge from the take-off (ceiling, out-and-return, FAI triangle) and its level, or null. */
+  challenge: ChallengeKind | null;
+  challengeLevel: ChallengeLevel;
+  /** Flying school: advice at the take-off, in the thermals and for the landing; the take-off's time scale in it. */
+  school: boolean;
+  launchSlow: number;
   /** Flying with friends: room code shared with them, pilot name. */
   multi: boolean;
   room: string;
@@ -69,6 +76,10 @@ const DEFAULTS: Settings = {
   start: 'air',
   mass: 95,
   routeId: null,
+  challenge: null,
+  challengeLevel: 0,
+  school: false,
+  launchSlow: 1,
   multi: false,
   room: '',
   pilotName: '',
@@ -321,15 +332,34 @@ function Menu({ onStart, error, takeoffs, routes }: { onStart: (s: Settings, t: 
             <input type="checkbox" checked={s.mouseWeight} onChange={(e) => set({ mouseWeight: e.target.checked })} /> Sellette à la souris
           </label>
         )}
+        <label className="game-check">
+          <input type="checkbox" checked={s.school} onChange={(e) => set({ school: e.target.checked })} /> Mode école : un moniteur te guide au décollage, dans les thermiques et jusqu’au posé (un conseil à la fois, la touche à presser en évidence)
+        </label>
+        {s.school && (
+          <label className="game-field">
+            <span>Temps au décollage</span>
+            <select value={s.launchSlow} onChange={(e) => set({ launchSlow: +e.target.value })}>
+              <option value={1}>normal</option>
+              <option value={0.75}>ralenti (×0,75)</option>
+              <option value={0.5}>très ralenti (×0,5)</option>
+            </select>
+          </label>
+        )}
         <div className="game-seg" role="radiogroup" aria-label="Mode">
-          <button className={!s.routeId ? 'on' : ''} onClick={() => set({ routeId: null })}>
+          <button className={!s.routeId && !s.challenge ? 'on' : ''} onClick={() => set({ routeId: null, challenge: null })}>
             Vol libre
           </button>
-          <button className={s.routeId ? 'on' : ''} disabled={!nearRoutes.length} title={nearRoutes.length ? '' : 'Aucun itinéraire documenté ne part de ce déco'} onClick={() => set({ routeId: nearRoutes[0]?.r.properties.id ?? null })}>
+          <button className={s.routeId && !s.challenge ? 'on' : ''} disabled={!nearRoutes.length} title={nearRoutes.length ? '' : 'Aucun itinéraire documenté ne part de ce déco'} onClick={() => set({ routeId: nearRoutes[0]?.r.properties.id ?? null, challenge: null })}>
             Manche de cross {nearRoutes.length ? `(${nearRoutes.length})` : ''}
           </button>
+          <button className={s.challenge ? 'on' : ''} title="Plafond, aller-retour ou triangle FAI depuis ce déco, balises placées sur le relief et selon le vent du jour" onClick={() => set({ challenge: s.challenge ?? 'ceiling', routeId: null })}>
+            Défi
+          </button>
         </div>
-        {s.routeId && (
+        {s.challenge && (
+          <ChallengePicker kind={s.challenge} level={s.challengeLevel} takeoffId={takeoff.id} onChange={(kind, level) => set({ challenge: kind, challengeLevel: level })} />
+        )}
+        {s.routeId && !s.challenge && (
           <label className="game-field">
             <span>Itinéraire</span>
             <select value={routeOk ? s.routeId : ''} onChange={(e) => set({ routeId: e.target.value })}>
@@ -387,7 +417,7 @@ function Menu({ onStart, error, takeoffs, routes }: { onStart: (s: Settings, t: 
                 {
                   ...s,
                   takeoffId: takeoff.id,
-                  routeId: routeOk ? s.routeId : null,
+                  routeId: routeOk && !s.challenge ? s.routeId : null,
                   // Today's forecast, or random weather if it could not be had.
                   ...(s.forecastWeather ? (wxNow ? { windFrom: wxNow.windFrom, windKmh: wxNow.windKmh, instability: wxNow.instability, humidity: wxNow.humidity, randomWeather: false, month0: new Date().getMonth() } : { randomWeather: true, forecastWeather: false }) : {}),
                 },
@@ -403,6 +433,113 @@ function Menu({ onStart, error, takeoffs, routes }: { onStart: (s: Settings, t: 
         </div>
         <Keys />
       </div>
+    </div>
+  );
+}
+
+/** Best time of each challenge per take-off, kept in this browser. */
+type ChallengeRecords = Record<string, Record<string, { bestS: number; speed: number | null }>>;
+const CH_RECORDS = 'brises.game.challenges';
+function readChallengeRecords(): ChallengeRecords {
+  try {
+    return JSON.parse(localStorage.getItem(CH_RECORDS) ?? '{}') as ChallengeRecords;
+  } catch {
+    return {};
+  }
+}
+const fmtChrono = (s: number) => {
+  const h = Math.floor(s / 3600);
+  const m = Math.floor((s % 3600) / 60);
+  const sec = Math.floor(s % 60);
+  return h ? `${h} h ${String(m).padStart(2, '0')}` : `${m} min ${String(sec).padStart(2, '0')} s`;
+};
+
+const CH_HELP: Record<ChallengeKind, string> = {
+  ceiling: 'Atteindre le plafond du jour (ou la base des cumulus) le plus vite possible : le chrono part au décollage.',
+  outreturn: 'Une balise sur le relief, puis retour au déco (cylindres de 400 m) ; la première branche face au vent quand il y en a.',
+  fai: 'Trois balises en triangle FAI (plus petite branche ≥ 28 % du total), puis fermeture au déco.',
+};
+
+function ChallengePicker({ kind, level, takeoffId, onChange }: { kind: ChallengeKind; level: ChallengeLevel; takeoffId: string; onChange: (k: ChallengeKind, l: ChallengeLevel) => void }) {
+  const best = readChallengeRecords()[takeoffId]?.[challengeKey(kind, level)];
+  return (
+    <div className="game-challenge-pick">
+      <div className="game-seg" role="radiogroup" aria-label="Défi">
+        {(['ceiling', 'outreturn', 'fai'] as const).map((k) => (
+          <button key={k} className={kind === k ? 'on' : ''} onClick={() => onChange(k, level)}>
+            {CHALLENGE_LABEL[k]}
+          </button>
+        ))}
+      </div>
+      {kind !== 'ceiling' && (
+        <div className="game-seg" role="radiogroup" aria-label="Niveau">
+          {([0, 1, 2] as const).map((l) => (
+            <button key={l} className={level === l ? 'on' : ''} onClick={() => onChange(kind, l)}>
+              {['Facile', 'Moyen', 'Difficile'][l]} · {CHALLENGE_KM[kind][l]} km
+            </button>
+          ))}
+        </div>
+      )}
+      <p className="game-wx">
+        {CH_HELP[kind]} {best ? `Ton record ici : ${fmtChrono(best.bestS)}.` : ''}
+      </p>
+    </div>
+  );
+}
+
+/** The challenge's result on the end card; a new best time is saved and marked. */
+function ChallengeSummary({ r, takeoffId }: { r: ChallengeResult; takeoffId: string }) {
+  const [prev] = useState(() => {
+    const all = readChallengeRecords();
+    const old = all[takeoffId]?.[r.key] ?? null;
+    if (r.success && r.timeS !== null && (!old || r.timeS < old.bestS)) {
+      all[takeoffId] = { ...(all[takeoffId] ?? {}), [r.key]: { bestS: r.timeS, speed: r.speed } };
+      try {
+        localStorage.setItem(CH_RECORDS, JSON.stringify(all));
+      } catch {
+        /* private mode: no records */
+      }
+    }
+    return old;
+  });
+  const record = r.success && r.timeS !== null && (!prev || r.timeS < prev.bestS);
+  return (
+    <p className={`game-challenge-result ${r.success ? 'ok' : 'ko'}`}>
+      <strong>
+        Défi « {r.name} » : {r.success ? 'réussi' : 'pas terminé'}
+        {record && prev && <span className="game-record">record</span>}
+      </strong>
+      {r.success && r.timeS !== null ? (
+        <span>
+          en {fmtChrono(r.timeS)}
+          {r.kind === 'ceiling' ? ` · +${Math.round(r.gainM ?? 0)} m, ${(r.speed ?? 0).toLocaleString('fr-FR', { maximumFractionDigits: 1 })} m/s de moyenne` : ` · ${r.lengthKm.toFixed(1)} km à ${Math.round(r.speed ?? 0)} km/h de moyenne`}
+        </span>
+      ) : (
+        <span>{r.kind === 'ceiling' ? `plafond visé à ${Math.round(r.gainM ?? 0)} m au-dessus du déco` : `${r.madeKm.toFixed(1)} km validés sur ${r.lengthKm.toFixed(1)}`}</span>
+      )}
+      {prev && <span>meilleur temps précédent : {fmtChrono(prev.bestS)}</span>}
+      {r.success && !prev && <span>premier temps enregistré pour ce défi depuis ce déco</span>}
+    </p>
+  );
+}
+
+/** The flying school's advice: one at a time, the keys to press highlighted, a direction to look. */
+function SchoolTip({ t, inline = false }: { t: NonNullable<Hud['school']>; inline?: boolean }) {
+  return (
+    <div className={`game-school lvl${t.level} ${inline ? 'inline' : ''}`} role="status" aria-live="polite">
+      {t.arrow !== null && (
+        <span className="gs-arrow" style={{ transform: `rotate(${t.arrow}deg)` }} aria-hidden>
+          ▲
+        </span>
+      )}
+      <span className="gs-text">{t.text}</span>
+      {t.keys.length > 0 && (
+        <span className="gs-keys">
+          {t.keys.map((k) => (
+            <kbd key={k}>{k}</kbd>
+          ))}
+        </span>
+      )}
     </div>
   );
 }
@@ -594,7 +731,7 @@ function WindRose({ h }: { h: Hud }) {
   );
 }
 
-function BrakeBar({ side, v, pressure, soft, touch, onChange }: { side: 'L' | 'R'; v: number; pressure: number; soft: boolean; touch: boolean; onChange: (v: number) => void }) {
+function BrakeBar({ side, v, pressure, soft, touch, hl, onChange }: { side: 'L' | 'R'; v: number; pressure: number; soft: boolean; touch: boolean; hl?: boolean; onChange: (v: number) => void }) {
   const ref = useRef<HTMLDivElement>(null);
   const drag = (e: React.PointerEvent) => {
     if (!touch || !ref.current) return;
@@ -604,7 +741,7 @@ function BrakeBar({ side, v, pressure, soft, touch, onChange }: { side: 'L' | 'R
   return (
     <div
       ref={ref}
-      className={`game-brake ${side === 'L' ? 'left' : 'right'} ${touch ? 'touch' : ''} ${soft ? 'soft' : ''}`}
+      className={`game-brake ${side === 'L' ? 'left' : 'right'} ${touch ? 'touch' : ''} ${soft ? 'soft' : ''} ${hl ? 'school-hl' : ''}`}
       title={soft ? 'La pression mollit : la voile approche de la fermeture, freinez un peu (pilotage actif)' : undefined}
       onPointerDown={(e) => {
         (e.target as HTMLElement).setPointerCapture(e.pointerId);
@@ -863,7 +1000,7 @@ export default function GameApp() {
         seed,
       };
       engineRef.current?.dispose();
-      const engine = new GameEngine(box.current!, scenario, atlas, { meta, url }, takeoff, { onHud: setHud, onStatus: setStatus, onEnd: setEnd }, { view: s.view, showThermals: s.showThermals, wing: s.wing, start: s.start, mass: s.mass, routeId: s.routeId, multi: s.multi && s.room.length >= 4 ? { room: s.room, name: s.pilotName.trim() || 'Pilote' } : null, others: s.others });
+      const engine = new GameEngine(box.current!, scenario, atlas, { meta, url }, takeoff, { onHud: setHud, onStatus: setStatus, onEnd: setEnd }, { view: s.view, showThermals: s.showThermals, wing: s.wing, start: s.start, mass: s.mass, routeId: s.challenge ? null : s.routeId, multi: s.multi && s.room.length >= 4 ? { room: s.room, name: s.pilotName.trim() || 'Pilote' } : null, others: s.others, school: s.school, launchSlow: s.launchSlow, challenge: s.challenge ? { kind: s.challenge, level: s.challengeLevel } : null });
       engineRef.current = engine;
       setEng(engine);
       if (import.meta.env.DEV) (window as unknown as { __game: GameEngine }).__game = engine;
@@ -961,7 +1098,7 @@ export default function GameApp() {
             </div>
           </div>
           {(hud.incident || hud.hazard) && (
-            <div className="game-alert">
+            <div className={`game-alert ${hud.task || hud.challenge ? 'below-task' : ''}`}>
               {hud.incident && <strong>{hud.incident}</strong>}
               {hud.hazard && <span>Zone documentée : {hud.hazard}</span>}
             </div>
@@ -969,7 +1106,7 @@ export default function GameApp() {
           {hud.multi && <MultiPanel m={hud.multi} onSend={(t) => eng?.sendChat(t)} />}
           {hud.task && (
             <div className={`game-task ${hud.task.goal ? 'goal' : ''}`}>
-              <span className="gt-name">{hud.task.name}</span>
+              <span className="gt-name">{hud.challenge ? `Défi : ${hud.task.name}` : hud.task.name}</span>
               {hud.task.goal ? (
                 <strong>But atteint · {hud.task.clock}</strong>
               ) : (
@@ -987,9 +1124,25 @@ export default function GameApp() {
               )}
             </div>
           )}
+          {hud.challenge && hud.challenge.kind === 'ceiling' && (
+            <div className={`game-task ${hud.challenge.done ? 'goal' : ''}`}>
+              <span className="gt-name">Défi : {hud.challenge.name}</span>
+              {hud.challenge.done ? (
+                <strong>Plafond atteint · {hud.challenge.clock}</strong>
+              ) : (
+                <>
+                  <strong>
+                    Vise {Math.round((hud.challenge.target ?? 0) / 10) * 10} m · encore {Math.max(0, Math.round((hud.challenge.target ?? 0) - hud.alt))} m
+                  </strong>
+                  <span>{hud.challenge.started ? hud.challenge.clock : 'le chrono part au décollage'}</span>
+                </>
+              )}
+            </div>
+          )}
+          {hud.school && !hud.launch && !hud.landing && <SchoolTip t={hud.school} />}
           {hud.launch && (
             <div className="game-launch">
-              <strong>{hud.launch.hint}</strong>
+              {hud.school ? <SchoolTip t={hud.school} inline /> : <strong>{hud.launch.hint}</strong>}
               <div className="gl-row">
                 <span>voile {hud.launch.theta}°</span>
                 <span>côté {hud.launch.phi > 0 ? '+' : ''}{hud.launch.phi}°</span>
@@ -1014,7 +1167,7 @@ export default function GameApp() {
           )}
           {hud.landing && (
             <div className="game-launch landing">
-              <strong>{hud.landing.hint}</strong>
+              {hud.school ? <SchoolTip t={hud.school} inline /> : <strong>{hud.landing.hint}</strong>}
               <div className="gl-row">
                 <span>course {Math.round(hud.landing.speedKmh)} km/h</span>
               </div>
@@ -1028,8 +1181,8 @@ export default function GameApp() {
             </div>
           )}
           {hud.brakeFlash && <BrakeFlash side={hud.brakeFlash} l={hud.brakeL} r={hud.brakeR} target={eng?.brakeSteps() ?? null} />}
-          <BrakeBar side="L" v={hud.brakeL} pressure={hud.pressureL} soft={hud.pressureWarn > 0.5} touch={touch} onChange={(v) => eng?.setBrake('L', v)} />
-          <BrakeBar side="R" v={hud.brakeR} pressure={hud.pressureR} soft={hud.pressureWarn > 0.5} touch={touch} onChange={(v) => eng?.setBrake('R', v)} />
+          <BrakeBar side="L" v={hud.brakeL} pressure={hud.pressureL} soft={hud.pressureWarn > 0.5} touch={touch} hl={hud.school?.side === 'L'} onChange={(v) => eng?.setBrake('L', v)} />
+          <BrakeBar side="R" v={hud.brakeR} pressure={hud.pressureR} soft={hud.pressureWarn > 0.5} touch={touch} hl={hud.school?.side === 'R'} onChange={(v) => eng?.setBrake('R', v)} />
           {touch ? (
             // Touch: speed bar and ears beside the brakes, the harness a slider in the middle;
             // none of them on the ground (take-off, landing run).
@@ -1075,6 +1228,7 @@ export default function GameApp() {
         <div className="game-pause">
           <div className="game-card">
             <h2>{end.kind === 'landed' ? 'Posé !' : end.kind === 'hard' ? 'Posé, un peu dur' : end.kind === 'launch' ? 'Décollage raté' : 'Crash'}</h2>
+            {end.challenge && <ChallengeSummary r={end.challenge} takeoffId={eng.takeoff.id} />}
             {end.task && (
               <p className="game-task-result">
                 Manche « {end.task.name} » : {end.task.goal ? `but en ${end.task.time}` : `${end.task.madeKm.toFixed(1)} km validés sur ${end.task.totalKm.toFixed(1)} (balises ${end.task.tagged}/${end.task.count})`}

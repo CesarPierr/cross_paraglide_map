@@ -14,6 +14,10 @@ import { landingStep, launchStep, newLanding, newLaunch, runOn, touchdown, type 
 import { AiPilots } from './ai-pilots';
 import { PilotAir } from './pilot-air';
 import { advanceTask, distanceMadeGood, taskFromRoute, taskLength, type Task } from './task';
+import { Grid } from '@brises/model';
+import { fetchGridPixels } from '../engine/grid-pixels';
+import { gridHeights, makeChallenge, type Challenge, type ChallengeKind, type ChallengeLevel } from './challenges';
+import { explainLaunch, newSchoolInput, School, type SchoolInput } from './school';
 import { Multiplayer, type NetEvent } from './net';
 import type { ModelAir } from './game-worker';
 import { LocalFrame } from './geo';
@@ -78,14 +82,36 @@ export interface Hud {
   weight: number;
   /** After touchdown: run-out speed (km/h) and what to do. */
   landing: { speedKmh: number; hint: string } | null;
+  /** Flying school: the advice shown, its keys, urgency (0..2), the brake side or direction (deg rel.) to show. */
+  school: { id: string; text: string; keys: readonly string[]; level: number; side: 'L' | 'R' | null; arrow: number | null } | null;
+  /** The challenge flown: its name, the chrono (from the take-off), and for the ceiling the altitude to reach. */
+  challenge: { name: string; kind: ChallengeKind; clock: string; started: boolean; done: boolean; target: number | null; issues: string[] } | null;
+}
+
+/** Result of a challenge, for the end card and the records. */
+export interface ChallengeResult {
+  key: string;
+  name: string;
+  kind: ChallengeKind;
+  success: boolean;
+  /** Chrono from the take-off to the goal (s), null if not reached. */
+  timeS: number | null;
+  /** Course length (km; the height to climb for the ceiling, in m), distance made good (km). */
+  lengthKm: number;
+  madeKm: number;
+  /** Mean speed over the course (km/h), or mean climb to the ceiling (m/s). */
+  speed: number | null;
+  /** Height gained to the ceiling (m). */
+  gainM: number | null;
 }
 
 export interface FlightEnd {
   kind: 'landed' | 'hard' | 'crash' | 'launch';
   /** Cross-country task result. */
   task?: { name: string; goal: boolean; time: string | null; madeKm: number; totalKm: number; tagged: number; count: number };
-  /** Why a take-off failed. */
+  /** Why a take-off failed (with the school's explanation in school mode). */
   reason?: string;
+  challenge?: ChallengeResult;
   vz: number;
   groundKmh: number;
   flightS: number;
@@ -107,6 +133,9 @@ export interface NearbyInfo {
   distKm: number;
   bearing: number;
 }
+
+/** An angle (rad) as degrees in -180 … 180. */
+const relDeg = (a: number) => (((((a * 180) / Math.PI + 540) % 360) + 360) % 360) - 180;
 
 function fmtTime(s: number): string {
   const h = Math.floor(s / 3600);
@@ -216,8 +245,11 @@ export class GameEngine {
     private dem: { meta: GridMeta; url: string },
     readonly takeoff: Takeoff,
     private cb: { onHud: (h: Hud) => void; onStatus: (s: string | null) => void; onEnd: (e: FlightEnd) => void },
-    opts: { view: ViewMode; showThermals: boolean; wing?: WingParams['id']; start?: 'air' | LaunchMode; mass?: number; routeId?: string | null; multi?: { room: string; name: string } | null; others?: boolean },
+    opts: { view: ViewMode; showThermals: boolean; wing?: WingParams['id']; start?: 'air' | LaunchMode; mass?: number; routeId?: string | null; multi?: { room: string; name: string } | null; others?: boolean; school?: boolean; launchSlow?: number; challenge?: { kind: ChallengeKind; level: ChallengeLevel } | null },
   ) {
+    this.school = opts.school ? new School() : null;
+    this.launchSlow = this.school ? Math.max(0.25, Math.min(1, opts.launchSlow ?? 1)) : 1;
+    this.challengeOpt = opts.challenge ?? null;
     this.multi = opts.multi ?? null;
     this.others = opts.others ?? true;
     this.wing = WINGS[opts.wing ?? 'B'];
@@ -239,9 +271,37 @@ export class GameEngine {
     this.hour = scenario.hour;
     this.showThermals = opts.showThermals;
     this.timeScale = scenario.timeScale;
-    const route = opts.routeId ? (atlas.features.routes ?? []).find((f) => f.properties.id === opts.routeId) : undefined;
+    const route = opts.routeId && !this.challengeOpt ? (atlas.features.routes ?? []).find((f) => f.properties.id === opts.routeId) : undefined;
     this.task = route ? taskFromRoute(route, this.frame) : null;
   }
+
+  /** Flying school (school.ts), when chosen; the time scale of the take-off in it (slow motion). */
+  readonly school: School | null;
+  private launchSlow: number;
+  private schoolIn = newSchoolInput();
+  private schoolT = 0;
+  private senseT = { land: 0 };
+  /** The scan of the thermal sources in progress (school): where it is, the best core and next thermal so far. */
+  private scan = { k: 0, coreD: 600, coreX: NaN, coreY: NaN, coreW: 0, nextScore: 0, nextX: NaN, nextY: NaN };
+  /** Where the core and the next thermal were found (local metres; NaN none): their direction follows the turns. */
+  private coreAt = { x: NaN, y: NaN };
+  private nextAt = { x: NaN, y: NaN };
+  /** Left minus right tip lift (m/s), smoothed. */
+  private tipLiftF = 0;
+  /** The site's wind relative to the run on the take-off (m/s). */
+  private launchWind = { head: NaN, cross: 0 };
+  private reliefWarnT = -10;
+  private reliefSide = 0;
+  /** Landing fields documented around (local metres, altitude), for the school's approach. */
+  private landings: { name: string; x: number; y: number; alt: number | null }[] = [];
+  private landingPick: { name: string; x: number; y: number; alt: number } | null = null;
+
+  /** The challenge asked for, the one generated (challenges.ts), its chrono and result. */
+  private challengeOpt: { kind: ChallengeKind; level: ChallengeLevel } | null;
+  challenge: Challenge | null = null;
+  private chal = { startS: NaN, doneS: NaN, startAlt: 0 };
+  /** Cost of the school and challenge logic (dev: ms summed, frames). */
+  readonly logicCost = { ms: 0, frames: 0, maxMs: 0, slow: 0 };
 
   /** Cross-country task (a documented route), or null in free flight. */
   task: Task | null = null;
@@ -361,6 +421,8 @@ export class GameEngine {
         end: f.properties.windowEnd ?? 17.5,
       }));
     await this.placeSocks();
+    if (this.challengeOpt) await this.prepareChallenge(this.challengeOpt.kind, this.challengeOpt.level);
+    if (this.school) this.landings = this.landingFields();
     this.cb.onStatus('Chargement du paysage…');
     await this.world.ready;
     // The ground's heights around the start, for the collisions and the relief the wind meets.
@@ -380,7 +442,9 @@ export class GameEngine {
     this.cb.onStatus('Chargement du paysage tout autour…');
     this.world.frameUpdate(this.glider, this.head);
     await this.world.imageryAround(4000);
-    if (this.task) this.world.setTask(this.task.points, this.task.next);
+    if (this.task) this.showTask(this.task);
+    // A course the day makes hard (a high take-off under a low ceiling): said once, at the start.
+    if (this.challenge && !this.challenge.ok) this.incident = { text: `Défi difficile aujourd’hui : ${this.challenge.issues[0]}`, until: 8 };
     this.cb.onStatus(null);
     void this.connectMulti();
     if (this.others) {
@@ -396,6 +460,67 @@ export class GameEngine {
     this.attribTimer = setTimeout(() => this.world.collapseAttribution(), touch ? 0 : 8000);
     this.last = performance.now();
     this.raf = requestAnimationFrame(this.loop);
+  }
+
+  /**
+   * The challenge from this take-off (challenges.ts): the ceiling needs nothing more; the
+   * courses are generated on the model's grid of heights (the image the worker reads too,
+   * from the browser's cache) and the day's ceiling and wind.
+   */
+  private async prepareChallenge(kind: ChallengeKind, level: ChallengeLevel): Promise<void> {
+    this.cb.onStatus('Préparation du défi…');
+    const t0 = performance.now();
+    let ch: Challenge;
+    if (kind === 'ceiling') ch = makeChallenge('ceiling', level, { heightAt: () => null }, { windFrom: 0, windKmh: 0, top: () => 0 });
+    else {
+      const px = await fetchGridPixels(this.dem.url, this.dem.meta);
+      if (!px) throw new Error('relief du modèle indisponible pour placer les balises');
+      const terrain = gridHeights(new Grid(this.dem.meta), (k) => px[k * 4] * 256 + px[k * 4 + 1] - 32768, (x, y) => this.frame.toLngLat(x, y));
+      const air = this.air;
+      const t1 = performance.now();
+      ch = makeChallenge(kind, level, terrain, { windFrom: air.windFrom, windKmh: air.windKmh, top: (g) => Math.min(air.ceiling(g), air.cloudBase(g)) });
+      if (import.meta.env.DEV) console.info(`[jeu] défi ${ch.name} : relief ${Math.round(t1 - t0)} ms, génération ${(performance.now() - t1).toFixed(1)} ms${ch.ok ? '' : ` (${ch.issues.join(' ; ')})`}`);
+      // The turn points named after a documented place close to them, to find them on the map.
+      const named = [...(this.atlas.features.takeoffs ?? []), ...(this.atlas.features.landings ?? []), ...(this.atlas.features.thermals ?? [])].filter((f) => f.geometry.type === 'Point');
+      for (const p of ch.points.slice(1, -1)) {
+        let best = 1500;
+        let name = '';
+        for (const f of named) {
+          const [x, y] = this.frame.toXY(f.geometry.coordinates[0] as number, f.geometry.coordinates[1] as number);
+          const d = Math.hypot(x - p.x, y - p.y);
+          if (d < best) {
+            best = d;
+            name = f.properties.name.split(/[:(–]/)[0].trim();
+          }
+        }
+        if (name) p.name = `${p.name} · ${name.length > 26 ? `${name.slice(0, 25)}…` : name}`;
+      }
+      this.task = { id: `challenge-${ch.key}`, name: ch.name, points: ch.points, next: 0, tags: [], legs: ch.points.slice(1).map((p, i) => Math.hypot(p.x - ch.points[i].x, p.y - ch.points[i].y)), goalT: null };
+    }
+    this.challenge = ch;
+    this.chal = { startS: NaN, doneS: NaN, startAlt: this.takeoff.alt };
+  }
+
+  /**
+   * The task's cylinders in the view. A challenge starts and ends at the take-off: once the
+   * start is tagged, only the goal's cylinder stays there.
+   */
+  private showTask(t: Task): void {
+    const k = this.challenge && t.next >= 1 ? 1 : 0;
+    this.world.setTask(k ? t.points.slice(k) : t.points, t.next - k);
+  }
+
+  /** The documented landing fields within 60 km (their altitude from the sheet when given). */
+  private landingFields(): { name: string; x: number; y: number; alt: number | null }[] {
+    const out: { name: string; x: number; y: number; alt: number | null }[] = [];
+    for (const f of this.atlas.features.landings ?? []) {
+      if (f.geometry.type !== 'Point') continue;
+      const [x, y] = this.frame.toXY(f.geometry.coordinates[0] as number, f.geometry.coordinates[1] as number);
+      if (Math.hypot(x, y) > 60000) continue;
+      const alt = parseFloat((f.properties.details?.Altitude ?? '').replace(/\s/g, ''));
+      out.push({ name: f.properties.name.split(/[:(]/)[0].trim(), x, y, alt: Number.isFinite(alt) ? alt : null });
+    }
+    return out;
   }
 
   /** Model window around the pilot (radius in metres); re-initialised when he flies out of it. */
@@ -585,7 +710,7 @@ export class GameEngine {
   setTopo(on: boolean): void {
     if (on) this.paused = true;
     const g = this.glider;
-    this.world.setTopo(on, { x: g.x, y: g.y, heading: g.heading }, this.nearbyFeatures(15));
+    this.world.setTopo(on, { x: g.x, y: g.y, heading: g.heading }, on ? [...this.nearbyFeatures(15), ...this.taskFeatures()] : []);
   }
   get topo(): boolean {
     return this.world.topo;
@@ -650,7 +775,8 @@ export class GameEngine {
     this.last = now;
     this.readKeys(real);
     if (!this.paused && !this.ended && real > 0) {
-      const dt = real * this.timeScale;
+      // (School: the take-off may run in slow motion.)
+      const dt = real * this.timeScale * (this.launch ? this.launchSlow : 1);
       this.gameT += dt;
       this.flightS += dt;
       this.hour += dt / 3600;
@@ -701,10 +827,26 @@ export class GameEngine {
       if (this.task && !this.launch && !this.landing) {
         const tagged = advanceTask(this.task, this.glider.x, this.glider.y, this.flightS);
         if (tagged) {
-          this.world.setTask(this.task.points, this.task.next);
+          this.showTask(this.task);
           const goal = this.task.goalT !== null;
-          this.incident = { text: goal ? `But atteint en ${fmtTime(this.flightS)} !` : `Balise validée : ${tagged.name}`, until: this.flightS + 4 };
+          // A challenge's chrono runs from the start (the take-off's cylinder, left at the lift-off).
+          const t0 = this.challenge ? (this.task.tags[0] ?? 0) : 0;
+          this.incident = { text: goal ? `But atteint en ${fmtTime(this.flightS - t0)} !` : this.challenge && this.task.next === 1 ? `Chrono parti : ${this.challenge.name}` : `Balise validée : ${tagged.name}`, until: this.flightS + 4 };
+          if (goal && this.challenge) {
+            this.chal.doneS = this.flightS - t0;
+            this.audio.chime();
+          }
         }
+      }
+      const c0 = import.meta.env.DEV ? performance.now() : 0;
+      if (this.challenge?.kind === 'ceiling') this.ceilingChallenge(dt);
+      if (this.school) this.schoolStep(real);
+      if (import.meta.env.DEV) {
+        const ms = performance.now() - c0;
+        this.logicCost.ms += ms;
+        this.logicCost.frames++;
+        this.logicCost.maxMs = Math.max(this.logicCost.maxMs, ms);
+        if (ms > 0.25) this.logicCost.slow++;
       }
       this.varioF += (g.vz - this.varioF) * Math.min(1, dt / 0.6);
       const gl = this.glider;
@@ -771,6 +913,8 @@ export class GameEngine {
     // The site's wind at the take-off, relative to the run direction (a log profile: the wing is ~6 m up).
     const headwind = -(u * sx + v * sy);
     const crosswind = -(u * sy - v * sx);
+    this.launchWind.head = headwind;
+    this.launchWind.cross = crosswind;
     const here = this.groundAt(g.x, g.y);
     const ahead = this.groundAt(g.x + sx * 15, g.y + sy * 15);
     const slope = (here - ahead) / 15;
@@ -802,12 +946,14 @@ export class GameEngine {
       this.world.glider.setInflation(null);
       this.liftoffT = this.flightS;
       this.head = { yaw: 0, pitch: -0.12 };
-      this.incident = { text: 'Décollé ! Mains hautes, éloigne-toi du relief', until: this.flightS + 4 };
-    } else if (L.phase === 'aborted') {
+      // (In school mode the school says it, with the key.)
+      if (!this.school) this.incident = { text: 'Décollé ! Mains hautes, éloigne-toi du relief', until: this.flightS + 4 };
+    } else if (L.phase === 'aborted' && !this.school) {
       this.incident = { text: `${L.failReason ?? 'Voile affalée.'} (R pour recommencer)`, until: this.flightS + 6 };
     } else if (L.phase === 'failed') {
       this.ended = true;
-      this.cb.onEnd({ kind: 'launch', vz: 0, groundKmh: L.run * 3.6, flightS: this.flightS, distKm: 0, maxAlt: g.z, gainM: 0, bestClimb: 0, ceilingS: null, reason: L.failReason ?? '' });
+      const why = L.failReason ?? '';
+      this.cb.onEnd({ kind: 'launch', vz: 0, groundKmh: L.run * 3.6, flightS: this.flightS, distKm: 0, maxAlt: g.z, gainM: 0, bestClimb: 0, ceilingS: null, reason: this.school ? explainLaunch(why, this.launchWind.head) : why, challenge: this.challengeResult() });
     }
   }
 
@@ -915,6 +1061,12 @@ export class GameEngine {
       const clear = g.z + g.vz * t - this.groundAt(g.x + g.vx * t, g.y + g.vy * t);
       if (clear < (t === 2 ? 6 : 0)) {
         if (!this.incident || this.incident.until < this.flightS) this.incident = { text: 'Relief devant : vire ou écarte-toi', until: this.flightS + 1.5 };
+        // The lower side, 150 m ahead and 50° off the path (the school says where to turn).
+        const dir = Math.atan2(g.vx, g.vy);
+        const gl = this.groundAt(g.x + Math.sin(dir - 0.87) * 150, g.y + Math.cos(dir - 0.87) * 150);
+        const gr = this.groundAt(g.x + Math.sin(dir + 0.87) * 150, g.y + Math.cos(dir + 0.87) * 150);
+        this.reliefWarnT = this.flightS;
+        this.reliefSide = Math.abs(gl - gr) < 8 ? 0 : gl < gr ? -1 : 1;
         if (this.flightS - this.alertT > 1.2) {
           this.alertT = this.flightS;
           this.audio.groundAlert();
@@ -1000,8 +1152,203 @@ export class GameEngine {
       bestClimb: this.stats.best,
       ceilingS: this.stats.ceilingS,
       reason: reason || undefined,
-      task: t ? { name: t.name, goal: t.goalT !== null, time: t.goalT !== null ? fmtTime(t.goalT) : null, madeKm: distanceMadeGood(t, g.x, g.y) / 1000, totalKm: taskLength(t) / 1000, tagged: t.next, count: t.points.length } : undefined,
+      task: t && !this.challenge ? { name: t.name, goal: t.goalT !== null, time: t.goalT !== null ? fmtTime(t.goalT) : null, madeKm: distanceMadeGood(t, g.x, g.y) / 1000, totalKm: taskLength(t) / 1000, tagged: t.next, count: t.points.length } : undefined,
+      challenge: this.challengeResult(),
     });
+  }
+
+  /** The ceiling challenge: the chrono from the take-off to the day's top here (checked twice a second). */
+  private ceilT = 0;
+  private ceilTarget = NaN;
+  private ceilingChallenge(dt: number): void {
+    const c = this.chal;
+    if (this.launch) return;
+    if (!Number.isFinite(c.startS)) c.startS = this.flightS;
+    this.ceilT -= dt;
+    if (this.ceilT > 0 && Number.isFinite(this.ceilTarget)) return;
+    this.ceilT = 0.5;
+    this.ceilTarget = this.ceilingTarget();
+    if (Number.isFinite(c.doneS) || this.landing) return;
+    if (this.glider.z >= this.ceilTarget) {
+      c.doneS = this.flightS - c.startS;
+      this.incident = { text: `Plafond atteint en ${fmtTime(c.doneS)} !`, until: this.flightS + 5 };
+      this.audio.chime();
+    }
+  }
+  /**
+   * Altitude to reach: 100 m under the day's top here (as the flight's stats count it), at least
+   * 200 m above the take-off, but never above the top itself (a low day: then just under it, the
+   * challenge said hard at the start).
+   */
+  private ceilingTarget(): number {
+    const g = this.glider;
+    const ground = this.groundAt(g.x, g.y);
+    const top = Math.min(this.air.ceilingAt(g.x, g.y, ground), this.air.cloudBaseAt(g.x, g.y, ground));
+    return Math.min(Math.max(top - 100, this.chal.startAlt + 200), top - 30);
+  }
+
+  private challengeResult(): ChallengeResult | undefined {
+    const ch = this.challenge;
+    if (!ch) return undefined;
+    const done = Number.isFinite(this.chal.doneS);
+    const timeS = done ? this.chal.doneS : null;
+    if (ch.kind === 'ceiling') {
+      const gain = (Number.isFinite(this.ceilTarget) ? this.ceilTarget : this.ceilingTarget()) - this.chal.startAlt;
+      return { key: ch.key, name: ch.name, kind: ch.kind, success: done, timeS, lengthKm: 0, madeKm: 0, speed: done && timeS ? gain / timeS : null, gainM: gain };
+    }
+    const t = this.task;
+    const g = this.glider;
+    const made = t ? distanceMadeGood(t, g.x, g.y) / 1000 : 0;
+    return { key: ch.key, name: ch.name, kind: ch.kind, success: done, timeS, lengthKm: ch.lengthM / 1000, madeKm: made, speed: done && timeS ? ch.lengthM / 1000 / (timeS / 3600) : null, gainM: null };
+  }
+
+  // --- Flying school: what it reads of the flight, ten times a second (school.ts).
+  private schoolClock = 0;
+  private schoolStep(real: number): void {
+    const sc = this.school!;
+    this.schoolClock += real;
+    this.schoolT -= real;
+    if (this.schoolT > 0) return;
+    this.schoolT = 0.1;
+    const s = this.schoolIn;
+    const g = this.glider;
+    const ground = this.groundAt(g.x, g.y);
+    s.t = this.schoolClock;
+    s.phase = this.launch ? 'launch' : this.landing ? 'landing' : 'air';
+    s.launch = this.launch;
+    s.headwind = this.modelAir ? this.launchWind.head : NaN;
+    s.crosswind = this.launchWind.cross;
+    s.sinceLiftoff = this.liftoffT > -1e8 ? this.flightS - this.liftoffT : NaN;
+    s.z = g.z;
+    s.agl = g.z - ground;
+    s.vz = g.vz;
+    s.vario = this.varioF;
+    s.climbAvg = this.climbAverage() ?? NaN;
+    s.bank = g.bank;
+    s.turnRate = g.turnRate;
+    s.airspeed = g.airspeed;
+    s.brakeL = g.brakeL;
+    s.brakeR = g.brakeR;
+    s.stall = g.stall;
+    s.spin = g.spin;
+    s.collapse = g.collapse.amount;
+    // The wing that lifts: the air at the tips, and its gusts as the wing feels them.
+    const a = this.airSample;
+    this.tipLiftF += ((a.wL ?? 0) - (a.wR ?? 0) + 0.5 * (g.tipHpL - g.tipHpR) - this.tipLiftF) * 0.15;
+    s.tipLift = this.launch ? 0 : this.tipLiftF;
+    s.top = Math.min(this.air.ceilingAt(g.x, g.y, ground), this.air.cloudBaseAt(g.x, g.y, ground));
+    const m = this.modelAir;
+    if (m) {
+      s.windRel = relDeg(Math.atan2(-m.u, -m.v) - g.heading);
+      s.windSpeed = Math.hypot(m.u, m.v);
+    }
+    s.reliefAhead = this.flightS - this.reliefWarnT < 1;
+    s.reliefSide = this.reliefSide;
+    if (s.phase === 'air') this.senseAir(s);
+    sc.update(s);
+    if (sc.takeChime()) this.audio.chime();
+  }
+
+  /** The best lift of the last turn, the core nearby, the next thermal and the landing field. */
+  private senseAir(s: SchoolInput): void {
+    const g = this.glider;
+    const b = this.trailBuf;
+    let wx = 0;
+    let wy = 0;
+    let ws = 0;
+    for (let i = Math.max(0, b.length - 100); i < b.length; i++) {
+      const v = b[i].v;
+      if (v > 0.2) {
+        wx += b[i].x * v;
+        wy += b[i].y * v;
+        ws += v;
+      }
+    }
+    if (ws > 2) {
+      s.bestDist = Math.hypot(wx / ws - g.x, wy / ws - g.y);
+      s.bestRel = relDeg(Math.atan2(wx / ws - g.x, wy / ws - g.y) - g.heading);
+    } else s.bestDist = NaN;
+    const T = this.senseT;
+    const now = this.schoolClock;
+    // The thermals around, a slice of the sources at each reading (a full pass in < 1 s): the
+    // core at the pilot's height within 600 m, and the next thermal, strong enough to climb in
+    // (>= 1.2 m/s, the wing sinks ~1.1) and reached with a glide of 7 and 200 m to spare. (The
+    // thermals lean with the wind: a wide box on their sources.)
+    // Only while it serves: flying straight (lift met, the core's side; gliding on, the next one)
+    // or at the ceiling; not while circling (the best of the turn comes from the track). (AirMass.
+    // column makes a small object per thermal examined.)
+    const src = this.air.sources;
+    const S = this.scan;
+    const wanted = Math.abs(g.turnRate) < 0.15 || g.z > s.top - 200;
+    if (S.k === 0 && !wanted) {
+      this.coreAt.x = NaN;
+      this.nextAt.x = NaN;
+    }
+    const end = S.k === 0 && !wanted ? 0 : Math.min(src.length, S.k + 400);
+    for (let k = S.k; k < end; k++) {
+      const th = src[k];
+      if (Math.abs(th.x - g.x) > 4500 || Math.abs(th.y - g.y) > 4500) continue;
+      const c = this.air.columnShared(th, g.z, this.gameT);
+      if (!c || c.w < 0.5) continue;
+      const d = Math.hypot(c.cx - g.x, c.cy - g.y);
+      if (d < S.coreD) {
+        S.coreD = d;
+        S.coreX = c.cx;
+        S.coreY = c.cy;
+        S.coreW = c.w;
+      }
+      if (c.w < 1.2 || d < 250 || g.z - (th.ground + 200) < d / 7) continue;
+      const score = c.w / (1 + d / 1500);
+      if (score > S.nextScore) {
+        S.nextScore = score;
+        S.nextX = c.cx;
+        S.nextY = c.cy;
+      }
+    }
+    S.k = end;
+    if (end > 0 && end >= src.length) {
+      this.coreAt.x = S.coreX;
+      this.coreAt.y = S.coreY;
+      s.coreW = S.coreW;
+      this.nextAt.x = S.nextX;
+      this.nextAt.y = S.nextY;
+      S.k = 0;
+      S.coreD = 600;
+      S.coreX = NaN;
+      S.nextScore = 0;
+      S.nextX = NaN;
+    }
+    const ca = this.coreAt;
+    s.coreDist = Number.isFinite(ca.x) ? Math.hypot(ca.x - g.x, ca.y - g.y) : NaN;
+    if (Number.isFinite(ca.x)) s.coreRel = relDeg(Math.atan2(ca.x - g.x, ca.y - g.y) - g.heading);
+    const na = this.nextAt;
+    s.nextDist = Number.isFinite(na.x) ? Math.hypot(na.x - g.x, na.y - g.y) : NaN;
+    if (Number.isFinite(na.x)) s.nextRel = relDeg(Math.atan2(na.x - g.x, na.y - g.y) - g.heading);
+    if (now - T.land > 1) {
+      // The landing field: the documented one needing the flattest glide within 12 km (kept unless another is clearly easier).
+      T.land = now;
+      let pick = this.landingPick;
+      let need = pick ? Math.hypot(pick.x - g.x, pick.y - g.y) / Math.max(1, g.z - pick.alt) : Infinity;
+      for (const l of this.landings) {
+        const d = Math.hypot(l.x - g.x, l.y - g.y);
+        if (d > 12000) continue;
+        const alt = l.alt ?? this.world.groundAt(l.x, l.y);
+        if (alt === null) continue;
+        const n = d / Math.max(1, g.z - alt);
+        if (n < need - 0.5) {
+          need = n;
+          pick = { name: l.name, x: l.x, y: l.y, alt };
+        }
+      }
+      this.landingPick = pick;
+    }
+    const p = this.landingPick;
+    if (p && Math.hypot(p.x - g.x, p.y - g.y) < 15000) {
+      s.landName = p.name;
+      s.landDist = Math.hypot(p.x - g.x, p.y - g.y);
+      s.landRel = relDeg(Math.atan2(p.x - g.x, p.y - g.y) - g.heading);
+      s.landHeight = g.z - p.alt;
+    } else s.landDist = NaN;
   }
 
   private distKm(): number {
@@ -1077,6 +1424,8 @@ export class GameEngine {
       weight: g.weightShift,
       landing: this.landing ? { speedKmh: Math.round(Math.abs(this.landing.v) * 3.6), hint: this.landing.theta > 0.8 ? 'Cours, puis freins à fond (ou X) pour affaler la voile' : 'Voile affalée' } : null,
       task: this.task ? this.taskHud(this.task) : null,
+      school: this.school?.active ? { ...this.school.tip } : null,
+      challenge: this.challenge ? this.challengeHud(this.challenge) : null,
       multi: this.multi
         ? {
             room: this.multi.room,
@@ -1086,6 +1435,15 @@ export class GameEngine {
           }
         : null,
     };
+  }
+
+  private challengeHud(ch: Challenge): NonNullable<Hud['challenge']> {
+    const c = this.chal;
+    const t0 = ch.kind === 'ceiling' ? c.startS : (this.task?.tags[0] ?? NaN);
+    const started = Number.isFinite(t0);
+    const done = Number.isFinite(c.doneS);
+    const clock = fmtTime(done ? c.doneS : started ? this.flightS - t0 : 0);
+    return { name: ch.name, kind: ch.kind, clock, started, done, target: ch.kind === 'ceiling' ? (Number.isFinite(this.ceilTarget) ? this.ceilTarget : this.ceilingTarget()) : null, issues: ch.issues };
   }
 
   private taskHud(t: Task) {
@@ -1107,7 +1465,7 @@ export class GameEngine {
       glide: height > 10 ? d / height : null,
       doneKm: distanceMadeGood(t, g.x, g.y) / 1000,
       totalKm: taskLength(t) / 1000,
-      clock: fmtTime(this.flightS),
+      clock: this.challenge ? fmtTime(t.goalT !== null ? t.goalT - (t.tags[0] ?? 0) : t.tags.length ? this.flightS - t.tags[0] : 0) : fmtTime(this.flightS),
       goal: t.goalT !== null,
     };
   }
@@ -1126,6 +1484,21 @@ export class GameEngine {
     else if (L.facingWing) hint = 'Voile stable au-dessus : Espace pour te retourner';
     else hint = 'Voile stable : relâche les freins et cours (Z) jusqu’à décoller';
     return { phase: L.phase, theta: deg(L.theta), phi: deg(L.phi), airKmh: Math.round(L.airspeed * 3.6), facingWing: L.facingWing, mode: L.mode, hint };
+  }
+
+  /** The task's course and turn points as map features (category « task »), for the topo map. */
+  private taskFeatures(): AtlasFeature[] {
+    const t = this.task;
+    if (!t) return [];
+    const ll = t.points.map((p) => this.frame.toLngLat(p.x, p.y));
+    const props = (id: string, name: string) => ({ id, category: 'task', massif: '', name, description: '', sources: '' });
+    const out = [{ type: 'Feature', geometry: { type: 'LineString', coordinates: ll }, properties: props(`${t.id}-course`, '') }] as unknown as AtlasFeature[];
+    t.points.forEach((p, i) => {
+      // The goal is the start's place again: one marker.
+      if (i === t.points.length - 1 && Math.hypot(p.x - t.points[0].x, p.y - t.points[0].y) < 1) return;
+      out.push({ type: 'Feature', geometry: { type: 'Point', coordinates: ll[i] }, properties: props(`${t.id}-${i}`, p.name) } as unknown as AtlasFeature);
+    });
+    return out;
   }
 
   /** Atlas features around the pilot (for the topo map). */
@@ -1175,7 +1548,7 @@ export class GameEngine {
       this.task.next = 0;
       this.task.tags = [];
       this.task.goalT = null;
-      this.world.setTask(this.task.points, 0);
+      this.showTask(this.task);
     }
     if (this.startMode !== 'air') {
       this.launch = newLaunch(this.startMode);
@@ -1184,7 +1557,15 @@ export class GameEngine {
     }
     this.flightS = 0;
     this.maxAlt = 0;
+    this.liftoffT = -1e9;
     this.stats = { gain: 0, lastZ: NaN, best: 0, ceilingS: null, t: 0 };
+    this.chal = { startS: NaN, doneS: NaN, startAlt: this.takeoff.alt };
+    this.ceilTarget = NaN;
+    this.school?.reset();
+    this.landingPick = null;
+    this.tipLiftF = 0;
+    this.coreAt.x = NaN;
+    this.nextAt.x = NaN;
     this.ended = false;
     this.paused = false;
     this.incident = null;

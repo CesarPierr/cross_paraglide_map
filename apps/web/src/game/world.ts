@@ -1064,7 +1064,7 @@ export class GameWorld {
       m.setPaintProperty('bm-topo', 'raster-opacity', 0.9);
       m.jumpTo({ center: [lon, lat], zoom: 13, pitch: 0, bearing: 0, roll: 0 });
       handlers.forEach((h) => h.enable());
-      const color = ['match', ['get', 'category'], 'hazards', '#e11d48', 'thermals', '#f59e0b', 'breezes', '#0284c7', 'convergences', '#c026d3', 'soaring', '#16a34a', 'takeoffs', '#1d4ed8', 'landings', '#15803d', '#475569'];
+      const color = ['match', ['get', 'category'], 'hazards', '#e11d48', 'thermals', '#f59e0b', 'breezes', '#0284c7', 'convergences', '#c026d3', 'soaring', '#16a34a', 'takeoffs', '#1d4ed8', 'landings', '#15803d', 'task', '#ca8a04', '#475569'];
       m.addSource('topo-feats', { type: 'geojson', data: { type: 'FeatureCollection', features: features as GeoJSON.Feature[] } });
       m.addLayer({ id: 'topo-lines', type: 'line', source: 'topo-feats', filter: ['==', ['geometry-type'], 'LineString'], paint: { 'line-color': color as never, 'line-width': 3, 'line-opacity': 0.85 } });
       m.addLayer({ id: 'topo-points', type: 'circle', source: 'topo-feats', filter: ['==', ['geometry-type'], 'Point'], paint: { 'circle-color': color as never, 'circle-radius': 6, 'circle-stroke-color': '#fff', 'circle-stroke-width': 1.5 } });

@@ -225,8 +225,9 @@ vent et peut le traîner s'il ne l'affale pas.
   le sol sous la lumière de référence (midi d'été, soleil à 60° au sud), la part de cette lumière
   propre à la pente retirée, puis éclairée par le soleil de l'heure sur cette pente, derrière les
   ombres des montagnes et des nuages (clouds.ts), par le ciel ouvert et par le sol en contrebas. Elle
-  remplace l'ombrage de MapLibre. Le planeur et les arbres 3D passent à l'ombre des montagnes et des
-  nuages comme le sol.
+  remplace l'ombrage de MapLibre. Le planeur passe à l'ombre des montagnes et des nuages comme le
+  sol. (Les arbres 3D ont été retirés : des cônes et des boules hors d'échelle, moins crédibles que
+  la canopée des orthophotos et ses matériaux.)
 - **Matériaux par type de sol** (`materials.ts`) : chaque pixel est classé d'après la couleur de la
   photo ramenée en albédo, la pente, l'altitude et les parts d'arbres, de sol nu, de neige et glace et
   de bâti de la maille ESA WorldCover (216 m) ; seuils lus sur les orthophotos (forêt dense : albédo
@@ -259,8 +260,7 @@ vent et peut le traîner s'il ne l'affale pas.
   ≈ 3 100 m l'été, plus haute l'hiver à l'ouest) et 250 m plus haute dans les massifs du sud, plus
   secs (Durand et al. 2009) ; 280 m plus bas en ubac, plus haut en adret, irrégulière près de la
   limite, absente des faces de plus de ~55° et des affleurements sombres, cachée sous les arbres.
-  De juillet à septembre, l'orthophoto (prise en été) montre déjà la neige de la saison. Les arbres
-  3D suivent aussi la saison (feuillus nus l'hiver, jaunes et orangés en octobre).
+  De juillet à septembre, l'orthophoto (prise en été) montre déjà la neige de la saison.
 - **Coût** (M1 Pro, 1920×1080, passe du paysage dessinée 200 fois hors écran, médiane) : 0,51–0,56 ms
   d'origine, 0,64–0,72 ms avec la lumière du relief, 1,11–1,33 ms avec les matériaux. Les passes du
   relief tournent seulement quand quelque chose change, une étape lourde par image : une mise à jour

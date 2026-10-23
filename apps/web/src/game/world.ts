@@ -25,7 +25,6 @@ import { buildGlider, type GliderModel } from './glider';
 import { EYE_SEATED, EYE_STANDING } from './glider-gear';
 import { Sky, type FrameInfo } from './sky';
 import { ThermalFlows, Vultures } from './life';
-import { Forest } from './trees';
 import { clearance, lodByDistance, ringLoaded, setTileCache, TileRing, useTerrainTileZoom, useTileRing, type LodState, type TileZoomFn } from './lod';
 import { IMAGERY_FADE_MS, useImageryFade } from './imagery-fade';
 import { Ground, REGION_HALF, REGION_N, type SunUniforms } from './ground';
@@ -240,8 +239,7 @@ export class GameWorld {
   readonly flows: ThermalFlows;
   readonly vultures: Vultures;
   private socks = new THREE.Group();
-  /** Forests near the ground, task cylinders, the other pilots (absolute local metres, in `rel`). */
-  readonly forest: Forest;
+  /** Task cylinders, the other pilots (absolute local metres, in `rel`). */
   private taskGroup = new THREE.Group();
   private peers = new Map<string, { model: GliderModel; group: THREE.Group; label: THREE.Mesh }>();
   /** World objects in absolute local metres, shifted by -anchor every frame. */
@@ -332,8 +330,7 @@ export class GameWorld {
     // The trees see the sun as the ground does (relief and cloud shadows).
     const gu = this.ground.uniforms;
     this.sunUniforms = { uQ0: gu.uQ0, uL0: gu.uL0, uQOn: gu.uQOn, ...this.sky.cloudShadowUniforms, uAnchorW: { value: new THREE.Vector3() } };
-    this.forest = new Forest(this.lowQuality ? 1500 : 4000, this.sunUniforms);
-    this.rel.add(this.flows.points, this.vultures.group, this.socks, this.forest.group, this.taskGroup);
+    this.rel.add(this.flows.points, this.vultures.group, this.socks, this.taskGroup);
     this.worldScene.add(this.rel);
     this.chaseScene.add(this.gliderWorld, this.chaseSun, this.chaseHemi);
     this.chaseCam.up.set(0, 0, 1);
@@ -516,7 +513,6 @@ export class GameWorld {
   /** The scenario's date (seasonal snow on the ground, the broadleaves' colour). */
   setSeason(month0: number, day: number): void {
     this.ground.setSeason(month0, day);
-    this.forest.setSeason(month0);
   }
 
   /** The wind model's grid (dem.png, landcover.png): the region's relief and land cover (region.ts). */
@@ -758,8 +754,6 @@ export class GameWorld {
     this.chaseCam.fov = this.fovDeg;
     this.chaseCam.updateProjectionMatrix();
     this.flows.setScale((c.clientHeight || 600) / (2 * Math.tan((this.fovDeg * Math.PI) / 360)));
-    const ground = this.groundAt(st.x, st.y);
-    if (ground !== null) this.forest.update(this.map, this.frame, st.x, st.y, st.z - ground, this.groundFn);
     // Name tags of the other pilots face the camera and keep a readable size.
     const camWorld = new THREE.Vector3(st.x + eye.x, st.y + eye.y, st.z + eye.z);
     for (const p of this.peers.values()) {

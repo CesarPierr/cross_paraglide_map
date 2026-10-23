@@ -32,6 +32,8 @@ function spawnOf(t: Takeoff) {
 }
 
 export interface Hud {
+  /** The brake step just asked for with the keys, shown a moment: which side. */
+  brakeFlash: 'L' | 'R' | 'both' | null;
   alt: number;
   agl: number;
   vario: number;
@@ -518,12 +520,27 @@ export class GameEngine {
     else if (k === 'q') this.stepBrake('L', -1);
     else if (k === 'e') this.stepBrake('R', 1);
     else if (k === 'd') this.stepBrake('R', -1);
-    else if (/^[0-9]$/.test(k)) this.brakeTarget = { L: Number(k) * BRAKE_STEP, R: Number(k) * BRAKE_STEP };
+    else if (/^[0-9]$/.test(k)) {
+      this.brakeTarget = { L: Number(k) * BRAKE_STEP, R: Number(k) * BRAKE_STEP };
+      this.flashBrake('both');
+    }
   }
   private stepBrake(side: 'L' | 'R', n: number): void {
     const t = this.brakeTarget;
     t[side] = Math.max(0, Math.min(1, Math.round((t[side] + n * BRAKE_STEP) / BRAKE_STEP) * BRAKE_STEP));
+    this.flashBrake(side);
   }
+  /** Where the brake keys have put the hands (0..1 each). */
+  brakeSteps(): { L: number; R: number } {
+    return this.brakeTarget;
+  }
+  /** The brake step just asked for, shown a moment (Hud.brakeFlash), and a click. */
+  private flashBrake(side: 'L' | 'R' | 'both'): void {
+    this.brakeFlash = { side, until: this.flightS + 1.3 };
+    const t = this.brakeTarget;
+    this.audio.tick(side === 'R' ? t.R : t.L);
+  }
+  private brakeFlash: { side: 'L' | 'R' | 'both'; until: number } | null = null;
   keyUp(key: string): void {
     this.keys.delete(key.toLowerCase());
   }
@@ -898,11 +915,16 @@ export class GameEngine {
       const clear = g.z + g.vz * t - this.groundAt(g.x + g.vx * t, g.y + g.vy * t);
       if (clear < (t === 2 ? 6 : 0)) {
         if (!this.incident || this.incident.until < this.flightS) this.incident = { text: 'Relief devant : vire ou écarte-toi', until: this.flightS + 1.5 };
+        if (this.flightS - this.alertT > 1.2) {
+          this.alertT = this.flightS;
+          this.audio.groundAlert();
+        }
         return;
       }
     }
   }
   private aheadT = 0;
+  private alertT = -10;
   /** Feet brushing the slopes: time of the last contact and seconds of recent contact (checkGround). */
   private brushT = 0;
   private brushS = 0;
@@ -1040,6 +1062,7 @@ export class GameEngine {
       whiteout: this.whiteout,
       hazard: m?.hazard ?? null,
       incident: this.incident?.text ?? null,
+      brakeFlash: this.brakeFlash && this.brakeFlash.until > this.flightS ? this.brakeFlash.side : null,
       load: g.load,
       paused: this.paused,
       view: this.world.view,

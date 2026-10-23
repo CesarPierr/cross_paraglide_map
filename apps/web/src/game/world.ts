@@ -664,6 +664,9 @@ export class GameWorld {
    * Places the camera for this frame and the glider in the world. Returns the camera
    * position (for the cloud white-out and the sound).
    */
+  /** The first-person view turned into the turn (rad, + right), eased. */
+  private lookInto = 0;
+
   frameUpdate(st: GliderState, head: Head): void {
     this.heights.around(st.x, st.y);
     if (!this.loaded || this.topo) return;
@@ -685,7 +688,11 @@ export class GameWorld {
       // pitch is compensated, up to what the neck allows (glider-pilot.ts; the risers tilt in
       // the view, the ground comes ahead in a spiral), and the body sinks a little in the
       // harness under load.
-      const qHead = new THREE.Quaternion().setFromEuler(new THREE.Euler(head.pitch + headPitch(st.pitch), -head.yaw, headRoll(st.bank), 'YXZ'));
+      // And it looks into the turn, as pilots do: about 0.6 of the bank, up to ~35°, eased over
+      // a second (not while standing on the take-off).
+      const into = this.glider.standing() > 0.5 ? 0 : Math.max(-0.6, Math.min(0.6, 0.6 * st.bank));
+      this.lookInto += (into - this.lookInto) * Math.min(1, dt / 0.9);
+      const qHead = new THREE.Quaternion().setFromEuler(new THREE.Euler(head.pitch + headPitch(st.pitch), -head.yaw - this.lookInto, headRoll(st.bank), 'YXZ'));
       const qCam = q.clone().multiply(qHead);
       const sag = 0.05 * Math.min(3, Math.max(0, st.load - 1));
       const ks = this.glider.standing();

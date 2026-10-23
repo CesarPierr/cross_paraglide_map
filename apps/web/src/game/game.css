@@ -916,3 +916,58 @@
   line-height: 1.45;
   color: var(--text-2, #9fb0c4);
 }
+
+/* The brake step just asked for with the keys: ten notches, a moment in the lower third of the
+   view (clear of the bottom bar and the map credits). */
+.game-brakeflash {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  bottom: 30%;
+  transform: translateX(-50%);
+  padding: 6px 12px;
+  border-radius: 10px;
+  background: rgba(10, 16, 26, 0.72);
+  color: #e6eef8;
+  font-size: 13px;
+  pointer-events: none;
+  animation: gbf-in 0.12s ease-out;
+}
+.gbf-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.gbf-row span {
+  min-width: 84px;
+}
+.gbf-row i {
+  display: flex;
+  gap: 3px;
+}
+.gbf-row b {
+  width: 9px;
+  height: 14px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.16);
+}
+.gbf-row b.on {
+  background: #38bdf8;
+}
+.gbf-row b.warm {
+  background: #fbbf24;
+}
+.gbf-row b.hot {
+  background: #fb7185;
+}
+.gbf-row strong {
+  font-variant-numeric: tabular-nums;
+  min-width: 34px;
+  text-align: right;
+}
+@keyframes gbf-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 4px);
+  }
+}

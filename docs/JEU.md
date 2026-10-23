@@ -168,8 +168,9 @@ vent et peut le traîner s'il ne l'affale pas.
 - **Contact avec le relief** : un frôlement léger d'une pente aile en vol (impact sous 1,5 m/s,
   pente de plus de 15°) ne termine plus le vol, où qu'il arrive : les pieds glissent, le vol continue,
   un message le signale ; traîné plus de 1,5 s, ou un vrai impact, c'est la fin du vol. Une alerte
-  « Relief devant » prévient quand la trajectoire des 2 à 4 s suivantes rencontre le sol (en vue
-  pilote, la pente sous soi ne se voit pas).
+  « Relief devant », avec deux bips descendants, prévient quand la trajectoire des 2 à 4 s suivantes
+  rencontre le sol (en vue pilote, la pente sous soi ne se voit pas). En vue pilote, le regard se
+  tourne vers l'intérieur du virage (0,6 fois l'inclinaison, jusqu'à ~35°), comme le fait un pilote.
 - **Tableau de bord** : vario, pression dans chaque frein (kg, la jauge pulse quand la pression
   mollit avant une fermeture), sellette, accélérateur, aide au décollage puis au posé (course
   d'arrêt) ; sur écran tactile, boutons Affaler et Recommencer.
@@ -291,8 +292,8 @@ vent et peut le traîner s'il ne l'affale pas.
 
 ## Commandes
 
-Clavier : freins par paliers de 10 % (un appui, un palier ; les mains y vont en quelques centièmes
-de seconde) : A/Q frein gauche +/−, E/D frein droit +/−, 0 à 9 les deux freins à 0–90 % ; sellette à la
+Clavier : freins par paliers de 10 % (un appui, un palier, un petit clic de plus en plus aigu et les dix
+crans affichés un instant ; les mains y vont en quelques centièmes de seconde) : A/Q frein gauche +/−, E/D frein droit +/−, 0 à 9 les deux freins à 0–90 % ; sellette à la
 souris (le curseur vers la gauche ou la droite de l'écran, centre neutre ; option du menu) ou S/F,
 Espace accélérateur
 (au déco : se retourner), Z courir / tirer les A, O oreilles, X stabilo en vol / affaler la voile (C)

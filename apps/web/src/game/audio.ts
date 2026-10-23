@@ -4,7 +4,9 @@
  *   strong sink, silent in between (as most varios are set);
  * - wind: pink-ish noise through a band-pass whose level grows with the airspeed squared
  *   and whose pitch rises with it (the rush of air on the helmet, louder on the bar);
- * - the canopy: a sharp flap when a side folds, a rustle while it is stalled or folded.
+ * - the canopy: a sharp flap when a side folds, a rustle while it is stalled or folded;
+ * - a ground alert: two falling square tones, unlike any vario sound;
+ * - a soft click at each brake step, higher the more brake.
  */
 export class AudioVario {
   private ctx: AudioContext | null = null;
@@ -111,6 +113,42 @@ export class AudioVario {
     src.connect(f).connect(g).connect(ctx.destination);
     src.start(t, Math.random());
     src.stop(t + 0.7);
+  }
+
+  /** Two short falling tones: the relief ahead. */
+  groundAlert(): void {
+    if (!this.ctx || !this.enabled) return;
+    const ctx = this.ctx;
+    const t = ctx.currentTime;
+    for (const [dt, f] of [[0, 1180], [0.16, 830]] as const) {
+      const o = ctx.createOscillator();
+      o.type = 'square';
+      o.frequency.value = f;
+      const g = ctx.createGain();
+      g.gain.setValueAtTime(0.0001, t + dt);
+      g.gain.exponentialRampToValueAtTime(0.07, t + dt + 0.01);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + dt + 0.13);
+      o.connect(g).connect(ctx.destination);
+      o.start(t + dt);
+      o.stop(t + dt + 0.15);
+    }
+  }
+
+  /** A soft click for a brake step, its pitch rising with the brake (0..1). */
+  tick(level: number): void {
+    if (!this.ctx || !this.enabled) return;
+    const ctx = this.ctx;
+    const t = ctx.currentTime;
+    const o = ctx.createOscillator();
+    o.type = 'sine';
+    o.frequency.value = 500 + 900 * level;
+    const g = ctx.createGain();
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(0.05, t + 0.004);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + 0.05);
+    o.connect(g).connect(ctx.destination);
+    o.start(t);
+    o.stop(t + 0.06);
   }
 
   dispose(): void {

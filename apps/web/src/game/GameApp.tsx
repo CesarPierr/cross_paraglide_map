@@ -621,6 +621,30 @@ function BrakeBar({ side, v, pressure, soft, touch, onChange }: { side: 'L' | 'R
   );
 }
 
+/** The brake step just asked for (keys): ten notches per side, a moment in the middle of the view. */
+function BrakeFlash({ side, l, r, target }: { side: 'L' | 'R' | 'both'; l: number; r: number; target: { L: number; R: number } | null }) {
+  const steps = (v: number) => Math.round(v * 10);
+  const row = (name: string, v: number) => (
+    <div className="gbf-row">
+      <span>{name}</span>
+      <i>
+        {Array.from({ length: 10 }, (_, k) => (
+          <b key={k} className={k < steps(v) ? (k >= 8 ? 'hot' : k >= 6 ? 'warm' : 'on') : ''} />
+        ))}
+      </i>
+      <strong>{steps(v)}/10</strong>
+    </div>
+  );
+  const L = target?.L ?? l;
+  const R = target?.R ?? r;
+  return (
+    <div className="game-brakeflash" aria-live="polite">
+      {side !== 'R' && row(side === 'both' ? 'Freins' : 'Frein gauche', L)}
+      {side === 'R' && row('Frein droit', R)}
+    </div>
+  );
+}
+
 /** Weight shift on a touch screen: drag sideways, back to the middle when let go. */
 function WeightSlider({ v, onChange }: { v: number; onChange: (v: number) => void }) {
   const ref = useRef<HTMLDivElement>(null);
@@ -1003,6 +1027,7 @@ export default function GameApp() {
               )}
             </div>
           )}
+          {hud.brakeFlash && <BrakeFlash side={hud.brakeFlash} l={hud.brakeL} r={hud.brakeR} target={eng?.brakeSteps() ?? null} />}
           <BrakeBar side="L" v={hud.brakeL} pressure={hud.pressureL} soft={hud.pressureWarn > 0.5} touch={touch} onChange={(v) => eng?.setBrake('L', v)} />
           <BrakeBar side="R" v={hud.brakeR} pressure={hud.pressureR} soft={hud.pressureWarn > 0.5} touch={touch} onChange={(v) => eng?.setBrake('R', v)} />
           {touch ? (

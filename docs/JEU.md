@@ -36,11 +36,49 @@ Code : `apps/web/src/game/` (chargé seulement à l'ouverture de l'onglet).
   décrochage 2,6 s plus tard si l'on maintient. Effet de sol (McCormick) réel mais négligeable : l'aile
   est à ~7 m du sol, 0,2 % de chute en moins.
 - **Virage** : freins et sellette demandent un taux de virage, l'inclinaison suit avec un retard
-  pendulaire, la portance inclinée tourne la trajectoire, le cap suit le vent relatif. La sellette part
+  pendulaire, la portance inclinée tourne la trajectoire, le cap la suit. La sellette part
   d'abord à l'envers (≈ 4° de roulis opposé) puis tourne. Au-delà de ~60 % de frein intérieur à basse
   vitesse le virage dérape à plat ; la demi-aile intérieure trop lente décroche : vrille (arrêt mains
-  hautes en ≈ 1 s). Spirale EN-B à 75 % : 77°, 3,7 g, 14 m/s (réf. DHV 14 m/s), 111°/s, sortie
-  spontanée en 435° ; l'EN-A ne s'y engage pas (1,8 g), l'EN-C plus engagée.
+  hautes en ≈ 1 s). La demi-aile intérieure est jugée à son centre de portance (2 m, demi-envergure
+  projetée elliptique) et sa demande de portance croît comme (V/v)^0,7 (une voile souple reporte une
+  partie de sa charge) ; le resserrement du virage en spirale vient de la charge (> 1,15 g) : il ne
+  devance plus la prise de vitesse. Avant, à 1 000–2 000 m, un frein intérieur à 75 % finissait en
+  vrille à ~50° d'inclinaison (le banc ne testait la spirale qu'à 3 000 m). Spirale EN-B à 75 % :
+  77–78°, 12,5 m/s à 1 000 m, 13–14 m/s à 3 000 m (réf. DHV 14 m/s), 3,7 g, 115°/s, nez bas 37–50°
+  (« 360 face planète »), sortie spontanée en ~370° ; pas de vrille à 80 % progressif.
+- **Cap tenu** : le cap est un état de l'aile, plus une copie du vent relatif. Une rafale, une brise,
+  l'aspiration d'un thermique tournent l'écoulement avant que le parapente suive l'air : il dérape, la
+  surface latérale de la voile l'emporte avec l'air (sa trace dérive, en ~1,4 s) et la voile ne se
+  remet au vent que lentement (5 s : son lacet vers la rafale et le roulis que la force latérale donne
+  à la voile se compensent presque). Une rafale latérale de 3 m/s tourne le cap de 3°, et non plus des
+  16° de l'écoulement. Un bout d'aile soulevé fait rouler l'aile (≈ 1° tenu par m/s d'écart entre les
+  bouts, amortissement en roulis Clp ≈ −0,12 d'une voile arquée) et la fait lacer (≈ 0,9°/s par m/s,
+  portance inclinée vers l'avant, Cnp ≈ −CL/16) : elle s'écarte d'environ 2°/s du côté qui monte tant
+  que ça dure (2 m/s sous un bout pendant 2 s : 6° de cap, 3° de roulis) ; avant, le couplage était
+  ~10 fois plus fort et la secousse aléatoire dépendait du pas de calcul. Mains hautes en turbulence
+  modérée (σw 1 m/s) : cap médian 3,5° sur 10 s (12° au 95e centile, contre ±180° en 5 min avant),
+  roulis efficace 1,3°. Dans le jeu (6 décos, juillet 14 h, 60 s mains hautes, robot
+  `scripts/dev/game-flight-live.ts`) : cap médian 1,1° sur 10 s (95 % : 6°) contre 7,7° (95 % : 66°)
+  avant, roulis au 95e centile 1,1° contre 17°.
+- **Classes EN** : toutes les ailes font les mêmes figures (spirale face au sol, wings, décrochage) ;
+  ce qui change est l'action qu'il faut et ce que l'aile fait seule, selon la grille des essais EN
+  926-2 (rapports Air Turquoise et DHV : sortie de spirale mains hautes < 720° → A, 720–1080° → B,
+  spirale évaluée à 14 m/s pour toutes ; abattée en sortie de décrochage ou de frontale 0–30° → A,
+  30–60° → B ; cap d'une fermeture asymétrique < 90° → A, 90–180° → B ; vrille arrêtée en < 90° → A,
+  90–180° → B). Paramètres par famille (`WINGS`) : performances (polaire, vitesse et finesse à
+  l'accélérateur à fond : A 45,5 km/h et 6,1, B 50,6 et 7,0, C 56,4 et 7,9), inertie (roulis et lacet
+  d'une envergure plus longue : la C met plus longtemps à entrer et à sortir d'un virage, balance plus
+  en wing), stabilité (amortissement en tangage et en roulis, stabilité spirale), sécurité passive
+  (marge avant fermeture, cap et réouverture, cascade, cravate, course au décrochage, marge avant la
+  vrille, arrêt de la vrille) ; plus aucune branche codée par classe. La course de frein est rapportée
+  à celle de la classe (décrochage à 95 % sur l'A, 88 % la B, 82 % la C). Mesures (banc) : spirale
+  à 1 000 m — A 85 % + sellette 76°, 10,6 m/s, nez 36°, sortie ~260° ; B 75 % 77°, 12,5 m/s, ~370° ;
+  C 75 % 80°, 16 m/s, nez ~60°, ~730° ; à 75 % l'A chute 8 m/s quand la B en fait 12,5. Abattée en
+  sortie de décrochage A 27°, B 40°, C 50°. Wings (75 % et sellette en phase) : 83° pour toutes, tangage
+  37° (A) à 94° (C). Vrille : l'A ne vrille que forcée (vol lent à 70 % puis 100 % d'un côté) et
+  s'arrête en 83° ; B 130°, C 155°. En turbulence modérée, entrée en spirale sans vrille sur 10 essais
+  pour B et C, l'A à 80 % aussi (1 sur 10 à 85–90 %). Dans le jeu, sur 6 décos : spirale A 78–79°,
+  12–14 m/s ; B 78–79°, 14–15 m/s ; C 78–81°, 16–17 m/s ; nez bas 40–58°, aucune vrille.
 - **Fermetures sur l'incidence** : marge d'incidence au centre et à chaque bout d'aile (l'air y est
   échantillonné, le côté qui ferme est celui de la rafale) ; elle grandit avec la pression aux freins,
   diminue avec l'accélérateur, une rafale descendante, une rafale arrière (la voile part devant).
@@ -55,8 +93,8 @@ Code : `apps/web/src/game/` (chargé seulement à l'ouverture de l'onglet).
   du pilotage actif), se raffermit quand l'aile bascule, mollit avant le décrochage, nulle côté fermé.
   Piloter à la pression (freiner quand elle mollit, freiner l'abattée) supprime les fermetures du banc
   et réduit d'un tiers le tangage.
-- Une plume soulevée par un thermique fait rouler l'aile et l'écarte du thermique : il faut tourner
-  du côté qui monte.
+- Une plume soulevée par un thermique fait rouler l'aile et l'écarte du thermique, de quelques degrés
+  (voir « Cap tenu ») : il faut tourner du côté qui monte.
 
 ### L'air (`airmass.ts`, `pilot-air.ts`, `game-worker.ts`)
 
@@ -106,7 +144,10 @@ Coût : l'air au centre et aux bouts d'aile plus le pas de vol prennent 4,6 µs 
 portable (321 thermiques dans la fenêtre), sans allocation.
 
 Banc d'essai avec critères (PASS/FAIL) : `npx tsx scripts/dev/game-flight-bench.ts`
-(`--only wing|air|day|perf`, `--verbose`) ; tests : `apps/web/test/`.
+(`--only wing|air|day|perf`, `--verbose`) ; tests : `apps/web/test/`. Dans le vrai jeu (serveur de
+développement) : `npx tsx scripts/dev/game-flight-live.ts` (un robot vole mains hautes puis spirale
+sur six décos, avec captures ; `--wing A|B|C`) ; dérive du cap en air synthétique :
+`npx tsx scripts/dev/heading-probe.ts`.
 
 ### Le décollage et le posé (`launch.ts`)
 
@@ -259,6 +300,15 @@ vent et peut le traîner s'il ne l'affale pas.
   part d'image sous la moitié de son détail une demi-seconde après l'arrêt est passée de 32–56 % à
   0–17 % ; au démarrage, le jeu attend ces tuiles la caméra immobile. Coût : +0,6 à 1,1 ms de
   MapLibre par image, jusqu'à ~175 Mo de tuiles sur le GPU.
+  **En virage**, chaque nouvel endroit (chaque thermique) faisait son premier tour sur une mosaïque de
+  tuiles nettes et de tuiles de l'anneau, à bords droits : la vue balaie ~40°/s et les tuiles fines
+  arrivent une à une (un tour en demande ~160–280 ; les tours suivants sortent du cache). Tant que la
+  vue tourne (son propre taux de rotation, ou celui que les commandes demandent, en avance d'environ
+  une seconde), l'anneau tient aussi les tuiles de la vue du secteur qu'elle balaiera dans la seconde
+  et demie (même loi de détail, 30 km, 220 tuiles au plus, 100 sur téléphone), après celles de la vue.
+  Premier tour à 40 % de frein sur une ligne de 10 Mbit/s (100 ms) : part de la vue sans sa tuile fine
+  12,9 → 3,5 % (Saint-Hilaire), 15,1 → 3,5 % (Forclaz), 19,2 → 4,6 % (Pelvoux) ; +9 % de requêtes par
+  tour, 0,06–0,08 ms par mise à jour (4 par seconde).
 - **Fondu des tuiles** (`imagery-fade.ts`) : sous le relief, MapLibre ne fond pas les rasters (chaque
   tuile du relief garde sa texture tant que ses tuiles ne changent pas), et une tuile plus fine
   arrivait d'un coup. Son fondu enchaîné (0,3 s, la tuile mélangée à la plus grossière qu'elle

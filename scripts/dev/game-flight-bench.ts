@@ -65,6 +65,7 @@ const turnOf = () => {
   };
 };
 const hs = (s: GliderState, air: AirSample = still) => Math.hypot(s.vx - air.u, s.vy - air.v);
+const wrapPi = (a: number) => a - 2 * Math.PI * Math.round(a / (2 * Math.PI));
 
 // ===================================================================== WING
 if (want('wing')) {
@@ -96,6 +97,12 @@ if (want('wing')) {
     const s = newGlider(0, 0, 500, 0, WINGS.B);
     fly(s, H(0, 0, 1), 40);
     check('accélérateur à fond', hs(s) * 3.6, 48, 52, 'km/h');
+    // Performance under the bar by class (manufacturers' top speeds, published glide tests).
+    for (const [w, vLo, vHi, gLo, gHi] of [[WINGS.A, 44, 48, 5.6, 6.6], [WINGS.B, 48, 52, 6.5, 7.5], [WINGS.C, 54, 59, 7.4, 8.5]] as const) {
+      const p = polar(0, 1, w);
+      check(`EN-${w.id} accélérateur à fond : vitesse`, p.v * 3.6, vLo, vHi, 'km/h');
+      check(`… finesse`, p.v / p.sink, gLo, gHi, '', 2);
+    }
     const lo = newGlider(0, 0, 500, 0);
     const hi = newGlider(0, 0, 3000, 0);
     fly(lo, H(), 30);
@@ -328,8 +335,100 @@ if (want('wing')) {
     check('EN-B : chute (rapports EN 12–19, réf. DHV 14)', b.sink, 12, 19, 'm/s');
     check('EN-B : taux de rotation', b.rate, 90, 145, '°/s', 0);
     check('EN-B : sortie spontanée mains hautes', b.exit, 0, 720, '°', 0);
-    check('EN-A : ne s’engage pas (charge)', a.g, 0, 2.5, 'g', 2);
     check('EN-C : plus engagée que la B (chute)', c.sink - b.sink, 0.3, 8, 'm/s');
+    // EN 926-2 spiral exit hands up: < 720° grades A, 720–1080° B; every class is evaluated
+    // at 14 m/s: an A spirals too, with more input, and comes out sooner.
+    check('EN-A : sortie spontanée (EN : < 720°)', a.exit, 0, 720, '°', 0);
+    check('… plus tôt que la B', b.exit - a.exit, 60, 720, '°', 0);
+    check('EN-C : sortie plus longue que la B (EN : 720–1080° → note B)', c.exit, 600, 1200, '°', 0);
+  }
+  {
+    // At the EN tests' altitude: the same input engages an A less; its steep spiral, face to
+    // the ground, takes deep inner brake (85 % of its long travel) and the harness, held.
+    const at = (w: WingParams, brake: number, weight: number) => {
+      const s = newGlider(0, 0, 1000, 0, w);
+      fly(s, H(), 5);
+      let bank = 0;
+      let sink = 0;
+      let nose = 0;
+      let spin = 0;
+      fly(s, (t) => H(0, Math.min(brake, (t / 3) * brake), 0, { weight: weight * Math.min(1, t) }), 30, still, (g) => {
+        bank = Math.max(bank, Math.abs(deg(g.bank)));
+        sink = Math.max(sink, -g.vz);
+        nose = Math.max(nose, deg(g.pitch));
+        spin = Math.max(spin, g.spin);
+      });
+      return { bank, sink, nose, spin };
+    };
+    const a75 = at(WINGS.A, 0.75, 0);
+    const b75 = at(WINGS.B, 0.75, 0);
+    const a85 = at(WINGS.A, 0.85, 1);
+    console.log(`  1000 m, 75 % : EN-A ${a75.sink.toFixed(1)} m/s, EN-B ${b75.sink.toFixed(1)} m/s ; EN-A 85 % + sellette : ${a85.bank.toFixed(0)}°, ${a85.sink.toFixed(1)} m/s, nez ${a85.nose.toFixed(0)}°`);
+    check('EN-A 75 % (1000 m) : moins engagée que la B (chute)', b75.sink - a75.sink, 2, 12, 'm/s');
+    check('EN-A 85 % + sellette (1000 m) : spirale (inclinaison)', a85.bank, 72, 82, '°');
+    check('… chute', a85.sink, 9, 16, 'm/s');
+    check('… nez bas (face au sol)', a85.nose, 25, 50, '°');
+    check('… pas de vrille', a85.spin, 0, 0.3, '', 2);
+  }
+  {
+    // Wingovers: alternate turns timed on the roll (75 % and the harness), every class.
+    const wing = (w: WingParams) => {
+      const s = newGlider(0, 0, 2000, 0, w);
+      fly(s, H(), 3);
+      let side = 1;
+      let bank = 0;
+      let lo = 0;
+      let hi = 0;
+      fly(
+        s,
+        (_t, g) => {
+          if (side > 0 && g.bank > 0.25 && g.bankRate < 0.05) side = -1;
+          else if (side < 0 && g.bank < -0.25 && g.bankRate > -0.05) side = 1;
+          return side > 0 ? H(0, 0.75, 0, { weight: 1 }) : H(0.75, 0, 0, { weight: -1 });
+        },
+        30,
+        still,
+        (g, t) => {
+          if (t < 10) return;
+          bank = Math.max(bank, Math.abs(deg(g.bank)));
+          lo = Math.min(lo, deg(g.pitch));
+          hi = Math.max(hi, deg(g.pitch));
+        },
+      );
+      return { bank, pitch: hi - lo };
+    };
+    const wa = wing(WINGS.A);
+    const wc = wing(WINGS.C);
+    console.log(`  wingovers : EN-A ${wa.bank.toFixed(0)}°, tangage ${wa.pitch.toFixed(0)}° | EN-C ${wc.bank.toFixed(0)}°, tangage ${wc.pitch.toFixed(0)}°`);
+    check('wingovers en EN-A : roulis', wa.bank, 60, 90, '°');
+    check('… la C balance plus en tangage (inertie, amortissement)', wc.pitch - wa.pitch, 15, 120, '°');
+  }
+  {
+    // Where most flights are (and where the EN tests are flown), not only at 3000 m: the
+    // inner wing must not stall before the speed builds.
+    const at = (z: number, brake: number, ramp: number) => {
+      const s = newGlider(0, 0, z, 0);
+      fly(s, H(), 5);
+      let bank = 0;
+      let sink = 0;
+      let nose = 0;
+      let spin = 0;
+      fly(s, (t) => H(0, Math.min(brake, (t / ramp) * brake)), 30, still, (g) => {
+        bank = Math.max(bank, Math.abs(deg(g.bank)));
+        sink = Math.max(sink, -g.vz);
+        nose = Math.max(nose, deg(g.pitch));
+        spin = Math.max(spin, g.spin);
+      });
+      return { bank, sink, nose, spin };
+    };
+    const b1 = at(1000, 0.75, 3);
+    const b8 = at(1000, 0.8, 3);
+    console.log(`  EN-B à 1000 m, 75 % : ${b1.bank.toFixed(0)}°, ${b1.sink.toFixed(1)} m/s, nez ${b1.nose.toFixed(0)}° ; 80 % : ${b8.bank.toFixed(0)}°, vrille ${b8.spin.toFixed(2)}`);
+    check('EN-B à 1000 m, 75 % : spirale (inclinaison)', b1.bank, 72, 82, '°');
+    check('… chute', b1.sink, 10, 19, 'm/s');
+    check('… nez bas (face au sol)', b1.nose, 30, 60, '°');
+    check('… pas de vrille', b1.spin, 0, 0.3, '', 2);
+    check('EN-B à 1000 m, 80 % progressif : pas de vrille', b8.spin, 0, 0.3, '', 2);
   }
 
   section('Fermetures (EN 926-2, mains hautes, 12 s)');
@@ -451,6 +550,63 @@ if (want('wing')) {
     check('accélérateur : au moins 1,5 fois plus', bar / Math.max(1, passive), 1.5, 100, '', 2);
   }
 
+  section('Cap tenu (vol droit mains hautes)');
+  {
+    // A breeze across the track: the glider drifts with the air, its heading hardly turns.
+    const s = newGlider(0, 0, 1500, 0);
+    fly(s, H(), 5);
+    const h0 = s.heading;
+    let slip = 0;
+    fly(s, H(), 12, (t) => ({ u: t > 1 ? 3 : 0, v: 0, w: 0, turbulence: 0 }), (g, t) => {
+      if (t > 5) slip = Math.max(slip, Math.abs(deg(g.betaG)));
+    });
+    check('rafale latérale de 3 m/s : le cap tourne à peine', Math.abs(deg(wrapPi(s.heading - h0))), 0.5, 5, '°');
+    check('… la trajectoire suit l’air (dérapage résorbé en 4 s)', slip, 0, 1.5, '°');
+    // Rising air under the right tip only (2 m/s for 2 s): the wing turns away, a few degrees.
+    const t = newGlider(0, 0, 1500, 0);
+    fly(t, H(), 5);
+    const t0 = t.heading;
+    let roll = 0;
+    fly(t, H(), 6, (x) => ({ u: 0, v: 0, w: 0, wL: 0, wR: x > 1 && x < 3 ? 2 : 0, turbulence: 0 }), (g) => (roll = Math.min(roll, deg(g.bank))));
+    const turned = deg(wrapPi(t.heading - t0));
+    check('2 m/s sous le bout droit pendant 2 s : écartée à gauche (cap)', -turned, 2, 12, '°');
+    check('… roulis à gauche', -roll, 0.5, 6, '°');
+    // Moderate thermal turbulence for 10 min: how far the heading wanders in 10 s.
+    const a = new AirMass(new LocalFrame(6, 45), { month0: 6, day: 15, hour: 14, windFrom: 0, windKmh: 0, instability: 0.75, humidity: 0.4, randomWeather: false, timeScale: 1, seed: 11 });
+    const tb = { u: 0, v: 0, w: 0 };
+    const tbL = { u: 0, v: 0, w: 0 };
+    const tbR = { u: 0, v: 0, w: 0 };
+    const turb = (time: number, g: GliderState): AirSample => {
+      const rx = Math.cos(g.heading) * 5;
+      const ry = -Math.sin(g.heading) * 5;
+      a.turbInto(g.x, g.y, g.z, time, 0.9, 1.0, 120, 80, 0.6, 8, tb);
+      a.turbInto(g.x - rx, g.y - ry, g.z, time, 0, 1.0, 120, 80, 0.6, 8, tbL, true);
+      a.turbInto(g.x + rx, g.y + ry, g.z, time, 0, 1.0, 120, 80, 0.6, 8, tbR, true);
+      return { u: tb.u, v: tb.v, w: tb.w, wL: tbL.w, wR: tbR.w, turbulence: Math.hypot(1, 0.6) / 1.6 };
+    };
+    let seed = 3;
+    const noisy = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+    const g = newGlider(0, 0, 2000, 0);
+    const hist: number[] = [];
+    let bank2 = 0;
+    let n = 0;
+    for (let time = 0; time < 600; time += dt) {
+      step(g, H(), turb(time, g), dt, noisy);
+      if (time > 5 && Math.round(time / dt) % 12 === 0) {
+        hist.push(g.heading);
+        bank2 += g.bank * g.bank;
+        n++;
+      }
+    }
+    const k = 100; // 10 s at 10 samples per second
+    const d10: number[] = [];
+    for (let i = k; i < hist.length; i++) d10.push(Math.abs(deg(wrapPi(hist[i] - hist[i - k]))));
+    d10.sort((x, y) => x - y);
+    console.log(`  turbulence modérée (σw 1 m/s) : Δcap sur 10 s médiane ${d10[d10.length >> 1].toFixed(1)}°, 95 % ${d10[Math.floor(d10.length * 0.95)].toFixed(1)}°, roulis rms ${deg(Math.sqrt(bank2 / n)).toFixed(1)}°`);
+    check('turbulence modérée : Δcap sur 10 s (95e centile)', d10[Math.floor(d10.length * 0.95)], 1, 15, '°');
+    check('… roulis rms (secouée quand même)', deg(Math.sqrt(bank2 / n)), 0.5, 3, '°');
+  }
+
   section('Décrochage, vrille');
   {
     const s = newGlider(0, 0, 2000, 0);
@@ -464,6 +620,37 @@ if (want('wing')) {
     fly(s, H(), 8, still, (g) => (pmax = Math.max(pmax, g.pitch)));
     check('… abattée à la sortie (EN-B 30–60°)', deg(pmax), 25, 65, '°', 0);
     check('… récupéré', s.stall, 0, 0.05, '', 2);
+    // The dive on exit by class (EN 926-2: 0–30° grades A, 30–60° B).
+    const exitDive = (w: WingParams) => {
+      const g = newGlider(0, 0, 2000, 0, w);
+      fly(g, H(1, 1), 6);
+      let p = 0;
+      fly(g, H(), 8, still, (x) => (p = Math.max(p, x.pitch)));
+      return deg(p);
+    };
+    check('EN-A : abattée à la sortie (EN : 0–30°)', exitDive(WINGS.A), 10, 30, '°', 0);
+    check('EN-C : abattée à la sortie (EN : 30–60°)', exitDive(WINGS.C), 30, 60, '°', 0);
+  }
+  {
+    // An A spins only when forced (slow, then one brake fully down) and stops within 90°.
+    const s = newGlider(0, 0, 2000, 0, WINGS.A);
+    fly(s, H(0.7, 0.7), 15);
+    let spun = 0;
+    fly(s, H(0.1, 1), 4, still, (g) => (spun = Math.max(spun, g.spin)));
+    const tr = turnOf();
+    tr(s.heading);
+    let turned = 0;
+    for (let t = 0; t < 8 && s.spin > 0.05; t += dt) {
+      step(s, H(), still, dt, rng);
+      turned = tr(s.heading);
+    }
+    check('EN-A forcée (lent 70 % puis 100 % d’un côté) : vrille', spun, 0.5, 1, '', 2);
+    check('… arrêt mains hautes (EN : < 90°)', Math.abs(deg(turned)), 0, 90, '°', 0);
+    const p = newGlider(0, 0, 1000, 0, WINGS.A);
+    fly(p, H(), 5);
+    let spin = 0;
+    fly(p, (t) => H(0, Math.min(0.85, (t / 3) * 0.85)), 20, still, (g) => (spin = Math.max(spin, g.spin)));
+    check('EN-A, 85 % progressif depuis le trim (1000 m) : pas de vrille', spin, 0, 0.3, '', 2);
   }
   {
     const s = newGlider(0, 0, 2000, 0);

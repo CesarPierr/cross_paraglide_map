@@ -69,8 +69,21 @@ describe('flight model', () => {
     const s = newGlider(0, 0, 2000, 0);
     const dt = 1 / 120;
     for (let t = 0; t < 1.5; t += dt) step(s, hands(), { u: 0, v: 0, w: 0.5, wL: -0.2, wR: 1.6, turbulence: 0 }, dt, rng);
-    expect(s.bank).toBeLessThan(-0.03);
-    expect(s.yawRate).toBeLessThan(0);
+    expect(s.bank).toBeLessThan(-0.02);
+    expect(s.turnRate).toBeLessThan(0);
+    // … a few degrees, not thrown round.
+    expect(s.heading).toBeGreaterThan(2 * Math.PI - 0.15);
+  });
+
+  it('holds its heading in a gust across the track: the glider drifts with the air', () => {
+    const s = newGlider(0, 0, 2000, 0);
+    const dt = 1 / 120;
+    for (let t = 0; t < 8; t += dt) step(s, hands(), { u: t > 1 ? 3 : 0, v: 0, w: 0, turbulence: 0 }, dt, rng);
+    const turned = Math.abs(((s.heading + Math.PI) % (2 * Math.PI)) - Math.PI);
+    expect(turned).toBeLessThan(0.09);
+    // The air-relative velocity is back along the heading: the track has turned with the wind.
+    expect(Math.abs(s.betaG)).toBeLessThan(0.03);
+    expect(s.vx).toBeGreaterThan(2);
   });
 
   it('an EN-A forgives what folds an EN-C, and reopens sooner', () => {
@@ -151,23 +164,44 @@ describe('EN 926-2-like asymmetric collapse, hands off', () => {
 });
 
 describe('spiral dive', () => {
-  it('a B held at 75 % inside brake enters a spiral (≥ 3.5 g, ≥ 10 m/s), an A does not', () => {
-    const spiral = (id: 'A' | 'B') => {
-      const s = newGlider(0, 0, 3000, 0, WINGS[id]);
-      let g = 0;
-      let sink = 0;
-      const dt = 1 / 120;
-      for (let t = 0; t < 25; t += dt) {
-        step(s, hands(0, Math.min(0.75, (t / 3) * 0.75)), still, dt, rng);
-        g = Math.max(g, s.load);
-        sink = Math.max(sink, -s.vz);
-      }
-      return { g, sink };
-    };
-    const b = spiral('B');
+  // EN 926-2: every class is flown into a spiral (evaluated at 14 m/s); an A takes more input
+  // and comes out by itself sooner (exit hands up < 720° grades A, 720–1080° B).
+  const spiral = (id: 'A' | 'B' | 'C', z: number, brake: number, weight = 0) => {
+    const s = newGlider(0, 0, z, 0, WINGS[id]);
+    let g = 0;
+    let sink = 0;
+    const dt = 1 / 120;
+    for (let t = 0; t < 25; t += dt) {
+      step(s, { ...hands(0, Math.min(brake, (t / 3) * brake)), weight: weight * Math.min(1, t) }, still, dt, rng);
+      g = Math.max(g, s.load);
+      sink = Math.max(sink, -s.vz);
+    }
+    let turned = 0;
+    let last = s.heading;
+    for (let t = 0; t < 60 && Math.abs(s.bank) > 0.35; t += dt) {
+      step(s, hands(), still, dt, rng);
+      turned += Math.abs(((s.heading - last + 3 * Math.PI) % (2 * Math.PI)) - Math.PI);
+      last = s.heading;
+    }
+    return { g, sink, exit: (turned * 180) / Math.PI };
+  };
+
+  it('a B held at 75 % inside brake enters a spiral (≥ 3.5 g, ≥ 10 m/s) and comes out by itself', () => {
+    const b = spiral('B', 3000, 0.75);
     expect(b.g).toBeGreaterThan(3.5);
     expect(b.sink).toBeGreaterThan(10);
-    expect(spiral('A').g).toBeLessThan(2.5);
+    expect(b.exit).toBeLessThan(720);
+  });
+
+  it('an A spirals too with deep brake and the harness, less at the same input, and unwinds sooner', () => {
+    const a = spiral('A', 1000, 0.85, 1);
+    expect(a.sink).toBeGreaterThan(9);
+    expect(spiral('A', 1000, 0.75).sink).toBeLessThan(spiral('B', 1000, 0.75).sink - 2);
+    expect(a.exit).toBeLessThan(spiral('B', 1000, 0.85, 1).exit);
+  });
+
+  it('a C keeps its spiral longer than a B', () => {
+    expect(spiral('C', 2000, 0.75).exit).toBeGreaterThan(spiral('B', 2000, 0.75).exit + 200);
   });
 });
 

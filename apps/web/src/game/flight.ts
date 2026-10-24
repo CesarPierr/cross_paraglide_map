@@ -17,8 +17,9 @@
  *   when slower, which damps the speed–height oscillation in one or two swings; a gust from
  *   behind surges the canopy (lower angle of attack), one from ahead pitches it back.
  * - Turns: the brakes and the weight shift set a turn rate and the bank it needs; the bank
- *   tilts the lift and the trajectory turns; the heading follows the airflow. Deep inner
- *   brake at low speed skids the turn flat and stalls the inner wing (spin).
+ *   tilts the lift and the trajectory turns, the heading with it. A change of the wind turns
+ *   the airflow, not the heading: the glider drifts with the air. Deep inner brake at low
+ *   speed skids the turn flat and stalls the inner wing (spin).
  * - Incidents follow the angle of attack: a tip or the centre falling below the class's
  *   threshold (raised by brake pressure, lowered by the speed bar) folds; above CLmax the
  *   wing stalls; a side overloaded by a counter-brake on a collapse spins.
@@ -68,6 +69,33 @@ const K_SPEED_AOA = 0.9;
  * into more sink than before.
  */
 const K_PITCH_DAMP = 0.2;
+/**
+ * A change of the wind (a gust, a breeze, a thermal's inflow) turns the airflow before the
+ * glider moves with the air: the wing keeps its heading at first (sideslip). The canopy's side
+ * area, high above the pilot, carries the glider along with the air (its track drifts, in
+ * ≈ 1.4 s), while the wing weathercocks into the new airflow only slowly (WEATHERCOCK_S): its
+ * yaw into the gust and the roll away that the side force gives the canopy nearly cancel. A
+ * step of 3 m/s across the track turns the heading ≈ 3°, not the 16° of the airflow.
+ */
+const WEATHERCOCK_S = 5;
+/**
+ * Rising air under one tip, per m/s of difference between the tips (5 m either side): the
+ * lifted half-wing rolls the glider away (rad/s² of the roll pendulum: the wing's roll
+ * damping moment, Clp ≈ −0.12 for an arched, low-aspect canopy, over the pendulum's inertia:
+ * ≈ 1° of bank held per m/s) and yaws it away (its lift tilts forward, Cnp ≈ −CL/16:
+ * ≈ 0.9°/s per m/s). The wing turns ≈ 2°/s away from the side that lifts while it lasts: the
+ * cue that the thermal is on that side, not a gust that throws the glider round.
+ */
+const K_ASYM_ROLL = 0.08;
+const K_ASYM_YAW = 0.015;
+/**
+ * Random roll torque of the turbulence (rad/s per √s at full intensity): the gusts on the
+ * canopy's side area and what the two tips do not resolve; most of the roll comes from the
+ * tips' own air (K_ASYM_ROLL). Hands up in moderate thermal turbulence (σw 1 m/s) the heading
+ * moves ≈ 4° in 10 s (10–13° at the 95th percentile), the bank ≈ 1.3° rms (game-flight-bench,
+ * « Cap tenu »).
+ */
+const TURB_ROLL = 0.05;
 /** Share of a collapsed wing's yaw that skids instead of banking, and how much a skid turns the trajectory flat. */
 const K_SKID = 0.45;
 const K_FLAT = 0.8;
@@ -119,20 +147,51 @@ export interface Collapse {
 }
 
 /**
- * What changes between certification classes (EN 926-2): an EN-A forgives (damped, reopens
- * on its own, long brake travel before the stall), an EN-C rewards (faster, better glide)
- * and punishes (pitches and rolls more, folds more, turns harder on a collapse, reopens
- * late, stalls and spins with less brake): active piloting matters more on it.
+ * What changes between certification classes (EN 926-2). Every class can be flown through
+ * the same manoeuvres (a steep spiral facing the ground, wingovers, a stall); what differs
+ * is how much input they take and how the wing behaves on its own:
+ * - performance: the polar and what the speed bar gives (top speed and the glide there);
+ * - inertia: a higher aspect ratio and a longer span (C) roll and yaw more slowly, carry
+ *   their energy (a turn takes longer to start and to stop, wingovers swing higher);
+ * - natural stability: damping in pitch and roll, and the spiral's (an A unwinds a steep
+ *   bank by itself, a C keeps it), the response to gusts;
+ * - passive safety: the margin before a fold, how far it turns and how fast it reopens,
+ *   cascades and cravats, the brake travel to the stall, how fast a spin stops.
+ * The EN 926-2 test grid (Air Turquoise and DHV reports) sets the targets: spiral exit hands
+ * up in less than 720° for an A, 720–1080° for a B grade, sink when the spiral is evaluated
+ * 14 m/s for every class; dive on exiting a stall or a frontal 0–30° (A), 30–60° (B);
+ * course change of an asymmetric collapse < 90° (A), 90–180° (B); a spin stops within 90°
+ * (A), 90–180° (B). The polar follows manufacturers' figures and published glide tests.
  */
 export interface WingParams {
   id: 'A' | 'B' | 'C';
   label: string;
-  /** Multipliers on the trim speed and the sink; speed added by the full bar (m/s). */
+  // --- Performance
+  /** Multipliers on the reference (EN-B) polar's speed and sink. */
   speed: number;
   sink: number;
+  /** Full speed bar: speed (m/s) and sink (m/s) it adds; the glide at top speed ≈ 6 (A), 7 (B), 8 (C). */
   bar: number;
-  /** Multiplier on the pitch/roll damping. */
+  barSink: number;
+  // --- Inertia and handling
+  /** Roll and yaw inertia relative to a B (span, aspect ratio): the roll pendulum's period, the lag of a turn's start and end. */
+  inertia: number;
+  /** Turn rate per brake travel (an A has a long travel). */
+  turnGain: number;
+  // --- Natural stability
+  /** Multipliers on the pitch and the roll damping (an A settles at once after a surge; every class's roll oscillations reduce, EN 926-2). */
   damping: number;
+  rollDamping: number;
+  /**
+   * Spiral stability: the yaw rate (rad/s at 9.5 m/s, in proportion to the speed) by which a
+   * steeply banked wing unwinds by itself (> 0) or keeps turning (< 0). It also lowers the
+   * spiral's dive: a stable wing keeps its angle of attack nearer the trim.
+   */
+  spiralStab: number;
+  /** Response to vertical gusts (pitch) and to turbulence (roll). */
+  gustPitch: number;
+  turbRoll: number;
+  // --- Passive safety
   /** Multiplier on the angle-of-attack margin before a fold (≈ 11° at trim on a B). */
   firmness: number;
   /** Re-inflation rate without help (share of span per second). */
@@ -140,22 +199,24 @@ export interface WingParams {
   /** Yaw towards a collapsed side (rad/s per folded share) and largest fold. */
   collapseYaw: number;
   collapseMax: number;
-  /** Brake travel where the stall and the spin start. */
+  /** Brake travel where the stall starts (the half-wings' CLmax follows: spin margin). */
   stallBrake: number;
-  spinBrake: number;
-  turnGain: number;
-  /** Spiral stability (how much a steep bank damps the turn) and spiral inertia (slow exit). */
-  spiralStab: number;
-  spiralInertia: number;
-  /** Response to vertical gusts (pitch) and to turbulence (roll). */
-  gustPitch: number;
-  turbRoll: number;
+  /** After a big fold reopens, how much more easily the other side folds (cascade), and the chance of a cravat. */
+  cascade: number;
+  cravat: number;
+  /**
+   * How far one half-wing must be past its CLmax beyond the other for the asymmetric stall
+   * to become a spin (an A's cells hold the stalled side up), and the rate at which a released
+   * spin stops (1/s of its strength).
+   */
+  spinMargin: number;
+  spinStop: number;
 }
 
 export const WINGS: Record<WingParams['id'], WingParams> = {
-  A: { id: 'A', label: 'EN-A (école, très tolérante)', speed: 0.96, sink: 1.06, bar: 2.6, damping: 1.5, firmness: 1.35, reopen: 0.34, collapseYaw: 0.9, collapseMax: 0.5, stallBrake: 0.95, spinBrake: 0.94, turnGain: 0.7, spiralStab: 0.45, spiralInertia: 0.5, gustPitch: 0.8, turbRoll: 0.7 },
-  B: { id: 'B', label: 'EN-B (intermédiaire)', speed: 1, sink: 1, bar: 3.6, damping: 1, firmness: 1, reopen: 0.2, collapseYaw: 1.4, collapseMax: 0.7, stallBrake: 0.88, spinBrake: 0.85, turnGain: 0.78, spiralStab: 0.12, spiralInertia: 1, gustPitch: 1, turbRoll: 1 },
-  C: { id: 'C', label: 'EN-C (sport, exigeante)', speed: 1.06, sink: 0.94, bar: 4.6, damping: 0.68, firmness: 0.78, reopen: 0.13, collapseYaw: 1.8, collapseMax: 0.75, stallBrake: 0.82, spinBrake: 0.79, turnGain: 0.84, spiralStab: 0, spiralInertia: 1.4, gustPitch: 1.35, turbRoll: 1.35 },
+  A: { id: 'A', label: 'EN-A (école, très tolérante)', speed: 0.96, sink: 1.06, bar: 2.6, barSink: 0.9, inertia: 0.8, turnGain: 0.76, damping: 1.5, rollDamping: 1.15, spiralStab: 0.1, gustPitch: 0.8, turbRoll: 0.7, firmness: 1.35, reopen: 0.34, collapseYaw: 0.9, collapseMax: 0.5, stallBrake: 0.95, cascade: 0.4, cravat: 0.03, spinMargin: 0.2, spinStop: 2.2 },
+  B: { id: 'B', label: 'EN-B (intermédiaire)', speed: 1, sink: 1, bar: 3.6, barSink: 0.88, inertia: 1, turnGain: 0.78, damping: 1, rollDamping: 1, spiralStab: 0.08, gustPitch: 1, turbRoll: 1, firmness: 1, reopen: 0.2, collapseYaw: 1.4, collapseMax: 0.7, stallBrake: 0.88, cascade: 1, cravat: 0.15, spinMargin: 0.12, spinStop: 1 },
+  C: { id: 'C', label: 'EN-C (sport, exigeante)', speed: 1.06, sink: 0.94, bar: 4.6, barSink: 0.92, inertia: 1.25, turnGain: 0.84, damping: 0.68, rollDamping: 0.75, spiralStab: -0.18, gustPitch: 1.35, turbRoll: 1.35, firmness: 0.78, reopen: 0.13, collapseYaw: 1.8, collapseMax: 0.75, stallBrake: 0.82, cascade: 1.4, cravat: 0.35, spinMargin: 0.08, spinStop: 0.7 },
 };
 
 export interface GliderState {
@@ -187,8 +248,10 @@ export interface GliderState {
   yawRate: number;
   /** Actual rate of change of the heading (rad/s). */
   turnRate: number;
-  /** Sideslip: heading minus the direction of the airflow (rad). */
+  /** Sideslip of a skid or a collapse (rad): heading minus the direction of the airflow. */
   beta: number;
+  /** Sideslip left by the wind's changes (rad): the heading held while the airflow turned, until the glider drifts with the air. */
+  betaG: number;
   /** Air-relative flight-path angle (rad) and angle of attack relative to the hands-up trim (rad). */
   gamma: number;
   alpha: number;
@@ -285,7 +348,7 @@ function polarInto(brake: number, speedbar: number, wing: WingParams, out: { v: 
   const f = (b - b0) / (b1 - b0);
   const s = Math.min(1, Math.max(0, speedbar)) * (1 - b);
   out.v = (v0 + (v1 - v0) * f) * wing.speed + wing.bar * s;
-  out.sink = (s0 + (s1 - s0) * f) * wing.sink + 0.95 * s * s;
+  out.sink = (s0 + (s1 - s0) * f) * wing.sink + wing.barSink * s * s;
 }
 
 export function polar(brake: number, speedbar: number, wing: WingParams = WINGS.B): { v: number; sink: number } {
@@ -394,6 +457,7 @@ export function newGlider(x: number, y: number, z: number, heading: number, wing
     yawRate: 0,
     turnRate: 0,
     beta: 0,
+    betaG: 0,
     gamma: -Math.atan2(p.sink, p.v),
     alpha: 0,
     brakeL: 0,
@@ -488,6 +552,7 @@ export function step(s: GliderState, c: Controls, air: AirSample, dt: number, rn
     s.lastAirW = air.w;
     s.lastAirU = air.u;
     s.lastAirV = air.v;
+    s.betaG = 0;
   }
 
   // --- Hands, bar, ears and the pilot's weight move at a human speed.
@@ -514,8 +579,15 @@ export function step(s: GliderState, c: Controls, air: AirSample, dt: number, rn
   const V = Math.max(0.5, Math.hypot(vh, rz));
   const gam = Math.atan2(rz, Math.max(1e-6, vh));
   const chi = vh > 0.3 ? Math.atan2(rx, ry) : s.heading;
+  // The airflow turned by the wind's change since the last step: the heading does not follow.
+  if (vh > 1) {
+    const px = s.vx - s.lastAirU;
+    const py = s.vy - s.lastAirV;
+    if (px * px + py * py > 1) s.betaG = clamp(s.betaG - wrapPi(chi - Math.atan2(px, py)), -0.6, 0.6);
+  }
   // A change of the airflow's angle (a vertical gust, the path bending) changes the angle
-  // of attack at once; the canopy then pitches back to its trim (pitch stability).
+  // of attack at once; the canopy then pitches back to its trim (pitch stability). Banked,
+  // only the part of the path's bending in the wing's own plane does (cos of the bank).
   const dGam = gam - s.gamma;
   s.gamma = gam;
   trimInto(bAvg, s.speedbar, W, TRIM);
@@ -523,7 +595,7 @@ export function step(s: GliderState, c: Controls, air: AirSample, dt: number, rn
   const clCam = K_CAMBER * (TRIM0.cl - A.cl0);
   // Steeply banked, the wing noses down into the spiral dive (less on a tolerant wing): it
   // flies faster at a lower lift coefficient, which is what makes a spiral sink 14–19 m/s.
-  const dive = SPIRAL_DIVE * smoothstep(0.85, 1.3, Math.abs(s.bank)) * Math.max(0, 1 - 2 * W.spiralStab);
+  const dive = SPIRAL_DIVE * smoothstep(0.85, 1.3, Math.abs(s.bank)) * clamp(1 - 1.5 * W.spiralStab, 0.4, 1.4);
   const aTrim = (TRIM.cl - A.cl0 - clCam) / CL_ALPHA + 3 * DEG * s.ears - dive;
   // A gust along the heading changes the canopy's drag before the pilot's: from behind it
   // surges ahead (lower angle of attack), from ahead it pitches back.
@@ -532,7 +604,7 @@ export function step(s: GliderState, c: Controls, air: AirSample, dt: number, rn
   const duAlong = (air.u - s.lastAirU) * sh0 + (air.v - s.lastAirV) * ch0;
   s.lastAirU = air.u;
   s.lastAirV = air.v;
-  s.alpha += ((aTrim - s.alpha) * dt) / TAU_ALPHA - dGam - (K_HGUST * clamp(duAlong, -3, 3)) / V;
+  s.alpha += ((aTrim - s.alpha) * dt) / TAU_ALPHA - dGam * Math.cos(s.bank) - (K_HGUST * clamp(duAlong, -3, 3)) / V;
   s.alpha = clamp(s.alpha, -0.5, 0.6);
   // Speed stability of the pendulum: flying faster than the equilibrium of this brake, bar
   // and load, the line holds the canopy pitched up (it climbs and slows), slower pitched down.
@@ -560,7 +632,7 @@ export function step(s: GliderState, c: Controls, air: AirSample, dt: number, rn
   const earsF = 1 + 0.8 * s.ears;
   const base = -11 * DEG * W.firmness * earsF + 2.2 * DEG * s.speedbar;
   const thrC = base - pressureBonus(bAvg);
-  const casc = s.cascadeT > 0 ? 2.5 * DEG * (col.peak ?? 0.6) * (W.id === 'C' ? 1.4 : W.id === 'A' ? 0.4 : 1) : 0;
+  const casc = s.cascadeT > 0 ? 2.5 * DEG * (col.peak ?? 0.6) * W.cascade : 0;
   const thrL = base - pressureBonus(s.brakeL) + 0.5 * DEG + (s.cascadeSide < 0 ? casc : 0);
   const thrR = base - pressureBonus(s.brakeR) + 0.5 * DEG + (s.cascadeSide > 0 ? casc : 0);
   const aL = aEff + (0.8 * s.tipHpL) / V;
@@ -601,7 +673,7 @@ export function step(s: GliderState, c: Controls, air: AirSample, dt: number, rn
     if (col.amount === 0 && was > 0) {
       const peak = col.peak ?? 0;
       // A big fold may leave the tip caught in the lines (more likely on a demanding wing).
-      if (peak > 0.55 && rng() < (W.id === 'C' ? 0.35 : W.id === 'B' ? 0.15 : 0.03)) {
+      if (peak > 0.55 && rng() < W.cravat) {
         col.cravat = 0.18 + 0.12 * rng();
         col.cravatSide = col.side;
         (events ??= []).push('cravat');
@@ -643,18 +715,22 @@ export function step(s: GliderState, c: Controls, air: AirSample, dt: number, rn
     s.stall = Math.min(1, s.stall + dt / 0.9);
   } else if (bAvg < 0.6) s.stall = Math.max(0, s.stall - dt / 1.5);
   // Spin: one half-wing past its CLmax: the inner wing of a slow, tight turn (it flies slower
-  // than the centre), or the open side loaded by a collapse and a strong counter-brake.
+  // than the centre), or the open side loaded by a collapse and a strong counter-brake. Each
+  // half is taken at its centre of lift (2 m out: an elliptic load on the ~9.3 m projected
+  // span) and asks for more lift as (V/v)^0.7 when slower: a soft canopy hands part of its load
+  // to the faster side (a rigid wing would keep its angle of attack, exponent 0; a fixed load
+  // per side would be 2).
   const rTurn = s.turnRate;
-  const vL = Math.max(1, V + rTurn * 2.5);
-  const vR = Math.max(1, V - rTurn * 2.5);
+  const vL = Math.max(1, V + rTurn * 2.0);
+  const vR = Math.max(1, V - rTurn * 2.0);
   const loadL = col.side > 0 ? 1 + 0.9 * col.amount : 1;
   const loadR = col.side < 0 ? 1 + 0.9 * col.amount : 1;
   trimInto(s.brakeL, 0, W, TRIM_SIDE);
   const clBL = TRIM_SIDE.cl;
   trimInto(s.brakeR, 0, W, TRIM_SIDE);
   const clBR = TRIM_SIDE.cl;
-  const clL = (clAtt * V * loadL) / vL + 0.5 * (clBL - TRIM0.cl) + (CL_ALPHA * 0.8 * s.tipHpL) / V;
-  const clR = (clAtt * V * loadR) / vR + 0.5 * (clBR - TRIM0.cl) + (CL_ALPHA * 0.8 * s.tipHpR) / V;
+  const clL = clAtt * loadL * (V / vL) ** 0.7 + 0.5 * (clBL - TRIM0.cl) + (CL_ALPHA * 0.8 * s.tipHpL) / V;
+  const clR = clAtt * loadR * (V / vR) ** 0.7 + 0.5 * (clBR - TRIM0.cl) + (CL_ALPHA * 0.8 * s.tipHpR) / V;
   // The flow separates over a few tenths of a second, as for the stall above: a tip gust at a
   // thermal's sharp edge does not spin a wing flown with half brake, a slow deep turn does.
   s.exLLp += (clL - A.clStall * (1 - 0.08 * (loadL - 1)) - s.exLLp) * Math.min(1, dt / 0.35);
@@ -663,14 +739,14 @@ export function step(s: GliderState, c: Controls, air: AirSample, dt: number, rn
   const exR = s.exRLp;
   // Both sides past CLmax is a stall, not a spin; and a half-wing spins only under its brake
   // (the inner brake of a slow turn, the counter-brake on a collapse), never hands up.
-  const sideStall = exL > 0 && exL - Math.max(0, exR) > 0.12 && s.brakeL > 0.35 ? -1 : exR > 0 && exR - Math.max(0, exL) > 0.12 && s.brakeR > 0.35 ? 1 : 0;
+  const sideStall = exL > 0 && exL - Math.max(0, exR) > W.spinMargin && s.brakeL > 0.35 ? -1 : exR > 0 && exR - Math.max(0, exL) > W.spinMargin && s.brakeR > 0.35 ? 1 : 0;
   if (sideStall !== 0 && s.stall < 0.5 && (s.spin < 0.5 || s.spinSide === sideStall)) {
     if (s.spin < 0.5 && s.spin + dt / 0.8 >= 0.5) (events ??= []).push('spin');
     s.spinSide = sideStall;
     s.spin = Math.min(1, s.spin + dt / 0.8);
   } else if (s.spin >= 0.5 && (s.spinSide < 0 ? s.brakeL : s.brakeR) > 0.45) {
     s.spin = Math.min(1, s.spin + dt / 0.8);
-  } else s.spin = Math.max(0, s.spin - dt * (W.id === 'A' ? 1.6 : W.id === 'B' ? 1 : 0.7));
+  } else s.spin = Math.max(0, s.spin - dt * W.spinStop);
   if (s.spin === 0) s.spinSide = 0;
 
   // --- Aerodynamic coefficients flown.
@@ -712,7 +788,9 @@ export function step(s: GliderState, c: Controls, air: AirSample, dt: number, rn
   const offFlow = smoothstep(0.3, 1, Math.abs(s.beta));
   // A spinning wing drags its slow trajectory round with it (it rotates almost on the spot).
   const rSpin = s.spinSide * 2.2 * s.spin;
-  const Fy = q * area * CY_BETA * (1 + 4 * offFlow) * clamp(s.beta, -0.8, 0.8) + s.mass * vh * (K_FLAT * s.rSkid + rSpin);
+  // (The wind's sideslip: the side force that carries the glider along with the air.)
+  const FyG = q * area * CY_BETA * s.betaG;
+  const Fy = q * area * CY_BETA * (1 + 4 * offFlow) * clamp(s.beta, -0.8, 0.8) + FyG + s.mass * vh * (K_FLAT * s.rSkid + rSpin);
   const sg = Math.sin(gam);
   const cg = Math.cos(gam);
   const sc = Math.sin(chi);
@@ -770,21 +848,21 @@ export function step(s: GliderState, c: Controls, air: AirSample, dt: number, rn
 
   // --- Turn: brakes and weight shift ask for a turn rate; the bank that turn needs follows
   // with a pendular lag; the bank tilts the lift (the trajectory turns), the heading follows
-  // the airflow. Beyond ~60 % of differential input the turn tightens more than in
+  // the trajectory. Beyond ~60 % of differential input the turn tightens more than in
   // proportion: held, it builds speed, bank and turn rate until the spiral dive (EN 926-2:
-  // 4–5 g, 12–18 m/s).
-  const steer = bDiff + 0.35 * ws;
-  const steerNl = steer + Math.sign(steer) * 1.2 * Math.max(0, Math.abs(steer) - 0.6) ** 1.5;
+  // 4–5 g, 12–18 m/s). The tightening comes with the load (from 1.15 g): it no longer runs
+  // ahead of the speed, which left the inner wing stalling at 50° of bank below 2000 m.
+  // (A brake travel relative to the class's: an A's long travel turns less per centimetre.)
+  const steer = (bDiff * WINGS.B.stallBrake) / W.stallBrake + 0.35 * ws;
+  const steerNl = steer + Math.sign(steer) * 2.0 * Math.max(0, Math.abs(steer) - 0.6) ** 1.5 * smoothstep(1.15, 1.6, s.load);
   const scale = Math.sqrt(1 / rhoRel) * Math.sqrt(m / REF_MASS);
   // Skid steer: deep inner brake at low speed turns by drag more than by bank (flat, slow turn).
   const inner = Math.max(s.brakeL, s.brakeR);
   s.skid = smoothstep(0.55, 0.85, inner) * smoothstep(9.2 * scale, 7.2 * scale, vh) * Math.min(1, Math.abs(bDiff) * 4);
   let yawTarget = W.turnGain * steerNl * (V / 9.5) * (1 - 0.5 * s.ears) * (1 + 0.3 * s.skid);
-  // Spiral stability: a tolerant wing damps its own turn when steeply banked.
-  yawTarget *= 1 - W.spiralStab * clamp((Math.abs(s.bank) - 0.7) / 0.5, 0, 1);
-  // Rising air under one wing lifts it and turns the glider away from the thermal: the
-  // pilot feels it and turns towards the lifted side to core it.
-  yawTarget -= 0.12 * asym;
+  // Spiral stability: steeply banked, a tolerant wing unwinds by itself (it takes more input
+  // to hold it there, and it comes out once released); a demanding one keeps turning.
+  yawTarget -= Math.sign(s.bank) * W.spiralStab * (V / 9.5) * smoothstep(0.8, 1.25, Math.abs(s.bank));
   // A collapsed side drags the wing towards it; braking the open side counters it.
   const yawCollapse = col.side * col.amount * W.collapseYaw;
   yawTarget += yawCollapse;
@@ -793,30 +871,38 @@ export function step(s: GliderState, c: Controls, air: AirSample, dt: number, rn
   // The weight leaves before the wing loads up: a quick lean first turns it the other way.
   yawTarget -= 0.05 * s.wsRate;
   yawTarget *= 1 - 0.8 * s.stall;
-  // Spiral inertia: a fast, steep turn takes longer to unwind once released.
-  const tauYaw = 0.55 * (1 + 2 * Math.max(0, s.load - 1.5) * W.spiralInertia);
+  // Inertia: a fast, steep turn takes longer to unwind once released, more so on a long span.
+  const tauYaw = 0.55 * W.inertia * (1 + 2 * Math.max(0, s.load - 1.5) * W.inertia);
   s.yawRate += (yawTarget - s.yawRate) * Math.min(1, dt / tauYaw);
   // The yaw the bank does not carry: a collapsed wing turns partly in a skid (EN 926-2
   // tests: 15–45° of roll for 90–180° of turn on a B), and so does a flat turn.
   const rSkid = K_SKID * yawCollapse + 0.5 * s.skid * s.yawRate;
   s.rSkid = rSkid;
   const bankTarget = clamp(Math.atan((V * (s.yawRate - rSkid)) / G), -1.35, 1.35) + col.side * col.amount * 0.2;
-  const wR = 2.1;
+  const wR = 2.1 / Math.sqrt(W.inertia);
   // Roll inertia: pilot at the end of the lines plus the canopy's added mass; a heavier pilot is shaken less by the same gust.
   const inertia = (REF_MASS + 12) / (m + 12);
-  const turbTorque = ((rng() - 0.5) * air.turbulence * 6 * W.turbRoll - 1.1 * asym) * inertia;
-  s.bankRate += (wR * wR * (bankTarget - s.bank) - 2 * 0.32 * W.damping * wR * s.bankRate + turbTorque - 0.35 * s.wsRate) * dt;
+  // Rising air under one wing lifts it and rolls the glider away from the thermal (K_ASYM_ROLL);
+  // the small eddies the tips do not see shake it (a random torque, its strength per √s).
+  const shake = (rng() - 0.5) * Math.sqrt(12 / dt) * air.turbulence * TURB_ROLL * W.turbRoll;
+  const turbTorque = (shake - K_ASYM_ROLL * asym) * inertia;
+  s.bankRate += (wR * wR * (bankTarget - s.bank) - 2 * 0.32 * W.rollDamping * wR * s.bankRate + turbTorque - 0.35 * s.wsRate) * dt;
   s.bank = clamp(s.bank + s.bankRate * dt, -1.45, 1.45);
 
-  // Heading: follows the airflow (weathercock), plus the yaw the airflow does not explain:
-  // the skid of a collapsed wing or of a flat turn (a few degrees of sideslip).
+  // Heading: follows the airflow as the glider's own forces turn it (weathercock), plus the
+  // yaw the airflow does not explain: the skid of a collapsed wing or of a flat turn (a few
+  // degrees of sideslip), and the sideslip a change of the wind left (betaG, WEATHERCOCK_S).
   const rExtra = 0.25 * rSkid;
   const wc = smoothstep(1, 4, vh) * (1 - 0.85 * offFlow);
   s.beta += (rExtra - (s.beta / 0.3) * wc) * dt;
   s.beta = wrapPi(s.beta);
-  const newHeading = wrapPi(chi + s.beta);
+  const newHeading = wrapPi(chi + s.beta + s.betaG);
   s.turnRate += (wrapPi(newHeading - s.heading) / dt - s.turnRate) * Math.min(1, dt / 0.15);
   s.heading = (newHeading + 2 * Math.PI) % (2 * Math.PI);
+  // The wind's sideslip fades: the side force turns the airflow onto the heading (the next
+  // step's airflow), the wing weathercocks slowly, and a lifted tip yaws the wing away.
+  const asG = FyG / (m + ADDED_S * rhoRel);
+  s.betaG = clamp(s.betaG - (asG / Math.max(1, vh) + (s.betaG / WEATHERCOCK_S + K_ASYM_YAW * asym) * wc) * dt, -0.6, 0.6);
 
   // --- Motion: the inertial velocity integrates the forces.
   s.vx += accX * dt;

@@ -283,6 +283,9 @@ export class GameWorld {
    */
   private gapRing = new TileRing(-3, 8, 14, 50000, 60);
   private ringAt = { x: 0, y: 0 };
+  /** The view's bearing last frame (rad) and how fast it turns (rad/s, smoothed). */
+  private viewBearing = NaN;
+  private viewTurn = 0;
 
   /** The terrain's heights around the pilot, whatever the camera looks at (heights.ts). */
   readonly heights: TerrainHeights;
@@ -737,6 +740,12 @@ export class GameWorld {
     const b = bearing / DEG;
     const u0 = new THREE.Vector3(Math.sin(b) * Math.cos(p), Math.cos(b) * Math.cos(p), Math.sin(p));
     const roll = Math.atan2(new THREE.Vector3().crossVectors(u0, up).dot(fwd), u0.dot(up)) * DEG;
+    // How fast the view turns (rad/s, smoothed): a turn, the head, the look into the turn.
+    if (Number.isFinite(this.viewBearing) && dt > 0) {
+      const db = b - this.viewBearing;
+      this.viewTurn += ((db - 2 * Math.PI * Math.round(db / (2 * Math.PI))) / dt - this.viewTurn) * Math.min(1, dt / 0.3);
+    }
+    this.viewBearing = b;
     const [lon, lat] = this.frame.toLngLat(st.x + eye.x, st.y + eye.y);
     const alt = st.z + eye.z;
     // The eye's clearance from the relief (tile detail), a few times a second; the region's
@@ -751,7 +760,13 @@ export class GameWorld {
         this.lod.clearanceM = clearance(st.x + eye.x, st.y + eye.y, alt, this.groundFn);
         const mc = MercatorCoordinate.fromLngLat([lon, lat]);
         const unitM = 40075016.686 * Math.cos((lat * Math.PI) / 180);
-        this.ring.update(mc.x, mc.y, unitM, this.map.getZoom() + 1, this.lod);
+        // Turning, the sector the view sweeps in the next 1.5 s: its own tiles fetched ahead
+        // (from the turn the controls ask for, which leads the heading by about a second).
+        const w = Math.abs(st.yawRate || 0) > Math.abs(this.viewTurn) ? st.yawRate : this.viewTurn;
+        const c = this.map.getCanvas();
+        const hfov = 2 * Math.atan(Math.tan((this.fovDeg * Math.PI) / 360) * (c.clientWidth / Math.max(1, c.clientHeight)));
+        const ahead = Math.abs(w) > 0.12 ? { bearing: b + w * 0.75, halfWidth: hfov / 2 + Math.abs(w) * 0.75 + 0.08, radiusM: 30000, maxTiles: this.lowQuality ? 100 : 220 } : null;
+        this.ring.update(mc.x, mc.y, unitM, this.map.getZoom() + 1, this.lod, ahead);
         // (The map's tiles are 512 pixels: one zoom level under the imagery's 256.)
         this.gapRing.update(mc.x, mc.y, unitM, this.map.getZoom(), this.lod);
         this.ringAt.x = st.x;

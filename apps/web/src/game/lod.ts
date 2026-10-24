@@ -21,7 +21,11 @@
  * 25 m a texel stretched over the near slopes: a smooth, plastic green). A ring of tiles
  * (`TileRing`, `useTileRing`) keeps every direction loaded around the pilot by the same
  * distance law a few levels coarser (a few dozen tiles): the imagery of any direction is
- * there at once, only its finest detail still to come.
+ * there at once, only its finest detail still to come. That detail came while the view swept
+ * on in a turn: each new place's first circle showed a patchwork of sharp tiles and soft
+ * ones, straight-edged (13 % of the view on a 10 Mbit/s line). While the view turns, the ring
+ * also holds the view's own tiles of the sector it will sweep in the next second and a half
+ * (`TileRing.update`'s `ahead`).
  */
 
 /** What the zoom rule needs from the camera, updated by the world every frame. */
@@ -79,13 +83,19 @@ export interface TileXYZ {
   y: number;
 }
 
+/** A sector seen from the eye: its direction (rad, clockwise from north) and half-width (rad). */
+export interface Wedge {
+  bearing: number;
+  halfWidth: number;
+}
+
 /**
- * The tiles of a disk around the eye, whatever the view: each at the zoom `zoomAt` gives for
+ * The tiles of a disk around the eye, whatever the view (or only those of a `wedge`): each at the zoom `zoomAt` gives for
  * the distance (m) of its nearest point to the eye, between `minZoom` and `maxZoom`. The eye
  * in mercator units (0..1), `unitM` metres per unit there. The tiles do not overlap and
  * together cover the disk; nearest first.
  */
-export function diskTiles(ex: number, ey: number, unitM: number, zoomAt: (dM: number) => number, radiusM: number, minZoom: number, maxZoom: number): TileXYZ[] {
+export function diskTiles(ex: number, ey: number, unitM: number, zoomAt: (dM: number) => number, radiusM: number, minZoom: number, maxZoom: number, wedge?: Wedge | null): TileXYZ[] {
   const out: { t: TileXYZ; d: number }[] = [];
   if (!(unitM > 0) || !Number.isFinite(ex + ey)) return [];
   const r = radiusM / unitM;
@@ -101,6 +111,15 @@ export function diskTiles(ex: number, ey: number, unitM: number, zoomAt: (dM: nu
     const dy = Math.min(Math.max(ey, t.y / n), (t.y + 1) / n) - ey;
     const d = Math.hypot(dx, dy) * unitM;
     if (d > radiusM) continue;
+    if (wedge && d > 0) {
+      // Out of the wedge: the direction of its centre, widened by the angle it spans.
+      const cx = (t.x + 0.5) / n - ex;
+      const cy = (t.y + 0.5) / n - ey;
+      const a = Math.atan2(cx, -cy) - wedge.bearing;
+      const off = Math.abs(a - 2 * Math.PI * Math.round(a / (2 * Math.PI)));
+      const span = Math.atan2(0.7072 / n, Math.max(1e-12, Math.hypot(cx, cy)));
+      if (off > wedge.halfWidth + span) continue;
+    }
     if (t.z >= maxZoom || t.z >= Math.floor(zoomAt(d))) {
       out.push({ t, d });
       continue;
@@ -118,7 +137,10 @@ export function diskTiles(ex: number, ey: number, unitM: number, zoomAt: (dM: nu
 export class TileRing {
   /** The current tiles, nearest first (a new array when they change). */
   tiles: TileXYZ[] = [];
+  /** The view's own tiles of the sector a turning view is about to sweep (`update`'s `ahead`), nearest first. */
+  ahead: TileXYZ[] = [];
   private key = '';
+  private aheadKey = '';
 
   constructor(
     readonly bias: number,
@@ -133,7 +155,7 @@ export class TileRing {
    * match the screen's pixels at the centre's distance (`centerZoom`, MapLibre's requested
    * zoom for this source's tile size). True when the tiles changed.
    */
-  update(ex: number, ey: number, unitM: number, centerZoom: number, state: LodState): boolean {
+  update(ex: number, ey: number, unitM: number, centerZoom: number, state: LodState, ahead?: (Wedge & { radiusM: number; maxTiles: number }) | null): boolean {
     if (!Number.isFinite(centerZoom)) return false;
     const floor = Math.max(1, state.clearanceM);
     let tiles: TileXYZ[] = [];
@@ -142,10 +164,19 @@ export class TileRing {
       tiles = diskTiles(ex, ey, unitM, (d) => k - Math.log2(Math.hypot(d, floor)), this.radiusM, this.minZoom, this.maxZoom);
       if (tiles.length <= this.maxTiles) break;
     }
+    // The wedge ahead of a turn: the tiles the view will ask for there (no bias), the nearest.
+    let next: TileXYZ[] = [];
+    if (ahead && Number.isFinite(ahead.bearing + ahead.halfWidth)) {
+      const k = centerZoom + Math.log2(Math.max(1, state.centerM));
+      next = diskTiles(ex, ey, unitM, (d) => k - Math.log2(Math.hypot(d, floor)), ahead.radiusM, this.minZoom, this.maxZoom, ahead).slice(0, ahead.maxTiles);
+    }
     const key = tiles.map((t) => `${t.z}/${t.x}/${t.y}`).join(' ');
-    if (key === this.key) return false;
+    const aheadKey = next.map((t) => `${t.z}/${t.x}/${t.y}`).join(' ');
+    if (key === this.key && aheadKey === this.aheadKey) return false;
+    if (key !== this.key) this.tiles = tiles;
+    if (aheadKey !== this.aheadKey) this.ahead = next;
     this.key = key;
-    this.tiles = tiles;
+    this.aheadKey = aheadKey;
     return true;
   }
 }
@@ -174,15 +205,24 @@ export function useTileRing(map: { style?: { tileManagers?: Record<string, unkno
   // MapLibre's tile id class, taken from the first id seen (not exported).
   let Id: RingTileIdClass | null = null;
   let builtFor: TileXYZ[] | null = null;
+  let aheadFor: TileXYZ[] | null = null;
   let ids: RingTileId[] = [];
+  let aheadIds: RingTileId[] = [];
+  const toIds = (tm: RingTileManager, tiles: TileXYZ[]) => tiles.map((t) => new Id!(t.z, 0, t.z, t.x, t.y)).filter((id) => !tm._source.hasTile || tm._source.hasTile(id));
   tm._updateRetainedTiles = function (this: RingTileManager, ideal: RingTileId[], zoom: number) {
     Id ??= ((ideal[0] ?? this._inViewTiles?.getAllTiles()[0]?.tileID)?.constructor as RingTileIdClass | undefined) ?? null;
     if (Id && builtFor !== ring.tiles) {
       builtFor = ring.tiles;
-      ids = ring.tiles.map((t) => new Id!(t.z, 0, t.z, t.x, t.y)).filter((id) => !this._source.hasTile || this._source.hasTile(id));
+      ids = toIds(this, ring.tiles);
+    }
+    if (Id && aheadFor !== ring.ahead) {
+      aheadFor = ring.ahead;
+      aheadIds = toIds(this, ring.ahead);
     }
     // (A ring tile that is also one of the view's is simply listed twice: MapLibre keys them.)
-    return original.call(this, ids.length ? ids.concat(ideal) : ideal, zoom);
+    // The ring first (a new place's coarse tiles), the view's, then those of the turn ahead.
+    if (!ids.length && !aheadIds.length) return original.call(this, ideal, zoom);
+    return original.call(this, aheadIds.length ? ids.concat(ideal, aheadIds) : ids.concat(ideal), zoom);
   };
   return true;
 }

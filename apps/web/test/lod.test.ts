@@ -144,6 +144,64 @@ describe('ring of tiles kept around the pilot', () => {
     expect(useTileRing({ style: { tileManagers: {} } }, 'ign', ring)).toBe(false);
   });
 
+  it('holds, while the view turns, its own tiles of the sector ahead: nothing behind, the view’s zoom, within budget', () => {
+    const ring = new TileRing(-2, 7, 18, 80000, 120);
+    const east = Math.PI / 2;
+    ring.update(ex, ey, unitM, 15.8, lod, { bearing: east, halfWidth: 0.9, radiusM: 30000, maxTiles: 220 });
+    expect(ring.ahead.length).toBeGreaterThan(30);
+    expect(ring.ahead.length).toBeLessThanOrEqual(220);
+    const full = diskTiles(ex, ey, unitM, (d) => 15.8 + Math.log2(1200) - Math.log2(Math.hypot(d, 300)), 30000, 7, 18);
+    const fullKeys = new Set(full.map((t) => `${t.z}/${t.x}/${t.y}`));
+    for (const t of ring.ahead) {
+      // The tiles the view asks for at their distance (the same law without bias)…
+      expect(fullKeys.has(`${t.z}/${t.x}/${t.y}`)).toBe(true);
+      // … east of the eye: none west (behind), but those under the eye.
+      const n = 2 ** t.z;
+      if ((t.x + 1) / n > ex && t.x / n < ex && (t.y + 1) / n > ey && t.y / n < ey) continue;
+      expect((t.x + 0.5) / n).toBeGreaterThan(ex - 1 / n);
+    }
+    // Nearest first; the budget keeps the nearest.
+    const d = (t: TileXYZ) => Math.hypot(Math.min(Math.max(ex, t.x / 2 ** t.z), (t.x + 1) / 2 ** t.z) - ex, Math.min(Math.max(ey, t.y / 2 ** t.z), (t.y + 1) / 2 ** t.z) - ey);
+    for (let i = 1; i < ring.ahead.length; i++) expect(d(ring.ahead[i])).toBeGreaterThanOrEqual(d(ring.ahead[i - 1]) - 1e-12);
+    const small = new TileRing(-2, 7, 18, 80000, 120);
+    small.update(ex, ey, unitM, 15.8, lod, { bearing: east, halfWidth: 0.9, radiusM: 30000, maxTiles: 20 });
+    expect(small.ahead).toEqual(ring.ahead.slice(0, 20));
+    // Flying straight again: none.
+    expect(ring.update(ex, ey, unitM, 15.8, lod, null)).toBe(true);
+    expect(ring.ahead.length).toBe(0);
+  });
+
+  it('lists the sector ahead after the view’s own tiles (the view first)', () => {
+    class Id {
+      key: string;
+      constructor(
+        readonly overscaledZ: number,
+        readonly wrap: number,
+        readonly z: number,
+        readonly x: number,
+        readonly y: number,
+      ) {
+        this.key = `${z}/${x}/${y}`;
+      }
+    }
+    const seen: string[][] = [];
+    const tm = {
+      _source: {},
+      _updateRetainedTiles(ideal: Id[]) {
+        seen.push(ideal.map((t) => t.key));
+        return {};
+      },
+    };
+    const ring = new TileRing(-2, 7, 18, 80000, 120);
+    ring.update(ex, ey, unitM, 15.8, lod, { bearing: 0, halfWidth: 0.6, radiusM: 30000, maxTiles: 50 });
+    useTileRing({ style: { tileManagers: { ign: tm } } }, 'ign', ring);
+    tm._updateRetainedTiles([new Id(17, 0, 17, 1, 2)]);
+    const keys = seen[0];
+    expect(keys.length).toBe(ring.tiles.length + 1 + ring.ahead.length);
+    expect(keys[ring.tiles.length]).toBe('17/1/2');
+    expect(keys.slice(ring.tiles.length + 1)).toEqual(ring.ahead.map((t) => `${t.z}/${t.x}/${t.y}`));
+  });
+
   it('tells how much of the ring MapLibre holds loaded, the tiles it never asked for aside', () => {
     const ring = new TileRing(-2, 7, 18, 80000, 120);
     ring.update(ex, ey, unitM, 15.8, lod);

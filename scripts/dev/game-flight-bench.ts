@@ -756,11 +756,10 @@ if (want('air')) {
   {
     const { a, src } = flatAir();
     let t0 = 0;
-    // A core of 2.0-2.6 m/s that keeps it over the minute of the climb below (it expects about
-    // 2.3), not one dying away.
+    // A core of 4-4.8 m/s that keeps it over the minute of the climb below, not one dying away.
     for (; t0 < 6000; t0 += 2) {
       const w = a.column(src, 1500, t0)?.w ?? 0;
-      if (w > 2 && w < 2.6 && [20, 40, 60].every((d) => Math.abs((a.column(src, 1500, t0 + d)?.w ?? 0) - 2.3) < 0.6)) break;
+      if (w > 4 && w < 4.8 && [20, 40, 60].every((d) => Math.abs((a.column(src, 1500, t0 + d)?.w ?? 0) - w) < 0.4)) break;
     }
     const col = a.column(src, 1500, t0)!;
     const air = (t: number, s: GliderState): AirSample => {
@@ -800,7 +799,9 @@ if (want('air')) {
         n++;
       }
     });
-    check('enroulement (frein int. 50 %) dans un noyau de 2,3 m/s', sum / n, 0.9, 1.6, 'm/s', 2);
+    // The climb is the core less the sink in the turn (~1.3 m/s at ~30° of bank) and a little
+    // more off the core's centre (the circle is not centred on it).
+    check(`enroulement (frein int. 50 %) dans un noyau de ${col.w.toFixed(1)} m/s : montée − noyau`, sum / n - col.w, -1.8, -0.9, 'm/s', 2);
     // Ring of sink (Allen): just outside the core.
     let ring = 0;
     for (let ang = 0; ang < 2 * Math.PI; ang += Math.PI / 8) ring = Math.min(ring, a.vertical(col.cx + Math.cos(ang) * 1.7 * col.rc, col.cy + Math.sin(ang) * 1.7 * col.rc, 1500, 500, t0).w);
@@ -810,15 +811,18 @@ if (want('air')) {
     let tot = 0;
     const peaks: number[] = [];
     let cur = 0;
+    // (The bubble under way at t = 0 is seen in part: its peak is not counted.)
+    let seenGap = false;
     for (let t = 0; t < 20000; t += 10) {
       const w = a.column(src, 1500, t)?.w ?? 0;
       tot++;
       if (w > 0.3) {
         on++;
         cur = Math.max(cur, w);
-      } else if (cur > 0) {
-        peaks.push(cur);
+      } else {
+        if (cur > 0 && seenGap) peaks.push(cur);
         cur = 0;
+        seenGap = true;
       }
     }
     check('cycle de vie : part du temps active à 1500 m', on / tot, 0.25, 0.8, '', 2);

@@ -47,6 +47,11 @@ describe('clearance from the relief', () => {
     expect(clearance(0, 0, 1300, g)).toBeCloseTo(25, 6);
   });
 
+  it('sees a cliff 10 m from the eye (the camera near plane stays off it)', () => {
+    const g = (x: number) => (x > 8 ? 1400 : 1000);
+    expect(clearance(0, 0, 1300, g)).toBeCloseTo(10, 6);
+  });
+
   it('falls back to a default where the relief is not loaded', () => {
     expect(clearance(0, 0, 1300, () => null)).toBe(300);
   });

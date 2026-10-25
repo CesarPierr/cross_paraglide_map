@@ -291,6 +291,15 @@ vent et peut le traîner s'il ne l'affale pas.
   les tuiles du relief lui-même (maillage et texture où l'image est drapée) suivent la même règle
   (au plus z17), le Sentinel-2 un niveau en dessous. 130 à 175 tuiles IGN en vol, quel que soit
   le tangage ; l'axe donné à MapLibre reste à 0,1° au moins de l'horizontale.
+- **L'œil là où est le pilote** (`world.ts`) : le plan de coupe proche de MapLibre est à tan(fov/2)/25
+  de la distance au point visé (~31 m à 1 200 m) et MapLibre remontait sa caméra dès que ce plan
+  entrait dans le relief : de 17 à 33 m debout au décollage, jusqu'à 50 m à 15 m d'une pente, selon
+  la direction du regard. Le paysage montait et descendait autour du pilote quand on tournait la tête
+  (en 3e personne, la voile, dessinée à part, paraissait plus haute que la pente), et on se croyait
+  plus loin du relief qu'on ne l'était (crash « loin » de la pente). Le point visé se rapproche
+  désormais près du relief (plan proche à 40 % de la distance au sol, au moins 0,4 m) et MapLibre ne
+  déplace plus la caméra ; la caméra de poursuite raccourcit son bras quand le relief s'interpose.
+  Contrôle : `scripts/dev/camera-probe.ts` (remontée 0 m dans tous les cas, œil ≥ 1,5 m du sol).
 - **Image tout autour** (`lod.ts`, `TileRing`) : MapLibre ne charge que ce que la vue contient et
   n'en garde qu'environ une vue hors champ (le nombre de tuiles de l'écran fois cinq) ; une tête
   tournée vite montrait une seconde le Sentinel-2 étiré sur les pentes proches. Les orthophotos sont

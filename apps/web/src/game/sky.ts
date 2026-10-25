@@ -245,8 +245,9 @@ void main() {
   vec3 c = texelFetch(uScene, ivec2(gl_FragCoord.xy), 0).rgb;
   vec3 fv = farVector(uv);
 #ifdef NEAR
-  // Nearer than the depth texture can tell (between MapLibre's near plane, ~30 m, and about
-  // twice that): the view ray marched over the relief's elevations from the near plane (the
+  // Nearer than the depth texture can tell (between MapLibre's near plane, ~30 m away from
+  // the relief and less than half the eye's clearance near it, world.ts, and about twice
+  // that): the view ray marched over the relief's elevations from the near plane (the
   // ground under the eye is out of view, its elevations not drawn), the hit refined by halving.
   vec3 P = uEye;
   float dist = 0.0;

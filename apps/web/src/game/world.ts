@@ -45,8 +45,15 @@ export interface Head {
 const DEG = 180 / Math.PI;
 /** Smallest angle (deg) between the camera axis given to MapLibre and the level (see placeCamera). */
 const LEVEL_GAP = 0.1;
-/** Distance (m) from the eye to the point MapLibre's camera looks at (see placeCamera). */
+/**
+ * Distance (m) from the eye to the point MapLibre's camera looks at (see placeCamera), away
+ * from the relief. MapLibre's near plane sits at tan(fov/2)/25 of that distance (~31 m here):
+ * nearer the relief the centre comes closer (GameWorld.centerM), so that the near plane never
+ * reaches the ground.
+ */
 const CENTER_M = 1200;
+/** Nearest MapLibre's near plane comes (m): standing on a take-off, the eye ~1.6 m up. */
+const NEAR_MIN_M = 0.4;
 /**
  * Pilot's eyes in the glider frame (glider-gear.ts, where the body is placed around them):
  * seated and leaning back, about 0.3 m above and behind the carabiners, so risers, brake
@@ -66,7 +73,7 @@ const GAP_LAYERS = ['gap-water', 'gap-river', 'gap-road'];
  */
 function metres(byClass: Record<string, number>, other: number): unknown {
   const at = (k: number) => ['match', ['get', 'class'], ...Object.entries(byClass).flatMap(([c, m]) => [c, m * k]), other * k];
-  return ['interpolate', ['exponential', 2], ['zoom'], 8, at(1 / (3.38 * 64)), 18, at(16 / 3.38)];
+  return ['interpolate', ['exponential', 2], ['zoom'], 8, at(1 / (3.38 * 64)), 24, at(1024 / 3.38)];
 }
 
 function gameStyle(): StyleSpecification {
@@ -267,6 +274,8 @@ export class GameWorld {
   private loaded = false;
   /** The eye's distance to MapLibre's centre and to the relief, for the tile detail (lod.ts). */
   private lod: LodState = { centerM: CENTER_M, clearanceM: 100 };
+  /** Distance (m) from the eye to MapLibre's centre: CENTER_M, less near the relief. */
+  private centerM = CENTER_M;
   private lodT = 0;
   /**
    * IGN orthophotos kept loaded in every direction, two levels coarser than the view's,
@@ -307,6 +316,9 @@ export class GameWorld {
       zoom: 13,
       pitch: 0,
       maxPitch: 180,
+      // Near the relief the camera's centre comes within metres of the eye (CENTER_M): zooms
+      // past MapLibre's default limit of 22.
+      maxZoom: 24,
       interactive: true,
       attributionControl: { compact: true },
       fadeDuration: 0,
@@ -350,6 +362,17 @@ export class GameWorld {
         this.map.setTerrain({ source: 'terrain', exaggeration: 1 });
         // A free camera: the point it looks at may be in the air (looking at the horizon).
         this.map.setCenterClampedToGround(false);
+        // And the eye where the game puts it: MapLibre lifts its camera wherever its near plane
+        // would cut into the relief (by up to 50 m beside a slope, 30 m standing on a take-off,
+        // as the head turned: the landscape rose and sank around the pilot, who seemed farther
+        // from a slope than he was). The near plane stays clear of the ground (CENTER_M), and
+        // the ground nearer than it is drawn by the landscape pass (sky.ts).
+        // (MapLibre 6: the map's camera is an object of its own.)
+        type Lift = { _raiseCameraByPitchAndZoom?: (tr: unknown) => unknown };
+        const cam = (this.map as unknown as { _camera?: Lift })._camera ?? (this.map as unknown as Lift);
+        const raise = cam._raiseCameraByPitchAndZoom;
+        if (typeof raise === 'function') cam._raiseCameraByPitchAndZoom = (tr) => (this.topo ? raise.call(cam, tr) : tr);
+        else if (import.meta.env.DEV) console.warn('[terrain] caméra : internes de MapLibre inattendus');
         this.map.setVerticalFieldOfView(this.fovDeg);
         // Detail by true distance from the eye (lod.ts): the texels of the imagery, and of the
         // terrain's textures it is drawn into, match the screen's pixels at every distance;
@@ -669,6 +692,8 @@ export class GameWorld {
    */
   /** The first-person view turned into the turn (rad, + right), eased. */
   private lookInto = 0;
+  /** Share of the chase camera's arm in use (armClear). */
+  private arm = 1;
 
   frameUpdate(st: GliderState, head: Head): void {
     this.heights.around(st.x, st.y);
@@ -717,6 +742,12 @@ export class GameWorld {
       const el = 0.18 + head.pitch * -0.6;
       eye = new THREE.Vector3(-Math.sin(yaw) * dist * Math.cos(el), -Math.cos(yaw) * dist * Math.cos(el), 3 + dist * Math.sin(el));
       const target = new THREE.Vector3(0, 0, 3.5);
+      // Its arm shortens where the relief comes between it and the glider (behind the glider
+      // on a take-off, the head turned towards a slope): the camera never goes into the
+      // ground; back out over half a second.
+      const clear = this.armClear(st, target, eye);
+      this.arm = clear < this.arm ? clear : this.arm + (clear - this.arm) * Math.min(1, dt * 2);
+      eye.lerpVectors(target, eye, Math.max(3 / dist, this.arm));
       fwd = target.clone().sub(eye).normalize();
       up = new THREE.Vector3(0, 0, 1);
       this.chaseCam.position.copy(eye);
@@ -748,16 +779,23 @@ export class GameWorld {
     this.viewBearing = b;
     const [lon, lat] = this.frame.toLngLat(st.x + eye.x, st.y + eye.y);
     const alt = st.z + eye.z;
-    // The eye's clearance from the relief (tile detail), a few times a second; the region's
-    // grids follow the pilot. The ring of imagery around the eye too, for the zoom MapLibre
-    // asks of 256-pixel tiles; at once after a jump (a restart, a new place), so that the
-    // new place's coarse tiles are requested before the view's fine ones.
+    // The eye's clearance from the relief (tile detail, MapLibre's near plane), every frame;
+    // a few times a second, the region's grids follow the pilot, and the ring of imagery
+    // around the eye too, for the zoom MapLibre asks of 256-pixel tiles; at once after a jump
+    // (a restart, a new place), so that the new place's coarse tiles are requested before
+    // the view's fine ones.
     const jumped = Math.hypot(st.x - this.ringAt.x, st.y - this.ringAt.y) > 500;
+    if (Number.isFinite(st.x + st.y + alt)) {
+      this.lod.clearanceM = clearance(st.x + eye.x, st.y + eye.y, alt, this.groundFn);
+      // MapLibre's near plane (tan(fov/2)/25 of the distance to the centre) within 40 % of the
+      // clearance: its corners stay off the ground. Nearer at once, farther over a second.
+      const want = Math.min(CENTER_M, (Math.max(NEAR_MIN_M, this.lod.clearanceM * 0.4) * 25) / Math.tan((this.fovDeg * Math.PI) / 360));
+      this.centerM = want < this.centerM ? want : this.centerM + (want - this.centerM) * Math.min(1, dt);
+    }
     if (now - this.lodT > 250 || jumped) {
       this.lodT = now;
       if (Number.isFinite(st.x + st.y + alt)) {
         this.region?.update(st.x, st.y);
-        this.lod.clearanceM = clearance(st.x + eye.x, st.y + eye.y, alt, this.groundFn);
         const mc = MercatorCoordinate.fromLngLat([lon, lat]);
         const unitM = 40075016.686 * Math.cos((lat * Math.PI) / 180);
         // Turning, the sector the view sweeps in the next 1.5 s: its own tiles fetched ahead
@@ -870,7 +908,7 @@ export class GameWorld {
    * camera stays at the eye.
    */
   private placeCamera(lon: number, lat: number, alt: number, bearing: number, pitch: number, roll: number): void {
-    const D = CENTER_M;
+    const D = this.centerM;
     let p = Math.min(179, Math.max(1, pitch));
     if (Math.abs(p - 90) < LEVEL_GAP) p = p < 90 ? 90 - LEVEL_GAP : 90 + LEVEL_GAP;
     // The view axis as MapLibre draws it: pitch from the nadir, bearing from the north.
@@ -891,6 +929,8 @@ export class GameWorld {
     const mpp = D / ctcd;
     const zoom = Math.log2((40075016.686 * Math.cos((center[1] * Math.PI) / 180)) / (512 * mpp));
     this.map.jumpTo({ center, zoom, elevation, bearing, pitch: p, roll });
+    // (The tile detail reads the zoom with the distance it was set for.)
+    this.lod.centerM = D;
   }
 
   setFov(deg: number): void {
@@ -899,6 +939,20 @@ export class GameWorld {
   }
 
   private groundFn = (x: number, y: number) => this.groundAt(x, y);
+
+  /**
+   * Share (0..1) of the chase camera's arm, from the point it looks at to the eye (both
+   * relative to the glider), that stays 2 m clear of the relief: the last clear one of 12
+   * points along it.
+   */
+  private armClear(st: GliderState, target: THREE.Vector3, eye: THREE.Vector3): number {
+    for (let i = 1; i <= 12; i++) {
+      const f = i / 12;
+      const g = this.groundAt(st.x + target.x + (eye.x - target.x) * f, st.y + target.y + (eye.y - target.y) * f);
+      if (g !== null && st.z + target.z + (eye.z - target.z) * f < g + 2) return (i - 1) / 12;
+    }
+    return 1;
+  }
   private reliefSun = 1;
   private reliefSunT = 0;
 

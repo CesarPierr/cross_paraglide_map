@@ -55,7 +55,7 @@ export function lodByDistance(state: LodState, bias: number): TileZoomFn {
 
 /**
  * The eye's clearance from the relief: the smallest distance to the ground sampled under
- * the eye and on rings around it (3 radii × 8 directions), never more than the height above
+ * the eye and on rings around it (4 radii × 8 directions), never more than the height above
  * the ground under the eye. `ground` returns null where the relief is not loaded yet.
  */
 export function clearance(x: number, y: number, z: number, ground: (x: number, y: number) => number | null): number {
@@ -74,7 +74,7 @@ export function clearance(x: number, y: number, z: number, ground: (x: number, y
   return best;
 }
 
-const RINGS = [25, 70, 200];
+const RINGS = [10, 25, 70, 200];
 
 /** A tile of a source's pyramid. */
 export interface TileXYZ {

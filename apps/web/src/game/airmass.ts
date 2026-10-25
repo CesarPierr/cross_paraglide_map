@@ -372,6 +372,18 @@ function sampleGrid(g: FieldGrid, x: number, y: number): number {
   return a + (b - a) * ty;
 }
 
+/**
+ * Lift of a thermal's core at its best height for a given `strength` (the day's scale and
+ * the source's own factors, AirMass.strength). Set from the climbs the sources document: in
+ * the Grésivaudan on a summer anticyclonic day, varios of 2 to 3 m/s; reputed thermals
+ * (Deux Sœurs, Agy, Valmeinier) often more than +4 m/s. Without it (1), on a good August
+ * afternoon at Saint-Hilaire the active thermals gave a median net climb of 0 m/s and their
+ * best tenth 1 to 1.8 m/s. The bubbles rise with it; the clouds and the share of bubbles
+ * reaching the base still follow `strength`.
+ */
+const CORE_GAIN = 1.45;
+/** How fast a source's bubbles rise (m/s): a little slower than its core's lift. */
+const riseOf = (strength: number) => Math.max(1.5, 0.9 * CORE_GAIN * strength);
 /** Time between two values of a source's sunlight history (s), and its length. */
 const SHADE_STEP = 20;
 const SHADE_N = 72;
@@ -894,7 +906,7 @@ export class AirMass {
     const strength = this.strength(s);
     if (strength <= 0.05) return false;
     const torn = this.torn(s);
-    const rise = Math.max(1.5, 0.9 * strength);
+    const rise = riseOf(strength);
     const climb = Math.min(dz, top - s.ground);
     // The bubble at this height left the ground climb/rise seconds ago: its cycle and the sun then.
     const tRel = t - climb / rise;
@@ -939,7 +951,7 @@ export class AirMass {
     out.bubble = bubble;
     out.lambda = Math.max(120, 2.5 * rc);
     out.rise = rise;
-    out.w = strength * clamp(f, 0, 1.15) * act;
+    out.w = CORE_GAIN * strength * clamp(f, 0, 1.15) * act;
     out.top = cloudTop;
     out.dx = dxw;
     out.dy = dyw;
@@ -1287,7 +1299,7 @@ export class AirMass {
   convectiveSigma(z: number, ground: number, x: number, y: number, out = { sigma: 0, length: 0, zi: 0 }): { sigma: number; length: number; zi: number } {
     const zi = this.ceilingAt(x, y, ground);
     const zr = clamp((z - ground) / Math.max(200, zi - ground), 0, 1.2);
-    // Deardorff's w* is a bit below the game's thermal scale (their best cores).
+    // Deardorff's w*: 0.7 of the day's scale (the strongest cores lift 2 to 3 times more, CORE_GAIN).
     const ws = 0.7 * this.wStar() * this.convection();
     const s = zr < 1 ? Math.sqrt(1.8) * ws * Math.cbrt(zr) * (1 - 0.8 * zr) : Math.sqrt(1.8) * ws * 0.2 * Math.max(0, 1 - (zr - 1) / 0.2);
     out.sigma = s;
@@ -1381,7 +1393,7 @@ export class AirMass {
       if (base >= zi) continue;
       const strength = this.strength(s);
       if (strength < 0.4) continue;
-      const rise = Math.max(1.5, 0.9 * strength);
+      const rise = riseOf(strength);
       const lag = (base - s.ground) / rise;
       const torn = this.torn(s);
       // The cloud grows while the bubbles arrive and dissolves a few minutes after they stop;

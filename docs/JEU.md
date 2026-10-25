@@ -116,7 +116,13 @@ Code : `apps/web/src/game/` (chargé seulement à l'ouverture de l'onglet).
   l'atlas, à 400 m l'un de l'autre au moins (haut de la fourchette d'Allen, ~2 par km² à mi-hauteur) :
   par journée moyenne en juillet à 14 h, 2 à 14 thermiques enroulables dans 2,4 km autour des décos
   mesurés (Saint-Hilaire, Chamonix, Annecy, Bauges, Vercors, Écrins, Haute-Maurienne, Nyons, Chabre,
-  Ubaye, Verdon, Gréolières ; 0 à 7 avant), montée nette 0,6–2,7 m/s, plus de 3 m/s rare. Un cœur
+  Ubaye, Verdon, Gréolières ; 0 à 7 avant). **Force calée sur les montées documentées** (Grésivaudan
+  l'été en régime anticyclonique : « varios de 2 à 3 m/s » ; thermiques réputés, Deux Sœurs, Agy,
+  Valmeinier : « souvent plus de +4 m/s ») : le cœur monte 1,45 fois l'échelle du jour (`CORE_GAIN`).
+  Saint-Hilaire en août à 14 h 30, masse d'air 0,55 : dans les thermiques actifs, montée nette des 10 %
+  meilleurs 2–3 m/s (1–1,8 avant), 1 % à 3,5–5 m/s ; un robot qui enroule le cœur des 16 meilleurs à
+  moins de 6 km monte de 2,5 m/s en médiane (0,7 avant), 3,7 au mieux ; l'air entre les thermiques
+  inchangé (médiane −0,08 m/s). Un cœur
   la plupart du temps (deux ou trois parfois), peu allongé, assez large pour y spiraler. Profil d'Allen (2006), cycle de vie en cosinus (Rachelson) avec un tirage par bulle (durée,
   rampes, force), 9 à 21 min ; cœur du côté au vent, descendance plus forte de ce côté ; **bord net** en
   air instable (paroi de ~5 m et tourbillons de 4 m dans la couche de cisaillement, ε ≈ 0,05–0,1 m²/s³ :

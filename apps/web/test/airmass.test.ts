@@ -41,6 +41,23 @@ describe('air mass', () => {
     expect(c.top).toBeGreaterThan(a.ceilingAt(s.x, s.y, s.ground) - 1);
   });
 
+  it('a working thermal on a good summer afternoon climbs as the sources say (varios of 2 to 3 m/s, +4 in the best)', () => {
+    const { a, s } = airWith(0, 0);
+    s.size = 1;
+    // At a quarter of the layer (the best height), the core over its bubbles' cycles.
+    const z = s.ground + 0.25 * (Math.min(a.cloudBase(s.terrain), a.ceilingAt(s.x, s.y, s.ground)) - s.ground);
+    const w: number[] = [];
+    for (let t = 0; t < 6000; t += 20) {
+      const c = a.column(s, z, t);
+      if (c) w.push(a.vertical(c.cx, c.cy, z, s.ground, t).w);
+    }
+    w.sort((p, q) => p - q);
+    // Net of a glider circling at ~1.4 m/s of sink: +2 to +3 while it works, up to +5 at best.
+    expect(w[w.length >> 1]).toBeGreaterThan(3.4);
+    expect(w[w.length >> 1]).toBeLessThan(4.6);
+    expect(w[w.length - 1]).toBeLessThan(6.5);
+  });
+
   it('conserves mass: over a window of many thermals the mean vertical air is ~0', () => {
     const frame = new LocalFrame(6, 45);
     const a = new AirMass(frame, scenario(0, 0, { seed: 5 }));

@@ -4,7 +4,7 @@
  * - the site's wind (model, 5 Hz, smoothed) with its gradient near the ground: a log profile
  *   whose roughness grows in the lee and whose depth grows when the air is stable;
  * - the flow forced by the fine relief (terrain tiles, ~10 m) along the wind through the
- *   pilot: linear potential flow over the profile, i.e. the slope smoothed by a kernel whose
+ *   pilot, 4.8 km either side: linear potential flow over the profile, i.e. the slope smoothed by a kernel whose
  *   width is the height above the ground, so the lift starts upwind of a face, rises one to
  *   two face heights above the crest and weakens with height; the speed-up and compression
  *   over crests; the sink beyond them; a 3D factor (the air goes round a peak, over a ridge);
@@ -56,6 +56,25 @@ const ANA_DEPTH = 50;
 const ANA_RINGS = [12, 30, 60, 100, 150];
 
 /**
+ * The crest plume: where the upslope layers reach a crest, a summit or a cliff's top they
+ * leave the ground and go on rising above it (Serafin & Zardi 2010: a thermal plume at the
+ * slope's top; Geerts et al. 2008: the anabatic flows converge over the heated mountain,
+ * cumulus every day). By continuity each side's layer (speed V, e-folding depth ANA_DEPTH)
+ * turns upwards at its own speed: the plume starts at the flux-weighted mean speed of the two
+ * sides, as wide as their layers together (one side: half as wide). Above, it widens as a
+ * plume does (PLUME_SPREAD, Gaussian width per metre of rise, ≈ 0.1: Papanicolaou & List
+ * 1988), leans with the wind, and merges into the convective layer's thermals within its
+ * surface layer: e-folding PLUME_ZI × the depth of convection above the crest (the surface
+ * layer is ~0.1 zi, Stull 1988). Without it the breeze stopped at the crest: 1.2 m/s 100 m
+ * below a crest, 0.4 at it, 0.2 m/s 200 m above, and no climb above any crest without wind.
+ */
+const PLUME_SPREAD = 0.1;
+const PLUME_ZI = 0.15;
+/** The nearest crest point: the highest ground around less CREST_LAMBDA per metre away, on these rings (m) × 12 directions. */
+const CREST_LAMBDA = 0.2;
+const CREST_RINGS = [30, 60, 100, 150, 200];
+
+/**
  * Up-slope breeze speed (m/s) on a surface of unit normal n under the sun s (unit, z up),
  * its ground heating and a wind U (m/s). A convective speed goes as the cube root of the
  * heat flux (Deardorff's w*, slope flows alike): a face the sun strikes at a slant still
@@ -84,6 +103,16 @@ const smoothstep = (a: number, b: number, x: number) => {
 const DS = 40;
 const N = 49;
 const HALF = ((N - 1) / 2) * DS;
+/**
+ * Beyond ±HALF the profile goes on, coarser, FAR_N samples every FAR_DS metres on each side
+ * (to ±4.8 km): the kernel is as wide as the height above the ground, so a few hundred metres
+ * above a face the lift comes from the whole slope, not only its last kilometre. Cut at
+ * ±960 m, the band over a long face lost up to 125 m at 14 km/h and 275 m at 25 km/h.
+ * Read from the region's grid (~300 m, already loaded: no terrain tile is fetched for it);
+ * where it is not known, the profile stays flat (no slope, no lift).
+ */
+const FAR_DS = 160;
+const FAR_N = 24;
 /** Cross-wind probes for gaps (m either side). */
 const CROSS = [60, 150, 300, 500];
 /**
@@ -107,6 +136,8 @@ export class ReliefFlow {
   uy = 0;
   readonly h = new Float32Array(N);
   readonly slope = new Float32Array(N - 1);
+  /** The far profile: slopes of the FAR_N segments upwind (outwards from −HALF), then downwind (from +HALF). */
+  readonly farSlope = new Float32Array(2 * FAR_N);
   /** 3D factor 0.55 (isolated peak, the air goes round) … 1 (long ridge across the wind). */
   kappa = 1;
   /** Flow separation behind the crest upwind: strength 0..1, crest position (m along the wind), its height above the pilot's ground. */
@@ -120,7 +151,7 @@ export class ReliefFlow {
    * Samples the terrain along the wind (u, v) through (x, y) and across it. False when the
    * terrain is not loaded there or the wind is too light to matter.
    */
-  update(ground: GroundAt, x: number, y: number, z: number, groundHere: number, u: number, v: number, modelVenturi: number): boolean {
+  update(ground: GroundAt, x: number, y: number, z: number, groundHere: number, u: number, v: number, modelVenturi: number, far: GroundAt = ground): boolean {
     const U = Math.hypot(u, v);
     if (U < 0.5) {
       this.ok = false;
@@ -181,6 +212,20 @@ export class ReliefFlow {
       if (this.sep > 0 && i >= iu && (i - iu) * DS < 7 * Math.max(30, this.crestH)) s = Math.max(s, -0.2 - 0.5 * (1 - this.sep));
       this.slope[i] = s;
     }
+    // The far profile, with the same limits (no separation that far).
+    for (let side = 0; side < 2; side++) {
+      const dir = side === 0 ? -1 : 1;
+      let prev = this.h[side === 0 ? 0 : N - 1];
+      for (let k = 1; k <= FAR_N; k++) {
+        const s = dir * (HALF + k * FAR_DS);
+        const g = far(x + this.ux * s, y + this.uy * s) ?? prev;
+        // Rise in the wind's direction: upwind segments run from the far sample in to the previous one.
+        let sl = clamp((dir * (g - prev)) / FAR_DS, -1.2, 1.2);
+        if (sl < 0) sl *= 0.6;
+        this.farSlope[side * FAR_N + k - 1] = sl;
+        prev = g;
+      }
+    }
     // Gap: terrain rising above the pilot on both sides across the wind, close by.
     let riseL = -1e9;
     let riseR = -1e9;
@@ -219,7 +264,19 @@ export class ReliefFlow {
       w += k * hz;
       du += k * dx;
     }
-    const f = (DS / Math.PI) * this.kappa;
+    w *= DS;
+    du *= DS;
+    for (let side = 0; side < 2; side++) {
+      const dir = side === 0 ? -1 : 1;
+      for (let k = 1; k <= FAR_N; k++) {
+        const m = dir * (HALF + (k - 0.5) * FAR_DS);
+        const dx = a - m;
+        const q = (this.farSlope[side * FAR_N + k - 1] * FAR_DS) / (dx * dx + z2);
+        w += q * hz;
+        du += q * dx;
+      }
+    }
+    const f = this.kappa / Math.PI;
     out.w = clamp(w * f, -0.8, 1.3);
     out.du = clamp(du * f, -0.5, 0.7);
   }
@@ -317,6 +374,11 @@ export interface PilotAirInfo {
   /** Upslope breeze along the nearest surface (m/s) and the vertical speed it gives here. */
   anabatic: number;
   anabaticW: number;
+  /** Vertical speed the crest plume adds at the pilot (m/s): beyond what the air mass already lifts. */
+  plume: number;
+  /** Vertical air of the air mass (thermals, background, convergences) and of the turbulence at the pilot (m/s). */
+  thermal: number;
+  gust: number;
 }
 
 /**
@@ -329,6 +391,10 @@ export class PilotAir {
   /** The sun (unit vector, east/north/up) and the nearest surface: distance, normal (refreshed with the relief). */
   private sun = { x: 0, y: 0, z: -1 };
   private near = { ok: false, d: 1e9, nx: 0, ny: 0, nz: 1, light: 1, recent: 0 };
+  /** The nearest crest point and its plume: height, speed at the top (m/s), width (m), e-folding height (m), cloud shade on it. */
+  private crest = { ok: false, x: 0, y: 0, h: 0, w0: 0, b0: 0, hp: 100, light: 1 };
+  private crestSun = 1;
+  private faceV = new Float32Array(12);
   /** The sun over the last two hours (unit vectors with their weights exp(−age/τ)). */
   private sunPast: { x: number; y: number; z: number; w: number }[] = [];
   /** Sunlight on that surface, lagged by the ground's heat (cools in ~2–3 min under a cloud, ~4 min to heat again). */
@@ -343,13 +409,15 @@ export class PilotAir {
   private tb = { u: 0, v: 0, w: 0 };
   private ts: TurbulenceState = { sigU: 0, sigW: 0, Lu: 100, Lw: 100, sigX: 0, Lx: 20, intensity: 0 };
   private cs = { sigma: 0, length: 100, zi: 2000 };
-  readonly info: PilotAirInfo = { gradient: 1, relief: 0, speedUp: 0, rotor: 0, venturi: 1, sigmaW: 0, sigmaX: 0, sigmaE: 0, anabatic: 0, anabaticW: 0 };
+  readonly info: PilotAirInfo = { gradient: 1, relief: 0, speedUp: 0, rotor: 0, venturi: 1, sigmaW: 0, sigmaX: 0, sigmaE: 0, anabatic: 0, anabaticW: 0, plume: 0, thermal: 0, gust: 0 };
   /** Last cloud white-out at the pilot (0..1). */
   cloud = 0;
 
+  /** `far`: the relief beyond the fine profile (the region's coarse grid), the fine terrain if not given. */
   constructor(
     readonly air: AirMass,
     private ground: GroundAt,
+    private far: GroundAt = ground,
   ) {}
 
   setModel(m: ModelAirLike): void {
@@ -390,8 +458,118 @@ export class PilotAir {
 
   /** Refreshes the relief profile along the wind through the pilot (call ~10 times a second). */
   update(g: GliderState, groundHere: number): void {
-    this.relief.update(this.ground, g.x, g.y, g.z, groundHere, this.m.u, this.m.v, this.m.venturi);
+    this.relief.update(this.ground, g.x, g.y, g.z, groundHere, this.m.u, this.m.v, this.m.venturi, this.far);
     this.findSurface(g.x, g.y, g.z, groundHere);
+    this.findCrest(g.x, g.y, g.z, groundHere);
+  }
+
+  /** The sun this surface (unit normal) received over the last hours, 0..1 (its stored heat). */
+  private recentSun(nx: number, ny: number, nz: number): number {
+    let sw = 0;
+    let rs = 0;
+    for (const p of this.sunPast) {
+      sw += p.w;
+      if (p.z > 0.05) rs += p.w * Math.max(0, nx * p.x + ny * p.y + nz * p.z);
+    }
+    return sw > 0 ? rs / sw : 0;
+  }
+
+  /**
+   * The nearest crest point below or beside the pilot and the upslope breeze of the faces
+   * falling from it (12 directions): the plume above it.
+   */
+  private findCrest(x: number, y: number, z: number, groundHere: number): void {
+    const c = this.crest;
+    c.ok = false;
+    if (z - groundHere > 1500) return;
+    let bx = x;
+    let by = y;
+    let bh = groundHere;
+    let best = groundHere;
+    for (const r of CREST_RINGS) {
+      for (let k = 0; k < 12; k++) {
+        const a = (k * Math.PI) / 6;
+        const px = x + Math.cos(a) * r;
+        const py = y + Math.sin(a) * r;
+        const h = this.ground(px, py);
+        if (h === null || h - CREST_LAMBDA * r <= best) continue;
+        best = h - CREST_LAMBDA * r;
+        bx = px;
+        by = py;
+        bh = h;
+      }
+    }
+    for (const step of [16, 8, 4]) {
+      const cx = bx;
+      const cy = by;
+      for (let k = 0; k < 8; k++) {
+        const a = (k * Math.PI) / 4;
+        const px = cx + Math.cos(a) * step;
+        const py = cy + Math.sin(a) * step;
+        const h = this.ground(px, py);
+        if (h === null) continue;
+        const sc = h - CREST_LAMBDA * Math.hypot(px - x, py - y);
+        if (sc <= best) continue;
+        best = sc;
+        bx = px;
+        by = py;
+        bh = h;
+      }
+    }
+    // The faces below the crest point: their slope from 40 to 120 m out, their sun, the relief that feeds them.
+    const s = this.sun;
+    const U = Math.hypot(this.m.u, this.m.v);
+    const V = this.faceV;
+    for (let k = 0; k < 12; k++) {
+      V[k] = 0;
+      const a = (k * Math.PI) / 6;
+      const dx = Math.cos(a);
+      const dy = Math.sin(a);
+      const h40 = this.ground(bx + dx * 40, by + dy * 40);
+      const h120 = this.ground(bx + dx * 120, by + dy * 120);
+      const h250 = this.ground(bx + dx * 250, by + dy * 250);
+      if (h40 === null || h120 === null || h250 === null) continue;
+      const tanT = (h40 - h120) / 80;
+      if (tanT < 0.05) continue;
+      const l = Math.hypot(tanT, 1);
+      const nx = (dx * tanT) / l;
+      const ny = (dy * tanT) / l;
+      const nz = 1 / l;
+      V[k] = anabaticSpeed(nx, ny, nz, s.x, s.y, s.z, this.air.season, this.m.surface, U, this.recentSun(nx, ny, nz)) * smoothstep(20, 80, bh - h250);
+    }
+    // The two sides across the crest (each the mean of three directions), the pair that breathes most.
+    const side = (j: number) => (V[(j + 11) % 12] + 2 * V[j] + V[(j + 1) % 12]) / 4;
+    let vl = 0;
+    let vr = 0;
+    for (let k = 0; k < 6; k++) {
+      const l = side(k);
+      const r = side(k + 6);
+      if (l + r > vl + vr) {
+        vl = l;
+        vr = r;
+      }
+    }
+    if (vl + vr < 0.05) return;
+    c.ok = true;
+    c.x = bx;
+    c.y = by;
+    c.h = bh;
+    c.w0 = (vl * vl + vr * vr) / (vl + vr);
+    c.b0 = ((vl + vr) * ANA_DEPTH) / (Math.sqrt(Math.PI) * c.w0);
+    c.hp = clamp(PLUME_ZI * (this.air.ceilingAt(bx, by, bh) - bh), 60, 400);
+    c.light = this.air.lightAt(bx, by, bh + 5);
+  }
+
+  /** Vertical speed of the crest plume (m/s) at (x, y), `zp` above the crest, before the cloud shade. */
+  private plumeAt(x: number, y: number, zp: number): number {
+    const c = this.crest;
+    const up = Math.max(0, zp);
+    const b = c.b0 + PLUME_SPREAD * up;
+    // Leaning with the wind: no more than ~56° from the vertical.
+    const lean = up / Math.max(0.5, c.w0, Math.hypot(this.m.u, this.m.v) / 1.5);
+    const dx = x - c.x - this.m.u * lean;
+    const dy = y - c.y - this.m.v * lean;
+    return c.w0 * Math.exp(-up / c.hp - (dx * dx + dy * dy) / (b * b)) * smoothstep(-10, 10, zp);
   }
 
   /**
@@ -437,14 +615,7 @@ export class PilotAir {
     n.ny = -gy / l;
     n.nz = 1 / l;
     n.light = this.air.lightAt(bx, by, (hx0 + hx1) / 2 + 5);
-    // The sun this surface received over the last hours (its stored heat).
-    let sw = 0;
-    let rs = 0;
-    for (const p of this.sunPast) {
-      sw += p.w;
-      if (p.z > 0.05) rs += p.w * Math.max(0, n.nx * p.x + n.ny * p.y + n.nz * p.z);
-    }
-    n.recent = sw > 0 ? rs / sw : 0;
+    n.recent = this.recentSun(n.nx, n.ny, n.nz);
   }
 
   /** Fills `out` with the air at the glider (centre and tips) for this step of `dt` at game time `t`. */
@@ -572,13 +743,30 @@ export class PilotAir {
         anaW = f * sinT;
       }
     }
+    // Above a crest the layer goes on rising as the plume (the same air: the larger of the two).
+    // A thermal rising off the crest is that plume's air too: the plume only adds what the
+    // air mass does not already lift there.
+    let pw = 0;
+    let pwL = 0;
+    let pwR = 0;
+    const c = this.crest;
+    if (c.ok) {
+      this.crestSun += (c.light - this.crestSun) * Math.min(1, dt / (c.light < this.crestSun ? 150 : 240));
+      const zp = g.z - c.h;
+      if (zp > -10) {
+        pw = Math.max(0, this.plumeAt(g.x, g.y, zp) * this.crestSun - Math.max(0, va.w));
+        pwL = Math.max(0, this.plumeAt(g.x - rx, g.y - ry, zp) * this.crestSun - Math.max(0, wL));
+        pwR = Math.max(0, this.plumeAt(g.x + rx, g.y + ry, zp) * this.crestSun - Math.max(0, wR));
+      }
+    }
     this.info.anabatic = ana;
     this.info.anabaticW = anaW;
+    this.info.plume = pw;
     out.u = mu + ux * rotU + va.u + gu + anaU;
     out.v = mv + uy * rotU + va.v + gv + anaV;
-    out.w = wRel + rotW + leeSink + va.w + gw + anaW;
-    out.wL = wRelL + rotWL + leeSink + wL + gwL + anaW;
-    out.wR = wRelR + rotWR + leeSink + wR + gwR + anaW;
+    out.w = wRel + rotW + leeSink + va.w + gw + Math.max(anaW, pw);
+    out.wL = wRelL + rotWL + leeSink + wL + gwL + Math.max(anaW, pwL);
+    out.wR = wRelR + rotWR + leeSink + wR + gwR + Math.max(anaW, pwR);
     out.turbulence = clamp(ts.intensity + sigE / 1.6, 0, 1);
     out.agl = agl;
     this.cloud = va.cloud;
@@ -591,6 +779,8 @@ export class PilotAir {
     inf.sigmaW = ts.sigW;
     inf.sigmaX = ts.sigX;
     inf.sigmaE = sigE;
+    inf.thermal = va.w;
+    inf.gust = gw;
     return out;
   }
 }

@@ -58,6 +58,67 @@ describe('relief flow along the wind (fine terrain)', () => {
   });
 });
 
+describe('relief flow over a long face', () => {
+  /** A 4 km slope at 0.3 up to a plateau at 1200 m, the wind blowing up it. */
+  const face = (x: number) => (x < -4000 ? 0 : x < 0 ? 0.3 * (x + 4000) : 1200);
+  const w = (x: number, agl: number, far?: (x: number, y: number) => number | null) => {
+    const r = new ReliefFlow();
+    r.update((px) => face(px), x, 0, face(x) + agl, face(x), 5, 0, 0, far);
+    const f = { w: 0, du: 0 };
+    r.flowAt(0, agl + 12, f);
+    return f.w;
+  };
+
+  it('sees the whole slope: a few hundred metres up the lift comes from more than its last kilometre', () => {
+    const cut = () => null;
+    expect(w(-1500, 500)).toBeGreaterThan(w(-1500, 500, cut) + 0.04);
+    expect(w(-1500, 500)).toBeGreaterThan(0.22);
+    // Close to the slope the near profile says it all.
+    expect(Math.abs(w(-1500, 30) - w(-1500, 30, cut))).toBeLessThan(0.02);
+  });
+});
+
+describe('crest plume above a sunny crest', () => {
+  const air = () => new AirMass(new LocalFrame(6, 45), { month0: 7, day: 15, hour: 14.5, windFrom: 0, windKmh: 0, instability: 0.55, humidity: 0.5, randomWeather: false, timeScale: 1, seed: 3 });
+  /** A ridge along the north-south axis, 26° faces east and west, crest at 1500 m. */
+  const ridge = (x: number) => 1500 - 0.5 * Math.abs(x);
+  const plume = (opts: { x?: number; up: number; sun?: [number, number]; u?: number; ground?: (x: number, y: number) => number }) => {
+    const ground = opts.ground ?? ((x: number) => ridge(x));
+    const pa = new PilotAir(air(), ground);
+    pa.setSun(...(opts.sun ?? [200, 55]));
+    pa.setModel({ u: opts.u ?? 0, v: 0, lift: 0, turbulence: 0, lee: 0, ground: 1500, surface: 1 });
+    const x = opts.x ?? 0;
+    const g = newGlider(x, 0, ground(x, 0) + opts.up, 0);
+    pa.update(g, ground(x, 0));
+    const out: AirSample = { u: 0, v: 0, w: 0, turbulence: 0 };
+    pa.sample(g, ground(x, 0), 10, 1 / 120, out);
+    return pa.info.plume;
+  };
+
+  it('goes on rising above the crest at about the breeze speed, then fades within a few hundred metres', () => {
+    expect(plume({ up: 5 })).toBeGreaterThan(1.8);
+    expect(plume({ up: 5 })).toBeLessThan(3.2);
+    expect(plume({ up: 80 })).toBeGreaterThan(1.2);
+    expect(plume({ up: 700 })).toBeLessThan(0.2);
+  });
+
+  it('is narrow: a hundred metres off the crest line there is little left', () => {
+    expect(plume({ x: 0, up: 60 })).toBeGreaterThan(3 * plume({ x: 110, up: 60 + 55 }));
+  });
+
+  it('needs the sun on the faces and a crest: none at night, none over a plain', () => {
+    expect(plume({ up: 50, sun: [300, -6] })).toBe(0);
+    expect(plume({ up: 50, ground: () => 800 })).toBe(0);
+  });
+
+  it('leans with the wind', () => {
+    // 100 m above the crest, at the crest and 150 m either side of it.
+    const at = (x: number) => plume({ x, up: 100 + 0.5 * Math.abs(x), u: 2.5 });
+    expect(at(150)).toBeGreaterThan(at(0));
+    expect(at(150)).toBeGreaterThan(at(-150));
+  });
+});
+
 describe('wind gradient and turbulence at the pilot', () => {
   it('log profile near the ground: deeper and stronger when the air is stable or rough', () => {
     expect(surfaceFactor(10, 0.15, 30)).toBeGreaterThan(surfaceFactor(10, 0.15, 95));

@@ -1007,6 +1007,11 @@ export class GameWorld {
    * yet). MapLibre's query alone answers 0, or a coarse parent's height, where no drawn tile
    * has its own: the ground jumped under the glider.
    */
+  /** Ground elevation (m) from the region's coarse grid (~300 m), null where it is not ready. */
+  coarseGroundAt(x: number, y: number): number | null {
+    return this.region?.heightAt(x, y) ?? null;
+  }
+
   groundAt(x: number, y: number): number | null {
     const h = this.heights.at(x, y);
     if (h !== null) return h;

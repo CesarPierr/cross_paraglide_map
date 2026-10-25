@@ -143,6 +143,41 @@ describe('contributions', () => {
   });
 });
 
+describe('game flight logs', () => {
+  const start = {
+    client: 'abc123def456',
+    build: '2026-10-25 test',
+    takeoffId: 'chartreuse/st-hilaire-sud-nord',
+    takeoffName: 'Saint-Hilaire',
+    lon: 5.88,
+    lat: 45.31,
+    scenario: { month0: 7, hour: 14.5, windKmh: 14 },
+    options: { wing: 'B', view: 'third' },
+    device: { w: 1280, h: 800, touch: false },
+  };
+  const auth = { authorization: 'Bearer secret-token' };
+
+  it('opens a log, keeps its chunks once each in order, and gives them back to moderation only', async () => {
+    const open = await app.inject({ method: 'POST', url: '/api/game/flights', payload: start });
+    expect(open.statusCode).toBe(201);
+    const { id } = open.json() as { id: string };
+    const chunk = (seq: number, end?: Record<string, unknown>) =>
+      app.inject({ method: 'POST', url: `/api/game/flights/${id}/chunks`, payload: { seq, rows: [[seq, 0, 1, 2, 1000]], events: [{ t: seq, kind: 'message', text: 'Décollé !' }], end } });
+    expect((await chunk(1, { kind: 'crash', reason: 'impact' })).statusCode).toBe(204);
+    expect((await chunk(0)).statusCode).toBe(204);
+    expect((await chunk(0)).statusCode).toBe(204);
+    expect((await app.inject({ method: 'POST', url: '/api/game/flights/00000000-0000-4000-8000-000000000000/chunks', payload: { seq: 0, rows: [], events: [] } })).statusCode).toBe(404);
+    expect((await app.inject({ method: 'POST', url: '/api/game/flights', payload: { ...start, client: 'Not An Id!' } })).statusCode).toBe(400);
+    expect((await app.inject(`/api/admin/game/flights/${id}`)).statusCode).toBe(401);
+    const list = await app.inject({ url: '/api/admin/game/flights?client=abc123def456', headers: auth });
+    expect(list.json()).toMatchObject([{ id, takeoffId: start.takeoffId, chunks: 2, samples: 2, ended: { kind: 'crash' } }]);
+    const full = (await app.inject({ url: `/api/admin/game/flights/${id}`, headers: auth })).json() as { rows: number[][]; log: { t: number }[]; scenario: unknown };
+    expect(full.rows.map((r) => r[0])).toEqual([0, 1]);
+    expect(full.log.map((e) => e.t)).toEqual([0, 1]);
+    expect(full.scenario).toEqual(start.scenario);
+  });
+});
+
 describe('weather cache', () => {
   it('expires with the next model run, clamped', () => {
     const now = Date.now();

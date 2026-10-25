@@ -1,8 +1,9 @@
-import { createHash, timingSafeEqual } from 'node:crypto';
+import { createHash } from 'node:crypto';
 import { ContributionInput, ContributionStatus, FeedbackSummary } from '@brises/shared';
 import { Type } from '@sinclair/typebox';
 import type { FastifyInstance, FastifyRequest } from 'fastify';
 import type { AppContext } from '../app';
+import { adminGuard } from './admin';
 
 const PUBLIC_FIELDS = `id, kind, target_ref AS "targetRef", category, title, message, ST_AsGeoJSON(geom)::json AS geometry, details,
   source_url AS "sourceUrl", context, author, status, created_at AS "createdAt"`;
@@ -59,12 +60,7 @@ export async function contributionRoutes(app: FastifyInstance, ctx: AppContext) 
   );
 
   // ---------- Moderation (Bearer ADMIN_TOKEN) ----------
-  const admin = async (req: FastifyRequest) => {
-    const token = ctx.config.adminToken;
-    const given = String(req.headers.authorization ?? '').replace(/^Bearer\s+/i, '');
-    const ok = token.length > 0 && given.length === token.length && timingSafeEqual(Buffer.from(given), Buffer.from(token));
-    if (!ok) throw Object.assign(new Error('non autorisé'), { statusCode: 401 });
-  };
+  const admin = adminGuard(ctx);
 
   app.get<{ Querystring: { status?: ContributionStatus; limit?: number } }>(
     '/admin/contributions',

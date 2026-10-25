@@ -1,7 +1,7 @@
 /**
  * Fastify application: JSON API under /api for the map (knowledge base,
  * flying sites, contributions, shared forecast cache) and the WebSocket relay
- * of the multiplayer game (/api/game/ws). Built by a factory so the server and
+ * of the multiplayer game (/api/game/ws), the game's flight logs. Built by a factory so the server and
  * the tests mount exactly the same thing.
  */
 import compress from '@fastify/compress';
@@ -13,6 +13,7 @@ import type { Config } from './config';
 import type { Db } from './db/client';
 import { atlasRoutes } from './routes/atlas';
 import { contributionRoutes } from './routes/contributions';
+import { flightLogRoutes, purgeFlightLogs } from './routes/flight-logs';
 import { registerGameRelay } from './routes/game';
 import { siteRoutes } from './routes/sites';
 import { weatherRoutes } from './routes/weather';
@@ -76,12 +77,16 @@ export async function buildApp(config: Config, db: Db, overrides: AppOverrides =
       await siteRoutes(api, ctx);
       await contributionRoutes(api, ctx);
       await weatherRoutes(api, ctx);
+      await flightLogRoutes(api, ctx);
     },
     { prefix: '/api' },
   );
 
-  // Hourly housekeeping of the upstream cache.
-  const timer = setInterval(() => void cache.purge().catch(() => {}), 3600_000);
+  // Hourly housekeeping of the upstream cache and of the old flight logs.
+  const timer = setInterval(() => {
+    void cache.purge().catch(() => {});
+    void purgeFlightLogs(db).catch(() => {});
+  }, 3600_000);
   timer.unref();
   app.addHook('onClose', async () => clearInterval(timer));
   return { app, ctx };

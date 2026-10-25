@@ -21,6 +21,7 @@ import { explainLaunch, newSchoolInput, School, type SchoolInput } from './schoo
 import { Multiplayer, type NetEvent } from './net';
 import type { ModelAir } from './game-worker';
 import { LocalFrame } from './geo';
+import { FlightLog, gpuName, logClientId } from './flight-log';
 import { TrackRecorder, toIgc } from './igc';
 import { GameWorld, type Head, type ViewMode } from './world';
 
@@ -245,7 +246,7 @@ export class GameEngine {
     private dem: { meta: GridMeta; url: string },
     readonly takeoff: Takeoff,
     private cb: { onHud: (h: Hud) => void; onStatus: (s: string | null) => void; onEnd: (e: FlightEnd) => void },
-    opts: { view: ViewMode; showThermals: boolean; wing?: WingParams['id']; start?: 'air' | LaunchMode; mass?: number; routeId?: string | null; multi?: { room: string; name: string } | null; others?: boolean; school?: boolean; launchSlow?: number; challenge?: { kind: ChallengeKind; level: ChallengeLevel } | null },
+    opts: { view: ViewMode; showThermals: boolean; wing?: WingParams['id']; start?: 'air' | LaunchMode; mass?: number; routeId?: string | null; multi?: { room: string; name: string } | null; others?: boolean; school?: boolean; launchSlow?: number; challenge?: { kind: ChallengeKind; level: ChallengeLevel } | null; log?: boolean },
   ) {
     this.school = opts.school ? new School() : null;
     this.launchSlow = this.school ? Math.max(0.25, Math.min(1, opts.launchSlow ?? 1)) : 1;
@@ -267,12 +268,108 @@ export class GameEngine {
     this.world.setRegion(dem.url, dem.meta);
     this.world.setSeason(scenario.month0, scenario.day);
     this.air = new AirMass(this.frame, scenario);
-    this.pilotAir = new PilotAir(this.air, (x, y) => this.world.groundAt(x, y));
+    this.pilotAir = new PilotAir(this.air, (x, y) => this.world.groundAt(x, y), (x, y) => this.world.coarseGroundAt(x, y));
     this.hour = scenario.hour;
     this.showThermals = opts.showThermals;
     this.timeScale = scenario.timeScale;
     const route = opts.routeId && !this.challengeOpt ? (atlas.features.routes ?? []).find((f) => f.properties.id === opts.routeId) : undefined;
     this.task = route ? taskFromRoute(route, this.frame) : null;
+    this.logOptions = { wing: this.wing.id, mass: this.mass, start: this.startMode, view: opts.view, thermals: opts.showThermals, others: this.others, school: !!this.school, launchSlow: this.launchSlow, multi: !!this.multi, route: opts.routeId ?? null, challenge: this.challengeOpt ? `${this.challengeOpt.kind}:${this.challengeOpt.level}` : null };
+    if (opts.log) {
+      this.log = new FlightLog(() => this.logStart());
+      window.addEventListener('error', this.onPageError);
+      window.addEventListener('unhandledrejection', this.onRejection);
+      window.addEventListener('pagehide', this.onPageHide);
+      document.addEventListener('visibilitychange', this.onHide);
+    }
+  }
+
+  /** The flight log (flight-log.ts), when the player lets it record; a new one after each restart. */
+  private log: FlightLog | null = null;
+  private logOptions: Record<string, number | string | boolean | null>;
+  private logMsg = '';
+  private logFps = { frames: 0, real: 0, fps: 60 };
+  private onPageError = (e: ErrorEvent) => this.log?.event(this.gameT, 'error', `${e.message} (${(e.filename ?? '').split('/').pop()}:${e.lineno})`);
+  private onRejection = (e: PromiseRejectionEvent) => this.log?.event(this.gameT, 'error', String(e.reason instanceof Error ? e.reason.message : e.reason));
+  /** Hidden (another tab, the phone locked): what is waiting goes out; closed: the end too. */
+  private onHide = () => {
+    if (document.visibilityState === 'hidden') void this.log?.flush(true);
+  };
+  private onPageHide = () => {
+    if (!this.log || this.log.done) return;
+    this.log.row(this.gameT, this.logRow());
+    this.log.close(this.gameT, { kind: 'closed', flightS: Math.round(this.flightS) });
+  };
+
+  private logStart() {
+    const sc = this.scenario;
+    return {
+      client: logClientId(),
+      build: String(import.meta.env.VITE_BUILD ?? 'dev').slice(0, 60),
+      takeoffId: this.takeoff.id.slice(0, 200),
+      takeoffName: this.takeoff.name.slice(0, 200),
+      lon: this.frame.lon0,
+      lat: this.frame.lat0,
+      scenario: { month0: sc.month0, day: sc.day, hour: sc.hour, windFrom: sc.windFrom, windKmh: sc.windKmh, instability: sc.instability, humidity: sc.humidity, randomWeather: sc.randomWeather, timeScale: sc.timeScale, seed: sc.seed },
+      options: this.logOptions,
+      device: { w: window.innerWidth, h: window.innerHeight, dpr: window.devicePixelRatio, touch: 'ontouchstart' in window, gpu: gpuName(), cores: navigator.hardwareConcurrency ?? null },
+    };
+  }
+
+  /** A row of the flight log (FLIGHT_LOG_COLUMNS after t). */
+  private logRow(): number[] {
+    const g = this.glider;
+    const a = this.airSample;
+    const i = this.pilotAir.info;
+    const deg = 180 / Math.PI;
+    const ground = this.groundAt(g.x, g.y);
+    const f = this.logFps;
+    if (f.real > 0.2) {
+      f.fps = f.frames / f.real;
+      f.frames = 0;
+      f.real = 0;
+    }
+    return [
+      this.launch ? 1 : this.landing ? 2 : 0,
+      g.x,
+      g.y,
+      g.z,
+      g.z - ground,
+      ((g.heading * deg) % 360 + 360) % 360,
+      g.bank * deg,
+      g.pitch * deg,
+      g.airspeed,
+      g.vz,
+      this.varioF,
+      g.brakeL,
+      g.brakeR,
+      g.weightShift,
+      g.speedbar,
+      g.ears,
+      g.collapse.amount,
+      g.collapse.frontal,
+      g.stall,
+      g.spin,
+      a.u,
+      a.v,
+      a.w,
+      i.relief,
+      i.anabaticW,
+      i.plume,
+      i.thermal,
+      i.gust,
+      i.sigmaW,
+      i.rotor,
+      this.world.view === 'third' ? 1 : 0,
+      f.fps,
+    ];
+  }
+
+  /** The end of a flight in the log, with a last row at that moment. */
+  private logEnd(info: Record<string, number | string | boolean | null>): void {
+    if (!this.log || this.log.done) return;
+    this.log.row(this.gameT, this.logRow());
+    this.log.end(this.gameT, info);
   }
 
   /** Flying school (school.ts), when chosen; the time scale of the take-off in it (slow motion). */
@@ -716,6 +813,7 @@ export class GameEngine {
     return this.world.topo;
   }
   setView(v: ViewMode): void {
+    if (v !== this.world.view) this.log?.event(this.gameT, 'view', v);
     this.world.setView(v);
     this.head = { yaw: 0, pitch: v === 'first' ? -0.12 : 0 };
   }
@@ -774,6 +872,11 @@ export class GameEngine {
     const real = Math.min(0.1, Math.max(0, (now - this.last) / 1000));
     this.last = now;
     this.readKeys(real);
+    if (this.log) {
+      this.logFps.frames++;
+      this.logFps.real += real;
+      this.log.tick(real);
+    }
     if (!this.paused && !this.ended && real > 0) {
       // (School: the take-off may run in slow motion.)
       const dt = real * this.timeScale * (this.launch ? this.launchSlow : 1);
@@ -807,11 +910,13 @@ export class GameEngine {
           if (!Number.isFinite(g.x + g.y + g.z + g.airspeed + g.vx + g.vy + g.vz)) {
             // Never leave the pilot in a broken state: back to the start.
             console.error('glider state not finite, restarting', { ...g });
+            this.log?.event(this.gameT, 'error', 'glider state not finite, restarting');
             this.restart();
             break;
           }
           this.whiteout += (this.pilotAir.cloud - this.whiteout) * Math.min(1, h * 2);
           for (const e of events) {
+            this.log?.event(this.gameT, e);
             this.incident = { text: EVENT_TEXT[e], until: this.flightS + (e === 'reopened' ? 2 : 5) };
             if (e !== 'reopened' && e !== 'cravat-cleared') this.audio.flap();
           }
@@ -823,6 +928,13 @@ export class GameEngine {
       if (!this.launch && this.track.due(this.gameT)) {
         const [lon, lat] = this.frame.toLngLat(g.x, g.y);
         this.track.push(this.gameT, { hour: this.hour, lon, lat, alt: g.z });
+      }
+      if (this.log && !this.ended) {
+        if (this.log.due(this.gameT)) this.log.row(this.gameT, this.logRow());
+        // What the player is told (incidents, warnings, the school's messages).
+        const msg = this.incident?.text ?? '';
+        if (msg && msg !== this.logMsg) this.log.event(this.gameT, 'message', msg);
+        this.logMsg = msg;
       }
       if (this.task && !this.launch && !this.landing) {
         const tagged = advanceTask(this.task, this.glider.x, this.glider.y, this.flightS);
@@ -945,6 +1057,7 @@ export class GameEngine {
       this.launch = null;
       this.world.glider.setInflation(null);
       this.liftoffT = this.flightS;
+      this.log?.event(this.gameT, 'liftoff', undefined, { airspeed: Math.round(L.airspeed * 10) / 10 });
       this.head = { yaw: 0, pitch: -0.12 };
       // (In school mode the school says it, with the key.)
       if (!this.school) this.incident = { text: 'Décollé ! Mains hautes, éloigne-toi du relief', until: this.flightS + 4 };
@@ -953,6 +1066,7 @@ export class GameEngine {
     } else if (L.phase === 'failed') {
       this.ended = true;
       const why = L.failReason ?? '';
+      this.logEnd({ kind: 'launch', reason: why, flightS: Math.round(this.flightS) });
       this.cb.onEnd({ kind: 'launch', vz: 0, groundKmh: L.run * 3.6, flightS: this.flightS, distKm: 0, maxAlt: g.z, gainM: 0, bestClimb: 0, ceilingS: null, reason: this.school ? explainLaunch(why, this.launchWind.head) : why, challenge: this.challengeResult() });
     }
   }
@@ -1137,6 +1251,7 @@ export class GameEngine {
 
   private endFlight(kind: FlightEnd['kind'], vz: number, groundKmh: number, reason: string): void {
     const g = this.glider;
+    this.logEnd({ kind, reason, vz: Math.round(vz * 10) / 10, groundKmh: Math.round(groundKmh), flightS: Math.round(this.flightS), distKm: Math.round(this.distKm() * 100) / 100, maxAlt: Math.round(this.maxAlt) });
     this.ended = true;
     this.landing = null;
     this.audio.update(0, 0);
@@ -1539,6 +1654,10 @@ export class GameEngine {
   }
 
   restart(): void {
+    if (this.log) {
+      this.logEnd({ kind: 'restart', flightS: Math.round(this.flightS) });
+      this.log = new FlightLog(() => this.logStart());
+    }
     this.track.clear();
     this.glider = this.makeGlider(this.spawn.x, this.spawn.y, this.spawn.z, this.spawn.heading);
     this.controls = { brakeL: 0, brakeR: 0, speedbar: 0, ears: false, weight: 0 };
@@ -1572,6 +1691,11 @@ export class GameEngine {
   }
 
   dispose(): void {
+    this.logEnd({ kind: 'quit', flightS: Math.round(this.flightS) });
+    window.removeEventListener('error', this.onPageError);
+    window.removeEventListener('unhandledrejection', this.onRejection);
+    window.removeEventListener('pagehide', this.onPageHide);
+    document.removeEventListener('visibilitychange', this.onHide);
     cancelAnimationFrame(this.raf);
     clearTimeout(this.attribTimer);
     this.netOff?.();

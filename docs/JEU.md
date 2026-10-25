@@ -104,14 +104,27 @@ Code : `apps/web/src/game/` (chargé seulement à l'ouverture de l'onglet).
   midi, 65 % le soir). En finale dans un vent qui tombe à zéro au sol, sans compenser : −0,4 m/s de
   vitesse air et une chute au contact doublée. Le cisaillement vertical du modèle (brise de vallée sous
   le vent d'altitude, inversion) secoue.
-- **Relief fin** (~10 m, le long du vent) : écoulement potentiel sur le profil, c.-à-d. la pente lissée
-  par un noyau dont la largeur est la hauteur sol : l'ascendance commence en avant de la face
+- **Relief fin** (~10 m, le long du vent, sur ±960 m, prolongé jusqu'à ±4,8 km par la grille
+  régionale ~300 m) : écoulement potentiel sur le profil, c.-à-d. la pente lissée
+  par un noyau dont la largeur est la hauteur sol : à quelques centaines de mètres au-dessus d'une
+  grande face, toute la pente compte (coupé à ±960 m, la bande perdait jusqu'à 125 m à 14 km/h et
+  275 m à 25 km/h ; la grille grossière donne la même bande que les tuiles fines à 40 m près). L'ascendance commence en avant de la face
   (0,8 m/s à 100 m du pied d'une face de 300 m par 20 km/h), monte au-dessus de la crête et faiblit
   avec la hauteur ; survitesse et compression sur la crête (+70 % à 30 m), descendance derrière ;
   facteur 3D (une crête plutôt qu'un sommet). **Décollement** derrière une crête raide (> ~17°) au-delà
   de ~20 km/h : rotor (vent qui remonte près du sol, ~0,2 fois le vent), couche de cisaillement à
   hauteur de crête. **Venturi** dans les cols et passages étroits (+22 % dans 300 m). Le « sous le
   vent » du modèle (216 m) complète pour les crêtes plus lointaines.
+- **Brise de pente et panache de crête** : la brise montante suit la surface la plus proche (pente,
+  falaise) selon son soleil, sa pente et son sol (1 à 4 m/s, couche de ~50 m). Arrivée à une crête,
+  un sommet ou le haut d'une falaise, elle ne s'arrête plus : les couches des deux versants
+  montent au-dessus à leur propre vitesse (continuité), en un panache large comme elles (~30 m
+  d'un seul côté, ~55 m des deux), qui s'élargit (0,1 m par mètre de montée), penche avec le vent
+  et se fond dans les thermiques de la couche convective (e-pliage 0,15 × l'épaisseur de convection
+  au-dessus de la crête, 120 à 260 m l'été). Sans vent, en août à 14 h 30, la bande à plus de
+  1,2 m/s finissait sous la crête (100 à 390 m dessous) ; elle passe 50 à 200 m au-dessus des
+  crêtes ensoleillées. Ce qui reste d'un faible relief (moins de ~20 m sur 250 m) ne fait pas de
+  panache.
 - **Thermiques** placés sur le potentiel du modèle (intensité saisonnière `thermalSeason` du modèle) et
   l'atlas, à 400 m l'un de l'autre au moins (haut de la fourchette d'Allen, ~2 par km² à mi-hauteur) :
   par journée moyenne en juillet à 14 h, 2 à 14 thermiques enroulables dans 2,4 km autour des décos
@@ -146,8 +159,9 @@ Code : `apps/web/src/game/` (chargé seulement à l'ouverture de l'onglet).
   main ; elle évolue en vol (vent qui tourne et forcit, masse d'air qui respire, cumulus qui se
   développent l'après-midi). Plafond et base des nuages en découlent.
 
-Coût : l'air au centre et aux bouts d'aile plus le pas de vol prennent 4,6 µs par pas de 1/120 s sur un
-portable (321 thermiques dans la fenêtre), sans allocation.
+Coût : l'air au centre et aux bouts d'aile plus le pas de vol prennent 13 µs par pas de 1/120 s sur un
+portable (2 600 thermiques dans la fenêtre, banc), sans allocation ; le profil prolongé et le panache
+ajoutent 1,7 µs par pas et, dans le jeu, 38 µs à chaque rafraîchissement du relief (10 fois par seconde).
 
 Banc d'essai avec critères (PASS/FAIL) : `npx tsx scripts/dev/game-flight-bench.ts`
 (`--only wing|air|day|perf`, `--verbose`) ; tests : `apps/web/test/`. Dans le vrai jeu (serveur de
@@ -222,6 +236,15 @@ vent et peut le traîner s'il ne l'affale pas.
   (`forecast.ts`) : la prévision AROME au décollage pour aujourd'hui donne le vent aux crêtes, la
   masse d'air par le gradient 850–700 hPa (3 °C/km → stable, 9 → très instable) et l'humidité par
   la hauteur de la base des cumulus au-dessus du sol.
+- **Journal des vols** (`flight-log.ts`) : si le joueur le laisse coché (« Partager mes vols »), une
+  ligne toutes les 0,5 s de jeu (position, hauteur sol, attitude, vitesses, commandes, fermetures,
+  l'air au pilote et ses parts : relief, brise, panache, masse d'air, rafales ; vue, images/s) et
+  les évènements (incidents, messages affichés, décollage, fin et sa raison, erreurs de la page)
+  partent vers l'API toutes les 20 s et à la fermeture de la page. Anonyme : un identifiant tiré au
+  hasard par navigateur, ni nom, ni code de salon, ni adresse ; gardé 180 jours. Lecture et
+  diagnostic (montées et ce qui les porte, incidents, sauts de position, pilote sous le sol,
+  images/s, dernières secondes d'un crash) : `npx tsx scripts/dev/flight-logs.ts` (sur dev-vm, via le
+  conteneur de l'API ; `--id <vol>`, `--json`, `--csv`, `--takeoff`, `--since`, `--client`).
 - **Trace IGC** : le vol est enregistré (un point par seconde une fois en l'air) et se télécharge à
   la fin au format IGC (`igc.ts`), pour le revoir dans les outils de vol habituels ; l'en-tête le
   marque comme vol simulé (pas d'enregistrement de sécurité G).
@@ -430,7 +453,12 @@ dans leur bouton (i) une fois en vol.
   vitesse en tient lieu. Les incidents se déclenchent sur l'incidence mais leur déroulé reste
   paramétré sur les bandes EN 926-2.
 - Relief : écoulement potentiel linéaire sur un profil 2D le long du vent (facteur 3D grossier),
-  rotor paramétré par la géométrie de la crête, pas d'ondes de ressaut.
+  rotor paramétré par la géométrie de la crête, pas d'ondes de ressaut ; pas de blocage par l'air
+  stable (le soir ou le matin, l'air passe moins haut au-dessus d'un grand massif).
+- Panache de crête : vitesse au départ par continuité des couches de brise, largeur et étalement
+  d'un panache de laboratoire, hauteur où il se fond dans les thermiques estimée (0,15 × la couche
+  convective), pas mesurée au-dessus de crêtes alpines ; la convergence plus forte au sommet d'un
+  cône (alimenté de tous les côtés) n'est pas comptée, ni la convergence sous le vent d'une crête.
 - Tourbillons des bords de thermiques calés sur une estimation de Kolmogorov et l'expérience de vol,
   pas sur des mesures ; la spirale calée sur la plage des rapports EN (12–19 m/s), plus 17 m/s.
 - Bandes EN 926-2 des classes C et D non vérifiées sur la norme ; chiffres du décollage, du posé et de
@@ -485,5 +513,12 @@ dans leur bouton (i) une fois en vol.
   Surfaces*, EGSR) et approximation de Fresnel de Schlick (1994).
 - Nuages volumétriques temps réel : Schneider, *The Real-time Volumetric Cloudscapes of Horizon Zero Dawn*
   https://www.advances.realtimerendering.com/s2015/The%20Real-time%20Volumetric%20Cloudscapes%20of%20Horizon%20-%20Zero%20Dawn%20-%20ARTR.pdf
+- Panache de crête : Serafin, S., Zardi, D. (2010), *Structure of the atmospheric boundary layer in
+  the vicinity of a developing upslope flow system: a numerical model study*, J. Atmos. Sci. 67 ;
+  Geerts, B., Demko, J. et al., convergence et cumulus au-dessus des Santa Catalina (CuPIDO)
+  https://ams.confex.com/ams/12meso/webprogram/Paper126207.html ; Papanicolaou, P. N., List, E. J.
+  (1988), *Investigations of round vertical turbulent buoyant jets*, J. Fluid Mech. 195 (étalement) ;
+  Stull, R. B. (1988), *An Introduction to Boundary Layer Meteorology* (couche de surface ~0,1 zi).
+  Hauteur de la bande de pente avec le vent : https://en.wikipedia.org/wiki/Lift_(soaring) .
 - Technique de pilotage (thermique, arrondi, décrochage) : https://xcmag.com/fly-better/paragliding-techniques-paramotoring-skills/thermalling-how-tight-should-you-turn/ ,
   https://blog.flywithgreg.com/how-to-swoop-flare-your-paraglider/ , https://flybubble.com/blog/paraglider-control-stall-spin-collapse

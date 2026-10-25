@@ -56,6 +56,8 @@ interface Settings {
   multi: boolean;
   room: string;
   pilotName: string;
+  /** Share the flights, anonymously, to improve the simulation (flight-log.ts). */
+  record: boolean;
 }
 
 const DEFAULTS: Settings = {
@@ -83,6 +85,7 @@ const DEFAULTS: Settings = {
   multi: false,
   room: '',
   pilotName: '',
+  record: true,
 };
 
 function loadSettings(): Settings {
@@ -326,6 +329,9 @@ function Menu({ onStart, error, takeoffs, routes }: { onStart: (s: Settings, t: 
         </label>
         <label className="game-check">
           <input type="checkbox" checked={s.others} onChange={(e) => set({ others: e.target.checked })} /> Autres pilotes en l'air
+        </label>
+        <label className="game-check" title="La trace, les commandes, l’air au pilote, les incidents et les messages du vol, avec un identifiant tiré au hasard : ni nom, ni adresse, ni code de salon. Gardés 6 mois.">
+          <input type="checkbox" checked={s.record} onChange={(e) => set({ record: e.target.checked })} /> Partager mes vols, anonymes, pour améliorer la simulation (trace, commandes, air au pilote, incidents ; gardés 6 mois)
         </label>
         {!isTouch() && (
           <label className="game-check" title="La souris à gauche ou à droite de l'écran penche la sellette ; au centre, assis droit">
@@ -1000,7 +1006,7 @@ export default function GameApp() {
         seed,
       };
       engineRef.current?.dispose();
-      const engine = new GameEngine(box.current!, scenario, atlas, { meta, url }, takeoff, { onHud: setHud, onStatus: setStatus, onEnd: setEnd }, { view: s.view, showThermals: s.showThermals, wing: s.wing, start: s.start, mass: s.mass, routeId: s.challenge ? null : s.routeId, multi: s.multi && s.room.length >= 4 ? { room: s.room, name: s.pilotName.trim() || 'Pilote' } : null, others: s.others, school: s.school, launchSlow: s.launchSlow, challenge: s.challenge ? { kind: s.challenge, level: s.challengeLevel } : null });
+      const engine = new GameEngine(box.current!, scenario, atlas, { meta, url }, takeoff, { onHud: setHud, onStatus: setStatus, onEnd: setEnd }, { view: s.view, showThermals: s.showThermals, wing: s.wing, start: s.start, mass: s.mass, routeId: s.challenge ? null : s.routeId, multi: s.multi && s.room.length >= 4 ? { room: s.room, name: s.pilotName.trim() || 'Pilote' } : null, others: s.others, school: s.school, launchSlow: s.launchSlow, challenge: s.challenge ? { kind: s.challenge, level: s.challengeLevel } : null, log: s.record });
       engineRef.current = engine;
       setEng(engine);
       if (import.meta.env.DEV) (window as unknown as { __game: GameEngine }).__game = engine;

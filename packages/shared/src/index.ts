@@ -8,3 +8,4 @@ export * from './weather';
 export * from './open-meteo';
 export * from './directories';
 export * from './game-protocol';
+export * from './flight-log';

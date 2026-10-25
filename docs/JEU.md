@@ -240,7 +240,9 @@ vent et peut le traîner s'il ne l'affale pas.
   ligne toutes les 0,5 s de jeu (position, hauteur sol, attitude, vitesses, commandes, fermetures,
   l'air au pilote et ses parts : relief, brise, panache, masse d'air, rafales ; vue, images/s) et
   les évènements (incidents, messages affichés, décollage, fin et sa raison, erreurs de la page)
-  partent vers l'API toutes les 20 s et à la fermeture de la page. Anonyme : un identifiant tiré au
+  partent vers l'API toutes les 20 s et à la fermeture de la page (envoi au mieux : un onglet
+  fermé en plein vol peut perdre ses 20 dernières secondes ; une fin de vol, un redémarrage ou le
+  retour au menu partent toujours). Anonyme : un identifiant tiré au
   hasard par navigateur, ni nom, ni code de salon, ni adresse ; gardé 180 jours. Lecture et
   diagnostic (montées et ce qui les porte, incidents, sauts de position, pilote sous le sol,
   images/s, dernières secondes d'un crash) : `npx tsx scripts/dev/flight-logs.ts` (sur dev-vm, via le

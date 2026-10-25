@@ -49,8 +49,9 @@ async function get<T>(path: string): Promise<T> {
     return (await r.json()) as T;
   }
   if (!/^[\w./?=&%:-]+$/.test(path)) throw new Error(`chemin refusé : ${path}`);
-  const inner = `wget -qO- --header "Authorization: Bearer $ADMIN_TOKEN" 'http://127.0.0.1:8080/api${path}'`;
-  const out = execFileSync('ssh', [vm, `cd ${dir} && docker compose exec -T api sh -c ${JSON.stringify(inner)}`], { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 });
+  // Single quotes: $ADMIN_TOKEN is the container's, expanded by its shell, not the VM's.
+  const inner = `wget -qO- --header "Authorization: Bearer $ADMIN_TOKEN" "http://127.0.0.1:8080/api${path}"`;
+  const out = execFileSync('ssh', [vm, `cd ${dir} && docker compose exec -T api sh -c '${inner}'`], { encoding: 'utf8', maxBuffer: 256 * 1024 * 1024 });
   return JSON.parse(out) as T;
 }
 

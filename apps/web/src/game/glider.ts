@@ -10,7 +10,9 @@
  * in the gusts, the cells' internal pressure filling, spreading and lost in a fold, the
  * trailing edge fluttering, the folds slamming in, flapping and reopening from the centre
  * out); the CPU only updates a few uniforms and about a hundred springs, the lines (a few
- * hundred points, their bows springs too) and the pilot's pose: no allocation per frame.
+ * hundred points, their bows springs too, drawn as curves on the GPU), the pilot's pose and,
+ * while a part is folded, its cloth (FlapCloth: 60 nodes a side, contact, its lines, a
+ * cravat's bundle): no allocation per frame.
  * Why a reduced model and not a cloth simulation: glider-shape.ts (WingDeform). Levels of detail: full
  * near the camera, simpler beyond ~150 m and 1.2 km (other pilots), lighter canopy mesh on
  * phones.
@@ -27,10 +29,28 @@
  */
 import * as THREE from 'three';
 import type { GliderState } from './flight';
-import { DYN_N, HALF_SPAN, newDeform, type WingDeform } from './glider-shape';
-import { Anchor, LineSet } from './glider-lines';
+import {
+  ARC,
+  DYN_N,
+  HALF_SPAN,
+  SHEET_NC,
+  SHEET_NU,
+  SHEET_ROWS,
+  SHEET_UP,
+  arcAt,
+  arcSolve,
+  intactSkins,
+  newDeform,
+  restPoint,
+  ribA,
+  sheetIndex,
+  wingPoint,
+  type Vec3Like,
+  type WingDeform,
+} from './glider-shape';
+import { Anchor, LineSet, REST_ANCHORS } from './glider-lines';
 import { PilotRig, lowPilotGeometry, lowPilotMaterial, type RigInput } from './glider-pilot';
-import { WING_HIGH, WING_LOW, WING_MIN, WING_PHONE, wingGeometry, wingMaterial, wingUniforms, type WingRes, type WingUniforms } from './glider-wing';
+import { NEAR_DIST, WING_HIGH, WING_LOW, WING_MIN, WING_NEAR, WING_PHONE, wingGeometry, wingMaterial, wingUniforms, type WingRes, type WingUniforms } from './glider-wing';
 
 export interface GliderModel {
   root: THREE.Group;
@@ -54,6 +74,18 @@ export interface GliderModel {
   /** The canopy's attitude relative to the pilot and its own motion (development, tests). */
   sway?: Sway;
   dynamics?: WingDynamics;
+  /** The folded parts' cloth (development, tests). */
+  cloth?: FlapCloth;
+}
+
+/**
+ * What the canopy reads from the glider state beyond flight.ts's GliderState (optional:
+ * absent, nothing changes). `stabiloPull` 0..1: the pilot pulling the stabilo line of the
+ * side caught in a cravat (flight.ts Controls.stabilo, not carried by GliderState): the line
+ * drawn taut and the bundle tugged down.
+ */
+export interface CanopyExtras {
+  stabiloPull?: number;
 }
 
 export interface GliderOptions {
@@ -83,6 +115,10 @@ const objPos = new THREE.Vector3();
  */
 class GliderLOD extends THREE.LOD {
   level = 0;
+  /** The nearest level's two canopies: the near tier within NEAR_DIST, the other beyond. */
+  near: THREE.Mesh | null = null;
+  far: THREE.Mesh | null = null;
+  private nearOn = true;
   update(camera: THREE.Camera): void {
     const lv = this.levels;
     if (lv.length < 2) return;
@@ -90,6 +126,11 @@ class GliderLOD extends THREE.LOD {
     objPos.setFromMatrixPosition(this.matrixWorld);
     const zoom = (camera as THREE.PerspectiveCamera).zoom;
     const d = camPos.distanceTo(objPos) / (zoom > 0 ? zoom : 1);
+    if (this.near && this.far) {
+      this.nearOn = d < NEAR_DIST * (this.nearOn ? 1.1 : 1);
+      (this.near.material as THREE.Material).visible = this.nearOn;
+      (this.far.material as THREE.Material).visible = !this.nearOn;
+    }
     let i = 0;
     for (let k = 1; k < lv.length; k++) {
       if (d >= lv[k].distance * (k <= this.level ? 0.9 : 1)) i = k;
@@ -472,21 +513,728 @@ export class WingDynamics {
   }
 }
 
+/** Nodes of one side's cloth (SHEET_NU along the span × SHEET_NC rows across the chord). */
+const NN = SHEET_NU * SHEET_NC;
+/** Samples of the lines' rest lengths over the span (|a| 0 … 1). */
+const LR_N = 41;
+/** The line row of each cloth row (none on the leading edge) and its anchor on the risers. */
+const ROW_ANCHOR = [-1, Anchor.A, Anchor.B, Anchor.C, Anchor.Pulley] as const;
+/** Outer A lines (big ears) from rib 17 out, on the split A' riser. */
+const A2_FROM = ribA(17);
+
+/**
+ * Constraints between two nodes by kind (0 span, 1 chord, 2 shear, 3 span bending, 4 chord
+ * bending, 5 the leading edge's rods): stiffness against stretching, against compression
+ * (0: the fabric buckles freely), and the share of the rest length they keep (bending: a
+ * minimum distance between second neighbours).
+ */
+const EDGE_K: [number, number, number][] = [
+  [1, 0.3, 1],
+  [1, 0.25, 1],
+  [0.6, 0.04, 1],
+  [0, 0.15, 0.75],
+  [0, 0.3, 0.8],
+  [0, 0.6, 0.8],
+];
+const ANCHOR_IDS = [Anchor.A, Anchor.A2, Anchor.B, Anchor.C, Anchor.Pulley] as const;
+/** Each node column's place from the crease (0) to the tip (1). */
+const U_OF = Array.from({ length: SHEET_NU }, (_, i) => Math.pow(i / (SHEET_NU - 1), SHEET_UP));
+
+/**
+ * The folded parts as cloth, simulated on the CPU for the glider near the camera.
+ *
+ * Why this and not a cloth of the whole canopy: two skins of 50 cells, the ribs and the
+ * contact in a fold make ~20 000 nodes, milliseconds a frame even on the GPU, and on the GPU
+ * the lines (drawn from the CPU, which must know where the folded tabs are) would wait for a
+ * read-back. But a collapsed part is a simple thing: its cells are empty, the upper and the
+ * lower skins lie on each other (one sheet of double fabric, a few centimetres apart where
+ * air is left), the ribs bend; and it is small: a grid of SHEET_NU × SHEET_NC = 60 nodes per
+ * side (~0.5 m along the span, the rows at the leading edge, the A, B, C line rows and the
+ * trailing edge), its fold line (the crease) pinned on the open wing. Position-based
+ * dynamics (Müller et al. 2007), a step of 1/60 s per frame, three iterations (two with both
+ * sides folded) of ~280 distance constraints (span and chord, shear, bending: the fabric resists stretching, not
+ * folding; the ribs and the leading edge's rods resist more), plus:
+ * - the lines: each tab of the A, B, C rows and the trailing edge at most its line's rest
+ *   length from its maillon (the pulley for the brake lines, shortened by the brake: pumping
+ *   pulls the flap) — slack lines leave the flap free, taut ones hold it (big ears: the outer
+ *   A lines pulled down by the hand);
+ * - the air: the flap streams in the wake, its normal pressure ∝ (w·n)|w·n| (w the relative
+ *   wind, a little upwards under the wing: it presses the folded part up against the open
+ *   one), its weight, a flutter that grows with the speed and the turbulence;
+ * - a pull towards the analytic fold (glider-shape.ts: the fold line, the fold angle and the
+ *   flapping of WingDynamics), so that the fold keeps the timing and the angles the flight
+ *   model and the EN 926-2 descriptions give it, the cloth adding its inertia, contact and
+ *   lines;
+ * - contact: no node within 6.5 cm of the open wing (its skins at that section, pinched at
+ *   the crease, found by a Newton step on the arc), nor the middles of the spans, of the
+ *   rows and of the cells between the nodes (the drawn bicubic bends between them), always
+ *   out below it (two neighbours pushed out on opposite sides would leave the sheet through
+ *   it); a node pressed against it loses its normal speed (the fabric does not bounce), its
+ *   pleats and skins' gap never deeper than the room left; the sheet's nodes keep 12 cm
+ *   apart (self-contact along the fold);
+ * - a cravat: the tip's last columns wrapped round the outer B and C lines (a bundle of
+ *   fabric ~15 cm across, a third of the way down), which it drags out of their course.
+ * The GPU draws the folded part from the grid (a bicubic through the nodes), its two skins
+ * on either side, crumpled in pleats as far as the cloth is compressed along the span
+ * (buckling: amplitude λ√ε/π for an excess length ε at a wavelength λ ≈ 0.35 m).
+ * Cost (M1 Pro, scripts/dev/wing-bench.ts): ~0.03–0.05 ms a frame per folded side.
+ */
+export class FlapCloth {
+  /** Per side (0 left, 1 right): node positions (canopy frame) and the previous step's. */
+  readonly x = [new Float64Array(NN * 3), new Float64Array(NN * 3)];
+  readonly xp = [new Float64Array(NN * 3), new Float64Array(NN * 3)];
+  readonly on = [false, false];
+  /** Nodes pushed out of the open wing in the last step (tests). */
+  readonly contacts = [0, 0];
+  /** The cravat's bundle (canopy frame) and how firmly it holds 0..1. */
+  readonly bundle = new Float32Array(3);
+  bundleK = 0;
+  private tgt = new Float64Array(NN * 3);
+  private rest = new Float64Array(NN * 3);
+  private arcA = [new Float32Array(NN), new Float32Array(NN)];
+  /** The span (a) of each node's material on the open wing. */
+  private matA = new Float32Array(NN);
+  private crum = [new Float32Array(NN), new Float32Array(NN)];
+  private touch = [new Float32Array(NN), new Float32Array(NN)];
+  /** Per node: clearance under the open wing (m), which bounds its pleats. */
+  private clear = [new Float32Array(NN).fill(1), new Float32Array(NN).fill(1)];
+  private nrm = [new Float32Array(NN * 3), new Float32Array(NN * 3)];
+  /** Constraints (EDGE_K): nodes, kind, rest length, stiffnesses, inverse masses' share. */
+  private eP: Int32Array;
+  private eQ: Int32Array;
+  private eKind: Uint8Array;
+  private restLen: Float64Array;
+  private eKs: Float64Array;
+  private eKc: Float64Array;
+  private eWa: Float64Array;
+  private eWb: Float64Array;
+  private lineRest = new Float32Array(4 * LR_N);
+  /** Anchors per side (A, A', B, C, pulley), canopy frame. */
+  private anc = new Float32Array(2 * 5 * 3);
+  private outerB = { x: 0, y: 0, z: 0 };
+  private p: Vec3Like = { x: 0, y: 0, z: 0 };
+  private q: Vec3Like = { x: 0, y: 0, z: 0 };
+  private seed = 0x6a09e667;
+  private t = 0;
+  private frame = 0;
+  /** Constraint iterations per step: three, two when both sides are folded (big ears). */
+  private iters = 3;
+
+  constructor() {
+    const id = (i: number, j: number) => j * SHEET_NU + i;
+    const edges: [number, number, number][] = [];
+    for (let j = 0; j < SHEET_NC; j++)
+      for (let i = 0; i < SHEET_NU; i++) {
+        if (i + 1 < SHEET_NU) edges.push([id(i, j), id(i + 1, j), 0]);
+        if (j + 1 < SHEET_NC) edges.push([id(i, j), id(i, j + 1), 1]);
+        if (i + 1 < SHEET_NU && j + 1 < SHEET_NC) {
+          edges.push([id(i, j), id(i + 1, j + 1), 2]);
+          edges.push([id(i + 1, j), id(i, j + 1), 2]);
+        }
+        if (i + 2 < SHEET_NU) edges.push([id(i, j), id(i + 2, j), 3]);
+        if (j + 2 < SHEET_NC) edges.push([id(i, j), id(i, j + 2), j === 0 ? 5 : 4]);
+      }
+    const ne = edges.length;
+    this.eP = new Int32Array(ne);
+    this.eQ = new Int32Array(ne);
+    this.eKind = new Uint8Array(ne);
+    this.restLen = new Float64Array(ne);
+    this.eKs = new Float64Array(ne);
+    this.eKc = new Float64Array(ne);
+    this.eWa = new Float64Array(ne);
+    this.eWb = new Float64Array(ne);
+    edges.forEach(([p, q, k], e) => {
+      this.eP[e] = p;
+      this.eQ[e] = q;
+      this.eKind[e] = k;
+      // (The crease's nodes, i = 0, are pinned on the open wing.)
+      const wa = p % SHEET_NU === 0 ? 0 : 1;
+      const wb = q % SHEET_NU === 0 ? 0 : 1;
+      const w = wa + wb;
+      this.eWa[e] = w ? wa / w : 0;
+      this.eWb[e] = w ? wb / w : 0;
+      this.eKs[e] = w ? EDGE_K[k][0] : 0;
+      this.eKc[e] = w ? EDGE_K[k][1] : 0;
+    });
+    // The lines' rest lengths: from each row's tab on the flying wing to its maillon (+1 %:
+    // stretched under load), the brake lines with their free travel.
+    const d0 = newDeform();
+    const p = this.p;
+    for (let r = 0; r < 4; r++) {
+      const c = SHEET_ROWS[r + 1];
+      for (let k = 0; k < LR_N; k++) {
+        const al = k / (LR_N - 1);
+        wingPoint(d0, Math.max(al, 1e-3), -Math.sqrt(c), 0, 0, 0, 0, p);
+        const an = REST_ANCHORS[r === 0 ? (al >= A2_FROM ? Anchor.A2 : Anchor.A) : ROW_ANCHOR[r + 1]];
+        this.lineRest[r * LR_N + k] = Math.hypot(p.x - an[0], p.y - an[1], p.z - an[2]) * 1.01 + (r === 3 ? 0.04 : 0);
+      }
+    }
+    wingPoint(d0, ribA(21), -Math.sqrt(0.5), 0, 0, 0, 0, this.outerB);
+    for (let s = 0; s < 2; s++) for (let a = 0; a < 5; a++) this.setAnchor(s, a, REST_ANCHORS[ANCHOR_IDS[a]], s ? 1 : -1);
+  }
+
+  private setAnchor(s: number, k: number, v: readonly number[], sg: number): void {
+    const o = (s * 5 + k) * 3;
+    this.anc[o] = sg * v[0];
+    this.anc[o + 1] = v[1];
+    this.anc[o + 2] = v[2];
+  }
+
+  private rnd(): number {
+    let s = this.seed;
+    s ^= s << 13;
+    s ^= s >>> 17;
+    s ^= s << 5;
+    this.seed = s;
+    return (s >>> 0) / 2147483648 - 1;
+  }
+
+  reset(d?: WingDeform): void {
+    this.on[0] = this.on[1] = false;
+    this.bundleK = 0;
+    if (d) d.cloth[0] = d.cloth[1] = 0;
+  }
+
+  /**
+   * One frame: the folds WingDynamics drew into `d` (foldL/R) become cloth where they are
+   * folded, written into d.sheet and d.cloth. `lines` gives the maillons where the rig put
+   * them (last frame's); `cravat` the caught side's catch 0..1 and side.
+   */
+  update(st: GliderState, d: WingDeform, dt: number, lines: LineSet | null, turbulence: number): void {
+    if (!(dt > 0)) return;
+    this.t += dt;
+    if (lines) {
+      const a = this.q;
+      for (let s = 0; s < 2; s++)
+        for (let k = 0; k < 5; k++) {
+          lines.anchor(s ? 1 : -1, ANCHOR_IDS[k], a);
+          const o = (s * 5 + k) * 3;
+          this.anc[o] = a.x;
+          this.anc[o + 1] = a.y;
+          this.anc[o + 2] = a.z;
+        }
+    }
+    this.frame++;
+    this.iters = d.foldL[2] > 0.002 && d.foldR[2] > 0.002 ? 2 : 3;
+    const col = st.collapse;
+    const cravat = col?.cravat || 0;
+    const cravatSide = cravat > 0.005 ? col?.cravatSide || 0 : 0;
+    this.bundleK = cravatSide ? Math.min(1, cravat / 0.08) : 0;
+    for (let s = 0; s < 2; s++) {
+      const f = s ? d.foldR : d.foldL;
+      if (!(f[2] > 0.002 && f[0] < 1.6)) {
+        this.on[s] = false;
+        d.cloth[s] = 0;
+        continue;
+      }
+      this.side(s, st, d, dt, cravatSide === (s ? 1 : -1) ? this.bundleK : 0, turbulence);
+      d.cloth[s] = 1;
+    }
+    if (lines) {
+      const b = this.bundle;
+      lines.setCatch(cravatSide, b[0], b[1], b[2], this.bundleK);
+    }
+  }
+
+  private side(s: number, st: GliderState, d: WingDeform, dt: number, catchK: number, turb: number): void {
+    const sg = s ? 1 : -1;
+    const f = s ? d.foldR : d.foldL;
+    const x = this.x[s];
+    const xp = this.xp[s];
+    const tgt = this.tgt;
+    const rest = this.rest;
+    const arcA = this.arcA[s];
+    const matA = this.matA;
+    const crum = this.crum[s];
+    const touch = this.touch[s];
+    const nrm = this.nrm[s];
+    const p = this.p;
+    const fresh = !this.on[s];
+    this.on[s] = true;
+    // The rest shape of each node's material and the crease (the open wing's camber line at
+    // the fold line, as deformed: brake, heave…), the target: the fold's analytic pose.
+    const bunch = clamp(0.82 - 1.5 * f[3], 0.55, 1);
+    for (let j = 0; j < SHEET_NC; j++) {
+      const c = SHEET_ROWS[j];
+      const fe = Math.min(0.999, f[0] + (f[1] - f[0]) * c);
+      for (let i = 0; i < SHEET_NU; i++) {
+        const n = j * SHEET_NU + i;
+        const m = fe + U_OF[i] * (1 - fe);
+        this.matA[n] = sg * m;
+        restPoint(sg * m, c, p);
+        rest[n * 3] = p.x;
+        rest[n * 3 + 1] = p.y;
+        rest[n * 3 + 2] = p.z;
+        if (fresh) {
+          x[n * 3] = xp[n * 3] = p.x;
+          x[n * 3 + 1] = xp[n * 3 + 1] = p.y;
+          x[n * 3 + 2] = xp[n * 3 + 2] = p.z;
+          arcA[n] = sg * m;
+          crum[n] = 0;
+          touch[n] = 0;
+        }
+      }
+      // The crease: pinned on the open wing.
+      const n0 = j * SHEET_NU;
+      wingPoint(d, sg * fe, Math.sqrt(c), 0.5, 1, 1, 0, p);
+      tgt[n0 * 3] = p.x;
+      tgt[n0 * 3 + 1] = p.y;
+      tgt[n0 * 3 + 2] = p.z;
+    }
+    // Fold axis: between the crease (leading edge to trailing edge, a diagonal) and the
+    // chord: a sheet folded flat along the diagonal would throw its tip far behind the
+    // trailing edge, but the curved, bunched fabric hangs under the wing (the photos).
+    const h0 = 0;
+    const h4 = (SHEET_NC - 1) * SHEET_NU * 3;
+    let ex = tgt[h4] - tgt[h0];
+    let ey = tgt[h4 + 1] - tgt[h0 + 1];
+    let ez = tgt[h4 + 2] - tgt[h0 + 2];
+    let el = Math.sqrt(ex * ex + ey * ey + ez * ez) || 1;
+    ex = 0.5 * (ex / el);
+    ey = 0.5 * (ey / el);
+    ez = 0.5 * (ez / el) + 0.5;
+    el = Math.sqrt(ex * ex + ey * ey + ez * ez) || 1;
+    ex /= el;
+    ey /= el;
+    ez /= el;
+    {
+      const nt = 2 * SHEET_NU + SHEET_NU - 1;
+      const n0 = 2 * SHEET_NU;
+      const rx = rest[nt * 3] - rest[n0 * 3];
+      const rz = rest[nt * 3 + 2] - rest[n0 * 3 + 2];
+      // (e × r).y: a positive turn lifts the tip; the fold turns it down.
+      if (ez * rx - ex * rz > 0) {
+        ex = -ex;
+        ey = -ey;
+        ez = -ez;
+      }
+    }
+    const fab = d.fab;
+    for (let j = 0; j < SHEET_NC; j++) {
+      const c = SHEET_ROWS[j];
+      const n0 = j * SHEET_NU;
+      const hx = tgt[n0 * 3];
+      const hy = tgt[n0 * 3 + 1];
+      const hz = tgt[n0 * 3 + 2];
+      for (let i = 1; i < SHEET_NU; i++) {
+        const n = n0 + i;
+        const rx = (rest[n * 3] - rest[n0 * 3]) * bunch;
+        const ry = (rest[n * 3 + 1] - rest[n0 * 3 + 1]) * bunch;
+        const rz = (rest[n * 3 + 2] - rest[n0 * 3 + 2]) * bunch;
+        // The fold angle and the folded part's own flapping at this material station.
+        const xs = (clamp(matA[n], -1, 1) + 1) * 0.5 * (DYN_N - 1);
+        const k0 = Math.min(DYN_N - 2, Math.floor(xs));
+        const flap = fab[k0 * 4 + 2] + (fab[k0 * 4 + 6] - fab[k0 * 4 + 2]) * (xs - k0);
+        const psi = Math.max(0, f[2] + flap);
+        const cp = Math.cos(psi);
+        const sp = Math.sin(psi);
+        // Rodrigues: r cos ψ + (e × r) sin ψ + e (e·r)(1 − cos ψ).
+        const ed = ex * rx + ey * ry + ez * rz;
+        const cx = ey * rz - ez * ry;
+        const cy = ez * rx - ex * rz;
+        const cz = ex * ry - ey * rx;
+        const dist = Math.sqrt(rx * rx + ry * ry + rz * rz);
+        tgt[n * 3] = hx + rx * cp + cx * sp + ex * ed * (1 - cp);
+        tgt[n * 3 + 1] = hy + ry * cp + cy * sp + ey * ed * (1 - cp);
+        // Its rear trails back in the wake, more the further out.
+        tgt[n * 3 + 2] = hz + rz * cp + cz * sp + ez * ed * (1 - cp) + 0.3 * Math.min(1, dist / 1.5) * c;
+      }
+    }
+    // Rest lengths: the fabric between the nodes' materials, unfolded (bending: the minimum kept).
+    for (let e = 0; e < this.eP.length; e++) {
+      const a = this.eP[e] * 3;
+      const b = this.eQ[e] * 3;
+      const dx = rest[b] - rest[a];
+      const dy = rest[b + 1] - rest[a + 1];
+      const dz = rest[b + 2] - rest[a + 2];
+      this.restLen[e] = Math.sqrt(dx * dx + dy * dy + dz * dz) * EDGE_K[this.eKind[e]][2];
+    }
+    // Steps of ~1/60 s (the stiffest motion, the pull to the fold at 1.6 Hz and the air's
+    // ~120 m/s², stays far inside position-based dynamics' stable range).
+    const nSub = Math.min(3, Math.max(1, Math.ceil(dt * 60 - 1e-3)));
+    const h = dt / nSub;
+    const wT = 2 * Math.PI * 1.6;
+    const airspeed = st.airspeed || 10.5;
+    const qv = Math.min(2.2, (airspeed / 10.5) ** 2);
+    // The relative wind (canopy frame): from ahead and a little from below.
+    const wy = 0.15;
+    const wz = 0.989;
+    const flutter = (14 + 30 * turb) * Math.sqrt(qv);
+    const brake = s ? d.brake[1] : d.brake[0];
+    const bundle = this.bundle;
+    let lineDx = 0;
+    let lineDy = 0;
+    let lineDz = 0;
+    if (catchK > 0) {
+      // The bundle: a fifth of the way down the outer B lines, from where their tabs fly
+      // (tugged down when the pilot pulls the stabilo line), a little back in the wake.
+      const ob = this.outerB;
+      const o = (s * 5 + 2) * 3;
+      const pull = clamp((st as GliderState & CanopyExtras).stabiloPull ?? 0, 0, 1);
+      const k = 0.2 + 0.08 * pull * (0.5 + 0.5 * Math.sin(this.t * 5));
+      bundle[0] = sg * ob.x + (this.anc[o] - sg * ob.x) * k;
+      bundle[1] = ob.y + (this.anc[o + 1] - ob.y) * k;
+      bundle[2] = ob.z + (this.anc[o + 2] - ob.z) * k + 0.25;
+      lineDx = this.anc[o] - sg * ob.x;
+      lineDy = this.anc[o + 1] - ob.y;
+      lineDz = this.anc[o + 2] - ob.z;
+      const ll = Math.sqrt(lineDx * lineDx + lineDy * lineDy + lineDz * lineDz) || 1;
+      lineDx /= ll;
+      lineDy /= ll;
+      lineDz /= ll;
+    }
+    for (let sub = 0; sub < nSub; sub++) {
+      // Forces: the pull to the analytic fold, the air on the sheet (with its own motion), weight, flutter.
+      for (let n = 0; n < NN; n++) {
+        const o = n * 3;
+        if (n % SHEET_NU === 0) {
+          xp[o] = x[o];
+          xp[o + 1] = x[o + 1];
+          xp[o + 2] = x[o + 2];
+          x[o] = tgt[o];
+          x[o + 1] = tgt[o + 1];
+          x[o + 2] = tgt[o + 2];
+          continue;
+        }
+        let vx = (x[o] - xp[o]) / h;
+        let vy = (x[o + 1] - xp[o + 1]) / h;
+        let vz = (x[o + 2] - xp[o + 2]) / h;
+        const nx = nrm[o];
+        const ny = nrm[o + 1];
+        const nz = nrm[o + 2];
+        const wn = ((0 - vx) * nx + (wy * airspeed - vy) * ny + (wz * airspeed - vz) * nz) / airspeed;
+        const aero = 120 * qv * wn * Math.abs(wn) + (flutter * this.rnd()) / Math.sqrt(h * 60);
+        let ax = wT * wT * (tgt[o] - x[o]) - 2 * 0.6 * wT * vx + aero * nx;
+        let ay = wT * wT * (tgt[o + 1] - x[o + 1]) - 2 * 0.6 * wT * vy + aero * ny - 3;
+        let az = wT * wT * (tgt[o + 2] - x[o + 2]) - 2 * 0.6 * wT * vz + aero * nz;
+        if (!Number.isFinite(ax + ay + az)) ax = ay = az = 0;
+        vx += ax * h;
+        vy += ay * h;
+        vz += az * h;
+        xp[o] = x[o];
+        xp[o + 1] = x[o + 1];
+        xp[o + 2] = x[o + 2];
+        x[o] += vx * h;
+        x[o + 1] += vy * h;
+        x[o + 2] += vz * h;
+      }
+      for (let it = 0; it < this.iters; it++) {
+        this.solveEdges(x);
+        this.solveLines(x, brake);
+        if (catchK > 0) this.solveBundle(x, catchK, lineDx, lineDy, lineDz);
+      }
+      this.contact(s, d, x, xp);
+    }
+    // (Self-contact every third frame: the sheet folds over itself slowly.)
+    if ((this.frame + s) % 3 === 0) {
+      this.selfContact(x);
+      this.contact(s, d, x, xp);
+    }
+    this.finish(s, d, dt);
+  }
+
+  private solveEdges(x: Float64Array): void {
+    const { eP, eQ, restLen, eKs, eKc, eWa, eWb } = this;
+    for (let e = 0; e < eP.length; e++) {
+      const a = eP[e] * 3;
+      const b = eQ[e] * 3;
+      const dx = x[b] - x[a];
+      const dy = x[b + 1] - x[a + 1];
+      const dz = x[b + 2] - x[a + 2];
+      const l2 = dx * dx + dy * dy + dz * dz;
+      const r = restLen[e];
+      const k = l2 > r * r ? eKs[e] : eKc[e];
+      if (k === 0 || l2 < 1e-12) continue;
+      const l = Math.sqrt(l2);
+      const corr = (k * (l - r)) / l;
+      const ca = eWa[e] * corr;
+      const cb = eWb[e] * corr;
+      x[a] += ca * dx;
+      x[a + 1] += ca * dy;
+      x[a + 2] += ca * dz;
+      x[b] -= cb * dx;
+      x[b + 1] -= cb * dy;
+      x[b + 2] -= cb * dz;
+    }
+  }
+
+  /** Each tab of a line row no further from its maillon than the line's rest length. */
+  private solveLines(x: Float64Array, brake: number): void {
+    const matA = this.matA;
+    for (let j = 1; j < SHEET_NC; j++) {
+      const r = j - 1;
+      for (let i = 1; i < SHEET_NU; i++) {
+        const n = j * SHEET_NU + i;
+        const a = matA[n];
+        const al = Math.min(1, Math.abs(a));
+        const side = a < 0 ? 0 : 1;
+        const k = al * (LR_N - 1);
+        const k0 = Math.min(LR_N - 2, Math.floor(k));
+        let L = this.lineRest[r * LR_N + k0] + (this.lineRest[r * LR_N + k0 + 1] - this.lineRest[r * LR_N + k0]) * (k - k0);
+        if (r === 3) L -= 0.45 * brake;
+        const ak = r === 0 ? (al >= A2_FROM ? 1 : 0) : r + 1;
+        const o = (side * 5 + ak) * 3;
+        const dx = x[n * 3] - this.anc[o];
+        const dy = x[n * 3 + 1] - this.anc[o + 1];
+        const dz = x[n * 3 + 2] - this.anc[o + 2];
+        const l = Math.sqrt(dx * dx + dy * dy + dz * dz);
+        if (l > L && l > 1e-6) {
+          const kf = L / l;
+          x[n * 3] = this.anc[o] + dx * kf;
+          x[n * 3 + 1] = this.anc[o + 1] + dy * kf;
+          x[n * 3 + 2] = this.anc[o + 2] + dz * kf;
+        }
+      }
+    }
+  }
+
+  /** A cravat: the tip's last two columns wrapped round the line group at the bundle. */
+  private solveBundle(x: Float64Array, k: number, lx: number, ly: number, lz: number): void {
+    // Two directions square to the lines.
+    let ax = ly * 0 - lz * 1;
+    let ay = lz * 0 - lx * 0;
+    let az = lx * 1 - ly * 0;
+    let al = Math.sqrt(ax * ax + ay * ay + az * az);
+    if (al < 1e-3) {
+      ax = 1;
+      ay = 0;
+      az = 0;
+      al = 1;
+    }
+    ax /= al;
+    ay /= al;
+    az /= al;
+    const bx = ly * az - lz * ay;
+    const by = lz * ax - lx * az;
+    const bz = lx * ay - ly * ax;
+    const B = this.bundle;
+    for (let col = 0; col < 2; col++) {
+      const i = SHEET_NU - 1 - col;
+      const r = col ? 0.15 : 0.08;
+      const w = (col ? 0.35 : 0.7) * k;
+      for (let j = 0; j < SHEET_NC; j++) {
+        const th = (j / (SHEET_NC - 1)) * 5.2 + this.t * 0.7 + col * 0.8;
+        const along = (j - 2) * 0.05;
+        const tx = B[0] + r * (Math.cos(th) * ax + Math.sin(th) * bx) + lx * along;
+        const ty = B[1] + r * (Math.cos(th) * ay + Math.sin(th) * by) + ly * along;
+        const tz = B[2] + r * (Math.cos(th) * az + Math.sin(th) * bz) + lz * along;
+        const n = j * SHEET_NU + i;
+        x[n * 3] += (tx - x[n * 3]) * w;
+        x[n * 3 + 1] += (ty - x[n * 3 + 1]) * w;
+        x[n * 3 + 2] += (tz - x[n * 3 + 2]) * w;
+      }
+    }
+  }
+
+  /**
+   * How far (m, along the section's up) a point must move to leave the open wing and its
+   * margin below it (0: clear), from the span `a0` it was last found at; ARC holds its
+   * section after.
+   */
+  private push(d: WingDeform, s: number, px: number, py: number, pz: number, a0: number, margin: number): number {
+    const sg = s ? 1 : -1;
+    const f = s ? d.foldR : d.foldL;
+    const g = s ? d.foldL : d.foldR;
+    const a = arcSolve(px, py, a0, 1);
+    this.lastA = a;
+    this.lastClear = 1;
+    const c = (pz - ARC.zq) / ARC.ch + 0.25;
+    if (c < -0.02 || c > 1) return 0;
+    // Open there? (Not beyond this fold's line, nor beyond the other side's.)
+    if (sg * a > f[0] + (f[1] - f[0]) * c - 0.02) return 0;
+    if (g[2] > 0.002 && -sg * a > g[0] + (g[1] - g[0]) * c - 0.02) return 0;
+    const nx = ARC.nx;
+    const ny = ARC.ny;
+    const hgt = (px - ARC.ax) * nx + (py - ARC.ay) * ny;
+    const sk = intactSkins(d, a, Math.max(0, c));
+    arcAt(a);
+    if (hgt < sk.lo) this.lastClear = sk.lo - hgt;
+    if (hgt <= sk.lo - margin || hgt >= sk.up + margin) return 0;
+    // Always out below: a fold turns under the wing, and two neighbours pushed out on
+    // opposite sides would leave the sheet between them through it.
+    return sk.lo - margin - hgt;
+  }
+  private lastA = 0;
+  /** Clearance (m) under the open wing of the last point pushed (1: far from it). */
+  private lastClear = 1;
+
+  /**
+   * No node inside the open wing or within 4.5 cm of its skins, nor the middle of the first
+   * spans from the crease (where the drawn sheet curves most between nodes); pressed nodes
+   * lose their normal speed (the fabric does not bounce).
+   */
+  private contact(s: number, d: WingDeform, x: Float64Array, xp: Float64Array): void {
+    const arcA = this.arcA[s];
+    const touch = this.touch[s];
+    const clear = this.clear[s];
+    const margin = 0.065;
+    let hits = 0;
+    for (let n = 0; n < NN; n++) {
+      const i = n % SHEET_NU;
+      if (i === 0) continue;
+      const o = n * 3;
+      touch[n] *= 0.9;
+      let dh = this.push(d, s, x[o], x[o + 1], x[o + 2], arcA[n], margin);
+      arcA[n] = this.lastA;
+      clear[n] = dh === 0 ? this.lastClear : margin;
+      let k = 1;
+      // (The middles only where they may reach the wing: near the crease, or the node within 25 cm under it.)
+      if (dh === 0 && (i <= 3 || this.lastClear < 0.25)) {
+        // The span's middle towards the crease: the node moves twice as far (its inner end
+        // is the crease, pinned, or a node pushed in its turn); and towards the next row.
+        const q = o - 3;
+        dh = this.push(d, s, 0.5 * (x[o] + x[q]), 0.5 * (x[o + 1] + x[q + 1]), 0.5 * (x[o + 2] + x[q + 2]), arcA[n], margin);
+        k = i === 1 ? 2 : 1.5;
+        if (dh === 0 && n + SHEET_NU < NN) {
+          const r = o + SHEET_NU * 3;
+          dh = this.push(d, s, 0.5 * (x[o] + x[r]), 0.5 * (x[o + 1] + x[r + 1]), 0.5 * (x[o + 2] + x[r + 2]), arcA[n], margin);
+          k = 1.5;
+          // And the middle of the cell of four nodes it heads.
+          if (dh === 0) {
+            dh = this.push(d, s, 0.25 * (x[o] + x[q] + x[r] + x[r - 3]), 0.25 * (x[o + 1] + x[q + 1] + x[r + 1] + x[r - 2]), 0.25 * (x[o + 2] + x[q + 2] + x[r + 2] + x[r - 1]), arcA[n], margin);
+            k = 2;
+          }
+        }
+      }
+      if (dh === 0) continue;
+      const nx = ARC.nx * dh * k;
+      const ny = ARC.ny * dh * k;
+      x[o] += nx;
+      x[o + 1] += ny;
+      xp[o] += nx;
+      xp[o + 1] += ny;
+      touch[n] = 1;
+      hits++;
+    }
+    this.contacts[s] = hits;
+  }
+
+  /** Nodes of the sheet that are not neighbours keep 12 cm apart (the fabric folded on itself). */
+  private selfContact(x: Float64Array): void {
+    const r2 = 0.12 * 0.12;
+    for (let a = 0; a < NN; a++) {
+      const ia = a % SHEET_NU;
+      const ja = (a / SHEET_NU) | 0;
+      for (let b = a + 1; b < NN; b++) {
+        const ib = b % SHEET_NU;
+        const jb = (b / SHEET_NU) | 0;
+        if (Math.abs(ia - ib) <= 1 && Math.abs(ja - jb) <= 1) continue;
+        const dx = x[b * 3] - x[a * 3];
+        const dy = x[b * 3 + 1] - x[a * 3 + 1];
+        const dz = x[b * 3 + 2] - x[a * 3 + 2];
+        const l2 = dx * dx + dy * dy + dz * dz;
+        if (l2 >= r2 || l2 < 1e-10) continue;
+        const wa = ia === 0 ? 0 : 1;
+        const wb = ib === 0 ? 0 : 1;
+        if (wa + wb === 0) continue;
+        const l = Math.sqrt(l2);
+        const corr = (0.12 - l) / (l * (wa + wb));
+        x[a * 3] -= wa * corr * dx;
+        x[a * 3 + 1] -= wa * corr * dy;
+        x[a * 3 + 2] -= wa * corr * dz;
+        x[b * 3] += wb * corr * dx;
+        x[b * 3 + 1] += wb * corr * dy;
+        x[b * 3 + 2] += wb * corr * dz;
+      }
+    }
+  }
+
+  /** Normals, pleats (from the compression along the span) and the skins' gap, into d.sheet. */
+  private finish(s: number, d: WingDeform, dt: number): void {
+    const x = this.x[s];
+    const nrm = this.nrm[s];
+    const crum = this.crum[s];
+    const touch = this.touch[s];
+    const rest = this.rest;
+    const sh = d.sheet;
+    const sgn = s ? -1 : 1;
+    const kc = Math.min(1, dt / 0.1);
+    for (let j = 0; j < SHEET_NC; j++)
+      for (let i = 0; i < SHEET_NU; i++) {
+        const n = j * SHEET_NU + i;
+        const i0 = j * SHEET_NU + Math.max(0, i - 1);
+        const i1 = j * SHEET_NU + Math.min(SHEET_NU - 1, i + 1);
+        const j0 = Math.max(0, j - 1) * SHEET_NU + i;
+        const j1 = Math.min(SHEET_NC - 1, j + 1) * SHEET_NU + i;
+        const ux = x[i1 * 3] - x[i0 * 3];
+        const uy = x[i1 * 3 + 1] - x[i0 * 3 + 1];
+        const uz = x[i1 * 3 + 2] - x[i0 * 3 + 2];
+        const cx = x[j1 * 3] - x[j0 * 3];
+        const cy = x[j1 * 3 + 1] - x[j0 * 3 + 1];
+        const cz = x[j1 * 3 + 2] - x[j0 * 3 + 2];
+        let nx = sgn * (uy * cz - uz * cy);
+        let ny = sgn * (uz * cx - ux * cz);
+        let nz = sgn * (ux * cy - uy * cx);
+        const nl = Math.sqrt(nx * nx + ny * ny + nz * nz);
+        if (nl > 1e-9) {
+          nx /= nl;
+          ny /= nl;
+          nz /= nl;
+        } else {
+          nx = 0;
+          ny = 1;
+          nz = 0;
+        }
+        nrm[n * 3] = nx;
+        nrm[n * 3 + 1] = ny;
+        nrm[n * 3 + 2] = nz;
+        // Excess fabric along the span: buckles into pleats (λ ≈ 0.35 m), flattened where pressed.
+        const len = Math.sqrt(ux * ux + uy * uy + uz * uz);
+        const rl = Math.hypot(rest[i1 * 3] - rest[i0 * 3], rest[i1 * 3 + 1] - rest[i0 * 3 + 1], rest[i1 * 3 + 2] - rest[i0 * 3 + 2]);
+        const eps = len > 1e-4 ? Math.max(0, rl / len - 1) : 0;
+        // (Never deeper than the room left under the open wing.)
+        const amp = Math.min(0.07, 0.008 + (0.35 / Math.PI) * Math.sqrt(Math.min(1.5, eps)) * 0.6, 0.6 * Math.max(0, this.clear[s][n] - 0.015)) * (1 - 0.65 * touch[n]);
+        crum[n] += (amp - crum[n]) * kc;
+        const u = U_OF[i];
+        const t = u < 0.25 ? u / 0.25 : 1;
+        const gap = Math.min(0.004 + 0.016 * t * t * (3 - 2 * t), 0.6 * Math.max(0.004, this.clear[s][n] - 0.01));
+        const o = sheetIndex(s, i, j, 0);
+        const on = sheetIndex(s, i, j, 1);
+        sh[o] = x[n * 3];
+        sh[o + 1] = x[n * 3 + 1];
+        sh[o + 2] = x[n * 3 + 2];
+        sh[o + 3] = i === 0 ? 0 : crum[n];
+        sh[on] = nx;
+        sh[on + 1] = ny;
+        sh[on + 2] = nz;
+        sh[on + 3] = gap;
+      }
+  }
+}
+
 interface Level {
   group: THREE.Group;
   canopy: THREE.Group;
   lines: LineSet | null;
   rig: PilotRig | null;
+  /** The near tier's canopy and the one drawn beyond NEAR_DIST (nearest level on computers). */
+  near: THREE.Mesh | null;
+  far: THREE.Mesh | null;
 }
 
-function makeLevel(u: WingUniforms, res: WingRes | null, lines: 'high' | 'low' | null, pilot: 'high' | 'low' | null): Level {
+function wingMesh(u: WingUniforms, res: WingRes): THREE.Mesh {
+  const wing = new THREE.Mesh(wingGeometry(res), wingMaterial(u, res.balloon, res.wrinkles, !!res.near));
+  wing.frustumCulled = false;
+  return wing;
+}
+
+function makeLevel(u: WingUniforms, res: WingRes | null, lines: 'high' | 'low' | null, pilot: 'high' | 'low' | null, nearRes: WingRes | null = null): Level {
   const group = new THREE.Group();
   const canopy = new THREE.Group();
   group.add(canopy);
+  let near: THREE.Mesh | null = null;
+  let far: THREE.Mesh | null = null;
   if (res) {
-    const wing = new THREE.Mesh(wingGeometry(res), wingMaterial(u, res.balloon, res.wrinkles));
-    wing.frustumCulled = false;
-    canopy.add(wing);
+    far = wingMesh(u, res);
+    canopy.add(far);
+  }
+  if (nearRes) {
+    near = wingMesh(u, nearRes);
+    canopy.add(near);
+    // (Which of the two is drawn: their materials' visibility, the meshes' own left to the benches.)
+    (far?.material as THREE.Material | undefined)?.setValues({
+      visible: false,
+    });
   }
   const ls = lines ? new LineSet(lines) : null;
   if (ls) canopy.add(ls.mesh);
@@ -499,7 +1247,7 @@ function makeLevel(u: WingUniforms, res: WingRes | null, lines: 'high' | 'low' |
     const m = new THREE.Mesh(lowPilotGeometry(), lowPilotMaterial());
     group.add(m);
   }
-  return { group, canopy, lines: ls, rig };
+  return { group, canopy, lines: ls, rig, near, far };
 }
 
 export function buildGlider(colors = { main: 0xd62f2f, stripe: 0xf4f1ea, under: 0xb8b2aa }, opts: GliderOptions = {}): GliderModel {
@@ -507,13 +1255,17 @@ export function buildGlider(colors = { main: 0xd62f2f, stripe: 0xf4f1ea, under: 
   const u = wingUniforms(colors);
   const mode = opts.lod ?? 'auto';
   const levels: Level[] = [];
-  if (mode !== 'low') levels.push(makeLevel(u, phone() ? WING_PHONE : WING_HIGH, 'high', 'high'));
+  // The nearest level: on computers the near tier for the pilot's view, the other within 150 m.
+  const isPhone = phone();
+  if (mode !== 'low') levels.push(makeLevel(u, isPhone ? WING_PHONE : WING_HIGH, 'high', 'high', isPhone ? null : WING_NEAR));
   if (mode !== 'high') levels.push(makeLevel(u, WING_LOW, 'low', 'low'));
   if (mode === 'auto') levels.push(makeLevel(u, WING_MIN, null, null));
   let lod: GliderLOD | null = null;
   if (levels.length > 1) {
     lod = new GliderLOD();
     levels.forEach((l, i) => lod!.addLevel(l.group, i === 0 ? 0 : i === 1 ? LOD_FAR : LOD_VERY_FAR));
+    lod.near = levels[0].near;
+    lod.far = levels[0].near ? levels[0].far : null;
     root.add(lod);
   } else root.add(levels[0].group);
   const full = levels[0].rig ? levels[0] : null;
@@ -523,6 +1275,7 @@ export function buildGlider(colors = { main: 0xd62f2f, stripe: 0xf4f1ea, under: 
   const canopyInv = new THREE.Quaternion();
   const sway = new Sway();
   const dyn = new WingDynamics();
+  const cloth = new FlapCloth();
   let dynIdle = false;
   let inflating = false;
   let theta: number | null = null;
@@ -633,10 +1386,15 @@ export function buildGlider(colors = { main: 0xd62f2f, stripe: 0xf4f1ea, under: 
     dyn.inflation(theta, dt);
     if (!lod || lod.level === 0) {
       dyn.update(st, d, dt);
+      // The folded parts as cloth (contact, lines, wake), from the folds the dynamics drew.
+      if (!inflating) cloth.update(st, d, dt, levels[0].lines, dyn.turbulence);
+      else cloth.reset(d);
       dynIdle = false;
     } else {
       if (!dynIdle) {
         dyn.reset();
+        cloth.reset(d);
+        levels[0].lines?.setCatch(0, 0, 0, 0, 0);
         d.dyn.fill(0);
         d.fab.set(dyn.fab);
         dynIdle = true;
@@ -659,6 +1417,11 @@ export function buildGlider(colors = { main: 0xd62f2f, stripe: 0xf4f1ea, under: 
     u.uDyn.value.set(d.dyn);
     u.uFab.value.set(d.fab);
     u.uAir.value.fromArray(d.air);
+    u.uCloth.value.fromArray(d.cloth);
+    if (d.cloth[0] > 0 || d.cloth[1] > 0) {
+      (u.uSheet.value.image.data as Float32Array).set(d.sheet);
+      u.uSheet.value.needsUpdate = true;
+    }
   }
 
   function update(st: GliderState, step?: number): void {
@@ -706,5 +1469,5 @@ export function buildGlider(colors = { main: 0xd62f2f, stripe: 0xf4f1ea, under: 
   const setAir = (turbulence: number) => {
     dyn.airTurbulence = turbulence;
   };
-  return { root, pilot, standing, update, setInflation, setAir, sway, dynamics: dyn };
+  return { root, pilot, standing, update, setInflation, setAir, sway, dynamics: dyn, cloth };
 }

@@ -2,16 +2,18 @@
  * The canopy mesh: cells with their ballooning, the airfoil, closed tips and stabilos,
  * deformed on the GPU from a few uniforms (glider-shape.ts) and, near the camera, the
  * offsets of a cloth simulation of the skins (Blender, per brake level, loaded in the
- * background), its normals taken by finite differences of the deformed surface. The fragment
- * shader adds the fabric's wrinkles (line tabs, brake tabs, slack fabric: `fabricH`, at the
- * near level on computers), draws a modern design (two
+ * background) and the folded parts' real-time cloth (a float texture), its normals taken by
+ * finite differences of the deformed surface. Within NEAR_DIST (the pilot's view) a denser
+ * mesh carries the fabric's wrinkles as geometry and the cell openings as holes (WING_NEAR,
+ * nearRows); beyond, the fragment shader draws the wrinkles (line tabs, brake tabs, slack
+ * fabric: `fabricH`, by perturbing the normal). It draws a modern design (two
  * colours, a swoosh, pinstripe, dark tips), the seams and the cell openings, lights the
  * coated ripstop (wrapped diffuse, satin sheen) and lets the sun through: seen from below
  * the wing glows with the colours of both skins, the ribs, seams and diagonal tapes inside
  * drawn as darker lines.
  */
 import * as THREE from 'three';
-import { BASIS_COLS, BASIS_LEVELS, BASIS_ROWS, DYN_N, HALF_SPAN, N_CELLS, WING_GLSL, newDeform, ribA, wingPoint } from './glider-shape';
+import { BASIS_COLS, BASIS_LEVELS, BASIS_ROWS, DYN_N, HALF_SPAN, N_CELLS, SHEET_NC, SHEET_NU, WING_GLSL, newDeform, ribA, wingPoint } from './glider-shape';
 
 export interface WingRes {
   /** Cells drawn (50 = every real cell) and columns per cell, points around the profile. */
@@ -21,8 +23,17 @@ export interface WingRes {
   balloon: boolean;
   /** The fabric's wrinkles in the fragment shader (line tabs, brake tabs, slack fabric). */
   wrinkles: boolean;
+  /**
+   * The near tier (the camera within NEAR_DIST: the pilot's own wing): rows packed at the line
+   * tabs, the trailing edge and the nose (nearRows), the wrinkles' coarser part as geometry
+   * (glider-shape.ts wrinkleG), the cell openings as holes.
+   */
+  near?: boolean;
 }
 
+/** The near tier within this distance of the camera (m): the pilot's view, the closest chase. */
+export const NEAR_DIST = 14;
+export const WING_NEAR: WingRes = { cells: N_CELLS, seg: 5, prof: 0, balloon: true, wrinkles: true, near: true };
 export const WING_HIGH: WingRes = { cells: N_CELLS, seg: 4, prof: 41, balloon: true, wrinkles: true };
 /** Phones: the cells' shape and motion, not the wrinkles (a fullscreen wing's pixels are the cost there). */
 export const WING_PHONE: WingRes = { cells: N_CELLS, seg: 2, prof: 29, balloon: true, wrinkles: false };
@@ -31,9 +42,34 @@ export const WING_MIN: WingRes = { cells: 10, seg: 1, prof: 9, balloon: false, w
 
 const cache = new Map<string, THREE.BufferGeometry>();
 
+/**
+ * Profile rows of the near tier (tw, lower trailing edge … nose … upper trailing edge): ~3 cm
+ * apart (at the root chord) round the A, B and C tabs of the lower skin, 4–5 cm at the
+ * trailing edge, uniform in tw round the nose, 10–13 cm elsewhere: where the fabric's shape
+ * changes over a few centimetres, not everywhere.
+ */
+export function nearRows(): number[] {
+  const C0 = 2.65;
+  const spacing = (c: number, upper: boolean): number => {
+    let sp = upper ? 0.13 : 0.1;
+    if (c > 0.78) sp = Math.min(sp, 0.04 + (1 - c) * 0.25);
+    if (!upper) for (const t of [0.11, 0.37, 0.66]) sp = Math.min(sp, 0.03 + 0.6 * Math.max(0, Math.abs(c - t) * C0 - 0.03));
+    return sp;
+  };
+  const skin = (upper: boolean): number[] => {
+    const out: number[] = [];
+    for (let c = 1; c > 0.045; c -= spacing(c, upper) / C0) out.push(Math.sqrt(c));
+    return out;
+  };
+  const nose = [0.16, 0.12, 0.08, 0.04];
+  const lower = skin(false).map((t) => -t);
+  const upper = skin(true).reverse();
+  return [...lower, ...nose.map((t) => -t), 0, ...nose.slice().reverse(), ...upper];
+}
+
 /** Rest geometry of the canopy at a resolution (shared by every glider). */
 export function wingGeometry(r: WingRes): THREE.BufferGeometry {
-  const key = `${r.cells}/${r.seg}/${r.prof}/${r.balloon}`;
+  const key = `${r.cells}/${r.seg}/${r.prof}/${r.balloon}/${!!r.near}`;
   const hit = cache.get(key);
   if (hit) return hit;
   const half = r.cells / 2;
@@ -42,9 +78,10 @@ export function wingGeometry(r: WingRes): THREE.BufferGeometry {
     const k = ((i - half) / half) * (N_CELLS / 2);
     ribs.push(Math.sign(k) * ribA(Math.abs(k)));
   }
-  const P = r.prof;
   const tws: number[] = [];
-  for (let j = 0; j < P; j++) tws.push(Math.sin((Math.PI * (-1 + (2 * j) / (P - 1))) / 2));
+  if (r.near) tws.push(...nearRows());
+  else for (let j = 0; j < r.prof; j++) tws.push(Math.sin((Math.PI * (-1 + (2 * j) / (r.prof - 1))) / 2));
+  const P = tws.length;
   const aP: number[] = [];
   const aK: number[] = [];
   const idx: number[] = [];
@@ -119,6 +156,8 @@ varying vec3 vView;
 varying float vFold;
 varying float vSoft;
 varying float vCh;
+varying float vKr;
+varying float vWr;
 ${WING_GLSL}
 void main() {
   float a = aP.x;
@@ -129,16 +168,25 @@ void main() {
   float cw = aK.y;
   wFoldWeight = 0.0;
   wSoft = 0.0;
+  wWrinkle = 0.0;
   vec3 P = wingPos(a, tw, v, w, kind, cw);
   vFold = wFoldWeight;
   vSoft = wSoft;
+  vWr = wWrinkle;
   vCh = chordAt(a);
+  vKr = asin(min(abs(a) * ${Math.sin(0.942).toFixed(6)}, 1.0)) / 0.942 * ${(N_CELLS / 2).toFixed(1)};
   vec3 n;
+#ifdef NEAR
+  // (Steps short of the wrinkles' size: the normal of the displaced surface itself.)
+  float dt = 0.008;
+  float dv = 0.06;
+#else
   float dt = 0.02;
+  float dv = 0.15;
+#endif
   float st = tw + dt <= 1.0 ? 1.0 : -1.0;
   if (kind < 0.5) {
     // Finite differences across the cell (one-sided at the ribs: sharp creases) and along the profile.
-    float dv = 0.15;
     float sv = v + dv <= 1.0 ? 1.0 : -1.0;
     vec3 Pv = wingPos(a + sv * dv * max(cw, 0.05) / ${HALF_SPAN.toFixed(3)}, tw, v + sv * dv, w, kind, cw);
     vec3 Pt = wingPos(a, tw + st * dt, v, w, kind, cw);
@@ -174,6 +222,8 @@ varying vec3 vView;
 varying float vFold;
 varying float vSoft;
 varying float vCh;
+varying float vKr;
+varying float vWr;
 #include <common>
 #include <lights_pars_begin>
 
@@ -251,29 +301,31 @@ vec3 bumped(vec3 N, vec3 p, float h) {
   return normalize(abs(det) * N - g);
 }
 
-// Anti-aliased step at 0 and band of half width h around 0 (fades out below a pixel).
-float edgeAA(float d) {
-  return clamp(d / (fwidth(d) + 1e-6) + 0.5, 0.0, 1.0);
+// Anti-aliased step at 0 and band of half width h around 0 (fades out below a pixel), given
+// the derivative's width fw (shared: the bands along the chord all take fwidth(c), those
+// along the span fwidth(|a|); a dozen fwidth and divisions fewer per pixel).
+float edgeW(float d, float fw) {
+  return clamp(d / fw + 0.5, 0.0, 1.0);
 }
-float bandAA(float d, float h) {
-  float fw = fwidth(d) + 1e-6;
+float bandW(float d, float h, float fw) {
   return clamp((h + 0.5 * fw - abs(d)) / fw, 0.0, 1.0) * min(1.0, 2.0 * h / fw);
 }
-vec3 designUpper(float al, float c) {
+vec3 designUpper(float al, float c, float fc, float fa) {
   vec3 col = uMain;
   float b1 = 0.95 - 0.78 * pow(al, 1.35);
   float b2 = b1 + 0.17 - 0.05 * al;
-  col = mix(col, uSecond, edgeAA(c - b1) * edgeAA(b2 - c));
-  col = mix(col, uAccent, bandAA(c - (b2 + 0.035), 0.009));
-  col = mix(col, uSecond, edgeAA(0.05 - c));
-  col = mix(col, uAccent, edgeAA(al - (0.935 + 0.03 * c)));
+  float fb = fc + fa;
+  col = mix(col, uSecond, edgeW(c - b1, fb) * edgeW(b2 - c, fb));
+  col = mix(col, uAccent, bandW(c - (b2 + 0.035), 0.009, fb));
+  col = mix(col, uSecond, edgeW(0.05 - c, fc));
+  col = mix(col, uAccent, edgeW(al - (0.935 + 0.03 * c), fa + 0.03 * fc));
   return col;
 }
-vec3 designLower(float al, float c) {
+vec3 designLower(float al, float c, float fc, float fa) {
   vec3 col = uUnder;
-  col = mix(col, uMain, edgeAA(0.1 - c));
-  col = mix(col, uMain, edgeAA(al - (0.72 + 0.1 * c)));
-  col = mix(col, uAccent, edgeAA(al - 0.965));
+  col = mix(col, uMain, edgeW(0.1 - c, fc));
+  col = mix(col, uMain, edgeW(al - (0.72 + 0.1 * c), fa + 0.1 * fc));
+  col = mix(col, uAccent, edgeW(al - 0.965, fa));
   return col;
 }
 
@@ -283,29 +335,35 @@ void main() {
   float tw = vP.y;
   float c = tw * tw;
   bool upper = tw >= 0.0;
-  // Cells from the layout of the ribs (the same at every level of detail).
-  float kr = asin(min(al * ${Math.sin(0.942).toFixed(6)}, 1.0)) / 0.942 * ${(N_CELLS / 2).toFixed(1)};
+  // Cells from the layout of the ribs (the same at every level of detail; interpolated from the vertices).
+  float kr = vKr;
   float cell = floor(kr);
   float cv = kr - cell;
   float rd = min(cv, 1.0 - cv);
-  vec3 colUp = designUpper(al, c);
-  vec3 colLo = designLower(al, c);
+  float fc = fwidth(c) + 1e-6;
+  float fa = fwidth(al) + 1e-6;
+  float fr = fwidth(kr) + 1e-6;
+  vec3 colUp = designUpper(al, c, fc, fa);
+  vec3 colLo = designLower(al, c, fc, fa);
   vec3 albedo = upper ? colUp : colLo;
   // Stabilo: the main colour, a dark band along its lower edge.
   if (vKind > 1.5) albedo = mix(uMain, uAccent, smoothstep(0.55, 0.7, vP.w));
   // Seams: along the ribs, across the panels.
-  float seam = bandAA(rd, 0.012);
-  if (upper) seam = max(seam, max(bandAA(c - 0.05, 0.003), max(bandAA(c - 0.33, 0.002), bandAA(c - 0.62, 0.002))));
-  else seam = max(seam, max(bandAA(c - 0.1, 0.003), bandAA(c - 0.5, 0.002)));
+  float seam = bandW(rd, 0.012, fr);
+  if (upper) seam = max(seam, max(bandW(c - 0.05, 0.003, fc), max(bandW(c - 0.33, 0.002, fc), bandW(c - 0.62, 0.002, fc))));
+  else seam = max(seam, max(bandW(c - 0.1, 0.003, fc), bandW(c - 0.5, 0.002, fc)));
   if (vKind > 0.5) seam = 0.0;
   albedo *= 1.0 - 0.3 * seam;
   // Cell openings under the nose (closed at the tips), with their reinforced lip.
   float open = 0.0;
   if (!upper && al < 0.86 && vKind < 0.5) {
     vec2 q = vec2((cv - 0.5) / 0.37, (-tw - 0.115) / 0.085);
-    float sd = pow(pow(abs(q.x), 4.0) + pow(abs(q.y), 4.0), 0.25) - 1.0;
-    open = clamp(-sd / (fwidth(sd) + 1e-4) + 0.5, 0.0, 1.0);
-    albedo *= 1.0 - 0.35 * bandAA(sd, 0.09) * (1.0 - open);
+    q *= q;
+    float sd = sqrt(sqrt(q.x * q.x + q.y * q.y)) - 1.0;
+    float fs = fwidth(sd) + 1e-4;
+    // (Shut on a folded part, pinched on empty cells: the lips pressed together.)
+    open = clamp(-sd / fs + 0.5, 0.0, 1.0) * (1.0 - vFold) * (1.0 - 0.7 * vSoft);
+    albedo *= 1.0 - 0.35 * bandW(sd, 0.09, fs) * (1.0 - open);
   }
 
   vec3 N = normalize(vN);
@@ -315,10 +373,14 @@ void main() {
   } else if (dot(N, V) < 0.0) N = -N;
   // The fabric's wrinkles, faded out where a cell is only a few pixels wide (the screen
   // derivatives taken here, outside any branch: metres per pixel along the span and the chord).
-#ifdef NO_WRINKLES
+#if defined(NEAR)
+  // The near mesh carries the wrinkles (glider-shape.ts wrinkleG), its normals those of the
+  // displaced surface: nothing per pixel but their shade in the creases.
+  float fh = vWr;
+#elif defined(NO_WRINKLES)
   float fh = 0.0;
 #else
-  float fine = 1.0 - smoothstep(0.06, 0.25, fwidth(kr));
+  float fine = 1.0 - smoothstep(0.06, 0.25, fr);
   float pm = max(fwidth(a * ${HALF_SPAN.toFixed(2)}), fwidth(c * vCh));
   float fh = fine > 0.0 ? fabricH(a, c, upper, kr, vKind, pm) * fine : 0.0;
   N = bumped(N, -vView, fh);
@@ -354,7 +416,8 @@ void main() {
   col += sunC * spec + hemi * rim;
   // Light through both skins, the structure inside darker.
   float x = mod(cell, 2.0) > 0.5 ? cv : 1.0 - cv;
-  float diag = max(max(bandAA(c - (0.11 + 0.1 * x), 0.004), bandAA(c - (0.37 - 0.12 * x), 0.004)), max(bandAA(c - (0.37 + 0.1 * x), 0.004), bandAA(c - (0.66 - 0.12 * x), 0.004)));
+  float fd = fc + 0.12 * fr;
+  float diag = max(max(bandW(c - (0.11 + 0.1 * x), 0.004, fd), bandW(c - (0.37 - 0.12 * x), 0.004, fd)), max(bandW(c - (0.37 + 0.1 * x), 0.004, fd), bandW(c - (0.66 - 0.12 * x), 0.004, fd)));
   // Thicker light path near the ribs, the cell glowing most in its middle.
   float tShade = (0.3 + 0.7 * smoothstep(0.0, 0.06, rd)) * (0.72 + 0.28 * sin(PI * cv)) * (1.0 - 0.22 * diag) * (1.0 - 0.5 * seam) * crease;
   float back = max(0.0, -ndl) * shade;
@@ -436,6 +499,16 @@ function loadBasis(): void {
     .catch(() => {});
 }
 
+/** A glider's cloth texture: SHEET_NU × (SHEET_NC × 4) texels of four floats (WingDeform.sheet), read with nearest filtering. */
+function sheetTexture(): THREE.DataTexture {
+  const t = new THREE.DataTexture(new Float32Array(SHEET_NU * SHEET_NC * 4 * 4), SHEET_NU, SHEET_NC * 4, THREE.RGBAFormat, THREE.FloatType);
+  t.magFilter = THREE.NearestFilter;
+  t.minFilter = THREE.NearestFilter;
+  t.generateMipmaps = false;
+  t.needsUpdate = true;
+  return t;
+}
+
 /** Uniforms shared by the levels of detail of one glider. */
 export interface WingUniforms {
   uBrake: { value: THREE.Vector4 };
@@ -449,6 +522,9 @@ export interface WingUniforms {
   /** The fabric's state per span station (WingDeform.fab) and the air (WingDeform.air). */
   uFab: { value: Float32Array };
   uAir: { value: THREE.Vector4 };
+  /** The folded parts' cloth (WingDeform.sheet as a float texture) and which side draws it (WingDeform.cloth). */
+  uSheet: { value: THREE.DataTexture };
+  uCloth: { value: THREE.Vector4 };
   uMain: { value: THREE.Color };
   uSecond: { value: THREE.Color };
   uAccent: { value: THREE.Color };
@@ -467,6 +543,8 @@ export function wingUniforms(colors: { main: number; stripe: number; under: numb
     uDyn: { value: new Float32Array(DYN_N * 4) },
     uFab: { value: newDeform().fab },
     uAir: { value: new THREE.Vector4(1, 0, 0, 0) },
+    uSheet: { value: sheetTexture() },
+    uCloth: { value: new THREE.Vector4() },
     uMain: { value: new THREE.Color(colors.main) },
     uSecond: { value: new THREE.Color(colors.stripe) },
     uAccent: { value: new THREE.Color(colors.accent ?? 0x23262e) },
@@ -475,9 +553,14 @@ export function wingUniforms(colors: { main: number; stripe: number; under: numb
   };
 }
 
-export function wingMaterial(u: WingUniforms, balloon: boolean, wrinkles = false): THREE.ShaderMaterial {
+export function wingMaterial(u: WingUniforms, balloon: boolean, wrinkles = false, near = false): THREE.ShaderMaterial {
   const defines: Record<string, string> = {};
-  if (!balloon) defines.NO_BALLOON = '';
+  if (near) defines.NEAR = '';
+  // (Far away: no cloth, the analytic fold as before.)
+  if (!balloon) {
+    defines.NO_BALLOON = '';
+    defines.NO_CLOTH = '';
+  }
   if (!wrinkles) defines.NO_WRINKLES = '';
   const m = new THREE.ShaderMaterial({
     uniforms: THREE.UniformsUtils.merge([THREE.UniformsLib.lights]),

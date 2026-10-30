@@ -2,8 +2,11 @@
 /**
  * The canopy in the real game: screenshots and cost of the wing in a set of situations
  * (hands up, half brake on one side, full brake, asymmetric collapse, frontal, big ears,
- * strong turbulence), the pilot frozen in the air (pause, the pause card hidden) while the
- * glider model keeps animating with the state poked into `__game.glider`.
+ * strong turbulence, a cravat; close-ups of the fold and of the cravat in the lab), the
+ * pilot frozen in the air (pause, the pause card hidden) while the glider model keeps
+ * animating with the state poked into `__game.glider`. The nearest level holds two canopies
+ * (the near tier and the one beyond 14 m), one drawn at a time (their materials' visibility):
+ * the in-game timer only counts the drawn one, the lab toggles both meshes.
  *
  *   npx tsx scripts/dev/wing-bench.ts [--out test-results/wing/after] [--url http://localhost:5174/]
  *                                     [--only hands,collapse] [--no-shots] [--lab] [--lab-only] [--before] [--no-cost] [--no-gpu] [--dpr 2]
@@ -50,15 +53,19 @@ interface Situation {
   zoom: [number, number];
   /** Only in the lab and when asked for by --only (the take-off: the wing rising off the ground). */
   extra?: boolean;
+  /** A close look at the fabric in the lab (glider-lab.ts `look`: from, towards, fov), shot as `-labo-gros-plan`. */
+  close?: string;
 }
 const SITUATIONS: Situation[] = [
   { name: 'mains-hautes', set: '', look: [0, 1.3], wait: 1.5, zoom: [0.15, 1.5] },
   { name: 'frein-50-droite', set: 'st.brakeR = 0.5;', look: [0.5, 1.15], wait: 1.5, zoom: [0.45, 1.85] },
   { name: 'frein-100', set: 'st.brakeL = 1; st.brakeR = 1;', look: [0.4, 1.2], wait: 1.5, zoom: [0.35, 1.85] },
-  { name: 'fermeture-50-gauche', set: 'st.collapse.side = -1; st.collapse.amount = 0.5; st.collapse.peak = 0.5;', look: [-0.5, 1.15], wait: 0.9, zoom: [-0.55, 1.2] },
+  { name: 'fermeture-50-gauche', set: 'st.collapse.side = -1; st.collapse.amount = 0.5; st.collapse.peak = 0.5;', look: [-0.5, 1.15], wait: 0.9, zoom: [-0.55, 1.2], close: 'L.look(-0.6, 4.4, -4.2, -2.3, 6.2, 0.4, 48)' },
   { name: 'frontale', set: 'st.collapse.frontal = 0.7;', look: [0, 1.25], wait: 0.6, zoom: [0.1, 1.3] },
   { name: 'grandes-oreilles', set: 'st.ears = 1;', look: [-0.6, 1.1], wait: 1.5, zoom: [-0.8, 1.05] },
   { name: 'turbulence-forte', set: '', look: [0.3, 1.25], wait: 1.5, turb: true, zoom: [0.5, 1.8] },
+  // A cravat (flight.ts: the tip of a big fold caught in the lines after it reopened).
+  { name: 'cravate-droite', set: 'st.collapse.cravat = 0.26; st.collapse.cravatSide = 1;', look: [0.75, 1.0], wait: 1.5, zoom: [0.9, 0.9], close: 'L.look(5.5, 3.2, -3.5, 3.6, 4.8, 0.6, 50)' },
   { name: 'gonflage', set: 'L.glider.setInflation(Math.min(0.9, i / 90)); L.ground(-1.08);', look: [0, 0.2], wait: 1.2, zoom: [0, 0.3], extra: true },
 ];
 const list = only ? SITUATIONS.filter((s) => only.split(',').some((k) => s.name.includes(k))) : SITUATIONS.filter((s) => !s.extra);
@@ -397,11 +404,13 @@ if (args.includes('--lab') || labOnly) {
     if (shots) {
       // A close look at the fabric: three-quarters ahead on the side that moves, a little
       // below the wing; from the pilot's seat; and a narrow look at the fabric from there.
-      for (const [tag, cam] of [
+      const cams: [string, string][] = [
         ['proche', `L.orbit(${s.look[0] < -0.3 ? -0.75 : 0.75}, 0.05, 10.5, 4.2, 55)`],
         ['dessous', `L.first(${s.look[0]}, ${s.look[1]}, 75)`],
         ['zoom', `L.first(${s.zoom[0]}, ${s.zoom[1]}, 30)`],
-      ]) {
+      ];
+      if (s.close) cams.push(['gros-plan', s.close]);
+      for (const [tag, cam] of cams) {
         await after.evaluate(`(() => { ${labSituation(s)}; ${cam}; L.renderer.render(L.scene, L.camera); })()`);
         await after.screenshot({ path: `${out}/${s.name}-labo-${tag}.png`, scale: 'css' });
       }

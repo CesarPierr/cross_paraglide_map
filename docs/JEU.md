@@ -219,15 +219,16 @@ vent et peut le traîner s'il ne l'affale pas.
   transfert, bout d'aile soulevé par une rafale ; estimations, pas des mesures) et, au décollage,
   repart de sa position au sol. Les suspentes détendues (fermeture, oreilles, mains hautes) se
   courbent et frémissent.
-- **Voile vivante** (`glider.ts` `WingDynamics`, `glider-shape.ts`, `glider-wing.ts`,
-  `glider-lines.ts`). *Pourquoi pas une simulation de tissu complète* : deux peaux de 50 caissons,
-  les nervures et le contact du tissu sur lui-même dans une fermeture, c'est ~20 000 nœuds et des
-  millisecondes par image, même sur GPU, pour un budget de ~0,1 ms de CPU et ~0,35 ms de GPU par
-  planeur. Or le ripstop (~40 g/m²) s'allonge de moins de 1 % sous la pression interne
-  (q·Cp ≈ 60–90 Pa en vol droit, q = ½ρV² ≈ 65 Pa à 38 km/h) : tant que les caissons sont pleins,
-  la forme est celle de la coupe, et tout ce qui bouge vit le long de l'envergure. D'où un modèle
-  réduit : la forme analytique et la base Blender (ci-dessous) pour le tissu gonflé, et, à
-  **17 stations** le long de l'envergure, une poignée de ressorts sur le CPU :
+- **Voile vivante** (`glider.ts` `WingDynamics` et `FlapCloth`, `glider-shape.ts`,
+  `glider-wing.ts`, `glider-lines.ts`). *Pourquoi pas une simulation de tissu complète* : deux
+  peaux de 50 caissons, les nervures et le contact du tissu sur lui-même dans une fermeture, c'est
+  ~20 000 nœuds et des millisecondes par image, même sur GPU ; et sur GPU les suspentes (tracées
+  par le CPU, qui doit savoir où sont les pattes d'une partie fermée) attendraient une relecture.
+  Or le ripstop (~40 g/m²) s'allonge de moins de 1 % sous la pression interne (q·Cp ≈ 60–90 Pa
+  en vol droit, q = ½ρV² ≈ 65 Pa à 38 km/h) : tant que les caissons sont pleins, la forme est
+  celle de la coupe, et tout ce qui bouge vit le long de l'envergure. D'où un modèle réduit : la
+  forme analytique et la base Blender (ci-dessous) pour le tissu gonflé, et, à **17 stations** le
+  long de l'envergure, une poignée de ressorts sur le CPU :
   - *le corps de l'aile* : flexion, avance-recul et vrillage de chaque station, couplés (une rafale
     sous un bout d'aile s'y propage en onde ; bouts ~1,6 Hz, centre ~3 Hz), poussés par les
     rafales aux bouts d'aile, le roulis, le lacet et la charge ;
@@ -238,51 +239,99 @@ vent et peut le traîner s'il ne l'affale pas.
     bord d'attaque se replie ou rentre, égalisée avec les voisins par les ouvertures des nervures
     (~0,1 s par station). Une partie fermée se rouvre là où la pression revient : la ligne de
     pliage ne repart vers le bout qu'aussi loin que les caissons sont regonflés, **du centre vers
-    l'extérieur** (description EN 926-2 de la réouverture) ;
+    l'extérieur** (description EN 926-2 de la réouverture), et **chaque caisson claque plein à son
+    propre seuil** (entre 28 et 52 % de la pression du vol droit, ses nervures suivant les
+    stations) : la réouverture se voit caisson par caisson ;
   - *le bord de fuite* : derrière les C, le tissu n'est tenu que par les freins, ressort léger et
     peu amorti (~5–6,5 Hz) secoué par l'air (bruit qui croît avec la vitesse, la turbulence et les
     incidents), couplé le long de l'envergure : il vibre (quelques mm en air calme, quelques cm en
     turbulence forte), festonné entre les pattes de frein qui le tiennent ; le stabilo, nageoire de
     tissu sous le bout, bat avec lui et traîne derrière une poussée ;
-  - *la partie fermée* bat dans le sillage (ressort plus lent secoué tant qu'elle est pliée, ondes
-    le long du rabat), se froisse en plis en accordéon (~0,55 m) et son arrière traîne vers
-    l'arrière ; *une frontale* rentre le bord d'attaque d'abord au centre, les bouts ~0,1 s après,
-    la ligne de pliage ondulant.
+  - *l'angle de la partie fermée* (claque en ~0,15 s, rebondit, bat dans le sillage) et *une
+    frontale* (le bord d'attaque rentre d'abord au centre, les bouts ~0,1 s après).
+
+  **La partie fermée est du tissu simulé** (`FlapCloth`, planeur proche, < 150 m) : ses caissons
+  vides, l'extrados et l'intrados sont l'un contre l'autre (une feuille de tissu double, à quelques
+  centimètres l'un de l'autre là où il reste de l'air), les nervures plient. Une grille de 12 × 5
+  nœuds par côté (le long de l'envergure, plus serrés près du pli ; en corde le bord d'attaque, les
+  rangées A, B, C et le bord de fuite), la ligne de pliage épinglée sur l'aile ouverte, en
+  dynamique par positions (Müller 2007 ; un pas de 1/60 s, 4 itérations de ~280 contraintes :
+  étirement, cisaillement, flexion, les nervures et les joncs du bord d'attaque plus raides),
+  plus : les **suspentes** (chaque patte au plus à la longueur de sa suspente de son maillon,
+  le frein raccourcissant celles du bord de fuite : pomper tire le rabat ; grandes oreilles : les
+  A extérieures tirées par la main), **l'air** (pression normale ∝ (w·n)|w·n|, le vent relatif
+  venant un peu d'en dessous sous l'aile : il plaque le rabat contre l'intrados ; poids ; battement
+  qui croît avec la vitesse et la turbulence), un rappel vers le pli analytique (pour garder le
+  calendrier et les angles du modèle de vol et des descriptions EN 926-2, le tissu ajoutant
+  inertie, contact et suspentes), le **contact** (aucun nœud, ni le milieu des mailles, à moins de
+  6,5 cm de l'aile ouverte, toujours repoussé dessous : deux voisins sortis de part et d'autre
+  laisseraient la feuille la traverser ; un nœud plaqué perd sa vitesse normale, ses plis et
+  l'épaisseur d'air ; les nœuds non voisins restent à 12 cm : contact du tissu sur lui-même) et la
+  **cravate** (quand `collapse.cravat` > 0 : les deux dernières colonnes du bout enroulées en un
+  paquet de ~15 cm autour des suspentes B et C extérieures, à un cinquième de leur longueur sous
+  l'aile, qui tire ces suspentes hors de leur trajet ; lâché quand la physique la libère). Le GPU
+  dessine la partie fermée d'après la grille (bicubique entre les nœuds), ses deux peaux de part
+  et d'autre, froissées en plis d'autant plus que le tissu est comprimé le long de l'envergure
+  (flambement : amplitude λ√ε/π pour un excès de longueur ε, λ ≈ 0,35 m), jamais plus profonds que
+  la place laissée sous l'aile ; l'aile ouverte se pince sur sa ligne de cambrure le long du pli
+  (sur ~1 m : les caissons voisins se vident) ; les ouvertures des caissons s'y referment. Coût :
+  ~0,04–0,05 ms de CPU par côté fermé (mesure au calme ; contrôlé par
+  `test/glider-cloth.test.ts`, qui vérifie aussi l'absence d'interpénétration sur 9 000 points de
+  la partie fermée pour des fermetures de 30, 50 et 70 %). Au-delà de 150 m, le pli analytique.
+
+  **Suspentes en courbes** : chaque suspente est une cubique (Hermite) de ses deux bouts et de
+  leurs tangentes, évaluée sur le GPU en 48 points (une instance par suspente : le CPU écrit 15
+  nombres par suspente) ; détendue, ses tangentes portent son arc (la cubique est alors exactement
+  la parabole de l'arc), et le long d'une cascade détendue les tangentes de part et d'autre d'un
+  nœud tournent l'une vers l'autre en proportion du mou (elle pend d'un seul tenant), tandis que
+  des suspentes tendues gardent l'angle que leurs tensions font au nœud. Freins et barreau
+  compris ; les élévateurs, sangles toujours chargées, restent droits.
+
+  **Aile proche** (la caméra à moins de 14 m : la vue pilote ; hors téléphone) : un maillage dont
+  les rangées se serrent là où le tissu change de forme sur quelques centimètres (~3 cm autour des
+  pattes A, B, C de l'intrados, 4–5 cm au bord de fuite, uniformes autour du nez ; 10–13 cm
+  ailleurs ; 6 colonnes par caisson), qui porte **les plis de tension en géométrie**
+  (`wrinkleG`) : sous chaque patte, le cône tiré vers la suspente et les plis le long des
+  diagonales internes et de la nervure (~5 cm de large, plus marqués avec la charge) ; aux pattes
+  de frein, l'éventail de plis vers l'avant ; le froissé du tissu mou (sauf le nez, tenu par les
+  joncs) ; la normale est celle de la surface déplacée (différences finies plus courtes que les
+  plis), d'où silhouettes et bord de fuite festonnés ; les **ouvertures des caissons sont des
+  trous** (le tissu dans la lèvre renforcée rentre dans le caisson). Au-delà de 14 m, le maillage
+  d'avant et les plis au pixel (normale perturbée), comme avant. Le reste du shader de pixel a été
+  allégé (largeurs d'anticrénelage partagées, position dans le caisson interpolée depuis les
+  sommets).
 
   Le shader traduit la pression : sous la moitié de celle du vol droit, le caisson s'aplatit
   (l'intrados remonte vers l'extrados tenu par la dépression au-dessus), le gonflement entre
   nervures disparaît, le nez s'enfonce et le tissu se froisse ; le bord d'attaque se creuse aussi
-  à l'approche d'une fermeture (marge d'incidence). Les **plis de tension** sont dessinés au
-  pixel, en perturbant la normale (aucun sommet ne porterait des plis à quelques centimètres) :
-  sous chaque patte des rangées A, B et C, un petit cône tiré vers la suspente et des plis le long
-  des diagonales internes et de la nervure, plus marqués avec la charge ; aux pattes de frein, un
-  éventail de plis vers l'avant avec le frein ; partout où le tissu est mou (fermeture, frontale,
-  au sol avant le gonflage) un froissé qui frémit ; chaque octave s'efface avant d'être plus fine
-  que quelques pixels, et les plis disparaissent quand un caisson ne fait plus que quelques pixels
-  (ni plis ni calcul au-delà de ~150 m ; pas de plis sur téléphone). Les fermetures balaient l'aile
-  en ~0,15 s, le rabat claque et rebondit, puis se rouvre avec un coup vers l'avant ; oreilles
-  repliées presque à la verticale et battantes ; au gonflage, caissons remplis du centre vers les
-  bouts, bouts en retard. **Suspentes** : une suspente plus courte que sa longueur au repos (moins
-  ~1 % d'allongement sous charge) se détend, s'arque vers l'arrière et frémit, une longue ondule en
-  S, et les nœuds d'une cascade détendue dérivent vers l'arrière ; ces arcs sont des ressorts
-  (~5 Hz la suspente, ~3 Hz le nœud, peu amortis : ~1 g/m de Dyneema) : une suspente qui se
-  retend claque au-delà de sa ligne et vibre. **Tissu simulé dans Blender**
-  (`scripts/blender/canopy-sim.py`, sans interface, relançable ; forme exportée par
-  `canopy-export.ts` avec le code du jeu) : voile fermée sous pression (65 Pa), nervures tenues, à
-  quatre niveaux de frein ; ses écarts à la forme du jeu (caissons bombés, bord de fuite festonné
-  entre les pattes de frein) forment une base de 60 ko (`public/data/canopy-basis.bin`, int8) que le
-  shader mélange selon le frein de chaque côté, chargée en arrière-plan. Elle n'a pas d'états
-  « fermeture » : un pli passe par la flexion des nervures elles-mêmes et le contact du tissu
-  (hors de portée de ce montage à nervures tenues), et une table de poses ne suivrait pas une
-  ligne de pliage continue (côté, taille, angle, battement) ; la pression qui baisse ne change la
-  forme gonflée qu'au voisinage de zéro, là où le froissé procédural prend le relais. La forme à
-  pression nominale est inchangée : la base reste valable. Coût (banc `scripts/dev/wing-bench.ts`,
-  M1 Pro, `--lab --before` : l'aile seule, ancienne et nouvelle mesurées en alternance) : GPU de
-  l'aile proche à 1280 × 800 px, vue pilote levée vers l'aile 0,10–0,20 → 0,15–0,29 ms, de dehors
-  0,09–0,13 → 0,12–0,17 ms ; en Retina (2560 × 1600 px) vue pilote 0,25–0,50 → 0,35–0,66 ms (dont
-  ~0,1 ms pour les plis) ; CPU d'une mise à jour complète du planeur (dynamique, suspentes, pilote)
-  0,03–0,04 → 0,035–0,06 ms (le plus en fermeture) ; au-delà de 150 m rien ne change (ni
-  dynamique, ni plis).
+  à l'approche d'une fermeture (marge d'incidence). Oreilles repliées presque à la verticale et
+  battantes ; au gonflage, caissons remplis du centre vers les bouts, bouts en retard.
+  **Suspentes** : une suspente plus courte que sa longueur au repos (moins ~1 % d'allongement
+  sous charge) se détend, s'arque vers l'arrière et frémit, une longue ondule en S, et les nœuds
+  d'une cascade détendue dérivent vers l'arrière ; ces arcs sont des ressorts (~5 Hz la suspente,
+  ~3 Hz le nœud, peu amortis : ~1 g/m de Dyneema) : une suspente qui se retend claque au-delà de
+  sa ligne et vibre. **Tissu simulé dans Blender** (`scripts/blender/canopy-sim.py`, sans
+  interface, relançable ; forme exportée par `canopy-export.ts` avec le code du jeu) : voile
+  fermée sous pression (65 Pa), nervures tenues, à quatre niveaux de frein ; ses écarts à la forme
+  du jeu (caissons bombés, bord de fuite festonné entre les pattes de frein) forment une base de
+  60 ko (`public/data/canopy-basis.bin`, int8) que le shader mélange selon le frein de chaque
+  côté, chargée en arrière-plan. Elle n'a pas d'états « fermeture » : c'est le rôle du tissu
+  simulé ci-dessus (un pli suit une ligne de pliage continue, un contact et des suspentes qu'une
+  table de poses ne suivrait pas). La forme à pression nominale est inchangée : la base reste
+  valable.
+
+  Coût (M1 Pro, banc `scripts/dev/wing-bench.ts`, `.cache/prof` ; GPU de l'aile proche seule,
+  vue pilote levée vers l'aile, Retina 2560 × 1600 px, machine au calme) : mains hautes
+  0,64 → 0,54 ms (sommets 0,09 → 0,15 ms, pixels allégés de ~0,1 ms), 0,42 ms à un rapport de
+  pixels de 1,5 ; de dehors (au-delà de 14 m, le maillage d'avant) inchangé, ~0,15 ms. Mesures
+  alternées avant/après (`--lab --before`, 2560 × 1600, GPU partagé avec d'autres navigateurs :
+  valeurs absolues gonflées, seuls les rapports comptent) : vol (mains hautes, freins, turbulence)
+  −16 à −22 %, fermeture/oreilles/cravate −5 à +14 % (la partie fermée lue dans la texture du
+  tissu), suspentes +40 à +75 % (48 points par suspente au lieu de 2 à 5 ; ~0,05–0,08 ms). CPU
+  d'une mise à jour complète du planeur : inchangé en vol (~0,035–0,045 ms), ~0,10 ms en
+  fermeture, ~0,08 ms en cravate, ~0,12 ms aux grandes oreilles (deux côtés de tissu ;
+  estimations par rapport à la mise à jour mains hautes, mesurées en alternance, la machine étant
+  chargée) ; au-delà de 150 m rien ne change (ni dynamique, ni tissu, ni plis).
 - **Météo** : réglée à la main, aléatoire selon la saison (puis elle évolue), ou **météo du jour**
   (`forecast.ts`) : la prévision AROME au décollage pour aujourd'hui donne le vent aux crêtes, la
   masse d'air par le gradient 850–700 hPa (3 °C/km → stable, 9 → très instable) et l'humidité par

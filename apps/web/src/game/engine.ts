@@ -22,6 +22,7 @@ import { Multiplayer, type NetEvent } from './net';
 import type { ModelAir } from './game-worker';
 import { LocalFrame } from './geo';
 import { FlightLog, gpuName, logClientId } from './flight-log';
+import type { CanopyExtras } from './glider';
 import { TrackRecorder, toIgc } from './igc';
 import { GameWorld, type Head, type RenderQuality, type ViewMode } from './world';
 
@@ -832,6 +833,8 @@ export class GameEngine {
     c.brakeL += Math.max(-rate, Math.min(rate, this.brakeTarget.L - c.brakeL));
     c.brakeR += Math.max(-rate, Math.min(rate, this.brakeTarget.R - c.brakeR));
     c.stabilo = k.has('x');
+    // The stabilo line pulled shows on the canopy: a cravat's bundle tugged down (glider.ts).
+    (this.glider as GliderState & CanopyExtras).stabiloPull = c.stabilo ? 1 : 0;
     // Weight shift: the mouse, S leans left, F right, on top of the touch control.
     c.weight = Math.max(-1, Math.min(1, this.weightInput + this.mouseWeight + (k.has('f') ? 1 : 0) - (k.has('s') ? 1 : 0)));
     if (k.has(' ') && !this.launch) {

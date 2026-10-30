@@ -526,7 +526,7 @@ describe('the simulated fabric (scripts/blender/canopy-sim.py)', () => {
 });
 
 describe('lines', () => {
-  const positions = (ls: LineSet) => (ls.mesh.geometry.getAttribute('position').array as Float32Array).slice();
+  const positions = (ls: LineSet) => ls.samples();
 
   it('are straight at rest and bow when slack (a folded side), finite everywhere', () => {
     const ls = new LineSet('high');

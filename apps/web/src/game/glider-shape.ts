@@ -102,8 +102,11 @@ export const ROWS = [0.11, 0.37, 0.66] as const;
  * leading edge tucks), the trailing edge's flap, the folded part's own flapping and the depth
  * of a frontal tuck (glider.ts WingDynamics, a few dozen springs on the CPU). The shader turns
  * low pressure into soft cells (the lower skin rising, the ballooning gone, the nose sinking,
- * the fabric crumpling) and draws the wrinkles the tension makes (line tabs, brake tabs,
- * slack fabric) in the fragment shader, where they cost nothing on the vertices.
+ * the fabric crumpling, each cell popping full at its own pressure) and draws the wrinkles the
+ * tension makes (line tabs, brake tabs, slack fabric): as geometry on the near tier
+ * (`wrinkleG`), by perturbing the normal beyond. A folded part is not shaped analytically
+ * near the camera but simulated as cloth (glider.ts FlapCloth, with contact and its lines):
+ * `sheet`, `cloth`, drawn by `clothPoint` / `clothPos`.
  */
 export interface WingDeform {
   /** brakeL, brakeR, speedbar, time (s). */
@@ -131,6 +134,34 @@ export interface WingDeform {
   fab: Float32Array;
   /** Line tension (load factor), turbulence 0..1 (the fragment shader's wrinkles), unused, unused. */
   air: [number, number, number, number];
+  /**
+   * The folded parts' cloth (glider.ts FlapCloth), per side (0 left, 1 right) a grid of
+   * SHEET_NU nodes from the fold line (u = 0) to the tip (u = 1) by SHEET_NC rows across the
+   * chord (SHEET_ROWS: leading edge, A, B, C rows, trailing edge), each node two texels of
+   * four numbers (the uSheet texture as it is): position (canopy frame, m) and crumple
+   * amplitude (m); the sheet's normal (towards the upper skin) and the skins' gap (m).
+   * Index: sheetIndex().
+   */
+  sheet: Float32Array;
+  /** The cloth drawn for the left and the right fold (1) or the analytic fold (0); unused; unused. */
+  cloth: [number, number, number, number];
+}
+
+/** Nodes of a folded part's cloth along the span (fold line … tip) and its rows across the chord. */
+export const SHEET_NU = 12;
+/**
+ * Node i of the span sits at u = (i / (SHEET_NU − 1))^SHEET_UP from the fold line: closer
+ * together at the crease, where the fabric turns over (and leaves the open wing) within a few
+ * decimetres.
+ */
+export const SHEET_UP = 1.5;
+/** Width (share of the half span) over which the open wing pinches to its camber line at a cloth's crease. */
+export const PINCH_W = 0.2;
+export const SHEET_ROWS = [0, 0.11, 0.37, 0.66, 1] as const;
+export const SHEET_NC = SHEET_ROWS.length;
+/** Offset in WingDeform.sheet of node (i along the span, j across the chord) of side s (0 left, 1 right), texel k (0 position, 1 normal). */
+export function sheetIndex(s: number, i: number, j: number, k: number): number {
+  return (((s * SHEET_NC + j) * 2 + k) * SHEET_NU + i) * 4;
 }
 
 /** Span stations of the canopy's dynamics (both tips included: 2 per ~1.4 m of span). */
@@ -139,7 +170,19 @@ export const DYN_N = 17;
 export function newDeform(): WingDeform {
   const fab = new Float32Array(DYN_N * 4);
   for (let k = 0; k < DYN_N; k++) fab[k * 4] = 1;
-  return { brake: [0, 0, 0, 0], foldL: [2, 2, 0, 0], foldR: [2, 2, 0, 0], misc: [0, 0, 0, 0], infl: [1, 0, 0, -100], up: [0, 1, 0], dyn: new Float32Array(DYN_N * 4), fab, air: [1, 0, 0, 0] };
+  return {
+    brake: [0, 0, 0, 0],
+    foldL: [2, 2, 0, 0],
+    foldR: [2, 2, 0, 0],
+    misc: [0, 0, 0, 0],
+    infl: [1, 0, 0, -100],
+    up: [0, 1, 0],
+    dyn: new Float32Array(DYN_N * 4),
+    fab,
+    air: [1, 0, 0, 0],
+    sheet: new Float32Array(2 * SHEET_NU * SHEET_NC * 8),
+    cloth: [0, 0, 0, 0],
+  };
 }
 
 const clamp = (v: number, a: number, b: number) => (v < a ? a : v > b ? b : v);
@@ -182,6 +225,251 @@ const stabDepth = (c: number) => STAB_D * Math.pow(Math.max(0, 1 - Math.abs(c - 
 const chordOf = (q: number) => C0 * Math.sqrt(Math.max(0.02, 1 - CK * q));
 const zqOf = (alpha: number, q: number) => ZQ0 + SWEEP * alpha * q;
 
+/** Row coordinate (0 … SHEET_NC − 1) of a chord position on the cloth's rows. */
+export function sheetRow(c: number): number {
+  for (let j = 0; j < SHEET_NC - 1; j++) if (c <= SHEET_ROWS[j + 1]) return j + Math.max(0, c - SHEET_ROWS[j]) / (SHEET_ROWS[j + 1] - SHEET_ROWS[j]);
+  return SHEET_NC - 1;
+}
+
+/** Catmull-Rom weights at t (and their derivatives). */
+const WX = new Float64Array(4);
+const DX = new Float64Array(4);
+const WY = new Float64Array(4);
+function crw(t: number, w: Float64Array, dw: Float64Array | null): void {
+  const t2 = t * t;
+  const t3 = t2 * t;
+  w[0] = -0.5 * t3 + t2 - 0.5 * t;
+  w[1] = 1.5 * t3 - 2.5 * t2 + 1;
+  w[2] = -1.5 * t3 + 2 * t2 + 0.5 * t;
+  w[3] = 0.5 * t3 - 0.5 * t2;
+  if (dw) {
+    dw[0] = -1.5 * t2 + 2 * t - 0.5;
+    dw[1] = 4.5 * t2 - 5 * t;
+    dw[2] = -4.5 * t2 + 4 * t + 0.5;
+    dw[3] = 1.5 * t2 - t;
+  }
+}
+
+/** A point of a cloth sheet (sheetSample): position, crumple amplitude, unit normal, skins' gap, ∂position/∂u. */
+export const SH = {
+  x: 0,
+  y: 0,
+  z: 0,
+  cr: 0,
+  nx: 0,
+  ny: 1,
+  nz: 0,
+  th: 0,
+  ux: 0,
+  uy: 0,
+  uz: 0,
+};
+
+/**
+ * The cloth of side `s` at (u along the span from the fold line, c along the chord): a
+ * bicubic (Catmull-Rom) through the nodes, into SH. JS twin of `sheetAt` in WING_GLSL.
+ */
+export function sheetSample(sheet: Float32Array, s: number, u: number, c: number): typeof SH {
+  const uq = Math.pow(clamp(u, 0, 1), 1 / SHEET_UP);
+  const xs = uq * (SHEET_NU - 1);
+  const i1 = Math.min(SHEET_NU - 2, Math.floor(xs));
+  const ys = sheetRow(clamp(c, 0, 1));
+  const j1 = Math.min(SHEET_NC - 2, Math.floor(ys));
+  crw(xs - i1, WX, DX);
+  crw(ys - j1, WY, null);
+  let x = 0;
+  let y = 0;
+  let z = 0;
+  let cr = 0;
+  let nx = 0;
+  let ny = 0;
+  let nz = 0;
+  let th = 0;
+  let ux = 0;
+  let uy = 0;
+  let uz = 0;
+  for (let dj = 0; dj < 4; dj++) {
+    const j = Math.min(SHEET_NC - 1, Math.max(0, j1 - 1 + dj));
+    for (let di = 0; di < 4; di++) {
+      const i = Math.min(SHEET_NU - 1, Math.max(0, i1 - 1 + di));
+      const w = WX[di] * WY[dj];
+      const wd = DX[di] * WY[dj];
+      const o = sheetIndex(s, i, j, 0);
+      const on = o + SHEET_NU * 4;
+      x += w * sheet[o];
+      y += w * sheet[o + 1];
+      z += w * sheet[o + 2];
+      cr += w * sheet[o + 3];
+      nx += w * sheet[on];
+      ny += w * sheet[on + 1];
+      nz += w * sheet[on + 2];
+      th += w * sheet[on + 3];
+      ux += wd * sheet[o];
+      uy += wd * sheet[o + 1];
+      uz += wd * sheet[o + 2];
+    }
+  }
+  const nl = Math.hypot(nx, ny, nz) || 1;
+  SH.x = x;
+  SH.y = y;
+  SH.z = z;
+  SH.cr = Math.max(0, cr);
+  SH.nx = nx / nl;
+  SH.ny = ny / nl;
+  SH.nz = nz / nl;
+  SH.th = Math.max(0, th);
+  // d/du = d/dxs · dxs/du, dxs/du = (SHEET_NU − 1) uq^(1 − SHEET_UP) / SHEET_UP.
+  const k = ((SHEET_NU - 1) * Math.pow(Math.max(uq, 0.02), 1 - SHEET_UP)) / SHEET_UP;
+  SH.ux = ux * k;
+  SH.uy = uy * k;
+  SH.uz = uz * k;
+  return SH;
+}
+
+/**
+ * The quarter-chord arc at span a (−1 … 1): point (ax, ay), tangent towards increasing a
+ * (tx, ty; |dA/da| = HALF_SPAN), the section's up (nx, ny), chord and quarter-chord z, for
+ * the cloth's contact with the open wing.
+ */
+export const ARC = {
+  ax: 0,
+  ay: 0,
+  tx: 1,
+  ty: 0,
+  nx: 0,
+  ny: 1,
+  ch: C0,
+  zq: ZQ0,
+  tk: THICK0,
+};
+/** The same, tabulated (ARC_N samples over −1 … 1, linear between: within a millimetre), for the cloth's many queries. */
+const ARC_N = 513;
+const ARC_TAB = (() => {
+  const t = new Float32Array(ARC_N * 9);
+  for (let k = 0; k < ARC_N; k++) {
+    const a = -1 + (2 * k) / (ARC_N - 1);
+    const alpha = Math.min(Math.abs(a), 1);
+    const q = Math.pow(alpha, PHI_P);
+    frame(a === 0 ? 1e-9 : a, alpha, q);
+    t.set([F.ax, F.ay, F.tx, F.ty, F.nx, F.ny, chordOf(q), zqOf(alpha, q), THICK0 * (1 - 0.35 * alpha * alpha)], k * 9);
+  }
+  return t;
+})();
+export function arcAt(a: number): typeof ARC {
+  const xs = (clamp(a, -1, 1) + 1) * 0.5 * (ARC_N - 1);
+  const k = Math.min(ARC_N - 2, Math.floor(xs));
+  const f = xs - k;
+  const t = ARC_TAB;
+  const o = k * 9;
+  ARC.ax = t[o] + (t[o + 9] - t[o]) * f;
+  ARC.ay = t[o + 1] + (t[o + 10] - t[o + 1]) * f;
+  ARC.tx = t[o + 2] + (t[o + 11] - t[o + 2]) * f;
+  ARC.ty = t[o + 3] + (t[o + 12] - t[o + 3]) * f;
+  ARC.nx = t[o + 4] + (t[o + 13] - t[o + 4]) * f;
+  ARC.ny = t[o + 5] + (t[o + 14] - t[o + 5]) * f;
+  ARC.ch = t[o + 6] + (t[o + 15] - t[o + 6]) * f;
+  ARC.zq = t[o + 7] + (t[o + 16] - t[o + 7]) * f;
+  ARC.tk = t[o + 8] + (t[o + 17] - t[o + 8]) * f;
+  return ARC;
+}
+/** The span a whose section plane holds (x, y) (canopy frame), by Newton steps from `a0`. */
+export function arcSolve(x: number, y: number, a0: number, steps = 2): number {
+  let a = clamp(a0, -1, 1);
+  for (let k = 0; k < steps; k++) {
+    arcAt(a);
+    a = clamp(a + ((x - ARC.ax) * ARC.tx + (y - ARC.ay) * ARC.ty) / HALF_SPAN, -1, 1);
+  }
+  arcAt(a);
+  return a;
+}
+/**
+ * Heights (m, along the section's up from the quarter-chord arc) of the flying wing's lower
+ * and upper skins at (a, c), with the brake and the span's heave: the open wing the cloth of
+ * a folded part may not enter (an approximation of wingPoint: no ballooning, trim pitch).
+ */
+export const SKIN = { lo: 0, up: 0 };
+export function intactSkins(d: WingDeform, a: number, c: number): typeof SKIN {
+  const alpha = Math.min(Math.abs(a), 1);
+  arcAt(a);
+  const ch = ARC.ch;
+  const tk = ARC.tk;
+  const sq = Math.sqrt(clamp(c, 0, 1));
+  const br = a < 0 ? d.brake[0] : d.brake[1];
+  let f = Math.max(0, (c - 0.42) / 0.58);
+  f *= f;
+  const disp = BRAKE_DEF * br * clamp(alpha * 1.45, 0, 1) * f * Math.sqrt(ch / C0);
+  const xs = (clamp(a, -1, 1) + 1) * 0.5 * (DYN_N - 1);
+  const i0 = Math.min(DYN_N - 2, Math.floor(xs)) * 4;
+  const heave = mix(d.dyn[i0], d.dyn[i0 + 4], xs - i0 / 4);
+  let lo = profile(-sq, tk) * ch;
+  let up = profile(sq, tk) * ch;
+  // Pinched at a cloth's crease (as wingPoint draws it).
+  for (let s = 0; s < 2; s++) {
+    const fs = s ? d.foldR : d.foldL;
+    if (d.cloth[s] <= 0 || fs[2] <= 0.001) continue;
+    const pin = 1 - 0.92 * smooth(mix(fs[0], fs[1], c) - PINCH_W, mix(fs[0], fs[1], c), s ? a : -a);
+    const cam = camberLine(c) * ch;
+    lo = cam + (lo - cam) * pin;
+    up = cam + (up - cam) * pin;
+  }
+  SKIN.lo = lo - disp + heave;
+  SKIN.up = up - disp + heave;
+  return SKIN;
+}
+
+const CT0 = Math.cos(TAU0);
+const ST0 = Math.sin(TAU0);
+/** The open wing's camber line at (a, c) flying at trim, nothing else: the cloth's rest shape (a point of wingPoint's frame). */
+export function restPoint(a: number, c: number, out: Vec3Like): Vec3Like {
+  arcAt(a);
+  const ch = ARC.ch;
+  const hh = camberLine(c) * ch;
+  const dd = (c - 0.25) * ch;
+  const k = hh * CT0 - dd * ST0;
+  out.x = ARC.ax + ARC.nx * k;
+  out.y = ARC.ay + ARC.ny * k;
+  out.z = ARC.zq + dd * CT0 + hh * ST0;
+  return out;
+}
+
+/** Pressure share at which a cell pops full (each its own: their fabric and cross-ports differ a little). */
+const popAt = (kr: number, sg: number) => 0.28 + 0.24 * ((Math.floor(kr) * 0.618034 + sg * 0.31 + 10) % 1);
+
+/**
+ * A point of a folded part drawn by its cloth (JS twin of `clothPos` in WING_GLSL): the
+ * sheet at (u, c), the two skins pressed together on either side of it (their gap, a few
+ * centimetres where air is left), both crumpled alike into pleats as far as the cloth is
+ * compressed; no pleat on the crease itself. The stabilo hangs from the tip's edge.
+ */
+function clothPoint(d: WingDeform, s: number, m: number, fe: number, a: number, tw: number, w: number, kind: number, out: Vec3Like): Vec3Like {
+  const c = tw * tw;
+  const u = clamp((m - fe) / Math.max(1e-3, 1 - fe), 0, 1);
+  const S = sheetSample(d.sheet, s, u, c);
+  const time = d.brake[3];
+  let off = 0;
+  if (kind !== 2) {
+    const X = a * HALF_SPAN;
+    const ramp = smooth(0, 0.1, u);
+    const pleat = S.cr * ramp * (0.65 * Math.sin(X * 11.4 + c * 2 + time * 1.7 + 1.6 * Math.sin(X * 3.7 - c * 3.1 + time * 0.9)) + 0.55 * noise(a, c, time));
+    const gap = 0.5 * S.th * (1 - (kind === 1 ? w : 0)) * (1 + 0.6 * noise(a * 2.1 + 1.3, c * 1.7, time * 0.5));
+    off = pleat + (tw >= 0 ? gap : -gap);
+  }
+  let px = S.x + S.nx * off;
+  let py = S.y + S.ny * off;
+  let pz = S.z + S.nz * off;
+  if (kind === 2) {
+    const ul = Math.hypot(S.ux, S.uy, S.uz) || 1;
+    const sd = stabDepth(c) * w;
+    px += ((S.ux / ul) * 0.878 - S.nx * 0.479) * sd;
+    py += ((S.uy / ul) * 0.878 - S.ny * 0.479) * sd;
+    pz += ((S.uz / ul) * 0.878 - S.nz * 0.479) * sd;
+  }
+  out.x = px;
+  out.y = py;
+  out.z = pz;
+  return out;
+}
+
 export interface Vec3Like {
   x: number;
   y: number;
@@ -201,7 +489,20 @@ export function wingPoint(d: WingDeform, a: number, tw: number, v: number, w: nu
   const time = d.brake[3];
   const fold = sg < 0 ? d.foldL : d.foldR;
   const fe = mix(fold[0], fold[1], c);
-  const folding = fold[2] > 0.001;
+  // A folded part drawn by its cloth (glider.ts FlapCloth); a big fold reaches past the centre.
+  // Elsewhere the open wing pinches to its camber line along the cloth's fold line (the crease).
+  let pinch = 1;
+  let clothOwn = false;
+  for (let s = 0; s < 2; s++) {
+    const fs = s ? d.foldR : d.foldL;
+    if (d.cloth[s] <= 0 || fs[2] <= 0.001) continue;
+    const m = s ? a : -a;
+    const fes = mix(fs[0], fs[1], c);
+    if (m > fes && fes < 1) return clothPoint(d, s, m, fes, a, tw, w, kind, out);
+    pinch = Math.min(pinch, 1 - 0.92 * smooth(fes - PINCH_W, fes, m));
+    if ((s ? 1 : -1) === sg) clothOwn = true;
+  }
+  const folding = fold[2] > 0.001 && !clothOwn;
   const stall = d.misc[2];
   const spin = d.misc[3];
   // The canopy's own motion at this span station (linear between the stations).
@@ -218,8 +519,14 @@ export function wingPoint(d: WingDeform, a: number, tw: number, v: number, w: nu
   const teFlap = mix(fb[i0 + 1], fb[i0 + 5], fs);
   const flap = mix(fb[i0 + 2], fb[i0 + 6], fs);
   const fr = clamp(mix(fb[i0 + 3], fb[i0 + 7], fs), 0, 1);
-  // Soft cells: the pressure no longer holds the profile (below ~half the trim's).
-  const soft = 1 - smooth(0.08, 0.6, pres);
+  // Soft cells: the pressure no longer holds the profile (below ~half the trim's). Each cell
+  // pops full at its own pressure, the ribs (which the lines hold) following the stations.
+  const kr = (Math.asin(Math.min(alpha * RIB_S, 1)) / RIB_K) * (N_CELLS / 2);
+  let soft = 1 - smooth(0.08, 0.6, pres);
+  if (kind === 0 && v > 0 && v < 1) {
+    const pa = popAt(kr, sg);
+    soft = mix(soft, 1 - smooth(pa - 0.06, pa + 0.06, pres), Math.sin(Math.PI * v));
+  }
   // Deflation: on the ground before the cells fill (leading edge first, the centre before
   // the tips), in a stall, on the inner side of a spin, next to a collapsed part.
   const fill = d.infl[0];
@@ -230,10 +537,11 @@ export function wingPoint(d: WingDeform, a: number, tw: number, v: number, w: nu
   // up by the suction over it.
   if (soft > 0) hh *= 1 - soft * (tw >= 0 ? 0.2 : 0.55);
   if (kind === 1) hh = mix(hh, camberLine(c) * ch * defl, w);
+  if (pinch < 1) hh = mix(camberLine(c) * ch * defl, hh, pinch);
   let dd = (c - 0.25) * ch;
   if (kind === 0) {
     const sv = Math.sin(Math.PI * v);
-    hh += Math.sign(tw) * BAL * (tw >= 0 ? 1 : 0.6) * cw * sv * smooth(0.03, 0.15, c) * (1 - smooth(0.72, 1, c)) * defl * (0.2 + 0.8 * smooth(0.05, 0.7, pres));
+    hh += Math.sign(tw) * BAL * (tw >= 0 ? 1 : 0.6) * cw * sv * smooth(0.03, 0.15, c) * (1 - smooth(0.72, 1, c)) * defl * (0.2 + 0.8 * smooth(0.05, 0.7, pres)) * pinch;
     const te = Math.max(0, (c - 0.88) / 0.12);
     dd -= SCALLOP * sv * te * te;
     // A soft leading edge (the angle of attack near the fold, a lull, the pressure going):
@@ -243,8 +551,9 @@ export function wingPoint(d: WingDeform, a: number, tw: number, v: number, w: nu
       const nose = smooth(0.0, 0.04, c) * (1 - smooth(0.12, 0.3, c));
       hh -= dn * nose * ch * (tw >= 0 ? 0.035 : -0.012) * (0.55 + 0.45 * sv);
     }
-    // Slack fabric crumples.
-    if (soft > 0.01) hh += soft * ch * 0.016 * noise(a * 1.2, c * 1.3, time * 0.8);
+    // Slack fabric crumples, behind the nose: the rods sewn into the leading edge (nylon,
+    // ~15 % of the chord) keep its curve.
+    if (soft > 0.01) hh += soft * ch * 0.016 * noise(a * 1.2, c * 1.3, time * 0.8) * smooth(0.03, 0.16, c);
   }
   // Brake: the rear of the profile curls down, more towards the tips; the trailing edge is
   // pulled at the brake tabs (every second rib) and sags less between them.
@@ -252,10 +561,7 @@ export function wingPoint(d: WingDeform, a: number, tw: number, v: number, w: nu
   let f = Math.max(0, (c - 0.42) / 0.58);
   f *= f;
   let disp = BRAKE_DEF * br * clamp(alpha * 1.45, 0, 1) * f * Math.sqrt(ch / C0);
-  if (disp > 0) {
-    const kr = (Math.asin(Math.min(alpha * RIB_S, 1)) / RIB_K) * (N_CELLS / 2);
-    disp *= 1 - 0.22 * smooth(0.8, 1, c) * (0.5 - 0.5 * Math.cos(Math.PI * kr));
-  }
+  if (disp > 0) disp *= 1 - 0.22 * smooth(0.8, 1, c) * (0.5 - 0.5 * Math.cos(Math.PI * kr));
   hh -= disp;
   dd -= (0.5 * disp * disp) / (0.58 * ch);
   // The trailing edge's own flap: the rear of the section bends about ~55 % of the chord.
@@ -406,7 +712,6 @@ export function wingPoint(d: WingDeform, a: number, tw: number, v: number, w: nu
   // Trailing edge flutter, held at the brake tabs (every second rib), free between them.
   let fl = 0;
   if (c > 0.75) {
-    const kr = (Math.asin(Math.min(alpha * RIB_S, 1)) / RIB_K) * (N_CELLS / 2);
     const sk = Math.sin((Math.PI / 2) * kr);
     fl = d.misc[1] * Math.sin(time * 19 + a * 27 + c * 6) * smooth(0.75, 1, c) * (0.35 + 0.65 * sk * sk);
   }
@@ -451,8 +756,11 @@ uniform vec4 uFab[${DYN_N}];
 uniform sampler2D uBasis;
 uniform vec4 uBasisScale;
 uniform float uBasisOn;
+uniform sampler2D uSheet;
+uniform vec4 uCloth;
 float wFoldWeight;
 float wSoft;
+float wWrinkle;
 #ifndef NO_BALLOON
 // The cloth simulation's offsets from this shape (scripts/blender/canopy-sim.py), at a brake
 // level (the four simulated ones linearly between); zero on the ribs and the line tabs.
@@ -495,6 +803,130 @@ float stabDepth(float c) { return ${f(STAB_D)} * pow(max(0.0, 1.0 - abs(c - 0.5)
 float chordOf(float q) { return ${f(C0)} * sqrt(max(0.02, 1.0 - ${f(CK)} * q)); }
 float chordAt(float a) { return chordOf(pow(min(abs(a), 1.0), ${f(PHI_P)})); }
 float zqOf(float alpha, float q) { return ${f(ZQ0)} + ${f(SWEEP)} * alpha * q; }
+#ifndef NO_CLOTH
+// The folded parts' cloth (WingDeform.sheet): node (i, j) of side s, texel k (0 position, 1 normal).
+vec4 sheetTexel(float s, float i, float j, float k) {
+  return texture2D(uSheet, vec2((i + 0.5) / ${f(SHEET_NU)}, ((s * ${f(SHEET_NC)} + j) * 2.0 + k + 0.5) / ${f(SHEET_NC * 4)}));
+}
+float sheetRowOf(float c) {
+  return c <= ${f(SHEET_ROWS[1])} ? c / ${f(SHEET_ROWS[1])} : c <= ${f(SHEET_ROWS[2])} ? 1.0 + (c - ${f(SHEET_ROWS[1])}) / ${f(SHEET_ROWS[2] - SHEET_ROWS[1])} : c <= ${f(SHEET_ROWS[3])} ? 2.0 + (c - ${f(SHEET_ROWS[2])}) / ${f(SHEET_ROWS[3] - SHEET_ROWS[2])} : 3.0 + (c - ${f(SHEET_ROWS[3])}) / ${f(SHEET_ROWS[4] - SHEET_ROWS[3])};
+}
+vec4 crw(float t) {
+  float t2 = t * t;
+  float t3 = t2 * t;
+  return vec4(-0.5 * t3 + t2 - 0.5 * t, 1.5 * t3 - 2.5 * t2 + 1.0, -1.5 * t3 + 2.0 * t2 + 0.5 * t, 0.5 * t3 - 0.5 * t2);
+}
+vec4 crwD(float t) {
+  float t2 = t * t;
+  return vec4(-1.5 * t2 + 2.0 * t - 0.5, 4.5 * t2 - 5.0 * t, -4.5 * t2 + 4.0 * t + 0.5, 1.5 * t2 - t);
+}
+// Bicubic (Catmull-Rom) through the nodes: position and crumple (P), normal and the skins' gap (N), d(position)/du (U).
+void sheetAt(float s, float u, float c, out vec4 P, out vec4 N, out vec3 U) {
+  float uq = pow(clamp(u, 0.0, 1.0), ${f(1 / SHEET_UP)});
+  float xs = uq * ${f(SHEET_NU - 1)};
+  float i1 = min(${f(SHEET_NU - 2)}, floor(xs));
+  float ys = sheetRowOf(clamp(c, 0.0, 1.0));
+  float j1 = min(${f(SHEET_NC - 2)}, floor(ys));
+  vec4 wx = crw(xs - i1);
+  vec4 dx = crwD(xs - i1);
+  vec4 wy = crw(ys - j1);
+  P = vec4(0.0);
+  N = vec4(0.0);
+  U = vec3(0.0);
+  for (int dj = 0; dj < 4; dj++) {
+    float j = clamp(j1 - 1.0 + float(dj), 0.0, ${f(SHEET_NC - 1)});
+    float wj = dj == 0 ? wy.x : dj == 1 ? wy.y : dj == 2 ? wy.z : wy.w;
+    for (int di = 0; di < 4; di++) {
+      float i = clamp(i1 - 1.0 + float(di), 0.0, ${f(SHEET_NU - 1)});
+      float wi = di == 0 ? wx.x : di == 1 ? wx.y : di == 2 ? wx.z : wx.w;
+      float di_ = di == 0 ? dx.x : di == 1 ? dx.y : di == 2 ? dx.z : dx.w;
+      vec4 tp = sheetTexel(s, i, j, 0.0);
+      P += tp * (wi * wj);
+      N += sheetTexel(s, i, j, 1.0) * (wi * wj);
+      U += tp.xyz * (di_ * wj);
+    }
+  }
+  N.xyz = normalize(N.xyz);
+  U *= ${f(SHEET_NU - 1)} * pow(max(uq, 0.02), ${f(1 - SHEET_UP)}) / ${f(SHEET_UP)};
+}
+// A folded part drawn by its cloth (JS twin: clothPoint): the two skins pressed together on
+// either side of the sheet, crumpled alike into pleats as far as it is compressed.
+vec3 clothPos(float s, float m, float fe, float a, float tw, float w, float kind) {
+  float c = tw * tw;
+  float u = clamp((m - fe) / max(1e-3, 1.0 - fe), 0.0, 1.0);
+  vec4 P;
+  vec4 N;
+  vec3 U;
+  sheetAt(s, u, c, P, N, U);
+  float time = uBrake.w;
+  vec3 pos = P.xyz;
+  if (kind < 1.5) {
+    float X = a * ${f(HALF_SPAN)};
+    float ramp = smoothstep(0.0, 0.1, u);
+    float pleat = max(0.0, P.w) * ramp * (0.65 * sin(X * 11.4 + c * 2.0 + time * 1.7 + 1.6 * sin(X * 3.7 - c * 3.1 + time * 0.9)) + 0.55 * crumpleN(a, c, time));
+    float gap = 0.5 * max(0.0, N.w) * (1.0 - (kind > 0.5 ? w : 0.0)) * (1.0 + 0.6 * crumpleN(a * 2.1 + 1.3, c * 1.7, time * 0.5));
+    pos += N.xyz * (pleat + (tw >= 0.0 ? gap : -gap));
+  } else {
+    pos += (normalize(U) * 0.878 - N.xyz * 0.479) * stabDepth(c) * w;
+  }
+  wFoldWeight = max(wFoldWeight, smoothstep(0.0, 0.15, u));
+  wSoft = 1.0;
+  return pos;
+}
+#endif
+#ifdef NEAR
+uniform vec4 uAir;
+float bump2(float x2, float w2) {
+  float t = max(0.0, 1.0 - x2 / w2);
+  return t * t;
+}
+/**
+ * The tension wrinkles as geometry (the near mesh only, its rows ~3 cm apart at the line
+ * tabs): the part of the fragment shader's fabric height (glider-wing.ts fabricH) its
+ * vertices can carry, as a height along the skin's outward normal (m): the cone under each
+ * line tab of the lower skin, the fan of creases at the brake tabs, the slack fabric's
+ * coarser crumple. The finer ridges stay in the fragment shader.
+ */
+float wrinkleG(float a, float c, float tw, float kr, float ch, float soft, float br) {
+  float cwm = ${f((HALF_SPAN * RIB_K) / ((N_CELLS / 2) * RIB_S))} * cos(${f(RIB_K / (N_CELLS / 2))} * kr);
+  float h = 0.0;
+  if (tw < 0.0 && kr < 24.0) {
+    float dx = (kr - (2.0 * floor(kr * 0.5) + 1.0)) * cwm;
+    float d1 = c - ${f(ROWS[0])};
+    float d2 = c - ${f(ROWS[1])};
+    float d3 = c - ${f(ROWS[2])};
+    float dc = abs(d1) < abs(d2) ? d1 : d2;
+    dc = abs(d3) < abs(dc) ? d3 : dc;
+    vec2 q = vec2(dx, dc * ch * 0.75);
+    float r2 = dot(q, q);
+    if (r2 < 0.12) {
+      // The cone pulled by the line, and creases from it along the diagonal tapes inside
+      // (one cell across, ~0.1 chord along) and along the rib (tension-field theory: a
+      // membrane pulled at a point wrinkles along the pull), ~5 cm wide.
+      vec2 dg = normalize(vec2(cwm, 0.1 * ch));
+      vec2 aq = abs(q);
+      float along = dot(aq, dg);
+      float perp = dg.x * aq.y - dg.y * aq.x;
+      float rid = bump2(perp * perp, 0.0006) * smoothstep(0.01, 0.05, along) * bump2(along * along, 0.11);
+      rid += 0.7 * bump2(q.x * q.x, 0.0005) * smoothstep(0.01, 0.04, aq.y) * bump2(aq.y * aq.y, 0.07);
+      h += clamp(uAir.x, 0.0, 2.5) * (1.0 - soft) * (0.0022 * rid - 0.005 * bump2(r2, 0.006));
+    }
+  }
+  if (br > 0.01 && c > 0.35) {
+    float dx = (kr - 2.0 * floor(kr * 0.5 + 0.5)) * cwm;
+    float dy = (1.0 - c) * ch;
+    float r = length(vec2(dx, dy));
+    h += br * 0.006 * sin(6.0 * atan(dx, dy + 0.03)) * smoothstep(0.02, 0.15, r) * bump2(r * r, 2.0);
+  }
+  if (soft > 0.01) {
+    float X = a * ${f(HALF_SPAN)};
+    float Y = c * ch;
+    float t = uBrake.w;
+    h += soft * 0.004 * sin(X * 41.0 + Y * 13.0 + 2.0 * sin(Y * 23.0 + t * 2.1)) * sin(Y * 37.0 - X * 17.0 + t * 1.3) * smoothstep(0.03, 0.16, c);
+  }
+  return h;
+}
+#endif
 vec3 wingPos(float a, float tw, float v, float w, float kind, float cw) {
   float sg = a < 0.0 ? -1.0 : 1.0;
   float alpha = min(abs(a), 1.0);
@@ -505,16 +937,38 @@ vec3 wingPos(float a, float tw, float v, float w, float kind, float cw) {
   vec4 fold = sg < 0.0 ? uFoldL : uFoldR;
   float fe = mix(fold.x, fold.y, c);
   bool folding = fold.z > 0.001;
+  float pinch = 1.0;
+#ifndef NO_CLOTH
+  // A folded part drawn by its cloth (a big fold reaches past the centre); the open wing
+  // pinched to its camber line along the cloth's fold line (the crease).
+  if (uCloth.x > 0.0 && uFoldL.z > 0.001) {
+    float fes = mix(uFoldL.x, uFoldL.y, c);
+    if (-a > fes && fes < 1.0) return clothPos(0.0, -a, fes, a, tw, w, kind);
+    pinch = min(pinch, 1.0 - 0.92 * smoothstep(fes - ${f(PINCH_W)}, fes, -a));
+    if (sg < 0.0) folding = false;
+  }
+  if (uCloth.y > 0.0 && uFoldR.z > 0.001) {
+    float fes = mix(uFoldR.x, uFoldR.y, c);
+    if (a > fes && fes < 1.0) return clothPos(1.0, a, fes, a, tw, w, kind);
+    pinch = min(pinch, 1.0 - 0.92 * smoothstep(fes - ${f(PINCH_W)}, fes, a));
+    if (sg > 0.0) folding = false;
+  }
+#endif
   float stall = uMisc.z;
   float spin = uMisc.w;
   float xs = (clamp(a, -1.0, 1.0) + 1.0) * ${f((DYN_N - 1) / 2)};
   int i0 = int(min(floor(xs), ${f(DYN_N - 2)}));
   vec4 dyn = mix(uDyn[i0], uDyn[i0 + 1], xs - float(i0));
   vec4 fab = mix(uFab[i0], uFab[i0 + 1], xs - float(i0));
+  float kr = asin(min(alpha * ${f(RIB_S)}, 1.0)) * ${f(N_CELLS / 2 / RIB_K)};
   float soft = 1.0 - smoothstep(0.08, 0.6, fab.x);
+  // Each cell pops full at its own pressure; the ribs (the lines hold them) follow the stations.
+  if (kind < 0.5) {
+    float pa = 0.28 + 0.24 * fract(floor(kr) * 0.618034 + sg * 0.31 + 10.0);
+    soft = mix(soft, 1.0 - smoothstep(pa - 0.06, pa + 0.06, fab.x), sin(${f(Math.PI)} * v));
+  }
   // Slack fabric for the fragment shader's crumpled wrinkles (also the empty cells on the ground).
   wSoft = max(soft, 1.0 - uInfl.x);
-  float kr = asin(min(alpha * ${f(RIB_S)}, 1.0)) * ${f(N_CELLS / 2 / RIB_K)};
   float fill = uInfl.x;
   float defl = mix(0.08, 1.0, clamp(fill * 1.4 - c * 0.4 - 0.45 * alpha * alpha * (1.0 - fill), 0.0, 1.0)) * (1.0 - 0.45 * stall) * (1.0 - 0.5 * max(0.0, spin * sg) * alpha);
   if (folding) defl *= mix(1.0, 0.55, smoothstep(fe - 0.18, fe, alpha));
@@ -522,13 +976,14 @@ vec3 wingPos(float a, float tw, float v, float w, float kind, float cw) {
   float hh = profileH(tw, tk) * ch * defl;
   if (soft > 0.0) hh *= 1.0 - soft * (tw >= 0.0 ? 0.2 : 0.55);
   if (kind > 0.5 && kind < 1.5) hh = mix(hh, camberLine(c) * ch * defl, w);
+  if (pinch < 1.0) hh = mix(camberLine(c) * ch * defl, hh, pinch);
   float dd = (c - 0.25) * ch;
   if (kind < 0.5) {
 #ifndef NO_BALLOON
     float sv = sin(${f(Math.PI)} * v);
     // (Each cell a little different: the panels' tension is never quite the same.)
     float cellVar = 0.9 + 0.2 * fract(sin(floor(kr) * 12.9898 + sg * 4.1) * 43758.5453);
-    hh += sign(tw) * ${f(BAL)} * (tw >= 0.0 ? 1.0 : 0.6) * cw * sv * smoothstep(0.03, 0.15, c) * (1.0 - smoothstep(0.72, 1.0, c)) * defl * (0.2 + 0.8 * smoothstep(0.05, 0.7, fab.x)) * cellVar;
+    hh += sign(tw) * ${f(BAL)} * (tw >= 0.0 ? 1.0 : 0.6) * cw * sv * smoothstep(0.03, 0.15, c) * (1.0 - smoothstep(0.72, 1.0, c)) * defl * (0.2 + 0.8 * smoothstep(0.05, 0.7, fab.x)) * cellVar * pinch;
     float te = max(0.0, (c - 0.88) / 0.12);
     dd -= ${f(SCALLOP)} * sv * te * te;
     float dn = min(1.0, dyn.w + 0.8 * soft);
@@ -536,8 +991,19 @@ vec3 wingPos(float a, float tw, float v, float w, float kind, float cw) {
       float nose = smoothstep(0.0, 0.04, c) * (1.0 - smoothstep(0.12, 0.3, c));
       hh -= dn * nose * ch * (tw >= 0.0 ? 0.035 : -0.012) * (0.55 + 0.45 * sv);
     }
+#ifdef NEAR
+    // The cell openings are holes: the fabric inside the reinforced lip goes into the cell.
+    if (tw < 0.0 && alpha < 0.86) {
+      vec2 qo = vec2((v - 0.5) / 0.37, (-tw - 0.115) / 0.085);
+      qo *= qo;
+      float rec = (1.0 - smoothstep(-0.4, 0.0, sqrt(sqrt(qo.x * qo.x + qo.y * qo.y)) - 1.0)) * 0.018 * ch * (1.0 - soft);
+      hh += rec;
+      dd += rec;
+    }
 #endif
-    if (soft > 0.01) hh += soft * ch * 0.016 * crumpleN(a * 1.2, c * 1.3, time * 0.8);
+#endif
+    // (The rods in the leading edge keep the nose's curve.)
+    if (soft > 0.01) hh += soft * ch * 0.016 * crumpleN(a * 1.2, c * 1.3, time * 0.8) * smoothstep(0.03, 0.16, c);
   }
   float br = sg < 0.0 ? uBrake.x : uBrake.y;
   float f = max(0.0, (c - 0.42) / 0.58);
@@ -622,6 +1088,12 @@ vec3 wingPos(float a, float tw, float v, float w, float kind, float cw) {
       float wB = uBasisOn * smoothstep(0.85, 1.0, uInfl.x) * (1.0 - stall) * (1.0 - min(1.0, fr * 3.0));
       if (folding) wB *= 1.0 - smoothstep(fe - 0.25, fe, alpha);
       if (wB > 0.0) P += basisAt(sg, kr, tw, br) * wB;
+    }
+#endif
+#ifdef NEAR
+    if (kind < 0.5) {
+      wWrinkle = wrinkleG(a, c, tw, kr, ch, max(soft, folding ? smoothstep(fe - 0.25, fe, alpha) : 0.0), br);
+      P += H * (sign(tw) * wWrinkle);
     }
 #endif
     if (kind > 1.5) P += (vec3(sg * T, 0.0) * 0.878 - H * 0.479) * stabDepth(c) * w;

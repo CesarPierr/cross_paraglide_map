@@ -5,7 +5,7 @@
       "id": "saint-andre-verdon",
       "name": "Saint-André-les-Alpes – Chalvet – Lac de Castillon",
       "parent_massif": "Préalpes de Castellane / Haut-Verdon (Alpes-de-Haute-Provence)",
-      "summary": "Le Chalvet, site de vol international au-dessus de Saint-André-les-Alpes, est de loin le sommet de cross des Alpes du Sud : arêtes nord-sud enchaînées, thermiques puissants d'avril à octobre, plafonds de 3000 à 4000 m et plus, et plus d'une centaine de kilomètres aller-retour vers Dormillouse. Une école exploite le site depuis 1982.\n\nL'aérologie repose sur des vents de vallée. Dès 10h30, un vent de sud remonte de Castellane par le lac de Castillon. L'après-midi, une brise d'ouest venue de Barrême franchit le col des Robines et rencontre ce vent presque à la verticale du terrain d'atterrissage, où le vent peut tourner de 180° en quelques secondes. Vers 13h, parfois 13h30, l'effet venturi renforce la brise de vallée sur le décollage sud-ouest : d'où la fenêtre de décollage de 11h30 à 13h pour le cross, et de beaux vols de restitution jusqu'au coucher du soleil.\n\nL'atterrissage du lac, très thermique, change de direction entre 13h et 17h ; on peut alors se rabattre sur Moriez, dont l'usage par vent d'ouest ou de nord-ouest est mal vu. Le col des Robines et le mistral sont aussi turbulents. Le champ de La Mure-Argens est interdit aux parapentes depuis le 1er mai 2024. L'origine du vent qui remonte du lac reste discutée (vent de vallée du Verdon venu de Castellane, ou brise du bassin de Digne par Barrême) : les deux flux existent et se rencontrent à Saint-André.",
+      "summary": "Au-dessus de Saint-André-les-Alpes, le Chalvet est un site de vol international et, de loin, le sommet du cross des Alpes du Sud. Les arêtes nord-sud s'enchaînent, les thermiques sont puissants d'avril à octobre, et les plafonds montent de 3000 à 4000 m et plus. L'aller-retour vers Dormillouse dépasse la centaine de kilomètres. Une école fait vivre le site depuis 1982.\n\nIci, les vents de vallée rythment la journée. Dès 10h30, un vent de sud remonte de Castellane par le lac de Castillon. L'après-midi, une brise d'ouest venue de Barrême passe le col des Robines et le rencontre presque à la verticale de l'atterrissage : le vent peut y tourner de 180° en quelques secondes. Vers 13h, parfois 13h30, le venturi renforce la brise de vallée sur le décollage sud-ouest. D'où la fenêtre de décollage pour le cross, de 11h30 à 13h. Le soir, la restitution offre de beaux vols jusqu'au coucher du soleil.\n\nL'atterrissage du lac, très thermique, change de direction entre 13h et 17h. On peut alors se replier sur Moriez, mais s'y poser par ouest ou nord-ouest est mal vu. Le col des Robines et le mistral sont turbulents. Le champ de La Mure-Argens est interdit aux parapentes depuis le 1er mai 2024. L'origine du vent qui monte du lac reste discutée : vent de vallée du Verdon venu de Castellane, ou brise du bassin de Digne par Barrême. Les deux flux existent et se rencontrent à Saint-André.",
       "bbox": [
         6.33,
         43.8,
@@ -815,7 +815,7 @@
       "synoptic_effects": [
         {
           "wind": "W",
-          "effect": "Par vent d'ouest, la brise de Barrême arrive plus tôt. On décolle alors plus tard, au décollage ouest, en surveillant le renforcement rapide de la brise. L'atterrissage du lac devient turbulent : on préfère Moriez. Au retour d'un cross vers le décollage ouest, les brises d'ouest contrent la transition.",
+          "effect": "Par vent d'ouest, la brise de Barrême arrive plus tôt. Décollez plus tard, au décollage ouest, en surveillant la brise qui forcit vite. L'atterrissage du lac devient turbulent : posez-vous à Moriez. Au retour de cross vers le décollage ouest, les brises d'ouest vous contrent.",
           "sources": [
             "S1",
             "S22",
@@ -825,7 +825,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Par nord-ouest ou mistral, le lac est turbulent dès le début de la convection : on pose alors près de la manche centrale. Les décollages sud-est et sud-ouest deviennent turbulents, voire dangereux, et Moriez est préférable. Il est déconseillé de voler par nord-nord-ouest ou nord au-delà de 15 km/h.",
+          "effect": "Par vent de nord-ouest ou mistral, le lac est turbulent dès que la convection démarre : posez-vous près de la manche centrale. Les décollages sud-est et sud-ouest deviennent turbulents, voire dangereux, et Moriez est préférable. Évitez de voler par nord-nord-ouest ou nord au-delà de 15 km/h.",
           "sources": [
             "S2",
             "S29",
@@ -835,7 +835,7 @@
         },
         {
           "wind": "N",
-          "effect": "Par vent de nord, le décollage nord est possible tôt le matin, mais sans grand intérêt. Il ne faut pas voler par nord-nord-ouest ou nord au-delà de 15 km/h, et l'atterrissage peut être turbulent dès le début de la convection.",
+          "effect": "Par vent de nord, le décollage nord marche tôt le matin, sans grand intérêt. Au-delà de 15 km/h de nord-nord-ouest ou de nord, ne volez pas. L'atterrissage peut être turbulent dès que la convection démarre.",
           "sources": [
             "S1",
             "S23",
@@ -844,7 +844,7 @@
         },
         {
           "wind": "S",
-          "effect": "Par vent de sud, le même seuil s'applique : pas au-delà de 15 km/h par sud, sud-sud-ouest ou sud-ouest. Le décollage sud se vole, mais les parapentes de finesse inférieure à 4 ne doivent pas décoller. Un léger sud en altitude permet de pousser vers le nord, vers Dormillouse, mais il contrarie la remontée vers le Chalvet au retour.",
+          "effect": "Par vent de sud, même seuil : pas de vol au-delà de 15 km/h par sud, sud-sud-ouest ou sud-ouest. Le décollage sud se vole, mais pas avec une aile de finesse inférieure à 4. Un léger sud en altitude pousse vers le nord, vers Dormillouse, mais freine la remontée vers le Chalvet au retour.",
           "sources": [
             "S23",
             "S73",
@@ -853,14 +853,14 @@
         },
         {
           "wind": "SW",
-          "effect": "Par vent de sud-ouest, il est déconseillé de voler au-delà de 15 km/h. Ce vent renforce la brise de vallée au décollage sud-ouest.",
+          "effect": "Par vent de sud-ouest, évitez de voler au-delà de 15 km/h. Ce vent renforce la brise de vallée au décollage sud-ouest.",
           "sources": [
             "S23"
           ]
         },
         {
           "wind": "E",
-          "effect": "Par vent d'est, il est déconseillé de voler au-delà de 10 km/h (nord-est, est ou est-sud-est). La crête des Serres est turbulente à l'arrivée, et le régime d'est rend l'abord de Saint-André difficile en cross. Par nord-est ou est en altitude, l'air froid et sec peut donner de bons plafonds et peu de développement. Le vol du matin par est-sud-est est souvent correct, mais il vaut mieux se renseigner sur place.",
+          "effect": "Par vent d'est, évitez de voler au-delà de 10 km/h (nord-est, est ou est-sud-est). La crête des Serres secoue à l'arrivée, et le régime d'est complique l'approche de Saint-André en cross. Par nord-est ou est en altitude, l'air froid et sec peut donner de bons plafonds, avec peu de développement. Le vol du matin par est-sud-est est souvent correct : renseignez-vous sur place.",
           "sources": [
             "S23",
             "S29",
@@ -870,7 +870,7 @@
         },
         {
           "wind": "SE",
-          "effect": "Par vent de sud-est, le décollage sud-est ou sud est facile. Un sud-est marqué peut aider les cross partant vers Moustiers ou Digne, mais le retour est difficile contre ce flux. Un sud-est peut aussi être turbulent avant un front venant du golfe de Gênes.",
+          "effect": "Par vent de sud-est, les décollages sud-est et sud sont faciles. Un sud-est marqué aide les cross vers Moustiers ou Digne, mais le retour contre ce flux est difficile. Avant un front venu du golfe de Gênes, le sud-est peut aussi être turbulent.",
           "sources": [
             "S60",
             "S68"
@@ -878,7 +878,7 @@
         },
         {
           "wind": "NE",
-          "effect": "Par nord-est en altitude, les conditions sont bonnes pour le cross : plafond jusqu'à 4200 m, air froid et sec, pas de surdéveloppement. Au-dessus des crêtes, les vents peuvent cependant venir dans tous les sens.",
+          "effect": "Par vent de nord-est en altitude, les conditions de cross sont bonnes : plafond jusqu'à 4200 m, air froid et sec, pas de surdéveloppement. Au-dessus des crêtes, les vents peuvent pourtant venir de tous les côtés.",
           "sources": [
             "S59"
           ]
@@ -1144,24 +1144,24 @@
         }
       ],
       "tips": [
-        "Le matin, décoller au sud ou au sud-est ; à partir de 11h30 environ, la face sud-ouest ou ouest prend le relais. Viser le décollage ouest dès que les signes sont là : brises qui passent, vautours en thermique, ailes au-dessus de la colline. [S23]",
-        "Décoller pour le cross entre 11h30 et 13h : plus tôt, on racle et on s'enterre ; plus tard, le vent au décollage devient trop fort pour un parapente. Avec une forte inversion ou en fin de saison, la fenêtre peut aller jusqu'à 14h. [S23][S27]",
-        "Par brise établie de 25 à 30 km/h au décollage sud-ouest, prévoir un gonflage face voile bien maîtrisé. [S1]",
-        "À l'atterrissage du lac, repérer les trois manches à air : le vent peut tourner de 180° en quelques secondes. Les jours thermiques, éviter le lac entre 13h et 17h et préférer Moriez. [S29][S27][S2]",
-        "Ne plus atterrir à La Mure-Argens : le terrain est strictement interdit depuis le 1er mai 2024. [S39]",
-        "Seuils recommandés : pas de vol au-delà de 15 km/h par vent de NNO, N, S, SSO ou SO, ni au-delà de 10 km/h par NNE, E ou ESE ; éviter aussi une forte inversion basse avec plus de 15 km/h de vent. [S23]",
-        "Consulter les balises de vent avant de monter : celle du décollage ouest (balise FFVL 109) et les balises Pioupiou des décollages sud et ouest. Radio 143,9875 MHz pour la météo et les secours. [S76][S24]",
-        "Espace aérien : survol interdit sous 1000 m au sol au nord-est, au-dessus du parc du Mercantour ; TMA de Nice au sud-est ; zone R196C du Mouchon activable. Planeurs de Saint-Auban et Fayence fréquents sur le Chamatte. [S24][S54][S60]",
-        "Prévenir l'école avant de voler ; la route d'accès est étroite (frais partagés en cas d'accident) et aucun véhicule ne circule sur les décollages. Navette du club de 8h à 13h, puis dès 17h. [S25][S76]",
-        "Respecter la faune : le massif du Chalvet abrite une réserve de coqs de bruyère. La pente école de Méouilles et Waga Beach sont fermées. [S77][S1]",
-        "En mars et avril, les thermiques peuvent déjà être très violents ; septembre est plus calme, idéal pour une première visite. [S80][S27]"
+        "Le matin, décollez au sud ou au sud-est. Vers 11h30, la face sud-ouest ou ouest prend le relais : passez au décollage ouest dès que les signes sont là, brises qui passent, vautours en thermique, ailes au-dessus de la colline. [S23]",
+        "Pour le cross, décollez entre 11h30 et 13h. Plus tôt, on racle et on s'enterre ; plus tard, le vent au décollage devient trop fort pour un parapente. Avec une forte inversion ou en fin de saison, la fenêtre peut aller jusqu'à 14h. [S23][S27]",
+        "Par brise établie de 25 à 30 km/h au décollage sud-ouest, il faut un gonflage face voile bien maîtrisé. [S1]",
+        "À l'atterrissage du lac, repérez les trois manches à air : le vent peut tourner de 180° en quelques secondes. Les jours thermiques, évitez le lac entre 13h et 17h et posez-vous à Moriez. [S29][S27][S2]",
+        "Ne vous posez plus à La Mure-Argens : le terrain est strictement interdit depuis le 1er mai 2024. [S39]",
+        "Restez au sol au-delà de 15 km/h par NNO, N, S, SSO ou SO, et au-delà de 10 km/h par NNE, E ou ESE. Évitez aussi une forte inversion basse avec plus de 15 km/h de vent. [S23]",
+        "Avant de monter, consultez les balises : celle du décollage ouest (balise FFVL 109) et les Pioupiou des décollages sud et ouest. Météo et secours sur 143,9875 MHz. [S76][S24]",
+        "Au nord-est, au-dessus du parc du Mercantour, le survol est interdit sous 1000 m sol. Au sud-est commence la TMA de Nice, et la zone R196C du Mouchon est activable. Les planeurs de Saint-Auban et de Fayence passent souvent sur le Chamatte. [S24][S54][S60]",
+        "Prévenez l'école avant de voler. La route d'accès est étroite (frais partagés en cas d'accident) et aucun véhicule ne circule sur les décollages. Navette du club de 8h à 13h, puis dès 17h. [S25][S76]",
+        "Respectez la faune : le massif du Chalvet abrite une réserve de coqs de bruyère. La pente école de Méouilles et Waga Beach sont fermées. [S77][S1]",
+        "En mars et avril, les thermiques peuvent déjà être très violents. Septembre est plus calme : c'est le bon mois pour une première visite. [S80][S27]"
       ]
     },
     {
       "id": "haut-verdon-allos",
       "name": "Haut-Verdon (Thorame, Beauvezer, Colmars, Allos)",
       "parent_massif": "Préalpes de Castellane / Haut-Verdon (Alpes-de-Haute-Provence)",
-      "summary": "Le Haut-Verdon est une vallée orientée nord-sud entre Saint-André et Allos. Elle forme le couloir est du grand cross Saint-André – Dormillouse : à l'ouest la bordent les arêtes de Maurel, Cordeil, Coste Longue et Carton, à l'est les contreforts du Mercantour (Mont Pelat, Fort Carra).\n\nLa vallée elle-même est presque inconnue en vol local : il n'y a pas de site officiel, seulement un décollage signalé à Beauvezer et un à Thorame, et le site de speed-riding de la Foux d'Allos. Ce que l'on sait vient des vols de cross documentés. On y décrit une confluence en milieu d'après-midi, dans la transition de la vallée de Thorame et entre Cordeil et Maurel. Un « bocal de Colmars » serait volable en local, et de bons thermiques sont signalés sur Rochecline, où l'on fait souvent les plus beaux plafonds de Saint-André. Le passage vers le haut Var est délicat en été, à cause de brises plus fortes.\n\nLa brise de vallée montante, du sud vers le nord, reste une déduction à confirmer. À l'est, le parc national du Mercantour impose de rester à plus de 1000 m au-dessus du sol.",
+      "summary": "Le Haut-Verdon est une vallée nord-sud entre Saint-André et Allos, le couloir est du grand cross Saint-André – Dormillouse. À l'ouest, les arêtes de Maurel, Cordeil, Coste Longue et Carton la bordent. À l'est se dressent les contreforts du Mercantour (Mont Pelat, Fort Carra).\n\nEn vol local, la vallée est presque inconnue. Pas de site officiel : seulement un décollage signalé à Beauvezer, un à Thorame, et le site de speed-riding de la Foux d'Allos. Ce que l'on sait vient des cross. Une confluence se forme en milieu d'après-midi dans la transition de la vallée de Thorame, entre Cordeil et Maurel. Le « bocal de Colmars » serait volable en local. Rochecline donne de bons thermiques : on y fait souvent les plus beaux plafonds de Saint-André. L'été, le passage vers le haut Var est délicat, car les brises y sont plus fortes.\n\nLa brise de vallée qui monte du sud vers le nord reste une déduction à confirmer. À l'est, le parc national du Mercantour impose de rester à plus de 1000 m au-dessus du sol.",
       "bbox": [
         6.4,
         43.928,
@@ -1895,7 +1895,7 @@
       "synoptic_effects": [
         {
           "wind": "E",
-          "effect": "Régime de nord-est ou d'est en altitude : les conditions de cross sont correctes et les plafonds hauts, mais les vents tournent sur les crêtes. La traversée du haut Var vers la Tinée se fait au printemps, et non en été, à cause des brises.",
+          "effect": "Par vent d'est ou de nord-est en altitude, le cross marche correctement et les plafonds sont hauts, mais les vents tournent sur les crêtes. La traversée du haut Var vers la Tinée se fait au printemps, pas en été, à cause des brises.",
           "sources": [
             "S59",
             "S62"
@@ -1903,7 +1903,7 @@
         },
         {
           "wind": "S",
-          "effect": "Par tendance sud, même légère, on peut poursuivre vers le nord (Dormillouse, Briançon, Grenoble) depuis le Tromas. Avec une tendance nord, les arêtes au nord de Coste Longue sont au vent.",
+          "effect": "Par tendance sud, même légère, on peut poursuivre vers le nord depuis le Tromas : Dormillouse, Briançon, Grenoble. Par tendance nord, les arêtes au nord de Coste Longue sont au vent.",
           "sources": [
             "S55",
             "S61"
@@ -2036,18 +2036,18 @@
         }
       ],
       "tips": [
-        "Le Haut-Verdon n'a presque pas de site officiel : avant de se poser dans la vallée, se renseigner auprès des écoles d'Allos ou de Barrême, ou de celles de Saint-André. [S71][S78]",
-        "Après Côte Longue, rester sur la crête sans choisir entre l'est et l'ouest : le nord souffle souvent à l'autre bout de l'arête. [S55]",
-        "Prévoir de la marge pour traverser le haut Var : en été, les brises de vallée sont plus fortes, et l'atterrissage ne se trouve pas facilement dans ces vallées peu pratiquées. [S62]",
-        "Parc national du Mercantour à l'est : survol interdit sous 1000 m au-dessus du sol. [S24][S34]",
-        "Des traces de cross vers le sud sont documentées dans le Haut-Verdon. [S71]"
+        "Le Haut-Verdon n'a presque pas de site officiel : avant de vous poser dans la vallée, renseignez-vous auprès des écoles d'Allos, de Barrême ou de Saint-André. [S71][S78]",
+        "Après Côte Longue, restez sur la crête sans choisir entre l'est et l'ouest : le nord souffle souvent à l'autre bout de l'arête. [S55]",
+        "Gardez de la marge pour traverser le haut Var. En été, les brises de vallée y sont plus fortes, et l'atterrissage est difficile à trouver dans ces vallées peu pratiquées. [S62]",
+        "À l'est, dans le parc national du Mercantour, le survol est interdit sous 1000 m au-dessus du sol. [S24][S34]",
+        "Pour un cross vers le sud, appuyez-vous sur les traces documentées dans le Haut-Verdon. [S71]"
       ]
     },
     {
       "id": "prealpes-digne-lure",
       "name": "Préalpes de Digne, Sisteron, Moyenne Durance et Montagne de Lure",
       "parent_massif": "Alpes-de-Haute-Provence (Digne – Sisteron – Lure)",
-      "summary": "Quatre sous-secteurs aux régimes très différents.\n\nAutour de Digne (Bléone), les sites du Cousson, de l'Andran et de Villevieille sont des sites de brise : brises descendantes ou léger vent de nord le matin, puis « brises uniquement » à partir de midi (venturi à l'Andran, brises vite fortes côté ouest). Le bassin de Digne est aussi la source du vent de sud-ouest qui arrive à Saint-André par Barrême, et les fortes brises de la Bléone gênent les retours de cross vers Chamatte.\n\nAutour de Sisteron et de la Durance, Gâche, Sumiou et Saint-Geniez se volent surtout par nord-ouest (fin de mistral) ou par brise de sud établie. Le mistral y est fréquent en automne et en hiver, et il permet l'onde pour le vol à voile (Sisteron, Saint-Auban).\n\nLa Montagne de Lure est une grande barrière est-ouest : sa face sud (Contras, régime de brise de sud à sud-sud-ouest, convection puissante l'été) et ses flancs est (Banon, pour le « retour d'est ») sont surtout fréquentés le matin. Sumiou est sous le vent de Lure par vent de sud, et La Baume est sous l'onde par mistral. Plus à l'est, Moustiers et Montdenier sont des sites de vent d'ouest et de restitution. Les sites précisent surtout les orientations : les brises ne sont pas chiffrées localement.",
+      "summary": "Quatre sous-secteurs aux régimes très différents. Autour de Digne, sur la Bléone, le Cousson, l'Andran et Villevieille sont des sites de brise. Le matin, brises descendantes ou léger nord. À partir de midi, il n'y a plus que des brises : venturi à l'Andran, brises vite fortes côté ouest. Le bassin de Digne est aussi la source du sud-ouest qui arrive à Saint-André par Barrême. Au retour des cross vers Chamatte, les fortes brises de la Bléone gênent.\n\nAutour de Sisteron et de la Durance, Gâche, Sumiou et Saint-Geniez se volent surtout par nord-ouest, en fin de mistral, ou par brise de sud établie. Le mistral y souffle souvent en automne et en hiver, et il donne de l'onde au vol à voile (Sisteron, Saint-Auban).\n\nLa Montagne de Lure est une grande barrière est-ouest. Sa face sud (Contras) vit en régime de brise de sud à sud-sud-ouest, avec une convection puissante l'été. Ses flancs est (Banon) servent au « retour d'est ». On les vole surtout le matin. Par sud, Sumiou est sous le vent de Lure ; par mistral, La Baume est sous l'onde. Plus à l'est, Moustiers et Montdenier sont des sites de vent d'ouest et de restitution. Les fiches de sites donnent surtout des orientations : les brises ne sont pas chiffrées localement.",
       "bbox": [
         5.6,
         43.79,
@@ -3550,7 +3550,7 @@
       "synoptic_effects": [
         {
           "wind": "Mistral",
-          "effect": "Par mistral, il y a de l'onde pour le vol à voile à Sisteron et Saint-Auban, surtout en automne et en hiver. Gâche, Sumiou et Saint-Vincent sont les sites de nord ou de nord-ouest, et La Baume reste sous l'onde. À Rustrel (Vaucluse), la queue de mistral apporte des cisaillements. À Digne, l'Andran est turbulent par vent de nord ou d'ouest, et le Cousson connaît une onde-rotor du soir par ouest ou nord-ouest fort.",
+          "effect": "Par mistral, l'onde fait le bonheur du vol à voile à Sisteron et Saint-Auban, surtout en automne et en hiver. Gâche, Sumiou et Saint-Vincent sont les sites de nord ou de nord-ouest ; La Baume reste sous l'onde. À Rustrel (Vaucluse), la queue de mistral cisaille. À Digne, l'Andran secoue par nord ou ouest, et le Cousson connaît une onde-rotor le soir par ouest ou nord-ouest fort.",
           "sources": [
             "S10",
             "S45",
@@ -3561,7 +3561,7 @@
         },
         {
           "wind": "N",
-          "effect": "Par vent de nord, Gâche (nord ou nord-ouest), Sumiou (nord ou nord-est) et Lure nord se volent ; Banon est complètement sous le vent. À Digne, l'Andran est turbulent, et le Cousson lui est défavorable.",
+          "effect": "Par vent de nord, on vole à Gâche (nord ou nord-ouest), à Sumiou (nord ou nord-est) et à Lure nord. Banon est complètement sous le vent. À Digne, l'Andran est turbulent, et le Cousson défavorable.",
           "sources": [
             "S45",
             "S68",
@@ -3570,7 +3570,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Par nord-ouest, Gâche offre de la dynamique, et Sumiou permet un vol du soir. Le Cousson est utilisable par léger nord-ouest, mais Montdenier et Courchon sont dangereux par nord-ouest ou nord.",
+          "effect": "Par vent de nord-ouest, Gâche marche en dynamique, et Sumiou offre un vol du soir. Le Cousson passe par léger nord-ouest, mais Montdenier et Courchon sont dangereux par nord-ouest ou nord.",
           "sources": [
             "S45",
             "S67",
@@ -3591,7 +3591,7 @@
         },
         {
           "wind": "S",
-          "effect": "Par vent de sud, Sumiou est sous le vent de Lure, ce qui est dangereux. Villevieille est interdit. Saint-Geniez reste volable avec un léger vent de sud, quand la brise est installée. Contras, côté sud, dépend d'un régime de sud à sud-sud-ouest, et Oraison est inatteignable si la brise de sud est marquée.",
+          "effect": "Par vent de sud, Sumiou est sous le vent de Lure : danger. Villevieille est interdit. Saint-Geniez reste volable par léger sud, une fois la brise installée. Contras, côté sud, demande un régime de sud à sud-sud-ouest, et Oraison devient inatteignable si la brise de sud est marquée.",
           "sources": [
             "S45",
             "S44",
@@ -3601,7 +3601,7 @@
         },
         {
           "wind": "E",
-          "effect": "Par vent d'est, le Grou de Bane et Banon sont réputés pour le « retour d'est » : le décollage est efficace même par vent modéré. Moustiers est dangereux par est ou sud-est. Un cross au départ de Bleyne vers Moustiers ou Digne est possible par est marqué, avec des plafonds de 3000 à 3500 m et une dérive de 45 à 55 km/h en altitude.",
+          "effect": "Par vent d'est, le Grou de Bane et Banon sont réputés pour le « retour d'est » : le décollage rend bien, même par vent modéré. Moustiers est dangereux par est ou sud-est. Par est marqué, un cross peut partir de Bleyne vers Moustiers ou Digne, avec des plafonds de 3000 à 3500 m et une dérive de 45 à 55 km/h en altitude.",
           "sources": [
             "S47",
             "S48",
@@ -3610,7 +3610,7 @@
         },
         {
           "wind": "SE",
-          "effect": "Par vent de sud-est, Banon peut être turbulent avant l'arrivée d'un front venant du golfe de Gênes. Un sud-est marqué permet de franchir l'arrière de Digne en dérivant, et le retour vers le sud est contré.",
+          "effect": "Par vent de sud-est, Banon peut secouer avant l'arrivée d'un front du golfe de Gênes. Un sud-est marqué permet de franchir l'arrière de Digne en dérivant, mais le retour vers le sud est contré.",
           "sources": [
             "S68",
             "S60"
@@ -3728,20 +3728,20 @@
         }
       ],
       "tips": [
-        "À Digne, décoller le matin au nord-est, à l'Andran, puis basculer au sud-ouest dès que les brises tournent. Ne pas voler en milieu de journée : à partir de 12h, il n'y a plus que des brises. [S44]",
-        "À Digne, se méfier des fortes brises de la Bléone au retour des cross : mieux vaut passer par Cadun puis Vachière, depuis le Tromas, que lutter contre la brise. [S55]",
-        "À Sisteron, Gâche et Sumiou se volent par nord ou nord-ouest, en fin de mistral ; ne pas voler à Sumiou par vent de sud, car il est sous le vent de Lure. [S45][S67][S69]",
-        "À Banon et au Grou de Bane, réserver le site du matin aux régimes d'est et de sud-est ; le terrain devient turbulent dès que le vent passe à l'ouest. [S47][S68]",
-        "À Oraison, ne pas décoller si la brise de sud est marquée, ne pas faire de repose au décollage, et surveiller les manches à air en vallée. [S46]",
-        "Vérifier avant l'Andran la zone Gap-Valensole ; éviter ou vérifier la zone R138 de Canjuers, près d'Aiguines, et les activités de vol à voile de Saint-Auban. [S44][S48][S46]",
-        "Sur Lure, les décollages de la face nord (Sumiou, Lure nord) sont sous le vent par vent de sud ; la face sud (Contras) dépend du régime de brise. La Montagne de Lure est une barrière à onde par mistral. [S45][S47][S73]"
+        "À Digne, décollez le matin au nord-est, à l'Andran, puis passez au sud-ouest dès que les brises tournent. Ne volez pas en milieu de journée : à partir de 12h, il n'y a plus que des brises. [S44]",
+        "Au retour de cross vers Digne, méfiez-vous des fortes brises de la Bléone : depuis le Tromas, passez par Cadun puis Vachière plutôt que de lutter contre elles. [S55]",
+        "À Sisteron, volez Gâche et Sumiou par nord ou nord-ouest, en fin de mistral. Pas de Sumiou par sud : il est sous le vent de Lure. [S45][S67][S69]",
+        "À Banon et au Grou de Bane, gardez le site du matin pour les régimes d'est et de sud-est : le terrain devient turbulent dès que le vent passe à l'ouest. [S47][S68]",
+        "À Oraison, ne décollez pas si la brise de sud est marquée, ne vous reposez pas au décollage, et surveillez les manches à air en vallée. [S46]",
+        "Avant l'Andran, vérifiez la zone Gap-Valensole. Évitez ou vérifiez la zone R138 de Canjuers, près d'Aiguines, et l'activité vol à voile de Saint-Auban. [S44][S48][S46]",
+        "Sur Lure, par vent de sud, les décollages de la face nord (Sumiou, Lure nord) sont sous le vent ; la face sud (Contras) dépend du régime de brise. Par mistral, la montagne fait barrière et lève l'onde. [S45][S47][S73]"
       ]
     },
     {
       "id": "prealpes-grasse-castellane",
       "name": "Préalpes de Castellane et de Grasse (Castellane, Gréolières, Bleine, Thorenc, Gourdon, Courmes, Cheiron)",
       "parent_massif": "Préalpes d'Azur (Alpes-Maritimes) / Préalpes de Castellane",
-      "summary": "Premier rideau de reliefs face à la Méditerranée, ce massif a deux visages : côté mer, autour de Gourdon et du Cheiron de Gréolières, et côté intérieur, autour du Col de Bleine, à Thorenc. Ce sont des sites volables toute l'année (en hiver à Gourdon, l'inversion se situe vers 1000-1200 m, plafonds 1400 m), mais difficiles à quitter : la TMA de Nice limite le vol à environ 2000-2100 m.\n\nCôté mer, Gourdon, à environ 20 km de la côte, et le Cheiron de Gréolières reçoivent presque tous les jours une brise de sud-est (10 à 20 km/h, forte l'été après 11h-13h), qui ajoute du dynamique aux thermiques. Une convergence se forme souvent juste au-dessus de Gourdon. À Gréolières, la brise des gorges du Loup rencontre celle du Col de Vence au col de l'antenne, avant Coursegoules.\n\nCôté intérieur, le Col de Bleine est peu exposé aux influences maritimes et orienté plein sud : c'est le grand départ de cross des Alpes-Maritimes. On y décolle dès 10h30, car dès midi les brises d'est sont contrées par celles d'ouest. Le piège classique est le venturi des Lattes, puis celui du col de Saint-Barnabé, avant Saint-André. La route fait 30 km (A/R 70 km) et peut aller jusqu'à 175 km vers Dormillouse et le Morgon.\n\nTout vent d'ouest est mauvais : à Gréolières et à Bleine, il faut se replier sur le Lachens. Le Mistral et les vents de nord sont tolérés sur la face sud du Cheiron, mais dangereux à Gourdon et au Puet. Castellane n'a que des sites confidentiels ou fermés. Le sens exact de la brise de mer vers Bleine, Thorenc et Saint-André n'est pas documenté : seul un front très approximatif est tracé.",
+      "summary": "Premier rideau de reliefs face à la Méditerranée, ce massif a deux visages : côté mer, Gourdon et le Cheiron de Gréolières ; côté intérieur, le Col de Bleine, à Thorenc. On y vole toute l'année : en hiver à Gourdon, l'inversion se situe vers 1000-1200 m, avec des plafonds à 1400 m. Mais on en sort difficilement : la TMA de Nice limite le vol à environ 2000-2100 m.\n\nCôté mer, Gourdon, à environ 20 km de la côte, et le Cheiron de Gréolières reçoivent presque tous les jours une brise de sud-est de 10 à 20 km/h. Elle forcit l'été après 11h-13h. Elle ajoute du dynamique aux thermiques. Une convergence se forme souvent juste au-dessus de Gourdon. À Gréolières, la brise des gorges du Loup rencontre celle du Col de Vence au col de l'antenne, avant Coursegoules.\n\nCôté intérieur, le Col de Bleine, plein sud et peu exposé à la mer, est le grand départ de cross des Alpes-Maritimes. On y décolle dès 10h30, car dès midi les brises d'ouest contrent celles d'est. Les pièges classiques sont le venturi des Lattes, puis celui du col de Saint-Barnabé, avant Saint-André. La route fait 30 km (A/R 70 km) et peut aller jusqu'à 175 km vers Dormillouse et le Morgon.\n\nTout vent d'ouest est mauvais : à Gréolières et à Bleine, repliez-vous sur le Lachens. Le mistral et les vents de nord passent sur la face sud du Cheiron, mais sont dangereux à Gourdon et au Puet. Castellane n'a que des sites confidentiels ou fermés. Le sens exact de la brise de mer vers Bleine, Thorenc et Saint-André n'est pas documenté : seul un front très approximatif est tracé.",
       "bbox": [
         6.4728,
         43.5113,
@@ -5222,7 +5222,7 @@
       "synoptic_effects": [
         {
           "wind": "W",
-          "effect": "Ouest : à éviter à Gréolières, où le vent est interdit au-delà de 30 km/h sur la crête et où l'atterrissage est sous le vent du village ; le décollage 300 y est piégeux. À Bleine, le vent d'ouest rend le site turbulent : il faut aller au Lachens, qui est le site de l'ouest. Au Puet, un gradient apparaît à la sortie du décollage par tendance ouest. Les brises d'ouest contrent les cross à partir de midi.",
+          "effect": "Par vent d'ouest, évitez Gréolières : au-delà de 30 km/h sur la crête, c'est interdit, l'atterrissage passe sous le vent du village et le décollage 300 est piégeux. À Bleine, l'ouest rend le site turbulent : allez au Lachens, le site de l'ouest. Au Puet, un gradient apparaît en sortie de décollage par tendance ouest. À partir de midi, les brises d'ouest contrent les cross.",
           "sources": [
             "S40",
             "S28",
@@ -5234,7 +5234,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Nord-ouest et Mistral : la Marbrière est dangereuse, et le Puet l'est par le nord. Gourdon devient turbulent par fort vent de nord. La face sud du Cheiron reste volable, bien protégée des vents de nord et d'ouest tant qu'ils ne sont pas trop forts, mais le vent peut être fort au-dessus des falaises. À Bleine, il faut être attentif au mistral. Sospel, hors de ce massif, sert de repli.",
+          "effect": "Par vent de nord-ouest ou mistral, la Marbrière est dangereuse, le Puet aussi par nord, et Gourdon secoue par fort nord. La face sud du Cheiron reste volable, bien protégée tant que nord et ouest ne sont pas trop forts, mais le vent peut être fort au-dessus des falaises. À Bleine, surveillez le mistral. Sospel, hors de ce massif, sert de repli.",
           "sources": [
             "S40",
             "S28",
@@ -5245,7 +5245,7 @@
         },
         {
           "wind": "N",
-          "effect": "Vent de nord : la face sud du Cheiron fonctionne en brises thermiques de sud. Le plateau du Cheiron et Bleine sont plutôt dans le rotor, et Gourdon et le Puet sont dangereux. En hiver, les bonnes journées de nord faible à Gourdon permettent des vols de 50 km et plus, vers Saint-Jeannet.",
+          "effect": "Par vent de nord, la face sud du Cheiron marche en brises thermiques de sud. Le plateau du Cheiron et Bleine sont plutôt dans le rotor, et Gourdon et le Puet sont dangereux. En hiver, les bonnes journées de nord faible à Gourdon donnent des vols de 50 km et plus, vers Saint-Jeannet.",
           "sources": [
             "S28",
             "S32",
@@ -5255,7 +5255,7 @@
         },
         {
           "wind": "E",
-          "effect": "Vent d'est : la sortie du décollage est turbulente à Gréolières et à Bleine, et l'atterrissage de Gourdon devient turbulent par fort vent d'est. En altitude, un régime d'est ou de nord-est permet pourtant des cross de Bleine vers Moustiers et Digne, ou de Fourneby vers Dormillouse, avec des plafonds de 3000 à 4200 m. Le retour vers Saint-André est alors contré.",
+          "effect": "Par vent d'est, la sortie du décollage secoue à Gréolières et à Bleine, et l'atterrissage de Gourdon devient turbulent par fort est. En altitude, un régime d'est ou de nord-est ouvre pourtant des cross de Bleine vers Moustiers et Digne, ou de Fourneby vers Dormillouse, avec des plafonds de 3000 à 4200 m. Le retour vers Saint-André est alors contré.",
           "sources": [
             "S40",
             "S41",
@@ -5266,7 +5266,7 @@
         },
         {
           "wind": "SE",
-          "effect": "Vent de sud-est : c'est le régime habituel des sites côté mer, avec une brise presque quotidienne. Quand le sud-est est marqué, le décollage de Bleine est turbulent et le cross d'est est difficile, vers Moustiers et Digne. Gourdon et Gréolières sont idéaux avec un sud-est faible à modéré.",
+          "effect": "Par vent de sud-est, c'est le régime habituel des sites côté mer, avec une brise presque quotidienne. Gourdon et Gréolières sont idéaux par sud-est faible à modéré. Marqué, le sud-est rend le décollage de Bleine turbulent et complique le cross d'est vers Moustiers et Digne.",
           "sources": [
             "S40",
             "S41",
@@ -5275,7 +5275,7 @@
         },
         {
           "wind": "S",
-          "effect": "Vent de sud, léger : c'est idéal pour la Montagne de Thorenc, près de Bleine, et pour pousser vers le nord jusqu'à Grenoble. En hiver, Gourdon profite du sud et du plein soleil. Par sud fort, le Puet et les crêtes sont sous le vent. En été, le sud contrarie le retour de Saint-André vers Bleyne.",
+          "effect": "Par vent de sud léger, la Montagne de Thorenc, près de Bleine, est idéale. On peut aussi pousser vers le nord jusqu'à Grenoble. En hiver, Gourdon profite du sud et du plein soleil. Par sud fort, le Puet et les crêtes sont sous le vent. En été, le sud contrarie le retour de Saint-André vers Bleyne.",
           "sources": [
             "S31",
             "S55",
@@ -5285,7 +5285,7 @@
         },
         {
           "wind": "SW",
-          "effect": "Vent de sud-ouest, faible : Gréolières reste volable, avec les décollages du 300, du 700 et du 1000, listés sud-ouest. Au Lachens, le décollage Ouest est orienté sud-ouest. Cavillore est orienté sud à sud-ouest. Le sud-ouest se combine avec la brise d'ouest de l'après-midi sur le couloir Thorenc – Lattes.",
+          "effect": "Par vent de sud-ouest faible, Gréolières reste volable, avec les décollages du 300, du 700 et du 1000, listés sud-ouest. Au Lachens, le décollage Ouest est orienté sud-ouest, et Cavillore regarde le sud à sud-ouest. L'après-midi, le sud-ouest s'ajoute à la brise d'ouest sur le couloir Thorenc – Lattes.",
           "sources": [
             "S40",
             "S49",
@@ -5608,21 +5608,21 @@
         }
       ],
       "tips": [
-        "Bleine : volez tôt, vers 10h30, car dès midi les brises d'est sont contrées par l'ouest. Faites un plein de 2500 m avant les Lattes, et ne vous laissez pas coincer dans le venturi des Lattes ni dans celui du col de Saint-Barnabé [S55]",
-        "Gréolières et Gourdon : évitez tout vent d'ouest, même faible. En été, la brise de pente forcit vite au 1000 du Cheiron : descendez au 600, ou volez tôt ou tard. La TMA de Nice limite le vol à 2000-2100 m [S40][S28][S42]",
-        "Gourdon : volez le matin, car le site devient teigneux dès 11h, et les atterrissages ont du gradient. Préférez l'ancien atterrissage officiel et celui des Valettes, plus accessible que Cavillore [S66][S57][S42]",
-        "Par vent d'est ou de nord-est, les conditions de cross sont bonnes, avec des plafonds de 3000 à 4200 m et peu de surdéveloppement, mais les vents partent dans tous les sens : faites toujours un essai radio avant le décollage [S59][S60]",
-        "Le Lachens est le site de repli par vent d'ouest. Son camp militaire, au sommet, impose de vérifier les NOTAM [S31][S33][S49]",
-        "Les décollages de Gréolières sont tous à plus de 30 min à pied, sauf en navette : il n'y a pas de 4×4 privé. En hiver, les vols de 20 à 30 km depuis Gourdon se font avec des plafonds bas, vers 1400 m [S32][S66]",
-        "Aux Lattes, prévoyez de la marge pour la récupération : la circulation y est très faible, et il n'y a ni couverture GSM ni radio [S55]",
-        "Le parc national du Mercantour, au nord-est, interdit le survol sous 1000 m du sol [S24]"
+        "Bleine : volez tôt, vers 10h30, car dès midi l'ouest contre les brises d'est. Faites un plein de 2500 m avant les Lattes, et ne vous laissez coincer ni dans le venturi des Lattes ni dans celui du col de Saint-Barnabé [S55]",
+        "Gréolières et Gourdon : évitez tout vent d'ouest, même faible. L'été, la brise de pente forcit vite au 1000 du Cheiron : descendez au 600, ou volez tôt ou tard. La TMA de Nice limite le vol à 2000-2100 m [S40][S28][S42]",
+        "Gourdon : volez le matin, car le site devient teigneux dès 11h et les atterrissages ont du gradient. Préférez l'ancien atterrissage officiel et celui des Valettes, plus accessible que Cavillore [S66][S57][S42]",
+        "Par vent d'est ou de nord-est, le cross marche bien, avec des plafonds de 3000 à 4200 m et peu de surdéveloppement. Mais les vents partent dans tous les sens : faites toujours un essai radio avant de décoller [S59][S60]",
+        "Par vent d'ouest, repliez-vous sur le Lachens. Son sommet abrite un camp militaire : vérifiez les NOTAM [S31][S33][S49]",
+        "À Gréolières, tous les décollages sont à plus de 30 min à pied, sauf en navette : pas de 4×4 privé. En hiver, depuis Gourdon, on fait des vols de 20 à 30 km avec des plafonds bas, vers 1400 m [S32][S66]",
+        "Aux Lattes, gardez de la marge pour la récupération : il y passe très peu de voitures, et il n'y a ni réseau GSM ni radio [S55]",
+        "Au nord-est, le parc national du Mercantour interdit le survol sous 1000 m du sol [S24]"
       ]
     },
     {
       "id": "prealpes-nice-var",
       "name": "Préalpes de Nice et basse vallée du Var (Nice, Saint-Jeannet, Levens, Vence, Roquebrune)",
       "parent_massif": "Préalpes d'Azur (Alpes-Maritimes)",
-      "summary": "Bassin ouvert plein sud sur la mer. À l'ouest, les Courmettes, Tourrettes et les baous de Vence – Saint-Jeannet ; au milieu, la basse vallée du Var ; à l'est, les contreforts de Levens, Aspremont et le Mont Chauve, puis la côte, de l'Éze à Roquebrune. Il n'y a presque aucun site officiel (Cantaron en test, Roquebrune / Mont Gros, Lai Barrai, Éze) : l'intérêt est le cross d'hiver et de demi-saison depuis Gourdon.\n\nLe « grand bocal » en est l'itinéraire type : Gourdon, Courmettes, Tourrettes, les baous de Vence et Saint-Jeannet, soit un aller de 17 km de crêtes. On s'y enfonce vers la vallée du Var, où les conditions deviennent de plus en plus stables et le thermique plus faible, sous l'influence marine. Le retour est délicat entre le baou des Blancs et Tourrettes, et les atterrissages sont très rares (« vaches »), avec la TMA de Nice à prendre en compte.\n\nCôté côte, Roquebrune et Éze se volent en brise de mer et en thermiques, en arrière-saison et en hiver, avec des restrictions d'horaires (chasse, plage) et un danger de rotors par vent d'est.\n\nLa brise montante du Var, de l'embouchure vers Entrevaux, est déduite et non documentée.",
+      "summary": "Un bassin ouvert plein sud sur la mer. À l'ouest, les Courmettes, Tourrettes et les baous de Vence – Saint-Jeannet ; au milieu, la basse vallée du Var ; à l'est, les contreforts de Levens, Aspremont et le Mont Chauve, puis la côte, d'Éze à Roquebrune. Presque aucun site officiel (Cantaron en test, Roquebrune / Mont Gros, Lai Barrai, Éze) : on vient ici pour le cross d'hiver et de demi-saison au départ de Gourdon.\n\nL'itinéraire type est le « grand bocal » : Gourdon, Courmettes, Tourrettes, les baous de Vence et Saint-Jeannet, soit un aller de 17 km de crêtes. Plus on s'enfonce vers la vallée du Var, plus l'air devient stable et le thermique faible, sous l'influence de la mer. Le retour est délicat entre le baou des Blancs et Tourrettes. Les atterrissages, des « vaches », sont très rares, et la TMA de Nice coiffe le tout.\n\nSur la côte, Roquebrune et Éze se volent en brise de mer et en thermiques, en arrière-saison et en hiver. Les horaires sont restreints (chasse, plage), et le vent d'est y crée des rotors dangereux.\n\nLa brise montante du Var, de l'embouchure vers Entrevaux, est déduite et non documentée.",
       "bbox": [
         6.77,
         43.6,
@@ -6722,7 +6722,7 @@
       "synoptic_effects": [
         {
           "wind": "E",
-          "effect": "Vent d'est : Roquebrune et Éze sont en rotors, et il ne faut pas voler dès que des moutons apparaissent en mer. Lai Barrai est dangereux par nord-est et est. En altitude, l'est apporte une dérive vers l'ouest : un cross du Mont Vial à Menton a été réalisé par une dérive est-nord-est, puis un vent faible.",
+          "effect": "Par vent d'est, Roquebrune et Éze sont en rotors : ne volez pas dès que des moutons apparaissent en mer. Lai Barrai est dangereux par nord-est et est. En altitude, l'est apporte une dérive vers l'ouest : un cross a relié le Mont Vial à Menton, par une dérive est-nord-est, puis un vent faible.",
           "sources": [
             "S52",
             "S83",
@@ -6732,7 +6732,7 @@
         },
         {
           "wind": "N",
-          "effect": "Vent de nord : Roquebrune est impraticable par fort nord en altitude. En hiver, les journées de nord faible ou calme sont favorables aux cross Gourdon – Saint-Jeannet, avec des plafonds de 1200 à 1900 m.",
+          "effect": "Par vent de nord, Roquebrune devient impraticable si le nord est fort en altitude. En hiver, les journées de nord faible ou de calme sont bonnes pour les cross Gourdon – Saint-Jeannet, avec des plafonds de 1200 à 1900 m.",
           "sources": [
             "S52",
             "S57",
@@ -6741,7 +6741,7 @@
         },
         {
           "wind": "W",
-          "effect": "Ouest et Mistral sur la côte : conditions réservées aux confirmés, avec l'aéroport et les digues sous le vent à Saint-Laurent-du-Var. Un fort ouest, même de petite tendance, condamne le retour de Tourrettes vers Courmettes : le passage de l'épaule sud-est de Courmettes coûte alors beaucoup de gaz.",
+          "effect": "Par vent d'ouest ou mistral, la côte est réservée aux confirmés : à Saint-Laurent-du-Var, l'aéroport et les digues sont sous le vent. Un fort ouest, même de petite tendance, condamne le retour de Tourrettes vers Courmettes : passer l'épaule sud-est de Courmettes coûte alors beaucoup de gaz.",
           "sources": [
             "S52",
             "S57"
@@ -6749,7 +6749,7 @@
         },
         {
           "wind": "S",
-          "effect": "Vent de sud : la brise de sud alimente les falaises, des Maisons Bulles aux baous, et c'est le vent le plus favorable. Éze et Roquebrune se volent vers le sud-ouest, en vent léger. Cantaron est un site de sud.",
+          "effect": "Par vent de sud, la brise alimente les falaises, des Maisons Bulles aux baous : c'est le vent le plus favorable. Éze et Roquebrune se volent vers le sud-ouest, en vent léger. Cantaron est un site de sud.",
           "sources": [
             "S57",
             "S84",
@@ -6758,7 +6758,7 @@
         },
         {
           "wind": "SE",
-          "effect": "Vent de sud-est : la brise de mer de sud-est est dominante. Roquebrune, Lai Barrai et Kennedy sont idéaux. Un sud-est trop marqué donne un rotor au décollage de Gourdon, par tendance est.",
+          "effect": "Par vent de sud-est, la brise de mer domine : Roquebrune, Lai Barrai et Kennedy sont idéaux. Trop marqué, le sud-est donne un rotor au décollage de Gourdon, par tendance est.",
           "sources": [
             "S52",
             "S84"
@@ -6889,19 +6889,19 @@
         }
       ],
       "tips": [
-        "Repérez à pied les vaches et leurs points de rupture avant de vous lancer sur Gourdon – Saint-Jeannet : découvrir en vol une ligne électrique mal placée est très désagréable [S57][S58]",
-        "Plus l'on s'enfonce vers Saint-Jeannet, plus les conditions sont stables : partez de Courmettes avec le plafond maximal [S57]",
+        "Repérez à pied les vaches et leurs points de rupture avant de partir sur Gourdon – Saint-Jeannet : découvrir en vol une ligne électrique mal placée est très désagréable [S57][S58]",
+        "Plus on s'enfonce vers Saint-Jeannet, plus l'air est stable : quittez Courmettes au plafond maximal [S57]",
         "À Éze et à Roquebrune, ne volez pas s'il y a des moutons sur la mer, vérifiez les horaires de chasse et de plage, et ne survolez ni la Base aérienne 943 ni la résidence princière [S83][S52][S84]",
-        "Au-dessus de Gourdon, la TMA de Nice impose un plafond d'environ 2000 m (FL65) [S42][S40]",
-        "Pour les sites de la côte, prenez contact avec les clubs de Roquebrune, Cantaron et Lai Barrai [S52][S70]",
-        "Il n'y a pas de site officiel sur le Baou de Saint-Jeannet lui-même, et aucune topo n'est disponible [S70]"
+        "Au-dessus de Gourdon, la TMA de Nice plafonne le vol vers 2000 m (FL65) [S42][S40]",
+        "Pour les sites de la côte, contactez les clubs de Roquebrune, Cantaron et Lai Barrai [S52][S70]",
+        "Le Baou de Saint-Jeannet lui-même n'a ni site officiel ni topo [S70]"
       ]
     },
     {
       "id": "mercantour",
       "name": "Mercantour – Tinée, Vésubie, Roya, Haut-Var, Bévéra (Isola, Valberg, Auron, La Colmiane, Tende, Sospel)",
       "parent_massif": "Alpes-Maritimes (Mercantour)",
-      "summary": "Hautes vallées nord-sud (Tinée, Vésubie, Roya, haut Var) qui débouchent sur le Var ou sur la mer, au pied d'un parc national dont le survol est interdit à moins de 1000 m au-dessus du sol. Les brises de vallée y sont fortes et précoces l'été : un fort venturi se met en place dès 12h30 à Saint-Étienne-de-Tinée, la brise est massive entre Isola et le Caire Gros, et les brises de vallée sont fortes à Cagnorina et au Col de Tende. Une brise de sud-est venue de Vintimille nourrit la Roya et la Bévéra.\n\nLa brise de mer est le fait majeur : elle remonte le Var, la Vésubie et la Roya l'après-midi, et rencontre l'ouest et les brises de vallées de l'intérieur. Elle forme des zones de confluence, comme vers Ascros, une convergence à Sospel entre la brise de la Bévéra et celle du col de Castillon, ou une confluence de La Raya à La Colmiane.\n\nPeu de sites officiels : Auron (Cime de la Bercha, au sud), La Colmiane (Veillos, Balme, Pic ; ouest et sud-ouest), Roya (Cagnorina, Col de Tende), Sospel (Agaisen, Lavina, Monte Grosso). Valberg, Isola et la Vésubie n'ont pas de site documenté utilisable. Les routes de cross sont des vols de grand relief, comme le Mont Vial – Menton (130 km), La Colmiane – Gélas – Tende ou Saint-André – Tinée, à faire au printemps ou par vent d'ouest ou de nord frais.\n\nAvec Lombarde, un vent de nord rafaleux venu du golfe de Gênes, il faut être prudent : c'est à redouter.",
+      "summary": "De hautes vallées nord-sud (Tinée, Vésubie, Roya, haut Var) descendent vers le Var ou la mer, au pied d'un parc national qu'on ne survole pas à moins de 1000 m du sol. L'été, les brises de vallée y sont fortes et précoces : fort venturi dès 12h30 à Saint-Étienne-de-Tinée, brise massive entre Isola et le Caire Gros, fortes brises à Cagnorina et au Col de Tende. Une brise de sud-est venue de Vintimille nourrit la Roya et la Bévéra.\n\nLe fait majeur, c'est la brise de mer. L'après-midi, elle remonte le Var, la Vésubie et la Roya, et rencontre l'ouest et les brises des vallées de l'intérieur. Elle crée des confluences : vers Ascros, à Sospel entre la brise de la Bévéra et celle du col de Castillon, à La Colmiane vers La Raya.\n\nLes sites officiels sont rares : Auron (Cime de la Bercha, au sud), La Colmiane (Veillos, Balme, Pic ; ouest et sud-ouest), la Roya (Cagnorina, Col de Tende), Sospel (Agaisen, Lavina, Monte Grosso). Valberg, Isola et la Vésubie n'ont pas de site documenté utilisable. Les cross sont des vols de grand relief, comme le Mont Vial – Menton (130 km), La Colmiane – Gélas – Tende ou Saint-André – Tinée : au printemps, ou par ouest ou nord frais.\n\nMéfiez-vous de la Lombarde, le retour d'est des dépressions du golfe de Gênes : à Sospel, elle arrive en vent de nord rafaleux et fort. C'est le vent à redouter.",
       "bbox": [
         6.74,
         43.74,
@@ -8382,7 +8382,7 @@
       "synoptic_effects": [
         {
           "wind": "Lombarde",
-          "effect": "Lombarde, un vent de nord rafaleux et fort des dépressions du golfe de Gênes : il est dangereux à Sospel. Il crée des cisaillements entre le nord et les brises, de la Tinée au Lauvet d'Ilonse, et les conditions sont très fortes sur la Roya. Le nord qui forcit avec l'altitude pousse haut les nuages.",
+          "effect": "La Lombarde est un retour d'est, lié aux dépressions du golfe de Gênes ; en altitude, le flux vient du nord au nord-est. À Sospel, elle arrive en vent de nord fort et rafaleux, et elle y est dangereuse. Elle cisaille contre les brises, de la Tinée au Lauvet d'Ilonse, et rend les conditions très fortes sur la Roya. Le flux forcit avec l'altitude et pousse haut les nuages.",
           "sources": [
             "S74",
             "S86",
@@ -8391,7 +8391,7 @@
         },
         {
           "wind": "Mistral",
-          "effect": "Mistral : Sospel sert de repli. La Colmiane est favorable en dynamique d'ouest et par mistral, avec un plafond possible vers +4000 m. Auron est dangereux par vent d'ouest et de nord.",
+          "effect": "Par mistral, Sospel sert de repli. La Colmiane est favorable en dynamique d'ouest et par mistral, avec un plafond possible vers +4000 m. Auron est dangereux par ouest et par nord.",
           "sources": [
             "S74",
             "S73"
@@ -8399,7 +8399,7 @@
         },
         {
           "wind": "W",
-          "effect": "Vent d'ouest : c'est le régime des décollages de La Colmiane, orientés ouest et sud-ouest, mais il y a un rotor sous La Raya. À Sospel, l'ouest prend vite le pas sur la brise de la Bévéra, et il condamne les transitions face au vent. En cross, les brises d'ouest contrent l'arrivée à La Colmiane.",
+          "effect": "Par vent d'ouest, les décollages de La Colmiane, orientés ouest et sud-ouest, sont en régime, mais La Raya fait un rotor. À Sospel, l'ouest prend vite le pas sur la brise de la Bévéra et condamne les transitions face au vent. En cross, les brises d'ouest contrent l'arrivée à La Colmiane.",
           "sources": [
             "S53",
             "S35",
@@ -8408,7 +8408,7 @@
         },
         {
           "wind": "E",
-          "effect": "Vent d'est : il est dangereux à La Colmiane par nord-est, est et sud-est, à Sospel par est marqué, et à Roquebrune. Un foehn d'est est possible sur les crêtes frontalières. En altitude, un régime d'est ou de nord-est donne en revanche de bons plafonds en cross.",
+          "effect": "Par vent d'est, La Colmiane est dangereuse par nord-est, est et sud-est, Sospel par est marqué, et Roquebrune aussi. Un foehn d'est est possible sur les crêtes frontalières. En altitude, un régime d'est ou de nord-est donne pourtant de bons plafonds en cross.",
           "sources": [
             "S53",
             "S51",
@@ -8417,14 +8417,14 @@
         },
         {
           "wind": "NE",
-          "effect": "Vent de nord-est : il contre fortement l'arrivée à La Colmiane depuis Clans. Au sud de La Colmiane, l'ensoleillement est tardif.",
+          "effect": "Par vent de nord-est, l'arrivée à La Colmiane depuis Clans est fortement contrée. Au sud de La Colmiane, le soleil arrive tard.",
           "sources": [
             "S86"
           ]
         },
         {
           "wind": "S",
-          "effect": "Vent de sud : Cagnorina et le Col de Tende offrent de la thermo-dynamique et du soaring par léger sud. À Auron, le sud donne des thermiques. À Sospel, le décollage de l'Agaisen est orienté sud-est à sud-ouest. Avec le sud et la brise de mer, les entrées maritimes sont rapides.",
+          "effect": "Par vent de sud léger, Cagnorina et le Col de Tende offrent du thermodynamique et du soaring. À Auron, le sud donne des thermiques. À Sospel, le décollage de l'Agaisen est orienté sud-est à sud-ouest. Sud et brise de mer ensemble font entrer vite l'air maritime.",
           "sources": [
             "S50",
             "S34",
@@ -8433,7 +8433,7 @@
         },
         {
           "wind": "SE",
-          "effect": "Vent de sud-est : c'est le régime de brise dominant à Sospel et sur la Roya, avec la brise de Vintimille. La Lavina sert le matin, avant que la brise passe au sud.",
+          "effect": "Par vent de sud-est, c'est le régime de brise dominant à Sospel et sur la Roya, avec la brise de Vintimille. La Lavina sert le matin, avant que la brise passe au sud.",
           "sources": [
             "S74"
           ]
@@ -8743,13 +8743,13 @@
         }
       ],
       "tips": [
-        "Au parc national, restez à plus de 1000 m au-dessus du sol. La marche et le vol au Mangiabo ne sont permis que du 1er août au 15 octobre, et il faut respecter les interdictions du parc, y compris au Campé Giordano [S34][S36][S74]",
-        "L'été, les brises sont fortes dans toutes les vallées : posez avant le milieu de la journée à Cagnorina, au Col de Tende, à Saint-Étienne-de-Tinée (dès 12h30) ou à Sospel, ou volez en fin de journée [S50][S73][S74]",
-        "Au printemps (mars-avril), ou les jours de nord ou d'ouest frais, les grandes traversées du haut Var et de la Tinée sont possibles ; en été, les brises rendent l'entreprise aventureuse [S62]",
-        "À Sospel, ne dépassez pas la TMA 9 (1981 m, ou 305 m au-dessus du relief). Sous Lombarde, il y a un danger, et par Mistral, Sospel sert de repli [S74]",
-        "À La Colmiane, par vent d'ouest, montez haut vers le Pétoumier, et évitez le bol à l'est, en rotor sous La Raya [S35]",
-        "Valberg, Isola 2000, Péone et la Vésubie n'ont pas de site officiel ni de topo : à Isola, il est difficile de ne pas se retrouver sous le vent du relief [S97]",
-        "Le matin, sous un flux de nord, les brises du Var et de la Vésubie sont catabatiques ; l'après-midi, de mai à septembre, la brise de mer forcit vite [S89][S92][S93]"
+        "Au parc national, restez à plus de 1000 m du sol. La marche et vol au Mangiabo n'est permise que du 1er août au 15 octobre, et les interdictions du parc valent aussi au Campé Giordano [S34][S36][S74]",
+        "L'été, les brises sont fortes dans toutes les vallées : posez avant le milieu de journée à Cagnorina, au Col de Tende, à Saint-Étienne-de-Tinée (dès 12h30) ou à Sospel, ou volez en fin de journée [S50][S73][S74]",
+        "Gardez les grandes traversées du haut Var et de la Tinée pour le printemps (mars-avril) ou les jours de nord ou d'ouest frais : l'été, les brises en font une aventure [S62]",
+        "À Sospel, ne dépassez pas la TMA 9 (1981 m, ou 305 m au-dessus du relief). Sous Lombarde, le site est dangereux ; par mistral, il sert de repli [S74]",
+        "À La Colmiane, par vent d'ouest, montez haut vers le Pétoumier et évitez le bol à l'est, en rotor sous La Raya [S35]",
+        "Valberg, Isola 2000, Péone et la Vésubie n'ont ni site officiel ni topo. À Isola, on se retrouve facilement sous le vent du relief [S97]",
+        "Le matin, sous flux de nord, les brises du Var et de la Vésubie sont catabatiques ; l'après-midi, de mai à septembre, la brise de mer forcit vite [S89][S92][S93]"
       ]
     }
   ],

@@ -5,7 +5,7 @@
       "id": "oisans-grandes-rousses",
       "name": "Romanche et Oisans (Vizille, Bourg-d'Oisans, Alpe d'Huez, Grandes Rousses, Vaujany, Deux Alpes, Vénéon, La Grave)",
       "parent_massif": "Alpes internes – Oisans",
-      "summary": "L'Oisans est un carrefour de vallées profondes. La Romanche traverse Vizille, les gorges de Livet-et-Gavet et la plaine de Bourg-d'Oisans, puis remonte vers le lac du Chambon, La Grave et le Lautaret. L'Eau d'Olle passe par Allemont, Oz et Vaujany, la Sarenne par l'Alpe d'Huez, et le Vénéon par Venosc et Les Deux Alpes.\n\nEn été, le régime est celui des grandes vallées alpines : le matin est calme et les décollages s'alimentent des brises de pente. À partir de la mi-journée, la brise de vallée devient forte et turbulente sur les terrains du fond (stade et Minardière, Le Vert, Venosc, La Grave), si bien que le vol se limite souvent aux heures du matin. Il vaut mieux se poser avant 13h à Venosc (venturi) et avant midi à La Grave.\n\nL'Alpe d'Huez et ses décollages de crête (2700, Pic Blanc, Signal) sont des sites de soaring thermodynamique l'après-midi, avec un retour possible vers la station. Vaujany et le col du Sabot sont plus calmes : au Collet, la brise de vallée dépasse rarement 15 km/h. Le sens montant des brises (de Vizille vers Bourg, puis vers La Grave et le Vénéon) est une déduction topographique, appuyée sur les avertissements d'atterrissage. Aucun document consulté ne donne de vitesse mesurée.\n\nÀ respecter : le cœur du Parc national des Écrins (Vénéon, Meije) interdit le survol à moins de 1000 m du 1er novembre au 30 juin, et aucune aire de vol n'y est aménagée. Il faut aussi tenir compte des lignes haute tension des atterrissages de Bourg-d'Oisans, de l'altiport et des hélicoptères de l'Alpe d'Huez. En hiver, inversion et stratus occupent la vallée.",
+      "summary": "L'Oisans est un carrefour de vallées profondes. La Romanche passe Vizille, les gorges de Livet-et-Gavet et la plaine de Bourg-d'Oisans, puis remonte vers le lac du Chambon, La Grave et le Lautaret. L'Eau d'Olle monte vers Allemont, Oz et Vaujany, la Sarenne vers l'Alpe d'Huez, le Vénéon vers Venosc et Les Deux Alpes.\n\nEn été, on vole le matin. Les décollages vivent alors des brises de pente. Dès la mi-journée, la brise de vallée devient forte et turbulente sur les terrains du fond : stade et Minardière, Le Vert, Venosc, La Grave. À Venosc, où souffle un venturi, le matin reste calme jusqu'à 12h : posez-vous au plus tard vers 13h, ou le soir après 19h. À La Grave, posez-vous avant midi.\n\nL'après-midi, on reste en l'air au-dessus de l'Alpe d'Huez : ses décollages de crête (2700, Pic Blanc, Signal) donnent du soaring thermodynamique, avec un retour possible à la station. Vaujany et le col du Sabot sont plus calmes : au Collet, la brise de vallée dépasse rarement 15 km/h. Le sens des brises, de Vizille vers Bourg puis vers La Grave et le Vénéon, est déduit du relief et des consignes d'atterrissage. Aucun document ne donne de vitesse mesurée.\n\nÀ respecter : dans le cœur du Parc national des Écrins (Vénéon, Meije), le survol à moins de 1000 m est interdit du 1er novembre au 30 juin, sauf de rares décollages depuis huit sommets du 1er mai au 30 juin. Aucune aire de vol n'y est aménagée. À Bourg-d'Oisans, des lignes haute tension bordent les atterrissages. À l'Alpe d'Huez, comptez avec l'altiport et les hélicoptères. En hiver, l'inversion et les stratus remplissent la vallée.",
       "bbox": [
         5.75,
         44.93,
@@ -1878,7 +1878,7 @@
       "synoptic_effects": [
         {
           "wind": "N",
-          "effect": "Par vent de nord, la brise de vallée se renforce à Bourg-d'Oisans (Minardière) et les rentrées de nord donnent du cisaillement aux Deux Alpes. On ne décolle pas aux Perrons, et le Sabot est impraticable par nord fort. Le nord faible est idéal au 2700, et le Signal fonctionne de nord à est faible en hiver. Le vent catabatique de nord alimente l'atterrissage du rond-point des pistes vers le col de Poutran.",
+          "effect": "Par vent de nord, la brise de vallée forcit à Bourg-d'Oisans (Minardière) et les rentrées de nord cisaillent aux Deux Alpes : pas de décollage aux Perrons, et le Sabot est impraticable par nord fort. Le nord faible est idéal au 2700, et le Signal marche de nord à est faible en hiver. Le catabatique de nord alimente l'atterrissage du rond-point des pistes, vers le col de Poutran.",
           "sources": [
             "VS15",
             "S57",
@@ -1891,7 +1891,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Par vent de nord-ouest faible, le 2700 et le Clocher de Macle sont idéaux, et le soaring de Poutran fonctionne en brise laminaire du soir. L'Éclose est favorable (sud-ouest, ouest et nord-ouest), mais le Signal est défavorable (sud-est, ouest et nord-ouest).",
+          "effect": "Par vent de nord-ouest faible, le 2700 et le Clocher de Macle sont idéaux, et Poutran tient en soaring dans la brise laminaire du soir. L'Éclose est favorable par sud-ouest, ouest et nord-ouest. Le Signal, lui, est défavorable par sud-est, ouest et nord-ouest.",
           "sources": [
             "VS12",
             "S61",
@@ -1902,7 +1902,7 @@
         },
         {
           "wind": "W",
-          "effect": "Par vent d'ouest, le Villard-Reymond est involable, avec un fort rouleau. Le Bras tient en dynamique si l'ouest est assez fort. L'Éclose et les Perrons sont favorables, tandis que le Signal et le rond-point des pistes sont défavorables.",
+          "effect": "Par vent d'ouest, oubliez le Villard-Reymond : il est involable, avec un fort rouleau. Le Bras tient en dynamique si l'ouest est assez fort. L'Éclose et les Perrons sont favorables, le Signal et le rond-point des pistes défavorables.",
           "sources": [
             "S1",
             "S56",
@@ -1914,7 +1914,7 @@
         },
         {
           "wind": "S",
-          "effect": "Par vent de sud, le Clocher de Macle est interdit, et le Diable est à surveiller. Le Signal accepte le sud en hiver, pour voler au-dessus de Bourg-d'Oisans. Le Mollaret, les Perrons et l'Éclose se décollent en régime de brise. Le Pic Blanc (sud et sud-est) est le décollage des grands vols vers Bourg. Venosc et les Deux Alpes sont défavorables aux vents de nord et de sud.",
+          "effect": "Par vent de sud, le Clocher de Macle est interdit et le Diable à surveiller. Le Pic Blanc (sud et sud-est) reste le décollage des grands vols vers Bourg, et le Signal accepte le sud en hiver pour voler au-dessus de Bourg-d'Oisans. Le Mollaret, les Perrons et l'Éclose se décollent en brise, mais Venosc et les Deux Alpes sont défavorables par nord comme par sud.",
           "sources": [
             "S61",
             "S58",
@@ -1925,7 +1925,7 @@
         },
         {
           "wind": "SE",
-          "effect": "Par vent de sud-est, le Signal et le 2700 sont défavorables, et le Villard-Reymond est favorable le matin (nord-est, est et sud-est). Aucun secteur défavorable n'est renseigné pour l'Éclose.",
+          "effect": "Par vent de sud-est, le Signal et le 2700 sont défavorables. Le Villard-Reymond est favorable le matin (nord-est, est et sud-est). Pour l'Éclose, aucun secteur défavorable n'est renseigné.",
           "sources": [
             "S53",
             "VS12",
@@ -1935,7 +1935,7 @@
         },
         {
           "wind": "E",
-          "effect": "Par vent d'est, le Signal accepte un vent faible du nord à l'est en hiver, tandis que les Perrons et le 2700 le refusent : le 2700 est défavorable au nord-est et à l'est, et les Perrons au nord, au nord-est et à l'est. L'atterrissage du rond-point des pistes est défavorable à l'est comme à l'ouest.",
+          "effect": "Par vent d'est, le Signal accepte en hiver un vent faible de nord à est. Le 2700 le refuse (défavorable par nord-est et est), comme les Perrons (défavorables par nord, nord-est et est). L'atterrissage du rond-point des pistes est défavorable par est comme par ouest.",
           "sources": [
             "S53",
             "VS12",
@@ -2339,25 +2339,25 @@
         }
       ],
       "tips": [
-        "Volez à l'Alpe d'Huez le matin : les brises de midi limitent souvent le vol aux premières heures, et l'on se pose à Bourg-d'Oisans de bonne heure [S22][S2].",
-        "À Venosc, évitez de vous poser entre 13h et 19h en été (venturi). Par forte brise, reposez-vous au décollage des Perrons plutôt que de forcer la vallée [S1][S52].",
-        "À La Grave, les pilotes les moins expérimentés décollent vers 10h au plus tard : dès midi, la brise de vallée rend l'atterrissage délicat [S1].",
-        "Par vent de nord, évitez les Perrons et le Sabot ; visez le Signal (nord-est faible) ou le 2700 (nord ou nord-ouest faible) [S1][VS12].",
-        "En hiver, l'inversion est fréquente : évitez de descendre vous poser dans un stratus épais au fond de la vallée, et privilégiez les atterrissages d'altitude (Alpe d'Huez, Auris) [S2].",
-        "À La Grave, par léger vent de nord, on décolle de 3200 m vers la Meijette, où l'on trouve du thermique. L'après-midi, mieux vaut se poser à Villar-d'Arêne plutôt qu'à La Grave, et il faut se méfier de la Lombarde [S49].",
-        "Dans le cœur du Parc national des Écrins (Vénéon, face sud de La Grave), aucune aire de vol n'est aménagée, et le survol à moins de 1000 m est interdit du 1er novembre au 30 juin [S15].",
-        "À l'Éclose, si les ascendances de 13h à 14h au-dessus des toits d'Huez vous remontent, reposez-vous au décollage plutôt que de forcer vers Bourg, où la brise de vallée s'oppose au retour [S1].",
-        "Entre l'Alpe d'Huez et Vaujany, la Côte Belle sert de point de raccroche commun au Pic Blanc, au deuxième tronçon et à la Cheminée : on y remonte jusqu'à 2700 m avant de tenter l'Alpe d'Huez [S1].",
+        "Volez à l'Alpe d'Huez le matin et posez-vous tôt à Bourg-d'Oisans : la brise de midi coupe souvent le vol après les premières heures [S22][S2].",
+        "À Venosc, ne vous posez pas entre 13h et 19h en été : le venturi y souffle. Par forte brise, reposez-vous au décollage des Perrons au lieu de forcer la vallée [S1][S52].",
+        "À La Grave, si vous êtes peu expérimenté, décollez vers 10h au plus tard : dès midi, la brise de vallée rend l'atterrissage délicat [S1].",
+        "Par vent de nord, oubliez les Perrons et le Sabot. Allez au Signal par nord-est faible, ou au 2700 par nord ou nord-ouest faible [S1][VS12].",
+        "En hiver, l'inversion est fréquente. Ne descendez pas vous poser dans un stratus épais au fond de la vallée : préférez les atterrissages d'altitude, Alpe d'Huez ou Auris [S2].",
+        "À La Grave, par léger nord, décollez de 3200 m vers la Meijette, où l'on trouve du thermique. L'après-midi, posez-vous à Villar-d'Arêne plutôt qu'à La Grave, et méfiez-vous de la Lombarde [S49].",
+        "Dans le cœur du Parc national des Écrins (Vénéon, face sud de La Grave), aucune aire de vol n'existe, et le survol à moins de 1000 m est interdit du 1er novembre au 30 juin [S15].",
+        "À l'Éclose, si les ascendances de 13h à 14h au-dessus des toits d'Huez vous remontent, reposez-vous au décollage. Vers Bourg, la brise de vallée bloque le retour [S1].",
+        "Entre l'Alpe d'Huez et Vaujany, raccrochez à la Côte Belle, commune au Pic Blanc, au deuxième tronçon et à la Cheminée. Remontez-y jusqu'à 2700 m avant de tenter l'Alpe d'Huez [S1].",
         "Aux Deux Alpes, faites le plein au-dessus des Perrons avant de partir vers la Coche, le Rachas ou la Muzelle. Au retour, l'arête qui plonge dans le Vénéon est turbulente [S1].",
-        "Vers la Meije depuis les Deux Alpes, relancez à la Tête Moute ou à la Toura, puis au Plat de la Selle (3600 m), à la Pointe Thorant et à la brèche de la Meije ; le plafond est à la Grande Ruine. Ne vous engagez que si vous pouvez revenir à La Bérarde [S103].",
-        "Au-dessus de La Grave, la Meijette et la brèche de la Meije donnent de fortes pompes (jusqu'à 7 m/s, à 3850 m). La brise de la Romanche rabat fortement ceux qui arrivent bas sur le Lautaret [S49][S106]."
+        "Vers la Meije depuis les Deux Alpes, relancez à la Tête Moute ou à la Toura, puis au Plat de la Selle (3600 m), à la Pointe Thorant et à la brèche. Plafond à la Grande Ruine. Partez seulement si vous pouvez revenir à La Bérarde [S103].",
+        "Au-dessus de La Grave, la Meijette et la brèche de la Meije donnent de fortes pompes, jusqu'à 7 m/s à 3850 m. Si vous arrivez bas sur le Lautaret, la brise de la Romanche vous rabat fort [S49][S106]."
       ]
     },
     {
       "id": "maurienne",
       "name": "Maurienne (Aiguebelle, La Chambre, Saint-Jean, Saint-Michel, Orelle, Modane ; vallée des Villards, Glandon, Jarrier)",
       "parent_massif": "Alpes du Nord – Savoie",
-      "summary": "La Maurienne est la grande vallée sèche et encaissée qui relie la cluse d'Aiguebelle, sur l'Isère, à Modane.\n\nSa brise de vallée est forte : plus de 50 km/h l'après-midi à Saint-Jean dès 11h à partir de mars, et « très forte » à La Chambre d'avril à octobre, où il ne faut rien poser après 12h. Elle limite souvent le cross et oblige à partir tôt. Les décollages classiques (Grand Châtelard, La Balme à Jarrier, Montgellafrey et le Mollaret, La Chal au Chaussy) sont des sites de matinée, exposés au sud-est et au sud-ouest. Les atterrissages sont dans le fond de vallée (La Chambre, Sainte-Marie-de-Cuines, Saint-Jean) et doivent se faire le matin.\n\nDeux stratégies sont possibles : rester haut, vers les cols du Glandon et de la Croix de Fer, ou voler tard l'après-midi pour se poser en vallée. Les vents de sud à sud-ouest font craindre le foehn à La Balme et à La Chambre. Les cheminements documentés traversent la vallée par le bas, du bout de Belledonne (Pointe de Rognier) vers la face ouest de la Lauzière en milieu d'après-midi, puis vers Grand Arc et Albertville. Au sud, les cols du Glandon et de la Croix de Fer offrent du soaring par vent de nord de 15 à 20 km/h. Saint-François-Longchamp ajoute trois terrains, surtout utilisés à ski (Soleil Rouge, Lauzière, station 1650).\n\nÀ respecter : l'aérodrome de Saint-Rémy-de-Maurienne est proche du terrain de La Chambre, des lignes haute tension traversent le secteur, et le chantier du Lyon-Turin occupe le site de La Balme. Aucune source ne décrit le régime nocturne : la brise matinale descendante reste une déduction.",
+      "summary": "La Maurienne est une grande vallée sèche et encaissée, de la cluse d'Aiguebelle, sur l'Isère, jusqu'à Modane.\n\nIci, la brise de vallée commande. À Saint-Jean, elle souffle fort dès 11h à partir de mars, à plus de 50 km/h l'après-midi. À La Chambre, elle est très forte d'avril à octobre, et l'on ne pose rien après 12h. Elle bride souvent le cross et oblige à partir tôt. Les décollages classiques sont des sites de matinée, tournés au sud-est et au sud-ouest : Grand Châtelard, La Balme à Jarrier, Montgellafrey et le Mollaret, La Chal au Chaussy. On se pose le matin, au fond de la vallée : La Chambre, Sainte-Marie-de-Cuines, Saint-Jean.\n\nDeux stratégies : rester haut, vers les cols du Glandon et de la Croix de Fer, ou voler tard pour se poser en vallée. Par sud à sud-ouest, craignez le foehn à La Balme et à La Chambre. Les cheminements connus traversent la vallée par le bas : du bout de Belledonne (Pointe de Rognier) vers la face ouest de la Lauzière en milieu d'après-midi, puis vers Grand Arc et Albertville. Au sud, les cols du Glandon et de la Croix de Fer offrent du soaring par nord de 15 à 20 km/h. Saint-François-Longchamp ajoute trois terrains, surtout utilisés à ski : Soleil Rouge, Lauzière, station 1650.\n\nÀ respecter : l'aérodrome de Saint-Rémy-de-Maurienne, tout près du terrain de La Chambre, les lignes haute tension, et le chantier du Lyon-Turin sur le site de La Balme. Aucune source ne décrit la nuit : la brise descendante du matin reste une déduction.",
       "bbox": [
         6.15,
         45.17,
@@ -3721,7 +3721,7 @@
       "synoptic_effects": [
         {
           "wind": "N",
-          "effect": "Par vent de nord, la brise de vallée s'installe plus tôt et plus forte, et crée un venturi côté nord de l'atterrissage de La Chambre ; depuis La Balme, il faut passer loin du Sappey. Le Glandon se vole côté nord par nord faible : au Glandon, un nord de 15 à 20 km/h à 2000 m donne du soaring laminaire en face nord, mais un nord trop faible ne suffit pas.",
+          "effect": "Par vent de nord, la brise de vallée arrive plus tôt et plus forte, avec un venturi côté nord de l'atterrissage de La Chambre. Depuis La Balme, passez loin du Sappey. Le Glandon se vole côté nord par nord faible : 15 à 20 km/h à 2000 m y donnent du soaring laminaire en face nord, mais un nord trop faible ne suffit pas.",
           "sources": [
             "S68",
             "S7",
@@ -3733,7 +3733,7 @@
         },
         {
           "wind": "S",
-          "effect": "Par vent de sud à sud-ouest, il y a un risque de foehn à La Chambre et à La Balme. Les décollages sud et sud-ouest du Mollaret ne se prennent que par vent faible. Le Glandon se vole côté sud, par vent de sud faible.",
+          "effect": "Par vent de sud à sud-ouest, craignez le foehn à La Chambre et à La Balme. Les décollages sud et sud-ouest du Mollaret ne se prennent que par vent faible. Le Glandon se vole alors côté sud, par sud faible.",
           "sources": [
             "S68",
             "S71",
@@ -3743,7 +3743,7 @@
         },
         {
           "wind": "SW",
-          "effect": "Par vent de sud-ouest, le foehn interdit le vol au Mollaret et à La Balme. Le Chaussy accepte un léger vent d'ouest.",
+          "effect": "Par vent de sud-ouest, le foehn interdit le vol au Mollaret et à La Balme. Le Chaussy accepte un léger ouest.",
           "sources": [
             "S70",
             "S71",
@@ -3752,14 +3752,14 @@
         },
         {
           "wind": "W",
-          "effect": "Par vent d'ouest à nord, la brise de vallée s'additionne au vent météo : elle se met en place tôt et devient forte, dans toute la Maurienne.",
+          "effect": "Par vent d'ouest à nord, le vent météo s'ajoute à la brise de vallée : elle s'installe tôt et souffle fort dans toute la Maurienne.",
           "sources": [
             "S79"
           ]
         },
         {
           "wind": "Vent du Sud",
-          "effect": "Par flux de sud en altitude, la brise de Maurienne reste de nord ou de nord-ouest près du sol, contraire à l'entrée de la vallée. Il arrive qu'on raccroche assez haut sur la Grande Lauzière, jusqu'au nuage. Avec un sud dans le dos, on longe les faces est de Belledonne à 55-60 km/h, puis on traverse la vallée en fin de journée. Au Glandon, un léger vent de sud donne parfois du soaring en face sud, qui retombe vite.",
+          "effect": "Par flux de sud en altitude, la brise de Maurienne reste de nord ou de nord-ouest près du sol, de face à l'entrée de la vallée. On peut raccrocher assez haut sur la Grande Lauzière, jusqu'au nuage. Sud dans le dos, on longe les faces est de Belledonne à 55-60 km/h, puis on traverse la vallée en fin de journée. Au Glandon, un léger sud donne parfois un soaring en face sud, qui retombe vite.",
           "sources": [
             "S123",
             "S124",
@@ -3942,26 +3942,26 @@
         }
       ],
       "tips": [
-        "En été, volez le matin et posez-vous à Saint-Jean avant 11h [MS2] ; à La Chambre, ne posez rien après 12h d'avril à octobre [S68].",
-        "Au printemps et en été, restez haut au-dessus de la brise, vers les cols du Glandon et de la Croix de Fer, ou attendez la fin d'après-midi pour redescendre dans la vallée [MS1].",
-        "Par vent de nord, ne posez pas côté nord du terrain de La Chambre : approchez de la chapelle, protégée par le relief [S7].",
-        "Si la brise est trop forte en vol, envisagez un posé de secours en pente, au-dessus de la couche de brise [MS4].",
-        "Au Grand Châtelard et à La Balme, décollez uniquement le matin : avec une finesse de 2,9 et de 2,5 jusqu'à Saint-Jean, la marge est faible face à la brise [MS2].",
-        "Depuis le bout de Belledonne, la face ouest de la Lauzière est peu généreuse en milieu de journée : arrivez plus haut ou plus tard, car la brise de basses couches devient vite forte à l'entrée de la Maurienne [S110].",
-        "Pour transiter depuis le Grand Arc, restez plutôt à droite, vers l'amont de la Combe, car la brise pousse ; certains jours elle s'éteint en vallée, et il faut alors tirer au plus court [S130].",
-        "Au bout de Belledonne, partez de très haut (2300 m ou plus) pour traverser la Maurienne : les arrivées d'en face se font vers 1500-1800 m, et la remontée peut prendre 40 minutes [S110, S124].",
-        "Au col du Glandon, ne vous posez pas dans le troupeau, sur la tente-buvette ni sur les voitures garées : ce sont elles qui menacent le vol sur le site [S125].",
-        "Pour un vol rando matinal, visez le thermique de 10h, et soyez posé avant la brise de vallée, qui s'installe entre 11h et 11h30 [S132].",
+        "En été, volez le matin et posez-vous à Saint-Jean avant 11h [MS2]. À La Chambre, ne posez rien après 12h d'avril à octobre [S68].",
+        "Au printemps et en été, restez haut au-dessus de la brise, vers les cols du Glandon et de la Croix de Fer, ou attendez la fin d'après-midi pour redescendre en vallée [MS1].",
+        "Par vent de nord, ne vous posez pas côté nord du terrain de La Chambre : approchez vers la chapelle, à l'abri du relief [S7].",
+        "Si la brise devient trop forte en vol, pensez au posé de secours en pente, au-dessus de la couche de brise [MS4].",
+        "Au Grand Châtelard et à La Balme, décollez le matin seulement. Avec une finesse de 2,9 et de 2,5 jusqu'à Saint-Jean, vous avez peu de marge face à la brise [MS2].",
+        "Depuis le bout de Belledonne, la face ouest de la Lauzière donne peu en milieu de journée. Arrivez plus haut ou plus tard : à l'entrée de la Maurienne, la brise de basses couches forcit vite [S110].",
+        "Pour transiter depuis le Grand Arc, tenez plutôt la droite, vers l'amont de la Combe : la brise pousse. Certains jours, elle s'éteint en vallée, et il faut alors tirer au plus court [S130].",
+        "Au bout de Belledonne, partez de très haut, 2300 m ou plus, pour traverser la Maurienne. On arrive en face vers 1500-1800 m, et la remontée peut prendre 40 minutes [S110, S124].",
+        "Au col du Glandon, ne vous posez ni dans le troupeau, ni sur la tente-buvette, ni sur les voitures garées : c'est ce qui menace le vol sur le site [S125].",
+        "Pour un vol rando matinal, visez le thermique de 10h et soyez posé avant la brise de vallée, qui s'installe entre 11h et 11h30 [S132].",
         "À La Toussuire, en été, décollez de la Grande Verdette le matin : le thermique y arrive dès 10h-10h30. Ne vous placez pas sous le vent de la pointe de Comborcière [S136].",
-        "À La Toussuire, en hiver, vérifiez la visibilité jusqu'au Corbier avant de décoller de la Pierre du Turc : par tendance ouest, la crête vers l'atterrissage de la station est souvent infranchissable [S137].",
-        "À Saint-François-Longchamp, consultez le fichier KMZ des sites à ski avant de voler : il localise les zones de décollage et d'atterrissage, ainsi que le câble d'avalanches entre la piste noire et l'Homme de Beure [S138]."
+        "À La Toussuire, en hiver, vérifiez la visibilité jusqu'au Corbier avant de décoller de la Pierre du Turc. Par tendance ouest, la crête vers l'atterrissage de la station est souvent infranchissable [S137].",
+        "À Saint-François-Longchamp, consultez avant de voler le fichier KMZ des sites à ski. Il situe les décollages, les atterrissages et le câble d'avalanches entre la piste noire et l'Homme de Beure [S138]."
       ]
     },
     {
       "id": "haute-maurienne",
       "name": "Haute-Maurienne (Modane, Valfréjus, Aussois, Termignon, Val Cenis, Bessans, Bonneval, col du Mont-Cenis)",
       "parent_massif": "Alpes du Nord – Savoie / Vanoise",
-      "summary": "La Haute-Maurienne, de Modane à Bonneval-sur-Arc, dans la vallée de l'Arc, est un couloir étroit adossé au Parc national de la Vanoise et à la frontière italienne.\n\nEn été, la brise de vallée y est forte dès 11h-12h, et elle est très forte au stade de Modane de mai à octobre. Par vent météo de nord à ouest, qui s'ajoute à elle, elle arrive plus tôt, et elle s'accélère dans le goulet qui monte de Modane. Le matin et les fins de journée sont les bons créneaux ; fin septembre, la brise gêne moins. Les décollages d'Aussois (Angle Bellecôte, Grand Jeu, Barbier) et de Val Cenis (Arcelle, Mont-Cenis) fonctionnent en brise ou par vent faible, et le thermique ne se prend qu'à partir de 2300-2350 m.\n\nLes vents d'est à sud (la Lombarde, venant du lac du Mont-Cenis) et le foehn d'Italie rendent l'aérologie très turbulente, surtout en basse couche : il faut les proscrire pour se poser. Le cross classique remonte la vallée avec les premières brises (Aussois, Termignon, Val Cenis, Bonneval), sans retour possible ; descendre jusqu'à Albertville est rare.\n\nContrainte structurante : le cœur de la Vanoise (arrêté du 5 juin 2026 : survol sous 1000 m seulement dans des secteurs et périodes définis ; décollage uniquement sur les sites cartographiés, atterrissage en cœur interdit). Il faut aussi tenir compte de l'aérodrome de Sollières-Sardières et des lignes haute tension à Modane.",
+      "summary": "La Haute-Maurienne est un couloir étroit : la vallée de l'Arc, de Modane à Bonneval-sur-Arc, adossée au Parc national de la Vanoise et à la frontière italienne.\n\nEn été, la brise de vallée souffle fort dès 11h-12h, et très fort au stade de Modane de mai à octobre. Par vent météo de nord à ouest, qui s'y ajoute, elle arrive plus tôt. Elle s'accélère dans le goulet qui monte de Modane. On vole donc le matin et en fin de journée. Fin septembre, la brise gêne moins. Les décollages d'Aussois (Angle Bellecôte, Grand Jeu, Barbier) et de Val Cenis (Arcelle, Mont-Cenis) marchent en brise ou par vent faible, et le thermique ne se prend qu'à partir de 2300-2350 m.\n\nLes vents d'est à sud rendent l'air très turbulent, surtout en basse couche : la Lombarde, qui descend du lac du Mont-Cenis, et le foehn d'Italie. Par ces vents, ne comptez pas vous poser. Le cross classique remonte la vallée avec les premières brises, par Aussois, Termignon, Val Cenis et Bonneval, sans retour possible. Descendre jusqu'à Albertville est rare.\n\nÀ respecter avant tout : le cœur de la Vanoise. L'arrêté du 5 juin 2026 n'autorise le survol sous 1000 m que dans des secteurs et à des périodes définis, et le décollage que sur les sites cartographiés. L'atterrissage en cœur de parc est interdit. Comptez aussi avec l'aérodrome de Sollières-Sardières et les lignes haute tension de Modane.",
       "bbox": [
         6.6,
         45.13,
@@ -5002,7 +5002,7 @@
       "synoptic_effects": [
         {
           "wind": "N",
-          "effect": "Par vent de nord, la brise de vallée et le thermique arrivent à Aussois plus tôt que 11h. Valfréjus est favorable par nord à nord-ouest au-dessus de 20 km/h, mais défavorable par sud au-dessus de 10 km/h. Le vent météo d'ouest à nord s'ajoute à la brise de vallée.",
+          "effect": "Par vent de nord, la brise de vallée et le thermique arrivent à Aussois avant 11h : le vent météo d'ouest à nord s'ajoute à la brise. Valfréjus marche par nord à nord-ouest au-dessus de 20 km/h, mais devient défavorable par sud au-dessus de 10 km/h.",
           "sources": [
             "S80",
             "S81",
@@ -5012,7 +5012,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Par vent de nord-ouest à nord-est, les décollages d'Aussois sont sous le vent. Le décollage est fortement déconseillé par vent météo supérieur à 25 km/h.",
+          "effect": "Par vent de nord-ouest à nord-est, les décollages d'Aussois sont sous le vent. Au-delà de 25 km/h de vent météo, le décollage est fortement déconseillé.",
           "sources": [
             "S80",
             "S81"
@@ -5020,7 +5020,7 @@
         },
         {
           "wind": "E",
-          "effect": "Par vent d'est, le site d'Aussois fonctionne avec la brise de pente, avec du soaring si la Lombarde est faible, mais l'aérologie en basse couche est turbulente à cause de la Lombarde. Vallonbrun est défavorable.",
+          "effect": "Par vent d'est, Aussois marche en brise de pente, et même en soaring si la Lombarde est faible. Mais la Lombarde rend la basse couche turbulente. Vallonbrun est défavorable.",
           "sources": [
             "S5",
             "S84",
@@ -5029,7 +5029,7 @@
         },
         {
           "wind": "SE",
-          "effect": "Par vent de sud-est, Aussois est favorable (sud-est et sud), mais les vents de secteur sud à est sont souvent associés à la Lombarde et à des conditions turbulentes en basse couche.",
+          "effect": "Par vent de sud-est, Aussois est favorable (sud-est et sud). Méfiance pourtant : les vents de sud à est vont souvent avec la Lombarde et une basse couche turbulente.",
           "sources": [
             "S80",
             "S81",
@@ -5038,7 +5038,7 @@
         },
         {
           "wind": "S",
-          "effect": "Par vent de sud, il y a un foehn d'Italie et une entrée de vent en fond de vallée. Les décollages d'Aussois sont déconseillés par sud fort, à cause de l'effet de foehn ; Valfréjus est dangereux au-dessus de 10 km/h.",
+          "effect": "Par vent de sud, le foehn d'Italie entre en fond de vallée. Par sud fort, l'effet de foehn rend les décollages d'Aussois déconseillés, et Valfréjus devient dangereux au-dessus de 10 km/h.",
           "sources": [
             "S4",
             "S80",
@@ -5048,7 +5048,7 @@
         },
         {
           "wind": "Lombarde",
-          "effect": "La Lombarde vient d'Italie par le col du Mont-Cenis, d'est à nord-est : elle donne des turbulences en basse couche à Vallonbrun, Arcelles et Aussois, avec du soaring à Aussois si elle est faible. Elle accompagne de fortes précipitations côté italien, par flux de sud-est et dépression méditerranéenne. Aucun seuil de force n'est donné ; un jour de mars, 20 km/h ont été annoncés sans problème à Aussois.",
+          "effect": "La Lombarde passe d'Italie par le col du Mont-Cenis, d'est à nord-est. Elle secoue la basse couche à Vallonbrun, Arcelles et Aussois, où l'on peut faire du soaring si elle reste faible. Elle accompagne de fortes précipitations côté italien, par flux de sud-est et dépression méditerranéenne. Aucun seuil de force n'est donné : un jour de mars, 20 km/h annoncés n'ont posé aucun problème à Aussois.",
           "sources": [
             "S79",
             "S84",
@@ -5196,22 +5196,22 @@
         }
       ],
       "tips": [
-        "Privilégiez le matin et le soir : la brise de vallée est forte dès 11h en été, et plus tôt par vent de nord [S80][MS5].",
-        "Fin septembre, il y a beaucoup moins de problèmes de vent de vallée, et il reste encore du potentiel [S4].",
-        "À Arcelle, les beaux vols se font le soir, en restitution [MS6].",
-        "Méfiez-vous de la Lombarde et du foehn : ne comptez pas vous poser en vallée quand le vent rentre d'Italie [S4][S79].",
-        "À Aussois, il vaut mieux se poser au Plan de la Croix, grand et dégagé ; la route des barrages est réservée aux bons niveaux [S96][S97].",
-        "Dans la Vanoise, ne décollez que des sites listés dans l'arrêté, et n'atterrissez jamais en cœur de parc ; une demande d'autorisation préalable est requise pour la Dent Parrachée [S18][S88].",
-        "En fin de journée, un petit vol est possible à Aussois depuis le Fort Marie-Christine (décollage technique), jusqu'à la nuit, en se reposant derrière le décollage ; renseignez-vous auprès des pilotes locaux [S4].",
-        "À Aussois, le thermique ne se prend qu'à partir de 2300-2350 m (Bellecôte, Turra) ; les plafonds atteignent 2500 m en automne, contre 3600-4000 m en mars et en août [S5][S109][S115].",
-        "Turra : thermique réputé, mais couple de gypaètes et zone de sensibilité majeure ; vérifiez l'arrêté de la Vanoise avant d'y voler [S113][S18]."
+        "Volez le matin et le soir : la brise de vallée souffle fort dès 11h en été, et plus tôt par vent de nord [S80][MS5].",
+        "Fin septembre, le vent de vallée pose beaucoup moins de problèmes, et il reste encore du potentiel [S4].",
+        "À Arcelle, les beaux vols se font le soir, dans la restitution [MS6].",
+        "Méfiez-vous de la Lombarde et du foehn : quand le vent rentre d'Italie, ne comptez pas vous poser en vallée [S4][S79].",
+        "À Aussois, posez-vous de préférence au Plan de la Croix, grand et dégagé. La route des barrages est réservée aux bons niveaux [S96][S97].",
+        "Dans la Vanoise, décollez seulement des sites listés dans l'arrêté et n'atterrissez jamais en cœur de parc. La Dent Parrachée demande une autorisation préalable [S18][S88].",
+        "En fin de journée à Aussois, le Fort Marie-Christine offre un petit vol jusqu'à la nuit, avec un posé derrière le décollage. Le décollage est technique : renseignez-vous auprès des pilotes locaux [S4].",
+        "À Aussois, le thermique ne se prend qu'à partir de 2300-2350 m, à Bellecôte ou à la Turra. Les plafonds montent à 2500 m en automne, et à 3600-4000 m en mars et en août [S5][S109][S115].",
+        "La Turra a un thermique réputé, mais c'est le domaine d'un couple de gypaètes, en zone de sensibilité majeure : vérifiez l'arrêté de la Vanoise avant d'y voler [S113][S18]."
       ]
     },
     {
       "id": "arves-thabor-galibier",
       "name": "Arves – Sybelles – Valloire – Valmeinier – Galibier – Thabor (Saint-Sorlin, Saint-Jean-d'Arves, Albiez, La Toussuire)",
       "parent_massif": "Alpes du Nord – Savoie (rive gauche de la Maurienne)",
-      "summary": "Ce secteur de la rive gauche de la Maurienne est un domaine de stations (Sybelles, Valloire-Valmeinier, Galibier-Thabor) où le vol est surtout hivernal, à skis. L'été, il offre quelques sites de brise : Plan Lachat, petite butte de soaring à l'entrée du Galibier, les crêtes du Crey du Quart, du Gros Crey et de la Setaz, Saint-Sorlin-d'Arves (La Balme) et le Col du Glandon.\n\nPeu de pilotes volent ici, et presque aucun texte aérologique n'existe. La brise de la Valloirette remonte probablement de Saint-Michel vers le Galibier. À Plan Lachat, la brise doit être légère et du nord ; le vent y est souvent fort au décollage, et un effet venturi se fait sentir. Le site est réservé aux pilotes confirmés.\n\nÀ Saint-Sorlin, le vent du nord et le vent du sud, lorsqu'ils prennent le dessus sur la brise de vallée, sont signalés à l'atterrissage. Le thermique sort de la station de Valmeinier et surprend à l'atterrissage. Aucune route de cross n'est documentée.\n\nLes altiports (Valloire-Bonnenuit) et les remontées mécaniques sont les contraintes principales. Il n'y a pas de parc national dans le secteur, mais la Vanoise commence plus à l'est, en Haute-Maurienne.",
+      "summary": "Sur la rive gauche de la Maurienne, ce secteur est un domaine de stations (Sybelles, Valloire-Valmeinier, Galibier-Thabor). On y vole surtout l'hiver, à skis. L'été, quelques sites de brise s'ouvrent : Plan Lachat, petite butte de soaring à l'entrée du Galibier, les crêtes du Crey du Quart, du Gros Crey et de la Setaz, Saint-Sorlin-d'Arves (La Balme) et le Col du Glandon.\n\nPeu de pilotes volent ici, et presque aucun texte ne décrit l'aérologie. La brise de la Valloirette remonte probablement de Saint-Michel vers le Galibier. À Plan Lachat, il faut une brise légère de nord. Le vent y est souvent fort au décollage, avec un venturi : le site est réservé aux pilotes confirmés.\n\nÀ Saint-Sorlin, le nord et le sud sont signalés à l'atterrissage quand ils prennent le dessus sur la brise de vallée. À Valmeinier, le thermique sort de la station et surprend à l'atterrissage. Aucune route de cross n'est documentée.\n\nÀ respecter : les altiports (Valloire-Bonnenuit) et les remontées mécaniques. Pas de parc national ici : la Vanoise commence plus à l'est, en Haute-Maurienne.",
       "bbox": [
         6.15,
         45.03,
@@ -5869,7 +5869,7 @@
       "synoptic_effects": [
         {
           "wind": "N",
-          "effect": "Par vent de nord léger, avec la brise, Plan Lachat est idéal ; au-delà, le vent est fort au décollage et il y a un venturi. À Saint-Sorlin, le vent de nord qui prend le dessus sur la brise est dangereux à l'atterrissage.",
+          "effect": "Par vent de nord léger, avec la brise, Plan Lachat est idéal. Plus fort, le vent souffle fort au décollage, avec un venturi. À Saint-Sorlin, un nord qui prend le dessus sur la brise est dangereux à l'atterrissage.",
           "sources": [
             "MS7",
             "S99",
@@ -5878,7 +5878,7 @@
         },
         {
           "wind": "S",
-          "effect": "Les vents d'est, de sud-est, de sud, de sud-ouest et d'ouest sont défavorables à Plan Lachat. À Saint-Sorlin, le vent de sud qui s'oppose à la brise de vallée est signalé comme dangereux à l'atterrissage.",
+          "effect": "Par vent de sud, comme d'est, de sud-est, de sud-ouest ou d'ouest, Plan Lachat est défavorable. À Saint-Sorlin, un sud contre la brise de vallée est dangereux à l'atterrissage.",
           "sources": [
             "MS7",
             "S99"
@@ -5919,11 +5919,11 @@
         }
       ],
       "tips": [
-        "À Plan Lachat, une brise légère de nord est idéale ; au-delà, attention au venturi [MS7].",
+        "À Plan Lachat, une brise légère de nord est idéale. Plus fort, attention au venturi [MS7].",
         "À Valmeinier, posez-vous au parking du milieu, en retrait et bien aligné sur la brise, en tenant compte du thermique qui sort de la station [S8].",
-        "Au Galibier, le secteur est au milieu de zones militaires réglementées (R221 et R222) : renseignez-vous sur les NOTAM avant tout cross. Deux vols de 300 km ont été faits au départ des Granges du Galibier [S33][S38][S39].",
-        "Les départs d'été autour de Valloire sont peu fréquentés : prévenez quelqu'un de votre plan de vol [S8].",
-        "À Plan Lachat, par brise légère de nord, la remontée sur le Grand Galibier dépasse souvent 3200 m ; les Granges du Galibier et le Galibier sud servent de départ aux 300 km [S8][S33]."
+        "Le Galibier est entouré de zones militaires réglementées (R221 et R222) : consultez les NOTAM avant tout cross. Deux vols de 300 km sont partis des Granges du Galibier [S33][S38][S39].",
+        "Autour de Valloire, peu de pilotes volent l'été : prévenez quelqu'un de votre plan de vol [S8].",
+        "À Plan Lachat, par brise légère de nord, on remonte souvent sur le Grand Galibier au-delà de 3200 m. Les Granges du Galibier et le Galibier sud sont les départs des 300 km [S8][S33]."
       ]
     }
   ],

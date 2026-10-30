@@ -5,7 +5,7 @@
       "id": "brianconnais-guisane",
       "name": "Briançonnais – Guisane – Lautaret – Clarée – Montgenèvre",
       "parent_massif": "Alpes du Sud – Hautes-Alpes",
-      "summary": "Briançon est un carrefour de trois vallées aux régimes de brise différents. La Durance, au sud, est ouverte au sud-sud-ouest : c'est un accélérateur de brise sur l'axe sud-ouest, dont les pointes dépassent 40 km/h. La Guisane, vers le Lautaret, canalise le nord-ouest et reçoit la brise de la Romanche. La Durance-Clarée, au nord, est la porte de la Lombarde.\n\nLe matin, la Romanche peut descendre la Guisane jusqu'à Saint-Chaffrey. La brise de Durance entre ensuite dès la mi-matinée et devient forte : en été, il faut éviter les fonds de vallée dès la mi-journée. Vers 16 h, la Guisane s'inverse et la confluence entre le Lautaret et la Durance glisse entre Saint-Chaffrey et Le Monêtier. Vers la fin de l'après-midi, la Lombarde thermique peut prendre le dessus à La Vachette et dans la basse Clarée : Saint-Blaise devient alors très risqué, et Vallouise sert de refuge. Avec un vent de nord-ouest ou de nord, la confluence se cale sur Briançon si le vent est faible, ou sur le verrou nord de L'Argentière s'il est plus fort.\n\nLes décollages (Prorel, Granon, Petit Aréa, Tronchets) se choisissent en fonction du vent du jour, et se quittent avant la brise forte de l'après-midi. Les zones sous le vent de la Lombarde (Granon, Prorel, rive gauche de la Durance, Cervières) sont très turbulentes. Les cross partent surtout du Prorel au printemps, jusqu'à Névache ou Embrun, et de l'Izoard ou de Vallouise en automne.\n\nLes zones militaires R221 et les câbles (CATEX) sont à vérifier.",
+      "summary": "Briançon est un carrefour de trois vallées, chacune avec sa brise. Au sud, la Durance s'ouvre au sud-sud-ouest : elle accélère la brise sur l'axe sud-ouest, avec des pointes au-delà de 40 km/h. La Guisane, vers le Lautaret, canalise le nord-ouest et reçoit la brise de la Romanche. Au nord, la Durance-Clarée est la porte de la Lombarde.\n\nLe matin, la Romanche peut descendre la Guisane jusqu'à Saint-Chaffrey. La brise de Durance entre dès la mi-matinée et devient forte : en été, évitez les fonds de vallée dès la mi-journée. Vers 16 h, la Guisane s'inverse, et la confluence entre le Lautaret et la Durance glisse entre Saint-Chaffrey et Le Monêtier. En fin d'après-midi, la Lombarde thermique peut prendre le dessus à La Vachette et dans la basse Clarée : Saint-Blaise devient alors très risqué, et Vallouise sert de refuge. Par nord-ouest ou nord, la confluence se cale sur Briançon si le vent est faible, sur le verrou nord de L'Argentière s'il est plus fort.\n\nOn choisit son décollage (Prorel, Granon, Petit Aréa, Tronchets) selon le vent du jour, et on le quitte avant la brise forte de l'après-midi. Sous le vent de la Lombarde, le Granon, le Prorel, la rive gauche de la Durance et Cervières sont très turbulents. Les cross partent surtout du Prorel au printemps, jusqu'à Névache ou Embrun, et de l'Izoard ou de Vallouise en automne.\n\nVérifiez les zones militaires R221 et les câbles (CATEX).",
       "bbox": [
         6.38,
         44.84,
@@ -1432,7 +1432,7 @@
       "synoptic_effects": [
         {
           "wind": "N",
-          "effect": "Par vent de nord, le Prorel est favorable, et la brise du matin se couple au nord. L'après-midi, un nord de 40 à 60 km/h à 3000 m finit par prendre le dessus en basse couche (« cloutage ») à Puy Chalvin et au Granon ; le Granon, les Tronchets et le Petit Aréa sont alors à éviter, car sous le vent. La confluence se cale sur Briançon si le vent est faible, ou sur le verrou de L'Argentière s'il est plus fort.",
+          "effect": "Par vent de nord, le Prorel est favorable, et la brise du matin se couple au nord. L'après-midi, un nord de 40 à 60 km/h à 3000 m finit par descendre en basse couche et « clouer » Puy Chalvin et le Granon. Évitez alors le Granon, les Tronchets et le Petit Aréa, sous le vent. La confluence se cale sur Briançon si le vent est faible, sur le verrou de L'Argentière s'il est plus fort.",
           "sources": [
             "MS10",
             "MS14",
@@ -1443,7 +1443,7 @@
         },
         {
           "wind": "NW",
-          "effect": "La Guisane canalise bien le nord-ouest jusqu'à Saint-Chaffrey, et la brise de la Romanche reprend vite le dessus en fin de journée. Le Prorel est défavorable, car sous le vent ; la Croix de la Nore voit le vent rentrer par le nord, en rafales. Vallouise, protégé par les Écrins, ne l'est pas totalement. La branche détournée par Gap-Embrun crée une confluence vers Saint-Crépin, souvent trop forte pour voler.",
+          "effect": "Par vent de nord-ouest, la Guisane le canalise bien jusqu'à Saint-Chaffrey, et la brise de la Romanche reprend vite le dessus en fin de journée. Le Prorel est sous le vent, donc défavorable ; à la Croix de la Nore, le vent rentre par le nord, en rafales. Vallouise, protégé par les Écrins, ne l'est pas totalement. Détourné par Gap-Embrun, le flux crée une confluence vers Saint-Crépin, souvent trop forte pour voler.",
           "sources": [
             "MS14",
             "S5",
@@ -1453,7 +1453,7 @@
         },
         {
           "wind": "W",
-          "effect": "Le vent d'ouest paraît idéal au Granon, mais il renforce les brises, les fait entrer plus tôt et renforce la confluence entre la Romanche et la Durance. À l'Izoard, la brise de Durance peut descendre par le vallon de Clapeyto. À Vallouise, un fort vent d'ouest est piégeux, et le Lautaret fonctionne par ouest à nord-ouest soutenu.",
+          "effect": "Par vent d'ouest, le Granon paraît idéal, mais l'ouest renforce les brises, les fait entrer plus tôt et durcit la confluence entre la Romanche et la Durance. À l'Izoard, la brise de Durance peut descendre par le vallon de Clapeyto. À Vallouise, un fort ouest est piégeux, et le Lautaret marche par ouest à nord-ouest soutenu.",
           "sources": [
             "S3",
             "S27",
@@ -1463,7 +1463,7 @@
         },
         {
           "wind": "SW",
-          "effect": "Les tendances de sud à ouest renforcent la brise de Durance et la font entrer tôt et brusquement : la Durance est ouverte au sud-sud-ouest, au sud de Briançon. Le Petit Aréa et les Tronchets sont favorables, de sud-est à sud-ouest, mais seulement avant la brise forte.",
+          "effect": "Par vent de sud-ouest, et plus largement de sud à ouest, la brise de Durance forcit et entre tôt et brusquement : au sud de Briançon, la Durance est ouverte au sud-sud-ouest. Le Petit Aréa et les Tronchets sont favorables, de sud-est à sud-ouest, mais seulement avant la brise forte.",
           "sources": [
             "MS13",
             "MS14",
@@ -1472,7 +1472,7 @@
         },
         {
           "wind": "S",
-          "effect": "Par vent de sud, Briançon est idéal, notamment le Prorel. Le Petit Aréa offre du soaring soutenu, et le Granon fonctionne bien. Aux Tronchets, le vent de sud est faible, et le Delta du Granon est sous le vent d'une butte par sud ou sud-est. À Saint-Blaise, on pose en PTU si la brise rentre au sud.",
+          "effect": "Par vent de sud, Briançon est idéal, notamment le Prorel. Le Petit Aréa offre du soaring soutenu, et le Granon marche bien. Aux Tronchets, le sud reste faible, et le Delta du Granon est sous le vent d'une butte par sud ou sud-est. À Saint-Blaise, posez en PTU si la brise rentre au sud.",
           "sources": [
             "MS10",
             "S3",
@@ -1482,7 +1482,7 @@
         },
         {
           "wind": "SE",
-          "effect": "Par vent de sud-est, le Prorel et Serre Chevalier, dont le décollage est plein est, s'activent tôt. Le Delta du Granon est défavorable par sud-est ou sud, et les Tronchets sont favorables de sud-est à sud-ouest. Le sud-est est aussi le sens de la brise de Durance au Pontillas.",
+          "effect": "Par vent de sud-est, le Prorel et Serre Chevalier, au décollage plein est, s'activent tôt. Le Delta du Granon est défavorable par sud-est ou sud, les Tronchets favorables de sud-est à sud-ouest. Au Pontillas, le sud-est est aussi le sens de la brise de Durance.",
           "sources": [
             "S4",
             "S14",
@@ -1491,7 +1491,7 @@
         },
         {
           "wind": "E",
-          "effect": "Par vent d'est, le Prorel est favorable, mais la balise de l'atterrissage, qui annonce l'est ou le nord-est, signale la Lombarde, très turbulente. Le Granon, les Tronchets et le Petit Aréa sont à éviter par est ou Lombarde. Aux Vallons, le vent d'est est faible en hiver, et un vent plein est au pied de Montgenèvre signale la Lombarde.",
+          "effect": "Par vent d'est, le Prorel est favorable. Mais si la balise de l'atterrissage annonce de l'est ou du nord-est, c'est la Lombarde, très turbulente. Évitez alors le Granon, les Tronchets et le Petit Aréa. Aux Vallons, l'est reste faible en hiver ; un vent plein est au pied de Montgenèvre signale la Lombarde.",
           "sources": [
             "MS10",
             "S14",
@@ -1501,7 +1501,7 @@
         },
         {
           "wind": "Lombarde",
-          "effect": "La Lombarde vient de la brise d'Italie en fin de journée, des hautes pressions sur l'Italie ou d'un foehn d'est : un nuage de foehn sur Montgenèvre la rend certaine. Saint-Blaise devient extrêmement risqué, et il vaut mieux poser dans la Guisane, dans la Clarée ou à Vallouise. Très turbulente, elle est souvent mal prévue par les modèles généralistes, et elle est fréquente l'hiver au Prorel.",
+          "effect": "La Lombarde naît de la brise d'Italie en fin de journée, des hautes pressions sur l'Italie ou d'un foehn d'est ; un nuage de foehn sur Montgenèvre la rend certaine. Saint-Blaise devient alors extrêmement risqué : posez-vous dans la Guisane, dans la Clarée ou à Vallouise. Très turbulente, elle est souvent mal prévue par les modèles généralistes, et fréquente l'hiver au Prorel.",
           "sources": [
             "S8",
             "S9",
@@ -1583,26 +1583,26 @@
         }
       ],
       "tips": [
-        "Éviter les fonds de vallée dès la mi-journée en été : poser tôt, ou prévoir une repose à mi-pente, sur le plateau des Tronchets [MS13][S2]",
-        "Si la manche à air change de sens à Saint-Chaffrey, poser ailleurs, dans l'une ou l'autre brise, et non entre les deux [S5]",
-        "Si un nuage de foehn coiffe le col de Montgenèvre, la Lombarde est certaine : vérifier la balise de Briançon (est ou nord-est) et la webcam du Puy-Saint-Pierre, et surveiller la convergence qui descend depuis La Vachette [S8][S9][MS10]",
-        "Avec la Lombarde, la couche peut être invisible au sol (300 à 500 m, à plus de 20 km/h) et passer de 10 à 40 km/h en 10 minutes : utiliser un modèle à maille fine, comme Arome [S8]",
-        "Au Prorel, la brise peut être légère sans vent météo, mais elle est très forte au printemps et en été : éviter le nord-ouest, défavorable, garder 50 m latéralement et 15 m verticalement des installations, et ne pas voler le 15 août [MS10][S4]",
-        "Au Granon, en été, on vole dans la confluence Durance-Lautaret : c'est turbulent, mais cela marche bien ; privilégier la matinée, et éviter le soir, quand la Romanche reprend le dessus [MS15][S3]",
-        "Choisir le site en fonction du vent du jour, parmi le Granon, le Galibier, Vallouise et Puy Chalvin [MS25]",
-        "Surveiller la balise de Villard-Saint-Pancrace pour voir arriver la brise à Saint-Blaise ou à Saint-Chaffrey [S4][S3]",
-        "Dans une forte confluence, le vent météo contourne les Écrins en basse couche : même sans vent, la situation peut être loin d'être calme [S11]",
-        "Avant de partir vers le Granon ou le Galibier, vérifier l'activation des zones R221 et R222 (répondeur 04 56 85 77 05) et des CATEX [S16]",
-        "Par brise forte, prévoir de se poser en altitude, sur le plateau des Tronchets ou au Lautaret, plutôt qu'en fond de vallée [S2][S19]",
-        "À Serre Chevalier, carrefour technique de 5 vallées aux vents forts et capricieux, il faut bien lire le vent [S29]",
-        "Les vents de vallée réguliers et les thermiques puissants de la fin du printemps à l'été sont annoncés à Serre Chevalier, sans chiffres à l'appui [MS18]"
+        "En été, évitez les fonds de vallée dès la mi-journée : posez tôt, ou prévoyez de vous reposer à mi-pente, sur le plateau des Tronchets [MS13][S2]",
+        "Si la manche à air de Saint-Chaffrey change de sens, posez-vous ailleurs, dans l'une ou l'autre brise, jamais entre les deux [S5]",
+        "Un nuage de foehn sur le col de Montgenèvre signe la Lombarde. Vérifiez la balise de Briançon (est ou nord-est) et la webcam du Puy-Saint-Pierre, et surveillez la convergence qui descend de La Vachette [S8][S9][MS10]",
+        "La Lombarde peut être invisible au sol : une couche de 300 à 500 m à plus de 20 km/h, qui passe de 10 à 40 km/h en 10 minutes. Consultez un modèle à maille fine, comme Arome [S8]",
+        "Au Prorel, la brise est légère sans vent météo, mais très forte au printemps et en été. Évitez le nord-ouest, défavorable, restez à 50 m des installations latéralement et à 15 m verticalement, et ne volez pas le 15 août [MS10][S4]",
+        "Au Granon, en été, on vole dans la confluence Durance-Lautaret : ça secoue, mais ça marche bien. Volez le matin, et évitez le soir, quand la Romanche reprend le dessus [MS15][S3]",
+        "Choisissez le site selon le vent du jour : le Granon, le Galibier, Vallouise ou Puy Chalvin [MS25]",
+        "Surveillez la balise de Villard-Saint-Pancrace pour voir arriver la brise à Saint-Blaise ou à Saint-Chaffrey [S4][S3]",
+        "Dans une forte confluence, le vent météo contourne les Écrins en basse couche : même sans vent, l'air peut être loin d'être calme [S11]",
+        "Avant de partir vers le Granon ou le Galibier, vérifiez l'activation des zones R221 et R222 (répondeur 04 56 85 77 05) et des CATEX [S16]",
+        "Par brise forte, posez-vous en altitude, sur le plateau des Tronchets ou au Lautaret, plutôt qu'au fond de la vallée [S2][S19]",
+        "Serre Chevalier est un carrefour technique de 5 vallées aux vents forts et capricieux : lisez bien le vent avant de décoller [S29]",
+        "Serre Chevalier annonce des vents de vallée réguliers et des thermiques puissants de la fin du printemps à l'été, sans chiffres à l'appui [MS18]"
       ]
     },
     {
       "id": "ecrins-vallouise-haute-durance",
       "name": "Vallouise – Pelvoux – Puy-Saint-Vincent – haute Durance (Embrun → Briançon)",
       "parent_massif": "Alpes du Sud – Hautes-Alpes / Écrins",
-      "summary": "Vallouise est un « bocal » entouré de très hauts sommets. Protégé du vent météo de nord-ouest par les Écrins, il se vole en régime de brises, surtout le matin au Puy Aillaud, orienté au sud-est, où les thermiques démarrent dès 9h-9h30. La brise de vallée remonte de l'entrée vers Entraygues et reste rarement forte à l'atterrissage.\n\nLes pièges sont les entrées de vent. Un fort vent d'ouest (hors nord-ouest) fait éclater la protection et crée une confluence entre la brise de sud-est et le vent d'ouest, qui peut couvrir toute la vallée jusqu'aux Vigneaux. Un vent de nord plein s'engouffre en quelques secondes par le vallon de Chambran. Hors du bocal, la haute Durance, d'Embrun à Briançon, est une longue cluse sur un axe sud-ouest : la brise, forte dès la fin de matinée, alimente très vite Serre Buzard et dépasse 40 km/h à Briançon. Ses gorges (Durance, Fournel, Ailefroide, Entraigues) n'offrent pas d'atterrissage.\n\nPar nord-ouest ou nord, la confluence entre la brise de sud et le vent météo glisse de Briançon jusqu'au verrou nord de L'Argentière. Par Lombarde, les faces ouest (Tête d'Aval, Les Têtes, Fressinières, Bouchier) sont très turbulentes, mais le petit bocal de Vallouise reste souvent abrité.\n\nLes cross en boucle dans les Écrins (Blanche, Narreyroux, Têtes, Ailefroide) se font surtout de l'automne à l'été. Le cœur du Parc est réglementé : le survol y est autorisé du 1er juillet au 31 octobre. Le départ vers Embrun par la Durance est un cross de printemps.",
+      "summary": "Vallouise est un « bocal » cerné de très hauts sommets. Les Écrins l'abritent du nord-ouest, et l'on y vole en régime de brises, surtout le matin au Puy Aillaud : orienté sud-est, il s'active parfois dès 9h30, en toute saison. La brise de vallée remonte de l'entrée vers Entraygues et reste rarement forte à l'atterrissage.\n\nLe danger, ce sont les entrées de vent. Un fort ouest (hors nord-ouest) fait sauter la protection et crée une confluence entre la brise de sud-est et l'ouest, parfois sur toute la vallée jusqu'aux Vigneaux. Un nord plein s'engouffre en quelques secondes par le vallon de Chambran. Hors du bocal, la haute Durance, d'Embrun à Briançon, est une longue cluse sur un axe sud-ouest. Sa brise, forte dès la fin de matinée, alimente très vite Serre Buzard et dépasse 40 km/h à Briançon. Ses gorges (Durance, Fournel, Ailefroide, Entraigues) n'offrent pas d'atterrissage.\n\nPar nord-ouest ou nord, la confluence entre la brise de sud et le vent météo glisse de Briançon jusqu'au verrou nord de L'Argentière. Par Lombarde, les faces ouest (Tête d'Aval, Les Têtes, Fressinières, Bouchier) sont très turbulentes, mais le petit bocal de Vallouise reste souvent abrité.\n\nLes cross en boucle dans les Écrins (Blanche, Narreyroux, Têtes, Ailefroide) se font surtout de l'automne à l'été. Le cœur du Parc est réglementé : le survol y est autorisé du 1er juillet au 31 octobre. Le départ vers Embrun par la Durance est un cross de printemps.",
       "bbox": [
         6.3,
         44.55,
@@ -3334,7 +3334,7 @@
       "synoptic_effects": [
         {
           "wind": "N",
-          "effect": "À Vallouise, le Puy Aillaud est défavorable par vent de nord. Un nord plein entre par Chambran, soudainement, avec de fortes rafales, même par un nord léger en altitude. Par nord-ouest ou nord un peu soutenu, la confluence avec la brise de sud descend vers le verrou nord de L'Argentière. Des dust devils apparaissent par flux de nord, et Serre Buzard est très bon par faible nord en altitude.",
+          "effect": "Par vent de nord, le Puy Aillaud, à Vallouise, est défavorable. Un nord plein entre par Chambran d'un coup, avec de fortes rafales, même quand le nord est léger en altitude. Par nord-ouest ou nord un peu soutenu, la confluence avec la brise de sud descend vers le verrou nord de L'Argentière. Par flux de nord, des dust devils apparaissent, et Serre Buzard est très bon par faible nord en altitude.",
           "sources": [
             "S36",
             "S34",
@@ -3344,7 +3344,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Vallouise est bien protégé du nord-ouest par les Écrins, sans que cette « bulle de protection » soit infinie. Au sud de Briançon, un nord-ouest fort crée une confluence vers Saint-Crépin, trop forte pour voler.",
+          "effect": "Par vent de nord-ouest, les Écrins protègent bien Vallouise, mais cette « bulle de protection » n'est pas infinie. Au sud de Briançon, un nord-ouest fort crée une confluence vers Saint-Crépin, trop forte pour voler.",
           "sources": [
             "S32",
             "S34",
@@ -3354,7 +3354,7 @@
         },
         {
           "wind": "W",
-          "effect": "Un fort vent d'ouest (hors nord-ouest) renforce la brise de Durance et celle de Vallouise ; le soir, il rentre très souvent par les Bans. Il crée une confluence entre la brise de sud-est et le vent d'ouest, et le Puy Aillaud est alors sous le vent. Les tendances de sud à ouest fortes sont à éviter.",
+          "effect": "Par vent d'ouest fort (hors nord-ouest), la brise de Durance et celle de Vallouise forcissent ; le soir, l'ouest rentre très souvent par les Bans. Il crée une confluence avec la brise de sud-est, et le Puy Aillaud passe sous le vent. Évitez les tendances fortes de sud à ouest.",
           "sources": [
             "S26",
             "S32"
@@ -3362,7 +3362,7 @@
         },
         {
           "wind": "S",
-          "effect": "À Vallouise, le régime de brises prime sur le vent météo. Les tendances de sud à ouest fortes sont à éviter, car elles créent une confluence et renforcent la brise de Durance. Serre Buzard est désagréable par vent de sud.",
+          "effect": "Par vent de sud, à Vallouise, le régime de brises l'emporte sur le vent météo. Évitez les tendances fortes de sud à ouest : elles créent une confluence et renforcent la brise de Durance. Serre Buzard est désagréable par sud.",
           "sources": [
             "S32",
             "S26",
@@ -3372,7 +3372,7 @@
         },
         {
           "wind": "SE",
-          "effect": "Le Puy Aillaud, orienté au sud-est, est un site du matin, avec une brise de pente dès 9h30. Serre Buzard est bon par faible sud-est en altitude, et la brise de sud-est de la vallée s'oppose au vent d'ouest.",
+          "effect": "Par vent de sud-est, Serre Buzard est bon s'il reste faible en altitude. Le Puy Aillaud, orienté au sud-est, est un site du matin, avec une brise de pente parfois dès 9h30. La brise de sud-est de la vallée s'oppose au vent d'ouest.",
           "sources": [
             "S32",
             "S30"
@@ -3380,7 +3380,7 @@
         },
         {
           "wind": "E",
-          "effect": "Un vent d'est plein, rare, est piégeux à Vallouise et peut rentrer d'un coup. Le Pelvoux et le Puy Aillaud acceptent pourtant le nord-est à nord-ouest. Aux Orres, on ne décolle pas de travers, car le vent rentre par le nord ou par l'est.",
+          "effect": "Par vent d'est, plein et rare, Vallouise devient piégeuse : le vent peut rentrer d'un coup. Le Pelvoux et le Puy Aillaud acceptent pourtant le nord-est à nord-ouest. Aux Orres, ne décollez pas de travers : le vent rentre par le nord ou par l'est.",
           "sources": [
             "S32",
             "S34"
@@ -3388,7 +3388,7 @@
         },
         {
           "wind": "Lombarde",
-          "effect": "Le petit bocal de Vallouise, très souvent à l'abri de la Lombarde, sert de refuge aux pilotes briançonnais. Bouchier, la Croix de la Salcette, la Tête d'Amont, la Tête d'Aval, Les Têtes, Fressinières et la rive gauche de la Durance sont sous le vent, très turbulents. Au printemps, certains vols en profitent : sous 2300 m, la Lombarde plaque les ascendances au fond des vallons, et l'on trouve de l'est léger au-dessus.",
+          "effect": "Le petit bocal de Vallouise, très souvent à l'abri de la Lombarde, sert de refuge aux pilotes briançonnais. Bouchier, la Croix de la Salcette, la Tête d'Amont, la Tête d'Aval, Les Têtes, Fressinières et la rive gauche de la Durance sont sous le vent, très turbulents. Au printemps, certains vols en profitent : sous 2300 m, la Lombarde plaque les ascendances au fond des vallons, et au-dessus on trouve un léger est.",
           "sources": [
             "S8",
             "S9",
@@ -3648,23 +3648,23 @@
         }
       ],
       "tips": [
-        "Au Puy Aillaud, mieux vaut voler le matin, car l'aérologie peut démarrer dès 9h-9h30 ; en automne, on peut plus souvent voler l'après-midi [S32][S34]",
-        "Par brise forte, voler haut : les faces ouest, de la Tête d'Amont à la Condamine, sont sous le vent de la brise [S34][MS16]",
-        "Avant de décoller à Puy Aillaud, regarder les balises de Pelvoux et de Chambran, et la manche à air « du rocher » entre les deux décollages ; si le nord ou l'ouest est déjà perceptible, renoncer [S36][S26]",
-        "Pour descendre d'une confluence d'ouest, aller d'abord loin vers les Vigneaux, chercher une zone qui ne monte plus, avant d'utiliser une technique de descente rapide [S26]",
-        "Pour traverser de Puy-Saint-Vincent à Fressinières, voler très haut : le Fournel est étroit, turbulent et sans atterrissage [S34]",
-        "Anticiper la forte brise descendante du soir pour le posé : l'atterrissage au village est interdit [MS16][S32]",
-        "Dans le cœur du Parc, les vols sont engagés : prendre des marges et respecter les dates, car le survol est autorisé du 1er juillet au 31 octobre [S39][S38]",
-        "Ne pas décoller de Bouchier en plein après-midi d'été, à cause des « pétards » [MS14]",
-        "Repérer le cumulonimbus du Pelvoux, et le vent qui forcit dans la Durance avant l'orage [MS14]",
-        "À Serre Buzard, partir tôt (10 à 12 h) ; en fin de cross, préférer les grands champs de Saint-Clément ou de Guillestre [S30][S10]"
+        "Au Puy Aillaud, volez le matin : ça démarre parfois dès 9h30. En automne, l'après-midi est plus souvent volable [S32][S34]",
+        "Par brise forte, volez haut : les faces ouest, de la Tête d'Amont à la Condamine, sont sous le vent de la brise [S34][MS16]",
+        "Avant de décoller à Puy Aillaud, regardez les balises de Pelvoux et de Chambran, et la manche à air « du rocher » entre les deux décollages. Si le nord ou l'ouest se sent déjà, renoncez [S36][S26]",
+        "Pour descendre d'une confluence d'ouest, allez d'abord loin vers les Vigneaux chercher une zone qui ne monte plus, avant toute technique de descente rapide [S26]",
+        "Pour traverser de Puy-Saint-Vincent à Fressinières, volez très haut : le Fournel est étroit, turbulent et sans atterrissage [S34]",
+        "Anticipez la forte brise descendante du soir pour le posé : l'atterrissage au village est interdit [MS16][S32]",
+        "Dans le cœur du Parc, les vols sont engagés : prenez des marges et respectez les dates, le survol n'y est autorisé que du 1er juillet au 31 octobre [S39][S38]",
+        "Ne décollez pas de Bouchier en plein après-midi d'été : ça part en « pétards » [MS14]",
+        "Repérez le cumulonimbus du Pelvoux, et le vent qui forcit dans la Durance avant l'orage [MS14]",
+        "À Serre Buzard, partez tôt (10 à 12 h). En fin de cross, posez-vous plutôt dans les grands champs de Saint-Clément ou de Guillestre [S30][S10]"
       ]
     },
     {
       "id": "serre-poncon-embrunais",
       "name": "Serre-Ponçon et Embrunais (Chorges, Savines, Mont Morgon, Embrun, Mont Guillaume, Saint-Vincent-les-Forts)",
       "parent_massif": "Alpes du Sud",
-      "summary": "Serre-Ponçon est une cuvette où se rejoignent la Durance et l'Ubaye. Saint-Vincent-les-Forts, à 1275 m, orienté à l'ouest et au nord-ouest et tourné vers le lac, est le grand site de restitution : c'est aussi le seul site volable par mistral.\n\nEn été, l'après-midi, la brise remonte l'axe de la Durance et devient forte. L'atterrissage devient alors turbulent après 14-15 h, au Mont Guillaume, à Pierre-Arnoux et au Serre Buzard : on préfère donc les vols du matin ou ceux de la fin de l'après-midi. À Saint-Vincent, les conditions sont fortes au décollage de juin à août, mais excellentes en fin de l'après-midi.\n\nSur la rive nord, à Chorges, le matin se vole en brise de sud-est, qui bascule à l'ouest dans la journée. Une brise de vallée venant de Gap rentre vers 11 h, au-dessus de 1000 m. Par vent de nord, le mistral met tout sous le vent, et l'est donne des vents de travers. Au nord de l'Embrunais, la confluence des flux de nord venus de Briançon et de Gap se place entre Saint-Clément et la baie Saint-Michel.\n\nL'aérologie du lac lui-même est peu documentée : une brise de lac établie donne toutefois une aérologie saine à l'atterrissage de Saint-Vincent. Des « moutons » sur l'eau signalent un renforcement de la brise. Les zones thermiques les plus fortes sont les faces du Mont Guillaume et du Morgon. Les départs de cross se font vers le sud, par Dormillouse et la Blanche, ou en remontant la Durance.",
+      "summary": "Serre-Ponçon est une cuvette où se rejoignent la Durance et l'Ubaye. Son grand site de restitution, c'est Saint-Vincent-les-Forts : à 1275 m, tourné à l'ouest et au nord-ouest face au lac, c'est aussi le seul site volable par mistral.\n\nEn été, l'après-midi, la brise remonte l'axe de la Durance et devient forte. Après 14-15 h, l'atterrissage secoue au Mont Guillaume, à Pierre-Arnoux et au Serre Buzard : volez le matin ou en fin d'après-midi. À Saint-Vincent, les conditions sont fortes au décollage de juin à août, mais excellentes en fin d'après-midi.\n\nSur la rive nord, Chorges se vole le matin en brise de sud-est, qui bascule à l'ouest dans la journée. Vers 11 h, une brise de vallée venue de Gap rentre au-dessus de 1000 m. Par nord, le mistral met tout sous le vent, et l'est donne des vents de travers. Au nord de l'Embrunais, les flux de nord venus de Briançon et de Gap se rencontrent entre Saint-Clément et la baie Saint-Michel.\n\nL'aérologie du lac lui-même est peu documentée. Une brise de lac établie donne toutefois un air sain à l'atterrissage de Saint-Vincent, et des « moutons » sur l'eau signalent qu'elle forcit. Les thermiques les plus forts sortent des faces du Mont Guillaume et du Morgon. Les cross partent vers le sud, par Dormillouse et la Blanche, ou remontent la Durance.",
       "bbox": [
         6.0,
         44.38,
@@ -4971,7 +4971,7 @@
       "synoptic_effects": [
         {
           "wind": "N",
-          "effect": "À Chorges, le vol se fait sous le vent : la brise de Gap devient alors un vent de nord. Par faible vent de nord en altitude, Serre Buzard est très bon. La confluence des vents de nord venus de Briançon et de Gap se place entre Saint-Clément et la baie Saint-Michel.",
+          "effect": "Par vent de nord, on vole sous le vent à Chorges : la brise de Gap y devient un vent de nord. Par faible nord en altitude, Serre Buzard est très bon. Les flux de nord venus de Briançon et de Gap se rencontrent entre Saint-Clément et la baie Saint-Michel.",
           "sources": [
             "HS16",
             "S30",
@@ -4980,7 +4980,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Par vent de nord-ouest, Saint-Vincent-les-Forts reste volable : c'est l'un des rares sites volables du coin, et le seul utilisable par mistral. Il est très fréquenté. À Chorges, il faut éviter le fort vent de nord-ouest ou le mistral.",
+          "effect": "Par vent de nord-ouest, Saint-Vincent-les-Forts reste volable : c'est l'un des rares sites du coin, et le seul utilisable par mistral, donc très fréquenté. À Chorges, évitez le fort nord-ouest ou le mistral.",
           "sources": [
             "HS13",
             "HS12",
@@ -4990,7 +4990,7 @@
         },
         {
           "wind": "Mistral",
-          "effect": "Par mistral ou par vent de nord-ouest, Saint-Vincent est le repli du secteur : ailleurs, on vole sous le vent.",
+          "effect": "Par mistral ou nord-ouest, Saint-Vincent est le repli du secteur : partout ailleurs, on vole sous le vent.",
           "sources": [
             "HS12",
             "HS16"
@@ -4998,7 +4998,7 @@
         },
         {
           "wind": "W",
-          "effect": "Par vent d'ouest, Saint-Vincent, Pierre-Arnoux et Montclar, tournés vers l'ouest ou le sud-ouest, fonctionnent en régime de brise. À Chorges, les brises basculent à l'ouest dans la journée, et le vent est de travers droit à Serre Michèle.",
+          "effect": "Par vent d'ouest, Saint-Vincent, Pierre-Arnoux et Montclar, tournés vers l'ouest ou le sud-ouest, marchent en régime de brise. À Chorges, les brises basculent à l'ouest dans la journée, et le vent est de travers droit à Serre Michèle.",
           "sources": [
             "HS12",
             "S56",
@@ -5008,7 +5008,7 @@
         },
         {
           "wind": "SW",
-          "effect": "Par vent de sud-ouest, le Mont Guillaume est favorable, tout comme le col de la Gardette. À Chorges, les bonnes conditions viennent d'une tendance sud à sud-ouest. À Réallon, l'après-midi, on est sous le vent de la brise de sud-ouest.",
+          "effect": "Par vent de sud-ouest, le Mont Guillaume est favorable, comme le col de la Gardette. À Chorges, les bonnes conditions viennent d'une tendance sud à sud-ouest. À Réallon, l'après-midi, on est sous le vent de la brise de sud-ouest.",
           "sources": [
             "HS17",
             "S55",
@@ -5018,7 +5018,7 @@
         },
         {
           "wind": "S",
-          "effect": "Par vent de sud, Serre Buzard est désagréable, et Pierre-Arnoux est sous le vent de la crête. Les Orres sont sous le vent, et Montclar devient turbulent si le sud est fort. À Chorges, la tendance sud est favorable.",
+          "effect": "Par vent de sud, Serre Buzard est désagréable, et Pierre-Arnoux est sous le vent de la crête, comme les Orres. Montclar secoue si le sud est fort. Chorges, lui, profite de la tendance sud.",
           "sources": [
             "S30",
             "HS16",
@@ -5177,24 +5177,24 @@
         }
       ],
       "tips": [
-        "Au Mont Guillaume, décollez à partir de midi, mais anticipez la forte brise de l'après-midi à l'atterrissage du lac : la restitution en fin de journée est excellente. [HS17][HS16][HS18]",
-        "En été, visez les atterrissages avant 14 h ou en fin de journée. [HS16]",
-        "À Saint-Vincent, patientez si le vent est trop fort au décollage (la fin de l'après-midi est souvent magique) ; décollez obligatoirement face voile, et posez-vous dès que des « moutons » apparaissent sur le lac. [HS14]",
-        "À Saint-Vincent, utilisez le volume protégé du Morgon, puis Dormillouse ou la Blanche, pour partir en cross. [HS14][HS16]",
-        "Au Serre Buzard, partez tôt (10-12 h) ; de juin à septembre, n'y volez qu'en expert. [S30][HS16]",
-        "À Chorges, décollez le matin, face au sud-est ou au sud ; vérifiez la balise du lac, qui majore le vent à Chorges, et la balise Pioupiou de La Bâtie-Neuve, car la brise de Gap rentre vers 11 h au-dessus de 1000 m. [HS16][S45]",
+        "Au Mont Guillaume, décollez à partir de midi, mais anticipez la forte brise de l'après-midi à l'atterrissage du lac. En fin de journée, la restitution est excellente. [HS17][HS16][HS18]",
+        "En été, posez-vous avant 14 h ou en fin de journée. [HS16]",
+        "À Saint-Vincent, patientez si le vent est trop fort au décollage : la fin d'après-midi est souvent magique. Décollez obligatoirement face voile, et posez-vous dès que des « moutons » apparaissent sur le lac. [HS14]",
+        "À Saint-Vincent, partez en cross par le volume protégé du Morgon, puis Dormillouse ou la Blanche. [HS14][HS16]",
+        "Au Serre Buzard, partez tôt (10-12 h). De juin à septembre, n'y volez qu'en expert. [S30][HS16]",
+        "À Chorges, décollez le matin, face au sud-est ou au sud. Vérifiez la balise du lac, qui majore le vent à Chorges, et la Pioupiou de La Bâtie-Neuve : vers 11 h, la brise de Gap rentre au-dessus de 1000 m. [HS16][S45]",
         "Aux Orres et à Costias, ne décollez jamais par vent de travers, de nord ou d'est. [HS16][S53]",
-        "À Pierre-Arnoux, l'atterrissage n'est praticable qu'à lac bas, hors été ; par vent de sud, on se trouve sous le vent de la crête. [HS16][S10]",
+        "À Pierre-Arnoux, l'atterrissage n'est praticable qu'à lac bas, hors été. Par vent de sud, vous êtes sous le vent de la crête. [HS16][S10]",
         "En 2026, l'atterrissage des Chamousses, au Serre Buzard, est fermé jusqu'à la récolte, et l'ancienne pente école des Orres est interdite d'accès. [S68]",
-        "L'atterrissage au théâtre de verdure de Savines est interdit à certaines dates de 2026, lors de manifestations : renseignez-vous avant de venir. [S66]",
-        "Il arrive qu'on parte du Serre Buzard jusqu'à Saint-André-les-Alpes : ce trajet n'est pas vérifié. [S42]"
+        "Certains jours de 2026, l'atterrissage au théâtre de verdure de Savines est interdit pour des manifestations : renseignez-vous avant de venir. [S66]",
+        "On part parfois du Serre Buzard jusqu'à Saint-André-les-Alpes, mais ce trajet n'est pas vérifié. [S42]"
       ]
     },
     {
       "id": "queyras",
       "name": "Queyras (vallée du Guil, Ceillac, Izoard)",
       "parent_massif": "Alpes du Sud (frontière italienne)",
-      "summary": "Le Queyras est la haute vallée sèche du Guil, entre Guillestre et la frontière italienne. Ses gorges (Guil, Ceillac, Cristillan, Escreins) n'offrent aucun atterrissage, et la brise y est souvent forte. Ceillac est le site majeur du secteur. Le col de l'Izoard, point de départ du record du monde de triangle FAI (350,53 km), est un site musclé, fréquenté surtout à l'automne.\n\nÀ Ceillac, le site fonctionne dans toutes les orientations sauf l'est, et il est bien protégé du nord. La brise locale y est souvent trop forte l'après-midi, avec un thermique dès la fin de matinée. Le soir, il est idéal pour qui sait décoller par vent de face soutenu, mais la Lombarde y est mauvaise : l'est et le sud-est y sont défavorables. À l'Izoard, par tendance ouest à nord, le décollage est vent arrière, même par vent très faible.\n\nLa carte des Lombardes dessine plusieurs flèches qui franchissent les cols frontaliers vers le haut Guil, Abriès, le col Agnel et Ceillac. Au confluent de la Durance et du Guil, à Mont-Dauphin, il est arrivé qu'un cumulus matérialise la rencontre de la brise montante et de la Lombarde qui descend le Guil.\n\nSur Abriès, Saint-Véran, Aiguilles, Molines et Château-Queyras, hors Ceillac, aucune source aérologique n'a été trouvée : seule une école de parapente, à Ceillac, est référencée.",
+      "summary": "Le Queyras est la haute vallée sèche du Guil, entre Guillestre et la frontière italienne. Ses gorges (Guil, Ceillac, Cristillan, Escreins) n'offrent aucun atterrissage, et la brise y souffle souvent fort. Ceillac est le site majeur. Le col de l'Izoard, départ des records du monde de triangle FAI (350,53 km en 2023, puis 358,6 km en 2025), est un site musclé, surtout fréquenté à l'automne.\n\nCeillac se vole dans toutes les orientations sauf l'est, bien protégé du nord. Le thermique arrive dès la fin de matinée, et la brise locale est souvent trop forte l'après-midi. Le soir, c'est idéal pour qui sait décoller par vent de face soutenu. La Lombarde y est mauvaise : l'est et le sud-est y sont défavorables. À l'Izoard, par tendance ouest à nord, le décollage est vent arrière, même par vent très faible.\n\nLa carte des Lombardes dessine plusieurs flèches qui passent les cols frontaliers vers le haut Guil, Abriès, le col Agnel et Ceillac. Au confluent de la Durance et du Guil, à Mont-Dauphin, un cumulus a déjà marqué la rencontre de la brise montante et de la Lombarde qui descend le Guil.\n\nPour Abriès, Saint-Véran, Aiguilles, Molines et Château-Queyras, aucune source aérologique n'a été trouvée : seule une école de parapente est référencée, à Ceillac.",
       "bbox": [
         6.6,
         44.6,
@@ -6217,7 +6217,7 @@
       "synoptic_effects": [
         {
           "wind": "N",
-          "effect": "Ceillac est très bien protégé du nord, et le nord comme le nord-est y sont favorables. À l'Izoard, par tendance nord à ouest, le décollage est vent arrière, ce qui est dangereux. Un cas d'exception, lors d'un record, a montré un décollage face nord avec 15 km/h de vent arrière, puis un départ sous le vent pour trouver les premiers thermiques.",
+          "effect": "Par vent de nord, Ceillac est très bien protégé, et le nord comme le nord-est y sont favorables. À l'Izoard, par tendance nord à ouest, le décollage est vent arrière : danger. Seule exception, lors du record de 2023 : un décollage face nord avec 15 km/h de vent arrière, puis un départ sous le vent pour trouver les premiers thermiques.",
           "sources": [
             "S69",
             "S71",
@@ -6227,7 +6227,7 @@
         },
         {
           "wind": "NW",
-          "effect": "À Ceillac, le nord-ouest faible en altitude est favorable. À l'Izoard, la tendance ouest à nord est particulièrement dangereuse, même par vent très faible.",
+          "effect": "Par vent de nord-ouest faible en altitude, Ceillac est favorable. À l'Izoard, la tendance ouest à nord est particulièrement dangereuse, même par vent très faible.",
           "sources": [
             "S71",
             "S27"
@@ -6235,7 +6235,7 @@
         },
         {
           "wind": "W",
-          "effect": "À l'Izoard, la tendance ouest à nord est dangereuse, avec un décollage en vent arrière. La brise de la Durance peut couler par le vallon de Clapeyto et rendre la masse d'air turbulente. À Ceillac, l'ouest est favorable.",
+          "effect": "Par vent d'ouest, Ceillac est favorable. À l'Izoard, la tendance ouest à nord est dangereuse, avec un décollage vent arrière. La brise de la Durance peut couler par le vallon de Clapeyto et rendre l'air turbulent.",
           "sources": [
             "S27",
             "S71"
@@ -6243,7 +6243,7 @@
         },
         {
           "wind": "SW",
-          "effect": "À Ceillac, le vent de sud-ouest est favorable. Le décollage de Ceillac Sud, orienté au sud, au sud-ouest ou à l'ouest, convient aux vols tôt le matin.",
+          "effect": "Par vent de sud-ouest, Ceillac est favorable. Le décollage de Ceillac Sud, orienté au sud, au sud-ouest ou à l'ouest, sert aux vols tôt le matin.",
           "sources": [
             "S72",
             "S70"
@@ -6251,7 +6251,7 @@
         },
         {
           "wind": "E",
-          "effect": "Par vent d'est, Ceillac est défavorable, et souvent très mauvais quand les tendances sont à l'est. La Lombarde est à considérer.",
+          "effect": "Par vent d'est, Ceillac est défavorable, et souvent très mauvais quand les tendances sont à l'est. Pensez à la Lombarde.",
           "sources": [
             "S70",
             "S9"
@@ -6259,7 +6259,7 @@
         },
         {
           "wind": "Lombarde",
-          "effect": "Six flèches de Lombarde franchissent les cols, notamment le Montgenèvre, la Clarée, le nord d'Abriès et l'Agnel. Ceillac est sous le vent. Au confluent de la Durance et du Guil, il est arrivé que la Lombarde descende le Guil jusqu'à Mont-Dauphin : un cas isolé.",
+          "effect": "Six flèches de Lombarde franchissent les cols, notamment le Montgenèvre, la Clarée, le nord d'Abriès et l'Agnel. Ceillac est sous le vent. Un cas isolé : la Lombarde a descendu le Guil jusqu'à Mont-Dauphin, au confluent de la Durance et du Guil.",
           "sources": [
             "S9",
             "S28"
@@ -6305,21 +6305,21 @@
         }
       ],
       "tips": [
-        "À l'Izoard, réservez-vous aux très bons pilotes ; par tendance ouest à nord, ne décollez pas, même par vent très faible, et évitez de décoller de travers pour vous jeter sous le vent. [S27]",
-        "À Arvieux, posez-vous dans le champ en face de « Chez Marius » : la brise est forte dès midi. [S27]",
-        "À Ceillac, les vols du soir sont doux pour qui sait décoller par vent soutenu, mais l'inversion peut être brutale quand l'atterrissage passe à l'ombre ; évitez l'est. [S69][S70]",
-        "À Ceillac, il est interdit de monter en voiture au décollage du 15 juin au 15 septembre, et l'on n'atterrit pas dans les prés de fauche. [S69]",
-        "Une école de parapente est installée à Ceillac : elle peut renseigner sur l'aérologie locale. Aucune ressource n'a été trouvée pour Abriès, Saint-Véran, Aiguilles ou Molines. [HS44][S75]",
+        "L'Izoard est pour les très bons pilotes. Par tendance ouest à nord, ne décollez pas, même par vent très faible, et ne décollez pas de travers pour vous jeter sous le vent. [S27]",
+        "À Arvieux, posez-vous dans le champ en face de « Chez Marius » : la brise y est forte dès midi. [S27]",
+        "À Ceillac, les vols du soir sont doux pour qui sait décoller par vent soutenu, mais l'inversion peut tomber brutalement quand l'atterrissage passe à l'ombre. Évitez l'est. [S69][S70]",
+        "À Ceillac, ne montez pas en voiture au décollage du 15 juin au 15 septembre, et ne vous posez pas dans les prés de fauche. [S69]",
+        "Pour l'aérologie locale, renseignez-vous auprès de l'école de parapente de Ceillac. Aucune ressource n'a été trouvée pour Abriès, Saint-Véran, Aiguilles ou Molines. [HS44][S75]",
         "Hors de Ceillac, les gorges du Guil n'offrent aucun atterrissage : restez en altitude jusqu'à Guillestre. [S15]",
-        "Depuis Prali, on peut rejoindre par la crête frontalière la chaîne française qui mène à l'Izoard. [S109][S111]",
-        "Le vol rando de Brunet se fait très tôt le matin : il place haut pour partir en thermique. Le thermique mesuré se trouve à 2 km à l'est-sud-est, sur les ravins de Rabinoux et de la Charpenelle. [S69]"
+        "Depuis Prali, la crête frontalière permet de rejoindre la chaîne française qui mène à l'Izoard. [S109][S111]",
+        "Faites le vol rando de Brunet très tôt le matin : il vous place haut pour partir en thermique. Le thermique mesuré se trouve à 2 km à l'est-sud-est, sur les ravins de Rabinoux et de la Charpenelle. [S69]"
       ]
     },
     {
       "id": "ubaye",
       "name": "Ubaye (Barcelonnette, Pra-Loup, Le Sauze, Jausiers, Saint-Pons, Lauzet)",
       "parent_massif": "Alpes du Sud",
-      "summary": "La vallée de l'Ubaye est orientée est-ouest. Elle débouche sur le bras de l'Ubaye du lac de Serre-Ponçon, près de Saint-Vincent-les-Forts. Abritée des vents de nord, elle offre une zone de cross « de Lauzet à Maljasset ».\n\nEn été, la brise de vallée est forte l'après-midi, à Jausiers, à Halte 2000 et à l'hippodrome de Barcelonnette : on atterrit plutôt face à la brise, montante ou descendante. Les vols de Soleil Bœuf se font plutôt le matin et le soir. Au printemps et en été, la brise montante peut devenir excessivement forte dès 11h à Barcelonnette et empêcher de poser avant 20h, d'où des vols du matin et du soir. Les gorges entre le Lauzet et Barcelonnette n'offrent pas d'atterrissage.\n\nPar tendance est-sud-est, la brise de Larche peut venir d'Italie et rester descendante toute la journée. Au sud, par sud-est, sud ou sud-ouest, la brise peut descendre du col de la Bonnette-Restefond. À l'est, on craint la Lombarde, qui crée un effet de foehn. Les décollages documentés sont le Point de Vue, Faucon-de-Barcelonnette, Soleil Bœuf, Pra-Loup, et le Dôme de l'Alpe, au Sauze, où le décollage est aussi l'atterrissage.\n\nL'aérologie est réputée, avec 300 jours de soleil annoncés ; une école de parapente est installée à Barcelonnette. Les seuls cross documentés sont un triangle de 138 km vers le Champsaur et Dormillouse, et un triangle FAI de 252 km, dont les points de virage ne sont pas lisibles. Le cœur du Mercantour est interdit à moins de 1000 m au-dessus du sol, hors dérogations situées dans la Tinée.",
+      "summary": "L'Ubaye est une vallée orientée est-ouest qui débouche sur le bras de l'Ubaye du lac de Serre-Ponçon, près de Saint-Vincent-les-Forts. Abritée des vents de nord, elle offre une zone de cross « de Lauzet à Maljasset ».\n\nEn été, la brise de vallée souffle fort l'après-midi à Jausiers, à Halte 2000 et à l'hippodrome de Barcelonnette : posez plutôt face à la brise, montante ou descendante. Au printemps et en été, la brise montante peut devenir excessivement forte dès 11h à Barcelonnette et empêcher de poser avant 20h. On vole donc le matin et le soir, comme à Soleil Bœuf. Les gorges entre le Lauzet et Barcelonnette n'offrent pas d'atterrissage.\n\nPar tendance est-sud-est, la brise de Larche peut venir d'Italie et rester descendante toute la journée. Au sud, par sud-est, sud ou sud-ouest, la brise peut descendre du col de la Bonnette-Restefond. À l'est, la Lombarde crée un effet de foehn. Les décollages documentés sont le Point de Vue, Faucon-de-Barcelonnette, Soleil Bœuf, Pra-Loup, et le Dôme de l'Alpe, au Sauze, où l'on décolle et atterrit au même endroit.\n\nL'aérologie est réputée, avec 300 jours de soleil annoncés, et une école de parapente est installée à Barcelonnette. Seuls deux cross sont documentés : un triangle de 138 km vers le Champsaur et Dormillouse, et un triangle FAI de 252 km aux points de virage illisibles. Le cœur du Mercantour est interdit à moins de 1000 m du sol, hors dérogations situées dans la Tinée.",
       "bbox": [
         6.4,
         44.3,
@@ -7110,7 +7110,7 @@
       "synoptic_effects": [
         {
           "wind": "N",
-          "effect": "La vallée est abritée des vents de nord, et c'est une zone de cross de Lauzet à Maljasset. À Jausiers, Restefond et Larche, le nord est favorable. À Saint-Ours, un nord fort met le site sous le vent du col de Mirandol.",
+          "effect": "Par vent de nord, la vallée est abritée : c'est la zone de cross de Lauzet à Maljasset. À Jausiers, Restefond et Larche, le nord est favorable. À Saint-Ours, un nord fort met le site sous le vent du col de Mirandol.",
           "sources": [
             "S49",
             "S76",
@@ -7120,7 +7120,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Par vent de nord-ouest, les atterrissages de Jausiers, Restefond, Larche et Saint-Ours sont favorables. Saint-Vincent, voisin, est le seul site volable par mistral.",
+          "effect": "Par vent de nord-ouest, les atterrissages de Jausiers, Restefond, Larche et Saint-Ours sont favorables. Saint-Vincent, tout proche, est le seul site volable par mistral.",
           "sources": [
             "S76",
             "S80",
@@ -7129,7 +7129,7 @@
         },
         {
           "wind": "E",
-          "effect": "Par Lombarde, avec un effet de foehn, et par vent d'est marqué en altitude (faux foehn), Halte 2000 et Restefond sont concernés. À Larche et à Saint-Ours, l'est et le sud-est sont défavorables : la brise vient de l'Italie par le col de l'Arche et peut rester descendante toute la journée.",
+          "effect": "Par vent d'est marqué en altitude (faux foehn), comme par Lombarde avec son effet de foehn, Halte 2000 et Restefond sont touchés. À Larche et à Saint-Ours, l'est et le sud-est sont défavorables : la brise vient d'Italie par le col de l'Arche et peut rester descendante toute la journée.",
           "sources": [
             "S77",
             "S79",
@@ -7155,7 +7155,7 @@
         },
         {
           "wind": "Mistral",
-          "effect": "Par mistral, Saint-Vincent-les-Forts est le seul site volable, mais son décollage peut être trop désagréable : il arrive qu'on attende deux jours la fin du mistral, des ailes vues au-dessus du lac ayant été jugées très dures. Après le mistral, le matin est calme à Barcelonnette, avec une brise très faible à 11h.",
+          "effect": "Par mistral, Saint-Vincent-les-Forts est le seul site volable, mais son décollage peut être trop désagréable : on attend parfois deux jours la fin du mistral, et des ailes vues au-dessus du lac ont été jugées très dures. Après le mistral, le matin est calme à Barcelonnette, avec une brise très faible à 11h.",
           "sources": [
             "S94",
             "S10"
@@ -7214,16 +7214,16 @@
         }
       ],
       "tips": [
-        "À Pra-Loup et au Sauze, les décollages biplaces sont Soleille-Bœuf, Point de Vue et le Dôme de l'Alpe : au Dôme, le décollage et l'atterrissage sont au même endroit, et les thermiques du soir y sont bons. [HS41][S49]",
-        "Les autres terrains de la vallée sont Jausiers, Restefond – Ravin de Clapouse, Halte 2000, Larche plage et Saint-Ours. [S76][S77]",
-        "Soleil Bœuf se vole le matin et le soir, et un 4x4 est nécessaire pour accéder au décollage. [S49]",
-        "Par tendance est ou sud-est, méfiez-vous de la brise qui vient de Larche et reste descendante toute la journée. [S80]",
-        "Avant de poser à Jausiers ou à Halte 2000, vérifiez l'absence de chevaux ou de bétail, et les dates de foins : à Halte 2000, l'atterrissage est interdit du 15 juin au 31 juillet. [S76][S77]",
-        "Le vol à voile se pratique depuis l'aérodrome de Saint-Pons : soyez prudents aux croisements de trafic. [S82]",
-        "À Soleil Bœuf, partez à pied vers 7h45 pour décoller entre 10h et 11h au plus tard : avant 10h, le décollage se fait côté est, puis la brise s'établit côté ouest ; au printemps et en été, la brise de vallée peut empêcher de poser avant 20h.",
-        "À la tête de Parassac, décollez avant 10h, côté ouest uniquement, car l'est est en cœur du Mercantour ; posez-vous devant le lac des Sagnes en tenant compte du vent du lac.",
-        "Les vols de l'école de Barcelonnette sont calés sur l'aérologie : Soleille-Bœuf à 8h00, Point de vue à 10h00, Dôme de l'Alpe à 13h30 avec retour vers 17h, et vol du soir à 18h00.",
-        "Dans le cœur du Mercantour, le survol reste interdit à moins de 1000 m au-dessus du sol, sauf autorisation individuelle du 1er août au 15 octobre, dans des zones de la Tinée, hors Ubaye ; le vol à voile y est interdit toute l'année."
+        "À Pra-Loup et au Sauze, les décollages biplaces sont Soleille-Bœuf, Point de Vue et le Dôme de l'Alpe. Au Dôme, on décolle et on atterrit au même endroit, et les thermiques du soir y sont bons. [HS41][S49]",
+        "Ailleurs dans la vallée, vous pouvez vous poser à Jausiers, Restefond – Ravin de Clapouse, Halte 2000, Larche plage et Saint-Ours. [S76][S77]",
+        "Volez Soleil Bœuf le matin et le soir ; il faut un 4x4 pour monter au décollage. [S49]",
+        "Par tendance est ou sud-est, méfiez-vous de la brise qui vient de Larche : elle reste descendante toute la journée. [S80]",
+        "Avant de poser à Jausiers ou à Halte 2000, vérifiez l'absence de chevaux ou de bétail et les dates de foins : à Halte 2000, l'atterrissage est interdit du 15 juin au 31 juillet. [S76][S77]",
+        "Le vol à voile part de l'aérodrome de Saint-Pons : soyez prudents aux croisements de trafic. [S82]",
+        "À Soleil Bœuf, partez à pied vers 7h45 pour décoller entre 10h et 11h au plus tard. Avant 10h, on décolle côté est, puis la brise s'établit côté ouest. Au printemps et en été, la brise de vallée peut empêcher de poser avant 20h.",
+        "À la tête de Parassac, décollez avant 10h, côté ouest seulement : l'est est en cœur du Mercantour. Posez-vous devant le lac des Sagnes, en tenant compte du vent du lac.",
+        "L'école de Barcelonnette cale ses vols sur l'aérologie : Soleille-Bœuf à 8h00, Point de vue à 10h00, Dôme de l'Alpe à 13h30 avec retour vers 17h, et vol du soir à 18h00.",
+        "Dans le cœur du Mercantour, ne descendez pas à moins de 1000 m du sol : seules existent des autorisations individuelles, du 1er août au 15 octobre, dans des zones de la Tinée, hors Ubaye. Le vol à voile y est interdit toute l'année."
       ]
     }
   ],

@@ -858,7 +858,7 @@
       "id": "vercors-nord",
       "name": "Vercors Nord (Saint-Nizier/Moucherotte, Lans, Villard, Corrençon, Méaudre, Autrans, Gorges de la Bourne)",
       "parent_massif": "Préalpes du Nord - Vercors",
-      "summary": "Le plateau de Lans, Villard, Autrans et Méaudre est fermé à l'est par une barrière : le Moucherotte, le Pic Saint-Michel, le Cornafion et la Grande Moucherolle, dont la face est domine Grenoble. À l'ouest, il s'ouvre sur le Royans par les gorges de la Bourne.\n\nL'après-midi, des brises de nord parcourent le massif vers le sud : de Sassenage et Engins vers Lans et Villard, du nord d'Autrans vers Méaudre, du plateau de Rencurel vers le sud, de Saint-Julien vers Saint-Martin. Elles contrent les pilotes qui partent au nord, vers la Vierge du Vercors et les gorges de la Bourne, et les poussent au retour. Elles alimentent très bien les décollages ouest l'après-midi : Saint-Martin, l'Aigle, le Belvédère. Les décollages du matin (Méaudre, les Sagnes, le col de l'Arc, le Pic Saint-Michel côté est) deviennent vite turbulents, dès 11h-11h30.\n\nLa face est déclenche dès le matin (Moucherotte, Pic Saint-Michel, Col Vert), les faces ouest dès 12h (l'Aigle). La crête mène en cross au sud (Gerbier, Grand Veymont) ou au nord (Moucherotte, puis la Chartreuse par le Rachais). Trois passages sont piégeux : le Roc Cornafion, la Vierge du Vercors et le Bec de l'Orient.\n\nÀ respecter : la réserve naturelle des Hauts-Plateaux impose 300 m sol au minimum. L'espace aérien est limité (LTA Vercors FL125, TMA Lyon FL95-115), et des zones de nidification de faucon pèlerin et d'aigle royal bordent les falaises.",
+      "summary": "Le plateau de Lans, Villard, Autrans et Méaudre est fermé à l'est par une barrière : le Moucherotte, le Pic Saint-Michel, le Cornafion et la Grande Moucherolle, dont la face est domine Grenoble. À l'ouest, il s'ouvre sur le Royans par les gorges de la Bourne.\n\nL'après-midi, des brises de nord parcourent le massif vers le sud : de Sassenage et Engins vers Lans et Villard, du nord d'Autrans vers Méaudre, du plateau de Rencurel vers le sud, de Saint-Julien vers Saint-Martin. Elles contrent les pilotes qui partent au nord, vers la Vierge du Vercors et les gorges de la Bourne, et les poussent au retour. Elles alimentent très bien les décollages ouest l'après-midi : Saint-Martin, l'Aigle, le Belvédère. Les décollages du matin (Méaudre, les Sagnes, le col de l'Arc, le Pic Saint-Michel côté est) se volent tôt. Aux Sagnes, on ne décolle plus après 11h30, et à Méaudre une brise locale d'ouest met le décollage sous le vent dès la fin de matinée.\n\nLa face est déclenche dès le matin (Moucherotte, Pic Saint-Michel, Col Vert), les faces ouest dès 12h (l'Aigle). La crête mène en cross au sud (Gerbier, Grand Veymont) ou au nord (Moucherotte, puis la Chartreuse par le Rachais). Trois passages sont piégeux : le Roc Cornafion, la Vierge du Vercors et le Bec de l'Orient.\n\nÀ respecter : la réserve naturelle des Hauts-Plateaux impose 300 m sol au minimum. L'espace aérien est limité (LTA Vercors FL125, TMA Lyon FL95-115), et des zones de nidification de faucon pèlerin et d'aigle royal bordent les falaises.",
       "bbox": [
         5.35,
         44.9,
@@ -1374,7 +1374,7 @@
           "radius_km": 8,
           "coord_quality": "approx",
           "conditions": "Toute l'année ; LTA Vercors FL125, R196B (activable du 16/09 au 30/06).",
-          "description": "La réserve des Hauts-Plateaux du Vercors impose 300 m sol minimum. Elle concerne les sites de la Côte 2000, du Moucherotte, du Pic Saint-Michel, du Cornafion et de Corrençon. Le secteur est aussi soumis à la LTA Vercors FL125 et à la zone R196B GAP (NOTAM), activable du 16/09 au 30/06. Il ne faut pas vacher sur la réserve.",
+          "description": "La réserve des Hauts-Plateaux du Vercors impose 300 m sol minimum. Elle concerne les sites de la Côte 2000, du Moucherotte, du Pic Saint-Michel, du Cornafion et de Corrençon. Le secteur est aussi soumis à la LTA Vercors FL125 et à la zone R196B GAP (NOTAM), activable du 16/09 au 30/06, sauf le mercredi, le week-end et les jours fériés. Il ne faut pas vacher sur la réserve.",
           "sources": [
             "S40",
             "S44",
@@ -3360,7 +3360,7 @@
             }
           ],
           "distance_km": 204,
-          "description": "Itinéraire de 204 km : du Moucherotte, on suit les faces est jusqu'au Petit Veymont, puis on revient vers le Rachais, la Bastille et le Saint-Eynard, avant la Chartreuse par les faces ouest de la Dent de Crolles, jusqu'au Granier. Le plafond du Moucherotte, de 2200 à 2800 m, se prend avant la transition.",
+          "description": "Itinéraire de 204 km : du Moucherotte, on suit les faces est jusqu'au Petit Veymont, puis on revient vers le Rachais, la Bastille et le Saint-Eynard, avant la Chartreuse par les faces ouest de la Dent de Crolles. Le plafond du Moucherotte, de 2200 à 2800 m, se prend avant la transition.",
           "sources": [
             "S9",
             "S195",
@@ -3421,7 +3421,7 @@
         "En cross vers le nord depuis Saint-Martin, la brise vous contre à l'aller et vous pousse au retour : n'insistez pas à la Vierge, revenez prendre de la hauteur [S38].",
         "À la Côte 2000, accrochez le thermique de l'escarpement, à droite du décollage, et laissez-vous dériver avec lui. Ne passez pas le Cornafion par l'est [S38].",
         "Au Cornafion, contournez l'épaule par l'ouest, là où les brises se rencontrent. En fin de saison, gare aux dusts [S46].",
-        "Aux décollages du matin (Méaudre, les Sagnes, le col de l'Arc), posez-vous tôt : dès la fin de matinée, ça devient très turbulent [S42][S47].",
+        "Volez Méaudre et les Sagnes le matin. À Méaudre, une brise locale d'ouest met le décollage sous le vent dès la fin de matinée. Aux Sagnes, ne décollez plus après 11h30 [S42][S47].",
         "Dans les gorges de la Bourne, entre Pertuson et Cumacle, il n'y a aucun vachage sur 3 km : faites votre gain avant la crête [S38].",
         "Zones d'oiseaux : faucon pèlerin de janvier à juillet, aigle royal de janvier à septembre, vautour fauve et gypaète de janvier à août. Restez bien au-dessus des falaises, ou dégagez vite [S49].",
         "Du Néron au Vercors, comptez 1800 m au départ du Néron pour raccrocher au-dessus des lignes à haute tension. Évitez la pointe sud du Néron, sous le vent de la brise de Voreppe [S208].",
@@ -3432,7 +3432,7 @@
       "id": "vercors-est-sud",
       "name": "Vercors Est et Sud (Gresse, Serpaton, Grand Veymont, Mont Aiguille ; Vassieux, Rousset, Font d'Urle ; Royans et Vercors drômois)",
       "parent_massif": "Préalpes du Nord - Vercors",
-      "summary": "Le Balcon Est du Vercors, des Deux Sœurs au Grand Veymont et au Mont Aiguille, domine la vallée de la Gresse et le Trièves. Son site phare est le Serpaton, un col à 1586 m avec trois décollages.\n\nDepuis le Drac, une brise de nord à nord-nord-ouest remonte le vallon de Gresse. Elle est soutenue dès 11h au col du Fau, et le reste tard le soir au Serpaton Ouest. En fin de journée, elle permet d'y voler l'Ouest 500, face ouest à nord-ouest, en thermo-dynamique. Par vent d'ouest, le Serpaton Est, face est à sud, devient turbulent.\n\nAutour du massif, des brises du nord vers le sud le longent sur toute sa longueur, de Saint-Julien, La Chapelle et Vassieux jusqu'au col de Rousset, et le long du Royans. Le Royans et le Vercors drômois (Saint-Jean-en-Royans, Léoncel, Limouches, Musan) se volent l'après-midi, par brise de nord à nord-est ou thermique d'ouest. La vallée du Rhône y pèse et peut renforcer le vent. Les allers-retours jusqu'au Mont Aiguille sont un classique.\n\nÀ respecter : la Réserve naturelle des Hauts-Plateaux impose 300 m sol au minimum, interdit le vachage et borne les crêtes du Brisou, du Mont Aiguille et du Grand Veymont. S'y ajoutent la R196B, activable du 16 septembre au 30 juin, et les zones de sensibilité majeure du gypaète au Glandasse et à Archiane. Le Royans est aussi un espace aérien chargé, autour de l'aérodrome de Saint-Jean-en-Royans.",
+      "summary": "Le Balcon Est du Vercors, des Deux Sœurs au Grand Veymont et au Mont Aiguille, domine la vallée de la Gresse et le Trièves. Son site phare est le Serpaton, un col à 1586 m avec trois décollages.\n\nDepuis le Drac, une brise de nord à nord-nord-ouest remonte le vallon de Gresse. Elle est soutenue dès 11h au col du Fau, et le reste tard le soir au Serpaton Ouest. En fin de journée, elle permet d'y voler l'Ouest 500, face ouest à nord-ouest, en thermo-dynamique. Par vent d'ouest, le Serpaton Est, face est à sud, devient turbulent.\n\nAutour du massif, des brises du nord vers le sud le longent sur toute sa longueur, de Saint-Julien, La Chapelle et Vassieux jusqu'au col de Rousset, et le long du Royans. Le Royans et le Vercors drômois (Saint-Jean-en-Royans, Léoncel, Limouches, Musan) se volent l'après-midi, par brise de nord à nord-est ou thermique d'ouest. La vallée du Rhône y pèse et peut renforcer le vent. Les allers-retours jusqu'au Mont Aiguille sont un classique.\n\nÀ respecter : la Réserve naturelle des Hauts-Plateaux impose 300 m sol au minimum, interdit le vachage et borne les crêtes du Brisou, du Mont Aiguille et du Grand Veymont. S'y ajoutent la R196B, activable du 16 septembre au 30 juin sauf le mercredi, le week-end et les jours fériés, et la zone de sensibilité majeure du gypaète au Glandasse, du 1er novembre au 31 août. Celle d'Archiane a été désactivée au 1er mars, faute de couple nicheur. Le Royans est aussi un espace aérien chargé, autour de l'aérodrome de Saint-Jean-en-Royans.",
       "bbox": [
         5.1,
         44.7,
@@ -3800,7 +3800,7 @@
             "S51",
             "S49"
           ],
-          "note": "Saison de reproduction de janvier au 31 août au plus tard, avec levée de la restriction en cas d'échec ; observations de 2025 ; position indicative et approximative, à vérifier sur les fichiers officiels des ZSM."
+          "note": "Règles de 2026 : la ZSM du Glandasse court du 1er novembre au 31 août, et les zones sans couple nicheur ont été désactivées au 1er mars. En 2025, les deux zones étaient publiées, pour une saison de reproduction de janvier au 31 août au plus tard, avec levée de la restriction en cas d'échec. Position indicative et approximative, à vérifier sur les fichiers officiels des ZSM."
         },
         {
           "id": "garandons-atterro-turbulent",
@@ -5060,7 +5060,7 @@
       "id": "trieves",
       "name": "Trièves (Mens, Monestier-de-Clermont, Clelles, Courtet, col de la Croix-Haute, Lalley)",
       "parent_massif": "Préalpes - Trièves",
-      "summary": "Le Trièves est un bassin ouvert, entre la barrière est du Vercors (Mont Aiguille, Grand Veymont) d'un côté, l'Obiou, le Grand Ferrand et le Dévoluy de l'autre.\n\nUne brise descend du Drac vers le Trièves, puis vers le col de la Croix-Haute, par Monestier-de-Clermont, Saint-Maurice, Lalley et Lus-la-Croix-Haute. Une brise du Diois remonte par le col de Menée vers Le Percy. Le vent de nord du lac de Monteynard viendrait de la forte chaleur au fond du Trièves.\n\nCourtet, face nord à nord-ouest à 1365 m, au pied de la face ouest de l'Obiou, est le site refuge. Protégé du vent du nord, il permet de voler quand le reste de l'Isère est cloué au sol. Le Châtel de Mens (nord, sud, sud-ouest, ouest, nord-ouest, 1918 m) et Rochassac complètent les décollages. L'atterrissage du Châtel à Mens n'est plus autorisé.\n\nLes allers-retours vers le Vercors, notamment jusqu'au Mont Aiguille, sont un classique depuis le Serpaton et le Trièves. Respectez la réserve des Hauts-Plateaux.",
+      "summary": "Le Trièves est un bassin ouvert, entre la barrière est du Vercors (Mont Aiguille, Grand Veymont) d'un côté, l'Obiou, le Grand Ferrand et le Dévoluy de l'autre.\n\nUne brise de nord remonte du Drac vers le Trièves, puis jusqu'au col de la Croix-Haute, par Monestier-de-Clermont, Saint-Maurice, Lalley et Lus-la-Croix-Haute. Une brise du Diois remonte par le col de Menée vers Le Percy. Le vent de nord du lac de Monteynard viendrait de la forte chaleur au fond du Trièves.\n\nCourtet, face nord à nord-ouest à 1365 m, au pied de la face ouest de l'Obiou, est le site refuge. Protégé du vent du nord, il permet de voler quand le reste de l'Isère est cloué au sol. Le Châtel de Mens (nord, sud, sud-ouest, ouest, nord-ouest, 1918 m) et Rochassac complètent les décollages. L'atterrissage du Châtel à Mens n'est plus autorisé.\n\nLes allers-retours vers le Vercors, notamment jusqu'au Mont Aiguille, sont un classique depuis le Serpaton et le Trièves. Respectez la réserve des Hauts-Plateaux.",
       "bbox": [
         5.4,
         44.55,
@@ -5114,7 +5114,7 @@
             "max": null
           },
           "season": "été",
-          "description": "Des flèches N→S, sur les cartes du Vercors, descendent le Trièves, franchissent le col de la Croix-Haute et se poursuivent vers le Buëch. Le sens est cohérent avec la brise de nord du Drac et de Monteynard.",
+          "description": "Des flèches N→S, sur les cartes du Vercors, remontent le Trièves vers le sud, franchissent le col de la Croix-Haute et se poursuivent vers le Buëch. Le sens est cohérent avec la brise de nord du Drac et de Monteynard.",
           "confidence": "medium",
           "sources": [
             "S48",
@@ -5174,11 +5174,11 @@
           "coord_quality": "source",
           "ffvl_id": 854,
           "conditions": "Période de chasse : aucun véhicule sur la piste avant 13h00 les jeudi, samedi et dimanche.",
-          "description": "Pendant la période de chasse, aucun véhicule ne circule sur la piste avant 13h00 les jeudi, samedi et dimanche : on peut décoller avant 13h en montant à pied. Hors période de chasse, le site est ouvert sans restriction.",
+          "description": "Pendant la période de chasse, aucun véhicule ne circule sur la piste avant 13h00 : on peut décoller avant 13h en montant à pied. Hors période de chasse, le site est ouvert sans restriction.",
           "sources": [
             "S169"
           ],
-          "note": "Le câble de transport sous la bergerie de Rochassac est démonté."
+          "note": "Le câble de transport sous la bergerie de Rochassac est démonté. La fiche consultée ne précise pas les jours de chasse."
         },
         {
           "id": "chatel-atterro-interdit",
@@ -5674,7 +5674,7 @@
         },
         {
           "wind": "N",
-          "effect": "Par nord, Courtet (nord, nord-ouest) et le Châtel (nord) marchent. L'après-midi, la brise descend le Trièves du nord vers le sud, jusqu'à la Croix-Haute.",
+          "effect": "Par nord, Courtet (nord, nord-ouest) et le Châtel (nord) marchent. L'après-midi, la brise de nord remonte le Trièves vers le sud, jusqu'au col de la Croix-Haute.",
           "sources": [
             "S169",
             "S173",
@@ -5919,7 +5919,7 @@
       ],
       "tips": [
         "Par bise, repliez-vous sur Courtet (nord, nord-ouest), protégé du nord, mais n'y volez pas par sud-est ou sud [S8][S21][S169].",
-        "À Courtet, les jeudis, samedis et dimanches de chasse, aucun véhicule ne monte la piste avant 13h : montez à pied pour décoller plus tôt [S169].",
+        "À Courtet, pendant la période de chasse, aucun véhicule ne monte la piste avant 13h : montez à pied pour décoller plus tôt [S169].",
         "Ne vous posez pas sur le champ du Châtel à Mens : son propriétaire est opposé aux pilotes [S174].",
         "Du Jocou vers l'Obiou, faites le plafond devant le décollage, puis cap plein est sur l'antenne de l'émetteur. Avant le Mesnil, cherchez où ça monte [S205]."
       ]

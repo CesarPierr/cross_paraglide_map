@@ -5,13 +5,13 @@
     {
       "chapter": "Le massif",
       "title": "Bienvenue dans les Baronnies, un site pour chaque vent",
-      "text": "Bienvenue dans les Baronnies, des Préalpes provençales sèches entre l'Eygues, l'Ouvèze et la Méouge. C'est l'un des secteurs les plus polyvalents des Alpes du Sud. À Séderon–Mévouillon, sept décollages et atterrissages couvrent toutes les orientations, et l'école locale forme plus de 200 pilotes par an. L'été, une brise d'ouest venue de la vallée du Rhône règne l'après-midi. La journée type tient en trois vols : Le Fort ou Bergiès sud le matin, un cross de Bergiès nord à midi, la restitution du soir à Buc. Suivons-la, puis voyons les pièges et les vents.",
+      "text": "Bienvenue dans les Baronnies, des Préalpes provençales sèches entre l'Eygues, l'Ouvèze et la Méouge. C'est l'un des secteurs les plus polyvalents des Alpes du Sud. L'école de Mévouillon compte huit sites de vol, de toutes orientations, à moins de 20 minutes, et trois pentes école. Elle forme plus de 200 pilotes par an. L'été, une brise d'ouest venue de la vallée du Rhône règne l'après-midi. La journée type tient en trois vols : Le Fort ou Bergiès sud le matin, un cross de Bergiès nord à midi, la restitution du soir à Buc. Suivons-la, puis voyons les pièges et les vents.",
       "focus": [],
       "view": "massif"
     },
     {
       "chapter": "La journée de l'air",
-      "title": "Le matin, le Pontias descend et les faces est s'éveillent",
+      "title": "Le matin, le Pontias et les faces est",
       "text": "Le matin, un vent frais arrive à Nyons : c'est le Pontias, sans doute l'air de la vallée de l'Eygues qui descend. La légende le fait naître d'un rocher près de la chapelle Notre-Dame de Réparat. À Buc, la brise d'est du matin rend La Tanière thermique dès le milieu de matinée. Le Fort, face est, est le site du matin de Séderon. Bergiès sud, une falaise chauffée par le soleil du matin, est plus raide et permet de partir plus tôt par vent de sud.",
       "focus": ["pontias", "brise-est-matin-buc", "buc-est-taniere", "fort", "therm-berges-sud"],
       "phase": "morning"
@@ -25,8 +25,8 @@
     },
     {
       "chapter": "La journée de l'air",
-      "title": "Dès 14 h, l'ouest du Rhône prend la main",
-      "text": "À Buc, le vent vire presque toujours à l'ouest à partir de 14 h, même un jour d'est, et plus tôt par flux d'ouest ou de nord-ouest : c'est l'influence de la vallée du Rhône. Les brises d'ouest remontent l'Eygues, l'Ouvèze et la Méouge, tracées sur une carte collaborative peu documentée. Buc ouest commence alors à marcher : après deux heures de chasse aux thermiques, souvent conclues par un cross, l'air se lisse. À Bergiès sud, comme à Laragne, le vent passe à l'ouest en début d'après-midi. Prudence pendant la bascule, puis repliez-vous sur Buc.",
+      "title": "L'après-midi, l'ouest du Rhône prend la main",
+      "text": "L'après-midi, le vent vire presque toujours à l'ouest sur Buc, même un jour d'est : c'est l'influence de la vallée du Rhône. Les brises d'ouest remontent l'Eygues, l'Ouvèze et la Méouge, tracées sur une carte collaborative peu documentée. Vers 14 h, plus tôt par flux d'ouest ou de nord-ouest, Buc ouest commence à marcher : après deux heures de chasse aux thermiques, souvent conclues par un cross, l'air se lisse. À Bergiès sud, comme à Laragne, le vent passe à l'ouest en début d'après-midi. Prudence pendant la bascule, puis repliez-vous sur Buc.",
       "focus": ["brise-ouest-seron", "brise-eygues", "brise-ouveze", "therm-buc-ouest-aprem"],
       "phase": "afternoon"
     },
@@ -54,7 +54,7 @@
     {
       "chapter": "Les sites",
       "title": "Ventoux, Sault, Beaumont : la périphérie",
-      "text": "Au Mont Ventoux, le vent choisit le versant. Le décollage nord, vers le Mont Serein, regarde le nord à nord-ouest. Au sud, Les Crêtes et La Chapelle regardent le sud-est à sud. Les Crêtes sont pour pilotes confirmés, et La Chapelle est fortement déconseillée par vent nul. La zone R71 limite le vol à FL75, soit 2 250 m au plus en semaine. Le Rissas, à Beaumont-du-Ventoux, est un petit soaring de 180 m par brise de sud. À Sault, Saint-Jean de Durfort se vole en brise d'ouest. Au Seigneur, à Monieux, le décollage nord-est à est accueille les débutants.",
+      "text": "Au Mont Ventoux, le vent choisit le versant. Le décollage nord, vers le Mont Serein, regarde le nord à nord-ouest. Au sud, Les Crêtes et La Chapelle regardent le sud-est à sud. Les Crêtes sont pour pilotes confirmés, et La Chapelle est fortement déconseillée par vent nul. La zone R71 limite le vol à FL75, soit environ 2 290 m, en semaine. Le Rissas, à Beaumont-du-Ventoux, est un petit soaring de 180 m par brise de sud. À Sault, Saint-Jean de Durfort se vole en brise d'ouest. Au Seigneur, à Monieux, le décollage nord-est à est accueille les débutants.",
       "focus": ["ffvl1764-ventoux-nord", "ffvl1767-ventoux-sud-cretes", "ffvl13509-ventoux-sud-chapelle", "ffvl13236-le-rissas", "ffvl1745-saint-jean-durfort", "ffvl13469-le-seigneur"],
       "phase": "afternoon"
     },
@@ -100,7 +100,7 @@
     {
       "chapter": "Selon le vent météo",
       "title": "Par sud ou par est, partir tôt",
-      "text": "Par sud, Bergiès sud, Buc et La Trappe permettent de partir tôt. Par sud faible, le col de Milmandre marche bien, si l'on prévoit le passage à l'ouest en début d'après-midi. Par sud-est, Milmandre accepte du sud-est à l'ouest, mais les rouleaux rendent Soubeyrand dangereux. Par est, Buc est et Le Fort servent en brise du matin. L'ouest revient pourtant à Buc dès 14 h, même un jour d'est.",
+      "text": "Par sud, Bergiès sud, Buc et La Trappe permettent de partir tôt. Par sud faible, le col de Milmandre marche bien, si l'on prévoit le passage à l'ouest en début d'après-midi. Par sud-est, Milmandre accepte du sud-est à l'ouest, mais les rouleaux rendent Soubeyrand dangereux. Par est, Buc est et Le Fort servent en brise du matin. L'ouest revient pourtant sur Buc l'après-midi, même un jour d'est.",
       "focus": ["therm-berges-sud", "trappe", "milmandre", "soubeyrand-se", "buc-est-taniere", "fort"],
       "wind": { "from": "S", "kmh": 10 },
       "phase": "morning",
@@ -109,7 +109,7 @@
     {
       "chapter": "Les transitions",
       "title": "Vers Chabre, Sisteron et Saint-André",
-      "text": "La vallée est le tremplin classique vers Chabre : depuis Buc, on traverse vers la crête de Laragne-Chabre. Partir des Baronnies vers le Buëch et la Durance est facile. Revenir vers Nyons depuis le rocher de Beaumont, c'est tout face à la brise, nettement plus corsé, sauf rue de nuages exceptionnelle. Plus loin, des vols de plus de 100 km ont rejoint Colmars-les-Alpes ou Saint-André-les-Alpes. À retenir : le matin à l'est, à midi au nord, l'ouest dès 14 h, et pas de sud-est à Soubeyrand.",
+      "text": "La vallée est le tremplin classique vers Chabre : depuis Buc, on traverse vers la crête de Laragne-Chabre. Partir des Baronnies vers le Buëch et la Durance est facile. Revenir vers Nyons depuis le rocher de Beaumont, c'est tout face à la brise, nettement plus corsé, sauf rue de nuages exceptionnelle. Plus loin, des vols de plus de 100 km ont rejoint Colmars-les-Alpes ou Saint-André-les-Alpes. À retenir : le matin à l'est, à midi au nord, l'ouest l'après-midi, et pas de sud-est à Soubeyrand.",
       "focus": ["xc-berges-saint-andre", "beaumont-nyons-face-brise", "buech-laragne-chabre/therm-chabre-crete", "buech-laragne-chabre/therm-beaumont"],
       "view": "massif"
     }

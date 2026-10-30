@@ -5,7 +5,7 @@
       "id": "devoluy",
       "name": "Dévoluy (Superdévoluy, Obiou, Pic de Bure, Aurouze)",
       "parent_massif": "Préalpes du Sud",
-      "summary": "Le Dévoluy ne se vole que par météo faible. Ce haut massif calcaire (Obiou, Pic de Bure, Aurouze) n'est abrité ni du mistral ni des flux de nord, et il garde volontiers le brouillard par tendance nord. Les parapentistes y viennent très peu.\n\nL'été, une brise de vallée très forte remonte du Buëch par Veynes et le col du Festre jusqu'au plateau de Superdévoluy. Elle vient du sud et met le plateau d'Aurouze et la station sous le vent de la tête de Pied Gros, dans un air très turbulent. Le moteur du massif, c'est le Pic de Bure : sa face sud peut monter très fort. Au col du Noyer, décollage est du matin, on a déjà dépassé 4000 m de plafond.\n\nLes sites sont peu nombreux. La crête des Baumes et le Collet du Tât, face ouest et nord-ouest, servent au soaring d'été et de plan B quand l'ouest est trop fort dans le Buëch. Le col du Noyer se vole le matin, face est. Le col des Faïsses et Courtet lancent les cross. Le reste se fait en vol rando : Bure, Chauvet, Gicon. Le Dévoluy est surtout une zone de transit. Les cross venus du Diois ou de Chabre le traversent par la Jarjatte, la tête de Vachères, la tête de la Cluse et le Bure, puis filent vers Veynes ou Gap.\n\nLe massif se quitte mal. Coincé dedans, on en a pour 3/4 h de voiture : prévoyez une sortie au nord ou au sud, vers Veynes ou Gap. La station n'a pas d'atterrissage officiel, entre l'altiport, les lignes et les pistes. L'été, patous et troupeaux occupent les crêtes.",
+      "summary": "Le Dévoluy ne se vole que par météo faible. Ce haut massif calcaire (Obiou, Pic de Bure, Aurouze) n'est abrité ni du mistral ni des flux de nord, et il garde volontiers le brouillard par tendance nord. Les parapentistes y viennent très peu.\n\nL'été, les brises de vallée peuvent être très fortes. Sur le plateau d'Aurouze, la brise a été vue venir du sud. La faire venir de Veynes par le col du Festre n'est qu'une déduction. Un jour d'août, elle mettait la station un peu sous le vent de la tête de Pied Gros, et ça turbulait pas mal. Le moteur du massif, c'est le Pic de Bure : sa face sud peut monter très fort. Au col du Noyer, décollage est du matin, on a déjà dépassé 4000 m de plafond.\n\nLes sites sont peu nombreux. La crête des Baumes et le Collet du Tât, face ouest et nord-ouest, servent au soaring d'été et de plan B quand l'ouest est trop fort dans le Buëch. Le col du Noyer se vole le matin, face est. Le col des Faïsses et Courtet lancent les cross. Le reste se fait en vol rando : Bure, Chauvet, Gicon. Le Dévoluy est surtout une zone de transit. Un vol venu du Diois l'a traversé par la Jarjatte, la tête de Vachères, la tête de la Cluse et le Bure, avant de se poser près de Veynes. Le Bure se raccroche aussi depuis Chabre.\n\nLe massif se quitte mal : coincé dedans, il faut 3/4 h de voiture pour en sortir, et l'hiver seules deux routes, au nord et au sud, restent ouvertes. La station n'a pas d'atterrissage officiel, entre l'altiport, les lignes et les pistes. L'été, patous et troupeaux occupent les crêtes.",
       "bbox": [
         5.76,
         44.58,
@@ -59,7 +59,7 @@
             "max": 30
           },
           "season": "été",
-          "description": "En été, une brise de vallée très forte remonte du Buëch vers le plateau de Superdévoluy, en venant surtout du sud. Un schéma de brises montre des flux qui alimentent le Pic de Bure depuis Céüse et Veynes, ce qui confirme cette alimentation par le sud.",
+          "description": "L'été, les brises de vallée peuvent être très fortes dans le massif. Sur le plateau d'Aurouze, la brise a été vue venir du sud. Un schéma de brises montre des flux qui alimentent le Pic de Bure depuis Céüse et Veynes.",
           "confidence": "medium",
           "sources": [
             "S28",
@@ -68,7 +68,7 @@
             "S61"
           ],
           "possible": [
-            "Il arrive que la brise tende à venir du sud : la station se trouve alors sous le vent de la tête de Pied Gros."
+            "Un jour d'août, la brise venait du sud : la station était alors un peu sous le vent de la tête de Pied Gros, et ça turbulait pas mal."
           ],
           "note": "Tracé par le col du Festre et vitesses déduits : le schéma ne donne pas le tracé exact, et les vitesses sont une interprétation de « très fortes »."
         }
@@ -131,11 +131,12 @@
           "lat": 44.665,
           "radius_km": 3,
           "conditions": "Brise de vallée de sud, été",
-          "description": "Par brise de vallée du sud, le plateau d'Aurouze et la station se trouvent sous le vent de la tête de Pied Gros : l'air y est très turbulent.",
+          "description": "Par brise de vallée du sud, le plateau d'Aurouze et la station peuvent se trouver un peu sous le vent de la tête de Pied Gros.",
           "sources": [
             "S29"
           ],
           "possible": [
+            "Un jour d'août, ça turbulait pas mal une fois en l'air, au départ de la station.",
             "Au sommet du télésiège de la Festoure, à 2200 m, on peut décoller du bout du plateau, un peu de travers, pour rester dans la brise de vallée, qui domine la brise de pente.",
             "L'atterrissage au centre du village peut être turbulent."
           ]
@@ -218,7 +219,7 @@
             "S183"
           ],
           "possible": [
-            "Par nord modéré, il vaut mieux renoncer : la bise, la brise et le vent peuvent se cumuler et devenir très forts.",
+            "Par nord modéré, souvent à tendance ouest, il vaut mieux renoncer : la bise, la brise et le vent peuvent se cumuler et devenir très forts.",
             "En régime de sud, il faut être attentif aux brebis, aux patous et aux bergers des alpages.",
             "Le Pic Pierroux se coiffe souvent de nuages orographiques."
           ]
@@ -240,8 +241,8 @@
             "S30"
           ],
           "possible": [
-            "Il arrive que la face sud, presque saine, monte à +3 sur 1 km de large, avec des noyaux à +6.",
-            "Les plafonds de 3000 m ont été atteints par des planeurs au-dessus du Pic de Bure."
+            "Un jour d'août, la face sud, presque saine, montait à +3 sur 1 km de large, avec des noyaux à +6.",
+            "Les vols de baptême en planeur de Tallard survolent le Pic de Bure."
           ]
         },
         {
@@ -404,9 +405,6 @@
             "S28",
             "S29",
             "S146"
-          ],
-          "possible": [
-            "Il est conseillé de voler ici vers la fin de l'après-midi."
           ]
         },
         {
@@ -535,7 +533,7 @@
           "coord_quality": "approx",
           "possible": [
             "Le vol rando monte d'environ 1500 m de dénivelée par la combe d'Aurouze, depuis les Sauvas, en 2h30 à 4h.",
-            "Le matin, le vent d'est peut souffler en rafales."
+            "Un matin de juin, le vent d'est soufflait de travers en rafales."
           ],
           "note": "Position ramenée sur la pente sud sous l'observatoire (terrain IGN 2360 m), approximative. La position précédente était le sommet (terrain IGN 2677 m pour 2500 m déclarés). Le décollage est placé sous les antennes de l'observatoire du plateau de Bure (2553 m)."
         },
@@ -633,7 +631,7 @@
           "coord_quality": "approx",
           "possible": [
             "L'atterrissage envisagé est sur le plateau de Pellafol.",
-            "Par sud, il faut se méfier du venturi du col ; par nord modéré, la bise, la brise et le vent peuvent être très forts.",
+            "Par sud, il faut se méfier du venturi du col ; par nord modéré, souvent à tendance ouest, la bise, la brise et le vent peuvent être très forts.",
             "Il faut prévoir les brebis, les patous et les bergers des alpages, en régime de sud."
           ],
           "note": "Décollage non vérifié. Position du col (OSM), altitude approximative."
@@ -701,14 +699,14 @@
         },
         {
           "wind": "S",
-          "effect": "L'été, la brise de vallée du sud souffle très fort et met le plateau d'Aurouze et la station sous le vent. La face sud du Bure devient très thermique : elle peut monter de +3 à +6.",
+          "effect": "Par sud, quand le vent rentre dans le massif, le col de l'Aup fait venturi. En régime de sud, prévoyez aussi les brebis, les patous et les bergers des alpages.",
           "sources": [
             "S29"
           ]
         },
         {
           "wind": "E",
-          "effect": "Le col du Noyer, face est, ne se vole que le matin ou par régime d'est faible. Sur le plateau du Bure, l'est peut souffler en rafales. Le Chauvet, face nord-est, se fait en vol rando.",
+          "effect": "Le col du Noyer, face est, ne se vole que le matin ou par régime d'est faible. Sur le plateau du Bure, un matin de juin, l'est soufflait en rafales. Le Chauvet, face nord-est, se fait en vol rando.",
           "sources": [
             "S63",
             "S70",
@@ -734,7 +732,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Le col de l'Aup est envisagé par nord-ouest modéré, sans avoir été vérifié. La bise, la brise et le vent peuvent alors y être très forts. Le Pic Pierroux se coiffe souvent de nuages orographiques.",
+          "effect": "Le col de l'Aup a été envisagé par nord-ouest modéré, sans avoir été volé. Par nord modéré, souvent à tendance ouest, mieux vaut y renoncer : bise, brise et vent s'additionnent et peuvent devenir très forts. Le Pic Pierroux se coiffe souvent de nuages orographiques.",
           "sources": [
             "S183"
           ]
@@ -818,19 +816,19 @@
       ],
       "tips": [
         "Ne volez le Dévoluy que par météo faible : rien n'y abrite du mistral [S28].",
-        "Au décollage de Superdévoluy, attendez un cycle calme : l'été, la brise de vallée peut être très forte [S28].",
+        "Au col du Noyer, gare aux brises de vallée : l'été, elles peuvent être très fortes [S29].",
         "Des vols biplaces partent de Superdévoluy [S45].",
         "Pour décoller de la station, repérez d'abord le sens de la brise, qui vient du sud. Placez-vous en bout de plateau, un peu de travers, pour rester dans la brise de vallée [S29].",
         "Au col du Noyer, partez tôt et n'insistez pas passé le matin. Ne vous posez pas dans les champs cultivés [S63].",
-        "N'entrez pas dans le Dévoluy sans savoir comment en sortir, vers Veynes ou Gap : coincé dedans, on en a pour 3/4 h de voiture [S28][S83].",
-        "Au Pic de Bure en vol rando, décollez tôt, par vent d'est de travers, et visez l'oasis herbeux de la face sud : le vent y tourne dans tous les sens [S70]."
+        "Coincé dans le Dévoluy, il faut 3/4 h de voiture pour en sortir, et l'hiver seules deux routes, au nord et au sud, restent ouvertes. Un vol venu du Diois s'est posé près de Veynes [S28][S83].",
+        "Au Pic de Bure en vol rando, on décolle de l'oasis herbeux de la face sud, sous l'observatoire, où le vent tourne dans tous les sens. Un matin de juin, l'est y soufflait de travers en rafales [S70]."
       ]
     },
     {
       "id": "champsaur-valgaudemar",
       "name": "Champsaur et Valgaudemar (Saint-Léger-les-Mélèzes, Ancelle, Chaillol, Laye, Drac)",
       "parent_massif": "Écrins (bordure sud)",
-      "summary": "Le Champsaur, haute vallée du Drac, est un large bocage très ensoleillé : 300 jours de soleil. Le Vieux Chaillol le domine au nord. Son aérologie a bonne réputation depuis 20 ans.\n\nLe site de référence, c'est le Cuchon d'Ancelle. Il fait du soaring par sud et sud-ouest, et l'été sa restitution du soir est excellente, surtout quand un peu de sud renforce la brise. Les Richards (sud-ouest, 1540 m) lancent les cross vers Grenoble ou Savines. Orcières, avec ses cairns, garde une brise forte jusqu'en début de soirée. Ces deux sites complètent les faces ouest. Deux appels opposés tirent les brises : la brise du Drac, qui remonte de Vizille vers Corps, et le flux du col Bayard, côté cuvette de Gap, dont le sens reste incertain.\n\nÀ Orcières, le matin est très calme, puis la brise s'installe pour la journée. Aux Richards, elle arrive parfois de façon chaotique, et si un nord s'y ajoute, l'atterrissage devient infréquentable. Le col du Noyer (Dévoluy) et le Puy de Manse bordent le secteur. Le Valgaudemar, encaissé, n'est documenté que par une flèche de brise depuis Saint-Firmin, et l'on n'y connaît aucun site de vol officiel.\n\nLe parcours classique vers Grenoble passe par le Cuchon, les Richards, le Grun de Saint-Maurice, La Salette et le Colombier, avec des plafonds au-delà de 3000 m. Méfiez-vous de la brise sur la transition du Colombier au Coiro. À respecter : le Puy de Manse est interdit du 1er juin au 15 novembre, le parc national des Écrins voisin impose sa réglementation, et le Vieux Chaillol ne se décolle que plein sud.",
+      "summary": "Le Champsaur, haute vallée du Drac, est un large bocage très ensoleillé : 300 jours de soleil. Le Vieux Chaillol le domine au nord. Son aérologie a bonne réputation depuis 20 ans.\n\nLe site de référence, c'est le Cuchon d'Ancelle. Il fait du soaring par sud et sud-ouest, et l'été sa restitution du soir est excellente, surtout quand un peu de sud renforce la brise. Les Richards (sud-ouest, 1540 m) lancent les cross vers Grenoble ou Savines. Orcières, avec ses cairns, garde une brise forte jusqu'en début de soirée. Ces deux sites complètent les faces ouest. Deux appels opposés tirent les brises : la brise du Drac, qui remonte de Vizille vers Corps, et le flux du col Bayard, côté cuvette de Gap, dont le sens reste incertain.\n\nÀ Orcières, le matin est très calme, puis la brise s'installe pour la journée. Aux Richards, elle arrive parfois de façon chaotique, et si un nord s'y ajoute, l'atterrissage devient infréquentable. Le col du Noyer (Dévoluy) et le Puy de Manse bordent le secteur. Le Valgaudemar, encaissé, n'a aucun site de vol officiel connu : on y vole en rando, à l'Olan ou au col de Pétarel, et l'on se pose à La Chapelle. Une brise y remonte de Saint-Firmin.\n\nLe parcours classique vers Grenoble passe par le Cuchon, les Richards, le Grun de Saint-Maurice, La Salette et le Colombier, avec des plafonds au-delà de 3000 m. Méfiez-vous de la brise sur la transition du Colombier au Coiro. À respecter : le Puy de Manse est interdit du 1er juin au 15 novembre, le parc national des Écrins voisin impose sa réglementation, et au Vieux Chaillol, le Parc impose de voler vers le sud.",
       "bbox": [
         5.95,
         44.58,
@@ -1030,7 +1028,7 @@
             "S209"
           ],
           "possible": [
-            "Le soir, vers 17h30, par conditions anémiques, on peut décoller du cairn d'Orcières et filer vers l'arête boisée pour chercher cette confluence : le soaring et les thermiques doux durent alors au moins une heure.",
+            "Un soir de septembre, vers 17h30, par conditions anémiques, un groupe a décollé du cairn d'Orcières et filé vers l'arête boisée pour chercher cette confluence : soaring et thermiques doux ont duré au moins une heure.",
             "Un grand champ se trouve au croisement des vallées du Drac Blanc et du Drac Noir."
           ],
           "note": "Géométrie indicative, reliant l'entrée de la vallée de Champoléon (Les Gondouins) au Pont-du-Fossé : la confluence n'est pas localisée précisément."
@@ -1058,7 +1056,7 @@
           "lat": 44.6707,
           "radius_km": 1,
           "conditions": "Dès le début de l'après-midi (été)",
-          "description": "Aux Richards, la brise arrive dès le début de l'après-midi, et l'atterrissage est technique, près de lignes électriques ; par sud prononcé, il est turbulent, avec un fort gradient, surtout pour les biplaces. Le champ voisin est interdit aux parapentes : il faut lire les panneaux, et le « bocal » est bien protégé du nord par les Écrins. Le parc national des Écrins est à 1 km derrière le décollage, et l'on y trouve des zones de nidification de l'aigle royal.",
+          "description": "Aux Richards, la brise arrive dès le début de l'après-midi, et l'atterrissage est technique, près de lignes électriques ; par sud prononcé, il est turbulent, avec un fort gradient, surtout pour les biplaces. Le champ voisin est interdit aux parapentes : il faut lire les panneaux. Le parc national des Écrins est à 1 km derrière le décollage, et l'on y trouve des zones de nidification de l'aigle royal.",
           "sources": [
             "S68",
             "S194"
@@ -1294,8 +1292,8 @@
             "S209"
           ],
           "possible": [
-            "Par conditions anémiques, on peut décoller du cairn d'Orcières vers 17h30 et filer vers cette arête.",
-            "Ça remonte paisiblement, et l'on peut faire au moins une heure de soaring et de thermiques doux, dans la lumière qui baisse."
+            "Un soir de septembre, par conditions anémiques, un groupe a décollé du cairn d'Orcières vers 17h30 pour filer vers cette arête.",
+            "Ça remontait paisiblement, pour au moins une heure de soaring et de thermiques doux, dans la lumière qui baisse."
           ],
           "note": "Position : Les Gondouins (IGN). L'arête n'est pas localisée précisément."
         },
@@ -1884,7 +1882,7 @@
         },
         {
           "wind": "N",
-          "effect": "Par nord faible, les Richards restent volables, mais si le nord s'ajoute à la brise en bas, leur atterrissage devient infréquentable. Le col du Palastre est protégé du nord. Le Cuchon offre des faces nord en fin de journée, en régime de nord depuis le sommet. Orcières peut voler par nord fort, et un groupe peut se replier du col du Noyer vers les Richards, plus protégés.",
+          "effect": "Par nord faible, les Richards restent volables, mais si le nord s'ajoute à la brise en bas, leur atterrissage devient infréquentable. Le col du Palastre est protégé du nord. Le Cuchon offre des faces nord en fin de journée, en régime de nord depuis le sommet. Orcières passerait par nord fort, contre l'avis de la fiche du cairn ouest. Un groupe peut se replier du col du Noyer vers les Richards, plus protégés.",
           "sources": [
             "S68",
             "S24",
@@ -2119,7 +2117,7 @@
         "À Orcières, vous ne voyez pas l'atterrissage pendant les 100 premiers mètres de vol [S151].",
         "À Orcières, profitez du matin très calme et soyez posé à midi : la brise s'installe ensuite pour la journée. Surveillez la houle sur le petit lac près de l'atterrissage.",
         "Aux Richards, la brise est bonne par sud mais trop forte une fois installée par vent d'ouest. Si un nord s'ajoute à la brise, l'atterrissage devient infréquentable.",
-        "Au Vieux Chaillol, décollez du sommet plein sud uniquement. Passez le col de la Pisse haut, puis gardez la dernière arête à l'ombre pour rejoindre le Frêne.",
+        "Au Vieux Chaillol, volez vers le sud, comme l'impose le Parc. Passez le col de la Pisse haut, puis gardez la dernière arête à l'ombre pour rejoindre le Frêne.",
         "Dans le Valgaudemar, vallée raide à la brise bruyante, posez-vous dans les grands champs plats de La Chapelle plutôt qu'en pente. En fin d'après-midi, vous y aurez 10 à 15 km/h de brise.",
         "Entre le Colombier et le Coiro, méfiez-vous de la brise de Valbonnais. Arrivez avec de la marge pour pouvoir vous refaire à Entraigues."
       ]
@@ -2128,7 +2126,7 @@
       "id": "gapencais-ceuse",
       "name": "Gapençais et Céüse (Gap, Charance, Céüse, Tallard, Col Bayard)",
       "parent_massif": "Préalpes du Sud",
-      "summary": "Gap est un carrefour. La ville occupe une cuvette où se rejoignent trois brises : celle de la Durance par Tallard, celle du Buëch par le col de la Freissinouse et Veynes, celle du Champsaur par le col Bayard.\n\nLe matin, on décolle avant la brise, à Guizière (est et sud-est) ou à la Tête de la Clape (sud-est et sud). Charance prend ensuite le relais : il est excellent par régime de sud et lance les cross vers le massif de Bure. Le soir, on y vole en restitution.\n\nLa falaise de Céüse est le moteur thermique classique. Les planeurs de Gap-Tallard partent vers la Petite Céüse, puis remontent les falaises jusqu'à la Grande Céüse, avec des plafonds de 2200 à 2500 m, et jusqu'à 3000 m. Le micro-climat de Tallard permet aussi de voler en onde. Les schémas de brises montrent des flux qui remontent les faces sud de Céüse, de Céüsette, de la Malaup et du Serre Soleil. Par mistral, ils montrent des rotors autour de l'aérodrome et sous la Malaup.\n\nRabou (ouest et nord-ouest) et le Puy de Manse sont des sites de brise et de vent d'ouest. Par régime de nord, Charance et Guizière sont dangereux. À respecter : la base ALAT et l'aérodrome de Gap-Tallard, et les zones R196 activables par NOTAM.",
+      "summary": "Gap est un carrefour de trois vallées : la Durance arrive par Tallard, le Buëch par le col de la Freissinouse et Veynes, le Champsaur par le col Bayard. Des schémas de brises font se rejoindre leurs trois brises au-dessus de la cuvette, avec une géométrie très approximative.\n\nLe matin, on décolle avant la brise, à Guizière (est et sud-est) ou à la Tête de la Clape (sud-est et sud). Charance prend ensuite le relais : il est excellent par régime de sud et lance les cross vers le massif de Bure. Le soir, on y vole en restitution.\n\nLa falaise de Céüse est le moteur thermique classique. Les planeurs de Gap-Tallard partent vers la Petite Céüse, puis remontent les falaises jusqu'à la Grande Céüse. Leurs vols de baptême montent en général à 2200-2500 m, parfois 3000 m, et le micro-climat de Tallard permet aussi de voler en onde. Les schémas de brises montrent des flux qui remontent les faces sud de Céüse, de Céüsette, de la Malaup et du Serre Soleil. Par mistral, ils montrent des rotors autour de l'aérodrome et sous la Malaup.\n\nRabou (sud-ouest pour sa fiche, ouest à nord-ouest ailleurs) et le Puy de Manse sont des sites de brise et de vent d'ouest. Par régime de nord, Charance et Guizière sont dangereux. À respecter : la base ALAT et l'aérodrome de Gap-Tallard, et les zones R196 activables par NOTAM.",
       "bbox": [
         5.85,
         44.38,
@@ -2300,7 +2298,7 @@
             "max": 25
           },
           "season": "été",
-          "description": "Des schémas de brises, établis à partir des points de largage des planeurs, montrent des flux qui remontent depuis la Durance les faces sud de la Malaup, de Céüsette et de Céüse. Les planeurs de Gap-Tallard exploitent ces ascendances jusqu'à 2200 à 2500 m, voire 3000 m.",
+          "description": "Des schémas de brises, établis à partir des points de largage des planeurs, montrent des flux qui remontent depuis la Durance les faces sud de la Malaup, de Céüsette et de Céüse. Les planeurs de Gap-Tallard exploitent ces ascendances : leurs vols de baptême montent en général à 2200-2500 m, parfois 3000 m.",
           "confidence": "medium",
           "sources": [
             "S54",
@@ -2336,8 +2334,8 @@
             ]
           },
           "when": "Après-midi d'été (sans heure dans les sources)",
-          "mechanism": "Les brises de la Durance (depuis Tallard), du Buëch (depuis Veynes et la Freissinouse) et celles qui passent le col Bayard se rencontrent au-dessus de la cuvette de Gap.",
-          "usage": "C'est une zone d'ascendance au-dessus de Gap et de Charance. Il ne faut pas se placer sous le vent des brises croisées.",
+          "mechanism": "Sur des schémas de brises, celles de la Durance (depuis Tallard), du Buëch (depuis Veynes et la Freissinouse) et celles qui passent le col Bayard se rencontrent au-dessus de la cuvette de Gap.",
+          "usage": "Une zone d'ascendance s'y formerait, au-dessus de Gap et de Charance. Il ne faut pas se placer sous le vent des brises croisées.",
           "confidence": "low",
           "sources": [
             "S53",
@@ -2474,7 +2472,7 @@
           "alt_m": 2016,
           "best_hours": "12h-17h (été)",
           "trigger": "barre rocheuse verticale (falaise calcaire) orientée sud/sud-est",
-          "description": "Les planeurs de Gap-Tallard partent vers la Petite Céüse pour profiter des ascendances, puis remontent le long des falaises jusqu'à la Grande Céüse, où les plafonds courants sont de 2200 à 2500 m, et atteignent parfois 3000 m. Le micro-climat de Tallard permet aussi l'onde. Orientée sud et sud-est, la falaise est le moteur thermique de la zone.",
+          "description": "Les planeurs de Gap-Tallard partent vers la Petite Céüse pour profiter des ascendances, puis remontent le long des falaises jusqu'à la Grande Céüse. Leurs vols de baptême montent en général à 2200-2500 m, parfois 3000 m. Le micro-climat de Tallard permet aussi l'onde. Orientée sud et sud-est, la falaise est le moteur thermique de la zone.",
           "sources": [
             "S30",
             "S52",
@@ -2962,14 +2960,14 @@
             }
           ],
           "distance_km": 43.6,
-          "description": "Tour planeur au départ de Gap-Tallard, qui passe par les falaises de Céüse, le Pic de Bure, le Dévoluy et Charance.",
+          "description": "Les vols de baptême en planeur de Gap-Tallard survolent les falaises de Céüse et le Pic de Bure. Aucune source ne décrit un circuit fixe par le Dévoluy et Charance.",
           "sources": [
             "S30"
           ],
           "possible": [
-            "Le tour est annoncé en 1h15."
+            "Un baptême dure au minimum 1h15."
           ],
-          "note": "Distance calculée entre repères (la source n'en donne pas). Ligne de reliefs exploitable en parapente comme transition Buëch–Dévoluy–Gap : déduction."
+          "note": "Tracé et distance reconstruits entre repères : la source ne donne ni circuit, ni distance, ni passage à Charance. Ligne de reliefs exploitable en parapente comme transition Buëch–Dévoluy–Gap : déduction."
         },
         {
           "id": "xc-guiziere-charance",
@@ -3071,7 +3069,7 @@
       ],
       "tips": [
         "À Céüse, partez de la Petite Céüse et suivez les falaises vers la Grande Céüse [S30].",
-        "Au Rabou (ouest et nord-ouest), surveillez le décollage en fin de journée : quand la brise retombe, son orientation change [S42].",
+        "À Rabou, surveillez le décollage en fin de journée : quand la brise retombe, son orientation effective change [S42].",
         "Au col de Guizière, décollez tôt, avant que la brise ne forcisse trop. Ne volez pas par vent de nord [S66].",
         "Au Charance, l'atterrissage officiel n'a pas de parking. Celui « du haut », avec ses manches à air, est le plus pratique, mais il devient technique en brise [S65].",
         "Sur la Céüse sud, décollez bien avant la cassure et ne passez pas à l'aplomb de la falaise, sauf tôt le matin. Si possible, ne volez pas seul [S60].",
@@ -3085,7 +3083,7 @@
       "id": "buech-laragne-chabre",
       "name": "Bochaine, Buëch, Laragne et Montagne de Chabre (Aspres, Serres, Veynes, Laragne)",
       "parent_massif": "Préalpes du Sud",
-      "summary": "Le Buëch, la Méouge et la Durance se croisent ici en larges vallées : un atterrissage imprévu y est sûr. Le site phare est la montagne de Chabre, une crête est-ouest qui culmine vers 1 350 m et se décolle au sud comme au nord.\n\nL'été, les thermiques sont puissants dès la fin de matinée. Les plafonds sont gros et réguliers, et les cross vont jusqu'au Bure, au Dévoluy ou aux Écrins. Vers 13h30, souvent, une brise d'ouest s'installe à Laragne : les vallées voisines sont presque toutes orientées ouest-est, sauf le Buëch. Décollez donc tôt, avant l'ouest, ou attendez la restitution du soir. Par nord faible sur la crête, les thermiques du sud prennent le relais et lèvent des dust devils violents aux Espranons, aux Fainéants et sur les autres décollages plats, surtout au printemps et à l'automne. Par nord fort, ce sont des ondes et des rouleaux.\n\nAu nord, la balise d'Aspres–Longeagne est la plus fiable du secteur, et le décollage est souvent saturé par la brise entre 14h et 16h. Serres, Veynes (Cuberselle, Oule), la Porte Sereine et Saint-Genis complètent le maillage. Le soir, Mison offre une restitution brutale : vers 19h, le flux qui descend la Méouge peut passer de 0 à 40 km/h en 10 minutes. Le mistral s'engouffre dans le Buëch jusqu'à Sisteron. Les cartes de brises montrent où se croisent les flux du Buëch, de la Méouge et de l'Eygues, autour de Chabre, de Serres et d'Aspres.\n\nÀ respecter : le décollage nord 1 est déconseillé par tendance ouest à nord-ouest, et la zone militaire R71 Salon limite le vol à FL075 en semaine et à FL115 le week-end.",
+      "summary": "Le Buëch, la Méouge et la Durance se croisent ici en larges vallées : un atterrissage imprévu y est sûr. Le site phare est la montagne de Chabre, une crête est-ouest qui culmine vers 1 350 m et se décolle au sud comme au nord.\n\nL'été, les thermiques sont puissants dès la fin de matinée. Les plafonds sont gros et réguliers, et les cross vont jusqu'au Bure, au Dévoluy ou aux Écrins. Vers 13h30, souvent, une brise d'ouest s'installe à Laragne, car les vallées voisines sont presque toutes orientées ouest-est, sauf le Buëch. Décollez donc tôt, avant l'ouest, ou attendez la restitution du soir. Par nord faible sur la crête, les thermiques du sud prennent le relais et lèvent des dust devils violents aux Espranons, aux Fainéants et sur les autres décollages plats, surtout au printemps et à l'automne. Par nord fort, ce sont des ondes et des rouleaux.\n\nAu nord, la balise d'Aspres–Longeagne est la plus fiable du secteur, et le décollage est souvent saturé par la brise entre 14h et 16h. Serres, Veynes (Cuberselle, Oule), la Porte Sereine et Saint-Genis complètent le maillage. Le soir, Mison offre une restitution brutale : vers 19h, le flux qui descend la Méouge peut passer de 0 à 40 km/h en 10 minutes. Le mistral s'engouffre dans le Buëch jusqu'à Sisteron. Les cartes de brises montrent où se croisent les flux du Buëch, de la Méouge et de l'Eygues, autour de Chabre, de Serres et d'Aspres.\n\nÀ respecter : le décollage nord 1 est déconseillé par tendance ouest à nord-ouest, et la zone militaire R71 Salon limite le vol à FL075 en semaine et à FL115 le week-end.",
       "bbox": [
         5.6,
         44.2,
@@ -3718,7 +3716,6 @@
           ],
           "possible": [
             "Les thermiques y sont très larges et très puissants, des ascenseurs jusque dans les nuages, et il arrive qu'ils soient plus forts vers 16h qu'à 12h30.",
-            "Un vol cité y a atteint un plafond de 3 300 m et un triangle d'environ 193 km.",
             "Si le premier thermique est raté, l'atterrissage du bas permet un second essai, à 500 m de dénivelé."
           ]
         },
@@ -4996,7 +4993,7 @@
         "Dans les larges vallées du Buëch, un atterrissage imprévu est en général sûr [S11].",
         "Décollez avant 13h30 : ensuite l'ouest s'installe, le rendement chute et l'atterrissage sud peut devenir inaccessible. Sinon, attendez la restitution du soir ou changez de site [S58][S5].",
         "Aux Espranons ou aux Fainéants par nord faible, guettez la poussière qui se soulève. Équipez-vous au dernier moment, et si un dust devil arrive, criez « DUST » et jetez-vous sur l'aile [S46][S3].",
-        "Chabre a accueilli un championnat de France de distance, avec un triangle d'environ 193 km et un plafond de 3 300 m. Le « Chabre Challenge » propose un parcours de 100 km [S9][S43].",
+        "Chabre a accueilli un championnat de France de distance, et le « Chabre Challenge » propose un parcours de 100 km [S9][S43].",
         "À Aspres l'été, décollez avant 14h ou après 16h. Fiez-vous à la balise d'Aspres : c'est la plus fiable pour juger le vent du secteur, Cuberselle compris [S21][S85][S109].",
         "À Mison, ne volez pas seul la première fois. Vers 19h, attendez 20 minutes que le flux se stabilise avant de décoller [S108].",
         "À Chabre, ne vous garez pas dans le demi-tour de la plateforme hélicoptère. En haut, la navette est presque inexistante : prévoyez la récupération par la route [S87][S59].",
@@ -5008,7 +5005,7 @@
       "id": "baronnies",
       "name": "Baronnies (Buis-les-Baronnies, Nyons, Mévouillon, Sainte-Jalle)",
       "parent_massif": "Préalpes du Sud",
-      "summary": "Les Baronnies sont des Préalpes provençales sèches, entre l'Eygues, l'Ouvèze et la Méouge. C'est l'un des secteurs les plus polyvalents des Alpes du Sud. À Séderon–Mévouillon, sept décollages et atterrissages couvrent toutes les orientations, et l'école locale forme plus de 200 pilotes par an.\n\nL'été, la vallée du Rhône impose une brise d'ouest l'après-midi. À Buc, le vent vire presque toujours à l'ouest dès 14h, même les jours d'est. Cette brise remonte l'Eygues, l'Ouvèze et la Méouge. Le matin, c'est l'inverse : un vent frais, le Pontias, descend l'Eygues jusqu'à Nyons. Les sites de nord, comme le col d'Ey, sont abrités du mistral, mais le vent peut s'y renforcer brutalement au-dessus des crêtes. Les sites de sud-ouest, Soubeyrand et Beauvoisin, souffrent des venturis et du sud-est, dont les rouleaux sont dangereux.\n\nUne bonne journée à Séderon s'enchaîne en trois vols : le matin au Fort ou à Bergiès sud, un cross depuis Bergiès nord à midi, la restitution du soir à Buc. En cross, Bergiès et Buc ouvrent vers Sisteron, Ribiers et Saint-André-les-Alpes, à plus de 100 km. La vallée est le tremplin classique vers Chabre.\n\nÀ respecter : vautours et aigles justifient des fermetures de sites, comme Sahune-Bramard. La zone militaire R71A de Salon couvre le secteur, avec un plancher à FL75.",
+      "summary": "Les Baronnies sont des Préalpes provençales sèches, entre l'Eygues, l'Ouvèze et la Méouge. C'est l'un des secteurs les plus polyvalents des Alpes du Sud. L'école de Mévouillon compte huit sites de vol, de toutes orientations, à moins de 20 minutes, et trois pentes école. Elle forme plus de 200 pilotes par an.\n\nL'été, la vallée du Rhône impose une brise d'ouest l'après-midi. Le vent tourne presque toujours à l'ouest l'après-midi, même les jours d'est, et Buc ouest marche à partir de 14h environ. Cette brise remonte l'Eygues, l'Ouvèze et la Méouge. Le matin, un vent frais, le Pontias, arrive à Nyons : il descendrait la vallée de l'Eygues. Les sites de nord, comme le col d'Ey, sont abrités du mistral, mais le vent peut s'y renforcer brutalement au-dessus des crêtes. Les sites de sud-ouest, Soubeyrand et Beauvoisin, souffrent des venturis et du sud-est, dont les rouleaux sont dangereux.\n\nUne bonne journée à Séderon s'enchaîne en trois vols : le matin au Fort ou à Bergiès sud, un cross depuis Bergiès nord à midi, la restitution du soir à Buc. En cross, Bergiès et Buc ouvrent vers Sisteron, Ribiers et Saint-André-les-Alpes, à plus de 100 km. La vallée est le tremplin classique vers Chabre.\n\nÀ respecter : vautours et aigles justifient des fermetures de sites, comme Sahune-Bramard. La zone militaire R71A de Salon couvre le secteur, avec un plancher à FL75.",
       "bbox": [
         5.05,
         44.2,
@@ -5044,7 +5041,7 @@
             "max": 20
           },
           "season": "toute l'année, apprécié l'été",
-          "description": "Le Pontias est un vent frais du matin, qui descend la vallée de l'Eygues jusqu'à Nyons. Il souffle la nuit et le matin, toute l'année, et il est apprécié en été.",
+          "description": "Le Pontias est un vent frais du matin qui arrive à Nyons, sans doute en descendant la vallée de l'Eygues. Il souffle la nuit et le matin, toute l'année, et il est apprécié en été.",
           "confidence": "medium",
           "sources": [
             "S37"
@@ -5090,7 +5087,7 @@
             "max": 30
           },
           "season": "avril-septembre",
-          "description": "L'après-midi, la brise d'ouest des Baronnies, liée à l'influence de la vallée du Rhône, peut remonter l'Eygues, du Nyonsais vers Rémuzat. Le matin, le Pontias descend au contraire la vallée.",
+          "description": "L'après-midi, la brise d'ouest des Baronnies, liée à l'influence de la vallée du Rhône, peut remonter l'Eygues, du Nyonsais vers Rémuzat. Le matin, le Pontias, qui descendrait la vallée, souffle au contraire vers Nyons.",
           "confidence": "low",
           "sources": [
             "S55",
@@ -5179,13 +5176,13 @@
             "max": 35
           },
           "season": "avril-septembre",
-          "description": "À Buc, le vent vire presque toujours à l'ouest à partir de 14h, même par jour d'est, sous l'influence de la vallée du Rhône. Plus tôt, il peut passer à l'ouest quand le flux est d'ouest ou de nord-ouest. Après quelques heures de thermiques, souvent suivies d'un cross, l'air se lisse en une restitution douce le soir.",
+          "description": "À Buc, le vent vire presque toujours à l'ouest l'après-midi, même par jour d'est, sous l'influence de la vallée du Rhône. Le site marche à partir de 14h environ, plus tôt quand le flux est d'ouest ou de nord-ouest. Après quelques heures de thermiques, souvent suivies d'un cross, l'air se lisse en une restitution douce le soir.",
           "confidence": "medium",
           "sources": [
             "S85",
             "S55"
           ],
-          "note": "Flèches W→E tracées sur une carte collaborative, de Mévouillon vers Villefranche et de Séderon vers Éourres ; vitesses déduites."
+          "note": "Flèches W→E tracées sur une carte collaborative, de Mévouillon vers Villefranche et de Séderon vers Éourres ; vitesses déduites. La description de Buc vient d'une page d'environ 2005."
         },
         {
           "id": "brise-est-matin-buc",
@@ -6137,7 +6134,7 @@
         },
         {
           "wind": "E",
-          "effect": "Par est, Buc Est et Le Fort, tous deux face est, conviennent à la brise du matin. L'ouest revient à Buc dès 14h, même un jour d'est.",
+          "effect": "Par est, Buc Est et Le Fort, tous deux face est, conviennent à la brise du matin. L'ouest revient sur Buc l'après-midi, même un jour d'est.",
           "sources": [
             "S128",
             "S131",
@@ -6204,11 +6201,11 @@
         }
       ],
       "tips": [
-        "Autour de Mévouillon, huit décollages et trois pentes école vous laissent toujours une face volable, quel que soit le vent [S39].",
+        "Autour de Mévouillon, huit sites de vol de toutes orientations, à moins de 20 minutes de l'école, et trois pentes école vous laissent toujours une face volable [S39].",
         "Au col d'Ey, entre Sainte-Jalle et Buis, le décollage est à 100 m au-dessus du col, face nord, nord-est et nord-ouest [S38].",
         "Écoutez la balise de Garde-Grosse sur la fréquence VHF 143.9875 [S36].",
         "À Séderon, enchaînez le matin au Fort ou à Bergiès sud, un cross depuis Bergiès nord à midi, puis une restitution à Buc le soir [S85].",
-        "À Buc, l'ouest arrive vers 14h, même les jours d'est : prévoyez une restitution douce le soir [S85].",
+        "À Buc, l'ouest s'installe presque toujours l'après-midi, même les jours d'est, et le site marche à partir de 14h environ : prévoyez une restitution douce le soir [S85].",
         "À Soubeyrand, évitez le vent de sud-est : les rouleaux y sont très dangereux [S125].",
         "Sahune–Bramard est fermé pour protéger l'avifaune : respectez les fermetures de sites et la zone R71A [S127]."
       ]
@@ -6217,7 +6214,7 @@
       "id": "diois",
       "name": "Diois (Die, Glandasse, col du Rousset sud, Couspeau, Saint-Nazaire-le-Désert, Drôme)",
       "parent_massif": "Préalpes du Sud / Vercors sud",
-      "summary": "Le Diois, c'est la moyenne vallée de la Drôme, charnière entre Alpes du Nord et Alpes du Sud. Elle s'étend au pied des falaises du Vercors sud, du Glandasse et du col du Rousset.\n\nL'été, la brise vient du nord. Elle s'installe vite à partir de midi ou 13h, et elle est rarement trop forte. Elle suit la Drôme de Saillans et Pontaix vers Die, puis Luc-en-Diois, et diverge vers l'ouest à Châtillon-en-Diois, seul endroit où un parapente peut reculer en basse couche. Elle alimente Boulc et les cols de Grimone et de Menée. Elle tient tête à un vent météo de sud jusqu'à 20 km/h : c'est ce qui permet de voler Clamontard face à la brise, en triangle ou en aller-retour.\n\nLes thermiques démarrent vers 10h-11h sur les faces sud et vers 12h-13h sur les faces nord. En fin d'après-midi, parfois plus tôt, une forte bascule ouest venue de Couspeau, d'Aucelon et d'Aurel prend le dessus et met Solaure, Lesches et Luc sous le vent. Les plafonds sont plus bas qu'en Durance mais plus hauts que dans le Royans, avec une limite nette à Valdrôme et au col de Cabre.\n\nLe mistral peut tomber brutalement après une matinée très calme, et il peut être annoncé à plus de 50 km/h à Valence. Les crêtes du Vercors se couvrent alors de nuages orographiques : foehn local et « trou bleu » sur le Diois. À respecter, surtout au nord du secteur : la réserve naturelle du Vercors (survol à plus de 300 m du sol), la zone vautours du col de Rousset de janvier à juin, la zone de sensibilité majeure du gypaète au Glandasse et la zone militaire R196B.",
+      "summary": "Le Diois, c'est la moyenne vallée de la Drôme, charnière entre Alpes du Nord et Alpes du Sud. Elle s'étend au pied des falaises du Vercors sud, du Glandasse et du col du Rousset.\n\nL'été, la brise vient du nord. Elle s'installe vite à partir de midi ou 13h, et elle est rarement trop forte. Une carte collaborative la fait remonter la Drôme de Saillans et Pontaix vers Die, puis Luc-en-Diois. Elle diverge vers l'ouest à Châtillon-en-Diois, seul endroit où un parapente peut reculer en basse couche. Elle alimente Boulc et les cols de Grimone et de Menée. Elle tient tête à un vent météo de sud jusqu'à 20 km/h : c'est ce qui permet de voler Clamontard face à la brise, en triangle ou en aller-retour.\n\nLes thermiques démarrent vers 10h-11h sur les faces sud et vers 12h-13h sur les faces nord. En fin d'après-midi, parfois plus tôt, une forte bascule ouest venue de Couspeau, d'Aucelon et d'Aurel prend le dessus et met Solaure, Lesches et Luc sous le vent. Les plafonds sont plus bas qu'en Durance mais plus hauts que dans le Royans, avec une limite nette à Valdrôme et au col de Cabre.\n\nLe mistral peut tomber brutalement après une matinée très calme, et il peut être annoncé à plus de 50 km/h à Valence. Les crêtes du Vercors se couvrent alors de nuages orographiques : foehn local et « trou bleu » sur le Diois. À respecter, surtout au nord du secteur : la réserve naturelle du Vercors (survol à plus de 300 m du sol), la zone vautours du col de Rousset de janvier à juin, la zone de sensibilité majeure du gypaète au Glandasse et la zone militaire R196B.",
       "bbox": [
         5.05,
         44.5,

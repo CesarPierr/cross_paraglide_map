@@ -5,14 +5,14 @@
     {
       "chapter": "Le massif",
       "title": "Bienvenue dans le Trièves, le refuge du vent du nord",
-      "text": "Bienvenue dans le Trièves, un bassin ouvert entre la barrière est du Vercors (Mont Aiguille, Grand Veymont) et l'Obiou, le Grand Ferrand et le Dévoluy. Son site de référence, Courtet, au pied de la face ouest de l'Obiou, est protégé du vent du nord : on y vole quand le reste de l'Isère est cloué au sol. L'après-midi, l'air du bassin descend du Drac vers le col de la Croix-Haute. Le Trièves joue deux rôles : refuge les jours de nord, tremplin vers l'Obiou, le Dévoluy et le Pic de Bure. On suit la journée, puis les cross, les pièges et les vents.",
+      "text": "Bienvenue dans le Trièves, un bassin ouvert entre la barrière est du Vercors (Mont Aiguille, Grand Veymont) et l'Obiou, le Grand Ferrand et le Dévoluy. Son site de référence, Courtet, au pied de la face ouest de l'Obiou, est protégé du vent du nord : on y vole quand le reste de l'Isère est cloué au sol. L'après-midi, une brise de nord remonte le bassin, du Drac jusqu'au col de la Croix-Haute. Le Trièves joue deux rôles : refuge les jours de nord, tremplin vers l'Obiou, le Dévoluy et le Pic de Bure. On suit la journée, puis les cross, les pièges et les vents.",
       "focus": [],
       "view": "massif"
     },
     {
       "chapter": "La journée de l'air",
-      "title": "L'après-midi, la brise du Drac descend le Trièves",
-      "text": "Au lac de Monteynard, dans la vallée du Drac, un vent de nord thermique se lève entre 11 h et 13 h et culmine vers 15 h. La forte chaleur au fond du Trièves l'expliquerait. Il remonte jusqu'à Monestier-de-Clermont, où l'atterrissage du Col du Fau le sent dès 11 h. Des cartes de brises le prolongent : il descend le bassin, passe le col de la Croix-Haute et continue vers le Buëch, sans heure ni force connues. Une brise du Diois remonte aussi par le col de Menée vers Le Percy, mais une seule carte la montre.",
+      "title": "L'après-midi, la brise du Drac remonte le Trièves",
+      "text": "Au lac de Monteynard, dans la vallée du Drac, un vent de nord thermique se lève entre 11 h et 13 h et culmine vers 15 h. La forte chaleur au fond du Trièves l'expliquerait. Il remonte jusqu'à Monestier-de-Clermont, où l'atterrissage du Col du Fau le sent dès 11 h. Des cartes de brises le prolongent : il remonte le bassin, passe le col de la Croix-Haute et continue vers le Buëch, sans heure ni force connues. Une brise du Diois remonte aussi par le col de Menée vers Le Percy, mais une seule carte la montre.",
       "focus": ["matheysine/drac-monteynard-nord", "vercors-est-sud/drac-trieves-brise-monestier", "trieves-brise-croix-haute", "diois-col-de-menee-brise"],
       "phase": "afternoon"
     },
@@ -68,14 +68,14 @@
     {
       "chapter": "Les pièges",
       "title": "Chasse, rapaces et atterrissage fermé",
-      "text": "À Courtet, les jeudis, samedis et dimanches de chasse, aucun véhicule ne monte la piste avant 13 h : montez à pied pour décoller plus tôt. Le propriétaire du champ du Châtel à Mens est opposé aux pilotes : ne vous y posez pas. Autour du col de Menée et du Percy, des zones de nidification protègent l'aigle royal de janvier à septembre, le vautour fauve de janvier à août et le faucon pèlerin de janvier à juillet. Restez bien au-dessus des falaises, sans les survoler bas.",
+      "text": "À Courtet, pendant la période de chasse, aucun véhicule ne monte la piste avant 13 h : montez à pied pour décoller plus tôt. Le propriétaire du champ du Châtel à Mens est opposé aux pilotes : ne vous y posez pas. Autour du col de Menée et du Percy, des zones de nidification protègent l'aigle royal de janvier à septembre, le vautour fauve de janvier à août et le faucon pèlerin de janvier à juillet. Restez bien au-dessus des falaises, sans les survoler bas.",
       "focus": ["courtet-chasse-acces", "chatel-atterro-interdit", "trieves-rapaces-archiane-percy"],
       "view": "massif"
     },
     {
       "chapter": "Selon le vent météo",
       "title": "Par nord ou nord-ouest, Courtet est le repli",
-      "text": "Quand le nord souffle, il s'étale dans la vallée. Courtet, protégé du nord, reste volable : c'est le repli principal par nord fort, avec Montaud et Montlambert. Le Châtel marche aussi, par nord comme par nord-ouest. L'après-midi, la brise descend le Trièves du nord vers le sud, jusqu'à la Croix-Haute. Plus au nord, le lac de Monteynard monte à 12-20 nœuds.",
+      "text": "Quand le nord souffle, il s'étale dans la vallée. Courtet, protégé du nord, reste volable : c'est le repli principal par nord fort, avec Montaud et Montlambert. Le Châtel marche aussi, par nord comme par nord-ouest. L'après-midi, la brise de nord remonte le Trièves jusqu'au col de la Croix-Haute. Plus au nord, le lac de Monteynard monte à 12-20 nœuds.",
       "focus": ["courtet", "courtet-restitution", "le-chatel-mens", "trieves-brise-croix-haute"],
       "wind": { "from": "N", "kmh": 25 },
       "phase": "afternoon",

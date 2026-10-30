@@ -182,6 +182,11 @@ def audit_lot(path: Path, rev: str) -> Report:
 
 
 def audit_visit(path: Path, rev: str) -> Report:
+    """A visit may be restructured (steps added, merged, split, reordered: a welcome step, a
+    closing step, a didactic order), under three rules: the header is unchanged; a step's
+    core (focus, phase, wind, view) is either empty or one of the original's, and every
+    original core is still carried by some step (its content is not lost); no number
+    appears that the original visit never had. The step count change is a warning."""
     rep = Report('visite ' + path.stem)
     new = json.loads(path.read_text())
     old = git_json(rev, path)
@@ -189,16 +194,33 @@ def audit_visit(path: Path, rev: str) -> Report:
         return rep
     if strip(new, {'steps'}) != strip(old, {'steps'}):
         rep.errors.append('en-tête de visite modifié')
-    if len(new.get('steps', [])) != len(old.get('steps', [])):
-        rep.errors.append(f"nombre d'étapes modifié ({len(old['steps'])} → {len(new['steps'])})")
-    for i, (s, o) in enumerate(zip(new.get('steps', []), old.get('steps', []))):
+    new_steps = new.get('steps', [])
+    old_steps = old.get('steps', [])
+    core = lambda st: json.dumps(strip(st, STEP_TEXT), sort_keys=True, ensure_ascii=False)
+    empty = core({})
+    old_cores = [core(o) for o in old_steps]
+    new_cores = [core(s) for s in new_steps]
+    if len(new_steps) != len(old_steps):
+        rep.warnings.append(f"nombre d'étapes modifié ({len(old_steps)} → {len(new_steps)})")
+    for i, s in enumerate(new_steps):
         where = f'étape {i + 1}'
-        if strip(s, STEP_TEXT) != strip(o, STEP_TEXT):
-            rep.errors.append(f'{where} : focus, phase, vent ou vue modifiés')
-        rep.text(where, 'text', o.get('text', ''), s.get('text', ''), 'step')
-        invented = numbers(s.get('text', '') + ' ' + s.get('title', '')) - numbers(o.get('text', '') + ' ' + o.get('title', ''))
+        c = new_cores[i]
+        if c != empty and c not in old_cores:
+            rep.errors.append(f'{where} : focus, phase, vent ou vue inconnus de l’original')
+        # Length and style checks against the original step of the same core, else the whole.
+        j = old_cores.index(c) if c in old_cores else -1
+        before = old_steps[j].get('text', '') if j >= 0 else ''
+        rep.text(where, 'text', before, s.get('text', ''), 'step')
+    for j, c in enumerate(old_cores):
+        if c != empty and c not in new_cores:
+            rep.errors.append(f"étape « {old_steps[j].get('title', j + 1)} » de l’original perdue (son focus, vent ou vue n’est plus porté par aucune étape)")
+    old_numbers = set()
+    for o in old_steps:
+        old_numbers |= numbers(o.get('text', '') + ' ' + o.get('title', ''))
+    for i, s in enumerate(new_steps):
+        invented = numbers(s.get('text', '') + ' ' + s.get('title', '')) - old_numbers
         if invented:
-            rep.errors.append(f'{where} : chiffres absents de l’original : {sorted(invented)}')
+            rep.errors.append(f'étape {i + 1} : chiffres absents de l’original : {sorted(invented)}')
     return rep
 
 

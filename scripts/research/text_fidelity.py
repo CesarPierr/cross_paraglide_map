@@ -106,8 +106,21 @@ def check_lot(lot: str) -> list[str]:
         vo, vn = head(vpath), json.loads((ROOT / vpath).read_text())
         if vo is None:
             continue
-        for i, (a, b) in enumerate(zip(vo['steps'], vn['steps'])):
-            compare(f'visite {mid}/{i}', a.get('title', '') + '\n' + a.get('text', ''), b.get('title', '') + '\n' + b.get('text', ''), '', out)
+        # A visit may be restructured (a welcome step, a closing one, steps merged or moved):
+        # each step is compared with the original step that carries the same focus, phase,
+        # wind and view, and the whole visit with the whole original (no place name lost
+        # anywhere, no direction that the original visit never had).
+        core = lambda st: json.dumps({k: v for k, v in st.items() if k not in ('title', 'text')}, sort_keys=True, ensure_ascii=False)
+        by_core = {core(a): a for a in vo['steps']}
+        step = lambda st: st.get('title', '') + '\n' + st.get('text', '')
+        # (Several new steps may carry one original core: a closing step reusing the opening's.)
+        carried: dict[str, list[int]] = {}
+        for i, b in enumerate(vn['steps']):
+            if core(b) in by_core and core(b) != core({}):
+                carried.setdefault(core(b), []).append(i)
+        for c, idx in carried.items():
+            compare(f"visite {mid}/{'+'.join(map(str, idx))}", step(by_core[c]), '\n'.join(step(vn['steps'][i]) for i in idx), '', out)
+        compare(f'visite {mid} (entière)', '\n'.join(map(step, vo['steps'])), '\n'.join(map(step, vn['steps'])), '', out)
     return out
 
 

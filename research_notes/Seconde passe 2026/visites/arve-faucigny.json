@@ -4,99 +4,99 @@
   "steps": [
     {
       "chapter": "Le massif",
-      "title": "La vallée de l'Arve en un coup d'œil",
-      "text": "La vallée de l'Arve est un long couloir qui draine l'air du bassin genevois vers le Mont-Blanc : d'Annemasse à Bonneville, Marignier et Cluses, puis, par la cluse de Cluses, jusqu'à Sallanches et Passy, avec une branche vers le Borne à Saint-Pierre-en-Faucigny. Le long du couloir, on vole au Môle, à Sur Cou, à Andey et à Agy ; au bout, face au Mont-Blanc, Passy offre Plaine-Joux, Varan et Platé. Retenez une idée simple : chaque après-midi, une grande brise remonte le couloir, très forte côté Sallanches, et le site le mieux protégé du secteur est Plaine-Joux, à l'abri du nord derrière les Fiz.",
+      "title": "Bienvenue dans la vallée de l'Arve",
+      "text": "Bienvenue dans la vallée de l'Arve, un long couloir qui draine l'air du bassin genevois vers le Mont-Blanc : d'Annemasse à Bonneville, Marignier et Cluses, puis, par la cluse de Cluses, jusqu'à Sallanches et Passy, avec une branche vers le Borne à Saint-Pierre-en-Faucigny. Chaque après-midi, une grande brise remonte le couloir, très forte côté Sallanches. Le long de la vallée, on vole au Môle, à Sur Cou, à Andey et à Agy. Au bout, face au Mont-Blanc, Passy offre Plaine-Joux, le site le mieux protégé, à l'abri du nord derrière les Fiz, puis Varan et Platé.",
       "focus": [],
       "view": "massif"
     },
     {
       "chapter": "La journée de l'air",
       "title": "Le matin, les faces est et sud chauffent les premières",
-      "text": "Dans la vallée, le matin est calme ; à Plaine-Joux, les thermiques forts ne viennent que l'après-midi. Ce sont les pentes tournées vers l'est qui s'éveillent les premières : au-dessus de Cordon, la Tête du Planet connaît une activité thermique dès le matin, et c'est un bon départ de cross, probablement vers les Quatre Têtes et les Aravis. Il arrive que les premières barbules apparaissent sur la falaise est des Quatre Têtes dès la fin de matinée. À Andey, on peut aussi décoller en sud-est, sous la Vierge, le matin.",
+      "text": "Le matin, la vallée est calme ; à Plaine-Joux, les thermiques forts ne viennent que l'après-midi. Les pentes tournées vers l'est s'éveillent les premières. Au-dessus de Cordon, la Tête du Planet chauffe dès le matin : c'est un bon départ de cross, sans doute vers les Quatre Têtes et les Aravis. Les premières barbules apparaissent parfois dès la fin de matinée sur la falaise est des Quatre Têtes. À Andey, on peut aussi décoller le matin en sud-est, sous la Vierge.",
       "focus": ["plaine-joux-plateau", "cordon-tete-du-planet", "quatre-tetes-falaise-est", "pointe-d-andey"],
       "phase": "morning"
     },
     {
       "chapter": "La journée de l'air",
       "title": "Dès 12-13h, la brise remonte l'Arve",
-      "text": "En été, une brise de vallée remonte l'Arve d'Annemasse à Cluses, par Bonneville et Marignier : dès 12 h-13 h les jours sans vent météo, deux cartes de brises tracent la même flèche, dont l'une est plus épaisse. Les vitesses ne sont pas documentées sur ce tronçon ; l'ordre de grandeur, 20 km/h jusqu'à 35, vient de la plage générale des vallées alpines. Il arrive que la brise soit soutenue au Môle. À Saint-Pierre-en-Faucigny, une branche part vers le Borne : c'est le chemin classique d'accès aux Aravis depuis le Faucigny, tracé à la main sur une carte, sans horaire ni vitesse.",
+      "text": "En été, les jours sans vent météo, une brise de vallée remonte l'Arve d'Annemasse à Cluses, par Bonneville et Marignier, dès 12 h-13 h. Deux cartes de brises tracent la même flèche, l'une plus épaisse. Sur ce tronçon, aucune vitesse n'est documentée. La brise est parfois soutenue au Môle. À Saint-Pierre-en-Faucigny, une branche part vers le Borne : le chemin classique vers les Aravis depuis le Faucigny, tracé à la main sur une carte, sans horaire ni vitesse.",
       "focus": ["arve-basse-vallee-montante", "brise-du-borne"],
       "phase": "afternoon"
     },
     {
       "chapter": "La journée de l'air",
       "title": "Côté Sallanches, la brise est très forte ; à Passy, elle faiblit",
-      "text": "La brise de Sallanches est celle qui commande à Passy. Elle entre du côté de Sallanches, où elle peut être très forte, et rend souvent le lac de Passy inutilisable l'après-midi ; elle faiblit en tournant vers Passy, puis se divise autour du Mont d'Arbois et à l'entrée de la vallée de Saint-Gervais. Elle reste le plus souvent entre 20 et 25 km/h, peut forcir jusqu'à 30, et reste sensible jusqu'à 2500 m, voire 3000 m. Elle est probablement renforcée dans la cluse entre Cluses et Magland, un venturi, un goulot où le vent accélère : au décollage de Lachat d'en haut, elle peut monter haut et rentrer par l'arrière.",
+      "text": "À Passy, c'est la brise de Sallanches qui commande. Elle entre côté Sallanches, où elle peut être très forte, et rend souvent le lac de Passy inutilisable l'après-midi. Elle faiblit en tournant vers Passy, puis se divise autour du Mont d'Arbois et à l'entrée de la vallée de Saint-Gervais. Le plus souvent, elle souffle à 20-25 km/h, peut forcir jusqu'à 30 et reste sensible jusqu'à 2500 m, voire 3000 m. La cluse entre Cluses et Magland, un goulot où le vent accélère, la renforce probablement : à Lachat d'en haut, elle peut monter haut et rentrer par l'arrière.",
       "focus": ["brise-de-sallanches", "arve-venturi-retrecissement"],
       "phase": "afternoon"
     },
     {
       "chapter": "La journée de l'air",
       "title": "Le soir, le flux se retourne et les pentes ouest restituent",
-      "text": "En fin de journée, la brise de Sallanches s'estompe. Il arrive que, côté Passy, le flux de retour soit très marqué et vienne d'est ou de sud-est côté Varan : c'est probablement un écoulement descendant de la vallée de Saint-Gervais, sans heure ni force connues. C'est l'heure du vol du soir : à Lachat d'en haut, on décolle tard quand la brise redescend, avec un panorama sur le Mont-Blanc, les Aravis et le Môle ; à l'ouest, le Môle sert au soaring du soir, après une heure de marche. Au-dessus de Cluses, l'ascenseur du Chevran peut aussi servir aux vols du soir depuis Agy.",
+      "text": "En fin de journée, la brise de Sallanches s'estompe. À Passy, le flux de retour est parfois très marqué côté Varan, d'est ou de sud-est : sans doute un écoulement descendant de la vallée de Saint-Gervais, sans heure ni force connues. C'est l'heure du vol du soir. À Lachat d'en haut, on décolle tard, quand la brise redescend, face au Mont-Blanc, aux Aravis et au Môle. À l'ouest, le Môle sert au soaring du soir, après une heure de marche. Au-dessus de Cluses, l'ascenseur du Chevran sert aussi aux vols du soir depuis Agy.",
       "focus": ["arve-retour-est-varan", "lachat-d-en-haut", "mole-soaring-soir", "brise-pente-agy-chevran"],
       "phase": "evening"
     },
     {
       "chapter": "Où ça monte",
       "title": "À Passy, la brise de pente prend le pas sur le vent",
-      "text": "Plaine-Joux est un versant sud-sud-est face au Mont-Blanc, protégé du nord par les Fiz : la brise de pente y prend souvent le pas sur le vent météo, d'où des thermiques réguliers l'après-midi, toute l'année. À Varan, un généreux thermique se forme presque toujours sur les falaises sous le décollage et à la base de la pointe de Barmerousse, ce qui en fait un départ de cross. Plus haut, aux falaises de Platé, la brise montante est souvent cyclique, et les thermiques sont généreux près des falaises quand elle est installée.",
+      "text": "Plaine-Joux est un versant sud-sud-est face au Mont-Blanc, protégé du nord par les Fiz. La brise de pente y prend souvent le pas sur le vent météo, d'où des thermiques réguliers l'après-midi, toute l'année. À Varan, un généreux thermique se forme presque toujours sur les falaises sous le décollage et à la base de la pointe de Barmerousse : c'est un départ de cross. Plus haut, aux falaises de Platé, la brise montante est souvent cyclique ; une fois installée, elle donne des thermiques généreux près des falaises.",
       "focus": ["brise-pente-plaine-joux", "varan-falaises", "plate-falaises"],
       "phase": "afternoon"
     },
     {
       "chapter": "Où ça monte",
       "title": "Le Môle et les sites de la basse vallée",
-      "text": "Au Môle, la large pente sud-ouest sous le sommet donne de bons thermiques l'après-midi, même en automne grâce à son orientation sud : un bon départ de cross, avec des thermiques moyens, du vent fort de vallée et des rafales thermiques. Depuis le Môle, on enchaîne la Pointe des Brasses, dont les trois décollages sud-ouest et ouest servent l'après-midi, puis le Marcelly. À Andey, les thermiques se déclenchent généralement après 16 h, sur les faces ouest et boisées.",
+      "text": "Au Môle, la large pente sud-ouest sous le sommet donne de bons thermiques l'après-midi, même en automne grâce à son orientation sud. C'est un bon départ de cross, avec des thermiques moyens, du vent fort de vallée et des rafales thermiques. Du Môle, on enchaîne la Pointe des Brasses, dont les trois décollages sud-ouest et ouest servent l'après-midi, puis le Marcelly. À Andey, les thermiques se déclenchent en général après 16 h, sur les faces ouest et boisées.",
       "focus": ["mole-face-sud", "brasses-relance-mole", "andey-faces-ouest"],
       "phase": "afternoon"
     },
     {
       "chapter": "Les sites",
       "title": "Plaine-Joux, Varan, Frioland : choisir son décollage",
-      "text": "Plaine-Joux (1335 m), décollage moquette orienté sud, est l'un des sites les plus fréquentés de France : pas de gonflage ni de repose sur la moquette en affluence, et le vent d'ouest y est défavorable. Varan (1612 m), pente herbeuse convexe facile même pour les débutants, se termine par une falaise ; c'est un départ de cross, un vol du soir et une alternative à la foule de Plaine-Joux, avec un accès en 4x4 interdit de 10h30 à 16h30 en juillet-août. Frioland (1750 m), plus haut, est une vaste pente peu pentue, où il faut courir un peu.",
+      "text": "Plaine-Joux (1335 m), décollage moquette orienté sud, est l'un des sites les plus fréquentés de France : en affluence, ni gonflage ni repose sur la moquette, et le vent d'ouest y est défavorable. Varan (1612 m) est une pente herbeuse convexe, facile même pour les débutants, qui se termine par une falaise. On y part en cross, on y vole le soir, et l'on y fuit la foule de Plaine-Joux ; l'accès en 4x4 est interdit de 10h30 à 16h30 en juillet-août. Frioland (1750 m), plus haut, est une vaste pente peu pentue, où il faut courir un peu.",
       "focus": ["plaine-joux", "varan", "frioland"],
       "phase": "midday"
     },
     {
       "chapter": "Les sites",
       "title": "Chedde, Marlioz ou le lac : où se poser à Passy",
-      "text": "Chedde (608 m) est l'atterrissage principal de Plaine-Joux, à une finesse de 3,5 : de taille moyenne, bordé d'obstacles, turbulent en conditions thermiques et sous le vent quand la brise s'installe. Dès que la brise s'installe, mieux vaut Marlioz : plus dégagé et moins turbulent, mais il demande une finesse de 6. Le lac de Passy, excentré vers Sallanches, reçoit la brise très forte l'après-midi : on surveille les rides sur l'eau pour l'estimer, et le terrain est fermé du 1er avril au 1er octobre à cause des cultures.",
+      "text": "Chedde (608 m) est l'atterrissage principal de Plaine-Joux, à une finesse de 3,5 : de taille moyenne, bordé d'obstacles, turbulent en conditions thermiques, et sous le vent quand la brise s'installe. Dès que la brise s'installe, préférez Marlioz : plus dégagé et moins turbulent, mais il demande une finesse de 6. Le lac de Passy, excentré vers Sallanches, prend la brise très forte l'après-midi : estimez-la aux rides sur l'eau. Le terrain est fermé du 1er avril au 1er octobre, à cause des cultures.",
       "focus": ["passy-chedde", "passy-chedde-turbulent", "passy-marlioz", "passy-plan-d-eau", "passy-plan-d-eau-brise"],
       "phase": "afternoon"
     },
     {
       "chapter": "Les sites",
       "title": "Le Môle : un sommet, deux atterrissages selon le vent",
-      "text": "Au sommet du Môle (1863 m), la pente sud à ouest d'une centaine de mètres sert à décoller, et la grande pente sud en dessous permet de voler vers Ayse, Bonneville et Marignier ; le Petit Môle part en sud-est. Il faut choisir son atterrissage avant de partir : La Tour par vent de nord, un champ à droite du village, ou Ayse par vent de sud. Chez Berroud, atterrissage haut près du parking, offre de nombreuses possibilités, mais la brise de vallée y est très forte, car le parking est un col. Il faut garder du gaz pour traverser l'Arve et l'autoroute.",
+      "text": "Au sommet du Môle (1863 m), une pente sud à ouest d'une centaine de mètres sert à décoller, et la grande pente sud en dessous permet de voler vers Ayse, Bonneville et Marignier. Le Petit Môle part en sud-est. Choisissez l'atterrissage avant de partir : La Tour par vent de nord, un champ à droite du village, ou Ayse par vent de sud. Chez Berroud, atterrissage haut près du parking, offre de nombreuses possibilités, mais le parking est un col, et la brise de vallée y est très forte. Gardez du gaz pour traverser l'Arve et l'autoroute.",
       "focus": ["le-mole", "mole-la-tour", "mole-ayse", "mole-chez-berroud", "mole-col-chez-berroud"],
       "phase": "afternoon"
     },
     {
       "chapter": "Le parcours classique",
       "title": "De Chamonix aux Aravis : Platé, Varan, Quatre Têtes",
-      "text": "Le cross commence par un bon plein sur l'Aiguillette des Houches. On peut trouver un thermique sur l'arête de Pormenaz, en passant par les éboulis sous le Dérochoir, puis sur la falaise de la pointe de Platé, qui remonte bien. Si les plafonds atteignent 3000 m, il vaut mieux faire le plein au-dessus de la pointe de Platé, pour arriver très haut sur Varan ; le versant sud-ouest de Barmerousse ne donne rien. De Varan, on raccroche l'arête des Saix depuis moins de 100 m sous Varan, puis on la suit jusqu'aux falaises sous les Quatre Têtes et la Pointe Percée.",
+      "text": "Le cross commence par un bon plein sur l'Aiguillette des Houches. On peut trouver un thermique sur l'arête de Pormenaz, en passant par les éboulis sous le Dérochoir, puis sur la falaise de la pointe de Platé, qui remonte bien. Si les plafonds atteignent 3000 m, faites le plein au-dessus de la pointe de Platé pour arriver très haut sur Varan : le versant sud-ouest de Barmerousse ne donne rien. De Varan, on raccroche l'arête des Saix depuis moins de 100 m sous Varan, puis on la suit jusqu'aux falaises sous les Quatre Têtes et la Pointe Percée.",
       "focus": ["chamonix-plate-varan-quatre-tetes-pointe-percee", "derochoir-eboulis-pormenaz", "pointe-de-plate-falaise", "barmerousse-so-rien", "varan-falaises", "quatre-tetes-falaise-est"],
       "phase": "afternoon"
     },
     {
       "chapter": "Les pièges",
       "title": "Le foehn, le grand piège de l'Arve",
-      "text": "L'Arve et les vallées voisines sont régulièrement touchées par le foehn, ce vent de sud qui franchit la montagne et redescend en rotors et en air très perturbé sous le vent du Mont-Blanc. Il devient probable quand la différence de pression entre Aoste et Annecy atteint -4 hPa ou plus, et l'on suit alors, à Passy, les stations du Prarion et du refuge du Requin. Ses signes sont un vent de sud sur les sommets, des nuages lenticulaires, un mur de foehn sur les cols, des cumulus déchiquetés dès le matin, et des rafales violentes ou un souffle chaud et sec dans les basses couches. Plaine-Joux n'est pas épargné.",
+      "text": "L'Arve et ses vallées voisines sont régulièrement touchées par le foehn. Ce vent de sud franchit la montagne et redescend sous le vent du Mont-Blanc en rotors et en air très perturbé. Il devient probable quand l'écart de pression entre Aoste et Annecy atteint -4 hPa ou plus ; à Passy, on suit alors les stations du Prarion et du refuge du Requin. Ses signes : vent de sud sur les sommets, nuages lenticulaires, mur de foehn sur les cols, cumulus déchiquetés dès le matin, rafales violentes ou souffle chaud et sec en basses couches. Plaine-Joux n'est pas épargné.",
       "focus": ["arve-foehn"],
       "view": "massif"
     },
     {
       "chapter": "Les pièges",
       "title": "Réserve de Passy, altiport et gypaète : le survol à plus de 300 m",
-      "text": "Au nord de la pointe de Platé, toute la falaise vers l'est est classée en réserve naturelle de Passy : le survol y est interdit à moins de 300 m du sol, et la zone de gypaète de Sixt-Passy s'y ajoute suivant son activation. À Sallanches, l'altiport de Mayères a son trafic local, et le vallon de Doran ainsi que la crête de l'aiguille d'Areu jusqu'à la Pointe Percée sont à éviter à cause du gypaète : d'anciennes consignes demandaient de les éviter impérativement du 1er juin au 31 août. Les zones de protection actuelles se consultent dans Spotair.",
+      "text": "Au nord de la pointe de Platé, toute la falaise vers l'est est en réserve naturelle de Passy : survol interdit à moins de 300 m du sol, et la zone de gypaète de Sixt-Passy s'y ajoute selon son activation. À Sallanches, l'altiport de Mayères a son trafic local. Le vallon de Doran et la crête de l'aiguille d'Areu jusqu'à la Pointe Percée sont à éviter pour le gypaète : d'anciennes consignes demandaient de les éviter impérativement du 1er juin au 31 août. Les zones de protection actuelles se consultent dans Spotair.",
       "focus": ["passy-reserve-naturelle", "sallanches-altiport-gypaete"],
       "view": "massif"
     },
     {
       "chapter": "Selon le vent météo",
       "title": "Par ouest ou sud-ouest : Plaine-Joux passe sous le vent du relief",
-      "text": "Par vent d'ouest ou de sud-ouest modéré à fort, Plaine-Joux est sous le vent du relief : le sud-ouest contre pour rejoindre les atterrissages. Sur la repose au décollage, on est sous le vent des arbres quand les conditions sont installées, ce qui est réservé aux confirmés. La règle générale est de ne pas voler au-dessus de 20 km/h de vent à 2000 m. Varan, Lachat d'en haut, Frioland et Platé restent favorables par sud-ouest faible à modéré, et Marlioz a une brise quasi tout le temps de sud-ouest.",
+      "text": "Par ouest ou sud-ouest modéré à fort, Plaine-Joux est sous le vent du relief, et le sud-ouest contre le retour vers les atterrissages. Sur la repose au décollage, on est sous le vent des arbres quand les conditions sont installées : c'est réservé aux confirmés. Règle générale : ne volez pas au-dessus de 20 km/h de vent à 2000 m. Varan, Lachat d'en haut, Frioland et Platé restent favorables par sud-ouest faible à modéré, et Marlioz a une brise de sud-ouest quasi permanente.",
       "focus": ["plaine-joux-ouest-sud-ouest", "varan", "lachat-d-en-haut", "passy-marlioz"],
       "phase": "afternoon",
       "wind": { "from": "SO", "kmh": 20 },
@@ -105,7 +105,7 @@
     {
       "chapter": "Selon le vent météo",
       "title": "Par nord ou par est : le Petit Môle et le plateau d'Orange",
-      "text": "Par vent de nord, Plaine-Joux est assez bien protégé par les Fiz, et au Môle on se pose à La Tour ; il faut en revanche se méfier du Petit Môle, sous le vent du vrai Môle par flux de nord, comme sous le vent de la brise soutenue de l'Arve en sud-est. Plus bas dans la vallée, Sur Cou, Andey Nord et Agy sont favorables au nord-ouest. Par vent d'est, au contraire, les rentrées d'est sont fortes et turbulentes sur le plateau d'Orange, et il faut garder de la marge pour rentrer au terrain par ouest ou sud-ouest marqué.",
+      "text": "Par nord, Plaine-Joux est assez bien protégé par les Fiz, et au Môle on se pose à La Tour. Méfiez-vous en revanche du Petit Môle : il est sous le vent du vrai Môle par flux de nord, comme sous le vent de la brise soutenue de l'Arve en sud-est. Plus bas, Sur Cou, Andey Nord et Agy sont favorables au nord-ouest. Par vent d'est, les rentrées sont fortes et turbulentes sur le plateau d'Orange. Par ouest ou sud-ouest marqué, gardez de la marge pour rentrer au terrain.",
       "focus": ["mole-petit-mole-sous-le-vent", "mole-la-tour", "orange-surcou-est-ouest", "plaine-joux"],
       "phase": "afternoon",
       "wind": { "from": "N", "kmh": 20 },
@@ -114,7 +114,14 @@
     {
       "chapter": "Les transitions",
       "title": "Sortir de l'Arve : Aravis, Chamonix, Mieussy",
-      "text": "Vers le sud-ouest, depuis les Quatre Têtes ou le plateau des Bénés au-dessus de Cordon, on rejoint le col des Aravis puis la Pointe Percée ; le classique Chamonix-Annecy par la chaîne des Aravis fait 56 km. Dans l'autre sens, un long plané du Grand Prarion vers Chedde passe au-dessus de Servoz, avec des thermiques possibles côté Servoz et Plaine-Joux. À l'ouest du secteur, depuis le Môle, avec un peu de thermique, il est facile de raccrocher les falaises de Mieussy, au nord-est. Depuis Sur Cou, on peut partir vers Andey ou Sous-Dine ; par vent de sud ou de sud-ouest, on vole sous le vent de cette dernière.",
+      "text": "Vers le sud-ouest, depuis les Quatre Têtes ou le plateau des Bénés au-dessus de Cordon, on rejoint le col des Aravis puis la Pointe Percée ; c'est le classique Chamonix-Annecy par la chaîne des Aravis. Dans l'autre sens, un long plané du Grand Prarion vers Chedde passe au-dessus de Servoz, avec des thermiques possibles côté Servoz et Plaine-Joux. À l'ouest, depuis le Môle, il suffit d'un peu de thermique pour raccrocher les falaises de Mieussy, au nord-est. Depuis Sur Cou, on part vers Andey ou Sous-Dine ; par sud ou sud-ouest, on vole sous le vent de cette dernière.",
+      "focus": ["quatre-tetes-aravis", "plateau-des-benes", "mont-blanc-chamonix/chamonix-annecy", "mont-blanc-chamonix/grand-prarion-servoz-chedde", "mole-mieussy", "sur-cou-andey-sous-dine"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Les transitions",
+      "title": "À retenir",
+      "text": "L'après-midi, la brise de Sallanches est très forte : à Passy, lisez-la aux rides du lac, et posez à Marlioz dès qu'elle s'installe. Au-delà de 20 km/h de vent à 2000 m, restez sur les sites protégés comme Plaine-Joux, ou au sol. Surveillez le foehn : dès que l'écart de pression Aoste - Annecy approche -4 hPa, ne volez pas.",
       "focus": ["quatre-tetes-aravis", "plateau-des-benes", "mont-blanc-chamonix/chamonix-annecy", "mont-blanc-chamonix/grand-prarion-servoz-chedde", "mole-mieussy", "sur-cou-andey-sous-dine"],
       "view": "massif"
     }

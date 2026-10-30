@@ -5,7 +5,7 @@
       "id": "lac-annecy",
       "name": "Lac d'Annecy (Forclaz, Planfait, Talloires, Doussard, Semnoz, Roc des Bœufs)",
       "parent_massif": "Préalpes du Nord – bassin annécien (Bornes à l'est, Bauges au sud-ouest)",
-      "summary": "Le lac d'Annecy est un entonnoir long de 15 km, orienté nord-nord-ouest – sud-sud-est, ouvert sur la plaine au nord.\n\nChaque jour d'été, la brise de vallée descend le lac depuis Annecy vers Doussard : elle s'installe vers 13h30 un bon jour, souvent soutenue l'après-midi, et reste active au-dessus de 100 m en soirée. Elle domine presque toujours, sauf par sud modéré à fort, et prend l'ascendant sur la bise.\n\nSur la carte de brises, la brise se divise au milieu du lac. Un bras part vers Doussard et la vallée de Faverges, jusqu'à Marlens et Ugine, puis gagne le col de Tamié ; un bras sud-ouest va vers Saint-Jorioz et les Bauges ; un petit bras rejoint Duingt et Entrevernes. En fin de journée, une brise descendante de sud-ouest glisse sous la brise de nord à Doussard.\n\nLes décollages de la rive est, la Forclaz (1 257 m) et Planfait (916 m), marchent sur les faces ouest et nord-ouest qu'elle alimente. Le petit tour rejoint les Dents de Lanfon, où l'on fait au moins 1 900 m avant de traverser vers le Roc des Bœufs. Le grand tour contourne Annecy par le Veyrier puis le Semnoz, porte des Bauges.\n\nÀ respecter : la CTR d'Annecy au-dessus de 1 220 m, la zone R185 de Sacconges, activée par NOTAM, la réserve du bout du lac (survol interdit sous 200 m) et la zone d'aéromodélisme du Semnoz. Par bise, Planfait est sous le vent du col de Bluffy ; par sud, la Forclaz est plus sensible. La brise d'Annecy est trop forte l'après-midi pour revenir en direct sur Planfait, et les cumulonimbus du nord envoient des rafales le long du lac.",
+      "summary": "Le lac d'Annecy est un entonnoir de 15 km, orienté nord-nord-ouest – sud-sud-est et ouvert sur la plaine au nord. Tout le vol s'y organise autour d'une brise : chaque jour d'été, elle descend le lac, d'Annecy vers Doussard.\n\nUn bon jour, elle s'installe vers 13h30, souvent soutenue l'après-midi, et reste active au-dessus de 100 m en soirée. Elle domine presque toujours, sauf par sud modéré à fort, et prend l'ascendant sur la bise. Au milieu du lac, la carte de brises la montre qui se divise. Un bras file vers Doussard et la vallée de Faverges, jusqu'à Marlens et Ugine, puis gagne le col de Tamié. Un bras sud-ouest part vers Saint-Jorioz et les Bauges, et un petit bras rejoint Duingt et Entrevernes. En fin de journée, une brise descendante de sud-ouest glisse sous la brise de nord à Doussard.\n\nSur la rive est, la Forclaz (1 257 m) et Planfait (916 m) marchent sur les faces ouest et nord-ouest que la brise alimente. Le petit tour rejoint les Dents de Lanfon : on y fait au moins 1 900 m avant de traverser vers le Roc des Bœufs. Le grand tour contourne Annecy par le Veyrier, puis le Semnoz, porte des Bauges.\n\nÀ respecter : la CTR d'Annecy au-dessus de 1 220 m, la zone R185 de Sacconges, activée par NOTAM, la réserve du bout du lac (survol interdit sous 200 m) et la zone d'aéromodélisme du Semnoz. Par bise, Planfait est sous le vent du col de Bluffy ; par sud, la Forclaz est plus sensible. L'après-midi, la brise est trop forte pour revenir en direct sur Planfait. Et les cumulonimbus du nord envoient des rafales le long du lac.",
       "bbox": [
         6.04,
         45.69,
@@ -2112,7 +2112,7 @@
       "synoptic_effects": [
         {
           "wind": "Bise",
-          "effect": "Par bise ou nord-est, Planfait devient très turbulent, voire dangereux, car il est sous le vent du col de Bluffy : renoncer dès qu'un vent arrière apparaît au décollage, et voler le matin. Doussard et Perroix sont turbulents, les Dents de Lanfon et le col des Frêtes très exposés. La Forclaz reste souvent volable, car la brise d'Annecy prend l'ascendant sur la bise. Coche Cabane et le Semnoz sont défavorables.",
+          "effect": "Par bise ou nord-est, Planfait passe sous le vent du col de Bluffy : très turbulent, voire dangereux. Volez le matin, et renoncez dès qu'un vent arrière apparaît au décollage. Doussard et Perroix sont turbulents, les Dents de Lanfon et le col des Frêtes très exposés. La Forclaz reste souvent volable, car la brise d'Annecy prend l'ascendant sur la bise. Coche Cabane et le Semnoz sont défavorables.",
           "sources": [
             "S9",
             "S1",
@@ -2124,7 +2124,7 @@
         },
         {
           "wind": "N",
-          "effect": "Par nord, la brise du lac, renforcée, domine les tendances de nord. Coche Cabane est délicat, avec de forts rouleaux, et le gradient est marqué à Verthier et à Perroix ; Doussard est turbulent par vent fort. Le Semnoz est dangereux, sauf si le vent reste sous 5 à 10 km/h et que la brise le redresse. La Forclaz, favorable par nord, reste le décollage de repli.",
+          "effect": "Par nord, la brise du lac forcit et domine les tendances de nord. Coche Cabane devient délicat, avec de forts rouleaux ; le gradient est marqué à Verthier et à Perroix, et Doussard est turbulent par vent fort. Le Semnoz est dangereux, sauf si le vent reste sous 5 à 10 km/h et que la brise le redresse. La Forclaz, favorable par nord, reste le décollage de repli.",
           "sources": [
             "S41",
             "S43",
@@ -2136,7 +2136,7 @@
         },
         {
           "wind": "E",
-          "effect": "Par est, Planfait est plus confortable que par nord-est, mais les Dents de Lanfon et le col des Frêtes sont beaucoup plus turbulents en altitude. Le décollage du Semnoz est sous le vent de la crête sommitale, où la turbulence s'étend. À Saint-Jorioz, où l'on fait du kite, plus la composante est est forte, plus la zone ventée du lac se réduit à un couloir le long de la rive ouest.",
+          "effect": "Par est, Planfait est plus confortable que par nord-est, mais les Dents de Lanfon et le col des Frêtes sont bien plus turbulents en altitude. Le décollage du Semnoz est sous le vent de la crête sommitale, où la turbulence s'étend. À Saint-Jorioz, où l'on fait du kite, plus la composante est forcit, plus la zone ventée du lac se réduit à un couloir le long de la rive ouest.",
           "sources": [
             "S9",
             "S55",
@@ -2145,7 +2145,7 @@
         },
         {
           "wind": "SE",
-          "effect": "Par sud-est, la Forclaz et Coche Cabane sont défavorables. Les faces sud-est autour de la Forclaz sont généreuses, mais très turbulentes. Au Semnoz, le soaring par sud-est est possible en hiver, dans la combe derrière l'arrivée du télémix.",
+          "effect": "Par sud-est, la Forclaz et Coche Cabane sont défavorables. Autour de la Forclaz, les faces sud-est sont généreuses mais très turbulentes. Au Semnoz, on peut soarer par sud-est en hiver, dans la combe derrière l'arrivée du télémix.",
           "sources": [
             "S41",
             "S43",
@@ -2155,7 +2155,7 @@
         },
         {
           "wind": "S",
-          "effect": "Par sud, la Forclaz, plus haute et orientée nord-ouest, est plus sensible que Planfait, abrité par les Bauges et le Semnoz ; un vent fort peut toutefois monter brutalement, et il faut surveiller le lac. Il faut respecter le volume interdit à Perroix. À Coche Cabane, par sud fort, il faut s'abstenir. Le Semnoz est dangereux par sud. Le décollage d'Entrevernes, fermé, permettait de poser à Doussard par sud faible.",
+          "effect": "Par sud, la Forclaz, plus haute et orientée nord-ouest, est plus sensible que Planfait, abrité par les Bauges et le Semnoz. Un vent fort peut pourtant monter brutalement : surveillez le lac. Respectez le volume interdit à Perroix. À Coche Cabane, par sud fort, abstenez-vous. Le Semnoz est dangereux par sud. Le décollage d'Entrevernes, fermé, permettait de poser à Doussard par sud faible.",
           "sources": [
             "S1",
             "S9",
@@ -2167,7 +2167,7 @@
         },
         {
           "wind": "SW",
-          "effect": "Par sud-ouest léger, associé à la brise du lac, les conditions sont idéales à Coche Cabane et à la Forclaz. Le Semnoz fonctionne jusqu'au sud-ouest. Il arrive que le côté d'Annecy du Mont Veyrier soit sous le vent de l'arête, et turbulent.",
+          "effect": "Par sud-ouest léger, avec la brise du lac, les conditions sont idéales à Coche Cabane et à la Forclaz. Le Semnoz fonctionne jusqu'au sud-ouest. Le côté d'Annecy du Mont Veyrier peut alors se trouver sous le vent de l'arête, et turbulent.",
           "sources": [
             "S43",
             "S46",
@@ -2176,7 +2176,7 @@
         },
         {
           "wind": "W",
-          "effect": "Par ouest, le Semnoz est dans son régime idéal, avec son décollage plein ouest, de 13 h au coucher du soleil, et Planfait fonctionne aussi bien. Les faces ouest et nord-ouest de la rive est restent dans l'axe de la brise du lac.",
+          "effect": "Par ouest, le Semnoz est dans son régime idéal : décollage plein ouest, de 13 h au coucher du soleil. Planfait marche aussi bien. Les faces ouest et nord-ouest de la rive est restent dans l'axe de la brise du lac.",
           "sources": [
             "S55",
             "S44",
@@ -2185,7 +2185,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Par nord-ouest, la brise du lac est dans son axe : la Forclaz et Planfait sont en plein flux, et le Semnoz fonctionne du nord-ouest au sud-ouest. En altitude, un nord-ouest marqué au-dessus de 2 000 m rend les confluences très turbulentes, avec des dégueulantes de -6 m/s sur plus de 10 s.",
+          "effect": "Par nord-ouest, la brise du lac est dans son axe : la Forclaz et Planfait sont en plein flux, et le Semnoz marche du nord-ouest au sud-ouest. En altitude, un nord-ouest marqué au-dessus de 2 000 m rend les confluences très turbulentes, avec des dégueulantes de -6 m/s sur plus de 10 s.",
           "sources": [
             "S1",
             "S46",
@@ -2394,28 +2394,28 @@
         }
       ],
       "tips": [
-        "Décoller de la rive est plutôt vers midi ou 13h : les sites sont exposés à l'ouest, et la brise s'établit vers 13h30 [S3][S4]",
-        "Partir de Planfait, qui se déclenche plus tôt que la Forclaz, pour rejoindre directement les Dents de Lanfon [S4][S3]",
-        "Aux Dents de Lanfon, ne pas partir vers le Roc des Bœufs sous 1 900 m ; au retour, garder de la marge pour ne pas passer sous le vent de la brise [S3]",
-        "Au retour des Bauges l'après-midi, éviter la transition directe vers Planfait, trop exposée à la brise d'Annecy : contourner par Montmin et le Lanfonnet [S58]",
-        "Pour le Roc des Bœufs, lire le terrain avant de s'engager : les sources divergent sur la face à viser, ouest éclairée ou face est raide [S25][S6]",
-        "En fin de journée à Doussard, surveiller les manches à air : la brise s'inverse (sud-ouest sous 100 m), et il faut se préparer à poser face au sud, en PT8 [S14][S1][S2]",
-        "Par bise ou nord-est, oublier Planfait, sous le vent : la Forclaz reste souvent volable, et il faut voler le matin [S9][S1][S41]",
-        "Par sud, se méfier de la Forclaz, plus sensible que Planfait, abrité par les Bauges ; surveiller le lac pour sentir monter le vent [S1][S9]",
-        "Au Semnoz, ne pas dériver derrière la cassure avant d'avoir de l'altitude : on se retrouve sous le vent des thermiques de la combe sud-sud-ouest [S55]",
-        "Pour le grand tour, vérifier le NOTAM de la R185 de Sacconges, rester au-dessus de 1 220 m dans la CTR, et partir du Veyrier vers 2 500 m [S33][S34][S55]",
-        "Ne pas utiliser Entrevernes : le terrain est fermé par arrêté municipal, même si d'anciens guides le citent [S45]",
-        "Au printemps, la brise d'Annecy est plus forte ; en plein été, préférer Grand-Bornand [S4]",
-        "Respecter le règlement de Talloires-Montmin : couloirs de décollage, vitesse de 30 km/h, réserve du bout du lac à plus de 200 m au-dessus du sol, pas de survol à basse altitude de Perroix [S37]",
-        "Pour une transition vers Annecy, les Aravis et les Bauges, choisir le jour (plafond d'au moins 2 500 m, léger nord) : les grands vols réussis partent de Méruz ou Praz Véchin (Charvin), ou de Saint-Hilaire (Parmelan en point de virage) [S58][S59]",
-        "Par nord fort, peu d'options autour d'Annecy : Coche Cabane par nord faible à modéré, Montlambert ou l'Ébaudiaz en Combe de Savoie ; attention au nord rentrant par Tamié, qui contre l'approche [S76]"
+        "Décollez de la rive est plutôt vers midi ou 13h : les sites sont exposés à l'ouest, et la brise s'établit vers 13h30 [S3][S4].",
+        "Partez de Planfait, qui se déclenche plus tôt que la Forclaz, pour rejoindre directement les Dents de Lanfon [S4][S3].",
+        "Aux Dents de Lanfon, ne partez pas vers le Roc des Bœufs sous 1 900 m. Au retour, gardez de la marge pour ne pas passer sous le vent de la brise [S3].",
+        "Au retour des Bauges l'après-midi, ne transitez pas en direct vers Planfait, trop exposé à la brise d'Annecy : contournez par Montmin et le Lanfonnet [S58].",
+        "Au Roc des Bœufs, lisez le terrain avant de vous engager : les sources divergent sur la face à viser, l'ouest éclairée ou la face est raide [S25][S6].",
+        "En fin de journée à Doussard, surveillez les manches à air : la brise s'inverse (sud-ouest sous 100 m), et il faut se préparer à poser face au sud, en PT8 [S14][S1][S2].",
+        "Par bise ou nord-est, oubliez Planfait, sous le vent. La Forclaz reste souvent volable : volez le matin [S9][S1][S41].",
+        "Par sud, méfiez-vous de la Forclaz, plus sensible que Planfait, abrité par les Bauges. Surveillez le lac pour voir monter le vent [S1][S9].",
+        "Au Semnoz, ne dérivez pas derrière la cassure sans altitude : vous seriez sous le vent des thermiques de la combe sud-sud-ouest [S55].",
+        "Pour le grand tour, vérifiez le NOTAM de la R185 de Sacconges, restez au-dessus de 1 220 m dans la CTR, et quittez le Veyrier vers 2 500 m [S33][S34][S55].",
+        "N'utilisez pas Entrevernes : le terrain est fermé par arrêté municipal, même si d'anciens guides le citent [S45].",
+        "Au printemps, la brise d'Annecy est plus forte. En plein été, préférez Grand-Bornand [S4].",
+        "À Talloires-Montmin, respectez le règlement : couloirs de décollage, vitesse de 30 km/h, réserve du bout du lac à plus de 200 m du sol, pas de survol à basse altitude de Perroix [S37].",
+        "Pour une transition vers Annecy, les Aravis et les Bauges, choisissez le jour : plafond d'au moins 2 500 m, léger nord. Les grands vols réussis partent de Méruz ou Praz Véchin (Charvin), ou de Saint-Hilaire, le Parmelan en point de virage [S58][S59].",
+        "Par nord fort, peu d'options autour d'Annecy : Coche Cabane par nord faible à modéré, Montlambert ou l'Ébaudiaz en Combe de Savoie. Attention au nord qui rentre par Tamié et contre l'approche [S76]."
       ]
     },
     {
       "id": "bornes",
       "name": "Massif des Bornes (Tournette, Parmelan, Glières, Sous-Dine, vallée de Thônes)",
       "parent_massif": "Préalpes du Nord",
-      "summary": "Les Bornes bordent le lac d'Annecy à l'est et forment le palier entre le bassin d'Annecy et les Aravis. On y trouve le Parmelan (plateau calcaire de 1 830 m), les Dents de Lanfon, la Tournette, la Sous-Dine, le plateau des Glières et le Mont Lachat de Thônes.\n\nLe cœur aérologique est la vallée du Fier. Une grande flèche de brise la remonte, d'Annecy-le-Vieux à Thônes, par Dingy-Saint-Clair, Alex et La Balme-de-Thuy ; à Thônes, elle se divise vers Saint-Jean-de-Sixt et le Grand-Bornand, puis vers Manigod et le col du Marais. Des thermiques sont dessinés sur le Parmelan, les Dents de Lanfon, la Tournette, le Mont Lachat, Alex et le plateau des Glières. Le col de Bluffy (631 m) est le couloir de la bise vers Planfait, et il est présenté comme une confluence entre la brise du lac et celle de la vallée du Fier.\n\nLe Parmelan est le point de virage des grands triangles. Entre la Tête à Turpin et le refuge, la zone peut être très rafaleuse, en plein vent ; le Mont Lachat de Thônes, lui, est un passage dansant, à la confluence des brises.\n\nLes décollages du Parmelan, l'Anglettaz (1 579 m, sud-ouest) et le Lachat de Naves (1 260 m), sont en limite de la CTR d'Annecy et gérés par un club local. La Tournette et la Pointe de Talamarche, face est, ont des thermiques dès 10 h : elles ouvrent les cross vers l'est, par le triangle Tournette – Pointe Percée – Sous-Dine – Arclusaz. Pour le plateau des Glières et la Sous-Dine, aucune source locale n'a été trouvée : seules les flèches et thermiques de la carte de brises sont documentés.",
+      "summary": "Les Bornes bordent le lac d'Annecy à l'est. C'est le palier entre le bassin d'Annecy et les Aravis : le Parmelan (plateau calcaire de 1 830 m), les Dents de Lanfon, la Tournette, la Sous-Dine, le plateau des Glières et le Mont Lachat de Thônes.\n\nL'air s'organise autour de la vallée du Fier. Une grande flèche de brise la remonte d'Annecy-le-Vieux à Thônes, par Dingy-Saint-Clair, Alex et La Balme-de-Thuy. À Thônes, elle se divise vers Saint-Jean-de-Sixt et le Grand-Bornand, puis vers Manigod et le col du Marais. Des thermiques sont dessinés sur le Parmelan, les Dents de Lanfon, la Tournette, le Mont Lachat, Alex et le plateau des Glières. Le col de Bluffy (631 m) est le couloir de la bise vers Planfait ; on le présente aussi comme une confluence entre la brise du lac et celle du Fier.\n\nLe Parmelan est le point de virage des grands triangles. Entre la Tête à Turpin et le refuge, la zone peut être très rafaleuse, en plein vent. Le Mont Lachat de Thônes est un passage dansant, à la confluence des brises.\n\nLes décollages du Parmelan, l'Anglettaz (1 579 m, sud-ouest) et le Lachat de Naves (1 260 m), sont en limite de la CTR d'Annecy et gérés par un club local. La Tournette et la Pointe de Talamarche, face est, ont des thermiques dès 10 h : elles ouvrent les cross vers l'est, par le triangle Tournette – Pointe Percée – Sous-Dine – Arclusaz. Pour le plateau des Glières et la Sous-Dine, aucune source locale : on n'en connaît que les flèches et les thermiques de la carte de brises.",
       "bbox": [
         6.15,
         45.8,
@@ -3104,7 +3104,7 @@
       "synoptic_effects": [
         {
           "wind": "Bise",
-          "effect": "Par nord-est, le flux passe par le col de Bluffy vers le lac et rend Planfait dangereux ; le vent d'est fort est sensible près des Dents de Lanfon et du col des Frêtes. Le Lachat de Naves est défavorable par nord-est, est et sud-est, et l'Anglettaz présente un danger par vent arrière de nord.",
+          "effect": "Par nord-est, le flux passe le col de Bluffy vers le lac et rend Planfait dangereux. Le vent d'est fort se fait sentir près des Dents de Lanfon et du col des Frêtes. Le Lachat de Naves est défavorable par nord-est, est et sud-est, et l'Anglettaz devient dangereux avec le vent arrière de nord.",
           "sources": [
             "S9",
             "S50"
@@ -3112,7 +3112,7 @@
         },
         {
           "wind": "N",
-          "effect": "Par nord, le vent arrière au décollage de l'Anglettaz et du Lachat de Naves est dangereux ; la brise du lac et celle du Fier dominent la basse couche.",
+          "effect": "Par nord, le vent arrive dans le dos à l'Anglettaz comme au Lachat de Naves : c'est dangereux. En basse couche, la brise du lac et celle du Fier dominent.",
           "sources": [
             "S50",
             "S41"
@@ -3120,14 +3120,14 @@
         },
         {
           "wind": "SW",
-          "effect": "Par sud-ouest, l'Anglettaz est dans son meilleur régime, et le Lachat de Naves est favorable par sud-ouest, ouest et nord-ouest.",
+          "effect": "Par sud-ouest, l'Anglettaz est à son meilleur, et le Lachat de Naves est favorable par sud-ouest, ouest et nord-ouest.",
           "sources": [
             "S50"
           ]
         },
         {
           "wind": "W",
-          "effect": "Par ouest à nord-ouest, il y a des rouleaux à droite du décollage de l'Anglettaz, et le Lachat de Naves est favorable. En altitude, un nord-ouest marqué rend les confluences entre Bornes et Aravis très turbulentes.",
+          "effect": "Par ouest à nord-ouest, des rouleaux se forment à droite du décollage de l'Anglettaz ; le Lachat de Naves est favorable. En altitude, un nord-ouest marqué rend les confluences entre Bornes et Aravis très turbulentes.",
           "sources": [
             "S50",
             "S17"
@@ -3135,14 +3135,14 @@
         },
         {
           "wind": "S",
-          "effect": "Par sud, il y a des rouleaux à gauche du décollage de l'Anglettaz, sous le Parmelan ; le Lachat de Naves est défavorable.",
+          "effect": "Par sud, des rouleaux se forment à gauche du décollage de l'Anglettaz, sous le Parmelan, et le Lachat de Naves est défavorable.",
           "sources": [
             "S50"
           ]
         },
         {
           "wind": "NW",
-          "effect": "Au-dessus de 2 000 m, un nord-ouest marqué rend les confluences très turbulentes, avec des dégueulantes marquées (-6 m/s pendant plus de 10 s) sur l'itinéraire entre Bornes et Aravis. Il est arrivé que le vent annoncé en ouest, à 15 km/h, soit en réalité du nord-nord-ouest, lors d'un vol de 202 km.",
+          "effect": "Au-dessus de 2 000 m, un nord-ouest marqué rend les confluences très turbulentes entre Bornes et Aravis, avec des dégueulantes marquées (-6 m/s pendant plus de 10 s). Le vent annoncé peut tromper : lors d'un vol de 202 km, un ouest prévu à 15 km/h était en réalité du nord-nord-ouest.",
           "sources": [
             "S17"
           ]
@@ -3387,23 +3387,23 @@
         }
       ],
       "tips": [
-        "Le Parmelan est un point de virage des triangles de 200 km (Saint-Hilaire–Parmelan, Praz-Vechin–Grenoble–Parmelan) : les plafonds atteignent vers 2 400 m par bonne journée [S59][S58][S23]",
-        "Entre la Tête à Turpin et le refuge du Parmelan, il y a du plein vent et des rafales, sans cumulus : prévoir un repli vers le Lachat de Thônes ou les Dents de Lanfon [S17]",
-        "Au Lachat de Thônes, sortir des thermiques une fois hors de l'influence des brises, où ils se redressent [S17]",
-        "Partir tôt pour la Tournette : depuis la Pointe de Talamarche, face est, on rejoint la face est de la Tournette vers 10 h [S5]",
-        "Entre la Tournette et l'Arclosan, la zone est peu confortable : respecter la ZSM de l'Arclosan, avec 2 100 m au moins, ou entre 1 100 et 1 150 m [S58][S38]",
-        "À l'Anglettaz et au Lachat de Naves, le niveau est confirmé : ne pas pénétrer la CTR d'Annecy à l'approche de Villaz [S50]",
-        "Pour les Glières et la Sous-Dine, aucune source locale : voler avec prudence, et repérer les cumulus, qui matérialisent bien les Bornes et les Aravis les jours de grand cross [S17]",
-        "À la Tournette, quand l'air est trop stable à Planfait, on peut monter à pied pour décoller au-dessus de la couche d'inversion, au col du Varo [S78]",
-        "Au Parmelan, les décollages ne sont pas praticables sainement quand la brise et les conditions sont installées : décoller tôt ou en fin de journée [S79]",
-        "À Thônes, la brise d'ouest bute sur la Cotagne : depuis le Lachat de Thônes, l'est de la Cotagne est sous le vent, même entre 12 h et 13 h [S77]"
+        "Le Parmelan est le point de virage des triangles de 200 km (Saint-Hilaire–Parmelan, Praz-Vechin–Grenoble–Parmelan) : les bons jours, le plafond y atteint 2 400 m environ [S59][S58][S23].",
+        "Entre la Tête à Turpin et le refuge du Parmelan, on trouve du plein vent et des rafales, sans cumulus. Prévoyez un repli vers le Lachat de Thônes ou les Dents de Lanfon [S17].",
+        "Au Lachat de Thônes, ne quittez le thermique qu'une fois sorti de l'influence des brises : là, il se redresse [S17].",
+        "Pour la Tournette, partez tôt : de la Pointe de Talamarche, face est, on rejoint la face est de la Tournette vers 10 h [S5].",
+        "Entre la Tournette et l'Arclosan, l'air est peu confortable. Respectez la ZSM de l'Arclosan : au moins 2 100 m, ou entre 1 100 et 1 150 m [S58][S38].",
+        "L'Anglettaz et le Lachat de Naves demandent un niveau confirmé. À l'approche de Villaz, n'entrez pas dans la CTR d'Annecy [S50].",
+        "Aux Glières et à la Sous-Dine, aucune source locale : volez prudemment et suivez les cumulus, qui dessinent bien les Bornes et les Aravis les jours de grand cross [S17].",
+        "Quand l'air est trop stable à Planfait, montez à pied à la Tournette pour décoller au-dessus de l'inversion, au col du Varo [S78].",
+        "Au Parmelan, on ne décolle pas sainement quand la brise et les conditions sont installées : partez tôt, ou en fin de journée [S79].",
+        "À Thônes, la brise d'ouest bute sur la Cotagne : depuis le Lachat de Thônes, l'est de la Cotagne est sous le vent, même entre 12 h et 13 h [S77]."
       ]
     },
     {
       "id": "aravis",
       "name": "Chaîne des Aravis (Grand-Bornand, La Clusaz, col des Aravis, Charvin, Manigod, Sulens)",
       "parent_massif": "Préalpes du Nord",
-      "summary": "Les Aravis forment une chaîne calcaire d'environ 30 km, orientée sud-ouest – nord-est, en balcon face au Mont-Blanc. Le Charvin (2 409 m), l'Étale (2 484 m), le col des Aravis (1 487 m), la Pointe des Verres et la Pointe Percée (2 750 m) la jalonnent. Ses deux grands accès aérologiques sont la vallée de Thônes–Saint-Jean-de-Sixt (La Clusaz, Grand-Bornand) et, par le sud, Faverges, Marlens et Ugine.\n\nLa carte de brises montre la brise de Thônes qui se divise en plusieurs branches : vers Saint-Jean-de-Sixt, puis le Grand-Bornand et La Clusaz jusqu'au col des Aravis ; vers Manigod, par Les Clefs ; vers Serraval, par le col du Marais. La brise de la vallée du Borne arrive du nord, par Entremont, et une brise remonte de Flumet, de l'autre côté du col.\n\nLes décollages de station sont orientés face à cette brise : le Lachat du Grand-Bornand (2 020 à 2 100 m, sud-ouest), le Crêt du Merle et le Crêt du Loup (nord-ouest), à La Clusaz. Le foehn est le piège majeur : par vent de sud à sud-ouest, les décollages de La Clusaz sont mauvais. En altitude, un nord-ouest marqué rend les confluences très turbulentes.\n\nLe Grand-Bornand est une meilleure option que le lac en plein été, et ses décollages permettent de voler au-dessus de l'inversion. Aux Potais, le circuit dépend de la brise : PTU main gauche en brise montante, main droite en brise descendante. La patinoire est très turbulente par vent de nord.\n\nLes cross partent vers le Charvin, la Dent de Cons et la Belle Étoile, ou vers la Pointe Percée et le Bargy. La ZSM de l'Arclosan et les zones gypaète imposent des altitudes minimales.",
+      "summary": "Les Aravis sont une chaîne calcaire d'environ 30 km, orientée sud-ouest – nord-est, en balcon face au Mont-Blanc. Le Charvin (2 409 m), l'Étale (2 484 m), le col des Aravis (1 487 m), la Pointe des Verres et la Pointe Percée (2 750 m) la jalonnent. L'air y entre par deux portes : la vallée de Thônes–Saint-Jean-de-Sixt (La Clusaz, Grand-Bornand) et, au sud, Faverges, Marlens et Ugine.\n\nL'après-midi, la brise de Thônes se divise : vers Saint-Jean-de-Sixt, puis le Grand-Bornand et La Clusaz jusqu'au col des Aravis ; vers Manigod par Les Clefs ; vers Serraval par le col du Marais. La brise du Borne arrive du nord par Entremont, et une brise remonte de Flumet, de l'autre côté du col. Les décollages de station regardent cette brise : le Lachat du Grand-Bornand (2 020 à 2 100 m, sud-ouest), le Crêt du Merle et le Crêt du Loup (nord-ouest) à La Clusaz. En plein été, le Grand-Bornand vaut mieux que le lac, et ses décollages permettent de voler au-dessus de l'inversion.\n\nLe foehn est le piège majeur : par vent de sud à sud-ouest, les décollages de La Clusaz sont mauvais. En altitude, un nord-ouest marqué rend les confluences très turbulentes. Aux Potais, le circuit suit la brise : PTU main gauche en brise montante, main droite en brise descendante. La patinoire est très turbulente par vent de nord.\n\nLes cross partent vers le Charvin, la Dent de Cons et la Belle Étoile, ou vers la Pointe Percée et le Bargy. La ZSM de l'Arclosan et les zones gypaète imposent des altitudes minimales.",
       "bbox": [
         6.3,
         45.69,
@@ -4796,7 +4796,7 @@
       "synoptic_effects": [
         {
           "wind": "Foehn",
-          "effect": "Par foehn, de sud à sud-ouest, les décollages de La Clusaz sont mauvais : le Crêt du Loup, l'Aiguille des Calvaires et le Crêt du Merle sont à éviter, et l'Étale par vent de sud fort. Le Lachat, orienté sud-ouest, fait face au vent de vallée, mais il est sous le vent par nord, est, sud-est, sud, ouest et nord-ouest.",
+          "effect": "Par foehn de sud à sud-ouest, les décollages de La Clusaz sont mauvais : évitez le Crêt du Loup, l'Aiguille des Calvaires et le Crêt du Merle, et l'Étale par vent de sud fort. Le Lachat, orienté sud-ouest, fait face au vent de vallée, mais il est sous le vent par nord, est, sud-est, sud, ouest et nord-ouest.",
           "sources": [
             "S49",
             "S62",
@@ -4814,7 +4814,7 @@
         },
         {
           "wind": "N",
-          "effect": "Par nord, l'atterrissage de la patinoire est très turbulent, au carrefour de vallées. Les décollages de La Clusaz sont favorables (nord, ouest, nord-ouest), mais le Lachat est défavorable par nord.",
+          "effect": "Par nord, l'atterrissage de la patinoire, au carrefour de vallées, est très turbulent. Les décollages de La Clusaz (nord, ouest, nord-ouest) sont favorables, mais pas le Lachat.",
           "sources": [
             "S63",
             "S49",
@@ -4823,7 +4823,7 @@
         },
         {
           "wind": "NE",
-          "effect": "Le décollage du Lachat par nord-est n'est possible que par conditions calmes : les orientations favorables sont le nord-est et le sud-ouest.",
+          "effect": "Par nord-est, le Lachat ne se décolle que par conditions calmes. Ses orientations favorables sont le nord-est et le sud-ouest.",
           "sources": [
             "S15",
             "S47"
@@ -4831,7 +4831,7 @@
         },
         {
           "wind": "S",
-          "effect": "Par sud, les brises de vallée donnent une composante sud le long des crêtes : il faut remonter au vent. Le vent de sud annoncé à 1 500 m est présent, mais il reste peu gênant, mêlé à la brise, et les zones de déclenchement sont évidentes, comme la croupe sud de la Belle Étoile. Les décollages de La Clusaz sont défavorables.",
+          "effect": "Par sud, les brises de vallée donnent une composante sud le long des crêtes : remontez au vent. Le sud annoncé à 1 500 m est bien là, mais mêlé à la brise, il gêne peu, et les zones de déclenchement sont évidentes, comme la croupe sud de la Belle Étoile. Les décollages de La Clusaz sont défavorables.",
           "sources": [
             "S17",
             "S58",
@@ -4840,7 +4840,7 @@
         },
         {
           "wind": "W",
-          "effect": "Par ouest, les décollages de La Clusaz (ouest et nord-ouest) sont favorables, et l'atterrissage des Potais l'est par est et ouest. Un ouest de 15 à 20 km/h était annoncé, mais le vent était en réalité nord-nord-ouest le jour des 200 km.",
+          "effect": "Par ouest, les décollages de La Clusaz (ouest et nord-ouest) sont favorables, et l'atterrissage des Potais l'est par est et ouest. Méfiez-vous de la prévision : le jour des 200 km, l'ouest annoncé de 15 à 20 km/h était en réalité du nord-nord-ouest.",
           "sources": [
             "S49",
             "S48",
@@ -4849,7 +4849,7 @@
         },
         {
           "wind": "SW",
-          "effect": "Par sud-ouest, le vent renforce la brise de vallée, mais il ne faut pas non plus trop de sud-ouest. Au Lachat, un sud très léger est bon, mais plus fort il devient un piège, avec un terrain pentu et un vent météo en altitude. Sur la face sud du Lachat, on peut se retrouver sous le vent.",
+          "effect": "Par sud-ouest, le vent renforce la brise de vallée, mais il n'en faut pas trop. Au Lachat, un sud très léger est bon ; plus fort, c'est un piège, avec un terrain pentu et le vent météo en altitude. Sur la face sud du Lachat, on peut se retrouver sous le vent.",
           "sources": [
             "S71",
             "S69",
@@ -5207,18 +5207,18 @@
         }
       ],
       "tips": [
-        "Une chaîne d'environ 30 km, du Charvin à l'Étale puis jusqu'à la Pointe Percée, forme un axe continu pour les grands cross [S24]",
-        "Les grands triangles de 202 km (Chartreuse, Aravis, Albertville) se font à environ 25 km/h de moyenne, en partant vers 11h30 ; en remontant les crêtes, les brises donnent une composante sud [S17]",
-        "Au Grand-Bornand, seul le Lachat est autorisé : décoller par nord-est seulement par calme, et atterrir uniquement aux Potais [S15]",
-        "À La Clusaz, tous les décollages (Crêt du Merle, Crêt du Loup, Aiguille des Calvaires, Étale) sont mauvais par sud à sud-ouest, en foehn [S49][S62]",
-        "Aux Potais, anticiper la brise montante et les hors-terrains, et faire le circuit suivant le sens de la brise [S48]",
-        "Par plein été stable, le Grand-Bornand et La Clusaz permettent de voler au-dessus de l'inversion, quand la masse d'air basse est stable [S25][S4]",
-        "Zone de sensibilité majeure du gypaète : le survol sous 300 m est interdit dans plusieurs zones des Aravis et du Bargy ; consulter la carte LPO [S61]",
-        "Pour le Charvin et la Dent de Cons, partir tôt de Méruz ou de Praz Véchin, vers 10h30 : l'extraction y est facile les jours instables [S58]",
-        "Pour partir du Lachat vers les Aravis, il faut des plafonds d'au moins 2 500 m (2 300 m à la rigueur), et plus de 3 000 m en août ; le Jalouvre se prend de haut, car on y est vite sous le vent [S70][S71]",
-        "Le matin, le vent arrière est possible au décollage principal du Lachat : décoller de l'autre côté, dans les cailloux, faire le tour du Lachat, puis atterrir au Bouchet [S70]",
-        "Sulens est la « station-service » du cross entre la Tournette et les Aravis : y chercher un cumulus pour recharger à mi-chemin [S81][S77]",
-        "En venant du Charvin, ne pas se mettre trop au nord de Sulens, à cause du venturi du col vers La Tulle [S77]"
+        "Du Charvin à l'Étale, puis jusqu'à la Pointe Percée, la chaîne forme un axe continu d'environ 30 km pour les grands cross [S24].",
+        "Les grands triangles de 202 km (Chartreuse, Aravis, Albertville) partent vers 11h30 et tournent à environ 25 km/h de moyenne. En remontant les crêtes, attendez-vous à une composante sud due aux brises [S17].",
+        "Au Grand-Bornand, seul le Lachat est autorisé. Ne décollez par nord-est que par calme, et posez-vous uniquement aux Potais [S15].",
+        "À La Clusaz, tous les décollages (Crêt du Merle, Crêt du Loup, Aiguille des Calvaires, Étale) sont mauvais par sud à sud-ouest, en foehn [S49][S62].",
+        "Aux Potais, anticipez la brise montante et les hors-terrains, et faites le circuit dans le sens de la brise [S48].",
+        "En plein été, quand la masse d'air basse est stable, le Grand-Bornand et La Clusaz permettent de voler au-dessus de l'inversion [S25][S4].",
+        "Gypaète : le survol sous 300 m est interdit dans plusieurs zones de sensibilité majeure des Aravis et du Bargy. Consultez la carte LPO [S61].",
+        "Pour le Charvin et la Dent de Cons, partez tôt de Méruz ou de Praz Véchin, vers 10h30 : les jours instables, l'extraction y est facile [S58].",
+        "Pour partir du Lachat vers les Aravis, il faut au moins 2 500 m de plafond (2 300 m à la rigueur), et plus de 3 000 m en août. Prenez le Jalouvre haut : on y passe vite sous le vent [S70][S71].",
+        "Le matin, le vent peut être arrière au décollage principal du Lachat. Décollez alors de l'autre côté, dans les cailloux, faites le tour du Lachat et posez au Bouchet [S70].",
+        "Sulens est la « station-service » du cross entre la Tournette et les Aravis : cherchez-y un cumulus pour recharger à mi-chemin [S81][S77].",
+        "En venant du Charvin, ne vous mettez pas trop au nord de Sulens : le col vers La Tulle fait venturi [S77]."
       ]
     }
   ],

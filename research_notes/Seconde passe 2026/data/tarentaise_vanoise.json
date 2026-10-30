@@ -5,7 +5,7 @@
       "id": "tarentaise",
       "name": "Tarentaise (Albertville → Moûtiers → Bourg-Saint-Maurice → Val d'Isère)",
       "parent_massif": "Tarentaise",
-      "summary": "La Tarentaise est une longue vallée de l'Isère, orientée sud-est entre Albertville et Moûtiers, puis nord-est jusqu'à Bourg-Saint-Maurice, où elle plie à angle droit vers Tignes et Val d'Isère.\n\nVers 11h, la brise montante s'installe dans la Tarentaise moyenne (Moûtiers-Centron). Elle devient forte l'après-midi, à 30 à 40 km/h et plus à Bourg dès 14h, et impose des décollages du matin ou du soir. À Bourg, elle rencontre un flux descendant par les Chapieux, accéléré par le venturi Prainan-Clapet et renforcé par le nord ou la bise. Plus haut, la brise principale se partage à Landry : une part remonte vers le Ponthurin, et la brise bascule par le col de la Chal vers l'Arc.\n\nLa Haute Tarentaise connaît un foehn instantané, dit « vent du Saint-Bernard », d'axe nord-est/sud-ouest : des rafales de 80 km/h atteignent Moûtiers, et le foehn se déclenche dès un écart de 4 hPa ou plus au diagramme du foehn. Foehn et lombarde interdisent Tignes et Val d'Isère. Les Arcs, assez protégés de la bise, offrent des thermiques généreux et des plafonds au-delà de 3000 m ; on y longe la crête de la Grive vers le nord, en restant obligatoirement sur le versant ouest.\n\nLe cœur du Parc national de la Vanoise (Mont Pourri, Ponthurin, sud de Tignes) est tout proche. L'arrêté 2026-31 n'autorise le survol à moins de 1000 m/sol que dans des secteurs de Maurienne : rien n'est permis en Tarentaise.",
+      "summary": "La Tarentaise est la longue vallée de l'Isère : orientée sud-est entre Albertville et Moûtiers, puis nord-est jusqu'à Bourg-Saint-Maurice, où elle plie à angle droit vers Tignes et Val d'Isère.\n\nVers 11h, la brise montante s'installe dans la Tarentaise moyenne (Moûtiers-Centron). L'après-midi, elle devient forte : 30 à 40 km/h et plus à Bourg dès 14h. On vole donc le matin ou le soir. À Bourg, elle rencontre un flux descendant des Chapieux, accéléré par le venturi Prainan-Clapet et renforcé par le nord ou la bise. Plus haut, à Landry, la brise principale se partage : une part remonte vers le Ponthurin, et la brise bascule par le col de la Chal vers l'Arc.\n\nLa Haute Tarentaise connaît un foehn instantané, le « vent du Saint-Bernard », d'axe nord-est/sud-ouest : ses rafales de 80 km/h atteignent Moûtiers. Par vent de sud annoncé, un écart de 4 hPa ou plus au diagramme du foehn doit faire renoncer. Foehn et lombarde interdisent Tignes et Val d'Isère. Les Arcs, assez protégés de la bise, offrent des thermiques généreux et des plafonds au-delà de 3000 m ; on y longe la crête de la Grive vers le nord, obligatoirement sur le versant ouest.\n\nLe cœur du Parc national de la Vanoise (Mont Pourri, Ponthurin, sud de Tignes) est tout proche. L'arrêté 2026-31 n'autorise le survol à moins de 1000 m/sol que dans des secteurs de Maurienne : rien n'est permis en Tarentaise.",
       "bbox": [
         6.38,
         45.43,
@@ -2283,7 +2283,7 @@
       "synoptic_effects": [
         {
           "wind": "Foehn",
-          "effect": "Foehn de sud à Bourg-Saint-Maurice : courant de sud-est à sud-ouest en altitude, écart d'au moins 4 hPa entre la Haute-Tarentaise et l'Italie du Nord, au diagramme du foehn. Barre de foehn au Petit-Saint-Bernard : vol interdit. Rafales jusqu'à 80 km/h, pouvant atteindre Moûtiers, violentes entre 100 et 500 m sol. Balises à surveiller : Petit-Saint-Bernard et Cottier. Sites exposés : Peisey-Nancroix (P7, Aiguille Grive), Mont Saint-Jacques, La Marquise, Roches Noires, atterrissages Gare, Versoyen et Hauteville.",
+          "effect": "Sur Bourg-Saint-Maurice : courant de sud-est à sud-ouest en altitude, écart d'au moins 4 hPa entre Haute-Tarentaise et Italie du Nord (diagramme du foehn). Barre de foehn au Petit-Saint-Bernard : vol interdit. Rafales à 80 km/h jusqu'à Moûtiers, violentes entre 100 et 500 m sol. Balises : Petit-Saint-Bernard et Cottier. Sites exposés : Peisey-Nancroix (P7, Aiguille Grive), Mont Saint-Jacques, La Marquise, Roches Noires ; atterrissages Gare, Versoyen, Hauteville.",
           "sources": [
             "S35",
             "S36",
@@ -2295,7 +2295,7 @@
         },
         {
           "wind": "Vent du Sud",
-          "effect": "Ne pas voler lorsque le vent météo est de secteur sud-ouest à sud-est. Le vent du sud est aussi dangereux aux Charmettes (barre de sapins), à l'Intermédiaire Transarc avec du sud-ouest et une forte brise, et à Tignes et Val d'Isère (sud-est ou sud-ouest : foehn et lombarde).",
+          "effect": "Ne volez pas par vent météo de sud-ouest à sud-est. Le sud est aussi dangereux aux Charmettes (barre de sapins), à l'Intermédiaire Transarc avec du sud-ouest et une forte brise, et à Tignes et Val d'Isère (sud-est ou sud-ouest : foehn et lombarde).",
           "sources": [
             "S36",
             "S58",
@@ -2305,7 +2305,7 @@
         },
         {
           "wind": "Lombarde",
-          "effect": "Vent de nord-est à sud-est sur les crêtes frontalières, associé à un retour d'est : c'est la lombarde. En Haute-Tarentaise, Solaise et la Tovière l'assimilent aux vents d'est à sud frontaliers : ne pas voler, de grosses rafales. À Aussois et à Vallonbrun, en Maurienne, comme à Pontillas et à Chantemerle, dans le Briançonnais, elle est décrite comme turbulente en basse couche, parfois aussi par vent d'ouest ou de sud. Ses hauteurs et ses horaires ne sont pas documentés en Tarentaise.",
+          "effect": "La lombarde souffle de nord-est à sud-est sur les crêtes frontalières, avec un retour d'est. En Haute-Tarentaise, à Solaise et à la Tovière, on l'assimile aux vents d'est à sud frontaliers : grosses rafales, on ne vole pas. En Maurienne (Aussois, Vallonbrun) et dans le Briançonnais (Pontillas, Chantemerle), elle est turbulente en basse couche, parfois aussi par ouest ou sud. Ses hauteurs et horaires en Tarentaise sont inconnus.",
           "sources": [
             "S53",
             "S78",
@@ -2317,7 +2317,7 @@
         },
         {
           "wind": "Bise",
-          "effect": "Les Arcs sont relativement protégés du régime de bise, qui souffle de nord-ouest à nord-est : on peut y voler jusqu'aux crêtes sous 2500 m, alors que la bise souffle à 40 km/h à Annecy, Chambéry ou Grenoble, mais dans des conditions musclées. Danger : renforcement du flux descendant des Chapieux, jusqu'à l'atterrissage des Ilettes, avec confluence.",
+          "effect": "Les Arcs sont assez protégés de la bise, de nord-ouest à nord-est : on y vole jusqu'aux crêtes sous 2500 m quand elle souffle à 40 km/h à Annecy, Chambéry ou Grenoble, mais en conditions musclées. Danger : elle renforce le flux descendant des Chapieux jusqu'à l'atterrissage des Ilettes, avec confluence.",
           "sources": [
             "S35",
             "S36",
@@ -2326,7 +2326,7 @@
         },
         {
           "wind": "N",
-          "effect": "Vent de nord-ouest à nord : il s'ajoute au flux des Chapieux (venturi Prainan-Clapet) et à la brise de Beaufort. À Montgirod, avec un vent de N à O, on peut voler avant 13h. Les rafales de nord qui descendent du Mont Jovet interdisent de décoller au décollage des Prés. À Naves, attention par vent de sud et de nord modéré à fort. Au Petit-Saint-Bernard, un vent de nord ou de nord-est d'au moins 15 km/h annonce souvent le foehn ; au Cottier, dès que le vent est nord, il faut être très prudent. Quand le vent de N-NO forcit, les basses couches peuvent rester stables au Fort de la Platte, avec des plafonds vers 3500 m et une extraction à la Pointe de Combe Neuve ; il arrive aussi que les faces sud du Beaufortain soient inaccessibles, la Tarentaise paraissant hostile vue d'en haut, et que le retour se fasse dans le flux descendant du Cormet d'Arêches.",
+          "effect": "Le nord-ouest à nord s'ajoute au flux des Chapieux (venturi Prainan-Clapet) et à la brise de Beaufort. À Montgirod, par vent de N à O, on vole avant 13h. Aux Prés, les rafales de nord qui descendent du Mont Jovet interdisent de décoller ; à Naves, prudence par sud et par nord modéré à fort. Au Petit-Saint-Bernard, un nord ou nord-est d'au moins 15 km/h annonce souvent le foehn ; au Cottier, soyez très prudent dès que le vent est nord. Quand le N-NO forcit, les basses couches peuvent rester stables au Fort de la Platte : un vol y a fait 3500 m en extrayant à la Pointe de Combe Neuve. Les faces sud du Beaufortain peuvent alors rester inaccessibles, la Tarentaise paraître hostile vue d'en haut, et le retour se faire dans le flux descendant du Cormet d'Arêches.",
           "sources": [
             "S35",
             "S52",
@@ -2338,7 +2338,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Voir le vent de nord. Sur les pentes ouest des Arcs, le vol en dynamique est possible, et les Charmettes sont en restitution le soir. Les Roches Noires, La Poletta et La Sévolière sont favorables par nord-ouest.",
+          "effect": "Voir le vent de nord. Sur les pentes ouest des Arcs, le vol dynamique est possible, et les Charmettes restituent le soir. Les Roches Noires, La Poletta et La Sévolière sont favorables par nord-ouest.",
           "sources": [
             "S35",
             "S111",
@@ -2348,7 +2348,7 @@
         },
         {
           "wind": "W",
-          "effect": "Régime de brise et vent d'ouest : l'après-midi est le meilleur à Sainte-Foy (La Marquise) ; les versants ouest des Arcs sont volables du sud au nord ; la Tovière est en dynamique de sud-ouest à ouest. À Valmorel, l'ouest et le sud-ouest sont dangereux, car ils s'opposent à la brise.",
+          "effect": "Brise et vent d'ouest : l'après-midi est le meilleur moment à Sainte-Foy (La Marquise), les versants ouest des Arcs se volent du sud au nord, et la Tovière marche en dynamique de sud-ouest à ouest. À Valmorel, l'ouest et le sud-ouest sont dangereux, car ils s'opposent à la brise.",
           "sources": [
             "S81",
             "S35",
@@ -2358,7 +2358,7 @@
         },
         {
           "wind": "SW",
-          "effect": "De sud-ouest à ouest : soaring à la Tovière. Un sud-ouest modéré est exploitable sur le versant des Arcs, où Cachette et Pra Plan sont favorables par sud-ouest ; mais le sud-ouest d'altitude est aussi une porte d'entrée du foehn (voir le foehn).",
+          "effect": "De sud-ouest à ouest, on soare à la Tovière. Un sud-ouest modéré s'exploite sur le versant des Arcs, où Cachette et Pra Plan sont favorables ; mais le sud-ouest d'altitude est aussi une porte d'entrée du foehn.",
           "sources": [
             "S79",
             "S92",
@@ -2368,7 +2368,7 @@
         },
         {
           "wind": "E",
-          "effect": "Les vents d'est à sud frontaliers (foehn, lombarde) sont très mauvais à Tignes et Val d'Isère ; à Bourg-Saint-Maurice, le foehn s'exprime plutôt par nord-est.",
+          "effect": "Les vents d'est à sud frontaliers (foehn, lombarde) sont très mauvais à Tignes et Val d'Isère. À Bourg-Saint-Maurice, le foehn se manifeste plutôt par nord-est.",
           "sources": [
             "S79",
             "S36"
@@ -2605,24 +2605,24 @@
         }
       ],
       "tips": [
-        "Consulter la balise des Ilettes avant tout vol (brise de 30 à 40 km/h et plus dès 14h) ; les balises du col du Petit-Saint-Bernard (NE > 15 km/h = foehn probable) et du Cottier (vent N = prudence, NE = vol interdit) se consultent en ligne [S35][S49].",
-        "Foehn : ne pas décoller si le vent annoncé est de sud-est à sud-ouest avec un écart d'au moins 4 hPa au diagramme du foehn, ou si une barre de foehn est visible au Petit-Saint-Bernard. Il peut être invisible au sol et violent entre 100 et 500 m [S35][S36].",
-        "Brise installée : atterrir aux Ilettes plutôt qu'à La Gare ou au Versoyen ; La Gare n'est autorisée que du 1er juillet au 31 août, et seulement le matin ou le soir [S35][S49][S38].",
-        "En régime de brise, rester sur le versant ouest des Arcs (Arc 1600, Arc 1800, Peisey-Vallandry) : le versant est (Arc 2000) est sous le vent. Depuis l'Aiguille Grive, dégager vite vers l'ouest dès le début d'après-midi [S35][S36].",
-        "Vanoise : aucun survol à moins de 1000 m/sol en Tarentaise (arrêté 2026-31) ; ne pas atterrir en cœur ni décoller hors sites listés. Vols de montagne (Mont Pourri, Grande Casse, Grand Bec) : autorisation individuelle à demander une semaine avant [S43][S44].",
-        "Départs de cross du matin : Plan de la Boutte, La Croix, Le Mont (interdit dès la pose des clôtures). Refermer les clôtures ; vérifier les zones de tir R 331/R 332 et les ZSM gypaète avant de partir vers le nord ou l'est [S49][S38][S56].",
-        "Montgirod-Arcachat et le Mont Jovet sont les départs précoces de la Tarentaise moyenne : partir tôt, car le régime de vallée arrive par-dessus dès 11h-12h30 [S52][S125].",
-        "Par basses couches stables et vent N-NO, le décollage de Bourg peut tourner au plouf : observer les premiers partis (« fusibles »), sans descendre sous le Fort ; le soir, les Arcs offrent une remontée facile dans la brise, jusqu'à 2600 m environ [S72].",
+        "Avant tout vol, consultez la balise des Ilettes (brise de 30 à 40 km/h et plus dès 14h), puis celles du col du Petit-Saint-Bernard (NE > 15 km/h = foehn probable) et du Cottier (vent N = prudence, NE = vol interdit) [S35][S49].",
+        "Foehn : ne décollez pas si le vent annoncé est de sud-est à sud-ouest avec un écart d'au moins 4 hPa au diagramme du foehn, ou si une barre de foehn coiffe le Petit-Saint-Bernard. Invisible au sol, il peut être violent entre 100 et 500 m [S35][S36].",
+        "Brise installée, posez aux Ilettes plutôt qu'à La Gare ou au Versoyen. La Gare n'est autorisée que du 1er juillet au 31 août, et seulement le matin ou le soir [S35][S49][S38].",
+        "En régime de brise, restez sur le versant ouest des Arcs (Arc 1600, Arc 1800, Peisey-Vallandry) : le versant est (Arc 2000) est sous le vent. Depuis l'Aiguille Grive, dégagez vite vers l'ouest dès le début d'après-midi [S35][S36].",
+        "Vanoise : aucun survol à moins de 1000 m/sol en Tarentaise (arrêté 2026-31), ni atterrissage en cœur, ni décollage hors sites listés. Pour un vol de montagne (Mont Pourri, Grande Casse, Grand Bec), demandez l'autorisation une semaine avant [S43][S44].",
+        "Départs de cross du matin : Plan de la Boutte, La Croix, Le Mont (interdit dès la pose des clôtures). Refermez les clôtures, et vérifiez les zones de tir R 331/R 332 et les ZSM gypaète avant de partir vers le nord ou l'est [S49][S38][S56].",
+        "Montgirod-Arcachat et le Mont Jovet sont les départs précoces de la Tarentaise moyenne : partez tôt, car le régime de vallée arrive par-dessus dès 11h-12h30 [S52][S125].",
+        "Par basses couches stables et vent N-NO, le décollage de Bourg peut tourner au plouf : regardez partir les premiers (« fusibles ») et ne descendez pas sous le Fort. Le soir, les Arcs offrent une remontée facile dans la brise, jusqu'à 2600 m environ [S72].",
         "Les grands triangles de plaine passent par la cluse d'Albertville, comme le triangle plat de 202 km Chartreuse - Aravis - Albertville [S27].",
-        "Au départ du Fort de la Platte, par basses couches stables, observer les pilotes partis avant soi (« fusibles ») : le thermique est sélectif, et les plafonds se font au-dessus de la Pointe de Combe Neuve (3500 m) [S72].",
-        "Pour le retour vers la Tarentaise, relancer sur le Crêt du Rey, attendre sur la Combe Bénite, puis chercher la confluence au-dessus d'Aime, avant la brise du soir des Arcs [S72]."
+        "Au Fort de la Platte, par basses couches stables, regardez partir les pilotes avant vous (« fusibles ») : le thermique est sélectif. Un vol y a fait son plafond au-dessus de la Pointe de Combe Neuve (3500 m) [S72].",
+        "Pour rentrer vers la Tarentaise, relancez sur le Crêt du Rey, patientez sur la Combe Bénite, puis cherchez la confluence au-dessus d'Aime, avant la brise du soir des Arcs [S72]."
       ]
     },
     {
       "id": "vanoise",
       "name": "Vanoise – Trois Vallées et Doron de Bozel (Courchevel, Méribel, Belleville, Bozel, Pralognan)",
       "parent_massif": "Vanoise",
-      "summary": "Le massif est un faisceau de vallées tributaires de l'Isère, à Moûtiers : le Doron de Bozel (Bozel, Champagny, Pralognan), la vallée de Saint-Bon (Courchevel), les Allues (Méribel) et le Doron de Belleville (Les Menuires, Val Thorens).\n\nLa brise montante s'allume vers 13h sur les terrains bas, à Bozel et aux Monts, puis devient forte, avec un fort gradient à l'atterrissage de Bozel. Le Bouc Blanc est soufflé en milieu d'après-midi, mais il reste volable tôt et tard, et le soaring du soir se fait sur la Dent du Villard. À Belleville, le régime de brise de vallée donne une confluence thermique à Boismint et un venturi à la Moraine, à Caron ; le foehn s'y produit par tendance sud.\n\nLa Loze et Lanches sont le meilleur site de thermiques d'hiver et de printemps des Trois Vallées, mais l'axe de l'altiport de Méribel est à éviter.\n\nLe cœur du Parc national de la Vanoise commence à environ 1,3 km de Pralognan. L'arrêté 2026-31 (5 juin 2026, expérimental jusqu'à fin 2028) n'y autorise aucun survol à moins de 1000 m/sol ; des vols de montagne depuis la Grande Casse ou le Grand Bec restent possibles avec une autorisation individuelle, demandée une semaine avant. Les textes de clubs locaux sont rares dans ce massif : la plupart des éléments reposent sur des fiches et des bases de sites.",
+      "summary": "Le massif est un faisceau de vallées qui rejoignent l'Isère à Moûtiers : le Doron de Bozel (Bozel, Champagny, Pralognan), la vallée de Saint-Bon (Courchevel), les Allues (Méribel) et le Doron de Belleville (Les Menuires, Val Thorens).\n\nLa brise montante s'allume vers 13h sur les terrains bas, à Bozel et aux Monts, puis devient forte, avec un fort gradient à l'atterrissage de Bozel. On vole donc tôt ou tard. Le Bouc Blanc, soufflé en milieu d'après-midi, se vole tôt et tard, et le soaring du soir se fait sur la Dent du Villard. À Belleville, le régime de brise de vallée donne une confluence thermique à Boismint et un venturi à la Moraine, à Caron ; le foehn s'y produit par tendance sud.\n\nLa Loze et Lanches sont le meilleur site de thermiques d'hiver et de printemps des Trois Vallées ; évitez l'axe de l'altiport de Méribel.\n\nLe cœur du Parc national de la Vanoise est tout proche de Pralognan. L'arrêté 2026-31 (5 juin 2026, expérimental jusqu'à fin 2028) n'y autorise aucun survol à moins de 1000 m/sol. Des vols de montagne depuis la Grande Casse ou le Grand Bec restent possibles avec une autorisation individuelle, demandée une semaine avant. Les textes de clubs locaux sont rares : la plupart des éléments reposent sur des fiches et des bases de sites.",
       "bbox": [
         6.45,
         45.26,
@@ -3599,7 +3599,7 @@
       "synoptic_effects": [
         {
           "wind": "Foehn",
-          "effect": "Vallée de Belleville : foehn par vent de tendance sud. Un jour de foehn est un jour sans vol à Caron, et le sud donne un fort foehn aux Deux Lacs ; à Boismint, vol fortement déconseillé par vent de sud. Une ancienne liste place le foehn par vent nord au Mont de la Chambre (divergence). Aucun texte local détaillé pour Courchevel, Méribel ou Pralognan ; le foehn de sud de Haute-Tarentaise peut atteindre Moûtiers.",
+          "effect": "Dans la vallée de Belleville, le foehn vient par tendance sud : jour sans vol à Caron, fort foehn aux Deux Lacs, vol fortement déconseillé à Boismint. Une ancienne liste place au contraire le foehn par vent de nord au Mont de la Chambre (divergence). Rien de détaillé pour Courchevel, Méribel ou Pralognan ; le foehn de sud de Haute-Tarentaise peut atteindre Moûtiers.",
           "sources": [
             "S129",
             "S52",
@@ -3609,7 +3609,7 @@
         },
         {
           "wind": "Vent du Sud",
-          "effect": "Au Mont Jovet, ne pas voler par vent de sud fort ; à Belleville, vol fortement déconseillé par vent de tendance sud ; à Méribel, vent de sud fort en fin de journée ; à Pralognan, à éviter en sud-sud-est.",
+          "effect": "Par sud fort, ne volez pas au Mont Jovet. À Belleville, le vol est fortement déconseillé par tendance sud ; à Méribel, le vent de sud est fort en fin de journée ; à Pralognan, évitez le sud-sud-est.",
           "sources": [
             "S125",
             "S130",
@@ -3619,7 +3619,7 @@
         },
         {
           "wind": "N",
-          "effect": "Vent de nord : favorable à Boismint, à Barral et aux Deux Lacs, avec de forts vents thermiques ; défavorable au Mont Jovet par nord-est et nord-ouest ; les rafales de nord qui descendent du Jovet interdisent de décoller aux Prés ; le Bouc Blanc est favorable par nord, ouest et nord-ouest.",
+          "effect": "Par nord, Boismint, Barral et les Deux Lacs sont favorables, avec de forts vents thermiques. Le Mont Jovet est défavorable par nord-est et nord-ouest, et les rafales de nord qui en descendent interdisent de décoller aux Prés. Le Bouc Blanc est favorable par nord, ouest et nord-ouest.",
           "sources": [
             "S129",
             "S52",
@@ -3630,7 +3630,7 @@
         },
         {
           "wind": "W",
-          "effect": "Vent d'ouest : la Loze est favorable par sud-ouest, ouest et nord-ouest, et le Bouc Blanc par ouest et nord-ouest. Au Mont Jovet, le vent peut descendre en début d'après-midi, surtout par ouest avec une brise forte. La Crête du Gollet et la Deuxième Bosse sont en thermo-dynamique l'après-midi.",
+          "effect": "Par vent d'ouest, la Loze est favorable par sud-ouest, ouest et nord-ouest, le Bouc Blanc par ouest et nord-ouest. Au Mont Jovet, le vent peut descendre en début d'après-midi, surtout par ouest avec une brise forte. La Crête du Gollet et la Deuxième Bosse sont en thermo-dynamique l'après-midi.",
           "sources": [
             "S132",
             "S127",
@@ -3640,7 +3640,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Vent de nord-ouest : la Loze, le Bouc Blanc et La Bosse sont favorables par ouest et nord-ouest ; à Pralognan, des turbulences sont possibles au Col de Leschaux.",
+          "effect": "Par nord-ouest, la Loze, le Bouc Blanc et La Bosse sont favorables par ouest et nord-ouest. À Pralognan, des turbulences sont possibles au Col de Leschaux.",
           "sources": [
             "S132",
             "S127",
@@ -3650,7 +3650,7 @@
         },
         {
           "wind": "E",
-          "effect": "Composante est : l'aérologie est très délicate à Pralognan, où il faut éviter franchement le sud-sud-est ; à Belleville, Boismint est défavorable par est et sud-est, et Les Tovets sont favorables par nord-est et est le matin.",
+          "effect": "Avec une composante est, l'aérologie est très délicate à Pralognan : évitez franchement le sud-sud-est. À Belleville, Boismint est défavorable par est et sud-est, et Les Tovets sont favorables le matin par nord-est et est.",
           "sources": [
             "S54",
             "S129",
@@ -3667,12 +3667,12 @@
       ],
       "xc_routes": [],
       "tips": [
-        "Brises des Dorons : à Bozel, l'atterrissage devient musclé dès le milieu de journée en été ; décoller des Monts et des Tovets avant 13h, et atterrir à Bozel [S87][S128][S126].",
-        "Courchevel : le Bouc Blanc se joue très tôt ou très tard, car les conditions sont fortes à très fortes en milieu d'après-midi ; le soaring du soir est possible sur la Dent du Villard [S127][S52].",
-        "Depuis la Loze, ne pas voler directement vers Méribel : l'axe de l'altiport de Méribel est à éviter [S132][S52].",
-        "Cross depuis le Mont Jovet ou Montgirod : partir avant 12h30, et rester hors du Parc national, au sud et au sud-est du Jovet [S52][S125].",
-        "Pralognan et Haute-Tarentaise : aucun survol à moins de 1000 m/sol n'est autorisé (arrêté 2026-31) ; les vols de montagne depuis la Grande Casse ou le Grand Bec exigent une autorisation individuelle, à demander une semaine avant au secteur de Pralognan [S43].",
-        "Val Thorens : décoller de Caron seulement hors piste ouverte, éviter les jours de foehn, et atterrir de préférence près du décollage, aux Deux Lacs [S52]."
+        "Avec les brises des Dorons, l'atterrissage de Bozel devient musclé dès le milieu de journée en été : décollez des Monts et des Tovets avant 13h, et posez à Bozel [S87][S128][S126].",
+        "À Courchevel, le Bouc Blanc se joue très tôt ou très tard : en milieu d'après-midi, les conditions sont fortes à très fortes. Le soir, on soare sur la Dent du Villard [S127][S52].",
+        "Depuis la Loze, ne volez pas directement vers Méribel : évitez l'axe de l'altiport [S132][S52].",
+        "En cross depuis le Mont Jovet ou Montgirod, partez avant 12h30, et restez hors du Parc national, au sud et au sud-est du Jovet [S52][S125].",
+        "À Pralognan et en Haute-Tarentaise, aucun survol à moins de 1000 m/sol n'est autorisé (arrêté 2026-31). Un vol de montagne depuis la Grande Casse ou le Grand Bec exige une autorisation individuelle, à demander une semaine avant au secteur de Pralognan [S43].",
+        "À Val Thorens, ne décollez de Caron que hors piste ouverte, évitez les jours de foehn, et posez de préférence près du décollage, aux Deux Lacs [S52]."
       ]
     }
   ],

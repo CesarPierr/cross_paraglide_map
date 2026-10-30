@@ -4,106 +4,106 @@
   "steps": [
     {
       "chapter": "Le massif",
-      "title": "Le lac d'Annecy en un coup d'œil",
-      "text": "Le lac d'Annecy est un entonnoir de 15 km de long, orienté nord-nord-ouest – sud-sud-est, ouvert sur la plaine au nord et prolongé au sud par Doussard et la vallée de Faverges. À l'est, la Tournette et les crêtes de la Forclaz et de Planfait regardent le lac et l'ouest. En face, le Semnoz est une longue crête nord-sud avec un décollage plein ouest, et le Roc des Bœufs barre le fond du lac comme un mur. Retenez une idée simple : chaque jour d'été, une brise souffle le long du lac, d'Annecy vers Doussard, et tout le vol (décollages, crêtes, atterrissages) s'organise autour d'elle.",
+      "title": "Bienvenue au lac d'Annecy",
+      "text": "Bienvenue au lac d'Annecy, un entonnoir de 15 km orienté nord-nord-ouest – sud-sud-est, ouvert sur la plaine au nord et prolongé au sud par Doussard et la vallée de Faverges. À l'est, la Tournette et les crêtes de la Forclaz et de Planfait regardent le lac, vers l'ouest. En face, le Semnoz est une longue crête nord-sud au décollage plein ouest, et le Roc des Bœufs barre le fond du lac comme un mur. Ici, tout tourne autour d'une brise qui descend le lac chaque jour d'été, d'Annecy vers Doussard. La visite montre comment elle naît, où elle porte et où elle piège.",
       "focus": [],
       "view": "massif"
     },
     {
       "chapter": "La journée de l'air",
       "title": "Le matin, avant la brise : les faces est",
-      "text": "Au petit matin, le lac est calme, et ce sont les faces tournées vers l'est, éclairées les premières, qui chauffent. La grande face est de la Tournette devient exploitable vers 10 h : un départ matinal de la Pointe de Talamarche y ouvre la porte. Sur l'autre rive, le Semnoz peut déjà offrir, le matin, un vol en air calme ou sur de petits thermiques entre Viuz-la-Chiésaz et l'atterrissage, en attendant ses bons créneaux de l'après-midi.",
+      "text": "Au petit matin, le lac est calme. Ce sont les faces tournées vers l'est, éclairées les premières, qui chauffent. La grande face est de la Tournette devient exploitable vers 10 h : un départ matinal de la Pointe de Talamarche y ouvre la porte. Sur l'autre rive, le Semnoz peut déjà offrir un vol en air calme, ou sur de petits thermiques entre Viuz-la-Chiésaz et l'atterrissage. Ses bons créneaux viendront l'après-midi.",
       "focus": ["tournette-face-est", "brise-pente-semnoz-ouest"],
       "phase": "morning"
     },
     {
       "chapter": "La journée de l'air",
       "title": "Vers 13h30, la brise du lac se lève",
-      "text": "Quand le soleil chauffe la plaine et les pentes, l'air frais du nord est aspiré vers le fond du lac : c'est une brise de vallée, qui descend le lac d'Annecy vers Doussard. Un bon jour, elle commence vers 13h30 : on estime qu'elle souffle entre 15 et 25 km/h, jusqu'à la soirée. Sur la rive est, elle domine presque toujours, sauf par sud modéré à fort, et prend l'ascendant sur la bise. Elle vient buter sur les faces ouest et nord-ouest, où elle crée une brise de pente : il faut y rester pour être dans le flux, car les faces sud-est sont généreuses mais beaucoup plus turbulentes.",
+      "text": "Quand le soleil chauffe la plaine et les pentes, l'air frais du nord est aspiré vers le fond du lac. C'est la brise de vallée : elle descend le lac d'Annecy vers Doussard. Un bon jour, elle commence vers 13h30, souvent soutenue l'après-midi, et tient jusqu'à la soirée. Sur la rive est, elle domine presque toujours, sauf par sud modéré à fort, et prend l'ascendant sur la bise. Elle bute sur les faces ouest et nord-ouest et y crée une brise de pente. Restez-y : les faces sud-est sont généreuses, mais beaucoup plus turbulentes.",
       "focus": ["brise-lac-annecy", "brise-pente-forclaz"],
       "phase": "afternoon"
     },
     {
       "chapter": "La journée de l'air",
       "title": "Au milieu du lac, la brise se partage",
-      "text": "Sur la carte de brises, la brise se divise au milieu du lac. Le bras principal continue vers Doussard puis la vallée de Faverges, où les atterrissages connaissent des brises fortes en milieu de journée ; il va jusqu'à Ugine, où il rencontre la brise qui remonte d'Albertville : c'est une confluence, où l'air est obligé de monter. Un deuxième bras part vers le sud-ouest, de Saint-Jorioz vers l'entrée des Bauges, et un petit bras rejoint Duingt, au détroit du lac. Ces tracés sont déduits de la carte : on peut s'attendre à les retrouver l'après-midi d'été, mais leurs heures et leurs forces ne sont pas mesurées.",
+      "text": "Au milieu du lac, la brise se divise. Le bras principal continue vers Doussard puis la vallée de Faverges, où les atterrissages connaissent des brises fortes en milieu de journée. Il va jusqu'à Ugine et y rencontre la brise qui remonte d'Albertville : une confluence, où l'air doit monter. Un deuxième bras part vers le sud-ouest, de Saint-Jorioz vers l'entrée des Bauges, et un petit bras rejoint Duingt, au détroit du lac. Ces tracés viennent d'une carte de brises : on peut s'attendre à les retrouver l'après-midi d'été, mais ni leurs heures ni leurs forces ne sont mesurées.",
       "focus": ["brise-vallee-faverges", "brise-albertville-ugine", "confluence-ugine", "brise-lac-vers-saint-eustache", "brise-lac-vers-duingt-entrevernes"],
       "phase": "afternoon"
     },
     {
       "chapter": "La journée de l'air",
       "title": "Le soir, la brise s'inverse à Doussard",
-      "text": "Quand les faces est des Bauges passent à l'ombre, l'air qui s'y est refroidi se met à descendre : une brise descendante de sud-ouest, épaisse de 50 à 100 m seulement, glisse sous la brise de nord, encore active au-dessus. La rencontre des deux crée une large zone d'ascendance, entre l'atterrissage et le lac : on peut rester en l'air tard. En revanche, le vent change de sens au sol : on pose face au sud, avec un circuit en huit, et il faut surveiller les manches à air. Il est aussi arrivé qu'un orage venu de derrière la Tournette mette trois pilotes en difficulté, avec de fortes rafales le long du lac.",
+      "text": "Quand les faces est des Bauges passent à l'ombre, l'air refroidi s'y met à descendre. Cette brise descendante de sud-ouest, épaisse de 50 à 100 m seulement, glisse sous la brise de nord, encore active au-dessus. Leur rencontre crée une large zone d'ascendance entre l'atterrissage et le lac : on peut rester en l'air tard. Mais au sol, le vent change de sens. Posez face au sud, avec un circuit en huit, et surveillez les manches à air. Un orage venu de derrière la Tournette a déjà mis trois pilotes en difficulté, avec de fortes rafales le long du lac.",
       "focus": ["brise-descendante-taillefer-charbon", "confluence-doussard-soir", "doussard-atterro-brise", "doussard", "lac-cumulonimbus-nord"],
       "phase": "evening"
     },
     {
       "chapter": "Où ça monte",
       "title": "Des deux côtés du lac, la brise fait la dynamique",
-      "text": "Les décollages de la rive est regardent l'ouest, dans l'axe de la brise : elle vient buter sur leurs faces ouest et nord-ouest, où elle fournit de la dynamique. Le relief pousse l'air vers le haut, et les thermiques s'y ajoutent. À Planfait, la brise de vallée domine très souvent et permet de rester le long des falaises des Rochers des Moillats, sauf par nord-est, où le soaring est interdit. En face, le Roc des Bœufs barre l'axe de la brise, et la dynamique y est en général assurée ; les sources ne s'accordent pas sur la face à viser : lisez le terrain.",
+      "text": "La brise ne fait pas que souffler : elle porte. Les décollages de la rive est regardent l'ouest, dans son axe. Elle bute sur leurs faces ouest et nord-ouest, le relief pousse l'air vers le haut, et les thermiques s'y ajoutent. À Planfait, la brise de vallée domine très souvent et permet de rester le long des falaises des Rochers des Moillats, sauf par nord-est, où le soaring est interdit. En face, le Roc des Bœufs barre l'axe de la brise, et la dynamique y est en général assurée. Les sources ne s'accordent pas sur la face à viser : lisez le terrain.",
       "focus": ["forclaz-faces-ouest", "planfait-soaring", "roc-des-boeufs-dynamique", "roc-des-boeufs-ouest"],
       "phase": "afternoon"
     },
     {
       "chapter": "Où ça monte",
-      "title": "Le Semnoz : une crête plein ouest pour l'après-midi et le soir",
-      "text": "Le Semnoz est une longue crête orientée nord-sud, avec un décollage plein ouest, à 1 480 m : une vaste clairière d'herbe, à cinq minutes du parking. On y vole surtout l'après-midi, avec les meilleurs créneaux de 13h au coucher du soleil, et de très bonnes conditions de restitution en soirée. À partir du printemps, la brise thermique redresse souvent le vent vers l'ouest. Sous le décollage, une combe exposée au sud-sud-ouest déclenche des thermiques puissants, qui peuvent mettre le décollage sous le vent : il faut prendre de la hauteur avant de passer derrière la cassure.",
+      "title": "Le Semnoz : la crête plein ouest de l'après-midi",
+      "text": "En face, le Semnoz est une longue crête nord-sud, avec un décollage plein ouest à 1 480 m : une vaste clairière d'herbe, à cinq minutes du parking. On y vole surtout l'après-midi, de 13h au coucher du soleil, et la restitution du soir y est très bonne. À partir du printemps, la brise thermique redresse souvent le vent vers l'ouest. Attention à la combe sud-sud-ouest sous le décollage : ses thermiques puissants peuvent mettre le décollage sous le vent. Prenez de la hauteur avant de passer derrière la cassure.",
       "focus": ["semnoz-ouest", "brise-pente-semnoz-ouest", "semnoz-combe-thermique", "semnoz-combe-sous-deco", "semnoz-crete-ouest"],
       "phase": "evening"
     },
     {
       "chapter": "Les sites",
       "title": "Planfait, Forclaz, Coche Cabane : choisir son décollage",
-      "text": "Planfait, une large moquette en forêt au bord d'une falaise, à 400 m au-dessus de l'atterrissage de Perroix, part un peu plus tôt que la Forclaz et mène directement aux Dents de Lanfon. La Forclaz, site majeur de niveau vert à 1 257 m, part vers 13h30 un bon jour, quand la brise du lac est établie ; exposés à l'ouest, les sites se décollent plutôt entre midi et 13h. Un câble descendu du refuge de la Tournette est dangereux près du décollage de Montmin. Coche Cabane, de niveau bleu, sert quand Montmin est plein, mais il est engagé.",
+      "text": "Planfait est une large moquette en forêt au bord d'une falaise, à 400 m au-dessus de l'atterrissage de Perroix. Il part un peu plus tôt que la Forclaz et mène directement aux Dents de Lanfon. La Forclaz, site majeur de niveau vert à 1 257 m, part vers 13h30 un bon jour, quand la brise du lac est établie. Exposés à l'ouest, les sites se décollent plutôt entre midi et 13h. Près du décollage de Montmin, un câble descendu du refuge de la Tournette est dangereux. Coche Cabane, de niveau bleu, sert quand Montmin est plein, mais il est engagé.",
       "focus": ["planfait", "forclaz", "coche-cabane", "cable-tournette"],
       "phase": "midday"
     },
     {
       "chapter": "Les sites",
       "title": "Où se poser : Doussard, Perroix, Verthier, Viuz",
-      "text": "À Doussard, on pose face au nord, dans un grand champ partagé avec les deltas ; la brise y est souvent soutenue l'après-midi. Au bout du lac, la réserve naturelle interdit l'atterrissage et le survol sous 200 m ; hors stage, la plage SIV est interdite : visez le terrain officiel. À Perroix, le gradient, c'est-à-dire le vent qui faiblit brusquement près du sol, est souvent marqué, et le survol des maisons à basse altitude est interdit. Verthier, repli depuis la Forclaz, a un gradient par nord ; à Viuz-la-Chiésaz, une butte crée un gradient en brise d'ouest : commencez la finale au-dessus de la route.",
+      "text": "À Doussard, on pose face au nord, dans un grand champ partagé avec les deltas ; la brise y est souvent soutenue l'après-midi. Au bout du lac, la réserve naturelle interdit l'atterrissage et le survol sous 200 m, et hors stage la plage SIV est interdite : visez le terrain officiel. À Perroix, le gradient (le vent qui faiblit brusquement près du sol) est souvent marqué, et le survol bas des maisons est interdit. Verthier, repli depuis la Forclaz, a du gradient par nord. À Viuz-la-Chiésaz, une butte crée un gradient en brise d'ouest : commencez la finale au-dessus de la route.",
       "focus": ["doussard", "reserve-bout-du-lac", "doussard-siv-box", "perroix", "verthier", "viuz-la-chiesaz"],
       "phase": "afternoon"
     },
     {
       "chapter": "Le parcours classique",
-      "title": "Petit tour, 1/2 : la crête de la Forclaz aux Dents de Lanfon",
-      "text": "Le petit tour, environ 25 km, est le cross le plus accessible. Depuis la Forclaz, le thermique de service, juste à droite du décollage, permet de rejoindre la pointe de la Rochette, puis l'on suit la crête vers le rocher du Roux, où l'on peut espérer 1 900 m un bon jour. Il faut y faire le plein avant de transiter vers la face ouest du Lanfonnet, qui remonte vite, jusqu'à 2 100 m en bout de crête. Il arrive qu'en dérivant à droite du rocher, on soit sous le vent, dans une grosse descendance. Depuis Planfait, on saute derrière le décollage vers l'épaule des Dents, où un thermique peut monter jusqu'à 2 400 m.",
+      "title": "Petit tour, 1/2 : de la Forclaz aux Dents de Lanfon",
+      "text": "Le petit tour, environ 35 à 40 km, est le cross le plus accessible. Depuis la Forclaz, le thermique de service, juste à droite du décollage, mène à la pointe de la Rochette. On suit ensuite la crête jusqu'au rocher du Roux, où l'on peut espérer 1 900 m un bon jour. Faites-y le plein avant de transiter vers la face ouest du Lanfonnet, qui remonte vite, jusqu'à 2 100 m en bout de crête. Ne dérivez pas à droite du rocher : on peut s'y retrouver sous le vent, dans une grosse descendance. Depuis Planfait, on saute derrière le décollage vers l'épaule des Dents, où un thermique peut monter à 2 400 m.",
       "focus": ["petit-tour-du-lac", "rochette-thermique-de-service", "montmin-lanfonnet-roux", "lanfonnet-face-ouest", "epaule-planfait-dents-de-lanfon"],
       "phase": "afternoon"
     },
     {
       "chapter": "Le parcours classique",
       "title": "Petit tour, 2/2 : le plein aux Dents, la traversée, le retour",
-      "text": "Les Dents de Lanfon sont le point de recharge clé : on y fait le plein complet, au moins 1 900 m, avant de traverser le lac vers le Roc des Bœufs. La traversée passe par le détroit de Duingt ; sur l'autre rive, la brise donne de la dynamique, et l'on remonte la crête jusqu'à la première ligne électrique. On finit vers Doussard avec de la marge, pour ne pas passer sous le vent de la brise. Revenir vers la Forclaz depuis le sud du Roc, la brise dans le nez, peut être très dangereux : la seule issue basse est la combe de Coche Cabane, et le col est battu par des rafales de 40 à 45 km/h, de 14 h à 17 h.",
+      "text": "Aux Dents de Lanfon, faites le plein complet, au moins 1 900 m, avant de traverser le lac vers le Roc des Bœufs. La traversée passe par le détroit de Duingt. Sur l'autre rive, la brise donne de la dynamique : on remonte la crête jusqu'à la première ligne électrique, puis on finit vers Doussard avec de la marge, pour ne pas passer sous le vent de la brise. Revenir vers la Forclaz depuis le sud du Roc, brise dans le nez, peut être très dangereux. La seule issue basse est la combe de Coche Cabane, et le col est battu par des rafales de 40 à 45 km/h, de 14 h à 17 h.",
       "focus": ["dents-de-lanfon", "confluence-duingt", "roc-des-boeufs-premiere-ligne-ht", "forclaz-retour-roc-sous-le-vent", "combe-coche-cabane-forclaz"],
       "phase": "afternoon"
     },
     {
       "chapter": "Le parcours classique",
       "title": "Grand tour, 1/2 : le Veyrier, dernier plein avant Annecy",
-      "text": "Le grand tour, environ 46 km, fait le tour complet du lac : on remonte la rive est, on traverse le nord du lac à hauteur d'Annecy, puis l'on redescend par le Semnoz et le Roc des Bœufs. Sur le Mont Baron, il faut arriver par le dessus. Au col du Veyrier, le thermique est étroit et très vigoureux au-dessus de 2 400 m, sans doute là où la brise du lac rencontre les flux de la rive est. Le thermique du téléphérique est le dernier plein avant la traversée, et il est conseillé de partir de 1 800 m. Il arrive qu'un plafond de 2 500 m, par léger nord, permette de passer le Lanfonnet vers 2 100 m.",
+      "text": "Le grand tour fait le tour complet du lac. On remonte la rive est, on traverse le nord du lac à hauteur d'Annecy, puis on redescend par le Semnoz et le Roc des Bœufs. Sur le Mont Baron, arrivez par le dessus. Au col du Veyrier, le thermique est étroit et très vigoureux au-dessus de 2 400 m, sans doute là où la brise du lac rencontre les flux de la rive est. Le thermique du téléphérique est le dernier plein avant la traversée : partez de 1 800 m. Par léger nord, un plafond de 2 500 m peut permettre de passer le Lanfonnet vers 2 100 m.",
       "focus": ["grand-tour-du-lac", "veyrier-baron-turbulence", "veyrier-col-thermique", "veyrier-teleferique", "confluence-veyrier-menthon"],
       "phase": "afternoon"
     },
     {
       "chapter": "Le parcours classique",
-      "title": "Grand tour, 2/2 : traverser Annecy sous deux contraintes aériennes",
-      "text": "La traversée d'Annecy se fait environ 1,5 km au sud de la plage. La CTR d'Annecy-Meythet, de classe D du sol à 1 220 m, longe le nord du lac et le Veyrier. La zone réglementée R185 de Sacconges, du sol à 1 830 m, est activée par NOTAM du lundi au jeudi et un samedi par mois : on part du Veyrier vers 2 500 m pour passer avec marge. On raccroche le Semnoz vers 1 100 m, à Quintal, juste après la ligne électrique ; il peut falloir attendre le thermique sur ces pentes boisées. Devant la zone d'aéromodélisme, interdite aux parapentes, il ne faut pas dériver au-dessus de son espace.",
+      "title": "Grand tour, 2/2 : traverser Annecy entre deux zones",
+      "text": "On traverse Annecy environ 1,5 km au sud de la plage, entre deux espaces aériens. La CTR d'Annecy-Meythet, de classe D du sol à 1 220 m, longe le nord du lac et le Veyrier. La R185 de Sacconges, du sol à 1 830 m, est activée par NOTAM du lundi au jeudi et un samedi par mois : partez du Veyrier vers 2 500 m pour passer avec marge. On raccroche le Semnoz vers 1 100 m, à Quintal, juste après la ligne électrique ; il faut parfois attendre le thermique sur ces pentes boisées. Ne dérivez pas au-dessus de la zone d'aéromodélisme, interdite aux parapentes.",
       "focus": ["ctr-annecy", "r185-sacconges", "quintal-ligne-ht-semnoz-nord", "semnoz-face-ouest-aeromodelisme", "semnoz-aeromodelisme"],
       "phase": "afternoon"
     },
     {
       "chapter": "Les pièges",
-      "title": "Ce qui est à respecter : les zones protégées",
-      "text": "La réserve du Roc de Chère, entre Menthon et Talloires, n'a pas de hauteur minimale de survol connue : il faut se renseigner auprès du gestionnaire avant un vol bas. La réserve de chasse des Bauges interdit le survol à moins de 300 m, sauf dans quatre zones autorisées aux pratiques non motorisées. Près de la pointe de Chauriande, à l'Arclosan, une zone de sensibilité majeure pour le gypaète interdit de survoler le cœur, surtout en hiver et au printemps : par le haut, il faut au moins 2 100 m, et par le bas, rester entre 1 100 et 1 150 m. La zone entre la Tournette et l'Arclosan peut être peu confortable.",
+      "title": "Les zones protégées à respecter",
+      "text": "La réserve du Roc de Chère, entre Menthon et Talloires, n'a pas de hauteur minimale connue : renseignez-vous auprès du gestionnaire avant un vol bas. La réserve de chasse des Bauges interdit le survol à moins de 300 m, sauf dans quatre zones ouvertes aux pratiques non motorisées. Près de la pointe de Chauriande, à l'Arclosan, une zone de sensibilité majeure pour le gypaète interdit d'en survoler le cœur, surtout en hiver et au printemps : passez au-dessus de 2 100 m, ou en dessous, entre 1 100 et 1 150 m. Entre la Tournette et l'Arclosan, l'air peut être peu confortable.",
       "focus": ["reserve-roc-de-chere", "rnc-bauges", "arclosan-zsm"],
       "view": "massif"
     },
     {
       "chapter": "Selon le vent météo",
       "title": "Par bise : Planfait passe sous le vent",
-      "text": "La bise, le vent de nord-est, s'engouffre dans le col de Bluffy : le décollage de Planfait se retrouve sous le vent, avec des passages de vent arrière puis de face, et des conditions très turbulentes, voire dangereuses. Il faut rester le matin, jusqu'à midi ou 13h, et renoncer dès qu'un vent arrière apparaît au décollage, ou qu'une forte ascendance se montre au-dessus du village mais pas devant le décollage. La Forclaz reste souvent volable par nord ou nord-est fort, car la brise d'Annecy prend l'ascendant. En altitude, les Dents de Lanfon et le col des Frêtes sont exposés au vent d'est.",
+      "text": "La bise, ce vent de nord-est, s'engouffre dans le col de Bluffy et met Planfait sous le vent : vent arrière puis de face, turbulence forte, voire dangereuse. Volez le matin, jusqu'à midi ou 13h. Renoncez dès qu'un vent arrière apparaît au décollage, ou qu'une forte ascendance se montre au-dessus du village mais pas devant le décollage. La Forclaz reste souvent volable par nord ou nord-est fort, car la brise d'Annecy prend l'ascendant. En altitude, les Dents de Lanfon et le col des Frêtes sont exposés au vent d'est.",
       "focus": ["planfait-bise", "forclaz", "lanfon-fretes-vent-est"],
       "phase": "midday",
       "wind": { "from": "NE", "kmh": 20 },
@@ -112,7 +112,7 @@
     {
       "chapter": "Selon le vent météo",
       "title": "Par nord : la brise du lac renforcée",
-      "text": "Par vent de nord, la brise du lac est renforcée et domine les tendances de nord. Coche Cabane devient délicat à cause de forts rouleaux, avec une falaise juste après la course d'élan, et l'on rencontre du gradient à Verthier comme à Perroix. Le Semnoz est dangereux par plein nord : le vent arrive de travers, ou presque de dos, au décollage, et le site n'est praticable que si le vent reste faible, de 5 à 10 km/h, redressé vers l'ouest par la brise. La Forclaz, dont le nord est une orientation favorable, reste le décollage de repli, même si les cartes de brises la déconseillent par nord fort.",
+      "text": "Par vent de nord, la brise du lac forcit et domine les tendances de nord. Coche Cabane devient délicat, avec de forts rouleaux et une falaise juste après la course d'élan. Le gradient se fait sentir à Verthier comme à Perroix. Par plein nord, le Semnoz est dangereux : le vent arrive de travers, presque de dos, au décollage. On n'y vole que si le vent reste faible, de 5 à 10 km/h, et que la brise le redresse vers l'ouest. La Forclaz, pour qui le nord est une orientation favorable, reste le décollage de repli, même si les cartes de brises la déconseillent par nord fort.",
       "focus": ["coche-cabane-nord", "verthier-gradient", "semnoz-nord", "forclaz"],
       "phase": "afternoon",
       "wind": { "from": "N", "kmh": 20 },
@@ -121,7 +121,7 @@
     {
       "chapter": "Selon le vent météo",
       "title": "Par sud : la Forclaz devient sensible",
-      "text": "Par vent de sud, la Forclaz, orientée nord-ouest et plus haute, est plus sensible que Planfait, bien abrité par les Bauges et le Semnoz. Même à Planfait, un vent fort peut pourtant se lever de façon surprenante : surveillez le lac pour voir monter le vent. Coche Cabane est à éviter par sud fort, à cause de la ligne haute tension et de la route en approche, dos au lac. À Perroix, il faut respecter le volume interdit au-dessus des maisons, et le Semnoz est dangereux par plein sud comme par plein nord.",
+      "text": "Par vent de sud, la Forclaz, orientée nord-ouest et plus haute, est plus sensible que Planfait, bien abrité par les Bauges et le Semnoz. Même à Planfait, un vent fort peut se lever par surprise : surveillez le lac pour le voir monter. Évitez Coche Cabane par sud fort, à cause de la ligne haute tension et de la route en approche, dos au lac. À Perroix, respectez le volume interdit au-dessus des maisons. Le Semnoz est dangereux par plein sud comme par plein nord.",
       "focus": ["forclaz-vent-sud", "planfait", "coche-cabane", "perroix-atterro-gradient"],
       "phase": "afternoon",
       "wind": { "from": "S", "kmh": 20 },
@@ -130,7 +130,14 @@
     {
       "chapter": "Les transitions",
       "title": "Sortir du bassin d'Annecy : Bornes, Bauges, Revard",
-      "text": "Depuis les Dents de Lanfon, on peut partir vers le Parmelan : il faut quitter les Dents vers 2 200 à 2 300 m, remonter la falaise ouest jusqu'au col du Pertuis, et se méfier du venturi du pilier sud. Vers l'ouest, les grands triangles traversent les Bauges entre 1 800 et 2 500 m. Au retour, la brise d'Annecy étant forte, on contourne par Montmin et le Lanfonnet. Du Semnoz, la crête de 35 km mène au Revard : l'aller-retour fait environ 50 à 70 km ; à Bange, la bulle du faucon pèlerin impose 1 200 m dans 250 m, si elle est active. Pour ces transitions, choisissez le jour : plafond d'au moins 2 500 m, léger nord.",
+      "text": "Pour sortir, choisissez le jour : plafond d'au moins 2 500 m, léger nord. Des Dents de Lanfon, on part vers le Parmelan : quittez les Dents vers 2 200 à 2 300 m, remontez la falaise ouest jusqu'au col du Pertuis, et méfiez-vous du venturi du pilier sud. Vers l'ouest, les grands triangles traversent les Bauges entre 1 800 et 2 500 m. Au retour, la brise d'Annecy est forte : contournez par Montmin et le Lanfonnet. Du Semnoz, une crête de 35 km mène au Revard, pour un aller-retour d'environ 50 à 70 km. À Bange, la bulle du faucon pèlerin impose 1 200 m dans 250 m, si elle est active.",
+      "focus": ["semnoz-revard", "bornes/lanfon-parmelan-pertuis", "bornes/bauges-lanfon-parmelan-lachat", "bauges/transition-roc-des-boeufs-lanfon"],
+      "view": "massif"
+    },
+    {
+      "chapter": "Les transitions",
+      "title": "À retenir",
+      "text": "Décollez de la rive est vers midi ou 13h, avant que la brise du lac ne s'installe vers 13h30. Restez sur les faces ouest et nord-ouest, que la brise alimente, et faites le plein aux Dents de Lanfon avant de traverser. Le soir à Doussard, la brise s'inverse au sol : surveillez les manches à air et posez face au sud.",
       "focus": ["semnoz-revard", "bornes/lanfon-parmelan-pertuis", "bornes/bauges-lanfon-parmelan-lachat", "bauges/transition-roc-des-boeufs-lanfon"],
       "view": "massif"
     }

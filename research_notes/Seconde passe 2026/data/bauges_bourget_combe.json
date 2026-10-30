@@ -5,7 +5,7 @@
       "id": "bourget-chambery",
       "name": "Lac du Bourget, cluse de Chambéry et Avant-Pays savoyard",
       "parent_massif": "Préalpes du Nord",
-      "summary": "Le secteur s'organise autour de l'énorme brise de la cluse de Chambéry. L'air de l'Albanais, d'Aix-les-Bains et du lac du Bourget descend du nord vers Chambéry, à 25 à 30 km/h, puis se divise aux Marches : une branche remonte vers Albertville par la Combe de Savoie, l'autre vers Grenoble par le Grésivaudan.\n\nCette brise de nord rend volables l'après-midi, sur leurs faces ouest, Vérel, le Revard, le Sire Nord, le Mont du Chat et l'Épine, avec des thermiques de falaise puissants. Le décollage de Vérel se fait souvent sous le vent du thermique, et la brise forcit aussi aux atterrissages de Montagny et de Chamoux. L'Épine et Aiguebelette fonctionnent par brise de plaine d'ouest ou de nord-ouest, de 13h jusqu'à la nuit, forte entre 14h et 17h. La restitution du soir d'Aiguebelette est réputée, mais ces sites deviennent dangereux par composante nord-est à est et par sud fort.\n\nLe lac du Bourget n'a pas de décollage de brise de lac documenté : la brise de lac n'apparaît que comme un flux léger le long de l'axe du lac. Sapenay, au nord du lac, est le seul site d'où l'on peut le survoler. Pour le cross, on part vers le nord (Vérel, Revard, Semnoz) ou vers le sud et l'est (Épine, Dent du Chat, Chartreuse, Granier puis Savoyarde).\n\nLe vrai verrou du secteur est l'espace aérien. La CTR et la TMA de Chambéry-Aix interdisent de s'écarter du relief : on vole le long des crêtes, jamais en vallée. Le régime d'hiver, avec les charters neige, est beaucoup plus contraignant. Tout passage en vallée doit donc tenir compte de la brise de Chambéry et de l'espace aérien.",
+      "summary": "Ici, tout tourne autour de l'énorme brise de la cluse de Chambéry. L'air de l'Albanais, d'Aix-les-Bains et du lac du Bourget descend du nord vers Chambéry, à 25 à 30 km/h. Aux Marches, il se divise : une branche remonte vers Albertville par la Combe de Savoie, l'autre vers Grenoble par le Grésivaudan.\n\nCette brise de nord rend volables l'après-midi les faces ouest de Vérel, du Revard et du Sire Nord, avec des thermiques de falaise puissants. À Vérel, on décolle souvent sous le vent du thermique, et la brise forcit aussi aux atterrissages de Montagny et de Chamoux. À l'ouest de la cluse, l'Épine, le Mont du Chat et Aiguebelette marchent par brise de plaine d'ouest ou de nord-ouest, de 13h jusqu'à la nuit, forte entre 14h et 17h. Le soir, la restitution d'Aiguebelette est réputée. Ces sites deviennent dangereux par composante nord-est à est et par sud fort.\n\nSur le lac du Bourget, aucun décollage de brise de lac n'est documenté : la brise de lac n'y apparaît que comme un flux léger le long de l'axe du lac. Sapenay, au nord, est le seul site d'où l'on peut survoler le lac. En cross, on part vers le nord (Vérel, Revard, Semnoz) ou vers le sud et l'est (Épine, Dent du Chat, Chartreuse, Granier puis Savoyarde).\n\nLe vrai verrou, c'est l'espace aérien. La CTR et la TMA de Chambéry-Aix interdisent de s'écarter du relief : on vole le long des crêtes, jamais en vallée. L'hiver, avec les charters neige, le régime est beaucoup plus contraignant. Chaque passage en vallée se prépare donc avec la brise de Chambéry et l'espace aérien en tête.",
       "bbox": [
         5.7,
         45.5,
@@ -1187,7 +1187,7 @@
       "synoptic_effects": [
         {
           "wind": "N",
-          "effect": "Par vent de nord, la brise de cluse se renforce et devient soutenue à Montagny. Vérel (travers droit, rouleaux), le Revard et le Sire Nord sont favorables, et le Sire Sud impossible. À l'Épine, on a souvent du nord-est sur la crête : le décollage se fait de travers et sous le vent, par nord modéré à fort. Au Revard, par fort nord, il faut rester au nord du décollage. Le Mont du Chat reste favorable.",
+          "effect": "Par vent de nord, la brise de cluse forcit et devient soutenue à Montagny. Vérel (travers droit, rouleaux), le Revard et le Sire Nord sont favorables, le Sire Sud impossible. À l'Épine, on a souvent du nord-est sur la crête : par nord modéré à fort, on y décolle de travers et sous le vent. Au Revard, par fort nord, restez au nord du décollage. Le Mont du Chat reste favorable.",
           "sources": [
             "S52",
             "S54",
@@ -1199,7 +1199,7 @@
         },
         {
           "wind": "NW",
-          "effect": "C'est le régime le plus favorable du secteur : l'Épine (cross vers la Dent du Chat), le Mont du Chat, le Revard, Vérel (conseillé d'ouest à nord-ouest) et Sapenay (de sud-ouest à nord-ouest) sont favorables. Le Sire Nord fonctionne par vent météo de nord-ouest à nord.",
+          "effect": "Le nord-ouest est le meilleur régime du secteur. L'Épine (cross vers la Dent du Chat), le Mont du Chat, le Revard, Vérel (conseillé d'ouest à nord-ouest) et Sapenay (de sud-ouest à nord-ouest) sont favorables. Le Sire Nord marche par vent météo de nord-ouest à nord.",
           "sources": [
             "S36",
             "S46",
@@ -1210,7 +1210,7 @@
         },
         {
           "wind": "W",
-          "effect": "Le vent d'ouest est le plus favorable à l'Épine, et les sites du Revard, de Vérel, du Mont du Chat et de Sapenay sont aussi favorables. Les atterrissages de l'Épine subissent alors de faibles brises du lac, d'ouest ou de sud-ouest.",
+          "effect": "Le vent d'ouest est le meilleur pour l'Épine, et le Revard, Vérel, le Mont du Chat et Sapenay sont aussi favorables. Aux atterrissages de l'Épine, on trouve alors de faibles brises du lac, d'ouest ou de sud-ouest.",
           "sources": [
             "S48",
             "S49",
@@ -1221,7 +1221,7 @@
         },
         {
           "wind": "SW",
-          "effect": "Par vent de sud-ouest, l'Épine est thermo-dynamique, et le Sire Sud et le Pas de l'Échelle sont volables. Vérel se présente en travers gauche, avec des rouleaux, et le Revard reste favorable.",
+          "effect": "Par sud-ouest, l'Épine est thermo-dynamique, et le Sire Sud et le Pas de l'Échelle sont volables. Vérel se présente en travers gauche, avec des rouleaux. Le Revard reste favorable.",
           "sources": [
             "S36",
             "S54",
@@ -1232,7 +1232,7 @@
         },
         {
           "wind": "S",
-          "effect": "Par vent de sud, Vérel est déconseillé : les falaises ouest sont sous le vent, l'air est turbulent et descendant, et Montagny devient dangereux, car on y pose trop court. Il peut arriver que la brise s'arrête si le ciel se voile. Le Sire Sud et le Pas de l'Échelle sont favorables, et l'Épine n'est intéressante que par sud modéré.",
+          "effect": "Par vent de sud, évitez Vérel : les falaises ouest sont sous le vent, l'air turbulent et descendant. Montagny devient dangereux, car on y pose trop court. Si le ciel se voile, la brise peut s'arrêter. Le Sire Sud et le Pas de l'Échelle sont favorables ; l'Épine n'est intéressante que par sud modéré.",
           "sources": [
             "S29",
             "S31",
@@ -1243,7 +1243,7 @@
         },
         {
           "wind": "E",
-          "effect": "Par vent d'est, les faces ouest sont partout sous le vent : l'Épine est aléatoire, malsaine, voire dangereuse, même si les biroutes sont de face. Le Mont du Chat est sensible, comme le Revard, et Vérel se présente vent arrière.",
+          "effect": "Par vent d'est, toutes les faces ouest sont sous le vent. L'Épine devient aléatoire, malsaine, voire dangereuse, même avec les biroutes de face. Le Mont du Chat est sensible, comme le Revard, et Vérel se présente vent arrière.",
           "sources": [
             "S36",
             "S46",
@@ -1253,7 +1253,7 @@
         },
         {
           "wind": "NE",
-          "effect": "Par vent de nord-est, l'Épine se retrouve sous le vent du plateau, avec un thermique renforcé. Vérel est en vent arrière droit, le Chat est sous le vent, et le Revard est défavorable.",
+          "effect": "Par nord-est, l'Épine passe sous le vent du plateau, avec un thermique renforcé. Vérel est en vent arrière droit, le Chat sous le vent, et le Revard défavorable.",
           "sources": [
             "S48",
             "S51",
@@ -1263,7 +1263,7 @@
         },
         {
           "wind": "SE",
-          "effect": "Par vent de sud-est, le Sire Sud est sous le vent de l'arête du Nivolet, et Vérel se présente de travers gauche, sous le vent, avec des rouleaux. L'Épine est aussi sous le vent.",
+          "effect": "Par sud-est, le Sire Sud est sous le vent de l'arête du Nivolet, et Vérel se présente de travers gauche, sous le vent, avec des rouleaux. L'Épine est aussi sous le vent.",
           "sources": [
             "S54",
             "S51",
@@ -1386,20 +1386,20 @@
         }
       ],
       "tips": [
-        "À Vérel, mieux vaut s'engager en fin de matinée, avant la brise, ou en toute fin de journée si l'on débute : en plein thermique, le décollage est sous le vent et des rouleaux se forment au-dessus [S29][S51].",
-        "À Montagny, il faut perdre son altitude au nord du terrain, avant le Petit Sonnaz, sans dépasser 50 m au-dessus du sol dans la CTR ; par vent de sud, on prévoit Brocolis [S31].",
-        "À l'Épine, par vent de sud, il faut rester près de l'atterrissage, car il reste près de 3 km à faire pour rentrer, avec l'autoroute à traverser ; ne jamais passer derrière la crête (CTR), et survoler l'A43 à 150 m au moins [S36].",
-        "À Aiguebelette, la restitution est réputée mais jamais garantie : il faut la chercher sur les pentes qui dominent le lac, vers 18-19h [S36].",
-        "Au Mont du Chat, ne pas voler à l'est de la crête : la manche à air sensible signale les composantes est, qui sont dangereuses [S46].",
-        "Pour traverser la cluse de Chambéry, il faut partir haut : le départ du Granier se fait en général entre 2300 et 2400 m (1900 m pour les « guns »), puis se placer en laisse de chien dès l'entrée dans la couche de brise, vers 1200 m [S3].",
-        "En hiver, de décembre à avril, ne pas voler à plus de 300 m au-dessus du relief de l'Épine, et rester hors des CTR 1 et 2, totalement interdites à l'est du décollage [S48]."
+        "À Vérel, engagez-vous en fin de matinée, avant la brise, ou en toute fin de journée si vous débutez. En plein thermique, le décollage est sous le vent et des rouleaux se forment au-dessus [S29][S51].",
+        "À Montagny, perdez votre altitude au nord du terrain, avant le Petit Sonnaz, sans dépasser 50 m au-dessus du sol dans la CTR. Par vent de sud, prévoyez Brocolis [S31].",
+        "À l'Épine, par vent de sud, restez près de l'atterrissage : il reste près de 3 km pour rentrer, autoroute à traverser. Ne passez jamais derrière la crête (CTR), et survolez l'A43 à 150 m au moins [S36].",
+        "À Aiguebelette, la restitution est réputée mais jamais garantie : cherchez-la vers 18-19h, sur les pentes qui dominent le lac [S36].",
+        "Au Mont du Chat, ne volez pas à l'est de la crête : la manche à air sensible y signale les composantes est, qui sont dangereuses [S46].",
+        "Pour traverser la cluse de Chambéry, partez haut : du Granier, en général entre 2300 et 2400 m (1900 m pour les « guns »). Placez-vous en laisse de chien dès l'entrée dans la couche de brise, vers 1200 m [S3].",
+        "En hiver, de décembre à avril, ne montez pas à plus de 300 m au-dessus du relief de l'Épine, et restez hors des CTR 1 et 2, totalement interdites à l'est du décollage [S48]."
       ]
     },
     {
       "id": "combe-de-savoie",
       "name": "Combe de Savoie (Montmélian – Albertville)",
       "parent_massif": "Préalpes du Nord",
-      "summary": "La Combe de Savoie est alimentée par la branche de la brise de la cluse de Chambéry qui remonte l'Isère de Montmélian vers Albertville, à 25 à 30 km/h. C'est un flux de sud-ouest, à l'inverse du Grésivaudan, où la brise vient du nord. Cette brise est forte et haute dès la fin de la matinée : à Chamoux, elle peut bloquer les pilotes jusqu'à 1400 m, et le vent de vallée est fort à très fort les jours de vent météo de nord. Elle se prolonge par la vallée des Huiles vers la Maurienne (Aiguebelle, La Chambre) et vers Ugine, par le seuil d'Albertville.\n\nLes décollages de bord de Combe sont des sites de brise. Montlambert, face sud-est, se vole le matin jusqu'au début de l'après-midi, bien protégé du vent de nord. Chamoux-Montendry, face sud, se vole l'après-midi jusqu'au coucher du soleil. L'Arclusaz et l'Ébaudiaz complètent l'ensemble.\n\nLe piège majeur est la zone sous le vent derrière Montmélian : la brise de Chambéry y déferle après avoir coupé le virage par-dessus la Savoyarde. Le relief des Tours de Montmayeur est frappé de plein fouet par cette brise. Au retour de cross, on remonte la Combe au vent par les avant-reliefs de Belledonne (Tours de Montmayeur, Brâme-Farine), avec forte brise : c'est une transition tendue, qui coûte souvent le bouclage du triangle.",
+      "summary": "La Combe de Savoie vit de la brise de la cluse de Chambéry. Une branche remonte l'Isère de Montmélian vers Albertville, à 25 à 30 km/h : un flux de sud-ouest, à l'inverse du Grésivaudan, où la brise vient du nord. Ne transposez donc pas la lecture d'une vallée à l'autre.\n\nCette brise est forte et haute dès la fin de matinée. À Chamoux, elle peut bloquer les pilotes jusqu'à 1400 m, et les jours de vent météo de nord, le vent de vallée y est fort à très fort. Elle se prolonge par la vallée des Huiles vers la Maurienne (Aiguebelle, La Chambre), et vers Ugine par le seuil d'Albertville.\n\nLes décollages de bord de Combe sont des sites de brise. Montlambert, face sud-est, se vole le matin jusqu'au début de l'après-midi, bien protégé du vent de nord. Chamoux-Montendry, face sud, prend le relais l'après-midi, jusqu'au coucher du soleil. L'Arclusaz et l'Ébaudiaz complètent l'ensemble.\n\nLe piège majeur est la zone sous le vent derrière Montmélian : la brise de Chambéry y déferle après avoir coupé le virage par-dessus la Savoyarde. Elle frappe aussi de plein fouet le relief des Tours de Montmayeur. Au retour de cross, on remonte la Combe au vent par les avant-reliefs de Belledonne (Tours de Montmayeur, Brâme-Farine), dans une forte brise. La transition est tendue, et c'est souvent là que le triangle ne se boucle pas.",
       "bbox": [
         6.0,
         45.45,
@@ -2301,7 +2301,7 @@
       "synoptic_effects": [
         {
           "wind": "N",
-          "effect": "Par vent de nord, Montlambert est le site de repli, protégé par le relief, et Chamoux se vole par nord pas trop fort. Au-delà d'environ 20 km/h, la protection est faible. La brise de vallée sud-ouest s'ajoute alors aux atterrissages, fort à très fort à Chamoux. Il faut éviter de sortir du « bocal » de l'Arclusaz et de Montlambert.",
+          "effect": "Par vent de nord, Montlambert est le site de repli, protégé par le relief, et Chamoux se vole par nord pas trop fort. Au-delà d'environ 20 km/h, la protection devient faible. La brise de vallée de sud-ouest s'ajoute alors aux atterrissages, forte à très forte à Chamoux. Ne sortez pas du « bocal » de l'Arclusaz et de Montlambert.",
           "sources": [
             "S34",
             "S35",
@@ -2312,7 +2312,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Par vent de nord-ouest, les Tours de Montmayeur sont frappées de plein fouet par la brise. Chamoux-Champlaurent, à l'ouest, et l'Ébaudiaz, au nord-ouest, sont volables. Montlambert est défavorable par sud-ouest, ouest et nord-ouest.",
+          "effect": "Par vent de nord-ouest, la brise frappe de plein fouet les Tours de Montmayeur. Chamoux-Champlaurent, à l'ouest, et l'Ébaudiaz, au nord-ouest, sont volables. Montlambert est défavorable par sud-ouest, ouest et nord-ouest.",
           "sources": [
             "S23",
             "S72",
@@ -2322,7 +2322,7 @@
         },
         {
           "wind": "W",
-          "effect": "Par vent d'ouest, Montlambert se décolle sous le vent de la crête ouest, par sud-ouest à ouest modéré. Le vent peut alors être faible, moins de 10 km/h, avec des turbulences en altitude. Chamoux est volable par ouest.",
+          "effect": "Par vent d'ouest, Montlambert se décolle sous le vent de la crête ouest, par sud-ouest à ouest modéré. Le vent y est alors parfois faible, sous 10 km/h, avec des turbulences en altitude. Chamoux est volable par ouest.",
           "sources": [
             "S68",
             "S42",
@@ -2331,7 +2331,7 @@
         },
         {
           "wind": "S",
-          "effect": "Par vent de sud, Montlambert est vivement déconseillé : le vent sort de la Maurienne, avec des rafales de travers gauche. Chamoux-Montendry, orienté sud, est volable par sud modéré, mais la sortie de la combe y est aléatoire par nord fort ou sud modéré. L'Arclusaz se décolle aussi au sud.",
+          "effect": "Par sud établi, évitez Montlambert : le vent sort de la Maurienne, en rafales de travers gauche ; par sud faible, il reste possible. Chamoux-Montendry, orienté sud, est volable par sud modéré, mais la sortie de la combe y est aléatoire par nord fort ou sud modéré. L'Arclusaz se décolle aussi au sud.",
           "sources": [
             "S34",
             "S35",
@@ -2341,7 +2341,7 @@
         },
         {
           "wind": "E",
-          "effect": "Par vent d'est, Chamoux est à éviter : le vent est souvent arrière au décollage et appuie sur la tête dans la combe. Montlambert, lui, est orienté sud-est.",
+          "effect": "Par vent d'est, évitez Chamoux : le vent y est souvent arrière au décollage et appuie sur la tête dans la combe. Montlambert, lui, est orienté sud-est.",
           "sources": [
             "S35",
             "S68"
@@ -2522,19 +2522,19 @@
         }
       ],
       "tips": [
-        "Dans la Combe, la brise souffle du sud ou du sud-ouest vers Albertville, à l'inverse du Grésivaudan, où elle vient du nord : il ne faut pas transposer la lecture d'une vallée à l'autre [S9][S3].",
-        "À Chamoux, en été, il ne faut pas dériver sous le vent de l'atterrissage, côté vallée, si l'on veut rentrer ; la brise peut bloquer jusqu'à 1400 m [S35].",
-        "À Montlambert, on vole le matin jusqu'au début de l'après-midi : en fin de l'après-midi, la brise redescend du sommet et il devient impossible de décoller [S34].",
-        "Au retour de cross par la Combe, il faut se placer au vent par les avant-reliefs (Villard-d'Héry, Brâme-Farine) et prévoir une marge pour la forte brise [S40][S23].",
-        "Ne pas finir bas sous le vent de Montmélian : c'est une zone très dangereuse [S3].",
-        "Au retour des Bauges vers Lumbin, on passe par le Colombier, Montlambert (falaise aux oiseaux), les Tours de Montmayeur (860-900 m) et Bramefarine ; il ne faut pas viser les Tours sans cumulus au-dessus de Montlambert [S23][S100]."
+        "Dans la Combe, la brise souffle du sud ou du sud-ouest vers Albertville, à l'inverse du Grésivaudan, où elle vient du nord : ne transposez pas la lecture d'une vallée à l'autre [S9][S3].",
+        "À Chamoux, en été, ne dérivez pas sous le vent de l'atterrissage, côté vallée, si vous voulez rentrer : la brise peut bloquer jusqu'à 1400 m [S35].",
+        "À Montlambert, volez le matin jusqu'au début de l'après-midi. En fin d'après-midi, la brise redescend du sommet, et décoller devient impossible [S34].",
+        "Au retour de cross par la Combe, placez-vous au vent par les avant-reliefs (Villard-d'Héry, Brâme-Farine), avec de la marge pour la forte brise [S40][S23].",
+        "Ne finissez jamais bas sous le vent de Montmélian : la zone est très dangereuse [S3].",
+        "Au retour des Bauges vers Lumbin, passez par le Colombier, Montlambert (falaise aux oiseaux), les Tours de Montmayeur (860-900 m) et Bramefarine. Ne visez pas les Tours sans cumulus au-dessus de Montlambert [S23][S100]."
       ]
     },
     {
       "id": "bauges",
       "name": "Massif des Bauges",
       "parent_massif": "Préalpes du Nord",
-      "summary": "Les Bauges forment un grand plateau karstique, ouvert au nord sur Annecy et au sud-ouest sur la cluse de Chambéry. Les brises d'Annecy descendent les vallées intérieures (col de Leschaux, Chéran, Lescheraines, Le Châtelard, École, Aillons) vers la Combe de Savoie, tandis que la brise de Chambéry remonte par le sud-ouest et le col de Plainpalais.\n\nCes flux se rencontrent en confluences prévisibles que les pilotes exploitent : le Margériaz, de part et d'autre du col de Plainpalais, souvent sous un cumulus ; le col du Frêne, où la brise de Sainte-Reine rencontre celle de la Combe ; le secteur d'École ; et la Savoyarde, clé de la transition depuis la Chartreuse. Les brises atteignent 30 à 35 km/h et peuvent coincer les pilotes à l'atterrissage, vers École, Aillons, Lescheraines et Allèves ; le nord les renforce.\n\nLa face est, vers la Combe, se vole de 11h à 15h, et la face ouest du Margériaz après 15h30. Le vent de nord ou de sud est toujours plus fort à l'ouest qu'à l'est, où les plus hautes cimes protègent : on peut donc voler au cœur des Bauges quand le Semnoz et le Revard sont impossibles.\n\nLe cadre réglementaire est strict. La réserve nationale de chasse et de faune sauvage interdit le survol à moins de 300 m au-dessus du sol, sauf dans 4 zones et pour les 3 décollages du Trélod. Des bulles de quiétude protègent des rapaces, et la Galoppaz et Puygros sont interdits par arrêté municipal. Beaucoup de sites rando n'ont pas d'atterrissage officiel en vallée. Le cross type est le petit tour des Bauges, ou la traversée Chartreuse–Savoyarde–Galoppaz–Julioz vers Annecy.",
+      "summary": "Les Bauges sont un grand plateau karstique, ouvert au nord sur Annecy et au sud-ouest sur la cluse de Chambéry. Deux brises y entrent en sens inverse. Celles d'Annecy descendent les vallées intérieures (col de Leschaux, Chéran, Lescheraines, Le Châtelard, École, Aillons) vers la Combe de Savoie. Celle de Chambéry remonte par le sud-ouest et le col de Plainpalais.\n\nElles se rencontrent en confluences prévisibles, que les pilotes exploitent : le Margériaz, de part et d'autre du col de Plainpalais, souvent sous un cumulus ; le col du Frêne, où la brise de Sainte-Reine rencontre celle de la Combe ; le secteur d'École ; et la Savoyarde, clé de la transition depuis la Chartreuse. Ces brises atteignent 30 à 35 km/h et peuvent coincer les pilotes à l'atterrissage, vers École, Aillons, Lescheraines et Allèves. Le nord les renforce.\n\nLa face est, vers la Combe, se vole de 11h à 15h, et la face ouest du Margériaz après 15h30. Le vent de nord ou de sud est toujours plus fort à l'ouest qu'à l'est, où les plus hautes cimes protègent : on peut donc voler au cœur des Bauges quand le Semnoz et le Revard sont impossibles. Le cross type est le petit tour des Bauges, ou la traversée Chartreuse–Savoyarde–Galoppaz–Julioz vers Annecy.\n\nLe cadre réglementaire est strict. La réserve nationale de chasse et de faune sauvage interdit le survol à moins de 300 m du sol, sauf dans 4 zones et pour les 3 décollages du Trélod. Des bulles de quiétude protègent des rapaces, et la Galoppaz et Puygros sont interdits par arrêté municipal. Beaucoup de sites rando n'ont pas d'atterrissage officiel en vallée.",
       "bbox": [
         5.93,
         45.5,
@@ -3942,7 +3942,7 @@
       "synoptic_effects": [
         {
           "wind": "N",
-          "effect": "Par vent de nord, les brises s'additionnent au vent, qui est plus soutenu à l'ouest du massif qu'à l'est. On peut donc voler au cœur des Bauges, à l'abri des Bornes-Aravis ou de Belledonne, quand le Semnoz et le Revard sont impossibles. Un vol a traversé les Bauges au nord-nord-ouest, au-dessus de 2000 m, à 28 km/h. Au retour par la Combe, la brise est très forte contre le nord-ouest.",
+          "effect": "Par vent de nord, les brises s'additionnent au vent, plus soutenu à l'ouest du massif qu'à l'est. On peut donc voler au cœur des Bauges, à l'abri des Bornes-Aravis ou de Belledonne, quand le Semnoz et le Revard sont impossibles. Un vol a traversé les Bauges au nord-nord-ouest, au-dessus de 2000 m, à 28 km/h. Au retour par la Combe, la brise est très forte contre le nord-ouest.",
           "sources": [
             "S26",
             "S40"
@@ -3950,7 +3950,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Par vent de nord-ouest, l'épaule nord-ouest du Montgelas, sur la Savoyarde, est au vent de la brise de Chambéry : elle est dynamique partout. Les plafonds de cross atteignent 2700 m au Julioz. Une figure donne le versant est de 11h à 15h, puis le versant ouest du Margériaz après 15h30.",
+          "effect": "Par nord-ouest, l'épaule nord-ouest du Montgelas, sur la Savoyarde, est au vent de la brise de Chambéry : le dynamique y tient partout. Les plafonds de cross atteignent 2700 m au Julioz. Le versant est se vole de 11h à 15h, puis le versant ouest du Margériaz après 15h30.",
           "sources": [
             "S3",
             "S15",
@@ -3959,7 +3959,7 @@
         },
         {
           "wind": "S",
-          "effect": "Par vent de sud, il y a des cisaillements quand les brises s'opposent au vent. Le vent de sud est plus fort à l'ouest du massif, et Montlambert est déconseillé. Les décollages du Trélod et du Margériaz sont orientés sud-sud-ouest. Un petit sud-ouest de 9 km/h pousse dans le bon sens pour la transition Granier–Savoyarde, et permet de partir un peu plus bas qu'avec du nord, qui contre.",
+          "effect": "Par vent de sud, les brises qui s'opposent au vent créent des cisaillements. Le sud est plus fort à l'ouest du massif, et Montlambert est déconseillé. Les décollages du Trélod et du Margériaz sont orientés sud-sud-ouest. Un petit sud-ouest de 9 km/h pousse dans le bon sens pour la transition Granier–Savoyarde : on part un peu plus bas qu'avec du nord, qui contre.",
           "sources": [
             "S26",
             "S3",
@@ -3968,7 +3968,7 @@
         },
         {
           "wind": "W",
-          "effect": "Par vent d'ouest, la face ouest du Margériaz se vole après 15h30. Les brises restent dominantes, et les faces ouest du Roc des Bœufs et du Colombier sont portantes. Le haut du plateau est parfois moins protégé.",
+          "effect": "Par vent d'ouest, la face ouest du Margériaz se vole après 15h30. Les brises restent dominantes, et les faces ouest du Roc des Bœufs et du Colombier portent. Le haut du plateau est parfois moins protégé.",
           "sources": [
             "S15",
             "S38"
@@ -3976,7 +3976,7 @@
         },
         {
           "wind": "SW",
-          "effect": "Par sud-ouest, le petit vent est favorable à la transition de la Chartreuse vers la Savoyarde, car il pousse. En altitude, un vent de sud contre le retour par le lac d'Annecy : il atteignait 18 km/h aux Dents de Lanfon.",
+          "effect": "Par sud-ouest, le petit vent pousse dans le bon sens pour la transition de la Chartreuse vers la Savoyarde. En altitude, un vent de sud contre en revanche le retour par le lac d'Annecy : il atteignait 18 km/h aux Dents de Lanfon.",
           "sources": [
             "S23",
             "S3"
@@ -3984,7 +3984,7 @@
         },
         {
           "wind": "E",
-          "effect": "Par vent d'est, le comportement du secteur n'est pas documenté de façon fiable. Le vent est plus fort à l'ouest du massif qu'à l'est : l'est est sans doute protégé par les plus hautes cimes.",
+          "effect": "Par vent d'est, le comportement du secteur n'est pas documenté de façon fiable. Comme le vent est plus fort à l'ouest du massif qu'à l'est, l'est est sans doute protégé par les plus hautes cimes.",
           "sources": [
             "S26"
           ]
@@ -4201,16 +4201,16 @@
         }
       ],
       "tips": [
-        "Pour la Savoyarde, il ne faut pas viser le rocher, où la brise est impossible à remonter (venturi), mais l'épaule nord-ouest du Montgelas : on vise d'abord le Mont Saint-Michel, pour être au nord quand on entre dans la brise [S3].",
-        "Sur la Savoyarde, une fois sur l'épaule, le dynamique tient partout ; si l'on est décalé, la seconde épaule ouest, 1 km plus au sud, permet de remonter par petits virages à partir de 900 m [S3].",
-        "Au-dessus du Montgelas, rien ne part du sommet : pour gagner la Sauge, on part l'été en dynamique parallèle à la crête, face à la brise d'Annecy, et au printemps on cherche des bulles décalées devant la pente [S3].",
-        "Au départ du Granier, il faut 2300-2400 m, ou 1900 m pour les « guns » ; le SIV est conseillé pour la Savoyarde [S3][S23].",
-        "Si l'on ne connaît pas le secteur, il vaut mieux voler au début de l'après-midi ou quand l'activité thermique décroît : les brises, à 30-35 km/h, peuvent clouer au sol près d'École, d'Aillons, de Lescheraines ou d'Allèves [S26].",
-        "Pour lire la circulation d'ensemble, il faut croiser les balises du Semnoz et du Revard avec celle de la Sambuy, au nord-est des Bauges [S26].",
-        "Dans la réserve des Bauges, il ne faut jamais passer à moins de 300 m au-dessus du sol, même si le thermique s'y trouve ; les bulles de quiétude imposent 1750 m à la Buffaz et 1200 m à la Compôte [S86][S84].",
+        "Pour la Savoyarde, ne visez pas le rocher : la brise y est impossible à remonter (venturi). Visez l'épaule nord-ouest du Montgelas, en passant d'abord par le Mont Saint-Michel pour être au nord quand vous entrez dans la brise [S3].",
+        "Sur la Savoyarde, une fois sur l'épaule, le dynamique tient partout. Si vous êtes décalé, la seconde épaule ouest, 1 km plus au sud, permet de remonter par petits virages à partir de 900 m [S3].",
+        "Au-dessus du Montgelas, rien ne part du sommet. Pour gagner la Sauge, l'été, partez en dynamique parallèle à la crête, face à la brise d'Annecy ; au printemps, cherchez des bulles décalées devant la pente [S3].",
+        "Au départ du Granier, il faut 2300-2400 m, ou 1900 m pour les « guns ». Le SIV est conseillé pour la Savoyarde [S3][S23].",
+        "Si vous découvrez le secteur, volez en début d'après-midi ou quand les thermiques faiblissent. Les brises montent à 30-35 km/h et peuvent vous clouer au sol vers École, Aillons, Lescheraines ou Allèves [S26].",
+        "Pour lire la circulation d'ensemble, croisez les balises du Semnoz et du Revard avec celle de la Sambuy, au nord-est des Bauges [S26].",
+        "Dans la réserve des Bauges, ne passez jamais à moins de 300 m du sol, même si le thermique s'y trouve. Les bulles de quiétude imposent 1750 m à la Buffaz et 1200 m à la Compôte [S86][S84].",
         "La Galoppaz et Puygros sont interdits par arrêté municipal : on ne doit ni y décoller ni s'y poser [S33].",
-        "Pour le retour du Margériaz vers le Revard, on part de l'arête vers 2300-2400 m, puis l'on relance à la Tour des Ébats en passant au vent, par le nord-ouest [S38][S39].",
-        "En entrant dans les Bauges depuis la Savoyarde, on raccroche la pompe de la face ouest vers 1100 m, puis l'on monte à 1600 m pour la Galoppaz, avant la Sauge, le Colombier et le Julioz (2700 m) [S23][S100]."
+        "Pour rentrer du Margériaz vers le Revard, quittez l'arête vers 2300-2400 m, puis relancez à la Tour des Ébats en passant au vent, par le nord-ouest [S38][S39].",
+        "En entrant dans les Bauges par la Savoyarde, raccrochez la pompe de la face ouest vers 1100 m, puis montez à 1600 m pour la Galoppaz, avant la Sauge, le Colombier et le Julioz (2700 m) [S23][S100]."
       ]
     }
   ],

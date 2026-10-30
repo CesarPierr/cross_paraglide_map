@@ -5,7 +5,7 @@
       "id": "mont-blanc-chamonix",
       "name": "Vallée de Chamonix – Aiguilles Rouges – Mont-Blanc",
       "parent_massif": "Massif du Mont-Blanc",
-      "summary": "C'est une vallée glaciaire étroite : l'air de l'Arve entre par le bassin de Sallanches et de Passy, franchit les gorges de Servoz et remonte vers Chamonix et Argentière. Planpraz et la Flégère, sur les faces sud à est des Aiguilles Rouges, se volent le matin ; le Plan de l'Aiguille, tourné vers l'ouest et le nord-ouest, prend le relais en fin de matinée pour les grandes restitutions du soir.\n\nLa brise de vallée s'installe vers 11h. Au Bois du Bouchet, elle reste soutenue l'après-midi, entre 20 et 30 km/h, et se fait sentir jusqu'à 2500 m, parfois 3000 m. Les Grands Montets ne deviennent intéressants qu'au début de l'après-midi.\n\nLe foehn, fréquent à Chamonix, piège régulièrement les pilotes, même cantonné entre 1400 et 1800 m. La règle locale est de ne pas voler avec plus de 20 km/h de vent météo à 2000 m (rotors, sous le vent) et de se replier sur Plaine-Joux. Côté Les Houches, le Prarion (NE le matin, O l'après-midi) et Merlet-Aiguillette fonctionnent avec le thermique et la restitution, mais les atterrissages des Chavants et de Cachat passent sous le vent dès que la brise s'établit. Les cross classiques partent de Planpraz vers les Aravis, Annecy ou le Valais.\n\nDu 1er juillet au 31 août, la zone LF-R 30 B interdit décollage et survol côté Mont-Blanc, au Plan de l'Aiguille, à l'Aiguille du Midi et dans la Vallée Blanche. La zone 30 C interdit l'atterrissage au sommet du 1er juin au 15 octobre, et la LF-R 30 A, permanente, couvre les hélicoptères des Bois et du Montenvers, tout près du Bouchet. Aucun schéma annoté de la brise n'a été publié pour cette vallée.",
+      "summary": "Chamonix est une vallée glaciaire étroite. L'air de l'Arve y entre par le bassin de Sallanches et de Passy, franchit les gorges de Servoz et remonte vers Chamonix et Argentière. La journée suit les horaires : Planpraz et la Flégère, sur les faces sud à est des Aiguilles Rouges, se volent le matin ; le Plan de l'Aiguille, tourné vers l'ouest et le nord-ouest, prend le relais en fin de matinée pour les grandes restitutions du soir.\n\nLa brise de vallée s'installe vers 11h. Au Bois du Bouchet, elle reste soutenue l'après-midi, entre 20 et 30 km/h, et se fait sentir jusqu'à 2500 m, parfois 3000 m. Les Grands Montets ne deviennent intéressants qu'en début d'après-midi.\n\nLe foehn, fréquent à Chamonix, piège régulièrement les pilotes, même cantonné entre 1400 et 1800 m. La règle locale : pas de vol au-delà de 20 km/h de vent météo à 2000 m (rotors, sous le vent), et repli sur Plaine-Joux. Côté Les Houches, le Prarion (NE le matin, O l'après-midi) et Merlet-Aiguillette marchent au thermique et à la restitution, mais les atterrissages des Chavants et de Cachat passent sous le vent dès que la brise s'établit. Les cross classiques partent de Planpraz vers les Aravis, Annecy ou le Valais.\n\nDu 1er juillet au 31 août, la zone LF-R 30 B interdit décollage et survol côté Mont-Blanc : Plan de l'Aiguille, Aiguille du Midi, Vallée Blanche. La zone 30 C interdit l'atterrissage au sommet du 1er juin au 15 octobre. La LF-R 30 A, permanente, couvre les hélicoptères des Bois et du Montenvers, tout près du Bouchet. Aucun schéma annoté de la brise n'a été publié pour cette vallée.",
       "bbox": [
         6.7,
         45.8,
@@ -1385,7 +1385,7 @@
       "synoptic_effects": [
         {
           "wind": "W",
-          "effect": "Au-delà de 20 km/h à 2000 m, Planpraz et la Flégère sont sous le vent et turbulentes. Un léger flux d'ouest, combiné aux brises, convient au Plan de l'Aiguille et au Grand Prarion. Si le vent tourne vers l'ouest ou le sud-ouest, le Prarion NE ferme, avec La Charme, le Plancert et le Grand Prarion ; par vent d'ouest, le Plancert est souvent le dernier site praticable. Le seuil est de 20 km/h, parfois 30 km/h.",
+          "effect": "Au-delà de 20 km/h d'ouest à 2000 m, Planpraz et la Flégère sont sous le vent et turbulentes. Un léger flux d'ouest, combiné aux brises, convient au Plan de l'Aiguille et au Grand Prarion. Si le vent tourne à l'ouest ou au sud-ouest, le Prarion NE ferme, avec La Charme, le Plancert et le Grand Prarion ; par vent d'ouest, le Plancert est souvent le dernier site praticable. Le seuil est de 20 km/h, parfois 30 km/h.",
           "sources": [
             "S37",
             "S39",
@@ -1396,7 +1396,7 @@
         },
         {
           "wind": "N",
-          "effect": "Au-delà de 20 km/h de vent de nord à 2000 m, Planpraz devient turbulent, et le Brévent se trouve sous le vent avec une turbulence marquée. Un léger flux de nord à nord-ouest rend l'Aiguille du Midi praticable, et le côté nord-est du Plan de l'Aiguille se pratique par vent de nord. Par fort vent de nord ou de nord-est, la vallée devient un couloir rotoreux, et Plaine-Joux est le repli.",
+          "effect": "Au-delà de 20 km/h de nord à 2000 m, Planpraz devient turbulent, et le Brévent, sous le vent, très secoué. Un léger flux de nord à nord-ouest rend l'Aiguille du Midi praticable, et le côté nord-est du Plan de l'Aiguille se vole par nord. Par fort vent de nord ou de nord-est, la vallée devient un couloir à rotors : repliez-vous sur Plaine-Joux.",
           "sources": [
             "S37",
             "S13",
@@ -1407,7 +1407,7 @@
         },
         {
           "wind": "NE",
-          "effect": "Le Prarion NE et le décollage nord-est de Planpraz sont les sites naturels des flux d'est. Une règle veut qu'en régime de nord-est les brises diurnes l'emportent sur le vent météo et protègent le site ; elle n'est pas confirmée et reste à vérifier.",
+          "effect": "Le Prarion NE et le décollage nord-est de Planpraz sont les sites naturels des flux d'est. On dit qu'en régime de nord-est, les brises de jour l'emportent sur le vent météo et protègent le site : la règle n'est pas confirmée et reste à vérifier.",
           "sources": [
             "S3",
             "S37"
@@ -1415,7 +1415,7 @@
         },
         {
           "wind": "Bise",
-          "effect": "Par bise ou léger foehn, le Prarion NE fonctionne le matin, grâce à des thermiques d'est ou à un flux descendant la vallée. Le décollage nord-est de Planpraz est utilisable tôt le matin, par vent de nord-est ou d'est.",
+          "effect": "Par bise ou léger foehn, le Prarion NE marche le matin, grâce à des thermiques d'est ou à un flux qui descend la vallée. Le décollage nord-est de Planpraz est utilisable tôt le matin, par vent de nord-est ou d'est.",
           "sources": [
             "S41",
             "S8",
@@ -1424,7 +1424,7 @@
         },
         {
           "wind": "Foehn",
-          "effect": "Chamonix et Les Contamines sont les plus exposées. Ses signes : vent de sud sur les sommets, lenticulaires, mur de foehn, cumulus déchiquetés dès le matin, souffle chaud et sec. Il peut rester cantonné entre 1400 et 1800 m, ou se déclencher vers 4000 m avec environ 20 km/h, sans nuages. Dès −4 hPa d'écart Aoste–Annecy, il crée des rotors, à éviter. Un petit foehn faible laisse parfois le Prarion NE volable le matin.",
+          "effect": "Chamonix et Les Contamines sont les plus exposées. Les signes : vent de sud sur les sommets, lenticulaires, mur de foehn, cumulus déchiquetés dès le matin, souffle chaud et sec. Il peut rester cantonné entre 1400 et 1800 m, ou se déclencher vers 4000 m à environ 20 km/h, sans nuages. Dès −4 hPa d'écart Aoste–Annecy, il crée des rotors : évitez-les. Un foehn faible laisse parfois le Prarion NE volable le matin.",
           "sources": [
             "S3",
             "S51",
@@ -1434,7 +1434,7 @@
         },
         {
           "wind": "Vent du Sud",
-          "effect": "Par tendance sud, il faut penser au foehn à la Flégère et à Planpraz. Au Plan de l'Aiguille, un léger flux de sud reste praticable, comme à l'Aiguille du Midi, où l'on vole en régime anticyclonique, par léger flux de nord à nord-ouest, ou de sud. Le Mont-Blanc se vole par faible flux de nord, de sud-ouest ou d'est, avec 20 km/h au maximum à 4000 m, mais pas par vent d'ouest.",
+          "effect": "Par tendance sud, pensez au foehn à la Flégère et à Planpraz. Au Plan de l'Aiguille, un léger flux de sud reste praticable, comme à l'Aiguille du Midi, qui se vole en régime anticyclonique, par léger flux de nord à nord-ouest, ou de sud. Le Mont-Blanc se vole par faible flux de nord, de sud-ouest ou d'est, 20 km/h au maximum à 4000 m, mais jamais par vent d'ouest.",
           "sources": [
             "S44",
             "S46",
@@ -1443,7 +1443,7 @@
         },
         {
           "wind": "SW",
-          "effect": "Planpraz devient vite fermé à l'arrivée du vent de sud-ouest : ce point reste une déduction, à confirmer. Le décollage sud de Planpraz est surtout concerné par les câbles du Brévent, côté sud-ouest. Pour les flux de sud-ouest en altitude, il faut penser au foehn.",
+          "effect": "L'arrivée du sud-ouest fermerait vite Planpraz : c'est une déduction, à confirmer. Au décollage sud de Planpraz, ce sont surtout les câbles du Brévent, côté sud-ouest, qui comptent. Par sud-ouest en altitude, pensez au foehn.",
           "sources": [
             "S57",
             "S37"
@@ -1814,19 +1814,19 @@
         }
       ],
       "tips": [
-        "Voler tôt côté Aiguilles Rouges, à la Flégère ou à Planpraz : de 8h à la fin de matinée, avant que la brise de vallée ne s'installe vers 11h et ne se renforce au début de l'après-midi [S3][S38]",
-        "Repérer le Bois du Bouchet avant de monter, car il est invisible depuis les décollages ; l'aborder au vent des arbres, PTU main gauche, par le nord de la route principale, à proximité de la LF-R 30 A [S1][S93]",
-        "Ne pas voler quand le vent météo dépasse 20 km/h à 2000 m : c'est la règle locale, et il faut alors se replier sur Plaine-Joux [S3]",
-        "Depuis le Prarion NE, l'atterrissage des Chavants ne se pratique qu'au début ou au milieu de matinée : après 11h, il se trouve à la sortie d'un venturi, sous le vent [S50]",
-        "Du 1er juillet au 31 août, la LF-R 30 B interdit le Plan de l'Aiguille, l'Aiguille du Midi, la Vallée Blanche et tout le massif ; l'atterrissage au sommet est interdit du 1er juin au 15 octobre, et un survol irrégulier expose à des poursuites [S10][S9][S36]",
-        "Les atterrissages autorisés sont le Bois du Bouchet, le Savoy (le matin, sous réserve de la charte en vigueur) et la gravière de Cachat ; il n'y a pas d'atterrissage à Argentière. L'assurance RC et le casque sont obligatoires [S9]",
-        "Au-delà de la crête ouest et nord-ouest de Planpraz, la Réserve des Aiguilles Rouges impose de rester au-dessus de 300 m/sol ; une valeur de 1000 m/sol figure encore dans des documents plus anciens [S37][S3]",
-        "Le foehn demande de la vigilance : surveiller l'écart de pression Aoste–Annecy, quand il atteint −4 hPa ou moins, et les balises du Prarion, du Requin et de l'ENSA ; il peut rester cantonné entre 1400 et 1800 m [S51][S3]",
-        "Dès que la brise s'établit, vers 11h, le Savoy et la Flégère intermédiaire (1950 m) passent sous le vent [S49][S38]",
-        "Pour le Tour du Mont-Blanc, on peut passer en Suisse par la fenêtre d'Arpette (2700 m, bons plafonds), en Italie par le Grand Col Ferret (2537 m), puis revenir en France par le col de Miage (3367 m) : c'est un vol engagé [S73]",
-        "Le seuil de prudence se situe à 20 km/h de vent à 2000 m, et certains le fixent à 30 km/h ; un foehn annoncé suffit à renoncer. Des balises Pioupiou sont installées au Plan de l'Aiguille et au Bois du Bouchet [S77]",
-        "Sur la rive droite de Chamonix, au départ du Plan de l'Aiguille, il est possible de raccrocher sur Planpraz, puis de monter au-dessus du Brévent jusqu'à 3000 m avant de traverser vers l'Aiguillette des Houches. [S150].",
-        "Pour rejoindre les Aravis, on peut faire le plein à Varan, sous les falaises du décollage et au pied de la Barmerousse, avant la transition vers la Pointe Percée. [S149, S151]."
+        "Volez tôt côté Aiguilles Rouges, à la Flégère ou à Planpraz : de 8h à la fin de matinée, avant que la brise de vallée ne s'installe vers 11h et ne forcisse en début d'après-midi [S3][S38].",
+        "Repérez le Bois du Bouchet avant de monter : il est invisible des décollages. Abordez-le au vent des arbres, PTU main gauche, par le nord de la route principale, à proximité de la LF-R 30 A [S1][S93].",
+        "Ne volez pas quand le vent météo dépasse 20 km/h à 2000 m : c'est la règle locale. Repliez-vous alors sur Plaine-Joux [S3].",
+        "Depuis le Prarion NE, ne posez aux Chavants qu'en début ou en milieu de matinée : après 11h, le terrain est à la sortie d'un venturi, sous le vent [S50].",
+        "Du 1er juillet au 31 août, la LF-R 30 B interdit le Plan de l'Aiguille, l'Aiguille du Midi, la Vallée Blanche et tout le massif. L'atterrissage au sommet est interdit du 1er juin au 15 octobre, et un survol irrégulier expose à des poursuites [S10][S9][S36].",
+        "On se pose au Bois du Bouchet, au Savoy (le matin, sous réserve de la charte en vigueur) ou à la gravière de Cachat ; pas d'atterrissage à Argentière. Assurance RC et casque obligatoires [S9].",
+        "Au-delà de la crête ouest et nord-ouest de Planpraz, la Réserve des Aiguilles Rouges impose de rester au-dessus de 300 m/sol ; des documents plus anciens donnent encore 1000 m/sol [S37][S3].",
+        "Méfiez-vous du foehn : surveillez l'écart de pression Aoste–Annecy (−4 hPa ou moins) et les balises du Prarion, du Requin et de l'ENSA. Il peut rester cantonné entre 1400 et 1800 m [S51][S3].",
+        "Dès que la brise s'établit, vers 11h, le Savoy et la Flégère intermédiaire (1950 m) passent sous le vent [S49][S38].",
+        "Pour le Tour du Mont-Blanc, passez en Suisse par la fenêtre d'Arpette (2700 m, bons plafonds), en Italie par le Grand Col Ferret (2537 m), puis revenez en France par le col de Miage (3367 m) : c'est un vol engagé [S73].",
+        "Le seuil de prudence est de 20 km/h de vent à 2000 m, 30 km/h pour certains ; un foehn annoncé suffit à renoncer. Des balises Pioupiou sont installées au Plan de l'Aiguille et au Bois du Bouchet [S77].",
+        "Rive droite de Chamonix, depuis le Plan de l'Aiguille, on peut raccrocher Planpraz, puis monter au-dessus du Brévent jusqu'à 3000 m avant de traverser vers l'Aiguillette des Houches [S150].",
+        "Pour rejoindre les Aravis, faites le plein à Varan, sous les falaises du décollage et au pied de la Barmerousse, avant la transition vers la Pointe Percée [S149, S151]."
       ]
     },
     {
@@ -1842,7 +1842,7 @@
         6.7125,
         45.85
       ],
-      "summary": "Le Val Montjoie est un secteur de décollages d'alpage, face au Mont-Blanc, avec peu d'atterrissages. À Saint-Gervais, tout converge vers le terrain de la piscine (827 m), déconseillé l'après-midi à cause de la turbulence du vent de vallée, et des lignes électriques se trouvent en amont.\n\nLes vols du matin partent du Mont Joux et du Mont d'Arbois, face nord-est, puis de Porcherey et de la Tête du Mottey, face au Mont Joly, où les bons plafonds arrivent dès 10h en été. Ils servent de départs de cross vers le Mont Joly, les Saisies et les Aravis.\n\nLe versant ouest du Prarion, avec le Mont Paccard, La Charme et le Plancert, travaille du début de l'après-midi jusqu'à la nuit. Quand le village et le versant Bettex passent à l'ombre, il offre une restitution douce au milieu de la vallée, jusqu'au coucher du soleil.\n\nAux Contamines, la Kouzna, orientée du nord-est au sud-est, est le départ de cross du matin, avec un léger nord ou de la bise ; l'optimum est vers 11h, et le vent tourne à partir de 12h. Le col du Joly est un site de soaring, orienté au sud et au sud-ouest, fermé en août. La réserve naturelle des Contamines-Montjoie impose 300 m/sol, et le foehn y est courant.\n\nLa brise du Bon Nant n'est pas décrite en vitesses : le flux de l'Arve se scinde à l'entrée de la vallée de Saint-Gervais, et la brise y est forte l'après-midi aux atterrissages de la piscine et du Pontet.",
+      "summary": "Le Val Montjoie est un secteur de décollages d'alpage face au Mont-Blanc, avec peu d'atterrissages. À Saint-Gervais, tout converge vers le terrain de la piscine (827 m) : il est déconseillé l'après-midi, à cause de la turbulence du vent de vallée, et des lignes électriques se trouvent en amont.\n\nLe matin, on part du Mont Joux et du Mont d'Arbois, face nord-est, puis de Porcherey et de la Tête du Mottey, face au Mont Joly, qui offrent souvent de bons plafonds dès le matin ; l'été, les thermiques s'y installent souvent dès 10h. Ce sont des départs de cross vers le Mont Joly, les Saisies et les Aravis. Du début de l'après-midi jusqu'à la nuit, le versant ouest du Prarion prend le relais, avec le Mont Paccard, La Charme et le Plancert. Quand le village et le versant Bettex passent à l'ombre, il offre une restitution douce au milieu de la vallée, jusqu'au coucher du soleil.\n\nAux Contamines, la Kouzna, orientée du nord-est au sud-est, est le départ de cross du matin, par léger nord ou bise ; l'optimum est vers 11h, et le vent tourne à partir de 12h. Le col du Joly est un site de soaring orienté au sud et au sud-ouest, fermé en août. La réserve naturelle des Contamines-Montjoie impose 300 m/sol, et le foehn y est courant.\n\nLa brise du Bon Nant n'est pas chiffrée : le flux de l'Arve se scinde à l'entrée de la vallée de Saint-Gervais, et la brise est forte l'après-midi aux atterrissages de la piscine et du Pontet.",
       "breezes": [
         {
           "id": "brise-bon-nant",
@@ -2639,7 +2639,7 @@
       "synoptic_effects": [
         {
           "wind": "N",
-          "effect": "Par flux de nord, le Pontet et le practice de golf sont idéaux. La Kouzna se vole par léger nord ou par bise. La Charme devient « teigneux » par vent de nord ou de nord-est marqué à 2000 m, et le Mont Joux est déconseillé par vent fort, même de tendance nord.",
+          "effect": "Par flux de nord, le Pontet et le practice de golf sont idéaux, et la Kouzna se vole par léger nord ou par bise. La Charme devient « teigneux » par vent de nord ou de nord-est marqué à 2000 m, et le Mont Joux est déconseillé par vent fort, même de tendance nord.",
           "sources": [
             "S106",
             "S105",
@@ -2649,7 +2649,7 @@
         },
         {
           "wind": "W",
-          "effect": "Par vent d'ouest, le vol depuis le Mont Joux est sous le vent et n'a pas d'intérêt. Le Plancert est souvent le dernier site praticable de la région, avec un fort besoin de pénétration vers l'atterrissage. Le col du Joly se soare par vent de sud, de sud-ouest ou d'ouest.",
+          "effect": "Par vent d'ouest, le vol depuis le Mont Joux est sous le vent, sans intérêt. Le Plancert est souvent le dernier site praticable de la région, mais il faut beaucoup pénétrer pour rejoindre l'atterrissage. Le col du Joly se soare par vent de sud, de sud-ouest ou d'ouest.",
           "sources": [
             "S3",
             "S108"
@@ -2657,7 +2657,7 @@
         },
         {
           "wind": "Vent du Sud",
-          "effect": "Par tendance sud, les sorties de décollage du Mont Paccard et du Plancert sont malsaines, car elles se trouvent sous le vent de l'arête. Le col du Joly se soare par vent de sud ou de sud-ouest, mais le vent forcit, et il faut le surveiller. La Kouzna n'admet qu'un faible sud-est.",
+          "effect": "Par tendance sud, les sorties de décollage du Mont Paccard et du Plancert sont malsaines, sous le vent de l'arête. Le col du Joly se soare par sud ou sud-ouest, mais le vent forcit : surveillez-le. La Kouzna n'admet qu'un faible sud-est.",
           "sources": [
             "S3",
             "S15",
@@ -2667,14 +2667,14 @@
         },
         {
           "wind": "Bise",
-          "effect": "La Kouzna fonctionne par léger nord, par bise ou par faible sud-est : ce sont les conditions aérologiques idéales.",
+          "effect": "La Kouzna marche par léger nord, par bise ou par faible sud-est : ce sont ses conditions idéales.",
           "sources": [
             "S105"
           ]
         },
         {
           "wind": "Foehn",
-          "effect": "Les Contamines sont, avec Chamonix, la vallée la plus exposée : on déconseille le Pontet en cas de foehn. Les indices et le seuil de −4 hPa entre Aoste et Annecy se trouvent dans la partie consacrée à Chamonix.",
+          "effect": "Les Contamines sont, avec Chamonix, la vallée la plus exposée : par foehn, évitez le Pontet. Les indices et le seuil de −4 hPa entre Aoste et Annecy sont détaillés pour Chamonix.",
           "sources": [
             "S3",
             "S106",
@@ -2728,13 +2728,13 @@
         }
       ],
       "tips": [
-        "Atterrir à la piscine le matin : l'après-midi, le vent de vallée rend l'atterrissage turbulent, et des lignes électriques se trouvent en amont [S3][S100]",
-        "Aux Contamines, partir de la Kouzna le matin, avec un optimum vers 11h : le vent tourne à partir de 12h [S3]",
-        "Col du Joly : le décollage est interdit tout le mois d'août, à cause du bétail ; il n'y a pas d'atterrissage, et une ligne 20 kV est à surveiller [S64]",
-        "Réserve naturelle des Contamines-Montjoie : rester à plus de 300 m/sol [S3]",
-        "Restitution du soir à Saint-Gervais : décoller de La Charme ou du Plancert quand le versant Bettex passe à l'ombre, et chercher les larges ascendances au milieu de la vallée [S15]",
-        "Foehn courant aux Contamines : surveiller l'écart Aoste–Annecy [S51]",
-        "Les atterrissages d'hiver changent avec les saisons : le practice de golf est utilisable du 16 septembre au 14 juin, et le Pontet du 15 juin au 15 septembre [S64]"
+        "Posez à la piscine le matin : l'après-midi, le vent de vallée rend l'atterrissage turbulent, et des lignes électriques se trouvent en amont [S3][S100].",
+        "Aux Contamines, partez de la Kouzna le matin, avec un optimum vers 11h : le vent tourne à partir de 12h [S3].",
+        "Au col du Joly, le décollage est interdit tout le mois d'août, à cause du bétail. Il n'y a pas d'atterrissage, et une ligne 20 kV est à surveiller [S64].",
+        "Dans la réserve naturelle des Contamines-Montjoie, restez à plus de 300 m/sol [S3].",
+        "Pour la restitution du soir à Saint-Gervais, décollez de La Charme ou du Plancert quand le versant Bettex passe à l'ombre, et cherchez les larges ascendances au milieu de la vallée [S15].",
+        "Le foehn est courant aux Contamines : surveillez l'écart de pression Aoste–Annecy [S51].",
+        "Les atterrissages changent avec les saisons : le practice de golf est utilisable du 16 septembre au 14 juin, le Pontet du 15 juin au 15 septembre [S64]."
       ]
     },
     {
@@ -2750,7 +2750,7 @@
         6.6175,
         45.8567
       ],
-      "summary": "Megève occupe un ensellement (~1100 m) entre le bassin de l'Arve, Sallanches et Combloux, et le Val d'Arly, Praz-sur-Arly, Flumet, Ugine et Albertville. Au Palais des Sports, la confluence de col rend l'atterrissage délicat, voire impossible par vent soutenu de nord à nord-est.\n\nRochebrune, à 1733-1755 m, orienté à l'ouest et au nord-ouest, parfois au nord et au nord-est, est le site de référence : thermique, brise de vallée et longs vols paisibles dans la confluence. Le thermique de l'Alpette mène au Mont Joly ou aux Aravis. Par vent de sud-ouest, le décollage est dangereux à cause des rouleaux, et le survol de l'altiport est interdit.\n\nCôté Arve, la brise forte de l'après-midi, venue du bassin de Sallanches, rend turbulents les atterrissages de Cordon et de Lépigny ; la Tête du Planet n'est plus volable après 13h, et l'on se replie sur le plateau des Benets. Côté Arly, l'air remonte d'Albertville par Ugine : au Méruz, il est presque toujours de face, et il rend inatteignables à la finesse les atterrissages de Marlens et de Marthod. Il passe aussi au-dessus de la crête de Bisanne l'après-midi.\n\nLes sources sont minces pour Flumet, Crest-Voland et Notre-Dame-de-Bellecombe ; le Crêt du Midi, ou Ban Rouge, balistique, est interdit en été à cause des troupeaux. Les vols isolés et la confluence de Megève, détaillés dans les points de relance et les itinéraires, montrent qu'on peut traverser le Val d'Arly depuis Bisanne par l'Aiguille Croche, et que la brise y permet de longues glisses. Les écoulements descendants du matin restent des déductions de confiance faible.",
+      "summary": "Megève occupe un ensellement (~1100 m) entre deux vallées : le bassin de l'Arve (Sallanches, Combloux) et le Val d'Arly (Praz-sur-Arly, Flumet, Ugine, Albertville). Au Palais des Sports, la confluence de col rend l'atterrissage délicat, voire impossible par vent soutenu de nord à nord-est.\n\nRochebrune, à 1733-1755 m, est le site de référence. Orienté à l'ouest et au nord-ouest, parfois au nord et au nord-est, il offre thermique, brise de vallée et longs vols paisibles dans la confluence. Le thermique de l'Alpette mène au Mont Joly ou aux Aravis. Par vent de sud-ouest, le décollage est dangereux à cause des rouleaux, et le survol de l'altiport est interdit.\n\nCôté Arve, la brise forte de l'après-midi, venue du bassin de Sallanches, rend turbulents les atterrissages de Cordon et de Lépigny. La Tête du Planet n'est plus volable après 13h : on se replie alors sur le plateau des Benets. Côté Arly, l'air remonte d'Albertville par Ugine. Au Méruz, il est presque toujours de face, et il rend les atterrissages de Marlens et de Marthod inatteignables à la finesse. L'après-midi, il passe aussi par-dessus la crête de Bisanne.\n\nLes sources sont minces pour Flumet, Crest-Voland et Notre-Dame-de-Bellecombe. Le Crêt du Midi, ou Ban Rouge, balistique, est interdit en été à cause des troupeaux. Quelques vols montrent qu'on peut traverser le Val d'Arly depuis Bisanne par l'Aiguille Croche, et que la confluence de Megève permet de longues glisses. Les écoulements descendants du matin restent des déductions peu sûres.",
       "breezes": [
         {
           "id": "brise-arly",
@@ -3612,7 +3612,7 @@
       "synoptic_effects": [
         {
           "wind": "N",
-          "effect": "Rochebrune se vole par vent de secteur nord, mais l'atterrissage du Palais des Sports devient inatteignable par vent soutenu de nord à nord-est. À Cordon, la Tête du Planet convient par léger nord, et le Crêt du Midi se vole directement vers Praz-sur-Arly. Il arrive que la brise de nord de la vallée de l'Arve alimente la confluence de Megève.",
+          "effect": "Rochebrune se vole par vent de secteur nord, mais le Palais des Sports devient inatteignable par vent soutenu de nord à nord-est. À Cordon, la Tête du Planet convient par léger nord, et le Crêt du Midi se vole directement vers Praz-sur-Arly. La brise de nord de la vallée de l'Arve alimente parfois la confluence de Megève.",
           "sources": [
             "S3",
             "S119",
@@ -3622,7 +3622,7 @@
         },
         {
           "wind": "W",
-          "effect": "Rochebrune, orienté à l'ouest et au nord-ouest, est dans l'axe. Au Crêt du Midi, le soaring par vent d'ouest est particulièrement agréable, hors saison des troupeaux. Par vent d'ouest, Bisanne Sud donne des rouleaux.",
+          "effect": "Par vent d'ouest, Rochebrune, orienté à l'ouest et au nord-ouest, est dans l'axe. Au Crêt du Midi, le soaring d'ouest est particulièrement agréable, hors saison des troupeaux. Bisanne Sud donne alors des rouleaux.",
           "sources": [
             "S3",
             "S114",
@@ -3631,7 +3631,7 @@
         },
         {
           "wind": "SW",
-          "effect": "Au décollage de Rochebrune, le vent de sud-ouest est dangereux, à cause des rouleaux. La Tête du Planet est défavorable par vent météo de sud-ouest, et le plateau des Benets est particulièrement sensible aux entrées de sud-ouest. La balise Pioupiou de Rochebrune est sous le vent par sud et sud-sud-ouest.",
+          "effect": "Par sud-ouest, le décollage de Rochebrune est dangereux, à cause des rouleaux. La Tête du Planet est défavorable par vent météo de sud-ouest, et le plateau des Benets est particulièrement sensible aux entrées de sud-ouest. La balise Pioupiou de Rochebrune est sous le vent par sud et sud-sud-ouest.",
           "sources": [
             "S3",
             "S119",
@@ -3641,7 +3641,7 @@
         },
         {
           "wind": "Vent du Sud",
-          "effect": "À Cordon, la brise favorable est de sud, mais une tendance de sud peut produire des conditions foehniques dangereuses. Par vent de sud qui forcit, les biplaces de Megève se posent au-dessus de la gare de Rochebrune. Par flux de sud, on peut être appuyé le long de la forêt entre Notre-Dame-de-Bellecombe et Praz-sur-Arly. Un vol rando du col des Aravis peut se poser par le sud entre Flumet et Saint-Nicolas-la-Chapelle.",
+          "effect": "À Cordon, la brise favorable est de sud, mais une tendance de sud peut produire des conditions foehniques dangereuses. Quand le sud forcit, les biplaces de Megève se posent au-dessus de la gare de Rochebrune. Par flux de sud, on peut être appuyé le long de la forêt entre Notre-Dame-de-Bellecombe et Praz-sur-Arly. Un vol rando du col des Aravis peut se poser par le sud entre Flumet et Saint-Nicolas-la-Chapelle.",
           "sources": [
             "S119",
             "S59",
@@ -3652,7 +3652,7 @@
         },
         {
           "wind": "Foehn",
-          "effect": "À Cordon, des conditions foehniques dangereuses se présentent par tendance de sud. Le foehn touche toute la vallée de l'Arve : il crée des rotors, et l'écart Aoste–Annecy atteint −4 hPa ou moins.",
+          "effect": "À Cordon, une tendance de sud donne des conditions foehniques dangereuses. Le foehn touche toute la vallée de l'Arve et y crée des rotors, quand l'écart Aoste–Annecy atteint −4 hPa ou moins.",
           "sources": [
             "S119",
             "S51"
@@ -3853,16 +3853,16 @@
         }
       ],
       "tips": [
-        "Rochebrune : repérer l'altiport, qui ne doit pas être survolé, et vérifier le vent : par vent de sud-ouest, il y a des rouleaux [S3]",
-        "Palais des Sports : confluence de col, et atterrissage inatteignable par vent soutenu de nord à nord-est ; prévoir un atterrissage alternatif, à Praz-sur-Arly [S3]",
-        "Cordon : partir tôt, car après 13h la brise de vallée dépasse le thermique et souffle dans le dos au décollage [S128]",
-        "Praz-sur-Arly : atterrir au Plan de Cassioz, entre la route et la ligne électrique, à repérer avant de décoller ; le terrain n'est utilisable qu'en été [S115]",
-        "Crêt du Midi : le décollage est interdit en été, à cause des troupeaux ; il ne faut pas passer outre [S3]",
-        "Ugine et Méruz : voler le matin, face sud-est ; la brise d'Arly se renforce ensuite et rend Marlens et Marthod difficiles à atteindre [S127]",
-        "Signal de Bisanne (côté Beaufortain) : décoller avant que la brise ne s'installe, vers midi ; en été, avant 11h50 les jours de grosse brise",
-        "Après la transition de Bisanne vers les Aravis, viser les pentes au-dessus de Praz-sur-Arly : on y a déjà refait 3100 m, et 3000 m ailleurs, en vol isolé",
-        "À Megève, la confluence des brises de Flumet et de Sallanches permet de longues glissées sans enrouler quand elle est formée, mais le verrou de Combloux se passe face à la brise, en collant au relief",
-        "Par inversion, le plafond du Mont Joly peut ne pas dépasser 2000 m : mieux vaut prévoir la marche et un vol local plutôt que la transition vers le Mont Blanc"
+        "À Rochebrune, repérez l'altiport, qu'il ne faut pas survoler, et vérifiez le vent : par sud-ouest, il y a des rouleaux [S3].",
+        "Au Palais des Sports, la confluence de col rend le terrain inatteignable par vent soutenu de nord à nord-est : prévoyez un atterrissage de repli à Praz-sur-Arly [S3].",
+        "À Cordon, partez tôt : après 13h, la brise de vallée dépasse le thermique et souffle dans le dos au décollage [S128].",
+        "À Praz-sur-Arly, posez au Plan de Cassioz, entre la route et la ligne électrique, à repérer avant de décoller. Le terrain n'est utilisable qu'en été [S115].",
+        "Au Crêt du Midi, le décollage est interdit en été, à cause des troupeaux : ne passez pas outre [S3].",
+        "À Ugine et au Méruz, volez le matin, face sud-est : la brise d'Arly forcit ensuite et rend Marlens et Marthod difficiles à atteindre [S127].",
+        "Au Signal de Bisanne (côté Beaufortain), décollez avant que la brise ne s'installe, vers midi ; en été, avant 11h50 les jours de grosse brise.",
+        "Après la transition de Bisanne vers les Aravis, visez les pentes au-dessus de Praz-sur-Arly : on y a déjà refait 3100 m, et 3000 m ailleurs, en vol isolé.",
+        "À Megève, quand la confluence des brises de Flumet et de Sallanches est formée, elle permet de longues glisses sans enrouler. Le verrou de Combloux, lui, se passe face à la brise, en collant au relief.",
+        "Par inversion, le plafond du Mont Joly peut ne pas dépasser 2000 m : prévoyez alors la marche et un vol local plutôt que la transition vers le Mont Blanc."
       ]
     },
     {
@@ -3878,7 +3878,7 @@
         6.5733,
         45.7194
       ],
-      "summary": "Le Beaufortain est un massif de décollages d'alpage et de hike-and-fly, au-dessus de la vallée du Doron de Beaufort, dont l'axe débouche sur Albertville. Bisanne Sud (sud-est, sud, sud-ouest) et Bisanne Nord-Ouest (nord, nord-est, nord-ouest) sont les sites de Bisanne, portails vers les Aravis et la Combe de Savoie.\n\nLe matin, la brise du Doron est descendante, puis elle remonte la vallée dès la fin de matinée. Les deux atterrissages classiques sont Beaufort, où le vent de vallée est souvent fort l'après-midi, et Marthod ou Ugine. La brise de l'Arly passe au-dessus de la crête de Bisanne l'après-midi et prend les pilotes dans le dos.\n\nPlus à l'est, Roselend offre des vols de fin de journée, à la Petite Berge et au Cormet, avec des parois orientées nord-ouest au soleil et une brise qui remonte le vallon. Des décollages d'altitude se font au Pas d'Outray, au passage d'Arpire, à Roche Plane et au Grand Mont d'Arêches. Les atterrissages sont restreints : pas à Arêches, et le Cormet est réservé à l'école.\n\nLes arrêtés municipaux de Hauteluce et de Villard-sur-Doron limitent le parapente aux zones balisées pendant l'ouverture du domaine skiable ; le col du Joly, sur Contamines et Hauteluce, est fermé en août. Une traversée du Beaufortain, par la Pierra Menta, la Pointe de la Terrasse, Roselend et Bisanne vers les Aravis, rencontre un « cocktail de brises » descendant du Cormet et du col de la Seigne, jusqu'aux Chapieux. Rien n'est documenté sur les routes vers la Tarentaise, le foehn ou les vents synoptiques, et la partie la mieux décrite reste Bisanne.",
+      "summary": "Le Beaufortain est un massif de décollages d'alpage et de hike-and-fly, au-dessus de la vallée du Doron de Beaufort, dont l'axe débouche sur Albertville. Bisanne en est le site phare : Bisanne Sud (sud-est, sud, sud-ouest) et Bisanne Nord-Ouest (nord, nord-est, nord-ouest), portails vers les Aravis et la Combe de Savoie.\n\nLe matin, la brise du Doron descend ; dès la fin de matinée, elle remonte la vallée. On se pose à Beaufort, où le vent de vallée est souvent fort l'après-midi, ou à Marthod ou Ugine. L'après-midi, la brise de l'Arly passe par-dessus la crête de Bisanne et prend les pilotes dans le dos.\n\nPlus à l'est, Roselend offre des vols de fin de journée, à la Petite Berge et au Cormet : le soleil tape les parois nord-ouest, et la brise remonte le vallon. Des décollages d'altitude se font au Pas d'Outray, au passage d'Arpire, à Roche Plane et au Grand Mont d'Arêches. Les atterrissages sont restreints : rien à Arêches, et le Cormet, pente école, est donné ouvert par une source, fermé par une autre.\n\nPendant l'ouverture du domaine skiable, les arrêtés de Hauteluce et de Villard-sur-Doron limitent le parapente aux zones balisées ; le col du Joly, sur Contamines et Hauteluce, est fermé en août. Une traversée par la Pierra Menta, la Pointe de la Terrasse, Roselend et Bisanne vers les Aravis rencontre un « cocktail de brises » descendant du Cormet et du col de la Seigne, jusqu'aux Chapieux. Rien n'est documenté sur les routes vers la Tarentaise, le foehn ou les vents synoptiques : la partie la mieux décrite reste Bisanne.",
       "breezes": [
         {
           "id": "brise-doron-beaufort",
@@ -4767,7 +4767,7 @@
       "synoptic_effects": [
         {
           "wind": "N",
-          "effect": "Bisanne Nord-Ouest, orienté nord, nord-est et nord-ouest, est le décollage des vents de nord. Bisanne Sud n'est déconseillé par fort vent du nord que si on l'utilise tard. Au Cormet de Roselend, les meilleures conditions sont par vent de nord, et Petite Berge est favorable par nord et nord-ouest.",
+          "effect": "Par nord, Bisanne Nord-Ouest, orienté nord, nord-est et nord-ouest, est le décollage de référence. Bisanne Sud n'est déconseillé par fort vent du nord que si on l'utilise tard. Au Cormet de Roselend, les meilleures conditions sont par vent de nord, et la Petite Berge est favorable par nord et nord-ouest.",
           "sources": [
             "S126",
             "S142",
@@ -4777,7 +4777,7 @@
         },
         {
           "wind": "W",
-          "effect": "Par vent d'ouest, il y a des rouleaux au décollage de Bisanne Sud. Roche Parstire, orientée à l'ouest et au nord-ouest, et Fenêtre 7, orientée à l'ouest, sont dans l'axe.",
+          "effect": "Par vent d'ouest, Bisanne Sud a des rouleaux au décollage. Roche Parstire, orientée à l'ouest et au nord-ouest, et Fenêtre 7, orientée à l'ouest, sont dans l'axe.",
           "sources": [
             "S130",
             "S134",
@@ -4786,7 +4786,7 @@
         },
         {
           "wind": "Vent du Sud",
-          "effect": "Bisanne Sud, orienté sud-est, sud et sud-ouest, est dans l'axe le matin. Le départ du Pas d'Outray est orienté sud-sud-ouest, et Roche Plane est orientée vers le sud-est.",
+          "effect": "Par sud, Bisanne Sud, orienté sud-est, sud et sud-ouest, est dans l'axe le matin. Le départ du Pas d'Outray regarde le sud-sud-ouest, et Roche Plane le sud-est.",
           "sources": [
             "S130",
             "S28"
@@ -4794,7 +4794,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Petite Berge et Roche Parstire, orientées nord-ouest, fonctionnent quand le soleil tape les parois nord-ouest et que la brise remonte le vallon. Le Cormet de Roselend est aussi orienté nord-ouest.",
+          "effect": "Par nord-ouest, Petite Berge et Roche Parstire, orientées nord-ouest, marchent quand le soleil tape les parois nord-ouest et que la brise remonte le vallon. Le Cormet de Roselend est aussi orienté nord-ouest.",
           "sources": [
             "S28",
             "S134",
@@ -4954,16 +4954,16 @@
         }
       ],
       "tips": [
-        "Bisanne Sud : décoller le matin, jusqu'à environ 12h30 ; plus tard, la brise d'Ugine est dans le dos : il vaut alors mieux prendre Bisanne Nord-Ouest [S130][S142]",
-        "Atterrissage de Beaufort : la brise de vallée est souvent forte l'après-midi ; il y a une ligne téléphonique en bout de terrain, et la PTU se fait main droite vers Albertville [S131]",
-        "Pas d'atterrissage à Arêches : on atterrit à Beaufort [S134]",
-        "Cormet de Roselend : les sources divergent, l'une le décrit comme une pente école, l'autre comme un site fermé ; il faut se renseigner auprès de l'école locale [S135]",
-        "En hiver, les arrêtés municipaux de Villard-sur-Doron (Les Saisies) et de Hauteluce imposent des zones de décollage et d'atterrissage balisées [S60]",
-        "Rando-vol de Roselend : reconnaître l'atterrissage, tenir compte de la brise encore forte en milieu d'après-midi, et voler tôt au Grand Mont, où la brise de pente remonte vers 10h [S28]",
-        "Route de Bisanne fermée de début juillet à fin août : utiliser le télésiège (tarif parapente) ou la navette nature Beaufortain [S60]",
-        "Bisanne est un portail de grands cross : un vol de 300 km y a été cité, avec un plafond de 3100 m sur la Pointe de la Terrasse, mais une masse d'air encore molle sous 2400 m le matin [S72]",
-        "Éviter le Cormet de Roselend / Les Chapieux en basse altitude l'après-midi : brises descendantes du col de la Seigne et du Cormet [S72]",
-        "Beaufortain depuis les Aravis : relancer sur la Roche Pourrie (brise d'Annecy), puis rester au vent du Mirantin ; passer le Pas de l'Âne vers le sud met sous le vent [S149]."
+        "À Bisanne Sud, décollez le matin, jusqu'à 12h30 environ. Plus tard, la brise d'Ugine arrive dans le dos : prenez alors Bisanne Nord-Ouest [S130][S142].",
+        "À Beaufort, la brise de vallée est souvent forte l'après-midi. Une ligne téléphonique borde le bout du terrain, et la PTU se fait main droite vers Albertville [S131].",
+        "Pas d'atterrissage à Arêches : posez-vous à Beaufort [S134].",
+        "Au Cormet de Roselend, les sources divergent : pente école pour l'une, site fermé pour l'autre. Renseignez-vous auprès de l'école locale [S135].",
+        "En hiver, les arrêtés municipaux de Villard-sur-Doron (Les Saisies) et de Hauteluce imposent des zones de décollage et d'atterrissage balisées [S60].",
+        "En rando-vol à Roselend, reconnaissez l'atterrissage et comptez avec une brise encore forte en milieu d'après-midi. Au Grand Mont, volez tôt : la brise de pente y remonte vers 10h [S28].",
+        "La route de Bisanne est fermée de début juillet à fin août : prenez le télésiège (tarif parapente) ou la navette nature Beaufortain [S60].",
+        "Bisanne est un portail de grands cross : on y cite un vol de 300 km, avec un plafond de 3100 m sur la Pointe de la Terrasse, mais une masse d'air encore molle sous 2400 m le matin [S72].",
+        "L'après-midi, évitez le Cormet de Roselend et Les Chapieux à basse altitude : les brises y descendent du col de la Seigne et du Cormet [S72].",
+        "En venant des Aravis, relancez sur la Roche Pourrie (brise d'Annecy), puis restez au vent du Mirantin : passer le Pas de l'Âne vers le sud met sous le vent [S149]."
       ]
     }
   ],

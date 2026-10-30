@@ -62,9 +62,12 @@ La prose peut les reprendre pour expliquer, jamais les contredire.
   même nombre de conseils et **exactement les mêmes balises** `[S1]`, `[S2, S3]`.
 - **Vent météo** (`synoptic_effects[].effect`) : l'effet puis la conséquence pratique, en 1
   à 3 phrases (420 caractères au plus) ; un cas isolé s'écrit en possibilité dans la phrase.
-- **Visites** (`visites/<massif>.json`, champs `title` et `text` seulement) : 2 à 4 phrases
-  (620 caractères au plus), un titre qui dit l'idée ; les faits d'abord, puis « il peut
-  arriver que… » pour un cas isolé ; ne jamais toucher `focus`, `phase`, `wind`, `view`.
+- **Visites** (`visites/<massif>.json`) : chaque étape en 2 à 5 phrases (620 caractères au
+  plus), un titre qui dit l'idée ; les faits d'abord, puis une seule phrase de réserve pour
+  un cas isolé. On écrit `title` et `text` ; le cœur d'une étape (`chapter`, `focus`,
+  `phase`, `wind`, `view`) ne se modifie jamais, mais il voyage avec son contenu : une
+  visite peut être restructurée (accueil, conclusion, fusion, scission, nouvel ordre) selon
+  les règles de « Une visite qui enseigne », plus bas.
 
 ## Exemples
 
@@ -135,3 +138,140 @@ npm run data:build -- --check                                    # aucune visite
 L'audit compare à la version committée : aucun champ non textuel modifié, aucun élément
 ajouté ou retiré, aucune balise de source perdue dans les conseils, aucun chiffre nouveau.
 Les avertissements (attributions restantes, longueurs) doivent tendre vers zéro.
+
+## Voix
+
+Les règles de fidélité ci-dessus ne se négocient pas : rien d'inventé, rien de perdu, pas
+d'attribution, champs structurés intacts. La voix vient par-dessus. Un premier jet fidèle
+peut encore sonner comme une machine : des propositions enchaînées par des virgules, des
+« peut », « parfois », « il arrive que » empilés, des noms abstraits (« activité
+thermique », « transition », « conditionnent »), des énumérations au lieu d'une idée, et
+rien qui distingue ce qui compte du détail. Le pilote décroche avant la fin de la phrase.
+
+**La voix juste : un pilote local expérimenté qui briefe un ami au décollage.** Il sait ce
+qui compte, il le dit d'abord, il montre du doigt les lieux, il donne l'heure.
+
+1. **Une idée par étape, l'essentiel d'abord.** La première phrase dit ce que l'on va
+   sentir en l'air, ce qu'il faut faire ou ce qu'il faut éviter. Les détails suivent, du
+   plus utile au moins utile.
+2. **Des phrases courtes.** Une idée par phrase, une subordonnée au plus. Pas de chaînes de
+   virgules : quand une phrase aligne trois virgules, on la coupe. Les deux-points
+   annoncent une conséquence ou une liste, pas une phrase de plus.
+3. **Du concret.** Des lieux, des heures, des hauteurs, des faces. « Vers 13h30, la brise
+   se lève sur le lac » plutôt que « l'établissement de la brise intervient en début
+   d'après-midi ».
+4. **Des verbes d'action.** Le sujet est le pilote, la brise, la face, le thermique :
+   « on raccroche », « la brise rentre », « la face décroche ». Pas de noms
+   bureaucratiques (« l'exploitation de », « la réalisation de », « en termes de »,
+   « au niveau de »).
+5. **Une seule réserve, honnête.** On ne nuance que si la source nuance, et alors en une
+   phrase : « Ça ne marche pas tous les jours. » ou « Possibilité de… ». Pas de litanie de
+   « il peut arriver que… » : on fond plusieurs observations isolées en une phrase vivante,
+   ou on les range dans `possible`.
+6. **La langue du pilote, sans jargon gratuit.** « raccrocher », « enrouler », « faire le
+   plafond », « vent arrière », « se faire scotcher », « transiter » sont bienvenus quand
+   ils disent la chose plus vite ; ils ne remplacent pas une explication.
+7. **Le tutoiement non, l'adresse directe oui.** Dans les conseils et les visites, on peut
+   parler au pilote (« visez l'épaule », « méfiez-vous des cycles ») ou dire « on ».
+8. **Des titres qui disent l'idée.** Quelques mots, l'idée de l'étape : « Le Nord le matin,
+   le Sud l'après-midi », pas « Trois décollages, un plateau ».
+9. **Pas de remplissage.** Ni « Retenez une idée simple : » en tête d'étape (le « À retenir » final de la visite est autre chose), ni « Regardez sur la carte »,
+   ni « il convient de noter ». Ni « en effet », ni « par ailleurs ».
+
+### Une visite qui enseigne
+
+Une visite n'est pas un assemblage de faits : c'est un exposé, engageant et didactique, qui
+mène le pilote du relief à la décision. Chaque étape a **un point et sa raison** : quoi, où,
+quand, pourquoi ça se passe, et ce qu'on en fait. Une courte phrase de liaison ouvre l'étape
+quand elle prolonge la précédente (« Le soleil tourne : … », « Reste à rentrer : … »).
+
+La progression est toujours la même, et l'ordre des chapitres des fichiers la suit déjà :
+
+1. **Accueil** (étape 0, chapitre « Le massif ») : « Bienvenue dans … », le relief en une
+   idée, puis ce que la visite va montrer, en une phrase.
+2. **La journée de l'air** : le matin, la brise de vallée, l'après-midi, le soir, dans
+   l'ordre des heures, chaque fois avec le mécanisme (le soleil, l'aspiration, la pente).
+3. **Où ça monte, les sites** : ce que le pilote cherche en l'air et où il se pose.
+4. **Le parcours classique** : l'itinéraire dans l'ordre du vol, avec les hauteurs clés.
+5. **Les pièges** : le danger, pourquoi il existe, ce qu'on fait pour l'éviter.
+6. **Selon le vent météo** : par vent, ce qui change et ce qu'on décide.
+7. **Sortir du massif** : les portes vers les massifs voisins, avec les hauteurs de départ.
+8. **À retenir** (dernière étape) : les trois idées-forces de la visite, une phrase chacune,
+   dites comme un conseil.
+
+Contraintes techniques (`text_audit.py`) : l'en-tête de la visite ne change pas ; le
+« cœur » d'une étape (`chapter`, `focus`, `phase`, `wind`, `view`) est soit l'un des cœurs
+d'origine, soit vide ; chaque cœur d'origine doit rester porté par au moins une étape (on
+déplace un contenu, on ne le jette pas) ; aucun chiffre que la visite d'origine n'avait.
+On peut donc ajouter, fusionner, scinder et réordonner les étapes, et on le fait dès que
+l'ordre d'origine est un assemblage incohérent ; si l'ordre suit déjà la progression, on
+réécrit en place et on ajoute seulement l'accueil et la conclusion. Comme `chapter` fait
+partie du cœur et que l'interface range les étapes par chapitre, une étape ajoutée reprend
+le cœur d'une étape voisine plutôt qu'un cœur vide : l'accueil reprend celui de l'étape
+« Le massif » (`view: massif`), la conclusion « À retenir » celui de la dernière étape
+« Les transitions ». Changer le nombre d'étapes n'est qu'un avertissement.
+`text_edit.py visit-apply` ne réécrit que `title` et `text` par rang ; pour ajouter ou
+déplacer une étape, on édite la liste `steps` avec `textjson` (`d = load(path)` ;
+`d['steps'] = …` en recopiant le cœur des étapes d'origine ; `save(path, d)`), qui garde la
+mise en page du fichier.
+
+Squelette, pour un massif imaginaire :
+
+- Étape 0 — « Bienvenue dans le Val Blanc » : « Bienvenue dans le Val Blanc, une vallée
+  droite entre deux crêtes. Ici, tout tourne autour d'une brise qui remonte la vallée
+  l'après-midi. Cette visite suit la journée de l'air, puis le grand classique, les pièges
+  et les vents qui changent la donne. »
+- Étape 1 — « Le matin, la face est chauffe la première » : le mécanisme, l'heure, le
+  décollage qui marche.
+- Étape 2 — « Midi : la brise se lève » : d'où elle vient, pourquoi, sa force, où elle gêne.
+- … une étape, une idée …
+- Avant-dernière étape — « Sortir du Val Blanc » : les portes et les hauteurs de départ.
+- Dernière étape — « À retenir » : « Partez tôt de la face est, avant que la brise ne
+  monte. À l'atterrissage, posez face à la brise, qui vient de l'aval. Par nord, restez au
+  sol : la vallée devient un tuyau. »
+
+### Avant / après
+
+**Étape de visite — Saint-Hilaire**
+
+Avant : « Trois décollages, un plateau » — « À Saint-Hilaire, on choisit son décollage
+suivant l'heure. Le décollage Nord, alimenté le premier par la brise de pente, sert le
+matin et par tendance nord. Le décollage Est prend le relais en milieu de matinée. Le
+décollage Sud est à privilégier quand les thermiques sont établis ou par sud. Attention :
+le thermique qui se déclenche sur la falaise devant les décollages fait parfois souffler le
+vent dans le dos au Nord et au Sud, par cycles. On se pose sur le plateau, à l'office du
+tourisme, ou en bas à Lumbin. »
+
+Après : « Un décollage pour chaque heure » — « À Saint-Hilaire, c'est l'heure qui choisit
+le décollage. Le Nord se remplit le premier avec la brise de pente : c'est celui du matin
+et des jours de nord. L'Est prend le relais en milieu de matinée. Le Sud devient le bon
+choix quand les thermiques sont établis, ou par sud. Méfiez-vous des cycles : le thermique
+qui part de la falaise met parfois le Nord et le Sud vent arrière. On se pose sur le
+plateau, à l'office du tourisme, ou en bas à Lumbin. »
+
+**Conseil — Bauges**
+
+Avant : « Si l'on ne connaît pas le secteur, il vaut mieux voler au début de l'après-midi
+ou quand l'activité thermique décroît : les brises, à 30-35 km/h, peuvent clouer au sol
+près d'École, d'Aillons, de Lescheraines ou d'Allèves [S26]. »
+
+Après : « Si vous découvrez le secteur, volez en début d'après-midi ou quand les thermiques
+faiblissent. Les brises montent à 30-35 km/h et peuvent vous clouer au sol vers École,
+Aillons, Lescheraines ou Allèves [S26]. »
+
+**Résumé — Chartreuse, l'intérieur du massif**
+
+Avant : « À l'intérieur du massif (Chamechaude, Scia, Grand Som, Charmant Som), les plafonds
+sont généralement meilleurs qu'en bordure, et les faces ouest ne marchent qu'après 15-16 h,
+avec une tendance nord-ouest à ouest. Autour du massif, des brises de 20 à 30 km/h entrent
+par la cluse de Voreppe, très forte dès 11 h, par la cluse de Chambéry (col du Granier, col
+du Couz) et par le Grésivaudan. Elles conditionnent les sorties vers Belledonne (Saint-Genis),
+les Bauges (Granier puis Montgelas) et le Vercors (Rachais-Néron). »
+
+Après : « Au cœur du massif (Chamechaude, Scia, Grand Som, Charmant Som), les plafonds sont
+en général meilleurs qu'en bordure. Les faces ouest ne s'allument qu'après 15-16 h, par
+tendance nord-ouest à ouest. Autour, des brises de 20 à 30 km/h entrent par la cluse de
+Voreppe, très forte dès 11 h, par la cluse de Chambéry (cols du Granier et du Couz) et par
+le Grésivaudan. Ce sont elles qui décident des sorties : vers Belledonne par Saint-Genis,
+vers les Bauges par le Granier puis le Montgelas, vers le Vercors par le Rachais et le
+Néron. »

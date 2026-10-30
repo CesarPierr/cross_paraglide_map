@@ -5,7 +5,7 @@
       "id": "saleve-genevois",
       "name": "Salève et Genevois",
       "parent_massif": "Préalpes du Nord (avant-pays genevois)",
-      "summary": "Le Salève est le « balcon de Genève », un chaînon isolé qui court du sud-ouest au nord-est et domine le bassin genevois. Trois décollages se partagent deux secteurs : le Téléphérique et la Table d'orientation, tournés vers le nord à nord-ouest, pour le flux de nord ou la faible bise ; les Crêts, tournés vers l'ouest à sud-ouest (1264 m), pour le soaring du flux d'ouest et les restitutions de fin de journée, le « Magic Salève ».\n\nLe Genevois ne présente pas de brise de vallée documentée : les brises de pente dominent, avec un gradient et des thermiques parfois surprenants l'été, aux décollages comme aux atterrissages. Le séchard, brise diurne de nord-est venue du Petit-Lac, se prolonge faiblement sur les pentes ensoleillées du Salève, de 10 h à 16 h par beau temps d'été.\n\nHors du massif, la traversée des plaines est la difficulté : vers le Môle, vers Annecy par Sur Cou ou vers Samoëns, ces transitions ont la réputation de ne jamais être faciles. Il est arrivé de patienter une heure au Téléphérique avant le thermique (1645 m), puis de traverser une plaine d'environ 15 km sans relief. Par forte canicule, un triangle de 143 km a pu être volé en 6 h 20 depuis le Salève. Le Challenge permanent propose une boucle autour du Petit Salève.\n\nLa contrainte dominante est l'espace aérien de Genève : le vol est interdit dans la CTR, la TMA1 plafonne à 1050 m AMSL côté plaine et la TMA2 à 1700 m AMSL sur le relief. Les atterrissages ont changé : depuis septembre 2026, Troinex n'est ouvert qu'aux titulaires du brevet (IPPI 4) ; Jules Ferry convient aux débutants, Le Coin aux confirmés.",
+      "summary": "Le Salève est le « balcon de Genève » : un chaînon isolé, orienté du sud-ouest au nord-est, qui domine le bassin genevois. Trois décollages se partagent deux secteurs. Le Téléphérique et la Table d'orientation, tournés vers le nord à nord-ouest, servent par flux de nord ou faible bise. Les Crêts (1264 m), tournés vers l'ouest à sud-ouest, servent au soaring par flux d'ouest et aux restitutions de fin de journée, le « Magic Salève ».\n\nLe Genevois n'a pas de brise de vallée documentée : les brises de pente dominent. L'été, elles donnent du gradient et des thermiques parfois surprenants, aux décollages comme aux atterrissages. Par beau temps d'été, le séchard, brise de nord-est venue du Petit-Lac, souffle de 10 h à 16 h et se prolonge faiblement sur les pentes ensoleillées du Salève.\n\nSortir du massif, c'est traverser des plaines : vers le Môle, vers Annecy par Sur Cou ou vers Samoëns, ces transitions ne sont jamais faciles. Un vol a dû patienter une heure au Téléphérique avant le thermique (1645 m), puis traverser une plaine d'environ 15 km sans relief. Par forte canicule, un triangle de 143 km a été volé en 6 h 20 depuis le Salève. Le Challenge permanent propose une boucle autour du Petit Salève.\n\nL'espace aérien de Genève commande tout : vol interdit dans la CTR, TMA1 à 1050 m AMSL côté plaine, TMA2 à 1700 m AMSL sur le relief. À Troinex, en Suisse, le brevet de pilote (IPPI 4) est obligatoire. Jules Ferry convient aux débutants, Le Coin aux confirmés.",
       "bbox": [
         5.95,
         46.02,
@@ -636,7 +636,7 @@
       "synoptic_effects": [
         {
           "wind": "Bise",
-          "effect": "Par vent du nord, par exemple une faible bise, le Téléphérique est le décollage exclusivement conseillé, la Table convenant aussi ; les Crêts sont alors sous le vent. La bise, vent le plus fréquent sur le Léman, est froide et sèche, avec des rafales de 15 à 90 km/h : mieux vaut ne pas voler forte, à cause des rouleaux et du venturi du col de Monnetier (déduction).",
+          "effect": "Par vent du nord, une faible bise par exemple, décollez exclusivement au Téléphérique, ou à la Table ; les Crêts sont sous le vent. La bise, vent le plus fréquent sur le Léman, est froide et sèche, avec des rafales de 15 à 90 km/h. Forte, mieux vaut ne pas voler : on peut s'attendre (c'est une déduction) à des rouleaux et à un venturi au col de Monnetier.",
           "sources": [
             "S119",
             "S60",
@@ -647,7 +647,7 @@
         },
         {
           "wind": "N",
-          "effect": "Par vent de nord, le Téléphérique et la Table sont en service, et l'on atterrit à Jules Ferry avec une tendance nord ou nord-ouest. À Troinex, la volte se fait à droite.",
+          "effect": "Par vent de nord, le Téléphérique et la Table sont en service. On se pose à Jules Ferry par tendance nord ou nord-ouest ; à Troinex, la volte se fait à droite.",
           "sources": [
             "S119",
             "S13",
@@ -657,7 +657,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Par vent de nord-ouest, la Table d'orientation est idéale, et les Crêts restent à l'écart. Le Coin, lui, est favorable par sud-ouest, ouest et nord-ouest. Il arrive qu'un cross au départ du Téléphérique dérive de 25 km/h vers le nord-ouest au-dessus de la plaine. Les raccroches sur des faces nord-ouest, comme Sous-Dine ou le Parmelan, ne sont pas idéales non plus : le Parmelan secoue.",
+          "effect": "Par nord-ouest, la Table d'orientation est idéale, et les Crêts restent à l'écart. Le Coin est favorable par sud-ouest, ouest et nord-ouest. Au-dessus de la plaine, un cross parti du Téléphérique peut dériver de 25 km/h vers le nord-ouest. Les raccroches sur des faces nord-ouest, comme Sous-Dine ou le Parmelan, ne sont pas idéales non plus : le Parmelan secoue.",
           "sources": [
             "S13",
             "S55",
@@ -667,7 +667,7 @@
         },
         {
           "wind": "W",
-          "effect": "Par vent d'ouest, les Crêts offrent un soaring très favorable, et une repose est possible au décollage. À Troinex, la volte se fait à gauche.",
+          "effect": "Par vent d'ouest, les Crêts offrent un soaring très favorable, avec repose possible au décollage. À Troinex, la volte se fait à gauche.",
           "sources": [
             "S54",
             "S14",
@@ -676,7 +676,7 @@
         },
         {
           "wind": "SW",
-          "effect": "Les Crêts restent praticables par vent de sud-ouest léger ; au-delà, le site devient dangereux, notamment par vent de sud.",
+          "effect": "Par sud-ouest léger, les Crêts restent praticables. Au-delà, le site devient dangereux, surtout par vent de sud.",
           "sources": [
             "S12",
             "S14",
@@ -685,7 +685,7 @@
         },
         {
           "wind": "S",
-          "effect": "Par vent de sud, les Crêts sont malsains, le Téléphérique et la Table sont défavorables, et le Coin devient turbulent. Il arrive qu'un vent de sud annoncé à 22/32 rende le décollage des Crêts très turbulent.",
+          "effect": "Par vent de sud, les Crêts sont malsains, le Téléphérique et la Table défavorables, et le Coin turbulent. Un sud annoncé à 22/32 peut rendre le décollage des Crêts très turbulent.",
           "sources": [
             "S14",
             "S119",
@@ -695,7 +695,7 @@
         },
         {
           "wind": "E",
-          "effect": "Par vent d'est, le Téléphérique est défavorable, comme par sud-est et sud. La Table n'est légèrement protégée de l'est que par vent faible.",
+          "effect": "Par vent d'est, comme par sud-est et sud, le Téléphérique est défavorable. La Table n'est légèrement protégée de l'est que par vent faible.",
           "sources": [
             "S119",
             "S13"
@@ -935,22 +935,22 @@
         }
       ],
       "tips": [
-        "Prévoir son atterrissage : Troinex n'est ouvert qu'aux titulaires du brevet IPPI 4 depuis septembre 2026 ; Jules Ferry convient aux autres, Le Coin aux confirmés [S37].",
-        "Au Téléphérique, rester au vent du col de Monnetier, et surveiller les câbles et les arbres à gauche en sortie de décollage.",
-        "Consulter les notifications temporaires avant de venir (zones ZRT du G7, Tour de France 2026) : elles interdisent parfois le survol à 1000 m/sol et à 500 m horizontal, donc le vol aux Crêts.",
-        "Consulter la bise et le vent à 850 hPa sur le Salève avant de choisir entre les décollages du nord (Téléphérique, Table) et ceux de l'ouest et du sud-ouest (Crêts).",
-        "Un vachage peut arriver à tout le monde : replier en bordure de champ, puis contacter le propriétaire ou les responsables du site en cas de dégâts.",
-        "Pour sortir vers Annecy par flux de nord-ouest, ne pas partir trop tôt du Téléphérique : il est arrivé de rester une heure à zéro avant le thermique (1645 m), et la traversée de la plaine passe par le thermique de La Chapelle-Rambaud.",
-        "Au printemps, il peut être utile de décoller des faces est du Salève dès 11 h ou 12 h : la plaine est alors active tôt, mais avec des plafonds bas. On raccroche ensuite le Parmelan en fonction de l'heure et du flux de nord.",
-        "Le séchard souffle faiblement de 10 h à 16 h les beaux jours d'été et se prolonge sur les pentes du Salève.",
-        "Écouter la balise radio du Salève avant de monter aux Crêts, qui annonce le vent : un vent de sud annoncé à 22/32 les a rendus très turbulents."
+        "Prévoyez votre atterrissage : Troinex n'est ouvert qu'aux titulaires du brevet IPPI 4. Jules Ferry convient aux autres, Le Coin aux confirmés [S37].",
+        "Au Téléphérique, restez au vent du col de Monnetier, et méfiez-vous des câbles et des arbres à gauche en sortie de décollage.",
+        "Avant de venir, consultez les interdictions temporaires (zones ZRT du G7, Tour de France 2026) : elles ferment parfois le survol à 1000 m/sol et à 500 m horizontal, donc le vol aux Crêts.",
+        "Regardez la bise et le vent à 850 hPa sur le Salève avant de choisir entre les décollages du nord (Téléphérique, Table) et ceux de l'ouest et du sud-ouest (Crêts).",
+        "Un vachage peut arriver à tout le monde : pliez en bordure de champ, puis contactez le propriétaire ou les responsables du site en cas de dégâts.",
+        "Pour sortir vers Annecy par flux de nord-ouest, ne quittez pas trop tôt le Téléphérique : un vol a dû rester une heure à zéro avant le thermique (1645 m). La plaine se traverse par le thermique de La Chapelle-Rambaud.",
+        "Au printemps, décoller des faces est du Salève dès 11 h ou 12 h peut payer : la plaine est active tôt, mais les plafonds sont bas. On raccroche ensuite le Parmelan selon l'heure et le flux de nord.",
+        "Les beaux jours d'été, le séchard souffle faiblement de 10 h à 16 h et se prolonge sur les pentes du Salève.",
+        "Avant de monter aux Crêts, écoutez la balise radio du Salève, qui annonce le vent : un sud annoncé à 22/32 les a rendus très turbulents."
       ]
     },
     {
       "id": "arve-faucigny",
       "name": "Faucigny - vallée de l'Arve (Annemasse → Cluses → Sallanches → Passy), Plaine-Joux, Varan et Le Môle",
       "parent_massif": "Préalpes du Nord / Faucigny",
-      "summary": "La vallée de l'Arve est un long couloir qui draine l'air du bassin genevois vers le Mont-Blanc. Les cartes de brises tracent une flèche continue d'Annemasse à Bonneville, Marignier et Cluses, prolongée par la cluse de Cluses vers Sallanches, avec une branche vers le Borne à Saint-Pierre-en-Faucigny.\n\nLa brise de Sallanches est très forte côté Sallanches : elle rend souvent le lac de Passy inutilisable l'après-midi, faiblit en tournant vers Passy, puis se divise autour du Mont d'Arbois et à l'entrée de la vallée de Saint-Gervais, avec parfois un retour marqué d'est ou de sud-est côté Varan. Elle dépasse 20 à 25 km/h l'après-midi et reste sensible jusqu'à 2500 m, parfois 3000 m ; elle est renforcée dans la cluse Cluses-Magland. Plaine-Joux, Varan, Frioland et Platé, face au Mont-Blanc, offrent des thermiques réguliers et le secteur le mieux protégé, mais le sud-ouest et l'ouest forts y mettent sous le vent du relief.\n\nLe foehn (rotors, air très perturbé, probable si Aoste-Annecy atteint -4 hPa) est le second grand piège. Plus au nord, le Môle (sud à ouest, 1863 m) se vole suivant le flux, avec des atterrissages à La Tour (nord), à Ayse (sud) ou à Bonneville ; Agy, Andey, Sur Cou et Carroz-Araches complètent l'offre.\n\nLes passages vers les Aravis se font par la vallée du Borne, le plateau des Bénés et Cordon.",
+      "summary": "La vallée de l'Arve est un long couloir qui draine l'air du bassin genevois vers le Mont-Blanc. Les cartes de brises y tracent une flèche continue d'Annemasse à Bonneville, Marignier et Cluses, prolongée par la cluse de Cluses vers Sallanches, avec une branche vers le Borne à Saint-Pierre-en-Faucigny.\n\nAu bout du couloir, la brise de Sallanches commande. Très forte côté Sallanches, elle rend souvent le lac de Passy inutilisable l'après-midi. Elle faiblit en tournant vers Passy, puis se divise autour du Mont d'Arbois et à l'entrée de la vallée de Saint-Gervais, avec parfois un retour marqué d'est ou de sud-est côté Varan. L'après-midi, elle souffle le plus souvent entre 20 et 25 km/h, peut forcir jusqu'à 30, et reste sensible jusqu'à 2500 m, parfois 3000 m ; la cluse Cluses-Magland la renforce. Face au Mont-Blanc, Plaine-Joux, Varan, Frioland et Platé offrent des thermiques réguliers et le secteur le mieux protégé. Par sud-ouest et ouest forts, ils passent pourtant sous le vent du relief.\n\nLe second grand piège est le foehn : rotors et air très perturbé, probable si Aoste-Annecy atteint -4 hPa. Plus au nord, le Môle (sud à ouest, 1863 m) se vole selon le flux, avec des atterrissages à La Tour (nord), à Ayse (sud) ou à Bonneville. Agy, Andey, Sur Cou et Carroz-Araches complètent l'offre.\n\nVers les Aravis, on passe par la vallée du Borne, le plateau des Bénés et Cordon.",
       "bbox": [
         6.2,
         45.84,
@@ -2523,7 +2523,7 @@
       "synoptic_effects": [
         {
           "wind": "Foehn",
-          "effect": "La vallée de l'Arve est régulièrement touchée : rotors et air très perturbé sous le vent du Mont-Blanc, probables quand Aoste - Annecy atteint -4 hPa ou moins. Il faut éviter de voler tant que le vent de sud persiste en altitude ; Plaine-Joux n'est pas épargné.",
+          "effect": "La vallée de l'Arve est régulièrement touchée : rotors et air très perturbé sous le vent du Mont-Blanc, probables quand Aoste - Annecy atteint -4 hPa ou moins. Ne volez pas tant que le vent de sud persiste en altitude ; Plaine-Joux n'est pas épargné.",
           "sources": [
             "S2",
             "S9",
@@ -2532,7 +2532,7 @@
         },
         {
           "wind": "N",
-          "effect": "Plaine-Joux est assez bien protégé du nord par les Fiz. Au Môle, on atterrit à La Tour par vent de nord, et il faut se méfier du Petit Môle, sous le vent du vrai Môle. Sur Cou, Andey Nord et Agy sont favorables au nord-ouest, et la Kedeusaz l'est du nord à l'ouest.",
+          "effect": "Par nord, Plaine-Joux est assez bien protégé par les Fiz. Au Môle, on se pose à La Tour, et l'on se méfie du Petit Môle, sous le vent du vrai Môle. Sur Cou, Andey Nord et Agy sont favorables au nord-ouest, la Kedeusaz du nord à l'ouest.",
           "sources": [
             "S6",
             "S92",
@@ -2543,7 +2543,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Par vent de nord-ouest, Sur Cou, Andey Nord, Agy, la Kedeusaz et l'Arbaron sont favorables, et Agy est en régime de brise.",
+          "effect": "Par nord-ouest, Sur Cou, Andey Nord, Agy, la Kedeusaz et l'Arbaron sont favorables, et Agy est en régime de brise.",
           "sources": [
             "S66",
             "S142",
@@ -2554,7 +2554,7 @@
         },
         {
           "wind": "W",
-          "effect": "Par vent d'ouest, Plaine-Joux est défavorable : on y vole sous le vent du relief et l'on est contré pour rejoindre les atterrissages, d'où le vol déconseillé par fort vent d'ouest. Barmerousse et Pormenaz, tournés vers l'ouest, ainsi que le Lachat d'en haut et le Môle pour le soaring du soir, sont orientés vers ce vent. À Sur Cou et Orange, il faut garder de la marge pour rentrer.",
+          "effect": "Par vent d'ouest, évitez Plaine-Joux : on y vole sous le vent du relief, contré pour rejoindre les atterrissages, et le vol y est déconseillé par fort ouest. Barmerousse et Pormenaz, tournés vers l'ouest, sont orientés vers ce vent, comme le Lachat d'en haut et le Môle pour le soaring du soir. À Sur Cou et Orange, gardez de la marge pour rentrer.",
           "sources": [
             "S6",
             "S9",
@@ -2565,7 +2565,7 @@
         },
         {
           "wind": "SW",
-          "effect": "Par sud-ouest modéré à fort, Plaine-Joux est sous le vent du relief et l'on est contré vers les atterrissages. Varan, le Lachat, Frioland et Platé sont favorables par sud-ouest faible à modéré, et à Marlioz la brise souffle presque tout le temps de sud-ouest. L'Arbaron est à éviter si le sud dépasse 20 km/h.",
+          "effect": "Par sud-ouest modéré à fort, Plaine-Joux est sous le vent du relief, et l'on est contré vers les atterrissages. Varan, le Lachat, Frioland et Platé sont favorables par sud-ouest faible à modéré. À Marlioz, la brise souffle presque tout le temps de sud-ouest. Évitez l'Arbaron si le sud dépasse 20 km/h.",
           "sources": [
             "S39",
             "S40",
@@ -2575,7 +2575,7 @@
         },
         {
           "wind": "S",
-          "effect": "Au Môle, on atterrit à Ayse par vent de sud, et l'on vole depuis la grande pente sous le sommet. Varan, Frioland et Plaine-Joux sont favorables par sud faible à modéré, avec méfiance si le vent est fort ; la Kedeusaz est défavorable.",
+          "effect": "Par sud, au Môle, on vole depuis la grande pente sous le sommet et l'on se pose à Ayse. Varan, Frioland et Plaine-Joux sont favorables par sud faible à modéré, avec méfiance si le vent est fort ; la Kedeusaz est défavorable.",
           "sources": [
             "S92",
             "S126",
@@ -2585,7 +2585,7 @@
         },
         {
           "wind": "SE",
-          "effect": "Par vent de sud-est, Varan, Frioland, Platé et Plaine-Joux sont favorables. Le matin, Andey peut se voler en sud-est, sous la Vierge, et le retour d'est ou de sud-est côté Varan peut être très marqué.",
+          "effect": "Par sud-est, Varan, Frioland, Platé et Plaine-Joux sont favorables. Le matin, Andey peut se voler en sud-est, sous la Vierge. Côté Varan, le retour d'est ou de sud-est peut être très marqué.",
           "sources": [
             "S126",
             "S6",
@@ -2595,7 +2595,7 @@
         },
         {
           "wind": "E",
-          "effect": "Par vent d'est, Orange et Sur Cou subissent des rentrées fortes et des turbulences sur le plateau ; à Varan, un retour d'est est possible ; la Pointe d'Andey est favorable à l'est.",
+          "effect": "Par vent d'est, Orange et Sur Cou subissent des rentrées fortes et de la turbulence sur le plateau. À Varan, un retour d'est est possible. La Pointe d'Andey est favorable à l'est.",
           "sources": [
             "S139",
             "S2",
@@ -2782,19 +2782,19 @@
         }
       ],
       "tips": [
-        "Les jours où le vent dépasse 20 km/h à 2000 m, choisir les sites les plus protégés, comme Plaine-Joux ; au-delà, le vol devient très technique.",
-        "À Passy, surveiller les rides sur le lac, et atterrir à Marlioz plutôt qu'à Chedde dès que la brise s'installe : le terrain est plus dégagé et moins turbulent, mais il faut une finesse de 6.",
-        "Depuis Lachat d'en haut, attention au sous-le-vent en allant vers les atterrissages quand la brise de Sallanches monte haut.",
-        "Pour le foehn, surveiller la différence de pression Aoste - Annecy (seuil de -4 hPa) et les stations du Prarion et du refuge du Requin.",
-        "Au Môle, décoller du sommet par le sud à sud-ouest, choisir son atterrissage avant de partir (La Tour par vent de nord, Ayse par vent de sud), et garder du gaz pour traverser l'Arve et l'autoroute vers Brison ou Thuet.",
-        "À Agy, vérifier auprès des responsables du site l'état de l'atterrissage : l'ancien terrain est interdit depuis mai 2024."
+        "Quand le vent dépasse 20 km/h à 2000 m, choisissez les sites les plus protégés, comme Plaine-Joux. Au-delà, le vol devient très technique.",
+        "À Passy, surveillez les rides sur le lac. Dès que la brise s'installe, posez à Marlioz plutôt qu'à Chedde : le terrain est plus dégagé et moins turbulent, mais il demande une finesse de 6.",
+        "Depuis Lachat d'en haut, méfiez-vous du sous-le-vent en rejoignant les atterrissages quand la brise de Sallanches monte haut.",
+        "Pour le foehn, surveillez l'écart de pression Aoste - Annecy (seuil de -4 hPa) et les stations du Prarion et du refuge du Requin.",
+        "Au Môle, décollez du sommet par sud à sud-ouest et choisissez votre atterrissage avant de partir : La Tour par vent de nord, Ayse par vent de sud. Gardez du gaz pour traverser l'Arve et l'autoroute vers Brison ou Thuet.",
+        "À Agy, renseignez-vous auprès des responsables du site sur l'état de l'atterrissage : l'ancien terrain est interdit depuis mai 2024."
       ]
     },
     {
       "id": "haut-giffre",
       "name": "Haut-Giffre (Mieussy, Praz de Lys - Sommand, Taninges, Samoëns, Sixt)",
       "parent_massif": "Préalpes du Nord / Haut-Giffre",
-      "summary": "Le Giffre est alimenté par le bassin d'Annemasse. Les cartes de brises montrent un flux qui passe par la Menoge (Fillinges, Viuz-en-Sallaz) et le col de Saxel vers Mieussy, puis qui remonte Taninges, Samoëns et Sixt.\n\nÀ Samoëns, la brise de vallée est en place dès 12 h ou 13 h les jours d'été, et elle peut être très forte à l'atterrissage de la piscine, où la PTU se fait main droite. À Mieussy, berceau du parapente, l'atterrissage de la Ferme impose la PTU, avec une étape vent arrière au-dessus du Giffre. Le Pertuiset et la Platière, tournés vers le sud-ouest et l'ouest, sont très faciles, thermiques et dynamiques ; ils se retrouvent en régime de brise calme et en restitution, mais les vents de nord forts y sont turbulents, voire très turbulents.\n\nLes Saix, orientés nord à nord-ouest, sont l'un des rares sites utilisables par vent du nord, avec des rouleaux par vent d'ouest. La Bourgeoise, tournée du sud-est au sud-ouest, est vite alimentée même sans vent météo. Plus à l'est, le Haut-Giffre est une zone de réserve, avec un minimum de 300 m/sol, et de ZSM gypaète ; la traversée vers Émosson demande de très gros plafonds, avec un plein au Fornet, à 3200 m. Mieussy ouvre sur les Fiz, par une transition qu'on compare à une autoroute vers Passy.",
+      "summary": "Le Giffre est alimenté par le bassin d'Annemasse. Les cartes de brises montrent un flux qui passe par la Menoge (Fillinges, Viuz-en-Sallaz) et le col de Saxel vers Mieussy, puis remonte Taninges, Samoëns et Sixt.\n\nLes jours d'été, la brise de vallée est en place à Samoëns dès 12 h ou 13 h. Elle peut être très forte à l'atterrissage de la piscine, où la PTU se fait main droite. À Mieussy, berceau du parapente, l'atterrissage de la Ferme impose la PTU, avec une étape vent arrière au-dessus du Giffre. Le Pertuiset et la Platière, tournés vers le sud-ouest et l'ouest, sont très faciles, thermiques et dynamiques ; ils marchent en régime de brise calme et en restitution. Par vent de nord fort, ils deviennent turbulents, voire très turbulents.\n\nLes Saix, orientés nord à nord-ouest, comptent parmi les rares sites utilisables par vent du nord, avec des rouleaux par vent d'ouest. La Bourgeoise, tournée du sud-est au sud-ouest, s'alimente vite, même sans vent météo.\n\nPlus à l'est, le Haut-Giffre est une zone de réserve (300 m/sol au minimum) et de ZSM gypaète. La traversée vers Émosson demande de très gros plafonds, avec un plein au Fornet, à 3200 m. Mieussy ouvre sur les Fiz, par une transition qu'on compare à une autoroute vers Passy.",
       "bbox": [
         6.45,
         46.02,
@@ -3741,7 +3741,7 @@
       "synoptic_effects": [
         {
           "wind": "N",
-          "effect": "Par vent de nord, Mieussy est rude : les vents forts à très forts rendent le Pertuiset et la Platière turbulents, voire très turbulents, et l'atterrissage de la Ferme très turbulent. Les Saix, orientés nord à nord-ouest, sont au contraire favorables, et permettent de voler quand le nord empêche Mieussy.",
+          "effect": "Par vent de nord, Mieussy est rude : par vent fort à très fort, le Pertuiset et la Platière sont turbulents, voire très turbulents, et l'atterrissage de la Ferme très turbulent. Les Saix, orientés nord à nord-ouest, sont au contraire favorables : ils permettent de voler quand le nord empêche Mieussy.",
           "sources": [
             "S20",
             "S154",
@@ -3752,7 +3752,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Par vent de nord-ouest, les Saix sont favorables, et le Pertuiset et la Platière sont défavorables.",
+          "effect": "Par nord-ouest, les Saix sont favorables, le Pertuiset et la Platière défavorables.",
           "sources": [
             "S158",
             "S154",
@@ -3761,7 +3761,7 @@
         },
         {
           "wind": "W",
-          "effect": "Par vent d'ouest, la Platière et le Pertuiset sont favorables, et la Bourgeoise aussi ; aux Saix, il y a des rouleaux.",
+          "effect": "Par vent d'ouest, la Platière, le Pertuiset et la Bourgeoise sont favorables ; aux Saix, il y a des rouleaux.",
           "sources": [
             "S155",
             "S154",
@@ -3771,7 +3771,7 @@
         },
         {
           "wind": "SW",
-          "effect": "Par vent de sud-ouest, la Platière et le Pertuiset sont favorables ; à la Bourgeoise, des rouleaux se forment en bout de crête.",
+          "effect": "Par sud-ouest, la Platière et le Pertuiset sont favorables. À la Bourgeoise, des rouleaux se forment en bout de crête.",
           "sources": [
             "S155",
             "S159",
@@ -3780,7 +3780,7 @@
         },
         {
           "wind": "S",
-          "effect": "Par vent de sud, le Pertuiset et la Bourgeoise sont favorables. À la Platière, le décollage près du parking est sous le vent : mieux vaut préférer le Pertuiset.",
+          "effect": "Par vent de sud, le Pertuiset et la Bourgeoise sont favorables. À la Platière, le décollage près du parking est sous le vent : préférez le Pertuiset.",
           "sources": [
             "S154",
             "S159",
@@ -3789,7 +3789,7 @@
         },
         {
           "wind": "SE",
-          "effect": "Par vent de sud-est, le Pertuiset est favorable, la Platière défavorable, et la Bourgeoise facile.",
+          "effect": "Par sud-est, le Pertuiset est favorable, la Platière défavorable, et la Bourgeoise facile.",
           "sources": [
             "S154",
             "S155",
@@ -3798,7 +3798,7 @@
         },
         {
           "wind": "E",
-          "effect": "Par vent d'est, la Platière est défavorable ; le Pertuiset est parfois cité comme orienté à l'est.",
+          "effect": "Par vent d'est, la Platière est défavorable. Le Pertuiset est parfois cité comme orienté à l'est.",
           "sources": [
             "S22",
             "S155"
@@ -3986,18 +3986,18 @@
         }
       ],
       "tips": [
-        "À Samoëns, l'affluence à l'atterrissage est source d'accidents : respecter le panneau d'approche, et se poser en PTU main droite quand la brise est installée.",
-        "À Mieussy, toujours se poser en PTU avec le vent arrière au-dessus du Giffre ; par vent de nord, la zone est turbulente.",
-        "Par vent de nord, aller aux Saix plutôt qu'à Mieussy.",
-        "Le Pertuiset est privé : les écoles et les groupes doivent demander une autorisation avant de venir.",
-        "Pour passer du Giffre vers les Fiz, viser les plafonds : le Haut-Giffre impose 300 m/sol dans la réserve de Sixt-Passy."
+        "À Samoëns, l'affluence à l'atterrissage cause des accidents : respectez le panneau d'approche, et posez en PTU main droite quand la brise est installée.",
+        "À Mieussy, posez toujours en PTU, avec le vent arrière au-dessus du Giffre. Par vent de nord, la zone est turbulente.",
+        "Par vent de nord, allez aux Saix plutôt qu'à Mieussy.",
+        "Le Pertuiset est privé : écoles et groupes doivent demander une autorisation avant de venir.",
+        "Pour passer du Giffre vers les Fiz, visez les plafonds : dans la réserve de Sixt-Passy, le Haut-Giffre impose 300 m/sol."
       ]
     },
     {
       "id": "chablais",
       "name": "Chablais (Léman, Thonon - Évian, vallées d'Aulps, d'Abondance, du Brevon, Morzine - Les Gets, Thollon, Dent d'Oche)",
       "parent_massif": "Préalpes du Nord / Chablais",
-      "summary": "Le Chablais ouvre sur le Léman. La bise, le vent le plus fréquent, de beau temps, froid et sec, domine le vent synoptique, avec le vent de sud-ouest d'avant dépression, la vaudaire du Valais et les rafales d'orage, bornan et môlan, qui peuvent atteindre 120 km/h. Les brises du lac, rebat de jour, séchard léger et morget de nuit, alimentent les vallées.\n\nLes cartes de brises montrent deux grands couloirs vers l'intérieur : de Thonon vers Morzine par la vallée d'Aulps, et de Bioge vers La Chapelle par la vallée d'Abondance. Une flèche relie aussi le lac à la Vallée Verte, jusqu'à Boëge. À Abondance, la brise de vallée s'installe très tôt, peut être très forte avant midi, et rend l'atterrissage, en sortie de l'étranglement des Portes, délicat. À Morzine, Super Morzine, orienté du sud-est au sud-ouest, a une sortie turbulente par forte brise, des rouleaux par vent de nord et des dégueulantes par tendance sud ; l'Aubergade est alors sous le vent, et les Putheys sont préférables.\n\nOrcier offre des décollages nord à nord-ouest, plafonnés par la TMA de Genève à 1800 m au maximum. Thollon, Bernex et la Dent d'Oche se volent surtout par vent de nord. Les zones de protection du gypaète, les TMA 6 et 7 de Genève et la réserve de Sixt-Passy contraignent les transitions.\n\nLes cross réels documentés partent de Morzine : boucle du Criou et des Saix, ou 85 km depuis le Revard par la Tournette et le Mont Chéry.",
+      "summary": "Le Chablais ouvre sur le Léman, et c'est le lac qui commande. La bise domine le vent synoptique : c'est le vent le plus fréquent, de beau temps, froid et sec. S'y ajoutent le vent de sud-ouest d'avant dépression, la vaudaire du Valais et les vents d'orage : le bornan, de 30 à 40 nœuds, et le môlan, plus modéré. Les brises du lac alimentent les vallées : le rebat de jour, le séchard léger, le morget de nuit.\n\nLes cartes de brises montrent deux grands couloirs vers l'intérieur : de Thonon vers Morzine par la vallée d'Aulps, et de Bioge vers La Chapelle par la vallée d'Abondance. Une flèche relie aussi le lac à la Vallée Verte, jusqu'à Boëge. À Abondance, la brise de vallée s'installe très tôt et peut être très forte avant midi : l'atterrissage, en sortie de l'étranglement des Portes, est délicat. À Morzine, Super Morzine, orienté du sud-est au sud-ouest, a une sortie turbulente par forte brise, des rouleaux par vent de nord et des dégueulantes par tendance sud. L'Aubergade est alors sous le vent : préférez les Putheys.\n\nOrcier offre des décollages nord à nord-ouest, plafonnés par la TMA de Genève à 1800 m au maximum. Thollon, Bernex et la Dent d'Oche se volent surtout par vent de nord. Les zones de protection du gypaète, les TMA 6 et 7 de Genève et la réserve de Sixt-Passy contraignent les transitions.\n\nLes cross documentés partent de Morzine : la boucle du Criou et des Saix, ou 85 km depuis le Revard par la Tournette et le Mont Chéry.",
       "bbox": [
         6.25,
         46.15,
@@ -5375,7 +5375,7 @@
       "synoptic_effects": [
         {
           "wind": "Bise",
-          "effect": "Vent le plus fréquent du Léman, de beau temps, froid et sec, avec des rafales de 15 à 90 km/h. Au sol, Orcier (Couteau) est bon par nord mais dangereux par nord-nord-est fort ; Pleine Bise, Thollon et la Dent d'Oche se volent par vent du nord, et la Dent d'Oche est à éviter par nord-est soutenu. Sur le Haut-Lac, la bise est déviée vers le nord-nord-ouest, ce qui convient aux décollages nord-ouest (déduction).",
+          "effect": "La bise est le vent le plus fréquent du Léman : beau temps, froid et sec, rafales de 15 à 90 km/h. Orcier (Couteau) est bon par nord mais dangereux par nord-nord-est fort. Pleine Bise, Thollon et la Dent d'Oche se volent par vent du nord ; évitez la Dent d'Oche par nord-est soutenu. Sur le Haut-Lac, la bise est déviée vers le nord-nord-ouest, ce qui convient aux décollages nord-ouest (déduction).",
           "sources": [
             "S33",
             "S32",
@@ -5387,7 +5387,7 @@
         },
         {
           "wind": "N",
-          "effect": "Super Morzine est utilisable par vent faible en régime de prise de pente ; par vent fort, les rouleaux peuvent gêner le décollage. Ressachaux est en dynamique, et l'on atterrit à l'Aubergade ou aux Putheys. Orcier (Couteau, Chapelle d'Hermone), Thollon (Mémises, Lavanchy, Hucel) et la Dent d'Oche, côté télésiège, sont favorables.",
+          "effect": "Par nord faible, Super Morzine marche en régime de prise de pente ; par vent fort, les rouleaux peuvent gêner le décollage. Ressachaux est en dynamique, et l'on se pose à l'Aubergade ou aux Putheys. Orcier (Couteau, Chapelle d'Hermone), Thollon (Mémises, Lavanchy, Hucel) et la Dent d'Oche, côté télésiège, sont favorables.",
           "sources": [
             "S27",
             "S177",
@@ -5398,7 +5398,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Par vent de nord-ouest, Très le Mont et la Chapelle d'Hermone sont favorables, et à Orcier, c'est le vent idéal.",
+          "effect": "Par nord-ouest, Très le Mont et la Chapelle d'Hermone sont favorables : c'est le vent idéal d'Orcier.",
           "sources": [
             "S176",
             "S178"
@@ -5406,7 +5406,7 @@
         },
         {
           "wind": "W",
-          "effect": "Par vent d'ouest, Très le Mont est bon. La Chapelle d'Hermone est à éviter, et les Mémises et Thollon sont défavorables.",
+          "effect": "Par vent d'ouest, Très le Mont est bon. Évitez la Chapelle d'Hermone ; les Mémises et Thollon sont défavorables.",
           "sources": [
             "S176",
             "S178",
@@ -5415,7 +5415,7 @@
         },
         {
           "wind": "SW",
-          "effect": "Par sud-ouest, Très le Mont est turbulent, car la brise de pente peut couvrir un vent de sud-ouest. Super Morzine est utilisable par vent faible, mais il faut se méfier des dégueulantes. Les Mémises sont défavorables.",
+          "effect": "Par sud-ouest, Très le Mont est turbulent, car la brise de pente peut couvrir le vent de sud-ouest. Super Morzine reste utilisable par vent faible, mais méfiez-vous des dégueulantes. Les Mémises sont défavorables.",
           "sources": [
             "S176",
             "S82",
@@ -5424,7 +5424,7 @@
         },
         {
           "wind": "S",
-          "effect": "Par tendance sud, Super Morzine est utilisable par vent faible ; elle est très turbulente et malsaine en cas de forte instabilité. L'Aubergade est alors sous le vent, et les Putheys sont préférables. À la Dent d'Oche, le décollage sud depuis la croix permet du soaring.",
+          "effect": "Par tendance sud, Super Morzine reste utilisable par vent faible, mais devient très turbulent et malsain en cas de forte instabilité. L'Aubergade est alors sous le vent : préférez les Putheys. À la Dent d'Oche, le décollage sud depuis la croix permet du soaring.",
           "sources": [
             "S27",
             "S97"
@@ -5450,7 +5450,7 @@
         },
         {
           "wind": "NE",
-          "effect": "Par nord-est, la Dent d'Oche et Orcier sont défavorables, si le vent est soutenu. Pleine Bise est orientée nord et nord-est, et le Couteau est dangereux par nord-nord-est fort.",
+          "effect": "Par nord-est soutenu, la Dent d'Oche et Orcier sont défavorables. Pleine Bise est orientée nord et nord-est, et le Couteau devient dangereux par nord-nord-est fort.",
           "sources": [
             "S97",
             "S177",
@@ -5543,12 +5543,12 @@
         }
       ],
       "tips": [
-        "À Abondance, approcher en PTU et estimer la brise avant de se poser : l'atterrissage est en sortie de l'étranglement des Portes, et la brise est forte dès le matin.",
-        "À Super Morzine, par tendance sud et forte activité thermique, rester prudent au-dessus de la ville, et se poser aux Putheys plutôt qu'à l'Aubergade.",
-        "À Orcier, respecter la TMA de Genève, qui impose de ne pas dépasser 500 m au-dessus du relief et 1800 m au maximum, et éviter l'ouest et le nord-est soutenu.",
-        "Vaudaire, bornan et môlan sont annoncés par les orages sur les Préalpes : ils arrivent en rafales sur le lac et sur la rive, donc il faut se poser avant.",
+        "À Abondance, approchez en PTU et estimez la brise avant de vous poser : le terrain est en sortie de l'étranglement des Portes, et la brise y est forte dès le matin.",
+        "À Super Morzine, par tendance sud et forte activité thermique, restez prudent au-dessus de la ville, et posez aux Putheys plutôt qu'à l'Aubergade.",
+        "À Orcier, respectez la TMA de Genève : pas plus de 500 m au-dessus du relief, 1800 m au maximum. Évitez l'ouest et le nord-est soutenu.",
+        "Vaudaire, bornan et môlan s'annoncent par les orages sur les Préalpes et arrivent en rafales sur le lac et sur la rive : posez-vous avant.",
         "Le rebat n'est pas la brise de lac qu'on imagine : c'est le renversement de jour de la brise de nuit, canalisé le long de la côte.",
-        "Au printemps, vérifier les zones de protection du gypaète actives (Avoriaz, Jordières, Ardoisières) dans Spotair."
+        "Au printemps, vérifiez dans Spotair les zones de protection du gypaète actives (Avoriaz, Jordières, Ardoisières)."
       ]
     }
   ],

@@ -1012,6 +1012,8 @@ export class GameEngine {
     this.world.vultures.update(this.air, gg.x, gg.y, gg.z, this.gameT, gdt);
     if (this.ai && gdt > 0) for (let rem = gdt; rem > 1e-6; rem -= 0.1) this.ai.step(Math.min(0.1, rem), this.gameT, gg.x, gg.y, gg.z);
     if (this.net || this.ai) this.world.setPeers(this.ai ? [...this.remotePilots(), ...this.ai.views()] : this.remotePilots());
+    // The fabric breathes with the turbulence at the pilot (glider.ts).
+    this.world.glider.setAir(this.airSample.turbulence);
     this.world.frameUpdate(this.glider, this.head);
     this.timers.hud -= real;
     if (this.timers.hud <= 0) {

@@ -6,10 +6,12 @@
  *
  * The canopy is deformed on the GPU from the glider state (brakes, speed bar, big ears,
  * asymmetric and frontal collapses, cravat, stall, spin, the inflation on the take-off)
- * and from its own motion (WingDynamics: the span heaving, surging and twisting in the
- * gusts, the folds slamming in and snapping open); the CPU only updates a few uniforms and
- * a few dozen springs, the lines (a few hundred points) and the pilot's pose: no allocation
- * per frame. Levels of detail: full
+ * and from its own motion and fabric (WingDynamics: the span heaving, surging and twisting
+ * in the gusts, the cells' internal pressure filling, spreading and lost in a fold, the
+ * trailing edge fluttering, the folds slamming in, flapping and reopening from the centre
+ * out); the CPU only updates a few uniforms and about a hundred springs, the lines (a few
+ * hundred points, their bows springs too) and the pilot's pose: no allocation per frame.
+ * Why a reduced model and not a cloth simulation: glider-shape.ts (WingDeform). Levels of detail: full
  * near the camera, simpler beyond ~150 m and 1.2 km (other pilots), lighter canopy mesh on
  * phones.
  *
@@ -43,6 +45,12 @@ export interface GliderModel {
   standing(): number;
   /** Poses the glider for this frame; `dt` (s) defaults to the time since the last call. */
   update(st: GliderState, dt?: number): void;
+  /**
+   * The air's turbulence 0..1 at the pilot (AirSample.turbulence), for the fabric: how much
+   * the trailing edge flutters and the slack fabric shivers. Optional: without it the
+   * canopy estimates it from the gusts under its tips (GliderState.tipHpL/R).
+   */
+  setAir(turbulence: number): void;
   /** The canopy's attitude relative to the pilot and its own motion (development, tests). */
   sway?: Sway;
   dynamics?: WingDynamics;
@@ -169,13 +177,33 @@ function spring(x: number, v: number, target: number, w: number, z: number, h: n
  * springs too: a collapse sweeps in from the tip in ~0.15 s and the flap slams under the
  * wing and bounces; on reopening the fold line runs out to the tip, the cells it passes
  * kick forward and up (the bang) and the trailing edge shivers. On the take-off the tips
- * lag behind the rising centre and swing in once it is overhead. Writes `d.dyn`, filters
- * `d.foldL/R` and `d.misc[0]` in place; no allocation.
+ * lag behind the rising centre and swing in once it is overhead.
+ *
+ * The fabric (`fab`, per station):
+ * - internal pressure, as a share of the trim's (q·Cp ≈ 65 Pa at 38 km/h): towards
+ *   (V/V_trim)² times what the cell opening catches (Cp at the inlet falls as the angle of
+ *   attack nears the fold: the stagnation point leaves the opening), a gust under the
+ *   station adding a little; filled through the opening in ~0.2 s (a cell of ~0.1 m³ through
+ *   ~0.02 m² of opening), emptied faster where the leading edge folds or tucks (the air is
+ *   squeezed out), spread to the neighbours by the cross-ports (~0.1 s per station). A
+ *   collapsed part reopens where the pressure comes back: the fold line can only run out as
+ *   far as the cells are full again, from the centre outwards (EN 926-2: re-inflation from
+ *   the inside towards the tip);
+ * - the trailing edge's flap: behind the C lines the fabric is held only by the brake lines,
+ *   a light, little-damped spring (~5–6.5 Hz) shaken by the air (its noise grows with the
+ *   speed, the turbulence and the incidents) and coupled along the span: it flutters;
+ * - the folded part's flapping in the wake, a slower spring shaken while folded, running
+ *   along the flap as waves;
+ * - the depth of a frontal tuck: the centre first, the tips lagging, the fold line wavering.
+ * Writes `d.dyn` and `d.fab`, filters `d.foldL/R` and `d.misc[0]` in place; no allocation.
  */
 export class WingDynamics {
   /** Per station: heave, surge, twist, dent and their rates (heave, surge, twist). */
   readonly x = new Float32Array(DYN_N * 4);
   readonly v = new Float32Array(DYN_N * 3);
+  /** Per station: pressure, trailing-edge flap, fold flapping, frontal tuck (WingDeform.fab), and the two flaps' rates. */
+  readonly fab = new Float32Array(DYN_N * 4);
+  readonly fabV = new Float32Array(DYN_N * 2);
   /** Folds per side (0 left, 1 right): leading-edge line, trailing-edge line, angle and their rates. */
   readonly fold = new Float32Array([2, 2, 0, 2, 2, 0]);
   readonly foldV = new Float32Array(6);
@@ -183,24 +211,42 @@ export class WingDynamics {
   frontalV = 0;
   /** Trailing-edge shiver after a reopening (s left). */
   shiver = 0;
+  /** Turbulence felt by the fabric 0..1: the air's if given (GliderModel.setAir), else from the tip gusts. */
+  turbulence = 0;
+  /** The air's turbulence 0..1 when the engine gives it (NaN: estimated). */
+  airTurbulence = NaN;
   private br = NaN;
   private tr = 0;
+  private tipL = 0;
+  private tipR = 0;
   private inflLag = 0;
   private inflPrev = NaN;
+  private inflating = false;
+  private t = 0;
+  private seed = 0x2545f491;
+
+  constructor() {
+    this.reset();
+  }
 
   reset(): void {
     this.x.fill(0);
     this.v.fill(0);
+    this.fab.fill(0);
+    for (let k = 0; k < DYN_N; k++) this.fab[k * 4] = 1;
+    this.fabV.fill(0);
     this.fold.set([2, 2, 0, 2, 2, 0]);
     this.foldV.fill(0);
     this.frontal = 0;
     this.frontalV = 0;
     this.shiver = 0;
+    this.turbulence = 0;
     this.br = NaN;
   }
 
   /** On the take-off, the wing's elevation θ (null in flight): the tips lag as it rises. */
   inflation(theta: number | null, dt: number): void {
+    this.inflating = theta !== null;
     if (theta === null) {
       this.inflLag = 0;
       this.inflPrev = NaN;
@@ -212,37 +258,68 @@ export class WingDynamics {
     this.inflLag = Math.sin(Math.PI * clamp(theta / 1.45, 0, 1)) * (0.35 + 0.5 * clamp(rate, 0, 1.5));
   }
 
+  /** Uniform noise in −1..1 (xorshift: the same flight draws the same fabric). */
+  private rnd(): number {
+    let s = this.seed;
+    s ^= s << 13;
+    s ^= s >>> 17;
+    s ^= s << 5;
+    this.seed = s;
+    return (s >>> 0) / 2147483648 - 1;
+  }
+
   update(st: GliderState, d: WingDeform, dt: number): void {
     if (!(dt > 0)) return;
     const br = st.bankRate || 0;
     const tr = st.turnRate || 0;
+    const tipL = clamp(st.tipHpL || 0, -5, 5);
+    const tipR = clamp(st.tipHpR || 0, -5, 5);
     if (Number.isNaN(this.br)) {
       this.br = br;
       this.tr = tr;
+      this.tipL = tipL;
+      this.tipR = tipR;
     }
     const accR = clamp((br - this.br) / dt, -15, 15);
     const accY = clamp((tr - this.tr) / dt, -10, 10);
     this.br = br;
     this.tr = tr;
-    const tipL = clamp(st.tipHpL || 0, -5, 5);
-    const tipR = clamp(st.tipHpR || 0, -5, 5);
+    // Turbulence: the air's, or the rate at which the gusts under the tips change (~20 m/s²
+    // in strong turbulence), over ~0.5 s.
+    const gustRate = (Math.abs(tipL - this.tipL) + Math.abs(tipR - this.tipR)) / dt;
+    this.tipL = tipL;
+    this.tipR = tipR;
+    const turbT = Number.isNaN(this.airTurbulence) ? clamp(gustRate / 25, 0, 1) : clamp(this.airTurbulence, 0, 1);
+    this.turbulence += (turbT - this.turbulence) * Math.min(1, dt / 0.5);
+    const turb = this.turbulence;
     const load = st.load ?? 1;
     const mC = st.marginC ?? 10;
     const mL = st.marginL ?? 10;
     const mR = st.marginR ?? 10;
-    const speed = clamp((st.airspeed || 10.5) / 10.5, 0.5, 1.6);
+    const airspeed = st.airspeed || 10.5;
+    const speed = clamp(airspeed / 10.5, 0.5, 1.6);
+    const stall = st.stall || 0;
+    const spin = (st.spin || 0) * ((st as Partial<GliderState>).spinSide || 1);
+    const col = st.collapse;
+    const incident = Math.min(1, (col?.amount || 0) * 1.5 + (col?.frontal || 0) + stall + (col?.cravat || 0) * 3);
     const lag = this.inflLag;
     const n = Math.max(1, Math.ceil(dt * 120));
     const h = dt / n;
     const x = this.x;
     const v = this.v;
+    const fab = this.fab;
+    const fabV = this.fabV;
     const fold = this.fold;
     const fv = this.foldV;
-    // Folds: the targets the state asks for (deform() wrote them), reached by springs.
+    // The fold lines the state asks for (deform() wrote them): where the cells lose their air.
+    const tLeL = Math.min(d.foldL[0], 1.6);
+    const tLeR = Math.min(d.foldR[0], 1.6);
+    const prevL = fold[0];
+    const prevR = fold[3];
+    // Folds: the targets the state asks for, reached by springs.
     for (let s = 0; s < 2; s++) {
       const f = s ? d.foldR : d.foldL;
       const o = s * 3;
-      const prevLe = fold[o];
       for (let i = 0; i < n; i++) {
         // The fold line: sweeps in fast, runs back out to the tip a little slower.
         const tLe = Math.min(f[0], 1.6);
@@ -255,25 +332,6 @@ export class WingDynamics {
         fv[o + 2] = spring(fold[o + 2], fv[o + 2], f[2], 15, 0.32, h);
         fold[o + 2] = Math.max(-0.25, fold[o + 2] + fv[o + 2] * h);
       }
-      // Reopening: the cells the fold line passed over this frame kick forward and up.
-      const le = fold[o];
-      if (le > prevLe + 1e-4 && prevLe < 1) {
-        const kick = clamp((le - prevLe) / dt, 0, 8);
-        for (let k = 0; k < DYN_N; k++) {
-          const a = -1 + (2 * k) / (DYN_N - 1);
-          if ((s ? a : -a) <= 0) continue;
-          const al = Math.abs(a);
-          const near = 1 - clamp(Math.abs(al - le) / 0.25, 0, 1);
-          v[k * 3] += 0.28 * kick * near;
-          v[k * 3 + 1] -= 0.22 * kick * near;
-        }
-        this.shiver = Math.max(this.shiver, 0.6 * Math.min(1, kick / 3));
-      }
-      // Leaving the fold, no flap: no fold drawn.
-      const open = le >= 1 && fold[o + 1] >= 1;
-      f[0] = open ? 2 : le;
-      f[1] = open ? 2 : Math.max(le, fold[o + 1]);
-      f[2] = open || fold[o + 2] < 0.002 ? 0 : Math.max(0.002, fold[o + 2]);
     }
     // Frontal: the leading edge tucks under at once and pops back with the wing surging.
     const fr0 = this.frontal;
@@ -286,9 +344,17 @@ export class WingDynamics {
       this.shiver = Math.max(this.shiver, 0.5);
     }
     d.misc[0] = this.frontal > 0.002 ? this.frontal : 0;
-    // The span: heave, surge, twist per station.
-    const kc = 2 * Math.PI * 2.4;
+    // The span: heave, surge, twist per station; the fabric.
+    const kc = 2 * Math.PI * 2.4 * ((DYN_N - 1) / 8);
+    const qr = clamp(speed * speed, 0.25, 2.2);
+    const tauIn = 0.18 * clamp(1 / speed, 0.7, 1.8);
+    // Cross-ports: a station's pressure evens out with its neighbours' in ~0.12 s.
+    const kp = Math.min(0.24, h / 0.12);
+    // Noise of the trailing edge (rms, m): a few millimetres in calm air, centimetres in
+    // turbulence or an incident; of the folded part (rad).
+    const teAmp = 0.004 + 0.006 * clamp((airspeed - 8) / 8, 0, 1) + 0.03 * turb + 0.025 * Math.min(1, incident + this.shiver);
     for (let i = 0; i < n; i++) {
+      this.t += h;
       for (let k = 0; k < DYN_N; k++) {
         const a = -1 + (2 * k) / (DYN_N - 1);
         const al = Math.abs(a);
@@ -317,15 +383,85 @@ export class WingDynamics {
         // Dent of the leading edge: from 2° of margin before the fold down to it.
         const dentT = clamp((2 - margin) / 2.5, 0, 1) * (0.4 + 0.6 * al) + 0.6 * Math.max(0, 0.4 - load);
         x[k * 4 + 3] += (Math.min(1, dentT) - x[k * 4 + 3]) * Math.min(1, h / 0.08);
+        // Frontal tuck: the centre first, the tips ~0.1 s later, the fold line wavering.
+        const frT = this.frontal * (1 + 0.15 * Math.sin(this.t * 4.3 + k * 1.7) * Math.sin(this.t * 2.9 + k * 0.6));
+        const fr = fab[k * 4 + 3] + (frT - fab[k * 4 + 3]) * Math.min(1, h / (0.03 + 0.1 * al2));
+        fab[k * 4 + 3] = fr < 1e-3 && frT === 0 ? 0 : fr;
+        // Pressure: what the opening catches, lost where the leading edge is folded or tucked.
+        const side = a < 0 ? 0 : 1;
+        let pT = this.inflating ? 1 : qr * (0.3 + 0.7 * smooth(-1.5, 2.5, margin)) * (1 + 0.05 * clamp(gust, -3, 3));
+        const tLe = side ? tLeR : tLeL;
+        if (tLe < 1.2) pT *= 1 - 0.94 * smooth(tLe - 0.04, tLe + 0.06, al);
+        pT *= (1 - 0.85 * fab[k * 4 + 3]) * (1 - 0.5 * stall) * (1 - 0.45 * Math.max(0, spin * (side ? 1 : -1)) * al);
+        const p = fab[k * 4];
+        const pN = p + (pT - p) * Math.min(1, h / (pT < p ? 0.09 : tauIn)) + kp * (fab[kL * 4] + fab[kR * 4] - 2 * p);
+        fab[k * 4] = clamp(pN, 0, 2.2);
+        // Trailing edge: a light spring shaken by the air, coupled along the span.
+        const wte = 2 * Math.PI * (6.5 - 1.5 * al2);
+        const cte = kc * kc * 0.25 * (fab[kL * 4 + 1] + fab[kR * 4 + 1] - 2 * fab[k * 4 + 1]);
+        // White noise of variance σ²: stationary rms of the oscillator σ / √(4 ζ ω³).
+        const sTe = teAmp * Math.sqrt(4 * 0.12 * wte * wte * wte) * 1.732 * this.rnd() / Math.sqrt(h);
+        fabV[k * 2] += (-wte * wte * fab[k * 4 + 1] - 2 * 0.12 * wte * fabV[k * 2] + cte + sTe) * h;
+        // The folded part: shaken while folded, waves running along it.
+        const fsd = side ? fold[3] : fold[0];
+        const folded = fold[side * 3 + 2] > 0.05 ? smooth(fsd - 0.02, fsd + 0.12, al) : 0;
+        const wf = 2 * Math.PI * 2.2;
+        const cf = kc * kc * 0.5 * (fab[kL * 4 + 2] + fab[kR * 4 + 2] - 2 * fab[k * 4 + 2]);
+        const sF = folded * 0.22 * Math.sqrt(4 * 0.2 * wf * wf * wf) * 1.732 * this.rnd() / Math.sqrt(h);
+        fabV[k * 2 + 1] += (-wf * wf * fab[k * 4 + 2] - 2 * 0.2 * wf * fabV[k * 2 + 1] + cf * folded + sF) * h;
       }
       for (let k = 0; k < DYN_N; k++) {
         x[k * 4] = clamp(x[k * 4] + v[k * 3] * h, -0.6, 0.6);
         x[k * 4 + 1] = clamp(x[k * 4 + 1] + v[k * 3 + 1] * h, -0.8, 2.5);
         x[k * 4 + 2] = clamp(x[k * 4 + 2] + v[k * 3 + 2] * h, -0.2, 0.2);
+        fab[k * 4 + 1] = clamp(fab[k * 4 + 1] + fabV[k * 2] * h, -0.12, 0.12);
+        fab[k * 4 + 2] = clamp(fab[k * 4 + 2] + fabV[k * 2 + 1] * h, -0.6, 0.6);
       }
+    }
+    // The fold lines drawn: reopening, a line runs out only as far as the cells have their
+    // air back (the pressure's 0.5 crossing, from the centre out); the cells it passes kick
+    // forward and up.
+    for (let s = 0; s < 2; s++) {
+      const f = s ? d.foldR : d.foldL;
+      const o = s * 3;
+      const prevLe = s ? prevR : prevL;
+      let front = 2;
+      const c0 = (DYN_N - 1) / 2;
+      for (let j = 1; j <= c0; j++) {
+        const k = s ? c0 + j : c0 - j;
+        const p = fab[k * 4];
+        if (p < 0.5) {
+          const pIn = fab[(s ? k - 1 : k + 1) * 4];
+          front = (j - 1 + clamp((pIn - 0.5) / Math.max(1e-3, pIn - p), 0, 1)) / c0;
+          break;
+        }
+      }
+      if (fv[o] > 0 && fold[o] > front) {
+        fold[o] = Math.max(Math.min(prevLe, 1.6), front);
+        fv[o] = Math.min(fv[o], 0.5);
+      }
+      const le = fold[o];
+      if (le > prevLe + 1e-4 && prevLe < 1) {
+        const kick = clamp((le - prevLe) / dt, 0, 8);
+        for (let k = 0; k < DYN_N; k++) {
+          const a = -1 + (2 * k) / (DYN_N - 1);
+          if ((s ? a : -a) <= 0) continue;
+          const al = Math.abs(a);
+          const near = 1 - clamp(Math.abs(al - le) / 0.25, 0, 1);
+          v[k * 3] += 0.28 * kick * near * 0.55;
+          v[k * 3 + 1] -= 0.22 * kick * near * 0.55;
+        }
+        this.shiver = Math.max(this.shiver, 0.6 * Math.min(1, kick / 3));
+      }
+      // Leaving the fold, no flap: no fold drawn.
+      const open = le >= 1 && fold[o + 1] >= 1;
+      f[0] = open ? 2 : le;
+      f[1] = open ? 2 : Math.max(le, fold[o + 1]);
+      f[2] = open || fold[o + 2] < 0.002 ? 0 : Math.max(0.002, fold[o + 2]);
     }
     this.shiver = Math.max(0, this.shiver - dt);
     d.dyn.set(x);
+    d.fab.set(fab);
   }
 
   /** Mean speed of the span's motion (m/s): the trailing edge flutters with it. */
@@ -348,7 +484,7 @@ function makeLevel(u: WingUniforms, res: WingRes | null, lines: 'high' | 'low' |
   const canopy = new THREE.Group();
   group.add(canopy);
   if (res) {
-    const wing = new THREE.Mesh(wingGeometry(res), wingMaterial(u, res.balloon));
+    const wing = new THREE.Mesh(wingGeometry(res), wingMaterial(u, res.balloon, res.wrinkles));
     wing.frustumCulled = false;
     canopy.add(wing);
   }
@@ -498,11 +634,19 @@ export function buildGlider(colors = { main: 0xd62f2f, stripe: 0xf4f1ea, under: 
     if (!lod || lod.level === 0) {
       dyn.update(st, d, dt);
       dynIdle = false;
-    } else if (!dynIdle) {
-      dyn.reset();
-      d.dyn.fill(0);
-      dynIdle = true;
+    } else {
+      if (!dynIdle) {
+        dyn.reset();
+        d.dyn.fill(0);
+        d.fab.set(dyn.fab);
+        dynIdle = true;
+      }
+      // Far away: the fabric full, a frontal as the state gives it.
+      for (let k = 0; k < DYN_N; k++) d.fab[k * 4 + 3] = d.misc[0];
     }
+    // The lines' pull on the tabs (the wrinkles under them) and the air's shaking.
+    d.air[0] = clamp(st.load ?? 1, 0, 2.5);
+    d.air[1] = dyn.turbulence;
     // Trailing edge trembling, stronger in fast flight, when the span moves, in incidents
     // and just after a reopening.
     d.misc[1] = 0.004 + 0.004 * Math.min(1, (st.airspeed || 10) / 14) + 0.012 * Math.min(1, dyn.energy()) + 0.03 * Math.min(1, amount + d.misc[0] + stall + cravat + dyn.shiver);
@@ -513,6 +657,8 @@ export function buildGlider(colors = { main: 0xd62f2f, stripe: 0xf4f1ea, under: 
     u.uInfl.value.fromArray(d.infl);
     u.uUp.value.fromArray(d.up);
     u.uDyn.value.set(d.dyn);
+    u.uFab.value.set(d.fab);
+    u.uAir.value.fromArray(d.air);
   }
 
   function update(st: GliderState, step?: number): void {
@@ -557,5 +703,8 @@ export function buildGlider(colors = { main: 0xd62f2f, stripe: 0xf4f1ea, under: 
   setInflation(null);
   update({ brakeL: 0, brakeR: 0, collapse: { side: 0, amount: 0, frontal: 0, cravat: 0, cravatSide: 0 } } as unknown as GliderState);
   const standing = () => stand * stand * (3 - 2 * stand);
-  return { root, pilot, standing, update, setInflation, sway, dynamics: dyn };
+  const setAir = (turbulence: number) => {
+    dyn.airTurbulence = turbulence;
+  };
+  return { root, pilot, standing, update, setInflation, setAir, sway, dynamics: dyn };
 }

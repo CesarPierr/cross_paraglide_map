@@ -219,19 +219,70 @@ vent et peut le traîner s'il ne l'affale pas.
   transfert, bout d'aile soulevé par une rafale ; estimations, pas des mesures) et, au décollage,
   repart de sa position au sol. Les suspentes détendues (fermeture, oreilles, mains hautes) se
   courbent et frémissent.
-- **Voile vivante** (`glider.ts` `WingDynamics`, `glider-shape.ts`) : neuf stations le long de
-  l'envergure, chacune ressort amorti en flexion, avance-recul et vrillage, couplées entre elles (une
-  rafale sous un bout d'aile s'y propage en onde ; bouts ~1,6 Hz, centre ~3 Hz), poussées par les
-  rafales aux bouts d'aile, le roulis, le lacet et la charge ; bord d'attaque qui se creuse à
-  l'approche d'une fermeture. Les fermetures balaient l'aile en ~0,15 s, le rabat claque et rebondit,
-  puis se rouvre vers le bout avec un coup vers l'avant ; oreilles repliées presque à la verticale ;
-  au gonflage, caissons remplis du centre vers les bouts, bouts en retard. **Tissu simulé dans
-  Blender** (`scripts/blender/canopy-sim.py`, sans interface, relançable ; forme exportée par
+- **Voile vivante** (`glider.ts` `WingDynamics`, `glider-shape.ts`, `glider-wing.ts`,
+  `glider-lines.ts`). *Pourquoi pas une simulation de tissu complète* : deux peaux de 50 caissons,
+  les nervures et le contact du tissu sur lui-même dans une fermeture, c'est ~20 000 nœuds et des
+  millisecondes par image, même sur GPU, pour un budget de ~0,1 ms de CPU et ~0,35 ms de GPU par
+  planeur. Or le ripstop (~40 g/m²) s'allonge de moins de 1 % sous la pression interne
+  (q·Cp ≈ 60–90 Pa en vol droit, q = ½ρV² ≈ 65 Pa à 38 km/h) : tant que les caissons sont pleins,
+  la forme est celle de la coupe, et tout ce qui bouge vit le long de l'envergure. D'où un modèle
+  réduit : la forme analytique et la base Blender (ci-dessous) pour le tissu gonflé, et, à
+  **17 stations** le long de l'envergure, une poignée de ressorts sur le CPU :
+  - *le corps de l'aile* : flexion, avance-recul et vrillage de chaque station, couplés (une rafale
+    sous un bout d'aile s'y propage en onde ; bouts ~1,6 Hz, centre ~3 Hz), poussés par les
+    rafales aux bouts d'aile, le roulis, le lacet et la charge ;
+  - *la pression interne* de chaque caisson (part de celle du vol droit) : vers (V/V₀)² fois ce
+    que capte l'entrée d'air (le Cp de l'entrée baisse quand l'incidence approche de la
+    fermeture : le point d'arrêt quitte l'ouverture), un peu plus sous une rafale ; remplie par
+    l'ouverture en ~0,2 s (un caisson de ~0,1 m³ par ~0,02 m² d'entrée), vidée plus vite là où le
+    bord d'attaque se replie ou rentre, égalisée avec les voisins par les ouvertures des nervures
+    (~0,1 s par station). Une partie fermée se rouvre là où la pression revient : la ligne de
+    pliage ne repart vers le bout qu'aussi loin que les caissons sont regonflés, **du centre vers
+    l'extérieur** (description EN 926-2 de la réouverture) ;
+  - *le bord de fuite* : derrière les C, le tissu n'est tenu que par les freins, ressort léger et
+    peu amorti (~5–6,5 Hz) secoué par l'air (bruit qui croît avec la vitesse, la turbulence et les
+    incidents), couplé le long de l'envergure : il vibre (quelques mm en air calme, quelques cm en
+    turbulence forte), festonné entre les pattes de frein qui le tiennent ; le stabilo, nageoire de
+    tissu sous le bout, bat avec lui et traîne derrière une poussée ;
+  - *la partie fermée* bat dans le sillage (ressort plus lent secoué tant qu'elle est pliée, ondes
+    le long du rabat), se froisse en plis en accordéon (~0,55 m) et son arrière traîne vers
+    l'arrière ; *une frontale* rentre le bord d'attaque d'abord au centre, les bouts ~0,1 s après,
+    la ligne de pliage ondulant.
+
+  Le shader traduit la pression : sous la moitié de celle du vol droit, le caisson s'aplatit
+  (l'intrados remonte vers l'extrados tenu par la dépression au-dessus), le gonflement entre
+  nervures disparaît, le nez s'enfonce et le tissu se froisse ; le bord d'attaque se creuse aussi
+  à l'approche d'une fermeture (marge d'incidence). Les **plis de tension** sont dessinés au
+  pixel, en perturbant la normale (aucun sommet ne porterait des plis à quelques centimètres) :
+  sous chaque patte des rangées A, B et C, un petit cône tiré vers la suspente et des plis le long
+  des diagonales internes et de la nervure, plus marqués avec la charge ; aux pattes de frein, un
+  éventail de plis vers l'avant avec le frein ; partout où le tissu est mou (fermeture, frontale,
+  au sol avant le gonflage) un froissé qui frémit ; chaque octave s'efface avant d'être plus fine
+  que quelques pixels, et les plis disparaissent quand un caisson ne fait plus que quelques pixels
+  (ni plis ni calcul au-delà de ~150 m ; pas de plis sur téléphone). Les fermetures balaient l'aile
+  en ~0,15 s, le rabat claque et rebondit, puis se rouvre avec un coup vers l'avant ; oreilles
+  repliées presque à la verticale et battantes ; au gonflage, caissons remplis du centre vers les
+  bouts, bouts en retard. **Suspentes** : une suspente plus courte que sa longueur au repos (moins
+  ~1 % d'allongement sous charge) se détend, s'arque vers l'arrière et frémit, une longue ondule en
+  S, et les nœuds d'une cascade détendue dérivent vers l'arrière ; ces arcs sont des ressorts
+  (~5 Hz la suspente, ~3 Hz le nœud, peu amortis : ~1 g/m de Dyneema) : une suspente qui se
+  retend claque au-delà de sa ligne et vibre. **Tissu simulé dans Blender**
+  (`scripts/blender/canopy-sim.py`, sans interface, relançable ; forme exportée par
   `canopy-export.ts` avec le code du jeu) : voile fermée sous pression (65 Pa), nervures tenues, à
   quatre niveaux de frein ; ses écarts à la forme du jeu (caissons bombés, bord de fuite festonné
   entre les pattes de frein) forment une base de 60 ko (`public/data/canopy-basis.bin`, int8) que le
-  shader mélange selon le frein de chaque côté, chargée en arrière-plan. Coût : GPU de l'aile 0,117 →
-  0,135 ms, CPU 0,031 → 0,034 ms par planeur ; dynamique coupée au-delà de 150 m.
+  shader mélange selon le frein de chaque côté, chargée en arrière-plan. Elle n'a pas d'états
+  « fermeture » : un pli passe par la flexion des nervures elles-mêmes et le contact du tissu
+  (hors de portée de ce montage à nervures tenues), et une table de poses ne suivrait pas une
+  ligne de pliage continue (côté, taille, angle, battement) ; la pression qui baisse ne change la
+  forme gonflée qu'au voisinage de zéro, là où le froissé procédural prend le relais. La forme à
+  pression nominale est inchangée : la base reste valable. Coût (banc `scripts/dev/wing-bench.ts`,
+  M1 Pro, `--lab --before` : l'aile seule, ancienne et nouvelle mesurées en alternance) : GPU de
+  l'aile proche à 1280 × 800 px, vue pilote levée vers l'aile 0,10–0,20 → 0,15–0,29 ms, de dehors
+  0,09–0,13 → 0,12–0,17 ms ; en Retina (2560 × 1600 px) vue pilote 0,25–0,50 → 0,35–0,66 ms (dont
+  ~0,1 ms pour les plis) ; CPU d'une mise à jour complète du planeur (dynamique, suspentes, pilote)
+  0,03–0,04 → 0,035–0,06 ms (le plus en fermeture) ; au-delà de 150 m rien ne change (ni
+  dynamique, ni plis).
 - **Météo** : réglée à la main, aléatoire selon la saison (puis elle évolue), ou **météo du jour**
   (`forecast.ts`) : la prévision AROME au décollage pour aujourd'hui donne le vent aux crêtes, la
   masse d'air par le gradient 850–700 hPa (3 °C/km → stable, 9 → très instable) et l'humidité par

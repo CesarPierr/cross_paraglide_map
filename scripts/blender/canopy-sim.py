@@ -16,6 +16,16 @@ int8 with a scale per level.
 
 File layout (little endian): 'CNB1', u16 cols, u16 rows, u16 levels, u16 0, f32 brake[levels],
 f32 scale[levels], then int8 [level][col][row][xyz] (offset = value / 127 * scale, metres).
+
+Only the pressurised wing is simulated here, per brake level. What moves (the span's heave,
+surge and twist, the cells' internal pressure, the trailing edge's flutter, the folds) is the
+game's reduced model (glider.ts WingDynamics, glider-shape.ts): a collapse bends the ribs
+themselves and folds the fabric onto itself (contact), which this rig of held ribs cannot do,
+and a table of baked folds could not follow a fold line that moves continuously (side, size,
+angle, flapping). Nor would lower pressures add much: ripstop stretches < 1 % at 65 Pa, so the
+inflated shape is the cut's down to a small fraction of the pressure, and the cells' buckling
+near zero is drawn procedurally. The game's shape at full pressure is unchanged by the fabric
+model, so this basis stays valid; rerun it only when the shape (glider-shape.ts) changes.
 """
 import json
 import struct

@@ -2,7 +2,9 @@
  * The canopy mesh: cells with their ballooning, the airfoil, closed tips and stabilos,
  * deformed on the GPU from a few uniforms (glider-shape.ts) and, near the camera, the
  * offsets of a cloth simulation of the skins (Blender, per brake level, loaded in the
- * background), its normals taken by finite differences of the deformed surface. The fragment shader draws a modern design (two
+ * background), its normals taken by finite differences of the deformed surface. The fragment
+ * shader adds the fabric's wrinkles (line tabs, brake tabs, slack fabric: `fabricH`, at the
+ * near level on computers), draws a modern design (two
  * colours, a swoosh, pinstripe, dark tips), the seams and the cell openings, lights the
  * coated ripstop (wrapped diffuse, satin sheen) and lets the sun through: seen from below
  * the wing glows with the colours of both skins, the ribs, seams and diagonal tapes inside
@@ -17,12 +19,15 @@ export interface WingRes {
   seg: number;
   prof: number;
   balloon: boolean;
+  /** The fabric's wrinkles in the fragment shader (line tabs, brake tabs, slack fabric). */
+  wrinkles: boolean;
 }
 
-export const WING_HIGH: WingRes = { cells: N_CELLS, seg: 4, prof: 41, balloon: true };
-export const WING_PHONE: WingRes = { cells: N_CELLS, seg: 2, prof: 29, balloon: true };
-export const WING_LOW: WingRes = { cells: 20, seg: 1, prof: 15, balloon: false };
-export const WING_MIN: WingRes = { cells: 10, seg: 1, prof: 9, balloon: false };
+export const WING_HIGH: WingRes = { cells: N_CELLS, seg: 4, prof: 41, balloon: true, wrinkles: true };
+/** Phones: the cells' shape and motion, not the wrinkles (a fullscreen wing's pixels are the cost there). */
+export const WING_PHONE: WingRes = { cells: N_CELLS, seg: 2, prof: 29, balloon: true, wrinkles: false };
+export const WING_LOW: WingRes = { cells: 20, seg: 1, prof: 15, balloon: false, wrinkles: false };
+export const WING_MIN: WingRes = { cells: 10, seg: 1, prof: 9, balloon: false, wrinkles: false };
 
 const cache = new Map<string, THREE.BufferGeometry>();
 
@@ -112,6 +117,8 @@ varying float vKind;
 varying vec3 vN;
 varying vec3 vView;
 varying float vFold;
+varying float vSoft;
+varying float vCh;
 ${WING_GLSL}
 void main() {
   float a = aP.x;
@@ -121,8 +128,11 @@ void main() {
   float kind = aK.x;
   float cw = aK.y;
   wFoldWeight = 0.0;
+  wSoft = 0.0;
   vec3 P = wingPos(a, tw, v, w, kind, cw);
   vFold = wFoldWeight;
+  vSoft = wSoft;
+  vCh = chordAt(a);
   vec3 n;
   float dt = 0.02;
   float st = tw + dt <= 1.0 ? 1.0 : -1.0;
@@ -155,13 +165,91 @@ uniform vec3 uSecond;
 uniform vec3 uAccent;
 uniform vec3 uUnder;
 uniform float uTrans;
+uniform vec4 uBrake;
+uniform vec4 uAir;
 varying vec4 vP;
 varying float vKind;
 varying vec3 vN;
 varying vec3 vView;
 varying float vFold;
+varying float vSoft;
+varying float vCh;
 #include <common>
 #include <lights_pars_begin>
+
+/**
+ * What the tension does to the fabric, as a height (m) along the skin's normal, drawn by
+ * perturbing the normal (no vertex could carry wrinkles a few centimetres apart). A membrane
+ * pulled at a point wrinkles along the pull and buckles across it (tension-field theory):
+ * - under every line tab of the lower skin (A, B, C rows on every second rib) a small cone
+ *   pulled down towards the line and creases running from it along the diagonal tapes inside
+ *   (towards the neighbouring ribs) and along the rib, deeper with the load;
+ * - at the brake tabs on the trailing edge a fan of creases running forwards, with the brake;
+ * - where the cells lose their pressure (a collapse, a frontal, the take-off) and on a folded
+ *   part, the slack fabric crumples, and shivers.
+ * kr: position in ribs from the centre; cv: position across the cell.
+ */
+// Smooth bumps with compact support (cheaper than exp): 1 at 0, 0 beyond w.
+float bump2(float x2, float w2) {
+  float t = max(0.0, 1.0 - x2 / w2);
+  return t * t;
+}
+float fabricH(float a, float c, bool upper, float kr, float kind, float pm) {
+  float ch = vCh;
+  float cw = ${(HALF_SPAN * 0.942 / ((N_CELLS / 2) * Math.sin(0.942))).toFixed(6)} * cos(${(0.942 / (N_CELLS / 2)).toFixed(6)} * kr);
+  float h = 0.0;
+  float load = clamp(uAir.x, 0.0, 2.5);
+  float sl = max(vSoft, vFold);
+  if (!upper && kind < 0.5 && kr < 24.0) {
+    float dx = (kr - (2.0 * floor(kr * 0.5) + 1.0)) * cw;
+    float d1 = c - 0.11;
+    float d2 = c - 0.37;
+    float d3 = c - 0.66;
+    float dc = abs(d1) < abs(d2) ? d1 : d2;
+    dc = abs(d3) < abs(dc) ? d3 : dc;
+    vec2 q = vec2(dx, dc * ch * 0.75);
+    float r2 = dot(q, q);
+    if (r2 < 0.12) {
+      // Ridges along rays from the tab: the diagonals (one cell across, ~0.1 chord along) and the rib.
+      vec2 dg = normalize(vec2(cw, 0.1 * ch));
+      vec2 aq = abs(q);
+      float along = dot(aq, dg);
+      float perp = dg.x * aq.y - dg.y * aq.x;
+      float rid = bump2(perp * perp, 0.00025) * smoothstep(0.01, 0.035, along) * bump2(along * along, 0.11);
+      rid += 0.7 * bump2(q.x * q.x, 0.00016) * smoothstep(0.01, 0.03, aq.y) * bump2(aq.y * aq.y, 0.07);
+      h += load * (1.0 - sl) * (0.0022 * rid - 0.005 * bump2(r2, 0.006));
+    }
+  }
+  float br = a < 0.0 ? uBrake.x : uBrake.y;
+  if (br > 0.01 && c > 0.35 && kind < 0.5) {
+    float dx = (kr - 2.0 * floor(kr * 0.5 + 0.5)) * cw;
+    float dy = (1.0 - c) * ch;
+    float r = length(vec2(dx, dy));
+    float th = atan(dx, dy + 0.03);
+    h += br * 0.006 * sin(6.0 * th) * smoothstep(0.02, 0.15, r) * bump2(r * r, 2.0);
+  }
+  if (sl > 0.01) {
+    float X = a * ${HALF_SPAN.toFixed(2)};
+    float Y = c * ch;
+    float t = uBrake.w;
+    // Each octave faded out before it is finer than ~4 pixels (no glitter on a far or grazing fold).
+    float o1 = 1.0 - smoothstep(0.08, 0.25, pm * 7.0);
+    float o2 = 1.0 - smoothstep(0.08, 0.25, pm * 17.0);
+    h += sl * 0.004 * (o1 * sin(X * 41.0 + Y * 13.0 + 2.0 * sin(Y * 23.0 + t * 2.1)) * sin(Y * 37.0 - X * 17.0 + t * 1.3) + o2 * 0.45 * sin(X * 83.0 - Y * 61.0 + t * 3.7));
+  }
+  return h;
+}
+
+/** The normal of the surface displaced by a height h (Mikkelsen's surface gradient, from screen derivatives). */
+vec3 bumped(vec3 N, vec3 p, float h) {
+  vec3 sx = dFdx(p);
+  vec3 sy = dFdy(p);
+  vec3 r1 = cross(sy, N);
+  vec3 r2 = cross(N, sx);
+  float det = dot(sx, r1);
+  vec3 g = sign(det) * (dFdx(h) * r1 + dFdy(h) * r2);
+  return normalize(abs(det) * N - g);
+}
 
 // Anti-aliased step at 0 and band of half width h around 0 (fades out below a pixel).
 float edgeAA(float d) {
@@ -225,6 +313,16 @@ void main() {
   if (vKind < 0.5) {
     if (!gl_FrontFacing) N = -N;
   } else if (dot(N, V) < 0.0) N = -N;
+  // The fabric's wrinkles, faded out where a cell is only a few pixels wide (the screen
+  // derivatives taken here, outside any branch: metres per pixel along the span and the chord).
+#ifdef NO_WRINKLES
+  float fh = 0.0;
+#else
+  float fine = 1.0 - smoothstep(0.06, 0.25, fwidth(kr));
+  float pm = max(fwidth(a * ${HALF_SPAN.toFixed(2)}), fwidth(c * vCh));
+  float fh = fine > 0.0 ? fabricH(a, c, upper, kr, vKind, pm) * fine : 0.0;
+  N = bumped(N, -vView, fh);
+#endif
   vec3 L = vec3(0.0, 1.0, 0.0);
   vec3 sunC = vec3(0.0);
 #if NUM_DIR_LIGHTS > 0
@@ -245,7 +343,9 @@ void main() {
   float ndu = dot(N, U);
   float diff = max(0.0, (ndl + 0.1) / 1.1) * shade;
   vec3 hemi = mix(gndC, skyC, 0.5 * ndu + 0.5);
-  float ao = 0.76 + 0.24 * smoothstep(0.0, 0.3, rd);
+  // Creases: more fabric across the light, a little shade in the folds.
+  float crease = 1.0 - clamp(abs(fh) * 55.0, 0.0, 0.35);
+  float ao = (0.76 + 0.24 * smoothstep(0.0, 0.3, rd)) * (0.85 + 0.15 * crease);
   vec3 col = albedo * RECIPROCAL_PI * (sunC * diff + hemi * ao);
   // Satin sheen of the coated ripstop.
   vec3 Hv = normalize(L + V);
@@ -256,7 +356,7 @@ void main() {
   float x = mod(cell, 2.0) > 0.5 ? cv : 1.0 - cv;
   float diag = max(max(bandAA(c - (0.11 + 0.1 * x), 0.004), bandAA(c - (0.37 - 0.12 * x), 0.004)), max(bandAA(c - (0.37 + 0.1 * x), 0.004), bandAA(c - (0.66 - 0.12 * x), 0.004)));
   // Thicker light path near the ribs, the cell glowing most in its middle.
-  float tShade = (0.3 + 0.7 * smoothstep(0.0, 0.06, rd)) * (0.72 + 0.28 * sin(PI * cv)) * (1.0 - 0.22 * diag) * (1.0 - 0.5 * seam);
+  float tShade = (0.3 + 0.7 * smoothstep(0.0, 0.06, rd)) * (0.72 + 0.28 * sin(PI * cv)) * (1.0 - 0.22 * diag) * (1.0 - 0.5 * seam) * crease;
   float back = max(0.0, -ndl) * shade;
   float fwd = pow(max(0.0, dot(-V, L)), 8.0);
   vec3 tcol = colUp * colLo;
@@ -346,6 +446,9 @@ export interface WingUniforms {
   uUp: { value: THREE.Vector3 };
   /** The canopy's own motion per span station (WingDeform.dyn). */
   uDyn: { value: Float32Array };
+  /** The fabric's state per span station (WingDeform.fab) and the air (WingDeform.air). */
+  uFab: { value: Float32Array };
+  uAir: { value: THREE.Vector4 };
   uMain: { value: THREE.Color };
   uSecond: { value: THREE.Color };
   uAccent: { value: THREE.Color };
@@ -362,6 +465,8 @@ export function wingUniforms(colors: { main: number; stripe: number; under: numb
     uInfl: { value: new THREE.Vector4(1, 0, 0, -100) },
     uUp: { value: new THREE.Vector3(0, 1, 0) },
     uDyn: { value: new Float32Array(DYN_N * 4) },
+    uFab: { value: newDeform().fab },
+    uAir: { value: new THREE.Vector4(1, 0, 0, 0) },
     uMain: { value: new THREE.Color(colors.main) },
     uSecond: { value: new THREE.Color(colors.stripe) },
     uAccent: { value: new THREE.Color(colors.accent ?? 0x23262e) },
@@ -370,14 +475,17 @@ export function wingUniforms(colors: { main: number; stripe: number; under: numb
   };
 }
 
-export function wingMaterial(u: WingUniforms, balloon: boolean): THREE.ShaderMaterial {
+export function wingMaterial(u: WingUniforms, balloon: boolean, wrinkles = false): THREE.ShaderMaterial {
+  const defines: Record<string, string> = {};
+  if (!balloon) defines.NO_BALLOON = '';
+  if (!wrinkles) defines.NO_WRINKLES = '';
   const m = new THREE.ShaderMaterial({
     uniforms: THREE.UniformsUtils.merge([THREE.UniformsLib.lights]),
     vertexShader: VERT,
     fragmentShader: FRAG,
     lights: true,
     side: THREE.DoubleSide,
-    defines: balloon ? {} : { NO_BALLOON: '' },
+    defines,
   });
   // Shared objects: one write per frame updates every level (the basis: every glider).
   Object.assign(m.uniforms, u, basis);

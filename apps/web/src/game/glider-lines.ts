@@ -8,9 +8,13 @@
  * every frame from the deformed wing (glider-shape.ts), without allocation.
  *
  * A line shorter than its rest length is slack: it bows back in the airflow (and a little
- * down), as a parabola whose arc keeps the rest length, and flutters. That happens to the
- * lines of a folded part (collapse, big ears), to the brake lines hands up (~10 cm of free
- * travel before the trailing edge moves), and to the speed lines with the bar released.
+ * down), as a parabola whose arc keeps the rest length, and flutters; a long one also
+ * snakes (an S across it). That happens to the lines of a folded part (collapse, big ears),
+ * to the brake lines hands up (~10 cm of free travel before the trailing edge moves), and to
+ * the speed lines with the bar released. A slack cascade's junctions drift back with them.
+ * The bows are springs (~5 Hz for a line, ~3 Hz for a junction, lightly damped: a Dyneema
+ * line of a millimetre weighs ~1 g/m and the air hardly damps it): a line pulled taut again
+ * snaps straight past its course and twangs.
  * Each line is lit as a thin cylinder seen from the camera: bright when its lit side faces
  * the eye, dark against the sun or seen from below (lit by the ground).
  */
@@ -45,6 +49,10 @@ interface Junction {
   kids: number[];
   anchor: number;
   f: number;
+  /** Rest distance from the anchor to the kids' mean; the junction's drift (m) and its rate. */
+  rest: number;
+  off: number;
+  offV: number;
 }
 /** How a line goes slack: from its rest length (kind 0), brake (1: free travel hands up), speed system (2: bar released). */
 type Slack = 0 | 1 | 2;
@@ -60,6 +68,9 @@ interface Seg {
   /** Brake and speed lines: slack (m) with the hands up or the bar released. */
   free: number;
   side: number;
+  /** The bow drawn (m) and its rate. */
+  bow: number;
+  bowV: number;
 }
 
 const COL = {
@@ -171,6 +182,14 @@ void main() {
 const tmpV4 = new THREE.Vector4();
 
 /**
+ * One implicit Euler step of a damped spring towards `target` (angular frequency w, damping
+ * z): the new rate (the position then moves by rate × h). Stable whatever the step.
+ */
+function springV(x: number, v: number, target: number, w: number, z: number, h: number): number {
+  return (v + h * w * w * (target - x)) / (1 + 2 * z * w * h + w * w * h * h);
+}
+
+/**
  * The camera's centre in the space before the projection (the null space of the
  * projection's rows x, y and w: the origin for a perspective camera, elsewhere for the
  * map's camera, whose projection includes its view).
@@ -238,10 +257,10 @@ export class LineSet {
     const anchor = (side: number, id: Anchor) => this.anchor0 + (side < 0 ? 0 : N_ANCHORS) + id;
     this.junction0 = this.anchor0 + 2 * N_ANCHORS;
     const junction = (kids: number[], anc: number, f: number) => {
-      this.junctions.push({ kids, anchor: anc, f });
+      this.junctions.push({ kids, anchor: anc, f, rest: 0, off: 0, offV: 0 });
       return this.junction0 + this.junctions.length - 1;
     };
-    const seg = (side: number, p: number, q: number, width: number, floor: number, color: number, n: number, slack: Slack = 0, free = 0) => this.segs.push({ side, p, q, width, floor, color, n: high ? n : 1, slack, free });
+    const seg = (side: number, p: number, q: number, width: number, floor: number, color: number, n: number, slack: Slack = 0, free = 0) => this.segs.push({ side, p, q, width, floor, color, n: high ? n : 1, slack, free, bow: 0, bowV: 0 });
     sides.forEach((s, si) => {
       const rows = rowAtt[si];
       rows.forEach((ids, r) => {
@@ -331,7 +350,8 @@ export class LineSet {
     };
     // Rest lengths: the flying wing, the risers at rest, hands up.
     for (const s of sides) REST_ANCHORS.forEach(([x, y, z], id) => this.setAnchor(s, id as Anchor, s * x, y, z));
-    this.place(newDeform());
+    this.place(newDeform(), 0);
+    for (const J of this.junctions) J.rest = this.spread(J);
     for (let i = 0; i < this.segs.length; i++) {
       const s = this.segs[i];
       this.rest[i] = Math.hypot(this.pts[s.q * 3] - this.pts[s.p * 3], this.pts[s.q * 3 + 1] - this.pts[s.p * 3 + 1], this.pts[s.q * 3 + 2] - this.pts[s.p * 3 + 2]);
@@ -349,9 +369,34 @@ export class LineSet {
     this.pts[i + 2] = z;
   }
 
-  /** The attachment points on the deformed wing and the cascade's junctions. */
-  private place(d: WingDeform): void {
+  /** Distance from a junction's anchor to the mean of its kids (the points placed so far). */
+  private spread(J: Junction): number {
     const pts = this.pts;
+    let mx = 0;
+    let my = 0;
+    let mz = 0;
+    for (let k = 0; k < J.kids.length; k++) {
+      const q = J.kids[k] * 3;
+      mx += pts[q];
+      my += pts[q + 1];
+      mz += pts[q + 2];
+    }
+    const n = J.kids.length;
+    const a = J.anchor * 3;
+    return Math.hypot(mx / n - pts[a], my / n - pts[a + 1], mz / n - pts[a + 2]);
+  }
+
+  /** Last time seen (WingDeform.brake[3]) for the springs' step; NaN before the first update. */
+  private time = NaN;
+
+  /**
+   * The attachment points on the deformed wing and the cascade's junctions; `h` (s) steps the
+   * junctions' drift (0: placed at once where it settles).
+   */
+  private place(d: WingDeform, h: number): void {
+    const pts = this.pts;
+    // Loaded lines are stretched (~1 % at trim): a small shortening only relaxes them.
+    const pre = 0.01 * Math.min(2, Math.max(0, d.air[0]));
     const p = this.p;
     for (let i = 0; i < this.refs.length; i++) {
       const r = this.refs[i];
@@ -374,19 +419,71 @@ export class LineSet {
       const n = J.kids.length;
       const a = J.anchor * 3;
       const o = (this.junction0 + j) * 3;
-      pts[o] = pts[a] + J.f * (mx / n - pts[a]);
-      pts[o + 1] = pts[a + 1] + J.f * (my / n - pts[a + 1]);
-      pts[o + 2] = pts[a + 2] + J.f * (mz / n - pts[a + 2]);
+      const ex = mx / n - pts[a];
+      const ey = my / n - pts[a + 1];
+      const ez = mz / n - pts[a + 2];
+      pts[o] = pts[a] + J.f * ex;
+      pts[o + 1] = pts[a + 1] + J.f * ey;
+      pts[o + 2] = pts[a + 2] + J.f * ez;
+      // A slack cascade: its lines no longer reach that far, the junction drifts back (and a
+      // little down) in the airflow, as the apex of the two lines' triangle.
+      if (J.rest > 0) {
+        const D = Math.hypot(ex, ey, ez);
+        const R = J.rest * (1 - pre);
+        const target = D < R ? Math.min(0.8 * J.f * (1 - J.f) * Math.sqrt(R * R - D * D), 0.1 * J.rest) : 0;
+        if (h > 0) {
+          const hs = h / 2;
+          for (let k = 0; k < 2; k++) {
+            J.offV = springV(J.off, J.offV, target, 2 * Math.PI * 3, 0.3, hs);
+            J.off += J.offV * hs;
+          }
+          J.off = Math.max(-0.05 * J.rest, J.off);
+        } else {
+          J.off = target;
+          J.offV = 0;
+        }
+        if (Math.abs(J.off) > 1e-4 && D > 1e-3) {
+          // Back and down, square to the anchor–kids axis, swaying a little.
+          const inv = 1 / D;
+          const tx = ex * inv;
+          const ty = ey * inv;
+          const tz = ez * inv;
+          let dx = 0.3 * Math.sin(this.time * 2.3 + j * 1.9);
+          let dy = -0.3;
+          let dz = 1;
+          const dt = dx * tx + dy * ty + dz * tz;
+          dx -= dt * tx;
+          dy -= dt * ty;
+          dz -= dt * tz;
+          const dl = Math.hypot(dx, dy, dz);
+          if (dl > 1e-4) {
+            const k = J.off / dl;
+            pts[o] += dx * k;
+            pts[o + 1] += dy * k;
+            pts[o + 2] += dz * k;
+          }
+        }
+      }
     }
   }
 
-  /** Recomputes the attachment points on the deformed wing, the cascade and the ribbons. */
+  /**
+   * Recomputes the attachment points on the deformed wing, the cascade and the ribbons. The
+   * springs step by the time elapsed since the last call (WingDeform.brake[3]); when it did
+   * not move (a still picture, the tests) every bow is drawn where it settles.
+   */
   update(d: WingDeform): void {
-    this.place(d);
+    const time = d.brake[3];
+    const step = Number.isNaN(this.time) ? 0 : Math.min(0.1, Math.max(0, time - this.time));
+    this.time = time;
+    // Two implicit steps per frame for the springs: stable at any frame rate, ~1/120 s at 60 Hz.
+    const nSub = step > 0 ? 2 : 0;
+    const h = step / 2;
+    this.place(d, step);
+    const pre = 0.01 * Math.min(2, Math.max(0, d.air[0]));
     const pts = this.pts;
     const pos = this.pos;
     const end = this.end;
-    const time = d.brake[3];
     let piece = 0;
     for (let i = 0; i < this.segs.length; i++) {
       const s = this.segs[i];
@@ -400,23 +497,45 @@ export class LineSet {
       const ez = pts[b + 2] - az;
       // Bow of a slack line: the parabola whose arc is the rest length, back in the airflow.
       let sag = 0;
+      let snake = 0;
       let sx = 0;
       let sy = 0;
       let sz = 0;
+      let qx = 0;
+      let qy = 0;
+      let qz = 0;
       if (s.n > 1) {
         const L = Math.hypot(ex, ey, ez);
         let free: number;
-        if (s.slack === 0) free = this.rest[i] - L;
+        if (s.slack === 0) free = this.rest[i] * (1 - pre) - L;
         else if (s.slack === 1) {
           const br = s.side < 0 ? d.brake[0] : d.brake[1];
           const t = Math.min(1, br / 0.15);
           free = (s.free + 0.002 * L) * (1 - t * t * (3 - 2 * t));
         } else free = s.free * (1 - Math.min(1, d.brake[2] * 3));
+        const ph = time * (7 + (i % 5)) + i * 1.7;
+        let target = 0;
         if (free > 1e-4 && L > 1e-3) {
-          sag = Math.min(Math.sqrt((3 * L * free) / 8), 0.3 * L);
+          target = Math.min(Math.sqrt((3 * L * free) / 8), 0.3 * L);
           // Fluttering: the bow breathes and swings a little.
-          const ph = time * (7 + (i % 5)) + i * 1.7;
-          sag *= 1 + 0.12 * Math.sin(ph);
+          target *= 1 + 0.12 * Math.sin(ph);
+        }
+        // The bow follows as a spring: it grows as the line slackens, and a line pulled taut
+        // snaps through straight and twangs.
+        if (nSub) {
+          for (let k = 0; k < nSub; k++) {
+            s.bowV = springV(s.bow, s.bowV, target, 2 * Math.PI * 5, 0.22, h);
+            s.bow += s.bowV * h;
+          }
+          s.bow = Math.max(-0.08 * L, Math.min(0.32 * L, s.bow));
+        } else {
+          s.bow = target;
+          s.bowV = 0;
+        }
+        sag = Math.abs(s.bow) > 1e-4 ? s.bow : 0;
+        if (sag !== 0 && L > 1e-3) {
+          // A long slack line snakes: an S across its bow, waving.
+          snake = s.n >= 3 ? 0.35 * Math.max(0, sag) * Math.sin(ph * 0.9 + i) : 0;
           const inv = 1 / L;
           const tx = ex * inv;
           const ty = ey * inv;
@@ -434,20 +553,26 @@ export class LineSet {
             sx = (dx / dl) * sag;
             sy = (dy / dl) * sag;
             sz = (dz / dl) * sag;
+            // Sideways: square to the line and to its bow.
+            qx = (ty * dz - tz * dy) / dl;
+            qy = (tz * dx - tx * dz) / dl;
+            qz = (tx * dy - ty * dx) / dl;
           } else sag = 0;
         }
       }
       for (let j = 0; j < s.n; j++, piece++) {
         const t0 = j / s.n;
         const t1 = (j + 1) / s.n;
-        const b0 = sag > 0 ? 4 * t0 * (1 - t0) : 0;
-        const b1 = sag > 0 ? 4 * t1 * (1 - t1) : 0;
-        const x0 = ax + ex * t0 + sx * b0;
-        const y0 = ay + ey * t0 + sy * b0;
-        const z0 = az + ez * t0 + sz * b0;
-        const x1 = ax + ex * t1 + sx * b1;
-        const y1 = ay + ey * t1 + sy * b1;
-        const z1 = az + ez * t1 + sz * b1;
+        const b0 = sag !== 0 ? 4 * t0 * (1 - t0) : 0;
+        const b1 = sag !== 0 ? 4 * t1 * (1 - t1) : 0;
+        const s0 = snake !== 0 ? snake * Math.sin(2 * Math.PI * t0) : 0;
+        const s1 = snake !== 0 ? snake * Math.sin(2 * Math.PI * t1) : 0;
+        const x0 = ax + ex * t0 + sx * b0 + qx * s0;
+        const y0 = ay + ey * t0 + sy * b0 + qy * s0;
+        const z0 = az + ez * t0 + sz * b0 + qz * s0;
+        const x1 = ax + ex * t1 + sx * b1 + qx * s1;
+        const y1 = ay + ey * t1 + sy * b1 + qy * s1;
+        const z1 = az + ez * t1 + sz * b1 + qz * s1;
         for (let k = 0; k < 4; k++) {
           const o = (piece * 4 + k) * 3;
           pos[o] = x0;

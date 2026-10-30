@@ -372,6 +372,114 @@ describe("the canopy's own motion", () => {
   });
 });
 
+describe('the fabric under pressure', () => {
+  const pres = (dyn: WingDynamics, k: number) => dyn.fab[k * 4];
+  const centre = (DYN_N - 1) / 2;
+
+  it('keeps the cells full in steady flight, softer at low speed', () => {
+    const dyn = new WingDynamics();
+    const d = newDeform();
+    for (let i = 0; i < 120; i++) dyn.update(still({ airspeed: 10.5 }), d, 1 / 60);
+    for (let k = 0; k < DYN_N; k++) expect(pres(dyn, k)).toBeCloseTo(1, 1);
+    // Pressure ∝ q: at ~26 km/h about half the trim's.
+    for (let i = 0; i < 120; i++) dyn.update(still({ airspeed: 7.3 }), d, 1 / 60);
+    expect(pres(dyn, centre)).toBeGreaterThan(0.4);
+    expect(pres(dyn, centre)).toBeLessThan(0.6);
+  });
+
+  it('empties a folded part and refills it from the centre outwards as it reopens', () => {
+    const glider = buildGlider(undefined, { lod: 'high' });
+    const dyn = glider.dynamics!;
+    const st = still({ collapse: { side: -1, amount: 0.55, peak: 0.55, frontal: 0, cravat: 0, cravatSide: 0 } });
+    for (let i = 0; i < 60; i++) glider.update(st, 1 / 60);
+    // Left tip empty, the right side full, the centre (on the fold: 55 % of the span) in between.
+    expect(pres(dyn, 0)).toBeLessThan(0.15);
+    expect(pres(dyn, DYN_N - 1)).toBeGreaterThan(0.9);
+    expect(pres(dyn, centre + 4)).toBeGreaterThan(0.9);
+    expect(pres(dyn, centre)).toBeGreaterThan(0.4);
+    // Reopening: the time each left station gets half its pressure back grows towards the tip.
+    const back = new Array(DYN_N).fill(-1);
+    for (let i = 0; i < 300; i++) {
+      st.collapse.amount = Math.max(0, 0.55 - 0.2 * (i / 60));
+      glider.update(st, 1 / 60);
+      for (let k = 0; k < centre; k++) if (back[k] < 0 && pres(dyn, k) > 0.5) back[k] = i;
+    }
+    for (let k = 0; k < centre; k++) expect(back[k]).toBeGreaterThanOrEqual(0);
+    for (let k = 1; k < centre; k++) expect(back[k - 1]).toBeGreaterThanOrEqual(back[k]);
+    expect(back[0]).toBeGreaterThan(back[centre - 2]);
+  });
+
+  it('loses the pressure where a frontal tucks the leading edge, the centre first', () => {
+    const glider = buildGlider(undefined, { lod: 'high' });
+    const dyn = glider.dynamics!;
+    const st = still({ collapse: { side: 0, amount: 0, frontal: 0.8, cravat: 0, cravatSide: 0 } });
+    glider.update(st, 1 / 60);
+    glider.update(st, 1 / 60);
+    // The centre's tuck ahead of the tips'.
+    expect(dyn.fab[centre * 4 + 3]).toBeGreaterThan(dyn.fab[3] + 0.01);
+    for (let i = 0; i < 40; i++) glider.update(st, 1 / 60);
+    expect(pres(dyn, centre)).toBeLessThan(0.35);
+  });
+
+  it('flutters the trailing edge by millimetres in calm air, centimetres in turbulence', () => {
+    const rms = (turb: number) => {
+      const glider = buildGlider(undefined, { lod: 'high' });
+      glider.setAir(turb);
+      const dyn = glider.dynamics!;
+      let s2 = 0;
+      let n = 0;
+      for (let i = 0; i < 240; i++) {
+        glider.update(still(), 1 / 60);
+        if (i < 60) continue;
+        for (let k = 0; k < DYN_N; k++) s2 += dyn.fab[k * 4 + 1] ** 2;
+        n += DYN_N;
+      }
+      return Math.sqrt(s2 / n);
+    };
+    const calm = rms(0);
+    const rough = rms(1);
+    expect(calm).toBeGreaterThan(0.002);
+    expect(calm).toBeLessThan(0.012);
+    expect(rough).toBeGreaterThan(2.5 * calm);
+    expect(rough).toBeLessThan(0.06);
+  });
+
+  it('shakes the folded part of a collapse, not the open side', () => {
+    const glider = buildGlider(undefined, { lod: 'high' });
+    const dyn = glider.dynamics!;
+    const st = still({ collapse: { side: 1, amount: 0.5, peak: 0.5, frontal: 0, cravat: 0, cravatSide: 0 } });
+    let folded = 0;
+    let open = 0;
+    for (let i = 0; i < 120; i++) {
+      glider.update(st, 1 / 60);
+      folded = Math.max(folded, Math.abs(dyn.fab[(DYN_N - 1) * 4 + 2]));
+      open = Math.max(open, Math.abs(dyn.fab[2]));
+    }
+    expect(folded).toBeGreaterThan(0.1);
+    expect(open).toBeLessThan(0.02);
+  });
+
+  it('flattens a cell that loses its pressure: the lower skin rises, the upper one barely moves', () => {
+    const full = newDeform();
+    const empty = newDeform();
+    for (let k = 0; k < DYN_N; k++) empty.fab[k * 4] = 0;
+    const p = (d: ReturnType<typeof newDeform>, tw: number) => wingPoint(d, 0.02, tw, 0.5, 0, 0, 0.22, { x: 0, y: 0, z: 0 });
+    const lowF = p(full, -Math.sqrt(0.3));
+    const lowE = p(empty, -Math.sqrt(0.3));
+    const upF = p(full, Math.sqrt(0.3));
+    const upE = p(empty, Math.sqrt(0.3));
+    // (The slack fabric's crumple moves both skins alike at a point of the chord.)
+    expect(upE.y - lowE.y).toBeLessThan(0.75 * (upF.y - lowF.y));
+    expect(lowE.y - lowF.y).toBeGreaterThan(upE.y - upF.y + 0.03);
+    // Full: the shape the basis was simulated from (pressure 1 changes nothing).
+    const rest = wingPoint(newDeform(), 0.4, 0.3, 0.5, 0, 0, 0.2, { x: 0, y: 0, z: 0 });
+    const d = newDeform();
+    d.fab.fill(0);
+    for (let k = 0; k < DYN_N; k++) d.fab[k * 4] = 1;
+    expect(wingPoint(d, 0.4, 0.3, 0.5, 0, 0, 0.2, { x: 0, y: 0, z: 0 }).y).toBe(rest.y);
+  });
+});
+
 describe('the simulated fabric (scripts/blender/canopy-sim.py)', () => {
   const file = readFileSync(new URL('../public/data/canopy-basis.bin', import.meta.url));
   const buf = file.buffer.slice(file.byteOffset, file.byteOffset + file.byteLength);
@@ -440,6 +548,34 @@ describe('lines', () => {
     let moved = 0;
     for (let i = 0; i < slack.length; i++) if (Math.abs(slack[i] - taut[i]) > 0.05) moved++;
     expect(moved).toBeGreaterThan(20);
+  });
+
+  it('snap taut through their course and twang when a fold reopens', () => {
+    const ls = new LineSet('high');
+    const folded = newDeform();
+    folded.foldL[0] = 0.2;
+    folded.foldL[1] = 0.45;
+    folded.foldL[2] = 2.45;
+    folded.foldL[3] = 0.12;
+    const segs = (ls as unknown as { segs: { bow: number; n: number; side: number; slack: number }[] }).segs;
+    let t = 0;
+    for (let i = 0; i < 60; i++) {
+      folded.brake[3] = t += 1 / 60;
+      ls.update(folded);
+    }
+    const slack = segs.map((s) => s.bow);
+    // The fold reopens at once: the slack lines straighten past their course, then settle.
+    const open = newDeform();
+    let over = 0;
+    for (let i = 0; i < 90; i++) {
+      open.brake[3] = t += 1 / 60;
+      ls.update(open);
+      for (let k = 0; k < segs.length; k++) if (slack[k] > 0.05) over = Math.min(over, segs[k].bow);
+    }
+    expect(Math.max(...slack)).toBeGreaterThan(0.1);
+    expect(over).toBeLessThan(-0.005);
+    // (The brake lines keep their free travel hands up.)
+    for (const s of segs) if (s.side < 0 && s.n > 1 && s.slack === 0) expect(Math.abs(s.bow)).toBeLessThan(0.02);
   });
 
   it('bow the brake lines hands up and pull them straight on the brakes', () => {

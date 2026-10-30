@@ -85,7 +85,26 @@ export function basisColumn(i: number): { a: number; v: number; cw: number } {
 /** Chord positions of the line rows (A, B, C) and the trailing edge. */
 export const ROWS = [0.11, 0.37, 0.66] as const;
 
-/** Deformation state, also the shader's uniforms (same layout). */
+/**
+ * Deformation state, also the shader's uniforms (same layout).
+ *
+ * How the fabric is made to live (the architecture, see also docs/JEU.md « Voile vivante »):
+ * a full cloth simulation of a 50-cell canopy (two skins, ribs, ~20 000 nodes, self-contact
+ * in a collapse) costs milliseconds per frame even on a GPU; the budget is ~0.1 ms of CPU and
+ * ~0.35 ms of GPU per glider. The wing is therefore a reduced-order model, as the fabric's own
+ * physics allows: ripstop of ~40 g/m² stretches < 1 % under the ram-air pressure (q·Cp ≈
+ * 60–90 Pa at trim, q = ½ρV² ≈ 65 Pa at 38 km/h), so while the cells are pressurised the
+ * shape is the cut's (the analytic shape below, plus the Blender cloth's offsets per brake
+ * level for the ballooning and the scalloped trailing edge); everything that moves is
+ * low-dimensional and lives along the span: per station (DYN_N) the section's heave, surge
+ * and twist and the leading edge's dent (`dyn`), and the fabric's state (`fab`): the cells'
+ * internal pressure (filled through the openings, spread by the cross-ports, lost where the
+ * leading edge tucks), the trailing edge's flap, the folded part's own flapping and the depth
+ * of a frontal tuck (glider.ts WingDynamics, a few dozen springs on the CPU). The shader turns
+ * low pressure into soft cells (the lower skin rising, the ballooning gone, the nose sinking,
+ * the fabric crumpling) and draws the wrinkles the tension makes (line tabs, brake tabs,
+ * slack fabric) in the fragment shader, where they cost nothing on the vertices.
+ */
 export interface WingDeform {
   /** brakeL, brakeR, speedbar, time (s). */
   brake: [number, number, number, number];
@@ -104,13 +123,23 @@ export interface WingDeform {
    * nose up, about the quarter chord) and the dent of a soft leading edge 0..1.
    */
   dyn: Float32Array;
+  /**
+   * The fabric's state at the same stations: internal pressure (share of the trim's, 1 =
+   * pressurised, 0 = empty), trailing-edge flap (m, + = up along the section), the folded
+   * part's flapping (rad, added to the fold angle) and the depth of a frontal tuck 0..1.
+   */
+  fab: Float32Array;
+  /** Line tension (load factor), turbulence 0..1 (the fragment shader's wrinkles), unused, unused. */
+  air: [number, number, number, number];
 }
 
-/** Span stations of the canopy's dynamics. */
-export const DYN_N = 9;
+/** Span stations of the canopy's dynamics (both tips included: 2 per ~1.4 m of span). */
+export const DYN_N = 17;
 
 export function newDeform(): WingDeform {
-  return { brake: [0, 0, 0, 0], foldL: [2, 2, 0, 0], foldR: [2, 2, 0, 0], misc: [0, 0, 0, 0], infl: [1, 0, 0, -100], up: [0, 1, 0], dyn: new Float32Array(DYN_N * 4) };
+  const fab = new Float32Array(DYN_N * 4);
+  for (let k = 0; k < DYN_N; k++) fab[k * 4] = 1;
+  return { brake: [0, 0, 0, 0], foldL: [2, 2, 0, 0], foldR: [2, 2, 0, 0], misc: [0, 0, 0, 0], infl: [1, 0, 0, -100], up: [0, 1, 0], dyn: new Float32Array(DYN_N * 4), fab, air: [1, 0, 0, 0] };
 }
 
 const clamp = (v: number, a: number, b: number) => (v < a ? a : v > b ? b : v);
@@ -184,25 +213,38 @@ export function wingPoint(d: WingDeform, a: number, tw: number, v: number, w: nu
   const surge = mix(dy[i0 + 1], dy[i0 + 5], fs);
   const twist = mix(dy[i0 + 2], dy[i0 + 6], fs);
   const dent = mix(dy[i0 + 3], dy[i0 + 7], fs);
+  const fb = d.fab;
+  const pres = mix(fb[i0], fb[i0 + 4], fs);
+  const teFlap = mix(fb[i0 + 1], fb[i0 + 5], fs);
+  const flap = mix(fb[i0 + 2], fb[i0 + 6], fs);
+  const fr = clamp(mix(fb[i0 + 3], fb[i0 + 7], fs), 0, 1);
+  // Soft cells: the pressure no longer holds the profile (below ~half the trim's).
+  const soft = 1 - smooth(0.08, 0.6, pres);
   // Deflation: on the ground before the cells fill (leading edge first, the centre before
   // the tips), in a stall, on the inner side of a spin, next to a collapsed part.
   const fill = d.infl[0];
   let defl = mix(0.08, 1, clamp(fill * 1.4 - c * 0.4 - 0.45 * alpha * alpha * (1 - fill), 0, 1)) * (1 - 0.45 * stall) * (1 - 0.5 * Math.max(0, spin * sg) * alpha);
   if (folding) defl *= mix(1, 0.55, smooth(fe - 0.18, fe, alpha));
   let hh = profile(tw, THICK0 * (1 - 0.35 * alpha * alpha)) * ch * defl;
+  // Losing its pressure, the cell flattens: the lower skin rises towards the upper one, held
+  // up by the suction over it.
+  if (soft > 0) hh *= 1 - soft * (tw >= 0 ? 0.2 : 0.55);
   if (kind === 1) hh = mix(hh, camberLine(c) * ch * defl, w);
   let dd = (c - 0.25) * ch;
   if (kind === 0) {
     const sv = Math.sin(Math.PI * v);
-    hh += Math.sign(tw) * BAL * (tw >= 0 ? 1 : 0.6) * cw * sv * smooth(0.03, 0.15, c) * (1 - smooth(0.72, 1, c)) * defl;
+    hh += Math.sign(tw) * BAL * (tw >= 0 ? 1 : 0.6) * cw * sv * smooth(0.03, 0.15, c) * (1 - smooth(0.72, 1, c)) * defl * (0.2 + 0.8 * smooth(0.05, 0.7, pres));
     const te = Math.max(0, (c - 0.88) / 0.12);
     dd -= SCALLOP * sv * te * te;
-    // A soft leading edge (the angle of attack near the fold, a lull): the nose of each
-    // cell sinks in and wrinkles across the span before a collapse.
-    if (dent > 0.001) {
+    // A soft leading edge (the angle of attack near the fold, a lull, the pressure going):
+    // the nose of each cell sinks in and wrinkles across the span before a collapse.
+    const dn = Math.min(1, dent + 0.8 * soft);
+    if (dn > 0.001) {
       const nose = smooth(0.0, 0.04, c) * (1 - smooth(0.12, 0.3, c));
-      hh -= dent * nose * ch * (tw >= 0 ? 0.035 : -0.012) * (0.55 + 0.45 * sv);
+      hh -= dn * nose * ch * (tw >= 0 ? 0.035 : -0.012) * (0.55 + 0.45 * sv);
     }
+    // Slack fabric crumples.
+    if (soft > 0.01) hh += soft * ch * 0.016 * noise(a * 1.2, c * 1.3, time * 0.8);
   }
   // Brake: the rear of the profile curls down, more towards the tips; the trailing edge is
   // pulled at the brake tabs (every second rib) and sags less between them.
@@ -216,8 +258,10 @@ export function wingPoint(d: WingDeform, a: number, tw: number, v: number, w: nu
   }
   hh -= disp;
   dd -= (0.5 * disp * disp) / (0.58 * ch);
-  // Frontal: the front of the profile tucks under, deeper in the centre.
-  const fr = d.misc[0];
+  // The trailing edge's own flap: the rear of the section bends about ~55 % of the chord.
+  const tf = Math.max(0, (c - 0.55) / 0.45);
+  hh += teFlap * tf * tf;
+  // Frontal (its depth at this station): the front of the profile tucks under, deeper in the centre.
   if (fr > 0.001) {
     const cf = 0.12 + 0.36 * fr * (1 - 0.45 * alpha * alpha);
     if (c < cf) {
@@ -277,7 +321,8 @@ export function wingPoint(d: WingDeform, a: number, tw: number, v: number, w: nu
     const toy = sg * F.ty;
     // Arc length from the fold line, the folded fabric bunched up (more the more it crumples).
     const sb = (alpha - fe) * HALF_SPAN * (0.82 - 1.5 * fold[3]);
-    const psi = fold[2];
+    // The fold's angle and the folded part's own flapping at this station.
+    const psi = Math.max(0.002, fold[2] + flap);
     const wB = 0.4;
     const k = psi / wB;
     const th = Math.min(sb, wB) * k;
@@ -296,8 +341,10 @@ export function wingPoint(d: WingDeform, a: number, tw: number, v: number, w: nu
     const ny = hy * Math.cos(th) + toy * Math.sin(th);
     const nz = hz * Math.cos(th);
     const ramp = Math.min(1, sb / wB);
-    const hf = hh * mix(1, 0.35, ramp) + fold[3] * noise(a, c, time) * ramp;
-    const dz2 = dd + zqOf(alpha, q) - zqOf(alE, qE);
+    // The folded fabric bunches into pleats across the flap (~0.55 m apart, moving) and its
+    // rear trails back in the wake, more the further out.
+    const hf = hh * mix(1, 0.35, ramp) + fold[3] * (noise(a, c, time) + 0.9 * Math.sin(sb * 11.4 + c * 2 + time * 1.7 + 1.6 * Math.sin(sb * 3.7 - c * 3.1 + time * 0.9))) * ramp;
+    const dz2 = dd + zqOf(alpha, q) - zqOf(alE, qE) + 0.3 * Math.min(1, sb / 1.5) * c * ramp;
     px = ox + cx + nx * hf + dX * dz2;
     py = oy + cy + ny * hf + dY * dz2;
     pz = oz + cz + nz * hf + dZ * dz2;
@@ -327,6 +374,13 @@ export function wingPoint(d: WingDeform, a: number, tw: number, v: number, w: nu
       pz += -hz * 0.479 * sd;
     }
   }
+  // The stabilo, a fin of fabric under the tip, swings with the trailing edge and trails a surge.
+  if (kind === 2) {
+    const ws = w * w;
+    px += hx * teFlap * 1.8 * ws;
+    py += hy * teFlap * 1.8 * ws;
+    pz += hz * teFlap * 1.8 * ws + 0.3 * surge * ws;
+  }
   // The canopy's own motion: the section heaves along its up, surges along its chord and
   // twists about its quarter chord.
   const hd = heave - dd * twist;
@@ -349,8 +403,13 @@ export function wingPoint(d: WingDeform, a: number, tw: number, v: number, w: nu
     pz = -px * Math.sin(b) + pz * Math.cos(b);
     px = x;
   }
-  // Trailing edge flutter.
-  const fl = d.misc[1] * Math.sin(time * 19 + a * 27 + c * 6) * smooth(0.75, 1, c);
+  // Trailing edge flutter, held at the brake tabs (every second rib), free between them.
+  let fl = 0;
+  if (c > 0.75) {
+    const kr = (Math.asin(Math.min(alpha * RIB_S, 1)) / RIB_K) * (N_CELLS / 2);
+    const sk = Math.sin((Math.PI / 2) * kr);
+    fl = d.misc[1] * Math.sin(time * 19 + a * 27 + c * 6) * smooth(0.75, 1, c) * (0.35 + 0.65 * sk * sk);
+  }
   px += hx * fl;
   py += hy * fl;
   pz += hz * fl;
@@ -388,15 +447,16 @@ uniform vec4 uMisc;
 uniform vec4 uInfl;
 uniform vec3 uUp;
 uniform vec4 uDyn[${DYN_N}];
+uniform vec4 uFab[${DYN_N}];
 uniform sampler2D uBasis;
 uniform vec4 uBasisScale;
 uniform float uBasisOn;
 float wFoldWeight;
+float wSoft;
 #ifndef NO_BALLOON
 // The cloth simulation's offsets from this shape (scripts/blender/canopy-sim.py), at a brake
 // level (the four simulated ones linearly between); zero on the ribs and the line tabs.
-vec3 basisAt(float sg, float alpha, float tw, float br) {
-  float kr = asin(min(alpha * ${f(RIB_S)}, 1.0)) * ${f(N_CELLS / 2 / RIB_K)};
+vec3 basisAt(float sg, float kr, float tw, float br) {
   float x = (${f((BASIS_COLS - 1) / 2)} + sg * kr * 3.0 + 0.5) / ${f(BASIS_COLS)};
   float row = (asin(clamp(tw, -1.0, 1.0)) * ${f(2 / Math.PI)} + 1.0) * ${f((BASIS_ROWS - 1) / 2)} + 0.5;
   float b = clamp(br, 0.0, 1.0);
@@ -433,6 +493,7 @@ void arcFrame(float a, float alpha, float q, out vec2 A, out vec2 T, out vec2 N)
 }
 float stabDepth(float c) { return ${f(STAB_D)} * pow(max(0.0, 1.0 - abs(c - 0.5) / 0.42), 0.8); }
 float chordOf(float q) { return ${f(C0)} * sqrt(max(0.02, 1.0 - ${f(CK)} * q)); }
+float chordAt(float a) { return chordOf(pow(min(abs(a), 1.0), ${f(PHI_P)})); }
 float zqOf(float alpha, float q) { return ${f(ZQ0)} + ${f(SWEEP)} * alpha * q; }
 vec3 wingPos(float a, float tw, float v, float w, float kind, float cw) {
   float sg = a < 0.0 ? -1.0 : 1.0;
@@ -449,36 +510,45 @@ vec3 wingPos(float a, float tw, float v, float w, float kind, float cw) {
   float xs = (clamp(a, -1.0, 1.0) + 1.0) * ${f((DYN_N - 1) / 2)};
   int i0 = int(min(floor(xs), ${f(DYN_N - 2)}));
   vec4 dyn = mix(uDyn[i0], uDyn[i0 + 1], xs - float(i0));
+  vec4 fab = mix(uFab[i0], uFab[i0 + 1], xs - float(i0));
+  float soft = 1.0 - smoothstep(0.08, 0.6, fab.x);
+  // Slack fabric for the fragment shader's crumpled wrinkles (also the empty cells on the ground).
+  wSoft = max(soft, 1.0 - uInfl.x);
+  float kr = asin(min(alpha * ${f(RIB_S)}, 1.0)) * ${f(N_CELLS / 2 / RIB_K)};
   float fill = uInfl.x;
   float defl = mix(0.08, 1.0, clamp(fill * 1.4 - c * 0.4 - 0.45 * alpha * alpha * (1.0 - fill), 0.0, 1.0)) * (1.0 - 0.45 * stall) * (1.0 - 0.5 * max(0.0, spin * sg) * alpha);
   if (folding) defl *= mix(1.0, 0.55, smoothstep(fe - 0.18, fe, alpha));
   float tk = ${f(THICK0)} * (1.0 - 0.35 * alpha * alpha);
   float hh = profileH(tw, tk) * ch * defl;
+  if (soft > 0.0) hh *= 1.0 - soft * (tw >= 0.0 ? 0.2 : 0.55);
   if (kind > 0.5 && kind < 1.5) hh = mix(hh, camberLine(c) * ch * defl, w);
   float dd = (c - 0.25) * ch;
   if (kind < 0.5) {
 #ifndef NO_BALLOON
     float sv = sin(${f(Math.PI)} * v);
-    hh += sign(tw) * ${f(BAL)} * (tw >= 0.0 ? 1.0 : 0.6) * cw * sv * smoothstep(0.03, 0.15, c) * (1.0 - smoothstep(0.72, 1.0, c)) * defl;
+    // (Each cell a little different: the panels' tension is never quite the same.)
+    float cellVar = 0.9 + 0.2 * fract(sin(floor(kr) * 12.9898 + sg * 4.1) * 43758.5453);
+    hh += sign(tw) * ${f(BAL)} * (tw >= 0.0 ? 1.0 : 0.6) * cw * sv * smoothstep(0.03, 0.15, c) * (1.0 - smoothstep(0.72, 1.0, c)) * defl * (0.2 + 0.8 * smoothstep(0.05, 0.7, fab.x)) * cellVar;
     float te = max(0.0, (c - 0.88) / 0.12);
     dd -= ${f(SCALLOP)} * sv * te * te;
-    if (dyn.w > 0.001) {
+    float dn = min(1.0, dyn.w + 0.8 * soft);
+    if (dn > 0.001) {
       float nose = smoothstep(0.0, 0.04, c) * (1.0 - smoothstep(0.12, 0.3, c));
-      hh -= dyn.w * nose * ch * (tw >= 0.0 ? 0.035 : -0.012) * (0.55 + 0.45 * sv);
+      hh -= dn * nose * ch * (tw >= 0.0 ? 0.035 : -0.012) * (0.55 + 0.45 * sv);
     }
 #endif
+    if (soft > 0.01) hh += soft * ch * 0.016 * crumpleN(a * 1.2, c * 1.3, time * 0.8);
   }
   float br = sg < 0.0 ? uBrake.x : uBrake.y;
   float f = max(0.0, (c - 0.42) / 0.58);
   f *= f;
   float disp = ${f(BRAKE_DEF)} * br * clamp(alpha * 1.45, 0.0, 1.0) * f * sqrt(ch / ${f(C0)});
-  if (disp > 0.0) {
-    float kr = asin(min(alpha * ${f(RIB_S)}, 1.0)) * ${f(N_CELLS / 2 / RIB_K)};
-    disp *= 1.0 - 0.22 * smoothstep(0.8, 1.0, c) * (0.5 - 0.5 * cos(${f(Math.PI)} * kr));
-  }
+  if (disp > 0.0) disp *= 1.0 - 0.22 * smoothstep(0.8, 1.0, c) * (0.5 - 0.5 * cos(${f(Math.PI)} * kr));
   hh -= disp;
   dd -= 0.5 * disp * disp / (0.58 * ch);
-  float fr = uMisc.x;
+  float tf = max(0.0, (c - 0.55) / 0.45);
+  hh += fab.y * tf * tf;
+  float fr = clamp(fab.w, 0.0, 1.0);
   if (fr > 0.001) {
     float cf = 0.12 + 0.36 * fr * (1.0 - 0.45 * alpha * alpha);
     if (c < cf) {
@@ -528,7 +598,7 @@ vec3 wingPos(float a, float tw, float v, float w, float kind, float cw) {
     vec3 O = vec3(A.x + (-N.x * st0 - D.x) * piv, A.y + (-N.y * st0 - D.y) * piv, zqOf(alE, qE) + (ct0 - D.z) * piv);
     vec3 To = vec3(sg * T, 0.0);
     float sb = (alpha - fe) * ${f(HALF_SPAN)} * (0.82 - 1.5 * fold.w);
-    float psi = fold.z;
+    float psi = max(0.002, fold.z + fab.z);
     float wB = 0.4;
     float k = psi / wB;
     float th = min(sb, wB) * k;
@@ -536,8 +606,8 @@ vec3 wingPos(float a, float tw, float v, float w, float kind, float cw) {
     if (sb > wB) cv += (To * cos(psi) - H * sin(psi)) * (sb - wB);
     vec3 nr = H * cos(th) + To * sin(th);
     float ramp = min(1.0, sb / wB);
-    float hf = hh * mix(1.0, 0.35, ramp) + fold.w * crumpleN(a, c, time) * ramp;
-    P = O + cv + nr * hf + D * (dd + zqOf(alpha, q) - zqOf(alE, qE));
+    float hf = hh * mix(1.0, 0.35, ramp) + fold.w * (crumpleN(a, c, time) + 0.9 * sin(sb * 11.4 + c * 2.0 + time * 1.7 + 1.6 * sin(sb * 3.7 - c * 3.1 + time * 0.9))) * ramp;
+    P = O + cv + nr * hf + D * (dd + zqOf(alpha, q) - zqOf(alE, qE) + 0.3 * min(1.0, sb / 1.5) * c * ramp);
     if (kind > 1.5) P -= nr * stabDepth(c) * w;
     wFoldWeight = max(wFoldWeight, ramp);
   } else {
@@ -551,11 +621,12 @@ vec3 wingPos(float a, float tw, float v, float w, float kind, float cw) {
     if (kind < 0.5 && uBasisOn > 0.0) {
       float wB = uBasisOn * smoothstep(0.85, 1.0, uInfl.x) * (1.0 - stall) * (1.0 - min(1.0, fr * 3.0));
       if (folding) wB *= 1.0 - smoothstep(fe - 0.25, fe, alpha);
-      if (wB > 0.0) P += basisAt(sg, alpha, tw, br) * wB;
+      if (wB > 0.0) P += basisAt(sg, kr, tw, br) * wB;
     }
 #endif
     if (kind > 1.5) P += (vec3(sg * T, 0.0) * 0.878 - H * 0.479) * stabDepth(c) * w;
   }
+  if (kind > 1.5) P += (H * (fab.y * 1.8) + vec3(0.0, 0.0, 0.3 * dyn.y)) * (w * w);
   P += H * (dyn.x - dd * dyn.z) + vec3(-N.x * st, -N.y * st, ct) * dyn.y;
   if (stall > 0.001) {
     P.z += stall * (0.5 - 1.6 * alpha * alpha);
@@ -568,7 +639,10 @@ vec3 wingPos(float a, float tw, float v, float w, float kind, float cw) {
     P.z = -P.x * sin(b) + P.z * cos(b);
     P.x = x;
   }
-  P += H * (uMisc.y * sin(time * 19.0 + a * 27.0 + c * 6.0) * smoothstep(0.75, 1.0, c));
+  if (c > 0.75) {
+    float sk = sin(${f(Math.PI / 2)} * kr);
+    P += H * (uMisc.y * sin(time * 19.0 + a * 27.0 + c * 6.0) * smoothstep(0.75, 1.0, c) * (0.35 + 0.65 * sk * sk));
+  }
   float gy = uInfl.w;
   if (gy > -50.0) {
     float yW = dot(uUp, P);

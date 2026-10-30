@@ -7,6 +7,9 @@ Checks that a rewrite gains clarity without losing or inventing anything
   hours, conditions, kinds, coordinates, sources…), an item added or removed, a number
   that the original texts of the item never contained, a visit step whose focus, phase,
   wind or view changed;
+- a number brought in by a correction of a veracity audit (_rapports_agents/veracite_*.json:
+  found in the source's passage or the proposed fix for that massif) is a warning to re-read,
+  not an error;
 - warnings: attributions to people, publications, forums or flights left in the prose,
   long quotations, years in the prose, texts over the length targets;
 - statistics before/after per lot.
@@ -46,6 +49,26 @@ QUOTE = re.compile(r'«\s*([^»]+?)\s*»')
 NUMBER = re.compile(r'\d+(?:[   ]\d{3})*(?:[.,]\d+)?')
 
 LIMITS = {'description': 480, 'mechanism': 420, 'usage': 420, 'possible': 220, 'summary': 1600, 'tip': 260, 'effect': 420, 'step': 620}
+
+
+def sourced_numbers() -> dict[str, set[str]]:
+    """Numbers a veracity audit (_rapports_agents/veracite_*.json) found in a source, per
+    massif: the source's passage and the proposed fix. A correction may bring them into
+    the text; the audit reports them as a warning, not as an invented number."""
+    out: dict[str, set[str]] = {}
+    for f in sorted((BASE / '_rapports_agents').glob('veracite_*.json')):
+        try:
+            rows = json.loads(f.read_text())
+        except (OSError, ValueError):
+            continue
+        for r in rows if isinstance(rows, list) else []:
+            if r.get('verdict') in ('CONFIRMÉ', 'CONFIRME'):
+                continue
+            out.setdefault(r.get('massif', ''), set()).update(numbers(f"{r.get('passage', '')} {r.get('fix', '')}"))
+    return out
+
+
+SOURCED: dict[str, set[str]] = {}
 
 
 def numbers(text: str) -> set[str]:
@@ -145,8 +168,11 @@ def audit_lot(path: Path, rev: str) -> Report:
             rep.text(f"{mid} vent {e_new.get('wind')}", 'effect', e_old.get('effect', ''), e_new.get('effect', ''), 'effect')
             new_nums |= numbers(e_new.get('effect', ''))
         invented = new_nums - old_massif_nums
-        if invented:
-            rep.errors.append(f'{mid} : chiffres absents de l’original (résumé/conseils/effets) : {sorted(invented)}')
+        sourced = invented & SOURCED.get(mid, set())
+        if sourced:
+            rep.warnings.append(f'{mid} : chiffres repris d’une source par l’audit de véracité (à relire) : {sorted(sourced)}')
+        if invented - sourced:
+            rep.errors.append(f'{mid} : chiffres absents de l’original (résumé/conseils/effets) : {sorted(invented - sourced)}')
         for cat in CATEGORIES:
             old_items = {it.get('id', it.get('name')): it for it in om.get(cat, [])}
             new_items = {it.get('id', it.get('name')): it for it in m.get(cat, [])}
@@ -176,8 +202,11 @@ def audit_lot(path: Path, rev: str) -> Report:
                     rep.stats['chars_before'] += len(o['note'])
                 new_item_nums = numbers(' '.join([it.get(f, '') or '' for f in ('description', 'mechanism', 'usage', 'note')] + list(it.get('possible', []) or [])))
                 invented = new_item_nums - numbers(all_text(o))
-                if invented:
-                    rep.errors.append(f'{where} : chiffres absents de l’original : {sorted(invented)}')
+                sourced = invented & SOURCED.get(mid, set())
+                if sourced:
+                    rep.warnings.append(f'{where} : chiffres repris d’une source par l’audit de véracité (à relire) : {sorted(sourced)}')
+                if invented - sourced:
+                    rep.errors.append(f'{where} : chiffres absents de l’original : {sorted(invented - sourced)}')
     return rep
 
 
@@ -219,8 +248,11 @@ def audit_visit(path: Path, rev: str) -> Report:
         old_numbers |= numbers(o.get('text', '') + ' ' + o.get('title', ''))
     for i, s in enumerate(new_steps):
         invented = numbers(s.get('text', '') + ' ' + s.get('title', '')) - old_numbers
-        if invented:
-            rep.errors.append(f'étape {i + 1} : chiffres absents de l’original : {sorted(invented)}')
+        sourced = invented & SOURCED.get(path.stem, set())
+        if sourced:
+            rep.warnings.append(f'étape {i + 1} : chiffres repris d’une source par l’audit de véracité (à relire) : {sorted(sourced)}')
+        if invented - sourced:
+            rep.errors.append(f'étape {i + 1} : chiffres absents de l’original : {sorted(invented - sourced)}')
     return rep
 
 
@@ -231,6 +263,7 @@ def main() -> int:
     ap.add_argument('--stats', action='store_true', help='only the summary table')
     ap.add_argument('--max', type=int, default=40, help='messages shown per file')
     args = ap.parse_args()
+    SOURCED.update(sourced_numbers())
     paths = []
     wanted_massifs: set[str] = set()
     for p in sorted(DATA.glob('*.json')):

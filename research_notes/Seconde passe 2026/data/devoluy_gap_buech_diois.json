@@ -19,7 +19,7 @@
       "breezes": [
         {
           "id": "brise-vallee-devoluy",
-          "name": "Brise de vallée du Dévoluy (Veynes → col du Festre → Agnières → Saint-Étienne, tendance sud)",
+          "name": "Brise de vallée du Dévoluy (tendance sud ; tracé par le col du Festre déduit)",
           "kind": "valley",
           "waypoints": [
             {
@@ -2926,7 +2926,7 @@
       "xc_routes": [
         {
           "id": "circuit-ceuse-bure-charance",
-          "name": "Circuit Céüse – Pic de Bure – Dévoluy – Charance (référence planeur)",
+          "name": "Survols de baptême des planeurs de Tallard : Céüse et Pic de Bure (tracé reconstruit)",
           "waypoints": [
             {
               "name": "Tallard (aérodrome)",
@@ -3705,7 +3705,7 @@
           "lon": 5.7634,
           "lat": 44.2976,
           "alt_m": 1330,
-          "best_hours": "11h-15h (été), plafonds ≈ 3300 m cités",
+          "best_hours": "11h-15h (été)",
           "trigger": "face sud de la crête E-O au-dessus de la Méouge",
           "description": "La face sud de la crête de Chabre, qui court d'est en ouest au-dessus de la Méouge, reçoit le soleil et déclenche des thermiques forts dès midi. Le meilleur créneau se situe entre 11h et 15h en été.",
           "sources": [
@@ -9062,8 +9062,8 @@
     },
     {
       "id": "S39",
-      "title": "Sites de vol aux alentours – École de Parapente des Baronnies",
-      "url": "https://provence-parapente.com/sites-de-vol-aux-alentours/",
+      "title": "École de Parapente des Baronnies (page d'accueil : sites de vol alentour)",
+      "url": "https://provence-parapente.com/",
       "publisher": "École de Parapente des Baronnies (Mévouillon)",
       "type": "web",
       "lang": "fr",

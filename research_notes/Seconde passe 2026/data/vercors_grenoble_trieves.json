@@ -1373,7 +1373,7 @@
           "lat": 44.99,
           "radius_km": 8,
           "coord_quality": "approx",
-          "conditions": "Toute l'année ; LTA Vercors FL125, R196B (activable du 16/09 au 30/06).",
+          "conditions": "Toute l'année ; LTA Vercors FL125, R196B (activable du 16/09 au 30/06, jamais le mercredi, le week-end ni les jours fériés).",
           "description": "La réserve des Hauts-Plateaux du Vercors impose 300 m sol minimum. Elle concerne les sites de la Côte 2000, du Moucherotte, du Pic Saint-Michel, du Cornafion et de Corrençon. Le secteur est aussi soumis à la LTA Vercors FL125 et à la zone R196B GAP (NOTAM), activable du 16/09 au 30/06, sauf le mercredi, le week-end et les jours fériés. Il ne faut pas vacher sur la réserve.",
           "sources": [
             "S40",
@@ -3759,7 +3759,7 @@
           "lat": 44.87,
           "radius_km": 12,
           "coord_quality": "approx",
-          "conditions": "Toute l'année pour la réserve ; R196B activable du 16/09 au 30/06 (1000 m/sol au FL195).",
+          "conditions": "Toute l'année pour la réserve ; R196B activable du 16/09 au 30/06, jamais le mercredi, le week-end ni les jours fériés (1000 m/sol au FL195).",
           "description": "Les hauts plateaux se survolent à 300 m sol minimum : tout vol en dessous est interdit dans la réserve, toute l'année. Les ombres des parapentes sont perçues comme des prédateurs par les marmottes, les chamois et les tétras. Au Serpaton, la zone se respecte en longeant la crête du Brisou, le Mont Aiguille et le Grand Veymont.",
           "sources": [
             "S149",
@@ -5166,14 +5166,14 @@
       "hazards": [
         {
           "id": "courtet-chasse-acces",
-          "name": "Courtet : accès véhicule limité les jours de chasse (jeudi, samedi, dimanche)",
+          "name": "Courtet : accès véhicule limité pendant la période de chasse",
           "kind": "other",
           "lon": 5.7983,
           "lat": 44.7701,
           "radius_km": 1.5,
           "coord_quality": "source",
           "ffvl_id": 854,
-          "conditions": "Période de chasse : aucun véhicule sur la piste avant 13h00 les jeudi, samedi et dimanche.",
+          "conditions": "Période de chasse : aucun véhicule sur la piste avant 13h00.",
           "description": "Pendant la période de chasse, aucun véhicule ne circule sur la piste avant 13h00 : on peut décoller avant 13h en montant à pied. Hors période de chasse, le site est ouvert sans restriction.",
           "sources": [
             "S169"

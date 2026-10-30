@@ -111,15 +111,18 @@ def check_lot(lot: str) -> list[str]:
         # wind and view, and the whole visit with the whole original (no place name lost
         # anywhere, no direction that the original visit never had).
         core = lambda st: json.dumps({k: v for k, v in st.items() if k not in ('title', 'text')}, sort_keys=True, ensure_ascii=False)
-        by_core = {core(a): a for a in vo['steps']}
         step = lambda st: st.get('title', '') + '\n' + st.get('text', '')
+        # (Original steps sharing one core are taken together.)
+        by_core: dict[str, str] = {}
+        for a in vo['steps']:
+            by_core[core(a)] = (by_core[core(a)] + '\n' if core(a) in by_core else '') + step(a)
         # (Several new steps may carry one original core: a closing step reusing the opening's.)
         carried: dict[str, list[int]] = {}
         for i, b in enumerate(vn['steps']):
             if core(b) in by_core and core(b) != core({}):
                 carried.setdefault(core(b), []).append(i)
         for c, idx in carried.items():
-            compare(f"visite {mid}/{'+'.join(map(str, idx))}", step(by_core[c]), '\n'.join(step(vn['steps'][i]) for i in idx), '', out)
+            compare(f"visite {mid}/{'+'.join(map(str, idx))}", by_core[c], '\n'.join(step(vn['steps'][i]) for i in idx), '', out)
         compare(f'visite {mid} (entière)', '\n'.join(map(step, vo['steps'])), '\n'.join(map(step, vn['steps'])), '', out)
     return out
 

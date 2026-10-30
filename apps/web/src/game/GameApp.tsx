@@ -17,7 +17,7 @@ import { WINGS, type WingParams } from './flight';
 import { normalizeRoomCode, randomRoomCode } from './net';
 import { GameEngine, SAINT_HILAIRE, type ChallengeResult, type FlightEnd, type Hud, type NearbyInfo } from './engine';
 import { CHALLENGE_KM, CHALLENGE_LABEL, challengeKey, type ChallengeKind, type ChallengeLevel } from './challenges';
-import type { ViewMode } from './world';
+import type { RenderQuality, ViewMode } from './world';
 import './game.css';
 
 const MONTHS = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
@@ -58,6 +58,9 @@ interface Settings {
   pilotName: string;
   /** Share the flights, anonymously, to improve the simulation (flight-log.ts). */
   record: boolean;
+  /** Picture quality (world.ts RenderQuality) and frames a second at most. */
+  quality: RenderQuality;
+  fpsCap: number;
 }
 
 const DEFAULTS: Settings = {
@@ -86,6 +89,8 @@ const DEFAULTS: Settings = {
   room: '',
   pilotName: '',
   record: true,
+  quality: 'auto',
+  fpsCap: 60,
 };
 
 function loadSettings(): Settings {
@@ -324,6 +329,23 @@ function Menu({ onStart, error, takeoffs, routes }: { onStart: (s: Settings, t: 
         </label>
           </>
         )}
+        <label className="game-field" title="Finesse de l’image 3D (le tableau de bord reste net). Auto : 1,5 pixel par point d’écran, puis moins si les images sautent ; fine : tout l’écran retina, lourd pour la carte graphique.">
+          <span>Image</span>
+          <select value={s.quality} onChange={(e) => set({ quality: e.target.value as RenderQuality })}>
+            <option value="auto">auto (recommandé)</option>
+            <option value="fine">fine (retina)</option>
+            <option value="balanced">équilibrée</option>
+            <option value="eco">économique</option>
+          </select>
+        </label>
+        <label className="game-field" title="Au-delà, l’écran n’affiche pas plus d’images : 60 suffit, 30 chauffe moitié moins.">
+          <span>Images par seconde</span>
+          <select value={s.fpsCap} onChange={(e) => set({ fpsCap: +e.target.value })}>
+            <option value={30}>30 (économe)</option>
+            <option value={60}>60</option>
+            <option value={120}>120</option>
+          </select>
+        </label>
         <label className="game-check">
           <input type="checkbox" checked={s.showThermals} onChange={(e) => set({ showThermals: e.target.checked })} /> Afficher les thermiques
         </label>
@@ -1006,7 +1028,7 @@ export default function GameApp() {
         seed,
       };
       engineRef.current?.dispose();
-      const engine = new GameEngine(box.current!, scenario, atlas, { meta, url }, takeoff, { onHud: setHud, onStatus: setStatus, onEnd: setEnd }, { view: s.view, showThermals: s.showThermals, wing: s.wing, start: s.start, mass: s.mass, routeId: s.challenge ? null : s.routeId, multi: s.multi && s.room.length >= 4 ? { room: s.room, name: s.pilotName.trim() || 'Pilote' } : null, others: s.others, school: s.school, launchSlow: s.launchSlow, challenge: s.challenge ? { kind: s.challenge, level: s.challengeLevel } : null, log: s.record });
+      const engine = new GameEngine(box.current!, scenario, atlas, { meta, url }, takeoff, { onHud: setHud, onStatus: setStatus, onEnd: setEnd }, { view: s.view, showThermals: s.showThermals, wing: s.wing, start: s.start, mass: s.mass, routeId: s.challenge ? null : s.routeId, multi: s.multi && s.room.length >= 4 ? { room: s.room, name: s.pilotName.trim() || 'Pilote' } : null, others: s.others, school: s.school, launchSlow: s.launchSlow, challenge: s.challenge ? { kind: s.challenge, level: s.challengeLevel } : null, log: s.record, quality: s.quality, fpsCap: s.fpsCap });
       engineRef.current = engine;
       setEng(engine);
       if (import.meta.env.DEV) (window as unknown as { __game: GameEngine }).__game = engine;

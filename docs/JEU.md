@@ -247,6 +247,23 @@ vent et peut le traîner s'il ne l'affale pas.
   diagnostic (montées et ce qui les porte, incidents, sauts de position, pilote sous le sol,
   images/s, dernières secondes d'un crash) : `npx tsx scripts/dev/flight-logs.ts` (sur dev-vm, via le
   conteneur de l'API ; `--id <vol>`, `--json`, `--csv`, `--takeoff`, `--since`, `--client`).
+- **Performance** (menu « Image » et « Images par seconde ») : la toile 3D est dessinée à 1,5 pixel
+  par point d'écran (« auto »), puis 1,25 ou 1 si des images sautent trois secondes de suite une
+  fois les photos chargées (jamais remontée pendant le vol : l'image ne pompe pas) ; « fine » prend
+  tout l'écran retina, « équilibrée » 1,5, « économique » 1 ; le tableau de bord reste au pixel de
+  l'écran. Les images sont plafonnées à 60 par seconde (30 ou 120 au choix) : un écran 120 Hz ne
+  double plus le travail. En pause, 5 images par seconde. MapLibre ne dessine que lorsque la
+  boucle du jeu le demande, une fois par image du jeu (ses images de suite — textures du relief
+  redessinées une par image, fondus — le faisaient tourner à la cadence de l'écran, même en pause).
+  Deux points chauds de MapLibre corrigés depuis le jeu (`world.ts`) : pour chaque tuile photo
+  visible, à chaque image, il parcourait toutes les tuiles de relief pour trouver celles qu'elle
+  recouvre (35 % du fil principal, mémorisé jusqu'au prochain changement de tuiles) ; et la
+  plage de profondeur demandée à GL à chaque image faisait attendre la carte graphique (0,6 ms,
+  demandée une fois par seconde). Mesures sur un M1 Pro, 1512 × 982 points, vue pilote, vsync
+  coupée : 30 ms par image au ratio 2 et 12 ms au ratio 1 avant ; 10,5 ms au ratio 1,25 (celui
+  que l'auto retient à 60 images/s) et 7,8 ms au ratio 1 après ; en pause, fil principal de
+  83 % à 8 %. Ce qui reste : la passe paysage (relumière du relief, matériaux) fait près des
+  deux tiers du GPU, MapLibre (relief, photos) ~4 ms de CPU par image.
 - **Trace IGC** : le vol est enregistré (un point par seconde une fois en l'air) et se télécharge à
   la fin au format IGC (`igc.ts`), pour le revoir dans les outils de vol habituels ; l'en-tête le
   marque comme vol simulé (pas d'enregistrement de sécurité G).
@@ -256,6 +273,10 @@ vent et peut le traîner s'il ne l'affale pas.
   « Relief devant », avec deux bips descendants, prévient quand la trajectoire des 2 à 4 s suivantes
   rencontre le sol (en vue pilote, la pente sous soi ne se voit pas). En vue pilote, le regard se
   tourne vers l'intérieur du virage (0,6 fois l'inclinaison, jusqu'à ~35°), comme le fait un pilote.
+  Les flèches (ou le doigt) tournent le regard autour de la verticale, puis l'inclinent autour de
+  l'axe droite du regard : l'écran ne roule pas quand on ne fait que tourner la vue. (Tourné autour
+  de l'axe du corps, en spirale à 60° d'inclinaison, un quart de tour de tête faisait rouler
+  l'horizon de 60 à 100°, et la voile, fixe au-dessus, semblait tourner avec lui.)
 - **Tableau de bord** : vario, pression dans chaque frein (kg, la jauge pulse quand la pression
   mollit avant une fermeture), sellette, accélérateur, aide au décollage puis au posé (course
   d'arrêt) ; sur écran tactile, boutons Affaler et Recommencer.
@@ -441,7 +462,7 @@ crans affichés un instant ; les mains y vont en quelques centièmes de seconde)
 souris (le curseur vers la gauche ou la droite de l'écran, centre neutre ; option du menu) ou S/F,
 Espace accélérateur
 (au déco : se retourner), Z courir / tirer les A, O oreilles, X stabilo en vol / affaler la voile (C)
-au sol, R replacer la voile après un décollage interrompu, flèches : tête, C regard devant, V vue,
+au sol, R replacer la voile après un décollage interrompu, flèches : regard (autour de la verticale), C regard devant, V vue,
 T thermiques, P pause, M son, +/− temps accéléré. Écran tactile (de préférence en paysage) : deux
 curseurs de frein sur les bords, en vol l'accélérateur et les oreilles à côté d'eux et la sellette en
 curseur au milieu (elle revient au centre quand on la lâche) ; au déco, courir (ou tirer les A),

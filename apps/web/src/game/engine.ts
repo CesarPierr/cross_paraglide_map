@@ -23,7 +23,7 @@ import type { ModelAir } from './game-worker';
 import { LocalFrame } from './geo';
 import { FlightLog, gpuName, logClientId } from './flight-log';
 import { TrackRecorder, toIgc } from './igc';
-import { GameWorld, type Head, type ViewMode } from './world';
+import { GameWorld, type Head, type RenderQuality, type ViewMode } from './world';
 
 import type { Takeoff } from './takeoffs';
 
@@ -213,6 +213,8 @@ export class GameEngine {
   private timers = { sample: 0, viz: 0, hud: 0, sun: 0 };
   private ended = false;
   paused = false;
+  /** Frames rendered a second at most (0: every display frame): a 120 Hz display need not double the work. */
+  fpsCap = 60;
   showThermals: boolean;
   timeScale: number;
   private refreshing = false;
@@ -246,7 +248,7 @@ export class GameEngine {
     private dem: { meta: GridMeta; url: string },
     readonly takeoff: Takeoff,
     private cb: { onHud: (h: Hud) => void; onStatus: (s: string | null) => void; onEnd: (e: FlightEnd) => void },
-    opts: { view: ViewMode; showThermals: boolean; wing?: WingParams['id']; start?: 'air' | LaunchMode; mass?: number; routeId?: string | null; multi?: { room: string; name: string } | null; others?: boolean; school?: boolean; launchSlow?: number; challenge?: { kind: ChallengeKind; level: ChallengeLevel } | null; log?: boolean },
+    opts: { view: ViewMode; showThermals: boolean; wing?: WingParams['id']; start?: 'air' | LaunchMode; mass?: number; routeId?: string | null; multi?: { room: string; name: string } | null; others?: boolean; school?: boolean; launchSlow?: number; challenge?: { kind: ChallengeKind; level: ChallengeLevel } | null; log?: boolean; quality?: RenderQuality; fpsCap?: number },
   ) {
     this.school = opts.school ? new School() : null;
     this.launchSlow = this.school ? Math.max(0.25, Math.min(1, opts.launchSlow ?? 1)) : 1;
@@ -264,6 +266,9 @@ export class GameEngine {
     this.start = { x: this.spawn.x, y: this.spawn.y };
     this.world = new GameWorld(container, this.frame, this.spawn);
     this.world.setView(opts.view);
+    this.fpsCap = opts.fpsCap ?? 60;
+    this.world.fpsCap = this.fpsCap;
+    this.world.setQuality(opts.quality ?? 'auto');
     // The model's grid also gives the landscape its distant relief and land cover; the date its snow.
     this.world.setRegion(dem.url, dem.meta);
     this.world.setSeason(scenario.month0, scenario.day);
@@ -274,7 +279,7 @@ export class GameEngine {
     this.timeScale = scenario.timeScale;
     const route = opts.routeId && !this.challengeOpt ? (atlas.features.routes ?? []).find((f) => f.properties.id === opts.routeId) : undefined;
     this.task = route ? taskFromRoute(route, this.frame) : null;
-    this.logOptions = { wing: this.wing.id, mass: this.mass, start: this.startMode, view: opts.view, thermals: opts.showThermals, others: this.others, school: !!this.school, launchSlow: this.launchSlow, multi: !!this.multi, route: opts.routeId ?? null, challenge: this.challengeOpt ? `${this.challengeOpt.kind}:${this.challengeOpt.level}` : null };
+    this.logOptions = { wing: this.wing.id, mass: this.mass, start: this.startMode, view: opts.view, quality: this.world.quality, fpsCap: this.fpsCap, thermals: opts.showThermals, others: this.others, school: !!this.school, launchSlow: this.launchSlow, multi: !!this.multi, route: opts.routeId ?? null, challenge: this.challengeOpt ? `${this.challengeOpt.kind}:${this.challengeOpt.level}` : null };
     if (opts.log) {
       this.log = new FlightLog(() => this.logStart());
       window.addEventListener('error', this.onPageError);
@@ -312,7 +317,7 @@ export class GameEngine {
       lat: this.frame.lat0,
       scenario: { month0: sc.month0, day: sc.day, hour: sc.hour, windFrom: sc.windFrom, windKmh: sc.windKmh, instability: sc.instability, humidity: sc.humidity, randomWeather: sc.randomWeather, timeScale: sc.timeScale, seed: sc.seed },
       options: this.logOptions,
-      device: { w: window.innerWidth, h: window.innerHeight, dpr: window.devicePixelRatio, touch: 'ontouchstart' in window, gpu: gpuName(), cores: navigator.hardwareConcurrency ?? null },
+      device: { w: window.innerWidth, h: window.innerHeight, dpr: window.devicePixelRatio, ratio: this.world.ratio, touch: 'ontouchstart' in window, gpu: gpuName(), cores: navigator.hardwareConcurrency ?? null },
     };
   }
 
@@ -867,6 +872,11 @@ export class GameEngine {
 
   private loop = (now: number) => {
     this.raf = requestAnimationFrame(this.loop);
+    // The frame cap: a display frame skipped is integrated with the next (half a 240 Hz tick
+    // of slack, so a 60 Hz display's own frames all pass). Paused, the picture stands still:
+    // a few frames a second keep the HUD alive, the GPU rests.
+    if (this.fpsCap > 0 && now - this.last < 1000 / this.fpsCap - 1000 / 240) return;
+    if (this.paused && !this.topo && now - this.last < 200) return;
     // A frame's timestamp can equal the previous one or precede the clock read at start:
     // no time has passed then.
     const real = Math.min(0.1, Math.max(0, (now - this.last) / 1000));

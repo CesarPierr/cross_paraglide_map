@@ -35,6 +35,16 @@ import { TerrainHeights } from './heights';
 import type { GridMeta } from '@brises/model';
 
 export type ViewMode = 'first' | 'third';
+/**
+ * Picture quality: the pixel ratio of the 3D canvas (the HUD stays at the screen's). A retina
+ * laptop draws 6 Mpx a frame at its native ratio of 2, which no browser GPU holds at 60 fps
+ * with clouds, landscape and relief light (30 ms a frame on an M1 Pro, 12 ms at a ratio of 1):
+ * the fan ran and the game stuttered. `auto` starts at 1.5 and steps down while frames are
+ * dropped; `fine` the native ratio; `balanced` 1.5; `eco` 1.
+ */
+export type RenderQuality = 'auto' | 'fine' | 'balanced' | 'eco';
+const QUALITY_RATIO: Record<Exclude<RenderQuality, 'auto'>, number> = { fine: 4, balanced: 1.5, eco: 1 };
+const nativeRatio = () => (typeof window !== 'undefined' ? window.devicePixelRatio || 1 : 1);
 
 export interface Head {
   /** Look direction relative to the pilot (rad): + = right, + = up. */
@@ -43,6 +53,7 @@ export interface Head {
 }
 
 const DEG = 180 / Math.PI;
+const UP = new THREE.Vector3(0, 0, 1);
 /** Smallest angle (deg) between the camera axis given to MapLibre and the level (see placeCamera). */
 const LEVEL_GAP = 0.1;
 /**
@@ -228,6 +239,18 @@ export class GameWorld {
   private chaseHemi = new THREE.HemisphereLight(0xcfe3ff, 0x6b6a55, 1.1);
   /** Phones and small screens: fewer ray-marching steps, clouds at a third of the resolution. */
   readonly lowQuality = typeof window !== 'undefined' && (window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 700);
+  /** The game's loop asked for a frame (frameUpdate): MapLibre's next render goes. */
+  private renderAsked = true;
+  private depthRange: Float32Array | null = null;
+  private depthRangeT = 0;
+  /** Picture quality (RenderQuality) and the canvas's pixel ratio in use; the frame cap the engine holds (Hz) and the frame interval seen (ms, smoothed). */
+  quality: RenderQuality = 'auto';
+  ratio = Math.min(nativeRatio(), 1.5);
+  fpsCap = 60;
+  private frameMs = 16;
+  private adaptT = (typeof performance !== 'undefined' ? performance.now() : 0) + 6000;
+  private adaptLoadT = 0;
+  private adaptLoading = true;
   readonly sky: Sky;
   /** The relief's light and the terrain's materials (ground.ts), and the region's grids (region.ts). */
   readonly ground: Ground;
@@ -325,6 +348,7 @@ export class GameWorld {
       // Turning the head back finds its tiles in the cache.
       maxTileCacheSize: 3000,
       canvasContextAttributes: { antialias: true },
+      pixelRatio: this.ratio,
     } as MapOptions);
     // A raster tile that cannot be decoded (a request cut short as the view moves, a server's
     // hiccup) is drawn from its parent tile until it loads again: no error in the console for
@@ -374,6 +398,45 @@ export class GameWorld {
         if (typeof raise === 'function') cam._raiseCameraByPitchAndZoom = (tr) => (this.topo ? raise.call(cam, tr) : tr);
         else if (import.meta.env.DEV) console.warn('[terrain] caméra : internes de MapLibre inattendus');
         this.map.setVerticalFieldOfView(this.fovDeg);
+        // MapLibre draws when the game's loop asks (frameUpdate), once per game frame, and not
+        // on its own: its follow-up frames (terrain textures redrawn one a frame, fades) and
+        // tile arrivals ran it at the display's rate, 60 a second with the game paused, 120 on a
+        // 120 Hz display whatever the frame cap. Free while loading and in the topo pause (the
+        // map is the player's then).
+        type Render = { _render: (t: number) => unknown };
+        const ml = this.map as unknown as Render;
+        const render = ml._render;
+        if (typeof render === 'function')
+          ml._render = (t) => {
+            if (!this.renderAsked && this.loaded && !this.topo) return ml;
+            this.renderAsked = false;
+            return render.call(ml, t);
+          };
+        else if (import.meta.env.DEV) console.warn('[terrain] rendu : internes de MapLibre inattendus');
+        // Every frame, for every visible tile of every raster source, MapLibre's render-to-texture
+        // scans all the terrain's tiles for those the tile overlaps: O(visible × terrain), 35 % of
+        // the main thread in a horizon view (a few hundred tiles each side). The answer only
+        // changes with the terrain's tile set: memoized until the terrain's update() reports one.
+        type TileManager = { update: (...a: unknown[]) => boolean; _getTerrainCoordsForRegularTile: (id: { key: string }) => unknown };
+        const tm = (this.map as unknown as { terrain?: { tileManager?: Partial<TileManager> } }).terrain?.tileManager;
+        if (tm && typeof tm._getTerrainCoordsForRegularTile === 'function' && typeof tm.update === 'function') {
+          const memo = new Map<string, unknown>();
+          const update = tm.update;
+          const coords = tm._getTerrainCoordsForRegularTile;
+          tm.update = function (this: TileManager, ...a: unknown[]) {
+            const changed = update.apply(this, a);
+            if (changed) memo.clear();
+            return changed;
+          };
+          tm._getTerrainCoordsForRegularTile = function (this: TileManager, id: { key: string }) {
+            let r = memo.get(id.key);
+            if (r === undefined) {
+              r = coords.call(this, id);
+              memo.set(id.key, r);
+            }
+            return r;
+          };
+        } else if (import.meta.env.DEV) console.warn('[terrain] tuiles : internes de MapLibre inattendus');
         // Detail by true distance from the eye (lod.ts): the texels of the imagery, and of the
         // terrain's textures it is drawn into, match the screen's pixels at every distance;
         // the Sentinel-2 backdrop a level coarser, the elevation tiles one level under the
@@ -586,8 +649,15 @@ export class GameWorld {
         const r = this.renderer;
         if (!r) return;
         this.setProjection(opts.defaultProjectionData.mainMatrix as ArrayLike<number>);
-        // MapLibre's depth range for its 3D layers, read before three.js draws anything.
-        const dr = gl.getParameter(gl.DEPTH_RANGE) as Float32Array;
+        // MapLibre's depth range for its 3D layers: set from the style's layer count, so asked
+        // of GL once a second (asked every frame, the query waited for the GPU to catch up:
+        // 0.6 ms a frame, 40 % of the main thread, and no overlap of the CPU with the GPU).
+        const tNow = performance.now();
+        if (!this.depthRange || tNow - this.depthRangeT > 1000) {
+          this.depthRange = gl.getParameter(gl.DEPTH_RANGE) as Float32Array;
+          this.depthRangeT = tNow;
+        }
+        const dr = this.depthRange;
         r.resetState();
         // The canvas may have been resized since three.js read its size.
         r.setViewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
@@ -695,12 +765,48 @@ export class GameWorld {
   /** Share of the chase camera's arm in use (armClear). */
   private arm = 1;
 
+  setQuality(q: RenderQuality): void {
+    this.quality = q;
+    this.setRatio(q === 'auto' ? Math.min(nativeRatio(), 1.5) : Math.min(nativeRatio(), QUALITY_RATIO[q]));
+  }
+
+  private setRatio(r: number): void {
+    if (Math.abs(r - this.ratio) < 0.01) return;
+    this.ratio = r;
+    this.map.setPixelRatio(r);
+    this.frameMs = 1000 / Math.max(1, this.fpsCap);
+    this.adaptT = performance.now();
+  }
+
+  /**
+   * Auto quality: frames dropped for two seconds running (the interval 12 % over the cap's),
+   * one step down of the pixel ratio, to 1 at the least; never back up during a flight, so
+   * that the picture does not pump. The first seconds (tiles loading) do not count.
+   */
+  private adapt(now: number, dt: number): void {
+    this.frameMs += (dt * 1000 - this.frameMs) * Math.min(1, dt / 0.5);
+    if (this.quality !== 'auto' || this.fpsCap <= 0 || this.ratio <= 1) return;
+    // While the imagery around still loads (uploads, tiles drawn into the terrain's
+    // textures), frames are slow for another reason: checked once a second.
+    if (now - this.adaptLoadT > 1000) {
+      this.adaptLoadT = now;
+      this.adaptLoading = ringLoaded(this.map as unknown as Parameters<typeof ringLoaded>[0], 'ign-ortho', this.ring) < 0.9;
+    }
+    if (this.adaptLoading || this.frameMs < (1000 / this.fpsCap) * 1.12) {
+      this.adaptT = Math.max(this.adaptT, now);
+      return;
+    }
+    if (now - this.adaptT < 3000) return;
+    this.setRatio(Math.max(1, this.ratio - 0.25));
+  }
+
   frameUpdate(st: GliderState, head: Head): void {
     this.heights.around(st.x, st.y);
     if (!this.loaded || this.topo) return;
     const now = performance.now();
     const dt = Math.min(0.1, (now - this.lastFrame) / 1000);
     this.lastFrame = now;
+    this.adapt(now, dt);
     const q = gliderQuaternion(st.heading, st.bank, st.pitch);
     this.anchor = { x: st.x, y: st.y, z: st.z };
     this.rel.position.set(-st.x, -st.y, -st.z);
@@ -720,8 +826,14 @@ export class GameWorld {
       // a second (not while standing on the take-off).
       const into = this.glider.standing() > 0.5 ? 0 : Math.max(-0.6, Math.min(0.6, 0.6 * st.bank));
       this.lookInto += (into - this.lookInto) * Math.min(1, dt / 0.9);
-      const qHead = new THREE.Quaternion().setFromEuler(new THREE.Euler(head.pitch + headPitch(st.pitch), -head.yaw - this.lookInto, headRoll(st.bank), 'YXZ'));
-      const qCam = q.clone().multiply(qHead);
+      const qBase = q.clone().multiply(new THREE.Quaternion().setFromEuler(new THREE.Euler(headPitch(st.pitch), -this.lookInto, headRoll(st.bank), 'YXZ')));
+      // The free look (arrows, drag) turns about the vertical, then tilts about the view's own
+      // right axis: the screen never rolls while the player only turns the view. Turned about
+      // the body's axis instead, in a spiral at 60° of bank a quarter turn of the head rolled
+      // the horizon by 60 to 100°, and the wing, fixed above, seemed to turn with it.
+      const qCam = new THREE.Quaternion().setFromAxisAngle(UP, -head.yaw).multiply(qBase);
+      qCam.premultiply(new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(1, 0, 0).applyQuaternion(qCam), head.pitch));
+      const qHead = this.qInv.copy(q).invert().multiply(qCam);
       const sag = 0.05 * Math.min(3, Math.max(0, st.load - 1));
       const ks = this.glider.standing();
       const ey = EYE[1] + (EYE_STANDING[1] - EYE[1]) * ks - sag;
@@ -812,6 +924,7 @@ export class GameWorld {
       }
     }
     this.placeCamera(lon, lat, alt, bearing, pitch, -roll);
+    this.renderAsked = true;
     const c = this.map.getCanvas();
     this.cockpitCam.aspect = c.width / Math.max(1, c.height);
     this.cockpitCam.fov = this.fovDeg;

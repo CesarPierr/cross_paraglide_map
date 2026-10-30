@@ -8,8 +8,8 @@ Checks that a rewrite gains clarity without losing or inventing anything
   that the original texts of the item never contained, a visit step whose focus, phase,
   wind or view changed;
 - a number brought in by a correction of a veracity audit (_rapports_agents/veracite_*.json:
-  found in the source's passage or the proposed fix for that massif) is a warning to re-read,
-  not an error;
+  found in the source's passage or the proposed fix for that massif), or a source tag added to
+  a tip that a finding of that massif names, is a warning to re-read, not an error;
 - warnings: attributions to people, publications, forums or flights left in the prose,
   long quotations, years in the prose, texts over the length targets;
 - statistics before/after per lot.
@@ -62,6 +62,8 @@ def sourced_numbers() -> dict[str, set[str]]:
         except (OSError, ValueError):
             continue
         for r in rows if isinstance(rows, list) else []:
+            # Source ids a finding names (S12, S185…), for tags added to tips.
+            SOURCED_TAGS.setdefault(r.get('massif', ''), set()).update(re.findall(r'\bS\d+\b', f"{r.get('source', '')} {r.get('fix', '')}"))
             if r.get('verdict') in ('CONFIRMÉ', 'CONFIRME'):
                 continue
             out.setdefault(r.get('massif', ''), set()).update(numbers(f"{r.get('passage', '')} {r.get('fix', '')}"))
@@ -69,6 +71,7 @@ def sourced_numbers() -> dict[str, set[str]]:
 
 
 SOURCED: dict[str, set[str]] = {}
+SOURCED_TAGS: dict[str, set[str]] = {}
 
 
 def numbers(text: str) -> set[str]:
@@ -162,8 +165,14 @@ def audit_lot(path: Path, rev: str) -> Report:
             new_nums |= numbers(re.sub(r'\[S\d+(?:\s*,\s*S\d+)*\]', '', t))
         old_tags = sorted(set(re.findall(r'S\d+', ' '.join(tips_old))))
         new_tags = sorted(set(re.findall(r'S\d+', ' '.join(m.get('tips', [])))))
-        if old_tags != new_tags:
-            rep.errors.append(f'{mid} : sources citées dans les conseils modifiées ({set(old_tags) ^ set(new_tags)})')
+        removed = set(old_tags) - set(new_tags)
+        added = set(new_tags) - set(old_tags)
+        # A tag may be added where a veracity audit found that source behind the tip.
+        backed = {t for t in added if t in SOURCED_TAGS.get(mid, set())}
+        if removed or added - backed:
+            rep.errors.append(f'{mid} : sources citées dans les conseils modifiées ({removed | (added - backed)})')
+        if backed:
+            rep.warnings.append(f'{mid} : sources ajoutées aux conseils d’après l’audit de véracité (à relire) : {sorted(backed)}')
         for e_new, e_old in zip(m.get('synoptic_effects', []), om.get('synoptic_effects', [])):
             rep.text(f"{mid} vent {e_new.get('wind')}", 'effect', e_old.get('effect', ''), e_new.get('effect', ''), 'effect')
             new_nums |= numbers(e_new.get('effect', ''))

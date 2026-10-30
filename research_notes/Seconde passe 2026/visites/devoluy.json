@@ -4,15 +4,15 @@
   "steps": [
     {
       "chapter": "Le massif",
-      "title": "Le Dévoluy : un grand massif calcaire, peu volé, mais un moteur thermique",
-      "text": "Le Dévoluy est un haut massif calcaire, avec l'Obiou, le Pic de Bure et le plateau d'Aurouze, que les parapentistes fréquentent très peu. Il est ouvert à tous les flux de nord : il n'est pas du tout abrité du mistral, et il ne se vole que par météo faible. Son moteur thermique est le Pic de Bure, dont la face sud est réputée pour sa puissance. C'est surtout une zone de transit : les cross venant du Diois ou de Chabre le traversent avant de ressortir vers Veynes ou Gap.",
+      "title": "Bienvenue dans le Dévoluy, un moteur peu volé",
+      "text": "Bienvenue dans le Dévoluy, haut massif calcaire de l'Obiou, du Pic de Bure et du plateau d'Aurouze. Les parapentistes y viennent très peu. Ouvert à tous les flux de nord et pas du tout abrité du mistral, il ne se vole que par météo faible. Son moteur, c'est la face sud du Pic de Bure, réputée pour sa puissance. On le traverse surtout en cross, depuis le Diois ou Chabre, avant de ressortir vers Veynes ou Gap. On va voir sa journée, ses rares sites, ses pièges et ses sorties.",
       "focus": [],
       "view": "massif"
     },
     {
       "chapter": "La journée de l'air",
-      "title": "Le matin, le col du Noyer et la crête de l'Obiou",
-      "text": "Le col du Noyer, orienté est, est le décollage du matin : les reliefs qui l'encadrent portent les premiers thermiques, mais il ne fonctionne que le matin ou par faible régime d'est. L'heure où le thermique démarre varie d'une source à l'autre, et l'on a déjà dépassé 4000 m de plafond au col. Au col des Faïsses, il arrive que beaucoup de pilotes soient sur la crête de l'Obiou dès 11 h, et que ce soit un très bon départ de cross.",
+      "title": "Le matin, tout commence au col du Noyer",
+      "text": "La journée commence au col du Noyer, décollage face est. Les reliefs qui l'encadrent portent les premiers thermiques, mais le col ne marche que le matin ou par faible régime d'est. Personne ne s'accorde sur l'heure où ça démarre. On y a déjà dépassé 4000 m de plafond. Au col des Faïsses, beaucoup de pilotes peuvent déjà être sur la crête de l'Obiou à 11 h : c'est un très bon départ de cross.",
       "focus": [
         "col-du-noyer",
         "therm-noyer",
@@ -23,8 +23,8 @@
     },
     {
       "chapter": "La journée de l'air",
-      "title": "À midi, la face sud du Pic de Bure donne sa puissance",
-      "text": "La face sud du Pic de Bure, caillouteuse, entre les combes d'Aurouze et de Mai, est réputée pour la puissance de ses thermiques, de 11 h à 17 h en été. Il arrive que la face sud monte à +3 sur 1 km de large, avec des noyaux à +6. Les planeurs y plafonnent à 3000 m. En parapente, on peut aussi y voler en dynamique et en thermo-dynamique, depuis l'oasis herbeux sous l'observatoire, un peu sous le vent du Bure, où le vent tourne dans tous les sens.",
+      "title": "À midi, la face sud du Bure envoie",
+      "text": "De 11 h à 17 h en été, la face sud du Pic de Bure, caillouteuse, entre les combes d'Aurouze et de Mai, donne des thermiques puissants. Elle peut monter à +3 sur 1 km de large, avec des noyaux à +6. Les planeurs y plafonnent à 3000 m. En parapente, on y vole aussi en dynamique et en thermo-dynamique depuis l'oasis herbeux sous l'observatoire. Méfiez-vous : il est un peu sous le vent du Bure, et le vent y tourne dans tous les sens.",
       "focus": [
         "therm-bure-sud",
         "soar-bure-sud"
@@ -33,8 +33,8 @@
     },
     {
       "chapter": "La journée de l'air",
-      "title": "L'après-midi, la brise du sud remonte vers la station",
-      "text": "L'été, une brise de vallée très forte remonte du Buëch, par Veynes et le col du Festre, vers le plateau de Superdévoluy, avec une tendance sud. Elle place le plateau d'Aurouze et la station sous le vent de la tête de Pied Gros : au sommet du télésiège de la Festoure, à 2200 m, l'air est très turbulent. Pour décoller, il faut d'abord repérer le sens de la brise et se placer en bout de plateau, un peu de travers, pour être dans la brise de vallée, qui domine la brise de pente. La station n'a pas d'atterrissage officiel : elle compte un altiport et de nombreuses lignes.",
+      "title": "L'après-midi, la brise du sud met la station sous le vent",
+      "text": "L'été, une brise de vallée très forte remonte du Buëch par Veynes et le col du Festre jusqu'au plateau de Superdévoluy. Venue du sud, elle met le plateau d'Aurouze et la station sous le vent de la tête de Pied Gros. En haut du télésiège de la Festoure, à 2200 m, l'air est très turbulent. Pour décoller, repérez d'abord le sens de la brise. Placez-vous en bout de plateau, un peu de travers : la brise de vallée y domine la brise de pente. La station n'a pas d'atterrissage officiel, et on y trouve un altiport et beaucoup de lignes.",
       "focus": [
         "brise-vallee-devoluy",
         "aurouze-sous-le-vent",
@@ -44,8 +44,8 @@
     },
     {
       "chapter": "La journée de l'air",
-      "title": "Vers la fin de l'après-midi, le soaring de la crête des Baumes",
-      "text": "En été, on fait du soaring sur la petite crête des Baumes, orientée nord-ouest, à côté du Collet du Tât. Le site sert quand l'ouest ou le nord-ouest est trop fort dans le Buëch. Comme le vent et la brise s'accentuent à l'atterrissage vers le milieu de la journée, il est conseillé de voler vers la fin de l'après-midi. Des patous, ces chiens de berger anti-loup, sont en liberté près du décollage.",
+      "title": "En fin de journée, le soaring des Baumes",
+      "text": "Quand la journée décline, on va faire du soaring sur la petite crête des Baumes, face nord-ouest, à côté du Collet du Tât. C'est le repli d'été quand l'ouest ou le nord-ouest souffle trop fort dans le Buëch. Attendez la fin de l'après-midi : vers le milieu de la journée, le vent et la brise forcissent à l'atterrissage. Des patous, ces chiens de berger anti-loup, sont en liberté près du décollage.",
       "focus": [
         "soar-crete-baumes",
         "collet-du-tat",
@@ -55,8 +55,8 @@
     },
     {
       "chapter": "Les sites",
-      "title": "Peu de sites, beaucoup de vols rando",
-      "text": "Le Dévoluy se vole surtout en rando-vol. Pour le Pic de Bure, on monte par la combe d'Aurouze, 1500 m de dénivelée à pied depuis les Sauvas, jusqu'à un décollage herbeux face sud, sous l'observatoire ; il faut partir tôt, car le vent d'est souffle en rafales le matin. En nord-est, le Chauvet, face au col du Festre, est un vol rando très classique, avec des troupeaux à surveiller l'été. On se pose au grand terrain du village de Superdévoluy, bien placé et dégagé, mais non officiel, ou aux Escloutons, pour le Noyer.",
+      "title": "Ici, on vole surtout à pied",
+      "text": "Le Dévoluy se vole surtout en rando-vol. Pour le Pic de Bure, comptez 1500 m de dénivelée depuis les Sauvas par la combe d'Aurouze, jusqu'au décollage herbeux face sud, sous l'observatoire. Partez tôt : le matin, l'est souffle en rafales. Le Chauvet, face nord-est devant le col du Festre, est le grand classique, avec des troupeaux à surveiller l'été. On se pose au grand terrain du village de Superdévoluy, dégagé mais non officiel, ou aux Escloutons pour le Noyer.",
       "focus": [
         "pic-de-bure-rando",
         "chauvet-festre",
@@ -68,8 +68,8 @@
     },
     {
       "chapter": "Le parcours classique",
-      "title": "La traversée du Dévoluy, d'ouest en est",
-      "text": "Un cross peut traverser le Dévoluy : après une pause au Chamousset, on reprend par la tête de Vachères, la tête de la Cluse, puis le Pic de Bure et son décor lunaire, avant de se poser près de Veynes. Les plafonds peuvent rester modestes. Le massif ne se traverse pas à la légère : s'y faire coincer, c'est 3/4 h de voiture pour en sortir, avec deux sorties nord-sud seulement en hiver. Il faut donc prévoir une sortie vers Veynes ou Gap, où des posés sont possibles.",
+      "title": "Traverser d'ouest en est sans se faire coincer",
+      "text": "Le cross classique traverse le Dévoluy. Après une pause au Chamousset, on reprend par la tête de Vachères, la tête de la Cluse, puis le Pic de Bure et son décor lunaire, avant de se poser près de Veynes. Les plafonds restent parfois modestes. Ne le prenez pas à la légère : coincé dedans, on en a pour 3/4 h de voiture, et l'hiver il n'y a que deux sorties nord-sud. Prévoyez votre sortie vers Veynes ou Gap, où l'on trouve des posés.",
       "focus": [
         "xc-devoluy-traversee",
         "therm-vacheres-cluse-chaine",
@@ -79,8 +79,8 @@
     },
     {
       "chapter": "Le parcours classique",
-      "title": "Du Noyer vers l'Obiou et au-delà",
-      "text": "Au départ du col du Noyer, il arrive que les plafonds dépassent 4000 m et que des cross partent vers le Taillefer, Belledonne et le Grésivaudan ; un vol est allé jusqu'à Chamoux, sur plus de 100 km. Un itinéraire non vérifié est envisagé : sortir du bocal en s'appuyant sur les reliefs sud, transiter vers la montagne de Faraut au nord, puis la longer jusqu'au lac du Sautet, voire faire le tour de l'Obiou. Sur les faces ouest de l'Obiou, les thermiques peuvent tarder après le vol rando depuis la crête du Rattier : c'est une déduction.",
+      "title": "Du Noyer, au-delà de 4000 m",
+      "text": "Au départ du col du Noyer, les plafonds peuvent dépasser 4000 m. Des cross partent alors vers le Taillefer, Belledonne et le Grésivaudan, et un vol est allé jusqu'à Chamoux, à plus de 100 km. Un itinéraire reste à vérifier : sortir du bocal par les reliefs sud, transiter au nord vers la montagne de Faraut, la longer jusqu'au lac du Sautet, voire faire le tour de l'Obiou. Sur les faces ouest de l'Obiou, les thermiques devraient tarder après le vol rando depuis la crête du Rattier, mais c'est une déduction.",
       "focus": [
         "therm-noyer",
         "xc-noyer-faisses",
@@ -91,8 +91,8 @@
     },
     {
       "chapter": "Les pièges",
-      "title": "Un massif sans abri : mistral, bise, col de l'Aup",
-      "text": "Le Dévoluy n'est pas du tout abrité du mistral, et par tendance nord il peut rester longtemps dans le brouillard. Le col du Noyer ne se vole que par régime d'est faible : il ne faut surtout pas voler par un autre régime de vent, et l'atterrissage officiel devient technique quand les brises se lèvent. Au col de l'Aup, par vent de sud, un venturi se forme ; par nord modéré, la bise, la brise et le vent peuvent être très forts. Le Pic Pierroux se coiffe souvent de nuages orographiques, et les brebis, les patous et les bergers des alpages sont à surveiller.",
+      "title": "Les pièges : pas d'abri, et le col de l'Aup",
+      "text": "Le premier piège, c'est le vent : le Dévoluy n'a aucun abri contre le mistral, et par tendance nord le brouillard peut traîner longtemps. Au col du Noyer, ne volez que par régime d'est faible, jamais par un autre vent. Son atterrissage officiel devient technique quand les brises se lèvent. Au col de l'Aup, le sud entre en venturi, et par nord modéré la bise, la brise et le vent peuvent être très forts. Le Pic Pierroux se coiffe souvent de nuages orographiques. En alpage, attention aux brebis, aux patous et aux bergers.",
       "focus": [
         "devoluy-mistral",
         "noyer-regime-est",
@@ -103,8 +103,8 @@
     },
     {
       "chapter": "Selon le vent météo",
-      "title": "Par nord ou mistral : ne voler que par météo faible",
-      "text": "Il n'y a aucun abri : le Dévoluy ne se vole que si le vent météo est faible. Le Courtet, côté Trièves, et le Collet du Tât servent surtout quand l'ouest est trop fort dans le Buëch. Le Courtet est favorable par nord et nord-ouest, et il donne accès aux faces ouest du Dévoluy.",
+      "title": "Par nord ou mistral, seulement si c'est faible",
+      "text": "Selon le vent météo, le massif change de visage. Par nord, aucun abri : le Dévoluy ne se vole que si le vent est faible. Le Courtet, côté Trièves, et le Collet du Tât servent surtout quand l'ouest est trop fort dans le Buëch. Le Courtet marche par nord et nord-ouest, et il ouvre l'accès aux faces ouest du Dévoluy.",
       "focus": [
         "devoluy-mistral",
         "courtet",
@@ -119,8 +119,8 @@
     },
     {
       "chapter": "Selon le vent météo",
-      "title": "Par sud : la brise de vallée très forte, la face sud du Bure très thermique",
-      "text": "Par vent de sud, la brise de vallée est très forte l'été : le plateau d'Aurouze et la station passent sous le vent. À l'inverse, la face sud du Pic de Bure est très thermique, et il arrive qu'elle monte de +3 à +6. Le col de l'Aup est à éviter quand le vent de sud rentre en venturi.",
+      "title": "Par sud, la station sous le vent, le Bure qui monte",
+      "text": "Par sud, l'été, la brise de vallée souffle très fort et met le plateau d'Aurouze et la station sous le vent. À l'inverse, la face sud du Pic de Bure devient très thermique et peut monter de +3 à +6. Évitez le col de l'Aup quand le sud y entre en venturi.",
       "focus": [
         "brise-vallee-devoluy",
         "aurouze-sous-le-vent",
@@ -136,8 +136,8 @@
     },
     {
       "chapter": "Selon le vent météo",
-      "title": "Par est ou par ouest : le Noyer le matin, les Baumes l'été",
-      "text": "Par est, le col du Noyer ne se vole que le matin ou par régime d'est faible ; le vent d'est peut souffler en rafales sur le plateau du Bure. Le Chauvet, en nord-est, est un vol rando très classique. Par ouest, il arrive qu'un petit décollage du col du Noyer serve l'après-midi ; la crête des Baumes se vole en été, mais le Collet du Tât est à éviter quand le vent et la brise s'accentuent à l'atterrissage.",
+      "title": "Par est, le Noyer le matin ; par ouest, les Baumes l'été",
+      "text": "Par est, le col du Noyer ne se vole que le matin ou par régime d'est faible, et l'est peut souffler en rafales sur le plateau du Bure. Le Chauvet, face nord-est, reste un vol rando très classique. Par ouest, un petit décollage du col du Noyer peut servir l'après-midi. La crête des Baumes se vole l'été, mais évitez le Collet du Tât quand le vent et la brise forcissent à l'atterrissage.",
       "focus": [
         "col-du-noyer",
         "chauvet-festre",
@@ -153,8 +153,8 @@
     },
     {
       "chapter": "Les transitions",
-      "title": "Sortir du Dévoluy : Veynes, Gap, Diois, Trièves",
-      "text": "Depuis Aspres, le vol classique monte à 2 000 m en local, puis part vers le nord au Durbonas et vers l'est au Bure. En milieu de journée, la Longeagne sert de point de rendez-vous aux cross pour qui le Dévoluy est un beau défi. Depuis Gap, un circuit de référence pour les planeurs relie Céüse, le Pic de Bure, le Dévoluy et Charance. Par l'ouest, on peut rejoindre le col de Rousset à Gap en passant par le Glandasse, la Toussière et Lus-la-Croix-Haute ; par le nord, le Dévoluy donne sur Courtet et le Trièves.",
+      "title": "Les portes du Diois, de Gap et du Trièves",
+      "text": "Reste à sortir. Depuis Aspres, le vol classique monte à 2 000 m en local, puis part au nord vers le Durbonas et à l'est vers le Bure. En milieu de journée, la Longeagne sert de rendez-vous aux crosseurs qui relèvent le défi du Dévoluy. Depuis Gap, les planeurs ont un circuit de référence par Céüse, le Pic de Bure, le Dévoluy et Charance. Par l'ouest, on rejoint Gap depuis le col de Rousset par le Glandasse, la Toussière et Lus-la-Croix-Haute. Au nord, on sort sur Courtet et le Trièves. À retenir : météo faible seulement, la face sud du Bure pour moteur, une sortie prévue avant d'entrer.",
       "focus": [
         "buech-laragne-chabre/xc-aspres-durbonas-bure",
         "gapencais-ceuse/circuit-ceuse-bure-charance",

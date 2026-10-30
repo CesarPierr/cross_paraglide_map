@@ -4,71 +4,71 @@
   "steps": [
     {
       "chapter": "Le massif",
-      "title": "La Matheysine et le Drac : un secteur dominé par le vent du nord",
-      "text": "La Matheysine et le Drac forment un secteur dominé par le vent du nord. Le lac de Monteynard, réputé l'un des lacs les plus ventés d'Europe, fonctionne l'été presque uniquement par nord thermique, un vent qui se lève entre 11 h et 13 h. Sur le plateau matheysin, les lacs de Laffrey ont eux aussi un vent dominant de nord. Les décollages de parapente, eux, sont majoritairement orientés du sud au sud-ouest, au Sénépy, au Combenon et au Conest : ils servent le matin ou en soaring par vent de sud faible, avant que la brise de nord ne s'installe vers midi.",
+      "title": "Bienvenue en Matheysine, au pays du vent du nord",
+      "text": "Bienvenue en Matheysine et sur le Drac, un secteur où le vent du nord commande. Le lac de Monteynard, réputé l'un des lacs les plus ventés d'Europe, ne marche l'été presque que par nord thermique, qui se lève entre 11 h et 13 h. Sur le plateau matheysin, les lacs de Laffrey ont eux aussi un nord dominant. Les décollages de parapente regardent pourtant le sud et le sud-ouest, au Sénépy, au Combenon et au Conest. On les vole le matin, ou en soaring par sud faible, avant que la brise de nord ne s'installe vers midi. On suit la journée, puis les sites, les pièges et les vents.",
       "focus": [],
       "view": "massif"
     },
     {
       "chapter": "La journée de l'air",
       "title": "Le matin, les faces sud avant la brise de nord",
-      "text": "Au Sénépy, un décollage d'alpage face sud, il arrive qu'on ne vole que le matin, tant que l'aérologie est stable. Le Conest, orienté sud-est à sud, est idéal par sud jusqu'à 25 km/h : on y décolle avant 12 h, parce que la brise s'installe ensuite et provoque des cisaillements importants. Le Combenon, avec ses deux décollages orientés du sud-est à l'ouest, sert dans le même régime.",
+      "text": "Le matin, les faces sud ont leur fenêtre. Au Sénépy, décollage d'alpage face sud, on ne vole parfois que le matin, tant que l'aérologie est stable. Le Conest, face sud-est à sud, est idéal par sud jusqu'à 25 km/h. Décollez avant 12 h : ensuite, la brise s'installe et provoque de forts cisaillements. Le Combenon, avec ses deux décollages du sud-est à l'ouest, se vole dans le même régime.",
       "focus": ["senepy-alpage", "conest", "conest-cisaillement-brise-12h", "combenon-razier", "combenon-tete-de-vache"],
       "phase": "morning"
     },
     {
       "chapter": "La journée de l'air",
       "title": "Entre 11 h et 13 h, le nord se lève sur le Drac",
-      "text": "Le vent de nord de Monteynard se lève en fin de matinée, souffle sur toutes les plages, atteint son maximum vers 15 h, faiblit de 16 h 30 à 18 h, puis reprend parfois vers 17 h, plus orienté ouest. Il fait 8 à 15 nœuds par beau temps sans vent dominant, et 12 à 20 nœuds si le nord souffle en altitude. Son mécanisme est un réchauffement des pentes et du fond du Trièves, suivi d'une canalisation du flux dans les anciennes gorges du Drac. Sur le plateau matheysin, les lacs de Laffrey ont un vent de nord de 10 à 15 nœuds, que le plateau canalise.",
+      "text": "En fin de matinée, le nord de Monteynard se lève sur toutes les plages. Il culmine vers 15 h, faiblit de 16 h 30 à 18 h, puis reprend parfois vers 17 h, plus à l'ouest. Il fait 8 à 15 nœuds par beau temps sans vent dominant, 12 à 20 nœuds si le nord souffle en altitude. Le mécanisme : les pentes et le fond du Trièves chauffent, et le flux se canalise dans les anciennes gorges du Drac. Sur le plateau matheysin, les lacs de Laffrey ont un nord de 10 à 15 nœuds, que le plateau canalise.",
       "focus": ["drac-monteynard-nord", "laffrey-nord-plateau", "grenoble-cuvette/cuvette-drac-sud-brise"],
       "phase": "midday"
     },
     {
       "chapter": "La journée de l'air",
       "title": "L'après-midi, le couloir du Drac devient un tube de vent",
-      "text": "Dans les anciennes gorges du Drac, le vent est accéléré par un effet venturi, c'est-à-dire par le resserrement de la vallée du barrage, puis canalisé par les parois raides : il faut éviter les transitions basses dans ce couloir entre environ 13 h et 18 h, et atterrir face au nord. Une brise pourrait aller plus loin, de Vizille à Saint-Bonnet-en-Champsaur par La Mure et Corps, mais ce tracé reste à confirmer, avec une confiance faible. À l'atterrissage de Connex, du côté du Conest, la brise de nord dès midi donne des conditions turbulentes, et il vaut mieux ne pas voler après 11 h.",
+      "text": "Dans les anciennes gorges du Drac, le resserrement de la vallée du barrage accélère le vent en venturi, et les parois raides le canalisent. Entre environ 13 h et 18 h, évitez les transitions basses dans ce couloir, et posez-vous face au nord. Une brise pourrait aller plus loin, de Vizille à Saint-Bonnet-en-Champsaur par La Mure et Corps, mais ce tracé reste à confirmer. À l'atterrissage de Connex, côté Conest, la brise de nord rend l'air turbulent dès midi : ne volez pas après 11 h.",
       "focus": ["monteynard-venturi-gorges-drac", "drac-matheysine-champsaur", "connex-atterro-brise-nord", "connex-atterro"],
       "phase": "afternoon"
     },
     {
       "chapter": "Où ça monte",
-      "title": "Conest et Laffrey : du soaring de sud, du dynamique de nord",
-      "text": "Au Conest, on fait du soaring par sud jusqu'à 25 km/h à partir du sommet sud, La Peyrouse, à 40 minutes de marche, avant que la brise ne s'installe vers midi. À Laffrey, le site se vole soit par bise légère, sous 15 km/h, avec un peu de thermique, soit en dynamique pur, quand l'air est poussé contre la pente, par 20 à 30 km/h. Il faut en revanche éviter Laffrey par nord fort et instable.",
+      "title": "Conest et Laffrey : soaring de sud, dynamique de nord",
+      "text": "Au Conest, on fait du soaring par sud jusqu'à 25 km/h depuis le sommet sud, La Peyrouse, à 40 minutes de marche, avant que la brise ne s'installe vers midi. Laffrey se vole de deux façons. Par bise légère, sous 15 km/h, avec un peu de thermique. Ou en dynamique pur, l'air poussé contre la pente, par 20 à 30 km/h. Évitez Laffrey par nord fort et instable.",
       "focus": ["conest-la-peyrouse", "conest-sud-soaring", "laffrey-dynamique-bise"],
       "phase": "morning"
     },
     {
       "chapter": "Les sites",
-      "title": "Laffrey : un site de départ de cross sans atterrissage officiel",
-      "text": "À Laffrey, les Fauries, orientés au nord, à l'ouest et au nord-ouest, sont défavorables par sud-est, sud et sud-ouest. Le site est un départ de cross, avec 198 décollages relevés ; il n'y a plus d'atterrissage officiel, et seule la repose au décollage est autorisée. Par vent fort, les pilotes en approche se posent au décollage. L'atterrissage de « la guitare » est interdit, et l'île Falcon ne sert qu'en secours, sans survoler Montfalcon, dans un contexte de gradient, de venturi et de parcs à chevaux.",
+      "title": "Laffrey, un départ de cross sans atterrissage",
+      "text": "À Laffrey, les Fauries regardent le nord, l'ouest et le nord-ouest : pas de sud-est, de sud ni de sud-ouest. Le site est un départ de cross, avec 198 décollages relevés. Il n'a plus d'atterrissage officiel : seule la repose au décollage est autorisée, et par vent fort, on s'y pose. L'atterrissage de « la guitare » est interdit. L'île Falcon ne sert qu'en secours, sans survoler Montfalcon, avec du gradient, du venturi et des parcs à chevaux.",
       "focus": ["laffrey-fauries", "laffrey-lieu-dit", "laffrey-atterro-secours", "laffrey-guitare-interdit-ile-falcon"],
       "phase": "afternoon"
     },
     {
       "chapter": "Les sites",
-      "title": "Valbonnais : Colombiers, Jas d'Oris, et le parc des Écrins",
-      "text": "Colombiers, orienté nord-ouest, se vole en limite et dans le parc national des Écrins : le survol à moins de 1000 m du sol y est interdit de début novembre à fin juin. Il est dangereux par nord fort, à cause de la montagne du Vet, et la route de Parquetout est fermée de la première neige au 15 mai. Jas d'Oris, favorable au sud-ouest, est un site de montagne accessible par l'Alpe du Grand Serre. À l'atterrissage d'Entraigues, derrière les tennis côté ouest, il est souvent turbulent, avec une ligne à haute tension à droite ; mieux vaut laisser passer les heures chaudes, après 11 h au printemps et en été.",
+      "title": "Valbonnais : Colombiers, Jas d'Oris et le parc des Écrins",
+      "text": "Colombiers, face nord-ouest, se vole en limite et dans le parc national des Écrins : survol interdit sous 1000 m du sol de début novembre à fin juin. Il est dangereux par nord fort, à cause de la montagne du Vet. La route de Parquetout est fermée de la première neige au 15 mai. Jas d'Oris, bon par sud-ouest, est un site de montagne accessible par l'Alpe du Grand Serre. L'atterrissage d'Entraigues, derrière les tennis côté ouest, est souvent turbulent, avec une ligne à haute tension à droite. Au printemps et en été, laissez passer les heures chaudes, après 11 h.",
       "focus": ["colombiers-valbonnais", "colombiers-ecrins-survol", "jas-oris-fond-plaines", "cote-rotte", "entraigues-atterro"],
       "phase": "afternoon"
     },
     {
       "chapter": "Le parcours classique",
-      "title": "Du Drac au Champsaur : un itinéraire encore hypothétique",
-      "text": "Laffrey est décrit comme un site de départ en cross, et une brise est dessinée de Vizille à Saint-Bonnet-en-Champsaur : l'itinéraire du Drac par La Mure et Corps vers le Champsaur reste une hypothèse, sans vol ni point de recharge connus. Dans l'autre sens, il arrive qu'un vol revienne du Champsaur vers Grenoble, avec une brise de la vallée de Valbonnais très forte à l'arrivée derrière La Salette ; la combe du Goulet est alors bousculante, et l'on peut y essuyer un rodéo, puis préférer poser à Valbonnais. Le conseil local est de passer plutôt par le col du Plan Collet.",
+      "title": "Du Drac au Champsaur, un itinéraire à inventer",
+      "text": "Laffrey est un départ de cross, et une brise est dessinée de Vizille à Saint-Bonnet-en-Champsaur. Mais l'itinéraire du Drac vers le Champsaur par La Mure et Corps reste une hypothèse : aucun vol ni point de relance connu. Dans l'autre sens, un vol peut revenir du Champsaur vers Grenoble. Derrière La Salette, la brise de Valbonnais est alors très forte, la combe du Goulet secoue, et l'on peut y essuyer un rodéo puis préférer se poser à Valbonnais. Mieux vaut passer par le col du Plan Collet.",
       "focus": ["drac-matheysine-vers-champsaur", "laffrey-lieu-dit", "valbonnais-combe-du-goulet-rodeo"],
       "phase": "afternoon"
     },
     {
       "chapter": "Les pièges",
-      "title": "Des atterrissages turbulents par vent de nord",
-      "text": "À Connex, la brise de nord dès midi rend l'atterrissage très turbulent, et il vaut mieux ne pas voler après 11 h. À Jas d'Oris, l'atterrissage est très turbulent par vent de nord, alors que le sud et le sud-ouest lui sont favorables. À Entraigues, il est souvent turbulent par brise forte ; à Laffrey, le venturi du village et des ruines de Séchilienne ajoute du gradient. À La Ville, près de Monteynard, on ne se pose qu'en régime de brise de nord ou sans vent : c'est malsain si le vent météo entre en sud au sol.",
+      "title": "Par nord, des atterrissages turbulents",
+      "text": "Le piège du secteur, ce sont les atterrissages. À Connex, la brise de nord rend l'atterrissage très turbulent dès midi : ne volez pas après 11 h. À Jas d'Oris, il est très turbulent par nord, alors que le sud et le sud-ouest lui conviennent. À Entraigues, il secoue souvent par brise forte. À Laffrey, le venturi du village et des ruines de Séchilienne ajoute du gradient. À La Ville, près de Monteynard, posez-vous seulement en brise de nord ou sans vent : c'est malsain si le sud entre au sol.",
       "focus": ["connex-atterro-brise-nord", "jas-oris-atterro-nord", "entraigues-atterro-turbulent", "laffrey-venturi-sechilienne", "monteynard-la-ville-atterro"],
       "view": "massif"
     },
     {
       "chapter": "Selon le vent météo",
-      "title": "Par bise : le couloir du Drac très venté",
-      "text": "Par bise, Monteynard passe de 8-15 à 12-20 nœuds, et le couloir du Drac devient très venté l'après-midi. Le nord met le Sénépy, le Combenon et le Conest sous le vent : ils sont défavorables par nord et nord-est. À Laffrey, on vole par bise légère sous 15 km/h avec du thermique, ou en dynamique pur par 20 à 30 km/h, jamais par nord fort et instable, et Colombiers est dangereux par nord fort. Monteynard est aussi réputé pour des épisodes de mistral.",
+      "title": "Par bise, le couloir du Drac très venté",
+      "text": "Par bise, Monteynard passe de 8-15 à 12-20 nœuds, et l'après-midi le couloir du Drac est très venté. Le Sénépy, le Combenon et le Conest passent sous le vent : ils ne marchent pas par nord et nord-est. À Laffrey, volez par bise légère sous 15 km/h avec du thermique, ou en dynamique pur par 20 à 30 km/h, jamais par nord fort et instable. Colombiers est dangereux par nord fort. Monteynard connaît aussi des épisodes de mistral.",
       "focus": ["drac-monteynard-nord", "senepy-alpage", "laffrey-dynamique-bise", "laffrey-nord-fort-instable", "colombiers-valbonnais"],
       "wind": { "from": "N", "kmh": 25 },
       "phase": "afternoon",
@@ -76,8 +76,8 @@
     },
     {
       "chapter": "Selon le vent météo",
-      "title": "Par sud : les décos du sud, un lac en rodéo",
-      "text": "Par vent de sud, la navigation sur Monteynard devient un rodéo, avec un vent irrégulier et des rafales brutales. Côté parapente, le Sénépy, le Combenon et le Conest, orientés sud à sud-ouest, sont les décollages favorables, avec du soaring au Conest jusqu'à 25 km/h, mais la brise de nord s'y installe dès 12 h. À La Ville, l'atterrissage est malsain si le vent météo entre en sud au sol.",
+      "title": "Par sud, les décollages sud, et le lac en rodéo",
+      "text": "Par sud, la navigation sur Monteynard devient un rodéo : vent irrégulier, rafales brutales. En parapente, le Sénépy, le Combenon et le Conest, face sud à sud-ouest, marchent, avec du soaring au Conest jusqu'à 25 km/h. Mais la brise de nord s'y installe dès 12 h. À La Ville, l'atterrissage est malsain si le sud entre au sol.",
       "focus": ["monteynard-sud-rafales", "conest-sud-soaring", "senepy-alpage", "monteynard-la-ville-atterro"],
       "wind": { "from": "S", "kmh": 15 },
       "phase": "morning",
@@ -85,8 +85,8 @@
     },
     {
       "chapter": "Selon le vent météo",
-      "title": "Par nord-ouest : Laffrey, Colombiers et Jas d'Oris s'ouvrent",
-      "text": "Par nord-ouest, Laffrey est favorable du nord à l'ouest, Colombiers au nord-ouest et Jas d'Oris au sud-ouest. Le Conest est défavorable par ouest et nord-ouest, alors que le Sénépy ne l'est que par nord et nord-est. Par nord-est ou nord-ouest, le plan d'eau de Monteynard est plus turbulent.",
+      "title": "Par nord-ouest, Laffrey, Colombiers et Jas d'Oris",
+      "text": "Par nord-ouest, Laffrey marche du nord à l'ouest, Colombiers au nord-ouest et Jas d'Oris au sud-ouest. Le Conest ne marche pas par ouest et nord-ouest, alors que le Sénépy ne craint que le nord et le nord-est. Par nord-est ou nord-ouest, le plan d'eau de Monteynard est plus turbulent.",
       "focus": ["laffrey-fauries", "colombiers-valbonnais", "jas-oris-fond-plaines", "conest", "senepy-alpage"],
       "wind": { "from": "NO", "kmh": 20 },
       "phase": "afternoon",
@@ -95,7 +95,7 @@
     {
       "chapter": "Les transitions",
       "title": "Vers le Trièves, le Champsaur et Grenoble",
-      "text": "Vers le sud, le Trièves et l'Obiou sont à portée : la brise du Drac se prolonge jusqu'à Monestier-de-Clermont. Vers le nord, la brise de la cuvette grenobloise descend le Drac par Vif et alimente Monteynard. Vers l'est, le Champsaur par le couloir du Drac reste une hypothèse, sans vol connu.",
+      "text": "Au sud, le Trièves et l'Obiou sont à portée : la brise du Drac se prolonge jusqu'à Monestier-de-Clermont. Au nord, la brise de la cuvette grenobloise descend le Drac par Vif et alimente Monteynard. À l'est, le Champsaur par le couloir du Drac reste une hypothèse, sans vol connu. À retenir : les faces sud avant midi, pas de transition basse dans le Drac l'après-midi, des atterrissages face au nord.",
       "focus": ["vercors-est-sud/drac-trieves-brise-monestier", "grenoble-cuvette/cuvette-drac-sud-brise", "drac-matheysine-vers-champsaur"],
       "view": "massif"
     }

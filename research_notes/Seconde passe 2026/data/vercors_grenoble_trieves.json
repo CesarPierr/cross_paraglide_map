@@ -5,7 +5,7 @@
       "id": "grenoble-cuvette",
       "name": "Cuvette grenobloise (cluse de Voreppe, confluence Isère–Drac)",
       "parent_massif": "Sillon alpin",
-      "summary": "Grenoble est au cœur d'un « Y » de trois vallées. Le Drac, axe nord-sud, se divise en deux : la cluse de Voreppe part vers le nord-nord-ouest, et le Grésivaudan vers le nord-est. La cluse de Voreppe est responsable de 75 % de l'aérologie locale : elle bloque les entrées de nord en basses couches, mais elle fournit aussi un conduit qui alimente les reliefs en brises.\n\nPar beau temps d'été, une brise ascendante forte s'établit dans la cluse dès la fin de matinée ou en début d'après-midi. Elle traverse Grenoble et file vers le sud par le Drac, jusqu'à Vif et Monteynard. Le Grésivaudan lui répond par une brise descendante « anormale », aspirée par la cluse. Les deux flux se rencontrent au nord-est de Grenoble, où se forme une confluence à 400-500 m et plus, avec des varios de 2-3 m/s. Les brises de vallée montent jusqu'à environ 900 m, puis se calment ; au-dessus, le vent météo, qui se renforce avec l'altitude, reprend la main.\n\nLorsque le vent de sud atteint le sol, vers Vif puis sur toute l'agglomération, il interdit de voler. Un front froid entre brutalement par la cluse et par les cols de la Chartreuse. Un régime de nord ou de nord-est, froid et instable, donne de bonnes ascendances au sud de Grenoble, mais pour le vol à voile seulement.\n\nPour le cross, la cuvette est la plaque tournante des transitions vers le Vercors, la Chartreuse et Belledonne. C'est aussi une zone basse, urbanisée et soumise à des contraintes aériennes : CTR2 Grenoble et TMA Lyon.",
+      "summary": "Grenoble est au cœur d'un « Y » de trois vallées. Le Drac arrive du sud et se divise en deux : la cluse de Voreppe part vers le nord-nord-ouest, le Grésivaudan vers le nord-est. La cluse de Voreppe fait 75 % de l'aérologie locale. Elle bloque les entrées de nord en basse couche, et elle sert de conduit aux brises qui alimentent les reliefs.\n\nPar beau temps d'été, une forte brise montante s'établit dans la cluse dès la fin de matinée ou en début d'après-midi. Elle traverse Grenoble et file au sud par le Drac, jusqu'à Vif et Monteynard. Le Grésivaudan lui répond par une brise descendante « anormale », aspirée par la cluse. Les deux flux se rencontrent au nord-est de Grenoble : la confluence s'y forme à partir de 400-500 m, avec des varios de 2-3 m/s. Les brises de vallée montent jusqu'à environ 900 m, puis se calment. Au-dessus, le vent météo, qui forcit avec l'altitude, reprend la main.\n\nQuand le sud touche le sol, vers Vif puis sur toute l'agglomération, on ne vole pas. Un front froid entre brutalement par la cluse et par les cols de la Chartreuse. Un régime de nord ou de nord-est, froid et instable, donne de bonnes ascendances au sud de Grenoble, mais pour le vol à voile seulement.\n\nEn cross, la cuvette est la plaque tournante des transitions vers le Vercors, la Chartreuse et Belledonne. C'est aussi une zone basse et urbanisée, sous contraintes aériennes : CTR2 Grenoble et TMA Lyon.",
       "bbox": [
         5.33,
         45.03,
@@ -800,7 +800,7 @@
       "synoptic_effects": [
         {
           "wind": "NW",
-          "effect": "Le vent de nord-ouest s'engouffre dans la cluse de Voreppe, y accélère, puis se détend sur la cuvette, et il s'ajoute à la brise de vallée de nord-ouest de l'après-midi. Pour quelques km/h d'écart, le nord déborde par-dessus la Chartreuse : un léger nord forcissant, annoncé par la météo, peut transformer le col du Coq en machine à laver, sans prévenir.",
+          "effect": "Le nord-ouest s'engouffre dans la cluse de Voreppe, y accélère, puis se détend sur la cuvette, en s'ajoutant à la brise de vallée de l'après-midi. Pour quelques km/h de plus, le nord déborde par-dessus la Chartreuse : un léger nord forcissant annoncé peut changer le col du Coq en machine à laver, sans prévenir.",
           "sources": [
             "S29",
             "S30",
@@ -809,21 +809,21 @@
         },
         {
           "wind": "S",
-          "effect": "Avec une dépression à l'ouest et un vent de sud ou de sud-ouest, les brises de vallée sont descendantes ou partiellement ascendantes. Le vent est excellent pour le soaring du Saint-Eynard tant qu'il reste sous 30-50 km/h à 3000 m. Le cisaillement entre vent et brise est un bon moment pour passer avant l'atterrissage, et l'onde de ressaut du Vercors est exploitable. Dès que le sud atteint le sol, ne pas voler.",
+          "effect": "Avec une dépression à l'ouest et un vent de sud ou de sud-ouest, les brises de vallée descendent ou ne montent qu'en partie. Le Saint-Eynard est excellent en soaring tant que le vent reste sous 30-50 km/h à 3000 m. Passez le cisaillement entre vent et brise avant de vous poser, et exploitez l'onde de ressaut du Vercors. Dès que le sud touche le sol, ne volez pas.",
           "sources": [
             "S35"
           ]
         },
         {
           "wind": "SW",
-          "effect": "Comme pour le vent de sud, le vent de sud-ouest met plus de temps à atteindre les basses couches en hiver, dans les vallées remplies d'air froid. Vers 3000 m, 30-40 km/h doivent faire préférer la piscine.",
+          "effect": "Comme le sud, le sud-ouest met plus de temps à atteindre les basses couches l'hiver, quand l'air froid remplit les vallées. Avec 30-40 km/h vers 3000 m, préférez la piscine.",
           "sources": [
             "S35"
           ]
         },
         {
           "wind": "N",
-          "effect": "Par vent de nord ou de nord-est fort, l'air polaire est froid et instable, avec des cumulus à 1500-2000 m. Une confluence se forme au sud de Grenoble, exploitable en vol à voile seulement : on ne vole que de très bonne heure. Par fort vent de nord, on peut se replier sur Montaud, Courtet ou Montlambert.",
+          "effect": "Par nord ou nord-est fort, l'air polaire est froid et instable, avec des cumulus à 1500-2000 m. Une confluence se forme au sud de Grenoble, mais elle ne sert qu'au vol à voile : en parapente, on ne vole que de très bonne heure. Par fort nord, repliez-vous sur Montaud, Courtet ou Montlambert.",
           "sources": [
             "S35",
             "S8"
@@ -831,14 +831,14 @@
         },
         {
           "wind": "NE",
-          "effect": "Le nord-est se mêle au flux de nord fort. Les décollages de Chamrousse et de Saint-Hilaire se jouent au nord-est. Il arrive qu'une météo annoncée de nord-ouest tourne au nord-est, ce qui peut obliger à déplacer le groupe de Chamrousse vers Saint-Hilaire.",
+          "effect": "Le nord-est se mêle au flux de nord fort. À Chamrousse et à Saint-Hilaire, les décollages se jouent au nord-est. Un nord-ouest annoncé peut tourner au nord-est et obliger à déplacer le groupe de Chamrousse vers Saint-Hilaire.",
           "sources": [
             "S8"
           ]
         },
         {
           "wind": "Bise",
-          "effect": "La bise, c'est-à-dire un régime de nord établi, se lit comme le vent de nord. À Voreppe, le décollage de Chalais, orienté au sud, reste abrité de la brise de nord, mais pas l'atterrissage.",
+          "effect": "La bise, un régime de nord établi, se lit comme le vent de nord. À Voreppe, le décollage de Chalais, face sud, reste abrité de la brise de nord, mais pas l'atterrissage.",
           "sources": [
             "S100"
           ]
@@ -846,19 +846,19 @@
       ],
       "xc_routes": [],
       "tips": [
-        "Dans l'Y, on vole le matin tôt et en début d'après-midi : après 9h30-10h, par régime de nord ou de nord-est, la brise de la cluse rend l'atterrissage de Lumbin impossible en sécurité [S35].",
-        "Avant de se poser, passer la zone de cisaillement entre le vent météo (sud ou sud-ouest) et la brise de vallée : c'est un bon moment, car l'atterrissage se fait alors en descente dans les vallées [S35].",
-        "À Voreppe, le décollage de Chalais est abrité de la brise de nord, mais pas l'atterrissage de Rivalières : prévoir une marge pour la brise qui monte dès la fin de matinée [S100][S101].",
-        "Si la brise de Grenoble dépasse 35 km/h et remonte la vallée d'Uriage, ne pas décoller : les signes en sont visibles au décollage [S104].",
-        "À Chalais, décoller le matin ou par vent de sud faible, avant que la brise rende l'atterrissage de Rivalières problématique : le soaring du soir le long des falaises est la seule prolongation connue [S254].",
-        "À l'Écoutoux, ne pas chercher le thermique à l'aplomb du sommet : il se trouve sur le côté, ou un peu plus loin vers Chamechaude, selon le jour [S245][S246]."
+        "Dans l'Y, volez tôt le matin et en début d'après-midi. Par régime de nord ou de nord-est, après 9h30-10h, la brise de la cluse rend l'atterrissage de Lumbin impossible en sécurité [S35].",
+        "Avant de vous poser, traversez la zone de cisaillement entre le vent météo de sud ou de sud-ouest et la brise de vallée : c'est le bon moment, car l'atterrissage se fait alors en descente dans les vallées [S35].",
+        "À Voreppe, le décollage de Chalais est abrité de la brise de nord, mais pas l'atterrissage de Rivalières : gardez de la marge, la brise monte dès la fin de matinée [S100][S101].",
+        "Si la brise de Grenoble dépasse 35 km/h et remonte la vallée d'Uriage, ne décollez pas : les signes se voient du décollage [S104].",
+        "À Chalais, décollez le matin ou par sud faible, avant que la brise ne rende l'atterrissage de Rivalières délicat. Seul le soaring du soir le long des falaises permet de prolonger [S254].",
+        "À l'Écoutoux, ne cherchez pas le thermique à l'aplomb du sommet : il est sur le côté, ou un peu plus loin vers Chamechaude, suivant le jour [S245][S246]."
       ]
     },
     {
       "id": "vercors-nord",
       "name": "Vercors Nord (Saint-Nizier/Moucherotte, Lans, Villard, Corrençon, Méaudre, Autrans, Gorges de la Bourne)",
       "parent_massif": "Préalpes du Nord - Vercors",
-      "summary": "Le plateau de Lans, Villard, Autrans et Méaudre est bordé à l'est par la barrière du Moucherotte, du Pic Saint-Michel, du Cornafion et de la Grande Moucherolle, qui domine Grenoble (face est). Il s'ouvre à l'ouest sur le Royans, par les gorges de la Bourne.\n\nL'après-midi, des brises du nord parcourent le massif vers le sud : de Sassenage et Engins vers Lans et Villard, du nord d'Autrans vers Méaudre, du plateau de Rencurel vers le sud, et de Saint-Julien vers Saint-Martin. Ces brises contrent les pilotes qui vont vers le nord, la Vierge du Vercors et les gorges de la Bourne, et les poussent au retour. Elles alimentent très bien les décollages ouest l'après-midi (Saint-Martin, l'Aigle, le Belvédère). Les décollages du matin (Méaudre, les Sagnes, le col de l'Arc, le Pic Saint-Michel côté est) deviennent vite turbulents, dès 11h-11h30.\n\nLes thermiques se déclenchent sur les faces ouest dès 12h (l'Aigle), et sur la face est dès le matin (Moucherotte, Pic Saint-Michel, Col Vert). La crête permet le cross vers le sud (Gerbier, Grand Veymont) ou vers le nord (Moucherotte, Chartreuse par le Rachais), avec des passages piégeux (Roc Cornafion, Vierge du Vercors, Bec de l'Orient).\n\nÀ respecter : la réserve naturelle des Hauts-Plateaux impose 300 m sol minimum. L'espace aérien est limité (LTA Vercors FL125, TMA Lyon FL95-115), et des zones de nidification (faucon pèlerin, aigle royal) bordent les falaises.",
+      "summary": "Le plateau de Lans, Villard, Autrans et Méaudre est fermé à l'est par une barrière : le Moucherotte, le Pic Saint-Michel, le Cornafion et la Grande Moucherolle, dont la face est domine Grenoble. À l'ouest, il s'ouvre sur le Royans par les gorges de la Bourne.\n\nL'après-midi, des brises de nord parcourent le massif vers le sud : de Sassenage et Engins vers Lans et Villard, du nord d'Autrans vers Méaudre, du plateau de Rencurel vers le sud, de Saint-Julien vers Saint-Martin. Elles contrent les pilotes qui partent au nord, vers la Vierge du Vercors et les gorges de la Bourne, et les poussent au retour. Elles alimentent très bien les décollages ouest l'après-midi : Saint-Martin, l'Aigle, le Belvédère. Les décollages du matin (Méaudre, les Sagnes, le col de l'Arc, le Pic Saint-Michel côté est) deviennent vite turbulents, dès 11h-11h30.\n\nLa face est déclenche dès le matin (Moucherotte, Pic Saint-Michel, Col Vert), les faces ouest dès 12h (l'Aigle). La crête mène en cross au sud (Gerbier, Grand Veymont) ou au nord (Moucherotte, puis la Chartreuse par le Rachais). Trois passages sont piégeux : le Roc Cornafion, la Vierge du Vercors et le Bec de l'Orient.\n\nÀ respecter : la réserve naturelle des Hauts-Plateaux impose 300 m sol au minimum. L'espace aérien est limité (LTA Vercors FL125, TMA Lyon FL95-115), et des zones de nidification de faucon pèlerin et d'aigle royal bordent les falaises.",
       "bbox": [
         5.35,
         44.9,
@@ -2926,7 +2926,7 @@
       "synoptic_effects": [
         {
           "wind": "N",
-          "effect": "Le vent de nord renforce les brises de Lans et de Saint-Martin, où le décollage est renforcé. Par vent de nord modéré, 10-25 km/h, la dynamique s'établit à l'Aigle, et les sorties de décollage sont turbulentes au Belvédère. Par nord fort, les replis autour de Grenoble sont Montaud, Courtet ou Montlambert ; Montaud est un site du soir thermodynamique avec un départ vers le sud. Autrans-Bellecombe n'est pas praticable.",
+          "effect": "Le nord renforce les brises de Lans et de Saint-Martin, où le décollage est mieux alimenté. Par nord modéré, 10-25 km/h, l'Aigle se vole en dynamique, et les sorties de décollage secouent au Belvédère. Autrans-Bellecombe n'est pas praticable. Par nord fort, repliez-vous autour de Grenoble sur Montaud, Courtet ou Montlambert. Montaud est alors un site du soir thermodynamique, avec un départ vers le sud.",
           "sources": [
             "S41",
             "S38",
@@ -2937,7 +2937,7 @@
         },
         {
           "wind": "NE",
-          "effect": "Les décollages exposés à l'est et au nord-est (Méaudre, les Sagnes, le col de l'Arc, le Pic Saint-Michel côté est) se jouent par brise faible et le matin. Montaud vole par léger nord-est. L'Aigle est défavorable par nord-est, est et sud-est.",
+          "effect": "Les décollages face est et nord-est (Méaudre, les Sagnes, le col de l'Arc, le Pic Saint-Michel côté est) se volent le matin, par brise faible. Montaud marche par léger nord-est. L'Aigle ne va pas par nord-est, est et sud-est.",
           "sources": [
             "S37",
             "S42",
@@ -2947,7 +2947,7 @@
         },
         {
           "wind": "E",
-          "effect": "Par vent d'est, les décollages ouest sont défavorables : l'Aigle, le Belvédère, le Moucherotte côté ouest et Saint-Martin. Les faces est sont favorables si le vent est faible (col de l'Arc, Col Vert, Charande, Pré du Four). Les entrées d'est engendrent des rouleaux au Belvédère.",
+          "effect": "Par est, les décollages ouest ne marchent pas : l'Aigle, le Belvédère, le Moucherotte côté ouest et Saint-Martin. Les faces est se volent si le vent est faible : col de l'Arc, Col Vert, Charande, Pré du Four. Les entrées d'est créent des rouleaux au Belvédère.",
           "sources": [
             "S37",
             "S39"
@@ -2955,7 +2955,7 @@
         },
         {
           "wind": "SE",
-          "effect": "Par vent de sud-est, les décollages ouest du plateau sont défavorables : l'Aigle, le Belvédère et le Moucherotte. La Côte 2000 y est défavorable, tandis que le Pré du Four et Charande y sont favorables.",
+          "effect": "Par sud-est, les décollages ouest du plateau ne marchent pas : l'Aigle, le Belvédère, le Moucherotte, et la Côte 2000 non plus. Le Pré du Four et Charande, en revanche, se volent.",
           "sources": [
             "S37",
             "S123"
@@ -2963,7 +2963,7 @@
         },
         {
           "wind": "S",
-          "effect": "Par vent de sud faible, le Belvédère décolle en travers de la pente. Autrans-Bellecombe est idéal par très léger sud, mais non praticable par sud fort. Méaudre est à éviter, Corrençon est très turbulent, et Montaud comme l'Alevoux sont dangereux (rouleaux, rotation rapide). Le soaring du Cornafion se fait par sud-ouest.",
+          "effect": "Par sud faible, le Belvédère se décolle en travers de la pente. Autrans-Bellecombe est idéal par très léger sud, mais pas par sud fort. Évitez Méaudre. Corrençon est très turbulent, et Montaud comme l'Alevoux sont dangereux, avec rouleaux et rotation rapide du vent. Le Cornafion se vole en soaring par sud-ouest.",
           "sources": [
             "S37",
             "S39",
@@ -2973,7 +2973,7 @@
         },
         {
           "wind": "SW",
-          "effect": "Par vent de sud-ouest, le secteur est favorable aux décollages ouest du plateau : l'Aigle, le Belvédère, la Côte 2000, le Moucherotte côté ouest, le Cornafion et Saint-Martin. Le soaring est beau dans la combe de Pissevache.",
+          "effect": "Par sud-ouest, tous les décollages ouest du plateau marchent : l'Aigle, le Belvédère, la Côte 2000, le Moucherotte côté ouest, le Cornafion et Saint-Martin. La combe de Pissevache offre un beau soaring.",
           "sources": [
             "S37",
             "S46",
@@ -2982,7 +2982,7 @@
         },
         {
           "wind": "W",
-          "effect": "Par vents faibles d'ouest, l'Aigle, le Belvédère, le Moucherotte et le Pic Saint-Michel côté ouest, Saint-Martin et la Côte 2000 sont volables. La restitution du soir se fait sur les faces ouest (Moucherotte, Pic Saint-Michel). Par forte brise d'ouest, il faut garder de l'altitude pour rejoindre Autrans.",
+          "effect": "Par ouest faible, l'Aigle, le Belvédère, le Moucherotte et le Pic Saint-Michel côté ouest, Saint-Martin et la Côte 2000 se volent. Le soir, la restitution se fait sur les faces ouest du Moucherotte et du Pic Saint-Michel. Par forte brise d'ouest, gardez de l'altitude pour rejoindre Autrans.",
           "sources": [
             "S24",
             "S39",
@@ -2993,7 +2993,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Par vent de nord-ouest faible, les décollages ouest sont favorables : l'Aigle, le Belvédère, le Moucherotte, Saint-Martin et la Côte 2000, ainsi que Malleval (Pas de l'Âne, l'Alevoux). On y trouve du thermique et un léger nord.",
+          "effect": "Par nord-ouest faible, les décollages ouest marchent : l'Aigle, le Belvédère, le Moucherotte, Saint-Martin et la Côte 2000, ainsi que Malleval (Pas de l'Âne, l'Alevoux). On y trouve du thermique et un léger nord.",
           "sources": [
             "S37",
             "S140",
@@ -3416,23 +3416,23 @@
         }
       ],
       "tips": [
-        "À l'Aigle, la sortie du décollage est turbulente quand le vent arrive de travers, à droite ou à gauche : ne pas poser sur la pente école pendant les foins [S24].",
-        "Au Pas de Saint-Martin, franchir la Vierge du Vercors au-dessus des falaises, où les rouleaux de brise sont fréquents ; le survol des falaises est interdit, pour protéger faucons pèlerins et chamois [S41][S136].",
-        "Pour un cross vers le nord depuis Saint-Martin, la brise contre à l'aller et pousse au retour : ne pas insister à la Vierge, et revenir gagner de la hauteur [S38].",
-        "À la Côte 2000, accrocher le thermique de l'escarpement, à droite du décollage, et accepter de dériver avec lui. Ne pas passer le Cornafion par l'est [S38].",
-        "Au Cornafion, contourner l'épaule par l'ouest, où se trouve la confluence de brises ; en fin de saison, attention aux dusts [S46].",
-        "Les décollages du matin (Méaudre, les Sagnes, le col de l'Arc) deviennent très turbulents dès la fin de matinée : il faut poser tôt [S42][S47].",
-        "Dans les gorges de la Bourne, entre Pertuson et Cumacle, il n'y a aucune zone de vachage sur 3 km : prévoir le gain nécessaire avant la crête [S38].",
-        "Zones d'oiseaux : faucon pèlerin de janvier à juillet, aigle royal de janvier à septembre, vautour fauve et gypaète de janvier à août. Rester bien au-dessus des falaises, ou dégager rapidement [S49].",
-        "Du Néron au Vercors, il faut 1800 m depuis le Néron pour raccrocher au-dessus des lignes à haute tension. Éviter la pointe sud du Néron, sous le vent de la brise de Voreppe [S208].",
-        "Au Belvédère, dès qu'on rencontre la pompe de service, il ne faut plus la lâcher avant le plafond. Quand le Grésivaudan apparaît, on est assez haut pour transiter plein est [S199]."
+        "À l'Aigle, la sortie du décollage secoue quand le vent arrive de travers, d'un côté ou de l'autre. Ne vous posez pas sur la pente école pendant les foins [S24].",
+        "Au Pas de Saint-Martin, passez la Vierge du Vercors au-dessus des falaises, où les rouleaux de brise sont fréquents. Le survol des falaises est interdit, pour protéger faucons pèlerins et chamois [S41][S136].",
+        "En cross vers le nord depuis Saint-Martin, la brise vous contre à l'aller et vous pousse au retour : n'insistez pas à la Vierge, revenez prendre de la hauteur [S38].",
+        "À la Côte 2000, accrochez le thermique de l'escarpement, à droite du décollage, et laissez-vous dériver avec lui. Ne passez pas le Cornafion par l'est [S38].",
+        "Au Cornafion, contournez l'épaule par l'ouest, là où les brises se rencontrent. En fin de saison, gare aux dusts [S46].",
+        "Aux décollages du matin (Méaudre, les Sagnes, le col de l'Arc), posez-vous tôt : dès la fin de matinée, ça devient très turbulent [S42][S47].",
+        "Dans les gorges de la Bourne, entre Pertuson et Cumacle, il n'y a aucun vachage sur 3 km : faites votre gain avant la crête [S38].",
+        "Zones d'oiseaux : faucon pèlerin de janvier à juillet, aigle royal de janvier à septembre, vautour fauve et gypaète de janvier à août. Restez bien au-dessus des falaises, ou dégagez vite [S49].",
+        "Du Néron au Vercors, comptez 1800 m au départ du Néron pour raccrocher au-dessus des lignes à haute tension. Évitez la pointe sud du Néron, sous le vent de la brise de Voreppe [S208].",
+        "Au Belvédère, dès que vous trouvez la pompe de service, ne la lâchez plus avant le plafond. Quand le Grésivaudan apparaît, vous êtes assez haut pour transiter plein est [S199]."
       ]
     },
     {
       "id": "vercors-est-sud",
       "name": "Vercors Est et Sud (Gresse, Serpaton, Grand Veymont, Mont Aiguille ; Vassieux, Rousset, Font d'Urle ; Royans et Vercors drômois)",
       "parent_massif": "Préalpes du Nord - Vercors",
-      "summary": "Le Balcon Est du Vercors, des Deux Sœurs au Grand Veymont et au Mont Aiguille, domine la vallée de la Gresse et le Trièves (S20). Le Serpaton, col à 1586 m doté de trois décollages, en est le site phare.\n\nLa brise de vallée remonte le vallon de Gresse depuis le Drac, orientée N/NNO. Elle est soutenue dès 11h au col du Fau et reste soutenue tard en soirée à Serpaton Ouest, où elle permet de voler le Serpaton Ouest 500 (O/NO) en thermo-dynamique en fin de journée. Par vent d'ouest, le Serpaton Est (E/SE/S) devient turbulent (S148, S149, S150).\n\nAutour du massif, des brises N→S longent toute sa longueur, de Saint-Julien, La Chapelle et Vassieux jusqu'au col de Rousset, ainsi que le long du Royans. Le Royans et le Vercors drômois (Saint-Jean-en-Royans, Léoncel, Limouches, Musan) se volent l'après-midi par brise de N/NE ou thermique d'ouest, sous l'influence de la vallée du Rhône, qui peut renforcer le vent.\n\nÀ respecter : la Réserve naturelle des Hauts-Plateaux impose 300 m sol minimum et interdit le vachage, et limite les crêtes du Brisou, du Mont Aiguille et du Grand Veymont. Une R196B, activable du 16/09 au 30/06, et les ZSM du gypaète du Glandasse et d'Archiane s'y ajoutent. Les pilotes font des allers-retours classiques jusqu'au Mont Aiguille (S23, S33). Le Royans est aussi un espace aérien chargé, autour de l'aérodrome de Saint-Jean-en-Royans.",
+      "summary": "Le Balcon Est du Vercors, des Deux Sœurs au Grand Veymont et au Mont Aiguille, domine la vallée de la Gresse et le Trièves. Son site phare est le Serpaton, un col à 1586 m avec trois décollages.\n\nDepuis le Drac, une brise de nord à nord-nord-ouest remonte le vallon de Gresse. Elle est soutenue dès 11h au col du Fau, et le reste tard le soir au Serpaton Ouest. En fin de journée, elle permet d'y voler l'Ouest 500, face ouest à nord-ouest, en thermo-dynamique. Par vent d'ouest, le Serpaton Est, face est à sud, devient turbulent.\n\nAutour du massif, des brises du nord vers le sud le longent sur toute sa longueur, de Saint-Julien, La Chapelle et Vassieux jusqu'au col de Rousset, et le long du Royans. Le Royans et le Vercors drômois (Saint-Jean-en-Royans, Léoncel, Limouches, Musan) se volent l'après-midi, par brise de nord à nord-est ou thermique d'ouest. La vallée du Rhône y pèse et peut renforcer le vent. Les allers-retours jusqu'au Mont Aiguille sont un classique.\n\nÀ respecter : la Réserve naturelle des Hauts-Plateaux impose 300 m sol au minimum, interdit le vachage et borne les crêtes du Brisou, du Mont Aiguille et du Grand Veymont. S'y ajoutent la R196B, activable du 16 septembre au 30 juin, et les zones de sensibilité majeure du gypaète au Glandasse et à Archiane. Le Royans est aussi un espace aérien chargé, autour de l'aérodrome de Saint-Jean-en-Royans.",
       "bbox": [
         5.1,
         44.7,
@@ -4739,7 +4739,7 @@
       "synoptic_effects": [
         {
           "wind": "W",
-          "effect": "Par vent d'ouest, le Serpaton Ouest 500 est volable par O/NO, tandis que le Serpaton Est, les Rivières et le balcon est sont sous le vent. Le Royans (Léoncel S/SO/O, Limouches N/NO) se vole avec vent faible, sous l'influence de la vallée du Rhône.",
+          "effect": "Par ouest, le Serpaton Ouest 500 se vole, face ouest à nord-ouest, mais le Serpaton Est, les Rivières et tout le balcon est sont sous le vent. Le Royans se vole par vent faible, sous l'influence de la vallée du Rhône : Léoncel face sud à ouest, Limouches face nord à nord-ouest.",
           "sources": [
             "S149",
             "S150",
@@ -4750,7 +4750,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Par vent de nord-ouest, le Serpaton Ouest 500 (O/NO) et le Serpaton intermédiaire (N/NO) sont volables, avec la brise de NNO en fin de journée. Gaudissart et Limouches (N/NO) fonctionnent aussi.",
+          "effect": "Par nord-ouest, le Serpaton Ouest 500 (ouest, nord-ouest) et le Serpaton intermédiaire (nord, nord-ouest) se volent, avec la brise de nord-nord-ouest en fin de journée. Gaudissart et Limouches (nord, nord-ouest) marchent aussi.",
           "sources": [
             "S149",
             "S148",
@@ -4760,7 +4760,7 @@
         },
         {
           "wind": "N",
-          "effect": "Par vent de nord, le Serpaton Est est défavorable par nord et par nord-est. Gaudissart est protégé du vent de la vallée du Rhône par un léger vent de nord. Musan est dangereux par nord ou par sud. Aux Limouches, il ne faut pas traverser le cirque de Peyrus par vent de nord fort. À l'atterrissage du Col du Fau, la brise de vallée du nord se lève dès 11h.",
+          "effect": "Par nord ou nord-est, le Serpaton Est ne marche pas. Un léger nord protège Gaudissart du vent de la vallée du Rhône. Musan est dangereux par nord comme par sud. Aux Limouches, ne traversez pas le cirque de Peyrus par nord fort. À l'atterrissage du Col du Fau, la brise de vallée du nord se lève dès 11h.",
           "sources": [
             "S150",
             "S162",
@@ -4771,7 +4771,7 @@
         },
         {
           "wind": "Bise",
-          "effect": "Par vent du nord, des nuages orographiques se forment côté Vercors, sur les cols de Vassieux et du Rousset, puis s'effondrent côté Diois, où l'on observe un effet de foehn local et un « trou bleu ». Ces nuages signalent obligatoirement un vent du nord. Le col de Rousset devient impossible et dangereux à la moindre entrée de nord.",
+          "effect": "Par vent du nord, des nuages orographiques se forment côté Vercors, sur les cols de Vassieux et du Rousset, puis s'effondrent côté Diois : foehn local et « trou bleu ». Ces nuages signent toujours un vent du nord. À la moindre entrée de nord, le col de Rousset devient impossible et dangereux.",
           "sources": [
             "S56",
             "S57"
@@ -4779,7 +4779,7 @@
         },
         {
           "wind": "NE",
-          "effect": "Par vent de nord-est, le Serpaton Est et l'Ouest 500 sont défavorables ; Musan (NE/E/SE), Léoncel et Limouches sont sous le vent.",
+          "effect": "Par nord-est, le Serpaton Est et l'Ouest 500 ne marchent pas. Musan (nord-est, est, sud-est), Léoncel et Limouches sont sous le vent.",
           "sources": [
             "S150",
             "S160",
@@ -4788,7 +4788,7 @@
         },
         {
           "wind": "E",
-          "effect": "Par vent d'est, le Serpaton Est (E/SE/S) est volable par brise thermique ou très léger flux. Musan est favorable le matin, et les Limouches sont sous le vent de l'est. Léoncel est défavorable.",
+          "effect": "Par est, le Serpaton Est (est, sud-est, sud) se vole en brise thermique ou par très léger flux. Musan marche le matin. Les Limouches sont sous le vent de l'est, et Léoncel ne marche pas.",
           "sources": [
             "S150",
             "S160",
@@ -4797,7 +4797,7 @@
         },
         {
           "wind": "SE",
-          "effect": "Par vent de sud-est, le Serpaton Est (E/SE/S) est favorable, comme Musan (NE/E/SE). L'Ouest 500 est défavorable.",
+          "effect": "Par sud-est, le Serpaton Est (est, sud-est, sud) marche, comme Musan (nord-est, est, sud-est). L'Ouest 500 ne marche pas.",
           "sources": [
             "S150",
             "S160"
@@ -4805,7 +4805,7 @@
         },
         {
           "wind": "S",
-          "effect": "Par vent de sud très léger, le Serpaton Est est volable. L'Ouest 500 et le Serpaton intermédiaire sont déconseillés. Léoncel (S/SO) est volable par vent inférieur à 30 km/h, Musan est dangereux, et le Pré Valet est déconseillé par fort sud.",
+          "effect": "Par sud très léger, le Serpaton Est se vole. L'Ouest 500 et le Serpaton intermédiaire sont déconseillés. Léoncel (sud, sud-ouest) se vole sous 30 km/h. Musan est dangereux, et le Pré Valet est déconseillé par fort sud.",
           "sources": [
             "S150",
             "S149",
@@ -4816,7 +4816,7 @@
         },
         {
           "wind": "SW",
-          "effect": "Par vent de sud-ouest, le Serpaton Est et l'Ouest 500 sont défavorables : il ne faut pas y voler en conditions de sud et de sud-ouest. Léoncel (S/SO/O) est favorable.",
+          "effect": "Par sud-ouest, ne volez ni le Serpaton Est ni l'Ouest 500 : on n'y vole pas par sud et sud-ouest. Léoncel (sud, sud-ouest, ouest) marche bien.",
           "sources": [
             "S150",
             "S149",
@@ -5046,21 +5046,21 @@
         }
       ],
       "tips": [
-        "Au Serpaton Ouest, attendre la fin d'après-midi et une brise de NNO constante pour voler en thermo-dynamique ; la brise reste soutenue tard, donc prévoir de la marge pour l'atterrissage des Rivières [S149].",
-        "Au Col du Fau, par brise de vallée du nord (N), préférer une PTU main gauche et ne pas dériver au sud du champ, où l'on serait sous le vent du col [S152].",
-        "Depuis le Pas du Serpaton, la finesse vers Le Rota est d'environ 5 : avec une brise de nord, un vol balistique est compliqué [S153].",
-        "Dans les Hauts-Plateaux, voler à 300 m sol minimum, ne pas vacher dans la réserve et respecter les crêtes du Brisou, du Mont Aiguille et du Grand Veymont [S149][S33].",
-        "Au col de Rousset, site à vautours, rester loin des falaises et respecter l'altitude minimum de survol de 1100 m autour du col [S154][S49].",
-        "À Saint-Jean-en-Royans, l'approche de l'aérodrome est réglementée (500 m et 800 m au-dessus de la mer) : ne pas croiser la piste, et charger le fichier OpenAir dans l'instrument [S53].",
-        "Au Royans et à Léoncel, le vent de la vallée du Rhône peut se renforcer : vérifier la manche à air pendant la perte d'altitude [S157].",
-        "Aux Deux Sœurs, on raccroche en général d'assez bas, dans un thermique généreux (souvent plus de 4 m/s) ; sinon, des vaches sont possibles à la station de l'Arzelier [S211]."
+        "Au Serpaton Ouest, attendez la fin d'après-midi et une brise de nord-nord-ouest constante pour voler en thermo-dynamique. La brise reste soutenue tard : gardez de la marge pour l'atterrissage des Rivières [S149].",
+        "Au Col du Fau, par brise de vallée du nord, faites une PTU main gauche et ne dérivez pas au sud du champ, sous le vent du col [S152].",
+        "Depuis le Pas du Serpaton, Le Rota est à une finesse d'environ 5 : par brise de nord, un vol direct est compliqué [S153].",
+        "Dans les Hauts-Plateaux, volez à 300 m sol au minimum, ne vous vachez pas dans la réserve, et respectez les crêtes du Brisou, du Mont Aiguille et du Grand Veymont [S149][S33].",
+        "Au col de Rousset, site à vautours, restez loin des falaises et ne descendez pas sous 1100 m de survol autour du col [S154][S49].",
+        "À Saint-Jean-en-Royans, l'approche de l'aérodrome est réglementée (500 m et 800 m au-dessus de la mer) : ne croisez pas la piste, et chargez le fichier OpenAir dans votre instrument [S53].",
+        "Au Royans et à Léoncel, le vent de la vallée du Rhône peut forcir : surveillez la manche à air pendant la descente [S157].",
+        "Aux Deux Sœurs, on raccroche en général d'assez bas, dans un thermique généreux, souvent plus de 4 m/s. Sinon, la station de l'Arzelier offre des vaches [S211]."
       ]
     },
     {
       "id": "trieves",
       "name": "Trièves (Mens, Monestier-de-Clermont, Clelles, Courtet, col de la Croix-Haute, Lalley)",
       "parent_massif": "Préalpes - Trièves",
-      "summary": "Le Trièves est un bassin ouvert, entre la barrière est du Vercors (Mont Aiguille, Grand Veymont) et l'Obiou, le Grand Ferrand et le Dévoluy.\n\nUne brise descend du Drac vers le Trièves, puis vers le col de la Croix-Haute (Monestier-de-Clermont, Saint-Maurice, Lalley, Lus-la-Croix-Haute), et une brise du Diois remonte par le col de Menée vers Le Percy (S49, S48). Le vent de nord du lac de Monteynard est attribué à la forte chaleur au fond du Trièves (S3).\n\nCourtet (N/NO, 1365 m, au pied de la face ouest de l'Obiou) est le site refuge : écoles et clubs le décrivent comme protégé du vent du nord, ce qui permet de voler quand le reste de l'Isère est cloué au sol (S21, S169). Le Châtel de Mens (N, S, SO, O, NO, 1918 m) et Rochassac complètent les décollages ; l'atterrissage du Châtel à Mens n'est plus autorisé.\n\nDes allers-retours vers le Vercors, notamment vers le Mont Aiguille, sont classiques depuis le Serpaton et le Trièves, et la réserve des Hauts-Plateaux est à respecter (S33).",
+      "summary": "Le Trièves est un bassin ouvert, entre la barrière est du Vercors (Mont Aiguille, Grand Veymont) d'un côté, l'Obiou, le Grand Ferrand et le Dévoluy de l'autre.\n\nUne brise descend du Drac vers le Trièves, puis vers le col de la Croix-Haute, par Monestier-de-Clermont, Saint-Maurice, Lalley et Lus-la-Croix-Haute. Une brise du Diois remonte par le col de Menée vers Le Percy. Le vent de nord du lac de Monteynard viendrait de la forte chaleur au fond du Trièves.\n\nCourtet, face nord à nord-ouest à 1365 m, au pied de la face ouest de l'Obiou, est le site refuge. Protégé du vent du nord, il permet de voler quand le reste de l'Isère est cloué au sol. Le Châtel de Mens (nord, sud, sud-ouest, ouest, nord-ouest, 1918 m) et Rochassac complètent les décollages. L'atterrissage du Châtel à Mens n'est plus autorisé.\n\nLes allers-retours vers le Vercors, notamment jusqu'au Mont Aiguille, sont un classique depuis le Serpaton et le Trièves. Respectez la réserve des Hauts-Plateaux.",
       "bbox": [
         5.4,
         44.55,
@@ -5663,7 +5663,7 @@
       "synoptic_effects": [
         {
           "wind": "Bise",
-          "effect": "Par bise, le nord s'étale dans la vallée. Courtet (N/NO) reste volable et demeure le repli principal par nord fort, avec Montaud et Montlambert ; les écoles insistent sur sa protection contre le vent du nord. Au nord du bassin, Monteynard passe à 12-20 nds (voir la Matheysine).",
+          "effect": "Par bise, le nord s'étale dans la vallée. Courtet (nord, nord-ouest), bien protégé du nord, reste volable : c'est le repli principal par nord fort, avec Montaud et Montlambert. Au nord du bassin, côté Matheysine, Monteynard monte à 12-20 nds.",
           "sources": [
             "S8",
             "S21",
@@ -5674,7 +5674,7 @@
         },
         {
           "wind": "N",
-          "effect": "Par vent de nord, Courtet (N/NO) et le Châtel (N) sont favorables. La brise N→S descend le Trièves vers la Croix-Haute l'après-midi.",
+          "effect": "Par nord, Courtet (nord, nord-ouest) et le Châtel (nord) marchent. L'après-midi, la brise descend le Trièves du nord vers le sud, jusqu'à la Croix-Haute.",
           "sources": [
             "S169",
             "S173",
@@ -5683,7 +5683,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Par vent de nord-ouest, Courtet et le Châtel (N, S, SO, O, NO) sont favorables.",
+          "effect": "Par nord-ouest, Courtet et le Châtel (nord, sud, sud-ouest, ouest, nord-ouest) marchent.",
           "sources": [
             "S169",
             "S173"
@@ -5691,7 +5691,7 @@
         },
         {
           "wind": "S",
-          "effect": "Par vent de sud, Courtet (SE et S) est défavorable, et le Châtel (S, SO) est favorable.",
+          "effect": "Par sud, Courtet ne marche pas, ni par sud-est. Le Châtel (sud, sud-ouest), lui, marche.",
           "sources": [
             "S169",
             "S173"
@@ -5699,7 +5699,7 @@
         },
         {
           "wind": "SE",
-          "effect": "Par vent de sud-est, Courtet est défavorable.",
+          "effect": "Par sud-est, Courtet ne marche pas.",
           "sources": [
             "S169"
           ]
@@ -5918,17 +5918,17 @@
         }
       ],
       "tips": [
-        "Par bise, se replier sur Courtet (N/NO), protégé du nord, mais ne pas y voler par SE ou S [S8][S21][S169].",
-        "À Courtet, les jeudi, samedi et dimanche de chasse, aucun véhicule ne circule sur la piste avant 13h : monter à pied pour décoller avant cette heure [S169].",
-        "Ne pas atterrir sur le champ du Châtel à Mens, dont le propriétaire est opposé à l'activité des pilotes [S174].",
-        "Au Jocou, vers l'Obiou : le plafond se fait devant le décollage, puis l'on met le cap sur l'antenne de l'émetteur plein est, avant le Mesnil où il faut chercher où ça monte [S205]."
+        "Par bise, repliez-vous sur Courtet (nord, nord-ouest), protégé du nord, mais n'y volez pas par sud-est ou sud [S8][S21][S169].",
+        "À Courtet, les jeudis, samedis et dimanches de chasse, aucun véhicule ne monte la piste avant 13h : montez à pied pour décoller plus tôt [S169].",
+        "Ne vous posez pas sur le champ du Châtel à Mens : son propriétaire est opposé aux pilotes [S174].",
+        "Du Jocou vers l'Obiou, faites le plafond devant le décollage, puis cap plein est sur l'antenne de l'émetteur. Avant le Mesnil, cherchez où ça monte [S205]."
       ]
     },
     {
       "id": "matheysine",
       "name": "Matheysine et Drac (lac de Monteynard, lacs de Laffrey, La Mure, Sénépy, Conest, Valbonnais)",
       "parent_massif": "Préalpes – Matheysine",
-      "summary": "Secteur dominé par le vent du nord. Le lac de Monteynard, réputé deuxième lac le plus venté d'Europe, fonctionne l'été presque uniquement par vent de nord thermique : il se lève entre 11h et 13h, culmine vers 15h, faiblit vers 16h30-18h et reprend parfois vers 17h, plus orienté ouest. Il souffle à 8-15 nds sans vent synoptique, et à 12-20 nds avec du nord en altitude (S1, S3, S4).\n\nLe mécanisme : les pentes et le fond du Trièves se réchauffent, et le vent est canalisé et accéléré (venturi) dans les anciennes gorges du Drac (S3-S5). Des cartes de brises du Vercors tracent la flèche qui descend du Drac de Grenoble par Vif jusqu'à Miribel-Lanchâtre et Monteynard (S49), et une longue ligne qui va de Vizille à Laffrey, La Mure, Corps et Saint-Bonnet-en-Champsaur (S48). Sur le plateau matheysin, Laffrey a un vent dominant de nord, thermique, de 10-15 nds, canalisé par le plateau (S6). Le site se vole par bise légère, de moins de 15 km/h, avec du thermique, ou en dynamique pur par 20-30 km/h ; on l'évite par nord fort et instable (S8).\n\nLes décollages sont majoritairement orientés S/SO (Sénépy, Combenon, Conest) : ils profitent du soaring par vent de sud faible, mais la brise de nord s'installe dès 12h, avec des cisaillements importants au Conest et des conditions turbulentes à l'atterrissage de Connex. Pour le cross, le couloir du Drac est un tube de vent de nord l'après-midi : les transitions basses et les atterrissages se font face au nord. Rejoindre le Champsaur par la Matheysine demande d'enchaîner le Conest, le Sénépy et les crêtes de Valbonnais.",
+      "summary": "Ici, c'est le vent du nord qui commande. Le lac de Monteynard, réputé deuxième lac le plus venté d'Europe, ne marche l'été presque que par nord thermique. Ce vent se lève entre 11h et 13h, culmine vers 15h, faiblit vers 16h30-18h, et reprend parfois vers 17h, plus à l'ouest. Il souffle à 8-15 nds sans vent synoptique, à 12-20 nds avec du nord en altitude.\n\nLe mécanisme : les pentes et le fond du Trièves chauffent, et le vent s'accélère en venturi dans les anciennes gorges du Drac. Des cartes de brises du Vercors tracent une flèche qui descend le Drac de Grenoble par Vif jusqu'à Miribel-Lanchâtre et Monteynard, et une longue ligne de Vizille à Laffrey, La Mure, Corps et Saint-Bonnet-en-Champsaur. Sur le plateau matheysin, Laffrey a un nord dominant, thermique, de 10-15 nds, canalisé par le plateau. On y vole par bise légère, sous 15 km/h, avec du thermique, ou en dynamique pur par 20-30 km/h. On l'évite par nord fort et instable.\n\nLes décollages regardent surtout le sud et le sud-ouest : Sénépy, Combenon, Conest. Ils offrent du soaring par sud faible, mais la brise de nord s'installe dès 12h, avec de forts cisaillements au Conest et un atterrissage turbulent à Connex.\n\nEn cross, l'après-midi, le couloir du Drac est un tube de vent de nord : transitions basses et atterrissages se font face au nord. Pour rejoindre le Champsaur par la Matheysine, il faut enchaîner le Conest, le Sénépy et les crêtes de Valbonnais.",
       "bbox": [
         5.6,
         44.65,
@@ -7029,7 +7029,7 @@
       "synoptic_effects": [
         {
           "wind": "Bise",
-          "effect": "Par bise, Monteynard passe de 8-15 nds à 12-20 nds de nord : le couloir du Drac devient très venté l'après-midi. À Laffrey, on vole soit par bise légère, de moins de 15 km/h, avec du thermique, soit en dynamique pur par 20-30 km/h ; on évite le nord fort et instable (S8).",
+          "effect": "Par bise, Monteynard passe de 8-15 nds à 12-20 nds de nord : l'après-midi, le couloir du Drac est très venté. À Laffrey, volez par bise légère, sous 15 km/h, avec du thermique, ou en dynamique pur par 20-30 km/h. Évitez le nord fort et instable.",
           "sources": [
             "S1",
             "S8"
@@ -7037,7 +7037,7 @@
         },
         {
           "wind": "S",
-          "effect": "Par vent de sud, Monteynard a un vent irrégulier, avec des rafales brutales (« rodéo ») (S1). Côté parapente, le Sénépy, le Combenon et le Conest (S/SO/SE) sont les décollages favorables, avec du soaring au Conest jusqu'à 25 km/h ; ils sont défavorables par N/NE, et la brise de nord s'y installe dès 12h (S175, S179, S177).",
+          "effect": "Par sud, Monteynard prend un vent irrégulier, aux rafales brutales : c'est le « rodéo ». En parapente, le Sénépy, le Combenon et le Conest (sud, sud-ouest, sud-est) marchent, avec du soaring au Conest jusqu'à 25 km/h. Ils ne marchent pas par nord ou nord-est, et la brise de nord s'y installe dès 12h.",
           "sources": [
             "S1",
             "S175",
@@ -7047,21 +7047,21 @@
         },
         {
           "wind": "NE",
-          "effect": "Par vent de nord-est ou de nord-ouest, le vent est plus turbulent sur Monteynard (S1).",
+          "effect": "Par nord-est ou nord-ouest, le vent est plus turbulent sur Monteynard.",
           "sources": [
             "S1"
           ]
         },
         {
           "wind": "Mistral",
-          "effect": "Monteynard est réputé pour des épisodes de mistral, c'est-à-dire un vent synoptique de nord, en plus de son thermique (S2).",
+          "effect": "Monteynard est réputé pour ses épisodes de mistral, un vent synoptique de nord qui s'ajoute à son thermique.",
           "sources": [
             "S2"
           ]
         },
         {
           "wind": "N",
-          "effect": "Par vent de nord, les décollages du Sénépy, du Combenon et du Conest sont sous le vent, et défavorables par N et NE ; la brise du Drac et de Laffrey se renforce. Laffrey se vole par bise faible, de moins de 15 km/h, avec du thermique, ou à 20-30 km/h en dynamique. Colombiers, au nord-ouest, est dangereux par nord fort, à cause de la montagne du Vet (S175, S188, S182).",
+          "effect": "Par nord, le Sénépy, le Combenon et le Conest sont sous le vent : ils ne marchent pas par nord et nord-est. La brise du Drac et de Laffrey forcit. Laffrey se vole par bise faible, sous 15 km/h, avec du thermique, ou à 20-30 km/h en dynamique. Colombiers, au nord-ouest, est dangereux par nord fort, à cause de la montagne du Vet.",
           "sources": [
             "S8",
             "S175",
@@ -7071,7 +7071,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Par vent de nord-ouest : Laffrey (N/O/NO) est favorable ; Colombiers (NO) et Jas d'Oris (SO) sont également cités pour ce vent. Le Conest est défavorable par O et NO, et le Sénépy seulement par N et NE (S182, S188, S177).",
+          "effect": "Par nord-ouest, Laffrey (nord, ouest, nord-ouest) marche, et Colombiers (nord-ouest) et Jas d'Oris (sud-ouest) aussi. Le Conest ne marche pas par ouest et nord-ouest. Le Sénépy, lui, ne craint que le nord et le nord-est.",
           "sources": [
             "S182",
             "S188",
@@ -7081,7 +7081,7 @@
         },
         {
           "wind": "Vent du Sud (flux de sud en altitude)",
-          "effect": "Par vent de sud en altitude, le Coiro et le Taillefer se prennent sur le versant ouest. Un sud établi pousse les pilotes des Richards vers Chamrousse, avec des plafonds de 2800 à 3100 m, et un Coiro puissant sur l'épaule sud-est. Par sud très fort, avec plus de 90 km/h au sol, le Coiro ne donne rien ; le vent est canalisé en sud-sud-est au Taillefer, et les thermiques de la face ouest sont sous le vent.",
+          "effect": "Par sud en altitude, le Coiro et le Taillefer se prennent sur le versant ouest. Un sud établi pousse les pilotes des Richards vers Chamrousse, avec des plafonds de 2800 à 3100 m et un Coiro puissant sur l'épaule sud-est. Par sud très fort, plus de 90 km/h au sol, le Coiro ne donne rien : le vent est canalisé en sud-sud-est au Taillefer, et les thermiques de la face ouest sont sous le vent.",
           "sources": [
             "S232",
             "S233",
@@ -7186,14 +7186,14 @@
         }
       ],
       "tips": [
-        "Le vent du nord de Monteynard est établi de 13h environ à 18h environ, avec un maximum vers 15h : éviter les transitions basses dans le couloir du Drac à ces heures [S1][S3].",
-        "Si la bise souffle en altitude, compter 12-20 nds au ras du lac [S1].",
-        "Au Conest, décoller avant 12h : la brise s'installe ensuite, avec des cisaillements importants ; le soaring de sud va jusqu'à 25 km/h [S177].",
-        "À Laffrey, il n'y a plus d'atterrissage officiel : seul le retour au décollage est autorisé. Gradient et venturi au village de Laffrey et aux ruines de Séchilienne [S106].",
-        "À Connex et à La Ville, atterrir en régime de brise de nord (ou sans vent), pas par vent de sud au sol [S178][S191].",
-        "De La Salette au Coiro (7 km), partir à plus de 2400 m pour arriver vers 1800 m ; du Châtel (Obiou) au Taillefer (15 km), partir à plus de 2800 m [S232].",
-        "Au Coiro, zone sous le vent de la brise au sud du sommet, et turbulences de thermique, vent et brise à l'ouest : au-dessus de Valbonnais, ne pas passer à gauche de la ligne de crête, car la vallée d'Oris-en-Rattier prend le dessus [S232][S239].",
-        "Au Grand Serre, la grande pente herbeuse à l'ouest a été jugée peu productive lors d'un vol, mais des bulles thermodynamiques bien présentes ont été trouvées lors d'un vol d'automne : les avis divergent, à vérifier sur place [S237][S260]."
+        "Le nord de Monteynard souffle d'environ 13h à environ 18h, au plus fort vers 15h : à ces heures, évitez les transitions basses dans le couloir du Drac [S1][S3].",
+        "Si la bise souffle en altitude, comptez 12-20 nds au ras du lac [S1].",
+        "Au Conest, décollez avant 12h : ensuite la brise s'installe, avec de forts cisaillements. Le soaring de sud y tient jusqu'à 25 km/h [S177].",
+        "À Laffrey, il n'y a plus d'atterrissage officiel : seul le retour au décollage est autorisé. Méfiez-vous du gradient et du venturi au village de Laffrey et aux ruines de Séchilienne [S106].",
+        "À Connex et à La Ville, posez-vous en brise de nord ou sans vent, jamais par vent de sud au sol [S178][S191].",
+        "De La Salette au Coiro (7 km), partez à plus de 2400 m pour arriver vers 1800 m. Du Châtel (Obiou) au Taillefer (15 km), partez à plus de 2800 m [S232].",
+        "Au Coiro, le sud du sommet est sous le vent de la brise, et l'ouest mélange thermique, vent et brise. Au-dessus de Valbonnais, ne passez pas à gauche de la crête : la vallée d'Oris-en-Rattier prend le dessus [S232][S239].",
+        "Au Grand Serre, la grande pente herbeuse ouest a paru peu productive lors d'un vol, mais a donné de belles bulles thermodynamiques lors d'un vol d'automne : vérifiez sur place [S237][S260]."
       ]
     }
   ],

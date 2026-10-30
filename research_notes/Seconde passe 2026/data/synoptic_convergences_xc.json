@@ -5,7 +5,7 @@
       "id": "alpes-francaises",
       "name": "Alpes françaises (échelle régionale)",
       "parent_massif": "Alpes occidentales",
-      "summary": "Échelle des Alpes françaises : par journée thermique d'été à vent faible, les Alpes forment une dépression thermique qui aspire l'air des plaines (Bas-Dauphiné, Avant-Pays, bassin genevois, Provence, plaine du Pô).\n\nChaque grande vallée développe une brise montante de 15-35 km/h (20-25 au Pays du Mont-Blanc), avec des pointes de 30 à 50 km/h (Arve, Tarentaise, Maurienne, Durance : plus de 40 km/h à Briançon), sensible jusqu'à 2500-3000 m. Elles démarrent avec le soleil, s'établissent en vallée en fin de matinée, culminent de 14h à 17h et s'inversent le soir.\n\nLe sens des brises surprend parfois : au débouché de la cluse de Chambéry, l'air se partage vers Albertville (Combe de Savoie) et vers Grenoble (Grésivaudan, brise « de nord »), et les brises d'altitude des Alpes du Sud s'alimentent par la Durance. Les meilleures lignes de cross suivent les crêtes où deux brises opposées se rencontrent (Préalpes du Nord ; Diois, Dévoluy, Buëch ; crête frontalière face à la plaine du Pô ; front de brise de mer du Haut-Var) : triangles de 200 km depuis Saint-Hilaire (Chartreuse - Bauges - Aravis), records de 300 à 358 km depuis le col de l'Izoard par nord de 15-20 km/h ou nord-ouest (Izoard - Dévoluy - Cheval Blanc - Verdon).\n\nLe vent synoptique renforce, dévie ou détruit ces brises : 10 km/h au sommet donnent des turbulences, 20 km/h hachent les thermiques et font proscrire le vol au Pays du Mont-Blanc. Foehn de sud (Chamonix, Contamines), bise, lombarde (crêtes frontalières) et mistral (Alpes du Sud, convergences du Buëch, de Gap-Tallard et du Verdon) ont chacun leurs abris et pièges.",
+      "summary": "Par journée thermique d'été à vent faible, les Alpes forment une dépression thermique qui aspire l'air des plaines : Bas-Dauphiné, Avant-Pays, bassin genevois, Provence, plaine du Pô.\n\nChaque grande vallée a sa brise montante, de 15-35 km/h (20-25 au Pays du Mont-Blanc), avec des pointes de 30 à 50 km/h dans l'Arve, la Tarentaise, la Maurienne et la Durance, et plus de 40 km/h à Briançon. Elle porte jusqu'à 2500-3000 m. Elle démarre avec le soleil, s'établit en fin de matinée, culmine de 14h à 17h et s'inverse le soir.\n\nSon sens surprend parfois. Au débouché de la cluse de Chambéry, l'air part à la fois vers Albertville (Combe de Savoie) et vers Grenoble (Grésivaudan, brise « de nord »). Dans les Alpes du Sud, les brises d'altitude s'alimentent par la Durance. Les meilleures lignes de cross suivent les crêtes où deux brises opposées se rencontrent : Préalpes du Nord ; Diois, Dévoluy, Buëch ; crête frontalière face à la plaine du Pô ; front de brise de mer du Haut-Var. On y boucle des triangles de 200 km depuis Saint-Hilaire (Chartreuse - Bauges - Aravis), et des records de 300 à 358 km depuis le col de l'Izoard, par nord de 15-20 km/h ou nord-ouest (Izoard - Dévoluy - Cheval Blanc - Verdon).\n\nLe vent synoptique renforce, dévie ou détruit ces brises. 10 km/h au sommet donnent des turbulences. 20 km/h hachent les thermiques et interdisent le vol au Pays du Mont-Blanc. Foehn de sud (Chamonix, Contamines), bise, lombarde (crêtes frontalières) et mistral (Alpes du Sud, convergences du Buëch, de Gap-Tallard et du Verdon) ont chacun leurs abris et leurs pièges.",
       "bbox": [
         4.8,
         43.1,
@@ -2191,7 +2191,7 @@
       "synoptic_effects": [
         {
           "wind": "Bise",
-          "effect": "Bise : vent froid et sec de nord-est à nord, issu d'un anticyclone sur les îles Britanniques ou la Scandinavie. Dans les Alpes françaises, elle se ressent surtout sur l'avant-pays (Léman, Lyonnais, Bas-Dauphiné) et se canalise dans les grandes vallées. Le secteur des Arcs, en Haute-Tarentaise, reste volable sous 2500 m même avec 40 km/h de bise à Annecy, Chambéry ou Grenoble (point non revérifié). Par bise faible à modérée, la brise de la Combe de Savoie et du Grésivaudan est contrariée côté Chambéry (déduction). Par vent de nord annoncé, Saint-Hilaire vole 8 fois sur 10 ; par fort nord, les pilotes se replient sur Montaud, Courtet ou Montlambert. Sur les Bauges, un nord soutenu est plus marqué à l'ouest qu'à l'est du massif, ce qui permet de voler au cœur du massif à l'abri. Bise noire : un nord-est bas, surmonté d'un flux chaud et humide de sud à sud-est au-delà de 2000 m, à éviter.",
+          "effect": "La bise, froide et sèche, souffle de nord-est à nord depuis un anticyclone sur les îles Britanniques ou la Scandinavie. Dans les Alpes françaises, elle frappe surtout l'avant-pays (Léman, Lyonnais, Bas-Dauphiné) et se canalise dans les grandes vallées. Par nord annoncé, Saint-Hilaire vole 8 fois sur 10 ; par fort nord, repliez-vous sur Montaud, Courtet ou Montlambert. Dans les Bauges, le nord soutenu est plus fort à l'ouest, et le cœur du massif reste à l'abri. Les Arcs, en Haute-Tarentaise, volent sous 2500 m même avec 40 km/h de bise à Annecy, Chambéry ou Grenoble, point à revérifier. Par bise faible à modérée, la brise de la Combe de Savoie et du Grésivaudan serait contrariée côté Chambéry. Fuyez la bise noire : un nord-est bas sous un flux chaud et humide de sud à sud-est au-delà de 2000 m.",
           "sources": [
             "S59",
             "S10",
@@ -2201,7 +2201,7 @@
         },
         {
           "wind": "N",
-          "effect": "Par nord annoncé, le vent réel est souvent du nord-nord-est au nord-ouest. Sur les Alpes du Nord, la balise du Moucherotte donnait nord-nord-est 15/25 avec un thermique sous le vent et des faces est chaotiques, l'air étant plus sain après l'épaule du Moucherotte ; par nord modéré, Saint-Hilaire reste le site le plus praticable. Dans les Alpes du Sud, le nord est la condition des plus gros triangles de l'Izoard (nord de 15-20 km/h toute la journée, décollage en vent arrière face nord puis saut sous le vent, et 20 km/h de face sur la dernière branche), mais un nord trop fort a fait renoncer au Cheval Blanc. Il rend dangereux le sud du parcours (Cheval Blanc, Monges), crée des dust devils à Chabre quand la brise prend le dessus sur un nord faible, et pousse les thermiques à dériver. Aux cimes, plus de 10 km/h donnent des turbulences, et plus de 20 km/h hachent les thermiques.",
+          "effect": "Un nord annoncé souffle souvent du nord-nord-est au nord-ouest. Dans les Alpes du Nord, Saint-Hilaire reste le site le plus praticable par nord modéré. Avec nord-nord-est 15/25 au Moucherotte, le thermique était sous le vent et les faces est chaotiques, l'air redevenant sain après l'épaule. Dans les Alpes du Sud, un nord de 15-20 km/h toute la journée fait les plus gros triangles de l'Izoard : décollage en vent arrière face nord, saut sous le vent, 20 km/h de face sur la dernière branche. Trop fort, il rend dangereux le sud du parcours (Cheval Blanc, Monges) et a fait renoncer au Cheval Blanc. Il fait dériver les thermiques, et à Chabre il lève des dust devils quand la brise prend le dessus sur un nord faible. Aux cimes, plus de 10 km/h donnent des turbulences, et plus de 20 km/h hachent les thermiques.",
           "sources": [
             "S66",
             "S47",
@@ -2214,7 +2214,7 @@
         },
         {
           "wind": "NE",
-          "effect": "Régime de nord-est : un léger flux descend la vallée (bise). Le Pays du Mont-Blanc cite le nord-est comme orientation de nombreux décollages, et un flux de bise descend l'Arve. Au sud, Saint-Vincent-les-Forts et Oraison étaient donnés comme refuges (point non revérifié). Le nord-est seul n'est pas documenté dans les Alpes du Sud.",
+          "effect": "Par nord-est, un léger flux de bise descend les vallées, dont l'Arve. Au Pays du Mont-Blanc, beaucoup de décollages regardent le nord-est. Au sud, Saint-Vincent-les-Forts et Oraison étaient donnés comme refuges, point à revérifier : le nord-est seul n'est pas documenté dans les Alpes du Sud.",
           "sources": [
             "S55",
             "S13"
@@ -2223,7 +2223,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Le nord-ouest renforce, par beau temps de traîne, les faces au vent des Préalpes, et pousse les convergences vers le sud-est. En vol, il était assez marqué au-dessus de 2000 m en Préalpes du Nord, avec des confluences très toniques, des descendances jusqu'à -6 m/s, et un tronçon entre la Tête à Turpin et le Parmelan, en plein vent et rafaleux. Le nord-ouest et les ombres rendent difficiles le Champsaur et le Valbonnais en fin de journée, et il y a 10 km/h de nord-ouest sur l'est du Vercors. Dans les Alpes du Sud, le vent tournant d'ouest-nord-ouest facilite l'aller vers Saint-André, mais il durcit le retour. Une confluence entre vent météo et brise est la plus marquée, mais elle reste mobile, voisine du sous-le-vent et des rotors.",
+          "effect": "Le nord-ouest de traîne, par beau temps, renforce les faces au vent des Préalpes et pousse les convergences vers le sud-est. Au-dessus de 2000 m en Préalpes du Nord, il a donné des confluences très toniques, des descendances jusqu'à -6 m/s, et un tronçon rafaleux en plein vent entre la Tête à Turpin et le Parmelan. Avec les ombres, il rend le Champsaur et le Valbonnais difficiles en fin de journée, et il souffle à 10 km/h sur l'est du Vercors. Dans les Alpes du Sud, l'ouest-nord-ouest tournant facilite l'aller vers Saint-André mais durcit le retour. Sa confluence avec une brise opposée est la plus marquée, mais mobile, près du sous-le-vent et des rotors.",
           "sources": [
             "S28",
             "S52",
@@ -2234,7 +2234,7 @@
         },
         {
           "wind": "W",
-          "effect": "L'ouest de l'avant-pays pousse l'air contre les faces ouest des Préalpes. En vol, un ouest devenu ingérable au-dessus de 2000 m sur le Vercors a fait faire demi-tour au Pic Saint-Michel, et il repousse fortement à 2500 m à l'Aulp du Seuil. Les 15 km/h d'ouest annoncés peuvent être du nord-nord-ouest. Au Pays du Mont-Blanc, le vol est à proscrire au-delà de 20 km/h à 2000 m. Par ouest ou sud-ouest, la brise de la Durance rentre tôt et brusquement, jusqu'aux Têtes de l'Argentière et aux crêtes de Peyrolles.",
+          "effect": "L'ouest de l'avant-pays plaque l'air contre les faces ouest des Préalpes. Au-dessus de 2000 m sur le Vercors, il est devenu ingérable et a fait faire demi-tour au Pic Saint-Michel. Il repousse fort à 2500 m à l'Aulp du Seuil. Les 15 km/h d'ouest annoncés sont parfois du nord-nord-ouest. Au Pays du Mont-Blanc, pas de vol au-delà de 20 km/h à 2000 m. Par ouest ou sud-ouest, la brise de la Durance entre tôt et brusquement, jusqu'aux Têtes de l'Argentière et aux crêtes de Peyrolles.",
           "sources": [
             "S46",
             "S28",
@@ -2244,7 +2244,7 @@
         },
         {
           "wind": "SW",
-          "effect": "Le sud-ouest, aligné avec la Durance et l'axe de l'Isère, renforce les brises montantes : à Briançon, la brise de la Durance fait des pointes à plus de 40 km/h, et les tendances sud à ouest la font entrer tôt. Un petit sud-ouest de 9 km/h pousse dans le bon sens la traversée Chartreuse-Bauges. En revanche, un sud-ouest annoncé forcissant a « appuyé » la traversée Vercors-Diois, avec une perte de 500 m pour 2 km, et il a contré le retour de Lus-la-Croix-Haute. La sortie d'un massif se paie d'autant plus que l'on est haut, poussé par le vent météo. Au Pic de Bure, le sud-ouest a donné de bien meilleurs thermiques. Dans le pré-frontal, les convergences peuvent surdévelopper (déduction pour les Alpes françaises).",
+          "effect": "Le sud-ouest, dans l'axe de la Durance et de l'Isère, renforce les brises montantes : à Briançon, la brise de la Durance entre tôt, avec des pointes à plus de 40 km/h. Un petit sud-ouest de 9 km/h a poussé dans le bon sens la traversée Chartreuse-Bauges. Annoncé forcissant, il a au contraire écrasé la traversée Vercors-Diois, 500 m perdus pour 2 km, et contré le retour de Lus-la-Croix-Haute. Plus on sort haut d'un massif, plus on le paie, poussé par le vent météo. Au Pic de Bure, il a donné de bien meilleurs thermiques. En pré-frontal, les convergences pourraient surdévelopper dans les Alpes françaises.",
           "sources": [
             "S57",
             "S46",
@@ -2255,7 +2255,7 @@
         },
         {
           "wind": "S",
-          "effect": "Le vent du sud est opposé aux brises dans les vallées nord-sud, et il crée des cisaillements dans les Bauges. À Annecy, un sud de 18 km/h aux Dents de Lanfon est de face pour le retour. Sur les Alpes du Nord, il donne une composante sud sur les Aravis : il faut y remonter au vent, car les brises donnent une composante sud. Avant une perturbation, il prépare le foehn (voir le foehn). À Belledonne sud (Fond de France), la zone est turbulente surtout par vent du sud. Le Valbonnais a une brise toujours forte.",
+          "effect": "Le sud s'oppose aux brises des vallées nord-sud et crée des cisaillements dans les Bauges. À Annecy, 18 km/h de sud aux Dents de Lanfon arrivent de face au retour. Dans les Alpes du Nord, sur les Aravis, les brises prennent une composante sud : remontez au vent. Avant une perturbation, le sud prépare le foehn. Belledonne sud (Fond de France) secoue surtout par sud, et le Valbonnais a toujours une brise forte.",
           "sources": [
             "S42",
             "S46",
@@ -2266,7 +2266,7 @@
         },
         {
           "wind": "SE",
-          "effect": "Dans les Alpes du Sud, le vent de sud-est (Saint-Genis, Aspres, Serres) est traité comme un régime à part, qui s'oppose aux brises remontant de la Durance et du Buëch. Le schéma de référence (diapos 73-79) le montre, mais le flux n'y est pas géoréférencé précisément. Pour les crêtes frontalières, voir la lombarde.",
+          "effect": "Dans les Alpes du Sud, le sud-est (Saint-Genis, Aspres, Serres) est un régime à part : il s'oppose aux brises qui remontent la Durance et le Buëch. Le schéma de référence le montre, sans géoréférencer précisément le flux. Pour les crêtes frontalières, voyez la lombarde.",
           "sources": [
             "S45",
             "S12"
@@ -2275,7 +2275,7 @@
         },
         {
           "wind": "E",
-          "effect": "Par vent d'est, l'air italien rentre par les cols frontaliers. Le Vieux Chaillol et Freissinières ont été franchis, poussé par ce vent d'est. Au Pays du Mont-Blanc, un retour d'est ou de sud-est dans la vallée de Chamonix, vers le Varan, accompagne le foehn.",
+          "effect": "Par est, l'air italien entre par les cols frontaliers : des vols ont passé le Vieux Chaillol et Freissinières, poussés par ce vent. Au Pays du Mont-Blanc, un retour d'est ou de sud-est dans la vallée de Chamonix, vers le Varan, accompagne le foehn.",
           "sources": [
             "S50",
             "S56"
@@ -2283,7 +2283,7 @@
         },
         {
           "wind": "Foehn",
-          "effect": "Le foehn de sud s'établit avant une perturbation, avec un flux de sud en altitude (sud-ouest à est, parfois nord-est), une haute pression côté italien et une baisse côté français. Les vallées de Chamonix et des Contamines sont les plus exposées au Pays du Mont-Blanc. Un foehn est probable à -4 hPa d'écart entre Aoste et Annecy ; 2 à 4 hPa d'écart de part et d'autre d'un massif imposent une prudence maximale. Pour Zurich-Milan, 5 hPa ont été donnés, corrigés à 4 hPa pour Zurich-Lugano. Le foehn peut se cantonner entre 1400 et 1800 m, et se déclencher avec environ 20 km/h à 4000 m, sans nuage. Les indices sont les lenticulaires, un mur de foehn débordant des cols, des écharpes venues d'Italie, des cumulus déchiquetés dès le matin et des rafales chaudes et sèches qui descendent la vallée. En soaring dans 15 km/h, on peut être repoussé par plus de 30 à 35 km/h. Le foehn est un vent irrégulier, de 30 à plus de 100 km/h.",
+          "effect": "Le foehn de sud s'établit avant une perturbation : flux de sud en altitude (sud-ouest à est, parfois nord-est), hautes pressions côté italien, baisse côté français. Au Pays du Mont-Blanc, Chamonix et les Contamines sont les vallées les plus exposées. Il est probable à -4 hPa d'écart entre Aoste et Annecy, et 2 à 4 hPa de part et d'autre d'un massif imposent une prudence maximale. Entre Zurich et Milan, on donnait 5 hPa, ramenés à 4 hPa pour Zurich-Lugano. Il peut rester entre 1400 et 1800 m, ou partir avec environ 20 km/h à 4000 m, sans nuage. Signes : lenticulaires, mur de foehn aux cols, écharpes venues d'Italie, cumulus déchiquetés dès le matin, rafales chaudes et sèches. Irrégulier, de 30 à plus de 100 km/h, il peut repousser à plus de 30 à 35 km/h quand on soare dans 15 km/h.",
           "sources": [
             "S55",
             "S56",
@@ -2293,7 +2293,7 @@
         },
         {
           "wind": "Lombarde",
-          "effect": "La lombarde, de nord-est à sud-est sur les crêtes frontalières, surtout de l'Ubaye au Queyras et à la Maurienne, est un retour d'est lié à une dépression sur le golfe de Gênes ou à une advection d'air polaire continental. Elle apporte de fortes précipitations sur les crêtes entre Modane et le Mont-Cenis, et entre Abriès et le Queyras, sans dépasser la rive gauche de la Durance. Pour le vol, le ciel est dégradé, et le vent d'est sur la crête frontalière s'oppose aux brises remontant les hautes vallées. Le schéma de référence place la confluence entre les flux de la plaine du Pô et ceux de la Durance sur cette même crête.",
+          "effect": "La lombarde est un retour d'est, de nord-est à sud-est, sur les crêtes frontalières, surtout de l'Ubaye au Queyras et à la Maurienne. Elle vient d'une dépression sur le golfe de Gênes ou d'une advection d'air polaire continental. Elle arrose fort les crêtes entre Modane et le Mont-Cenis, et entre Abriès et le Queyras, sans passer la rive gauche de la Durance. En vol : ciel dégradé, et un est sur la crête qui contre les brises des hautes vallées. Le schéma de référence place sur cette crête la confluence entre la plaine du Pô et la Durance.",
           "sources": [
             "S12",
             "S45"
@@ -2301,7 +2301,7 @@
         },
         {
           "wind": "Mistral",
-          "effect": "Le mistral est un vent catabatique et de couloir, de nord-ouest à nord, canalisé dans la vallée du Rhône jusque vers 3000 m. Le schéma de référence (diapo 66) montre une branche qui descend le Rhône vers la Camargue, une autre qui longe la côte provençale jusqu'à Cannes, une troisième qui traverse Vercors-Diois-Baronnies vers le Buëch et la Durance (Sisteron-Les Mées), et une quatrième qui contourne le Dévoluy et les Écrins par Champsaur-Embrun pour atteindre Briançon par le Lautaret. Il génère des confluences « de contournement » : sur le Buëch, entre les crêtes de l'Âne et le col de Cabre ; à Gap-Tallard, entre Montsérieux et Céüsette ; entre Valensole et le Verdon ; et au nord de Briançon (Briançon-Izoard). À Chabre, des dust devils se forment quand la brise prend le dessus sur un nord faible. Saint-Vincent-les-Forts est abrité, mais ce point n'a pas été revérifié. Le mistral détruit la brise de mer provençale (déduction).",
+          "effect": "Le mistral, vent catabatique et de couloir de nord-ouest à nord, est canalisé dans la vallée du Rhône jusque vers 3000 m. Un schéma de référence lui donne quatre branches : le Rhône vers la Camargue, la côte provençale jusqu'à Cannes, Vercors-Diois-Baronnies vers le Buëch et la Durance (Sisteron-Les Mées), et Champsaur-Embrun autour du Dévoluy et des Écrins jusqu'à Briançon par le Lautaret. Il crée des confluences « de contournement » : sur le Buëch entre les crêtes de l'Âne et le col de Cabre, à Gap-Tallard entre Montsérieux et Céüsette, entre Valensole et le Verdon, et au nord de Briançon (Briançon-Izoard). À Chabre, des dust devils naissent quand la brise prend le dessus sur un nord faible. Saint-Vincent-les-Forts serait abrité, à revérifier. Il détruit sans doute la brise de mer provençale.",
           "sources": [
             "S60",
             "S45",
@@ -2311,7 +2311,7 @@
         },
         {
           "wind": "Brise de mer",
-          "effect": "La brise de mer provençale et varoise : l'air marin frais pénètre l'après-midi et se heurte à l'air continental et aux brises de vallée. Sur la Côte d'Azur et le Haut-Var, le schéma de référence (diapos 46-49) montre des flèches de brise de mer depuis Fréjus, Cannes et Nice vers le nord-est, et un front de convergence (ligne verte) de l'Argens (Les Arcs) à Gréolières et au Haut-Var, jusqu'au Mercantour (Vésubie - Tinée) ; la position est approximative. Les cartes de brises montrent des brises du littoral remontant l'Argens (Fréjus - Aups - Salernes) et le Var (Nice - Tinée). Signes : changement de direction du vent au sol, arrêt net des cumulus, base plus basse côté marin ; un front de brise de mer peut s'étendre sur des dizaines à des centaines de km. Horaires et vitesses non documentés pour la France.",
+          "effect": "L'après-midi, l'air marin frais pénètre en Provence et dans le Var, et bute sur l'air continental et les brises de vallée. Sur la Côte d'Azur et le Haut-Var, le schéma de référence montre des flèches depuis Fréjus, Cannes et Nice vers le nord-est, et un front de convergence de l'Argens (Les Arcs) à Gréolières et au Haut-Var, jusqu'au Mercantour (Vésubie - Tinée), en position approximative. Les cartes de brises font remonter les brises du littoral par l'Argens (Fréjus - Aups - Salernes) et le Var (Nice - Tinée). Le front se repère au vent qui tourne au sol, à l'arrêt net des cumulus et à une base plus basse côté mer. Il peut s'étendre sur des dizaines à des centaines de km. Ni horaires ni vitesses ne sont documentés en France.",
           "sources": [
             "S45",
             "S44",
@@ -3173,19 +3173,19 @@
         }
       ],
       "tips": [
-        "Les brises les plus fortes soufflent de 14h à 16-17h : traverser les grandes vallées avant ou après, ou très haut ; dans l'Arve, la Tarentaise, la Maurienne et la Durance, elles dépassent 30-40 km/h et restent sensibles jusqu'à 2500-3000 m [S1][S55][S57].",
-        "Atterrir tôt ou à mi-pente en Durance : à Briançon, la brise fait des pointes à plus de 40 km/h, et il faut éviter les fonds de vallée dès la mi-journée, l'été ; les tendances sud à ouest la font entrer tôt et brusquement [S57].",
-        "Le sens des brises dépend du bassin aérologique, non de la vallée : à la sortie de la cluse de Chambéry, la brise va vers Albertville (Combe de Savoie) et vers Grenoble (Grésivaudan, « brise de nord ») ; pour comprendre, changer d'échelle (Rhône, Durance) [S31][S15][S44].",
-        "Crête avec deux brises opposées : la confluence n'est presque jamais à la verticale de la crête, mais penche du côté le plus faible (à force égale, du côté du versant le moins pentu) [S9].",
-        "Vent météo et brise opposée donnent une confluence marquée, mais mobile et voisine du sous-le-vent et des rotors ; elle se déplace si le vent météo forcit [S9].",
-        "Seuils : au sol, plus de 10 km/h impose de décoller face au vent, et plus de 20 km/h rend les conditions fortes, voire dangereuses ; aux cimes, 10 km/h donnent des turbulences et 20 km/h hachent les thermiques, comme un gradient de plus de 10 km/h par 1000 m [S40]. Au Pays du Mont-Blanc, pas de vol au-delà de 20 km/h à 2000 m [S55].",
-        "Traversées entre massifs (minima du support de cross) : Grésivaudan, 10 km au-dessus de 2000 m ; Grenoble, 10 km au-dessus de 2400 m ; Chambéry, 10-12 km au-dessus de 2300-2400 m ; Annecy, 7-8 km au-dessus de 1800-2100 m ; Dévoluy-Champsaur, 10-12 km au-dessus de 2900 m [S41].",
-        "Du Granier vers la Savoyarde : viser l'« air de service » du Granier, puis la face ouest de la Savoyarde en laissant dériver (« laisse de chien ») pour compenser la brise de Chambéry ; partir du Granier avant que les brises ne rentrent [S46][S28].",
-        "Foehn : surveiller l'écart de pression Aoste - Annecy (-4 hPa), les lenticulaires et le mur de foehn aux cols ; il peut se cantonner à 1400-1800 m ; un vent de 15 km/h peut passer à plus de 30-35 km/h en rafales [S56][S55][S11].",
-        "Izoard : partir avant 10h, l'été ; un nord de 15-20 km/h est une bonne condition, mais il rend le Cheval Blanc turbulent et le dernier côté pénible (20 km/h de face) ; la vallée d'Embrun redonne en fin de journée une brise qui pousse vers le décollage [S48][S22][S50].",
-        "Par fort nord autour de Grenoble, voler à Montaud, Courtet ou Montlambert ; par nord modéré, Saint-Hilaire [S66].",
-        "Respecter les zones aériennes sur les transitions : ZIT de Grenoble (1200 m) et zone P14 du CEA (1220 m) entre Néron et Vercors, où deux vols ont pénétré ces zones ; parcs du Vercors et des Bauges (300 m/sol), CTR Chambéry [S41][S46][S47].",
-        "Les records se font en août ou en avril, aux heures les plus longues : départ à 9h-10h, 11 h de vol pour 350 km ; vérifier que le décollage n'est pas en zone de protection de la faune (un vol de 393 km depuis Riederalp n'est pas homologable pour cette raison) [S49][S51]."
+        "Les brises culminent de 14h à 16-17h : traversez les grandes vallées avant, après, ou très haut. Dans l'Arve, la Tarentaise, la Maurienne et la Durance, elles dépassent 30-40 km/h et portent jusqu'à 2500-3000 m [S1][S55][S57].",
+        "En Durance l'été, posez-vous tôt ou à mi-pente, et fuyez les fonds de vallée dès la mi-journée. À Briançon, la brise dépasse 40 km/h en pointe, et les tendances sud à ouest la font entrer tôt et brusquement [S57].",
+        "Le sens d'une brise dépend du bassin, pas de la vallée. Au sortir de la cluse de Chambéry, elle part vers Albertville (Combe de Savoie) et vers Grenoble (Grésivaudan, « brise de nord ») : regardez à l'échelle du Rhône et de la Durance [S31][S15][S44].",
+        "Sur une crête entre deux brises opposées, cherchez la confluence du côté de la plus faible : elle est presque jamais à la verticale. À force égale, elle penche vers le versant le moins pentu [S9].",
+        "Un vent météo face à une brise donne une confluence marquée, mais mobile, collée au sous-le-vent et aux rotors. Elle se déplace quand le vent forcit [S9].",
+        "Décollez face au vent dès 10 km/h au sol ; passé 20, c'est fort, voire dangereux. Aux cimes, 10 km/h secouent, 20 km/h ou un gradient de plus de 10 km/h par 1000 m hachent les thermiques [S40]. Pays du Mont-Blanc : pas de vol passé 20 km/h à 2000 m [S55].",
+        "Minima pour traverser : Grésivaudan, 10 km au-dessus de 2000 m ; Grenoble, 10 km au-dessus de 2400 m ; Chambéry, 10-12 km au-dessus de 2300-2400 m ; Annecy, 7-8 km au-dessus de 1800-2100 m ; Dévoluy-Champsaur, 10-12 km au-dessus de 2900 m [S41].",
+        "Du Granier vers la Savoyarde, partez avant que les brises n'entrent. Prenez l'« air de service » du Granier, puis visez la face ouest de la Savoyarde en vous laissant dériver, en « laisse de chien », contre la brise de Chambéry [S46][S28].",
+        "Foehn : surveillez l'écart de pression Aoste - Annecy (-4 hPa), les lenticulaires et le mur de foehn aux cols. Il peut rester à 1400-1800 m, et 15 km/h de vent peuvent passer à plus de 30-35 km/h en rafales [S56][S55][S11].",
+        "À l'Izoard l'été, partez avant 10h. Un nord de 15-20 km/h est bon, mais il secoue le Cheval Blanc et rend pénible le dernier côté, avec 20 km/h de face. En fin de journée, la vallée d'Embrun renvoie une brise qui pousse vers le décollage [S48][S22][S50].",
+        "Par fort nord autour de Grenoble, volez à Montaud, Courtet ou Montlambert. Par nord modéré, allez à Saint-Hilaire [S66].",
+        "Sur les transitions, respectez la ZIT de Grenoble (1200 m) et la zone P14 du CEA (1220 m) entre Néron et Vercors, où deux vols sont entrés. Respectez aussi les parcs du Vercors et des Bauges (300 m/sol) et la CTR de Chambéry [S41][S46][S47].",
+        "Les records se volent en août ou en avril, aux jours les plus longs : départ à 9h-10h, 11 h de vol pour 350 km. Décollez hors zone de protection de la faune : un vol de 393 km depuis Riederalp n'est pas homologable pour cette raison [S49][S51]."
       ]
     }
   ],

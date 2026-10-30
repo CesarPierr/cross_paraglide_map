@@ -2745,7 +2745,7 @@
           "hours": "à partir de 11h au printemps et en été ; ascendante et forte dès le début d'après-midi en été anticyclonique",
           "speed_kmh": {
             "typical": 20,
-            "max": 35
+            "max": null
           },
           "season": "printemps-été (forte en été)",
           "description": "La brise de la cluse de Voreppe entre dans la cuvette grenobloise et remonte l'Isère à travers Grenoble. Elle se lève vers 11 h au printemps et en été, et peut devenir très forte : par beau temps d'été, elle souffle fort dès le début d'après-midi. Le décollage de Chalais en est protégé, mais son atterrissage, en fond de vallée, la reçoit souvent forte. Les cartes la prolongent jusqu'à Montbonnot-Saint-Martin, avec une flèche vers le sud, dans le Drac.",
@@ -3307,20 +3307,6 @@
             "S91",
             "S29"
           ]
-        },
-        {
-          "id": "montbonnot-epae",
-          "name": "Montbonnot-Saint-Martin (EPAE)",
-          "lon": 5.80603,
-          "lat": 45.22098,
-          "alt_m": 230,
-          "coord_quality": "source",
-          "ffvl_id": 14306,
-          "description": "Ce terrain militaire est strictement interdit : ce n'est pas un atterrissage. La fiche fédérale, à 230 m à Montbonnot-Saint-Martin, porte la mention « pratique strictement interdite ».",
-          "sources": [
-            "S98"
-          ],
-          "note": "Terrain répertorié comme atterrissage par erreur : la fiche officielle l'interdit."
         }
       ],
       "synoptic_effects": [
@@ -4429,13 +4415,13 @@
         },
         {
           "id": "belledonne-crete-sud-fort-transitions",
-          "name": "Crête de Belledonne par vent de sud établi (15-25 km/h) : turbulence et perte de hauteur à chaque transition",
+          "name": "Crête de Belledonne par vent de sud-sud-ouest établi : turbulence et perte de hauteur à chaque transition",
           "kind": "other",
           "lon": 6.0594,
           "lat": 45.33,
           "coord_quality": "source",
           "radius_km": 8,
-          "conditions": "Flux de SSO de 15 à 27 km/h (20 juillet 2020) ; vent de sud faible (10 km/h) jugé favorable à l'aller (24 mai 2010).",
+          "conditions": "Flux de SSO de 18 à 27 km/h (20 juillet 2020) ; vent de sud faible (10 km/h) jugé favorable à l'aller (24 mai 2010).",
           "description": "Par vent de sud-sud-ouest établi, la crête de Belledonne devient très turbulente, et chaque transition coûte environ 1000 m face au vent : raccrocher la face suivante au vent devient difficile.",
           "sources": [
             "S123",
@@ -5998,7 +5984,7 @@
         "En bout de crête sud, la Roche Béranger, à 2400-2650 m, est le plafond de départ vers le Connex [S104][S37][S36].",
         "Les faces est de Belledonne semblent chauffer avant la face ouest (c'est une déduction) : on peut y prendre 3300 m dès la première partie de l'après-midi, quand la face ouest de la Lauzière est jugée trop tôt.",
         "En arrivant de Chartreuse, visez Saint-Genis puis le Crêt du Poulet avec de la marge : beaucoup de pilotes s'enterrent juste après le col du Barioz [S116][S128].",
-        "Par sud établi de 15 à 25 km/h, chaque transition de la crête coûte environ 1000 m, et l'on n'avance plus qu'à 15-20 km/h. Prenez la ligne côté vent et gardez la hauteur [S123][S130].",
+        "Par sud-sud-ouest établi, chaque transition de la crête coûte environ 1000 m, et l'on n'avance plus qu'à 15-20 km/h. Prenez la ligne côté vent et gardez la hauteur [S123][S130].",
         "À Orionde, traversez avec du gaz : au-dessus de la crête, une lame d'air accélérée ramène la progression à 20 km/h, et seuls les plus hauts passent [S118][S112].",
         "Par sud-ouest au Collet d'Allevard, les Plagnes se décollent depuis les versants nord, très abrupts. Faites le plein avant le Grand Charnier [S114][S122].",
         "Au retour vers Chamrousse en fin de journée, surveillez le voile de cirro-stratus d'ouest : il annonce un vent soutenu en finale, parfois suivi de bourrasques après la pose [S124]."

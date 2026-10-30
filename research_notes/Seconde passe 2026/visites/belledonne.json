@@ -33,7 +33,7 @@
     {
       "chapter": "La journée de l'air",
       "title": "Le soir, le vol magique de Chamrousse",
-      "text": "Le soir, Chamrousse peut offrir un vol remarquable. Après la fin de la convection, on soare par nord ou nord-est, à 20-25 km/h au maximum. L'été, un thermique tient certains jours jusqu'à 20h30. La brise de Grenoble, qui atteint 25 km/h à Saint-Martin-d'Uriage, s'inverse le soir. Les soirs de forte canicule, c'est l'inverse : au pied de Chamrousse, la brise du Grésivaudan forcit à plus de 25 km/h, jusqu'à 2500 m. Au retour, un voile de cirro-stratus d'ouest annonce un vent soutenu en finale, puis des bourrasques après la pose.",
+      "text": "Le soir, Chamrousse peut offrir un vol remarquable. Après la fin de la convection, on soare par nord ou nord-est, à 20-25 km/h au maximum. Certains jours d'été, la convection ne s'arrête que vers 20h30. La brise de Grenoble, qui atteint 25 km/h à Saint-Martin-d'Uriage, s'inverse le soir. Les soirs de forte canicule, c'est l'inverse : au pied de Chamrousse, la brise du Grésivaudan forcit à plus de 25 km/h, jusqu'à 2500 m. Au retour, un voile de cirro-stratus d'ouest annonce un vent soutenu en finale, puis des bourrasques après la pose.",
       "focus": ["chamrousse-soaring", "saint-martin-d-uriage", "gresivaudan/chamrousse-brise-soir-canicule", "aiguillette-bourrasques-voile-cirrostratus"],
       "phase": "evening"
     },
@@ -96,7 +96,7 @@
     {
       "chapter": "Selon le vent météo",
       "title": "Par sud : chaque transition coûte 1000 m",
-      "text": "Par sud établi de 15 à 25 km/h, la crête est très turbulente. Chaque transition face au vent coûte 1000 m, et raccrocher la face suivante devient difficile. Avec 27 km/h de sud-sud-ouest au Granier, un vol n'avançait qu'à 15 à 20 km/h au Crêt du Poulet, sans accélérateur. Par sud faible, vers 10 km/h, le vent dans le dos aide au contraire à longer les sommets, jusqu'à 55-60 km/h. À Chamrousse, on soare par sud-sud-ouest à l'automne, sans thermiques, à 17-25 km/h au maximum : tous les accidents arrivent hors de ces repères.",
+      "text": "Par vent de sud-sud-ouest établi, la crête est très turbulente. Chaque transition face au vent coûte 1000 m, et raccrocher la face suivante devient difficile. Avec 27 km/h de sud-sud-ouest au Granier, un vol n'avançait qu'à 15 à 20 km/h au Crêt du Poulet, sans accélérateur. Par sud faible, vers 10 km/h, le vent dans le dos aide au contraire à longer les sommets, jusqu'à 55-60 km/h. À Chamrousse, on soare par sud-sud-ouest à l'automne, sans thermiques, à 17-25 km/h au maximum : tous les accidents arrivent hors de ces repères.",
       "focus": ["belledonne-crete-sud-fort-transitions", "chamrousse-soaring"],
       "wind": { "from": "S", "kmh": 20 },
       "phase": "afternoon",
@@ -114,7 +114,7 @@
     {
       "chapter": "Les transitions",
       "title": "Sortir de Belledonne : Vercors, Bauges, Lauzière",
-      "text": "Depuis Chamrousse, la transition vers le Vercors fait plus de 15 km, au départ de plus de 2000 m. On part en général de la Roche Béranger, à 2400-2650 m, et l'on rejoint le Connex, repris bas en face nord-ouest, au vent de la brise : un vol y est arrivé vers 1100 m et a remonté à 1300 m en thermodynamique. Au-dessus de Vizille, une confluence peut se passer sans perdre d'altitude. Dans l'autre sens, en arrivant des Bauges, Bramefarine est le point de relance avant le Saint-Genis. Partez à plus de 2300 m du Colombier, ou 2400 m de la Sauge, pour arriver vers 900 m.",
+      "text": "Depuis Chamrousse, la transition vers le Vercors fait plus de 15 km, au départ de plus de 2000 m. On part en général de la Roche Béranger, à 2400-2650 m, et l'on rejoint le Connex, repris bas en face nord-ouest, au vent de la brise : un vol y est arrivé vers 1100 m et a remonté à 1300 m en thermodynamique. Au-dessus de Vizille, une confluence peut se passer sans perdre d'altitude. Dans l'autre sens, en arrivant des Bauges, Bramefarine est le point de relance avant le Saint-Genis. Partez du Colombier à plus de 2300 m pour arriver vers 900 m ; un vol est aussi parti de 2400 m, près du Pic de la Sauge.",
       "focus": ["transition-chamrousse-vercors", "vizille-confluence-cluse-connex", "bramefarine"],
       "view": "massif"
     },

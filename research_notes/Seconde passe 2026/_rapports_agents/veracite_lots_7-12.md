@@ -1,0 +1,309 @@
+# Véracité des textes contre les sources — lots 7 à 12
+
+Audit en lecture seule, 30 octobre 2026. Lots : `devoluy_gap_buech_diois` (7), `vercors_grenoble_trieves` (8), `synoptic_convergences_xc` (9), `oisans_maurienne` (10), `provence_maritimes` (11), `brianconnais_ecrins_queyras_ubaye` (12). Données JSON jointes : `veracite_lots_7-12.json` (mêmes constats, un objet par constat, avec le champ `etat_143c7d3`).
+
+## Méthode
+
+- Textes contrôlés : résumés de massif, étapes de visite, et une partie des conseils et effets synoptiques. Pour chaque affirmation précise (lieu, direction, heure, vitesse, altitude, règle, record), j'ai ouvert la source citée dans le cache `.cache/research/docs/` (pages, PDF, fils de forum, fiches FFVL de `ffvl_sites_alpes.json`, archive WordPress du CHVD). J'ai relu en ligne cinq pages absentes du cache ou lues seulement par résumé de moteur de recherche : planeur-gaptallard.fr/promenade, trois pages vvanat.fr (Monteynard) et la page d'accueil de provence-parapente.com.
+- Verdicts : **CONFIRMÉ** (la source le dit) ; **DÉFORMÉ** (direction, heure, chiffre ou lieu altéré, généralisation, anecdote érigée en règle, chiffre appliqué au mauvais objet) ; **NON SOURCÉ** (aucune source citée ne le dit) ; **CONTREDIT** (une source dit le contraire) ; **INVRAISEMBLABLE** (physiquement incohérent avec le relief) ; **NON VÉRIFIÉ** (source inaccessible, constat suspendu, pas un défaut prouvé).
+- Les constats des lots 7 à 9 ont d'abord été établis sur un instantané pris avant la réécriture « voix du pilote ». Je les ai tous recontrôlés sur le texte committé en **143c7d3** (colonne « État »). Les numéros d'étape sont restés les mêmes. Les lots 10 à 12 ont été contrôlés sur le texte de l'arbre de travail du 30 octobre.
+- Contrôle automatique complémentaire : chaque nombre cité dans les textes des six lots (heures, altitudes, distances, vitesses) a été recherché dans tout le corpus en cache. **Tous y figurent au moins une fois.** Les nombres ne sont donc presque jamais inventés de toutes pièces : les défauts relevés portent sur leur attribution (bon nombre, mauvais objet) et sur leur contexte.
+
+## Les deux contradictions signalées par le coordinateur
+
+1. **Baronnies, nombre de décollages (sept contre huit).** Les deux chiffres viennent de sources différentes, qui ne comptent pas la même chose. Flylaragne (S85, page d'environ 2005) écrit « 7 take off and landing sites catering for all wind directions » : décollages et atterrissages de Séderon. La page d'accueil actuelle de l'école (S39, relue le 30/10) écrit « 8 sites de vols (toutes orientations) à moins de 20 mn de l'école et 3 pentes écoles à moins de 5 mn ». → Retenir la source actuelle partout : « huit sites de vol, de toutes orientations, à moins de 20 minutes de l'école, et trois pentes école ». Ne pas écrire « huit décollages ». L'URL de S39 est à corriger : la phrase est sur la page d'accueil, pas sur /sites-de-vol-aux-alentours/.
+2. **Col de l'Aup, nord ou nord-ouest.** Le fil S183 contient les deux directions, mais pour deux choses différentes. Le projet de décollage, jamais volé, visait « NO modéré » (Chris224). La mise en garde du local vise le nord : « En Nord modéré, je ne tenterai pas car la "bise + brise + vent", peuvent etre tres fort!! », en précisant que ce nord a « souvent… une bonne tendance ouest » (blabair). → La visite (« par nord modéré… très forts ») est juste. L'effet synoptique rattache à tort le danger au nord-ouest par « alors ». Correction proposée : « Un pilote envisageait le col de l'Aup par nord-ouest modéré, sans l'avoir volé. Un local le déconseille par nord modéré, souvent à tendance ouest : bise, brise et vent s'additionnent. »
+
+
+## Décompte
+
+| Lot | CONFIRMÉ | DÉFORMÉ | NON SOURCÉ | CONTREDIT | INVRAISEMBLABLE | NON VÉRIFIÉ | Total |
+|---|---|---|---|---|---|---|---|
+| devoluy_gap_buech_diois | 38 | 28 | 12 | 1 | 0 | 0 | 79 |
+| vercors_grenoble_trieves | 14 | 8 | 1 | 0 | 1 | 1 | 25 |
+| synoptic_convergences_xc | 4 | 0 | 0 | 0 | 0 | 0 | 4 |
+| oisans_maurienne | 3 | 1 | 0 | 0 | 0 | 0 | 4 |
+| provence_maritimes | 3 | 0 | 0 | 1 | 0 | 1 | 5 |
+| brianconnais_ecrins_queyras_ubaye | 5 | 1 | 0 | 1 | 0 | 0 | 7 |
+| **Total** | **67** | **38** | **13** | **3** | **1** | **2** | **124** |
+
+Sur les 52 constats non confirmés des lots 7 à 9 relevés sur l'instantané d'avant réécriture, **45 persistent** dans le texte réécrit et committé (143c7d3), 5 ont été corrigés au passage.
+
+
+## Défauts systématiques
+
+1. **Des horaires inventés repris comme des faits.** Les champs `best_hours`/`hours` portent des valeurs par défaut (« 11h-17h (été) », « 12h-17h (été) ») qu'aucune source ne donne. La visite les affiche ensuite comme des faits : Pic de Bure, faces sud de Céüse et de la Malaup, Glandasse. La réécriture 143c7d3 les a même placés en tête de phrase (« De 12 h à 17 h en été, … »). À purger dans les éléments et dans les textes.
+2. **Une anecdote d'un jour devenue une règle.** Exemples : les rafales d'est d'un matin au Pic de Bure (« partez tôt ») ; le +3/+6 d'un jour d'août rattaché au « régime de sud » ; le vol du soir du 11 septembre 2010 à Orcières ; le conseil horaire pour les Baumes, qui vient d'un randonneur n'y ayant jamais volé.
+3. **Le bon chiffre appliqué au mauvais objet.** L'altitude des vols de baptême planeur (2200 à 3000 m) devient le plafond de Céüse ou du Bure. Le prix d'un baptême (« minimum 1h15 de vol ») devient un circuit de 44 km. Les 30 à 40 km/h de la cluse de Sisteron sont attribués au Buëch. Les deux routes d'hiver du Dévoluy deviennent une consigne de sortie en vol.
+4. **Des tracés déduits affirmés dans les résumés.** L'élément est prudemment noté « tracé déduit » ou « confiance faible », mais le résumé et la visite l'affirment : Veynes → col du Festre, Saillans–Pontaix, les trois brises qui se rejoignent sur Gap.
+5. **Des balises de source absentes ou fausses.** 23 conseils n'ont aucune balise [S..] (instantané) : Champsaur 5 à 9, Buëch 9, Maurienne 1, 3 et 4, Haute-Maurienne 2, Arves 0, Briançonnais 6 et 12, Vallouise 7 et 8, Serre-Ponçon 0 à 3, Ubaye 6 à 9. Certaines balises citent une source qui ne dit pas la chose (Dévoluy, conseil 1 [S28]).
+6. **Des sources « lues via résumé de moteur de recherche ».** Leurs chiffres ne figurent pas dans la page : le triangle de 193 km et le plafond de 3300 m de Chabre (S9). La réécriture les a même repris dans un nouveau conseil.
+7. **Des règles incomplètes ou périmées.** La R196B est donnée « activable du 16/09 au 30/06 » sans l'exclusion du mercredi, du week-end et des jours fériés (Vercors). La ZSM gypaète 2026 commence le 1er novembre, pas en janvier. Le record de l'Izoard est cité à 350,53 km dans le Queyras, alors qu'il est de 358,6 km depuis 2025.
+8. **Des incohérences entre textes de l'atlas.** Le résumé du Champsaur dit le Valgaudemar « documenté par une seule flèche » alors que la visite le décrit. Rabou est donné ouest–nord-ouest contre sud-ouest selon la fiche FFVL. La Lombarde est décrite comme un vent de nord (Mercantour) ou d'est (lot synoptique, FFVL). La brise du Trièves « descend » vers un col plus haut (elle remonte).
+9. **Des mécanismes ajoutés.** « Les Écrins protègent le bocal du Champsaur du nord » : aucune source ne le dit, et les fiches mettent au contraire en garde contre le nord (Richards, cairn ouest d'Orcières).
+
+
+## Lot devoluy_gap_buech_diois
+
+
+### baronnies
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[baronnies].summary | À Buc, le vent vire presque toujours à l'ouest dès 14h, même par jour d'est | **DÉFORMÉ** | S85 flylaragne.com/common/sites.htm (page de ~2005) — « the wind almost invariably veers Westerly on the site in the late afternoon, even on an Easterly day!, and at any time from about 2pm onwards… Buc starts to work » | La bascule est donnée « en fin d'après-midi » ; 14 h est l'heure où Buc ouest commence à marcher. Écrire « l'ouest s'installe presque toujours l'après-midi, et Buc ouest marche à partir de 14 h environ ». Signaler que la page date d'environ 2005 | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| massifs[baronnies].summary | L'école locale forme plus de 200 pilotes par an | **CONFIRMÉ** | S85 flylaragne (vers 2005) — « The local school here trains well over 200 pilots a year » | Dater : « vers 2005 » | — |
+| massifs[baronnies].summary | Séderon–Mévouillon compte sept décollages et atterrissages, couvrant toutes les orientations | **DÉFORMÉ** | S39/S88 provence-parapente.com — notes S39 : « 8 décollages et 3 pentes école à moins de 20 min » | Chiffre différent de la source citée par la lot ; vérifier et aligner (8 décollages + 3 pentes école) | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| massifs[baronnies].summary | Le matin, un vent frais descend l'Eygues jusqu'à Nyons, le Pontias | **DÉFORMÉ** | S37 vivreanyons.fr (notes) — notes S37 : « Le Pontias, vent frais du matin qui arrive à Nyons » | La descente de l'Eygues est une interprétation (la visite dit « probablement ») ; le résumé l'affirme | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| massifs[baronnies].summary | Bergiès et Buc ouvrent vers Sisteron, Ribiers et Saint-André-les-Alpes, à plus de 100 km | **CONFIRMÉ** | S85 flylaragne — « fly to Colmar or St Andre les Alpes just over 100km away or just head for Laragne or Sisteron » | — (la source écrit « Colmar » : Colmars-les-Alpes est une lecture plausible) | — |
+| visites/baronnies.json steps[2] | Bergiès nord : glisse de 6 à 7 km sans second thermique ; atterrissage nord 560 m en dessous ; départ des cross à midi | **CONFIRMÉ** | S85 flylaragne — « an easy and gentle glide to 6 or 7km is possible even if that second thermal remains elusive » | — | — |
+| visites/baronnies.json steps[5] | Bergiès nord, décrit comme l'un des plus beaux décollages de France | **CONFIRMÉ** | S85 flylaragne — « described as the nicest in France by one famous British instructor » | Attribuer : « selon un moniteur britannique » | — |
+| visites/baronnies.json steps[7] | La zone R71 limite le vol à FL75, soit 2 250 m au plus en semaine | **DÉFORMÉ** | S86 flylaragne.com/common/airspace.htm — « vertical limit of FL075 which is approximately 2286m » | Écrire « environ 2 290 m » (FL075 = 2286 m en atmosphère standard) | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| massifs[baronnies].summary ; tips[0] ; visites/baronnies.json steps[0] | CONTRADICTION signalée : « sept décollages et atterrissages » (résumé, visite étape 0) contre « huit décollages et trois pentes école » (conseil 0) | **DÉFORMÉ** | S85 flylaragne.com/common/sites.htm (vers 2005) ; S39 provence-parapente.com, page d'accueil relue en ligne le 30/10/2026 — S85 : « has the advantage of 7 take off and landing sites catering for all wind directions » ; S39 : « 8 sites de vols (toutes orientations) à moins de 20 mn de l'école et 3 pentes écoles à moins de 5 mn » | Les deux chiffres existent mais ne parlent pas de la même chose : 7 = sites de décollage et d'atterrissage de Séderon vers 2005 ; 8 = sites de vol à moins de 20 min de l'école de Mévouillon aujourd'hui. Garder la source actuelle partout : « l'école compte huit sites de vol, de toutes orientations, à moins de 20 minutes, et trois pentes école » [S39, URL à corriger : la phrase est sur la page d'accueil, pas sur /sites-de-vol-aux-alentours/] ; ne pas écrire « huit décollages » | texte courant (143c7d3) |
+
+### buech-laragne-chabre
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[buech-laragne-chabre].summary | Vers 13h30, souvent, une brise d'ouest s'installe à Laragne, alors que la plupart des vallées voisines sont orientées ouest-est, sauf le Buëch | **DÉFORMÉ** | parapentiste.info t8970 (site de Laragne) — « Les vallées alentours sont toutes (sauf le buech) orientées ouest=> est et globalement, tout le coin… est sous influence des brises de secteur ouest » | La source donne l'orientation des vallées comme la cause de l'ouest, pas comme une opposition : remplacer « alors que » par « parce que » | corrigé dans la visite (« car ») ; résumé neutre (deux-points) |
+| massifs[buech-laragne-chabre].summary | Il faut décoller tôt, avant l'ouest (vers 13h30) | **CONFIRMÉ** | parapentiste.info t8970 — « Souvent il faut avoir décollé avant 13h30 car ensuite cela passe ouest » | — | — |
+| massifs[buech-laragne-chabre].summary | Mison : de 0 à 40 km/h en 10 minutes, vers 19h | **CONFIRMÉ** | fiche FFVL Mison (ffvl_lot.json) — « en 10 minutes, vers 19h en été, le vent peut passer de "cul" à face 40km/h » | — | — |
+| massifs[buech-laragne-chabre].summary | R71 Salon : FL075 en semaine, FL115 le week-end | **CONFIRMÉ** | flylaragne.com/common/airspace.htm — « R71… active from Monday to Friday… FL075… At weekends… FL115 (3500m) » | — | — |
+| massifs[buech-laragne-chabre].summary | Aspres–Longeagne souvent saturé par la brise entre 14h et 16h | **CONFIRMÉ** | fiche FFVL Aspres (ffvl_lot.json) — « Déco Sud souvent bien alimenté, même indécollable entre 14h et 16h » | — | — |
+| visites/buech-laragne-chabre.json steps[2] | Un vol cité y a atteint un plafond de 3 300 m, avec un triangle d'environ 193 km | **NON SOURCÉ** | S9 camping-monteglin.com/blog/flyingkarlis… (page en cache relue) — la page dit seulement « il détient toujours le record du site depuis 2017 » ; notes S9 : « Attribution exacte via résumé de recherche » | Chiffres issus d'un résumé de moteur de recherche, absents de la page : retirer ou retrouver la source primaire (CFD / guide « Guide to Chabre ») | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/buech-laragne-chabre.json steps[3] | Dans le Buëch, la brise de Sisteron est très régulière, de 30 à 40 km/h l'après-midi en été | **DÉFORMÉ** | S15 summits.fr parapente-sisteron (notes) ; note de brise-buech — notes S15 : « Cluse de la Durance: brise de vallée très régulière, 30-40 km/h » | La source parle de la cluse de la Durance au Rocher de la Baume, pas du Buëch ; la note de l'élément le reconnaît (« non mesurées dans le Buëch »). Écrire « dans la cluse de la Durance, à Sisteron » | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/buech-laragne-chabre.json steps[10] | Par vent de nord faible, on peut décoller des deux côtés le même jour ; dust devils aux Espranons | **CONFIRMÉ** | parapentiste.info t8970 ; S3 surprises aérologiques p.21 — « on voit parfois décoller des deux côtés le même jour lorsqu'il y a un vent météo nord faible » | — | — |
+| massifs[buech-laragne-chabre].tips[9] | (tip sans tag de source) | **NON SOURCÉ** | — — — | Ajouter la source | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+
+### champsaur-valgaudemar
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[champsaur-valgaudemar].summary | 300 jours de soleil, réputé depuis 20 ans pour son aérologie | **CONFIRMÉ** | S27 champsaur-valgaudemar.com (notes de la source ; page non relue) — notes S27 : « réputé depuis 20 ans pour son aérologie, 300 jours de soleil » | — (non relu en ligne : à revérifier) | — |
+| massifs[champsaur-valgaudemar].summary | Les Richards (sud-ouest, 1540 m, départs de cross vers Grenoble ou Savines) | **CONFIRMÉ** | S68 differen-ciel.fr/les-richards — « excellents départ en cross en direction de Grenoble ou de Savines… Altitude : 1540m » | — | — |
+| massifs[champsaur-valgaudemar].summary | Le Valgaudemar n'est documenté que par une flèche de brise depuis Saint-Firmin | **CONTREDIT** | atlas lui-même : brise-valgaudemar (S205, S206), étape 8 de la visite — S205 (CHVD, Olan) : pose à La Chapelle dans une brise de 10 à 15 km/h | Incohérence interne : la visite et les éléments documentent le Valgaudemar (Olan, La Chapelle, Pétarel) ; retirer « n'est documenté que par une flèche » | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| massifs[champsaur-valgaudemar].summary | le Vieux Chaillol n'est praticable que plein sud | **DÉFORMÉ** | S197 chvd.org/2025/07/02/vieux-chaillol — « la réglementation du parc des Ecrins (voir photo) qui impose le vol vers le sud » | Écrire « au Vieux Chaillol, le Parc impose de voler vers le sud » (c'est le sens du vol, pas une condition de praticabilité) | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| massifs[champsaur-valgaudemar].summary | Puy de Manse interdit du 1er juin au 15 novembre | **CONFIRMÉ** | S156 fiche FFVL 14137 — « strictement interdit du 1er juin au 15 novembre » | — | — |
+| massifs[champsaur-valgaudemar].summary | Cuchon : restitution du soir excellente, un peu de sud amplifie | **CONFIRMÉ** | S24 FFVL terrain 13577 — « Restitution du soir avec un peu de Sud qui amplifie » | — | — |
+| visites/champsaur-valgaudemar.json steps[0] | Le « bocal » est bien protégé du nord par les Écrins, ce qui explique que la vallée soit volable les jours où d'autres sites ferment | **NON SOURCÉ** | S194 parapentiste.info t48578 #1 — « c'est un des rares sites dans le 05 où tu peux voler quand il y a du nord fort » (Orcières seulement) | Le mécanisme « protégé par les Écrins » n'est dans aucune source ; S68 dit au contraire « Faire attention en cas de Nord trop fort » aux Richards, et la fiche FFVL du cairn ouest d'Orcières classe le N en défavorable. Limiter à « un pilote local dit qu'Orcières vole par nord fort » | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/champsaur-valgaudemar.json steps[14] | Orcières volable par nord fort (et Champsaur protégé du nord) | **DÉFORMÉ** | S194 #1 ; S151 FFVL 208 (cairn ouest) — FFVL 208 : « vents_defavorables: N;NE;E;SE » | Signaler la contradiction : avis d'un pilote contre la fiche FFVL du cairn ouest ; ne pas l'énoncer comme règle | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/champsaur-valgaudemar.json steps[1] | À Orcières, la brise s'installe pour la journée et ne repart pas avant le soir | **DÉFORMÉ** | S194 #1 (pascalou05) — « Je ne sais pas à quelle heure la brise s'arrête car je ne vole pas le soir » | Retirer « ne repart pas avant le soir » | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/champsaur-valgaudemar.json steps[3] | En fin d'après-midi, la brise reste forte à Orcières… vers 17 h 30, par conditions anémiques, confluence de Champoléon, au moins une heure de soaring | **DÉFORMÉ** | S204 chvd.org week-end au Noyer 2010 — « 17 h 30, Le Cairn… Conditions anémiques, rien à gratter devant le déco » | Le récit (un soir de septembre 2010) dit l'inverse d'une brise forte à 17 h 30 ; garder l'épisode comme anecdote datée, sans « la brise reste forte » | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/champsaur-valgaudemar.json steps[6] | Les Richards conviennent au sud et, par nord faible, au vol | **CONFIRMÉ** | S68 ; S194 #5 — « Il est possible de voler en cas de nord faible » ; « Les Richards sont bons en sud » | — | — |
+| visites/champsaur-valgaudemar.json steps[8] | Vieux Chaillol : décoller plein sud, par règle de sécurité comme par règle du Parc ; col de la Pisse sans être sous le vent | **CONFIRMÉ** | S197 ; S194 #12 — « il faut franchir en l'air le col de la Pisse sans être sous le vent » ; « Après le décollage (plein sud) » | — | — |
+| visites/champsaur-valgaudemar.json steps[9] | Taillefer : on a mesuré 3862 m | **CONFIRMÉ** | S199 chvd.org Col Vert, vol des sudistes 31/07/2020 — « je fais 3862 m sur le Taillefer avant de planer jusqu'à Vif » | — (un vol) | — |
+| visites/champsaur-valgaudemar.json steps[7] | Richards : atterrissage 1 km après Pont-du-Fossé, lignes, brise dès le début d'après-midi, champ voisin interdit | **CONFIRMÉ** | S68 — « Brise à l'atterro dès le début de l'après midi… le propriétaire ne veut pas de parapente » | — | — |
+| massifs[champsaur-valgaudemar].tips[5] | À Orcières… être posé à midi, surveiller la houle sur le petit lac | **CONFIRMÉ** | S194 #1 (tip sans tag) — « A midi c'est bien d'être posé… si il commence à y avoir de la houle » | Ajouter le tag [S194] (tips 5 à 9 sans source) | — |
+
+### devoluy
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[devoluy].summary | Il n'est abrité ni du mistral ni des flux de nord ; brouillard par tendance nord | **CONFIRMÉ** | S28 parapentiste.info t22564 — « pas abrité du tout du mistral… Par tendance nord, il peut rester longtemps dans le brouillard » | — | — |
+| massifs[devoluy].summary | L'été, une brise de vallée très forte remonte du Buëch (Veynes, col du Festre) vers le plateau de Superdévoluy | **NON SOURCÉ** | S28/S29 (t22564, t45026) ; note de la brise : « Tracé par le col du Festre et vitesses déduits » — S29 : « gaffe aux brises de vallée qui peuvent être très fortes en été » (dit du col du Noyer) ; S29 #8 : « brise de vallée S>N » sur le plateau d'Aurouze, un jour | Retirer « du Buëch (Veynes, col du Festre) » : dire « une brise de tendance sud a été observée un jour sur le plateau d'Aurouze ; les brises peuvent être très fortes l'été (col du Noyer) ». Plausibilité : la Souloise draine vers le nord (Sautet), une brise de vallée y monterait du nord ; le passage Veynes→Festre→Saint-Étienne est d'ouest en est, pas « du sud » | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| massifs[devoluy].summary | la station sous le vent de la tête de Pied Gros, où l'air est très turbulent | **DÉFORMÉ** | S29 t45026 #8 (Tangocharly, 15/08/2016) — « ca turbule pas mal, ça dégueule… le plateau est un peu sous le vent » | « un peu sous le vent… ça turbule pas mal » (observation d'un seul pilote, un jour), pas « très turbulent » comme règle | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| massifs[devoluy].summary | Au col du Noyer, des plafonds au-delà de 4000 m ont déjà été atteints | **CONFIRMÉ** | S29 t45026 #6 (mans) — « des gros plafs au Noyer (on y a deja fait plus de 4000) » | — | — |
+| massifs[devoluy].summary | La crête des Baumes et le Collet du Tât (O et NO, soaring d'été, plan B quand l'ouest est trop fort dans le Buëch) | **CONFIRMÉ** | S28 #10 ; S146 fiche FFVL 5345 — « L'été on fait du soaring sur une petite crête (dite des Beaumes) en NO » ; FFVL : « vent O/NO trop fort dans la Vallée du Buech » | — | — |
+| massifs[devoluy].summary | S'y faire coincer représente 3/4 h de voiture ; il faut prévoir une sortie au nord ou au sud, vers Veynes ou Gap | **DÉFORMÉ** | S28 t22564 #2 (brandi) — « (3/4 h) en voiture pour en sortir, que deux sorties (nord-sud) possibles en hiver » | Les « deux sorties nord-sud » sont les routes ouvertes en hiver, pas une consigne de vol ; « vers Veynes ou Gap » n'est dans aucune source citée (S83 se pose près de Veynes, un vol). Écrire : « en voiture, 3/4 h pour en sortir, et seulement deux routes (nord et sud) en hiver » | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| massifs[devoluy].summary | Les cross venant du Diois ou de Chabre le traversent par la Jarjatte, la tête de Vachères, la tête de la Cluse et le Bure | **DÉFORMÉ** | S83 récit Vol Libre Diois 16/06/2017 ; S70 — S83 : un seul vol col de Rousset→Chamousset→tête de Vachères→tête de la Cluse→Pic de Bure ; S70 cite un raccroché Chabre→Bure | Présenter comme « un vol du Diois (2017) est passé par… », pas comme l'itinéraire général des cross | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/devoluy.json steps[2] | La face sud du Pic de Bure est réputée pour ses thermiques de 11 h à 17 h en été | **NON SOURCÉ** | therm-bure-sud (S29, S70, S30) : aucun horaire ; S70 note une instabilité orageuse dès 11 h — S70 : « Guillaume suppose une instabilité orageuse des 11h 05 » | Supprimer « de 11 h à 17 h en été » (champ best_hours inventé) | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/devoluy.json steps[2] | Les planeurs y plafonnent à 3000 m (Pic de Bure) | **DÉFORMÉ** | S30 planeur-gaptallard.fr/promenade/ (relu en ligne) — « l'altitude maximale atteinte se situe entre 2200m et 2500m voir 3000 m » | C'est l'altitude des vols de baptême autour de Tallard en général, pas un plafond au-dessus du Bure (2709 m) : supprimer ou écrire « les planeurs de Tallard survolent le Pic de Bure » | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/devoluy.json steps[2] | Face sud à +3 sur 1 km de large, noyaux à +6 ; oasis herbeux sous l'observatoire, vent qui tourne dans tous les sens | **CONFIRMÉ** | S29 #10 (blabair) ; S70 — « ca montait du + 3 sur 1km de large avec des noyaux a +6 » ; S70 : « le vent tourne dans tous les sens » | — (préciser « un jour d'août 2016 ») | — |
+| visites/devoluy.json steps[3] | au sommet du télésiège de la Festoure, à 2200 m, l'air est très turbulent | **DÉFORMÉ** | S29 #8 — « une fois en l'air, ca turbule pas mal, ça dégueule » | « ça turbule pas mal » (un vol) ; même correction que le résumé | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/devoluy.json steps[3] | la brise remonte du Buëch, par Veynes et le col du Festre | **NON SOURCÉ** | brise-vallee-devoluy (note : tracé déduit) — — | Voir le résumé : retirer le tracé Veynes–Festre | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/devoluy.json steps[4] | Il est conseillé de voler la crête des Baumes vers la fin de l'après-midi | **DÉFORMÉ** | S28 t22564 #13 (Al, 08/01/2014) — « Je n'y ai jamais volé… à priori je dirai que la Crête des Beaumes ça doit le faire en fin d'aprés midi » | Supposition d'un pilote qui n'y a pas volé : retirer le conseil, ou dire « un randonneur suppose que… » | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/devoluy.json steps[5] | Pic de Bure : il faut partir tôt, car le vent d'est souffle en rafales le matin | **DÉFORMÉ** | S70 récit du 7 juin 2015 — « 8h59: Damned ! .... le vent n'est pas bon: travers Est en rafales » | Un seul matin ; la hâte venait de l'orage annoncé (« instabilité orageuse des 11h 05 »). Écrire « un matin de juin, le vent soufflait d'est en rafales » | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/devoluy.json steps[5] | 1500 m de dénivelée depuis les Sauvas par la combe d'Aurouze | **CONFIRMÉ** | S70 — « pour avaler les 1500 m de D+ il faut entre 3h12 et 4h » | — | — |
+| visites/devoluy.json steps[6] | 3/4 h de voiture, deux sorties nord-sud seulement en hiver | **CONFIRMÉ** | S28 #2 — « que deux sorties (nord-sud) possibles en hiver » | — | — |
+| visites/devoluy.json steps[1] | Col du Noyer : décollage du matin, ne fonctionne que le matin ou par faible régime d'est | **CONFIRMÉ** | S63 differen-ciel.fr col du Noyer — « Site qui ne fonctionne que le matin ou par faible régime d'Est » | — (S57 dit pourtant « ca marche vers midi » : la divergence est signalée) | — |
+| visites/devoluy.json steps[1] | Au col des Faïsses, beaucoup de pilotes sur la crête de l'Obiou dès 11 h, très bon départ de cross | **CONFIRMÉ** | S29 #8 — « pas mal de monde en l'air perchés sur la crête du massif de l'Obiou, dès 11h » | — (un samedi d'août 2016) | — |
+| visites/devoluy.json steps[7] | Noyer → Chamoux, plus de 100 km ; sortir du bocal par les reliefs sud puis le Faraut | **CONFIRMÉ** | S57 t936 — « du style Noyer/Chamoux, un peu plus de 100km » ; « en s'appuyant sur les reliefs sud, puis transiter vers le faraud » | — | — |
+| visites/devoluy.json steps[10] | Par vent de sud, la brise de vallée est très forte et la face sud du Bure très thermique (+3 à +6) | **DÉFORMÉ** | S29 #8 et #10 — « a tendance à venir du Sud » (brise, air calme) ; « Hier, la face sud du pic de bure était à peu près saine » | Les deux observations ne sont pas liées à un vent météo de sud : retirer l'étape « Par sud » ou la limiter au venturi du col de l'Aup (S183) | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/devoluy.json steps[12] | Depuis Gap, un circuit de référence pour les planeurs relie Céüse, le Pic de Bure, le Dévoluy et Charance | **DÉFORMÉ** | S30 planeur-gaptallard.fr/promenade/ — « zones enchanteresses de survol… la Grande Céûse… le magnifique Pic de Bure » | La page liste des survols touristiques de baptême ; ni « circuit de référence » ni Charance : écrire « les vols de baptême de Tallard survolent Céüse et le Pic de Bure » | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| massifs[devoluy].tips[1] | Au décollage de Superdévoluy, attendre un cycle calme : la brise de vallée peut être très forte [S28] | **NON SOURCÉ** | S28 t22564 (relu en entier) — S28 ne parle ni de brise forte ni de cycle ; la brise très forte est dans S29 (col du Noyer) | Citer S29 et retirer « attendre un cycle calme » | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| massifs[devoluy].tips[6] | Au Pic de Bure, décoller tôt par vent d'est de travers | **DÉFORMÉ** | S70 — « travers Est en rafales » | Anecdote d'un matin, voir étape 5 | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| massifs[devoluy].synoptic_effects[2] (S) | Par S, brise très forte, face sud du Bure de +3 à +6 | **DÉFORMÉ** | S29 — voir étape 10 | idem | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| massifs[devoluy].synoptic_effects[6] ; visites/devoluy.json steps[8] | CONTRADICTION signalée, col de l'Aup : « envisagé par nord-ouest modéré… la bise, la brise et le vent peuvent alors y être très forts » (effet synoptique) contre « par nord modéré la bise, la brise et le vent peuvent être très forts » (visite) | **DÉFORMÉ** | S183 parapentiste.info t44718 (relu en cache) — Chris224 : « si les prévisions en NO modéré se confirment » ; blabair : « En Nord modéré, je ne tenterai pas car la "bise + brise + vent", peuvent etre tres fort!! » ; « vent du nord (qui est souvent avec une bonne tendance ouest) » | Les deux directions sont dans la source, mais pour deux choses différentes : le projet (non volé) visait un nord-ouest modéré ; la mise en garde du local vise le nord modéré, souvent à tendance ouest. La visite a raison ; l'effet synoptique rattache à tort le danger au nord-ouest par « alors ». Écrire : « Un pilote envisageait le col de l'Aup par nord-ouest modéré, sans l'avoir volé ; un local le déconseille par nord modéré, souvent à tendance ouest : bise, brise et vent s'additionnent. » | texte courant (143c7d3) |
+
+### diois
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[diois].summary | Brise d'été de nord, s'installe vite à partir de midi ou 13h, rarement trop forte ; diverge vers l'ouest à Châtillon, seul endroit où un parapente peut reculer ; contre un sud jusqu'à 20 km/h | **CONFIRMÉ** | vol-libre-diois.fr/informations-generales-concernant-le-diois — « La brise générale est nord, rarement trop forte… seul endroit où l'on peut voir un parapente reculer en basse couche » ; « contrer le vent météo de sud (jusqu'à 20 km/h) » | — | — |
+| massifs[diois].summary | Elle suit la Drôme, de Saillans et Pontaix vers Die puis Luc-en-Diois | **NON SOURCÉ** | vol-libre-diois.fr (page générale) : ne nomme ni Saillans ni Pontaix — — | Tracé tiré de la carte collaborative (S55) : le dire, ou retirer les noms | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| massifs[diois].summary | Bascule ouest venue de Couspeau, d'Aucelon et d'Aurel en fin d'après-midi | **CONFIRMÉ** | idem — « les fortes brises d'ouest qui sévissent sur les secteurs de Couspeau (Bourdeaux), d'Aucelon et d'Aurel peuvent largement prendre le dessus » | — | — |
+| massifs[diois].summary | Thermiques vers 10h-11h faces sud, 12h-13h faces nord ; limite nette à Valdrôme et au col de Cabre | **CONFIRMÉ** | vol-libre-diois.fr (page d'accueil) — « Les thermiques sont généreux a partir de 10h-11h en face Sud et 12h-13h en nord » | — | — |
+| massifs[diois].summary | Mistral annoncé à plus de 50 km/h à Valence ; nuages orographiques, foehn local et trou bleu | **CONFIRMÉ** | idem — « ces nuages indiquent obligatoirement la présence du vent du nord » ; « un « trou bleu » sur le Diois » | — | — |
+| visites/diois.json steps[5] | Les faces sud du Glandasse offrent des conditions thermiques souvent très fortes, de 12 h à 17 h en été | **NON SOURCÉ** | therm-glandasse-sud (S93, S72) — aucune heure dans les fiches ; l'élément voisin note « les bonnes conditions thermiques ne sont pas datées par la fiche » | Supprimer « de 12 h à 17 h en été » (valeur par défaut du champ best_hours) | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/diois.json steps[7] | Au col de Rousset, au moins cinq pilotes ont reculé derrière le col pour se poser côté nord | **CONFIRMÉ** | vol-libre-diois.fr/col-de-rousset — « déjà au moins 5 pilotes du club reculé derrière le col , posés coté nord » | — (la même page dit ailleurs « 3 pilotes au moins ») | — |
+| visites/diois.json steps[11] | Col de Rousset : environ 15 nichées de vautours par an ; R196B activable lun., mar., jeu., ven., hors fériés et hors 1er juillet-15 septembre | **CONFIRMÉ** | vol-libre-diois.fr/reglementation-aerienne — « abrite en moyenne 15 nichées chaque année » ; « n'est pas activable les mercredi, samedi, dimanche et jours fériés, ainsi que du 1er juillet au 15 septembre » | — | — |
+| visites/diois.json steps[13] | Par mistral la matinée est souvent très calme à Clamontard, le vent peut arriver vers midi assez brutalement | **CONFIRMÉ** | vol-libre-diois.fr/clamontard et page générale — « il se fait ressentir vers midi et ce, d'une manière assez radicale » | — | — |
+
+### gapencais-ceuse
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[gapencais-ceuse].summary | Planeurs : Petite Céüse puis falaises jusqu'à la Grande Céüse, plafonds 2200 à 2500 m et jusqu'à 3000 m ; micro-climat de Tallard permet l'onde | **DÉFORMÉ** | S30 planeur-gaptallard.fr/promenade (relu) ; S52 aavo pres_gap.pdf — S30 : « l'altitude maximale atteinte se situe entre 2200m et 2500m voir 3000 m » | Ces altitudes sont celles des vols de baptême en général, pas des plafonds de la falaise de Céüse ; l'onde est confirmée par S52 (« le micro-climat permet de voler en onde ») | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| massifs[gapencais-ceuse].summary | Charance excellent par régime de sud, départ en cross vers le massif de Bure ; restitution le soir ; dangereux par nord | **CONFIRMÉ** | S65 differen-ciel Charance ; S23 FFVL 13718 — FFVL : « Site dangereux par régime de nord » | — | — |
+| massifs[gapencais-ceuse].summary | Gap occupe une cuvette où se rejoignent les brises de la Durance, du Buëch et du Champsaur | **NON SOURCÉ** | S53/S55 (schémas Briffe, carte Largeault) ; note de convergence-cuvette-gap — note de l'élément : « géométrie très approximative » (schémas en perspective) | Présenter comme hypothèse tirée de schémas, pas comme fait (la visite, étape 2, le fait correctement ; le résumé non) | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/gapencais-ceuse.json steps[3] | Les faces sud de la Malaup, Céüsette et Céüse reçoivent une brise de pente de 12 h à 17 h en été | **NON SOURCÉ** | S54 Briffe, diapos 13-15 (texte relu : « Gap – Malaup », « Gap – Céüse Céüsette ») ; S30 ; S52 — aucune heure dans les diapos ni dans S30/S52 | Supprimer « de 12 h à 17 h en été » (champ hours/best_hours inventé, aussi dans le titre de l'étape « travaille de 12 h à 17 h ») | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/gapencais-ceuse.json steps[3] | Les planeurs, largués à 1500 m au-dessus de la Malaup | **DÉFORMÉ** | S52 (notes de la source) — « largage sur la Malaup à 1500 m » | « largués sur la Malaup à 1500 m » (altitude, pas hauteur au-dessus du relief) | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/gapencais-ceuse.json steps[8] | Les planeurs de Gap-Tallard annoncent un tour d'environ 44 km en 1 h 15 : Céüse, Pic de Bure, Dévoluy, Charance | **DÉFORMÉ** | S30 planeur-gaptallard.fr/promenade (relu en ligne le 30/10/2026) — « 240€ : pour un mimmim de 1h15 de vol » | 1 h 15 est la durée minimale d'un baptême payant ; ni circuit, ni 44 km, ni Charance dans la page. Supprimer la phrase | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/gapencais-ceuse.json steps[6] | Charance : 462 décollages recensés, 45 min à 1 h pour 400 m, dangereux par nord ; Correo technique en brise | **CONFIRMÉ** | S23 FFVL 13718 (notes) ; S65 — notes S23 : « 462 décollages / 69 atterrissages en 2024; montée ~1h/400 m » | Préciser « en 2024 » | — |
+| visites/gapencais-ceuse.json steps[10] | Les zones R196 peuvent être activées par NOTAM, hors mercredi, samedi, dimanche et jours fériés, et du 1er juillet au 15 septembre | **DÉFORMÉ** | S82 vol-libre-diois.fr/reglementation-aerienne — « elle n'est pas activable les mercredi, samedi, dimanche et jours fériés, ainsi que du 1er juillet au 15 septembre » | Tournure ambiguë qui se lit « activable du 1er juillet au 15 septembre » : écrire « elle n'est jamais active le mercredi, le week-end, les jours fériés, ni du 1er juillet au 15 septembre ». La source décrit la R196B du Diois ; pour Gap, S159 dit seulement « consulter les R196 activables par Notam » | corrigé (« sauf du 1er juillet au 15 septembre ») |
+| visites/gapencais-ceuse.json steps[10] | Gap-Tallard à 14 km au sud de Gap ; ALAT au nord ; largage sur la Malaup à 1500 m | **CONFIRMÉ** | S52 (notes) — « à 14 km au sud de Gap… base hélicoptère de l'ALAT au nord » | — | — |
+| visites/gapencais-ceuse.json steps[10] | À Céüse, du 1er juin au 30 octobre, les bergers et leurs patous ont la priorité | **NON SOURCÉ** | S166 fiche FFVL 14273 (absente de la récolte ffvl_sites_alpes.json, page FFVL derrière Cloudflare) — source non récupérée | Non vérifiable : relire la fiche 14273 dans le navigateur | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/gapencais-ceuse.json steps[1] | Tête de la Clape : site du matin, sous le vent du sud-ouest à partir de la mi-journée | **CONFIRMÉ** | S164 FFVL 2313 — « plutôt site du matin. peut éventuellement être sous le vent du sud ouest à partir de la mi-journée » | — | — |
+| visites/gapencais-ceuse.json steps[13] | Rabou orienté ouest à nord-ouest | **DÉFORMÉ** | FFVL 5056 RABOU — « vents_favorables: SO » | La seule fiche FFVL donne SO ; la visite le signale (« pas tranchée ») mais le résumé et l'étape 4 l'affirment O-NO | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+
+## Lot vercors_grenoble_trieves
+
+
+### grenoble-cuvette
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[grenoble-cuvette].summary | La cluse de Voreppe est responsable de 75 % de l'aérologie locale ; brises jusqu'à ~900 m ; confluence NE de Grenoble à 400-500 m, varios 2-3 m/s ; Grésivaudan descendant « anormal » | **NON VÉRIFIÉ** | S35 Kerkhove « Dans l'Y grenoblois » (parapentiste.info t49137) — le fil en cache ne contient pas les 4 scans (images réservées aux membres, cf. pages_bloquees.txt) | Non vérifiable sans les scans ; à relire connecté. Seule la confluence La Terrasse/Tencin « par temps virant à l'orage » est lisible (#8, chatmalo) | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/grenoble-cuvette.json steps[4] | La confluence se matérialise parfois par des nuages, plus au nord que prévu, entre La Terrasse et Tencin | **CONFIRMÉ** | S35 t49137 #8 (chatmalo) — « la matérialisation (grâce aux nuages) de la confluence La Terrasse / Tencin… souvent par temps virant à l'orage » | — | — |
+| visites/grenoble-cuvette.json steps[6] | Chalais abrité de la brise de nord dès la fin de matinée ; Rivalières exposé ; ligne 20 kV ; rugby en secours ; CTR2 et TMA 15 activables mi-décembre à mi-avril | **CONFIRMÉ** | FFVL 324, 325, 13148 — « Proximité de la CTR2 Grenoble et TMA15 Lyon, activables entre mi-décembre et mi-avril » | — | — |
+| visites/grenoble-cuvette.json steps[7] | Poisat : brise thermique de nord en fin de journée l'été, voiles en dynamique invisibles du déco, atterrissage au-dessus de la piscine d'Eybens, lignes HT | **CONFIRMÉ** | FFVL 13474 — « Le site fonctionne en brise thermique de fin de journée en été. Cette brise en donc Nord » | — | — |
+| visites/grenoble-cuvette.json steps[8] | ZIT : ne pas descendre sous 1220 m au-dessus du CEA ; vol à presque 2700 m vers le Rachais non validé | **CONFIRMÉ** | CHVD (récit, posts_4) — « la P14, zone interdite de survol à moins de 1220 m au-dessus du CEA » | — | — |
+
+### matheysine
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[matheysine].summary | Monteynard : nord thermique levé entre 11h et 13h, max vers 15h, faiblit 16h30-18h ; 8-15 nds sans vent synoptique, 12-20 nds avec du nord en altitude | **CONFIRMÉ** | S1 vvanat.fr (3 pages relues en ligne le 30/10/2026) — « Il se lève généralement entre 11h et 13h… il est le plus fort aux alentours de 15h » ; une page sœur dit « vers 13h… jusqu'à 18h… entre 8 et 12 nœuds » | Les pages sœurs divergent (8-12 nœuds, 13h-18h) : donner une fourchette | — |
+| massifs[matheysine].summary | Texte du résumé contenant des balises brutes « (S1, S3, S4) », « (S3-S5) », « (S49) », « (S48) », « (S6) », « (S8) » | **DÉFORMÉ** | — — — | Défaut de forme : retirer les identifiants du texte | corrigé (balises retirées) |
+| massifs[matheysine].summary | Brise de nord dès 12h avec cisaillements importants au Conest | **CONFIRMÉ** | FFVL 193 CONEST — « La brise s'installe dès 12h, pouvant entrainer des cisaillement importants » | — | — |
+| visites/matheysine.json steps[4] | Conest : soaring par sud jusqu'à 25 km/h depuis La Peyrouse, à 40 minutes de marche | **CONFIRMÉ** | FFVL 193 — « Sud jusqu'à 25 km/h pour du soaring à partir du sommet sud "La Peyrouse". 40 min de marche » | — | — |
+| visites/matheysine.json steps[5] | Laffrey : Fauries N, O, NO, défavorables SE, S, SO ; pilotes en approche qui posent au déco ; venturi du village et des ruines de Séchilienne | **CONFIRMÉ** | FFVL 1821, 1647 — « effet venturi au niveau du village de Laffrey et des ruines de Séchilienne » | — | — |
+| visites/matheysine.json steps[6] | Colombiers : survol à moins de 1000 m du sol interdit de début novembre à fin juin (parc des Écrins) ; atterrissage d'Entraigues : laisser passer les heures chaudes après 11 h | **CONFIRMÉ** | FFVL 350, 351 (relues) ; OT La Grave (règle du cœur des Écrins) — « dans le cœur du Parc national des Écrins à moins de 1 000m du sol est interdite du 1er novembre au 30 juin » | — (règle du cœur du parc ; vérifier que le décollage de Colombiers est bien en cœur) | — |
+| visites/matheysine.json steps[6] | Colombiers dangereux par nord fort (montagne du Vet) ; Entraigues derrière les tennis côté ouest, ligne HT à droite | **CONFIRMÉ** | FFVL 350, 351 — « Danger de vol par vent de Nord fort : Montagne du Vet » ; « derrière les tennis côté Ouest… il y a la ligne à haute tension » | — | — |
+
+### trieves
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[trieves].summary | Une brise descend du Drac vers le Trièves, puis vers le col de la Croix-Haute | **INVRAISEMBLABLE** | S49/S48 (cartes de brises) ; S1 (Monteynard, vent de nord thermique) — S1 notes : « Thermique de N : levée 11h-13h… max ~15h » | Le flux décrit va du lac de Monteynard (~490 m) au col de la Croix-Haute (1176 m) : c'est une brise qui REMONTE (vent de nord montant vers le sud), pas qui « descend ». Même mot dans la visite (étapes 0, 1, 10) ; la visite Vercors est-sud dit correctement « remonte du Drac vers le Trièves » | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| massifs[trieves].summary | Courtet (N/NO, 1365 m) protégé du vent du nord, vol quand le reste de l'Isère est cloué au sol | **CONFIRMÉ** | FFVL 854 ; chvd.org (p12) ; parapentiste.info t5840 — CHVD : « c'est protégé du Nord » ; t5840 : « si c'est fort vent de nord, il y a 3 possibilité, montaud, courtet et monlambert » | — | — |
+| massifs[trieves].summary | Texte du résumé contenant des balises brutes « (S49, S48) », « (S3) », « (S21, S169) », « (S33) » | **DÉFORMÉ** | — — — | Défaut de forme : retirer les identifiants du texte | corrigé (balises retirées) |
+| visites/trieves.json steps[9] | À Courtet, les jeudi, samedi et dimanche de chasse, aucun véhicule ne monte avant 13 h | **NON SOURCÉ** | FFVL 854 COURTET — « Pendant la période de chasse : les véhicules… qu'après 13h » | La fiche ne cite pas de jours : retirer « jeudi, samedi et dimanche » ou citer la source qui les donne | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+
+### vercors-est-sud
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[vercors-est-sud].summary | Texte du résumé contenant des balises brutes « (S20) », « (S148, S149, S150) », « (S23, S33) » | **DÉFORMÉ** | — — — | Défaut de forme : retirer les identifiants de sources du texte du résumé (aucun autre résumé n'en contient) | corrigé (balises retirées) |
+| massifs[vercors-est-sud].summary | Une R196B, activable du 16/09 au 30/06 | **DÉFORMÉ** | vol-libre-diois.fr/reglementation-aerienne — « pas activable les mercredi, samedi, dimanche et jours fériés, ainsi que du 1er juillet au 15 septembre » | Ajouter l'exclusion mercredi, week-end et fériés | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/vercors-est-sud.json steps[9] | Record de groupe de l'équipe de France : 279 km, posés à Retkingen (Suisse) | **CONFIRMÉ** | parapentiste.info fil Serpaton (web3/pi_serpaton) — « le 25 avril 1997 le record de vol en groupe avec 279km, posé à Retkingen (Suisse) » | Dater (1997) ; « Retkingen » est l'orthographe de la source (sans doute Rekingen AG) | — |
+| visites/vercors-est-sud.json steps[11] | Deux couples de gypaètes (Glandasse, Archiane) : vol interdit en zone cœur de janvier à la fin août au plus tard | **DÉFORMÉ** | tichodromes.org ZSM gypaète 2025 ; vol-libre-diois.fr/reglementation-aerienne (MAJ 05/03/2026) — « protection des gypaètes barbus du 1er nov au 31 aout » ; « Au 1er mars, les autres ZSM non occupées par un couple nicheur ont été désactivées » | La ZSM Glandasse 2026 court du 1er novembre au 31 août ; en 2026 seule la ZSM Glandasse est signalée active. Dater les règles (2025 vs 2026) et corriger le début | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+
+### vercors-nord
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[vercors-nord].summary | Les décollages du matin (Méaudre, les Sagnes, col de l'Arc, Pic Saint-Michel) deviennent vite turbulents dès 11h-11h30 | **DÉFORMÉ** | lansenlair.fr fiche Les Sagnes — « Vol du matin, exposé Est ne pas décoller après 11h30 » | La consigne horaire concerne les Sagnes ; l'étendre à tous les décollages du matin (et la turbulence) est une généralisation | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/vercors-nord.json steps[3] | Pas de Saint-Martin très alimenté entre 13 h et 17 h | **CONFIRMÉ** | lansenlair.fr fiche Saint-Martin — « Aérologie généreuse entre 13H et 17H lorsque l'activité thermique est présente » | — | — |
+| visites/vercors-nord.json steps[1] | Aux Sagnes, il ne faut plus décoller après 11 h 30 | **CONFIRMÉ** | lansenlair.fr fiche Les Sagnes — « ne pas décoller après 11h30 » | — | — |
+| visites/vercors-nord.json steps[16] | Un vol de 204 km part du Moucherotte à presque 2700 m, jusqu'au Granier | **DÉFORMÉ** | tichodromes.org « 204 kms dans les Alpes » (copie Wayback en cache, tronquée) — « ayant légèrement rogné un bout de la ZIT de Grenoble lors de la transition Moucherotte -> Chartreuse » | Le vol de 204 km est un aller-retour (Moucherotte → petit Veymont → retour → Chartreuse) ; le Granier n'en est pas le terme. Écrire « un vol de 204 km a traversé du Moucherotte vers la Chartreuse » | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+| visites/vercors-nord.json steps[12] | Zone R196B activable du 16 septembre au 30 juin | **DÉFORMÉ** | vol-libre-diois.fr/reglementation-aerienne — « n'est pas activable les mercredi, samedi, dimanche et jours fériés, ainsi que du 1er juillet au 15 septembre » | Ajouter l'exclusion des mercredis, week-ends et fériés | persiste dans le texte réécrit (vérifié le 30/10/2026) |
+
+## Lot synoptic_convergences_xc
+
+
+### alpes-francaises
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| visites/alpes-francaises.json steps[10] | Records de triangle FAI de l'Izoard : 350,5 km puis 358,6 km | **CONFIRMÉ** | Ozone (ozone, en cache) ; xcmag (xc_393) — « un vol de 350.53 km en triangle FAI » ; « record of 358.6km set by Edouard Potel in August 2025 » | — | texte courant (143c7d3) |
+| visites/alpes-francaises.json steps[11] | Record du monde de 309 km de Saint-Hilaire par le Diois, les Monges, la Blanche, le Champsaur et Chamrousse ; avril choisi pour l'instabilité précoce | **CONFIRMÉ** | FAI, interview M. Pinot (fai_pinot2, en cache) — « St Hilaire is a very good place in April because it's usually unstable very early in the low layers » | Dater (2021) : ce record a été battu depuis | texte courant (143c7d3) |
+| visites/alpes-francaises.json steps[15] | Foehn probable à -4 hPa d'écart Aoste-Annecy | **CONFIRMÉ** | cmbvl (en cache) — « Foehn is generally considered likely when the pressure difference reaches −4 hPa or more » | — | texte courant (143c7d3) |
+| massifs[alpes-francaises].summary | Brise de Durance : plus de 40 km/h à Briançon | **CONFIRMÉ** | Chocard Airlines (chocard, en cache) — « A Briançon, elle peut faire des pointes à plus 40km/h ! » | — | texte courant (143c7d3) |
+
+## Lot oisans_maurienne
+
+
+### haute-maurienne
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[haute-maurienne].summary | Arrêté du 5 juin 2026 (cœur de la Vanoise) : survol sous 1000 m seulement dans des secteurs et périodes définis | **CONFIRMÉ** | LAURA (laura_vanoise, en cache) ; Parc de la Vanoise — « Arrêté parapentes n°2026-31 du 5 juin 2026_règlementant le survol du coeur du parc » | — | texte de l'arbre de travail au 30/10/2026 |
+
+### oisans-grandes-rousses
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[oisans-grandes-rousses].summary | Cœur du Parc des Écrins : survol à moins de 1000 m interdit du 1er novembre au 30 juin, aucune aire de vol aménagée | **CONFIRMÉ** | OT La Grave (grave_ot, en cache) — « à moins de 1 000m du sol est interdite du 1er novembre au 30 juin » ; « L'aménagement… de toute aire d'envol… est interdit » | Ajouter : décollages autorisés du 1er mai au 30 juin depuis 8 sommets identifiés | texte de l'arbre de travail au 30/10/2026 |
+| massifs[oisans-grandes-rousses].summary | Au Collet (Vaujany/Sabot), la brise de vallée dépasse rarement 15 km/h | **CONFIRMÉ** | topo Le Sabot (tg/sabot, en cache) — « L'atterrissage… devant les tennis du Collet. L'après-midi le vent excède rarement 15km/h » | — | texte de l'arbre de travail au 30/10/2026 |
+| massifs[oisans-grandes-rousses].summary | Posez-vous avant 13h à Venosc | **DÉFORMÉ** | FFVL 1245 LES 2 ALPES - VENOSC — « le matin jusqu'a 12h00 conditions calmes, ap midi fortes brises thermiques » | La fiche donne 12 h ; vérifier la source de « 13 h » ou aligner sur 12 h | texte de l'arbre de travail au 30/10/2026 |
+
+## Lot provence_maritimes
+
+
+### mercantour
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[mercantour].summary ; visites/mercantour.json steps[11] | La Lombarde est un vent de nord rafaleux venu du golfe de Gênes ; l'étape de visite impose wind = N 30 km/h | **CONTREDIT** | S74 sospel (club) contre FFVL Bonnette-Restefond (ffvl_area_details) et le lot synoptique — Sospel : « Sous Lombarde, vent du Nord rafaleux et fort » ; FFVL : « E : attention à la Lombarde (effet de föhn) » | Les sources se contredisent ; la Lombarde est donnée ailleurs dans l'atlas comme un retour d'est (NE à SE). Écrire « vent d'est à nord-est, ressenti du nord à Sospel » et revoir le wind de l'étape (NE plutôt que N) | texte de l'arbre de travail au 30/10/2026 |
+
+### prealpes-grasse-castellane
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[prealpes-grasse-castellane].summary | Col de Bleine : on y décolle dès 10h30, car dès midi les brises d'ouest contrent celles d'est | **CONFIRMÉ** | ADLA « Les vols de distance » (adla_p_les-vols-de-distance) — « il faut compter sur un départ dès 10h30… dès midi, les premières brises en Est sont rapidement contrées par les brises en Ouest » | — | texte de l'arbre de travail au 30/10/2026 |
+
+### saint-andre-verdon
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[saint-andre-verdon].summary | La Mure-Argens interdit aux parapentes depuis le 1er mai 2024 | **CONFIRMÉ** | FFVL 431 — « TERRAIN STRICTEMENT INTERDIT AU VOL LIBRE DEPUIS LE 1/5/2024 » | — | texte de l'arbre de travail au 30/10/2026 |
+| massifs[saint-andre-verdon].summary | Vers 13h le venturi renforce la brise sur le décollage sud-ouest | **CONFIRMÉ** | flystandre (en cache, flystandre_2) — « By about 1pm, when with the associated venturi effect the wind speed on take off becomes too difficult » | — | texte de l'arbre de travail au 30/10/2026 |
+| massifs[saint-andre-verdon].summary | Une école fait vivre le site depuis 1982 ; le vent peut tourner de 180° en quelques secondes à l'atterrissage | **NON VÉRIFIÉ** | S23 (flystandre « Tips », copie Wayback), S2 aerogliss — non retrouvé dans les pages en cache | À vérifier dans la page Wayback S23 | texte de l'arbre de travail au 30/10/2026 |
+
+## Lot brianconnais_ecrins_queyras_ubaye
+
+
+### brianconnais-guisane
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[brianconnais-guisane].summary | Vers 16 h, la Guisane s'inverse (brise venant du Lautaret) | **CONFIRMÉ** | forum Briançonnais (forum228, en cache) — « typiquement vers 16h en été… la brise faiblit puis change de direction, venant alors du haut de la vallée » | — | texte de l'arbre de travail au 30/10/2026 |
+
+### ecrins-vallouise-haute-durance
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[ecrins-vallouise-haute-durance].summary | Puy Aillaud : thermiques dès 9h-9h30 | **DÉFORMÉ** | FFVL 1124 VALLOUISE - PUY AILLAUD — « L'aérologie peut se mettre en place assez tôt (à partir de 9h30 parfois !) » | Écrire « parfois dès 9h30 » (9 h et la régularité sont ajoutés) | texte de l'arbre de travail au 30/10/2026 |
+| massifs[ecrins-vallouise-haute-durance].summary | Les Écrins abritent Vallouise du nord-ouest | **CONFIRMÉ** | FFVL 1124 — « Bien protégé du vent météo de Nord-Ouest par les Ecrins » | — | texte de l'arbre de travail au 30/10/2026 |
+
+### queyras
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[queyras].summary | Le col de l'Izoard, départ du record du monde de triangle FAI (350,53 km) | **CONTREDIT** | xcmag (synoptic xc_393, en cache) ; lot synoptique (visite alpes-francaises étape 10) — « The FAI triangle record of 358.6km set by Edouard Potel in August 2025 from the Col de l'Izoard still stands » | Record dépassé : écrire « départ des records du monde de triangle FAI (350,53 km en 2023, puis 358,6 km en 2025) » | texte de l'arbre de travail au 30/10/2026 |
+| massifs[queyras].summary | Ceillac : toutes orientations sauf l'est, bien protégé du nord | **CONFIRMÉ** | Chocard Airlines, topo Ceillac (en cache) — « Site toute orientation sauf Est, également très bien protégé du Nord » | — | texte de l'arbre de travail au 30/10/2026 |
+
+### serre-poncon-embrunais
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[serre-poncon-embrunais].summary | Saint-Vincent-les-Forts, seul site volable par mistral | **CONFIRMÉ** | infos Serre-Ponçon (web/infos_serreponcon, en cache) — « Seul site volable par mistral (Nord Ouest) » | — | texte de l'arbre de travail au 30/10/2026 |
+
+### ubaye
+
+| Texte | Affirmation | Verdict | Source et passage | Correction proposée | État au 143c7d3 |
+|---|---|---|---|---|---|
+| massifs[ubaye].summary | À Barcelonnette, la brise peut devenir excessivement forte dès 11h et empêcher de poser avant 20h | **CONFIRMÉ** | sevmika, Soleil Bœuf (en cache) — « excessivement forte dès 11h. Puis Il devient impossible de poser avant parfois 20h » | — (garder « parfois ») | texte de l'arbre de travail au 30/10/2026 |
+
+
+## Ce qui n'a pas été couvert
+
+- **Lots 7 à 9.** Les 12 résumés et toutes les étapes de visite ont été lus. Les affirmations saillantes ont été vérifiées : chiffres, heures, règles, records, directions. Les affirmations génériques (« site magnifique », explications de mécanisme d'école) ne l'ont pas été une à une. Conseils et effets synoptiques : Dévoluy et Champsaur en entier, ailleurs seulement en contrôle croisé avec la visite. Alpes françaises : résumé et visite lus ; records, foehn et Briançon vérifiés, les minima de transition (étape 9) et les zones aériennes (étape 12) non vérifiés.
+- **Lots 10 à 12.** Les 15 résumés ont été lus, avec un contrôle ciblé de leurs affirmations les plus précises. **Les étapes de visite n'ont pas été lues une à une**, sauf Mercantour 11 et 16. Elles n'ont été couvertes que par le contrôle automatique des nombres et par les recoupements avec les résumés. Les résumés d'Arves–Thabor–Galibier, Haut-Verdon, Digne–Lure et Nice–Var ont été lus sans constat consigné : non vérifiés en détail. C'est la principale lacune : une passe dédiée aux visites des lots 10 à 12 reste à faire.
+- **Sources inaccessibles.** Scans de l'article Kerkhove « Dans l'Y grenoblois » (S35, réservés aux membres) : le résumé de la cuvette grenobloise repose dessus (75 %, 900 m, 400-500 m, 2-3 m/s) et reste non vérifié. Fiche FFVL 14273 (Céüse nord-ouest) : absente de la récolte et derrière Cloudflare. Page Wayback « Tips » de flystandre (S23) : non relue.
+- Les descriptions des éléments sont hors périmètre. Je ne les ai lues que lorsqu'une étape s'appuyait dessus.
+
+## Fichiers
+
+- Rapport : `research_notes/Seconde passe 2026/_rapports_agents/veracite_lots_7-12.md`
+- Données : `research_notes/Seconde passe 2026/_rapports_agents/veracite_lots_7-12.json`

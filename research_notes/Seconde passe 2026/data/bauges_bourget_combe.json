@@ -78,7 +78,7 @@
           },
           "season": "avril-septembre (saison thermique)",
           "layer_depth_m": "couche de brise rencontrée vers 1200 m à l'approche de la Savoyarde (CHVD) ; forte jusqu'à ~1400 m côté Chamoux (Montlamb'air)",
-          "description": "La brise descend du nord vers le sud, longe le pied ouest du Revard et du Nivolet, passe devant l'aéroport, entre dans la cluse et se poursuit par Challes-les-Eaux. Aux Marches, elle se divise : une branche vers Albertville, une vers Grenoble. Assez forte, de 25 à 30 km/h, elle culmine à la pointe sud-ouest des Bauges, par effet venturi. À Montagny, par vent météo de secteur nord, la brise de vallée peut devenir soutenue, et elle l'est dès 11h à Montlambert.",
+          "description": "Dès la fin de matinée, une brise forte descend du nord vers Chambéry, à 25-30 km/h. Elle longe le pied ouest du Revard et du Nivolet, passe devant l'aéroport, entre dans la cluse et continue par Challes-les-Eaux. Aux Marches, elle se divise : une branche vers Albertville, une vers Grenoble. Elle est la plus forte à la pointe sud-ouest des Bauges, par effet venturi. Par vent météo de nord, elle peut devenir soutenue à Montagny.",
           "confidence": "high",
           "sources": [
             "S28",
@@ -89,7 +89,10 @@
             "S54",
             "S29"
           ],
-          "note": "Tracé relevé sur une carte de référence et sur un tracé numérique ; le prolongement vers Rumilly, au nord d'Aix, ne repose que sur ce dernier. Un schéma figure la brise par des flèches bleues descendant de Chambéry vers les Marches."
+          "note": "Tracé relevé sur une carte de référence et sur un tracé numérique ; le prolongement vers Rumilly, au nord d'Aix, ne repose que sur ce dernier. Un schéma figure la brise par des flèches bleues descendant de Chambéry vers les Marches.",
+          "possible": [
+            "Sur la branche d'Albertville, elle peut déjà être soutenue dès 11h à Montlambert."
+          ]
         },
         {
           "id": "brise-lac-bourget",
@@ -139,7 +142,7 @@
             "max": 15
           },
           "season": "été",
-          "description": "Le long de l'axe du lac, une brise légère descend du nord vers Chambéry, à faible vitesse. Côté Mont du Chat, elle alimente le décollage dès le début de l'après-midi ; à Saint-Paul-sur-Yenne, elle relève d'un régime de brise nord ou nord-ouest. Elle se confond avec la brise de nord de la cluse : aucun front de brise de lac distinct n'est documenté.",
+          "description": "Les cartes de brises tracent un flux le long de l'axe du lac, du nord vers Chambéry. Aucune source ne donne sa force ni ses horaires. Aucun front de brise de lac distinct n'est décrit : ce flux se confond avec la brise de nord de la cluse.",
           "confidence": "medium",
           "sources": [
             "S28",
@@ -147,7 +150,7 @@
             "S46",
             "S47"
           ],
-          "note": "Vitesse estimée à partir d'un flux léger. Une formule évoquant une brise fraîche vers la fin de l'après-midi n'apparaît plus aujourd'hui : elle n'est pas retenue."
+          "note": "Tracé lu sur les cartes de brises ; la faible vitesse affichée est une estimation. La brise qui alimente le décollage du Mont du Chat, comme celle de l'atterrissage de Saint-Paul-sur-Yenne, n'est pas celle du lac : tous deux sont à l'ouest de la crête. Une formule évoquant une brise fraîche vers la fin de l'après-midi n'apparaît plus sur sa page d'origine : elle n'est pas retenue."
         },
         {
           "id": "brise-epine-avant-pays",
@@ -179,7 +182,7 @@
             "max": 25
           },
           "season": "printemps-été",
-          "description": "Dans la plaine de l'Avant-Pays, une brise d'ouest ou de nord-ouest remonte vers la chaîne de l'Épine. Elle est favorable de la fin de matinée jusqu'à la nuit, et elle peut devenir forte entre 14h et 17h. Un schéma figure une brise forte à Novalaise, dirigée vers la crête.",
+          "description": "Une brise de plaine monte de l'Avant-Pays vers la chaîne de l'Épine, qui regarde l'ouest. Elle est favorable de la fin de matinée jusqu'à la nuit et peut devenir forte entre 14h et 17h. Un schéma marque une zone de brise forte vers Novalaise, dirigée vers la crête.",
           "confidence": "medium",
           "sources": [
             "S48",
@@ -188,7 +191,7 @@
             "S42",
             "S36"
           ],
-          "note": "Direction et vitesse, de 15 à 25 km/h, sont des interprétations de « brise forte ». Par vent météo d'ouest, la brise est favorable ; l'atterrissage des Marais subit de faibles brises du lac, d'ouest ou de sud-ouest."
+          "note": "La direction, d'ouest à nord-ouest, et la vitesse, de 15 à 25 km/h, sont des interprétations de « brise forte ». Par vent météo d'ouest, la brise est favorable ; à l'atterrissage des Marais, elle reste faible et vient du lac, d'ouest ou de sud-ouest."
         },
         {
           "id": "restitution-aiguebelette",
@@ -214,7 +217,7 @@
             "max": null
           },
           "season": "été (belles journées chaudes)",
-          "description": "La restitution du soir d'Aiguebelette est réputée, mais elle n'est pas garantie tous les soirs. On la trouve de préférence sur les pentes qui dominent le lac, au sud de l'atterrissage. En fin de chaude journée, une restitution de chaleur se forme au-dessus du lac et le long de la chaîne.",
+          "description": "En fin de chaude journée, la chaleur rendue par le lac d'Aiguebelette fait encore porter : c'est la restitution réputée du site. Elle n'est pas garantie tous les soirs. Cherchez-la sur les pentes qui dominent le lac, au sud de l'atterrissage, jusqu'à la nuit tombante.",
           "confidence": "medium",
           "sources": [
             "S36",
@@ -278,7 +281,7 @@
           },
           "when": "après-midi d'été, brises de pente établies",
           "mechanism": "Les deux brises de pente de Trévignin et de Pugny-Chatenod se rejoignent sous la crête du Revard : la carte de référence les figure par de petites flèches bleu ciel.",
-          "usage": "Le thermique y est renforcé, juste sous la falaise du Revard. Il ne faut pas le confondre avec la brise de cluse, qui passe en vallée, où le vol est interdit (CTR).",
+          "usage": "La carte ne dit rien de son effet en vol. Ne la confondez pas avec la brise de la cluse, qui passe en vallée, où le vol est interdit (CTR).",
           "confidence": "low",
           "sources": [
             "S27",
@@ -297,13 +300,10 @@
           "radius_km": 3,
           "coord_quality": "approx",
           "conditions": "après-midi d'été, brise de Chambéry établie ; renforcé par vent de nord",
-          "description": "Au nord de Montmélian, à la pointe sud-ouest des Bauges, un rocher chiffonné, bien caractéristique, marque le point où la brise de Chambéry est la plus forte, par effet venturi. C'est le point le plus proche du Granier. La carte de référence y signale une aérologie dangereuse, au pied de la Savoyarde, près de Chignin.",
+          "description": "À la pointe sud-ouest des Bauges, au nord de Montmélian, le rocher chiffonné de la Savoyarde marque l'endroit où la brise de Chambéry est la plus forte, par effet venturi. C'est le point le plus proche du Granier, mais une fois devant, il est presque impossible de remonter la brise vers le nord : la vache est assurée, vers Montmélian ou dans la plaine de l'Isère. La carte signale une aérologie dangereuse au pied de la Savoyarde, près de Chignin.",
           "sources": [
             "S3",
             "S27"
-          ],
-          "possible": [
-            "Une fois devant ce rocher, il peut être presque impossible de remonter la brise vers le nord : il faut alors prévoir une vache assurée, vers Montmélian ou dans la plaine de l'Isère."
           ],
           "note": "Position approximative : le rocher n'est pas coté."
         },
@@ -316,7 +316,7 @@
           "radius_km": 7,
           "coord_quality": "approx",
           "conditions": "permanent ; régime d'hiver du 2e vendredi de décembre au 2e lundi d'avril ('charters neige', TMA en classe D, CTR 3 active), régime d'été de mai à novembre",
-          "description": "Les CTR 1 et 2 de Chambéry interdisent le vol, du sol jusqu'à 1066 m et 1326 m. Seuls les atterrissages de Montagny et de Brocolis bénéficient d'une tolérance de 50 m au-dessus du sol, et la limite nord est le tracé de l'autoroute Grésy-sur-Aix–Mouxy. La TMA 1 a un plancher à 914 m. En hiver, pas de vol à plus de 300 m au-dessus du relief de l'Épine. On vole donc le long des crêtes, jamais en vallée.",
+          "description": "On vole le long des crêtes, jamais en vallée. Les CTR 1 et 2 de Chambéry interdisent le vol du sol jusqu'à 1066 m et 1326 m ; seuls les atterrissages de Montagny et de Brocolis ont une tolérance de 50 m au-dessus du sol. Au nord, la limite suit à peu près le tracé de l'autoroute Grésy-sur-Aix–Mouxy. La TMA 1 a un plancher à 914 m. En hiver, pas de vol à plus de 300 m au-dessus du relief de l'Épine.",
           "sources": [
             "S32",
             "S43",
@@ -335,14 +335,14 @@
           "radius_km": 1.2,
           "coord_quality": "source",
           "conditions": "vent de Sud en basses couches, brise qui s'arrête, ciel qui se voile",
-          "description": "Par vent de sud, l'atterrissage de Montagny présente un risque de turbulences et de fort gradient au moment de poser. En finale, on pose très souvent beaucoup trop court, et de nombreux incidents ont eu lieu. Hors de la fermeture de mi-décembre à mi-avril, mieux vaut préférer Brocolis.",
+          "description": "Par vent de sud, l'atterrissage de Montagny devient piégeux : turbulences et fort gradient au moment de poser. En finale, on pose très souvent beaucoup trop court, même les bons pilotes, et de nombreux incidents ont eu lieu. Arrivez plus haut que d'habitude, ou préférez Brocolis hors de sa fermeture, de mi-décembre à mi-avril. Les manches à air de Montagny montrent bien le sud en basses couches.",
           "sources": [
             "S31",
             "S29",
             "S52"
           ],
           "possible": [
-            "Il peut arriver que la brise s'arrête quand le ciel se voile, et que toute la vallée passe alors sous l'influence du sud."
+            "La brise peut s'arrêter quand le ciel se voile : toute la vallée passe alors sous l'influence du sud."
           ]
         },
         {
@@ -354,7 +354,7 @@
           "radius_km": 1,
           "coord_quality": "source",
           "conditions": "brise bien en place, thermique actif au décollage (12h-17h) ; vent de Sud : décollage impossible",
-          "description": "Quand la brise est bien en place, le thermique de Vérel s'active et le décollage devient plus technique : on décolle sous le vent du thermique et de la brise, et des rouleaux se forment au-dessus. Par vent de sud, les falaises ouest sont sous le vent et une masse d'air descend : le décollage n'est alors pas possible. Il ne faut pas s'attarder au décollage.",
+          "description": "Quand la brise est bien en place, le thermique de Vérel s'active et le décollage devient technique : il est sous le vent du thermique et de la brise, et des rouleaux se forment au-dessus. Par sud ressenti au sol, ne volez pas : les falaises ouest sont sous le vent, l'air y est turbulent et descendant, au point qu'il peut être difficile de rejoindre les atterrissages. La repose au décollage est fortement déconseillée.",
           "sources": [
             "S29",
             "S51"
@@ -414,7 +414,7 @@
           "radius_km": 2,
           "coord_quality": "source",
           "conditions": "vent de nord à est, même faible ; 'quand la météo annonce N on a souvent du NE sur l'Épine'",
-          "description": "Par une faible composante est, nord-est ou sud-est, on se retrouve bien sous le vent, même si les biroutes sont face au pilote : les vols y sont aléatoires, malsains, voire dangereux. Par vent de nord, il faut éviter la combe à droite du décollage, sous le vent de Château-Richard. Une figure de référence situe une zone sous le vent à l'est de la crête, au droit d'Aiguebelette.",
+          "description": "Par une composante est, même faible (nord-est, sud-est), le décollage de l'Épine est sous le vent, même si les biroutes sont de face : les vols y deviennent aléatoires, malsains, voire dangereux. Quand la météo annonce du nord, on a souvent du nord-est sur l'Épine. Par tendance nord, évitez la combe à droite du décollage, sous le vent de Château-Richard. Une figure situe aussi une zone sous le vent à l'est de la crête, au droit d'Aiguebelette.",
           "sources": [
             "S36",
             "S48",
@@ -434,7 +434,7 @@
           "radius_km": 2.5,
           "coord_quality": "source",
           "conditions": "14h-17h (été)",
-          "description": "Une zone de brise forte est marquée sur une figure de référence, de 14h à 17h en été. Le posé est interdit à Novalaise : le seul terrain officiel de l'Épine est celui des Marais, à Nances. Sous la crête, côté plaine, il ne faut pas voler trop bas, car aucune vache n'est possible le long du lac, sauf sur la route.",
+          "description": "Un schéma marque une zone de brise forte dans la plaine de Novalaise. Le posé y est interdit : le seul terrain officiel de l'Épine est celui des Marais, à Nances, même si les prés de Novalaise ou de Nances paraissent accueillants. Sous la crête, côté plaine, ne volez pas trop bas : le long du lac, aucune vache n'est possible, sauf la route.",
           "sources": [
             "S15",
             "S66",
@@ -481,15 +481,15 @@
           "radius_km": 6,
           "coord_quality": "approx",
           "conditions": "nidification (varie, vérifier BioDiv'Sports) : 250 m de distance recommandés",
-          "description": "Sur la face ouest, entre le Revard et le Nivolet, des bulles de quiétude protègent des faucons pèlerins et des aigles royaux. Il faut respecter 250 m de distance. La nidification varie d'une saison à l'autre : il faut vérifier les bulles avant de voler.",
+          "description": "Sur la face ouest, entre le Revard et le Nivolet, des bulles de quiétude protègent des faucons pèlerins et des aigles royaux : tenez-vous à 250 m. Elles changent d'une saison à l'autre, alors vérifiez-les avant de voler.",
           "sources": [
             "S29",
             "S32",
             "S93"
           ],
           "possible": [
-            "Il arrive que des faucons pèlerins soient à gauche du décollage de Vérel, sur les falaises de Drumettaz, ou au col de la Cochette, après la transition vers Bange.",
-            "Des aigles royaux peuvent se trouver au niveau des fermes, dans la combe avant le Revard."
+            "Une liste a placé trois couples de faucons pèlerins : à gauche du décollage de Vérel, sur les falaises basses de Drumettaz et au col de la Cochette, après la transition vers Bange.",
+            "Un couple d'aigles royaux a niché près des fermes, dans la combe avant le Revard."
           ],
           "note": "Un relevé recense trois bulles sur le secteur Revard-Vérel : aigles près du décollage du Revard, de janvier à août, et faucons sur les falaises inférieures, de février à juin. Le fichier des zones aériennes a été mis à jour."
         },
@@ -502,7 +502,7 @@
           "radius_km": 1,
           "coord_quality": "source",
           "conditions": "fermé les mercredis, samedis, dimanches de septembre à janvier ; inscription préalable",
-          "description": "Le décollage du Banchet est court, et une ligne EDF de moyenne tension, peu visible, passe à proximité. Il faut un brevet et une inscription préalable en ligne. Le site n'est ouvert que du 25 janvier au 31 août, et il est fermé les mercredis, samedis et dimanches de septembre à janvier.",
+          "description": "Le Banchet est un site sensible, rouvert sous conditions : brevet et inscription préalable en ligne exigés. Il est ouvert tous les jours du 25 janvier au 31 août. De septembre à janvier, il ferme le mercredi, le samedi et le dimanche. Le décollage est court, et une ligne EDF de moyenne tension, peu visible, passe à proximité.",
           "sources": [
             "S37",
             "S50"
@@ -584,7 +584,7 @@
           "confidence": "medium",
           "possible": [
             "Il arrive que ça porte au-dessus du toboggan du Revard, là où passent des fils électriques.",
-            "Des thermiques peuvent se former devant la tour de Bange, au Pertuiset, et devant le terrain des aéromodélistes au Semnoz."
+            "Des thermiques peuvent se former devant le nord du relief de Bange, au Pertuiset, et devant le terrain des aéromodélistes au Semnoz."
           ],
           "note": "Emplacements non cartographiés : la position est celle du décollage. Voir aussi les spots : le Pertuiset, le col de la Cochette et Bange, la tour des Ébats."
         },
@@ -598,14 +598,14 @@
           "confidence": "medium",
           "best_hours": "début d'après-midi (14h30)",
           "trigger": "falaise du Pertuiset sous le vent du Revard",
-          "description": "Entre Vérel et le Revard, la falaise du Pertuiset, sous le vent du Revard, sert de relance au début de l'après-midi.",
+          "description": "Entre Vérel et le Revard, le Pertuiset est une relance sur la ligne des faces ouest.",
           "sources": [
             "S38",
             "S107"
           ],
           "possible": [
-            "En avançant sous le vent du Pertuiset, on peut retrouver de quoi remonter à l'étage supérieur. Mieux vaut alors travailler le thermique au-dessus du Pertuiset.",
-            "Une aile peut passer au-dessus du toboggan du Revard, à 1630 m, là où se trouvent des fils électriques."
+            "En avançant sous le vent du Pertuiset, on peut trouver de quoi monter à l'étage supérieur. Mieux vaut travailler ce thermique que filer sous le vent du Revard.",
+            "Au-dessus du toboggan du Revard, où passent des fils électriques, la ligne peut porter ; on prend ensuite un petit gain vers 1630 m, sous l'ancien tremplin de delta."
           ]
         },
         {
@@ -618,15 +618,15 @@
           "confidence": "medium",
           "best_hours": "fin d'après-midi (17h55 un jour de retard) ; midi à 15h les bonnes journées",
           "trigger": "relais hertzien sur la crête, thermique qui « passe » alors que la Dent du Chat elle-même est du dynamique laminaire",
-          "description": "Sur la traversée Aiguebelette – Dent du Chat – Sapenay, le relais hertzien du Mont du Chat sert de relance. Les bonnes journées, c'est entre midi et 15h, mais il arrive encore vers la fin de l'après-midi.",
+          "description": "Sur la crête entre Aiguebelette et la Dent du Chat, le relais hertzien du Mont du Chat sert de relance sur la route du Sapenay.",
           "sources": [
             "S101",
             "S102",
             "S107"
           ],
           "possible": [
-            "Un thermique peut passer au relais, alors que la Dent du Chat elle-même ne donne que du dynamique laminaire : on peut alors remonter vers 1900 m.",
-            "À cet endroit, un thermique « bleu » peut monter jusqu'à 2000-2200 m."
+            "Un thermique bleu peut y monter fort jusqu'à 2000 m, voire 2200 m, en milieu d'après-midi.",
+            "En fin d'après-midi, un thermique peut encore passer au relais alors que la Dent du Chat ne donne que du dynamique laminaire : de quoi remonter vers 1900 m."
           ],
           "note": "Position : celle du relais hertzien."
         },
@@ -640,16 +640,16 @@
           "confidence": "medium",
           "best_hours": "fin d'après-midi",
           "trigger": "petit relief au nord du Mont du Chat, au bord de la CTR de Chambéry",
-          "description": "Le Mont de la Charvaz est une relance, au nord de la Dent du Chat, avant le Sapenay. Il se trouve au bord de la CTR 1 de Chambéry : il faut rester à l'ouest de cette zone.",
+          "description": "Au nord de la Dent du Chat, le Mont de la Charvaz est la relance avant le Sapenay. Il borde la CTR 1 de Chambéry : pour ne pas la toucher, on vise l'ouest de la butte.",
           "sources": [
             "S101",
             "S102",
             "S106"
           ],
           "possible": [
-            "Arrivé vers 1100 m, on peut trouver un bon thermique, qui dérive vers le sud-est.",
-            "Une autre ascendance se trouve à 1350 m, en allant vers le nord.",
-            "Depuis le Mont du Chat, on peut voir des ailes porter sur le Mont Charvaz."
+            "En y arrivant vers 1100 m, on peut trouver un bon thermique, qui dérive vers le sud-est.",
+            "Plus au nord, une autre ascendance peut faire remonter vers 1350 m.",
+            "Depuis la Dent du Chat, on peut voir des ailes porter sur le Mont Charvaz."
           ]
         },
         {
@@ -662,7 +662,7 @@
           "confidence": "medium",
           "best_hours": "début d'après-midi (13h pour un décollage de l'Épine)",
           "trigger": "crête de l'Épine, pylônes (« grilles-pains »), raccrochage délicat sous le vent",
-          "description": "Sur la crête de l'Épine, les pylônes appelés « grilles-pains » marquent une relance, avec un raccrochage délicat sous le vent.",
+          "description": "Sur la crête de l'Épine, les « grilles-pains » du Mont Grêle sont une relance du cheminement. Leur raccrochage compte parmi les passages engagés du tour de Chartreuse. Plus au sud, au Mont Beauvoir, on raccroche sous le vent, dans les turbulences.",
           "sources": [
             "S98",
             "S102",
@@ -671,9 +671,9 @@
             "S101"
           ],
           "possible": [
-            "Un cheminement peut suivre la crête jusqu'au Mont Grêle, puis jusqu'au Mont Beauvoir, et l'on peut raccrocher tranquillement vers les grilles-pains puis vers la Dent du Chat.",
-            "Lors d'un tour de Chartreuse, le raccrochage des grilles-pains du Mont Grêle figure parmi les points engagés.",
-            "Par vent de nord-ouest, le placement pour le Mont Beauvoir peut être mauvais."
+            "En venant de la Chartreuse, on peut raccrocher Bande, puis continuer par les grilles-pains jusqu'à la Dent du Chat.",
+            "Depuis l'Épine, un cheminement peut suivre la crête jusqu'au Mont Grelle, puis au Mont Beauvoir, avant de transiter vers la Chartreuse.",
+            "Par vent de nord-ouest, placez-vous en tenant compte du vent au Mont Beauvoir : un mauvais placement y fait perdre du temps."
           ],
           "note": "Une ligne THT est signalée sur ce secteur."
         },
@@ -703,7 +703,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (89 % le matin, 87 % à midi, 82 % le soir)",
           "trigger": "pied de la falaise de la cascade de Glandieu et vallée en contrebas, sous le décollage",
-          "description": "Au pied de la falaise de la cascade de Glandieu, en contrebas du décollage, un thermique se forme presque toute la journée. Le décollage voisin, de niveau marron et orienté sud-ouest ou ouest, est exigu : il se termine par une falaise, et il est délicat par vent nul, turbulent en sud et en nord-ouest. Ses conditions peuvent être fortes, par rapport au faible dénivelé.",
+          "description": "Au pied de la falaise de la cascade de Glandieu, en contrebas du décollage, un thermique se forme presque toute la journée. Le décollage voisin, de niveau marron, orienté sud-ouest à ouest, est exigu et finit par une falaise. Il est délicat par vent nul et turbulent par sud ou nord-ouest, et les conditions peuvent y être fortes pour un si faible dénivelé. Il ferme pour la chasse en fin d'année, et un arrêté de biotope impose toute l'année une hauteur minimale de survol.",
           "confidence": "low",
           "sources": [
             "S111",
@@ -720,7 +720,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (73 % le matin, 88 % à midi, 86 % le soir)",
           "trigger": "falaises ouest du Nivolet entre Vérel et le Revard, au nord de la falaise de Vérel (falaises de Drumettaz)",
-          "description": "Les falaises de Drumettaz, sur la face ouest du Nivolet, au nord de la falaise de Vérel, portent un thermique presque toute la journée. C'est la ligne que suivent les vols de Vérel vers le Pertuiset et le Revard. Ces falaises abritent aussi des faucons pèlerins, à gauche du décollage de Vérel : c'est une bulle de quiétude.",
+          "description": "Les falaises de Drumettaz, sur la face ouest du Nivolet, au nord de la falaise de Vérel, portent un thermique presque toute la journée. C'est la ligne que suivent les vols de Vérel vers le Pertuiset et le Revard. Une bulle de quiétude y a protégé un couple de faucons pèlerins, sur les falaises basses au niveau du chef-lieu de Drumettaz.",
           "confidence": "low",
           "sources": [
             "S51",
@@ -774,7 +774,7 @@
             "NW",
             "W"
           ],
-          "description": "Par vent d'ouest à nord-ouest, la brise s'installe dès 14h. Un vent de nord, ou un sud-ouest faible, vers 10 km/h, convient aussi. On ne vole pas côté est, dans la CTR, et le site est dangereux par vent d'est ou par sud marqué.",
+          "description": "Le décollage du Mont du Chat se remplit avec la brise dès 14h, ou par vent météo d'ouest à nord-ouest, voire de nord ou de sud-ouest faible, vers 10 km/h : le thermique redresse alors le flux face à la pente. On ne vole pas côté est, dans la CTR. Le site est dangereux par vent d'est ou par sud marqué.",
           "sources": [
             "S46"
           ]
@@ -789,7 +789,7 @@
             "NW",
             "SW"
           ],
-          "description": "La chaîne de l'Épine vole bien par toutes les orientations, de nord-ouest à sud-ouest, par vent faible à modéré. Le nord-ouest convient aux beaux cross, et le sud-ouest au thermo-dynamique.",
+          "description": "La chaîne de l'Épine vole bien de nord-ouest à sud-ouest, par vent faible à modéré, et surtout par brise. Le nord-ouest convient aux beaux cross, le sud-ouest au thermo-dynamique.",
           "sources": [
             "S36",
             "S48"
@@ -808,7 +808,7 @@
             "SW",
             "SE"
           ],
-          "description": "Le Sire Sud, site d'été pour le cross, devient un site de soaring en hiver, par vent de sud ou de sud-ouest. Il reste favorable par brise thermique faible, jusqu'au début de l'après-midi. Par vent de sud-est, il est sous le vent de l'arête du Nivolet.",
+          "description": "Le Sire Sud, site d'été pour le cross, devient un site de soaring en hiver, par vent de sud ou de sud-ouest. Il est aussi favorable par vent faible et brise thermique, jusqu'au début de l'après-midi. Par vent de sud-est, il est sous le vent de l'arête du Nivolet.",
           "sources": [
             "S42",
             "S54"
@@ -827,7 +827,7 @@
             "W",
             "N"
           ],
-          "description": "De niveau bleu, ce décollage de falaise ouest est favorable par brise du nord ou par vent d'ouest à nord-ouest. Il se fait sous le vent du thermique et de la brise, avec des rouleaux : par vent de nord, on décolle de travers droit, par nord-est ou est en vent arrière, et par sud, sud-est ou sud-ouest de travers gauche ou sous le vent. Il est déconseillé aux débutants l'après-midi : mieux vaut la fin de matinée, avant la brise, ou le soir. On se pose à Montagny ou à Brocolis.",
+          "description": "Décollage de falaise ouest, de niveau bleu, favorable par brise du nord ou par vent d'ouest à nord-ouest. Il est sous le vent du thermique et de la brise, avec des rouleaux. Par nord, on décolle travers droit ; par nord-est ou est, vent arrière ; par sud-ouest, travers gauche ; par sud ou sud-est, sous le vent. En conditions thermiques, il est déconseillé aux débutants : mieux vaut la fin de matinée, avant la brise, ou le soir. On se pose à Montagny ou à Brocolis.",
           "sources": [
             "S29",
             "S51",
@@ -836,7 +836,7 @@
           "coord_quality": "source",
           "ffvl_id": 527,
           "pge_id": 2995,
-          "note": "Il ne faut pas s'y attarder."
+          "note": "La repose au décollage est fortement déconseillée, et la repose sur le plateau de Pragondran est interdite."
         },
         {
           "id": "sire-sud",
@@ -849,7 +849,7 @@
             "SW",
             "SE"
           ],
-          "description": "Décollage large, où plusieurs pilotes peuvent partir à la fois, et où les planeurs sont nombreux. Il est favorable par brise jusqu'au début de l'après-midi, et par vent de sud à sud-ouest. Il est impossible par vent de nord, et sous le vent de l'arête du Nivolet par sud-est. À l'atterrissage, il ne faut pas dépasser la D211 : la limite est de 50 m au-dessus du sol.",
+          "description": "Décollage large, où plusieurs pilotes peuvent partir à la fois, et où les planeurs sont nombreux. Il est favorable par brise jusqu'au début de l'après-midi et par vent de sud à sud-ouest. Par nord, il est impossible ; par sud-est, il est sous le vent de l'arête du Nivolet. Ne perdez pas trop d'altitude sous le décollage avant d'avoir passé l'arête inférieure, celle de Vérel. À l'atterrissage, ne dépassez pas la D211, à 50 m au-dessus du sol au plus.",
           "sources": [
             "S30",
             "S54",
@@ -869,7 +869,7 @@
             "N",
             "NW"
           ],
-          "description": "Par vent météo de nord-ouest à nord, ou par brise de l'après-midi, le décollage est sous le vent d'une rangée de sapins. Si l'on ne peut pas les passer, il faut se poser sur le plateau, où l'air est turbulent.",
+          "description": "Le Sire Nord marche par vent météo de nord-ouest à nord, ou avec la brise de l'après-midi. Par brise, souvent de nord-ouest, le décollage est sous le vent d'une rangée de sapins : visez le terrain de boules à gauche du chalet, longez les sapins et passez-les dès que vous avez la hauteur. Sinon, virez à droite et posez-vous sur le plateau, où l'air est assez turbulent.",
           "sources": [
             "S30",
             "S55"
@@ -887,7 +887,7 @@
           "orientations": [
             "S"
           ],
-          "description": "Décollage court, devant la falaise. Il est technique, avec 10 à 15 km/h de vent de face, venant de la brise ou de la météo.",
+          "description": "Décollage court, avec la falaise juste devant : il demande une très bonne technique. À ne tenter qu'avec un bon 10 à 15 km/h de face, de brise ou de météo.",
           "sources": [
             "S56"
           ],
@@ -906,7 +906,7 @@
             "W",
             "NW"
           ],
-          "description": "Décollage sur une herbe large, accessible aux débutants, dans un régime de brise. Il est défavorisé par des vents du nord à sud-est. L'aérologie y est forte aux heures les plus chaudes, avec des planeurs. La CTR impose de rester au relief.",
+          "description": "Décollage sur une herbe large, accessible aux débutants, dans un régime de brise. Il est défavorisé par les vents de nord à sud en passant par l'est. L'aérologie y est forte aux heures les plus chaudes, et les planeurs sont présents. La CTR impose de rester au relief.",
           "sources": [
             "S57",
             "S42",
@@ -950,7 +950,7 @@
             "NW",
             "W"
           ],
-          "description": "Décollage mixte, pour delta et parapente, sur un remblai, de niveau vert. Il est favorable par brise dès 14h, et par vent d'ouest, de nord-ouest ou de nord. Il est sous le vent par nord-est et est, et dangereux par sud marqué ou composante est. On ne vole pas côté est. La route est fermée de mi-novembre à mi-avril.",
+          "description": "Décollage mixte, delta et parapente, sur un remblai, de niveau vert. Il est favorable par brise dès 14h, et par vent d'ouest, de nord-ouest ou de nord. Par nord-est et est, il est sous le vent ; par sud marqué ou toute composante est, il est dangereux. On ne vole pas côté est. Des aigles nichent à droite du décollage. La route est fermée de mi-novembre à mi-avril.",
           "sources": [
             "S46",
             "S42"
@@ -971,7 +971,7 @@
             "W",
             "NW"
           ],
-          "description": "Site de l'après-midi. Le décollage est possible dès 11h, par brise nulle ou de face, et le site tient dès 13h, pour un cross vers 14h. Le thermique est très fort de 14h à 17h, et les vols deviennent calmes après 17h-18h. L'aire d'envol accepte deux ailes à la fois : on décolle dans l'ordre de présentation sur l'épaule. Il ne faut jamais passer derrière la crête, à cause de la CTR.",
+          "description": "Site de l'après-midi. En été, on peut décoller dès 11h, par brise nulle ou de face ; ça tient dès 13h, et les crosseurs partent vers 14h. De 14h à 17h, le thermique est très fort : il faut maîtriser le décollage. Après 17h-18h, les vols deviennent calmes. L'aire d'envol accepte deux ailes à la fois : on se présente avec la voile sur l'épaule. Ne passez jamais derrière la crête : c'est la CTR.",
           "sources": [
             "S36",
             "S48",
@@ -992,7 +992,7 @@
             "W",
             "NW"
           ],
-          "description": "Décollage court, de niveau confirmé. Il faut un brevet et une inscription préalable. Il est fermé les mercredis, samedis et dimanches de septembre à janvier. Une ligne EDF, peu visible, passe à proximité.",
+          "description": "Décollage court, de niveau confirmé. Il faut un brevet et une inscription préalable. Il est fermé les mercredis, samedis et dimanches de septembre à janvier. Une ligne EDF, peu visible, passe à proximité. La plaine donne souvent de nombreux cumulus, avec peu de vent.",
           "sources": [
             "S37",
             "S50"
@@ -1011,7 +1011,7 @@
             "W",
             "NW"
           ],
-          "description": "C'est le seul site d'où l'on peut survoler le lac du Bourget. Il est favorable par régime de brise, avec un vent de sud-ouest à nord-ouest, et il est facile l'après-midi, dès 14h et jusqu'à la nuit. Par vent d'est à nord-est, il est sous le vent, et il devient turbulent par nord ou par sud marqué. Il se trouve sous l'axe d'approche de l'aéroport : en période de charters, le gain est limité à 300 m.",
+          "description": "Décollage de delta, d'où l'on peut survoler le lac du Bourget, seul site à le permettre. Il est favorable par régime de brise et par vent de sud-ouest à nord-ouest, facile l'après-midi, dès 14h et jusqu'à la nuit. Par vent d'est à nord-est, il est sous le vent ; par nord ou sud fort, le vol est turbulent. Il se trouve sous l'axe d'approche de l'aéroport : en période de charters, le gain est limité à 300 m.",
           "sources": [
             "S62",
             "S45"
@@ -1064,7 +1064,7 @@
           "lon": 5.9316,
           "lat": 45.61,
           "alt_m": 305,
-          "description": "C'est l'atterrissage principal de Vérel et du Sire. La brise de vallée peut forcir l'après-midi. Entouré d'arbres, il se trouve dans la CTR, avec une tolérance de 50 m au-dessus du sol, sans dépasser la D211. Il faut préparer la perte d'altitude au nord, avant le Petit Sonnaz. Si l'on pose face au nord : PTU main droite. Par vent de sud, il est dangereux.",
+          "description": "C'est l'atterrissage principal de Vérel et du Sire, entouré d'arbres, et la brise de vallée peut y forcir l'après-midi. Il est dans la CTR : la tolérance de 50 m au-dessus du sol ne vaut que pour l'approche, sans dépasser la D211. Perdez votre altitude au nord, avant le Petit Sonnaz, hors de la CTR. Si l'on pose face au nord, PTU main droite. Par vent de sud, il devient piégeux.",
           "sources": [
             "S31",
             "S52"
@@ -1134,7 +1134,7 @@
           "lon": 5.8011,
           "lat": 45.5768,
           "alt_m": 377,
-          "description": "C'est le seul atterrissage officiel de l'Épine : une grande zone, soumise à de faibles brises du lac, d'ouest ou de sud-ouest. Elle se trouve dans un arrêté de biotope : il faut plier hors de la zone, sous peine d'une amende de 300 à 1000 €. La zone nord est à utiliser.",
+          "description": "C'est le seul atterrissage officiel de l'Épine : ne posez pas ailleurs, même dans les prés de Novalaise ou de Nances. La zone est grande, soumise à de faibles brises du lac, d'ouest ou de sud-ouest ; utilisez sa partie nord. Elle est protégée par un arrêté de biotope : pliez hors de la zone, sous peine d'une amende de 300 à 1000 €. Par vent météo de sud, il peut être impossible de la rejoindre.",
           "sources": [
             "S49",
             "S36"
@@ -1153,7 +1153,8 @@
             "S47"
           ],
           "coord_quality": "source",
-          "ffvl_id": 13701
+          "ffvl_id": 13701,
+          "note": "Aucune convention de vol libre n'y est identifiée."
         },
         {
           "id": "banchet-rochefort",
@@ -1161,7 +1162,7 @@
           "lon": 5.7292,
           "lat": 45.5619,
           "alt_m": 416,
-          "description": "Atterrissage du Banchet. Il ne faut pas dépasser la route, au sud, qui sert de ligne à ne pas franchir.",
+          "description": "Atterrissage du Banchet, réservé aux pilotes inscrits. Une ligne haute tension longe le terrain : ne dépassez pas la route, au sud. Évitez de poser hors terrain entre le décollage et l'atterrissage.",
           "sources": [
             "S67",
             "S50"
@@ -1305,7 +1306,7 @@
             }
           ],
           "distance_km": 23.0,
-          "description": "Classique de l'après-midi, par brise de nord : on sort de Vérel, sans virage les bons jours, pour rejoindre le Revard. On fait ensuite la transition vers Bange, par le col de la Cochette, en partant vers 1550 m et en raccrochant vers 1200-1350 m. Puis, après une transition de 5 min, on rejoint les faces ouest du Semnoz. Une bulle de quiétude de faucons se trouve au col de la Cochette.",
+          "description": "Classique de l'après-midi, par brise de nord : on sort de Vérel, sans virage les bons jours, pour rejoindre le Revard. On fait ensuite la transition vers Bange par le col de la Cochette, en partant vers 1550 m et en raccrochant vers 1200-1350 m. Une dernière transition mène aux faces ouest du Semnoz. Une bulle de quiétude de faucons se trouve au col de la Cochette.",
           "sources": [
             "S29",
             "S38",
@@ -1338,7 +1339,7 @@
             }
           ],
           "distance_km": 27.0,
-          "description": "Le cross se fait en suivant la chaîne : au nord vers la Dent du Chat, ou au sud vers la Chartreuse, voire le Vercors. Il n'y a pas de transition de plaine. Au nord, le col du Chat est dans la CTR : on ne rejoint donc pas la Charvaz par le relief.",
+          "description": "Le cross suit la chaîne : au nord vers la Dent du Chat, ou au sud vers la Chartreuse, voire le Vercors. Au nord, le col du Chat est dans la CTR : on ne rejoint donc pas la Charvaz par le relief.",
           "sources": [
             "S49",
             "S36",
@@ -1472,7 +1473,7 @@
           },
           "season": "avril-septembre (saison thermique)",
           "layer_depth_m": "forte et haute : scotché jusqu'à 1400 m à Chamoux (Montlamb'air) ; couche épaisse, Tours de Montmayeur 'frappées de plein fouet'",
-          "description": "La branche vers Albertville suit la brise de Chambéry, du sud-ouest vers le nord-est, de Chambéry vers Albertville. Elle coupe le virage par-dessus la Savoyarde, puis déferle derrière Montmélian. Côté Chamoux, la brise montante peut être très forte et haute l'après-midi, et le vent de vallée est fort à très fort les jours de vent météo de nord. À l'Ébaudiaz, la brise de vallée est soutenue en fin de l'après-midi.",
+          "description": "Aux Marches, une branche de la brise de Chambéry part vers Albertville, du sud-ouest vers le nord-est. Elle coupe le virage par-dessus la Savoyarde, puis déferle derrière Montmélian. Vers Chamoux, en été, cette brise montante peut être très forte et haute l'après-midi ; par vent météo de nord, le vent de vallée y est fort à très fort. À l'Ébaudiaz, la brise de vallée est soutenue en fin d'après-midi.",
           "confidence": "high",
           "sources": [
             "S3",
@@ -1565,7 +1566,7 @@
             "max": null
           },
           "season": "été",
-          "description": "En fin de l'après-midi, la brise redescend du sommet de Montlambert, et il devient impossible de décoller. À l'inverse, la brise montante de vallée peut être assez forte dès le début de l'après-midi sur l'atterrissage, qui peut alors se faire dans l'autre sens, par brise descendante ou vent de sud.",
+          "description": "En fin d'après-midi, la brise redescend du sommet de Montlambert : il devient impossible de décoller. Plus tôt, la brise de vallée qui monte peut être assez forte dès le début de l'après-midi : assurez-vous de pouvoir rentrer au terrain. Par brise descendante ou par vent de sud, on pose dans l'autre sens.",
           "confidence": "medium",
           "sources": [
             "S34",
@@ -1624,13 +1625,13 @@
           "radius_km": 3,
           "coord_quality": "source",
           "conditions": "après-midi, brise de cluse établie (branche Albertville par-dessus la Savoyarde)",
-          "description": "Au-dessus de Montmélian, on traverse nécessairement la zone sous le vent de la brise de Chambéry, lorsque celle-ci passe par-dessus la Savoyarde. Cette zone est très dangereuse. Une figure la situe sous le vent de la Savoyarde.",
+          "description": "La branche d'Albertville de la brise de Chambéry passe par-dessus la Savoyarde et déferle derrière Montmélian. Prendre l'option sud-est de la Savoyarde, vers Montlambert par les faces est des Bauges, oblige à traverser cette zone sous le vent, au-dessus de Montmélian. Elle est très dangereuse : évitez cette option. Une figure situe la zone sous le vent de la Savoyarde.",
           "sources": [
             "S3",
             "S15",
             "S41"
           ],
-          "note": "Plusieurs morts y ont été signalés dans les années 1990. L'option sud-est de la Savoyarde, vers Montlambert par les faces est des Bauges, est écartée. Centre à Montmélian ; l'étendue de la zone n'est pas connue."
+          "note": "Plusieurs morts y ont été signalés dans les années 1990. Centre à Montmélian ; l'étendue de la zone n'est pas connue."
         },
         {
           "id": "montlambert-sud-maurienne",
@@ -1641,7 +1642,7 @@
           "radius_km": 1.5,
           "coord_quality": "source",
           "conditions": "vent météo de Sud",
-          "description": "Par vent de sud, le vent sort de la Maurienne, rebondit au pied de l'Arclusaz et arrive au décollage de Montlambert complètement de travers gauche. Il est vivement déconseillé de voler ici avec du sud : le vent est rafaleux et peut se renforcer rapidement. Par sud-ouest à ouest modéré, le décollage est aussi sous le vent.",
+          "description": "Par vent de sud établi, le vent sort de la Maurienne, rebondit au pied de l'Arclusaz et arrive au décollage de Montlambert complètement de travers gauche, rafaleux, et il peut forcir vite : ne volez pas. Par sud faible, le site reste possible. Par sud-ouest à ouest modéré, le décollage est sous le vent.",
           "sources": [
             "S34",
             "S68"
@@ -1689,14 +1690,14 @@
           "radius_km": 3,
           "coord_quality": "source",
           "conditions": "après-midi d'été, brise de Chambéry établie",
-          "description": "Le petit relief des Tours de Montmayeur est frappé de plein fouet par la brise de Chambéry. C'est un passage délicat du retour de cross : on franchit ensuite la crête de Montraillant avant le saut vers Brâme-Farine.",
+          "description": "La brise de Chambéry frappe de plein fouet le petit relief des Tours de Montmayeur : en général, on y repart, même en arrivant bas. Le passage délicat vient ensuite, avec les lignes électriques, avant la crête de Montraillant et le saut vers Brâme-Farine.",
           "sources": [
             "S23",
             "S40",
             "S41"
           ],
           "possible": [
-            "Un vol parti du Colombier, à 2700 m, est arrivé aux Tours à 860 m après 8 km, soit 1840 m de perte, avec le passage délicat des lignes électriques."
+            "Après un dernier thermique à 2700 m, on peut arriver aux Tours vers 860 m au bout de 8 km de glissade, soit 1840 m de perte, et devoir s'y reprendre à deux fois pour passer les lignes."
           ],
           "note": "Position : les Tours de Montmayeur."
         },
@@ -1752,7 +1753,7 @@
           "coord_quality": "approx",
           "confidence": "medium",
           "possible": [
-            "Une « pompe » le long de la falaise aux oiseaux, au-dessus de Montlambert, a servi de relais au retour.",
+            "Au retour d'un cross, un gros cumulus peut se former au-dessus de la falaise aux oiseaux de Montlambert et servir de relais.",
             "Au retour d'une journée de nord, Montlambert peut se trouver sous le vent de la brise de Chambéry, avec un risque de s'y poser."
           ],
           "note": "Position précise non reportée : la position est celle du décollage. Voir aussi l'extraction sur le Mont Charvet, au-dessus."
@@ -1781,7 +1782,7 @@
           "alt_m": 1456,
           "best_hours": "après-midi",
           "trigger": "face sud de l'Arclusaz",
-          "description": "Sur la face sud de l'Arclusaz, l'après-midi, l'envol peut être perturbé par l'activité thermique. L'atterrissage est de petite surface, entouré de vignes, et le thermique y est très technique. Le vent de sud, sortant de la Maurienne, rebondit au pied de l'Arclusaz.",
+          "description": "Au décollage sud de l'Arclusaz, l'envol peut être perturbé par l'activité thermique. L'atterrissage est petit, entouré de vignes, et le thermique y est très technique. Par vent de sud, l'air qui sort de la Maurienne rebondit au pied de l'Arclusaz.",
           "sources": [
             "S74",
             "S34",
@@ -1800,7 +1801,7 @@
           "confidence": "medium",
           "best_hours": "milieu à fin d'après-midi",
           "trigger": "petit relief « frappé de plein fouet par la brise de Chambéry »",
-          "description": "Les Tours de Montmayeur servent de relance au retour vers Lumbin : on y arrive vers 860 à 900 m, après une longue glissade depuis Montlambert. En général, la relance fonctionne, car ce petit relief est frappé de plein fouet par la brise de Chambéry. C'est le dernier passage compliqué avant le plané final.",
+          "description": "Au retour vers Lumbin, les Tours de Montmayeur sont la relance après une longue glissade depuis Montlambert : on y arrive vers 860 à 900 m. En général, ça repart, car ce petit relief est frappé de plein fouet par la brise de Chambéry. C'est le dernier passage compliqué avant le plané final.",
           "sources": [
             "S23",
             "S40",
@@ -1828,8 +1829,8 @@
             "S106"
           ],
           "possible": [
-            "Un vol a trouvé là un thermique qui le remontait vers 2400 m, avant que la brise ne le décale vers le Grand Arc.",
-            "Un autre vol a relevé un plein intermédiaire sous des barbulles, à 1 m/s pendant 10 minutes, qui a servi de porte de sortie."
+            "Un thermique au milieu de la vallée peut remonter vers 2400 m, puis la brise décale vers le Grand Arc.",
+            "Sans cumulus sur la vallée des Huiles, on peut faire le plein sous des barbules à l'entrée de la Maurienne : 10 minutes à 1 m/s ont déjà servi de porte de sortie."
           ],
           "note": "La vallée se situe à l'entrée de la Maurienne : la position est approximative, au centre du val des Huiles."
         },
@@ -1843,7 +1844,7 @@
           "confidence": "medium",
           "best_hours": "milieu d'après-midi (14h-16h)",
           "trigger": "crêtes du Grand Arc, combe sud, thermiques puissants",
-          "description": "Sur les crêtes du Grand Arc, avec la combe sud et des thermiques puissants, le plafond est élevé au milieu de l'après-midi, entre 14h et 16h. Le Grand Arc sert de plafond avant Albertville, ou pour le retour vers Chamoux.",
+          "description": "Les crêtes du Grand Arc et sa combe sud donnent des thermiques puissants et un plafond élevé. Le Grand Arc sert à faire le plein avant Albertville, ou avant le retour vers Chamoux.",
           "sources": [
             "S103",
             "S40",
@@ -1854,7 +1855,7 @@
           "possible": [
             "Un vol a retrouvé 2900 m sous la combe sud du Grand Arc, en direction de Chamoux.",
             "Un autre vol a relevé un plafond de 3000 m au Petit Arc.",
-            "Des transitions relient l'Arclusaz au Grand Arc, puis le retour se fait par la Grande Lanche."
+            "Depuis l'Arclusaz, on peut transiter sur le Grand Arc, faire un aller-retour sur la Grande Lanche, puis rentrer par le Grand Arc vers Chamoux."
           ],
           "note": "Altitude corrigée de 2371 à 2458 m, à partir du relief à la position du sommet."
         },
@@ -1875,8 +1876,8 @@
             "S108"
           ],
           "possible": [
-            "Une remontée peut être difficile en fin de manche au décollage : les bulles sont désorganisées, jusqu'à un point bas à 970 m, puis une ascendance minuscule mais durable monte à 2 m/s.",
-            "Les hautes crêtes peuvent être atteintes vers 2400 m.",
+            "Remonter au décollage en fin de manche peut être difficile : bulles désorganisées, point bas à 970 m, puis une ascendance minuscule mais durable qui finit à 2 m/s.",
+            "Par les hautes crêtes, les plafonds peuvent atteindre 2400 m.",
             "Au retour des crêtes de Belledonne, les vols regagnent cette même pente."
           ],
           "note": "Point chaud déduit de données statistiques, sur un terrain à 1631 m. Le décollage de Val Pelouse n'avait pas de thermique à moins de 3 km ; le thermique du Molliet est à 3,1 km plus loin, à l'atterrissage."
@@ -1956,7 +1957,7 @@
           "coord_quality": "source",
           "best_hours": "été, dès le début d'après-midi (brise montante forte)",
           "trigger": "terrain d'atterrissage et pentes voisines au pied de la face est des Bauges, vignes et voie ferrée en amont",
-          "description": "Autour du terrain d'atterrissage de Montlambert, au pied de la face est des Bauges, des thermiques de déclenchement se forment en été. Dès le début de l'après-midi, la brise montante est forte. On le sent en finale : il faut perdre de l'altitude au vent du terrain, côté Montmélian, ou vers l'Isère, puis faire une PTU obligatoire.",
+          "description": "En été, quand les terrains sont secs, des thermiques se déclenchent tout autour du terrain de Montlambert, au pied de la face est des Bauges : l'approche peut devenir mouvementée. La brise de vallée peut devenir forte dès la fin de matinée. Perdez votre altitude au vent du terrain, côté Montmélian, ou vers l'Isère, puis faites la PTU obligatoire.",
           "confidence": "low",
           "sources": [
             "S34",
@@ -1973,7 +1974,7 @@
           "coord_quality": "source",
           "best_hours": "après-midi d'été (non précisé)",
           "trigger": "petite surface entourée de vignes au pied de la face est des Bauges, fond de la Combe de Savoie",
-          "description": "Au pied de la face est des Bauges, dans le fond de la Combe de Savoie, l'atterrissage est une petite surface entourée de vignes. Des thermiques se déclenchent sur et autour du terrain l'après-midi : l'activité y est très technique.",
+          "description": "Au pied de la face est des Bauges, dans le fond de la Combe de Savoie, l'atterrissage est une petite surface entourée de vignes. Les thermiques s'y déclenchent sur le terrain et autour : l'activité y est très technique.",
           "confidence": "low",
           "sources": [
             "S75",
@@ -2078,10 +2079,13 @@
             "NW",
             "N"
           ],
-          "description": "Relief isolé sur lequel la brise de Chambéry bute : il offre de la dynamique au retour de cross, sans pompe garantie. Il faut arriver vers 900 m au minimum pour enchaîner sur Brâme-Farine.",
+          "description": "La brise de Chambéry bute sur ce relief isolé : au retour de cross, il offre de la dynamique, sans pompe garantie. Au bout de la crête de Montraillant, il faut assez de hauteur pour sauter au-dessus des gorges vers Brâme-Farine.",
           "sources": [
             "S23",
             "S40"
+          ],
+          "possible": [
+            "Arrivé vers 900 m, on peut devoir zoner une demi-heure : mieux vaut avoir 1000 m pour se lancer au-dessus des gorges."
           ]
         },
         {
@@ -2114,7 +2118,7 @@
             "N",
             "NE"
           ],
-          "description": "Décollage sud-est, de niveau intermédiaire. On y vole surtout le matin jusqu'au début de l'après-midi : dès 11h, le thermique et la brise peuvent être soutenus. Le site est très fréquenté par vent de nord, car il est protégé. Par sud, le vent est rafaleux, et par sud-ouest à ouest modéré, on est sous le vent. Il faut avancer au vent de la colline avant de tourner vers la combe. S'attarder au décollage est fortement déconseillé.",
+          "description": "Décollage sud-est, surtout volé le matin jusqu'au début d'après-midi : dès 11h, le thermique et la brise peuvent être soutenus. Abrité, il est très fréquenté par vent de nord. Par sud établi, le vent est rafaleux ; par sud-ouest à ouest modéré, on est sous le vent. Avancez au vent de la colline avant de tourner vers la combe. La repose au décollage est fortement déconseillée.",
           "sources": [
             "S34",
             "S68",
@@ -2235,7 +2239,7 @@
           "lon": 6.1178,
           "lat": 45.5415,
           "alt_m": 280,
-          "description": "Atterrissage de Montlambert, à Saint-Jean-de-la-Porte : une voie ferrée et une ligne se trouvent en amont, avec une rangée d'arbres. Il faut perdre son altitude au vent du terrain, côté Montmélian, ou vers l'Isère, puis faire une PTU obligatoire. La brise montante est forte dès le début de l'après-midi. Par brise descendante ou vent de sud, on pose dans l'autre sens, et il faut éviter les hors-terrains dans les cultures.",
+          "description": "Atterrissage de Montlambert, à Saint-Jean-de-la-Porte. N'arrivez pas trop bas : une voie ferrée, une ligne et une rangée d'arbres sont en amont. Perdez votre altitude au vent du terrain, côté Montmélian, ou vers l'Isère, puis faites la PTU obligatoire, vent arrière côté plaine. La brise de vallée peut devenir forte dès la fin de matinée. Par brise descendante ou vent de sud, on pose dans l'autre sens. Évitez les hors-terrains dans les cultures.",
           "sources": [
             "S34",
             "S69"
@@ -2249,7 +2253,7 @@
           "lon": 6.2149,
           "lat": 45.5406,
           "alt_m": 292,
-          "description": "Le terrain se trouve le long de la D25, à l'ouest de Chamoux. Il faut passer au-dessus du village pour arriver au vent. Des peupliers sont présents, et la brise de vallée est forte à très forte. Le niveau est vert, et le terrain est accessible aux personnes à mobilité réduite.",
+          "description": "Le terrain se trouve le long de la D25, à l'ouest de Chamoux. La brise y est souvent forte, et forte à très forte par vent météo de nord : passez au-dessus du village pour arriver au vent du terrain, et perdez votre altitude au vent. Méfiez-vous des peupliers en approche. Le niveau est vert, et le terrain est accessible aux personnes à mobilité réduite.",
           "sources": [
             "S35",
             "S71"
@@ -2290,7 +2294,7 @@
           "lon": 6.3667,
           "lat": 45.6689,
           "alt_m": 338,
-          "description": "Atterrissage de l'Ébaudiaz, en zone d'aérodrome : il faut respecter l'interdiction de survol de l'aérodrome et de son approche.",
+          "description": "Aucune source ne documente un atterrissage ici : la fiche du décollage de l'Ébaudiaz indique qu'il n'y a pas d'atterrissage sur le site. Le point est en zone d'aérodrome : respectez l'interdiction de survol de l'aérodrome et de son approche.",
           "sources": [
             "S77"
           ],
@@ -2382,9 +2386,9 @@
             "S100"
           ],
           "possible": [
-            "Un vol a quitté le Colombier à 2700 m, préféré à la Galoppaz, pour rallier Montlambert, puis a atteint les Tours à 860 m, après une perte de 1840 m sur 8 km.",
-            "Il arrive qu'on passe une demi-heure à 900 m avant de sauter sur Brâme-Farine.",
-            "Un triangle de 202 km a choisi ce retour par les avant-reliefs, en remontant au vent (Villard-d'Héry), contre la forte brise."
+            "Un vol a quitté le Colombier à 2700 m pour Montlambert plutôt que la Galoppaz, puis a atteint les Tours à 860 m, après une perte de 1840 m sur 8 km.",
+            "Il arrive qu'on zone une demi-heure vers 900 m au bout de la crête de Montraillant avant d'oser le saut sur Brâme-Farine.",
+            "Un triangle de 202 km a choisi ce retour par les avant-reliefs : repassé au vent à Villard-d'Héry, il a avancé contre une forte brise."
           ],
           "note": "Brâme-Farine et la crête de Montraillant ne sont pas placés ; le trajet final vers Lumbin n'est pas rectiligne. Relance intermédiaire : Tours de Montmayeur, puis Bramefarine côté Belledonne."
         },
@@ -2510,7 +2514,7 @@
             }
           ],
           "distance_km": 47,
-          "description": "Cheminement classique de la face est des Bauges et de la Lauzière : on extrait sur le Mont Charvet, on chemine sur le Mont Pelat, puis on transite par la Dent d'Arclusaz et Roche Torse, avant de revenir à l'Arclusaz. On transite ensuite sur le Grand Arc, puis la Grande Lanche, et l'on revient au Grand Arc avant Chamoux. Les plafonds sont de 2200 à 2700 m à l'Arclusaz, et la brise est forte au Col du Frêne et à Tamié, où des venturis sont signalés.",
+          "description": "Un cheminement de la face est des Bauges vers la Lauzière : on extrait sur le Mont Charvet, on chemine sur le Mont Pelat, puis on transite sur la Dent d'Arclusaz et l'on pousse jusqu'à Roche Torse avant de revenir. On transite ensuite sur le Grand Arc, on fait un aller-retour sur la Grande Lanche, puis on rejoint Chamoux. La brise est forte au col du Frêne et à Tamié, où des venturis sont signalés.",
           "sources": [
             "S98",
             "S96",
@@ -2518,7 +2522,10 @@
             "S15",
             "S99"
           ],
-          "note": "Parcours relevé lors d'un stage. Distance : longueur de la ligne brisée des points."
+          "note": "Parcours relevé lors d'un stage. Distance : longueur de la ligne brisée des points.",
+          "possible": [
+            "Les plafonds relevés à l'Arclusaz vont de 2200 à 2700 m."
+          ]
         }
       ],
       "tips": [
@@ -2594,7 +2601,7 @@
             "max": 35
           },
           "season": "printemps-été",
-          "description": "Des langues de brise, plus étroites, viennent d'Annecy et redescendent vers le sud les vallées intérieures des Bauges, où elles rencontrent la brise de Chambéry, près de la Savoyarde. Une branche passe par Lescheraines et Le Châtelard, puis se divise vers École, Sainte-Reine et Aillon. Ces brises de vallée atteignent 30 à 35 km/h, et elles se renforcent par régime de nord, où vent et brise s'additionnent. Elles cisaillent quand elles s'opposent à un vent de sud.",
+          "description": "Des langues de brise plus étroites viennent d'Annecy et redescendent vers le sud les vallées intérieures des Bauges, jusqu'à rencontrer la brise de Chambéry vers la Savoyarde. Une branche passe par Lescheraines et Le Châtelard, puis se divise vers École, Sainte-Reine et Aillon. Ces brises peuvent atteindre 30 à 35 km/h selon les endroits et les heures. Par régime de nord, vent et brise s'additionnent ; contre un vent de sud, elles cisaillent.",
           "confidence": "medium",
           "sources": [
             "S3",
@@ -2782,13 +2789,13 @@
             "max": null
           },
           "season": "été",
-          "description": "Une flèche descend de Curienne par Puygros vers La Thuile et le col de Marocaz. Cette brise contourne par l'intérieur la Savoyarde, pour se jeter vers Montmélian.",
+          "description": "Une flèche descend de Curienne par Puygros vers La Thuile et le col de Marocaz. Sur la carte, cette brise contourne la Savoyarde par l'intérieur et file vers Montmélian.",
           "confidence": "low",
           "sources": [
             "S27",
             "S28"
           ],
-          "note": "Puygros et la Galoppaz sont interdits de décollage et d'atterrissage par arrêté municipal."
+          "note": "Le décollage de la Galoppaz, sur la commune de Puygros, est interdit par arrêté municipal."
         },
         {
           "id": "brise-cheran-aillons-mont-charvet",
@@ -2961,7 +2968,7 @@
           },
           "when": "après-midi d'été, brises établies (thermique intense)",
           "mechanism": "Deux brises remontent de chaque côté du col de Plainpalais, et leur rencontre est souvent marquée par un beau cumulus. La brise de Chambéry arrive par Saint-Jean-d'Arvey, Thoiry et le col des Prés, d'un côté ; la brise de Lescheraines arrive par Saint-François-de-Sales, de l'autre. La carte de référence les montre par des flèches bleues convergentes.",
-          "usage": "Au sommet du Margériaz, c'est une pompe de distance : des plafonds de 2380 à 2500 m sont relevés. C'est aussi un point de relais entre le Roc des Bœufs, le Julioz et la tour de l'angle est du Revard.",
+          "usage": "Au sommet du Margériaz, c'est une pompe pour le vol de distance, et un relais entre le Roc des Bœufs, le Julioz et la tour de l'Angle Est du Revard.",
           "confidence": "medium",
           "sources": [
             "S26",
@@ -2969,7 +2976,10 @@
             "S38",
             "S41"
           ],
-          "note": "Segment entre le col de Plainpalais et le sommet, approximatif."
+          "note": "Segment entre le col de Plainpalais et le sommet, approximatif.",
+          "possible": [
+            "Un vol y a enroulé jusqu'à 2380 m avant la transition vers le Revard."
+          ]
         },
         {
           "id": "confluence-col-du-frene",
@@ -2989,7 +2999,7 @@
           },
           "when": "après-midi d'été",
           "mechanism": "Au col du Frêne, la brise de Sainte-Reine rencontre la brise de la Combe de Savoie. Deux flèches bleues convergentes sont figurées sur la carte de référence, près du col.",
-          "usage": "C'est une zone de convergence exploitable en cross vers le sud. Le col est aussi une zone sous le vent avec venturi, et la pente-école du Peillet, en contrebas, est turbulente quand la brise et le nord se conjuguent.",
+          "usage": "C'est une convergence exploitable en vol de distance. Le col est aussi une zone sous le vent, avec un venturi ; en contrebas, la pente-école du Peillet est turbulente quand la brise et le nord se conjuguent.",
           "confidence": "medium",
           "sources": [
             "S26",
@@ -3145,14 +3155,17 @@
           "radius_km": 2,
           "coord_quality": "source",
           "conditions": "brise d'Annecy/lac établie, arrivée basse au sud du Roc",
-          "description": "Le Roc des Bœufs est une zone sous le vent de la brise du lac d'Annecy, à la pointe sud du Roc, où l'on risque d'être coincé à l'arrivée basse. Il est recommandé de faire un crochet par le Mont Julioz. Les lignes électriques se passent au nord du Roc, où la remontée est facile avec la brise du lac.",
+          "description": "À la pointe sud du Roc des Bœufs, on est sous le vent de la brise du lac d'Annecy : en arrivant bas, on risque d'y rester coincé. Faites plutôt un crochet par la crête du Mont Julioz. Au nord du Roc, la brise du lac rend la remontée facile.",
           "sources": [
             "S15",
             "S3",
             "S39",
             "S41"
           ],
-          "note": "Repère n° 5 de la figure. La « brise forte » est repérée au nord du massif, au repère n° 4."
+          "note": "Repère n° 5 de la figure. La « brise forte » est repérée au nord du massif, au repère n° 4.",
+          "possible": [
+            "En visant la falaise nue sous la première ligne électrique, on peut arriver sous 1200 m et rester bloqué derrière la ligne, freiné par la brise : il a déjà fallu la passer à moins de 50 m du sol."
+          ]
         },
         {
           "id": "lescheraines-alleves-scotche",
@@ -3163,7 +3176,7 @@
           "radius_km": 5,
           "coord_quality": "approx",
           "conditions": "brise de vallée établie (30-35 km/h possibles)",
-          "description": "Lescheraines et Allèves, comme École et Aillons, sont des secteurs où une brise de 30 à 35 km/h peut forcer à un atterrissage scotché sur place. Il vaut mieux voler au début de l'après-midi, ou quand l'activité thermique décroît.",
+          "description": "À Lescheraines et à Allèves, comme à École et aux Aillons, une brise de 30 à 35 km/h peut vous scotcher sur place à l'atterrissage. Si vous ne connaissez pas le secteur, volez en début d'après-midi, ou quand les thermiques faiblissent.",
           "sources": [
             "S26"
           ],
@@ -3211,7 +3224,7 @@
           "radius_km": 2.5,
           "coord_quality": "source",
           "conditions": "permanent",
-          "description": "La Galoppaz et Puygros sont formellement interdits par arrêté municipal : il n'y a ni décollage ni atterrissage, même si la Galoppaz sert de relais de cross, pour une raccroche à la Sauge puis à la Galoppaz.",
+          "description": "Le décollage de la Galoppaz, sur la commune de Puygros, est formellement interdit par arrêté municipal. La Galoppaz reste un relais de cross : on peut y raccrocher en vol, après la Sauge.",
           "sources": [
             "S33",
             "S23"
@@ -3226,16 +3239,16 @@
           "radius_km": 2,
           "coord_quality": "approx",
           "conditions": "bulle active de janvier à fin août (vérifier BioDiv'Sports)",
-          "description": "Sur la falaise de la Buffaz, une bulle d'aigles royaux, active de janvier à fin août, impose 1750 m de survol minimal sur la partie nord de la falaise. Si l'on chemine en cross le long de l'arête du Colombier vers le sud, ou si l'on transite vers l'ouest au-dessus d'Aillon 1000, il faut passer à 1750 m au minimum tant que la bulle est active.",
+          "description": "Sur la falaise de la Buffaz, une bulle d'aigles royaux, active de janvier à fin août, impose de survoler la partie nord de la falaise à 1750 m au minimum. On la croise en cheminant vers le sud le long de l'arête du Colombier, en transitant vers l'ouest au-dessus d'Aillon 1000, ou en partant du Pelat vers le Margériaz.",
           "sources": [
             "S84",
             "S85",
             "S93"
           ],
           "possible": [
-            "On peut aussi contourner la bulle par le sud, en décollant des Fées ou du Pelat."
+            "Si la bulle est active, on peut aussi la contourner par le sud."
           ],
-          "note": "Position approximative. Aigle royal, de janvier à août ; vérifier la bulle avant de voler."
+          "note": "Position approximative. Les Fées, autre départ d'où l'on risque de croiser la bulle, sont un terrain fermé, où l'atterrissage est interdit."
         },
         {
           "id": "compote-bulle-faucons",
@@ -3351,7 +3364,7 @@
           "alt_m": 894,
           "best_hours": "avant l'établissement de la brise (début d'après-midi) ; raccroche vers 1100-1200 m",
           "trigger": "face ouest/NO de la Savoyarde et du Montgelas battue par la brise de Chambéry",
-          "description": "Sur la face ouest de la Savoyarde et du Montgelas, battue par la brise de Chambéry, se trouve une pompe, tache rouge bien marquée sur la carte des thermiques. C'est la pompe de la transition depuis la Chartreuse vers les Bauges. On la vise depuis l'air de service du Granier, sur l'autoroute, avec une laisse de chien pour compenser la brise de Chambéry. Elle se déclenche avant l'établissement de la brise, au début de l'après-midi.",
+          "description": "Sur la face ouest de la Savoyarde et du Montgelas, battue par la brise de Chambéry, une pompe marque d'une tache rouge la carte des thermiques. C'est elle que vise la transition de la Chartreuse vers les Bauges : on part vers l'aire de service du Granier, sur l'autoroute, en laisse de chien pour compenser la brise.",
           "sources": [
             "S23",
             "S40",
@@ -3361,9 +3374,9 @@
           "coord_quality": "approx",
           "confidence": "medium",
           "possible": [
-            "On peut raccrocher à 1100 m, puis remonter à 1600 m en peu de temps, hauteur conseillée pour la Galoppaz.",
-            "Il est arrivé de raccrocher la Savoyarde facilement vers 1200 m, avant que les brises ne rentrent.",
-            "À l'arrivée, côté Chartreuse, un thermique de service se trouve à Saint-Marcel-d'en-Haut, vers 800 m, à 13h10."
+            "On peut raccrocher à 1100 m, puis remonter vite à 1600 m, la hauteur conseillée pour partir sur la Galoppaz.",
+            "Il est arrivé de la raccrocher facilement vers 1200 m, avant que les brises ne rentrent.",
+            "Dans l'autre sens, à l'arrivée côté Chartreuse, un thermique de service peut se trouver à Saint-Marcel-d'en-Haut, vers 800 m, en début d'après-midi."
           ],
           "note": "Position ramenée, à 540 m de l'ancienne, sur le point chaud déduit de données statistiques le plus proche (93 % toutes périodes), sur un terrain à 894 m. L'altitude de 1000 m était celle de la raccroche visée, et non celle du déclencheur. L'épaule ouest du Montgelas se trouve vers 1240 m de crête."
         },
@@ -3375,7 +3388,7 @@
           "alt_m": 1998,
           "best_hours": "13h-17h (été)",
           "trigger": "crêtes du Colombier, Margériaz, Buffaz, Mont Charvet, Mont Morbier, Arclusaz, Trélod, Charbon, Roc des Bœufs",
-          "description": "La carte de référence place des spirales thermiques sur le Margériaz, la Buffaz, le Mont Charvet, la Galoppaz, le Colombier, le Mont Morbier, le col du Frêne, l'Arclusaz, le Trélod, le Charbon, le Roc des Bœufs, le Mont Peney, le Nivolet et le Revard. L'été, le thermique se présente entre 13h et 17h, sur les faces ouest des crêtes.",
+          "description": "La carte place des spirales thermiques sur le Margériaz, la Buffaz, le Mont Charvet, la Galoppaz, le Colombier, le Mont Morbier, le col du Frêne, l'Arclusaz, le Trélod, le Charbon, le Roc des Bœufs, le Mont Peney, le Nivolet et le Revard. L'été, on les cherche sur les faces ouest des crêtes.",
           "sources": [
             "S27",
             "S23",
@@ -3400,7 +3413,7 @@
           "confidence": "medium",
           "best_hours": "milieu à fin d'après-midi (12h50 depuis le nord, 15h20 au retour)",
           "trigger": "épaule nord-ouest au vent puis sommet, thermo-dynamique avec la brise",
-          "description": "Après la Savoyarde, on remonte en thermo-dynamique jusqu'au Pic de la Sauge, où l'on monte mieux vers 2200 m. C'est aussi le point de départ du retour : on part vers 2400 m, entre le Pic de la Sauge et le lac de la Tuile, pour transiter vers Bramefarine.",
+          "description": "Après la Savoyarde, on remonte en thermo-dynamique jusqu'au Pic de la Sauge, relance vers le Colombier. C'est aussi un point de départ du retour vers Bramefarine, côté Belledonne.",
           "sources": [
             "S100",
             "S101",
@@ -3409,7 +3422,9 @@
             "S107"
           ],
           "possible": [
-            "Un vol est arrivé de l'autre sens à 2350 m, vers 12h50."
+            "Il peut aller mieux vers 2200 m, au-dessus du Pic de la Sauge.",
+            "Pour Bramefarine, un départ à 2400 m sous un cumulus, entre le Pic de la Sauge et le lac de la Tuile, a suffi.",
+            "Un vol venu de l'autre sens y est arrivé à 2350 m, vers 12h50."
           ],
           "note": "Position : sommet. Le thermo-dynamique se joue sur l'épaule nord-ouest, déjà modélisée en soaring."
         },
@@ -3423,14 +3438,14 @@
           "confidence": "medium",
           "best_hours": "début d'après-midi (décollage de Montlambert vers 13h)",
           "trigger": "croupe de la face est des Bauges au-dessus de Montlambert, spirale thermique de la carte PNR",
-          "description": "Au-dessus de Montlambert, l'extraction se fait sur le Mont Charvet, en décollant de Montlambert vers 13h. Le Charvet porte aussi une spirale thermique sur la carte de référence des Bauges.",
+          "description": "Au-dessus de Montlambert, on s'extrait sur le Mont Charvet, qui porte aussi une spirale thermique sur la carte des Bauges.",
           "sources": [
             "S98",
             "S27",
             "S107"
           ],
           "possible": [
-            "Un parcours est allé de Montlambert à l'extraction sur le Mont Charvet, puis au Mont Pelat, avant la transition sur la Dent d'Arclusaz."
+            "Parti de Montlambert vers 13h, un parcours s'est extrait sur le Mont Charvet, puis a cheminé sur le Mont Pelat avant la transition vers la Dent d'Arclusaz."
           ]
         },
         {
@@ -3443,14 +3458,15 @@
           "confidence": "medium",
           "best_hours": "début d'après-midi à milieu d'après-midi",
           "trigger": "crête de la face est des Bauges entre Mont Charvet et Dent d'Arclusaz",
-          "description": "Entre le Mont Charvet et la Dent d'Arclusaz, la crête de la face est des Bauges est un point de relance du cheminement de Montlambert vers l'Arclusaz. Par vent de nord, la brise de Chambéry est très forte sous le vent du Col du Frêne, et la plupart des pilotes se posent à Montlambert au retour.",
+          "description": "Entre le Mont Charvet et la Dent d'Arclusaz, le Mont Pelat est un relais du cheminement de Montlambert vers l'Arclusaz, sur la face est des Bauges.",
           "sources": [
             "S98",
             "S97",
             "S15"
           ],
           "possible": [
-            "Ce cheminement a été enchaîné avec le Mont Charvet, puis avec le col du Frêne."
+            "Ce cheminement a été enchaîné avec le Mont Charvet, puis avec le col du Frêne.",
+            "Un jour de nord, la brise de Chambéry, extrêmement forte, a mis Montlambert sous le vent au retour : la plupart des pilotes ont dû s'y poser."
           ]
         },
         {
@@ -3463,15 +3479,15 @@
           "confidence": "medium",
           "best_hours": "milieu d'après-midi",
           "trigger": "épaule sud-ouest de la Galoppaz, premier relief au-delà de la Savoyarde",
-          "description": "Après la Savoyarde, on raccroche la pointe de la Galoppaz, premier relief au-delà de la Savoyarde, depuis son épaule sud-ouest. On raccroche à 1100 m, puis l'on monte à 1600 m, hauteur conseillée pour transiter sur la Galoppaz.",
+          "description": "La pointe de la Galoppaz est le premier relief après la Savoyarde : on la raccroche par son épaule sud-ouest. Pour y transiter, il est conseillé de quitter la Savoyarde vers 1600 m, après y avoir raccroché, parfois dès 1100 m.",
           "sources": [
             "S23",
             "S97",
             "S15"
           ],
           "possible": [
-            "En avril, une petite branche vers le sud, vers la pointe de la Galoppaz, permet de se refaire sur le Colombier.",
-            "Par brise, il peut arriver qu'on ne remonte pas à la Galoppaz : on choisit alors Montlambert."
+            "Au printemps, une petite branche au sud vers la pointe de la Galoppaz peut précéder un plein sur le Colombier.",
+            "Si des ailes n'y montent pas, on peut préférer filer sur Montlambert."
           ],
           "note": "Altitude corrigée de 1566 à 1660 m, à partir du relief de l'épaule sud-ouest. Un point chaud déduit de données statistiques, à 88 %, se trouve à 220 m de cette position."
         },
@@ -3485,7 +3501,7 @@
           "confidence": "medium",
           "best_hours": "milieu d'après-midi (13h-16h)",
           "trigger": "sommet et faces ouest de l'Arclusaz, thermiques puissants",
-          "description": "Sur le sommet et les faces ouest de l'Arclusaz, les thermiques sont très puissants, jusqu'à +6, avec des plafonds à 2700 m. L'Arclusaz permet d'assurer un plafond de 2200 à 2400 m. C'est le départ des transitions vers le Grand Arc, à plus de 2000 m au minimum, et vers Chamoux. On y relance aussi le retour du Roc des Bœufs.",
+          "description": "Le sommet et les faces ouest de la Dent d'Arclusaz sont le plafond du cheminement des faces est. On y relance le retour du Roc des Bœufs, et l'on en part vers le Grand Arc, avec plus de 2000 m au minimum, ou vers Chamoux.",
           "sources": [
             "S96",
             "S97",
@@ -3493,7 +3509,11 @@
             "S99",
             "S15"
           ],
-          "note": "Altitude corrigée de 1832 à 2013 m, à partir du relief au sommet ; 1832 m était l'altitude du décollage de l'Arclusaz."
+          "note": "Altitude corrigée de 1832 à 2013 m, à partir du relief au sommet ; 1832 m était l'altitude du décollage de l'Arclusaz.",
+          "possible": [
+            "Les thermiques peuvent y être très puissants, jusqu'à +6, avec des plafonds à 2700 m.",
+            "Le plafond y a aussi assuré 2200 à 2400 m, et les faces ouest 2400 m pour partir sur les Dents de Pleuven."
+          ]
         },
         {
           "id": "dents-de-pleuven-trelod",
@@ -3505,12 +3525,12 @@
           "confidence": "medium",
           "best_hours": "début à milieu d'après-midi",
           "trigger": "faces ouest en thermodynamique, brise d'été forte (rester au vent)",
-          "description": "Sur la face ouest des Dents de Pleuven, le thermique monte très fort en thermo-dynamique. L'été, les brises sont fortes : il faut rester au vent, et ne jamais aller sur la face sud. C'est une relance du cheminement de l'Arclusaz vers le Roc des Bœufs.",
+          "description": "Sur la face ouest des Dents de Pleuven, ça monte très fort en thermo-dynamique. L'été, les brises sont fortes : restez au vent, jamais sur la face sud, balayée par la brise. C'est une relance du cheminement de l'Arclusaz vers le Roc des Bœufs.",
           "sources": [
             "S96"
           ],
           "possible": [
-            "Le cheminement sur les faces ouest du Trélod est facile, entre 2000 et 2200 m, avant la transition vers le Roc des Bœufs."
+            "Sur les faces ouest du Trélod, le cheminement peut être facile, entre 2000 m et 2200 m, avant la transition vers le Roc des Bœufs."
           ],
           "note": "Dérogation de la réserve : voir la zone de survol de la réserve."
         },
@@ -3524,7 +3544,7 @@
           "confidence": "medium",
           "best_hours": "milieu d'après-midi (15h-16h)",
           "trigger": "crête et bout du roc, brise remontant du lac d'Annecy, falaise nue sous la première ligne électrique",
-          "description": "Le Roc des Bœufs est un ascenseur après le lac d'Annecy : une brise remonte du lac, sur la crête et au bout du roc. Il se présente au milieu de l'après-midi, entre 15h et 16h. La falaise nue, sous la première ligne électrique, demande d'arriver au-dessus de 1550 m, à cause de la ligne et de la brise vers le nord.",
+          "description": "Au sortir du lac d'Annecy, le Roc des Bœufs est un ascenseur : la brise qui monte du lac le fait porter le long de la crête, jusqu'au bout du roc. La raccroche y est aisée.",
           "sources": [
             "S38",
             "S39",
@@ -3535,7 +3555,8 @@
           ],
           "possible": [
             "Au bout du roc, un thermique a mené au nuage, à 2500 m, et un autre vol est monté à 2700 m au retour du lac.",
-            "La raccroche y est aisée."
+            "En visant bien au nord du roc, on peut arriver vers 1550 m au-dessus de l'arête, à la première ligne électrique.",
+            "En visant la falaise nue sous cette ligne, on risque d'arriver trop bas, bloqué par la ligne et la brise vers le nord."
           ]
         },
         {
@@ -3571,7 +3592,7 @@
           "confidence": "medium",
           "best_hours": "milieu d'après-midi (16h dans les carnets)",
           "trigger": "arête du Margériaz, croix des bergers",
-          "description": "Sur l'arête du Margériaz, qui est un plafond avant le Revard, on peut cheminer le long de l'arête une fois engagé. Au milieu de l'après-midi, vers 16h, on atteint 2380 m au sommet, avant la transition vers la Tour de l'Angle Est.",
+          "description": "L'arête du Margériaz est le plafond avant le retour vers le Revard : une fois engagé, on chemine le long de l'arête jusqu'au sommet, d'où l'on transite vers la tour de l'Angle Est.",
           "sources": [
             "S38",
             "S39",
@@ -3579,7 +3600,7 @@
             "S106"
           ],
           "possible": [
-            "Une fois sur l'arête, il arrive que ça monte tout seul.",
+            "Une fois sur l'arête, il arrive que ça monte tout seul ; un vol a enroulé jusqu'à 2380 m au sommet.",
             "Une transition à 2300 m est jugée correcte ; un autre vol y a enroulé péniblement jusqu'au nuage."
           ],
           "note": "Altitude corrigée de 1719 à 1815 m, à partir du relief au sommet. La position est conservée, loin de tout point chaud déduit de données statistiques, car l'arête se vole en dynamique."
@@ -3612,7 +3633,7 @@
           "confidence": "medium",
           "best_hours": "milieu d'après-midi (15h)",
           "trigger": "col de la Cochette puis relief de Bange, face ouest ensoleillée",
-          "description": "La transition du Revard vers le Semnoz passe par Bange : on se refait au-dessus du col de la Cochette, où le thermique est puissant mais court, vers le décollage de Bange.",
+          "description": "La transition du Revard vers le Semnoz passe par Bange : on peut se refaire au-dessus du col de la Cochette, puis trouver un thermique puissant mais court vers le décollage de Bange.",
           "sources": [
             "S38",
             "S39",
@@ -3634,15 +3655,15 @@
           "confidence": "medium",
           "best_hours": "milieu d'après-midi",
           "trigger": "face ouest bien éclairée devant l'épaule, combe SSO sous le décollage",
-          "description": "Devant l'épaule du Semnoz, on monte jusque vers 1500 m, puis, sur la face ouest bien éclairée, on trouve une ascendance devant le terrain des aéromodélistes, au Crêt de Châtillon, qui décale vers le nord-est. Une combe sud-sud-ouest, sous le décollage, est un lieu où les thermiques se forment, et le décollage s'y fait parfois sous leur vent.",
+          "description": "Sous le décollage du Semnoz, à droite, une combe sud-sud-ouest bien exposée fait naître les thermiques, et la sortie du décollage peut se trouver sous leur vent. En enroulant, ne vous laissez pas décaler derrière la cassure du relief : on s'y retrouve sous le vent du thermique.",
           "sources": [
             "S38",
             "S39",
             "S105"
           ],
           "possible": [
-            "Une ascendance devant les aéromodélistes peut monter jusqu'à 2180 m.",
-            "Près de l'angle de la route, avant le Crêt de Châtillon, le thermique peut être moins fort, vers 2050 m."
+            "Devant l'épaule, on peut monter vers 1500 m, puis trouver sur la face ouest éclairée une belle ascendance devant le terrain des aéromodélistes, qui décale vers le nord-est jusqu'à 2180 m.",
+            "Juste à l'angle de la route, avant le Crêt de Châtillon, un thermique moins fort peut monter vers 2050 m."
           ],
           "note": "Position approximative, déduite de vols relatés."
         },
@@ -3727,7 +3748,7 @@
             "N",
             "NW"
           ],
-          "description": "On arrive à l'épaule forestière nord-ouest du Pic de la Sauge très bas, parfois à environ 100 m au-dessus des champs, mais l'aérologie est saine et le dynamique reprend très bas. En été, on sort en dynamique parallèle à la crête du Montgelas, face à la brise d'Annecy, en étant à 1300 m environ au départ de l'épaule. La combe ouest, entre l'épaule et la falaise arquée, est sous le vent de la brise d'Annecy, et malsaine.",
+          "description": "On arrive à l'épaule forestière nord-ouest du Pic de la Sauge très bas, parfois à 100 m au-dessus des champs, mais l'air y est sain et le dynamique reprend très bas. En été, on y vient en dynamique, parallèle à la crête du Montgelas, face à la brise d'Annecy, en quittant l'épaule vers 1300 m. Ça ne marche que si la brise d'Annecy est assez forte. La combe ouest, entre l'épaule et la falaise arquée, est sous le vent de cette brise, et malsaine.",
           "sources": [
             "S3"
           ],
@@ -3904,7 +3925,7 @@
           "lon": 6.098,
           "lat": 45.6103,
           "alt_m": 930,
-          "description": "Atterrissage officiel des vols rando du Colombier et du Mont Pelat. Le niveau est confirmé, mais l'atterrissage est dangereux dès qu'il y a de la brise, sous la brise qui s'engouffre entre le Colombier et la Buffaz. Une manche à air indique l'ouverture, et il est interdit de poser court.",
+          "description": "Atterrissage officiel des vols rando du Colombier et du Mont Pelat, de niveau confirmé. Il est sous la brise qui s'engouffre entre le Colombier et la Buffaz : dangereux dès qu'il y a de la brise ou du thermique, du matin jusque tard le soir. Il est réservé aux vols matinaux par conditions calmes. La manche à air indique qu'il est ouvert, et il est interdit de poser court.",
           "sources": [
             "S83"
           ],
@@ -3930,13 +3951,14 @@
           "lon": 6.013,
           "lat": 45.7325,
           "alt_m": 715,
-          "description": "Des arbres se trouvent à proximité, avec une ligne à l'ouest, et des prés pâturés. C'est l'atterrissage de secours des allers-retours Vérel–Semnoz.",
+          "description": "C'est l'atterrissage de secours des allers-retours Vérel–Semnoz. Arbres à proximité, ligne électrique à l'ouest, prés pâturés toute l'année. Au printemps, quand les autres prés ne sont pas fauchés, c'est lui qu'il faut utiliser si l'on doit se poser.",
           "sources": [
             "S91",
             "S31"
           ],
           "coord_quality": "source",
-          "ffvl_id": 1722
+          "ffvl_id": 1722,
+          "note": "Le terrain de secours est à Saint-Offenge-Dessus."
         }
       ],
       "synoptic_effects": [
@@ -4053,7 +4075,7 @@
             "Une alternative est la Pointe de la Bornée ou le Mont Joigny, au nord du col du Granier : la transition est plus courte, mais les plafonds sont moins bons.",
             "Un schéma donne aussi 10 km depuis plus de 2400 m, avec arrivée à 1000 m, ou 12 km depuis plus de 2300 m depuis Saint-Marcel, avec arrivée à 900 m."
           ],
-          "note": "Il faut se placer en laisse de chien, car la brise forcit en descendant. En saison de ski, on contourne le lac de Saint-André par la droite (TMA de Chambéry). Suite du parcours : Pic de la Sauge, Galoppaz, Mont de la Buffaz, Colombier, Julioz, Roc des Bœufs, lac d'Annecy. À éviter : l'option sud-est vers Montlambert, zone sous le vent de Montmélian, très dangereuse dans les années 1990 ; ne pas viser le rocher de la Savoyarde. Les points de passage de la Sauge et du Montgelas sont approximatifs ; la distance totale n'est pas calculée. Relances citées : Pic de la Sauge (2200-2400 m), Galoppaz (1600 m en arrivant de la Savoyarde), Colombier, Julioz (2700 m)."
+          "note": "Il faut se placer en laisse de chien, car la brise forcit en descendant. En saison de ski, on contourne le lac de Saint-André par la droite (TMA de Chambéry). Suite du parcours : Pic de la Sauge, Galoppaz, Mont de la Buffaz, Colombier, Julioz, Roc des Bœufs, lac d'Annecy. À éviter : l'option sud-est vers Montlambert, par la zone sous le vent de Montmélian, très dangereuse (plusieurs morts dans les années 1990) ; ne pas viser le rocher de la Savoyarde. Les points de passage de la Sauge et du Montgelas sont approximatifs ; la distance totale n'est pas calculée. Relances citées : Pic de la Sauge (2200-2400 m), Galoppaz (1600 m en arrivant de la Savoyarde), Colombier, Julioz (2700 m)."
         },
         {
           "id": "petit-tour-des-bauges",
@@ -4114,7 +4136,7 @@
             }
           ],
           "distance_km": 57.0,
-          "description": "Le petit tour des Bauges part de Vérel et passe par le Revard, Bange, le Semnoz, le Roc des Bœufs et le Margériaz, avant de revenir vers Montagny par la tour de l'angle est du Revard. Il se fait en un peu plus de trois heures, avec de nombreuses relances.",
+          "description": "Le petit tour des Bauges part de Vérel et passe par le Revard, Bange, le Semnoz, le Roc des Bœufs et le Margériaz, avant de revenir vers Montagny par la tour de l'Angle Est du Revard. Deux tours relevés ont pris un peu plus de trois heures, avec de nombreuses relances.",
           "sources": [
             "S38",
             "S39",
@@ -4122,9 +4144,9 @@
             "S107"
           ],
           "possible": [
-            "Un vol a fait le tour en 3 h 10 à 3 h 16, avec une transition de 16 min vers la tour de l'angle est.",
-            "Une traversée directe vers le Margériaz passe par le Mont Julioz, en 13 min.",
-            "Sur le retour, un vol a perdu 200 m à la tour de l'angle est, puis retrouvé de l'air ascendant au-dessus de la vallée."
+            "Un tour a pris 3 h 10, un autre 3 h 16.",
+            "La traversée vers le Margériaz peut passer par le Mont Julioz.",
+            "En quittant le Margériaz, on peut perdre 200 m en moins d'une minute, puis les regagner au-dessus de la vallée."
           ],
           "note": "Relances relevées sur des vols : Malpassant, Pertuiset, toboggan du Revard, Cochette et Bange, épaule du Semnoz, bout du Roc des Bœufs à 2500 m, Julioz, arête du Margériaz à 2300-2400 m avant la transition, Tour des Ébats. Waypoints approximatifs sur Bange et la tour de l'angle est, non placés. Un long vol, dernier jour d'un parcours de Vérel à la Mer, raccroche la Sauge et la Galoppaz, puis glisse le long du Margériaz jusqu'à Montagny, sur 120 km."
         },
@@ -4144,14 +4166,14 @@
             }
           ],
           "distance_km": 8,
-          "description": "La traversée du Roc des Bœufs vers les Dents de Lanfon est soutenue par une brise forte du lac d'Annecy. Deux variantes existent : 7 km depuis plus de 2100 m, vers Montmin et Planfait, avec arrivée à 1100 m ; ou 8 km depuis plus de 1800 m, vers les Dents de Lanfon, avec arrivée à 1000 m.",
+          "description": "Pour traverser du Roc des Bœufs vers les Dents de Lanfon, deux variantes : 7 km depuis plus de 2100 m, vers Montmin et Planfait, avec arrivée à 1100 m ; ou 8 km depuis plus de 1800 m, vers les Dents de Lanfon, avec arrivée à 1000 m. Une zone de brise forte est marquée sur le lac d'Annecy.",
           "sources": [
             "S15",
             "S23",
             "S41"
           ],
           "possible": [
-            "Un vol de 8,4 km a traversé avec un sud de 18 km/h de face, au retour depuis les Dents de Lanfon."
+            "La traversée du lac peut faire 8,4 km. Au retour des Dents de Lanfon, on peut avoir à la refaire face à un sud de 18 km/h."
           ],
           "note": "Brise forte du lac repérée sur la figure."
         },
@@ -4191,13 +4213,17 @@
             }
           ],
           "distance_km": 31,
-          "description": "Cheminement à hauteur des crêtes depuis la Sambuy : Arclusaz, Dents de Pleuven, faces ouest du Trélod, transition vers le Roc des Bœufs, puis Planfait et les Dents de Lanfon, en conditions turbulentes. Les plafonds sont de 2200 à 2400 m à l'Arclusaz, et les faces ouest du Trélod se volent entre 2000 et 2200 m. La transition vers le Roc des Bœufs se fait au-dessus de 2000 m, sans difficulté particulière.",
+          "description": "Depuis la Sambuy, on chemine à hauteur des crêtes : Arclusaz, Dents de Pleuven, faces ouest du Trélod, transition vers le Roc des Bœufs, puis Planfait et les Dents de Lanfon, où les conditions peuvent être turbulentes.",
           "sources": [
             "S96",
             "S97",
             "S99"
           ],
-          "note": "Distance : longueur de la ligne brisée des points."
+          "note": "Distance : longueur de la ligne brisée des points.",
+          "possible": [
+            "Le plafond de l'Arclusaz a assuré 2200 à 2400 m, et les faces ouest du Trélod se sont volées entre 2000 m et 2200 m.",
+            "La transition vers le Roc des Bœufs s'est faite sans difficulté, avec une arrivée au-dessus de 2000 m."
+          ]
         }
       ],
       "tips": [

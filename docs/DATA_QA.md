@@ -1,18 +1,18 @@
 # Contrôle qualité des données de recherche
 
-Généré par `npm run data:build` le 2026-10-16.
+Généré par `npm run data:build` le 2026-10-31.
 
 ## Volumes
 
 - massifs : 46
-- sources : 1663
+- sources : 1664
 - breezes : 277
 - convergences : 81
 - hazards : 527
 - thermals : 1168
 - soaring : 117
 - takeoffs : 542
-- landings : 307
+- landings : 306
 - routes : 184
 - figures : 163
 

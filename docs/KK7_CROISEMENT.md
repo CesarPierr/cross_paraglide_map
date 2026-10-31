@@ -1,6 +1,6 @@
 # Croisement des thermiques documentés avec les traces GPS (thermal.kk7.ch)
 
-Généré par `npm run data:build` le 2026-10-16. 2680 points chauds kk7 de probabilité ≥ 70 % dans le périmètre téléchargé.
+Généré par `npm run data:build` le 2026-10-31. 2680 points chauds kk7 de probabilité ≥ 70 % dans le périmètre téléchargé.
 
 - Thermiques documentés confirmés par un point chaud à moins de 600 m : **502**, dont **58** recalés sur la position mesurée (leur position n’était qu’approximative).
 - Points chauds ≥ 80 % qu’aucun texte ne décrit, ajoutés comme thermiques « mesurés » : **345** (603 autres hors des secteurs).

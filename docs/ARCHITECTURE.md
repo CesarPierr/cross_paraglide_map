@@ -44,6 +44,15 @@ une interface ; chaque famille de couches de la carte est un module indépendant
   `add(ctx)`, `apply(state, prev)`, `describe(id, props)`, `dispose()`. Les couches s'insèrent
   dans des *slots* ordonnés (`base`, `analysis`, `areas`, `lines`, `scene`, `points`, `labels`),
   ce qui permet d'ajouter un module sans connaître les autres.
+- Lisibilité de l'atlas — chaque élément porte un rang et un niveau (`rank`, `tier`), calculés par
+  `scripts/build-data.ts` avec `packages/shared/src/importance.ts` (catégorie, confiance, nombre de
+  sources, citation par une visite guidée, une figure ou le résumé, longueur des lignes ; au plus
+  6 éléments essentiels par secteur, espacés de 3 km ; un point à moins de 500 m d'un meilleur de sa
+  catégorie passe en détail). `map/tiers.ts` dit quels niveaux la carte dessine selon le zoom et le
+  réglage « Lisibilité » (L'essentiel / Détaillé / Tout, `readability` dans le store) ; les
+  thermiques non dessinés se regroupent en pastilles numérotées ; « voir sur la carte » d'une
+  catégorie (`revealed`), l'élément ouvert dans la fiche et ceux d'une étape de visite sont toujours
+  dessinés. Les noms ne se chevauchent jamais (collision MapLibre, `symbol-sort-key` = niveau puis rang).
 - `gpu/` — moteur WebGL2. `model-glsl.ts` est le portage GLSL de `packages/model/src/field.ts`
   (**à garder synchrones** : toute modification de la physique se fait dans les deux fichiers ; le repli CPU et les tests du modèle utilisent la version TS).
   Passes : ensoleillement avec ombres portées → champ (vent, portance dynamique, turbulence,

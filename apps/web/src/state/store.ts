@@ -1,5 +1,5 @@
 import type { AirColumn, StabilityPreset } from '@brises/model';
-import type { Atlas, ContributionInput, SynopticWind } from '@brises/shared';
+import type { Atlas, ContributionInput, FeatureCategory, SynopticWind } from '@brises/shared';
 import { create } from 'zustand';
 import type { Level } from '../glossary';
 import type { PowerMode } from '../map/frame-pacer';
@@ -20,6 +20,9 @@ export const SCHEMA_PHASES: { key: SchemaPhase; label: string; hours: [number, n
 export type MobileSheet = 'none' | 'browse';
 
 export type Basemap = 'topo' | 'ign-ortho' | 'relief';
+
+/** How much of the atlas the map draws at a given zoom (see map/tiers.ts). */
+export type Readability = 'essentiel' | 'detaille' | 'tout';
 
 export type LayerKey =
   | 'particles'
@@ -113,6 +116,10 @@ export interface AppState {
   welcomeOpen: boolean;
   /** Left panel tab: sectors or cross-country routes. */
   browseTab: 'massifs' | 'routes';
+  /** Map readability: the essentials, the detail, or everything (remembered in this browser). */
+  readability: Readability;
+  /** Atlas categories the pilot asked to see whole on the map (« voir sur la carte »), whatever the zoom. */
+  revealed: FeatureCategory[];
   set: (patch: Partial<AppState>) => void;
   toggleLayer: (key: LayerKey) => void;
 }
@@ -208,6 +215,8 @@ export const useApp = create<AppState>((set) => ({
   level: remembered('brises.level', ['decouverte', 'pilote', 'expert'] as const, 'pilote'),
   welcomeOpen: remembered('brises.welcomed', ['1'] as const, null) === null,
   browseTab: 'massifs',
+  readability: remembered('brises.lisibilite', ['essentiel', 'detaille', 'tout'] as const, 'essentiel'),
+  revealed: [],
   set: (patch) => set(patch),
   toggleLayer: (key) => set((s) => ({ layers: { ...s.layers, [key]: !s.layers[key] } })),
 }));

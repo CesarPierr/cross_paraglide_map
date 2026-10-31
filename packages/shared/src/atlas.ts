@@ -155,6 +155,10 @@ export interface AtlasFeatureProps {
   conditionWindKmh?: number;
   /** Elevation check for points: DEM elevation minus declared altitude (m). */
   altDelta?: number;
+  /** Importance score (higher = structures the sector's aerology more), see importance.ts. */
+  rank?: number;
+  /** 1 the sector's essentials, 2 secondary, 3 detail (shown closer in or on demand), see importance.ts. */
+  tier?: 1 | 2 | 3;
 }
 
 export interface AtlasFeature {

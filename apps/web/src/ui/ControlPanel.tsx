@@ -4,7 +4,7 @@ import type { OverlayMode } from '../engine/cpu-overlays';
 import { AIRSPACE_COLORS, BREEZE_COLORS, COLORS } from '../map/palette';
 import { useApp, type LayerKey } from '../state/store';
 import { IconChevron, IconMountain, IconSpark, IconWind } from './icons';
-import { LegendBody, OverlayLegend } from './Legend';
+import { LegendBody, OverlayLegend, ReadabilityBlock } from './Legend';
 import { Situation } from './Situation';
 import { WindDial } from './WindDial';
 
@@ -294,6 +294,10 @@ export function LayersPanel() {
   const s = useApp();
   return (
     <div className="cp layers">
+      <section className="cp-block">
+        <h3 className="cp-title">Lisibilité</h3>
+        <ReadabilityBlock />
+      </section>
       <section className="cp-block">
         <div className="tiles">
           {TILES.map((t) => (

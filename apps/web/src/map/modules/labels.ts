@@ -29,7 +29,8 @@ const LAYERS: LayerSpecification[] = [
     minzoom: 7.5,
     filter: ['match', ['get', 'class'], ['city', 'town', 'village'], true, false],
     layout: {
-      'text-field': ['coalesce', ['get', 'name:fr'], ['get', 'name']],
+      // Villages from valley scale: at massif scale the towns are enough to find one's way, and the atlas items keep the room.
+      'text-field': ['step', ['zoom'], ['match', ['get', 'class'], ['city', 'town'], ['coalesce', ['get', 'name:fr'], ['get', 'name']], ''], 10, ['coalesce', ['get', 'name:fr'], ['get', 'name']]],
       'text-font': ['Noto Sans Bold'],
       'text-size': ['interpolate', ['linear'], ['zoom'], 7, ['match', ['get', 'class'], 'city', 12, 9], 12, ['match', ['get', 'class'], 'city', 15, 'town', 13, 11.5]],
       'symbol-sort-key': ['match', ['get', 'class'], 'city', 0, 'town', 1, 2],

@@ -1,14 +1,16 @@
-import type { Atlas, AtlasMassif, FeatureCategory } from '@brises/shared';
+import { CATEGORY_ORDER, type Atlas, type AtlasFeatureProps, type AtlasMassif, type FeatureCategory } from '@brises/shared';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { activeInSlot } from '../map/modules/schema';
 import type { FeatureDetails } from '../map/modules/types';
 import { BREEZE_COLORS, COLORS } from '../map/palette';
+import { shownAtMassifScale } from '../map/tiers';
 import { SCHEMA_PHASES, useApp, useRuntime } from '../state/store';
 import { getController } from './controller-ref';
 import { SimulationPanel } from './ControlPanel';
 import { FeedbackBar, startDraft } from './Feedback';
 import { FigureGallery } from './Figures';
-import { IconBack, IconGlider, IconPlus, IconSearch, IconTarget } from './icons';
+import { IconBack, IconChevron, IconGlider, IconPlus, IconSearch, IconTarget } from './icons';
+import { ReadabilityControl } from './Legend';
 import { goTo, openMassif, setUiMode } from './modes';
 import { SheetHandle, useIsMobile } from './mobile';
 import { ProbeSheet } from './ProbeCard';
@@ -196,9 +198,9 @@ const ARROW_KIND: Record<string, string> = {
   katabatic: 'catabatique',
 };
 
-function SchemaItem({ id, color, name, meta, low }: { id: string; color: string; name: string; meta?: string; low?: boolean }) {
+function SchemaItem({ id, color, name, meta, low, detail }: { id: string; color: string; name: string; meta?: string; low?: boolean; detail?: boolean }) {
   return (
-    <li>
+    <li className={detail ? 'detail' : undefined}>
       <button onClick={() => openFeature(`atlas:${id}`)}>
         <span className="dot" style={{ background: color }} />
         <span className="item-name">
@@ -211,15 +213,121 @@ function SchemaItem({ id, color, name, meta, low }: { id: string; color: string;
   );
 }
 
-function SchemaBlock({ title, children, count }: { title: string; children: React.ReactNode; count: number }) {
-  return count ? (
-    <section className="item-section">
-      <h3>
-        {title} <span className="count">{count}</span>
-      </h3>
-      <ul className="items">{children}</ul>
+const CAT_COLOR: Record<FeatureCategory, string> = {
+  breezes: BREEZE_COLORS.valley,
+  convergences: COLORS.convergence,
+  hazards: COLORS.hazard,
+  takeoffs: COLORS.takeoff,
+  soaring: COLORS.soaring,
+  routes: COLORS.route,
+  thermals: COLORS.thermal,
+  landings: COLORS.landing,
+};
+
+const CAT_ONE: Record<FeatureCategory, string> = {
+  breezes: 'Brise',
+  convergences: 'Convergence',
+  hazards: 'Piège',
+  takeoffs: 'Déco',
+  soaring: 'Soaring',
+  routes: 'Itinéraire',
+  thermals: 'Thermique',
+  landings: 'Attéro',
+};
+
+/** Categories drawn as lines: always on the map, their names come with the zoom. */
+const LINES: FeatureCategory[] = ['breezes', 'convergences', 'routes'];
+
+const colorOf = (p: AtlasFeatureProps) => (p.category === 'breezes' ? (BREEZE_COLORS[p.kind ?? ''] ?? BREEZE_COLORS.valley) : CAT_COLOR[p.category]);
+
+/** One line on an item: the fact a pilot looks for first. */
+function metaOf(p: AtlasFeatureProps): string {
+  const d = p.details ?? {};
+  switch (p.category) {
+    case 'breezes':
+      return [ARROW_KIND[p.kind ?? ''], d.Trajet, p.speedKmh ? `${p.speedKmh} km/h` : '', d.Horaires].filter(Boolean).join(' · ');
+    case 'convergences':
+      return d.Quand ?? '';
+    case 'hazards':
+      return d.Conditions ?? '';
+    case 'takeoffs':
+      return [d.Orientation, d.Altitude].filter(Boolean).join(' · ');
+    case 'soaring':
+      return d.Vents ?? '';
+    case 'thermals':
+      return [d.Heures, d.Déclencheur].filter(Boolean).join(' · ');
+    case 'landings':
+      return d.Altitude ?? '';
+    case 'routes':
+      return [d.Distance, d.Points].filter(Boolean).join(' · ');
+  }
+}
+
+const byRank = (a: AtlasFeatureProps, b: AtlasFeatureProps) => (a.tier ?? 2) - (b.tier ?? 2) || (b.rank ?? 0) - (a.rank ?? 0);
+
+/** Sector whose revealed categories were last reset (a detail sheet in between keeps them). */
+let revealedFor: string | null = null;
+
+/**
+ * A category of the sector, folded: its count, what the map shows of it at massif scale,
+ * and « voir sur la carte » to draw it whole.
+ */
+function CategoryGroup({ cat, title, items, children, revealable = true }: { cat: FeatureCategory; title: string; items: AtlasFeatureProps[]; children?: React.ReactNode; revealable?: boolean }) {
+  const [open, setOpen] = useState(false);
+  const readability = useApp((s) => s.readability);
+  const revealed = useApp((s) => s.revealed.includes(cat));
+  if (!items.length && !children) return null;
+  // Hotspots known only from GPS tracks stay on the live map (the diagram draws documented items).
+  const drawn = items.filter((p) => p.origin !== 'kk7');
+  const measured = items.length - drawn.length;
+  const shown = shownAtMassifScale(
+    drawn.map((p) => p.tier),
+    readability,
+    revealed,
+  );
+  const hint =
+    (LINES.includes(cat)
+      ? shown < drawn.length
+        ? `${shown} nommée(s) à cette échelle`
+        : ''
+      : shown >= drawn.length
+        ? 'tout sur la carte'
+        : cat === 'thermals'
+          ? `${shown} sur la carte, ${drawn.length - shown} en pastilles`
+          : `${shown} sur la carte, ${drawn.length - shown} en zoomant`) + (measured ? ` · ${measured} point(s) chaud(s) mesuré(s), carte en direct` : '');
+  const toggleReveal = () => {
+    const s = useApp.getState();
+    s.set({ revealed: revealed ? s.revealed.filter((c) => c !== cat) : [...s.revealed, cat] });
+  };
+  return (
+    <section className={`item-section cat-group ${open ? 'open' : ''}`}>
+      <div className="group-head">
+        <button className="group-toggle" onClick={() => setOpen(!open)} aria-expanded={open}>
+          <i className="dot" style={{ background: CAT_COLOR[cat] }} />
+          <span className="group-title">
+            {title} <span className="count">{items.length}</span>
+            {hint && <small>{hint}</small>}
+          </span>
+          <IconChevron size={14} className="chev" />
+        </button>
+        {revealable && items.length > 0 && (
+          <button className={`chip reveal ${revealed ? 'active' : ''}`} aria-pressed={revealed} onClick={toggleReveal} title={revealed ? 'Revenir à la lisibilité choisie' : 'Dessiner toute la catégorie sur la carte, quel que soit le zoom'}>
+            {revealed ? 'Affichés' : 'Voir sur la carte'}
+          </button>
+        )}
+      </div>
+      {open && (
+        <>
+          {children}
+          <ul className="items">
+            {items.map((p) => (
+              <SchemaItem key={p.id} id={p.id} color={colorOf(p)} name={p.name} meta={metaOf(p)} low={p.confidence === 'low' && LINES.includes(p.category)} detail={p.tier === 3} />
+            ))}
+          </ul>
+        </>
+      )}
     </section>
-  ) : null;
+  );
 }
 
 /** All-in-one reading of a massif for a typical summer day, in sync with the schematic map. */
@@ -227,19 +335,36 @@ function SchemaPanel({ m, atlas }: { m: AtlasMassif; atlas: Atlas }) {
   const { schemaPhase, tourStep, schema3d, schemaWind, synopticFrom, synopticKmh, set } = useApp();
   const slot = SCHEMA_PHASES.find((p) => p.key === schemaPhase)!;
   const feats = useMemo(() => {
-    const get = (cat: FeatureCategory) => atlas.features[cat].filter((f) => f.properties.massif === m.id).map((f) => f.properties);
+    const get = (cat: FeatureCategory) =>
+      atlas.features[cat]
+        .filter((f) => f.properties.massif === m.id)
+        .map((f) => f.properties)
+        .sort(byRank);
     const [w, s, e, n] = m.bbox;
     // Transitions: cross-country routes of any sector that cross this one.
     const routes = atlas.features.routes
       .filter((f) => f.properties.massif === m.id || f.geometry.coordinates.some((c) => Array.isArray(c) && c[0] >= w && c[0] <= e && c[1] >= s && c[1] <= n))
-      .map((f) => f.properties);
+      .map((f) => f.properties)
+      .sort(byRank);
     // Breezes of neighbouring sectors that run along or into this one (they shape its day too).
     const pad = 0.05;
     const near = atlas.features.breezes
       .filter((f) => f.properties.massif !== m.id && f.properties.massif !== 'alpes-francaises' && f.geometry.coordinates.some((c) => Array.isArray(c) && c[0] >= w - pad && c[0] <= e + pad && c[1] >= s - pad && c[1] <= n + pad))
       .map((f) => f.properties);
-    return { near, breezes: get('breezes'), convergences: get('convergences'), thermals: get('thermals'), hazards: get('hazards'), takeoffs: get('takeoffs'), landings: get('landings'), soaring: get('soaring'), routes };
+    const own = { breezes: get('breezes'), convergences: get('convergences'), thermals: get('thermals'), hazards: get('hazards'), takeoffs: get('takeoffs'), landings: get('landings'), soaring: get('soaring') };
+    // The sector's essentials (tier 1), best first.
+    const essentials = Object.values(own)
+      .flat()
+      .filter((p) => p.tier === 1)
+      .sort(byRank);
+    return { near, ...own, routes, essentials };
   }, [atlas, m]);
+  useEffect(() => {
+    // A new sector starts from the chosen readability.
+    if (revealedFor === m.id) return;
+    revealedFor = m.id;
+    if (useApp.getState().revealed.length) set({ revealed: [] });
+  }, [m.id, set]);
   const active = feats.breezes.filter((b) => activeInSlot(b.windowStart, b.windowEnd, slot.hours));
   const other = feats.breezes.length - active.length;
   const nearActive = feats.near.filter((b) => activeInSlot(b.windowStart, b.windowEnd, slot.hours));
@@ -301,69 +426,48 @@ function SchemaPanel({ m, atlas }: { m: AtlasMassif; atlas: Atlas }) {
         <span>
           <i className="sw-line dotted" style={{ background: COLORS.route }} /> transition
         </span>
+        <span>
+          <i className="sw-bubble">3</i> thermiques regroupés : toucher pour déplier
+        </span>
       </div>
       {m.summary && <Summary text={m.summary} atlas={atlas} order={m.sources} />}
-      <SchemaBlock title={`Brises ${slot.label.toLowerCase()}`} count={active.length}>
-        {active.map((b) => (
-          <SchemaItem
-            key={b.id}
-            id={b.id}
-            color={BREEZE_COLORS[b.kind ?? ''] ?? BREEZE_COLORS.valley}
-            name={b.name}
-            meta={[ARROW_KIND[b.kind ?? ''], b.details?.Trajet, b.speedKmh ? `${b.speedKmh} km/h` : '', b.details?.Horaires].filter(Boolean).join(' · ')}
-            low={b.confidence === 'low'}
-          />
-        ))}
-      </SchemaBlock>
-      {!active.length && <p className="muted small">Aucune brise documentée sur ce créneau.</p>}
-      {other > 0 && <p className="muted small">{other} autre(s) brise(s) documentée(s) à d’autres heures : changez de créneau.</p>}
-      <SchemaBlock title="Brises des secteurs voisins" count={nearActive.length}>
-        {nearActive.map((b) => (
-          <SchemaItem
-            key={b.id}
-            id={b.id}
-            color={BREEZE_COLORS[b.kind ?? ''] ?? BREEZE_COLORS.valley}
-            name={b.name}
-            meta={[atlas.massifs.find((x) => x.id === b.massif)?.shortName, b.speedKmh ? `${b.speedKmh} km/h` : '', b.details?.Horaires].filter(Boolean).join(' · ')}
-            low={b.confidence === 'low'}
-          />
-        ))}
-      </SchemaBlock>
-      <SchemaBlock title="Convergences" count={feats.convergences.length}>
-        {feats.convergences.map((c) => (
-          <SchemaItem key={c.id} id={c.id} color={COLORS.convergence} name={c.name} meta={c.details?.Quand} low={c.confidence === 'low'} />
-        ))}
-      </SchemaBlock>
-      <SchemaBlock title="Thermiques connus" count={feats.thermals.length}>
-        {feats.thermals.map((t) => (
-          <SchemaItem key={t.id} id={t.id} color={COLORS.thermal} name={t.name} meta={[t.details?.Heures, t.details?.Déclencheur].filter(Boolean).join(' · ')} />
-        ))}
-      </SchemaBlock>
-      <SchemaBlock title="Pièges et dangers" count={feats.hazards.length}>
-        {feats.hazards.map((h) => (
-          <SchemaItem key={h.id} id={h.id} color={COLORS.hazard} name={h.name} meta={h.details?.Conditions} />
-        ))}
-      </SchemaBlock>
-      <SchemaBlock title="Décollages" count={feats.takeoffs.length}>
-        {feats.takeoffs.map((t) => (
-          <SchemaItem key={t.id} id={t.id} color={COLORS.takeoff} name={t.name} meta={[t.details?.Orientation, t.details?.Altitude].filter(Boolean).join(' · ')} />
-        ))}
-      </SchemaBlock>
-      <SchemaBlock title="Soaring" count={feats.soaring.length}>
-        {feats.soaring.map((t) => (
-          <SchemaItem key={t.id} id={t.id} color={COLORS.soaring} name={t.name} meta={t.details?.Vents} />
-        ))}
-      </SchemaBlock>
-      <SchemaBlock title="Atterrissages" count={feats.landings.length}>
-        {feats.landings.map((t) => (
-          <SchemaItem key={t.id} id={t.id} color={COLORS.landing} name={t.name} meta={t.details?.Altitude} />
-        ))}
-      </SchemaBlock>
-      <SchemaBlock title="Transitions et itinéraires de cross" count={feats.routes.length}>
-        {feats.routes.map((r) => (
-          <SchemaItem key={r.id} id={r.id} color={COLORS.route} name={r.name} meta={[r.details?.Distance, r.details?.Points].filter(Boolean).join(' · ')} />
-        ))}
-      </SchemaBlock>
+      {feats.essentials.length > 0 && (
+        <section className="item-section essentials">
+          <h3>L’essentiel</h3>
+          <ul className="items">
+            {feats.essentials.map((p) => (
+              <SchemaItem key={p.id} id={p.id} color={colorOf(p)} name={p.name} meta={[CAT_ONE[p.category], metaOf(p)].filter(Boolean).join(' · ')} />
+            ))}
+          </ul>
+        </section>
+      )}
+      <div className="readability-row">
+        <span className="muted small">Carte</span>
+        <ReadabilityControl compact />
+      </div>
+      {CATEGORY_ORDER.map((cat) => {
+        if (cat === 'breezes')
+          return (
+            <div key={cat}>
+              <CategoryGroup cat="breezes" title={`Brises ${slot.label.toLowerCase()}`} items={active}>
+                {!active.length && <p className="muted small">Aucune brise documentée sur ce créneau.</p>}
+                {other > 0 && <p className="muted small">{other} autre(s) brise(s) documentée(s) à d’autres heures : changez de créneau.</p>}
+              </CategoryGroup>
+              <CategoryGroup cat="breezes" title="Brises des secteurs voisins" items={nearActive} revealable={false} />
+            </div>
+          );
+        const titles: Record<FeatureCategory, string> = {
+          breezes: '',
+          convergences: 'Convergences',
+          hazards: 'Pièges et dangers',
+          takeoffs: 'Décollages',
+          soaring: 'Soaring',
+          routes: 'Transitions et itinéraires de cross',
+          thermals: 'Thermiques connus',
+          landings: 'Atterrissages',
+        };
+        return <CategoryGroup key={cat} cat={cat} title={titles[cat]} items={feats[cat]} />;
+      })}
       {m.synoptic.length > 0 && (
         <section className="item-section">
           <h3>Selon le vent météo</h3>

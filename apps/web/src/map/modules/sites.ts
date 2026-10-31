@@ -1,7 +1,10 @@
 /**
  * Take-offs and landings from external directories (FFVL official list,
  * OpenStreetMap, ParaglidingEarth), loaded for the visible area and merged.
- * Community entries that duplicate an official one (< 250 m) are hidden.
+ * Entries that duplicate an atlas take-off or landing, or (community ones) an
+ * official one, within ~250 m are hidden: the atlas's sheet says more. They
+ * appear from closer in as the map's readability asks (the atlas's essentials
+ * first): zoom 11 for « L'essentiel », 10 for « Détaillé », 9.5 for « Tout ».
  */
 import type { FlyingSite, SiteProvider } from '@brises/shared';
 import type { ExpressionSpecification } from 'maplibre-gl';
@@ -24,6 +27,8 @@ export class SitesModule implements MapModule {
   private abort: AbortController | null = null;
   private showOfficial = true;
   private showCommunity = true;
+  /** The atlas's own take-offs and landings (lon, lat), which these duplicate. */
+  private atlasPoints: Record<'takeoff' | 'landing', [number, number][]> = { takeoff: [], landing: [] };
 
   constructor(private providers: SiteProvider[]) {}
 
@@ -31,6 +36,8 @@ export class SitesModule implements MapModule {
     this.ctx = ctx;
     const { map } = ctx;
     map.addSource('ext-sites', { type: 'geojson', data: { type: 'FeatureCollection', features: [] } });
+    const pts = (list: { geometry: GeoJSON.Geometry }[]) => list.flatMap((f) => (f.geometry.type === 'Point' ? [f.geometry.coordinates as [number, number]] : []));
+    this.atlasPoints = { takeoff: pts(ctx.atlas.features.takeoffs ?? []), landing: pts(ctx.atlas.features.landings ?? []) };
     const official = ['==', ['get', 'status'], 'official'] as ExpressionSpecification;
     for (const kind of ['landing', 'takeoff'] as const)
       ctx.addLayer(
@@ -62,6 +69,11 @@ export class SitesModule implements MapModule {
   }
 
   apply(s: AppState, prev: AppState | null): void {
+    const map0 = this.ctx?.map;
+    if (map0 && (!prev || prev.readability !== s.readability)) {
+      const minzoom = s.readability === 'essentiel' ? 11 : s.readability === 'detaille' ? 10 : 9.5;
+      for (const id of this.clickableLayers) map0.setLayerZoomRange(id, minzoom, 24);
+    }
     if (prev && prev.layers.sitesOfficial === s.layers.sitesOfficial && prev.layers.sitesCommunity === s.layers.sitesCommunity) return;
     this.showOfficial = s.layers.sitesOfficial;
     this.showCommunity = s.layers.sitesCommunity;
@@ -121,6 +133,7 @@ export class SitesModule implements MapModule {
     const list = [...this.sites.entries()].filter(([, s]) => (s.status === 'official' ? this.showOfficial : this.showCommunity));
     const officials = list.filter(([, s]) => s.status === 'official').map(([, s]) => s);
     const near = (a: FlyingSite, b: FlyingSite) => Math.abs(a.lat - b.lat) < 0.0023 && Math.abs(a.lon - b.lon) < 0.0032;
+    const inAtlas = (s: FlyingSite) => this.atlasPoints[s.kind === 'landing' ? 'landing' : 'takeoff'].some(([lon, lat]) => Math.abs(lat - s.lat) < 0.0023 && Math.abs(lon - s.lon) < 0.0032);
     src.setData({
       type: 'FeatureCollection',
       features: list.map(([key, s]) => ({
@@ -132,7 +145,7 @@ export class SitesModule implements MapModule {
           status: s.status ?? 'community',
           name: s.name,
           ...(s.orientations?.length ? { orient: s.orientations.join(' ') } : {}),
-          dup: s.status !== 'official' && officials.some((o) => o.kind === s.kind && near(o, s)),
+          dup: inAtlas(s) || (s.status !== 'official' && officials.some((o) => o.kind === s.kind && near(o, s))),
         },
       })),
     });

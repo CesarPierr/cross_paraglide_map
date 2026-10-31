@@ -9,9 +9,10 @@
 import { isPhoneLayout, phonePadding } from '../viewport';
 import type { AtlasFeature, FeatureCategory } from '@brises/shared';
 import type { ExpressionSpecification, FilterSpecification, GeoJSONSource, Map as MlMap } from 'maplibre-gl';
-import { SCHEMA_PHASES, type AppState, type SchemaPhase } from '../../state/store';
+import { SCHEMA_PHASES, useRuntime, type AppState, type Readability, type SchemaPhase } from '../../state/store';
 import { BREEZE_COLORS, COLORS } from '../palette';
-import { shortLabel } from './knowledge';
+import { maxTierAt, zoomForTier } from '../tiers';
+import { shortLabel, sortProps, TIER_FONT, TIER_ICON, tierFilter } from './knowledge';
 import type { FeatureDetails, MapModule, ModuleContext } from './types';
 
 const LAYERS = [
@@ -23,6 +24,8 @@ const LAYERS = [
   'schema-conv-glow',
   'schema-conv',
   'schema-conv-point',
+  'schema-more',
+  'schema-more-count',
   'schema-points',
   'schema-breeze-label',
   'schema-route-label',
@@ -34,6 +37,9 @@ const LAYERS = [
 ] as const;
 /** The whole-Alps sector (large-scale breezes, convergences and routes). */
 const OVERVIEW = 'alpes-francaises';
+
+/** Points of the diagram (convergences are drawn as zones). */
+const SCHEMA_POINTS = ['all', ['==', ['geometry-type'], 'Point'], ['!=', ['get', 'category'], 'convergences']] as FilterSpecification;
 
 const PICK_LAYERS = ['schema-pick-fill', 'schema-pick-line', 'schema-pick-dot', 'schema-pick-label'] as const;
 
@@ -81,7 +87,7 @@ function addArrowImage(map: MlMap): void {
 
 export class SchemaModule implements MapModule {
   readonly id = 'schema';
-  readonly clickableLayers = ['schema-pick-fill', 'schema-pick-dot', 'schema-pick-label', 'schema-breeze', 'schema-conv-glow', 'schema-conv', 'schema-conv-point', 'schema-points', 'schema-routes'];
+  readonly clickableLayers = ['schema-pick-fill', 'schema-pick-dot', 'schema-pick-label', 'schema-breeze', 'schema-conv-glow', 'schema-conv', 'schema-conv-point', 'schema-more', 'schema-points', 'schema-routes'];
   private ctx: ModuleContext | null = null;
   private massif: string | null = null;
   private savedCamera: { center: [number, number]; zoom: number; pitch: number; bearing: number } | null = null;
@@ -91,6 +97,13 @@ export class SchemaModule implements MapModule {
   private zoomedOut = false;
   private touring = false;
   private threeD = false;
+  /** Progressive disclosure (see map/tiers.ts): tiers shown at this zoom, categories asked for, items read or shown by a visit step. */
+  private readability: Readability = 'essentiel';
+  private revealed: string[] = [];
+  private highlighted: string[] = [];
+  private focus: string[] = [];
+  private maxTier = 0;
+  private offRuntime: () => void = () => {};
 
   constructor(
     private describeAtlas: (id: string) => FeatureDetails | null,
@@ -106,6 +119,15 @@ export class SchemaModule implements MapModule {
     map.addSource('schema-veil', { type: 'geojson', data: empty });
     // Turn points of the route a visit step walks through, numbered in flying order.
     map.addSource('schema-route-pts', { type: 'geojson', data: empty });
+    // Thermals of the sector not drawn at this zoom: numbered bubbles, opened by a tap.
+    map.addSource('schema-more', {
+      type: 'geojson',
+      data: empty,
+      cluster: true,
+      clusterRadius: 90,
+      clusterMaxZoom: 14,
+      clusterProperties: { minTier: ['min', ['get', 'tier']], lon: ['+', ['get', 'lon']], lat: ['+', ['get', 'lat']] },
+    });
     const kindColor = ['match', ['get', 'kind'], ...Object.entries(BREEZE_COLORS).flat(), BREEZE_COLORS.valley] as unknown as ExpressionSpecification;
     // Neighbouring massifs stay visible for the transitions, but faded.
     const own = ['case', ['==', ['get', 'own'], true], 1, 0.35] as ExpressionSpecification;
@@ -217,26 +239,56 @@ export class SchemaModule implements MapModule {
     );
     ctx.addLayer(
       {
+        id: 'schema-more',
+        type: 'circle',
+        source: 'schema-more',
+        paint: {
+          'circle-radius': ['case', ['has', 'point_count'], ['step', ['get', 'point_count'], 10, 5, 12.5, 15, 15], 3.5],
+          'circle-color': ['case', ['has', 'point_count'], 'rgba(251,146,60,0.85)', 'rgba(251,146,60,0.6)'],
+          'circle-stroke-color': '#fff7ed',
+          'circle-stroke-width': ['case', ['has', 'point_count'], 1.6, 1],
+          'circle-pitch-alignment': 'viewport',
+        },
+      },
+      'labels',
+    );
+    ctx.addLayer(
+      {
+        id: 'schema-more-count',
+        type: 'symbol',
+        source: 'schema-more',
+        filter: ['has', 'point_count'],
+        layout: { 'text-field': ['to-string', ['get', 'point_count']], 'text-font': ['Noto Sans Bold'], 'text-size': 11, 'text-allow-overlap': true, 'text-ignore-placement': true },
+        paint: { 'text-color': '#431407' },
+      },
+      'labels',
+    );
+    const own1 = (t: ExpressionSpecification) => ['all', ['==', ['get', 'own'], true], t] as ExpressionSpecification;
+    const tier = ['coalesce', ['get', 'tier'], 2] as ExpressionSpecification;
+    ctx.addLayer(
+      {
         id: 'schema-points',
         type: 'symbol',
         source: 'schema',
-        filter: ['all', ['==', ['geometry-type'], 'Point'], ['!=', ['get', 'category'], 'convergences']],
+        filter: SCHEMA_POINTS,
         layout: {
           'icon-image': ['get', 'icon'],
-          'icon-size': ['case', ['==', ['get', 'own'], true], 1, 0.7],
+          'icon-size': ['*', ['case', ['==', ['get', 'own'], true], 1, 0.7], TIER_ICON],
           'icon-allow-overlap': true,
-          'text-field': ['case', ['==', ['get', 'own'], true], ['get', 'label'], ''],
-          'text-font': ['Noto Sans Regular'],
-          'text-size': 11.5,
+          // Names never overlap: the sector's essentials first, the others closer in.
+          'text-field': ['step', ['zoom'], ['case', own1(['==', tier, 1]), ['get', 'label'], ''], 10.5, ['case', own1(['<=', tier, 2]), ['get', 'label'], ''], 12, ['case', own1(['literal', true] as unknown as ExpressionSpecification), ['get', 'label'], '']],
+          'text-font': TIER_FONT,
+          'text-size': ['match', tier, 1, 12.5, 11.5],
           'text-offset': [0, 1.35],
           'text-anchor': 'top',
           'text-optional': true,
           'text-max-width': 11,
-          'symbol-sort-key': ['get', 'rank'],
+          'text-padding': 3,
+          'symbol-sort-key': ['get', 'sk'],
         },
         paint: { 'text-color': '#f8fafc', 'text-halo-color': 'rgba(2,6,23,0.95)', 'text-halo-width': 1.6, 'icon-opacity': own },
       },
-      'points',
+      'labels',
     );
     ctx.addLayer(
       {
@@ -246,6 +298,7 @@ export class SchemaModule implements MapModule {
         filter: ['all', isCat('breezes'), ['==', ['get', 'own'], true]],
         layout: {
           'symbol-placement': 'line-center',
+          'symbol-sort-key': ['get', 'sk'],
           'text-field': ['get', 'label'],
           'text-font': ['Noto Sans Bold'],
           'text-size': 12,
@@ -415,6 +468,45 @@ export class SchemaModule implements MapModule {
     };
     map.on('zoomend', onZoom);
     onZoom();
+    map.on('zoom', () => this.refreshTiers());
+    this.offRuntime = useRuntime.subscribe((r, p) => {
+      if (r.feature === p.feature) return;
+      const ref = r.feature?.ref;
+      this.focus = ref?.startsWith('atlas:') ? [ref.slice(6)] : [];
+      this.refreshTiers(true);
+    });
+  }
+
+  /**
+   * Shows the tiers due at this zoom: the sector's essentials at massif scale, the rest
+   * closer in or on demand; the thermals not shown yet gather in numbered bubbles.
+   */
+  private refreshTiers(force = false): void {
+    const map = this.ctx?.map;
+    if (!map || !this.massif) return;
+    const max = maxTierAt(map.getZoom(), this.readability, isPhoneLayout());
+    if (!force && max === this.maxTier) return;
+    this.maxTier = max;
+    const forced = [...this.focus, ...this.highlighted];
+    const shown = (cat: string) => tierFilter(max, this.revealed.includes(cat), forced);
+    map.setFilter('schema-points', ['all', SCHEMA_POINTS, ['any', ...['hazards', 'thermals', 'takeoffs', 'landings', 'soaring'].map((c) => ['all', ['==', ['get', 'category'], c], shown(c)])]] as unknown as FilterSpecification);
+    map.setFilter('schema-breeze-label', ['all', ['==', ['get', 'category'], 'breezes'], ['==', ['get', 'own'], true], shown('breezes')] as FilterSpecification);
+    map.setFilter('schema-route-label', ['all', ['==', ['get', 'category'], 'routes'], shown('routes')] as FilterSpecification);
+    const hidden = this.revealed.includes('thermals')
+      ? []
+      : this.ctx!.atlas.features.thermals.filter((f) => f.properties.massif === this.massif && f.properties.origin !== 'kk7' && (f.properties.tier ?? 2) > max && !forced.includes(f.properties.id));
+    (map.getSource('schema-more') as GeoJSONSource | undefined)?.setData({
+      type: 'FeatureCollection',
+      features: hidden.map((f) => ({
+        type: 'Feature',
+        geometry: f.geometry,
+        properties: { id: f.properties.id, name: f.properties.name, tier: f.properties.tier ?? 2, lon: f.geometry.coordinates[0], lat: f.geometry.coordinates[1] },
+      })) as GeoJSON.Feature[],
+    });
+  }
+
+  dispose(): void {
+    this.offRuntime();
   }
 
   private setPicking(on: boolean): void {
@@ -443,6 +535,17 @@ export class SchemaModule implements MapModule {
   }
 
   select(id: string, props: Record<string, unknown>): boolean {
+    // A bubble of thermals not shown yet: zoom in until they show (or the group splits).
+    if (props.cluster && this.massif) {
+      const map = this.ctx!.map;
+      const n = Number(props.point_count) || 1;
+      const center: [number, number] = [Number(props.lon) / n, Number(props.lat) / n];
+      const minTier = Number(props.minTier) || 2;
+      void (map.getSource('schema-more') as GeoJSONSource)
+        .getClusterExpansionZoom(Number(props.cluster_id))
+        .then((z) => map.easeTo({ center, zoom: Math.min(14, Math.max(z, zoomForTier(minTier, this.readability, isPhoneLayout())) + 0.05), duration: 700 }));
+      return true;
+    }
     if (!this.pickShown() || props.name === undefined || !this.ctx!.atlas.massifs.some((m) => m.id === id)) return false;
     this.pick(id);
     return true;
@@ -468,6 +571,11 @@ export class SchemaModule implements MapModule {
     }
     this.touring = s.tourStep !== null;
     this.refreshPick();
+    if (!prev || prev.readability !== s.readability || prev.revealed !== s.revealed) {
+      this.readability = s.readability;
+      this.revealed = s.revealed;
+      this.refreshTiers(true);
+    }
     if (prev && prev.schema3d !== s.schema3d && s.schemaMassif) {
       this.threeD = s.schema3d;
       map.easeTo({ pitch: s.schema3d ? 52 : 0, duration: 900 });
@@ -482,6 +590,7 @@ export class SchemaModule implements MapModule {
     this.massif = s.schemaMassif;
     this.refreshPick();
     this.render(s.schemaMassif, s.schemaPhase);
+    this.refreshTiers(true);
     this.setVisible(true);
     if (entering) {
       if (!this.savedCamera) {
@@ -544,6 +653,8 @@ export class SchemaModule implements MapModule {
         if (!own && (massifId === OVERVIEW || !inBox(f))) continue;
         // Hotspots known only from GPS tracks stay on the live map: the diagram teaches documented phenomena.
         if (p.origin === 'kk7') continue;
+        // Neighbours lend their lines only (the transitions): their points belong to their own page.
+        if (!own && f.geometry.type === 'Point') continue;
         if (cat === 'breezes' && !activeInSlot(p.windowStart, p.windowEnd, slot)) continue;
         // Routes: only the sector's own classic routes, not every cross passing by.
         if (cat === 'routes' && massifId !== OVERVIEW && !localRoutes.has(p.id)) continue;
@@ -568,7 +679,7 @@ export class SchemaModule implements MapModule {
             confidence: p.confidence ?? 'medium',
             icon: POINT_ICONS[cat] ?? 'hazard',
             own,
-            rank: { hazards: 0, thermals: 1, takeoffs: 2, soaring: 3, landings: 4 }[cat as string] ?? 5,
+            ...sortProps(f),
           },
         });
       }
@@ -600,6 +711,9 @@ export class SchemaModule implements MapModule {
   highlight(ids: string[]): void {
     const map = this.ctx?.map;
     if (!map || !map.getLayer('schema-hl-line')) return;
+    // What a visit step talks about is drawn whatever its tier.
+    this.highlighted = ids;
+    this.refreshTiers(true);
     const list = ['literal', ids];
     map.setFilter('schema-hl-line', ['in', ['get', 'id'], list] as unknown as FilterSpecification);
     map.setFilter('schema-hl-point', ['all', ['==', ['geometry-type'], 'Point'], ['in', ['get', 'id'], list]] as unknown as FilterSpecification);

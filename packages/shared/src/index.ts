@@ -1,5 +1,6 @@
 export * from './atlas';
 export * from './atlas-split';
+export * from './importance';
 export * from './contributions';
 export * from './labels';
 export * from './providers';

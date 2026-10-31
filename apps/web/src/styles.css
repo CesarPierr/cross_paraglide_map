@@ -4338,3 +4338,144 @@ div.summary {
 .probe-air .forecast-grid {
   grid-template-columns: repeat(2, 1fr);
 }
+
+/* ---------- Atlas readability: essentials, folded categories, bubbles ---------- */
+.essentials {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: rgba(56, 189, 248, 0.05);
+  padding: 2px 4px 4px;
+  margin-top: 14px;
+}
+
+.sheet .essentials h3 {
+  margin: 8px 6px 4px;
+  color: var(--accent);
+}
+
+.readability-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 12px 0 4px;
+}
+
+.readability-row .seg {
+  flex: 1;
+}
+
+.readability-hint {
+  margin: 6px 2px 0;
+}
+
+.cat-group {
+  border-bottom: 1px solid var(--border);
+}
+
+.group-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.group-toggle {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  text-align: left;
+  padding: 9px 4px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.group-title {
+  flex: 1;
+  min-width: 0;
+}
+
+.group-title small {
+  display: block;
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.cat-group:not(.open) .group-toggle .chev {
+  transform: rotate(-90deg);
+}
+
+.chip.reveal {
+  flex: none;
+  font-size: 11px;
+  padding: 3px 9px;
+}
+
+.cat-group .items {
+  margin-bottom: 8px;
+}
+
+.items li.detail .item-name {
+  color: var(--text-2);
+  font-weight: 400;
+}
+
+.sw-bubble {
+  display: inline-grid;
+  place-items: center;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 3px;
+  border-radius: 99px;
+  background: rgba(251, 146, 60, 0.85);
+  border: 1.5px solid #fff7ed;
+  color: #431407;
+  font-size: 10px;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.swatches i.sw-bubble {
+  width: auto;
+  height: 17px;
+  border-radius: 99px;
+}
+
+.swatches.glyphs {
+  display: grid;
+  gap: 5px;
+}
+
+.swatches i.glyph {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid #fff;
+  box-sizing: content-box;
+}
+
+.swatches i.glyph.big {
+  width: 14px;
+  height: 14px;
+}
+
+.swatches i.glyph.small {
+  width: 6px;
+  height: 6px;
+  opacity: 0.8;
+}
+
+@media (max-width: 860px) {
+  .group-toggle {
+    padding: 11px 4px;
+  }
+
+  .chip.reveal {
+    padding: 6px 10px;
+  }
+}

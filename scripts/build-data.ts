@@ -15,7 +15,7 @@ import type { CuratedBreezeInput, CuratedHazardInput } from '@brises/model';
 import type { BreezeCondition } from '@brises/shared';
 import type { Atlas, AtlasFeature, AtlasFeatureProps, AtlasFigure, AtlasMassif, AtlasSource, AtlasTourPlace, AtlasTourStep, FeatureCategory, ModelRule } from '@brises/shared';
 import { analyseTerrain, type Terrain } from '@brises/model';
-import { splitAtlas } from '@brises/shared';
+import { splitAtlas, stampImportance } from '@brises/shared';
 import { loadDem } from '@brises/model/node';
 import { integrateKk7, kk7Markdown, type Kk7Report } from './kk7';
 import { tileSectors } from './tessellation';
@@ -1311,6 +1311,10 @@ function main() {
   // Number the features (MapLibre feature-state needs numeric ids).
   let fid = 1;
   for (const cat of Object.keys(features) as FeatureCategory[]) for (const f of features[cat]) f.id = fid++;
+
+  // Importance of every item (packages/shared/src/importance.ts): the sector's essentials,
+  // the secondary, the detail; the map discloses them progressively.
+  stampImportance(features, { tours, figures, summaries: Object.fromEntries(massifs.map((m) => [m.id, m.summary])) });
 
   const atlas: Atlas = {
     generatedAt: new Date().toISOString(),

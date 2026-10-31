@@ -1,6 +1,65 @@
 import { BREEZE_COLORS, COLORS } from '../map/palette';
-import { useApp } from '../state/store';
+import { READABILITY_LABELS } from '../map/tiers';
+import { remember, useApp, type Readability } from '../state/store';
 import { KIND_LABELS } from './format';
+
+const READABILITY_HINTS: Record<Readability, string> = {
+  essentiel: 'À l’échelle d’un massif, ses éléments clés ; le reste vient en zoomant',
+  detaille: 'Aussi les éléments secondaires (décos, attéros, thermiques) dès l’échelle du massif',
+  tout: 'Tous les éléments, détail compris, à toutes les échelles',
+};
+
+/** How much of the atlas the map draws: the essentials, the detail, or everything (remembered in this browser). */
+export function ReadabilityControl({ compact = false }: { compact?: boolean }) {
+  const readability = useApp((s) => s.readability);
+  const pick = (r: Readability) => {
+    useApp.getState().set({ readability: r });
+    remember('brises.lisibilite', r);
+  };
+  return (
+    <div className={`seg ${compact ? 'small' : ''} readability`} role="radiogroup" aria-label="Lisibilité de la carte">
+      {(Object.keys(READABILITY_LABELS) as Readability[]).map((r) => (
+        <button key={r} className={readability === r ? 'on' : ''} role="radio" aria-checked={readability === r} title={READABILITY_HINTS[r]} onClick={() => pick(r)}>
+          {READABILITY_LABELS[r]}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+/** The readability control with what each level shows (Calques panel). */
+export function ReadabilityBlock() {
+  const readability = useApp((s) => s.readability);
+  return (
+    <>
+      <ReadabilityControl />
+      <p className="muted small readability-hint">{READABILITY_HINTS[readability]}. Chaque catégorie reste réglable ci-dessous.</p>
+    </>
+  );
+}
+
+/** How the atlas items are drawn: size by importance, bubbles of thermals. */
+export function GlyphLegend() {
+  return (
+    <div className="legend-block">
+      <h4>Points de l’atlas</h4>
+      <div className="swatches glyphs">
+        <span>
+          <i className="glyph big" style={{ background: COLORS.hazard }} /> grand symbole, nom en gras : l’essentiel du massif
+        </span>
+        <span>
+          <i className="glyph" style={{ background: COLORS.takeoff }} /> symbole moyen : secondaire, nommé en s’approchant
+        </span>
+        <span>
+          <i className="glyph small" style={{ background: COLORS.thermal }} /> petit symbole : détail (points chauds mesurés, sources fragiles)
+        </span>
+        <span>
+          <i className="sw-bubble">7</i> thermiques regroupés : toucher pour déplier
+        </span>
+      </div>
+    </div>
+  );
+}
 
 const SPEED_STOPS: [string, string][] = [
   ['#d1edff', '0'],
@@ -106,6 +165,7 @@ export function LegendBody() {
         </div>
       )}
       <OverlayLegend />
+      <GlyphLegend />
       {(layers.breezes || layers.comets) && (
         <div className="legend-block">
           <h4>Brises documentées</h4>

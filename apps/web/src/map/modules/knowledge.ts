@@ -4,26 +4,58 @@
  * massif labels.
  */
 import { isPhoneLayout } from '../viewport';
-import type { ExpressionSpecification, SymbolLayerSpecification } from 'maplibre-gl';
+import type { ExpressionSpecification, FilterSpecification, GeoJSONSource, SymbolLayerSpecification } from 'maplibre-gl';
 import type { AtlasFeature, FeatureCategory } from '@brises/shared';
 import { windowActivity } from '@brises/model';
-import type { AppState, LayerKey } from '../../state/store';
-import { CATEGORY_LABELS, CONFIDENCE_LABELS, KIND_LABELS } from '@brises/shared';
+import { useRuntime, type AppState, type LayerKey, type Readability } from '../../state/store';
+import { CATEGORY_LABELS, CONFIDENCE_LABELS, KIND_LABELS, ensureImportance } from '@brises/shared';
 import { EXPLAIN } from '../../glossary';
 import { BREEZE_COLORS, COLORS } from '../palette';
+import { maxTierAt, zoomForTier } from '../tiers';
 import { bboxOf, type FeatureDetails, type MapModule, type ModuleContext } from './types';
 
 const GROUPS: Partial<Record<LayerKey, string[]>> = {
   breezes: ['breezes-glow', 'breezes-core', 'breezes-core-low', 'breezes-arrows', 'breezes-hit', 'breezes-label'],
   convergences: ['convergences-zone', 'convergences-arrows', 'convergences-point'],
   hazards: ['hazards'],
-  thermals: ['thermals', 'thermals-measured'],
+  thermals: ['thermals', 'thermals-measured', 'thermals-cluster', 'thermals-single', 'thermals-cluster-count'],
   soaring: ['soaring'],
   takeoffs: ['takeoffs'],
   landings: ['landings'],
   routes: ['routes-line', 'routes-label'],
   labels: ['massif-labels'],
 };
+
+/** Point categories filtered by tier (lines are always drawn, lighter when secondary). */
+const POINT_LAYERS: [string, FeatureCategory, FilterSpecification | null][] = [
+  ['landings', 'landings', null],
+  ['soaring', 'soaring', null],
+  ['thermals', 'thermals', ['!=', ['get', 'origin'], 'kk7']],
+  ['thermals-measured', 'thermals', ['==', ['get', 'origin'], 'kk7']],
+  ['takeoffs', 'takeoffs', null],
+  ['hazards', 'hazards', null],
+  ['breezes-label', 'breezes', null],
+  ['routes-label', 'routes', null],
+];
+
+const tier = ['coalesce', ['get', 'tier'], 2] as ExpressionSpecification;
+/** Icon scale by tier: the essentials stand out, the detail stays discreet. */
+export const TIER_ICON = ['match', tier, 1, 1.15, 2, 0.88, 0.68] as ExpressionSpecification;
+/** Map label by tier and zoom: the essentials from massif scale, the rest closer in. */
+export const TIER_TEXT = (label: ExpressionSpecification = ['get', 'label']) =>
+  ['step', ['zoom'], ['case', ['==', tier, 1], label, ''], 10.5, ['case', ['<=', tier, 2], label, ''], 12, label] as ExpressionSpecification;
+export const TIER_FONT = ['case', ['==', tier, 1], ['literal', ['Noto Sans Bold']], ['literal', ['Noto Sans Regular']]] as ExpressionSpecification;
+
+/**
+ * Is the item drawn: its tier is shown at this zoom, its category was asked for (in the
+ * sector `massif` when given), or it is the one being read.
+ */
+export function tierFilter(maxTier: number, revealed: boolean, forced: string[], massif: string | null = null): ExpressionSpecification {
+  if (revealed && !massif) return ['literal', true] as unknown as ExpressionSpecification;
+  const base: ExpressionSpecification[] = [['<=', tier, maxTier], ['in', ['get', 'id'], ['literal', forced]]];
+  if (revealed && massif) base.push(['==', ['get', 'massif'], massif]);
+  return ['any', ...base] as ExpressionSpecification;
+}
 
 /** Short map label: no parenthetical, cut at a dash or comma, at most ~30 characters. */
 export function shortLabel(name: string): string {
@@ -34,19 +66,42 @@ export function shortLabel(name: string): string {
 
 export class KnowledgeModule implements MapModule {
   readonly id = 'atlas';
-  readonly clickableLayers = ['breezes-hit', 'convergences-zone', 'convergences-point', 'hazards', 'thermals', 'thermals-measured', 'soaring', 'takeoffs', 'landings', 'routes-line'];
+  readonly clickableLayers = ['breezes-hit', 'convergences-zone', 'convergences-point', 'hazards', 'thermals-cluster', 'thermals-single', 'thermals', 'thermals-measured', 'soaring', 'takeoffs', 'landings', 'routes-line'];
   private ctx: ModuleContext | null = null;
   private index = new Map<string, AtlasFeature>();
+  private readability: Readability = 'essentiel';
+  private revealed: FeatureCategory[] = [];
+  /** Sector whose page asked for whole categories (the live map never reveals a category across the Alps). */
+  private revealedIn: string | null = null;
+  /** Item open in the sheet: always drawn. */
+  private focus: string[] = [];
+  private maxTier = 0;
+  private phone = false;
+  private offRuntime: () => void = () => {};
 
   add(ctx: ModuleContext): void {
     this.ctx = ctx;
     const { map, atlas } = ctx;
+    // An atlas compiled before the ranking gets it now.
+    ensureImportance(atlas);
+    this.phone = isPhoneLayout();
     for (const list of Object.values(atlas.features)) for (const f of list) this.index.set(f.properties.id, f);
     for (const cat of Object.keys(atlas.features) as FeatureCategory[]) {
-      // Map labels use a short name; the full one stays in the sheet.
-      const features = atlas.features[cat].map((f) => ({ ...f, properties: { ...f.properties, label: shortLabel(f.properties.name) } }));
+      // Map labels use a short name; the full one stays in the sheet. `sk` orders the
+      // collisions: the essentials keep their label, the best-ranked first.
+      const features = atlas.features[cat].map((f) => ({ ...f, properties: { ...f.properties, label: shortLabel(f.properties.name), ...sortProps(f) } }));
       map.addSource(cat, { type: 'geojson', data: { type: 'FeatureCollection', features } as GeoJSON.FeatureCollection });
     }
+    // Thermals not drawn at this zoom gather in numbered bubbles (refreshed when the shown tiers change).
+    map.addSource('thermals-more', {
+      type: 'geojson',
+      data: { type: 'FeatureCollection', features: [] },
+      cluster: true,
+      // Wider than in a massif page: the live map shows several sectors at once.
+      clusterRadius: 120,
+      clusterMaxZoom: 14,
+      clusterProperties: { minTier: ['min', ['get', 'tier']], lon: ['+', ['get', 'lon']], lat: ['+', ['get', 'lat']] },
+    });
     map.addSource('massif-labels', {
       type: 'geojson',
       data: {
@@ -67,7 +122,7 @@ export class KnowledgeModule implements MapModule {
         type: 'line',
         source: 'routes',
         layout: { 'line-cap': 'round', 'line-join': 'round' },
-        paint: { 'line-color': COLORS.route, 'line-width': ['interpolate', ['linear'], ['zoom'], 7, 1.5, 12, 3], 'line-dasharray': [2, 2], 'line-opacity': 0.9 },
+        paint: { 'line-color': COLORS.route, 'line-width': ['interpolate', ['linear'], ['zoom'], 7, 1, 12, 3], 'line-dasharray': [2, 2], 'line-opacity': ['interpolate', ['linear'], ['zoom'], 8, 0.45, 11, 0.9] },
       },
       'lines',
     );
@@ -81,7 +136,7 @@ export class KnowledgeModule implements MapModule {
           'line-color': kindColor,
           'line-width': ['interpolate', ['linear'], ['zoom'], 6, ['*', 0.25, ['get', 'speedKmh']], 12, ['*', 1.1, ['get', 'speedKmh']]],
           'line-blur': ['interpolate', ['linear'], ['zoom'], 6, 3, 12, 12],
-          'line-opacity': ['*', 0.28, active, conf],
+          'line-opacity': lighter(['*', 0.28, active, conf]),
         },
       },
       'lines',
@@ -101,7 +156,7 @@ export class KnowledgeModule implements MapModule {
           paint: {
             'line-color': kindColor,
             'line-width': ['interpolate', ['linear'], ['zoom'], 6, 1, 12, 2.5],
-            'line-opacity': ['*', 0.75, active, conf],
+            'line-opacity': lighter(['*', 0.75, active, conf]),
             ...(low ? { 'line-dasharray': [2, 2] } : {}),
           },
         },
@@ -121,7 +176,7 @@ export class KnowledgeModule implements MapModule {
           'icon-rotation-alignment': 'map',
           'icon-pitch-alignment': 'map',
         },
-        paint: { 'icon-opacity': ['*', active, conf] },
+        paint: { 'icon-opacity': lighter(['*', active, conf]) },
       },
       'lines',
     );
@@ -140,7 +195,7 @@ export class KnowledgeModule implements MapModule {
           'line-color': COLORS.convergence,
           'line-width': ['interpolate', ['exponential', 1.6], ['zoom'], 6, 8, 9, 22, 12, 70],
           'line-blur': ['interpolate', ['exponential', 1.6], ['zoom'], 6, 5, 9, 12, 12, 34],
-          'line-opacity': ['*', 0.5, ['+', 0.25, ['*', 0.75, convActive]]] as never,
+          'line-opacity': lighter(['*', 0.5, ['+', 0.25, ['*', 0.75, convActive]]] as unknown as ExpressionSpecification),
         },
       },
       'lines',
@@ -184,63 +239,109 @@ export class KnowledgeModule implements MapModule {
     );
 
     // A phone shows the same zoom on a screen four times smaller: points come in a little later there.
-    const later = isPhoneLayout() ? 0.8 : 0;
-    const point = (id: FeatureCategory, icon: string, minzoom: number, extra: Partial<NonNullable<SymbolLayerSpecification['layout']>> = {}) =>
+    const later = this.phone ? 0.8 : 0;
+    const point = (id: FeatureCategory, icon: string, extra: Partial<NonNullable<SymbolLayerSpecification['layout']>> = {}) =>
       ctx.addLayer(
         {
           id,
           type: 'symbol',
           source: id,
-          minzoom: minzoom + later,
+          minzoom: 8.8 + later,
           layout: {
             'icon-image': icon,
-            'icon-size': ['interpolate', ['linear'], ['zoom'], 7, 0.55, 12, 0.95],
+            'icon-size': ['interpolate', ['linear'], ['zoom'], 7, ['*', 0.55, TIER_ICON], 12, ['*', 0.95, TIER_ICON]],
             'icon-allow-overlap': true,
-            'text-field': ['step', ['zoom'], '', 10.5, ['get', 'label']],
-            'text-font': ['Noto Sans Regular'],
-            'text-size': 11,
+            // Labels never overlap: the essentials and the best-ranked keep theirs.
+            'text-field': TIER_TEXT(),
+            'text-font': TIER_FONT,
+            'text-size': ['match', tier, 1, 12, 11],
             'text-offset': [0, 1.3],
             'text-anchor': 'top',
             'text-optional': true,
             'text-max-width': 10,
+            'text-padding': 3,
+            'symbol-sort-key': ['get', 'sk'],
             ...extra,
           },
           paint: { 'text-color': '#ffffff', 'text-halo-color': 'rgba(15,23,42,0.9)', 'text-halo-width': 1.3 },
         },
-        'points',
+        'labels',
       );
-    // Hundreds of items: they appear as one zooms in, so the overview stays readable.
-    point('landings', 'landing', 10);
-    point('soaring', 'soaring', 9.5);
-    point('thermals', 'thermal', 9);
-    // Hotspots known only from GPS tracks (kk7): smaller, unlabelled, from closer in.
-    ctx.map.setFilter('thermals', ['!=', ['get', 'origin'], 'kk7']);
+    // Thousands of items: the essentials show at massif scale, the rest as one zooms in (see map/tiers.ts).
+    // In the top slot: placed before the directory sites' icons, which would otherwise take their names' room.
+    point('landings', 'landing');
+    point('soaring', 'soaring');
+    // Thermals not shown yet: one bubble per group, with their number; a tap opens it.
+    ctx.addLayer(
+      {
+        id: 'thermals-cluster',
+        type: 'circle',
+        source: 'thermals-more',
+        minzoom: 8.8 + later,
+        filter: ['has', 'point_count'],
+        paint: {
+          'circle-radius': ['step', ['get', 'point_count'], 10, 5, 12.5, 15, 15],
+          'circle-color': 'rgba(251,146,60,0.82)',
+          'circle-stroke-color': '#fff7ed',
+          'circle-stroke-width': 1.6,
+          'circle-pitch-alignment': 'viewport',
+        },
+      },
+      'labels',
+    );
+    // A lone thermal not shown yet: a small dot, from valley scale (the overview keeps to the bubbles).
+    ctx.addLayer(
+      {
+        id: 'thermals-single',
+        type: 'circle',
+        source: 'thermals-more',
+        minzoom: 10.5 + later,
+        filter: ['!', ['has', 'point_count']],
+        paint: { 'circle-radius': 3.5, 'circle-color': 'rgba(251,146,60,0.6)', 'circle-stroke-color': 'rgba(255,247,237,0.7)', 'circle-stroke-width': 1, 'circle-pitch-alignment': 'viewport' },
+      },
+      'labels',
+    );
+    ctx.addLayer(
+      {
+        id: 'thermals-cluster-count',
+        type: 'symbol',
+        source: 'thermals-more',
+        minzoom: 8.8 + later,
+        filter: ['has', 'point_count'],
+        layout: { 'text-field': ['to-string', ['get', 'point_count']], 'text-font': ['Noto Sans Bold'], 'text-size': 11, 'text-allow-overlap': true, 'text-ignore-placement': true },
+        paint: { 'text-color': '#431407' },
+      },
+      'labels',
+    );
+    point('thermals', 'thermal');
+    // Hotspots known only from GPS tracks (kk7): smaller, detail (tier 3).
     ctx.addLayer(
       {
         id: 'thermals-measured',
         type: 'symbol',
         source: 'thermals',
-        minzoom: 10.5 + later,
+        minzoom: 8.8 + later,
         filter: ['==', ['get', 'origin'], 'kk7'],
         layout: { 'icon-image': 'thermal', 'icon-size': ['interpolate', ['linear'], ['zoom'], 10.5, 0.42, 13, 0.7], 'icon-allow-overlap': true, 'symbol-sort-key': ['-', 1, ['get', 'kk7P']] },
         paint: { 'icon-opacity': 0.72 },
       },
-      'points',
+      'labels',
     );
-    point('takeoffs', 'takeoff', 9.5);
-    point('hazards', 'hazard', 10);
+    point('takeoffs', 'takeoff');
+    point('hazards', 'hazard');
 
     ctx.addLayer(
       {
         id: 'breezes-label',
         type: 'symbol',
         source: 'breezes',
-        minzoom: 10,
+        minzoom: 9,
         layout: {
           'symbol-placement': 'line-center',
-          'text-field': ['concat', ['get', 'label'], '  ', ['to-string', ['get', 'speedKmh']], ' km/h'],
+          'text-field': TIER_TEXT(['concat', ['get', 'label'], '  ', ['to-string', ['get', 'speedKmh']], ' km/h'] as ExpressionSpecification),
           'text-font': ['Noto Sans Bold'],
           'text-size': 11,
+          'symbol-sort-key': ['get', 'sk'],
           'text-offset': [0, -1.1],
           'text-max-angle': 30,
         },
@@ -254,7 +355,7 @@ export class KnowledgeModule implements MapModule {
         type: 'symbol',
         source: 'routes',
         minzoom: 9,
-        layout: { 'symbol-placement': 'line-center', 'text-field': ['get', 'label'], 'text-font': ['Noto Sans Italic'], 'text-size': 11, 'text-offset': [0, -1] },
+        layout: { 'symbol-placement': 'line-center', 'text-field': TIER_TEXT(), 'text-font': ['Noto Sans Italic'], 'text-size': 11, 'text-offset': [0, -1], 'symbol-sort-key': ['get', 'sk'] },
         paint: { 'text-color': '#fef3c7', 'text-halo-color': 'rgba(30,20,0,0.85)', 'text-halo-width': 1.3 },
       },
       'labels',
@@ -277,11 +378,66 @@ export class KnowledgeModule implements MapModule {
       },
       'labels',
     );
+    // The shown tiers follow the zoom; filters change only when a threshold is crossed.
+    map.on('zoom', () => this.refresh());
+    this.offRuntime = useRuntime.subscribe((r, p) => {
+      if (r.feature === p.feature) return;
+      const ref = r.feature?.ref;
+      this.focus = ref?.startsWith('atlas:') ? [ref.slice(6)] : [];
+      this.refresh(true);
+    });
+    this.refresh(true);
+  }
+
+  /** Applies the tiers shown at this zoom (and the categories asked for) to the point layers and the thermal bubbles. */
+  private refresh(force = false): void {
+    const map = this.ctx?.map;
+    if (!map) return;
+    const max = maxTierAt(map.getZoom(), this.readability, this.phone);
+    if (!force && max === this.maxTier) return;
+    this.maxTier = max;
+    for (const [id, cat, base] of POINT_LAYERS) {
+      const f = tierFilter(max, !!this.revealedIn && this.revealed.includes(cat), this.focus, this.revealedIn);
+      map.setFilter(id, (base ? ['all', base, f] : f) as FilterSpecification);
+    }
+    const open = this.revealedIn && this.revealed.includes('thermals') ? this.revealedIn : null;
+    const hidden = this.ctx!.atlas.features.thermals.filter((f) => (f.properties.tier ?? 2) > max && !this.focus.includes(f.properties.id) && f.properties.massif !== open);
+    (map.getSource('thermals-more') as GeoJSONSource).setData({
+      type: 'FeatureCollection',
+      features: hidden.map((f) => ({
+        type: 'Feature',
+        geometry: f.geometry,
+        properties: { id: f.properties.id, name: f.properties.name, tier: f.properties.tier ?? 2, lon: f.geometry.coordinates[0], lat: f.geometry.coordinates[1] },
+      })) as GeoJSON.Feature[],
+    });
+  }
+
+  /** A bubble of hidden thermals opens on a tap: zoom in until they show (or the group splits). */
+  select(_id: string, props: Record<string, unknown>): boolean {
+    if (!props.cluster) return false;
+    const map = this.ctx!.map;
+    const n = Number(props.point_count) || 1;
+    const center: [number, number] = [Number(props.lon) / n, Number(props.lat) / n];
+    const minTier = Number(props.minTier) || 2;
+    void (map.getSource('thermals-more') as GeoJSONSource)
+      .getClusterExpansionZoom(Number(props.cluster_id))
+      .then((z) => map.easeTo({ center, zoom: Math.min(14, Math.max(z, zoomForTier(minTier, this.readability, this.phone)) + 0.05), duration: 700 }));
+    return true;
+  }
+
+  dispose(): void {
+    this.offRuntime();
   }
 
   apply(s: AppState, prev: AppState | null): void {
     const map = this.ctx?.map;
     if (!map) return;
+    if (!prev || prev.readability !== s.readability || prev.revealed !== s.revealed || prev.selectedMassif !== s.selectedMassif) {
+      this.readability = s.readability;
+      this.revealed = s.revealed;
+      this.revealedIn = s.selectedMassif;
+      this.refresh(true);
+    }
     if (!prev || prev.layers !== s.layers)
       for (const [key, ids] of Object.entries(GROUPS) as [LayerKey, string[]][])
         if (!prev || prev.layers[key] !== s.layers[key]) for (const id of ids) map.setLayoutProperty(id, 'visibility', s.layers[key] ? 'visible' : 'none');
@@ -316,6 +472,7 @@ export class KnowledgeModule implements MapModule {
     const badges: FeatureDetails['badges'] = [];
     if (p.kind && KIND_LABELS[p.kind]) badges.push({ label: KIND_LABELS[p.kind], tone: 'info' });
     if (p.confidence) badges.push({ label: CONFIDENCE_LABELS[p.confidence], tone: p.confidence === 'high' ? 'ok' : p.confidence === 'medium' ? 'warn' : 'bad' });
+    if (p.tier === 1) badges.push({ label: 'Essentiel du secteur', tone: 'info' });
     return {
       ref: `${this.id}:${id}`,
       category: CATEGORY_LABELS[p.category],
@@ -335,4 +492,15 @@ export class KnowledgeModule implements MapModule {
       explain: (p.kind && EXPLAIN[p.kind]) || EXPLAIN[p.category],
     };
   }
+}
+
+/** Sort key of an item for the label collisions: essentials first, then by rank. */
+export function sortProps(f: AtlasFeature): { tier: number; sk: number } {
+  const t = f.properties.tier ?? 2;
+  return { tier: t, sk: t * 1000 - (f.properties.rank ?? 0) };
+}
+
+/** Secondary lines are lighter at massif scale and reach full strength closer in. */
+function lighter(base: ExpressionSpecification): ExpressionSpecification {
+  return ['interpolate', ['linear'], ['zoom'], 8, ['*', base, ['match', tier, 1, 1, 0.45]], 11, ['*', base, ['match', tier, 1, 1, 0.85]], 12.5, base] as ExpressionSpecification;
 }

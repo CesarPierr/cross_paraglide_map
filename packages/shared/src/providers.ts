@@ -18,6 +18,18 @@ export interface SynopticWind {
   levels?: Record<string, [number, number]>;
   /** Temperature lapse rate between 850 and 700 hPa (K/km): stability of the air at ridge level. */
   lapseRate?: number;
+  /**
+   * The air by layer at this hour (bottom → top): wind, temperature, dew point and
+   * geopotential height of each pressure level (950 → 500 hPa), when the provider has them.
+   */
+  profile?: ProfileLevel[];
+  /** Altitude of the forecast ground (m), 2 m temperature and dew point there (°C). */
+  groundM?: number;
+  temperature2m?: number;
+  dewpoint2m?: number;
+  /** Low and mid cloud cover (%). */
+  cloudCoverLow?: number;
+  cloudCoverMid?: number;
 }
 
 /** One pressure level of a forecast sounding. */

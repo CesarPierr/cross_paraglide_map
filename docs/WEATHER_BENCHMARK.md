@@ -532,6 +532,7 @@ flowchart LR
 | B. Indices convectifs | `icon_d2` | `cape, convective_inhibition, freezing_level_height, convective_cloud_base, convective_cloud_top, updraft, lightning_potential` | **1,0** |
 | C. Couche limite | `ecmwf_ifs` | `boundary_layer_height, convective_inhibition` | **1,0** |
 | S. Vent synoptique (grille 0,25°, 13 × 12 = 156 points) | `meteofrance_seamless` | Vent à 850, 800, 750, 700 et 650 hPa (10 variables) | 1,0 × 156 = **156 par rafraîchissement** |
+| L. Air par couches au centre de la vue (implémenté, § 10.1 bis) | `meteofrance_seamless` | 9 niveaux 950 → 500 hPa × {T, Td, vent force, direction, Z} + T2m, Td2m, nébulosités basse et moyenne (49 variables) | **4,9 par maille de 0,25° et par run** |
 
 **Ne jamais regrouper plusieurs modèles dans un même `models=`** : cela multiplie le coût
 (§1.2).
@@ -671,6 +672,37 @@ https://api.open-meteo.com/v1/forecast?latitude=45.90&longitude=6.40&models=mete
 Repères d'altitude en atmosphère standard : 850 ≈ 1 450 m, 800 ≈ 1 950 m, 750 ≈ 2 450 m,
 700 ≈ 3 000 m, 650 ≈ 3 600 m. Le « vent de crête » est la moyenne **vectorielle**
 800–700 hPa.
+
+**10.1 bis Air par couches au centre de la vue** (implémenté : `/api/weather/synoptic`,
+`SYNOPTIC_VARIABLES` dans `packages/shared/src/open-meteo.ts`)
+
+Une seule requête par maille de 0,25° et par run, qui remplace celle du vent des crêtes :
+9 niveaux (950, 925, 900, 850, 800, 750, 700, 600, 500 hPa) × 5 grandeurs (température, point
+de rosée, force et direction du vent, altitude géopotentielle) + 4 variables de surface
+(température et rosée à 2 m, nébulosités basse et moyenne) = **49 variables, poids 4,9** par
+maille (au lieu de 1,0 avec les 8 variables 850/700 hPa d'avant). `meteofrance_seamless`
+(AROME puis ARPEGE pour le troisième jour), `forecast_days=3` (sous 14 jours : pas de surcoût).
+Le vent des crêtes (moyenne vectorielle 850/700 hPa) et le gradient 850–700 hPa se calculent
+dans la même réponse.
+
+```
+https://api.open-meteo.com/v1/forecast?latitude=45.25&longitude=5.75&models=meteofrance_seamless&cell_selection=nearest&wind_speed_unit=kmh&timezone=Europe/Paris&forecast_days=3&hourly=temperature_2m,dew_point_2m,cloud_cover_low,cloud_cover_mid,temperature_950hPa,dew_point_950hPa,wind_speed_950hPa,wind_direction_950hPa,geopotential_height_950hPa,…(idem 925, 900, 850, 800, 750, 700, 600, 500 hPa)
+```
+
+Impact sur le quota (cache par maille et par run, clé `wx:syn2:` : les entrées d'avant les
+couches ne sont plus servies) :
+
+| Usage | Avant (poids 1) | Avec les couches (poids 4,9) |
+|---|---|---|
+| Une maille consultée à chaque run de jour (5 runs AROME de 06 à 21 h) | 5 / jour | 24,5 / jour |
+| 30 mailles distinctes par run (usage courant : vues des pilotes, décollages du jeu) | 150 / jour | 735 / jour |
+| Pire cas : les 156 mailles des Alpes à chacun des 8 runs | 1 248 / jour | 6 115 / jour |
+
+Le pire cas reste sous le budget de l'API (`WEATHER_DAILY_BUDGET`, 8 000 en développement)
+mais en prend l'essentiel : le profil d'un point (sonde, poids 6,6) passe alors après. Mesuré
+en local : un appel `/api/weather/synoptic` compte 4,9 dans `/api/usage`. Si le budget se tend,
+retirer les points de rosée de 600 et 500 hPa et la nébulosité moyenne (poids 4,6), ou servir la
+même maille à 0,5° (quatre fois moins de mailles).
 
 **10.2 Grille synoptique sur les Alpes**
 

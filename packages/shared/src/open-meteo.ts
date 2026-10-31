@@ -2,8 +2,9 @@
  * Open-Meteo forecast (free, keyless, CORS-enabled; CC BY 4.0 — attribution
  * "Weather data by Open-Meteo.com" required next to the data).
  *
- * - Synoptic input: wind at 850 hPa (~1500 m) and 700 hPa (~3000 m) from the
- *   Météo-France AROME/ARPEGE blend, averaged as vectors → ridge-level wind.
+ * - Synoptic input: the air by layer (950 → 500 hPa: wind, temperature, dew point,
+ *   geopotential height; low and mid clouds) from the Météo-France AROME/ARPEGE blend,
+ *   and the ridge-level wind, vector mean of 850 hPa (~1500 m) and 700 hPa (~3000 m).
  * - Point forecast: temperature / dew point (cumulus base estimate), boundary
  *   layer height, CAPE, low clouds, freezing level.
  */
@@ -90,6 +91,17 @@ export function lapseRate(t850: number, t700: number, z850?: number | null, z700
 const WIND_VARS = ['wind_speed_850hPa', 'wind_direction_850hPa', 'wind_speed_700hPa', 'wind_direction_700hPa'];
 const STABILITY_VARS = ['temperature_850hPa', 'temperature_700hPa', 'geopotential_height_850hPa', 'geopotential_height_700hPa'];
 
+/**
+ * Pressure levels of the layered synoptic input (≈ 550 m → 5700 m), all in AROME 2.5 km
+ * and ARPEGE (the seamless blend fills the third day with ARPEGE).
+ */
+export const AIR_LEVELS = [950, 925, 900, 850, 800, 750, 700, 600, 500];
+const AIR_SURFACE_VARS = ['temperature_2m', 'dew_point_2m', 'cloud_cover_low', 'cloud_cover_mid'];
+/** Variables of the synoptic request: 9 levels × 5 + 4 surface = 49, weight 4.9 per location. */
+export const SYNOPTIC_VARIABLES = [...AIR_SURFACE_VARS, ...AIR_LEVELS.flatMap((l) => LEVEL_VARS.map((v) => `${v}_${l}hPa`))];
+/** Weighted Open-Meteo calls of one synoptic request (one location, three days). */
+export const SYNOPTIC_COST = callCost(SYNOPTIC_VARIABLES.length);
+
 export const openMeteo: WeatherProvider = {
   id: 'open-meteo',
   label: 'Open-Meteo (AROME/ARPEGE)',
@@ -100,7 +112,7 @@ export const openMeteo: WeatherProvider = {
       {
         latitude: lat.toFixed(3),
         longitude: lon.toFixed(3),
-        hourly: [...WIND_VARS, ...STABILITY_VARS].join(','),
+        hourly: SYNOPTIC_VARIABLES.join(','),
         models: 'meteofrance_seamless',
         cell_selection: 'nearest',
         wind_speed_unit: 'kmh',
@@ -117,6 +129,18 @@ export const openMeteo: WeatherProvider = {
       const w = ridgeWind(t, s8, d8, s7, d7);
       const [t8, t7, z8, z7] = STABILITY_VARS.map((k) => h[k]?.[i]);
       if (t8 != null && t7 != null) w.lapseRate = lapseRate(t8, t7, z8, z7);
+      // The air by layer: every level with its wind, temperature and height.
+      w.profile = AIR_LEVELS.flatMap((l): ProfileLevel[] => {
+        const [T, td, ws, wd, z] = LEVEL_VARS.map((v) => h[`${v}_${l}hPa`]?.[i]);
+        if (T == null || ws == null || wd == null || z == null) return [];
+        return [{ pressure: l, heightM: Math.round(z), temperature: T, dewpoint: td ?? undefined, windFromDeg: wd, windKmh: ws }];
+      });
+      w.groundM = j.elevation;
+      const [t2, td2, cl, cm] = AIR_SURFACE_VARS.map((k) => h[k]?.[i]);
+      if (t2 != null) w.temperature2m = t2;
+      if (td2 != null) w.dewpoint2m = td2;
+      if (cl != null) w.cloudCoverLow = cl;
+      if (cm != null) w.cloudCoverMid = cm;
       out.push(w);
     });
     return out;

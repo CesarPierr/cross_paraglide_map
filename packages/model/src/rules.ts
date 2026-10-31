@@ -254,4 +254,45 @@ export const RULES = {
   waterContrast: [0.3, 0.6, 1.2, 1.3, 1.3, 1.2, 1.0, 0.9, 0.6, 0.45, 0.25, 0.2],
   /** Lake/sea breeze schedule (solar hours). */
   waterSchedule: [9, 11.5, 17, 19.5] as [number, number, number, number],
+  /**
+   * Layered air mass (`ModelParams.air`, air.ts): the forecast sounding (AROME/ARPEGE
+   * pressure levels) or a manual preset. The synoptic wind becomes a function of altitude
+   * (linear interpolation between levels, held below the lowest and above the highest),
+   * and the thermals and breezes stop at the top of the convective layer.
+   * - `parcelExcess` (K): a thermal is that much warmer than the air at its ground; it rises
+   *   along the dry adiabat (`dryLapse`, K/km) until it meets the sounding: the dry thermal
+   *   top. Cumulus base: Espy's rule, `espyMPerK` metres per K of dew-point spread at the
+   *   ground; the ceiling is the lower of the two (as in packages/shared weather.ts).
+   * - Below the lowest level the temperature follows the lowest layer, its lapse rate
+   *   clamped to `extrapLapse` (K/km); the dew point keeps its mixing ratio
+   *   (`dewLapse`, K/km). Above the highest level, the highest layer, clamped to [0, dry].
+   * - Thermals × (depth of the convective layer / `depthRef`)^(1/3) (Deardorff's w*), at
+   *   most `depthMax`, and fade over `topFade` m under the ceiling.
+   * - By day, the breezes fade over `capFade` m above the ceiling: a stable layer caps the
+   *   valley-wind layer (Whiteman 2000). Not at night (katabatic flows live in stable air).
+   * - Cloud: the sunshine that drives the breezes and thermals is × (1 − 0.75 N^3.4), N the
+   *   low and mid cloud cover 0..1 (Kasten & Czeplak 1980).
+   * - `stableLapse`, `inversionLapse` (K/km): a layer below is read as stable (it blocks the
+   *   thermals) or as an inversion (the temperature does not decrease).
+   * Manual presets (`presetAir`): a mixed layer (`mixedLapse`) up to `mixTop`, a capping
+   * layer `capDepth` m thick, then the free air; an explicit inversion caps the mixed layer
+   * at its altitude (+`inversionK`) and the wind below it is × `shelteredWind`.
+   */
+  air: {
+    parcelExcess: 1.5,
+    dryLapse: 9.8,
+    espyMPerK: 125,
+    extrapLapse: [-5, 9.8] as [number, number],
+    dewLapse: 1.8,
+    depthRef: 800,
+    depthMax: 1.15,
+    topFade: 200,
+    capFade: 300,
+    stableLapse: 3,
+    inversionLapse: 0.5,
+    mixedLapse: 9.3,
+    capDepth: 200,
+    inversionK: 2,
+    shelteredWind: 0.3,
+  },
 };

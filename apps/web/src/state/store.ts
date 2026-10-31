@@ -1,3 +1,4 @@
+import type { AirColumn, StabilityPreset } from '@brises/model';
 import type { Atlas, ContributionInput, SynopticWind } from '@brises/shared';
 import { create } from 'zustand';
 import type { Level } from '../glossary';
@@ -70,8 +71,17 @@ export interface AppState {
   uiMode: 'explore' | 'simulate' | 'game';
   /** Forecast day driving the synoptic wind hour by hour (0 today, 1 tomorrow, 2 the day after); null = set by hand. */
   forecastDay: number | null;
-  /** Lapse rate 850–700 hPa (K/km) of the forecast hour; null = standard atmosphere (wind set by hand). */
+  /** Lapse rate 850–700 hPa (K/km) of the forecast hour or of the manual stability; null = standard atmosphere. */
   lapseRate: number | null;
+  /** Manual air mass (wind set by hand): stability preset and optional inversion altitude (m). */
+  stability: StabilityPreset;
+  inversionM: number | null;
+  /**
+   * Layered air mass driving the model (air.ts): the forecast sounding of the hour, or the
+   * manual preset; null = the model's reference day (uniform wind, standard atmosphere).
+   * Derived by `useForecastSync`, never set by hand.
+   */
+  air: AirColumn | null;
   layers: Record<LayerKey, boolean>;
   basemap: Basemap;
   exaggeration: number;
@@ -151,6 +161,9 @@ export const useApp = create<AppState>((set) => ({
   uiMode: remembered('brises.uimode', ['simulate'] as const, 'explore'),
   forecastDay: null,
   lapseRate: null,
+  stability: 'standard',
+  inversionM: null,
+  air: null,
   layers: {
     particles: true,
     comets: true,

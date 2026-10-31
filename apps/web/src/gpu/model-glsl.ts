@@ -4,7 +4,7 @@
  * fallback), this one drives the interactive GPU rendering.
  */
 import { EARTH_CIRCUMFERENCE } from '@brises/model';
-import { RULES, SUN_SAMPLES_MAX } from '@brises/model';
+import { AIR_LEVELS_MAX, RULES, SUN_SAMPLES_MAX } from '@brises/model';
 
 const f = (v: number) => (Number.isInteger(v) ? `${v}.0` : `${v}`);
 
@@ -47,6 +47,13 @@ uniform vec2 uUp;
 uniform float uHeightMode;
 uniform float uHeightM;
 uniform float uBreezeScale;
+// Layered air mass (air.ts → packAir): per level altitude, wind east, north (m/s), temperature (°C);
+// dew points; number of levels (0: uniform synoptic wind uG); sunshine factor of the clouds.
+uniform vec4 uAir[${AIR_LEVELS_MAX}];
+uniform float uAirTd[${AIR_LEVELS_MAX}];
+uniform int uAirN;
+uniform int uAirHasTd;
+uniform float uSunCloud;
 
 const float R_SLOPE_MAX = ${f(RULES.slopeBreezeMax)};
 const float R_SLOPE_DEPTH = ${f(RULES.slopeBreezeDepth)};
@@ -80,12 +87,20 @@ const float R_VENTURI = ${f(RULES.venturiGain)};
 const float R_LEE_SHARE = ${f(RULES.leeHeightShare)};
 const float SHELTER[${RULES.shelterSteps.length}] = float[](${RULES.shelterSteps.map(f).join(', ')});
 const float CONF[3] = float[](4.0, 8.0, 13.0);
+const int AIR_MAX = ${AIR_LEVELS_MAX};
+const float R_DRY = ${f(RULES.air.dryLapse / 1000)};
+const float R_EXCESS = ${f(RULES.air.parcelExcess)};
+const float R_ESPY = ${f(RULES.air.espyMPerK)};
+const vec2 R_EXTRAP = vec2(${RULES.air.extrapLapse.map((v) => f(v / 1000)).join(', ')});
+const float R_DEW_LAPSE = ${f(RULES.air.dewLapse / 1000)};
+const vec4 R_AIR = vec4(${[RULES.air.depthRef, RULES.air.depthMax, RULES.air.topFade, RULES.air.capFade].map(f).join(', ')});
 
 struct Cell {
   vec2 slope; vec2 valley; vec2 curated; vec2 regional; vec2 breeze; vec2 synoptic; vec2 total;
   float elev; float hAgl; float under; float slopeDeg; float aspect; float insol; float level; float depth;
   float cw; float cidx; float wb; float shelter; float lee; float venturi; float chan; float dyn; float thermal; float turb;
   float hidx; float hw; float burial; float onset; float stored;
+  vec2 airWind; float ceil;
 };
 
 float cellSize(int j) {
@@ -108,9 +123,69 @@ Cur unpackCur(vec2 v) {
   return r;
 }
 
+// Layer [i, i+1] of the air column used at altitude z, clamped to the end layers (air.ts → segment).
+int airSeg(float z) {
+  int i = 0;
+  for (int k = 1; k < AIR_MAX - 1; k++) {
+    if (k >= uAirN - 1) break;
+    if (z >= uAir[k].x) i = k;
+  }
+  return i;
+}
+// Synoptic wind at altitude z: linear between levels, held beyond them (air.ts → packedWind).
+vec2 airWind(float z) {
+  int top = uAirN - 1;
+  if (z <= uAir[0].x) return uAir[0].yz;
+  if (z >= uAir[top].x) return uAir[top].yz;
+  int i = airSeg(z);
+  return mix(uAir[i].yz, uAir[i + 1].yz, (z - uAir[i].x) / (uAir[i + 1].x - uAir[i].x));
+}
+// Temperature at altitude z, end layers with clamped lapse rates beyond the column (air.ts → packedTemp).
+float airTemp(float z) {
+  int i = airSeg(z);
+  float s = (uAir[i + 1].w - uAir[i].w) / (uAir[i + 1].x - uAir[i].x);
+  if (z < uAir[0].x) s = clamp(s, -R_EXTRAP.y, -R_EXTRAP.x);
+  else if (z > uAir[uAirN - 1].x) s = clamp(s, -R_DRY, 0.0);
+  return uAir[i].w + s * (z - uAir[i].x);
+}
+// Dew point at altitude z (air.ts → packedDew).
+float airDew(float z) {
+  int top = uAirN - 1;
+  if (z < uAir[0].x) return uAirTd[0] + R_DEW_LAPSE * (uAir[0].x - z);
+  if (z > uAir[top].x) return airTemp(z) - (uAir[top].w - uAirTd[top]);
+  int i = airSeg(z);
+  return mix(uAirTd[i], uAirTd[i + 1], (z - uAir[i].x) / (uAir[i + 1].x - uAir[i].x));
+}
+// Thermal ceiling over a ground at zg: top of a dry parcel R_EXCESS warmer than the air, or
+// the cumulus base by Espy's rule when lower (air.ts → packedCeiling).
+float airCeiling(float zg) {
+  float tp0 = airTemp(zg) + R_EXCESS;
+  float a = zg;
+  float da = R_EXCESS;
+  float top = -1.0;
+  for (int k = 0; k < AIR_MAX; k++) {
+    if (k >= uAirN) break;
+    float b = uAir[k].x;
+    if (b <= a) continue;
+    float db = tp0 - R_DRY * (b - zg) - uAir[k].w;
+    if (db <= 0.0) {
+      top = a + da / (da - db) * (b - a);
+      break;
+    }
+    a = b;
+    da = db;
+  }
+  if (top < 0.0) top = a;
+  if (uAirHasTd > 0) {
+    float base = zg + R_ESPY * max(0.0, airTemp(zg) - airDew(zg));
+    if (base < top) top = base;
+  }
+  return top;
+}
+
 // Depth of a cell in the morning cold pool of its valley, 0..1 (field.ts → coldPoolBurial).
-float coldPoolBurial(float hFloor, float vDepth) {
-  float pool = clamp(R_POOL_SHARE * vDepth, R_POOL_DEPTH.x, R_POOL_DEPTH.y) * uNightFactor * (1.0 - smoothstep(R_POOL_WIND.x, R_POOL_WIND.y, uGKmh));
+float coldPoolBurial(float hFloor, float vDepth, float gKmh) {
+  float pool = clamp(R_POOL_SHARE * vDepth, R_POOL_DEPTH.x, R_POOL_DEPTH.y) * uNightFactor * (1.0 - smoothstep(R_POOL_WIND.x, R_POOL_WIND.y, gKmh));
   if (pool < 1.0) return 0.0;
   return 1.0 - smoothstep(0.5, 1.0, hFloor / pool);
 }
@@ -142,13 +217,30 @@ Cell evalCell(ivec2 c) {
   vec3 IN = texelFetch(tInsol, c, 0).rgb;   // insolation, sunshine hours since sunrise, recent sunshine
   float insol = IN.x;
   o.insol = insol;
+  // Layered air (field.ts): the synoptic wind at the evaluated altitude, the ceiling of this ground.
+  float z0 = z + hh;
+  vec2 G = uG;
+  float gS = uGSpeed;
+  float gK = uGKmh;
+  vec2 up = uUp;
+  float ceil = 1e9;
+  if (uAirN > 1) {
+    G = airWind(z0);
+    gS = length(G);
+    gK = gS * 3.6;
+    if (gS > 1e-6) up = vec2(-G.x, G.y) / gS;
+    ceil = airCeiling(z);
+  }
+  o.airWind = G;
+  o.ceil = uAirN > 1 ? ceil : -1.0;
+
   float depth = max(V.y - V.x, 150.0);
   float level = (z + hh - V.x) / depth;
   o.level = level;
   o.depth = V.y - V.x;
 
   // Slope breeze.
-  float slopeForce = uNight > 0.5 ? -R_KATABATIC / R_SLOPE_MAX : insol * (0.55 + 0.45 * uSeason) - 0.08;
+  float slopeForce = uNight > 0.5 ? -R_KATABATIC / R_SLOPE_MAX : insol * (0.55 + 0.45 * uSeason) * uSunCloud - 0.08;
   // Over a glacier, the air cooled by the ice flows down the slope by day too (field.ts → RULES.glacierWind).
   float glacier = smoothstep(R_GLACIER.x, R_GLACIER.y, texelFetch(tL, c, 0).z);
   slopeForce += (-R_GLACIER.z / R_SLOPE_MAX - slopeForce) * glacier;
@@ -158,7 +250,7 @@ Cell evalCell(ivec2 c) {
   o.slope = gmag > 1e-6 ? Z.yz / gmag * slopeSpeed : vec2(0.0);
 
   // Valley breeze: jet in the lower valley, zero at crest height, weak antiwind above.
-  float vPhase = uValleyPhase * (uValleyPhase > 0.0 ? uSeason : 1.0);
+  float vPhase = uValleyPhase * (uValleyPhase > 0.0 ? uSeason * uSunCloud : 1.0);
   float vProfile = valleyProfile(level);
   // Speed-up of the day's up-valley wind where the channel narrows, within the valley-wind layer (field.ts).
   vec4 TF = texelFetch(tF, c, 0);
@@ -167,8 +259,8 @@ Cell evalCell(ivec2 c) {
   o.valley = -V.zw * vSpeed;
 
   // Plain, lake and sea breezes.
-  float plainPhase = max(uValleyPhase, -0.2) * uSeason;
-  float wPhase = uWaterPhase * (uWaterPhase > 0.0 ? uWaterSeason : 1.0);
+  float plainPhase = max(uValleyPhase, -0.2) * uSeason * (uValleyPhase > 0.0 ? uSunCloud : 1.0);
+  float wPhase = uWaterPhase * (uWaterPhase > 0.0 ? uWaterSeason * uSunCloud : 1.0);
   // Not added to the valley wind inside valley channels (field.ts).
   o.regional = (R_PLAIN_MAX * plainPhase * exp(-hh / 900.0) * R.zw
     + R_LAKE_MAX * wPhase * exp(-hh / 250.0) * W.yz
@@ -216,19 +308,21 @@ Cell evalCell(ivec2 c) {
     }
   }
 
+  // By day a stable layer caps the breezes above the thermal ceiling (field.ts → RULES.air.capFade).
+  if (uAirN > 1 && uValleyPhase > 0.0) b *= 1.0 - smoothstep(0.0, 0.3, uValleyPhase) * smoothstep(ceil, ceil + R_AIR.w, z0);
+
   // Synoptic wind: shelter (Winstral Sx) along the upwind direction.
-  float z0 = z + hh;
   float zs = z + hh * R_LEE_SHARE;  // the lee hugs the slope (field.ts)
   float cs = cellSize(c.y);
   float maxTan = -1.0;
   float conf = 0.0;
-  if (uGSpeed > 0.05) {
+  if (gS > 0.05) {
     for (int s = 0; s < ${RULES.shelterSteps.length}; s++) {
-      ivec2 p = stepCell(c, uUp, SHELTER[s]);
+      ivec2 p = stepCell(c, up, SHELTER[s]);
       if (!inside(p)) break;
       maxTan = max(maxTan, (texelFetch(tZ, p, 0).r - zs) / (SHELTER[s] * cs));
     }
-    vec2 perp = vec2(-uUp.y, uUp.x);
+    vec2 perp = vec2(-up.y, up.x);
     float left = -1e9;
     float right = -1e9;
     for (int q = 0; q < 3; q++) {
@@ -240,21 +334,21 @@ Cell evalCell(ivec2 c) {
     conf = smoothstep(120.0, 650.0, min(left, right));
   }
   o.shelter = degrees(atan(maxTan));
-  o.lee = uGSpeed > 0.05 ? smoothstep(R_LEE0, R_LEE1, o.shelter) : 0.0;
+  o.lee = gS > 0.05 ? smoothstep(R_LEE0, R_LEE1, o.shelter) : 0.0;
   o.venturi = conf * (1.0 - o.lee);
   o.chan = W.x * (1.0 - smoothstep(0.35, 0.9, level));
-  float along = dot(uG, V.zw);
-  vec2 cc = uG + (V.zw * along * 1.15 - uG) * 0.85 * o.chan;
+  float along = dot(G, V.zw);
+  vec2 cc = G + (V.zw * along * 1.15 - G) * 0.85 * o.chan;
   // Except on a face turned to the wind (field.ts → RULES.windwardExposure).
-  float upslope = uGSpeed > 0.05 ? dot(uG, Z.yz) / uGSpeed : 0.0;
+  float upslope = gS > 0.05 ? dot(G, Z.yz) / gS : 0.0;
   float exposed = smoothstep(R_EXPOSE.x, R_EXPOSE.y, upslope) * (1.0 - o.lee);
   float fLevel = 0.3 + 0.7 * smoothstep(-0.1, 1.05, level);
   float fh = (fLevel + (1.0 - fLevel) * exposed) * (0.75 + 0.25 * smoothstep(0.0, 400.0, hh));
   float sf = fh * (1.0 - 0.85 * o.lee) * (1.0 + R_VENTURI * o.venturi);
-  float rotor = 0.25 * o.lee * smoothstep(10.0, 30.0, uGKmh) * (1.0 - o.chan);
-  o.synoptic = cc * sf - uG * rotor;
+  float rotor = 0.25 * o.lee * smoothstep(10.0, 30.0, gK) * (1.0 - o.chan);
+  o.synoptic = cc * sf - G * rotor;
 
-  float wb = clamp(1.2 - uGKmh / uOverrideKmh, 0.15, 1.0);
+  float wb = clamp(1.2 - gK / uOverrideKmh, 0.15, 1.0);
   wb = max(wb, max(clamp(0.6 * W.x * (1.0 - level), 0.0, 0.8), 0.7 * o.lee));
   o.wb = wb;
   o.breeze = b;
@@ -273,15 +367,17 @@ Cell evalCell(ivec2 c) {
   o.stored = storedHeat > direct && storedHeat > 0.02 ? 1.0 : 0.0;
   float elevF = 0.55 + 0.45 * smoothstep(400.0, 2200.0, z);
   float convexF = 0.55 + 0.45 * smoothstep(-60.0, 140.0, Z.w);
-  float windF = 1.0 - 0.6 * smoothstep(20.0, 45.0, uGKmh);
+  float windF = 1.0 - 0.6 * smoothstep(20.0, 45.0, gK);
   // Onset per slope from the sunshine it received since sunrise, later in the valley's
   // morning cold pool (field.ts → thermalOnset, coldPoolBurial).
-  float burial = coldPoolBurial(z - V.x, V.y - V.x);
+  float burial = coldPoolBurial(z - V.x, V.y - V.x, gK);
   o.burial = burial;
   o.onset = smoothstep(mix(R_SUN_H.x, R_POOL_SUN.x, burial), mix(R_SUN_H.y, R_POOL_SUN.y, burial), IN.y);
   float dayF = o.onset * uThermalDecline;
-  o.thermal = W.w > 0.5 ? 0.0 : clamp(drive * uThermalSeason * uInstability * TF.w * elevF * convexF * windF * dayF, 0.0, 1.0);
-  o.turb = clamp(o.lee * smoothstep(8.0, 35.0, uGKmh) + o.venturi * smoothstep(15.0, 45.0, uGKmh) * 0.6, 0.0, 1.0);
+  // Thermals scale with the depth of the convective layer and stop at the ceiling (field.ts → RULES.air).
+  float airF = uAirN > 1 ? min(pow(max(ceil - z, 0.0) / R_AIR.x, 1.0 / 3.0), R_AIR.y) * (1.0 - smoothstep(ceil - R_AIR.z, ceil, z0)) : 1.0;
+  o.thermal = W.w > 0.5 ? 0.0 : clamp(drive * uSunCloud * uThermalSeason * uInstability * TF.w * elevF * convexF * windF * dayF * airF, 0.0, 1.0);
+  o.turb = clamp(o.lee * smoothstep(8.0, 35.0, gK) + o.venturi * smoothstep(15.0, 45.0, gK) * 0.6, 0.0, 1.0);
   // Documented hazards matching the situation (field.ts), up to four per cell.
   o.hidx = -1.0;
   o.hw = 0.0;
@@ -318,7 +414,7 @@ Cell evalCell(ivec2 c) {
     }
   }
   // Thermals in the lee (relief or documented) are torn apart (field.ts → RULES.leeThermalCut).
-  o.thermal *= 1.0 - R_LEE_CUT * o.lee * smoothstep(R_LEE_CUT_WIND.x, R_LEE_CUT_WIND.y, uGKmh);
+  o.thermal *= 1.0 - R_LEE_CUT * o.lee * smoothstep(R_LEE_CUT_WIND.x, R_LEE_CUT_WIND.y, gK);
   return o;
 }
 `;

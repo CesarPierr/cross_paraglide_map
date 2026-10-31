@@ -20,7 +20,7 @@ export type ProbeResult = CellResult & { convergence: number; curatedName: strin
 
 const EMPTY_PNG = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg==';
 
-const MODEL_KEYS: (keyof AppState)[] = ['hour', 'month0', 'day', 'synopticFrom', 'synopticKmh', 'heightMode', 'heightAgl', 'heightAsl', 'breezeScale', 'heatwave'];
+const MODEL_KEYS: (keyof AppState)[] = ['hour', 'month0', 'day', 'synopticFrom', 'synopticKmh', 'heightMode', 'heightAgl', 'heightAsl', 'breezeScale', 'heatwave', 'lapseRate', 'air'];
 // (power changes only the rendering budget, not the model)
 
 export function modelParams(s: AppState): ModelParams {
@@ -34,6 +34,7 @@ export function modelParams(s: AppState): ModelParams {
     breezeScale: s.breezeScale,
     heatwave: s.heatwave,
     lapseRate: s.lapseRate ?? undefined,
+    air: s.air ?? undefined,
   };
 }
 

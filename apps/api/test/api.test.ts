@@ -58,9 +58,10 @@ beforeAll(async () => {
     { id: '38D001A', provider: 'ffvl', kind: 'takeoff', name: 'Saint-Hilaire Sud', lon: 5.8867, lat: 45.3075, altitude: 975, orientations: ['O', 'SO'], status: 'official' },
     { id: '38A001A', provider: 'ffvl', kind: 'landing', name: 'Lumbin', lon: 5.913, lat: 45.305, altitude: 240, status: 'official' },
   ]);
-  const config = { ...loadConfig({}), adminToken: 'secret-token', logLevel: 'silent', weatherDailyBudget: 20 };
+  // Budget: three layered synoptic requests (4.9 each) and one point forecast fit, then it runs out.
+  const config = { ...loadConfig({}), adminToken: 'secret-token', logLevel: 'silent', weatherDailyBudget: 30 };
   const cache = new UpstreamCache(db);
-  quota = new QuotaMeter(db, { 'open-meteo': 20, osm: 100, pge: 100 });
+  quota = new QuotaMeter(db, { 'open-meteo': 30, osm: 100, pge: 100 });
   const weather = new WeatherService(cache, quota, async () => run, fakeWeather);
   const directories = new DirectoryService(cache, quota, { osm: fakeDirectory });
   ({ app, ctx } = await buildApp(config, db, { weather, directories }));
@@ -222,7 +223,7 @@ describe('weather cache', () => {
     let status = 200;
     for (let i = 0; i < 30 && status === 200; i++) status = (await app.inject(`/api/weather/point?lat=${(44 + i * 0.1).toFixed(2)}&lon=6.5`)).statusCode;
     expect(status).toBe(503);
-    expect(ctx.config.weatherDailyBudget).toBe(20);
+    expect(ctx.config.weatherDailyBudget).toBe(30);
   });
 });
 
@@ -245,6 +246,25 @@ describe('upstream rate limit', () => {
     await expect(svc.synoptic(44, 6)).rejects.toThrow(/quota/);
     expect(calls).toBe(1);
     expect((await q.usage())['open-meteo'].used).toBe(1000);
+    await db2.close();
+  }, 60_000);
+});
+
+describe('layered synoptic forecast', () => {
+  it('asks for the air by layer in one request per cell and counts its weight', async () => {
+    const { SYNOPTIC_VARIABLES, SYNOPTIC_COST, AIR_LEVELS } = await import('@brises/shared');
+    expect(AIR_LEVELS).toEqual([950, 925, 900, 850, 800, 750, 700, 600, 500]);
+    // Wind, direction, temperature, dew point and height per level, plus 4 surface variables.
+    expect(SYNOPTIC_VARIABLES).toHaveLength(49);
+    expect(SYNOPTIC_VARIABLES).toContain('geopotential_height_925hPa');
+    expect(SYNOPTIC_COST).toBeCloseTo(4.9, 6);
+    const db2 = await createDb('pglite:memory');
+    await migrate(db2);
+    const q = new QuotaMeter(db2, { 'open-meteo': 1000 });
+    const svc = new WeatherService(new UpstreamCache(db2), q, async () => null, fakeWeather);
+    await svc.synoptic(45.31, 5.91);
+    await svc.synoptic(45.33, 5.94); // same 0.25° cell: cached
+    expect((await q.usage())['open-meteo'].used).toBeCloseTo(4.9, 6);
     await db2.close();
   }, 60_000);
 });

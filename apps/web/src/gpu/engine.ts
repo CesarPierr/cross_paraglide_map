@@ -8,7 +8,7 @@
  */
 import type { CellResult, CuratedBreezeInfo, CuratedHazardInput, ModelParams } from '@brises/model';
 import { curatedActivity, curatedLayerKind, hazardActivity, HazardEffect, nightFactor, sunSampleStep, sunSamples, SUN_SAMPLES_MAX, thermalDecline, thermalSeasonFactor, waterSeasonFactor } from '@brises/model';
-import { stabilityFactors, windVector, type Grid } from '@brises/model';
+import { AIR_LEVELS_MAX, packAir, packedCeiling, packedWind, stabilityFactors, windVector, type Grid, type PackedAir } from '@brises/model';
 import { smoothstep } from '@brises/model';
 import { RULES } from '@brises/model';
 import { legalTimeToUtc, noonElevation, solarTime, sunPosition, type SunPosition } from '@brises/model';
@@ -134,6 +134,10 @@ export class GpuWindEngine {
   private dirtyTime = true;
   private dirtyBreezes = true;
   private breezeKey = '';
+  /** Layered air mass of the params (air.ts → packAir), as GPU uniforms. */
+  private air: PackedAir | null = null;
+  private airUniform = new Float32Array(AIR_LEVELS_MAX * 4);
+  private airTd = new Float32Array(AIR_LEVELS_MAX);
   private hotBlock = 6;
   private hotW: number;
   private hotH: number;
@@ -209,6 +213,17 @@ export class GpuWindEngine {
       });
       this.dirtyBreezes = true;
     }
+    if (p.air !== this.params?.air) {
+      this.air = packAir(p.air);
+      this.airUniform.fill(0);
+      this.airTd.fill(0);
+      const a = this.air;
+      if (a)
+        for (let i = 0; i < a.n; i++) {
+          this.airUniform.set([a.z[i], a.u[i], a.v[i], a.t[i]], i * 4);
+          this.airTd[i] = a.hasTd ? a.td[i] : 0;
+        }
+    }
     this.params = p;
     this.dirtyField = true;
   }
@@ -265,6 +280,11 @@ export class GpuWindEngine {
     gl.uniform1f(u.uHeightM, p.height.meters);
     gl.uniform1f(u.uBreezeScale, p.breezeScale);
     gl.uniform1i(u.uHazBase, this.breezes.length);
+    gl.uniform4fv(u.uAir, this.airUniform);
+    gl.uniform1fv(u.uAirTd, this.airTd);
+    gl.uniform1i(u.uAirN, this.air?.n ?? 0);
+    gl.uniform1i(u.uAirHasTd, this.air?.hasTd ? 1 : 0);
+    gl.uniform1f(u.uSunCloud, this.air?.sunCloud ?? 1);
     return units.length;
   }
 
@@ -399,6 +419,9 @@ export class GpuWindEngine {
       hazardWeight: out[33],
       hazardName: hidx >= 0 ? (this.hazards[hidx]?.name ?? null) : null,
       hazardId: hidx >= 0 ? (this.hazards[hidx]?.id ?? null) : null,
+      // Layered air at the probed altitude (same functions as the shaders, air.ts).
+      airWind: this.air ? packedWind(this.air, out[12] + Math.max(out[13], 5)) : windVector(this.params.synoptic.fromDeg, this.params.synoptic.speedKmh / 3.6),
+      ceilingM: this.air ? packedCeiling(this.air, out[12]) : NaN,
     };
   }
 

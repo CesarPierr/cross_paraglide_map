@@ -12,6 +12,7 @@ import {
   UpstreamHttpError,
   POINT_COST,
   PROFILE_MODEL_DOMAIN,
+  SYNOPTIC_COST,
   type PointForecast,
   type SynopticWind,
   type WeatherProvider,
@@ -93,11 +94,15 @@ export class WeatherService {
     private provider: WeatherProvider = openMeteo,
   ) {}
 
-  /** Ridge-level wind: smooth field, 0.25° (~25 km) sharing. 4 variables → 1 call. */
+  /**
+   * The air by layer (9 pressure levels, low and mid clouds) and the ridge-level wind:
+   * smooth field, 0.25° (~25 km) sharing. 49 variables → 4.9 calls per cell and run.
+   * Key `syn2`: entries cached before the layers (key `syn`) are never served again.
+   */
   synoptic(lat: number, lon: number): Promise<Cached<SynopticWind[]>> {
     const la = round(lat, 0.25);
     const lo = round(lon, 0.25);
-    return this.cached(`wx:syn:${la.toFixed(2)}:${lo.toFixed(2)}`, 1, () =>
+    return this.cached(`wx:syn2:${la.toFixed(2)}:${lo.toFixed(2)}`, SYNOPTIC_COST, () =>
       this.provider.synoptic(la, lo),
     );
   }

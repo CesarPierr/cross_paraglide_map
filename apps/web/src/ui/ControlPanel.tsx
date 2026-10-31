@@ -2,11 +2,10 @@ import { compassFr } from '@brises/model';
 import { useState } from 'react';
 import type { OverlayMode } from '../engine/cpu-overlays';
 import { AIRSPACE_COLORS, BREEZE_COLORS, COLORS } from '../map/palette';
-import { useApp, useRuntime, type LayerKey } from '../state/store';
-import { fmtHour, MONTHS } from './format';
+import { useApp, type LayerKey } from '../state/store';
 import { IconChevron, IconMountain, IconSpark, IconWind } from './icons';
-import { ForecastBlock } from './Forecast';
 import { LegendBody, OverlayLegend } from './Legend';
+import { Situation } from './Situation';
 import { WindDial } from './WindDial';
 
 const PRESETS: { label: string; from: number; kmh: number; hint: string }[] = [
@@ -172,38 +171,7 @@ function Section({ title, icon, children, defaultOpen = true }: { title: string;
   );
 }
 
-/** One-paragraph reading of the simulated situation. */
-function Situation() {
-  const s = useApp();
-  const sun = useRuntime((r) => r.sun);
-  const kmh = s.synopticKmh;
-  const day = sun && sun.elevation > 3;
-  let breeze: string;
-  if (!day) breeze = 'Nuit : brises descendantes, air stable en vallée.';
-  else if (s.hour < 10.5) breeze = 'Matin : les pentes au soleil s’activent, les vallées basculent vers la brise montante.';
-  else if (s.hour < 12.5) breeze = 'Fin de matinée : brises montantes en place, les grandes vallées forcissent.';
-  else if (s.hour < 17.5) breeze = 'Après‑midi : brises de vallée établies, convergences actives sur les crêtes.';
-  else breeze = 'Fin de journée : les brises faiblissent, restitution sur les faces ouest, bascule vers la brise descendante au coucher.';
-  const wind =
-    kmh < 5
-      ? 'Sans vent météo, le relief et le soleil pilotent tout.'
-      : kmh < 15
-        ? `Vent météo faible de ${compassFr(s.synopticFrom)} : il décale les convergences et renforce les brises dans le même sens.`
-        : kmh < 30
-          ? `Vent de ${compassFr(s.synopticFrom)} ${kmh} km/h : faces au vent porteuses en dynamique, zones sous le vent à éviter.`
-          : `Vent fort de ${compassFr(s.synopticFrom)} ${kmh} km/h : les brises sont écrasées, turbulences sous le vent et venturis marqués.`;
-  return (
-    <div className="situation">
-      <p className="situation-head">
-        {fmtHour(Math.round(s.hour * 4) / 4)} · {MONTHS[s.month0]} · {kmh < 3 ? 'vent calme' : `${compassFr(s.synopticFrom)} ${kmh} km/h`}
-      </p>
-      <p>{breeze}</p>
-      {kmh >= 5 && <p>{wind}</p>}
-    </div>
-  );
-}
-
-/** The simulation: synoptic wind, reading of the relief, reading height, forecast. */
+/** The simulation: the situation (day, air, profile, what happens now), synoptic wind, reading of the relief, reading height. */
 export function SimulationPanel() {
   const s = useApp();
   // Setting the wind by hand leaves the forecast.
@@ -215,18 +183,19 @@ export function SimulationPanel() {
       <Situation />
       <section className="cp-block">
         <h3 className="cp-title">
-          <IconWind size={15} /> Vent météo
+          <IconWind size={15} /> Vent aux crêtes
         </h3>
         <div className="wind-row">
           <WindDial fromDeg={s.synopticFrom} speedKmh={s.synopticKmh} onChange={(d) => wind({ synopticFrom: d })} />
           <div className="wind-sliders">
             <label className="field">
               <span>
-                Vent aux crêtes <b>{s.synopticKmh < 3 ? 'calme' : `${compassFr(s.synopticFrom)} ${s.synopticKmh} km/h`}</b>
+                {s.forecastDay !== null ? 'Prévu ' : ''}
+                <b>{s.synopticKmh < 3 ? 'calme' : `${compassFr(s.synopticFrom)} ${s.synopticKmh} km/h`}</b>
               </span>
               <input type="range" min={0} max={60} step={1} value={s.synopticKmh} onChange={(e) => wind({ synopticKmh: Number(e.target.value) })} aria-label="Force du vent météo" />
             </label>
-            <div className="chips compact" role="group" aria-label="Situations types">
+            <div className="chips compact" role="group" aria-label="Vents types">
               {PRESETS.map((p) => (
                 <button key={p.label} className={`chip ${s.forecastDay === null && s.synopticKmh === p.kmh && (p.kmh === 0 || s.synopticFrom === p.from) ? 'active' : ''}`} title={p.hint} onClick={() => wind({ synopticFrom: p.from, synopticKmh: p.kmh })}>
                   {p.label}
@@ -235,7 +204,13 @@ export function SimulationPanel() {
             </div>
           </div>
         </div>
-        <ForecastBlock />
+        <p className="hint">
+          {s.forecastDay !== null
+            ? 'Vent prévu aux crêtes (moyenne 850–700 hPa) ; le modèle lit le vent de chaque altitude dans le profil. Le régler à la main quitte la prévision.'
+            : s.air
+              ? 'Vent aux crêtes, le même à toutes les altitudes sauf sous une inversion. La stabilité règle le plafond et la force des thermiques.'
+              : 'Vent aux crêtes, le même à toutes les altitudes (journée type).'}
+        </p>
       </section>
 
       <section className="cp-block">

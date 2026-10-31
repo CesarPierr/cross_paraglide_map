@@ -6,6 +6,7 @@
  * and in unit tests.
  */
 import type { BreezeCondition, CuratedBreezeInfo, CuratedHazardInput } from '@brises/shared';
+import { packAir, packedCeiling, packedWind, type AirColumn, type PackedAir } from './air';
 import { CuratedLayerKind, curatedLayerKind } from './curated';
 import { compassFr, windFromDeg, windVector } from './grid';
 import { clamp, smoothstep } from './raster';
@@ -30,6 +31,13 @@ export interface ModelParams {
   heatwave?: boolean;
   /** Lapse rate between 850 and 700 hPa (K/km) from the forecast; standard atmosphere if absent (`stabilityFactors`). */
   lapseRate?: number;
+  /**
+   * Layered air mass (forecast sounding or manual preset, air.ts): the synoptic wind at
+   * each altitude, the thermal ceiling, the cloud cover. Absent: the wind of `synoptic`
+   * at all heights, no ceiling, clear sky (the model's reference day). `synoptic` stays
+   * the ridge-level wind that documented conditions and hazards are read against.
+   */
+  air?: AirColumn;
 }
 
 /**
@@ -102,6 +110,11 @@ export interface TimeContext {
   sunRecent: Float32Array;
   /** Length of the previous night relative to a summer night, 1..1.5 (`nightFactor`). */
   nightFactor: number;
+}
+
+/** Up-valley (> 0) or down-valley (< 0) phase of the valley-wind cycle at a solar hour, −0.4..1. */
+export function valleyPhaseAt(solarHour: number): number {
+  return cycle(solarHour, RULES.valleySchedule, RULES.valleyNightRatio);
 }
 
 /** Smooth trapezoid: -nightValue before a, ramps to 1 at b, 1 until c, back to -nightValue after d. */
@@ -417,6 +430,10 @@ export interface CellResult {
   /** Documented hazard active here (index into `CuratedLayer.hazards`, −1 none) and its weight 0..1. */
   hazardIndex: number;
   hazardWeight: number;
+  /** Wind of the air mass at the evaluated altitude, before the relief (m/s; the synoptic wind without layers). */
+  airWind: [number, number];
+  /** Thermal ceiling over this ground (m AMSL, `packedCeiling`), NaN without layered air. */
+  ceilingM: number;
 }
 
 export function newCellResult(): CellResult {
@@ -451,6 +468,8 @@ export function newCellResult(): CellResult {
     turbulence: 0,
     hazardIndex: -1,
     hazardWeight: 0,
+    airWind: [0, 0],
+    ceilingM: NaN,
   };
 }
 
@@ -474,6 +493,10 @@ export interface WindContext {
   /** Upwind unit step in grid coordinates. */
   upI: number;
   upJ: number;
+  /** Layered air mass (`ModelParams.air`, packed), null without layers. */
+  air: PackedAir | null;
+  /** Sunshine factor of the cloud cover (1 = clear, `sunCloudFactor`). */
+  sunCloud: number;
 }
 
 export function makeWindContext(terrain: Terrain, time: TimeContext, params: ModelParams, curated: CuratedLayer | null): WindContext {
@@ -486,6 +509,7 @@ export function makeWindContext(terrain: Terrain, time: TimeContext, params: Mod
     activity[i] = curatedActivity(b, params, time.valleyPhase);
     kinds[i] = curatedLayerKind(b.kind);
   });
+  const air = packAir(params.air);
   const hazardAct = new Float32Array(curated?.hazards?.length ?? 0);
   curated?.hazards?.forEach((h, i) => {
     hazardAct[i] = hazardActivity(h, params);
@@ -505,6 +529,8 @@ export function makeWindContext(terrain: Terrain, time: TimeContext, params: Mod
     overrideKmh: stabilityFactors(params.lapseRate).overrideKmh,
     upI: Math.sin(r),
     upJ: -Math.cos(r),
+    air,
+    sunCloud: air?.sunCloud ?? 1,
   };
 }
 
@@ -537,6 +563,34 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   // ζ: height of the evaluation point above the valley floor, in valley depths
   // (crest envelope − floor). In ASL mode this is the same air layer whatever the
   // ground below (valley centre, sidewall or plateau).
+  // Layered air (air.ts): the synoptic wind at the evaluated altitude, the thermal ceiling of
+  // this ground, the sunshine left by the clouds. Without layers: the uniform synoptic wind.
+  const z0 = z + hh;
+  let gx = c.g[0];
+  let gy = c.g[1];
+  let gSpeed = c.gSpeed;
+  let gKmh = c.gKmh;
+  let upI = c.upI;
+  let upJ = c.upJ;
+  let ceiling = Infinity;
+  if (c.air) {
+    packedWind(c.air, z0, out.airWind);
+    gx = out.airWind[0];
+    gy = out.airWind[1];
+    gSpeed = Math.hypot(gx, gy);
+    gKmh = gSpeed * 3.6;
+    if (gSpeed > 1e-6) {
+      upI = -gx / gSpeed;
+      upJ = gy / gSpeed;
+    }
+    ceiling = packedCeiling(c.air, z);
+  } else {
+    out.airWind[0] = gx;
+    out.airWind[1] = gy;
+  }
+  out.ceilingM = c.air ? ceiling : NaN;
+  const sunCloud = c.sunCloud;
+
   const depth = Math.max(t.env[k] - t.floor[k], 150);
   const level = (z + hh - t.floor[k]) / depth;
   out.valleyLevel = level;
@@ -546,7 +600,7 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   // --- Slope breeze: upslope by day on sunlit slopes, downslope at night.
   let slopeForce: number;
   if (c.time.night || c.time.sun.elevation < 3) slopeForce = -RULES.katabaticMax / RULES.slopeBreezeMax;
-  else slopeForce = insol * (0.55 + 0.45 * c.time.season) - 0.08;
+  else slopeForce = insol * (0.55 + 0.45 * c.time.season) * sunCloud - 0.08;
   // Over a glacier, the air cooled by the ice flows down the slope by day too (glacier wind).
   const gw = RULES.glacierWind;
   const glacier = smoothstep(gw.share[0], gw.share[1], t.cover.snow[k]);
@@ -562,7 +616,7 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
 
   // --- Valley breeze: up-valley by day (against drainage), down-valley at night.
   // Vertical profile: jet in the lower valley, zero at crest height, weak antiwind above.
-  const vPhase = c.time.valleyPhase * (c.time.valleyPhase > 0 ? c.time.season : 1);
+  const vPhase = c.time.valleyPhase * (c.time.valleyPhase > 0 ? c.time.season * sunCloud : 1);
   const vProfile = valleyProfile(level);
   // Where the channel narrows (verrou, goulet), the up-valley wind of the day speeds up,
   // within the valley-wind layer only (terrain.ts → valleyFunnel). Not the night drainage:
@@ -573,7 +627,7 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   out.valley[1] = -t.axisY[k] * vSpeed;
 
   // --- Regional: plain → mountain, lake and sea breezes.
-  const plainPhase = Math.max(c.time.valleyPhase, -0.2) * c.time.season;
+  const plainPhase = Math.max(c.time.valleyPhase, -0.2) * c.time.season * (c.time.valleyPhase > 0 ? sunCloud : 1);
   // In a valley channel the plain → mountain inflow and the sea or lake breeze are
   // what feeds the valley wind (S4–S7, rule `aspiration-plaine-montagne`; the sea
   // breeze "pousse contre les brises de vallée", S33): they are not added on top of
@@ -581,7 +635,7 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   // synoptic wind), only kept outside the channels.
   const outside = 1 - t.valley[k];
   const plainDecay = Math.exp(-hh / 900) * outside;
-  const wPhase = c.time.waterPhase * (c.time.waterPhase > 0 ? c.time.waterSeason : 1);
+  const wPhase = c.time.waterPhase * (c.time.waterPhase > 0 ? c.time.waterSeason * sunCloud : 1);
   const lakeDecay = Math.exp(-hh / 250) * outside;
   const seaDecay = Math.exp(-hh / 700) * outside;
   out.regional[0] =
@@ -683,8 +737,14 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   }
   const bx0 = out.slope[0] + (out.valley[0] + out.regional[0]) * (1 - cw) + out.curated[0] * cw;
   const by0 = out.slope[1] + (out.valley[1] + out.regional[1]) * (1 - cw) + out.curated[1] * cw;
-  const bx = bx0 * (1 - thinW) + thinX * thinW;
-  const by = by0 * (1 - thinW) + thinY * thinW;
+  let bx = bx0 * (1 - thinW) + thinX * thinW;
+  let by = by0 * (1 - thinW) + thinY * thinW;
+  // By day a stable layer caps the breezes: they fade above the thermal ceiling (RULES.air.capFade).
+  if (c.air && c.time.valleyPhase > 0) {
+    const cap = 1 - smoothstep(0, 0.3, c.time.valleyPhase) * smoothstep(ceiling, ceiling + RULES.air.capFade, z0);
+    bx *= cap;
+    by *= cap;
+  }
   // The probe reports the documented breeze that matters most at this height.
   if (thinW > cw) {
     out.curated[0] = thinX;
@@ -695,18 +755,17 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   out.curatedWeight = cw;
 
   // --- Synoptic wind and the relief.
-  const z0 = z + hh;
   // The lee is looked for closer to the ground than the evaluated level: the separated
   // flow and its rotor hug the lee slope behind a crest (benchmark: documented lee
   // hazards seen at their place 32 % → 47 %, take-offs facing the wind still 1 % false).
   const zs = z + hh * RULES.leeHeightShare;
   let maxTan = -1;
-  if (c.gSpeed > 0.05) {
+  if (gSpeed > 0.05) {
     const steps = RULES.shelterSteps;
     for (let s = 0; s < steps.length; s++) {
       const d = steps[s];
-      const ii = Math.round(i + c.upI * d);
-      const jj = Math.round(j + c.upJ * d);
+      const ii = Math.round(i + upI * d);
+      const jj = Math.round(j + upJ * d);
       if (ii < 0 || jj < 0 || ii >= w || jj >= hgt) break;
       const tn = (t.z[jj * w + ii] - zs) / (d * cs);
       if (tn > maxTan) maxTan = tn;
@@ -714,14 +773,14 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   }
   const shelter = Math.atan(maxTan) * RAD2DEG;
   out.shelterDeg = shelter;
-  const lee = c.gSpeed > 0.05 ? smoothstep(RULES.leeAngle[0], RULES.leeAngle[1], shelter) : 0;
+  const lee = gSpeed > 0.05 ? smoothstep(RULES.leeAngle[0], RULES.leeAngle[1], shelter) : 0;
   out.lee = lee;
 
   // Lateral confinement perpendicular to the wind → venturi.
   let conf = 0;
-  if (c.gSpeed > 0.05) {
-    const pI = -c.upJ;
-    const pJ = c.upI;
+  if (gSpeed > 0.05) {
+    const pI = -upJ;
+    const pJ = upI;
     let left = -1e9;
     let right = -1e9;
     for (let q = 0; q < CONF_STEPS.length; q++) {
@@ -737,8 +796,6 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   }
   out.venturi = conf * (1 - lee);
 
-  const gx = c.g[0];
-  const gy = c.g[1];
   const chan = t.valley[k] * (1 - smoothstep(0.35, 0.9, level));
   out.channelling = chan;
   const along = gx * t.axisX[k] + gy * t.axisY[k];
@@ -746,17 +803,17 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   const cy = gy + (t.axisY[k] * along * 1.15 - gy) * 0.85 * chan;
   // Lower in the valley the synoptic wind is weaker, except on a face turned to the wind,
   // where the air is forced up the slope (RULES.windwardExposure).
-  const upslope = c.gSpeed > 0.05 ? (gx * gxk + gy * gyk) / c.gSpeed : 0;
+  const upslope = gSpeed > 0.05 ? (gx * gxk + gy * gyk) / gSpeed : 0;
   const exposed = smoothstep(RULES.windwardExposure[0], RULES.windwardExposure[1], upslope) * (1 - lee);
   const fLevel = 0.3 + 0.7 * smoothstep(-0.1, 1.05, level);
   const fh = (fLevel + (1 - fLevel) * exposed) * (0.75 + 0.25 * smoothstep(0, 400, hh));
   const speedFactor = fh * (1 - 0.85 * lee) * (1 + RULES.venturiGain * out.venturi);
-  const rotor = 0.25 * lee * smoothstep(10, 30, c.gKmh) * (1 - chan);
+  const rotor = 0.25 * lee * smoothstep(10, 30, gKmh) * (1 - chan);
   out.synoptic[0] = cx * speedFactor - gx * rotor;
   out.synoptic[1] = cy * speedFactor - gy * rotor;
 
   // Breezes survive under weak synoptic wind, in deep valleys and in the lee.
-  let wb = clamp(1.2 - c.gKmh / c.overrideKmh, 0.15, 1);
+  let wb = clamp(1.2 - gKmh / c.overrideKmh, 0.15, 1);
   wb = Math.max(wb, clamp(0.6 * t.valley[k] * (1 - level), 0, 0.8), 0.7 * lee);
   out.breezeWeight = wb;
   out.breeze[0] = bx;
@@ -782,14 +839,21 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   out.restitution = stored > direct && stored > 0.02;
   const elevF = 0.55 + 0.45 * smoothstep(400, 2200, z);
   const convexF = 0.55 + 0.45 * smoothstep(-60, 140, t.tpi[k]);
-  const windF = 1 - 0.6 * smoothstep(20, 45, c.gKmh);
-  const burial = coldPoolBurial(z - t.floor[k], t.env[k] - t.floor[k], c.time.nightFactor, c.gKmh);
+  const windF = 1 - 0.6 * smoothstep(20, 45, gKmh);
+  const burial = coldPoolBurial(z - t.floor[k], t.env[k] - t.floor[k], c.time.nightFactor, gKmh);
   out.coldPool = burial;
   out.onset = thermalOnset(c.time.sunHours[k], burial);
   const dayF = out.onset * c.time.thermalDecline;
-  out.thermal = t.water[k] ? 0 : clamp(drive * c.time.thermalSeason * c.instability * t.surface[k] * elevF * convexF * windF * dayF, 0, 1);
+  // Layered air: thermals scale with the depth of the convective layer (Deardorff's w*) and
+  // stop at the ceiling (RULES.air).
+  let airF = 1;
+  if (c.air) {
+    const R = RULES.air;
+    airF = Math.min(Math.cbrt(Math.max(ceiling - z, 0) / R.depthRef), R.depthMax) * (1 - smoothstep(ceiling - R.topFade, ceiling, z0));
+  }
+  out.thermal = t.water[k] ? 0 : clamp(drive * sunCloud * c.time.thermalSeason * c.instability * t.surface[k] * elevF * convexF * windF * dayF * airF, 0, 1);
 
-  out.turbulence = clamp(lee * smoothstep(8, 35, c.gKmh) + out.venturi * smoothstep(15, 45, c.gKmh) * 0.6, 0, 1);
+  out.turbulence = clamp(lee * smoothstep(8, 35, gKmh) + out.venturi * smoothstep(15, 45, gKmh) * 0.6, 0, 1);
 
   // Documented hazards: where the situation (synoptic wind, hours) matches what the
   // sources describe, their area shows the effect they report, even where the relief
@@ -842,7 +906,7 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
     } else out.turbulence = Math.max(out.turbulence, 0.8 * a);
   }
   // Thermals in the lee (relief or documented) are torn apart (RULES.leeThermalCut).
-  out.thermal *= 1 - RULES.leeThermalCut * out.lee * smoothstep(RULES.leeThermalWindKmh[0], RULES.leeThermalWindKmh[1], c.gKmh);
+  out.thermal *= 1 - RULES.leeThermalCut * out.lee * smoothstep(RULES.leeThermalWindKmh[0], RULES.leeThermalWindKmh[1], gKmh);
   return out;
 }
 

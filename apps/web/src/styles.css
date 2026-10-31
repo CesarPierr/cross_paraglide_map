@@ -4156,3 +4156,185 @@ div.summary {
     font-size: 15px;
   }
 }
+
+/* Situation: the day, the air in one line, its profile, what happens now (Situation.tsx). */
+.situation .forecast-days {
+  margin-bottom: 8px;
+}
+.situation-brief {
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 2px 0 6px !important;
+}
+.situation .forecast-strip {
+  margin: 6px 0 2px;
+}
+.forecast-strip button.stable {
+  box-shadow: inset 0 -2px 0 rgba(96, 165, 250, 0.75);
+}
+.forecast-strip button.unstable {
+  box-shadow: inset 0 -2px 0 rgba(251, 146, 60, 0.85);
+}
+.manual-air {
+  margin: 6px 0 2px;
+}
+.manual-air .day-presets {
+  margin-bottom: 6px;
+}
+.manual-air .air-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.manual-air .air-row .seg {
+  flex: 1 1 180px;
+}
+.manual-air .inv-toggle {
+  margin: 0;
+}
+.manual-air .field {
+  margin-top: 6px;
+}
+.situation .hint.place {
+  margin: 2px 0 0;
+  font-size: 11px;
+}
+.air-chart {
+  margin: 8px 0 2px;
+}
+.air-chart svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.ac-bg {
+  fill: rgba(0, 0, 0, 0.22);
+}
+.ac-grid {
+  stroke: rgba(148, 163, 184, 0.14);
+}
+.ac-axis {
+  fill: var(--muted);
+  font-size: 9px;
+}
+.ac-ground {
+  fill: rgba(130, 144, 93, 0.4);
+}
+.ac-conv {
+  fill: rgba(251, 146, 60, 0.16);
+}
+.ac-band.stable {
+  fill: rgba(96, 165, 250, 0.13);
+}
+.ac-band.inv {
+  fill: rgba(96, 165, 250, 0.3);
+}
+.ac-temp {
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke: #e2e8f0;
+}
+.ac-temp.stable,
+.ac-temp.inv {
+  stroke: #60a5fa;
+}
+.ac-temp.unstable {
+  stroke: #fb923c;
+}
+.ac-parcel {
+  stroke: #fbbf24;
+  stroke-width: 1.3;
+  stroke-dasharray: 4 3;
+}
+.ac-base,
+.ac-top {
+  stroke: #f8fafc;
+  stroke-width: 1.2;
+  stroke-dasharray: 3 3;
+}
+.ac-top {
+  stroke: #fbbf24;
+}
+.ac-label {
+  fill: #f8fafc;
+  font-size: 9.5px;
+  font-weight: 600;
+}
+.ac-read line {
+  stroke: #a7f3d0;
+  stroke-width: 1;
+}
+.ac-read path {
+  fill: #a7f3d0;
+}
+.air-chart figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 10px;
+  font-size: 10.5px;
+  color: var(--muted);
+}
+.air-chart figcaption span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.air-chart .sw {
+  display: inline-block;
+  width: 10px;
+  height: 8px;
+  border-radius: 2px;
+}
+.air-chart .sw.conv {
+  background: rgba(251, 146, 60, 0.45);
+}
+.air-chart .sw.stable {
+  background: rgba(96, 165, 250, 0.35);
+}
+.air-chart .sw.inv {
+  background: rgba(96, 165, 250, 0.7);
+}
+.air-chart .sw.read {
+  background: #a7f3d0;
+  height: 2px;
+}
+.now {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(56, 189, 248, 0.2);
+}
+.now-title {
+  color: #fff;
+  font-weight: 600;
+  font-size: 12.5px;
+}
+.now-phase {
+  margin: 2px 0 4px !important;
+}
+.now-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.now-list .nearby-item {
+  width: 100%;
+}
+.now-more {
+  padding: 2px 4px;
+}
+/* Probe: the layered air at the probed altitude (ProbeCard.tsx → AirHere). */
+.probe-air {
+  margin: 8px 0;
+}
+.probe-air-title {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--text-2);
+  margin: 0 0 4px;
+}
+.probe-air .forecast-grid {
+  grid-template-columns: repeat(2, 1fr);
+}

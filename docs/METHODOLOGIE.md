@@ -142,8 +142,48 @@ fichiers de recherche.
 
 ## 5. Vent météo et relief
 
-- **Saisie** : vent « des crêtes » (direction, force), ou prévision AROME (moyenne vectorielle
-  850/700 hPa) via la sonde.
+- **Saisie** : à la main, un vent « des crêtes » (direction, force) et une masse d'air
+  (stable, standard ou instable, inversion facultative) ; ou la prévision du jour, du lendemain
+  ou du surlendemain : l'air par couches (ci-dessous) et le vent des crêtes (moyenne vectorielle
+  850/700 hPa), qui reste la référence des conditions documentées (brises conditionnelles,
+  dangers liés à un vent).
+- **Air par couches** (`air.ts`, `ModelParams.air`, `RULES.air`) : la prévision Open-Meteo
+  (AROME 2,5 km, ARPEGE pour le troisième jour) donne heure par heure, au centre de la vue
+  (maille de 0,25°), le vent, la température, le point de rosée et l'altitude géopotentielle de
+  950, 925, 900, 850, 800, 750, 700, 600 et 500 hPa (≈ 550 → 5 700 m), et les nébulosités basse
+  et moyenne. Le modèle en tire, pour chaque maille et l'altitude lue :
+  - **le vent météo à cette altitude** : interpolation linéaire du vecteur (u, v) entre niveaux,
+    tenu constant sous le plus bas et au-dessus du plus haut. Le fond de vallée voit le bas de la
+    couche, les crêtes le milieu, l'air libre le haut : cisaillement et rotation du vent avec
+    l'altitude, jet de basse couche, vallée calme sous une inversion quand le vent n'y est pas
+    prévu. Ce vent local remplace le vent uniforme partout où il intervient (abri et direction
+    amont, canalisation, venturi, faces au vent, rotor, tenue des brises, brassage de la poche
+    froide, thermiques soufflés, turbulence) ;
+  - **le plafond thermique** de chaque sol : une particule 1,5 °C plus chaude que l'air au sol
+    monte selon l'adiabatique sèche (9,8 °C/km) jusqu'à rejoindre le profil (calcul exact sur
+    chaque couche linéaire) ; la base des cumulus suit la règle d'Espy (125 m par °C d'écart
+    température − rosée au sol) ; le plafond est la plus basse des deux. Sous le profil, la
+    température suit la couche la plus basse (gradient borné entre −5 et 9,8 °C/km) et le point de
+    rosée garde son rapport de mélange (1,8 °C/km) ;
+  - **les thermiques** : × (épaisseur de la couche convective / 800 m)^(1/3) (vitesse convective
+    de Deardorff), au plus × 1,15, et nuls au-dessus du plafond (fondu sur 200 m) ;
+  - **les brises plafonnées** : de jour, brises de pente, de vallée, régionales et documentées
+    s'effacent sur 300 m au-dessus du plafond (une couche stable coiffe le vent de vallée,
+    Whiteman 2000) ; pas la nuit, où les écoulements froids vivent dans l'air stable ;
+  - **la nébulosité** : l'ensoleillement qui pilote les brises de jour et les thermiques est
+    × (1 − 0,75 N^3,4), N la couverture basse et moyenne (recouvrement aléatoire) : formule de
+    Kasten et Czeplak (1980) ; ciel couvert : un quart du soleil.
+
+  Sans couches (« standard » à la main), le modèle est exactement celui de la journée type
+  (`npm run model:check` inchangé : 1203/1329). Les masses d'air manuelles (`presetAir`) sont des
+  sondages d'ordre de grandeur : couche brassée (9,3 °C/km) jusqu'à 1 600 m (stable), 2 400 m
+  (standard avec inversion) ou 3 200 m (instable), couche de couverture de 200 m, air libre
+  (4,5 / 6 / 6,5 °C/km) jusqu'à 4 000 m puis 4 °C/km ; écart rosée au sol réglé pour des cumulus
+  vers 2 800 m en instable, aucun en stable ; une inversion choisie coiffe la couche brassée à
+  son altitude (+2 °C sur 200 m) et y réduit le vent à 30 % (vallée abritée). Les fonctions de
+  profil sont dans `packages/model/src/air.ts`, transcrites dans `model-glsl.ts` (`airWind`,
+  `airTemp`, `airCeiling`) ; GPU et CPU concordent à 0,007 m/s et 0,0003 de thermique près (sonde
+  à 7 lieux × 4 réglages, avec et sans couches).
 - **Abri (sous le vent)** : indice de Winstral — angle maximal du relief au vent sur 200 m à 5 km,
   pris au quart de la hauteur simulée (le décollement et ses rotors collent à la pente sous la
   crête) ; un angle de 8° à 22° fait passer l'abri de 0 à 1. Les zones abritées perdent le vent
@@ -195,16 +235,24 @@ sont des différences d'échelles, si bien qu'une pente uniforme ne compte qu'un
 d'une crête large monte donc plus haut que celle d'une petite pente : 59 sites de soaring sur 115
 au-dessus de 1 m/s (au lieu de 47), médiane 1,0 m/s.
 
-**Stabilité de l'air (mode prévision)** (`stabilityFactors`, `RULES.lapseStandard`…) : la prévision
+**Stabilité de l'air** (`stabilityFactors`, `RULES.lapseStandard`…) : la prévision
 donne, heure par heure, le gradient de température entre 850 et 700 hPa (≈ 1500 → 3000 m, AROME
 via Open-Meteo, avec les altitudes géopotentielles des deux niveaux). Règle des pilotes : en dessous
 de ≈ 5 °C/km l'air est stable (thermiques faibles et bas), au-dessus de ≈ 7 il est instable (bons
 thermiques, le vent d'altitude descend dans les vallées). Le potentiel thermique est multiplié par
 1 + 0,18 × (Γ − 6,5), entre 0,4 et 1,3 ; le vent météo prend le dessus sur les brises à partir de
 35 km/h × (1 − 0,1 × (Γ − 6,5)), entre × 0,7 et × 1,4 : l'air stable laisse les vallées dans leur
-brise sous un vent fort en altitude. Le vent réglé à la main garde l'atmosphère standard (6,5 °C/km,
-facteurs neutres). Pentes : hypothèses d'ordre de grandeur. Le panneau de prévision affiche le
-gradient de l'heure et sa lecture.
+brise sous un vent fort en altitude. À la main, « standard » garde l'atmosphère standard (6,5 °C/km,
+facteurs neutres) ; « stable » et « instable » prennent 4,5 et 7,8 °C/km. Pentes : hypothèses
+d'ordre de grandeur. Ce gradient global règle la force des thermiques et la tenue des brises ;
+l'air par couches y ajoute, maille par maille, le plafond, l'épaisseur convective et le vent de
+chaque altitude (ci-dessus). Le panneau « Situation » résume l'air en une ligne de briefing
+(« Instable, base 2 800 m, NO 20 km/h aux crêtes, inversion 1 400 m à 9 h » : stabilité du
+gradient 850–700 hPa, base des cumulus ou plafond des thermiques bleus au-dessus du sol lu, vent
+des crêtes, première inversion — couche où la température ne baisse plus, ≤ 0,5 °C/km — au-dessus
+du sol, ou celle du matin de 6 h à 11 h), le profil vertical (vent par altitude, couches
+stables et inversions, couche convective, base, altitude lue) et les phénomènes documentés actifs
+dans la vue (`air-brief.ts`).
 
 ## 6. Grandeurs dérivées
 
@@ -274,14 +322,30 @@ géopotentiel) et hauteur de couche limite ECMWF IFS. Indicateurs :
 - vitesse convective de Deardorff `w*` à partir d'un flux de chaleur estimé (saison, nébulosité),
   taux de montée ≈ `w*` − 1,1 m/s (taux de chute d'une voile).
 
+La sonde lit aussi l'air par couches de la simulation (§ 5) à l'altitude lue : vent de la masse
+d'air avant le relief, gradient de la couche et sa lecture (inversion, couche stable, instable,
+brassée), plafond thermique de ce sol (ou base des cumulus) et l'écart à l'altitude lue, prochaine
+inversion au-dessus. Le profil du point (AROME, 10 niveaux) reste l'émagramme détaillé ; l'air
+qui pilote la carte est celui de la maille de 0,25° du centre de la vue.
+
 ## 8. Limites connues
 
 - Résolution 216 m : les petites combes et les effets de détail des décollages échappent au modèle.
-- Pas de dynamique : pas de fœhn, de ressauts ni d'ondes ; la stabilité (mode prévision) ne règle que
-  la force des thermiques et la tenue des brises sous le vent d'altitude, pas encore le sous-le-vent
-  (nombre de Froude).
-- Les horaires de brise suivent une journée ensoleillée type ; nébulosité et humidité du sol ne
-  sont pas prises en compte dans la simulation.
+- Pas de dynamique : pas de fœhn, de ressauts ni d'ondes ; la stabilité ne règle que la force et le
+  plafond des thermiques, la tenue des brises et leur plafond, pas encore le sous-le-vent (nombre
+  de Froude). La journée type « Foehn » ne pose que le vent et l'air stable.
+- Un seul sondage pour toute la carte : celui de la maille de 0,25° du centre de la vue, repris
+  quand la vue bouge de plus de 20 km ; pas de champ spatialisé (évolution prévue, ARCHITECTURE).
+  Les niveaux sous le relief lissé d'AROME sont extrapolés par le modèle de prévision ; on les
+  garde, faute de mieux, pour les fonds de vallée. Le vent bas d'AROME est déjà freiné par son
+  relief, et le modèle le freine encore en fond de vallée : les vallées peuvent être trop calmes
+  sous un vent de basse couche.
+- La particule thermique a un excès fixe de 1,5 °C, sans dépendre de l'ensoleillement de la pente ;
+  les sommets au-dessus de la couche convective régionale ont un plafond de quelques centaines de
+  mètres, sans la couche convective propre aux reliefs chauffés.
+- Les horaires de brise suivent une journée ensoleillée type ; la nébulosité prévue affaiblit
+  brises et thermiques (Kasten et Czeplak) sans décaler leurs horaires, et l'humidité du sol
+  n'est pas prise en compte. À la main, le ciel est clair.
 - Déclenchement thermique : écart médian de −30 min sur les 58 débuts explicites, testés dans
   leur saison (`docs/MODEL_QA.md`). Les fiches « dès 11h », qui donnent souvent l'heure des
   thermiques utiles, et les points chauds « le matin », qui démarrent dans le modèle 15 à 45 min

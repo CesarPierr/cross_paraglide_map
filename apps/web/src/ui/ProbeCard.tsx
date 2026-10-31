@@ -5,6 +5,7 @@ import { useApp, useRuntime } from '../state/store';
 import { getController, getDataClient } from './controller-ref';
 import { startDraft } from './Feedback';
 import { fmtHour } from './format';
+import { airAtAltitude, fmtAlt } from './air-brief';
 import { stabilityLabel } from './Forecast';
 import { NearbySources } from './Nearby';
 import { ProfileChart } from './ProfileChart';
@@ -114,6 +115,45 @@ function PointForecastBlock({ lon, lat }: { lon: number; lat: number }) {
   );
 }
 
+const fmtNum = (v: number) => (Math.round(v * 10) / 10).toLocaleString('fr-FR');
+
+/** The layered air at the probed altitude: wind of the air mass, layer, ceiling, inversion. */
+function AirHere({ elevation, heightAgl }: { elevation: number; heightAgl: number }) {
+  const air = useApp((s) => s.air);
+  const z = elevation + Math.max(heightAgl, 5);
+  if (!air) return <p className="probe-air muted small">Journée type : le même vent météo à toutes les altitudes, pas de plafond imposé.</p>;
+  const a = airAtAltitude(air, z, elevation);
+  if (!a) return null;
+  const d = Math.round(Math.abs(a.toCeiling) / 50) * 50;
+  return (
+    <section className="probe-air" aria-label="L’air à cette altitude">
+      <p className="probe-air-title">L’air à {fmtAlt(z)} m</p>
+      <div className="forecast-grid">
+        <div>
+          <span title="Vent de la masse d’air à cette altitude, avant les effets du relief">Vent de l’air</span>
+          <b>{a.wind.kmh < 2 ? 'calme' : `${compassFr(a.wind.fromDeg)} ${Math.round(a.wind.kmh)} km/h`}</b>
+        </div>
+        <div>
+          <span title="Gradient de température de la couche où vous êtes">Couche</span>
+          <b>
+            {fmtNum(a.lapse)} °C/km · {a.layer}
+          </b>
+        </div>
+        <div>
+          <span>{a.cloudBase !== null ? 'Base des cumulus' : 'Plafond thermique'}</span>
+          <b>
+            {fmtAlt(a.ceiling)} m · {a.toCeiling >= 0 ? `${d} m au-dessus de vous` : `${d} m sous vous`}
+          </b>
+        </div>
+        <div>
+          <span>Inversion</span>
+          <b>{a.inversion !== null ? `${fmtAlt(a.inversion)} m · ${Math.round((a.inversion - z) / 50) * 50} m au-dessus` : 'aucune sous 4 500 m'}</b>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /** Airspaces above the probed point (only when an airspace family is shown). */
 function AirspacesHere({ lon, lat }: { lon: number; lat: number }) {
   useApp((s) => s.layers.airspace || s.layers.airspaceProtect || s.layers.airspaceActivity);
@@ -146,11 +186,13 @@ function AirspacesHere({ lon, lat }: { lon: number; lat: number }) {
 
 /** Why the thermal is what it is here, in the model's terms (field.ts), or null. */
 function thermalReasons(
-  c: { thermal: number; insolation: number; coldPool: number; onset: number; restitution: boolean; lee: number },
+  c: { thermal: number; insolation: number; coldPool: number; onset: number; restitution: boolean; lee: number; ceilingM: number; elevation: number; heightAgl: number },
   s: { synopticKmh: number; lapseRate: number | null; month0: number; day: number },
 ): string[] {
   const out: string[] = [];
-  if (c.restitution && c.thermal > 0.02) out.push('Restitution : la pente, passée à l’ombre, rend la chaleur de la journée, d’où une ascendance douce.');
+  if (Number.isFinite(c.ceilingM) && c.elevation + Math.max(c.heightAgl, 5) > c.ceilingM) out.push('Au-dessus du plafond thermique : pas de thermique à cette altitude.');
+  else if (Number.isFinite(c.ceilingM) && c.ceilingM - c.elevation < 150) out.push('Couche convective trop mince au-dessus de ce sol : l’air stable bloque les thermiques.');
+  else if (c.restitution && c.thermal > 0.02) out.push('Restitution : la pente, passée à l’ombre, rend la chaleur de la journée, d’où une ascendance douce.');
   else if (c.insolation < 0.05 && c.thermal < 0.05) out.push('À l’ombre à cette heure : pas de thermique ici.');
   else if (c.coldPool > 0.5 && c.onset < 0.9) out.push('Fond de vallée encore sous l’inversion du matin : les thermiques en sortent plus tard que sur les pentes.');
   else if (c.onset < 0.9) out.push('Pente pas encore assez chauffée : les thermiques démarrent après une à trois heures de plein soleil.');
@@ -222,6 +264,7 @@ export function ProbeSheet() {
             <Row label="Plaine · lac · mer" v={c.regional} />
             <Row label="Vent météo après relief" v={c.synoptic} note={c.channelling > 0.3 ? 'canalisé par la vallée' : undefined} />
           </div>
+          <AirHere elevation={c.elevation} heightAgl={c.heightAgl} />
           <p className={`probe-exposure ${exposure.tone}`}>
             {exposure.text}
             {documented && (

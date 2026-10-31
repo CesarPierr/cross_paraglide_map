@@ -281,7 +281,12 @@ uniform float uPixAng;
 uniform vec3 uAlbedoToX;
 uniform float uMaterials;
 uniform float uDetailOn;
-uniform int uGDebug;
+// Debug views (Ground.debug, 0 = none), compiled in only when one is asked for: tested on a
+// uniform, their branches (the not-a-number finder's derivatives above all) cost the landscape
+// pass five to six times its time on an M1 Pro, the views off.
+#ifndef GDEBUG
+#define GDEBUG 0
+#endif
 uniform vec3 uSunX;
 uniform float uDetailN;
 // Debug views 5 and 6 bypass the tone curve: raw values read back from screenshots.
@@ -417,7 +422,7 @@ void gClassify(vec3 rho, vec3 N, vec3 pa, out float forest, out float meadow, ou
   float pSnow = cov.b;
   float pBuilt = cov.a;
   gDbg = vec3(L * 2.0, green + 0.3, pTrees);
-  if (uGDebug == 6) gDbg = vec3(sat, pBare, pBuilt);
+  if (GDEBUG == 6) gDbg = vec3(sat, pBare, pBuilt);
   // Thresholds read on the IGN orthophotos (albedo-like units): dense forest L 0.035-0.075,
   // green +0.02-0.07, saturation 0.25-0.4; meadows L 0.06-0.45, green +0.03-0.05; limestone
   // L 0.25-0.4, saturation < 0.15; lakes saturated cyan (0.55-0.66), L 0.05-0.14; glacier
@@ -500,7 +505,7 @@ vec3 gShade(vec3 xd, vec3 xdSmooth, vec3 snowX, vec3 pa, vec3 V, float dist, Rel
   gClassify(xd / uAlbedoToX, N0, pa, forest, meadow, crop, rock, ice, built, water);
   // Metres per pixel on the ground (more at grazing angles).
   float foot = max(dist, 1.0) * uPixAng / sqrt(max(abs(dot(N0, V)), 0.06));
-  if (uGDebug == 8 || uDetailOn < 0.5) foot = 1e6;
+  if (GDEBUG == 8 || uDetailOn < 0.5) foot = 1e6;
   // Where the photo runs out of pixels (its texels ~0.2-0.5 m), the detail's brightness takes over.
   float near = 1.0 - smoothstep(0.25, 0.9, foot);
   float stretch = smoothstep(0.62, 0.32, N0.z);
@@ -684,14 +689,14 @@ vec3 gShade(vec3 xd, vec3 xdSmooth, vec3 snowX, vec3 pa, vec3 V, float dist, Rel
     vec3 wcol = albedo * 0.55 * E * (1.0 - F) + sky * F + glint;
     col = mix(col, wcol, water);
   }
-  if (uGDebug == 1) {
+  if (GDEBUG == 1) {
     vec3 k = vec3(1.0, 0.0, 1.0) * max(0.0, 1.0 - forest - meadow - crop - rock - iceAll - built - water);
     k += forest * vec3(0.05, 0.3, 0.08) + meadow * vec3(0.45, 0.85, 0.3) + crop * vec3(0.9, 0.8, 0.2) + rock * vec3(0.5) + iceAll * vec3(1.0) + built * vec3(0.9, 0.2, 0.15) + water * vec3(0.1, 0.3, 1.0);
     return k * uAlbedoToX * (uSkyGain + uSunNorm * 0.6);
   }
-  if (uGDebug == 2) return (N * 0.5 + 0.5) * uAlbedoToX;
-  if (uGDebug == 3) return vec3(rf.sun * sunVis) * uAlbedoToX;
-  if (uGDebug == 4) return vec3(rf.sky * ao) * uAlbedoToX;
+  if (GDEBUG == 2) return (N * 0.5 + 0.5) * uAlbedoToX;
+  if (GDEBUG == 3) return vec3(rf.sun * sunVis) * uAlbedoToX;
+  if (GDEBUG == 4) return vec3(rf.sky * ao) * uAlbedoToX;
   return col;
 }
 `;

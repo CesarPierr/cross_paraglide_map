@@ -362,8 +362,14 @@ vent et peut le traîner s'il ne l'affale pas.
   demandée une fois par seconde). Mesures sur un M1 Pro, 1512 × 982 points, vue pilote, vsync
   coupée : 30 ms par image au ratio 2 et 12 ms au ratio 1 avant ; 10,5 ms au ratio 1,25 (celui
   que l'auto retient à 60 images/s) et 7,8 ms au ratio 1 après ; en pause, fil principal de
-  83 % à 8 %. Ce qui reste : la passe paysage (relumière du relief, matériaux) fait près des
-  deux tiers du GPU, MapLibre (relief, photos) ~4 ms de CPU par image.
+  83 % à 8 %. La passe paysage (relumière du relief, matériaux) faisait encore près des deux
+  tiers du GPU : ses vues de contrôle (`ground.debug`), testées sur un uniforme, la ralentissaient
+  cinq à six fois, vues éteintes (la branche du chercheur de NaN et ses dérivées surtout) ; elles
+  ne sont plus compilées que lorsqu'on en demande une (`GDEBUG`, `materials.ts`). Même image
+  (écarts d'un niveau sur 8 bits, sur moins de 1 % des pixels). La passe seule, hors écran : au
+  ratio 2, de 20 à 3,3 ms en vue pilote et de 28 à 5 ms vers le sol ; au ratio 1,25, de 8,3 à
+  1,4 ms et de 11,5 à 2 ms ; l'image entière au ratio 1,25 en vue pilote tombe à ~6 ms. Reste
+  MapLibre (relief, photos), ~4 ms de CPU par image.
 - **Trace IGC** : le vol est enregistré (un point par seconde une fois en l'air) et se télécharge à
   la fin au format IGC (`igc.ts`), pour le revoir dans les outils de vol habituels ; l'en-tête le
   marque comme vol simulé (pas d'enregistrement de sécurité G).

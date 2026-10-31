@@ -370,7 +370,7 @@ void main() {
       }
 #endif
       x = gShade(xd, xs, uSnowX, pa, normalize(-fv), dist, rf, sunVis);
-      if (uGDebug == 7) {
+      if (GDEBUG == 7) {
         // Not-a-number finder: red in the colour, green in the position's derivatives.
         bool bad = any(isnan(x)) || any(isinf(x));
         bool badD = any(isnan(dFdx(pa))) || any(isinf(dFdx(pa))) || any(isnan(dFdy(pa)));
@@ -381,7 +381,7 @@ void main() {
 #endif
         return;
       }
-      if (uGDebug == 5 || uGDebug == 6) {
+      if (GDEBUG == 5 || GDEBUG == 6) {
         fragColor = vec4(gDbg, 1.0);
         return;
       }
@@ -399,7 +399,7 @@ void main() {
   x = x * Tap + Lap;
   vec3 col = atmoEncode(atmoTonemap(x * uExposure));
   col += (ignNoise(gl_FragCoord.xy) - 0.5) / 255.0;
-  if (uGDebug == 9) col = mix(col, mix(mix(vec3(1.0, 0.0, 0.0), vec3(1.0, 0.85, 0.0), kind.y), vec3(0.0, 0.4, 1.0), kind.x), 0.6 * gap);
+  if (GDEBUG == 9) col = mix(col, mix(mix(vec3(1.0, 0.0, 0.0), vec3(1.0, 0.85, 0.0), kind.y), vec3(0.0, 0.4, 1.0), kind.x), 0.6 * gap);
   fragColor = vec4(col, 1.0);
 }`;
 
@@ -800,7 +800,13 @@ export class Sky {
       this.depthTex.sourceTexture = f.terrainDepth;
       this.ground.uniforms.uPixAng.value = f.fovY / f.height;
       const sm = this.cloudLayer.shadowMap;
+      const dbg = String(this.ground.debug | 0);
       for (const m of [this.groundMat, this.groundNearMat]) {
+        // A debug view asked for (Ground.debug): the passes recompiled with it (materials.ts GDEBUG).
+        if ((m.defines.GDEBUG ?? '0') !== dbg) {
+          m.defines.GDEBUG = dbg;
+          m.needsUpdate = true;
+        }
         const u = m.uniforms;
         this.setRays(m, f);
         u.uScene.value = this.sceneCopy;

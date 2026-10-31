@@ -451,7 +451,6 @@ export class Ground {
       uSunX: { value: new THREE.Vector3(1, 1, 1) },
       uMaterials: { value: 1 },
       uDetailOn: { value: 1 },
-      uGDebug: { value: 0 },
     };
     const levelUniforms = () => ({
       uD0: this.uniforms.uD0,
@@ -532,7 +531,6 @@ export class Ground {
     // Slow frames (sky.ts's adaptive quality): the detail stack goes, and on phones the
     // materials altogether (the relief's light and shadows stay).
     this.uniforms.uMaterials.value = this.materials && !(this.lowQuality && this.lowDetail) ? 1 : 0;
-    this.uniforms.uGDebug.value = this.debug;
     this.uniforms.uDetailOn.value = this.lowDetail ? 0 : 1;
     const lv = this.levels;
     let changed = false;

@@ -3,7 +3,7 @@
  * and the FFVL ones inside the model's grid that the atlas does not already have. The
  * pilot starts in the air just off the take-off, facing out of it.
  */
-import { isClosedSite, type Atlas, type FlyingSite } from '@brises/shared';
+import { isClosedSite, statusFromFfvl, type Atlas, type FlyingSite } from '@brises/shared';
 
 export interface Takeoff {
   id: string;
@@ -48,6 +48,7 @@ export function listTakeoffs(atlas: Atlas, ffvl: FlyingSite[], inGrid: (lon: num
   }
   for (const s of ffvl) {
     if (s.kind !== 'takeoff' || !s.altitude || !inGrid(s.lon, s.lat)) continue;
+    if (isClosedSite(statusFromFfvl(s.details?.['Praticabilité'] ?? '', s.details?.Pratiques ?? ''))) continue;
     const facing = facingOf(s.orientations ?? []);
     if (facing === null) continue;
     if (out.some((t) => Math.hypot((t.lon - s.lon) * 78, (t.lat - s.lat) * 111) < 0.4)) continue;

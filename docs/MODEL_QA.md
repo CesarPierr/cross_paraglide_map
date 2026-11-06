@@ -1,6 +1,6 @@
 # Contrôle du modèle de vent contre l’atlas
 
-Généré par `npm run model:check` le 2026-11-06 sur `/private/tmp/claude-501/-Users-pierre-paraglide/d240aa40-1ea3-450d-a9c1-4562e90bb9a5/scratchpad/atlas-head.json` (atlas du 2026-11-06), modèle TypeScript de référence (`packages/model`) sur le MNT réel. Durée : 48,1 s.
+Généré par `npm run model:check` le 2026-11-06 sur `apps/web/public/data/atlas.json` (atlas du 2026-11-06), modèle TypeScript de référence (`packages/model`) sur le MNT réel. Durée : 52,3 s.
 
 ## Critères
 

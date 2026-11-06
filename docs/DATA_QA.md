@@ -10,17 +10,18 @@ Généré par `npm run data:build` le 2026-11-06.
 - convergences : 80
 - hazards : 532
 - thermals : 1167
-- soaring : 117
+- soaring : 116
 - takeoffs : 542
-- landings : 301
+- landings : 300
 - routes : 184
 - figures : 163
 
-## Points à vérifier (7)
+## Points à vérifier (8)
 
 - saleve-genevois: itinéraire « Challenge permanent Salève (boucle autour du Petit Salève) » : demi-tour à « B1 - Chalet de la Tuile (position estimée) », position estimée (à vérifier, sauf balise de demi-tour voulue)
 - ecrins-vallouise-haute-durance: itinéraire « Cross difficile : promenade dans les Écrins (Blanche – Bans – Agneaux – retour) » : demi-tour à « Agneaux », position estimée (à vérifier, sauf balise de demi-tour voulue)
 - ecrins-vallouise-haute-durance: itinéraire « Cross difficile : promenade dans les Écrins (Blanche – Bans – Agneaux – retour) » : demi-tour à « Pointe nord-ouest (Agneaux) », position estimée (à vérifier, sauf balise de demi-tour voulue)
+- brianconnais_ecrins_queyras_ubaye: figure « Chocard Airlines : carte interactive du secteur (décollages, atterrissages, pentes écoles, espaces aériens) » cite des éléments introuvables
 - saint-andre-verdon: itinéraire « Boucle Antennes de la Reynière – crête des Serres – Pic de Chamatte (~30 km) » : demi-tour à « Antennes de la Reynière », position estimée (à vérifier, sauf balise de demi-tour voulue)
 - haut-verdon-allos: itinéraire « Saint-André – Dormillouse – haut Var – Saint-Étienne-de-Tinée (109 km, 1er avril 2011) » : demi-tour à « Allos (Rochecline, lac d'Allos) », position estimée (à vérifier, sauf balise de demi-tour voulue)
 - prealpes-digne-lure: takeoffs « Archail – La Fontaine » altitude déclarée 1720 m, MNT 1051 m (écart -669 m, coord source)

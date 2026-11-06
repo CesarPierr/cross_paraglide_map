@@ -1,6 +1,6 @@
 # Contrôle du modèle de vent contre l’atlas
 
-Généré par `npm run model:check` le 2026-11-06 sur `apps/web/public/data/atlas.json` (atlas du 2026-11-06), modèle TypeScript de référence (`packages/model`) sur le MNT réel. Durée : 49,6 s.
+Généré par `npm run model:check` le 2026-11-06 sur `apps/web/public/data/atlas.json` (atlas du 2026-11-06), modèle TypeScript de référence (`packages/model`) sur le MNT réel. Durée : 50,2 s.
 
 ## Critères
 
@@ -21,7 +21,7 @@ Généré par `npm run model:check` le 2026-11-06 sur `apps/web/public/data/atla
 
 Pièges au point par le modèle de relief seul (sans la couche des dangers documentés) : 87/157 (55 %), dont sous le vent 30/51. Le reste n’apparaît que par la couche des dangers documentés, active quand le vent simulé correspond à leurs conditions.
 
-Contrôle : décollages face au vent (première orientation documentée, 20 km/h) affichés sous le vent ou turbulents : 9/461 (2,0 %) — Aouille de Criou (Samoëns) (S) ; Grand Châtelard (accès par Jarrier) (SW) ; Saint-François-Longchamp – télésiège de la Lauzière (FFVL 2323) (N) ; Les Orres – Costias (Haut Forest) (S, danger documenté « Les Orres : sous le vent de la crête par S et E ») ; Soleil Bœuf (N) ; Chauvet (face au col du Festre) (NE) ; Buc Est – La Tanière (E, danger documenté « Venturi entre Buc et Le Fort ») ; Jocou (Lus-la-Croix-Haute / Châtillon) (S, danger documenté « Jocou : venturi de vent de sud à l’est du sommet ») ; Chalvet Nord (peu utilisé) (N, danger documenté « Décollages du Chalvet sous le vent par Mistral (N/NO) »).
+Contrôle : décollages face au vent (première orientation documentée, 20 km/h) affichés sous le vent ou turbulents : 9/462 (1,9 %) — Aouille de Criou (Samoëns) (S) ; Grand Châtelard (accès par Jarrier) (SW) ; Saint-François-Longchamp – télésiège de la Lauzière (FFVL 2323) (N) ; Les Orres – Costias (Haut Forest) (S, danger documenté « Les Orres : sous le vent de la crête par S et E ») ; Soleil Bœuf (N) ; Chauvet (face au col du Festre) (NE) ; Buc Est – La Tanière (E, danger documenté « Venturi entre Buc et Le Fort ») ; Jocou (Lus-la-Croix-Haute / Châtillon) (S, danger documenté « Jocou : venturi de vent de sud à l’est du sommet ») ; Chalvet Nord (peu utilisé) (N, danger documenté « Décollages du Chalvet sous le vent par Mistral (N/NO) »).
 
 Contrôles élémentaires des brises :
 

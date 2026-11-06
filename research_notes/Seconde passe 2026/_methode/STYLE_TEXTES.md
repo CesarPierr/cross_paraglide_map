@@ -228,6 +228,15 @@ non plus une suite de phrases hachées, sujet-verbe-point : couper une phrase en
 pas plus lisible. On varie, comme à l'oral : une phrase moyenne qui se déroule, une courte qui
 frappe, un lien logique entre les deux. La règle « des phrases courtes » de la Voix se lit ainsi.
 
+**Une étape de visite peut renvoyer.** Une visite raconte, elle n'a pas à tout dire : un détail
+peut renvoyer à la fiche du lieu, à un massif voisin ou à une ressource, tant que le fait reste
+sur le site (dans la fiche, le plus souvent). C'est la règle « aucun fait perdu » à l'échelle du
+massif, pas de l'étape.
+
+**Pas de contradiction dans un texte.** Quand deux sources, ou deux phrases d'une même source, se
+contredisent, on s'aligne sur la plus fiable ou la plus récente, et une interdiction prime sur un
+conseil ; l'écart va en `note`. Le lecteur n'a pas à trancher.
+
 **Le massif entier suit la même pente.** Le résumé et l'accueil de la visite donnent la carte
 mentale (les vallées, les crêtes, les grandes orientations) avant de nommer le moindre site.
 Une visite ne cite un lieu qu'après avoir dit où il se situe.

@@ -3,9 +3,10 @@
  * that local knowledge overrides the generic flow where it applies. Each cell
  * keeps the dominant breeze (highest influence) of three layers:
  * - `main`: regular valley-scale and regional breezes;
- * - `cond`: conditional ones (canicule, Lombarde…), which may share a corridor
- *   with a regular breeze blowing the other way and only take over when their
- *   condition holds;
+ * - `cond`: conditional ones (canicule, Lombarde…) and night ones, which may share a
+ *   corridor with a regular breeze blowing the other way and only take over when their
+ *   condition or their hours hold (in `main`, a night wind sitting on the valley's axis
+ *   took its cells from the day breeze for good: nothing documented blew there by day);
  * - `thin`: slope and katabatic breezes, a layer of tens to a couple of hundred
  *   metres above the ground that can run under (or against) the valley wind,
  *   as the sources describe (a katabatic flow sliding under the lake breeze).
@@ -97,13 +98,15 @@ export function rasterizeCurated(t: Terrain, breezes: CuratedBreezeInput[], haza
   const cond = emptyRaster(n);
   const thin = emptyRaster(n);
   const cell = grid.cellM[(h / 2) | 0];
+  const condHeld = new Uint8Array(n);
 
   breezes.forEach((b, bi) => {
     if (b.coords.length < 2) return;
     const pts = b.coords.map(([lon, lat]) => grid.toGrid(lon, lat));
     const R = Math.max(1.5, b.radiusM / cell);
     const valleyKind = VALLEY_KINDS.has(b.kind);
-    const L = THIN_KINDS.has(b.kind) ? thin : b.condition ? cond : main;
+    const night = !!b.window && b.window[0] > b.window[1];
+    const L = THIN_KINDS.has(b.kind) ? thin : b.condition || night ? cond : main;
     const specificity = Math.sqrt(SPECIFIC_RADIUS / Math.max(SPECIFIC_RADIUS, b.radiusM));
     for (let s = 0; s < pts.length - 1; s++) {
       const [ax, ay] = pts[s];
@@ -145,7 +148,12 @@ export function rasterizeCurated(t: Terrain, breezes: CuratedBreezeInput[], haza
           // of the documentation: a side-valley breeze keeps its valley inside the wide
           // corridor (5–6 km) of a regional or plain → mountain breeze.
           const score = wgt * specificity;
-          if (score > L.score[k]) {
+          // In `cond`, a real condition keeps its corridor from a night wind: it says
+          // which of the flows is there by day, when the night wind is off anyway.
+          const held = L === cond ? condHeld[k] : 0;
+          if (night && held) continue;
+          if (score > L.score[k] || (L === cond && !night && !held)) {
+            if (L === cond && !night) condHeld[k] = 1;
             L.score[k] = score;
             L.weight[k] = wgt;
             L.index[k] = bi;

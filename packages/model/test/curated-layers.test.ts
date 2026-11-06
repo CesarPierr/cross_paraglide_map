@@ -73,6 +73,26 @@ const breeze = (id: string, kind: string, coords: [number, number][], extra: Par
 const k = 40 * grid.width + 60;
 const at = (b: CuratedBreezeInput[], p: ModelParams) => evalCell(k, makeWindContext(terrain, computeTimeContext(terrain, p), p, rasterizeCurated(terrain, b)), newCellResult());
 
+describe('a night wind sharing a corridor with a day breeze', () => {
+  // The night wind's narrower corridor scores higher: in one layer it would own the valley's axis for good.
+  const day = breeze('day', 'plain-to-mountain', path(20, 100), { window: [11, 19], radiusM: 5000 });
+  const night = breeze('night', 'downvalley', path(100, 20), { window: [21, 9], radiusM: 1500 });
+  const heat = breeze('heat', 'valley', path(20, 100), { window: [12, 18], condition: { label: 'par forte chaleur (canicule)', regime: 'heatwave' } });
+
+  it('leaves the cell to the day breeze by day, and takes it at night', () => {
+    const layer = rasterizeCurated(terrain, [day, night]);
+    expect(layer.main.index[k]).toBe(0);
+    expect(layer.cond.index[k]).toBe(1);
+    expect(at([day, night], params(15)).curatedIndex).toBe(0);
+    expect(at([day, night], params(23)).curatedIndex).toBe(1);
+  });
+
+  it('gives way to a real condition in its layer, whatever the order', () => {
+    expect(rasterizeCurated(terrain, [night, heat]).cond.index[k]).toBe(1);
+    expect(rasterizeCurated(terrain, [heat, night]).cond.index[k]).toBe(0);
+  });
+});
+
 describe('conditional breezes', () => {
   // Regular breeze blowing west (down the drainage) and a heatwave-only one blowing east, same corridor.
   const regular = breeze('regular', 'valley', path(100, 20));

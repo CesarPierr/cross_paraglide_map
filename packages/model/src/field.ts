@@ -664,8 +664,8 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
     let tx = cl.main.tx[k];
     let ty = cl.main.ty[k];
     let act = idx >= 0 ? c.curatedActivity[idx] : 0;
-    // A conditional breeze takes its corridor over when its condition holds: the
-    // condition, not the corridor weight, says which of the two flows is there.
+    // A conditional or night breeze takes its corridor over when its condition or hours
+    // hold: they, not the corridor weight, say which of the two flows is there.
     const ci = cl.cond.index[k];
     const ca = ci >= 0 ? c.curatedActivity[ci] : 0;
     if (ci >= 0 && cl.cond.weight[k] * ca > wgt * act * (1 - ca)) {

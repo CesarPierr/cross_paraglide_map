@@ -2744,7 +2744,7 @@
           ],
           "hours": "à partir de 11h au printemps et en été ; ascendante et forte dès le début d'après-midi en été anticyclonique",
           "speed_kmh": {
-            "typical": 15,
+            "typical": 10,
             "max": 35
           },
           "season": "printemps-été (forte en été)",
@@ -2763,7 +2763,7 @@
           "possible": [
             "La cluse de Voreppe ferait 75 % de l'aérologie locale : elle bloque les entrées de nord en basses couches et alimente les reliefs en brises."
           ],
-          "note": "Vitesse estimée, aucune mesure de cette brise n'a été trouvée : 15 km/h, cohérent avec les 3 à 5 m/s habituels d'une brise de vallée et avec « rarement plus de 15 km/h » à Lumbin, dans le Grésivaudan voisin. Les stations au sol de l'agglomération relevaient 0 à 2 m/s pendant la campagne GRENOPHOT de 1999, sans distinguer la brise. Le maximum vient d'une brise de plus de 35 km/h venue de Grenoble, jugée rare, citée à l'atterrissage d'Uriage. Le tracé s'arrête à Grenoble : au-delà, la brise du Grésivaudan descend en sens inverse, et les deux se rencontrent au nord-est de la ville (voir la convergence)."
+          "note": "Vitesse estimée, aucune mesure de cette brise n'a été trouvée : 10 km/h par défaut, sous les « rarement plus de 15 km/h » de Lumbin, dans le Grésivaudan voisin, et au bas des 3 à 5 m/s habituels d'une brise de vallée. Les stations au sol de l'agglomération relevaient 0 à 2 m/s pendant la campagne GRENOPHOT de 1999, sans distinguer la brise. Le maximum vient d'une brise de plus de 35 km/h venue de Grenoble, jugée rare, citée à l'atterrissage d'Uriage. Le tracé s'arrête à Grenoble : au-delà, la brise du Grésivaudan descend en sens inverse, et les deux se rencontrent au nord-est de la ville (voir la convergence)."
         },
         {
           "id": "brise-grenoble-sud-drac",

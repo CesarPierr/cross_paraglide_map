@@ -4,7 +4,7 @@ Généré par `npm run data:build` le 2026-11-06. 2680 points chauds kk7 de prob
 
 - Thermiques documentés confirmés par un point chaud à moins de 600 m : **502**, dont **58** recalés sur la position mesurée (leur position n’était qu’approximative).
 - Points chauds ≥ 80 % qu’aucun texte ne décrit, ajoutés comme thermiques « mesurés » : **345** (603 autres hors des secteurs).
-- Thermiques documentés à plus de 2 km de tout point chaud : **119** (site peu volé, ou position à vérifier).
+- Thermiques documentés à plus de 2 km de tout point chaud : **118** (site peu volé, ou position à vérifier).
 
 ## Points chauds forts (≥ 90 %) sans description, par secteur
 
@@ -56,11 +56,10 @@ Ni rattachés ni ajoutés : soit le thermique documenté est mal placé (le reca
 - `val-arly-megeve/mont-joly-derniers-thermiques-megeve` Mont Joly : derniers thermiques côté Megève avant la transition vers le Mont Blanc (position source)
 - `val-arly-megeve/megeve-thermique-couche-b6` Megève : thermique très couché par la brise à la balise de Megève (position approx)
 - `tarentaise/tignes-toviere-thermique` Tovière (Tignes) : plafonds d'été et vols tardifs (position source)
-- `tarentaise/aime-confluence-thermique` Au-dessus d'Aime : thermique de confluence (relance vers Bourg-Saint-Maurice) (position source)
+- `tarentaise/aime-confluence-thermique` Au-dessus d'Aime : thermique du retour vers Bourg-Saint-Maurice (confluence supposée) (position source)
 - `tarentaise/cret-du-rey-relance` Crêt du Rey : petite relance pour atteindre la Combe Bénite (position source)
 - `tarentaise/pointe-de-la-combe-benite-perchoir` Pointe de la Combe Bénite : perchoir faible avant le flux du Cormet d'Arêches (position source)
 - `tarentaise/lavachet-crete-entre-toviere-et-val-d-isere` Pointe du Lavachet : crête de relance entre la Tovière et Val d'Isère (déduction) (position source)
-- `tarentaise/montagne-de-tete-valmorel-thermiques` Montagne de Tête (Valmorel) : thermiques puissants dès 16h, dynamique dès 12h (position source)
 - `vanoise/deux-lacs-belleville-soir` Les Deux Lacs (Val Thorens) : vol du soir dans l'axe thermique de Belleville (position source)
 - `bourget-chambery/relais-mont-du-chat` Relais (TDF) du Mont du Chat (position source)
 - `combe-de-savoie/tours-de-montmayeur-relance` Tours de Montmayeur (relance du retour des Bauges) (position source)
@@ -78,7 +77,7 @@ Ni rattachés ni ajoutés : soit le thermique documenté est mal placé (le reca
 - `vercors-nord/col-vert-pompe-pierriers` Col Vert : pompe de service dans les pierriers (position approx)
 - `vercors-nord/bec-de-l-orient-relais-pompe` Bec de l'Orient : thermique de service après le relais téléphonique (position source)
 - `vercors-nord/pas-des-rages-plafond-raccroche` Avant les gorges de la Bourne / Pas des Rages : plafond et raccroche (position source)
-- `vercors-nord/ffvl2227-autrans-la-plaine-thermique-fevrier` La Plaine (Autrans) : possible thermique fin février par vent d'ouest (position source)
+- `vercors-nord/ffvl2227-autrans-la-plaine-thermique-fevrier` La Plaine (Autrans), spot de snowkite : possible thermique fin février par vent d'ouest (position source)
 - `trieves/chichilianne-spirale` Pentes de Chichilianne / Clelles (spirale thermique de la carte du PNR) (position approx)
 - `trieves/jocou-antenne-emetteur-est` Antenne de l'émetteur à l'est du Jocou : bon thermique vers l'Obiou (position approx)
 - `matheysine/colombiers-restitution-du-soir` Colombiers (Valbonnais) : restitution du soir, une fois passées les heures chaudes (position source)
@@ -89,12 +88,12 @@ Ni rattachés ni ajoutés : soit le thermique documenté est mal placé (le reca
 - `oisans-grandes-rousses/meijette-la-grave` La Meijette (La Grave) : thermique vers le sommet de la Meije (position source)
 - `oisans-grandes-rousses/aiguille-de-venosc-matin` Aiguille de Venosc : ascendances du matin (traversée du Vénéon) (position source)
 - `oisans-grandes-rousses/goleon-raccroche-lautaret` Aiguille du Goléon : raccroche manqué après la traversée du Lautaret (lieu à confirmer) (position source)
-- `oisans-grandes-rousses/lautaret-plafond-4050` Au-dessus du col du Lautaret : plafond à 4050 m (position source)
+- `oisans-grandes-rousses/lautaret-plafond-4050` Au-dessus du col du Lautaret (position source)
 - `oisans-grandes-rousses/pic-col-ornon-rochail` Pic du col d'Ornon (faces est du Rochail) : nuage à 3400 m (position source)
 - `oisans-grandes-rousses/signal-de-lhomme-relance` Signal de l'Homme (Auris) : relance avant la descente sur Bourg-d'Oisans (position source)
 - `maurienne/jarrier-balme-crete-cols` Jarrier : crête au-dessus de La Balme et du Grand Châtelard (« rester haut » vers Glandon et Croix de Fer) (position source)
 - `haute-maurienne/sollieres-sardieres-relance` Au-dessus de Sollières-Sardières : relance au retour de Termignon (position source)
-- `haute-maurienne/arcelle-val-cenis-relance` Arcelle / crêtes de Val Cenis : relance sur la route Aussois → Bonneval (position source)
+- `haute-maurienne/arcelle-val-cenis-relance` Arcelle / crêtes de Val Cenis : repère sur la route Aussois → Bonneval (position source)
 - `arves-thabor-galibier/valmeinier-station-thermique` Station de Valmeinier : « thermique qui sort de la station » (position approx)
 - `arves-thabor-galibier/crey-du-quart-crete` Crête du Crey du Quart (Valloire) : déclencheur de début d'après-midi (position source)
 - `brianconnais-guisane/thermiques-fort-croix-bretagne` Fort de la Croix de Bretagne (position source)
@@ -130,7 +129,7 @@ Ni rattachés ni ajoutés : soit le thermique documenté est mal placé (le reca
 - `diois/therm-duffre-sud-est-matin` Le Duffre (Valdrôme) : face sud-est, cross tôt le matin (position source)
 - `diois/therm-justin-soir` Croix de Justin : thermiques hachés, vol du soir (position source)
 - `diois/glandasse-abel-pente-sud` Le Glandasse – L’Abel : pente sud du décollage bas (position source)
-- `saint-andre-verdon/crete-des-serres-angle` Angle de la crête des Serres (confluence, plafonds jusqu'à 4200 m) (position approx)
+- `saint-andre-verdon/crete-des-serres-angle` Angle de la crête des Serres (gros thermique de brise d'ouest) (position approx)
 - `saint-andre-verdon/pic-de-chamatte` Pic de Chamatte (thermique violent, vol à voile) (position source)
 - `saint-andre-verdon/montagne-de-maurel-face-ouest` Montagne de Maurel (face ouest, relais de la vallée de Thorame) (position source)
 - `saint-andre-verdon/puy-de-rent-thorame` Puy de Rent (relais côté Thorame, peu fiable) (position source)
@@ -138,21 +137,21 @@ Ni rattachés ni ajoutés : soit le thermique documenté est mal placé (le reca
 - `haut-verdon-allos/col-de-talon-plein` Col de Talon (plein entre Côte Longue et Cheval Blanc) (position source)
 - `haut-verdon-allos/montagne-de-boules` Montagne de Boules (plein côté nord) (position source)
 - `haut-verdon-allos/montagne-de-chamatte-thorame` Montagne de Chamatte de Thorame (relais de retour, à ne pas confondre avec le Pic de Chamatte) (position source)
-- `haut-verdon-allos/tete-de-l-estrop` Tête de l'Estrop (plafond de la Blanche : 3680 m) (position source)
-- `prealpes-digne-lure/montagne-de-gache` Montagne de Gâche (« toujours de très bons thermiques » en cross) (position source)
-- `prealpes-digne-lure/mourre-de-chanier-plafond` Mourre de Chanier (plafond de 3300 m sur la route Fourneuby – Mont Denier) (position source)
+- `haut-verdon-allos/tete-de-l-estrop` Tête de l'Estrop (crête de la Blanche) (position source)
+- `prealpes-digne-lure/montagne-de-gache` Montagne de Gâche (relais de cross) (position source)
+- `prealpes-digne-lure/mourre-de-chanier-plafond` Mourre de Chanier (sur la route Fourneuby – Mont Denier) (position source)
 - `prealpes-digne-lure/sumiou-falaise-thermodynamique-du-soir` Sumiou : ascendance thermodynamique de la falaise en fin d'après-midi (position source)
 - `prealpes-digne-lure/rocher-de-la-baume-sisteron` Rocher de la Baume (falaises calcaires de Sisteron chauffées dès le milieu de matinée) (position approx)
 - `prealpes-grasse-castellane/vauplane-bernarde` La Bernarde / Vauplane (nuage de Vauplane) (position source)
 - `prealpes-grasse-castellane/greolieres-col-antenne-coursegoules` Col de l'antenne avant Coursegoules (confluence col de Vence × gorges du Loup) (position approx)
 - `mercantour/lauvet-d-ilonse-relais` Lauvet d'Ilonse (plein 1900 → 2990 m avant la transition vers La Colmiane) (position source)
-- `mercantour/mounier-thermique-3200` Mont Mounier (plafond 3200 m, nuage au-dessus de Beuil) (position source)
+- `mercantour/mounier-thermique-3200` Mont Mounier (nuage au-dessus de Beuil) (position source)
 - `mercantour/la-colletta-entraunes` La Colletta (Châteauneuf-d'Entraunes) : très gros thermiques (position source)
 - `mercantour/mont-saint-honorat-est` Mont Saint-Honorat (côté est : 3000 m en 2009, rien en 2012) (position source)
 - `mercantour/cime-de-suorcas-peira-cava` Cime de Suorcas – Peïra Cava – crête de Mandine (relais Colmiane → Sospel) (position source)
 - `mercantour/ferion-antennes-lignes` Férion (au-dessus des lignes THT, « thermique du Férion ») (position approx)
 - `mercantour/valberg-mont-des-moulines` Valberg – Mont des Moulinés (déco ~2083 m, « tiré vers le haut » dès 11h) (position source)
-- `mercantour/valberg-col-des-huerris` Valberg – Col des Huerris (1765 m) : brise de sud laminaire, thermiques sur le mamelon de la pente école (position source)
+- `mercantour/valberg-col-des-huerris` Valberg – Col des Huerris (1765 m) : repère de brise de sud (position source)
 - `baronnies/ffvl13236-rissas-thermiques` Le Rissas : thermiques et brise de sud (position approx)
 - `chartreuse/ffvl13287-saint-hugues-declenchements` Saint-Hugues (atterrissage) : déclenchements thermiques dans tous les sens (position source)
 - `tarentaise/ffvl13704-bochet-ascendances-printemps` Sainte-Foy (Le Bochet bas) : brise soutenue et ascendances thermiques au printemps (position source)
@@ -184,7 +183,7 @@ Ni rattachés ni ajoutés : soit le thermique documenté est mal placé (le reca
 - `vercors-nord/montaud-pompe-tremplin-delta` Montaud : pompe de service à droite (ancien tremplin delta) : 149 m
 - `vercors-nord/montaud-antenne-avant-reliefs` Antenne des avant-reliefs de Montaud (« ça monte tout le temps ») : 466 m
 - `oisans-grandes-rousses/cheminee-vaujany-ascenseur` Cheminée de Vaujany : « l'ascenseur » de 16h : 137 m
-- `maurienne/montgellafrey-crete-depart-cross` Montgellafrey : crêtes de Belledonne au-dessus du décollage (départ de cross) : 424 m
+- `maurienne/montgellafrey-crete-depart-cross` Montgellafrey : crête au-dessus du décollage (départ de cross) : 424 m
 - `haute-maurienne/bellecote-turra` Pointe de Bellecôte et Turra (thermique d'Aussois) : 473 m
 - `brianconnais-guisane/thermiques-crete-peyrolles` Crêtes de Peyrolles : 201 m
 - `ecrins-vallouise-haute-durance/thermiques-le-paillon` Le Paillon : 169 m

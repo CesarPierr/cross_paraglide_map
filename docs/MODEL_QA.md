@@ -1,6 +1,6 @@
 # Contrôle du modèle de vent contre l’atlas
 
-Généré par `npm run model:check` le 2026-10-16 sur `apps/web/public/data/atlas.json` (atlas du 2026-10-16), modèle TypeScript de référence (`packages/model`) sur le MNT réel. Durée : 52,3 s.
+Généré par `npm run model:check` le 2026-11-06 sur `apps/web/public/data/atlas.json` (atlas du 2026-11-06), modèle TypeScript de référence (`packages/model`) sur le MNT réel. Durée : 49,3 s.
 
 ## Critères
 
@@ -13,15 +13,15 @@ Généré par `npm run model:check` le 2026-10-16 sur `apps/web/public/data/atla
 
 | Catégorie | Réussis | Testés | Taux | Non testables |
 | --- | --- | --- | --- | --- |
-| brises | 258 | 275 | 94 % | 2 |
-| convergences | 64 | 72 | 89 % | 9 |
-| thermiques | 726 | 823 | 88 % | 0 |
-| pièges | 155 | 159 | 97 % | 51 |
-| **total** | **1203** | **1329** | **91 %** | 62 |
+| brises | 255 | 274 | 93 % | 2 |
+| convergences | 63 | 71 | 89 % | 9 |
+| thermiques | 733 | 822 | 89 % | 0 |
+| pièges | 153 | 157 | 97 % | 53 |
+| **total** | **1204** | **1324** | **91 %** | 64 |
 
-Pièges au point par le modèle de relief seul (sans la couche des dangers documentés) : 88/159 (55 %), dont sous le vent 31/53. Le reste n’apparaît que par la couche des dangers documentés, active quand le vent simulé correspond à leurs conditions.
+Pièges au point par le modèle de relief seul (sans la couche des dangers documentés) : 87/157 (55 %), dont sous le vent 30/51. Le reste n’apparaît que par la couche des dangers documentés, active quand le vent simulé correspond à leurs conditions.
 
-Contrôle : décollages face au vent (première orientation documentée, 20 km/h) affichés sous le vent ou turbulents : 10/462 (2,2 %) — Aouille de Criou (Samoëns) (S) ; Grand Châtelard (accès par Jarrier) (SW) ; Saint-François-Longchamp – télésiège de la Lauzière (FFVL 2323) (N) ; Les Orres – Costias (Haut Forest) (S, danger documenté « Les Orres : sous le vent de la crête par S et E ») ; Soleil Bœuf (N) ; Col des Faïsses (W) ; Chauvet (face au col du Festre) (NE) ; Buc Est – La Tanière (E, danger documenté « Venturi entre Buc et Le Fort ») ; Jocou (Lus-la-Croix-Haute / Châtillon) (S, danger documenté « Jocou : venturi de vent de sud à l’est du sommet ») ; Chalvet Nord (peu utilisé) (N, danger documenté « Décollages du Chalvet sous le vent par Mistral (N/NO) »).
+Contrôle : décollages face au vent (première orientation documentée, 20 km/h) affichés sous le vent ou turbulents : 9/461 (2,0 %) — Aouille de Criou (Samoëns) (S) ; Grand Châtelard (accès par Jarrier) (SW) ; Saint-François-Longchamp – télésiège de la Lauzière (FFVL 2323) (N) ; Les Orres – Costias (Haut Forest) (S, danger documenté « Les Orres : sous le vent de la crête par S et E ») ; Soleil Bœuf (N) ; Chauvet (face au col du Festre) (NE) ; Buc Est – La Tanière (E, danger documenté « Venturi entre Buc et Le Fort ») ; Jocou (Lus-la-Croix-Haute / Châtillon) (S, danger documenté « Jocou : venturi de vent de sud à l’est du sommet ») ; Chalvet Nord (peu utilisé) (N, danger documenté « Décollages du Chalvet sous le vent par Mistral (N/NO) »).
 
 Contrôles élémentaires des brises :
 
@@ -29,20 +29,20 @@ Contrôles élémentaires des brises :
 | --- | --- | --- | --- |
 | condition | 0 | 1 | 0 % |
 | hors condition | 11 | 11 | 100 % |
-| hors horaires | 235 | 241 | 98 % |
-| sens, 30 % couche | 257 | 264 | 97 % |
+| hors horaires | 231 | 239 | 97 % |
+| sens, 30 % couche | 256 | 263 | 97 % |
 | sens, 30 % de l’altitude atteinte | 10 | 10 | 100 % |
-| sens, 60 % couche | 258 | 265 | 97 % |
+| sens, 60 % couche | 257 | 264 | 97 % |
 | sens, 60 % de l’altitude atteinte | 9 | 10 | 90 % |
-| sens, sol | 269 | 275 | 98 % |
+| sens, sol | 268 | 274 | 98 % |
 | tracé | 0 | 1 | 0 % |
-| vitesse, 30 % couche | 124 | 126 | 98 % |
-| vitesse, 30 % de l’altitude atteinte | 10 | 10 | 100 % |
-| vitesse, 60 % couche | 125 | 126 | 99 % |
-| vitesse, 60 % de l’altitude atteinte | 9 | 10 | 90 % |
-| vitesse, sol | 134 | 136 | 99 % |
+| vitesse, 30 % couche | 65 | 67 | 97 % |
+| vitesse, 30 % de l’altitude atteinte | 9 | 9 | 100 % |
+| vitesse, 60 % couche | 66 | 67 | 99 % |
+| vitesse, 60 % de l’altitude atteinte | 9 | 9 | 100 % |
+| vitesse, sol | 74 | 76 | 97 % |
 
-Calendrier : déclenchement des thermiques au début explicite (« dès 10h », « à partir de midi », « 3 h après le lever du soleil ») : écart médian modèle − fiche -0,63 h sur 58 sites (19 trop tôt, 14 trop tard). Les heures « après-midi » ou « 12h-17h » des fiches de thermiques décrivent souvent la meilleure période plutôt que le déclenchement : seuls les débuts explicites mesurent un décalage systématique.
+Calendrier : déclenchement des thermiques au début explicite (« dès 10h », « à partir de midi », « 3 h après le lever du soleil ») : écart médian modèle − fiche -0,38 h sur 50 sites (15 trop tôt, 13 trop tard). Les heures « après-midi » ou « 12h-17h » des fiches de thermiques décrivent souvent la meilleure période plutôt que le déclenchement : seuls les débuts explicites mesurent un décalage systématique.
 
 ## Taux de réussite par secteur
 
@@ -50,14 +50,14 @@ Calendrier : déclenchement des thermiques au début explicite (« dès 10h », 
 | --- | --- | --- | --- | --- | --- |
 | Alpes françaises | 25/25 | 13/13 | – | 6/6 | 44/44 |
 | Aravis | 7/7 | 2/2 | 22/23 | 2/3 | 33/35 |
-| Arves – Galibier | 2/3 | – | 7/9 | – | 9/12 |
+| Arves – Galibier | 2/3 | – | 8/9 | – | 10/12 |
 | Baronnies | 7/7 | – | 17/22 | 4/4 | 28/33 |
 | Bauges | 8/8 | 4/5 | 17/17 | 1/2 | 30/32 |
 | Beaufortain | 3/4 | 1/2 | 12/13 | 3/3 | 19/22 |
 | Belledonne | 12/12 | 2/2 | 24/25 | 5/5 | 43/44 |
-| Bornes | 3/3 | 2/2 | 9/11 | 2/2 | 16/18 |
+| Bornes | 3/3 | 2/2 | 10/11 | 2/2 | 17/18 |
 | Bourget – Chambéry | 5/7 | 1/1 | 13/14 | 5/5 | 24/27 |
-| Briançonnais | 6/7 | 2/3 | 6/12 | 7/7 | 21/29 |
+| Briançonnais | 6/7 | 2/3 | 7/12 | 7/7 | 22/29 |
 | Buëch – Chabre | 6/6 | 3/3 | 16/16 | 7/7 | 32/32 |
 | Chablais | 8/8 | – | 18/20 | 5/5 | 31/33 |
 | Chamonix – Mont-Blanc | 5/5 | – | 19/24 | 1/1 | 25/30 |
@@ -65,33 +65,33 @@ Calendrier : déclenchement des thermiques au début explicite (« dès 10h », 
 | Chartreuse | 12/15 | 2/2 | 38/40 | 3/3 | 55/60 |
 | Combe de Savoie | 3/4 | – | 16/19 | 2/2 | 21/25 |
 | Cuvette grenobloise | 7/7 | 1/1 | 7/7 | 2/2 | 17/17 |
-| Dévoluy | 1/1 | 1/1 | 7/8 | 1/1 | 10/11 |
+| Dévoluy | 1/1 | 1/1 | 8/8 | 1/1 | 11/11 |
 | Digne – Lure | 5/5 | – | 16/17 | 5/5 | 26/27 |
 | Diois | 10/10 | – | 24/28 | 9/9 | 43/47 |
-| Faucigny – Arve | 6/7 | – | 13/16 | 7/7 | 26/30 |
-| Gapençais – Céüse | 4/4 | 1/1 | 7/9 | 2/2 | 14/16 |
+| Faucigny – Arve | 6/7 | – | 14/16 | 7/7 | 27/30 |
+| Gapençais – Céüse | 3/4 | 1/1 | 7/9 | 1/1 | 12/15 |
 | Giffre | 3/4 | – | 22/22 | 4/4 | 29/30 |
-| Grésivaudan | 5/5 | 2/3 | 1/1 | 2/2 | 10/11 |
+| Grésivaudan | 4/5 | 2/3 | 1/1 | 2/2 | 9/11 |
 | Haut-Verdon | 1/1 | 2/2 | 24/25 | – | 27/28 |
 | Haute-Maurienne | 4/4 | – | 11/14 | 4/4 | 19/22 |
 | Lac d’Annecy | 10/10 | 5/6 | 27/29 | 2/2 | 44/47 |
 | Matheysine – Drac | 2/3 | – | 14/14 | 7/7 | 23/24 |
-| Maurienne | 5/5 | – | 14/17 | 5/5 | 24/27 |
+| Maurienne | 5/5 | – | 14/17 | 4/4 | 23/26 |
 | Megève – Val d’Arly | 3/4 | 2/2 | 10/11 | 4/4 | 19/21 |
-| Mercantour | 8/8 | 1/2 | 26/28 | 5/5 | 40/43 |
-| Oisans | 7/7 | 1/1 | 28/34 | 3/3 | 39/45 |
+| Mercantour | 8/8 | 1/2 | 27/28 | 5/5 | 41/43 |
+| Oisans | 6/7 | 1/1 | 28/34 | 3/3 | 38/45 |
 | Préalpes de Grasse | 3/3 | 3/4 | 23/24 | 3/4 | 32/35 |
 | Préalpes de Nice | 5/5 | 1/1 | 14/19 | 2/2 | 22/27 |
 | Queyras | 7/7 | 1/1 | 17/19 | 1/1 | 26/28 |
 | Saint-André | 3/4 | 1/1 | 12/13 | 2/2 | 18/20 |
 | Salève | 4/4 | – | 6/7 | 1/1 | 11/12 |
 | Serre-Ponçon | 2/3 | – | 15/17 | 5/5 | 22/25 |
-| Tarentaise | 8/8 | 4/4 | 27/32 | 5/5 | 44/49 |
+| Tarentaise | 8/8 | 3/3 | 27/31 | 5/5 | 43/47 |
 | Trièves | 2/2 | – | 10/14 | 2/2 | 14/18 |
 | Ubaye | 4/4 | – | 6/6 | 4/4 | 14/14 |
 | Val Montjoie | 2/2 | 2/2 | 10/10 | 1/1 | 15/15 |
-| Vallouise – haute Durance | 6/7 | 1/2 | 24/29 | 5/5 | 36/43 |
-| Vanoise | 4/4 | – | 12/12 | 3/3 | 19/19 |
+| Vallouise – haute Durance | 7/7 | 1/2 | 25/29 | 5/5 | 38/43 |
+| Vanoise | 3/3 | – | 12/12 | 3/3 | 18/18 |
 | Vercors est & sud | 6/6 | – | 23/26 | 2/3 | 31/35 |
 | Vercors nord | 7/7 | 2/2 | 29/34 | 3/3 | 41/46 |
 
@@ -101,17 +101,16 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 
 | Catégorie | modèle | donnée | limite |
 | --- | --- | --- | --- |
-| brises | 5 | 6 | 6 |
+| brises | 5 | 6 | 8 |
 | convergences | 2 | 6 | 0 |
-| thermiques | 57 | 0 | 40 |
+| thermiques | 50 | 0 | 39 |
 | pièges | 0 | 0 | 4 |
 
-### Brises (17)
+### Brises (19)
 
 - **Brise montante de la basse vallée de l'Arve (Annemasse → Bonneville → Marignier → Cluses) (vallée)** — `arve-faucigny/arve-basse-vallee-montante`, Faucigny – Arve · *modèle* · juillet 16h15, sans vent météo · couches : altitude atteinte documentée 2500 m
   - sens, 60 % de l’altitude atteinte : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 50 % (cos médian 0,72)
-  - vitesse, 60 % de l’altitude atteinte : attendu 6–32 km/h (doc. 20 km/h) ; obtenu 2 km/h
-  - cause probable : 60 % de l’altitude atteinte : flux générique opposé (vent météo 0 km/h le long du tracé) malgré la brise documentée (poids 0,71) ; 60 % de l’altitude atteinte : vitesse documentée diluée : poids 0,71, activité 100 %, apport principal plaine/lac/mer 0 km/h
+  - cause probable : 60 % de l’altitude atteinte : flux générique opposé (vent météo 0 km/h le long du tracé) malgré la brise documentée (poids 0,71)
 - **Brise de pente et restitution du versant SO-O de la Platière / Pertuiset (Mieussy → décollages) (pente)** — `haut-giffre/brise-pente-pertuiset-platiere`, Giffre · *limite* · juillet 18h45, sans vent météo · couches : brise de pente 100–200 m (S1, règle cycle-brise-pente)
   - hors horaires (14h30) : attendu composante < 2 km/h ; obtenu 3 km/h (11 km/h avec l’écoulement nocturne et les autres brises documentées)
   - cause probable : hors horaires : composante dans le sens du tracé hors horaires : pente 2 km/h, vallée générique 1 km/h, plaine/lac/mer 0 km/h, vent météo 0 km/h (brise documentée active à 0 %)
@@ -122,7 +121,7 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
   - hors horaires (14h30) : attendu composante < 2 km/h ; obtenu 4 km/h (6 km/h avec l’écoulement nocturne et les autres brises documentées)
   - cause probable : hors horaires : composante dans le sens du tracé hors horaires : pente 2 km/h, vallée générique 2 km/h, plaine/lac/mer 0 km/h, vent météo 0 km/h (brise documentée active à 0 %)
 - **Restitution du soir d'Aiguebelette (pentes au-dessus du lac) (pente)** — `bourget-chambery/restitution-aiguebelette`, Bourget – Chambéry · *limite* · juillet 19h30, sans vent météo · couches : brise de pente 100–200 m (S1, règle cycle-brise-pente)
-  - hors horaires (15h30) : attendu composante < 2 km/h ; obtenu 5 km/h (13 km/h avec l’écoulement nocturne et les autres brises documentées)
+  - hors horaires (15h30) : attendu composante < 2 km/h ; obtenu 5 km/h (10 km/h avec l’écoulement nocturne et les autres brises documentées)
   - cause probable : hors horaires : composante dans le sens du tracé hors horaires : pente 2 km/h, vallée générique 3 km/h, plaine/lac/mer -0 km/h, vent météo 0 km/h (brise documentée active à 0 %)
 - **Brise redescendante du sommet de Montlambert (fin d'après-midi) (catabatique)** — `combe-de-savoie/brise-descendante-montlambert`, Combe de Savoie · *donnée* · juillet 3h00, sans vent météo · couches : écoulement descendant 3–100 m (S3)
   - sens, sol (50 m) : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 0 % (cos médian 0,06)
@@ -142,10 +141,18 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 - **Brise d'ouest de l'après-midi sur les faces ouest (Grand Ratz, Grande Sûre) (pente)** — `chartreuse/brise-ouest-apres-midi`, Chartreuse · *limite* · juillet 17h00, sans vent météo · couches : brise de pente 100–200 m (S1, règle cycle-brise-pente)
   - hors horaires (12h30) : attendu composante < 2 km/h ; obtenu 4 km/h
   - cause probable : hors horaires : composante dans le sens du tracé hors horaires : pente 2 km/h, vallée générique 0 km/h, plaine/lac/mer 1 km/h, vent météo 0 km/h (brise documentée active à 0 %)
+- **Brise de la cluse de Voreppe (entrée de l'air dans la cuvette grenobloise, puis remontée de l'Isère) (plaine → montagne)** — `gresivaudan/brise-voreppe`, Grésivaudan · *donnée* · juillet 15h00, sans vent météo · couches : aspiration plaine → montagne ≈ 1000 m (S4)
+  - vitesse, sol (50 m) : attendu 5–16 km/h (doc. 10 km/h) ; obtenu 21 km/h
+  - vitesse, 30 % couche (300 m sol) : attendu 5–16 km/h (doc. 10 km/h) ; obtenu 21 km/h
+  - vitesse, 60 % couche (600 m sol) : attendu 3–16 km/h (doc. 10 km/h) ; obtenu 20 km/h
+  - cause probable : sol (50 m) : cellules attribuées à une autre brise documentée : alpes-francaises/descendante-gresivaudan-nuit (poids propre moyen 0,08) ; 30 % couche (300 m sol) : cellules attribuées à une autre brise documentée : alpes-francaises/descendante-gresivaudan-nuit (poids propre moyen 0,08) ; 60 % couche (600 m sol) : cellules attribuées à une autre brise documentée : alpes-francaises/descendante-gresivaudan-nuit (poids propre moyen 0,08)
 - **Vent du nord thermique des lacs de Laffrey (plateau matheysin) (plaine → montagne)** — `matheysine/laffrey-nord-plateau`, Matheysine – Drac · *donnée* · juillet 15h30, sans vent météo · couches : aspiration plaine → montagne ≈ 1000 m (S4)
   - vitesse, sol (50 m) : attendu 12–37 km/h (doc. 23 km/h) ; obtenu 10 km/h
   - vitesse, 30 % couche (300 m sol) : attendu 12–37 km/h (doc. 23 km/h) ; obtenu 10 km/h
   - cause probable : sol (50 m) : cellules attribuées à une autre brise documentée : matheysine/drac-matheysine-champsaur (poids propre moyen 0,07) ; 30 % couche (300 m sol) : cellules attribuées à une autre brise documentée : matheysine/drac-matheysine-champsaur (poids propre moyen 0,07)
+- **Brises de pente de Vaujany vers Côte Belle et le col du Sabot (pente)** — `oisans-grandes-rousses/vaujany-brise-de-pente`, Oisans · *limite* · juillet 17h30, sans vent météo · couches : brise de pente 100–200 m (S1, règle cycle-brise-pente)
+  - hors horaires (13h30) : attendu composante < 2 km/h ; obtenu 4 km/h
+  - cause probable : hors horaires : composante dans le sens du tracé hors horaires : pente 3 km/h, vallée générique 3 km/h, plaine/lac/mer 0 km/h, vent météo 0 km/h (brise documentée active à 0 %)
 - **Thermique de la station de Valmeinier (brise de pente et thermique à l'atterrissage) (pente)** — `arves-thabor-galibier/valmeinier-thermique-station`, Arves – Galibier · *modèle* · juillet 15h30, sans vent météo · couches : brise de pente 100–200 m (S1, règle cycle-brise-pente)
   - sens, sol (50 m) : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 44 % (cos médian 0,42)
   - sens, 30 % couche (60 m sol) : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 44 % (cos médian 0,45)
@@ -154,11 +161,6 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 - **Brise de pente du Prorel (Saint-Blaise → Notre-Dame-des-Neiges → Croix de la Nore) (pente)** — `brianconnais-guisane/brise-pente-prorel`, Briançonnais · *limite* · juillet 15h30, sans vent météo · couches : brise de pente 100–200 m (S1, règle cycle-brise-pente)
   - hors horaires (10h00) : attendu composante < 2 km/h ; obtenu 3 km/h
   - cause probable : hors horaires : composante dans le sens du tracé hors horaires : pente 3 km/h, vallée générique -0 km/h, plaine/lac/mer -0 km/h, vent météo 0 km/h (brise documentée active à 0 %)
-- **Brise descendante du soir et catabatique de Vallouise (Ailefroide → Pelvoux → Vallouise → Les Vigneaux) (descendante)** — `ecrins-vallouise-haute-durance/brise-descendante-vallouise`, Vallouise – haute Durance · *donnée* · juillet 2h15, sans vent météo · couches : profondeur locale de la vallée (crêtes − fond)
-  - vitesse, sol (50 m) : attendu 10–32 km/h (doc. 20 km/h) ; obtenu 5 km/h
-  - vitesse, 30 % profondeur : attendu 10–32 km/h (doc. 20 km/h) ; obtenu 5 km/h
-  - vitesse, 60 % profondeur : attendu 6–32 km/h (doc. 20 km/h) ; obtenu 3 km/h
-  - cause probable : sol (50 m) : cellules attribuées à une autre brise documentée : ecrins-vallouise-haute-durance/brise-montante-gyronde (poids propre moyen 0,00) ; 30 % profondeur : cellules attribuées à une autre brise documentée : ecrins-vallouise-haute-durance/brise-montante-gyronde (poids propre moyen 0,00) ; 60 % profondeur : cellules attribuées à une autre brise documentée : ecrins-vallouise-haute-durance/brise-montante-gyronde (poids propre moyen 0,00)
 - **Brise du lac de Serre-Ponçon (lac → pentes de Saint-Vincent et de Savines) (lac)** — `serre-poncon-embrunais/brise-lac-serre-poncon`, Serre-Ponçon · *donnée* · juillet 15h15, sans vent météo · couches : profondeur locale de la vallée (crêtes − fond)
   - sens, 30 % profondeur : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 50 % (cos médian 0,41)
   - cause probable : 30 % profondeur : cellules attribuées à une autre brise documentée : alpes-francaises/ubaye (poids propre moyen 0,28)
@@ -167,6 +169,9 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
   - sens, 30 % profondeur : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 50 % (cos médian 0,72)
   - sens, 60 % profondeur : attendu cos > 0.5 sur ≥ 60 % du tracé ; obtenu 50 % (cos médian 0,71)
   - cause probable : sol (50 m) : flux générique opposé (vallée générique -0 km/h le long du tracé) malgré la brise documentée (poids 0,37) ; 30 % profondeur : flux générique opposé (vallée générique -0 km/h le long du tracé) malgré la brise documentée (poids 0,37) ; 60 % profondeur : flux générique opposé (vallée générique -0 km/h le long du tracé) malgré la brise documentée (poids 0,37)
+- **Brise de pente des faces sud de Céüse (Sigoyer → Pic de Céüse) (pente)** — `gapencais-ceuse/brise-pente-ceuse-sud`, Gapençais – Céüse · *limite* · juillet 15h30, sans vent météo · couches : brise de pente 100–200 m (S1, règle cycle-brise-pente)
+  - hors horaires (10h00) : attendu composante < 2 km/h ; obtenu 3 km/h
+  - cause probable : hors horaires : composante dans le sens du tracé hors horaires : pente 3 km/h, vallée générique 0 km/h, plaine/lac/mer -0 km/h, vent météo 0 km/h (brise documentée active à 0 %)
 - **Brise de pente de la face SE du Chalvet (matin) (pente)** — `saint-andre-verdon/brise-pente-chalvet-sud-est`, Saint-André · *limite* · juillet 14h45, sans vent météo · couches : brise de pente 100–200 m (S1, règle cycle-brise-pente)
   - hors horaires (8h00) : attendu composante < 2 km/h ; obtenu 3 km/h (-1 km/h avec l’écoulement nocturne et les autres brises documentées)
   - cause probable : hors horaires : composante dans le sens du tracé hors horaires : pente 2 km/h, vallée générique -3 km/h, plaine/lac/mer -0 km/h, vent météo 0 km/h (brise documentée active à 0 %)
@@ -180,7 +185,7 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 
 - **Confluence de Menthon-Saint-Bernard / Talloires (rive est, Roc de Chère)** — `lac-annecy/confluence-menthon-talloires`, Lac d’Annecy · *donnée* · juillet 15h30, sans vent météo, 80 m sol
   - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne -0,00 m/s, 50 % > 0
-  - cause probable : convergence présente mais décalée ou intermittente (max 0,69 m/s sur la ligne)
+  - cause probable : convergence présente mais décalée ou intermittente (max 0,70 m/s sur la ligne)
 - **Rencontre des descentes du col de la Seigne et du Cormet de Roselend aux Chapieux** — `beaufortain/convergence-chapieux-seigne-cormet`, Beaufortain · *donnée* · juillet 15h30, sans vent météo, 80 m sol
   - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne -0,42 m/s, 33 % > 0
   - cause probable : convergence présente mais décalée ou intermittente (max 0,48 m/s sur la ligne)
@@ -203,14 +208,11 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
   - convergence le long de la ligne : attendu moyenne > 0 et ≥ 50 % des points > 0 ; obtenu moyenne -0,61 m/s, 0 % > 0
   - cause probable : les flux modélisés ne se rencontrent pas sur cette ligne à cette heure
 
-### Thermiques (97)
+### Thermiques (89)
 
 - **Secteur du Coin (pied de la face ouest)** — `saleve-genevois/saleve-coin-thermique`, Salève · *limite* · juillet 14h45
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,30 (médiane 0,31, rang 36 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -122 m, altitude 701 m)
-- **Falaise est des Quatre Têtes (Burzier)** — `arve-faucigny/quatre-tetes-falaise-est`, Faucigny – Arve · *modèle* · juillet 15h00
-  - déclenchement : attendu colonne thermique à ±1 h du début documenté (11h00) ; obtenu 9h15 (trop tôt)
-  - cause probable : déclenchement décalé par rapport au début documenté
 - **Cordon – Tête du Planet** — `arve-faucigny/cordon-tete-du-planet`, Faucigny – Arve · *modèle* · juillet 13h30
   - déclenchement : attendu colonne thermique à ±1 h du début documenté (8h00) ; obtenu 9h45 (trop tard)
   - cause probable : déclenchement décalé par rapport au début documenté
@@ -232,9 +234,6 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 - **Alex – La Balme-de-Thuy (thermiques de la vallée du Fier)** — `bornes/alex-balme-de-thuy`, Bornes · *limite* · juillet 15h30
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,30 (médiane 0,31, rang 44 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -253 m, altitude 548 m)
-- **Tournette : bulles entre le décollage du col du Varo et les Rochers du Varo** — `bornes/tournette-col-du-varo-thermique`, Bornes · *modèle* · octobre 14h45
-  - déclenchement : attendu colonne thermique au plus tard à 14h45 (heures documentées 11h00–18h30) ; obtenu 15h00 (trop tard)
-  - cause probable : déclenchement décalé par rapport au début documenté
 - **Méruz – Char Marin : pentes d’Ugine au pied du Charvin** — `aravis/meruz-char-marin`, Aravis · *modèle* · juillet 9h45
   - déclenchement : attendu colonne thermique au plus tard à 9h45 (heures documentées 8h00–11h30) ; obtenu 10h30 (trop tard)
   - cause probable : déclenchement décalé par rapport au début documenté
@@ -266,9 +265,6 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,00 (médiane 0,00, rang 0 %)
   - déclenchement : attendu colonne thermique au plus tard à 9h45 (heures documentées 8h00–11h30) ; obtenu 12h30 (trop tard)
   - cause probable : pente peu ensoleillée à cette heure dans le modèle (ensoleillement 40 %, exposition 325°)
-- **Montagne de Tête (Valmorel) : thermiques puissants dès 16h, dynamique dès 12h** — `tarentaise/montagne-de-tete-valmorel-thermiques`, Tarentaise · *modèle* · juillet 15h30
-  - déclenchement : attendu colonne thermique à ±1 h du début documenté (12h00) ; obtenu 10h00 (trop tôt)
-  - cause probable : déclenchement décalé par rapport au début documenté
 - **Séez – Le Mont : thermique du matin (décollage interdit)** — `tarentaise/le-mont-seez-thermique`, Tarentaise · *modèle* · juillet 10h30
   - déclenchement : attendu colonne thermique au plus tard à 10h30 (heures documentées 8h00–13h00) ; obtenu 11h15 (trop tard)
   - cause probable : déclenchement décalé par rapport au début documenté
@@ -332,7 +328,7 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 - **Montagne de Rachas (Deux Alpes), arête de soaring** — `oisans-grandes-rousses/deux-alpes-rachas`, Oisans · *modèle* · juillet 17h30
   - déclenchement : attendu colonne thermique à ±1 h du début documenté (16h00) ; obtenu 11h00 (trop tôt)
   - cause probable : déclenchement décalé par rapport au début documenté
-- **Au-dessus du col du Lautaret : plafond à 4050 m** — `oisans-grandes-rousses/lautaret-plafond-4050`, Oisans · *limite* · juillet 15h30
+- **Au-dessus du col du Lautaret** — `oisans-grandes-rousses/lautaret-plafond-4050`, Oisans · *limite* · juillet 15h30
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,52 (médiane 0,60, rang 33 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -125 m, altitude 2039 m)
 - **Sardonne (versant ouest de l'arête Huez – Oz, au-dessus de la Romanche)** — `oisans-grandes-rousses/huez-sardonne-pentes-ouest`, Oisans · *limite* · juillet 13h30 (heures non précisées : milieu de journée supposé)
@@ -357,9 +353,6 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 - **Orgère (Villarodin-Bourget) : pentes sud sous l'Estive** — `haute-maurienne/orgere-estive-pentes-sud`, Haute-Maurienne · *modèle* · juillet 10h30
   - déclenchement : attendu colonne thermique au plus tard à 10h30 (heures documentées 8h00–13h00) ; obtenu 10h45 (trop tard)
   - cause probable : déclenchement décalé par rapport au début documenté
-- **Granges du Galibier : déclencheur des grands cross (300 km)** — `arves-thabor-galibier/granges-du-galibier-depart-300`, Arves – Galibier · *modèle* · juillet 13h30
-  - déclenchement : attendu colonne thermique à ±1 h du début documenté (8h00) ; obtenu 10h15 (trop tard)
-  - cause probable : déclenchement décalé par rapport au début documenté
 - **Crête du Crey du Quart (Valloire) : déclencheur de début d'après-midi** — `arves-thabor-galibier/crey-du-quart-crete`, Arves – Galibier · *modèle* · juillet 15h00
   - déclenchement : attendu colonne thermique à ±1 h du début documenté (11h00) ; obtenu 9h30 (trop tôt)
   - cause probable : déclenchement décalé par rapport au début documenté
@@ -372,21 +365,15 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 - **Confluence de Briançon : verticale du Fontenil / vers le Janus** — `brianconnais-guisane/therm-conf-fontenil-janus`, Briançonnais · *limite* · juillet 15h30
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,41 (médiane 0,43, rang 40 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -233 m, altitude 1299 m)
-- **Confluence de Saint-Chaffrey (Durance / Guisane)** — `brianconnais-guisane/therm-conf-saint-chaffrey`, Briançonnais · *limite* · juillet 15h30
-  - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,46 (médiane 0,51, rang 40 %)
+- **Confluence de Saint-Chaffrey (Durance / Guisane)** — `brianconnais-guisane/therm-conf-saint-chaffrey`, Briançonnais · *limite* · juillet 14h45
+  - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,49 (médiane 0,54, rang 38 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -201 m, altitude 1344 m)
 - **Faces est sous le sommet de Serre Chevalier (premier déclencheur avant le Granon)** — `brianconnais-guisane/therm-serre-chevalier-est-matin`, Briançonnais · *modèle* · juillet 9h45
   - déclenchement : attendu colonne thermique au plus tard à 9h45 (heures documentées 8h00–11h30) ; obtenu 10h30 (trop tard)
   - cause probable : déclenchement décalé par rapport au début documenté
-- **Galibier : pente herbeuse sauvage « bon potentiel thermique »** — `brianconnais-guisane/therm-galibier-pente-herbeuse`, Briançonnais · *limite* · juillet 13h30 (heures non précisées : milieu de journée supposé)
-  - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,49 (médiane 0,60, rang 24 %)
-  - cause probable : relief concave ou bas pour le modèle (convexité TPI -232 m, altitude 2042 m)
 - **Confluences de la haute Durance (Briançon, L'Argentière)** — `ecrins-vallouise-haute-durance/thermiques-confluences-durance`, Vallouise – haute Durance · *limite* · juillet 15h30
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,35 (médiane 0,43, rang 26 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -72 m, altitude 1475 m)
-- **Rocher sud de la face est de la Croix d'Aquila (relance après le Prorel)** — `ecrins-vallouise-haute-durance/therm-aquila-rocher-sud`, Vallouise – haute Durance · *modèle* · avril 16h00
-  - déclenchement : attendu colonne thermique à ±1 h du début documenté (13h00) ; obtenu 10h15 (trop tôt)
-  - cause probable : déclenchement décalé par rapport au début documenté
 - **Zone brûlée au-dessus de L'Argentière : thermique sous le vent de la Lombarde** — `ecrins-vallouise-haute-durance/therm-zone-bruleee-argentiere`, Vallouise – haute Durance · *limite* · avril 15h15
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,28 (médiane 0,34, rang 32 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -137 m, altitude 1207 m)
@@ -408,9 +395,6 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -95 m, altitude 1817 m)
 - **Brunet (vol rando de Ceillac) : sommet, départ en thermique** — `queyras/brunet-sommet-depart-en-thermique`, Queyras · *modèle* · juillet 9h45
   - déclenchement : attendu colonne thermique au plus tard à 9h45 (heures documentées 8h00–11h30) ; obtenu 10h30 (trop tard)
-  - cause probable : déclenchement décalé par rapport au début documenté
-- **Col des Faïsses (Obiou)** — `devoluy/therm-faisses`, Dévoluy · *modèle* · juillet 15h00
-  - déclenchement : attendu colonne thermique à ±1 h du début documenté (11h00) ; obtenu 9h45 (trop tôt)
   - cause probable : déclenchement décalé par rapport au début documenté
 - **Entrée de la vallée de Champoléon : restitution et thermiques doux du soir depuis le Cairn d'Orcières** — `champsaur-valgaudemar/orcieres-champoleon-restitution-soir`, Champsaur · *modèle* · octobre 18h15
   - déclenchement : attendu colonne thermique au plus tard à 18h15 (heures documentées 16h00–20h30) ; obtenu pas de colonne avant 16h
@@ -436,8 +420,8 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 - **Buc Est – La Tanière : thermique dès le milieu de la matinée** — `baronnies/therm-buc-est-matin`, Baronnies · *modèle* · juillet 9h45
   - déclenchement : attendu colonne thermique à ±1 h du début documenté (8h00) ; obtenu 10h30 (trop tard)
   - cause probable : déclenchement décalé par rapport au début documenté
-- **Villefranche-le-Château : posé « dans les déclenchements »** — `baronnies/therm-villefranche-declenchements`, Baronnies · *limite* · juillet 14h45
-  - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,33 (médiane 0,34, rang 41 %)
+- **Villefranche-le-Château : posé « dans les déclenchements »** — `baronnies/therm-villefranche-declenchements`, Baronnies · *limite* · juillet 13h30 (heures non précisées : milieu de journée supposé)
+  - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,34 (médiane 0,34, rang 45 %)
   - cause probable : relief concave ou bas pour le modèle (convexité TPI -86 m, altitude 802 m)
 - **Faces est de la montagne d’Aucelon** — `diois/therm-aucelon-est`, Diois · *modèle* · juillet 9h45
   - déclenchement : attendu colonne thermique au plus tard à 9h45 (heures documentées 8h00–11h30) ; obtenu 10h30 (trop tard)
@@ -478,9 +462,6 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
   - cause probable : déclenchement décalé par rapport au début documenté
 - **Mont Gros (et plus à l'ouest) : premier plein du grand bocal de Roquebrune** — `mercantour/roquebrune-mont-gros-plein`, Mercantour · *modèle* · février 15h00
   - déclenchement : attendu colonne thermique à ±1 h du début documenté (11h00) ; obtenu 12h30 (trop tard)
-  - cause probable : déclenchement décalé par rapport au début documenté
-- **Valberg – Col des Huerris (1765 m) : brise de sud laminaire, thermiques sur le mamelon de la pente école** — `mercantour/valberg-col-des-huerris`, Mercantour · *modèle* · juillet 9h45
-  - déclenchement : attendu colonne thermique au plus tard à 9h45 (heures documentées 8h00–11h30) ; obtenu 10h45 (trop tard)
   - cause probable : déclenchement décalé par rapport au début documenté
 - **Saint-Hugues (atterrissage) : déclenchements thermiques dans tous les sens** — `chartreuse/ffvl13287-saint-hugues-declenchements`, Chartreuse · *limite* · juillet 13h30 (heures non précisées : milieu de journée supposé)
   - potentiel thermique : attendu au-dessus de la médiane locale (5 km) ; obtenu 0,33 (médiane 0,35, rang 42 %)
@@ -533,11 +514,11 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 - pièges · Plateau d'Orange (Sur Cou) : rentrées d'est turbulentes, marge nécessaire par ouest / sud-ouest (strong-breeze) (`arve-faucigny/orange-surcou-est-ouest`) : rentrées d'est fortes ; ouest ou sud-ouest marqué ; foins non coupés (atterrissage interdit au printemps et en été tant que l'herbe dépasse mi-tibia)
 - pièges · Criou : zones sous le vent (zigzag rouge et trou de la sorcière) (lee-rotor) (`haut-giffre/criou-zone-sous-le-vent`) : brises installées (été, début d'après-midi)
 - pièges · Super Morzine : sortie turbulente par forte brise de vallée, rouleaux par nord, dégueulantes par sud (lee-rotor) (`chablais/super-morzine-sortie`) : brise de vallée forte ; vent météo de tendance nord ou sud ; instabilité marquée
-- pièges · Rafales d'orage (bornan, môlan) sur la rive du Léman (strong-breeze) (`chablais/leman-bornan-molan`) : orages sur les Préalpes, grande chaleur ; sens sud-nord ; jusqu'à 120 km/h
-- pièges · Bise sur le Léman : rafales ininterrompues (15 à 90 km/h) (strong-breeze) (`chablais/leman-bise-rafales`) : situation de beau temps froid et sec ; 3, 6 ou 9 jours d'affilée
+- pièges · Rafales d'orage (bornan, môlan) sur la rive du Léman (strong-breeze) (`chablais/leman-bornan-molan`) : orages sur les Préalpes, grande chaleur ; sens sud-nord ; bornan 30 à 40 nœuds, môlan 8 à 15 nœuds
+- pièges · Bise sur le Léman : rafales ininterrompues (15 à 90 km/h) (strong-breeze) (`chablais/leman-bise-rafales`) : situation de beau temps froid et sec ; peut souffler plusieurs jours consécutifs
 - pièges · Coche Cabane par vent du nord : forts rouleaux (lee-rotor) (`lac-annecy/coche-cabane-nord`) : vent ou brise forte de nord
-- pièges · Rafales de cumulonimbus du nord le long du lac (strong-breeze) (`lac-annecy/lac-cumulonimbus-nord`) : événement orageux, non simulé
-- pièges · Parmelan : entre la Tête à Turpin et le refuge, zone rafaleuse (strong-breeze) (`bornes/parmelan-tete-a-turpin`) : vent ouest–nord-ouest, sans cumulus, jour de cross vers le nord
+- pièges · Rafales de cumulonimbus du nord le long du lac (strong-breeze) (`lac-annecy/lac-cumulonimbus-nord`) : orages ou cu-nims au nord du bassin
+- pièges · Parmelan : entre la Tête à Turpin et le refuge, zone rafaleuse (strong-breeze) (`bornes/parmelan-tete-a-turpin`) : observé une fois : plein vent, rafales, pas de cumulus à l'horizon
 - pièges · Merlet : rouleau du plateau de Coupeau et déco en dévers (lee-rotor) (`mont-blanc-chamonix/merlet-rouleau-coupeau`) : brise de vallée établie
 - pièges · Accélération de la brise sur les « 2 Têtes » (virage de l'Isère) (venturi) (`tarentaise/acceleration-2-tetes`) : Régime de brise établi
 - pièges · Versant est de l'Aiguille Rousse / combe de l'Aiguille Grive (lee-rotor) (`tarentaise/rotor-aiguille-rousse-est`) : Début d'après-midi, brise établie
@@ -558,6 +539,7 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 - pièges · Décollement du thermique devant le déco de Saint-Martin (lee-rotor) (`vercors-nord/pas-saint-martin-decollement-thermique`) : Journées très fortes, 13h-17h.
 - pièges · Passages du Cornafion et du plateau des Ramées (départ de cross vers le Moucherotte) (lee-rotor) (`vercors-nord/cornafion-moucherotte-passages-turbulents`) : Départ de cross de la Côte 2000 vers le nord, après-midi.
 - pièges · Limouches : cirque de Peyrus par vent de nord fort, vent de plaine renforcé (strong-breeze) (`vercors-est-sud/limouches-cirque-peyrus`) : Renforcement du vent météo (influence de la vallée du Rhône) ; site sous le vent de l'est.
+- pièges · Grande Verdette : ne pas se placer sous le vent de la pointe de Comborcière (lee-rotor) (`maurienne/grande-verdette-sous-le-vent-comborciere`) : Décollage d'été de La Toussuire.
 - pièges · La Toussuire (hiver) : par tendance ouest la crête vers l'atterrissage est souvent infranchissable depuis la Pierre du Turc (lee-rotor) (`maurienne/toussuire-pierre-du-turc-crete-ouest`) : Hiver, décollage à ski de la Pierre du Turc ; tendance ouest ou ouest sensible.
 - pièges · Effets venturi et vent fort au déco de Plan Lachat (Valloire–Galibier) (venturi) (`arves-thabor-galibier/venturi-plan-lachat-galibier`) : Brise de nord établie ; vent météo E à O défavorable.
 - pièges · Col du Lautaret – venturis au sommet et sur les buttes (venturi) (`brianconnais-guisane/venturi-lautaret`) : vents d'O/NO ou d'E/NE soutenus ; brises de printemps et d'été
@@ -565,12 +547,13 @@ Classement : **modèle** = défaut du modèle à corriger ; **donnée** = tracé
 - pièges · Faces ouest Tête d'Amont – Condamine : sous le vent de la brise (lee-rotor) (`ecrins-vallouise-haute-durance/sous-le-vent-tete-amont-condamine`) : brise forte (journée)
 - pièges · Tête du Puy : sous le vent en brise classique (lee-rotor) (`ecrins-vallouise-haute-durance/sous-le-vent-tete-du-puy`) : brise de Durance forte
 - pièges · Risoul : sous le vent en brise classique (lee-rotor) (`ecrins-vallouise-haute-durance/risoul-sous-le-vent`) : brise de Durance
-- pièges · « La tempête précède l'orage » : vent qui forcit avant un Cb remontant la Durance (strong-breeze) (`ecrins-vallouise-haute-durance/tempete-avant-orage-durance`) : événement orageux, non simulé
+- pièges · « La tempête précède l'orage » : vent qui forcit avant un Cb remontant la Durance (strong-breeze) (`ecrins-vallouise-haute-durance/tempete-avant-orage-durance`) : Cb remontant la Durance vers L'Argentière et Briançon
 - pièges · Réallon : déco SE sous le vent de la brise de SW l'après-midi (lee-rotor) (`serre-poncon-embrunais/reallon-sous-le-vent-sw`) : après-midi
 - pièges · Le Cristillan : atterro possible mais sous le vent, venturi (venturi) (`queyras/cristillan-venturi`) : brise forte
 - pièges · Col de l'Izoard : déco vent arrière par tendance O à N (lee-rotor) (`queyras/izoard-vent-arriere`) : tendance O à N, même très faible ; printemps-été très musclé
 - pièges · Saint-Ours / Larche : vent d'E-SE par le col de l'Arche, sous le vent du col de Mirandol (lee-rotor) (`ubaye/saint-ours-col-arche`) : SE et E ; O et N fort
 - pièges · Plateau d’Aurouze et station sous le vent de la tête de Pied Gros (lee-rotor) (`devoluy/aurouze-sous-le-vent`) : Brise de vallée de sud, été
+- pièges · Plateau intérieur de Céüse (NO) : sous le vent si brise (lee-rotor) (`gapencais-ceuse/ceuse-no-sous-le-vent`) : Brise
 - pièges · Tête de la Clape : site du matin, sous le vent du SO l’après-midi (lee-rotor) (`gapencais-ceuse/clape-matin`) : À partir de la mi-journée
 - pièges · Décollage Nord 1 : rouleaux par vent O-NO (lee-rotor) (`buech-laragne-chabre/chabre-nord1-rotors`) : Vent de tendance ouest à nord-ouest
 - pièges · Nyons – Garde-Grosse : travers N-NE, ouest fort, ligne HT (strong-breeze) (`baronnies/nyons-dangers`) : Vent de travers (N-NE) ou ouest fort
@@ -588,6 +571,7 @@ Repérés automatiquement ; à corriger dans les JSON de `research_notes/`, pas 
 
 - `bornes/brise-parmelan-dingy` (annecy_bornes_aravis.json) : horaires non analysables (« non documenté ») : la brise suit le cycle générique de vallée
 - `tarentaise/brise-petit-saint-bernard` (tarentaise_vanoise.json) : horaires non analysables (« Non documenté en régime de brise ; flux inverse (Italie → Bourg-Saint-Maurice) lors du foehn, à toute heure ») : la brise suit le cycle générique de vallée
+- `bourget-chambery/brise-lac-bourget` (chablais_giffre_arve.json) : horaires non analysables (« non documenté (les cartes tracent un flux, sans horaire) ») : la brise suit le cycle générique de vallée
 - `diois/brise-trieves-lus` (devoluy_gap_buech_diois.json) : horaires non analysables (« sans horaire dans les sources (régime de brise d'été) ») : la brise suit le cycle générique de vallée
 - `prealpes-digne-lure/brise-pente-lure-sud-contras` (provence_maritimes.json) : horaires non analysables (« régime de brise orienté S à SSO ; SE léger < 20 km/h ; convection l'été « très puissante » ») : la brise suit le cycle générique de vallée
 - `prealpes-nice-var/brise-de-mer-roquebrune` (provence_maritimes.json) : horaires non analysables (« jour ; site volé surtout l'hiver et en arrière-saison (voir restrictions horaires) ») : la brise suit le cycle générique de vallée

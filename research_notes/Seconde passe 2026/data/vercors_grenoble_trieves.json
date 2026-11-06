@@ -5,7 +5,7 @@
       "id": "grenoble-cuvette",
       "name": "Cuvette grenobloise (cluse de Voreppe, confluence Isère–Drac)",
       "parent_massif": "Sillon alpin",
-      "summary": "Grenoble est au cœur d'un « Y » de trois vallées. Le Drac arrive du sud et se divise en deux : la cluse de Voreppe part vers le nord-nord-ouest, le Grésivaudan vers le nord-est. La cluse de Voreppe fait 75 % de l'aérologie locale. Elle bloque les entrées de nord en basse couche, et elle sert de conduit aux brises qui alimentent les reliefs.\n\nPar beau temps d'été, une forte brise montante s'établit dans la cluse dès la fin de matinée ou en début d'après-midi. Elle traverse Grenoble et file au sud par le Drac, jusqu'à Vif et Monteynard. Le Grésivaudan lui répond par une brise descendante « anormale », aspirée par la cluse. Les deux flux se rencontrent au nord-est de Grenoble : la confluence s'y forme à partir de 400-500 m, avec des varios de 2-3 m/s. Les brises de vallée montent jusqu'à environ 900 m, puis se calment. Au-dessus, le vent météo, qui forcit avec l'altitude, reprend la main.\n\nQuand le sud touche le sol, vers Vif puis sur toute l'agglomération, on ne vole pas. Un front froid entre brutalement par la cluse et par les cols de la Chartreuse. Un régime de nord ou de nord-est, froid et instable, donne de bonnes ascendances au sud de Grenoble, mais pour le vol à voile seulement.\n\nEn cross, la cuvette est la plaque tournante des transitions vers le Vercors, la Chartreuse et Belledonne. C'est aussi une zone basse et urbanisée, sous contraintes aériennes : CTR2 Grenoble et TMA Lyon.",
+      "summary": "Grenoble se lit comme un « Y » de trois vallées. Le Drac arrive du sud, puis la vallée se divise : la cluse de Voreppe part vers le nord-nord-ouest, le Grésivaudan vers le nord-est. Entre ces branches se dressent le Vercors, la Chartreuse et Belledonne, et la cuvette est la plaque tournante des transitions de l'un à l'autre. La cluse de Voreppe fait à elle seule 75 % de l'aérologie locale : elle bloque les entrées de nord en basse couche et sert de conduit aux brises qui alimentent les reliefs.\n\nPar beau temps d'été, une forte brise montante s'y établit dès la fin de matinée ou en début d'après-midi. Elle traverse Grenoble et file au sud par le Drac, jusqu'à Vif et Monteynard. Le Grésivaudan lui répond par une brise descendante « anormale », aspirée par la cluse. Les deux flux se rencontrent au nord-est de Grenoble : la confluence s'y forme à partir de 400-500 m, avec des varios de 2-3 m/s. Ces brises de vallée montent jusqu'à environ 900 m, puis se calment. Au-dessus, le vent météo, qui forcit avec l'altitude, reprend la main.\n\nTrois situations changent tout. Quand le sud touche le sol, vers Vif puis sur toute l'agglomération, on ne vole pas. Un front froid entre brutalement par la cluse et par les cols de la Chartreuse. Un régime de nord ou de nord-est, froid et instable, donne de bonnes ascendances au sud de Grenoble, mais pour le vol à voile seulement.\n\nÀ respecter : la cuvette est une zone basse et urbanisée, sous contraintes aériennes, avec la CTR2 Grenoble, la TMA Lyon et, entre Vercors et Chartreuse, la ZIT de Grenoble.",
       "bbox": [
         5.33,
         45.03,
@@ -54,7 +54,7 @@
           },
           "season": "avril-septembre ; existe toute l'année par beau temps",
           "layer_depth_m": "jusqu'à environ 900 m d'altitude, où la brise de vallée se calme (S35)",
-          "description": "Par beau temps d'été, la brise de vallée s'installe en début d'après-midi et souffle fort dans la cluse de Voreppe. La cluse, par où l'Isère file vers le nord, lui sert de conduit. C'est elle qui donne à Grenoble son vent de nord-ouest de la journée et rafraîchit la ville les après-midi de beau temps. Le décollage de Chalais est à l'abri de cette brise de nord, qui monte dès la fin de matinée et devient forte en été.",
+          "description": "C'est la grande brise de la cuvette. Par beau temps d'été, elle monte dès la fin de matinée, s'installe en début d'après-midi et souffle fort dans la cluse de Voreppe, par où l'Isère file vers le nord et qui lui sert de conduit. Elle donne à Grenoble son vent de nord-ouest de la journée et rafraîchit la ville les après-midi de beau temps. Le décollage de Chalais, lui, reste à l'abri de cette brise de nord, qui devient forte en été.",
           "confidence": "high",
           "sources": [
             "S35",
@@ -105,7 +105,7 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "non documenté",
-          "description": "Au sud de Grenoble, la brise de la cluse poursuit sa route le long du Drac. Plusieurs cartes de brises la dessinent de Grenoble vers Vif, puis vers Miribel-Lanchâtre. Ce tronçon alimente la brise du Drac vers Monteynard et le Trièves, décrits dans le massif Matheysine.",
+          "description": "Au sud de Grenoble, la brise de la cluse poursuit sa route le long du Drac : plusieurs cartes de brises la dessinent vers Vif, puis vers Miribel-Lanchâtre. Ce tronçon alimente la brise du Drac vers Monteynard et le Trièves, décrite dans le massif Matheysine.",
           "confidence": "high",
           "sources": [
             "S35",
@@ -152,7 +152,7 @@
           },
           "season": "juin-août",
           "layer_depth_m": "non documenté",
-          "description": "Par fortes chaleurs d'été, de juin à août, il arrive que la brise remonte aussi le Grésivaudan. Elle donne alors un faux vent de sud à Saint-Hilaire, avec de bonnes conditions de vol. Une carte de brises prolonge aussi la brise de la cluse depuis Grenoble jusqu'au Touvet.",
+          "description": "Dans la branche nord-est du Y, c'est le sens de l'exception : par fortes chaleurs d'été, de juin à août, il arrive que la brise remonte aussi le Grésivaudan. Elle donne alors un faux vent de sud à Saint-Hilaire, avec de bonnes conditions de vol. Une carte de brises prolonge aussi la brise de la cluse depuis Grenoble jusqu'au Touvet.",
           "confidence": "medium",
           "sources": [
             "S35",
@@ -199,7 +199,7 @@
           },
           "season": "été",
           "layer_depth_m": "400-500 m pour la confluence",
-          "description": "Par beau temps anticyclonique d'été, en début d'après-midi, une brise descendante « anormale » s'installe dans le Grésivaudan : la forte brise de la cluse de Voreppe l'aspire vers Grenoble. Une carte de brises la fait descendre de la Combe de Savoie jusqu'à Lumbin et Crolles. Elle rencontre la brise de la cluse au nord-est de Grenoble, où naît la confluence.",
+          "description": "Dans la branche nord-est du Y, par beau temps anticyclonique d'été, en début d'après-midi, une brise descendante « anormale » s'installe : la forte brise de la cluse de Voreppe l'aspire vers Grenoble. Une carte de brises la fait descendre de la Combe de Savoie jusqu'à Lumbin et Crolles. Au nord-est de Grenoble, elle rencontre la brise de la cluse, et c'est là que naît la confluence.",
           "confidence": "medium",
           "sources": [
             "S35",
@@ -275,7 +275,7 @@
             "max": 35
           },
           "season": "avril-septembre",
-          "description": "À l'atterrissage de Chamrousse, à Uriage (La Richardière), la brise descend la vallée du lever du jour jusqu'à 10h30. De 10h à 12h30, une brise venant d'Uriage est possible : les manches à air se font face. Dès le début de l'après-midi, la brise vient de Grenoble, jusqu'à son inversion le soir. Une brise de Grenoble de plus de 35 km/h est rare : ce jour-là, on ne décolle pas, et en l'air on reste au milieu de la vallée sans avancer vers Grenoble.",
+          "description": "Dans la vallée d'Uriage, au pied ouest de Belledonne, la brise change de sens : on la lit à l'atterrissage de Chamrousse, à La Richardière. Elle descend la vallée du lever du jour jusqu'à 10h30. De 10h à 12h30, une brise d'Uriage est possible : les manches se font face. Dès le début de l'après-midi, elle vient de Grenoble, jusqu'à son inversion le soir. Au-delà de 35 km/h, c'est rare, on ne décolle pas ; en l'air, restez au milieu de la vallée sans avancer vers Grenoble.",
           "confidence": "medium",
           "sources": [
             "S104"
@@ -319,7 +319,7 @@
           },
           "season": "été",
           "layer_depth_m": "non documenté",
-          "description": "Une carte de brises dessine un flux qui remonte la Romanche, de Grenoble vers le Bourg-d'Oisans. Le vent s'accélère en venturi au village de Laffrey et aux ruines de Séchilienne.",
+          "description": "Au sud-est de Grenoble, une carte de brises dessine un flux qui remonte la Romanche vers le Bourg-d'Oisans. Le vent s'accélère en venturi au village de Laffrey et aux ruines de Séchilienne.",
           "confidence": "low",
           "sources": [
             "S36",
@@ -354,7 +354,7 @@
             ]
           },
           "when": "début d'après-midi (régime anticyclonique d'été, instabilité moyenne)",
-          "mechanism": "Par beau temps d'été, en début d'après-midi, la forte brise de la cluse rencontre la brise descendante du Grésivaudan au nord-est de Grenoble, au-dessus de 400 à 500 m. La bordure ouest de la confluence est en général turbulente.",
+          "mechanism": "Au nord-est de Grenoble, par beau temps d'été, en début d'après-midi, la forte brise de la cluse rencontre la brise descendante du Grésivaudan. La confluence se forme au-dessus de 400 à 500 m, et sa bordure ouest est en général turbulente.",
           "usage": "Avec une instabilité moyenne, ce sont les conditions idéales pour voler : la confluence donne des varios de 2 à 3 m/s. Évitez sa bordure ouest, turbulente.",
           "confidence": "medium",
           "sources": [
@@ -382,8 +382,8 @@
             ]
           },
           "when": "en toute saison, à tout moment, quand un front froid stagne en bordure de la chaîne alpine",
-          "mechanism": "Quand un front froid stagne en bordure des Alpes, le vent entre à la fois par la cluse de Voreppe et par la cluse de Chambéry. Les deux flux se heurtent vers Crolles et Lumbin, dans une confluence agitée.",
-          "usage": "Zone turbulente, dangereuse pour voler. L'orage, parfois violent, met fin à la situation.",
+          "mechanism": "Vers Crolles et Lumbin, dans le Grésivaudan, deux flux se heurtent quand un front froid stagne en bordure des Alpes : le vent entre à la fois par la cluse de Voreppe et par la cluse de Chambéry, et la confluence est agitée.",
+          "usage": "La zone est turbulente et dangereuse pour voler, jusqu'à ce que l'orage, parfois violent, mette fin à la situation.",
           "confidence": "low",
           "sources": [
             "S35"
@@ -447,7 +447,7 @@
           "coord_quality": "source",
           "ffvl_id": 325,
           "conditions": "Dès la fin de matinée, forte l'été.",
-          "description": "Le décollage de Chalais, face au sud, est à l'abri de la brise de nord, qui monte dans la vallée dès la fin de matinée et devient forte en été. En bas, à l'atterrissage de Rivalières, elle peut se lever en milieu de journée et forcir nettement. Une ligne de 20 kV passe sur le champ voisin, et le terrain de rugby sert d'atterrissage de secours.",
+          "description": "À Chalais, le danger attend en bas. Le décollage, face au sud, est à l'abri de la brise de nord, qui monte dans la vallée dès la fin de matinée et devient forte en été, mais à l'atterrissage de Rivalières, elle peut se lever en milieu de journée et forcir nettement. Une ligne de 20 kV passe sur le champ voisin, et le terrain de rugby sert d'atterrissage de secours.",
           "sources": [
             "S101",
             "S100",
@@ -478,7 +478,7 @@
           "radius_km": 6,
           "coord_quality": "approx",
           "conditions": "Dépression qui approche par l'ouest, vent S/SO ; fig. 2c et 2d de Vol Libre.",
-          "description": "Quand une dépression approche par l'ouest, le vent de sud descend jusqu'au sol vers Vif et dans la banlieue sud de Grenoble. La turbulence de basse couche se renforce : sans très grande expérience, on s'abstient. Quand le sud est établi partout, il est souvent trop fort, et surtout aucun atterrissage en basses couches n'est sûr : les rafales dépassent 10 m/s.",
+          "description": "Vers Vif et dans la banlieue sud de Grenoble, le vent de sud descend jusqu'au sol quand une dépression approche par l'ouest. La turbulence de basse couche se renforce : sans très grande expérience, on s'abstient. Quand le sud est établi partout, il est souvent trop fort, et surtout aucun atterrissage en basses couches n'est sûr : les rafales dépassent 10 m/s.",
           "sources": [
             "S35"
           ]
@@ -528,7 +528,7 @@
           "coord_quality": "source",
           "best_hours": "après-midi (midi à 16h)",
           "trigger": "Pentes sud du Mont Jalla et du Rachais, au-dessus de la Bastille",
-          "description": "En revenant du Vercors vers la Chartreuse, on relance sur les pentes sud du mont Jalla et du Rachais, au-dessus de la Bastille. Au-dessus du CEA, la zone interdite P14 impose de rester au-dessus de 1220 m.",
+          "description": "Juste au nord de Grenoble, les pentes sud du mont Jalla et du Rachais, au-dessus de la Bastille, servent de relance en revenant du Vercors vers la Chartreuse. Attention au plancher : au-dessus du CEA, la zone interdite P14 impose de rester au-dessus de 1220 m.",
           "sources": [
             "S196",
             "S220",
@@ -648,7 +648,7 @@
           "coord_quality": "source",
           "best_hours": "fin de journée en été (fiche) ; point chaud mesuré : 78 % à midi, 79 % en fin de journée",
           "trigger": "Pente de 22° exposée à l'ouest aux Civières, juste au nord-ouest du décollage (IGN)",
-          "description": "Le décollage de Poisat (FFVL 13474, 681 m) marche avec la brise thermique de fin de journée d'été, donc de nord. Après le décollage, tournez à droite pour l'appui dynamique sur la face nord, invisible du décollage tant que le gain est faible. On ne passe sur la face sud-est que pour reposer au décollage, avec assez de gain, sans jamais se présenter sous le vent du site. Le point chaud mesuré est à 0,2 km, sur la pente ouest. Lignes à haute tension.",
+          "description": "Au sud-est de Grenoble, le décollage de Poisat (FFVL 13474, 681 m), près de lignes à haute tension, marche avec la brise thermique de fin de journée d'été, donc de nord. Après le décollage, tournez à droite pour l'appui dynamique sur la face nord, invisible du décollage tant que le gain est faible. On ne passe sur la face sud-est que pour reposer au décollage, avec assez de gain, sans jamais vous présenter sous le vent du site. Point chaud mesuré à 0,2 km, sur la pente ouest.",
           "confidence": "medium",
           "sources": [
             "S255",
@@ -697,7 +697,7 @@
           ],
           "coord_quality": "source",
           "ffvl_id": 13474,
-          "description": "Ce site conventionné, de niveau marron, marche avec la brise thermique de fin de journée d'été, donc de nord. Les voiles en appui dynamique sur la face nord ne se voient pas du décollage tant que leur gain reste faible : gardez le contact radio. L'atterrissage officiel est le champ cultivable juste au-dessus de la piscine d'Eybens. Attention aux lignes à haute tension.",
+          "description": "Sur la face nord de Poisat, au sud-est de Grenoble, on vole en appui dynamique dans la brise thermique de fin de journée d'été, donc de nord. Les voiles ne se voient pas du décollage tant que leur gain reste faible : gardez le contact radio. Le site est conventionné, de niveau marron, avec des lignes à haute tension, et l'atterrissage officiel est le champ cultivable juste au-dessus de la piscine d'Eybens.",
           "sources": [
             "S108"
           ]
@@ -715,7 +715,7 @@
           "orientations": [
             "S"
           ],
-          "description": "Site orienté au sud, à 1023 m. On se pose en pleine vallée, où la brise est souvent forte. Le nord est défavorable. L'espace aérien est réglementé : voir le piège correspondant.",
+          "description": "Au-dessus de Voreppe, ce site regarde le sud, à 1023 m, et le nord lui est défavorable. On se pose en pleine vallée, où la brise est souvent forte, et l'espace aérien est réglementé : voir le piège correspondant.",
           "sources": [
             "S100"
           ],
@@ -734,7 +734,7 @@
             "W",
             "NW"
           ],
-          "description": "Le site reçoit une brise thermique de nord en fin de journée d'été. Les vents de nord-est, d'est, de sud-est, de sud et de sud-ouest sont défavorables.",
+          "description": "Au sud-est de Grenoble, au pied ouest de Belledonne, ce décollage vit de la brise thermique de nord des fins de journée d'été. Les vents de nord-est, d'est, de sud-est, de sud et de sud-ouest sont défavorables.",
           "sources": [
             "S108"
           ]
@@ -763,7 +763,7 @@
           "alt_m": 192,
           "coord_quality": "source",
           "ffvl_id": 325,
-          "description": "Atterrissage principal de Chalais, par vent de nord comme de sud. La brise de nord peut y forcir nettement. Une ligne de 20 kV passe sur le champ voisin : respectez le champ cultivé sous la ligne.",
+          "description": "Au sud de Voreppe, en fond de vallée, c'est l'atterrissage principal de Chalais, par vent de nord comme de sud. La brise de nord peut y forcir nettement. Une ligne de 20 kV passe sur le champ voisin : respectez le champ cultivé sous la ligne.",
           "sources": [
             "S101"
           ]
@@ -776,7 +776,7 @@
           "alt_m": 197,
           "coord_quality": "source",
           "ffvl_id": 13148,
-          "description": "Atterrissage de secours, seulement quand on ne peut plus rejoindre l'atterrissage principal. Attention aux poteaux, aux éclairages et aux barrières du terrain.",
+          "description": "Ce terrain de Voreppe ne sert qu'en secours, quand on ne peut plus rejoindre l'atterrissage principal de Chalais. Attention aux poteaux, aux éclairages et aux barrières.",
           "sources": [
             "S103"
           ]
@@ -789,7 +789,7 @@
           "alt_m": 534,
           "coord_quality": "source",
           "ffvl_id": 1026,
-          "description": "Terrain de 200 m sur 35 m : l'atterrissage de Chamrousse, côté Uriage. Il demande une finale haute et longue, dans les deux sens. Évitez de survoler bas le groupe scolaire, et méfiez-vous des chevaux sur l'axe de sauvetage du soir. Pour la brise, voir la brise de Grenoble vers la vallée d'Uriage.",
+          "description": "À Uriage, au lieu-dit La Richardière, c'est l'atterrissage de Chamrousse : un terrain de 200 m sur 35 m, qui demande une finale haute et longue, dans les deux sens. Évitez de survoler bas le groupe scolaire, et méfiez-vous des chevaux sur l'axe de sauvetage du soir. Pour la brise, voir la brise de Grenoble vers la vallée d'Uriage.",
           "sources": [
             "S104"
           ]
@@ -3402,7 +3402,7 @@
       "id": "vercors-est-sud",
       "name": "Vercors Est et Sud (Gresse, Serpaton, Grand Veymont, Mont Aiguille ; Vassieux, Rousset, Font d'Urle ; Royans et Vercors drômois)",
       "parent_massif": "Préalpes du Nord - Vercors",
-      "summary": "Le Balcon Est du Vercors, des Deux Sœurs au Grand Veymont et au Mont Aiguille, domine la vallée de la Gresse et le Trièves. Son site phare est le Serpaton, un col à 1586 m avec trois décollages.\n\nDepuis le Drac, une brise de nord à nord-nord-ouest remonte le vallon de Gresse. Elle est soutenue dès 11h au col du Fau, et le reste tard le soir au Serpaton Ouest. En fin de journée, elle permet d'y voler l'Ouest 500, face ouest à nord-ouest, en thermo-dynamique. Par vent d'ouest, le Serpaton Est, face est à sud, devient turbulent.\n\nAutour du massif, des brises du nord vers le sud le longent sur toute sa longueur, de Saint-Julien, La Chapelle et Vassieux jusqu'au col de Rousset, et le long du Royans. Le Royans et le Vercors drômois (Saint-Jean-en-Royans, Léoncel, Limouches, Musan) se volent l'après-midi, par brise de nord à nord-est ou thermique d'ouest. La vallée du Rhône y pèse et peut renforcer le vent. Les allers-retours jusqu'au Mont Aiguille sont un classique.\n\nÀ respecter : la Réserve naturelle des Hauts-Plateaux impose 300 m sol au minimum, interdit le vachage et borne les crêtes du Brisou, du Mont Aiguille et du Grand Veymont. S'y ajoutent la R196B, activable du 16 septembre au 30 juin sauf le mercredi, le week-end et les jours fériés, et la zone de sensibilité majeure du gypaète au Glandasse, du 1er novembre au 31 août. Celle d'Archiane a été désactivée au 1er mars, faute de couple nicheur. Le Royans est aussi un espace aérien chargé, autour de l'aérodrome de Saint-Jean-en-Royans.",
+      "summary": "Ce massif prolonge le Vercors nord et se lit sur trois côtés. À l'est, le Balcon court des Deux Sœurs au Grand Veymont et au Mont Aiguille, au-dessus de la Gresse et du Trièves. Son site phare, le Serpaton, est un col à 1586 m avec trois décollages. Au sud, du col de Rousset au col des Limouches, les faces regardent le Diois. À l'ouest, le Royans et le Vercors drômois se tournent vers la vallée du Rhône. Au milieu, les hauts plateaux.\n\nDepuis le Drac, la brise de nord passe de chaque côté du Serpaton : à l'est vers le Trièves, soutenue dès 11h au col du Fau, à l'ouest dans le vallon de la Gresse, où elle vient du nord-nord-ouest et reste soutenue tard le soir. En fin de journée, elle permet de voler l'Ouest 500, face ouest à nord-ouest, en thermo-dynamique. Par vent d'ouest, le Serpaton Est, face est à sud, devient turbulent.\n\nAilleurs, des brises du nord vers le sud longent tout le massif, de Saint-Julien, La Chapelle et Vassieux jusqu'au col de Rousset, et le long du Royans. Le Royans et le Vercors drômois (Saint-Jean-en-Royans, Léoncel, Limouches, Musan) se volent l'après-midi, par brise de nord à nord-est ou thermique d'ouest, et la vallée du Rhône peut y renforcer le vent. En cross, les allers-retours jusqu'au Mont Aiguille sont un classique.\n\nÀ respecter : la Réserve naturelle des Hauts-Plateaux impose 300 m sol au minimum, interdit le vachage et borne les crêtes du Brisou, du Mont Aiguille et du Grand Veymont. S'y ajoutent la R196B, activable du 16 septembre au 30 juin sauf le mercredi, le week-end et les jours fériés, et la zone de sensibilité majeure du gypaète au Glandasse, du 1er novembre au 31 août. Celle d'Archiane a été désactivée au 1er mars, faute de couple nicheur. Le Royans est aussi un espace aérien chargé, autour de l'aérodrome de Saint-Jean.",
       "bbox": [
         5.1,
         44.7,
@@ -3444,7 +3444,7 @@
             "max": 25
           },
           "season": "printemps-été",
-          "description": "La brise de nord-nord-ouest remonte le vallon de la Gresse, du Drac jusqu'au Serpaton. En fin de journée, quand elle est constante, elle permet le vol en thermo-dynamique au Serpaton Ouest 500. En été, elle faiblit vers 18h, mais elle peut rester soutenue tard en soirée. À l'atterrissage des Rivières, la brise de vallée vient du nord, la brise descendante du sud.",
+          "description": "C'est la brise du versant ouest du Serpaton : partie du Drac, elle remonte de nord-nord-ouest le vallon de la Gresse jusqu'au col. En fin de journée, quand elle est constante, elle permet le vol en thermo-dynamique au Serpaton Ouest 500. En été, elle faiblit vers 18h, mais elle peut aussi rester soutenue tard en soirée. En bas, aux Rivières, la brise de vallée vient du nord, la brise descendante du sud.",
           "confidence": "high",
           "sources": [
             "S149",
@@ -3486,7 +3486,7 @@
             "max": 30
           },
           "season": "printemps-été",
-          "description": "Au Col du Fau, la brise de vallée, orientée nord, peut être soutenue dès 11h. Au Serpaton Est, la partie nord se retrouve sous la brise de la vallée du Drac en fin de matinée.",
+          "description": "À l'est du Serpaton, la brise de la vallée du Drac monte de Vif vers Monestier-de-Clermont et le Trièves. Orientée nord, elle peut être soutenue dès 11h au Col du Fau. En fin de matinée, la partie nord du Serpaton Est se retrouve sous cette brise.",
           "confidence": "high",
           "sources": [
             "S152",
@@ -3527,7 +3527,7 @@
             "max": null
           },
           "season": "été",
-          "description": "Une grande brise N→S descend le Vercors central, en longeant la vallée de Saint-Martin puis La Chapelle, jusqu'au sud de Vassieux, à l'ouest de la réserve naturelle.",
+          "description": "Au cœur du massif, à l'ouest de la réserve naturelle, une grande brise descend le Vercors central du nord au sud. Elle longe la vallée de Saint-Martin, dans le Vercors nord, puis La Chapelle, et va jusqu'au sud de Vassieux.",
           "confidence": "low",
           "sources": [
             "S48",
@@ -3569,7 +3569,7 @@
             "max": null
           },
           "season": "été",
-          "description": "Une flèche N→S traverse la plaine de Vassieux en direction du col de Rousset. En été, le sud du col reçoit la brise de la vallée de la Drôme, qui rend l'atterrissage de Garandons très turbulent.",
+          "description": "Une flèche des cartes de brises traverse la plaine de Vassieux du nord au sud, en direction du col de Rousset. En été, le sud du col reçoit une autre brise, celle de la vallée de la Drôme, qui rend très turbulent l'atterrissage de Garandons.",
           "confidence": "low",
           "sources": [
             "S48",
@@ -3620,7 +3620,7 @@
             "max": 25
           },
           "season": "printemps-été",
-          "description": "Au Royans, la brise de nord (N/NE) s'installe l'après-midi : à Musan, il n'y a pas de vent météo et le régime de brise s'établit. À Saint-Jean, le petit nord installe un régime de brise établi, et l'atterrissage Sud peut se faire face au catabatique, en fin de journée. Au Gaudissart, un léger vent de nord souffle, et le site est protégé des vents plus soutenus de la vallée du Rhône.",
+          "description": "Au pied ouest du massif, la brise du Royans s'installe l'après-midi, de nord à nord-est. À Musan, sans vent météo, le régime de brise s'établit. À Saint-Jean, le petit nord installe un régime de brise établi, et l'atterrissage Sud peut se faire face au catabatique en fin de journée. Au Gaudissart, un léger vent de nord souffle, et le site reste protégé des vents plus soutenus de la vallée du Rhône.",
           "confidence": "medium",
           "sources": [
             "S161",
@@ -3661,7 +3661,7 @@
             "max": null
           },
           "season": "été",
-          "description": "Dans le Diois, la brise générale est de nord, rarement trop forte, et se ressent à partir de midi. Au col de Rousset, deux brises se rencontrent : celle qui vient de Die et celle qui vient du nord-ouest. L'atterrissage de Chamaloc est très turbulent jusqu'au sol quand la brise de la vallée de la Drôme est en place, ce qui arrive tous les jours d'été au moins.",
+          "description": "Au sud du col de Rousset, on entre dans le régime du Diois : une brise générale de nord, rarement trop forte, qui se ressent à partir de midi. Au col, deux brises se rencontrent, celle qui vient de Die et celle qui vient du nord-ouest. En bas, l'atterrissage de Chamaloc est très turbulent jusqu'au sol quand la brise de la vallée de la Drôme est en place, ce qui arrive tous les jours d'été au moins.",
           "confidence": "medium",
           "sources": [
             "S48",
@@ -3683,7 +3683,7 @@
           "radius_km": 6,
           "coord_quality": "approx",
           "conditions": "Flux synoptique de W/NW/SW (aussi N, NE d'après la fiche du Serpaton Est).",
-          "description": "Par flux d'ouest, le versant est du Vercors est sous le vent. Le Serpaton Est est défavorable par N, NE, SO, O et NO, et l'atterrissage des Rivières, sous le vent des collines, devient turbulent. Au Serpaton Ouest 500, il ne faut pas voler en conditions de S et SO.",
+          "description": "Au pied est du Vercors, le piège vient du flux d'ouest, qui met le versant sous le vent. Ne comptez pas sur le Serpaton Est, défavorable par nord, nord-est, sud-ouest, ouest et nord-ouest, et attendez-vous à de la turbulence aux Rivières, sous le vent des collines. Au Serpaton Ouest 500, il ne faut pas voler par sud ni sud-ouest.",
           "sources": [
             "S150",
             "S149",
@@ -3701,7 +3701,7 @@
           "coord_quality": "source",
           "ffvl_id": 1235,
           "conditions": "Fin de matinée (brise du Drac) ; flux dans le col.",
-          "description": "Au Serpaton Est, la partie sud est soumise à un venturi, et la partie nord se retrouve sous la brise de la vallée du Drac en fin de matinée. Au sud, une ligne descend des antennes en longeant le relief vers l'est.",
+          "description": "Dans le col du Serpaton, le décollage Est n'a pas le même air partout. Sa partie sud est soumise à un venturi, et sa partie nord se retrouve sous la brise de la vallée du Drac en fin de matinée. Au sud, une ligne descend des antennes en longeant le relief vers l'est.",
           "sources": [
             "S150"
           ]
@@ -3716,7 +3716,7 @@
           "coord_quality": "source",
           "ffvl_id": 1233,
           "conditions": "Orientation et force du flux à ajuster pour une prise en charge rapide.",
-          "description": "Le décollage du Serpaton intermédiaire est exigu, avec des rochers et des falaises sous le décollage. Il faut ajuster l'orientation et la force du flux pour une prise en charge rapide. La meilleure porte de sortie est à droite de la manche à air, vers le NNO, et un thermique est présent sous la manche à air.",
+          "description": "Sous ce décollage exigu du Serpaton, il y a des rochers et des falaises : ajustez l'orientation et la force du flux pour une prise en charge rapide. La meilleure porte de sortie est à droite de la manche à air, vers le nord-nord-ouest, et un thermique est présent sous la manche.",
           "sources": [
             "S148"
           ]
@@ -3730,7 +3730,7 @@
           "radius_km": 12,
           "coord_quality": "approx",
           "conditions": "Toute l'année pour la réserve ; R196B activable du 16/09 au 30/06, jamais le mercredi, le week-end ni les jours fériés (1000 m/sol au FL125 ; la fiche du Serpaton écrit FL195).",
-          "description": "Les hauts plateaux se survolent à 300 m sol minimum : tout vol en dessous est interdit dans la réserve, toute l'année. Les ombres des parapentes sont perçues comme des prédateurs par les marmottes, les chamois et les tétras. Au Serpaton, la zone se respecte en longeant la crête du Brisou, le Mont Aiguille et le Grand Veymont.",
+          "description": "Sur les hauts plateaux, à l'ouest du balcon, ne volez jamais sous 300 m sol : c'est interdit dans la réserve, toute l'année, et on ne s'y vache pas. Les ombres des parapentes sont perçues comme des prédateurs par les marmottes, les chamois et les tétras. Au Serpaton, la zone se respecte en longeant la crête du Brisou, le Mont Aiguille et le Grand Veymont.",
           "sources": [
             "S149",
             "S150",
@@ -3751,7 +3751,7 @@
           "coord_quality": "source",
           "ffvl_id": 5103,
           "conditions": "Période critique vautour fauve : janvier-août ; altitude minimum de survol indiquée sur la carte : 1100 m (autour du col).",
-          "description": "Le col de Rousset est un site très sensible : des vautours nichent à droite du décollage. On survole le col à 1100 m au moins, et des zones d'aigle royal et de vautour fauve sont signalées au sud du col. La période critique du vautour fauve va de janvier à août ; les deux zones du col (col naturel, Échelette) sont protégées de janvier à juin.",
+          "description": "Au col de Rousset, site très sensible, des vautours nichent à droite du décollage : on survole le col à 1100 m au moins. Au sud du col, des zones d'aigle royal et de vautour fauve sont aussi signalées. La période critique du vautour fauve va de janvier à août, et les deux zones du col (col naturel, Échelette) sont protégées de janvier à juin.",
           "sources": [
             "S154",
             "S49"
@@ -3766,7 +3766,7 @@
           "radius_km": 6,
           "coord_quality": "approx",
           "conditions": "Saison de reproduction : janvier au plus tard 31 août (levée si échec) ; interdiction de vol dans la zone cœur et jusqu'à 300 m au-dessus.",
-          "description": "Deux couples de gypaètes nichent dans le sud du Vercors : la ZSM « La Grotte » au Glandasse, la ZSM « Ranc Papillon » au cirque d'Archiane. Dans la zone cœur, les activités peu bruyantes, dont le parapente, sont interdites, ainsi que le vol jusqu'à 300 m au-dessus.",
+          "description": "Au sud du massif, deux zones protègent le gypaète : la ZSM « La Grotte » au Glandasse, la ZSM « Ranc Papillon » au cirque d'Archiane. Dans la zone cœur, les activités peu bruyantes, dont le parapente, sont interdites, ainsi que le vol jusqu'à 300 m au-dessus. Celle du Glandasse court du 1er novembre au 31 août ; celle d'Archiane, sans couple nicheur, a été désactivée au 1er mars.",
           "sources": [
             "S51",
             "S49"
@@ -3783,7 +3783,7 @@
           "coord_quality": "source",
           "ffvl_id": 5182,
           "conditions": "Brise de la vallée de la Drôme en place (tous les jours d'été au moins).",
-          "description": "L'atterrissage de Garandons se trouve au bout de la vallée, sans échappatoire, loin du décollage et en pente. Il est très turbulent jusqu'au sol quand la brise de la vallée de la Drôme est en place, tous les jours d'été au moins. La force du vent est difficile à estimer depuis les décollages.",
+          "description": "Côté Drôme du col de Rousset, l'atterrissage de Garandons est très turbulent jusqu'au sol quand la brise de la vallée de la Drôme est en place, tous les jours d'été au moins. Il se trouve au bout de la vallée, sans échappatoire, loin du décollage et en pente, et la force du vent est difficile à estimer depuis les décollages.",
           "sources": [
             "S155"
           ]
@@ -3798,7 +3798,7 @@
           "coord_quality": "source",
           "ffvl_id": 1436,
           "conditions": "Toute l'année ; fermeture du site du 5 au 23 octobre pour travaux (fiche, année non précisée) ; trafic d'aéro-club les week-ends de beau temps.",
-          "description": "L'atterrissage se fait sur un aérodrome à usage restreint. Les parapentes perdent leur altitude à l'est de la piste et démarrent la descente au-dessus de 500 m (mer). Ils traversent l'axe de la piste à plus de 800 m, ou au-dessus de 500 m à l'entrée de Combe Laval. La zone rouge sous 800 m est interdite, et il ne faut pas atterrir chez le riverain à l'est.",
+          "description": "À Saint-Jean-en-Royans, on se pose sur un aérodrome à usage restreint, et l'approche est réglée. La zone rouge sous 800 m est interdite, et il ne faut pas atterrir chez le riverain à l'est. Les parapentes perdent leur altitude à l'est de la piste et démarrent la descente au-dessus de 500 m (mer). Ils traversent l'axe de la piste à plus de 800 m, ou au-dessus de 500 m à l'entrée de Combe Laval.",
           "sources": [
             "S164",
             "S53"
@@ -3815,7 +3815,7 @@
           "coord_quality": "source",
           "ffvl_id": 728,
           "conditions": "Renforcement du vent météo (influence de la vallée du Rhône) ; site sous le vent de l'est.",
-          "description": "Le décollage des Limouches est court, et le site est sous le vent de l'est. Le vent météo peut se renforcer sous l'influence de la vallée du Rhône : il ne faut pas traverser le cirque de Peyrus par vent de nord fort. L'atterrissage de La Touvière est en pente et délicat.",
+          "description": "Aux Limouches, sur le bord ouest du massif, ne traversez pas le cirque de Peyrus par vent de nord fort : le vent météo peut se renforcer sous l'influence de la vallée du Rhône. Le décollage est court, le site est sous le vent de l'est, et l'atterrissage de La Touvière est en pente et délicat.",
           "sources": [
             "S55",
             "S165",
@@ -3832,7 +3832,7 @@
           "coord_quality": "source",
           "ffvl_id": 1036,
           "conditions": "Vent météo N ou S.",
-          "description": "Le décollage de Musan est court et très pentu, en pente boisée, et il convient peu aux voiles allongées actuelles. Il est dangereux par vent météo de nord ou de sud. Sans vent météo, il est idéal avec des thermiques matinaux.",
+          "description": "Le décollage de Musan, à Oriol-en-Royans, est dangereux par vent météo de nord ou de sud. Court et très pentu, dans une pente boisée, il convient peu aux voiles allongées actuelles. Sans vent météo, il est idéal avec des thermiques matinaux.",
           "sources": [
             "S160"
           ]
@@ -3847,7 +3847,7 @@
           "coord_quality": "source",
           "ffvl_id": 14108,
           "conditions": "Vent < 30 km/h ; chasse le samedi avant midi.",
-          "description": "Le grand champ de Léoncel, en pente descendante orientée OSO/ONO, est exposé à un renforcement du vent, et l'aérologie y est assez souvent de travers gauche. Il faut vérifier la manche à air pendant la perte d'altitude, car l'aérologie peut différer de celle du décollage. Le site se vole par vent inférieur à 30 km/h, et la chasse a lieu le samedi avant midi.",
+          "description": "Le grand champ de Léoncel, en pente descendante orientée ouest-sud-ouest à ouest-nord-ouest, est exposé à un renforcement du vent, et l'aérologie y est assez souvent de travers gauche. Vérifiez donc la manche à air pendant la perte d'altitude, car l'aérologie peut différer de celle du décollage. Le site se vole par vent inférieur à 30 km/h, et la chasse a lieu le samedi avant midi.",
           "sources": [
             "S156",
             "S157"
@@ -3863,7 +3863,7 @@
           "radius_km": 1.5,
           "coord_quality": "source",
           "conditions": "au passage entre le Serpaton et les Deux Sœurs, vers 1100-1200 m",
-          "description": "Au crêt de la Ferrière, vers 1100 à 1200 m, la transition entre le Serpaton et les Deux Sœurs est très facile, mais elle peut faire rentrer dans la stabilité de basse couche : c'est un point bas assez technique. La variante par le sud, avec une balise au Grand Veymont, l'évite, mais comporte une branche très engagée, sans vache possible.",
+          "description": "Entre le Serpaton et les Deux Sœurs, le crêt de la Ferrière est le point bas assez technique du cross, vers 1100 à 1200 m. La transition y est très facile, mais elle peut faire rentrer dans la stabilité de basse couche. La variante par le sud, avec une balise au Grand Veymont, l'évite, mais elle comporte une branche très engagée, sans vache possible.",
           "sources": [
             "S211",
             "S66",
@@ -3882,7 +3882,7 @@
           "ffvl_id": 1233,
           "best_hours": "journée thermique, fin d'après-midi avec la brise",
           "trigger": "Pente sous la manche à air du déco",
-          "description": "Un thermique se forme sous la manche à air du Serpaton intermédiaire, sur la pente sous le décollage. En fin de journée, si la brise ne couche pas trop les thermiques, on peut faire le plafond en longeant la crête vers le sud.",
+          "description": "Sous la manche à air du Serpaton intermédiaire, un thermique se forme sur la pente, juste sous le décollage. En fin de journée, si la brise ne couche pas trop les thermiques, on peut faire le plafond en longeant la crête vers le sud.",
           "sources": [
             "S148",
             "S149",
@@ -3899,7 +3899,7 @@
           "coord_quality": "approx",
           "best_hours": "après-midi",
           "trigger": "Face du Mont Aiguille et pentes de Chichilianne",
-          "description": "Des thermiques se forment l'après-midi à l'est du Mont Aiguille et vers Chichilianne, sur la face du Mont Aiguille et sur les pentes de Chichilianne.",
+          "description": "À l'est du Mont Aiguille, vers Chichilianne, des thermiques se forment l'après-midi, sur la face du Mont Aiguille et sur les pentes de Chichilianne.",
           "sources": [
             "S49",
             "S23",
@@ -3920,7 +3920,7 @@
           "ffvl_id": 5103,
           "best_hours": "après-midi",
           "trigger": "Falaises du col de Rousset",
-          "description": "Un thermique se forme l'après-midi sur les falaises du col de Rousset, où les cartes dessinent une spirale. C'est aussi un site à vautours.",
+          "description": "Sur les falaises du col de Rousset, un thermique se forme l'après-midi, là où les cartes dessinent une spirale. C'est aussi un site à vautours.",
           "sources": [
             "S49",
             "S154"
@@ -3937,7 +3937,7 @@
           "ffvl_id": 14108,
           "best_hours": "après-midi",
           "trigger": "Pentes ouest et falaise sud",
-          "description": "Le matin, les pentes de Léoncel donnent un « plouf », sans thermique ; le thermique arrive l'après-midi. Le dénivelé est d'environ 850 m. Le décollage ouest est facile, sur une pente herbeuse, et le décollage sud, sur la falaise, est intermédiaire à confirmé.",
+          "description": "Sur les pentes de Léoncel, le matin donne un « plouf », sans thermique : il faut attendre l'après-midi. Le dénivelé est d'environ 850 m. Le décollage ouest est facile, sur une pente herbeuse, et le décollage sud, sur la falaise, est intermédiaire à confirmé.",
           "sources": [
             "S55",
             "S156"
@@ -3952,7 +3952,7 @@
           "coord_quality": "source",
           "best_hours": "après-midi, dès que l'on arrive du Serpaton (vers midi)",
           "trigger": "Rocher des Deux Sœurs au-dessus de la station de l'Arzelier, plein soleil",
-          "description": "Après le point bas du crêt de la Ferrière, la relance se fait aux Deux Sœurs : on y raccroche en général d'assez bas, dans un thermique très généreux (souvent plus de +4 m/s). Des vaches sont possibles à la station du col de l'Arzelier.",
+          "description": "Au-dessus de la station de l'Arzelier, le rocher des Deux Sœurs est la relance qui suit le point bas du crêt de la Ferrière. On y raccroche en général d'assez bas, dans un thermique très généreux, souvent plus de +4 m/s. Sinon, des vaches sont possibles à la station du col de l'Arzelier.",
           "sources": [
             "S211",
             "S66",
@@ -3974,7 +3974,7 @@
           "coord_quality": "source",
           "best_hours": "en fin de matinée et midi",
           "trigger": "Sommet du Grand Veymont et pentes avoisinantes",
-          "description": "Le Grand Veymont est la balise commune des cross du Serpaton, du Col Vert et du Moucherotte, et le point d'extraction du cheminement des faces est. À partir de là, les groupes se séparent vers le nord, vers le sud (Mont Aiguille, Jocou) ou vers l'ouest (tour du Vercors). Le plafond y est atteint en fin de matinée et à midi. Dans la réserve naturelle, 300 m sol minimum.",
+          "description": "Le Grand Veymont est le carrefour des faces est : c'est la balise commune des cross du Serpaton, du Col Vert et du Moucherotte, et leur point d'extraction. Le plafond y est atteint en fin de matinée et à midi. À partir de là, les groupes se séparent vers le nord, vers le sud (Mont Aiguille, Jocou) ou vers l'ouest (tour du Vercors). Dans la réserve naturelle, 300 m sol minimum.",
           "sources": [
             "S212",
             "S198",
@@ -3998,7 +3998,7 @@
           "coord_quality": "source",
           "best_hours": "fin de matinée à début d'après-midi",
           "trigger": "Falaises et sommet du Mont Aiguille (survol à plus de 300 m/sol)",
-          "description": "Le Mont Aiguille est une balise du cheminement sud des faces est : des thermiques puissants se forment autour et au-dessus de lui, de la fin de matinée au début d'après-midi. C'est le point de demi-tour classique des allers-retours, avec un retour vers le Pic Saint-Michel, ou un départ vers le Jocou par les avant-reliefs. Dans la réserve naturelle, le survol se fait à 300 m sol minimum.",
+          "description": "Au sud-est du Grand Veymont, le Mont Aiguille se survole à 300 m sol minimum, car il est dans la réserve naturelle. C'est une balise du cheminement sud des faces est : des thermiques puissants se forment autour et au-dessus de lui, de la fin de matinée au début d'après-midi. On y fait le demi-tour classique des allers-retours, avec un retour vers le Pic Saint-Michel, ou on part vers le Jocou par les avant-reliefs.",
           "sources": [
             "S216",
             "S33",
@@ -4016,7 +4016,7 @@
           "coord_quality": "source",
           "best_hours": "midi et début d'après-midi",
           "trigger": "Sommet de la Tête Chevalière, sur l'avant-relief entre Mont Aiguille et Jocou",
-          "description": "Sur la traversée entre le Grand Veymont et le Jocou, la Tête Chevalière se trouve sur l'avant-relief entre le Mont Aiguille et le Jocou. Le créneau de relance se situe en midi et début d'après-midi.",
+          "description": "Sur l'avant-relief entre le Mont Aiguille et le Jocou, la Tête Chevalière est la relance de la traversée depuis le Grand Veymont, avec un créneau en midi et début d'après-midi.",
           "sources": [
             "S214",
             "S226"
@@ -4036,7 +4036,7 @@
           "coord_quality": "measured",
           "best_hours": "après-midi d'après le texte ; 99 % le matin et à midi, 93 % en fin de journée d'après les traces GPS",
           "trigger": "Pointe du But Sapiau et crête entre les vallées de Chamaloc et de Romeyer",
-          "description": "Au col de Rousset, les traces de nombreux vols placent un point chaud sur les versants ouest du But Sapiau, surtout le matin et à midi. Mieux vaut éviter de virer à droite après le décollage, vers le cirque sous le col, où l'aérologie est difficile.",
+          "description": "Juste au sud du col de Rousset, le But Sapiau sert de sortie au col : les traces de nombreux vols placent un point chaud sur ses versants ouest, surtout le matin et à midi. Après le décollage, mieux vaut éviter de virer à droite, vers le cirque sous le col, où l'aérologie est difficile.",
           "sources": [
             "S57",
             "S61",
@@ -4046,7 +4046,7 @@
           ],
           "confidence": "medium",
           "possible": [
-            "Si l'on a raté la pompe devant le décollage, on peut longer les versants ouest du But Sapiau jusqu'à la crête, puis faire le plein devant la pointe.",
+            "Si l'on a raté la pompe devant le décollage, on peut longer les versants ouest du But Sapiau jusqu'à la crête, entre les vallées de Chamaloc et de Romeyer, puis faire le plein devant la pointe.",
             "Un bon plein au-dessus du But Sapiau permet ensuite d'arriver à la Dent de Die, ou de transiter vers le But de l'Aiglette, les faces sud du Vercors ou la vallée de Saint-Agnan."
           ],
           "note": "Position ramenée sur le point chaud des traces GPS (5.4175 E, 44.8260 N), à 610 m au sud-ouest du sommet et à 100 m du gouffre ; le texte parle des versants ouest et de la pointe, pas du sommet. Pente de 33° exposée au sud-ouest, terrain à 1321 m."
@@ -4060,7 +4060,7 @@
           "coord_quality": "source",
           "best_hours": "vers 14h",
           "trigger": "Roc de Toulau, à l'ouest du Vercors sud",
-          "description": "Le tour du Vercors proposé depuis le col de l'Arc prévoit d'arriver vers 14h à la Tête de la Dame, pour prendre le thermique du Roc de Touleau et transiter vers le col des Limouches. Près des falaises, on ne s'en sert que bien au-dessus du bord, à cause des rapaces.",
+          "description": "À l'ouest du Vercors sud, le Roc de Touleau donne le thermique qui permet de transiter vers le col des Limouches. Le tour du Vercors proposé depuis le col de l'Arc prévoit d'arriver vers 14h à la Tête de la Dame pour le prendre. Près des falaises, on ne s'en sert que bien au-dessus du bord, à cause des rapaces.",
           "sources": [
             "S52",
             "S226"
@@ -4079,7 +4079,7 @@
           "coord_quality": "source",
           "best_hours": "fin d'après-midi",
           "trigger": "Pré de Cinq Sous (Hostun), sur le bord ouest du Vercors",
-          "description": "Sur le tour du Vercors proposé, on fait le plafond au pré de Cinq Sous (Hostun), sur le bord ouest du Vercors, puis on transite vers Saint-Pierre-de-Chérennes et l'on remonte jusqu'au Bec de l'Orient.",
+          "description": "Sur le bord ouest du Vercors, à Hostun, le pré de Cinq Sous est l'endroit où le tour du Vercors proposé fait le plafond, avant de transiter vers Saint-Pierre-de-Chérennes et de remonter jusqu'au Bec de l'Orient.",
           "sources": [
             "S52",
             "S226"
@@ -4095,7 +4095,7 @@
           "coord_quality": "measured",
           "best_hours": "10h30-12h (déco de la matinée) ; 91 % le matin, 82 % à midi, aucun point chaud le soir d'après les traces GPS",
           "trigger": "Pilier nord du Serpaton, bord de l'alpage exposé à l'est",
-          "description": "Les traces de vol placent un point chaud au pilier nord du Serpaton, surtout le matin. Le cross classique y commence probablement, avant de traverser vers le Crêt de la Ferrière, vers 1100 à 1200 m.",
+          "description": "Juste au nord du col, au bord de l'alpage, le pilier nord du Serpaton porte un point chaud mesuré sur les traces de vol, surtout le matin. Le cross classique y commence probablement, avant de traverser vers le crêt de la Ferrière, vers 1100 à 1200 m.",
           "sources": [
             "S211",
             "S66",
@@ -4117,7 +4117,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (79 % le matin, 99 % à midi et en fin de journée), toute l'année",
           "trigger": "falaise exposée nord-ouest sous le décollage du col Gaudissart, à la hauteur des antennes (790 m), au-dessus de l'aérodrome",
-          "description": "Sous les antennes de Gaudissart, au-dessus de l'aérodrome, une falaise exposée au nord-ouest porte un point chaud mesuré sur de nombreuses traces : il est actif toute l'année, surtout à midi et en fin de journée. La consigne d'atterrissage demande de quitter le relief à l'altitude des antennes (790 m) pour se poser à l'aérodrome : l'ascendance des antennes est le dernier endroit où l'on gratte, avec un venturi vers Combe Laval plus bas.",
+          "description": "Sous les antennes de Gaudissart, au-dessus de l'aérodrome, une falaise exposée au nord-ouest porte un point chaud mesuré sur de nombreuses traces, actif toute l'année, surtout à midi et en fin de journée. C'est le dernier endroit où l'on gratte : la consigne d'atterrissage demande de quitter le relief à l'altitude des antennes (790 m) pour se poser à l'aérodrome. Plus bas, un venturi pousse vers Combe Laval.",
           "sources": [
             "S162",
             "S53",
@@ -4137,7 +4137,7 @@
           "coord_quality": "approx",
           "best_hours": "milieu de journée et soir (91 % le matin, 92 % à midi, 87 % en fin de journée), toute l'année ; les faces sud sont « parfaitement exposées » en milieu de journée",
           "trigger": "pente de 36° exposée plein sud, 770 m au sud-sud-est de la Tête de la Dame (sommet IGN, 1506 m), à 530 m du pas de Rouisse",
-          "description": "Sur la pente exposée plein sud, sous la Tête de la Dame, les traces de nombreux vols placent un point chaud, actif en milieu de journée et le soir, toute l'année. Sur le tour du Vercors, c'est probablement l'étape qui précède le thermique du Roc de Touleau, qui permet de transiter vers le col des Limouches. Les faces sud sont parfaitement exposées en milieu de journée.",
+          "description": "Sur le tour du Vercors, la pente plein sud sous la Tête de la Dame est probablement l'étape qui précède le thermique du Roc de Touleau, vers le col des Limouches. De nombreuses traces y placent un point chaud, actif en milieu de journée et le soir, toute l'année. Les faces sud sont parfaitement exposées en milieu de journée.",
           "sources": [
             "S52",
             "S54",
@@ -4159,7 +4159,7 @@
           "coord_quality": "approx",
           "best_hours": "matin et milieu de journée (93 % le matin, 87 % à midi, 69 % en fin de journée), printemps, été et automne",
           "trigger": "pente de 22° exposée sud-ouest, 1 km à l'ouest-nord-ouest de la Tête de la Dame",
-          "description": "Les traces de nombreux vols placent un point chaud sur le versant sud-ouest, entre la Tête de la Dame et le Roc de Toulau, surtout le matin et à midi, au printemps, en été et en automne. Il se trouve probablement sur le trajet du tour du Vercors par les faces sud.",
+          "description": "Entre la Tête de la Dame et le Roc de Toulau, le versant sud-ouest porte un point chaud relevé sur de nombreuses traces, surtout le matin et à midi, au printemps, en été et en automne. Il se trouve probablement sur le trajet du tour du Vercors par les faces sud.",
           "sources": [
             "S52",
             "S230",
@@ -4177,7 +4177,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (97 % le matin et à midi, 87 % en fin de journée), toute l'année",
           "trigger": "pente de 36° exposée plein sud sous le But de l'Aiglette (sommet IGN, 1524 m, à 170 m) et les Rochers de l'Aiglette (435 m)",
-          "description": "Les traces de nombreux vols placent un point chaud sur la pente sud du But de l'Aiglette, toute la journée et toute l'année. Pour qui part du col de Rousset vers l'ouest, ce serait probablement le premier thermique des faces sud, avant la Tête de la Dame, le Roc de Touleau et le col des Limouches. Dans le sens inverse, c'est le dernier point de relance avant le But Sapiau.",
+          "description": "Au-dessus de Chamaloc, à l'ouest du But Sapiau, la pente sud du But de l'Aiglette est un point chaud de toute la journée et de toute l'année, relevé sur de nombreuses traces. Pour qui part du col de Rousset vers l'ouest, ce serait probablement le premier thermique des faces sud, avant la Tête de la Dame, le Roc de Touleau et le col des Limouches. Dans le sens inverse, c'est le dernier point de relance avant le But Sapiau.",
           "sources": [
             "S57",
             "S52",
@@ -4199,7 +4199,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (96 % le matin, 91 % à midi, 86 % en fin de journée), toute l'année",
           "trigger": "pente de 33° exposée sud-est, 260 m au sud du pas de la Sausse (col IGN, 1394 m), sous la Montagne de la Sausse (sommet à 1 km)",
-          "description": "Les traces de nombreux vols placent un point chaud sur le versant sud-est de la Montagne de la Sausse, toute la journée et toute l'année. Il se trouve à 1,8 km du décollage de La Sausse et à 1,9 km de celui de Léoncel.",
+          "description": "À côté de Léoncel, le versant sud-est de la Montagne de la Sausse ressort des traces comme un point chaud, toute la journée et toute l'année. Il se trouve à 1,8 km du décollage de La Sausse et à 1,9 km de celui de Léoncel.",
           "sources": [
             "S159",
             "S156",
@@ -4218,7 +4218,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (91 % le matin, 92 % à midi, 85 % en fin de journée), printemps, été et automne",
           "trigger": "pente de 37° exposée sud, au pied des escarpements de Font d'Urle (porte d'Urle à 1,6 km, Puy de la Gagère à 1,4 km), sur la face sud du Vercors",
-          "description": "Les traces de nombreux vols placent un point chaud sur la face sud du plateau de Font d'Urle, au pied des escarpements, à 1,4 km du Puy de la Gagère et à 1,6 km de la porte d'Urle. Il se situe sur la ligne des faces sud du Vercors, que le tour du Vercors suit probablement en milieu de journée.",
+          "description": "Au pied des escarpements de Font d'Urle, sur la face sud du plateau, de nombreuses traces dessinent un point chaud, à 1,4 km du Puy de la Gagère et à 1,6 km de la porte d'Urle. Il se situe sur la ligne des faces sud du Vercors, que le tour du Vercors suit probablement en milieu de journée.",
           "sources": [
             "S52",
             "S230",
@@ -4236,7 +4236,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (88 % le matin, 92 % à midi, 88 % en fin de journée), toute l'année",
           "trigger": "pente de 34° exposée sud, 290 m au sud-ouest du But Saint-Genix (sommet IGN, 1644 m), au-dessus du col de la Chau",
-          "description": "Les traces de nombreux vols placent un point chaud sur la pente sud du But Saint-Genix, au sud du plateau de Vassieux, toute la journée et toute l'année. Il forme probablement un maillon des faces sud du Vercors, comme le But de l'Aiglette, à 6 km à l'est de la Tête de la Dame et à 7 km à l'ouest du col de Rousset.",
+          "description": "Au sud du plateau de Vassieux, la pente sud du But Saint-Genix est active toute la journée et toute l'année sur les traces. À 6 km à l'est de la Tête de la Dame et à 7 km à l'ouest du col de Rousset, elle forme probablement un maillon des faces sud du Vercors, comme le But de l'Aiglette.",
           "sources": [
             "S52",
             "S230",
@@ -4254,7 +4254,7 @@
           "coord_quality": "approx",
           "best_hours": "matin et milieu de journée (97 % le matin, 96 % à midi, 87 % en fin de journée), printemps, été et automne",
           "trigger": "pente de 34° exposée sud-est sous la côte de Quinquambaye (crête IGN, saddle à 1750 m, à 220 m), 1,1 km à l'est du sommet du Grand Veymont",
-          "description": "Les traces de nombreux vols placent un point chaud sur la pente sud-est de la côte de Quinquambaye, à 1,1 km à l'est du sommet du Grand Veymont, actif presque toute la journée et surtout le matin et à midi. Ce point se trouve probablement sur le passage des cross du Serpaton, du Col Vert et du Moucherotte, qui se séparent au Grand Veymont. Dans la Réserve naturelle des Hauts-Plateaux, 300 m sol minimum.",
+          "description": "À 1,1 km à l'est du sommet du Grand Veymont, dans la Réserve naturelle des Hauts-Plateaux (300 m sol minimum), la pente sud-est de la côte de Quinquambaye porte un point chaud, actif presque toute la journée et surtout le matin et à midi. Il se trouve probablement sur le passage des cross du Serpaton, du Col Vert et du Moucherotte, qui se séparent au Grand Veymont.",
           "sources": [
             "S33",
             "S230",
@@ -4272,7 +4272,7 @@
           "coord_quality": "approx",
           "best_hours": "matin et milieu de journée (92 % le matin, 90 % à midi, aucun point chaud en fin de journée), toute l'année",
           "trigger": "rebord est de la crête, pente de 37° exposée à l'est sous le sommet de la Pale (1734 m, à 15 m du point), sur l'alpage qui prolonge le Serpaton vers le nord",
-          "description": "Sur la crête nord du Serpaton, les traces de nombreux vols placent un point chaud sur le rebord est de la Montagne de la Pale, le matin et à midi, toute l'année. Le cross classique du Serpaton longe probablement cette crête vers le nord avant de s'extraire.",
+          "description": "Au nord du Serpaton, la crête se prolonge par la Montagne de la Pale, dont le rebord est porte un point chaud sur les traces, le matin et à midi, toute l'année. Le cross classique du Serpaton longe probablement cette crête vers le nord avant de s'extraire.",
           "sources": [
             "S66",
             "S211",
@@ -4292,7 +4292,7 @@
           "ffvl_id": 1036,
           "best_hours": "matin, sans vent météo",
           "trigger": "pente boisée très raide sous le décollage de Musan (orienté NE/E/SE), chauffée par le soleil du matin",
-          "description": "Au décollage de Musan, sans vent météo, des conditions thermiques se forment le matin sur la pente boisée très raide sous le décollage, chauffée par le soleil du matin.",
+          "description": "Sans vent météo, la pente boisée très raide sous le décollage de Musan donne ses conditions thermiques le matin, quand le soleil la chauffe.",
           "sources": [
             "S160",
             "S261"
@@ -4310,7 +4310,7 @@
           "ffvl_id": 1234,
           "best_hours": "fin de journée, quand la brise de NNO est constante (faiblissante vers 18 h en été)",
           "trigger": "crête et alpages exposés N/NO du Serpaton Ouest, sous la manche à air à droite des antennes",
-          "description": "Au Serpaton Ouest 500, le vol en thermo-dynamique se fait en fin de journée, quand la brise de NNO est constante ; elle faiblit vers 18h en été. Si la brise ne couche pas trop les thermiques, on peut faire le plafond en longeant la crête vers le sud, en respectant la zone réglementée du parc du Vercors (crête du Brisou, Mont-Aiguille et Grand Veymont).",
+          "description": "Au Serpaton Ouest 500, le thermo-dynamique arrive en fin de journée, quand la brise de nord-nord-ouest est constante ; elle faiblit vers 18h en été. Si elle ne couche pas trop les thermiques, on peut faire le plafond en longeant la crête vers le sud, en respectant la zone réglementée du parc du Vercors (crête du Brisou, Mont-Aiguille et Grand Veymont).",
           "sources": [
             "S149",
             "S261"
@@ -4327,7 +4327,7 @@
           "coord_quality": "approx",
           "best_hours": "99 % le matin, 96 % à midi, 89 % en fin de journée ; toute l'année ; « site d'après-midi » pour la fiche FFVL, départ possible vers la plaine de Valence",
           "trigger": "pente de 34° exposée sud-ouest, 1,1 km au nord du décollage des Limouches (992 m) et 930 m de l'atterrissage de la Touvière, dans le cirque de Peyrus",
-          "description": "Les traces de nombreux vols placent un point chaud sur la pente sud-ouest qui ferme le cirque de Peyrus, à 1,1 km au nord du décollage des Limouches, actif le matin, à midi et en fin de journée, toute l'année. C'est le point chaud le plus fort du Vercors drômois, avec Gaudissart. Il ne faut pas traverser le cirque par vent de nord fort.",
+          "description": "Ne traversez pas le cirque de Peyrus par vent de nord fort. La pente sud-ouest qui le ferme, à 1,1 km au nord du décollage des Limouches, porte pourtant le point chaud le plus fort du Vercors drômois, avec Gaudissart : de nombreuses traces l'y placent, actif le matin, à midi et en fin de journée, toute l'année.",
           "sources": [
             "S165",
             "S54",
@@ -4351,7 +4351,7 @@
             "NW",
             "W"
           ],
-          "description": "Le Serpaton Ouest est favorable par O et NO, et idéal en fin d'après-midi, quand la brise de NNO est constante. Il ne faut pas y voler par S et SO. La brise reste soutenue tard.",
+          "description": "Le Serpaton Ouest est idéal en fin d'après-midi, quand la brise de nord-nord-ouest est constante, et favorable par ouest et nord-ouest. Il ne faut pas y voler par sud ni sud-ouest. La brise reste soutenue tard.",
           "sources": [
             "S149"
           ]
@@ -4368,7 +4368,7 @@
             "SW",
             "W"
           ],
-          "description": "Léoncel est idéal par vent inférieur à 30 km/h orienté SO. C'est un grand champ orienté O-NO.",
+          "description": "Ce grand champ orienté ouest-nord-ouest est idéal par vent de sud-ouest inférieur à 30 km/h.",
           "sources": [
             "S156"
           ]
@@ -4387,11 +4387,12 @@
             "W",
             "NW"
           ],
-          "description": "Le décollage est visible depuis le parking, sous la manche à air, à droite des antennes. Orienté N/NO, il est accessible à pied (sauf école locale) et convient à tous quand la brise n'est pas trop forte. En fin de journée, la brise de NNO constante permet de voler, mais il ne faut pas voler par S ni SO. Le vol rando est apprécié sans vent jusqu'à l'atterrissage des Rivières.",
+          "description": "Tourné vers l'ouest et le nord-ouest, c'est le décollage du soir au Serpaton, visible depuis le parking, sous la manche à air, à droite des antennes. Il convient à tous quand la brise n'est pas trop forte, mais il ne faut pas y voler par sud ni sud-ouest. En fin de journée, la brise de nord-nord-ouest constante permet de voler. Il est accessible à pied (sauf école locale), et le vol rando est apprécié sans vent jusqu'à l'atterrissage des Rivières.",
           "sources": [
             "S149",
             "S17"
-          ]
+          ],
+          "note": "Orientation donnée tantôt nord à nord-ouest, tantôt ouest à nord-ouest."
         },
         {
           "id": "serpaton-intermediaire",
@@ -4405,7 +4406,7 @@
             "N",
             "NW"
           ],
-          "description": "Le décollage est exigu, à environ 300 m à pied de la route. La porte de sortie est à droite de la manche à air, vers le NNO. Il est idéal par légère brise de vallée remontant le vallon de Gresse-en-Vercors.",
+          "description": "Tourné au nord et au nord-ouest, à environ 300 m à pied de la route, c'est le décollage exigu du Serpaton. Il est idéal par légère brise de vallée remontant le vallon de Gresse-en-Vercors, et sa porte de sortie est à droite de la manche à air, vers le nord-nord-ouest.",
           "sources": [
             "S148"
           ],
@@ -4424,7 +4425,7 @@
             "SE",
             "S"
           ],
-          "description": "Longue bande herbeuse orientée plein est, dans le col, avec un parc à brebis (patou). Le site est idéal par brise thermique ou très léger flux de sud. Il est défavorable par N, NE, SO, O et NO, et un venturi se produit au sud.",
+          "description": "Dans le col, cette longue bande herbeuse orientée plein est, avec un parc à brebis (patou), est idéale par brise thermique ou très léger flux de sud. Le site est défavorable par nord, nord-est, sud-ouest, ouest et nord-ouest, et un venturi se produit au sud.",
           "sources": [
             "S150",
             "S18",
@@ -4447,7 +4448,7 @@
             "S",
             "SW"
           ],
-          "description": "Orienté S à SO, le décollage s'atteint par le télésiège de la station ou à pied. C'est un site de vol rando du Diois, à éviter en été hors cross : l'aérologie y est particulièrement tordue, avec des brises de Die et du nord-ouest. La force du vent est impossible à estimer au col naturel. Le site est impossible et dangereux à la moindre entrée de vent du nord ; des zones de vautours sont signalées de janvier à juin.",
+          "description": "Face sud à sud-ouest, ce site de vol rando du Diois s'atteint par le télésiège de la station ou à pied. Il devient impossible et dangereux à la moindre entrée de vent du nord, et il est à éviter en été hors cross : l'aérologie y est particulièrement tordue, avec des brises de Die et du nord-ouest. La force du vent est impossible à estimer au col naturel. Des zones de vautours sont signalées de janvier à juin.",
           "sources": [
             "S154",
             "S57",
@@ -4471,7 +4472,7 @@
             "SW",
             "W"
           ],
-          "description": "Grand champ en pente orienté ONO, idéal par vent inférieur à 30 km/h de sud-ouest. On y accède par l'extérieur de la clôture barbelée, depuis le parking de Pissenible.",
+          "description": "Au-dessus du village de Léoncel, ce grand champ en pente orienté ouest-nord-ouest est idéal par vent de sud-ouest inférieur à 30 km/h. On y accède par l'extérieur de la clôture barbelée, depuis le parking de Pissenible.",
           "sources": [
             "S156",
             "S55"
@@ -4491,7 +4492,7 @@
             "SW",
             "W"
           ],
-          "description": "Décollage depuis la falaise sud, où l'aérologie est souvent de travers gauche. Le terrain est pratiqué sans convention.",
+          "description": "Ce décollage part de la falaise sud de Léoncel, où l'aérologie est souvent de travers gauche. Le terrain est pratiqué sans convention.",
           "sources": [
             "S158"
           ]
@@ -4505,7 +4506,7 @@
           "coord_quality": "source",
           "ffvl_id": 5334,
           "orientations": [],
-          "description": "Décollage pratiqué, dont la fiche est encore en brouillon ; son orientation n'est pas renseignée.",
+          "description": "Près de Léoncel, ce décollage est pratiqué, mais sa fiche est encore en brouillon, et son orientation n'est pas renseignée.",
           "sources": [
             "S159"
           ],
@@ -4524,7 +4525,7 @@
             "E",
             "SE"
           ],
-          "description": "Décollage court, très pentu et boisé. Il faut étaler la voile sur la route. Le matin, sans vent météo, il se pratique ; il est dangereux par vent de nord ou de sud.",
+          "description": "Sur une pente boisée tournée du nord-est au sud-est, ce décollage se pratique le matin, sans vent météo, et il est dangereux par vent de nord ou de sud. Il est court et très pentu, et il faut étaler la voile sur la route.",
           "sources": [
             "S160"
           ]
@@ -4541,7 +4542,7 @@
             "N",
             "NW"
           ],
-          "description": "Tremplin de falaise pour le delta, et nouveau décollage pour le parapente. Il se pratique par léger vent de nord, et le site est protégé des vents plus soutenus de la vallée du Rhône. L'aérodrome et la R196B sont proches.",
+          "description": "Au-dessus de Saint-Jean-en-Royans, c'est un tremplin de falaise pour le delta et un nouveau décollage pour le parapente. Il se pratique par léger vent de nord, et le site est protégé des vents plus soutenus de la vallée du Rhône. L'aérodrome et la R196B sont proches.",
           "sources": [
             "S162",
             "S53"
@@ -4560,7 +4561,7 @@
             "N",
             "NW"
           ],
-          "description": "Décollage court, site d'après-midi, sous le vent de l'est. On peut partir vers la plaine de Valence ou rester sur les contreforts. Le dénivelé est de 540 m.",
+          "description": "À Peyrus, sur le bord ouest du massif, ce décollage court se vole l'après-midi, et il est sous le vent de l'est. On peut partir vers la plaine de Valence ou rester sur les contreforts. Le dénivelé est de 540 m.",
           "sources": [
             "S165",
             "S55"
@@ -4577,7 +4578,7 @@
           "orientations": [
             "W"
           ],
-          "description": "Ce site est déconseillé par fort vent météo de sud ou de nord. Il n'y a plus d'atterrissage officiel, et il faut respecter les foins.",
+          "description": "Près de La Chapelle-en-Vercors, ce site n'a plus d'atterrissage officiel, et il faut respecter les foins. Il est déconseillé par fort vent météo de sud ou de nord.",
           "sources": [
             "S168"
           ]
@@ -4592,7 +4593,7 @@
           "alt_m": 1190,
           "coord_quality": "source",
           "ffvl_id": 1236,
-          "description": "La parcelle est marquée par quatre piquets : restez dedans, l'ancienne pente école est interdite. Site privé et sensible, accès à pied uniquement, avec une ligne électrique à l'est. La brise de vallée y vient du nord, la brise descendante du sud. Par vent d'ouest, l'atterrissage est turbulent.",
+          "description": "Côté Gresse, à l'ouest du Serpaton, cette parcelle privée et sensible est marquée par quatre piquets : restez dedans, l'ancienne pente école est interdite. On y accède à pied uniquement, et une ligne électrique passe à l'est. La brise de vallée y vient du nord, la brise descendante du sud. Par vent d'ouest, l'atterrissage est turbulent.",
           "sources": [
             "S151"
           ]
@@ -4605,7 +4606,7 @@
           "alt_m": 907,
           "coord_quality": "source",
           "ffvl_id": 1232,
-          "description": "Zone dégagée pour le nord et le sud. Par sud, faites une PTS pour poser dans la partie nord du champ, en vous méfiant du sous-le-vent de la haie. Par nord ou en brise de vallée, faites une PTU main gauche, sans dériver au sud du champ : on y passe sous le vent du col du Fau. Le site, près de l'A51, est fermé temporairement : utilisez en priorité le terrain conventionné du Rota.",
+          "description": "À l'est du Serpaton, près de l'A51, ce site est fermé temporairement : utilisez en priorité le terrain conventionné du Rota. La zone est dégagée pour le nord et le sud. Par sud, faites une PTS pour poser dans la partie nord du champ, en vous méfiant du sous-le-vent de la haie. Par nord ou en brise de vallée, faites une PTU main gauche, sans dériver au sud du champ : on y passe sous le vent du col du Fau.",
           "sources": [
             "S152"
           ],
@@ -4619,7 +4620,7 @@
           "alt_m": 794,
           "coord_quality": "source",
           "ffvl_id": 14276,
-          "description": "Terrain conventionné, fermé environ deux semaines à la fenaison, de mi-mai à mi-juin. Il faut poser au nord de la manche à air ; une ligne moyenne tension se trouve au sud-ouest.",
+          "description": "Au nord du Col du Fau, ce terrain conventionné est fermé environ deux semaines à la fenaison, de mi-mai à mi-juin. Il faut poser au nord de la manche à air, et une ligne moyenne tension se trouve au sud-ouest.",
           "sources": [
             "S153"
           ],
@@ -4633,7 +4634,7 @@
           "alt_m": 913,
           "coord_quality": "source",
           "ffvl_id": 14107,
-          "description": "Grand champ situé au sud du parking du village. On peut y trouver des vaches, et une station d'épuration grillagée se trouve près de la manche à air. Le vent peut se renforcer.",
+          "description": "Au sud du parking du village, ce grand champ est l'atterrissage de Léoncel. On peut y trouver des vaches, le vent peut s'y renforcer, et une station d'épuration grillagée se trouve près de la manche à air.",
           "sources": [
             "S157"
           ]
@@ -4646,7 +4647,7 @@
           "alt_m": 430,
           "coord_quality": "source",
           "ffvl_id": 1037,
-          "description": "L'atterrissage se fait en légère pente, face à la brise (N/NE) : il faut poser court. La fenaison, du 15 mai à mi-juillet, est interdite, et il faut cohabiter avec la chasse.",
+          "description": "Au col de Panavare, on se pose en légère pente, face à la brise de nord à nord-est : il faut poser court. La fenaison, du 15 mai à mi-juillet, est interdite, et il faut cohabiter avec la chasse.",
           "sources": [
             "S161"
           ]
@@ -4659,11 +4660,10 @@
           "alt_m": 320,
           "coord_quality": "source",
           "ffvl_id": 1433,
-          "description": "Terrain de 200 m, bordé de noyers sur trois côtés. Une PTU main gauche vers le NE est conseillée. Un gradient est possible, et l'on peut atterrir face au catabatique.",
+          "description": "Ce terrain est fermé temporairement pour travaux. Long de 200 m, il est bordé de noyers sur trois côtés, et une PTU main gauche vers le nord-est y est conseillée. Un gradient est possible, et l'on peut atterrir face au catabatique.",
           "sources": [
             "S163"
-          ],
-          "note": "Fermé temporairement pour travaux."
+          ]
         },
         {
           "id": "saint-jean-aerodrome",
@@ -4673,7 +4673,7 @@
           "alt_m": 260,
           "coord_quality": "source",
           "ffvl_id": 1436,
-          "description": "Aérodrome à usage restreint, avec une approche différenciée pour le delta et le parapente : il faut respecter les altitudes. Le site est favorable par N et NO.",
+          "description": "À Saint-Jean-en-Royans, cet aérodrome à usage restreint impose une approche différenciée pour le delta et le parapente : il faut respecter les altitudes. Le site est favorable par nord et nord-ouest.",
           "sources": [
             "S164",
             "S53"
@@ -4687,7 +4687,7 @@
           "alt_m": 550,
           "coord_quality": "source",
           "ffvl_id": 13417,
-          "description": "Atterrissage dans le village de Peyrus, en pente et délicat.",
+          "description": "Dans le village de Peyrus, c'est l'atterrissage des Limouches, en pente et délicat.",
           "sources": [
             "S55",
             "S167"
@@ -4701,7 +4701,7 @@
           "alt_m": 574,
           "coord_quality": "source",
           "ffvl_id": 5182,
-          "description": "Atterrissage côté Drôme du col de Rousset, très turbulent avec la brise de la vallée de la Drôme.",
+          "description": "Côté Drôme du col de Rousset, cet atterrissage est très turbulent avec la brise de la vallée de la Drôme.",
           "sources": [
             "S155"
           ]
@@ -4831,7 +4831,7 @@
               "coord_quality": "source"
             }
           ],
-          "description": "Le cross de la barrière est relie le Moucherotte, le Grand Veymont et le Mont Aiguille, en allers-retours. Il part du sud, au Serpaton, et s'extrait le long des crêtes jusqu'au Pic Saint-Michel. Le versant est devient piégeux par vent d'ouest.",
+          "description": "Ce cross relie le Moucherotte, dans le Vercors nord, au Grand Veymont et au Mont Aiguille, en allers-retours sur la barrière est. Il part du sud, au Serpaton, et s'extrait le long des crêtes jusqu'au Pic Saint-Michel. Le versant est devient piégeux par vent d'ouest.",
           "confidence": "low",
           "sources": [
             "S23",
@@ -4875,7 +4875,7 @@
             }
           ],
           "distance_km": null,
-          "description": "Deux départs classiques depuis le Serpaton. Par le pilier nord, on passe le crêt de la Ferrière, point bas assez technique vers 1100 à 1200 m, puis on rejoint les Deux Sœurs, où l'on raccroche en général d'assez bas, dans un thermique très généreux (souvent plus de +4 m/s) ; sinon, des vaches sont possibles à la station du col de l'Arzelier. La variante par le sud ajoute une balise au Grand Veymont et évite le point bas de la Ferrière.",
+          "description": "Deux départs classiques depuis le Serpaton. Par le pilier nord, on passe le crêt de la Ferrière, point bas assez technique vers 1100 à 1200 m, puis on rejoint les Deux Sœurs, où l'on raccroche en général d'assez bas, dans un thermique souvent à plus de +4 m/s ; sinon, des vaches sont possibles à la station du col de l'Arzelier. La variante par le sud ajoute une balise au Grand Veymont et évite la Ferrière, mais elle est très engagée, sans vache jusqu'au Grand Veymont.",
           "sources": [
             "S66",
             "S150",
@@ -4887,7 +4887,7 @@
             "Si le sud pousse assez fort et que les plafonds sont généreux, on peut raccrocher les Deux Sœurs en direct depuis le pilier nord.",
             "Le site doit sa célébrité à un record de groupe de l'équipe de France : 279 km, posé à Retkingen (Suisse)."
           ],
-          "note": "Transition du crêt de la Ferrière facile, mais pouvant faire rentrer dans la stabilité de basse couche. Les deux variantes ont des temps de parcours équivalents. Variante par le sud : une branche très engagée, sans vache jusqu'au Grand Veymont, et une première branche face au vent du sud. Points de relance : extraction au pilier nord, point bas du crêt de la Ferrière (1100-1200 m), Deux Sœurs (thermique souvent plus de +4 m/s), plafond au Grand Veymont (2300-2400 m) ; positions des repères approximatives."
+          "note": "Transition du crêt de la Ferrière facile, mais pouvant faire rentrer dans la stabilité de basse couche. Les deux variantes ont des temps de parcours équivalents. Variante par le sud : une première branche face au vent du sud. Points de relance : extraction au pilier nord, point bas du crêt de la Ferrière (1100-1200 m), Deux Sœurs (thermique souvent plus de +4 m/s), plafond au Grand Veymont (2300-2400 m) ; positions des repères approximatives."
         },
         {
           "id": "serpaton-pic-saint-michel",
@@ -4913,7 +4913,7 @@
             }
           ],
           "distance_km": null,
-          "description": "Cross intéressant : après l'extraction au Serpaton, on longe les faces est vers le nord. Les départs peuvent être tôt, depuis le Col Vert, le Serpaton, le Pic Saint-Michel, le col de l'Arc ou Léoncel. En fin de journée, si la brise ne couche pas les thermiques, on peut faire le plafond en longeant la crête vers le sud, en respectant la réserve.",
+          "description": "Cross intéressant vers le nord : après l'extraction au Serpaton, on longe les faces est jusqu'au Pic Saint-Michel, dans le Vercors nord. Les départs peuvent être tôt, depuis le Col Vert, le Serpaton, le Pic Saint-Michel, le col de l'Arc ou Léoncel. En fin de journée, si la brise ne couche pas les thermiques, on peut aussi faire le plafond en longeant la crête vers le sud, en respectant la réserve.",
           "sources": [
             "S55",
             "S149"
@@ -4948,7 +4948,7 @@
           "sources": [
             "S55"
           ],
-          "note": "Tracé attesté sans détail écrit ; waypoints indicatifs ; confiance faible."
+          "note": "Tracé attesté sans détail écrit ; waypoints indicatifs ; confiance faible. Les fiches de la Tête de la Dame, du Roc de Touleau et du pré de Cinq Sous décrivent un autre tour, proposé depuis le col de l'Arc."
         },
         {
           "id": "col-vert-grand-veymont-jocou-sud",
@@ -4998,7 +4998,7 @@
             }
           ],
           "distance_km": null,
-          "description": "Le circuit sud classique part du Col Vert et passe par le Gerbier, le Grand Veymont, le Mont Aiguille, la Tête Chevalière, le col de Bachal et la face nord du Jocou. Il se prolonge vers le Dévoluy, le Pic de Bure ou le Champsaur. La réserve des Hauts-Plateaux impose 300 m sol au-dessus du Mont Aiguille.",
+          "description": "Le circuit sud classique part du Col Vert, dans le Vercors nord, et descend par le Gerbier, le Grand Veymont, le Mont Aiguille, la Tête Chevalière, le col de Bachal et la face nord du Jocou. Au-dessus du Mont Aiguille, la réserve des Hauts-Plateaux impose 300 m sol. Le circuit se prolonge vers le Dévoluy, le Pic de Bure ou le Champsaur.",
           "sources": [
             "S197",
             "S196",
@@ -5030,7 +5030,7 @@
       "id": "trieves",
       "name": "Trièves (Mens, Monestier-de-Clermont, Clelles, Courtet, col de la Croix-Haute, Lalley)",
       "parent_massif": "Préalpes - Trièves",
-      "summary": "Le Trièves est un bassin ouvert, entre la barrière est du Vercors (Mont Aiguille, Grand Veymont) d'un côté, l'Obiou, le Grand Ferrand et le Dévoluy de l'autre.\n\nUne brise de nord remonte du Drac vers le Trièves, puis jusqu'au col de la Croix-Haute, par Monestier-de-Clermont, Saint-Maurice, Lalley et Lus-la-Croix-Haute. Une brise du Diois remonte par le col de Menée vers Le Percy. Le vent de nord du lac de Monteynard viendrait de la forte chaleur au fond du Trièves.\n\nCourtet, face nord à nord-ouest à 1365 m, au pied de la face ouest de l'Obiou, est le site refuge. Protégé du vent du nord, il permet de voler quand le reste de l'Isère est cloué au sol. Le Châtel de Mens (nord, sud, sud-ouest, ouest, nord-ouest, 1918 m) et Rochassac complètent les décollages. L'atterrissage du Châtel à Mens n'est plus autorisé.\n\nLes allers-retours vers le Vercors, notamment jusqu'au Mont Aiguille, sont un classique depuis le Serpaton et le Trièves. Respectez la réserve des Hauts-Plateaux.",
+      "summary": "Le Trièves est un bassin ouvert entre deux barrières : à l'ouest, celle du Vercors (Mont Aiguille, Grand Veymont), à l'est, l'Obiou, le Grand Ferrand et le Dévoluy. Monestier-de-Clermont est à son entrée nord, Mens à l'est, le col de la Croix-Haute au sud.\n\nL'après-midi, une brise de nord remonte du Drac vers le Trièves, puis jusqu'au col de la Croix-Haute, par Monestier-de-Clermont, Saint-Maurice, Lalley et Lus-la-Croix-Haute. Plus au nord, le vent de nord du lac de Monteynard viendrait de la forte chaleur au fond du Trièves. Une brise du Diois remonte aussi par le col de Menée vers Le Percy.\n\nLe bassin joue deux rôles. Courtet, face nord à nord-ouest à 1365 m, au pied de la face ouest de l'Obiou, est le site refuge : protégé du vent du nord, il permet de voler quand le reste de l'Isère est cloué au sol. C'est aussi un tremplin, avec le Châtel de Mens (nord, sud, sud-ouest, ouest, nord-ouest, 1918 m) et Rochassac. Les allers-retours vers le Vercors, notamment jusqu'au Mont Aiguille, sont un classique depuis le Serpaton et le Trièves.\n\nÀ respecter : l'atterrissage du Châtel à Mens n'est plus autorisé, et côté Vercors, la réserve des Hauts-Plateaux se respecte.",
       "bbox": [
         5.4,
         44.55,
@@ -5144,7 +5144,7 @@
           "coord_quality": "source",
           "ffvl_id": 854,
           "conditions": "Période de chasse : aucun véhicule sur la piste avant 13h00.",
-          "description": "Pendant la période de chasse, aucun véhicule ne circule sur la piste avant 13h00 : on peut décoller avant 13h en montant à pied. Hors période de chasse, le site est ouvert sans restriction.",
+          "description": "Sur la piste de Courtet, pendant la période de chasse, aucun véhicule ne circule avant 13h00 : on peut décoller avant 13h en montant à pied. Hors période de chasse, le site est ouvert sans restriction.",
           "sources": [
             "S169"
           ],
@@ -5160,7 +5160,7 @@
           "coord_quality": "source",
           "ffvl_id": 959,
           "conditions": "Toute l'année.",
-          "description": "Le propriétaire du champ ne veut plus d'activité de parapente sur son terrain : il ne faut pas y atterrir, et ce toute l'année.",
+          "description": "Près de Mens, ne vous posez pas sur ce champ, et ce toute l'année : son propriétaire ne veut plus d'activité de parapente sur son terrain.",
           "sources": [
             "S174"
           ],
@@ -5175,7 +5175,7 @@
           "radius_km": 5,
           "coord_quality": "approx",
           "conditions": "Aigle royal janvier-septembre, vautour fauve janvier-août, faucon pèlerin janvier-juillet (carte du PNR).",
-          "description": "Des zones de nidification, dessinées sur les cartes du Vercors, s'étendent entre le col de Menée, Treschenu-Creyers et Glandage. Il faut rester bien au-dessus des falaises et éviter de les survoler à basse altitude. Aigle royal de janvier à septembre, vautour fauve de janvier à août, faucon pèlerin de janvier à juillet.",
+          "description": "Entre le col de Menée, Treschenu-Creyers et Glandage, des zones de nidification, dessinées sur les cartes du Vercors, imposent de rester bien au-dessus des falaises et d'éviter de les survoler à basse altitude. Aigle royal de janvier à septembre, vautour fauve de janvier à août, faucon pèlerin de janvier à juillet.",
           "sources": [
             "S49"
           ],
@@ -5190,7 +5190,7 @@
           "radius_km": 4,
           "coord_quality": "approx",
           "conditions": "Vent de sud (plus de vent de sud en altitude au Jocou qu'à Lesches ou Aureille).",
-          "description": "Il faut s'attendre à plus de vent de sud en altitude au Jocou qu'à Lesches ou à Aureille : un effet venturi se produit à l'est du Jocou, dans la vallée de Lus-la-Croix-Haute. Le vol se fait en altitude, avec des thermiques parfois forts. Par vent de sud, le col Pigeon est le meilleur départ.",
+          "description": "À l'est du Jocou, dans la vallée de Lus-la-Croix-Haute, un effet venturi renforce le vent de sud : attendez-vous à plus de vent en altitude au Jocou qu'à Lesches ou à Aureille. Le vol se fait en altitude, avec des thermiques parfois forts, et par vent de sud, le col Pigeon est le meilleur départ.",
           "sources": [
             "S59"
           ],
@@ -5205,7 +5205,7 @@
           "radius_km": 3,
           "coord_quality": "source",
           "conditions": "Brise de nord à partir de midi, installée rapidement ; vallée de Châtillon.",
-          "description": "Dans la région de Châtillon et au niveau de son verrou, le secteur de la brise de nord diverge vers l'ouest. C'est par ce verrou que passe l'alimentation de Boulc et des cols de Grimone et de Menée. La brise de nord s'installe rapidement à partir de midi ; elle est forte dans la vallée, et le Glandasse est difficile à raccrocher, car la brise est latérale à la pente.",
+          "description": "De l'autre côté du col de Menée, dans la région de Châtillon-en-Diois et à son verrou, la brise de nord s'installe rapidement à partir de midi, forte dans la vallée, et son secteur diverge vers l'ouest. Le Glandasse est alors difficile à raccrocher, car la brise est latérale à la pente. C'est aussi par ce verrou que passe l'alimentation de Boulc et des cols de Grimone et de Menée.",
           "sources": [
             "S56",
             "S63"
@@ -5225,7 +5225,7 @@
           "coord_quality": "approx",
           "best_hours": "fin d'après-midi / soir (restitution)",
           "trigger": "Falaises des faces ouest chauffées par le soleil couchant ; combe à droite du déco",
-          "description": "La combe située juste à droite du décollage de Courtet, sur les faces ouest, porte un point chaud mesuré sur les traces de nombreux vols. Il est actif en fin d'après-midi et le soir, en restitution.",
+          "description": "Juste à droite du décollage de Courtet, sur les faces ouest, cette combe porte un point chaud mesuré sur les traces de nombreux vols. Il s'active en fin d'après-midi et le soir, en restitution.",
           "sources": [
             "S62",
             "S230"
@@ -5284,7 +5284,7 @@
           "coord_quality": "measured",
           "best_hours": "à midi et le soir d'après les traces GPS (90 % à midi, 89 % le soir, rien le matin)",
           "trigger": "Arête de Fluchaire, face ouest/sud-ouest chauffée sous la Tête de l'Obiou",
-          "description": "Sur l'arête de Fluchaire, une face ouest et sud-ouest chauffée par le soleil porte un point chaud mesuré sur les traces de nombreux vols, actif à midi et le soir, mais pas le matin.",
+          "description": "Entre Courtet et la Tête de l'Obiou, l'arête de Fluchaire présente au soleil une face ouest et sud-ouest. Elle porte un point chaud mesuré sur les traces de nombreux vols, actif à midi et le soir, mais pas le matin.",
           "sources": [
             "S204",
             "S226",
@@ -5307,7 +5307,7 @@
           "coord_quality": "source",
           "best_hours": "après-midi",
           "trigger": "Sommet et faces ouest du Châtel",
-          "description": "Sur le Châtel, sommet et faces ouest, on fait le tour du bocal : après le plafond au-dessus du décollage, on part vers le nord, puis plein sud sur le Mesnil.",
+          "description": "Au nord de Courtet, le sommet et les faces ouest du Châtel sont le premier appui du tour du bocal : après le plafond au-dessus du décollage, on part vers le nord, puis plein sud sur le Mesnil.",
           "sources": [
             "S202",
             "S203",
@@ -5331,7 +5331,7 @@
           "coord_quality": "source",
           "best_hours": "après-midi",
           "trigger": "Pyramide du Ménil ; par vent de nord, confluence sur la face sud (sous le vent) qui déclenche un gros thermique",
-          "description": "Entre Courtet et le Jocou, le Mesnil, montagne en forme de pyramide, sert de relance, et il faut y chercher un peu où ça monte. Dans le tour du bocal de Courtet, on transite plein sud sur le Mesnil, puis plein ouest vers le Jocou.",
+          "description": "Entre Courtet et le Jocou, le Mesnil, montagne en forme de pyramide, un peu en plaine, à gauche du décollage de Courtet, sert de relance, et il faut y chercher un peu où ça monte. Dans le tour du bocal de Courtet, on y transite plein sud, puis on repart plein ouest vers le Jocou.",
           "sources": [
             "S205",
             "S202",
@@ -5353,7 +5353,7 @@
           "coord_quality": "approx",
           "best_hours": "tôt (déco est), puis après-midi ; plafond vers 2500 m",
           "trigger": "Crête herbeuse du Jocou, versant est, en avant du déco",
-          "description": "Au Jocou, sur la crête herbeuse du versant est, le thermique se trouve à 100 à 200 m en avant du décollage est : c'est lui qui permet de faire le plafond. Le décollage du versant est permet de partir tôt et de tenter l'Obiou. Le vent de sud est renforcé à l'est du Jocou, par un effet venturi dans la vallée de Lus-la-Croix-Haute.",
+          "description": "Au Jocou, sur la crête herbeuse du versant est, le thermique se trouve à 100 à 200 m en avant du décollage est : c'est lui qui permet de faire le plafond, et ce décollage permet de partir tôt pour tenter l'Obiou. Méfiez-vous du vent de sud, renforcé à l'est du sommet par un effet venturi dans la vallée de Lus-la-Croix-Haute.",
           "sources": [
             "S205",
             "S217",
@@ -5416,7 +5416,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (90 % le matin, 93 % à midi et en fin de journée), toute l'année ; le topo CHVD parle de « thermiques du soir »",
           "trigger": "pente de 26° exposée ouest, 450 m à l'ouest et 260 m sous le décollage de la bergerie de Rochassac, sur la crête de Fluchaire",
-          "description": "Sur la crête de Fluchaire, à 450 m à l'ouest du décollage de la bergerie de Rochassac et 260 m sous lui, les traces de nombreux vols placent un point chaud sur la pente exposée à l'ouest, toute la journée et toute l'année.",
+          "description": "Entre Courtet et le Châtel, sur la crête de Fluchaire, ce point chaud se trouve à 450 m à l'ouest du décollage de la bergerie de Rochassac et 260 m sous lui. Les traces de nombreux vols le montrent sur la pente exposée à l'ouest, toute la journée et toute l'année.",
           "sources": [
             "S171",
             "S266",
@@ -5439,7 +5439,7 @@
           "coord_quality": "approx",
           "best_hours": "matin et milieu de journée (99 % le matin, 97 % à midi, aucun point chaud en fin de journée), printemps, été et automne",
           "trigger": "pente de 32° exposée sud-est, 1,1 km à l'est du sommet de la Tête Chevalière (1951 m) et 1 km au nord-ouest du pas de l'Essaure, sur les avant-reliefs est du Vercors",
-          "description": "Sur les avant-reliefs est du Vercors, entre le Grand Veymont et le Jocou, les traces de nombreux vols placent le point chaud le plus fort du Trièves (98 %), sur une pente exposée au sud-est, à 1,1 km à l'est de la Tête Chevalière. Il est actif le matin et à midi, au printemps, en été et en automne, sans point chaud en fin de journée.",
+          "description": "Sur les avant-reliefs est du Vercors, entre le Grand Veymont et le Jocou, les traces de nombreux vols montrent le point chaud le plus fort du Trièves (98 %) : une pente exposée au sud-est, à 1,1 km à l'est de la Tête Chevalière. Il est actif le matin et à midi, au printemps, en été et en automne, sans point chaud en fin de journée.",
           "sources": [
             "S214",
             "S230",
@@ -5460,7 +5460,7 @@
           "coord_quality": "approx",
           "best_hours": "matin et milieu de journée (92 % le matin, 90 % à midi, 76 % en fin de journée), printemps et été",
           "trigger": "pente de 34° exposée est sous le sommet de la Tête de Praorzel (1691 m, à 70 m), en rebord de la barrière est du Vercors au sud de Chichilianne",
-          "description": "Sur la barrière est du Vercors, au sud de Chichilianne, les traces de nombreux vols placent un point chaud sur une pente exposée à l'est, sous la Tête de Praorzel, le matin et à midi, au printemps et en été.",
+          "description": "Au sud de Chichilianne, sur la barrière est du Vercors, la pente exposée à l'est sous la Tête de Praorzel donne un point chaud sur les traces de nombreux vols, le matin et à midi, au printemps et en été.",
           "sources": [
             "S49",
             "S230",
@@ -5481,7 +5481,7 @@
           "coord_quality": "approx",
           "best_hours": "91 % le matin, 97 % à midi, 97 % en fin de journée ; toute l'année ; le vol de Courtet est « habituellement autour de 15h pour les premiers bons thermiques » (CHVD, avril 2025)",
           "trigger": "pente raide (53°) exposée ouest, 1 km au nord du décollage de Courtet et 110 m sous lui, sur le cheminement qui mène aux alpages de Rochassac",
-          "description": "Sur la pente ouest qui borde le cheminement vers les alpages de Rochassac, à 1 km au nord du décollage de Courtet, les traces de nombreux vols placent un point chaud, sur une pente raide de 53°, toute l'année et tout au long de la journée.",
+          "description": "À 1 km au nord du décollage de Courtet, une pente raide de 53°, tournée vers l'ouest, borde le cheminement vers les alpages de Rochassac. Les traces de nombreux vols y montrent un point chaud toute l'année et tout au long de la journée.",
           "sources": [
             "S202",
             "S267",
@@ -5505,7 +5505,7 @@
           "coord_quality": "approx",
           "best_hours": "96 % le matin, 95 % à midi (aucun point chaud en fin de journée) ; printemps, été",
           "trigger": "pente de 26° exposée est, au pied de la Tête de Gaudissart (sommet IGN, 1489 m, à 30 m), 600 m au nord-est du col des Pellas",
-          "description": "Sur la barrière est du Vercors, entre Gresse et le Mont Aiguille, les traces de nombreux vols placent un point chaud sur une pente exposée à l'est, au pied de la Tête de Gaudissart, le matin et à midi, au printemps et en été.",
+          "description": "Entre Gresse et le Mont Aiguille, au pied de la Tête de Gaudissart, une pente de la barrière est du Vercors, tournée vers l'est, ressort sur les traces de nombreux vols : point chaud le matin et à midi, au printemps et en été.",
           "sources": [
             "S222",
             "S230",
@@ -5530,7 +5530,7 @@
             "N",
             "NW"
           ],
-          "description": "Courtet est idéal pour le thermique ou la restitution, face à la face ouest de l'Obiou. Le dénivelé est de 500 m, et les ascendances y sont généreuses.",
+          "description": "Devant la face ouest de l'Obiou, Courtet est idéal pour le thermique comme pour la restitution, avec 500 m de dénivelé et des ascendances généreuses.",
           "sources": [
             "S169",
             "S20",
@@ -5551,7 +5551,7 @@
             "N",
             "NW"
           ],
-          "description": "Vents favorables du nord et du nord-ouest, défavorables du sud-est et du sud. C'est un décollage accessible en voiture à moins de 50 m du parking, revêtu d'un textile, sur une pente marquée : une bonne alimentation de face est nécessaire. Il est ouvert aux deltas, et le site est décrit comme protégé du vent du nord.",
+          "description": "Au pied de la face ouest de l'Obiou, c'est le décollage refuge du bassin, décrit comme protégé du vent du nord. Vents favorables du nord et du nord-ouest, défavorables du sud-est et du sud. Accessible en voiture, à moins de 50 m du parking, il a une pente marquée et un revêtement textile, et il demande une bonne alimentation de face. Il est ouvert aux deltas.",
           "sources": [
             "S169",
             "S21",
@@ -5573,7 +5573,7 @@
           "coord_quality": "source",
           "ffvl_id": 3070,
           "orientations": [],
-          "description": "Décollage de la bergerie de Rochassac, pratiqué. Son conventionnement est inconnu, et son orientation n'est pas renseignée.",
+          "description": "Entre Courtet et le Châtel, ce décollage de la bergerie de Rochassac est pratiqué. Son conventionnement est inconnu, et son orientation n'est pas renseignée.",
           "sources": [
             "S171"
           ],
@@ -5609,7 +5609,7 @@
             "W",
             "NW"
           ],
-          "description": "Grand espace herbeux au sommet du Châtel, à 1 h de marche depuis Cordéac, accessible par la D66 depuis Mens. Le site est utilisé par les écoles de Mens.",
+          "description": "Au nord de Courtet, le sommet du Châtel offre un grand espace herbeux, à 1 h de marche depuis Cordéac, accessible par la D66 depuis Mens. Le site est utilisé par les écoles de Mens. Attention à l'arrivée : ne vous posez pas sur le champ du Châtel, à Mens.",
           "sources": [
             "S173",
             "S22"
@@ -5626,7 +5626,7 @@
           "alt_m": 902,
           "coord_quality": "source",
           "ffvl_id": 855,
-          "description": "Atterrissage de Courtet, favorable au nord-ouest. Il est soumis aux mêmes restrictions de chasse que le décollage.",
+          "description": "À l'ouest du décollage de Courtet, cet atterrissage est favorable au nord-ouest. Il est soumis aux mêmes restrictions de chasse que le décollage.",
           "sources": [
             "S170"
           ],
@@ -5901,7 +5901,7 @@
       "id": "matheysine",
       "name": "Matheysine et Drac (lac de Monteynard, lacs de Laffrey, La Mure, Sénépy, Conest, Valbonnais)",
       "parent_massif": "Préalpes – Matheysine",
-      "summary": "Ici, c'est le vent du nord qui commande. Le lac de Monteynard, réputé deuxième lac le plus venté d'Europe, ne marche l'été presque que par nord thermique. Ce vent se lève entre 11h et 13h, culmine vers 15h, faiblit vers 16h30-18h, et reprend parfois vers 17h, plus à l'ouest. Il souffle à 8-15 nds sans vent synoptique, à 12-20 nds avec du nord en altitude.\n\nLe mécanisme : les pentes et le fond du Trièves chauffent, et le vent s'accélère en venturi dans les anciennes gorges du Drac. Des cartes de brises du Vercors tracent une flèche qui descend le Drac de Grenoble par Vif jusqu'à Miribel-Lanchâtre et Monteynard, et une longue ligne de Vizille à Laffrey, La Mure, Corps et Saint-Bonnet-en-Champsaur. Sur le plateau matheysin, Laffrey a un nord dominant, thermique, de 10-15 nds, canalisé par le plateau. On y vole par bise légère, sous 15 km/h, avec du thermique, ou en dynamique pur par 20-30 km/h. On l'évite par nord fort et instable.\n\nLes décollages regardent surtout le sud et le sud-ouest : Sénépy, Combenon, Conest. Ils offrent du soaring par sud faible, mais la brise de nord s'installe dès 12h, avec de forts cisaillements au Conest et un atterrissage turbulent à Connex.\n\nEn cross, l'après-midi, le couloir du Drac est un tube de vent de nord : on en déduit d'y éviter les transitions basses et de s'y poser face au nord. Rejoindre le Champsaur par la Matheysine reste une hypothèse, par le Conest, le Sénépy et les crêtes de Valbonnais, sans vol connu.",
+      "summary": "Ici, c'est le vent du nord qui commande, sur trois bandes parallèles. À l'ouest, le couloir du Drac et le lac de Monteynard, dominés par le Conest, le Sénépy et le Combenon. Au centre, le plateau matheysin, de Laffrey à La Mure. À l'est, le Taillefer, le Coiro et la vallée de Valbonnais.\n\nLe lac, réputé deuxième lac le plus venté d'Europe, ne marche l'été presque que par nord thermique. Ce vent se lève entre 11h et 13h, culmine vers 15h, faiblit vers 16h30-18h, et reprend parfois vers 17h, plus à l'ouest. Il souffle à 8-15 nds sans vent synoptique, à 12-20 nds avec du nord en altitude. Le mécanisme : les pentes et le fond du Trièves chauffent, et le vent s'accélère en venturi dans les anciennes gorges du Drac. Des cartes de brises du Vercors tracent une flèche qui descend le Drac de Grenoble par Vif jusqu'à Miribel-Lanchâtre et Monteynard, et une longue ligne de Vizille à Laffrey, La Mure, Corps et Saint-Bonnet-en-Champsaur.\n\nSur le plateau, Laffrey a un nord dominant, thermique, de 10-15 nds, canalisé par le plateau. On y vole par bise légère, sous 15 km/h, avec du thermique, ou en dynamique pur par 20-30 km/h. On l'évite par nord fort et instable. Ailleurs, les décollages regardent surtout le sud et le sud-ouest : Sénépy, Combenon, Conest. Ils offrent du soaring par sud faible, mais la brise de nord s'installe dès 12h, avec de forts cisaillements au Conest et un atterrissage turbulent à Connex.\n\nEn cross, l'après-midi, le couloir du Drac est un tube de vent de nord : on en déduit d'y éviter les transitions basses et de s'y poser face au nord. Rejoindre le Champsaur par la Matheysine reste une hypothèse, par le Conest, le Sénépy et les crêtes de Valbonnais, sans vol connu. À l'est passe le parcours des Richards vers Chamrousse, par La Salette, le Coiro et le Taillefer.",
       "bbox": [
         5.6,
         44.65,
@@ -6016,7 +6016,7 @@
             "max": 28
           },
           "season": "été",
-          "description": "Le vent dominant vient du nord, grâce à un phénomène thermique propre au site, à 10 à 15 nœuds en moyenne. La configuration du lac, niché sur le plateau matheysin, canalise ces vents du nord.",
+          "description": "Sur le plateau matheysin, aux lacs de Laffrey, le vent dominant vient du nord, grâce à un phénomène thermique propre au site, à 10 à 15 nœuds en moyenne. La configuration du lac, niché sur le plateau, canalise ces vents du nord.",
           "confidence": "medium",
           "sources": [
             "S48",
@@ -6103,7 +6103,7 @@
           "radius_km": 6,
           "coord_quality": "approx",
           "conditions": "Après-midi d'été (11h-18h), renforcé par la bise / N en altitude (jusqu'à ~20 nds).",
-          "description": "Le vent est accéléré par l'effet venturi de la vallée étroite du barrage, et canalisé par les parois raides des gorges. Il souffle l'après-midi en été, et se renforce avec la bise ou un vent de nord en altitude, jusqu'à 20 nds environ.",
+          "description": "Dans les anciennes gorges du Drac, à Monteynard, le vent est accéléré par l'effet venturi de la vallée étroite du barrage et canalisé par les parois raides. Il souffle l'après-midi en été, et se renforce avec la bise ou un vent de nord en altitude, jusqu'à 20 nds environ.",
           "sources": [
             "S3",
             "S4",
@@ -6121,7 +6121,7 @@
           "radius_km": 6,
           "coord_quality": "approx",
           "conditions": "Flux synoptique de sud.",
-          "description": "Par vent de sud, la navigation devient plus « rodéo », avec un vent irrégulier et des rafales brutales. Le nord-est et le nord-ouest donnent aussi un plan d'eau plus turbulent.",
+          "description": "Sur le lac de Monteynard, par vent de sud, la navigation devient plus « rodéo », avec un vent irrégulier et des rafales brutales. Le nord-est et le nord-ouest donnent aussi un plan d'eau plus turbulent.",
           "sources": [
             "S1"
           ]
@@ -6150,7 +6150,7 @@
           "coord_quality": "source",
           "ffvl_id": 193,
           "conditions": "À partir de 12h (été), par vent de sud au déco.",
-          "description": "La brise s'installe dès 12h au Conest, avec des cisaillements importants. Le soaring par sud, jusqu'à 25 km/h, se fait à partir du sommet sud « La Peyrouse » ; avec une composante d'est, on peut décoller partout entre le parking de l'alpage et le sommet sud.",
+          "description": "Au Conest, tout se joue avant 12h : la brise s'installe alors, avec des cisaillements importants. Le soaring par sud, jusqu'à 25 km/h, se fait à partir du sommet sud « La Peyrouse » ; avec une composante d'est, on peut décoller partout entre le parking de l'alpage et le sommet sud.",
           "sources": [
             "S177"
           ]
@@ -6165,7 +6165,7 @@
           "coord_quality": "source",
           "ffvl_id": 194,
           "conditions": "Dès 12h (été).",
-          "description": "La brise de nord, dès 12h, entraîne des conditions turbulentes, à éviter. Une consigne locale est plus stricte : dès que la brise de nord se lève, l'atterrissage est très turbulent, et il ne faut pas voler après 11h.",
+          "description": "À Connex, l'atterrissage du Conest, la brise de nord entraîne dès 12h des conditions turbulentes, à éviter. Une consigne locale est plus stricte : dès que cette brise se lève, l'atterrissage est très turbulent, et il ne faut pas voler après 11h.",
           "sources": [
             "S178",
             "S64"
@@ -6182,7 +6182,7 @@
           "coord_quality": "source",
           "ffvl_id": 196,
           "conditions": "Vent de nord.",
-          "description": "L'atterrissage est très turbulent par vent de nord. Les vents favorables sont le sud et le sud-ouest.",
+          "description": "À l'atterrissage du Jas d'Oris, l'air est très turbulent par vent de nord. Les vents favorables sont le sud et le sud-ouest.",
           "sources": [
             "S187"
           ]
@@ -6197,7 +6197,7 @@
           "coord_quality": "source",
           "ffvl_id": 351,
           "conditions": "Brise forte ; vent de nord fort sur la montagne du Vet.",
-          "description": "L'atterrissage est souvent turbulent derrière les tennis, côté ouest, dans la longueur ; plus à droite, il est encore plus turbulent, et une ligne haute tension s'y trouve. En cas de brise forte, il faut garder de la hauteur pour traverser le village. Après 11h, au printemps et en été, la brise de vallée est forte et l'atterrissage peut être problématique : il vaut mieux laisser passer les heures chaudes.",
+          "description": "À Entraigues, dans la vallée de Valbonnais, la brise de vallée est forte après 11h, au printemps et en été, et l'atterrissage peut être problématique : il vaut mieux laisser passer les heures chaudes. En cas de brise forte, gardez de la hauteur pour traverser le village. Le terrain est souvent turbulent derrière les tennis, côté ouest, dans la longueur ; plus à droite, il l'est encore plus, et une ligne haute tension s'y trouve.",
           "sources": [
             "S189",
             "S188",
@@ -6218,7 +6218,7 @@
           "coord_quality": "source",
           "ffvl_id": 1646,
           "conditions": "Décollage par vent fort ; vent de sud ; gradient à l'atterrissage.",
-          "description": "Il y a un venturi au niveau du village de Laffrey et des ruines de Séchilienne. Par vent de sud, la turbulence est présente, et l'on rencontre un gradient de vent à l'atterrissage. Les lignes électriques sont nombreuses, et il ne faut pas survoler les parcs à chevaux. Laffrey n'a plus d'atterrissage officiel : seule la repose au décollage est autorisée.",
+          "description": "Laffrey n'a plus d'atterrissage officiel : seule la repose au décollage est autorisée. Il y a un venturi au niveau du village et des ruines de Séchilienne. Par vent de sud, la turbulence est présente, et l'on rencontre un gradient de vent à l'atterrissage. Les lignes électriques sont nombreuses, et il ne faut pas survoler les parcs à chevaux.",
           "sources": [
             "S106",
             "S183",
@@ -6236,7 +6236,7 @@
           "coord_quality": "source",
           "ffvl_id": 3148,
           "conditions": "Si le vent météo entre en sud au sol, malsain.",
-          "description": "L'atterrissage de La Ville n'est utilisé qu'en régime de brise de nord, par météo de nord ou sans vent. Si le vent météo entre en sud au sol, c'est malsain. Le terrain est vaste et clôturé : on pose en travers de la pente, et il faut vérifier la présence de vaches.",
+          "description": "À La Ville, près de Monteynard, on ne se pose qu'en régime de brise de nord, par météo de nord ou sans vent : si le vent météo entre en sud au sol, c'est malsain. Le terrain est vaste et clôturé : on pose en travers de la pente, et il faut vérifier la présence de vaches.",
           "sources": [
             "S191"
           ],
@@ -6252,7 +6252,7 @@
           "coord_quality": "source",
           "ffvl_id": 350,
           "conditions": "Du 1er novembre au 31 juin (sic dans la fiche du club) inclus.",
-          "description": "Le vol se fait en limite et à l'intérieur du parc national des Écrins : le survol à moins de 1000 m sol y est interdit du 1er novembre à fin juin.",
+          "description": "À Colombiers, au-dessus de Valbonnais, le vol se fait en limite et à l'intérieur du parc national des Écrins : le survol à moins de 1000 m sol y est interdit du 1er novembre à fin juin.",
           "sources": [
             "S64"
           ],
@@ -6387,7 +6387,7 @@
           "coord_quality": "source",
           "best_hours": "le matin (91 %) puis toute la journée (81 % à midi, 83 % le soir), du printemps à l'automne",
           "trigger": "Pente de 32° exposée au sud-ouest sous l'Étillier, côté Entraigues, au sud-est du Coiro",
-          "description": "Sur les pentes sud-ouest de l'Étillier, au-dessus d'Entraigues, les traces de nombreux vols placent un point chaud, le matin puis toute la journée, du printemps à l'automne. Il se trouve au sud-est du Coiro.",
+          "description": "Au sud-est du Coiro, au-dessus d'Entraigues, les pentes sud-ouest de l'Étillier montrent un point chaud sur les traces de nombreux vols, le matin puis toute la journée, du printemps à l'automne.",
           "confidence": "low",
           "sources": [
             "S232",
@@ -6409,7 +6409,7 @@
           "coord_quality": "source",
           "best_hours": "de la fin de matinée au soir (point chaud mesuré : 73 % le matin, 82 % à midi, 80 % en fin de journée), surtout l'été et l'automne",
           "trigger": "Pente raide (38°) exposée au sud sous le Gargas, à 0,8 km au nord-ouest du sanctuaire (IGN)",
-          "description": "Relance du cheminement des Richards vers le Taillefer : un plafond de 2800 m se fait avant de partir sur La Salette, et une zone ascendante au nord du sanctuaire de Notre-Dame de la Salette remonte jusqu'à 2800 m. Les traces de nombreux vols placent le point chaud sur la pente raide exposée au sud sous le Gargas, de la fin de matinée au soir, surtout l'été et l'automne.",
+          "description": "La Salette est une relance du cheminement des Richards vers le Taillefer : un plafond de 2800 m se fait avant d'y partir, et une zone ascendante au nord du sanctuaire remonte jusqu'à 2800 m. Le point chaud mesuré sur les traces de vols est sur la pente raide exposée au sud sous le Gargas, de la fin de matinée au soir, surtout l'été et l'automne.",
           "confidence": "medium",
           "sources": [
             "S233",
@@ -6435,7 +6435,7 @@
           "coord_quality": "source",
           "best_hours": "de midi au soir (point chaud mesuré : 86 % à midi, 85 % en fin de journée), du printemps à l'automne",
           "trigger": "Versant de 40° exposé au sud entre la crête de la Dréveta et les Grandes Roches, sous le Taillefer (IGN)",
-          "description": "Point de relance avant la transition sur Chamrousse : les pentes sud du Taillefer, entre la crête de la Dréveta et les Grandes Roches, portent un point chaud mesuré sur les traces de nombreux vols, de midi au soir, du printemps à l'automne. On y soigne le plafond avant de transiter directement sur Chamrousse.",
+          "description": "Avant la transition directe sur Chamrousse, au bout sud de Belledonne, les pentes sud du Taillefer, entre la crête de la Dréveta et les Grandes Roches, servent à soigner le plafond. Un point chaud y ressort des traces de nombreux vols, de midi au soir, du printemps à l'automne.",
           "confidence": "medium",
           "sources": [
             "S233",
@@ -6463,7 +6463,7 @@
           "coord_quality": "source",
           "best_hours": "toute la journée (point chaud mesuré : 84 % le matin, 87 % à midi, 83 % en fin de journée), de l'automne (93 %) au printemps (81 %)",
           "trigger": "Versant de 31° exposé au sud sous la tête de Barbabon et la roche Frette (IGN)",
-          "description": "Relance intermédiaire du cheminement entre le Coiro et le Taillefer : les pentes sud sous la tête de Barbabon et la roche Frette portent un point chaud mesuré sur les traces de nombreux vols, toute la journée, de l'automne au printemps.",
+          "description": "Entre le Coiro et le Taillefer, les pentes sud sous la tête de Barbabon et la roche Frette servent de relance intermédiaire. Les traces de vols y montrent un point chaud toute la journée, de l'automne au printemps.",
           "confidence": "medium",
           "sources": [
             "S235",
@@ -6485,7 +6485,7 @@
           "coord_quality": "source",
           "best_hours": "matin (80 %), midi (76 %) et fin de journée (75 %), surtout en automne (86 %)",
           "trigger": "Versant de 25° exposé au sud-ouest au rocher du Grand Van et à l'arête de Brouffier (IGN)",
-          "description": "Sur les faces ouest sous le Taillefer, au rocher du Grand Van et à l'arête de Brouffier, les traces de nombreux vols placent un point chaud sur un versant exposé au sud-ouest, le matin, à midi et en fin de journée, surtout en automne.",
+          "description": "Sous le Taillefer, côté ouest, au rocher du Grand Van et à l'arête de Brouffier, un versant exposé au sud-ouest donne un point chaud mesuré, le matin, à midi et en fin de journée, surtout en automne.",
           "confidence": "low",
           "sources": [
             "S232",
@@ -6503,7 +6503,7 @@
           "coord_quality": "source",
           "best_hours": "milieu de journée et soir (point chaud mesuré : 90 % à midi, 89 % le soir), en été et en automne ; rien le matin",
           "trigger": "Pente de 28° exposée à l'ouest au-dessus des Fonds Plaines, 0,3 km du décollage (IGN)",
-          "description": "Au-dessus des Fonds Plaines, la pente exposée à l'ouest, à 0,3 km du décollage du Jas d'Oris, porte un point chaud mesuré sur les traces de nombreux vols. Il est actif à midi et le soir, en été et en automne, et il n'y en a pas le matin.",
+          "description": "À 0,3 km du décollage du Jas d'Oris, au-dessus des Fonds Plaines, une pente exposée à l'ouest porte le thermique de l'après-midi. Le point chaud mesuré est actif à midi et le soir, en été et en automne, et absent le matin.",
           "confidence": "medium",
           "sources": [
             "S186",
@@ -6526,7 +6526,7 @@
           "coord_quality": "source",
           "best_hours": "toute la journée (point chaud mesuré : 100 % le matin, 98 % à midi, 93 % en fin de journée), toute l'année (90 % en hiver, 99 % en automne)",
           "trigger": "Pente douce de 16° exposée au sud-ouest sous le versant de la Côte Rotte (IGN), 0,4 km au sud du décollage",
-          "description": "Sur le versant sud-ouest de la Côte Rotte, les traces de nombreux vols placent le point chaud le plus régulier de la Matheysine, toute la journée et toute l'année. Il se trouve à 0,4 km du décollage de la Côte Rotte, et le versant chauffe probablement dès le matin.",
+          "description": "À 0,4 km du décollage de la Côte Rotte, le versant sud-ouest porte le point chaud le plus régulier de la Matheysine, toute la journée et toute l'année, sur les traces de nombreux vols. Il chauffe probablement dès le matin.",
           "confidence": "low",
           "sources": [
             "S184",
@@ -6550,7 +6550,7 @@
           "coord_quality": "source",
           "best_hours": "le matin et à midi (point chaud mesuré : 78 % et 86 %), au printemps et en hiver ; rien en été ni en automne",
           "trigger": "Pente de 20° exposée au sud aux Sagnes et aux Savels, juste au sud-ouest des prés de la Chènevarie (décollage)",
-          "description": "Le décollage de la Tête de Vache, orienté au sud et à 1169 m, peut être turbulent en cas de brise ou d'activité thermique : le thermique y existe donc au décollage. Les traces de nombreux vols placent un point chaud sur la pente exposée au sud, aux Sagnes et aux Savels, juste au sud-ouest des prés de la Chènevarie, le matin et à midi, au printemps et en hiver.",
+          "description": "Le décollage de la Tête de Vache, orienté au sud et à 1169 m, peut être turbulent en cas de brise ou d'activité thermique : le thermique y existe donc au décollage. Un point chaud mesuré se trouve sur la pente exposée au sud, aux Sagnes et aux Savels, juste au sud-ouest des prés de la Chènevarie, le matin et à midi, au printemps et en hiver.",
           "confidence": "medium",
           "sources": [
             "S240",
@@ -6570,7 +6570,7 @@
           "coord_quality": "source",
           "best_hours": "milieu de journée et soir (point chaud mesuré : 88 % à midi, 90 % le soir), au printemps et en été",
           "trigger": "Pente de 30° exposée au nord-nord-ouest aux Carrières et au bois de Montrochat, au droit du décollage des Fauries",
-          "description": "Sur la pente de 30° exposée au nord-nord-ouest, aux Carrières et au bois de Montrochat, au droit du décollage des Fauries, les traces de nombreux vols placent un point chaud, de midi au soir, au printemps et en été.",
+          "description": "Au droit du décollage des Fauries, aux Carrières et au bois de Montrochat, une pente de 30° exposée au nord-nord-ouest porte un point chaud mesuré, de midi au soir, au printemps et en été.",
           "confidence": "medium",
           "sources": [
             "S8",
@@ -6594,7 +6594,7 @@
           "coord_quality": "source",
           "best_hours": "avant 12h : point chaud mesuré à 90 % le matin comme à midi, en été (86 %) et en automne (88 %)",
           "trigger": "Pente de 25° exposée au sud sous la Montagne du Conest, au sud-ouest du décollage (IGN)",
-          "description": "Sur la pente sud sous la Montagne du Conest, au sud-ouest du décollage, les traces de nombreux vols placent un point chaud, le matin comme à midi, avant que la brise ne s'installe vers 12h.",
+          "description": "Le thermique du matin du Conest se trouve sur la pente sud, sous la Montagne du Conest, au sud-ouest du décollage. Le point chaud mesuré y est actif le matin comme à midi, avant que la brise ne s'installe vers 12h.",
           "confidence": "medium",
           "sources": [
             "S177",
@@ -6613,7 +6613,7 @@
           "coord_quality": "source",
           "best_hours": "fin de journée (point chaud mesuré : 80 % le soir), au printemps (81 %)",
           "trigger": "Pente de 39° exposée au nord-ouest aux Frêtes et au Trémolet (commune de Notre-Dame-de-Commiers)",
-          "description": "Sur les pentes nord-ouest, aux Frêtes et au Trémolet, commune de Notre-Dame-de-Commiers, les traces de nombreux vols placent un point chaud, en fin de journée et au printemps, au nord du Conest.",
+          "description": "Au nord du Conest, sur la commune de Notre-Dame-de-Commiers, les pentes nord-ouest des Frêtes et du Trémolet montrent un point chaud en fin de journée et au printemps.",
           "confidence": "medium",
           "sources": [
             "S237",
@@ -6635,7 +6635,7 @@
           "coord_quality": "source",
           "best_hours": "fin d'après-midi et soir, après les heures chaudes de 11h au début du soir ; en été et au printemps",
           "trigger": "Alpage du Colombier, pente de 27° autour du décollage (IGN)",
-          "description": "Après les heures chaudes, de 11h au début du soir, on peut voler jusqu'au soir en restitution, au printemps et en été. Il vaut mieux laisser passer les heures chaudes, car la brise de vallée est alors forte et l'atterrissage peut être problématique.",
+          "description": "À Colombiers, au-dessus de Valbonnais, on peut voler jusqu'au soir en restitution, au printemps et en été, une fois passées les heures chaudes, de 11h au début du soir : la brise de vallée est alors forte, et l'atterrissage peut être problématique.",
           "confidence": "medium",
           "sources": [
             "S241",
@@ -6672,7 +6672,7 @@
             "S",
             "SE"
           ],
-          "description": "Le soaring est idéal par sud jusqu'à 25 km/h, à partir du sommet sud « La Peyrouse ». Le site est défavorable par O et NO.",
+          "description": "Depuis le sommet sud du Conest, « La Peyrouse », le soaring est idéal par sud jusqu'à 25 km/h. Le site est défavorable par ouest et nord-ouest.",
           "sources": [
             "S177"
           ]
@@ -6691,7 +6691,7 @@
             "S",
             "SW"
           ],
-          "description": "Décollage d'alpage, à 5 min à pied du parking, avec des vaches. On n'y vole que le matin, sur la face sud, quand l'aérologie est stable. Les vents favorables sont le sud et le sud-ouest, les défavorables le nord et le nord-est. Un sentier traverse la course d'élan.",
+          "description": "Au-dessus de la rive est du lac de Monteynard, ce décollage d'alpage ne se vole que le matin, sur la face sud, quand l'aérologie est stable. Les vents favorables sont le sud et le sud-ouest, les défavorables le nord et le nord-est. Il est à 5 min à pied du parking, avec des vaches, et un sentier traverse la course d'élan.",
           "sources": [
             "S175",
             "S176",
@@ -6713,7 +6713,7 @@
             "S",
             "SW"
           ],
-          "description": "Décollage orienté au sud-est, au sud et au sud-ouest, avec des cailloux sous la sortie.",
+          "description": "Sur le Combenon, juste au sud du Sénépy, ce décollage s'oriente au sud-est, au sud et au sud-ouest, avec des cailloux sous la sortie.",
           "sources": [
             "S179"
           ],
@@ -6732,7 +6732,7 @@
             "SW",
             "W"
           ],
-          "description": "Décollage orienté au sud, au sud-ouest et à l'ouest. Des cailloux se trouvent sous la sortie, et une balise météo, « senepy », est proche.",
+          "description": "Voisin du Razier, sur le Combenon, ce décollage s'ouvre au sud, au sud-ouest et à l'ouest. Des cailloux se trouvent sous la sortie, et une balise météo, « senepy », est proche.",
           "sources": [
             "S180"
           ]
@@ -6749,7 +6749,7 @@
             "SE",
             "S"
           ],
-          "description": "Décollage idéal par sud jusqu'à 25 km/h. La brise s'installe dès 12h, avec des cisaillements ; avec une composante d'est, on peut décoller partout entre le parking de l'alpage et le sommet sud. Les vents défavorables sont l'ouest et le nord-ouest.",
+          "description": "Au nord du Sénépy, au-dessus de Notre-Dame-de-Vaulx, ce décollage est idéal par sud jusqu'à 25 km/h, mais la brise s'installe dès 12h, avec des cisaillements. Avec une composante d'est, on peut décoller partout entre le parking de l'alpage et le sommet sud. Les vents défavorables sont l'ouest et le nord-ouest.",
           "sources": [
             "S177"
           ]
@@ -6767,7 +6767,7 @@
             "W",
             "NW"
           ],
-          "description": "Décollage de Laffrey, orienté au nord, à l'ouest et au nord-ouest, défavorable par sud-est, sud et sud-ouest. Par vent fort, les pilotes en approche posent au décollage. Des lignes électriques se trouvent à proximité.",
+          "description": "Au nord du plateau matheysin, ce décollage de Laffrey s'ouvre au nord, à l'ouest et au nord-ouest, et il est défavorable par sud-est, sud et sud-ouest. Par vent fort, les pilotes en approche posent au décollage. Des lignes électriques se trouvent à proximité.",
           "sources": [
             "S182"
           ],
@@ -6782,7 +6782,7 @@
           "coord_quality": "source",
           "ffvl_id": 1646,
           "orientations": [],
-          "description": "Site de départ en cross, où seule la repose au décollage est autorisée : il n'y a pas d'atterrissage officiel.",
+          "description": "Tout près des Fauries, ce site de départ en cross n'a pas d'atterrissage officiel : seule la repose au décollage est autorisée.",
           "sources": [
             "S106"
           ],
@@ -6797,7 +6797,7 @@
           "coord_quality": "source",
           "ffvl_id": 3009,
           "orientations": [],
-          "description": "Décollage pratiqué, dont le conventionnement est inconnu.",
+          "description": "Sur la commune de Saint-Barthélemy-de-Séchilienne, ce décollage est pratiqué, sans conventionnement connu.",
           "sources": [
             "S107"
           ],
@@ -6812,7 +6812,7 @@
           "coord_quality": "source",
           "ffvl_id": 3049,
           "orientations": [],
-          "description": "Décollage pratiqué, dont le conventionnement est inconnu. Son atterrissage se trouve à Villard-Saint-Christophe.",
+          "description": "À l'est du plateau, au-dessus de Villard-Saint-Christophe, où se trouve son atterrissage, ce décollage est pratiqué, sans conventionnement connu.",
           "sources": [
             "S184",
             "S190"
@@ -6828,7 +6828,7 @@
           "coord_quality": "source",
           "ffvl_id": 3038,
           "orientations": [],
-          "description": "Décollage pratiqué, dont le conventionnement est inconnu.",
+          "description": "À Saint-Honoré, décollage pratiqué, de conventionnement inconnu.",
           "sources": [
             "S185"
           ],
@@ -6845,7 +6845,7 @@
           "orientations": [
             "SW"
           ],
-          "description": "Aérologie de montagne ; le site est favorable par sud-ouest. On y accède par l'Alpe du Grand Serre, par la piste du Jas d'Oris.",
+          "description": "Au nord de Valbonnais, ce site est favorable par sud-ouest, dans une aérologie de montagne. On y accède par l'Alpe du Grand Serre, par la piste du Jas d'Oris.",
           "sources": [
             "S186"
           ]
@@ -6861,7 +6861,7 @@
           "orientations": [
             "NW"
           ],
-          "description": "Décollage orienté au nord-ouest. Il y a un danger de vol par vent de nord fort, à cause de la montagne du Vet. Il faut s'éloigner des troupeaux de 300 m, et la route de Parquetout est fermée de la première neige au 15 mai.",
+          "description": "Au-dessus de Valbonnais, ce décollage orienté au nord-ouest est dangereux par vent de nord fort, à cause de la montagne du Vet. Il faut s'éloigner des troupeaux de 300 m, et la route de Parquetout est fermée de la première neige au 15 mai.",
           "sources": [
             "S188"
           ]
@@ -6910,7 +6910,7 @@
           "alt_m": 1050,
           "coord_quality": "source",
           "ffvl_id": 3136,
-          "description": "Atterrissage pratiqué, dont le conventionnement est inconnu.",
+          "description": "Sous la Côte Rotte, ce terrain est pratiqué, sans conventionnement connu.",
           "sources": [
             "S190"
           ],
@@ -6937,7 +6937,7 @@
           "alt_m": 329,
           "coord_quality": "source",
           "ffvl_id": 1647,
-          "description": "Atterrissage d'urgence uniquement, avec un gradient de vent, un venturi et des parcs à chevaux à éviter.",
+          "description": "À l'île Falcon, dans la vallée de la Romanche, sous Laffrey, ce terrain n'est qu'un atterrissage d'urgence, avec un gradient de vent, un venturi et des parcs à chevaux à éviter.",
           "sources": [
             "S183"
           ]
@@ -6950,7 +6950,7 @@
           "alt_m": 364,
           "coord_quality": "source",
           "ffvl_id": 3115,
-          "description": "Atterrissage pratiqué, dont le conventionnement est inconnu.",
+          "description": "Dans la vallée de la Romanche, terrain pratiqué, dont le conventionnement n'est pas connu.",
           "sources": [
             "S105"
           ],
@@ -6964,7 +6964,7 @@
           "alt_m": 500,
           "coord_quality": "source",
           "ffvl_id": 13721,
-          "description": "Atterrissage favorable au sud, au sud-ouest et à l'ouest. Il faut être attentif aux ruches.",
+          "description": "Sous les décollages du Combenon, ce terrain est favorable au sud, au sud-ouest et à l'ouest. Il faut être attentif aux ruches.",
           "sources": [
             "S181"
           ]
@@ -6977,7 +6977,7 @@
           "alt_m": 980,
           "coord_quality": "source",
           "ffvl_id": 196,
-          "description": "Atterrissage favorable au sud et au sud-ouest. Il est très turbulent par vent de nord.",
+          "description": "Atterrissage du Jas d'Oris, favorable au sud et au sud-ouest, mais très turbulent par vent de nord.",
           "sources": [
             "S187"
           ]
@@ -6990,7 +6990,7 @@
           "alt_m": 803,
           "coord_quality": "source",
           "ffvl_id": 351,
-          "description": "Atterrissage souvent turbulent, derrière les tennis, côté ouest ; une ligne haute tension se trouve à droite.",
+          "description": "À Entraigues, l'atterrissage de Colombiers est souvent turbulent, derrière les tennis, côté ouest ; une ligne haute tension se trouve à droite.",
           "sources": [
             "S189"
           ]
@@ -7157,9 +7157,9 @@
       "tips": [
         "Le nord de Monteynard souffle d'environ 13h à environ 18h, au plus fort vers 15h : à ces heures, mieux vaut éviter les transitions basses dans le couloir du Drac, par déduction [S1][S3].",
         "Si la bise souffle en altitude, comptez 12-20 nds au ras du lac [S1].",
-        "Au Conest, décollez avant 12h : ensuite la brise s'installe, avec de forts cisaillements. Le soaring de sud y tient jusqu'à 25 km/h [S177].",
+        "Au Conest, partez tôt : la brise s'installe dès 12h, avec de forts cisaillements, et une consigne locale demande de ne plus voler après 11h, à cause de l'atterrissage de Connex [S177][S64]. Le soaring de sud y tient jusqu'à 25 km/h [S177].",
         "À Laffrey, il n'y a plus d'atterrissage officiel : seul le retour au décollage est autorisé. Méfiez-vous du gradient et du venturi au village de Laffrey et aux ruines de Séchilienne [S106].",
-        "À Connex et à La Ville, posez-vous en brise de nord ou sans vent, jamais par vent de sud au sol [S178][S191].",
+        "À Connex, posez-vous par sud-est ou sud, et évitez la brise de nord, turbulente dès 12h [S178]. À La Ville, posez-vous en brise de nord ou sans vent, jamais par vent de sud au sol [S191].",
         "De La Salette au Coiro (7 km), partez à plus de 2400 m pour arriver vers 1800 m. Du Châtel (Obiou) au Taillefer (15 km), partez à plus de 2800 m [S232].",
         "Au Coiro, le sud du sommet est sous le vent de la brise, et l'ouest mélange thermique, vent et brise. Au-dessus de Valbonnais, ne passez pas à gauche de la crête : la vallée d'Oris-en-Rattier prend le dessus [S232][S239].",
         "Au Grand Serre, la grande pente herbeuse ouest a paru peu productive lors d'un vol, mais a donné de belles bulles thermodynamiques lors d'un vol d'automne : vérifiez sur place [S237][S260]."

@@ -5,7 +5,7 @@
       "id": "chartreuse",
       "name": "Massif de la Chartreuse (Saint-Hilaire, Dent de Crolles, Granier, Chamechaude, Charmant Som, hautes vallées)",
       "parent_massif": "Préalpes du Nord",
-      "summary": "La Chartreuse est un massif de falaises calcaires. Sa façade est domine le Grésivaudan : c'est là, à Saint-Hilaire-du-Touvet (900-950 m), que les décollages Nord, Est et Sud regardent l'est.\n\nDès le lever du soleil, la brise de pente alimente les décollages, puis les thermiques de la falaise. En fin de matinée, la brise du Grésivaudan s'installe en bas : elle vient du nord et dépasse rarement 15 km/h à Lumbin. Dans le « bocal » de Saint-Hilaire, on fait des kilomètres en soaring thermique, vers le sud (Manival, Château Nardent, Saint-Eynard, Rachais) ou vers le nord (Barraux). On revient par les étages supérieurs : la Dent de Crolles, la crête jusqu'au Granier.\n\nAu cœur du massif (Chamechaude, Scia, Grand Som, Charmant Som), les plafonds sont en général meilleurs qu'en bordure. Les faces ouest ne marchent qu'après 15-16 h, par tendance nord-ouest à ouest. Autour, des brises fortes entrent par la cluse de Voreppe (très forte dès 11 h), par la cluse de Chambéry (25-30 km/h, par les cols du Granier et du Couz) et par le Grésivaudan. Elles décident des sorties : vers Belledonne par Saint-Genis, vers les Bauges par le Granier puis le Montgelas, vers le Vercors par le Rachais-Néron. Par nord, Saint-Hilaire reste souvent volable, mais Lumbin peut devenir impraticable : prévoyez l'office du tourisme. Par nord fort, on vole ailleurs : Montaud, Courtet ou Montlambert.\n\nÀ respecter : la TMA de Lyon au-dessus du Granier (jusqu'au FL95), la ZIT de Grenoble, l'aérodrome du Versoud, la bulle du circaète entre Lumbin et La Terrasse, la zone de Saint-Même et la réserve des Hauts de Chartreuse.",
+      "summary": "La Chartreuse est un massif de falaises calcaires, entre Grenoble, Chambéry et Voiron. Sa façade est domine le Grésivaudan, du sud au nord, du Saint-Eynard au Granier, avec Saint-Hilaire-du-Touvet (900-950 m) et la Dent de Crolles entre les deux. Derrière, le cœur porte Chamechaude, la Scia, le Grand Som et le Charmant Som. À l'ouest, des crêtes plus basses regardent Voiron.\n\nLa journée commence à l'est. Dès le lever du soleil, la brise de pente alimente les décollages Nord, Est et Sud de Saint-Hilaire, puis les thermiques de la falaise. En fin de matinée, la brise du Grésivaudan s'installe en bas : elle vient du nord et dépasse rarement 15 km/h à Lumbin. Dans le « bocal », on fait des kilomètres en soaring thermique, au sud (Château Nardent, Manival, Saint-Eynard, Rachais) ou au nord (Barraux), et l'on revient par les étages supérieurs : la Dent de Crolles, la crête jusqu'au Granier.\n\nAu cœur du massif, les plafonds sont en général meilleurs qu'en bordure. Les faces ouest ne marchent qu'après 15-16 h, par tendance nord-ouest à ouest.\n\nAutour, des brises fortes entrent par la cluse de Voreppe (très forte dès 11 h), par la cluse de Chambéry (25-30 km/h, par les cols du Granier et du Couz) et par le Grésivaudan. Elles décident des sorties : vers Belledonne par Saint-Genis, vers les Bauges par le Granier puis le Montgelas, vers le Vercors par le Rachais-Néron. Par nord, Saint-Hilaire reste souvent volable, mais l'office du tourisme peut devenir turbulent, et Lumbin impraticable. Par nord fort, on vole ailleurs : Montaud, Courtet ou Montlambert.\n\nÀ respecter : la TMA de Lyon au-dessus du Granier (jusqu'au FL95), la ZIT de Grenoble, l'aérodrome du Versoud, la bulle du circaète entre Lumbin et La Terrasse, la zone de Saint-Même et la réserve des Hauts de Chartreuse.",
       "bbox": [
         5.6,
         45.18,
@@ -48,7 +48,7 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "700 m de dénivelé entre décollages (~950 m) et atterrissage de Lumbin (~240 m) ; la falaise se prolonge jusqu'à 2000 m",
-          "description": "La brise de pente de la façade est alimente les décollages de Saint-Hilaire avant les thermiques. Le décollage Nord en profite le premier, et le décollage Est est très bien alimenté. En début et milieu de matinée, elle reste faible, avant l'arrivée de la brise de vallée de nord. Attention : elle peut masquer l'entrée d'un vent de nord ou de sud.",
+          "description": "C'est la première brise de la journée, celle de la façade est, au-dessus du Grésivaudan. Elle alimente les décollages de Saint-Hilaire avant les thermiques, mais méfiez-vous d'elle : elle peut masquer l'entrée d'un vent de nord ou de sud. Elle reste faible en début et milieu de matinée, avant l'arrivée de la brise de vallée de nord. Le décollage Nord en profite le premier, et le décollage Est est très bien alimenté.",
           "confidence": "medium",
           "sources": [
             "S1",
@@ -89,7 +89,7 @@
             "max": 20
           },
           "season": "printemps-été",
-          "description": "À l'atterrissage de Saint-Nazaire-les-Eymes, une brise descendante souffle couramment tôt le matin et tard le soir, parfois assez forte. En journée, le terrain passe à la brise de pente de nord-ouest et à la brise de vallée de nord-est. En fin de journée, le vent qui descend des hauts plateaux rend le décollage Sud, tout plat, particulièrement difficile.",
+          "description": "À l'atterrissage de Saint-Nazaire-les-Eymes, au pied de la façade est et au sud du Manival, une brise descendante souffle couramment tôt le matin et tard le soir, parfois assez forte. En journée, le terrain passe à la brise de pente de nord-ouest et à la brise de vallée de nord-est. En haut aussi, en fin de journée, le vent qui descend des hauts plateaux rend le décollage Sud de Saint-Hilaire, tout plat, particulièrement difficile.",
           "confidence": "medium",
           "sources": [
             "S1",
@@ -127,7 +127,7 @@
             "max": null
           },
           "season": "printemps-été",
-          "description": "La brise remonte la combe du Manival depuis Saint-Ismier.",
+          "description": "Au sud de Saint-Hilaire, la brise remonte la combe du Manival depuis Saint-Ismier.",
           "confidence": "low",
           "sources": [
             "S28",
@@ -169,7 +169,7 @@
             "max": null
           },
           "season": "printemps-été",
-          "description": "Le long de la falaise du Saint-Eynard, une brise remonte de Corenc vers le nord. Le Saint-Eynard est une crête de soaring classique du secteur.",
+          "description": "Crête de soaring classique du secteur, la falaise du Saint-Eynard a sa brise : elle remonte de Corenc vers le nord.",
           "confidence": "low",
           "sources": [
             "S28",
@@ -217,7 +217,7 @@
             "max": null
           },
           "season": "printemps-été",
-          "description": "L'air de la cluse de l'Isère remonte la basse vallée vers Quaix-en-Chartreuse, puis vers Le Sappey.",
+          "description": "Au sud-ouest du massif, l'air de la cluse de l'Isère remonte la basse vallée vers Quaix-en-Chartreuse, puis vers Le Sappey.",
           "confidence": "medium",
           "sources": [
             "S28",
@@ -456,7 +456,7 @@
             "max": 30
           },
           "season": "avril-septembre",
-          "description": "L'air de la cluse de Chambéry franchit le col du Granier vers la haute vallée du Guiers, à Entremont. Sur la face est du Granier, on sent souvent une brise de nord venue de Chambéry. Plus au nord, sur le passage de la Savoyarde, la brise de la cluse est forte d'avril à mi-septembre et s'installe vers 14h-14h30.",
+          "description": "Au nord-ouest du mont Granier, l'air de la cluse de Chambéry franchit le col du Granier vers la haute vallée du Guiers, à Entremont. La face est du mont la sent aussi : on y trouve souvent une brise de nord venue de Chambéry. Plus au nord, sur le passage de la Savoyarde, la brise de la cluse est forte d'avril à mi-septembre et s'installe vers 14h-14h30.",
           "confidence": "medium",
           "sources": [
             "S28",
@@ -541,7 +541,7 @@
             "max": null
           },
           "season": "printemps-été",
-          "description": "La brise de Chambéry franchit le col du Couz depuis Saint-Thibaud-de-Couz. Autour du mont Outheran, sur la transition de la Chartreuse vers l'Épine, la brise forte donne une zone sous le vent, des turbulences et des dégueulantes.",
+          "description": "Au nord du massif, la brise de Chambéry franchit le col du Couz depuis Saint-Thibaud-de-Couz. Autour du mont Outheran, sur la transition de la Chartreuse vers l'Épine, cette brise forte donne une zone sous le vent, des turbulences et des dégueulantes.",
           "confidence": "low",
           "sources": [
             "S28",
@@ -624,7 +624,7 @@
             "max": null
           },
           "season": "printemps-été",
-          "description": "Sur le versant ouest, la brise ne s'installe qu'après 15h-16h, par tendance nord-ouest à ouest : le Grand Ratz et Aiguebelette sont des sites du soir. Au Grand Ratz, un fort thermique part en sortie de décollage, et des rouleaux peuvent mettre le décollage vent arrière. Un sud qui forcit gêne le retour à l'atterrissage.",
+          "description": "Sur le versant ouest du massif, la brise ne s'installe qu'après 15h-16h, par tendance nord-ouest à ouest, et c'est ce qui fait du Grand Ratz et d'Aiguebelette des sites du soir. Au Grand Ratz, un fort thermique part en sortie de décollage, et des rouleaux peuvent mettre le décollage vent arrière. Un sud qui forcit gêne aussi le retour à l'atterrissage.",
           "confidence": "medium",
           "sources": [
             "S15",
@@ -681,7 +681,7 @@
             ]
           },
           "when": "journée d'été (horaire non documenté)",
-          "mechanism": "Les brises qui montent de Saint-Pierre-de-Chartreuse et de la vallée d'Entremont convergent probablement au col : les pointes de deux flèches de brise s'y rejoignent.",
+          "mechanism": "Au col du Cucheron, au nord de Saint-Pierre-de-Chartreuse, les brises qui montent de Saint-Pierre et de la vallée d'Entremont convergent probablement : les pointes de deux flèches de brise s'y rejoignent.",
           "usage": "Le vent peut varier au col.",
           "confidence": "low",
           "sources": [
@@ -700,7 +700,7 @@
           "radius_km": 2,
           "coord_quality": "source",
           "conditions": "vent de nord, même « léger nord forcissant » ; front froid (vent soudain et fort dans la cluse)",
-          "description": "Par vent de nord, même faible, l'air qui déborde par-dessus la Chartreuse rend le col du Coq très turbulent : il suffit que le nord forcisse un peu. Au passage d'un front froid, l'air froid s'engouffre par les cols les plus élevés (Vence, Coq, Ayes sous la Dent de Crolles), qui deviennent dangereux. Le col est aussi un espace naturel sensible.",
+          "description": "Au col du Coq, à l'ouest de la Dent de Crolles, l'air qui déborde par-dessus la Chartreuse par vent de nord, même faible, rend le passage très turbulent : il suffit que le nord forcisse un peu. Au passage d'un front froid, l'air froid s'engouffre par les cols les plus élevés (Vence, Coq, Ayes sous la Dent de Crolles), qui deviennent dangereux. Le col est aussi un espace naturel sensible.",
           "sources": [
             "S26",
             "S29"
@@ -718,7 +718,7 @@
           "radius_km": 1.5,
           "coord_quality": "source",
           "conditions": "vent de sud supérieur à 20 km/h",
-          "description": "Par vent de sud bien présent, plus de 20 km/h, l'atterrissage de Perquelin peut être extrêmement turbulent, comme toute la vallée. Une ligne électrique longe la route.",
+          "description": "Dans le vallon à l'est de Saint-Pierre-de-Chartreuse, l'atterrissage de Perquelin craint le vent de sud : au-delà de 20 km/h, il peut être extrêmement turbulent, comme toute la vallée. Une ligne électrique longe la route.",
           "sources": [
             "S57",
             "S56",
@@ -734,7 +734,7 @@
           "radius_km": 1,
           "coord_quality": "source",
           "conditions": "conditions thermiques installées ; fenaison (atterrissage fermé si la manche à air est à terre ou absente)",
-          "description": "L'atterrissage de Saint-Hugues se pratique de préférence en début et en fin de journée. Malgré son air facile, il demande de la concentration en conditions thermiques : les déclenchements partent dans tous les sens. La pente-école y est interdite.",
+          "description": "À Saint-Hugues, au sud de Saint-Pierre-de-Chartreuse, où la pente-école est interdite, l'atterrissage se pratique de préférence en début et en fin de journée. Malgré son air facile, il demande de la concentration en conditions thermiques, car les déclenchements partent dans tous les sens.",
           "sources": [
             "S93",
             "S29"
@@ -749,7 +749,7 @@
           "radius_km": 0.8,
           "coord_quality": "approx",
           "conditions": "dès que l'activité thermique est établie (fin de matinée à 15h)",
-          "description": "Devant les décollages de Saint-Hilaire, les thermiques partent de la falaise. Les décollages Nord et Sud sont sous le vent de ces thermiques : leur alimentation devient cyclique, avec des cycles en vent arrière, et l'on peut se faire appuyer en sortie de décollage. Soyez prêt à piloter dès les premiers mètres.",
+          "description": "Devant les décollages de Saint-Hilaire, les thermiques partent de la falaise, et les décollages Nord et Sud se retrouvent sous leur vent : l'alimentation devient cyclique, avec des cycles en vent arrière, et l'on peut se faire appuyer en sortie de décollage. Soyez prêt à piloter dès les premiers mètres.",
           "sources": [
             "S1",
             "S40",
@@ -769,12 +769,13 @@
           "radius_km": 0.8,
           "coord_quality": "source",
           "conditions": "vent de sud ; nord renforçant la brise ; conditions thermiques ; interdit pendant la Coupe Icare",
-          "description": "Par vent de sud, l'atterrissage de l'office du tourisme, en contrebas du parking, est sous le vent : turbulence et fort gradient en finale. Par un nord qui renforce la brise, il peut aussi devenir turbulent : posez alors à Lumbin. Dans les champs à environ 750 m au nord-est, une ancienne tyrolienne de delta tend un filin à environ 6 m du sol.",
+          "description": "Collé aux décollages de Saint-Hilaire, en contrebas du parking, l'atterrissage de l'office du tourisme a deux mauvais vents. Par sud, il est sous le vent : turbulence et fort gradient en finale. Par un nord qui renforce la brise, il peut aussi devenir turbulent, et il est alors parfois préférable de poser à Lumbin. Dans les champs à environ 750 m au nord-est, une ancienne tyrolienne de delta tend un filin à environ 6 m du sol.",
           "sources": [
             "S1",
             "S40",
             "S70"
-          ]
+          ],
+          "note": "Les sources divergent par nord renforcé : le topo du site conseille parfois Lumbin, un témoignage isolé dit qu'on n'y pose plus par nord sensible."
         },
         {
           "id": "bulle-circaete-lumbin-terrasse",
@@ -801,7 +802,7 @@
           "radius_km": 2,
           "coord_quality": "approx",
           "conditions": "du 1er février au 30 août (convention de 2003) ; décollage interdit toute l'année (arrêté préfectoral 2004-09559)",
-          "description": "Pour protéger la nidification de l'aigle royal, le décollage de l'Alpette de la Dame est interdit. Du 1er février au 30 août, les pilotes s'engagent à ne pas survoler le cirque de Saint-Même sous 1900 m, et à traverser des falaises est vers les falaises ouest et le Granier par l'Alpette de Chapareillan. Restez de manière générale le plus loin possible des falaises.",
+          "description": "Entre la Dent de Crolles et le Granier, le cirque de Saint-Même abrite la nidification de l'aigle royal, et le décollage de l'Alpette de la Dame est interdit pour la protéger. Du 1er février au 30 août, les pilotes s'engagent à ne pas survoler le cirque sous 1900 m, et à traverser des falaises est vers les falaises ouest et le Granier par l'Alpette de Chapareillan. Restez de manière générale le plus loin possible des falaises.",
           "sources": [
             "S31",
             "S29"
@@ -868,7 +869,7 @@
           "radius_km": 4,
           "coord_quality": "source",
           "conditions": "brise de Chambéry (avril à mi-septembre, établie vers 14h-14h30), plus forte en fin de journée et face à un nord",
-          "description": "Sur la transition vers les Bauges, deux brises se croisent, en général assez fortes (25-30 km/h) : l'énorme brise de la cluse de Chambéry, et des langues de brise qui descendent les Bauges depuis Annecy. Sur la Savoyarde proprement dite, la brise est la plus forte, par effet venturi. Au-dessus de Montmélian, la zone sous le vent est très dangereuse : il y a eu plusieurs morts.",
+          "description": "Entre le Granier et le Montgelas, sur la transition vers les Bauges, le grand danger est au-dessus de Montmélian : la zone sous le vent y est très dangereuse, et il y a eu plusieurs morts. Deux brises se croisent sur cette transition, en général assez fortes (25-30 km/h) : l'énorme brise de la cluse de Chambéry, et des langues de brise qui descendent les Bauges depuis Annecy. Sur la Savoyarde proprement dite, la brise est la plus forte, par effet venturi.",
           "sources": [
             "S3",
             "S33",
@@ -888,7 +889,7 @@
           "radius_km": 1,
           "coord_quality": "source",
           "conditions": "après-midi thermique ; sud forcissant",
-          "description": "Le Grand Ratz décolle d'une falaise. Méfiez-vous du fort thermique en sortie de décollage, et des rouleaux qui mettent le décollage vent arrière. Un vent de sud qui forcit pénalise le retour vers l'atterrissage. Ne survolez pas à basse altitude la route nationale et les lotissements.",
+          "description": "À l'ouest du massif, le Grand Ratz décolle d'une falaise, avec deux pièges en l'air : le fort thermique en sortie de décollage, et les rouleaux qui mettent le décollage vent arrière. Un vent de sud qui forcit pénalise ensuite le retour vers l'atterrissage. Ne survolez pas à basse altitude la route nationale et les lotissements.",
           "sources": [
             "S67",
             "S29"
@@ -903,7 +904,7 @@
           "radius_km": 0.8,
           "coord_quality": "source",
           "conditions": "toute l'année ; décollage par vent de nord",
-          "description": "Le Pas de la Fosse décolle d'une falaise, par vent de nord. Attention aux lignes à très haute tension au sud du décollage. La zone aérienne réglementée R48 Pas de la Fosse est à vérifier avant de voler.",
+          "description": "Au nord du Granier, à Montagnole, le Pas de la Fosse décolle d'une falaise par vent de nord. Deux choses à connaître avant d'y aller : les lignes à très haute tension au sud du décollage, et la zone aérienne réglementée R48 Pas de la Fosse, à vérifier avant de voler.",
           "sources": [
             "S29",
             "S34",
@@ -938,7 +939,7 @@
           "radius_km": 0.5,
           "coord_quality": "source",
           "conditions": "jusqu'à nouvel ordre (négociation globale sur le plateau des Petites Roches)",
-          "description": "Le décollage du col de Baure est interdit par l'exploitant agricole, à la suite d'incivilités, jusqu'à nouvel ordre. Ne l'utilisez pas : une négociation globale est en cours sur le plateau des Petites Roches. Une page officielle le cite encore comme vol rando : vérifiez avant de monter.",
+          "description": "Le décollage du col de Baure, au sud de Saint-Hilaire, est interdit par l'exploitant agricole, à la suite d'incivilités, jusqu'à nouvel ordre. Ne l'utilisez pas : une négociation globale est en cours sur le plateau des Petites Roches. Une page officielle le cite encore comme vol rando : vérifiez avant de monter.",
           "sources": [
             "S90",
             "S30"
@@ -980,7 +981,7 @@
           "coord_quality": "approx",
           "best_hours": "fin de matinée à début d'après-midi",
           "trigger": "pilier rocheux plein sud",
-          "description": "Le pilier sud de la Dent de Crolles est le raccrochage classique pour monter de la combe du Manival vers la Dent, puis vers le nord par la crête. C'est lui qui donne le thermique de départ, entre le Manival, le Bec Charvet et la Dent.",
+          "description": "Au pied de la face sud de la Dent de Crolles, le pilier est le raccrochage classique pour monter de la combe du Manival vers la Dent, puis vers le nord par la crête. C'est lui qui donne le thermique de départ, entre le Manival, le Bec Charvet et la Dent.",
           "sources": [
             "S22",
             "S42",
@@ -1043,7 +1044,7 @@
           "coord_quality": "source",
           "best_hours": "toute la journée thermique",
           "trigger": "falaise est du Saint-Eynard",
-          "description": "Le fort du Saint-Eynard, crête de soaring du bassin grenoblois, est l'objectif du parcours classique, après les Antennes et Château Nardent. C'est aussi là qu'arrive la transition depuis le Moucherotte.",
+          "description": "Au sud de la façade est, le fort du Saint-Eynard est une crête de soaring du bassin grenoblois et l'objectif du parcours classique, après les Antennes et Château Nardent. C'est aussi là qu'arrive la transition depuis le Moucherotte.",
           "sources": [
             "S37",
             "S26",
@@ -1090,7 +1091,7 @@
           "coord_quality": "source",
           "best_hours": "début d'après-midi",
           "trigger": "falaises du Néron",
-          "description": "Le Néron relance le vol pour sortir de la cuvette grenobloise vers la Montagne du Sac et les rochers de Chalves.",
+          "description": "Au nord-ouest du Rachais, le Néron relance le vol pour sortir de la cuvette grenobloise vers la Montagne du Sac et les rochers de Chalves.",
           "sources": [
             "S35"
           ],
@@ -1109,7 +1110,7 @@
           "coord_quality": "source",
           "best_hours": "après 12h",
           "trigger": "hauts du massif ; face est de Chamechaude",
-          "description": "La carte du parc dessine des thermiques à la Pinéa, au col de Porte et à Chamechaude, et au Sappey.",
+          "description": "Dans le sud du massif, la carte du parc dessine des thermiques à la Pinéa, au col de Porte et à Chamechaude, et au Sappey.",
           "sources": [
             "S29",
             "S42",
@@ -1131,7 +1132,7 @@
           "coord_quality": "source",
           "best_hours": "après 12h",
           "trigger": "sommets du centre du massif",
-          "description": "La carte du parc note un thermique au Grand Som, au cœur du massif. Au centre de la Chartreuse, les plafonds sont en général meilleurs qu'en bordure.",
+          "description": "Au cœur du massif, au nord de Saint-Pierre-de-Chartreuse, le Grand Som porte un thermique noté sur la carte du parc. Au centre de la Chartreuse, les plafonds sont en général meilleurs qu'en bordure.",
           "sources": [
             "S32",
             "S29",
@@ -1148,7 +1149,7 @@
           "coord_quality": "source",
           "best_hours": "milieu à fin d'après-midi",
           "trigger": "falaises du Granier, face ouest en cas de vent d'ouest",
-          "description": "La carte du parc dessine deux thermiques sur le Granier. En arrivant de la Dent, si le vent est d'ouest, passez en face ouest avant le Granier. On y fait le plafond avant la Savoyarde, ou avant Belledonne au départ du cirque de Saint-Même. La face est est souvent contrée par la brise de nord venue de Chambéry.",
+          "description": "Le Granier est l'endroit où l'on fait le plafond avant la Savoyarde, ou avant Belledonne au départ du cirque de Saint-Même, et la carte du parc y dessine deux thermiques. En arrivant de la Dent, si le vent est d'ouest, passez en face ouest avant le Granier. La face est, elle, est souvent contrée par la brise de nord venue de Chambéry.",
           "sources": [
             "S29",
             "S37",
@@ -1170,7 +1171,7 @@
           "coord_quality": "approx",
           "best_hours": "après 11h",
           "trigger": "crêtes successives de la façade est entre Saint-Hilaire et Barraux",
-          "description": "La carte du parc place un thermique sur les falaises au-dessus de Sainte-Marie-du-Mont, sur la crête qui domine le village à l'ouest. Assurez le plafond à chaque transition, et méfiez-vous du nord, qui peut vous bloquer vers Saint-Bernard.",
+          "description": "Entre Saint-Hilaire et Barraux, la carte du parc place un thermique sur les falaises au-dessus de Sainte-Marie-du-Mont, sur la crête qui domine le village à l'ouest. Assurez le plafond à chaque transition, et méfiez-vous du nord, qui peut vous bloquer vers Saint-Bernard.",
           "sources": [
             "S27",
             "S29"
@@ -1192,7 +1193,7 @@
           "confidence": "medium",
           "best_hours": "à partir de la fin de matinée (départs de cross vers 11h-12h) ; encore actif l'après-midi mais dur à franchir quand la brise est établie",
           "trigger": "falaises basses et pylônes FT/TDF au sud de Crolles, premier relief un peu saillant au sud du plateau des Petites Roches",
-          "description": "Les Antennes marquent la limite sud du « bocal » de Saint-Hilaire et servent de relance : on y enroule pour prendre de la hauteur avant de quitter les falaises basses vers Château Nardent et le Saint-Eynard.",
+          "description": "Au sud des décollages de Saint-Hilaire, les Antennes marquent la limite du « bocal » et servent de relance : on y enroule pour prendre de la hauteur avant de quitter les falaises basses vers Château Nardent et le Saint-Eynard.",
           "sources": [
             "S22",
             "S99",
@@ -1215,7 +1216,7 @@
           "confidence": "medium",
           "best_hours": "fin de matinée à début d'après-midi (« nombreuses ailes balisent déjà le chemin »)",
           "trigger": "croupe boisée et rocheuse de Château Nardent (sommet 1217 m, Plateau-des-Petites-Roches / Saint-Ismier) au pied de l'Émeindras",
-          "description": "Château Nardent est le point de raccrochage du parcours classique entre Saint-Hilaire et le Saint-Eynard, après les Antennes.",
+          "description": "Entre les Antennes et le Manival, Château Nardent est le point de raccrochage du parcours classique de Saint-Hilaire vers le Saint-Eynard.",
           "sources": [
             "S22",
             "S100",
@@ -1263,7 +1264,7 @@
           "confidence": "medium",
           "best_hours": "après-midi (vers 13h30-15h dans les récits)",
           "trigger": "forêt et col de l'Émeindras, derrière la crête du Saint-Eynard, versant sous le Bec Charvet",
-          "description": "La forêt et le col de l'Émeindras relancent le vol entre le Saint-Eynard et la Dent de Crolles.",
+          "description": "Derrière la crête du Saint-Eynard, la forêt et le col de l'Émeindras relancent le vol vers la Dent de Crolles.",
           "sources": [
             "S37",
             "S42",
@@ -1285,7 +1286,7 @@
           "confidence": "medium",
           "best_hours": "après 13h-14h ; on reste à l'est des nuages tant que la face ouest n'est pas active",
           "trigger": "hautes falaises est de la réserve (Dent, Dôme de Bellefond) alimentées en fin de matinée",
-          "description": "Les faces est de la Dent de Crolles, vers le col de Bellefond, font ascenseur et plafond sur le cheminement classique. Au nord du col, les plafonds peuvent rester sous la crête : avant 14 h, basculer en face ouest est délicat, et l'on reste sur les faces est, à l'ouest des nuages.",
+          "description": "Les faces est de la Dent de Crolles, vers le col de Bellefond, font ascenseur et plafond sur le cheminement classique vers le Granier. Au nord du col, les plafonds peuvent rester sous la crête : avant 14 h, basculer en face ouest est délicat, et l'on reste sur les faces est, à l'ouest des nuages.",
           "sources": [
             "S37",
             "S36",
@@ -1308,7 +1309,7 @@
           "confidence": "medium",
           "best_hours": "début d'après-midi (après avoir remonté la face est depuis le pilier sud)",
           "trigger": "col de la crête nord de la Dent, en sortie de la couche de vent de sud de la face est",
-          "description": "Le Pas de Rocheplane est une sortie vers le nord par la crête, sur la route de la Dent au Granier.",
+          "description": "Au nord de la Dent de Crolles, le Pas de Rocheplane est une sortie vers le nord par la crête, sur la route du Granier.",
           "sources": [
             "S42",
             "S27",
@@ -1329,7 +1330,7 @@
           "confidence": "medium",
           "best_hours": "milieu d'après-midi (14h30 dans le vol de groupe de 2021)",
           "trigger": "rebord est du cirque de Saint-Même (crête de l'Alpette, face à la combe du cirque), au sommet des falaises est de Chartreuse",
-          "description": "La carte du parc dessine deux thermiques au cirque de Saint-Même : l'un sur ses falaises ouest, l'autre sur la crête qui le ferme à l'est. C'est la zone de nidification de l'aigle royal : du 1er février au 30 août, ne le survolez pas sous 1900 m, et traversez plutôt par l'Alpette de Chapareillan. Le décollage de l'Alpette de la Dame est interdit.",
+          "description": "Entre la Dent de Crolles et le Granier, le cirque de Saint-Même est d'abord la zone de nidification de l'aigle royal : du 1er février au 30 août, ne le survolez pas sous 1900 m, et traversez plutôt par l'Alpette de Chapareillan. Le décollage de l'Alpette de la Dame est interdit. La carte du parc y dessine deux thermiques, l'un sur ses falaises ouest, l'autre sur la crête qui le ferme à l'est.",
           "sources": [
             "S37",
             "S29",
@@ -1351,7 +1352,7 @@
           "confidence": "medium",
           "best_hours": "après-midi (vol vers 13h-14h)",
           "trigger": "sommet de la Scia et faces au soleil au centre du massif",
-          "description": "Le thermique de service de la Scia donne le plafond, avant un départ vers Aiguebelette.",
+          "description": "Au-dessus de Perquelin, au centre du massif, le thermique de service de la Scia donne le plafond, avant un départ vers Aiguebelette.",
           "sources": [
             "S103",
             "S42",
@@ -1375,7 +1376,7 @@
           "confidence": "medium",
           "best_hours": "milieu d'après-midi (14h30) quand la brise de nord-ouest est établie",
           "trigger": "crête de la Montagne du Sac, thermique « couché » par la brise au vent de la crête",
-          "description": "La Montagne du Sac est une relance du tour de Chartreuse par l'ouest, depuis le Rachais, avant de passer à l'ouest des rochers de Chalves.",
+          "description": "Au nord-ouest du Néron, la Montagne du Sac est une relance du tour de Chartreuse par l'ouest, depuis le Rachais, avant de passer à l'ouest des rochers de Chalves.",
           "sources": [
             "S35",
             "S108"
@@ -1454,7 +1455,7 @@
           "confidence": "medium",
           "best_hours": "milieu à fin d'après-midi",
           "trigger": "face ouest du Corbelet puis de l'Outheran, au vent de la brise de nord-ouest",
-          "description": "Le Corbelet et l'Outheran relancent le tour de Chartreuse par l'ouest : depuis le Granier, visez le col entre le Corbelet et l'Outheran.",
+          "description": "À l'ouest du Granier, le Corbelet et l'Outheran relancent le tour de Chartreuse par l'ouest : depuis le Granier, visez le col entre les deux.",
           "sources": [
             "S34",
             "S103",
@@ -1475,7 +1476,7 @@
           "coord_quality": "approx",
           "best_hours": "après-midi (faces ouest actives après 15h-16h par tendance NO à O) ; point chaud kk7 aussi le matin",
           "trigger": "faces SO/O/NO de la crête de la Grande Sûre sous le décollage (manche à air au-dessus du chalet de Jusson), versant dominant le Guiers Mort",
-          "description": "La carte du parc place un thermique au décollage de la Grande Sûre. Sous le décollage, les faces sud-ouest, ouest et nord-ouest de la crête dominent le Guiers Mort. Comme toutes les faces ouest de la Chartreuse, elles s'activent après 15h-16h, par tendance nord-ouest à ouest.",
+          "description": "À l'ouest du massif, les faces sud-ouest, ouest et nord-ouest de la crête de la Grande Sûre dominent le Guiers Mort. Comme toutes les faces ouest de la Chartreuse, elles s'activent après 15h-16h, par tendance nord-ouest à ouest. La carte du parc place un thermique au décollage, au-dessus de ces faces.",
           "confidence": "medium",
           "sources": [
             "S29",
@@ -1784,7 +1785,7 @@
             "S",
             "SW"
           ],
-          "description": "Grand décollage en herbe, le deuxième de Saint-Hilaire. Préférez-le dès que les thermiques sont en place, ou par vent de sud ; proscrivez-le par nord fort ou brise de vallée de nord forte, qui le mettent sous le vent. En fin de journée, le vent qui descend des hauts plateaux et sa pente plate le rendent particulièrement difficile.",
+          "description": "Sur le plateau de Saint-Hilaire, ce grand décollage en herbe est le deuxième du site, celui des thermiques : préférez-le dès qu'ils sont en place, ou par vent de sud. Proscrivez-le par nord fort ou brise de vallée de nord forte, qui le mettent sous le vent. En fin de journée, le vent qui descend des hauts plateaux et sa pente plate le rendent particulièrement difficile.",
           "sources": [
             "S1",
             "S71",
@@ -1808,7 +1809,7 @@
           "orientations": [
             "NE"
           ],
-          "description": "Le décollage Nord, sur moquette, est alimenté le premier par la brise de pente : préférez-le le matin, et par tendance nord de plus de 10 km/h. Il marche du lever du soleil au début des thermiques, puis devient délicat, sous le vent des thermiques de la falaise : l'aérologie s'y complique dès midi. Ne vous placez pas en haut de la moquette, où l'on peut être vent arrière. Il est accessible aux personnes à mobilité réduite.",
+          "description": "À Saint-Hilaire, le décollage Nord, sur moquette, est celui du matin : la brise de pente l'alimente le premier. Préférez-le alors, et par tendance nord de plus de 10 km/h. Il marche du lever du soleil au début des thermiques, puis devient délicat, sous le vent des thermiques de la falaise, et l'aérologie s'y complique dès midi. Ne vous placez pas en haut de la moquette, où l'on peut être vent arrière. Il est accessible aux personnes à mobilité réduite.",
           "sources": [
             "S1",
             "S72",
@@ -1827,7 +1828,7 @@
             "E",
             "SE"
           ],
-          "description": "Entre les décollages Nord et Sud, le décollage Est offre la pente la plus raide, à l'entrée d'une combe, avec trois voiles de front au plus. Il est alimenté du milieu de matinée à la fin de journée. Par vent météo de nord ou de sud, il est sous le vent : prenez un autre décollage.",
+          "description": "Entre les décollages Nord et Sud de Saint-Hilaire, à l'entrée d'une combe, le décollage Est est alimenté du milieu de matinée à la fin de journée. Par vent météo de nord ou de sud, il est sous le vent : prenez un autre décollage. Il offre la pente la plus raide, avec trois voiles de front au plus.",
           "sources": [
             "S1",
             "S92",
@@ -1870,7 +1871,7 @@
             "S",
             "SW"
           ],
-          "description": "Décollage rocailleux à 2040 m, favorable par sud et sud-ouest. Comptez 1h20 de marche depuis le col du Coq (600-700 m de dénivelé), ou 1000 m depuis Saint-Hilaire. On pose à Lumbin, à Saint-Nazaire ou à l'office du tourisme, ce dernier délicat en thermique ou par sud.",
+          "description": "À 2040 m sur la Dent de Crolles, ce décollage rocailleux se prend par sud et sud-ouest. Comptez 1h20 de marche depuis le col du Coq (600-700 m de dénivelé), ou 1000 m depuis Saint-Hilaire. On pose à Lumbin, à Saint-Nazaire ou à l'office du tourisme, ce dernier délicat en thermique ou par sud.",
           "sources": [
             "S30",
             "S77",
@@ -1892,7 +1893,7 @@
             "N",
             "SE"
           ],
-          "description": "Vol de montagne à 1740 m, à 30 minutes de marche depuis le col du Coq, orienté au nord et au sud-est.",
+          "description": "Juste au nord du col du Coq, à 30 minutes de marche, Pravouta est un vol de montagne à 1740 m, orienté au nord et au sud-est.",
           "sources": [
             "S73",
             "S42"
@@ -1915,7 +1916,7 @@
             "SW",
             "W"
           ],
-          "description": "Décollage à 1639 m, orienté au sud et à l'ouest, avec 700 m de dénivelé jusqu'à l'atterrissage de Perquelin. Par vent de sud de plus de 20 km/h, le vallon de Perquelin est très turbulent. Le décollage est proche de la réserve naturelle des Hauts de Chartreuse.",
+          "description": "Au-dessus du vallon de Perquelin, proche de la réserve naturelle des Hauts de Chartreuse, la Scia décolle à 1639 m vers le sud et l'ouest, avec 700 m de dénivelé jusqu'à l'atterrissage de Perquelin. Par vent de sud de plus de 20 km/h, ce vallon est très turbulent.",
           "sources": [
             "S56",
             "S29",
@@ -1935,7 +1936,7 @@
             "SE",
             "S"
           ],
-          "description": "Décollage sud-est, est et sud vers 1840 m, à 200 m de dénivelé au-dessus de la bergerie. On remonte souvent en covoiturage depuis l'atterrissage de Saint-Hugues, interdit quand la manche à air est au sol, pendant les foins.",
+          "description": "Sur le Charmant Som, à l'ouest de Saint-Hugues, le décollage sud-est, est et sud se trouve vers 1840 m, à 200 m de dénivelé au-dessus de la bergerie. On remonte souvent en covoiturage depuis l'atterrissage de Saint-Hugues, interdit quand la manche à air est au sol, pendant les foins.",
           "sources": [
             "S85",
             "S30"
@@ -1954,7 +1955,7 @@
             "NE",
             "E"
           ],
-          "description": "Décollage très vaste au sommet du Grand Som, orienté nord, nord-est et est, avec 900 m de dénivelé. On pose à Saint-Hugues s'il est ouvert, ou à Perquelin.",
+          "description": "Au sommet du Grand Som, au nord de Saint-Pierre-de-Chartreuse, ce très vaste décollage s'ouvre au nord, au nord-est et à l'est, avec 900 m de dénivelé. On pose à Saint-Hugues s'il est ouvert, ou à Perquelin.",
           "sources": [
             "S82",
             "S30"
@@ -1970,7 +1971,7 @@
           "coord_quality": "source",
           "ffvl_id": 5260,
           "orientations": [],
-          "description": "Décollage sud-est et ouest, vers 2080 m. La montée et le décollage sont beaucoup plus techniques qu'ailleurs. On peut poser à Saint-Hugues s'il est ouvert.",
+          "description": "Vers 2080 m sur Chamechaude, le décollage s'ouvre au sud-est et à l'ouest, mais la montée et le décollage sont beaucoup plus techniques qu'ailleurs. On peut poser à Saint-Hugues s'il est ouvert.",
           "sources": [
             "S88",
             "S30"
@@ -1989,7 +1990,7 @@
             "W",
             "NW"
           ],
-          "description": "Décollage sud-ouest, ouest et nord-ouest à 1578 m, à 800 m au-dessus de l'atterrissage de Chantabot, à Pommiers-la-Placette. La manche à air est au-dessus du chalet de Jusson, et la face ouest domine le Guiers Mort.",
+          "description": "À l'ouest du massif, au-dessus du Guiers Mort que domine sa face ouest, la Grande Sûre décolle à 1578 m vers le sud-ouest, l'ouest et le nord-ouest, à 800 m au-dessus de l'atterrissage de Chantabot, à Pommiers-la-Placette. La manche à air est au-dessus du chalet de Jusson.",
           "sources": [
             "S84",
             "S30",
@@ -2011,7 +2012,7 @@
           "orientations": [
             "W"
           ],
-          "description": "Décollage de falaise à 803 m (800 m sur la carte du parc), à 15 à 20 minutes de marche du hameau. C'est un site du soir et de soaring. Méfiez-vous du fort thermique en sortie de décollage et des rouleaux qui le mettent vent arrière ; un sud qui forcit pénalise le retour. L'accès à la parcelle est restreint jusqu'à la fauche.",
+          "description": "Au bout ouest du massif, le Grand Ratz est un site du soir et de soaring : on décolle d'une falaise à 803 m (800 m sur la carte du parc), à 15 à 20 minutes de marche du hameau. Méfiez-vous du fort thermique en sortie de décollage et des rouleaux qui le mettent vent arrière ; un sud qui forcit pénalise le retour. L'accès à la parcelle est restreint jusqu'à la fauche.",
           "sources": [
             "S67",
             "S29",
@@ -2029,7 +2030,7 @@
           "orientations": [
             "NW"
           ],
-          "description": "Décollage de falaise, vers 840-880 m (880 m sur la carte du parc), par vent de nord. Attention aux lignes à très haute tension au sud, et à la zone aérienne R48.",
+          "description": "Au nord du Granier, à Montagnole, ce décollage de falaise se prend par vent de nord, vers 840-880 m (880 m sur la carte du parc). Attention aux lignes à très haute tension au sud, et à la zone aérienne R48.",
           "sources": [
             "S54",
             "S29",
@@ -2049,7 +2050,7 @@
           "orientations": [
             "SW"
           ],
-          "description": "Vol rando au sommet, avec un décollage sud-ouest peu spacieux : un gonflage raté y pardonne mal. Les falaises font face à Chambéry et au lac du Bourget. L'accès à la croix est interdit ; l'antécime, à 1933 m, est le vrai sommet.",
+          "description": "Au sommet du Mont Granier, ce vol rando part d'un décollage sud-ouest peu spacieux, où un gonflage raté pardonne mal. L'accès à la croix est interdit ; l'antécime, à 1933 m, est le vrai sommet. Les falaises font face à Chambéry et au lac du Bourget.",
           "sources": [
             "S17"
           ],
@@ -2068,7 +2069,7 @@
           "alt_m": 965,
           "coord_quality": "source",
           "ffvl_id": 1247,
-          "description": "Principal atterrissage du plateau, collé aux décollages ; c'est aussi la pente-école, et il est interdit pendant la Coupe Icare. Il marche en régime de brise, souvent de nord à 15 km/h au plus, mais il devient turbulent par nord renforcé ou par sud. Posez dans le champ du bas, long et plat, et ne survolez pas le parking.",
+          "description": "Collé aux décollages, c'est le principal atterrissage du plateau de Saint-Hilaire et aussi la pente-école ; il est interdit pendant la Coupe Icare. Il marche en régime de brise, souvent de nord à 15 km/h au plus, mais il devient turbulent par nord renforcé ou par sud. Posez dans le champ du bas, long et plat, et ne survolez pas le parking.",
           "sources": [
             "S1",
             "S70",
@@ -2084,13 +2085,13 @@
           "alt_m": 459,
           "coord_quality": "source",
           "ffvl_id": 1251,
-          "description": "Atterrissage utilisé en partant de Pravouta ou de la Dent, ou en sortant du bocal. Le champ est long, étroit et en pente douce nord-sud : posez toujours dans sa longueur, jamais face à la pente. Une ligne électrique borde l'entrée sud-ouest, un cimetière est proche, et des randonneurs passent. Méfiez-vous du gradient. Tôt le matin et tard le soir, une brise descendante peut souffler ; en journée, brise de pente de nord-ouest et brise de vallée de nord-est alternent.",
+          "description": "Au pied de la façade est, au sud du Manival, ce terrain sert en partant de Pravouta ou de la Dent, ou en sortant du bocal. Le champ est long, étroit et en pente douce nord-sud : posez toujours dans sa longueur, jamais face à la pente. Méfiez-vous du gradient et de la ligne électrique qui borde l'entrée sud-ouest. Tôt le matin et tard le soir, une brise descendante peut souffler ; en journée, brise de pente de nord-ouest et brise de vallée de nord-est alternent.",
           "sources": [
             "S1",
             "S74",
             "S29"
           ],
-          "note": "Les foins ont lieu en mai."
+          "note": "Un cimetière est proche, et des randonneurs passent. Les foins ont lieu en mai."
         },
         {
           "id": "perquelin",
@@ -2100,7 +2101,7 @@
           "alt_m": 976,
           "coord_quality": "source",
           "ffvl_id": 658,
-          "description": "Atterrissage de la Scia, à 976 m. Par vent de sud de plus de 20 km/h, il peut être extrêmement turbulent. Une ligne électrique longe la route ; respectez les zones de pliage.",
+          "description": "Dans le vallon à l'est de Saint-Pierre-de-Chartreuse, à 976 m, c'est l'atterrissage de la Scia. Par vent de sud de plus de 20 km/h, il peut être extrêmement turbulent. Une ligne électrique longe la route ; respectez les zones de pliage.",
           "sources": [
             "S57",
             "S29"
@@ -2114,7 +2115,7 @@
           "alt_m": 867,
           "coord_quality": "source",
           "ffvl_id": 13287,
-          "description": "Atterrissage à 867 m pour les vols rando du Charmant Som, du Grand Som et de Chamechaude. Il est fermé pendant la fenaison, et chaque fois que la manche à air est au sol ou absente. La pente-école y est interdite. Il est plus facile en début et en fin de journée : en thermique, il secoue.",
+          "description": "Au sud de Saint-Pierre-de-Chartreuse, à 867 m, ce terrain sert aux vols rando du Charmant Som, du Grand Som et de Chamechaude. Il est fermé pendant la fenaison, et chaque fois que la manche à air est au sol ou absente. La pente-école y est interdite. Il est plus facile en début et en fin de journée : en thermique, il secoue.",
           "sources": [
             "S93",
             "S30"
@@ -2128,7 +2129,7 @@
           "alt_m": 192,
           "coord_quality": "source",
           "ffvl_id": 1215,
-          "description": "Atterrissage à 190 m, le long de la RD 1075 entre La Buisse et Voreppe ; un parking et un sentier de 5 minutes y mènent. Évitez de survoler à basse altitude la route et les lotissements.",
+          "description": "Entre La Buisse et Voreppe, le long de la RD 1075, l'atterrissage du Grand Ratz est à 190 m ; un parking et un sentier de 5 minutes y mènent. Évitez de survoler à basse altitude la route et les lotissements.",
           "sources": [
             "S68",
             "S29"
@@ -2278,7 +2279,7 @@
             }
           ],
           "distance_km": 14,
-          "description": "C'est le parcours le plus facile : montez à 1200 m au Manival, puis suivez la crête du Saint-Eynard. Les Antennes et Château Nardent marquent au passage la frontière sud du bocal. Pousser jusqu'au Rachais, au-dessus de Grenoble, est plus engagé.",
+          "description": "De Saint-Hilaire au fort du Saint-Eynard, vers le sud le long de la façade est, c'est le parcours le plus facile : montez à 1200 m au Manival, puis suivez la crête du Saint-Eynard. Les Antennes et Château Nardent marquent au passage la frontière sud du bocal. Pousser jusqu'au Rachais, au-dessus de Grenoble, est plus engagé.",
           "sources": [
             "S27",
             "S22",
@@ -2329,7 +2330,7 @@
             }
           ],
           "distance_km": 9,
-          "description": "Au Manival, montez à 1400 m au moins, puis transitez sur Saint-Pancrasse et montez à 1600 m au minimum avant de partir vers la Dent par ses gencives. Le parcours est facile.",
+          "description": "Du Manival à la Dent de Crolles par Saint-Pancrasse, le parcours est facile, à condition de monter par étages : 1400 m au moins au Manival, puis transition sur Saint-Pancrasse, où l'on monte à 1600 m au minimum avant de partir vers la Dent par ses gencives.",
           "sources": [
             "S27",
             "S22",
@@ -2372,7 +2373,7 @@
             }
           ],
           "distance_km": 16,
-          "description": "Le parcours vers le nord est plus difficile : on va de crête en crête, en assurant le plafond à chaque transition. Méfiez-vous du nord, qui peut vous bloquer vers Saint-Bernard. Survolez haut la bulle du circaète entre Lumbin et La Terrasse (consigne relevée : plus de 300 m au-dessus du sol). On atteint ensuite les hautes falaises, vers 2000 m.",
+          "description": "Vers le nord, de Saint-Hilaire à Barraux, le parcours est plus difficile : on va de crête en crête, en assurant le plafond à chaque transition. Méfiez-vous du nord, qui peut vous bloquer vers Saint-Bernard. Survolez haut la bulle du circaète entre Lumbin et La Terrasse (consigne relevée : plus de 300 m au-dessus du sol). On atteint ensuite les hautes falaises, vers 2000 m.",
           "sources": [
             "S27",
             "S30"
@@ -2417,7 +2418,7 @@
             }
           ],
           "distance_km": 21,
-          "description": "Depuis la Dent, suivez la crête, de préférence au-dessus, en assurant le plafond. Avant le Granier, passez en face ouest si le vent est d'ouest, après avoir fait le plafond. Respectez la convention de Saint-Même : pas de survol sous 1900 m du 1er février au 30 août, et traversée vers les faces ouest par l'Alpette de Chapareillan.",
+          "description": "De la Dent de Crolles au Mont Granier, on suit la crête vers le nord, de préférence au-dessus, en assurant le plafond. Une règle s'impose en chemin, la convention de Saint-Même : pas de survol sous 1900 m du 1er février au 30 août, et traversée vers les faces ouest par l'Alpette de Chapareillan. Avant le Granier, passez en face ouest si le vent est d'ouest, après avoir fait le plafond.",
           "sources": [
             "S27",
             "S31",
@@ -2459,7 +2460,7 @@
             }
           ],
           "distance_km": 12,
-          "description": "C'est la transition clé de la Chartreuse vers les Bauges : 10 à 12 km, avec 2300-2400 m au moins au départ et une arrivée vers 900-1000 m. Mettez le cap à gauche, vers le Mont Saint-Michel, pour atteindre l'épaule nord-ouest du Montgelas, seule zone au vent qui reprend bas. Évitez la Savoyarde elle-même, à cause du venturi, et l'option sud-est vers Montlambert, qui traverse le sous-le-vent mortel de Montmélian.",
+          "description": "Du Granier au Montgelas, c'est la transition clé de la Chartreuse vers les Bauges : 10 à 12 km, avec 2300-2400 m au moins au départ et une arrivée vers 900-1000 m. Mettez le cap à gauche, vers le Mont Saint-Michel, pour atteindre l'épaule nord-ouest du Montgelas, seule zone au vent qui reprend bas. Évitez la Savoyarde elle-même, à cause du venturi, et l'option sud-est vers Montlambert, qui traverse le sous-le-vent mortel de Montmélian.",
           "sources": [
             "S3",
             "S33",
@@ -2511,7 +2512,7 @@
             }
           ],
           "distance_km": 10,
-          "description": "Deux options : 10 km, avec plus de 2400 m au départ et une arrivée vers 1200 m ; ou 6 km, avec plus de 1500 m au départ et une arrivée vers 800-900 m. La ZIT de Grenoble impose 1200 m au minimum, une ligne à très haute tension longe la face est du Vercors, et la brise y est forte au raccrochage, souvent bas. Au retour de Belledonne, l'aérodrome du Versoud ne se survole qu'au-dessus de 1400 m.",
+          "description": "De la Chartreuse au Vercors, depuis le Saint-Eynard, le Rachais ou le Néron, deux options : 10 km, avec plus de 2400 m au départ et une arrivée vers 1200 m ; ou 6 km, avec plus de 1500 m au départ et une arrivée vers 800-900 m. La ZIT de Grenoble impose 1200 m au minimum, une ligne à très haute tension longe la face est du Vercors, et la brise y est forte au raccrochage, souvent bas. Au retour de Belledonne, l'aérodrome du Versoud ne se survole qu'au-dessus de 1400 m.",
           "sources": [
             "S15",
             "S30",
@@ -2550,7 +2551,7 @@
             }
           ],
           "distance_km": 10,
-          "description": "Deux options : 10 km, avec plus de 2400 m au départ et au moins 1100 m à l'arrivée ; ou 5 km, avec plus de 1600 m au départ et une arrivée vers 1200 m. Les pièges : une ligne à très haute tension vers le Mont Grelle, des zones sous le vent de la brise, jusqu'au raccrochage, et du côté du Mont Outheran une brise forte, turbulente, avec des dégueulantes.",
+          "description": "Depuis le Grand Som, le Mont Outheran ou le Mont Beauvoir, cette transition rejoint le Mont Grelle, sur l'Épine. Deux options : 10 km, avec plus de 2400 m au départ et au moins 1100 m à l'arrivée ; ou 5 km, avec plus de 1600 m au départ et une arrivée vers 1200 m. Les pièges : une ligne à très haute tension vers le Mont Grelle, des zones sous le vent de la brise, jusqu'au raccrochage, et du côté du Mont Outheran une brise forte, turbulente, avec des dégueulantes.",
           "sources": [
             "S15",
             "S32",
@@ -2637,7 +2638,7 @@
       "id": "gresivaudan",
       "name": "Vallée du Grésivaudan (Montmélian – Pontcharra – Grenoble), cluse de Voreppe et « Y » grenoblois",
       "parent_massif": "Préalpes du Nord",
-      "summary": "Dans le Grésivaudan, la brise de l'après-midi descend la vallée : elle va du nord vers le sud-ouest, des Marches ou de Chapareillan vers Crolles et Saint-Nazaire. Elle prolonge la branche droite de la brise de la cluse de Chambéry. En été, par temps anticyclonique, la très forte brise montante de la cluse de Voreppe, établie en début d'après-midi, peut aussi l'aspirer : on parle alors de brise descendante « anormale ».\n\nLa brise se met en place en fin de matinée. À Lumbin, elle prend une tendance nord et dépasse rarement 15 km/h. L'après-midi, elle forcit jusqu'à 25-30 km/h près de la cluse de Chambéry, et un vent météo de nord peut la renforcer. En amont, la brise de la cluse de Chambéry se divise près de Montmélian : une branche monte à gauche la Combe de Savoie vers Albertville (sud côté Chamoux), l'autre descend à droite vers Grenoble. En aval, la brise de Voreppe, forte dès 11 h, traverse Grenoble et remonte l'Isère vers Gières et Montbonnot. Elle peut peser pour 75 % de l'aérologie locale. Au nord-est de Grenoble, elle rencontre la brise du Grésivaudan : c'est une confluence.\n\nEn pleine canicule, de juin à août, une brise montante peut aussi s'établir dans le Grésivaudan et donner un faux vent du Sud à Saint-Hilaire.\n\nLes pièges ne manquent pas. Lumbin devient turbulent quand le nord renforce la brise. La brise est très forte à Voreppe. Un surdéveloppement ou un front froid peut survenir, avec un vent soudain dans la cluse. En l'air, survolez l'aérodrome du Versoud au-dessus de 1400 m et la ZIT de Grenoble à 1200 m.",
+      "summary": "Le Grésivaudan, c'est la vallée de l'Isère entre Montmélian et Grenoble, avec la Chartreuse à l'ouest et Belledonne à l'est. À Grenoble, elle rejoint la cluse de Voreppe, au nord-ouest, et le Drac, au sud : c'est le grand « Y » grenoblois. On y pose les vols de Saint-Hilaire, à Lumbin, et on la traverse pour rejoindre Belledonne.\n\nPremière surprise, l'après-midi, la brise ne remonte pas de Grenoble : elle descend la vallée, du nord vers le sud-ouest, des Marches ou de Chapareillan vers Crolles et Saint-Nazaire. Elle prolonge la brise de la cluse de Chambéry, qui se divise près de Montmélian : à gauche, une branche monte la Combe de Savoie vers Albertville (sud côté Chamoux), à droite, l'autre descend vers Grenoble. Installée en fin de matinée, elle prend une tendance nord à Lumbin et y dépasse rarement 15 km/h. L'après-midi, elle forcit jusqu'à 25-30 km/h près de la cluse de Chambéry, et un vent météo de nord peut la renforcer.\n\nÀ l'autre bout de la cuvette, la brise de Voreppe, forte dès 11 h, traverse Grenoble et remonte l'Isère vers Gières et Montbonnot ; elle peut peser pour 75 % de l'aérologie locale. En été, par temps anticyclonique, très forte et montante dès le début d'après-midi, elle peut aussi aspirer la brise du Grésivaudan : on parle alors de brise descendante « anormale ». Les deux se rencontrent en confluence au nord-est de Grenoble. En pleine canicule, de juin à août, une brise montante peut même s'établir dans le Grésivaudan et donner un faux vent du Sud à Saint-Hilaire.\n\nCôté pièges, Lumbin devient turbulent quand le nord renforce la brise, et la brise est très forte à Voreppe. Un surdéveloppement ou un front froid peut amener un vent soudain dans la cluse. En l'air, survolez l'aérodrome du Versoud au-dessus de 1400 m et la ZIT de Grenoble à 1200 m.",
       "bbox": [
         5.6,
         45.15,
@@ -2698,7 +2699,7 @@
           },
           "season": "avril-septembre",
           "layer_depth_m": "les brises de vallée de l'Y remontent jusqu'à ~900 m d'altitude où elles se calment (Vol Libre n°298) ; jusqu'à ~2500 m en soirée de forte canicule (FFVL Chamrousse)",
-          "description": "La brise du Grésivaudan souffle du nord, de la sortie de la cluse de Chambéry jusqu'à Grenoble. Elle s'installe en fin de matinée et forcit dans la journée, mais dépasse rarement 15 km/h à Lumbin, sauf si un vent de nord la renforce. C'est la branche droite de la brise de la cluse de Chambéry, qui souffle en général à 25-30 km/h. Par beau temps d'été, la forte brise de la cluse de Voreppe aspire aussi cet air vers Grenoble.",
+          "description": "Cette brise descend le Grésivaudan du nord vers Grenoble, depuis la sortie de la cluse de Chambéry. Elle s'installe en fin de matinée et forcit dans la journée, mais dépasse rarement 15 km/h à Lumbin, sauf si un vent de nord la renforce. Elle prolonge la branche droite de la brise de la cluse de Chambéry, qui souffle en général à 25-30 km/h. Par beau temps d'été, la forte brise de la cluse de Voreppe aspire aussi cet air vers Grenoble.",
           "confidence": "high",
           "sources": [
             "S1",
@@ -2748,7 +2749,7 @@
             "max": 35
           },
           "season": "printemps-été (forte en été)",
-          "description": "La brise de la cluse de Voreppe entre dans la cuvette grenobloise et remonte l'Isère à travers Grenoble. Elle se lève vers 11 h au printemps et en été, et peut devenir très forte : par beau temps d'été, elle souffle fort dès le début d'après-midi. Le décollage de Chalais en est protégé, mais son atterrissage, en fond de vallée, la reçoit souvent forte. Les cartes la prolongent jusqu'à Montbonnot-Saint-Martin, avec une flèche vers le sud, dans le Drac.",
+          "description": "Par la cluse de Voreppe, au nord-ouest de Grenoble, cette brise entre dans la cuvette et remonte l'Isère à travers la ville. Elle se lève vers 11 h au printemps et en été, et peut devenir très forte : par beau temps d'été, elle souffle fort dès le début d'après-midi. Le décollage de Chalais en est protégé, pas son atterrissage de fond de vallée, qui la reçoit souvent forte. Les cartes la prolongent jusqu'à Montbonnot-Saint-Martin, avec une flèche vers le sud, dans le Drac.",
           "confidence": "high",
           "sources": [
             "S4",
@@ -2795,7 +2796,7 @@
             "max": null
           },
           "season": "printemps-été",
-          "description": "En été anticyclonique, une partie de l'air de la cuvette grenobloise repart vers le sud et remonte la vallée du Drac.",
+          "description": "De la cuvette grenobloise, en été anticyclonique, une partie de l'air repart vers le sud et remonte la vallée du Drac.",
           "confidence": "low",
           "sources": [
             "S26",
@@ -2849,7 +2850,7 @@
             "max": null
           },
           "season": "juin-août",
-          "description": "Par beau temps d'été et fortes chaleurs, de juin à août, la brise du Grésivaudan peut s'inverser et remonter la vallée. Elle donne alors un faux vent de sud à Saint-Hilaire, avec de bonnes conditions de vol. C'est un cas particulier, à distinguer de la brise de nord habituelle.",
+          "description": "Par beau temps d'été et fortes chaleurs, de juin à août, la brise du Grésivaudan peut s'inverser et remonter la vallée vers Saint-Hilaire. Elle y donne un faux vent de sud, avec de bonnes conditions de vol. C'est un cas particulier : ne le confondez pas avec la brise de nord habituelle.",
           "confidence": "low",
           "sources": [
             "S26"
@@ -2921,8 +2922,8 @@
             ]
           },
           "when": "début d'après-midi en été anticyclonique ; au-dessus de 400-500 m",
-          "mechanism": "Par beau temps d'été, la brise de la cluse de Voreppe se lève en début d'après-midi, forte, traverse Grenoble et remonte l'Isère. Dans le Grésivaudan, elle aspire l'air vers Grenoble : la brise y descend, à contresens. Les deux se rencontrent au nord-est de Grenoble, entre Meylan, Montbonnot et Bernin.",
-          "usage": "Au-dessus de 400-500 m, la confluence donne des varios de 2 à 3 m/s. Sa bordure ouest est en général turbulente. Avec une instabilité moyenne, ce sont les conditions idéales pour voler.",
+          "mechanism": "Au nord-est de Grenoble, entre Meylan, Montbonnot et Bernin, deux brises se font face par beau temps d'été. Celle de la cluse de Voreppe se lève en début d'après-midi, forte, traverse Grenoble et remonte l'Isère. En même temps, elle aspire l'air du Grésivaudan, où la brise descend à contresens.",
+          "usage": "Au-dessus de 400-500 m, la confluence donne des varios de 2 à 3 m/s, et avec une instabilité moyenne, ce sont les conditions idéales pour voler. Méfiez-vous de sa bordure ouest, en général turbulente.",
           "confidence": "high",
           "sources": [
             "S26",
@@ -2949,7 +2950,7 @@
             ]
           },
           "when": "temps virant à l'orage (observée plusieurs fois, dont probablement la Coupe Icare 2014)",
-          "mechanism": "Quand le temps tourne à l'orage, une confluence se dessine parfois dans les nuages entre La Terrasse et Tencin, plus au nord qu'on ne l'attendrait.",
+          "mechanism": "Entre La Terrasse et Tencin, plus au nord qu'on ne l'attendrait, une confluence se dessine parfois dans les nuages quand le temps tourne à l'orage.",
           "usage": "C'est une observation isolée : ne comptez pas dessus.",
           "confidence": "low",
           "sources": [
@@ -2974,7 +2975,7 @@
             ]
           },
           "when": "passage d'un front froid stagnant sur l'arc alpin, toute saison, à n'importe quel moment",
-          "mechanism": "Quand un front froid stagne en bordure des Alpes, l'air froid entre par le bas dans la cluse de Voreppe : un vent soudain et fort s'y lève, en toute saison et à toute heure. Il passe aussi par les cols plus hauts (Vence, Coq, Ayes sous la Dent de Crolles), qui deviennent turbulents. Le vent entre aussi par la cluse de Chambéry, et la confluence agitée se situe vers Crolles et Lumbin. L'orage y met fin.",
+          "mechanism": "Vers Crolles et Lumbin, une confluence agitée se forme quand un front froid stagne en bordure des Alpes. L'air froid entre par le bas dans la cluse de Voreppe, où un vent soudain et fort se lève, en toute saison et à toute heure. Il passe aussi par les cols plus hauts (Vence, Coq, Ayes sous la Dent de Crolles), qui deviennent turbulents, et le vent entre encore par la cluse de Chambéry. L'orage y met fin.",
           "usage": "Cette confluence est turbulente et dangereuse : ne volez pas, et ne comptez pas sur les atterrissages de Lumbin.",
           "confidence": "medium",
           "sources": [
@@ -2998,7 +2999,7 @@
             ]
           },
           "when": "après-midi d'air polaire maritime instable, vent de N/NE fort en altitude",
-          "mechanism": "Par air polaire maritime, froid et instable, avec un vent de nord à nord-est fort en altitude, toute la masse d'air descend vers le sud. Au-dessus et au sud de Grenoble, les vents des deux vallées confluent en une zone de fortes ascendances.",
+          "mechanism": "Au-dessus et au sud de Grenoble, les vents des deux vallées confluent en une zone de fortes ascendances quand toute la masse d'air descend vers le sud : par air polaire maritime, froid et instable, avec un vent de nord à nord-est fort en altitude.",
           "usage": "Cette zone ne s'exploite qu'en planeur. En parapente, on ne vole que très tôt le matin : après 9h30-10h, l'atterrissage de Lumbin devient impossible en sécurité.",
           "confidence": "low",
           "sources": [
@@ -3026,7 +3027,7 @@
             ]
           },
           "when": "fin de journée, canicule ou instabilité marquée",
-          "mechanism": "En fin de journée de canicule ou d'instabilité marquée, une confluence nord-sud venue du Saint-Eynard, avec une bonne brise d'ouest, annonce une brise qui se renforce. Vu de l'atterrissage d'Uriage, une confluence nuageuse bien visible entre le décollage de Chamrousse et le Saint-Eynard, que des planeurs exploitent, est un signe très clair.",
+          "mechanism": "Cette confluence se lit en fin de journée de canicule ou d'instabilité marquée, entre le Saint-Eynard et Chamrousse. Venue du Saint-Eynard, orientée nord-sud, avec une bonne brise d'ouest, elle annonce une brise qui se renforce. Vue de l'atterrissage d'Uriage, une confluence nuageuse bien visible entre le décollage de Chamrousse et le Saint-Eynard, que des planeurs exploitent, est un signe très clair.",
           "usage": "C'est un signal d'alerte, pas une ligne à exploiter. Si la brise est déjà forte, posez à droite ou à gauche pour sortir de la confluence, sans avancer vers Grenoble.",
           "confidence": "low",
           "sources": [
@@ -3046,7 +3047,7 @@
           "radius_km": 2,
           "coord_quality": "source",
           "conditions": "après-midi ; vent météo de nord renforçant la brise de vallée (> 15 km/h) ; vent d'altitude opposé au vent au sol ; inversion basse",
-          "description": "Lumbin est un terrain sans piège, mais le vent peut y forcir. La brise de vallée, de nord, dépasse rarement 15 km/h, sauf si un vent de nord la renforce ; le sud y dépasse rarement 15 km/h lui aussi. Quand le vent au sol et le vent en altitude soufflent en sens opposés, la turbulence peut être forte : c'est typique de Lumbin. Une inversion à moins de 300 m au-dessus du relief crée aussi un venturi qui accélère le vent sur Lumbin.",
+          "description": "Au pied de Saint-Hilaire, Lumbin est un terrain sans piège, mais le vent peut y forcir. La brise de vallée, de nord, dépasse rarement 15 km/h, sauf si un vent de nord la renforce ; le sud y dépasse rarement 15 km/h lui aussi. La turbulence typique de Lumbin arrive quand le vent au sol et le vent en altitude soufflent en sens opposés : elle peut être forte. Une inversion à moins de 300 m au-dessus du relief crée aussi un venturi qui accélère le vent sur le terrain.",
           "sources": [
             "S1",
             "S27",
@@ -3067,7 +3068,7 @@
           "radius_km": 2,
           "coord_quality": "source",
           "conditions": "à partir de la fin de matinée / mi-journée, surtout au printemps et en été",
-          "description": "L'atterrissage de Voreppe, en fond de vallée, reçoit une brise souvent forte. Elle vient du nord, apparaît vers la mi-journée et peut forcir nettement : la brise de la cluse devient parfois très forte dès 11 h au printemps et en été. Une ligne électrique de 20 kV borde le champ au nord.",
+          "description": "En fond de vallée, l'atterrissage de Voreppe prend une brise souvent forte. Elle vient du nord, apparaît vers la mi-journée et peut forcir nettement : la brise de la cluse devient parfois très forte dès 11 h au printemps et en été. Une ligne électrique de 20 kV borde le champ au nord.",
           "sources": [
             "S52",
             "S53",
@@ -3085,7 +3086,7 @@
           "radius_km": 3,
           "coord_quality": "source",
           "conditions": "brise de Chambéry établie (avril à mi-septembre, dès 14h environ)",
-          "description": "Ne passez pas au-dessus de Montmélian quand la brise de Chambéry est établie. Sa branche qui tourne vers Albertville coupe par-dessus la Savoyarde et déferle derrière Montmélian : la zone sous le vent y est très dangereuse, et il y a eu plusieurs morts. Évitez donc l'option sud-est de la Savoyarde, qui rejoint directement Montlambert.",
+          "description": "Au nord de la vallée, ne passez pas au-dessus de Montmélian quand la brise de Chambéry est établie. Sa branche qui tourne vers Albertville coupe par-dessus la Savoyarde et déferle derrière Montmélian : la zone sous le vent y est très dangereuse, et il y a eu plusieurs morts. Évitez donc l'option sud-est de la Savoyarde, qui rejoint directement Montlambert.",
           "sources": [
             "S3"
           ]
@@ -3099,7 +3100,7 @@
           "radius_km": 2,
           "coord_quality": "source",
           "conditions": "toute l'année, surtout au retour de Belledonne vers la Chartreuse ou en changeant de vallée",
-          "description": "L'aérodrome du Versoud ne se survole qu'au-dessus de 1400 m. Au départ d'un cross vers Saint-Hilaire, évitez-le : un axe de voltige passe au sud, et les planeurs et avions de loisir y sont nombreux. La zone est réglementée, et aucun atterrissage en campagne n'est autorisé à proximité.",
+          "description": "Entre Grenoble et Lumbin, l'aérodrome du Versoud ne se survole qu'au-dessus de 1400 m. Au départ d'un cross vers Saint-Hilaire, évitez-le : un axe de voltige passe au sud, et les planeurs et avions de loisir y sont nombreux. La zone est réglementée, et aucun atterrissage en campagne n'est autorisé à proximité.",
           "sources": [
             "S30",
             "S65"
@@ -3114,7 +3115,7 @@
           "radius_km": 4,
           "coord_quality": "source",
           "conditions": "soirée de canicule forte (au-delà de 41 °C en plaine, la fiche écrit « 410 ») : > 25 km/h de vent fixe, rafales à 35 km/h, jusqu'à ~2500 m",
-          "description": "Les soirs de forte canicule, la brise du Grésivaudan peut se renforcer nettement au décollage de l'Aiguille : plus de 25 km/h établis, rafales à 35 km/h, jusqu'à 2500 m environ. Les conditions deviennent fortes et turbulentes, voire dangereuses. On peut difficilement abréger le vol, et l'on a peu de chances de poser à Saint-Martin-d'Uriage avant la fin de l'heure légale.",
+          "description": "Sur Belledonne, au décollage de l'Aiguille, à Chamrousse, la brise du Grésivaudan peut se renforcer nettement les soirs de forte canicule : plus de 25 km/h établis, rafales à 35 km/h, jusqu'à 2500 m environ. Les conditions deviennent fortes et turbulentes, voire dangereuses. On peut difficilement abréger le vol, et l'on a peu de chances de poser à Saint-Martin-d'Uriage avant la fin de l'heure légale.",
           "sources": [
             "S65"
           ],
@@ -3132,7 +3133,7 @@
           "radius_km": 12,
           "coord_quality": "approx",
           "conditions": "journées orageuses, y compris orages à 50 km ; front d'orage venant de l'ouest visible depuis Chamrousse",
-          "description": "Un orage menace même à 50 km : l'air froid qui tombe d'un cumulonimbus se canalise dans les vallées et y accélère, et l'atterrissage peut devenir dangereux. Écourtez le vol dès que le ciel se charge. Si un front d'orage arrive de l'ouest, bien visible, ne décollez pas.",
+          "description": "Dans les vallées de l'Y grenoblois, un orage menace même à 50 km : l'air froid qui tombe d'un cumulonimbus s'y canalise et accélère, et l'atterrissage peut devenir dangereux. Écourtez le vol dès que le ciel se charge. Si un front d'orage arrive de l'ouest, bien visible, ne décollez pas.",
           "sources": [
             "S27",
             "S26",
@@ -3174,7 +3175,7 @@
           "wind_dirs": [
             "S"
           ],
-          "description": "Décollage sud à 1023 m, protégé de la brise de nord : on y vole par tendance sud. Comptez 10 à 15 minutes de marche depuis le col du monastère de Chalais. L'atterrissage, en fond de vallée, reçoit une brise forte.",
+          "description": "Au-dessus de Voreppe, ce décollage sud à 1023 m reste protégé de la brise de nord : on y vole par tendance sud. Comptez 10 à 15 minutes de marche depuis le col du monastère de Chalais. L'atterrissage, en fond de vallée, prend une brise forte.",
           "sources": [
             "S52",
             "S29"
@@ -3194,7 +3195,7 @@
           "orientations": [
             "S"
           ],
-          "description": "Décollage orienté sud, à 1023 m, à 10-20 minutes de marche du col du monastère de Chalais. Il marche par sud et ne vaut rien par nord : la brise de nord, qui se lève en vallée en fin de matinée et forcit en été, ne l'alimente pas. Respectez les prairies et les pâtures.",
+          "description": "Au-dessus de la cluse de Voreppe, ce décollage orienté sud, à 1023 m, se rejoint en 10-20 minutes de marche depuis le col du monastère de Chalais. Il marche par sud et ne vaut rien par nord : la brise de nord, qui se lève en vallée en fin de matinée et forcit en été, ne l'alimente pas. Respectez les prairies et les pâtures.",
           "sources": [
             "S52",
             "S29"
@@ -3243,7 +3244,7 @@
           "alt_m": 237,
           "coord_quality": "source",
           "ffvl_id": 1253,
-          "description": "Grand terrain d'herbe sans obstacle, vers 240 m d'altitude, sans piège aérologique particulier. Tôt le matin, le vent est nul ; en matinée, une faible brise de pente d'est s'installe. Dès la fin de matinée arrive la brise de vallée, de nord, qui dépasse rarement 15 km/h ; le sud aussi dépasse rarement 15 km/h. Perdez l'altitude en huit entre le terrain et le hameau de Montfort. Le village de Lumbin borde le terrain au nord : mieux vaut poser court que long.",
+          "description": "Au pied de Saint-Hilaire, Lumbin est un grand terrain d'herbe sans obstacle, vers 240 m d'altitude, sans piège aérologique particulier. Le village le borde au nord : perdez l'altitude en huit entre le terrain et le hameau de Montfort, et posez court plutôt que long. Tôt le matin, le vent est nul ; en matinée, une faible brise de pente d'est s'installe. Dès la fin de matinée arrive la brise de vallée, de nord, qui dépasse rarement 15 km/h, comme le sud.",
           "sources": [
             "S1",
             "S75",
@@ -3259,7 +3260,7 @@
           "alt_m": 232,
           "coord_quality": "source",
           "ffvl_id": 1254,
-          "description": "Second atterrissage parapente de Lumbin, surtout utilisé par les écoles, juste après les terrains de tennis. Plusieurs routes le bordent.",
+          "description": "Juste après les terrains de tennis, ce second atterrissage parapente de Lumbin sert surtout aux écoles. Plusieurs routes le bordent.",
           "sources": [
             "S76",
             "S29"
@@ -3273,7 +3274,7 @@
           "alt_m": 241,
           "coord_quality": "source",
           "ffvl_id": 13604,
-          "description": "Atterrissage surtout utilisé par les deltas, ouvert aux parapentes quand celui de Lumbin est trop fréquenté. Il est favorable par nord, nord-est, sud et sud-ouest. Un fossé sépare les zones d'approche des parapentes et des deltas : les parapentes n'utilisent toute la zone que si aucun delta n'est en l'air. De grands arbres le bordent.",
+          "description": "Surtout utilisé par les deltas, ce terrain de Lumbin s'ouvre aux parapentes quand l'atterrissage principal est trop fréquenté. Il est favorable par nord, nord-est, sud et sud-ouest. Un fossé sépare les zones d'approche des parapentes et des deltas : les parapentes n'utilisent toute la zone que si aucun delta n'est en l'air. De grands arbres le bordent.",
           "sources": [
             "S97",
             "S30",
@@ -3288,7 +3289,7 @@
           "alt_m": 192,
           "coord_quality": "source",
           "ffvl_id": 325,
-          "description": "Atterrissage en fond de vallée, à 192 m. La brise de nord y est souvent forte dès la mi-journée. Une ligne électrique de 20 kV borde le nord du terrain. Respectez le champ cultivé, et garez-vous obligatoirement sur le parking, avant la voie ferrée.",
+          "description": "En fond de vallée, à 192 m, c'est l'atterrissage des vols de Chalais. La brise de nord y est souvent forte dès la mi-journée, et une ligne électrique de 20 kV borde le nord du terrain. Respectez le champ cultivé, et garez-vous obligatoirement sur le parking, avant la voie ferrée.",
           "sources": [
             "S53",
             "S29"
@@ -3374,7 +3375,7 @@
             }
           ],
           "distance_km": 10,
-          "description": "La traversée directe vers Belledonne fait 10 km au-dessus du Grésivaudan. Partez du col de l'Alpe ou de L'Aulp du Seuil avec 2000 m au minimum, mieux au-dessus de 2200 m, et visez le Mont Saint-Genis, où l'on arrive vers 1000 m. Selon la brise, raccrochez sa face nord ou sa face sud ; une zone sous le vent de la brise y est signalée. La brise de nord impose souvent une trajectoire en laisse de chien, incurvée vers le nord. Autre option : traverser vers Bramefarine.",
+          "description": "Le passage de la Chartreuse à Belledonne fait 10 km en direct au-dessus du Grésivaudan. Au col de l'Alpe ou à L'Aulp du Seuil, prenez 2000 m au minimum, mieux au-dessus de 2200 m, et visez le Mont Saint-Genis, où l'on arrive vers 1000 m. La brise de nord impose souvent une trajectoire en laisse de chien, incurvée vers le nord. Selon la brise, raccrochez sa face nord ou sa face sud ; une zone sous le vent de la brise y est signalée. Autre option : traverser vers Bramefarine.",
           "sources": [
             "S15",
             "S27",
@@ -3418,7 +3419,7 @@
             }
           ],
           "distance_km": 28,
-          "description": "Depuis le Mont Saint-Genis, passez sur la deuxième pointe avec un plafond confortable, 1800 m au minimum. Visez ensuite la « trouée brune » du Crêt du Poulet, passez la crête avec un peu de marge et suivez-la jusqu'au premier télésiège.",
+          "description": "Ce cross de 28 km prolonge la traversée sur le début de la crête de Belledonne. Depuis le Mont Saint-Genis, passez sur la deuxième pointe avec un plafond confortable, 1800 m au minimum. Visez ensuite la « trouée brune » du Crêt du Poulet, passez la crête avec un peu de marge et suivez-la jusqu'au premier télésiège.",
           "sources": [
             "S27",
             "S36"
@@ -3488,7 +3489,7 @@
             }
           ],
           "distance_km": null,
-          "description": "Le grand classique local part du décollage Sud. On passe les Antennes, limite sud du bocal, puis Château Nardent, avant de suivre la crête jusqu'au Saint-Eynard et au Rachais. Le retour remonte vers le nord par le Bec Charvet, l'école d'escalade et le pilier sud de la Dent, puis la crête.",
+          "description": "Le grand classique local part du décollage Sud de Saint-Hilaire et descend d'abord la Chartreuse vers Grenoble : les Antennes, limite sud du bocal, puis Château Nardent et la crête jusqu'au Saint-Eynard et au Rachais. Le retour remonte vers le nord par le Bec Charvet, l'école d'escalade et le pilier sud de la Dent, puis la crête.",
           "sources": [
             "S22"
           ],
@@ -3668,7 +3669,7 @@
       "id": "belledonne",
       "name": "Chaîne de Belledonne – balcon ouest (Sept Laux/Prapoutel, Chamrousse, Col du Barioz, Allevard, Collet d'Allevard)",
       "parent_massif": "Alpes occidentales",
-      "summary": "Belledonne, longue crête d'une quarantaine de kilomètres, domine le Grésivaudan. Son versant ouest ne s'active vraiment qu'à partir de 14 h. Dès le printemps, ses pentes peuvent donner des thermiques puissants et réguliers, et les grands jours, la crête devient une autoroute à thermiques vers la Lauzière et le Beaufortain.\n\nOn y arrive de la Chartreuse par Saint-Genis : 10 km de traversée, départ à plus de 2200 m. On suit le Crêt du Poulet, Pipay, le Jas des Lièvres, réputé fiable (un vol y a fait 2800 m), le Grand Replomb et le Grand Colon, jusqu'à la Croix de Chamrousse. Les points durs viennent des brises. Celle de Fond de France peut bloquer vers Pipay et le Crêt du Poulet. Au Grand Colon, la brise est souvent forte et turbulente. Plusieurs vols de Chartreuse se sont enterrés après le col du Barioz. Par sud établi, la crête est très turbulente, et chaque transition coûte environ 1000 m.\n\nÀ Allevard, les sites du Collet marchent par nord ou par brise (Malatrait, Nid d'Aigle, Pré Rond), et les Plagnes par sud. Attention au gradient et au venturi dans les vallées, surtout à la digue. Peu expérimenté, volez à Chamrousse jusqu'à 12 h, puis tard le soir. À Allevard, on décolle parfois dès 7 h, pour une simple descente vers Pinsot. Les soirs de forte canicule, la brise du Grésivaudan peut dépasser 25 km/h, jusqu'à 2500 m.\n\nLes faces est, du lac de Grand-Maison au Pas de la Coche, semblent chauffer avant la face ouest ; elles ont donné des plafonds de 3300 à 3600 m. Pour Pinsot, Bachat-Bouloud et Saint-Mury, aucun document d'aérologie n'a été lu : les écoulements de nuit n'y sont que des déductions peu sûres.",
+      "summary": "Belledonne tient dans une crête d'une quarantaine de kilomètres au-dessus du Grésivaudan, du Mont Saint-Genis, au nord, à Chamrousse, au sud. Derrière elle, la vallée du Bréda descend de Fond de France à Allevard, au pied du Collet d'Allevard et des hautes crêtes.\n\nLe versant ouest ne s'active vraiment qu'à partir de 14 h. Dès le printemps, ses pentes peuvent donner des thermiques puissants et réguliers, et les grands jours, la crête devient une autoroute à thermiques vers la Lauzière et le Beaufortain. Les faces est, du lac de Grand-Maison au Pas de la Coche, semblent chauffer avant ; elles ont donné des plafonds de 3300 à 3600 m.\n\nOn arrive de Chartreuse par Saint-Genis : 10 km de traversée, départ à plus de 2200 m. Puis le Crêt du Poulet, Pipay, le Jas des Lièvres, réputé fiable (un vol y a fait 2800 m), le Grand Replomb et le Grand Colon, jusqu'à la Croix de Chamrousse. Les points durs viennent des brises : celle de Fond de France peut bloquer vers Pipay et le Crêt du Poulet, et au Grand Colon, la brise est souvent forte et turbulente. Plusieurs vols de Chartreuse se sont enterrés après le col du Barioz. Par sud établi, la crête est très turbulente, et chaque transition coûte environ 1000 m.\n\nÀ Allevard, les sites du Collet marchent par nord ou par brise (Malatrait, Nid d'Aigle, Pré Rond), et les Plagnes par sud ; attention au gradient et au venturi dans les vallées, surtout à la digue. On y décolle parfois dès 7 h, pour une simple descente vers Pinsot. À Chamrousse, peu expérimenté, volez jusqu'à 12 h, puis tard le soir. Les soirs de forte canicule, la brise du Grésivaudan peut dépasser 25 km/h, jusqu'à 2500 m.\n\nPour Pinsot, Bachat-Bouloud et Saint-Mury, aucun document d'aérologie n'a été lu : les écoulements de nuit n'y sont que des déductions peu sûres.",
       "bbox": [
         5.85,
         45.1,
@@ -3710,7 +3711,7 @@
             "max": null
           },
           "season": "avril-septembre (premières ascendances en général début avril jusqu'à fin septembre à Chamrousse)",
-          "description": "Le versant ouest de Belledonne, au-dessus du Grésivaudan, ne s'active qu'à partir de 14 h. Les vents dominants y sont parallèles au relief : jusqu'à 10 km/h de vent pur, ça passe ; au-delà, ça secoue. En été, gagner plus de 500 m à midi sur la face ouest n'est pas normal : en général, ça arrive vers 15 h 30. La brise monte du pied de pente à la crête, par Prapoutel et le col de Pipay.",
+          "description": "Le versant ouest de Belledonne, au-dessus du Grésivaudan, ne s'active qu'à partir de 14 h : la brise monte alors du pied de pente à la crête, par Prapoutel et le col de Pipay. Les vents dominants y sont parallèles au relief : jusqu'à 10 km/h de vent pur, ça passe ; au-delà, ça secoue. En été, gagner plus de 500 m à midi sur la face ouest n'est pas normal : en général, ça arrive vers 15 h 30.",
           "confidence": "medium",
           "sources": [
             "S15",
@@ -3758,7 +3759,7 @@
             "max": null
           },
           "season": "printemps-été",
-          "description": "L'après-midi, la brise remonte la vallée du Bréda, d'Allevard vers le sud, par Pinsot, jusqu'à Fond de France. Elle peut y créer un point dur et participe au conflit de brises des Sept Laux. À la digue d'Allevard, en été, cette brise soutenue donne parfois de très fortes rafales.",
+          "description": "Derrière la crête, l'après-midi, la brise remonte la vallée du Bréda d'Allevard vers le sud, par Pinsot, jusqu'à Fond de France. Elle peut y créer un point dur et participe au conflit de brises des Sept Laux. Côté Allevard, à la digue, cette brise soutenue donne parfois en été de très fortes rafales.",
           "confidence": "medium",
           "sources": [
             "S15",
@@ -3805,7 +3806,7 @@
             "max": null
           },
           "season": "printemps-été",
-          "description": "La brise peut monter de Fond de France et créer un point dur entre le Crêt du Poulet et Pipay. Aux Sept Laux, elle entre en conflit avec la brise de pente : ça secoue. Fond de France est une zone turbulente, surtout par vent de sud.",
+          "description": "Depuis Fond de France, à l'est de la crête, la brise peut monter vers Pipay et le Crêt du Poulet, et créer un point dur entre les deux. Aux Sept Laux, elle entre en conflit avec la brise de pente : ça secoue. Fond de France est une zone turbulente, surtout par vent de sud.",
           "confidence": "low",
           "sources": [
             "S27",
@@ -3850,7 +3851,7 @@
             "max": null
           },
           "season": "printemps-été",
-          "description": "Une brise monte du Grésivaudan vers le col du Barioz en passant par Theys. Le col est un point de passage entre la traversée de Chartreuse et la crête de Belledonne.",
+          "description": "Du Grésivaudan, une brise monte par Theys vers le col du Barioz, point de passage entre la traversée de Chartreuse et la crête de Belledonne.",
           "confidence": "low",
           "sources": [
             "S28",
@@ -4043,7 +4044,7 @@
             "max": 25
           },
           "season": "printemps-été",
-          "description": "À Saint-Martin-d'Uriage, la brise descend du lever du jour à 10 h 30 ; de 10 h à 12 h 30, une brise peut venir d'Uriage. Dès le début d'après-midi, la brise vient de Grenoble et monte vers Chamrousse jusqu'à l'inversion du soir. Par instabilité marquée, elle s'installe dès 10 h 30 et forcit l'après-midi sans dépasser 25 km/h. L'atterrissage est sensible au nord au-delà de 25 km/h à 500 m.",
+          "description": "Dès le début d'après-midi, cette brise part de Grenoble et monte vers Saint-Martin-d'Uriage et Chamrousse, jusqu'à l'inversion du soir. Le matin, à Saint-Martin-d'Uriage, la brise descend du lever du jour à 10 h 30 ; de 10 h à 12 h 30, une brise peut venir d'Uriage. Par instabilité marquée, elle s'installe dès 10 h 30 et forcit l'après-midi sans dépasser 25 km/h. L'atterrissage est sensible au nord au-delà de 25 km/h à 500 m.",
           "confidence": "medium",
           "sources": [
             "S66",
@@ -4090,7 +4091,7 @@
             "max": 10
           },
           "season": "printemps-automne (déduction)",
-          "description": "Aucune source ne décrit de vent descendant dans le Bréda. La matinée est calme et volable à Allevard : on peut décoller du Collet dès 7 h, et Saint-Pierre-d'Allevard, orienté sud-est, est décrit comme un site du matin.",
+          "description": "Aucune source ne décrit de vent descendant dans le Bréda. La matinée est calme et volable à Allevard : on peut décoller du Collet dès 7 h, et Saint-Pierre-d'Allevard est décrit comme un site du matin.",
           "confidence": "low",
           "sources": [
             "S114",
@@ -4196,8 +4197,8 @@
             ]
           },
           "when": "journée d'été (horaire non documenté)",
-          "mechanism": "Deux brises montent au col du Barioz, l'une de Theys, l'autre de Saint-Pierre-d'Allevard : elles s'y rencontrent probablement.",
-          "usage": "Le vent peut varier au col. Le raccrochage du Crêt du Poulet n'y est pas toujours évident : tout dépend du jour et de l'altitude d'arrivée. Des pilotes venus de Chartreuse se sont fait enterrer après le col et ont posé à La Coche ; d'autres jours, on y a pris 3100 m.",
+          "mechanism": "Au col du Barioz, entre le Saint-Genis et le Crêt du Poulet, deux brises montent, l'une de Theys, l'autre de Saint-Pierre-d'Allevard : elles s'y rencontrent probablement.",
+          "usage": "Le vent peut varier au col, et le raccrochage du Crêt du Poulet n'y est pas toujours évident : tout dépend du jour et de l'altitude d'arrivée. Des pilotes venus de Chartreuse se sont fait enterrer après le col et ont posé à La Coche ; d'autres jours, on y a pris 3100 m.",
           "confidence": "low",
           "sources": [
             "S28",
@@ -4229,7 +4230,7 @@
             ]
           },
           "when": "après-midi d'été ; surtout avec vent du sud (zone n°1 du PDF)",
-          "mechanism": "La brise qui remonte de Fond de France heurte la brise de pente ouest des Sept Laux : ça secoue.",
+          "mechanism": "Aux Sept Laux, la brise qui remonte de Fond de France heurte la brise de pente ouest : ça secoue.",
           "usage": "Attendez-vous à un point dur entre le Crêt du Poulet et Pipay : faites un beau plafond avant de suivre la crête jusqu'au premier télésiège.",
           "confidence": "medium",
           "sources": [
@@ -4353,7 +4354,7 @@
           "radius_km": 1,
           "coord_quality": "approx",
           "conditions": "mise en service été 2023 ; câble de la Croix de Chamrousse (2250 m) à Recoin (1650 m)",
-          "description": "À Chamrousse, une tyrolienne à pylônes, la plus grande du monde, longe la télécabine de la Croix sur environ 2 km et 550 m de dénivelé, à 30-60 m au-dessus des pistes. Ne survolez pas les remontées mécaniques à moins de 200 m du sol.",
+          "description": "À Chamrousse, ne survolez pas les remontées mécaniques à moins de 200 m du sol, et prenez garde à la tyrolienne à pylônes, la plus grande du monde : elle longe la télécabine de la Croix sur environ 2 km et 550 m de dénivelé, à 30-60 m au-dessus des pistes.",
           "sources": [
             "S65",
             "S86"
@@ -4384,7 +4385,7 @@
           "radius_km": 2,
           "coord_quality": "source",
           "conditions": "vent de sud soutenu (le site paraît faisable car sous le vent du Collet) ; vent d'ouest ou de nord fort contraire",
-          "description": "Par vent de sud soutenu, le décollage de Val Pelouse semble faisable, car il est sous le vent du Collet d'Allevard ; une fois en vallée, on peut être contré et secoué. Contré par un ouest ou un nord fort, on a peu d'atterrissages de secours. L'atterrissage du Molliet est fermé avant la fenaison.",
+          "description": "À Val Pelouse, méfiez-vous du vent de sud soutenu : le décollage semble faisable, car il est sous le vent du Collet d'Allevard, mais une fois en vallée, on peut être contré et secoué. Contré par un ouest ou un nord fort, on a peu d'atterrissages de secours. L'atterrissage du Molliet est fermé avant la fenaison.",
           "sources": [
             "S50",
             "S51"
@@ -4399,7 +4400,7 @@
           "coord_quality": "source",
           "radius_km": 2.5,
           "conditions": "Vent de sud (≈10 km/h en 2010) ; transition en milieu d'après-midi depuis Pipay / Jas des Lièvres.",
-          "description": "Par vent de sud, une lame d'air accélérée peut se former au-dessus de la crête d'Orionde, sur la transition depuis le Jas des Lièvres ou Pipay.",
+          "description": "Entre le Jas des Lièvres et le Grand Replomb, la crête d'Orionde se prépare par vent de sud : une lame d'air accélérée peut se former au-dessus d'elle, sur la transition depuis le Jas des Lièvres ou Pipay.",
           "sources": [
             "S118",
             "S112",
@@ -4490,7 +4491,7 @@
           "coord_quality": "source",
           "radius_km": 4,
           "conditions": "Fin d'après-midi, arrivée d'un voile de cirro-stratus d'ouest après une journée de thermiques généreux (1er août 2020).",
-          "description": "En fin de journée, un voile de cirro-stratus qui arrive de l'ouest annonce un changement : rentrez sans traîner. Le vent forcit à l'atterrissage, et des bourrasques peuvent suivre peu après.",
+          "description": "Au retour vers l'Aiguillette et Saint-Martin-d'Uriage, un voile de cirro-stratus qui arrive de l'ouest en fin de journée annonce un changement : rentrez sans traîner. Le vent forcit à l'atterrissage, et des bourrasques peuvent suivre peu après.",
           "sources": [
             "S124",
             "S118"
@@ -4511,7 +4512,7 @@
           "coord_quality": "approx",
           "best_hours": "début d'après-midi",
           "trigger": "pointe sud et face sud ou nord selon la brise",
-          "description": "Le Saint-Genis est le premier déclencheur fiable de la face ouest après la traversée. Selon la brise, le thermique part de la pointe sud et de la face sud, ou de la face nord. La porte de sortie se trouve souvent dans la face sud, avant la relance vers le Crêt du Poulet.",
+          "description": "En arrivant de la Chartreuse, le Saint-Genis est le premier déclencheur fiable de la face ouest. Selon la brise, le thermique part de la pointe sud et de la face sud, ou de la face nord. La porte de sortie se trouve souvent dans la face sud, avant la relance vers le Crêt du Poulet.",
           "sources": [
             "S16",
             "S22",
@@ -4542,7 +4543,7 @@
           "coord_quality": "source",
           "best_hours": "milieu à fin d'après-midi",
           "trigger": "« trouée brune » (coupes de bois) sur la crête",
-          "description": "Depuis le second sommet du Saint-Genis, avec au moins 1800 m, mettez le cap sur la « trouée brune » du Crêt du Poulet. Le thermique part souvent des coupes de bois, vers 1700 m, et il est parfois faiblard.",
+          "description": "Après le col du Barioz, le Crêt du Poulet se vise depuis le second sommet du Saint-Genis, avec au moins 1800 m : mettez le cap sur sa « trouée brune ». Le thermique part souvent de ces coupes de bois, vers 1700 m, et il est parfois faiblard.",
           "sources": [
             "S27",
             "S41",
@@ -4572,7 +4573,7 @@
           "coord_quality": "source",
           "best_hours": "après-midi",
           "trigger": "crête au-dessus des remontées mécaniques de Pipay",
-          "description": "La crête au-dessus des remontées de Pipay, qui culmine à 2326 m au Jas des Lièvres, donne des thermiques francs. On y fait le plafond avant de traverser vers le Grand Replomb et le Grand Colon ; plus loin, la crête monte vers 2600 m au col du Pra.",
+          "description": "Plus au sud, au-dessus des remontées de Pipay, la crête culmine à 2326 m au Jas des Lièvres et donne des thermiques francs. On y fait le plafond avant de traverser vers le Grand Replomb et le Grand Colon ; plus loin, la crête monte vers 2600 m au col du Pra.",
           "sources": [
             "S36",
             "S37",
@@ -4601,7 +4602,7 @@
           "coord_quality": "source",
           "best_hours": "après-midi",
           "trigger": "arête sommitale",
-          "description": "L'arête sommitale du Grand Colon donne des thermiques puissants, mais la brise y est souvent forte et turbulente.",
+          "description": "Entre Prapoutel et Chamrousse, l'arête sommitale du Grand Colon donne des thermiques puissants, mais la brise y est souvent forte et turbulente.",
           "sources": [
             "S37",
             "S36",
@@ -4629,7 +4630,7 @@
           "coord_quality": "source",
           "best_hours": "à partir de 13h-15h30 (heure de la montre), renforcement jusqu'à 19h",
           "trigger": "face ouest de l'Aiguille et de la Croix",
-          "description": "Sur la face ouest de Chamrousse, l'ascendance est douce et régulière de 13 h à 15 h 30, sans canicule ni instabilité marquée. De mai à fin août, par situation instable, elle se renforce de 15 h 30 à 19 h. Le décollage, à 1839 m, est souvent proche de la base des nuages : certains jours, quittez l'ascendance au moins 150 m sous la base.",
+          "description": "Sous l'Aiguille et la Croix, la face ouest de Chamrousse donne une ascendance douce et régulière de 13 h à 15 h 30, sans canicule ni instabilité marquée. De mai à fin août, par situation instable, elle se renforce de 15 h 30 à 19 h. Le décollage, à 1839 m, est souvent proche de la base des nuages : certains jours, quittez l'ascendance au moins 150 m sous la base.",
           "sources": [
             "S65",
             "S39",
@@ -5148,7 +5149,7 @@
             "W",
             "NW"
           ],
-          "description": "Décollage herbeux en pyramide, à 1839 m, avec quatre orientations dont deux principales, nord-est et nord-ouest. Comptez 12 minutes de marche depuis le parking. On y vole de 8 h à 21 h, et une balise fédérale fonctionne d'avril à novembre. On pose à Saint-Martin-d'Uriage, entre 420 et 550 m, ou au plat de l'Aiguille, à 1750 m, immense (10 ha) mais turbulent par vent ou thermique fort : c'est une repose au sommet, technique.",
+          "description": "Au sud de la crête, au-dessus de Saint-Martin-d'Uriage, l'Aiguille est un décollage herbeux en pyramide, à 1839 m, avec quatre orientations dont deux principales, nord-est et nord-ouest. On y vole de 8 h à 21 h, à 12 minutes de marche du parking, avec une balise fédérale d'avril à novembre. On pose à Saint-Martin-d'Uriage, entre 420 et 550 m, ou au plat de l'Aiguille, à 1750 m : immense (10 ha) mais turbulent par vent ou thermique fort, c'est une repose au sommet, technique.",
           "sources": [
             "S65",
             "S39"
@@ -5171,7 +5172,7 @@
             "W",
             "NW"
           ],
-          "description": "Décollage de montagne au sommet de la station, à 2219-2250 m, orienté nord, nord-ouest et ouest. On y monte par la télécabine, et l'on vole vers le plat de l'Aiguille, 600 m plus bas. Par vent fort, surtout de nord-est et de sud-sud-ouest, c'est dangereux. Le départ de la tyrolienne est tout près.",
+          "description": "Au sommet de la station de Chamrousse, à 2219-2250 m, ce décollage de montagne s'ouvre au nord, au nord-ouest et à l'ouest. Par vent fort, surtout de nord-est et de sud-sud-ouest, c'est dangereux. On y monte par la télécabine, et l'on vole vers le plat de l'Aiguille, 600 m plus bas. Le départ de la tyrolienne est tout près.",
           "sources": [
             "S86",
             "S39"
@@ -5189,7 +5190,7 @@
           "orientations": [
             "W"
           ],
-          "description": "Décollage ouest à 1990 m, accessible par la remontée du Grand Cerf, à Pipay. On pose à Prapoutel, à 1339 m. La fiche officielle ne donne aucune description d'aérologie.",
+          "description": "Au-dessus de Prapoutel, côté Pipay, ce décollage ouest à 1990 m s'atteint par la remontée du Grand Cerf. On pose à Prapoutel, à 1339 m. La fiche officielle ne donne aucune description d'aérologie.",
           "sources": [
             "S78",
             "S79"
@@ -5241,7 +5242,7 @@
             "W",
             "NW"
           ],
-          "description": "Décollage court, à 1398 m, au bord de la route à l'entrée du parking de la station, de niveau marron, orienté nord, ouest et nord-ouest. Sans brise, il est sous le vent du nord, de travers droit. Une ravine borde son côté droit : ne décollez pas trop près. Par brise ou nord fort, ne dépassez jamais l'antenne vers le Veyton.",
+          "description": "À l'entrée du parking de la station, au bord de la route, Malatrait est un décollage court à 1398 m, de niveau marron, orienté nord, ouest et nord-ouest. Sans brise, il est sous le vent du nord, de travers droit, et une ravine borde son côté droit : ne décollez pas trop près. Par brise ou nord fort, ne dépassez jamais l'antenne vers le Veyton.",
           "sources": [
             "S58",
             "S38"
@@ -5260,7 +5261,7 @@
             "W",
             "NW"
           ],
-          "description": "Décollage raide, avec un départ sur le plat, à 1675 m, sur un terrain un peu escarpé (souches, arbustes). Il est sur une piste : fermé pendant la saison de ski. Niveau vert. Il est sous le vent par sud. Un télésiège passe à gauche : attention par ouest marqué.",
+          "description": "Sur une piste du Collet d'Allevard, le Nid d'Aigle est fermé pendant la saison de ski. Ce décollage raide, avec un départ sur le plat, à 1675 m, de niveau vert, s'ouvre sur un terrain un peu escarpé (souches, arbustes). Il est sous le vent par sud, et un télésiège passe à gauche : attention par ouest marqué.",
           "sources": [
             "S59"
           ]
@@ -5277,7 +5278,7 @@
             "S",
             "SW"
           ],
-          "description": "Grande pente herbeuse à soaring, à 2068 m, au sommet du télésiège de Claran, ouvert en hiver et en juillet-août. Elle marche par sud et sud-ouest. En hiver, il est interdit de décoller ou d'atterrir sur le domaine skiable, sauf au Super-Collet.",
+          "description": "Au sommet du télésiège de Claran, ouvert en hiver et en juillet-août, les Plagnes offrent une grande pente herbeuse à soaring, à 2068 m, qui marche par sud et sud-ouest. En hiver, il est interdit de décoller ou d'atterrir sur le domaine skiable, sauf au Super-Collet.",
           "sources": [
             "S62",
             "S114"
@@ -5299,7 +5300,7 @@
             "S",
             "SW"
           ],
-          "description": "Décollage à 1556 m, de niveau vert, favorable par sud-est, sud et sud-ouest. Le site est un peu protégé du sud : c'est toujours plus fort en l'air qu'au décollage. Ne décollez pas par sud fort.",
+          "description": "Le décollage Sud du Collet d'Allevard, à 1556 m, de niveau vert, est favorable par sud-est, sud et sud-ouest. Le site est un peu protégé du sud : c'est toujours plus fort en l'air qu'au décollage, et il ne faut pas décoller par sud fort.",
           "sources": [
             "S94"
           ],
@@ -5317,7 +5318,7 @@
             "N",
             "NW"
           ],
-          "description": "Décollage technique à 1561 m, raide, étroit et encombré de souches et d'arbustes, orienté nord et nord-ouest. Il est sous le vent du thermique : on y décolle par nord ou par brise.",
+          "description": "Technique, raide, étroit et encombré de souches et d'arbustes, Pré Rond s'ouvre au nord et au nord-ouest à 1561 m. Il est sous le vent du thermique : on y décolle par nord ou par brise.",
           "sources": [
             "S95"
           ]
@@ -5334,15 +5335,15 @@
             "NE",
             "E"
           ],
-          "description": "Décollage à 984 m, à 5 minutes de marche, de niveau marron, favorable par nord-est et est. Il est sous le vent par nord ou nord-ouest fort, et des vaches peuvent y pâturer.",
+          "description": "Au-dessus de Saint-Pierre-d'Allevard, à 5 minutes de marche, ce décollage à 984 m, de niveau marron, est favorable par nord-est et est. Il est sous le vent par nord ou nord-ouest fort, et des vaches peuvent y pâturer.",
           "sources": [
             "S63",
             "S133"
           ],
           "possible": [
-            "Ce site classique, orienté sud-est, serait idéal le matin ; les écoles d'Allevard l'utilisent."
+            "Ce site classique serait idéal le matin ; les écoles d'Allevard l'utilisent."
           ],
-          "note": "Une étude de typologie des sites indique 850 m au décollage et 400 m à l'atterrissage ; le dénivelé de 500 m limite la durée des vols."
+          "note": "Une étude de typologie des sites indique 850 m au décollage et 400 m à l'atterrissage ; le dénivelé de 500 m limite la durée des vols. Une source le dit orienté sud-est, quand la fiche officielle donne nord-est et est."
         },
         {
           "id": "val-pelouse",
@@ -5357,7 +5358,7 @@
             "W",
             "NW"
           ],
-          "description": "Décollage à 1692 m, favorable par nord, ouest et nord-ouest, par brise ou vent faible. Ne volez pas par sud modéré à fort. On y monte par une route sans issue, non déneigée, qui s'ouvre d'elle-même vers mai.",
+          "description": "Au-dessus d'Arvillard, Val Pelouse décolle à 1692 m par nord, ouest et nord-ouest, par brise ou vent faible. Ne volez pas par sud modéré à fort. On y monte par une route sans issue, non déneigée, qui s'ouvre d'elle-même vers mai.",
           "sources": [
             "S50",
             "S51"
@@ -5437,7 +5438,7 @@
           "alt_m": 496,
           "coord_quality": "source",
           "ffvl_id": 684,
-          "description": "Grand atterrissage au bord du lac, à 496 m. Le survol du lac est interdit. Par brise ou par nord, ne dépassez jamais la digue : le venturi s'y forme. Des obstacles entourent le terrain.",
+          "description": "Au bord du lac d'Allevard, à 496 m, ce grand atterrissage impose deux règles : le survol du lac est interdit, et par brise ou par nord, on ne dépasse jamais la digue, où se forme le venturi. Des obstacles entourent le terrain.",
           "sources": [
             "S60"
           ]
@@ -5450,7 +5451,7 @@
           "alt_m": 506,
           "coord_quality": "source",
           "ffvl_id": 688,
-          "description": "Atterrissage de l'autre côté du lac, à 506 m, plus dégagé : préférez-le par vent fort. Évitez-le par sud important, et pendant les foins.",
+          "description": "De l'autre côté du lac, à 506 m, ce terrain plus dégagé est à préférer par vent fort. Évitez-le par sud important, et pendant les foins.",
           "sources": [
             "S64",
             "S38"
@@ -5467,7 +5468,7 @@
           "alt_m": 396,
           "coord_quality": "source",
           "ffvl_id": 685,
-          "description": "Atterrissage au bord de la route, juste après le lac de la Mirande, à 396 m. Il est fermé pour le moment, le nouveau propriétaire n'ayant pas accordé de convention. On y rencontre du gradient.",
+          "description": "Fermé pour le moment : le nouveau propriétaire n'a pas accordé de convention. Ce terrain se trouve au bord de la route, juste après le lac de la Mirande, à 396 m, et l'on y rencontre du gradient.",
           "sources": [
             "S61"
           ]
@@ -5494,7 +5495,7 @@
           "alt_m": 713,
           "coord_quality": "source",
           "ffvl_id": 317,
-          "description": "Atterrissage à 713 m, invisible depuis le décollage. Le vent n'y est pas toujours bien établi, et les thermiques s'y déclenchent en milieu de journée. Il est fermé avant les foins, de début juin jusqu'à la fenaison, faite fin juin.",
+          "description": "Fermé avant les foins, de début juin jusqu'à la fenaison, faite fin juin, ce terrain de Val Pelouse se trouve à 713 m, invisible depuis le décollage. Le vent n'y est pas toujours bien établi, et les thermiques s'y déclenchent en milieu de journée.",
           "sources": [
             "S51"
           ]
@@ -5507,7 +5508,7 @@
           "alt_m": 352,
           "coord_quality": "source",
           "ffvl_id": 1611,
-          "description": "Atterrissage à 352 m, près de l'intersection de deux petites vallées, invisible depuis le décollage. Il est fermé trois semaines avant la fenaison. Selon la force du vent et des brises, l'atterrissage peut devenir difficile.",
+          "description": "Plus bas que le Molliet, à 352 m, près de l'intersection de deux petites vallées, ce terrain de Val Pelouse est lui aussi invisible depuis le décollage. Il est fermé trois semaines avant la fenaison, et selon la force du vent et des brises, l'atterrissage peut devenir difficile.",
           "sources": [
             "S80"
           ]
@@ -5652,7 +5653,7 @@
             }
           ],
           "distance_km": 18,
-          "description": "De Prapoutel à la Croix de Chamrousse, ce parcours de 18 km est difficile. Passez sur la deuxième pointe avec un plafond confortable, 2200 m au minimum, et assurez l'altitude avant chaque transition entre pointes. La brise est forte par moments ; au Grand Colon, elle est souvent forte et turbulente.",
+          "description": "De Prapoutel à la Croix de Chamrousse, ce parcours de 18 km sur la crête est difficile. Passez sur la deuxième pointe avec un plafond confortable, 2200 m au minimum, et assurez l'altitude avant chaque transition entre pointes. La brise est forte par moments ; au Grand Colon, elle est souvent forte et turbulente.",
           "sources": [
             "S27",
             "S37",
@@ -5692,7 +5693,7 @@
             }
           ],
           "distance_km": 15,
-          "description": "Cette transition de plus de 15 km part de Chamrousse avec plus de 2000 m et peut finir au sol, à Vif ou au Gua. On fait souvent le plafond à Roche Béranger, vers 2400-2650 m.",
+          "description": "Au bout sud de la crête, cette transition de plus de 15 km relie Chamrousse au Vercors et peut finir au sol, à Vif ou au Gua. Partez avec plus de 2000 m : on fait souvent le plafond à Roche Béranger, vers 2400-2650 m.",
           "sources": [
             "S15",
             "S36",
@@ -5976,7 +5977,7 @@
         }
       ],
       "tips": [
-        "Sur la face ouest de Belledonne, rien ne marche avant 14 h. Partez de Saint-Hilaire vers 11 h-12 h, et traversez le Grésivaudan avec 2200 m au-dessus de Sainte-Marie-du-Mont [S15][S27][S16].",
+        "Sur la face ouest de Belledonne, rien ne marche vraiment avant 14 h. Partez de Saint-Hilaire vers 11 h-12 h, et traversez le Grésivaudan depuis Sainte-Marie-du-Mont avec 2200 m d'altitude [S15][S27][S16].",
         "Au Collet d'Allevard, par brise ou par nord, ne descendez jamais au-delà de l'antenne côté Veyton et ne dépassez pas la digue : il y a un venturi, sans vache de secours [S58][S60].",
         "À Pipay, la brise de Fond de France peut créer un point dur : faites un beau plafond avant de suivre la crête jusqu'au premier télésiège [S27].",
         "À Chamrousse, pas plus de 10 km/h de vent pur. Canicule, vent météo et heures les plus chaudes : c'est cette combinaison qui pose de gros problèmes. En soirée de forte canicule, la brise du Grésivaudan peut dépasser 25 km/h jusqu'à 2500 m [S65].",

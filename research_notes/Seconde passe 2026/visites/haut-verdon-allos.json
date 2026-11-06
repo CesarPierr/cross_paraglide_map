@@ -4,15 +4,15 @@
   "steps": [
     {
       "chapter": "Le massif",
-      "title": "Bienvenue dans le Haut-Verdon, un couloir de cross",
-      "text": "Bienvenue dans le Haut-Verdon, la vallée du Verdon orientée nord-sud entre Saint-André et Allos. C'est le couloir est du grand cross Saint-André – Dormillouse. Les arêtes de Maurel, Cordeil, Côte Longue et Carton le bordent à l'ouest, les contreforts du Mercantour à l'est. En vol local, il est presque inconnu : pas de site officiel, seulement un décollage signalé à Beauvezer et un à Thorame. Ce qu'on sait vient des cross, et cette visite suit leur fil. Avant de vous poser dans la vallée, renseignez-vous auprès des écoles de Saint-André, d'Allos ou de Barrême.",
+      "title": "Bienvenue dans le Haut-Verdon, une vallée vue d'en haut",
+      "text": "Bienvenue dans le Haut-Verdon. La vallée court du nord au sud, de Saint-André à Allos, avec les contreforts du Mercantour à l'est. À l'ouest, deux lignes d'arêtes montent vers le nord et se rejoignent au col de Talon : celle du Cheval Blanc, et celle de Maurel, du Cordeil et de Côte Longue. C'est le couloir est du grand cross Saint-André – Dormillouse, et presque tout ce qu'on sait d'ici vient de ces vols : pas de site officiel, seulement un décollage signalé à Beauvezer et un à Thorame. Avant de vous poser dans la vallée, renseignez-vous auprès des écoles de Saint-André, d'Allos ou de Barrême.",
       "focus": [],
       "view": "massif"
     },
     {
       "chapter": "La journée de l'air",
       "title": "L'après-midi, une brise probable et une confluence à Thorame",
-      "text": "La brise de vallée remonte probablement le Haut-Verdon, de Saint-André vers Allos, dans le prolongement du sud qui monte de Castellane. C'est une déduction, sans heure ni vitesse mesurée. Les vallées sont pourtant décrites étroites et sinueuses, avec des brises fortes. En été, ces brises plus fortes rendent la traversée vers le haut Var plus aventureuse qu'au printemps. Au milieu de l'après-midi, une confluence se forme dans la transition de la vallée de Thorame, entre Cordeil et Maurel. La source ne dit pas quels flux s'y rencontrent.",
+      "text": "L'air de cette vallée se devine plus qu'il ne se mesure. La brise remonte probablement de Saint-André vers Allos, dans le prolongement du sud qui monte de Castellane, mais c'est une déduction, sans heure ni vitesse. Ce qu'on sait, c'est qu'en été des brises plus fortes rendent la traversée vers le haut Var plus aventureuse qu'au printemps. Le seul rendez-vous décrit se trouve dans la transition de la vallée de Thorame, entre Cordeil et Maurel, où une confluence se forme souvent au milieu de l'après-midi. La source ne dit pas quels flux s'y rencontrent.",
       "focus": [
         "brise-vallee-haut-verdon",
         "convergence-vallee-de-thorame"
@@ -22,7 +22,7 @@
     {
       "chapter": "Où ça monte",
       "title": "Des antennes à Tournon, d'arête en arête",
-      "text": "Depuis Saint-André, placez-vous au bout de la montagne de l'Allier pour transiter vers le Meunier. Un matin où les plafonds ne dépassaient pas 2100 m, 1900 m ont suffi. Revenez sur l'angle de la crête de Lambruisse le plus proche des antennes, puis raccrochez le Meunier, parfois très bas. Au col de Séoune, le léger escarpement ouest donne un thermique qui dérive vers le nord-est. De là, filez vers la montagne de Tournon puis le Cheval Blanc, en ligne de crête. Quelques pompes montent parfois le plafond de 200 ou 300 m.",
+      "text": "La ligne de l'ouest commence au nord de Saint-André et se parcourt arête après arête. Placez-vous au bout de la montagne de l'Allier pour transiter vers le Meunier : un matin où les plafonds restaient bas, 1900 m ont suffi. En route, appuyez-vous sur l'angle de la crête de Lambruisse le plus proche des antennes, puis raccrochez le Meunier, parfois très bas. Plus au nord, le léger escarpement ouest avant le col de Séoune lance un thermique qui dérive vers le nord-est. La ligne de crête mène ensuite par la montagne de Tournon jusqu'au Cheval Blanc.",
       "focus": [
         "montagne-de-l-allier",
         "crete-de-lambruisse",
@@ -34,8 +34,8 @@
     },
     {
       "chapter": "Où ça monte",
-      "title": "Cheval Blanc, Talon, Côte Longue : la bascule vers le nord",
-      "text": "À la pointe nord du Cheval Blanc, il arrive qu'un thermique monte à plus de 2600 m et dérive vers le nord. Quand la Bléone apporte de l'humidité, ça monte parfois moins, avec des plafonds inférieurs de 500 m à ceux de Côte Longue. Au col de Talon, entre le Cheval Blanc et Côte Longue, on refait en général un bon plein. Côte Longue, longue crête nord-sud, a un thermique musclé. Restez sur la crête sans choisir entre l'est et l'ouest : le nord souffle souvent à l'autre bout. Visez environ 2800 m sur la pointe sud pour rejoindre la vallée de la Bléone.",
+      "title": "Au col de Talon, les deux lignes se rejoignent",
+      "text": "La pointe nord du Cheval Blanc est exposée aux brises de la Bléone, et il arrive qu'un thermique y monte à plus de 2600 m en dérivant vers le nord. Quand la Bléone apporte de l'humidité, les plafonds perdent 500 m sur ceux de Côte Longue, de l'autre côté du col de Talon. C'est au-dessus de ce col qu'on refait en général un bon plein. Côte Longue a un thermique musclé et une consigne : restez sur la crête sans choisir entre l'est et l'ouest, car le nord souffle souvent à l'autre bout. Visez environ 2800 m sur sa pointe sud pour rejoindre la vallée de la Bléone.",
       "focus": [
         "cheval-blanc-pointe-nord",
         "col-de-talon-plein",
@@ -46,7 +46,7 @@
     {
       "chapter": "Le parcours classique",
       "title": "De Maurel au Tromas : les hauteurs à assurer",
-      "text": "Sur le fil du cross, Maurel ne demande pas un gros plein : environ 2300 m suffisent pour filer sur le grand Cordeil, et 2500 m pour raccrocher Côte Longue. Après le col de Talon, choisissez entre Boules, le Carton et le col de la Baisse, trois pleins avant la Chau. Là, ça sort toujours très bien au milieu ; un rognon rocheux au vent a donné 2800 m. Sur la tête du Bau, avant le Tromas, le thermique est plus confortable. Le Tromas est le dernier gros plein avant la crête de la Blanche : souvent très généreux, mais pris entre plusieurs brises, il peut être turbulent ou mal organisé.",
+      "text": "L'autre ligne se vole aux hauteurs. Maurel ne demande pas un gros plein : environ 2300 m suffisent pour filer sur le grand Cordeil, et 2500 m pour raccrocher Côte Longue. Passé le col de Talon, vous avez le choix du plein avant la Chau : Boules, le Carton ou, entre les deux, le col de la Baisse. Sur la Chau, ça sort toujours très bien au milieu. Vient alors le Tromas, dernier gros plein avant la crête de la Blanche : souvent très généreux, mais pris entre plusieurs brises, il peut être turbulent ou mal organisé. Juste au nord, la tête du Bau offre un thermique plus confortable.",
       "focus": [
         "saint-andre-coste-longue-carton",
         "montagne-de-boules",
@@ -59,8 +59,8 @@
     },
     {
       "chapter": "Le parcours classique",
-      "title": "Le retour : l'Estrop, Cadun, Chamatte de Thorame",
-      "text": "Au retour depuis le Tromas, passez par le Caduc jusqu'à la montagne de Vachière : c'est bien plus facile que de lutter contre les brises de la Bléone. Sur la Blanche, les plafonds varient : un jour 3680 m à la tête de l'Estrop, un autre à peine de quoi espérer le Cadun. Un jour d'avril, vers 17 h 25, le Cadun a donné un thermique doux et régulier. La montagne de Chamatte de Thorame, à ne pas confondre avec le Pic de Chamatte, a donné un jour le plus fort thermique de la journée, à 3000 m. Raccrocher le Cordeil reste délicat : sous le col, on se fait contrer.",
+      "title": "Le retour : le Caduc, Chamatte de Thorame, le Cordeil",
+      "text": "Le retour suit le chemin inverse, à une variante près, et elle compte : depuis le Tromas, passez par le Caduc jusqu'à la montagne de Vachière. C'est bien plus facile que de lutter contre les brises de la Bléone. Certains jours, les plafonds de la Blanche suffisent tout juste pour espérer le Cadun. Au nord de Thorame-Haute, la montagne de Chamatte, à ne pas confondre avec le Pic de Chamatte de Saint-André, a déjà donné le plus fort thermique de la journée. Raccrocher ensuite le Cordeil reste délicat : sous le col, on se fait contrer.",
       "focus": [
         "tete-de-l-estrop",
         "crete-de-cadun",
@@ -72,7 +72,7 @@
     {
       "chapter": "Le parcours classique",
       "title": "Rochecline, de beaux plafonds possibles",
-      "text": "Rochecline, à l'entrée du haut Var, est un relief où il arrive qu'on fasse les plus beaux plafonds de Saint-André. On y arrive de Cadun par une transition vers l'est, avec un thermique de vallée. Un vol de 109 km a aussi traversé le haut Var entre Entraunes et Estenc pour rejoindre la Tinée. L'été, les brises plus fortes rendent ce trajet plus aventureux. Gardez de la marge : l'atterrissage est difficile à trouver dans ces vallées peu pratiquées.",
+      "text": "Depuis Cadun, une transition vers l'est, avec un thermique de vallée en chemin, mène à Rochecline, au-dessus d'Allos, à l'entrée du haut Var. Il arrive qu'on y fasse les plus beaux plafonds de Saint-André. Un autre voyage commence ici : un vol de 109 km a traversé le haut Var entre Entraunes et Estenc pour rejoindre la Tinée. L'été, les brises plus fortes rendent ce trajet plus aventureux. Gardez de la marge, car l'atterrissage est difficile à trouver dans ces vallées peu pratiquées.",
       "focus": [
         "rochecline",
         "saint-andre-allos-tinee"
@@ -82,7 +82,7 @@
     {
       "chapter": "Les pièges",
       "title": "Les confluences du retour : Thorame, Courradour–Annot",
-      "text": "Venons-en aux pièges. Le retour par la transition de Thorame passe par une confluence, en général présente. Même avec 3000 m à Chamatte, raccrocher le Grand Cordeil n'est pas évident, surtout vers l'ouest. Un jour de nord-est, une belle confluence s'est formée entre le Courradour et Annot : ça monte très bien, et l'on gagne quelques kilomètres vers Annot. Avec un plafond, on peut espérer boucler jusqu'au col de Bleyne, mais on saute alors derrière Annot.",
+      "text": "Le retour croise deux confluences, qui ne se lisent pas de la même façon. Dans la transition de Thorame, elle se forme souvent et peut rendre le retour par Chamatte plus agréable, mais raccrocher le Grand Cordeil n'a rien d'évident, même à 3000 m : il faut faire une belle laisse de chien vers l'ouest, sinon ça ne passe pas. L'autre, relevée un jour de nord-est entre le Courradour et Annot, monte très bien et fait gagner quelques kilomètres vers Annot. Avec un plafond, on peut espérer boucler jusqu'au col de Bleyne, mais on saute alors derrière Annot.",
       "focus": [
         "convergence-vallee-de-thorame",
         "montagne-de-cordeil",
@@ -93,7 +93,7 @@
     {
       "chapter": "Les pièges",
       "title": "Mercantour, lagopède, speed-riding : les règles",
-      "text": "À l'est, le Parc national du Mercantour interdit le survol à moins de 1000 m du sol toute l'année, sur le secteur d'Allos et du Pelat. Au col de la Cayolle, deux zones de quiétude protègent le lagopède alpin de juin à août. La Foux d'Allos est un site de speed-riding à plusieurs secteurs, sans convention identifiée : demandez à l'école locale. Il n'y a pas de site de parapente officiel. On signale un décollage à Beauvezer et un à Thorame, et un atterrissage à Beauvezer.",
+      "text": "À l'est, le Parc national du Mercantour interdit le survol à moins de 1000 m du sol toute l'année, sur le secteur d'Allos et du Pelat. Au col de la Cayolle, deux zones de quiétude protègent le lagopède alpin de juin à août. Au sol, la vallée reste sans site de parapente officiel. La Foux d'Allos est un site de speed-riding à plusieurs secteurs, sans convention identifiée : demandez à l'école locale. On signale aussi un décollage à Beauvezer, un à Thorame, et un atterrissage à Beauvezer, sans les localiser.",
       "focus": [
         "parc-national-mercantour-allos",
         "zone-faune-lagopede-cayolle",
@@ -104,7 +104,7 @@
     {
       "chapter": "Selon le vent météo",
       "title": "Par sud léger, on pousse vers Dormillouse",
-      "text": "Une légère tendance sud permet de poursuivre vers le nord depuis le Tromas, jusqu'à Dormillouse, puis Briançon ou Grenoble. Par tendance nord, en revanche, les arêtes au nord de Côte Longue sont au vent.",
+      "text": "Une légère tendance sud change la fin du vol : depuis le Tromas, on peut poursuivre vers le nord, jusqu'à Dormillouse, puis Briançon ou Grenoble. Par tendance nord, ce sont les arêtes au nord de Côte Longue qui se retrouvent au vent.",
       "focus": [
         "sommet-du-tromas",
         "tete-de-l-estrop",
@@ -120,7 +120,7 @@
     {
       "chapter": "Selon le vent météo",
       "title": "Par est d'altitude, des plafonds hauts et des vents tournants",
-      "text": "Par régime de nord-est ou d'est en altitude, le cross marche correctement et les plafonds sont hauts, mais les vents tournent sur les crêtes. La traversée du haut Var vers la Tinée se fait au printemps, pas en été, à cause des brises. Un jour de nord-est, un vol a profité d'une confluence entre le Courradour et Annot.",
+      "text": "Par régime de nord-est ou d'est en altitude, le cross marche correctement et les plafonds sont hauts, mais les vents tournent sur les crêtes. La traversée du haut Var vers la Tinée reste une affaire de printemps, pas d'été, à cause des brises. C'est aussi un jour de nord-est qu'un vol a profité de la confluence entre le Courradour et Annot.",
       "focus": [
         "convergence-courradour-annot",
         "saint-andre-allos-tinee"
@@ -135,7 +135,7 @@
     {
       "chapter": "Les transitions",
       "title": "Sortir : Saint-André, Dormillouse, la Tinée",
-      "text": "Reste à choisir sa sortie. Au sud, le couloir ramène à Saint-André par les crêtes de Maurel et des Serres. Au nord, la crête de la Blanche, une autoroute à planeurs, mène à Dormillouse et à Serre-Ponçon. À l'est, le haut Var et la Tinée se traversent surtout au printemps. Une légère tendance sud pousse encore plus loin, jusqu'à Briançon ou Grenoble.",
+      "text": "Au sud, le couloir ramène à Saint-André par les crêtes de Maurel et des Serres. Au nord, la crête de la Blanche, une autoroute à planeurs, mène à Dormillouse et à Serre-Ponçon, et une légère tendance sud pousse plus loin, jusqu'à Briançon ou Grenoble. À l'est, le haut Var et la Tinée se traversent surtout au printemps. À l'ouest, la pointe sud de Côte Longue ouvre sur la vallée de la Bléone, qui descend vers Digne : ses fortes brises sont celles qu'on évite au retour.",
       "focus": [
         "saint-andre-verdon/saint-andre-dormillouse-ar",
         "ubaye/therm-blanche-pic-des-tetes",

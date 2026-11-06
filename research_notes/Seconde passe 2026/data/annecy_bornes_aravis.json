@@ -1286,7 +1286,7 @@
           "lat": 45.8873,
           "alt_m": 1243,
           "best_hours": "après-midi",
-          "trigger": "croupe du Mont Baret sur la confluence de Bluffy, entre Dents de Lanfon et Roc des Bœufs",
+          "trigger": "croupe du Mont Baret sur la confluence de Bluffy, au nord-ouest des Dents de Lanfon",
           "role": "point de relance",
           "confidence": "low",
           "description": "Au nord-ouest des Dents de Lanfon, le Mont Baret se trouve sur la confluence de Bluffy.",
@@ -1886,7 +1886,8 @@
             "S32",
             "S29"
           ],
-          "note": "Mentionné pour mémoire."
+          "note": "Mentionné pour mémoire.",
+          "status": "delta"
         },
         {
           "id": "col-des-fretes",
@@ -4429,13 +4430,13 @@
         },
         {
           "id": "col-du-passet-tardevant",
-          "name": "Col du Passet : combes sous la Pointe de Tardevant",
+          "name": "Col du Passet et combes de La Creuse (à l'ouest de l'Étale)",
           "lon": 6.4298,
           "lat": 45.8429,
           "alt_m": 1917,
           "coord_quality": "approx",
           "best_hours": "milieu de journée et soir (95 % à midi comme le soir, 80 % le matin)",
-          "trigger": "combes et replats de La Creuse et du col du Passet, versant ouest de la Pointe de Tardevant",
+          "trigger": "combes et replats de La Creuse et du col du Passet, à l'ouest de l'Étale",
           "description": "À l'ouest de l'Étale, dans les combes et les replats de La Creuse et du col du Passet, un point chaud se forme à midi et le soir.",
           "confidence": "low",
           "sources": [
@@ -4570,7 +4571,8 @@
             "S64",
             "S21"
           ],
-          "note": "Vols d'enfants. Altitude 1 473 m ; 1 500 m sur la carte de brises ; 1 513 m pour d'autres sources. Coordonnées de référence. Une fiche ancienne donne 200 m de dénivelé et une finesse de 8,6, calculés avec une altitude de Cortibot de 1 300 m."
+          "note": "Vols d'enfants. Altitude 1 473 m ; 1 500 m sur la carte de brises ; 1 513 m pour d'autres sources. Coordonnées de référence. Une fiche ancienne donne 200 m de dénivelé et une finesse de 8,6, calculés avec une altitude de Cortibot de 1 300 m.",
+          "status": "saisonnier"
         },
         {
           "id": "beauregard",
@@ -4630,7 +4632,8 @@
             "S64",
             "S30"
           ],
-          "note": "Altitude 1 831 m (fiche de référence), 1 860 m (carte de brises). Orientations nord-est et sud-ouest sur la carte de brises. Une fiche ancienne donne 560 m de dénivelé et une finesse de 2,7, calculés avec une altitude de Cortibot de 1 300 m."
+          "note": "Altitude 1 831 m (fiche de référence), 1 860 m (carte de brises). Orientations nord-est et sud-ouest sur la carte de brises. Une fiche ancienne donne 560 m de dénivelé et une finesse de 2,7, calculés avec une altitude de Cortibot de 1 300 m.",
+          "status": "saisonnier"
         },
         {
           "id": "aiguille-des-calvaires",
@@ -4666,7 +4669,8 @@
           "sources": [
             "S62"
           ],
-          "note": "Finesse 3,9 vers Cortibot. Le téléphérique de l'Étale a disparu vers 2007 : décollage à considérer comme fermé, sauf information contraire. Position ramenée sur la station de remontée « Belvédère », au sommet du téléphérique, où le terrain est à 1 979 m ; l'ancienne position, 6.4425 E, 45.8719 N, tombait sur une pente à 1 782 m. Les Étages n'est pas homologué pour les écoles."
+          "note": "Finesse 3,9 vers Cortibot. Le téléphérique de l'Étale a disparu vers 2007 : décollage à considérer comme fermé, sauf information contraire. Position ramenée sur la station de remontée « Belvédère », au sommet du téléphérique, où le terrain est à 1 979 m ; l'ancienne position, 6.4425 E, 45.8719 N, tombait sur une pente à 1 782 m. Les Étages n'est pas homologué pour les écoles.",
+          "status": "interdit"
         },
         {
           "id": "balme-hiver",
@@ -4779,7 +4783,8 @@
             "S49",
             "S64"
           ],
-          "note": "Localisation à confirmer : « placement à confirmer » sur un relevé cartographique."
+          "note": "Localisation à confirmer : « placement à confirmer » sur un relevé cartographique.",
+          "status": "saisonnier"
         },
         {
           "id": "col-du-marais",

@@ -656,7 +656,7 @@
           "coord_quality": "source",
           "confidence": "medium",
           "best_hours": "début d'après-midi (13h pour un décollage de l'Épine)",
-          "trigger": "crête de l'Épine, pylônes (« grilles-pains »), raccrochage délicat sous le vent",
+          "trigger": "crête de l'Épine (« grilles-pains »), raccrochage délicat sous le vent",
           "description": "Sur la crête de l'Épine, vers le sud, les « grilles-pains » du Mont Grêle sont une relance du cheminement, et leur raccrochage compte parmi les passages engagés du tour de Chartreuse. Plus au sud encore, au Mont Beauvoir, on raccroche sous le vent, dans les turbulences.",
           "sources": [
             "S98",
@@ -1080,7 +1080,8 @@
             "S53"
           ],
           "coord_quality": "source",
-          "ffvl_id": 652
+          "ffvl_id": 652,
+          "status": "saisonnier"
         },
         {
           "id": "mery-chateau",
@@ -1088,13 +1089,14 @@
           "lon": 5.9407,
           "lat": 45.6494,
           "alt_m": 406,
-          "description": "Atterrissage au pied du Revard, au château de Méry.",
+          "description": "La fiche fédérale classe ce terrain non praticable : renseignez-vous auprès du club avant d'y compter. Atterrissage au pied du Revard, au château de Méry.",
           "sources": [
             "S60"
           ],
           "coord_quality": "source",
           "ffvl_id": 1078,
-          "note": "Terrain géré localement."
+          "note": "Terrain géré localement. Fiche FFVL 1078 relue en ligne (modifiée le 20/10/2026) : « terrain non praticable pour le vol libre », alors même qu'elle garde une description d'usage et une activité récente. À confirmer auprès du club.",
+          "status": "non-praticable"
         },
         {
           "id": "trevignin-veniper",
@@ -1108,7 +1110,8 @@
             "S44"
           ],
           "coord_quality": "source",
-          "ffvl_id": 1073
+          "ffvl_id": 1073,
+          "status": "saisonnier"
         },
         {
           "id": "topet-aixam",
@@ -1122,7 +1125,8 @@
             "S44"
           ],
           "coord_quality": "source",
-          "ffvl_id": 1074
+          "ffvl_id": 1074,
+          "status": "saisonnier"
         },
         {
           "id": "epine-les-marais",
@@ -2200,12 +2204,14 @@
           "orientations": [
             "S"
           ],
-          "description": "Au-dessus de Saint-Pierre-d'Albigny, ce décollage sud peut être perturbé par l'activité thermique, et l'atterrissage est entouré de vignes.",
+          "description": "La fiche fédérale classe ce terrain non praticable : renseignez-vous auprès du club avant d'y compter. Au-dessus de Saint-Pierre-d'Albigny, ce décollage sud peut être perturbé par l'activité thermique, et l'atterrissage est entouré de vignes.",
           "sources": [
             "S74"
           ],
           "coord_quality": "source",
-          "ffvl_id": 142
+          "ffvl_id": 142,
+          "status": "non-praticable",
+          "note": "Fiche FFVL 142 relue en ligne (modifiée le 20/10/2026) : « terrain non praticable pour le vol libre », alors même qu'elle garde une description d'usage et une activité récente. À confirmer auprès du club."
         },
         {
           "id": "ebaudiaz",
@@ -2260,7 +2266,7 @@
           "lon": 6.1661,
           "lat": 45.5706,
           "alt_m": 390,
-          "description": "Au pied de l'Arclusaz, cette petite surface est entourée de vignes, et l'activité thermique y est très technique.",
+          "description": "La fiche fédérale le classe temporairement non praticable. Au pied de l'Arclusaz, cette petite surface est entourée de vignes, et l'activité thermique y est très technique.",
           "sources": [
             "S74",
             "S75"
@@ -3671,7 +3677,7 @@
           "alt_m": 784,
           "coord_quality": "approx",
           "best_hours": "à midi et le soir d'après les traces GPS (97 % à midi, 96 % le soir, rien le matin)",
-          "trigger": "pentes sud-ouest du contrefort de Cusy, au-dessus du Chéran, à l'ouest du Pic de la Sauge",
+          "trigger": "pentes sud-ouest du contrefort de Cusy, au-dessus du Chéran",
           "description": "Sur les pentes sud-ouest du contrefort de Cusy, au-dessus du Chéran, au nord de la montagne de Bange, un point chaud se trouve de midi au soir, mais pas le matin.",
           "confidence": "low",
           "sources": [

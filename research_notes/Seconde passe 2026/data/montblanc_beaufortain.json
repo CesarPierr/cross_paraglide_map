@@ -925,9 +925,9 @@
           "lat": 45.9562,
           "alt_m": 2195,
           "coord_quality": "approx",
-          "best_hours": "le matin et à midi d'après les traces GPS (93 % le matin, 87 % à midi, 68 % le soir, rien le soir)",
+          "best_hours": "le matin et à midi d'après les traces GPS (93 % le matin, 87 % à midi, 68 % le soir)",
           "trigger": "alpages de La Charlanon et pentes sous l'Aiguille Pourrie (2511 m), au-dessus de Vallorcine",
-          "description": "Les alpages de La Charlanon et les pentes sous l'Aiguille Pourrie, au-dessus de Vallorcine, forment un point chaud.",
+          "description": "Les alpages de La Charlanon et les pentes sous l'Aiguille Pourrie, sur les Aiguilles Rouges, au-dessus des Praz, forment un point chaud.",
           "confidence": "low",
           "sources": [
             "S164"
@@ -1081,7 +1081,8 @@
           "possible": [
             "Les biplaces l'utilisent de mi-avril à fin juin, puis de septembre à début novembre."
           ],
-          "note": "Coordonnées : 45°54′08.4″N 6°53′01.4″E. Une autre source donne 2310 m, contre 2233 m dans la fiche."
+          "note": "Coordonnées : 45°54′08.4″N 6°53′01.4″E. Une autre source donne 2310 m, contre 2233 m dans la fiche.",
+          "status": "saisonnier"
         },
         {
           "id": "grands-montets",
@@ -1124,7 +1125,8 @@
             "S3",
             "S97"
           ],
-          "note": "Coordonnées : 45°52′46.9″N 6°53′35.0″E. Altitude de 3667 m, parfois donnée entre 3593 et 3700 m dans d'autres références. Il faut 30 minutes de cramponnage depuis la gare."
+          "note": "Coordonnées : 45°52′46.9″N 6°53′35.0″E. Altitude de 3667 m, parfois donnée entre 3593 et 3700 m dans d'autres références. Il faut 30 minutes de cramponnage depuis la gare.",
+          "status": "saisonnier"
         },
         {
           "id": "mont-blanc",
@@ -2483,7 +2485,8 @@
             "S109",
             "S61"
           ],
-          "note": "Atterrissage de la Gorge ou du Pontet, 4 km plus bas. Pendant l'ouverture du domaine skiable, la zone relève de l'arrêté de Hauteluce et des Contamines 2022-134-P."
+          "note": "Atterrissage de la Gorge ou du Pontet, 4 km plus bas. Pendant l'ouverture du domaine skiable, la zone relève de l'arrêté de Hauteluce et des Contamines 2022-134-P.",
+          "status": "saisonnier"
         },
         {
           "id": "domes-de-miage",
@@ -2581,7 +2584,8 @@
             "S106",
             "S64"
           ],
-          "note": "Niveau autonome ; réserve naturelle, à 300 m/sol. Parking à proximité, au pied du télécabine du Pontet."
+          "note": "Niveau autonome ; réserve naturelle, à 300 m/sol. Parking à proximité, au pied du télécabine du Pontet.",
+          "status": "saisonnier"
         },
         {
           "id": "practice-golf-contamines",
@@ -3442,7 +3446,7 @@
             "W",
             "N"
           ],
-          "description": "L'été, le Crêt du Midi est interdit à cause des troupeaux. Hors saison, ce sommet de 1958 m, au sud de Praz-sur-Arly, décolle vers l'ouest. Le vol est balistique, de chaque côté de la crête, sans ascendance particulière. Comptez 40 minutes de marche depuis le parking de Montrond, ou prenez le télésiège en hiver.",
+          "description": "La fiche fédérale classe ce terrain non praticable : renseignez-vous auprès du club avant d'y compter. L'été, le Crêt du Midi est interdit à cause des troupeaux. Hors saison, ce sommet de 1958 m, au sud de Praz-sur-Arly, décolle vers l'ouest. Le vol est balistique, de chaque côté de la crête, sans ascendance particulière. Comptez 40 minutes de marche depuis le parking de Montrond, ou prenez le télésiège en hiver.",
           "sources": [
             "S3",
             "S15",
@@ -3454,7 +3458,8 @@
             "Une autre donnée indique l'ouest et le nord-est, à 2000 m.",
             "On cite aussi les orientations nord, sud, ouest et nord-ouest."
           ],
-          "note": "Les coordonnées de la brochure (45°50′01.1″N 6°34′13.6″E) pointent en réalité sur Praz-sur-Arly : non retenues. La fiche officielle « Megève » (45.7921 N, 6.5985 E, 2030 m, orientations sud-est, sud, sud-ouest et nord) correspond probablement au sommet du Crêt du Midi voisin (déduction)."
+          "note": "Les coordonnées de la brochure (45°50′01.1″N 6°34′13.6″E) pointent en réalité sur Praz-sur-Arly : non retenues. La fiche officielle « Megève » (45.7921 N, 6.5985 E, 2030 m, orientations sud-est, sud, sud-ouest et nord) correspond probablement au sommet du Crêt du Midi voisin (déduction). Fiche FFVL 394 relue en ligne (modifiée le 20/10/2026) : « terrain non praticable pour le vol libre », alors même qu'elle garde une description d'usage et une activité récente. À confirmer auprès du club.",
+          "status": "non-praticable"
         },
         {
           "id": "cordon-tete-du-planet",
@@ -4445,14 +4450,14 @@
         },
         {
           "id": "beaufortain-crete-est-6333",
-          "name": "Beaufortain : crêtes au nord de Beaufort",
+          "name": "Beaufortain : crêtes à l'est de Beaufort",
           "lon": 6.6333,
           "lat": 45.7158,
           "alt_m": 1978,
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (87 % le matin, 92 % à midi, 96 % le soir)",
-          "trigger": "crêtes à 1978 m sur la ligne qui joint le Beaufortain au Val d'Arly",
-          "description": "Sur la ligne qui relie le Beaufortain au Val d'Arly, les crêtes à 1978 m donnent un point chaud à toute heure.",
+          "trigger": "crêtes à 1978 m à l'est de Beaufort",
+          "description": "À l'est de Beaufort, les crêtes à 1978 m donnent un point chaud à toute heure.",
           "confidence": "low",
           "sources": [
             "S164"

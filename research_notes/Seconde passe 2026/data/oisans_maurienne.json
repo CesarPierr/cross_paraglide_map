@@ -1502,7 +1502,7 @@
             "NE",
             "NW"
           ],
-          "description": "Site d'hiver à 2150 m, accessible à ski seulement par le sommet du TSD6 de Fontfroide. On décolle hors piste, entre les départs des pistes de Pré-rond et du Rosay. L'idéal est un vent faible ou la brise qui monte de la plaine de Bourg-d'Oisans. Au printemps, l'aérologie peut être forte quand l'enneigement varie beaucoup entre le bas et le haut du versant.",
+          "description": "La fiche fédérale indique une pratique strictement interdite sur ce terrain. Site d'hiver à 2150 m, accessible à ski seulement par le sommet du TSD6 de Fontfroide. On décolle hors piste, entre les départs des pistes de Pré-rond et du Rosay. L'idéal est un vent faible ou la brise qui monte de la plaine de Bourg-d'Oisans. Au printemps, l'aérologie peut être forte quand l'enneigement varie beaucoup entre le bas et le haut du versant.",
           "sources": [
             "S50"
           ],
@@ -1743,7 +1743,8 @@
             "VS15"
           ],
           "coord_quality": "source",
-          "ffvl_id": 1924
+          "ffvl_id": 1924,
+          "note": "Les textes citent aussi un terrain « des Essoulieux » : ce hameau est à environ 600 m au nord-est, sans fiche fédérale à ce nom ; il s'agit peut-être de ce terrain."
         },
         {
           "id": "bourg-oisans-le-vert",
@@ -1778,7 +1779,7 @@
           "lon": 6.0776,
           "lat": 45.0741,
           "alt_m": 1810,
-          "description": "À Auris, en bordure de la piste de fond de la boucle de la Rochette, ce terrain d'hiver à 1810 m est exploité pendant l'ouverture des remontées. Il convient par vent faible de nord, d'ouest ou de nord-ouest, quand la brise de nord n'est pas trop active.",
+          "description": "La fiche fédérale indique une pratique strictement interdite sur ce terrain. À Auris, en bordure de la piste de fond de la boucle de la Rochette, ce terrain d'hiver à 1810 m est exploité pendant l'ouverture des remontées. Il convient par vent faible de nord, d'ouest ou de nord-ouest, quand la brise de nord n'est pas trop active.",
           "sources": [
             "S59"
           ],

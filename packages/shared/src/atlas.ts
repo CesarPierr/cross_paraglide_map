@@ -117,18 +117,41 @@ export type FeatureCategory =
 
 /** Properties shared by every atlas feature (flattened for MapLibre). */
 /**
- * A take-off or landing a paraglider must not count on: `interdit` (a decree, the owner),
+ * A take-off or landing with a limit: `interdit` (a decree, the owner, the federation),
  * `non-praticable` (the federation's sheet), `non-confirme` (status unverified, one source
- * doubts it), `delta` (open, for hang gliders only). None means nothing is known against it.
+ * doubts it), `delta` (open, for hang gliders only), `saisonnier` (forbidden part of the year),
+ * `autorisation` (ask first). None means nothing is known against it.
  */
-export type SiteStatus = 'interdit' | 'non-praticable' | 'non-confirme' | 'delta';
+export type SiteStatus = 'interdit' | 'non-praticable' | 'non-confirme' | 'delta' | 'saisonnier' | 'autorisation';
 
 export const SITE_STATUS_LABELS: Record<SiteStatus, string> = {
   interdit: 'Interdit : ne pas utiliser',
   'non-praticable': 'Non praticable : ne pas compter dessus',
   'non-confirme': 'Statut non confirmé : à vérifier avant de voler',
   delta: 'Réservé au delta',
+  saisonnier: 'Interdit à certaines périodes : voir la fiche',
+  autorisation: 'Sur autorisation : à demander avant de voler',
 };
+
+/** The statuses that rule a place out whatever the day: never offered as somewhere to go. */
+export const CLOSED_SITE_STATUSES: readonly SiteStatus[] = ['interdit', 'non-praticable', 'non-confirme', 'delta'];
+export const isClosedSite = (status: SiteStatus | undefined): boolean => !!status && CLOSED_SITE_STATUSES.includes(status);
+
+/**
+ * A status from the federation's sheet: its « Praticabilité » and its « Pratiques ».
+ * « Sauf durant les périodes » only counts when the period is a real closure (some sheets
+ * write « Néant » there, or a rule about speed riding or a fire risk).
+ */
+export function statusFromFfvl(practicability: string, practices = ''): SiteStatus | undefined {
+  const p = practicability.trim();
+  if (/STRICTEMENT INTERDITE/.test(p)) return 'interdit';
+  if (/non praticable/i.test(p)) return 'non-praticable';
+  if (/autorisation/i.test(p)) return 'autorisation';
+  if (/\bdelta\b/.test(practices) && !/parapente/.test(practices)) return 'delta';
+  const period = /sauf durant la ou les périodes\s*:\s*(.*)$/s.exec(p)?.[1]?.trim();
+  if (period && !/néant|toute l'année|pas d'interdiction|manche à air|speed|coupe icare|feux? de forêt|partie basse/i.test(period)) return 'saisonnier';
+  return undefined;
+}
 
 export interface AtlasFeatureProps {
   id: string;

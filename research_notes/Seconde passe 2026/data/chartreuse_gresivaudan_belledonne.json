@@ -1284,7 +1284,7 @@
           "alt_m": 1680,
           "coord_quality": "approx",
           "confidence": "medium",
-          "best_hours": "après 13h-14h ; on reste à l'est des nuages tant que la face ouest n'est pas active",
+          "best_hours": "après 13h-14h ; on reste à l'ouest des nuages tant que la face ouest n'est pas active",
           "trigger": "hautes falaises est de la réserve (Dent, Dôme de Bellefond) alimentées en fin de matinée",
           "description": "Les faces est de la Dent de Crolles, vers le col de Bellefond, font ascenseur et plafond sur le cheminement classique vers le Granier. Au nord du col, les plafonds peuvent rester sous la crête : avant 14 h, basculer en face ouest est délicat, et l'on reste sur les faces est, à l'ouest des nuages.",
           "sources": [
@@ -1970,7 +1970,10 @@
           "alt_m": 2082,
           "coord_quality": "source",
           "ffvl_id": 5260,
-          "orientations": [],
+          "orientations": [
+            "SE",
+            "W"
+          ],
           "description": "Vers 2080 m sur Chamechaude, le décollage s'ouvre au sud-est et à l'ouest, mais la montée et le décollage sont beaucoup plus techniques qu'ailleurs. On peut poser à Saint-Hugues s'il est ouvert.",
           "sources": [
             "S88",
@@ -2030,7 +2033,7 @@
           "orientations": [
             "NW"
           ],
-          "description": "Au nord du Granier, à Montagnole, ce décollage de falaise se prend par vent de nord, vers 840-880 m (880 m sur la carte du parc). Attention aux lignes à très haute tension au sud, et à la zone aérienne R48.",
+          "description": "La fiche fédérale classe ce terrain non praticable : renseignez-vous auprès du club avant d'y compter. Au nord du Granier, à Montagnole, ce décollage de falaise se prend par vent de nord, vers 840-880 m (880 m sur la carte du parc). Attention aux lignes à très haute tension au sud, et à la zone aérienne R48.",
           "sources": [
             "S54",
             "S29",
@@ -2038,7 +2041,9 @@
           ],
           "possible": [
             "En dynamique, le site reprend depuis assez bas, mais une grosse brise peut y balayer les bulles."
-          ]
+          ],
+          "status": "non-praticable",
+          "note": "Fiche FFVL 649 relue en ligne (modifiée le 20/10/2026) : « terrain non praticable pour le vol libre », alors même qu'elle garde une description d'usage et une activité récente. À confirmer auprès du club."
         },
         {
           "id": "mont-granier",
@@ -2119,7 +2124,8 @@
           "sources": [
             "S93",
             "S30"
-          ]
+          ],
+          "status": "saisonnier"
         },
         {
           "id": "grand-ratz-atterro",
@@ -2143,11 +2149,13 @@
           "alt_m": 680,
           "coord_quality": "source",
           "ffvl_id": 650,
-          "description": "Atterrissage dans les prés en contrebas, par la D6 puis la D4. Repérez-le avant de monter, et renseignez-vous sur son accessibilité.",
+          "description": "La fiche fédérale classe ce terrain non praticable : renseignez-vous auprès du club avant d'y compter. Atterrissage dans les prés en contrebas, par la D6 puis la D4. Repérez-le avant de monter, et renseignez-vous sur son accessibilité.",
           "sources": [
             "S55",
             "S29"
-          ]
+          ],
+          "status": "non-praticable",
+          "note": "Fiche FFVL 650 relue en ligne (modifiée le 20/10/2026) : « terrain non praticable pour le vol libre », alors même qu'elle garde une description d'usage et une activité récente. À confirmer auprès du club."
         }
       ],
       "synoptic_effects": [
@@ -3108,7 +3116,7 @@
         },
         {
           "id": "chamrousse-brise-soir-canicule",
-          "name": "Brise du Grésivaudan renforcée en soirée de forte canicule (au pied de Chamrousse)",
+          "name": "Brise du Grésivaudan renforcée en soirée de forte canicule (au décollage de l'Aiguille)",
           "kind": "strong-breeze",
           "lon": 5.883,
           "lat": 45.13,
@@ -5264,7 +5272,8 @@
           "description": "Sur une piste du Collet d'Allevard, le Nid d'Aigle est fermé pendant la saison de ski. Ce décollage raide, avec un départ sur le plat, à 1675 m, de niveau vert, s'ouvre sur un terrain un peu escarpé (souches, arbustes). Il est sous le vent par sud, et un télésiège passe à gauche : attention par ouest marqué.",
           "sources": [
             "S59"
-          ]
+          ],
+          "status": "saisonnier"
         },
         {
           "id": "collet-plagnes",
@@ -5485,7 +5494,8 @@
           "sources": [
             "S96"
           ],
-          "note": "Protégé par un arrêté de protection de biotope."
+          "note": "Protégé par un arrêté de protection de biotope.",
+          "status": "saisonnier"
         },
         {
           "id": "val-pelouse-molliet",

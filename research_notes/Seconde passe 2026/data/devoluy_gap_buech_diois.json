@@ -312,7 +312,7 @@
           "lat": 44.6744,
           "alt_m": null,
           "coord_quality": "source",
-          "best_hours": "après-midi, plafonds modestes (récit de juin)",
+          "best_hours": "après-midi (récit de juin)",
           "trigger": "sommets du Dévoluy occidental enchaînés depuis le Chamousset",
           "description": "À l'ouest du massif, depuis le Chamousset, les sommets du Dévoluy occidental se suivent : la Tête de Vachères, la Tête de la Cluse, puis le Pic de Bure.",
           "confidence": "medium",
@@ -1645,7 +1645,8 @@
             "S156",
             "S157"
           ],
-          "ffvl_id": 14137
+          "ffvl_id": 14137,
+          "status": "saisonnier"
         },
         {
           "id": "vieux-chaillol-sommet",
@@ -1799,7 +1800,7 @@
             "S157"
           ],
           "ffvl_id": 14138,
-          "status": "interdit"
+          "status": "saisonnier"
         },
         {
           "id": "pre-du-frene-chaillol",
@@ -5427,7 +5428,7 @@
         },
         {
           "id": "therm-garde-grosse-relais",
-          "name": "Garde-Grosse (Nyons) : déco du relais sur la crête au nord de Nyons",
+          "name": "Garde-Grosse (Nyons) : déco du relais sur la crête au sud-est de Nyons",
           "lon": 5.1543,
           "lat": 44.3367,
           "alt_m": null,
@@ -5627,7 +5628,7 @@
           "alt_m": 892,
           "coord_quality": "approx",
           "best_hours": "milieu de journée et fin de journée d'après les traces GPS (66 % le matin, 90 % à midi, 89 % en fin de journée ; 87 % en été, 91 % en automne, 69 % au printemps, rien en hiver)",
-          "trigger": "pente nord-ouest raide (31°) à 890 m sous les Grands Rochers de Banne, au pied de la barre rocheuse, à l'est de Mévouillon",
+          "trigger": "pente nord-ouest raide (31°) à 890 m sous les Grands Rochers de Banne, au pied de la barre rocheuse, à l'ouest de Mévouillon",
           "description": "Sous la barre des Grands Rochers de Banne, à l'ouest de Mévouillon, la pente nord-ouest, raide, peut déclencher, surtout l'après-midi. Aucun décollage ni atterrissage n'est tout près : le plus proche décollage est Buc, à 11 km.",
           "confidence": "low",
           "sources": [
@@ -5956,11 +5957,13 @@
           "lon": 5.1167,
           "lat": 44.3485,
           "alt_m": 246,
-          "description": "L'atterrissage du bas de Nyons, dans la zone d'activité des Laurons.",
+          "description": "La fiche fédérale classe ce terrain non praticable : renseignez-vous auprès du club avant d'y compter. L'atterrissage du bas de Nyons, dans la zone d'activité des Laurons.",
           "sources": [
             "S135"
           ],
-          "ffvl_id": 141
+          "ffvl_id": 141,
+          "status": "non-praticable",
+          "note": "Fiche FFVL 141 relue en ligne (modifiée le 20/10/2026) : « terrain non praticable pour le vol libre », alors même qu'elle garde une description d'usage et une activité récente. À confirmer auprès du club."
         },
         {
           "id": "la-soubeyrand-tarendol",
@@ -5968,13 +5971,14 @@
           "lon": 5.3432,
           "lat": 44.3534,
           "alt_m": 696,
-          "description": "L'atterrissage de Soubeyrand est au sud du décollage, à Tarendol.",
+          "description": "La fiche fédérale classe ce terrain non praticable : renseignez-vous auprès du club avant d'y compter. L'atterrissage de Soubeyrand est au sud du décollage, à Tarendol.",
           "sources": [
             "S137",
             "S138"
           ],
           "ffvl_id": 674,
-          "note": "Autre atterrissage, à Sainte-Jalle, aux coordonnées 44.3452, 5.2871, à 433 m ; il sert aussi de pente école, et il est ouvert sur autorisation systématique, dans la parcelle des manches à air."
+          "note": "Autre atterrissage, à Sainte-Jalle, aux coordonnées 44.3452, 5.2871, à 433 m ; il sert aussi de pente école, et il est ouvert sur autorisation systématique, dans la parcelle des manches à air. Fiche FFVL 674 relue en ligne (modifiée le 20/10/2026) : « terrain non praticable pour le vol libre », alors même qu'elle garde une description d'usage et une activité récente. À confirmer auprès du club.",
+          "status": "non-praticable"
         },
         {
           "id": "la-buc",
@@ -7419,14 +7423,15 @@
           "orientations": [
             "S"
           ],
-          "description": "À l'est de Die, le décollage sud du Glandasse se situe entre 1 780 et 1 818 m, en limite de la réserve du Vercors, à 2h30 de marche depuis Châtillon-en-Diois.",
+          "description": "La fiche fédérale classe ce terrain non praticable : renseignez-vous auprès du club avant d'y compter. À l'est de Die, le décollage sud du Glandasse se situe entre 1 780 et 1 818 m, en limite de la réserve du Vercors, à 2h30 de marche depuis Châtillon-en-Diois.",
           "sources": [
             "S93",
             "S32",
             "S82"
           ],
           "ffvl_id": 693,
-          "note": "Zone de sensibilité majeure pour le gypaète, sur la face ouest, du 1er novembre au 31 août."
+          "note": "Zone de sensibilité majeure pour le gypaète, sur la face ouest, du 1er novembre au 31 août. Fiche FFVL 693 relue en ligne (modifiée le 20/10/2026) : « terrain non praticable pour le vol libre », alors même qu'elle garde une description d'usage et une activité récente. À confirmer auprès du club.",
+          "status": "non-praticable"
         },
         {
           "id": "to-glandasse-abel",
@@ -7437,11 +7442,13 @@
           "orientations": [
             "S"
           ],
-          "description": "Décollage délicat, voire impossible, quand la brise de vallée est bien installée. On y fait de la dynamique par vent de sud, dans de bonnes conditions thermiques.",
+          "description": "La fiche fédérale classe ce terrain non praticable : renseignez-vous auprès du club avant d'y compter. Décollage délicat, voire impossible, quand la brise de vallée est bien installée. On y fait de la dynamique par vent de sud, dans de bonnes conditions thermiques.",
           "sources": [
             "S94"
           ],
-          "ffvl_id": 694
+          "ffvl_id": 694,
+          "status": "non-praticable",
+          "note": "Fiche FFVL 694 relue en ligne (modifiée le 20/10/2026) : « terrain non praticable pour le vol libre », alors même qu'elle garde une description d'usage et une activité récente. À confirmer auprès du club."
         },
         {
           "id": "to-lesches",
@@ -7474,13 +7481,14 @@
             "W",
             "S"
           ],
-          "description": "Au nord de Die, ce site non conventionné est pour pilotes chevronnés. Le décollage est étroit et pentu, à 830 m, à 50 min de marche, et il faut une brise bien axée de face. On peut partir en cross vers la Dent de Die et le Glandasse. Il n'y a pas d'atterrissage officiel : une tolérance permet de poser aux abords du chemin des Batets, sous la RD 518.",
+          "description": "La fiche fédérale classe ce terrain non praticable : renseignez-vous auprès du club avant d'y compter. Au nord de Die, ce site non conventionné est pour pilotes chevronnés. Le décollage est étroit et pentu, à 830 m, à 50 min de marche, et il faut une brise bien axée de face. On peut partir en cross vers la Dent de Die et le Glandasse. Il n'y a pas d'atterrissage officiel : une tolérance permet de poser aux abords du chemin des Batets, sous la RD 518.",
           "sources": [
             "S81",
             "S96"
           ],
           "ffvl_id": 13656,
-          "note": "Une autre altitude, 450 m, correspond probablement à l'atterrissage. Le terrain officiel le plus proche est Chamarges."
+          "note": "Une autre altitude, 450 m, correspond probablement à l'atterrissage. Le terrain officiel le plus proche est Chamarges. Fiche FFVL 13656 relue en ligne (modifiée le 20/10/2026) : « terrain non praticable pour le vol libre », alors même qu'elle garde une description d'usage et une activité récente. À confirmer auprès du club.",
+          "status": "non-praticable"
         },
         {
           "id": "to-volvent",
@@ -7548,11 +7556,13 @@
           "orientations": [
             "N"
           ],
-          "description": "Décollage en gazon, tourné vers le nord, pour de la dynamique par vent de nord modéré.",
+          "description": "La fiche fédérale classe ce terrain non praticable : renseignez-vous auprès du club avant d'y compter. Décollage en gazon, tourné vers le nord, pour de la dynamique par vent de nord modéré.",
           "sources": [
             "S98"
           ],
-          "ffvl_id": 699
+          "ffvl_id": 699,
+          "status": "non-praticable",
+          "note": "Fiche FFVL 699 relue en ligne (modifiée le 20/10/2026) : « terrain non praticable pour le vol libre », alors même qu'elle garde une description d'usage et une activité récente. À confirmer auprès du club."
         },
         {
           "id": "aurel-clot-du-ciel",
@@ -7637,7 +7647,8 @@
             "S99",
             "S74"
           ],
-          "ffvl_id": 698
+          "ffvl_id": 698,
+          "status": "saisonnier"
         },
         {
           "id": "la-garandons",

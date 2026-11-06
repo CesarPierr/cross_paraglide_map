@@ -8,7 +8,7 @@ import type { ExpressionSpecification, FilterSpecification, GeoJSONSource, Symbo
 import type { AtlasFeature, FeatureCategory } from '@brises/shared';
 import { windowActivity } from '@brises/model';
 import { useRuntime, type AppState, type LayerKey, type Readability } from '../../state/store';
-import { CATEGORY_LABELS, CONFIDENCE_LABELS, KIND_LABELS, SITE_STATUS_LABELS, ensureImportance } from '@brises/shared';
+import { CATEGORY_LABELS, CLOSED_SITE_STATUSES, CONFIDENCE_LABELS, KIND_LABELS, SITE_STATUS_LABELS, ensureImportance, isClosedSite } from '@brises/shared';
 import { EXPLAIN } from '../../glossary';
 import { BREEZE_COLORS, COLORS } from '../palette';
 import { maxTierAt, zoomForTier } from '../tiers';
@@ -249,7 +249,7 @@ export class KnowledgeModule implements MapModule {
           minzoom: 8.8 + later,
           layout: {
             // A landing not to count on (`SiteStatus`) never looks like one.
-            'icon-image': icon === 'landing' ? ['case', ['has', 'status'], 'landing-closed', 'landing'] : icon,
+            'icon-image': icon === 'landing' ? ['case', ['in', ['get', 'status'], ['literal', [...CLOSED_SITE_STATUSES]]], 'landing-closed', 'landing'] : icon,
             'icon-size': ['interpolate', ['linear'], ['zoom'], 7, ['*', 0.55, TIER_ICON], 12, ['*', 0.95, TIER_ICON]],
             'icon-allow-overlap': true,
             // Labels never overlap: the essentials and the best-ranked keep theirs.
@@ -471,7 +471,7 @@ export class KnowledgeModule implements MapModule {
     const p = f.properties;
     const coords = f.geometry.type === 'Point' ? [f.geometry.coordinates] : f.geometry.coordinates;
     const badges: FeatureDetails['badges'] = [];
-    if (p.status) badges.push({ label: SITE_STATUS_LABELS[p.status], tone: p.status === 'delta' || p.status === 'non-confirme' ? 'warn' : 'bad' });
+    if (p.status) badges.push({ label: SITE_STATUS_LABELS[p.status], tone: isClosedSite(p.status) && p.status !== 'delta' && p.status !== 'non-confirme' ? 'bad' : 'warn' });
     if (p.kind && KIND_LABELS[p.kind]) badges.push({ label: KIND_LABELS[p.kind], tone: 'info' });
     if (p.confidence) badges.push({ label: CONFIDENCE_LABELS[p.confidence], tone: p.confidence === 'high' ? 'ok' : p.confidence === 'medium' ? 'warn' : 'bad' });
     if (p.tier === 1) badges.push({ label: 'Essentiel du secteur', tone: 'info' });

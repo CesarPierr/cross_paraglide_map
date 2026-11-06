@@ -2058,7 +2058,7 @@
         },
         {
           "id": "brise-descendante-soir-vallouise",
-          "name": "Forte brise descendante du soir (Vallouise)",
+          "name": "Brise descendante du soir (Vallouise)",
           "kind": "strong-breeze",
           "lon": 6.4889,
           "lat": 44.8422,
@@ -3301,7 +3301,8 @@
             "S31",
             "S30"
           ],
-          "ffvl_id": 14278
+          "ffvl_id": 14278,
+          "status": "saisonnier"
         },
         {
           "id": "atterro-guillestre",
@@ -3566,7 +3567,7 @@
         },
         {
           "id": "prorel-embrun-2010",
-          "name": "Prorel → Croix d'Aquila → Bouchier → Guillestre → Mont-Dauphin → Risoul → Embrun (26 mars 2010)",
+          "name": "Prorel → Croix d'Aquila → Bouchier → Guillestre → Mont-Dauphin → Risoul → Embrun (26 mars",
           "waypoints": [
             {
               "name": "Prorel (déco)",
@@ -4801,14 +4802,16 @@
           "lat": 44.5458,
           "alt_m": 782,
           "coord_quality": "source",
-          "description": "Au bord du lac, à Embrun, vers 800 m, c'est le terrain du centre de vacances de Chadenas : contactez-le avant de vous y poser. Il n'est pas immense, mais les pilotes l'utilisent par brise soutenue. Attention aux turbulences d'arbres en entrée. C'est une enceinte privée, en cours d'homologation : garez-vous dehors.",
+          "description": "La fiche fédérale classe ce terrain non praticable : renseignez-vous auprès du club avant d'y compter. Au bord du lac, à Embrun, vers 800 m, c'est le terrain du centre de vacances de Chadenas : contactez-le avant de vous y poser. Il n'est pas immense, mais les pilotes l'utilisent par brise soutenue. Attention aux turbulences d'arbres en entrée. C'est une enceinte privée, en cours d'homologation : garez-vous dehors.",
           "sources": [
             "S10",
             "HS17",
             "HS19",
             "HS18"
           ],
-          "ffvl_id": 1776
+          "ffvl_id": 1776,
+          "status": "non-praticable",
+          "note": "Fiche FFVL 1776 relue en ligne (modifiée le 20/10/2026) : « terrain non praticable pour le vol libre », alors même qu'elle garde une description d'usage et une activité récente. À confirmer auprès du club."
         },
         {
           "id": "atterro-rond-point-orres",
@@ -4896,7 +4899,8 @@
           "possible": [
             "Du 1er au 15 juin, le terrain peut être occupé par des bovins.",
             "Par brise forte, gare à ne pas vous faire venturiser."
-          ]
+          ],
+          "status": "saisonnier"
         },
         {
           "id": "atterro-st-vincent-lac",
@@ -6752,20 +6756,7 @@
           "note": "Sur la carte, le décollage de la Croix n'avait aucun thermique à moins de 2,2 km ; la position est entre les hameaux de Bouzoulières et de Rata. Le déclencheur est déduit du relief."
         }
       ],
-      "soaring_spots": [
-        {
-          "id": "soaring-seolanes",
-          "name": "Falaises des Séolanes / forêt de la Gimette (Barcelonnette)",
-          "lon": 6.62,
-          "lat": 44.42,
-          "coord_quality": "approx",
-          "description": "Au sud-ouest de Barcelonnette, une école propose un vol de 1000 m de dénivelé, le long des falaises des Séolanes ou au-dessus de la forêt de la Gimette.",
-          "sources": [
-            "S82"
-          ],
-          "note": "Position indicative : aucune coordonnée publiée."
-        }
-      ],
+      "soaring_spots": [],
       "takeoffs": [
         {
           "id": "faucon-barcelonnette",
@@ -6971,32 +6962,22 @@
           "lat": 44.3868,
           "alt_m": 1151,
           "coord_quality": "source",
-          "description": "À la sortie de Barcelonnette vers Le Sauze, c'est le terrain le plus facile et le plus pratique de la vallée, utilisé pour le Point de Vue et Soleil Bœuf : une sorte d'hippodrome, tout en herbe, parfaitement plat, d'environ 6 hectares, à 5 minutes à pied de l'école.",
+          "description": "À la sortie de Barcelonnette vers Le Sauze, c'est le terrain le plus facile et le plus pratique de la vallée, utilisé pour le Point de Vue et Soleil Bœuf : une sorte d'hippodrome, tout en herbe, parfaitement plat, d'environ 6 hectares, à 5 minutes à pied de l'école. Méfiez-vous de la force de la brise.",
           "sources": [
             "S81",
             "S49",
             "S97",
-            "S94"
+            "S94",
+            "S10",
+            "S82"
           ],
           "ffvl_id": 3109,
           "possible": [
             "La brise peut y être forte entre 12h et 20h, parfois critique, même pour traverser l'Ubaye et rejoindre le terrain.",
-            "Par jour calme, à 11h, elle a été très faible, d'est en ouest."
+            "Par jour calme, à 11h, elle a été très faible, d'est en ouest.",
+            "Au sud-ouest de Barcelonnette, une école propose un vol de 1000 m de dénivelé, le long des falaises des Séolanes ou au-dessus de la forêt de la Gimette."
           ],
           "note": "Terrain officiel, mais non conventionné avec la fédération."
-        },
-        {
-          "id": "atterro-hippodrome",
-          "name": "Barcelonnette – Hippodrome",
-          "lon": 6.6688,
-          "lat": 44.3871,
-          "alt_m": null,
-          "coord_quality": "source",
-          "description": "Méfiez-vous de la force de la brise.",
-          "sources": [
-            "S10"
-          ],
-          "note": "Même point que La Chaup : ce terrain est une sorte d'hippodrome, très grand."
         },
         {
           "id": "atterro-jausiers",
@@ -7022,7 +7003,8 @@
           "sources": [
             "S77"
           ],
-          "ffvl_id": 13320
+          "ffvl_id": 13320,
+          "status": "saisonnier"
         },
         {
           "id": "atterro-restefond",
@@ -7048,7 +7030,8 @@
           "sources": [
             "S80"
           ],
-          "ffvl_id": 13429
+          "ffvl_id": 13429,
+          "status": "autorisation"
         },
         {
           "id": "atterro-saint-ours",
@@ -7061,7 +7044,8 @@
           "sources": [
             "S78"
           ],
-          "ffvl_id": 13347
+          "ffvl_id": 13347,
+          "status": "saisonnier"
         },
         {
           "id": "atterro-lac-des-sagnes",

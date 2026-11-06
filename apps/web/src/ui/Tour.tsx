@@ -6,7 +6,7 @@
  * time slot and pulses the place it talks about; "Approfondir" opens the full
  * sourced detail. Built from the atlas only.
  */
-import type { Atlas, AtlasFeature, AtlasFeatureProps, AtlasMassif, AtlasTourPlace, FeatureCategory } from '@brises/shared';
+import { isClosedSite, type Atlas, type AtlasFeature, type AtlasFeatureProps, type AtlasMassif, type AtlasTourPlace, type FeatureCategory } from '@brises/shared';
 import { Marker, type GeoJSONSource, type Map as MapLibreMap } from 'maplibre-gl';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { activeInSlot, thermalRole } from '../map/modules/schema';
@@ -343,7 +343,7 @@ export function buildTour(atlas: Atlas, m: AtlasMassif): Step[] {
 
   // 7. Take-offs and landings.
   const takeoffs = own('takeoffs').slice(0, 4);
-  const landings = own('landings').filter((l) => !l.properties.status).slice(0, 3);
+  const landings = own('landings').filter((l) => !isClosedSite(l.properties.status)).slice(0, 3);
   if (takeoffs.length)
     steps.push({
       chapter: 'Décoller et poser',

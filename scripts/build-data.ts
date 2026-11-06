@@ -15,12 +15,26 @@ import type { CuratedBreezeInput, CuratedHazardInput } from '@brises/model';
 import type { BreezeCondition } from '@brises/shared';
 import type { Atlas, AtlasFeature, AtlasFeatureProps, AtlasFigure, AtlasMassif, AtlasSource, AtlasTourPlace, AtlasTourStep, FeatureCategory, ModelRule } from '@brises/shared';
 import { analyseTerrain, type Terrain } from '@brises/model';
-import { splitAtlas, stampImportance } from '@brises/shared';
+import { splitAtlas, stampImportance, statusFromFfvl, type SiteStatus } from '@brises/shared';
 import { loadDem } from '@brises/model/node';
 import { integrateKk7, kk7Markdown, type Kk7Report } from './kk7';
 import { tileSectors } from './tessellation';
 
 const ROOT = process.cwd();
+// The federation's sheets (scripts/import-sites.ts): a take-off's or landing's practicability.
+const ffvlSheets = new Map<string, { details?: Record<string, string> }>(
+  existsSync(join(ROOT, 'apps/web/public/data/sites-ffvl.json'))
+    ? (JSON.parse(readFileSync(join(ROOT, 'apps/web/public/data/sites-ffvl.json'), 'utf8')) as ({ id: string; details?: Record<string, string> })[]).map((x) => [x.id, x])
+    : [],
+);
+/** The status of a take-off or landing: the one written in its research file, else its federation sheet's. */
+function siteStatus(cat: string, it: RawItem, details: Record<string, string>): SiteStatus | undefined {
+  if (cat !== 'takeoffs' && cat !== 'landings') return undefined;
+  const sheet = it.ffvl_id ? ffvlSheets.get(String(it.ffvl_id))?.details : undefined;
+  if (sheet?.['Praticabilité']) details['Statut fédéral'] = sheet['Praticabilité'];
+  return it.status ?? (sheet ? statusFromFfvl(sheet['Praticabilité'] ?? '', sheet['Pratiques'] ?? '') : undefined);
+}
+
 const RESEARCH = join(ROOT, 'research_notes', 'Brises des Alpes françaises', 'data');
 /**
  * Second research pass: each of its files is a complete, revised version of the
@@ -58,8 +72,9 @@ interface RawPoint {
 }
 interface RawItem extends RawPoint, RawText {
   id?: string;
+  ffvl_id?: number;
   /** Take-offs and landings not to count on (`SiteStatus`). */
-  status?: 'interdit' | 'non-praticable' | 'non-confirme' | 'delta';
+  status?: SiteStatus;
   kind?: string;
   description?: string;
   conditions?: string;
@@ -1159,7 +1174,7 @@ function main() {
               coordQuality: verified || it.coord_quality === 'source' ? 'source' : 'approx',
               altDelta,
               details,
-              ...(it.status ? { status: it.status } : {}),
+              ...(siteStatus(cat, it, details) ? { status: siteStatus(cat, it, details) } : {}),
               ...(ix.possible ? { possible: ix.possible } : {}),
             },
           });

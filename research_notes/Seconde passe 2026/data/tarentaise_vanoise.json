@@ -1339,7 +1339,8 @@
             "SW",
             "W"
           ],
-          "note": "Finesse minimale de 5. Les autres décollages d'Arc 1600 : Clocheret, Clocheret Bas, Arpette (6,7988 E ; 45,5747 N), Vagère et Vezaille ; l'Altiport est interdit, voir sa fiche."
+          "note": "Finesse minimale de 5. Les autres décollages d'Arc 1600 : Clocheret, Clocheret Bas, Arpette (6,7988 E ; 45,5747 N), Vagère et Vezaille ; l'Altiport est interdit, voir sa fiche.",
+          "status": "saisonnier"
         },
         {
           "id": "fenetre-7-deco",
@@ -1447,7 +1448,8 @@
           ],
           "orientations": [
             "SW"
-          ]
+          ],
+          "note": "Position de la fiche fédérale 1453 (commune de Macot-La Plagne), au nord-ouest d'Aime, soit de l'autre côté de l'Isère par rapport à Macot : à vérifier sur place."
         },
         {
           "id": "prariond-macot-deco",
@@ -1664,7 +1666,8 @@
             "W",
             "NW"
           ],
-          "note": "Une carte de club prolonge l'interdiction jusqu'au 31 octobre."
+          "note": "Une carte de club prolonge l'interdiction jusqu'au 31 octobre.",
+          "status": "saisonnier"
         },
         {
           "id": "clocheret",
@@ -1904,7 +1907,8 @@
           ],
           "orientations": [
             "NW"
-          ]
+          ],
+          "status": "saisonnier"
         },
         {
           "id": "roches-noires-rosiere",
@@ -2131,13 +2135,13 @@
           "alt_m": 820,
           "coord_quality": "source",
           "ffvl_id": 13678,
-          "description": "Autorisé seulement du 1er juillet au 31 août, interdit le reste de l'année, ce terrain étroit est en plein centre de Bourg, près du funiculaire. Utilisez-le par vent faible, le matin jusqu'à 13h ou en fin de journée. Évitez-le l'après-midi d'été : il peut être thermique dès 11h, la confluence peut durer tard, et le foehn de nord-est du col du Petit-Saint-Bernard peut s'y faire sentir.",
+          "description": "La fiche fédérale indique une pratique strictement interdite sur ce terrain étroit, en plein centre de Bourg, près du funiculaire. Utilisez-le par vent faible, le matin jusqu'à 13h ou en fin de journée. Évitez-le l'après-midi d'été : il peut être thermique dès 11h, la confluence peut durer tard, et le foehn de nord-est du col du Petit-Saint-Bernard peut s'y faire sentir.",
           "sources": [
             "S85",
             "S49",
             "S38"
           ],
-          "note": "Niveau BP. Pas de manche à air. Hors de ces dates, le terrain est marqué « pratique strictement interdite »."
+          "note": "Niveau BP. Pas de manche à air. Hors de ces dates, le terrain est marqué « pratique strictement interdite ». Une autre source le dit autorisé du 1er juillet au 31 août et interdit le reste de l'année : la fiche fédérale prime."
         },
         {
           "id": "versoyen-bourg-saint-maurice",
@@ -2230,7 +2234,8 @@
           "description": "Atterrissage interdit du 15 mai à fin juin ou début juillet, selon la fenaison. Le vent de nord y est favorable. Méfiez-vous de l'ouest et du sud-ouest : ils s'opposent à la brise, et s'ils sont soutenus, ils peuvent couler dans la vallée et créer de l'onde. Une route borde le terrain de chaque côté, des bosquets marquent l'entrée, et il est en léger dévers.",
           "sources": [
             "S120"
-          ]
+          ],
+          "status": "saisonnier"
         }
       ],
       "synoptic_effects": [
@@ -3259,7 +3264,7 @@
           "alt_m": 2611,
           "coord_quality": "source",
           "ffvl_id": 5314,
-          "description": "Au-dessus de Méribel, ce décollage raide a un bon replat pour préparer la voile. Ne décollez et ne vous posez pas sur les pistes, et comptez avec le vent de sud fort qui se lève en fin de journée. Ski ou snowboard sont conseillés l'hiver ; l'été, la piste est facile.",
+          "description": "Sur la crête entre Méribel et Courchevel, ce décollage raide a un bon replat pour préparer la voile. Ne décollez et ne vous posez pas sur les pistes, et comptez avec le vent de sud fort qui se lève en fin de journée. Ski ou snowboard sont conseillés l'hiver ; l'été, la piste est facile.",
           "sources": [
             "S131",
             "S52"
@@ -3484,7 +3489,8 @@
           "sources": [
             "S130"
           ],
-          "note": "Balise 210 sur place."
+          "note": "Balise 210 sur place.",
+          "status": "saisonnier"
         },
         {
           "id": "pont-des-chailles-champagny",

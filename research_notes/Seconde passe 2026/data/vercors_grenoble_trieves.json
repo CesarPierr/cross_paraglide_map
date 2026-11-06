@@ -723,7 +723,7 @@
         },
         {
           "id": "poisat",
-          "name": "Poisat (Belledonne ouest, Grenoble est) - FFVL 13474",
+          "name": "Poisat (Belledonne ouest, Grenoble sud-est) - FFVL 13474",
           "lon": 5.7772,
           "lat": 45.1545,
           "alt_m": 681,
@@ -2624,7 +2624,7 @@
             "W",
             "NW"
           ],
-          "description": "Plus au nord et plus bas que Montaud, à Saint-Quentin-sur-Isère, un petit décollage s'ouvre au nord, à l'ouest et au nord-ouest.",
+          "description": "La fiche fédérale indique une pratique strictement interdite sur ce terrain. Plus au nord et plus bas que Montaud, à Saint-Quentin-sur-Isère, un petit décollage s'ouvre au nord, à l'ouest et au nord-ouest.",
           "sources": [
             "S134"
           ],
@@ -2665,7 +2665,8 @@
           "sources": [
             "S140"
           ],
-          "ffvl_id": 13562
+          "ffvl_id": 13562,
+          "status": "saisonnier"
         },
         {
           "id": "la-lia",
@@ -2784,7 +2785,8 @@
           "sources": [
             "S130",
             "S43"
-          ]
+          ],
+          "status": "saisonnier"
         },
         {
           "id": "meaudre-farlaix",
@@ -2825,7 +2827,8 @@
           "description": "Près de la salle des spectacles, au nord du décollage de Montaud, ce site est très sensible, et il est fermé chaque année pour la fenaison. L'aérologie y est difficile, et une prise de terrain en L est conseillée.",
           "sources": [
             "S135"
-          ]
+          ],
+          "status": "saisonnier"
         },
         {
           "id": "alevoux-atterro",
@@ -3751,11 +3754,12 @@
           "coord_quality": "source",
           "ffvl_id": 5103,
           "conditions": "Période critique vautour fauve : janvier-août ; altitude minimum de survol indiquée sur la carte : 1100 m (autour du col).",
-          "description": "Au col de Rousset, site très sensible, des vautours nichent à droite du décollage : on survole le col à 1100 m au moins. Au sud du col, des zones d'aigle royal et de vautour fauve sont aussi signalées. La période critique du vautour fauve va de janvier à août, et les deux zones du col (col naturel, Échelette) sont protégées de janvier à juin.",
+          "description": "Au col de Rousset, site très sensible, des vautours nichent à droite du décollage : respectez l'altitude minimum de survol qu'indique la carte du site autour du col. Au sud du col, des zones d'aigle royal et de vautour fauve sont aussi signalées. La période critique du vautour fauve va de janvier à août, et les deux zones du col (col naturel, Échelette) sont protégées de janvier à juin.",
           "sources": [
             "S154",
             "S49"
-          ]
+          ],
+          "note": "La carte indique 1100 m autour du col, soit moins que le col lui-même (environ 1250 m et plus) : altitude ou hauteur, le chiffre reste à vérifier."
         },
         {
           "id": "zsm-gypaete-glandasse-archiane",
@@ -4542,7 +4546,7 @@
             "N",
             "NW"
           ],
-          "description": "Au-dessus de Saint-Jean-en-Royans, c'est un tremplin de falaise pour le delta et un nouveau décollage pour le parapente. Il se pratique par léger vent de nord, et le site est protégé des vents plus soutenus de la vallée du Rhône. L'aérodrome et la R196B sont proches.",
+          "description": "La fiche fédérale le classe temporairement non praticable. Au-dessus de Saint-Jean-en-Royans, c'est un tremplin de falaise pour le delta et un nouveau décollage pour le parapente. Il se pratique par léger vent de nord, et le site est protégé des vents plus soutenus de la vallée du Rhône. L'aérodrome et la R196B sont proches.",
           "sources": [
             "S162",
             "S53"
@@ -6343,7 +6347,7 @@
           "alt_m": 1589,
           "coord_quality": "source",
           "ffvl_id": 193,
-          "best_hours": "après-midi, avant l'installation de la brise (12h)",
+          "best_hours": "avant l'installation de la brise (12h)",
           "trigger": "Face sud de l'alpage du Conest",
           "description": "Sur la face sud de l'alpage du Conest, le soaring par sud, jusqu'à 25 km/h, se pratique à partir du sommet sud, à 40 min de marche, avant l'installation de la brise vers 12h.",
           "sources": [
@@ -6782,11 +6786,12 @@
           "coord_quality": "source",
           "ffvl_id": 1646,
           "orientations": [],
-          "description": "Tout près des Fauries, ce site de départ en cross n'a pas d'atterrissage officiel : seule la repose au décollage est autorisée.",
+          "description": "La fiche fédérale classe ce terrain non praticable : renseignez-vous auprès du club avant d'y compter. Tout près des Fauries, ce site de départ en cross n'a pas d'atterrissage officiel : seule la repose au décollage est autorisée.",
           "sources": [
             "S106"
           ],
-          "note": "198 décollages relevés en 2025."
+          "note": "198 décollages relevés en 2025. Fiche FFVL 1646 relue en ligne (modifiée le 20/10/2026) : « terrain non praticable pour le vol libre », alors même qu'elle garde une description d'usage et une activité récente. À confirmer auprès du club.",
+          "status": "non-praticable"
         },
         {
           "id": "les-souillets",
@@ -7151,7 +7156,7 @@
           "possible": [
             "Une variante passe par l'Alpe du Grand Serre vers le Taillefer : la transition descend fortement, puis l'on raccroche la face ouest et l'on atteint 3100 m."
           ],
-          "note": "Transitions d'une carte de présentation : La Salette → Coiro, 7 km, départ à plus de 2400 m, arrivée vers 1800 m ; Châtel → Taillefer, 15 km, départ à plus de 2800 m, arrivée vers 1400 m. Pièges : zone sous le vent et turbulences du Coiro, et vallée d'Oris-en-Rattier qui prend le dessus."
+          "note": "Transitions d'une carte de présentation : La Salette → Coiro, 7 km, départ à plus de 2400 m, arrivée vers 1800 m ; Châtel → Taillefer, 15 km, départ à plus de 2800 m, arrivée vers 1400 m. Pièges : zone sous le vent et turbulences du Coiro, et vallée d'Oris-en-Rattier qui prend le dessus. Le « Châtel » de cette carte n'est pas identifié : le Châtel du Trièves est à environ 26 km du Taillefer."
         }
       ],
       "tips": [

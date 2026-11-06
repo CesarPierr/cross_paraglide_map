@@ -4,7 +4,7 @@
  * sink, clouds and gusts: see pilot-air.ts), handles the take-off and the landing's
  * run-out on the ground, moves the camera and feeds the HUD.
  */
-import type { Atlas, AtlasFeature } from '@brises/shared';
+import { isClosedSite, type Atlas, type AtlasFeature } from '@brises/shared';
 import { legalTimeToUtc, RULES, sunPosition, type GridMeta, type ModelParams } from '@brises/model';
 import { AirMass, makeRng, PROFILE_DZ, type Scenario } from './airmass';
 import { AudioVario } from './audio';
@@ -497,7 +497,7 @@ export class GameEngine {
 
   private pointsOf(cat: 'thermals' | 'takeoffs' | 'landings', radiusM: number): AtlasFeature[] {
     return (this.atlas.features[cat] ?? []).filter((f) => {
-      if (f.geometry.type !== 'Point' || f.properties.status) return false;
+      if (f.geometry.type !== 'Point' || isClosedSite(f.properties.status)) return false;
       const [x, y] = this.frame.toXY(f.geometry.coordinates[0], f.geometry.coordinates[1]);
       return Math.hypot(x - this.glider.x, y - this.glider.y) < radiusM;
     });
@@ -617,7 +617,7 @@ export class GameEngine {
   private landingFields(): { name: string; x: number; y: number; alt: number | null }[] {
     const out: { name: string; x: number; y: number; alt: number | null }[] = [];
     for (const f of this.atlas.features.landings ?? []) {
-      if (f.geometry.type !== 'Point' || f.properties.status) continue;
+      if (f.geometry.type !== 'Point' || isClosedSite(f.properties.status)) continue;
       const [x, y] = this.frame.toXY(f.geometry.coordinates[0] as number, f.geometry.coordinates[1] as number);
       if (Math.hypot(x, y) > 60000) continue;
       const alt = parseFloat((f.properties.details?.Altitude ?? '').replace(/\s/g, ''));

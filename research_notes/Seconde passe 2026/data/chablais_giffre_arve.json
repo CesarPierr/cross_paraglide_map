@@ -1323,7 +1323,7 @@
           "lat": 45.9372,
           "radius_km": 12,
           "coord_quality": "source",
-          "conditions": "pression plus haute côté italien ; différence de pression Aoste - Annecy de -4 hPa ou plus ; flux de sud en altitude sur le Mont-Blanc ; avant l'arrivée d'une perturbation",
+          "conditions": "pression plus haute côté italien ; différence de pression Aoste - Annecy de -4 hPa ou moins ; flux de sud en altitude sur le Mont-Blanc ; avant l'arrivée d'une perturbation",
           "description": "Le foehn touche souvent l'Arve, rotors et air très perturbé : Chamonix et Les Contamines sont les plus exposés, et Plaine-Joux n'est pas épargné. Il devient probable quand l'écart de pression Aoste - Annecy atteint -4 hPa ou moins. Il peut rester cantonné entre 1400 et 1800 m, et partir avec 20 km/h seulement à 4000 m. Ses signes : vent de sud sur les sommets, lenticulaires, mur sur les cols, cumulus déchiquetés dès le matin, rafales ou souffle chaud et sec en bas.",
           "confidence": "high",
           "sources": [
@@ -2452,7 +2452,8 @@
           "possible": [
             "Le Chesnet, petit atterrissage dans un creux entouré d'arbres, juste sous le parking, est facile par nord ou brise faibles, et nettement plus délicat sinon, avec turbulences et rouleaux."
           ],
-          "note": "160 atterrissages enregistrés en 2025."
+          "note": "160 atterrissages enregistrés en 2025.",
+          "status": "saisonnier"
         },
         {
           "id": "saint-pierre-longues-raies",
@@ -4026,7 +4027,7 @@
               "coord_quality": "source"
             }
           ],
-          "hours": "après-midi (renforcement possible vers 13h-16h selon un blog commercial) ; à Super Morzine « attention lorsque la brise de vallée se met en place »",
+          "hours": "après-midi (renforcement possible vers 13h-16h ; à Super Morzine « attention lorsque la brise de vallée se met en place »",
           "speed_kmh": {
             "typical": 20,
             "max": null
@@ -5013,7 +5014,8 @@
             "S190",
             "S89"
           ],
-          "note": "La fiche de référence voisine, « Nyon Pléney », concerne le speed riding ; une source plus ancienne décrit ce décollage."
+          "note": "La fiche de référence voisine, « Nyon Pléney », concerne le speed riding ; une source plus ancienne décrit ce décollage.",
+          "status": "non-confirme"
         },
         {
           "id": "mont-chery",
@@ -5293,11 +5295,12 @@
           "alt_m": 1177,
           "coord_quality": "source",
           "ffvl_id": 1142,
-          "description": "Aux Gets, une ligne électrique borde le terrain, et le vent de vallée demande de l'attention.",
+          "description": "La fiche fédérale classe ce terrain non praticable : renseignez-vous auprès du club avant d'y compter. Aux Gets, une ligne électrique borde le terrain, et le vent de vallée demande de l'attention.",
           "sources": [
             "S175"
           ],
-          "note": "74 atterrissages enregistrés en 2025."
+          "note": "74 atterrissages enregistrés en 2025. Fiche FFVL 1142 relue en ligne (modifiée le 20/10/2026) : « terrain non praticable pour le vol libre », alors même qu'elle garde une description d'usage et une activité récente. À confirmer auprès du club.",
+          "status": "non-praticable"
         },
         {
           "id": "orcier-grands-champs",
@@ -5357,7 +5360,8 @@
             "S183",
             "S184"
           ],
-          "note": "Terrain fréquenté localement."
+          "note": "Terrain fréquenté localement.",
+          "status": "saisonnier"
         }
       ],
       "synoptic_effects": [

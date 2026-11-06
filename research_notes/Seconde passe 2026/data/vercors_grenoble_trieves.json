@@ -50,7 +50,7 @@
           "hours": "fin de matinée à début d'après-midi, jusqu'au soir (été, beau temps anticyclonique)",
           "speed_kmh": {
             "typical": 20,
-            "max": 35
+            "max": null
           },
           "season": "avril-septembre ; existe toute l'année par beau temps",
           "layer_depth_m": "jusqu'à environ 900 m d'altitude, où la brise de vallée se calme (S35)",
@@ -66,7 +66,7 @@
             "S101",
             "S49"
           ],
-          "note": "Vitesses de 20 et 35 km/h : la première interprète le mot « forte », la seconde reprend le seuil de brise forte de l'atterrissage d'Uriage ; aucune source ne chiffre la brise de la cluse. Tracé schématique, d'après une carte de brises de vallée."
+          "note": "Vitesse de 20 km/h : estimation qui interprète le mot « forte » ; aucune source ne chiffre la brise de la cluse. Tracé schématique, d'après une carte de brises de vallée."
         },
         {
           "id": "cuvette-drac-sud-brise",
@@ -1874,7 +1874,8 @@
           "description": "Déclencheur près du décollage : le mât de l'émetteur de Bellecombe, au-dessus de la combe du décollage sud, reçoit le plein soleil. Le site donne dès 10h.",
           "sources": [
             "S43",
-            "S227"
+            "S227",
+            "S270"
           ],
           "confidence": "medium",
           "possible": [
@@ -2061,14 +2062,14 @@
         },
         {
           "id": "ffvl2227-autrans-la-plaine-thermique-fevrier",
-          "name": "La Plaine (Autrans) : possible thermique fin février par vent d'ouest",
+          "name": "La Plaine (Autrans), spot de snowkite : possible thermique fin février par vent d'ouest",
           "lon": 5.5319,
           "lat": 45.1729,
           "alt_m": 1023,
           "coord_quality": "source",
           "ffvl_id": 2227,
-          "best_hours": "fin février, par vent d'ouest (pente école ; non recommandé l'été à cause des fourrages)",
-          "trigger": "pente école herbeuse de La Plaine, au nord-est d'Autrans, ensoleillée en hiver",
+          "best_hours": "fin février, par vent d'ouest (spot de snowkite ; non recommandé l'été, par respect des fourrages)",
+          "trigger": "pente herbeuse de La Plaine, au nord-est d'Autrans",
           "description": "Spot de snowkite de La Plaine, au nord-est d'Autrans, sur une pente herbeuse orientée nord-ouest et ouest. Il est idéal pour débuter par vent de nord-nord-ouest, et un thermique est possible fin février par vent d'ouest. Il n'est pas recommandé l'été, par respect des fourrages.",
           "sources": [
             "S269",
@@ -3722,14 +3723,15 @@
           "lat": 44.87,
           "radius_km": 12,
           "coord_quality": "approx",
-          "conditions": "Toute l'année pour la réserve ; R196B activable du 16/09 au 30/06, jamais le mercredi, le week-end ni les jours fériés (1000 m/sol au FL195).",
+          "conditions": "Toute l'année pour la réserve ; R196B activable du 16/09 au 30/06, jamais le mercredi, le week-end ni les jours fériés (1000 m/sol au FL125 ; la fiche du Serpaton écrit FL195).",
           "description": "Les hauts plateaux se survolent à 300 m sol minimum : tout vol en dessous est interdit dans la réserve, toute l'année. Les ombres des parapentes sont perçues comme des prédateurs par les marmottes, les chamois et les tétras. Au Serpaton, la zone se respecte en longeant la crête du Brisou, le Mont Aiguille et le Grand Veymont.",
           "sources": [
             "S149",
             "S150",
             "S33",
             "S49",
-            "S58"
+            "S58",
+            "S152"
           ],
           "note": "Zone approximative, centrée sur la réserve. La R196B n'est pas activable les mercredi, samedi, dimanche et jours fériés, ni du 1er juillet au 15 septembre ; elle commence à 1000 m sol et monte au FL125 (club du Diois) ou au FL195 (fiche du Serpaton) ; plafond FL115."
         },
@@ -3789,7 +3791,7 @@
           "radius_km": 2.5,
           "coord_quality": "source",
           "ffvl_id": 1436,
-          "conditions": "Toute l'année ; fermeture du site du 5 au 23 octobre 2025 pour travaux (fiche) ; trafic d'aéro-club les week-ends de beau temps.",
+          "conditions": "Toute l'année ; fermeture du site du 5 au 23 octobre pour travaux (fiche, année non précisée) ; trafic d'aéro-club les week-ends de beau temps.",
           "description": "L'atterrissage se fait sur un aérodrome à usage restreint. Les parapentes perdent leur altitude à l'est de la piste et démarrent la descente au-dessus de 500 m (mer). Ils traversent l'axe de la piste à plus de 800 m, ou au-dessus de 500 m à l'entrée de Combe Laval. La zone rouge sous 800 m est interdite, et il ne faut pas atterrir chez le riverain à l'est.",
           "sources": [
             "S164",
@@ -4823,7 +4825,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 36,
           "description": "Le cross de la barrière est relie le Moucherotte, le Grand Veymont et le Mont Aiguille, en allers-retours. Il part du sud, au Serpaton, et s'extrait le long des crêtes jusqu'au Pic Saint-Michel. Le versant est devient piégeux par vent d'ouest.",
           "confidence": "low",
           "sources": [
@@ -5220,7 +5221,8 @@
           "trigger": "Falaises des faces ouest chauffées par le soleil couchant ; combe à droite du déco",
           "description": "La combe située juste à droite du décollage de Courtet, sur les faces ouest, porte un point chaud mesuré sur les traces de nombreux vols. Il est actif en fin d'après-midi et le soir, en restitution.",
           "sources": [
-            "S62"
+            "S62",
+            "S230"
           ],
           "possible": [
             "Il arrive qu'en sortant par la droite du décollage, vers les faces ouest, on trouve un premier thermique dans la combe, qui porte directement jusqu'aux nuages ; le variomètre bipe alors en continu."
@@ -5249,14 +5251,15 @@
           "lat": 44.7706,
           "alt_m": 1273,
           "coord_quality": "approx",
-          "best_hours": "après 14h (site de l'après-midi, donne jusque tard en été)",
+          "best_hours": "après le passage de la méridienne (site de l'après-midi, donne jusque tard en été)",
           "trigger": "Pente et combes en avant du déco ouest, au pied de la barre de l'Obiou",
           "description": "Devant le décollage ouest de Courtet, au pied de la barre de l'Obiou, la pompe est souvent installée un peu en avant, sur la pente et les combes : les traces de nombreux vols y placent un point chaud. Attendez que le soleil passe la méridienne : c'est un site d'après-midi, qui donne jusque tard en été.",
           "sources": [
             "S202",
             "S203",
             "S62",
-            "S218"
+            "S218",
+            "S230"
           ],
           "confidence": "medium",
           "possible": [
@@ -5273,7 +5276,7 @@
           "lat": 44.7765,
           "alt_m": 1813,
           "coord_quality": "measured",
-          "best_hours": "vers 13h20 (début d'après-midi)",
+          "best_hours": "à midi et le soir d'après les traces GPS (90 % à midi, 89 % le soir, rien le matin)",
           "trigger": "Arête de Fluchaire, face ouest/sud-ouest chauffée sous la Tête de l'Obiou",
           "description": "Sur l'arête de Fluchaire, une face ouest et sud-ouest chauffée par le soleil porte un point chaud mesuré sur les traces de nombreux vols, actif à midi et le soir, mais pas le matin.",
           "sources": [
@@ -7130,7 +7133,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 31.3,
           "description": "Tronçon matheysin du cheminement des Richards vers Lumbin. Après le Grun de Saint-Maurice, on soigne le plafond à 2800 m avant de partir sur La Salette, où une bonne zone ascendante, au nord du sanctuaire, remonte à 2800 m. On rejoint le Coiro, puis la tête de Barbabon, pour transiter directement sur le Taillefer ; on y soigne le plafond avant de basculer sur Chamrousse.",
           "confidence": "medium",
           "sources": [
@@ -9195,7 +9197,7 @@
       "publisher": "Club St Hil'Air",
       "type": "web",
       "lang": "fr",
-      "notes": "Vol des Richards à Lumbin : plafond de 2800 m avant la Salette, zone ascendante au nord du sanctuaire, « Coiro puissant sur l'épaule SE, idem pour le Taillefer », plafond de 2800 m avant de basculer sur Chamrousse."
+      "notes": "Vol des Richards à Lumbin : plafond de 2800 m avant la Salette, zone ascendante au nord du sanctuaire, « Coiro puissant sur l'épaule SE, idem pour le Taillefer », plafond soigné avant de basculer sur Chamrousse."
     },
     {
       "id": "S234",
@@ -9520,6 +9522,15 @@
       "type": "web",
       "lang": "fr",
       "notes": "Fiche officielle : « Spot idéal pour débuter par vent de nord-nord ouest, possible thermique fin février vent d'ouest. Attention spot non recommandé l'été ». Coordonnées 45.1729 N, 5.5319 E, 1023 m."
+    },
+    {
+      "id": "S270",
+      "title": "Bellecombe – 10/08/2020 (récit CHVD)",
+      "url": "https://www.chvd.org/2020/08/12/bellecombe-10-08-2020/",
+      "publisher": "CHVD (club, Grenoble)",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Vol rando du 10/08/2020 : vise l'antenne pour un thermique attendu, un peu tôt et un peu bas."
     }
   ]
 }

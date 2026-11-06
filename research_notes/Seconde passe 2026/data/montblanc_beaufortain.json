@@ -653,7 +653,7 @@
           "lat": 45.9365,
           "alt_m": 2000,
           "coord_quality": "source",
-          "best_hours": "de 8h au début d'après-midi ; départs de cross dès 10h",
+          "best_hours": "de 8h au début d'après-midi ; marche dès 10h un bon jour",
           "trigger": "face sud-est du Brévent au-dessus du plateau de Planpraz, chauffée dès la matinée",
           "description": "Planpraz, sur la face sud-est du Brévent, est le départ habituel des cross vers les Aravis et Annecy. Le site se vole de 8h au début de l'après-midi, et un bon jour il marche dès 10h. Une fois le vent établi au décollage sud, le couloir nord-est du restaurant passe sous le vent. Par vent d'ouest ou de nord de plus de 20 km/h à 2000 m, on vole sous le vent.",
           "sources": [
@@ -779,7 +779,6 @@
           "lon": 6.9802,
           "lat": 45.8713,
           "coord_quality": "approx",
-          "best_hours": "début d'après-midi (avant 15h)",
           "trigger": "glaciers et faces sud des Grandes Jorasses, au-dessus du val Ferret italien",
           "description": "Le secteur est côté italien du tour du Mont-Blanc, sous les Grandes Jorasses, au-dessus du val Ferret italien.",
           "sources": [
@@ -944,8 +943,8 @@
           "lat": 45.92679,
           "alt_m": 1941,
           "coord_quality": "approx",
-          "best_hours": "de midi à la fin d'après-midi (midi : « ça monte partout devant le Brévent » ; 17 h–18 h : « ça monte encore de partout » à l'ombre)",
-          "trigger": "grande face sud-est du Brévent (35°) chauffée dès midi, au-dessus de Plan Lachat, sous le décollage de Planpraz ; brise de vallée de Chamonix en soirée",
+          "best_hours": "le matin et à midi d'après les traces GPS (98 % le matin, 95 % à midi), toute l'année",
+          "trigger": "grande face sud-est du Brévent (35°), au-dessus de Plan Lachat, sous le décollage de Planpraz",
           "description": "Sur la grande face sud-est du Brévent, devant Planpraz, les traces GPS montrent un thermique très fréquent, presque toute l'année, le matin comme à midi. C'est le point de raccroche pour partir vers les Aiguilles Rouges, ou pour rentrer du Mont Joly et du Prarion.",
           "confidence": "medium",
           "sources": [
@@ -1477,7 +1476,6 @@
               "coord_quality": "approx"
             }
           ],
-          "distance_km": 56,
           "description": "Planpraz est le départ idéal des cross vers l'ouest et Annecy. Le parcours classique traverse la vallée de l'Arve puis suit la chaîne des Aravis. L'aller-retour Annecy, 100 km, est un classique du cross.",
           "sources": [
             "S13",
@@ -1491,7 +1489,7 @@
             "On peut passer par Varan pour faire le plein, puis raccrocher la Pointe Percée à 2400 m et y trouver un thermique jusqu'à 3400 m.",
             "Il arrive que le col des Aravis se franchisse en deux thermiques."
           ],
-          "note": "Le point de traversée de l'Arve est une déduction. La Pointe Percée relève du secteur Annecy–Aravis. La distance affichée est calculée par l'atlas entre les points du tracé."
+          "note": "Le point de traversée de l'Arve est une déduction. La Pointe Percée relève du secteur Annecy–Aravis."
         },
         {
           "id": "chamonix-valais",
@@ -1517,7 +1515,6 @@
               "coord_quality": "approx"
             }
           ],
-          "distance_km": 25,
           "description": "Planpraz est un départ idéal pour les cross vers la grande vallée du Rhône valaisan.",
           "sources": [
             "S13"
@@ -1525,7 +1522,7 @@
           "possible": [
             "On peut remonter le Valais jusqu'à la Furka : c'est la route dite « Rhone Rider »."
           ],
-          "note": "Le passage par le col de Balme est une déduction. La distance affichée est calculée par l'atlas entre les points du tracé."
+          "note": "Le passage par le col de Balme est une déduction."
         },
         {
           "id": "planpraz-flegere-argentiere",
@@ -1551,7 +1548,6 @@
               "coord_ref": "OpenStreetMap (Nominatim)"
             }
           ],
-          "distance_km": 9,
           "description": "De Planpraz vers la Flégère, le cross passe les câbles horizontaux de la combe Lachenal, vers 1700-1800 m. Au-delà, pas d'atterrissage à Argentière, et le plan de vol doit s'écarter des rives interdites.",
           "sources": [
             "S37",
@@ -1585,7 +1581,6 @@
               "coord_ref": "OpenStreetMap (Nominatim)"
             }
           ],
-          "distance_km": 10,
           "description": "La restitution du soir longe le massif du Plan de l'Aiguille jusqu'au fond de la vallée, hors juillet et août.",
           "sources": [
             "S12",
@@ -1621,7 +1616,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 7,
           "description": "Depuis le Grand Prarion, on peut faire un long plané vers Chedde, au-dessus de Servoz.",
           "sources": [
             "S53",
@@ -1743,7 +1737,6 @@
               "coord_ref": "OpenStreetMap (Nominatim)"
             }
           ],
-          "distance_km": 64,
           "description": "Ce parcours d'un seul vol part de La Clusaz vers 11h, traverse les Aravis, la Pointe Percée et la vallée de l'Arve, puis passe par Chamonix, la Suisse, l'Italie et le Mont-Blanc. Il s'est arrêté entre Les Chapieux et le Cormet de Roselend : la route directe depuis le Mont-Blanc a plongé dans un mélange de brises descendant du col de la Seigne et du Cormet.",
           "sources": [
             "S72"
@@ -1785,7 +1778,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 9,
           "description": "Hors juillet et août, le Plan de l'Aiguille sert de départ à ce cheminement de la rive droite ; en juillet et août, décollage et survol y sont interdits (LF-R 30 B).",
           "sources": [
             "S150",
@@ -1795,7 +1787,7 @@
           "possible": [
             "On peut raccrocher sur Planpraz depuis le Plan de l'Aiguille, monter jusqu'à 3000 m au-dessus du Brévent, puis traverser vers l'Aiguillette des Houches."
           ],
-          "note": "Étapes : Planpraz (point de relance), Brévent (plafond), Aiguillette (relais vers les Houches et Varan). Distance indicative cumulée entre les points. Le cheminement vient d'une description de vidéo, lue seulement en partie."
+          "note": "Étapes : Planpraz (point de relance), Brévent (plafond), Aiguillette (relais vers les Houches et Varan). Le cheminement vient d'une description de vidéo, lue seulement en partie."
         }
       ],
       "tips": [
@@ -2178,7 +2170,7 @@
           "lon": 6.7655,
           "lat": 45.7549,
           "coord_quality": "approx",
-          "best_hours": "après-midi (mi-juillet, canicule)",
+          "best_hours": "mi-juillet, canicule",
           "trigger": "crête exposée entre la Pointe de Mya et le glacier de Tré-la-Tête (« à mi-chemin »)",
           "description": "Sur la crête qui va de la Pointe de Mya, bien exposée au sud-est, au glacier de Tré-la-Tête, une ascendance peut emmener très haut, à mi-chemin. La position est approximative.",
           "sources": [
@@ -2694,7 +2686,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 20,
           "description": "Depuis Porcherey, sur le secteur de Saint-Nicolas, une fois au Mont Joly, la route des Saisies et des Aravis s'impose. Sinon, on peut rejoindre la piscine en finesse, à condition qu'il n'y ait pas de vent de vallée.",
           "sources": [
             "S3",
@@ -2705,7 +2696,7 @@
             "L'arête de Porcherey monte droit au sommet du Mont Joly ; le matin, sa face sud-est est un très bon départ de cross.",
             "Au décollage nord, ne grattez pas trop bas au début."
           ],
-          "note": "Tracé indicatif ; la distance affichée est calculée par l'atlas. Une source évoque un projet de vol vers les Dômes de Miage et le Mont-Blanc, avec retour."
+          "note": "Tracé indicatif. Une source évoque un projet de vol vers les Dômes de Miage et le Mont-Blanc, avec retour."
         }
       ],
       "tips": [
@@ -2895,10 +2886,10 @@
               "coord_quality": "source"
             }
           ],
-          "hours": "21h-9h (nuit et début de matinée, déduction)",
+          "hours": "nuit et début de matinée (déduction)",
           "speed_kmh": {
-            "typical": 5,
-            "max": 10
+            "typical": null,
+            "max": null
           },
           "season": "printemps-été (déduction)",
           "description": "C'est une déduction : aucune source ne décrit de vent descendant dans le Val d'Arly. La vallée s'écoulerait vers Albertville la nuit, avant que la brise montante ne s'installe en fin de matinée. La matinée serait donc calme ou faiblement alimentée. Ce vent faible ne doit pas servir à décider d'un vol.",
@@ -2912,7 +2903,8 @@
             "Le Méruz se vole le matin, face sud-est, avant que la brise ne devienne forte.",
             "À Cordon, les thermiques sont là dès le matin.",
             "Au Signal de Bisanne, décollez avant que la brise ne s'installe : elle met ensuite le décollage vent arrière."
-          ]
+          ],
+          "note": "Estimation : aucune source ne donne ces horaires, gardés parce que le modèle en a besoin pour ne pas faire souffler cet écoulement le jour. Aucune vitesse n'est documentée : le modèle applique sa valeur par défaut."
         },
         {
           "id": "brise-matinale-descendante-arve-megeve",
@@ -2944,10 +2936,10 @@
               "coord_quality": "source"
             }
           ],
-          "hours": "21h-9h (nuit et début de matinée, déduction)",
+          "hours": "nuit et début de matinée (déduction)",
           "speed_kmh": {
-            "typical": 5,
-            "max": 10
+            "typical": null,
+            "max": null
           },
           "season": "printemps-été (déduction)",
           "description": "C'est une déduction : aucune source ne décrit de vent descendant vers Sallanches. Le col de Megève se viderait vers l'Arve la nuit, avant que la brise de l'après-midi ne s'installe. Ce vent faible ne doit pas servir à décider d'un vol.",
@@ -2959,7 +2951,8 @@
           ],
           "possible": [
             "À Cordon, les thermiques sont là dès le matin : c'est le moment d'utiliser l'atterrissage de Rochefort."
-          ]
+          ],
+          "note": "Estimation : aucune source ne donne ces horaires, gardés parce que le modèle en a besoin pour ne pas faire souffler cet écoulement le jour. Aucune vitesse n'est documentée : le modèle applique sa valeur par défaut."
         }
       ],
       "convergences": [
@@ -3652,7 +3645,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 7,
           "description": "Après le thermique de l'Alpette, on part en cross vers le Christomet et les Aravis, ou vers le Mont Joly. Le tracé est direct et indicatif.",
           "sources": [
             "S3"
@@ -3683,7 +3675,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 9,
           "description": "Le thermique de l'Alpette, puis la crête de Cordon, mènent aux Aravis par la porte de Cordon. Le tracé est déduit ; au-delà de la Tête du Planet, les Aravis relèvent du secteur Annecy–Bornes–Aravis.",
           "sources": [
             "S3",
@@ -3729,7 +3720,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 33.2,
           "description": "Ce vol a décollé du Signal de Bisanne à 11h49 : il ne faut pas tarder, car la brise met ensuite le décollage vent arrière. Premier thermique à 2700 m, plafond du jour à 3135 m à l'Aiguille Croche, puis grande transition vers les Aravis, avec une raccroche au-dessus de Praz-sur-Arly à 3100 m. À partir de la Grande Balmaz, une rue de cumulus suit la chaîne des Aravis.",
           "sources": [
             "S156"
@@ -3737,7 +3727,7 @@
           "possible": [
             "Arrivé trop bas, on peut devoir se poser au col des Aravis."
           ],
-          "note": "La suite du triangle (Tournette, lac d'Annecy, Roc des Bœufs, Trélod, Dent d'Arclusaz, Grand Arc, Albertville, Beaufort) est hors secteur : 108 km au total en 5h45. Le tracé est la ligne droite entre les points nommés, et la distance affichée est calculée par l'atlas. Vol du 8 août 2020."
+          "note": "La suite du triangle (Tournette, lac d'Annecy, Roc des Bœufs, Trélod, Dent d'Arclusaz, Grand Arc, Albertville, Beaufort) est hors secteur : 108 km au total en 5h45. Le tracé est la ligne droite entre les points nommés. Vol du 8 août 2020."
         },
         {
           "id": "bisanne-mont-joly-mont-blanc-2012",
@@ -3756,7 +3746,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 17.1,
           "description": "Ce vol a décollé du Signal de Bisanne à 12h45, dans des thermiques éloignés mais très larges : 700 m en 7 minutes, jusqu'à 3200 m. Les derniers thermiques se prennent sur le Mont Joly, dernière montagne côté Megève ; la transition à 3200 m mène ensuite au Mont Vorassay (2300 m), puis au massif du Mont-Blanc.",
           "sources": [
             "S158"
@@ -3764,7 +3753,7 @@
           "possible": [
             "Le retour vers l'atterrissage reste possible après un point bas à 2800 m dans la face sud, alors que le col est à 3370 m."
           ],
-          "note": "Vers le Tricot et le col de Miage, à 3370 m ; le dernier vol arrive vers 17h30. Le lendemain, sous une inversion, le plafond de 2000 m oblige à trois décollages à pied pour rejoindre le Mont Joly. La distance affichée est calculée par l'atlas."
+          "note": "Vers le Tricot et le col de Miage, à 3370 m ; le dernier vol arrive vers 17h30. Le lendemain, sous une inversion, le plafond de 2000 m oblige à trois décollages à pied pour rejoindre le Mont Joly."
         },
         {
           "id": "saisies-flumet-praz-megeve-combloux-2015",
@@ -3813,7 +3802,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 22.5,
           "description": "C'est la fin d'un vol du col de Bleine à Passy. Le flux de sud faiblit : le plafond dépasse à peine la crête de Bisanne. Un nuage au-dessus de Crest-Voland se désagrège à l'arrivée, et l'on file au fond de la vallée, où l'on se refait en thermodynamique au-dessus de Flumet. Entre Notre-Dame-de-Bellecombe et Praz-sur-Arly, on se fait appuyer le long de la forêt. Près de Praz-sur-Arly, au ras du sol, le pied d'une butte rend une centaine de mètres en dynamique.",
           "sources": [
             "S155",
@@ -4385,7 +4373,7 @@
           "lat": 45.6837,
           "coord_quality": "source",
           "best_hours": "après-midi (déduction du récit : arrivée après les Aravis)",
-          "trigger": "face ouest-nord-ouest de la Roche Pourrie, face à la brise d'Annecy, avec un vent de nord",
+          "trigger": "face ouest-nord-ouest de la Roche Pourrie (orientation supposée avant d'arriver), sous l'influence du vent de nord le jour décrit",
           "description": "À l'entrée du Beaufortain, après la longue transition depuis le Mont Charvin, la Roche Pourrie permet de se refaire. On l'imagine bien orientée à l'ouest-nord-ouest pour la brise d'Annecy, mais le jour décrit, c'est le vent du nord qui dominait.",
           "sources": [
             "S149",
@@ -4781,7 +4769,7 @@
       "xc_routes": [
         {
           "id": "bisanne-albertville-aravis-transition",
-          "name": "Bisanne → Albertville → Aravis (transition vers Charvin)",
+          "name": "Bisanne → Mont Charvin → Albertville : tracé indicatif, sans vol relu",
           "waypoints": [
             {
               "name": "Bisanne Sud",
@@ -4802,7 +4790,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 23,
           "description": "Aucun vol relu ne relie Bisanne aux Aravis par Albertville. Le parcours décrit est le retour d'un triangle parti de Chartreuse : des Aravis, par les faces ouest, le col des Aravis, le col du Charvin, la Dent de Cons et la Belle Étoile, puis la combe sud du Grand Arc et Chamoux.",
           "sources": [
             "S27",
@@ -4862,7 +4849,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 38,
           "description": "Un jour d'août, ce vol a décollé de la face est de la Pierra Menta à 11h, après 1h30 d'attente. Il est passé sous le Mont Rosset, puis par la Pointe de la Terrasse, a filé à l'ouest au-dessus du lac de Roselend jusqu'à Bisanne et au Mont Charvin, et a rejoint les Aravis en 3 h.",
           "sources": [
             "S72",
@@ -4917,7 +4903,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 17,
           "description": "Au-dessus du décollage de Bisanne, un thermique monte jusque vers 2500 m. On transite au-dessus du col des Saisies vers La Légette, où il est un peu plus dur de remonter, puis on passe la crête pour filer au Mont Clocher. Le retour se fait par le col, parfois très bas, jusqu'à la face sud de Bisanne.",
           "sources": [
             "S67",
@@ -4926,7 +4911,7 @@
           "possible": [
             "On se pose à Marcôt, ou dans les champs fauchés sous Villard-sur-Doron."
           ],
-          "note": "Distance indicative (cumul des segments). Atterrissage officiel à Marcôt. Le mot « barbule » désigne ici les petits cumulus."
+          "note": "Atterrissage officiel à Marcôt. Le mot « barbule » désigne ici les petits cumulus."
         }
       ],
       "tips": [

@@ -204,7 +204,7 @@
           "lat": 46.1572,
           "radius_km": 0.6,
           "coord_quality": "approx",
-          "conditions": "flux de nord au décollage du Téléphérique, surtout par brise renforcée",
+          "conditions": "flux de nord au décollage du Téléphérique",
           "description": "Par flux de nord, le col de Monnetier fait venturi à droite du décollage du Téléphérique. Restez au vent du col et ne vous laissez pas pousser vers le village de Monnetier.",
           "confidence": "medium",
           "sources": [
@@ -359,14 +359,15 @@
           "lat": 46.159,
           "alt_m": 827,
           "coord_quality": "approx",
-          "best_hours": "après-midi (été)",
-          "trigger": "carrière claire au pied de la face nord-ouest",
+          "trigger": "carrière au pied de la face nord-ouest",
           "description": "Au pied de la face nord-ouest, la carrière rend la Table d'orientation favorable aux conditions thermiques par secteur nord à nord-ouest.",
           "sources": [
             "S12",
-            "S53"
+            "S53",
+            "S220"
           ],
-          "note": "Position estimée sur un plan des atterrissages, la carrière n'étant pas cartographiée dans les bases consultées ; l'altitude a été corrigée au relief, et un point chaud mesuré se trouve à 1,3 km au sud-sud-ouest (87 %). L'heure et la couleur de la carrière ne sont pas dans les sources."
+          "note": "Position estimée sur un plan des atterrissages, la carrière n'étant pas cartographiée dans les bases consultées ; l'altitude a été corrigée au relief, et un point chaud mesuré se trouve à 1,3 km au sud-sud-ouest (87 %).",
+          "best_hours": "à midi et le soir d'après les traces GPS"
         },
         {
           "id": "saleve-coin-thermique",
@@ -376,7 +377,6 @@
           "alt_m": 690,
           "coord_quality": "source",
           "best_hours": "journées thermiques, heures chaudes",
-          "trigger": "prés et pied de la falaise au-dessus de l'atterrissage",
           "description": "L'atterrissage du Coin est sujet à de gros déclenchements thermiques, avec un gros gradient les journées thermiques. Méfiez-vous-en à l'arrivée : le terrain est encaissé, avec peu d'échappatoires.",
           "sources": [
             "S57",
@@ -392,7 +392,6 @@
           "alt_m": 423,
           "coord_quality": "source",
           "best_hours": "heures les plus chaudes (été)",
-          "trigger": "terrain sec et cultures autour du club (dust possible)",
           "description": "À Troinex, aux heures les plus chaudes de l'été, un fort départ thermique se produit en approche. La poussière peut alors se lever.",
           "sources": [
             "S120",
@@ -407,7 +406,7 @@
           "lat": 46.1547,
           "alt_m": 1086,
           "best_hours": "après-midi, journées thermiques",
-          "trigger": "falaise du Salève plein sud/est devant le décollage du téléphérique et au pied des câbles",
+          "trigger": "devant le décollage du téléphérique et tout autour, près des câbles",
           "role": "déclencheur",
           "confidence": "medium",
           "description": "Un thermique statique se forme devant le décollage du Téléphérique et tout autour. L'aérologie y est très délicate, avec un gradient et des thermiques surprenants l'été, et les câbles du téléphérique sont tout près.",
@@ -748,7 +747,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 35.1,
           "description": "Parcours chronométré autour du Petit Salève, ouvert à tous de mars à la remise des prix : départ aux Tâches blanches, puis le chalet de la Tuile, le bout du Petit Salève, la tour des Pitons, La Forge (zone 1700) et l'arrivée au club. Surveillez la ligne rouge de la TMA. Les pilotes en voile A peuvent sauter La Forge. Les balises ont un rayon de 400 m, le goal de 70 m.",
           "sources": [
             "S51"
@@ -756,7 +754,7 @@
           "possible": [
             "Le tronçon entre le bout du Petit Salève et la tour des Pitons a été bouclé en 26 min 34 s en voile B."
           ],
-          "note": "Seule l'arrivée est certainement placée ; les autres balises, placées sur une image satellite, sont approximatives (à ±3 km). La distance est une somme à vol d'oiseau entre les points cités."
+          "note": "Seule l'arrivée est certainement placée ; les autres balises, placées sur une image satellite, sont approximatives (à ±3 km)."
         },
         {
           "id": "saleve-sur-cou-annecy",
@@ -787,7 +785,6 @@
               "coord_quality": "approx"
             }
           ],
-          "distance_km": 40.4,
           "description": "Cross du Salève vers Annecy, au départ de la Table d'orientation, par La Roche-sur-Foron et Sur Cou. Il faut traverser les plaines qui entourent le Salève, sous le plafond de la TMA.",
           "sources": [
             "S64",
@@ -795,8 +792,7 @@
           ],
           "possible": [
             "Pour un cross plus facile, le Môle ou Sur Cou sont des destinations plus abordables."
-          ],
-          "note": "Distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace."
+          ]
         },
         {
           "id": "saleve-mole-samoens",
@@ -821,7 +817,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 42.0,
           "description": "Cross qui traverse la plaine du Salève jusqu'au Môle, et se prolonge vers Samoëns.",
           "sources": [
             "S91",
@@ -832,7 +827,7 @@
             "Il est arrivé de rejoindre le Môle en partant du Salève à 16 h, en fin de saison.",
             "Une fois à Mieussy, le chemin vers les Fiz, dans le Haut-Giffre, est réputé facile : une « autoroute » pour parapentes."
           ],
-          "note": "Distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace ; aucun détail n'est donné sur la plaine de l'Arve et de la Menoge."
+          "note": "Aucun détail n'est donné sur la plaine de l'Arve et de la Menoge."
         },
         {
           "id": "saleve-sous-dine-parmelan-planfait-2016",
@@ -881,7 +876,7 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 41.3,
+          "distance_km": 39,
           "description": "Long cross du Téléphérique du Salève à Planfait : traversée de la plaine par La Chapelle-Rambaud, puis Sous-Dine, le Parmelan et les Dents de Lanfon.",
           "sources": [
             "S211",
@@ -925,7 +920,7 @@
               "coord_quality": "approx"
             }
           ],
-          "distance_km": 136.2,
+          "distance_km": 143,
           "description": "Triangle de cross au départ du Salève, avec pour balises Saint-Ferréol, derrière le lac d'Annecy, et le mont Billiat, dans le Chablais.",
           "sources": [
             "S214",
@@ -1004,8 +999,8 @@
           ],
           "hours": "après-midi d'un jour d'été sans vent météo (début ≈ 12h-13h, fin de journée), horaires non documentés localement",
           "speed_kmh": {
-            "typical": 20,
-            "max": 35
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "layer_depth_m": "200 à 500 m d'épaisseur en général (S1) ; sensible jusqu'à 2500 m d'altitude plus en amont (FFVL)",
@@ -1020,7 +1015,7 @@
           "possible": [
             "Au Môle, la brise de l'Arve peut être soutenue."
           ],
-          "note": "Tracé fait à la main, approximatif. Aucune vitesse n'est documentée sur ce tronçon : les valeurs retenues (20 typique, 35 maximum) viennent d'une plage générale de 15 à 35 km/h."
+          "note": "Tracé fait à la main, approximatif. Aucune vitesse n'est documentée sur ce tronçon, où le modèle applique sa valeur par défaut ; la plage générale des brises de vallée va de 15 à 35 km/h."
         },
         {
           "id": "brise-de-sallanches",
@@ -1147,7 +1142,7 @@
               "coord_quality": "source"
             }
           ],
-          "hours": "fin de matinée à fin d'après-midi (été) ; « calme le matin, thermiques forts en après-midi » (FFVL)",
+          "hours": "fin de matinée à fin d'après-midi (été) ; thermiques l'après-midi, vols toute l'année",
           "speed_kmh": {
             "typical": null,
             "max": null
@@ -1546,7 +1541,7 @@
           "lat": 45.9496,
           "alt_m": 1335,
           "coord_quality": "source",
-          "best_hours": "calme le matin, thermiques forts l'après-midi",
+          "best_hours": "thermiques l'après-midi, vols toute l'année",
           "trigger": "versant sud face au Mont-Blanc, protégé du nord par les Fiz",
           "description": "Sur le plateau de Plaine-Joux, face au Mont-Blanc et protégé du nord par les Fiz, les thermiques réguliers arrivent l'après-midi. La brise de pente y prend souvent le pas sur le vent météo, et l'on y vole toute l'année.",
           "sources": [
@@ -1603,20 +1598,21 @@
           "lat": 45.9538,
           "alt_m": 2364,
           "coord_quality": "source",
-          "best_hours": "dès la fin de matinée (premiers cumulus tôt)",
+          "best_hours": "premiers cumulus assez tôt",
           "trigger": "falaise exposée à l'est",
           "description": "Les Quatre Têtes dominent une falaise exposée à l'est, où les premiers cumulus apparaissent assez tôt.",
           "sources": [
             "S38",
             "S148",
-            "S205"
+            "S205",
+            "S221"
           ],
           "possible": [
             "On peut prolonger le vol par quelques thermiques, voire partir vers les Aravis.",
             "Les falaises marquées sous les Quatre Têtes, vers 1900 m, servent de relance entre l'arête des Saix et la Pointe Percée.",
             "Pour basculer par-dessus les Aravis, n'arrivez pas trop tard sur les faces est : aux Quatre Têtes, sous le vent, les thermiques deviennent poussifs."
           ],
-          "note": "La dernière remarque vient d'un fil sur le cross Charvin–Tournette, non cité dans les sources de cette fiche."
+          "note": "La dernière remarque vient d'un fil sur le cross Charvin–Tournette."
         },
         {
           "id": "andey-faces-ouest",
@@ -1640,7 +1636,7 @@
           "lat": 46.1066,
           "alt_m": 1863,
           "best_hours": "après-midi ; même en automne grâce à l'orientation sud",
-          "trigger": "large pente herbeuse sous le sommet, plein sud-ouest, au-dessus de la vallée de l'Arve",
+          "trigger": "large pente herbeuse sous le sommet, plein sud, au-dessus de la vallée de l'Arve",
           "role": "déclencheur",
           "confidence": "medium",
           "description": "La grande pente herbeuse sous le sommet du Môle, tournée au sud, prend bien le soleil, même en automne. Les thermiques y sont moyens mais réguliers, avec un vent fort de vallée et parfois des rafales thermiques. C'est un bon départ de cross.",
@@ -1719,7 +1715,7 @@
           "name": "Pointe de Platé – falaise sud (« remonte bien »)",
           "lon": 6.7305,
           "lat": 45.9654,
-          "best_hours": "après-midi, plafond ≈ 3000 m",
+          "best_hours": "quand la brise montante est bien installée",
           "trigger": "falaise de la Pointe de Platé qui reçoit la brise montante",
           "role": "plafond",
           "confidence": "medium",
@@ -2092,12 +2088,11 @@
           "description": "Décollage du plateau des Bénés, au-dessus de Cordon, orienté du nord-est au sud.",
           "sources": [
             "S149",
-            "S91"
+            "S222"
           ],
           "possible": [
             "Un stage est parti d'ici vers le col des Aravis, puis la pointe Percée et les Fiz."
-          ],
-          "note": "Ce vol est décrit par une vidéo archivée qui ne figure pas dans les sources de la fiche."
+          ]
         },
         {
           "id": "le-mole",
@@ -2632,7 +2627,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 10.5,
           "description": "Du Môle, décollage au sommet par sud ou sud-ouest, vers Marignier et les falaises de Mieussy.",
           "sources": [
             "S65"
@@ -2640,7 +2634,7 @@
           "possible": [
             "Avec un peu de thermique, on va facilement poser à Mieussy, ou raccrocher ses falaises, depuis le Môle."
           ],
-          "note": "Tracé schématique en trois points ; distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace."
+          "note": "Tracé schématique en trois points."
         },
         {
           "id": "agy-chevran-taninges-samoens",
@@ -2665,15 +2659,13 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 14.5,
           "description": "Parcours prévu lors d'un stage : décollage d'Agy, passage au Chevran, puis plein nord vers Taninges et Samoëns.",
           "sources": [
             "S87"
           ],
           "possible": [
             "Lors du stage, le groupe est resté 2 h 30 sur le Chevran, dans des thermiques légers et hachés, et la route n'a pas été réalisée."
-          ],
-          "note": "Distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace."
+          ]
         },
         {
           "id": "quatre-tetes-aravis",
@@ -2692,17 +2684,15 @@
               "coord_quality": "approx"
             }
           ],
-          "distance_km": 9.3,
           "description": "Des Quatre Têtes, le vol passe sous la pointe Percée, au-dessus des alpages des avant-reliefs des Aravis.",
           "sources": [
             "S38",
-            "S91"
+            "S222"
           ],
           "possible": [
             "On peut prolonger par quelques thermiques, voire partir dans la chaîne des Aravis.",
             "Un stage a rejoint le col des Aravis depuis le plateau des Bénés, puis la pointe Percée et les Fiz."
-          ],
-          "note": "Distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace. Le vol du stage est décrit par une vidéo archivée qui ne figure pas dans les sources de la fiche."
+          ]
         },
         {
           "id": "sur-cou-andey-sous-dine",
@@ -2721,7 +2711,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 6.2,
           "description": "Depuis Sur Cou, on part vers Andey ou Sous-Dine pour aller loin, ou l'on fait simplement un « tour de bocal ». Par vent de sud ou de sud-ouest, on vole sous le vent de Sous-Dine.",
           "sources": [
             "S104",
@@ -2730,7 +2719,7 @@
           "possible": [
             "La finesse ne pose aucun problème sur ce trajet."
           ],
-          "note": "Le point Sous-Dine n'est pas localisé ici ; distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace."
+          "note": "Le point Sous-Dine n'est pas localisé ici."
         },
         {
           "id": "chamonix-plate-varan-quatre-tetes-pointe-percee",
@@ -2777,13 +2766,11 @@
           "sources": [
             "S205"
           ],
-          "distance_km": 22,
           "possible": [
             "Si le plafond atteint 3000 m, restez à l'intérieur pour arriver très haut sur Varan ; sinon, longez vers les Rochers de Rion, un thermique immanquable non localisé.",
             "Évitez le versant sud-ouest de Barmerousse, qui ne donne rien. Pour raccrocher l'arête des Saix, partez au plus 100 m sous Varan.",
             "Par air instable, deux pleins suffisent pour se retrouver à cheval sur les Aravis."
-          ],
-          "note": "Distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace."
+          ]
         }
       ],
       "tips": [
@@ -2868,7 +2855,7 @@
           "hours": "en place vers 12h-13h les jours d'été, maximum l'après-midi",
           "speed_kmh": {
             "typical": 20,
-            "max": 35
+            "max": null
           },
           "season": "avril-septembre",
           "description": "L'après-midi, la brise de vallée remonte le Giffre jusqu'à Sixt. Sur la carte de brises, elle part de Cranves-Sales et Fillinges, passe par Viuz-en-Sallaz et le col de Saxel, puis suit le Giffre de Mieussy à Sixt ; une autre carte la trace d'Annemasse à Samoëns par Saint-Jeoire et Taninges. À Samoëns, elle peut être très forte dès 12 h ou 13 h en plein été, et l'atterrissage devient turbulent quand elle est modérée à forte : PTU main droite.",
@@ -2881,7 +2868,7 @@
             "S157",
             "S84"
           ],
-          "note": "Vitesses non documentées : 20 et 35 km/h traduisent « modérée à forte » ; l'alimentation passe par la Menoge et le col de Saxel, et non par Marignier comme dans la première passe."
+          "note": "Vitesse non documentée : 20 km/h est une estimation qui traduit « modérée à forte » ; l'alimentation passe par la Menoge et le col de Saxel, et non par Marignier comme dans la première passe."
         },
         {
           "id": "brise-pente-pertuiset-platiere",
@@ -3287,7 +3274,6 @@
           "name": "Pointe de Marcelly (direction des vols depuis Mieussy et le Môle)",
           "lon": 6.5754,
           "lat": 46.1283,
-          "best_hours": "après-midi, même en automne",
           "trigger": "faces sud du Marcelly au-dessus de Taninges et Mieussy",
           "role": "point de relance",
           "confidence": "medium",
@@ -3859,7 +3845,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 40.1,
           "description": "Boucle tracée par des stagiaires de niveau 3 au départ de Super Morzine : pointe d'Angolon, Criou, Tête de Porte, pointe du Trapechet, Grands Vans, Tête de Louis-Philippe, arête des Saix et Tête du Greppon, puis retour. Le cahier des charges demandait un parcours de 5 h au plus, en comptant 20 km/h de moyenne, sans danger (ni vallée étroite, ni passage sous le vent), avec une récupération facile.",
           "sources": [
             "S86",
@@ -3871,7 +3856,7 @@
           "possible": [
             "Une stabilité marquée et des voiles de nuages élevés ont obligé à modifier le tracé en vol."
           ],
-          "note": "Seuls quatre points sont localisés ; les autres sommets sont des repères non géolocalisés. Distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace."
+          "note": "Seuls quatre points sont localisés ; les autres sommets sont des repères non géolocalisés."
         },
         {
           "id": "clam-niveau2-mieussy-billiat",
@@ -3902,7 +3887,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 32.4,
           "description": "Parcours d'un stage au départ de Mieussy : Rovagnes, la Haute-Pointe, cap au nord jusqu'au Mont Billiat, puis retour par la vallée d'Aulps et Morzine.",
           "sources": [
             "S87",
@@ -3911,8 +3895,7 @@
           "possible": [
             "Les conditions étaient plus favorables que la veille.",
             "Un stagiaire est rentré seul, les autres en navette."
-          ],
-          "note": "Distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace."
+          ]
         },
         {
           "id": "morzine-haut-giffre-emosson",
@@ -3937,7 +3920,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 11.4,
           "description": "La traversée du Haut-Giffre est la partie la plus technique du tour du Mont-Blanc depuis Morzine. Faites le plein au Fornet, à 3200 m au minimum, puis passez le Pas du Taureau, porte d'entrée au-dessus de la réserve, ou la face sud de la Dent de Barme en longeant la crête des Dents Blanches. Il faut rester à plus de 300 m/sol au-dessus de la réserve de Sixt. Côté Émosson, on rejoint l'itinéraire classique du tour.",
           "sources": [
             "S90",
@@ -3947,7 +3929,7 @@
             "Quitter la Dent de Barme à 3800 m a permis de couper la réserve par le col du Ruan ; à 3600 m, c'était trop juste.",
             "Il a fallu contourner par le nord, avec une centaine de mètres de marge seulement au-dessus du col de la Tour Sallière."
           ],
-          "note": "Les trois points tracés s'arrêtent aux Dents Blanches ; la suite n'est pas géolocalisée. Distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace."
+          "note": "Les trois points tracés s'arrêtent aux Dents Blanches ; la suite n'est pas géolocalisée."
         },
         {
           "id": "saix-trapechet-criou-classique",
@@ -3977,12 +3959,10 @@
             "S203",
             "S202"
           ],
-          "distance_km": 10,
           "possible": [
             "Sur le Criou, remontez l'arête à la verticale de la partie raide face au village, et évitez la zone sous le vent de la falaise.",
             "Raccrochage manqué : posez dans la plaine de Vallon, sur le chemin en cul-de-sac le long de la route de Sixt, discrètement, car la zone agricole est sensible."
-          ],
-          "note": "Distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace."
+          ]
         }
       ],
       "tips": [
@@ -4048,7 +4028,7 @@
           "hours": "après-midi (renforcement possible vers 13h-16h selon un blog commercial) ; à Super Morzine « attention lorsque la brise de vallée se met en place »",
           "speed_kmh": {
             "typical": 20,
-            "max": 30
+            "max": null
           },
           "season": "mai-octobre",
           "description": "L'après-midi, une brise de vallée remonte d'Aulps, de la rive de Thonon à Morzine par Le Biot : les cartes de brises la tracent d'un trait continu. À Super Morzine, la sortie du décollage devient turbulente quand elle est forte. Au RAMAT, quand elle se met en place et que le vent vient de travers droit, préférez Super Morzine.",
@@ -4062,7 +4042,7 @@
           "possible": [
             "Dans l'axe d'Aulps, la brise peut devenir soutenue à forte en milieu et en fin de journée."
           ],
-          "note": "Un passage de la première passe venait d'une source commerciale ; les vitesses sont une interprétation, aucune mesure n'étant publiée."
+          "note": "Un passage de la première passe venait d'une source commerciale ; la vitesse est une estimation tirée de « soutenue à forte », aucune mesure n'étant publiée."
         },
         {
           "id": "brise-vallee-abondance",
@@ -4097,7 +4077,7 @@
           "hours": "se met en place très tôt (matin), très forte parfois avant midi",
           "speed_kmh": {
             "typical": 25,
-            "max": 35
+            "max": null
           },
           "season": "avril-septembre",
           "description": "Dans la vallée d'Abondance, la brise se met en place très tôt et peut être très forte avant midi : décollez de bonne heure. L'atterrissage d'Abondance, en sortie de l'étranglement des Portes, prend une brise puissante l'après-midi, avec un effet venturi. Les cartes de brises la font monter de Bioge et Lyaud jusqu'à La Chapelle, et de Thonon à Abondance.",
@@ -4114,7 +4094,7 @@
           "possible": [
             "Au retour du Mont de Grange, il est arrivé de devoir poser en amont du bourg à midi, à 5 km/h de vitesse sol seulement, tant la brise était forte."
           ],
-          "note": "Vitesses : interprétation de « très forte », aucune mesure publiée."
+          "note": "Vitesse : estimation tirée de « très forte », aucune mesure publiée."
         },
         {
           "id": "brise-vallee-verte-boege",
@@ -4199,7 +4179,7 @@
         },
         {
           "id": "rebat-evian",
-          "name": "Rebat de jour sur la rive d'Évian (flux de retour du lac vers la côte)",
+          "name": "Brise de jour sur la rive d'Évian (flux du lac vers la côte)",
           "kind": "lake",
           "waypoints": [
             {
@@ -4240,7 +4220,7 @@
         },
         {
           "id": "rebat-thonon",
-          "name": "Rebat de jour sur la rive de Thonon",
+          "name": "Brise de jour sur la rive de Thonon",
           "kind": "lake",
           "waypoints": [
             {
@@ -4311,7 +4291,7 @@
         },
         {
           "id": "morget-evian",
-          "name": "Morget (brise de terre du soir et de nuit) vers le lac d'Évian",
+          "name": "Brises de terre du soir et de nuit vers le lac d'Évian (albrans)",
           "kind": "katabatic",
           "waypoints": [
             {
@@ -4343,7 +4323,8 @@
           "confidence": "medium",
           "sources": [
             "S33",
-            "S32"
+            "S32",
+            "S117"
           ],
           "note": "Le morget proprement dit souffle sur la côte suisse, entre Rolle et Saint-Sulpice ; la météo suisse nomme albrans les brises nocturnes de la rive française entre Tourronde et Amphion, autour d'Évian, et birran celles de Thonon à Séchex."
         }
@@ -4483,7 +4464,7 @@
           "lat": 46.2765,
           "radius_km": 2,
           "coord_quality": "source",
-          "conditions": "départ de cross par effet de foehn ; vent de nord ; rangée d'arbres devant le décollage",
+          "conditions": "effet de foehn signalé ; vent de nord ; rangée d'arbres devant le décollage",
           "description": "Morclan est un départ de cross, et des thermiques se forment à l'atterrissage. La fiche du site signale aussi un effet de foehn. Soyez attentif par vent de nord, à la rangée d'arbres devant le décollage et à la ligne à haute tension qui coupe la vallée.",
           "confidence": "medium",
           "sources": [
@@ -4517,12 +4498,13 @@
           "lat": 46.3667,
           "radius_km": 15,
           "coord_quality": "source",
-          "conditions": "orages sur les Préalpes, grande chaleur ; sens sud-nord ; jusqu'à 120 km/h",
+          "conditions": "orages sur les Préalpes, grande chaleur ; sens sud-nord ; bornan 30 à 40 nœuds, môlan 8 à 15 nœuds",
           "description": "Par grosse chaleur, les orages des Préalpes envoient sur le Léman des rafales descendantes, du sud vers le nord. Le bornan, l'un des vents d'orage les plus violents, tombe sur le Grand-Lac, surtout entre Rolle et Lutry ; le môlan est son équivalent sur le Petit-Lac. Ces rafales sont soudaines : posez-vous avant l'orage, la rive est dangereuse.",
           "confidence": "high",
           "sources": [
             "S33",
-            "S32"
+            "S32",
+            "S117"
           ],
           "note": "Vitesses discordantes : un site nautique annonce jusqu'à 120 km/h pour le bornan ; la météo suisse donne 30 à 40 nœuds pour le bornan et 8 à 15 nœuds pour le môlan."
         },
@@ -4551,7 +4533,7 @@
           "lat": 46.42,
           "radius_km": 20,
           "coord_quality": "approx",
-          "conditions": "situation de beau temps froid et sec ; 3, 6 ou 9 jours d'affilée",
+          "conditions": "situation de beau temps froid et sec ; peut souffler plusieurs jours consécutifs",
           "description": "La bise est le vent le plus fréquent du Léman, comparable au mistral : un vent de beau temps, froid et sec, qui souffle par rafales ininterrompues, de 15 à 90 km/h. Canalisée entre le Jura et les Alpes, elle se renforce dans le Petit-Lac, vers Genève. Elle commence et finit progressivement, au contraire du foehn, et peut durer plusieurs jours, plus longtemps en hiver.",
           "confidence": "high",
           "sources": [
@@ -4571,7 +4553,6 @@
           "lat": 46.1946,
           "alt_m": 1819,
           "coord_quality": "approx",
-          "best_hours": "début d'après-midi",
           "trigger": "falaises et pentes d'Avoriaz",
           "description": "En venant du Mont Chéry, le premier thermique d'Avoriaz, sur ses falaises et ses pentes, est plus fort qu'il n'en a l'air.",
           "sources": [
@@ -4580,7 +4561,7 @@
           "possible": [
             "Chaque été, des pilotes de passage se font surprendre par ce premier thermique d'Avoriaz, en partant du Mont Chéry."
           ],
-          "note": "Source commerciale isolée, à recouper avec les locaux ; position approximative. L'heure (début d'après-midi) n'est pas dans la source."
+          "note": "Source commerciale isolée, à recouper avec les locaux ; position approximative."
         },
         {
           "id": "chatel-atterro-thermique",
@@ -4645,8 +4626,7 @@
           "name": "Pointe de Ressachaux (dynamique et thermique)",
           "lon": 6.7451,
           "lat": 46.1715,
-          "best_hours": "après-midi, tendance nord ou régime de brise",
-          "trigger": "arête nord-ouest de la Pointe de Ressachaux, face à la brise de vallée",
+          "trigger": "ascendance dynamique de la Pointe de Ressachaux par tendance nord",
           "role": "point de relance",
           "confidence": "medium",
           "description": "Par tendance nord, l'ascendance dynamique de la Pointe de Ressachaux est favorable, au-dessus de la vallée de Morzine.",
@@ -5536,7 +5516,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 8.6,
           "description": "Vol de randonnée de la Dent d'Oche à Bernex-Trossy, avec 1149 m de dénivelé.",
           "sources": [
             "S77",
@@ -5545,8 +5524,7 @@
           ],
           "possible": [
             "Un grand vol peut aller jusqu'à l'atterrissage de Thollon ou de Lugrin, au bord du lac."
-          ],
-          "note": "Distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace."
+          ]
         }
       ],
       "tips": [
@@ -7555,6 +7533,24 @@
       "type": "web",
       "lang": "fr",
       "notes": "Probabilités de thermique (toutes saisons, matin / milieu de journée / fin de journée) lues dans les fichiers téléchargés le 7 octobre 2026 ; ne disent pas ce qui déclenche."
+    },
+    {
+      "id": "S221",
+      "title": "parapentiste.info – Charvin – Tournette (t14966)",
+      "url": "https://www.parapentiste.info/forum/techniques-de-cross/charvin-tournette-t14966.0.html",
+      "publisher": "Forum parapentiste.info",
+      "type": "forum",
+      "lang": "fr",
+      "notes": "Conseil : ne pas arriver trop tard sur les faces est des Aravis (Quatre-Têtes sous le vent). Même fil que S90 du lot annecy_bornes_aravis."
+    },
+    {
+      "id": "S222",
+      "title": "Vol en parapente au-dessus de la pointe percée (chaîne des Aravis) (vidéo YouTube)",
+      "url": "https://www.youtube.com/watch?v=t3T3sEAOxcE",
+      "publisher": "JuraClouds (YouTube)",
+      "type": "video",
+      "lang": "fr",
+      "notes": "Description : décollage du plateau des Bénés, au-dessus de Cordon ; vol jusqu'au col des Aravis, retour sur la pointe Percée, transition sur les Fiz ; stage BPC."
     }
   ]
 }

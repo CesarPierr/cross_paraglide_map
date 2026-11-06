@@ -1,0 +1,1342 @@
+[
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "mont-blanc-chamonix",
+  "id": "planpraz-relance-depuis-plan-de-l-aiguille",
+  "field": "best_hours",
+  "before": "de 8h au début d'après-midi ; départs de cross dès 10h",
+  "after": "de 8h au début d'après-midi ; marche dès 10h un bon jour",
+  "source": "S13",
+  "reason": "« starts working as early as 10 am on a good day » : le site, pas les départs de cross, et un bon jour seulement"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "mont-blanc-chamonix",
+  "id": "grandes-jorasses-thermique-italien",
+  "field": "best_hours",
+  "before": "début d'après-midi (avant 15h)",
+  "after": null,
+  "source": "S72",
+  "reason": "« avant 15h » est l'heure d'arrivée sous le Mont-Blanc ; aucune heure pour les Jorasses"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "mont-blanc-chamonix",
+  "id": "brevent-faces-sud-est-plan-lachat",
+  "field": "best_hours",
+  "before": "de midi à la fin d'après-midi (midi : « ça monte partout devant le Brévent » ; 17 h–18 h : « ça monte encore de partout » à l'ombre)",
+  "after": "le matin et à midi d'après les traces GPS (98 % le matin, 95 % à midi), toute l'année",
+  "source": "S164",
+  "reason": "« midi » est l'heure d'arrivée d'un vol (S55) ; les traces donnent 98 % le matin, 95 % à midi"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "mont-blanc-chamonix",
+  "id": "brevent-faces-sud-est-plan-lachat",
+  "field": "trigger",
+  "before": "grande face sud-est du Brévent (35°) chauffée dès midi, au-dessus de Plan Lachat, sous le décollage de Planpraz ; brise de vallée de Chamonix en soirée",
+  "after": "grande face sud-est du Brévent (35°), au-dessus de Plan Lachat, sous le décollage de Planpraz",
+  "source": "S164, S55",
+  "reason": "« chauffée dès midi » vient de l'heure d'arrivée ; « brise de vallée en soirée » n'est dans aucun récit (S55 dit seulement que ça monte encore à l'ombre)"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "mont-blanc-chamonix",
+  "id": "chamonix-annecy",
+  "field": "distance_km",
+  "before": 56,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "mont-blanc-chamonix",
+  "id": "chamonix-annecy",
+  "field": "note",
+  "before": "Le point de traversée de l'Arve est une déduction. La Pointe Percée relève du secteur Annecy–Aravis. La distance affichée est calculée par l'atlas entre les points du tracé.",
+  "after": "Le point de traversée de l'Arve est une déduction. La Pointe Percée relève du secteur Annecy–Aravis.",
+  "source": "aucune",
+  "reason": "suit la suppression de distance_km"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "mont-blanc-chamonix",
+  "id": "chamonix-valais",
+  "field": "distance_km",
+  "before": 25,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "mont-blanc-chamonix",
+  "id": "chamonix-valais",
+  "field": "note",
+  "before": "Le passage par le col de Balme est une déduction. La distance affichée est calculée par l'atlas entre les points du tracé.",
+  "after": "Le passage par le col de Balme est une déduction.",
+  "source": "aucune",
+  "reason": "suit la suppression de distance_km"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "mont-blanc-chamonix",
+  "id": "planpraz-flegere-argentiere",
+  "field": "distance_km",
+  "before": 9,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "mont-blanc-chamonix",
+  "id": "restitution-plan-aiguille-argentiere",
+  "field": "distance_km",
+  "before": 10,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "mont-blanc-chamonix",
+  "id": "grand-prarion-servoz-chedde",
+  "field": "distance_km",
+  "before": 7,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "mont-blanc-chamonix",
+  "id": "tmb-aravis-chamonix-mont-blanc-chapieux",
+  "field": "distance_km",
+  "before": 64,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "mont-blanc-chamonix",
+  "id": "plan-aiguille-planpraz-brevent-aiguillette",
+  "field": "distance_km",
+  "before": 9,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "mont-blanc-chamonix",
+  "id": "plan-aiguille-planpraz-brevent-aiguillette",
+  "field": "note",
+  "before": "Étapes : Planpraz (point de relance), Brévent (plafond), Aiguillette (relais vers les Houches et Varan). Distance indicative cumulée entre les points. Le cheminement vient d'une description de vidéo, lue seulement en partie.",
+  "after": "Étapes : Planpraz (point de relance), Brévent (plafond), Aiguillette (relais vers les Houches et Varan). Le cheminement vient d'une description de vidéo, lue seulement en partie.",
+  "source": "aucune",
+  "reason": "suit la suppression de distance_km"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "val-montjoie-saint-gervais",
+  "id": "porcherey-mont-joly-saisies",
+  "field": "distance_km",
+  "before": 20,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "val-montjoie-saint-gervais",
+  "id": "porcherey-mont-joly-saisies",
+  "field": "note",
+  "before": "Tracé indicatif ; la distance affichée est calculée par l'atlas. Une source évoque un projet de vol vers les Dômes de Miage et le Mont-Blanc, avec retour.",
+  "after": "Tracé indicatif. Une source évoque un projet de vol vers les Dômes de Miage et le Mont-Blanc, avec retour.",
+  "source": "aucune",
+  "reason": "suit la suppression de distance_km"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "val-arly-megeve",
+  "id": "rochebrune-mont-joly",
+  "field": "distance_km",
+  "before": 7,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "val-arly-megeve",
+  "id": "rochebrune-cordon-aravis",
+  "field": "distance_km",
+  "before": 9,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "val-arly-megeve",
+  "id": "bisanne-aiguille-croche-praz-aravis-2020",
+  "field": "distance_km",
+  "before": 33.2,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "val-arly-megeve",
+  "id": "bisanne-aiguille-croche-praz-aravis-2020",
+  "field": "note",
+  "before": "La suite du triangle (Tournette, lac d'Annecy, Roc des Bœufs, Trélod, Dent d'Arclusaz, Grand Arc, Albertville, Beaufort) est hors secteur : 108 km au total en 5h45. Le tracé est la ligne droite entre les points nommés, et la distance affichée est calculée par l'atlas. Vol du 8 août 2020.",
+  "after": "La suite du triangle (Tournette, lac d'Annecy, Roc des Bœufs, Trélod, Dent d'Arclusaz, Grand Arc, Albertville, Beaufort) est hors secteur : 108 km au total en 5h45. Le tracé est la ligne droite entre les points nommés. Vol du 8 août 2020.",
+  "source": "aucune",
+  "reason": "suit la suppression de distance_km"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "val-arly-megeve",
+  "id": "bisanne-mont-joly-mont-blanc-2012",
+  "field": "distance_km",
+  "before": 17.1,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "val-arly-megeve",
+  "id": "bisanne-mont-joly-mont-blanc-2012",
+  "field": "note",
+  "before": "Vers le Tricot et le col de Miage, à 3370 m ; le dernier vol arrive vers 17h30. Le lendemain, sous une inversion, le plafond de 2000 m oblige à trois décollages à pied pour rejoindre le Mont Joly. La distance affichée est calculée par l'atlas.",
+  "after": "Vers le Tricot et le col de Miage, à 3370 m ; le dernier vol arrive vers 17h30. Le lendemain, sous une inversion, le plafond de 2000 m oblige à trois décollages à pied pour rejoindre le Mont Joly.",
+  "source": "aucune",
+  "reason": "suit la suppression de distance_km"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "val-arly-megeve",
+  "id": "saisies-flumet-praz-megeve-combloux-2015",
+  "field": "distance_km",
+  "before": 22.5,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "beaufortain",
+  "id": "bisanne-albertville-aravis-transition",
+  "field": "distance_km",
+  "before": 23,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "beaufortain",
+  "id": "pierra-menta-roselend-bisanne-charvin",
+  "field": "distance_km",
+  "before": 38,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "beaufortain",
+  "id": "bisanne-saisies-legette-mont-clocher",
+  "field": "distance_km",
+  "before": 17,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "beaufortain",
+  "id": "bisanne-saisies-legette-mont-clocher",
+  "field": "note",
+  "before": "Distance indicative (cumul des segments). Atterrissage officiel à Marcôt. Le mot « barbule » désigne ici les petits cumulus.",
+  "after": "Atterrissage officiel à Marcôt. Le mot « barbule » désigne ici les petits cumulus.",
+  "source": "aucune",
+  "reason": "suit la suppression de distance_km"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "val-montjoie-saint-gervais",
+  "id": "tre-la-tete-ascendance-4300",
+  "field": "best_hours",
+  "before": "après-midi (mi-juillet, canicule)",
+  "after": "mi-juillet, canicule",
+  "source": "S149",
+  "reason": "aucune heure dans le récit : « après-midi » retiré ; la canicule de mi-juillet y est"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "val-arly-megeve",
+  "id": "brise-matinale-descendante-arly",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 5,
+   "max": 10
+  },
+  "after": {
+   "typical": null,
+   "max": null
+  },
+  "source": "S127, S119, S156",
+  "reason": "vitesse inventée pour un vent déduit ; le modèle applique sa valeur par défaut, affichée comme telle (« non documentée »)"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "val-arly-megeve",
+  "id": "brise-matinale-descendante-arly",
+  "field": "hours",
+  "before": "21h-9h (nuit et début de matinée, déduction)",
+  "after": "nuit et début de matinée (déduction)",
+  "source": "S127, S119, S156",
+  "reason": "21h-9h inventé : heures chiffrées retirées. Le champ reste, car sans horaire le modèle ferait souffler cet écoulement le jour (field.ts, cycle de vallée) ; estimation dite en note"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "val-arly-megeve",
+  "id": "brise-matinale-descendante-arly",
+  "field": "note",
+  "before": null,
+  "after": "Estimation : aucune source ne donne ces horaires, gardés parce que le modèle en a besoin pour ne pas faire souffler cet écoulement le jour. Aucune vitesse n'est documentée : le modèle applique sa valeur par défaut.",
+  "source": "S127, S119, S156",
+  "reason": "dit l'estimation"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "val-arly-megeve",
+  "id": "brise-matinale-descendante-arve-megeve",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 5,
+   "max": 10
+  },
+  "after": {
+   "typical": null,
+   "max": null
+  },
+  "source": "S128, S119, S123",
+  "reason": "vitesse inventée pour un vent déduit ; le modèle applique sa valeur par défaut, affichée comme telle (« non documentée »)"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "val-arly-megeve",
+  "id": "brise-matinale-descendante-arve-megeve",
+  "field": "hours",
+  "before": "21h-9h (nuit et début de matinée, déduction)",
+  "after": "nuit et début de matinée (déduction)",
+  "source": "S128, S119, S123",
+  "reason": "21h-9h inventé : heures chiffrées retirées. Le champ reste, car sans horaire le modèle ferait souffler cet écoulement le jour (field.ts, cycle de vallée) ; estimation dite en note"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "val-arly-megeve",
+  "id": "brise-matinale-descendante-arve-megeve",
+  "field": "note",
+  "before": null,
+  "after": "Estimation : aucune source ne donne ces horaires, gardés parce que le modèle en a besoin pour ne pas faire souffler cet écoulement le jour. Aucune vitesse n'est documentée : le modèle applique sa valeur par défaut.",
+  "source": "S128, S119, S123",
+  "reason": "dit l'estimation"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "beaufortain",
+  "id": "roche-pourrie-brise-d-annecy",
+  "field": "trigger",
+  "before": "face ouest-nord-ouest de la Roche Pourrie, face à la brise d'Annecy, avec un vent de nord",
+  "after": "face ouest-nord-ouest de la Roche Pourrie (orientation supposée avant d'arriver), sous l'influence du vent de nord le jour décrit",
+  "source": "S149",
+  "reason": "« face à la brise d'Annecy » est une hypothèse du pilote ; sur place, « totalement dans l'influence du vent du Nord »"
+ },
+ {
+  "lot": "montblanc_beaufortain",
+  "massif": "beaufortain",
+  "id": "bisanne-albertville-aravis-transition",
+  "field": "name",
+  "before": "Bisanne → Albertville → Aravis (transition vers Charvin)",
+  "after": "Bisanne → Mont Charvin → Albertville : tracé indicatif, sans vol relu",
+  "source": "S27",
+  "reason": "le vol cité part de Chartreuse et ne passe pas à Bisanne ; le nom suit l'ordre réel des points et ne présente plus une traversée attestée"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "saleve-genevois",
+  "id": "saleve-venturi-col-monnetier",
+  "field": "conditions",
+  "before": "flux de nord au décollage du Téléphérique, surtout par brise renforcée",
+  "after": "flux de nord au décollage du Téléphérique",
+  "source": "S12, S60",
+  "reason": "« surtout par brise renforcée » : aucune source"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "saleve-genevois",
+  "id": "saleve-carriere-etrembieres",
+  "field": "sources",
+  "before": [
+   "S12",
+   "S53"
+  ],
+  "after": [
+   "S12",
+   "S53",
+   "S220"
+  ],
+  "source": "S220",
+  "reason": "source du nouveau best_hours (points chauds kk7)"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "saleve-genevois",
+  "id": "saleve-carriere-etrembieres",
+  "field": "best_hours",
+  "before": "après-midi (été)",
+  "after": "à midi et le soir d'après les traces GPS",
+  "source": "S220 (kk7), S12",
+  "reason": "« après-midi (été) » : aucune source écrite ; remplacé par ce que mesurent les traces (point chaud à 37 m : milieu et fin de journée). Une simple suppression faisait échouer le test à 13h30"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "saleve-genevois",
+  "id": "saleve-carriere-etrembieres",
+  "field": "trigger",
+  "before": "carrière claire au pied de la face nord-ouest",
+  "after": "carrière au pied de la face nord-ouest",
+  "source": "S12",
+  "reason": "« claire » : aucune source"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "saleve-genevois",
+  "id": "saleve-carriere-etrembieres",
+  "field": "note",
+  "before": "Position estimée sur un plan des atterrissages, la carrière n'étant pas cartographiée dans les bases consultées ; l'altitude a été corrigée au relief, et un point chaud mesuré se trouve à 1,3 km au sud-sud-ouest (87 %). L'heure et la couleur de la carrière ne sont pas dans les sources.",
+  "after": "Position estimée sur un plan des atterrissages, la carrière n'étant pas cartographiée dans les bases consultées ; l'altitude a été corrigée au relief, et un point chaud mesuré se trouve à 1,3 km au sud-sud-ouest (87 %).",
+  "source": "S12",
+  "reason": "suit la correction des deux champs"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "saleve-genevois",
+  "id": "saleve-coin-thermique",
+  "field": "trigger",
+  "before": "prés et pied de la falaise au-dessus de l'atterrissage",
+  "after": null,
+  "source": "S57, S15",
+  "reason": "déclencheur non précisé par les sources (la note le dit)"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "saleve-genevois",
+  "id": "saleve-troinex-thermique",
+  "field": "trigger",
+  "before": "terrain sec et cultures autour du club (dust possible)",
+  "after": null,
+  "source": "S120, S59",
+  "reason": "déclencheur non précisé par les sources (la note le dit)"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "saleve-genevois",
+  "id": "saleve-teleferique-thermique-statique",
+  "field": "trigger",
+  "before": "falaise du Salève plein sud/est devant le décollage du téléphérique et au pied des câbles",
+  "after": "devant le décollage du téléphérique et tout autour, près des câbles",
+  "source": "S200, S119",
+  "reason": "« falaise plein sud/est » contredit la fiche : décollage orienté nord ; S200 dit « devant le décollage et tout autour »"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "saleve-genevois",
+  "id": "saleve-challenge-permanent",
+  "field": "distance_km",
+  "before": 35.1,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "saleve-genevois",
+  "id": "saleve-challenge-permanent",
+  "field": "note",
+  "before": "Seule l'arrivée est certainement placée ; les autres balises, placées sur une image satellite, sont approximatives (à ±3 km). La distance est une somme à vol d'oiseau entre les points cités.",
+  "after": "Seule l'arrivée est certainement placée ; les autres balises, placées sur une image satellite, sont approximatives (à ±3 km).",
+  "source": "aucune",
+  "reason": "suit la suppression de distance_km"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "saleve-genevois",
+  "id": "saleve-sur-cou-annecy",
+  "field": "distance_km",
+  "before": 40.4,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "saleve-genevois",
+  "id": "saleve-sur-cou-annecy",
+  "field": "note",
+  "before": "Distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace.",
+  "after": null,
+  "source": "aucune",
+  "reason": "suit la suppression de distance_km"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "saleve-genevois",
+  "id": "saleve-mole-samoens",
+  "field": "distance_km",
+  "before": 42.0,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "saleve-genevois",
+  "id": "saleve-mole-samoens",
+  "field": "note",
+  "before": "Distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace ; aucun détail n'est donné sur la plaine de l'Arve et de la Menoge.",
+  "after": "Aucun détail n'est donné sur la plaine de l'Arve et de la Menoge.",
+  "source": "aucune",
+  "reason": "suit la suppression de distance_km"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "saleve-genevois",
+  "id": "saleve-sous-dine-parmelan-planfait-2016",
+  "field": "distance_km",
+  "before": 41.3,
+  "after": 39,
+  "source": "S211",
+  "reason": "41,3 km est la somme à vol d'oiseau ; le récit donne 39 km"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "saleve-genevois",
+  "id": "saleve-triangle-143km-2023",
+  "field": "distance_km",
+  "before": 136.2,
+  "after": 143,
+  "source": "S214, S215",
+  "reason": "136,2 km est la somme à vol d'oiseau ; le vol est déclaré à 143 km"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "arve-basse-vallee-montante",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 20,
+   "max": 35
+  },
+  "after": {
+   "typical": null,
+   "max": null
+  },
+  "source": "S1",
+  "reason": "20/35 tirés d'une plage générale ; aucune vitesse sur ce tronçon, le modèle applique sa valeur par défaut, affichée comme telle"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "arve-basse-vallee-montante",
+  "field": "note",
+  "before": "Tracé fait à la main, approximatif. Aucune vitesse n'est documentée sur ce tronçon : les valeurs retenues (20 typique, 35 maximum) viennent d'une plage générale de 15 à 35 km/h.",
+  "after": "Tracé fait à la main, approximatif. Aucune vitesse n'est documentée sur ce tronçon, où le modèle applique sa valeur par défaut ; la plage générale des brises de vallée va de 15 à 35 km/h.",
+  "source": "S1",
+  "reason": "suit la correction de speed_kmh"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "brise-pente-plaine-joux",
+  "field": "hours",
+  "before": "fin de matinée à fin d'après-midi (été) ; « calme le matin, thermiques forts en après-midi » (FFVL)",
+  "after": "fin de matinée à fin d'après-midi (été) ; thermiques l'après-midi, vols toute l'année",
+  "source": "S9",
+  "reason": "« calme le matin, thermiques forts » est la ligne de Varan ; pour Plaine-Joux : « vols toute l'année, thermiques l'après-midi »"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "plaine-joux-plateau",
+  "field": "best_hours",
+  "before": "calme le matin, thermiques forts l'après-midi",
+  "after": "thermiques l'après-midi, vols toute l'année",
+  "source": "S9",
+  "reason": "même confusion avec Varan"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "quatre-tetes-falaise-est",
+  "field": "best_hours",
+  "before": "dès la fin de matinée (premiers cumulus tôt)",
+  "after": "premiers cumulus assez tôt",
+  "source": "S38",
+  "reason": "« assez tôt », sans heure : « dès la fin de matinée » retiré"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "quatre-tetes-falaise-est",
+  "field": "sources",
+  "before": [
+   "S38",
+   "S148",
+   "S205"
+  ],
+  "after": [
+   "S38",
+   "S148",
+   "S205",
+   "S221"
+  ],
+  "source": "S221",
+  "reason": "fil Charvin–Tournette, seule source de la remarque sur les faces est ; ajouté aux sources du lot (déjà S90 du lot annecy_bornes_aravis)"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "quatre-tetes-falaise-est",
+  "field": "note",
+  "before": "La dernière remarque vient d'un fil sur le cross Charvin–Tournette, non cité dans les sources de cette fiche.",
+  "after": "La dernière remarque vient d'un fil sur le cross Charvin–Tournette.",
+  "source": "S221",
+  "reason": "suit l'ajout de la source"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "mole-face-sud",
+  "field": "trigger",
+  "before": "large pente herbeuse sous le sommet, plein sud-ouest, au-dessus de la vallée de l'Arve",
+  "after": "large pente herbeuse sous le sommet, plein sud, au-dessus de la vallée de l'Arve",
+  "source": "S201, S92",
+  "reason": "les sources disent la pente au sud"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "pointe-de-plate-falaise",
+  "field": "best_hours",
+  "before": "après-midi, plafond ≈ 3000 m",
+  "after": "quand la brise montante est bien installée",
+  "source": "S47, S205",
+  "reason": "3000 m est une condition (« si les plafonds sont très bons »), « après-midi » n'est dans aucune source ; S47 : thermiques généreux près des falaises quand la brise est bien installée"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "plateau-des-benes",
+  "field": "sources",
+  "before": [
+   "S149",
+   "S91"
+  ],
+  "after": [
+   "S149",
+   "S222"
+  ],
+  "source": "S222",
+  "reason": "S91 décrit un autre vol ; la vidéo yt_t3T3sEAOxcE décrit celui-ci"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "plateau-des-benes",
+  "field": "note",
+  "before": "Ce vol est décrit par une vidéo archivée qui ne figure pas dans les sources de la fiche.",
+  "after": null,
+  "source": "S222",
+  "reason": "la note ne disait que l'absence de cette source"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "quatre-tetes-aravis",
+  "field": "sources",
+  "before": [
+   "S38",
+   "S91"
+  ],
+  "after": [
+   "S38",
+   "S222"
+  ],
+  "source": "S222",
+  "reason": "S91 décrit un autre vol ; la vidéo yt_t3T3sEAOxcE décrit celui-ci"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "quatre-tetes-aravis",
+  "field": "distance_km",
+  "before": 9.3,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "quatre-tetes-aravis",
+  "field": "note",
+  "before": "Distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace. Le vol du stage est décrit par une vidéo archivée qui ne figure pas dans les sources de la fiche.",
+  "after": null,
+  "source": "S222",
+  "reason": "la note ne disait que la distance calculée et l'absence de la source"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "mole-mieussy",
+  "field": "distance_km",
+  "before": 10.5,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "mole-mieussy",
+  "field": "note",
+  "before": "Tracé schématique en trois points ; distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace.",
+  "after": "Tracé schématique en trois points.",
+  "source": "aucune",
+  "reason": "suit la suppression de distance_km"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "agy-chevran-taninges-samoens",
+  "field": "distance_km",
+  "before": 14.5,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "agy-chevran-taninges-samoens",
+  "field": "note",
+  "before": "Distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace.",
+  "after": null,
+  "source": "aucune",
+  "reason": "suit la suppression de distance_km"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "sur-cou-andey-sous-dine",
+  "field": "distance_km",
+  "before": 6.2,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "sur-cou-andey-sous-dine",
+  "field": "note",
+  "before": "Le point Sous-Dine n'est pas localisé ici ; distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace.",
+  "after": "Le point Sous-Dine n'est pas localisé ici.",
+  "source": "aucune",
+  "reason": "suit la suppression de distance_km"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "chamonix-plate-varan-quatre-tetes-pointe-percee",
+  "field": "distance_km",
+  "before": 22,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "arve-faucigny",
+  "id": "chamonix-plate-varan-quatre-tetes-pointe-percee",
+  "field": "note",
+  "before": "Distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace.",
+  "after": null,
+  "source": "aucune",
+  "reason": "suit la suppression de distance_km"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "haut-giffre",
+  "id": "brise-montante-giffre",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 20,
+   "max": 35
+  },
+  "after": {
+   "typical": 20,
+   "max": null
+  },
+  "source": "S85",
+  "reason": "35 km/h : aucune source, retiré. 20 km/h gardé comme estimation : la source dit « modérée à forte », et sans valeur le modèle appliquerait une brise ordinaire de 15 km/h"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "haut-giffre",
+  "id": "brise-montante-giffre",
+  "field": "note",
+  "before": "Vitesses non documentées : 20 et 35 km/h traduisent « modérée à forte » ; l'alimentation passe par la Menoge et le col de Saxel, et non par Marignier comme dans la première passe.",
+  "after": "Vitesse non documentée : 20 km/h est une estimation qui traduit « modérée à forte » ; l'alimentation passe par la Menoge et le col de Saxel, et non par Marignier comme dans la première passe.",
+  "source": "S85",
+  "reason": "suit la correction de speed_kmh"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "haut-giffre",
+  "id": "marcelly-mieussy-relance",
+  "field": "best_hours",
+  "before": "après-midi, même en automne",
+  "after": null,
+  "source": "S201",
+  "reason": "« même en automne » vaut pour le Môle ; aucune heure pour le Marcelly"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "haut-giffre",
+  "id": "clam-niveau3-samoens-criou",
+  "field": "distance_km",
+  "before": 40.1,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "haut-giffre",
+  "id": "clam-niveau3-samoens-criou",
+  "field": "note",
+  "before": "Seuls quatre points sont localisés ; les autres sommets sont des repères non géolocalisés. Distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace.",
+  "after": "Seuls quatre points sont localisés ; les autres sommets sont des repères non géolocalisés.",
+  "source": "aucune",
+  "reason": "suit la suppression de distance_km"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "haut-giffre",
+  "id": "clam-niveau2-mieussy-billiat",
+  "field": "distance_km",
+  "before": 32.4,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "haut-giffre",
+  "id": "clam-niveau2-mieussy-billiat",
+  "field": "note",
+  "before": "Distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace.",
+  "after": null,
+  "source": "aucune",
+  "reason": "suit la suppression de distance_km"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "haut-giffre",
+  "id": "morzine-haut-giffre-emosson",
+  "field": "distance_km",
+  "before": 11.4,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "haut-giffre",
+  "id": "morzine-haut-giffre-emosson",
+  "field": "note",
+  "before": "Les trois points tracés s'arrêtent aux Dents Blanches ; la suite n'est pas géolocalisée. Distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace.",
+  "after": "Les trois points tracés s'arrêtent aux Dents Blanches ; la suite n'est pas géolocalisée.",
+  "source": "aucune",
+  "reason": "suit la suppression de distance_km"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "haut-giffre",
+  "id": "saix-trapechet-criou-classique",
+  "field": "distance_km",
+  "before": 10,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "haut-giffre",
+  "id": "saix-trapechet-criou-classique",
+  "field": "note",
+  "before": "Distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace.",
+  "after": null,
+  "source": "aucune",
+  "reason": "suit la suppression de distance_km"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "chablais",
+  "id": "brise-vallee-aulps",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 20,
+   "max": 30
+  },
+  "after": {
+   "typical": 20,
+   "max": null
+  },
+  "source": "S94",
+  "reason": "30 km/h : aucune source, retiré. 20 km/h gardé comme estimation : « soutenue à forte » ; sans valeur le modèle appliquerait 15 km/h"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "chablais",
+  "id": "brise-vallee-aulps",
+  "field": "note",
+  "before": "Un passage de la première passe venait d'une source commerciale ; les vitesses sont une interprétation, aucune mesure n'étant publiée.",
+  "after": "Un passage de la première passe venait d'une source commerciale ; la vitesse est une estimation tirée de « soutenue à forte », aucune mesure n'étant publiée.",
+  "source": "S94",
+  "reason": "suit la correction de speed_kmh"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "chablais",
+  "id": "brise-vallee-abondance",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 25,
+   "max": 35
+  },
+  "after": {
+   "typical": 25,
+   "max": null
+  },
+  "source": "S73, S74",
+  "reason": "35 km/h : aucune source, retiré. 25 km/h gardé comme estimation : « très forte » ; sans valeur le modèle appliquerait 15 km/h"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "chablais",
+  "id": "brise-vallee-abondance",
+  "field": "note",
+  "before": "Vitesses : interprétation de « très forte », aucune mesure publiée.",
+  "after": "Vitesse : estimation tirée de « très forte », aucune mesure publiée.",
+  "source": "S73, S74",
+  "reason": "suit la correction de speed_kmh"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "chablais",
+  "id": "rebat-evian",
+  "field": "name",
+  "before": "Rebat de jour sur la rive d'Évian (flux de retour du lac vers la côte)",
+  "after": "Brise de jour sur la rive d'Évian (flux du lac vers la côte)",
+  "source": "S117",
+  "reason": "le rebat est la brise de la côte suisse ; côté français, ces brises « ne portent pas de nom particulier »"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "chablais",
+  "id": "rebat-thonon",
+  "field": "name",
+  "before": "Rebat de jour sur la rive de Thonon",
+  "after": "Brise de jour sur la rive de Thonon",
+  "source": "S117",
+  "reason": "le rebat est la brise de la côte suisse ; côté français, ces brises « ne portent pas de nom particulier »"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "chablais",
+  "id": "morget-evian",
+  "field": "name",
+  "before": "Morget (brise de terre du soir et de nuit) vers le lac d'Évian",
+  "after": "Brises de terre du soir et de nuit vers le lac d'Évian (albrans)",
+  "source": "S117",
+  "reason": "le morget souffle côté suisse ; côté français, ce sont les albrans"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "chablais",
+  "id": "morget-evian",
+  "field": "sources",
+  "before": [
+   "S33",
+   "S32"
+  ],
+  "after": [
+   "S33",
+   "S32",
+   "S117"
+  ],
+  "source": "S117",
+  "reason": "seule source de la distinction morget / albrans, citée par la note"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "chablais",
+  "id": "chatel-morclan-foehn",
+  "field": "conditions",
+  "before": "départ de cross par effet de foehn ; vent de nord ; rangée d'arbres devant le décollage",
+  "after": "effet de foehn signalé ; vent de nord ; rangée d'arbres devant le décollage",
+  "source": "S172",
+  "reason": "la fiche donne deux remarques distinctes : « Départ en cross - effet de foëh » ; la causalité est retirée"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "chablais",
+  "id": "leman-bornan-molan",
+  "field": "conditions",
+  "before": "orages sur les Préalpes, grande chaleur ; sens sud-nord ; jusqu'à 120 km/h",
+  "after": "orages sur les Préalpes, grande chaleur ; sens sud-nord ; bornan 30 à 40 nœuds, môlan 8 à 15 nœuds",
+  "source": "S117",
+  "reason": "120 km/h vient d'un site nautique, pour le seul bornan ; MétéoSuisse donne 30 à 40 et 8 à 15 nœuds"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "chablais",
+  "id": "leman-bornan-molan",
+  "field": "sources",
+  "before": [
+   "S33",
+   "S32"
+  ],
+  "after": [
+   "S33",
+   "S32",
+   "S117"
+  ],
+  "source": "S117",
+  "reason": "source des vitesses, déjà citée par la note"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "chablais",
+  "id": "leman-bise-rafales",
+  "field": "conditions",
+  "before": "situation de beau temps froid et sec ; 3, 6 ou 9 jours d'affilée",
+  "after": "situation de beau temps froid et sec ; peut souffler plusieurs jours consécutifs",
+  "source": "S117",
+  "reason": "« aucune statistique qui vérifierait une persistance de 3, 6 ou 9 jours »"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "chablais",
+  "id": "avoriaz-premier-thermique",
+  "field": "best_hours",
+  "before": "début d'après-midi",
+  "after": null,
+  "source": "S94",
+  "reason": "aucune heure dans la source"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "chablais",
+  "id": "avoriaz-premier-thermique",
+  "field": "note",
+  "before": "Source commerciale isolée, à recouper avec les locaux ; position approximative. L'heure (début d'après-midi) n'est pas dans la source.",
+  "after": "Source commerciale isolée, à recouper avec les locaux ; position approximative.",
+  "source": "S94",
+  "reason": "suit la suppression de best_hours"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "chablais",
+  "id": "ressachaux-dynamique-thermique",
+  "field": "best_hours",
+  "before": "après-midi, tendance nord ou régime de brise",
+  "after": null,
+  "source": "S27",
+  "reason": "« après-midi » et le régime de brise : aucune source ; la tendance nord est dans le trigger"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "chablais",
+  "id": "ressachaux-dynamique-thermique",
+  "field": "trigger",
+  "before": "arête nord-ouest de la Pointe de Ressachaux, face à la brise de vallée",
+  "after": "ascendance dynamique de la Pointe de Ressachaux par tendance nord",
+  "source": "S27",
+  "reason": "arête nord-ouest face à la brise : déduction ; la fiche dit « vol favorable en ascendance dynamique sur Ressachaux »"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "chablais",
+  "id": "orcier-dent-d-oche-lugrin",
+  "field": "distance_km",
+  "before": 8.6,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": "chablais",
+  "id": "orcier-dent-d-oche-lugrin",
+  "field": "note",
+  "before": "Distance : somme à vol d'oiseau entre les points cités, non mesurée sur trace.",
+  "after": null,
+  "source": "aucune",
+  "reason": "suit la suppression de distance_km"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": null,
+  "id": "S221",
+  "field": "sources[] (nouvelle entrée)",
+  "before": null,
+  "after": "https://www.parapentiste.info/forum/techniques-de-cross/charvin-tournette-t14966.0.html",
+  "source": "https://www.parapentiste.info/forum/techniques-de-cross/charvin-tournette-t14966.0.html",
+  "reason": "source archivée et relue, absente des sources du lot"
+ },
+ {
+  "lot": "chablais_giffre_arve",
+  "massif": null,
+  "id": "S222",
+  "field": "sources[] (nouvelle entrée)",
+  "before": null,
+  "after": "https://www.youtube.com/watch?v=t3T3sEAOxcE",
+  "source": "https://www.youtube.com/watch?v=t3T3sEAOxcE",
+  "reason": "source archivée et relue, absente des sources du lot"
+ },
+ {
+  "lot": "vercors_grenoble_trieves",
+  "massif": "grenoble-cuvette",
+  "id": "isere-voreppe-brise-montante",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 20,
+   "max": 35
+  },
+  "after": {
+   "typical": 20,
+   "max": null
+  },
+  "source": "S35, S100",
+  "reason": "35 km/h est le seuil d'un autre site (Uriage), retiré. 20 km/h gardé comme estimation : « forte » ; sans valeur le modèle appliquerait 15 km/h"
+ },
+ {
+  "lot": "vercors_grenoble_trieves",
+  "massif": "grenoble-cuvette",
+  "id": "isere-voreppe-brise-montante",
+  "field": "note",
+  "before": "Vitesses de 20 et 35 km/h : la première interprète le mot « forte », la seconde reprend le seuil de brise forte de l'atterrissage d'Uriage ; aucune source ne chiffre la brise de la cluse. Tracé schématique, d'après une carte de brises de vallée.",
+  "after": "Vitesse de 20 km/h : estimation qui interprète le mot « forte » ; aucune source ne chiffre la brise de la cluse. Tracé schématique, d'après une carte de brises de vallée.",
+  "source": "S35, S100",
+  "reason": "suit la correction de speed_kmh"
+ },
+ {
+  "lot": "vercors_grenoble_trieves",
+  "massif": "trieves",
+  "id": "courtet-pompe-devant-deco",
+  "field": "best_hours",
+  "before": "après 14h (site de l'après-midi, donne jusque tard en été)",
+  "after": "après le passage de la méridienne (site de l'après-midi, donne jusque tard en été)",
+  "source": "S202",
+  "reason": "« 14h » vient de la légende d'une photo ; le topo dit d'attendre que le soleil passe la méridienne"
+ },
+ {
+  "lot": "vercors_grenoble_trieves",
+  "massif": "trieves",
+  "id": "courtet-pompe-devant-deco",
+  "field": "sources",
+  "before": [
+   "S202",
+   "S203",
+   "S62",
+   "S218"
+  ],
+  "after": [
+   "S202",
+   "S203",
+   "S62",
+   "S218",
+   "S230"
+  ],
+  "source": "S230",
+  "reason": "le texte cite le point chaud des traces"
+ },
+ {
+  "lot": "vercors_grenoble_trieves",
+  "massif": "trieves",
+  "id": "courtet-combe-droite-deco",
+  "field": "sources",
+  "before": [
+   "S62"
+  ],
+  "after": [
+   "S62",
+   "S230"
+  ],
+  "source": "S230",
+  "reason": "le texte cite le point chaud des traces"
+ },
+ {
+  "lot": "vercors_grenoble_trieves",
+  "massif": "trieves",
+  "id": "fluchaire-ratier-bouchon",
+  "field": "best_hours",
+  "before": "vers 13h20 (début d'après-midi)",
+  "after": "à midi et le soir d'après les traces GPS (90 % à midi, 89 % le soir, rien le matin)",
+  "source": "S230, S204",
+  "reason": "13h20 est l'heure où le groupe a décollé ; les traces donnent midi et soir"
+ },
+ {
+  "lot": "vercors_grenoble_trieves",
+  "massif": "vercors-est-sud",
+  "id": "saint-jean-aerodrome-approche",
+  "field": "conditions",
+  "before": "Toute l'année ; fermeture du site du 5 au 23 octobre 2025 pour travaux (fiche) ; trafic d'aéro-club les week-ends de beau temps.",
+  "after": "Toute l'année ; fermeture du site du 5 au 23 octobre pour travaux (fiche, année non précisée) ; trafic d'aéro-club les week-ends de beau temps.",
+  "source": "S162, S163",
+  "reason": "« 2025 » n'est pas dans la fiche"
+ },
+ {
+  "lot": "vercors_grenoble_trieves",
+  "massif": "vercors-est-sud",
+  "id": "reserve-hauts-plateaux-sud",
+  "field": "conditions",
+  "before": "Toute l'année pour la réserve ; R196B activable du 16/09 au 30/06, jamais le mercredi, le week-end ni les jours fériés (1000 m/sol au FL195).",
+  "after": "Toute l'année pour la réserve ; R196B activable du 16/09 au 30/06, jamais le mercredi, le week-end ni les jours fériés (1000 m/sol au FL125 ; la fiche du Serpaton écrit FL195).",
+  "source": "S58, S152",
+  "reason": "FL125 : club du Diois et base d'espaces aériens de l'atlas (airspace.json, R 196 B) ; FL195 sur la seule fiche fédérale du Serpaton, signalé"
+ },
+ {
+  "lot": "vercors_grenoble_trieves",
+  "massif": "vercors-est-sud",
+  "id": "reserve-hauts-plateaux-sud",
+  "field": "sources",
+  "before": [
+   "S149",
+   "S150",
+   "S33",
+   "S49",
+   "S58"
+  ],
+  "after": [
+   "S149",
+   "S150",
+   "S33",
+   "S49",
+   "S58",
+   "S152"
+  ],
+  "source": "S152",
+  "reason": "fiche qui donne FL195, citée par le champ"
+ },
+ {
+  "lot": "vercors_grenoble_trieves",
+  "massif": "vercors-nord",
+  "id": "bellecombe-antenne-emetteur",
+  "field": "sources",
+  "before": [
+   "S43",
+   "S227"
+  ],
+  "after": [
+   "S43",
+   "S227",
+   "S270"
+  ],
+  "source": "S270",
+  "reason": "récit, seule source de la phrase sur l'antenne ; ajouté aux sources du lot"
+ },
+ {
+  "lot": "vercors_grenoble_trieves",
+  "massif": "vercors-nord",
+  "id": "ffvl2227-autrans-la-plaine-thermique-fevrier",
+  "field": "name",
+  "before": "La Plaine (Autrans) : possible thermique fin février par vent d'ouest",
+  "after": "La Plaine (Autrans), spot de snowkite : possible thermique fin février par vent d'ouest",
+  "source": "S269",
+  "reason": "la fiche 2227 est un spot de snowkite"
+ },
+ {
+  "lot": "vercors_grenoble_trieves",
+  "massif": "vercors-nord",
+  "id": "ffvl2227-autrans-la-plaine-thermique-fevrier",
+  "field": "best_hours",
+  "before": "fin février, par vent d'ouest (pente école ; non recommandé l'été à cause des fourrages)",
+  "after": "fin février, par vent d'ouest (spot de snowkite ; non recommandé l'été, par respect des fourrages)",
+  "source": "S269",
+  "reason": "« pente école » : pas dans la fiche"
+ },
+ {
+  "lot": "vercors_grenoble_trieves",
+  "massif": "vercors-nord",
+  "id": "ffvl2227-autrans-la-plaine-thermique-fevrier",
+  "field": "trigger",
+  "before": "pente école herbeuse de La Plaine, au nord-est d'Autrans, ensoleillée en hiver",
+  "after": "pente herbeuse de La Plaine, au nord-est d'Autrans",
+  "source": "S269",
+  "reason": "« pente école » et « ensoleillée en hiver » : pas dans la fiche"
+ },
+ {
+  "lot": "vercors_grenoble_trieves",
+  "massif": "vercors-est-sud",
+  "id": "vercors-barriere-est-moucherotte-mont-aiguille",
+  "field": "distance_km",
+  "before": 36,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "vercors_grenoble_trieves",
+  "massif": "matheysine",
+  "id": "salette-coiro-barbabon-taillefer-chamrousse",
+  "field": "distance_km",
+  "before": 31.3,
+  "after": null,
+  "source": "aucune",
+  "reason": "distance calculée par l'atlas ou somme à vol d'oiseau entre les points, aucune source ne la donne ; sans ce champ, la liste des itinéraires calcule la longueur du tracé (Routes.tsx) et la fiche n'affiche plus de « Distance »"
+ },
+ {
+  "lot": "vercors_grenoble_trieves",
+  "massif": null,
+  "id": "S270",
+  "field": "sources[] (nouvelle entrée)",
+  "before": null,
+  "after": "https://www.chvd.org/2020/08/12/bellecombe-10-08-2020/",
+  "source": "https://www.chvd.org/2020/08/12/bellecombe-10-08-2020/",
+  "reason": "source archivée et relue, absente des sources du lot"
+ },
+ {
+  "lot": "vercors_grenoble_trieves",
+  "massif": null,
+  "id": "S233",
+  "field": "sources[].notes",
+  "before": "Vol des Richards à Lumbin : plafond de 2800 m avant la Salette, zone ascendante au nord du sanctuaire, « Coiro puissant sur l'épaule SE, idem pour le Taillefer », plafond de 2800 m avant de basculer sur Chamrousse.",
+  "after": "Vol des Richards à Lumbin : plafond de 2800 m avant la Salette, zone ascendante au nord du sanctuaire, « Coiro puissant sur l'épaule SE, idem pour le Taillefer », plafond soigné avant de basculer sur Chamrousse.",
+  "source": "S233",
+  "reason": "le récit dit « On soigne le plaf avant de basculer sur Chamrousse », sans chiffre"
+ }
+]

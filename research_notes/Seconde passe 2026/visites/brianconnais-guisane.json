@@ -5,7 +5,7 @@
     {
       "chapter": "Le massif",
       "title": "Bienvenue à Briançon, carrefour de trois brises",
-      "text": "Bienvenue à Briançon, un carrefour de trois vallées. Au sud, la Durance s'ouvre au sud-sud-ouest et accélère la brise, avec des pointes au-delà de 40 km/h. À l'ouest, la Guisane monte vers le Lautaret, canalise le nord-ouest et reçoit la brise de la Romanche. Au nord, la Durance-Clarée est la porte de la Lombarde, un vent qui descend d'Italie par le col de Montgenèvre. La journée suit un ordre précis : la Romanche descend le matin, la brise de Durance entre ensuite, puis la Lombarde peut prendre le dessus en fin d'après-midi. C'est pourquoi on quitte les décollages avant la brise forte.",
+      "text": "Bienvenue à Briançon, un carrefour de trois vallées. Au sud, la Durance s'ouvre au sud-sud-ouest et accélère la brise, avec des pointes au-delà de 40 km/h. À l'ouest, la Guisane monte vers le Lautaret, canalise le nord-ouest et reçoit la brise de la Romanche. Au nord, la Durance-Clarée est la porte de la Lombarde, un vent qui descend d'Italie par le col de Montgenèvre. La journée suit souvent le même ordre : la Romanche peut descendre le matin, la brise de Durance entre ensuite, puis la Lombarde peut prendre le dessus en fin d'après-midi. C'est pourquoi on quitte les décollages avant la brise forte.",
       "focus": [],
       "view": "massif"
     },
@@ -24,8 +24,8 @@
     },
     {
       "chapter": "La journée de l'air",
-      "title": "Dès la mi-matinée, la brise de Durance entre",
-      "text": "La Durance remonte les Alpes du Sud sur un axe sud-ouest : c'est un accélérateur de brise très puissant. À Briançon, la brise entre dès la mi-matinée et devient forte en début d'après-midi. Aux atterrissages de Saint-Chaffrey et de Saint-Blaise, elle dépasse parfois 40 km/h. Les tendances de sud à ouest la renforcent et la font entrer plus tôt et plus brusquement. Au Granon, la brise de pente s'installe dès la fin de matinée, le Petit Aréa en premier. En été, les crêtes sont très fortes dès la mi-journée.",
+      "title": "En milieu ou fin de matinée, la brise de Durance entre",
+      "text": "La Durance remonte les Alpes du Sud sur un axe sud-ouest : c'est un accélérateur de brise très puissant. À Briançon, la brise monte en milieu ou fin de matinée, puis souffle fort à très fort l'après-midi, de la fin du printemps à la fin de l'été. Aux atterrissages de Saint-Chaffrey et de Saint-Blaise, elle dépasse parfois 40 km/h en été. Les tendances de sud à ouest la renforcent et peuvent la faire entrer tôt et brusquement. Au Granon, la brise de pente s'installe dès la fin de matinée, le Petit Aréa en premier. En été, les crêtes sont très fortes dès la mi-journée.",
       "focus": [
         "brise-durance-basse-guisane",
         "brise-pente-granon",
@@ -36,7 +36,7 @@
     {
       "chapter": "La journée de l'air",
       "title": "L'après-midi, la confluence glisse vers Saint-Chaffrey",
-      "text": "La brise qui remonte la Durance rencontre celle de la Romanche, passée par le Lautaret. C'est une confluence : deux brises se heurtent, et l'air n'a d'autre issue que de monter. Elle se tient très souvent vers Saint-Chaffrey, entre Le Monêtier et Briançon selon le vent météo. Vers 16 h, la brise de la Guisane s'inverse, et la limite glisse. En été, le Granon se vole dans cette confluence : ça secoue, mais ça marche bien. Au sol, si la manche à air de Saint-Chaffrey change de sens, posez-vous ailleurs, dans l'une ou l'autre brise, jamais entre les deux.",
+      "text": "La brise qui remonte la Durance rencontre celle de la Romanche, passée par le Lautaret. C'est une confluence : deux brises se heurtent, et l'air n'a d'autre issue que de monter. Elle se tient très souvent vers Saint-Chaffrey, entre Le Monêtier et Briançon selon le vent météo. Vers 16 h en été, la brise de la Guisane faiblit, puis revient du Lautaret, et la limite glisse. En été, le Granon se vole dans cette confluence : ça secoue, mais ça marche bien. Au sol, si la manche à air de Saint-Chaffrey change de sens, posez-vous ailleurs, dans l'une ou l'autre brise, jamais entre les deux.",
       "focus": [
         "conv-saint-chaffrey-granon",
         "therm-conf-saint-chaffrey",
@@ -47,8 +47,8 @@
     },
     {
       "chapter": "La journée de l'air",
-      "title": "En fin d'après-midi, la Lombarde prend le dessus",
-      "text": "Quand la brise de Durance faiblit, la Lombarde, qui descend du col de Montgenèvre, peut prendre le dessus à La Vachette et dans la basse Clarée. L'une de ses trois origines est la brise d'Italie : l'air frais de la plaine du Pô, aspiré par les dépressions thermiques des hauts massifs. C'est la plus difficile à prévoir. Dans la basse Clarée, le vent se met souvent à redescendre entre 16 h et 18 h. La confluence avec la brise de Durance démarre vers La Vachette, puis descend la vallée. Quand les deux ont la même vitesse, elle peut se tenir à la verticale de Briançon Sud.",
+      "title": "En fin d'après-midi, la Lombarde peut prendre le dessus",
+      "text": "Quand la brise de Durance faiblit, la Lombarde, qui descend du col de Montgenèvre, peut prendre le dessus à La Vachette et dans la basse Clarée. L'une de ses trois origines est la brise d'Italie : l'air frais de la plaine du Pô, probablement aspiré par les ascendances des hauts massifs. C'est la plus difficile à prévoir. Dans la basse Clarée, le vent se met souvent à redescendre entre 16 h et 18 h. La confluence avec la brise de Durance démarre vers La Vachette, puis descend la vallée. Quand les deux ont la même vitesse, elle peut se tenir à la verticale de Briançon Sud.",
       "focus": [
         "lombarde-montgenevre",
         "conv-lombarde-vachette",
@@ -60,7 +60,7 @@
     {
       "chapter": "Où ça monte",
       "title": "Peyrolles, Granon, Prorel : les déclencheurs du Briançonnais",
-      "text": "Où monte-t-on ? En brise classique, les crêtes de Peyrolles et le fort de la Croix de Bretagne donnent un thermique très fort, et des cumulonimbus s'y forment parfois. Au-dessus de la forêt, les crêtes du Granon donnent des thermiques généreux, parfois très puissants, mais la pente boisée rend l'extraction technique. Au Prorel, les falaises de Notre-Dame-des-Neiges déclenchent dès la fin de matinée. Depuis le Granon, on peut monter très haut : un plafond de 4000 m a été atteint au Combeynot, face à la Meije, mais ce n'est qu'une observation.",
+      "text": "Où monte-t-on ? En brise classique, les crêtes de Peyrolles et le fort de la Croix de Bretagne donnent un thermique très fort. Les cumulonimbus se forment volontiers sur les crêtes de Peyrolles. Au-dessus de la forêt, les crêtes du Granon donnent des thermiques généreux, parfois très puissants, mais la pente boisée rend l'extraction technique. Au Prorel, les falaises de Notre-Dame-des-Neiges déclenchent dès la fin de matinée. Depuis le Granon, on peut monter très haut : un plafond de 4000 m a été atteint au Combeynot, face à la Meije, en biplace, mais ce n'est qu'une observation.",
       "focus": [
         "thermiques-crete-peyrolles",
         "thermiques-fort-croix-bretagne",
@@ -85,8 +85,8 @@
     },
     {
       "chapter": "Les sites",
-      "title": "Le Prorel : le départ des cross de printemps",
-      "text": "Le Prorel, accessible par la télécabine, lance les cross du printemps : exposition sud-est, thermiques dès la mi-février, extraction très tôt sur 1200 m de dénivelé. Il est idéal par flux de sud ou d'est, défavorable par nord-ouest, et peut être très fort au printemps et en été. Le décollage de Notre-Dame-des-Neiges, non conventionné, est juste au-dessus des falaises qui déclenchent ; pas de vol le 15 août, jour de pèlerinage. On se pose à Saint-Blaise, un très grand champ dans l'axe de la vallée : prise de terrain en U si la brise rentre au sud, en S si elle rentre au nord.",
+      "title": "Le Prorel : un très bon départ de cross au printemps",
+      "text": "Par la télécabine, en saison, ou à pied, le Prorel est un très bon départ de cross au printemps : exposition sud-est, thermiques dès la mi-février, extraction parfois très tôt, 1200 m de dénivelé. Il est idéal par flux de sud ou d'est, défavorable par nord-ouest, et peut être très fort au printemps et en été. Le décollage de Notre-Dame-des-Neiges, non conventionné, est juste au-dessus des falaises qui déclenchent ; pas de vol le 15 août, jour de pèlerinage. On se pose à Saint-Blaise, un très grand champ dans l'axe de la vallée : prise de terrain en U si la brise rentre au sud, en S si elle rentre au nord.",
       "focus": [
         "prorel-croix-de-la-nore",
         "notre-dame-des-neiges",
@@ -98,7 +98,7 @@
     {
       "chapter": "Le parcours classique",
       "title": "Un cross facile : du Granon au Lautaret et retour",
-      "text": "Pour un premier cross, le Granon offre un petit tour sans trop d'engagement, jusqu'au col du Lautaret et retour. Le piège, c'est la brise de la Romanche, qui passe le Lautaret et redescend la Guisane, avec du vent fort et des venturis au col. On part parfois par flux de sud, même avec 30 à 40 km/h à la balise du Prorel, et les plafonds peuvent atteindre 4000 m vers le Combeynot. Le soir, l'inversion peut être radicale à Saint-Chaffrey.",
+      "text": "Pour un cross facile, le Granon offre un petit tour sans trop d'engagement, jusqu'au col du Lautaret et retour. Le piège, c'est la brise de la Romanche, qui passe le Lautaret et redescend la Guisane, avec du vent fort et des venturis au col. On peut partir par flux de sud, même avec 30 à 40 km/h à la balise du Prorel. Un vol en biplace a plafonné à 4000 m vers le Combeynot. Le soir, l'inversion peut être radicale à Saint-Chaffrey.",
       "focus": [
         "granon-lautaret-aller-retour",
         "therm-combeynot-plafond",
@@ -110,8 +110,8 @@
     },
     {
       "chapter": "Le parcours classique",
-      "title": "Au printemps, la Clarée et Embrun",
-      "text": "Par beaux plafonds, les meilleurs atteignent parfois Névache, non sans mal ; les autres s'arrêtent à Val-des-Prés, au nord de Briançon. Tous luttent contre la Lombarde thermique de fin d'après-midi. Le départ n'est pas précisé, probablement au Prorel ou au Granon. Vers le sud, le cross du Prorel vers Embrun passe par un petit rocher orienté sud, sous la Croix d'Aquila. Là, un thermique plaqué par la Lombarde jusqu'à 2300 m permet de remonter, avec un léger est. Surtout, ne vous faites pas rattraper par la Lombarde.",
+      "title": "Deux journées de printemps : la Clarée et Embrun",
+      "text": "Ce ne sont pas des itinéraires décrits, mais deux journées. Un jour de beaux plafonds, les meilleurs ont atteint Névache, non sans mal, et les autres Val-des-Prés, au nord de Briançon. Le départ n'est pas précisé, probablement au Prorel ou au Granon. Vers le sud, un vol de mars est allé du Prorel à Embrun par un petit rocher orienté sud, sous la Croix d'Aquila. Là, un thermique plaqué au fond du vallon par la Lombarde l'a monté jusqu'à 2300 m, où l'attendait un léger est. La clé de ce vol : ne pas se faire rattraper par la Lombarde.",
       "focus": [
         "claree-printemps",
         "brise-pente-prorel",
@@ -136,7 +136,7 @@
     {
       "chapter": "Les pièges",
       "title": "Brise forte, câbles, orages et zones militaires",
-      "text": "En été, la brise dépasse parfois 40 km/h à Saint-Blaise dès le début de l'après-midi : posez avant, ou prévoyez de vous reposer en altitude, au plateau des Tronchets ou au Lautaret. Les câbles abondent à Serre Chevalier (tyrolienne, CATEX du Rocher Blanc et de Sibouit). Au Prorel, restez à 50 m latéralement et 15 m verticalement des installations. Les zones militaires R221, au nord-ouest de Briançon, couvrent le Granon et le Galibier : actives, elles interdisent le vol du sol au FL240, avec des tirs réels. Un cumulonimbus qui remonte la Durance peut être précédé, 5 à 10 km avant l'orage, d'un vent qui forcit.",
+      "text": "En été, la brise peut dépasser 40 km/h à Saint-Blaise et entrer assez tôt : posez avant, ou prévoyez de vous reposer en altitude, au plateau des Tronchets ou au Lautaret. Les câbles abondent à Serre Chevalier (tyrolienne, CATEX du Rocher Blanc et de Sibouit). Au Prorel, restez à 50 m latéralement et 15 m verticalement des installations. Les zones militaires R221, au nord-ouest de Briançon, couvrent le Granon et le Galibier : actives, elles interdisent le vol du sol au FL240, avec des tirs réels. Un cumulonimbus qui remonte la Durance peut être précédé, 5 à 10 km avant l'orage, d'un vent qui forcit.",
       "focus": [
         "brise-forte-briancon",
         "prorel-conditions-fortes",
@@ -185,7 +185,7 @@
     {
       "chapter": "Les transitions",
       "title": "Quitter Briançon : le Lautaret, Vallouise, Embrun",
-      "text": "Reste à sortir de Briançon. À l'ouest, le col du Lautaret ouvre sur la Meije et l'Oisans : un cross y a atteint 4050 m avant de rejoindre Saint-Chaffrey. Au sud, la Durance mène à L'Argentière, Vallouise et Embrun ; sa brise montante souffle d'Embrun vers Briançon. Vallouise sert de refuge quand la Lombarde rend Saint-Blaise risqué. Le cross du Prorel vers Embrun commence par la relance de la Croix d'Aquila. Par nord-ouest fort, une confluence se forme vers Saint-Crépin, où le vent est souvent trop fort pour voler.",
+      "text": "Reste à sortir de Briançon. À l'ouest, le col du Lautaret ouvre sur la Meije et l'Oisans : un cross y a atteint 4050 m avant de rejoindre Saint-Chaffrey. Au sud, la Durance mène à L'Argentière, Vallouise et Embrun ; sa brise montante souffle d'Embrun vers Briançon. Vallouise sert de refuge quand la Lombarde rend Saint-Blaise risqué. Un vol du Prorel vers Embrun a commencé par la relance de la Croix d'Aquila. Par nord-ouest fort, une confluence se forme vers Saint-Crépin, où le vent est souvent trop fort pour voler.",
       "focus": [
         "oisans-grandes-rousses/lautaret-plafond-4050",
         "ecrins-vallouise-haute-durance/brise-durance-embrun-briancon",

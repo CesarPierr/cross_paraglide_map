@@ -5,7 +5,7 @@
       "id": "tarentaise",
       "name": "Tarentaise (Albertville → Moûtiers → Bourg-Saint-Maurice → Val d'Isère)",
       "parent_massif": "Tarentaise",
-      "summary": "La Tarentaise est la longue vallée de l'Isère : orientée sud-est entre Albertville et Moûtiers, puis nord-est jusqu'à Bourg-Saint-Maurice, où elle plie à angle droit vers Tignes et Val d'Isère.\n\nVers 11h, la brise montante s'installe dans la Tarentaise moyenne (Moûtiers-Centron). L'après-midi, elle devient forte : à Bourg, souvent 30 à 40 km/h et plus dès 14h. Prévoyez donc de vous poser le matin ou le soir. À Bourg, elle rencontre un flux descendant des Chapieux, accéléré par le venturi Prainan-Clapet et renforcé par le nord ou la bise. En aval, à Landry, la brise principale se partage : une branche remonte le Ponthurin, puis bascule par le col de la Chal vers l'Arc.\n\nLa Haute Tarentaise connaît un foehn instantané, le « vent du Saint-Bernard », d'axe nord-est/sud-ouest : ses rafales de 80 km/h peuvent atteindre Moûtiers. Par vent de sud annoncé, un écart de 4 hPa ou plus au diagramme du foehn doit faire renoncer. À Tignes et Val d'Isère, foehn et lombarde donnent de grosses rafales : on ne vole pas. La vallée de Bourg est généreuse en thermiques, et les Arcs sont assez protégés de la bise. À Peisey-Vallandry, il n'est pas rare de voir des voiles au-delà de 3000 m. Brise établie, on longe la crête de la Grive vers le nord, obligatoirement sur le versant ouest.\n\nLe cœur du Parc national de la Vanoise (Mont Pourri, Ponthurin, sud de Tignes) est tout proche. L'arrêté 2026-31 n'autorise son survol à moins de 1000 m/sol que dans des secteurs de Maurienne : aucun en Tarentaise.",
+      "summary": "Pour lire la Tarentaise, remontez l'Isère. D'Albertville à Moûtiers, la vallée file au sud-est, puis au nord-est jusqu'à Bourg-Saint-Maurice, où elle plie à angle droit vers Tignes et Val d'Isère. À Bourg, deux versants se font face : au nord-ouest, les pentes tournées vers l'est, autour des forts ; au sud-est, la crête des Arcs et de Peisey-Vallandry, tournée vers l'ouest. Le massif touche la Vanoise à Moûtiers et le Beaufortain au nord.\n\nLa journée appartient à une brise montante. Elle s'installe vers 11h dans la Tarentaise moyenne (Moûtiers, Centron) et devient forte l'après-midi : à Bourg, souvent 30 à 40 km/h et plus dès 14h. Posez-vous donc le matin ou le soir. À Bourg, elle rencontre le flux descendant des Chapieux, accéléré par le venturi Prainan-Clapet et renforcé par le nord ou la bise. En aval, à Landry, elle s'est déjà partagée : une branche remonte le Ponthurin, puis bascule par le col de la Chal vers la vallée de l'Arc, côté Arc 2000.\n\nLa vallée de Bourg est généreuse en thermiques, et les Arcs sont assez protégés de la bise. À Peisey-Vallandry, il n'est pas rare de voir des voiles au-delà de 3000 m. Brise établie, on longe la crête de la Grive vers le nord, obligatoirement sur le versant ouest. La haute vallée a son danger propre, un foehn instantané, le « vent du Saint-Bernard », d'axe nord-est/sud-ouest, dont les rafales de 80 km/h peuvent atteindre Moûtiers. Par vent de sud annoncé, un écart de 4 hPa ou plus au diagramme du foehn doit faire renoncer. À Tignes et Val d'Isère, foehn et lombarde donnent de grosses rafales : on ne vole pas.\n\nLe cœur du Parc national de la Vanoise (Mont Pourri, Ponthurin, sud de Tignes) est tout proche. L'arrêté 2026-31 n'autorise son survol à moins de 1000 m/sol que dans des secteurs de Maurienne : aucun en Tarentaise.",
       "bbox": [
         6.38,
         45.43,
@@ -78,7 +78,7 @@
           },
           "season": "mars-octobre (maximum en été)",
           "layer_depth_m": "non documentée ; le PCHT note que selon l'altitude c'est tantôt le vent montant « Tarentaise », tantôt le flux descendant « Chapieux » qui domine",
-          "description": "Toute la Tarentaise vit sous une brise de vallée soutenue. Elle se lève vers 11h dans la Tarentaise moyenne (Moûtiers, Centron), vers 12h-13h à Bourg-Saint-Maurice. Dès 14h, elle y est souvent forte : 30 à 40 km/h et plus en été, au plus fort de 14h à 17h. Dans ces longues vallées, le venturi des rétrécissements peut la pousser à 50 km/h. Prévoyez de vous poser le matin ou le soir.",
+          "description": "Cette brise de vallée soutenue remonte toute la Tarentaise, d'Albertville à Bourg-Saint-Maurice, et c'est elle qui fixe l'heure de se poser : le matin ou le soir. Elle se lève vers 11h dans la Tarentaise moyenne (Moûtiers, Centron), vers 12h-13h à Bourg. Dès 14h, elle y est souvent forte : 30 à 40 km/h et plus en été, au plus fort de 14h à 17h. Dans ces longues vallées, le venturi des rétrécissements peut la pousser à 50 km/h.",
           "confidence": "high",
           "sources": [
             "S35",
@@ -128,7 +128,7 @@
           },
           "season": "printemps-été",
           "layer_depth_m": "non documentée",
-          "description": "À Landry, la brise de vallée se partage. Une branche remonte la vallée du Ponthurin jusqu'à Peisey-Nancroix et donne au versant de Peisey ses meilleures conditions de l'après-midi. Elle est en général moins forte : quand ça souffle trop aux Ilettes, le Ponthurin peut servir de refuge. Plus haut, le Mont Pourri est en cœur de Parc national, et la limite passe tout près de Rosuel.",
+          "description": "À Landry, la brise de vallée se partage, et une branche remonte la vallée du Ponthurin jusqu'à Peisey-Nancroix. En général moins forte, elle peut servir de refuge quand ça souffle trop aux Ilettes, et elle donne au versant de Peisey ses meilleures conditions de l'après-midi. Plus haut, le Mont Pourri est en cœur de Parc national, et la limite passe tout près de Rosuel.",
           "confidence": "high",
           "sources": [
             "S35",
@@ -171,7 +171,7 @@
             "max": null
           },
           "season": "été",
-          "description": "En basculant par le col de la Chal, à l'est de l'Aiguille Grive, la branche de brise du Ponthurin partie de Landry nourrit la brise descendante de la vallée de l'Arc, côté Arc 2000. Le versant est de l'Aiguille Rousse, à son pied, devient très inhospitalier, et la combe entre les deux aiguilles, au Grizzly, est turbulente. Si vous décollez de l'Aiguille Grive en début d'après-midi, dégagez vite vers l'ouest, pour ne pas devoir contourner l'Aiguille Rousse du mauvais côté.",
+          "description": "Au col de la Chal, à l'est de l'Aiguille Grive, la branche de brise du Ponthurin partie de Landry bascule et nourrit la brise descendante de la vallée de l'Arc, côté Arc 2000. Si vous décollez de l'Aiguille Grive en début d'après-midi, dégagez vite vers l'ouest, pour ne pas devoir contourner l'Aiguille Rousse du mauvais côté : son versant est, à son pied, devient très inhospitalier, et la combe entre les deux aiguilles, au Grizzly, est turbulente.",
           "confidence": "medium",
           "sources": [
             "S35",
@@ -218,7 +218,7 @@
             "max": null
           },
           "layer_depth_m": "non documentée ; dominant dans certaines couches seulement",
-          "description": "L'air froid qui descend des glaciers dominant les Chapieux et la Ville des Glaciers fait un flux important. La brise venue de Beaufort, forte à l'altitude de Roselend, s'y ajoute, et parfois un vent météo de nord ou de nord-ouest. Ce courant accélère en venturi entre Prainan et Clapet, puis déboule sur Bourg-Saint-Maurice, à la rencontre de la brise montante. Par bise, il peut descendre jusqu'aux Ilettes.",
+          "description": "Ce flux descend la vallée des Chapieux et déboule sur Bourg-Saint-Maurice, à la rencontre de la brise montante. Il naît de l'air froid des glaciers qui dominent les Chapieux et la Ville des Glaciers, et c'est un flux important. La brise venue de Beaufort, forte à l'altitude de Roselend, s'y ajoute, et parfois un vent météo de nord ou de nord-ouest. Le tout accélère en venturi entre Prainan et Clapet. Par bise, il peut descendre jusqu'aux Ilettes.",
           "confidence": "medium",
           "sources": [
             "S35",
@@ -257,7 +257,7 @@
             "max": null
           },
           "season": "été, avec vent météo de nord",
-          "description": "Un flux, sans doute turbulent, descend le vallon du Cormet d'Arêches vers Aime, sur le retour du Beaufortain vers Bourg-Saint-Maurice.",
+          "description": "Sur le retour du Beaufortain vers Bourg-Saint-Maurice, un flux, sans doute turbulent, descend le vallon du Cormet d'Arêches vers Aime.",
           "confidence": "low",
           "sources": [
             "S72"
@@ -304,7 +304,7 @@
             "max": null
           },
           "season": "printemps-été",
-          "description": "À Bourg-Saint-Maurice, la vallée de l'Isère prend un virage à 90° vers Tignes et Val d'Isère. À Val d'Isère, thermiques et brise de vallée sont soutenus dès 11h : c'est pour pilotes expérimentés. Tignes a des conditions de haute montagne : en été, les brises peuvent y être très confluentes, et le vent d'altitude peut rentrer fort d'un coup. Au lac, brises et vent peuvent changer de direction très vite l'après-midi.",
+          "description": "À Bourg-Saint-Maurice, la vallée de l'Isère prend un virage à 90° vers Tignes et Val d'Isère, et la brise le suit. À Val d'Isère, thermiques et brise de vallée sont soutenus dès 11h : c'est pour pilotes expérimentés. Tignes a des conditions de haute montagne : en été, les brises peuvent y être très confluentes, et le vent d'altitude peut rentrer fort d'un coup. Au lac, brises et vent peuvent changer de direction très vite l'après-midi.",
           "confidence": "medium",
           "sources": [
             "S35",
@@ -346,7 +346,7 @@
             "max": null
           },
           "season": "été (brise) ; toute l'année (foehn)",
-          "description": "Le col du Petit-Saint-Bernard est la porte du foehn de sud qui se déverse d'Italie, le « vent du Saint-Bernard », d'axe nord-est/sud-ouest sur Bourg-Saint-Maurice. Si la balise du col donne du nord ou du nord-est à plus de 15 km/h, le foehn est probablement en train de s'installer. Le col sert aussi de terrain de soaring non officiel.",
+          "description": "Au-dessus de Séez et de La Rosière, le col du Petit-Saint-Bernard est la porte du foehn de sud qui se déverse d'Italie, le « vent du Saint-Bernard », d'axe nord-est/sud-ouest sur Bourg-Saint-Maurice. Regardez sa balise : du nord ou du nord-est à plus de 15 km/h, et le foehn est probablement en train de s'installer. Le col sert aussi de terrain de soaring non officiel.",
           "confidence": "low",
           "sources": [
             "S35",
@@ -380,8 +380,8 @@
             ]
           },
           "when": "Dès 11h-12h en été (terrain « thermique » près de la ville), jusqu'à tard dans la journée ; plus marquée avec vent météo N/NO ou bise, ou foehn de NE",
-          "mechanism": "À Bourg, la brise qui remonte la Tarentaise rencontre le flux qui descend des Chapieux, accéléré en venturi entre Prainan et Clapet. Les deux se marient mal : rouleaux et turbulences. Suivant l'altitude, c'est l'un ou l'autre qui domine. Au sol, tout s'enchaîne sans ordre, du vent de vallée puissant au vent descendant très fort, en passant par un vent hésitant.",
-          "usage": "Danger plus que ressource. Les atterrissages les plus sensibles sont le Versoyen et La Gare : gardez-les pour le matin, jusqu'à 13h, ou la fin de journée, par vent faible. Sinon, posez aux Ilettes, à 3 km en aval. C'est un bon refuge en confluence moyenne, même si la confluence peut aussi l'atteindre.",
+          "mechanism": "À Bourg, la brise qui remonte la Tarentaise rencontre le flux qui descend des Chapieux, accéléré en venturi entre Prainan et Clapet. Les deux se marient mal : rouleaux et turbulences, et selon l'altitude, c'est l'un ou l'autre qui domine. Au sol, tout s'enchaîne sans ordre, du vent de vallée puissant au vent descendant très fort, en passant par un vent hésitant.",
+          "usage": "Danger plus que ressource. Les atterrissages les plus sensibles sont le Versoyen et La Gare : gardez-les pour le matin, jusqu'à 13h, ou la fin de journée, par vent faible. Sinon, posez aux Ilettes, à 3 km en aval, bon refuge en confluence moyenne, même si la confluence peut aussi l'atteindre.",
           "confidence": "high",
           "sources": [
             "S35",
@@ -413,7 +413,7 @@
             ]
           },
           "when": "Fin d'après-midi, vent météo N-NO",
-          "mechanism": "Au-dessus d'Aime, le flux qui descend du vallon du Cormet d'Arêches semble rencontrer la brise qui remonte vers Bourg-Saint-Maurice. Un seul vol le décrit.",
+          "mechanism": "Un seul vol le décrit : au-dessus d'Aime, le flux qui descend du vallon du Cormet d'Arêches semble rencontrer la brise qui remonte vers Bourg-Saint-Maurice.",
           "usage": "Au retour du Beaufortain vers les Arcs, on peut y recharger. Ensuite, on avance au-dessus de grosses lignes à haute tension, et ça secoue.",
           "confidence": "low",
           "sources": [
@@ -447,7 +447,7 @@
             ]
           },
           "when": "Après-midi d'été, à partir de 11h-13h (déduction)",
-          "mechanism": "Trois vallées de brise se rejoignent à Moûtiers : l'Isère venant d'Albertville, le Doron de Bozel et le Doron de Belleville. Dès 11h, la brise monte de Moûtiers vers la haute montagne. Celle du Doron de Bozel s'allume vers 13h, par exemple aux Monts.",
+          "mechanism": "À Moûtiers se rejoignent trois vallées de brise : l'Isère venant d'Albertville, le Doron de Bozel et le Doron de Belleville. Dès 11h, la brise monte de Moûtiers vers la haute montagne, et celle du Doron de Bozel s'allume vers 13h, par exemple aux Monts.",
           "usage": "Au décollage des Prés, renoncez si des rafales de nord descendent du Jovet.",
           "confidence": "low",
           "sources": [
@@ -468,7 +468,7 @@
           "radius_km": 6,
           "coord_quality": "source",
           "conditions": "Été, de 12h-14h jusqu'en fin d'après-midi",
-          "description": "À Bourg-Saint-Maurice, la brise est souvent forte dès 14h : elle monte facilement à 30 km/h, voire 40 km/h et plus. Aux Ilettes, en été, elle est forte dès 12h, et une ligne haute tension nord-est/sud-ouest longe le terrain. Regardez la balise des Ilettes avant de décoller.",
+          "description": "À Bourg-Saint-Maurice, la brise est souvent forte dès 14h : elle monte facilement à 30 km/h, voire 40 km/h et plus. Regardez la balise des Ilettes avant de décoller. Sur ce terrain, en aval de Bourg, elle est forte dès 12h en été, et une ligne haute tension nord-est/sud-ouest le longe.",
           "sources": [
             "S49",
             "S74",
@@ -488,7 +488,7 @@
           "radius_km": 12,
           "coord_quality": "approx",
           "conditions": "Courant de secteur S (SE à SO) en altitude à courbure cyclonique, typiquement dépression sur le golfe de Gascogne ou le Portugal ; écart de pression ≥ 4 hPa sur le « diagramme du foehn » ; barre de foehn visible au Petit-Saint-Bernard (sa présence interdit le vol) ; flux NE au Petit-Saint-Bernard = vigilance, flux NE au Cottier = vol interdit (PCHT)",
-          "description": "Le foehn de sud, le « vent du Saint-Bernard », peut se lever en quelques minutes et donner des rafales à 80 km/h sans prévenir, jusqu'à Moûtiers. Il peut être violent entre 100 et 500 m sol et rester indécelable au sol comme au décollage. Même faible, il est très dangereux. Il passe surtout par les cols du Petit-Saint-Bernard et du Mont-Cenis. Par vent météo de sud-ouest à sud-est, ne volez pas.",
+          "description": "Par vent météo de sud-ouest à sud-est, ne volez pas : le foehn de sud, le « vent du Saint-Bernard », peut se lever en quelques minutes et donner des rafales à 80 km/h sans prévenir, jusqu'à Moûtiers. Même faible, il est très dangereux. Il peut être violent entre 100 et 500 m sol et rester indécelable au sol comme au décollage. Il passe surtout par les cols du Petit-Saint-Bernard et du Mont-Cenis.",
           "sources": [
             "S35",
             "S36",
@@ -506,7 +506,7 @@
           "radius_km": 2.5,
           "coord_quality": "approx",
           "conditions": "Flux descendant des Chapieux renforcé par la brise de Beaufort (forte à Roselend), le vent N/NO ou la bise ; peut descendre jusqu'aux Ilettes",
-          "description": "Le flux qui descend des Chapieux accélère en venturi entre Prainan et Clapet, puis déboule sur Bourg-Saint-Maurice. La brise de Beaufort, le vent de nord ou de nord-ouest et la bise le renforcent. Il peut alors descendre jusqu'aux Ilettes.",
+          "description": "Entre Prainan et Clapet, sur la route des Chapieux, le flux descendant accélère en venturi, puis déboule sur Bourg-Saint-Maurice. La brise de Beaufort, le vent de nord ou de nord-ouest et la bise le renforcent, et il peut alors descendre jusqu'aux Ilettes.",
           "sources": [
             "S35",
             "S36"
@@ -522,7 +522,7 @@
           "radius_km": 1.5,
           "coord_quality": "source",
           "conditions": "Été, à partir de 12h-13h ; avec bise, entrée du flux des Chapieux jusqu'aux Ilettes",
-          "description": "Le terrain des Ilettes est immense et facile, et c'est un bon refuge en confluence moyenne. Mais la brise y devient forte l'après-midi, et la confluence peut l'atteindre. Une ligne haute tension nord-est/sud-ouest longe le terrain. Les écoles y sont nombreuses : surveillez leurs trajectoires.",
+          "description": "Les Ilettes, entre Landry et Bourg, forment un terrain immense et facile, et un bon refuge en confluence moyenne. Mais la brise y devient forte l'après-midi, et la confluence peut l'atteindre. Une ligne haute tension nord-est/sud-ouest longe le terrain. Les écoles y sont nombreuses : surveillez leurs trajectoires.",
           "sources": [
             "S74",
             "S49",
@@ -541,7 +541,7 @@
           "radius_km": 1.2,
           "coord_quality": "source",
           "conditions": "À partir de midi en été (thermique de ville, confluence jusqu'à tard) ; foehn de NE du Petit-Saint-Bernard",
-          "description": "La Gare et le Versoyen sont dans une confluence, et sous le vent de la ville dès midi en été. La confluence peut durer tard et secouer encore en soirée. La Gare, étroite, turbulente dès 12h selon la saison, est réservée au niveau brevet de pilote et n'ouvre que du 1er juillet au 31 août : évitez-la l'après-midi d'été. Le Versoyen, ouvert à l'année, a des promeneurs et des chiens, des arbres d'un côté et un torrent de l'autre.",
+          "description": "À Bourg même, La Gare et le Versoyen sont dans une confluence, et sous le vent de la ville dès midi en été. La confluence peut durer tard et secouer encore en soirée. La Gare, étroite, turbulente dès 12h selon la saison, est réservée au niveau brevet de pilote et n'ouvre que du 1er juillet au 31 août : évitez-la l'après-midi d'été. Le Versoyen, ouvert à l'année, a des promeneurs et des chiens, des arbres d'un côté et un torrent de l'autre.",
           "sources": [
             "S38",
             "S85",
@@ -558,7 +558,7 @@
           "radius_km": 2.5,
           "coord_quality": "approx",
           "conditions": "Régime de brise établi",
-          "description": "La brise accélère sur le relief des 2 Têtes, qui marque le virage de la vallée de l'Isère. En régime de brise établi, restez impérativement sur le versant ouest (Arc 1600, Arc 1800, Peisey-Vallandry). Le versant est (Arc 2000) est sous le vent de la crête principale.",
+          "description": "Les 2 Têtes, au nord de la crête des Arcs, marquent le virage de la vallée de l'Isère, et la brise y accélère. En régime de brise établi, restez impérativement sur le versant ouest (Arc 1600, Arc 1800, Peisey-Vallandry) : le versant est (Arc 2000) est sous le vent de la crête principale.",
           "sources": [
             "S35",
             "S36",
@@ -575,7 +575,7 @@
           "radius_km": 1.5,
           "coord_quality": "approx",
           "conditions": "Début d'après-midi, brise établie",
-          "description": "Évitez le versant est de l'Aiguille Rousse, à son pied : la brise du Ponthurin y arrive par le col de la Chal et nourrit la brise descendante de l'Arc. La combe entre l'Aiguille Grive et l'Aiguille Rousse, au Grizzly, est turbulente.",
+          "description": "Au pied de l'Aiguille Rousse, évitez le versant est : la brise du Ponthurin y arrive par le col de la Chal et nourrit la brise descendante de la vallée de l'Arc. La combe entre l'Aiguille Grive et l'Aiguille Rousse, au Grizzly, est turbulente.",
           "sources": [
             "S35",
             "S36",
@@ -592,7 +592,7 @@
           "radius_km": 3,
           "coord_quality": "source",
           "conditions": "Dès 11h en été, par régime de vallée établi",
-          "description": "En été, le venturi de la vallée peut rendre dangereux l'atterrissage de Centron après 11h, une fois le vent de vallée établi. Faites attention aux vaches dans le champ voisin du rond-point. L'hiver, ne volez pas les jours de foehn.",
+          "description": "À Centron, entre Moûtiers et Aime, la vallée fait venturi : en été, une fois le vent de vallée établi, l'atterrissage peut devenir dangereux après 11h. Faites attention aux vaches dans le champ voisin du rond-point. L'hiver, ne volez pas les jours de foehn.",
           "sources": [
             "S52"
           ]
@@ -606,7 +606,7 @@
           "radius_km": 6,
           "coord_quality": "approx",
           "conditions": "R 331 : activable 1/10-30/4 H24 ; 1/5-30/9 mardi-jeudi 06h-10h et 12h-17h et de nuit ; plafond FL085 (2590 m). R 332 A : 15/5-15/7 et 16/8-30/11, lundi-vendredi hors fériés (lever-coucher du soleil) ; plafond FL115 (3505 m). Vérifier l'activation (contacts 13e BCA).",
-          "description": "Le décollage du Fort de la Platte est dans la zone de tir de la Leissette (R 332). Le Fort du Truc est concerné par les R 331 et R 332, et le départ de cross du Plan de la Boutte par la R 332. Vérifiez l'activation avant de partir : pendant l'activité militaire, l'évitement est obligatoire.",
+          "description": "Deux champs de tir militaires touchent les sites du matin de Bourg-Saint-Maurice : vérifiez leur activation avant de partir, car pendant l'activité, l'évitement est obligatoire. Le décollage du Fort de la Platte est dans la zone de tir de la Leissette (R 332). Le Fort du Truc est concerné par les R 331 et R 332, et le départ de cross du Plan de la Boutte par la R 332.",
           "sources": [
             "S38",
             "S89",
@@ -625,7 +625,7 @@
           "radius_km": 6,
           "coord_quality": "approx",
           "conditions": "Toute l'année",
-          "description": "Le cœur du Parc national de la Vanoise est tout proche, au Mont Pourri et au Ponthurin. L'arrêté 2026-31 n'autorise le survol à moins de 1000 m au-dessus du sol que dans des secteurs listés, tous en Maurienne : aucun en Haute-Tarentaise. On ne décolle que des sites de l'annexe. L'atterrissage en cœur, le base-jump et le speed-riding sont interdits. Un survol illégal est une contravention de 5e classe (R.331-68).",
+          "description": "Le cœur du Parc national de la Vanoise est tout proche, au Mont Pourri et au Ponthurin, et on ne le survole pas bas : l'arrêté 2026-31 n'autorise le survol à moins de 1000 m au-dessus du sol que dans des secteurs listés, tous en Maurienne, aucun en Haute-Tarentaise. On ne décolle que des sites de l'annexe. L'atterrissage en cœur, le base-jump et le speed-riding sont interdits. Un survol illégal est une contravention de 5e classe (R.331-68).",
           "sources": [
             "S43",
             "S44",
@@ -738,7 +738,7 @@
           "coord_quality": "source",
           "best_hours": "après-midi et soirée (restitution jusqu'au coucher du soleil)",
           "trigger": "versant ouest alimenté par la branche de brise qui se divise à Landry",
-          "description": "L'après-midi, ce versant, alimenté par la branche de brise qui se divise à Landry, offre ses meilleures conditions, et il y a du monde. Le soir, les vols de restitution sont réputés, jusqu'au coucher du soleil. Il n'est pas rare d'y voir des voiles à plus de 3000 m, et de survoler les crêtes des Arcs au-delà de 2500 m.",
+          "description": "Ce versant ouest, celui de l'Écureuil, de la Poudreuse et du Petit Vallandry, est le lieu de l'après-midi et du soir. Alimenté par la branche de brise qui se divise à Landry, il offre alors ses meilleures conditions, et il y a du monde. Le soir, les vols de restitution sont réputés, jusqu'au coucher du soleil. Il n'est pas rare d'y voir des voiles à plus de 3000 m, et de survoler les crêtes des Arcs au-delà de 2500 m.",
           "sources": [
             "S35",
             "S36",
@@ -757,7 +757,7 @@
           "coord_quality": "source",
           "best_hours": "après-midi d'été",
           "trigger": "pentes des Arcs exposées ouest et nord-ouest, au-dessus d'Arc 1800",
-          "description": "Le « 10 de Face », au-dessus d'Arc 1800, doit son surnom à son aérologie particulièrement favorable. L'après-midi, les conditions y deviennent plus dynamiques, sur les pentes des Arcs exposées ouest et nord-ouest. Méfiez-vous des câbles de télésiège, de la forte brise et du vent de sud-ouest.",
+          "description": "Au-dessus d'Arc 1800, sur les pentes des Arcs exposées ouest et nord-ouest, le « 10 de Face » doit son surnom à son aérologie particulièrement favorable. Méfiez-vous des câbles de télésiège, de la forte brise et du vent de sud-ouest. L'après-midi, les conditions y deviennent plus dynamiques.",
           "sources": [
             "S49",
             "S50",
@@ -780,7 +780,7 @@
           "coord_quality": "source",
           "best_hours": "matin jusqu'à 13h",
           "trigger": "pentes est/sud-est au-dessus de Bourg-Saint-Maurice",
-          "description": "Site du matin, en face est. Par petite brise de vallée, les thermiques se forment jusqu'à 13h entre le Fort du Truc et la chapelle Saint-Michel. Le Fort 2000 et le Dôme de Vaugelaz marchent aussi en face est le matin. Vérifiez les zones de tir R 331 et R 332.",
+          "description": "Entre le Fort du Truc et la chapelle Saint-Michel, au-dessus de Bourg-Saint-Maurice, c'est le site du matin, en face est : par petite brise de vallée, les thermiques s'y forment jusqu'à 13h. Vérifiez les zones de tir R 331 et R 332. Le Fort 2000 et le Dôme de Vaugelaz marchent aussi en face est le matin.",
           "sources": [
             "S49",
             "S58",
@@ -800,7 +800,7 @@
           "coord_quality": "source",
           "best_hours": "dès le début de matinée jusqu'à ~11h-13h",
           "trigger": "pente très raide face SE, prés et forêt, soleil du matin",
-          "description": "Cette pente très raide, face sud-est, dans les prés et la forêt, travaille tôt dans l'année et tôt le matin : vers 10h, la brise thermique est agréable, malgré les vents météo. Le régime de vallée passe par-dessus dès 11h, en rejoignant le vent montant de Moûtiers. Par vent de nord à ouest, on peut encore voler avant 13h, grâce au microclimat de Centron et de Villette.",
+          "description": "Au-dessus de Centron, cette pente très raide, face sud-est, dans les prés et la forêt, travaille tôt dans l'année et tôt le matin : vers 10h, la brise thermique est agréable, malgré les vents météo. Dès 11h, le régime de vallée passe par-dessus, en rejoignant le vent montant de Moûtiers. Par vent de nord à ouest, on peut encore voler avant 13h, grâce au microclimat de Centron et de Villette.",
           "sources": [
             "S52"
           ],
@@ -818,7 +818,7 @@
           "coord_quality": "source",
           "best_hours": "matin ; peu utilisé de 13h à 17h",
           "trigger": "hameaux à l'ouest du décollage, carrière sous Le Villard de Macot (faibles déclencheurs)",
-          "description": "De faibles déclencheurs se trouvent devant le décollage : à l'est, Le Villard de Macot et la carrière ; à l'ouest, les hameaux. L'après-midi peut être turbulent, et le site sert rarement entre 13h et 17h. On se pose directement sous le décollage.",
+          "description": "Devant le décollage de Prariond, sur la route de La Plagne, les déclencheurs sont faibles : à l'est, Le Villard de Macot et la carrière ; à l'ouest, les hameaux. L'après-midi peut être turbulent, et le site sert rarement entre 13h et 17h. On se pose directement sous le décollage.",
           "sources": [
             "S52",
             "S57"
@@ -836,7 +836,7 @@
           "coord_quality": "source",
           "best_hours": "après-midi",
           "trigger": "pentes sud/sud-ouest hautes",
-          "description": "Vol de montagne, avec de bons thermiques l'après-midi sur les pentes sud et sud-ouest. Par vent du sud, le foehn s'y fait sentir. Près de Bellecôte, on trouve aussi des thermiques, mais le survol des pistes des Chardes et du Bonhomme est interdit.",
+          "description": "Au-dessus de Belle-Plagne, le Mont Saint-Jacques est un vol de montagne, avec de bons thermiques l'après-midi sur les pentes sud et sud-ouest. Par vent du sud, le foehn s'y fait sentir. Près de Bellecôte, on trouve aussi des thermiques, mais le survol des pistes des Chardes et du Bonhomme est interdit.",
           "sources": [
             "S60",
             "S52",
@@ -853,7 +853,7 @@
           "coord_quality": "source",
           "best_hours": "après-midi à soirée d'été (conditions instables)",
           "trigger": "pentes sud-ouest à ouest de Tovière",
-          "description": "L'été, par conditions instables, les pentes sud-ouest à ouest de la Tovière peuvent donner de très beaux plafonds et des vols jusque tard dans la journée. En haute montagne, les brises peuvent être très confluentes.",
+          "description": "À Tignes, les pentes sud-ouest à ouest de la Tovière peuvent donner, l'été, par conditions instables, de très beaux plafonds et des vols jusque tard dans la journée. En haute montagne, les brises peuvent être très confluentes.",
           "sources": [
             "S79"
           ]
@@ -866,7 +866,7 @@
           "alt_m": 2000,
           "coord_quality": "source",
           "trigger": "pentes est du fort (décollage « un peu plus haut dans les alpages »), thermique sélectif au-dessus du fort",
-          "description": "Par basses couches très stables, l'air est sélectif au-dessus du Fort de la Platte : regardez les autres pilotes pour trouver l'ascendance, avant de partir vers le Beaufortain.",
+          "description": "Au-dessus du Fort de la Platte commence la sortie vers le Beaufortain. Par basses couches très stables, l'air y est sélectif : regardez les autres pilotes pour trouver l'ascendance.",
           "sources": [
             "S72",
             "S71"
@@ -1238,7 +1238,7 @@
             "W",
             "NW"
           ],
-          "description": "La chaîne des Arcs est presque parallèle à la vallée de l'Isère, donc peu propice au vol de crête. Mais le virage à 90° vers Tignes et Val d'Isère réoriente le flux plus à l'est sur les pentes ouest et nord-ouest. On longe donc facilement la crête du sud vers le nord, de La Grive vers Les 2 Têtes, et plus difficilement dans l'autre sens. Restez côté ouest.",
+          "description": "La crête des Arcs se longe du sud vers le nord, de La Grive vers Les 2 Têtes, en restant côté ouest. La chaîne, presque parallèle à la vallée de l'Isère, est pourtant peu propice au vol de crête. Mais le virage à 90° vers Tignes et Val d'Isère réoriente le flux plus à l'est sur les pentes ouest et nord-ouest : ce sens devient facile, et l'autre reste plus difficile.",
           "sources": [
             "S35",
             "S36",
@@ -1304,7 +1304,7 @@
             "SW",
             "NW"
           ],
-          "description": "L'Écureuil, la Poudreuse et le Petit Vallandry sont tournés vers l'ouest et le sud-ouest. Les vols de restitution durent jusqu'au coucher du soleil. Le soir, en juillet-août, la navette du club monte au Petit Déco entre 17h30 et 18h30.",
+          "description": "Sur le versant de Peisey-Vallandry, l'Écureuil, la Poudreuse et le Petit Vallandry sont tournés vers l'ouest et le sud-ouest, et les vols de restitution y durent jusqu'au coucher du soleil. Le soir, en juillet-août, la navette du club monte au Petit Déco entre 17h30 et 18h30.",
           "sources": [
             "S51",
             "S41",
@@ -1326,7 +1326,7 @@
           "alt_m": 2134,
           "coord_quality": "source",
           "ffvl_id": 1267,
-          "description": "Décollage d'été, face sud-ouest à ouest, au sommet du télésiège de Cachette : on y monte par le funiculaire et le télésiège, avec un forfait piéton. Il est interdit pendant le ski. Méfiez-vous des lignes électriques et des remontées, et ne survolez pas le parc national de la Vanoise. Le matin, les biplaces en partent pour se poser derrière le funiculaire, à Bourg.",
+          "description": "Le décollage d'été des Arcs est au sommet du télésiège de Cachette, au-dessus d'Arc 1600, face sud-ouest à ouest. Il est interdit pendant le ski. Par foehn, une confluence dangereuse avec la brise de vallée se forme dès 12h. Méfiez-vous des lignes électriques et des remontées, et ne survolez pas le parc national de la Vanoise. On y monte par le funiculaire et le télésiège (forfait piéton). Le matin, les biplaces en partent pour se poser derrière le funiculaire, à Bourg.",
           "sources": [
             "S92",
             "S49",
@@ -1339,7 +1339,7 @@
             "SW",
             "W"
           ],
-          "note": "Une confluence dangereuse avec la brise de vallée se forme à partir de 12h en cas de foehn. Finesse minimale de 5. Les autres décollages d'Arc 1600 : Clocheret, Clocheret Bas, Arpette (6,7988 E ; 45,5747 N), Vagère et Vezaille ; l'Altiport est interdit, voir sa fiche."
+          "note": "Finesse minimale de 5. Les autres décollages d'Arc 1600 : Clocheret, Clocheret Bas, Arpette (6,7988 E ; 45,5747 N), Vagère et Vezaille ; l'Altiport est interdit, voir sa fiche."
         },
         {
           "id": "fenetre-7-deco",
@@ -1349,7 +1349,7 @@
           "alt_m": 1432,
           "coord_quality": "source",
           "ffvl_id": 491,
-          "description": "Petit décollage ouest qui domine la basse Tarentaise. La brise y vient souvent de travers par la droite. En vol, la brise de vallée peut devenir soutenue, et elle est forte dans la vallée.",
+          "description": "Au-dessus de La Bâthie, ce petit décollage ouest domine la basse Tarentaise. La brise y vient souvent de travers par la droite. En vol, la brise de vallée peut devenir soutenue, et elle est forte dans la vallée.",
           "sources": [
             "S75",
             "S52"
@@ -1367,7 +1367,7 @@
           "alt_m": 1282,
           "coord_quality": "source",
           "ffvl_id": 489,
-          "description": "Décollage ouest, où le vent vient souvent de travers. On l'utilise en hiver et au début du printemps, avant que le vent de vallée ne soit trop fort.",
+          "description": "Ce décollage ouest, au-dessus de Cevins, s'utilise en hiver et au début du printemps, avant que le vent de vallée ne soit trop fort. Le vent y vient souvent de travers.",
           "sources": [
             "S98"
           ],
@@ -1384,7 +1384,7 @@
           "alt_m": 1988,
           "coord_quality": "source",
           "ffvl_id": 1458,
-          "description": "Décollage en altitude, ouest à nord-ouest, où la brise est soutenue. Méfiez-vous du vent météo de sud et de nord, modéré à fort.",
+          "description": "Tout près de Montgirod, à l'ouest, ce décollage d'altitude est orienté ouest à nord-ouest, et la brise y est soutenue. Méfiez-vous du vent météo de sud et de nord, modéré à fort.",
           "sources": [
             "S99",
             "S52"
@@ -1407,7 +1407,7 @@
             "S",
             "SW"
           ],
-          "description": "Décollage sud-est très raide, qui marche tôt dans l'année et tôt le matin, jusqu'à 11h-13h, avant que le régime de vallée n'arrive par-dessus. Une route étroite y monte depuis Centron, sur environ 15 km. C'est un site de chasse au printemps et à l'automne.",
+          "description": "Au-dessus de Centron, en Tarentaise moyenne, ce décollage sud-est très raide marche tôt dans l'année et tôt le matin, jusqu'à 11h-13h, avant que le régime de vallée n'arrive par-dessus. C'est un site de chasse au printemps et à l'automne. Une route étroite y monte depuis Centron, sur environ 15 km.",
           "sources": [
             "S52"
           ],
@@ -1421,7 +1421,7 @@
           "alt_m": 2652,
           "coord_quality": "source",
           "ffvl_id": 5339,
-          "description": "Sommet herbeux, pour des départs de cross et de vol de randonnée, face nord-est à sud. On peut se poser en fond de vallée, vers Cevins ou La Bâthie. Le Villard, plus près de la voiture, n'est pas facile : arbres, pente, route et maisons.",
+          "description": "Ce sommet herbeux sert aux départs de cross et au vol de randonnée, face nord-est à sud. On peut se poser en fond de vallée, vers Cevins ou La Bâthie. Le Villard, plus près de la voiture, n'est pas facile : arbres, pente, route et maisons.",
           "sources": [
             "S100",
             "S52"
@@ -1462,7 +1462,7 @@
             "W",
             "NW"
           ],
-          "description": "Deux décollages à 100 m l'un de l'autre, au bord de la route de La Plagne. Celui de l'ouest, au virage, sert l'été aux professionnels ; celui de l'est est plus dégagé. L'après-midi peut être turbulent, et le site sert peu entre 13h et 17h. On se pose à Macot, juste en dessous, où ça peut venter en fin d'après-midi.",
+          "description": "Au bord de la route de La Plagne, deux décollages se tiennent à 100 m l'un de l'autre. Celui de l'ouest, au virage, sert l'été aux professionnels ; celui de l'est est plus dégagé. L'après-midi peut être turbulent, et le site sert peu entre 13h et 17h. On se pose à Macot, juste en dessous, où ça peut venter en fin d'après-midi.",
           "sources": [
             "S52"
           ]
@@ -1494,7 +1494,7 @@
           "alt_m": 2500,
           "coord_quality": "source",
           "ffvl_id": 14159,
-          "description": "Décollage d'hiver, accessible par la télécabine, face sud et ouest. Par nord ou par fort vent d'ouest, c'est dangereux. La pente est forte et caillouteuse, et il y a des câbles de remontées.",
+          "description": "Au-dessus de La Plagne, on monte à ce décollage d'hiver par la télécabine. Il est face au sud et à l'ouest, et dangereux par nord ou par fort vent d'ouest. La pente est forte et caillouteuse, et il y a des câbles de remontées.",
           "sources": [
             "S103",
             "S60",
@@ -1531,7 +1531,7 @@
           "alt_m": 2000,
           "coord_quality": "source",
           "ffvl_id": 14151,
-          "description": "Site du matin, face est à sud-est, qui convient aux débutants. Le décollage est dans la zone de tir de la Leissette (R 332) : vérifiez l'activation. Attention aux lignes haute tension, et à la zone de sensibilité du gypaète toute proche. C'est aussi le départ de belles randonnées vers le Beaufortain, comme les « 5 lacs ».",
+          "description": "Au-dessus de Bourg-Saint-Maurice, le Fort de la Platte est le site du matin, face est à sud-est, et il convient aux débutants. Le décollage est dans la zone de tir de la Leissette (R 332) : vérifiez l'activation. Attention aussi aux lignes haute tension, et à la zone de sensibilité du gypaète toute proche. C'est aussi le départ de belles randonnées vers le Beaufortain, comme les « 5 lacs ».",
           "sources": [
             "S89",
             "S49",
@@ -1555,7 +1555,7 @@
           "alt_m": 1770,
           "coord_quality": "source",
           "ffvl_id": 14150,
-          "description": "Décollage de printemps, d'été et d'automne, peu fréquenté, orienté est à sud-est, plus bas que le Fort 2000. Vérifiez le champ de tir R 331 et R 332, et méfiez-vous des lignes haute tension.",
+          "description": "Juste à côté du Fort 2000 et environ 230 m plus bas, ce décollage de printemps, d'été et d'automne est peu fréquenté, orienté est à sud-est. Vérifiez le champ de tir R 331 et R 332, et méfiez-vous des lignes haute tension.",
           "sources": [
             "S90",
             "S49",
@@ -1576,7 +1576,7 @@
           "alt_m": 2020,
           "coord_quality": "source",
           "ffvl_id": 14149,
-          "description": "Le rendez-vous des crosseurs, tôt le matin, pour les grands cross. Il n'y a pas de décollage officiel : l'accord du propriétaire est verbal, et il faut refermer les clôtures. Attention aux lignes haute tension, à la zone de sensibilité du gypaète à l'est et à la zone de tir R 332. Le site est fortement déconseillé aux débutants.",
+          "description": "Au-dessus de Bourg-Saint-Maurice, c'est le rendez-vous des crosseurs, tôt le matin, pour les grands cross, et le site est fortement déconseillé aux débutants. Il n'y a pas de décollage officiel : l'accord du propriétaire est verbal, et il faut refermer les clôtures. Attention aux lignes haute tension, à la zone de sensibilité du gypaète à l'est et à la zone de tir R 332.",
           "sources": [
             "S91",
             "S49",
@@ -1611,7 +1611,7 @@
           "alt_m": 1785,
           "coord_quality": "source",
           "ffvl_id": 14146,
-          "description": "Départ de cross uniquement, orienté ouest à nord-ouest : aucun atterrissage n'est accessible en finesse, mais vous pouvez reposer au décollage. Évitez l'antenne et les câbles téléphoniques.",
+          "description": "À Montvalezan, La Croix ne sert qu'au départ de cross, orientée ouest à nord-ouest : aucun atterrissage n'est accessible en finesse, mais vous pouvez reposer au décollage. Évitez l'antenne et les câbles téléphoniques.",
           "sources": [
             "S106",
             "S38"
@@ -1629,7 +1629,7 @@
           "alt_m": 1650,
           "coord_quality": "source",
           "ffvl_id": 14154,
-          "description": "Décollage du matin, au printemps, en été et en automne, orienté sud-est et défavorable par nord et nord-est. Par foehn ou brise forte, le vent est trop de travers pour décoller. Vous survolez une ligne haute tension juste après.",
+          "description": "Ce décollage intermédiaire du Dôme de Vaugelaz, orienté sud-est, sert le matin, au printemps, en été et en automne. Il est défavorable par nord et nord-est, et par foehn ou brise forte, le vent y est trop de travers pour décoller. Vous survolez une ligne haute tension juste après.",
           "sources": [
             "S93",
             "S49",
@@ -1652,7 +1652,7 @@
           "alt_m": 1450,
           "coord_quality": "source",
           "ffvl_id": 14148,
-          "description": "Décollage ouvert aux débutants, en parapente comme en speedflying. Il est strictement interdit du 1er juin au 30 octobre, et sert au printemps et à l'automne. Les riverains sont tolérants : restez discrets.",
+          "description": "Strictement interdit du 1er juin au 30 octobre, ce décollage sert au printemps et à l'automne. Il est ouvert aux débutants, en parapente comme en speedflying. Les riverains sont tolérants : restez discrets.",
           "sources": [
             "S96",
             "S38",
@@ -1674,7 +1674,7 @@
           "alt_m": 2250,
           "coord_quality": "source",
           "ffvl_id": 14145,
-          "description": "Décollage d'été, raide, avec des câbles de télésiège, des arbres et des rochers. On y monte par le télésiège de Cachette, puis environ 10 minutes de marche.",
+          "description": "Au-dessus d'Arc 1600, ce décollage d'été est raide, et il faut y composer avec des câbles de télésiège, des arbres et des rochers. On y monte par le télésiège de Cachette, puis environ 10 minutes de marche.",
           "sources": [
             "S107",
             "S38"
@@ -1698,7 +1698,7 @@
             "W",
             "NW"
           ],
-          "description": "Décollage d'été, par le télésiège de Cachette (forfait piéton) et environ 10 minutes de marche. Il remplace l'ancien Altiport, et c'est lui qu'on prend quand le vent est trop de travers à Cachette.",
+          "description": "Près de Cachette, à Arc 1600, c'est le décollage qu'on prend quand le vent y est trop de travers, et il remplace l'ancien Altiport. L'été, on y monte par le télésiège de Cachette (forfait piéton), puis environ 10 minutes de marche.",
           "sources": [
             "S38",
             "S108",
@@ -1736,7 +1736,7 @@
           "alt_m": 2100,
           "coord_quality": "source",
           "ffvl_id": 14143,
-          "description": "Décollage d'été bordé d'arbres, par la télécabine Transarc. Attention aux câbles de télésiège, à la forte brise et au vent de sud-ouest. Son aérologie est particulièrement favorable.",
+          "description": "Au-dessus d'Arc 1800, par la télécabine Transarc, ce décollage d'été bordé d'arbres a une aérologie particulièrement favorable. Attention aux câbles de télésiège, à la forte brise et au vent de sud-ouest.",
           "sources": [
             "S95",
             "S38",
@@ -1772,7 +1772,7 @@
           "alt_m": 1653,
           "coord_quality": "source",
           "ffvl_id": 1006,
-          "description": "Décollage d'été, très fréquenté l'après-midi, accessible par la route. Il est en travaux de terrassement : le travers gauche y est fréquent, soyez vigilant par vent fort. Des arbustes et des habitations se trouvent en contrebas.",
+          "description": "Au-dessus de Peisey-Vallandry, ce décollage d'été, accessible par la route, est très fréquenté l'après-midi. Il est en travaux de terrassement : le travers gauche y est fréquent, soyez vigilant par vent fort. Des arbustes et des habitations se trouvent en contrebas.",
           "sources": [
             "S109",
             "S38",
@@ -1793,7 +1793,7 @@
           "alt_m": 1883,
           "coord_quality": "source",
           "ffvl_id": 14153,
-          "description": "Beau décollage pour le vol du soir, très raide et bordé d'arbres, utilisable seulement l'été. On y monte à pied : la circulation est interdite sur les chemins. Niveau débutant (ippi 3).",
+          "description": "Sur le versant de Peisey-Vallandry, l'Écureuil est un beau décollage pour le vol du soir, utilisable seulement l'été, très raide et bordé d'arbres. On y monte à pied : la circulation est interdite sur les chemins. Niveau débutant (ippi 3).",
           "sources": [
             "S94",
             "S49",
@@ -1815,7 +1815,7 @@
           "alt_m": 2150,
           "coord_quality": "source",
           "ffvl_id": 1009,
-          "description": "Décollage d'été, orienté ouest, par la télécabine de Vallandry et environ 5 minutes de marche. Attention aux câbles du télésiège et aux canons à neige.",
+          "description": "Au-dessus de Peisey-Vallandry, ce décollage d'été est orienté ouest, à environ 5 minutes de marche de la télécabine de Vallandry. Attention aux câbles du télésiège et aux canons à neige.",
           "sources": [
             "S97",
             "S38"
@@ -1832,7 +1832,7 @@
           "alt_m": 2280,
           "coord_quality": "source",
           "ffvl_id": 14152,
-          "description": "Décollage d'été et d'hiver, raide et caillouteux. L'aérologie est turbulente dans la combe entre l'Aiguille Grive et l'Aiguille Rousse. L'été, on y monte par la télécabine de Vallandry et environ 10 minutes de marche ; l'hiver, par le télésiège Grizzly.",
+          "description": "Dans la combe entre l'Aiguille Grive et l'Aiguille Rousse, ce décollage d'été et d'hiver est raide et caillouteux, et l'aérologie y est turbulente. L'été, on y monte par la télécabine de Vallandry et environ 10 minutes de marche ; l'hiver, par le télésiège Grizzly.",
           "sources": [
             "S77",
             "S38",
@@ -1852,7 +1852,7 @@
           "alt_m": 2732,
           "coord_quality": "source",
           "ffvl_id": 5236,
-          "description": "Décollage à 2732 m, sur l'épaule juste sous le sommet, face à la vallée de la Tarentaise (Aime), orienté ouest et sud. Il marche par vent météo ou par brise, mais le foehn s'y fait sentir. L'Aiguille Rousse crée des turbulences : ne passez pas sous son vent. Si vous décollez en début d'après-midi, dégagez vite vers l'ouest.",
+          "description": "Au sud de la crête des Arcs, sur l'épaule juste sous le sommet, ce décollage à 2732 m fait face à la vallée de la Tarentaise (Aime), orienté ouest et sud. L'Aiguille Rousse crée des turbulences : ne passez pas sous son vent, et si vous décollez en début d'après-midi, dégagez vite vers l'ouest. Le site marche par vent météo ou par brise, mais le foehn s'y fait sentir.",
           "sources": [
             "S86",
             "S59",
@@ -1878,7 +1878,7 @@
           "alt_m": 2241,
           "coord_quality": "source",
           "ffvl_id": 998,
-          "description": "Décollage orienté nord-ouest. Surveillez les câbles du télésiège.",
+          "description": "Au-dessus de La Rosière, ce décollage est orienté nord-ouest. Surveillez les câbles du télésiège.",
           "sources": [
             "S110",
             "S38"
@@ -1896,7 +1896,7 @@
           "alt_m": 2161,
           "coord_quality": "source",
           "ffvl_id": 1000,
-          "description": "Décollage orienté nord-ouest, interdit pendant la saison de ski : on ne vole ici qu'en été.",
+          "description": "Interdit pendant la saison de ski, ce décollage de La Rosière, orienté nord-ouest, ne se vole qu'en été.",
           "sources": [
             "S111",
             "S38",
@@ -1914,7 +1914,7 @@
           "alt_m": 2322,
           "coord_quality": "source",
           "ffvl_id": 13644,
-          "description": "Le décollage est à la portée de tous, mais l'atterrissage est à Bourg-Saint-Maurice : le site est donc déconseillé aux débutants. Il est autorisé du 30 mai jusqu'à l'arrêté de préparation du domaine skiable. Attention à la présence de deux télésièges. Par foehn, évitez-le absolument.",
+          "description": "Au-dessus de La Rosière, le décollage est à la portée de tous, mais l'atterrissage est à Bourg-Saint-Maurice : le site est donc déconseillé aux débutants. Par foehn, évitez-le absolument. Il est autorisé du 30 mai jusqu'à l'arrêté de préparation du domaine skiable. Attention à la présence de deux télésièges.",
           "sources": [
             "S112",
             "S38"
@@ -1929,7 +1929,7 @@
           "alt_m": 2350,
           "coord_quality": "source",
           "ffvl_id": 13702,
-          "description": "Site d'hiver : on y monte par le télésiège, skis aux pieds, avec un titre de transport valide, et il faut au minimum le brevet de pilote. Près de la frontière, le foehn est fréquent, par vent de sud-est à sud-ouest. L'aérologie peut être forte dès les premiers beaux jours de février. Préférez l'après-midi, une fois le catabatique disparu, par brise de printemps ou vent d'ouest.",
+          "description": "En amont de Bourg, à Sainte-Foy, ce site d'hiver se rejoint par le télésiège, skis aux pieds, avec un titre de transport valide, et il faut au minimum le brevet de pilote. Près de la frontière, le foehn est fréquent, par vent de sud-est à sud-ouest, et l'aérologie peut être forte dès les premiers beaux jours de février. Préférez l'après-midi, une fois le catabatique disparu, par brise de printemps ou vent d'ouest.",
           "sources": [
             "S81"
           ],
@@ -1964,7 +1964,7 @@
           "alt_m": 2608,
           "coord_quality": "source",
           "ffvl_id": 13219,
-          "description": "Décollage conventionné, pour niveau confirmé, orienté sud-ouest à ouest. Les remontées mécaniques sont nombreuses, avec des lampadaires et des jeux d'enfants. En été, les brises peuvent être très confluentes, et le vent d'altitude peut rentrer fort d'un coup. Les vents d'est à sud (foehn, lombarde) sont très mauvais.",
+          "description": "Au-dessus de Tignes, ce décollage conventionné, pour niveau confirmé, est orienté sud-ouest à ouest. Les vents d'est à sud (foehn, lombarde) y sont très mauvais. En été, les brises peuvent être très confluentes, et le vent d'altitude peut rentrer fort d'un coup. Les remontées mécaniques sont nombreuses, avec des lampadaires et des jeux d'enfants.",
           "sources": [
             "S79"
           ],
@@ -2001,7 +2001,7 @@
           "alt_m": 2495,
           "coord_quality": "source",
           "ffvl_id": 610,
-          "description": "Décollage conventionné, orienté ouest, qui marche en régime de brise. Thermiques et brise de vallée sont soutenus dès 11h : c'est pour pilotes expérimentés. Par vent de sud-est ou de sud-ouest, ne volez pas : foehn et lombarde.",
+          "description": "Au-dessus de Val d'Isère, ce décollage conventionné, orienté ouest, marche en régime de brise. Thermiques et brise de vallée sont soutenus dès 11h : c'est pour pilotes expérimentés. Par vent de sud-est ou de sud-ouest, ne volez pas : foehn et lombarde.",
           "sources": [
             "S78",
             "S52",
@@ -2083,7 +2083,7 @@
           "alt_m": 589,
           "coord_quality": "source",
           "pge_id": 6922,
-          "description": "Champ près du rond-point, à gauche du petit barrage ovale, bordé de rochers, avec une petite manche côté rivière. Attention aux vaches. Après 11h, une fois le vent de vallée installé, le venturi peut rendre l'atterrissage dangereux.",
+          "description": "À Centron, au pied de Montgirod, c'est le champ près du rond-point. Après 11h, une fois le vent de vallée installé, le venturi peut rendre l'atterrissage dangereux. Le terrain est à gauche du petit barrage ovale, bordé de rochers, avec une petite manche côté rivière. Attention aux vaches.",
           "sources": [
             "S52"
           ]
@@ -2096,7 +2096,7 @@
           "alt_m": 703,
           "coord_quality": "source",
           "ffvl_id": 1454,
-          "description": "Terrain conventionné, orienté ouest, avec parking obligatoire à 150 m. La brise de vallée y est forte l'après-midi, de 15h à 17h.",
+          "description": "À Macot, au pied de La Plagne, ce terrain conventionné est orienté ouest. La brise de vallée y est forte l'après-midi, de 15h à 17h. Le parking obligatoire est à 150 m.",
           "sources": [
             "S76",
             "S60",
@@ -2112,7 +2112,7 @@
           "alt_m": 754,
           "coord_quality": "source",
           "ffvl_id": 1008,
-          "description": "L'atterrissage principal de la vallée, entre Landry et Bourg : immense, facile, avec buvette, autorisé toute l'année. Favorable par sud-ouest, ouest et nord-ouest, défavorable par nord-est. La brise s'y installe vers 12h-13h et devient forte l'après-midi. Une ligne haute tension nord-est/sud-ouest longe le terrain. Ne vous posez pas sur le golf.",
+          "description": "L'atterrissage principal de la vallée, entre Landry et Bourg : immense, facile, avec buvette, autorisé toute l'année. La brise s'y installe vers 12h-13h et devient forte l'après-midi. Une ligne haute tension nord-est/sud-ouest longe le terrain, et il ne faut pas se poser sur le golf. Le terrain est favorable par sud-ouest, ouest et nord-ouest, défavorable par nord-est.",
           "sources": [
             "S74",
             "S49",
@@ -2131,7 +2131,7 @@
           "alt_m": 820,
           "coord_quality": "source",
           "ffvl_id": 13678,
-          "description": "Autorisé seulement du 1er juillet au 31 août, interdit le reste de l'année. Terrain étroit, en plein centre, près du funiculaire. Utilisez-le par vent faible, le matin jusqu'à 13h ou en fin de journée, et évitez-le l'après-midi d'été : il peut être thermique dès 11h, la confluence peut durer tard, et le foehn de nord-est du col du Petit-Saint-Bernard peut s'y faire sentir.",
+          "description": "Autorisé seulement du 1er juillet au 31 août, interdit le reste de l'année, ce terrain étroit est en plein centre de Bourg, près du funiculaire. Utilisez-le par vent faible, le matin jusqu'à 13h ou en fin de journée. Évitez-le l'après-midi d'été : il peut être thermique dès 11h, la confluence peut durer tard, et le foehn de nord-est du col du Petit-Saint-Bernard peut s'y faire sentir.",
           "sources": [
             "S85",
             "S49",
@@ -2147,7 +2147,7 @@
           "alt_m": 800,
           "coord_quality": "source",
           "ffvl_id": 14144,
-          "description": "Autorisé toute l'année, avec les mêmes dangers que La Gare : confluence, sous le vent de la ville dès midi. Utilisez-le par vent faible, le matin jusqu'à 13h ou en fin de journée. Il y a des arbres d'un côté, un torrent de l'autre, des promeneurs et des chiens. Il est défavorable du nord au sud.",
+          "description": "Autorisé toute l'année, ce terrain de Bourg a les mêmes dangers que La Gare : confluence, sous le vent de la ville dès midi. Utilisez-le par vent faible, le matin jusqu'à 13h ou en fin de journée. Il y a des arbres d'un côté, un torrent de l'autre, des promeneurs et des chiens. Il est défavorable du nord au sud.",
           "sources": [
             "S84",
             "S38"
@@ -2200,7 +2200,7 @@
           "alt_m": 2097,
           "coord_quality": "source",
           "ffvl_id": 13226,
-          "description": "Au bout du lac, en été. Attention au lac et aux lampadaires, et le terrain n'est pas plat. L'après-midi, brises et vent peuvent changer de direction très vite : restez très vigilant. Ne vous posez pas sur le golf.",
+          "description": "Au bout du lac de Tignes, c'est le terrain d'été de la Tovière. L'après-midi, brises et vent peuvent changer de direction très vite : restez très vigilant. Attention au lac et aux lampadaires, le terrain n'est pas plat, et il ne faut pas se poser sur le golf.",
           "sources": [
             "S80"
           ]
@@ -2279,7 +2279,7 @@
         },
         {
           "wind": "N",
-          "effect": "Le nord-ouest à nord renforce le flux des Chapieux. À Montgirod, on peut encore voler avant 13h. À Naves, prudence par nord modéré à fort. Au col du Petit-Saint-Bernard, du nord ou du nord-est à plus de 15 km/h annonce probablement le foehn. Au Cottier, soyez très prudent dès que le vent est nord. Par N-NO qui forcit, un vol a fait 3500 m au-dessus de la Pointe de Combe Neuve. Ce jour-là, le vent interdisait de se placer sur les faces sud du Beaufortain.",
+          "effect": "Le nord-ouest à nord renforce le flux des Chapieux. Montgirod reste volable avant 13h. À Naves, prudence par nord modéré à fort. Au col du Petit-Saint-Bernard, du nord ou du nord-est à plus de 15 km/h annonce probablement le foehn. Au Cottier, soyez très prudent par nord. Par N-NO qui forcit, un vol a fait 3500 m au-dessus de la Pointe de Combe Neuve, mais sans pouvoir se placer sur les faces sud du Beaufortain.",
           "sources": [
             "S35",
             "S52",
@@ -2359,7 +2359,7 @@
             }
           ],
           "distance_km": 223,
-          "description": "Triangle de 223 km : décollage le matin du Fort du Truc, cap sur le Parmelan au-dessus d'Annecy, puis Crolles au nord de Grenoble, avant le retour à Sainte-Foy pour boucler. Les sommets du triangle sont connus, pas l'itinéraire entre eux.",
+          "description": "Ce triangle de 223 km part le matin du Fort du Truc, met le cap sur le Parmelan au-dessus d'Annecy, puis sur Crolles au nord de Grenoble, avant le retour à Sainte-Foy pour boucler. Les sommets du triangle sont connus, pas l'itinéraire entre eux.",
           "sources": [
             "S73"
           ],
@@ -2574,7 +2574,7 @@
       "id": "vanoise",
       "name": "Vanoise – Trois Vallées et Doron de Bozel (Courchevel, Méribel, Belleville, Bozel, Pralognan)",
       "parent_massif": "Vanoise",
-      "summary": "Le massif est un faisceau de vallées qui rejoignent l'Isère à Moûtiers : le Doron de Bozel (Bozel, Champagny, Pralognan), la vallée de Saint-Bon (Courchevel), les Allues (Méribel) et le Doron de Belleville (Les Menuires, Val Thorens).\n\nÀ Bozel, le vent de vallée monte dès le milieu de journée ; aux Monts, la brise s'allume vers 13h. Elle devient forte, avec un fort gradient à l'atterrissage de Bozel. On vole donc surtout tôt ou tard, sauf aux Prés, site d'après-midi. Le Bouc Blanc, soufflé en milieu d'après-midi, se vole tôt et tard, et le soaring du soir se fait sur la Dent du Villard. À Belleville, le régime de brise de vallée donne une confluence thermique à Boismint et un venturi à la Moraine, à Caron ; le foehn s'y produit par tendance sud.\n\nLa Loze et Lanches sont le meilleur site de thermiques d'hiver et de début de printemps des Trois Vallées ; évitez l'axe de l'altiport de Méribel.\n\nLe cœur du Parc national de la Vanoise est tout proche de Pralognan. L'arrêté 2026-31 (5 juin 2026, expérimental jusqu'à fin 2028) n'y autorise aucun survol à moins de 1000 m/sol. Des vols de montagne depuis la Grande Casse ou le Grand Bec restent possibles avec une autorisation individuelle, demandée une semaine avant. Les textes de clubs locaux sont rares : la plupart des éléments reposent sur des fiches et des bases de sites.",
+      "summary": "La Vanoise se lit depuis Moûtiers : un faisceau de vallées y rejoint l'Isère. D'ouest en est, le Doron de Belleville (Les Menuires, Val Thorens), les Allues (Méribel), la vallée de Saint-Bon (Courchevel) et le Doron de Bozel (Bozel, Champagny, Pralognan). L'axe de l'Isère, lui, appartient à la Tarentaise.\n\nDans chacune, la brise dicte l'heure. À Bozel, le vent de vallée monte dès le milieu de journée ; aux Monts, la brise s'allume vers 13h. Elle devient forte, avec un fort gradient à l'atterrissage de Bozel : on vole donc surtout tôt ou tard, sauf aux Prés, site d'après-midi. Le Bouc Blanc, soufflé en milieu d'après-midi, se vole tôt et tard, et le soaring du soir se fait sur la Dent du Villard. À Belleville, le régime de brise de vallée donne une confluence thermique à Boismint et un venturi à la Moraine, à Caron ; le foehn s'y produit par tendance sud.\n\nHors été, l'adresse est ailleurs : la Loze et Lanches sont le meilleur site de thermiques d'hiver et de début de printemps des Trois Vallées. Évitez-y l'axe de l'altiport de Méribel.\n\nLe cœur du Parc national de la Vanoise est tout proche de Pralognan. L'arrêté 2026-31 (5 juin 2026, expérimental jusqu'à fin 2028) n'y autorise aucun survol à moins de 1000 m/sol. Des vols de montagne depuis la Grande Casse ou le Grand Bec restent possibles avec une autorisation individuelle, demandée une semaine avant. Les textes de clubs locaux sont rares : la plupart des éléments reposent sur des fiches et des bases de sites.",
       "bbox": [
         6.45,
         45.26,
@@ -2623,7 +2623,7 @@
           },
           "season": "printemps-été",
           "layer_depth_m": "non documentée",
-          "description": "Le matin, à Bozel, le vent est nul, voire légèrement descendant. Le vent de vallée monte dès le milieu de journée. En été, il peut être fort, avec des turbulences marquées et un fort gradient à l'atterrissage. À Pralognan, dès 11h-11h30, la brise prend le dessus et le décollage passe vent arrière. Les Prés sont un site d'après-midi, brise en place, parfois fort au décollage comme à l'atterrissage.",
+          "description": "De Moûtiers, cette brise remonte par Brides-les-Bains vers Bozel et Pralognan. Le matin, à Bozel, le vent est nul, voire légèrement descendant, puis la brise monte dès le milieu de journée. En été, il peut être fort, avec des turbulences marquées et un fort gradient à l'atterrissage. À Pralognan, dès 11h-11h30, la brise prend le dessus et le décollage passe vent arrière. Les Prés sont un site d'après-midi, brise en place, parfois fort au décollage comme à l'atterrissage.",
           "confidence": "medium",
           "sources": [
             "S126",
@@ -2666,7 +2666,7 @@
             "max": null
           },
           "season": "été surtout",
-          "description": "Dans la vallée de Saint-Bon, aux Tovets, la brise de vallée prend le dessus sur la brise de pente avant 13h en été. Au Bouc Blanc, elle devient forte à très forte l'après-midi, surtout de 14h à 17h, et peut souffler le site en milieu d'après-midi : il reste utilisable tôt et tard. Au Praz, par forte brise de vallée, la gare du télécabine crée des turbulences.",
+          "description": "De Bozel, cette brise monte vers Le Praz et Courchevel. Aux Tovets, elle prend le dessus sur la brise de pente avant 13h en été. Au Bouc Blanc, elle devient forte à très forte l'après-midi, surtout de 14h à 17h, et peut souffler le site en milieu d'après-midi : il reste utilisable tôt et tard. Au Praz, par forte brise de vallée, la gare du télécabine crée des turbulences.",
           "confidence": "medium",
           "sources": [
             "S127",
@@ -2712,7 +2712,7 @@
             "max": null
           },
           "season": "été",
-          "description": "Boismint et son atterrissage marchent en régime de brise de vallée, avec un fort gradient. Par tendance sud, le vol y est vivement déconseillé. À la Cime de Caron, la brise thermique de la face sud peut être très forte en été. À la Moraine, le venturi du glacier du Col renforce le vent. Au Mont de la Chambre, les conditions peuvent devenir fortes l'après-midi.",
+          "description": "Cette brise remonte de Salins vers Saint-Martin, Les Menuires et Val Thorens. Boismint et son atterrissage marchent en régime de brise de vallée, avec un fort gradient, et par tendance sud, le vol y est vivement déconseillé. Plus haut, à la Cime de Caron, la brise thermique de la face sud peut être très forte en été, et à la Moraine, le venturi du glacier du Col renforce le vent. Au Mont de la Chambre, les conditions peuvent devenir fortes l'après-midi.",
           "confidence": "medium",
           "sources": [
             "S129",
@@ -2763,7 +2763,7 @@
           "radius_km": 2,
           "coord_quality": "source",
           "conditions": "Milieu et fin d'après-midi, surtout en été",
-          "description": "À Bozel, ça peut être musclé en milieu de journée, surtout en été : gradient fort, et thermiques qui se déclenchent en approche, au-dessus des terrains de foot, des pylônes et des projecteurs. Le vent de vallée y est fréquent. Les vols des Tovets doivent pourtant s'y poser.",
+          "description": "L'atterrissage de Bozel, où les vols des Tovets doivent se poser, peut être musclé en milieu de journée, surtout en été. Le gradient est fort, et les thermiques se déclenchent en approche, au-dessus des terrains de foot, des pylônes et des projecteurs. Le vent de vallée y est fréquent.",
           "sources": [
             "S126",
             "S88",
@@ -2782,7 +2782,7 @@
           "radius_km": 2,
           "coord_quality": "source",
           "conditions": "Été, 14h-17h (et fin d'après-midi)",
-          "description": "Au Bouc Blanc, les conditions sont fortes à très fortes en milieu d'après-midi, avec une brise forte de 14h à 17h, et méfiez-vous encore de la fin d'après-midi d'été. Des câbles de téléski sont à gauche du décollage. On se pose au Praz de Saint-Bon, 950 m plus bas, ou à Bozel, 1360 m plus bas.",
+          "description": "Au Bouc Blanc, à Courchevel, les conditions sont fortes à très fortes en milieu d'après-midi, avec une brise forte de 14h à 17h, et méfiez-vous encore de la fin d'après-midi d'été. Des câbles de téléski sont à gauche du décollage. On se pose au Praz de Saint-Bon, 950 m plus bas, ou à Bozel, 1360 m plus bas.",
           "sources": [
             "S127",
             "S61",
@@ -2815,7 +2815,7 @@
           "radius_km": 3,
           "coord_quality": "approx",
           "conditions": "Toute l'année (approche des avions)",
-          "description": "Au col de la Loze, une zone est à éviter pour ne pas gêner l'approche des avions sur l'altiport de Méribel. Ne survolez ni l'altiport ni l'axe de piste, en amont ou en aval, sauf en altitude : pas de vol direct vers Méribel pour s'y poser.",
+          "description": "Au col de la Loze, entre Courchevel et Méribel, une zone est à éviter pour ne pas gêner l'approche des avions sur l'altiport de Méribel. Ne survolez ni l'altiport ni l'axe de piste, en amont ou en aval, sauf en altitude : pas de vol direct vers Méribel pour s'y poser.",
           "sources": [
             "S132",
             "S52"
@@ -2831,7 +2831,7 @@
           "radius_km": 8,
           "coord_quality": "approx",
           "conditions": "Vent météo de tendance sud",
-          "description": "Par vent de tendance sud, le vol est vivement déconseillé à Boismint, à cause du foehn. À Caron, foehn veut dire jour sans vol. Aux Deux Lacs, le sud donne un fort foehn, le nord de forts vents thermiques.",
+          "description": "Dans la vallée de Belleville, le vent de tendance sud veut dire foehn. Le vol est alors vivement déconseillé à Boismint, et à Caron, c'est un jour sans vol. Aux Deux Lacs, le sud donne un fort foehn, le nord de forts vents thermiques.",
           "sources": [
             "S129",
             "S52",
@@ -2848,7 +2848,7 @@
           "radius_km": 2,
           "coord_quality": "source",
           "conditions": "Brise thermique d'été en face sud ; vent en temps réel (balises de station)",
-          "description": "À la Moraine, le vent forcit à cause du venturi du glacier du Col. Au décollage de la Cime de Caron, on est sous le vent de la brise de la face sud, qui peut être très forte en été. Ne décollez et ne vous posez jamais sur une piste ouverte. On se pose au chalet de Caron (2100 m) ; au téléphérique, plutôt pour la voltige, méfiez-vous des vents descendants.",
+          "description": "En haut de la vallée de Belleville, à la Moraine, le vent forcit à cause du venturi du glacier du Col. Au décollage de la Cime de Caron, on est sous le vent de la brise de la face sud, qui peut être très forte en été. Ne décollez et ne vous posez jamais sur une piste ouverte. On se pose au chalet de Caron (2100 m) ; au téléphérique, plutôt pour la voltige, méfiez-vous des vents descendants.",
           "sources": [
             "S52",
             "S63"
@@ -2863,7 +2863,7 @@
           "radius_km": 1.5,
           "coord_quality": "source",
           "conditions": "Fin de journée",
-          "description": "À Méribel, un vent de sud fort se lève en fin de journée : n'allez jamais plus loin que l'atterrissage. Celui-ci se fait le long de la ligne électrique et de la route, avec une finale au-dessus du tennis.",
+          "description": "Dans la vallée des Allues, un vent de sud fort se lève en fin de journée : n'allez jamais plus loin que l'atterrissage de Méribel. Celui-ci se fait le long de la ligne électrique et de la route, avec une finale au-dessus du tennis.",
           "sources": [
             "S52",
             "S133"
@@ -2902,7 +2902,7 @@
           "coord_quality": "source",
           "best_hours": "journée (dès février avec peu de vent) ; soir en été",
           "trigger": "pentes SO-O-NO au sommet des remontées Lanches/Loze, Roc Tania",
-          "description": "C'est le meilleur site de thermiques d'hiver et de début de printemps des Trois Vallées. Sur les pentes sud-ouest, ouest et nord-ouest, au sommet des remontées de Lanches et de la Loze, près du Roc Tania, les thermiques sont là dès février, quand il y a peu de vent. L'été, ça peut être fort, mais moins qu'au Bouc Blanc. Hors saison de ski, on lui préfère d'autres sites.",
+          "description": "Entre Courchevel et Méribel, au sommet des remontées de Lanches et de la Loze, près du Roc Tania, c'est le meilleur site de thermiques d'hiver et de début de printemps des Trois Vallées. Sur les pentes sud-ouest, ouest et nord-ouest, ils sont là dès février, quand il y a peu de vent. L'été, ça peut être fort, mais moins qu'au Bouc Blanc. Hors saison de ski, on lui préfère d'autres sites.",
           "sources": [
             "S132",
             "S52",
@@ -2922,7 +2922,7 @@
           "coord_quality": "source",
           "best_hours": "fin de matinée (partir avant 12h30)",
           "trigger": "pentes SE/S du Jovet au-dessus de Bozel",
-          "description": "Sur les pentes sud-est et sud du Jovet, au-dessus de Bozel, les thermiques arrivent en fin de matinée : excellent pour un cross parti tôt ou un grand vol sommet-vallée. Partez parfois avant 12h30, car le vent peut passer par-derrière. En cross, restez hors du Parc national, qui s'étend au sud et au sud-est.",
+          "description": "Sur les pentes sud-est et sud du Jovet, au-dessus de Bozel, les thermiques arrivent en fin de matinée : excellent pour un cross parti tôt ou un grand vol sommet-vallée. Il faut parfois partir avant 12h30, car le vent peut passer par-derrière. En cross, restez hors du Parc national, qui s'étend au sud et au sud-est.",
           "sources": [
             "S125",
             "S52"
@@ -2938,7 +2938,7 @@
           "coord_quality": "source",
           "best_hours": "après-midi (conditions pouvant devenir fortes)",
           "trigger": "pentes ouest/sud-ouest sous le sommet, télécabine de la Chambre",
-          "description": "Sur les pentes ouest et sud-ouest sous le sommet, on vole surtout en thermique, avec une finesse supérieure à 4,5. Les câbles de télécabine sont proches, et le vent de nord donne du foehn.",
+          "description": "Aux Menuires, sur les pentes ouest et sud-ouest sous le sommet, on vole surtout en thermique, avec une finesse supérieure à 4,5. Les câbles de télécabine sont proches, et le vent de nord donne du foehn.",
           "sources": [
             "S63",
             "S52"
@@ -2954,7 +2954,7 @@
           "coord_quality": "source",
           "best_hours": "soirée",
           "trigger": "décollage sur la piste face aux vents thermiques de la vallée de Belleville",
-          "description": "Le décollage, sur la piste, est dans l'axe thermique de la vallée de Belleville, là où le vent est le plus fort. C'est un bon endroit pour le vol du soir et pour faire des heures. Le nord donne de forts vents thermiques, le sud un fort foehn.",
+          "description": "À Val Thorens, le décollage, sur la piste, est dans l'axe thermique de la vallée de Belleville, là où le vent est le plus fort. C'est un bon endroit pour le vol du soir et pour faire des heures. Le nord donne de forts vents thermiques, le sud un fort foehn.",
           "sources": [
             "S52"
           ],
@@ -2986,7 +2986,7 @@
           "ffvl_id": 708,
           "best_hours": "milieu de journée, surtout en été",
           "trigger": "terrains de foot, pylônes et projecteurs qui jalonnent l'approche de l'atterrissage",
-          "description": "En bas de la vallée, les thermiques se déclenchent en approche, au-dessus des terrains de foot, des pylônes et des projecteurs. C'est musclé en milieu de journée, surtout en été, avec un gradient fort. Le matin, le vent est nul ou légèrement descendant ; le vent de vallée monte dès le milieu de journée, fort en été, avec des turbulences marquées.",
+          "description": "En bas de la vallée, à Bozel, les thermiques se déclenchent en approche, au-dessus des terrains de foot, des pylônes et des projecteurs. C'est musclé en milieu de journée, surtout en été, avec un gradient fort. Le matin, le vent est nul ou légèrement descendant ; le vent de vallée monte dès le milieu de journée, fort en été, avec des turbulences marquées.",
           "sources": [
             "S126"
           ],
@@ -3102,7 +3102,7 @@
             "N",
             "NW"
           ],
-          "description": "Le soir, on soare dans la brise de vallée : depuis le Bouc Blanc, redescendez sur la Dent du Villard et remontez dans la brise. Le décollage de la Dent du Villard, orienté nord, est une courte falaise, qui marche par brise de pente. On se pose à Bozel.",
+          "description": "Au-dessus de Courchevel, le soir, on soare dans la brise de vallée : depuis le Bouc Blanc, redescendez sur la Dent du Villard et remontez dans la brise. Le décollage de la Dent du Villard, orienté nord, est une courte falaise, qui marche par brise de pente. On se pose à Bozel.",
           "sources": [
             "S52",
             "S61"
@@ -3119,7 +3119,7 @@
             "NW",
             "W"
           ],
-          "description": "Le Bouc Blanc se vole très tôt et jusqu'à très tard, selon la force du vent. Il est favorable par nord, ouest et nord-ouest, défavorable de nord-est à sud-ouest.",
+          "description": "À Courchevel, le Bouc Blanc se vole très tôt et jusqu'à très tard, selon la force du vent. Il est favorable par nord, ouest et nord-ouest, défavorable de nord-est à sud-ouest.",
           "sources": [
             "S127",
             "S52"
@@ -3136,7 +3136,7 @@
           "alt_m": 2187,
           "coord_quality": "source",
           "ffvl_id": 703,
-          "description": "Décollage nord-ouest au sommet du téléski du Bouc Blanc. L'hiver, on y monte par les remontées ; l'été, par une piste de terre depuis Courchevel 1850, avec l'autorisation de la police municipale. C'est bon pour des sommet-vallée d'hiver, à ski. L'été, le site peut être soufflé en milieu d'après-midi.",
+          "description": "Ce décollage nord-ouest est au sommet du téléski du Bouc Blanc, à Courchevel. L'été, le site peut être soufflé en milieu d'après-midi. C'est bon pour des sommet-vallée d'hiver, à ski, et l'on y monte alors par les remontées ; l'été, par une piste de terre depuis Courchevel 1850, avec l'autorisation de la police municipale.",
           "sources": [
             "S127",
             "S52",
@@ -3157,7 +3157,7 @@
           "alt_m": 2304,
           "coord_quality": "source",
           "ffvl_id": 704,
-          "description": "Décollage et repose faciles, où travaillent beaucoup de biplaces professionnels. L'hiver, on y va à ski ou à pied. L'été, ça peut être fort, mais moins qu'au Bouc Blanc. Ne gênez pas l'approche de l'altiport de Méribel : pas de vol direct vers Méribel pour s'y poser. On atterrit surtout au Praz, à La Tania (technique) ou à Bozel.",
+          "description": "Entre Courchevel et Méribel, décollage et repose sont faciles, et beaucoup de biplaces professionnels y travaillent. Ne gênez pas l'approche de l'altiport de Méribel : pas de vol direct vers Méribel pour s'y poser. L'hiver, on y va à ski ou à pied. L'été, ça peut être fort, mais moins qu'au Bouc Blanc. On atterrit surtout au Praz, à La Tania (technique) ou à Bozel.",
           "sources": [
             "S132",
             "S52",
@@ -3179,7 +3179,7 @@
           "alt_m": 2276,
           "coord_quality": "source",
           "ffvl_id": 705,
-          "description": "Décollage sud-est et sud, repéré par une manche à air sur un mamelon avant le refuge ; on peut aussi partir devant le refuge ou monter à pied au sommet. Par vent de sud fort, ne volez pas. On se pose à Bozel, entre le stade et le lac. On y monte par la route de Villemartin et La Cour, puis une piste. En cross, restez hors du Parc national, qui s'étend au sud et au sud-est.",
+          "description": "Au-dessus de Bozel, ce décollage sud-est et sud est repéré par une manche à air sur un mamelon avant le refuge ; on peut aussi partir devant le refuge ou monter à pied au sommet. Par vent de sud fort, ne volez pas. En cross, restez hors du Parc national, qui s'étend au sud et au sud-est. On se pose à Bozel, entre le stade et le lac. On y monte par la route de Villemartin et La Cour, puis une piste.",
           "sources": [
             "S125",
             "S52",
@@ -3200,7 +3200,7 @@
           "alt_m": 1682,
           "coord_quality": "source",
           "ffvl_id": 706,
-          "description": "Vol du matin, décollage est : en été, avant 13h, la brise de vallée prend le dessus. Le décollage est interdit l'hiver quand la piste est ouverte. L'après-midi, on est sous le vent des sapins, à gauche. Il faut survoler Courchevel 1550, et l'atterrissage à Bozel est obligatoire.",
+          "description": "Sur le versant de Courchevel, les Tovets sont le vol du matin, décollage est : en été, avant 13h, la brise de vallée prend le dessus. Le décollage est interdit l'hiver quand la piste est ouverte, et l'atterrissage à Bozel est obligatoire. L'après-midi, on est sous le vent des sapins, à gauche. Il faut survoler Courchevel 1550.",
           "sources": [
             "S128",
             "S61"
@@ -3219,7 +3219,7 @@
           "alt_m": 1477,
           "coord_quality": "source",
           "ffvl_id": 1218,
-          "description": "Site d'après-midi, brise en place, parfois très fort en pleine après-midi. Une ligne haute tension passe 200 m en dessous, et la sortie de décollage secoue si le vent est fort. Ne décollez pas si des rafales de nord descendent du Jovet. Niveau débutant (ippi 3).",
+          "description": "Au-dessus de Bozel, sous le Jovet, c'est le site d'après-midi, brise en place, parfois très fort en pleine après-midi. Ne décollez pas si des rafales de nord descendent du Jovet. Une ligne haute tension passe 200 m en dessous, et la sortie de décollage secoue si le vent est fort. Niveau débutant (ippi 3).",
           "sources": [
             "S88",
             "S52",
@@ -3240,7 +3240,7 @@
           "alt_m": 1500,
           "coord_quality": "source",
           "ffvl_id": 14198,
-          "description": "Décollage du matin, à prendre avant que la brise de vallée ne s'allume, vers 13h. Il marche surtout bien au printemps. Le décollage est étroit, et l'accès en véhicule est interdit du 1er décembre au 30 avril. Niveau confirmé.",
+          "description": "Au-dessus de Bozel, ce décollage du matin se prend avant que la brise de vallée ne s'allume, vers 13h, et il marche surtout bien au printemps. Il est étroit, et l'accès en véhicule est interdit du 1er décembre au 30 avril. Niveau confirmé.",
           "sources": [
             "S87"
           ],
@@ -3259,7 +3259,7 @@
           "alt_m": 2611,
           "coord_quality": "source",
           "ffvl_id": 5314,
-          "description": "Décollage raide, avec un bon replat pour préparer la voile. Ski ou snowboard sont conseillés l'hiver ; l'été, la piste est facile. Ne décollez et ne vous posez pas sur les pistes. Un vent de sud fort se lève en fin de journée.",
+          "description": "Au-dessus de Méribel, ce décollage raide a un bon replat pour préparer la voile. Ne décollez et ne vous posez pas sur les pistes, et comptez avec le vent de sud fort qui se lève en fin de journée. Ski ou snowboard sont conseillés l'hiver ; l'été, la piste est facile.",
           "sources": [
             "S131",
             "S52"
@@ -3277,7 +3277,7 @@
           "alt_m": 2298,
           "coord_quality": "source",
           "ffvl_id": 3095,
-          "description": "Décollage à côté du restaurant d'altitude, sur la piste de ski : il est interdit l'hiver. Favorable par nord, nord-est et est. Niveau bleu.",
+          "description": "Au-dessus de Saint-Martin-de-Belleville, à côté du restaurant d'altitude, ce décollage est sur la piste de ski : il est interdit l'hiver. Favorable par nord, nord-est et est. Niveau bleu.",
           "sources": [
             "S134"
           ],
@@ -3295,7 +3295,7 @@
           "alt_m": 2269,
           "coord_quality": "source",
           "ffvl_id": 13595,
-          "description": "Décollage conventionné, niveau autonome, qui marche en régime de brise de vallée. La pente est faible, et une ligne de télésiège passe tout près. Par tendance sud, le vol est vivement déconseillé, à cause du foehn.",
+          "description": "Aux Menuires, ce décollage conventionné, niveau autonome, marche en régime de brise de vallée. Par tendance sud, le vol est vivement déconseillé, à cause du foehn. La pente est faible, et une ligne de télésiège passe tout près.",
           "sources": [
             "S129",
             "S63"
@@ -3315,7 +3315,7 @@
           "alt_m": 2269,
           "coord_quality": "source",
           "ffvl_id": 13642,
-          "description": "Décollage ouest à nord-ouest. À l'approche du plan de l'eau, surveillez votre hauteur : il faut passer la ligne du télécabine et la ligne électrique. Si vous grattez pour remonter la pente, méfiez-vous du paravalanche en bois, en contrebas.",
+          "description": "Aux Menuires, ce décollage ouest à nord-ouest mène au plan de l'eau. À l'approche, surveillez votre hauteur : il faut passer la ligne du télécabine et la ligne électrique. Si vous grattez pour remonter la pente, méfiez-vous du paravalanche en bois, en contrebas.",
           "sources": [
             "S135"
           ],
@@ -3336,7 +3336,7 @@
             "SW",
             "W"
           ],
-          "description": "Décollage sud-ouest à ouest, par les remontées. La finesse est supérieure à 4,5, et ça peut devenir fort l'après-midi. Attention aux câbles, et au vent de nord, qui donne du foehn.",
+          "description": "Aux Menuires, on atteint ce décollage sud-ouest à ouest par les remontées. Attention aux câbles, et au vent de nord, qui donne du foehn. La finesse est supérieure à 4,5, et ça peut devenir fort l'après-midi.",
           "sources": [
             "S52",
             "S63"
@@ -3358,7 +3358,7 @@
             "SW",
             "W"
           ],
-          "description": "Sommet et alentours : on choisit le bon versant, de sud-est à ouest. On décolle tôt et on se pose aux Menuires. Par vent météo de nord, évitez ce site.",
+          "description": "À l'ouest des Menuires, ce sommet et ses alentours laissent choisir le bon versant, de sud-est à ouest. On décolle tôt et on se pose aux Menuires. Par vent météo de nord, évitez ce site.",
           "sources": [
             "S52",
             "S63"
@@ -3377,7 +3377,7 @@
             "NE",
             "NW"
           ],
-          "description": "Décollage sur piste, dans l'axe thermique de la vallée de Belleville, là où le vent est le plus fort. Un câble de télésiège est à gauche. C'est un vol du soir. On se pose près de la station : le mieux est en haut, près du décollage, car le vent change en fin de thermique.",
+          "description": "À Val Thorens, on décolle sur piste, dans l'axe thermique de la vallée de Belleville, là où le vent est le plus fort : c'est un vol du soir. Un câble de télésiège est à gauche. On se pose près de la station, et le mieux est en haut, près du décollage, car le vent change en fin de thermique.",
           "sources": [
             "S52"
           ]
@@ -3395,7 +3395,7 @@
             "NE",
             "NW"
           ],
-          "description": "Sur la piste noire de Caron, la face de nord-est à nord-ouest est la meilleure. Ne décollez et ne vous posez jamais sur une piste ouverte. Par foehn, c'est un jour sans vol. À la Moraine, le vent est plus fort, à cause du venturi du glacier du Col.",
+          "description": "Tout au fond de la vallée de Belleville, sur la piste noire de Caron, la face de nord-est à nord-ouest est la meilleure. Ne décollez et ne vous posez jamais sur une piste ouverte. Par foehn, c'est un jour sans vol. À la Moraine, le vent est plus fort, à cause du venturi du glacier du Col.",
           "sources": [
             "S52",
             "S63"
@@ -3410,7 +3410,7 @@
           "alt_m": 1980,
           "coord_quality": "source",
           "ffvl_id": 5223,
-          "description": "Décollage sud à sud-ouest, repéré par les traces de vol, de convention inconnue. Dès qu'il y a une composante est, le décollage et l'aérologie sont très délicats ; par sud-sud-est, évitez-le franchement. Dès 11h-11h30, le décollage passe vent arrière. Le survol du parc est interdit.",
+          "description": "Au-dessus de Pralognan, ce décollage sud à sud-ouest, repéré par les traces de vol, est de convention inconnue. Le survol du parc est interdit. Dès 11h-11h30, le décollage passe vent arrière. Dès qu'il y a une composante est, le décollage et l'aérologie sont très délicats ; par sud-sud-est, évitez-le franchement.",
           "sources": [
             "S136",
             "S54",
@@ -3433,7 +3433,7 @@
           "alt_m": 1250,
           "coord_quality": "source",
           "ffvl_id": 707,
-          "description": "L'atterrissage principal des vols de la Loze et du Bouc Blanc, 950 m sous le Bouc Blanc. Lors des événements au stade de saut, le terrain sert de parking : allez voir avant de monter. Par forte brise de vallée, la gare du télécabine crée des turbulences.",
+          "description": "Au pied de Courchevel, c'est l'atterrissage principal des vols de la Loze et du Bouc Blanc, 950 m sous celui-ci. Lors des événements au stade de saut, le terrain sert de parking : allez voir avant de monter. Par forte brise de vallée, la gare du télécabine crée des turbulences.",
           "sources": [
             "S137",
             "S22",
@@ -3448,7 +3448,7 @@
           "alt_m": 852,
           "coord_quality": "source",
           "ffvl_id": 708,
-          "description": "Le terrain est entre le stade de foot et le lac. Le matin, le vent est nul, voire légèrement descendant. Le vent de vallée monte dès le milieu de journée, avec un fort gradient et des turbulences marquées en été. Attention aux pylônes, aux projecteurs et aux poteaux d'éclairage devant le terrain.",
+          "description": "À la base de loisirs de Bozel, le terrain est entre le stade de foot et le lac. Le matin, le vent est nul, voire légèrement descendant. Le vent de vallée monte dès le milieu de journée, avec un fort gradient et des turbulences marquées en été. Attention aux pylônes, aux projecteurs et aux poteaux d'éclairage devant le terrain.",
           "sources": [
             "S126",
             "S68",
@@ -3464,7 +3464,7 @@
           "alt_m": 1520,
           "coord_quality": "source",
           "ffvl_id": 5315,
-          "description": "On se pose le long de la ligne électrique et de la route, avec une finale au-dessus du tennis. Par vent de sud en fin de journée, n'allez pas plus loin que le terrain. Ne décollez ni n'atterrissez sur les pistes, et au col de la Loze, évitez l'axe de l'altiport de Méribel.",
+          "description": "À Méribel, on se pose le long de la ligne électrique et de la route, avec une finale au-dessus du tennis. Par vent de sud en fin de journée, n'allez pas plus loin que le terrain. Ne décollez ni n'atterrissez sur les pistes, et au col de la Loze, évitez l'axe de l'altiport de Méribel.",
           "sources": [
             "S133",
             "S52",
@@ -3480,7 +3480,7 @@
           "alt_m": 1800,
           "coord_quality": "source",
           "ffvl_id": 13596,
-          "description": "Atterrissage interdit en hiver. Attention aux promeneurs, aux montagnettes à l'approche et à la tyrolienne au-dessus du lac. Par brise de vallée, le gradient est fort, et par tendance sud, le terrain est vivement déconseillé.",
+          "description": "Interdit en hiver, ce terrain des Menuires sert les vols de Boismint. Par brise de vallée, le gradient est fort, et par tendance sud, il est vivement déconseillé. Attention aux promeneurs, aux montagnettes à l'approche et à la tyrolienne au-dessus du lac.",
           "sources": [
             "S130"
           ],
@@ -3494,7 +3494,7 @@
           "alt_m": 1212,
           "coord_quality": "source",
           "ffvl_id": 3143,
-          "description": "Terrain pratiqué, de convention inconnue. Un atterrissage des Ecloués, à la sortie du village sur la route de Pralognan, est aussi signalé, orienté sud-ouest. L'aérologie du secteur est souvent délicate de 13h à 16h.",
+          "description": "À Champagny-en-Vanoise, ce terrain est pratiqué, de convention inconnue. L'aérologie du secteur est souvent délicate de 13h à 16h. Un atterrissage des Ecloués, à la sortie du village sur la route de Pralognan, est aussi signalé, orienté sud-ouest.",
           "sources": [
             "S138",
             "S55",
@@ -3509,7 +3509,7 @@
           "alt_m": 1421,
           "coord_quality": "source",
           "ffvl_id": 5224,
-          "description": "L'atterrissage traditionnel du village, à côté de la route. Il est favorable sans vent ou par légère brise de pente.",
+          "description": "L'atterrissage traditionnel du village de Pralognan est à côté de la route. Il est favorable sans vent ou par légère brise de pente.",
           "sources": [
             "S139",
             "S62",

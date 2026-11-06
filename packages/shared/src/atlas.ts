@@ -116,6 +116,20 @@ export type FeatureCategory =
   | 'routes';
 
 /** Properties shared by every atlas feature (flattened for MapLibre). */
+/**
+ * A take-off or landing a paraglider must not count on: `interdit` (a decree, the owner),
+ * `non-praticable` (the federation's sheet), `non-confirme` (status unverified, one source
+ * doubts it), `delta` (open, for hang gliders only). None means nothing is known against it.
+ */
+export type SiteStatus = 'interdit' | 'non-praticable' | 'non-confirme' | 'delta';
+
+export const SITE_STATUS_LABELS: Record<SiteStatus, string> = {
+  interdit: 'Interdit : ne pas utiliser',
+  'non-praticable': 'Non praticable : ne pas compter dessus',
+  'non-confirme': 'Statut non confirmé : à vérifier avant de voler',
+  delta: 'Réservé au delta',
+};
+
 export interface AtlasFeatureProps {
   id: string;
   category: FeatureCategory;
@@ -153,6 +167,8 @@ export interface AtlasFeatureProps {
   /** Breezes: synoptic wind of a wind-conditional breeze (direction it blows from, deg; minimum speed, km/h). */
   conditionWindFrom?: number;
   conditionWindKmh?: number;
+  /** Take-offs and landings: see `SiteStatus`. Such a place is never offered as somewhere to go. */
+  status?: SiteStatus;
   /** Elevation check for points: DEM elevation minus declared altitude (m). */
   altDelta?: number;
   /** Importance score (higher = structures the sector's aerology more), see importance.ts. */

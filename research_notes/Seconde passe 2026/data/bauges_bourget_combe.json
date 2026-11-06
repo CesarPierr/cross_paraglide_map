@@ -1011,7 +1011,8 @@
             "S45"
           ],
           "coord_quality": "source",
-          "ffvl_id": 1113
+          "ffvl_id": 1113,
+          "status": "delta"
         },
         {
           "id": "sapenay-nord-guichon",
@@ -2281,17 +2282,18 @@
         },
         {
           "id": "ebaudia-albertville",
-          "name": "L'Ébaudia (Albertville), atterrissage non confirmé",
+          "name": "L'Ébaudia (Albertville), terrain non praticable",
           "lon": 6.3667,
           "lat": 45.6689,
           "alt_m": 338,
-          "description": "Aucune source ne documente un atterrissage ici : la fiche du décollage de l'Ébaudiaz indique qu'il n'y a pas d'atterrissage sur le site. Le point est en zone d'aérodrome : respectez l'interdiction de survol de l'aérodrome et de son approche.",
+          "description": "L'Ébaudia, au fond de la vallée à Albertville, n'est pas un atterrissage utilisable : la fiche fédérale le classe « non praticable pour le vol libre », sans convention. Le point est en zone d'aérodrome : respectez l'interdiction de survol de l'aérodrome et de son approche.",
           "sources": [
             "S77"
           ],
           "coord_quality": "source",
           "ffvl_id": 173,
-          "note": "Position : point d'atterrissage de la fiche ParaglidingEarth du décollage de l'Ébaudiaz, sans description ; la fiche FFVL 173 n'est pas dans la récolte."
+          "note": "Fiche FFVL 173 relue en ligne (modifiée le 20/10/2026) : fonction « atterro », non praticable, non conventionné, 1 atterrissage constaté en 2025. La fiche du décollage de l'Ébaudiaz indique aussi qu'il n'y a pas d'atterrissage sur le site.",
+          "status": "non-praticable"
         }
       ],
       "synoptic_effects": [

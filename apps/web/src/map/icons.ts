@@ -88,6 +88,27 @@ const ICONS: Record<string, { size: number; draw: Draw }> = {
       c.fillText('A', s / 2, s / 2 + s * 0.02);
     },
   },
+  'landing-closed': {
+    size: 36,
+    draw: (c, s) => {
+      c.beginPath();
+      c.arc(s / 2, s / 2, s * 0.36, 0, Math.PI * 2);
+      c.fillStyle = '#6b7280';
+      c.fill();
+      c.lineWidth = s * 0.08;
+      c.strokeStyle = '#ffffff';
+      c.stroke();
+      c.beginPath();
+      c.moveTo(s * 0.34, s * 0.34);
+      c.lineTo(s * 0.66, s * 0.66);
+      c.moveTo(s * 0.66, s * 0.34);
+      c.lineTo(s * 0.34, s * 0.66);
+      c.lineWidth = s * 0.1;
+      c.lineCap = 'round';
+      c.strokeStyle = '#ffffff';
+      c.stroke();
+    },
+  },
   'takeoff-community': {
     size: 40,
     draw: (c, s) => {

@@ -37,7 +37,7 @@ export function listTakeoffs(atlas: Atlas, ffvl: FlyingSite[], inGrid: (lon: num
   const massifName = new Map(atlas.massifs.map((m) => [m.id, m.shortName ?? m.name]));
   const out: Takeoff[] = [];
   for (const f of atlas.features.takeoffs ?? []) {
-    if (f.geometry.type !== 'Point') continue;
+    if (f.geometry.type !== 'Point' || f.properties.status) continue;
     const [lon, lat] = f.geometry.coordinates;
     const d = f.properties.details ?? {};
     const alt = parseFloat((d.Altitude ?? '').replace(/\s/g, ''));

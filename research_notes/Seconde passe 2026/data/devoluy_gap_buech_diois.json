@@ -1797,7 +1797,8 @@
           "sources": [
             "S157"
           ],
-          "ffvl_id": 14138
+          "ffvl_id": 14138,
+          "status": "interdit"
         },
         {
           "id": "pre-du-frene-chaillol",
@@ -2811,7 +2812,8 @@
             "S60"
           ],
           "coord_quality": "approx",
-          "note": "Pas de terrain désigné. Position du village (OSM), altitude du terrain au village (approximative)."
+          "note": "Pas de terrain désigné. Position du village (OSM), altitude du terrain au village (approximative).",
+          "status": "non-confirme"
         },
         {
           "id": "veynes-vallee",
@@ -2827,7 +2829,8 @@
           "coord_quality": "approx",
           "possible": [
             "Un vol venu du Pic de Bure s'est posé à côté de Veynes."
-          ]
+          ],
+          "status": "non-confirme"
         }
       ],
       "synoptic_effects": [
@@ -5944,7 +5947,8 @@
             "S134",
             "S35"
           ],
-          "ffvl_id": 140
+          "ffvl_id": 140,
+          "status": "non-praticable"
         },
         {
           "id": "la-nyons-laurons",

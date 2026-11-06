@@ -58,6 +58,8 @@ interface RawPoint {
 }
 interface RawItem extends RawPoint, RawText {
   id?: string;
+  /** Take-offs and landings not to count on (`SiteStatus`). */
+  status?: 'interdit' | 'non-praticable' | 'non-confirme' | 'delta';
   kind?: string;
   description?: string;
   conditions?: string;
@@ -1157,6 +1159,7 @@ function main() {
               coordQuality: verified || it.coord_quality === 'source' ? 'source' : 'approx',
               altDelta,
               details,
+              ...(it.status ? { status: it.status } : {}),
               ...(ix.possible ? { possible: ix.possible } : {}),
             },
           });

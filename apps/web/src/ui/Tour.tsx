@@ -343,7 +343,7 @@ export function buildTour(atlas: Atlas, m: AtlasMassif): Step[] {
 
   // 7. Take-offs and landings.
   const takeoffs = own('takeoffs').slice(0, 4);
-  const landings = own('landings').slice(0, 3);
+  const landings = own('landings').filter((l) => !l.properties.status).slice(0, 3);
   if (takeoffs.length)
     steps.push({
       chapter: 'Décoller et poser',

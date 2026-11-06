@@ -30,3 +30,6 @@ Résumé et 16 étapes sur 17 réécrits (« À retenir » déjà juste, gardé)
 **Étape 8.** Avant : « L'atterrissage officiel de la vallée est le Bois du Bouchet (1042 m)… Pas d'atterrissage à Argentière. » (en fin d'étape) Après : « Pas d'atterrissage à Argentière : on vise le Bois du Bouchet (1042 m), l'atterrissage officiel de la vallée… »
 
 **Fiche Savoy (danger).** Avant : « Ce terrain enclavé, bordé de bâtiments, passe sous le vent… Depuis sa réouverture à l'essai, il est réservé aux pilotes inscrits qui ont signé la charte. » Après : « Depuis sa réouverture à l'essai, le Savoy, au pied de Planpraz, est réservé aux pilotes inscrits qui ont signé la charte. Il est interdit en hiver, aux mini-voiles et au speed riding. Ce terrain enclavé… »
+
+## Reprise : une étape n'est pas une liste
+Étapes 2, 5, 6, 10, 11 réécrites, plus 7 et 13 (même défaut ; 13 dépassait trois altitudes). Faits retirés des étapes, tous présents en fiche. Ajoutés aux fiches pour cela : câbles en sortie de `planpraz` et `plan-de-l-aiguille`, « très fréquenté » en note de `planpraz`, « rafales » à `foehn-vallee-chamonix`.

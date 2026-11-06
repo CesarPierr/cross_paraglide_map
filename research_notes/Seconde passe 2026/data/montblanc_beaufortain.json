@@ -540,7 +540,7 @@
           "radius_km": 12,
           "coord_quality": "approx",
           "conditions": "avant l'arrivée d'une perturbation : flux de sud en altitude, hautes pressions côté italien, baisse côté français ; écart de pression Aoste–Annecy ≤ −4 hPa (CMBVL)",
-          "description": "Le foehn est fréquent ici et piège régulièrement les pilotes, surtout à Chamonix et aux Contamines. Il est probable dès un écart de −4 hPa entre Aoste et Annecy, et crée des rotors sous le vent. Ses signes : vent de sud sur les sommets, lenticulaires, mur de foehn sur les cols, petits cumulus déchiquetés dès le matin, souffle chaud et sec qui descend la vallée. Il peut rester cantonné entre 1400 et 1800 m, ou partir avec environ 20 km/h à 4000 m, sans nuages.",
+          "description": "Le foehn est fréquent ici et piège régulièrement les pilotes, surtout à Chamonix et aux Contamines. Il est probable dès un écart de −4 hPa entre Aoste et Annecy, et crée des rotors sous le vent. Ses signes : vent de sud sur les sommets, lenticulaires, mur de foehn sur les cols, petits cumulus déchiquetés dès le matin, rafales ou souffle chaud et sec qui descend la vallée. Il peut rester cantonné entre 1400 et 1800 m, ou partir avec environ 20 km/h à 4000 m, sans nuages.",
           "sources": [
             "S3",
             "S51",
@@ -1027,7 +1027,7 @@
             "S",
             "NE"
           ],
-          "description": "Sur les Aiguilles Rouges, au-dessus de Chamonix, Planpraz se vole face sud et nord-est, de 8h au début de l'après-midi ; c'est le départ des cross vers Annecy ou le Valais. Par vent d'ouest ou de nord de plus de 20 km/h à 2000 m, on est sous le vent. Le matin, les biplaces y sont nombreux. Le décollage nord-est, à l'est du restaurant, sert tôt le matin ou par vent de nord-est ou d'est : quittez-le dès que le vent s'installe au décollage sud.",
+          "description": "Sur les Aiguilles Rouges, au-dessus de Chamonix, Planpraz se vole face sud et nord-est, de 8h au début de l'après-midi ; c'est le départ des cross vers Annecy ou le Valais. Par vent d'ouest ou de nord de plus de 20 km/h à 2000 m, on est sous le vent. En sortie du décollage sud, passez à droite des câbles du Brévent. Le décollage nord-est, à l'est du restaurant, sert tôt le matin ou par vent de nord-est ou d'est : quittez-le dès que le vent s'installe au décollage sud.",
           "sources": [
             "S37",
             "S4",
@@ -1035,7 +1035,7 @@
             "S13",
             "S78"
           ],
-          "note": "Coordonnées du club : 45°56′11.3″N 6°51′04.0″E, 2000 m ; la fiche officielle indique 1917 m, l'office de tourisme 2032 m. Dénivelé de 1000 m. Balise au sommet du Brévent. Le décollage est interdit sur les pistes en hiver."
+          "note": "Le matin, le site est très fréquenté, avec de nombreux biplaces. Coordonnées du club : 45°56′11.3″N 6°51′04.0″E, 2000 m ; la fiche officielle indique 1917 m, l'office de tourisme 2032 m. Dénivelé de 1000 m. Balise au sommet du Brévent. Le décollage est interdit sur les pistes en hiver."
         },
         {
           "id": "flegere",
@@ -1069,7 +1069,7 @@
             "W",
             "NE"
           ],
-          "description": "Décollage et survol sont interdits ici en juillet et août. Le reste de l'année, le Plan de l'Aiguille est à 5 minutes à pied en aval de la gare intermédiaire de l'Aiguille du Midi. Le décollage ouest sert aux vols du soir ; le côté nord-est sert par vent de nord, et l'hiver sur la neige. Il marche avec les brises thermiques et thermodynamiques ou par léger flux d'ouest, et la brise peut être soutenue au décollage.",
+          "description": "Décollage et survol sont interdits ici en juillet et août. Le Plan de l'Aiguille est à 5 minutes à pied en aval de la gare intermédiaire de l'Aiguille du Midi. Le décollage ouest sert aux vols du soir ; le côté nord-est sert par vent de nord, et l'hiver sur la neige. Il marche avec les brises thermiques et thermodynamiques ou par léger flux d'ouest, et la brise peut être soutenue au décollage. En sortie, câbles électriques à gauche, câbles du téléphérique à droite.",
           "sources": [
             "S39",
             "S5",
@@ -1820,7 +1820,7 @@
         6.7125,
         45.85
       ],
-      "summary": "Le Val Montjoie est un secteur de décollages d'alpage face au Mont-Blanc, avec peu d'atterrissages. À Saint-Gervais, la plupart des vols convergent vers le terrain de la piscine (827 m) : il est déconseillé l'après-midi, à cause de la turbulence du vent de vallée, et des lignes électriques se trouvent en amont.\n\nLe matin, on part du Mont Joux et du Mont d'Arbois, face nord-est, puis de Porcherey et de la Tête du Mottey, face au Mont Joly, qui offrent souvent de bons plafonds dès le matin ; l'été, les thermiques s'y installent souvent dès 10h. Ce sont des départs de cross vers le Mont Joly, les Saisies et les Aravis. Du début de l'après-midi jusqu'à la nuit, le versant ouest du Prarion prend le relais, avec le Mont Paccard, La Charme et le Plancert. Quand le village et le versant Bettex passent à l'ombre, il offre une restitution douce au milieu de la vallée, jusqu'au coucher du soleil.\n\nAux Contamines, la Kouzna, orientée du nord-est au sud-est, est le départ de cross du matin, par léger nord ou bise ; l'optimum est vers 11h, et le vent tourne à partir de 12h. Le col du Joly est un site de soaring orienté au sud et au sud-ouest, fermé en août. La réserve naturelle des Contamines-Montjoie impose 300 m/sol, et le foehn y est courant.\n\nLa brise du Bon Nant n'est pas chiffrée : le flux de l'Arve se scinde à l'entrée de la vallée de Saint-Gervais, et l'après-midi la brise est forte au Pontet et rend la piscine trop turbulente.",
+      "summary": "Le Val Montjoie se lit comme une seule vallée, celle du Bon Nant, qui descend du sud au nord, des Contamines à Saint-Gervais puis au Fayet. À l'ouest, le Mont Joly, le Mont Joux et le Mont d'Arbois tournent leurs faces vers l'est et le Mont-Blanc. À l'est, le versant ouest du Prarion aligne La Charme, le Plancert et le Mont Paccard. Les décollages d'alpage ne manquent pas, les atterrissages si : à Saint-Gervais, la plupart des vols convergent vers le terrain de la piscine (827 m).\n\nLe matin se passe donc côté ouest. On part du Mont Joux et du Mont d'Arbois, face nord-est, puis de Porcherey et de la Tête du Mottey, face au Mont Joly, qui offrent souvent de bons plafonds ; l'été, les thermiques s'y installent souvent dès 10h, et la route s'ouvre vers le Mont Joly, les Saisies et les Aravis. Du début de l'après-midi jusqu'à la nuit, le Prarion prend le relais. Quand le village et le versant Bettex passent à l'ombre, il offre une restitution douce au milieu de la vallée, jusqu'au coucher du soleil.\n\nEntre les deux arrive la brise. Le flux de l'Arve se scinde à l'entrée de la vallée de Saint-Gervais, et sa branche du Bon Nant, qui n'est pas chiffrée, est forte au Pontet l'après-midi. Elle rend aussi la piscine trop turbulente : ce terrain est déconseillé l'après-midi, et des lignes électriques se trouvent en amont.\n\nPlus haut, aux Contamines, la Kouzna, orientée du nord-est au sud-est, est le départ de cross du matin, par léger nord ou bise ; l'optimum est vers 11h, et le vent tourne à partir de 12h. Juste à l'ouest, le col du Joly, site de soaring orienté au sud et au sud-ouest, est fermé en août. Deux règles valent ici : la réserve naturelle des Contamines-Montjoie impose 300 m/sol, et le foehn y est courant.",
       "breezes": [
         {
           "id": "brise-bon-nant",
@@ -1867,7 +1867,7 @@
             "max": null
           },
           "season": "printemps-été",
-          "description": "Une branche de la brise de l'Arve, séparée à l'entrée de la vallée de Saint-Gervais, remonte la vallée du Bon Nant. L'après-midi, elle est forte au Pontet, où l'on se pose de préférence par flux de nord. À la piscine, elle rend l'atterrissage trop turbulent. Au Signal, le vent a tendance à tourner à partir de 12h. Aucune vitesse n'est donnée.",
+          "description": "La brise du Bon Nant remonte la vallée l'après-midi, depuis Le Fayet : c'est une branche de la brise de l'Arve, séparée à l'entrée de la vallée de Saint-Gervais. Elle rend l'atterrissage de la piscine trop turbulent et souffle fort au Pontet, où l'on se pose de préférence par flux de nord. Plus en amont, au Signal, le vent a tendance à tourner à partir de 12h. Aucune vitesse n'est donnée.",
           "confidence": "medium",
           "sources": [
             "S51",
@@ -1907,7 +1907,7 @@
             "max": null
           },
           "season": "dès mars (forêt), printemps-été",
-          "description": "À La Charme, une petite falaise en sortie de décollage met les thermiques en route dès le début d'après-midi. Le soir, quand le versant du Bettex et le village passent à l'ombre, le relief ne donne plus grand-chose : allez chercher au milieu de la vallée de très larges ascendances douces, jusqu'au coucher du soleil. Sur ce versant ouest du Prarion, le vol de fin d'après-midi se fait face au vent de la vallée de l'Arve.",
+          "description": "Sur le versant ouest du Prarion, l'air travaille du début d'après-midi à la soirée. À La Charme, une petite falaise en sortie de décollage met les thermiques en route, et le vol de fin d'après-midi se fait face au vent de la vallée de l'Arve. Le soir, quand le versant du Bettex et le village passent à l'ombre, le relief ne donne plus grand-chose : allez chercher au milieu de la vallée de très larges ascendances douces, jusqu'au coucher du soleil.",
           "confidence": "medium",
           "sources": [
             "S15",
@@ -1940,7 +1940,7 @@
             ]
           },
           "when": "après-midi d'été (déduction)",
-          "mechanism": "C'est une déduction : la brise qui monte de Saint-Gervais et de Bionnay rencontrerait celle qui monte des Houches, sur la crête entre le Prarion et le col de Voza. Deux indices seulement : le Grand Prarion ne se vole que si la brise rentre bien de face, et le vol du soir sur ce versant se fait face au vent de l'Arve.",
+          "mechanism": "Sur la crête entre le Prarion et le col de Voza, la brise qui monte de Saint-Gervais et de Bionnay rencontrerait celle qui monte des Houches. C'est une déduction, appuyée sur deux indices seulement : le Grand Prarion ne se vole que si la brise rentre bien de face, et le vol du soir sur ce versant se fait face au vent de l'Arve.",
           "usage": "Rien ne la documente en vol. Les clubs de Saint-Gervais et des Houches pourraient la confirmer.",
           "confidence": "low",
           "sources": [
@@ -1967,7 +1967,7 @@
             ]
           },
           "when": "après-midi d'été, brise de vallée établie",
-          "mechanism": "La brise venue de Sallanches se scinde une première fois sur le Mont d'Arbois, puis une seconde fois à l'entrée de la vallée de Saint-Gervais. Une branche remonte sans doute le Bon Nant, une autre Servoz et Chamonix : ce partage est déduit, faute de point précis.",
+          "mechanism": "En remontant de Sallanches, la brise se partage deux fois. Elle se scinde d'abord sur le Mont d'Arbois, d'où une branche part vers Combloux et Megève, puis à l'entrée de la vallée de Saint-Gervais : une branche remonte sans doute le Bon Nant, une autre Servoz et Chamonix. Ce second partage est déduit, faute de point précis.",
           "usage": "L'après-midi, l'atterrissage de la piscine de Saint-Gervais est trop turbulent dans le vent de vallée. Du côté de Varan, le retour de brise est parfois très marqué, d'est ou de sud-est.",
           "confidence": "medium",
           "sources": [
@@ -1986,7 +1986,7 @@
           "radius_km": 6,
           "coord_quality": "approx",
           "conditions": "permanent",
-          "description": "On survole la réserve des Contamines-Montjoie à 300 m/sol au moins. Elle réduit beaucoup le domaine autorisé, surtout à l'ouest du 3e dôme de Miage. Les fiches de la Kouzna, du Pontet et du practice de golf le rappellent.",
+          "description": "Au-dessus des Contamines, on survole la réserve naturelle à 300 m/sol au moins. Elle réduit beaucoup le domaine autorisé, surtout à l'ouest du 3e dôme de Miage. Les fiches de la Kouzna, du Pontet et du practice de golf le rappellent.",
           "sources": [
             "S3",
             "S105",
@@ -2003,7 +2003,7 @@
           "radius_km": 6,
           "coord_quality": "approx",
           "conditions": "flux de sud en altitude avant une perturbation ; le Pontet est déconseillé en cas de foehn",
-          "description": "Avec Chamonix, la vallée des Contamines est la plus exposée au foehn, parfois bien visible, parfois difficile à déceler. Par foehn, l'atterrissage du Pontet est déconseillé.",
+          "description": "La vallée des Contamines est, avec Chamonix, la plus exposée au foehn, parfois bien visible, parfois difficile à déceler. Ces jours-là, l'atterrissage du Pontet est déconseillé.",
           "sources": [
             "S3",
             "S106"
@@ -2018,7 +2018,7 @@
           "radius_km": 1.2,
           "coord_quality": "approx",
           "conditions": "permanent, surtout quand les brises forcissent",
-          "description": "Le fond de vallée en amont du terrain de la piscine est traversé de nombreuses lignes : méfiance quand les brises forcissent. Sur le versant ouest du Prarion, une ligne haute tension longe tout le vol dynamique, de La Charme au Plancert et au Mont Paccard. À La Charme, elle passe très en avant du décollage.",
+          "description": "À Saint-Gervais, les lignes guettent à deux endroits. Le fond de vallée en amont du terrain de la piscine en est traversé : méfiance quand les brises forcissent. Et sur le versant ouest du Prarion, une ligne haute tension longe tout le vol dynamique, de La Charme au Plancert et au Mont Paccard ; à La Charme, elle passe très en avant du décollage.",
           "sources": [
             "S3",
             "S15",
@@ -2035,7 +2035,7 @@
           "radius_km": 0.8,
           "coord_quality": "source",
           "conditions": "après-midi, brise de vallée établie",
-          "description": "L'après-midi, la piscine est trop turbulente dans le vent de vallée : posez-y le matin. Respectez les foins. Depuis le Mont Joux, volez le matin aussi : l'après-midi ou par vent d'ouest, tout le vol est sous le vent.",
+          "description": "Au terrain de la piscine, posez le matin : l'après-midi, il est trop turbulent dans le vent de vallée. Respectez les foins. Le Mont Joux, qui y mène, se vole lui aussi le matin : l'après-midi ou par vent d'ouest, tout son vol est sous le vent.",
           "sources": [
             "S3",
             "S100"
@@ -2050,7 +2050,7 @@
           "radius_km": 0.6,
           "coord_quality": "source",
           "conditions": "tendance sud ; thermiques dès la sortie du déco",
-          "description": "Au Mont Paccard, le thermique peut être fort dès la sortie du décollage. Par tendance sud, la sortie est vraiment malsaine : l'arête de gauche vous met sous le vent. Le décollage est étroit, bordé de hauts sapins, et une ligne haute tension passe au-dessus.",
+          "description": "Par tendance sud, la sortie du Mont Paccard est vraiment malsaine : l'arête de gauche vous met sous le vent. Même sans sud, le thermique peut y être fort dès la sortie du décollage, lui-même étroit, bordé de hauts sapins et surplombé par une ligne haute tension.",
           "sources": [
             "S3",
             "S15",
@@ -2083,7 +2083,7 @@
           "radius_km": 0.7,
           "coord_quality": "source",
           "conditions": "permanent ; thermiques proches de la ligne",
-          "description": "À la Kouzna, une ligne haute tension passe à moins de 200 m en sortie de décollage, et les thermiques ne sont pas loin des lignes. À l'atterrissage du Pontet, une ligne moyenne tension barre la partie sud de l'approche.",
+          "description": "En sortie de la Kouzna, une ligne haute tension passe à moins de 200 m, et les thermiques ne sont pas loin des lignes. Plus bas, à l'atterrissage du Pontet, une ligne moyenne tension barre la partie sud de l'approche.",
           "sources": [
             "S105",
             "S106",
@@ -2101,7 +2101,7 @@
           "coord_quality": "source",
           "best_hours": "dès 10h en été (matin)",
           "trigger": "face SE/E du Mont Joly en arête herbeuse",
-          "description": "Depuis Porcherey et la Tête du Mottey, on attaque la face est du Mont Joly, une arête herbeuse. C'est un bon départ de cross, avec souvent de bons plafonds dès le matin, malgré une sortie parfois un peu turbulente.",
+          "description": "Porcherey et la Tête du Mottey s'ouvrent sur la face est du Mont Joly, une arête herbeuse : c'est l'ascendance du matin de ce côté de la vallée. Elle fait un bon départ de cross, avec souvent de bons plafonds dès le matin, malgré une sortie parfois un peu turbulente.",
           "sources": [
             "S15",
             "S102"
@@ -2138,7 +2138,7 @@
           "coord_quality": "source",
           "best_hours": "début d'après-midi ; restitution le soir",
           "trigger": "petite falaise à la sortie du décollage, thermiques qui déclenchent devant",
-          "description": "À La Charme, une petite falaise en sortie de décollage met les thermiques en route dès le début d'après-midi. Ils se déclenchent devant le décollage, où la repose est parfois turbulente. Par vent de nord ou de nord-est marqué à 2000 m, le décollage est « coiffé » et sous-alimenté.",
+          "description": "En sortie du décollage de La Charme, sur le versant ouest du Prarion, une petite falaise met les thermiques en route dès le début d'après-midi. Ils se déclenchent devant le décollage, où la repose est parfois turbulente. Par vent de nord ou de nord-est marqué à 2000 m, le décollage est « coiffé » et sous-alimenté.",
           "sources": [
             "S15"
           ],
@@ -2155,7 +2155,7 @@
           "coord_quality": "source",
           "best_hours": "en soirée, quand le versant Bettex (est) et le village passent à l'ombre",
           "trigger": "milieu de la vallée : le relief ne donne plus rien, ce sont de très larges ascendances douces (déduction du récit : air chauffé le jour)",
-          "description": "Le soir, depuis La Charme, la restitution se fait au-dessus du village de Saint-Gervais. Le relief ne donne plus rien : c'est au milieu de la vallée qu'on trouve de très larges ascendances douces, jusqu'au coucher du soleil.",
+          "description": "Au-dessus du village de Saint-Gervais se joue la fin de journée, depuis La Charme. Le relief ne donne plus rien : c'est au milieu de la vallée qu'on trouve de très larges ascendances douces, jusqu'au coucher du soleil.",
           "sources": [
             "S15"
           ],
@@ -2212,7 +2212,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (78 % le matin, 73 % à midi, 72 % le soir)",
           "trigger": "pentes sous le décollage du Mont Lachat (2073 m), au-dessus du marais des Chavants",
-          "description": "Sous le décollage du Mont Lachat (2073 m), au-dessus du marais des Chavants, les pentes forment un point chaud faible, à toute heure.",
+          "description": "Au-dessus du marais des Chavants, les pentes sous le décollage du Mont Lachat (2073 m) donnent un point chaud faible, à toute heure.",
           "confidence": "low",
           "sources": [
             "S164"
@@ -2228,7 +2228,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (98 % le matin, 93 % à midi, 90 % le soir)",
           "trigger": "arête de Tricot et Pointe Inférieure (2830 m), au-dessus des Contamines",
-          "description": "L'arête de Tricot et la Pointe Inférieure (2830 m), au-dessus des Contamines, forment un point chaud de haute montagne : les traces montrent des thermiques à toute heure.",
+          "description": "En haute montagne, au-dessus des Contamines, les traces montrent des thermiques à toute heure sur l'arête de Tricot et la Pointe Inférieure (2830 m).",
           "confidence": "low",
           "sources": [
             "S164"
@@ -2244,7 +2244,7 @@
           "coord_quality": "approx",
           "best_hours": "à midi et le soir d'après les traces GPS (92 % à midi, 92 % le soir, rien le matin)",
           "trigger": "rochers et glaciers du versant ouest du Mont Blanc, sous les Aiguilles Grises (3039 m)",
-          "description": "Les rochers et les glaciers du versant ouest du Mont Blanc, sous les Aiguilles Grises (3039 m), forment un point chaud de haute montagne, à midi comme le soir.",
+          "description": "Sur le versant ouest du Mont Blanc, sous les Aiguilles Grises (3039 m), les rochers et les glaciers marquent un point chaud de haute montagne, à midi comme le soir.",
           "confidence": "low",
           "sources": [
             "S164"
@@ -2260,7 +2260,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (82 % le matin, 91 % à midi, 90 % le soir)",
           "trigger": "pentes de glace sous l'Aiguille de Tricot (3665 m) et la Pointe Supérieure",
-          "description": "Les pentes de glace sous l'Aiguille de Tricot (3665 m) et la Pointe Supérieure forment un point chaud de haute montagne, à toute heure.",
+          "description": "Sous l'Aiguille de Tricot (3665 m) et la Pointe Supérieure, ce sont des pentes de glace qui marquent le point chaud, à toute heure.",
           "confidence": "low",
           "sources": [
             "S164"
@@ -2280,7 +2280,7 @@
             "SW",
             "W"
           ],
-          "description": "Le col du Joly est un site de soaring pour pilotes confirmés, idéal par vent de sud ou de sud-ouest. Surveillez le vent, qui forcit. Le site existe grâce à l'entente avec les agriculteurs : il est fermé tout le mois d'août.",
+          "description": "Fermé tout le mois d'août, par entente avec les agriculteurs, le col du Joly est le reste de l'année un site de soaring pour pilotes confirmés, idéal par vent de sud ou de sud-ouest. Surveillez le vent, qui forcit.",
           "sources": [
             "S64",
             "S109",
@@ -2297,7 +2297,7 @@
           "wind_dirs": [
             "W"
           ],
-          "description": "Le soir, on vole au-dessus du village de Saint-Gervais, dans de larges ascendances douces au milieu de la vallée, jusqu'au coucher du soleil. Par vent météo d'ouest, le Plancert est souvent le dernier site praticable.",
+          "description": "De La Charme au Mont Paccard, la journée finit au-dessus du village de Saint-Gervais, dans de larges ascendances douces au milieu de la vallée, jusqu'au coucher du soleil. Par vent météo d'ouest, le Plancert est souvent le dernier site praticable.",
           "sources": [
             "S15",
             "S3",
@@ -2341,7 +2341,7 @@
             "NE",
             "E"
           ],
-          "description": "Le Mont Joux, à 1872 m, est orienté est et nord-est ; on y monte par les télécabines du Bettex et du Mont d'Arbois. Le décollage est dans le parc de l'alpage de la Grand Montaz : refermez bien le parc. C'est un vol du matin, face au Mont-Blanc, simple et balistique vers la piscine. Comme on vole en finesse max, il est déconseillé par vent fort, même d'est ou de nord. L'après-midi ou par vent d'ouest, tout le vol est sous le vent.",
+          "description": "Le Mont Joux, au-dessus du Bettex, regarde l'est et le nord-est : c'est le vol du matin, face au Mont-Blanc, simple et balistique vers la piscine. L'après-midi ou par vent d'ouest, tout le vol est sous le vent. Comme on vole en finesse max, il est aussi déconseillé par vent fort, même d'est ou de nord. Les télécabines du Bettex et du Mont d'Arbois y montent, à 1872 m, et le décollage est dans le parc de l'alpage de la Grand Montaz : refermez bien le parc.",
           "sources": [
             "S3",
             "S15",
@@ -2364,7 +2364,7 @@
             "SE",
             "NW"
           ],
-          "description": "Porcherey – Tête du Mottey (1870 m), orienté nord-est et est, est à 15 minutes à pied du parking au-dessus du plateau de la Croix. L'arête monte droit au sommet du Mont Joly : on vole des deux côtés, sud-est ou nord-ouest, selon le vent météo. Le matin, la face sud-est est un très bon départ de cross.",
+          "description": "Porcherey – Tête du Mottey (1870 m) est le départ de cross du matin de Saint-Gervais. Orienté nord-est et est, il est posé sur l'arête qui monte droit au sommet du Mont Joly : on vole des deux côtés, sud-est ou nord-ouest, selon le vent météo, et le matin la face sud-est est un très bon départ. On marche 15 minutes depuis le parking, au-dessus du plateau de la Croix.",
           "sources": [
             "S3",
             "S15",
@@ -2387,7 +2387,7 @@
           "orientations": [
             "W"
           ],
-          "description": "Le Mont Paccard, orienté à l'ouest, décolle dans une tranchée au milieu des sapins, à 15 minutes à pied des Toilles. Il est technique : étroit, bordé de hauts sapins, sous une ligne haute tension. Par vent de sud, la sortie est malsaine. Il sert surtout au printemps, quand La Charme est encore enneigée.",
+          "description": "Le Mont Paccard, au nord du versant ouest du Prarion, décolle à l'ouest dans une tranchée au milieu des sapins. Il sert surtout au printemps, quand La Charme est encore enneigée. Il est technique : étroit, bordé de hauts sapins, sous une ligne haute tension, et par vent de sud la sortie est malsaine. On y marche 15 minutes depuis les Toilles.",
           "sources": [
             "S3",
             "S15",
@@ -2409,7 +2409,7 @@
           "orientations": [
             "W"
           ],
-          "description": "La Charme est une pente herbeuse plein ouest, dans un alpage. On vole vers Marlioz, environ 1000 m plus bas, avec une composante face au vent de vallée, ou plus loin vers Chedde, en longeant la ligne électrique. Une petite falaise en sortie met les thermiques en route dès le début d'après-midi.",
+          "description": "La Charme, au sud du versant ouest du Prarion, est une pente herbeuse plein ouest, dans un alpage : c'est le site de l'après-midi et du soir. Une petite falaise en sortie met les thermiques en route dès le début d'après-midi. On vole vers Marlioz, environ 1000 m plus bas, avec une composante face au vent de vallée, ou plus loin vers Chedde, en longeant la ligne électrique.",
           "sources": [
             "S15",
             "S3",
@@ -2433,7 +2433,7 @@
             "W",
             "NW"
           ],
-          "description": "Le Plancert, orienté à l'ouest, décolle dans une tranchée plus large que celle du Mont Paccard, 20 minutes plus haut. Il est en dévers vers le téléski, et par vent de sud il pose le même problème qu'au Mont Paccard. Par vent météo d'ouest, c'est souvent le dernier site praticable de la région : vérifiez alors que vous pénétrez assez pour rejoindre l'atterrissage, et attendez-vous à une sortie parfois turbulente.",
+          "description": "Le Plancert, sur le versant ouest du Prarion, décolle à l'ouest dans une tranchée plus large que celle du Mont Paccard, 20 minutes plus haut. Par vent météo d'ouest, c'est souvent le dernier site praticable de la région : vérifiez alors que vous pénétrez assez pour rejoindre l'atterrissage, et attendez-vous à une sortie parfois turbulente. Il est en dévers vers le téléski, et par vent de sud il pose le même problème qu'au Mont Paccard.",
           "sources": [
             "S3",
             "S111"
@@ -2453,7 +2453,7 @@
             "E",
             "SE"
           ],
-          "description": "La Kouzna est au sommet de la télécabine du Signal, à côté du restaurant, avec une manche à air de chaque côté. Orientée nord-est à sud-est, elle marche idéalement par léger nord, bise ou faible sud-est ; évitez-la par sud, sud-ouest ou ouest. C'est un départ de cross du matin, avec un optimum vers 11h ; à partir de 12h, le vent a tendance à tourner.",
+          "description": "La Kouzna, au sommet de la télécabine du Signal, au-dessus des Contamines, regarde du nord-est au sud-est. C'est un départ de cross du matin, avec un optimum vers 11h ; à partir de 12h, le vent a tendance à tourner. Elle marche idéalement par léger nord, bise ou faible sud-est ; évitez-la par sud, sud-ouest ou ouest. On décolle à côté du restaurant, avec une manche à air de chaque côté.",
           "sources": [
             "S64",
             "S3",
@@ -2476,7 +2476,7 @@
             "SW",
             "W"
           ],
-          "description": "Le col du Joly est un site de soaring pour pilotes confirmés, idéal par vent de sud-ouest. La ligne de 20 kV et le télésiège imposent de se reposer au décollage : il n'y a pas d'atterrissage. Le décollage est interdit du 1er au 31 août, à cause du bétail.",
+          "description": "Le col du Joly, juste à l'ouest de la Kouzna, est interdit au décollage du 1er au 31 août, à cause du bétail. Le reste de l'année, c'est un site de soaring pour pilotes confirmés, idéal par vent de sud-ouest. La ligne de 20 kV et le télésiège imposent de se reposer au décollage : il n'y a pas d'atterrissage.",
           "sources": [
             "S64",
             "S108",
@@ -2496,7 +2496,7 @@
             "N",
             "NW"
           ],
-          "description": "La réserve naturelle couvre l'arête sommitale : on ne décolle au sommet que vers le nord. Au col des Dômes, le décollage est sûr s'il est alimenté en nord, mais la pente devient vite très raide. Au 3e dôme, on vole vers Saint-Gervais ; au-delà, le décollage est interdit. Visez Passy-Marlioz : terrain dégagé, sain à toute heure, avec le plus grand dénivelé.",
+          "description": "Les Dômes de Miage, à l'est des Contamines, sont un décollage de paralpinisme dont la réserve naturelle fixe les limites. Elle couvre l'arête sommitale : on ne décolle au sommet que vers le nord. Au col des Dômes, le décollage est sûr s'il est alimenté en nord, mais la pente devient vite très raide. Au 3e dôme, on vole vers Saint-Gervais ; au-delà, le décollage est interdit. Visez Passy-Marlioz : terrain dégagé, sain à toute heure, avec le plus grand dénivelé.",
           "sources": [
             "S47",
             "S3"
@@ -2514,7 +2514,7 @@
             "S",
             "SW"
           ],
-          "description": "Le décollage est raide et ne convient pas aux débutants. On y monte des chalets de Miage par le col du Tricot.",
+          "description": "Le Mont Vorassay, au sud du col de Voza, regarde le sud et le sud-ouest. Son décollage est raide et ne convient pas aux débutants ; on y monte des chalets de Miage par le col du Tricot.",
           "sources": [
             "S15",
             "S110"
@@ -2536,7 +2536,7 @@
             "E",
             "W"
           ],
-          "description": "Au sommet du Mont Joly (2525 m), on décolle à l'est ou à l'ouest, mais le schiste rend le décollage délicat. À 2330 m, à droite du télésiège de l'Épaule, une pente parfaite permet de décoller face au Mont-Blanc ou face au domaine de Saint-Gervais, selon le vent.",
+          "description": "Au sommet du Mont Joly (2525 m), but de hike & fly entre Megève et le Val Montjoie, on décolle à l'est ou à l'ouest, mais le schiste rend le décollage délicat. Plus bas, à 2330 m, à droite du télésiège de l'Épaule, une pente parfaite permet de décoller face au Mont-Blanc ou face au domaine de Saint-Gervais, selon le vent.",
           "sources": [
             "S15",
             "S75",
@@ -2559,7 +2559,7 @@
           "alt_m": 827,
           "coord_quality": "source",
           "ffvl_id": 1329,
-          "description": "Le terrain de la piscine dessert le Mont Joux, le Mont Paccard et Porcherey. C'est un grand champ ; la manche à air, dans l'angle du terrain de foot, sert de cible officielle. Tant que les foins ne sont pas faits, posez près du chemin et pliez dessus. Il est déconseillé l'après-midi : il est trop turbulent dans le vent de vallée.",
+          "description": "Le terrain de la piscine est l'atterrissage de Saint-Gervais, pour les vols du Mont Joux, du Mont Paccard et de Porcherey. Il est déconseillé l'après-midi, trop turbulent dans le vent de vallée. C'est un grand champ ; la manche à air, dans l'angle du terrain de foot, sert de cible officielle. Tant que les foins ne sont pas faits, posez près du chemin et pliez dessus.",
           "sources": [
             "S3",
             "S15",
@@ -2576,7 +2576,7 @@
           "alt_m": 1185,
           "coord_quality": "source",
           "ffvl_id": 1890,
-          "description": "Le Pontet est ouvert du 15 juin au 15 septembre. L'approche se fait en PTU main droite ; une ligne moyenne tension passe dans la partie sud de l'approche. Le flux de nord est idéal. L'après-midi, la brise de vallée y est forte. Par foehn, il est déconseillé.",
+          "description": "Le Pontet est l'atterrissage d'été des Contamines, ouvert du 15 juin au 15 septembre. Le flux de nord y est idéal ; l'après-midi, la brise de vallée y est forte, et par foehn il est déconseillé. L'approche se fait en PTU main droite, et une ligne moyenne tension passe dans sa partie sud.",
           "sources": [
             "S106",
             "S64"
@@ -2591,7 +2591,7 @@
           "alt_m": 1185,
           "coord_quality": "source",
           "ffvl_id": 1891,
-          "description": "Le practice de golf sert du 16 septembre au 14 juin, 300 m après le Pontet, près du lac de baignade. Il est bordé d'arbres hauts ; le flux de nord y est favorable.",
+          "description": "Le practice de golf prend le relais du Pontet du 16 septembre au 14 juin, 300 m plus loin, près du lac de baignade. Il est bordé d'arbres hauts ; le flux de nord y est favorable.",
           "sources": [
             "S107",
             "S64"
@@ -2687,7 +2687,7 @@
               "coord_quality": "source"
             }
           ],
-          "description": "Depuis Porcherey, sur le secteur de Saint-Nicolas, une fois au Mont Joly, la route des Saisies et des Aravis s'impose. Sinon, on peut rejoindre la piscine en finesse, à condition qu'il n'y ait pas de vent de vallée.",
+          "description": "Le cross du Val Montjoie part de Porcherey, sur le secteur de Saint-Nicolas, et monte au Mont Joly. Une fois là-haut, la route des Saisies et des Aravis s'impose. Sinon, on peut rejoindre la piscine en finesse, à condition qu'il n'y ait pas de vent de vallée.",
           "sources": [
             "S3",
             "S15",
@@ -2723,7 +2723,7 @@
         6.6175,
         45.8567
       ],
-      "summary": "Megève occupe un ensellement (~1100 m) entre deux vallées : le bassin de l'Arve (Sallanches, Combloux) et le Val d'Arly (Praz-sur-Arly, Flumet, Ugine, Albertville). Au Palais des Sports, la confluence de col rend l'atterrissage délicat, voire impossible par vent soutenu de nord à nord-est.\n\nRochebrune, à 1733-1755 m, est le site de référence. Orienté à l'ouest et au nord-ouest, parfois au nord et au nord-est, il offre thermique, brise de vallée et longs vols paisibles dans la confluence. Le thermique de l'Alpette mène au Mont Joly ou aux Aravis. Par vent de sud-ouest, le décollage est dangereux à cause des rouleaux, et le survol de l'altiport est interdit.\n\nCôté Arve, la brise forte de l'après-midi, venue du bassin de Sallanches, rend turbulents les atterrissages de Cordon et de Rochefort, et souffle fort à Lépigny. La Tête du Planet n'est plus volable après 13h : on se replie alors sur le plateau des Benets. Côté Arly, l'air remonte d'Albertville par Ugine. Au Méruz, il est presque toujours de face, et il rend les atterrissages de Marlens et de Marthod difficiles à atteindre en finesse. L'après-midi, il passe aussi par-dessus la crête de Bisanne.\n\nLes sources sont minces pour Flumet, Crest-Voland et Notre-Dame-de-Bellecombe. Le Crêt du Midi, ou Ban Rouge, balistique, est interdit en été à cause des troupeaux. Quelques vols montrent qu'on peut traverser le Val d'Arly depuis Bisanne par l'Aiguille Croche, et que la confluence de Megève permet de longues glisses. Les écoulements descendants du matin restent des déductions peu sûres.",
+      "summary": "Tout part d'un col. Megève occupe un ensellement (~1100 m) entre deux vallées : au nord, le bassin de l'Arve (Combloux, Sallanches) ; au sud-ouest, le Val d'Arly (Praz-sur-Arly, Flumet, Ugine, puis Albertville). L'après-midi, une brise monte de chaque côté et elles se rencontrent au col.\n\nRochebrune, à 1733-1755 m, est le site de référence. Orienté à l'ouest et au nord-ouest, parfois au nord et au nord-est, il offre thermique, brise de vallée et longs vols paisibles dans la confluence, et le thermique de l'Alpette mène au Mont Joly ou aux Aravis. Par vent de sud-ouest, le décollage est dangereux à cause des rouleaux, et le survol de l'altiport est interdit. L'atterrissage du Palais des Sports subit la même confluence : il est délicat, voire impossible par vent soutenu de nord à nord-est.\n\nCôté Arve, la brise forte de l'après-midi, venue du bassin de Sallanches, rend turbulents les atterrissages de Cordon et de Rochefort, et souffle fort à Lépigny. La Tête du Planet n'est plus volable après 13h : on se replie alors sur le plateau des Benets. Côté Arly, l'air remonte d'Albertville par Ugine. Au Méruz, il est presque toujours de face, et il rend les atterrissages de Marlens et de Marthod difficiles à atteindre en finesse. L'après-midi, il passe aussi par-dessus la crête de Bisanne, que le Beaufortain partage avec cette vallée.\n\nPlus au sud, le Crêt du Midi, ou Ban Rouge, balistique, est interdit en été à cause des troupeaux. Quelques vols montrent qu'on peut traverser le Val d'Arly depuis Bisanne par l'Aiguille Croche, et que la confluence de Megève permet de longues glisses. Les sources sont minces pour Flumet, Crest-Voland et Notre-Dame-de-Bellecombe, et les écoulements descendants du matin restent des déductions peu sûres.",
       "breezes": [
         {
           "id": "brise-arly",
@@ -2776,7 +2776,7 @@
             "max": null
           },
           "season": "printemps-été",
-          "description": "Au Méruz, au-dessus d'Ugine, la brise de vallée arrive presque toujours de face. Le matin, la face sud-est donne tout son potentiel ; ensuite, la brise forcit de plus en plus et gêne les thermiques. Elle rend aussi les atterrissages de Marlens et de Marthod difficiles à atteindre en finesse. À Marthod, on approche en général d'Ugine vers Albertville, face à la brise.",
+          "description": "La brise de l'Arly remonte d'Albertville par Ugine vers Megève, dès la fin de matinée. Au Méruz, au-dessus d'Ugine, elle arrive presque toujours de face : le matin, la face sud-est donne tout son potentiel, puis la brise forcit de plus en plus et gêne les thermiques. Elle rend aussi les atterrissages de Marlens et de Marthod difficiles à atteindre en finesse. À Marthod, on approche en général d'Ugine vers Albertville, face à la brise.",
           "confidence": "medium",
           "sources": [
             "S127",
@@ -2834,7 +2834,7 @@
             "max": null
           },
           "season": "printemps-été",
-          "description": "La brise venue de Sallanches se scinde une première fois sur le Mont d'Arbois, et une branche monte vers Combloux et Megève. À Cordon, après 13h, elle l'emporte sur le thermique. Les atterrissages du village de Cordon et de Rochefort deviennent turbulents l'après-midi, et la brise est forte l'après-midi à Lépigny. Aucune vitesse n'est donnée.",
+          "description": "Venue de Sallanches, la brise se scinde une première fois sur le Mont d'Arbois, et une branche monte vers Combloux et Megève. À Cordon, après 13h, elle l'emporte sur le thermique. L'après-midi, elle rend turbulents les atterrissages du village de Cordon et de Rochefort, et elle est forte à Lépigny. Aucune vitesse n'est donnée.",
           "confidence": "medium",
           "sources": [
             "S51",
@@ -2974,8 +2974,8 @@
             ]
           },
           "when": "après-midi d'été, régime de brise",
-          "mechanism": "Megève est sur la ligne de partage des eaux entre l'Arve, côté Sallanches, et l'Arly, côté Praz-sur-Arly. La brise de l'Arve, par la branche du Mont d'Arbois, et celle de l'Arly s'y rencontrent : c'est la « confluence de col » du Palais des Sports. Depuis Rochebrune, elle permet de longs vols paisibles. La géométrie reste approximative, entre le Mont d'Arbois et Megève.",
-          "usage": "Profitez-en depuis Rochebrune pour de longs vols paisibles. À l'atterrissage du Palais des Sports, restez attentif à cette confluence : par vent soutenu de nord à nord-est, le terrain devient inaccessible.",
+          "mechanism": "Megève est sur la ligne de partage des eaux entre l'Arve, côté Sallanches, et l'Arly, côté Praz-sur-Arly. La brise de l'Arve, par la branche du Mont d'Arbois, et celle de l'Arly s'y rencontrent : c'est la « confluence de col » du Palais des Sports. La géométrie reste approximative, entre le Mont d'Arbois et Megève.",
+          "usage": "À l'atterrissage du Palais des Sports, restez attentif à cette confluence : par vent soutenu de nord à nord-est, le terrain devient inaccessible. Depuis Rochebrune, profitez-en pour de longs vols paisibles.",
           "confidence": "medium",
           "sources": [
             "S3",
@@ -3034,7 +3034,7 @@
           "radius_km": 2.5,
           "coord_quality": "approx",
           "conditions": "permanent ; DZ altiport de la Cote 2000",
-          "description": "L'altiport est à l'est du décollage de Rochebrune. Ne survolez pas son point d'entrée, le point November, à la verticale du hameau du Tour, à moins de 1800 m ; la règle vaut pour toute la zone entre ce point et la chaîne du Mont Joly. Le survol de l'altiport et les évolutions dans son circuit d'aérodrome sont interdits.",
+          "description": "L'altiport est à l'est du décollage de Rochebrune : son survol et les évolutions dans son circuit d'aérodrome sont interdits. Ne survolez pas non plus son point d'entrée, le point November, à la verticale du hameau du Tour, à moins de 1800 m ; la règle vaut pour toute la zone entre ce point et la chaîne du Mont Joly.",
           "sources": [
             "S3",
             "S114",
@@ -3051,7 +3051,7 @@
           "radius_km": 1.0,
           "coord_quality": "source",
           "conditions": "vent de SO ; sud-sud-ouest (la balise pioupiou est alors sous le vent)",
-          "description": "À Rochebrune, le décollage est dangereux par vent de sud-ouest, à cause des rouleaux. Le décollage est court.",
+          "description": "Par vent de sud-ouest, le décollage de Rochebrune, déjà court, est dangereux à cause des rouleaux.",
           "sources": [
             "S3",
             "S15",
@@ -3069,7 +3069,7 @@
           "radius_km": 0.8,
           "coord_quality": "source",
           "conditions": "régime de brise ; vent soutenu de nord à nord-est",
-          "description": "Au Palais des Sports, restez attentif à la confluence de col : par vent soutenu de nord à nord-est, l'atterrissage devient impossible à atteindre. On y vole en régime de brise, avec de faibles courants de nord à ouest.",
+          "description": "Au Palais des Sports, l'atterrissage de Megève, restez attentif à la confluence de col : par vent soutenu de nord à nord-est, il devient impossible à atteindre. On y vole en régime de brise, avec de faibles courants de nord à ouest.",
           "sources": [
             "S3"
           ],
@@ -3086,7 +3086,7 @@
           "radius_km": 0.6,
           "coord_quality": "source",
           "conditions": "permanent ; l'été uniquement (piste de fond l'hiver)",
-          "description": "Le terrain du Plan de Cassioz est entre la route et la ligne électrique, au pied de la bosse des Châteaux. C'est un triangle bordé de maisons : repérez-le avant de décoller.",
+          "description": "À Praz-sur-Arly, le terrain du Plan de Cassioz est un triangle bordé de maisons, entre la route et la ligne électrique, au pied de la bosse des Châteaux : repérez-le avant de décoller.",
           "sources": [
             "S3",
             "S115",
@@ -3105,7 +3105,7 @@
           "radius_km": 2.0,
           "coord_quality": "source",
           "conditions": "après 13h ; tendance météo de sud",
-          "description": "À la Tête du Planet, après 13h, la brise de vallée l'emporte sur le thermique et souffle dans le dos : redescendez alors décoller au plateau des Benets.",
+          "description": "À la Tête du Planet, au-dessus de Cordon, la brise de vallée l'emporte sur le thermique après 13h et souffle dans le dos : redescendez alors décoller au plateau des Benets.",
           "sources": [
             "S128",
             "S119",
@@ -3125,7 +3125,7 @@
           "radius_km": 2.0,
           "coord_quality": "source",
           "conditions": "après-midi (après ~12h30) ; ligne électrique au col de la Forclaz",
-          "description": "À Bisanne Sud, si vous arrivez une fois midi passé, la brise de vallée souffle déjà dans le dos, du nord, et peut être plus forte que les thermiques. Bisanne Nord-Ouest prend alors le relais : on l'utilise l'après-midi, quand la brise d'Ugine s'est installée.",
+          "description": "À Bisanne Sud, sur la crête qui sépare l'Arly du Doron, si vous arrivez une fois midi passé, la brise de vallée souffle déjà dans le dos, du nord, et peut être plus forte que les thermiques. Bisanne Nord-Ouest prend alors le relais : on l'utilise l'après-midi, quand la brise d'Ugine s'est installée.",
           "sources": [
             "S126",
             "S65",
@@ -3168,7 +3168,7 @@
           "coord_quality": "source",
           "radius_km": 4,
           "conditions": "après-midi d'avril par ciel bleu sans cumulus (14 avril 2024) ; par flux de sud en mai (2015)",
-          "description": "En compétition, à la balise au-dessus de Megève, il a fallu décaler un thermique très couché par la brise, puis revenir face à une très forte brise en collant à la pente, parfois en marche arrière. Ceux qui restaient à l'écart des grands sapins perdaient de l'altitude et posaient dans la vallée.",
+          "description": "Au-dessus de Megève, la brise peut devenir très forte. En compétition, à la balise, il a fallu décaler un thermique très couché par la brise, puis revenir face à une très forte brise en collant à la pente, parfois en marche arrière. Ceux qui restaient à l'écart des grands sapins perdaient de l'altitude et posaient dans la vallée.",
           "sources": [
             "S159",
             "S155"
@@ -3189,7 +3189,7 @@
           "coord_quality": "approx",
           "best_hours": "après-midi, régime de brise ou vent de nord",
           "trigger": "relief de l'Alpette au-dessus du déco de Rochebrune (position déduite : cité sans coordonnées)",
-          "description": "Juste après le décollage de Rochebrune, on peut accrocher le thermique de l'Alpette, par vent de secteur nord ou en brises thermiques. De là, on part en cross vers le Christomet et les Aravis, ou vers le Mont Joly.",
+          "description": "Au-dessus de Rochebrune, le thermique de l'Alpette est le premier à chercher, juste après le décollage, par vent de secteur nord ou en brises thermiques. De là, on part en cross vers le Christomet et les Aravis, ou vers le Mont Joly.",
           "sources": [
             "S3",
             "S76",
@@ -3211,7 +3211,7 @@
           "coord_quality": "source",
           "best_hours": "dès le matin, jusqu'à ~13h",
           "trigger": "faces NE à S de Cordon (portail vers les Aravis)",
-          "description": "Sur les faces nord-est à sud de Cordon, les thermiques démarrent dès le matin et tiennent jusque vers 13h. C'est la porte d'entrée vers les Aravis. Après 13h, la brise de vallée l'emporte sur les thermiques.",
+          "description": "Les faces nord-est à sud de Cordon sont la porte d'entrée vers les Aravis : les thermiques y démarrent dès le matin et tiennent jusque vers 13h. Ensuite, la brise de vallée l'emporte sur eux.",
           "sources": [
             "S128",
             "S119",
@@ -3230,7 +3230,7 @@
           "coord_quality": "source",
           "best_hours": "après-midi (déduction)",
           "trigger": "sommet de 1842 m, premier relief exposé au sud entre Rochebrune et la Tête du Planet (déduction)",
-          "description": "Le Christomet est le premier relief exposé au sud entre Rochebrune et la Tête du Planet : on y raccrocherait pour atteindre la porte de Cordon. C'est une déduction.",
+          "description": "Entre Rochebrune et la Tête du Planet, le Christomet est le premier relief exposé au sud : on y raccrocherait pour atteindre la porte de Cordon. C'est une déduction.",
           "sources": [
             "S2"
           ],
@@ -3269,7 +3269,7 @@
           "coord_quality": "source",
           "best_hours": "fin de matinée à début d'après-midi (départ de Bisanne à 11h49)",
           "trigger": "Crête de l'Aiguille Croche face au Mont Blanc",
-          "description": "À la verticale de la crête de l'Aiguille Croche, face au Mont Blanc, on fait le plafond avant la grande transition de Bisanne vers les Aravis.",
+          "description": "La crête de l'Aiguille Croche, face au Mont Blanc, est un endroit où faire le plafond avant la grande transition de Bisanne vers les Aravis.",
           "confidence": "medium",
           "sources": [
             "S156",
@@ -3308,7 +3308,7 @@
           "coord_quality": "approx",
           "best_hours": "milieu d'après-midi (février 2011, vers 15h)",
           "trigger": "Pentes sous la Tête du Torraz, au-dessus de la combe qui mène à la vallée de l'Arly (côté Flumet / La Giettaz)",
-          "description": "Sous la Tête du Torraz, au lieu-dit « le Char », un thermique violent peut aider à franchir la combe boisée, face au vent de sud, vers la vallée de l'Arly. La combe est profonde et sans atterrissage possible : ne vous y engagez qu'avec beaucoup de marge.",
+          "description": "Sous la Tête du Torraz, au lieu-dit « le Char », un thermique violent peut aider à franchir, face au vent de sud, la combe boisée qui mène à la vallée de l'Arly. Cette combe est profonde et sans atterrissage possible : ne vous y engagez qu'avec beaucoup de marge.",
           "confidence": "medium",
           "sources": [
             "S163",
@@ -3346,7 +3346,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (84 % le matin, 93 % à midi, 94 % le soir)",
           "trigger": "pentes de Balavarde et crête du Gâteau, au-dessus de Notre-Dame-de-Bellecombe",
-          "description": "Les pentes de Balavarde et la crête du Gâteau, au-dessus de Notre-Dame-de-Bellecombe, forment un point chaud à toute heure.",
+          "description": "Au-dessus de Notre-Dame-de-Bellecombe, les traces montrent un point chaud à toute heure, sur les pentes de Balavarde et la crête du Gâteau.",
           "confidence": "low",
           "sources": [
             "S164"
@@ -3379,7 +3379,7 @@
           "coord_quality": "approx",
           "best_hours": "non précisé",
           "trigger": "crête du Ban Rouge, vol balistique de chaque côté",
-          "description": "Sur la crête du Ban Rouge, le texte du décollage annonce un vol balistique de chaque côté de la crête, sans ascendance particulière. L'été, le site est interdit à cause des troupeaux.",
+          "description": "L'été, le site du Ban Rouge est interdit à cause des troupeaux. Sur sa crête, le texte du décollage annonce un vol balistique de chaque côté, sans ascendance particulière.",
           "confidence": "low",
           "sources": [
             "S159",
@@ -3398,7 +3398,7 @@
           "wind_dirs": [
             "W"
           ],
-          "description": "Par vent d'ouest, le soaring au Crêt du Midi est particulièrement sympathique. Par nord comme par ouest, le plan de vol consiste à rejoindre Praz-sur-Arly, invisible du décollage. L'été, le site est interdit à cause des troupeaux.",
+          "description": "L'été, le Crêt du Midi est interdit à cause des troupeaux. Hors saison, le soaring y est particulièrement sympathique par vent d'ouest. Par nord comme par ouest, le plan de vol consiste à rejoindre Praz-sur-Arly, invisible du décollage.",
           "sources": [
             "S3",
             "S116"
@@ -3420,7 +3420,7 @@
             "N",
             "NE"
           ],
-          "description": "Rochebrune décolle au sommet, à 1755 m, vers l'ouest et le nord-ouest ; le décollage est court. On y monte par le téléphérique de Rochebrune, en hiver et en juillet-août. Il se vole par vent de secteur nord ou en brises thermiques. Par vent de sud-ouest, il est dangereux, à cause des rouleaux.",
+          "description": "Rochebrune, au sud de Megève, est le site de référence : on décolle au sommet, à 1755 m, vers l'ouest et le nord-ouest, par vent de secteur nord ou en brises thermiques. Par vent de sud-ouest, il est dangereux, à cause des rouleaux, et le décollage est court. On y monte par le téléphérique de Rochebrune, en hiver et en juillet-août.",
           "sources": [
             "S3",
             "S15",
@@ -3442,7 +3442,7 @@
             "W",
             "N"
           ],
-          "description": "Le Crêt du Midi, à 1958 m, décolle vers l'ouest. Comptez 40 minutes de marche depuis le parking de Montrond, ou prenez le télésiège en hiver. Le vol est balistique, de chaque côté de la crête, sans ascendance particulière. L'été, le site est interdit à cause des troupeaux.",
+          "description": "L'été, le Crêt du Midi est interdit à cause des troupeaux. Hors saison, ce sommet de 1958 m, au sud de Praz-sur-Arly, décolle vers l'ouest. Le vol est balistique, de chaque côté de la crête, sans ascendance particulière. Comptez 40 minutes de marche depuis le parking de Montrond, ou prenez le télésiège en hiver.",
           "sources": [
             "S3",
             "S15",
@@ -3470,7 +3470,7 @@
             "SE",
             "S"
           ],
-          "description": "La Tête du Planet décolle de nord-est à sud, en passant par l'est. Elle est idéale par léger nord ou sans vent, et défavorable par vent de sud-ouest. Les thermiques y sont dès le matin : c'est un bon départ de cross et la porte d'entrée vers les Aravis. Après 13h, la brise de vallée domine : repliez-vous au plateau des Benets, à 1700 m, un décollage pour débutants, sensible aux entrées de sud-ouest.",
+          "description": "La Tête du Planet, au-dessus de Cordon, décolle de nord-est à sud, en passant par l'est. Les thermiques y sont dès le matin : c'est un bon départ de cross et la porte d'entrée vers les Aravis. Elle est idéale par léger nord ou sans vent, défavorable par vent de sud-ouest. Après 13h, la brise de vallée domine : repliez-vous au plateau des Benets, à 1700 m, un décollage pour débutants, sensible aux entrées de sud-ouest.",
           "sources": [
             "S119",
             "S128",
@@ -3491,7 +3491,7 @@
             "S",
             "SW"
           ],
-          "description": "Le décollage est étroit, pour 2 ou 3 voiles à la fois, avec de grands arbres en bout : il convient mal aux débutants. La brise de vallée arrive presque toujours de face. Le potentiel est maximal le matin, face sud-est ; ensuite, la brise forcit de plus en plus et les thermiques deviennent difficiles à trouver.",
+          "description": "Le Méruz, au-dessus d'Ugine, se vole le matin, quand son potentiel est maximal, face sud-est. La brise de vallée y arrive presque toujours de face ; ensuite, elle forcit de plus en plus et les thermiques deviennent difficiles à trouver. Le décollage est étroit, pour 2 ou 3 voiles à la fois, avec de grands arbres en bout : il convient mal aux débutants.",
           "sources": [
             "S127",
             "S124"
@@ -3511,7 +3511,7 @@
           "lat": 45.8617,
           "alt_m": 1105,
           "coord_quality": "source",
-          "description": "L'atterrissage est sur la place du marché, à 1105-1110 m ; il dessert Rochebrune. Restez attentif à la confluence de col : par vent soutenu de nord à nord-est, il devient inaccessible.",
+          "description": "Le Palais des Sports est l'atterrissage de Megève pour les vols de Rochebrune, sur la place du marché, à 1105-1110 m. Restez attentif à la confluence de col : par vent soutenu de nord à nord-est, il devient inaccessible.",
           "sources": [
             "S3",
             "S15"
@@ -3526,7 +3526,7 @@
           "alt_m": 1030,
           "coord_quality": "source",
           "ffvl_id": 138,
-          "description": "C'est un atterrissage des vols de Rochebrune, à 1030 m, pour 755 m de dénivelé. Il ne sert que l'été, entre la route et la ligne électrique, au pied de la bosse des Châteaux. La ligne haute tension est très visible.",
+          "description": "La plaine de Praz-sur-Arly est l'autre atterrissage des vols de Rochebrune, à 1030 m, pour 755 m de dénivelé. Elle ne sert que l'été, entre la route et la ligne électrique, au pied de la bosse des Châteaux. La ligne haute tension est très visible.",
           "sources": [
             "S3",
             "S115",
@@ -3543,7 +3543,7 @@
           "alt_m": 850,
           "coord_quality": "source",
           "ffvl_id": 14285,
-          "description": "C'est l'atterrissage des vols de randonnée de Cordon, à utiliser le matin : il devient turbulent avec la brise de vallée. Une ligne moyenne tension passe à proximité, et le terrain est sous le vent d'une haie.",
+          "description": "Rochefort est l'atterrissage des vols de randonnée de Cordon, à utiliser le matin : il devient turbulent avec la brise de vallée. Une ligne moyenne tension passe à proximité, et le terrain est sous le vent d'une haie.",
           "sources": [
             "S121"
           ],
@@ -3557,7 +3557,7 @@
           "alt_m": 550,
           "coord_quality": "source",
           "ffvl_id": 14286,
-          "description": "Ce grand terrain dégagé est accessible en finesse depuis Cordon et Varan, et convient aux débutants. La brise de vallée y est forte l'après-midi.",
+          "description": "Lépigny est un grand terrain dégagé du bassin de Sallanches, accessible en finesse depuis Cordon et Varan, et convenant aux débutants. La brise de vallée y est forte l'après-midi.",
           "sources": [
             "S122"
           ]
@@ -3570,7 +3570,7 @@
           "alt_m": 389,
           "coord_quality": "source",
           "ffvl_id": 1522,
-          "description": "C'est un champ avec un gros arbre à l'entrée, au bord de la route parallèle à l'Arly. On approche en général d'Ugine vers Albertville. Une ligne électrique borde le sud du terrain. Il dessert Bisanne Nord-Ouest.",
+          "description": "Marthod dessert Bisanne Nord-Ouest : c'est un champ avec un gros arbre à l'entrée, au bord de la route parallèle à l'Arly. On approche en général d'Ugine vers Albertville. Une ligne électrique borde le sud du terrain.",
           "sources": [
             "S125",
             "S127"
@@ -3721,7 +3721,7 @@
               "coord_quality": "source"
             }
           ],
-          "description": "Ce vol a décollé du Signal de Bisanne à 11h49 : il ne faut pas tarder, car la brise met ensuite le décollage vent arrière. Premier thermique à 2700 m, plafond du jour à 3135 m à l'Aiguille Croche, puis grande transition vers les Aravis, avec une raccroche au-dessus de Praz-sur-Arly à 3100 m. À partir de la Grande Balmaz, une rue de cumulus suit la chaîne des Aravis.",
+          "description": "Ce vol relie Bisanne aux Aravis en traversant le Val d'Arly. Il a décollé du Signal de Bisanne à 11h49 : il ne faut pas tarder, car la brise met ensuite le décollage vent arrière. Premier thermique à 2700 m, plafond du jour à 3135 m à l'Aiguille Croche, puis grande transition, avec une raccroche au-dessus de Praz-sur-Arly à 3100 m. À partir de la Grande Balmaz, une rue de cumulus suit la chaîne des Aravis.",
           "sources": [
             "S156"
           ],
@@ -3747,7 +3747,7 @@
               "coord_quality": "source"
             }
           ],
-          "description": "Ce vol a décollé du Signal de Bisanne à 12h45, dans des thermiques éloignés mais très larges : 700 m en 7 minutes, jusqu'à 3200 m. Les derniers thermiques se prennent sur le Mont Joly, dernière montagne côté Megève ; la transition à 3200 m mène ensuite au Mont Vorassay (2300 m), puis au massif du Mont-Blanc.",
+          "description": "Ce vol relie Bisanne au massif du Mont-Blanc par le Mont Joly, dernière montagne côté Megève. Parti du Signal de Bisanne à 12h45, il a trouvé des thermiques éloignés mais très larges : 700 m en 7 minutes, jusqu'à 3200 m. Les derniers se prennent sur le Mont Joly ; la transition à 3200 m mène ensuite au Mont Vorassay (2300 m), puis au massif.",
           "sources": [
             "S158"
           ],
@@ -3842,7 +3842,7 @@
         6.5733,
         45.7194
       ],
-      "summary": "Le Beaufortain est un massif de décollages d'alpage et de hike-and-fly, au-dessus de la vallée du Doron de Beaufort, dont l'axe débouche sur Albertville. Bisanne en est le site phare : Bisanne Sud (sud-est, sud, sud-ouest) et Bisanne Nord-Ouest (nord, nord-est, nord-ouest), portails vers les Aravis.\n\nLe matin, la brise du Doron descend ; dès la fin de matinée, elle remonte la vallée. On se pose à Beaufort, où le vent de vallée est souvent fort l'après-midi, ou à Marthod ou Ugine. L'après-midi, la brise de l'Arly passe par-dessus la crête de Bisanne et prend les pilotes dans le dos.\n\nPlus à l'est, Roselend offre des vols de fin de journée, à la Petite Berge et au Cormet : le soleil tape les parois nord-ouest, et la brise remonte le vallon. Des décollages d'altitude se font au Pas d'Outray, au passage d'Arpire, à Roche Plane et au Grand Mont d'Arêches. Les atterrissages sont restreints : rien à Arêches, et le Cormet, pente école, est donné ouvert par une source, fermé par une autre.\n\nPendant l'ouverture du domaine skiable, les arrêtés de Hauteluce et de Villard-sur-Doron limitent le parapente aux zones balisées ; le col du Joly, sur Contamines et Hauteluce, est fermé en août. Un vol a relié la Pierra Menta aux Aravis par la Pointe de la Terrasse, Roselend et Bisanne. Plus à l'est, entre le col de la Seigne, Les Chapieux et le Cormet, les brises descendantes forment un « cocktail » : évitez d'y arriver bas. Les routes vers la Tarentaise et le foehn restent peu documentés : la partie la mieux décrite reste Bisanne.",
+      "summary": "Le Beaufortain s'organise autour d'une vallée, celle du Doron de Beaufort, dont l'axe débouche à l'ouest sur Albertville. Au nord-ouest de Beaufort, la crête de Bisanne la sépare du Val d'Arly ; à l'est, Roselend et les sommets d'altitude ferment le massif. On y vole depuis des décollages d'alpage et en hike-and-fly.\n\nBisanne est le site phare, avec deux décollages qui sont autant de portails vers les Aravis : Bisanne Sud (sud-est, sud, sud-ouest) et Bisanne Nord-Ouest (nord, nord-est, nord-ouest). Le matin, la brise du Doron descend ; dès la fin de matinée, elle remonte la vallée. L'après-midi, la brise de l'Arly passe par-dessus la crête de Bisanne et prend les pilotes dans le dos. On se pose à Beaufort, où le vent de vallée est souvent fort l'après-midi, ou à Marthod ou Ugine.\n\nPlus à l'est, Roselend offre des vols de fin de journée, à la Petite Berge et au Cormet : le soleil tape les parois nord-ouest, et la brise remonte le vallon. Des décollages d'altitude se font au Pas d'Outray, au passage d'Arpire, à Roche Plane et au Grand Mont d'Arêches. Les atterrissages sont restreints : rien à Arêches, et le Cormet, pente école pour une source, fermé pour une autre, ne se vole pas sans l'école locale. Tout à l'est, entre le col de la Seigne, Les Chapieux et le Cormet, les brises descendantes forment un « cocktail » : évitez d'y arriver bas.\n\nUn vol a relié la Pierra Menta aux Aravis par la Pointe de la Terrasse, Roselend et Bisanne. Pendant l'ouverture du domaine skiable, les arrêtés de Hauteluce et de Villard-sur-Doron limitent le parapente aux zones balisées ; le col du Joly, sur Contamines et Hauteluce, est fermé en août. Les routes vers la Tarentaise et le foehn restent peu documentés : la partie la mieux décrite reste Bisanne.",
       "breezes": [
         {
           "id": "brise-doron-beaufort",
@@ -3889,7 +3889,7 @@
             "max": null
           },
           "season": "printemps-été",
-          "description": "Tôt le matin, la brise est encore descendante à Beaufort. En fin de matinée, elle se met à remonter la vallée et les pentes ensoleillées : c'est l'heure du décollage sud de Bisanne. L'après-midi, le vent de vallée est souvent fort à l'atterrissage de Beaufort, et il peut l'être encore en milieu d'après-midi au lac de Roselend.",
+          "description": "Dans la vallée du Doron, la brise change de sens dans la matinée. Tôt, elle est encore descendante à Beaufort. En fin de matinée, elle se met à remonter la vallée et les pentes ensoleillées : c'est l'heure du décollage sud de Bisanne. L'après-midi, le vent de vallée est souvent fort à l'atterrissage de Beaufort, et il peut l'être encore en milieu d'après-midi au lac de Roselend.",
           "confidence": "medium",
           "sources": [
             "S28",
@@ -3979,7 +3979,7 @@
             "max": null
           },
           "season": "été-automne",
-          "description": "Tôt le matin, à Beaufort, la brise de vallée est encore descendante : un jour, l'atterrissage de Marcôt s'est fait en PTU main gauche, face à Beaufort.",
+          "description": "Tôt le matin, à Beaufort, la brise de vallée descend encore : un jour, l'atterrissage de Marcôt s'est fait en PTU main gauche, face à Beaufort.",
           "confidence": "low",
           "sources": [
             "S28",
@@ -4015,7 +4015,7 @@
             "max": null
           },
           "season": "été",
-          "description": "À Petite Berge, le vol de fin de journée est idéal : le soleil tape les parois rocheuses de Roselend, tournées au nord-ouest, et la brise de vallée remonte le vallon.",
+          "description": "Au-dessus du lac de Roselend, à Petite Berge, le vol de fin de journée est idéal : le soleil tape les parois rocheuses, tournées au nord-ouest, et la brise de vallée remonte le vallon.",
           "confidence": "low",
           "sources": [
             "S28",
@@ -4047,7 +4047,7 @@
             ]
           },
           "when": "après-midi d'été",
-          "mechanism": "L'après-midi, la brise de la vallée d'Ugine, côté Arly, passe par-dessus la crête de Bisanne et souffle du nord au décollage sud, pendant que la brise du Doron monte le versant sud. Les deux se rencontrent sans doute vers la crête : la géométrie est approximative.",
+          "mechanism": "Sur la crête de Bisanne, deux brises se rencontrent l'après-midi. Celle de la vallée d'Ugine, côté Arly, passe par-dessus la crête et souffle du nord au décollage sud, pendant que celle du Doron monte le versant sud. Leur rencontre, sans doute vers la crête, a une géométrie approximative.",
           "usage": "L'après-midi, décollez de Bisanne Nord-Ouest (nord, nord-est, nord-ouest) : Bisanne Sud n'est favorable que le matin, jusque vers 12h30, puis la brise arrive dans le dos.",
           "confidence": "low",
           "sources": [
@@ -4075,7 +4075,7 @@
             ]
           },
           "when": "après-midi d'été (observé à 15h40, août)",
-          "mechanism": "Vers Les Chapieux, l'air descend du col de la Seigne par la vallée des Glaciers, et la brise descend du Cormet de Roselend : c'est une zone de descente, un « cocktail de brises ». Que la brise du Doron passe le Cormet pour rencontrer le flux de la vallée des Glaciers est une déduction ; aucune ligne n'est tracée.",
+          "mechanism": "À l'est du Cormet de Roselend, vers Les Chapieux, l'air descend du col de la Seigne par la vallée des Glaciers, et la brise descend du Cormet : c'est une zone de descente, un « cocktail de brises ». Que la brise du Doron passe le Cormet pour rencontrer le flux de la vallée des Glaciers est une déduction ; aucune ligne n'est tracée.",
           "usage": "Évitez d'y arriver bas : rien n'y monte. Un jour d'août, en route directe depuis le Mont-Blanc, il a fallu s'y poser en milieu d'après-midi.",
           "confidence": "low",
           "sources": [
@@ -4093,7 +4093,7 @@
           "radius_km": 1.5,
           "coord_quality": "source",
           "conditions": "après-midi ; vent d'ouest ; câble de remontée à droite du déco",
-          "description": "Bisanne Sud est favorable par brise thermique le matin, jusqu'à 12h30. Ensuite, la brise de la vallée d'Ugine, plus forte que les thermiques, arrive dans le dos. Par vent d'ouest, attention aux rouleaux.",
+          "description": "Bisanne Sud n'est favorable que le matin, par brise thermique, jusqu'à 12h30. Ensuite, la brise de la vallée d'Ugine, plus forte que les thermiques, arrive dans le dos. Par vent d'ouest, attention aux rouleaux.",
           "sources": [
             "S130",
             "S142",
@@ -4111,7 +4111,7 @@
           "radius_km": 1.0,
           "coord_quality": "source",
           "conditions": "après-midi d'été",
-          "description": "À l'atterrissage de Bisanne, à Beaufort (697 m), une ligne téléphonique barre le bout du terrain, et le vent de vallée est souvent fort l'après-midi. La zone est confortable, longue et large, avec une manche à air.",
+          "description": "L'atterrissage de Bisanne, à Beaufort (697 m), a deux pièges : une ligne téléphonique barre le bout du terrain, et le vent de vallée est souvent fort l'après-midi. Pour le reste, la zone est confortable, longue et large, avec une manche à air.",
           "sources": [
             "S131",
             "S28"
@@ -4127,7 +4127,7 @@
           "radius_km": 2.0,
           "coord_quality": "approx",
           "conditions": "permanent ; vols vers Marthod/Ugine",
-          "description": "Une ligne électrique passe au col de la Forclaz, dans le prolongement de la crête vers Albertville. Une seconde ligne borde le sud de l'atterrissage de Marthod.",
+          "description": "Entre Bisanne et Albertville, une ligne électrique passe au col de la Forclaz, dans le prolongement de la crête. Une seconde ligne borde le sud de l'atterrissage de Marthod.",
           "sources": [
             "S126",
             "S125"
@@ -4180,7 +4180,7 @@
           "radius_km": 1.5,
           "coord_quality": "source",
           "conditions": "après-midi",
-          "description": "Pas d'atterrissage à Arêches : prévoyez de vous poser à Beaufort-sur-Doron. L'après-midi, la brise de vallée y est forte, et l'atterrissage n'est pas visible du décollage.",
+          "description": "Depuis Roche Parstire, ne comptez pas sur Arêches, qui n'a pas d'atterrissage : prévoyez de vous poser à Beaufort-sur-Doron. L'après-midi, la brise de vallée y est forte, et l'atterrissage n'est pas visible du décollage.",
           "sources": [
             "S134"
           ],
@@ -4195,7 +4195,7 @@
           "radius_km": 3.0,
           "coord_quality": "approx",
           "conditions": "après-midi d'été (observation à 15h40, 22 août 2023) ; deuxième mention d'une expérience antérieure au Cormet",
-          "description": "Entre le col de la Seigne, Les Chapieux et le Cormet de Roselend, les brises descendantes se mélangent : l'air descend du col de la Seigne, puis du Cormet, et l'on perd vite de l'altitude. Évitez d'y arriver bas.",
+          "description": "Évitez d'arriver bas entre le col de la Seigne, Les Chapieux et le Cormet de Roselend. Les brises descendantes s'y mélangent : l'air descend du col de la Seigne, puis du Cormet, et l'on perd vite de l'altitude.",
           "sources": [
             "S72"
           ],
@@ -4214,7 +4214,7 @@
           "coord_quality": "source",
           "radius_km": 2,
           "conditions": "flux de nord encore sensible à l'ouest du Mirantin (récit de mi-juillet, vent N à NO forcissant)",
-          "description": "Par flux de nord, passer le Pas de l'Âne vers le sud vous met sous le vent du Mont Mirantin : mieux vaut rester sur la face au vent que de passer le col.",
+          "description": "Par flux de nord, à l'est de la Roche Pourrie, passer le Pas de l'Âne vers le sud vous met sous le vent du Mont Mirantin : mieux vaut rester sur la face au vent que de passer le col.",
           "sources": [
             "S149",
             "S154"
@@ -4236,7 +4236,7 @@
           "coord_quality": "source",
           "best_hours": "matin jusqu'à ~12h30",
           "trigger": "face SE-S-SO du Mont Bisanne",
-          "description": "La face sud de Bisanne, tournée au sud-est, au sud et au sud-ouest, donne des thermiques le matin, jusque vers 12h30. L'après-midi, la brise d'Ugine domine.",
+          "description": "La face sud de Bisanne, tournée au sud-est, au sud et au sud-ouest, donne les thermiques du matin, jusque vers 12h30. L'après-midi, la brise d'Ugine domine.",
           "sources": [
             "S130",
             "S142",
@@ -4258,7 +4258,7 @@
           "coord_quality": "source",
           "best_hours": "dès 10h",
           "trigger": "parterres rocheux ensoleillés du versant E du Grand Rognoux",
-          "description": "Le versant est du Grand Rognoux, ensoleillé, porte des thermiques au-dessus de ses parterres rocheux.",
+          "description": "Au sud d'Arêches, le versant est du Grand Rognoux, ensoleillé, porte des thermiques au-dessus de ses parterres rocheux.",
           "sources": [
             "S28",
             "S138"
@@ -4335,7 +4335,7 @@
           "coord_quality": "source",
           "best_hours": "après-midi (déduction : le pilote rejoint la Légette après la montée de la matinée)",
           "trigger": "crête de la Légette, entre le col des Saisies et le Mont Clocher",
-          "description": "Sur la crête de la Légette, entre le col des Saisies et le Mont Clocher, il est un peu plus dur de remonter.",
+          "description": "La Légette, à ne pas confondre avec celle du Grand Mont, est une crête entre le col des Saisies et le Mont Clocher, où il est un peu plus dur de remonter.",
           "sources": [
             "S67",
             "S154"
@@ -4436,7 +4436,7 @@
           "coord_quality": "approx",
           "best_hours": "à midi et le soir d'après les traces GPS (88 % à midi, 92 % le soir, rien le matin)",
           "trigger": "pentes de La Chapelle, à l'ouest du Beaufortain, au-dessus de la combe de Savoie",
-          "description": "Les pentes de La Chapelle, à l'ouest du Beaufortain, au-dessus de la combe de Savoie, forment un point chaud à midi et le soir.",
+          "description": "À l'ouest du Beaufortain, au-dessus de la combe de Savoie, les pentes de La Chapelle marquent un point chaud à midi et le soir.",
           "confidence": "low",
           "sources": [
             "S164"
@@ -4452,7 +4452,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (87 % le matin, 92 % à midi, 96 % le soir)",
           "trigger": "crêtes à 1978 m sur la ligne qui joint le Beaufortain au Val d'Arly",
-          "description": "Les crêtes à 1978 m, sur la ligne qui relie le Beaufortain au Val d'Arly, forment un point chaud à toute heure.",
+          "description": "Sur la ligne qui relie le Beaufortain au Val d'Arly, les crêtes à 1978 m donnent un point chaud à toute heure.",
           "confidence": "low",
           "sources": [
             "S164"
@@ -4468,7 +4468,7 @@
           "coord_quality": "approx",
           "best_hours": "à midi et le soir d'après les traces GPS (90 % à midi, 92 % le soir, rien le matin)",
           "trigger": "pentes de Dunand et de Lavachay, sous le col d'Arpire",
-          "description": "Les pentes de Dunand et de Lavachay, sous le col d'Arpire, forment un point chaud à midi et le soir.",
+          "description": "Sous le col d'Arpire, les pentes de Dunand et de Lavachay ne marquent un point chaud qu'à midi et le soir.",
           "confidence": "low",
           "sources": [
             "S164"
@@ -4515,7 +4515,7 @@
             "S",
             "SW"
           ],
-          "description": "Bisanne Sud décolle au sommet, près du restaurant d'altitude et du parking, entre 1929 et 1941 m, vers le sud-est, le sud et le sud-ouest. Il est favorable par brise thermique le matin, jusqu'à 12h30. Par vent d'ouest, attention aux rouleaux. Si vous arrivez une fois midi passé, la brise de vallée souffle déjà dans le dos, du nord : passez au décollage Nord-Ouest.",
+          "description": "Bisanne Sud décolle au sommet, près du restaurant d'altitude et du parking, entre 1929 et 1941 m, vers le sud-est, le sud et le sud-ouest. C'est le décollage du matin, favorable par brise thermique jusqu'à 12h30. Si vous arrivez une fois midi passé, la brise de vallée souffle déjà dans le dos, du nord : passez au décollage Nord-Ouest. Par vent d'ouest, attention aux rouleaux.",
           "sources": [
             "S130",
             "S142",
@@ -4538,13 +4538,13 @@
             "NE",
             "NW"
           ],
-          "description": "Bisanne Nord-Ouest, tourné au nord, au nord-est et au nord-ouest, est à environ 80 m des antennes relais, côté Ugine, au niveau de la première grosse cassure. Il sert surtout l'après-midi, quand la brise d'Ugine est installée, ou quand le vent du nord est trop fort. Le vent y est assez soutenu, puis il faiblit dès le milieu de l'après-midi.",
+          "description": "Bisanne Nord-Ouest, tourné au nord, au nord-est et au nord-ouest, regarde le côté d'Ugine, à environ 80 m des antennes relais, au niveau de la première grosse cassure. Il sert surtout l'après-midi, quand la brise d'Ugine est installée, ou quand le vent du nord est trop fort. Le vent y est assez soutenu, puis il faiblit dès le milieu de l'après-midi.",
           "sources": [
             "S126",
             "S143",
             "S60"
           ],
-          "note": "Plateau devant le décollage : prévoir une marge d'altitude. L'atterrissage de Marthod ou d'Ugine n'est pas visible : il faut suivre la crête vers la vallée."
+          "note": "Plateau devant le décollage : prévoir une marge d'altitude. L'atterrissage de Marthod ou d'Ugine n'est pas visible : il faut suivre la crête vers la vallée. Les fiches divergent sur le fort vent du nord."
         },
         {
           "id": "roche-parstire",
@@ -4558,7 +4558,7 @@
             "W",
             "NW"
           ],
-          "description": "Roche Parstire décolle au sommet, vers l'ouest et le nord-ouest. On y monte par la route goudronnée jusqu'au col du Pré, puis par une piste en terre, en 40 minutes depuis Arêches.",
+          "description": "Roche Parstire, au sud-est d'Arêches, décolle au sommet, vers l'ouest et le nord-ouest. Il faut prévoir de se poser à Beaufort-sur-Doron, car Arêches n'a pas d'atterrissage. On y monte par la route goudronnée jusqu'au col du Pré, puis par une piste en terre, en 40 minutes depuis Arêches.",
           "sources": [
             "S134",
             "S147"
@@ -4577,7 +4577,7 @@
             "N",
             "NW"
           ],
-          "description": "Petite Berge est une butte large et douce au-dessus du lac de Roselend, tournée au nord et au nord-ouest. On y monte à pied du refuge du Plan de la Lai (1820 m), en 30 minutes à 1 heure. Le décollage est très confortable et se prête au vol de fin de journée.",
+          "description": "Petite Berge est une butte large et douce au-dessus du lac de Roselend, tournée au nord et au nord-ouest : son décollage très confortable se prête au vol de fin de journée. On y monte à pied du refuge du Plan de la Lai (1820 m), en 30 minutes à 1 heure.",
           "sources": [
             "S137",
             "S28"
@@ -4597,7 +4597,7 @@
             "W",
             "NW"
           ],
-          "description": "Le Cormet de Roselend est la pente école de l'école locale : ne volez qu'avec son accord, jamais quand elle travaille. Les meilleures conditions sont par vent de nord.",
+          "description": "À l'est du lac de Roselend, le Cormet est à considérer comme fermé sans l'accord de l'école locale, dont c'est la pente école : ne volez jamais quand elle travaille. Les meilleures conditions sont par vent de nord.",
           "sources": [
             "S144",
             "S135",
@@ -4620,7 +4620,7 @@
             "SE",
             "S"
           ],
-          "description": "Au Grand Mont (2686 m), on décolle sur une pente herbeuse juste sous le sommet, au nord : elle est irrégulière, avec des touffes et des cailloux. Vers 10h, la brise de pente remonte le versant est. Le plan de vol part au nord-est, vers le lac de Saint-Guérin.",
+          "description": "Le Grand Mont (2686 m), au sud d'Arêches, décolle sur une pente herbeuse juste sous le sommet, au nord : elle est irrégulière, avec des touffes et des cailloux. Vers 10h, la brise de pente remonte le versant est. Le plan de vol part au nord-est, vers le lac de Saint-Guérin.",
           "sources": [
             "S28",
             "S138",
@@ -4640,7 +4640,7 @@
             "W",
             "NW"
           ],
-          "description": "Petit décollage, à 1419-1432 m, au-dessus de la Combe de Savoie, tourné à l'ouest et au nord-ouest. La brise y est souvent de travers, de la droite, et en vol la brise de vallée peut devenir soutenue.",
+          "description": "Fenêtre 7 est un petit décollage au-dessus de la Combe de Savoie, à 1419-1432 m, tourné à l'ouest et au nord-ouest. La brise y est souvent de travers, de la droite, et en vol la brise de vallée peut devenir soutenue.",
           "sources": [
             "S139",
             "S146"
@@ -4657,7 +4657,7 @@
           "alt_m": 697,
           "coord_quality": "source",
           "ffvl_id": 347,
-          "description": "L'atterrissage de Bisanne, à 697-702 m, se rejoint par le croisement des routes de Beaufort et des Saisies, près de l'hôtel de la Cascade, puis par le panneau de l'école locale. Une ligne téléphonique barre le bout du terrain, et le vent de vallée est souvent fort l'après-midi.",
+          "description": "L'atterrissage de Bisanne, à 697-702 m, est à Beaufort. Une ligne téléphonique barre le bout du terrain, et le vent de vallée est souvent fort l'après-midi. On le rejoint par le croisement des routes de Beaufort et des Saisies, près de l'hôtel de la Cascade, puis par le panneau de l'école locale.",
           "sources": [
             "S131",
             "S142",
@@ -4850,7 +4850,7 @@
               "coord_quality": "source"
             }
           ],
-          "description": "Un jour d'août, ce vol a décollé de la face est de la Pierra Menta à 11h, après 1h30 d'attente. Il est passé sous le Mont Rosset, puis par la Pointe de la Terrasse, a filé à l'ouest au-dessus du lac de Roselend jusqu'à Bisanne et au Mont Charvin, et a rejoint les Aravis en 3 h.",
+          "description": "Cette traversée d'est en ouest a relié la Pierra Menta aux Aravis un jour d'août. Le vol a décollé de la face est à 11h, après 1h30 d'attente, est passé sous le Mont Rosset, puis par la Pointe de la Terrasse. Il a filé à l'ouest au-dessus du lac de Roselend jusqu'à Bisanne et au Mont Charvin, et a rejoint les Aravis en 3 h.",
           "sources": [
             "S72",
             "S67"
@@ -4904,7 +4904,7 @@
               "coord_quality": "source"
             }
           ],
-          "description": "Au-dessus du décollage de Bisanne, un thermique monte jusque vers 2500 m. On transite au-dessus du col des Saisies vers La Légette, où il est un peu plus dur de remonter, puis on passe la crête pour filer au Mont Clocher. Le retour se fait par le col, parfois très bas, jusqu'à la face sud de Bisanne.",
+          "description": "Cette petite boucle part de Bisanne, où un thermique monte jusque vers 2500 m au-dessus du décollage. On transite au-dessus du col des Saisies vers La Légette, où il est un peu plus dur de remonter, puis on passe la crête pour filer au Mont Clocher. Le retour se fait par le col, parfois très bas, jusqu'à la face sud de Bisanne.",
           "sources": [
             "S67",
             "S154"

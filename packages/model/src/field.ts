@@ -258,6 +258,27 @@ export function curatedActivity(b: CuratedBreezeInfo, p: ModelParams, valleyPhas
   return base * f;
 }
 
+/**
+ * Share of its documented speed a breeze reaches under the sun of the day. The sources
+ * describe a fine day of the flying season; a flow the sun drives weakens with the season
+ * and the clouds as the generic flow of its kind does. A drainage or a flow driven by the
+ * synoptic wind owes nothing to the sun. Shared by the CPU model and the GPU engine.
+ */
+export function curatedSunFactor(b: Pick<CuratedBreezeInfo, 'kind' | 'condition'>, season: number, waterSeason: number, sunCloud: number): number {
+  if (b.condition?.wind || b.kind === 'downvalley' || b.kind === 'katabatic') return 1;
+  const seasonal = b.kind === 'lake' ? Math.min(1, waterSeason) : b.kind === 'slope' ? 0.55 + 0.45 * season : season;
+  return seasonal * sunCloud;
+}
+
+/**
+ * The same for a documented strong breeze, which the sources also report in spring: its full
+ * speed lasts while the sun is high enough (`RULES.hazardBreezeSeason`). One tied to a
+ * synoptic wind keeps its speed.
+ */
+export function hazardSunFactor(h: Pick<CuratedHazardInput, 'fromDeg'>, season: number, sunCloud: number): number {
+  return h.fromDeg !== undefined ? 1 : Math.min(1, season / RULES.hazardBreezeSeason) * sunCloud;
+}
+
 const SHADOW_STEPS = [1, 2, 3, 4, 6, 8, 11, 15, 20, 26, 34, 44, 56, 70];
 
 /**
@@ -480,10 +501,14 @@ export interface WindContext {
   curated: CuratedLayer | null;
   /** Per-breeze activity (signed: negative never used, 0..1) at this hour. */
   curatedActivity: Float32Array;
+  /** Per-breeze speed under the sun of the day (m/s, `curatedSunFactor`). */
+  curatedSpeed: Float32Array;
   /** Per-breeze vertical structure (`CuratedLayerKind`). */
   curatedKind: Uint8Array;
   /** Per documented hazard: how much the synoptic wind matches its conditions, 0..1. */
   hazardActivity: Float32Array;
+  /** Per documented hazard: the speed of a strong breeze under the sun of the day (m/s, `hazardSunFactor`). */
+  hazardTarget: Float32Array;
   g: [number, number];
   gSpeed: number;
   gKmh: number;
@@ -505,14 +530,19 @@ export function makeWindContext(terrain: Terrain, time: TimeContext, params: Mod
   const r = (params.synoptic.fromDeg * Math.PI) / 180;
   const activity = new Float32Array(curated?.breezes.length ?? 0);
   const kinds = new Uint8Array(curated?.breezes.length ?? 0);
+  const air = packAir(params.air);
+  const sunCloud = air?.sunCloud ?? 1;
+  const speeds = new Float32Array(curated?.breezes.length ?? 0);
   curated?.breezes.forEach((b, i) => {
     activity[i] = curatedActivity(b, params, time.valleyPhase);
     kinds[i] = curatedLayerKind(b.kind);
+    speeds[i] = b.speedMs * curatedSunFactor(b, time.season, time.waterSeason, sunCloud);
   });
-  const air = packAir(params.air);
   const hazardAct = new Float32Array(curated?.hazards?.length ?? 0);
+  const hazardTarget = new Float32Array(curated?.hazards?.length ?? 0);
   curated?.hazards?.forEach((h, i) => {
     hazardAct[i] = hazardActivity(h, params);
+    hazardTarget[i] = ((h.targetKmh ?? 25) / 3.6) * hazardSunFactor(h, time.season, sunCloud);
   });
   return {
     terrain,
@@ -520,8 +550,10 @@ export function makeWindContext(terrain: Terrain, time: TimeContext, params: Mod
     params,
     curated,
     curatedActivity: activity,
+    curatedSpeed: speeds,
     curatedKind: kinds,
     hazardActivity: hazardAct,
+    hazardTarget,
     g,
     gSpeed,
     gKmh: params.synoptic.speedKmh,
@@ -530,7 +562,7 @@ export function makeWindContext(terrain: Terrain, time: TimeContext, params: Mod
     upI: Math.sin(r),
     upJ: -Math.cos(r),
     air,
-    sunCloud: air?.sunCloud ?? 1,
+    sunCloud,
   };
 }
 
@@ -676,7 +708,6 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
       act = c.curatedActivity[ci];
     }
     if (idx >= 0) {
-      const b = cl.breezes[idx];
       const kind = c.curatedKind[idx];
       // hf: how much the documented breeze overrides the generic flow at this height;
       // vf: its speed relative to the documented (low-level) speed. The override must
@@ -699,7 +730,7 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
       // An inactive documented breeze (outside its hours) says nothing about the flow
       // now: its override fades with its activity instead of imposing a calm.
       cw = wgt * hf * act;
-      const sp = b.speedMs * act * vf * funnel * scale;
+      const sp = c.curatedSpeed[idx] * act * vf * funnel * scale;
       out.curated[0] = tx * sp;
       out.curated[1] = ty * sp;
       out.curatedIndex = idx;
@@ -729,7 +760,7 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
       const tAct = c.curatedActivity[ti];
       const [l0, l1] = c.curatedKind[ti] === CuratedLayerKind.Katabatic ? RULES.curatedKatabaticLayer : RULES.curatedSlopeLayer;
       thinW = cl.thin.weight[k] * tAct * (1 - smoothstep(l0, l1, hh));
-      const sp = cl.breezes[ti].speedMs * tAct * scale;
+      const sp = c.curatedSpeed[ti] * tAct * scale;
       thinX = cl.thin.tx[k] * sp;
       thinY = cl.thin.ty[k] * sp;
       thinIdx = ti;
@@ -805,7 +836,10 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
   // where the air is forced up the slope (RULES.windwardExposure).
   const upslope = gSpeed > 0.05 ? (gx * gxk + gy * gyk) / gSpeed : 0;
   const exposed = smoothstep(RULES.windwardExposure[0], RULES.windwardExposure[1], upslope) * (1 - lee);
-  const fLevel = 0.3 + 0.7 * smoothstep(-0.1, 1.05, level);
+  // Less so without a valley to shelter in, and not twice where the sounding already felt the ground.
+  const { floor: shelterFloor, open: shelterOpen, depth: shelterDepth } = RULES.valleyShelter;
+  let fLevel = 1 - (1 - shelterFloor) * (1 - smoothstep(-0.1, 1.05, level)) * (shelterOpen + (1 - shelterOpen) * smoothstep(shelterDepth[0], shelterDepth[1], t.env[k] - t.floor[k]));
+  if (c.air) fLevel += Math.max(0, RULES.soundingSurface.factor - fLevel) * (1 - smoothstep(0, RULES.soundingSurface.depth, z0 - c.air.z[0]));
   const fh = (fLevel + (1 - fLevel) * exposed) * (0.75 + 0.25 * smoothstep(0, 400, hh));
   const speedFactor = fh * (1 - 0.85 * lee) * (1 + RULES.venturiGain * out.venturi);
   const rotor = 0.25 * lee * smoothstep(10, 30, gKmh) * (1 - chan);
@@ -889,13 +923,13 @@ export function evalCell(k: number, c: WindContext, out: CellResult): CellResult
         const r = (hzd.flowFromDeg * Math.PI) / 180;
         const ux = -Math.sin(r);
         const uy = -Math.cos(r);
-        const lack = Math.max(0, (hzd.targetKmh ?? 25) / 3.6 - (out.total[0] * ux + out.total[1] * uy));
+        const lack = Math.max(0, c.hazardTarget[hi] - (out.total[0] * ux + out.total[1] * uy));
         out.total[0] += ux * lack * a;
         out.total[1] += uy * lack * a;
         out.turbulence = Math.max(out.turbulence, 0.3 * a);
         continue;
       }
-      const target = ((hzd.targetKmh ?? 25) / 3.6) * a;
+      const target = c.hazardTarget[hi] * a;
       if (cur < target) {
         const ux = cur > 0.3 ? out.total[0] / cur : gmag > 1e-6 ? gxk / gmag : 0;
         const uy = cur > 0.3 ? out.total[1] / cur : gmag > 1e-6 ? gyk / gmag : 0;

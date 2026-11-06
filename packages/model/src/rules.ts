@@ -229,6 +229,22 @@ export const RULES = {
    */
   windwardExposure: [0.05, 0.3] as [number, number],
   /**
+   * How low in a valley the synoptic wind slows: down to `floor` of itself at the bottom, and
+   * less where there is no valley to shelter in, by `open` of that loss under `depth[0]` of
+   * valley depth, all of it from `depth[1]`. Check: open plains in strong wind, bias −7.6 →
+   * +0.3 km/h against 6 stations (docs/VALIDATION.md, `npm run model:hindcast`).
+   */
+  valleyShelter: { floor: 0.3, open: 0.45, depth: [200, 800] as [number, number] },
+  /**
+   * The low levels of a forecast sounding have already felt the friction of their ground:
+   * read within `depth` (m) of the lowest level, the wind is not slowed below `factor` of
+   * itself a second time. Check: valley floors in strong wind, RMSE 11.2 → 9.6 km/h with the
+   * other settings unchanged (docs/VALIDATION.md; set on half of the days, held on the other).
+   */
+  soundingSurface: { factor: 0.8, depth: 150 },
+  /** Seasonal sunshine (`TimeContext.season`) from which a documented strong breeze reaches its speed: from mid-April to the end of August (the Megève breeze is documented in April). */
+  hazardBreezeSeason: 0.75,
+  /**
    * Dynamic lift by scales: the vertical speed U·∇z forced by the slope (gradient smoothed
    * over ≈ 0.2 km), the ridge (`ridgeBlur` cells, ≈ 0.5 km) and the massif (`massBlur`,
    * ≈ 1.2 km), each part fading with the height above ground over `heights` (m): in

@@ -74,6 +74,8 @@ const vec2 R_POOL_WIND = vec2(${RULES.coldPoolWindKmh.map(f).join(', ')});
 const float R_MEM_SHARE = ${f(RULES.thermalMemory.share)};
 const float R_LEE_CUT = ${f(RULES.leeThermalCut)};
 const vec2 R_EXPOSE = vec2(${RULES.windwardExposure.map(f).join(', ')});
+const vec4 R_SHELTER = vec4(${[RULES.valleyShelter.floor, RULES.valleyShelter.open, ...RULES.valleyShelter.depth].map(f).join(', ')});
+const vec2 R_SOUNDING_SURFACE = vec2(${[RULES.soundingSurface.factor, RULES.soundingSurface.depth].map(f).join(', ')});
 const vec3 R_DYN_H = vec3(${RULES.dynamicLiftScales.heights.map(f).join(', ')});
 const vec2 R_LEE_CUT_WIND = vec2(${RULES.leeThermalWindKmh.map(f).join(', ')});
 const float R_CUR_DEEP = ${f(RULES.curatedDeepDepth)};
@@ -342,7 +344,9 @@ Cell evalCell(ivec2 c) {
   // Except on a face turned to the wind (field.ts → RULES.windwardExposure).
   float upslope = gS > 0.05 ? dot(G, Z.yz) / gS : 0.0;
   float exposed = smoothstep(R_EXPOSE.x, R_EXPOSE.y, upslope) * (1.0 - o.lee);
-  float fLevel = 0.3 + 0.7 * smoothstep(-0.1, 1.05, level);
+  // Less so without a valley to shelter in, and not twice where the sounding already felt the ground (field.ts).
+  float fLevel = 1.0 - (1.0 - R_SHELTER.x) * (1.0 - smoothstep(-0.1, 1.05, level)) * (R_SHELTER.y + (1.0 - R_SHELTER.y) * smoothstep(R_SHELTER.z, R_SHELTER.w, V.y - V.x));
+  if (uAirN > 1) fLevel += max(0.0, R_SOUNDING_SURFACE.x - fLevel) * (1.0 - smoothstep(0.0, R_SOUNDING_SURFACE.y, z0 - uAir[0].x));
   float fh = (fLevel + (1.0 - fLevel) * exposed) * (0.75 + 0.25 * smoothstep(0.0, 400.0, hh));
   float sf = fh * (1.0 - 0.85 * o.lee) * (1.0 + R_VENTURI * o.venturi);
   float rotor = 0.25 * o.lee * smoothstep(10.0, 30.0, gK) * (1.0 - o.chan);

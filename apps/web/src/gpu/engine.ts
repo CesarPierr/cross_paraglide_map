@@ -7,8 +7,8 @@
  * what makes the hour / wind / height sliders feel live.
  */
 import type { CellResult, CuratedBreezeInfo, CuratedHazardInput, ModelParams } from '@brises/model';
-import { curatedActivity, curatedLayerKind, hazardActivity, HazardEffect, nightFactor, sunSampleStep, sunSamples, SUN_SAMPLES_MAX, thermalDecline, thermalSeasonFactor, waterSeasonFactor } from '@brises/model';
-import { AIR_LEVELS_MAX, packAir, packedCeiling, packedWind, stabilityFactors, windVector, type Grid, type PackedAir } from '@brises/model';
+import { curatedActivity, curatedLayerKind, curatedSunFactor, hazardActivity, HazardEffect, hazardSunFactor, nightFactor, sunSampleStep, sunSamples, SUN_SAMPLES_MAX, thermalDecline, thermalSeasonFactor, waterSeasonFactor } from '@brises/model';
+import { AIR_LEVELS_MAX, packAir, packedCeiling, packedWind, stabilityFactors, sunCloudFactor, windVector, type Grid, type PackedAir } from '@brises/model';
 import { smoothstep } from '@brises/model';
 import { RULES } from '@brises/model';
 import { legalTimeToUtc, noonElevation, solarTime, sunPosition, type SunPosition } from '@brises/model';
@@ -200,16 +200,19 @@ export class GpuWindEngine {
       this.dirtyTime = true;
     }
     // Curated breeze activity depends on the hour and, for conditional breezes, on
-    // the synoptic wind, the month and the heatwave option (field.ts → curatedActivity).
-    const breezeKey = `${key}-${p.synoptic.fromDeg}-${p.synoptic.speedKmh}-${p.heatwave ? 1 : 0}`;
+    // the synoptic wind, the month and the heatwave option (field.ts → curatedActivity);
+    // the speed of the sun-driven ones on the season and the clouds (field.ts → curatedSunFactor).
+    const sunCloud = sunCloudFactor(p.air?.cloud);
+    const breezeKey = `${key}-${p.synoptic.fromDeg}-${p.synoptic.speedKmh}-${p.heatwave ? 1 : 0}-${sunCloud}`;
     if (breezeKey !== this.breezeKey) {
       this.breezeKey = breezeKey;
       this.breezes.forEach((b, i) => {
-        this.breezeData.set([b.speedMs, curatedActivity(b, p, this.time!.valleyPhase), curatedLayerKind(b.kind), 0], i * 4);
+        const t = this.time!;
+        this.breezeData.set([b.speedMs * curatedSunFactor(b, t.season, t.waterSeason, sunCloud), curatedActivity(b, p, t.valleyPhase), curatedLayerKind(b.kind), 0], i * 4);
       });
       const base = this.breezes.length;
       this.hazards.forEach((h, i) => {
-        this.breezeData.set([h.effect === 'wind' ? (h.targetKmh ?? 25) / 3.6 : 0, hazardActivity(h, p), HazardEffect[h.effect], h.flowFromDeg !== undefined ? h.flowFromDeg + 1000 : 0], (base + i) * 4);
+        this.breezeData.set([h.effect === 'wind' ? ((h.targetKmh ?? 25) / 3.6) * hazardSunFactor(h, this.time!.season, sunCloud) : 0, hazardActivity(h, p), HazardEffect[h.effect], h.flowFromDeg !== undefined ? h.flowFromDeg + 1000 : 0], (base + i) * 4);
       });
       this.dirtyBreezes = true;
     }

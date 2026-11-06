@@ -8,9 +8,11 @@ import {
   computeTimeContext,
   conditionFactor,
   curatedActivity,
+  curatedSunFactor,
   evalCell,
   Grid,
   hazardActivity,
+  hazardSunFactor,
   makeWindContext,
   newCellResult,
   noonElevation,
@@ -383,5 +385,68 @@ describe('valley narrowing', () => {
     const t = analyseTerrain(g, z);
     expect(t.funnel[40 * g.width + 60]).toBeGreaterThan(1.2);
     expect(t.funnel[40 * g.width + 30]).toBeLessThan(1.05);
+  });
+});
+
+describe('documented breezes under the sun of the day', () => {
+  it('weakens a flow the sun drives, not a drainage nor a flow driven by a wind', () => {
+    expect(curatedSunFactor({ kind: 'valley', condition: null }, 1, 1, 1)).toBe(1);
+    expect(curatedSunFactor({ kind: 'valley', condition: null }, 0.4, 1, 0.5)).toBeCloseTo(0.2);
+    expect(curatedSunFactor({ kind: 'slope', condition: null }, 0.4, 1, 1)).toBeCloseTo(0.73);
+    expect(curatedSunFactor({ kind: 'lake', condition: null }, 1, 0.3, 1)).toBeCloseTo(0.3);
+    expect(curatedSunFactor({ kind: 'downvalley', condition: null }, 0.2, 1, 0.25)).toBe(1);
+    expect(curatedSunFactor({ kind: 'katabatic', condition: null }, 0.2, 1, 0.25)).toBe(1);
+    expect(curatedSunFactor({ kind: 'valley', condition: { label: 'Lombarde', wind: { fromDeg: 90, minKmh: 10 } } }, 0.2, 1, 0.25)).toBe(1);
+  });
+
+  it('keeps a strong breeze documented in April at its speed, and only a breeze', () => {
+    expect(hazardSunFactor({}, 0.76, 1)).toBe(1);
+    expect(hazardSunFactor({}, 0.3, 1)).toBeCloseTo(0.4);
+    expect(hazardSunFactor({}, 1, 0.25)).toBe(0.25);
+    expect(hazardSunFactor({ fromDeg: 180 }, 0.2, 0.25)).toBe(1);
+  });
+
+  it('blows at its documented speed in July, far less in December and under an overcast sky', () => {
+    const id = 'test/valley';
+    const breeze: CuratedBreezeInput = { id, name: 'Test', kind: 'valley', speedMs: 5, window: [12, 18], coords: path(30, 90), radiusM: 3000, strength: 1 };
+    const layer = rasterizeCurated(terrain, [breeze]);
+    const k = 40 * grid.width + 60;
+    const at = (extra: Partial<ModelParams>) => {
+      const p = params(15, { height: { mode: 'agl', meters: 10 }, ...extra });
+      const out = evalCell(k, makeWindContext(terrain, computeTimeContext(terrain, p), p, layer), newCellResult());
+      return Math.hypot(out.curated[0], out.curated[1]);
+    };
+    const july = at({});
+    expect(at({ month0: 11 }) / july).toBeLessThan(0.3);
+    const column = (cloud: number) => ({ levels: [0, 4000].map((z) => ({ z, u: 0, v: 0, t: 20 - z * 0.0065, td: 5 })), cloud });
+    expect(at({ air: column(0) }) / july).toBeCloseTo(1, 3);
+    expect(at({ air: column(1) }) / july).toBeCloseTo(0.25, 3);
+  });
+});
+
+describe('friction of the synoptic wind low in a valley', () => {
+  /** A valley floor, and a plain with no relief around it. */
+  const flat = (() => {
+    const g = new Grid({ zoom: 9, tileSize: 256, px0: 67400, py0: 46600, width: 120, height: 80 });
+    return { grid: g, terrain: analyseTerrain(g, new Float32Array(g.size).fill(300)) };
+  })();
+  const wind = (t: ReturnType<typeof analyseTerrain>, g: Grid, row: number, air?: ModelParams['air']) => {
+    const p = params(12, { synoptic: { fromDeg: 270, speedKmh: 50 }, height: { mode: 'agl', meters: 10 }, breezeScale: 0, air });
+    const out = evalCell(row * g.width + 60, makeWindContext(t, computeTimeContext(t, p), p, null), newCellResult());
+    return Math.hypot(out.synoptic[0], out.synoptic[1]) * 3.6;
+  };
+  const column = (bottom: number) => ({ levels: [bottom, bottom + 4000].map((z) => ({ z, u: 50 / 3.6, v: 0, t: 20 - z * 0.0065, td: 5 })) });
+
+  it('slows the wind less over an open plain than a valley floor would', () => {
+    // A valley floor would keep 0.3 × 0.75 of it, about 11 km/h.
+    expect(wind(flat.terrain, flat.grid, 40)).toBeGreaterThan(22);
+    expect(wind(flat.terrain, flat.grid, 40)).toBeLessThan(30);
+  });
+
+  it('does not slow a second time a wind read in the low levels of a sounding', () => {
+    const floor = terrain.z[40 * grid.width + 60];
+    const inSurface = wind(terrain, grid, 40, column(floor));
+    const aloft = wind(terrain, grid, 40, column(floor - 1000));
+    expect(inSurface).toBeGreaterThan(aloft * 1.2);
   });
 });

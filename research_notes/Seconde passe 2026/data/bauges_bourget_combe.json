@@ -136,21 +136,16 @@
               "coord_quality": "source"
             }
           ],
-          "hours": "après-midi, surtout fin d'après-midi (été) ; FFVL Chat : dès 14h00 au décollage du Mont du Chat",
-          "speed_kmh": {
-            "typical": 8,
-            "max": 15
-          },
+          "hours": "non documenté (les cartes tracent un flux, sans horaire)",
+          "speed_kmh": null,
           "season": "été",
           "description": "Les cartes de brises tracent un flux le long de l'axe du lac, du nord vers Chambéry. Aucune source ne donne sa force ni ses horaires. Aucun front de brise de lac distinct n'est décrit : ce flux se confond avec la brise de nord de la cluse.",
           "confidence": "medium",
           "sources": [
             "S28",
-            "S27",
-            "S46",
-            "S47"
+            "S27"
           ],
-          "note": "Tracé lu sur les cartes de brises ; la faible vitesse affichée est une estimation. La brise qui alimente le décollage du Mont du Chat, comme celle de l'atterrissage de Saint-Paul-sur-Yenne, n'est pas celle du lac : tous deux sont à l'ouest de la crête. Une formule évoquant une brise fraîche vers la fin de l'après-midi n'apparaît plus sur sa page d'origine : elle n'est pas retenue."
+          "note": "Tracé lu sur les cartes de brises. La brise qui alimente le décollage du Mont du Chat, comme celle de l'atterrissage de Saint-Paul-sur-Yenne, n'est pas celle du lac : tous deux sont à l'ouest de la crête. Une formule évoquant une brise fraîche vers la fin de l'après-midi n'apparaît plus sur sa page d'origine : elle n'est pas retenue."
         },
         {
           "id": "brise-epine-avant-pays",
@@ -177,10 +172,7 @@
             }
           ],
           "hours": "fin de matinée à la nuit ; forte de 14h à 17h (été)",
-          "speed_kmh": {
-            "typical": 15,
-            "max": 25
-          },
+          "speed_kmh": null,
           "season": "printemps-été",
           "description": "Une brise de plaine monte de l'Avant-Pays vers la chaîne de l'Épine, qui regarde l'ouest. Elle est favorable de la fin de matinée jusqu'à la nuit et peut devenir forte entre 14h et 17h. Un schéma marque une zone de brise forte vers Novalaise, dirigée vers la crête.",
           "confidence": "medium",
@@ -191,7 +183,7 @@
             "S42",
             "S36"
           ],
-          "note": "La direction, d'ouest à nord-ouest, et la vitesse, de 15 à 25 km/h, sont des interprétations de « brise forte ». Par vent météo d'ouest, la brise est favorable ; à l'atterrissage des Marais, elle reste faible et vient du lac, d'ouest ou de sud-ouest."
+          "note": "La direction, d'ouest à nord-ouest, est une interprétation, et aucune vitesse n'est chiffrée : les sources disent « brise forte ». Par vent météo d'ouest, la brise est favorable ; à l'atterrissage des Marais, elle reste faible et vient du lac, d'ouest ou de sud-ouest."
         },
         {
           "id": "restitution-aiguebelette",
@@ -433,14 +425,16 @@
           "lat": 45.5953,
           "radius_km": 2.5,
           "coord_quality": "source",
-          "conditions": "14h-17h (été)",
+          "conditions": "14h-17h : heure où la fiche du décollage de l'Épine dit la brise forte (le schéma n'en donne aucune)",
           "description": "Un schéma marque une zone de brise forte dans la plaine de Novalaise. Le posé y est interdit : le seul terrain officiel de l'Épine est celui des Marais, à Nances, même si les prés de Novalaise ou de Nances paraissent accueillants. Sous la crête, côté plaine, ne volez pas trop bas : le long du lac, aucune vache n'est possible, sauf la route.",
           "sources": [
             "S15",
             "S66",
             "S49",
-            "S36"
-          ]
+            "S36",
+            "S48"
+          ],
+          "note": "Heure estimée : celle où la fiche du décollage de l'Épine dit la brise forte. Le schéma de la zone n'en donne aucune."
         },
         {
           "id": "chat-ctr-est-crete",
@@ -596,8 +590,8 @@
           "alt_m": 1443,
           "coord_quality": "source",
           "confidence": "medium",
-          "best_hours": "début d'après-midi (14h30)",
-          "trigger": "falaise du Pertuiset sous le vent du Revard",
+          "best_hours": null,
+          "trigger": "falaise du Pertuiset, entre Vérel et le Revard",
           "description": "Entre Vérel et le Revard, le Pertuiset est une relance sur la ligne des faces ouest.",
           "sources": [
             "S38",
@@ -616,7 +610,7 @@
           "alt_m": 1463,
           "coord_quality": "source",
           "confidence": "medium",
-          "best_hours": "fin d'après-midi (17h55 un jour de retard) ; midi à 15h les bonnes journées",
+          "best_hours": null,
           "trigger": "relais hertzien sur la crête, thermique qui « passe » alors que la Dent du Chat elle-même est du dynamique laminaire",
           "description": "Sur la crête entre Aiguebelette et la Dent du Chat, le relais hertzien du Mont du Chat sert de relance sur la route du Sapenay.",
           "sources": [
@@ -1002,7 +996,7 @@
         },
         {
           "id": "sapenay-belvedere",
-          "name": "Sapenay – Belvédère (Cessens)",
+          "name": "Sapenay – Belvédère (Cessens, décollage de delta)",
           "lon": 5.8642,
           "lat": 45.8111,
           "alt_m": 864,
@@ -1305,7 +1299,7 @@
               "lat": 45.8048
             }
           ],
-          "distance_km": 23.0,
+          "distance_km": null,
           "description": "Classique de l'après-midi, par brise de nord : on sort de Vérel, sans virage les bons jours, pour rejoindre le Revard. On fait ensuite la transition vers Bange par le col de la Cochette, en partant vers 1550 m et en raccrochant vers 1200-1350 m. Une dernière transition mène aux faces ouest du Semnoz. Une bulle de quiétude de faucons se trouve au col de la Cochette.",
           "sources": [
             "S29",
@@ -1338,7 +1332,7 @@
               "lat": 45.5095
             }
           ],
-          "distance_km": 27.0,
+          "distance_km": null,
           "description": "Le cross suit la chaîne : au nord vers la Dent du Chat, ou au sud vers la Chartreuse, voire le Vercors. Au nord, le col du Chat est dans la CTR : on ne rejoint donc pas la Charvaz par le relief.",
           "sources": [
             "S49",
@@ -1350,8 +1344,7 @@
           ],
           "possible": [
             "On peut relancer aux grilles-pains du Mont Grêle, au Mont Beauvoir (en se plaçant au vent par nord-ouest), au relais du Mont du Chat, ou au Mont de la Charvaz."
-          ],
-          "note": "Distance indicative : somme des segments entre les points de passage."
+          ]
         },
         {
           "id": "triangle-st-hilaire-dent-du-chat",
@@ -1373,7 +1366,7 @@
               "lat": 45.3021
             }
           ],
-          "distance_km": 80.0,
+          "distance_km": 116.31,
           "description": "La branche nord de ce triangle passe par la Chartreuse, puis par le chaînon de l'Épine et la Dent du Chat.",
           "sources": [
             "S15",
@@ -1383,7 +1376,7 @@
             "Un triangle FAI de 116,31 km est parti de Saint-Hilaire, avec les balises Néron, le relais du Mont du Chat et la Brâme-Farine.",
             "Un autre triangle FAI, de 137,56 km, a utilisé les balises Bastille, la Dent du Chat et le Grand Micou, avec un atterrissage à Lumbin."
           ],
-          "note": "Deux exemples relevés dans un document, avec des branches de 49,40, 34,28 et 32,63 km pour le premier, et de 52,21, 44,46 et 41,05 km pour le second. Les balises intermédiaires ne sont pas placées."
+          "note": "Deux exemples relevés dans un document, avec des branches de 49,40, 34,28 et 32,63 km pour le premier, et de 52,21, 44,46 et 41,05 km pour le second. La distance affichée est celle du premier. Les balises intermédiaires ne sont pas placées."
         }
       ],
       "tips": [
@@ -1469,7 +1462,7 @@
           "hours": "fin de matinée à fin d'après-midi (été) : brise de vallée dès 11h à Montlambert, 'très forte et haute l'après-midi' à Chamoux, 'soutenue en fin d'après-midi' à l'Ébaudiaz",
           "speed_kmh": {
             "typical": 25,
-            "max": 35
+            "max": 30
           },
           "season": "avril-septembre (saison thermique)",
           "layer_depth_m": "forte et haute : scotché jusqu'à 1400 m à Chamoux (Montlamb'air) ; couche épaisse, Tours de Montmayeur 'frappées de plein fouet'",
@@ -1684,7 +1677,7 @@
         {
           "id": "tours-de-montmayeur-brise",
           "name": "Tours de Montmayeur et crête de Montraillant : relief battu par la brise de Chambéry",
-          "kind": "downdraft",
+          "kind": "other",
           "lon": 6.1238,
           "lat": 45.4899,
           "radius_km": 3,
@@ -1842,7 +1835,7 @@
           "alt_m": 2458,
           "coord_quality": "source",
           "confidence": "medium",
-          "best_hours": "milieu d'après-midi (14h-16h)",
+          "best_hours": null,
           "trigger": "crêtes du Grand Arc, combe sud, thermiques puissants",
           "description": "Les crêtes du Grand Arc et sa combe sud donnent des thermiques puissants et un plafond élevé. Le Grand Arc sert à faire le plein avant Albertville, ou avant le retour vers Chamoux.",
           "sources": [
@@ -2114,9 +2107,7 @@
           "alt_m": 894,
           "orientations": [
             "SE",
-            "S",
-            "N",
-            "NE"
+            "S"
           ],
           "description": "Décollage sud-est, surtout volé le matin jusqu'au début d'après-midi : dès 11h, le thermique et la brise peuvent être soutenus. Abrité, il est très fréquenté par vent de nord. Par sud établi, le vent est rafaleux ; par sud-ouest à ouest modéré, on est sous le vent. Avancez au vent de la colline avant de tourner vers la combe. La repose au décollage est fortement déconseillée.",
           "sources": [
@@ -2128,7 +2119,7 @@
           "coord_quality": "source",
           "ffvl_id": 647,
           "pge_id": 2992,
-          "note": "Fermé de mi-septembre à début novembre, pour la chasse."
+          "note": "Fermé de mi-septembre à début novembre, pour la chasse. La fiche compte aussi le nord et le nord-est parmi les vents favorables : le site en est abrité."
         },
         {
           "id": "pre-ravier",
@@ -2290,7 +2281,7 @@
         },
         {
           "id": "ebaudia-albertville",
-          "name": "L'Ébaudia (Albertville)",
+          "name": "L'Ébaudia (Albertville), atterrissage non confirmé",
           "lon": 6.3667,
           "lat": 45.6689,
           "alt_m": 338,
@@ -2299,7 +2290,8 @@
             "S77"
           ],
           "coord_quality": "source",
-          "ffvl_id": 173
+          "ffvl_id": 173,
+          "note": "Position : point d'atterrissage de la fiche ParaglidingEarth du décollage de l'Ébaudiaz, sans description ; la fiche FFVL 173 n'est pas dans la récolte."
         }
       ],
       "synoptic_effects": [
@@ -2378,7 +2370,7 @@
               "lat": 45.3021
             }
           ],
-          "distance_km": 44.0,
+          "distance_km": null,
           "description": "Le retour par la Combe part du Colombier, passe par Montlambert, où de gros cumulus se forment sur la falaise aux oiseaux, puis par les Tours de Montmayeur, avec le passage des lignes électriques. Il continue par la crête de Montraillant, avant le saut vers Brâme-Farine et le final vers Lumbin.",
           "sources": [
             "S23",
@@ -2386,7 +2378,7 @@
             "S100"
           ],
           "possible": [
-            "Un vol a quitté le Colombier à 2700 m pour Montlambert plutôt que la Galoppaz, puis a atteint les Tours à 860 m, après une perte de 1840 m sur 8 km.",
+            "Un vol, remonté à 2700 m sur la face nord du Colombier, a préféré Montlambert à la Galoppaz. Parti à 2700 m de son dernier thermique, il a atteint les Tours à 860 m, après une perte de 1840 m sur 8 km.",
             "Il arrive qu'on zone une demi-heure vers 900 m au bout de la crête de Montraillant avant d'oser le saut sur Brâme-Farine.",
             "Un triangle de 202 km a choisi ce retour par les avant-reliefs : repassé au vent à Villard-d'Héry, il a avancé contre une forte brise."
           ],
@@ -2458,7 +2450,7 @@
             "Un autre triangle, de 108,27 km, relie Montlambert, Planfait et la Roche Pourrie, puis revient à Montlambert.",
             "Ce triangle a duré 6 h 40."
           ],
-          "note": "Les autres balises ne sont pas lisibles à cette résolution."
+          "note": "Balises lues sur les pages du vol : Tamié, Parmelan et Chignin pour ce triangle ; Planfait, Roche Pourrie et La Table pour l'autre."
         },
         {
           "id": "montlambert-arclusaz-grand-arc-chamoux",
@@ -2513,7 +2505,7 @@
               "coord_quality": "approx"
             }
           ],
-          "distance_km": 47,
+          "distance_km": null,
           "description": "Un cheminement de la face est des Bauges vers la Lauzière : on extrait sur le Mont Charvet, on chemine sur le Mont Pelat, puis on transite sur la Dent d'Arclusaz et l'on pousse jusqu'à Roche Torse avant de revenir. On transite ensuite sur le Grand Arc, on fait un aller-retour sur la Grande Lanche, puis on rejoint Chamoux. La brise est forte au col du Frêne et à Tamié, où des venturis sont signalés.",
           "sources": [
             "S98",
@@ -3217,7 +3209,7 @@
         },
         {
           "id": "galoppaz-puygros-interdits",
-          "name": "Galoppaz et Puygros : terrains formellement interdits par arrêté municipal",
+          "name": "Galoppaz (Puygros) : décollage formellement interdit par arrêté municipal",
           "kind": "other",
           "lon": 6.05,
           "lat": 45.566,
@@ -3227,7 +3219,8 @@
           "description": "Le décollage de la Galoppaz, sur la commune de Puygros, est formellement interdit par arrêté municipal. La Galoppaz reste un relais de cross : on peut y raccrocher en vol, après la Sauge.",
           "sources": [
             "S33",
-            "S23"
+            "S23",
+            "S114"
           ]
         },
         {
@@ -3386,7 +3379,7 @@
           "lon": 6.1194,
           "lat": 45.6444,
           "alt_m": 1998,
-          "best_hours": "13h-17h (été)",
+          "best_hours": null,
           "trigger": "crêtes du Colombier, Margériaz, Buffaz, Mont Charvet, Mont Morbier, Arclusaz, Trélod, Charbon, Roc des Bœufs",
           "description": "La carte place des spirales thermiques sur le Margériaz, la Buffaz, le Mont Charvet, la Galoppaz, le Colombier, le Mont Morbier, le col du Frêne, l'Arclusaz, le Trélod, le Charbon, le Roc des Bœufs, le Mont Peney, le Nivolet et le Revard. L'été, on les cherche sur les faces ouest des crêtes.",
           "sources": [
@@ -3946,8 +3939,8 @@
           "ffvl_id": 3104
         },
         {
-          "id": "saint-offenge-dessous",
-          "name": "Saint-Offenge-Dessous (Revard)",
+          "id": "saint-offenge-dessus",
+          "name": "Saint-Offenge-Dessus (Revard)",
           "lon": 6.013,
           "lat": 45.7325,
           "alt_m": 715,
@@ -3958,7 +3951,7 @@
           ],
           "coord_quality": "source",
           "ffvl_id": 1722,
-          "note": "Le terrain de secours est à Saint-Offenge-Dessus."
+          "note": "Le terrain de secours est à Saint-Offenge-Dessus ; la fiche fédérale donne pour commune Saint-Offenge-Dessous."
         }
       ],
       "synoptic_effects": [
@@ -4058,7 +4051,7 @@
               "lat": 45.7542
             }
           ],
-          "distance_km": 40.0,
+          "distance_km": null,
           "description": "La transition de la Chartreuse vers les Bauges par la Savoyarde compte 10 km, et elle est difficile, avec de fortes brises et de fortes turbulences à prévoir. On part en général vers 2400 m, parfois de 2200 m, et les « guns » partent sous 2000 m, parfois 1900 m. Il faut faire au moins la première moitié vers le Mont Saint-Michel, puis entrer dans la couche de brise vers 1200 m, en ajustant le cap pour que la dérive mène à l'épaule nord-ouest du Montgelas.",
           "sources": [
             "S3",
@@ -4135,7 +4128,7 @@
               "lat": 45.61
             }
           ],
-          "distance_km": 57.0,
+          "distance_km": null,
           "description": "Le petit tour des Bauges part de Vérel et passe par le Revard, Bange, le Semnoz, le Roc des Bœufs et le Margériaz, avant de revenir vers Montagny par la tour de l'Angle Est du Revard. Deux tours relevés ont pris un peu plus de trois heures, avec de nombreuses relances.",
           "sources": [
             "S38",
@@ -4212,7 +4205,7 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 31,
+          "distance_km": null,
           "description": "Depuis la Sambuy, on chemine à hauteur des crêtes : Arclusaz, Dents de Pleuven, faces ouest du Trélod, transition vers le Roc des Bœufs, puis Planfait et les Dents de Lanfon, où les conditions peuvent être turbulentes.",
           "sources": [
             "S96",
@@ -5675,6 +5668,15 @@
       "type": "web",
       "lang": "fr",
       "notes": "Fiche officielle : décollage N/O/NO à 1692 m, « conditions favorables par brise », « vent faible, ou secteur nord »."
+    },
+    {
+      "id": "S114",
+      "title": "FFVL : terrain LA GALOPPAZ [14121]",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/14121",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Fiche relevée dans ffvl_sites_alpes.json : décollage 1665 m (45.5656, 6.0659), commune de Puygros ; « pratique strictement interdite sur ce terrain » ; « terrain formellement interdit par arrêté municipal »."
     }
   ]
 }

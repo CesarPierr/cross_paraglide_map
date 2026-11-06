@@ -65,12 +65,9 @@
               "coord_quality": "source"
             }
           ],
-          "hours": "≈13h30-19h (régime diurne d'été, un bon jour) ; encore active au-dessus de 100 m en soirée (restitution)",
-          "speed_kmh": {
-            "typical": 15,
-            "max": 25
-          },
-          "season": "avril-octobre ; forte au printemps, plus douce en plein été",
+          "hours": "après-midi (régime diurne d'été, un bon jour) ; encore active au-dessus de 100 m en soirée (restitution)",
+          "speed_kmh": null,
+          "season": "avril-octobre ; le site est fort au printemps, plus doux en plein été",
           "layer_depth_m": "non documentée ; en soirée au bout du lac, la brise de nord reste active au-dessus d'une couche de 50 à 100 m de brise descendante",
           "description": "Chaque jour, la brise de vallée descend le lac depuis le nord-ouest, d'Annecy vers Doussard. Un bon jour, le décollage de la Forclaz se met à marcher vers 13h30. Dans le cirque protégé entre Montmin et Planfait, cette brise domine presque toujours, sauf par sud modéré à fort, et prend l'ascendant sur la bise. L'après-midi, elle souffle souvent soutenue à Doussard et à Perroix. Elle tape le Roc des Bœufs, qui donne de la dynamique, puis file vers Faverges ou les Bauges.",
           "confidence": "high",
@@ -91,7 +88,7 @@
             "Par ciel couvert, quand les nuages s'étalent, tout passe à l'ombre et la brise peut disparaître.",
             "Brise de lac établie, la Forclaz, le Roux, la Tournette et les Dents de Lanfon peuvent être alimentés par une brise d'ouest à nord-ouest. Bas, à l'ouest des Dents, on peut être sous le vent du flux de la vallée d'Alex."
           ],
-          "note": "Vitesses non chiffrées dans les sources : les 15 à 25 km/h du champ de vitesse sont déduits du mot « soutenue ». L'heure de 13h30 est celle où le décollage principal se met à marcher. Géométrie des bras tirée d'une carte de brises."
+          "note": "Vitesses non chiffrées dans les sources : l'après-midi, la brise est seulement dite « soutenue ». 13h30 est l'heure où le décollage principal se met à marcher, et aucune source ne borne la brise à 19 h. Géométrie des bras tirée d'une carte de brises."
         },
         {
           "id": "brise-pente-forclaz",
@@ -340,10 +337,7 @@
             }
           ],
           "hours": "après-midi d'été (déduction, suite de la brise du lac) ; « brises fortes en milieu de journée » à Marlens",
-          "speed_kmh": {
-            "typical": 15,
-            "max": 25
-          },
+          "speed_kmh": null,
           "season": "avril-septembre",
           "description": "La grande brise du lac se prolonge de Doussard vers Faverges, puis vers Saint-Ferréol, Marlens et Ugine : la carte de brises la dessine par une large flèche est-ouest. À Marlens comme à Faverges, les brises sont fortes en milieu de journée.",
           "confidence": "medium",
@@ -354,7 +348,7 @@
             "S39",
             "S60"
           ],
-          "note": "Vitesses interprétées à partir de « brises fortes », sans mesure. La mention des brises de vallée à Seythenex, d'abord notée, vise en fait l'atterrissage du Grand-Bornand."
+          "note": "Vitesse non chiffrée : les sources disent seulement « brises fortes ». La mention des brises de vallée à Seythenex, d'abord notée, vise en fait l'atterrissage du Grand-Bornand."
         },
         {
           "id": "brise-faverges-tamie",
@@ -490,7 +484,7 @@
               ]
             ]
           },
-          "when": "fin d'après-midi / soirée d'été, quand les faces est des Bauges passent à l'ombre",
+          "when": "fin d'après-midi / soirée d'été",
           "mechanism": "En fin de journée, une brise descendante de sud-ouest, épaisse de 50 à 100 m, coule des faces est des Bauges (Taillefer, Charbon, Roc des Bœufs). Elle glisse sous la brise de vallée du nord, qui reste active au-dessus.",
           "usage": "La rencontre des deux flux crée une large zone d'ascendance entre l'atterrissage et le lac, et même au-dessus du terrain. Le vent s'inverse à l'atterrissage : on pose alors face au sud, en PT8, au lieu de la PTU main droite face au nord. Surveillez les manches à air.",
           "confidence": "medium",
@@ -499,7 +493,7 @@
             "S14",
             "S2"
           ],
-          "note": "Tracé approximatif, de l'atterrissage vers la rive sud du lac, face à la zone de la réserve. Le lien avec le passage à l'ombre des faces est des Bauges est une déduction : aucune source ne le dit."
+          "note": "Tracé approximatif, de l'atterrissage vers la rive sud du lac, face à la zone de la réserve."
         },
         {
           "id": "confluence-veyrier-menthon",
@@ -938,7 +932,7 @@
           "lat": 45.855,
           "coord_quality": "approx",
           "radius_km": 5,
-          "conditions": "orages ou cu-nims au nord du bassin (surtout fin d'après-midi d'été)",
+          "conditions": "orages ou cu-nims au nord du bassin",
           "description": "Des cumulonimbus au nord peuvent envoyer de fortes rafales le long du lac : surveillez la surface de l'eau.",
           "sources": [
             "S4",
@@ -1146,7 +1140,7 @@
           "lat": 45.9006,
           "coord_quality": "source",
           "alt_m": 1291,
-          "best_hours": "après-midi, jour de plafond ≥2500 m",
+          "best_hours": "après-midi",
           "trigger": "col et croupes du Veyrier, point de départ de la traversée d'Annecy",
           "description": "Le col du Veyrier est le point de départ de la traversée d'Annecy vers le Semnoz : on y fait le plein avant de partir.",
           "sources": [
@@ -1155,7 +1149,7 @@
           "possible": [
             "Un jour de plafonds annoncés à 2 500 m, le thermique du col s'est montré étroit, rugueux et très puissant, au-dessus de 2 400 m."
           ],
-          "note": "Voir aussi la confluence de Veyrier et Menthon. Le plafond d'au moins 2 500 m du champ horaire est celui annoncé un jour de grand tour."
+          "note": "Voir aussi la confluence de Veyrier et Menthon."
         },
         {
           "id": "semnoz-combe-thermique",
@@ -1205,7 +1199,7 @@
           "lon": 6.2516,
           "lat": 45.8145,
           "best_hours": "après-midi (déco tardif : midi-13h)",
-          "trigger": "croupe boisée et rocheuse juste à droite (sud-est) du décollage, éclairée dès que la brise du lac s'installe",
+          "trigger": "thermique de service juste à droite du décollage de la Forclaz, qui remonte vers la pointe de la Rochette",
           "role": "déclencheur",
           "confidence": "medium",
           "description": "Juste à droite du décollage de la Forclaz se trouve le thermique de service. Il remonte jusqu'à la pointe de la Rochette, puis on suit la crête vers le rocher du Roux.",
@@ -1218,7 +1212,7 @@
           "possible": [
             "Il arrive qu'une première remontée se fasse « le long du roc du Roux » depuis le décollage."
           ],
-          "note": "Position : sommet de la pointe de la Rochette. Décollage tardif, de midi à 13h. La croupe boisée et rocheuse et son éclairement à l'arrivée de la brise du lac sont des déductions : la source dit seulement « sur la droite du déco »."
+          "note": "Position : sommet de la pointe de la Rochette. Décollage tardif, de midi à 13h."
         },
         {
           "id": "lanfonnet-face-ouest",
@@ -1250,7 +1244,7 @@
           "lon": 6.233,
           "lat": 45.8575,
           "coord_quality": "approx",
-          "best_hours": "14h-16h (récit du 5 avril 2008 : 14h45)",
+          "best_hours": null,
           "trigger": "épaule boisée et rocheuse qui monte du décollage vers les Dents de Lanfon",
           "role": "déclencheur",
           "confidence": "medium",
@@ -1262,7 +1256,7 @@
           "possible": [
             "Il arrive qu'après avoir peiné à sortir du « bocal », on saute derrière le décollage vers l'épaule, où un thermique peut monter à 10,5 m/s jusqu'à 2 400 m au-dessus des Dents."
           ],
-          "note": "Position approximative, entre Planfait et les Dents de Lanfon."
+          "note": "Position approximative, entre Planfait et les Dents de Lanfon. La seule heure connue est celle d'un décollage, à 14h45."
         },
         {
           "id": "bluffy-remonte-pente-lanfon",
@@ -1459,7 +1453,7 @@
           "alt_m": 459,
           "coord_quality": "approx",
           "best_hours": "après-midi, par vent de nord-est fort (le Roc des Bœufs dévie le flux en nord-ouest sur l'atterrissage)",
-          "trigger": "plaine du bout du lac entre l'atterrissage de Doussard et la rive, chauffée en brise de nord-ouest",
+          "trigger": "plaine du bout du lac entre l'atterrissage de Doussard et la rive",
           "description": "Par nord-est fort, le Roc des Bœufs dévie une partie du flux en nord-ouest sur l'atterrissage de Doussard. De larges thermiques se forment alors entre le terrain et le lac, dans la zone où l'on perd son altitude : le posé devient plus imprévisible et turbulent.",
           "confidence": "low",
           "sources": [
@@ -2255,16 +2249,17 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 25,
+          "distance_km": 35,
           "description": "Le cross le plus accessible depuis la Forclaz ou Planfait. Les sites regardent l'ouest : décollez tard, vers midi ou 13h. Depuis la Forclaz, passez le rocher du Roux puis le Lanfonnet jusqu'aux Dents de Lanfon ; depuis Planfait, les Dents sont juste au-dessus. Rechargez aux Dents et partez d'au moins 1 900 m pour traverser le lac vers le Roc des Bœufs. Remontez la crête du Roc en gardant de la marge, puis transitez vers Doussard.",
           "sources": [
             "S3",
             "S25",
             "S4",
             "S66",
-            "S19"
+            "S19",
+            "S93"
           ],
-          "note": "Distance de 25 km en ligne directe entre les points ; le tour en respectant les balises mesure environ 40 km. Les sources divergent sur la face du Roc des Bœufs à viser (ouest ou est) ; la crête face au lac sert de point de passage."
+          "note": "Un vol documenté annonce 35 km ; une note de collecte donne environ 40 km en respectant les balises, et le tracé entre les points mesure 25 km. Les sources divergent sur la face du Roc des Bœufs à viser (ouest ou est) ; la crête face au lac sert de point de passage."
         },
         {
           "id": "grand-tour-du-lac",
@@ -2343,7 +2338,7 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 46,
+          "distance_km": null,
           "description": "Le grand tour passe par Montmin, le rocher du Roux, le Lanfonnet, les Dents de Lanfon, le Mont Baron, le col du Veyrier, la traversée d'Annecy, le Semnoz, le Roc des Bœufs, la Forclaz et Doussard. La CTR d'Annecy impose de rester au-dessus de 1 220 m : sa limite sud-est longe le Veyrier et le Semnoz. La R185 de Sacconges, du sol à 1 830 m, est active du lundi au jeudi et un samedi par mois : depuis le Veyrier, partez vers 2 500 m pour passer avec marge.",
           "sources": [
             "S19",
@@ -2384,7 +2379,7 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 18,
+          "distance_km": 50,
           "description": "Du Semnoz, on suit la crête ouest vers le sud jusqu'au Revard, par la porte des Bauges (Bange, Revard, Croix du Nivolet) : c'est l'aller-retour classique, d'environ 50 km. Sur 35 km de crête, on cite aussi 70 km en aller-retour. Autre option : le Roc des Bœufs pour le tour du lac, ou la Dent des Portes, le Colombier et la Margériaz. À Bange, la bulle de quiétude du faucon pèlerin impose au moins 1 200 m dans un rayon de 250 m autour du nid, quand elle est active.",
           "sources": [
             "S7",
@@ -2392,7 +2387,7 @@
             "S55",
             "S28"
           ],
-          "note": "Distance calculée en ligne droite entre le Semnoz et le Revard (environ 18 km) ; le tracé réel est plus long."
+          "note": "Les 50 km sont l'aller-retour ; entre le Semnoz et le Revard, la ligne droite mesure environ 18 km."
         }
       ],
       "tips": [
@@ -2632,7 +2627,7 @@
               ]
             ]
           },
-          "when": "après-midi d'été, jour de NO marqué en altitude",
+          "when": "après-midi d'été, observée un seul jour",
           "mechanism": "Au Mont Lachat de Thônes, les brises peuvent se rencontrer. Un après-midi d'été de nord-ouest marqué en altitude, le thermique y était « dansant », entre confluence des brises et départs en missiles le long de la falaise.",
           "usage": "Une recharge possible, mais turbulente. Plus haut, une fois sorti de l'influence des brises, le thermique se redresse.",
           "confidence": "low",
@@ -2671,7 +2666,7 @@
           "lat": 45.926,
           "coord_quality": "approx",
           "radius_km": 3,
-          "conditions": "vent ouest–nord-ouest, sans cumulus, jour de cross vers le nord",
+          "conditions": "observé une fois : plein vent, rafales, pas de cumulus à l'horizon",
           "description": "Entre la Tête à Turpin et le refuge du Parmelan, ça peut souffler fort, en rafales. Les jours où le Parmelan est peu marqué par les cumulus alors que les Bornes et les Aravis le sont bien, méfiez-vous de ce secteur.",
           "sources": [
             "S17",
@@ -2781,7 +2776,7 @@
           "coord_quality": "source",
           "alt_m": 2023,
           "best_hours": "après-midi",
-          "trigger": "croupe herbeuse et rocheuse au nord-est de Thônes, à la confluence des brises de la vallée du Fier et de Saint-Jean-de-Sixt",
+          "trigger": "croupe herbeuse et rocheuse au nord-est de Thônes, où des brises se rencontrent",
           "description": "Une croupe herbeuse et rocheuse au nord-est de Thônes, avec une spirale thermique sur la carte. Les brises s'y croisent, sans doute celles de la vallée du Fier et de Saint-Jean-de-Sixt. C'est la relance entre les Aravis et le Parmelan. Ne le confondez ni avec le Lachat du Grand-Bornand, ni avec le Lachat de Naves.",
           "sources": [
             "S30",
@@ -2916,7 +2911,7 @@
           "lat": 45.8341,
           "alt_m": 1689,
           "coord_quality": "approx",
-          "best_hours": "milieu de journée en octobre (vol après un casse-croûte au décollage, d'après l'enchaînement du récit)",
+          "best_hours": null,
           "trigger": "pentes et falaises exposées à l'ouest entre le décollage du col du Varo et les Rochers du Varo, sous la crête de la Tournette",
           "description": "Entre le décollage du col du Varo et les Rochers du Varo, sous la crête de la Tournette, des bulles remontent sur les pentes et les falaises exposées à l'ouest. Dès le décollage, on a vite beaucoup de hauteur sous les pieds.",
           "confidence": "medium",
@@ -3192,7 +3187,7 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 124,
+          "distance_km": null,
           "description": "Le grand classique : un triangle de plus de 100 km par la Tournette, la Pointe Percée, la Sous-Dine et la Dent d'Arclusaz, avec retour à Planfait. Partez tôt de la Pointe de Talamarche : elle ouvre la face est de la Tournette vers 10 h.",
           "sources": [
             "S5",
@@ -3222,13 +3217,12 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 4,
+          "distance_km": null,
           "description": "Un départ de rando-vol matinal : de la Pointe de Talamarche, exposée à l'est, on rejoint la face est de la Tournette vers 10 h. C'est la porte d'entrée des grands cross. On peut aussi partir tôt pour voler loin vers le sud.",
           "sources": [
             "S5",
             "S40"
-          ],
-          "note": "Distance de 4 km."
+          ]
         },
         {
           "id": "bauges-lanfon-parmelan-lachat",
@@ -3259,7 +3253,7 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 32,
+          "distance_km": null,
           "description": "Ce parcours reprend la partie annécienne de triangles de 199 à 202 km. On traverse les Bauges entre 1 800 et 2 500 m par la ligne Galopaz – Colombier – Julioz – Roc des Bœufs. On relaie aux Dents de Lanfon, dans le thermique classique, ou par le Veyrier, puis on rejoint le Parmelan vers 2 400 m. Ensuite, demi-tour, ou suite vers le Lachat de Thônes et les Aravis.",
           "sources": [
             "S59",
@@ -3275,7 +3269,7 @@
         {
           "id": "lanfon-parmelan-pertuis",
           "name": "Dents de Lanfon → Parmelan par la falaise ouest et le col du Pertuis (topo forum)",
-          "distance_km": 20,
+          "distance_km": null,
           "waypoints": [
             {
               "name": "Dents de Lanfon (pilier nord)",
@@ -3325,7 +3319,7 @@
         },
         {
           "id": "etale-tardevant-parmelan-rdb-81km",
-          "name": "Quadrilatère de 81 km : Étale – Tardevant – Parmelan – Roc des Bœufs – Sulens (4 juillet 2005)",
+          "name": "Quadrilatère de 81 km : Étale – Tardevant – Parmelan – Roc des Bœufs – pointe sud des Aravis (4 juillet 2005)",
           "waypoints": [
             {
               "name": "Téléphérique de l'Étale (déco)",
@@ -3380,13 +3374,13 @@
           "sources": [
             "S86"
           ],
-          "distance_km": 79,
+          "distance_km": 81,
           "possible": [
             "Le Danay peut être une option très élégante entre la Pointe Percée et le Lachat de Thônes.",
             "Ce jour-là, la base des nuages, trop basse vers Tardevant, a imposé un demi-tour au col des Aravis.",
             "Au retour, un point bas sur les pentes sud de la Tournette a coûté une heure avant Sulens : la brise du lac y était plus forte que la brise de pente."
           ],
-          "note": "Distance du champ calculée à 79 km ; le récit annonce environ 81 km."
+          "note": "Le récit annonce environ 81 km ; le tracé entre les points en mesure 79. La montagne de Sulens est un point de passage : la quatrième balise, au-dessus du col du Fer, n'est pas placée."
         }
       ],
       "tips": [
@@ -3932,7 +3926,7 @@
           "lat": 45.9959,
           "coord_quality": "source",
           "radius_km": 2,
-          "conditions": "vent de nord-ouest à ouest, transition depuis le col du Chinaillon sans altitude",
+          "conditions": "transition depuis le col du Chinaillon sans altitude",
           "description": "Du col du Chinaillon vers le Jalouvre, sans altitude, on arrive sous le vent et l'on chute : le Jalouvre peut alors rester impossible à raccrocher.",
           "sources": [
             "S71",
@@ -3951,7 +3945,7 @@
           "lat": 45.9558,
           "coord_quality": "approx",
           "radius_km": 2,
-          "conditions": "vent d'ouest, pilote au vent de la crête",
+          "conditions": "au pied des falaises, pilote au vent de la crête",
           "description": "Au pied des falaises de la Pointe Percée, une très forte descendance peut surprendre, même au vent de la crête.",
           "sources": [
             "S71"
@@ -4067,7 +4061,7 @@
           "lat": 45.8023,
           "coord_quality": "source",
           "alt_m": 2409,
-          "best_hours": "dès ≈10h30 (récit du 8 juin)",
+          "best_hours": null,
           "trigger": "flanc sud-ouest de la chaîne, premier thermique du matin",
           "description": "Sur le flanc sud-ouest de la chaîne, le Mont Charvin peut donner les premiers thermiques du matin ; la carte y dessine une spirale. C'est la porte de la Dent de Cons.",
           "sources": [
@@ -4149,7 +4143,7 @@
           "lat": 45.9575,
           "coord_quality": "approx",
           "alt_m": 2020,
-          "best_hours": "16h-16h30 (récit) ; après-midi",
+          "best_hours": "après-midi",
           "trigger": "face sud-ouest du Lachat devant le déco",
           "description": "Devant le décollage du Lachat, la face sud-ouest déclenche un thermique l'après-midi.",
           "sources": [
@@ -4231,7 +4225,7 @@
           "lon": 6.466,
           "lat": 45.8885,
           "coord_quality": "approx",
-          "best_hours": "début d'après-midi, dès que la brise de vallée de La Clusaz démarre",
+          "best_hours": null,
           "trigger": "falaise bien chauffée de la combe, départ du téléski de la Jument 2000",
           "role": "point de relance",
           "confidence": "medium",
@@ -4290,7 +4284,7 @@
           "lon": 6.5261,
           "lat": 45.9266,
           "alt_m": 2501,
-          "best_hours": "13h30 environ (récit du 4 juillet 2005)",
+          "best_hours": null,
           "trigger": "faces ouest de la chaîne vers Tardevant, combes et crêtes",
           "role": "plafond",
           "confidence": "low",
@@ -4333,7 +4327,7 @@
           "lon": 6.4532,
           "lat": 45.9959,
           "alt_m": 2408,
-          "best_hours": "fin d'après-midi (16h-17h)",
+          "best_hours": "fin d'après-midi",
           "trigger": "falaise du Jalouvre encore orientée au soleil",
           "role": "plafond",
           "confidence": "medium",
@@ -4356,7 +4350,7 @@
           "lon": 6.4456,
           "lat": 45.9863,
           "alt_m": 2072,
-          "best_hours": "avant 17h (plus rien ne monte trop tard)",
+          "best_hours": null,
           "trigger": "face tournée vers le lac de Lessy",
           "role": "point de relance",
           "confidence": "low",
@@ -4489,7 +4483,7 @@
           "alt_m": 1705,
           "coord_quality": "approx",
           "best_hours": null,
-          "trigger": "barre et pentes du Roc des Arces au-dessus du col de Châtillon, premier relief rencontré après le décollage du Lachat, déneigé et chauffé par le soleil",
+          "trigger": "barre et pentes du Roc des Arces au-dessus du col de Châtillon, premier relief rencontré après le décollage du Lachat",
           "description": "Juste après le décollage du Lachat, la pompe classique est droit devant, sur le Roc des Arces, au-dessus du col de Châtillon. On s'y refait assez régulièrement, puis, selon le vent, on part vers le Roc des Bœufs, La Clusaz ou le lac d'Annecy.",
           "confidence": "medium",
           "sources": [
@@ -4917,14 +4911,14 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 36,
+          "distance_km": null,
           "description": "Depuis les Dents de Lanfon, on peut partir vers l'est, dans les grandes montagnes, en direction du Mont-Blanc. Un cross part des Bornes, passe la Tournette et les Aravis jusqu'à la Pointe Percée, avec beaucoup de pays à voir, puis revient par le Bargy et le Jalouvre.",
           "sources": [
             "S4",
             "S3",
             "S40"
           ],
-          "note": "L'ordre exact (Tournette, Charvin, col des Aravis, Pointe Percée) suit la logique de la chaîne ; aucune trace décrite dans les sources. Distance de 36 km."
+          "note": "L'ordre exact (Tournette, Charvin, col des Aravis, Pointe Percée) suit la logique de la chaîne ; aucune trace décrite dans les sources."
         },
         {
           "id": "meruz-charvin-dent-de-cons",
@@ -4955,7 +4949,7 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 16,
+          "distance_km": null,
           "description": "Un triangle plat de 199 km, à 24 km/h de moyenne, parti de Praz Véchin : le Charvin, puis la Dent de Cons, la face sud de l'Arclusaz et le pic de la Sauge, puis Grenoble. Le retour passe par le Colombier, Montmin et le Lanfonnet, puis le Parmelan, avant de se poser à Marlens.",
           "sources": [
             "S58",
@@ -5014,7 +5008,7 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 46,
+          "distance_km": null,
           "description": "Un triangle de 202 km, parti de Saint-Hilaire vers 11 h 30, à 25 km/h de moyenne. Du Parmelan, on raccroche le Lachat de Thônes, puis les faces ouest des Aravis : balise avant le Grand-Bornand, puis le col des Aravis, où l'on monte bien. Le col du Charvin passe sans marge, la Dent de Cons offre un cumulus à 2 900 m, la Belle Étoile ne donne rien, hors cycle, puis vient le Grand Arc. Le retour passe par Albertville, Chamoux et l'entrée de la Maurienne.",
           "sources": [
             "S17"
@@ -5089,7 +5083,7 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 53,
+          "distance_km": null,
           "description": "Le classique tour de la vallée du Grand-Bornand part tôt vers le Jalouvre, puis le Roc des Tours et le Lachat de Thônes. Il revient par la Pointe d'Almet, derrière le décollage, puis par la Pointe Percée et le col des Aravis. Il faut des plafonds d'au moins 2 500 m, 2 300 m pouvant suffire ; en août, on dépasse souvent 3 000 m.",
           "sources": [
             "S71",
@@ -5099,7 +5093,7 @@
             "Une autre version passe au-dessus du Chinaillon, puis par le Roc des Tours, l'Aiguille Verte et le Jalouvre, jusqu'au col des Annes.",
             "Elle rejoint ensuite les Aravis, la Pointe Percée et La Clusaz, avant l'atterrissage du Grand-Bornand."
           ],
-          "note": "L'ordre et les distances sont ceux des cheminements décrits ; la distance affichée est la somme des segments. Distance de 53 km."
+          "note": "L'ordre est celui des cheminements décrits."
         },
         {
           "id": "lanfonnet-cotagne-croix-fry-etale",
@@ -5142,7 +5136,7 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 18,
+          "distance_km": null,
           "description": "Un plan imaginé sur la carte, pour revenir d'Annecy poussé par la brise et sans grosse transition : Lanfonnet, Cotagne par l'ouest, bois du Mont, Colomban, Croix-Fry, puis Étale. De l'Étale, on reviendrait vers le Charvin par les faces ouest, puis sur l'arête de Bisanne vers Ugine, où l'on tiendrait en dynamique en fin d'après-midi.",
           "sources": [
             "S77"
@@ -5150,7 +5144,7 @@
           "possible": [
             "L'est de la Cotagne est sous le vent, même entre 12 h et 13 h."
           ],
-          "note": "Itinéraire déduit de la carte, non confirmé par une trace. Distance de 18 km."
+          "note": "Itinéraire déduit de la carte, non confirmé par une trace."
         },
         {
           "id": "planfait-sulens-aravis-bargy-lachat-2018",
@@ -5199,7 +5193,7 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 47,
+          "distance_km": null,
           "description": "Un parcours parti de Planfait par les Dents de Lanfon, la Tournette et Sulens, puis les Aravis, le Bargy et le Jalouvre, avec un retour vers le Lachat de Thônes. Le vol s'est terminé entre Saint-Jean-de-Sixt et Thônes, au Bourgeal.",
           "sources": [
             "S81"
@@ -5208,8 +5202,7 @@
             "La traversée vers le Bargy a bien porté, puis une remontée en dynamique a mené à 2 700 m au-dessus du Jalouvre ; sur les Aravis, les petits cumulus restaient bien sous les sommets.",
             "Le retour vers le Lachat de Thônes a été contré par la brise de Thônes.",
             "Ce sens de rotation passerait plus facilement que l'inverse."
-          ],
-          "note": "Distance affichée : somme des segments, non celle de la trace. Distance de 47 km."
+          ]
         }
       ],
       "tips": [

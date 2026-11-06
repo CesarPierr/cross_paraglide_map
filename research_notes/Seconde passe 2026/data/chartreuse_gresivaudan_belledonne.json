@@ -2763,7 +2763,7 @@
           "possible": [
             "La cluse de Voreppe ferait 75 % de l'aérologie locale : elle bloque les entrées de nord en basses couches et alimente les reliefs en brises."
           ],
-          "note": "Vitesses interprétées : « souvent forte » donne environ 20 km/h ; le maximum de 35 km/h vient de l'atterrissage d'Uriage, où une brise de plus de 35 km/h venue de Grenoble est jugée rare. Le tracé s'arrête à Grenoble : au-delà, la brise du Grésivaudan descend en sens inverse, et les deux se rencontrent au nord-est de la ville (voir la convergence)."
+          "note": "Vitesse estimée, non mesurée : « souvent forte » donne environ 20 km/h, seuil de « fort » retenu par le modèle, dont la valeur par défaut serait bien plus basse. Une brise de plus de 35 km/h venue de Grenoble, jugée rare, est citée à l'atterrissage d'Uriage. Le tracé s'arrête à Grenoble : au-delà, la brise du Grésivaudan descend en sens inverse, et les deux se rencontrent au nord-est de la ville (voir la convergence)."
         },
         {
           "id": "brise-grenoble-sud-drac",
@@ -3113,7 +3113,7 @@
           "lat": 45.13,
           "radius_km": 4,
           "coord_quality": "source",
-          "conditions": "soirée de canicule forte (> 40 °C en plaine selon la fiche) : > 25 km/h de vent fixe, rafales à 35 km/h, jusqu'à ~2500 m",
+          "conditions": "soirée de canicule forte (au-delà de 41 °C en plaine, la fiche écrit « 410 ») : > 25 km/h de vent fixe, rafales à 35 km/h, jusqu'à ~2500 m",
           "description": "Les soirs de forte canicule, la brise du Grésivaudan peut se renforcer nettement au décollage de l'Aiguille : plus de 25 km/h établis, rafales à 35 km/h, jusqu'à 2500 m environ. Les conditions deviennent fortes et turbulentes, voire dangereuses. On peut difficilement abréger le vol, et l'on a peu de chances de poser à Saint-Martin-d'Uriage avant la fin de l'heure légale.",
           "sources": [
             "S65"
@@ -5829,7 +5829,7 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 57.0,
+          "distance_km": null,
           "description": "Extrait d'une boucle de 155 km partie du Col Vert, dans le Vercors. La partie Belledonne va du Crêt du Poulet à Chamrousse par le Jas des Lièvres, Orionde, les Rochers de la Far, le Grand Pic, le Lac Blanc, le Grand Domènon, la Pra et le Grand Colon, puis file vers Vif, où l'on pose à la sortie sud.",
           "sources": [
             "S112",
@@ -5913,7 +5913,7 @@
               "coord_quality": "approx"
             }
           ],
-          "distance_km": 57.5,
+          "distance_km": null,
           "description": "Ce cross part de la Croix de Chamrousse et rejoint Chamoux en suivant toute la crête de Belledonne ; on rentre par le train, depuis la gare de Chamousset. Sur la partie la plus haute de la crête, on survole des sommets de plus de 3000 m.",
           "sources": [
             "S113",
@@ -5961,7 +5961,7 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 18.6,
+          "distance_km": null,
           "description": "Cross court au départ de l'Aiguillette de Chamrousse, par vent de nord et brise de nord : Grand Colon, Grand Replomb, Sept Laux, puis retour. On pose à Saint-Martin-d'Uriage, à 550 m.",
           "sources": [
             "S125",

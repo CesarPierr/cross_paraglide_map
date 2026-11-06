@@ -1,0 +1,1037 @@
+[
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "brise-lac-annecy",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 15,
+   "max": 25
+  },
+  "after": null,
+  "source": "S2",
+  "reason": "Aucune vitesse dans les sources : 15/25 km/h déduits de « soutenue ». Le modèle prend sa valeur par défaut de brise de lac."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "brise-lac-annecy",
+  "field": "hours",
+  "before": "≈13h30-19h (régime diurne d'été, un bon jour) ; encore active au-dessus de 100 m en soirée (restitution)",
+  "after": "après-midi (régime diurne d'été, un bon jour) ; encore active au-dessus de 100 m en soirée (restitution)",
+  "source": "S2 ; S4",
+  "reason": "13h30 est l'heure où le décollage se met à marcher (S4), 19 h n'est pas sourcé ; S2 dit « en après-midi »."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "brise-lac-annecy",
+  "field": "season",
+  "before": "avril-octobre ; forte au printemps, plus douce en plein été",
+  "after": "avril-octobre ; le site est fort au printemps, plus doux en plein été",
+  "source": "S4",
+  "reason": "« Annecy can be strong in spring » vise le site, pas la brise (même défaut que le texte corrigé)."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "brise-lac-annecy",
+  "field": "note",
+  "before": "Vitesses non chiffrées dans les sources : les 15 à 25 km/h du champ de vitesse sont déduits du mot « soutenue ». L'heure de 13h30 est celle où le décollage principal se met à marcher. Géométrie des bras tirée d'une carte de brises.",
+  "after": "Vitesses non chiffrées dans les sources : l'après-midi, la brise est seulement dite « soutenue ». 13h30 est l'heure où le décollage principal se met à marcher, et aucune source ne borne la brise à 19 h. Géométrie des bras tirée d'une carte de brises.",
+  "source": "",
+  "reason": "Suit les champs corrigés."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "brise-vallee-faverges",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 15,
+   "max": 25
+  },
+  "after": null,
+  "source": "S30",
+  "reason": "Vitesses déduites de « brises fortes » ; le défaut du modèle pour une brise de vallée vaut 15 km/h, comme avant."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "brise-vallee-faverges",
+  "field": "note",
+  "before": "Vitesses interprétées à partir de « brises fortes », sans mesure. La mention des brises de vallée à Seythenex, d'abord notée, vise en fait l'atterrissage du Grand-Bornand.",
+  "after": "Vitesse non chiffrée : les sources disent seulement « brises fortes ». La mention des brises de vallée à Seythenex, d'abord notée, vise en fait l'atterrissage du Grand-Bornand.",
+  "source": "",
+  "reason": "Suit le champ corrigé."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "confluence-doussard-soir",
+  "field": "when",
+  "before": "fin d'après-midi / soirée d'été, quand les faces est des Bauges passent à l'ombre",
+  "after": "fin d'après-midi / soirée d'été",
+  "source": "S1",
+  "reason": "Le passage à l'ombre des faces est n'est dans aucune source."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "confluence-doussard-soir",
+  "field": "note",
+  "before": "Tracé approximatif, de l'atterrissage vers la rive sud du lac, face à la zone de la réserve. Le lien avec le passage à l'ombre des faces est des Bauges est une déduction : aucune source ne le dit.",
+  "after": "Tracé approximatif, de l'atterrissage vers la rive sud du lac, face à la zone de la réserve.",
+  "source": "",
+  "reason": "Suit le champ corrigé."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "lac-cumulonimbus-nord",
+  "field": "conditions",
+  "before": "orages ou cu-nims au nord du bassin (surtout fin d'après-midi d'été)",
+  "after": "orages ou cu-nims au nord du bassin",
+  "source": "S4 ; S74",
+  "reason": "« Surtout fin d'après-midi d'été » vient d'un seul épisode (S74), déjà rangé en possibilité."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "veyrier-col-thermique",
+  "field": "best_hours",
+  "before": "après-midi, jour de plafond ≥2500 m",
+  "after": "après-midi",
+  "source": "S19",
+  "reason": "« Plafs à 2500m » est la prévision d'un seul jour, pas une condition."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "veyrier-col-thermique",
+  "field": "note",
+  "before": "Voir aussi la confluence de Veyrier et Menthon. Le plafond d'au moins 2 500 m du champ horaire est celui annoncé un jour de grand tour.",
+  "after": "Voir aussi la confluence de Veyrier et Menthon.",
+  "source": "",
+  "reason": "Suit le champ corrigé."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "rochette-thermique-de-service",
+  "field": "trigger",
+  "before": "croupe boisée et rocheuse juste à droite (sud-est) du décollage, éclairée dès que la brise du lac s'installe",
+  "after": "thermique de service juste à droite du décollage de la Forclaz, qui remonte vers la pointe de la Rochette",
+  "source": "S82",
+  "reason": "S82 dit « sur la droite du déco » ; la croupe et son éclairement ne sont pas sourcés."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "rochette-thermique-de-service",
+  "field": "note",
+  "before": "Position : sommet de la pointe de la Rochette. Décollage tardif, de midi à 13h. La croupe boisée et rocheuse et son éclairement à l'arrivée de la brise du lac sont des déductions : la source dit seulement « sur la droite du déco ».",
+  "after": "Position : sommet de la pointe de la Rochette. Décollage tardif, de midi à 13h.",
+  "source": "",
+  "reason": "Suit le champ corrigé."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "epaule-planfait-dents-de-lanfon",
+  "field": "best_hours",
+  "before": "14h-16h (récit du 5 avril 2008 : 14h45)",
+  "after": null,
+  "source": "S89",
+  "reason": "14h45 est l'heure d'un seul décollage, pas une plage."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "epaule-planfait-dents-de-lanfon",
+  "field": "note",
+  "before": "Position approximative, entre Planfait et les Dents de Lanfon.",
+  "after": "Position approximative, entre Planfait et les Dents de Lanfon. La seule heure connue est celle d'un décollage, à 14h45.",
+  "source": "",
+  "reason": "Garde l'information retirée du champ."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "doussard-thermiques-bout-du-lac",
+  "field": "trigger",
+  "before": "plaine du bout du lac entre l'atterrissage de Doussard et la rive, chauffée en brise de nord-ouest",
+  "after": "plaine du bout du lac entre l'atterrissage de Doussard et la rive",
+  "source": "S1",
+  "reason": "« Chauffée en brise de nord-ouest » n'est pas sourcé."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "petit-tour-du-lac",
+  "field": "distance_km",
+  "before": 25,
+  "after": 35,
+  "source": "S93",
+  "reason": "25 km est le tracé entre les points ; S93 : « Petit tour du lac (35 km - 3h) »."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "petit-tour-du-lac",
+  "field": "sources",
+  "before": [
+   "S3",
+   "S25",
+   "S4",
+   "S66",
+   "S19"
+  ],
+  "after": [
+   "S3",
+   "S25",
+   "S4",
+   "S66",
+   "S19",
+   "S93"
+  ],
+  "source": "S93",
+  "reason": "La distance vient de S93, qui existe dans le lot."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "petit-tour-du-lac",
+  "field": "note",
+  "before": "Distance de 25 km en ligne directe entre les points ; le tour en respectant les balises mesure environ 40 km. Les sources divergent sur la face du Roc des Bœufs à viser (ouest ou est) ; la crête face au lac sert de point de passage.",
+  "after": "Un vol documenté annonce 35 km ; une note de collecte donne environ 40 km en respectant les balises, et le tracé entre les points mesure 25 km. Les sources divergent sur la face du Roc des Bœufs à viser (ouest ou est) ; la crête face au lac sert de point de passage.",
+  "source": "",
+  "reason": "Suit le champ corrigé."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "grand-tour-du-lac",
+  "field": "distance_km",
+  "before": 46,
+  "after": null,
+  "source": "S8",
+  "reason": "46 km est un calcul de l'atlas ; aucune longueur dans les sources."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "semnoz-revard",
+  "field": "distance_km",
+  "before": 18,
+  "after": 50,
+  "source": "S7",
+  "reason": "18 km est la ligne droite ; S7 : « classic 50km out-and-return »."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "lac-annecy",
+  "id": "semnoz-revard",
+  "field": "note",
+  "before": "Distance calculée en ligne droite entre le Semnoz et le Revard (environ 18 km) ; le tracé réel est plus long.",
+  "after": "Les 50 km sont l'aller-retour ; entre le Semnoz et le Revard, la ligne droite mesure environ 18 km.",
+  "source": "",
+  "reason": "Suit le champ corrigé."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "bornes",
+  "id": "confluence-mont-lachat-thones",
+  "field": "when",
+  "before": "après-midi d'été, jour de NO marqué en altitude",
+  "after": "après-midi d'été, observée un seul jour",
+  "source": "S17",
+  "reason": "« Jour de NO marqué en altitude » est le temps d'un seul vol."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "bornes",
+  "id": "parmelan-tete-a-turpin",
+  "field": "conditions",
+  "before": "vent ouest–nord-ouest, sans cumulus, jour de cross vers le nord",
+  "after": "observé une fois : plein vent, rafales, pas de cumulus à l'horizon",
+  "source": "S17",
+  "reason": "« Ouest–nord-ouest, jour de cross vers le nord » sont les conditions d'un seul vol ; S17 ne donne que cela. Reste hors du modèle, comme avant."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "bornes",
+  "id": "mont-lachat-thones",
+  "field": "trigger",
+  "before": "croupe herbeuse et rocheuse au nord-est de Thônes, à la confluence des brises de la vallée du Fier et de Saint-Jean-de-Sixt",
+  "after": "croupe herbeuse et rocheuse au nord-est de Thônes, où des brises se rencontrent",
+  "source": "S17",
+  "reason": "S17 parle d'une confluence de brises sans les nommer ; Fier et Saint-Jean-de-Sixt sont une déduction, dite « sans doute » dans le texte."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "bornes",
+  "id": "tournette-col-du-varo-thermique",
+  "field": "best_hours",
+  "before": "milieu de journée en octobre (vol après un casse-croûte au décollage, d'après l'enchaînement du récit)",
+  "after": null,
+  "source": "S103",
+  "reason": "Heure déduite d'un casse-croûte, un seul jour d'octobre."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "bornes",
+  "id": "triangle-tournette-percee-sousdine-arclusaz",
+  "field": "distance_km",
+  "before": 124,
+  "after": null,
+  "source": "S5",
+  "reason": "124 km est un calcul ; S5 dit « 100+ km », déjà dans le nom."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "bornes",
+  "id": "etale-tardevant-parmelan-rdb-81km",
+  "field": "name",
+  "before": "Quadrilatère de 81 km : Étale – Tardevant – Parmelan – Roc des Bœufs – Sulens (4 juillet 2005)",
+  "after": "Quadrilatère de 81 km : Étale – Tardevant – Parmelan – Roc des Bœufs – pointe sud des Aravis (4 juillet 2005)",
+  "source": "S86",
+  "reason": "B4 : « Dernière pointe Sud des Aravis (au dessus du col du Fer) » ; Sulens n'est qu'un passage."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "bornes",
+  "id": "etale-tardevant-parmelan-rdb-81km",
+  "field": "distance_km",
+  "before": 79,
+  "after": 81,
+  "source": "S86",
+  "reason": "« quadrilatère de 81Km env. » ; 79 était le calcul de l'atlas."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "bornes",
+  "id": "etale-tardevant-parmelan-rdb-81km",
+  "field": "note",
+  "before": "Distance du champ calculée à 79 km ; le récit annonce environ 81 km.",
+  "after": "Le récit annonce environ 81 km ; le tracé entre les points en mesure 79. La montagne de Sulens est un point de passage : la quatrième balise, au-dessus du col du Fer, n'est pas placée.",
+  "source": "",
+  "reason": "Suit les champs corrigés."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "bornes",
+  "id": "talamarche-tournette",
+  "field": "distance_km",
+  "before": 4,
+  "after": null,
+  "source": "",
+  "reason": "Généralisation : distance calculée sur le tracé, aucune source."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "bornes",
+  "id": "talamarche-tournette",
+  "field": "note",
+  "before": "Distance de 4 km.",
+  "after": null,
+  "source": "",
+  "reason": "Suit le champ retiré."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "bornes",
+  "id": "bauges-lanfon-parmelan-lachat",
+  "field": "distance_km",
+  "before": 32,
+  "after": null,
+  "source": "",
+  "reason": "Généralisation : 32 km calculés sur le tracé d'une partie d'un triangle de 199 à 202 km."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "bornes",
+  "id": "lanfon-parmelan-pertuis",
+  "field": "distance_km",
+  "before": 20,
+  "after": null,
+  "source": "",
+  "reason": "Généralisation : 20 km calculés sur le tracé, aucune source."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "aravis",
+  "id": "jalouvre-sous-le-vent",
+  "field": "conditions",
+  "before": "vent de nord-ouest à ouest, transition depuis le col du Chinaillon sans altitude",
+  "after": "transition depuis le col du Chinaillon sans altitude",
+  "source": "S71",
+  "reason": "Aucune direction de vent dans S71. Le danger n'est plus actif par nord-ouest dans le modèle."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "aravis",
+  "id": "pointe-percee-descendance",
+  "field": "conditions",
+  "before": "vent d'ouest, pilote au vent de la crête",
+  "after": "au pied des falaises, pilote au vent de la crête",
+  "source": "S71",
+  "reason": "« j'étais au vent », « je ne sais où » : aucune direction de vent. Le danger n'est plus actif par ouest dans le modèle."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "aravis",
+  "id": "mont-charvin",
+  "field": "best_hours",
+  "before": "dès ≈10h30 (récit du 8 juin)",
+  "after": null,
+  "source": "S58",
+  "reason": "10h30 est l'heure d'un décollage à Praz Véchin, un seul jour ; le texte le dit déjà en possibilité."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "aravis",
+  "id": "lachat-gb-thermique",
+  "field": "best_hours",
+  "before": "16h-16h30 (récit) ; après-midi",
+  "after": "après-midi",
+  "source": "S71",
+  "reason": "16h-16h30 : un seul vol."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "aravis",
+  "id": "combe-de-borderan",
+  "field": "best_hours",
+  "before": "début d'après-midi, dès que la brise de vallée de La Clusaz démarre",
+  "after": null,
+  "source": "S72",
+  "reason": "Reliait deux passages distincts : l'ascendance vise un départ matinal, la brise du village démarre ailleurs. Le texte garde les deux moments."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "aravis",
+  "id": "pointe-de-tardevant",
+  "field": "best_hours",
+  "before": "13h30 environ (récit du 4 juillet 2005)",
+  "after": null,
+  "source": "S86",
+  "reason": "13h33 est le passage d'une balise, un seul jour."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "aravis",
+  "id": "jalouvre-falaise-soleil",
+  "field": "best_hours",
+  "before": "fin d'après-midi (16h-17h)",
+  "after": "fin d'après-midi",
+  "source": "S71",
+  "reason": "16h-17h déduit d'un seul vol."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "aravis",
+  "id": "buclon-lessy",
+  "field": "best_hours",
+  "before": "avant 17h (plus rien ne monte trop tard)",
+  "after": null,
+  "source": "S71",
+  "reason": "« Mais trop tard » : aucune heure, et « avant 17h » disait le contraire de la source."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "aravis",
+  "id": "roc-des-arces-col-de-chatillon",
+  "field": "trigger",
+  "before": "barre et pentes du Roc des Arces au-dessus du col de Châtillon, premier relief rencontré après le décollage du Lachat, déneigé et chauffé par le soleil",
+  "after": "barre et pentes du Roc des Arces au-dessus du col de Châtillon, premier relief rencontré après le décollage du Lachat",
+  "source": "S105",
+  "reason": "« Déneigé » est la condition d'un jour d'hiver, déjà rangée en possibilité."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "aravis",
+  "id": "annecy-aravis-mont-blanc",
+  "field": "distance_km",
+  "before": 36,
+  "after": null,
+  "source": "",
+  "reason": "Généralisation : 36 km calculés sur le tracé, aucune trace décrite."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "aravis",
+  "id": "annecy-aravis-mont-blanc",
+  "field": "note",
+  "before": "L'ordre exact (Tournette, Charvin, col des Aravis, Pointe Percée) suit la logique de la chaîne ; aucune trace décrite dans les sources. Distance de 36 km.",
+  "after": "L'ordre exact (Tournette, Charvin, col des Aravis, Pointe Percée) suit la logique de la chaîne ; aucune trace décrite dans les sources.",
+  "source": "",
+  "reason": "Suit le champ retiré."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "aravis",
+  "id": "meruz-charvin-dent-de-cons",
+  "field": "distance_km",
+  "before": 16,
+  "after": null,
+  "source": "",
+  "reason": "Généralisation : 16 km calculés sur une partie d'un triangle de 199 km."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "aravis",
+  "id": "aravis-202-chartreuse-albertville",
+  "field": "distance_km",
+  "before": 46,
+  "after": null,
+  "source": "",
+  "reason": "Généralisation : 46 km calculés sur une partie d'un triangle de 202 km."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "aravis",
+  "id": "tour-de-la-vallee-grand-bornand",
+  "field": "distance_km",
+  "before": 53,
+  "after": null,
+  "source": "",
+  "reason": "Généralisation : somme de segments, dite ainsi par la note."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "aravis",
+  "id": "tour-de-la-vallee-grand-bornand",
+  "field": "note",
+  "before": "L'ordre et les distances sont ceux des cheminements décrits ; la distance affichée est la somme des segments. Distance de 53 km.",
+  "after": "L'ordre est celui des cheminements décrits.",
+  "source": "",
+  "reason": "Suit le champ retiré."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "aravis",
+  "id": "lanfonnet-cotagne-croix-fry-etale",
+  "field": "distance_km",
+  "before": 18,
+  "after": null,
+  "source": "",
+  "reason": "Généralisation : itinéraire déduit de la carte, 18 km calculés."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "aravis",
+  "id": "lanfonnet-cotagne-croix-fry-etale",
+  "field": "note",
+  "before": "Itinéraire déduit de la carte, non confirmé par une trace. Distance de 18 km.",
+  "after": "Itinéraire déduit de la carte, non confirmé par une trace.",
+  "source": "",
+  "reason": "Suit le champ retiré."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "aravis",
+  "id": "planfait-sulens-aravis-bargy-lachat-2018",
+  "field": "distance_km",
+  "before": 47,
+  "after": null,
+  "source": "",
+  "reason": "Généralisation : somme de segments, « non celle de la trace » selon la note."
+ },
+ {
+  "lot": "annecy_bornes_aravis",
+  "massif": "aravis",
+  "id": "planfait-sulens-aravis-bargy-lachat-2018",
+  "field": "note",
+  "before": "Distance affichée : somme des segments, non celle de la trace. Distance de 47 km.",
+  "after": null,
+  "source": "",
+  "reason": "Suit le champ retiré."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bourget-chambery",
+  "id": "brise-lac-bourget",
+  "field": "hours",
+  "before": "après-midi, surtout fin d'après-midi (été) ; FFVL Chat : dès 14h00 au décollage du Mont du Chat",
+  "after": "non documenté (les cartes tracent un flux, sans horaire)",
+  "source": "S27 ; S28",
+  "reason": "« Dès 14h00 » est la fiche du Mont du Chat, à l'ouest de la crête ; aucune source ne donne d'horaire à ce flux."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bourget-chambery",
+  "id": "brise-lac-bourget",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 8,
+   "max": 15
+  },
+  "after": null,
+  "source": "S27 ; S28",
+  "reason": "8/15 km/h estimés : les cartes ne donnent aucune force."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bourget-chambery",
+  "id": "brise-lac-bourget",
+  "field": "sources",
+  "before": [
+   "S28",
+   "S27",
+   "S46",
+   "S47"
+  ],
+  "after": [
+   "S28",
+   "S27"
+  ],
+  "source": "S46 ; S47",
+  "reason": "S46 et S47 concernent le Mont du Chat et Saint-Paul-sur-Yenne, à l'ouest de la crête."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bourget-chambery",
+  "id": "brise-lac-bourget",
+  "field": "note",
+  "before": "Tracé lu sur les cartes de brises ; la faible vitesse affichée est une estimation. La brise qui alimente le décollage du Mont du Chat, comme celle de l'atterrissage de Saint-Paul-sur-Yenne, n'est pas celle du lac : tous deux sont à l'ouest de la crête. Une formule évoquant une brise fraîche vers la fin de l'après-midi n'apparaît plus sur sa page d'origine : elle n'est pas retenue.",
+  "after": "Tracé lu sur les cartes de brises. La brise qui alimente le décollage du Mont du Chat, comme celle de l'atterrissage de Saint-Paul-sur-Yenne, n'est pas celle du lac : tous deux sont à l'ouest de la crête. Une formule évoquant une brise fraîche vers la fin de l'après-midi n'apparaît plus sur sa page d'origine : elle n'est pas retenue.",
+  "source": "",
+  "reason": "Suit les champs corrigés."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bourget-chambery",
+  "id": "brise-epine-avant-pays",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 15,
+   "max": 25
+  },
+  "after": null,
+  "source": "S48",
+  "reason": "15/25 km/h déduits de « fortes » ; le modèle prend sa valeur par défaut, et la zone de brise forte reste portée par le danger de Novalaise."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bourget-chambery",
+  "id": "brise-epine-avant-pays",
+  "field": "note",
+  "before": "La direction, d'ouest à nord-ouest, et la vitesse, de 15 à 25 km/h, sont des interprétations de « brise forte ». Par vent météo d'ouest, la brise est favorable ; à l'atterrissage des Marais, elle reste faible et vient du lac, d'ouest ou de sud-ouest.",
+  "after": "La direction, d'ouest à nord-ouest, est une interprétation, et aucune vitesse n'est chiffrée : les sources disent « brise forte ». Par vent météo d'ouest, la brise est favorable ; à l'atterrissage des Marais, elle reste faible et vient du lac, d'ouest ou de sud-ouest.",
+  "source": "",
+  "reason": "Suit le champ corrigé."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bourget-chambery",
+  "id": "epine-novalaise-brise-forte",
+  "field": "conditions",
+  "before": "14h-17h (été)",
+  "after": "14h-17h : heure où la fiche du décollage de l'Épine dit la brise forte (le schéma n'en donne aucune)",
+  "source": "S48 ; S15",
+  "reason": "La figure ne donne pas d'heure. Le modèle a besoin d'une heure pour activer ce danger : valeur la plus défendable gardée, attribuée au décollage de l'Épine, et dite en note."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bourget-chambery",
+  "id": "epine-novalaise-brise-forte",
+  "field": "sources",
+  "before": [
+   "S15",
+   "S66",
+   "S49",
+   "S36"
+  ],
+  "after": [
+   "S15",
+   "S66",
+   "S49",
+   "S36",
+   "S48"
+  ],
+  "source": "S48",
+  "reason": "L'heure vient de S48, qui existe dans le lot."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bourget-chambery",
+  "id": "epine-novalaise-brise-forte",
+  "field": "note",
+  "before": null,
+  "after": "Heure estimée : celle où la fiche du décollage de l'Épine dit la brise forte. Le schéma de la zone n'en donne aucune.",
+  "source": "",
+  "reason": "Dit l'estimation."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bourget-chambery",
+  "id": "pertuiset-revard",
+  "field": "trigger",
+  "before": "falaise du Pertuiset sous le vent du Revard",
+  "after": "falaise du Pertuiset, entre Vérel et le Revard",
+  "source": "S38",
+  "reason": "« sous le vent du Pertuiset » ; « sous le vent du Revard » est le choix que le pilote regrette."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bourget-chambery",
+  "id": "pertuiset-revard",
+  "field": "best_hours",
+  "before": "début d'après-midi (14h30)",
+  "after": null,
+  "source": "S38",
+  "reason": "14h30 est l'heure d'un seul vol (constat du rapport du lot)."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bourget-chambery",
+  "id": "relais-mont-du-chat",
+  "field": "best_hours",
+  "before": "fin d'après-midi (17h55 un jour de retard) ; midi à 15h les bonnes journées",
+  "after": null,
+  "source": "S101 ; S102",
+  "reason": "« midi à 15h » n'est dans aucune source ; 17h55 et le milieu d'après-midi sont deux vols, déjà en possibilités."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bourget-chambery",
+  "id": "sapenay-belvedere",
+  "field": "name",
+  "before": "Sapenay – Belvédère (Cessens)",
+  "after": "Sapenay – Belvédère (Cessens, décollage de delta)",
+  "source": "S62",
+  "reason": "La fiche 1113 (SAPENAY - LE BELVEDERE - DELTA) ne vaut que pour le delta ; le schéma des décollages n'a pas de champ de pratique."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bourget-chambery",
+  "id": "triangle-st-hilaire-dent-du-chat",
+  "field": "distance_km",
+  "before": 80.0,
+  "after": 116.31,
+  "source": "S15 p. 34",
+  "reason": "80 km est le calcul de l'atlas ; la page 34 donne 116,31 km pour le premier triangle, relue en image."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bourget-chambery",
+  "id": "triangle-st-hilaire-dent-du-chat",
+  "field": "note",
+  "before": "Deux exemples relevés dans un document, avec des branches de 49,40, 34,28 et 32,63 km pour le premier, et de 52,21, 44,46 et 41,05 km pour le second. Les balises intermédiaires ne sont pas placées.",
+  "after": "Deux exemples relevés dans un document, avec des branches de 49,40, 34,28 et 32,63 km pour le premier, et de 52,21, 44,46 et 41,05 km pour le second. La distance affichée est celle du premier. Les balises intermédiaires ne sont pas placées.",
+  "source": "",
+  "reason": "Suit le champ corrigé."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bourget-chambery",
+  "id": "verel-semnoz-aller-retour",
+  "field": "distance_km",
+  "before": 23.0,
+  "after": null,
+  "source": "",
+  "reason": "Généralisation : 23 km calculés sur le tracé, pour un aller-retour."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bourget-chambery",
+  "id": "epine-dent-du-chat-ar",
+  "field": "distance_km",
+  "before": 27.0,
+  "after": null,
+  "source": "",
+  "reason": "Généralisation : somme de segments, dite ainsi par la note."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bourget-chambery",
+  "id": "epine-dent-du-chat-ar",
+  "field": "note",
+  "before": "Distance indicative : somme des segments entre les points de passage.",
+  "after": null,
+  "source": "",
+  "reason": "Suit le champ retiré."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "combe-de-savoie",
+  "id": "branche-albertville",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 25,
+   "max": 35
+  },
+  "after": {
+   "typical": 25,
+   "max": 30
+  },
+  "source": "S3",
+  "reason": "« les deux généralement assez fortes (25/30 km/h) » ; 35 n'est pas dans les sources citées. La vitesse du modèle (typique) ne change pas."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "combe-de-savoie",
+  "id": "tours-de-montmayeur-brise",
+  "field": "kind",
+  "before": "downdraft",
+  "after": "other",
+  "source": "S23",
+  "reason": "« en général ça marche » : une relance dynamique, pas une descendance. Ce danger n'était pas actif dans le modèle et ne l'est toujours pas."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "combe-de-savoie",
+  "id": "grand-arc-plafond",
+  "field": "best_hours",
+  "before": "milieu d'après-midi (14h-16h)",
+  "after": null,
+  "source": "S103 ; S40 ; S98 ; S99",
+  "reason": "Aucune heure de plafond dans ces récits."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "combe-de-savoie",
+  "id": "montlambert",
+  "field": "orientations",
+  "before": [
+   "SE",
+   "S",
+   "N",
+   "NE"
+  ],
+  "after": [
+   "SE",
+   "S"
+  ],
+  "source": "S68",
+  "reason": "Fiche : favorables N;NE;SE;S, mais « vent de nord et nord-est, possible par S et SE faibles » : le nord et le nord-est sont des vents de site abrité, le décollage regarde le sud-est."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "combe-de-savoie",
+  "id": "montlambert",
+  "field": "note",
+  "before": "Fermé de mi-septembre à début novembre, pour la chasse.",
+  "after": "Fermé de mi-septembre à début novembre, pour la chasse. La fiche compte aussi le nord et le nord-est parmi les vents favorables : le site en est abrité.",
+  "source": "",
+  "reason": "Garde l'information retirée du champ."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "combe-de-savoie",
+  "id": "ebaudia-albertville",
+  "field": "name",
+  "before": "L'Ébaudia (Albertville)",
+  "after": "L'Ébaudia (Albertville), atterrissage non confirmé",
+  "source": "S77",
+  "reason": "S77 : « Pas d'attérrissage sur ce site ». Les atterrissages n'ont pas de champ de statut : signalé dans le nom, retrait laissé à la décision du lead."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "combe-de-savoie",
+  "id": "ebaudia-albertville",
+  "field": "note",
+  "before": null,
+  "after": "Position : point d'atterrissage de la fiche ParaglidingEarth du décollage de l'Ébaudiaz, sans description ; la fiche FFVL 173 n'est pas dans la récolte.",
+  "source": "S42",
+  "reason": "Dit l'origine réelle du point, trouvée dans pge_bbox.json."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "combe-de-savoie",
+  "id": "triangle-montlambert-parmelan",
+  "field": "note",
+  "before": "Les autres balises ne sont pas lisibles à cette résolution.",
+  "after": "Balises lues sur les pages du vol : Tamié, Parmelan et Chignin pour ce triangle ; Planfait, Roche Pourrie et La Table pour l'autre.",
+  "source": "S15 p. 44-45",
+  "reason": "Les pages en image, relues, confirment Tamié, Planfait et Roche Pourrie : le texte reste."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "combe-de-savoie",
+  "id": "retour-combe-colombier-montlambert-bramefarine",
+  "field": "possible[0]",
+  "before": "Un vol a quitté le Colombier à 2700 m pour Montlambert plutôt que la Galoppaz, puis a atteint les Tours à 860 m, après une perte de 1840 m sur 8 km.",
+  "after": "Un vol, remonté à 2700 m sur la face nord du Colombier, a préféré Montlambert à la Galoppaz. Parti à 2700 m de son dernier thermique, il a atteint les Tours à 860 m, après une perte de 1840 m sur 8 km.",
+  "source": "S23",
+  "reason": "S23 ne dit pas où est le dernier thermique, et 8 km ne suffisent pas depuis le Colombier : harmonisé avec tours-de-montmayeur-brise."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "combe-de-savoie",
+  "id": "retour-combe-colombier-montlambert-bramefarine",
+  "field": "distance_km",
+  "before": 44.0,
+  "after": null,
+  "source": "",
+  "reason": "Généralisation : 44 km calculés sur le tracé, aucune source."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "combe-de-savoie",
+  "id": "montlambert-arclusaz-grand-arc-chamoux",
+  "field": "distance_km",
+  "before": 47,
+  "after": null,
+  "source": "",
+  "reason": "Généralisation : 47 km calculés sur le tracé, aucune source."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bauges",
+  "id": "galoppaz-puygros-interdits",
+  "field": "name",
+  "before": "Galoppaz et Puygros : terrains formellement interdits par arrêté municipal",
+  "after": "Galoppaz (Puygros) : décollage formellement interdit par arrêté municipal",
+  "source": "S114",
+  "reason": "La fiche 14121 interdit le décollage de la Galoppaz, sur la commune de Puygros."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bauges",
+  "id": "galoppaz-puygros-interdits",
+  "field": "sources",
+  "before": [
+   "S33",
+   "S23"
+  ],
+  "after": [
+   "S33",
+   "S23",
+   "S114"
+  ],
+  "source": "S114",
+  "reason": "Source de l'interdiction, ajoutée au lot (fiche présente dans ffvl_sites_alpes.json)."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bauges",
+  "id": "colombier-margeriaz-roc-des-boeufs",
+  "field": "best_hours",
+  "before": "13h-17h (été)",
+  "after": null,
+  "source": "S27",
+  "reason": "La carte place des spirales, sans horaire."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bauges",
+  "id": "saint-offenge-dessous",
+  "field": "name",
+  "before": "Saint-Offenge-Dessous (Revard)",
+  "after": "Saint-Offenge-Dessus (Revard)",
+  "source": "S31",
+  "reason": "« un atterrissage officiel à St Offenge Dessus », aux coordonnées du point."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bauges",
+  "id": "saint-offenge-dessous",
+  "field": "note",
+  "before": "Le terrain de secours est à Saint-Offenge-Dessus.",
+  "after": "Le terrain de secours est à Saint-Offenge-Dessus ; la fiche fédérale donne pour commune Saint-Offenge-Dessous.",
+  "source": "S91",
+  "reason": "Dit l'écart entre les deux sources."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bauges",
+  "id": "saint-offenge-dessous",
+  "field": "id",
+  "before": "saint-offenge-dessous",
+  "after": "saint-offenge-dessus",
+  "source": "S31",
+  "reason": "L'id disait l'erreur, et seul l'atlas compilé le référence."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bauges",
+  "id": "petit-tour-des-bauges",
+  "field": "distance_km",
+  "before": 57.0,
+  "after": null,
+  "source": "S38 ; S39",
+  "reason": "57 km est un calcul ; aucune distance dans les carnets."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bauges",
+  "id": "transition-chartreuse-bauges-savoyarde",
+  "field": "distance_km",
+  "before": 40.0,
+  "after": null,
+  "source": "S15",
+  "reason": "Généralisation : 40 km calculés sur le tracé ; S15 donne 10 ou 12 km pour la transition, déjà dans le texte."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "bauges",
+  "id": "faces-est-bauges-arclusaz-roc-des-boeufs",
+  "field": "distance_km",
+  "before": 31,
+  "after": null,
+  "source": "",
+  "reason": "Généralisation : 31 km calculés sur le tracé, aucune source."
+ },
+ {
+  "lot": "chartreuse_gresivaudan_belledonne",
+  "massif": "gresivaudan",
+  "id": "brise-voreppe",
+  "field": "note",
+  "before": "Vitesses interprétées : « souvent forte » donne environ 20 km/h ; le maximum de 35 km/h vient de l'atterrissage d'Uriage, où une brise de plus de 35 km/h venue de Grenoble est jugée rare. Le tracé s'arrête à Grenoble : au-delà, la brise du Grésivaudan descend en sens inverse, et les deux se rencontrent au nord-est de la ville (voir la convergence).",
+  "after": "Vitesse estimée, non mesurée : « souvent forte » donne environ 20 km/h, seuil de « fort » retenu par le modèle, dont la valeur par défaut serait bien plus basse. Une brise de plus de 35 km/h venue de Grenoble, jugée rare, est citée à l'atterrissage d'Uriage. Le tracé s'arrête à Grenoble : au-delà, la brise du Grésivaudan descend en sens inverse, et les deux se rencontrent au nord-est de la ville (voir la convergence).",
+  "source": "S52 ; S29",
+  "reason": "typical gardé en estimation (le maximum de 35 km/h a déjà été retiré, commit 0bf4839)."
+ },
+ {
+  "lot": "chartreuse_gresivaudan_belledonne",
+  "massif": "gresivaudan",
+  "id": "chamrousse-brise-soir-canicule",
+  "field": "conditions",
+  "before": "soirée de canicule forte (> 40 °C en plaine selon la fiche) : > 25 km/h de vent fixe, rafales à 35 km/h, jusqu'à ~2500 m",
+  "after": "soirée de canicule forte (au-delà de 41 °C en plaine, la fiche écrit « 410 ») : > 25 km/h de vent fixe, rafales à 35 km/h, jusqu'à ~2500 m",
+  "source": "S65",
+  "reason": "« au delà de 410 en plaine » : sans doute 41 °C, pas 40 °C."
+ },
+ {
+  "lot": "chartreuse_gresivaudan_belledonne",
+  "massif": "belledonne",
+  "id": "col-vert-chartreuse-belledonne-chamrousse-vif-2020",
+  "field": "distance_km",
+  "before": 57.0,
+  "after": null,
+  "source": "S112 ; S135",
+  "reason": "57 km calculés par l'atlas, le vol en fait 155 ; la note garde le calcul."
+ },
+ {
+  "lot": "chartreuse_gresivaudan_belledonne",
+  "massif": "belledonne",
+  "id": "chamrousse-crete-belledonne-chamoux-2021",
+  "field": "distance_km",
+  "before": 57.5,
+  "after": null,
+  "source": "S113 ; S135",
+  "reason": "57,5 km calculés par l'atlas ; la note garde le calcul."
+ },
+ {
+  "lot": "chartreuse_gresivaudan_belledonne",
+  "massif": "belledonne",
+  "id": "aiguillette-grand-colon-7-laux-aller-retour-2022",
+  "field": "distance_km",
+  "before": 18.6,
+  "after": null,
+  "source": "S125 ; S135",
+  "reason": "18,6 km calculés par l'atlas ; la note garde le calcul."
+ },
+ {
+  "lot": "bauges_bourget_combe",
+  "massif": "(lot)",
+  "id": "S114",
+  "field": "sources[] du lot",
+  "before": null,
+  "after": "https://federation.ffvl.fr/sites_pratique/voir/14121",
+  "source": "S114",
+  "reason": "Source réelle de l'interdiction de la Galoppaz, absente du lot."
+ }
+]

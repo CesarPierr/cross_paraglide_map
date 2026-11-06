@@ -1,0 +1,645 @@
+[
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "brianconnais-guisane",
+    "id": "brise-durance-basse-guisane",
+    "field": "hours",
+    "before": "10h30-16h30 (été) : dès la mi-matinée, forte en début d'après-midi, faiblit vers 16h",
+    "after": "du milieu ou de la fin de matinée jusqu'au milieu d'après-midi (fin du printemps à fin d'été) ; forte à très forte l'après-midi ; en Guisane, faiblit autour de 16h en été",
+    "source": "S1, MS14",
+    "reason": "10h30 n'est dans aucune source (S1 : « en milieu/fin de matinée ») ; 16 h vaut pour la Guisane (MS14 : « typiquement vers 16h en été »)."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "brianconnais-guisane",
+    "id": "transfert-lautaret-guisane",
+    "field": "hours",
+    "before": "8h-10h30 (été) : le matin, avant l'arrivée de la brise de Durance",
+    "after": "le matin, avant l'entrée de la brise de Durance (sans heure dans les sources)",
+    "source": "S5",
+    "reason": "8h-10h30 absent : S5 dit « Le matin » seulement."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "brianconnais-guisane",
+    "id": "transfert-lautaret-guisane",
+    "field": "note",
+    "before": "Aucune vitesse n'est documentée, et la reprise de fin de journée, après l'inversion de 16 h, n'est pas simulée séparément.",
+    "after": "Aucune vitesse n'est documentée, et la reprise de fin de journée, après l'inversion de 16 h, n'est pas simulée séparément. Fenêtre du matin : sans heure dans les sources.",
+    "source": "S5",
+    "reason": "Dit l'estimation que le modèle garde."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "brise-descendante-vallouise",
+    "field": "hours",
+    "before": "19h30-9h (été, le soir et la nuit) ; automne-hiver aussi en journée",
+    "after": "le soir et la nuit (sans heure dans les sources) ; automne-hiver aussi en journée",
+    "source": "S32",
+    "reason": "19h30-9h sans source."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "brise-descendante-vallouise",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 20,
+      "max": 30
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S32, MS16",
+    "reason": "20 et 30 km/h sans source ; MS16 relue ne parle pas de cette brise ; S32 ne donne pas de force. Le modèle prend sa valeur par défaut."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "brise-descendante-vallouise",
+    "field": "note",
+    "before": "Une brise « forte » le soir a été lue en première passe sur une page qui ne le dit plus : force et horaires (20 à 30 km/h, 19h30-9h) restent des interprétations.",
+    "after": "Une brise « forte » le soir a été lue en première passe sur une page qui ne le dit plus : force non documentée. La fenêtre du soir et de la nuit est une interprétation, sans heure dans les sources.",
+    "source": "S32",
+    "reason": "Suit les champs corrigés."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "serre-poncon-embrunais",
+    "id": "brise-durance",
+    "field": "hours",
+    "before": "12h-18h (été), maximum ~14h-17h ; brise forte dès 10-12h à Serre Buzard",
+    "after": "après-midi (été), sans heure pour le lac dans les sources ; à Serre Buzard, trop forte passé 10h-12h surtout l'été",
+    "source": "HS16, S10, HS15",
+    "reason": "12h-18h et maximum 14h-17h absents. HS16 : décollage « tôt (10-12H) surtout l'été, sinon la brise est trop forte », à Serre Buzard."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "serre-poncon-embrunais",
+    "id": "brise-durance",
+    "field": "possible",
+    "before": [
+      "En amont, à Sisteron, la brise de vallée est très régulière, et peut atteindre 30 à 40 km/h l'après-midi en été."
+    ],
+    "after": [
+      "En aval, à Sisteron, la brise de vallée est très régulière, et peut atteindre 30 à 40 km/h l'après-midi en été."
+    ],
+    "source": "HS15",
+    "reason": "Sisteron est en aval de Serre-Ponçon, pas en amont."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "serre-poncon-embrunais",
+    "id": "brise-durance",
+    "field": "note",
+    "before": "Le tracé sur le lac, du barrage vers Savines, et la vitesse typique sont des interprétations. La première passe commençait à Sisteron, hors de ce massif.",
+    "after": "Le tracé sur le lac, du barrage vers Savines, et la vitesse typique sont des interprétations. La première passe commençait à Sisteron, hors de ce massif. Le maximum de 40 km/h est celui de Sisteron (HS15), hors de ce massif.",
+    "source": "HS15",
+    "reason": "Dit l'origine du maximum."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "brise-fournel",
+    "field": "hours",
+    "before": "après-midi (été)",
+    "after": "après-midi (été), sans heure dans les sources",
+    "source": "S35, S15",
+    "reason": "Aucune heure dans les sources ; fenêtre gardée pour le modèle."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "brise-fournel",
+    "field": "note",
+    "before": "Sens montant déduit de la configuration de la vallée ; aucune source ne le dit. Tracé approximatif.",
+    "after": "Sens montant déduit de la configuration de la vallée ; aucune source ne le dit. Tracé approximatif. Aucune heure dans la source : fenêtre estimée, le modèle en a besoin.",
+    "source": "S35, S15",
+    "reason": "Dit l'estimation."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "brise-freissinieres",
+    "field": "hours",
+    "before": "après-midi (été)",
+    "after": "après-midi (été), sans heure dans les sources",
+    "source": "S10",
+    "reason": "Aucune heure dans la source ; fenêtre gardée pour le modèle. La note le dit déjà."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "queyras",
+    "id": "brise-guil",
+    "field": "hours",
+    "before": "après-midi (été) ; forte l'été dans les gorges",
+    "after": "après-midi (été), sans heure dans les sources ; souvent forte en brise dans les gorges",
+    "source": "S15",
+    "reason": "S15 : « souvent fort en brise », sans heure ni saison ; fenêtre gardée pour le modèle."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "queyras",
+    "id": "brise-guil",
+    "field": "note",
+    "before": "Aucune source ne décrit directement cette brise, mais les indices convergent ; son sens montant, de l'aval vers l'amont, est une déduction, et ses vitesses ne sont pas documentées. Par déduction, la branche du Guil prolonge la brise de la Durance qui alimente Serre Buzard.",
+    "after": "Aucune source ne décrit directement cette brise, mais les indices convergent ; son sens montant, de l'aval vers l'amont, est une déduction, et ses vitesses ne sont pas documentées. Par déduction, la branche du Guil prolonge la brise de la Durance qui alimente Serre Buzard. Aucune heure dans la source : fenêtre estimée, le modèle en a besoin.",
+    "source": "S15",
+    "reason": "Dit l'estimation."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ubaye",
+    "id": "brise-matinale-descendante-ubaye",
+    "field": "hours",
+    "before": "matin jusqu'à ≈11h (très faible à 11h à Barcelonnette)",
+    "after": "matin, encore présente à 11h un jour calme à Barcelonnette (très faible, une seule observation)",
+    "source": "S94",
+    "reason": "Le « jusqu'à ≈11h » généralisait un seul jour : à cette heure la brise était « très faible » et venait de Jausiers."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ubaye",
+    "id": "brise-matinale-descendante-ubaye",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 5,
+      "max": 10
+    },
+    "after": {
+      "typical": 5,
+      "max": null
+    },
+    "source": "S94",
+    "reason": "Aucun chiffre ; « très faible » : la typique reste en estimation (sous la valeur par défaut du modèle, 8 km/h), maximum retiré."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ubaye",
+    "id": "brise-matinale-descendante-ubaye",
+    "field": "note",
+    "before": "Confiance moyenne : une seule observation précise, d'un jour calme suivant un épisode de mistral. Les heures avant 8h ne sont pas documentées.",
+    "after": "Confiance moyenne : une seule observation précise, d'un jour calme suivant un épisode de mistral. Les heures avant 8h ne sont pas documentées. Vitesse typique de 5 km/h : estimation tirée de « très faible », aucune mesure.",
+    "source": "S94",
+    "reason": "Dit l'estimation."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "brise-pente-puy-aillaud",
+    "field": "hours",
+    "before": "dès 9h-9h30 en toute saison ; site du matin ou début d'après-midi",
+    "after": "parfois dès 9h-9h30 en toute saison ; site du matin ou début d'après-midi",
+    "source": "S32, S34",
+    "reason": "« Parfois » rétabli : S32 « à partir de 9h00 parfois ! », S34 9h30."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "brianconnais-guisane",
+    "id": "brise-durance-basse-guisane",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 25,
+      "max": 45
+    },
+    "after": {
+      "typical": 25,
+      "max": 40
+    },
+    "source": "MS13",
+    "reason": "MS13 donne des pointes à plus de 40 km/h à Briançon ; 45 n'est dans aucune source."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "brise-durance-embrun-briancon",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 25,
+      "max": 45
+    },
+    "after": {
+      "typical": 25,
+      "max": 40
+    },
+    "source": "MS13, S28",
+    "reason": "Pointes à plus de 40 km/h à Briançon, 40 km/h sur un vol à Embrun ; 45 n'est dans aucune source."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "brise-montante-gyronde",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 10,
+      "max": 25
+    },
+    "after": {
+      "typical": 10,
+      "max": null
+    },
+    "source": "S32",
+    "reason": "Aucun chiffre ; brise dite rarement forte : la typique reste en estimation, maximum retiré."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "brise-montante-gyronde",
+    "field": "note",
+    "before": "Vitesses : interprétation de « rarement soutenue », avec 10 km/h typique et 25 km/h au maximum.",
+    "after": "Vitesse typique de 10 km/h : estimation pour une brise dite rarement forte, aucune source ne la chiffre.",
+    "source": "S32",
+    "reason": "Suit le champ corrigé."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ubaye",
+    "id": "brise-ubaye",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 20,
+      "max": 35
+    },
+    "after": {
+      "typical": 20,
+      "max": null
+    },
+    "source": "S76, S77, S78",
+    "reason": "Aucun chiffre ; brise dite forte à très forte : la typique reste en estimation, maximum retiré."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ubaye",
+    "id": "brise-ubaye",
+    "field": "note",
+    "before": "Vitesses typique et maximale (20 et 35 km/h) : interprétation de « forte à très forte ».",
+    "after": "Vitesse typique de 20 km/h : estimation, à partir de « forte à très forte » ; aucune source ne la chiffre.",
+    "source": "S76, S77, S78",
+    "reason": "Suit le champ corrigé."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "brianconnais-guisane",
+    "id": "lombarde-montgenevre",
+    "field": "note",
+    "before": "La forme des flèches vient de la carte Lombarde (tracé central estimé).",
+    "after": "La forme des flèches vient de la carte Lombarde (tracé central estimé). Vitesse typique de 20 km/h : estimation ; seuls les 40 km/h du maximum viennent du topo du club.",
+    "source": "S8",
+    "reason": "Dit l'estimation (S8 : « de 10km/h à 40km/h en 10min »)."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "pentes-se-puy-aillaud",
+    "field": "best_hours",
+    "before": "dès 9h-9h30 (toutes saisons)",
+    "after": "parfois dès 9h-9h30 (toutes saisons)",
+    "source": "S32, S34",
+    "reason": "« Parfois » rétabli."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "brianconnais-guisane",
+    "id": "therm-conf-saint-chaffrey",
+    "field": "best_hours",
+    "before": "après-midi, brise de Durance installée",
+    "after": "à partir du milieu de journée",
+    "source": "S3",
+    "reason": "S3 : « En milieu de journée, la brise de Romanche passe le col du Lautaret » ; l'après-midi n'est pas dit."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "therm-arete-clement-risoul",
+    "field": "best_hours",
+    "before": "fin d'après-midi (brise de 20 à 40 km/h)",
+    "after": null,
+    "source": "S28",
+    "reason": "Le récit ne donne aucune heure pour ce point ; les 20 et 40 km/h sont dans `possible`."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "therm-aquila-rocher-sud",
+    "field": "best_hours",
+    "before": "dès 13h (vol du 26/03/2010), printemps",
+    "after": null,
+    "source": "S28",
+    "reason": "Date et heure d'un seul vol, pas un horaire du lieu."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "serre-poncon-embrunais",
+    "id": "thermiques-mont-guillaume",
+    "field": "best_hours",
+    "before": "à partir de midi",
+    "after": null,
+    "source": "S10, HS18",
+    "reason": "« À partir de midi » : HS18 hors cache, non relu ; S10 dit « Joli site du matin ». Rien à garder sans le relire."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ubaye",
+    "id": "therm-blanche-pic-des-tetes",
+    "field": "best_hours",
+    "before": "journée ; plafonds 2700-3000 m banals, plus de 3000 m cités",
+    "after": null,
+    "source": "S87",
+    "reason": "Plafonds repris d'une réponse sur Laragne, et pas une heure."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "serre-poncon-embrunais",
+    "id": "therm-colombis-relance",
+    "field": "best_hours",
+    "before": "après-midi (brise de pente)",
+    "after": null,
+    "source": "S88, S90",
+    "reason": "Aucune heure dans S88 ; la fiche S90 (extrait) dit « brise de pente », sans heure."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "brianconnais-guisane",
+    "id": "therm-galibier-pente-herbeuse",
+    "field": "best_hours",
+    "before": "fin de journée dans la brise ; thermiques d'été (heure non précisée)",
+    "after": "vols de fin de journée dans la brise, à Plan Lachat ; pas d'heure ailleurs",
+    "source": "S92",
+    "reason": "« Thermiques d'été » absent ; fin de journée dit de Plan Lachat seul."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "brianconnais-guisane",
+    "id": "therm-serre-chevalier-est-matin",
+    "field": "trigger",
+    "before": "faces est au-dessus de Chantemerle, déco plein est à droite en sortant du télécabine",
+    "after": "décollage plein est, à droite en sortant du télécabine ; se met en route plus tôt que le Granon",
+    "source": "S18",
+    "reason": "« Faces est au-dessus de Chantemerle » est une déduction, déjà dite en note."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "brianconnais-guisane",
+    "id": "therm-galibier-pente-herbeuse",
+    "field": "trigger",
+    "before": "pente herbeuse sous le col du Galibier (Plan Lachat 2038 m, décollage sauvage possible partout)",
+    "after": null,
+    "source": "S92",
+    "reason": "Fusionnait trois décollages ; la source ne décrit aucun déclencheur."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "brianconnais-guisane",
+    "id": "therm-galibier-pente-herbeuse",
+    "field": "name",
+    "before": "Galibier : pente herbeuse sauvage « bon potentiel thermique »",
+    "after": "Galibier : trois décollages sauvages (Granges, col Sud, Plan Lachat)",
+    "source": "S92",
+    "reason": "Le « bon potentiel thermique » est celui du col Sud, la pente herbeuse celle des Granges."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "therm-aquila-rocher-sud",
+    "field": "trigger",
+    "before": "petit rocher orienté sud sous la Croix d'Aquila, à l'abri de la Lombarde au-dessus de 2300 m",
+    "after": "petit rocher orienté sud, face est de la Croix d'Aquila ; sur un seul vol, Lombarde sous 2300 m",
+    "source": "S28",
+    "reason": "S28 : « la lombarde qui souffle en dessous de 2300 » ; le champ disait l'inverse."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "therm-serre-buzard-falaises",
+    "field": "trigger",
+    "before": "falaises sous le déco, à gauche, et pentes sud ; brise de Durance",
+    "after": "falaises à gauche, sous le décollage (un seul vol)",
+    "source": "S42",
+    "reason": "« Pentes sud » et brise de Durance absents du récit."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "serre-poncon-embrunais",
+    "id": "therm-colombis-relance",
+    "field": "trigger",
+    "before": "pentes du Mont Colombis sous le vent de la brise de Durance",
+    "after": "pentes du Mont Colombis, par brise de pente",
+    "source": "S90, S88",
+    "reason": "« Sous le vent » absent : S88 met seulement en garde contre la brise qui remonte la Durance."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "serre-poncon-embrunais",
+    "id": "therm-piolit-passage",
+    "field": "trigger",
+    "before": "sommet-déco herbeux à 2410 m, passage obligé vers le Champsaur",
+    "after": "sommet-décollage herbeux à 2410 m, sur une des variantes vers le Champsaur",
+    "source": "S88",
+    "reason": "Pas « obligé » : une des variantes passe par Morgon, Guillaume et Barles."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "tempete-avant-orage-durance",
+    "field": "conditions",
+    "before": "après-midi d'été orageux ; Cb remontant la Durance vers L'Argentière et Briançon",
+    "after": "Cb remontant la Durance vers L'Argentière et Briançon",
+    "source": "MS14",
+    "reason": "Saison et heure absentes de la source."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "cb-pelvoux",
+    "field": "conditions",
+    "before": "après-midi de printemps et d'été",
+    "after": "printemps et été",
+    "source": "MS14",
+    "reason": "« L'après-midi » absent : « le premier nuage arrivant au stade orageux de la journée »."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "serre-poncon-embrunais",
+    "id": "embrun-atterro-brise",
+    "field": "conditions",
+    "before": "été, après ~14-15h",
+    "after": "l'après-midi et le soir, quand la brise est soutenue (Mont Guillaume)",
+    "source": "S10",
+    "reason": "Après 14-15 h vise Serre Buzard (HS16), déjà porté par `serre-buzard-brise-forte`. S10 : « l'après midi et le soir la brise est souvent soutenue »."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "serre-poncon-embrunais",
+    "id": "chabrieres-degueulante-brise-gap",
+    "field": "conditions",
+    "before": "brise de Gap / flux de S qui renforce la brise d'ouest sur le lac, après-midi",
+    "after": "brise de Gap ; flux de sud, qui renforce la brise d'ouest sur le lac",
+    "source": "S88",
+    "reason": "C'est le flux de sud qui renforce la brise d'ouest ; « après-midi » absent."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ubaye",
+    "id": "soaring-seolanes",
+    "field": "wind_dirs",
+    "before": [
+      "S",
+      "SW"
+    ],
+    "after": null,
+    "source": "S82",
+    "reason": "Aucune direction dans la source."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "queyras",
+    "id": "sarsena-bobbio-pellice",
+    "field": "alt_m",
+    "before": 1418,
+    "after": 1416,
+    "source": "S108",
+    "reason": "S108 : décollage à 1416 m ; 1418 ne vient d'aucune source."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "brianconnais-guisane",
+    "id": "claree-printemps",
+    "field": "distance_km",
+    "before": 17.0,
+    "after": null,
+    "source": "S28",
+    "reason": "Distance calculée par l'atlas sur le tracé, donnée par aucune source."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "brianconnais-guisane",
+    "id": "granon-lautaret-aller-retour",
+    "field": "distance_km",
+    "before": 33.6,
+    "after": null,
+    "source": "MS15, S12",
+    "reason": "Distance calculée par l'atlas sur le tracé, donnée par aucune source."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "cross-facile-tour-de-vallee",
+    "field": "distance_km",
+    "before": 13.0,
+    "after": null,
+    "source": "S44",
+    "reason": "Distance calculée par l'atlas sur le tracé, donnée par aucune source."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "cross-moyen-tetes",
+    "field": "distance_km",
+    "before": 21.0,
+    "after": null,
+    "source": "S35, S15",
+    "reason": "Distance calculée par l'atlas sur le tracé, donnée par aucune source."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "cross-difficile-ecrins",
+    "field": "distance_km",
+    "before": 35.0,
+    "after": null,
+    "source": "S37, S39",
+    "reason": "Distance calculée par l'atlas sur le tracé, donnée par aucune source."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "prorel-embrun-2010",
+    "field": "distance_km",
+    "before": 46.0,
+    "after": null,
+    "source": "S28",
+    "reason": "Distance calculée par l'atlas sur le tracé, donnée par aucune source."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "serre-poncon-embrunais",
+    "id": "st-vincent-dormillouse-morgon",
+    "field": "distance_km",
+    "before": 52.2,
+    "after": null,
+    "source": "HS16, HS14, S87, S91",
+    "reason": "Distance calculée par l'atlas sur le tracé, donnée par aucune source."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "serre-poncon-embrunais",
+    "id": "dormillouse-vers-drac",
+    "field": "distance_km",
+    "before": 37.8,
+    "after": null,
+    "source": "S88",
+    "reason": "Distance calculée par l'atlas sur le tracé, donnée par aucune source."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "serre-poncon-embrunais",
+    "id": "piolit-chabrieres-morgon",
+    "field": "distance_km",
+    "before": 26.6,
+    "after": null,
+    "source": "S88, S89",
+    "reason": "Distance calculée par l'atlas sur le tracé, donnée par aucune source."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ecrins-vallouise-haute-durance",
+    "id": "prorel-embrun-2010",
+    "field": "note",
+    "before": "Une partie du vol s'est faite dans le nuage, à la boussole, ce qui a été critiqué et n'est pas à reproduire. Distance mesurée à vol d'oiseau entre des points de passage approximatifs, non donnée par la source. Relances, dans l'ordre volé : rocher sud de la Croix d'Aquila, zone brûlée de L'Argentière, cumulus de Mont-Dauphin, arête Saint-Clément – Risoul, puis 40 km/h de brise à plein gaz vers Embrun.",
+    "after": "Une partie du vol s'est faite dans le nuage, à la boussole, ce qui a été critiqué et n'est pas à reproduire. Relances, dans l'ordre volé : rocher sud de la Croix d'Aquila, zone brûlée de L'Argentière, cumulus de Mont-Dauphin, arête Saint-Clément – Risoul, puis 40 km/h de brise à plein gaz vers Embrun.",
+    "source": "S28",
+    "reason": "Suit le champ retiré."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ubaye",
+    "id": "barcelonnette-champsaur-dormillouse-pra-loup-138km-2022",
+    "field": "distance_km",
+    "before": 68.5,
+    "after": 138,
+    "source": "S100",
+    "reason": "68,5 km était la longueur du tracé partiel ; le vol fait 138 km en triangle."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "ubaye",
+    "id": "barcelonnette-champsaur-dormillouse-pra-loup-138km-2022",
+    "field": "note",
+    "before": "Seuls les points nommés et localisés sont tracés : le Champsaur et la croix de l'Alpe ne sont pas localisés ; la distance indiquée est celle du tracé, le vol faisant 138 km. Autres vols documentés, sans points de passage : un triangle FAI de 252 km, avec 261 km pour un second pilote, dans des conditions musclées, et un tour de Barcelonnette en duo.",
+    "after": "Seuls les points nommés et localisés sont tracés : le Champsaur et la croix de l'Alpe ne sont pas localisés ; le tracé est donc plus court que le vol de 138 km. Autres vols documentés, sans points de passage : un triangle FAI de 252 km, avec 261 km pour un second pilote, dans des conditions musclées, et un tour de Barcelonnette en duo.",
+    "source": "S100",
+    "reason": "Suit le champ corrigé."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "serre-poncon-embrunais",
+    "id": "atterro-orres-pente-ecole",
+    "field": "status",
+    "before": null,
+    "after": "non-confirme",
+    "source": "S68 (note de collecte)",
+    "reason": "Le club signale l'ancienne pente école interdite ; S68 connue seulement par la note de collecte, S10 la liste sans réserve."
+  },
+  {
+    "lot": "brianconnais_ecrins_queyras_ubaye",
+    "massif": "brianconnais-guisane",
+    "id": "atterro-telecabine-prorel-interdit",
+    "field": "status",
+    "before": null,
+    "after": "interdit",
+    "source": "S10, S4",
+    "reason": "Le texte et le nom le disent interdit aux particuliers."
+  }
+]

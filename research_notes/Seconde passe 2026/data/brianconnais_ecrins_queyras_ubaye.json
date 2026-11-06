@@ -41,10 +41,10 @@
               "coord_quality": "source"
             }
           ],
-          "hours": "10h30-16h30 (été) : dès la mi-matinée, forte en début d'après-midi, faiblit vers 16h",
+          "hours": "du milieu ou de la fin de matinée jusqu'au milieu d'après-midi (fin du printemps à fin d'été) ; forte à très forte l'après-midi ; en Guisane, faiblit autour de 16h en été",
           "speed_kmh": {
             "typical": 25,
-            "max": 45
+            "max": 40
           },
           "season": "avril-octobre",
           "description": "Longue vallée, axe sud-ouest : la Durance accélère sa brise, avec des pointes à plus de 40 km/h à Briançon. Elle monte de Briançon en milieu ou fin de matinée, puis souffle fort à très fort l'après-midi, de la fin du printemps à la fin de l'été : évitez alors de décoller. Une tendance de sud à ouest la renforce et la fait entrer tôt et d'un coup. Elle bute sur la confluence, quelque part entre Le Monêtier et Briançon selon le vent météo.",
@@ -100,7 +100,7 @@
               "coord_quality": "source"
             }
           ],
-          "hours": "8h-10h30 (été) : le matin, avant l'arrivée de la brise de Durance",
+          "hours": "le matin, avant l'entrée de la brise de Durance (sans heure dans les sources)",
           "speed_kmh": {
             "typical": null,
             "max": null
@@ -120,7 +120,7 @@
             "En été, vers 16 h, la brise de la Guisane peut faiblir, puis revenir du haut de la vallée.",
             "La limite de l'inversion se situe souvent entre Le Monêtier ou Le Casset et Saint-Chaffrey, un peu au sud de l'atterrissage."
           ],
-          "note": "Aucune vitesse n'est documentée, et la reprise de fin de journée, après l'inversion de 16 h, n'est pas simulée séparément."
+          "note": "Aucune vitesse n'est documentée, et la reprise de fin de journée, après l'inversion de 16 h, n'est pas simulée séparément. Fenêtre du matin : sans heure dans les sources."
         },
         {
           "id": "lombarde-montgenevre",
@@ -185,7 +185,7 @@
             "On peut parfois la détecter au décollage de Puy Chalvin.",
             "Si la balise de Saint-Blaise annonce de l'est ou du nord-est, méfiance : la Lombarde est là."
           ],
-          "note": "La forme des flèches vient de la carte Lombarde (tracé central estimé)."
+          "note": "La forme des flèches vient de la carte Lombarde (tracé central estimé). Vitesse typique de 20 km/h : estimation ; seuls les 40 km/h du maximum viennent du topo du club."
         },
         {
           "id": "brise-claree",
@@ -888,7 +888,7 @@
           "lat": 44.9291,
           "alt_m": null,
           "coord_quality": "approx",
-          "best_hours": "après-midi, brise de Durance installée",
+          "best_hours": "à partir du milieu de journée",
           "trigger": "brise remontant la Durance rencontre la brise ou le petit NO de la Guisane",
           "description": "Cette confluence naît à la rencontre de la brise qui remonte la Durance et de celle qui passe le Lautaret, à partir du milieu de journée.",
           "confidence": "medium",
@@ -931,7 +931,7 @@
           "alt_m": null,
           "coord_quality": "source",
           "best_hours": "matin (avant le Granon)",
-          "trigger": "faces est au-dessus de Chantemerle, déco plein est à droite en sortant du télécabine",
+          "trigger": "décollage plein est, à droite en sortant du télécabine ; se met en route plus tôt que le Granon",
           "description": "Le décollage de Serre Chevalier, plein est, se met en route plus tôt que le Granon. Il est à droite en sortant du télécabine.",
           "confidence": "low",
           "sources": [
@@ -941,13 +941,12 @@
         },
         {
           "id": "therm-galibier-pente-herbeuse",
-          "name": "Galibier : pente herbeuse sauvage « bon potentiel thermique »",
+          "name": "Galibier : trois décollages sauvages (Granges, col Sud, Plan Lachat)",
           "lon": 6.4415,
           "lat": 45.0867,
           "alt_m": null,
           "coord_quality": "approx",
-          "best_hours": "fin de journée dans la brise ; thermiques d'été (heure non précisée)",
-          "trigger": "pente herbeuse sous le col du Galibier (Plan Lachat 2038 m, décollage sauvage possible partout)",
+          "best_hours": "vols de fin de journée dans la brise, à Plan Lachat ; pas d'heure ailleurs",
           "description": "Trois décollages sauvages autour du col. Les Granges du Galibier, belle pente herbeuse, offrent un potentiel énorme de cross, avec le 300 FAI historique. Le col du Galibier Sud a un bon potentiel thermique. Plan Lachat permet de beaux vols de fin de journée dans la brise, quand elle n'est pas trop forte. Le secteur est entouré de zones militaires réglementées.",
           "confidence": "medium",
           "sources": [
@@ -1431,7 +1430,8 @@
           "sources": [
             "S10",
             "S4"
-          ]
+          ],
+          "status": "interdit"
         }
       ],
       "synoptic_effects": [
@@ -1539,7 +1539,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 17.0,
           "description": "Au nord de Briançon, la Clarée mène à Val-des-Prés puis à Névache. Ce n'est pas un itinéraire décrit : un seul jour de printemps en parle.",
           "sources": [
             "S28"
@@ -1574,7 +1573,6 @@
               "lat": 44.9624
             }
           ],
-          "distance_km": 33.6,
           "description": "Un cross facile, sans trop d'engagement : du Granon au col du Lautaret, et retour. Le piège, c'est la brise de la Romanche, qui passe le Lautaret et redescend la Guisane, avec des venturis au col. L'atterrissage de Saint-Chaffrey est dans cette vallée.",
           "sources": [
             "MS15",
@@ -1676,7 +1674,7 @@
           "hours": "dès la mi-matinée (alimente Serre Buzard très vite) ; forte dès la fin de matinée en été ; tard le soir en automne anticyclonique",
           "speed_kmh": {
             "typical": 25,
-            "max": 45
+            "max": 40
           },
           "season": "avril-octobre",
           "description": "Depuis les Bouches-du-Rhône, la vallée de la Durance remonte sur un axe sud-ouest et accélère sa brise : pointes à plus de 40 km/h à Briançon. Elle se sent jusqu'aux Têtes de L'Argentière (2044 m) et aux Crêtes de Peyrolles (2645 m). En été, évitez les fonds de vallée dès la mi-journée. Elle alimente très vite Serre Buzard, et les Chamousses reçoivent une brise faible à modérée venant d'Embrun. Les tendances de sud à ouest la renforcent.",
@@ -1734,7 +1732,7 @@
           "hours": "se met en place en cours de matinée ; thermiques proches du sol dès le milieu de journée",
           "speed_kmh": {
             "typical": 10,
-            "max": 25
+            "max": null
           },
           "season": "avril-octobre",
           "description": "C'est le cas le plus fréquent à l'atterrissage de Vallouise : la brise remonte de l'entrée de la vallée vers Entraygues, à l'ouest. Elle est rarement trop forte, mais elle peut forcir. Elle se met en place en cours de matinée, et les thermiques partent près du sol dès le milieu de journée. Les tendances fortes d'ouest la renforcent. Vent et brise faibles : la direction change sans cesse. Posez alors avec un léger vent arrière plutôt que de virer bas.",
@@ -1745,7 +1743,7 @@
             "S26",
             "MS16"
           ],
-          "note": "Vitesses : interprétation de « rarement soutenue », avec 10 km/h typique et 25 km/h au maximum."
+          "note": "Vitesse typique de 10 km/h : estimation pour une brise dite rarement forte, aucune source ne la chiffre."
         },
         {
           "id": "brise-branche-entraigues",
@@ -1810,10 +1808,10 @@
               "coord_quality": "source"
             }
           ],
-          "hours": "19h30-9h (été, le soir et la nuit) ; automne-hiver aussi en journée",
+          "hours": "le soir et la nuit (sans heure dans les sources) ; automne-hiver aussi en journée",
           "speed_kmh": {
-            "typical": 20,
-            "max": 30
+            "typical": null,
+            "max": null
           },
           "season": "toute l'année",
           "description": "Le vent arrive d'Entraygues et descend vers l'entrée de la vallée. C'est souvent le cas quand le vent météo d'ouest est présent, ou par simple catabatique à l'automne et en hiver. Le catabatique qui descend des Bans, en automne, donne les meilleures conditions de gonflage à Vallouise.",
@@ -1827,7 +1825,7 @@
           "possible": [
             "Il arrive que, les sommets étant enneigés et les vallées à l'ombre, les deux brises descendantes des Bans et d'Ailefroide créent une petite confluence à l'est de Puy Aillaud."
           ],
-          "note": "Une brise « forte » le soir a été lue en première passe sur une page qui ne le dit plus : force et horaires (20 à 30 km/h, 19h30-9h) restent des interprétations."
+          "note": "Une brise « forte » le soir a été lue en première passe sur une page qui ne le dit plus : force non documentée. La fenêtre du soir et de la nuit est une interprétation, sans heure dans les sources."
         },
         {
           "id": "brise-pente-puy-aillaud",
@@ -1853,7 +1851,7 @@
               "coord_quality": "source"
             }
           ],
-          "hours": "dès 9h-9h30 en toute saison ; site du matin ou début d'après-midi",
+          "hours": "parfois dès 9h-9h30 en toute saison ; site du matin ou début d'après-midi",
           "speed_kmh": {
             "typical": null,
             "max": null
@@ -1891,7 +1889,7 @@
               "coord_quality": "approx"
             }
           ],
-          "hours": "après-midi (été)",
+          "hours": "après-midi (été), sans heure dans les sources",
           "speed_kmh": {
             "typical": null,
             "max": null
@@ -1903,7 +1901,7 @@
             "S35",
             "S15"
           ],
-          "note": "Sens montant déduit de la configuration de la vallée ; aucune source ne le dit. Tracé approximatif."
+          "note": "Sens montant déduit de la configuration de la vallée ; aucune source ne le dit. Tracé approximatif. Aucune heure dans la source : fenêtre estimée, le modèle en a besoin."
         },
         {
           "id": "brise-freissinieres",
@@ -1929,7 +1927,7 @@
               "coord_quality": "source"
             }
           ],
-          "hours": "après-midi (été)",
+          "hours": "après-midi (été), sans heure dans les sources",
           "speed_kmh": {
             "typical": null,
             "max": null
@@ -2279,7 +2277,7 @@
           "lat": 44.82,
           "radius_km": 8,
           "coord_quality": "approx",
-          "conditions": "après-midi d'été orageux ; Cb remontant la Durance vers L'Argentière et Briançon",
+          "conditions": "Cb remontant la Durance vers L'Argentière et Briançon",
           "description": "Quand un cumulonimbus remonte la Durance vers L'Argentière puis Briançon, le vent se renforce à son approche, jusqu'à ce que l'orage soit sur vous. Rejoignez de toute urgence l'atterrissage le plus proche.",
           "sources": [
             "MS14"
@@ -2297,7 +2295,7 @@
           "lat": 44.8572,
           "radius_km": 5,
           "coord_quality": "source",
-          "conditions": "après-midi de printemps et d'été",
+          "conditions": "printemps et été",
           "description": "Au printemps et en été, un cumulonimbus se forme souvent au Pelvoux.",
           "sources": [
             "MS14"
@@ -2364,7 +2362,7 @@
           "lat": 44.8503,
           "alt_m": 1670,
           "coord_quality": "source",
-          "best_hours": "dès 9h-9h30 (toutes saisons)",
+          "best_hours": "parfois dès 9h-9h30 (toutes saisons)",
           "trigger": "Versant SE ensoleillé tôt",
           "description": "Le versant sud-est prend le soleil tôt : c'est un site du matin, où les thermiques partent parfois dès 9 h. L'aérologie thermique reste proche du relief en sortie de décollage. Les Alpages, plus hauts, sont souvent au-dessus de l'inversion.",
           "sources": [
@@ -2462,8 +2460,7 @@
           "lat": 44.8745,
           "alt_m": null,
           "coord_quality": "approx",
-          "best_hours": "dès 13h (vol du 26/03/2010), printemps",
-          "trigger": "petit rocher orienté sud sous la Croix d'Aquila, à l'abri de la Lombarde au-dessus de 2300 m",
+          "trigger": "petit rocher orienté sud, face est de la Croix d'Aquila ; sur un seul vol, Lombarde sous 2300 m",
           "description": "Un petit rocher orienté au sud, sur la face est de la Croix d'Aquila, peut servir de relance après le Prorel quand la Lombarde souffle sous 2300 m.",
           "confidence": "medium",
           "sources": [
@@ -2521,7 +2518,6 @@
           "lat": 44.64,
           "alt_m": null,
           "coord_quality": "approx",
-          "best_hours": "fin d'après-midi (brise de 20 à 40 km/h)",
           "trigger": "arête boisée de mélèzes entre Saint-Clément et Risoul, au vent de la brise d'Embrun",
           "description": "Une arête boisée de mélèzes monte de Saint-Clément à Risoul, face à la brise qui vient d'Embrun. Un vol y a trouvé une relance dure, relevée une seule fois.",
           "confidence": "medium",
@@ -2579,7 +2575,7 @@
           "alt_m": null,
           "coord_quality": "approx",
           "best_hours": "vers 12h30 (vol de mars 2010) ; déco conseillé 10h-12h en été",
-          "trigger": "falaises sous le déco, à gauche, et pentes sud ; brise de Durance",
+          "trigger": "falaises à gauche, sous le décollage (un seul vol)",
           "description": "Sous les falaises, à gauche du décollage de Serre Buzard, on peut raccrocher un thermique. Observation d'un seul vol, en mars.",
           "confidence": "medium",
           "sources": [
@@ -3439,7 +3435,6 @@
               "coord_quality": "approx"
             }
           ],
-          "distance_km": 13.0,
           "description": "Un tour de vallée depuis Puy Aillaud, très confortable, toujours en finesse de l'atterrissage de Vallouise : idéal pour un premier cross.",
           "sources": [
             "S44"
@@ -3490,7 +3485,6 @@
               "coord_quality": "approx"
             }
           ],
-          "distance_km": 21.0,
           "description": "Faisable avec moins de plafond en suivant le tracé, sans passer par l'Aiglière et les Neyzets. Ne forcez pas vers les Têtes (Château Lebrun) : la vallée du Fournel peut avoir une brise alimentée, et elle offre peu d'options d'atterrissage.",
           "sources": [
             "S35",
@@ -3576,7 +3570,6 @@
               "coord_quality": "approx"
             }
           ],
-          "distance_km": 35.0,
           "description": "Cœur du Parc : respectez la zone et ses dates. À la Blanche, c'est souvent turbulent : du sud-ouest rentre par Jas la Croix, de l'ouest par les Bans. Les crêtes entre la Blanche et les Bans, faces au sud, sont idéales. Souvent un peu de nord-ouest sur l'Ailefroide : gardez des marges. Cherchez le thermique entre les Agneaux et la Barre. Au retour, plein sur les Agneaux. La brise de sud revient dans la Vallouise : trop bas, en été, on est vite ralenti.",
           "sources": [
             "S37",
@@ -3640,7 +3633,6 @@
               "coord_quality": "approx"
             }
           ],
-          "distance_km": 46.0,
           "description": "Un vol de mars, du Prorel à Embrun, par la Croix d'Aquila, Bouchier, Guillestre, Mont-Dauphin et Risoul. Il faut y jouer avec la Lombarde, puis avec la brise. Ce n'est pas un itinéraire balisé : un seul vol le décrit.",
           "sources": [
             "S28"
@@ -3650,7 +3642,7 @@
             "Au-dessus de L'Argentière, un thermique sous le vent de la Lombarde se récupère à 1900 m. Puis un petit cumulus à Mont-Dauphin a permis de reprendre 300 m.",
             "Une rue de plafond à 3200 m a mené à Guillestre, puis l'arête de Saint-Clément à Risoul, à 30 m des mélèzes, contre 20 km/h de brise à 2100 m."
           ],
-          "note": "Une partie du vol s'est faite dans le nuage, à la boussole, ce qui a été critiqué et n'est pas à reproduire. Distance mesurée à vol d'oiseau entre des points de passage approximatifs, non donnée par la source. Relances, dans l'ordre volé : rocher sud de la Croix d'Aquila, zone brûlée de L'Argentière, cumulus de Mont-Dauphin, arête Saint-Clément – Risoul, puis 40 km/h de brise à plein gaz vers Embrun."
+          "note": "Une partie du vol s'est faite dans le nuage, à la boussole, ce qui a été critiqué et n'est pas à reproduire. Relances, dans l'ordre volé : rocher sud de la Croix d'Aquila, zone brûlée de L'Argentière, cumulus de Mont-Dauphin, arête Saint-Clément – Risoul, puis 40 km/h de brise à plein gaz vers Embrun."
         }
       ],
       "tips": [
@@ -3718,7 +3710,7 @@
               "coord_quality": "source"
             }
           ],
-          "hours": "12h-18h (été), maximum ~14h-17h ; brise forte dès 10-12h à Serre Buzard",
+          "hours": "après-midi (été), sans heure pour le lac dans les sources ; à Serre Buzard, trop forte passé 10h-12h surtout l'été",
           "speed_kmh": {
             "typical": 25,
             "max": 40
@@ -3736,9 +3728,9 @@
             "S10"
           ],
           "possible": [
-            "En amont, à Sisteron, la brise de vallée est très régulière, et peut atteindre 30 à 40 km/h l'après-midi en été."
+            "En aval, à Sisteron, la brise de vallée est très régulière, et peut atteindre 30 à 40 km/h l'après-midi en été."
           ],
-          "note": "Le tracé sur le lac, du barrage vers Savines, et la vitesse typique sont des interprétations. La première passe commençait à Sisteron, hors de ce massif."
+          "note": "Le tracé sur le lac, du barrage vers Savines, et la vitesse typique sont des interprétations. La première passe commençait à Sisteron, hors de ce massif. Le maximum de 40 km/h est celui de Sisteron (HS15), hors de ce massif."
         },
         {
           "id": "brise-gap-chorges",
@@ -3869,7 +3861,7 @@
           "lat": 44.5458,
           "radius_km": 5,
           "coord_quality": "source",
-          "conditions": "été, après ~14-15h",
+          "conditions": "l'après-midi et le soir, quand la brise est soutenue (Mont Guillaume)",
           "description": "Autour d'Embrun, l'atterrissage conventionné de Pierre Plate s'utilise selon la force de la brise, surtout le matin et en début d'après-midi. Le centre de vacances de Chadenas, au bord du lac, est un terrain privé : contactez le gestionnaire avant de vous y poser.",
           "sources": [
             "HS16",
@@ -4054,7 +4046,7 @@
           "lon": 6.3347,
           "lat": 44.5829,
           "radius_km": 3,
-          "conditions": "brise de Gap / flux de S qui renforce la brise d'ouest sur le lac, après-midi",
+          "conditions": "brise de Gap ; flux de sud, qui renforce la brise d'ouest sur le lac",
           "description": "Du Morgon vers le Pic de Chabrières, la transition est exposée : la brise qui vient de Gap arrive de face, lèche les pentes et descend. Un flux de sud, qui renforce la brise d'ouest sur le lac, aggrave encore le passage. C'est quasiment impossible avec une aile B ou C.",
           "sources": [
             "S88"
@@ -4073,7 +4065,6 @@
           "lat": 44.583,
           "alt_m": null,
           "coord_quality": "approx",
-          "best_hours": "à partir de midi",
           "trigger": "faces sommitales",
           "description": "Les faces sommitales du Mont Guillaume donnent un thermique très fort en régime de brise classique. Le site est thermique l'après-midi, avec de superbes vols de restitution en fin de journée.",
           "sources": [
@@ -4198,8 +4189,7 @@
           "lat": 44.4924,
           "alt_m": 1711,
           "coord_quality": "source",
-          "best_hours": "après-midi (brise de pente)",
-          "trigger": "pentes du Mont Colombis sous le vent de la brise de Durance",
+          "trigger": "pentes du Mont Colombis, par brise de pente",
           "description": "Au mont Colombis, à Théus, les conditions thermiques sont très bonnes par brise de pente. Attention au vent de nord redressé par le thermique au décollage.",
           "confidence": "medium",
           "sources": [
@@ -4239,7 +4229,7 @@
           "alt_m": 2410,
           "coord_quality": "source",
           "best_hours": "après-midi (Piolit SW) ; matin (Piolit SE)",
-          "trigger": "sommet-déco herbeux à 2410 m, passage obligé vers le Champsaur",
+          "trigger": "sommet-décollage herbeux à 2410 m, sur une des variantes vers le Champsaur",
           "description": "Le sommet-décollage du Piolit, à 2410 m, est sur la route vers le Champsaur. Le Piolit sud-ouest s'utilise plutôt l'après-midi, le Piolit sud-est plutôt le matin.",
           "confidence": "low",
           "sources": [
@@ -4976,7 +4966,8 @@
           "sources": [
             "S10",
             "HS16"
-          ]
+          ],
+          "status": "non-confirme"
         }
       ],
       "synoptic_effects": [
@@ -5092,7 +5083,6 @@
               "lat": 44.452
             }
           ],
-          "distance_km": 52.2,
           "description": "Pour partir en cross, visez le sud, vers Dormillouse ou la Blanche : en régime de brise, c'est ce qu'il y a de mieux. Gare à la brise de l'Ubaye, qui peut être forte. Au Pic de Bernardez, ça hache et ça contre beaucoup, avec une brise à composante nord.",
           "sources": [
             "HS16",
@@ -5137,7 +5127,6 @@
               "lat": 44.6358
             }
           ],
-          "distance_km": 37.8,
           "description": "Deux variantes relient Dormillouse à la vallée du Drac, vers Ancelle ou Orcières. En régime de brise, c'est très difficile, et il faut beaucoup de plafond.",
           "sources": [
             "S88"
@@ -5174,7 +5163,6 @@
               "lat": 44.4075
             }
           ],
-          "distance_km": 26.6,
           "description": "Du Piolit vers le Morgon, par Chabrières ou Chanteloube, la brise de Gap pousse : c'est le sens le plus fréquent, et il passe souvent, avec toute sorte d'aile.",
           "sources": [
             "S88",
@@ -5247,7 +5235,7 @@
               "coord_quality": "source"
             }
           ],
-          "hours": "après-midi (été) ; forte l'été dans les gorges",
+          "hours": "après-midi (été), sans heure dans les sources ; souvent forte en brise dans les gorges",
           "speed_kmh": {
             "typical": null,
             "max": null
@@ -5260,7 +5248,7 @@
             "S69",
             "S27"
           ],
-          "note": "Aucune source ne décrit directement cette brise, mais les indices convergent ; son sens montant, de l'aval vers l'amont, est une déduction, et ses vitesses ne sont pas documentées. Par déduction, la branche du Guil prolonge la brise de la Durance qui alimente Serre Buzard."
+          "note": "Aucune source ne décrit directement cette brise, mais les indices convergent ; son sens montant, de l'aval vers l'amont, est une déduction, et ses vitesses ne sont pas documentées. Par déduction, la branche du Guil prolonge la brise de la Durance qui alimente Serre Buzard. Aucune heure dans la source : fenêtre estimée, le modèle en a besoin."
         },
         {
           "id": "brise-ceillac",
@@ -6167,7 +6155,7 @@
           "name": "Sarsenà (Bobbio Pellice, Italie) – décollage de la haute Val Pellice",
           "lon": 7.1141,
           "lat": 44.8205,
-          "alt_m": 1418,
+          "alt_m": 1416,
           "orientations": [
             "S",
             "SE"
@@ -6378,7 +6366,7 @@
           "hours": "dès ≈11h, très forte jusqu'à ≈20h (printemps et été) ; légère le soir au-dessus du lac",
           "speed_kmh": {
             "typical": 20,
-            "max": 35
+            "max": null
           },
           "season": "mai-septembre",
           "description": "En été, la brise de vallée peut être très forte : posez face à elle, montante ou descendante. À Halte 2000, elle peut être forte l'après-midi. À Saint-Ours, elle peut être très forte. Dans la gorge de l'Ubaye, entre le Lauzet et Barcelonnette, le vent est souvent fort en brise, et il n'y a pas d'atterrissage possible.",
@@ -6400,7 +6388,7 @@
             "La brise peut être forte dès 10h-11h dans toutes les vallées de l'Ubaye : mieux vaut décoller avant 10h.",
             "Un vol de cross a dû attendre longtemps que la brise laisse boucler le circuit à Barcelonnette."
           ],
-          "note": "Vitesses typique et maximale (20 et 35 km/h) : interprétation de « forte à très forte »."
+          "note": "Vitesse typique de 20 km/h : estimation, à partir de « forte à très forte » ; aucune source ne la chiffre."
         },
         {
           "id": "brise-restefond-jausiers",
@@ -6501,10 +6489,10 @@
               "coord_quality": "source"
             }
           ],
-          "hours": "matin jusqu'à ≈11h (très faible à 11h à Barcelonnette)",
+          "hours": "matin, encore présente à 11h un jour calme à Barcelonnette (très faible, une seule observation)",
           "speed_kmh": {
             "typical": 5,
-            "max": 10
+            "max": null
           },
           "season": "printemps-été",
           "description": "Pour les vols rando, visez le matin avant la brise, ou le soir quand les conditions faiblissent.",
@@ -6518,7 +6506,7 @@
             "Par jour calme, à 11 h, la brise de La Chaup a pu venir de Jausiers, d'est en ouest, très faible, avant que la brise montante ne se lève.",
             "Décollez au plus tard entre 10 h et 11 h pour éviter la brise de vallée et les thermiques."
           ],
-          "note": "Confiance moyenne : une seule observation précise, d'un jour calme suivant un épisode de mistral. Les heures avant 8h ne sont pas documentées."
+          "note": "Confiance moyenne : une seule observation précise, d'un jour calme suivant un épisode de mistral. Les heures avant 8h ne sont pas documentées. Vitesse typique de 5 km/h : estimation tirée de « très faible », aucune mesure."
         }
       ],
       "convergences": [],
@@ -6668,7 +6656,6 @@
           "lat": 44.3015,
           "alt_m": null,
           "coord_quality": "source",
-          "best_hours": "journée ; plafonds 2700-3000 m banals, plus de 3000 m cités",
           "trigger": "crête continue d'environ 20 km orientée à l'ouest et au sud, faces au soleil",
           "description": "La crête de la Blanche court sur environ 20 km, de Dormillouse à la tête de l'Estrop. Le sud et l'ouest prennent le soleil. Au-delà du Pic des Têtes, on change de vallée.",
           "confidence": "medium",
@@ -6787,10 +6774,6 @@
           "lon": 6.62,
           "lat": 44.42,
           "coord_quality": "approx",
-          "wind_dirs": [
-            "S",
-            "SW"
-          ],
           "description": "Vol de 1000 m de dénivelé le long des falaises des Séolanes ou au-dessus de la forêt de la Gimette, proposé par une école.",
           "sources": [
             "S82"
@@ -7201,7 +7184,7 @@
               "coord_quality": "approx"
             }
           ],
-          "distance_km": 68.5,
+          "distance_km": 138,
           "description": "Un vol de Barcelonnette, relevé une fois : traversée du lac de Serre-Ponçon, le Champsaur, retour par Dormillouse et Pra-Loup, puis la croix de l'Alpe.",
           "sources": [
             "S100",
@@ -7213,7 +7196,7 @@
             "Ce vol a été long : il a fallu attendre longtemps que la brise laisse boucler le circuit à Barcelonnette.",
             "Il a aussi été rallongé par un enterrement au Mont Guillaume."
           ],
-          "note": "Seuls les points nommés et localisés sont tracés : le Champsaur et la croix de l'Alpe ne sont pas localisés ; la distance indiquée est celle du tracé, le vol faisant 138 km. Autres vols documentés, sans points de passage : un triangle FAI de 252 km, avec 261 km pour un second pilote, dans des conditions musclées, et un tour de Barcelonnette en duo."
+          "note": "Seuls les points nommés et localisés sont tracés : le Champsaur et la croix de l'Alpe ne sont pas localisés ; le tracé est donc plus court que le vol de 138 km. Autres vols documentés, sans points de passage : un triangle FAI de 252 km, avec 261 km pour un second pilote, dans des conditions musclées, et un tour de Barcelonnette en duo."
         }
       ],
       "tips": [

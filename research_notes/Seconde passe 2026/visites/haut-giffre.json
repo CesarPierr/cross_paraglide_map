@@ -5,7 +5,7 @@
     {
       "chapter": "Le massif",
       "title": "Bienvenue dans le Giffre",
-      "text": "Bienvenue dans le Giffre, une vallée qui s'enfonce vers l'est, de Mieussy à Sixt, par Taninges et Samoëns. Le bassin d'Annemasse l'alimente : les cartes de brises montrent un flux par la Menoge et le col de Saxel avant de remonter la vallée. Chaque après-midi, elle aspire l'air de la plaine vers le fond. Mieussy, berceau du parapente avec son premier vol au Pertuiset, aime l'ouest et le sud. À Samoëns, les Saix et la Bourgeoise regardent le nord et le sud, et les Saix sauvent les jours de nord. Plus à l'est, le Haut-Giffre est une réserve, à plus de 300 m du sol.",
+      "text": "Bienvenue dans le Giffre, une vallée qui s'enfonce vers l'est, de Mieussy à Sixt, par Taninges et Samoëns. Le bassin d'Annemasse l'alimente : les cartes de brises montrent un flux par la Menoge et le col de Saxel avant de remonter la vallée. Les jours d'été, l'après-midi, elle aspire l'air de la plaine vers le fond. Mieussy, berceau du parapente avec son premier vol au Pertuiset, aime l'ouest et le sud. À Samoëns, les Saix et la Bourgeoise regardent le nord et le sud, et les Saix sauvent les jours de nord. Plus à l'est, le Haut-Giffre est une réserve, à plus de 300 m du sol.",
       "focus": [],
       "view": "massif"
     },
@@ -33,7 +33,7 @@
     {
       "chapter": "Où ça monte",
       "title": "Mieussy : des falaises thermiques et dynamiques, puis le Marcelly",
-      "text": "Sous les décollages de Mieussy, les falaises des faces ouest-sud-ouest sont thermiques, dynamiques et très faciles : du thermique l'après-midi, de la restitution le soir. Depuis le Môle, un peu de thermique suffit pour venir poser ou raccrocher ces falaises. De là, les faces sud de la Pointe de Marcelly servent de relance vers Taninges puis Samoëns, même en automne grâce à leur orientation sud.",
+      "text": "Sous les décollages de Mieussy, les falaises des faces ouest-sud-ouest sont thermiques, dynamiques et très faciles : du thermique l'après-midi, de la restitution le soir. Depuis le Môle, un peu de thermique suffit pour venir poser ou raccrocher ces falaises. De là, les faces sud de la Pointe de Marcelly serviraient de relance vers Taninges puis Samoëns : c'est une déduction.",
       "focus": ["mieussy-falaises", "la-platiere", "marcelly-mieussy-relance", "arve-faucigny/mole-mieussy"],
       "phase": "afternoon"
     },
@@ -61,14 +61,14 @@
     {
       "chapter": "Les sites",
       "title": "Les décollages de montagne : Aouille de Criou, Uble, Couennasse",
-      "text": "Pour qui accepte de marcher, l'Aouille de Criou (2227 m) est un décollage de montagne sud, facile, à environ 200 m de la croix en suivant l'arête est. Ne vous laissez pas reculer par vent fort : la face nord est une falaise verticale de 1000 m, et la réserve de Sixt-Passy est juste au sud. Le Jora, à Sixt, est le décollage intermédiaire de cet itinéraire. La Pointe d'Uble, orientée sud-est, se gagne en une heure et demie de rando depuis Boutigny, sur une pente herbeuse confortable. La Pointe de la Couennasse, orientée sud-ouest, est plus difficile et bien moins fréquentée.",
+      "text": "Pour qui accepte de marcher, l'Aouille de Criou (2227 m) est un décollage de montagne sud, facile, à environ 200 m de la croix en suivant l'arête est. Ne vous laissez pas reculer par vent fort : la face nord est une falaise verticale de 1000 m, et la réserve de Sixt-Passy est juste au sud. Le Jora, à Sixt, est le décollage intermédiaire de cet itinéraire. La Pointe d'Uble, orientée sud-est, se gagne en une heure et demie de rando depuis Boutigny, sur une pente herbeuse confortable. La Pointe de la Couennasse, orientée sud-ouest, est bien moins fréquentée que la Pointe de Perret voisine.",
       "focus": ["aouille-de-criou", "sixt-jora", "pointe-d-uble", "couennasse"],
       "phase": "midday"
     },
     {
       "chapter": "Le parcours classique",
       "title": "Le classique de fin de matinée : les Saix, le Trapechet, le Criou",
-      "text": "Le classique part des Saix dès la fin de matinée vers la Pointe du Trapechet, à l'est, puis gagne le Criou quand sa face ouest est éclairée. En transit très bas depuis les Saix, tapez à droite de l'arête d'en face : ça y remonte en général bien en dynamique, avant de passer sur l'arête du Criou. Sur le Criou, remontez l'arête à la verticale de la partie raide face au village, en évitant la zone sous le vent de la falaise. Le repli est la plaine de Vallon.",
+      "text": "Le classique part des Saix dès la fin de matinée vers la Pointe du Trapechet, à l'est, puis gagne le Criou quand sa face ouest est éclairée. En transit très bas depuis les Saix, tapez à droite de l'arête d'en face : ça y remonte en général bien en dynamique, avant de passer sur l'arête du Criou. Sur le Criou, remontez l'arête à la verticale de la partie raide face au village, en évitant la zone sous le vent de la falaise. Raccrochage manqué ? Posez dans la plaine de Vallon, sur le chemin en cul-de-sac le long de la route de Sixt, discrètement : la zone agricole est sensible.",
       "focus": ["saix-trapechet-criou-classique", "saix-plateau-thermique", "pointe-du-trapechet", "criou-face-ouest"],
       "phase": "midday"
     },
@@ -89,7 +89,7 @@
     {
       "chapter": "Selon le vent météo",
       "title": "Par nord : Mieussy est rude, les Saix à la rescousse",
-      "text": "Par vent de nord, Mieussy est rude. Avec un vent fort à très fort, les vols au Pertuiset et à la Platière sont turbulents, voire très turbulents, et l'atterrissage de la Ferme peut le devenir aussi, avec des rouleaux par fort nord. Les Saix, tournés vers le nord et le nord-ouest, sont au contraire favorables : ils comptent parmi les rares sites utilisables par vent du nord dans la région. Allez donc aux Saix plutôt qu'à Mieussy.",
+      "text": "Par vent de nord, Mieussy est rude. Les vols au Pertuiset et à la Platière sont turbulents, voire très turbulents, et l'atterrissage de la Ferme peut le devenir aussi, avec des rouleaux par fort nord. Les Saix, tournés vers le nord et le nord-ouest, sont au contraire favorables : ils comptent parmi les rares sites utilisables par vent du nord dans la région. Allez donc aux Saix plutôt qu'à Mieussy.",
       "focus": ["mieussy-nord-turbulent", "mieussy-atterro-nord", "samoens-saix-nord"],
       "phase": "afternoon",
       "wind": { "from": "N", "kmh": 20 },
@@ -98,7 +98,7 @@
     {
       "chapter": "Selon le vent météo",
       "title": "Par ouest, sud-ouest ou sud : choisir son versant",
-      "text": "Par ouest à sud-ouest, la Platière est favorable, en thermique comme en dynamique, et le Pertuiset aussi. Par tendance sud à sud-est, le décollage de la Platière près du parking passe sous le vent : préférez le Pertuiset. À Samoëns, c'est l'inverse. Par vent d'ouest, les Saix ont des rouleaux, et la Bourgeoise est favorable ; par sud et sud-ouest, c'est la Bourgeoise qui a des rouleaux en bout de crête.",
+      "text": "Par ouest à sud-ouest, la Platière est favorable, en thermique comme en dynamique, et le Pertuiset aussi. Par tendance sud à sud-est, le décollage de la Platière près du parking passe sous le vent : préférez le Pertuiset. À Samoëns, par vent d'ouest, les Saix ont des rouleaux, et la Bourgeoise est favorable ; par sud et sud-ouest, c'est la Bourgeoise qui a des rouleaux en bout de crête.",
       "focus": ["la-platiere", "platiere-sud-sous-le-vent", "samoens-saix-rouleaux-ouest", "samoens-bourgeoise-rouleaux"],
       "phase": "afternoon",
       "wind": { "from": "SO", "kmh": 20 },

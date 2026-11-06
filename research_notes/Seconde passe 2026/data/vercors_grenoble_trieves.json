@@ -2891,7 +2891,7 @@
       "synoptic_effects": [
         {
           "wind": "N",
-          "effect": "Le nord renforce les brises de Lans et de Saint-Martin, où le décollage est mieux alimenté. Par nord modéré, 10-25 km/h, l'Aigle se vole en dynamique, et les sorties de décollage secouent au Belvédère. Autrans-Bellecombe n'est pas praticable. Par nord fort, repliez-vous autour de Grenoble sur Montaud, Courtet ou Montlambert. Montaud est alors un site du soir thermodynamique, avec un départ vers le sud.",
+          "effect": "Le nord renforce les brises de Lans et de Saint-Martin, où le décollage est mieux alimenté. Par nord modéré, 10-25 km/h, l'Aigle se vole en dynamique, et les sorties de décollage secouent au Belvédère. Autrans-Bellecombe n'est pas praticable. Par nord fort, repliez-vous autour de Grenoble sur Montaud, Courtet ou Montlambert. Montaud reste alors volable.",
           "sources": [
             "S41",
             "S38",
@@ -5892,7 +5892,7 @@
       "id": "matheysine",
       "name": "Matheysine et Drac (lac de Monteynard, lacs de Laffrey, La Mure, Sénépy, Conest, Valbonnais)",
       "parent_massif": "Préalpes – Matheysine",
-      "summary": "Ici, c'est le vent du nord qui commande. Le lac de Monteynard, réputé deuxième lac le plus venté d'Europe, ne marche l'été presque que par nord thermique. Ce vent se lève entre 11h et 13h, culmine vers 15h, faiblit vers 16h30-18h, et reprend parfois vers 17h, plus à l'ouest. Il souffle à 8-15 nds sans vent synoptique, à 12-20 nds avec du nord en altitude.\n\nLe mécanisme : les pentes et le fond du Trièves chauffent, et le vent s'accélère en venturi dans les anciennes gorges du Drac. Des cartes de brises du Vercors tracent une flèche qui descend le Drac de Grenoble par Vif jusqu'à Miribel-Lanchâtre et Monteynard, et une longue ligne de Vizille à Laffrey, La Mure, Corps et Saint-Bonnet-en-Champsaur. Sur le plateau matheysin, Laffrey a un nord dominant, thermique, de 10-15 nds, canalisé par le plateau. On y vole par bise légère, sous 15 km/h, avec du thermique, ou en dynamique pur par 20-30 km/h. On l'évite par nord fort et instable.\n\nLes décollages regardent surtout le sud et le sud-ouest : Sénépy, Combenon, Conest. Ils offrent du soaring par sud faible, mais la brise de nord s'installe dès 12h, avec de forts cisaillements au Conest et un atterrissage turbulent à Connex.\n\nEn cross, l'après-midi, le couloir du Drac est un tube de vent de nord : transitions basses et atterrissages se font face au nord. Pour rejoindre le Champsaur par la Matheysine, il faut enchaîner le Conest, le Sénépy et les crêtes de Valbonnais.",
+      "summary": "Ici, c'est le vent du nord qui commande. Le lac de Monteynard, réputé deuxième lac le plus venté d'Europe, ne marche l'été presque que par nord thermique. Ce vent se lève entre 11h et 13h, culmine vers 15h, faiblit vers 16h30-18h, et reprend parfois vers 17h, plus à l'ouest. Il souffle à 8-15 nds sans vent synoptique, à 12-20 nds avec du nord en altitude.\n\nLe mécanisme : les pentes et le fond du Trièves chauffent, et le vent s'accélère en venturi dans les anciennes gorges du Drac. Des cartes de brises du Vercors tracent une flèche qui descend le Drac de Grenoble par Vif jusqu'à Miribel-Lanchâtre et Monteynard, et une longue ligne de Vizille à Laffrey, La Mure, Corps et Saint-Bonnet-en-Champsaur. Sur le plateau matheysin, Laffrey a un nord dominant, thermique, de 10-15 nds, canalisé par le plateau. On y vole par bise légère, sous 15 km/h, avec du thermique, ou en dynamique pur par 20-30 km/h. On l'évite par nord fort et instable.\n\nLes décollages regardent surtout le sud et le sud-ouest : Sénépy, Combenon, Conest. Ils offrent du soaring par sud faible, mais la brise de nord s'installe dès 12h, avec de forts cisaillements au Conest et un atterrissage turbulent à Connex.\n\nEn cross, l'après-midi, le couloir du Drac est un tube de vent de nord : on en déduit d'y éviter les transitions basses et de s'y poser face au nord. Rejoindre le Champsaur par la Matheysine reste une hypothèse, par le Conest, le Sénépy et les crêtes de Valbonnais, sans vol connu.",
       "bbox": [
         5.6,
         44.65,
@@ -7042,7 +7042,7 @@
         },
         {
           "wind": "Vent du Sud (flux de sud en altitude)",
-          "effect": "Par sud en altitude, le Coiro et le Taillefer se prennent sur le versant ouest. Un sud établi pousse les pilotes des Richards vers Chamrousse, avec des plafonds de 2800 à 3100 m et un Coiro puissant sur l'épaule sud-est. Par sud très fort, plus de 90 km/h au sol, le Coiro ne donne rien : le vent est canalisé en sud-sud-est au Taillefer, et les thermiques de la face ouest sont sous le vent.",
+          "effect": "Par sud en altitude, le Coiro et le Taillefer se prennent sur le versant ouest. Un sud établi pousse les pilotes des Richards vers Chamrousse, avec des plafonds de 2800 à 3100 m et un Coiro puissant sur l'épaule sud-est. Par sud très fort, avec plus de 90 km/h de vitesse sol au GPS, le Coiro ne donne rien : le vent est canalisé en sud-sud-est au Taillefer, et les thermiques de la face ouest sont sous le vent.",
           "sources": [
             "S232",
             "S233",
@@ -7147,7 +7147,7 @@
         }
       ],
       "tips": [
-        "Le nord de Monteynard souffle d'environ 13h à environ 18h, au plus fort vers 15h : à ces heures, évitez les transitions basses dans le couloir du Drac [S1][S3].",
+        "Le nord de Monteynard souffle d'environ 13h à environ 18h, au plus fort vers 15h : à ces heures, mieux vaut éviter les transitions basses dans le couloir du Drac, par déduction [S1][S3].",
         "Si la bise souffle en altitude, comptez 12-20 nds au ras du lac [S1].",
         "Au Conest, décollez avant 12h : ensuite la brise s'installe, avec de forts cisaillements. Le soaring de sud y tient jusqu'à 25 km/h [S177].",
         "À Laffrey, il n'y a plus d'atterrissage officiel : seul le retour au décollage est autorisé. Méfiez-vous du gradient et du venturi au village de Laffrey et aux ruines de Séchilienne [S106].",

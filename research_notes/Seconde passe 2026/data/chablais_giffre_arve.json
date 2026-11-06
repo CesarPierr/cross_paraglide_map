@@ -661,7 +661,7 @@
         },
         {
           "wind": "NW",
-          "effect": "Par nord-ouest, la Table d'orientation est idéale, et les Crêts restent à l'écart. Le Coin est favorable par sud-ouest, ouest et nord-ouest. Au-dessus de la plaine, un cross parti du Téléphérique peut dériver de 25 km/h vers le nord-ouest. Les raccroches sur des faces nord-ouest, comme Sous-Dine ou le Parmelan, ne sont pas idéales non plus : le Parmelan secoue.",
+          "effect": "Par nord-ouest, la Table d'orientation est idéale, et les Crêts restent à l'écart. Le Coin est favorable par sud-ouest, ouest et nord-ouest. Au-dessus de la plaine, un cross parti du Téléphérique s'est laissé dériver dans un flux de nord-ouest d'environ 25 km/h. Les raccroches sur des faces nord-ouest, comme Sous-Dine ou le Parmelan, ne sont pas idéales non plus : le Parmelan secoue.",
           "sources": [
             "S13",
             "S55",
@@ -941,7 +941,7 @@
       "tips": [
         "Prévoyez votre atterrissage : Troinex n'est ouvert qu'aux titulaires du brevet IPPI 4. Jules Ferry convient aux autres, Le Coin aux confirmés [S37].",
         "Au Téléphérique, restez au vent du col de Monnetier, et méfiez-vous des câbles et des arbres à gauche en sortie de décollage.",
-        "Avant de venir, consultez les interdictions temporaires (zones ZRT du G7, Tour de France 2026) : elles ferment parfois le survol à 1000 m/sol et à 500 m horizontal, donc le vol aux Crêts.",
+        "Avant de venir, consultez les interdictions temporaires (il y en a eu pour le G7 et le Tour de France 2026) : elles ferment parfois le survol à 1000 m/sol et à 500 m horizontal, donc le vol aux Crêts.",
         "Regardez la bise et le vent à 850 hPa sur le Salève avant de choisir entre les décollages du nord (Téléphérique, Table) et ceux de l'ouest et du sud-ouest (Crêts).",
         "Un vachage peut arriver à tout le monde : pliez en bordure de champ, puis contactez le propriétaire ou les responsables du site en cas de dégâts.",
         "Pour sortir vers Annecy par flux de nord-ouest, ne quittez pas trop tôt le Téléphérique : un vol a dû rester une heure à zéro avant le thermique (1645 m). La plaine se traverse par le thermique de La Chapelle-Rambaud.",
@@ -954,7 +954,7 @@
       "id": "arve-faucigny",
       "name": "Faucigny - vallée de l'Arve (Annemasse → Cluses → Sallanches → Passy), Plaine-Joux, Varan et Le Môle",
       "parent_massif": "Préalpes du Nord / Faucigny",
-      "summary": "La vallée de l'Arve est un long couloir qui draine l'air du bassin genevois vers le Mont-Blanc. Les cartes de brises y tracent une flèche continue d'Annemasse à Bonneville, Marignier et Cluses, prolongée par la cluse de Cluses vers Sallanches, avec une branche vers le Borne à Saint-Pierre-en-Faucigny.\n\nAu bout du couloir, la brise de Sallanches commande. Très forte côté Sallanches, elle rend souvent le lac de Passy inutilisable l'après-midi. Elle faiblit en tournant vers Passy, puis se divise autour du Mont d'Arbois et à l'entrée de la vallée de Saint-Gervais, avec parfois un retour marqué d'est ou de sud-est côté Varan. L'après-midi, elle souffle le plus souvent entre 20 et 25 km/h, peut forcir jusqu'à 30, et reste sensible jusqu'à 2500 m, parfois 3000 m ; la cluse Cluses-Magland la renforce. Face au Mont-Blanc, Plaine-Joux, Varan, Frioland et Platé offrent des thermiques réguliers et le secteur le mieux protégé. Par sud-ouest et ouest forts, ils passent pourtant sous le vent du relief.\n\nLe second grand piège est le foehn : rotors et air très perturbé, probable si Aoste-Annecy atteint -4 hPa. Plus au nord, le Môle (sud à ouest, 1863 m) se vole selon le flux, avec des atterrissages à La Tour (nord), à Ayse (sud) ou à Bonneville. Agy, Andey, Sur Cou et Carroz-Araches complètent l'offre.\n\nVers les Aravis, on passe par la vallée du Borne, le plateau des Bénés et Cordon.",
+      "summary": "La vallée de l'Arve est un long couloir qui draine l'air du bassin genevois vers le Mont-Blanc. Les cartes de brises y tracent une flèche continue d'Annemasse à Bonneville, Marignier et Cluses, prolongée par la cluse de Cluses vers Sallanches, avec une branche vers le Borne à Saint-Pierre-en-Faucigny.\n\nAu bout du couloir, la brise de Sallanches commande. Très forte côté Sallanches, elle rend souvent le lac de Passy inutilisable l'après-midi. Elle faiblit en tournant vers Passy, puis se divise autour du Mont d'Arbois et à l'entrée de la vallée de Saint-Gervais, avec parfois un retour marqué d'est ou de sud-est côté Varan. Comme les autres brises du pays du Mont-Blanc, elle souffle l'après-midi le plus souvent entre 20 et 25 km/h, peut forcir jusqu'à 30, et reste sensible jusqu'à 2500 m, parfois 3000 m ; la cluse Cluses-Magland la renforce sans doute. Face au Mont-Blanc, Plaine-Joux, Varan, Frioland et Platé offrent des thermiques réguliers et le secteur le mieux protégé. Par sud-ouest et ouest forts, Plaine-Joux passe pourtant sous le vent du relief.\n\nLe second grand piège est le foehn : rotors et air très perturbé, probable si Aoste-Annecy atteint -4 hPa. Plus au nord, le Môle (sud à ouest, 1863 m) se vole selon le flux, avec des atterrissages à La Tour (nord), à Ayse (sud) ou à Bonneville. Agy, Andey, Sur Cou et Carroz-Araches complètent l'offre.\n\nVers les Aravis, on passe par la vallée du Borne, le plateau des Bénés et Cordon.",
       "bbox": [
         6.2,
         45.84,
@@ -2559,7 +2559,7 @@
         },
         {
           "wind": "W",
-          "effect": "Par vent d'ouest, évitez Plaine-Joux : on y vole sous le vent du relief, contré pour rejoindre les atterrissages, et le vol y est déconseillé par fort ouest. Barmerousse et Pormenaz, tournés vers l'ouest, sont orientés vers ce vent, comme le Lachat d'en haut et le Môle pour le soaring du soir. À Sur Cou et Orange, gardez de la marge pour rentrer.",
+          "effect": "Par vent d'ouest, évitez Plaine-Joux : on y vole sous le vent du relief, contré pour rejoindre les atterrissages, et le vol y est déconseillé par fort ouest. Barmerousse et Pormenaz, tournés vers l'ouest, sont orientés vers ce vent, comme le Môle pour le soaring du soir. Le Lachat d'en haut, tourné à l'ouest-sud-ouest, est classé défavorable par ouest. À Sur Cou et Orange, gardez de la marge pour rentrer.",
           "sources": [
             "S6",
             "S9",
@@ -3741,7 +3741,7 @@
       "synoptic_effects": [
         {
           "wind": "N",
-          "effect": "Par vent de nord, Mieussy est rude : par vent fort à très fort, le Pertuiset et la Platière sont turbulents, voire très turbulents, et l'atterrissage de la Ferme très turbulent. Les Saix, orientés nord à nord-ouest, sont au contraire favorables : ils permettent de voler quand le nord empêche Mieussy.",
+          "effect": "Par vent de nord, Mieussy est rude : le Pertuiset et la Platière sont turbulents, voire très turbulents, et l'atterrissage de la Ferme peut l'être aussi. Les Saix, orientés nord à nord-ouest, sont au contraire favorables : ils permettent de voler quand le nord empêche Mieussy.",
           "sources": [
             "S20",
             "S154",
@@ -3997,7 +3997,7 @@
       "id": "chablais",
       "name": "Chablais (Léman, Thonon - Évian, vallées d'Aulps, d'Abondance, du Brevon, Morzine - Les Gets, Thollon, Dent d'Oche)",
       "parent_massif": "Préalpes du Nord / Chablais",
-      "summary": "Le Chablais ouvre sur le Léman, et c'est le lac qui commande. La bise domine le vent synoptique : c'est le vent le plus fréquent, de beau temps, froid et sec. S'y ajoutent le vent de sud-ouest d'avant dépression, la vaudaire du Valais et les vents d'orage : le bornan, de 30 à 40 nœuds, et le môlan, plus modéré. Les brises du lac alimentent les vallées : le rebat de jour, le séchard léger, le morget de nuit.\n\nLes cartes de brises montrent deux grands couloirs vers l'intérieur : de Thonon vers Morzine par la vallée d'Aulps, et de Bioge vers La Chapelle par la vallée d'Abondance. Une flèche relie aussi le lac à la Vallée Verte, jusqu'à Boëge. À Abondance, la brise de vallée s'installe très tôt et peut être très forte avant midi : l'atterrissage, en sortie de l'étranglement des Portes, est délicat. À Morzine, Super Morzine, orienté du sud-est au sud-ouest, a une sortie turbulente par forte brise, des rouleaux par vent de nord et des dégueulantes par tendance sud. L'Aubergade est alors sous le vent : préférez les Putheys.\n\nOrcier offre des décollages nord à nord-ouest, plafonnés par la TMA de Genève à 1800 m au maximum. Thollon, Bernex et la Dent d'Oche se volent surtout par vent de nord. Les zones de protection du gypaète, les TMA 6 et 7 de Genève et la réserve de Sixt-Passy contraignent les transitions.\n\nLes cross documentés partent de Morzine : la boucle du Criou et des Saix, ou 85 km depuis le Revard par la Tournette et le Mont Chéry.",
+      "summary": "Le Chablais ouvre sur le Léman, et c'est le lac qui commande. La bise domine le vent synoptique : c'est le vent le plus fréquent, de beau temps, froid et sec. S'y ajoutent le vent de sud-ouest d'avant dépression, la vaudaire du Valais et les vents d'orage : le bornan, de 30 à 40 nœuds, et le môlan, plus modéré. Les brises du lac animent les rives : faibles le jour, comme le rebat et le séchard, et la nuit le morget côté suisse, les albrans et le birran côté français.\n\nLes cartes de brises montrent deux grands couloirs vers l'intérieur : de Thonon vers Morzine par la vallée d'Aulps, et de Bioge vers La Chapelle par la vallée d'Abondance. Une flèche relie aussi le lac à la Vallée Verte, jusqu'à Boëge. À Abondance, la brise de vallée s'installe très tôt et peut être très forte avant midi : l'atterrissage, en sortie de l'étranglement des Portes, est délicat. À Morzine, Super Morzine, orienté du sud-est au sud-ouest, a une sortie turbulente par forte brise, des rouleaux par vent de nord et des dégueulantes par tendance sud. L'Aubergade est alors sous le vent : préférez les Putheys.\n\nOrcier offre des décollages tournés surtout au nord et au nord-ouest, plafonnés par la TMA de Genève à 1800 m au maximum. Thollon, Bernex et la Dent d'Oche se volent surtout par vent de nord. Les zones de protection du gypaète, les TMA 6 et 7 de Genève et la réserve de Sixt-Passy contraignent les transitions.\n\nLes cross documentés partent de Morzine : la boucle du Criou et des Saix, ou 85 km depuis le Revard par la Tournette et le Mont Chéry.",
       "bbox": [
         6.25,
         46.15,
@@ -5439,7 +5439,7 @@
         },
         {
           "wind": "SE",
-          "effect": "Par sud-est, la vaudaire apporte sur le Haut-Lac des rafales chaudes et sèches, à Lugrin et à Thollon. Un foehn est possible à Châtel-Morclan.",
+          "effect": "Par sud-est, la vaudaire apporte sur le Haut-Lac des rafales, chaudes et sèches quand elle vient du foehn. Elle peut toucher Lugrin et Thollon : c'est une déduction. Un foehn est possible à Châtel-Morclan.",
           "sources": [
             "S33",
             "S34",
@@ -5448,7 +5448,7 @@
         },
         {
           "wind": "Foehn",
-          "effect": "À Châtel-Morclan, l'effet de foehn permet de partir en cross. La vaudaire souffle sur le Haut-Lac, et les vallées voisines de l'Arve sont aussi concernées.",
+          "effect": "Châtel-Morclan est un départ de cross, et un effet de foehn y est signalé : restez attentif. La vaudaire souffle sur le Haut-Lac, et les vallées voisines de l'Arve sont aussi concernées.",
           "sources": [
             "S172",
             "S33",
@@ -5553,8 +5553,8 @@
         "À Abondance, approchez en PTU et estimez la brise avant de vous poser : le terrain est en sortie de l'étranglement des Portes, et la brise y est forte dès le matin.",
         "À Super Morzine, par tendance sud et forte activité thermique, restez prudent au-dessus de la ville, et posez aux Putheys plutôt qu'à l'Aubergade.",
         "À Orcier, respectez la TMA de Genève : pas plus de 500 m au-dessus du relief, 1800 m au maximum. Évitez l'ouest et le nord-est soutenu.",
-        "Vaudaire, bornan et môlan s'annoncent par les orages sur les Préalpes et arrivent en rafales sur le lac et sur la rive : posez-vous avant.",
-        "Le rebat n'est pas la brise de lac qu'on imagine : c'est le renversement de jour de la brise de nuit, canalisé le long de la côte.",
+        "Le bornan et le môlan s'annoncent par les orages sur les Préalpes. La vaudaire arrive soudain sur le Haut-Lac, souvent avec des orages venus du Jura. Ces rafales frappent le lac et la rive : posez-vous avant.",
+        "Le rebat n'est pas la brise de lac qu'on imagine : c'est le renversement de jour de la brise de nuit, canalisé le long de la côte. Sur la rive française, ces brises de jour restent faibles.",
         "Au printemps, vérifiez dans Spotair les zones de protection du gypaète actives (Avoriaz, Jordières, Ardoisières)."
       ]
     }

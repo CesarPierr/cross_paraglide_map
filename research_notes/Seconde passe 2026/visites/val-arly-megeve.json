@@ -5,7 +5,7 @@
     {
       "chapter": "Le massif",
       "title": "Bienvenue à Megève, un col entre deux vallées",
-      "text": "Bienvenue à Megève, posé sur une selle d'environ 1100 m : la ligne de partage des eaux entre l'Arve, côté Sallanches, et l'Arly, côté Praz-sur-Arly et Albertville. Tout le secteur s'explique par là. Chaque après-midi, deux brises de vallée, l'une montant de l'Arve, l'autre de l'Arly, remontent vers ce col et s'y rencontrent. Megève est donc un site de brise et de confluence, où l'on vole paisiblement, mais où les atterrissages au bout de chaque vallée subissent une brise forte. La visite suit cette journée, puis les sites, le grand itinéraire et les pièges.",
+      "text": "Bienvenue à Megève, posé sur une selle d'environ 1100 m : la ligne de partage des eaux entre l'Arve, côté Sallanches, et l'Arly, côté Praz-sur-Arly et Albertville. Tout le secteur s'explique par là. L'après-midi, deux brises de vallée, l'une montant de l'Arve, l'autre de l'Arly, remontent vers ce col et peuvent s'y rencontrer. Megève est donc un site de brise et de confluence, où l'on vole paisiblement, mais où les atterrissages au bout de chaque vallée subissent une brise forte. La visite suit cette journée, puis les sites, le grand itinéraire et les pièges.",
       "focus": [],
       "view": "massif"
     },
@@ -61,14 +61,14 @@
     {
       "chapter": "Les sites",
       "title": "Les atterrissages : où la brise a le dernier mot",
-      "text": "Au Palais des Sports, la confluence de col rend l'approche délicate, et le terrain est inatteignable par vent soutenu de nord à nord-est : prévoyez Praz-sur-Arly. Là, le Plan de Cassioz est un petit terrain triangulaire entre route et ligne électrique, à repérer avant de décoller, utilisable seulement l'été. Côté Arve, Rochefort s'utilise le matin, car il est turbulent l'après-midi. Lépigny est un grand terrain accessible aux débutants, mais agité par la brise forte de l'après-midi.",
+      "text": "Au Palais des Sports, la confluence de col rend l'approche délicate, et le terrain est inatteignable par vent soutenu de nord à nord-est : prévoyez Praz-sur-Arly. Là, le Plan de Cassioz est un petit terrain triangulaire entre route et ligne électrique, à repérer avant de décoller, utilisable seulement l'été. Côté Arve, Rochefort s'utilise le matin, car il est turbulent l'après-midi. Lépigny est un grand terrain accessible aux débutants, où la brise est forte l'après-midi.",
       "focus": ["megeve-palais-confluence-col", "praz-sur-arly-ligne-ht", "cordon-rochefort", "lepigny-domancy"],
       "phase": "afternoon"
     },
     {
       "chapter": "Le parcours classique",
       "title": "Traverser le Val d'Arly depuis Bisanne",
-      "text": "Un vol d'août montre le grand itinéraire du secteur. Il décolle du Signal de Bisanne à 11 h 49, avant que la brise ne passe arrière, et prend un premier thermique à 2700 m. Il monte à 3135 m à la verticale de l'Aiguille Croche, traverse le Val d'Arly et raccroche à 3100 m au-dessus de Praz-sur-Arly, d'où la rue de cumulus des Aravis l'emporte. D'autres vols ont refait 3000 m au même endroit.",
+      "text": "Un vol d'août montre le grand itinéraire du secteur. Il décolle du Signal de Bisanne à 11 h 49, avant que la brise ne passe arrière, et prend un premier thermique à 2700 m. Il monte à 3135 m à la verticale de l'Aiguille Croche, traverse le Val d'Arly et raccroche à 3100 m au-dessus de Praz-sur-Arly, d'où la rue de cumulus des Aravis l'emporte. Un autre jour, un vol a traversé vers Praz-sur-Arly après un plafond de 3000 m, puis retrouvé 3000 m avant de passer les Aravis.",
       "focus": ["bisanne-aiguille-croche-praz-aravis-2020", "aiguille-croche-plafond-3135", "praz-sur-arly-relance-3100", "bisanne-brise-arly-dos"],
       "phase": "midday"
     },
@@ -96,7 +96,7 @@
     {
       "chapter": "Selon le vent météo",
       "title": "Par nord : Rochebrune oui, le Palais des Sports non",
-      "text": "Par vent de nord, Rochebrune se vole, mais le Palais des Sports devient inatteignable dès que le vent est soutenu : prévoyez Praz-sur-Arly. À Cordon, la Tête du Planet convient par léger nord, et le Crêt du Midi se vole directement vers Praz-sur-Arly. Le nord de la vallée de l'Arve alimente aussi la confluence de Megève.",
+      "text": "Par vent de nord, Rochebrune se vole, mais le Palais des Sports devient inatteignable dès que le vent est soutenu : prévoyez Praz-sur-Arly. À Cordon, la Tête du Planet convient par léger nord, et le Crêt du Midi se vole directement vers Praz-sur-Arly. La brise de nord de la vallée de l'Arve alimente parfois la confluence de Megève.",
       "focus": ["megeve-palais-confluence-col", "cordon-tete-du-planet", "thermique-de-l-alpette"],
       "wind": { "from": "N", "kmh": 15 },
       "phase": "afternoon",

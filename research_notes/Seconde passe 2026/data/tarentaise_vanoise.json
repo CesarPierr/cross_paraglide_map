@@ -171,13 +171,14 @@
             "max": null
           },
           "season": "été",
-          "description": "En basculant par le col de la Chal, à l'est de l'Aiguille Grive, la brise du Ponthurin nourrit la brise descendante de la vallée de l'Arc, côté Arc 2000. Le versant est de l'Aiguille Rousse, à son pied, devient très inhospitalier, et la combe entre les deux aiguilles, au Grizzly, est turbulente. Si vous décollez de l'Aiguille Grive en début d'après-midi, dégagez vite vers l'ouest.",
+          "description": "En basculant par le col de la Chal, à l'est de l'Aiguille Grive, la branche de brise du Ponthurin partie de Landry nourrit la brise descendante de la vallée de l'Arc, côté Arc 2000. Le versant est de l'Aiguille Rousse, à son pied, devient très inhospitalier, et la combe entre les deux aiguilles, au Grizzly, est turbulente. Si vous décollez de l'Aiguille Grive en début d'après-midi, dégagez vite vers l'ouest, pour ne pas devoir contourner l'Aiguille Rousse du mauvais côté.",
           "confidence": "medium",
           "sources": [
             "S35",
             "S36",
             "S77",
-            "S59"
+            "S59",
+            "S86"
           ],
           "note": "Position du col approximative : les sources ne la donnent pas, et une fiche place le « col de la Chail » sur le trajet du Transarc vers l'Aiguille Grive."
         },
@@ -390,38 +391,6 @@
             "S85"
           ],
           "note": "Ligne tracée sur les deux atterrissages classés en confluence, prolongée au centre-ville ; aucune source ne la dessine. Un texte plus ancien classait en tête La Bergerie, ancien terrain voisin du Versoyen, puis La Gare."
-        },
-        {
-          "id": "confluence-col-de-la-chal",
-          "name": "Basculement de la brise du Ponthurin vers l'Arc par le col de la Chal (Aiguille Grive)",
-          "geometry": {
-            "type": "LineString",
-            "coordinates": [
-              [
-                6.8041,
-                45.5488
-              ],
-              [
-                6.815,
-                45.559
-              ],
-              [
-                6.8356,
-                45.5667
-              ]
-            ]
-          },
-          "when": "Début d'après-midi, régime de brise établi",
-          "mechanism": "La branche de brise partie de Landry bascule par le col de la Chal vers la vallée de l'Arc. La combe entre l'Aiguille Grive et l'Aiguille Rousse, au Grizzly, est turbulente, et le versant est de l'Aiguille Rousse est à éviter.",
-          "usage": "Après le décollage de l'Aiguille Grive, dégagez vite sur le versant ouest, pour ne pas devoir contourner l'Aiguille Rousse du mauvais côté.",
-          "confidence": "medium",
-          "sources": [
-            "S35",
-            "S36",
-            "S77",
-            "S86"
-          ],
-          "note": "Aucune source ne parle de confluence ici : elles décrivent un basculement de brise. Tracé indicatif entre l'Aiguille Grive (balise de la course 2024) et Arc 2000 (identifiant de fiche 994), col approximatif."
         },
         {
           "id": "confluence-cormet-areches-aime",
@@ -1017,23 +986,6 @@
           ],
           "confidence": "low",
           "note": "Élément déduit du relief et de la description de la Tovière ; rien ne le confirme, ni l'exposition, ni le cheminement."
-        },
-        {
-          "id": "montagne-de-tete-valmorel-thermiques",
-          "name": "Valmorel : Les Bachals (thermiques dès 16h) et crête du Gollet (dynamique dès 12h)",
-          "lon": 6.4252,
-          "lat": 45.466,
-          "alt_m": 1801,
-          "coord_quality": "source",
-          "best_hours": "Les Bachals : thermiques puissants à partir de 16h ; crête du Gollet : dynamique à partir de 12h (anciennes fiches du catalogue)",
-          "trigger": "décollages des Bachals et de la crête du Gollet, à Valmorel",
-          "description": "Autour de Valmorel, aux Bachals, les thermiques deviennent puissants à partir de 16h et permettent d'aller jusqu'à la crête. Sur la crête du Gollet, la dynamique commence dès 12h. Les Bachals marchent au printemps et au début de l'été, le Gollet l'été.",
-          "confidence": "medium",
-          "sources": [
-            "S121",
-            "S67"
-          ],
-          "note": "Texte repris d'anciennes fiches lors de l'audit d'octobre 2026, qui décrivent ces deux décollages sans les placer sous la Montagne de Tête. Il n'y a aucun point chaud kk7 ni aucun thermique documenté à moins de 4 km, le site étant peu volé ; position celle du décollage, fiche 3033."
         },
         {
           "id": "plan-de-la-boutte-thermique",
@@ -2075,7 +2027,11 @@
             "S67"
           ],
           "orientations": [],
-          "note": "Informations tirées d'anciennes fiches : aux Bachals, thermiques puissants à partir de 16h ; sur la crête du Gollet, dynamique dès 12h."
+          "note": "Informations tirées d'anciennes fiches : aux Bachals, thermiques puissants à partir de 16h ; sur la crête du Gollet, dynamique dès 12h. Fiche FFVL 3033 relue en ligne (modifiée le 20/10/2026) : semble pratiqué, sans convention identifiée, 118 décollages constatés en 2025. Les Bachals et la crête du Gollet ne sont pas positionnés par les sources.",
+          "possible": [
+            "Autour de Valmorel, d'anciennes fiches donnent aux Bachals des thermiques puissants à partir de 16h, au printemps et au début de l'été, qui permettent d'aller jusqu'à la crête.",
+            "Sur la crête du Gollet, ces fiches donnent une dynamique dès 12h, l'été."
+          ]
         }
       ],
       "landings": [
@@ -2765,45 +2721,6 @@
             "S52"
           ],
           "note": "Vitesse non documentée : « très forte » vise la brise de la face sud de Caron, pas celle de la vallée."
-        },
-        {
-          "id": "brise-allues-meribel",
-          "name": "Brise montante de la vallée des Allues, déduite du relief (Brides-les-Bains → Méribel)",
-          "kind": "valley",
-          "waypoints": [
-            {
-              "name": "Brides-les-Bains",
-              "lon": 6.5675,
-              "lat": 45.4533,
-              "coord_quality": "source"
-            },
-            {
-              "name": "Méribel (atterrissage Plan Lançon)",
-              "lon": 6.573,
-              "lat": 45.3844,
-              "coord_quality": "source"
-            },
-            {
-              "name": "Pas du Lac (Méribel)",
-              "lon": 6.61,
-              "lat": 45.3778,
-              "coord_quality": "source"
-            }
-          ],
-          "hours": "Après-midi d'été (déduit de la forme de la vallée)",
-          "speed_kmh": {
-            "typical": null,
-            "max": null
-          },
-          "season": "printemps-été",
-          "description": "Aucune source ne décrit cette brise : sens et horaires sont déduits de la forme de la vallée. À Méribel, un vent de sud fort se lève en fin de journée, et ne vient donc pas de l'aval : n'allez pas plus loin que l'atterrissage. Ne décollez ni n'atterrissez sur les pistes, et au col de la Loze, évitez l'axe de l'altiport de Méribel.",
-          "confidence": "low",
-          "sources": [
-            "S52",
-            "S131",
-            "S132"
-          ],
-          "note": "L'atterrissage est près d'une ligne électrique, sur la route, avec une finale au-dessus du tennis."
         }
       ],
       "convergences": [
@@ -3547,10 +3464,12 @@
           "alt_m": 1520,
           "coord_quality": "source",
           "ffvl_id": 5315,
-          "description": "On se pose le long de la ligne électrique et de la route, avec une finale au-dessus du tennis. Par vent de sud en fin de journée, n'allez pas plus loin que le terrain.",
+          "description": "On se pose le long de la ligne électrique et de la route, avec une finale au-dessus du tennis. Par vent de sud en fin de journée, n'allez pas plus loin que le terrain. Ne décollez ni n'atterrissez sur les pistes, et au col de la Loze, évitez l'axe de l'altiport de Méribel.",
           "sources": [
             "S133",
-            "S52"
+            "S52",
+            "S131",
+            "S132"
           ]
         },
         {

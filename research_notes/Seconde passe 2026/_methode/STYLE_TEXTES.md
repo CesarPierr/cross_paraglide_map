@@ -178,6 +178,52 @@ qui compte, il le dit d'abord, il montre du doigt les lieux, il donne l'heure.
 9. **Pas de remplissage.** Ni « Retenez une idée simple : » en tête d'étape (le « À retenir » final de la visite est autre chose), ni « Regardez sur la carte »,
    ni « il convient de noter ». Ni « en effet », ni « par ailleurs ».
 
+### Du lieu au détail : un texte qu'on comprend en le lisant
+
+La règle la plus importante pour le lecteur. On ne comprend pas un détail quand on ne
+comprend pas encore le lieu : **d'abord la structure, ensuite l'essentiel, enfin les
+détails**. Un texte juste mais lu comme un inventaire ne sert à rien.
+
+**L'ordre, pour tout texte :**
+
+1. **Ce qu'est le lieu et où il se trouve.** La première phrase situe : par rapport à une
+   vallée, un sommet, un village que le lecteur connaît déjà ou vient de lire. Son rôle dans
+   le massif : le décollage du matin, la relance avant la traversée, le terrain de repli.
+2. **À quoi il sert et son risque principal.** Quand on y va, ce qu'on y vient chercher, et
+   surtout ce qui peut faire mal. **Un danger, une interdiction ou une règle ne finissent
+   jamais un texte comme un détail** : ils viennent ici, dits clairement.
+3. **Comment ça marche.** Le mécanisme, ce qu'on va sentir, à quelle heure, pour quelle
+   raison, chaque phrase s'appuyant sur la précédente.
+4. **Les détails.** Accès, marche, niveau, câbles secondaires, du plus utile au moins utile.
+   Ce qui n'aide pas à comprendre ni à décider va dans `possible` ou `note`.
+
+**Par catégorie, la première phrase répond à :**
+
+| Élément | La première phrase dit |
+|---|---|
+| Décollage | où il est, vers où il regarde, à quel moment de la journée on y va |
+| Atterrissage | où il est, depuis quels vols on s'y pose, s'il est ouvert ou non |
+| Thermique | où on le trouve, sur quel relief, à quel moment du vol il sert |
+| Soaring | quelle pente, par quel vent, sur quelle longueur |
+| Brise | d'où elle vient, où elle va, à quelle heure |
+| Convergence | quels flux se rencontrent, où, et ce qu'on en fait |
+| Danger | où, quand, et ce qu'on fait pour l'éviter, dès la première phrase |
+| Itinéraire | d'où à où, par quel chemin, ce qui décide de la réussite |
+
+**Un récit, pas une fiche.** Des phrases complètes qui s'enchaînent, chacune donnant envie
+de lire la suivante. On bannit la suite de notes (« Décollage d'été, raide, avec des câbles,
+des arbres et des rochers. ») et la phrase de fin isolée (« Il y a des câbles. »). On garde
+les lieux vivants : ce qu'on voit, ce qu'on sent, où l'on va ensuite. Mais rien d'inventé :
+le récit vient de l'ordre et des liens entre les faits sourcés, jamais d'un fait ajouté. Si
+la source ne donne qu'une ligne, le texte fait une ou deux phrases, et c'est bien ainsi.
+
+**Le massif entier suit la même pente.** Le résumé et l'accueil de la visite donnent la carte
+mentale (les vallées, les crêtes, les grandes orientations) avant de nommer le moindre site.
+Une visite ne cite un lieu qu'après avoir dit où il se situe.
+
+**Aucun fait perdu.** Réordonner n'autorise pas à retirer : chaque fait de l'ancien texte se
+retrouve dans le nouveau, dans `possible` ou dans `note`.
+
 ### Une visite qui enseigne
 
 Une visite n'est pas un assemblage de faits : c'est un exposé, engageant et didactique, qui

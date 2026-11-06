@@ -74,7 +74,7 @@
           "hours": "Mise en place vers 11h dans la Tarentaise moyenne (Moûtiers-Centron), 12h-13h à Bourg-Saint-Maurice ; forte de 14h à 17h en été ; atterrissages du matin ou du soir conseillés",
           "speed_kmh": {
             "typical": 25,
-            "max": 50
+            "max": 40
           },
           "season": "mars-octobre (maximum en été)",
           "layer_depth_m": "non documentée ; le PCHT note que selon l'altitude c'est tantôt le vent montant « Tarentaise », tantôt le flux descendant « Chapieux » qui domine",
@@ -95,7 +95,7 @@
             "S24",
             "S25"
           ],
-          "note": "Vitesse typique de 25 km/h retenue sur le couloir ; les valeurs plus fortes sont des pointes locales, et les 50 km/h viennent d'une référence générale sur les longues vallées. Le vent de vallée peut être fort en début d'après-midi à La Bâthie et à Langon ; à Montgirod-Arcachat, il passe par-dessus le décollage dès 11h, en se joignant au vent montant de Moûtiers ; à Macot, la brise est forte de 15h à 17h, et aux Ilettes dès 12h."
+          "note": "Vitesse typique de 25 km/h : estimation sur le couloir. Le maximum de 40 km/h est une pointe notée à Bourg, et les 50 km/h viennent d'une référence générale sur les longues vallées. Le vent de vallée peut être fort en début d'après-midi à La Bâthie et à Langon ; à Montgirod-Arcachat, il passe par-dessus le décollage dès 11h, en se joignant au vent montant de Moûtiers ; à Macot, la brise est forte de 15h à 17h, et aux Ilettes dès 12h."
         },
         {
           "id": "brise-peisey-nancroix",
@@ -216,7 +216,6 @@
             "typical": null,
             "max": null
           },
-          "season": "toute l'année, surtout avec vent de nord",
           "layer_depth_m": "non documentée ; dominant dans certaines couches seulement",
           "description": "L'air froid qui descend des glaciers dominant les Chapieux et la Ville des Glaciers fait un flux important. La brise venue de Beaufort, forte à l'altitude de Roselend, s'y ajoute, et parfois un vent météo de nord ou de nord-ouest. Ce courant accélère en venturi entre Prainan et Clapet, puis déboule sur Bourg-Saint-Maurice, à la rencontre de la brise montante. Par bise, il peut descendre jusqu'aux Ilettes.",
           "confidence": "medium",
@@ -394,7 +393,7 @@
         },
         {
           "id": "confluence-col-de-la-chal",
-          "name": "Confluence brise du Ponthurin / brise descendante de l'Arc (col de la Chal, Aiguille Grive)",
+          "name": "Basculement de la brise du Ponthurin vers l'Arc par le col de la Chal (Aiguille Grive)",
           "geometry": {
             "type": "LineString",
             "coordinates": [
@@ -499,7 +498,7 @@
           "lat": 45.6153,
           "radius_km": 6,
           "coord_quality": "source",
-          "conditions": "Été, de 12h-14h jusqu'en fin d'après-midi ; plus forte avec vent météo N/NO",
+          "conditions": "Été, de 12h-14h jusqu'en fin d'après-midi",
           "description": "À Bourg-Saint-Maurice, la brise est souvent forte dès 14h : elle monte facilement à 30 km/h, voire 40 km/h et plus. Aux Ilettes, en été, elle est forte dès 12h, et une ligne haute tension nord-est/sud-ouest longe le terrain. Regardez la balise des Ilettes avant de décoller.",
           "sources": [
             "S49",
@@ -768,7 +767,7 @@
           "lat": 45.5474,
           "alt_m": 1883,
           "coord_quality": "source",
-          "best_hours": "après-midi et soirée (restitution jusqu'à 19h-20h)",
+          "best_hours": "après-midi et soirée (restitution jusqu'au coucher du soleil)",
           "trigger": "versant ouest alimenté par la branche de brise qui se divise à Landry",
           "description": "L'après-midi, ce versant, alimenté par la branche de brise qui se divise à Landry, offre ses meilleures conditions, et il y a du monde. Le soir, les vols de restitution sont réputés, jusqu'au coucher du soleil. Il n'est pas rare d'y voir des voiles à plus de 3000 m, et de survoler les crêtes des Arcs au-delà de 2500 m.",
           "sources": [
@@ -787,9 +786,9 @@
           "lat": 45.5637,
           "alt_m": 2100,
           "coord_quality": "source",
-          "best_hours": "après-midi d'été (11h-18h)",
-          "trigger": "faces ouest/nord-ouest des Arcs chauffées l'après-midi, au-dessus d'Arc 1800",
-          "description": "Le « 10 de Face », au-dessus d'Arc 1800, doit son surnom à son aérologie particulièrement favorable. La face ouest et nord-ouest des Arcs y chauffe l'après-midi. Méfiez-vous des câbles de télésiège, de la forte brise et du vent de sud-ouest.",
+          "best_hours": "après-midi d'été",
+          "trigger": "pentes des Arcs exposées ouest et nord-ouest, au-dessus d'Arc 1800",
+          "description": "Le « 10 de Face », au-dessus d'Arc 1800, doit son surnom à son aérologie particulièrement favorable. L'après-midi, les conditions y deviennent plus dynamiques, sur les pentes des Arcs exposées ouest et nord-ouest. Méfiez-vous des câbles de télésiège, de la forte brise et du vent de sud-ouest.",
           "sources": [
             "S49",
             "S50",
@@ -897,7 +896,6 @@
           "lat": 45.6374,
           "alt_m": 2000,
           "coord_quality": "source",
-          "best_hours": "11h30-13h30 en été (PCHT) ; mi-juillet, thermique actif sur le fort",
           "trigger": "pentes est du fort (décollage « un peu plus haut dans les alpages »), thermique sélectif au-dessus du fort",
           "description": "Par basses couches très stables, l'air est sélectif au-dessus du Fort de la Platte : regardez les autres pilotes pour trouver l'ascendance, avant de partir vers le Beaufortain.",
           "sources": [
@@ -914,13 +912,12 @@
         },
         {
           "id": "pointe-de-combe-neuve-plafond-3500",
-          "name": "Pointe de Combe Neuve : plafond de 3500 m au départ du Fort de la Platte",
+          "name": "Pointe de Combe Neuve : premier plafond après le Fort de la Platte (3500 m sur un vol)",
           "lon": 6.6886,
           "lat": 45.6514,
           "alt_m": 2955,
           "coord_quality": "source",
-          "best_hours": "après l'extraction du Fort de la Platte (fin de matinée à début d'après-midi, déduction)",
-          "trigger": "sommet et faces sud-est de la Pointe de la Combe Neuve (IGN : 2954 m), au-dessus des Chapelles",
+          "trigger": "au-dessus de la Pointe de la Combe Neuve (IGN : 2954 m)",
           "description": "La Pointe de Combe Neuve (2954 m, IGN) peut servir de premier plafond après l'extraction du Fort de la Platte : un vol y a atteint 3500 m.",
           "sources": [
             "S72"
@@ -931,16 +928,16 @@
             "Ce jour-là, la voie du Beaufortain s'est finie vers le lac de Roselend, et celle des hauts massifs, vers le Mont-Blanc, a bouclé un triangle.",
             "Depuis le Plan de la Boutte, un autre pilote a passé le Mont Blanc à plus de 5000 m."
           ],
-          "note": "Faces sud-est et position au-dessus des Chapelles : non décrites par la source."
+          "note": "Un seul vol, sans heure, et la source ne décrit aucune face de cette pointe."
         },
         {
           "id": "aime-confluence-thermique",
-          "name": "Au-dessus d'Aime : thermique de confluence (relance vers Bourg-Saint-Maurice)",
+          "name": "Au-dessus d'Aime : thermique du retour vers Bourg-Saint-Maurice (confluence supposée)",
           "lon": 6.6516,
           "lat": 45.5597,
           "coord_quality": "source",
           "best_hours": "fin d'après-midi (retour vers Bourg en soirée)",
-          "trigger": "confluence entre le flux descendant du Cormet d'Arêches et la brise qui remonte vers Bourg-Saint-Maurice",
+          "trigger": "confluence supposée, sur un seul vol, entre le flux descendant du Cormet d'Arêches et la brise qui remonte vers Bourg-Saint-Maurice",
           "description": "Au-dessus d'Aime, en fin de parcours, on peut retrouver de l'ascendance là où le flux du Cormet d'Arêches semble rencontrer la brise qui remonte vers Bourg-Saint-Maurice. Un seul vol le décrit. Vers Bourg, la suite passe au-dessus de grosses lignes à haute tension, et ça secoue, avant les Arcs et la brise du soir.",
           "sources": [
             "S72"
@@ -1023,13 +1020,13 @@
         },
         {
           "id": "montagne-de-tete-valmorel-thermiques",
-          "name": "Montagne de Tête (Valmorel) : thermiques puissants dès 16h, dynamique dès 12h",
+          "name": "Valmorel : Les Bachals (thermiques dès 16h) et crête du Gollet (dynamique dès 12h)",
           "lon": 6.4252,
           "lat": 45.466,
           "alt_m": 1801,
           "coord_quality": "source",
-          "best_hours": "dynamique à partir de 12h, thermiques puissants à partir de 16h (anciennes fiches du catalogue)",
-          "trigger": "pentes sous le décollage de la Montagne de Tête, au-dessus de Valmorel (Bachals, Gollet)",
+          "best_hours": "Les Bachals : thermiques puissants à partir de 16h ; crête du Gollet : dynamique à partir de 12h (anciennes fiches du catalogue)",
+          "trigger": "décollages des Bachals et de la crête du Gollet, à Valmorel",
           "description": "Autour de Valmorel, aux Bachals, les thermiques deviennent puissants à partir de 16h et permettent d'aller jusqu'à la crête. Sur la crête du Gollet, la dynamique commence dès 12h. Les Bachals marchent au printemps et au début de l'été, le Gollet l'été.",
           "confidence": "medium",
           "sources": [
@@ -1045,8 +1042,8 @@
           "lat": 45.65,
           "alt_m": 1798,
           "coord_quality": "approx",
-          "best_hours": "le matin et à midi d'après les traces GPS (100 % le matin, 98 % à midi, 65 % le soir, rien le soir)",
-          "trigger": "pentes sous le décollage du Plan de la Boutte (2020 m), versant ouest de Bourg-Saint-Maurice, zone de sensibilité gypaète « Charbonnet »",
+          "best_hours": "le matin et à midi d'après les traces GPS (100 % le matin, 98 % à midi, 65 % le soir)",
+          "trigger": "pentes sous le décollage du Plan de la Boutte (2020 m), versant ouest de Bourg-Saint-Maurice",
           "description": "Sur le versant ouest de Bourg-Saint-Maurice, 220 m sous le décollage du Plan de la Boutte, les traces GPS montrent le point chaud le plus fort de la Tarentaise, actif le matin et à midi, moins en fin de journée. La zone de sensibilité du gypaète « Charbonnet » et des bulles de quiétude d'aigle sont voisines : respectez-les.",
           "confidence": "low",
           "sources": [
@@ -1110,7 +1107,7 @@
           "alt_m": 2152,
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (99 % le matin, 95 % à midi, 86 % le soir)",
-          "trigger": "pentes sous le décollage de La Poudreuse (2150 m), au-dessus de Peisey-Vallandry, sous l'Aiguille Rousse",
+          "trigger": "pentes du décollage de La Poudreuse (2150 m), au-dessus de Peisey-Vallandry, sous l'Aiguille Rousse",
           "description": "Sur le décollage de La Poudreuse (2150 m), à 710 m de l'Aiguille Rousse, les traces GPS montrent un point chaud actif toute la journée, surtout le matin.",
           "confidence": "low",
           "sources": [
@@ -1141,7 +1138,7 @@
           "lat": 45.553,
           "alt_m": 1687,
           "coord_quality": "approx",
-          "best_hours": "le matin et à midi d'après les traces GPS (95 % le matin, 92 % à midi, rien le soir)",
+          "best_hours": "le matin et à midi d'après les traces GPS (95 % le matin, 93 % à midi, rien le soir)",
           "trigger": "pentes sous le Plan du Col (1957 m), au-dessus de Doucy et du Miard",
           "description": "À 480 m du Plan du Col (1957 m), sur les pentes au-dessus de Doucy et du Miard, les traces GPS montrent un point chaud le matin et à midi, sans rien le soir.",
           "confidence": "low",
@@ -1264,13 +1261,13 @@
         },
         {
           "id": "la-tranchee-cevins",
-          "name": "La Tranchée (Cévins) : pentes sous le décollage",
+          "name": "La Tranchée (Cévins) : pentes au nord-est du décollage",
           "lon": 6.4771,
           "lat": 45.6011,
           "alt_m": 1346,
           "coord_quality": "approx",
-          "best_hours": "en fin de journée d'après les traces GPS (69 % à midi, 73 % le soir, rien le matin ni à midi)",
-          "trigger": "pentes sous le décollage de La Tranchée (871 m, O), au-dessus de Cévins, vers la combe de Savoie",
+          "best_hours": "en fin de journée d'après les traces GPS (69 % à midi, 73 % le soir, rien le matin)",
+          "trigger": "pentes à 1,8 km au nord-est du décollage de La Tranchée (871 m, O), plus haut que lui, vers la combe de Savoie",
           "description": "À 1,8 km au nord-est du décollage de La Tranchée, vers la combe de Savoie, les traces GPS montrent un point chaud faible à midi et le soir, sans rien le matin. Ce point est plus haut que le décollage.",
           "confidence": "low",
           "sources": [
@@ -1337,13 +1334,6 @@
           "name": "Col du Petit-Saint-Bernard (soaring non officiel)",
           "lon": 6.8787,
           "lat": 45.6807,
-          "wind_dirs": [
-            "N",
-            "NE",
-            "SW",
-            "W",
-            "NW"
-          ],
           "description": "Le col du Petit-Saint-Bernard est un terrain de soaring non officiel. Un flux de nord-est au col impose la vigilance : c'est le signe du foehn.",
           "sources": [
             "S38",
@@ -2035,7 +2025,7 @@
         },
         {
           "id": "pointe-du-lavachet",
-          "name": "Pointe du Lavachet (Val d'Isère)",
+          "name": "Pointe du Lavachet (Tignes)",
           "lon": 6.9228,
           "lat": 45.4622,
           "alt_m": 2609,
@@ -2333,7 +2323,7 @@
         },
         {
           "wind": "N",
-          "effect": "Le nord-ouest à nord renforce le flux des Chapieux. À Montgirod, on peut encore voler avant 13h. À Naves, prudence par nord modéré à fort. Au col du Petit-Saint-Bernard, du nord ou du nord-est à plus de 15 km/h annonce probablement le foehn. Au Cottier, soyez très prudent dès que le vent est nord. Par N-NO qui forcit, un vol a fait 3500 m au-dessus de la Pointe de Combe Neuve.",
+          "effect": "Le nord-ouest à nord renforce le flux des Chapieux. À Montgirod, on peut encore voler avant 13h. À Naves, prudence par nord modéré à fort. Au col du Petit-Saint-Bernard, du nord ou du nord-est à plus de 15 km/h annonce probablement le foehn. Au Cottier, soyez très prudent dès que le vent est nord. Par N-NO qui forcit, un vol a fait 3500 m au-dessus de la Pointe de Combe Neuve. Ce jour-là, le vent interdisait de se placer sur les faces sud du Beaufortain.",
           "sources": [
             "S35",
             "S52",
@@ -2602,13 +2592,12 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 55.4,
           "description": "Course de marche et vol, en septembre : pour valider trois refuges (Mora, Nant du Beurre, Rosuel), les pilotes ne peuvent que marcher ou voler, avec un parcours libre et un retour aux Ilettes avant 16h le dernier jour. Un refuge de secours existe pour la nuit. Ce n'est pas un cross classique, mais la course donne des points de passage réels entre le Beaufortain, la Haute-Tarentaise et le bord du Parc.",
           "sources": [
             "S48",
             "S41"
           ],
-          "note": "Le règlement prévoit la disqualification pour tout survol du Parc national sous 1000 m/sol et de la réserve des Contamines sous 300 m/sol, et une pénalité pouvant aller jusqu'à la disqualification pour une violation d'espace aérien contrôlé. Balises optionnelles (lacs, sommets : Aiguille Grive, Roche de Mio, Mont Saint-Jacques, Grande Rochette, Mont Jovet, Saulire, Bisanne, col du Joly…). Distance : somme des segments en ligne droite pour l'ordre indiqué (Mora, Nant du Beurre, Rosuel), calculée par l'atlas. Aucune trace de cross en plaine (Moûtiers-Albertville) ni de vol Tarentaise-Maurienne n'a pu être lue."
+          "note": "Le règlement prévoit la disqualification pour tout survol du Parc national sous 1000 m/sol et de la réserve des Contamines sous 300 m/sol, et une pénalité pouvant aller jusqu'à la disqualification pour une violation d'espace aérien contrôlé. Balises optionnelles (lacs, sommets : Aiguille Grive, Roche de Mio, Mont Saint-Jacques, Grande Rochette, Mont Jovet, Saulire, Bisanne, col du Joly…). Aucune trace de cross en plaine (Moûtiers-Albertville) ni de vol Tarentaise-Maurienne n'a pu être lue."
         }
       ],
       "tips": [
@@ -2674,7 +2663,7 @@
           "hours": "Matin : vent nul voire légèrement descendant à Bozel ; vent de vallée montant dès le milieu de journée (brise « s'allume vers 13h » aux Monts) ; à Pralognan elle prend le dessus dès 11h-11h30",
           "speed_kmh": {
             "typical": 20,
-            "max": 35
+            "max": null
           },
           "season": "printemps-été",
           "layer_depth_m": "non documentée",
@@ -2689,7 +2678,7 @@
             "S65",
             "S68"
           ],
-          "note": "Vitesses typiques de 20 km/h et maximales de 35 km/h : interprétation de « fort » et de « musclé », les sources ne donnant aucune vitesse chiffrée. Les Monts : décoller avant que la brise s'allume vers 13h. À Champagny, l'aérologie est souvent délicate de 13h à 16h, avec un venturi par brise forte à la Duy."
+          "note": "Vitesse de 20 km/h : estimation tirée de « fort » et de « musclé », les sources ne donnant aucun chiffre. Les Monts : décoller avant que la brise s'allume vers 13h. À Champagny, l'aérologie est souvent délicate de 13h à 16h, avec un venturi par brise forte à la Duy."
         },
         {
           "id": "brise-saint-bon-courchevel",
@@ -2718,7 +2707,7 @@
           "hours": "Avant 13h aux Tovets la brise de vallée prend le dessus sur la brise de pente ; forte à très forte l'après-midi au Bouc Blanc (« brise forte de 14 à 17h »)",
           "speed_kmh": {
             "typical": 25,
-            "max": 40
+            "max": null
           },
           "season": "été surtout",
           "description": "Dans la vallée de Saint-Bon, aux Tovets, la brise de vallée prend le dessus sur la brise de pente avant 13h en été. Au Bouc Blanc, elle devient forte à très forte l'après-midi, surtout de 14h à 17h, et peut souffler le site en milieu d'après-midi : il reste utilisable tôt et tard. Au Praz, par forte brise de vallée, la gare du télécabine crée des turbulences.",
@@ -2729,7 +2718,7 @@
             "S61",
             "S52"
           ],
-          "note": "Vitesses typiques de 25 km/h et maximales de 40 km/h : interprétation de « forte à très forte ». Une balise est au décollage du Bouc Blanc."
+          "note": "Vitesse de 25 km/h : estimation tirée de « forte à très forte », sans chiffre dans les sources. Une balise est au décollage du Bouc Blanc."
         },
         {
           "id": "brise-doron-belleville",
@@ -2763,8 +2752,8 @@
           ],
           "hours": "Après-midi d'été ; vol du soir aux Deux Lacs « face aux vents thermiques de la vallée de Belleville »",
           "speed_kmh": {
-            "typical": 25,
-            "max": 40
+            "typical": null,
+            "max": null
           },
           "season": "été",
           "description": "Boismint et son atterrissage marchent en régime de brise de vallée, avec un fort gradient. Par tendance sud, le vol y est vivement déconseillé. À la Cime de Caron, la brise thermique de la face sud peut être très forte en été. À la Moraine, le venturi du glacier du Col renforce le vent. Au Mont de la Chambre, les conditions peuvent devenir fortes l'après-midi.",
@@ -2775,11 +2764,11 @@
             "S63",
             "S52"
           ],
-          "note": "Vitesses non chiffrées : les valeurs de 25 et 40 km/h sont une interprétation."
+          "note": "Vitesse non documentée : « très forte » vise la brise de la face sud de Caron, pas celle de la vallée."
         },
         {
           "id": "brise-allues-meribel",
-          "name": "Brise montante de la vallée des Allues (Brides-les-Bains → Méribel)",
+          "name": "Brise montante de la vallée des Allues, déduite du relief (Brides-les-Bains → Méribel)",
           "kind": "valley",
           "waypoints": [
             {
@@ -2801,7 +2790,7 @@
               "coord_quality": "source"
             }
           ],
-          "hours": "Après-midi d'été ; vent de sud fort en fin de journée à Méribel (ParaglidingEarth)",
+          "hours": "Après-midi d'été (déduit de la forme de la vallée)",
           "speed_kmh": {
             "typical": null,
             "max": null
@@ -2891,7 +2880,7 @@
           "lat": 45.4561,
           "radius_km": 1.5,
           "coord_quality": "source",
-          "conditions": "Début d'après-midi, vent météo d'ouest ou de nord et brise de vallée forte",
+          "conditions": "Début d'après-midi, surtout par vent météo d'ouest et brise de vallée forte",
           "description": "Aux Prés, ne décollez pas si des rafales de nord descendent du Jovet. Au Mont Jovet, le vent descend parfois en début d'après-midi, ce qui interdit le décollage, surtout par vent météo d'ouest et brise de vallée forte. Par vent de sud fort, ne volez pas.",
           "sources": [
             "S88",
@@ -3112,7 +3101,7 @@
           "lat": 45.3864,
           "alt_m": 1967,
           "coord_quality": "approx",
-          "best_hours": "toute la journée d'après les traces GPS (99 % le matin, 98 % à midi, 76 % le soir)",
+          "best_hours": "toute la journée d'après les traces GPS (99 % le matin, 98 % à midi, 77 % le soir)",
           "trigger": "pentes sud et sud-ouest sous le décollage du Pachut, au-dessus de Pralognan-la-Vanoise",
           "description": "Sur les pentes sud et sud-ouest sous le décollage du Pachut, au-dessus de Pralognan-la-Vanoise, les traces GPS montrent l'un des points chauds les plus forts de la Vanoise, à 140 m du décollage. Il est très actif le matin et à midi, moins en fin de journée.",
           "confidence": "low",
@@ -3155,13 +3144,13 @@
         },
         {
           "id": "la-plagne-3007-pentes",
-          "name": "La Plagne (Saint-Jean-de-Belleville) : pentes sous le décollage",
+          "name": "La Plagne (Saint-Jean-de-Belleville) : pentes du décollage",
           "lon": 6.4473,
           "lat": 45.4387,
           "alt_m": 2113,
           "coord_quality": "approx",
           "best_hours": "en fin de journée d'après les traces GPS (73 % le soir, rien le matin ni à midi)",
-          "trigger": "pentes sous le décollage de La Plagne (2103 m, Saint-Jean-de-Belleville), versant de Belleville",
+          "trigger": "pentes du décollage de La Plagne (2103 m, Saint-Jean-de-Belleville), versant de Belleville",
           "description": "À 190 m du décollage de La Plagne (2103 m), côté Belleville, les traces GPS montrent un point chaud faible en fin de journée, sans rien le matin ni à midi.",
           "confidence": "low",
           "sources": [

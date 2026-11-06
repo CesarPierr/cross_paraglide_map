@@ -62,7 +62,7 @@
           "hours": "12h-19h (été), pic 15h-17h ; nuit : écoulement inverse faible",
           "speed_kmh": {
             "typical": 8,
-            "max": 15
+            "max": null
           },
           "season": "avril-septembre",
           "layer_depth_m": "~1000 m au-dessus de la plaine l'après-midi (ordre de grandeur de l'Alpine pumping)",
@@ -82,7 +82,7 @@
             "Ce flux de plaine peut réagir au vent synoptique plus que les brises internes aux vallées.",
             "Pour comprendre le sens d'une brise, changez d'échelle : regardez les vallées du Rhône et de la Durance, et pensez au pompage alpin."
           ],
-          "note": "Valeurs mesurées sur l'avant-pays bavarois, à transposer avec prudence. Entrée par la basse Isère et la cluse de Voreppe : déduction pour alimenter la cuvette grenobloise, aucune source ne décrit ce flux précisément."
+          "note": "Valeurs mesurées sur l'avant-pays bavarois, à transposer avec prudence. Entrée par la basse Isère et la cluse de Voreppe : déduction pour alimenter la cuvette grenobloise, aucune source ne décrit ce flux précisément. La vitesse et les heures sont une estimation."
         },
         {
           "id": "isere-gresivaudan-combe-de-savoie-gresivaudan",
@@ -150,7 +150,7 @@
             "La brise venant de Chambéry peut vous dériver sur la traversée Granier - Savoyarde.",
             "Certaines cartes donnent l'impression d'une brise d'Albertville vers Grenoble : c'est vrai dans le Grésivaudan, faux dans la Combe de Savoie."
           ],
-          "note": "Remplace la première passe, qui la faisait remonter vers le nord-est : les sources parlent d'une brise « de nord », soit vers le sud-ouest. Le partage de l'air au débouché de la cluse de Chambéry vient d'une question restée sans réponse ferme. Vitesses génériques (15 à 35 km/h, pic vers 14h-16/17h, 3 à 10 m/s au centre des vallées) ; schémas du « Y » grenoblois non consultés."
+          "note": "Remplace la première passe, qui la faisait remonter vers le nord-est : les sources parlent d'une brise « de nord », soit vers le sud-ouest. Le partage de l'air au débouché de la cluse de Chambéry vient d'une question restée sans réponse ferme. Vitesses génériques (15 à 35 km/h, pic vers 14h-16/17h, 3 à 10 m/s au centre des vallées) ; schémas du « Y » grenoblois non consultés. Heures génériques, à lire comme une estimation."
         },
         {
           "id": "isere-gresivaudan-combe-de-savoie-combe",
@@ -215,7 +215,7 @@
             "Au col du Frêne, la brise de Sainte-Reine arrive face à celle de la Combe de Savoie.",
             "Les Tours de Montmayeur, petit relief, peuvent être frappées de plein fouet par la brise de Chambéry : c'est ce qui les fait marcher tard dans la journée."
           ],
-          "note": "Vitesses génériques (15 à 35 km/h) ; aucune mesure propre à la Combe de Savoie dans les sources lues."
+          "note": "Vitesses génériques (15 à 35 km/h) ; aucune mesure propre à la Combe de Savoie dans les sources lues. Heures génériques, à lire comme une estimation."
         },
         {
           "id": "cluse-chambery",
@@ -243,8 +243,8 @@
           ],
           "hours": "12h-19h (été)",
           "speed_kmh": {
-            "typical": 12,
-            "max": 20
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "layer_depth_m": "quelques centaines de m (déduction)",
@@ -259,7 +259,7 @@
           "possible": [
             "Sur la traversée Granier - Savoyarde, il peut falloir compenser la dérive due à cette brise."
           ],
-          "note": "Tracés des cartes de brises : départs à la cluse, à Challes-les-Eaux et à Porte-de-Savoie. Force et heures propres à la cluse non chiffrées dans les sources lues : valeurs déduites (12 à 20 km/h)."
+          "note": "Tracés des cartes de brises : départs à la cluse, à Challes-les-Eaux et à Porte-de-Savoie. Force et heures propres à la cluse ne sont chiffrées dans aucune source lue : les heures sont une estimation."
         },
         {
           "id": "lac-annecy-faverges",
@@ -299,8 +299,8 @@
           ],
           "hours": "11h-19h (été), soutenue l'après-midi",
           "speed_kmh": {
-            "typical": 15,
-            "max": 25
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "layer_depth_m": "quelques centaines de m",
@@ -317,7 +317,7 @@
             "Les jours thermiques, le vent de vallée peut rester constant, quel que soit le vent général.",
             "Au Roc des Bœufs, la brise peut faire un ascenseur où l'on fait quelques allers et retours avant de remonter."
           ],
-          "note": "Vent constant : attribution non revérifiée. Vitesses génériques."
+          "note": "Vent constant : attribution non revérifiée. Heures génériques, à lire comme une estimation."
         },
         {
           "id": "arve",
@@ -393,7 +393,7 @@
             "La brise entre par Sallanches, où elle peut être très forte : l'atterrissage au lac est souvent impossible dans la journée.",
             "Elle faiblit vers Passy, puis se divise autour du Mont d'Arbois et à l'entrée de la vallée de Saint-Gervais. Un retour d'est ou de sud-est peut arriver côté Varan."
           ],
-          "note": "Vitesses : 50 km/h en valeur générale, 30 km/h en valeur locale ; les deux sont conservés."
+          "note": "Vitesses : 50 km/h en valeur générale, 30 km/h en valeur locale ; les deux sont conservés. Heures génériques, à lire comme une estimation."
         },
         {
           "id": "tarentaise",
@@ -449,7 +449,7 @@
           "possible": [
             "Le secteur des Arcs, en Haute-Tarentaise, peut rester volable sous 2500 m malgré une bise de 40 km/h relevée à Annecy, Chambéry ou Grenoble."
           ],
-          "note": "Source de la Haute-Tarentaise non revérifiée. Le tronçon Albertville - Moûtiers est déduit de la première passe."
+          "note": "Source de la Haute-Tarentaise non revérifiée. Le tronçon Albertville - Moûtiers est déduit de la première passe. Vitesse typique et heures sont une estimation générique."
         },
         {
           "id": "maurienne",
@@ -527,7 +527,7 @@
             "Un vol de 202 km a refait le plein à 2500 m à l'entrée de la vallée.",
             "Une masse d'air italienne peut déborder dans la haute vallée en « coulée », au Mont-Cenis : on tient longtemps en pente, sans jamais repasser les crêtes."
           ],
-          "note": "Par lombarde (est), flux contraire sur la haute vallée : déduction, aucune source ne le décrit."
+          "note": "Par lombarde (est), flux contraire sur la haute vallée : déduction, aucune source ne le décrit. Vitesse typique et heures sont une estimation générique."
         },
         {
           "id": "romanche-oisans",
@@ -584,7 +584,7 @@
           "possible": [
             "La vallée remonte très loin, et la brise peut la suivre, comme dans le Drac."
           ],
-          "note": "Tracé déduit ; vitesses génériques. Aucune source ne nomme les gorges du Livet : seule la règle générale du rétrécissement est sourcée."
+          "note": "Tracé déduit ; vitesses génériques. Aucune source ne nomme les gorges du Livet : seule la règle générale du rétrécissement est sourcée. Heures génériques, à lire comme une estimation."
         },
         {
           "id": "drac-trieves",
@@ -618,8 +618,8 @@
           ],
           "hours": "11h-19h (été)",
           "speed_kmh": {
-            "typical": 15,
-            "max": 25
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "layer_depth_m": "quelques centaines de m",
@@ -634,7 +634,7 @@
           "possible": [
             "Le Drac remonte très loin, et la brise peut aller avec lui."
           ],
-          "note": "Vitesse non chiffrée."
+          "note": "Vitesse non chiffrée. Heures génériques, à lire comme une estimation."
         },
         {
           "id": "basse-durance",
@@ -675,7 +675,7 @@
           "hours": "11h-19h (été), renforcée l'après-midi par la brise de mer (déduction)",
           "speed_kmh": {
             "typical": 15,
-            "max": 30
+            "max": null
           },
           "season": "avril-septembre",
           "layer_depth_m": "plusieurs centaines de m à ~1000 m (déduction)",
@@ -689,7 +689,7 @@
             "S2",
             "S38"
           ],
-          "note": "Couplage avec la brise de mer provençale : déduction."
+          "note": "Couplage avec la brise de mer provençale : déduction. Vitesse et heures sont une estimation."
         },
         {
           "id": "moyenne-haute-durance",
@@ -764,7 +764,7 @@
             "Au décollage de Saint-Vincent-les-Forts, elle peut être particulièrement forte en milieu d'après-midi. À Vallouise, elle est rarement très soutenue.",
             "Dans le Briançonnais, par temps calme, les brises peuvent remonter toutes les vallées en fin de matinée et début d'après-midi."
           ],
-          "note": "Données de Saint-Vincent-les-Forts, de Vallouise et du Briançonnais non revérifiées."
+          "note": "Données de Saint-Vincent-les-Forts, de Vallouise et du Briançonnais non revérifiées. Vitesse typique et heures sont une estimation générique."
         },
         {
           "id": "buech",
@@ -798,8 +798,8 @@
           ],
           "hours": "11h-19h (été)",
           "speed_kmh": {
-            "typical": 15,
-            "max": 30
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "layer_depth_m": "quelques centaines de m",
@@ -814,7 +814,7 @@
           "possible": [
             "Près de Chabre, les vallées du Buëch sont larges : on y trouve de quoi se poser en cas d'imprévu."
           ],
-          "note": "Vitesses non chiffrées ; valeurs génériques."
+          "note": "Vitesses non chiffrées dans les sources. Heures génériques, à lire comme une estimation."
         },
         {
           "id": "ubaye",
@@ -873,7 +873,7 @@
             "S1",
             "S38"
           ],
-          "note": "Par lombarde (est), flux contraire sur la haute Ubaye : déduction, aucune source ne le décrit."
+          "note": "Par lombarde (est), flux contraire sur la haute Ubaye : déduction, aucune source ne le décrit. Vitesses et heures sont une estimation générique."
         },
         {
           "id": "brise-mer-provence-durance",
@@ -901,8 +901,8 @@
           ],
           "hours": "12h-19h (été) (déduction)",
           "speed_kmh": {
-            "typical": 15,
-            "max": 25
+            "typical": null,
+            "max": null
           },
           "season": "mai-septembre",
           "layer_depth_m": "quelques centaines de m (déduction)",
@@ -951,8 +951,8 @@
           ],
           "hours": "12h-19h (été) (déduction)",
           "speed_kmh": {
-            "typical": 12,
-            "max": 20
+            "typical": null,
+            "max": null
           },
           "season": "mai-septembre",
           "layer_depth_m": "quelques centaines de m (déduction)",
@@ -1003,8 +1003,8 @@
           ],
           "hours": "21h-09h (été) ; peut persister toute la journée en hiver sous inversion",
           "speed_kmh": {
-            "typical": 8,
-            "max": 15
+            "typical": null,
+            "max": null
           },
           "season": "toute l'année (dominant en hiver)",
           "layer_depth_m": "quelques dizaines à centaines de m",
@@ -1015,7 +1015,7 @@
             "S37",
             "S38"
           ],
-          "note": "Vitesses : déduction."
+          "note": "Heures de nuit génériques, à lire comme une estimation."
         },
         {
           "id": "tarentaise-haute",
@@ -1049,8 +1049,8 @@
           ],
           "hours": "11h-19h (été)",
           "speed_kmh": {
-            "typical": 15,
-            "max": 30
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "layer_depth_m": "quelques centaines de m (déduction)",
@@ -1061,7 +1061,7 @@
             "S1",
             "S38"
           ],
-          "note": "Vitesses : valeurs génériques. Secteur local détaillé dans le lot Tarentaise-Vanoise."
+          "note": "Heures génériques, à lire comme une estimation. Secteur local détaillé dans le lot Tarentaise-Vanoise."
         },
         {
           "id": "verdon-castellane-thorame",
@@ -1150,8 +1150,8 @@
           ],
           "hours": "11h-19h (été)",
           "speed_kmh": {
-            "typical": 15,
-            "max": 25
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "layer_depth_m": "quelques centaines de m",
@@ -1161,7 +1161,8 @@
             "S44",
             "S45",
             "S38"
-          ]
+          ],
+          "note": "Heures génériques, à lire comme une estimation."
         },
         {
           "id": "bes-javie-montclar",
@@ -1195,8 +1196,8 @@
           ],
           "hours": "11h-19h (été)",
           "speed_kmh": {
-            "typical": 15,
-            "max": 25
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "layer_depth_m": "quelques centaines de m",
@@ -1207,7 +1208,7 @@
             "S45",
             "S38"
           ],
-          "note": "Schéma : diapo 61."
+          "note": "Schéma : diapo 61. Heures génériques, à lire comme une estimation."
         },
         {
           "id": "brise-mer-var-mercantour",
@@ -1247,8 +1248,8 @@
           ],
           "hours": "12h-19h (été) (déduction)",
           "speed_kmh": {
-            "typical": 12,
-            "max": 20
+            "typical": null,
+            "max": null
           },
           "season": "mai-septembre",
           "layer_depth_m": "quelques centaines de m (déduction)",
@@ -1299,8 +1300,8 @@
           ],
           "hours": "12h-19h (été)",
           "speed_kmh": {
-            "typical": 10,
-            "max": 20
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "layer_depth_m": "non documenté",
@@ -1309,7 +1310,7 @@
           "sources": [
             "S45"
           ],
-          "note": "Positions lues sur une diapositive, approximatives ; vitesses non données."
+          "note": "Positions lues sur une diapositive, approximatives ; vitesses non données. Heures génériques, à lire comme une estimation."
         },
         {
           "id": "briffe-durance-vers-maurienne",
@@ -1349,8 +1350,8 @@
           ],
           "hours": "13h-18h (été)",
           "speed_kmh": {
-            "typical": 10,
-            "max": 20
+            "typical": null,
+            "max": null
           },
           "season": "juin-septembre",
           "layer_depth_m": "non documenté",
@@ -1363,7 +1364,7 @@
           "possible": [
             "Autre exemple du schéma : le Queyras s'oppose à la haute Durance, que la brise atteint par Serre-Ponçon. Même jeu entre la Durance, la Maurienne et le Val de Suse."
           ],
-          "note": "À utiliser comme une tendance (confiance faible) ; diapositives 47, 54 et 5-6 du schéma."
+          "note": "À utiliser comme une tendance (confiance faible) ; diapositives 47, 54 et 5-6 du schéma. Heures génériques, à lire comme une estimation."
         },
         {
           "id": "briffe-plaine-po-val-de-suse",
@@ -1397,8 +1398,8 @@
           ],
           "hours": "12h-19h (été)",
           "speed_kmh": {
-            "typical": 10,
-            "max": 20
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "layer_depth_m": "non documenté",
@@ -1410,7 +1411,7 @@
           "possible": [
             "Cet air peut déborder côté français : le schéma montre la « coulée du Mont-Cenis »."
           ],
-          "note": "Positions approximatives, lues sur une diapositive."
+          "note": "Positions approximatives, lues sur une diapositive. Heures génériques, à lire comme une estimation."
         },
         {
           "id": "briffe-plaine-po-val-d-aoste",
@@ -1444,8 +1445,8 @@
           ],
           "hours": "12h-19h (été)",
           "speed_kmh": {
-            "typical": 10,
-            "max": 20
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "layer_depth_m": "non documenté",
@@ -1455,7 +1456,7 @@
             "S45",
             "S56"
           ],
-          "note": "Hors du territoire français ; utile pour comprendre la confluence de la crête frontalière et le foehn de sud sur la vallée de Chamonix, dont l'écart de pression Aoste - Annecy donne l'indice."
+          "note": "Hors du territoire français ; utile pour comprendre la confluence de la crête frontalière et le foehn de sud sur la vallée de Chamonix, dont l'écart de pression Aoste - Annecy donne l'indice. Heures génériques, à lire comme une estimation."
         }
       ],
       "convergences": [
@@ -1630,7 +1631,7 @@
             "On peut attaquer les faces est des Écrins.",
             "Par temps calme, les brises peuvent remonter toutes les vallées du Briançonnais en fin de matinée et début d'après-midi."
           ],
-          "note": "Ligne reconstruite (confiance faible). Glissement de la confluence vers Briançon et l'Izoard par régime de nord : déduction de la première passe, voir la confluence de nord de Briançon."
+          "note": "Ligne reconstruite (confiance faible). Glissement de la confluence vers Briançon et l'Izoard par régime de nord : déduction de la première passe, voir la confluence de mistral au sud de Briançon."
         },
         {
           "id": "ligne-saint-andre-ubaye",
@@ -1735,7 +1736,7 @@
             ]
           },
           "coord_quality": "approx",
-          "when": "Jours thermiques, après-midi ; la ligne se décale vers le versant le plus faible selon le vent",
+          "when": "Jours thermiques, après-midi (déduction)",
           "mechanism": "Sur un schéma, une ligne suit la crête frontalière. L'air de la plaine du Pô, en flèches bleues, y rencontre celui qui remonte de la Durance, de la Maurienne et de l'Ubaye, en flèches jaunes.",
           "usage": "Ne cherchez pas la confluence à la verticale de l'arête : une confluence de crête penche du côté le plus faible. Par lombarde, voir l'effet de vent correspondant.",
           "confidence": "medium",
@@ -1746,7 +1747,7 @@
           "possible": [
             "Un vol parti de l'Izoard a profité d'un vent d'est à Freissinières, puis vers le Vieux Chaillol."
           ],
-          "note": "Diapositives du schéma : 47, 49 et 54. Les diapos 24 à 27 (pas de crête, vent d'est ou d'ouest) montrent la Provence et non cette crête : voir le front de brise de mer. Le conseil de rester côté français est retiré, faute de source."
+          "note": "Diapositives du schéma : 47, 49 et 54. Les diapos 24 à 27 (pas de crête, vent d'est ou d'ouest) montrent la Provence et non cette crête : voir le front de brise de mer. Le conseil de rester côté français est retiré, faute de source. L'heure est une déduction : le schéma n'en donne aucune."
         },
         {
           "id": "confluence-obiou-taillefer",
@@ -1777,7 +1778,7 @@
             ]
           },
           "coord_quality": "approx",
-          "when": "Jours thermiques, après-midi",
+          "when": "Jours thermiques, après-midi (déduction)",
           "mechanism": "Un schéma trace ici un arc : l'air venu de Grenoble par le Drac et le Trièves (traits turquoise) rencontre celui qui remonte de Gap par le Champsaur (traits jaunes).",
           "confidence": "medium",
           "sources": [
@@ -1789,7 +1790,7 @@
             "Un triangle Vercors - Dévoluy - Chamrousse a traversé ce secteur.",
             "Au-dessus du Valbonnais, la vallée de derrière, celle d'Oris-en-Rattier, peut prendre le dessus : une crête qu'on croit au vent se retrouve sous le vent."
           ],
-          "note": "Schéma : diapos 54 et 60."
+          "note": "Schéma : diapos 54 et 60. L'heure est une déduction : le schéma n'en donne aucune."
         },
         {
           "id": "arc-diois-col-de-cabre",
@@ -1820,7 +1821,7 @@
             ]
           },
           "coord_quality": "approx",
-          "when": "Jours thermiques, après-midi",
+          "when": "Jours thermiques, après-midi (déduction)",
           "mechanism": "Un schéma trace ici un arc : l'air du Rhône entré par la Drôme, en flèches violettes, rencontre celui qui remonte d'Aspres et du Buëch, en traits jaunes. Par vent de sud-est, il montre aussi une confluence entre Serres et Aspres, au nord de Saint-Genis.",
           "confidence": "medium",
           "sources": [
@@ -1832,7 +1833,7 @@
             "Un jour de record, le Diois a très bien marché, avec de beaux nuages.",
             "Les vautours peuvent baliser les thermiques sur les faces sud, vers Die."
           ],
-          "note": "Position tracée sur la diapositive : approximative. Schéma : diapos 54, 59 et 74."
+          "note": "Position tracée sur la diapositive : approximative. Schéma : diapos 54, 59 et 74. L'heure est une déduction : le schéma n'en donne aucune."
         },
         {
           "id": "mistral-confluence-buech-crete-de-l-ane",
@@ -1859,7 +1860,7 @@
             ]
           },
           "coord_quality": "approx",
-          "when": "Régime de mistral/nord-ouest, après-midi",
+          "when": "Régime de mistral/nord-ouest, après-midi (déduction)",
           "mechanism": "Sur un schéma, une ligne longe le Buëch de Sisteron à Laragne, puis monte vers le col de Cabre et les crêtes de l'Âne. À l'ouest, le flux de nord-ouest passe les Baronnies et bute sur elle. À l'est, un autre flux de mistral descend le Buëch vers Sisteron.",
           "confidence": "medium",
           "sources": [
@@ -1870,7 +1871,7 @@
           "possible": [
             "À Chabre, surtout au décollage des Espranons, des dust devils peuvent se former quand la brise prend le dessus sur un nord faible."
           ],
-          "note": "Schéma : diapos 66 et 70. Il ne donne ni heures ni usage en vol : la mention d'une confluence exploitable à Laragne et à Chabre est retirée."
+          "note": "Schéma : diapos 66 et 70. Il ne donne ni heures ni usage en vol : la mention d'une confluence exploitable à Laragne et à Chabre est retirée. L'heure est une déduction : le schéma n'en donne aucune."
         },
         {
           "id": "mistral-confluence-valensole-verdon",
@@ -1897,14 +1898,14 @@
             ]
           },
           "coord_quality": "approx",
-          "when": "Régime de mistral/nord-ouest, après-midi",
+          "when": "Régime de mistral/nord-ouest, après-midi (déduction)",
           "mechanism": "Sur un schéma, une ligne court de Peyruis aux gorges du Verdon, sur le plateau de Valensole. Deux branches du mistral s'y font face : l'une descend la Durance, l'autre arrive du Rhône par l'ouest. C'est une confluence « de contournement », comme il s'en forme à l'échelle d'un massif dans les Écrins, entre Durance et Bléone, ou autour de Lure et du Ventoux.",
           "confidence": "low",
           "sources": [
             "S45",
             "S48"
           ],
-          "note": "Position approximative. Schéma : diapos 20, 22 et 66. Usage en cross vers le Verdon : sans source, retiré. Le renoncement au Cheval Blanc relève de l'itinéraire de l'Izoard."
+          "note": "Position approximative. Schéma : diapos 20, 22 et 66. Usage en cross vers le Verdon : sans source, retiré. Le renoncement au Cheval Blanc relève de l'itinéraire de l'Izoard. L'heure est une déduction : le schéma n'en donne aucune."
         },
         {
           "id": "mistral-confluence-gap-tallard",
@@ -1923,20 +1924,21 @@
             ]
           },
           "coord_quality": "approx",
-          "when": "Régime de mistral/nord-ouest, après-midi",
+          "when": "Régime de mistral/nord-ouest, après-midi (déduction)",
           "mechanism": "Sur un schéma, une courte ligne barre le secteur de l'aérodrome de Gap-Tallard. Deux flux de mistral s'y font face : l'un arrive du Buëch en contournant le Malaup, l'autre descend du Dévoluy et du Pic de Bure.",
           "confidence": "low",
           "sources": [
-            "S45"
+            "S45",
+            "S70"
           ],
-          "note": "Position approximative. Schéma : diapos 66 et 71. Vol à voile : document d'aérodrome, absent des sources de la fiche.",
+          "note": "Position approximative. Schéma : diapos 66 et 71. L'heure est une déduction : le schéma n'en donne aucune.",
           "possible": [
             "Les planeurs de Gap-Tallard exploitent le secteur en onde et en thermique, entre la falaise de Céüse, à 2000 m, et le Pic de Bure."
           ]
         },
         {
           "id": "mistral-confluence-briancon-izoard",
-          "name": "Confluence de nord de Briançon (Cerveyrette - Izoard)",
+          "name": "Confluence de mistral au sud de Briançon (Cerveyrette - Izoard)",
           "geometry": {
             "type": "LineString",
             "coordinates": [
@@ -1951,7 +1953,7 @@
             ]
           },
           "coord_quality": "approx",
-          "when": "Régime de nord/mistral, après-midi",
+          "when": "Régime de nord/mistral, après-midi (déduction)",
           "mechanism": "Sur un schéma, une courte ligne barre la vallée juste au sud de Briançon, à hauteur de l'Izoard. Le flux de nord-ouest, passé par le Lautaret et la Guisane, y rencontre un flux qui a contourné les Écrins par le sud et remonte la Durance.",
           "confidence": "low",
           "sources": [
@@ -1962,7 +1964,7 @@
           "possible": [
             "Près de l'Izoard, par nord de 15 km/h, on peut décoller en vent arrière face nord, puis sauter sous le vent chercher les premiers thermiques."
           ],
-          "note": "Position approximative (diapo 66). La première passe la faisait glisser vers L'Argentière par vent de nord. « De nord » désigne le régime de vent, non la position."
+          "note": "Position approximative (diapo 66). La première passe la faisait glisser vers L'Argentière par vent de nord. L'heure est une déduction : le schéma n'en donne aucune."
         }
       ],
       "hazards": [
@@ -1973,17 +1975,19 @@
           "lon": 6.6876,
           "lat": 45.9203,
           "radius_km": 10,
-          "conditions": "Été, 13h-18h, régime de brise ; renforcée si vent synoptique de même sens (déduction)",
+          "conditions": "Été, 14h-17h, régime de brise ; renforcée si vent synoptique de même sens (déduction)",
           "description": "Au Pays du Mont-Blanc, la brise fait le plus souvent 20 à 25 km/h, jusqu'à 30 km/h, et se sent jusqu'à 2500 m, parfois 3000 m. L'Arve compte aussi parmi les longues vallées où elle peut atteindre 50 km/h.",
           "sources": [
             "S55",
             "S56",
             "S1",
-            "S38"
+            "S38",
+            "S58"
           ],
           "possible": [
             "À Sallanches, la brise peut être très forte : l'atterrissage au lac est souvent impossible dans la journée."
-          ]
+          ],
+          "note": "Heures de la référence générale, sans observation propre : à lire comme une estimation."
         },
         {
           "id": "brise-forte-tarentaise",
@@ -1992,13 +1996,14 @@
           "lon": 6.6504,
           "lat": 45.5556,
           "radius_km": 15,
-          "conditions": "Été, 13h-18h",
+          "conditions": "Été, 14h-17h",
           "description": "La Tarentaise compte parmi les longues vallées où la brise peut atteindre 50 km/h.",
           "sources": [
             "S2",
-            "S38"
+            "S38",
+            "S58"
           ],
-          "note": "Valeur générale, sans mesure propre à ce tronçon."
+          "note": "Valeur générale, sans mesure propre à ce tronçon. Heures de la référence générale, sans observation propre : à lire comme une estimation."
         },
         {
           "id": "brise-forte-maurienne",
@@ -2007,14 +2012,15 @@
           "lon": 6.35,
           "lat": 45.2833,
           "radius_km": 20,
-          "conditions": "Été, 13h-18h",
+          "conditions": "Été, 14h-17h",
           "description": "La Maurienne compte parmi les longues vallées où la brise peut atteindre 50 km/h.",
           "sources": [
             "S2",
             "S17",
-            "S38"
+            "S38",
+            "S58"
           ],
-          "note": "Valeur générale, sans mesure propre à la vallée."
+          "note": "Valeur générale, sans mesure propre à la vallée. Heures de la référence générale, sans observation propre : à lire comme une estimation."
         },
         {
           "id": "brise-forte-serre-poncon",
@@ -2117,7 +2123,7 @@
           "lat": 45.6381,
           "radius_km": 10,
           "coord_quality": "approx",
-          "conditions": "CTR Chambéry 1 du 15/12 au 07/04 ; TMA Lyon 11 > 2900 m, TMA 16 > 3500 m sur toute la Chartreuse ; TMA Genève 7 > 3200 m sur Bornes-Aravis",
+          "conditions": "CTR Chambéry 1 du 15/12 au 07/04 ; TMA Lyon 11 > 2900 m, TMA 16 > 3500 m sur toute la Chartreuse ; TMA Chambéry 1 > 2900 m et TMA Genève 7 > 3200 m sur Bornes-Aravis",
           "description": "Surveillez le plafond sur les transitions. Sur toute la Chartreuse, la TMA Lyon 11 commence à 2900 m et la TMA Lyon 16 à 3500 m. La CTR de Chambéry 1 couvre l'Épine et la transition de Chambéry du 15/12 au 07/04. Sur les Bornes et les Aravis, la TMA de Chambéry 1 commence à 2900 m et la TMA Genève 7 à 3200 m.",
           "sources": [
             "S41"
@@ -2292,7 +2298,7 @@
         },
         {
           "wind": "Foehn",
-          "effect": "Le foehn de sud s'établit avant une perturbation : hautes pressions côté italien, baisse côté français. Chamonix et les Contamines sont les plus exposées. Il est probable à -4 hPa entre Aoste et Annecy, et 2 à 4 hPa de part et d'autre d'un massif imposent la prudence. Il peut rester entre 1400 et 1800 m. Signes : lenticulaires, mur de foehn aux cols, rafales chaudes et sèches, de 30 à plus de 100 km/h.",
+          "effect": "Le foehn de sud s'établit avant une perturbation : hautes pressions côté italien, baisse côté français. Chamonix et les Contamines sont les plus exposées. Il est probable à -4 hPa entre Aoste et Annecy, et 2 à 4 hPa de part et d'autre d'un massif imposent la prudence. À plus grande échelle, 5 hPa entre Zurich et Milan suffisent, et 4 hPa entre Zurich et Lugano donnent déjà un bon risque. Il peut rester entre 1400 et 1800 m, ou partir avec un vent assez faible, environ 20 km/h à 4000 m, sans un nuage pour le montrer. Signes : lenticulaires, mur de foehn aux cols, écharpes qui montent le long des crêtes depuis l'Italie ou la Suisse, petits cumulus déchiquetés dès le début de la matinée, rafales chaudes et sèches, de 30 à plus de 100 km/h.",
           "sources": [
             "S55",
             "S56",
@@ -3151,7 +3157,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 100,
           "description": "Voici les altitudes de départ de chaque transition, à prendre pour des minima. Les brises sont fortes sur celles de Grenoble, d'Aiguebelette, de Chambéry, de Cœur de Savoie, d'Annecy, du Grand Arc, du Beaufortain et de Dévoluy-Champsaur.",
           "sources": [
             "S41",
@@ -3254,7 +3259,7 @@
       "page_url": "https://drive.google.com/file/d/17E5ArGSrJ35K8ipxjj43GzCnW8N3_x1A/view",
       "pdf_page": 49,
       "publisher": "Gabriel Briffe",
-      "shows": "Flèches orange « brise de mer » de Fréjus, Cannes et Nice vers le nord-est ; ligne verte épaisse du front de convergence (Argens - Gréolières - Mercantour) ; ligne rouge sombre de la crête frontalière ; artère jaune de la Durance ; flèches bleues de la plaine piémontaise.",
+      "shows": "Flèches orange « brise de mer » de Fréjus, Cannes et Nice vers le nord-ouest et le nord ; ligne verte épaisse du front de convergence (Argens - Gréolières - Mercantour) ; ligne rouge sombre de la crête frontalière ; artère jaune de la Durance ; flèches bleues de la plaine piémontaise.",
       "extracted_to": [
         "front-brise-mer-provence",
         "cretes-frontalieres-franco-italiennes",
@@ -3313,7 +3318,7 @@
       "page_url": "https://clubsthilair.fr/wp-content/uploads/2018/04/cross_massifs-et-transitions.pdf",
       "pdf_page": 22,
       "publisher": "Club St Hil'Air (Saint-Hilaire-du-Touvet)",
-      "shows": "Schémas annotés des massifs (versants et horaires, brises fortes, zones sous le vent, venturis, zones aériennes) et des transitions (distance, altitude de départ, altitude d'arrivée) ; pages 38-48 : fiches CFD de grands cross.",
+      "shows": "Schémas annotés des massifs (versants et horaires, brises fortes, zones sous le vent, venturis, zones aériennes) et des transitions (distance, altitude de départ, altitude d'arrivée) ; pages 33-46 : fiches CFD de grands cross.",
       "extracted_to": [
         "ligne-prealpes-annecy-grenoble",
         "distance-libre-col-vert-nord-233",
@@ -3694,7 +3699,7 @@
       "publisher": "Club de Saint-Hilaire du Touvet (copie Bluehouse)",
       "type": "pdf",
       "lang": "fr",
-      "notes": "PDF lu en entier (48 p.) : fiches massifs (versants et horaires, brises fortes, zones sous le vent, venturis, zones aériennes), 14 fiches de transitions (distance, altitude mini de départ, altitude d'arrivée), 12 exemples de cross CFD. Pages 38-48 : exemples CFD (balises) ; p. 39 Col Vert distance libre nord 232,96 km."
+      "notes": "PDF lu en entier (48 p.) : fiches massifs (versants et horaires, brises fortes, zones sous le vent, venturis, zones aériennes), 14 fiches de transitions (distance, altitude mini de départ, altitude d'arrivée), 12 exemples de cross CFD. Pages 19-31 : transitions. Pages 33-46 : exemples CFD (balises) ; p. 39 Col Vert distance libre nord 232,96 km."
     },
     {
       "id": "S42",
@@ -3947,6 +3952,15 @@
       "type": "web",
       "lang": "fr",
       "notes": "Déco Col d'Izoard 44,8188 N 6,72819 E 2443 m (N/S) ; Colle dell'Agnello 44,6832 N 6,9794 E 2730 m. Référence locale .cache/research/paraglidingearth_alps.tsv ; fiches : https://www.paraglidingearth.com/pgearth/site?id=23667."
+    },
+    {
+      "id": "S70",
+      "title": "Stage montagne Alpes du Sud – AVG Gap-Tallard (présentation vol à voile)",
+      "url": "http://aavo.free.fr/activite/montagne/pres_gap.pdf",
+      "publisher": "AAVO / AVG (vol à voile)",
+      "type": "pdf",
+      "lang": "fr",
+      "notes": "Présentation lue en texte (même document que S52 du lot Dévoluy-Gap-Buëch-Diois) : terrain de Gap-Tallard, vues de Céüse (2000 m) et du Pic de Bure, « le micro-climat permet de voler en onde et en thermique pendant le stage »."
     }
   ],
   "model_rules": [

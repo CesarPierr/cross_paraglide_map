@@ -1,0 +1,1316 @@
+[
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "vanoise",
+  "id": "brise-doron-bozel",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 20,
+   "max": 35
+  },
+  "after": {
+   "typical": 20,
+   "max": null
+  },
+  "source": "S126, S88",
+  "reason": "« fort », « musclé », aucun chiffre : 35 km/h retiré. 20 km/h gardé comme estimation : sans valeur le modèle appliquerait 15 km/h à une brise que les fiches disent forte."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "vanoise",
+  "id": "brise-saint-bon-courchevel",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 25,
+   "max": 40
+  },
+  "after": {
+   "typical": 25,
+   "max": null
+  },
+  "source": "S127, S61",
+  "reason": "« fortes à très fortes », aucun chiffre : 40 km/h retiré. 25 km/h gardé comme estimation : sans valeur le modèle appliquerait 15 km/h."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "vanoise",
+  "id": "brise-doron-belleville",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 25,
+   "max": 40
+  },
+  "after": {
+   "typical": null,
+   "max": null
+  },
+  "source": "S129, S63",
+  "reason": "Aucune source ne chiffre ni ne qualifie la brise de vallée : « très forte » vise la brise de la face sud de Caron. Le modèle applique sa valeur par défaut, affichée « non documentée »."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "brise-isere-tarentaise",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 25,
+   "max": 50
+  },
+  "after": {
+   "typical": 25,
+   "max": 40
+  },
+  "source": "S49",
+  "reason": "Le maximum propre à cette vallée est 30 à 40 km/h et plus à Bourg ; 50 km/h est une référence générale, gardée dans le texte. 25 km/h, utilisé par le modèle, reste une estimation dite en note."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "brise-chapieux-roselend",
+  "field": "season",
+  "before": "toute l'année, surtout avec vent de nord",
+  "after": null,
+  "source": "S35, S36, S37",
+  "reason": "« toute l'année, surtout avec vent de nord » : la saison n'est dite nulle part. Champ facultatif ; le contrôle reste en juillet."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "vanoise",
+  "id": "brise-allues-meribel",
+  "field": "name",
+  "before": "Brise montante de la vallée des Allues (Brides-les-Bains → Méribel)",
+  "after": "Brise montante de la vallée des Allues, déduite du relief (Brides-les-Bains → Méribel)",
+  "source": "S52",
+  "reason": "Aucune source ne décrit cette brise : le nom le dit désormais."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "vanoise",
+  "id": "brise-allues-meribel",
+  "field": "hours",
+  "before": "Après-midi d'été ; vent de sud fort en fin de journée à Méribel (ParaglidingEarth)",
+  "after": "Après-midi d'été (déduit de la forme de la vallée)",
+  "source": "S52",
+  "reason": "Le vent de sud de fin de journée descend la vallée : ce n'est pas cette brise. Il reste dans la description. Fenêtre du modèle inchangée (12h30-18h30), gardée comme estimation."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "confluence-col-de-la-chal",
+  "field": "name",
+  "before": "Confluence brise du Ponthurin / brise descendante de l'Arc (col de la Chal, Aiguille Grive)",
+  "after": "Basculement de la brise du Ponthurin vers l'Arc par le col de la Chal (Aiguille Grive)",
+  "source": "S36, S37",
+  "reason": "« En basculant par le col de La Chal, elle participe à la brise descendante de la vallée de l'Arc » : aucune source ne parle de confluence. Id gardé : référencé par la visite de la Tarentaise."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "vanoise",
+  "id": "rafales-descendantes-mont-jovet",
+  "field": "conditions",
+  "before": "Début d'après-midi, vent météo d'ouest ou de nord et brise de vallée forte",
+  "after": "Début d'après-midi, surtout par vent météo d'ouest et brise de vallée forte",
+  "source": "S125, S88",
+  "reason": "« surtout par vent météo d ouest et de brise de vallée forte » ; le nord vient des rafales des Prés, qui descendent du Jovet, pas d'un vent météo. Le danger n'entre plus dans la couche du modèle par nord."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "versant-peisey-vallandry",
+  "field": "best_hours",
+  "before": "après-midi et soirée (restitution jusqu'à 19h-20h)",
+  "after": "après-midi et soirée (restitution jusqu'au coucher du soleil)",
+  "source": "S51",
+  "reason": "« Jusqu'au coucher du soleil » ; 19h-20h n'est dans aucune source."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "arcs-10-de-face",
+  "field": "best_hours",
+  "before": "après-midi d'été (11h-18h)",
+  "after": "après-midi d'été",
+  "source": "S50",
+  "reason": "11h-18h n'est pas sourcé ; « l'après-midi, les conditions deviennent plus dynamiques »."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "arcs-10-de-face",
+  "field": "trigger",
+  "before": "faces ouest/nord-ouest des Arcs chauffées l'après-midi, au-dessus d'Arc 1800",
+  "after": "pentes des Arcs exposées ouest et nord-ouest, au-dessus d'Arc 1800",
+  "source": "S36, S50",
+  "reason": "« Chauffées l'après-midi » n'est pas sourcé ; S36 décrit les pentes exposées O/NO où la vallée réoriente le flux."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "fort-de-la-platte-extraction",
+  "field": "best_hours",
+  "before": "11h30-13h30 en été (PCHT) ; mi-juillet, thermique actif sur le fort",
+  "after": null,
+  "source": "S71, S72",
+  "reason": "11h30-13h30 est le créneau d'un autre décollage, au-dessus du Fort du Truc, déjà cité en note ; « mi-juillet » est la date d'un seul vol. Champ facultatif."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "pointe-de-combe-neuve-plafond-3500",
+  "field": "name",
+  "before": "Pointe de Combe Neuve : plafond de 3500 m au départ du Fort de la Platte",
+  "after": "Pointe de Combe Neuve : premier plafond après le Fort de la Platte (3500 m sur un vol)",
+  "source": "S72",
+  "reason": "3500 m est le plafond d'un seul vol, pas une valeur du lieu."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "pointe-de-combe-neuve-plafond-3500",
+  "field": "trigger",
+  "before": "sommet et faces sud-est de la Pointe de la Combe Neuve (IGN : 2954 m), au-dessus des Chapelles",
+  "after": "au-dessus de la Pointe de la Combe Neuve (IGN : 2954 m)",
+  "source": "S72",
+  "reason": "« Le plaf au-dessus de la Pointe de Combe Neuve » : faces sud-est et Chapelles ne sont pas décrites."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "pointe-de-combe-neuve-plafond-3500",
+  "field": "best_hours",
+  "before": "après l'extraction du Fort de la Platte (fin de matinée à début d'après-midi, déduction)",
+  "after": null,
+  "source": "S72",
+  "reason": "Heures déduites, aucune dans le récit. Champ facultatif."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "aime-confluence-thermique",
+  "field": "name",
+  "before": "Au-dessus d'Aime : thermique de confluence (relance vers Bourg-Saint-Maurice)",
+  "after": "Au-dessus d'Aime : thermique du retour vers Bourg-Saint-Maurice (confluence supposée)",
+  "source": "S72",
+  "reason": "« Il me semble avoir trouvé une confluence » : impression d'un seul vol. Id gardé : référencé par la visite."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "aime-confluence-thermique",
+  "field": "trigger",
+  "before": "confluence entre le flux descendant du Cormet d'Arêches et la brise qui remonte vers Bourg-Saint-Maurice",
+  "after": "confluence supposée, sur un seul vol, entre le flux descendant du Cormet d'Arêches et la brise qui remonte vers Bourg-Saint-Maurice",
+  "source": "S72",
+  "reason": "Même raison que le nom."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "montagne-de-tete-valmorel-thermiques",
+  "field": "name",
+  "before": "Montagne de Tête (Valmorel) : thermiques puissants dès 16h, dynamique dès 12h",
+  "after": "Valmorel : Les Bachals (thermiques dès 16h) et crête du Gollet (dynamique dès 12h)",
+  "source": "S67",
+  "reason": "Deux décollages d'une ancienne fiche. Rien ne les place sous la Montagne de Tête. Id et position gardés."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "montagne-de-tete-valmorel-thermiques",
+  "field": "trigger",
+  "before": "pentes sous le décollage de la Montagne de Tête, au-dessus de Valmorel (Bachals, Gollet)",
+  "after": "décollages des Bachals et de la crête du Gollet, à Valmorel",
+  "source": "S67",
+  "reason": "Même raison que le nom."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "montagne-de-tete-valmorel-thermiques",
+  "field": "best_hours",
+  "before": "dynamique à partir de 12h, thermiques puissants à partir de 16h (anciennes fiches du catalogue)",
+  "after": "Les Bachals : thermiques puissants à partir de 16h ; crête du Gollet : dynamique à partir de 12h (anciennes fiches du catalogue)",
+  "source": "S67",
+  "reason": "16h aux Bachals, 12h au Gollet : les heures étaient fusionnées."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "plan-de-la-boutte-thermique",
+  "field": "trigger",
+  "before": "pentes sous le décollage du Plan de la Boutte (2020 m), versant ouest de Bourg-Saint-Maurice, zone de sensibilité gypaète « Charbonnet »",
+  "after": "pentes sous le décollage du Plan de la Boutte (2020 m), versant ouest de Bourg-Saint-Maurice",
+  "source": "S38",
+  "reason": "Le point est à environ 2 km hors du contour de la zone Charbonnet ; la description dit « voisines »."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "plan-de-la-boutte-thermique",
+  "field": "best_hours",
+  "before": "le matin et à midi d'après les traces GPS (100 % le matin, 98 % à midi, 65 % le soir, rien le soir)",
+  "after": "le matin et à midi d'après les traces GPS (100 % le matin, 98 % à midi, 65 % le soir)",
+  "source": "S142",
+  "reason": "« 65 % le soir, rien le soir » se contredit ; 65 % est la mesure."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "plan-du-col-doucy",
+  "field": "best_hours",
+  "before": "le matin et à midi d'après les traces GPS (95 % le matin, 92 % à midi, rien le soir)",
+  "after": "le matin et à midi d'après les traces GPS (95 % le matin, 93 % à midi, rien le soir)",
+  "source": "S142",
+  "reason": "p = 0,925 : 93 %, comme la note."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "vanoise",
+  "id": "pralognan-le-pachut",
+  "field": "best_hours",
+  "before": "toute la journée d'après les traces GPS (99 % le matin, 98 % à midi, 76 % le soir)",
+  "after": "toute la journée d'après les traces GPS (99 % le matin, 98 % à midi, 77 % le soir)",
+  "source": "S142",
+  "reason": "p = 0,765 : 77 %, comme la note."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "la-tranchee-cevins",
+  "field": "name",
+  "before": "La Tranchée (Cévins) : pentes sous le décollage",
+  "after": "La Tranchée (Cévins) : pentes au nord-est du décollage",
+  "source": "S142, S98",
+  "reason": "Le point (1346 m) est plus haut que le décollage (terrain 1282 m)."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "la-tranchee-cevins",
+  "field": "trigger",
+  "before": "pentes sous le décollage de La Tranchée (871 m, O), au-dessus de Cévins, vers la combe de Savoie",
+  "after": "pentes à 1,8 km au nord-est du décollage de La Tranchée (871 m, O), plus haut que lui, vers la combe de Savoie",
+  "source": "S142, S98",
+  "reason": "Même raison que le nom."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "la-tranchee-cevins",
+  "field": "best_hours",
+  "before": "en fin de journée d'après les traces GPS (69 % à midi, 73 % le soir, rien le matin ni à midi)",
+  "after": "en fin de journée d'après les traces GPS (69 % à midi, 73 % le soir, rien le matin)",
+  "source": "S142",
+  "reason": "« Rien à midi » après « 69 % à midi » se contredit ; 69 % est la mesure."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "vanoise",
+  "id": "la-plagne-3007-pentes",
+  "field": "name",
+  "before": "La Plagne (Saint-Jean-de-Belleville) : pentes sous le décollage",
+  "after": "La Plagne (Saint-Jean-de-Belleville) : pentes du décollage",
+  "source": "S142",
+  "reason": "Le point (2113 m) est un peu au-dessus du décollage (2103 m)."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "vanoise",
+  "id": "la-plagne-3007-pentes",
+  "field": "trigger",
+  "before": "pentes sous le décollage de La Plagne (2103 m, Saint-Jean-de-Belleville), versant de Belleville",
+  "after": "pentes du décollage de La Plagne (2103 m, Saint-Jean-de-Belleville), versant de Belleville",
+  "source": "S142",
+  "reason": "Même raison que le nom."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "la-poudreuse-thermique",
+  "field": "trigger",
+  "before": "pentes sous le décollage de La Poudreuse (2150 m), au-dessus de Peisey-Vallandry, sous l'Aiguille Rousse",
+  "after": "pentes du décollage de La Poudreuse (2150 m), au-dessus de Peisey-Vallandry, sous l'Aiguille Rousse",
+  "source": "S142",
+  "reason": "Même défaut, non listé par le rapport : le point (2152 m) n'est pas sous le décollage (2150 m)."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "col-du-petit-saint-bernard-soaring",
+  "field": "wind_dirs",
+  "before": [
+   "N",
+   "NE",
+   "SW",
+   "W",
+   "NW"
+  ],
+  "after": null,
+  "source": "S83",
+  "reason": "Vents d'une fiche de snowkite, pas de soaring ; ils restent dits comme tels en note. Champ facultatif, affiché seulement."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "pointe-du-lavachet",
+  "field": "name",
+  "before": "Pointe du Lavachet (Val d'Isère)",
+  "after": "Pointe du Lavachet (Tignes)",
+  "source": "S52",
+  "reason": "Le point donné (6,9228 ; 45,4622) est au-dessus de Tignes, pas à Val d'Isère."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "tarentair-tour-3-refuges",
+  "field": "distance_km",
+  "before": 55.4,
+  "after": null,
+  "source": "aucune",
+  "reason": "55,4 km calculés par l'atlas en ligne droite entre les refuges, et non une course : sans ce champ, la liste calcule la longueur du tracé et la fiche n'affiche plus de « Distance »."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "brise-forte-tarentaise-apres-midi",
+  "field": "conditions",
+  "before": "Été, de 12h-14h jusqu'en fin d'après-midi ; plus forte avec vent météo N/NO",
+  "after": "Été, de 12h-14h jusqu'en fin d'après-midi",
+  "source": "S49, S74",
+  "reason": "« Plus forte avec vent météo N/NO » n'est pas sourcé pour la brise. Fenêtre du modèle inchangée."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "cluse-chambery",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 12,
+   "max": 20
+  },
+  "after": {
+   "typical": null,
+   "max": null
+  },
+  "source": "aucune",
+  "reason": "12/20 km/h déduits, dits comme tels ; le modèle passe à son défaut de 15 km/h."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "lac-annecy-faverges",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 15,
+   "max": 25
+  },
+  "after": {
+   "typical": null,
+   "max": null
+  },
+  "source": "aucune",
+  "reason": "15/25 km/h sans source ; le modèle passe à son défaut de lac, 12 km/h, comme la fiche locale du lac."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "drac-trieves",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 15,
+   "max": 25
+  },
+  "after": {
+   "typical": null,
+   "max": null
+  },
+  "source": "aucune",
+  "reason": "Aucune vitesse dans les sources ; défaut du modèle identique (15 km/h)."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "buech",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 15,
+   "max": 30
+  },
+  "after": {
+   "typical": null,
+   "max": null
+  },
+  "source": "aucune",
+  "reason": "Aucune vitesse dans les sources ; défaut du modèle identique (15 km/h)."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "tarentaise-haute",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 15,
+   "max": 30
+  },
+  "after": {
+   "typical": null,
+   "max": null
+  },
+  "source": "aucune",
+  "reason": "Valeurs génériques sans mesure ; défaut du modèle identique (15 km/h). Le secteur local a sa propre fiche, déjà sans vitesse."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "bleone-digne",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 15,
+   "max": 25
+  },
+  "after": {
+   "typical": null,
+   "max": null
+  },
+  "source": "aucune",
+  "reason": "Aucune vitesse dans les sources ; défaut du modèle identique (15 km/h)."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "bes-javie-montclar",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 15,
+   "max": 25
+  },
+  "after": {
+   "typical": null,
+   "max": null
+  },
+  "source": "aucune",
+  "reason": "Aucune vitesse dans les sources ; défaut du modèle identique (15 km/h)."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "brise-mer-provence-durance",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 15,
+   "max": 25
+  },
+  "after": {
+   "typical": null,
+   "max": null
+  },
+  "source": "aucune",
+  "reason": "Force non documentée, dit en note ; le modèle passe de 15 à son défaut de 10 km/h."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "brise-mer-var-verdon",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 12,
+   "max": 20
+  },
+  "after": {
+   "typical": null,
+   "max": null
+  },
+  "source": "aucune",
+  "reason": "Force non documentée, dit en note ; le modèle passe de 12 à son défaut de 10 km/h."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "brise-mer-var-mercantour",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 12,
+   "max": 20
+  },
+  "after": {
+   "typical": null,
+   "max": null
+  },
+  "source": "aucune",
+  "reason": "Force non documentée, dit en note ; le modèle passe de 12 à son défaut de 10 km/h."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "descendante-gresivaudan-nuit",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 8,
+   "max": 15
+  },
+  "after": {
+   "typical": null,
+   "max": null
+  },
+  "source": "aucune",
+  "reason": "Vitesses déduites ; défaut du modèle identique (8 km/h)."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "briffe-rhone-vers-diois",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 10,
+   "max": 20
+  },
+  "after": {
+   "typical": null,
+   "max": null
+  },
+  "source": "aucune",
+  "reason": "Le schéma ne donne aucune vitesse ; défaut du modèle identique (10 km/h)."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "briffe-durance-vers-maurienne",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 10,
+   "max": 20
+  },
+  "after": {
+   "typical": null,
+   "max": null
+  },
+  "source": "aucune",
+  "reason": "Le schéma ne donne aucune vitesse ; défaut du modèle identique (10 km/h)."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "briffe-plaine-po-val-de-suse",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 10,
+   "max": 20
+  },
+  "after": {
+   "typical": null,
+   "max": null
+  },
+  "source": "aucune",
+  "reason": "Le schéma ne donne aucune vitesse ; défaut du modèle identique (10 km/h)."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "briffe-plaine-po-val-d-aoste",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 10,
+   "max": 20
+  },
+  "after": {
+   "typical": null,
+   "max": null
+  },
+  "source": "aucune",
+  "reason": "Le schéma ne donne aucune vitesse ; défaut du modèle identique (10 km/h)."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "basse-durance",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 15,
+   "max": 30
+  },
+  "after": {
+   "typical": 15,
+   "max": null
+  },
+  "source": "S57",
+  "reason": "30 km/h sans source, retiré. 15 km/h gardé comme estimation : « accélérateur à brise très puissant », et le défaut régional serait 10 km/h."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "aspiration-bas-dauphine-voreppe",
+  "field": "speed_kmh",
+  "before": {
+   "typical": 8,
+   "max": 15
+  },
+  "after": {
+   "typical": 8,
+   "max": null
+  },
+  "source": "S4",
+  "reason": "1-3 m/s mesurés en Bavière font au plus 11 km/h : 15 km/h retiré. 8 km/h gardé comme estimation, dite en note."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "mistral-confluence-buech-crete-de-l-ane",
+  "field": "when",
+  "before": "Régime de mistral/nord-ouest, après-midi",
+  "after": "Régime de mistral/nord-ouest, après-midi (déduction)",
+  "source": "S45",
+  "reason": "Aucune heure sur les diapositives. Gardé comme estimation : sans fenêtre, la convergence perd son contrôle du modèle et son créneau d'activité. Fenêtre du modèle inchangée."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "mistral-confluence-valensole-verdon",
+  "field": "when",
+  "before": "Régime de mistral/nord-ouest, après-midi",
+  "after": "Régime de mistral/nord-ouest, après-midi (déduction)",
+  "source": "S45",
+  "reason": "Aucune heure sur les diapositives. Gardé comme estimation : sans fenêtre, la convergence perd son contrôle du modèle et son créneau d'activité. Fenêtre du modèle inchangée."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "mistral-confluence-gap-tallard",
+  "field": "when",
+  "before": "Régime de mistral/nord-ouest, après-midi",
+  "after": "Régime de mistral/nord-ouest, après-midi (déduction)",
+  "source": "S45",
+  "reason": "Aucune heure sur les diapositives. Gardé comme estimation : sans fenêtre, la convergence perd son contrôle du modèle et son créneau d'activité. Fenêtre du modèle inchangée."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "mistral-confluence-briancon-izoard",
+  "field": "when",
+  "before": "Régime de nord/mistral, après-midi",
+  "after": "Régime de nord/mistral, après-midi (déduction)",
+  "source": "S45",
+  "reason": "Aucune heure sur les diapositives. Gardé comme estimation : sans fenêtre, la convergence perd son contrôle du modèle et son créneau d'activité. Fenêtre du modèle inchangée."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "confluence-obiou-taillefer",
+  "field": "when",
+  "before": "Jours thermiques, après-midi",
+  "after": "Jours thermiques, après-midi (déduction)",
+  "source": "S45",
+  "reason": "Aucune heure sur les diapositives. Gardé comme estimation : sans fenêtre, la convergence perd son contrôle du modèle et son créneau d'activité. Fenêtre du modèle inchangée."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "arc-diois-col-de-cabre",
+  "field": "when",
+  "before": "Jours thermiques, après-midi",
+  "after": "Jours thermiques, après-midi (déduction)",
+  "source": "S45",
+  "reason": "Aucune heure sur les diapositives. Gardé comme estimation : sans fenêtre, la convergence perd son contrôle du modèle et son créneau d'activité. Fenêtre du modèle inchangée."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "cretes-frontalieres-franco-italiennes",
+  "field": "when",
+  "before": "Jours thermiques, après-midi ; la ligne se décale vers le versant le plus faible selon le vent",
+  "after": "Jours thermiques, après-midi (déduction)",
+  "source": "S45",
+  "reason": "Le décalage selon le vent vient de diapositives qui montrent la Provence. Aucune heure non plus sur le schéma."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "mistral-confluence-briancon-izoard",
+  "field": "name",
+  "before": "Confluence de nord de Briançon (Cerveyrette - Izoard)",
+  "after": "Confluence de mistral au sud de Briançon (Cerveyrette - Izoard)",
+  "source": "S45 diapo 66",
+  "reason": "« De nord » se lisait comme une position, alors que la ligne est au sud de Briançon. Id inchangé."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "ligne-prealpes-annecy-grenoble",
+  "field": "distance_km",
+  "before": 100,
+  "after": null,
+  "source": "aucune",
+  "reason": "100 km : valeur de l'atlas, et le support donne des transitions, pas un vol. Sans ce champ, la liste calcule la longueur du tracé."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "ctr-chambery-tma-lyon-chartreuse",
+  "field": "conditions",
+  "before": "CTR Chambéry 1 du 15/12 au 07/04 ; TMA Lyon 11 > 2900 m, TMA 16 > 3500 m sur toute la Chartreuse ; TMA Genève 7 > 3200 m sur Bornes-Aravis",
+  "after": "CTR Chambéry 1 du 15/12 au 07/04 ; TMA Lyon 11 > 2900 m, TMA 16 > 3500 m sur toute la Chartreuse ; TMA Chambéry 1 > 2900 m et TMA Genève 7 > 3200 m sur Bornes-Aravis",
+  "source": "S41",
+  "reason": "La fiche Bornes-Aravis du support liste aussi « TMA Chambery 1 Alt>2900m ». Type espace aérien : le modèle ne le lit pas."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "brise-forte-tarentaise",
+  "field": "conditions",
+  "before": "Été, 13h-18h",
+  "after": "Été, 14h-17h",
+  "source": "S58",
+  "reason": "« Été, 13h-18h » sans source. Remplacé par les heures les plus fortes de la référence générale (14h à 16-17h). Le champ reste : sans heure ni vent, le danger sortirait de la couche du modèle. Le milieu de la fenêtre reste 15h30."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "brise-forte-tarentaise",
+  "field": "sources",
+  "before": [
+   "S2",
+   "S38"
+  ],
+  "after": [
+   "S2",
+   "S38",
+   "S58"
+  ],
+  "source": "S58",
+  "reason": "Source des heures portées dans conditions."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "brise-forte-maurienne",
+  "field": "conditions",
+  "before": "Été, 13h-18h",
+  "after": "Été, 14h-17h",
+  "source": "S58",
+  "reason": "« Été, 13h-18h » sans source. Remplacé par les heures les plus fortes de la référence générale (14h à 16-17h). Le champ reste : sans heure ni vent, le danger sortirait de la couche du modèle. Le milieu de la fenêtre reste 15h30."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "brise-forte-maurienne",
+  "field": "sources",
+  "before": [
+   "S2",
+   "S17",
+   "S38"
+  ],
+  "after": [
+   "S2",
+   "S17",
+   "S38",
+   "S58"
+  ],
+  "source": "S58",
+  "reason": "Source des heures portées dans conditions."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "brise-forte-arve",
+  "field": "conditions",
+  "before": "Été, 13h-18h, régime de brise ; renforcée si vent synoptique de même sens (déduction)",
+  "after": "Été, 14h-17h, régime de brise ; renforcée si vent synoptique de même sens (déduction)",
+  "source": "S58",
+  "reason": "Même « 13h-18h » sans source, non listé par le rapport. Remplacé par les heures les plus fortes de la référence générale (14h à 16-17h). Le champ reste : sans heure ni vent, le danger sortirait de la couche du modèle. Le milieu de la fenêtre reste 15h30."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "brise-forte-arve",
+  "field": "sources",
+  "before": [
+   "S55",
+   "S56",
+   "S1",
+   "S38"
+  ],
+  "after": [
+   "S55",
+   "S56",
+   "S1",
+   "S38",
+   "S58"
+  ],
+  "source": "S58",
+  "reason": "Source des heures portées dans conditions."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "mistral-confluence-gap-tallard",
+  "field": "sources",
+  "before": [
+   "S45"
+  ],
+  "after": [
+   "S45",
+   "S70"
+  ],
+  "source": "S70",
+  "reason": "Le document d'aérodrome qui porte l'observation des planeurs n'était pas listé."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "",
+  "id": "S70",
+  "field": "sources[] (nouvelle entrée)",
+  "before": null,
+  "after": "http://aavo.free.fr/activite/montagne/pres_gap.pdf",
+  "source": "S70",
+  "reason": "URL reprise de la source S52 du lot Dévoluy, même fichier en cache (2 566 142 octets)."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "F3",
+  "field": "shows",
+  "before": "Flèches orange « brise de mer » de Fréjus, Cannes et Nice vers le nord-est ; ligne verte épaisse du front de convergence (Argens - Gréolières - Mercantour) ; ligne rouge sombre de la crête frontalière ; artère jaune de la Durance ; flèches bleues de la plaine piémontaise.",
+  "after": "Flèches orange « brise de mer » de Fréjus, Cannes et Nice vers le nord-ouest et le nord ; ligne verte épaisse du front de convergence (Argens - Gréolières - Mercantour) ; ligne rouge sombre de la crête frontalière ; artère jaune de la Durance ; flèches bleues de la plaine piémontaise.",
+  "source": "S45 diapos 47, 49",
+  "reason": "Flèches lues vers le nord-ouest et le nord par le rapport des éléments ; non relues à l'œil ici."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "F6",
+  "field": "shows",
+  "before": "Schémas annotés des massifs (versants et horaires, brises fortes, zones sous le vent, venturis, zones aériennes) et des transitions (distance, altitude de départ, altitude d'arrivée) ; pages 38-48 : fiches CFD de grands cross.",
+  "after": "Schémas annotés des massifs (versants et horaires, brises fortes, zones sous le vent, venturis, zones aériennes) et des transitions (distance, altitude de départ, altitude d'arrivée) ; pages 33-46 : fiches CFD de grands cross.",
+  "source": "S41",
+  "reason": "Vérifié au PDF : exemples CFD de la p. 33 à la p. 46."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "",
+  "id": "S41",
+  "field": "sources[].notes",
+  "before": "PDF lu en entier (48 p.) : fiches massifs (versants et horaires, brises fortes, zones sous le vent, venturis, zones aériennes), 14 fiches de transitions (distance, altitude mini de départ, altitude d'arrivée), 12 exemples de cross CFD. Pages 38-48 : exemples CFD (balises) ; p. 39 Col Vert distance libre nord 232,96 km.",
+  "after": "PDF lu en entier (48 p.) : fiches massifs (versants et horaires, brises fortes, zones sous le vent, venturis, zones aériennes), 14 fiches de transitions (distance, altitude mini de départ, altitude d'arrivée), 12 exemples de cross CFD. Pages 19-31 : transitions. Pages 33-46 : exemples CFD (balises) ; p. 39 Col Vert distance libre nord 232,96 km.",
+  "source": "S41",
+  "reason": "Vérifié au PDF ; la p. 39 (Col Vert) était juste."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "vanoise",
+  "id": "brise-doron-bozel",
+  "field": "note",
+  "before": "Vitesses typiques de 20 km/h et maximales de 35 km/h : interprétation de « fort » et de « musclé », les sources ne donnant aucune vitesse chiffrée. Les Monts : décoller avant que la brise s'allume vers 13h. À Champagny, l'aérologie est souvent délicate de 13h à 16h, avec un venturi par brise forte à la Duy.",
+  "after": "Vitesse de 20 km/h : estimation tirée de « fort » et de « musclé », les sources ne donnant aucun chiffre. Les Monts : décoller avant que la brise s'allume vers 13h. À Champagny, l'aérologie est souvent délicate de 13h à 16h, avec un venturi par brise forte à la Duy.",
+  "source": "S126, S88",
+  "reason": "Suit speed_kmh."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "vanoise",
+  "id": "brise-saint-bon-courchevel",
+  "field": "note",
+  "before": "Vitesses typiques de 25 km/h et maximales de 40 km/h : interprétation de « forte à très forte ». Une balise est au décollage du Bouc Blanc.",
+  "after": "Vitesse de 25 km/h : estimation tirée de « forte à très forte », sans chiffre dans les sources. Une balise est au décollage du Bouc Blanc.",
+  "source": "S127",
+  "reason": "Suit speed_kmh."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "vanoise",
+  "id": "brise-doron-belleville",
+  "field": "note",
+  "before": "Vitesses non chiffrées : les valeurs de 25 et 40 km/h sont une interprétation.",
+  "after": "Vitesse non documentée : « très forte » vise la brise de la face sud de Caron, pas celle de la vallée.",
+  "source": "S63, S129",
+  "reason": "Suit speed_kmh."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "brise-isere-tarentaise",
+  "field": "note",
+  "before": "Vitesse typique de 25 km/h retenue sur le couloir ; les valeurs plus fortes sont des pointes locales, et les 50 km/h viennent d'une référence générale sur les longues vallées. Le vent de vallée peut être fort en début d'après-midi à La Bâthie et à Langon ; à Montgirod-Arcachat, il passe par-dessus le décollage dès 11h, en se joignant au vent montant de Moûtiers ; à Macot, la brise est forte de 15h à 17h, et aux Ilettes dès 12h.",
+  "after": "Vitesse typique de 25 km/h : estimation sur le couloir. Le maximum de 40 km/h est une pointe notée à Bourg, et les 50 km/h viennent d'une référence générale sur les longues vallées. Le vent de vallée peut être fort en début d'après-midi à La Bâthie et à Langon ; à Montgirod-Arcachat, il passe par-dessus le décollage dès 11h, en se joignant au vent montant de Moûtiers ; à Macot, la brise est forte de 15h à 17h, et aux Ilettes dès 12h.",
+  "source": "S49, S24",
+  "reason": "Suit speed_kmh."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "pointe-de-combe-neuve-plafond-3500",
+  "field": "note",
+  "before": "Faces sud-est et position au-dessus des Chapelles : non décrites par la source.",
+  "after": "Un seul vol, sans heure, et la source ne décrit aucune face de cette pointe.",
+  "source": "S72",
+  "reason": "Suit trigger et best_hours."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "tarentair-tour-3-refuges",
+  "field": "note",
+  "before": "Le règlement prévoit la disqualification pour tout survol du Parc national sous 1000 m/sol et de la réserve des Contamines sous 300 m/sol, et une pénalité pouvant aller jusqu'à la disqualification pour une violation d'espace aérien contrôlé. Balises optionnelles (lacs, sommets : Aiguille Grive, Roche de Mio, Mont Saint-Jacques, Grande Rochette, Mont Jovet, Saulire, Bisanne, col du Joly…). Distance : somme des segments en ligne droite pour l'ordre indiqué (Mora, Nant du Beurre, Rosuel), calculée par l'atlas. Aucune trace de cross en plaine (Moûtiers-Albertville) ni de vol Tarentaise-Maurienne n'a pu être lue.",
+  "after": "Le règlement prévoit la disqualification pour tout survol du Parc national sous 1000 m/sol et de la réserve des Contamines sous 300 m/sol, et une pénalité pouvant aller jusqu'à la disqualification pour une violation d'espace aérien contrôlé. Balises optionnelles (lacs, sommets : Aiguille Grive, Roche de Mio, Mont Saint-Jacques, Grande Rochette, Mont Jovet, Saulire, Bisanne, col du Joly…). Aucune trace de cross en plaine (Moûtiers-Albertville) ni de vol Tarentaise-Maurienne n'a pu être lue.",
+  "source": "S48",
+  "reason": "Suit distance_km."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "arcs-10-de-face",
+  "field": "description",
+  "before": "Le « 10 de Face », au-dessus d'Arc 1800, doit son surnom à son aérologie particulièrement favorable. La face ouest et nord-ouest des Arcs y chauffe l'après-midi. Méfiez-vous des câbles de télésiège, de la forte brise et du vent de sud-ouest.",
+  "after": "Le « 10 de Face », au-dessus d'Arc 1800, doit son surnom à son aérologie particulièrement favorable. L'après-midi, les conditions y deviennent plus dynamiques, sur les pentes des Arcs exposées ouest et nord-ouest. Méfiez-vous des câbles de télésiège, de la forte brise et du vent de sud-ouest.",
+  "source": "S50, S36",
+  "reason": "Suit trigger : « chauffe l'après-midi » n'est pas sourcé."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "aspiration-bas-dauphine-voreppe",
+  "field": "note",
+  "before": "Valeurs mesurées sur l'avant-pays bavarois, à transposer avec prudence. Entrée par la basse Isère et la cluse de Voreppe : déduction pour alimenter la cuvette grenobloise, aucune source ne décrit ce flux précisément.",
+  "after": "Valeurs mesurées sur l'avant-pays bavarois, à transposer avec prudence. Entrée par la basse Isère et la cluse de Voreppe : déduction pour alimenter la cuvette grenobloise, aucune source ne décrit ce flux précisément. La vitesse et les heures sont une estimation.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "isere-gresivaudan-combe-de-savoie-gresivaudan",
+  "field": "note",
+  "before": "Remplace la première passe, qui la faisait remonter vers le nord-est : les sources parlent d'une brise « de nord », soit vers le sud-ouest. Le partage de l'air au débouché de la cluse de Chambéry vient d'une question restée sans réponse ferme. Vitesses génériques (15 à 35 km/h, pic vers 14h-16/17h, 3 à 10 m/s au centre des vallées) ; schémas du « Y » grenoblois non consultés.",
+  "after": "Remplace la première passe, qui la faisait remonter vers le nord-est : les sources parlent d'une brise « de nord », soit vers le sud-ouest. Le partage de l'air au débouché de la cluse de Chambéry vient d'une question restée sans réponse ferme. Vitesses génériques (15 à 35 km/h, pic vers 14h-16/17h, 3 à 10 m/s au centre des vallées) ; schémas du « Y » grenoblois non consultés. Heures génériques, à lire comme une estimation.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "isere-gresivaudan-combe-de-savoie-combe",
+  "field": "note",
+  "before": "Vitesses génériques (15 à 35 km/h) ; aucune mesure propre à la Combe de Savoie dans les sources lues.",
+  "after": "Vitesses génériques (15 à 35 km/h) ; aucune mesure propre à la Combe de Savoie dans les sources lues. Heures génériques, à lire comme une estimation.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "cluse-chambery",
+  "field": "note",
+  "before": "Tracés des cartes de brises : départs à la cluse, à Challes-les-Eaux et à Porte-de-Savoie. Force et heures propres à la cluse non chiffrées dans les sources lues : valeurs déduites (12 à 20 km/h).",
+  "after": "Tracés des cartes de brises : départs à la cluse, à Challes-les-Eaux et à Porte-de-Savoie. Force et heures propres à la cluse ne sont chiffrées dans aucune source lue : les heures sont une estimation.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "lac-annecy-faverges",
+  "field": "note",
+  "before": "Vent constant : attribution non revérifiée. Vitesses génériques.",
+  "after": "Vent constant : attribution non revérifiée. Heures génériques, à lire comme une estimation.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "arve",
+  "field": "note",
+  "before": "Vitesses : 50 km/h en valeur générale, 30 km/h en valeur locale ; les deux sont conservés.",
+  "after": "Vitesses : 50 km/h en valeur générale, 30 km/h en valeur locale ; les deux sont conservés. Heures génériques, à lire comme une estimation.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "tarentaise",
+  "field": "note",
+  "before": "Source de la Haute-Tarentaise non revérifiée. Le tronçon Albertville - Moûtiers est déduit de la première passe.",
+  "after": "Source de la Haute-Tarentaise non revérifiée. Le tronçon Albertville - Moûtiers est déduit de la première passe. Vitesse typique et heures sont une estimation générique.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "maurienne",
+  "field": "note",
+  "before": "Par lombarde (est), flux contraire sur la haute vallée : déduction, aucune source ne le décrit.",
+  "after": "Par lombarde (est), flux contraire sur la haute vallée : déduction, aucune source ne le décrit. Vitesse typique et heures sont une estimation générique.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "romanche-oisans",
+  "field": "note",
+  "before": "Tracé déduit ; vitesses génériques. Aucune source ne nomme les gorges du Livet : seule la règle générale du rétrécissement est sourcée.",
+  "after": "Tracé déduit ; vitesses génériques. Aucune source ne nomme les gorges du Livet : seule la règle générale du rétrécissement est sourcée. Heures génériques, à lire comme une estimation.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "drac-trieves",
+  "field": "note",
+  "before": "Vitesse non chiffrée.",
+  "after": "Vitesse non chiffrée. Heures génériques, à lire comme une estimation.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "basse-durance",
+  "field": "note",
+  "before": "Couplage avec la brise de mer provençale : déduction.",
+  "after": "Couplage avec la brise de mer provençale : déduction. Vitesse et heures sont une estimation.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "moyenne-haute-durance",
+  "field": "note",
+  "before": "Données de Saint-Vincent-les-Forts, de Vallouise et du Briançonnais non revérifiées.",
+  "after": "Données de Saint-Vincent-les-Forts, de Vallouise et du Briançonnais non revérifiées. Vitesse typique et heures sont une estimation générique.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "buech",
+  "field": "note",
+  "before": "Vitesses non chiffrées ; valeurs génériques.",
+  "after": "Vitesses non chiffrées dans les sources. Heures génériques, à lire comme une estimation.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "ubaye",
+  "field": "note",
+  "before": "Par lombarde (est), flux contraire sur la haute Ubaye : déduction, aucune source ne le décrit.",
+  "after": "Par lombarde (est), flux contraire sur la haute Ubaye : déduction, aucune source ne le décrit. Vitesses et heures sont une estimation générique.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "descendante-gresivaudan-nuit",
+  "field": "note",
+  "before": "Vitesses : déduction.",
+  "after": "Heures de nuit génériques, à lire comme une estimation.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "tarentaise-haute",
+  "field": "note",
+  "before": "Vitesses : valeurs génériques. Secteur local détaillé dans le lot Tarentaise-Vanoise.",
+  "after": "Heures génériques, à lire comme une estimation. Secteur local détaillé dans le lot Tarentaise-Vanoise.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "bleone-digne",
+  "field": "note",
+  "before": null,
+  "after": "Heures génériques, à lire comme une estimation.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "bes-javie-montclar",
+  "field": "note",
+  "before": "Schéma : diapo 61.",
+  "after": "Schéma : diapo 61. Heures génériques, à lire comme une estimation.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "briffe-rhone-vers-diois",
+  "field": "note",
+  "before": "Positions lues sur une diapositive, approximatives ; vitesses non données.",
+  "after": "Positions lues sur une diapositive, approximatives ; vitesses non données. Heures génériques, à lire comme une estimation.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "briffe-durance-vers-maurienne",
+  "field": "note",
+  "before": "À utiliser comme une tendance (confiance faible) ; diapositives 47, 54 et 5-6 du schéma.",
+  "after": "À utiliser comme une tendance (confiance faible) ; diapositives 47, 54 et 5-6 du schéma. Heures génériques, à lire comme une estimation.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "briffe-plaine-po-val-de-suse",
+  "field": "note",
+  "before": "Positions approximatives, lues sur une diapositive.",
+  "after": "Positions approximatives, lues sur une diapositive. Heures génériques, à lire comme une estimation.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "briffe-plaine-po-val-d-aoste",
+  "field": "note",
+  "before": "Hors du territoire français ; utile pour comprendre la confluence de la crête frontalière et le foehn de sud sur la vallée de Chamonix, dont l'écart de pression Aoste - Annecy donne l'indice.",
+  "after": "Hors du territoire français ; utile pour comprendre la confluence de la crête frontalière et le foehn de sud sur la vallée de Chamonix, dont l'écart de pression Aoste - Annecy donne l'indice. Heures génériques, à lire comme une estimation.",
+  "source": "S1, S58",
+  "reason": "Vitesse ou heures sans mesure propre : dit comme une estimation."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "mistral-confluence-buech-crete-de-l-ane",
+  "field": "note",
+  "before": "Schéma : diapos 66 et 70. Il ne donne ni heures ni usage en vol : la mention d'une confluence exploitable à Laragne et à Chabre est retirée.",
+  "after": "Schéma : diapos 66 et 70. Il ne donne ni heures ni usage en vol : la mention d'une confluence exploitable à Laragne et à Chabre est retirée. L'heure est une déduction : le schéma n'en donne aucune.",
+  "source": "S45",
+  "reason": "Suit when."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "mistral-confluence-valensole-verdon",
+  "field": "note",
+  "before": "Position approximative. Schéma : diapos 20, 22 et 66. Usage en cross vers le Verdon : sans source, retiré. Le renoncement au Cheval Blanc relève de l'itinéraire de l'Izoard.",
+  "after": "Position approximative. Schéma : diapos 20, 22 et 66. Usage en cross vers le Verdon : sans source, retiré. Le renoncement au Cheval Blanc relève de l'itinéraire de l'Izoard. L'heure est une déduction : le schéma n'en donne aucune.",
+  "source": "S45",
+  "reason": "Suit when."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "confluence-obiou-taillefer",
+  "field": "note",
+  "before": "Schéma : diapos 54 et 60.",
+  "after": "Schéma : diapos 54 et 60. L'heure est une déduction : le schéma n'en donne aucune.",
+  "source": "S45",
+  "reason": "Suit when."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "arc-diois-col-de-cabre",
+  "field": "note",
+  "before": "Position tracée sur la diapositive : approximative. Schéma : diapos 54, 59 et 74.",
+  "after": "Position tracée sur la diapositive : approximative. Schéma : diapos 54, 59 et 74. L'heure est une déduction : le schéma n'en donne aucune.",
+  "source": "S45",
+  "reason": "Suit when."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "cretes-frontalieres-franco-italiennes",
+  "field": "note",
+  "before": "Diapositives du schéma : 47, 49 et 54. Les diapos 24 à 27 (pas de crête, vent d'est ou d'ouest) montrent la Provence et non cette crête : voir le front de brise de mer. Le conseil de rester côté français est retiré, faute de source.",
+  "after": "Diapositives du schéma : 47, 49 et 54. Les diapos 24 à 27 (pas de crête, vent d'est ou d'ouest) montrent la Provence et non cette crête : voir le front de brise de mer. Le conseil de rester côté français est retiré, faute de source. L'heure est une déduction : le schéma n'en donne aucune.",
+  "source": "S45",
+  "reason": "Suit when."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "mistral-confluence-gap-tallard",
+  "field": "note",
+  "before": "Position approximative. Schéma : diapos 66 et 71. Vol à voile : document d'aérodrome, absent des sources de la fiche.",
+  "after": "Position approximative. Schéma : diapos 66 et 71. L'heure est une déduction : le schéma n'en donne aucune.",
+  "source": "S45, S70",
+  "reason": "Suit when et sources."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "mistral-confluence-briancon-izoard",
+  "field": "note",
+  "before": "Position approximative (diapo 66). La première passe la faisait glisser vers L'Argentière par vent de nord. « De nord » désigne le régime de vent, non la position.",
+  "after": "Position approximative (diapo 66). La première passe la faisait glisser vers L'Argentière par vent de nord. L'heure est une déduction : le schéma n'en donne aucune.",
+  "source": "S45",
+  "reason": "Suit name et when."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "ligne-est-ecrins-durance",
+  "field": "note",
+  "before": "Ligne reconstruite (confiance faible). Glissement de la confluence vers Briançon et l'Izoard par régime de nord : déduction de la première passe, voir la confluence de nord de Briançon.",
+  "after": "Ligne reconstruite (confiance faible). Glissement de la confluence vers Briançon et l'Izoard par régime de nord : déduction de la première passe, voir la confluence de mistral au sud de Briançon.",
+  "source": "S45",
+  "reason": "Suit le nom de la fiche citée."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "brise-forte-tarentaise",
+  "field": "note",
+  "before": "Valeur générale, sans mesure propre à ce tronçon.",
+  "after": "Valeur générale, sans mesure propre à ce tronçon. Heures de la référence générale, sans observation propre : à lire comme une estimation.",
+  "source": "S58",
+  "reason": "Suit conditions."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "brise-forte-maurienne",
+  "field": "note",
+  "before": "Valeur générale, sans mesure propre à la vallée.",
+  "after": "Valeur générale, sans mesure propre à la vallée. Heures de la référence générale, sans observation propre : à lire comme une estimation.",
+  "source": "S58",
+  "reason": "Suit conditions."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "brise-forte-arve",
+  "field": "note",
+  "before": null,
+  "after": "Heures de la référence générale, sans observation propre : à lire comme une estimation.",
+  "source": "S58",
+  "reason": "Suit conditions."
+ },
+ {
+  "lot": "synoptic_convergences_xc",
+  "massif": "alpes-francaises",
+  "id": "synoptic_effects[9] Foehn",
+  "field": "effect",
+  "before": "Le foehn de sud s'établit avant une perturbation : hautes pressions côté italien, baisse côté français. Chamonix et les Contamines sont les plus exposées. Il est probable à -4 hPa entre Aoste et Annecy, et 2 à 4 hPa de part et d'autre d'un massif imposent la prudence. Il peut rester entre 1400 et 1800 m. Signes : lenticulaires, mur de foehn aux cols, rafales chaudes et sèches, de 30 à plus de 100 km/h.",
+  "after": "Le foehn de sud s'établit avant une perturbation : hautes pressions côté italien, baisse côté français. Chamonix et les Contamines sont les plus exposées. Il est probable à -4 hPa entre Aoste et Annecy, et 2 à 4 hPa de part et d'autre d'un massif imposent la prudence. À plus grande échelle, 5 hPa entre Zurich et Milan suffisent, et 4 hPa entre Zurich et Lugano donnent déjà un bon risque. Il peut rester entre 1400 et 1800 m, ou partir avec un vent assez faible, environ 20 km/h à 4000 m, sans un nuage pour le montrer. Signes : lenticulaires, mur de foehn aux cols, écharpes qui montent le long des crêtes depuis l'Italie ou la Suisse, petits cumulus déchiquetés dès le début de la matinée, rafales chaudes et sèches, de 30 à plus de 100 km/h.",
+  "source": "S11 (article et commentaire de 2024), S55 p. 10",
+  "reason": "Faits restitués. « Écharpes » : la source dit d'Italie ou de Suisse, pas d'Italie seule comme la version d'avant."
+ },
+ {
+  "lot": "tarentaise_vanoise",
+  "massif": "tarentaise",
+  "id": "synoptic_effects[4] N",
+  "field": "effect",
+  "before": "Le nord-ouest à nord renforce le flux des Chapieux. À Montgirod, on peut encore voler avant 13h. À Naves, prudence par nord modéré à fort. Au col du Petit-Saint-Bernard, du nord ou du nord-est à plus de 15 km/h annonce probablement le foehn. Au Cottier, soyez très prudent dès que le vent est nord. Par N-NO qui forcit, un vol a fait 3500 m au-dessus de la Pointe de Combe Neuve.",
+  "after": "Le nord-ouest à nord renforce le flux des Chapieux. À Montgirod, on peut encore voler avant 13h. À Naves, prudence par nord modéré à fort. Au col du Petit-Saint-Bernard, du nord ou du nord-est à plus de 15 km/h annonce probablement le foehn. Au Cottier, soyez très prudent dès que le vent est nord. Par N-NO qui forcit, un vol a fait 3500 m au-dessus de la Pointe de Combe Neuve. Ce jour-là, le vent interdisait de se placer sur les faces sud du Beaufortain.",
+  "source": "S72",
+  "reason": "Fait restitué : « Le vent météo m'empêche totalement de me placer sur les faces Sud des reliefs »."
+ }
+]

@@ -280,6 +280,7 @@ interface RttTileId {
 interface TerrainTiles {
   tileManager: { update(transform: unknown, terrain: unknown): void; map: { painter: unknown }; _inViewTiles?: { getAllTiles(): object[] } };
   update(transform: unknown, terrain: unknown): boolean;
+  _getTerrainCoordsForRegularTile(id: { key: string }): unknown;
   _renderableTilesKeys: string[];
   _tiles: Record<string, RttTile>;
   _lastTilesetChange: number;
@@ -294,6 +295,12 @@ interface TerrainTiles {
  * terrain tile manager's update is replaced by the same steps with the rule passed, and
  * at most `maxZoom` (a texel of ~0.2 m at z17 is finer than the finest orthophoto). Returns
  * false, leaving MapLibre alone, when its internals are not the expected ones.
+ *
+ * And the terrain tiles a raster tile overlaps, memoized: every frame, for every visible tile of
+ * every raster source, MapLibre's render-to-texture scans all the terrain's tiles for them,
+ * O(visible × terrain), 35 % of the main thread in a horizon view. The answer only changes with
+ * the terrain's tile set, known here: the memo lives in this update, which replaces MapLibre's,
+ * so that it cannot outlive a change. (A stale answer draws no imagery in the new terrain tiles.)
  */
 export function useTerrainTileZoom(map: { coveringTiles(options: object): RttTileId[]; terrain?: unknown }, zoom: TileZoomFn, maxZoom = 17): boolean {
   const ttm = (map.terrain as { tileManager?: TerrainTiles } | null | undefined)?.tileManager;
@@ -304,6 +311,17 @@ export function useTerrainTileZoom(map: { coveringTiles(options: object): RttTil
   let Tile: (new (id: RttTileId, size: number) => RttTile) | null = null;
   // MapLibre's tile-local orthographic matrix for the textures (mat4.ortho(0, 8192, 8192, 0, 0, 1)).
   const ortho = [2 / 8192, 0, 0, 0, 0, -2 / 8192, 0, 0, 0, 0, -2, 0, -1, 1, -1, 1];
+  const coords = new Map<string, unknown>();
+  const scan = ttm._getTerrainCoordsForRegularTile;
+  if (typeof scan === 'function')
+    ttm._getTerrainCoordsForRegularTile = function (this: TerrainTiles, id: { key: string }) {
+      let r = coords.get(id.key);
+      if (r === undefined) {
+        r = scan.call(this, id);
+        coords.set(id.key, r);
+      }
+      return r;
+    };
   ttm.update = function (this: TerrainTiles, transform: unknown, terrain: unknown): boolean {
     if (!Tile) {
       // A tile of the same class to build the new ones from (none before the first tiles exist).
@@ -313,7 +331,10 @@ export function useTerrainTileZoom(map: { coveringTiles(options: object): RttTil
         break;
       }
       sample ??= this.tileManager._inViewTiles?.getAllTiles()[0];
-      if (!sample) return original.call(this, transform, terrain);
+      if (!sample) {
+        coords.clear();
+        return original.call(this, transform, terrain);
+      }
       Tile = sample.constructor as new (id: RttTileId, size: number) => RttTile;
     }
     this.tileManager.update(transform, terrain);
@@ -336,6 +357,7 @@ export function useTerrainTileZoom(map: { coveringTiles(options: object): RttTil
       delete this._tiles[key];
       changed = true;
     }
+    if (changed) coords.clear();
     return changed;
   };
   return true;

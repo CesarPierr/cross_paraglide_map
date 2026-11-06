@@ -214,9 +214,9 @@ export interface WingParams {
 }
 
 export const WINGS: Record<WingParams['id'], WingParams> = {
-  A: { id: 'A', label: 'EN-A (école, très tolérante)', speed: 0.96, sink: 1.06, bar: 2.6, barSink: 0.9, inertia: 0.8, turnGain: 0.76, damping: 1.5, rollDamping: 1.15, spiralStab: 0.1, gustPitch: 0.8, turbRoll: 0.7, firmness: 1.35, reopen: 0.34, collapseYaw: 0.9, collapseMax: 0.5, stallBrake: 0.95, cascade: 0.4, cravat: 0.03, spinMargin: 0.2, spinStop: 2.2 },
-  B: { id: 'B', label: 'EN-B (intermédiaire)', speed: 1, sink: 1, bar: 3.6, barSink: 0.88, inertia: 1, turnGain: 0.78, damping: 1, rollDamping: 1, spiralStab: 0.08, gustPitch: 1, turbRoll: 1, firmness: 1, reopen: 0.2, collapseYaw: 1.4, collapseMax: 0.7, stallBrake: 0.88, cascade: 1, cravat: 0.15, spinMargin: 0.12, spinStop: 1 },
-  C: { id: 'C', label: 'EN-C (sport, exigeante)', speed: 1.06, sink: 0.94, bar: 4.6, barSink: 0.92, inertia: 1.25, turnGain: 0.84, damping: 0.68, rollDamping: 0.75, spiralStab: -0.18, gustPitch: 1.35, turbRoll: 1.35, firmness: 0.78, reopen: 0.13, collapseYaw: 1.8, collapseMax: 0.75, stallBrake: 0.82, cascade: 1.4, cravat: 0.35, spinMargin: 0.08, spinStop: 0.7 },
+  A: { id: 'A', label: 'EN-A (école, très tolérante)', speed: 0.96, sink: 1.06, bar: 2.6, barSink: 0.9, inertia: 0.8, turnGain: 0.76, damping: 1.5, rollDamping: 1.15, spiralStab: 0.1, gustPitch: 0.8, turbRoll: 0.7, firmness: 1.35, reopen: 0.34, collapseYaw: 0.9, collapseMax: 0.5, stallBrake: 0.95, cascade: 0.4, cravat: 0.01, spinMargin: 0.2, spinStop: 2.2 },
+  B: { id: 'B', label: 'EN-B (intermédiaire)', speed: 1, sink: 1, bar: 3.6, barSink: 0.88, inertia: 1, turnGain: 0.78, damping: 1, rollDamping: 1, spiralStab: 0.08, gustPitch: 1, turbRoll: 1, firmness: 1, reopen: 0.2, collapseYaw: 1.4, collapseMax: 0.7, stallBrake: 0.88, cascade: 1, cravat: 0.05, spinMargin: 0.12, spinStop: 1 },
+  C: { id: 'C', label: 'EN-C (sport, exigeante)', speed: 1.06, sink: 0.94, bar: 4.6, barSink: 0.92, inertia: 1.25, turnGain: 0.84, damping: 0.68, rollDamping: 0.75, spiralStab: -0.18, gustPitch: 1.35, turbRoll: 1.35, firmness: 0.78, reopen: 0.13, collapseYaw: 1.8, collapseMax: 0.75, stallBrake: 0.82, cascade: 1.4, cravat: 0.15, spinMargin: 0.08, spinStop: 0.7 },
 };
 
 export interface GliderState {
@@ -694,6 +694,8 @@ export function step(s: GliderState, c: Controls, air: AirSample, dt: number, rn
     const pump = col.cravatSide < 0 ? s.brakeL - s.pumpL : s.brakeR - s.pumpR;
     if (c.stabilo) col.cravat = Math.max(0, col.cravat - dt * 0.2);
     else if (pump > 0.25 && rng() < dt * 3) col.cravat = Math.max(0, col.cravat - 0.1);
+    // A small one also shakes out by itself, in 10 to 25 s (slower on a demanding wing).
+    col.cravat = Math.max(0, col.cravat - dt * 0.1 * W.reopen);
     if (col.cravat === 0) {
       col.cravatSide = 0;
       (events ??= []).push('cravat-cleared');
@@ -866,8 +868,9 @@ export function step(s: GliderState, c: Controls, air: AirSample, dt: number, rn
   // A collapsed side drags the wing towards it; braking the open side counters it.
   const yawCollapse = col.side * col.amount * W.collapseYaw;
   yawTarget += yawCollapse;
-  // A cravat keeps turning the wing towards the caught side.
-  yawTarget += col.cravatSide * col.cravat * 3.5;
+  // A cravat keeps turning the wing towards the caught side: about what a firm counter-brake
+  // and the weight shift hold straight (it used to turn ~50°/s, past anything but a spin).
+  yawTarget += col.cravatSide * col.cravat * 1.2 * W.collapseYaw;
   // The weight leaves before the wing loads up: a quick lean first turns it the other way.
   yawTarget -= 0.05 * s.wsRate;
   yawTarget *= 1 - 0.8 * s.stall;

@@ -153,7 +153,7 @@ const EVENT_TEXT: Record<FlightEvent, string> = {
   'collapse-left': 'Fermeture à gauche ! Contre au frein droit, pompe à gauche',
   'collapse-right': 'Fermeture à droite ! Contre au frein gauche, pompe à droite',
   frontal: 'Fermeture frontale ! Mains hautes puis temporise l’abattée',
-  stall: 'Décrochage ! Relâche les freins (progressivement)',
+  stall: 'Décrochage ! Relâche les freins (progressivement ; touche 0 : mains hautes)',
   spin: 'Départ en vrille ! Relâche le frein intérieur',
   reopened: 'Aile réouverte',
   cravat: 'Cravate ! Contre au frein opposé, tire le stabilo du côté coincé (X) ou pompe franchement',

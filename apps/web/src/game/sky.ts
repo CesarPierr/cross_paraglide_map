@@ -96,7 +96,7 @@ export interface FrameInfo {
   far: number;
   /** Depth range of the 3D layers (window depth of NDC −1 and +1). */
   depthRange: [number, number];
-  /** MapLibre's terrain depth texture (packed NDC depth, CSS pixels), null without terrain. */
+  /** MapLibre's terrain depth texture (packed NDC depth, at the frame's pixels, the page's on phones: world.ts), null without terrain. */
   terrainDepth: WebGLTexture | null;
   fovY: number;
 }
@@ -279,7 +279,7 @@ void main() {
 #else
   float z = unpackDepth(texture(uTDepth, uv));
   if (z > 1.0005) {
-    // The terrain depth (CSS pixels) says sky at a terrain edge: nearest terrain around.
+    // The terrain depth says sky at a terrain edge: nearest terrain around.
     vec2 px = 1.0 / vec2(textureSize(uTDepth, 0));
     float best = 2.0;
     for (int i = 0; i < 4; i++) {
@@ -291,7 +291,7 @@ void main() {
     z = best;
   }
   float s = depthScale(z);
-  // The depth is at the page's pixels (half the screen's on most phones and retina screens):
+  // The depth may be coarser than the frame (the page's pixels on phones, half the screen's):
   // inside a surface, interpolated between its four nearest texels (inverse depth, linear
   // on a plane), so the ground's detail does not come out in blocks.
   {

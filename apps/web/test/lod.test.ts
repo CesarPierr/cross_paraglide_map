@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { clearance, diskTiles, lodByDistance, ringLoaded, setTileCache, TileRing, useTileRing, type LodState, type TileXYZ } from '../src/game/lod';
+import { clearance, diskTiles, lodByDistance, ringLoaded, setTileCache, TileRing, useTerrainTileZoom, useTileRing, type LodState, type TileXYZ } from '../src/game/lod';
 
 const state: LodState = { centerM: 1200, clearanceM: 50 };
 /** MapLibre's units: the centre 1200 m away is at 0.002 mercator units here. */
@@ -230,5 +230,45 @@ describe('ring of tiles kept around the pilot', () => {
     expect(tm._maxTileCacheSize).toBe(500);
     expect(tm._maxTileCacheZoomLevels).toBeGreaterThan(100);
     expect(setTileCache({ style: { tileManagers: { ign: {} } } }, 'ign', 500)).toBe(false);
+  });
+});
+
+describe('terrain tiles of a raster tile, memoized', () => {
+  it('scans once while the terrain tiles stay, again as soon as they change', () => {
+    class Tile {
+      releaseRTT() {}
+    }
+    let covering = ['a'];
+    let scans = 0;
+    const ttm = {
+      tileManager: { update() {}, map: { painter: {} } },
+      _tiles: { a: new Tile() } as Record<string, Tile>,
+      _renderableTilesKeys: ['a'],
+      _lastTilesetChange: 0,
+      tileSize: 512,
+      minzoom: 0,
+      maxzoom: 17,
+      update: () => false,
+      _getTerrainCoordsForRegularTile(this: { _renderableTilesKeys: string[] }) {
+        scans++;
+        return [...this._renderableTilesKeys];
+      },
+    };
+    const map = { terrain: { tileManager: ttm }, coveringTiles: () => covering.map((key) => ({ key })) };
+    expect(useTerrainTileZoom(map, () => 0)).toBe(true);
+    (ttm.update as () => boolean)();
+    expect(ttm._getTerrainCoordsForRegularTile.call(ttm, { key: 'img' } as never)).toEqual(['a']);
+    (ttm.update as () => boolean)();
+    ttm._getTerrainCoordsForRegularTile.call(ttm, { key: 'img' } as never);
+    expect(scans).toBe(1);
+    // A terrain tile comes into view: it must be among the imagery's terrain tiles.
+    covering = ['a', 'b'];
+    (ttm.update as () => boolean)();
+    expect(ttm._getTerrainCoordsForRegularTile.call(ttm, { key: 'img' } as never)).toEqual(['a', 'b']);
+    expect(scans).toBe(2);
+    // One leaves.
+    covering = ['b'];
+    (ttm.update as () => boolean)();
+    expect(ttm._getTerrainCoordsForRegularTile.call(ttm, { key: 'img' } as never)).toEqual(['b']);
   });
 });

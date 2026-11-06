@@ -405,3 +405,34 @@ describe('angle of attack, brake pressure and active piloting', () => {
     expect([after.x, after.y, after.z, after.airspeed, after.vz].every(Number.isFinite)).toBe(true);
   });
 });
+
+describe('a cravat', () => {
+  const calm = { u: 0, v: 0, w: 0, wL: 0, wR: 0, turbulence: 0, agl: 800 };
+  it('can be held straight, without a spin, and shakes out by itself on an EN-B', () => {
+    const g = newGlider(0, 0, 2000, 0, WINGS.B);
+    const c = { brakeL: 0, brakeR: 0, speedbar: 0, ears: false, weight: 0 } as Parameters<typeof step>[1];
+    const dt = 1 / 120;
+    for (let i = 0; i < 1200; i++) step(g, c, calm, dt, () => 0.5);
+    g.collapse.cravat = 0.3;
+    g.collapse.cravatSide = -1;
+    c.brakeR = 0.3;
+    let spin = 0;
+    let turn = 0;
+    let prev = g.heading;
+    let cleared = NaN;
+    for (let i = 0; i < 120 * 40; i++) {
+      step(g, c, calm, dt, () => 0.5);
+      spin = Math.max(spin, g.spin);
+      let d = g.heading - prev;
+      d -= 2 * Math.PI * Math.round(d / (2 * Math.PI));
+      prev = g.heading;
+      if (i < 120 * 5) turn += d;
+      if (g.collapse.cravat === 0 && Number.isNaN(cleared)) cleared = i * dt;
+    }
+    expect(spin).toBe(0);
+    // A counter-brake of 30 % holds the heading within ~10°/s.
+    expect(Math.abs(turn / 5)).toBeLessThan((10 * Math.PI) / 180);
+    expect(cleared).toBeGreaterThan(5);
+    expect(cleared).toBeLessThan(25);
+  });
+});

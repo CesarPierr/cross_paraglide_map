@@ -241,6 +241,8 @@ export class GameWorld {
   readonly lowQuality = typeof window !== 'undefined' && (window.matchMedia('(pointer: coarse)').matches || window.innerWidth < 700);
   /** The game's loop asked for a frame (frameUpdate): MapLibre's next render goes. */
   private renderAsked = true;
+  /** Gives the page its devicePixelRatio back (see the terrain depth above). */
+  private restoreDpr: (() => void) | null = null;
   private depthRange: Float32Array | null = null;
   private depthRangeT = 0;
   /** Picture quality (RenderQuality) and the canvas's pixel ratio in use; the frame cap the engine holds (Hz) and the frame interval seen (ms, smoothed). */
@@ -406,37 +408,35 @@ export class GameWorld {
         type Render = { _render: (t: number) => unknown };
         const ml = this.map as unknown as Render;
         const render = ml._render;
-        if (typeof render === 'function')
+        // MapLibre sizes its terrain depth (which pixels are ground, how far) by the page's pixels
+        // divided by the global devicePixelRatio, whatever the map's own ratio: at a ratio of 1 on
+        // a retina screen, a quarter of the frame's pixels, and the landscape pass's edge along
+        // every crest came out in stairs of two pixels. Inside its frame it reads the ratio that
+        // gives the frame's size (phones: the page's pixels, as before).
+        const dpr = Object.getOwnPropertyDescriptor(window, 'devicePixelRatio');
+        if (dpr?.get && dpr.configurable) {
+          const nativeGet = dpr.get;
+          let inFrame = false;
+          Object.defineProperty(window, 'devicePixelRatio', { configurable: true, enumerable: dpr.enumerable, get: () => (inFrame ? (this.lowQuality ? this.ratio : 1) : nativeGet.call(window)), set: dpr.set });
+          this.restoreDpr = () => Object.defineProperty(window, 'devicePixelRatio', dpr);
+          if (typeof render === 'function')
+            ml._render = (t) => {
+              if (!this.renderAsked && this.loaded && !this.topo) return ml;
+              this.renderAsked = false;
+              inFrame = true;
+              try {
+                return render.call(ml, t);
+              } finally {
+                inFrame = false;
+              }
+            };
+        } else if (typeof render === 'function')
           ml._render = (t) => {
             if (!this.renderAsked && this.loaded && !this.topo) return ml;
             this.renderAsked = false;
             return render.call(ml, t);
           };
         else if (import.meta.env.DEV) console.warn('[terrain] rendu : internes de MapLibre inattendus');
-        // Every frame, for every visible tile of every raster source, MapLibre's render-to-texture
-        // scans all the terrain's tiles for those the tile overlaps: O(visible × terrain), 35 % of
-        // the main thread in a horizon view (a few hundred tiles each side). The answer only
-        // changes with the terrain's tile set: memoized until the terrain's update() reports one.
-        type TileManager = { update: (...a: unknown[]) => boolean; _getTerrainCoordsForRegularTile: (id: { key: string }) => unknown };
-        const tm = (this.map as unknown as { terrain?: { tileManager?: Partial<TileManager> } }).terrain?.tileManager;
-        if (tm && typeof tm._getTerrainCoordsForRegularTile === 'function' && typeof tm.update === 'function') {
-          const memo = new Map<string, unknown>();
-          const update = tm.update;
-          const coords = tm._getTerrainCoordsForRegularTile;
-          tm.update = function (this: TileManager, ...a: unknown[]) {
-            const changed = update.apply(this, a);
-            if (changed) memo.clear();
-            return changed;
-          };
-          tm._getTerrainCoordsForRegularTile = function (this: TileManager, id: { key: string }) {
-            let r = memo.get(id.key);
-            if (r === undefined) {
-              r = coords.call(this, id);
-              memo.set(id.key, r);
-            }
-            return r;
-          };
-        } else if (import.meta.env.DEV) console.warn('[terrain] tuiles : internes de MapLibre inattendus');
         // Detail by true distance from the eye (lod.ts): the texels of the imagery, and of the
         // terrain's textures it is drawn into, match the screen's pixels at every distance;
         // the Sentinel-2 backdrop a level coarser, the elevation tiles one level under the
@@ -1288,5 +1288,6 @@ export class GameWorld {
     this.region?.dispose();
     this.renderer?.dispose();
     this.map.remove();
+    this.restoreDpr?.();
   }
 }

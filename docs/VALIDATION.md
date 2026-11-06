@@ -4,6 +4,39 @@
 
 Le banc compare le modèle CPU aux vents mesurés à 10 m sur 28 jours de 2025 et 75 postes, soit 24 938 échantillons horaires. Il se relance en 30 s et note n'importe quelle révision.
 
+## Correctif appliqué : `9a17222e2`
+
+Le banc a désigné le premier correctif, qui est en place (résultats : [`validation/results-9a17222e2.json`](validation/results-9a17222e2.json), tableaux : [`validation/tables-9a17222e2.md`](validation/tables-9a17222e2.md)). Les §§ 1 à 6 décrivent l'état d'avant, `edb11ebab`.
+
+- **Les brises documentées suivent le soleil du jour** (saison et nuages), comme le flux générique de leur type. Restent à leur vitesse : les écoulements descendants, les flux pilotés par un vent, et les brises fortes documentées d'avril à fin août, y compris celle de Megève, documentée en avril.
+- **Le vent n'est plus freiné comme au fond d'une vallée au-dessus des plaines ouvertes** (`RULES.valleyShelter`).
+- **Le vent lu dans les bas niveaux d'un sondage n'est plus freiné une deuxième fois** (`RULES.soundingSurface`). C'est la seule part retenue de la séparation d'échelles : la séparation complète, lue au-dessus du relief, dégrade les pentes et les balises.
+
+| Tous échantillons | Avant | Après | AROME 10 m |
+|---|--:|--:|--:|
+| Biais vitesse | −0,9 | −1,3 | |
+| RMSE vitesse | 9,8 | 8,6 | 6,2 |
+| RMSE vectoriel | 13,3 | 11,8 | 9,6 |
+| Erreur de direction | 48° | 46° | 36° |
+| Classes de vol justes | 67 % | 74 % | 80 % |
+
+| Cadre × situation : biais / RMSE | Avant | Après |
+|---|--:|--:|
+| Fond, brise après-midi | +1,7 / 8,9 | +0,8 / 7,7 |
+| Fond, ciel couvert | +2,5 / 10,1 | −2,8 / 6,4 |
+| Fond, vent modéré | −0,1 / 9,5 | −2,5 / 7,0 |
+| Fond, vent fort | −5,3 / 11,2 | −4,5 / 9,6 |
+| Fond, jour stable d'hiver | +1,6 / 12,1 | −3,7 / 8,5 |
+| Plaine, vent fort | −7,6 / 12,6 | +1,8 / 8,9 |
+| Pente, brise après-midi | −4,1 / 7,8 | −4,1 / 7,6 |
+| Balise, brise après-midi | +1,5 / 7,3 | +1,1 / 7,1 |
+| Sommet, vent fort | +5,7 / 17,0 | +4,4 / 17,1 |
+
+- **Contrôles :** `model:check` reste à 1206/1324 (ses cas sont en juillet sans nuage). GPU contre CPU : écart moyen de 0,005 à 0,02 km/h sur 520 points et 4 situations ; le plus grand écart est de 3,3 km/h par vent fort, sur une crête.
+- **Réglage :** `soundingSurface` a été choisi en regardant les deux plis, qui s'améliorent ensemble ; ce n'est donc pas une validation indépendante.
+- **Ce qui recule :** 7 postes sur 75 perdent plus de 0,2 km/h de RMSE, le plus net à Antibes-Garoupe (8,6 → 10,6). Le fond de vallée devient sous-estimé en vent modéré et en mars, octobre et février (biais de brise −3 à −4 km/h).
+- **Ce qui reste :** grandes vallées encore surestimées l'après-midi (+4,1), pentes sous-estimées (−4,1), un seul sondage pour la carte.
+
 ## 1. Ce que montre le banc
 
 **Le double compte de la brise, celui qu'on soupçonnait, est négligeable.** En fond de vallée, l'après-midi d'une journée de brise, les niveaux bas d'AROME n'ajoutent que +0,4 km/h de biais (IC 5–95 % : +0,1 à +0,8), et +0,6 km/h dans les grandes vallées (+0,2 à +1,2). Le modèle n'en garde que 26 % à ce niveau : le vent du sondage vers l'amont vaut +2,2 km/h, sa part synoptique +0,7 km/h.
@@ -335,13 +368,13 @@ P2 aide les fonds de vallée par vent fort (biais −7,6 → −3,1, RMSE 11,2 �
 
 ## 7. Recommandations, par gain attendu
 
-1. **P1 : faire suivre aux brises documentées le soleil du jour** (CPU et GLSL). RMSE global −0,6 km/h, vectoriel −1,2, classes +6 points ; fond de vallée sous ciel couvert 10,1 → 7,4, stable 12,1 → 9,2. À repasser par `npm run model:check`, dont les cas de juillet sans nuage devraient peu bouger (non testé).
-2. **P3b : ne plus traiter les plaines ouvertes en fond de vallée.** Plaine en vent fort : RMSE 12,6 → 8,8, biais −7,6 → +0,3 ; global 9,2 → 8,9. Coefficient choisi à la main.
+1. **Fait (`9a17222e2`). P1 : faire suivre aux brises documentées le soleil du jour** (CPU et GLSL). RMSE global −0,6 km/h, vectoriel −1,2, classes +6 points ; fond de vallée sous ciel couvert 10,1 → 7,4, stable 12,1 → 9,2. À repasser par `npm run model:check`, dont les cas de juillet sans nuage devraient peu bouger (non testé).
+2. **Fait (`9a17222e2`). P3b : ne plus traiter les plaines ouvertes en fond de vallée.** Plaine en vent fort : RMSE 12,6 → 8,8, biais −7,6 → +0,3 ; global 9,2 → 8,9. Coefficient choisi à la main.
 3. **Ancrer le sol sur le vent AROME à 10 m** pour la lecture près du sol, le relief à 216 m n'apportant que le détail. C'est la marge la plus grande (RMSE AROME 6,2 km/h) mais aussi le plus gros chantier : champ spatialisé à servir, et hybride non testé.
-4. **Revoir le vent fort en fond de vallée** sans le mécanisme global de séparation d'échelles : le vent lu au-dessus du relief, restreint aux vrais chenaux, pour éviter les pertes de P2 sur les pentes et les balises (non testé).
+4. **En partie fait (`9a17222e2`). Revoir le vent fort en fond de vallée** sans le mécanisme global de séparation d'échelles : le correctif en place limite le freinage dans les bas niveaux du sondage (biais −4,5 km/h restant). Le vent lu au-dessus du relief, restreint aux vrais chenaux, reste non testé.
 5. **Plusieurs sondages**, surtout pour la direction et l'avant-pays (§ 5).
 6. **Taille de vallée et fin de journée** : rendre la brise à 10 m moins dépendante de la surface drainée (après P1 : +3,7 dans les grandes, −4,1 dans les petites) et adoucir la fin des horaires documentés (19 h : 5,7 km/h pour 9,5 observés). Non testé ; P5 et P6 n'apportent presque rien.
-7. **Dangers « brise forte »** : leur appliquer aussi le facteur de soleil (non testé).
+7. **Fait (`9a17222e2`). Dangers « brise forte »** : le facteur de soleil s'y applique, à pleine vitesse d'avril à fin août.
 
 ## 8. Limites
 
@@ -350,7 +383,7 @@ P2 aide les fonds de vallée par vent fort (biais −7,6 → −3,1, RMSE 11,2 �
 - **Échantillon** : 28 jours d'une seule année et 75 postes, 3 jours stables, 10 balises (mât bas, n'importe quelle exposition). Les intervalles rééchantillonnent les jours, pas les postes. Ils suffisent pour les conclusions ci-dessus, sans extension à ce stade.
 - **Plis** : le pli B n'est pas un vrai témoin pour P1–P6, car les essais ont été conçus en regardant tout le banc. Il garde sa valeur pour les réglages à venir.
 - **Représentativité** : maille de 216 m, stations parfois abritées, cadre issu de seuils sur le MNT, sondage local d'une maille 0,25° prise au plus proche, dont le relief peut être sans rapport avec le poste.
-- **Essais CPU** : P1–P6 ne sont pas portés dans `model-glsl.ts` et n'ont pas été testés avec `model:check`.
+- **Essais CPU** : P2, P4, P5 et P6 ne sont pas portés dans `model-glsl.ts` et n'ont pas été testés avec `model:check`.
 
 ## 9. Relancer le banc
 

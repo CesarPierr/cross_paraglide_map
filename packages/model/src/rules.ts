@@ -238,8 +238,9 @@ export const RULES = {
   /**
    * The low levels of a forecast sounding have already felt the friction of their ground:
    * read within `depth` (m) of the lowest level, the wind is not slowed below `factor` of
-   * itself a second time. Check: valley floors in strong wind, RMSE 11.2 → 9.6 km/h with the
-   * other settings unchanged (docs/VALIDATION.md; set on half of the days, held on the other).
+   * itself a second time. Check: valley floors in strong wind, RMSE 11.2 → 9.6 km/h, on both
+   * halves of the days and with little change elsewhere; the value was chosen looking at both
+   * (docs/VALIDATION.md).
    */
   soundingSurface: { factor: 0.8, depth: 150 },
   /** Seasonal sunshine (`TimeContext.season`) from which a documented strong breeze reaches its speed: from mid-April to the end of August (the Megève breeze is documented in April). */

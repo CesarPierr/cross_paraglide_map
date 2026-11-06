@@ -23,7 +23,13 @@ Lis les constats de ce massif dans `_rapports_agents/veracite_elements_<lot>.md`
    voix. Le lieu et son rôle, puis l'usage et le risque, puis le mécanisme, puis les détails.
 3. **Les autres fiches** : sobres et bien situées. Une source d'une ligne reste une ou deux phrases. Pas de
    formule répétée (« ce décollage regarde… », « ce terrain reçoit… »).
-4. **Le rythme** : ni phrases à rallonge pleines de virgules, ni suite de phrases hachées. Une phrase moyenne qui
+4. **Une étape de visite n'est jamais une liste.** Pas d'enchaînement de lieux chacun avec son altitude, ses
+   heures, ses câbles : c'est le défaut le plus fréquent et l'owner le refuse. Une étape dit une idée, garde un ou
+   deux lieux qui la portent, et renvoie le reste aux fiches ou à un autre massif. Contrôle en fin de massif : une
+   étape qui contient plus de trois altitudes, heures ou distances se réécrit, sauf un itinéraire où ces hauteurs
+   sont l'idée même, et là encore on n'en garde que les décisives. Avant de retirer un fait d'une étape, vérifie
+   qu'il est dans une fiche, sinon ajoute-l'y.
+5. **Le rythme** : ni phrases à rallonge pleines de virgules, ni suite de phrases hachées. Une phrase moyenne qui
    se déroule, une courte qui porte, un lien logique entre les deux.
 
 ## La fidélité ne se négocie pas
@@ -41,6 +47,8 @@ Ces textes viennent d'être vérifiés.
   récente, une interdiction prime sur un conseil, l'écart en `note`.
 - Une erreur trouvée en chemin : corrige-la si la source en cache le prouve, et note-la. Le fichier de constats doit
   précéder le texte : `text_audit.py` n'accepte un nouveau chiffre que si un constat du massif le nomme.
+- Une image géographique (« barre », « ferme », « au fond ») est vérifiée sur la carte comme une position. L'ancienne
+  visite n'en est pas la preuve : « le Roc des Bœufs barre le fond du lac » était faux.
 - Évite les tics d'un massif à l'autre : « Le prix se paie », « Reste à », « C'est pour ça que », « Le relais passe »,
   « Voyons d'abord » ne peuvent pas devenir une signature.
 - Longueurs : description ≤ 480, possible ≤ 220, conseil ≤ 260 avec les mêmes balises [S..], effet ≤ 420, étape ≤ 620.

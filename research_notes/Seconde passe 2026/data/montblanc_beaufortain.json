@@ -5,7 +5,7 @@
       "id": "mont-blanc-chamonix",
       "name": "Vallée de Chamonix – Aiguilles Rouges – Mont-Blanc",
       "parent_massif": "Massif du Mont-Blanc",
-      "summary": "Chamonix est une vallée glaciaire étroite. L'air de l'Arve y entre par le bassin de Sallanches et de Passy, passe sans doute par les gorges de Servoz et remonte vers Chamonix et Argentière. La journée suit les horaires : Planpraz et la Flégère, sur les faces sud à est des Aiguilles Rouges, se volent le matin ; le Plan de l'Aiguille, tourné vers l'ouest, prend le relais en fin de matinée pour les grandes restitutions du soir.\n\nLa brise de vallée s'installe vers 11h. Au Bois du Bouchet, elle reste soutenue l'après-midi, entre 20 et 30 km/h, et se fait sentir jusqu'à 2500 m, parfois 3000 m. Les Grands Montets ne deviennent intéressants qu'en début d'après-midi.\n\nLe foehn, fréquent à Chamonix, piège régulièrement les pilotes, même cantonné entre 1400 et 1800 m. La règle locale : pas de vol au-delà de 20 km/h de vent météo à 2000 m (rotors, sous le vent), et repli sur Plaine-Joux. Côté Les Houches, le Prarion (NE le matin, O l'après-midi) et Merlet-Aiguillette marchent au thermique et à la restitution, mais l'atterrissage des Chavants passe sous le vent dès que la brise s'établit, et la gravière de Cachat, à garder pour la fin d'après-midi, reste très technique. Les cross classiques partent de Planpraz vers les Aravis, Annecy ou le Valais.\n\nDu 1er juillet au 31 août, la zone LF-R 30 B interdit décollage et survol côté Mont-Blanc : Plan de l'Aiguille, Aiguille du Midi, Vallée Blanche. La zone 30 C interdit l'atterrissage au sommet du 1er juin au 15 octobre. La LF-R 30 A, permanente, couvre les hélicoptères des Bois et du Montenvers, tout près du Bouchet.",
+      "summary": "Chamonix est une vallée glaciaire étroite qui court du sud-ouest au nord-est, des Houches à Argentière. Au nord-ouest s'alignent le Brévent et les Aiguilles Rouges ; au sud-est, le massif du Mont-Blanc porte le Plan de l'Aiguille et les Grands Montets. À l'entrée, le Prarion fait face au Merlet.\n\nLa journée suit les horaires. Le matin appartient à Planpraz et à la Flégère, sur les faces sud à est des Aiguilles Rouges. Le Plan de l'Aiguille, tourné vers l'ouest, prend le relais en fin de matinée pour les grandes restitutions du soir. Vers 11h, la brise de l'Arve s'installe : elle entre par le bassin de Sallanches et de Passy, passe sans doute par les gorges de Servoz et remonte vers Chamonix et Argentière. Au Bois du Bouchet, elle reste soutenue l'après-midi, entre 20 et 30 km/h, et se fait sentir jusqu'à 2500 m, parfois 3000 m. Les Grands Montets ne deviennent intéressants qu'en début d'après-midi.\n\nCôté Les Houches, le Prarion (nord-est le matin, ouest l'après-midi) et Merlet-Aiguillette marchent au thermique et à la restitution, mais les Chavants passent sous le vent dès que la brise s'établit, et la gravière de Cachat, à garder pour la fin d'après-midi, reste très technique. Les cross classiques partent de Planpraz vers les Aravis, Annecy ou le Valais.\n\nLe foehn, fréquent ici, piège régulièrement les pilotes, même cantonné entre 1400 et 1800 m. La règle locale : pas de vol au-delà de 20 km/h de vent météo à 2000 m (rotors, sous le vent), et repli sur Plaine-Joux. Du 1er juillet au 31 août, la LF-R 30 B interdit décollage et survol côté Mont-Blanc : Plan de l'Aiguille, Aiguille du Midi, Vallée Blanche. La 30 C interdit l'atterrissage au sommet du 1er juin au 15 octobre. La LF-R 30 A, permanente, couvre les hélicoptères des Bois et du Montenvers, tout près du Bouchet.",
       "bbox": [
         6.7,
         45.8,
@@ -71,7 +71,7 @@
           },
           "season": "printemps-été (saison thermique)",
           "layer_depth_m": "sensible jusqu'à 2500 m, parfois 3000 m (brochure p. 10)",
-          "description": "L'après-midi, la brise de vallée remonte l'Arve jusqu'à Chamonix. Elle s'installe vers 11h et reste soutenue tout l'après-midi : le plus souvent 20 à 25 km/h, jusqu'à 30 km/h. On la sent jusqu'à 2500 m, parfois 3000 m. Elle entre par Sallanches, faiblit en tournant vers Passy, puis se scinde au Mont d'Arbois et à l'entrée de la vallée de Saint-Gervais.",
+          "description": "L'après-midi, la brise de vallée remonte l'Arve jusqu'à Chamonix, et c'est elle qu'on a face à soi en rentrant vers le Bouchet. Elle s'installe vers 11h, forcit nettement en début d'après-midi et reste soutenue ensuite : le plus souvent 20 à 25 km/h, jusqu'à 30 km/h. On la sent jusqu'à 2500 m, parfois 3000 m. En aval, elle entre par Sallanches, faiblit en tournant vers Passy, puis se scinde au Mont d'Arbois et à l'entrée de la vallée de Saint-Gervais.",
           "confidence": "high",
           "sources": [
             "S1",
@@ -115,7 +115,7 @@
             "max": null
           },
           "season": "printemps-été",
-          "description": "Planpraz et la Flégère, sur les faces sud à est des Aiguilles Rouges, sont les décollages du matin. Planpraz se vole de 8h au début de l'après-midi : calme avant 11h, il devient turbulent en été après 15h. La Flégère se vole de 8h à la fin de matinée. Dès que le vent s'installe au décollage sud de Planpraz, deux couloirs passent sous le vent : celui du restaurant et de la télécabine, au nord-est, et le couloir « ENSA » sous le Brévent.",
+          "description": "Sur les faces sud à est des Aiguilles Rouges, Planpraz et, plus au nord, la Flégère sont les décollages du matin. Planpraz se vole de 8h au début de l'après-midi : calme avant 11h, il devient turbulent en été après 15h. La Flégère se vole de 8h à la fin de matinée. Dès que le vent s'installe au décollage sud de Planpraz, deux couloirs passent sous le vent : celui du restaurant et de la télécabine, au nord-est, et le couloir « ENSA » sous le Brévent.",
           "confidence": "medium",
           "sources": [
             "S37",
@@ -156,7 +156,7 @@
             "max": null
           },
           "season": "printemps, juin, septembre-octobre (site interdit en juillet-août)",
-          "description": "Le Plan de l'Aiguille, tourné vers l'ouest, se vole de la fin de matinée au soir. Il marche avec les brises thermiques et thermodynamiques, ou par léger flux d'ouest, et la brise peut être soutenue dès le décollage. Le site devient soarable vers 15h, et la restitution tient jusqu'à la nuit. Le décollage est interdit en juillet et août.",
+          "description": "Sur le versant du Mont-Blanc, le décollage du Plan de l'Aiguille, tourné vers l'ouest, est interdit en juillet et août. Le reste de la saison, il se vole de la fin de matinée au soir, avec les brises thermiques et thermodynamiques ou par léger flux d'ouest, et la brise peut être soutenue dès le décollage. Le site devient soarable vers 15h, et la restitution tient jusqu'à la nuit.",
           "confidence": "medium",
           "sources": [
             "S39",
@@ -196,7 +196,7 @@
             "max": null
           },
           "season": "été (hors 1er juillet-31 août pour le vol dans le massif)",
-          "description": "Les Grands Montets deviennent intéressants en début d'après-midi, en régime de brises, avec un vent météo faible : conditions anticycloniques ou léger flux d'ouest. Le vent météo peut renforcer les brises, et une condensation rapide peut se former devant le décollage en milieu d'après-midi. Le retour vers le Bouchet se fait face à la brise montante.",
+          "description": "Au-dessus d'Argentière, les Grands Montets deviennent intéressants en début d'après-midi, en régime de brises, avec un vent météo faible : conditions anticycloniques ou léger flux d'ouest. Ce vent météo peut renforcer les brises, et une condensation rapide peut se former devant le décollage en milieu d'après-midi. Le retour vers le Bouchet se fait face à la brise montante.",
           "confidence": "medium",
           "sources": [
             "S40",
@@ -234,7 +234,7 @@
             "max": null
           },
           "season": "printemps-été",
-          "description": "Le Merlet, côté Les Houches, se vole de la fin de matinée à la fin de l'après-midi, dans les brises thermodynamiques et la restitution du vent de vallée. L'aérologie y est particulière. À gauche en sortie, l'épaule ouest du parc Merlet donne un excellent rendement dynamique ; à droite, évitez les rouleaux, dont celui du plateau de Coupeau. Au Chailloud voisin, l'aérologie est difficile entre 14h et 16h.",
+          "description": "Sur la rive droite, au-dessus des Houches, le Merlet se vole de la fin de matinée à la fin de l'après-midi, dans les brises thermodynamiques et la restitution du vent de vallée. L'aérologie y est particulière. À droite en sortie, évitez les rouleaux, dont celui du plateau de Coupeau ; à gauche, l'épaule ouest du parc Merlet donne un excellent rendement dynamique. Au Chailloud voisin, l'aérologie est difficile entre 14h et 16h.",
           "confidence": "medium",
           "sources": [
             "S43",
@@ -259,7 +259,7 @@
           "radius_km": 8,
           "coord_quality": "approx",
           "conditions": "LF-R 30 B : 1er juillet-31 août H24 (décret du 22 mars 2001, SUP AIP 120/21). ZRT/LF-R 30 C : H24 du 1er juin au 15 octobre. LF-R 30 A : permanente selon la brochure et le club, désactivée pendant l'activation de 30 B selon AeroVFR.",
-          "description": "Ces zones protègent les hélicoptères de secours : les parapentes les contournent. Pour les traverser, il faut être à la fois à plus de 1000 m/sol et au-dessus du FL 115 (3500 m). La LF-R 30 B est active H24 du 1er juillet au 31 août. En juin et du 1er septembre au 15 octobre, on peut entrer dans la zone 30 C sans s'y poser, sauf enchaînement alpinisme-parapente ou paralpinisme. Un survol, même involontaire, expose à des poursuites pénales, à des amendes et à la confiscation du matériel.",
+          "description": "Ces zones protègent les hélicoptères de secours : les parapentes les contournent. Un survol, même involontaire, expose à des poursuites pénales, des amendes et la confiscation du matériel. La LF-R 30 B est active H24 du 1er juillet au 31 août. Pour traverser, il faut être à plus de 1000 m/sol et au-dessus du FL 115 (3500 m). En juin et du 1er septembre au 15 octobre, on peut entrer dans la zone 30 C sans s'y poser, sauf enchaînement alpinisme-parapente ou paralpinisme.",
           "sources": [
             "S10",
             "S32",
@@ -281,7 +281,7 @@
           "radius_km": 2.5,
           "coord_quality": "approx",
           "conditions": "permanente (brochure, club, ParaglidingEarth) ; protège les rotations d'hélicoptères de secours en montagne",
-          "description": "Cette zone permanente protège les rotations des hélicoptères de secours : on n'y entre pas sous 1000 m/sol. Elle couvre la DZ hélicoptères des Bois, l'hôtel de l'Arveyron, la sortie du tunnel et l'hôtel du Montenvers, le chalet du Chapeau, la gare des Tines et la voie ferrée jusqu'à l'Arveyron. L'atterrissage du Bouchet est tout près : abordez-le par le nord de la route principale.",
+          "description": "Juste à l'est du Bouchet, cette zone permanente protège les rotations des hélicoptères de secours : on n'y entre pas sous 1000 m/sol. Elle couvre la DZ hélicoptères des Bois, l'hôtel de l'Arveyron, la sortie du tunnel et l'hôtel du Montenvers, le chalet du Chapeau, la gare des Tines et la voie ferrée jusqu'à l'Arveyron. Comme l'atterrissage du Bouchet est tout près, abordez-le par le nord de la route principale.",
           "sources": [
             "S3",
             "S36",
@@ -317,7 +317,7 @@
           "radius_km": 1,
           "coord_quality": "source",
           "conditions": "permanent ; site interdit en juillet-août",
-          "description": "En sortant du décollage du Plan de l'Aiguille, les câbles électriques d'alimentation du téléphérique passent à gauche, et les câbles du téléphérique à droite. Le décollage et le survol sont interdits en juillet et août, pour les rotations des hélicoptères de secours.",
+          "description": "Au Plan de l'Aiguille, le décollage et le survol sont interdits en juillet et août, pour les rotations des hélicoptères de secours. Le reste de l'année, soignez la sortie : les câbles électriques d'alimentation du téléphérique passent à gauche, et les câbles du téléphérique à droite.",
           "sources": [
             "S39",
             "S5",
@@ -351,7 +351,7 @@
           "radius_km": 0.8,
           "coord_quality": "source",
           "conditions": "après-midi d'été, brise 20-30 km/h",
-          "description": "L'après-midi d'été, la brise de vallée souffle entre 20 et 30 km/h sur le Bois du Bouchet, un terrain bordé d'arbres. Abordez-le au vent des arbres, surtout ceux du chemin de la gravière, en PTU main gauche. Repérez-le avant de monter : on ne le voit pas des décollages. En rentrant de la Flégère ou des Grands Montets face à la brise, surveillez votre cône d'autonomie. Ne vous mettez pas sous le vent du terrain, tout proche de la LF-R 30 A.",
+          "description": "L'après-midi d'été, la brise de vallée souffle entre 20 et 30 km/h sur le Bois du Bouchet, un terrain bordé d'arbres. Abordez-le au vent de ces arbres, surtout ceux du chemin de la gravière, en PTU main gauche, et ne vous mettez pas sous le vent du terrain, tout proche de la LF-R 30 A. Repérez-le avant de monter : on ne le voit pas des décollages. En rentrant de la Flégère ou des Grands Montets face à la brise, surveillez votre cône d'autonomie.",
           "sources": [
             "S48",
             "S79",
@@ -369,7 +369,7 @@
           "radius_km": 0.5,
           "coord_quality": "source",
           "conditions": "période d'ouverture des pistes de ski alpin et de fond, ou événements (arrêtés municipaux)",
-          "description": "Quand le Bouchet et le Savoy sont interdits, en hiver ou par arrêté municipal, on se pose sur le terrain delta, 500 m plus au nord. Ce terrain de secours est très turbulent et enclavé, et son aérologie est dangereuse. En brise de vallée établie, il est sous le vent de l'atterrissage parapente.",
+          "description": "À 500 m au nord du Bouchet, le terrain delta est un secours : on s'y pose quand le Bouchet et le Savoy sont interdits, en hiver ou par arrêté municipal. Très turbulent et enclavé, il a une aérologie dangereuse. En brise de vallée établie, il est sous le vent de l'atterrissage parapente.",
           "sources": [
             "S3",
             "S1",
@@ -386,7 +386,7 @@
           "radius_km": 1,
           "coord_quality": "source",
           "conditions": "vent d'ouest ou de nord > 20 km/h à 2000 m ; dès que le vent s'installe au déco sud",
-          "description": "Les câbles du téléphérique du Brévent passent devant la sortie du décollage sud : écartez-vous bien à droite pour passer dessous, là où ils sont le plus haut. Par vent d'ouest ou de nord de plus de 20 km/h à 2000 m, on vole sous le vent, dans la turbulence. Une fois le vent établi au décollage sud, le couloir nord-est et le couloir « ENSA » sous le Brévent passent sous le vent.",
+          "description": "Au décollage sud de Planpraz, les câbles du téléphérique du Brévent passent devant la sortie : écartez-vous bien à droite pour passer dessous, là où ils sont le plus haut. Par vent d'ouest ou de nord de plus de 20 km/h à 2000 m, on vole sous le vent, dans la turbulence. Une fois le vent établi au décollage sud, le couloir nord-est et le couloir « ENSA » sous le Brévent passent sous le vent.",
           "sources": [
             "S37",
             "S4",
@@ -406,7 +406,7 @@
           "radius_km": 0.8,
           "coord_quality": "approx",
           "conditions": "permanent, pour les cross de Planpraz vers la Flégère",
-          "description": "Des câbles horizontaux relient les stations du Brévent et de la Flégère dans la combe Lachenal, vers 1700-1800 m. Ils barrent le cheminement de Planpraz vers la Flégère.",
+          "description": "Entre Planpraz et la Flégère, dans la combe Lachenal, des câbles horizontaux relient les stations du Brévent et de la Flégère vers 1700-1800 m. Ils barrent le cheminement de l'une à l'autre.",
           "sources": [
             "S37",
             "S38",
@@ -438,7 +438,7 @@
           "radius_km": 1,
           "coord_quality": "source",
           "conditions": "été, crevasses qui s'élargissent en août-septembre",
-          "description": "On décolle sur le glacier du Pas de Chèvre : prudence extrême. Les crevasses s'ouvrent en été et s'élargissent beaucoup en août et septembre. Le téléphérique sommital ne sert plus d'accès : depuis Lognan, on rejoint le décollage par le glacier des Grands Montets, un itinéraire de haute montagne non balisé et très crevassé, de préférence encordé. Pour les deltas, seules les ailes souples repliables passent encore, et le tremplin a été démonté.",
+          "description": "Aux Grands Montets, on décolle sur le glacier du Pas de Chèvre : prudence extrême. Les crevasses s'ouvrent en été et s'élargissent beaucoup en août et septembre. Le téléphérique sommital ne sert plus d'accès : depuis Lognan, on rejoint le décollage par le glacier des Grands Montets, un itinéraire de haute montagne non balisé et très crevassé, de préférence encordé. Pour les deltas, seules les ailes souples repliables passent encore, et le tremplin a été démonté.",
           "sources": [
             "S40",
             "S7",
@@ -472,7 +472,7 @@
           "radius_km": 0.5,
           "coord_quality": "source",
           "conditions": "dès que la brise de vallée s'établit ; haute saison (biplaces de Planpraz)",
-          "description": "Ce terrain enclavé, bordé de bâtiments, passe sous le vent dès que la brise s'établit. Il cache des obstacles dangereux : téléskis, tapis roulants, socles de canons à neige. L'été, les biplaces de Planpraz s'y posent en nombre, surtout entre H+40 et H+55. Il est interdit en hiver, aux mini-voiles et au speed riding. Depuis sa réouverture à l'essai, il est réservé aux pilotes inscrits qui ont signé la charte.",
+          "description": "Depuis sa réouverture à l'essai, le Savoy, au pied de Planpraz, est réservé aux pilotes inscrits qui ont signé la charte. Il est interdit en hiver, aux mini-voiles et au speed riding. Ce terrain enclavé, bordé de bâtiments, passe sous le vent dès que la brise s'établit, et il cache des obstacles dangereux : téléskis, tapis roulants, socles de canons à neige. L'été, les biplaces de Planpraz s'y posent en nombre, surtout entre H+40 et H+55.",
           "sources": [
             "S49",
             "S80",
@@ -504,7 +504,7 @@
           "radius_km": 0.6,
           "coord_quality": "approx",
           "conditions": "permanent",
-          "description": "Le décollage du Grand Prarion est court et assez raide, et une seule voile peut s'y étaler. La sortie est envahie par les vernes et les rhododendrons. Une ligne haute tension passe 500 m plus bas. Le site ne se vole que si la brise rentre bien.",
+          "description": "Au Grand Prarion, ne décollez que si la brise rentre bien. Le décollage est court et assez raide, une seule voile peut s'y étaler, et la sortie est envahie par les vernes et les rhododendrons. Une ligne haute tension passe 500 m plus bas.",
           "sources": [
             "S42",
             "S3"
@@ -520,7 +520,7 @@
           "radius_km": 1.5,
           "coord_quality": "source",
           "conditions": "dès l'installation de la brise de vallée, en pratique après 11h ; fenêtre « du début au milieu de matinée »",
-          "description": "Dès que la brise de vallée monte, l'atterrissage des Chavants, celui du Prarion, passe sous le vent du relief à l'ouest, à la sortie d'un venturi : il devient turbulent, puis inutilisable. Après 11h, il est aléatoire. L'après-midi, la brise étant presque quotidienne, n'y comptez pas.",
+          "description": "Aux Houches, l'atterrissage des Chavants, celui du Prarion, ne vaut que le matin. Dès que la brise de vallée monte, il passe sous le vent du relief à l'ouest, à la sortie d'un venturi : il devient turbulent, puis inutilisable. Après 11h, il est aléatoire. L'après-midi, la brise étant presque quotidienne, n'y comptez pas.",
           "sources": [
             "S50",
             "S41",
@@ -540,13 +540,14 @@
           "radius_km": 12,
           "coord_quality": "approx",
           "conditions": "avant l'arrivée d'une perturbation : flux de sud en altitude, hautes pressions côté italien, baisse côté français ; écart de pression Aoste–Annecy ≤ −4 hPa (CMBVL)",
-          "description": "Le foehn est fréquent ici et piège régulièrement les pilotes, surtout à Chamonix et aux Contamines. Il est probable dès un écart de −4 hPa entre Aoste et Annecy, et crée des rotors sous le vent. Ses signes : vent de sud sur les sommets, lenticulaires, mur de foehn sur les cols, écharpes venues d'Italie ou de Suisse, petits cumulus déchiquetés dès le matin, souffle chaud et sec qui descend la vallée. Il peut rester cantonné entre 1400 et 1800 m, ou partir avec environ 20 km/h à 4000 m, sans nuages.",
+          "description": "Le foehn est fréquent ici et piège régulièrement les pilotes, surtout à Chamonix et aux Contamines. Il est probable dès un écart de −4 hPa entre Aoste et Annecy, et crée des rotors sous le vent. Ses signes : vent de sud sur les sommets, lenticulaires, mur de foehn sur les cols, petits cumulus déchiquetés dès le matin, souffle chaud et sec qui descend la vallée. Il peut rester cantonné entre 1400 et 1800 m, ou partir avec environ 20 km/h à 4000 m, sans nuages.",
           "sources": [
             "S3",
             "S51",
             "S35"
           ],
           "possible": [
+            "Des écharpes venues d'Italie ou de Suisse peuvent aussi l'annoncer.",
             "Les balises du Prarion, du Requin et de l'ENSA aident à le surveiller, mais celle de l'ENSA est peu fiable en inversion ; surveillez aussi les fortes rafales d'est prévues à la sortie de la Mer de Glace.",
             "On distingue le grand foehn, lié à une vaste dépression, du foehn de bise, plus local, après une perturbation."
           ]
@@ -600,7 +601,7 @@
           "coord_quality": "source",
           "best_hours": "dès 8h, jusqu'à la fin de matinée",
           "trigger": "faces S-E des Aiguilles Rouges sous la Flégère",
-          "description": "La Flégère se vole de 8h à la fin de matinée. Les jours de vent léger ou de grande stabilité, c'est un départ peu fréquenté, quand Planpraz reste dans la couche stable.",
+          "description": "Au nord de Planpraz, la Flégère se vole de 8h à la fin de matinée. Les jours de vent léger ou de grande stabilité, c'est un départ peu fréquenté, quand Planpraz reste dans la couche stable.",
           "sources": [
             "S95",
             "S38"
@@ -655,7 +656,7 @@
           "coord_quality": "source",
           "best_hours": "de 8h au début d'après-midi ; marche dès 10h un bon jour",
           "trigger": "face sud-est du Brévent au-dessus du plateau de Planpraz, chauffée dès la matinée",
-          "description": "Planpraz, sur la face sud-est du Brévent, est le départ habituel des cross vers les Aravis et Annecy. Le site se vole de 8h au début de l'après-midi, et un bon jour il marche dès 10h. Une fois le vent établi au décollage sud, le couloir nord-est du restaurant passe sous le vent. Par vent d'ouest ou de nord de plus de 20 km/h à 2000 m, on vole sous le vent.",
+          "description": "Planpraz, sur la face sud-est du Brévent, est le départ habituel des cross vers les Aravis et Annecy. Le site se vole de 8h au début de l'après-midi, et un bon jour il marche dès 10h. Deux limites à connaître : une fois le vent établi au décollage sud, le couloir nord-est du restaurant passe sous le vent, et par vent d'ouest ou de nord de plus de 20 km/h à 2000 m, on vole sous le vent.",
           "sources": [
             "S150",
             "S69",
@@ -742,7 +743,7 @@
           "ffvl_id": 1200,
           "best_hours": "après-midi d'été ; actif aussi au printemps (avril)",
           "trigger": "falaises sous le décollage et pied de la pointe de Barmerousse (CMBVL) ; secteur de Varan",
-          "description": "Les falaises sous le décollage de Varan et le pied de la Barmerousse font presque toujours un fort thermique, qui permet de partir en cross.",
+          "description": "Sur la route des Aravis, au-dessus de Passy, les falaises sous le décollage de Varan et le pied de la Barmerousse font presque toujours un fort thermique, qui permet de partir en cross.",
           "sources": [
             "S149",
             "S151",
@@ -973,7 +974,7 @@
           "wind_dirs": [
             "W"
           ],
-          "description": "Le soir, depuis le Plan de l'Aiguille, des vols thermodynamiques remontent le long du massif ; le décollage marche aussi par flux d'ouest faible. Le site est interdit du 1er juillet au 31 août.",
+          "description": "Interdit du 1er juillet au 31 août, le Plan de l'Aiguille donne le soir des vols thermodynamiques qui remontent le long du massif. Le décollage marche aussi par flux d'ouest faible.",
           "sources": [
             "S39",
             "S5",
@@ -1026,7 +1027,7 @@
             "S",
             "NE"
           ],
-          "description": "Planpraz, face sud et nord-est, se vole de 8h au début de l'après-midi ; c'est le départ des cross vers Annecy ou le Valais. Le matin, les biplaces y sont nombreux. Par vent d'ouest ou de nord de plus de 20 km/h à 2000 m, on est sous le vent. Le décollage nord-est, à l'est du restaurant, sert tôt le matin ou par vent de nord-est ou d'est : quittez-le dès que le vent s'installe au décollage sud.",
+          "description": "Sur les Aiguilles Rouges, au-dessus de Chamonix, Planpraz se vole face sud et nord-est, de 8h au début de l'après-midi ; c'est le départ des cross vers Annecy ou le Valais. Par vent d'ouest ou de nord de plus de 20 km/h à 2000 m, on est sous le vent. Le matin, les biplaces y sont nombreux. Le décollage nord-est, à l'est du restaurant, sert tôt le matin ou par vent de nord-est ou d'est : quittez-le dès que le vent s'installe au décollage sud.",
           "sources": [
             "S37",
             "S4",
@@ -1048,7 +1049,7 @@
             "SE",
             "E"
           ],
-          "description": "La Flégère, face sud à est, se vole de 8h à la fin de matinée. L'hiver, la zone est une piste interdite au parapente. Environ 200 m plus bas, une épaule tournée à l'est et au sud-est est souvent mieux alimentée en brise quand le vent météo entre en haut. Le décollage de la gare intermédiaire, à 1950 m et face à l'est, passe sous le vent vers 11h. Le retour au Bouchet se fait face à la brise de vallée.",
+          "description": "Au nord de Planpraz, la Flégère, face sud à est, se vole de 8h à la fin de matinée. L'hiver, la zone est une piste interdite au parapente. Environ 200 m plus bas, une épaule tournée à l'est et au sud-est est souvent mieux alimentée en brise quand le vent météo entre en haut. Le décollage de la gare intermédiaire, à 1950 m et face à l'est, passe sous le vent vers 11h. Le retour au Bouchet se fait face à la brise de vallée.",
           "sources": [
             "S38",
             "S6",
@@ -1068,7 +1069,7 @@
             "W",
             "NE"
           ],
-          "description": "Le Plan de l'Aiguille est à 5 minutes à pied en aval de la gare intermédiaire de l'Aiguille du Midi. Le décollage ouest sert aux vols du soir ; le côté nord-est sert par vent de nord, et l'hiver sur la neige. Il marche avec les brises thermiques et thermodynamiques ou par léger flux d'ouest, et la brise peut être soutenue au décollage. Décollage et survol sont interdits en juillet et août.",
+          "description": "Décollage et survol sont interdits ici en juillet et août. Le reste de l'année, le Plan de l'Aiguille est à 5 minutes à pied en aval de la gare intermédiaire de l'Aiguille du Midi. Le décollage ouest sert aux vols du soir ; le côté nord-est sert par vent de nord, et l'hiver sur la neige. Il marche avec les brises thermiques et thermodynamiques ou par léger flux d'ouest, et la brise peut être soutenue au décollage.",
           "sources": [
             "S39",
             "S5",
@@ -1093,7 +1094,7 @@
           "orientations": [
             "W"
           ],
-          "description": "Les Grands Montets, face à l'ouest vers Chamonix, se volent depuis un glacier crevassé. Le site devient intéressant en début d'après-midi, en régime de brises, avec un vent météo faible. Le retour vers le Bouchet se fait face à la brise. Pas d'atterrissage à Argentière.",
+          "description": "Au-dessus d'Argentière, où l'on ne peut pas se poser, les Grands Montets se volent face à l'ouest vers Chamonix, depuis un glacier crevassé. Le site devient intéressant en début d'après-midi, en régime de brises, avec un vent météo faible. Le retour vers le Bouchet se fait face à la brise.",
           "sources": [
             "S40",
             "S7",
@@ -1117,7 +1118,7 @@
             "N",
             "S"
           ],
-          "description": "L'Aiguille du Midi a deux décollages, nord et sud. Ils se volent toute la journée en régime anticyclonique, ou par léger flux de nord à nord-ouest ou de sud. La portance manque à cette altitude, et des crevasses s'ouvrent en aval des deux décollages. Le vol y est interdit en juillet et août (LF-R 30 B).",
+          "description": "Le vol y est interdit en juillet et août (LF-R 30 B). Le reste de l'année, l'Aiguille du Midi offre deux décollages, nord et sud, qui se volent toute la journée en régime anticyclonique, ou par léger flux de nord à nord-ouest ou de sud. La portance manque à cette altitude, et des crevasses s'ouvrent en aval des deux décollages.",
           "sources": [
             "S44",
             "S3",
@@ -1139,7 +1140,7 @@
             "S",
             "SW"
           ],
-          "description": "On décolle du sommet (4807 à 4810 m) de nord-est à sud-ouest, jamais par vent d'ouest. Il faut un régime anticyclonique, avec un faible flux de nord, de sud-ouest ou d'est, 20 km/h au plus à 4000 m. Le vol fait environ 4000 m de dénivelé, soit environ 45 minutes de descente. Il est interdit en juillet et août, et l'on ne se pose pas au sommet du 1er juin au 15 octobre. Visez le Bouchet, Marlioz ou Chedde.",
+          "description": "Le vol depuis le sommet (4807 à 4810 m) est interdit en juillet et août, et l'on ne s'y pose pas du 1er juin au 15 octobre. On décolle de nord-est à sud-ouest, jamais par vent d'ouest. Il faut un régime anticyclonique, avec un faible flux de nord, de sud-ouest ou d'est, 20 km/h au plus à 4000 m. Le vol fait environ 4000 m de dénivelé, soit environ 45 minutes de descente : visez le Bouchet, Marlioz ou Chedde.",
           "sources": [
             "S46",
             "S3",
@@ -1157,7 +1158,7 @@
           "orientations": [
             "NE"
           ],
-          "description": "Le Prarion Nord-Est est à la sortie de la télécabine, sur la piste bleue. C'est un site du matin : il marche avec des thermiques d'est ou un flux qui descend la vallée, bise ou léger foehn. Une barre de fer, invisible du décollage, est fixée dans l'ancrage béton des dameuses. L'atterrissage des Chavants passe sous le vent après 11h. Si le vent tourne à l'ouest ou au sud-ouest, allez à La Charme, au Plancert ou au Grand Prarion.",
+          "description": "Aux Houches, à la sortie de la télécabine, sur la piste bleue, le Prarion Nord-Est est un site du matin : il marche avec des thermiques d'est ou un flux qui descend la vallée, bise ou léger foehn. Son atterrissage des Chavants passe sous le vent après 11h. Une barre de fer, invisible du décollage, est fixée dans l'ancrage béton des dameuses. Si le vent tourne à l'ouest ou au sud-ouest, allez à La Charme, au Plancert ou au Grand Prarion.",
           "sources": [
             "S41",
             "S8",
@@ -1202,7 +1203,7 @@
             "S",
             "SW"
           ],
-          "description": "Le Merlet est à 10 minutes à pied du parking du parc animalier. Il se vole de la fin de matinée à la fin d'après-midi, dans les brises thermodynamiques et la restitution. Ne survolez pas le parc animalier. On se pose à la gravière de Cachat, très technique, entre le torrent et une piste ULM privée.",
+          "description": "Sur la rive droite, au-dessus des Houches, le Merlet est à 10 minutes à pied du parking du parc animalier. Ne survolez pas ce parc. Le site se vole de la fin de matinée à la fin d'après-midi, dans les brises thermodynamiques et la restitution. On se pose à la gravière de Cachat, très technique, entre le torrent et une piste ULM privée.",
           "sources": [
             "S43",
             "S3",
@@ -1254,7 +1255,7 @@
           "orientations": [
             "N"
           ],
-          "description": "On y monte uniquement à pied, par un sentier balisé. Le décollage est raide et se vole l'après-midi avec la brise de vallée ; il est déconseillé par vent arrière. Il est interdit en juillet et août, et la LF-R 30 A est toute proche au nord.",
+          "description": "Au-dessus de Chamonix, côté Mont-Blanc, ce décollage est interdit en juillet et août, et la LF-R 30 A est toute proche au nord. On y monte uniquement à pied, par un sentier balisé. Raide, il se vole l'après-midi avec la brise de vallée, et il est déconseillé par vent arrière.",
           "sources": [
             "S45",
             "S83"
@@ -1294,7 +1295,7 @@
           "alt_m": 1042,
           "coord_quality": "source",
           "ffvl_id": 1111,
-          "description": "C'est l'atterrissage officiel de la vallée, à 1042 m. Il dessert Planpraz, le Plan de l'Aiguille, la Flégère, les Grands Montets et l'Aiguille du Midi. L'après-midi, la brise y souffle entre 20 et 30 km/h, et le terrain est bordé d'arbres : abordez-le au vent des arbres, en PTU main gauche. Il peut être fermé ponctuellement, par exemple pour le marathon du Mont-Blanc.",
+          "description": "Le Bois du Bouchet, à 1042 m, est l'atterrissage officiel de la vallée. Il dessert Planpraz, le Plan de l'Aiguille, la Flégère, les Grands Montets et l'Aiguille du Midi. L'après-midi, la brise y souffle entre 20 et 30 km/h, et le terrain est bordé d'arbres : abordez-le au vent des arbres, en PTU main gauche. Il peut être fermé ponctuellement, par exemple pour le marathon du Mont-Blanc.",
           "sources": [
             "S48",
             "S79",
@@ -1312,7 +1313,7 @@
           "alt_m": 1049,
           "coord_quality": "source",
           "ffvl_id": 1773,
-          "description": "Le Savoy dessert Planpraz et l'Index. Posez-y le matin, avant la brise : ensuite, il est sous le vent et dangereux. Il est interdit en hiver, sur les pistes. Depuis sa réouverture à l'essai, il est réservé aux pilotes inscrits qui ont signé la charte.",
+          "description": "Au pied de Planpraz, le Savoy dessert Planpraz et l'Index. Depuis sa réouverture à l'essai, il est réservé aux pilotes inscrits qui ont signé la charte, et il est interdit en hiver, sur les pistes. Posez-y le matin, avant la brise : ensuite, il est sous le vent et dangereux.",
           "sources": [
             "S49",
             "S80",
@@ -1341,7 +1342,7 @@
           "alt_m": 993,
           "coord_quality": "source",
           "ffvl_id": 1117,
-          "description": "C'est l'atterrissage du Merlet et de l'Aiguillette, entre 950 et 993 m, à utiliser en fin d'après-midi. Il est très technique : il borde le torrent de l'Arve, les chantiers y sont fréquents, et l'aérologie est souvent turbulente.",
+          "description": "Au fond de la vallée, sous le Merlet, la gravière de Cachat est l'atterrissage du Merlet et de l'Aiguillette, entre 950 et 993 m, à utiliser en fin d'après-midi. Elle est très technique : elle borde le torrent de l'Arve, les chantiers y sont fréquents, et l'aérologie est souvent turbulente.",
           "sources": [
             "S3",
             "S87",
@@ -1357,7 +1358,7 @@
           "alt_m": 1011,
           "coord_quality": "source",
           "ffvl_id": 1168,
-          "description": "C'est l'atterrissage du Prarion : le grand champ à gauche, au bout de la route. Il se pratique du début au milieu de matinée, tant que la brise montante ne s'est pas établie ; ensuite, il est sous le vent, à la sortie d'un venturi.",
+          "description": "Aux Houches, les Chavants sont l'atterrissage du Prarion : le grand champ à gauche, au bout de la route. Ils se pratiquent du début au milieu de matinée, tant que la brise montante ne s'est pas établie ; ensuite, ils sont sous le vent, à la sortie d'un venturi.",
           "sources": [
             "S50",
             "S8",
@@ -1778,7 +1779,7 @@
               "coord_quality": "source"
             }
           ],
-          "description": "Hors juillet et août, le Plan de l'Aiguille sert de départ à ce cheminement de la rive droite ; en juillet et août, décollage et survol y sont interdits (LF-R 30 B).",
+          "description": "Hors juillet et août, ce cheminement de la rive droite part du Plan de l'Aiguille et descend la vallée vers Les Houches. En juillet et août, décollage et survol y sont interdits (LF-R 30 B).",
           "sources": [
             "S150",
             "S39",

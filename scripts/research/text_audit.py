@@ -48,7 +48,7 @@ YEAR = re.compile(r'(?<!Natura )\b(?:19[5-9]\d|20[0-4]\d)\b(?!\s?m\b)')
 QUOTE = re.compile(r'«\s*([^»]+?)\s*»')
 NUMBER = re.compile(r'\d+(?:[   ]\d{3})*(?:[.,]\d+)?')
 
-LIMITS = {'description': 480, 'mechanism': 420, 'usage': 420, 'possible': 220, 'summary': 1600, 'tip': 260, 'effect': 420, 'step': 620}
+LIMITS = {'description': 480, 'mechanism': 420, 'usage': 420, 'possible': 220, 'summary': 1800, 'tip': 260, 'effect': 420, 'step': 620}
 
 
 def sourced_numbers() -> dict[str, set[str]]:

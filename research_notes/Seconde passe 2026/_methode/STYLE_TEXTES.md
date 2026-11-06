@@ -57,7 +57,7 @@ La prose peut les reprendre pour expliquer, jamais les contredire.
 - **Résumé du massif** (`summary`) : 3 ou 4 paragraphes courts séparés par une ligne vide :
   le massif en une idée (forme, orientation) ; la journée de l'air (le mécanisme) ; autour
   du massif (entrées de brises, transitions) ; à respecter (espaces aériens, zones
-  protégées). 1 600 caractères au plus.
+  protégées). 1 800 caractères au plus.
 - **Conseils** (`tips`) : une phrase d'action chacun, 260 caractères au plus ; garder le
   même nombre de conseils et **exactement les mêmes balises** `[S1]`, `[S2, S3]`.
 - **Vent météo** (`synoptic_effects[].effect`) : l'effet puis la conséquence pratique, en 1
@@ -216,6 +216,17 @@ des arbres et des rochers. ») et la phrase de fin isolée (« Il y a des câble
 les lieux vivants : ce qu'on voit, ce qu'on sent, où l'on va ensuite. Mais rien d'inventé :
 le récit vient de l'ordre et des liens entre les faits sourcés, jamais d'un fait ajouté. Si
 la source ne donne qu'une ligne, le texte fait une ou deux phrases, et c'est bien ainsi.
+
+**La voix d'un moniteur qui fait découvrir son massif.** Il a le pilote à côté de lui et veut
+lui donner envie de voler là : il montre, il explique pourquoi, il annonce ce qui vient, il
+partage ce qui l'a marqué dans les sources. Le lecteur doit vouloir lire la phrase suivante.
+Cela vient du fil du propos (« Le problème, c'est… », « C'est pour ça que… », « Reste à
+rentrer »), d'une raison donnée au bon moment, d'une attente créée puis résolue.
+
+**Le rythme, ni l'un ni l'autre.** Pas de phrase à rallonge qui enchaîne les virgules, mais pas
+non plus une suite de phrases hachées, sujet-verbe-point : couper une phrase en cinq ne la rend
+pas plus lisible. On varie, comme à l'oral : une phrase moyenne qui se déroule, une courte qui
+frappe, un lien logique entre les deux. La règle « des phrases courtes » de la Voix se lit ainsi.
 
 **Le massif entier suit la même pente.** Le résumé et l'accueil de la visite donnent la carte
 mentale (les vallées, les crêtes, les grandes orientations) avant de nommer le moindre site.

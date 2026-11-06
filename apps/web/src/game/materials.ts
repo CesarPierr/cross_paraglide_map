@@ -119,28 +119,29 @@ float stones(vec2 p, vec2 per, out float id) {
 void pattern(vec2 uv, out float h, out float b) {
   if (uLayer == 0) {
     // Limestone face (u along the face, v up): beds of uneven thickness, wavy and pinching
-    // out, most nearly flush, some jutting out as a ledge with a rounded foot in shade and
-    // a face leaning back above; joints through some beds only, small roughness; beds of
+    // out, some standing out a little; joints through some beds only, small roughness; beds of
     // slightly different tints, dark runoff streaks hanging under the ledges, lighter fresh
-    // scars. The relief is continuous across the bedding joints and differs from bed to
-    // bed: a step, or the same notch at every joint, would shade as contour lines.
-    float warp = 1.3 * fbm(vec2(uv.x * 2.0, uv.y * 3.0), vec2(2.0, 3.0), 3) + 0.25 * sin(uv.x * 6.2831853 * 2.0 + uv.y * 3.0);
+    // scars. The relief is mostly the roughness: a ledge with a sharp edge, repeated at every
+    // tile, shades as a dark wavy line across the cliffs, like contour lines on a map.
+    // Everything periodic over the tile: a bed cut at its edge drew a dark wavy line across the
+    // cliffs at every repeat, like contour lines.
+    float warp = 1.3 * fbm(vec2(uv.x * 2.0, uv.y * 3.0), vec2(2.0, 3.0), 3) + 0.25 * sin(6.2831853 * (uv.x * 2.0 + uv.y));
     float t = uv.y * 11.0 + warp;
-    t += 0.38 * sin(t * 1.7) + 0.2 * sin(t * 4.1 + 1.3);
-    float bed = floor(t);
+    t += 0.38 * sin(t * 6.2831853 * 3.0 / 11.0) + 0.2 * sin(t * 6.2831853 * 7.0 / 11.0 + 1.3);
+    float bed = mod(floor(t), 11.0);
     float f = fract(t);
     float thick = hash12(vec2(bed, 3.0));
     float jut = smoothstep(0.4, 0.9, hash12(vec2(bed, 5.0)));
-    float ledge = jut * smoothstep(0.0, 0.3 + 0.2 * thick, f) * (1.0 - smoothstep(0.75, 1.0, f)) * (1.0 - (0.2 + 0.3 * thick) * f);
+    float ledge = jut * smoothstep(0.0, 0.5 + 0.2 * thick, f) * (1.0 - smoothstep(0.55, 1.0, f));
     float under = (1.0 - smoothstep(0.02, 0.25, f)) * jut;
-    vec2 w = worley(vec2(uv.x * 7.0, uv.y * 1.5 + bed * 0.37), vec2(7.0, 1.5), 1.0);
+    vec2 w = worley(vec2(uv.x * 7.0, uv.y * 2.0 + bed * 0.37), vec2(7.0, 2.0), 1.0);
     float joint = (1.0 - smoothstep(0.0, 0.14, w.y - w.x)) * step(0.35, hash12(vec2(bed, 11.0)));
     float rough = fbm(uv * 24.0, vec2(24.0), 4);
-    h = clamp(0.6 * ledge + 0.3 * rough - 0.15 * joint + 0.15, 0.0, 1.0);
-    float streak = fbm(vec2(uv.x * 46.0, uv.y * 1.2 + 0.3 * rough), vec2(46.0, 1.2), 3);
+    h = clamp(0.1 * ledge + 0.45 * rough - 0.04 * joint + 0.2, 0.0, 1.0);
+    float streak = fbm(vec2(uv.x * 46.0, uv.y * 2.0 + 0.3 * rough), vec2(46.0, 2.0), 3);
     float stain = smoothstep(0.5, 0.82, streak) * (0.4 + 0.6 * (1.0 - f));
     float scar = smoothstep(0.78, 0.92, fbm(uv * vec2(5.0, 9.0) + 3.1, vec2(5.0, 9.0), 2));
-    b = 0.5 + 0.16 * (hash12(vec2(bed, 9.0)) - 0.5) + 0.16 * (rough - 0.5) - 0.22 * stain - 0.08 * joint - 0.1 * under + 0.12 * scar;
+    b = 0.5 + 0.16 * (hash12(vec2(bed, 9.0)) - 0.5) + 0.16 * (rough - 0.5) - 0.22 * stain - 0.03 * joint - 0.03 * under + 0.12 * scar;
   } else if (uLayer == 1) {
     // Blocks and scree from above: big stones, smaller ones between, fine gravel; gaps dark.
     float id1;
@@ -544,13 +545,14 @@ vec3 gShade(vec3 xd, vec3 xdSmooth, vec3 snowX, vec3 pa, vec3 V, float dist, Rel
     if (fd > 0.0 && w.x > 0.04) { vec4 d = gDetailYZ(pb, 18.0, 0.0); grad += rock * w.x * fd * 2.2 * vec3(0.0, d.x, d.y); bright += rock * w.x * d.w * bA * fd; }
     if (fd > 0.0 && w.y > 0.04) { vec4 d = gDetailXZ(pb, 18.0, 0.0); grad += rock * w.y * fd * 2.2 * vec3(d.x, 0.0, d.y); bright += rock * w.y * d.w * bA * fd; }
     // The beds of a whole cliff (a few metres thick), visible from kilometres away where the
-    // photo has nothing to show but a smear: bands of tone more than relief from afar.
+    // photo has nothing to show but a smear: faint bands of tone, hardly any relief (stronger,
+    // their joints drew dark wavy lines across the faces, like contour lines on a map).
     float lodB = gLod(150.0, foot);
     float fB = gFade(lodB) * smoothstep(0.85, 0.55, N0.z);
     if (fB > 0.0) {
       vec2 sh = vec2(0.31, 0.17);
-      if (w.x > 0.04) { vec4 d = gDetailYZ(pb + vec3(0.0, sh * 150.0), 150.0, 0.0); grad += rock * w.x * fB * 0.5 * vec3(0.0, d.x, d.y); bright += rock * w.x * d.w * fB * mix(0.25, 0.6, stretch); }
-      if (w.y > 0.04) { vec4 d = gDetailXZ(pb + vec3(sh.x * 150.0, 0.0, sh.y * 150.0), 150.0, 0.0); grad += rock * w.y * fB * 0.5 * vec3(d.x, 0.0, d.y); bright += rock * w.y * d.w * fB * mix(0.25, 0.6, stretch); }
+      if (w.x > 0.04) { vec4 d = gDetailYZ(pb + vec3(0.0, sh * 150.0), 150.0, 0.0); grad += rock * w.x * fB * 0.1 * vec3(0.0, d.x, d.y); bright += rock * w.x * d.w * fB * mix(0.08, 0.2, stretch); }
+      if (w.y > 0.04) { vec4 d = gDetailXZ(pb + vec3(sh.x * 150.0, 0.0, sh.y * 150.0), 150.0, 0.0); grad += rock * w.y * fB * 0.1 * vec3(d.x, 0.0, d.y); bright += rock * w.y * d.w * fB * mix(0.08, 0.2, stretch); }
     }
     float lod2 = gLod(9.0, foot);
     float f2 = gFade(lod2);

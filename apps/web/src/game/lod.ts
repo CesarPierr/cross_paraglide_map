@@ -362,3 +362,43 @@ export function useTerrainTileZoom(map: { coveringTiles(options: object): RttTil
   };
   return true;
 }
+
+/** A tile of the elevation source, as far as `useAllHeights` is concerned. */
+interface HeightTileId {
+  overscaledZ: number;
+  children(maxZoom: number): HeightTileId[];
+}
+
+/**
+ * Makes MapLibre's height map hold every elevation tile it has, coarsest first (the finer ones
+ * drawn over them), and not only those of the terrain's tiles in view. Those left holes around
+ * the eye that followed the head: the relief's light (ground.ts) took the coarse regional
+ * relief there, higher than the true one along a cliff, and a thin hole cast a long thin
+ * shadow across the slope, gone a moment later. With a ring of elevation tiles (`useTileRing`)
+ * the holes are gone in every direction. Returns the wrapper to draw the height map through,
+ * or null, leaving MapLibre alone, when its internals are not the expected ones.
+ */
+export function useAllHeights(map: { terrain?: unknown }): ((draw: () => void) => void) | null {
+  const ttm = (map.terrain as { tileManager?: { getRenderableTiles?(): unknown[]; tileManager?: { _inViewTiles?: { getAllTiles?(): { dem?: unknown; tileID: HeightTileId }[] } } } } | null | undefined)?.tileManager;
+  const inView = ttm?.tileManager?._inViewTiles;
+  if (!ttm || typeof ttm.getRenderableTiles !== 'function' || typeof inView?.getAllTiles !== 'function') return null;
+  const original = ttm.getRenderableTiles;
+  let all = false;
+  ttm.getRenderableTiles = function (this: unknown) {
+    if (!all) return original.call(this);
+    const out: { tileID: HeightTileId }[] = [];
+    const tiles = inView.getAllTiles!().filter((t) => t.dem && typeof t.tileID.children === 'function');
+    tiles.sort((a, b) => a.tileID.overscaledZ - b.tileID.overscaledZ);
+    // The terrain's tiles are a level finer than the elevation tile they read (its `deltaZoom`).
+    for (const t of tiles) for (const id of t.tileID.children(30)) out.push({ tileID: id });
+    return out;
+  };
+  return (draw) => {
+    all = true;
+    try {
+      draw();
+    } finally {
+      all = false;
+    }
+  };
+}

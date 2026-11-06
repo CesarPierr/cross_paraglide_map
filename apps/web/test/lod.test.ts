@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { clearance, diskTiles, lodByDistance, ringLoaded, setTileCache, TileRing, useTerrainTileZoom, useTileRing, type LodState, type TileXYZ } from '../src/game/lod';
+import { clearance, diskTiles, lodByDistance, ringLoaded, setTileCache, TileRing, useAllHeights, useTerrainTileZoom, useTileRing, type LodState, type TileXYZ } from '../src/game/lod';
 
 const state: LodState = { centerM: 1200, clearanceM: 50 };
 /** MapLibre's units: the centre 1200 m away is at 0.002 mercator units here. */
@@ -270,5 +270,26 @@ describe('terrain tiles of a raster tile, memoized', () => {
     covering = ['b'];
     (ttm.update as () => boolean)();
     expect(ttm._getTerrainCoordsForRegularTile.call(ttm, { key: 'img' } as never)).toEqual(['b']);
+  });
+});
+
+describe('the height map, whatever the view', () => {
+  const id = (name: string, z: number) => ({ name, overscaledZ: z, children: () => [{ name: `${name}/0` }, { name: `${name}/1` }] });
+  it('holds every elevation tile, coarsest first, only while it is drawn', () => {
+    const inView = [{ dem: {}, tileID: id('fine', 12) }, { dem: {}, tileID: id('coarse', 9) }, { tileID: id('empty', 10) }];
+    const view = [{ tileID: 'view' }];
+    const ttm = { getRenderableTiles: () => view as unknown[], tileManager: { _inViewTiles: { getAllTiles: () => inView } } };
+    const all = useAllHeights({ terrain: { tileManager: ttm } })!;
+    expect(ttm.getRenderableTiles()).toEqual(view);
+    let seen: unknown[] = [];
+    all(() => {
+      seen = ttm.getRenderableTiles();
+    });
+    expect(seen.map((t) => (t as { tileID: { name: string } }).tileID.name)).toEqual(['coarse/0', 'coarse/1', 'fine/0', 'fine/1']);
+    expect(ttm.getRenderableTiles()).toEqual(view);
+  });
+  it('leaves MapLibre alone when its internals are not the expected ones', () => {
+    expect(useAllHeights({ terrain: { tileManager: {} } })).toBeNull();
+    expect(useAllHeights({})).toBeNull();
   });
 });

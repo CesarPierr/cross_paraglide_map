@@ -26,7 +26,7 @@ import { headPitch, headRoll } from './glider-pilot';
 import { EYE_SEATED, EYE_STANDING } from './glider-gear';
 import { Sky, type FrameInfo } from './sky';
 import { ThermalFlows, Vultures } from './life';
-import { clearance, lodByDistance, ringLoaded, setTileCache, TileRing, useTerrainTileZoom, useTileRing, type LodState, type TileZoomFn } from './lod';
+import { clearance, lodByDistance, ringLoaded, setTileCache, TileRing, useAllHeights, useTerrainTileZoom, useTileRing, type LodState, type TileZoomFn } from './lod';
 import { IMAGERY_FADE_MS, useImageryFade } from './imagery-fade';
 import { Ground, REGION_HALF, REGION_N, type SunUniforms } from './ground';
 import { IMAGERY_GAP, IMAGERY_GAP_ROAD, IMAGERY_GAP_WATER } from './materials';
@@ -316,6 +316,13 @@ export class GameWorld {
    * turns fast, so not on phones.
    */
   private gapRing = new TileRing(-3, 8, 14, 50000, 60);
+  /**
+   * The elevations in every direction, a little coarser than the view's, within the near and
+   * most of the far level of the relief's light (ground.ts): no hole in the height map where
+   * the head is not looking (`useAllHeights`).
+   */
+  private demRing = this.lowQuality ? new TileRing(-4, 8, 14, 20000, 30) : new TileRing(-3, 8, 14, 40000, 70);
+  private allHeights: ((draw: () => void) => void) | null = null;
   private ringAt = { x: 0, y: 0 };
   /** The view's bearing last frame (rad) and how fast it turns (rad/s, smoothed). */
   private viewBearing = NaN;
@@ -458,6 +465,9 @@ export class GameWorld {
         const gap = this.map.getSource('ofm-gap') as { calculateTileZoom?: TileZoomFn } | undefined;
         if (gap) gap.calculateTileZoom = () => 8;
         if (!useTileRing(mm, 'ofm-gap', this.gapRing) && import.meta.env.DEV) console.warn('[terrain] anneau de la carte sous l’imagerie : internes de MapLibre inattendus');
+        // The relief's light: elevations all around the pilot, whatever the view.
+        this.allHeights = useAllHeights(this.map as unknown as Parameters<typeof useAllHeights>[0]);
+        if (!(this.allHeights && useTileRing(mm, 'terrain', this.demRing)) && import.meta.env.DEV) console.warn('[terrain] relief tout autour : internes de MapLibre inattendus');
         // New elevation tiles: the relief's light redraws its elevations (ground.ts).
         this.map.on('sourcedata', (e: { sourceId?: string; tile?: unknown }) => {
           if (e.sourceId === 'terrain' && e.tile) this.ground.terrainChanged();
@@ -640,7 +650,9 @@ export class GameWorld {
         this.frameInfo = f;
         // The relief's elevations, slopes and shadows (MapLibre's terrain as drawn).
         const eyeAbs = this.tmpEye.set(f.anchor.x + f.eye.x, f.anchor.y + f.eye.y, f.anchor.z + f.eye.z);
-        this.ground.prepare(r, eyeAbs, f.dirBase, opts.renderTerrainHeightMap);
+        const heights = opts.renderTerrainHeightMap;
+        const all = this.allHeights;
+        this.ground.prepare(r, eyeAbs, f.dirBase, heights && all ? (t) => all(() => heights(t)) : heights);
         r.setViewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
         this.sky.prepare(r, f);
         r.setRenderTarget(null);
@@ -919,6 +931,7 @@ export class GameWorld {
         this.ring.update(mc.x, mc.y, unitM, this.map.getZoom() + 1, this.lod, ahead);
         // (The map's tiles are 512 pixels: one zoom level under the imagery's 256.)
         this.gapRing.update(mc.x, mc.y, unitM, this.map.getZoom(), this.lod);
+        this.demRing.update(mc.x, mc.y, unitM, this.map.getZoom() + 1, this.lod);
         this.ringAt.x = st.x;
         this.ringAt.y = st.y;
       }

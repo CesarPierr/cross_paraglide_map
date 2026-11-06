@@ -12,7 +12,7 @@
     {
       "chapter": "La journée de l'air",
       "title": "Le matin, partez de Gourdon dès que ça tient",
-      "text": "Tout commence à l'Embarnier, à Gourdon. Partez le plus tôt possible, dès que le thermique tient sur le village : en hiver, les thermiques y sont faibles, étroits et souvent encombrés d'ailes. Un jour d'hiver, l'option du village l'a emporté sur Cavillore, et il a fallu trois thermiques pour atteindre 1300 m. Plus à l'est, le Mont Chauve d'Aspremont est un décollage non officiel de hike-and-fly. Le décollage est difficile, souvent vent de cul vers 11 h, et des cross en partent vers le Var.",
+      "text": "Tout commence à l'Embarnier, à Gourdon. Partez le plus tôt possible, dès que le thermique tient sur le village : en hiver, les thermiques y sont faibles, étroits et souvent encombrés d'ailes. Un jour d'hiver, l'option du village l'a emporté sur Cavillore, et il a fallu trois thermiques pour atteindre 1300 m. Plus à l'est, le Mont Chauve d'Aspremont est un décollage non officiel de hike-and-fly. Le décollage est difficile, et des cross en partent vers le Var. Un jour de nord, le vent y était encore dans le dos à 11h20.",
       "focus": ["gourdon-village-a", "prealpes-grasse-castellane/gourdon-embarnier-haut", "mont-chauve-aspremont"],
       "phase": "morning"
     },
@@ -54,7 +54,7 @@
     {
       "chapter": "Les sites",
       "title": "Roquebrune, Peille, Cantaron : des sites encadrés",
-      "text": "À Roquebrune, le décollage du Mont Gros, carpeté, se vole en vent léger du sud au sud-ouest. On se pose sur la plage du Golfe Bleu, parfois fréquentée : soyez précis. À cause de la chasse et de la plage, le site est ouvert sans restriction du 16 novembre au 30 avril, avant 8 h et après 18-19 h de mai à septembre, et à partir de 11 h 15 du 1er octobre au 15 novembre. À Peille, Lai Barrai est fréquenté mais délicat, réservé aux brevetés confirmés, avec les mêmes horaires de chasse. À Cantaron, le Mont Macaron est en cours de mise en service, réservé la première année aux membres du club.",
+      "text": "Le Mont Gros, à Roquebrune, se vole en vent léger du sud au sud-ouest. On se pose sur la plage du Golfe Bleu : soyez précis. À cause de la chasse et de la plage, le site est ouvert sans restriction du 16 novembre au 30 avril, avant 8 h et après 18-19 h de mai à septembre, et à partir de 11 h 15 du 1er octobre au 15 novembre. À Peille, Lai Barrai, réservé aux brevetés confirmés, a des horaires voisins. Il ne se vole qu'en brise thermique, et jamais à l'ouest de La Turbie ni sur Monaco. À Cantaron, le Mont Macaron est en cours de mise en service, réservé la première année aux membres du club.",
       "focus": ["roquebrune-mont-gros", "plage-golfe-bleu-roquebrune", "lai-barrai-peille", "cantaron-mont-macaron", "plage-eze"],
       "phase": "afternoon"
     },
@@ -75,7 +75,7 @@
     {
       "chapter": "Selon le vent météo",
       "title": "Par est : rotors à la côte, dérive en altitude",
-      "text": "Par est, Roquebrune et Éze sont en rotors : on ne vole plus dès que des moutons apparaissent sur la mer. Lai Barrai est dangereux par nord-est et par est. En altitude, l'est fait dériver. Un vol a décollé du Mont Vial à 11 h 15 avec une dérive vers l'est-nord-est à 2285 m, et a rejoint Menton : 130 km.",
+      "text": "Par est, Roquebrune et Éze sont en rotors : on ne vole plus dès que des moutons apparaissent sur la mer. Lai Barrai est dangereux par nord-est et par est. En altitude, l'est fait dériver. Un vol a décollé du Mont Vial à 11 h 15, fait un premier plafond à 2285 m avec une dérive est-nord-est, et rejoint Menton : 130 km.",
       "focus": ["roquebrune-rotors-est", "eze-rotor-est", "lai-barrai-peille", "mont-vial"],
       "wind": { "from": "E", "kmh": 10 },
       "phase": "afternoon",
@@ -92,8 +92,8 @@
     },
     {
       "chapter": "Selon le vent météo",
-      "title": "Par ouest ou mistral, la côte pour les confirmés",
-      "text": "Par ouest ou mistral, la côte est réservée aux confirmés : à Saint-Laurent-du-Var, l'aéroport et les digues sont sous le vent. Dans le grand bocal, un fort ouest, même de petite tendance, condamne le retour de Tourrettes vers les Courmettes : passer l'épaule sud-est des Courmettes coûte alors beaucoup trop de gaz.",
+      "title": "Par ouest fort, le retour du grand bocal est condamné",
+      "text": "Dans le grand bocal, un fort ouest, même de petite tendance, condamne le retour de Tourrettes vers les Courmettes : passer l'épaule sud-est des Courmettes coûte alors beaucoup trop de gaz. Sur la côte, Lai Barrai devient turbulent et dangereux par ouest et nord-ouest.",
       "focus": ["saint-laurent-du-var-plage", "tourettes-deuxieme-rideau", "courmettes-antennes"],
       "wind": { "from": "O", "kmh": 20 },
       "phase": "afternoon",
@@ -111,7 +111,7 @@
     {
       "chapter": "Les transitions",
       "title": "Sortir vers Gourdon, Menton et le haut Var",
-      "text": "Reste à sortir du bassin. Vers l'ouest, le grand bocal prolonge les circuits d'hiver de Gourdon, Gréolières et Coursegoules. Vers l'est, le Mont Vial a servi de départ à un vol de 130 km jusqu'à Menton. Vers le nord, la vallée du Var est un couloir de transit, mais sa brise de mer remonte jusqu'à Entrevaux et empêche souvent les traversées. Un vol relie Bleine à la Tinée par la haute vallée du Var.",
+      "text": "Reste à sortir du bassin. Vers l'ouest, le grand bocal prolonge les circuits d'hiver de Gourdon, Gréolières et Coursegoules. Vers l'est, le Mont Vial a servi de départ à un vol de 130 km jusqu'à Menton. Vers le nord, la vallée du Var est un couloir de transit, mais sa brise de mer empêche souvent les traversées. Sa remontée jusqu'à Entrevaux reste une déduction. Un vol relie Bleine à la Tinée par la haute vallée du Var.",
       "focus": ["prealpes-grasse-castellane/gourdon-greolieres-coursegoules-hiver", "mont-vial", "brise-var-montante", "mercantour/bleine-saint-honorat-isola"],
       "view": "massif"
     },

@@ -5,7 +5,7 @@
       "id": "saleve-genevois",
       "name": "Salève et Genevois",
       "parent_massif": "Préalpes du Nord (avant-pays genevois)",
-      "summary": "Le Salève est le « balcon de Genève » : un chaînon isolé, orienté du sud-ouest au nord-est, qui domine le bassin genevois. Trois décollages se partagent deux secteurs. Le Téléphérique et la Table d'orientation, tournés vers le nord à nord-ouest, servent par flux de nord ou faible bise. Les Crêts (1264 m), tournés vers l'ouest à sud-ouest, servent au soaring par flux d'ouest et aux restitutions de fin de journée, le « Magic Salève ».\n\nLe Genevois n'a pas de brise de vallée documentée : les brises de pente dominent. L'été, elles donnent du gradient et des thermiques parfois surprenants, aux décollages comme aux atterrissages. Par beau temps d'été, le séchard, brise de nord-est venue du Petit-Lac, souffle de 10 h à 16 h et se prolonge faiblement sur les pentes ensoleillées du Salève.\n\nSortir du massif, c'est traverser des plaines : vers le Môle, vers Annecy par Sur Cou ou vers Samoëns, ces transitions ne sont jamais faciles. Un vol a dû patienter une heure au Téléphérique avant le thermique (1645 m), puis traverser une plaine d'environ 15 km sans relief. Par forte canicule, un triangle de 143 km a été volé en 6 h 20 depuis le Salève. Le Challenge permanent propose une boucle autour du Petit Salève.\n\nL'espace aérien de Genève commande tout : vol interdit dans la CTR, TMA1 à 1050 m AMSL côté plaine, TMA2 à 1700 m AMSL sur le relief. À Troinex, en Suisse, le brevet de pilote (IPPI 4) est obligatoire. Jules Ferry convient aux débutants, Le Coin aux confirmés.",
+      "summary": "Le Salève est le « balcon de Genève » : un chaînon isolé, orienté du sud-ouest au nord-est, qui domine le bassin genevois, des plaines tout autour. Trois décollages s'y partagent deux secteurs, et le vent du jour choisit entre eux. Vers le bout nord-est, le Téléphérique et la Table d'orientation, tournés vers le nord à nord-ouest, servent par flux de nord ou faible bise. Plus au sud-ouest, les Crêts (1264 m), tournés vers l'ouest à sud-ouest, servent au soaring par flux d'ouest et aux restitutions de fin de journée, le « Magic Salève ».\n\nLe Genevois n'a pas de brise de vallée documentée : ce sont les brises de pente qui dominent. L'été, elles donnent du gradient et des thermiques parfois surprenants, aux décollages comme aux atterrissages. Par beau temps d'été s'y ajoute le séchard, brise de nord-est venue du Petit-Lac, qui souffle de 10 h à 16 h et se prolonge faiblement sur les pentes ensoleillées du Salève.\n\nSortir du massif, c'est traverser des plaines : vers le Môle, vers Annecy par Sur Cou ou vers Samoëns, ces transitions ne sont jamais faciles. Un vol a dû patienter une heure au Téléphérique avant le thermique (1645 m), puis traverser une plaine d'environ 15 km sans relief. Les grandes journées existent pourtant : par forte canicule, un triangle de 143 km a été volé en 6 h 20 depuis le Salève. Plus près, le Challenge permanent propose une boucle autour du Petit Salève.\n\nL'espace aérien de Genève commande tout : vol interdit dans la CTR, TMA1 à 1050 m AMSL côté plaine, TMA2 à 1700 m AMSL sur le relief. Le terrain se choisit lui aussi avant de décoller : à Troinex, en Suisse, le brevet de pilote (IPPI 4) est obligatoire, Jules Ferry convient aux débutants, Le Coin aux confirmés.",
       "bbox": [
         5.95,
         46.02,
@@ -41,7 +41,7 @@
             "max": null
           },
           "season": "printemps-automne",
-          "description": "En fin de journée, la face ouest prend le soleil et la brise de pente monte du Coin vers les Crêts. C'est le décollage du soir : soaring très favorable par vent d'ouest à sud-ouest, thermiques, puis la restitution du « Magic Salève », tout le long du relief et au-dessus de la plaine.",
+          "description": "Sur la face ouest, du Coin vers les Crêts, la brise de pente monte en fin de journée, quand la face prend le soleil. C'est l'heure du décollage du soir : soaring très favorable par vent d'ouest à sud-ouest, thermiques, puis la restitution du « Magic Salève », tout le long du relief et au-dessus de la plaine.",
           "confidence": "medium",
           "sources": [
             "S54",
@@ -81,7 +81,7 @@
             "max": null
           },
           "season": "printemps-été",
-          "description": "Par vent de nord, la face nord-ouest travaille de son pied, la carrière, jusqu'à la Table d'orientation et au Téléphérique. Le Téléphérique se vole par nord, une faible bise par exemple, de 13 h jusqu'au soir. La Table est favorable aux conditions thermiques grâce à la carrière, et légèrement protégée de l'est quand le vent est faible. Par conditions thermiques, le Téléphérique est sous le vent du thermique : gradient et thermiques surprenants.",
+          "description": "Vers le bout nord-est de la crête, par vent de nord, la face nord-ouest travaille de son pied, la carrière, jusqu'à la Table d'orientation et au Téléphérique. Par conditions thermiques, le Téléphérique passe sous le vent du thermique : gradient et thermiques surprenants. Il se vole par nord, une faible bise par exemple, de 13 h jusqu'au soir. La Table, favorable aux conditions thermiques grâce à la carrière, reste légèrement protégée de l'est par vent faible.",
           "confidence": "medium",
           "sources": [
             "S60",
@@ -205,7 +205,7 @@
           "radius_km": 0.6,
           "coord_quality": "approx",
           "conditions": "flux de nord au décollage du Téléphérique",
-          "description": "Par flux de nord, le col de Monnetier fait venturi à droite du décollage du Téléphérique. Restez au vent du col et ne vous laissez pas pousser vers le village de Monnetier.",
+          "description": "À droite du décollage du Téléphérique, le col de Monnetier fait venturi par flux de nord. Restez au vent du col et ne vous laissez pas pousser vers le village de Monnetier.",
           "confidence": "medium",
           "sources": [
             "S12",
@@ -222,7 +222,7 @@
           "radius_km": 0.5,
           "coord_quality": "source",
           "conditions": "été, conditions thermiques ; câbles à gauche en sortie de décollage",
-          "description": "L'aérologie du Téléphérique est très délicate : l'été, gradient et thermique surprennent. Les câbles du téléphérique sont juste à gauche en sortie de décollage. Une aire de jeux borde le site et empiète en partie sur le décollage : un enfant peut surgir. Les vents d'est, de sud-est et de sud y sont défavorables.",
+          "description": "Au Téléphérique, l'aérologie est très délicate : l'été, gradient et thermique surprennent, et les vents d'est, de sud-est et de sud y sont défavorables. Dès la sortie du décollage, les câbles du téléphérique passent juste à gauche. Au sol aussi, il faut ouvrir l'œil : une aire de jeux borde le site et empiète en partie sur le décollage, et un enfant peut surgir.",
           "confidence": "high",
           "sources": [
             "S119",
@@ -239,7 +239,7 @@
           "radius_km": 0.8,
           "coord_quality": "source",
           "conditions": "vent de sud ; enclos à vaches de printemps à l'automne ; mai-juin pour les faucons pèlerins",
-          "description": "Par vent de sud, les Crêts deviennent malsains. Les secteurs nord-est, est, sud-est et sud y sont tous défavorables. Tant qu'il y a des vaches, du printemps à l'automne, on ne gonfle et on ne décolle que dans l'enclos. Les modélistes volent à gauche. En mai et juin, écartez-vous des falaises : un couple de faucons pèlerins y niche. Aux heures d'affluence, évitez les reposes au décollage et les wagas.",
+          "description": "Aux Crêts, c'est le vent de sud qu'il faut fuir : le site devient malsain, et les secteurs nord-est, est et sud-est y sont défavorables eux aussi. Le reste est affaire de cohabitation. Tant qu'il y a des vaches, du printemps à l'automne, on ne gonfle et on ne décolle que dans l'enclos, et les modélistes volent à gauche. En mai et juin, écartez-vous des falaises : un couple de faucons pèlerins y niche. Aux heures d'affluence, évitez les reposes au décollage et les wagas.",
           "confidence": "high",
           "sources": [
             "S54",
@@ -261,7 +261,7 @@
           "radius_km": 0.8,
           "coord_quality": "source",
           "conditions": "journées thermiques ; vent du sud ou de nord fort ; vaches en fin d'été-automne",
-          "description": "Le Coin est un atterrissage pour pilotes confirmés, titulaires du brevet de pilote. Très encaissé, avec peu d'échappatoires, il connaît de gros déclenchements thermiques et un gros gradient les journées thermiques. Par sud ou nord fort, il devient turbulent. La branche de vent arrière se fait côté Salève, et le survol des habitations et des cultures est interdit. Un taureau peut y être. Le site est menacé par trop d'infractions.",
+          "description": "Au pied de la face ouest, sous les Crêts, Le Coin est un atterrissage pour pilotes confirmés, titulaires du brevet de pilote, et le site est menacé par trop d'infractions. Très encaissé, avec peu d'échappatoires, il connaît de gros déclenchements thermiques et un gros gradient les journées thermiques ; par sud ou nord fort, il devient turbulent. La branche de vent arrière se fait côté Salève, le survol des habitations et des cultures est interdit, et un taureau peut y être.",
           "confidence": "high",
           "sources": [
             "S57",
@@ -277,7 +277,7 @@
           "radius_km": 0.8,
           "coord_quality": "source",
           "conditions": "été, heures chaudes ; contrôles possibles des autorités suisses",
-          "description": "L'aérologie de Troinex peut être délicate : gradient, thermiques surprenants, et aux heures les plus chaudes de l'été, un fort départ thermique en approche. La poussière peut se lever. Seuls les titulaires du brevet de pilote (IPPI 4) peuvent désormais s'y poser ; les autres risquent une amende, la saisie du matériel et des poursuites.",
+          "description": "Dans la plaine, en Suisse, Troinex n'accueille plus que les titulaires du brevet de pilote (IPPI 4) : les autres risquent une amende, la saisie du matériel et des poursuites. L'aérologie peut y être délicate, avec du gradient et des thermiques surprenants, et aux heures les plus chaudes de l'été, un fort départ thermique en approche. La poussière peut se lever.",
           "confidence": "high",
           "sources": [
             "S59",
@@ -296,7 +296,7 @@
           "radius_km": 0.5,
           "coord_quality": "source",
           "conditions": "selon les cultures, deux champs possibles ; ne pas s'approcher de la route",
-          "description": "La butte qui borde l'Arve à l'ouest met le terrain de Jules Ferry sous le vent : un gradient est possible. Deux terrains servent selon les cultures, et les manches à air marquent celui du moment : repérez-le avant de vous poser. Le terrain ne présente pas de difficulté pour les débutants, mais des arbres peuvent gêner. Ne vous approchez pas de la route.",
+          "description": "Au bord de l'Arve, Jules Ferry ne présente pas de difficulté pour les débutants, mais la butte qui borde la rivière à l'ouest met le terrain sous le vent : un gradient est possible. Deux terrains servent selon les cultures, et les manches à air marquent celui du moment : repérez-le avant de vous poser. Des arbres peuvent gêner, et ne vous approchez pas de la route.",
           "confidence": "medium",
           "sources": [
             "S121",
@@ -377,7 +377,7 @@
           "alt_m": 690,
           "coord_quality": "source",
           "best_hours": "journées thermiques, heures chaudes",
-          "description": "L'atterrissage du Coin est sujet à de gros déclenchements thermiques, avec un gros gradient les journées thermiques. Méfiez-vous-en à l'arrivée : le terrain est encaissé, avec peu d'échappatoires.",
+          "description": "Au pied de la face ouest, l'atterrissage du Coin est sujet à de gros déclenchements thermiques, avec un gros gradient les journées thermiques. Méfiez-vous-en à l'arrivée : le terrain est encaissé, avec peu d'échappatoires.",
           "sources": [
             "S57",
             "S15"
@@ -392,7 +392,7 @@
           "alt_m": 423,
           "coord_quality": "source",
           "best_hours": "heures les plus chaudes (été)",
-          "description": "À Troinex, aux heures les plus chaudes de l'été, un fort départ thermique se produit en approche. La poussière peut alors se lever.",
+          "description": "Dans la plaine de Troinex, aux heures les plus chaudes de l'été, un fort départ thermique se produit en approche, et la poussière peut alors se lever.",
           "sources": [
             "S120",
             "S59"
@@ -495,7 +495,7 @@
             "NW",
             "NE"
           ],
-          "description": "Par vent de nord à nord-ouest, la face nord-ouest porte. La Table est idéale par nord-ouest. Le Téléphérique se vole par nord, une faible bise par exemple, à partir de 13 h. La TMA plafonne le vol à 1700 m AMSL sur le relief et 1050 m côté plaine.",
+          "description": "Du Téléphérique à la Table d'orientation, la face nord-ouest porte par vent de nord à nord-ouest. La Table est idéale par nord-ouest, tandis que le Téléphérique se vole par nord, une faible bise par exemple, à partir de 13 h. Au-dessus, la TMA plafonne le vol à 1700 m AMSL sur le relief et 1050 m côté plaine.",
           "sources": [
             "S60",
             "S119",
@@ -513,7 +513,7 @@
             "W",
             "SW"
           ],
-          "description": "Par vent d'ouest, ou de sud-ouest léger, les Crêts offrent un soaring très favorable, et l'on peut reposer au décollage. C'est le décollage de fin de journée par excellence. Par sud, le site devient dangereux.",
+          "description": "Sur la face ouest, les Crêts offrent un soaring très favorable par vent d'ouest, ou de sud-ouest léger, et l'on peut reposer au décollage. C'est le décollage de fin de journée par excellence. Par sud, le site devient dangereux.",
           "sources": [
             "S54",
             "S14",
@@ -533,7 +533,7 @@
           "orientations": [
             "N"
           ],
-          "description": "Le Téléphérique ne se conseille que par nord : il est favorable de 13 h jusqu'au soir, défavorable par est, sud-est et sud. On y monte en téléphérique, et la descente est gratuite pour qui n'a pas décollé. En sortie de décollage, les câbles et une rangée d'arbres sont à gauche. À droite, le col de Monnetier fait venturi. L'été, gradient et thermique surprennent.",
+          "description": "À la gare d'arrivée, vers le bout nord-est de la crête, le Téléphérique ne se conseille que par nord : favorable de 13 h jusqu'au soir, il est défavorable par est, sud-est et sud. La sortie se joue entre deux obstacles, les câbles et une rangée d'arbres à gauche, le col de Monnetier et son venturi à droite. L'été, gradient et thermique surprennent. On y monte en téléphérique, et la descente est gratuite pour qui n'a pas décollé.",
           "sources": [
             "S56",
             "S60",
@@ -554,7 +554,7 @@
             "N",
             "NW"
           ],
-          "description": "La Table d'orientation regarde le nord à nord-ouest : idéale par nord-ouest, légèrement protégée de l'est par vent faible. C'est un petit décollage de fin de journée, la bonne alternative aux Crêts quand la tendance est au nord. Une falaise suit le décollage, et les câbles du téléphérique sont sur la droite. Accès par la route des Trois Lacs et le chemin de l'Étraz, ou à 20 minutes à pied du téléphérique.",
+          "description": "Un peu plus haut, au sud-ouest du Téléphérique, la Table d'orientation regarde le nord à nord-ouest : idéale par nord-ouest, légèrement protégée de l'est par vent faible. Ce petit décollage de fin de journée est la bonne alternative aux Crêts quand la tendance est au nord. Une falaise suit le décollage, et les câbles du téléphérique sont sur la droite. Accès par la route des Trois Lacs et le chemin de l'Étraz, ou à 20 minutes à pied du téléphérique.",
           "sources": [
             "S55",
             "S60",
@@ -575,7 +575,7 @@
             "SW",
             "W"
           ],
-          "description": "Les Crêts regardent l'ouest à sud-ouest : soaring très favorable, repose possible au décollage. Le site est défavorable par nord-est, est, sud-est et sud, et malsain par sud. Tant qu'il y a des vaches, décollez de l'enclos. Gare au fil barbelé et aux modélistes, sur la gauche. En mai et juin, écartez-vous des falaises, où niche un couple de faucons pèlerins. La TMA plafonne le vol à 1670-1680 m.",
+          "description": "Plus au sud-ouest sur la crête, à Collonges-sous-Salève, les Crêts regardent l'ouest à sud-ouest : soaring très favorable, repose possible au décollage. Le site est malsain par sud, et défavorable par nord-est, est et sud-est. Tant qu'il y a des vaches, décollez de l'enclos, et gare au fil barbelé et aux modélistes, sur la gauche. En mai et juin, écartez-vous des falaises, où niche un couple de faucons pèlerins. La TMA plafonne le vol à 1670-1680 m.",
           "sources": [
             "S54",
             "S60",
@@ -595,7 +595,7 @@
           "alt_m": 423,
           "coord_quality": "source",
           "ffvl_id": 1088,
-          "description": "Grand terrain dégagé et facile, en Suisse à 500 m de la frontière, accessible depuis les trois décollages du Salève, avec bus en saison, buvette et club-house. Les parapentes se posent sur la partie est : volte à gauche par vent d'ouest à sud, à droite par nord à nord-ouest, sans survoler le terrain delta. De petites lignes électriques bordent le sud-ouest et le sud-est. Seuls les titulaires du brevet de pilote (IPPI 4) peuvent désormais s'y poser.",
+          "description": "Seuls les titulaires du brevet de pilote (IPPI 4) peuvent désormais se poser à Troinex, grand terrain dégagé et facile, en Suisse à 500 m de la frontière, accessible depuis les trois décollages du Salève. On y trouve un bus en saison, une buvette et le club-house. Les parapentes se posent sur la partie est : volte à gauche par vent d'ouest à sud, à droite par nord à nord-ouest, sans survoler le terrain delta. De petites lignes électriques bordent le sud-ouest et le sud-est.",
           "sources": [
             "S49",
             "S61",
@@ -613,7 +613,7 @@
           "alt_m": 404,
           "coord_quality": "source",
           "ffvl_id": 13713,
-          "description": "Atterrissage balisé et sécurisé, posable par toutes les orientations et sans difficulté pour les débutants. Il est derrière le restaurant Wowo, le long de la D1206 : le bus numéro 4 ramène vite au téléphérique ou à l'école Salève Airlines. Deux terrains servent selon les cultures : repérez celui du moment avant de vous poser.",
+          "description": "À Étrembières, au bord de l'Arve, c'est l'atterrissage balisé et sécurisé du Salève : posable par toutes les orientations, sans difficulté pour les débutants. Il est derrière le restaurant Wowo, le long de la D1206, et le bus numéro 4 ramène vite au téléphérique ou à l'école Salève Airlines. Deux terrains servent selon les cultures : repérez celui du moment avant de vous poser.",
           "sources": [
             "S58",
             "S121",
@@ -628,7 +628,7 @@
           "alt_m": 690,
           "coord_quality": "source",
           "ffvl_id": 1993,
-          "description": "Le Coin est réservé aux pilotes confirmés. Très encaissé, il subit de gros déclenchements thermiques, et des clôtures ou des vaches peuvent s'y trouver. La branche de vent arrière se fait côté Salève, et aucun posé hors du terrain n'est toléré. Si vous ne le sentez pas, allez à Troinex.",
+          "description": "Sous les Crêts, à Collonges-sous-Salève, Le Coin est réservé aux pilotes confirmés. Très encaissé, il subit de gros déclenchements thermiques, et des clôtures ou des vaches peuvent s'y trouver. La branche de vent arrière se fait côté Salève, et aucun posé hors du terrain n'est toléré. Si vous ne le sentez pas, allez à Troinex.",
           "sources": [
             "S57",
             "S61",
@@ -817,7 +817,7 @@
               "coord_quality": "source"
             }
           ],
-          "description": "Cross qui traverse la plaine du Salève jusqu'au Môle, et se prolonge vers Samoëns.",
+          "description": "Cross qui traverse la plaine depuis le Salève jusqu'au Môle, à l'est, et se prolonge vers Samoëns, dans le Giffre.",
           "sources": [
             "S91",
             "S64",
@@ -2786,7 +2786,7 @@
       "id": "haut-giffre",
       "name": "Haut-Giffre (Mieussy, Praz de Lys - Sommand, Taninges, Samoëns, Sixt)",
       "parent_massif": "Préalpes du Nord / Haut-Giffre",
-      "summary": "Le Giffre est alimenté par le bassin d'Annemasse. Les cartes de brises montrent un flux qui passe par la Menoge (Fillinges, Viuz-en-Sallaz) et le col de Saxel vers Mieussy, puis remonte Taninges, Samoëns et Sixt.\n\nLes jours d'été, la brise de vallée est en place à Samoëns dès 12 h ou 13 h. Elle peut être très forte à l'atterrissage de la piscine, où la PTU se fait main droite. À Mieussy, berceau du parapente, l'atterrissage de la Ferme impose la PTU, avec une étape vent arrière au-dessus du Giffre. Le Pertuiset et la Platière, tournés vers le sud-ouest et l'ouest, sont très faciles, thermiques et dynamiques ; ils marchent en régime de brise calme et en restitution. Par vent de nord fort, ils deviennent turbulents, voire très turbulents.\n\nLes Saix, orientés nord à nord-ouest, comptent parmi les rares sites utilisables par vent du nord, avec des rouleaux par vent d'ouest. La Bourgeoise, tournée du sud-est au sud-ouest, s'alimente vite, même sans vent météo.\n\nPlus à l'est, le Haut-Giffre est une zone de réserve (300 m/sol au minimum) et de ZSM gypaète. La traversée vers Émosson demande de très gros plafonds, avec un plein au Fornet, à 3200 m. Mieussy ouvre sur les Fiz, par une transition qu'on compare à une autoroute vers Passy.",
+      "summary": "Le Haut-Giffre est une vallée qui s'enfonce vers l'est : Mieussy d'abord, puis Taninges, Samoëns et, au fond, Sixt. Le bassin d'Annemasse l'alimente. Les cartes de brises montrent un flux qui passe par la Menoge (Fillinges, Viuz-en-Sallaz) et le col de Saxel vers Mieussy, puis remonte Taninges, Samoëns et Sixt.\n\nÀ Mieussy, berceau du parapente, le Pertuiset et la Platière, tournés vers le sud-ouest et l'ouest, sont très faciles, thermiques et dynamiques ; ils marchent en régime de brise calme et en restitution. Par vent de nord fort, ils deviennent turbulents, voire très turbulents. En bas, l'atterrissage de la Ferme impose la PTU, avec une étape vent arrière au-dessus du Giffre.\n\nSamoëns prend alors le relais, avec deux versants qui se font face. Les Saix, orientés nord à nord-ouest, comptent parmi les rares sites utilisables par vent du nord, avec des rouleaux par vent d'ouest. La Bourgeoise, tournée du sud-est au sud-ouest, s'alimente vite, même sans vent météo. Les jours d'été, la brise de vallée est en place à Samoëns dès 12 h ou 13 h, et elle peut être très forte à l'atterrissage de la piscine, où la PTU se fait main droite.\n\nPlus à l'est, le Haut-Giffre est une zone de réserve (300 m/sol au minimum) et de ZSM gypaète. Depuis Morzine, la traversée vers Émosson demande de très gros plafonds, avec un plein au Fornet, à 3200 m. Mieussy ouvre sur les Fiz, par une transition qu'on compare à une autoroute vers Passy.",
       "bbox": [
         6.45,
         46.02,
@@ -2858,7 +2858,7 @@
             "max": null
           },
           "season": "avril-septembre",
-          "description": "L'après-midi, la brise de vallée remonte le Giffre jusqu'à Sixt. Sur la carte de brises, elle part de Cranves-Sales et Fillinges, passe par Viuz-en-Sallaz et le col de Saxel, puis suit le Giffre de Mieussy à Sixt ; une autre carte la trace d'Annemasse à Samoëns par Saint-Jeoire et Taninges. À Samoëns, elle peut être très forte dès 12 h ou 13 h en plein été, et l'atterrissage devient turbulent quand elle est modérée à forte : PTU main droite.",
+          "description": "L'après-midi, la brise de vallée remonte le Giffre jusqu'à Sixt. Elle compte surtout à Samoëns, où elle peut être très forte dès 12 h ou 13 h en plein été, et où l'atterrissage devient turbulent quand elle est modérée à forte : PTU main droite. Sur la carte de brises, elle part de Cranves-Sales et Fillinges, passe par Viuz-en-Sallaz et le col de Saxel, puis suit le Giffre de Mieussy à Sixt ; une autre carte la trace d'Annemasse à Samoëns par Saint-Jeoire et Taninges.",
           "confidence": "medium",
           "sources": [
             "S69",
@@ -2900,7 +2900,7 @@
             "max": null
           },
           "season": "avril-septembre",
-          "description": "À Mieussy, le Pertuiset décolle facilement en régime de brise calme, du sud-est à l'ouest. La Platière, tournée vers l'ouest-sud-ouest, marche avec la brise de vent d'ouest et en restitution de fin de journée ; elle est défavorable par nord, nord-est, est, sud-est et nord-ouest. On y fait du thermique et du dynamique, à un niveau très facile.",
+          "description": "Sur le versant au-dessus de Mieussy, le Pertuiset décolle facilement en régime de brise calme, du sud-est à l'ouest. Sa voisine la Platière, tournée vers l'ouest-sud-ouest, marche avec la brise de vent d'ouest et en restitution de fin de journée ; elle est défavorable par nord, nord-est, est, sud-est et nord-ouest. On y fait du thermique et du dynamique, à un niveau très facile.",
           "confidence": "medium",
           "sources": [
             "S154",
@@ -2933,7 +2933,7 @@
             "max": null
           },
           "season": "avril-octobre (hiver par télécabine)",
-          "description": "Les Saix marchent par vent du nord, en régime de brise, par faible activité thermique et en restitution. Par vent d'ouest, gare aux rouleaux. Leur orientation nord comble le manque de sites volables par nord dans la région.",
+          "description": "Au sud de Samoëns, les Saix marchent par vent du nord, en régime de brise, par faible activité thermique et en restitution. Leur orientation nord comble le manque de sites volables par nord dans la région. Par vent d'ouest, gare aux rouleaux.",
           "confidence": "medium",
           "sources": [
             "S158",
@@ -2965,7 +2965,7 @@
             "max": null
           },
           "season": "avril-octobre",
-          "description": "Tournée du sud-est au sud-ouest, la Bourgeoise est vite alimentée, même sans vent météo. Par sud et sud-ouest, méfiez-vous des rouleaux en bout de crête. On se pose à la piscine, comme depuis les Saix.",
+          "description": "Au nord de Samoëns, tournée du sud-est au sud-ouest, la Bourgeoise est vite alimentée, même sans vent météo. Par sud et sud-ouest, méfiez-vous des rouleaux en bout de crête. On se pose à la piscine, comme depuis les Saix.",
           "confidence": "medium",
           "sources": [
             "S85",
@@ -2984,7 +2984,7 @@
           "radius_km": 0.8,
           "coord_quality": "source",
           "conditions": "vent du nord, forte brise ; vent arrière au-dessus du Giffre quelle que soit la direction du vent",
-          "description": "À la Ferme, l'atterrissage se fait obligatoirement en PTU, main gauche par brise montante, avec l'étape vent arrière au-dessus du Giffre quel que soit le vent. On perd son altitude à l'est ou à l'ouest du terrain, sans survoler les maisons à basse altitude. L'approche se fait en U, avec l'arrondi au-dessus de la rivière. Par vent de nord ou forte brise, l'atterrissage peut être rude : la zone devient très turbulente, avec des rouleaux.",
+          "description": "À Mieussy, l'atterrissage de la Ferme peut être rude par vent de nord ou forte brise : la zone devient très turbulente, avec des rouleaux. La PTU y est obligatoire, main gauche par brise montante, avec l'étape vent arrière au-dessus du Giffre quel que soit le vent. On perd son altitude à l'est ou à l'ouest du terrain, sans survoler les maisons à basse altitude, et l'approche se fait en U, avec l'arrondi au-dessus de la rivière.",
           "confidence": "high",
           "sources": [
             "S84",
@@ -3003,7 +3003,7 @@
           "radius_km": 2,
           "coord_quality": "source",
           "conditions": "vent de nord (secteurs défavorables N, NE, NO)",
-          "description": "Par vent de nord, les vols au Pertuiset et à la Platière sont turbulents, voire très turbulents. Ne grattez pas trop près du replat intermédiaire. L'hiver, le décollage strictement sud-ouest est interdit au Pertuiset. Ce décollage est privé : ouvert aux pilotes solo, il demande une autorisation préalable aux groupes et aux écoles.",
+          "description": "Au-dessus de Mieussy, par vent de nord, les vols au Pertuiset et à la Platière sont turbulents, voire très turbulents. Ne grattez pas trop près du replat intermédiaire. Le Pertuiset a aussi ses règles : l'hiver, son décollage strictement sud-ouest est interdit, et ce terrain privé, ouvert aux pilotes solo, demande une autorisation préalable aux groupes et aux écoles.",
           "confidence": "high",
           "sources": [
             "S154",
@@ -3052,7 +3052,7 @@
           "radius_km": 1.0,
           "coord_quality": "source",
           "conditions": "vent d'ouest",
-          "description": "Par vent d'ouest, des rouleaux se forment et rendent la sortie du décollage très turbulente : évitez de décoller. Le site marche par vent de nord à nord-ouest, avec environ 900 m de dénivelé jusqu'à la plaine.",
+          "description": "Au plateau des Saix, par vent d'ouest, des rouleaux se forment et rendent la sortie du décollage très turbulente : évitez de décoller. Le site marche par vent de nord à nord-ouest, avec environ 900 m de dénivelé jusqu'à la plaine.",
           "confidence": "high",
           "sources": [
             "S158",
@@ -3068,7 +3068,7 @@
           "radius_km": 0.8,
           "coord_quality": "source",
           "conditions": "vent de S ou SO",
-          "description": "Par vent de sud et de sud-ouest, méfiez-vous des rouleaux en bout de crête.",
+          "description": "À la Bourgeoise, par vent de sud et de sud-ouest, méfiez-vous des rouleaux en bout de crête.",
           "confidence": "high",
           "sources": [
             "S159"
@@ -3083,7 +3083,7 @@
           "radius_km": 8,
           "coord_quality": "approx",
           "conditions": "permanent pour la réserve ; ZSM activées à partir du 1er novembre puis désactivées selon la nidification",
-          "description": "Pour traverser le Haut-Giffre vers Émosson, il faut de bons plafonds : on doit rester à plus de 300 m/sol au-dessus des réserves naturelles de Sixt, au sud de la crête qui va des Dents Blanches à la Tour Sallière. Depuis Super Morzine, la réserve de Sixt-Passy commence au sud, au niveau du Criou. Les ZSM gypaète de Sixt-Passy et de Sixt-Fer-à-Cheval, parmi les dix du département, sont activées à partir du 1er novembre, puis désactivées selon la nidification.",
+          "description": "Au fond de la vallée, la traversée du Haut-Giffre vers Émosson demande de bons plafonds : restez à plus de 300 m/sol au-dessus des réserves naturelles de Sixt, au sud de la crête qui va des Dents Blanches à la Tour Sallière. Depuis Super Morzine, la réserve de Sixt-Passy commence au sud, au niveau du Criou. Les ZSM gypaète de Sixt-Passy et de Sixt-Fer-à-Cheval, parmi les dix du département, sont activées à partir du 1er novembre, puis désactivées selon la nidification.",
           "confidence": "high",
           "sources": [
             "S90",
@@ -3118,7 +3118,7 @@
           "coord_quality": "approx",
           "radius_km": 1.0,
           "conditions": "brises installées (été, début d'après-midi)",
-          "description": "Au Criou, deux zones sous le vent concentrent les accidents. La première longe la falaise dans la partie haute : en faisant des allers-retours parallèles à la forêt, on se retrouve sous le vent d'un relief aérologique très turbulent, sans relief devant soi. La seconde est le « trou de la sorcière », au sommet : passez sur la face ouest en vous en écartant largement.",
+          "description": "Au Criou, deux zones sous le vent concentrent les accidents. La première longe la falaise dans la partie haute : à faire des allers-retours parallèles à la forêt, on se retrouve sous le vent d'un relief aérologique très turbulent, sans relief devant soi. La seconde est le « trou de la sorcière », au sommet : passez sur la face ouest en vous en écartant largement.",
           "sources": [
             "S202"
           ],
@@ -3159,7 +3159,7 @@
           "coord_quality": "source",
           "best_hours": "après-midi",
           "trigger": "grande face ouest, point de départ de cross vers les Fiz et Sixt",
-          "description": "Quand les brises sont en place, le vent de vallée s'ajoute aux brises de pente et dresse une lame d'ascendance sur les deux zones du Criou qui font face à la vallée. La grande face ouest, au-dessus de Samoëns, est le point de départ des cross vers les Fiz et Sixt. Remontez l'arête à la verticale de sa partie la plus raide, face au village, puis passez sur la face ouest en évitant largement le « trou de la sorcière ».",
+          "description": "À l'est de Samoëns, la grande face ouest du Criou est le point de départ des cross vers les Fiz et Sixt. Quand les brises sont en place, le vent de vallée s'ajoute aux brises de pente et dresse une lame d'ascendance sur les deux zones qui font face à la vallée. Remontez l'arête à la verticale de sa partie la plus raide, face au village, puis passez sur la face ouest en évitant largement le « trou de la sorcière ».",
           "sources": [
             "S85",
             "S86",
@@ -3185,7 +3185,7 @@
           "trigger": "face sud du Criou éclairée, en régime de brises de pente et de thermiques sans brise de vallée marquée",
           "role": "déclencheur",
           "confidence": "low",
-          "description": "En arrière-saison et en hiver, avec peu ou pas de brise, la face sud du Criou (zone 4) est la meilleure : brises de pente et thermiques prennent le dessus, et les zones sous le vent disparaissent presque.",
+          "description": "En arrière-saison et en hiver, avec peu ou pas de brise, c'est la face sud du Criou (zone 4) qui devient la meilleure : brises de pente et thermiques prennent le dessus, et les zones sous le vent disparaissent presque.",
           "sources": [
             "S202"
           ],
@@ -3205,7 +3205,7 @@
           "trigger": "plateau et pentes sud-est des Saix, tête du cheminement vers le Trapechet et le Criou",
           "role": "déclencheur",
           "confidence": "medium",
-          "description": "Le plateau des Saix est un site thermique : on part en cross dès la fin de matinée vers la pointe du Trapechet, à l'est. Il marche par vent de nord, en brise et par faible activité thermique ; par vent d'ouest, gare aux rouleaux. Le soir, la restitution y est magique : par conditions calmes, les vols peuvent durer des heures.",
+          "description": "Au sud de Samoëns, le plateau des Saix est un site thermique, d'où l'on part en cross dès la fin de matinée vers la pointe du Trapechet, à l'est. Il marche par vent de nord, en brise et par faible activité thermique ; par vent d'ouest, gare aux rouleaux. Le soir, la restitution y est magique : par conditions calmes, les vols peuvent durer des heures.",
           "sources": [
             "S203",
             "S202",
@@ -3325,7 +3325,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (100 % le matin, 100 % à midi, 86 % le soir)",
           "trigger": "pentes de La Quevata, Pré Martin et Les Frasses, sur le versant au sud de Samoëns",
-          "description": "Sur le versant sud de Samoëns, les pentes de La Quevata, du Pré Martin et des Frasses portent le point chaud le plus fort du Haut-Giffre : les traces GPS y montrent 100 % le matin et à midi, 86 % le soir.",
+          "description": "Sur le versant au sud de Samoëns, les pentes de La Quevata, du Pré Martin et des Frasses portent le point chaud le plus fort du Haut-Giffre : les traces GPS y montrent 100 % le matin et à midi, 86 % le soir.",
           "confidence": "low",
           "sources": [
             "S220"
@@ -3341,7 +3341,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (100 % le matin, 99 % à midi, 86 % le soir)",
           "trigger": "crête de la Pointe de Vernant (2120 m) et cirque de Vaconnant, côté Samoëns",
-          "description": "Au cirque de Vaconnant, côté Samoëns, les traces GPS montrent un point chaud actif toute la journée : 100 % le matin, 99 % à midi et 86 % le soir.",
+          "description": "Le cirque de Vaconnant, côté Samoëns, porte un point chaud actif toute la journée sur les traces GPS : 100 % le matin, 99 % à midi et 86 % le soir.",
           "confidence": "low",
           "sources": [
             "S220"
@@ -3357,7 +3357,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (96 % le matin, 98 % à midi, 98 % le soir)",
           "trigger": "pentes de la Pointe de Rovagne (1795 m), sur la route Mieussy – Haute-Pointe – Mont Billiat",
-          "description": "Sur les pentes de la Pointe de Rovagne, sur la route de Mieussy vers la Haute-Pointe et le Mont Billiat, les traces GPS montrent un point chaud actif toute la journée : 96 % le matin, 98 % à midi et le soir.",
+          "description": "Au nord de Mieussy, sur la route de la Haute-Pointe et du Mont Billiat, les pentes de la Pointe de Rovagne restent actives toute la journée sur les traces GPS : 96 % le matin, 98 % à midi et le soir.",
           "confidence": "low",
           "sources": [
             "S220"
@@ -3373,7 +3373,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (98 % le matin, 96 % à midi, 80 % le soir)",
           "trigger": "pentes de Marcheusson sous la Croix du Culet (1962 m)",
-          "description": "Sur les pentes de Marcheusson, sous la Croix du Culet, les traces GPS montrent un point chaud actif toute la journée : 98 % le matin, 96 % à midi et 80 % le soir.",
+          "description": "Sous la Croix du Culet, les pentes de Marcheusson ressortent des traces GPS à 98 % le matin, 96 % à midi et 80 % le soir, soit un point chaud actif toute la journée.",
           "confidence": "low",
           "sources": [
             "S220"
@@ -3389,7 +3389,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (84 % le matin, 94 % à midi, 95 % le soir)",
           "trigger": "pentes de La Mernaz et des Mernaies, au-dessus de Morzine",
-          "description": "Sur les pentes de La Mernaz, au-dessus de Morzine, les traces GPS montrent un point chaud actif toute la journée : 84 % le matin, 94 % à midi et 95 % le soir.",
+          "description": "Au-dessus de Morzine, les pentes de La Mernaz montent en puissance au fil de la journée sur les traces GPS : 84 % le matin, 94 % à midi et 95 % le soir.",
           "confidence": "low",
           "sources": [
             "S220"
@@ -3405,7 +3405,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (95 % le matin, 93 % à midi, 79 % le soir)",
           "trigger": "crête de la Pointe de Ripaille (1927 m)",
-          "description": "Sur la crête de la Pointe de Ripaille (1927 m), dans le secteur d'Avoriaz et du Culet, les traces GPS montrent un point chaud actif toute la journée : 95 % le matin, 93 % à midi et 79 % le soir.",
+          "description": "Dans le secteur d'Avoriaz et du Culet, la crête de la Pointe de Ripaille (1927 m) porte un point chaud actif toute la journée sur les traces GPS : 95 % le matin, 93 % à midi et 79 % le soir.",
           "confidence": "low",
           "sources": [
             "S220"
@@ -3421,7 +3421,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (96 % le matin, 94 % à midi, 83 % le soir)",
           "trigger": "crête de la Pointe de Véret (2122 m), au-dessus de Flaine",
-          "description": "Sur la crête de la Pointe de Véret, au-dessus de Flaine, les traces GPS montrent un point chaud actif toute la journée : 96 % le matin, 94 % à midi et 83 % le soir.",
+          "description": "Au-dessus de Flaine, la crête de la Pointe de Véret est active toute la journée sur les traces GPS : 96 % le matin, 94 % à midi et 83 % le soir.",
           "confidence": "low",
           "sources": [
             "S220"
@@ -3437,7 +3437,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (79 % le matin, 90 % à midi, 95 % le soir)",
           "trigger": "pentes de La Trappe et du Plan de Pertuet, au-dessus de Samoëns, vers le Criou",
-          "description": "Sur les pentes de La Trappe et du Plan de Pertuet, au-dessus de Samoëns, sur le chemin du Criou, les traces GPS montrent un point chaud actif toute la journée : 79 % le matin, 90 % à midi et 95 % le soir.",
+          "description": "Au-dessus de Samoëns, sur le chemin du Criou, les pentes de La Trappe et du Plan de Pertuet gagnent au fil de la journée sur les traces GPS : 79 % le matin, 90 % à midi et 95 % le soir.",
           "confidence": "low",
           "sources": [
             "S220"
@@ -3453,7 +3453,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (96 % le matin, 94 % à midi, 90 % le soir)",
           "trigger": "falaises des Allamants et dalles du Tuet, au-dessus de Samoëns",
-          "description": "Sur les falaises des Allamants et les dalles du Tuet, au-dessus de Samoëns, les traces GPS montrent un point chaud actif toute la journée : 96 % le matin, 94 % à midi et 90 % le soir.",
+          "description": "Au-dessus de Samoëns, les falaises des Allamants et les dalles du Tuet forment un point chaud actif toute la journée sur les traces GPS : 96 % le matin, 94 % à midi et 90 % le soir.",
           "confidence": "low",
           "sources": [
             "S220"
@@ -3469,7 +3469,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (94 % le matin, 94 % à midi, 91 % le soir)",
           "trigger": "pentes de Larroz, vallée du Giffre entre Mieussy et Taninges",
-          "description": "Sur les pentes de Larroz, dans la vallée du Giffre entre Mieussy et Taninges, les traces GPS montrent un point chaud actif toute la journée : 94 % le matin et à midi, 91 % le soir.",
+          "description": "Dans la vallée du Giffre, entre Mieussy et Taninges, les pentes de Larroz restent actives toute la journée sur les traces GPS : 94 % le matin et à midi, 91 % le soir.",
           "confidence": "low",
           "sources": [
             "S220"
@@ -3506,7 +3506,7 @@
             "W",
             "E"
           ],
-          "description": "À la Platière, on fait du thermique et du dynamique par sud-ouest à ouest, à un niveau très facile, avec la restitution du soir. Le Pertuiset est favorable du sud-est à l'ouest.",
+          "description": "Au-dessus de Mieussy, on fait à la Platière du thermique et du dynamique par sud-ouest à ouest, à un niveau très facile, avec la restitution du soir. Le Pertuiset est favorable du sud-est à l'ouest.",
           "sources": [
             "S20",
             "S155",
@@ -3524,7 +3524,7 @@
             "N",
             "NW"
           ],
-          "description": "Les Saix marchent par vent du nord et en restitution. Par vent d'ouest, gare aux rouleaux.",
+          "description": "Au sud de Samoëns, les Saix marchent par vent du nord et en restitution. Par vent d'ouest, gare aux rouleaux.",
           "sources": [
             "S158",
             "S24"
@@ -3546,7 +3546,7 @@
             "SW",
             "W"
           ],
-          "description": "Le berceau du parapente : niveau très facile, décollage facile en régime de brise calme, repose au sommet facile. Le terrain est privé : ouvert aux pilotes solo, il demande une autorisation aux écoles et aux groupes. La piste est déconseillée aux véhicules autres que 4x4 : garez-vous à Roche Pallud d'en Haut et finissez à pied. Le Pertuiset est interdit aux voitures. L'hiver, le décollage strictement sud-ouest est interdit.",
+          "description": "Au-dessus de Mieussy, ce berceau du parapente est privé : ouvert aux pilotes solo, il demande une autorisation aux écoles et aux groupes. Le niveau est très facile, avec un décollage facile en régime de brise calme et une repose au sommet facile. La piste est déconseillée aux véhicules autres que 4x4 : garez-vous à Roche Pallud d'en Haut et finissez à pied, le Pertuiset étant interdit aux voitures. L'hiver, le décollage strictement sud-ouest est interdit.",
           "sources": [
             "S22",
             "S154",
@@ -3567,7 +3567,7 @@
             "SW",
             "W"
           ],
-          "description": "Le décollage « Ouest », labellisé et ouvert à tous, sert au thermique et au dynamique ; parking et toilettes sèches sur place, repose au sommet facile. Par tendance sud à sud-est, le décollage près du parking est sous le vent : préférez le Pertuiset. Par vent de nord, le vol devient turbulent, voire très turbulent.",
+          "description": "Un peu plus haut que le Pertuiset, le décollage « Ouest » de la Platière, labellisé et ouvert à tous, sert au thermique et au dynamique, avec une repose au sommet facile. Deux vents sont à surveiller : par tendance sud à sud-est, le décollage près du parking est sous le vent, préférez le Pertuiset ; par vent de nord, le vol devient turbulent, voire très turbulent. Parking et toilettes sèches sur place.",
           "sources": [
             "S20",
             "S155",
@@ -3586,7 +3586,7 @@
             "N",
             "NW"
           ],
-          "description": "Décollage herbeux orienté nord à nord-ouest, à 8 km de route ou par la télécabine du Grand Massif Express. Il convient aux pilotes peu expérimentés, et les écoles et les biplaceurs l'utilisent beaucoup. Il est assez large, entre un téléski à gauche et la télécabine de Vercland à droite. En été, préparez votre voile dans la zone dédiée pour ne pas encombrer l'aire d'envol.",
+          "description": "Au sud de Samoëns, le plateau des Saix offre un décollage herbeux orienté nord à nord-ouest, à 8 km de route ou par la télécabine du Grand Massif Express. Il convient aux pilotes peu expérimentés, et les écoles et les biplaceurs l'utilisent beaucoup. Assez large, il s'étend entre un téléski à gauche et la télécabine de Vercland à droite. En été, préparez votre voile dans la zone dédiée pour ne pas encombrer l'aire d'envol.",
           "sources": [
             "S25",
             "S24",
@@ -3610,7 +3610,7 @@
             "SW",
             "W"
           ],
-          "description": "Belvédère sur le Mont-Blanc et la face ouest du Criou. Le décollage, facile, va du sud-est au sud-ouest, et l'on peut y reposer sans trop rentrer derrière la crête. On y monte en 15 à 20 minutes depuis le parking de la route de Joux Plane. Le vol fait environ 1080 m de dénivelé ; le décollage delta, plus bas, est à 1454 m.",
+          "description": "Au nord de Samoëns, face aux Saix, la Bourgeoise est un belvédère sur le Mont-Blanc et la face ouest du Criou, et un point de départ idéal vers celui-ci. Le décollage, facile, va du sud-est au sud-ouest, et l'on peut y reposer sans trop rentrer derrière la crête. On y monte en 15 à 20 minutes depuis le parking de la route de Joux Plane. Le vol fait environ 1080 m de dénivelé ; le décollage delta, plus bas, est à 1454 m.",
           "sources": [
             "S85",
             "S159",
@@ -3630,7 +3630,7 @@
           "orientations": [
             "S"
           ],
-          "description": "Décollage de montagne à 200 m environ de la croix, en suivant l'arête est. Orienté sud et facile, mais ne vous laissez pas reculer par vent fort : la face nord est une falaise verticale de 1000 m. D'autres décollages jalonnent l'arête est jusqu'à la pointe Rousse. Le Jora est le décollage intermédiaire de l'itinéraire.",
+          "description": "Sur le Criou, à 200 m environ de la croix en suivant l'arête est, ce décollage de montagne est orienté sud et facile. Ne vous laissez pourtant pas reculer par vent fort : la face nord est une falaise verticale de 1000 m. D'autres décollages jalonnent l'arête est jusqu'à la pointe Rousse, et le Jora est le décollage intermédiaire de l'itinéraire.",
           "sources": [
             "S163",
             "S162",
@@ -3684,7 +3684,7 @@
           "alt_m": 600,
           "coord_quality": "source",
           "ffvl_id": 1164,
-          "description": "Seul atterrissage de Mieussy pour le Pertuiset et la Platière. Le terrain est interdit aux véhicules : garez-vous au-dessus, dans le champ face au panneau, ou à la salle des fêtes. PTU obligatoire, avec l'étape vent arrière au-dessus du Giffre. Pliez en bordure du terrain, côté ferme.",
+          "description": "À Mieussy, la Ferme est le seul atterrissage pour le Pertuiset et la Platière, en PTU obligatoire, avec l'étape vent arrière au-dessus du Giffre. Le terrain est interdit aux véhicules : garez-vous au-dessus, dans le champ face au panneau, ou à la salle des fêtes. Pliez en bordure du terrain, côté ferme.",
           "sources": [
             "S84",
             "S21",
@@ -3701,7 +3701,7 @@
           "alt_m": 689,
           "coord_quality": "source",
           "ffvl_id": 1172,
-          "description": "Atterrissage commun aux Saix et à la Bourgeoise, très dégagé, près de la piscine et du lac aux Dames. On y accède à pied par le chemin le long du ruisseau. Il y a vite beaucoup de monde en l'air : suivez les consignes d'approche du panneau, à l'entrée du terrain, côté école.",
+          "description": "À Samoëns, près de la piscine et du lac aux Dames, cet atterrissage très dégagé est commun aux Saix et à la Bourgeoise. Il y a vite beaucoup de monde en l'air : suivez les consignes d'approche du panneau, à l'entrée du terrain, côté école. On y accède à pied par le chemin le long du ruisseau.",
           "sources": [
             "S23",
             "S85",
@@ -3977,7 +3977,7 @@
       "id": "chablais",
       "name": "Chablais (Léman, Thonon - Évian, vallées d'Aulps, d'Abondance, du Brevon, Morzine - Les Gets, Thollon, Dent d'Oche)",
       "parent_massif": "Préalpes du Nord / Chablais",
-      "summary": "Le Chablais ouvre sur le Léman, et c'est le lac qui commande. La bise domine le vent synoptique : c'est le vent le plus fréquent, de beau temps, froid et sec. S'y ajoutent le vent de sud-ouest d'avant dépression, la vaudaire du Valais et les vents d'orage : le bornan, de 30 à 40 nœuds, et le môlan, plus modéré. Les brises du lac animent les rives : faibles le jour, comme le rebat et le séchard, et la nuit le morget côté suisse, les albrans et le birran côté français.\n\nLes cartes de brises montrent deux grands couloirs vers l'intérieur : de Thonon vers Morzine par la vallée d'Aulps, et de Bioge vers La Chapelle par la vallée d'Abondance. Une flèche relie aussi le lac à la Vallée Verte, jusqu'à Boëge. À Abondance, la brise de vallée s'installe très tôt et peut être très forte avant midi : l'atterrissage, en sortie de l'étranglement des Portes, est délicat. À Morzine, Super Morzine, orienté du sud-est au sud-ouest, a une sortie turbulente par forte brise, des rouleaux par vent de nord et des dégueulantes par tendance sud. L'Aubergade est alors sous le vent : préférez les Putheys.\n\nOrcier offre des décollages tournés surtout au nord et au nord-ouest, plafonnés par la TMA de Genève à 1800 m au maximum. Thollon, Bernex et la Dent d'Oche se volent surtout par vent de nord. Les zones de protection du gypaète, les TMA 6 et 7 de Genève et la réserve de Sixt-Passy contraignent les transitions.\n\nLes cross documentés partent de Morzine : la boucle du Criou et des Saix, ou 85 km depuis le Revard par la Tournette et le Mont Chéry.",
+      "summary": "Le Chablais ouvre sur le Léman, et c'est le lac qui commande. Les cartes de brises montrent deux grands couloirs vers l'intérieur : de Thonon vers Morzine par la vallée d'Aulps, et de Bioge vers La Chapelle par la vallée d'Abondance. Une flèche relie aussi le lac à la Vallée Verte, jusqu'à Boëge. Les sites s'égrènent autour : Orcier au-dessus de Thonon, Thollon, Bernex et la Dent d'Oche plus à l'est, Morzine au sud.\n\nLa bise domine le vent synoptique : c'est le vent le plus fréquent, de beau temps, froid et sec. S'y ajoutent le vent de sud-ouest d'avant dépression, la vaudaire du Valais et les vents d'orage : le bornan, de 30 à 40 nœuds, et le môlan, plus modéré. Les brises du lac animent les rives : faibles le jour, comme le rebat et le séchard, et la nuit le morget côté suisse, les albrans et le birran côté français.\n\nDans les vallées, c'est la brise qui décide. À Abondance, elle s'installe très tôt et peut être très forte avant midi : l'atterrissage, en sortie de l'étranglement des Portes, est délicat. À Morzine, Super Morzine, orienté du sud-est au sud-ouest, a une sortie turbulente par forte brise, des rouleaux par vent de nord et des dégueulantes par tendance sud. L'Aubergade est alors sous le vent : préférez les Putheys.\n\nCôté lac, Orcier offre des décollages tournés surtout au nord et au nord-ouest, plafonnés par la TMA de Genève à 1800 m au maximum, et Thollon, Bernex et la Dent d'Oche se volent surtout par vent de nord. Les zones de protection du gypaète, les TMA 6 et 7 de Genève et la réserve de Sixt-Passy contraignent les transitions. Les cross documentés passent par Morzine : la boucle du Criou et des Saix, ou 85 km depuis le Revard par la Tournette et le Mont Chéry.",
       "bbox": [
         6.25,
         46.15,
@@ -4031,7 +4031,7 @@
             "max": null
           },
           "season": "mai-octobre",
-          "description": "L'après-midi, une brise de vallée remonte d'Aulps, de la rive de Thonon à Morzine par Le Biot : les cartes de brises la tracent d'un trait continu. À Super Morzine, la sortie du décollage devient turbulente quand elle est forte. Au RAMAT, quand elle se met en place et que le vent vient de travers droit, préférez Super Morzine.",
+          "description": "De la rive de Thonon à Morzine par Le Biot, une brise de vallée remonte d'Aulps l'après-midi : les cartes de brises la tracent d'un trait continu. C'est à l'arrivée qu'on s'en soucie. À Super Morzine, la sortie du décollage devient turbulente quand elle est forte, et au RAMAT, quand elle se met en place et que le vent vient de travers droit, préférez Super Morzine.",
           "confidence": "medium",
           "sources": [
             "S69",
@@ -4168,7 +4168,7 @@
             "max": null
           },
           "season": "avril-octobre",
-          "description": "Sur la carte de brises, une flèche nord-sud monte du pied d'Orcier vers les crêtes. À Très le Mont, la brise de pente peut être très forte et masquer un vent météo de sud-ouest : le vol devient alors très désagréable et dangereux.",
+          "description": "À Orcier, la carte de brises montre une flèche nord-sud qui monte du pied vers les crêtes. À Très le Mont, la brise de pente peut être très forte et masquer un vent météo de sud-ouest : le vol devient alors très désagréable et dangereux.",
           "confidence": "medium",
           "sources": [
             "S69",
@@ -4340,7 +4340,7 @@
           "radius_km": 2.5,
           "coord_quality": "source",
           "conditions": "brise de vallée forte ; vent météo de tendance nord ou sud ; instabilité marquée",
-          "description": "Par tendance nord, Super Morzine se vole par vent faible, en brise de pente ; par vent fort, le décollage est dans les rouleaux : ne volez pas. Par tendance sud, il se vole aussi par vent faible, mais une forte instabilité ou des thermiques marqués rendent la vallée très turbulente et malsaine, avec de fortes dégueulantes au-dessus de la ville : volez dans la combe à droite du décollage. Par forte brise de vallée, la sortie est turbulente.",
+          "description": "Super Morzine se vole par vent faible, et le piège change avec la tendance. Par tendance nord, en brise de pente, le vent fort met le décollage dans les rouleaux : ne volez pas. Par tendance sud, une forte instabilité ou des thermiques marqués rendent la vallée très turbulente et malsaine, avec de fortes dégueulantes au-dessus de la ville : volez dans la combe à droite du décollage. Par forte brise de vallée, la sortie est turbulente.",
           "confidence": "high",
           "sources": [
             "S27"
@@ -4429,7 +4429,7 @@
           "radius_km": 2.5,
           "coord_quality": "source",
           "conditions": "vent d'ouest, SO ou NE soutenu",
-          "description": "Le Couteau est dangereux par nord-nord-est fort : évitez d'y décoller par nord-est soutenu. Très le Mont est à éviter par sud-ouest, où il est turbulent, et par nord-est. À la Chapelle d'Hermone, ne décollez pas par ouest ni par nord-est.",
+          "description": "À Orcier, chaque décollage a son vent interdit. Le Couteau est dangereux par nord-nord-est fort : évitez d'y décoller par nord-est soutenu. Très le Mont est à éviter par sud-ouest, où il est turbulent, et par nord-est. À la Chapelle d'Hermone, ne décollez pas par ouest ni par nord-est.",
           "confidence": "high",
           "sources": [
             "S177",
@@ -4465,7 +4465,7 @@
           "radius_km": 2,
           "coord_quality": "source",
           "conditions": "effet de foehn signalé ; vent de nord ; rangée d'arbres devant le décollage",
-          "description": "Morclan est un départ de cross, et des thermiques se forment à l'atterrissage. La fiche du site signale aussi un effet de foehn. Soyez attentif par vent de nord, à la rangée d'arbres devant le décollage et à la ligne à haute tension qui coupe la vallée.",
+          "description": "Au-dessus de Châtel, Morclan est un départ de cross, et des thermiques se forment à l'atterrissage. La fiche du site signale aussi un effet de foehn. Soyez attentif par vent de nord, à la rangée d'arbres devant le décollage et à la ligne à haute tension qui coupe la vallée.",
           "confidence": "medium",
           "sources": [
             "S172"
@@ -4483,7 +4483,7 @@
           "radius_km": 1.5,
           "coord_quality": "source",
           "conditions": "vent d'E ou NE soutenu ; thermique de la face sud",
-          "description": "Par vent d'est ou de nord-est soutenu, évitez la Dent d'Oche : on se retrouve sous les rouleaux, dans le flux perturbé de la combe. Au refuge, le passage est étroit et peut être vif : le thermique de la face sud et le venturi du couloir du pierrier, qui se rétrécit sous le refuge, s'y ajoutent.",
+          "description": "À la Dent d'Oche, par vent d'est ou de nord-est soutenu, restez à l'écart : on se retrouve sous les rouleaux, dans le flux perturbé de la combe. Au refuge, le passage est étroit et peut être vif : le thermique de la face sud et le venturi du couloir du pierrier, qui se rétrécit sous le refuge, s'y ajoutent.",
           "confidence": "medium",
           "sources": [
             "S97",
@@ -4612,7 +4612,7 @@
           "trigger": "pentes et crêtes de Zore au-dessus du décollage, versant sud-ouest",
           "role": "déclencheur",
           "confidence": "medium",
-          "description": "En conditions thermiques, Super Morzine est le départ classique pour transiter vers Avoriaz ou la Pointe de Nyon. Plus haut, les crêtes de Zore et d'Avoriaz sont le départ des vols de distance : on bascule vers la vallée d'Abondance, ou vers Samoëns et le Fer-à-Cheval.",
+          "description": "Au-dessus de Morzine, en conditions thermiques, Super Morzine est le départ classique pour transiter vers Avoriaz ou la Pointe de Nyon. Plus haut, les crêtes de Zore et d'Avoriaz sont le départ des vols de distance : on bascule vers la vallée d'Abondance, ou vers Samoëns et le Fer-à-Cheval.",
           "sources": [
             "S94",
             "S210",
@@ -4772,7 +4772,7 @@
           "coord_quality": "approx",
           "best_hours": "à midi et le soir d'après les traces GPS (89 % à midi, 93 % le soir, rien le matin)",
           "trigger": "pentes nord sous les décollages du Lavanchy et des Mémises, au-dessus de Thollon",
-          "description": "Sur les pentes nord sous les décollages du Lavanchy et des Mémises, au-dessus de Thollon, les traces GPS montrent un point chaud : 89 % à midi et 93 % le soir.",
+          "description": "Au-dessus de Thollon, les pentes nord sous les décollages du Lavanchy et des Mémises portent un point chaud sur les traces GPS : 89 % à midi et 93 % le soir.",
           "confidence": "low",
           "sources": [
             "S182",
@@ -4790,7 +4790,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (86 % le matin, 89 % à midi, 92 % le soir)",
           "trigger": "alpages au-dessus des chalets des Mémises, sur la ligne vers le col de Corniens",
-          "description": "Dans les alpages au-dessus des chalets des Mémises, sur la ligne vers le col de Corniens, les traces GPS montrent un point chaud actif toute la journée : 86 % le matin, 89 % à midi et 92 % le soir.",
+          "description": "Sur la ligne vers le col de Corniens, les alpages au-dessus des chalets des Mémises restent actifs toute la journée sur les traces GPS : 86 % le matin, 89 % à midi et 92 % le soir.",
           "confidence": "low",
           "sources": [
             "S220"
@@ -4806,7 +4806,7 @@
           "coord_quality": "approx",
           "best_hours": "à midi et le soir d'après les traces GPS (90 % à midi, 95 % le soir, rien le matin)",
           "trigger": "pentes et falaises sous la Pointe de Corniens et le Rocher Noir",
-          "description": "Sur les pentes et les falaises sous la Pointe de Corniens et le Rocher Noir, les traces GPS montrent un point chaud à 90 % à midi et 95 % le soir, aucun le matin.",
+          "description": "À l'est des Mémises, les pentes et les falaises sous la Pointe de Corniens et le Rocher Noir ne se réveillent qu'à midi sur les traces GPS : 90 % à midi, 95 % le soir, aucun point chaud le matin.",
           "confidence": "low",
           "sources": [
             "S220"
@@ -4822,7 +4822,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (100 % le matin, 98 % à midi, 84 % le soir)",
           "trigger": "alpages de Couty et de Rapenaz, versant ouest du col de Recon et de Haut Sex",
-          "description": "Sur les alpages de Couty et de Rapenaz, au versant ouest du col de Recon, les traces GPS montrent un point chaud actif toute la journée : 100 % le matin, 98 % à midi et 84 % le soir.",
+          "description": "Au-dessus de Châtel, les alpages de Couty et de Rapenaz, au versant ouest du col de Recon, forment un point chaud actif toute la journée sur les traces GPS : 100 % le matin, 98 % à midi et 84 % le soir.",
           "confidence": "low",
           "sources": [
             "S220"
@@ -4838,7 +4838,7 @@
           "coord_quality": "approx",
           "best_hours": "à midi et le soir d'après les traces GPS (93 % à midi, 97 % le soir, rien le matin)",
           "trigger": "pentes de Crebin et du Fayet d'en Haut, sur le versant sud-est de la vallée d'Abondance",
-          "description": "Sur les pentes de Crebin et du Fayet d'en Haut, au versant sud-est de la vallée d'Abondance, les traces GPS montrent un point chaud à 93 % à midi et 97 % le soir, aucun le matin.",
+          "description": "Au versant sud-est de la vallée d'Abondance, les pentes de Crebin et du Fayet d'en Haut s'animent à partir de midi sur les traces GPS : 93 % à midi et 97 % le soir, aucun point chaud le matin.",
           "confidence": "low",
           "sources": [
             "S220"
@@ -4854,7 +4854,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (94 % le matin, 92 % à midi, 81 % le soir)",
           "trigger": "crête de la Croix de l'Aiguille (1867 m), au-dessus du pas de Croisette, côté Haut-Giffre",
-          "description": "Sur la crête de la Croix de l'Aiguille, au-dessus du pas de Croisette, côté Haut-Giffre, les traces GPS montrent un point chaud actif toute la journée : 94 % le matin, 92 % à midi et 81 % le soir.",
+          "description": "Au-dessus du pas de Croisette, côté Haut-Giffre, la crête de la Croix de l'Aiguille reste active toute la journée sur les traces GPS : 94 % le matin, 92 % à midi et 81 % le soir.",
           "confidence": "low",
           "sources": [
             "S220"
@@ -4914,7 +4914,7 @@
             "NE",
             "NW"
           ],
-          "description": "Par tendance nord, nord-est ou nord-ouest, l'ascendance dynamique de la Pointe de Ressachaux est favorable. On se pose à l'Aubergade ou aux Putheys.",
+          "description": "Au-dessus de la vallée de Morzine, l'ascendance dynamique de la Pointe de Ressachaux est favorable par tendance nord, nord-est ou nord-ouest. On se pose à l'Aubergade ou aux Putheys.",
           "sources": [
             "S27",
             "S191"
@@ -4965,7 +4965,7 @@
             "NE",
             "NW"
           ],
-          "description": "Aux Mémises, au Lavanchy et au Hucel, Thollon se vole par vent de nord, de nord-est ou de nord-ouest ; l'est, le sud et le sud-ouest sont défavorables. Le Lavanchy est sur une pente un peu raide, et le décollage des Mémises, très court, ne se fait qu'avec du vent, au niveau confirmé.",
+          "description": "Au-dessus de Thollon, les Mémises, le Lavanchy et le Hucel se volent par vent de nord, de nord-est ou de nord-ouest ; l'est, le sud et le sud-ouest sont défavorables. Le Lavanchy est sur une pente un peu raide, et le décollage des Mémises, très court, ne se fait qu'avec du vent, au niveau confirmé.",
           "sources": [
             "S182",
             "S185",
@@ -4987,7 +4987,7 @@
             "S",
             "SW"
           ],
-          "description": "Décollage d'été de Morzine-Avoriaz, au bord de la route d'Avoriaz, pour le delta et le parapente. Deux zones : une pente douce à l'arrivée de la télécabine, et celle des deltas, au-dessus du dernier virage en épingle. Ouvert de mai à novembre. Le survol de l'agglomération est réglementé, et la ZSM des Ardoisières est à gauche du décollage.",
+          "description": "Au bord de la route d'Avoriaz, au-dessus de Morzine, Super Morzine est le décollage d'été de Morzine-Avoriaz, ouvert de mai à novembre, pour le delta et le parapente. Le survol de l'agglomération est réglementé, et la ZSM des Ardoisières est à gauche du décollage. Deux zones se partagent le site : une pente douce à l'arrivée de la télécabine, et celle des deltas, au-dessus du dernier virage en épingle.",
           "sources": [
             "S27",
             "S28",
@@ -5005,7 +5005,7 @@
           "orientations": [
             "NE"
           ],
-          "description": "Ancien décollage nord-est, à côté de l'arrivée du téléphérique, vers 1500 m. Sur le domaine skiable, seuls Super Morzine, l'été, et le run de Chaux Fleurie sont autorisés : l'usage du Pléney en parapente est donc à vérifier.",
+          "description": "L'usage du Pléney en parapente est à vérifier : sur le domaine skiable, seuls Super Morzine, l'été, et le run de Chaux Fleurie sont autorisés. Cet ancien décollage de Morzine, orienté nord-est, se trouve à côté de l'arrivée du téléphérique, vers 1500 m.",
           "sources": [
             "S28",
             "S29",
@@ -5032,7 +5032,7 @@
             "W",
             "NW"
           ],
-          "description": "Décollage réputé bon départ de cross. On se pose aux Gets, où une ligne électrique borde le terrain : attention au vent de vallée.",
+          "description": "À l'ouest de Morzine, le Mont Chéry est réputé bon départ de cross. On se pose aux Gets, où une ligne électrique borde le terrain : attention au vent de vallée.",
           "sources": [
             "S174",
             "S175",
@@ -5053,7 +5053,7 @@
             "W",
             "NW"
           ],
-          "description": "Deux décollages faciles à moyens, orientés ouest à nord-ouest. L'aérologie est bonne par ouest ; par sud-ouest, c'est turbulent. Évitez le sud-ouest et le nord-est. La brise de pente peut y être très forte et masquer un vent de sud-ouest. La TMA impose 1800 m au maximum.",
+          "description": "Au-dessus d'Orcier, Très le Mont offre deux décollages faciles à moyens, orientés ouest à nord-ouest. L'aérologie est bonne par ouest ; par sud-ouest, c'est turbulent, et il faut éviter ce vent comme le nord-est. La brise de pente peut y être très forte et masquer un vent de sud-ouest. La TMA impose 1800 m au maximum.",
           "sources": [
             "S176",
             "S82",
@@ -5073,7 +5073,7 @@
             "N",
             "NW"
           ],
-          "description": "Décollage nord à nord-ouest, à 10 minutes à pied du chemin forestier. Bon par vent de nord, il devient dangereux par nord-nord-est fort. La TMA impose 1800 m au maximum.",
+          "description": "À Orcier, le Couteau part au nord à nord-ouest, à 10 minutes à pied du chemin forestier. Bon par vent de nord, il devient dangereux par nord-nord-est fort. La TMA impose 1800 m au maximum.",
           "sources": [
             "S177",
             "S78",
@@ -5093,7 +5093,7 @@
             "N",
             "NW"
           ],
-          "description": "Décollage nord à nord-ouest, à la chapelle. Ne volez pas par vent d'ouest, même si la brise thermique réaxe le vent, et ne décollez ni par ouest ni par nord-est. La TMA impose 1800 m au maximum. La pente sommitale, de 10° sur 80 m, est entretenue.",
+          "description": "À la chapelle Notre-Dame d'Hermone, on décolle au nord à nord-ouest. Ne volez pas par vent d'ouest, même si la brise thermique réaxe le vent, et ne décollez ni par ouest ni par nord-est. La TMA impose 1800 m au maximum. La pente sommitale, de 10° sur 80 m, est entretenue.",
           "sources": [
             "S178",
             "S78",
@@ -5133,7 +5133,7 @@
             "NE",
             "NW"
           ],
-          "description": "Décollage très court, possible seulement avec du vent, et réservé au niveau confirmé. Le Lavanchy, orienté nord, nord-est et nord-ouest, et le Hucel sont voisins.",
+          "description": "Au-dessus de Thollon, le décollage des Mémises est très court, possible seulement avec du vent, et réservé au niveau confirmé. Le Lavanchy, orienté nord, nord-est et nord-ouest, et le Hucel sont voisins.",
           "sources": [
             "S182",
             "S185",
@@ -5152,7 +5152,7 @@
             "SW",
             "S"
           ],
-          "description": "Décollage une centaine de mètres au-dessus du refuge, sur une courte pente herbeuse orientée sud-ouest. Depuis la croix, on décolle au sud puis l'on bascule sur le versant nord pour atterrir à Bernex : 1149 m de dénivelé jusqu'à Bernex-Trossy. Ça marche bien en soaring par sud ; par nord-est et est, c'est mauvais.",
+          "description": "Une centaine de mètres au-dessus du refuge de la Dent d'Oche, ce départ de randonnée tient sur une courte pente herbeuse orientée sud-ouest. Depuis la croix, on décolle au sud puis l'on bascule sur le versant nord pour atterrir à Bernex : 1149 m de dénivelé jusqu'à Bernex-Trossy. Ça marche bien en soaring par sud ; par nord-est et est, c'est mauvais.",
           "sources": [
             "S77",
             "S97"
@@ -5168,7 +5168,7 @@
           "orientations": [
             "SE"
           ],
-          "description": "Décollage en contrebas du sommet, sur des pentes d'herbe orientées sud-est, peu exposé, souvent en vent de travers. On se pose à Bernex-Trossy, ou à Lugrin, 1600 m plus bas : en quittant l'arête, passez au-dessus du mont César et visez la carrière de Lugrin, l'atterrissage est au-dessus.",
+          "description": "Voisin de la Dent d'Oche, à l'est, le Château d'Oche se décolle en contrebas du sommet, sur des pentes d'herbe orientées sud-est, peu exposées, souvent en vent de travers. On se pose à Bernex-Trossy, ou à Lugrin, 1600 m plus bas : en quittant l'arête, passez au-dessus du mont César et visez la carrière de Lugrin, l'atterrissage est au-dessus.",
           "sources": [
             "S77"
           ]
@@ -5184,7 +5184,7 @@
             "E",
             "SW"
           ],
-          "description": "Au sommet, à 2432 m, le décollage est regarde des pentes herbeuses très raides ; il est plus agréable un peu plus bas, au sud-ouest. Le vent de vallée est fort, et une ligne haute tension coupe la transition. L'atterrissage d'Abondance est difficile en brise : on peut se poser au lac des Plagnes.",
+          "description": "Au-dessus d'Abondance, au sommet, à 2432 m, le décollage orienté est regarde des pentes herbeuses très raides ; il est plus agréable un peu plus bas, au sud-ouest. Le vent de vallée est fort, et une ligne haute tension coupe la transition. L'atterrissage d'Abondance est difficile en brise : on peut se poser au lac des Plagnes.",
           "sources": [
             "S74",
             "S186",
@@ -5207,7 +5207,7 @@
             "E",
             "SE"
           ],
-          "description": "Décollage spacieux, long, large et confortable, orienté est à sud-est. En montant, ne passez pas trop sous la ligne à très haute tension. L'atterrissage d'Abondance, face au gymnase, prend une brise très forte même avant midi : faites une PTU pour la jauger, et posez à l'est du bourg dans le doute.",
+          "description": "À l'ouest d'Abondance, la Pointe des Follys offre un décollage spacieux, long, large et confortable, orienté est à sud-est. En montant, ne passez pas trop sous la ligne à très haute tension. L'atterrissage d'Abondance, face au gymnase, prend une brise très forte même avant midi : faites une PTU pour la jauger, et posez à l'est du bourg dans le doute.",
           "sources": [
             "S73"
           ]
@@ -5224,7 +5224,7 @@
             "SE",
             "W"
           ],
-          "description": "Départ de cross orienté sud-est et ouest, avec des thermiques à l'atterrissage. La fiche signale un effet de foehn. Attention au nord, à la rangée d'arbres et à la ligne haute tension qui coupe la vallée. Le site voisin de L'Ortaz est orienté sud-ouest.",
+          "description": "Au-dessus de Châtel, Morclan est un départ de cross orienté sud-est et ouest, avec des thermiques à l'atterrissage. La fiche signale un effet de foehn. Attention au nord, à la rangée d'arbres et à la ligne haute tension qui coupe la vallée. Le site voisin de L'Ortaz est orienté sud-ouest.",
           "sources": [
             "S172",
             "S173"
@@ -5258,7 +5258,7 @@
           "alt_m": 1040,
           "coord_quality": "source",
           "ffvl_id": 1089,
-          "description": "Atterrissage facile pour les parapentes : posez tout près de la manche à air, et redescendez à la route uniquement par le chemin d'accès. L'agglomération se survole à plus de 300 m/sol. Par tendance sud, préférez-le à l'Aubergade.",
+          "description": "Aux Putheys, à Morzine, l'atterrissage est facile pour les parapentes, et c'est lui qu'il faut préférer à l'Aubergade par tendance sud. Posez tout près de la manche à air, et redescendez à la route uniquement par le chemin d'accès. L'agglomération se survole à plus de 300 m/sol.",
           "sources": [
             "S170",
             "S98",
@@ -5278,7 +5278,7 @@
           "alt_m": 990,
           "coord_quality": "source",
           "ffvl_id": 646,
-          "description": "Atterrissage de Super Morzine en situation nord. Un câble de téléski borde le terrain : respectez l'aire marquée au-dessus de la manche à air et la zone de pliage. Par tendance sud, il est sous le vent et malsain.",
+          "description": "À Morzine, l'Aubergade est l'atterrissage de Super Morzine en situation nord ; par tendance sud, il est sous le vent et malsain. Un câble de téléski borde le terrain : respectez l'aire marquée au-dessus de la manche à air et la zone de pliage.",
           "sources": [
             "S169",
             "S27"
@@ -5292,7 +5292,7 @@
           "alt_m": 1177,
           "coord_quality": "source",
           "ffvl_id": 1142,
-          "description": "Une ligne électrique borde le terrain, et le vent de vallée demande de l'attention.",
+          "description": "Aux Gets, une ligne électrique borde le terrain, et le vent de vallée demande de l'attention.",
           "sources": [
             "S175"
           ],
@@ -5306,7 +5306,7 @@
           "alt_m": 620,
           "coord_quality": "source",
           "ffvl_id": 1165,
-          "description": "Immense prairie axée nord-sud, avec buvette et chalet, où l'on pose par tout vent en parapente. Par vent de sud, l'approche passe au-dessus du chalet et de la route : posez dans la moitié sud. Pliez près de la cabane, et garez-vous au bord de la route.",
+          "description": "Sous Orcier, les Grands Champs forment une immense prairie axée nord-sud, avec buvette et chalet, où l'on pose par tout vent en parapente. Par vent de sud, l'approche passe au-dessus du chalet et de la route : posez dans la moitié sud. Pliez près de la cabane, et garez-vous au bord de la route.",
           "sources": [
             "S179",
             "S81",
@@ -5322,7 +5322,7 @@
           "alt_m": 978,
           "coord_quality": "source",
           "ffvl_id": 1146,
-          "description": "Atterrissage face au gymnase, juste en sortie de l'étranglement des Portes : vent de vallée fort, avec effet venturi, très fort même avant midi. Faites une PTU pour jauger la brise ; il y a de la place à l'est du bourg.",
+          "description": "Face au gymnase, juste en sortie de l'étranglement des Portes, l'atterrissage d'Abondance prend un vent de vallée fort, avec effet venturi, très fort même avant midi. Faites une PTU pour jauger la brise ; il y a de la place à l'est du bourg.",
           "sources": [
             "S171",
             "S73",
@@ -5351,7 +5351,7 @@
           "alt_m": 967,
           "coord_quality": "source",
           "ffvl_id": 13254,
-          "description": "Atterrissage de niveau débutant, fermé pendant les foins. Pour les grands vols, on se pose au bord du lac, à Trubois (433 m), au milieu des champs de maïs.",
+          "description": "À Thollon, les Vernes sont un atterrissage de niveau débutant, fermé pendant les foins. Pour les grands vols, on se pose au bord du lac, à Trubois (433 m), au milieu des champs de maïs.",
           "sources": [
             "S183",
             "S184"

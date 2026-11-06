@@ -61,14 +61,14 @@
     {
       "chapter": "Le parcours classique",
       "title": "Vers le sud, 2/3 : passer le Manival haut",
-      "text": "La combe du Manival est la coupure à bien franchir : montez vers 1200 à 1400 m avant de continuer. Dans la combe, la brise remonte de Saint-Ismier vers le Col de Baure. Château Nardent est le point de raccroche suivant, souvent balisé par d'autres ailes.",
+      "text": "La combe du Manival est la coupure à bien franchir : montez vers 1200 à 1400 m avant de continuer. Dans la combe, la brise remonte de Saint-Ismier vers le Col de Baure. Avant le Manival, Château Nardent sert de point de raccroche, et d'autres ailes le balisent souvent.",
       "focus": ["manival-bec-charvet", "chateau-nardent", "brise-montante-manival"],
       "phase": "midday"
     },
     {
       "chapter": "Le parcours classique",
       "title": "Vers le sud, 3/3 : la crête du Saint-Eynard",
-      "text": "La crête du Saint-Eynard est la récompense : certains jours, elle monte tout du long. L'Émeindras sert de relance pour repartir vers la Dent. Au bout, le Rachais et la Bastille donnent des thermiques plus désordonnés. Au-dessus de Grenoble, la ZIT impose de rester au-dessus de 1200 m, ou de la contourner.",
+      "text": "La crête du Saint-Eynard est la récompense : certains jours, elle secoue bien, mais elle monte tout du long. L'Émeindras sert de relance pour repartir vers la Dent. Au bout, le Rachais et la Bastille donnent des thermiques plus désordonnés. Au-dessus de Grenoble, la ZIT impose de rester au-dessus de 1200 m, ou de la contourner.",
       "focus": ["fort-saint-eynard", "emeindras", "rachais-bastille", "zit-grenoble"],
       "phase": "afternoon"
     },
@@ -82,7 +82,7 @@
     {
       "chapter": "Le parcours classique",
       "title": "Vers le nord : le plafond à chaque transition",
-      "text": "Vers le nord, assurez le plafond à chaque transition. Les crêtes de Sainte-Marie-du-Mont et de Barraux peuvent offrir plusieurs bons thermiques. Le cirque de Saint-Même relance et sert de bascule vers l'ouest. Le Granier donne ensuite des plafonds généreux. Deux règles : au Granier, la TMA de Lyon limite à environ 2850 m, et l'aigle royal niche à Saint-Même du 1er février au 30 août.",
+      "text": "Vers le nord, assurez le plafond à chaque transition. Les crêtes de Sainte-Marie-du-Mont et de Barraux peuvent offrir plusieurs bons thermiques. Le cirque de Saint-Même relance et sert de bascule vers l'ouest. Le Granier peut ensuite être généreux : un vol y a fait 2300 m. Deux règles : au Granier, la TMA de Lyon limite à environ 2850 m, et l'aigle royal niche à Saint-Même : du 1er février au 30 août, pas de survol sous 1900 m.",
       "focus": ["sainte-marie-du-mont-barraux", "cirque-saint-meme-bascule", "thermique-mont-granier", "tma-lyon-granier", "saint-meme-alpette-de-la-dame", "route-granier"],
       "phase": "afternoon"
     },
@@ -104,8 +104,8 @@
     },
     {
       "chapter": "Selon le vent météo",
-      "title": "Par sud-ouest ou ouest : le bocal à l'abri",
-      "text": "Par ouest, le bocal de Saint-Hilaire est protégé, mais il est sous le vent de la Dent : attendez-vous à du rotor. Par sud-ouest modéré, à l'approche d'une dépression, la crête du Saint-Eynard peut offrir un excellent soaring, si le vent annoncé en altitude n'est pas trop fort. L'après-midi, les faces ouest travaillent par tendance ouest à nord-ouest.",
+      "title": "Par sud-ouest ou ouest : le bocal sous le vent",
+      "text": "Par ouest, le bocal de Saint-Hilaire est protégé, mais il est sous le vent de la Dent : méfiez-vous du rotor. Par sud-ouest modéré, à l'approche d'une dépression, la crête du Saint-Eynard peut offrir un excellent soaring, si le vent annoncé en altitude n'est pas trop fort. L'après-midi, les faces ouest travaillent par tendance ouest à nord-ouest.",
       "focus": ["saint-eynard-so", "brise-ouest-apres-midi"],
       "wind": { "from": "SO", "kmh": 20 },
       "phase": "afternoon",

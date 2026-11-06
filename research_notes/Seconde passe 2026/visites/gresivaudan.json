@@ -47,14 +47,14 @@
     {
       "chapter": "Les sites",
       "title": "Se poser à Lumbin ou à Voreppe",
-      "text": "Deux terrains, un à chaque branche du « Y ». Dans le Grésivaudan, Lumbin est un grand terrain d'herbe à 240 m d'altitude, sans obstacle ni piège particulier. La brise de vallée y dépasse rarement 15 km/h, sauf si un vent de nord la renforce. Sa turbulence typique devient forte quand le vent au sol et le vent en altitude soufflent en sens opposés, et un venturi apparaît si une inversion se trouve à moins de 300 m au-dessus du relief. À Voreppe, le terrain de fond de vallée (192 m) a souvent une brise de nord forte en milieu de journée, et une ligne de 20 kV borde le nord du terrain.",
+      "text": "Deux terrains, un à chaque branche du « Y ». Dans le Grésivaudan, Lumbin est un grand terrain d'herbe, sans obstacle ni piège particulier, mais sa turbulence typique devient forte quand le vent au sol et le vent en altitude soufflent en sens opposés. À Voreppe, le terrain de fond de vallée a souvent une brise de nord forte en milieu de journée, et une ligne de 20 kV borde le nord du terrain. Les approches, les seuils de vent et le terrain de secours sont sur leurs fiches.",
       "focus": ["lumbin", "atterro-lumbin-nord", "voreppe-chalais", "atterro-voreppe-brise", "voreppe-rugby-secours"],
       "phase": "afternoon"
     },
     {
       "chapter": "Le parcours classique",
       "title": "Vers Saint-Genis, avec une laisse de chien",
-      "text": "Pour changer de rive, la traversée de 10 km mène de la Chartreuse à Belledonne. Elle part de plus de 2000 m, au col de l'Alpe ou à l'Aulp du Seuil, et arrive vers 1000 m. Autre départ : Sainte-Marie-du-Mont au-dessus de 2200 m, cap sur le Mont Saint-Genis à 8 km, puis plané jusqu'à Lumbin. La brise du Grésivaudan impose souvent une laisse de chien incurvée vers le nord. Depuis Saint-Genis, passez la deuxième pointe avec 1800 m de plafond au moins, puis visez le Crêt du Poulet, où la brise de Fond de France peut créer un point dur. On rentre à Lumbin depuis 2000 m.",
+      "text": "Pour changer de rive, la traversée de 10 km mène de la Chartreuse à Belledonne. Elle part de plus de 2000 m, au col de l'Alpe ou à l'Aulp du Seuil, et arrive vers 1000 m sur le Mont Saint-Genis. La brise du Grésivaudan dessine la trajectoire : elle impose souvent une laisse de chien incurvée vers le nord. L'autre départ, par Sainte-Marie-du-Mont, puis la suite vers le Crêt du Poulet et le retour sur Lumbin sont sur les fiches de ces itinéraires.",
       "focus": ["traversee-gresivaudan", "cross-saint-genis-prapoutel"],
       "phase": "afternoon"
     },
@@ -68,7 +68,7 @@
     {
       "chapter": "Le parcours classique",
       "title": "Trois triangles : Annecy, Dent du Chat, Serpaton",
-      "text": "Trois grands vols donnent l'échelle de ce qui se relie autour de la vallée. Depuis Saint-Hilaire, un triangle de 147 km a relié le Rachais, le Roc des Bœufs et Saint-Genis, à 18,6 km/h. Un autre, de 116 km, passe par le Néron, le relais du Mont du Chat et Bramefarine, avant le retour vers Lumbin. Un vol de groupe de 140 km, parti du Serpaton, a traversé la Chartreuse, avec un Saint-Eynard turbulent qui montait tout du long, puis Belledonne jusqu'à 2700 m au Grand Colon, avant Connex et le retour.",
+      "text": "Autour de la vallée, les grands vols se bouclent en triangles. Depuis Saint-Hilaire, on est revenu à Lumbin après 147 km par le Roc des Bœufs, dans les Bauges, et après 116 km par le relais du Mont du Chat. Les deux finissent de l'autre côté de la vallée, à Saint-Genis ou à Bramefarine. Un vol de groupe de 140 km, parti du Serpaton, relie lui aussi la Chartreuse et Belledonne. Chacun a sa fiche.",
       "focus": ["triangle-st-hil-annecy", "triangle-st-hil-dent-du-chat", "vol-de-groupe-140"],
       "phase": "afternoon"
     },
@@ -89,7 +89,7 @@
     {
       "chapter": "Selon le vent météo",
       "title": "Par air polaire de nord : Lumbin vite impossible",
-      "text": "Un vent de nord renforce la brise de vallée : au-delà de 15 km/h, Lumbin devient turbulent, et Chalais, protégé du nord, s'éteint en fin de matinée. En air polaire maritime instable de nord ou de nord-est, toute la masse d'air descend vers le sud. Au-dessus et au sud de Grenoble, les vents des deux vallées convergent en fortes ascendances, bonnes pour le seul vol à voile. En parapente, on vole très tôt : un biplace peut faire du soaring sur la cascade de Saint-Hilaire dès 8h30. Passé 9h30-10h, Lumbin n'est plus sûr.",
+      "text": "Par air polaire maritime instable, de nord ou de nord-est, toute la masse d'air descend vers le sud, et en parapente, on vole très tôt : passé 9h30-10h, Lumbin n'est plus sûr. Au-dessus et au sud de Grenoble, les vents des deux vallées convergent bien en fortes ascendances, mais elles ne sont bonnes que pour le vol à voile. Un simple vent de nord renforce déjà la brise de vallée : au-delà de 15 km/h, Lumbin devient turbulent, et Chalais, protégé du nord, s'éteint en fin de matinée.",
       "focus": ["confluence-nord-grenoble-sud", "atterro-lumbin-nord", "chalais"],
       "phase": "morning",
       "wind": { "from": "N", "kmh": 25 },

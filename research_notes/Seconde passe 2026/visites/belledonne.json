@@ -12,14 +12,14 @@
     {
       "chapter": "La journée de l'air",
       "title": "Le matin : calme à l'ouest, plus tôt à l'est",
-      "text": "Le matin, la face ouest reste calme. Côté Allevard, il arrive qu'on décolle dès 7h, pour une simple descente vers Pinsot, et Saint-Pierre-d'Allevard, orienté nord-est à est, passe pour un site du matin, idéal mais limité par ses 500 m de dénivelé. Au sud, à Saint-Martin-d'Uriage, la brise descend jusque vers 10h30. Une brise peut ensuite venir d'Uriage entre 10h et 12h30, avant que celle de Grenoble ne s'installe l'après-midi. De l'autre côté de la crête, les faces est semblent chauffer plus tôt. C'est une déduction, mais un vol y a pris 3300 m.",
+      "text": "Le matin, la face ouest reste calme : à Saint-Martin-d'Uriage, l'atterrissage de Chamrousse, la brise descend encore jusque vers 10h30, et celle de Grenoble n'arrive que l'après-midi. Ce calme a son usage autour d'Allevard, où Saint-Pierre-d'Allevard passe pour un site du matin. De l'autre côté de la crête, les faces est semblent chauffer plus tôt. C'est une déduction, mais un vol y a pris 3300 m.",
       "focus": ["brise-grenoble-uriage-chamrousse", "st-pierre-d-allevard", "brise-pente-est-belledonne"],
       "phase": "morning"
     },
     {
       "chapter": "La journée de l'air",
       "title": "14 h : le balcon ouest s'allume",
-      "text": "À partir de 14h, toute la face ouest s'allume, d'Allevard à Chamrousse en passant par les Sept Laux. Dès le printemps, ses pentes peuvent donner des thermiques puissants et réguliers. À Chamrousse, les conditions sont régulières de 13h à 15h30, sans canicule ni instabilité marquée, et de mai à fin août, par situation instable, elles se renforcent de 15h30 à 19h. En été, prendre plus de 500 m à midi sur la face ouest n'est pas normal. Et surveillez le vent pur : au-delà de 10 km/h, il fait de la turbulence.",
+      "text": "À partir de 14h, toute la face ouest s'allume, d'Allevard à Chamrousse en passant par les Sept Laux. Dès le printemps, ses pentes peuvent donner des thermiques puissants et réguliers, mais n'attendez rien de tel à midi : en été, prendre plus de 500 m à cette heure n'est pas normal. Surveillez surtout le vent pur : au-delà de 10 km/h, il fait de la turbulence. Les horaires propres à Chamrousse sont sur sa fiche.",
       "focus": ["brise-pente-balcon-belledonne", "chamrousse-face-ouest"],
       "phase": "afternoon"
     },
@@ -33,7 +33,7 @@
     {
       "chapter": "La journée de l'air",
       "title": "Le soir, le vol de Chamrousse",
-      "text": "Au bout sud de la crête, Chamrousse peut offrir un vol remarquable après la fin de la convection : par canicule d'été, il peut ne partir que vers 20h30, et en automne dès 15 h. Par nord ou nord-est, on soare jusqu'à 20-25 km/h, mais la brise peut renforcer le vent. La brise de Grenoble, qui reste sous 25 km/h à Saint-Martin-d'Uriage, s'inverse le soir. Les soirs de forte canicule, au décollage de l'Aiguille, la brise du Grésivaudan forcit à plus de 25 km/h, jusqu'à 2500 m. Au retour, un voile de cirro-stratus d'ouest annonce un vent soutenu en finale, parfois suivi de bourrasques après la pose.",
+      "text": "Au bout sud de la crête, Chamrousse peut offrir un vol remarquable une fois la convection finie : par canicule d'été, il peut ne partir que vers 20h30. À Saint-Martin-d'Uriage, la brise de Grenoble s'inverse le soir. Ces soirs-là, méfiez-vous : au décollage de l'Aiguille, la brise du Grésivaudan peut forcir nettement, et sa fiche dit jusqu'où. Au retour, un voile de cirro-stratus d'ouest annonce un vent soutenu en finale, parfois suivi de bourrasques après la pose.",
       "focus": ["chamrousse-soaring", "saint-martin-d-uriage", "gresivaudan/chamrousse-brise-soir-canicule", "aiguillette-bourrasques-voile-cirrostratus"],
       "phase": "evening"
     },
@@ -46,36 +46,36 @@
     },
     {
       "chapter": "Où ça monte",
-      "title": "De Pipay à Chamrousse, point par point",
-      "text": "Plus au sud, à Pipay, les thermiques sont francs et marqués par des nuages. Le Jas des Lièvres, qui suit, passe pour une valeur sûre (un vol y a fait 2800 m), sans être toujours généreux. La combe de Bédina peut remonter jusqu'à 2700 m, avant le col du Rafour et Orionde. Vient le Grand Colon : 2700 m, et un soir d'avril 3100 m, avec des thermiques puissants qui tirent fort et une brise souvent forte et turbulente. En bout de crête, la Roche Béranger, éperon sous la Croix de Chamrousse, sert à faire le plafond, souvent 2400 à 2650 m, avant de partir sur le Connex.",
+      "title": "De Pipay à Chamrousse, de plafond en plafond",
+      "text": "Plus au sud, on avance de plafond en plafond, et deux endroits le montrent bien. Le Jas des Lièvres, au-dessus de Pipay, passe pour une valeur sûre : un vol y a fait 2800 m, même s'il n'est pas toujours généreux. En bout de crête, la Roche Béranger, éperon sous la Croix de Chamrousse, sert à faire le plafond, souvent 2400 à 2650 m, avant de partir sur le Connex. Entre les deux, la combe de Bédina, Orionde et le Grand Colon ont leurs fiches ; ce dernier a des thermiques puissants et une brise souvent forte et turbulente.",
       "focus": ["pipay-jas-des-lievres", "orionde-col-du-rafour-relance", "bedina-combe-dents-relance", "grand-colon", "roche-beranger"],
       "phase": "afternoon"
     },
     {
       "chapter": "Où ça monte",
       "title": "Les hautes crêtes, jusqu'à 4000 m",
-      "text": "Les grands jours, on monte bien plus haut. Au col du Merdaret, entre le Crêt du Poulet et les Sept Laux, un vol a fait 3100 m en se laissant décaler au-dessus de Fond de France. Plus au nord, à l'est du Bréda, on peut atteindre 3600 m au Grand Charnier et au Pic du Frêne, et 2750 m devant la Pointe de Comberousse en compétition. Au sud, après 1100 m perdus sur la transition vers Orionde, un petit dynamique au fond de la gorge des Rochers de la Far peut devenir une excellente pompe : 4000 m, puis 4146 m au nuage, à La Pra.",
+      "text": "Les grands jours, on monte bien plus haut. Le vol le plus parlant s'est joué au sud : après 1100 m perdus sur la transition vers Orionde, un petit dynamique au fond de la gorge des Rochers de la Far peut devenir une excellente pompe, jusqu'à 4000 m, avant 4146 m au nuage, à La Pra. Plus au nord, le col du Merdaret puis, à l'est du Bréda, les hautes crêtes d'Allevard ont aussi donné de beaux plafonds : chacun a sa fiche.",
       "focus": ["col-du-merdaret-plafond-3100", "pic-du-frene-grand-charnier-plafond", "puy-gris-belledonne-relance", "comberousse-hautes-cretes-plafond", "rochers-de-la-far-gorge-relance", "vallon-de-la-pra-plafond-4146"],
       "phase": "afternoon"
     },
     {
       "chapter": "Les sites",
       "title": "Chamrousse et Prapoutel : décoller, se poser",
-      "text": "À Chamrousse, l'Aiguille (1839 m), en herbe et pyramidale, offre quatre orientations, surtout nord-est et nord-ouest, à 12 minutes du parking ; on y vole de 8h à 21h. La Croix (2219 m) regarde le nord, le nord-ouest et l'ouest. Plus au nord, le Grand Replomb (2504 m) n'est relevé que par des traces, et la Jasse de Prapoutel (1990 m), plein ouest, se prend par le Grand Cerf. On se pose à Saint-Martin-d'Uriage (534 m), 200 m sur 35. Si la brise de Grenoble dépasse 35 km/h, ne décollez pas ; en l'air, restez au centre de la vallée, puis posez à droite ou à gauche pour sortir de la confluence.",
+      "text": "À Chamrousse, on décolle de l'Aiguille, en herbe et pyramidale, surtout nord-est et nord-ouest, ou plus haut de la Croix, et l'on se pose à Saint-Martin-d'Uriage, un terrain de 200 m sur 35. Si la brise de Grenoble dépasse 35 km/h, ne décollez pas. Déjà en l'air, restez au centre de la vallée, puis posez à droite ou à gauche pour sortir de la confluence. Plus au nord, le Grand Replomb et la Jasse de Prapoutel ont leurs fiches.",
       "focus": ["chamrousse-aiguille", "croix-de-chamrousse", "prapoutel-la-jasse", "grand-replomb", "saint-martin-d-uriage", "uriage-brise-grenoble-forte"],
       "phase": "midday"
     },
     {
       "chapter": "Les sites",
       "title": "Allevard : le Malatrait par nord, les Plagnes par sud",
-      "text": "Retour au nord-est, au Collet d'Allevard. Le Malatrait (1398 m), décollage court au bord de la route, de niveau marron, se vole par nord ou par brise ; sans brise, il est sous le vent du nord. Plus haut, les Plagnes (2068 m), au sommet du télésiège de Claran, sont une grande pente à soaring, favorable au sud et au sud-ouest. Un premier thermique s'y trouve parfois vers 11h30, mais il s'épuise vite. On se pose à la Digue (496 m) ou, par vent fort, à Saint-Pierre-d'Allevard (506 m), plus dégagé, de l'autre côté du lac. Val Pelouse (1692 m) se prend par brise ou vent faible.",
+      "text": "Retour au nord-est, au Collet d'Allevard, où le vent choisit le décollage. Par nord ou par brise, c'est le Malatrait, au bord de la route ; sans brise, il est sous le vent du nord. Par sud et sud-ouest, c'est la grande pente à soaring des Plagnes, au sommet du télésiège de Claran. On se pose à la Digue ou, par vent fort, à Saint-Pierre-d'Allevard, plus dégagé, de l'autre côté du lac. Les autres décollages du Collet et Val Pelouse sont sur leurs fiches.",
       "focus": ["collet-malatrait", "collet-plagnes", "plagnes-premier-plein-allevard", "allevard-digue", "saint-pierre-d-allevard-atterro", "val-pelouse"],
       "phase": "midday"
     },
     {
       "chapter": "Le parcours classique",
       "title": "Le grand classique : la crête jusqu'à Chamrousse",
-      "text": "Les bons jours, la crête se traverse sous les cumulus sans enrouler, jusqu'à Chamrousse ; on y a vu des plafonds de 2800 m au Jas des Lièvres et de 2700 m au Grand Colon. Depuis Prapoutel, le parcours de 18 km est jugé difficile : passez la deuxième pointe avec 2200 m au moins, et assurez l'altitude avant chaque transition entre pointes. Un vol est allé de la Chartreuse jusqu'à Chamrousse. En sens inverse, un autre, parti de la Croix, a passé 40 minutes sous l'inversion avant le Grand Colon, puis a longé la chaîne jusqu'à Chamoux.",
+      "text": "Les bons jours, la crête se traverse sous les cumulus sans enrouler, jusqu'à Chamrousse. Ne vous y trompez pas : depuis Prapoutel, le parcours de 18 km est jugé difficile. Passez la deuxième pointe avec 2200 m au moins, et assurez l'altitude avant chaque transition entre pointes. La crête se vole dans les deux sens : un vol est allé de la Chartreuse jusqu'à Chamrousse, un autre, parti de la Croix, a longé la chaîne jusqu'à Chamoux. Leurs fiches en donnent le détail.",
       "focus": ["belledonne-crete-autoroute", "cross-chamrousse", "col-vert-chartreuse-belledonne-chamrousse-vif-2020", "chamrousse-crete-belledonne-chamoux-2021"],
       "phase": "afternoon"
     },
@@ -96,7 +96,7 @@
     {
       "chapter": "Selon le vent météo",
       "title": "Par sud : chaque transition coûte 1000 m",
-      "text": "Par vent de sud-sud-ouest établi, la crête est très turbulente. Chaque transition face au vent coûte 1000 m, et raccrocher la face suivante devient difficile. Avec 27 km/h de sud-sud-ouest au Granier, un vol n'avançait qu'à 15 à 20 km/h au Crêt du Poulet, sans accélérateur. Par sud faible, vers 10 km/h, le vent dans le dos aide au contraire à longer les sommets, jusqu'à 55-60 km/h. À Chamrousse, on soare par sud ou sud-ouest à l'automne, sans thermiques, à 17-25 km/h au maximum : tous les accidents arrivent hors de ces repères.",
+      "text": "Par vent de sud-sud-ouest établi, la crête est très turbulente. Chaque transition face au vent coûte 1000 m, et raccrocher la face suivante devient difficile. Par sud faible, le vent dans le dos aide au contraire à longer les sommets. À Chamrousse, on soare par sud ou sud-ouest à l'automne, sans thermiques, à 17-25 km/h au maximum : tous les accidents arrivent hors de ces repères.",
       "focus": ["belledonne-crete-sud-fort-transitions", "chamrousse-soaring"],
       "wind": { "from": "S", "kmh": 20 },
       "phase": "afternoon",
@@ -114,7 +114,7 @@
     {
       "chapter": "Les transitions",
       "title": "Sortir de Belledonne : Vercors et Bauges",
-      "text": "Au sud, la transition vers le Vercors fait plus de 15 km, au départ de plus de 2000 m. On part en général de la Roche Béranger, à 2400-2650 m, vers le Connex, repris bas en face nord-ouest, au vent de la brise : un vol y est arrivé vers 1100 m et a remonté à 1300 m en thermodynamique. Au-dessus de Vizille, une confluence peut se former : un jour sans brise au Connex, on l'a passée sans perdre d'altitude. Au nord, en arrivant des Bauges, Bramefarine est le point de relance avant le Saint-Genis. Partez du Colombier à plus de 2300 m pour y arriver vers 900 m.",
+      "text": "Belledonne a deux sorties. Au sud, la transition vers le Vercors fait plus de 15 km : on la prépare par un plafond à la Roche Béranger, pour viser le Connex, repris bas en face nord-ouest, au vent de la brise. Une confluence peut se former au-dessus de Vizille, et sa fiche dit comment on l'a passée. Au nord, en arrivant des Bauges, Bramefarine est le point de relance avant le Saint-Genis : partez du Colombier à plus de 2300 m pour y arriver vers 900 m.",
       "focus": ["transition-chamrousse-vercors", "vizille-confluence-cluse-connex", "bramefarine"],
       "view": "massif"
     },

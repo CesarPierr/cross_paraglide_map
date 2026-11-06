@@ -56,7 +56,7 @@
           "hours": "après-midi (été)",
           "speed_kmh": {
             "typical": 20,
-            "max": 30
+            "max": null
           },
           "season": "été",
           "description": "En été, les brises de vallée peuvent être très fortes dans le Dévoluy, au col du Noyer notamment. Sur le plateau d'Aurouze, la brise a été vue venir du sud et remonter la vallée vers le nord. Un schéma de brises montre aussi un flux qui part de Céüse vers le Pic de Bure.",
@@ -70,7 +70,7 @@
           "possible": [
             "Ce jour-là, le plateau de la station était un peu sous le vent de la tête de Pied Gros, et ça turbulait pas mal en l'air."
           ],
-          "note": "Tracé par le col du Festre et vitesses déduits : aucune source ne décrit ce passage, et les vitesses interprètent le mot « très fortes »."
+          "note": "Tracé par le col du Festre déduit : aucune source ne décrit ce passage. Vitesse estimée depuis les mots « très fortes », sans mesure."
         }
       ],
       "convergences": [
@@ -233,7 +233,6 @@
           "lon": 5.9351,
           "lat": 44.6267,
           "alt_m": 2709,
-          "best_hours": "11h-17h (été)",
           "trigger": "face sud caillouteuse (combes d’Aurouze et de Mai) et plateau sommital",
           "description": "Le Pic de Bure a la réputation de thermiques très puissants, chez les vélivoles comme chez les libéristes. Sa face sud caillouteuse, au-dessus des combes d'Aurouze et de Mai, et son plateau sommital en sont la source.",
           "sources": [
@@ -275,7 +274,6 @@
           "lon": 5.877,
           "lat": 44.7765,
           "alt_m": 1699,
-          "best_hours": "dès 11h (été)",
           "trigger": "crête du massif de l’Obiou",
           "description": "Le col des Faïsses ouvre sur la crête de l'Obiou, qui semble un très bon départ de cross.",
           "sources": [
@@ -354,13 +352,13 @@
           "lat": 44.6586,
           "alt_m": 2021,
           "coord_quality": "approx",
-          "best_hours": "journée, activité thermique à surveiller quand elle forcit",
-          "trigger": "face est vers le col du Festre",
+          "trigger": "face nord-est vers le col du Festre",
           "description": "Le Chauvet, tourné vers le nord-est, regarde le col du Festre.",
           "confidence": "low",
           "sources": [
             "S28",
-            "S212"
+            "S212",
+            "S183"
           ],
           "possible": [
             "C'est un vol rando ultra-classique : l'été, attention aux troupeaux.",
@@ -478,11 +476,6 @@
           "lon": 5.877,
           "lat": 44.7765,
           "alt_m": 1699,
-          "orientations": [
-            "W",
-            "NW",
-            "N"
-          ],
           "description": "Le décollage se trouve au col des Faïsses, sur la crête de l'Obiou, et semble un très bon départ de cross.",
           "sources": [
             "S29"
@@ -548,7 +541,8 @@
           "description": "Le Chauvet est un vol rando ultra-classique, en face nord-est, face au col du Festre. C'est un vol du matin tôt, sans vent météo.",
           "sources": [
             "S28",
-            "S212"
+            "S212",
+            "S183"
           ],
           "coord_quality": "approx",
           "possible": [
@@ -774,7 +768,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 29.1,
           "description": "Traversée du Dévoluy du Chamousset à Veynes, par la tête de Vachères, la tête de la Cluse et le Pic de Bure.",
           "sources": [
             "S83"
@@ -783,7 +776,7 @@
             "On peut faire une pause au sommet herbeux du Chamousset, puis redécoller.",
             "Au-dessus du décor lunaire du Pic de Bure, les thermiques sont à l'image du paysage."
           ],
-          "note": "Tronçon d'un seul vol, du col de Rousset à Gap, rattaché au Diois ; distance calculée entre repères."
+          "note": "Tronçon d'un seul vol, du col de Rousset à Gap, rattaché au Diois."
         },
         {
           "id": "xc-noyer-faisses",
@@ -802,7 +795,6 @@
               "coord_quality": "approx"
             }
           ],
-          "distance_km": 0,
           "description": "Au départ du col du Noyer, on peut envisager un tour vers le lac du Sautet.",
           "sources": [
             "S57"
@@ -811,7 +803,7 @@
             "On sort du bocal par les reliefs du sud, puis on transite vers la montagne de Faraut, au nord ; au bout du Faraut, on peut raccrocher sur Rochecourbe et la Boustigue.",
             "Il est aussi possible de faire le tour du massif de l'Obiou."
           ],
-          "note": "Itinéraire proposé, jugé jouable mais pas facile, et jamais décrit comme volé ; distance inconnue."
+          "note": "Itinéraire proposé, jugé jouable mais pas facile, et jamais décrit comme volé."
         }
       ],
       "tips": [
@@ -878,8 +870,8 @@
           ],
           "hours": "matin très calme ; installation parfois chaotique en début d'après-midi, forte jusqu'en début de soirée (Orcières, Richards) ; restitution du soir",
           "speed_kmh": {
-            "typical": 15,
-            "max": 30
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "description": "La brise remonte le Drac du nord vers le sud, de Vizille à Saint-Jean-Saint-Nicolas, avec des filets venus de Grenoble qui convergent vers l'Obiou et le Taillefer. Dans le haut Champsaur, on la sent dès le début de l'après-midi à l'atterrissage des Richards. Aux cairns d'Orcières, elle peut rester forte jusqu'en début de soirée.",
@@ -898,7 +890,7 @@
             "Aux Richards, elle s'installe parfois de façon chaotique en début d'après-midi. À Orcières, l'atterrissage officiel peut être turbulent dans la brise.",
             "Un soir de septembre, vers 17h30, tout était anémique devant le cairn d'Orcières : le groupe a filé vers Champoléon pour au moins une heure de soaring et de thermiques doux."
           ],
-          "note": "Sens et tracé tirés d'une carte collaborative et d'un schéma de brises, sans mesure : les vitesses sont une interprétation."
+          "note": "Sens et tracé tirés d'une carte collaborative et d'un schéma de brises, sans mesure."
         },
         {
           "id": "brise-gap-col-bayard",
@@ -932,8 +924,8 @@
           ],
           "hours": "après-midi (été); sans horaire dans la source",
           "speed_kmh": {
-            "typical": 15,
-            "max": 25
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "description": "Le col Bayard fait communiquer la cuvette de Gap et le Champsaur par un échange de brises, dont le sens n'est pas établi. Plus au nord, à l'atterrissage des Richards, la brise arrive dès le début de l'après-midi.",
@@ -981,8 +973,8 @@
           ],
           "hours": "après-midi (été) ; « brise ronflante » ; 10-15 km/h à l'atterrissage de La Chapelle en fin d'après-midi (30 septembre 2009)",
           "speed_kmh": {
-            "typical": 15,
-            "max": 25
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "description": "La brise remonte le Valgaudemar depuis Saint-Firmin jusqu'à La Chapelle, et la vallée est connue pour sa brise forte. Elle offre aussi de grands champs plats, accueillants.",
@@ -996,7 +988,7 @@
             "Au retour d'un vol rando de l'Olan, fin septembre, l'air était paisible, et le posé près de La Chapelle s'est fait dans une brise de 10 à 15 km/h.",
             "Un vol venu du Banc du Peyron a traversé la vallée, puis est remonté à 3500 m au Grun de Saint-Maurice."
           ],
-          "note": "Tracé et vitesses déduits d'une carte collaborative, d'où vient aussi le sens montant ; aucun horaire d'inversion n'est donné. Aucun site de vol officiel n'y a été trouvé."
+          "note": "Tracé déduit d'une carte collaborative, d'où vient aussi le sens montant ; aucun horaire d'inversion n'est donné. Aucun site de vol officiel n'y a été trouvé."
         }
       ],
       "convergences": [
@@ -1035,12 +1027,11 @@
       "hazards": [
         {
           "id": "champsaur-patous",
-          "name": "Patous et troupeaux (Cuchon, Orcières)",
+          "name": "Patous et troupeaux (Cuchon)",
           "kind": "other",
           "lon": 6.2236,
           "lat": 44.6356,
           "radius_km": 3,
-          "conditions": "Été (alpages)",
           "description": "Des patous surveillent les moutons sur le Cuchon : contournez impérativement les parcs.",
           "sources": [
             "S24"
@@ -1211,11 +1202,10 @@
         },
         {
           "id": "grun-de-saint-maurice-relance",
-          "name": "Grun de Saint-Maurice : relance et plafond (3500 m) sur la bordure ouest des Écrins",
+          "name": "Grun de Saint-Maurice : relance sur la bordure ouest des Écrins",
           "lon": 6.056,
           "lat": 44.8156,
           "coord_quality": "source",
-          "best_hours": "après-midi (juillet 2026, ≈16h)",
           "trigger": "Sommet en bordure ouest des Écrins après la traversée du Valgaudemar",
           "description": "C'est le point de relance entre les Richards et La Salette, puis le Coiro. En remontant la bordure ouest des Écrins, on y trouve des thermiques puissants mais sains.",
           "confidence": "medium",
@@ -1561,12 +1551,14 @@
             "SW",
             "S",
             "W",
-            "N"
+            "NW"
           ],
           "description": "Décollage herbeux, à rotation rapide, d'où partent d'excellents cross vers Grenoble ou Savines. On y accède par le col Bayard ou le col de Manse, puis par Pont-du-Fossé. L'atterrissage est à 1 km après ce village. Méfiez-vous d'un nord trop fort.",
           "sources": [
             "S68",
-            "S160"
+            "S160",
+            "S233",
+            "S234"
           ],
           "coord_quality": "source",
           "pge_id": 2540,
@@ -1785,11 +1777,12 @@
           "name": "Les Richards – atterrissage",
           "lon": 6.2447,
           "lat": 44.6707,
-          "alt_m": 1100,
+          "alt_m": 1141,
           "description": "Atterrissage à 1 km après Pont-du-Fossé : sa manche à air se voit de la route. Respectez le terrain tout en longueur, car le champ voisin est interdit.",
           "sources": [
             "S160",
-            "S68"
+            "S68",
+            "S234"
           ],
           "coord_quality": "source",
           "pge_id": 2540
@@ -1925,13 +1918,12 @@
               "coord_quality": "approx"
             }
           ],
-          "distance_km": 58.9,
           "description": "Les Richards offrent d'excellents départs en cross vers Grenoble. La ligne suit le Drac, vers Corps puis Vizille.",
           "sources": [
             "S68",
             "S55"
           ],
-          "note": "Distance en ligne droite entre repères, calculée. Le waypoint est approximatif (flèche de brise)."
+          "note": "Le waypoint est approximatif (flèche de brise)."
         },
         {
           "id": "xc-richards-savines",
@@ -1950,12 +1942,11 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 22.1,
           "description": "Depuis les Richards, on part aussi en cross vers Savines et le lac de Serre-Ponçon.",
           "sources": [
             "S68"
           ],
-          "note": "Tracé de l'atlas, par Orcières et Chorges, en ligne droite calculée : la source ne donne que la direction. La fin du parcours relève d'un autre secteur."
+          "note": "Ligne droite de l'atlas : la source ne donne que la direction. La fin du parcours relève d'un autre secteur."
         },
         {
           "id": "richards-grun-salette-colombier-classique",
@@ -1986,7 +1977,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 31.6,
           "description": "Le parcours classique des Richards vers Grenoble passe par le Cuchon de Molines, le Grun de Saint-Maurice, le verrou de Notre-Dame de la Salette, puis le Colombier. La suite passe par le Coiro, le Taillefer et Chamrousse, jusqu'à Vif ou Saint-Hilaire. Le sud y pousse bien.",
           "sources": [
             "S199",
@@ -2036,7 +2026,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 40.1,
           "description": "Extrait d'une rando-cross : du Pic de Bure au Banc du Peyron, puis la traversée du Valgaudemar, le Grun de Saint-Maurice et La Salette, pour finir à Valbonnais.",
           "sources": [
             "S206"
@@ -2083,7 +2072,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 47.2,
           "description": "Vol bivouac de retour vers Grenoble : décollage sous le Piolit, aller-retour aux aiguilles de Chabrières pour jauger la masse d'air, puis le Cuchon d'Ancelle, repassé laborieusement à 2200 m, et les Richards. La suite passe par La Salette, le Colombier et le Coirot. Le plafond a atteint 3400 m au Tabor, avant le Taillefer et Chamrousse, et la pose à Saint-Martin-d'Uriage.",
           "sources": [
             "S201",
@@ -2153,7 +2141,7 @@
           "hours": "après-midi (été)",
           "speed_kmh": {
             "typical": 25,
-            "max": 40
+            "max": null
           },
           "season": "avril-septembre",
           "description": "La brise remonte la Durance l'après-midi en été : très régulière dans la cluse, elle passe de Manosque à Sisteron, puis par Tallard, Serre-Ponçon, Embrun et Briançon.",
@@ -2166,7 +2154,7 @@
           "possible": [
             "À Sisteron, dans la cluse, elle peut atteindre 30 à 40 km/h l'après-midi en été."
           ],
-          "note": "Sens tiré d'une carte collaborative. Vitesses reprises de la cluse de Sisteron, par extension."
+          "note": "Sens tiré d'une carte collaborative. Vitesse estimée par extension de la cluse de Sisteron (30 à 40 km/h) : aucune mesure au-delà."
         },
         {
           "id": "brise-tallard-gap",
@@ -2200,8 +2188,8 @@
           ],
           "hours": "après-midi (été)",
           "speed_kmh": {
-            "typical": 15,
-            "max": 30
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "description": "Depuis Tallard, un flux venu du sud arrive sur la cuvette de Gap.",
@@ -2210,7 +2198,7 @@
             "S55",
             "S53"
           ],
-          "note": "Tracé approximatif, tiré d'une flèche de carte collaborative et d'un schéma de brises ; vitesses déduites."
+          "note": "Tracé approximatif, tiré d'une flèche de carte collaborative et d'un schéma de brises."
         },
         {
           "id": "brise-veynes-gap",
@@ -2250,8 +2238,8 @@
           ],
           "hours": "après-midi (été)",
           "speed_kmh": {
-            "typical": 15,
-            "max": 30
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "description": "La brise remonte de Serres à Veynes, puis à La Roche-des-Arnauds, vers Gap. Plus haut, Céüse se relie à Charance et au Pic de Bure.",
@@ -2260,7 +2248,7 @@
             "S55",
             "S53"
           ],
-          "note": "Tracé tiré d'une flèche de carte collaborative et d'un schéma de brises, qui concordent. Vitesses déduites."
+          "note": "Tracé tiré d'une flèche de carte collaborative et d'un schéma de brises, qui concordent."
         },
         {
           "id": "brise-pente-ceuse-sud",
@@ -2280,10 +2268,10 @@
               "coord_quality": "source"
             }
           ],
-          "hours": "12h-17h (été)",
+          "hours": "après-midi (été), sans horaire dans les sources",
           "speed_kmh": {
-            "typical": 12,
-            "max": 25
+            "typical": null,
+            "max": null
           },
           "season": "été",
           "description": "Depuis la Durance, des flux remontent les faces sud de la Malaup, de Céüsette et de Céüse : ce sont des schémas établis à partir des points de largage des planeurs qui les montrent. Les planeurs de Gap-Tallard en profitent : leurs vols de baptême montent en général à 2200-2500 m, parfois 3000 m.",
@@ -2293,7 +2281,7 @@
             "S30",
             "S52"
           ],
-          "note": "Position approximative (schéma) ; vitesses interprétées."
+          "note": "Position approximative (schéma) ; heures non sourcées."
         }
       ],
       "convergences": [
@@ -2369,7 +2357,7 @@
           "lon": 5.95,
           "lat": 44.52,
           "radius_km": 2,
-          "conditions": "Brise ou vent de sud",
+          "conditions": "Brise",
           "description": "Le plateau intérieur de Céüse, en pente nord-ouest au-dessus de la combe, passe sous le vent dès qu'il y a de la brise : assurez-vous qu'il n'y en a pas avant d'y voler. C'est un peu un trou.",
           "sources": [
             "S60"
@@ -2459,7 +2447,6 @@
           "lon": 5.9617,
           "lat": 44.5086,
           "alt_m": 2016,
-          "best_hours": "12h-17h (été)",
           "trigger": "barre rocheuse verticale (falaise calcaire) orientée sud/sud-est",
           "description": "Les planeurs de Gap-Tallard survolent les falaises de la Grande Céüse, orientées sud et sud-est. Leurs vols de baptême montent en général à 2200-2500 m, parfois 3000 m. Le micro-climat de Tallard permet aussi l'onde.",
           "sources": [
@@ -2475,7 +2462,6 @@
           "lon": 6.0375,
           "lat": 44.3835,
           "alt_m": 1561,
-          "best_hours": "12h-17h (été)",
           "trigger": "face sud de la Malaup",
           "description": "La Malaup est le point de largage des planeurs, à 1500 m, après un remorquage depuis Tallard. Une brise monte sa face sud. Le site de Melves est à son extrémité nord-ouest.",
           "sources": [
@@ -2490,7 +2476,6 @@
           "lon": 5.9351,
           "lat": 44.6267,
           "alt_m": 2709,
-          "best_hours": "12h-17h (été)",
           "trigger": "face sud",
           "description": "Depuis Charance, le Bure est la cible classique des départs en cross. Un flux de brise part de Céüse vers lui.",
           "sources": [
@@ -2536,7 +2521,6 @@
           "lat": 44.4719,
           "alt_m": 1681,
           "coord_quality": "source",
-          "best_hours": "à partir de la fin de matinée",
           "trigger": "pente de la Petite Céüse et épingle de la piste ; plateau de Sigoyer",
           "description": "Il y a souvent un thermique devant le décollage de la Petite Céüse ou au-dessus de l'épingle de la piste, et un peu partout sur le plateau de Sigoyer.",
           "confidence": "medium",
@@ -2632,7 +2616,7 @@
             "W",
             "NW"
           ],
-          "description": "Rabou est excellent par pur nord-ouest. Le soir, c'est un soaring très agréable sur la crête, entre les deux décollages. Par ouest ou sud-ouest, il est difficile de faire mieux. Par nord-ouest faible, on peut monter en appui dynamique jusqu'au sommet de Charance, et même basculer vers Gap.",
+          "description": "Rabou est excellent par pur nord-ouest. Le soir, c'est un soaring très agréable sur la crête, entre les deux décollages. Par ouest ou sud-ouest, il est difficile de sortir du site et de faire mieux qu'un petit soaring entre les deux décollages. Par nord-ouest faible, on peut monter en appui dynamique jusqu'au sommet de Charance, et même basculer vers Gap.",
           "sources": [
             "S42",
             "S162"
@@ -2818,7 +2802,7 @@
         },
         {
           "id": "sigoyer",
-          "name": "Sigoyer (pied de Céüse)",
+          "name": "Sigoyer (pied de Céüse) : pas de terrain désigné",
           "lon": 5.9754,
           "lat": 44.4774,
           "alt_m": 1020,
@@ -2831,7 +2815,7 @@
         },
         {
           "id": "veynes-vallee",
-          "name": "Vallée de Veynes (sortie du plateau de Céüse)",
+          "name": "Vallée de Veynes (sortie du plateau de Céüse) : pas de terrain désigné",
           "lon": 5.8245,
           "lat": 44.5349,
           "alt_m": 820,
@@ -2944,7 +2928,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 43.6,
           "description": "Les vols de baptême en planeur de Gap-Tallard survolent les falaises de Céüse et le Pic de Bure, jusqu'à une trentaine de kilomètres de l'aérodrome. Aucune source ne décrit de circuit fixe par le Dévoluy et Charance.",
           "sources": [
             "S30"
@@ -2952,7 +2935,7 @@
           "possible": [
             "Un baptême dure au minimum 1h15."
           ],
-          "note": "Tracé et distance reconstruits entre repères : la source ne donne ni circuit, ni distance, ni passage à Charance. Ligne de reliefs exploitable en parapente comme transition Buëch–Dévoluy–Gap : déduction."
+          "note": "Tracé reconstruit entre repères : la source ne donne ni circuit, ni distance, ni passage à Charance. Ligne de reliefs exploitable en parapente comme transition Buëch–Dévoluy–Gap : déduction."
         },
         {
           "id": "xc-guiziere-charance",
@@ -2976,14 +2959,13 @@
               "lat": 44.6267
             }
           ],
-          "distance_km": 12.7,
           "description": "On part le matin du col de Guizière, sur les premiers thermiques, avant la brise. On rejoint ensuite Charance, puis le massif de Bure.",
           "sources": [
             "S66",
             "S65",
             "S53"
           ],
-          "note": "Distance du premier tronçon calculée. Enchaînement reconstruit à partir des fiches de ces deux sites."
+          "note": "Enchaînement reconstruit à partir des fiches de ces deux sites."
         },
         {
           "id": "xc-clape-arnauds",
@@ -3002,7 +2984,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 2.7,
           "description": "Un vol rando agréable : on décolle à la tête de la Clape et l'on pose à La Roche-des-Arnauds.",
           "sources": [
             "S60"
@@ -3037,7 +3018,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 64.3,
           "description": "C'est un vol classique au départ de Luc-en-Diois, par Serres, vers Gap-Tallard.",
           "sources": [
             "S73",
@@ -3045,8 +3025,7 @@
           ],
           "possible": [
             "Un vol parti du col de Rousset a fini près de Veynes, après le Dévoluy."
-          ],
-          "note": "Distance calculée entre repères."
+          ]
         }
       ],
       "tips": [
@@ -3113,10 +3092,10 @@
               "coord_quality": "source"
             }
           ],
-          "hours": "13h-18h (été)",
+          "hours": "après-midi (été), sans horaire dans les sources",
           "speed_kmh": {
-            "typical": 20,
-            "max": 35
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "description": "La brise de vallée remonte le Buëch, de Sisteron vers Laragne, Serres puis Aspres : les cartes et les schémas de brises s'accordent sur ce sens. À Aspres, elle alimente souvent très bien le décollage sud.",
@@ -3132,7 +3111,7 @@
             "Sur le secteur d'Aspres, ça peut vite changer entre le milieu de journée et 17h, s'il y a de l'ouest, du nord ou du sud.",
             "Dans la cluse de la Durance, à Sisteron, la brise est très régulière : elle peut atteindre 30 à 40 km/h l'après-midi en été."
           ],
-          "note": "Vitesses déduites de la cluse de Sisteron, non mesurées dans le Buëch ; les flèches d'une carte collaborative sont à vérifier, car cette carte peut comporter des erreurs sur le Buëch."
+          "note": "Les flèches d'une carte collaborative sont à vérifier, car cette carte peut comporter des erreurs sur le Buëch."
         },
         {
           "id": "brise-pente-chabre-sud",
@@ -3154,8 +3133,8 @@
           ],
           "hours": "fin de matinée – début d'après-midi (puis relais par l'ouest)",
           "speed_kmh": {
-            "typical": 10,
-            "max": 20
+            "typical": null,
+            "max": null
           },
           "season": "printemps-été",
           "description": "Le matin, la brise reste douce et les conditions calmes : les écoles en profitent. Dès midi, les thermiques deviennent puissants sur la face sud, et ils forment des dust devils quand un vent de nord faible souffle sur la crête. Un schéma montre des flux semblables sur les faces sud de Serres et d'Arambre.",
@@ -3165,8 +3144,7 @@
             "S3",
             "S85",
             "S54"
-          ],
-          "note": "Vitesses interprétées à partir des sources, non mesurées."
+          ]
         },
         {
           "id": "brise-ouest-meouge",
@@ -3206,8 +3184,8 @@
           ],
           "hours": "à partir de ~13h30 (été), jusqu'au soir",
           "speed_kmh": {
-            "typical": 20,
-            "max": 35
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "description": "L'après-midi, le vent tourne souvent à l'ouest à Laragne et dans la vallée de la Méouge, car les vallées voisines, sauf le Buëch, sont orientées ouest-est. Chabre ne supporte pas le vent d'ouest.",
@@ -3222,7 +3200,7 @@
             "Souvent, il faut avoir décollé avant 13h30 : ensuite, ça passe ouest pour le reste de la journée.",
             "La balise de Laragne indique souvent l'ouest au printemps, en été et en automne : c'est le régime de brise."
           ],
-          "note": "Vitesses interprétées, non mesurées ; les flux de la Méouge sont tracés sur une carte collaborative non datée, de Séderon à Vers-sur-Méouge et Éourres, puis de Lachau à Laragne."
+          "note": "Les flux de la Méouge sont tracés sur une carte collaborative non datée, de Séderon à Vers-sur-Méouge et Éourres, puis de Lachau à Laragne."
         },
         {
           "id": "brise-ouest-rosans-serres",
@@ -3262,8 +3240,8 @@
           ],
           "hours": "après-midi (été)",
           "speed_kmh": {
-            "typical": 15,
-            "max": 30
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "description": "L'après-midi, le régime de brise d'ouest peut gagner Rosans et Serres : tout le coin, sur un large secteur, est sous son influence.",
@@ -3300,8 +3278,8 @@
           ],
           "hours": "après-midi (été)",
           "speed_kmh": {
-            "typical": 15,
-            "max": 25
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "description": "Un flux d'ouest peut remonter de Sainte-Colombe vers Orpierre, puis Nossage-et-Bénévent. Il relierait ainsi les vallées du Céans et de la Méouge, vers Laragne.",
@@ -3350,7 +3328,7 @@
           "possible": [
             "Il arrive que le vol du soir se fasse aussi avec la brise descendante de Laragne, canalisée par les gorges."
           ],
-          "note": "Les points du tracé sont des repères approximatifs."
+          "note": "Les points du tracé sont des repères approximatifs. Vitesse typique estimée ; les 40 km/h sont ceux de la bascule du soir."
         }
       ],
       "convergences": [
@@ -3666,7 +3644,7 @@
           "lon": 5.79,
           "lat": 44.382,
           "radius_km": 1.5,
-          "conditions": "transition Beaumont → Saint-Genis, brise d'ouest",
+          "conditions": "transition Beaumont → Saint-Genis",
           "description": "La première combe à l'ouest de la montagne de Saint-Genis peut être un piège : un vol y a trouvé un flux contraire et descendant, et la remontée jusqu'au-dessus de la crête a été désagréable.",
           "sources": [
             "S185"
@@ -3684,7 +3662,6 @@
           "lon": 5.7634,
           "lat": 44.2976,
           "alt_m": 1330,
-          "best_hours": "11h-15h (été)",
           "trigger": "face sud de la crête E-O au-dessus de la Méouge",
           "description": "La face sud de la crête de Chabre, qui court d'est en ouest au-dessus de la Méouge, déclenche des thermiques forts dès midi.",
           "sources": [
@@ -3762,7 +3739,6 @@
           "lon": 5.7131,
           "lat": 44.5409,
           "alt_m": 1526,
-          "best_hours": "12h-17h (été)",
           "trigger": "crête de la Longeagne",
           "description": "La crête de la Longeagne est surtout un site de brise et de vent de sud. Sa balise est la plus fiable du secteur pour juger le vent.",
           "sources": [
@@ -4618,7 +4594,7 @@
         },
         {
           "id": "mereuil",
-          "name": "Mévreuil – atterrissage",
+          "name": "Mereuil – atterrissage",
           "lon": 5.7263,
           "lat": 44.388,
           "alt_m": 700,
@@ -4744,12 +4720,11 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 52.2,
           "description": "Ce parcours de course suit la crête de Chabre jusqu'au col Saint-Ange, traverse Orpierre vers le rocher de la Garde et les antennes de Beaumont, où l'on fait le plafond. Il franchit ensuite la vallée vers la Porte Sereine, longe la crête de Saint-Genis vers l'est, traverse la plaine vers Le Villard, la montagne d'Aujour et Crigne, et finit par un posé au nord de Monêtier-Allemont.",
           "sources": [
             "S49"
           ],
-          "note": "Course amicale du 31/08/2025, dont l'épreuve de canoë partait à 17h. Balises de rayon 400 m, et 1 000 m au col Saint-Ange, à Beaumont et à Aujour. Distance calculée, somme des segments entre balises."
+          "note": "Course amicale du 31/08/2025, dont l'épreuve de canoë partait à 17h. Balises de rayon 400 m, et 1 000 m au col Saint-Ange, à Beaumont et à Aujour."
         },
         {
           "id": "xc-waterfly-2026",
@@ -4810,12 +4785,11 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 40.7,
           "description": "Parcours de course à faire dans l'ordre, de Chabre au lac du Riou, par le col Saint-Ange, Suillet, le rocher de la Garde, Beaumont, le lac de Germanette et la crête de Saint-Genis. La fin de la section de vitesse est à Saint-Genis, et l'on pose à l'est du plan d'eau, près d'une cible. Attention aux lignes de la vallée d'Orpierre.",
           "sources": [
             "S50"
           ],
-          "note": "Balises de rayon 500 m, et 1 000 m à Beaumont. Distance calculée par l'atlas : la page n'en donne pas. Le site du club annonce un report de cette édition."
+          "note": "Balises de rayon 500 m, et 1 000 m à Beaumont. La page ne donne pas de distance. Le site du club annonce un report de cette édition."
         },
         {
           "id": "xc-laragne-aspres",
@@ -4840,7 +4814,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 54.7,
           "description": "Le cross Laragne–Aspres, en aller-retour, traverse de grandes vallées ouvertes, avec de nombreux champs où poser, entre des reliefs qui font naître les thermiques. Ne vous y fiez pas trop : le secteur cache des brises fortes et des confluences.",
           "sources": [
             "S85"
@@ -4848,8 +4821,7 @@
           "possible": [
             "Ce cross a été classé parmi les meilleurs parcours accessibles à tous, mais mieux vaut y débuter en suivant quelqu'un d'expérimenté.",
             "Aspres peut servir de tremplin vers Grenoble, au nord."
-          ],
-          "note": "Distance calculée : ligne droite aller-retour."
+          ]
         },
         {
           "id": "xc-chabre-bure",
@@ -4874,7 +4846,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 66.3,
           "description": "Ce cross relie Chabre au pic de Bure, avec un retour par Saint-Genis.",
           "sources": [
             "S70"
@@ -4882,8 +4853,7 @@
           "possible": [
             "L'idée de raccrocher le Bure depuis Chabre peut impressionner un débutant.",
             "La face sud du Bure est réputée pour sa puissance thermique."
-          ],
-          "note": "Distance calculée : lignes droites entre repères."
+          ]
         },
         {
           "id": "xc-aspres-durbonas-bure",
@@ -4905,7 +4875,6 @@
               "lat": 44.6267
             }
           ],
-          "distance_km": 22.2,
           "description": "Un plan de vol depuis Aspres vers le Dévoluy : monter à 2 000 m à la Longeagne, partir au nord vers le Durbonas, puis bifurquer à l'est vers le Bure. Rien ne protège Aspres du vent du nord : ce jour-là, il vaut mieux voler à la montagne d'Oule.",
           "sources": [
             "S187",
@@ -4950,7 +4919,6 @@
               "lat": 44.6267
             }
           ],
-          "distance_km": 51.4,
           "description": "Un classique de Laragne, en ligne droite vers le nord : Chabre, Orpierre, Beaumont, Serres, Aspres, puis le pic de Bure.",
           "sources": [
             "S185"
@@ -5008,12 +4976,12 @@
               "coord_quality": "source"
             }
           ],
-          "hours": "nuit et matin",
+          "hours": "surtout le matin",
           "speed_kmh": {
-            "typical": 10,
-            "max": 20
+            "typical": null,
+            "max": null
           },
-          "season": "toute l'année, apprécié l'été",
+          "season": "apprécié l'été",
           "description": "Le Pontias est un petit vent frais, venu du nord, qui arrive à Nyons surtout le matin, sans doute en descendant la vallée de l'Eygues. L'été, il est apprécié.",
           "confidence": "medium",
           "sources": [
@@ -5022,7 +4990,7 @@
           "possible": [
             "Une légende locale fait naître ce vent d'un rocher près de la chapelle Notre-Dame de Réparat."
           ],
-          "note": "Tracé le long de la descente de la vallée de l'Eygues, et vitesses estimées par interprétation. Ni la nuit, ni toute l'année ne sont dans la page citée."
+          "note": "Tracé le long de la descente de la vallée de l'Eygues, déduit."
         },
         {
           "id": "brise-eygues",
@@ -5056,8 +5024,8 @@
           ],
           "hours": "après-midi (été)",
           "speed_kmh": {
-            "typical": 15,
-            "max": 30
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "description": "L'après-midi, la brise d'ouest des Baronnies, liée à l'influence de la vallée du Rhône, peut remonter l'Eygues, du Nyonsais vers Rémuzat. Le matin, c'est l'inverse : le Pontias, qui descendrait la vallée, souffle vers Nyons.",
@@ -5067,7 +5035,7 @@
             "S85",
             "S37"
           ],
-          "note": "Flux tracé sur une carte collaborative, et vitesses déduites."
+          "note": "Flux tracé sur une carte collaborative."
         },
         {
           "id": "brise-ouveze",
@@ -5101,8 +5069,8 @@
           ],
           "hours": "après-midi (été)",
           "speed_kmh": {
-            "typical": 15,
-            "max": 30
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "description": "L'après-midi, la brise peut remonter l'Ouvèze, de Mollans vers Buis, puis vers Vercoiran et Bésignan, en direction du col d'Ey et de Sainte-Jalle. Si elle est trop puissante, le décollage du col d'Ey passe sous le vent. À l'atterrissage, l'ouest est souvent puissant en basse couche.",
@@ -5111,7 +5079,7 @@
             "S55",
             "S38"
           ],
-          "note": "Flèche tracée sur une carte collaborative : déduction à faible confiance, et vitesses déduites."
+          "note": "Flèche tracée sur une carte collaborative : déduction à faible confiance."
         },
         {
           "id": "brise-ouest-seron",
@@ -5145,8 +5113,8 @@
           ],
           "hours": "à partir de ~14h (plus tôt par flux de O/NO), jusqu'au soir",
           "speed_kmh": {
-            "typical": 20,
-            "max": 35
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "description": "À Buc, le vent vire presque toujours à l'ouest en fin d'après-midi, même par jour d'est, sous l'influence de la vallée du Rhône. Le site marche à partir de 14h environ, plus tôt quand le flux est d'ouest ou de nord-ouest. Après une paire d'heures de thermiques, souvent suivies d'un cross, l'air se lisse en une restitution douce.",
@@ -5155,7 +5123,7 @@
             "S85",
             "S55"
           ],
-          "note": "Flèches W→E tracées sur une carte collaborative, de Mévouillon vers Villefranche et de Séderon vers Éourres ; vitesses déduites. La description de Buc vient d'une page d'environ 2005."
+          "note": "Flèches W→E tracées sur une carte collaborative, de Mévouillon vers Villefranche et de Séderon vers Éourres. La description de Buc vient d'une page d'environ 2005."
         },
         {
           "id": "brise-est-matin-buc",
@@ -5177,16 +5145,15 @@
           ],
           "hours": "matin, dès le début de matinée",
           "speed_kmh": {
-            "typical": 8,
-            "max": 15
+            "typical": null,
+            "max": null
           },
           "season": "été",
           "description": "Le matin, Buc est en brise d'est, ou sous un léger flux météo de sud-est. Le site déclenche dès le milieu de la matinée, et à l'atterrissage, la brise peut être marquée dès le début de la matinée.",
           "confidence": "medium",
           "sources": [
             "S128"
-          ],
-          "note": "Vitesses interprétées, non mesurées."
+          ]
         }
       ],
       "convergences": [],
@@ -5315,6 +5282,19 @@
             "S192"
           ],
           "note": "Position approximative, sur l'axe de Rosans."
+        },
+        {
+          "id": "la-beauvoisin",
+          "name": "Beauvoisin – Les Jonchiers : terrain interdit, ne pas se poser",
+          "kind": "other",
+          "lon": 5.2316,
+          "lat": 44.2941,
+          "alt_m": 562,
+          "description": "Pratique strictement interdite sur ce terrain, en zone Natura 2000. Petit, avec une contre-pente importante à l'est, il servait au col de Milmandre. Demandez au club où poser avant de voler.",
+          "sources": [
+            "S139"
+          ],
+          "ffvl_id": 1017
         }
       ],
       "thermal_spots": [
@@ -5430,7 +5410,6 @@
           "lat": 44.2201,
           "alt_m": null,
           "coord_quality": "approx",
-          "best_hours": "après-midi, journée tonique à Bergiès",
           "trigger": "plaine de Villefranche, au pied de Buc et Bergiès",
           "description": "Villefranche-le-Château, dans la plaine au pied de Buc et de Bergiès, est un atterrissage près de l'école de Séderon.",
           "confidence": "low",
@@ -5994,18 +5973,6 @@
           "note": "Autre atterrissage, à Sainte-Jalle, aux coordonnées 44.3452, 5.2871, à 433 m ; il sert aussi de pente école, et il est ouvert sur autorisation systématique, dans la parcelle des manches à air."
         },
         {
-          "id": "la-beauvoisin",
-          "name": "Beauvoisin – Les Jonchiers",
-          "lon": 5.2316,
-          "lat": 44.2941,
-          "alt_m": 562,
-          "description": "Pratique strictement interdite sur ce terrain, en zone Natura 2000. Petit, avec une contre-pente importante à l'est, il servait au col de Milmandre. Demandez au club où poser avant de voler.",
-          "sources": [
-            "S139"
-          ],
-          "ffvl_id": 1017
-        },
-        {
           "id": "la-buc",
           "name": "Buc (atterro ouest)",
           "lon": 5.4682,
@@ -6013,9 +5980,10 @@
           "alt_m": 965,
           "description": "L'atterrissage ouest de Buc, qui sert aussi de pente école : attention aux élèves.",
           "sources": [
+            "S232",
             "S140"
           ],
-          "ffvl_id": 211,
+          "ffvl_id": 212,
           "note": "Autre atterrissage de Buc, n° 211 : 44.2322, 5.4889, à 851 m, sur une butte, turbulent par nord, avec une ligne haute tension en bordure de route."
         },
         {
@@ -6130,15 +6098,13 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 34.5,
           "description": "De Bergiès, on peut viser Colmars-les-Alpes ou Saint-André-les-Alpes, ou plus simplement Laragne et Sisteron.",
           "sources": [
             "S85"
           ],
           "possible": [
             "Des vols de plus de 100 km ont été cités de Bergiès vers Colmars-les-Alpes ou Saint-André-les-Alpes."
-          ],
-          "note": "Distance calculée en ligne droite de Bergiès à Sisteron ; la suite du parcours n'est pas comptée."
+          ]
         },
         {
           "id": "xc-buc-berges-sisteron",
@@ -6160,7 +6126,6 @@
               "lat": 44.1963
             }
           ],
-          "distance_km": 38.4,
           "description": "Depuis Buc, on passe par-dessus Bergiès puis vers l'est et Sisteron, ou par Lachau puis Ribiers. On peut aussi traverser vers la crête de Laragne-Chabre. On se pose au pied de Buc, à Villefranche ou à l'église de Lachau.",
           "sources": [
             "S85"
@@ -6240,8 +6205,8 @@
           ],
           "hours": "dès midi-13h, s'installe vite (été)",
           "speed_kmh": {
-            "typical": 12,
-            "max": 25
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "layer_depth_m": "les brises se trouvent plus haut que le relief moyen : même les sommets les plus élevés sont dans leur influence (club)",
@@ -6252,7 +6217,7 @@
             "S73",
             "S55"
           ],
-          "note": "Tracé de la vallée relevé sur une carte collaborative, d'Aouste-sur-Sye à Lesches ; vitesses interprétées, non mesurées."
+          "note": "Tracé de la vallée relevé sur une carte collaborative, d'Aouste-sur-Sye à Lesches."
         },
         {
           "id": "brise-pente-glandasse",
@@ -6274,8 +6239,8 @@
           ],
           "hours": "fin de matinée – après-midi (été)",
           "speed_kmh": {
-            "typical": 12,
-            "max": 22
+            "typical": null,
+            "max": null
           },
           "season": "printemps-automne",
           "description": "Le site marche par brise de pente, et par vent météo de sud ou de sud-ouest, dans des conditions thermiques souvent très fortes. La brise de Châtillon est latérale à la pente : on est sous le vent un peu partout. Pour raccrocher le Glandasse depuis le sud, arrivez haut sur les flancs sud.",
@@ -6284,8 +6249,7 @@
             "S93",
             "S72",
             "S32"
-          ],
-          "note": "Vitesses interprétées, non mesurées."
+          ]
         },
         {
           "id": "brise-die-chatillon",
@@ -6325,8 +6289,8 @@
           ],
           "hours": "après-midi (été), à partir de ~12h",
           "speed_kmh": {
-            "typical": 15,
-            "max": 30
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "description": "La brise de nord diverge vers l'ouest à Châtillon-en-Diois et à son verrou : c'est par là qu'elle alimente Boulc et les cols de Grimone et de Menée. Soyez vigilant à Châtillon, seul endroit où l'on peut voir un parapente reculer en basse couche.",
@@ -6336,7 +6300,7 @@
             "S72",
             "S55"
           ],
-          "note": "Tracé relevé sur une carte collaborative, de Die à Châtillon par Laval-d'Aix, puis d'Aix-en-Diois à Lus-la-Croix-Haute par Glandage. Vitesses déduites des fortes brises de la vallée de Châtillon."
+          "note": "Tracé relevé sur une carte collaborative, de Die à Châtillon par Laval-d'Aix, puis d'Aix-en-Diois à Lus-la-Croix-Haute par Glandage."
         },
         {
           "id": "brise-chatillon-menee",
@@ -6364,8 +6328,8 @@
           ],
           "hours": "après-midi (été)",
           "speed_kmh": {
-            "typical": 15,
-            "max": 25
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "description": "C'est la branche nord-est de la brise qui diverge à Châtillon : elle alimente le col de Menée.",
@@ -6374,7 +6338,7 @@
             "S71",
             "S55"
           ],
-          "note": "Flèche de Châtillon à Treschenu-Creyers, relevée sur une carte collaborative. Vitesses déduites : aucun texte local ne les détaille."
+          "note": "Flèche de Châtillon à Treschenu-Creyers, relevée sur une carte collaborative."
         },
         {
           "id": "brise-ouest-aucelon",
@@ -6403,7 +6367,7 @@
           "hours": "mi à fin d’après-midi (été)",
           "speed_kmh": {
             "typical": 20,
-            "max": 35
+            "max": null
           },
           "season": "avril-septembre",
           "description": "De fortes brises d'ouest soufflent sur Couspeau, Bourdeaux, Aucelon et Aurel. En fin d'après-midi, voire en milieu, elles peuvent largement prendre le dessus sur la brise de nord de la Drôme. Au départ de Luc, progresser face à l'ouest est très difficile, même de bonne heure.",
@@ -6412,7 +6376,7 @@
             "S71",
             "S55"
           ],
-          "note": "Flèches W→E relevées sur une carte collaborative, de Pennes-le-Sec à Aucelon. Vitesses interprétées à partir de l'expression « fortes brises », non mesurées."
+          "note": "Flèches W→E relevées sur une carte collaborative, de Pennes-le-Sec à Aucelon. Vitesse estimée depuis l'expression « fortes brises », sans mesure."
         },
         {
           "id": "brise-couspeau-bourdeaux",
@@ -6441,7 +6405,7 @@
           "hours": "après-midi (été)",
           "speed_kmh": {
             "typical": 20,
-            "max": 30
+            "max": null
           },
           "season": "avril-septembre",
           "description": "En fin d'après-midi, voire en milieu, la forte brise d'ouest souffle sur la montagne de Couspeau et le secteur de Bourdeaux.",
@@ -6450,7 +6414,7 @@
             "S55",
             "S71"
           ],
-          "note": "Tracé relevé sur une carte collaborative non datée, de Bourdeaux aux Tonils, au pied de la montagne. Tracé et vitesses déduits."
+          "note": "Tracé relevé sur une carte collaborative non datée, de Bourdeaux aux Tonils, au pied de la montagne. Tracé déduit. Vitesse estimée depuis l'expression « forte brise », sans mesure."
         },
         {
           "id": "brise-quint-chamaloc",
@@ -6478,8 +6442,8 @@
           ],
           "hours": "après-midi (été)",
           "speed_kmh": {
-            "typical": 12,
-            "max": 25
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "description": "Le col de Rousset reçoit à la fois la brise de Die et celle du nord-ouest. L'atterrissage de Chamaloc est très turbulent jusqu'au sol quand la brise de la vallée de la Drôme est en place : au moins tous les jours d'été.",
@@ -6488,7 +6452,7 @@
             "S55",
             "S77"
           ],
-          "note": "Flèche relevée sur une carte collaborative, de Saint-Julien-en-Quint à Romeyer, par Chamaloc. Vitesses déduites."
+          "note": "Flèche relevée sur une carte collaborative, de Saint-Julien-en-Quint à Romeyer, par Chamaloc."
         },
         {
           "id": "brise-lesches-val-maravel",
@@ -6510,8 +6474,8 @@
           ],
           "hours": "après-midi (été)",
           "speed_kmh": {
-            "typical": 15,
-            "max": 25
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "description": "La brise de la Drôme se prolonge au sud de Luc, de Lesches vers Val-Maravel. À partir de Valdrôme et du col de Cabre, une limite très nette : les plafonds y sont souvent plus hauts.",
@@ -6520,7 +6484,7 @@
             "S55",
             "S71"
           ],
-          "note": "Flèche relevée sur une carte collaborative, de Lesches à Val-Maravel. Vitesses déduites."
+          "note": "Flèche relevée sur une carte collaborative, de Lesches à Val-Maravel."
         },
         {
           "id": "brise-trieves-lus",
@@ -6542,8 +6506,8 @@
           ],
           "hours": "sans horaire dans les sources (régime de brise d'été)",
           "speed_kmh": {
-            "typical": 12,
-            "max": 25
+            "typical": null,
+            "max": null
           },
           "season": "avril-septembre",
           "description": "Un flux descend du Trièves, des environs de Mens et de Monestier-du-Percy, vers Lus-la-Croix-Haute et le Grand Buëch. Il y rencontre les flux qui montent le Buëch.",
@@ -6552,7 +6516,7 @@
             "S184",
             "S55"
           ],
-          "note": "Tracé relevé sur une carte de brises et sur une carte collaborative, de Monestier-du-Percy à Lus-la-Croix-Haute. Vitesses déduites."
+          "note": "Tracé relevé sur une carte de brises et sur une carte collaborative, de Monestier-du-Percy à Lus-la-Croix-Haute."
         }
       ],
       "convergences": [],
@@ -6660,7 +6624,8 @@
           "description": "Une colonie de vautours occupe le secteur de janvier à juin, avec environ 15 nichées par an. Deux zones sont à éviter : le col naturel et les rochers de l'Echelette. Éloignez-vous des falaises : un seul parapente peut faire s'envoler tout le monde, et les corbeaux mangent alors l'œuf ou le petit. Consultez la réglementation avant de voler.",
           "sources": [
             "S82",
-            "S77"
+            "S77",
+            "S235"
           ],
           "note": "Colonie introduite en 2000."
         },
@@ -6806,6 +6771,19 @@
           "possible": [
             "Il a accroché un petit thermique à 30 m du sol, puis il a fallu une quarantaine de minutes à basse hauteur pour retrouver le nuage, au-dessus de Toussière."
           ]
+        },
+        {
+          "id": "la-montmaur",
+          "name": "Montmaur-en-Diois : terrain interdit, ne pas se poser",
+          "kind": "other",
+          "lon": 5.3917,
+          "lat": 44.6777,
+          "alt_m": 496,
+          "description": "Pratique strictement interdite sur ce terrain, au pied de Solaure à Montmaur-en-Diois : ne vous y posez pas.",
+          "sources": [
+            "S102"
+          ],
+          "ffvl_id": 5183
         }
       ],
       "thermal_spots": [
@@ -6829,7 +6807,6 @@
           "lon": 5.4828,
           "lat": 44.7331,
           "alt_m": 1818,
-          "best_hours": "12h-17h (été)",
           "trigger": "falaises et pentes sud du Glandasse",
           "description": "Les conditions thermiques y sont souvent très fortes, avec de bonnes possibilités de cross. Arrivez haut depuis le sud pour raccrocher : la brise y est latérale.",
           "sources": [
@@ -7048,7 +7025,8 @@
           "confidence": "medium",
           "sources": [
             "S73",
-            "S72"
+            "S72",
+            "S235"
           ]
         },
         {
@@ -7059,7 +7037,7 @@
           "alt_m": 1757,
           "coord_quality": "source",
           "best_hours": "tôt le matin (« on a dit : tôt !! »)",
-          "trigger": "face SE du sommet du Duffre (1757 m), montée par la crête",
+          "trigger": "face SE du sommet du Duffre (1757 m)",
           "description": "La face sud-est du Duffre, au-dessus de Valdrôme, est très propice au départ en cross, à condition de partir tôt le matin.",
           "confidence": "medium",
           "sources": [
@@ -7712,18 +7690,6 @@
           "ffvl_id": 692
         },
         {
-          "id": "la-montmaur",
-          "name": "Montmaur-en-Diois",
-          "lon": 5.3917,
-          "lat": 44.6777,
-          "alt_m": 496,
-          "description": "Pratique strictement interdite sur ce terrain, au pied de Solaure à Montmaur-en-Diois : ne vous y posez pas.",
-          "sources": [
-            "S102"
-          ],
-          "ffvl_id": 5183
-        },
-        {
           "id": "aurel-atterro",
           "name": "Aurel",
           "lon": 5.2964,
@@ -7829,13 +7795,11 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 0,
           "description": "Un aller-retour classique : on part vers Châtillon face au vent. Raccrocher le Glandasse y est difficile, car la brise est latérale à la pente.",
           "sources": [
             "S73",
             "S72"
-          ],
-          "note": "Distance non donnée."
+          ]
         },
         {
           "id": "xc-luc-sisteron",
@@ -7872,7 +7836,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 0,
           "description": "On sort du « bocal » par le sud, en longeant la crête de Clamontard, et l'on finit normalement au plafond à la verticale du col de Beaumont : la Durance n'est plus qu'à 30 km. On peut ensuite passer par Serres, puis viser Gap-Tallard ou Sisteron. Le problème, ce sont les brises de sud qui sévissent à partir du sud de la Durance.",
           "sources": [
             "S73",
@@ -7880,8 +7843,7 @@
           ],
           "possible": [
             "De nombreux vols ont atteint Digne, et quelques-uns Saint-André et Moustiers ; d'autres Lure et Manosque. Les triangles restent exceptionnels."
-          ],
-          "note": "Distance non donnée."
+          ]
         },
         {
           "id": "xc-solaure-vercors",
@@ -7903,7 +7865,6 @@
               "lat": 44.7733
             }
           ],
-          "distance_km": 13.2,
           "description": "Depuis Solaure, le départ à droite vers le cirque d'Aurel est assez facile. Une transition délicate mais faisable vous dépose sur la crête de Ponet, turbulente. Puis viennent le Saint-Genis, avec sa pompe devant l'arête sud-ouest, et les versants sud du Vercors. À gauche, par thermiques généreux, on traverse vers les falaises du Glandasse. On ne vole ici qu'en l'absence de la brise du Diois.",
           "sources": [
             "S75"
@@ -7980,7 +7941,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 0,
           "description": "Ce parcours part du col de Rousset, passe par le Dévoluy et se termine près de Veynes, en traversant le But Sapiau, la Dent de Die, le Glandasse, Boulc, Lus-la-Croix-Haute et le pic de Bure.",
           "sources": [
             "S83"
@@ -7990,7 +7950,7 @@
             "Le parcours passe ensuite par Grésière et Boulc, où un courant descendant peut demander une quarantaine de minutes de combat, puis par Toussière et Lus-la-Croix-Haute.",
             "Il se termine par la tête de Vachères, la tête de la Cluse, le pic de Bure, et une pose près de Veynes."
           ],
-          "note": "Distance non donnée ; waypoints partiellement approximatifs. Vol antérieur à la zone de sensibilité majeure du Glandasse, qu'il faut désormais respecter."
+          "note": "Waypoints partiellement approximatifs. Vol antérieur à la zone de sensibilité majeure du Glandasse, qu'il faut désormais respecter."
         },
         {
           "id": "xc-tour-diois",
@@ -8027,7 +7987,6 @@
               "coord_quality": "approx"
             }
           ],
-          "distance_km": 0,
           "description": "Par vent de sud, les conditions sont idéales pour tenter le tour complet de la vallée, dans un sens ou dans l'autre : Glandasse, faces sud du Vercors, Aurel, montagne d'Aucelon. Seul impératif : le vent doit rester assez faible pour garder le régime de brise.",
           "sources": [
             "S72"
@@ -10732,6 +10691,42 @@
       "type": "web",
       "lang": "fr",
       "notes": "Fiche officielle du terrain n°730 (relevé ffvl_sites_alpes.json du 07/10/2026) : coordonnées, orientations, description et dangers."
+    },
+    {
+      "id": "S232",
+      "title": "Fiche FFVL terrain SEDERON-MEVOUILLON : BUC [212]",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/212",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Fiche officielle FFVL n°212 : 965 m, position de l'atterrissage ouest de Buc, sert aussi de fin de vol aux élèves."
+    },
+    {
+      "id": "S233",
+      "title": "Fiche FFVL site LES RICHARDS (décollage) [110]",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/110",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Fiche officielle FFVL n°110 : 1537 m, favorable S, SO, O, NO, défavorable N, NE, E ; site privé non conventionné."
+    },
+    {
+      "id": "S234",
+      "title": "Fiche FFVL terrain LES RICHARDS (atterrissage) [111]",
+      "url": "https://federation.ffvl.fr/sites_pratique/voir/111",
+      "publisher": "FFVL",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Fiche officielle FFVL n°111 : 1141 m, terrain conventionné, terrain voisin à éviter, lignes électriques."
+    },
+    {
+      "id": "S235",
+      "title": "Vol Libre Diois – Faune aérienne locale",
+      "url": "https://www.vol-libre-diois.fr/faune-aerienne-locale/",
+      "publisher": "Vol Libre Diois",
+      "type": "web",
+      "lang": "fr",
+      "notes": "Vautours fauves introduits en 2000 au col de Rousset, circulation entre les charniers du Vercors et des Baronnies."
     }
   ]
 }

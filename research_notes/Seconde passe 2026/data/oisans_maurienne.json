@@ -56,7 +56,7 @@
           "hours": "à partir de la mi-journée jusqu'en fin d'après-midi (été surtout) ; ≥ 11h-12h selon les fiches ; calme le matin",
           "speed_kmh": {
             "typical": 20,
-            "max": 35
+            "max": null
           },
           "season": "printemps-été-automne (« au printemps et à l'automne il y a aussi une grosse brise »)",
           "layer_depth_m": "non documenté",
@@ -75,7 +75,7 @@
             "Au printemps et à l'automne, la brise peut aussi être bien marquée.",
             "Elle peut remonter très loin dans la vallée de la Romanche."
           ],
-          "note": "Vitesses en km/h, interprétées depuis « forte ». Le sens montant, de Vizille vers la plaine, est déduit de la topographie ; il est cohérent avec la brise montante de la plaine de Bourg-d'Oisans, citée à Auris. L'étranglement des gorges entre Livet-et-Gavet et Rochetaillée est probablement un venturi, non décrit dans les sources."
+          "note": "Vitesse estimée depuis le mot « forte » : aucune source ne la mesure. Le sens montant, de Vizille vers la plaine, est déduit de la topographie ; il est cohérent avec la brise montante de la plaine de Bourg-d'Oisans, citée à Auris. L'étranglement des gorges entre Livet-et-Gavet et Rochetaillée est probablement un venturi, non décrit dans les sources."
         },
         {
           "id": "romanche-haute-vers-lautaret",
@@ -128,7 +128,7 @@
           "hours": "à partir de midi (« à partir de 12 heures la brise de vallée commence à être forte »)",
           "speed_kmh": {
             "typical": 20,
-            "max": 35
+            "max": null
           },
           "season": "été",
           "description": "De la plaine de Bourg-d'Oisans, la brise remonte vers Le Freney et Mont-de-Lans, puis du lac du Chambon vers La Grave et Villar-d'Arêne. Puissante, elle peut passer le col du Lautaret et dévaler la Guisane. À La Grave, elle devient forte à partir de midi et rend l'atterrissage délicat. Au Lautaret, au printemps et en été, le vent est souvent très soutenu, bien souvent trop pour le parapente.",
@@ -145,7 +145,7 @@
             "Le matin, on peut la voir redescendre vers Saint-Chaffrey avant que la brise de Durance n'entre.",
             "En été, en fin de journée, quand la brise de Durance faiblit, celle de la Romanche peut reprendre brusquement le dessus, surtout par tendance de nord-ouest."
           ],
-          "note": "Vitesses en km/h, interprétées depuis « puissante ». Une école ne propose ses biplaces à La Grave que le matin."
+          "note": "Vitesse estimée depuis le mot « puissante » : aucune source ne la mesure. Une école ne propose ses biplaces à La Grave que le matin."
         },
         {
           "id": "veneon-brise-venosc",
@@ -198,7 +198,7 @@
           "hours": "forte l'après-midi ; conditions calmes le matin jusqu'à 12h-13h ; se poser le matin jusqu'à 13h ou le soir après 19h",
           "speed_kmh": {
             "typical": 25,
-            "max": 40
+            "max": null
           },
           "season": "printemps-été",
           "description": "Au Vénéon, la brise monte de Rochetaillée, passe la plaine de Bourg-d'Oisans et file vers Venosc puis La Bérarde. Jusqu'à 12h, c'est calme. L'après-midi, le terrain encaissé de Venosc prend de fortes brises thermiques, avec turbulences et fort gradient, et le venturi les renforce. Posez-vous le matin jusqu'à 13h, ou le soir après 19h.",
@@ -213,7 +213,7 @@
           "possible": [
             "Par effet venturi, le vent peut rester un peu fort à l'atterrissage de Venosc."
           ],
-          "note": "Vitesses en km/h, interprétées depuis « fort ». Les deux flèches de la carte, l'une jusqu'à Venosc et l'autre sur le haut Vénéon, sont reliées ici par un segment droit."
+          "note": "Vitesse estimée depuis le mot « fort » : aucune source ne la mesure. Les deux flèches de la carte, l'une jusqu'à Venosc et l'autre sur le haut Vénéon, sont reliées ici par un segment droit."
         },
         {
           "id": "huez-brise-de-pente",
@@ -335,7 +335,7 @@
           "hours": "forte dès la fin de matinée à Oz ; au Collet de Vaujany l'après-midi le vent excède rarement 15 km/h",
           "speed_kmh": {
             "typical": 15,
-            "max": 25
+            "max": null
           },
           "season": "été",
           "description": "Au col du Sabot, la brise de vallée n'est jamais très forte. À l'atterrissage du Collet, le vent dépasse rarement 15 km/h l'après-midi. Plus bas, à Oz, la brise de l'Eau d'Olle est forte dès la fin de matinée.",
@@ -348,7 +348,7 @@
             "Pour vous poser à Oz, restez au-dessus du lac d'Allemond et vers Allemont plutôt que de perdre trop d'altitude en amont.",
             "Au coucher du soleil, surveillez la manche à air du Collet : la brise peut devenir descendante."
           ],
-          "note": "Sens montant déduit de l'axe de la vallée : le Collet est en pente, tandis qu'Oz est en fond de vallée."
+          "note": "Vitesse estimée : 15 km/h est le plafond habituel cité à l'atterrissage du Collet, aucune source ne mesure le couloir. Sens montant déduit de l'axe de la vallée : le Collet est en pente, tandis qu'Oz est en fond de vallée."
         },
         {
           "id": "vaujany-brise-de-pente",
@@ -376,8 +376,8 @@
           ],
           "hours": "après-midi (décollage vers 16h pour le soaring)",
           "speed_kmh": {
-            "typical": 15,
-            "max": 20
+            "typical": null,
+            "max": null
           },
           "season": "été",
           "description": "Le col du Sabot vit de la brise de pente. Depuis son décollage herbeux, plein sud à sud-ouest, on va chercher les ascendances dynamiques sur le relief à gauche et l'on remonte la crête jusqu'à 2700 m environ. Si un nord trop fort entre par le col, on ne vole pas.",
@@ -412,7 +412,7 @@
               ]
             ]
           },
-          "when": "Après-midi d'été ; position mobile entre le Lautaret et Briançon selon le vent météo ; reprise brusque de la Romanche en fin de journée par vent de NO",
+          "when": "Durant la journée ; position mobile entre le Lautaret et Briançon selon le vent météo ; reprise brusque de la Romanche en fin de journée par vent de NO",
           "mechanism": "Durant la journée, la brise de la Romanche, qui monte vers le Lautaret, et la brise de Durance, qui remonte la Guisane, se renforcent et créent régulièrement une confluence puissante. Selon le vent météo, elle se place entre le Lautaret et Briançon.",
           "usage": "Ne vous posez pas dedans : si la manche à air change de sens, allez vous poser ailleurs, dans l'une ou l'autre brise, pas entre les deux.",
           "confidence": "medium",
@@ -473,7 +473,7 @@
           "lon": 6.3033,
           "lat": 45.0459,
           "radius_km": 1.5,
-          "conditions": "Dès 12h en été.",
+          "conditions": "Dès 12h.",
           "description": "À La Grave, la brise de vallée commence à être forte à partir de 12h, et l'atterrissage, déjà très difficile, devient délicat. Détruisez l'altitude vers les Fréaux, approchez par la gauche et ne passez pas au-dessus de l'église : les turbulences y sont sévères. Surveillez les lignes et les câbles du téléphérique. Le pré est à l'entrée du village, derrière « Les balcons de la Meije », avec un grand talus en amont.",
           "sources": [
             "S1",
@@ -653,7 +653,6 @@
           "lon": 6.0533,
           "lat": 45.0774,
           "alt_m": 1394,
-          "best_hours": "13h-14h (été)",
           "trigger": "Village d'Huez (toits, clocher) et schistes qui descendent du Bras ; sur le cheminement de l'Éclose",
           "description": "Depuis l'Éclose, le premier repère du vol est le clocher d'Huez : visez-le tout droit, les ascendances se forment au-dessus des toits. Passé le clocher, tirez à droite pour raccrocher les schistes qui descendent du Bras.",
           "sources": [
@@ -726,7 +725,6 @@
           "lon": 6.047,
           "lat": 45.0882,
           "coord_quality": "source",
-          "best_hours": "13h-14h (été) ; l'après-midi",
           "trigger": "Schistes et pentes sèches qui descendent du Bras, au-dessus de la combe du Bras, exposés au sud-ouest",
           "description": "Après le clocher d'Huez, tirez à droite pour raccrocher les schistes qui descendent du Bras. C'est la relance du parcours de l'Éclose avant de descendre sur Bourg-d'Oisans.",
           "confidence": "medium",
@@ -746,7 +744,7 @@
           "lat": 45.1014,
           "alt_m": 2104,
           "coord_quality": "source",
-          "best_hours": "12h-14h (mars-avril) ; thermique possible dès février",
+          "best_hours": "12h-14h (décollages relevés, toutes saisons) ; surtout de février à avril",
           "trigger": "Versants du Signal et de la station au-dessus du rond-point des pistes, au soleil, avec neige résiduelle en contraste",
           "description": "Le Signal se vole surtout de février à avril, mars en tête. Les décollages relevés se concentrent de 12h à 14h, toutes saisons confondues. En été, le vent y est faible et les brises de pente l'alimentent.",
           "confidence": "medium",
@@ -789,8 +787,8 @@
           "lon": 6.1032,
           "lat": 45.1197,
           "coord_quality": "source",
-          "best_hours": "fin de matinée puis après-midi (« souvent meilleur en fin d'aprem »)",
-          "trigger": "Faces sud et ouest sous l'arrivée du 2e tronçon, cailloux et gros rochers qui chauffent",
+          "best_hours": "fin de matinée (côté ouest) ; soaring l'après-midi",
+          "trigger": "Faces sud et ouest sous l'arrivée du 2e tronçon",
           "description": "Le décollage du 2e tronçon regarde au sud et à l'ouest. Plutôt balistique le matin, le vol y devient du soaring l'après-midi. De là partent deux parcours : vers Poutran, le Bras et Bourg-d'Oisans, ou à droite vers Vaujany et le Collet.",
           "confidence": "medium",
           "sources": [
@@ -830,8 +828,8 @@
           "lon": 6.0585,
           "lat": 45.1655,
           "coord_quality": "approx",
-          "best_hours": "à partir de 16h (été)",
-          "trigger": "Pente sud-est sous les palissades et filets paravalanche, sous le câble de la cheminée d'équilibre EDF",
+          "best_hours": "à partir de 16h",
+          "trigger": "Relief du décollage n° 2 : cône herbeux près d'un pylône porteur d'un câble, 200 à 300 m au-dessus de la clairière des palissades",
           "description": "Depuis le décollage n° 2, 200 à 300 m au-dessus de la clairière des palissades, un départ vers 16h donne l'impression de monter en ascenseur. Faites le plein près du décollage, puis longez le relief vers la gauche, en direction du Rissiou. Ce vol d'après-midi est réservé aux pilotes confirmés. Par fort vent de nord, n'y allez pas.",
           "confidence": "medium",
           "sources": [
@@ -943,7 +941,7 @@
           "lat": 45.0181,
           "coord_quality": "source",
           "best_hours": "non précisé (vol de journée, décollage de La Grave à 3200 m)",
-          "trigger": "Arête de la Meijette, sud-ouest de la Meije, atteinte en passant au large des Enfetchores",
+          "trigger": "Arête de la Meijette, au nord de la Meije, atteinte en passant au large des Enfetchores",
           "description": "Sur l'arête de la Meijette, au nord de la Meije, côté La Grave, un thermique peut monter vers le sommet.",
           "confidence": "medium",
           "sources": [
@@ -1055,7 +1053,7 @@
         },
         {
           "id": "lautaret-plafond-4050",
-          "name": "Au-dessus du col du Lautaret : plafond à 4050 m",
+          "name": "Au-dessus du col du Lautaret",
           "lon": 6.4051,
           "lat": 45.0354,
           "coord_quality": "source",
@@ -1160,7 +1158,6 @@
           "trigger": "pente de 37° exposée ouest, 1,1 km au sud-ouest du hameau de Sardonne (Oz), sur le versant qui descend de l'arête Huez – Oz vers la plaine de la Romanche",
           "description": "Sur le versant ouest de l'arête entre l'Alpe d'Huez et Oz, à 1040 m, au-dessus de la plaine de la Romanche, les traces GPS montrent un point chaud actif à toute heure.",
           "sources": [
-            "S1",
             "S139",
             "S144"
           ],
@@ -1199,7 +1196,6 @@
           "trigger": "replat exposé au sud (21°) au pied du Rocher de Saperan (sommet IGN, 2475 m, à 90 m), 270 m au sud du Pic de Mirebel",
           "description": "Sur le replat exposé au sud, au pied du Rocher de Saperan, sur la crête sud de Belledonne, au-dessus de Livet-et-Gavet, les traces GPS montrent un point chaud actif le matin et encore à midi, mais pas en fin de journée.",
           "sources": [
-            "S1",
             "S139",
             "S144"
           ],
@@ -1217,7 +1213,6 @@
           "trigger": "pente de 33° exposée sud-est/est, 500 m au sud-est du Petit Van (sommet IGN, 2439 m) et 760 m du Grand Van, sur la crête sud de Belledonne",
           "description": "Sur la crête sud de Belledonne, à 2,2 km à l'est de la Croix de Chamrousse, les traces GPS montrent un point chaud actif le matin et à midi, plus en fin de journée.",
           "sources": [
-            "S1",
             "S139",
             "S144"
           ],
@@ -1235,7 +1230,6 @@
           "trigger": "pente de 32° exposée sud-est sous le Dôme de la Lauze (3568 m, à 450 m) et le col de la Lauze (490 m), à 1 km à l'ouest de la Pointe Thorant",
           "description": "Au pied sud-est du Dôme de la Lauze, à 3326 m, les traces GPS montrent un point chaud actif à midi et en fin de journée, pas le matin. Il est dans le Parc national des Écrins, où la réglementation du survol s'applique.",
           "sources": [
-            "S1",
             "S139",
             "S144"
           ],
@@ -1256,7 +1250,6 @@
           "trigger": "pente de 37° exposée sud, 90 m sous le sommet sud-est de la Roche d'Alvau (3628 m), entre la brèche supérieure d'Alvau et la brèche d'Alvau",
           "description": "Sur la pente sud du sommet sud-est de la Roche d'Alvau, à 3528 m, 90 m sous le sommet, les traces GPS montrent un point chaud actif toute la journée, en été et en automne. Il est dans le cœur du Parc national des Écrins, où le survol est réglementé.",
           "sources": [
-            "S1",
             "S139",
             "S144"
           ],
@@ -1962,7 +1955,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 11.4,
           "description": "C'est le grand vol de dénivelé de l'Alpe d'Huez : du Pic Blanc à Bourg-d'Oisans, environ 2600 m plus bas. Virez à droite après le décollage, gagnez le col à gauche de la gare et longez l'arête de l'Herpie sur le fil. Si vous y trouvez des ascendances, partez vers le Signal de l'Homme puis Bourg. On se pose au Vert : passé 13h, méfiez-vous de la brise de vallée.",
           "sources": [
             "S1",
@@ -1970,8 +1962,7 @@
           ],
           "possible": [
             "Si l'arête ne donne rien, dégagez à droite : posez-vous à la station ou, si vous êtes encore assez haut, traversez le plateau vers l'Eau d'Olle et le Collet de Vaujany."
-          ],
-          "note": "Distance à vol d'oiseau."
+          ]
         },
         {
           "id": "verti-oisans-rando-vol",
@@ -2008,7 +1999,6 @@
               "coord_quality": "approx"
             }
           ],
-          "distance_km": 14.7,
           "description": "Trois vols de pente en rando-vol, en conditions d'hiver : départ à pied de La Paute, vol d'Oulles, puis de la cabane des Chalances, puis de la Grande Sure de l'Alpe d'Huez, et retour au point de départ.",
           "sources": [
             "S21"
@@ -2017,11 +2007,11 @@
             "Le deuxième vol s'est posé dans un vaste champ entre Rochetaillée et Allemont.",
             "La boucle a pris dix heures, avec trois marches de 971, 1109 et 1372 m de dénivelé."
           ],
-          "note": "Les coordonnées des points intermédiaires sont estimées, la source n'en donnant aucune ; distance à vol d'oiseau."
+          "note": "Les coordonnées des points intermédiaires sont estimées, la source n'en donnant aucune."
         },
         {
           "id": "deux-alpes-vers-meije-face-sud",
-          "name": "Deux Alpes → crête de la Coche / Muzelle → face sud de la Meije (vol de montagne)",
+          "name": "Deux Alpes → face sud de la Meije (vol de montagne)",
           "waypoints": [
             {
               "name": "Les Deux Alpes – Perrons",
@@ -2036,7 +2026,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 14.3,
           "description": "Vol de très haute montagne dans le cœur du Parc national des Écrins, où le survol sous 1000 m du sol est réglementé du 1er novembre au 30 juin.",
           "sources": [
             "S49",
@@ -2047,7 +2036,7 @@
             "Un autre vol est passé au-dessus des Deux Alpes pour rejoindre la Meije.",
             "Par léger nord, on peut décoller de La Grave à 3200 m, passer au large des Enfetchores et rejoindre la Meijette, en se méfiant de la Lombarde. L'après-midi, posez-vous plutôt à Villar-d'Arêne."
           ],
-          "note": "Itinéraire réel non documenté : la trace de référence n'a pas pu être lue, car le site la protège. Distance à vol d'oiseau entre le décollage et le sommet."
+          "note": "Itinéraire réel non documenté : la trace de référence n'a pas pu être lue, car le site la protège."
         },
         {
           "id": "alpe-huez-2700-poutran-bras-bourg",
@@ -2084,7 +2073,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 12.3,
           "description": "Depuis le 2e tronçon, à 2700 m, partez vers Poutran et suivez l'arête pour essayer de remonter vers le Bras, au-dessus de Villard-Reculas, puis débouchez sur Bourg-d'Oisans. On se pose au Vert ou aux Essoulieux.",
           "sources": [
             "S1",
@@ -2094,7 +2082,7 @@
             "Aux Essoulieux, quand la brise de vallée est trop forte, les grands arbres créent des turbulences.",
             "Autre option : tourner à droite après le décollage, en collant le relief, vers Vaujany et le Collet. Attention aux câbles du téléphérique et aux catex."
           ],
-          "note": "Distance à vol d'oiseau ; ordre des points tel que le décrit une autre référence ; positions de Poutran, du Bras et de Villard-Reculas : IGN."
+          "note": "Ordre des points tel que le décrit une autre référence ; positions de Poutran, du Bras et de Villard-Reculas : IGN."
         },
         {
           "id": "eclose-huez-bras-vert",
@@ -2125,7 +2113,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 7.5,
           "description": "Depuis l'Éclose, filez tout droit vers le clocher d'Huez : les ascendances sont au-dessus des toits. Passé le clocher, tirez à droite pour raccrocher les schistes qui descendent du Bras. On se pose au Vert, ou aux Essoulieux si l'on est trop bas. Le vol est assez technique, et les atterrissages en chemin sont plus que réduits.",
           "sources": [
             "S1",
@@ -2158,7 +2145,6 @@
               "coord_quality": "approx"
             }
           ],
-          "distance_km": 10.0,
           "description": "Depuis le Sabot, vers 16h, allez chercher les ascendances dynamiques à gauche du décollage et remontez la crête jusqu'à 2700 m environ. Vous pouvez alors tenter de gagner l'Alpe d'Huez. À défaut, faites une belle balade jusqu'au-dessus de la cascade de Vaujany. On se pose devant les tennis du Collet, où le vent dépasse rarement 15 km/h.",
           "sources": [
             "S1",
@@ -2235,7 +2221,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 30.7,
           "description": "Vol de très haute montagne entre le Diable, la Meije et La Bérarde, dans le cœur du Parc national des Écrins : la réglementation du survol s'applique, et l'aérologie peut être très forte par endroits.",
           "sources": [
             "S103",
@@ -2246,7 +2231,7 @@
             "Il a fait le plafond à la Grande Ruine, puis il est rentré par le toboggan de Pié Bérarde, un peu contré par la brise du Vénéon.",
             "Il s'est posé dans un pré de 50 m de diamètre, à la confluence du Vénéon et de la Lavey : un mauvais choix."
           ],
-          "note": "Journée de grand beau, sans vent, stable en basse couche et faiblement instable en altitude (isotherme 0 °C à 4800 m). Les points de passage sont ceux que nomme la source (positions IGN), l'ordre exact pouvant différer ; distance à vol d'oiseau."
+          "note": "Journée de grand beau, sans vent, stable en basse couche et faiblement instable en altitude (isotherme 0 °C à 4800 m). Les points de passage sont ceux que nomme la source (positions IGN), l'ordre exact pouvant différer."
         },
         {
           "id": "rochail-grand-galbert-gavet",
@@ -2277,7 +2262,6 @@
               "coord_quality": "approx"
             }
           ],
-          "distance_km": 18.0,
           "description": "Parti du glacier du Rochail, ce cross passe par le Pic du col d'Ornon et les faces est du Grand Armet au Grand Galbert, puis le Taillefer et Belledonne, jusqu'à la hauteur de Livet. Il a été improvisé, sans préparation.",
           "sources": [
             "S104"
@@ -2286,7 +2270,7 @@
             "Face à un voile d'ouest, il a fallu faire demi-tour au-dessus de la Romanche et se poser au grand plat, au sud de Gavet, avec une brise de 10 km/h.",
             "Quand les conditions sont là, improviser un cross en équipement léger est tout à fait possible."
           ],
-          "note": "Positions IGN ; le posé se situe approximativement au village de Gavet ; distance à vol d'oiseau."
+          "note": "Positions IGN ; le posé se situe approximativement au village de Gavet."
         },
         {
           "id": "deux-alpes-coche-muzelle-venosc",
@@ -2311,7 +2295,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 6.9,
           "description": "La promenade classique des Deux Alpes : après le plein au-dessus des Perrons, partez vers la Coche et faites du soaring le long de l'arête en direction de la Muzelle. Ce vol est réservé aux pilotes chevronnés.",
           "sources": [
             "S1",
@@ -2412,7 +2395,7 @@
           "hours": "dès ≈11h (dès 11h00 à partir de mars à Saint-Jean) ; à La Chambre « ne pas voler après 12h d'avril à octobre » ; jusqu'en fin d'après-midi ; vol tardif de fin d'après-midi possible ; récit de Haute-Maurienne : thermique dès 10h, puis brise de vallée installée vers 11h-11h30, parfois plus tard selon les jours et les lieux",
           "speed_kmh": {
             "typical": 25,
-            "max": 55
+            "max": 50
           },
           "season": "mars-octobre (plus forte avril-août)",
           "layer_depth_m": "non documenté pour la Maurienne (ordre de grandeur général 200-500 m ou plus [rto])",
@@ -2437,7 +2420,7 @@
             "Certains la jugent ingérable, en Maurienne comme en Tarentaise.",
             "Un jour de brouillard, une brise de 20 à 30 km/h a quand même soufflé en fond de vallée."
           ],
-          "note": "Vitesse typique ramenée à 25 km/h sur le couloir ; les valeurs plus fortes sont des pointes locales, par exemple à l'atterrissage de Saint-Jean l'après-midi. Le sens montant vient de la carte : une flèche remonte de la Combe de Savoie vers La Chambre, une autre de Saint-Jean vers Modane, Aussois et Lanslebourg. Des observations de cross à l'entrée de la vallée montrent que la brise pousse vers l'amont, en direction de Chamoux et d'Aiguebelle."
+          "note": "Vitesse typique de 25 km/h estimée, sans mesure sur le couloir ; le maximum de 50 km/h vient de la fiche de Saint-Jean, l'après-midi (« plus de 50 km/h »). Le sens montant vient de la carte : une flèche remonte de la Combe de Savoie vers La Chambre, une autre de Saint-Jean vers Modane, Aussois et Lanslebourg. Des observations de cross à l'entrée de la vallée montrent que la brise pousse vers l'amont, en direction de Chamoux et d'Aiguebelle."
         },
         {
           "id": "brise-villards-glandon",
@@ -2469,10 +2452,10 @@
               "coord_quality": "source"
             }
           ],
-          "hours": "l'après-midi : brise de nord au col du Glandon qui souffle jusqu'à ≈17h (récit du 7 octobre 2022) ; heures non documentées plus bas dans la vallée",
+          "hours": "après-midi (au col du Glandon, un jour d'octobre 2022) ; heures non documentées plus bas dans la vallée",
           "speed_kmh": {
-            "typical": 15,
-            "max": 25
+            "typical": null,
+            "max": null
           },
           "season": "été",
           "description": "Pour échapper à la forte brise de vallée, volez en altitude vers les cols du Glandon et de la Croix de Fer. Le col se vole côté nord par brise et nord faible, et côté sud par vent de sud faible.",
@@ -2490,7 +2473,7 @@
             "Avec un nord prévu à 15-20 km/h à 2000 m, un vol a duré plus d'une heure en face nord et gagné près de 600 m.",
             "En fin d'après-midi, on peut aussi faire de petits vols en face sud."
           ],
-          "note": "Le sens montant est déduit : l'air monte depuis la Maurienne. Le tracé et les vitesses dans le vallon des Villards ne sont décrits par aucune source ; ils restent déduits du relief."
+          "note": "Le sens montant est déduit : l'air monte depuis la Maurienne. Le tracé dans le vallon des Villards n'est décrit par aucune source ; il reste déduit du relief."
         },
         {
           "id": "montgellafrey-brise-de-pente-matin",
@@ -2512,8 +2495,8 @@
           ],
           "hours": "matin (« brise de pente le matin, léger sud ») ; la brise de vallée s'installe vers 11h l'été (décollage alors sous le vent)",
           "speed_kmh": {
-            "typical": 8,
-            "max": 15
+            "typical": null,
+            "max": null
           },
           "season": "été",
           "description": "Au Mollaret, le matin, la brise de pente monte avec un léger vent de sud. En été, vers 11h, la brise de la Maurienne s'installe et met le décollage sous le vent. Ne volez pas par vent météo modéré à fort, ni par foehn de sud-ouest.",
@@ -2572,8 +2555,8 @@
           ],
           "hours": "21h-9h (nuit et début de matinée, déduction) ; avant l'inversion de la brise vers 11h",
           "speed_kmh": {
-            "typical": 5,
-            "max": 10
+            "typical": null,
+            "max": null
           },
           "season": "printemps-automne (déduction)",
           "description": "Le matin, la vallée est calme et propice au vol, avant que la brise montante s'installe vers 11h-11h30. Aucune source ne décrit de brise descendante nocturne : ne fondez aucune décision de vol dessus.",
@@ -2588,7 +2571,7 @@
           "possible": [
             "En Haute-Maurienne, le thermique arrive dès 10h, avant la brise vers 11h-11h30."
           ],
-          "note": "Déduction du relief : l'air refroidi de la nuit s'écoulerait vers l'aval et la Combe de Savoie, jusqu'à l'inversion de la brise, avec une intensité faible (5 km/h en typique, 10 km/h au maximum)."
+          "note": "Déduction du relief : l'air refroidi de la nuit s'écoulerait vers l'aval et la Combe de Savoie, jusqu'à l'inversion de la brise, avec une intensité faible. Les horaires sont une estimation, gardée parce que le modèle en a besoin pour une brise nocturne."
         },
         {
           "id": "brise-vallon-saint-francois-longchamp",
@@ -2616,8 +2599,8 @@
           ],
           "hours": "après-midi d'été (déduction) ; le matin les décollages sont pris avant la brise (fiches)",
           "speed_kmh": {
-            "typical": 10,
-            "max": 20
+            "typical": null,
+            "max": null
           },
           "season": "été",
           "confidence": "low",
@@ -2784,7 +2767,7 @@
           "lat": 45.2467,
           "coord_quality": "approx",
           "radius_km": 0.8,
-          "conditions": "Vent météo de secteur sud à ouest ; décollage d'été de La Toussuire.",
+          "conditions": "Décollage d'été de La Toussuire.",
           "description": "À la Grande Verdette, ne vous mettez pas sous le vent de la pointe de Comborcière. Par vent de sud léger, le vol reste possible, en décollant dans l'alpage face à l'Ouillon.",
           "sources": [
             "S136",
@@ -2832,12 +2815,12 @@
         },
         {
           "id": "montgellafrey-crete-depart-cross",
-          "name": "Montgellafrey : crêtes de Belledonne au-dessus du décollage (départ de cross)",
+          "name": "Montgellafrey : crête au-dessus du décollage (départ de cross)",
           "lon": 6.3164,
           "lat": 45.4081,
           "coord_quality": "approx",
           "best_hours": "à partir de 10h (pic des décollages Syride), avant la brise de La Chambre",
-          "trigger": "Crête et pentes est-sud-est de Belledonne au-dessus de la Grande Léchère / du Mollaret",
+          "trigger": "Crête et pentes est-sud-est au-dessus de la Grande Léchère / du Mollaret",
           "description": "La crête au-dessus du décollage de Montgellafrey, vers la Grande Léchère, déclenche sans doute les départs de cross. Aucune source ne décrit le lieu précis du premier thermique.",
           "confidence": "low",
           "sources": [
@@ -3800,7 +3783,7 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 84.4,
+          "distance_km": 100,
           "description": "Parti de l'alpage à 150 m au sud du sommet de La Botte, ce cross remonte à 2700 m, puis prend un plafond de 3300 à 3400 m dans les faces est de Belledonne, d'arête en arête jusqu'au bout de la chaîne. Il traverse ensuite la Maurienne vers la face ouest de la Lauzière, puis plane vers Albertville.",
           "sources": [
             "S110"
@@ -3853,7 +3836,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 77.3,
           "description": "Extrait d'un vol du col de Bleine à Passy. Après le Taillefer et Chamrousse, il longe les faces est de Belledonne à plus de 3400 m au-dessus du lac de Grand-Maison, le vent de sud le décalant au-dessus des nuages du versant ouest. Il traverse la Maurienne, passe le Grand Arc et L'Ébaudiaz, puis arrive à Albertville.",
           "sources": [
             "S123"
@@ -3906,7 +3888,6 @@
               "coord_quality": "approx"
             }
           ],
-          "distance_km": 42.7,
           "description": "Extrait d'un vol de Belledonne sud vers Moûtiers : après le Granier et le Saint-Genis, il longe la crête puis quitte Belledonne à la pointe du Rogné pour traverser la Maurienne. Il remonte en dynamique et en thermique, se retrouve trop bas sous des plafonds qui descendent, puis se pose vers Moûtiers.",
           "sources": [
             "S124"
@@ -4002,7 +3983,7 @@
           "hours": "dès 11h-12h en été (« à partir de 11h00, plus tôt si vent météo de N ») ; un début de brise montante en fin de matinée est utilisé pour remonter la vallée ; en octobre elle peut arriver plus tard, la Lombarde dominant le matin",
           "speed_kmh": {
             "typical": 25,
-            "max": 45
+            "max": null
           },
           "season": "mai-octobre (moins gênante fin septembre)",
           "description": "Dans la vallée de l'Arc, la brise montante est forte dès 11h en été, et plus tôt par vent de nord. À Aussois, ne décollez pas l'après-midi en été : c'est très turbulent. Au stade de Modane, elle est forte à très forte de mai à octobre, dès 11h-12h. Les vents d'ouest à nord s'ajoutent à cette brise. La carte des brises la flèche de Saint-Jean à Modane, Aussois, Termignon et Lanslebourg.",
@@ -4024,7 +4005,7 @@
             "Bonneval forme un verrou en fond de vallée. Un début de brise montante, en fin de matinée, permet de remonter la vallée.",
             "En octobre, la brise peut arriver plus tard, la Lombarde dominant le matin."
           ],
-          "note": "Vitesses en km/h, interprétées depuis « forte à très forte ». Vitesse typique ramenée à 25 km/h sur le couloir ; les valeurs plus fortes sont des pointes locales, par exemple à l'atterrissage de Saint-Jean l'après-midi. Le prolongement vers Lanslevillard, Bessans et Bonneval repose sur les fiches de Val Cenis et sur le fil de cross (route Aussois → Bonneval). La flèche s'arrête au pied du Mont-Cenis. À Lanslevillard et à l'Arcelle, la brise est forte dès 11h ; à L'Estive, elle peut être très forte à partir de 11h-12h."
+          "note": "Vitesse de 25 km/h estimée depuis les mots « forte à très forte » : aucune source ne la mesure. Le prolongement vers Lanslevillard, Bessans et Bonneval repose sur les fiches de Val Cenis et sur le fil de cross (route Aussois → Bonneval). La flèche s'arrête au pied du Mont-Cenis. À Lanslevillard et à l'Arcelle, la brise est forte dès 11h ; à L'Estive, elle peut être très forte à partir de 11h-12h."
         },
         {
           "id": "aussois-brise-de-pente",
@@ -4052,8 +4033,8 @@
           ],
           "hours": "matinée et fin de matinée ; thermique à partir de 11h00",
           "speed_kmh": {
-            "typical": 10,
-            "max": 20
+            "typical": null,
+            "max": null
           },
           "season": "printemps-automne",
           "description": "Les décollages d'Aussois marchent par régime de brise, ou par vent météo variable à faible. Le matin et en fin de matinée, ce sont les brises de pente. Le thermique arrive à partir de 11h. Par vent de nord-ouest à nord-est, l'Angle Bellecôte est sous le vent.",
@@ -4172,7 +4153,7 @@
           "lat": 45.215,
           "radius_km": 4,
           "coord_quality": "approx",
-          "conditions": "Été dès 11h (plus tôt par vent de N à O) ; accélération dans le goulet de Modane-Fourneaux.",
+          "conditions": "Été dès 11h (plus tôt par vent de N à O) ; accélération dans le goulet qui monte de Modane.",
           "description": "À Aussois, l'après-midi d'été est très turbulent, et la brise de vallée est régulièrement très forte : consultez la balise de l'atterrissage. Elle accélère dans le goulet qui monte de Modane, là où la vallée se rétrécit.",
           "sources": [
             "S80",
@@ -4189,7 +4170,7 @@
           "lat": 45.27,
           "radius_km": 10,
           "coord_quality": "approx",
-          "conditions": "Dégradation météo, flux de S à SE ; fiches : vent de sud > 10 km/h à Valfréjus, « par vent de S fort effet de foehn » à Aussois.",
+          "conditions": "Dégradation météo, flux de S à SE ; « par vent de S fort effet de foehn » à Aussois.",
           "description": "Dès que la météo se dégrade, le foehn rentre à fond en fond de vallée, depuis l'Italie : ne volez pas et ne vous posez pas en vallée. À Aussois, il est à craindre par vent de sud fort. À Valfréjus, méfiez-vous du vent de sud au-delà de 10 km/h.",
           "sources": [
             "S4",
@@ -4371,7 +4352,6 @@
           "lon": 6.8406,
           "lat": 45.2986,
           "coord_quality": "source",
-          "best_hours": "toute l'année ; d'avril à octobre en vol de cross (trace de 144 km le 17 avril 2026)",
           "trigger": "Falaises de la Turra, exposées au soleil, que fréquentent vautours et gypaètes en toutes saisons",
           "description": "Les falaises de la Turra, au soleil, donnent un courant d'air chaud ascendant réputé, qui fait la joie des vautours et des gypaètes en toutes saisons. Sous 1000 m du sol, ce secteur de la Vanoise n'est ouvert que du 16 mai au 31 octobre.",
           "confidence": "medium",
@@ -4392,7 +4372,7 @@
           "lat": 45.2638,
           "coord_quality": "source",
           "best_hours": "début d'après-midi (octobre)",
-          "trigger": "Village de Sollières-Sardières et pentes de rive gauche de l'Arc, au pied de la Dent Parrachée",
+          "trigger": "Village de Sollières-Sardières et pentes de rive droite de l'Arc, au pied de la Dent Parrachée",
           "description": "Au-dessus de Sollières-Sardières, en rive droite de l'Arc, au pied de la Dent Parrachée, on peut retrouver de l'ascendance en revenant de Termignon vers Aussois. Le retour vers l'amont ou vers Aussois reste difficile contre la brise montante.",
           "confidence": "medium",
           "sources": [
@@ -4407,13 +4387,12 @@
         },
         {
           "id": "arcelle-val-cenis-relance",
-          "name": "Arcelle / crêtes de Val Cenis : relance sur la route Aussois → Bonneval",
+          "name": "Arcelle / crêtes de Val Cenis : repère sur la route Aussois → Bonneval",
           "lon": 6.9366,
           "lat": 45.2734,
           "alt_m": 2302,
           "coord_quality": "source",
           "best_hours": "après-midi ; fins de journée (restitution) à l'Arcelle",
-          "trigger": "Crêtes et pentes de l'Arcelle, exposées au sud, au-dessus de Lanslevillard",
           "description": "Le parcours classique remonte la vallée avec la brise montante, d'Aussois vers Termignon, Val Cenis et Bonneval, où le verrou impose normalement de se poser. L'Arcelle domine Lanslevillard sur ce trajet, mais aucune source n'y décrit de thermique.",
           "confidence": "low",
           "sources": [
@@ -4426,7 +4405,7 @@
             "En été, au milieu de l'après-midi, l'aérologie de Val Cenis serait forte, surtout au-dessus de la couche stable, avec une brise toujours établie en bas.",
             "En fin de journée, on peut faire du soaring à l'Arcelle, dans la restitution."
           ],
-          "note": "Décollage de l'Arcelle à 2302 m (fiche de terrain 14178) ; aucune source ne décrit de thermique précis ici. Déduction : le déclencheur se trouve à l'Arcelle, pour le cheminement vers Bonneval."
+          "note": "Décollage de l'Arcelle à 2302 m (fiche de terrain 14178) ; aucune source ne décrit de thermique précis ici."
         },
         {
           "id": "druges-grande-feiche-dernier-relief",
@@ -5067,7 +5046,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 28.9,
           "description": "Le cross classique remonte la vallée avec le début de la brise montante, d'Aussois vers Termignon et Val Cenis, en direction de Bonneval. Le retour est très difficile, contré par la brise, et le verrou de Bonneval impose normalement de se poser.",
           "sources": [
             "S4",
@@ -5080,7 +5058,7 @@
             "Sur un vol d'octobre, à partir de 2350 m à la pointe de Bellecôte ou à la Turra, le glissé a mené au-dessus de Termignon le long de la Dent Parrachée, avec du +4 au-dessus de Sollières au retour.",
             "Lors d'une compétition, des ailes se sont posées vers Lanslebourg faute de portance. L'une est repartie du col de Sollières, par vent de nord, et a fini sous le plateau, à Bramans."
           ],
-          "note": "Distance à vol d'oiseau. Glissé jusqu'au-dessus de Termignon : 2800 m au maximum en octobre. Contrainte : arrêté de survol de la Vanoise (secteurs définis)."
+          "note": "Glissé jusqu'au-dessus de Termignon : 2800 m au maximum en octobre. Contrainte : arrêté de survol de la Vanoise (secteurs définis)."
         },
         {
           "id": "aussois-vers-albertville",
@@ -5117,7 +5095,6 @@
               "coord_quality": "approx"
             }
           ],
-          "distance_km": 79.8,
           "description": "Cross rare, vers l'aval : il faut une brise montante faible et aucun vent météo. Partez le plus tôt possible et suivez plus ou moins la vallée, puis coupez directement sur Albertville.",
           "sources": [
             "S4",
@@ -5151,7 +5128,7 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 17.9,
+          "distance_km": 23,
           "description": "Parcours d'une compétition amicale de marche et vol : on part du col du Barbier vers l'ouest, on rejoint le col d'Arplane, puis on revient par la Norma. La première balise semble accessible, la seconde demande de gagner beaucoup d'altitude.",
           "sources": [
             "S109",
@@ -5237,7 +5214,7 @@
           "hours": "journée d'été ; heures non documentées (vent « souvent fort » au déco de Plan Lachat)",
           "speed_kmh": {
             "typical": 20,
-            "max": 30
+            "max": null
           },
           "season": "été",
           "description": "À Plan Lachat, la brise monte de Valloire vers le Galibier. L'idéal est un peu de brise et du nord. Le vent y est souvent fort au décollage, pour pilotes avertis : restez au vent de la brise et méfiez-vous du venturi. Le site est favorable au nord, au nord-est et au nord-ouest, défavorable de l'est à l'ouest par le sud.",
@@ -5253,7 +5230,7 @@
             "Tout au bout du vallon de Valloire, avant que la route tourne à droite vers le Galibier, une petite bosse permet de faire du soaring.",
             "Plan Lachat se vole par régime de brise et par vent météo faible."
           ],
-          "note": "Les vitesses sont estimées : aucune source ne chiffre cette brise. Le tracé de la carte, de Saint-Michel-de-Maurienne à Plan Lachat par Valloire, est annoté « à vérifier » par son auteur."
+          "note": "La vitesse est estimée depuis « souvent fort » : aucune source ne chiffre cette brise. Le tracé de la carte, de Saint-Michel-de-Maurienne à Plan Lachat par Valloire, est annoté « à vérifier » par son auteur."
         },
         {
           "id": "brise-arvan",
@@ -5287,8 +5264,8 @@
           ],
           "hours": "journée d'été ; non documenté",
           "speed_kmh": {
-            "typical": 15,
-            "max": 25
+            "typical": null,
+            "max": null
           },
           "season": "été",
           "description": "La vallée de l'Arvan a une brise, dont aucune source ne donne l'heure ni la force. À l'atterrissage de Saint-Sorlin-d'Arves, méfiez-vous du vent de nord et du vent de sud quand ils prennent le dessus sur elle.",
@@ -5300,7 +5277,7 @@
           "possible": [
             "Le décollage de La Balme se prend sans vent, ou avec un léger nord-est ou est."
           ],
-          "note": "Vitesses estimées, sens et tracé déduits de la topographie."
+          "note": "Sens et tracé déduits de la topographie."
         },
         {
           "id": "valmeinier-thermique-station",
@@ -5447,7 +5424,6 @@
           "lat": 45.0642,
           "alt_m": 2642,
           "coord_quality": "approx",
-          "best_hours": "journée (club : « beaux vols de fin de journée dans la brise » à Plan Lachat)",
           "trigger": "Pentes sud du col du Galibier, seul décollage du secteur accessible avec très peu de marche",
           "description": "Le col du Galibier sud est un décollage sauvage à bon potentiel thermique, le seul du secteur accessible avec très peu de marche. Il est au milieu de zones militaires réglementées (R221 et R222) : quand elles sont actives, le vol est strictement interdit, et des tirs à balles réelles sont très probables. Vérifiez leur activité.",
           "confidence": "medium",
@@ -5458,11 +5434,10 @@
         },
         {
           "id": "granges-du-galibier-depart-300",
-          "name": "Granges du Galibier : déclencheur des grands cross (300 km)",
+          "name": "Granges du Galibier : pente de décollage citée pour deux vols de 300 km",
           "lon": 6.4225,
           "lat": 45.0801,
           "coord_quality": "source",
-          "best_hours": "non précisé (décollage dès le matin pour les 300 km)",
           "trigger": "Pente herbeuse des Granges du Galibier, sous le col du Galibier",
           "description": "Décollage sauvage des Granges du Galibier, possible depuis n'importe où dans cette belle pente herbeuse, sous le col du Galibier. Il peut offrir un potentiel énorme de cross.",
           "confidence": "medium",
@@ -5864,7 +5839,6 @@
               "coord_quality": "source"
             }
           ],
-          "distance_km": 2.6,
           "description": "Le classique de Plan Lachat : depuis la butte de soaring, par brise légère de nord, on remonte le Grand Galibier, assez souvent au-delà de 3200 m. Plus loin, les Granges du Galibier sont citées pour les grands cross.",
           "sources": [
             "S8",
@@ -5876,7 +5850,7 @@
             "L'itinéraire des deux grands cross cités, de 314,68 et 316,69 km, n'a pas pu être lu.",
             "Vérifiez les zones militaires R221 et R222, ainsi que l'altiport de Valloire-Bonnenuit."
           ],
-          "note": "Segment tracé : uniquement la remontée documentée (distance à vol d'oiseau : 2,6 km)."
+          "note": "Segment tracé : uniquement la remontée documentée."
         }
       ],
       "tips": [

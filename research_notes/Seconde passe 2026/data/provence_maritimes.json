@@ -49,8 +49,8 @@
           ],
           "hours": "dès ~10h30 (régime de brise, été) ; le matin vent faible ou nul, au terrain la brise vient « assez fiablement » du lac ; plus marquée en fin d'après-midi",
           "speed_kmh": {
-            "typical": 12,
-            "max": 25
+            "typical": null,
+            "max": null
           },
           "season": "avril-octobre",
           "layer_depth_m": "non documenté",
@@ -66,7 +66,7 @@
           "possible": [
             "Le vent venu du lac peut parfois être assez fort."
           ],
-          "note": "Vitesses : interprétation, sans mesure chiffrée hormis les 25 à 30 km/h du décollage sud-ouest, qui cumule vent de vallée et brise de pente."
+          "note": "Aucune vitesse mesurée, hormis les 25 à 30 km/h du décollage sud-ouest, qui cumule vent de vallée et brise de pente."
         },
         {
           "id": "brise-ouest-barreme-robines",
@@ -100,8 +100,8 @@
           ],
           "hours": "monte au fil de l'après-midi à mesure que le soleil tourne sur les faces (plus tôt si vent météo d'ouest) ; domine à l'atterro en fin d'après-midi et en soirée",
           "speed_kmh": {
-            "typical": 12,
-            "max": 25
+            "typical": null,
+            "max": null
           },
           "season": "avril-octobre",
           "layer_depth_m": "non documenté",
@@ -134,8 +134,8 @@
           ],
           "hours": "thermiques sur la face S dès ~10h30 ; matin calme, tops-to-bottoms de 700 m possibles avant",
           "speed_kmh": {
-            "typical": 8,
-            "max": 15
+            "typical": null,
+            "max": null
           },
           "season": "avril-octobre",
           "layer_depth_m": "non documenté",
@@ -145,8 +145,7 @@
             "S23",
             "S22",
             "S29"
-          ],
-          "note": "Vitesses déduites, sans mesure."
+          ]
         },
         {
           "id": "brise-pente-chalvet-sud-ouest",
@@ -181,7 +180,8 @@
             "S27",
             "S29",
             "S38"
-          ]
+          ],
+          "note": "Vitesse typique estimée ; les 25 à 30 km/h sont ceux du décollage, en conditions thermiques établies."
         }
       ],
       "convergences": [
@@ -368,7 +368,7 @@
           "lat": 43.9041,
           "coord_quality": "source",
           "radius_km": 2,
-          "conditions": "régime de sud-est à sud avec brise rentrante, l'après-midi (≈ 16h)",
+          "conditions": "régime de sud-est à sud avec brise rentrante",
           "description": "Sur l'éperon de la montagne de l'Aup, au-dessus du Mandarom, la transition du Mouchon vers le Crémon peut mal tourner par régime de sud avec brise rentrante.",
           "sources": [
             "S60",
@@ -418,7 +418,7 @@
         },
         {
           "id": "crete-des-serres-angle",
-          "name": "Angle de la crête des Serres (confluence, plafonds jusqu'à 4200 m)",
+          "name": "Angle de la crête des Serres (gros thermique de brise d'ouest)",
           "lon": 6.555,
           "lat": 43.948,
           "coord_quality": "approx",
@@ -575,12 +575,11 @@
         },
         {
           "id": "mouchon-plein-3400",
-          "name": "Sommet de Mouchon (plein à 3400 m, relais vers l'Aup)",
+          "name": "Sommet de Mouchon (relais vers l'Aup)",
           "lon": 6.4304,
           "lat": 43.988,
           "coord_quality": "source",
           "alt_m": 1593,
-          "best_hours": "15h-16h",
           "trigger": "sommet isolé à l'ouest de Saint-André ; zone R196C activable",
           "description": "Point de relance sur la boucle de l'ouest, à la verticale du Mouchon. Il fait partie des circuits proposés depuis le Chalvet, avec le Cheval Blanc, la Sapée ou la montagne de Coupe.",
           "sources": [
@@ -596,7 +595,7 @@
         },
         {
           "id": "sapee-sapet-lee-vautour",
-          "name": "Le Sapet (sommet de la Sapée) : thermique sous le vent indiqué par un vautour, plafond 3000 m",
+          "name": "Le Sapet (sommet de la Sapée) : thermique sous le vent indiqué par un vautour",
           "lon": 6.4182,
           "lat": 44.0469,
           "coord_quality": "approx",
@@ -1001,7 +1000,7 @@
             "S104"
           ],
           "possible": [
-            "Au retour, le trajet peut passer par Cadun, la montagne de Vachière, la montagne de Chamatte de Thorame, le Cordeil, Maurel, puis la crête des Serres, plutôt que de lutter contre les fortes brises de la Bléone.",
+            "Au retour, le trajet peut passer par le Caduc, la montagne de Vachière, la montagne de Chamatte de Thorame, le Cordeil, Maurel, puis la crête des Serres, plutôt que de lutter contre les fortes brises de la Bléone.",
             "Avec un passage par le Chamatte au retour, le parcours atteint 120 km.",
             "Le Tromas est souvent très généreux, avec des brises multiples, mais il peut aussi être mal organisé. Un départ vers le Mouchon ou la montagne de Coupe donne un circuit plus court."
           ],
@@ -1355,7 +1354,6 @@
           "lat": 44.0218,
           "coord_quality": "source",
           "alt_m": 1790,
-          "best_hours": "midi-fin d'après-midi (plafonds ~1900-2100 m en début de cycle)",
           "trigger": "croupe d'orientation SO au nord des antennes, point de départ de la transition vers Lambruisse et le Meunier",
           "description": "Point de relance : on se place au bout de la montagne de l'Allier pour transiter vers le sommet du Meunier.",
           "sources": [
@@ -1496,13 +1494,13 @@
         },
         {
           "id": "coste-longue-pointe-sud",
-          "name": "Côte Longue (crête de bascule, plein à 2800 m sur la pointe sud)",
+          "name": "Côte Longue (crête de bascule)",
           "lon": 6.489,
           "lat": 44.1204,
           "coord_quality": "source",
           "alt_m": null,
           "best_hours": "13h-15h30",
-          "trigger": "longue crête N-S, thermique musclé « boulet de canon » côté nord, bascule des brises",
+          "trigger": "longue crête N-S, thermique musclé, bascule des brises",
           "description": "Point de relance et plafond : 2500 m suffisent pour la raccrocher depuis le Cordeil. Restez sur la crête, sans choisir entre l'est et l'ouest, car on trouve souvent de la brise de nord à l'autre bout. Visez environ 2800 m sur la pointe sud pour rejoindre la vallée de la Bléone.",
           "sources": [
             "S55",
@@ -1687,7 +1685,6 @@
           "lat": 44.2729,
           "coord_quality": "source",
           "alt_m": null,
-          "best_hours": "14h",
           "trigger": "sommet au nord du Tromas, sur la ligne vers la Blanche",
           "description": "Point de relance, sur la tête du Bau, où le thermique est plus confortable, juste avant le Tromas, sur la ligne vers la Blanche.",
           "sources": [
@@ -1699,16 +1696,15 @@
         },
         {
           "id": "tete-de-l-estrop",
-          "name": "Tête de l'Estrop (plafond de la Blanche : 3680 m)",
+          "name": "Tête de l'Estrop (crête de la Blanche)",
           "lon": 6.5042,
           "lat": 44.2861,
           "coord_quality": "source",
           "alt_m": null,
-          "best_hours": "16h30-17h",
           "trigger": "tête de l'Estrop, sur la crête de la Blanche (« autoroute à planeurs »)",
           "description": "Sur la tête de l'Estrop et la crête de la Blanche, très fréquentée par les planeurs, on prépare le retour. Depuis le Tromas, il reste 20 km faciles le long de la Blanche jusqu'à Dormillouse.",
           "sources": [
-            "S115",
+            "S154",
             "S121",
             "S55"
           ],
@@ -2163,8 +2159,8 @@
           ],
           "hours": "« à partir de 12h, brises uniquement » à l'Andran ; Villevieille « brises à partir de 11h » ; tournante avec le soleil (brise forte en milieu d'après-midi à La Javie / Prads)",
           "speed_kmh": {
-            "typical": 15,
-            "max": 30
+            "typical": null,
+            "max": null
           },
           "season": "avril-octobre",
           "layer_depth_m": "non documenté",
@@ -2180,7 +2176,7 @@
             "Il arrive qu'à La Javie et à Prads, le vent de vallée et une aérologie forte s'installent en milieu d'après-midi.",
             "Au retour du Tromas, si l'on ne passe pas par le Caduc, il faut lutter contre les fortes brises de la Bléone."
           ],
-          "note": "Vitesses : interprétation, typiquement de 15 km/h et au maximum de 30 km/h. Villages positionnés sur OpenStreetMap et GeoNames (Mallemoisson)."
+          "note": "Villages positionnés sur OpenStreetMap et GeoNames (Mallemoisson)."
         },
         {
           "id": "brise-descendante-andran-matin",
@@ -2208,8 +2204,8 @@
           ],
           "hours": "7h-9h (brise du matin), avant l'inversion vers les brises montantes de 12h",
           "speed_kmh": {
-            "typical": 7,
-            "max": 12
+            "typical": null,
+            "max": null
           },
           "season": "toute l'année",
           "layer_depth_m": "non documenté",
@@ -2219,7 +2215,7 @@
             "S44",
             "S73"
           ],
-          "note": "Le site est annoncé comme volable plus de 300 jours par an. Vitesses déduites, sans mesure."
+          "note": "Le site est annoncé comme volable plus de 300 jours par an."
         },
         {
           "id": "brise-pente-lure-sud-contras",
@@ -2548,7 +2544,7 @@
       "thermal_spots": [
         {
           "id": "montagne-de-gache",
-          "name": "Montagne de Gâche (« toujours de très bons thermiques » en cross)",
+          "name": "Montagne de Gâche (relais de cross)",
           "lon": 5.9877,
           "lat": 44.2339,
           "coord_quality": "source",
@@ -2612,16 +2608,15 @@
         },
         {
           "id": "mourre-de-chanier-plafond",
-          "name": "Mourre de Chanier (plafond de 3300 m sur la route Fourneuby – Mont Denier)",
+          "name": "Mourre de Chanier (sur la route Fourneuby – Mont Denier)",
           "lon": 6.351,
           "lat": 43.8417,
           "coord_quality": "source",
           "alt_m": 1930,
-          "best_hours": "12h30-13h",
           "trigger": "sommet à l'ouest de Castellane, repère de nuage en début de transition vers Moustiers",
           "description": "Repère de nuage en début de transition vers Moustiers, à l'ouest de Castellane. On vise ensuite les barbules du Mont Denier.",
           "sources": [
-            "S115",
+            "S154",
             "S75"
           ],
           "confidence": "medium",
@@ -2645,7 +2640,9 @@
             "S115",
             "S27",
             "S26",
-            "S73"
+            "S73",
+            "S154",
+            "S155"
           ],
           "confidence": "medium",
           "possible": [
@@ -3059,7 +3056,7 @@
           "lon": 6.3508,
           "lat": 44.1214,
           "coord_quality": "source",
-          "alt_m": 1048,
+          "alt_m": 1720,
           "orientations": [
             "NW"
           ],
@@ -3069,7 +3066,7 @@
             "S73"
           ],
           "ffvl_id": "286",
-          "note": "Altitude à revoir : 1048 m annoncés, plus bas que l'atterrissage (1201 m), et une ancienne indication donne 1720 m pour la Fontaine d'Archail. Référence 286, non conventionné."
+          "note": "Altitude du catalogue (1720 m). La fiche fédérale 286 donne 1048 m, plus bas que l'atterrissage (1201 m), et sa position est au niveau de ces 1048 m : position à vérifier. Référence 286, non conventionné."
         },
         {
           "id": "gache-sisteron",
@@ -3778,7 +3775,7 @@
           "hours": "journée, surtout isobares lâches ; sur les sites côté mer la brise de SE est quasi quotidienne et forte après 11h-13h l'été ; en hiver les brises maritimes sont faibles",
           "speed_kmh": {
             "typical": 15,
-            "max": 30
+            "max": null
           },
           "season": "toute l'année (plus marquée au printemps-été)",
           "layer_depth_m": "non documenté",
@@ -3797,7 +3794,7 @@
             "À Gourdon, la brise de mer peut ajouter du dynamique aux thermiques.",
             "Le col de Bleine, plus à l'intérieur, est peu soumis aux influences maritimes."
           ],
-          "note": "Tracé déduit de l'axe Cannes – Grasse – Saint-Vallier, vers le premier relief ; les vitesses sont interprétées à partir des textes."
+          "note": "Tracé déduit de l'axe Cannes – Grasse – Saint-Vallier, vers le premier relief ; la vitesse est estimée depuis le mot « forte » : aucune mesure."
         },
         {
           "id": "brise-gorges-du-loup",
@@ -3831,8 +3828,8 @@
           ],
           "hours": "« presque tous les jours », avant 11h (SE modérée) puis forte en été après 11h-13h ; vents de vallée à l'atterro de Gréolières « généralement d'est »",
           "speed_kmh": {
-            "typical": 15,
-            "max": 30
+            "typical": null,
+            "max": null
           },
           "season": "toute l'année (forte l'été)",
           "layer_depth_m": "non documenté",
@@ -3881,8 +3878,8 @@
           ],
           "hours": "dès midi en été : les premières brises d'est sont rapidement contrées par les brises d'ouest ; plus on arrive tard aux Lattes plus l'ouest est fort",
           "speed_kmh": {
-            "typical": 15,
-            "max": 30
+            "typical": null,
+            "max": null
           },
           "season": "mars-octobre",
           "layer_depth_m": "non documenté",
@@ -4046,7 +4043,7 @@
       "hazards": [
         {
           "id": "venturi-les-lattes",
-          "name": "Venturi des Lattes (brise d'ouest renforcée, aucun atterrissage, pas de réseau)",
+          "name": "Venturi des Lattes (brise d'ouest renforcée, pas de réseau)",
           "kind": "venturi",
           "lon": 6.7318,
           "lat": 43.8226,
@@ -4203,6 +4200,23 @@
             "S56"
           ],
           "note": "Convention non fédérale, sauf d'avril à début juillet (fenaison, date à définir avec l'agriculteur)."
+        },
+        {
+          "id": "thorenc-atterro",
+          "name": "Thorenc – champ de Bleine : convention dénoncée, à éviter",
+          "kind": "other",
+          "lon": 6.8203,
+          "lat": 43.802,
+          "coord_quality": "source",
+          "alt_m": 1134,
+          "description": "L'atterrissage de Bleine, à Thorenc, est un très grand champ avec une manche à air ou des banderoles près de la route. Sa convention a été dénoncée par le nouveau propriétaire : évitez de vous y poser. Le vent peut venir de l'est ou de l'ouest, avec un point de convergence mobile. Si vous y posez, pliez en bordure.",
+          "sources": [
+            "S41",
+            "S31",
+            "S56"
+          ],
+          "ffvl_id": "917",
+          "note": "Convention non fédérale, sauf d'avril à début juillet (fenaison, date à définir avec l'agriculteur)."
         }
       ],
       "thermal_spots": [
@@ -4282,7 +4296,6 @@
           "lat": 43.8153,
           "coord_quality": "source",
           "alt_m": null,
-          "best_hours": "11h-13h",
           "trigger": "sommet un peu à l'est du déco, extraction au-dessus du vallon ruiné",
           "description": "Le Pic de l'Aigle, un peu à l'est du décollage de Bleine, sert d'extraction.",
           "sources": [
@@ -4304,7 +4317,6 @@
           "lat": 43.81,
           "coord_quality": "approx",
           "alt_m": null,
-          "best_hours": "11h-13h",
           "trigger": "zone de bois brûlé, facilement repérable, sur la crête entre le col de Bleine et La Ferrière",
           "description": "Le bois brûlé, facile à repérer sur la crête entre le col de Bleine et La Ferrière, est en général la deuxième pompe de la traversée.",
           "sources": [
@@ -4328,7 +4340,6 @@
           "lat": 43.8226,
           "coord_quality": "source",
           "alt_m": null,
-          "best_hours": "11h30-13h",
           "trigger": "grande pente SE au-dessus du hameau des Lattes ; éperon au vent signalé par Parapentor",
           "description": "La grande pente sud-est au-dessus du hameau des Lattes chauffe tôt : en matinée, elle porte souvent le plus beau nuage du secteur. C'est le point de relance juste avant la transition vers le Teillon.",
           "sources": [
@@ -4370,7 +4381,6 @@
           "lat": 43.8432,
           "coord_quality": "source",
           "alt_m": null,
-          "best_hours": "13h-16h",
           "trigger": "crête du Teillon, côté ouest ensoleillé ; passage au vent d'ouest",
           "description": "Le sommet du Teillon, sur la route de Bleine vers Saint-André, est un point de relance. On pousse sur sa face ouest, ou l'on passe le col de Barnabé.",
           "sources": [
@@ -4418,7 +4428,6 @@
           "lat": 43.8953,
           "coord_quality": "source",
           "alt_m": null,
-          "best_hours": "12h-14h",
           "trigger": "croupe de la Bernarde au-dessus de la station de Vauplane, atteinte en transition au-dessus de Soleilhas",
           "description": "La croupe de la Bernarde, au-dessus de la station de Vauplane, est un point de relance qu'on atteint en transitant au-dessus de Soleilhas.",
           "sources": [
@@ -4484,7 +4493,6 @@
           "lat": 43.801,
           "coord_quality": "approx",
           "alt_m": null,
-          "best_hours": "midi-17h",
           "trigger": "col où se rencontrent la brise du col de Vence et celle des gorges du Loup, antenne",
           "description": "Le col de l'antenne, juste avant Coursegoules, est un point de relance où la brise du col de Vence rejoint celle des gorges du Loup.",
           "sources": [
@@ -5108,22 +5116,6 @@
             "S73"
           ],
           "ffvl_id": "915"
-        },
-        {
-          "id": "thorenc-atterro",
-          "name": "Thorenc – atterrissage (Bleine)",
-          "lon": 6.8203,
-          "lat": 43.802,
-          "coord_quality": "source",
-          "alt_m": 1134,
-          "description": "L'atterrissage de Bleine, à Thorenc, est un très grand champ avec une manche à air ou des banderoles près de la route. Sa convention a été dénoncée par le nouveau propriétaire : évitez de vous y poser. Le vent peut venir de l'est ou de l'ouest, avec un point de convergence mobile. Si vous y posez, pliez en bordure.",
-          "sources": [
-            "S41",
-            "S31",
-            "S56"
-          ],
-          "ffvl_id": "917",
-          "note": "Convention non fédérale, sauf d'avril à début juillet (fenaison, date à définir avec l'agriculteur)."
         },
         {
           "id": "gourdon-abeilles",
@@ -5818,8 +5810,8 @@
           ],
           "hours": "jour ; site volé surtout l'hiver et en arrière-saison (voir restrictions horaires)",
           "speed_kmh": {
-            "typical": 10,
-            "max": 20
+            "typical": null,
+            "max": null
           },
           "season": "octobre-avril (été restreint)",
           "layer_depth_m": "non documenté",
@@ -5835,7 +5827,7 @@
             "Il vaut mieux voler par vent léger, du sud à l'ouest, jusqu'à 20 km/h, et ne pas décoller s'il y a des moutons sur la mer.",
             "En fin de vol, on peut arriver à Menton face à la brise de mer venant du col de Castillon, puis trouver 10 km/h d'est huileux au-dessus de l'eau."
           ],
-          "note": "Vitesses interprétées à partir des textes. Derrière le relief, la vallée de la Bévéra à Sospel vit sous une brise de sud-est née à l'embouchure de Vintimille."
+          "note": "Derrière le relief, la vallée de la Bévéra à Sospel vit sous une brise de sud-est née à l'embouchure de Vintimille."
         },
         {
           "id": "brise-pente-eze-mont-bastide",
@@ -5971,6 +5963,39 @@
             "Par vent d'est, un rotor de la crête à gauche du décollage rend le site déconseillé.",
             "L'approche demande une finesse de 2,5."
           ]
+        },
+        {
+          "id": "plage-de-nice",
+          "name": "Nice – plage : spot de kitesurf, pas un atterrissage",
+          "kind": "other",
+          "lon": 7.2637,
+          "lat": 43.6939,
+          "coord_quality": "source",
+          "alt_m": 1,
+          "description": "Spot de kitesurf, sans information pour le parapente : ne le comptez pas comme un atterrissage.",
+          "sources": [
+            "S52"
+          ],
+          "ffvl_id": "2267",
+          "note": "Élément repris d'une fiche de kitesurf."
+        },
+        {
+          "id": "saint-laurent-du-var-plage",
+          "name": "Saint-Laurent-du-Var – plage de galets : spot de kitesurf, pas un atterrissage",
+          "kind": "other",
+          "lon": 7.1833,
+          "lat": 43.6667,
+          "coord_quality": "source",
+          "alt_m": 37,
+          "description": "Spot de kitesurf sur une plage de galets étroite, partagée avec la planche à voile. Aucune information pour le parapente : ne le comptez pas comme un atterrissage. Les digues et les enrochements sont sous le vent.",
+          "sources": [
+            "S52"
+          ],
+          "ffvl_id": "2119",
+          "possible": [
+            "Pour les kitesurfeurs, la zone est déventée et très rafaleuse par nord-ouest ou nord-est."
+          ],
+          "note": "Élément repris d'une fiche de kitesurf, où le mistral souffle de l'ouest et du sud-ouest."
         }
       ],
       "thermal_spots": [
@@ -5981,7 +6006,7 @@
           "lat": 43.728,
           "coord_quality": "approx",
           "alt_m": 1248,
-          "best_hours": "après-midi d'hiver / demi-saison (plafonds ~900-1200 m)",
+          "best_hours": "hiver (plafonds de 900 à 1200 m selon l'étage)",
           "trigger": "falaises et crête de Courmettes ; antennes",
           "description": "Les antennes des Courmettes sont le premier relais vers Saint-Jeannet. À partir d'ici, plus on avance, plus l'air est stable : refaites le plafond.",
           "sources": [
@@ -6005,7 +6030,6 @@
           "lat": 43.734,
           "coord_quality": "source",
           "alt_m": 673,
-          "best_hours": "après-midi",
           "trigger": "falaise plein sud au-dessus de Vence",
           "description": "Le Baou des Blancs, falaise plein sud au-dessus de Vence, est plus généreux que les autres baous et offre un bon appui.",
           "sources": [
@@ -6026,7 +6050,6 @@
           "lat": 43.7507,
           "coord_quality": "source",
           "alt_m": 801,
-          "best_hours": "après-midi",
           "trigger": "falaises « molles » du Baou de Saint-Jeannet ; Baou de la Gaude meilleur appui",
           "description": "Le Baou de Saint-Jeannet ne tient souvent dans ses falaises que si l'on arrive assez haut : mieux vaut se lancer au-dessus du village.",
           "sources": [
@@ -6130,7 +6153,6 @@
           "lat": 43.734,
           "coord_quality": "approx",
           "alt_m": null,
-          "best_hours": "après-midi",
           "trigger": "butte (L) juste avant le Baou des Blancs, peu d'appui",
           "description": "Butte juste avant le Baou des Blancs, où l'appui est faible.",
           "sources": [
@@ -6145,12 +6167,11 @@
         },
         {
           "id": "baou-des-noirs",
-          "name": "Baou des Noirs (« gros plafond » avant Saint-Jeannet ; ligne HT)",
+          "name": "Baou des Noirs (avant Saint-Jeannet ; ligne HT)",
           "lon": 7.1241,
           "lat": 43.743,
           "coord_quality": "source",
           "alt_m": 640,
-          "best_hours": "après-midi",
           "trigger": "croupe entre les baous des Blancs et de Saint-Jeannet, avec ligne haute tension",
           "description": "Croupe entre les baous des Blancs et de Saint-Jeannet, avec une ligne haute tension : c'est un point de relance.",
           "sources": [
@@ -6173,7 +6194,6 @@
           "lat": 43.7551,
           "coord_quality": "source",
           "alt_m": 796,
-          "best_hours": "après-midi",
           "trigger": "falaise du baou de la Gaude, appuis meilleurs que Saint-Jeannet",
           "description": "Falaise du Baou de la Gaude, en bout de cheminement, près de la vallée du Var : c'est un point de relance.",
           "sources": [
@@ -6513,37 +6533,6 @@
         }
       ],
       "landings": [
-        {
-          "id": "plage-de-nice",
-          "name": "Nice – plage (atterrissage)",
-          "lon": 7.2637,
-          "lat": 43.6939,
-          "coord_quality": "source",
-          "alt_m": 1,
-          "description": "Spot de kitesurf, sans information pour le parapente : ne le comptez pas comme un atterrissage.",
-          "sources": [
-            "S52"
-          ],
-          "ffvl_id": "2267",
-          "note": "Élément repris d'une fiche de kitesurf."
-        },
-        {
-          "id": "saint-laurent-du-var-plage",
-          "name": "Saint-Laurent-du-Var – plage de galets",
-          "lon": 7.1833,
-          "lat": 43.6667,
-          "coord_quality": "source",
-          "alt_m": 37,
-          "description": "Spot de kitesurf sur une plage de galets étroite, partagée avec la planche à voile. Aucune information pour le parapente : ne le comptez pas comme un atterrissage. Les digues et les enrochements sont sous le vent.",
-          "sources": [
-            "S52"
-          ],
-          "ffvl_id": "2119",
-          "possible": [
-            "Pour les kitesurfeurs, la zone est déventée et très rafaleuse par nord-ouest ou nord-est."
-          ],
-          "note": "Élément repris d'une fiche de kitesurf, où le mistral souffle de l'ouest et du sud-ouest."
-        },
         {
           "id": "plage-golfe-bleu-roquebrune",
           "name": "Roquebrune – plage du Golfe Bleu",
@@ -6931,7 +6920,7 @@
           "hours": "dès le milieu de journée l'été : « fort venturi à partir de 12h30 » à Saint-Étienne ; brise massive l'après-midi",
           "speed_kmh": {
             "typical": 20,
-            "max": 35
+            "max": null
           },
           "season": "mai-septembre",
           "layer_depth_m": "non documenté",
@@ -6949,7 +6938,7 @@
             "Entre Isola et le Caire Gros, la brise peut être massive, sur un sol très accidenté.",
             "Au Lauvet d'Ilonse, il peut y avoir de gros cisaillements entre le vent de nord et les brises : celle de la Tinée, mais surtout celle des canyons."
           ],
-          "note": "Vitesses interprétées à partir de « venturi fort » : aucune mesure. Axe déduit de la brise de vallée diurne. Positions des villages relevées sur la carte."
+          "note": "Vitesse estimée depuis « fort venturi » et « brise massive » : aucune mesure. Axe déduit de la brise de vallée diurne. Positions des villages relevées sur la carte."
         },
         {
           "id": "brise-vesubie",
@@ -7036,7 +7025,7 @@
           "hours": "journée ; « fortes brises de vallée en pleine saison » à Cagnorina et au Col de Tende (milieu de journée, elles peuvent rentrer très vite)",
           "speed_kmh": {
             "typical": 20,
-            "max": 35
+            "max": null
           },
           "season": "avril-octobre",
           "layer_depth_m": "non documenté",
@@ -7051,7 +7040,7 @@
           "possible": [
             "La brise italienne soutient les basses couches de la Roya."
           ],
-          "note": "Vitesses interprétées à partir des textes. Position de l'embouchure approchée."
+          "note": "Vitesse estimée depuis « fortes brises de vallée » : aucune mesure. Position de l'embouchure approchée."
         },
         {
           "id": "brise-haut-var",
@@ -7351,7 +7340,7 @@
         },
         {
           "id": "lombarde-sospel",
-          "name": "Lombarde : vent de nord rafaleux et fort (dépressions du golfe de Gênes)",
+          "name": "Lombarde : vent rafaleux et fort (dépressions du golfe de Gênes)",
           "kind": "foehn",
           "lon": 7.45,
           "lat": 43.88,
@@ -7700,12 +7689,11 @@
         },
         {
           "id": "mounier-thermique-3200",
-          "name": "Mont Mounier (plafond 3200 m, nuage au-dessus de Beuil)",
+          "name": "Mont Mounier (nuage au-dessus de Beuil)",
           "lon": 6.9717,
           "lat": 44.1542,
           "coord_quality": "source",
           "alt_m": 2817,
-          "best_hours": "14h30",
           "trigger": "grand massif de Mounier, thermiques de la Colletta et nuage de Beuil servant de repère",
           "description": "Le grand massif du Mounier, au-dessus du haut Var, avec le nuage de Beuil comme repère, sert de relais pour transiter vers La Colmiane.",
           "sources": [
@@ -7826,13 +7814,12 @@
         },
         {
           "id": "valberg-col-des-huerris",
-          "name": "Valberg – Col des Huerris (1765 m) : brise de sud laminaire, thermiques sur le mamelon de la pente école",
+          "name": "Valberg – Col des Huerris (1765 m) : repère de brise de sud",
           "lon": 6.9394,
           "lat": 44.1059,
           "coord_quality": "source",
           "alt_m": 1765,
-          "best_hours": "matin avant 10h ; brise de sud 20-30 km/h l'après-midi",
-          "trigger": "pelouse et mamelon devant la pente école, golf de Valberg ; déco herbeux plutôt que pierres",
+          "trigger": "col des Huerris, où la brise de sud s'installe l'après-midi",
           "description": "Au col des Huerris, à 1765 m, à Valberg, la brise de sud peut s'installer l'après-midi. C'est un repère de brise, pas un thermique assuré.",
           "sources": [
             "S118"
@@ -9875,7 +9862,7 @@
       "publisher": "Au gré de l'air – récit de vol",
       "type": "pdf",
       "lang": "fr",
-      "notes": "Récit horodaté : Mont Denier, plateau de Valensole, nuage du Mourre de Chanier (3300 m), sommet au sud de la montagne de Coupe, Cheval Blanc, Tromas, tête de l'Estrop (3680 m), retour par Vachière puis Coupe."
+      "notes": "Récit horodaté : Mont Denier, plateau de Valensole, sommet au sud de la montagne de Coupe, Cheval Blanc, Tromas, retour par Vachière puis Coupe."
     },
     {
       "id": "S116",
@@ -10218,6 +10205,24 @@
       "type": "web",
       "lang": "fr",
       "notes": "Fiche officielle du terrain n°13378 (relevé ffvl_sites_alpes.json du 07/10/2026) : coordonnées, orientations, description et dangers."
+    },
+    {
+      "id": "S154",
+      "title": "Mon premier grand FAI bouclé, triangle de 199 km, 10 juillet 2006 (L. Armant)",
+      "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/luc_armant_luc31.pdf",
+      "publisher": "Au gré de l'air – récit de vol",
+      "type": "pdf",
+      "lang": "fr",
+      "notes": "Récit horodaté : Mourre de Chanier (12h51, 3300 m), thermique au sud de la montagne de Coupe (14h08, 2985 m), tête de l'Estrop (16h34, 3680 m)."
+    },
+    {
+      "id": "S155",
+      "title": "Nouvelle tentative FAI de Bleyne, 160 km, 1er juillet 2006 (L. Armant)",
+      "url": "http://www.augredelair.fr/wp-content/uploads/2015/01/luc_armant_luc28.pdf",
+      "publisher": "Au gré de l'air – récit de vol",
+      "type": "pdf",
+      "lang": "fr",
+      "notes": "Récit : Bleyne, Moustiers, Dormillouse, Saint-André ; cafouillage sur la montagne de Coupe."
     }
   ]
 }

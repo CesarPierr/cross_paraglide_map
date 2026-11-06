@@ -1,0 +1,3314 @@
+[
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "romanche-brise-montante",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 20,
+      "max": 35
+    },
+    "after": {
+      "typical": 20,
+      "max": null
+    },
+    "source": "VS14, VS15, VS16",
+    "reason": "Vitesse déduite d'un mot : la typique, utile au modèle pour une brise dite forte, reste en estimation (note) ; le maximum, sans source, est retiré."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "romanche-haute-vers-lautaret",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 20,
+      "max": 35
+    },
+    "after": {
+      "typical": 20,
+      "max": null
+    },
+    "source": "S1, S31",
+    "reason": "Vitesse déduite d'un mot : la typique, utile au modèle pour une brise dite forte, reste en estimation (note) ; le maximum, sans source, est retiré."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "veneon-brise-venosc",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 25,
+      "max": 40
+    },
+    "after": {
+      "typical": 25,
+      "max": null
+    },
+    "source": "S51, S52",
+    "reason": "Vitesse déduite d'un mot : la typique, utile au modèle pour une brise dite forte, reste en estimation (note) ; le maximum, sans source, est retiré."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "romanche-brise-montante",
+    "field": "note",
+    "before": "Vitesses en km/h, interprétées depuis « forte ». Le sens montant, de Vizille vers la plaine, est déduit de la topographie ; il est cohérent avec la brise montante de la plaine de Bourg-d'Oisans, citée à Auris. L'étranglement des gorges entre Livet-et-Gavet et Rochetaillée est probablement un venturi, non décrit dans les sources.",
+    "after": "Vitesse estimée depuis le mot « forte » : aucune source ne la mesure. Le sens montant, de Vizille vers la plaine, est déduit de la topographie ; il est cohérent avec la brise montante de la plaine de Bourg-d'Oisans, citée à Auris. L'étranglement des gorges entre Livet-et-Gavet et Rochetaillée est probablement un venturi, non décrit dans les sources.",
+    "source": "VS14",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "romanche-haute-vers-lautaret",
+    "field": "note",
+    "before": "Vitesses en km/h, interprétées depuis « puissante ». Une école ne propose ses biplaces à La Grave que le matin.",
+    "after": "Vitesse estimée depuis le mot « puissante » : aucune source ne la mesure. Une école ne propose ses biplaces à La Grave que le matin.",
+    "source": "S31",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "veneon-brise-venosc",
+    "field": "note",
+    "before": "Vitesses en km/h, interprétées depuis « fort ». Les deux flèches de la carte, l'une jusqu'à Venosc et l'autre sur le haut Vénéon, sont reliées ici par un segment droit.",
+    "after": "Vitesse estimée depuis le mot « fort » : aucune source ne la mesure. Les deux flèches de la carte, l'une jusqu'à Venosc et l'autre sur le haut Vénéon, sont reliées ici par un segment droit.",
+    "source": "S51",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "eau-d-olle-brise",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 15,
+      "max": 25
+    },
+    "after": {
+      "typical": 15,
+      "max": null
+    },
+    "source": "S1, S54",
+    "reason": "15 km/h est le plafond habituel cité au Collet ; le maximum de 25 n'a pas de source."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "eau-d-olle-brise",
+    "field": "note",
+    "before": "Sens montant déduit de l'axe de la vallée : le Collet est en pente, tandis qu'Oz est en fond de vallée.",
+    "after": "Vitesse estimée : 15 km/h est le plafond habituel cité à l'atterrissage du Collet, aucune source ne mesure le couloir. Sens montant déduit de l'axe de la vallée : le Collet est en pente, tandis qu'Oz est en fond de vallée.",
+    "source": "S1",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "vaujany-brise-de-pente",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 15,
+      "max": 20
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S1; S54",
+    "reason": "Aucune source ne chiffre cette brise ni ne la dit forte : valeur retirée, le modèle prend sa vitesse par défaut et la fiche affiche « non documentée »."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "maurienne",
+    "id": "brise-villards-glandon",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 15,
+      "max": 25
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "MS1; MS2; S69",
+    "reason": "Aucune source ne chiffre cette brise ni ne la dit forte : valeur retirée, le modèle prend sa vitesse par défaut et la fiche affiche « non documentée »."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "maurienne",
+    "id": "montgellafrey-brise-de-pente-matin",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 8,
+      "max": 15
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S70; MS2; S7",
+    "reason": "Aucune source ne chiffre cette brise ni ne la dit forte : valeur retirée, le modèle prend sa vitesse par défaut et la fiche affiche « non documentée »."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "maurienne",
+    "id": "brise-matinale-descendante-maurienne",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 5,
+      "max": 10
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S132; MS2; S70",
+    "reason": "Aucune source ne chiffre cette brise ni ne la dit forte : valeur retirée, le modèle prend sa vitesse par défaut et la fiche affiche « non documentée »."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "maurienne",
+    "id": "brise-vallon-saint-francois-longchamp",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 10,
+      "max": 20
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S134; S135; S142",
+    "reason": "Aucune source ne chiffre cette brise ni ne la dit forte : valeur retirée, le modèle prend sa vitesse par défaut et la fiche affiche « non documentée »."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "haute-maurienne",
+    "id": "aussois-brise-de-pente",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 10,
+      "max": 20
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S80; S81; S5",
+    "reason": "Aucune source ne chiffre cette brise ni ne la dit forte : valeur retirée, le modèle prend sa vitesse par défaut et la fiche affiche « non documentée »."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "arves-thabor-galibier",
+    "id": "brise-arvan",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 15,
+      "max": 25
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S99; S100",
+    "reason": "Aucune source ne chiffre cette brise ni ne la dit forte : valeur retirée, le modèle prend sa vitesse par défaut et la fiche affiche « non documentée »."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "maurienne",
+    "id": "brise-villards-glandon",
+    "field": "note",
+    "before": "Le sens montant est déduit : l'air monte depuis la Maurienne. Le tracé et les vitesses dans le vallon des Villards ne sont décrits par aucune source ; ils restent déduits du relief.",
+    "after": "Le sens montant est déduit : l'air monte depuis la Maurienne. Le tracé dans le vallon des Villards n'est décrit par aucune source ; il reste déduit du relief.",
+    "source": "MS1",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "maurienne",
+    "id": "brise-villards-glandon",
+    "field": "hours",
+    "before": "l'après-midi : brise de nord au col du Glandon qui souffle jusqu'à ≈17h (récit du 7 octobre 2022) ; heures non documentées plus bas dans la vallée",
+    "after": "après-midi (au col du Glandon, un jour d'octobre 2022) ; heures non documentées plus bas dans la vallée",
+    "source": "S127",
+    "reason": "Une seule journée d'octobre, dite comme telle ; l'heure de 17h n'est plus une règle."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "maurienne",
+    "id": "brise-matinale-descendante-maurienne",
+    "field": "note",
+    "before": "Déduction du relief : l'air refroidi de la nuit s'écoulerait vers l'aval et la Combe de Savoie, jusqu'à l'inversion de la brise, avec une intensité faible (5 km/h en typique, 10 km/h au maximum).",
+    "after": "Déduction du relief : l'air refroidi de la nuit s'écoulerait vers l'aval et la Combe de Savoie, jusqu'à l'inversion de la brise, avec une intensité faible. Les horaires sont une estimation, gardée parce que le modèle en a besoin pour une brise nocturne.",
+    "source": "S132, MS2",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "maurienne",
+    "id": "brise-montante-maurienne",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 25,
+      "max": 55
+    },
+    "after": {
+      "typical": 25,
+      "max": 50
+    },
+    "source": "S67, MS4",
+    "reason": "La fiche dit « plus de 50 km/h » : 50, pas 55. Typique de 25 km/h : estimation, dite en note."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "maurienne",
+    "id": "brise-montante-maurienne",
+    "field": "note",
+    "before": "Vitesse typique ramenée à 25 km/h sur le couloir ; les valeurs plus fortes sont des pointes locales, par exemple à l'atterrissage de Saint-Jean l'après-midi. Le sens montant vient de la carte : une flèche remonte de la Combe de Savoie vers La Chambre, une autre de Saint-Jean vers Modane, Aussois et Lanslebourg. Des observations de cross à l'entrée de la vallée montrent que la brise pousse vers l'amont, en direction de Chamoux et d'Aiguebelle.",
+    "after": "Vitesse typique de 25 km/h estimée, sans mesure sur le couloir ; le maximum de 50 km/h vient de la fiche de Saint-Jean, l'après-midi (« plus de 50 km/h »). Le sens montant vient de la carte : une flèche remonte de la Combe de Savoie vers La Chambre, une autre de Saint-Jean vers Modane, Aussois et Lanslebourg. Des observations de cross à l'entrée de la vallée montrent que la brise pousse vers l'amont, en direction de Chamoux et d'Aiguebelle.",
+    "source": "S67",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "haute-maurienne",
+    "id": "brise-montante-haute-maurienne",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 25,
+      "max": 45
+    },
+    "after": {
+      "typical": 25,
+      "max": null
+    },
+    "source": "S80, S81, S82",
+    "reason": "Vitesse déduite d'un mot : la typique, utile au modèle pour une brise dite forte, reste en estimation (note) ; le maximum, sans source, est retiré."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "haute-maurienne",
+    "id": "brise-montante-haute-maurienne",
+    "field": "note",
+    "before": "Vitesses en km/h, interprétées depuis « forte à très forte ». Vitesse typique ramenée à 25 km/h sur le couloir ; les valeurs plus fortes sont des pointes locales, par exemple à l'atterrissage de Saint-Jean l'après-midi. Le prolongement vers Lanslevillard, Bessans et Bonneval repose sur les fiches de Val Cenis et sur le fil de cross (route Aussois → Bonneval). La flèche s'arrête au pied du Mont-Cenis. À Lanslevillard et à l'Arcelle, la brise est forte dès 11h ; à L'Estive, elle peut être très forte à partir de 11h-12h.",
+    "after": "Vitesse de 25 km/h estimée depuis les mots « forte à très forte » : aucune source ne la mesure. Le prolongement vers Lanslevillard, Bessans et Bonneval repose sur les fiches de Val Cenis et sur le fil de cross (route Aussois → Bonneval). La flèche s'arrête au pied du Mont-Cenis. À Lanslevillard et à l'Arcelle, la brise est forte dès 11h ; à L'Estive, elle peut être très forte à partir de 11h-12h.",
+    "source": "S82",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "arves-thabor-galibier",
+    "id": "brise-valloirette",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 20,
+      "max": 30
+    },
+    "after": {
+      "typical": 20,
+      "max": null
+    },
+    "source": "MS7, S13",
+    "reason": "Vitesse déduite d'un mot : la typique, utile au modèle pour une brise dite forte, reste en estimation (note) ; le maximum, sans source, est retiré."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "arves-thabor-galibier",
+    "id": "brise-valloirette",
+    "field": "note",
+    "before": "Les vitesses sont estimées : aucune source ne chiffre cette brise. Le tracé de la carte, de Saint-Michel-de-Maurienne à Plan Lachat par Valloire, est annoté « à vérifier » par son auteur.",
+    "after": "La vitesse est estimée depuis « souvent fort » : aucune source ne chiffre cette brise. Le tracé de la carte, de Saint-Michel-de-Maurienne à Plan Lachat par Valloire, est annoté « à vérifier » par son auteur.",
+    "source": "MS7",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "arves-thabor-galibier",
+    "id": "brise-arvan",
+    "field": "note",
+    "before": "Vitesses estimées, sens et tracé déduits de la topographie.",
+    "after": "Sens et tracé déduits de la topographie.",
+    "source": "S99",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "confluence-romanche-guisane-lautaret",
+    "field": "when",
+    "before": "Après-midi d'été ; position mobile entre le Lautaret et Briançon selon le vent météo ; reprise brusque de la Romanche en fin de journée par vent de NO",
+    "after": "Durant la journée ; position mobile entre le Lautaret et Briançon selon le vent météo ; reprise brusque de la Romanche en fin de journée par vent de NO",
+    "source": "S31",
+    "reason": "La source dit « durant la journée », pas « après-midi d'été »."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "grave-atterro-turbulence",
+    "field": "conditions",
+    "before": "Dès 12h en été.",
+    "after": "Dès 12h.",
+    "source": "S1",
+    "reason": "« En été » n'est pas écrit."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "huez-toits",
+    "field": "best_hours",
+    "before": "13h-14h (été)",
+    "after": null,
+    "source": "S1",
+    "reason": "13h-14h vise le soaring de l'Éclose, pas ce thermique."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "bras-schistes-huez",
+    "field": "best_hours",
+    "before": "13h-14h (été) ; l'après-midi",
+    "after": null,
+    "source": "S1",
+    "reason": "13h-14h vise le soaring de l'Éclose, pas ce thermique."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "haute-maurienne",
+    "id": "turra-falaises-termignon",
+    "field": "best_hours",
+    "before": "toute l'année ; d'avril à octobre en vol de cross (trace de 144 km le 17 avril 2026)",
+    "after": null,
+    "source": "S113, S5, S116",
+    "reason": "« Toute l'année » contredit l'arrêté (16 mai - 31 octobre sous 1000 m), et une trace de 2026 n'est pas une heure ; la règle est dans le texte."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "arves-thabor-galibier",
+    "id": "galibier-sud-thermique",
+    "field": "best_hours",
+    "before": "journée (club : « beaux vols de fin de journée dans la brise » à Plan Lachat)",
+    "after": null,
+    "source": "S33",
+    "reason": "Heure de Plan Lachat, pas du Galibier sud."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "arves-thabor-galibier",
+    "id": "granges-du-galibier-depart-300",
+    "field": "best_hours",
+    "before": "non précisé (décollage dès le matin pour les 300 km)",
+    "after": null,
+    "source": "S33, S38, S39",
+    "reason": "Heure de décollage inconnue : traces illisibles."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "signal-huez-pentes",
+    "field": "best_hours",
+    "before": "12h-14h (mars-avril) ; thermique possible dès février",
+    "after": "12h-14h (décollages relevés, toutes saisons) ; surtout de février à avril",
+    "source": "S42",
+    "reason": "Heures et mois sont deux relevés séparés, à ne pas croiser."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "alpe-huez-2700-pentes-ouest",
+    "field": "best_hours",
+    "before": "fin de matinée puis après-midi (« souvent meilleur en fin d'aprem »)",
+    "after": "fin de matinée (côté ouest) ; soaring l'après-midi",
+    "source": "S3, S1",
+    "reason": "« Meilleur en fin d'aprem » vise Poutran ; le reste vient de S1 et S3."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "alpe-huez-2700-pentes-ouest",
+    "field": "trigger",
+    "before": "Faces sud et ouest sous l'arrivée du 2e tronçon, cailloux et gros rochers qui chauffent",
+    "after": "Faces sud et ouest sous l'arrivée du 2e tronçon",
+    "source": "S1",
+    "reason": "Les rochers sont un obstacle au décollage, pas un déclencheur."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "cheminee-vaujany-ascenseur",
+    "field": "best_hours",
+    "before": "à partir de 16h (été)",
+    "after": "à partir de 16h",
+    "source": "S1",
+    "reason": "« Été » n'est pas écrit."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "cheminee-vaujany-ascenseur",
+    "field": "trigger",
+    "before": "Pente sud-est sous les palissades et filets paravalanche, sous le câble de la cheminée d'équilibre EDF",
+    "after": "Relief du décollage n° 2 : cône herbeux près d'un pylône porteur d'un câble, 200 à 300 m au-dessus de la clairière des palissades",
+    "source": "S1 (tg_chemine)",
+    "reason": "L'ascenseur est au décollage n° 2, pas à la clairière ; « sud-est » n'est pas dans la source."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "meijette-la-grave",
+    "field": "trigger",
+    "before": "Arête de la Meijette, sud-ouest de la Meije, atteinte en passant au large des Enfetchores",
+    "after": "Arête de la Meijette, au nord de la Meije, atteinte en passant au large des Enfetchores",
+    "source": "S49, position IGN",
+    "reason": "La Meijette est au nord de la Meije."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "lautaret-plafond-4050",
+    "field": "name",
+    "before": "Au-dessus du col du Lautaret : plafond à 4050 m",
+    "after": "Au-dessus du col du Lautaret",
+    "source": "S107",
+    "reason": "Plafond d'un seul vol. Id gardé : les visites Oisans et Briançonnais le citent."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "deux-alpes-vers-meije-face-sud",
+    "field": "name",
+    "before": "Deux Alpes → crête de la Coche / Muzelle → face sud de la Meije (vol de montagne)",
+    "after": "Deux Alpes → face sud de la Meije (vol de montagne)",
+    "source": "S49",
+    "reason": "Aucune source ne donne le passage par la Coche et la Muzelle."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "maurienne",
+    "id": "montgellafrey-crete-depart-cross",
+    "field": "name",
+    "before": "Montgellafrey : crêtes de Belledonne au-dessus du décollage (départ de cross)",
+    "after": "Montgellafrey : crête au-dessus du décollage (départ de cross)",
+    "source": "S6",
+    "reason": "Montgellafrey n'est pas sur Belledonne."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "maurienne",
+    "id": "montgellafrey-crete-depart-cross",
+    "field": "trigger",
+    "before": "Crête et pentes est-sud-est de Belledonne au-dessus de la Grande Léchère / du Mollaret",
+    "after": "Crête et pentes est-sud-est au-dessus de la Grande Léchère / du Mollaret",
+    "source": "S6",
+    "reason": "Montgellafrey n'est pas sur Belledonne."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "haute-maurienne",
+    "id": "sollieres-sardieres-relance",
+    "field": "trigger",
+    "before": "Village de Sollières-Sardières et pentes de rive gauche de l'Arc, au pied de la Dent Parrachée",
+    "after": "Village de Sollières-Sardières et pentes de rive droite de l'Arc, au pied de la Dent Parrachée",
+    "source": "terrain, atlas",
+    "reason": "Le village est en rive droite."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "haute-maurienne",
+    "id": "arcelle-val-cenis-relance",
+    "field": "name",
+    "before": "Arcelle / crêtes de Val Cenis : relance sur la route Aussois → Bonneval",
+    "after": "Arcelle / crêtes de Val Cenis : repère sur la route Aussois → Bonneval",
+    "source": "S94, S4",
+    "reason": "Aucune source n'y décrit de relance thermique."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "haute-maurienne",
+    "id": "arcelle-val-cenis-relance",
+    "field": "trigger",
+    "before": "Crêtes et pentes de l'Arcelle, exposées au sud, au-dessus de Lanslevillard",
+    "after": null,
+    "source": "S94, S4",
+    "reason": "Aucune source n'y décrit de déclencheur."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "haute-maurienne",
+    "id": "arcelle-val-cenis-relance",
+    "field": "note",
+    "before": "Décollage de l'Arcelle à 2302 m (fiche de terrain 14178) ; aucune source ne décrit de thermique précis ici. Déduction : le déclencheur se trouve à l'Arcelle, pour le cheminement vers Bonneval.",
+    "after": "Décollage de l'Arcelle à 2302 m (fiche de terrain 14178) ; aucune source ne décrit de thermique précis ici.",
+    "source": "S94",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "haute-maurienne",
+    "id": "brise-forte-aussois",
+    "field": "conditions",
+    "before": "Été dès 11h (plus tôt par vent de N à O) ; accélération dans le goulet de Modane-Fourneaux.",
+    "after": "Été dès 11h (plus tôt par vent de N à O) ; accélération dans le goulet qui monte de Modane.",
+    "source": "S4",
+    "reason": "Fourneaux n'est pas nommé."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "haute-maurienne",
+    "id": "foehn-haute-maurienne",
+    "field": "conditions",
+    "before": "Dégradation météo, flux de S à SE ; fiches : vent de sud > 10 km/h à Valfréjus, « par vent de S fort effet de foehn » à Aussois.",
+    "after": "Dégradation météo, flux de S à SE ; « par vent de S fort effet de foehn » à Aussois.",
+    "source": "S85, S80",
+    "reason": "La fiche de Valfréjus ne parle pas de foehn."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "maurienne",
+    "id": "grande-verdette-sous-le-vent-comborciere",
+    "field": "conditions",
+    "before": "Vent météo de secteur sud à ouest ; décollage d'été de La Toussuire.",
+    "after": "Décollage d'été de La Toussuire.",
+    "source": "S136",
+    "reason": "« Sud à ouest » n'est pas sourcé : la fiche ne donne pas la direction du danger."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "arves-thabor-galibier",
+    "id": "granges-du-galibier-depart-300",
+    "field": "name",
+    "before": "Granges du Galibier : déclencheur des grands cross (300 km)",
+    "after": "Granges du Galibier : pente de décollage citée pour deux vols de 300 km",
+    "source": "S33, S38, S39",
+    "reason": "Aucune source n'en fait un déclencheur, les traces étant illisibles."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "huez-sardonne-pentes-ouest",
+    "field": "sources",
+    "before": [
+      "S1",
+      "S139",
+      "S144"
+    ],
+    "after": [
+      "S139",
+      "S144"
+    ],
+    "source": "kk7 (S139), IGN (S144)",
+    "reason": "Point kk7 sans lien avec S1 (guide de l'Oisans)."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "saperan-mirebel-plateau-sud",
+    "field": "sources",
+    "before": [
+      "S1",
+      "S139",
+      "S144"
+    ],
+    "after": [
+      "S139",
+      "S144"
+    ],
+    "source": "kk7 (S139), IGN (S144)",
+    "reason": "Point kk7 sans lien avec S1 (guide de l'Oisans)."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "petit-van-chamrousse-oisans-est",
+    "field": "sources",
+    "before": [
+      "S1",
+      "S139",
+      "S144"
+    ],
+    "after": [
+      "S139",
+      "S144"
+    ],
+    "source": "kk7 (S139), IGN (S144)",
+    "reason": "Point kk7 sans lien avec S1 (guide de l'Oisans)."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "dome-de-la-lauze-pente-sud-est",
+    "field": "sources",
+    "before": [
+      "S1",
+      "S139",
+      "S144"
+    ],
+    "after": [
+      "S139",
+      "S144"
+    ],
+    "source": "kk7 (S139), IGN (S144)",
+    "reason": "Point kk7 sans lien avec S1 (guide de l'Oisans)."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "roche-d-alvau-glaciers-sud",
+    "field": "sources",
+    "before": [
+      "S1",
+      "S139",
+      "S144"
+    ],
+    "after": [
+      "S139",
+      "S144"
+    ],
+    "source": "kk7 (S139), IGN (S144)",
+    "reason": "Point kk7 sans lien avec S1 (guide de l'Oisans)."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "grand-vol-pic-blanc-bourg",
+    "field": "distance_km",
+    "before": 11.4,
+    "after": null,
+    "source": "S1; S3",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "verti-oisans-rando-vol",
+    "field": "distance_km",
+    "before": 14.7,
+    "after": null,
+    "source": "S21",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "deux-alpes-vers-meije-face-sud",
+    "field": "distance_km",
+    "before": 14.3,
+    "after": null,
+    "source": "S49; S34",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "alpe-huez-2700-poutran-bras-bourg",
+    "field": "distance_km",
+    "before": 12.3,
+    "after": null,
+    "source": "S1; S3",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "eclose-huez-bras-vert",
+    "field": "distance_km",
+    "before": 7.5,
+    "after": null,
+    "source": "S1; S41",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "sabot-cote-belle-vers-alpe-huez",
+    "field": "distance_km",
+    "before": 10.0,
+    "after": null,
+    "source": "S1; S54",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "deux-alpes-diable-bearde-meije-ecrins",
+    "field": "distance_km",
+    "before": 30.7,
+    "after": null,
+    "source": "S103; S15",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "rochail-grand-galbert-gavet",
+    "field": "distance_km",
+    "before": 18.0,
+    "after": null,
+    "source": "S104",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "deux-alpes-coche-muzelle-venosc",
+    "field": "distance_km",
+    "before": 6.9,
+    "after": null,
+    "source": "S1; S111",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "maurienne",
+    "id": "belledonne-faces-est-maurienne-lauziere-ebaudiaz-2015",
+    "field": "distance_km",
+    "before": 77.3,
+    "after": null,
+    "source": "S123",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "maurienne",
+    "id": "belledonne-sud-maurienne-lauziere-valmorel-2010",
+    "field": "distance_km",
+    "before": 42.7,
+    "after": null,
+    "source": "S124",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "haute-maurienne",
+    "id": "aussois-bonneval-brise-montante",
+    "field": "distance_km",
+    "before": 28.9,
+    "after": null,
+    "source": "S4; S6",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "haute-maurienne",
+    "id": "aussois-vers-albertville",
+    "field": "distance_km",
+    "before": 79.8,
+    "after": null,
+    "source": "S4; S6",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "arves-thabor-galibier",
+    "id": "plan-lachat-grand-galibier",
+    "field": "distance_km",
+    "before": 2.6,
+    "after": null,
+    "source": "S8; S33",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "grand-vol-pic-blanc-bourg",
+    "field": "note",
+    "before": "Distance à vol d'oiseau.",
+    "after": null,
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "verti-oisans-rando-vol",
+    "field": "note",
+    "before": "Les coordonnées des points intermédiaires sont estimées, la source n'en donnant aucune ; distance à vol d'oiseau.",
+    "after": "Les coordonnées des points intermédiaires sont estimées, la source n'en donnant aucune.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "deux-alpes-vers-meije-face-sud",
+    "field": "note",
+    "before": "Itinéraire réel non documenté : la trace de référence n'a pas pu être lue, car le site la protège. Distance à vol d'oiseau entre le décollage et le sommet.",
+    "after": "Itinéraire réel non documenté : la trace de référence n'a pas pu être lue, car le site la protège.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "alpe-huez-2700-poutran-bras-bourg",
+    "field": "note",
+    "before": "Distance à vol d'oiseau ; ordre des points tel que le décrit une autre référence ; positions de Poutran, du Bras et de Villard-Reculas : IGN.",
+    "after": "Ordre des points tel que le décrit une autre référence ; positions de Poutran, du Bras et de Villard-Reculas : IGN.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "deux-alpes-diable-bearde-meije-ecrins",
+    "field": "note",
+    "before": "Journée de grand beau, sans vent, stable en basse couche et faiblement instable en altitude (isotherme 0 °C à 4800 m). Les points de passage sont ceux que nomme la source (positions IGN), l'ordre exact pouvant différer ; distance à vol d'oiseau.",
+    "after": "Journée de grand beau, sans vent, stable en basse couche et faiblement instable en altitude (isotherme 0 °C à 4800 m). Les points de passage sont ceux que nomme la source (positions IGN), l'ordre exact pouvant différer.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "oisans-grandes-rousses",
+    "id": "rochail-grand-galbert-gavet",
+    "field": "note",
+    "before": "Positions IGN ; le posé se situe approximativement au village de Gavet ; distance à vol d'oiseau.",
+    "after": "Positions IGN ; le posé se situe approximativement au village de Gavet.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "haute-maurienne",
+    "id": "aussois-bonneval-brise-montante",
+    "field": "note",
+    "before": "Distance à vol d'oiseau. Glissé jusqu'au-dessus de Termignon : 2800 m au maximum en octobre. Contrainte : arrêté de survol de la Vanoise (secteurs définis).",
+    "after": "Glissé jusqu'au-dessus de Termignon : 2800 m au maximum en octobre. Contrainte : arrêté de survol de la Vanoise (secteurs définis).",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "arves-thabor-galibier",
+    "id": "plan-lachat-grand-galibier",
+    "field": "note",
+    "before": "Segment tracé : uniquement la remontée documentée (distance à vol d'oiseau : 2,6 km).",
+    "after": "Segment tracé : uniquement la remontée documentée.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "maurienne",
+    "id": "chamrousse-belledonne-est-lauziere-albertville-2024",
+    "field": "distance_km",
+    "before": 84.4,
+    "after": 100,
+    "source": "S110",
+    "reason": "Distance annoncée : un peu plus de 100 km ; 84,4 km était la somme du tracé partiel."
+  },
+  {
+    "lot": "oisans_maurienne",
+    "massif": "haute-maurienne",
+    "id": "aussois-barbier-arplane-norma",
+    "field": "distance_km",
+    "before": 17.9,
+    "after": 23,
+    "source": "S109",
+    "reason": "Parcours de 23 km annoncé par l'organisation ; 17,9 km était à vol d'oiseau."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "",
+    "id": "S154",
+    "field": "sources[] (fichier)",
+    "before": null,
+    "after": "http://www.augredelair.fr/wp-content/uploads/2015/01/luc_armant_luc31.pdf",
+    "source": "http://www.augredelair.fr/wp-content/uploads/2015/01/luc_armant_luc31.pdf",
+    "reason": "Source déjà lue par l'audit mais absente du lot : ajoutée."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "",
+    "id": "S155",
+    "field": "sources[] (fichier)",
+    "before": null,
+    "after": "http://www.augredelair.fr/wp-content/uploads/2015/01/luc_armant_luc28.pdf",
+    "source": "http://www.augredelair.fr/wp-content/uploads/2015/01/luc_armant_luc28.pdf",
+    "reason": "Source déjà lue par l'audit mais absente du lot : ajoutée."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "",
+    "id": "S115",
+    "field": "sources[].notes",
+    "before": "Récit horodaté : Mont Denier, plateau de Valensole, nuage du Mourre de Chanier (3300 m), sommet au sud de la montagne de Coupe, Cheval Blanc, Tromas, tête de l'Estrop (3680 m), retour par Vachière puis Coupe.",
+    "after": "Récit horodaté : Mont Denier, plateau de Valensole, sommet au sud de la montagne de Coupe, Cheval Blanc, Tromas, retour par Vachière puis Coupe.",
+    "source": "luc_armant_luc30, luc_armant_luc31",
+    "reason": "Le Mourre de Chanier (3300 m) et l'Estrop (3680 m) sont dans luc31, pas dans ce récit."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "haut-verdon-allos",
+    "id": "tete-de-l-estrop",
+    "field": "sources",
+    "before": [
+      "S115",
+      "S121",
+      "S55"
+    ],
+    "after": [
+      "S154",
+      "S121",
+      "S55"
+    ],
+    "source": "luc_armant_luc31",
+    "reason": "Le passage est dans luc31 ; S115 (luc30) n'en parle pas."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-digne-lure",
+    "id": "mourre-de-chanier-plafond",
+    "field": "sources",
+    "before": [
+      "S115",
+      "S75"
+    ],
+    "after": [
+      "S154",
+      "S75"
+    ],
+    "source": "luc_armant_luc31",
+    "reason": "Le passage est dans luc31 ; S115 (luc30) n'en parle pas."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-digne-lure",
+    "id": "montagne-de-coupe-couard",
+    "field": "sources",
+    "before": [
+      "S60",
+      "S115",
+      "S27",
+      "S26",
+      "S73"
+    ],
+    "after": [
+      "S60",
+      "S115",
+      "S27",
+      "S26",
+      "S73",
+      "S154",
+      "S155"
+    ],
+    "source": "luc_armant_luc31, luc_armant_luc28",
+    "reason": "2985 m (luc31) et le passage de luc28 manquaient."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "saint-andre-verdon",
+    "id": "brise-lac-castillon-saint-andre",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 12,
+      "max": 25
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S1; S2; S23",
+    "reason": "Aucune source ne chiffre cette brise : valeur retirée ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "saint-andre-verdon",
+    "id": "brise-ouest-barreme-robines",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 12,
+      "max": 25
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S23; S27; S2",
+    "reason": "Aucune source ne chiffre cette brise : valeur retirée ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "saint-andre-verdon",
+    "id": "brise-pente-chalvet-sud-est",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 8,
+      "max": 15
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S23; S22; S29",
+    "reason": "Aucune source ne chiffre cette brise : valeur retirée ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-digne-lure",
+    "id": "brise-bleone-digne",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 15,
+      "max": 30
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S44; S55; S73",
+    "reason": "Aucune source ne chiffre cette brise : valeur retirée ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-digne-lure",
+    "id": "brise-descendante-andran-matin",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 7,
+      "max": 12
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S44; S73",
+    "reason": "Aucune source ne chiffre cette brise : valeur retirée ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-grasse-castellane",
+    "id": "brise-gorges-du-loup",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 15,
+      "max": 30
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S55; S40; S56",
+    "reason": "Aucune source ne chiffre cette brise : valeur retirée ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-grasse-castellane",
+    "id": "brise-ouest-lattes-bleine",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 15,
+      "max": 30
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S55; S31; S41",
+    "reason": "Aucune source ne chiffre cette brise : valeur retirée ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-nice-var",
+    "id": "brise-de-mer-roquebrune",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 10,
+      "max": 20
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S73; S84; S64",
+    "reason": "Aucune source ne chiffre cette brise : valeur retirée ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "saint-andre-verdon",
+    "id": "brise-lac-castillon-saint-andre",
+    "field": "note",
+    "before": "Vitesses : interprétation, sans mesure chiffrée hormis les 25 à 30 km/h du décollage sud-ouest, qui cumule vent de vallée et brise de pente.",
+    "after": "Aucune vitesse mesurée, hormis les 25 à 30 km/h du décollage sud-ouest, qui cumule vent de vallée et brise de pente.",
+    "source": "S23",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "saint-andre-verdon",
+    "id": "brise-pente-chalvet-sud-est",
+    "field": "note",
+    "before": "Vitesses déduites, sans mesure.",
+    "after": null,
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-digne-lure",
+    "id": "brise-bleone-digne",
+    "field": "note",
+    "before": "Vitesses : interprétation, typiquement de 15 km/h et au maximum de 30 km/h. Villages positionnés sur OpenStreetMap et GeoNames (Mallemoisson).",
+    "after": "Villages positionnés sur OpenStreetMap et GeoNames (Mallemoisson).",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-digne-lure",
+    "id": "brise-descendante-andran-matin",
+    "field": "note",
+    "before": "Le site est annoncé comme volable plus de 300 jours par an. Vitesses déduites, sans mesure.",
+    "after": "Le site est annoncé comme volable plus de 300 jours par an.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-nice-var",
+    "id": "brise-de-mer-roquebrune",
+    "field": "note",
+    "before": "Vitesses interprétées à partir des textes. Derrière le relief, la vallée de la Bévéra à Sospel vit sous une brise de sud-est née à l'embouchure de Vintimille.",
+    "after": "Derrière le relief, la vallée de la Bévéra à Sospel vit sous une brise de sud-est née à l'embouchure de Vintimille.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "saint-andre-verdon",
+    "id": "brise-pente-chalvet-sud-ouest",
+    "field": "note",
+    "before": null,
+    "after": "Vitesse typique estimée ; les 25 à 30 km/h sont ceux du décollage, en conditions thermiques établies.",
+    "source": "S23, S27",
+    "reason": "Valeur typique sans source : gardée en estimation, dite en note."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-grasse-castellane",
+    "id": "brise-de-mer-prealpes-grasse",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 15,
+      "max": 30
+    },
+    "after": {
+      "typical": 15,
+      "max": null
+    },
+    "source": "S55, S56",
+    "reason": "Vitesse déduite d'un mot : la typique, utile au modèle pour une brise dite forte, reste en estimation (note) ; le maximum, sans source, est retiré."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-grasse-castellane",
+    "id": "brise-de-mer-prealpes-grasse",
+    "field": "note",
+    "before": "Tracé déduit de l'axe Cannes – Grasse – Saint-Vallier, vers le premier relief ; les vitesses sont interprétées à partir des textes.",
+    "after": "Tracé déduit de l'axe Cannes – Grasse – Saint-Vallier, vers le premier relief ; la vitesse est estimée depuis le mot « forte » : aucune mesure.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "mercantour",
+    "id": "brise-tinee",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 20,
+      "max": 35
+    },
+    "after": {
+      "typical": 20,
+      "max": null
+    },
+    "source": "S73, S34",
+    "reason": "Vitesse déduite d'un mot : la typique, utile au modèle pour une brise dite forte, reste en estimation (note) ; le maximum, sans source, est retiré."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "mercantour",
+    "id": "brise-tinee",
+    "field": "note",
+    "before": "Vitesses interprétées à partir de « venturi fort » : aucune mesure. Axe déduit de la brise de vallée diurne. Positions des villages relevées sur la carte.",
+    "after": "Vitesse estimée depuis « fort venturi » et « brise massive » : aucune mesure. Axe déduit de la brise de vallée diurne. Positions des villages relevées sur la carte.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "mercantour",
+    "id": "brise-roya",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 20,
+      "max": 35
+    },
+    "after": {
+      "typical": 20,
+      "max": null
+    },
+    "source": "S74, S50",
+    "reason": "Vitesse déduite d'un mot : la typique, utile au modèle pour une brise dite forte, reste en estimation (note) ; le maximum, sans source, est retiré."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "mercantour",
+    "id": "brise-roya",
+    "field": "note",
+    "before": "Vitesses interprétées à partir des textes. Position de l'embouchure approchée.",
+    "after": "Vitesse estimée depuis « fortes brises de vallée » : aucune mesure. Position de l'embouchure approchée.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "saint-andre-verdon",
+    "id": "aup-eperon-deux-flux",
+    "field": "conditions",
+    "before": "régime de sud-est à sud avec brise rentrante, l'après-midi (≈ 16h)",
+    "after": "régime de sud-est à sud avec brise rentrante",
+    "source": "S60",
+    "reason": "« ≈ 16h » est l'heure d'un seul vol."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "saint-andre-verdon",
+    "id": "crete-des-serres-angle",
+    "field": "name",
+    "before": "Angle de la crête des Serres (confluence, plafonds jusqu'à 4200 m)",
+    "after": "Angle de la crête des Serres (gros thermique de brise d'ouest)",
+    "source": "S26, S59",
+    "reason": "4200 m est un seul vol."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "saint-andre-verdon",
+    "id": "mouchon-plein-3400",
+    "field": "name",
+    "before": "Sommet de Mouchon (plein à 3400 m, relais vers l'Aup)",
+    "after": "Sommet de Mouchon (relais vers l'Aup)",
+    "source": "S60",
+    "reason": "3400 m est un seul vol."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "saint-andre-verdon",
+    "id": "sapee-sapet-lee-vautour",
+    "field": "name",
+    "before": "Le Sapet (sommet de la Sapée) : thermique sous le vent indiqué par un vautour, plafond 3000 m",
+    "after": "Le Sapet (sommet de la Sapée) : thermique sous le vent indiqué par un vautour",
+    "source": "S120",
+    "reason": "3000 m est un seul vol."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "haut-verdon-allos",
+    "id": "tete-de-l-estrop",
+    "field": "name",
+    "before": "Tête de l'Estrop (plafond de la Blanche : 3680 m)",
+    "after": "Tête de l'Estrop (crête de la Blanche)",
+    "source": "luc_armant_luc31",
+    "reason": "3680 m est un seul vol."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "haut-verdon-allos",
+    "id": "coste-longue-pointe-sud",
+    "field": "name",
+    "before": "Côte Longue (crête de bascule, plein à 2800 m sur la pointe sud)",
+    "after": "Côte Longue (crête de bascule)",
+    "source": "S55",
+    "reason": "2800 m est un conseil, pas un plein."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-digne-lure",
+    "id": "mourre-de-chanier-plafond",
+    "field": "name",
+    "before": "Mourre de Chanier (plafond de 3300 m sur la route Fourneuby – Mont Denier)",
+    "after": "Mourre de Chanier (sur la route Fourneuby – Mont Denier)",
+    "source": "luc_armant_luc31",
+    "reason": "3300 m est un seul vol."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "mercantour",
+    "id": "mounier-thermique-3200",
+    "field": "name",
+    "before": "Mont Mounier (plafond 3200 m, nuage au-dessus de Beuil)",
+    "after": "Mont Mounier (nuage au-dessus de Beuil)",
+    "source": "S64",
+    "reason": "3200 m est un seul vol."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-digne-lure",
+    "id": "montagne-de-gache",
+    "field": "name",
+    "before": "Montagne de Gâche (« toujours de très bons thermiques » en cross)",
+    "after": "Montagne de Gâche (relais de cross)",
+    "source": "S67",
+    "reason": "« Toujours de très bons thermiques » est l'avis d'un seul pilote."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-nice-var",
+    "id": "baou-des-noirs",
+    "field": "name",
+    "before": "Baou des Noirs (« gros plafond » avant Saint-Jeannet ; ligne HT)",
+    "after": "Baou des Noirs (avant Saint-Jeannet ; ligne HT)",
+    "source": "S57",
+    "reason": "« Gros plafond » n'est pas une propriété du lieu."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "mercantour",
+    "id": "valberg-col-des-huerris",
+    "field": "name",
+    "before": "Valberg – Col des Huerris (1765 m) : brise de sud laminaire, thermiques sur le mamelon de la pente école",
+    "after": "Valberg – Col des Huerris (1765 m) : repère de brise de sud",
+    "source": "S118",
+    "reason": "Un après-midi de jeu au sol : aucun thermique ni « pente école » dans la source."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-grasse-castellane",
+    "id": "venturi-les-lattes",
+    "field": "name",
+    "before": "Venturi des Lattes (brise d'ouest renforcée, aucun atterrissage, pas de réseau)",
+    "after": "Venturi des Lattes (brise d'ouest renforcée, pas de réseau)",
+    "source": "S31, S55",
+    "reason": "« Aucun atterrissage » est contredit par S31 (champs nombreux)."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "mercantour",
+    "id": "lombarde-sospel",
+    "field": "name",
+    "before": "Lombarde : vent de nord rafaleux et fort (dépressions du golfe de Gênes)",
+    "after": "Lombarde : vent rafaleux et fort (dépressions du golfe de Gênes)",
+    "source": "S74, FFVL Bonnette",
+    "reason": "De nord à Sospel, d'est à la Bonnette."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "saint-andre-verdon",
+    "id": "mouchon-plein-3400",
+    "field": "best_hours",
+    "before": "15h-16h",
+    "after": null,
+    "source": "S60",
+    "reason": "Heure d'un seul vol."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "haut-verdon-allos",
+    "id": "tete-de-l-estrop",
+    "field": "best_hours",
+    "before": "16h30-17h",
+    "after": null,
+    "source": "luc_armant_luc31",
+    "reason": "Heure d'un seul vol."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-digne-lure",
+    "id": "mourre-de-chanier-plafond",
+    "field": "best_hours",
+    "before": "12h30-13h",
+    "after": null,
+    "source": "luc_armant_luc31",
+    "reason": "Heure d'un seul vol."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "mercantour",
+    "id": "mounier-thermique-3200",
+    "field": "best_hours",
+    "before": "14h30",
+    "after": null,
+    "source": "S64",
+    "reason": "Heure d'un seul vol."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "haut-verdon-allos",
+    "id": "tete-du-bau",
+    "field": "best_hours",
+    "before": "14h",
+    "after": null,
+    "source": "S122",
+    "reason": "Heure d'une légende de photo."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "haut-verdon-allos",
+    "id": "montagne-de-l-allier",
+    "field": "best_hours",
+    "before": "midi-fin d'après-midi (plafonds ~1900-2100 m en début de cycle)",
+    "after": null,
+    "source": "S99",
+    "reason": "Un seul matin."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "mercantour",
+    "id": "valberg-col-des-huerris",
+    "field": "best_hours",
+    "before": "matin avant 10h ; brise de sud 20-30 km/h l'après-midi",
+    "after": null,
+    "source": "S118",
+    "reason": "Un seul jour d'août et un seul matin de juillet."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-grasse-castellane",
+    "id": "pic-de-l-aigle-bleine",
+    "field": "best_hours",
+    "before": "11h-13h",
+    "after": null,
+    "source": "S55, S103",
+    "reason": "Aucune source ne donne cette plage."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-grasse-castellane",
+    "id": "bleine-bois-brule",
+    "field": "best_hours",
+    "before": "11h-13h",
+    "after": null,
+    "source": "S55",
+    "reason": "Plage déduite des vols."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-grasse-castellane",
+    "id": "sommet-du-teillon",
+    "field": "best_hours",
+    "before": "13h-16h",
+    "after": null,
+    "source": "S31, S55",
+    "reason": "Plage non sourcée."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-grasse-castellane",
+    "id": "vauplane-bernarde",
+    "field": "best_hours",
+    "before": "12h-14h",
+    "after": null,
+    "source": "S103",
+    "reason": "Heure d'un vol devenue plage."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-grasse-castellane",
+    "id": "greolieres-col-antenne-coursegoules",
+    "field": "best_hours",
+    "before": "midi-17h",
+    "after": null,
+    "source": "S55",
+    "reason": "Plage non sourcée."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-nice-var",
+    "id": "baou-des-noirs",
+    "field": "best_hours",
+    "before": "après-midi",
+    "after": null,
+    "source": "S57",
+    "reason": "Aucune heure dans la source."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-nice-var",
+    "id": "baou-des-blancs",
+    "field": "best_hours",
+    "before": "après-midi",
+    "after": null,
+    "source": "S57",
+    "reason": "Aucune heure dans la source."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-nice-var",
+    "id": "baou-de-saint-jeannet",
+    "field": "best_hours",
+    "before": "après-midi",
+    "after": null,
+    "source": "S57",
+    "reason": "Aucune heure dans la source."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-nice-var",
+    "id": "butte-avant-baou-des-blancs",
+    "field": "best_hours",
+    "before": "après-midi",
+    "after": null,
+    "source": "S57",
+    "reason": "Aucune heure dans la source."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-nice-var",
+    "id": "baou-de-la-gaude",
+    "field": "best_hours",
+    "before": "après-midi",
+    "after": null,
+    "source": "S57",
+    "reason": "Aucune heure dans la source."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-grasse-castellane",
+    "id": "pente-se-des-lattes",
+    "field": "best_hours",
+    "before": "11h30-13h",
+    "after": null,
+    "source": "S103",
+    "reason": "11h30-13h venait d'une heure de vol ; « en matinée » reste dans le texte, sans plage en champ."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-nice-var",
+    "id": "courmettes-antennes",
+    "field": "best_hours",
+    "before": "après-midi d'hiver / demi-saison (plafonds ~900-1200 m)",
+    "after": "hiver (plafonds de 900 à 1200 m selon l'étage)",
+    "source": "S57",
+    "reason": "Le document parle de conditions d'hiver ; ni « après-midi » ni demi-saison n'y figurent."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "haut-verdon-allos",
+    "id": "coste-longue-pointe-sud",
+    "field": "trigger",
+    "before": "longue crête N-S, thermique musclé « boulet de canon » côté nord, bascule des brises",
+    "after": "longue crête N-S, thermique musclé, bascule des brises",
+    "source": "S55, S109",
+    "reason": "« Boulet de canon » vient de la Chaux."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "mercantour",
+    "id": "valberg-col-des-huerris",
+    "field": "trigger",
+    "before": "pelouse et mamelon devant la pente école, golf de Valberg ; déco herbeux plutôt que pierres",
+    "after": "col des Huerris, où la brise de sud s'installe l'après-midi",
+    "source": "S118",
+    "reason": "Rien sur le golf ni sur un mamelon."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-digne-lure",
+    "id": "archail-fontaine",
+    "field": "alt_m",
+    "before": 1048,
+    "after": 1720,
+    "source": "S73 (catalogue : « altitude : 1720m »)",
+    "reason": "1048 m, sous l'atterrissage à 1201 m, est impossible ; le catalogue donne 1720 m."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-digne-lure",
+    "id": "archail-fontaine",
+    "field": "note",
+    "before": "Altitude à revoir : 1048 m annoncés, plus bas que l'atterrissage (1201 m), et une ancienne indication donne 1720 m pour la Fontaine d'Archail. Référence 286, non conventionné.",
+    "after": "Altitude du catalogue (1720 m). La fiche fédérale 286 donne 1048 m, plus bas que l'atterrissage (1201 m), et sa position est au niveau de ces 1048 m : position à vérifier. Référence 286, non conventionné.",
+    "source": "S73, FFVL 286",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "saint-andre-verdon",
+    "id": "saint-andre-dormillouse-ar",
+    "field": "possible",
+    "before": [
+      "Au retour, le trajet peut passer par Cadun, la montagne de Vachière, la montagne de Chamatte de Thorame, le Cordeil, Maurel, puis la crête des Serres, plutôt que de lutter contre les fortes brises de la Bléone.",
+      "Avec un passage par le Chamatte au retour, le parcours atteint 120 km.",
+      "Le Tromas est souvent très généreux, avec des brises multiples, mais il peut aussi être mal organisé. Un départ vers le Mouchon ou la montagne de Coupe donne un circuit plus court."
+    ],
+    "after": [
+      "Au retour, le trajet peut passer par le Caduc, la montagne de Vachière, la montagne de Chamatte de Thorame, le Cordeil, Maurel, puis la crête des Serres, plutôt que de lutter contre les fortes brises de la Bléone.",
+      "Avec un passage par le Chamatte au retour, le parcours atteint 120 km.",
+      "Le Tromas est souvent très généreux, avec des brises multiples, mais il peut aussi être mal organisé. Un départ vers le Mouchon ou la montagne de Coupe donne un circuit plus court."
+    ],
+    "source": "S55",
+    "reason": "S55 dit « par le Caduc », comme crete-de-cadun."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-nice-var",
+    "id": "plage-de-nice",
+    "field": "category",
+    "before": "landings",
+    "after": "hazards (kind: other)",
+    "source": "S52 (fiche 2267)",
+    "reason": "Spot de kitesurf sans information pour le parapente : retiré des atterrissages (carte, liste, simulateur) et classé en danger de type « autre », seule catégorie du schéma qui l'affiche sans le proposer. Retrait définitif : décision du chef de projet."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-nice-var",
+    "id": "plage-de-nice",
+    "field": "name",
+    "before": "Nice – plage (atterrissage)",
+    "after": "Nice – plage : spot de kitesurf, pas un atterrissage",
+    "source": "S52 (fiche 2267)",
+    "reason": "Spot de kitesurf sans information pour le parapente : retiré des atterrissages (carte, liste, simulateur) et classé en danger de type « autre », seule catégorie du schéma qui l'affiche sans le proposer. Retrait définitif : décision du chef de projet."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-nice-var",
+    "id": "saint-laurent-du-var-plage",
+    "field": "category",
+    "before": "landings",
+    "after": "hazards (kind: other)",
+    "source": "S52 (fiche 2119)",
+    "reason": "Spot de kitesurf sans information pour le parapente : retiré des atterrissages (carte, liste, simulateur) et classé en danger de type « autre », seule catégorie du schéma qui l'affiche sans le proposer. Retrait définitif : décision du chef de projet."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-nice-var",
+    "id": "saint-laurent-du-var-plage",
+    "field": "name",
+    "before": "Saint-Laurent-du-Var – plage de galets",
+    "after": "Saint-Laurent-du-Var – plage de galets : spot de kitesurf, pas un atterrissage",
+    "source": "S52 (fiche 2119)",
+    "reason": "Spot de kitesurf sans information pour le parapente : retiré des atterrissages (carte, liste, simulateur) et classé en danger de type « autre », seule catégorie du schéma qui l'affiche sans le proposer. Retrait définitif : décision du chef de projet."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-grasse-castellane",
+    "id": "thorenc-atterro",
+    "field": "category",
+    "before": "landings",
+    "after": "hazards (kind: other)",
+    "source": "S41, S31, S56",
+    "reason": "Le nouveau propriétaire a dénoncé la convention, et le club dit d'éviter de s'y poser. Id gardé : la visite de Grasse-Castellane (étape 7) le cite."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-grasse-castellane",
+    "id": "thorenc-atterro",
+    "field": "name",
+    "before": "Thorenc – atterrissage (Bleine)",
+    "after": "Thorenc – champ de Bleine : convention dénoncée, à éviter",
+    "source": "S41, S31, S56",
+    "reason": "Le nouveau propriétaire a dénoncé la convention, et le club dit d'éviter de s'y poser. Id gardé : la visite de Grasse-Castellane (étape 7) le cite."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "",
+    "id": "S232",
+    "field": "sources[] (fichier)",
+    "before": null,
+    "after": "https://federation.ffvl.fr/sites_pratique/voir/212",
+    "source": "https://federation.ffvl.fr/sites_pratique/voir/212",
+    "reason": "Source déjà lue par l'audit mais absente du lot : ajoutée."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "",
+    "id": "S233",
+    "field": "sources[] (fichier)",
+    "before": null,
+    "after": "https://federation.ffvl.fr/sites_pratique/voir/110",
+    "source": "https://federation.ffvl.fr/sites_pratique/voir/110",
+    "reason": "Source déjà lue par l'audit mais absente du lot : ajoutée."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "",
+    "id": "S234",
+    "field": "sources[] (fichier)",
+    "before": null,
+    "after": "https://federation.ffvl.fr/sites_pratique/voir/111",
+    "source": "https://federation.ffvl.fr/sites_pratique/voir/111",
+    "reason": "Source déjà lue par l'audit mais absente du lot : ajoutée."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "",
+    "id": "S235",
+    "field": "sources[] (fichier)",
+    "before": null,
+    "after": "https://www.vol-libre-diois.fr/faune-aerienne-locale/",
+    "source": "https://www.vol-libre-diois.fr/faune-aerienne-locale/",
+    "reason": "Source déjà lue par l'audit mais absente du lot : ajoutée."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "devoluy",
+    "id": "brise-vallee-devoluy",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 20,
+      "max": 30
+    },
+    "after": {
+      "typical": 20,
+      "max": null
+    },
+    "source": "S28, S29",
+    "reason": "Vitesse déduite d'un mot : la typique, utile au modèle pour une brise dite forte, reste en estimation (note) ; le maximum, sans source, est retiré."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "brise-durance-tallard",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 25,
+      "max": 40
+    },
+    "after": {
+      "typical": 25,
+      "max": null
+    },
+    "source": "S15",
+    "reason": "Vitesse déduite d'un mot : la typique, utile au modèle pour une brise dite forte, reste en estimation (note) ; le maximum, sans source, est retiré."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "brise-ouest-aucelon",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 20,
+      "max": 35
+    },
+    "after": {
+      "typical": 20,
+      "max": null
+    },
+    "source": "S71",
+    "reason": "Vitesse déduite d'un mot : la typique, utile au modèle pour une brise dite forte, reste en estimation (note) ; le maximum, sans source, est retiré."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "brise-couspeau-bourdeaux",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 20,
+      "max": 30
+    },
+    "after": {
+      "typical": 20,
+      "max": null
+    },
+    "source": "S71",
+    "reason": "Vitesse déduite d'un mot : la typique, utile au modèle pour une brise dite forte, reste en estimation (note) ; le maximum, sans source, est retiré."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "devoluy",
+    "id": "brise-vallee-devoluy",
+    "field": "note",
+    "before": "Tracé par le col du Festre et vitesses déduits : aucune source ne décrit ce passage, et les vitesses interprètent le mot « très fortes ».",
+    "after": "Tracé par le col du Festre déduit : aucune source ne décrit ce passage. Vitesse estimée depuis les mots « très fortes », sans mesure.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "brise-durance-tallard",
+    "field": "note",
+    "before": "Sens tiré d'une carte collaborative. Vitesses reprises de la cluse de Sisteron, par extension.",
+    "after": "Sens tiré d'une carte collaborative. Vitesse estimée par extension de la cluse de Sisteron (30 à 40 km/h) : aucune mesure au-delà.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "brise-ouest-aucelon",
+    "field": "note",
+    "before": "Flèches W→E relevées sur une carte collaborative, de Pennes-le-Sec à Aucelon. Vitesses interprétées à partir de l'expression « fortes brises », non mesurées.",
+    "after": "Flèches W→E relevées sur une carte collaborative, de Pennes-le-Sec à Aucelon. Vitesse estimée depuis l'expression « fortes brises », sans mesure.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "brise-couspeau-bourdeaux",
+    "field": "note",
+    "before": "Tracé relevé sur une carte collaborative non datée, de Bourdeaux aux Tonils, au pied de la montagne. Tracé et vitesses déduits.",
+    "after": "Tracé relevé sur une carte collaborative non datée, de Bourdeaux aux Tonils, au pied de la montagne. Tracé déduit. Vitesse estimée depuis l'expression « forte brise », sans mesure.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "champsaur-valgaudemar",
+    "id": "brise-drac",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 15,
+      "max": 30
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S55; S53; S151",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "champsaur-valgaudemar",
+    "id": "brise-gap-col-bayard",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 15,
+      "max": 25
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S53; S55; S68",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "champsaur-valgaudemar",
+    "id": "brise-valgaudemar",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 15,
+      "max": 25
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S55; S205; S206",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "brise-tallard-gap",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 15,
+      "max": 30
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S55; S53",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "brise-veynes-gap",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 15,
+      "max": 30
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S55; S53",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "brise-pente-ceuse-sud",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 12,
+      "max": 25
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S54; S30; S52",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "brise-buech",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 20,
+      "max": 35
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S15; S55; S53",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "brise-pente-chabre-sud",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 10,
+      "max": 20
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S2; S3; S85",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "brise-ouest-meouge",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 20,
+      "max": 35
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S58; S85; S87",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "brise-ouest-rosans-serres",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 15,
+      "max": 30
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S55; S58",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "brise-orpierre-nossage",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 15,
+      "max": 25
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S55",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "baronnies",
+    "id": "pontias",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 10,
+      "max": 20
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S37",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "baronnies",
+    "id": "brise-eygues",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 15,
+      "max": 30
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S55; S85; S37",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "baronnies",
+    "id": "brise-ouveze",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 15,
+      "max": 30
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S55; S38",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "baronnies",
+    "id": "brise-ouest-seron",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 20,
+      "max": 35
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S85; S55",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "baronnies",
+    "id": "brise-est-matin-buc",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 8,
+      "max": 15
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S128",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "brise-drome",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 12,
+      "max": 25
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S71; S73; S55",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "brise-pente-glandasse",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 12,
+      "max": 22
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S93; S72; S32",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "brise-die-chatillon",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 15,
+      "max": 30
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S71; S72; S55",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "brise-chatillon-menee",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 15,
+      "max": 25
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S71; S55",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "brise-quint-chamaloc",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 12,
+      "max": 25
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S55; S77",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "brise-lesches-val-maravel",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 15,
+      "max": 25
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S55; S71",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "brise-trieves-lus",
+    "field": "speed_kmh",
+    "before": {
+      "typical": 12,
+      "max": 25
+    },
+    "after": {
+      "typical": null,
+      "max": null
+    },
+    "source": "S184; S55",
+    "reason": "Vitesses déduites d'une flèche ou d'un mot : aucune source ne les chiffre. Retirées ; le modèle prend sa vitesse par défaut."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "champsaur-valgaudemar",
+    "id": "brise-valgaudemar",
+    "field": "note",
+    "before": "Tracé et vitesses déduits d'une carte collaborative, d'où vient aussi le sens montant ; aucun horaire d'inversion n'est donné. Aucun site de vol officiel n'y a été trouvé.",
+    "after": "Tracé déduit d'une carte collaborative, d'où vient aussi le sens montant ; aucun horaire d'inversion n'est donné. Aucun site de vol officiel n'y a été trouvé.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "brise-tallard-gap",
+    "field": "note",
+    "before": "Tracé approximatif, tiré d'une flèche de carte collaborative et d'un schéma de brises ; vitesses déduites.",
+    "after": "Tracé approximatif, tiré d'une flèche de carte collaborative et d'un schéma de brises.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "brise-veynes-gap",
+    "field": "note",
+    "before": "Tracé tiré d'une flèche de carte collaborative et d'un schéma de brises, qui concordent. Vitesses déduites.",
+    "after": "Tracé tiré d'une flèche de carte collaborative et d'un schéma de brises, qui concordent.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "brise-pente-ceuse-sud",
+    "field": "note",
+    "before": "Position approximative (schéma) ; vitesses interprétées.",
+    "after": "Position approximative (schéma) ; heures non sourcées.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "brise-buech",
+    "field": "note",
+    "before": "Vitesses déduites de la cluse de Sisteron, non mesurées dans le Buëch ; les flèches d'une carte collaborative sont à vérifier, car cette carte peut comporter des erreurs sur le Buëch.",
+    "after": "Les flèches d'une carte collaborative sont à vérifier, car cette carte peut comporter des erreurs sur le Buëch.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "brise-ouest-meouge",
+    "field": "note",
+    "before": "Vitesses interprétées, non mesurées ; les flux de la Méouge sont tracés sur une carte collaborative non datée, de Séderon à Vers-sur-Méouge et Éourres, puis de Lachau à Laragne.",
+    "after": "Les flux de la Méouge sont tracés sur une carte collaborative non datée, de Séderon à Vers-sur-Méouge et Éourres, puis de Lachau à Laragne.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "baronnies",
+    "id": "brise-eygues",
+    "field": "note",
+    "before": "Flux tracé sur une carte collaborative, et vitesses déduites.",
+    "after": "Flux tracé sur une carte collaborative.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "baronnies",
+    "id": "brise-ouveze",
+    "field": "note",
+    "before": "Flèche tracée sur une carte collaborative : déduction à faible confiance, et vitesses déduites.",
+    "after": "Flèche tracée sur une carte collaborative : déduction à faible confiance.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "baronnies",
+    "id": "brise-ouest-seron",
+    "field": "note",
+    "before": "Flèches W→E tracées sur une carte collaborative, de Mévouillon vers Villefranche et de Séderon vers Éourres ; vitesses déduites. La description de Buc vient d'une page d'environ 2005.",
+    "after": "Flèches W→E tracées sur une carte collaborative, de Mévouillon vers Villefranche et de Séderon vers Éourres. La description de Buc vient d'une page d'environ 2005.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "brise-drome",
+    "field": "note",
+    "before": "Tracé de la vallée relevé sur une carte collaborative, d'Aouste-sur-Sye à Lesches ; vitesses interprétées, non mesurées.",
+    "after": "Tracé de la vallée relevé sur une carte collaborative, d'Aouste-sur-Sye à Lesches.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "brise-die-chatillon",
+    "field": "note",
+    "before": "Tracé relevé sur une carte collaborative, de Die à Châtillon par Laval-d'Aix, puis d'Aix-en-Diois à Lus-la-Croix-Haute par Glandage. Vitesses déduites des fortes brises de la vallée de Châtillon.",
+    "after": "Tracé relevé sur une carte collaborative, de Die à Châtillon par Laval-d'Aix, puis d'Aix-en-Diois à Lus-la-Croix-Haute par Glandage.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "brise-chatillon-menee",
+    "field": "note",
+    "before": "Flèche de Châtillon à Treschenu-Creyers, relevée sur une carte collaborative. Vitesses déduites : aucun texte local ne les détaille.",
+    "after": "Flèche de Châtillon à Treschenu-Creyers, relevée sur une carte collaborative.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "brise-quint-chamaloc",
+    "field": "note",
+    "before": "Flèche relevée sur une carte collaborative, de Saint-Julien-en-Quint à Romeyer, par Chamaloc. Vitesses déduites.",
+    "after": "Flèche relevée sur une carte collaborative, de Saint-Julien-en-Quint à Romeyer, par Chamaloc.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "brise-lesches-val-maravel",
+    "field": "note",
+    "before": "Flèche relevée sur une carte collaborative, de Lesches à Val-Maravel. Vitesses déduites.",
+    "after": "Flèche relevée sur une carte collaborative, de Lesches à Val-Maravel.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "brise-trieves-lus",
+    "field": "note",
+    "before": "Tracé relevé sur une carte de brises et sur une carte collaborative, de Monestier-du-Percy à Lus-la-Croix-Haute. Vitesses déduites.",
+    "after": "Tracé relevé sur une carte de brises et sur une carte collaborative, de Monestier-du-Percy à Lus-la-Croix-Haute.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "brise-pente-chabre-sud",
+    "field": "note",
+    "before": "Vitesses interprétées à partir des sources, non mesurées.",
+    "after": null,
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "baronnies",
+    "id": "brise-est-matin-buc",
+    "field": "note",
+    "before": "Vitesses interprétées, non mesurées.",
+    "after": null,
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "brise-pente-glandasse",
+    "field": "note",
+    "before": "Vitesses interprétées, non mesurées.",
+    "after": null,
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "baronnies",
+    "id": "pontias",
+    "field": "note",
+    "before": "Tracé le long de la descente de la vallée de l'Eygues, et vitesses estimées par interprétation. Ni la nuit, ni toute l'année ne sont dans la page citée.",
+    "after": "Tracé le long de la descente de la vallée de l'Eygues, déduit.",
+    "source": "S37",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "flux-descendant-meouge-mison",
+    "field": "note",
+    "before": "Les points du tracé sont des repères approximatifs.",
+    "after": "Les points du tracé sont des repères approximatifs. Vitesse typique estimée ; les 40 km/h sont ceux de la bascule du soir.",
+    "source": "S108",
+    "reason": "Typique sans source : estimation, dite en note."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "baronnies",
+    "id": "pontias",
+    "field": "hours",
+    "before": "nuit et matin",
+    "after": "surtout le matin",
+    "source": "S37",
+    "reason": "Ni la nuit ni toute l'année ne sont dans la page citée."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "baronnies",
+    "id": "pontias",
+    "field": "season",
+    "before": "toute l'année, apprécié l'été",
+    "after": "apprécié l'été",
+    "source": "S37",
+    "reason": "« Toute l'année » n'est pas dans la page citée."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "brise-buech",
+    "field": "hours",
+    "before": "13h-18h (été)",
+    "after": "après-midi (été), sans horaire dans les sources",
+    "source": "S15, S55, S56",
+    "reason": "13h-18h sans source ; le modèle a besoin d'une fenêtre : période générale gardée, dite comme telle."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "brise-pente-ceuse-sud",
+    "field": "hours",
+    "before": "12h-17h (été)",
+    "after": "après-midi (été), sans horaire dans les sources",
+    "source": "S54, S30, S52",
+    "reason": "12h-17h sans source ; le modèle a besoin d'une fenêtre : période générale gardée, dite comme telle."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "devoluy",
+    "id": "therm-bure-sud",
+    "field": "best_hours",
+    "before": "11h-17h (été)",
+    "after": null,
+    "source": "S29, S70, S30",
+    "reason": "Aucune source ne donne de plage."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "devoluy",
+    "id": "therm-faisses",
+    "field": "best_hours",
+    "before": "dès 11h (été)",
+    "after": null,
+    "source": "S29",
+    "reason": "Heure d'un seul samedi d'août 2016."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "champsaur-valgaudemar",
+    "id": "grun-de-saint-maurice-relance",
+    "field": "best_hours",
+    "before": "après-midi (juillet 2026, ≈16h)",
+    "after": null,
+    "source": "S206",
+    "reason": "Le récit ne donne aucune heure à cet endroit."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "falaise-ceuse",
+    "field": "best_hours",
+    "before": "12h-17h (été)",
+    "after": null,
+    "source": "S30, S52",
+    "reason": "Valeur par défaut, sans source."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "therm-malaup",
+    "field": "best_hours",
+    "before": "12h-17h (été)",
+    "after": null,
+    "source": "S52, S54",
+    "reason": "Valeur par défaut, sans source."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "therm-bure-gap",
+    "field": "best_hours",
+    "before": "12h-17h (été)",
+    "after": null,
+    "source": "S53, S65",
+    "reason": "Valeur par défaut, sans source."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "therm-longeagne",
+    "field": "best_hours",
+    "before": "12h-17h (été)",
+    "after": null,
+    "source": "S21, S85",
+    "reason": "Valeur par défaut, sans source."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "therm-glandasse-sud",
+    "field": "best_hours",
+    "before": "12h-17h (été)",
+    "after": null,
+    "source": "S93, S72",
+    "reason": "Valeur par défaut, sans source."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "therm-petite-ceuse-deco",
+    "field": "best_hours",
+    "before": "à partir de la fin de matinée",
+    "after": null,
+    "source": "S60",
+    "reason": "Aucune heure pour la Petite Céüse (la fin de matinée vient du Gleize)."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "baronnies",
+    "id": "therm-villefranche-declenchements",
+    "field": "best_hours",
+    "before": "après-midi, journée tonique à Bergiès",
+    "after": null,
+    "source": "S192",
+    "reason": "Un seul message, sans heure."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "therm-chabre-crete",
+    "field": "best_hours",
+    "before": "11h-15h (été)",
+    "after": null,
+    "source": "S85, S185",
+    "reason": "11h-15h était une valeur par défaut. « Forts dès midi » dit la force, pas le début : l'écrire ici ferait lire au modèle un déclenchement à midi. Le texte le dit."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "devoluy",
+    "id": "therm-chauvet-festre",
+    "field": "best_hours",
+    "before": "journée, activité thermique à surveiller quand elle forcit",
+    "after": null,
+    "source": "S183",
+    "reason": "« Journée » contredit S183, mais « un vol du matin tôt, sans vent » parle d'un vol calme, pas de l'heure d'un thermique : champ retiré, le décollage le dit."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "devoluy",
+    "id": "therm-chauvet-festre",
+    "field": "trigger",
+    "before": "face est vers le col du Festre",
+    "after": "face nord-est vers le col du Festre",
+    "source": "S183",
+    "reason": "S183 : nord-est, comme la description."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "devoluy",
+    "id": "therm-chauvet-festre",
+    "field": "sources",
+    "before": [
+      "S28",
+      "S212"
+    ],
+    "after": [
+      "S28",
+      "S212",
+      "S183"
+    ],
+    "source": "S183",
+    "reason": "S183 parle du Chauvet et n'était pas cité."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "devoluy",
+    "id": "chauvet-festre",
+    "field": "sources",
+    "before": [
+      "S28",
+      "S212"
+    ],
+    "after": [
+      "S28",
+      "S212",
+      "S183"
+    ],
+    "source": "S183",
+    "reason": "S183 parle du Chauvet et n'était pas cité."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "devoluy",
+    "id": "col-des-faisses",
+    "field": "orientations",
+    "before": [
+      "W",
+      "NW",
+      "N"
+    ],
+    "after": null,
+    "source": "S29",
+    "reason": "Aucune source ne donne l'orientation."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "champsaur-valgaudemar",
+    "id": "champsaur-patous",
+    "field": "name",
+    "before": "Patous et troupeaux (Cuchon, Orcières)",
+    "after": "Patous et troupeaux (Cuchon)",
+    "source": "S24, S25",
+    "reason": "Orcières n'est pas dans la fiche."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "champsaur-valgaudemar",
+    "id": "champsaur-patous",
+    "field": "conditions",
+    "before": "Été (alpages)",
+    "after": null,
+    "source": "S24, S25",
+    "reason": "Aucune saison dans la fiche."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "champsaur-valgaudemar",
+    "id": "grun-de-saint-maurice-relance",
+    "field": "name",
+    "before": "Grun de Saint-Maurice : relance et plafond (3500 m) sur la bordure ouest des Écrins",
+    "after": "Grun de Saint-Maurice : relance sur la bordure ouest des Écrins",
+    "source": "S206",
+    "reason": "3500 m est un seul vol."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "champsaur-valgaudemar",
+    "id": "les-richards",
+    "field": "orientations",
+    "before": [
+      "SW",
+      "S",
+      "W",
+      "N"
+    ],
+    "after": [
+      "SW",
+      "S",
+      "W",
+      "NW"
+    ],
+    "source": "FFVL 110 (S233)",
+    "reason": "Fiche : favorable S, SO, O, NO ; nord défavorable."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "champsaur-valgaudemar",
+    "id": "les-richards",
+    "field": "sources",
+    "before": [
+      "S68",
+      "S160"
+    ],
+    "after": [
+      "S68",
+      "S160",
+      "S233",
+      "S234"
+    ],
+    "source": "FFVL 110, 111",
+    "reason": "Fiches citées par la note, absentes des sources."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "champsaur-valgaudemar",
+    "id": "richards-atterro-pge",
+    "field": "alt_m",
+    "before": 1100,
+    "after": 1141,
+    "source": "FFVL 111 (S234)",
+    "reason": "La fiche de l'atterrissage donne 1141 m."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "champsaur-valgaudemar",
+    "id": "richards-atterro-pge",
+    "field": "sources",
+    "before": [
+      "S160",
+      "S68"
+    ],
+    "after": [
+      "S160",
+      "S68",
+      "S234"
+    ],
+    "source": "FFVL 111",
+    "reason": "Fiche de l'atterrissage."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "ceuse-no-sous-le-vent",
+    "field": "conditions",
+    "before": "Brise ou vent de sud",
+    "after": "Brise",
+    "source": "S60",
+    "reason": "Le vent de sud n'est pas dans la source."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "st-genis-combe-ouest-degueulante",
+    "field": "conditions",
+    "before": "transition Beaumont → Saint-Genis, brise d'ouest",
+    "after": "transition Beaumont → Saint-Genis",
+    "source": "S185",
+    "reason": "Aucune direction du vent dans le récit."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "therm-duffre-sud-est-matin",
+    "field": "trigger",
+    "before": "face SE du sommet du Duffre (1757 m), montée par la crête",
+    "after": "face SE du sommet du Duffre (1757 m)",
+    "source": "S78",
+    "reason": "« Montée par la crête » décrit le sentier, pas l'air."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "mereuil",
+    "field": "name",
+    "before": "Mévreuil – atterrissage",
+    "after": "Mereuil – atterrissage",
+    "source": "S173",
+    "reason": "Le village est Mereuil."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "baronnies",
+    "id": "la-buc",
+    "field": "ffvl_id",
+    "before": 211,
+    "after": 212,
+    "source": "FFVL 212 (S232)",
+    "reason": "Position et altitude (965 m) sont celles de la fiche 212 ; la 211 est l'autre atterrissage, à 851 m."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "baronnies",
+    "id": "la-buc",
+    "field": "sources",
+    "before": [
+      "S140"
+    ],
+    "after": [
+      "S232",
+      "S140"
+    ],
+    "source": "FFVL 212, 211",
+    "reason": "S232 pour le terrain, S140 pour l'autre atterrissage cité en note."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "therm-clamontard-vautours",
+    "field": "sources",
+    "before": [
+      "S73",
+      "S72"
+    ],
+    "after": [
+      "S73",
+      "S72",
+      "S235"
+    ],
+    "source": "S235",
+    "reason": "Ces phrases viennent de la page faune du club."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "diois-vautours-rousset",
+    "field": "sources",
+    "before": [
+      "S82",
+      "S77"
+    ],
+    "after": [
+      "S82",
+      "S77",
+      "S235"
+    ],
+    "source": "S235",
+    "reason": "Colonie décrite sur la page faune du club."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "soar-rabou",
+    "field": "description",
+    "before": "Rabou est excellent par pur nord-ouest. Le soir, c'est un soaring très agréable sur la crête, entre les deux décollages. Par ouest ou sud-ouest, il est difficile de faire mieux. Par nord-ouest faible, on peut monter en appui dynamique jusqu'au sommet de Charance, et même basculer vers Gap.",
+    "after": "Rabou est excellent par pur nord-ouest. Le soir, c'est un soaring très agréable sur la crête, entre les deux décollages. Par ouest ou sud-ouest, il est difficile de sortir du site et de faire mieux qu'un petit soaring entre les deux décollages. Par nord-ouest faible, on peut monter en appui dynamique jusqu'au sommet de Charance, et même basculer vers Gap.",
+    "source": "S42 (PDF relu)",
+    "reason": "La fiche : « Il est difficile de sortir du site et de faire mieux qu'un petit soaring entre les deux décollages ». Le texte inversait le sens."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "la-montmaur",
+    "field": "category",
+    "before": "landings",
+    "after": "hazards (kind: other)",
+    "source": "S102",
+    "reason": "Terrain où la pratique est strictement interdite : retiré des atterrissages et classé en danger de type « autre ». Retrait définitif : décision du chef de projet."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "la-montmaur",
+    "field": "name",
+    "before": "Montmaur-en-Diois",
+    "after": "Montmaur-en-Diois : terrain interdit, ne pas se poser",
+    "source": "S102",
+    "reason": "Terrain où la pratique est strictement interdite : retiré des atterrissages et classé en danger de type « autre ». Retrait définitif : décision du chef de projet."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "baronnies",
+    "id": "la-beauvoisin",
+    "field": "category",
+    "before": "landings",
+    "after": "hazards (kind: other)",
+    "source": "S139",
+    "reason": "Terrain où la pratique est strictement interdite : retiré des atterrissages et classé en danger de type « autre ». Retrait définitif : décision du chef de projet."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "baronnies",
+    "id": "la-beauvoisin",
+    "field": "name",
+    "before": "Beauvoisin – Les Jonchiers",
+    "after": "Beauvoisin – Les Jonchiers : terrain interdit, ne pas se poser",
+    "source": "S139",
+    "reason": "Terrain où la pratique est strictement interdite : retiré des atterrissages et classé en danger de type « autre ». Retrait définitif : décision du chef de projet."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "sigoyer",
+    "field": "name",
+    "before": "Sigoyer (pied de Céüse)",
+    "after": "Sigoyer (pied de Céüse) : pas de terrain désigné",
+    "source": "S60",
+    "reason": "Avis d'un pilote, sans terrain : reste en atterrissage faute de catégorie, le nom le dit. À trancher par le chef de projet."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "veynes-vallee",
+    "field": "name",
+    "before": "Vallée de Veynes (sortie du plateau de Céüse)",
+    "after": "Vallée de Veynes (sortie du plateau de Céüse) : pas de terrain désigné",
+    "source": "S60, S83",
+    "reason": "Vallée, pas terrain : reste en atterrissage faute de catégorie, le nom le dit. À trancher par le chef de projet."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "devoluy",
+    "id": "xc-devoluy-traversee",
+    "field": "distance_km",
+    "before": 29.1,
+    "after": null,
+    "source": "S83",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "devoluy",
+    "id": "xc-noyer-faisses",
+    "field": "distance_km",
+    "before": 0,
+    "after": null,
+    "source": "S57",
+    "reason": "Valeur 0 sans signification : la fiche n'affichait rien, mais le champ prétendait à une distance."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "champsaur-valgaudemar",
+    "id": "xc-richards-grenoble",
+    "field": "distance_km",
+    "before": 58.9,
+    "after": null,
+    "source": "S68",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "champsaur-valgaudemar",
+    "id": "xc-richards-savines",
+    "field": "distance_km",
+    "before": 22.1,
+    "after": null,
+    "source": "S68",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "champsaur-valgaudemar",
+    "id": "richards-grun-salette-colombier-classique",
+    "field": "distance_km",
+    "before": 31.6,
+    "after": null,
+    "source": "S199",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "champsaur-valgaudemar",
+    "id": "pic-de-bure-banc-peyron-valgaudemar-valbonnais-2026",
+    "field": "distance_km",
+    "before": 40.1,
+    "after": null,
+    "source": "S206",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "champsaur-valgaudemar",
+    "id": "piolit-richards-salette-colombier-2024",
+    "field": "distance_km",
+    "before": 47.2,
+    "after": null,
+    "source": "S201",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "circuit-ceuse-bure-charance",
+    "field": "distance_km",
+    "before": 43.6,
+    "after": null,
+    "source": "S30",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "xc-guiziere-charance",
+    "field": "distance_km",
+    "before": 12.7,
+    "after": null,
+    "source": "S66",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "xc-clape-arnauds",
+    "field": "distance_km",
+    "before": 2.7,
+    "after": null,
+    "source": "S60",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "xc-luc-gap",
+    "field": "distance_km",
+    "before": 64.3,
+    "after": null,
+    "source": "S73",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "xc-waterfly-2025",
+    "field": "distance_km",
+    "before": 52.2,
+    "after": null,
+    "source": "S49",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "xc-waterfly-2026",
+    "field": "distance_km",
+    "before": 40.7,
+    "after": null,
+    "source": "S50",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "xc-laragne-aspres",
+    "field": "distance_km",
+    "before": 54.7,
+    "after": null,
+    "source": "S85",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "xc-chabre-bure",
+    "field": "distance_km",
+    "before": 66.3,
+    "after": null,
+    "source": "S70",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "xc-aspres-durbonas-bure",
+    "field": "distance_km",
+    "before": 22.2,
+    "after": null,
+    "source": "S187",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "xc-chabre-orpierre-beaumont-aspres-bure",
+    "field": "distance_km",
+    "before": 51.4,
+    "after": null,
+    "source": "S185",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "baronnies",
+    "id": "xc-berges-saint-andre",
+    "field": "distance_km",
+    "before": 34.5,
+    "after": null,
+    "source": "S85",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "baronnies",
+    "id": "xc-buc-berges-sisteron",
+    "field": "distance_km",
+    "before": 38.4,
+    "after": null,
+    "source": "S85",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "xc-luc-chatillon",
+    "field": "distance_km",
+    "before": 0,
+    "after": null,
+    "source": "S73",
+    "reason": "Valeur 0 sans signification : la fiche n'affichait rien, mais le champ prétendait à une distance."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "xc-luc-sisteron",
+    "field": "distance_km",
+    "before": 0,
+    "after": null,
+    "source": "S73",
+    "reason": "Valeur 0 sans signification : la fiche n'affichait rien, mais le champ prétendait à une distance."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "xc-solaure-vercors",
+    "field": "distance_km",
+    "before": 13.2,
+    "after": null,
+    "source": "S75",
+    "reason": "Distance calculée par l'atlas, que la fiche donnait comme celle du vol : retirée (la liste des itinéraires retombe sur la longueur du tracé)."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "xc-rousset-gap",
+    "field": "distance_km",
+    "before": 0,
+    "after": null,
+    "source": "S83",
+    "reason": "Valeur 0 sans signification : la fiche n'affichait rien, mais le champ prétendait à une distance."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "xc-tour-diois",
+    "field": "distance_km",
+    "before": 0,
+    "after": null,
+    "source": "S72",
+    "reason": "Valeur 0 sans signification : la fiche n'affichait rien, mais le champ prétendait à une distance."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "devoluy",
+    "id": "xc-devoluy-traversee",
+    "field": "note",
+    "before": "Tronçon d'un seul vol, du col de Rousset à Gap, rattaché au Diois ; distance calculée entre repères.",
+    "after": "Tronçon d'un seul vol, du col de Rousset à Gap, rattaché au Diois.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "devoluy",
+    "id": "xc-noyer-faisses",
+    "field": "note",
+    "before": "Itinéraire proposé, jugé jouable mais pas facile, et jamais décrit comme volé ; distance inconnue.",
+    "after": "Itinéraire proposé, jugé jouable mais pas facile, et jamais décrit comme volé.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "champsaur-valgaudemar",
+    "id": "xc-richards-grenoble",
+    "field": "note",
+    "before": "Distance en ligne droite entre repères, calculée. Le waypoint est approximatif (flèche de brise).",
+    "after": "Le waypoint est approximatif (flèche de brise).",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "champsaur-valgaudemar",
+    "id": "xc-richards-savines",
+    "field": "note",
+    "before": "Tracé de l'atlas, par Orcières et Chorges, en ligne droite calculée : la source ne donne que la direction. La fin du parcours relève d'un autre secteur.",
+    "after": "Ligne droite de l'atlas : la source ne donne que la direction. La fin du parcours relève d'un autre secteur.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "circuit-ceuse-bure-charance",
+    "field": "note",
+    "before": "Tracé et distance reconstruits entre repères : la source ne donne ni circuit, ni distance, ni passage à Charance. Ligne de reliefs exploitable en parapente comme transition Buëch–Dévoluy–Gap : déduction.",
+    "after": "Tracé reconstruit entre repères : la source ne donne ni circuit, ni distance, ni passage à Charance. Ligne de reliefs exploitable en parapente comme transition Buëch–Dévoluy–Gap : déduction.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "xc-guiziere-charance",
+    "field": "note",
+    "before": "Distance du premier tronçon calculée. Enchaînement reconstruit à partir des fiches de ces deux sites.",
+    "after": "Enchaînement reconstruit à partir des fiches de ces deux sites.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "xc-waterfly-2025",
+    "field": "note",
+    "before": "Course amicale du 31/08/2025, dont l'épreuve de canoë partait à 17h. Balises de rayon 400 m, et 1 000 m au col Saint-Ange, à Beaumont et à Aujour. Distance calculée, somme des segments entre balises.",
+    "after": "Course amicale du 31/08/2025, dont l'épreuve de canoë partait à 17h. Balises de rayon 400 m, et 1 000 m au col Saint-Ange, à Beaumont et à Aujour.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "xc-waterfly-2026",
+    "field": "note",
+    "before": "Balises de rayon 500 m, et 1 000 m à Beaumont. Distance calculée par l'atlas : la page n'en donne pas. Le site du club annonce un report de cette édition.",
+    "after": "Balises de rayon 500 m, et 1 000 m à Beaumont. La page ne donne pas de distance. Le site du club annonce un report de cette édition.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "xc-rousset-gap",
+    "field": "note",
+    "before": "Distance non donnée ; waypoints partiellement approximatifs. Vol antérieur à la zone de sensibilité majeure du Glandasse, qu'il faut désormais respecter.",
+    "after": "Waypoints partiellement approximatifs. Vol antérieur à la zone de sensibilité majeure du Glandasse, qu'il faut désormais respecter.",
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "gapencais-ceuse",
+    "id": "xc-luc-gap",
+    "field": "note",
+    "before": "Distance calculée entre repères.",
+    "after": null,
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "xc-laragne-aspres",
+    "field": "note",
+    "before": "Distance calculée : ligne droite aller-retour.",
+    "after": null,
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "buech-laragne-chabre",
+    "id": "xc-chabre-bure",
+    "field": "note",
+    "before": "Distance calculée : lignes droites entre repères.",
+    "after": null,
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "baronnies",
+    "id": "xc-berges-saint-andre",
+    "field": "note",
+    "before": "Distance calculée en ligne droite de Bergiès à Sisteron ; la suite du parcours n'est pas comptée.",
+    "after": null,
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "xc-luc-chatillon",
+    "field": "note",
+    "before": "Distance non donnée.",
+    "after": null,
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "diois",
+    "id": "xc-luc-sisteron",
+    "field": "note",
+    "before": "Distance non donnée.",
+    "after": null,
+    "source": "",
+    "reason": "Suit le champ."
+  },
+  {
+    "lot": "provence_maritimes",
+    "massif": "prealpes-nice-var",
+    "id": "visite étape 12",
+    "field": "focus",
+    "before": [
+      "saint-laurent-du-var-plage",
+      "tourettes-deuxieme-rideau",
+      "courmettes-antennes"
+    ],
+    "after": [
+      "tourettes-deuxieme-rideau",
+      "courmettes-antennes"
+    ],
+    "source": "S52",
+    "reason": "Le spot de kitesurf n'est plus cité par le texte de l'étape."
+  },
+  {
+    "lot": "devoluy_gap_buech_diois",
+    "massif": "champsaur-valgaudemar",
+    "id": "brise-drac",
+    "field": "note",
+    "before": "Sens et tracé tirés d'une carte collaborative et d'un schéma de brises, sans mesure : les vitesses sont une interprétation.",
+    "after": "Sens et tracé tirés d'une carte collaborative et d'un schéma de brises, sans mesure.",
+    "source": "",
+    "reason": "Suit le champ."
+  }
+]

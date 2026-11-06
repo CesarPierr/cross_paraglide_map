@@ -228,7 +228,7 @@
           "coord_quality": "source",
           "radius_km": 1.0,
           "conditions": "13h-17h les jours thermiques ; dès le début de la convection par vent de N/NO",
-          "description": "Le terrain du lac, géant (880 m), est facile quand il n'y a pas de vent, mais il est très thermique et se met volontiers à déclencher en plein après-midi. Le vent y est influencé par trois vallées et peut tourner de 180° en quelques secondes. Par vent de nord ou de nord-ouest, on pose le plus près possible de la manche centrale, côté école. Le repli sur Moriez reste possible par vent d'ouest ou de nord-ouest ; La Mure-Argens, autre repli, est interdit depuis 2024.",
+          "description": "Le terrain du lac, géant, à 880 m, est facile sans vent. En plein après-midi il devient très thermique et déclenche volontiers. Trois vallées s'y disputent le vent, qui peut tourner de 180° en quelques secondes. Par vent de nord ou de nord-ouest, posez le plus près possible de la manche centrale, côté école. Le repli sur Moriez reste possible par vent d'ouest ou de nord-ouest. La Mure-Argens, l'ancien repli, est interdit depuis 2024.",
           "sources": [
             "S2",
             "S29",
@@ -237,7 +237,7 @@
             "S39"
           ],
           "possible": [
-            "Il peut piéger les pilotes à tout moment, surtout ceux de delta."
+            "Le terrain surprend souvent les pilotes, surtout ceux de delta."
           ],
           "note": "Position du terrain relevée sur les données de référence."
         },
@@ -284,7 +284,7 @@
           "coord_quality": "approx",
           "radius_km": 1.5,
           "conditions": "vent météo N ou NO (Mistral) : turbulences dès le début de la convection ; microonde possible dès que le vent est « simplement venté »",
-          "description": "Par vent de nord ou de nord-ouest, le décollage sud-est peut être très turbulent, même si la brise thermique semble monter dans la pente. Par mistral, le décollage sud-ouest peut lui aussi être très turbulent, voire dangereux. Par mistral léger, on peut partir du sud-ouest sans problème ; dès que le vent forcit, on prend souvent une microonde. Par nord léger, le décollage nord se vole, sans grand intérêt. Le terrain du lac est aussi turbulent.",
+          "description": "Par vent de nord ou de nord-ouest, le décollage sud-est peut être très turbulent, même si la brise thermique semble monter dans la pente. Par mistral, le décollage sud-ouest peut lui aussi être très turbulent, voire dangereux. Par mistral léger, on part du sud-ouest sans problème. Dès que le vent forcit, on prend souvent une microonde. Par nord léger, le décollage nord se vole, sans grand intérêt. Par mistral assez fort, le terrain du lac est turbulent.",
           "sources": [
             "S29",
             "S81",
@@ -369,15 +369,15 @@
           "coord_quality": "source",
           "radius_km": 2,
           "conditions": "régime de sud-est à sud avec brise rentrante, l'après-midi (≈ 16h)",
-          "description": "Sur l'éperon de la montagne de l'Aup, au-dessus du Mandarom, le vol par régime de sud-est à sud, avec brise rentrante l'après-midi (vers 16h), demande de la prudence.",
+          "description": "Sur l'éperon de la montagne de l'Aup, au-dessus du Mandarom, la transition du Mouchon vers le Crémon peut mal tourner par régime de sud avec brise rentrante.",
           "sources": [
             "S60",
             "S115",
             "S75"
           ],
           "possible": [
-            "Il arrive que le vent se sépare en deux flux sur cet éperon : le plan vers Crémon devient alors risqué, et l'on peut être contraint de se replier sur la crête des Serres.",
-            "À 2500 m, on peut se retrouver dans du turbulent. Une glissade de la Coupe vers Crémon a été tentée à ras des pré-reliefs, en frôlant le lac."
+            "Il arrive que le sud se sépare en deux flux sur cet éperon, vers 16 h : on rentre dans la brise vers 2500 m, scotché dans du turbulent. Le plan Crémon devient risqué, et l'on se replie sur la crête des Serres.",
+            "Une glissade de la montagne de Coupe vers le Crémon par l'Aup peut finir à ras des pré-reliefs, en frôlant le lac."
           ],
           "note": "Position relevée au sommet de la montagne de l'Aup."
         }
@@ -398,7 +398,7 @@
             "S23"
           ],
           "possible": [
-            "De 200 pieds à 50 pieds de hauteur, le sol paraît bosselé, puis lisse."
+            "Par conditions thermiques, l'air secoue en finale de 200 à 50 pieds de hauteur, puis il se calme."
           ]
         },
         {
@@ -425,7 +425,7 @@
           "alt_m": null,
           "best_hours": "13h-17h",
           "trigger": "coin de la crête des Serres, où se rencontrent le thermique de brise d'ouest et d'autres flux",
-          "description": "Dans l'angle de la crête des Serres, on trouve une grosse ascendance, placée logiquement à cet endroit. C'est le point où l'on fait le plein pour aller sur Maurel, au retour vers Saint-André.",
+          "description": "Dans l'angle de la crête des Serres, un gros thermique de brise d'ouest se place presque toujours au même endroit. On y fait le plein pour partir vers Maurel et le nord.",
           "sources": [
             "S26",
             "S59",
@@ -435,11 +435,11 @@
           ],
           "confidence": "medium",
           "possible": [
-            "Le thermique peut changer de direction avec l'altitude : nord-est contré, sud-est, puis nord poussé par du sud, avec des turbulences aux changements de cap.",
-            "Il arrive que l'ascendance porte à 4100 ou 4200 m, près de 1000 m repris sans effort à 19h40, ou 3200 m le matin.",
-            "D'autres jours, une petite brise peut coucher le thermique."
+            "Il arrive que ce thermique change de direction en montant : il dérive vers le nord, puis le sud-est, puis de nouveau le nord. Ça secoue à chaque changement de cap.",
+            "Un jour d'est au sommet, il a porté à 4100 puis 4200 m. Un autre jour, à 19h40, il a repris presque 1000 m sans effort.",
+            "D'autres jours, une petite brise de sud le couche et l'extraction devient difficile."
           ],
-          "note": "Position approchée, entre Saint-André et le Pic de Chamatte."
+          "note": "Position approchée, entre Saint-André et le Pic de Chamatte. Un autre vol y note un plafond de 3200 m."
         },
         {
           "id": "pic-de-chamatte",
@@ -450,7 +450,7 @@
           "alt_m": 1879,
           "best_hours": "13h-18h",
           "trigger": "sommet isolé de 1879 m au SE de Saint-André",
-          "description": "Tout en haut du retour classique vers Saint-André, le Pic de Chamatte est un relais de thermique.",
+          "description": "Le Pic de Chamatte est le relais habituel avant de rentrer à Saint-André. Son thermique est fort, mais il n'aide pas toujours le retour : on l'évite souvent quand on veut seulement se poser au lac.",
           "sources": [
             "S60",
             "S59",
@@ -458,10 +458,9 @@
             "S26"
           ],
           "possible": [
-            "Il arrive que le thermique soit très violent, avec des planeurs venus de Saint-Auban ou de Fayence qui rentrent à 120 km/h.",
-            "Le soir, l'ascendance peut être turbulente."
+            "Il arrive que le thermique soit très violent, avec des planeurs qui passent là à 120 km/h vers Fayence."
           ],
-          "note": "Position relevée sur OpenStreetMap (nœud 1481109736)."
+          "note": "Position relevée sur OpenStreetMap (nœud 1481109736). Ne pas confondre avec la montagne de Chamatte, près de Thorame, où un thermique du soir a été jugé turbulent."
         },
         {
           "id": "montagne-de-charvet",
@@ -488,7 +487,7 @@
           "alt_m": null,
           "best_hours": "12h-16h",
           "trigger": "crête à antennes au NNO du Chalvet (premier relais du cross vers le nord)",
-          "description": "Premier point chaud de la route nord, aux antennes de la Reynière, au départ de l'itinéraire Chalvet, Reynière, Serres, Chamatte. On y fait le plafond, vers 2100 m, avant de glisser vers Lambruisse.",
+          "description": "Premier point chaud de la route nord, aux antennes de la Reynière, sur l'itinéraire Chalvet, Reynière, Serres, Chamatte. On y refait le plafond avant de glisser vers Lambruisse.",
           "sources": [
             "S26",
             "S29",
@@ -501,9 +500,9 @@
           ],
           "confidence": "medium",
           "possible": [
-            "Un thermique qui dérive vers le nord au-dessus des antennes peut pousser jusqu'à 2100 m ; un vol a atteint 2400 m en dérivant au bout de la crête vers Lambruisse.",
+            "Un thermique qui dérive vers le nord au-dessus des antennes peut pousser à 2100 m. Le même vol a atteint 2400 m en dérivant au bout de la crête vers Lambruisse.",
             "Le matin, les antennes sont à l'ombre et peu engageantes : il faut attendre un cycle, et l'arrivée peut être turbulente.",
-            "Par tendance est, les thermiques se décalent à l'ouest de la crête ; un thermique puissant, monté à 3300 m, a été trouvé en ce lieu."
+            "Par tendance est, les thermiques se décalent à l'ouest de la crête. Un autre jour, un thermique puissant y est monté à 3300 m."
           ],
           "note": "Position estimée sur le sommet de la Reynière, qui peut ne pas être exactement le site des antennes. Le sommet voisin de l'Allier, à 1790 m, est un autre candidat ; le lieu exact n'est pas confirmé."
         },
@@ -570,7 +569,7 @@
           "confidence": "low",
           "possible": [
             "Il arrive qu'on plonge au pied du Puy de Rent, puis qu'on remonte au-dessus du sommet.",
-            "Il arrive aussi qu'il n'y ait pas de thermique au rendez-vous, ou pas de passage possible : le sommet est alors sous le vent, contré par la brise."
+            "Il arrive aussi que le thermique ne soit pas au rendez-vous, ou que la brise contre le passage vers la crête des Serres."
           ],
           "note": "Déduction à partir d'observations divergentes."
         },
@@ -583,7 +582,7 @@
           "alt_m": 1593,
           "best_hours": "15h-16h",
           "trigger": "sommet isolé à l'ouest de Saint-André ; zone R196C activable",
-          "description": "Point de relance sur la boucle de l'ouest, au-dessus du Mouchon, où l'on peut rester à 3400 m. Le Mouchon fait partie des circuits proposés depuis le Chalvet, avec le Cheval Blanc, la Sapée ou la montagne de Coupe.",
+          "description": "Point de relance sur la boucle de l'ouest, à la verticale du Mouchon. Il fait partie des circuits proposés depuis le Chalvet, avec le Cheval Blanc, la Sapée ou la montagne de Coupe.",
           "sources": [
             "S60",
             "S26",
@@ -591,8 +590,7 @@
           ],
           "confidence": "medium",
           "possible": [
-            "Il arrive qu'à la verticale du Mouchon on reste à 3400 m : de quoi envisager une glissade directe vers la montagne de l'Aup, puis vers le Crémon.",
-            "Vers 16h, une voile en basse couche peut tourner sur le Mouchon."
+            "Il arrive qu'on passe le Mouchon à 3400 m, vers 16 h, une voile tournant en basse couche : de quoi envisager une glissade directe vers la montagne de l'Aup, puis le Crémon."
           ],
           "note": "Position relevée sur OpenStreetMap."
         },
@@ -605,7 +603,7 @@
           "alt_m": 1701,
           "best_hours": "fin d'après-midi (retour du Cheval Blanc)",
           "trigger": "sommet ouest de Lambruisse ; thermodynamique dans la brise de vallée puis thermique sous le vent du Sapet",
-          "description": "Au retour du Cheval Blanc, le Sapet, sommet ouest de Lambruisse, permet de relancer le grand triangle de l'Izoard : c'est un relais de fin d'après-midi.",
+          "description": "Au retour du Cheval Blanc, le Sapet, sommet ouest de Lambruisse, a servi de relais de fin d'après-midi sur un grand triangle parti de l'Izoard.",
           "sources": [
             "S120",
             "S75"
@@ -626,7 +624,7 @@
           "alt_m": 1425,
           "best_hours": "10h30-11h30 (faibles), avant que la face SO prenne le relais",
           "trigger": "face S/SE du Chalvet, devant le déco sud (FFVL 5168), au-dessus du lac",
-          "description": "Face sud-est du Chalvet, devant le décollage sud : les premiers thermiques démarrent vers 10h30, faibles au début, ce qui convient aux pilotes peu expérimentés. Un point chaud mesuré sur de nombreuses traces GPS y réussit à 98 % : 99 % le matin, 94 % à midi, et aucun thermique le soir. Vers 11h30, le vent de pente tourne : le décollage sud passe sous le vent, et l'on migre vers le sud-ouest ou l'ouest. Ce thermique alimente le décollage sud.",
+          "description": "Face sud-est du Chalvet, devant le décollage sud : les premiers thermiques démarrent vers 10h30, faibles au début, ce qui convient aux pilotes peu expérimentés. Un point chaud mesuré sur de nombreuses traces GPS y réussit à 98 % : 99 % le matin, 94 % à midi, et aucun thermique le soir. Vers 11h30, le vent de pente tourne : le décollage sud passe souvent sous le vent, et l'on migre vers le sud-ouest ou l'ouest.",
           "sources": [
             "S23",
             "S101",
@@ -717,7 +715,7 @@
             "SW",
             "W"
           ],
-          "description": "Décollage principal, relativement raide mais sans obstacle, avec une vaste zone de préparation abritée à quelques minutes. Il est utilisé à partir de 11h, en régime de brise, et il faut alors un bon gonflage face voile, car la brise atteint 25 à 30 km/h en conditions établies. Il faut décoller entre 11h30 et 13h pour le cross. Les deltas prennent le sud-ouest, à gauche, et les parapentes l'ouest, à droite. Par mistral, il peut être turbulent, voire dangereux.",
+          "description": "Décollage principal, relativement raide mais sans obstacle, avec une vaste zone de préparation abritée. On l'utilise à partir de 11h en régime de brise. Il faut alors un bon gonflage face voile, car la brise atteint 25 à 30 km/h en conditions établies. Pour le cross, décollez entre 11h30 et 13h. Les deltas prennent le sud-ouest, à gauche, et les parapentes l'ouest, à droite. Par mistral, il peut être turbulent, voire dangereux.",
           "sources": [
             "S1",
             "S22",
@@ -727,7 +725,7 @@
             "S39",
             "S75"
           ],
-          "note": "Marche de 15 min depuis le parking ; 1 km presque à plat depuis le décollage sud. Altitudes annoncées : 1540 m, 1547 m, 1555 m et 1568 m selon les données. Position relevée sur les données de référence (identifiant 5072 ; 21277 ; OpenStreetMap, « Décollage Chalvet Ouest », way 27001810)."
+          "note": "5 min à pied depuis le bout de la route ; 15 min et 1 km presque à plat depuis le décollage sud. Altitudes annoncées : 1540 m, 1547 m, 1555 m et 1568 m selon les données. Position relevée sur les données de référence (identifiant 5072 ; 21277 ; OpenStreetMap, « Décollage Chalvet Ouest », way 27001810)."
         },
         {
           "id": "chalvet-sud-est",
@@ -741,7 +739,7 @@
             "S",
             "SE"
           ],
-          "description": "Décollages sud et sud-est, en pente douce et dégagée, face à Saint-André et au lac, à 3 min du premier parking. C'est le décollage du matin, par vent de sud-est à sud. Vers 11h30, quand le vent de pente tourne, le décollage passe en rotor ou de dos : il faut alors passer au décollage sud-ouest ou ouest. Compter 1h50 de marche depuis le village, pour 660 m de dénivelé.",
+          "description": "Décollages sud et sud-est, en pente douce et dégagée, face à Saint-André et au lac, à 3 min du premier parking. C'est le décollage du matin, par vent de sud-est à sud. Vers 11h30, quand le vent de pente tourne, il passe souvent sous le vent : montez alors au décollage sud-ouest ou ouest. Compter 1h50 de marche depuis le village, pour 660 m de dénivelé.",
           "sources": [
             "S1",
             "S22",
@@ -782,7 +780,7 @@
           "coord_quality": "source",
           "alt_m": 880,
           "ffvl_id": "5073",
-          "description": "Atterrissage officiel en lisière du village, au bord du lac de Castillon, à 880 m. Il est suffisamment grand pour un planeur, et l'école du site se trouve à son extrémité. Sans vent, il est facile ; il dispose de trois manches à air, et le vent y est affecté par trois vallées entre 13h et 17h.",
+          "description": "Atterrissage officiel en lisière du village, au bord du lac de Castillon, à 880 m. Il est assez grand pour un planeur, et l'école du site se trouve à son extrémité. Sans vent, il est facile. Trois vallées y influencent le vent : surveillez les trois manches à air. L'école le déconseille entre 13h et 17h les jours thermiques.",
           "sources": [
             "S2",
             "S23",
@@ -801,7 +799,7 @@
           "coord_quality": "source",
           "alt_m": 893,
           "ffvl_id": "5169",
-          "description": "Terrain du camping de Moriez, à l'est du village, le long de la route N202, avec une manche à air. Il est utilisé par vent d'ouest ou de nord-ouest, et il est plus calme que le lac aux heures thermiques, car la brise y est canalisée et rarement forte. Il sert aussi aux premiers grands vols de l'école, et de point de repli quand on est trop juste pour passer le col des Robines au retour d'un cross.",
+          "description": "Terrain du camping de Moriez, à l'est du village, le long de la route N202, avec une manche à air. Prenez-le par vent d'ouest ou de nord-ouest : il est plus calme que le lac aux heures thermiques, car la brise y est canalisée et rarement forte. Il sert aussi aux premiers grands vols de l'école et de repli quand on est trop juste pour passer le col des Robines. Méfiez-vous de la ligne électrique qui longe le terrain.",
           "sources": [
             "S1",
             "S2",
@@ -809,7 +807,7 @@
             "S25",
             "S39"
           ],
-          "note": "Il vaut mieux éviter l'entrée du terrain, bordée d'une haie d'épineux : les voitures se garent en bas du terrain. Position relevée sur les données de référence (identifiant 5169)."
+          "note": "Ouvert à tous, sans gêner l'école. Évitez de poser à l'entrée du terrain, bordée d'une haie d'épineux. Des voitures se garent en bas du terrain. Position relevée sur les données de référence (identifiant 5169)."
         }
       ],
       "synoptic_effects": [
@@ -1007,7 +1005,7 @@
             "Avec un passage par le Chamatte au retour, le parcours atteint 120 km.",
             "Le Tromas est souvent très généreux, avec des brises multiples, mais il peut aussi être mal organisé. Un départ vers le Mouchon ou la montagne de Coupe donne un circuit plus court."
           ],
-          "note": "Relais, dans l'ordre : carrière avant les antennes, antennes (plafond vers 2100 m), bout de la montagne de l'Allier, Meunier, crête de Lambruisse, Séoune, montagne de Tournon, pointe nord du Cheval Blanc, col de Talon, Côte Longue, Boules ou Carton, crête de la Chau, Tromas."
+          "note": "Relais, dans l'ordre : carrière avant les antennes, antennes, bout de la montagne de l'Allier, Meunier, crête de Lambruisse, Séoune, montagne de Tournon, pointe nord du Cheval Blanc, col de Talon, Côte Longue, Boules ou Carton, crête de la Chau, Tromas."
         },
         {
           "id": "saint-andre-chamatte-reyniere",
@@ -1045,7 +1043,7 @@
             }
           ],
           "distance_km": 31,
-          "description": "Premier circuit proposé : Chalvet, antennes de la Reynière, retour au Chalvet, puis crête des Serres, Pic de Chamatte et Saint-André. Le dernier thermique avant l'atterrissage est souvent celui, très fort, du Pic de Chamatte.",
+          "description": "Premier circuit proposé : Chalvet, antennes de la Reynière, retour au Chalvet, puis crête des Serres, Pic de Chamatte et Saint-André. Le thermique du Pic de Chamatte, souvent le dernier du parcours, est fort : on peut s'en passer pour rentrer.",
           "sources": [
             "S26",
             "S29",
@@ -1090,7 +1088,7 @@
             }
           ],
           "distance_km": 47,
-          "description": "Deux circuits proposés : Chalvet, Cheval Blanc, Sapée, Mouchon, puis Saint-André ; ou Chalvet, Mouchon, montagne de Coupe, Cheval Blanc, puis Saint-André. Les sorties enregistrées font de 43 à 48 km.",
+          "description": "Deux circuits proposés : Chalvet, Cheval Blanc, Sapée, Mouchon, puis Saint-André ; ou Chalvet, Mouchon, montagne de Coupe, Cheval Blanc, puis Saint-André.",
           "sources": [
             "S26",
             "S27",
@@ -1099,7 +1097,8 @@
           "possible": [
             "Un triangle de 50 km passe par le Cheval Blanc, puis par la montagne de Coupe, en longeant ses falaises, avant le retour.",
             "On peut aussi suivre la barre de Coupe jusqu'au pic de Couard, puis revenir. Une boucle rapide relie Lambruisse, le Grand Cordeil, Maurel et le lac."
-          ]
+          ],
+          "note": "Distances de 43 à 48 km lues sur un planificateur de vol, non revérifiées."
         },
         {
           "id": "saint-andre-bleyne-aller-retour",
@@ -1247,17 +1246,17 @@
             ]
           },
           "when": "milieu d'après-midi (été), sur l'itinéraire via Pic de Chamatte",
-          "mechanism": "Les brises de la vallée de Thorame rencontrent les flux des arêtes voisines au moment de la traversée entre la montagne de Cordeil et la montagne de Maurel.",
-          "usage": "Raccrocher le Grand Cordeil depuis Chamatte, au retour, n'est pas évident, même à 3000 m : vers l'ouest, la zone est qualifiée de « laisse de chien ».",
+          "mechanism": "En milieu d'après-midi, une confluence se forme souvent dans la transition de la vallée de Thorame et entre la montagne de Cordeil et celle de Maurel.",
+          "usage": "Raccrocher le Grand Cordeil depuis Chamatte n'est pas évident, même à 3000 m : il faut faire une belle laisse de chien vers l'ouest, sinon ça ne passe pas.",
           "confidence": "low",
           "sources": [
             "S65",
             "S75"
           ],
           "possible": [
-            "Il arrive que cette confluence soit généralement présente en milieu d'après-midi, et que la ligne par Chamatte soit alors préférée."
+            "Cette confluence peut rendre plus agréable le retour par Chamatte."
           ],
-          "note": "Tracé indicatif entre le sommet de Maurel et le Puy de Rent, de part et d'autre de la vallée : la position réelle n'est pas publiée. Orthographe « Morel » relevée."
+          "note": "Tracé indicatif entre le sommet de Maurel et le Puy de Rent, de part et d'autre de la vallée : la position réelle n'est pas publiée. Une seule source, qui ne dit pas ce que cette confluence fait rencontrer. Orthographe « Morel » relevée."
         },
         {
           "id": "convergence-courradour-annot",
@@ -1276,15 +1275,15 @@
             ]
           },
           "when": "fin d'après-midi, retour de cross (récit du 9 avril 2011, régime de NE)",
-          "mechanism": "Une confluence se trouve à l'est, entre le Courradour et Annot.",
-          "usage": "La montée y est très bonne, mais il faut faire le plafond avant de sauter derrière Annot : le terrain y est inconnu, et les atterrissages sont délicats près d'Annot.",
+          "mechanism": "Un jour de nord-est, une belle confluence s'est formée à l'est de la montagne de Chamatte, entre le Courradour et Annot.",
+          "usage": "Elle monte très bien et permet de gagner quelques kilomètres vers Annot. Avec un plafond, on peut espérer boucler jusqu'au col de Bleyne, mais on saute alors derrière Annot.",
           "confidence": "low",
           "sources": [
             "S59",
             "S75"
           ],
           "possible": [
-            "Il arrive qu'on suive cette confluence vers le sud pour gagner quelques kilomètres ; la dernière couche de brise descend alors vers Annot, très chargée de bulles « teigneuses »."
+            "La dernière couche de brise qui descend vers Annot peut être chargée de bulles agressives."
           ],
           "note": "Tracé indicatif, du sommet du Courradour vers Annot."
         }
@@ -1299,7 +1298,7 @@
           "coord_quality": "approx",
           "radius_km": 8,
           "conditions": "toute l'année",
-          "description": "Le survol du parc national du Mercantour est interdit à moins de 1000 m au-dessus du sol, dans le secteur d'Allos et du Mont Pelat. Les parcs nationaux voisins cités sont Auron, Tende et Sospel.",
+          "description": "Le survol du parc national du Mercantour est interdit à moins de 1000 m au-dessus du sol, dans le secteur d'Allos et du Mont Pelat. Repérez ses limites avant de partir.",
           "sources": [
             "S24",
             "S34",
@@ -1334,7 +1333,7 @@
           "alt_m": 2202,
           "best_hours": "fin d'après-midi",
           "trigger": "haute crête au soleil à l'ouest d'Allos",
-          "description": "Passage de glisse vers Dormillouse, sur la haute crête au soleil à l'ouest d'Allos, en fin d'après-midi. On y arrive du Tromas par le Caduc et l'Aiguillette, et il sert de relais avec la brise de la Bléone et le col de Vachière. Il est plus facile de passer par le Cadun que de lutter contre la Bléone par le Caduc jusqu'à la montagne de Vachière.",
+          "description": "Haute crête à l'ouest d'Allos, encore au soleil en fin d'après-midi, travaillée par la brise de la Bléone. À l'aller, on peut y glisser en direction de Dormillouse. Au retour depuis le Tromas, passez par le Caduc jusqu'à la montagne de Vachière : c'est bien plus facile que de lutter contre les fortes brises de la Bléone.",
           "sources": [
             "S55",
             "S59",
@@ -1344,9 +1343,8 @@
           ],
           "confidence": "medium",
           "possible": [
-            "Il arrive qu'on vive un grand moment de vol dans un beau thermique doux et régulier, vers 17h25.",
-            "Le thermique y attend au bout de la crête, et la dynamique du bout de la crête profite de la brise de la Bléone.",
-            "Il arrive qu'on le raccroche « en lambeaux »."
+            "Un jour d'avril, vers 17h25, le Cadun a donné un thermique doux et régulier jusqu'à 3200 m.",
+            "Un thermique peut attendre sur les hautes crêtes, et la brise de la Bléone peut permettre de remonter en dynamique au bout de la crête."
           ],
           "note": "Position relevée sur OpenStreetMap (nœud 4148720199)."
         },
@@ -1359,13 +1357,16 @@
           "alt_m": 1790,
           "best_hours": "midi-fin d'après-midi (plafonds ~1900-2100 m en début de cycle)",
           "trigger": "croupe d'orientation SO au nord des antennes, point de départ de la transition vers Lambruisse et le Meunier",
-          "description": "Point de relance : on se place au bout de la montagne de l'Allier pour une transition vers le sommet du Meunier. Il faut y faire le plafond : 1900 m suffisent pour raccrocher les crêtes de Lambruisse, et 2100 m en début de cycle.",
+          "description": "Point de relance : on se place au bout de la montagne de l'Allier pour transiter vers le sommet du Meunier.",
           "sources": [
             "S99",
             "S75"
           ],
           "confidence": "medium",
-          "note": "Position relevée sur OpenStreetMap, au sommet de l'Allier."
+          "note": "Position relevée sur OpenStreetMap, au sommet de l'Allier.",
+          "possible": [
+            "Un matin où les plafonds ne dépassaient pas 2100 m, 1900 m ont suffi pour assurer le passage vers le Meunier."
+          ]
         },
         {
           "id": "sommet-de-meunier",
@@ -1460,7 +1461,7 @@
           "alt_m": 2323,
           "best_hours": "14h-16h (plafonds 500 m plus bas que Côte Longue si la Bléone apporte de l'humidité)",
           "trigger": "pointe nord du Cheval Blanc, crête exposée aux brises de la Bléone",
-          "description": "Point de relance et plafond à la pointe nord du Cheval Blanc, exposée aux brises de la Bléone. Le premier vrai thermique y monte à plus de 2600 m et dérive vers le nord ; la transition se fait ensuite vers le Carton, où l'on reprend 300 m en milieu de transition.",
+          "description": "Point de relance à la pointe nord du Cheval Blanc, exposée aux brises de la Bléone. On transite ensuite vers le Carton.",
           "sources": [
             "S26",
             "S99",
@@ -1470,9 +1471,9 @@
           ],
           "confidence": "medium",
           "possible": [
-            "Il arrive que le thermique soit faible : on avance alors à hauteur de crête ou sous la crête, puis l'on bascule sur les faces nord.",
-            "Il arrive qu'on monte à 3000 m dans le grand triangle de l'Izoard, par vent qui tourne ouest-nord-ouest. Par nord fort, le Cheval Blanc peut être trop agité, avec des fermetures et des thermiques qui dérivent.",
-            "Les plafonds peuvent être 500 m plus bas que ceux de Côte Longue, si la Bléone apporte de l'humidité."
+            "Il arrive qu'un thermique monte à plus de 2600 m et dérive vers le nord, poussé par la brise de vallée. Le même jour, on a repris 300 m en milieu de transition vers le Carton.",
+            "Si le thermique est faible, on avance à hauteur de crête ou dessous, puis on bascule sur les faces nord.",
+            "Les plafonds peuvent être 500 m plus bas que ceux de Côte Longue si la Bléone apporte de l'humidité. Un autre jour, par vent tournant à l'ouest-nord-ouest, on a fait 3000 m."
           ],
           "note": "Position relevée sur OpenStreetMap ; le point précis de la pointe nord n'est pas donné."
         },
@@ -1502,7 +1503,7 @@
           "alt_m": null,
           "best_hours": "13h-15h30",
           "trigger": "longue crête N-S, thermique musclé « boulet de canon » côté nord, bascule des brises",
-          "description": "Point de relance et plafond : 2500 m suffisent pour la raccrocher depuis Cordeil. Il faut rester sur la crête sans choisir entre l'est et l'ouest, car la brise de nord souffle à l'autre bout ; viser environ 2800 m sur la pointe sud pour rejoindre la vallée de la Bléone.",
+          "description": "Point de relance et plafond : 2500 m suffisent pour la raccrocher depuis le Cordeil. Restez sur la crête, sans choisir entre l'est et l'ouest, car on trouve souvent de la brise de nord à l'autre bout. Visez environ 2800 m sur la pointe sud pour rejoindre la vallée de la Bléone.",
           "sources": [
             "S55",
             "S103",
@@ -1581,7 +1582,7 @@
           "confidence": "medium",
           "possible": [
             "Il arrive qu'un excellent thermique, à 2800 m, se trouve à moins de 300 m au vent, sur un rognon rocheux, alors qu'une arrivée basse dans la descendance du col est mal organisée.",
-            "Il arrive que le thermique y soit bien gonflé."
+            "La Chaux peut accueillir avec des thermiques très durs, en boulets de canon, dans une aérologie turbulente."
           ],
           "note": "Position relevée sur l'IGN."
         },
@@ -1618,7 +1619,7 @@
           "alt_m": null,
           "best_hours": "16h-19h",
           "trigger": "croupe au nord de Thorame-Haute, où l'on passe au retour depuis Vachière avant le Cordeil",
-          "description": "Point de relance du retour, au nord de Thorame-Haute, où l'on passe depuis Vachière avant le Cordeil. Peu exposée aux brises, elle sert de relais pour cette transition.",
+          "description": "Point de relance du retour, au nord de Thorame-Haute, où l'on passe depuis Vachière avant le Cordeil.",
           "sources": [
             "S99",
             "S106",
@@ -1628,11 +1629,11 @@
           ],
           "confidence": "medium",
           "possible": [
-            "Il arrive qu'on y fasse le plein à 3000 m, dans le plus fort thermique de la journée, et qu'un thermique à 3100 m suffise pour transiter vers le Cordeil.",
-            "Il arrive qu'elle soit turbulente, voire « pourrie ».",
-            "Il arrive qu'on l'exploite vers 18h59, juste ce qu'il faut pour raccrocher le Cordeil."
+            "Il arrive qu'on y fasse le plein à 3000 m, dans le plus fort thermique de la journée. Un autre jour, 3100 m ont suffi pour transiter vers le Cordeil.",
+            "Elle peut aussi donner une pompe turbulente et difficile à exploiter.",
+            "Un soir, vers 18h59, ses timides ascendances ont tout juste suffi pour espérer raccrocher le Cordeil."
           ],
-          "note": "Ne pas confondre avec le Pic de Chamatte (1879 m), à 20 km au sud-est de Saint-André : les retours de vol évoquent cette montagne de Thorame."
+          "note": "Ne pas confondre avec le Pic de Chamatte (1879 m), au sud-est de Saint-André : les retours de vol évoquent cette montagne de Thorame."
         },
         {
           "id": "montagne-de-cordeil",
@@ -1694,9 +1695,6 @@
             "S122"
           ],
           "confidence": "medium",
-          "possible": [
-            "Il arrive qu'un thermique soit remonté vers 14h12 sur la tête du Bau."
-          ],
           "note": "Position relevée sur l'IGN."
         },
         {
@@ -1708,7 +1706,7 @@
           "alt_m": null,
           "best_hours": "16h30-17h",
           "trigger": "tête de l'Estrop, sur la crête de la Blanche (« autoroute à planeurs »)",
-          "description": "Plafond du retour, sur la tête de l'Estrop, sur la crête de la Blanche, très fréquentée par les planeurs. On y atteint 3680 m. Depuis le Tromas, il reste ensuite 20 km faciles le long de la Blanche jusqu'à Dormillouse.",
+          "description": "Sur la tête de l'Estrop et la crête de la Blanche, très fréquentée par les planeurs, on prépare le retour. Depuis le Tromas, il reste 20 km faciles le long de la Blanche jusqu'à Dormillouse.",
           "sources": [
             "S115",
             "S121",
@@ -1716,8 +1714,8 @@
           ],
           "confidence": "medium",
           "possible": [
-            "Il arrive qu'on batte pour tenir la voile, et qu'on passe ici vers 16h34, à 3680 m.",
-            "Vers 17h05, les plafonds de l'Estrop sont tout juste suffisants pour espérer raccrocher le Cadun."
+            "Un jour, vers 16h34, on y a fait 3680 m après avoir bataillé pour tenir la voile, arrivé un peu bas entre de puissantes brises de sud-ouest et le vent de nord.",
+            "Vers 17h05, les plafonds de l'Estrop peuvent tout juste suffire pour espérer raccrocher le Cadun."
           ],
           "note": "Position relevée sur l'IGN."
         },
@@ -1744,7 +1742,7 @@
           "possible": [
             "Il arrive que les ascendances soient plus basses sur le relief en avant qu'au sommet du Carton.",
             "Une pompe bien organisée se forme sur la forêt, en avant du relief.",
-            "Il arrive qu'on y trouve des thermiques particulièrement violents, en forme de « boulet de canon »."
+            "Il arrive qu'on y trouve des thermiques particulièrement violents."
           ],
           "note": "Point ajouté en octobre 2026 ; l'élément du sommet voisin est conservé. Le lieu-dit « le Carton » est à 6.4413 E, 44.1913 N (toponyme IGN, à 90 m). Hiver sous 70 %, printemps 91 %, été 92 %, automne 90 %."
         },
@@ -2032,7 +2030,7 @@
             "On refait ensuite un bon plein au-dessus du col de Talon, entre le Cheval Blanc et Côte Longue, puis l'on choisit entre Boules, le Carton et le col de la Baisse, avant la crête de la Chau et le Tromas.",
             "Rochecline, à l'entrée du haut Var, offre parmi les plus beaux plafonds de Saint-André."
           ],
-          "note": "Cordeil, Côte Longue et le col de Talon ne sont pas retrouvés sur OpenStreetMap. Rochecline n'a pas pu être localisé."
+          "note": "Positions de ces relais relevées sur OpenStreetMap ou l'IGN, voir leurs fiches."
         }
       ],
       "tips": [
@@ -2170,7 +2168,7 @@
           },
           "season": "avril-octobre",
           "layer_depth_m": "non documenté",
-          "description": "Brise montante de la Bléone, de Malijai vers Digne et Prads. À l'Andran, le matin, il y a une brise descendante ou un léger vent de nord ; à partir de 12h, il n'y a plus que des brises, qui peuvent vite devenir fortes côté ouest au décollage, et elles sont turbulentes par vent de nord ou d'ouest. À Villevieille, les brises arrivent dès 11h, et au Cousson, elles s'accompagnent d'un léger nord-ouest.",
+          "description": "Brise montante de la Bléone, de Malijai vers Digne et Prads. À l'Andran, le matin, on a une brise descendante ou un léger vent de nord. À partir de 12h, il n'y a plus que des brises : elles forcissent vite côté ouest au décollage, et le site devient turbulent par vent de nord ou d'ouest. À Villevieille, les brises arrivent dès 11h. Au Cousson, on vole par brise ou par léger nord-ouest.",
           "confidence": "medium",
           "sources": [
             "S44",
@@ -2180,7 +2178,7 @@
           ],
           "possible": [
             "Il arrive qu'à La Javie et à Prads, le vent de vallée et une aérologie forte s'installent en milieu d'après-midi.",
-            "Entre le Tromas et Chamatte, il faut combattre les fortes brises de la Bléone au retour."
+            "Au retour du Tromas, si l'on ne passe pas par le Caduc, il faut lutter contre les fortes brises de la Bléone."
           ],
           "note": "Vitesses : interprétation, typiquement de 15 km/h et au maximum de 30 km/h. Villages positionnés sur OpenStreetMap et GeoNames (Mallemoisson)."
         },
@@ -2261,7 +2259,7 @@
             "S75"
           ],
           "possible": [
-            "Contras Saim Buguet, au sud-ouest, à l'ouest ou au nord-ouest, à 1629 m, est le décollage haut."
+            "Contras Saim Buguet, orienté sud-ouest à nord-ouest, à 1629 m, est le décollage haut."
           ],
           "note": "Point de crête : sommet du Contras, relevé sur OpenStreetMap, à 1619 m."
         }
@@ -2399,7 +2397,7 @@
           "coord_quality": "source",
           "radius_km": 6,
           "conditions": "journées de vol à voile (280 jours par an annoncés)",
-          "description": "Près de Malijai, le site est en test et n'est pas validé. Il y a un danger lié à la ligne haute tension et à la proximité du centre de vol à voile de Saint-Auban, qui opère 280 jours par an avec 25 planeurs. Des planeurs sont fréquents sur Gâche et autour des crêtes.",
+          "description": "Le centre de vol à voile de Saint-Auban vole 280 jours par an et compte 25 planeurs. Attendez-vous à en croiser sur Gâche et autour des crêtes de la moyenne Durance. Sa proximité est un des dangers signalés au site de Malijai, encore en test et non validé.",
           "sources": [
             "S46",
             "S21",
@@ -2595,7 +2593,7 @@
           "alt_m": 1398,
           "best_hours": "10h-18h",
           "trigger": "serre exposée S/SO/O/NO au-dessus de Moustiers",
-          "description": "La serre du Montdenier, au-dessus de Moustiers, se déclenche vers 10h. Elle est très favorable par vent d'ouest, et le site est facile. Dans l'après-midi, l'aérologie y est forte. Il sert de relance et de plafond pour les cross à l'ouest de Castellane.",
+          "description": "La serre du Montdenier, au-dessus de Moustiers, se déclenche vers 10h et marche très bien par vent d'ouest. L'aérologie y est forte l'après-midi. Elle sert de relance et de plafond pour les cross à l'ouest de Castellane.",
           "sources": [
             "S48",
             "S60",
@@ -2606,11 +2604,11 @@
           ],
           "confidence": "medium",
           "possible": [
-            "Il arrive qu'un petit thermique dérivant se prenne dès le début de la crête du Mont Denier, puis que l'on gagne 1300 m en 11 minutes avec trois vautours, par régime d'est.",
-            "Il arrive que le plafond atteigne 4050 m, avec un thermique à 8 m/s.",
-            "Il arrive que le réveil tarde si le sol est humide, et que les cumulus mettent du temps à s'allumer."
+            "Par régime d'est, un petit thermique dérivant peut se prendre dès le début de la crête : un jour, 1300 m en 11 minutes avec trois vautours.",
+            "Un autre jour, le thermique y est monté à 8 m/s jusqu'au plafond, et le vol a atteint 4050 m plus au nord, passé la montagne de Coupe.",
+            "Le réveil peut tarder si le sol est humide, et les cumulus mettent alors du temps à s'allumer."
           ],
-          "note": "Référence 13094 : aérologie forte dans l'après-midi. Le décollage voisin de Courchon se déclenche vers 13h, et il est dangereux par vent de nord ou de nord-ouest. Vautours fauves signalés au Mont Denier."
+          "note": "Référence 13094 : aérologie forte dans l'après-midi, niveau confirmé. Une ancienne indication dit le site facile. Le décollage voisin de Courchon se déclenche vers 13h, et il est dangereux par vent de nord ou de nord-ouest. Vautours fauves signalés au Mont Denier."
         },
         {
           "id": "mourre-de-chanier-plafond",
@@ -2621,14 +2619,14 @@
           "alt_m": 1930,
           "best_hours": "12h30-13h",
           "trigger": "sommet à l'ouest de Castellane, repère de nuage en début de transition vers Moustiers",
-          "description": "Repère de nuage en début de transition vers Moustiers, à l'ouest de Castellane. Au sommet, on se trouve assez haut pour ne pas être gêné par les brises, avant de viser les barbules du Mont Denier.",
+          "description": "Repère de nuage en début de transition vers Moustiers, à l'ouest de Castellane. On vise ensuite les barbules du Mont Denier.",
           "sources": [
             "S115",
             "S75"
           ],
           "confidence": "medium",
           "possible": [
-            "Il arrive qu'on atteigne 3300 m vers 12h51, sur les petites barbules du Mourre de Chanier."
+            "Un jour, vers 12h51, on y a fait 3300 m sur de petites barbules, assez haut pour ne pas être gêné par les brises."
           ],
           "note": "Position relevée sur OpenStreetMap et l'IGN, au sommet."
         },
@@ -2651,8 +2649,8 @@
           ],
           "confidence": "medium",
           "possible": [
-            "Il arrive qu'on rentre dans un thermique saint-andréen, avec un plafond de 3500 m, par flux de sud-est.",
-            "On peut remonter cet axe confluent entre le col de Vachière et le sommet du Couard, et plafonner à 2985 m, au sud de la montagne de Coupe.",
+            "Par flux de sud-est, on peut y entrer dans un thermique puissant et faire 3500 m.",
+            "On peut remonter l'axe confluent entre le col de Vachière et le sommet du Couard. Un autre jour, un thermique a plafonné à 2985 m au sud de la montagne de Coupe.",
             "Une mauvaise lecture du nuage peut envoyer sous le vent du thermique, trop bas sur le Couard. Par nord ou nord-est, le trajet vers le Cheval Blanc est ingrat : les petits thermiques ne tiennent pas."
           ],
           "note": "Position relevée sur OpenStreetMap, au sommet du Couard. La montagne de Coupe est à 5 km au sud-ouest (6.3332 / 44.0576)."
@@ -2750,7 +2748,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (95 % le matin, 93 % à midi, 85 % en fin de journée ; toute l'année)",
           "trigger": "pente sud-ouest du plateau d'Aiguines, au-dessus du col d'Illoire, sous les décollages du Puits (SO) et des Vernis (SO/O/NO)",
-          "description": "Pente sud-ouest du plateau d'Aiguines, au-dessus du col d'Illoire, sous les décollages du Puits et des Vernis. C'est un point chaud mesuré sur de nombreuses traces GPS : il réussit à 94 % toutes périodes, avec 95 % le matin, 93 % à midi et 85 % en fin de journée, et il est fort toute l'année.",
+          "description": "Pente sud-ouest du plateau d'Aiguines, au-dessus du col d'Illoire, sous les décollages du Puits et des Vernis. C'est un point chaud mesuré sur de nombreuses traces GPS : il réussit à 94 % toutes périodes, avec 95 % le matin, 93 % à midi et 85 % en fin de journée, et toute l'année.",
           "confidence": "low",
           "sources": [
             "S128",
@@ -2774,7 +2772,7 @@
           "coord_quality": "approx",
           "best_hours": "toute la journée d'après les traces GPS (100 % le matin, 100 % à midi, 91 % en fin de journée ; toute l'année)",
           "trigger": "pente sud-est (26°) sous le décollage de la Croix de Grou de Bane, face à la plaine de Banon, versant exposé aux premiers soleils",
-          "description": "Pente sud-est sous le décollage de la Croix de Grou de Bane, face à la plaine de Banon, versant exposé aux premiers soleils. C'est le point chaud le plus fort de la zone : il réussit à 100 % le matin et à midi, en hiver comme en été, et à 91 % en fin de journée.",
+          "description": "Pente sud-est sous le décollage de la Croix de Grou de Bane, face à la plaine de Banon, versant exposé aux premiers soleils. C'est le point chaud le plus régulier de la zone : il réussit à 100 % le matin et à midi, en hiver comme en été, et à 91 % en fin de journée.",
           "confidence": "medium",
           "sources": [
             "S47",
@@ -2836,7 +2834,7 @@
           "possible": [
             "Ce point est sans doute sur le trajet des départs de compétition de l'Andran vers l'ouest : c'est une déduction, aucun texte ne le décrit."
           ],
-          "note": "Le décollage de l'Andran (référence 257, 1198 m, est et sud-ouest) n'a aucun thermique recensé à moins de 7 km. Il est décrit comme un site de régime de brise : brise du matin de 7h à 9h sur le décollage nord-est, et conditions favorables en fin de matinée et par très légers vents d'ouest à nord. Altitude du terrain relevée sur l'IGN."
+          "note": "Le décollage de l'Andran (référence 257, 1198 m, est et sud-ouest) n'a aucun thermique recensé à moins de 7 km. Il est décrit comme un site de régime de brise : brise du matin de 7h à 9h sur le décollage nord-est, et conditions favorables par léger vent de nord et d'est. Altitude du terrain relevée sur l'IGN."
         },
         {
           "id": "plat-de-la-main-sud-cousson",
@@ -2901,7 +2899,7 @@
             "S67"
           ],
           "possible": [
-            "Il arrive qu'on se gave pendant 40 min en mini de 15 m², puis qu'on vole 1 h jusqu'au coucher du soleil, vers 18h40, en dynamique de nord-ouest sur le Chabre.",
+            "Un soir, la dynamique a tenu 40 min en mini-voile. Un soir de mars, par bon nord-ouest, elle a tenu 1 h, jusqu'au coucher du soleil, vers 18h40.",
             "En fin d'après-midi, quand les thermiques ne hachent plus la dynamique de nord, le vol est propre et agréable.",
             "Il arrive que des turbulences se forment vers le pilier."
           ],
@@ -2927,7 +2925,7 @@
           "possible": [
             "En cross, c'est plutôt le Trainon que l'on vise."
           ],
-          "note": "À droite du décollage, les ailes en approche sont prioritaires. Référence 223."
+          "note": "Avant de décoller, regardez les ailes qui viennent reposer. Sur la barre à droite du décollage, respectez les priorités, surtout quand ça faiblit. Référence 223."
         },
         {
           "id": "oraison-restitution-soir",
@@ -2939,7 +2937,7 @@
             "SW",
             "W"
           ],
-          "description": "Petit site, de 200 m de dénivelé. Le vol du soir se fait par léger vent d'ouest ou par brise, et la restitution est possible vers Moustiers et le lac de Sainte-Croix.",
+          "description": "Petit site, de 200 m de dénivelé. Le vol du soir se fait par léger vent d'ouest ou par brise. Pour une plus grande restitution, Moustiers n'est qu'à une petite route d'ici.",
           "sources": [
             "S46",
             "S72"
@@ -2982,12 +2980,12 @@
             "NW",
             "S"
           ],
-          "description": "La serre du Montdenier est favorable par vent d'ouest. La restitution du soir peut mener jusqu'au lac de Sainte-Croix, puis l'on se pose à la Reine Jeanne, seul atterrissage autorisé, à cause de la ligne électrique.",
+          "description": "La serre du Montdenier est favorable par vent d'ouest. En été, le vol du soir sur les falaises ouest du Mont Denier et de Courchon tient jusqu'à la nuit. Rejoignez ensuite la Reine Jeanne, seul atterrissage autorisé de la vallée, au bout d'une longue transition. Une ligne électrique le longe.",
           "sources": [
             "S48",
             "S72"
           ],
-          "note": "Consigne : ne pas « se vacher »."
+          "note": "Consigne : ne pas se poser dans les champs ni les prés."
         }
       ],
       "takeoffs": [
@@ -3071,7 +3069,7 @@
             "S73"
           ],
           "ffvl_id": "286",
-          "note": "Altitude : 1048 m. Une ancienne indication donne 1720 m pour la Fontaine d'Archail : l'altitude diverge entre les deux sources. Référence 286, non conventionné."
+          "note": "Altitude à revoir : 1048 m annoncés, plus bas que l'atterrissage (1201 m), et une ancienne indication donne 1720 m pour la Fontaine d'Archail. Référence 286, non conventionné."
         },
         {
           "id": "gache-sisteron",
@@ -3125,7 +3123,7 @@
             "S",
             "SW"
           ],
-          "description": "Décollage sud-est, sud ou sud-ouest, avec un léger vent météo de sud quand la brise est établie. En soirée, le sud ou le sud-est peut se renforcer, et il y a un venturi sur la barre. Un élevage est à proximité. Le Trainon, au sud-ouest, est le décollage haut.",
+          "description": "Décollage sud-est, sud ou sud-ouest, avec un léger vent météo de sud quand la brise est établie. En soirée, le sud ou le sud-est peut se renforcer, et il y a un venturi sur la barre. Un élevage est à proximité. Le Trainon, orienté sud-ouest, est le décollage haut.",
           "sources": [
             "S45"
           ],
@@ -3418,7 +3416,7 @@
           "lat": 44.1222,
           "coord_quality": "source",
           "alt_m": 1201,
-          "description": "L'après-midi, la brise peut être forte. Cette indication vaut pour toutes les orientations.",
+          "description": "Terrain qui accepte toutes les orientations, tout près d'Archail. L'après-midi, la brise peut être forte.",
           "sources": [
             "S44",
             "S73"
@@ -3448,7 +3446,7 @@
           "lat": 44.1464,
           "coord_quality": "source",
           "alt_m": 557,
-          "description": "Atterrissage accessible par toutes les orientations, à Valbelle.",
+          "description": "Terrain qui accepte toutes les orientations, à Valbelle.",
           "sources": [
             "S45",
             "S73"
@@ -3539,7 +3537,7 @@
           "lat": 43.8334,
           "coord_quality": "source",
           "alt_m": 546,
-          "description": "Seul atterrissage autorisé de la vallée, il remplace Saint-Clair, interdit. Une ligne électrique passe à proximité, la transition est longue, et il ne faut pas « se vacher » dans les champs.",
+          "description": "Seul atterrissage autorisé de la vallée, il remplace Saint-Clair, interdit. Il longe une ligne électrique, et la transition est longue. Ne vous posez pas dans les champs ni les prés. En cas de posé forcé, sortez immédiatement du champ pour plier.",
           "sources": [
             "S48"
           ],
@@ -3715,14 +3713,14 @@
             }
           ],
           "distance_km": null,
-          "description": "Vol de randonnée depuis le sommet du Cucuyon et du Couard, en se posant à Draix ou à Archail. Il est peu documenté.",
+          "description": "Vol de randonnée depuis le sommet du Cucuyon, ou du Couard, moins évident, en se posant à Draix ou à Archail. Il est peu documenté.",
           "sources": [
             "S73",
             "S26"
           ],
           "possible": [
             "Si cela tient, on peut longer les crêtes jusqu'au Cheval Blanc.",
-            "Les Terres Noires, en plein jour, entre 11h et 17h, sont déconseillées à cause des turbulences."
+            "Les Terres Noires ne sont pas un coin très hospitalier pour le parapente."
           ],
           "note": "Piste signalée une seule fois."
         }
@@ -3924,7 +3922,7 @@
             ]
           },
           "when": "journées de brise de mer établie (printemps-été), jusqu'en hiver ; matin après 10-11h, devient vite « teigneux » ensuite",
-          "mechanism": "La brise de sud-est, venue de la mer, rencontre le flux de la crête et du plateau de Caussols au-dessus de Gourdon : les deux courants se rejoignent le long de la crête entre l'Embarnier et Cavillore.",
+          "mechanism": "La convergence se forme souvent juste au-dessus du site, sur la crête entre l'Embarnier et Cavillore, les jours de brise de mer.",
           "usage": "Le site permet de voler en cross toute l'année. Il vaut mieux l'exploiter tôt, car le thermique devient vite difficile vers 11h-13h. En hiver, des triangles de 20 à 30 km sont possibles vers Courmettes, Tourrettes ou Saint-Jeannet.",
           "confidence": "medium",
           "sources": [
@@ -3934,11 +3932,10 @@
             "S57"
           ],
           "possible": [
-            "La convergence peut se former juste au-dessus du site.",
-            "Un record de 170 km vers La Mure a été réalisé depuis ce secteur.",
+            "Le site a un record de 170 km, jusqu'à La Mure.",
             "Par grosses brises, la repose au décollage est difficile."
           ],
-          "note": "Tracé indicatif le long de la crête entre l'Embarnier et Cavillore."
+          "note": "Tracé indicatif le long de la crête entre l'Embarnier et Cavillore. Aucune source ne dit quel flux rencontre la brise."
         },
         {
           "id": "convergence-bleine-atterro",
@@ -4147,9 +4144,9 @@
             "S66"
           ],
           "possible": [
-            "Par fort vent d'est, le champ du bas peut être turbulent, et l'atterrissage des Valettes, plus bas, passe pour très facile.",
+            "Par fort vent d'est, le petit terrain de l'école peut être turbulent. Valette, en bas, est nettement plus accessible.",
             "Le champ de Cavillore est petit, entouré de rochers, et le vent y est difficile à prévoir au sol.",
-            "Il arrive que le terrain des Abeilles soit le lieu d'accidents par décrochage."
+            "Le gradient reste présent plus bas que les Abeilles, après le hangar vert : un décrochage y a causé un accident grave."
           ]
         },
         {
@@ -4200,14 +4197,12 @@
           "coord_quality": "source",
           "radius_km": 1.0,
           "conditions": "toute l'année ; fenaison avril-début juillet",
-          "description": "Il ne faut pas se poser dans les prés voisins, occupés par des élevages de bisons et de vaches, et survoler les troupeaux est interdit. Le champ d'atterrissage est sous convention non FFVL, praticable seulement d'avril à début juillet, à une date fixée avec l'agriculteur.",
+          "description": "Ne vous posez pas dans les prés voisins, occupés par des élevages de bisons et de vaches, et ne survolez pas les troupeaux. La convention du champ d'atterrissage a été dénoncée par le nouveau propriétaire : évitez de vous y poser.",
           "sources": [
             "S41",
             "S56"
           ],
-          "possible": [
-            "Le terrain pourrait changer de propriétaire et la convention être dénoncée : mieux vaut éviter de s'y poser."
-          ]
+          "note": "Convention non fédérale, sauf d'avril à début juillet (fenaison, date à définir avec l'agriculteur)."
         }
       ],
       "thermal_spots": [
@@ -4277,7 +4272,7 @@
           "possible": [
             "En hiver, la brise de falaise est très peu épaisse : il faut coller la falaise.",
             "Les thermiques y sont faibles et étroits, et souvent encombrés.",
-            "Le vol demande une montée à pied d'environ 40 min ; les plafonds sont d'environ 1400 m en hiver, et jusqu'à 1900 m vers la mi-avril."
+            "On y monte à pied en 40 min environ. Sur le secteur de Gourdon, les plafonds tournent autour de 1400 m en hiver et peuvent atteindre 1900 m vers la mi-avril."
           ]
         },
         {
@@ -4289,7 +4284,7 @@
           "alt_m": null,
           "best_hours": "11h-13h",
           "trigger": "sommet un peu à l'est du déco, extraction au-dessus du vallon ruiné",
-          "description": "Le Pic de l'Aigle, un peu plus à l'est du décollage de Bleine, sert d'extraction, surtout entre 11h et 13h.",
+          "description": "Le Pic de l'Aigle, un peu à l'est du décollage de Bleine, sert d'extraction.",
           "sources": [
             "S55",
             "S103",
@@ -4311,7 +4306,7 @@
           "alt_m": null,
           "best_hours": "11h-13h",
           "trigger": "zone de bois brûlé, facilement repérable, sur la crête entre le col de Bleine et La Ferrière",
-          "description": "Le bois brûlé, facilement repérable sur la crête entre le col de Bleine et La Ferrière, est en général la deuxième pompe de la traversée. Il est généreux en thermique, surtout vers 11h-13h.",
+          "description": "Le bois brûlé, facile à repérer sur la crête entre le col de Bleine et La Ferrière, est en général la deuxième pompe de la traversée.",
           "sources": [
             "S55",
             "S112",
@@ -4335,7 +4330,7 @@
           "alt_m": null,
           "best_hours": "11h30-13h",
           "trigger": "grande pente SE au-dessus du hameau des Lattes ; éperon au vent signalé par Parapentor",
-          "description": "La grande pente sud-est au-dessus du hameau des Lattes chauffe tôt : c'est un point de relance entre 11h30 et 13h, juste avant la transition vers le Teillon.",
+          "description": "La grande pente sud-est au-dessus du hameau des Lattes chauffe tôt : en matinée, elle porte souvent le plus beau nuage du secteur. C'est le point de relance juste avant la transition vers le Teillon.",
           "sources": [
             "S103",
             "S60",
@@ -4343,9 +4338,8 @@
           ],
           "confidence": "medium",
           "possible": [
-            "Il arrive que ce soit le plus beau nuage du secteur, en matinée.",
             "Un beau thermique peut se placer sur un éperon au vent.",
-            "Il arrive qu'on atteigne 2800 m vers midi."
+            "Un jour, vers midi, on y a fait 2800 m."
           ],
           "note": "L'éperon exact n'est pas indiqué ; position du hameau des Lattes."
         },
@@ -4378,7 +4372,7 @@
           "alt_m": null,
           "best_hours": "13h-16h",
           "trigger": "crête du Teillon, côté ouest ensoleillé ; passage au vent d'ouest",
-          "description": "Le sommet du Teillon, sur la route de Bleine vers Saint-André, est un point de relance entre 13h et 16h, sur sa face ouest ensoleillée.",
+          "description": "Le sommet du Teillon, sur la route de Bleine vers Saint-André, est un point de relance. On pousse sur sa face ouest, ou l'on passe le col de Barnabé.",
           "sources": [
             "S31",
             "S113",
@@ -4426,7 +4420,7 @@
           "alt_m": null,
           "best_hours": "12h-14h",
           "trigger": "croupe de la Bernarde au-dessus de la station de Vauplane, atteinte en transition au-dessus de Soleilhas",
-          "description": "La croupe de la Bernarde, au-dessus de la station de Vauplane, est un point de relance atteint en transition au-dessus de Soleilhas, vers 12h-14h.",
+          "description": "La croupe de la Bernarde, au-dessus de la station de Vauplane, est un point de relance qu'on atteint en transitant au-dessus de Soleilhas.",
           "sources": [
             "S55",
             "S103",
@@ -4471,14 +4465,13 @@
           "alt_m": null,
           "best_hours": "11h-15h",
           "trigger": "carrière canalisant la brise des gorges du Loup, thermiques du fond de vallée (rond-point) et petite barre rocheuse derrière",
-          "description": "À gauche du décollage du 300, près d'une carrière, se trouve un point de relance entre 11h et 15h.",
+          "description": "À gauche du décollage du 300, la carrière canalise la brise des gorges du Loup et les thermiques partis du fond de vallée, vers le rond-point. C'est de là qu'on s'extrait vers le 700, sans avoir à prendre de gaz avant.",
           "sources": [
             "S55",
             "S40"
           ],
           "confidence": "medium",
           "possible": [
-            "Entre Gréolières et Coursegoules, sans forcément prendre de gaz, on peut rejoindre la carrière, où la brise des gorges du Loup et les thermiques du fond de vallée sont canalisés au rond-point.",
             "30 m suffisent pour s'appuyer sur la petite barre rocheuse derrière.",
             "On retourne ensuite au-dessus du décollage pour rejoindre l'ascenseur de la belle falaise, qui mène au 700."
           ],
@@ -4493,13 +4486,12 @@
           "alt_m": null,
           "best_hours": "midi-17h",
           "trigger": "col où se rencontrent la brise du col de Vence et celle des gorges du Loup, antenne",
-          "description": "Le col de l'antenne, juste avant Coursegoules, est un point de relance entre midi et 17h.",
+          "description": "Le col de l'antenne, juste avant Coursegoules, est un point de relance où la brise du col de Vence rejoint celle des gorges du Loup.",
           "sources": [
             "S55"
           ],
           "confidence": "medium",
           "possible": [
-            "Il arrive que la brise venant du col de Vence rejoigne celle des gorges du Loup à ce col.",
             "On peut y arriver depuis les « miroirs », puis suivre la crête au-dessus de Coursegoules jusqu'au bout du Viériou."
           ],
           "note": "Position estimée : le col de l'antenne n'est pas localisé sur les cartes."
@@ -4611,7 +4603,7 @@
             "S125",
             "S126"
           ],
-          "note": "Site à 10 min à pied de la route Napoléon, très fréquenté par l'école de Saint-Vallier : la mesure inclut sans doute du dynamique en plus du thermique (déduction). Parmi les plus forts du secteur de Grasse, avec Gourdon. Aucune observation ne signale de thermique au Puet. Détail saisonnier : 90 % en hiver, 96 % au printemps, 97 % en été et 96 % en automne."
+          "note": "Site à 10 min à pied de la route Napoléon, très fréquenté par l'école de Saint-Vallier : la mesure inclut sans doute du dynamique en plus du thermique (déduction). Aucune observation ne signale de thermique au Puet. Détail saisonnier : 90 % en hiver, 96 % au printemps, 97 % en été et 96 % en automne."
         },
         {
           "id": "kennedy-pente-sud",
@@ -4634,7 +4626,7 @@
             "S126"
           ],
           "possible": [
-            "Le cross y est jugé difficile, avec une finesse de 4,8.",
+            "Une ancienne indication juge le cross difficile et donne une finesse de 4,8 pour le site.",
             "Pour un cross Gourdon – Saint-Jeannet, Kennedy compte parmi les points de raccroche du « petit bocal », avec Cavillore, Gourdon village, l'Embarnier et Courmettes."
           ],
           "note": "Aucun point chaud recensé à moins de 1,7 km du décollage avant cette mesure ; le plus proche, Gourdon village, est décrit comme faible et étroit."
@@ -4746,7 +4738,7 @@
             "S",
             "SW"
           ],
-          "description": "La face sud du Cheiron offre du dynamique et du thermique toute l'année. Elle est bien protégée des vents de nord et d'ouest, tant qu'ils ne sont pas trop forts, et la crête, longue d'environ 10 km, se vole en soaring. Par vent de nord, la face sud reste volable dans les brises thermiques de sud, mais le vent peut être fort au-dessus des falaises.",
+          "description": "La face sud du Cheiron offre du dynamique et du thermique toute l'année. Elle est bien protégée des vents de nord et d'ouest tant qu'ils ne sont pas trop forts, et la crête se vole en soaring. Par vent de nord, la face sud reste volable dans les brises thermiques de sud, mais le vent peut être fort au-dessus des falaises.",
           "sources": [
             "S40",
             "S32",
@@ -4776,8 +4768,7 @@
             "S43"
           ],
           "possible": [
-            "Le vol du soir se pratique à Cavillore, et il est plus agréable quand le décollage principal est à l'ombre.",
-            "Le Puet passe pour idéal en soaring, avec des thermiques pas trop forts."
+            "Le vol du soir se pratique à Cavillore, et il est plus agréable quand le décollage principal est à l'ombre."
           ]
         }
       ],
@@ -4817,7 +4808,7 @@
           "orientations": [
             "S"
           ],
-          "description": "Décollage plein sud. Le vent d'ouest y est à surveiller, et la sortie de combe se fait par tendance est. On y accède à pied ou par la piste de ski de la station.",
+          "description": "Décollage plein sud. Surveillez le vent d'ouest. La sortie de combe se fait par tendance est. On y monte à pied ou avec la navette de l'école, qui prend en été la piste de ski ; cette piste est interdite aux véhicules privés.",
           "sources": [
             "S40",
             "S28"
@@ -4986,8 +4977,8 @@
           ],
           "ffvl_id": "290",
           "possible": [
-            "Le site a pu être interdit aux parapentes.",
-            "Un hélicoptère a été vu devant le décollage."
+            "Une ancienne indication dit le site interdit aux parapentes, alors qu'un décollage herbeux leur est décrit aujourd'hui : renseignez-vous.",
+            "Un jour, un hélicoptère qui portait des charges devant le décollage l'a rendu involable."
           ]
         },
         {
@@ -5002,7 +4993,7 @@
             "S",
             "SW"
           ],
-          "description": "Décollage orienté sud-est, sud et sud-ouest, accessible par la route avec 10 min de marche. Il permet de voler d'ouest en est suivant la brise, mais il est dangereux par vent de nord. Par tendance ouest, un gradient se forme à la sortie, sur la droite. L'atterrissage de la chapelle Sainte-Luce est à repérer avant. Le site est réservé aux pilotes guidés, pas aux débutants.",
+          "description": "Décollage orienté sud-est, sud et sud-ouest, à 10 min à pied de la route. On y vole d'ouest en est suivant la brise, mais il est dangereux par vent de nord. Par tendance ouest, un gradient se forme à la sortie, sur la droite. Repérez avant l'atterrissage de la chapelle Sainte-Luce. Le site ne convient pas à un débutant sans guidage. Attention à la présence de l'érodium.",
           "sources": [
             "S43"
           ],
@@ -5125,16 +5116,14 @@
           "lat": 43.802,
           "coord_quality": "source",
           "alt_m": 1134,
-          "description": "L'atterrissage de Bleine, à Thorenc, est un très grand champ avec une manche à air ou des banderoles près de la route. Il est sous convention non FFVL, et seulement praticable d'avril à début juillet, suivant la fenaison. Le vent peut venir de l'est ou de l'ouest, avec un point de convergence mobile : il faut plier en bordure.",
+          "description": "L'atterrissage de Bleine, à Thorenc, est un très grand champ avec une manche à air ou des banderoles près de la route. Sa convention a été dénoncée par le nouveau propriétaire : évitez de vous y poser. Le vent peut venir de l'est ou de l'ouest, avec un point de convergence mobile. Si vous y posez, pliez en bordure.",
           "sources": [
             "S41",
             "S31",
             "S56"
           ],
           "ffvl_id": "917",
-          "possible": [
-            "Le terrain est peut-être en changement de propriétaire."
-          ]
+          "note": "Convention non fédérale, sauf d'avril à début juillet (fenaison, date à définir avec l'agriculteur)."
         },
         {
           "id": "gourdon-abeilles",
@@ -5143,7 +5132,7 @@
           "lat": 43.7219,
           "coord_quality": "source",
           "alt_m": 767,
-          "description": "Atterrissage technique, avec du gradient et une brise de sud-est. Il est fréquent pour les tests d'ailes. Il est demandé de ne plus y accéder en voiture.",
+          "description": "Atterrissage technique, avec du gradient et une brise de sud-est. Les essais d'ailes d'un fabricant s'y font souvent. Il est demandé de ne plus y accéder en voiture.",
           "sources": [
             "S42",
             "S30",
@@ -5151,7 +5140,7 @@
           ],
           "ffvl_id": "13283",
           "possible": [
-            "Un ancien atterrissage officiel, plus grand, offrait 800 m de dénivelé et un long vol de sortie d'environ 6 km."
+            "L'atterrissage principal du bas, bien plus grand, est à 800 m sous le décollage, au bout d'un long vol de sortie d'environ 6 km."
           ]
         },
         {
@@ -5161,14 +5150,14 @@
           "lat": 43.7008,
           "coord_quality": "source",
           "alt_m": 139,
-          "description": "Atterrissage en zone urbanisée, sans possibilité de hors-terrain. Une ligne électrique longe la route, et l'approche se fait côté Courmettes pour les parapentes. L'activité thermique y est importante. Par vent de sud, une PTU est obligatoire.",
+          "description": "Atterrissage en zone urbanisée, sans possibilité de hors-terrain. La route, bordée d'une ligne électrique, longe le terrain, et des arbres se dressent de l'autre côté. Les parapentes approchent côté Courmettes, quel que soit le vent. L'activité thermique y est importante.",
           "sources": [
             "S42",
             "S57"
           ],
           "ffvl_id": "13378",
           "possible": [
-            "L'atterrissage passe pour ultra facile."
+            "L'atterrissage est bien plus accessible que celui du haut, près du village."
           ]
         },
         {
@@ -5178,7 +5167,7 @@
           "lat": 43.7026,
           "coord_quality": "source",
           "alt_m": 728,
-          "description": "Atterrissage officiel du Puet. Le Grand Pré est interdit comme atterrissage.",
+          "description": "Atterrissage officiel du Puet, très court, avec une chapelle en entrée de terrain par vent d'ouest, et en fin de terrain par vent d'est. Le gradient est assez marqué en approche par vent d'ouest. Demandez conseil au club avant de voler. Le Grand Pré est interdit.",
           "sources": [
             "S43"
           ],
@@ -5488,7 +5477,7 @@
           "possible": [
             "À Saint-André, on enchaîne le Maurel (environ 2300 m pour le grand Cordeil), la Côte Longue (2500 m), le col de Talon, les Boules, Carton et le col de la Baisse, puis la crête de la Chau et Tromas.",
             "On suit ensuite les 20 km de la crête de la Blanche jusqu'à Dormillouse ou au Morgon. Avec une petite tendance sud, la poursuite vers Grenoble ou Chamonix est possible.",
-            "Des records locaux ont été atteints : 257 km vers Megève, 246 km en triangle depuis le Cheiron, 218 km de Bleyne à Chaillol par la Bernarde."
+            "Grands vols du secteur : 257 km vers Megève, 246 km en triangle depuis le Cheiron, 218 km de Bleyne à Chaillol, retour à la Bernarde."
           ],
           "note": "Il y a 78 km de Bleine à Saint-Vincent-les-Forts."
         },
@@ -5844,10 +5833,9 @@
           ],
           "possible": [
             "Il vaut mieux voler par vent léger, du sud à l'ouest, jusqu'à 20 km/h, et ne pas décoller s'il y a des moutons sur la mer.",
-            "En fin de vol, on peut arriver à Menton face à la brise de mer venant du col de Castillon, puis trouver 10 km/h d'est huileux au-dessus de l'eau.",
-            "Un régime de brise de vallée sud-est, né à l'embouchure de Vintimille, est aussi signalé."
+            "En fin de vol, on peut arriver à Menton face à la brise de mer venant du col de Castillon, puis trouver 10 km/h d'est huileux au-dessus de l'eau."
           ],
-          "note": "Vitesses interprétées à partir des textes."
+          "note": "Vitesses interprétées à partir des textes. Derrière le relief, la vallée de la Bévéra à Sospel vit sous une brise de sud-est née à l'embouchure de Vintimille."
         },
         {
           "id": "brise-pente-eze-mont-bastide",
@@ -5918,7 +5906,7 @@
           "possible": [
             "Par brise de mer forte, l'ascendance peut dériver vers le nord : on a l'impression d'être au milieu de la vallée, à l'aplomb du Var.",
             "Au Dôme de Barrot, la brise peut venir franchement de Puget-Théniers plutôt que de la vallée du Haut-Var.",
-            "Quand la brise est installée, il vaut mieux ne pas s'engager en vallée sans l'appui des reliefs principaux, et garder une marge pour l'atterrissage, long, à Jausiers."
+            "Quand la brise est installée, ne vous engagez pas en vallée sans l'appui des reliefs principaux."
           ],
           "note": "Tracé indicatif d'Ascros à Puget-Théniers ; le point intermédiaire est interpolé."
         }
@@ -5995,7 +5983,7 @@
           "alt_m": 1248,
           "best_hours": "après-midi d'hiver / demi-saison (plafonds ~900-1200 m)",
           "trigger": "falaises et crête de Courmettes ; antennes",
-          "description": "Les antennes des Courmettes sont le premier relais vers Saint-Jeannet. Le thermique y est bon, en hiver comme en demi-saison, après-midi.",
+          "description": "Les antennes des Courmettes sont le premier relais vers Saint-Jeannet. À partir d'ici, plus on avance, plus l'air est stable : refaites le plafond.",
           "sources": [
             "S57",
             "S75",
@@ -6124,7 +6112,7 @@
           "alt_m": null,
           "best_hours": "après-midi",
           "trigger": "butte au-dessus du terrain aux chevaux (K) et petite butte au-dessus de la vache du Moustachu (13)",
-          "description": "Buttes au-dessus du terrain aux chevaux et de la vache du Moustachu, à utiliser au retour depuis le Baou des Blancs, l'après-midi.",
+          "description": "Buttes au-dessus du terrain aux chevaux et de la vache du Moustachu : la dernière chance quand la petite crête du décollage de Tourrettes est morte.",
           "sources": [
             "S57"
           ],
@@ -6164,7 +6152,7 @@
           "alt_m": 640,
           "best_hours": "après-midi",
           "trigger": "croupe entre les baous des Blancs et de Saint-Jeannet, avec ligne haute tension",
-          "description": "Croupe entre les baous des Blancs et de Saint-Jeannet, avec une ligne haute tension : c'est un point de relance de l'après-midi.",
+          "description": "Croupe entre les baous des Blancs et de Saint-Jeannet, avec une ligne haute tension : c'est un point de relance.",
           "sources": [
             "S57",
             "S107",
@@ -6187,7 +6175,7 @@
           "alt_m": 796,
           "best_hours": "après-midi",
           "trigger": "falaise du baou de la Gaude, appuis meilleurs que Saint-Jeannet",
-          "description": "Falaise du Baou de la Gaude, en bout de cheminement, près de la vallée du Var : c'est un point de relance de l'après-midi.",
+          "description": "Falaise du Baou de la Gaude, en bout de cheminement, près de la vallée du Var : c'est un point de relance.",
           "sources": [
             "S57",
             "S107",
@@ -6251,7 +6239,7 @@
           "possible": [
             "Par jours de thermiques purs, ils peuvent être puissants dans les pompes de service."
           ],
-          "note": "Aucun point chaud recensé à moins de 3,2 km du décollage avant cette mesure ; le plus proche est le Mont Agaisen (« The Lift »). Le point est à environ 500 m du décollage, sur la même pente sud, et il est le plus fort du secteur de Sospel. Un passage donne 97 % le matin, la liste 96 % : la liste est retenue. Aucun vol ne localise ce thermique : le déclencheur est une déduction. Détail saisonnier : 77 % en hiver, 94 % au printemps, 96 % en été et 77 % en automne."
+          "note": "Aucun point chaud recensé à moins de 3,2 km du décollage avant cette mesure ; le plus proche est le Mont Agaisen (« The Lift »). Le point est à environ 500 m du décollage, sur la même pente sud. Aucun vol ne localise ce thermique : le déclencheur est une déduction. Détail saisonnier : 77 % en hiver, 94 % au printemps, 96 % en été et 77 % en automne."
         },
         {
           "id": "beoulet-pente-sud",
@@ -6387,7 +6375,7 @@
             "S",
             "SE"
           ],
-          "description": "Les baous Blancs, Noirs, de Saint-Jeannet et de la Gaude offrent une succession de falaises plein sud, sur 5 à 6 km, qui permettent le soaring par brise de sud.",
+          "description": "Les baous se suivent, des Blancs à la Gaude. Le Baou des Blancs a une bonne falaise plein sud qui donne un bon appui. Les falaises de Saint-Jeannet sont plus molles.",
           "sources": [
             "S57",
             "S75"
@@ -6395,7 +6383,8 @@
           "possible": [
             "50 m au-dessus du baou des Noirs suffisent pour se jeter vers Saint-Jeannet, mais mieux vaut +100 m pour raccrocher les falaises molles.",
             "Au retour, depuis Saint-Jeannet vers le baou des Noirs, on vole légèrement face aux brises, avec un départ minimum d'environ 850 m."
-          ]
+          ],
+          "note": "Le vol en soaring par brise de sud et les 5 à 6 km de falaises sont déduits de la carte."
         }
       ],
       "takeoffs": [
@@ -6432,7 +6421,7 @@
           ],
           "possible": [
             "Le décollage est difficile : une aile peut se déventer sur la route, la pente est raide et instable, et la végétation est dense.",
-            "Un vent de cul est fréquent vers 11h.",
+            "Un jour de nord, le vent était encore dans le dos à 11h20.",
             "De là, on peut partir en cross vers le Var, Aspremont, Gilette et Vial."
           ],
           "note": "Accès à pied depuis l'ancien bunker ouest, par la route. Position relevée au sommet du Mont Chauve d'Aspremont ; l'orientation et le point exact ne sont pas documentés."
@@ -6515,15 +6504,12 @@
             "S",
             "SW"
           ],
-          "description": "Décollage falaise, orienté sud-est, sud et sud-ouest, très fréquenté mais délicat, avec un atterrissage lointain. Il est réservé aux brevetés confirmés, et l'enseignement y est interdit. Il est dangereux par vent de nord-est, d'est, de nord-ouest et d'ouest. Une ligne électrique, peu visible, se trouve à 950 m à l'est.",
+          "description": "Décollage falaise, orienté sud-est à sud-ouest, très fréquenté mais délicat, avec un atterrissage lointain. Il est réservé aux brevetés confirmés, et l'enseignement y est interdit. Il ne se vole qu'en brise thermique : tout autre vent le rend turbulent et dangereux, surtout de nord-est, d'est, de nord-ouest et d'ouest. Une ligne électrique peu visible passe à 950 m à l'est.",
           "sources": [
             "S52"
           ],
           "ffvl_id": "1576",
-          "possible": [
-            "Les horaires de chasse sont les mêmes qu'à Roquebrune.",
-            "Les brises thermiques y sont présentes."
-          ]
+          "note": "Ouvert sans restriction du 15/11 au 30/04 ; du 1/05 au 30/09, avant 8 h et après 18 ou 19 h ; du 1/10 au 15/11, à partir de 11 h 15. Vol interdit à l'ouest de La Turbie, au-dessus de Monaco et dans le cylindre du Mont Agel (LF-R83)."
         }
       ],
       "landings": [
@@ -6534,12 +6520,12 @@
           "lat": 43.6939,
           "coord_quality": "source",
           "alt_m": 1,
-          "description": "Terrain ouvert à la pratique du parapente, non conventionné, mais dont la pratique est tolérée.",
+          "description": "Spot de kitesurf, sans information pour le parapente : ne le comptez pas comme un atterrissage.",
           "sources": [
             "S52"
           ],
           "ffvl_id": "2267",
-          "note": "Pas de description détaillée dans les sources."
+          "note": "Élément repris d'une fiche de kitesurf."
         },
         {
           "id": "saint-laurent-du-var-plage",
@@ -6548,16 +6534,15 @@
           "lat": 43.6667,
           "coord_quality": "source",
           "alt_m": 37,
-          "description": "Plage de galets étroite, fréquentée par le kitesurf et la planche à voile. Les digues et les enrochements sont sous le vent, et la plage est idéale par vent d'est ou de sud-est.",
+          "description": "Spot de kitesurf sur une plage de galets étroite, partagée avec la planche à voile. Aucune information pour le parapente : ne le comptez pas comme un atterrissage. Les digues et les enrochements sont sous le vent.",
           "sources": [
             "S52"
           ],
           "ffvl_id": "2119",
           "possible": [
-            "Il n'y a pas de décollage par nord-ouest ou nord-est : la zone est déventée, avec un vent très rafaleux.",
-            "Le mistral, de l'ouest ou du sud-ouest, est réservé aux confirmés."
+            "Pour les kitesurfeurs, la zone est déventée et très rafaleuse par nord-ouest ou nord-est."
           ],
-          "note": "Pratique du kitesurf, mentionnée à titre de contexte."
+          "note": "Élément repris d'une fiche de kitesurf, où le mistral souffle de l'ouest et du sud-ouest."
         },
         {
           "id": "plage-golfe-bleu-roquebrune",
@@ -6597,7 +6582,7 @@
           "lat": 43.7706,
           "coord_quality": "source",
           "alt_m": 191,
-          "description": "Atterrissage de Cantaron, en ligne haute tension : le site est en mise en fonction.",
+          "description": "Atterrissage de Cantaron, près d'une ligne haute tension. Le site est en mise en service.",
           "sources": [
             "S52"
           ],
@@ -7209,7 +7194,7 @@
             "Le Pic est favorable en dynamique d'ouest et par mistral, avec un plafond possible vers +4000 m.",
             "Une pompe à Gaby est signalée sur la crête des Gasc, avec une confluence au-dessus de Raya."
           ],
-          "note": "Vitesses non documentées. Les thermiques de Veillos sont comparés à ceux d'Espagne, forts à midi."
+          "note": "Vitesses non documentées. Les thermiques de La Colmiane peuvent être très forts : mieux vaut éviter le milieu de journée."
         },
         {
           "id": "brise-pente-auron",
@@ -7246,7 +7231,7 @@
           "possible": [
             "Le matin, le secteur de Las Donnas est au nord ou à l'est, puis il passe au sud en conditions thermiques.",
             "Le décollage de la Cime de la Bercha est dangereux par vent d'ouest et de nord.",
-            "Un vol a retrouvé le village de Roya par le versant sud."
+            "On peut se poser au village de Roya, sur le versant sud : prévoyez la récupération."
           ],
           "note": "Altitude retenue : 2274 m ; une autre référence donne 2240 m. Une observation signale qu'à Isola 2000 il est difficile de ne pas être sous le vent du relief."
         }
@@ -7339,7 +7324,7 @@
             "S95"
           ],
           "possible": [
-            "Dans les sites d'Auron, de Tende et de Sospel, la règle est prise très au sérieux par les gardes.",
+            "À Sospel, la règle est prise très au sérieux par les gardes.",
             "Des vols de cross y sont faits bien au-dessus de 1000 m au-dessus du sol."
           ],
           "note": "Disque indicatif, non la limite exacte du parc. Le polygone du cœur va de 6.60 à 7.52 E et de 43.91 à 44.43 N ; le contour réel est plus étroit. Une réunion de 2015 avec le parc est jugée peu favorable aux crossistes ; son compte rendu n'a pas été récupéré."
@@ -7373,7 +7358,7 @@
           "coord_quality": "approx",
           "radius_km": 15,
           "conditions": "dépression sur le golfe de Gênes, vent de nord à nord-est fort en altitude",
-          "description": "Sous le vent de Lombarde, un vent de nord rafaleux et fort, généré par les dépressions du golfe de Gênes, est dangereux, notamment à Sospel.",
+          "description": "La Lombarde est dangereuse. Générée par les dépressions du golfe de Gênes, elle arrive à Sospel en vent de nord rafaleux et fort. Plus au nord, à la Bonnette, elle est donnée d'est, avec un effet de foehn.",
           "sources": [
             "S74",
             "S91",
@@ -7526,7 +7511,7 @@
             "S125"
           ],
           "possible": [
-            "Des thermiques « d'Espagne », forts, peuvent être trouvés ici sans vario."
+            "À La Colmiane, les thermiques en route peuvent être si forts qu'on n'a pas besoin de vario : évitez le milieu de journée."
           ],
           "note": "La pompe à Gaby est placée sur la crête des Gasc, à 640 m au sud du point chaud mesuré : la position est recalée sur la mesure, déduite des textes et des traces. Accès en navette ou par télésiège. Ancienne position, près du col de Veillos (2166 m), non retenue."
         },
@@ -7730,7 +7715,7 @@
           "confidence": "medium",
           "possible": [
             "Un vol a atteint 3200 m au large du Mounier, vers 14h30.",
-            "La Colletta, à Châteauneuf-d'Entraunes, a déjà donné 3850 m, avec des ascendances fortes allant jusqu'à +10."
+            "La Colletta, à Châteauneuf-d'Entraunes, a donné +10 ce jour-là. Trois ans plus tôt, elle avait porté à 3850 m."
           ],
           "note": "Altitude du sommet retenue : 2817 m ; plafond cité : 3200 m."
         },
@@ -7834,7 +7819,7 @@
           "confidence": "low",
           "possible": [
             "Au sommet, vers 11h, le décollage sur le dôme a été tiré vers le haut : l'aérologie était idéale ce jour-là.",
-            "Au Col des Huerris, la brise de sud peut atteindre 20 à 30 km/h dès 11h, avec une aérologie compliquée et perturbée en été.",
+            "Un après-midi d'août, au col des Huerris, la brise de sud a soufflé à 20-30 km/h. Un autre jour, l'aérologie y était compliquée en été.",
             "L'atterrissage est à 1510 m, pour 570 m de dénivelé ; le gradient est fort à la pente école."
           ],
           "note": "Pas de site FFVL. Position du Mont des Moulinés relevée sur la carte ; décollage non localisé."
@@ -7848,15 +7833,14 @@
           "alt_m": 1765,
           "best_hours": "matin avant 10h ; brise de sud 20-30 km/h l'après-midi",
           "trigger": "pelouse et mamelon devant la pente école, golf de Valberg ; déco herbeux plutôt que pierres",
-          "description": "Au col des Huerris, à 1765 m, à Valberg, une brise de sud s'installe l'après-midi, à titre de repère.",
+          "description": "Au col des Huerris, à 1765 m, à Valberg, la brise de sud peut s'installer l'après-midi. C'est un repère de brise, pas un thermique assuré.",
           "sources": [
             "S118"
           ],
           "confidence": "low",
           "possible": [
-            "La brise laminaire de sud, de 20 à 30 km/h, dure jusqu'au coucher, avec un jeu de voile au sol.",
-            "Vers 10h, le décollage de pierres est difficile, car l'aérologie est « de cul » ; le vent forcit d'un coup à 11h.",
-            "Le secteur près du golf est jugé peu compatible par jour d'orage."
+            "Un après-midi d'août, une brise laminaire de sud, de 20 à 30 km/h, a duré jusqu'au coucher du soleil, bonne pour le jeu de voile au sol.",
+            "Vers 10h, le décollage de pierres est difficile, car le vent vient de dos ; il forcit d'un coup à 11h."
           ],
           "note": "Déduction à partir d'une seule observation : à utiliser comme repère de brise, pas comme thermique assuré."
         },
@@ -7979,7 +7963,7 @@
             "S125",
             "S126"
           ],
-          "note": "Point chaud qu'aucun texte ne décrivait. Le Mont Giraud et la pompe à Gaby de Veillos, à La Colmiane, décrits à 1,4 et 1,5 km, sont peut-être alimentés par cette pente sud-est : déduction. Détail saisonnier : sous 70 % en hiver, 86 % au printemps, 98 % en été et 92 % en automne."
+          "note": "Point chaud qu'aucun texte ne décrivait. Le Mont Giraud et la pompe à Gaby de Veillos, à La Colmiane, décrits à 1,4 et 1,5 km, sont peut-être alimentés par cette pente sud : déduction. Détail saisonnier : sous 70 % en hiver, 86 % au printemps, 98 % en été et 92 % en automne."
         },
         {
           "id": "colmiane-pic-pente-ouest",
@@ -8112,7 +8096,7 @@
           ],
           "possible": [
             "Il y a 674 m de dénivelé vers le champ d'Auron ou le stade de Saint-Étienne.",
-            "Las Donnas, à 874 m, se trouve au sud d'Auron par la télécabine : nord ou est le matin, puis versant sud.",
+            "Las Donnas, au sud d'Auron par la télécabine, a 874 m de dénivelé : nord ou est le matin, puis versant sud.",
             "Les dangers sont le vent d'ouest et le vent de nord."
           ],
           "note": "Hors Parc national, mais attention aux limites : la poche n'est pas incluse. Altitude retenue : 2240 m."
@@ -8151,7 +8135,7 @@
             "SW",
             "W"
           ],
-          "description": "La Balme, à La Colmiane, dite « Baus de la Fréma », est un décollage où il faut être attentif au vent d'ouest, et où le vent de nord-est, d'est ou de sud-est est dangereux.",
+          "description": "La Balme, à La Colmiane, dite « Baus de la Fréma », se vole par vent d'ouest. Attention au vent météo : le nord-est, l'est et le sud-est y sont dangereux.",
           "sources": [
             "S53"
           ],
@@ -8227,7 +8211,7 @@
             "S",
             "SW"
           ],
-          "description": "Le Campé Robert Giordano, à Breil-sur-Roya, est un site en projet, réservé aux pilotes brevetés : il faut respecter les interdictions du Parc, et une ligne haute tension passe à 150 à 200 m sous le décollage.",
+          "description": "Le Campé Robert Giordano, à Breil-sur-Roya, décollage et atterrissage, est réservé aux titulaires du brevet. Respectez les interdictions du Parc. Une ligne haute tension passe à 150 à 200 m sous le décollage. Ne décollez pas lors d'un feu dans les environs. L'exploitant agricole peut restreindre l'espace par un enclos.",
           "sources": [
             "S50"
           ],
@@ -8272,7 +8256,7 @@
             "E",
             "SE"
           ],
-          "description": "Le décollage de la Lavina, à Sospel, est orienté est et sud-est, avec 700 m de dénivelé. La brise de vallée peut y devenir forte, et il est utilisé le matin, avant que la brise passe au sud à cause des entrées maritimes.",
+          "description": "Le décollage de la Lavina, à Sospel, est orienté est et sud-est, avec 700 m de dénivelé. On l'utilise le matin, avant que la brise passe au sud à cause des entrées maritimes. La brise de vallée peut y devenir forte. Pour un cross, il faut une bonne expérience, et le posé au Pigeonnier est obligatoire.",
           "sources": [
             "S51",
             "S74",
@@ -8280,7 +8264,8 @@
           ],
           "ffvl_id": "227",
           "possible": [
-            "L'atterrissage est La Friguiera, avec une ligne électrique au nord-ouest."
+            "L'atterrissage habituel est La Friguiera, avec une ligne électrique au nord-ouest.",
+            "Le matin, il peut aussi convenir aux débutants : les indications divergent."
           ]
         },
         {
@@ -8294,7 +8279,7 @@
             "SE",
             "S"
           ],
-          "description": "Le décollage de Monte Grosso, à Sospel, est orienté sud-est et sud, en bordure du Parc national. Il est réservé aux pilotes expérimentés, et un vent de secteur ouest ou sud-ouest y est dangereux.",
+          "description": "Le décollage de Monte Grosso, à Sospel, est orienté sud-est et sud, en bordure du Parc national. Il est court, à quelques pas seulement, la brise y est souvent forte, et il ne convient pas aux débutants. Un vent de secteur ouest ou sud-ouest y est dangereux.",
           "sources": [
             "S51",
             "S37",
@@ -8337,7 +8322,7 @@
           "ffvl_id": "908",
           "possible": [
             "Le vent peut venir de derrière le col.",
-            "En cas de fête, l'atterrissage de remplacement est celui de Gilli.",
+            "Le terrain de Gilli l'a déjà remplacé le temps d'une fête.",
             "La Bolline, avec une ligne haute tension, est réservée aux experts."
           ],
           "note": "Position de l'atterrissage de remplacement : 7.1988 / 44.0665."
@@ -8349,7 +8334,7 @@
           "lat": 44.0961,
           "coord_quality": "source",
           "alt_m": 850,
-          "description": "Le vallon de Larmacreuse, à Tende, a une convention avec la municipalité, valable un an, tacitement reconductible. Il n'y a pas de brise installée : le flux est plutôt montant de sud-ouest.",
+          "description": "Le vallon de Larmacreuse, à Tende, a une convention d'un an, tacitement reconductible, avec la municipalité, qui peut réserver le terrain. Il n'y a pas vraiment de brise installée. Le flux monte en général du sud-ouest. Si la brise descend, approchez en aval du terrain.",
           "sources": [
             "S50"
           ],
@@ -8366,7 +8351,7 @@
           "lat": 43.8794,
           "coord_quality": "source",
           "alt_m": 338,
-          "description": "Le Pré Saint-Étienne, dit le Pigeonnier, à Sospel, est un atterrissage où la brise est faible à turbulente suivant l'heure. Il y a un danger par vent d'est marqué, et par vent de nord-ouest, de nord ou de nord-est.",
+          "description": "Le Pré Saint-Étienne, dit le Pigeonnier, à Sospel, a une brise faible le matin et forte en milieu de journée, avec des turbulences en approche et un fort gradient. Il y a un danger par vent d'est marqué, et le vol est défavorable par nord-ouest, nord et nord-est.",
           "sources": [
             "S51",
             "S37"
@@ -8511,11 +8496,11 @@
             "S64"
           ],
           "possible": [
-            "Décollage à 11h15, à 2285 m, avec une dérive est-nord-est.",
+            "Décollage à 11h15, puis un premier plafond à 2285 m, avec une dérive est-nord-est.",
             "Passage par Auron, la Raya et la Balme, où la confluence était plus à l'ouest que d'habitude, à 2850 m.",
             "Relais : la Colletta, le Mounier à 3200 m, le Lauvet d'Ilonse à 2990 m, la Balme, le Caire Gros, le Férion, puis le Peïra-Cava."
           ],
-          "note": "Mandine, puis arrivée à Roquebrune, face à la brise de mer venant du col de Castillon : 10 km/h d'est huileux au-dessus de l'eau. Vol de printemps, avec de la neige fraîche."
+          "note": "Mandine, puis arrivée à Menton, face à la brise de mer venant du col de Castillon : 10 km/h d'est huileux au-dessus de l'eau. Vol de printemps, avec de la neige fraîche."
         },
         {
           "id": "bleine-saint-honorat-isola",
@@ -8569,7 +8554,7 @@
             "Des thermiques jusqu'à 3000 m ont été trouvés à l'est du Saint-Honorat.",
             "Les falaises de Villetalle et de Sauze servent de dernières chances, avec une brise supposée forte dans la vallée."
           ],
-          "note": "Le plafond de 3850 m, plus au sud, est cité pour une autre journée."
+          "note": "Ce vol a fait 3850 m à la Colletta, au-dessus de Châteauneuf-d'Entraunes."
         },
         {
           "id": "colmiane-gelas-tende",
@@ -8616,7 +8601,7 @@
             "Un posé en altitude a été fait près de Castel Frippi, avec un vent annoncé à 20 à 25 km/h à 3000 m dans le secteur de Tende.",
             "Le vol se fait par ouest ou ouest-nord-ouest léger, sous les cumulus."
           ],
-          "note": "Vol hors zone sous 1000 m au-dessus du sol. Distance de 45 km."
+          "note": "Le parcours longe le cœur du Parc national : respectez les 1000 m au-dessus du sol."
         },
         {
           "id": "roquebrune-sospel-col-de-castillon",
